@@ -220,5 +220,5 @@ esbuild 的压缩是**有损的**：
 ## 版本信息
 
 - **Claude Code 版本**: 2.0.57
-- **分析日期**: 2024-12
+- **分析日期**: 2025-12
 - **安装路径**: `~/.local/share/fnm/node-versions/v24.11.1/installation/lib/node_modules/@anthropic-ai/claude-code/`

@@ -1,0 +1,3018 @@
+[
+  {
+    "original": "_8",
+    "readable": "BASH_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.804Z"
+  },
+  {
+    "original": "D9",
+    "readable": "BASH_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.804Z"
+  },
+  {
+    "original": "DZ",
+    "readable": "READ_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.804Z"
+  },
+  {
+    "original": "g5",
+    "readable": "READ_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.804Z"
+  },
+  {
+    "original": "nM",
+    "readable": "GLOB_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.804Z"
+  },
+  {
+    "original": "CD",
+    "readable": "GLOB_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.804Z"
+  },
+  {
+    "original": "a3",
+    "readable": "TASK_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.804Z"
+  },
+  {
+    "original": "s8",
+    "readable": "TASK_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.804Z"
+  },
+  {
+    "original": "X$",
+    "readable": "GREP_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.804Z"
+  },
+  {
+    "original": "uY",
+    "readable": "GREP_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "MX",
+    "readable": "EDIT_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "R5",
+    "readable": "EDIT_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Pv",
+    "readable": "NOTEBOOK_EDIT_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "M_",
+    "readable": "NOTEBOOK_EDIT_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "tq",
+    "readable": "MULTI_EDIT_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "aM",
+    "readable": "WRITE_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "bX",
+    "readable": "WRITE_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "eq",
+    "readable": "WEB_FETCH_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "vX",
+    "readable": "WEB_FETCH_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "h11",
+    "readable": "WEB_SEARCH_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "O_",
+    "readable": "WEB_SEARCH_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Yc",
+    "readable": "SLASH_COMMAND_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "yP",
+    "readable": "SLASH_COMMAND_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Pq",
+    "readable": "SKILL_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "gGB",
+    "readable": "TODO_WRITE_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "b31",
+    "readable": "ENTER_PLAN_MODE_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "a61",
+    "readable": "EXIT_PLAN_MODE_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "dJ",
+    "readable": "ASK_USER_QUESTION_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "pI1",
+    "readable": "KILL_SHELL_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "en",
+    "readable": "AGENT_OUTPUT_TOOL_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Fq",
+    "readable": "MODEL_SONNET",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Hq",
+    "readable": "MODEL_HAIKU",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "gq",
+    "readable": "MODEL_OPUS",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "S3",
+    "readable": "getDefaultSonnetModel",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "zGB",
+    "readable": "MAX_INPUT_TOKENS",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "CBB",
+    "readable": "MAX_INPUT_TOKENS",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "UGB",
+    "readable": "TARGET_INPUT_TOKENS",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "UBB",
+    "readable": "TARGET_INPUT_TOKENS",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "NKQ",
+    "readable": "MAX_TIMEOUT_MS",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "LHQ",
+    "readable": "MAX_OUTPUT_LENGTH",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "KoA",
+    "readable": "getMaxTimeout",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "LGA",
+    "readable": "getDefaultTimeout",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Ke",
+    "readable": "getMaxOutputLength",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "e06",
+    "readable": "READONLY_TOOLS",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "tv6",
+    "readable": "READONLY_TOOLS",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "AQ6",
+    "readable": "EDIT_TOOLS",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "ev6",
+    "readable": "EDIT_TOOLS",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "qGB",
+    "readable": "SYSTEM_PROMPT_BASE",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "BQ6",
+    "readable": "AGENT_SYSTEM_PROMPT",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "QQ6",
+    "readable": "SDK_SYSTEM_PROMPT",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "WY9",
+    "readable": "AGENT_BASE_PROMPT",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "ek1",
+    "readable": "getSystemPromptHeader",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "_nA",
+    "readable": "getSystemPrompt",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Hf1",
+    "readable": "systemPromptLoader",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "LSB",
+    "readable": "getBashToolDescription",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "NSB",
+    "readable": "getReadToolDescription",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "CGB",
+    "readable": "WRITE_TOOL_DESCRIPTION",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "KBB",
+    "readable": "WRITE_TOOL_DESCRIPTION",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Kf1",
+    "readable": "GLOB_TOOL_DESCRIPTION",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "eD0",
+    "readable": "GLOB_TOOL_DESCRIPTION",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Df1",
+    "readable": "getGrepDescription",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "AC0",
+    "readable": "getGrepToolDescription",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "EGB",
+    "readable": "getWebSearchDescription",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "VBB",
+    "readable": "MULTI_EDIT_TOOL_DESCRIPTION",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "qBB",
+    "readable": "TODO_WRITE_TOOL_DESCRIPTION",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "x_2",
+    "readable": "NOTEBOOK_EDIT_DESCRIPTION",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Uf1",
+    "readable": "CLAUDE_CODE_GUIDE_AGENT",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "JQ6",
+    "readable": "DOCS_MAP_URL",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Uw6",
+    "readable": "SERVICE_NAME",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Yn0",
+    "readable": "SERVICE_VERSION",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "L43",
+    "readable": "PRODUCTION",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Cf1",
+    "readable": "getMainBranch",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "IQ6",
+    "readable": "parseGitRemoteUrl",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "YQ6",
+    "readable": "getCommitsBehind",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "ZQ",
+    "readable": "execGit",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "knA",
+    "readable": "getGitRemoteUrl",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "MGB",
+    "readable": "getRepoHash",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "rM6",
+    "readable": "getGitConfig",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "tM6",
+    "readable": "getGitCommitInstructions",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "J6",
+    "readable": "getProvider",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "TR",
+    "readable": "getProviderIdentifier",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "D_A",
+    "readable": "getModelProvider",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "LW",
+    "readable": "getSmallFastModel",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "o9",
+    "readable": "getConfig",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "ZI",
+    "readable": "getFeatureFlag",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "RJ",
+    "readable": "isClaudeCodeRemote",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "UA",
+    "readable": "nodeRequire",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "GA",
+    "readable": "esmImport",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "pG",
+    "readable": "esmExport",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "U",
+    "readable": "moduleWrapper",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "L",
+    "readable": "lazyLoader",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "SnA",
+    "readable": "getTodayDate",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "rB",
+    "readable": "React",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "gW",
+    "readable": "ReactModule",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "sF",
+    "readable": "createElement",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "SN",
+    "readable": "keys",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "dC",
+    "readable": "last",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "j7",
+    "readable": "isArray",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "TY",
+    "readable": "isObject",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Tj",
+    "readable": "isArrayLike",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "j9A",
+    "readable": "isPlainObject",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "px",
+    "readable": "isArguments",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "xu",
+    "readable": "isIndex",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "A5B",
+    "readable": "baseFlatten",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "B5B",
+    "readable": "flatten",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "E5B",
+    "readable": "unicodeToArray",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "N5B",
+    "readable": "upperFirst",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "U5B",
+    "readable": "stringToArray",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "W5B",
+    "readable": "asciiToArray",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Y5B",
+    "readable": "castSlice",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "s5B",
+    "readable": "omit",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "w5B",
+    "readable": "createCaseFirst",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "o5B",
+    "readable": "baseSet",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Pj",
+    "readable": "castPath",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "_N",
+    "readable": "toKey",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "hN",
+    "readable": "copyObject",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "jj",
+    "readable": "baseIteratee",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "EvA",
+    "readable": "baseClone",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "M8",
+    "readable": "shellEscape",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "MSB",
+    "readable": "wrapBashCommand",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "OSB",
+    "readable": "shouldAddDevNull",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "PSB",
+    "readable": "addDevNullToCommand",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "RSB",
+    "readable": "bashCommandHelpers",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "TSB",
+    "readable": "extractTokensRange",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "AO6",
+    "readable": "hasInputRedirect",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "BO6",
+    "readable": "isEnvAssignment",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "FO6",
+    "readable": "getShellSnapshotScript",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "GO6",
+    "readable": "isCommandSeparator",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "IW",
+    "readable": "tokenize",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "SQ",
+    "readable": "sandboxDebug",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "oM6",
+    "readable": "getSandboxHint",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "BwA",
+    "readable": "fsExistsSync",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "IO6",
+    "readable": "fsMkdirSync",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "YO6",
+    "readable": "fsRealpathSync",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "ZO6",
+    "readable": "fsStatSync",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "JO6",
+    "readable": "execSync",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "WO6",
+    "readable": "execFile",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "sd1",
+    "readable": "pathJoin",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Q5",
+    "readable": "formatFilePath",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Kt",
+    "readable": "MessageStream",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "IE",
+    "readable": "EventSourceIterator",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "XGB",
+    "readable": "EventDecoder",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "HV",
+    "readable": "Symbol",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "HX",
+    "readable": "globalThis",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "_u",
+    "readable": "Array",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Ks",
+    "readable": "Map",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "XT",
+    "readable": "noOpFunction",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "B7A",
+    "readable": "noOpFunction2",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "V0",
+    "readable": "parseBoolean",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "vF",
+    "readable": "API_ERROR",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "h0",
+    "readable": "RENDER_ERROR",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Dl",
+    "readable": "CLIENT_INFO_DECODING_ERROR",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Rl",
+    "readable": "NO_TOKENS_FOUND",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Hk",
+    "readable": "CLIENT_ID_KEY",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "KvA",
+    "readable": "USER_INFERENCE_KEY",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "g1Q",
+    "readable": "USER_AGENT",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "QQQ",
+    "readable": "AWS_PROFILE",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "d16",
+    "readable": "DATA_TYPE",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "T90",
+    "readable": "IPV4",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "bRB",
+    "readable": "SENTRY_DSN",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "c53",
+    "readable": "SENTRY_SOURCE",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Mc",
+    "readable": "BASE64_CHARS_WITH_PAD",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "aA",
+    "readable": "BASE64_CHARS",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "eeB",
+    "readable": "COMMA",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "hz9",
+    "readable": "BROWSER_EXTENSION_ID",
+    "confidence": 1,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "$",
+    "readable": "TextComponent",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "eY",
+    "readable": "PlanFileReference",
+    "confidence": 0.8,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "tI",
+    "readable": "TODO_READ_TOOL",
+    "confidence": 0.9,
+    "source": "predefined",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "q6Q",
+    "readable": "getIteratorFn",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Cp",
+    "readable": "Component",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "v_0",
+    "readable": "ComponentDummy",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Zl1",
+    "readable": "PureComponent",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "h_0",
+    "readable": "createElement",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "E6Q",
+    "readable": "cloneElement",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Il1",
+    "readable": "isValidElement",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "N6Q",
+    "readable": "escapeKey",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Ql1",
+    "readable": "getElementKey",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "fF1",
+    "readable": "traverseAllChildren",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "bF1",
+    "readable": "mapChildren",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "L6Q",
+    "readable": "readLazyComponentType",
+    "confidence": 0.85,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "g_0",
+    "readable": "act",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Yf0",
+    "readable": "charsetLookup",
+    "confidence": 0.85,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "SWQ",
+    "readable": "contentType",
+    "confidence": 0.85,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "yWQ",
+    "readable": "extensionLookup",
+    "confidence": 0.85,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "kWQ",
+    "readable": "mimeTypeLookup",
+    "confidence": 0.85,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "_WQ",
+    "readable": "populateMimeTypeMaps",
+    "confidence": 0.85,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "hWQ",
+    "readable": "defer",
+    "confidence": 0.85,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "gWQ",
+    "readable": "asyncCallback",
+    "confidence": 0.85,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "uWQ",
+    "readable": "abortJobs",
+    "confidence": 0.85,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "mWQ",
+    "readable": "abortJob",
+    "confidence": 0.85,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "cWQ",
+    "readable": "runJob",
+    "confidence": 0.85,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "lWQ",
+    "readable": "wrapCallback",
+    "confidence": 0.85,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "pWQ",
+    "readable": "handleJobResult",
+    "confidence": 0.85,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "i41",
+    "readable": "DEFAULT_LINE_LIMIT",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Mw9",
+    "readable": "MAX_LINE_LENGTH",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "F$A",
+    "readable": "READ_TOOL_SHORT_DESC",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "V$A",
+    "readable": "READ_TOOL_FULL_DESC",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Ow9",
+    "readable": "PERMISSION_BEHAVIORS",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Rw9",
+    "readable": "extractPermissionRules",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Tw9",
+    "readable": "getAllowedToolsFromSettings",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Pw9",
+    "readable": "getIgnorePatternsAsRules",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "K$A",
+    "readable": "migrateLocalSettings",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "ZU1",
+    "readable": "getAllPermissionRules",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Sa",
+    "readable": "getPermissionRulesForSource",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "H$A",
+    "readable": "removePermissionRule",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "dW",
+    "readable": "formatFileSize",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "ja",
+    "readable": "isPdfSupported",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "xz",
+    "readable": "normalizeRuleValue",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "n6",
+    "readable": "stringifyRuleValue",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "D8",
+    "readable": "getSettingsForSource",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "W4",
+    "readable": "writeSettings",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "w9",
+    "readable": "getProjectSettings",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "i8",
+    "readable": "saveProjectSettings",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "QU1",
+    "readable": "addPermissionRules",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "rw",
+    "readable": "SETTINGS_SOURCES",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "aB1",
+    "readable": "REACT_ELEMENT_TYPE",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "F6Q",
+    "readable": "REACT_PORTAL_TYPE",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "V6Q",
+    "readable": "REACT_FRAGMENT_TYPE",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "K6Q",
+    "readable": "REACT_STRICT_MODE_TYPE",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "H6Q",
+    "readable": "REACT_PROFILER_TYPE",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "z6Q",
+    "readable": "REACT_PROVIDER_TYPE",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "D6Q",
+    "readable": "REACT_CONTEXT_TYPE",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "C6Q",
+    "readable": "REACT_FORWARD_REF_TYPE",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "U6Q",
+    "readable": "REACT_SUSPENSE_TYPE",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "$6Q",
+    "readable": "REACT_MEMO_TYPE",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "w6Q",
+    "readable": "REACT_LAZY_TYPE",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "j_0",
+    "readable": "ITERATOR_SYMBOL",
+    "confidence": 0.95,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "k_0",
+    "readable": "ReactNoopUpdateQueue",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "__0",
+    "readable": "objectAssign",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "x_0",
+    "readable": "emptyObject",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Gl1",
+    "readable": "pureComponentPrototype",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "S_0",
+    "readable": "isArray",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "b_0",
+    "readable": "hasOwnProperty",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "Yl1",
+    "readable": "ReactCurrentOwner",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "f_0",
+    "readable": "RESERVED_PROPS",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "y_0",
+    "readable": "SEPARATOR_REGEX",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "M6Q",
+    "readable": "ReactSharedInternals",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "hF1",
+    "readable": "ReactCurrentBatchConfig",
+    "confidence": 0.9,
+    "source": "claude-inference",
+    "context": "",
+    "addedAt": "2025-12-09T15:10:04.805Z"
+  },
+  {
+    "original": "DOQ",
+    "readable": "ENV_PRODUCTION",
+    "confidence": 0.95,
+    "source": "static",
+    "context": "var DOQ = \"production\"",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "pdQ",
+    "readable": "DEFAULT_READ_LINES",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var pdQ = 2000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "W6",
+    "readable": "DEFAULT_READ_LINES",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var W6 = 2000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "ix6",
+    "readable": "MAX_OUTPUT_LENGTH",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var ix6 = 30000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "P2B",
+    "readable": "DEFAULT_TIMEOUT_MS",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var P2B = 120000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "_f5",
+    "readable": "DEFAULT_TIMEOUT_MS",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var _f5 = 120000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "Xd5",
+    "readable": "MAX_OUTPUT_LENGTH",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var Xd5 = 30000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "qw1",
+    "readable": "DEFAULT_READ_LINES",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var qw1 = 2000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "Ew1",
+    "readable": "DEFAULT_READ_LINES",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var Ew1 = 2000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "ZG0",
+    "readable": "MODEL_ALIAS_SONNET",
+    "confidence": 0.95,
+    "source": "static",
+    "context": "var ZG0 = \"sonnet\"",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "XF2",
+    "readable": "SERVICE_VERSION",
+    "confidence": 0.95,
+    "source": "static",
+    "context": "var XF2 = \"claude-code-20250219\"",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "i5B",
+    "readable": "DEFAULT_READ_LINES",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var i5B = 2000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "w25",
+    "readable": "EXIT_PLAN_MODE_TOOL_NAME",
+    "confidence": 0.95,
+    "source": "static",
+    "context": "var w25 = \"ExitPlanMode\"",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "ej",
+    "readable": "TARGET_INPUT_TOKENS",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var ej = 40000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "ZXB",
+    "readable": "TARGET_INPUT_TOKENS",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var ZXB = 40000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "YQ5",
+    "readable": "TARGET_INPUT_TOKENS",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var YQ5 = 40000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "WQ5",
+    "readable": "DEFAULT_READ_LINES",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var WQ5 = 2000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "bQ5",
+    "readable": "MAX_OUTPUT_LENGTH",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var bQ5 = 30000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "QW5",
+    "readable": "DEFAULT_READ_LINES",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var QW5 = 2000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "pBQ",
+    "readable": "DEFAULT_READ_LINES",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var pBQ = 2000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "Jr5",
+    "readable": "MAX_OUTPUT_LENGTH",
+    "confidence": 0.85,
+    "source": "static",
+    "context": "var Jr5 = 30000",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "N1",
+    "readable": "getENVPRODUCTION",
+    "confidence": 0.8,
+    "source": "static",
+    "context": "function returns \"production\"",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "M9B",
+    "readable": "getREADTOOLNAME",
+    "confidence": 0.8,
+    "source": "static",
+    "context": "function returns \"Read\"",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "hGB",
+    "readable": "getWRITETOOLNAME",
+    "confidence": 0.8,
+    "source": "static",
+    "context": "function returns \"Write\"",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "HOB",
+    "readable": "getTASKTOOLNAME",
+    "confidence": 0.8,
+    "source": "static",
+    "context": "function returns \"Task\"",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "aV5",
+    "readable": "getENVPRODUCTION",
+    "confidence": 0.8,
+    "source": "static",
+    "context": "function returns \"production\"",
+    "addedAt": "2025-12-09T15:10:06.398Z"
+  },
+  {
+    "original": "Z",
+    "readable": "Z_TOOL_CONFIG",
+    "confidence": 0.8,
+    "source": "pattern",
+    "context": "{ name: Z, description: G,",
+    "addedAt": "2025-12-09T15:10:41.531Z"
+  },
+  {
+    "original": "J",
+    "readable": "J_TOOL_CONFIG",
+    "confidence": 0.8,
+    "source": "pattern",
+    "context": "{ name: J, description: X,",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "B",
+    "readable": "B_TOOL_CONFIG",
+    "confidence": 0.8,
+    "source": "pattern",
+    "context": "{ name: B, description: Q,",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "getAPIList",
+    "readable": "apiCall",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": "getAPIList(\"/v1/",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "post",
+    "readable": "apiCall",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": "post(\n      \"/v1/",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "error",
+    "readable": "onErrorHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"error\", J)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "response",
+    "readable": "onResponseHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"response\", W)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "timeout",
+    "readable": "onTimeoutHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"timeout\", B)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "socket",
+    "readable": "onSocketHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"socket\", Z)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "abort",
+    "readable": "onAbortHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"abort\", Y)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "close",
+    "readable": "onCloseHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"close\", Y)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "end",
+    "readable": "onEndHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"end\", W)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "unpipe",
+    "readable": "onUnpipeHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"unpipe\", G)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "data",
+    "readable": "onDataHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"data\", OEA)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "conclude",
+    "readable": "onConcludeHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"conclude\", $L9)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "drain",
+    "readable": "onDrainHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"drain\", wL9)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "message",
+    "readable": "onMessageHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"message\", EL9)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "ping",
+    "readable": "onPingHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"ping\", NL9)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "pong",
+    "readable": "onPongHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"pong\", LL9)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "finish",
+    "readable": "onFinishHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"finish\", nEA)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "goaway",
+    "readable": "onGoawayHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"goaway\", Y)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "frameError",
+    "readable": "onFrameErrorHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"frameError\", Y)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "terminated",
+    "readable": "onTerminatedHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"terminated\", K)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "session",
+    "readable": "onSessionHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"session\", X)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "change",
+    "readable": "onChangeHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"change\", UE9)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "unlink",
+    "readable": "onUnlinkHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"unlink\", $E9)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "SIGCONT",
+    "readable": "onSIGCONTHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"SIGCONT\", B)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "input",
+    "readable": "onInputHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"input\", I)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "exit",
+    "readable": "onExitHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"exit\", A)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "blink",
+    "readable": "onBlinkHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"blink\", Z)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "beforeExit",
+    "readable": "onBeforeExitHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"beforeExit\", J)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "suspend",
+    "readable": "onSuspendHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"suspend\", fA)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "resume",
+    "readable": "onResumeHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"resume\", wB)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "warning",
+    "readable": "onWarningHandler",
+    "confidence": 0.7,
+    "source": "pattern",
+    "context": ".on(\"warning\", ju1)",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "Kc0",
+    "readable": "Kc0",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class Kc0 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "A",
+    "readable": "A",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class A extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "fG",
+    "readable": "fG",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class fG extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "p82",
+    "readable": "p82",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class p82 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "Ez0",
+    "readable": "Ez0",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class Ez0 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "S11",
+    "readable": "S11",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class S11 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "fj",
+    "readable": "fj",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class fj extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "uD0",
+    "readable": "uD0",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class uD0 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "uu1",
+    "readable": "uu1",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class uu1 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "WyB",
+    "readable": "WyB",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class WyB extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "tu1",
+    "readable": "tu1",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class tu1 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "hpB",
+    "readable": "hpB",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class hpB extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "UX1",
+    "readable": "UX1",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class UX1 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "B_0",
+    "readable": "B_0",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class B_0 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "rN",
+    "readable": "rN",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class rN extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "QH",
+    "readable": "QH",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class QH extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "Rg",
+    "readable": "Rg",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class Rg extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "oN",
+    "readable": "oN",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class oN extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "I3",
+    "readable": "I3",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class I3 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "De1",
+    "readable": "De1",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class De1 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "ZH",
+    "readable": "ZH",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class ZH extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "jQ",
+    "readable": "jQ",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class jQ extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "M_1",
+    "readable": "M_1",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class M_1 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "iV",
+    "readable": "iV",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class iV extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "u$0",
+    "readable": "u$0",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class u$0 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "XW",
+    "readable": "XW",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class XW extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "uF",
+    "readable": "uF",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class uF extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "u3B",
+    "readable": "u3B",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class u3B extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "Jv1",
+    "readable": "Jv1",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class Jv1 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "gY1",
+    "readable": "gY1",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class gY1 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "Pv1",
+    "readable": "Pv1",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class Pv1 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "Cb",
+    "readable": "Cb",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class Cb extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "Vb1",
+    "readable": "Vb1",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class Vb1 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "yO0",
+    "readable": "yO0",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class yO0 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "kO0",
+    "readable": "kO0",
+    "confidence": 0.9,
+    "source": "pattern",
+    "context": "class kO0 extends Error",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "yE0",
+    "readable": "AGENT_SYSTEM_PROMPT",
+    "confidence": 0.95,
+    "source": "pattern",
+    "context": "var yE0 =\n  \"You are an agent",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "mode",
+    "readable": "permissionMode",
+    "confidence": 0.8,
+    "source": "pattern",
+    "context": "mode === \"bypassPermissions\"",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "W",
+    "readable": "permissionMode",
+    "confidence": 0.8,
+    "source": "pattern",
+    "context": "W === \"bypassPermissions\"",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "Q",
+    "readable": "permissionMode",
+    "confidence": 0.8,
+    "source": "pattern",
+    "context": "Q === \"bypassPermissions\"",
+    "addedAt": "2025-12-09T15:10:41.532Z"
+  },
+  {
+    "original": "aWQ",
+    "readable": "abort",
+    "confidence": 0.765,
+    "source": "llm",
+    "context": "函数检查jobs是否为空，设置index为size，调用回调返回results，这是典型的中止/终止异步操作的模式",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "tWQ",
+    "readable": "parallel",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "使用while循环遍历列表，同时启动多个任务，通过jobs计数判断完成，导出模块显示parallel: wf0()，这是并行执行函数",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "BJQ",
+    "readable": "serialOrdered",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "导出ascending和descending比较函数，递归调用自身处理下一个index，支持排序参数Q，模块导出显示serialOrdered: Tl1()",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "Ef0",
+    "readable": "ascending",
+    "confidence": 0.85,
+    "source": "llm",
+    "context": "经典的升序比较函数实现：A<B返回-1，A>B返回1，相等返回0，且被导出为exports.ascending",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "QJQ",
+    "readable": "descending",
+    "confidence": 0.85,
+    "source": "llm",
+    "context": "返回-1乘以Ef0(ascending)的结果，实现降序排序，且被导出为exports.descending",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "GJQ",
+    "readable": "serial",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "调用ZJQ(serialOrdered)但传入null作为排序参数，模块导出显示serial: Lf0()，是无排序的串行执行",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "xXQ",
+    "readable": "getProxyForUrl",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "解析protocol/host/port，读取npm_config_proxy和各种代理环境变量，处理代理URL格式，这是获取代理配置的函数",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "vXQ",
+    "readable": "shouldProxy",
+    "confidence": 0.765,
+    "source": "llm",
+    "context": "读取no_proxy环境变量，检查host和port是否在排除列表中，返回布尔值决定是否使用代理",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "uXQ",
+    "readable": "parse",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "解析时间字符串如'1d'/'2h'/'30s'，使用正则匹配数字和单位，转换为毫秒值，是ms库的parse函数",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "mXQ",
+    "readable": "fmtShort",
+    "confidence": 0.765,
+    "source": "llm",
+    "context": "将毫秒转换为短格式字符串如'd'/'h'/'m'/'s'/'ms'，与dXQ(长格式)对应，是ms库的短格式化函数",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "dXQ",
+    "readable": "formatDuration",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "函数将毫秒转换为人类可读的时间格式(day/hour/minute/second)，是时间格式化函数",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "iV1",
+    "readable": "formatTimeUnit",
+    "confidence": 0.765,
+    "source": "llm",
+    "context": "辅助函数，将时间值四舍五入并添加单位(带复数s后缀)，用于格式化单个时间单位",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "cXQ",
+    "readable": "createDebug",
+    "confidence": 0.85,
+    "source": "llm",
+    "context": "创建debug实例，设置debug/default/coerce/disable/enable/enabled/humanize等属性，是debug库的核心工厂函数",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "lXQ",
+    "readable": "useColors",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "检测浏览器环境是否支持颜色输出，检查renderer/nwjs/edge/trident/WebkitAppearance等",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "pXQ",
+    "readable": "formatArgs",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "格式化debug输出参数，添加颜色代码(%c)、命名空间和时间差(+humanize)",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "iXQ",
+    "readable": "saveDebug",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "将debug值保存到storage(setItem)或移除(removeItem)，用于持久化debug设置",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "nXQ",
+    "readable": "loadDebug",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "从storage.getItem或process.env.DEBUG加载debug配置值",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "aXQ",
+    "readable": "getLocalStorage",
+    "confidence": 0.85,
+    "source": "llm",
+    "context": "简单的try-catch包装返回localStorage对象",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "GFQ",
+    "readable": "getForceColor",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "解析FORCE_COLOR环境变量，返回颜色级别(0-3)",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "YFQ",
+    "readable": "translateLevel",
+    "confidence": 0.765,
+    "source": "llm",
+    "context": "将颜色级别数字转换为对象{level, hasBasic, has256, has16m}描述颜色支持能力",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "IFQ",
+    "readable": "getColorLevel",
+    "confidence": 0.765,
+    "source": "llm",
+    "context": "检查颜色支持级别(16m/256/basic)，返回0-3表示终端颜色能力",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "Bp1",
+    "readable": "supportsColor",
+    "confidence": 0.85,
+    "source": "llm",
+    "context": "导出为supportsColor，调用IFQ获取颜色级别并返回颜色支持对象",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "JFQ",
+    "readable": "useColors",
+    "confidence": 0.85,
+    "source": "llm",
+    "context": "导出为Mg0.useColors，检查inspectOpts.colors或isatty判断是否使用颜色",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "XFQ",
+    "readable": "formatArgs",
+    "confidence": 0.85,
+    "source": "llm",
+    "context": "导出为Mg0.formatArgs，格式化调试参数，添加ANSI颜色代码和namespace前缀",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "FFQ",
+    "readable": "getDate",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "返回ISO格式日期字符串或空串，用于调试输出的时间戳前缀",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "VFQ",
+    "readable": "log",
+    "confidence": 0.85,
+    "source": "llm",
+    "context": "导出为Mg0.log，使用process.stderr.write输出格式化的调试信息",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "KFQ",
+    "readable": "save",
+    "confidence": 0.85,
+    "source": "llm",
+    "context": "导出为Mg0.save，保存或删除process.env.DEBUG环境变量",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "HFQ",
+    "readable": "load",
+    "confidence": 0.85,
+    "source": "llm",
+    "context": "导出为Mg0.load，读取并返回process.env.DEBUG环境变量",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "zFQ",
+    "readable": "init",
+    "confidence": 0.85,
+    "source": "llm",
+    "context": "导出为Mg0.init，初始化inspectOpts，复制调试选项到新实例",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "Sg0",
+    "readable": "wrap",
+    "confidence": 0.7200000000000001,
+    "source": "llm",
+    "context": "包装http/https模块，设置maxRedirects和maxBodyLength，处理重定向请求",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "yg0",
+    "readable": "noop",
+    "confidence": 0.85,
+    "source": "llm",
+    "context": "空函数体，用作错误处理的占位符回调",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "Kp1",
+    "readable": "parseUrl",
+    "confidence": 0.765,
+    "source": "llm",
+    "context": "解析URL字符串，使用$Q1.parse和UQ1构造函数，验证协议",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "jFQ",
+    "readable": "resolveUrl",
+    "confidence": 0.765,
+    "source": "llm",
+    "context": "解析相对URL，调用$Q1.resolve合并基础URL和相对路径",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "kg0",
+    "readable": "validateIPv6Host",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "正则验证IPv6格式的hostname和host，检测方括号格式",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "Ip1",
+    "readable": "urlToOptions",
+    "confidence": 0.765,
+    "source": "llm",
+    "context": "将URL对象转换为options对象，处理hostname、port、path等属性",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "Zp1",
+    "readable": "getHeaderValue",
+    "confidence": 0.7200000000000001,
+    "source": "llm",
+    "context": "通过正则匹配从对象中获取并删除header值，返回trim后的字符串",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "wQ1",
+    "readable": "createErrorClass",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "创建自定义Error类，设置code、message、prototype和captureStackTrace",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "Hp1",
+    "readable": "destroyRequest",
+    "confidence": 0.765,
+    "source": "llm",
+    "context": "移除事件监听器后销毁请求流，设置noop错误处理器",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "SFQ",
+    "readable": "isSubdomain",
+    "confidence": 0.765,
+    "source": "llm",
+    "context": "检查字符串A是否以.B结尾，即判断是否为子域名",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  },
+  {
+    "original": "yFQ",
+    "readable": "isArrayLike",
+    "confidence": 0.81,
+    "source": "llm",
+    "context": "检查对象是否为类数组，验证typeof为object且有length属性",
+    "addedAt": "2025-12-09T15:11:54.818Z"
+  }
+]

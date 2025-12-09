@@ -1,0 +1,22 @@
+{
+  "name": "claude-code-deobfuscator",
+  "version": "1.0.0",
+  "description": "Claude Code 混淆代码自动还原工具",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "analyze": "node src/index.js",
+    "analyze:llm": "node src/index.js --llm",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.1.62",
+    "@anthropic-ai/claude-code": "^2.0.62",
+    "@anthropic-ai/sdk": "^0.39.0",
+    "acorn": "^8.14.0",
+    "acorn-walk": "^8.3.4",
+    "chalk": "^5.3.0",
+    "escodegen": "^2.1.0",
+    "ora": "^8.1.1"
+  }
+}

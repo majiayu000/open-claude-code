@@ -1,0 +1,71 @@
+{
+  "totalLines": 450258,
+  "totalFiles": 302,
+  "chunkSize": 1500,
+  "categories": {
+    "mcp": {
+      "files": 29,
+      "lines": 41888
+    },
+    "auth": {
+      "files": 61,
+      "lines": 91245
+    },
+    "git": {
+      "files": 34,
+      "lines": 50928
+    },
+    "ui": {
+      "files": 53,
+      "lines": 79314
+    },
+    "api": {
+      "files": 30,
+      "lines": 44656
+    },
+    "telemetry": {
+      "files": 14,
+      "lines": 20982
+    },
+    "config": {
+      "files": 9,
+      "lines": 13494
+    },
+    "lodash": {
+      "files": 5,
+      "lines": 7489
+    },
+    "fs": {
+      "files": 1,
+      "lines": 1498
+    },
+    "tools": {
+      "files": 25,
+      "lines": 37442
+    },
+    "prompts": {
+      "files": 10,
+      "lines": 14894
+    },
+    "commands": {
+      "files": 8,
+      "lines": 11976
+    },
+    "other": {
+      "files": 8,
+      "lines": 11992
+    },
+    "crypto": {
+      "files": 1,
+      "lines": 1499
+    },
+    "process": {
+      "files": 1,
+      "lines": 1499
+    },
+    "agents": {
+      "files": 13,
+      "lines": 19462
+    }
+  }
+}

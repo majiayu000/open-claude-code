@@ -1,0 +1,686 @@
+{
+  "toolDefinitions": {},
+  "classes": {
+    "total": 996,
+    "samples": [
+      {
+        "name": "Iw0",
+        "extends": null,
+        "position": 405200
+      },
+      {
+        "name": "SVA",
+        "extends": null,
+        "position": 444968
+      },
+      {
+        "name": "wF1",
+        "extends": null,
+        "position": 449382
+      },
+      {
+        "name": "js",
+        "extends": null,
+        "position": 455181
+      },
+      {
+        "name": "Rq0",
+        "extends": null,
+        "position": 470797
+      },
+      {
+        "name": "ks",
+        "extends": null,
+        "position": 473935
+      },
+      {
+        "name": "tq0",
+        "extends": null,
+        "position": 487022
+      },
+      {
+        "name": "eq0",
+        "extends": null,
+        "position": 491509
+      },
+      {
+        "name": "XN0",
+        "extends": null,
+        "position": 494290
+      },
+      {
+        "name": "NN0",
+        "extends": null,
+        "position": 502910
+      },
+      {
+        "name": "lN0",
+        "extends": null,
+        "position": 512754
+      },
+      {
+        "name": "oN0",
+        "extends": null,
+        "position": 525121
+      },
+      {
+        "name": "EL0",
+        "extends": null,
+        "position": 536087
+      },
+      {
+        "name": "_x0",
+        "extends": null,
+        "position": 887680
+      },
+      {
+        "name": "QH1",
+        "extends": null,
+        "position": 888597
+      },
+      {
+        "name": "kx0",
+        "extends": "QH1",
+        "position": 889364
+      },
+      {
+        "name": "yx0",
+        "extends": "QH1",
+        "position": 889500
+      },
+      {
+        "name": "IH1",
+        "extends": "Error",
+        "position": 897799
+      },
+      {
+        "name": "PH1",
+        "extends": null,
+        "position": 923712
+      },
+      {
+        "name": "xv0",
+        "extends": null,
+        "position": 924396
+      },
+      {
+        "name": "_H1",
+        "extends": null,
+        "position": 925012
+      },
+      {
+        "name": "vv0",
+        "extends": "_H1",
+        "position": 926453
+      },
+      {
+        "name": "G",
+        "extends": null,
+        "position": 934550
+      },
+      {
+        "name": "Z",
+        "extends": null,
+        "position": 935480
+      },
+      {
+        "name": "Sc0",
+        "extends": null,
+        "position": 2073056
+      },
+      {
+        "name": "gz",
+        "extends": "Error",
+        "position": 2140925
+      },
+      {
+        "name": "fK",
+        "extends": null,
+        "position": 2148588
+      },
+      {
+        "name": "qR",
+        "extends": null,
+        "position": 2151298
+      },
+      {
+        "name": "Y6",
+        "extends": null,
+        "position": 2152626
+      },
+      {
+        "name": "Lm",
+        "extends": "Y6",
+        "position": 2186018
+      },
+      {
+        "name": "Mm",
+        "extends": "Y6",
+        "position": 2192421
+      },
+      {
+        "name": "f9A",
+        "extends": "Y6",
+        "position": 2196988
+      },
+      {
+        "name": "ts",
+        "extends": "Y6",
+        "position": 2197607
+      },
+      {
+        "name": "LKA",
+        "extends": "Y6",
+        "position": 2200515
+      },
+      {
+        "name": "h9A",
+        "extends": "Y6",
+        "position": 2201035
+      },
+      {
+        "name": "g9A",
+        "extends": "Y6",
+        "position": 2201564
+      },
+      {
+        "name": "es",
+        "extends": "Y6",
+        "position": 2202077
+      },
+      {
+        "name": "Nm",
+        "extends": "Y6",
+        "position": 2202390
+      },
+      {
+        "name": "nj",
+        "extends": "Y6",
+        "position": 2202711
+      },
+      {
+        "name": "MKA",
+        "extends": "Y6",
+        "position": 2203108
+      },
+      {
+        "name": "wR",
+        "extends": "Y6",
+        "position": 2203626
+      },
+      {
+        "name": "SY",
+        "extends": "Y6",
+        "position": 2206812
+      },
+      {
+        "name": "u9A",
+        "extends": "Y6",
+        "position": 2214216
+      },
+      {
+        "name": "BvA",
+        "extends": "Y6",
+        "position": 2216869
+      },
+      {
+        "name": "m9A",
+        "extends": "Y6",
+        "position": 2218766
+      },
+      {
+        "name": "aj",
+        "extends": "Y6",
+        "position": 2220174
+      },
+      {
+        "name": "OKA",
+        "extends": "Y6",
+        "position": 2221968
+      },
+      {
+        "name": "RKA",
+        "extends": "Y6",
+        "position": 2223416
+      },
+      {
+        "name": "Ar",
+        "extends": "Y6",
+        "position": 2225682
+      },
+      {
+        "name": "b9A",
+        "extends": "Y6",
+        "position": 2228239
+      },
+      {
+        "name": "d9A",
+        "extends": "Y6",
+        "position": 2231541
+      },
+      {
+        "name": "c9A",
+        "extends": "Y6",
+        "position": 2232066
+      },
+      {
+        "name": "Om",
+        "extends": "Y6",
+        "position": 2232745
+      },
+      {
+        "name": "p9A",
+        "extends": "Y6",
+        "position": 2234391
+      },
+      {
+        "name": "Qr",
+        "extends": "Y6",
+        "position": 2235509
+      },
+      {
+        "name": "NR",
+        "extends": "Y6",
+        "position": 2236399
+      },
+      {
+        "name": "Zv",
+        "extends": "Y6",
+        "position": 2241719
+      },
+      {
+        "name": "l9A",
+        "extends": "Y6",
+        "position": 2242123
+      },
+      {
+        "name": "i9A",
+        "extends": "Y6",
+        "position": 2242832
+      },
+      {
+        "name": "TKA",
+        "extends": "Y6",
+        "position": 2244353
+      },
+      {
+        "name": "GvA",
+        "extends": "Y6",
+        "position": 2244963
+      },
+      {
+        "name": "PKA",
+        "extends": "Y6",
+        "position": 2245333
+      },
+      {
+        "name": "n9A",
+        "extends": "Y6",
+        "position": 2246819
+      },
+      {
+        "name": "_KA",
+        "extends": "Error",
+        "position": 2262883
+      },
+      {
+        "name": "rj",
+        "extends": "Error",
+        "position": 2263028
+      },
+      {
+        "name": "YW",
+        "extends": "Error",
+        "position": 2263064
+      },
+      {
+        "name": "uz",
+        "extends": "Error",
+        "position": 2263199
+      },
+      {
+        "name": "oj",
+        "extends": "Error",
+        "position": 2263430
+      },
+      {
+        "name": "GI",
+        "extends": "Error",
+        "position": 2263781
+      },
+      {
+        "name": "G4A",
+        "extends": null,
+        "position": 2320296
+      },
+      {
+        "name": "gKA",
+        "extends": "Array",
+        "position": 2322811
+      },
+      {
+        "name": "km",
+        "extends": null,
+        "position": 2322935
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2389086
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2412846
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2422544
+      },
+      {
+        "name": "Bs0",
+        "extends": "eY4",
+        "position": 2433534
+      },
+      {
+        "name": "Vs0",
+        "extends": null,
+        "position": 2435763
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2451004
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2460981
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2472300
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2486214
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2492368
+      },
+      {
+        "name": "A",
+        "extends": "Uint8Array",
+        "position": 2506213
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2511855
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2516074
+      },
+      {
+        "name": "A",
+        "extends": "Error",
+        "position": 2641425
+      },
+      {
+        "name": "A",
+        "extends": "nbA",
+        "position": 2642107
+      },
+      {
+        "name": "A",
+        "extends": "nbA",
+        "position": 2642419
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2654624
+      },
+      {
+        "name": "A",
+        "extends": "Error",
+        "position": 2700431
+      },
+      {
+        "name": "aAQ",
+        "extends": null,
+        "position": 2720959
+      },
+      {
+        "name": "B1Q",
+        "extends": null,
+        "position": 2727152
+      },
+      {
+        "name": "J1Q",
+        "extends": null,
+        "position": 2744335
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2758686
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2840050
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2878150
+      },
+      {
+        "name": "A",
+        "extends": null,
+        "position": 2896371
+      },
+      {
+        "name": "A",
+        "extends": "Error",
+        "position": 2913544
+      },
+      {
+        "name": "A",
+        "extends": "k4A",
+        "position": 3003648
+      },
+      {
+        "name": "A",
+        "extends": "k4A",
+        "position": 3004119
+      }
+    ]
+  },
+  "keyFunctions": [
+    "initRuntime"
+  ],
+  "apiPatterns": {
+    "anthropic": [
+      "api.anthropic.com",
+      "api.anthropic.com/api/oauth/claude_cli/create_api_key",
+      "api.anthropic.com/api/oauth/claude_cli/roles",
+      "api.anthropic.com/api/organization/${A}/claude_code_sonnet_1m_access`,",
+      "api.anthropic.com/api/claude_code/organizations/metrics_enabled",
+      "api.anthropic.com/api/claude_code/metrics",
+      "api.anthropic.com/api/hello",
+      "api.anthropic.com/api/claude_code/link_vcs_account",
+      "api.anthropic.com/api/claude_cli_feedback"
+    ],
+    "bedrock": [
+      "AWS_REGION",
+      "AWS_DEFAULT_REGION",
+      "awset",
+      "awsonF",
+      "aws",
+      "awstatus",
+      "AWS_LAMBDA_FUNCTION_NAME)",
+      "aws-lambda",
+      "AWS_EXECUTION_ENV",
+      "AWS_ECS_FARGATE",
+      "aws-fargate",
+      "AWS_ECS_EC2",
+      "aws-ecs",
+      "aws-ec2",
+      "BEDROCK)",
+      "bedrock",
+      "AWS_LAMBDA_FUNCTION_NAME",
+      "AwsChunkedEncodingStream",
+      "aws.amazon.com/sdk-for-javascript/v3/developer-guide/node-configuring-maxsockets.html",
+      "awsAuthMiddleware"
+    ],
+    "vertex": [
+      "VERTEX_REGION_CLAUDE_HAIKU_4_5",
+      "VERTEX_REGION_CLAUDE_3_5_HAIKU",
+      "VERTEX_REGION_CLAUDE_3_5_SONNET",
+      "VERTEX_REGION_CLAUDE_3_7_SONNET",
+      "VERTEX_REGION_CLAUDE_4_1_OPUS",
+      "VERTEX_REGION_CLAUDE_4_0_OPUS",
+      "VERTEX_REGION_CLAUDE_4_5_SONNET",
+      "VERTEX_REGION_CLAUDE_4_0_SONNET",
+      "google-apps.document",
+      "google-apps.presentation",
+      "google-apps.spreadsheet",
+      "google-earth.kml+xml",
+      "google-earth.kmz",
+      "vertex",
+      "VertexAtomicCounterBuffers",
+      "VertexAtomicCounters",
+      "VertexAttribs",
+      "VertexImageUniforms",
+      "VertexOutputComponents",
+      "VertexOutputVectors"
+    ],
+    "oauth": []
+  },
+  "permissions": [
+    "allowedSettingSources:",
+    "PermissionsMode:",
+    "permission",
+    "allowedSettingSources",
+    "PermissionsMode",
+    "allOwnKeys:",
+    "allowMissing",
+    "allowAbsoluteUrls",
+    "allowed",
+    "allowAbsoluteUrls;",
+    "Allowed:",
+    "allowed.",
+    "deny",
+    "allow",
+    "permissions",
+    "allow_cached_response",
+    "ALLOWED_ACCESS_TYPE_CODE",
+    "ALLOWED_ACCESS_TYPE_NAME",
+    "ALLOWED_REQUISITE_CODE",
+    "ALLOW_LIFE_CYCLE_STAGE_CHANGING_REQUISITE_CODE",
+    "ALLOW_MULTIPLE_ACTIVE_VERSIONS_REQUISITE_CODE",
+    "ALLOW_COMPONENT_DEFAULT_VALUE",
+    "ALLOW_RECORD_DEFAULT_VALUE",
+    "ALLOW_SERVER_COMPONENT_DEFAULT_VALUE",
+    "PERMISSION_",
+    "ALLOWED_DROP|OWNER|REGION",
+    "ALLOW_UNSIT|ALPHA_MODE",
+    "ALLOW_",
+    "ALLOW_DAMAGE|FIXED_SUN|BLOCK_TERRAFORM|SANDBOX|DISABLE_",
+    "ALLOW_DIRECT_TELEPORT|RESTRICT_PUSHOBJECT"
+  ],
+  "uiComponents": [
+    "div",
+    "span",
+    "canvas",
+    "ink",
+    "nh1",
+    "Tt",
+    "VU",
+    "oUA",
+    "ec",
+    "LaA",
+    "ah1",
+    "MaA",
+    "OaA",
+    "eh1",
+    "baA",
+    "P56",
+    "NXB",
+    "style",
+    "script",
+    "j",
+    "TjB",
+    "AM6",
+    "QSB",
+    "BSB",
+    "gH",
+    "UGA",
+    "zSB",
+    "WoA",
+    "wp",
+    "s4"
+  ],
+  "telemetryEvents": [
+    "tengu_1p_event_batch_config",
+    "tengu_add_memory_failure",
+    "tengu_add_memory_start",
+    "tengu_add_memory_success",
+    "tengu_agent_created",
+    "tengu_agent_definition_generated",
+    "tengu_agent_parse_error",
+    "tengu_agent_stop_hook_error",
+    "tengu_agent_stop_hook_max_turns",
+    "tengu_agent_stop_hook_success",
+    "tengu_agent_tool_completed",
+    "tengu_agent_tool_selected",
+    "tengu_apiKeyHelper_missing_trust6",
+    "tengu_api_after_normalize",
+    "tengu_api_before_normalize",
+    "tengu_api_cache_breakpoints",
+    "tengu_api_custom_529_overloaded_error",
+    "tengu_api_error",
+    "tengu_api_key_keychain_error",
+    "tengu_api_key_saved_to_config",
+    "tengu_api_key_saved_to_keychain",
+    "tengu_api_opus_fallback_triggered",
+    "tengu_api_query",
+    "tengu_api_retry",
+    "tengu_api_success",
+    "tengu_at_mention_agent_not_found",
+    "tengu_at_mention_agent_success",
+    "tengu_at_mention_extracting_directory_success",
+    "tengu_at_mention_extracting_filename_error",
+    "tengu_at_mention_extracting_filename_success",
+    "tengu_at_mention_mcp_resource_error",
+    "tengu_at_mention_mcp_resource_success",
+    "tengu_atomic_write_error",
+    "tengu_attachment_compute_duration",
+    "tengu_attachment_file_too_large",
+    "tengu_attachments",
+    "tengu_auto_compact_setting_changed",
+    "tengu_auto_compact_succeeded",
+    "tengu_auto_connect_ide_changed",
+    "tengu_auto_install_ide_extension_changed",
+    "tengu_auto_migrate_to_native_attempt",
+    "tengu_auto_migrate_to_native_failure",
+    "tengu_auto_migrate_to_native_partial",
+    "tengu_auto_migrate_to_native_success",
+    "tengu_auto_migrate_to_native_ui_error",
+    "tengu_auto_migrate_to_native_ui_shown",
+    "tengu_auto_migrate_to_native_ui_success",
+    "tengu_auto_updater_fail",
+    "tengu_auto_updater_lock_contention",
+    "tengu_auto_updater_success"
+  ],
+  "errorTypes": []
+}

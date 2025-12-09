@@ -1,0 +1,96 @@
+{
+  "variableMap": {
+    "g5": "ReadTool",
+    "bX": "WriteTool",
+    "R5": "EditTool",
+    "D9": "BashTool",
+    "CD": "GlobTool",
+    "uY": "GrepTool",
+    "s8": "TaskTool",
+    "vX": "WebFetchTool",
+    "O_": "WebSearchTool",
+    "gGB": "TodoWriteTool",
+    "Uf1": "ClaudeCodeGuideAgent"
+  },
+  "architecture": {
+    "tools": [
+      "BASH_MAX_OUTPUT_LENGTH",
+      "SIGHUP",
+      "sharp",
+      "DescriptorProtos",
+      "start",
+      "permissions"
+    ],
+    "agents": [],
+    "commands": [],
+    "providers": [],
+    "handlers": [],
+    "utils": []
+  },
+  "systemPromptFragments": [
+    "`Claude Code was unable to find CLAUDE_CODE_GIT_BASH_PATH path \"...",
+    "\"Claude Code on Windows requires git-bash (https://git-scm.com/downloads/win). If installed but not in PATH, set environment variable pointing to your bash.exe, similar to: CLAUDE_CODE_GIT_BASH_PATH=C...",
+    "`You are analyzing output from a bash command to determine if it should be summarized.\n\nYour task is to:\n1. Determine if the output contains mostly repetitive logs, verbose build output, or other \"...",
+    "\"Claude Opus is not available with the Claude Pro plan. If you have updated your subscription plan recently, run /logout and /login for the plan to take effect.\"...",
+    "\"You are a helpful AI assistant tasked with summarizing conversations.\"...",
+    "\"Claude Code can be used with your Claude subscription or billed based on API usage through your Console account.\"...",
+    "\"Claude Code web sessions require authentication with a Claude.ai account. API key authentication is not sufficient. Please run /login to authenticate, or check your authentication status with /status...",
+    "\"Claude Code web sessions require authentication with a Claude.ai account. API key authentication is not sufficient. Please run /login to authenticate, or check your authentication status with /status...",
+    "\"Claude Code web sessions require authentication with a Claude.ai account. API key authentication is not sufficient. Please run /login to authenticate, or check your authentication status with /status...",
+    "\"You are a helpful AI assistant tasked with summarizing conversations.\"..."
+  ],
+  "configStructure": {
+    "settings": [],
+    "defaults": [],
+    "options": []
+  },
+  "mcpStructure": {
+    "servers": [
+      "MCP server [\"']([^\"']+)[\"']/);",
+      "mcpServers: _.record(_.string(), Tm)",
+      "mcpServers: {},",
+      "McpjsonServers: [],",
+      "mcpServers: _.union([D3A.describe(\"MCP servers to include in the plugin (in addition to those in the .mcp.jso",
+      "MCPB file containing MCP server configuration\"), _.record(_.string(), Tm).describe(\"MCP server configurations keyed by server name\"",
+      "MCP servers configuration file\"), PQB.describe(\"Path or URL to MCPB file\"), _.record(_.string(), Tm).describe(",
+      "MCP server configurations\")])).describe(\"Array of MCP server configurations (paths, MCPB files, or inline defi",
+      "mcpServers?.[Q];",
+      "mcpServers) G.pluginConfigs[A].mcpServers = {};",
+      "mcpServers[Q] = B;",
+      "MCP server configuration from manifest \"${A.name}\"`);",
+      "MCP server configuration from manifest \"${R.name}\"`);",
+      "MCPB manifest: ${H.name} v${H.version} by ${H.author.name}`), !H.server) {",
+      "MCPB manifest for \"${H.name}\" does not define a server configuration`);",
+      "MCP server configuration...\");",
+      "MCP server configuration from manifest \"${H.name}\"`);",
+      "MCP servers from MCPB: ${Q}`);",
+      "MCP server \"${Y}\" from MCPB (extracted to ${I.extractedPath})`), {",
+      "mcpServers) {"
+    ],
+    "tools": [],
+    "resources": [],
+    "transports": []
+  },
+  "codeFlow": {
+    "entryPoints": [
+      "start()",
+      "run()",
+      "main()",
+      "init()"
+    ],
+    "mainLoop": [],
+    "eventHandlers": [
+      "onError =",
+      "onError:",
+      "onInput:",
+      "onMessage =",
+      "onClose:"
+    ]
+  },
+  "statistics": {
+    "mappedVariables": 11,
+    "toolsFound": 6,
+    "commandsFound": 0,
+    "promptFragments": 54
+  }
+}

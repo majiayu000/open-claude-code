@@ -235,7 +235,7 @@ Claude Code 混淆代码自动还原工具
 
   // 默认使用项目中的代码
   const projectRoot = resolve(__dirname, '../../..');
-  const defaultInput = join(projectRoot, 'decompiled/v2.0.62/cli.original.js');
+  const defaultInput = join(projectRoot, 'decompiled/cli.formatted.js');
 
   // 第一个参数可以是文件路径
   const inputFile = args[0] && !args[0].startsWith('--') ? args[0] : defaultInput;

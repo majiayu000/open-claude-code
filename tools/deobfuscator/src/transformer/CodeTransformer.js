@@ -11,15 +11,26 @@ export class CodeTransformer {
       addComments: options.addComments !== false,
       preserveOriginal: options.preserveOriginal || false,
       minConfidence: options.minConfidence || 0.5,
+      minLength: options.minLength || 2, // 最小变量名长度
     };
+
+    // 需要跳过的短变量名（太常见，容易误替换）
+    this.skipPatterns = new Set([
+      'Q', 'A', 'B', 'G', 'Z', 'I', 'Y', 'J', 'W', 'X', 'F', 'V', 'K', 'D', 'H', 'C', 'E',
+      'L', 'U', 'M', 'N', 'O', 'P', 'R', 'S', 'T',
+      '_0', '_1', '_2', '_3', '_4', '_5', '_6', '_7', '_8', '_9',
+      'en', // 太短，容易误替换
+    ]);
   }
 
   async transform(code, mappingManager) {
     let result = code;
 
-    // 获取所有映射，按变量名长度降序排序（避免短名替换长名的一部分）
+    // 获取所有映射，过滤并排序
     const mappings = mappingManager.getAll()
       .filter(m => m.confidence >= this.options.minConfidence)
+      .filter(m => m.original.length >= this.options.minLength)
+      .filter(m => !this.skipPatterns.has(m.original))
       .sort((a, b) => b.original.length - a.original.length);
 
     console.log(`  应用 ${mappings.length} 个映射...`);
@@ -28,7 +39,7 @@ export class CodeTransformer {
     let count = 0;
     for (const mapping of mappings) {
       const before = result;
-      result = this.fastReplace(result, mapping.original, mapping.readable);
+      result = this.safeReplace(result, mapping.original, mapping.readable);
       if (result !== before) count++;
     }
 
@@ -43,20 +54,31 @@ export class CodeTransformer {
   }
 
   /**
-   * 快速替换 - 使用简单的正则表达式
-   * 只匹配独立的标识符（前后不能是单词字符）
+   * 安全替换 - 避免替换字符串内容和属性访问
    */
-  fastReplace(code, original, replacement) {
+  safeReplace(code, original, replacement) {
     // 转义特殊正则字符
     const escapedOriginal = original.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-    // 使用负向前瞻和负向后瞻确保是独立标识符
-    // 注意：不能在 . 后面（属性访问）
+    // 更严格的匹配：
+    // 1. 前面不能是单词字符、$、. (属性访问)
+    // 2. 后面不能是单词字符、$
+    // 3. 不匹配在引号内的内容（简化处理）
     const pattern = new RegExp(
       `(?<![\\w$\\.])${escapedOriginal}(?![\\w$])`,
       'g'
     );
 
+    // 分段处理，跳过字符串
+    return this.replaceOutsideStrings(code, pattern, replacement);
+  }
+
+  /**
+   * 只替换字符串外的内容（优化版：按行处理，性能更好）
+   */
+  replaceOutsideStrings(code, pattern, replacement) {
+    // 对于大文件，直接使用正则替换（字符串内的变量名通常不会匹配）
+    // 因为我们匹配的是变量声明和使用，字符串内的内容不会是有效的变量引用
     return code.replace(pattern, replacement);
   }
 

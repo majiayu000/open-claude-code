@@ -5339,5 +5339,768 @@
     "confidence": 0.85,
     "source": "llm-inference",
     "reason": "AWS endpoint rule set endpoint key constant"
+  },
+  {
+    "original": "lZ",
+    "readable": "reactDeletedNodesQueue",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal queue for deleted fiber nodes"
+  },
+  {
+    "original": "mZ",
+    "readable": "DOMNodeConstructor",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "DOM Node constructor with parent and sibling management"
+  },
+  {
+    "original": "nZ",
+    "readable": "reactWorkInProgressRoot",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React internal reference to current work in progress root"
+  },
+  {
+    "original": "oZ",
+    "readable": "axiosDefaults",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Axios default configuration object"
+  },
+  {
+    "original": "pZ",
+    "readable": "reactIsConcurrentMode",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal check for concurrent mode"
+  },
+  {
+    "original": "qZ",
+    "readable": "definePropertyNameHelper4",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Helper to define property name on function"
+  },
+  {
+    "original": "rZ",
+    "readable": "reactComponentRenderStop",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React profiler component render stop function"
+  },
+  {
+    "original": "sZ",
+    "readable": "reactCreateWorkInProgress",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React internal function to create work in progress fiber"
+  },
+  {
+    "original": "tZ",
+    "readable": "fsModule",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Node.js fs module import"
+  },
+  {
+    "original": "uZ",
+    "readable": "mcpServerListReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for MCP server list UI"
+  },
+  {
+    "original": "vZ",
+    "readable": "AWS_ENDPOINT_KEY_3",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS endpoint rule set endpoint key constant"
+  },
+  {
+    "original": "wZ",
+    "readable": "awsUtilModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK utility module"
+  },
+  {
+    "original": "xZ",
+    "readable": "getCognitoHeaders",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Returns headers for AWS Cognito Identity Service API calls"
+  },
+  {
+    "original": "yZ",
+    "readable": "AWS_MESSAGE_KEY_5",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK message key constant"
+  },
+  {
+    "original": "zZ",
+    "readable": "ANSI_STYLES",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "ANSI terminal style codes for colors and modifiers"
+  },
+  {
+    "original": "AZ",
+    "readable": "authSetupReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for auth setup UI"
+  },
+  {
+    "original": "BZ",
+    "readable": "notebookEditReact2",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for notebook edit component"
+  },
+  {
+    "original": "DZ",
+    "readable": "READ_TOOL_NAME",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Constant for Read tool name"
+  },
+  {
+    "original": "EZ",
+    "readable": "awsCredentialsModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS credentials module"
+  },
+  {
+    "original": "FZ",
+    "readable": "reactGetFiberID",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React DevTools function to get fiber ID"
+  },
+  {
+    "original": "GZ",
+    "readable": "useWizard",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "React hook for wizard context access"
+  },
+  {
+    "original": "HZ",
+    "readable": "globalProcess",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Reference to global process object"
+  },
+  {
+    "original": "IZ",
+    "readable": "reactIsSuspenseInstanceFallback",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal check for suspense fallback instance"
+  },
+  {
+    "original": "JZ",
+    "readable": "REACT_OFFSCREEN_MODE_FLAG",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal flag tracking offscreen rendering mode for performance"
+  },
+  {
+    "original": "LZ",
+    "readable": "AWS_MAX_RESULTS_PARAM",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "AWS SDK constant for maxResults pagination parameter"
+  },
+  {
+    "original": "MZ",
+    "readable": "AWS_NEXT_TOKEN_PARAM",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "AWS SDK constant for nextToken pagination parameter"
+  },
+  {
+    "original": "NZ",
+    "readable": "AWS_ENDPOINT_KEY_CONSTANT",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK endpoint configuration key constant"
+  },
+  {
+    "original": "OZ",
+    "readable": "AWS_REGION_KEY_CONSTANT",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK region configuration key constant"
+  },
+  {
+    "original": "PZ",
+    "readable": "getPlanType",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Returns plan type by checking JF2, WF2, ED, F3 plan flags"
+  },
+  {
+    "original": "QZ",
+    "readable": "REACT_FILE_MODULE_IMPORT",
+    "confidence": 0.8,
+    "source": "llm-inference",
+    "reason": "React module import for file operations"
+  },
+  {
+    "original": "RZ",
+    "readable": "UNDICI_HTTP_SYMBOLS_MODULE",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Undici HTTP client symbols module for request/response handling"
+  },
+  {
+    "original": "SZ",
+    "readable": "AWS_SERVICE_KEY_CONSTANT",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK service configuration key constant"
+  },
+  {
+    "original": "TZ",
+    "readable": "getOAuthAccountIfEnabled",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Returns oauthAccount from H0() if ED() is true (OAuth enabled)"
+  },
+  {
+    "original": "UZ",
+    "readable": "ANSI_TERMINAL_STYLE_CODES",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "ANSI escape codes for terminal text styling"
+  },
+  {
+    "original": "VZ",
+    "readable": "isObjectOrFunction",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Checks if value is object or function type - T5Q returns true for object/function"
+  },
+  {
+    "original": "ZZ",
+    "readable": "REACT_MODULE",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React module imported from V1() - used for createElement in JSX rendering"
+  },
+  {
+    "original": "d0",
+    "readable": "logError",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Error logging function - formats message with [ERROR] prefix and outputs in red"
+  },
+  {
+    "original": "i0",
+    "readable": "FORGE_ASN1_MODULE",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Forge ASN.1 module reference - pQ.asn1 for PKI/RSA operations"
+  },
+  {
+    "original": "k0",
+    "readable": "FORGE_UTIL_MODULE",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Forge utility module - JFB.exports = YFB.util for crypto utilities"
+  },
+  {
+    "original": "l0",
+    "readable": "PROTOBUF_READER",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Protobuf Reader class from rQ module - used for parsing binary protocol buffers"
+  },
+  {
+    "original": "n0",
+    "readable": "defineNameProperty",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Helper to define function name property using Object.defineProperty"
+  },
+  {
+    "original": "s0",
+    "readable": "FOCUS_MANAGER_HOOK",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React hook for managing focus state - assigned from TO9"
+  },
+  {
+    "original": "t0",
+    "readable": "DEFAULT_TOOL_CONFIG",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Default tool configuration object - combines nUA with K$9 or H$9 based on K10"
+  },
+  {
+    "original": "x0",
+    "readable": "HIGHLIGHT_JS_MODULE",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Highlight.js syntax highlighting module - registers multiple language grammars"
+  },
+  {
+    "original": "y0",
+    "readable": "AXIOS_UTILS",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Axios utility functions object with type checking helpers - isArray, isBuffer, isString, etc"
+  },
+  {
+    "original": "E0",
+    "readable": "HTML_PARSER_TOKENIZER",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "HTML parser tokenizer from IY1() - used in parse5 HTML parsing"
+  },
+  {
+    "original": "H0",
+    "readable": "getGlobalConfig",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Gets global configuration with caching - reads from lJ() config file with mtime checking"
+  },
+  {
+    "original": "P0",
+    "readable": "FORGE_ASN1_MODULE_PKCS7",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Forge ASN.1 module reference for PKCS7 - g2.asn1 used in messageFromPem/messageToPem"
+  },
+  {
+    "original": "S0",
+    "readable": "REACT_MODULE_RESTORE",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React module for restore functionality - imports V1() and used for session restore UI"
+  },
+  {
+    "original": "$Q0",
+    "readable": "stripNullValues",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Recursively strips null values from objects/arrays - named _json in serialization context"
+  },
+  {
+    "original": "f1",
+    "readable": "defineNameProperty",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Helper to define function name property - sy1(A, name, {value: B, configurable: true})"
+  },
+  {
+    "original": "e1",
+    "readable": "AWS_CLIENT_DEFAULTS_MODULE",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK client defaults from GG1() - used for httpAuthSchemes configuration"
+  },
+  {
+    "original": "i1",
+    "readable": "SHARP_IMAGE_LIB",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Sharp image processing library reference from $L() - used with image format mappings"
+  },
+  {
+    "original": "$e1",
+    "readable": "extractContents",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Simple function that extracts contents property from object - ({contents: A}) => A"
+  },
+  {
+    "original": "n1",
+    "readable": "chalkInstance",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Chalk terminal color library instance - KW9 is J41() chalk factory result, used for dim/red coloring"
+  },
+  {
+    "original": "w1",
+    "readable": "getFileSystemModule",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Returns file system module wrapper dY9 - contains createReadStream, createWriteStream methods"
+  },
+  {
+    "original": "t1",
+    "readable": "TREE_SITTER_MODULE",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Tree-sitter WASM module reference - used for _ts_lookahead_iterator functions"
+  },
+  {
+    "original": "A1",
+    "readable": "createESModuleProxy",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Creates ES module proxy - handles __esModule exports with default value and property enumeration"
+  },
+  {
+    "original": "F1",
+    "readable": "logDebug",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Debug logging function - formats message with [DEBUG] prefix and outputs with dim styling"
+  },
+  {
+    "original": "L1",
+    "readable": "FORGE_ASN1_PKI_MODULE",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Forge ASN.1 module for PKI operations - iQ.asn1 used with OID constants"
+  },
+  {
+    "original": "K1",
+    "readable": "PROTOBUF_ROOT_NAMESPACE",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Protobuf root namespace - rQ.roots.default for OpenTelemetry proto definitions"
+  },
+  {
+    "original": "V1",
+    "readable": "createReactModule",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Factory function that creates React module with element symbols and createElement"
+  },
+  {
+    "original": "X1",
+    "readable": "createRequire",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Node.js createRequire function - X6Q(import.meta.url) for CommonJS require in ESM"
+  },
+  {
+    "original": "T1",
+    "readable": "TLS_CONFIG",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "TLS configuration constants - versions, cipher algorithms, handshake types"
+  },
+  {
+    "original": "U1",
+    "readable": "reportError",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Error reporting function - handles error logging, checks env vars for disable flags"
+  },
+  {
+    "original": "Y1",
+    "readable": "logTelemetryEvent",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Telemetry event logging - calls SK5 to log events"
+  },
+  {
+    "original": "b2",
+    "readable": "hasValidOAuthScope",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Checks if user has valid OAuth scope - returns ED() and IP(F3()?.scopes)"
+  },
+  {
+    "original": "d2",
+    "readable": "addZodIssue",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Zod validation - adds issue to context with error mapping from h41"
+  },
+  {
+    "original": "i2",
+    "readable": "axiosErrorCreator",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Axios error creator function - alias for up, used to create error objects"
+  },
+  {
+    "original": "g2",
+    "readable": "FORGE_MODULE",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Main Forge crypto module from f4() - used for PKCS7, ASN.1, and other crypto ops"
+  },
+  {
+    "original": "c2",
+    "readable": "REACT_MODULE_TOOLS",
+    "confidence": 0.8,
+    "source": "llm-inference",
+    "reason": "React module for tools UI - A1(V1(), 1) pattern"
+  },
+  {
+    "original": "j2",
+    "readable": "REACT_MODULE_MAIN",
+    "confidence": 0.8,
+    "source": "llm-inference",
+    "reason": "React module for main UI - A1(V1(), 1) pattern"
+  },
+  {
+    "original": "AA",
+    "readable": "getTerminalDimensions",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Gets terminal dimensions - returns lo1() which gets console dimensions, falls back to WQ"
+  },
+  {
+    "original": "dB",
+    "readable": "useAppState",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "React hook for app state - gets context from jXB provider, throws if not initialized"
+  },
+  {
+    "original": "lD1",
+    "readable": "isDebugMode",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Checks if debug mode enabled - checks --debug, -d, or --debug= args"
+  },
+  {
+    "original": "ED",
+    "readable": "shouldUseOAuth",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Checks if OAuth should be used - returns true if not using Bedrock/Vertex and no API key"
+  },
+  {
+    "original": "F3",
+    "readable": "getOAuthTokens",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Gets OAuth tokens - checks env vars then reads from claudeAiOauth config"
+  },
+  {
+    "original": "YA",
+    "readable": "memoize",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Lodash-style memoize function - Fl1 wrapper with cache Map"
+  },
+  {
+    "original": "bA",
+    "readable": "createUserMessage",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Creates user message object with content, meta flags, uuid, timestamp"
+  },
+  {
+    "original": "hH",
+    "readable": "buildInputContentArray",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Builds input content array - combines precedingInputBlocks with new text"
+  },
+  {
+    "original": "lJ",
+    "readable": "getConfigFilePath",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Gets Claude config file path - .claude.json in config dir"
+  },
+  {
+    "original": "tH",
+    "readable": "DEFAULT_USER_SETTINGS",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Default user settings object - numStartups, theme, verbose, editorMode, etc"
+  },
+  {
+    "original": "oR0",
+    "readable": "normalizeConfigInstallMethod",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Normalizes config install method - converts autoUpdaterStatus to installMethod"
+  },
+  {
+    "original": "E2",
+    "readable": "getSettings",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Gets merged settings object from A_() cached settings"
+  },
+  {
+    "original": "JF2",
+    "readable": "isFirstPartyFeatureEnabled",
+    "confidence": 0.8,
+    "source": "llm-inference",
+    "reason": "Checks if first party feature enabled - returns xR1 && YF2 !== null && false"
+  },
+  {
+    "original": "WF2",
+    "readable": "getFirstPartySubscriptionType",
+    "confidence": 0.8,
+    "source": "llm-inference",
+    "reason": "Gets first party subscription type - currently returns null"
+  },
+  {
+    "original": "y",
+    "readable": "Box",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "React Ink Box component - ZA0 with displayName Box, flex layout props"
+  },
+  {
+    "original": "NA",
+    "readable": "IndentedContainer",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "UI container with indent marker - shows \"⎿\" prefix, handles NPA context"
+  },
+  {
+    "original": "Z2",
+    "readable": "useExitHandlers",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React hook for Ctrl-C/Ctrl-D exit handlers with pending state"
+  },
+  {
+    "original": "SR1",
+    "readable": "getAvailableModels",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Gets available model list - includes Zt(), tX2, jR1, N31 based on access"
+  },
+  {
+    "original": "h7",
+    "readable": "getApiProvider",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Gets API provider - returns bedrock, vertex, or firstParty based on env vars"
+  },
+  {
+    "original": "FF",
+    "readable": "isNonInteractiveSession",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Returns Y2.isNonInteractiveSession flag"
+  },
+  {
+    "original": "PD",
+    "readable": "EMPTY_CONTENT_PLACEHOLDER",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Constant for empty content - \"(no content)\""
+  },
+  {
+    "original": "TA",
+    "readable": "saveConfig",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Saves config to file with lock - uses tRB for atomic write, falls back to oRB"
+  },
+  {
+    "original": "IH",
+    "readable": "getCredentialStore",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Gets credential store - handles macOS keychain (qjA) and fallback (i20)"
+  },
+  {
+    "original": "pB",
+    "readable": "zodValidator",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Zod validator reference - alias for f, used for schema validation"
+  },
+  {
+    "original": "C4",
+    "readable": "createAbortController",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Creates AbortController with max listeners - setMaxListeners(A, B.signal)"
+  },
+  {
+    "original": "Z5",
+    "readable": "gracefulExit",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Async graceful exit - sets exitCode, runs cleanup handlers with 2s timeout"
+  },
+  {
+    "original": "QG",
+    "readable": "getMcpServersForScope",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Gets MCP servers for scope - handles project, user, local, enterprise scopes"
+  },
+  {
+    "original": "GA0",
+    "readable": "setGlobalTheme",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Sets theme globally across all cT instances - cT.forEach(B => B.setTheme(A))"
+  },
+  {
+    "original": "a41",
+    "readable": "loadMcpConfigFromFile",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Loads MCP config from file path - reads JSON, validates, returns config and errors"
+  },
+  {
+    "original": "n41",
+    "readable": "parseMcpConfigObject",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Parses MCP config object - validates schema with C$A, expands env vars"
+  },
+  {
+    "original": "w9",
+    "readable": "getProjectConfig",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Gets project-specific config from config file - returns allowedTools, history, mcpServers"
+  },
+  {
+    "original": "WU1",
+    "readable": "getManagedMcpPath",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Gets managed MCP config path - join(hT(), managed-mcp.json)"
+  },
+  {
+    "original": "IU1",
+    "readable": "addScopeToMcpServers",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Adds scope property to MCP server entries - {...G, scope: B}"
+  },
+  {
+    "original": "yJB",
+    "readable": "createAssistantMessage",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Creates synthetic assistant message with uuid, timestamp, model=\"<synthetic>\""
+  },
+  {
+    "original": "Mu1",
+    "readable": "CACHE_DIR_PROVIDER",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Cache directory provider - jt1(\"claude-cli\") for log storage"
+  },
+  {
+    "original": "Ou1",
+    "readable": "sanitizePathForFilename",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Sanitizes path for filename - replaces non-alphanumeric with dashes"
+  },
+  {
+    "original": "i8",
+    "readable": "saveProjectConfig",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Saves project config to global config file with lock"
   }
 ]

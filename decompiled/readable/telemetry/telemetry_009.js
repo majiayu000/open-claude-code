@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: telemetry_009.js
+ * 处理时间: 2025-12-09T03:41:38.394Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.054Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -162,8 +164,7 @@
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.attributes = [], W.events = [], W.links = [];
                             if (J.defaults) {
                                 if (J.bytes === String) W.traceId = "";
@@ -315,8 +316,7 @@ var W = {};
                                 return W
                             }, I.toObject = function(J, W) {
                                 if (!W) W = {};
-
-var X = {};
+                                var X = {};
                                 if (W.arrays || W.defaults) X.attributes = [];
                                 if (W.defaults) {
                                     if (_A.Long) {
@@ -454,8 +454,7 @@ var X = {};
                                 return W
                             }, I.toObject = function(J, W) {
                                 if (!W) W = {};
-
-var X = {};
+                                var X = {};
                                 if (W.arrays || W.defaults) X.attributes = [];
                                 if (W.defaults) {
                                     if (W.bytes === String) X.traceId = "";
@@ -563,8 +562,7 @@ var X = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.defaults) W.message = "", W.code = J.enums === String ? "STATUS_CODE_UNSET" : 0;
                             if (Y.message != null && Y.hasOwnProperty("message")) W.message = Y.message;
                             if (Y.code != null && Y.hasOwnProperty("code")) W.code = J.enums === String ? RA.opentelemetry.proto.trace.v1.Status.StatusCode[Y.code] === void 0 ? Y.code : RA.opentelemetry.proto.trace.v1.Status.StatusCode[Y.code] : Y.code;
@@ -664,8 +662,7 @@ var W = {};
                                 return W
                             }, I.toObject = function(J, W) {
                                 if (!W) W = {};
-
-var X = {};
+                                var X = {};
                                 if (W.arrays || W.defaults) X.resourceSpans = [];
                                 if (J.resourceSpans && J.resourceSpans.length) {
                                     X.resourceSpans = [];
@@ -731,8 +728,7 @@ var X = {};
                                 return W
                             }, I.toObject = function(J, W) {
                                 if (!W) W = {};
-
-var X = {};
+                                var X = {};
                                 if (W.defaults) X.partialSuccess = null;
                                 if (J.partialSuccess != null && J.hasOwnProperty("partialSuccess")) X.partialSuccess = RA.opentelemetry.proto.collector.trace.v1.ExportTracePartialSuccess.toObject(J.partialSuccess, W);
                                 return X
@@ -805,8 +801,7 @@ var X = {};
                                 return W
                             }, I.toObject = function(J, W) {
                                 if (!W) W = {};
-
-var X = {};
+                                var X = {};
                                 if (W.defaults) {
                                     if (_A.Long) {
                                         var F = new _A.Long(0, 0, !1);
@@ -904,8 +899,7 @@ var X = {};
                                 return W
                             }, I.toObject = function(J, W) {
                                 if (!W) W = {};
-
-var X = {};
+                                var X = {};
                                 if (W.arrays || W.defaults) X.resourceMetrics = [];
                                 if (J.resourceMetrics && J.resourceMetrics.length) {
                                     X.resourceMetrics = [];
@@ -971,8 +965,7 @@ var X = {};
                                 return W
                             }, I.toObject = function(J, W) {
                                 if (!W) W = {};
-
-var X = {};
+                                var X = {};
                                 if (W.defaults) X.partialSuccess = null;
                                 if (J.partialSuccess != null && J.hasOwnProperty("partialSuccess")) X.partialSuccess = RA.opentelemetry.proto.collector.metrics.v1.ExportMetricsPartialSuccess.toObject(J.partialSuccess, W);
                                 return X
@@ -1045,8 +1038,7 @@ var X = {};
                                 return W
                             }, I.toObject = function(J, W) {
                                 if (!W) W = {};
-
-var X = {};
+                                var X = {};
                                 if (W.defaults) {
                                     if (_A.Long) {
                                         var F = new _A.Long(0, 0, !1);
@@ -1144,8 +1136,7 @@ var X = {};
                                 return W
                             }, I.toObject = function(J, W) {
                                 if (!W) W = {};
-
-var X = {};
+                                var X = {};
                                 if (W.arrays || W.defaults) X.resourceLogs = [];
                                 if (J.resourceLogs && J.resourceLogs.length) {
                                     X.resourceLogs = [];
@@ -1211,8 +1202,7 @@ var X = {};
                                 return W
                             }, I.toObject = function(J, W) {
                                 if (!W) W = {};
-
-var X = {};
+                                var X = {};
                                 if (W.defaults) X.partialSuccess = null;
                                 if (J.partialSuccess != null && J.hasOwnProperty("partialSuccess")) X.partialSuccess = RA.opentelemetry.proto.collector.logs.v1.ExportLogsPartialSuccess.toObject(J.partialSuccess, W);
                                 return X
@@ -1285,8 +1275,7 @@ var X = {};
                                 return W
                             }, I.toObject = function(J, W) {
                                 if (!W) W = {};
-
-var X = {};
+                                var X = {};
                                 if (W.defaults) {
                                     if (_A.Long) {
                                         var F = new _A.Long(0, 0, !1);
@@ -1374,8 +1363,7 @@ var X = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.resourceMetrics = [];
                             if (Y.resourceMetrics && Y.resourceMetrics.length) {
                                 W.resourceMetrics = [];
@@ -1472,8 +1460,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.scopeMetrics = [];
                             if (J.defaults) W.resource = null, W.schemaUrl = "";
                             if (Y.resource != null && Y.hasOwnProperty("resource")) W.resource = RA.opentelemetry.proto.resource.v1.Resource.toObject(Y.resource, J);

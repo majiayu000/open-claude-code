@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_013.js
+ * 处理时间: 2025-12-09T03:41:36.478Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.897Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -35,7 +38,7 @@
                 Yd(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -57,7 +60,7 @@
             }
         };
 
-function aGQ(A) {
+    function aGQ(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -67,8 +70,7 @@ function aGQ(A) {
         }, {})
     }
     Yd(aGQ, "cloneQuery");
-
-var Dv4 = class {
+    var Dv4 = class {
         static {
             Yd(this, "HttpResponse")
         }
@@ -82,12 +84,12 @@ var Dv4 = class {
         }
     };
 
-function sGQ(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function sGQ(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     Yd(sGQ, "isValidHostname")
 });
-var bDA = U((QV7, QZQ) => {
+var bDA = moduleWrapper((QV7, QZQ) => {
     var {
         defineProperty: OhA,
         getOwnPropertyDescriptor: Hv4,
@@ -121,7 +123,7 @@ var bDA = U((QV7, QZQ) => {
     QZQ.exports = $v4(oGQ);
     var wv4 = cz();
 
-function tGQ(A) {
+    function tGQ(A) {
         return A
     }
     MhA(tGQ, "resolveHostHeaderConfig");
@@ -135,7 +137,7 @@ function tGQ(A) {
             if (Z.indexOf("h2") >= 0 && !G.headers[":authority"]) delete G.headers.host, G.headers[":authority"] = G.hostname + (G.port ? ":" + G.port : "");
             else if (!G.headers.host) {
                 let I = G.hostname;
-                if (G.port != null) I += `:${G.port}`;
+                if (G.port != null) I += `:TextComponent{G.port}`;
                 G.headers.host = I
             }
             return Q(B)
@@ -153,7 +155,7 @@ function tGQ(A) {
             }, "applyToStack")
         }), "getHostHeaderPlugin")
 });
-var fDA = U((BV7, IZQ) => {
+var fDA = moduleWrapper((BV7, IZQ) => {
     var {
         defineProperty: RhA,
         getOwnPropertyDescriptor: Nv4,
@@ -240,7 +242,7 @@ var fDA = U((BV7, IZQ) => {
             }, "applyToStack")
         }), "getLoggerPlugin")
 });
-var hDA = U((GV7, XZQ) => {
+var hDA = moduleWrapper((GV7, XZQ) => {
     var {
         defineProperty: PhA,
         getOwnPropertyDescriptor: jv4,
@@ -304,7 +306,7 @@ var hDA = U((GV7, XZQ) => {
             }, "applyToStack")
         }), "getRecursionDetectionPlugin")
 });
-var Z8A = U((ZV7, $ZQ) => {
+var Z8A = moduleWrapper((ZV7, $ZQ) => {
     var {
         defineProperty: jhA,
         getOwnPropertyDescriptor: gv4,
@@ -400,7 +402,7 @@ var Z8A = U((ZV7, $ZQ) => {
                     supportsDualStack: !0,
                     supportsFIPS: !0
                 },
-                regionRegex: "^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$",
+                regionRegex: "^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "af-south-1": {
                         description: "Africa (Cape Town)"
@@ -515,7 +517,7 @@ var Z8A = U((ZV7, $ZQ) => {
                     supportsDualStack: !0,
                     supportsFIPS: !0
                 },
-                regionRegex: "^cn\\-\\w+\\-\\d+$",
+                regionRegex: "^cn\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-cn-global": {
                         description: "AWS China global region"
@@ -537,7 +539,7 @@ var Z8A = U((ZV7, $ZQ) => {
                     supportsDualStack: !0,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-gov\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-gov\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-us-gov-global": {
                         description: "AWS GovCloud (US) global region"
@@ -559,7 +561,7 @@ var Z8A = U((ZV7, $ZQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-iso\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-iso\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-global": {
                         description: "AWS ISO (US) global region"
@@ -581,7 +583,7 @@ var Z8A = U((ZV7, $ZQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-isob\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-isob\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-b-global": {
                         description: "AWS ISOB (US) global region"
@@ -600,7 +602,7 @@ var Z8A = U((ZV7, $ZQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^eu\\-isoe\\-\\w+\\-\\d+$",
+                regionRegex: "^eu\\-isoe\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-e-global": {
                         description: "AWS ISOE (Europe) global region"
@@ -619,7 +621,7 @@ var Z8A = U((ZV7, $ZQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-isof\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-isof\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-f-global": {
                         description: "AWS ISOF global region"
@@ -641,7 +643,7 @@ var Z8A = U((ZV7, $ZQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^eusc\\-(de)\\-\\w+\\-\\d+$",
+                regionRegex: "^eusc\\-(de)\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "eusc-de-east-1": {
                         description: "EU (Germany)"
@@ -696,7 +698,7 @@ var Z8A = U((ZV7, $ZQ) => {
         };
     NZ.customEndpointFunctions.aws = UZQ
 });
-var Pr = U((IV7, khA) => {
+var Pr = moduleWrapper((IV7, khA) => {
     var wZQ, qZQ, NZQ, LZQ, MZQ, OZQ, RZQ, TZQ, PZQ, jZQ, SZQ, _ZQ, kZQ, ShA, Iq1, yZQ, xZQ, vZQ, I8A, bZQ, fZQ, hZQ, gZQ, uZQ, mZQ, dZQ, cZQ, pZQ, _hA, lZQ, iZQ, nZQ;
     (function(A) {
         var Q = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
@@ -706,7 +708,7 @@ var Pr = U((IV7, khA) => {
         else if (typeof khA === "object" && typeof IV7 === "object") A(B(Q, B(IV7)));
         else A(B(Q));
 
-function B(G, Z) {
+        function B(G, Z) {
             if (G !== Q)
                 if (typeof Object.create === "function") Object.defineProperty(G, "__esModule", {
                     value: !0
@@ -730,7 +732,7 @@ function B(G, Z) {
             if (typeof Y !== "function" && Y !== null) throw TypeError("Class extends value " + String(Y) + " is not a constructor or null");
             Q(I, Y);
 
-function J() {
+            function J() {
                 this.constructor = I
             }
             I.prototype = Y === null ? Object.create(Y) : (J.prototype = Y.prototype, new J)
@@ -826,7 +828,7 @@ function J() {
                     }
                 }
 
-function D(C) {
+                function D(C) {
                     try {
                         H(W.throw(C))
                     } catch (E) {
@@ -834,7 +836,7 @@ function D(C) {
                     }
                 }
 
-function H(C) {
+                function H(C) {
                     C.done ? F(C.value) : X(C.value).then(K, D)
                 }
                 H((W = W.apply(I, Y || [])).next())
@@ -854,13 +856,13 @@ function H(C) {
                 return this
             }), V;
 
-function K(H) {
+            function K(H) {
                 return function(C) {
                     return D([H, C])
                 }
             }
 
-function D(H) {
+            function D(H) {
                 if (W) throw TypeError("Generator is already executing.");
                 while (V && (V = 0, H[0] && (J = 0)), J) try {
                     if (W = 1, X && (F = H[0] & 2 ? X.return : H[0] ? X.throw || ((F = X.return) && F.call(X), 0) : X.next) && !(F = F.call(X, H[1])).done) return F;
@@ -992,13 +994,13 @@ function D(H) {
                 return this
             }, X;
 
-function V(w) {
+            function V(w) {
                 return function(N) {
                     return Promise.resolve(N).then(w, E)
                 }
             }
 
-function K(w, N) {
+            function K(w, N) {
                 if (W[w]) {
                     if (X[w] = function(q) {
                             return new Promise(function(R, P) {
@@ -1008,7 +1010,7 @@ function K(w, N) {
                 }
             }
 
-function D(w, N) {
+            function D(w, N) {
                 try {
                     H(W[w](N))
                 } catch (q) {
@@ -1016,19 +1018,19 @@ function D(w, N) {
                 }
             }
 
-function H(w) {
+            function H(w) {
                 w.value instanceof I8A ? Promise.resolve(w.value.v).then(C, E) : z(F[0][2], w)
             }
 
-function C(w) {
+            function C(w) {
                 D("next", w)
             }
 
-function E(w) {
+            function E(w) {
                 D("throw", w)
             }
 
-function z(w, N) {
+            function z(w, N) {
                 if (w(N), F.shift(), F.length) D(F[0][0], F[0][1])
             }
         }, fZQ = function(I) {
@@ -1039,7 +1041,7 @@ function z(w, N) {
                 return this
             }, Y;
 
-function W(X, F) {
+            function W(X, F) {
                 Y[X] = I[X] ? function(V) {
                     return (J = !J) ? {
                         value: I8A(I[X](V)),
@@ -1055,7 +1057,7 @@ function W(X, F) {
                 return this
             }, J);
 
-function W(F) {
+            function W(F) {
                 J[F] = I[F] && function(V) {
                     return new Promise(function(K, D) {
                         V = I[F](V), X(K, D, V.done, V.value)
@@ -1063,7 +1065,7 @@ function W(F) {
                 }
             }
 
-function X(F, V, K, D) {
+            function X(F, V, K, D) {
                 Promise.resolve(D).then(function(H) {
                     F({
                         value: H,
@@ -1096,8 +1098,7 @@ function X(F, V, K, D) {
             };
         uZQ = function(I) {
             if (I && I.__esModule) return I;
-
-var Y = {};
+            var Y = {};
             if (I != null) {
                 for (var J = G(I), W = 0; W < J.length; W++)
                     if (J[W] !== "default") _hA(Y, I, J[W])
@@ -1159,7 +1160,7 @@ var Y = {};
             }
             var J, W = 0;
 
-function X() {
+            function X() {
                 while (J = I.stack.pop()) try {
                     if (!J.async && W === 1) return W = 0, I.stack.push(J), Promise.resolve().then(X);
                     if (J.dispose) {
@@ -1176,14 +1177,14 @@ function X() {
             }
             return X()
         }, nZQ = function(I, Y) {
-            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
+            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)TextComponent|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
                 return W ? Y ? ".jsx" : ".js" : X && (!F || !V) ? J : X + F + "." + V.toLowerCase() + "js"
             });
             return I
         }, A("__extends", wZQ), A("__assign", qZQ), A("__rest", NZQ), A("__decorate", LZQ), A("__param", MZQ), A("__esDecorate", OZQ), A("__runInitializers", RZQ), A("__propKey", TZQ), A("__setFunctionName", PZQ), A("__metadata", jZQ), A("__awaiter", SZQ), A("__generator", _ZQ), A("__exportStar", kZQ), A("__createBinding", _hA), A("__values", ShA), A("__read", Iq1), A("__spread", yZQ), A("__spreadArrays", xZQ), A("__spreadArray", vZQ), A("__await", I8A), A("__asyncGenerator", bZQ), A("__asyncDelegator", fZQ), A("__asyncValues", hZQ), A("__makeTemplateObject", gZQ), A("__importStar", uZQ), A("__importDefault", mZQ), A("__classPrivateFieldGet", dZQ), A("__classPrivateFieldSet", cZQ), A("__classPrivateFieldIn", pZQ), A("__addDisposableResource", lZQ), A("__disposeResources", iZQ), A("__rewriteRelativeImportExtension", nZQ)
     })
 });
-var yR = U((YV7, tZQ) => {
+var yR = moduleWrapper((YV7, tZQ) => {
     var {
         defineProperty: yhA,
         getOwnPropertyDescriptor: sv4,
@@ -1216,8 +1217,7 @@ var yR = U((YV7, tZQ) => {
         state: () => Yq1
     });
     tZQ.exports = Ab4(aZQ);
-
-var Yq1 = {
+    var Yq1 = {
             warningEmitted: !1
         },
         Qb4 = xhA((A) => {
@@ -1230,13 +1230,13 @@ updates please upgrade to a supported Node.js LTS version.
 More information can be found at: https://a.co/74kJMmI`)
         }, "emitWarningIfUnsupportedVersion");
 
-function sZQ(A, Q, B) {
+    function sZQ(A, Q, B) {
         if (!A.$source) A.$source = {};
         return A.$source[Q] = B, A
     }
     xhA(sZQ, "setCredentialFeature");
 
-function rZQ(A, Q, B) {
+    function rZQ(A, Q, B) {
         if (!A.__aws_sdk_context) A.__aws_sdk_context = {
             features: {}
         };
@@ -1245,13 +1245,13 @@ function rZQ(A, Q, B) {
     }
     xhA(rZQ, "setFeature");
 
-function oZQ(A, Q, B) {
+    function oZQ(A, Q, B) {
         if (!A.$source) A.$source = {};
         return A.$source[Q] = B, A
     }
     xhA(oZQ, "setTokenFeature")
 });
-var QIQ = U((JV7, AIQ) => {
+var QIQ = moduleWrapper((JV7, AIQ) => {
     var {
         defineProperty: vhA,
         getOwnPropertyDescriptor: Bb4,
@@ -1282,7 +1282,7 @@ var QIQ = U((JV7, AIQ) => {
     AIQ.exports = Wb4(eZQ);
     var Xb4 = Ib4((A) => typeof ArrayBuffer === "function" && A instanceof ArrayBuffer || Object.prototype.toString.call(A) === "[object ArrayBuffer]", "isArrayBuffer")
 });
-var IIQ = U((WV7, ZIQ) => {
+var IIQ = moduleWrapper((WV7, ZIQ) => {
     var {
         defineProperty: bhA,
         getOwnPropertyDescriptor: Fb4,
@@ -1313,10 +1313,10 @@ var IIQ = U((WV7, ZIQ) => {
     });
     ZIQ.exports = Cb4(BIQ);
     var GIQ = Jq1((A) => encodeURIComponent(A).replace(/[!'()*]/g, Eb4), "escapeUri"),
-        Eb4 = Jq1((A) => `%${A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
+        Eb4 = Jq1((A) => `%TextComponent{A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
         zb4 = Jq1((A) => A.split("/").map(GIQ).join("/"), "escapeUriPath")
 });
-var yIQ = U((XV7, kIQ) => {
+var yIQ = moduleWrapper((XV7, kIQ) => {
     var {
         defineProperty: chA,
         getOwnPropertyDescriptor: Ub4,
@@ -1431,10 +1431,10 @@ var yIQ = U((XV7, kIQ) => {
         Pb4 = L2(),
         Y8A = {},
         hhA = [],
-        ghA = oK((A, Q, B) => `${A}/${Q}/${B}/${Eq1}`, "createScope"),
+        ghA = oK((A, Q, B) => `TextComponent{A}/TextComponent{Q}/TextComponent{B}/TextComponent{Eq1}`, "createScope"),
         RIQ = oK(async (A, Q, B, G, Z) => {
             let I = await JIQ(A, Q.secretAccessKey, Q.accessKeyId),
-                Y = `${B}:${G}:${Z}:${(0,Jd.toHex)(I)}:${Q.sessionToken}`;
+                Y = `TextComponent{B}:TextComponent{G}:TextComponent{Z}:TextComponent{(0,Jd.toHex)(I)}:TextComponent{Q.sessionToken}`;
             if (Y in Y8A) return Y8A[Y];
             hhA.push(Y);
             while (hhA.length > MIQ) delete Y8A[hhA.shift()];

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_008.js
+ * 处理时间: 2025-12-09T03:41:38.983Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.095Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -42,7 +45,7 @@
             }, F.lutimesSync = function() {}
         }
 
-function G(F) {
+        function G(F) {
             if (!F) return F;
             return function(V, K, D) {
                 return F.call(A, V, K, function(H) {
@@ -52,7 +55,7 @@ function G(F) {
             }
         }
 
-function Z(F) {
+        function Z(F) {
             if (!F) return F;
             return function(V, K) {
                 try {
@@ -63,7 +66,7 @@ function Z(F) {
             }
         }
 
-function I(F) {
+        function I(F) {
             if (!F) return F;
             return function(V, K, D, H) {
                 return F.call(A, V, K, D, function(C) {
@@ -73,7 +76,7 @@ function I(F) {
             }
         }
 
-function Y(F) {
+        function Y(F) {
             if (!F) return F;
             return function(V, K, D) {
                 try {
@@ -84,12 +87,12 @@ function Y(F) {
             }
         }
 
-function J(F) {
+        function J(F) {
             if (!F) return F;
             return function(V, K, D) {
                 if (typeof K === "function") D = K, K = null;
 
-function H(C, E) {
+                function H(C, E) {
                     if (E) {
                         if (E.uid < 0) E.uid += 4294967296;
                         if (E.gid < 0) E.gid += 4294967296
@@ -100,7 +103,7 @@ function H(C, E) {
             }
         }
 
-function W(F) {
+        function W(F) {
             if (!F) return F;
             return function(V, K) {
                 var D = K ? F.call(A, V, K) : F.call(A, V);
@@ -112,7 +115,7 @@ function W(F) {
             }
         }
 
-function X(F) {
+        function X(F) {
             if (!F) return !0;
             if (F.code === "ENOSYS") return !0;
             var V = !process.getuid || process.getuid() !== 0;
@@ -123,17 +126,17 @@ function X(F) {
         }
     }
 });
-var Yi0 = U((DZ7, Ii0) => {
-    var Zi0 = UA("stream").Stream;
+var Yi0 = moduleWrapper((DZ7, Ii0) => {
+    var Zi0 = nodeRequire("stream").Stream;
     Ii0.exports = l74;
 
-function l74(A) {
+    function l74(A) {
         return {
             ReadStream: Q,
             WriteStream: B
         };
 
-function Q(G, Z) {
+        function Q(G, Z) {
             if (!(this instanceof Q)) return new Q(G, Z);
             Zi0.call(this);
             var I = this;
@@ -166,7 +169,7 @@ function Q(G, Z) {
             })
         }
 
-function B(G, Z) {
+        function B(G, Z) {
             if (!(this instanceof B)) return new B(G, Z);
             Zi0.call(this), this.path = G, this.fd = null, this.writable = !0, this.flags = "w", this.encoding = "binary", this.mode = 438, this.bytesWritten = 0, Z = Z || {};
             var I = Object.keys(Z);
@@ -183,13 +186,13 @@ function B(G, Z) {
         }
     }
 });
-var Wi0 = U((HZ7, Ji0) => {
+var Wi0 = moduleWrapper((HZ7, Ji0) => {
     Ji0.exports = n74;
     var i74 = Object.getPrototypeOf || function(A) {
         return A.__proto__
     };
 
-function n74(A) {
+    function n74(A) {
         if (A === null || typeof A !== "object") return A;
         if (A instanceof Object) var Q = {
             __proto__: i74(A)
@@ -200,19 +203,19 @@ function n74(A) {
         }), Q
     }
 });
-var mK = U((CZ7, gC1) => {
-    var kY = UA("fs"),
+var mK = moduleWrapper((CZ7, gC1) => {
+    var kY = nodeRequire("fs"),
         a74 = Gi0(),
         s74 = Yi0(),
         r74 = Wi0(),
-        wvA = UA("util"),
+        wvA = nodeRequire("util"),
         uK, NvA;
     if (typeof Symbol === "function" && typeof Symbol.for === "function") uK = Symbol.for("graceful-fs.queue"), NvA = Symbol.for("graceful-fs.previous");
     else uK = "___graceful-fs.queue", NvA = "___graceful-fs.previous";
 
-function o74() {}
+    function o74() {}
 
-function Fi0(A, Q) {
+    function Fi0(A, Q) {
         Object.defineProperty(A, uK, {
             get: function() {
                 return Q
@@ -245,7 +248,7 @@ GFS4: `), console.error(A)
                     value: A
                 }), Q
             }(kY.closeSync), /\bgfs4\b/i.test(process.env.NODE_DEBUG || "")) process.on("exit", function() {
-            Zr(kY[uK]), UA("assert").equal(kY[uK].length, 0)
+            Zr(kY[uK]), nodeRequire("assert").equal(kY[uK].length, 0)
         })
     }
     var bC1;
@@ -253,16 +256,16 @@ GFS4: `), console.error(A)
     gC1.exports = fC1(r74(kY));
     if (process.env.TEST_GRACEFUL_FS_GLOBAL_PATCH && !kY.__patched) gC1.exports = fC1(kY), kY.__patched = !0;
 
-function fC1(A) {
+    function fC1(A) {
         a74(A), A.gracefulify = fC1, A.createReadStream = R, A.createWriteStream = P;
         var Q = A.readFile;
         A.readFile = B;
 
-function B(x, p, u) {
+        function B(x, p, u) {
             if (typeof p === "function") u = p, p = null;
             return o(x, p, u);
 
-function o(l, k, d, QA) {
+            function o(l, k, d, QA) {
                 return Q(l, k, function(IA) {
                     if (IA && (IA.code === "EMFILE" || IA.code === "ENFILE")) t9A([o, [l, k, d], IA, QA || Date.now(), Date.now()]);
                     else if (typeof d === "function") d.apply(this, arguments)
@@ -272,11 +275,11 @@ function o(l, k, d, QA) {
         var G = A.writeFile;
         A.writeFile = Z;
 
-function Z(x, p, u, o) {
+        function Z(x, p, u, o) {
             if (typeof u === "function") o = u, u = null;
             return l(x, p, u, o);
 
-function l(k, d, QA, IA, HA) {
+            function l(k, d, QA, IA, HA) {
                 return G(k, d, QA, function(wA) {
                     if (wA && (wA.code === "EMFILE" || wA.code === "ENFILE")) t9A([l, [k, d, QA, IA], wA, HA || Date.now(), Date.now()]);
                     else if (typeof IA === "function") IA.apply(this, arguments)
@@ -286,11 +289,11 @@ function l(k, d, QA, IA, HA) {
         var I = A.appendFile;
         if (I) A.appendFile = Y;
 
-function Y(x, p, u, o) {
+        function Y(x, p, u, o) {
             if (typeof u === "function") o = u, u = null;
             return l(x, p, u, o);
 
-function l(k, d, QA, IA, HA) {
+            function l(k, d, QA, IA, HA) {
                 return I(k, d, QA, function(wA) {
                     if (wA && (wA.code === "EMFILE" || wA.code === "ENFILE")) t9A([l, [k, d, QA, IA], wA, HA || Date.now(), Date.now()]);
                     else if (typeof IA === "function") IA.apply(this, arguments)
@@ -300,11 +303,11 @@ function l(k, d, QA, IA, HA) {
         var J = A.copyFile;
         if (J) A.copyFile = W;
 
-function W(x, p, u, o) {
+        function W(x, p, u, o) {
             if (typeof u === "function") o = u, u = 0;
             return l(x, p, u, o);
 
-function l(k, d, QA, IA, HA) {
+            function l(k, d, QA, IA, HA) {
                 return J(k, d, QA, function(wA) {
                     if (wA && (wA.code === "EMFILE" || wA.code === "ENFILE")) t9A([l, [k, d, QA, IA], wA, HA || Date.now(), Date.now()]);
                     else if (typeof IA === "function") IA.apply(this, arguments)
@@ -315,7 +318,7 @@ function l(k, d, QA, IA, HA) {
         A.readdir = V;
         var F = /^v[0-5]\./;
 
-function V(x, p, u) {
+        function V(x, p, u) {
             if (typeof p === "function") u = p, p = null;
             var o = F.test(process.version) ? function(d, QA, IA, HA) {
                 return X(d, l(d, QA, IA, HA))
@@ -324,7 +327,7 @@ function V(x, p, u) {
             };
             return o(x, p, u);
 
-function l(k, d, QA, IA) {
+            function l(k, d, QA, IA) {
                 return function(HA, wA) {
                     if (HA && (HA.code === "EMFILE" || HA.code === "ENFILE")) t9A([o, [k, d, QA], HA, IA || Date.now(), Date.now()]);
                     else {
@@ -384,12 +387,12 @@ function l(k, d, QA, IA) {
             configurable: !0
         });
 
-function z(x, p) {
+        function z(x, p) {
             if (this instanceof z) return D.apply(this, arguments), this;
             else return z.apply(Object.create(z.prototype), arguments)
         }
 
-function w() {
+        function w() {
             var x = this;
             v(x.path, x.flags, x.mode, function(p, u) {
                 if (p) {
@@ -399,12 +402,12 @@ function w() {
             })
         }
 
-function N(x, p) {
+        function N(x, p) {
             if (this instanceof N) return H.apply(this, arguments), this;
             else return N.apply(Object.create(N.prototype), arguments)
         }
 
-function q() {
+        function q() {
             var x = this;
             v(x.path, x.flags, x.mode, function(p, u) {
                 if (p) x.destroy(), x.emit("error", p);
@@ -412,21 +415,21 @@ function q() {
             })
         }
 
-function R(x, p) {
+        function R(x, p) {
             return new A.ReadStream(x, p)
         }
 
-function P(x, p) {
+        function P(x, p) {
             return new A.WriteStream(x, p)
         }
         var y = A.open;
         A.open = v;
 
-function v(x, p, u, o) {
+        function v(x, p, u, o) {
             if (typeof u === "function") o = u, u = null;
             return l(x, p, u, o);
 
-function l(k, d, QA, IA, HA) {
+            function l(k, d, QA, IA, HA) {
                 return y(k, d, QA, function(wA, KA) {
                     if (wA && (wA.code === "EMFILE" || wA.code === "ENFILE")) t9A([l, [k, d, QA, IA], wA, HA || Date.now(), Date.now()]);
                     else if (typeof IA === "function") IA.apply(this, arguments)
@@ -436,19 +439,19 @@ function l(k, d, QA, IA, HA) {
         return A
     }
 
-function t9A(A) {
+    function t9A(A) {
         Zr("ENQUEUE", A[0].name, A[1]), kY[uK].push(A), hC1()
     }
     var qvA;
 
-function Xi0() {
+    function Xi0() {
         var A = Date.now();
         for (var Q = 0; Q < kY[uK].length; ++Q)
             if (kY[uK][Q].length > 2) kY[uK][Q][3] = A, kY[uK][Q][4] = A;
         hC1()
     }
 
-function hC1() {
+    function hC1() {
         if (clearTimeout(qvA), qvA = void 0, kY[uK].length === 0) return;
         var A = kY[uK].shift(),
             Q = A[0],
@@ -471,7 +474,7 @@ function hC1() {
         if (qvA === void 0) qvA = setTimeout(hC1, 0)
     }
 });
-var Ki0 = U((EZ7, Vi0) => {
+var Ki0 = moduleWrapper((EZ7, Vi0) => {
     function dN(A, Q) {
         if (typeof Q === "boolean") Q = {
             forever: Q
@@ -534,8 +537,7 @@ var Ki0 = U((EZ7, Vi0) => {
     };
     dN.prototype.mainError = function() {
         if (this._errors.length === 0) return null;
-
-var A = {},
+        var A = {},
             Q = null,
             B = 0;
         for (var G = 0; G < this._errors.length; G++) {
@@ -547,7 +549,7 @@ var A = {},
         return Q
     }
 });
-var Hi0 = U((e74) => {
+var Hi0 = moduleWrapper((e74) => {
     var t74 = Ki0();
     e74.operation = function(A) {
         var Q = e74.timeouts(A);
@@ -559,8 +561,7 @@ var Hi0 = U((e74) => {
     };
     e74.timeouts = function(A) {
         if (A instanceof Array) return [].concat(A);
-
-var Q = {
+        var Q = {
             retries: 10,
             factor: 2,
             minTimeout: 1000,
@@ -569,8 +570,7 @@ var Q = {
         };
         for (var B in A) Q[B] = A[B];
         if (Q.minTimeout > Q.maxTimeout) throw Error("minTimeout is greater than maxTimeout");
-
-var G = [];
+        var G = [];
         for (var Z = 0; Z < Q.retries; Z++) G.push(this.createTimeout(Z, Q));
         if (A && A.forever && !G.length) G.push(this.createTimeout(Z, Q));
         return G.sort(function(I, Y) {
@@ -607,12 +607,12 @@ var G = [];
         }
     }
 });
-var Ci0 = U((UZ7, LvA) => {
+var Ci0 = moduleWrapper((UZ7, LvA) => {
     LvA.exports = ["SIGABRT", "SIGALRM", "SIGHUP", "SIGINT", "SIGTERM"];
     if (process.platform !== "win32") LvA.exports.push("SIGVTALRM", "SIGXCPU", "SIGXFSZ", "SIGUSR2", "SIGTRAP", "SIGSYS", "SIGQUIT", "SIGIOT");
     if (process.platform === "linux") LvA.exports.push("SIGIO", "SIGPOLL", "SIGPWR", "SIGSTKFLT", "SIGUNUSED")
 });
-var Ei0 = U(($Z7, A4A) => {
+var Ei0 = moduleWrapper(($Z7, A4A) => {
     var SI = global.process,
         Ir = function(A) {
             return A && typeof A === "object" && typeof A.removeListener === "function" && typeof A.emit === "function" && typeof A.reallyExit === "function" && typeof A.listeners === "function" && typeof A.kill === "function" && typeof A.pid === "number" && typeof A.on === "function"
@@ -621,7 +621,7 @@ var Ei0 = U(($Z7, A4A) => {
         return function() {}
     };
     else {
-        if (uC1 = UA("assert"), Yr = Ci0(), mC1 = /^win/i.test(SI.platform), e9A = UA("events"), typeof e9A !== "function") e9A = e9A.EventEmitter;
+        if (uC1 = nodeRequire("assert"), Yr = Ci0(), mC1 = /^win/i.test(SI.platform), e9A = nodeRequire("events"), typeof e9A !== "function") e9A = e9A.EventEmitter;
         if (SI.__signal_exit_emitter__) $F = SI.__signal_exit_emitter__;
         else $F = SI.__signal_exit_emitter__ = new e9A, $F.count = 0, $F.emitted = {};
         if (!$F.infinite) $F.setMaxListeners(1 / 0), $F.infinite = !0;
@@ -630,8 +630,7 @@ var Ei0 = U(($Z7, A4A) => {
             if (uC1.equal(typeof A, "function", "a callback must be provided for exit handler"), Jr === !1) MvA();
             var B = "exit";
             if (Q && Q.alwaysLast) B = "afterexit";
-
-var G = function() {
+            var G = function() {
                 if ($F.removeListener(B, A), $F.listeners("exit").length === 0 && $F.listeners("afterexit").length === 0) yKA()
             };
             return $F.on(B, A), G
@@ -678,10 +677,10 @@ var G = function() {
     }
     var uC1, Yr, mC1, e9A, $F, yKA, jm, xKA, Jr, MvA, OvA, dC1, vKA, cC1
 });
-var Ui0 = U((IG4, pC1) => {
+var Ui0 = moduleWrapper((IG4, pC1) => {
     var zi0 = Symbol();
 
-function GG4(A, Q, B) {
+    function GG4(A, Q, B) {
         let G = Q[zi0];
         if (G) return Q.stat(A, (I, Y) => {
             if (I) return B(I);
@@ -700,7 +699,7 @@ function GG4(A, Q, B) {
         })
     }
 
-function ZG4(A) {
+    function ZG4(A) {
         let Q = Date.now();
         if (A === "s") Q = Math.ceil(Q / 1000) * 1000;
         return new Date(Q)
@@ -708,24 +707,24 @@ function ZG4(A) {
     IG4.probe = GG4;
     IG4.getMtime = ZG4
 });
-var Li0 = U((HG4, fKA) => {
-    var WG4 = UA("path"),
+var Li0 = moduleWrapper((HG4, fKA) => {
+    var WG4 = nodeRequire("path"),
         nC1 = mK(),
         XG4 = Hi0(),
         FG4 = Ei0(),
         $i0 = Ui0(),
         Wv = {};
 
-function bKA(A, Q) {
-        return Q.lockfilePath || `${A}.lock`
+    function bKA(A, Q) {
+        return Q.lockfilePath || `TextComponent{A}.lock`
     }
 
-function aC1(A, Q, B) {
+    function aC1(A, Q, B) {
         if (!Q.realpath) return B(null, WG4.resolve(A));
         Q.fs.realpath(A, B)
     }
 
-function iC1(A, Q, B) {
+    function iC1(A, Q, B) {
         let G = bKA(A, Q);
         Q.fs.mkdir(G, (Z) => {
             if (!Z) return $i0.probe(G, Q.fs, (I, Y, J) => {
@@ -760,18 +759,18 @@ function iC1(A, Q, B) {
         })
     }
 
-function wi0(A, Q) {
+    function wi0(A, Q) {
         return A.mtime.getTime() < Date.now() - Q.stale
     }
 
-function qi0(A, Q, B) {
+    function qi0(A, Q, B) {
         Q.fs.rmdir(bKA(A, Q), (G) => {
             if (G && G.code !== "ENOENT") return B(G);
             B()
         })
     }
 
-function RvA(A, Q) {
+    function RvA(A, Q) {
         let B = Wv[A];
         if (B.updateTimeout) return;
         if (B.updateDelay = B.updateDelay || Q.update, B.updateTimeout = setTimeout(() => {
@@ -802,13 +801,13 @@ function RvA(A, Q) {
             }, B.updateDelay), B.updateTimeout.unref) B.updateTimeout.unref()
     }
 
-function lC1(A, Q, B) {
+    function lC1(A, Q, B) {
         if (Q.released = !0, Q.updateTimeout) clearTimeout(Q.updateTimeout);
         if (Wv[A] === Q) delete Wv[A];
         Q.options.onCompromised(B)
     }
 
-function VG4(A, Q, B) {
+    function VG4(A, Q, B) {
         Q = {
             stale: 1e4,
             update: null,
@@ -849,7 +848,7 @@ function VG4(A, Q, B) {
         })
     }
 
-function Ni0(A, Q, B) {
+    function Ni0(A, Q, B) {
         Q = {
             fs: nC1,
             realpath: !0,
@@ -864,7 +863,7 @@ function Ni0(A, Q, B) {
         })
     }
 
-function KG4(A, Q, B) {
+    function KG4(A, Q, B) {
         Q = {
             stale: 1e4,
             realpath: !0,
@@ -879,7 +878,7 @@ function KG4(A, Q, B) {
         })
     }
 
-function DG4() {
+    function DG4() {
         return Wv
     }
     FG4(() => {
@@ -895,10 +894,10 @@ function DG4() {
     HG4.check = KG4;
     HG4.getLocks = DG4
 });
-var Oi0 = U((wZ7, Mi0) => {
+var Oi0 = moduleWrapper((wZ7, Mi0) => {
     var $G4 = mK();
 
-function wG4(A) {
+    function wG4(A) {
         let Q = ["mkdir", "realpath", "stat", "rmdir", "utimes"],
             B = {
                 ...A
@@ -908,7 +907,7 @@ function wG4(A) {
                 let I = Z.pop(),
                     Y;
                 try {
-                    Y = A[`${G}Sync`](...Z)
+                    Y = A[`TextComponent{G}Sync`](...Z)
                 } catch (J) {
                     return I(J)
                 }
@@ -917,7 +916,7 @@ function wG4(A) {
         }), B
     }
 
-function qG4(A) {
+    function qG4(A) {
         return (...Q) => new Promise((B, G) => {
             Q.push((Z, I) => {
                 if (Z) G(Z);
@@ -926,7 +925,7 @@ function qG4(A) {
         })
     }
 
-function NG4(A) {
+    function NG4(A) {
         return (...Q) => {
             let B, G;
             if (Q.push((Z, I) => {
@@ -936,7 +935,7 @@ function NG4(A) {
         }
     }
 
-function LG4(A) {
+    function LG4(A) {
         if (A = {
                 ...A
             }, A.fs = wG4(A.fs || $G4), typeof A.retries === "number" && A.retries > 0 || A.retries && typeof A.retries.retries === "number" && A.retries.retries > 0) throw Object.assign(Error("Cannot use retries with the sync api"), {
@@ -950,37 +949,36 @@ function LG4(A) {
         toSyncOptions: LG4
     }
 });
-var hKA = U((qZ7, Sm) => {
+var hKA = moduleWrapper((qZ7, Sm) => {
     var Q4A = Li0(),
         {
             toPromise: TvA,
             toSync: PvA,
             toSyncOptions: sC1
         } = Oi0();
-
-async function Ri0(A, Q) {
+    async function Ri0(A, Q) {
         let B = await TvA(Q4A.lock)(A, Q);
         return TvA(B)
     }
 
-function MG4(A, Q) {
+    function MG4(A, Q) {
         let B = PvA(Q4A.lock)(A, sC1(Q));
         return PvA(B)
     }
 
-function OG4(A, Q) {
+    function OG4(A, Q) {
         return TvA(Q4A.unlock)(A, Q)
     }
 
-function RG4(A, Q) {
+    function RG4(A, Q) {
         return PvA(Q4A.unlock)(A, sC1(Q))
     }
 
-function TG4(A, Q) {
+    function TG4(A, Q) {
         return TvA(Q4A.check)(A, Q)
     }
 
-function PG4(A, Q) {
+    function PG4(A, Q) {
         return PvA(Q4A.check)(A, sC1(Q))
     }
     Sm.exports = Ri0;
@@ -991,7 +989,6 @@ function PG4(A, Q) {
     Sm.exports.check = TG4;
     Sm.exports.checkSync = PG4
 });
-
 class G4A {
     heap;
     length;
@@ -1015,13 +1012,13 @@ class G4A {
     }
 }
 var B4A, Pi0, rC1, ji0 = (A, Q, B, G) => {
-        typeof rC1.emitWarning === "function" ? rC1.emitWarning(A, Q, B, G) : console.error(`[${B}] ${Q}: ${A}`)
+        typeof rC1.emitWarning === "function" ? rC1.emitWarning(A, Q, B, G) : console.error(`[TextComponent{B}] TextComponent{Q}: TextComponent{A}`)
     },
     jvA, Ti0, jG4 = (A) => !Pi0.has(A),
     NZ7, _m = (A) => A && A === Math.floor(A) && A > 0 && isFinite(A),
     Si0 = (A) => !_m(A) ? null : A <= Math.pow(2, 8) ? Uint8Array : A <= Math.pow(2, 16) ? Uint16Array : A <= Math.pow(2, 32) ? Uint32Array : A <= Number.MAX_SAFE_INTEGER ? gKA : null,
     gKA, km;
-var SvA = L(() => {
+var SvA = lazyLoader(() => {
     B4A = typeof performance === "object" && performance && typeof performance.now === "function" ? performance : Date, Pi0 = new Set, rC1 = typeof process === "object" && !!process ? process : {}, jvA = globalThis.AbortController, Ti0 = globalThis.AbortSignal;
     if (typeof jvA > "u") {
         Ti0 = class {
@@ -1092,14 +1089,14 @@ var SvA = L(() => {
         #D;
         #q;
         #N;
-        #U;
-        #L;
+        #moduleWrapper;
+        #lazyLoader;
         #P;
         #E;
         static unsafeExposeInternals(A) {
             return {
                 starts: A.#N,
-                ttls: A.#U,
+                ttls: A.#moduleWrapper,
                 sizes: A.#q,
                 keyMap: A.#V,
                 keyList: A.#W,
@@ -1118,7 +1115,7 @@ var SvA = L(() => {
                 moveToTail: (Q) => A.#_(Q),
                 indexes: (Q) => A.#M(Q),
                 rindexes: (Q) => A.#O(Q),
-                isStale: (Q) => A.#$(Q)
+                isStale: (Q) => A.#TextComponent(Q)
             }
         }
         get max() {
@@ -1181,7 +1178,7 @@ var SvA = L(() => {
             if (this.#G = C, this.#P = !!C, this.#V = new Map, this.#W = Array(Q).fill(void 0), this.#Y = Array(Q).fill(void 0), this.#C = new P(Q), this.#z = new P(Q), this.#H = 0, this.#K = 0, this.#w = G4A.create(Q), this.#I = 0, this.#F = 0, typeof W === "function") this.#B = W;
             if (typeof X === "function") this.#Z = X, this.#D = [];
             else this.#Z = void 0, this.#D = void 0;
-            if (this.#L = !!this.#B, this.#E = !!this.#Z, this.noDisposeOnSet = !!F, this.noUpdateTTL = !!V, this.noDeleteOnFetchRejection = !!z, this.allowStaleOnFetchRejection = !!N, this.allowStaleOnFetchAbort = !!q, this.ignoreFetchAbort = !!R, this.maxEntrySize !== 0) {
+            if (this.#lazyLoader = !!this.#B, this.#E = !!this.#Z, this.noDisposeOnSet = !!F, this.noUpdateTTL = !!V, this.noDeleteOnFetchRejection = !!z, this.allowStaleOnFetchRejection = !!N, this.allowStaleOnFetchAbort = !!q, this.ignoreFetchAbort = !!R, this.maxEntrySize !== 0) {
                 if (this.#Q !== 0) {
                     if (!_m(this.#Q)) throw TypeError("maxSize must be a positive integer if specified")
                 }
@@ -1203,10 +1200,10 @@ var SvA = L(() => {
         #v() {
             let A = new gKA(this.#A),
                 Q = new gKA(this.#A);
-            this.#U = A, this.#N = Q, this.#b = (Z, I, Y = B4A.now()) => {
+            this.#moduleWrapper = A, this.#N = Q, this.#b = (Z, I, Y = B4A.now()) => {
                 if (Q[Z] = I !== 0 ? Y : 0, A[Z] = I, I !== 0 && this.ttlAutopurge) {
                     let J = setTimeout(() => {
-                        if (this.#$(Z)) this.#R(this.#W[Z], "expire")
+                        if (this.#TextComponent(Z)) this.#R(this.#W[Z], "expire")
                     }, I + 1);
                     if (J.unref) J.unref()
                 }
@@ -1240,7 +1237,7 @@ var SvA = L(() => {
                 if (!Y || !J) return 1 / 0;
                 let W = (B || G()) - J;
                 return Y - W
-            }, this.#$ = (Z) => {
+            }, this.#TextComponent = (Z) => {
                 let I = Q[Z],
                     Y = A[Z];
                 return !!Y && !!I && (B || G()) - I > Y
@@ -1249,7 +1246,7 @@ var SvA = L(() => {
         #j = () => {};
         #T = () => {};
         #b = () => {};
-        #$ = () => !1;
+        #TextComponent = () => !1;
         #m() {
             let A = new gKA(this.#A);
             this.#F = 0, this.#q = A, this.#S = (Q) => {
@@ -1281,7 +1278,7 @@ var SvA = L(() => {
             if (this.#I)
                 for (let Q = this.#K;;) {
                     if (!this.#h(Q)) break;
-                    if (A || !this.#$(Q)) yield Q;
+                    if (A || !this.#TextComponent(Q)) yield Q;
                     if (Q === this.#H) break;
                     else Q = this.#z[Q]
                 }
@@ -1291,7 +1288,7 @@ var SvA = L(() => {
             if (this.#I)
                 for (let Q = this.#H;;) {
                     if (!this.#h(Q)) break;
-                    if (A || !this.#$(Q)) yield Q;
+                    if (A || !this.#TextComponent(Q)) yield Q;
                     if (Q === this.#K) break;
                     else Q = this.#C[Q]
                 }
@@ -1352,7 +1349,7 @@ var SvA = L(() => {
             for (let Q of this.#O({
                     allowStale: !0
                 }))
-                if (this.#$(Q)) this.#R(this.#W[Q], "expire"), A = !0;
+                if (this.#TextComponent(Q)) this.#R(this.#W[Q], "expire"), A = !0;
             return A
         }
         info(A) {
@@ -1364,8 +1361,8 @@ var SvA = L(() => {
             let Z = {
                 value: G
             };
-            if (this.#U && this.#N) {
-                let I = this.#U[Q],
+            if (this.#moduleWrapper && this.#N) {
+                let I = this.#moduleWrapper[Q],
                     Y = this.#N[Q];
                 if (I && Y) {
                     let J = I - (B4A.now() - Y);
@@ -1387,8 +1384,8 @@ var SvA = L(() => {
                 let I = {
                     value: Z
                 };
-                if (this.#U && this.#N) {
-                    I.ttl = this.#U[Q];
+                if (this.#moduleWrapper && this.#N) {
+                    I.ttl = this.#moduleWrapper[Q];
                     let Y = B4A.now() - this.#N[Q];
                     I.start = Math.floor(Date.now() - Y)
                 }
@@ -1436,11 +1433,11 @@ var SvA = L(() => {
                             __staleWhileFetching: K
                         } = V;
                         if (K !== void 0 && !I) {
-                            if (this.#L) this.#B?.(K, A, "set");
+                            if (this.#lazyLoader) this.#B?.(K, A, "set");
                             if (this.#E) this.#D?.push([K, A, "set"])
                         }
                     } else if (!I) {
-                        if (this.#L) this.#B?.(V, A, "set");
+                        if (this.#lazyLoader) this.#B?.(V, A, "set");
                         if (this.#E) this.#D?.push([V, A, "set"])
                     }
                     if (this.#S(F), this.#k(F, X, J), this.#Y[F] = Q, J) {
@@ -1450,8 +1447,8 @@ var SvA = L(() => {
                     }
                 } else if (J) J.set = "update"
             }
-            if (G !== 0 && !this.#U) this.#v();
-            if (this.#U) {
+            if (G !== 0 && !this.#moduleWrapper) this.#v();
+            if (this.#moduleWrapper) {
                 if (!W) this.#b(F, G, Z);
                 if (J) this.#T(J, F)
             }
@@ -1483,8 +1480,8 @@ var SvA = L(() => {
                 B = this.#W[Q],
                 G = this.#Y[Q];
             if (this.#P && this.#X(G)) G.__abortController.abort(Error("evicted"));
-            else if (this.#L || this.#E) {
-                if (this.#L) this.#B?.(G, B, "evict");
+            else if (this.#lazyLoader || this.#E) {
+                if (this.#lazyLoader) this.#B?.(G, B, "evict");
                 if (this.#E) this.#D?.push([G, B, "evict"])
             }
             if (this.#S(Q), A) this.#W[Q] = void 0, this.#Y[Q] = void 0, this.#w.push(Q);
@@ -1500,7 +1497,7 @@ var SvA = L(() => {
             if (Z !== void 0) {
                 let I = this.#Y[Z];
                 if (this.#X(I) && I.__staleWhileFetching === void 0) return !1;
-                if (!this.#$(Z)) {
+                if (!this.#TextComponent(Z)) {
                     if (B) this.#j(Z);
                     if (G) G.has = "hit", this.#T(G, Z);
                     return !0
@@ -1512,7 +1509,7 @@ var SvA = L(() => {
             let {
                 allowStale: B = this.allowStale
             } = Q, G = this.#V.get(A);
-            if (G === void 0 || !B && this.#$(G)) return;
+            if (G === void 0 || !B && this.#TextComponent(G)) return;
             let Z = this.#Y[G];
             return this.#X(Z) ? Z.__staleWhileFetching : Z
         }

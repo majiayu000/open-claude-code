@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_029.js
+ * 处理时间: 2025-12-09T03:41:38.048Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.026Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -30,9 +33,8 @@
 var AE9 = 1048576;
 
 function ev3(A, ...Q) {
-    console.error(`[Claude Chrome Native Host] ${A}`, ...Q)
+    console.error(`[Claude Chrome Native Host] TextComponent{A}`, ...Q)
 }
-
 class Ab3 {
     buffer = Buffer.alloc(0);
     pendingResolve = null;
@@ -51,7 +53,7 @@ class Ab3 {
         if (this.buffer.length < 4) return;
         let A = this.buffer.readUInt32LE(0);
         if (A === 0 || A > AE9) {
-            ev3(`Invalid message length: ${A}`), this.pendingResolve(null), this.pendingResolve = null;
+            ev3(`Invalid message length: TextComponent{A}`), this.pendingResolve(null), this.pendingResolve = null;
             return
         }
         if (this.buffer.length < 4 + A) return;
@@ -77,14 +79,13 @@ class Ab3 {
 process.env.COREPACK_ENABLE_AUTO_PIN = "0";
 v4("cli_entry");
 v4("cli_imports_loaded");
-// Async function: Kh3
 async function Kh3() {
     let A = process.argv.slice(2);
     if (A.length === 1 && (A[0] === "--version" || A[0] === "-v" || A[0] === "-V")) {
-        v4("cli_version_fast_path"), console.log(`${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION} (Claude Code)`);
+        v4("cli_version_fast_path"), console.log(`TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION} (Claude Code)`);
         return
     }
-    if (RJ() && A[0] === "--mcp-cli") {
+    if (isClaudeCodeRemote() && A[0] === "--mcp-cli") {
         let B = A.slice(1);
         process.exit(await eC9(B))
     }

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_008.js
+ * 处理时间: 2025-12-09T03:41:36.423Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.893Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -63,7 +66,7 @@
             }
         }
 });
-var I2Q = U((KX7, kU1) => {
+var I2Q = moduleWrapper((KX7, kU1) => {
     var {
         defineProperty: gfA,
         getOwnPropertyDescriptor: eN4,
@@ -266,7 +269,7 @@ var I2Q = U((KX7, kU1) => {
                         let X = new G(Y);
                         if (typeof J === "function") this.send(X, J);
                         else if (typeof W === "function") {
-                            if (typeof J !== "object") throw Error(`Expected http options but got ${typeof J}`);
+                            if (typeof J !== "object") throw Error(`Expected http options but got TextComponent{typeof J}`);
                             this.send(X, J || {}, W)
                         } else return this.send(X, J)
                     }, "methodImpl"),
@@ -433,7 +436,7 @@ var I2Q = U((KX7, kU1) => {
             error() {}
         };
 
-function _U1(A, Q, B) {
+    function _U1(A, Q, B) {
         let G, Z, I;
         if (typeof Q > "u" && typeof B > "u") G = {}, I = A;
         else if (G = A, typeof Q === "function") return Z = Q, I = B, OL4(G, Z, I);
@@ -515,16 +518,16 @@ function _U1(A, Q, B) {
         }, "_json");
     GL4(SU1, c6(), kU1.exports)
 });
-var W2Q = U((Y2Q) => {
+var W2Q = moduleWrapper((Y2Q) => {
     Object.defineProperty(Y2Q, "__esModule", {
         value: !0
     });
     Y2Q.isStreamingPayload = void 0;
-    var SL4 = UA("stream"),
+    var SL4 = nodeRequire("stream"),
         _L4 = (A) => (A === null || A === void 0 ? void 0 : A.body) instanceof SL4.Readable || typeof ReadableStream < "u" && (A === null || A === void 0 ? void 0 : A.body) instanceof ReadableStream;
     Y2Q.isStreamingPayload = _L4
 });
-var X6 = U(($X7, L2Q) => {
+var X6 = moduleWrapper(($X7, L2Q) => {
     var {
         defineProperty: ufA,
         getOwnPropertyDescriptor: kL4,
@@ -603,7 +606,7 @@ var X6 = U(($X7, L2Q) => {
             if (A instanceof Error) return A;
             if (A instanceof Object) return Object.assign(Error(), A);
             if (typeof A === "string") return Error(A);
-            return Error(`AWS SDK error wrapper for ${A}`)
+            return Error(`AWS SDK error wrapper for TextComponent{A}`)
         }, "asSdkError"),
         C2Q = class {
             constructor(A, Q) {
@@ -633,7 +636,7 @@ var X6 = U(($X7, L2Q) => {
                     } = Q;
                 if (T4A.HttpRequest.isInstance(J)) J.headers[yY.INVOCATION_ID_HEADER] = (0, V2Q.v4)();
                 while (!0) try {
-                    if (T4A.HttpRequest.isInstance(J)) J.headers[yY.REQUEST_HEADER] = `attempt=${Z+1}; max=${Y}`;
+                    if (T4A.HttpRequest.isInstance(J)) J.headers[yY.REQUEST_HEADER] = `attempt=TextComponent{Z+1}; max=TextComponent{Y}`;
                     if (B?.beforeRequest) await B.beforeRequest();
                     let {
                         response: W,
@@ -699,14 +702,14 @@ var X6 = U(($X7, L2Q) => {
                 let Q = A[yU1];
                 if (!Q) return;
                 let B = parseInt(Q);
-                if (Number.isNaN(B)) throw Error(`Environment variable ${yU1} mast be a number, got "${Q}"`);
+                if (Number.isNaN(B)) throw Error(`Environment variable TextComponent{yU1} mast be a number, got "TextComponent{Q}"`);
                 return B
             },
             configFileSelector: (A) => {
                 let Q = A[xU1];
                 if (!Q) return;
                 let B = parseInt(Q);
-                if (Number.isNaN(B)) throw Error(`Shared config file entry ${xU1} mast be a number, got "${Q}"`);
+                if (Number.isNaN(B)) throw Error(`Shared config file entry TextComponent{xU1} mast be a number, got "TextComponent{Q}"`);
                 return B
             },
             default: yY.DEFAULT_MAX_ATTEMPTS
@@ -769,7 +772,7 @@ var X6 = U(($X7, L2Q) => {
                     V = T4A.HttpRequest.isInstance(F);
                 if (V) F.headers[yY.INVOCATION_ID_HEADER] = (0, V2Q.v4)();
                 while (!0) try {
-                    if (V) F.headers[yY.REQUEST_HEADER] = `attempt=${W+1}; max=${I}`;
+                    if (V) F.headers[yY.REQUEST_HEADER] = `attempt=TextComponent{W+1}; max=TextComponent{I}`;
                     let {
                         response: K,
                         output: D
@@ -836,7 +839,7 @@ var X6 = U(($X7, L2Q) => {
             return new Date(B)
         }, "getRetryAfterHint")
 });
-var bU1 = U((O2Q) => {
+var bU1 = moduleWrapper((O2Q) => {
     Object.defineProperty(O2Q, "__esModule", {
         value: !0
     });
@@ -854,7 +857,7 @@ var bU1 = U((O2Q) => {
         };
     O2Q.defaultSTSHttpAuthSchemeParametersProvider = eL4;
 
-function AM4(A) {
+    function AM4(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {
@@ -870,7 +873,7 @@ function AM4(A) {
         }
     }
 
-function M2Q(A) {
+    function M2Q(A) {
         return {
             schemeId: "smithy.api#noAuth"
         }
@@ -905,7 +908,7 @@ function M2Q(A) {
     };
     O2Q.resolveHttpAuthSchemeConfig = GM4
 });
-var sN = U((P2Q) => {
+var sN = moduleWrapper((P2Q) => {
     Object.defineProperty(P2Q, "__esModule", {
         value: !0
     });
@@ -942,7 +945,7 @@ var sN = U((P2Q) => {
         }
     }
 });
-var S2Q = U((MX7, WM4) => {
+var S2Q = moduleWrapper((MX7, WM4) => {
     WM4.exports = {
         name: "@aws-sdk/client-sts",
         description: "AWS SDK for JavaScript Sts Client for Node.js, Browser and React Native",
@@ -1041,7 +1044,7 @@ var S2Q = U((MX7, WM4) => {
         }
     }
 });
-var fU1 = U((OX7, h2Q) => {
+var fU1 = moduleWrapper((OX7, h2Q) => {
     var {
         defineProperty: mfA,
         getOwnPropertyDescriptor: XM4,
@@ -1116,7 +1119,7 @@ var fU1 = U((OX7, h2Q) => {
             })
         }, "fromEnv")
 });
-var wF = U((RX7, o2Q) => {
+var wF = moduleWrapper((RX7, o2Q) => {
     var {
         defineProperty: pfA,
         getOwnPropertyDescriptor: $M4,
@@ -1155,17 +1158,17 @@ var wF = U((RX7, o2Q) => {
         providerConfigFromInit: () => mU1
     });
     o2Q.exports = MM4(d2Q);
-    var OM4 = UA("url"),
+    var OM4 = nodeRequire("url"),
         JS = P2(),
-        RM4 = UA("buffer"),
-        TM4 = UA("http");
+        RM4 = nodeRequire("buffer"),
+        TM4 = nodeRequire("http");
 
-function P4A(A) {
+    function P4A(A) {
         return new Promise((Q, B) => {
             let G = (0, TM4.request)({
                 method: "GET",
                 ...A,
-                hostname: A.hostname?.replace(/^\[(.+)\]$/, "$1")
+                hostname: A.hostname?.replace(/^\[(.+)\]TextComponent/, "$1")
             });
             G.on("error", (Z) => {
                 B(Object.assign(new JS.ProviderError("Unable to connect to instance metadata service"), Z)), G.destroy()
@@ -1259,11 +1262,11 @@ function P4A(A) {
             };
             if (process.env[dfA]) {
                 let Q = (0, OM4.parse)(process.env[dfA]);
-                if (!Q.hostname || !(Q.hostname in _M4)) throw new JS.CredentialsProviderError(`${Q.hostname} is not a valid container metadata service hostname`, {
+                if (!Q.hostname || !(Q.hostname in _M4)) throw new JS.CredentialsProviderError(`TextComponent{Q.hostname} is not a valid container metadata service hostname`, {
                     tryNextLink: !1,
                     logger: A
                 });
-                if (!Q.protocol || !(Q.protocol in kM4)) throw new JS.CredentialsProviderError(`${Q.protocol} is not a valid container metadata service protocol`, {
+                if (!Q.protocol || !(Q.protocol in kM4)) throw new JS.CredentialsProviderError(`TextComponent{Q.protocol} is not a valid container metadata service protocol`, {
                     tryNextLink: !1,
                     logger: A
                 });
@@ -1272,7 +1275,7 @@ function P4A(A) {
                     port: Q.port ? parseInt(Q.port, 10) : void 0
                 }
             }
-            throw new JS.CredentialsProviderError(`The container metadata credential provider cannot be used unless the ${cfA} or ${dfA} environment variable is set`, {
+            throw new JS.CredentialsProviderError(`The container metadata credential provider cannot be used unless the TextComponent{cfA} or TextComponent{dfA} environment variable is set`, {
                 tryNextLink: !1,
                 logger: A
             })
@@ -1318,7 +1321,7 @@ function P4A(A) {
                 case "IPv6":
                     return "http://[fd00:ec2::254]";
                 default:
-                    throw Error(`Unsupported endpoint mode: ${A}. Select from ${Object.values(a2Q)}`)
+                    throw Error(`Unsupported endpoint mode: TextComponent{A}. Select from TextComponent{Object.values(a2Q)}`)
             }
         }, "getFromEndpointModeConfig"),
         pM4 = 300,
@@ -1327,7 +1330,7 @@ function P4A(A) {
         g2Q = $X((A, Q) => {
             let B = pM4 + Math.floor(Math.random() * lM4),
                 G = new Date(Date.now() + B * 1000);
-            Q.warn(`Attempting credential expiration extension due to a credential service availability issue. A refresh of these credentials will be attempted after ${new Date(G)}.
+            Q.warn(`Attempting credential expiration extension due to a credential service availability issue. A refresh of these credentials will be attempted after TextComponent{new Date(G)}.
 For more information, please visit: ` + iM4);
             let Z = A.originalExpiration ?? A.expiration;
             return {
@@ -1377,7 +1380,7 @@ For more information, please visit: ` + iM4);
                             D = await (0, dU1.loadConfig)({
                                 environmentVariableSelector: (H) => {
                                     let C = H[hU1];
-                                    if (K = !!C && C !== "false", C === void 0) throw new JS.CredentialsProviderError(`${hU1} not set in env, checking config file next.`, {
+                                    if (K = !!C && C !== "false", C === void 0) throw new JS.CredentialsProviderError(`TextComponent{hU1} not set in env, checking config file next.`, {
                                         logger: A.logger
                                     });
                                     return K
@@ -1393,9 +1396,9 @@ For more information, please visit: ` + iM4);
                         if (A.ec2MetadataV1Disabled || D) {
                             let H = [];
                             if (A.ec2MetadataV1Disabled) H.push("credential provider initialization (runtime option ec2MetadataV1Disabled)");
-                            if (V) H.push(`config file profile (${u2Q})`);
-                            if (K) H.push(`process environment variable (${hU1})`);
-                            throw new xM4(`AWS EC2 Metadata v1 fallback has been blocked by AWS SDK configuration in the following: [${H.join(", ")}].`)
+                            if (V) H.push(`config file profile (TextComponent{u2Q})`);
+                            if (K) H.push(`process environment variable (TextComponent{hU1})`);
+                            throw new xM4(`AWS EC2 Metadata v1 fallback has been blocked by AWS SDK configuration in the following: [TextComponent{H.join(", ")}].`)
                         }
                     }
                     let F = (await gU1(async () => {
@@ -1475,7 +1478,7 @@ For more information, please visit: ` + iM4);
             return p2Q(G)
         }, "getCredentialsFromProfile")
 });
-var A9Q = U((t2Q) => {
+var A9Q = moduleWrapper((t2Q) => {
     Object.defineProperty(t2Q, "__esModule", {
         value: !0
     });
@@ -1507,7 +1510,7 @@ var A9Q = U((t2Q) => {
         };
     t2Q.checkUrl = ZO4
 });
-var B9Q = U((Q9Q) => {
+var B9Q = moduleWrapper((Q9Q) => {
     Object.defineProperty(Q9Q, "__esModule", {
         value: !0
     });

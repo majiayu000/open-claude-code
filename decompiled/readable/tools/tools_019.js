@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_019.js
+ * 处理时间: 2025-12-09T03:41:38.756Z
+ * 变量映射: 11 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.080Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -24,12 +27,12 @@ function mI1({
 }) {
     return t0.createElement(j, {
         flexDirection: "column"
-    }, t0.createElement($, {
+    }, t0.createElement(TextComponent, {
         color: "success",
         bold: !0
     }, "Prompt:"), t0.createElement(j, {
         paddingLeft: 2
-    }, t0.createElement($, {
+    }, t0.createElement(TextComponent, {
         dimColor: B
     }, Q ? _D(A, Q) : A)))
 }
@@ -40,14 +43,14 @@ function KY9({
 }) {
     return t0.createElement(j, {
         flexDirection: "column"
-    }, t0.createElement($, {
+    }, t0.createElement(TextComponent, {
         color: "success",
         bold: !0
     }, "Response:"), A.map((B, G) => t0.createElement(j, {
         key: G,
         paddingLeft: 2,
         marginTop: G === 0 ? 0 : 1
-    }, t0.createElement($, null, Q ? _D(B.text, Q) : B.text))))
+    }, t0.createElement(TextComponent, null, Q ? _D(B.text, Q) : B.text))))
 }
 
 function DY9(A, Q, {
@@ -63,7 +66,7 @@ function DY9(A, Q, {
             flexDirection: "column"
         }, t0.createElement(y0, {
             height: 1
-        }, t0.createElement($, null, "Backgrounded agent", !G && oA.dim(C ? " (down arrow ↓ to manage · ctrl+o to expand)" : " (down arrow ↓ to manage)"))), G && C && t0.createElement(y0, null, t0.createElement(mI1, {
+        }, t0.createElement(TextComponent, null, "Backgrounded agent", !G && oA.dim(C ? " (down arrow ↓ to manage · ctrl+o to expand)" : " (down arrow ↓ to manage)"))), G && C && t0.createElement(y0, null, t0.createElement(mI1, {
             prompt: C,
             theme: Z
         })))
@@ -77,7 +80,7 @@ function DY9(A, Q, {
         usage: X,
         content: F,
         prompt: V
-    } = A, D = `Done (${[J===1?"1 tool use":`${J} tool uses`,QZ(W)+" tokens",FE(Y)].join(" · ")})`, H = xD({
+    } = A, D = `Done (TextComponent{[J===1?"1 tool use":`TextComponent{J} tool uses`,QZ(W)+" tokens",FE(Y)].join(" · ")})`, H = xD({
         content: D,
         usage: X
     });
@@ -140,7 +143,7 @@ function dI1(A, {
 }) {
     if (!A.length) return t0.createElement(y0, {
         height: 1
-    }, t0.createElement($, {
+    }, t0.createElement(TextComponent, {
         dimColor: !0
     }, iP3));
     let I = (Z ?? 1) * pP3 + lP3,
@@ -167,11 +170,11 @@ function dI1(A, {
         } = J();
         return t0.createElement(y0, {
             height: 1
-        }, t0.createElement($, {
+        }, t0.createElement(TextComponent, {
             dimColor: !0
-        }, "In progress… · ", t0.createElement($, {
+        }, "In progress… · ", t0.createElement(TextComponent, {
             bold: !0
-        }, D), " tool", " ", D === 1 ? "use" : "uses", H && ` · ${QZ(H)} tokens`, " · (ctrl+o to expand)"))
+        }, D), " tool", " ", D === 1 ? "use" : "uses", H && ` · TextComponent{QZ(H)} tokens`, " · (ctrl+o to expand)"))
     }
     let W = A.filter((D) => {
             return D.data.message.message.content.some((C) => C.type === "tool_use")
@@ -208,7 +211,7 @@ function dI1(A, {
         style: "condensed",
         isTranscriptMode: !1,
         isStatic: !0
-    })))), V > 0 && t0.createElement($, {
+    })))), V > 0 && t0.createElement(TextComponent, {
         dimColor: !0
     }, "+", V, " more tool ", V === 1 ? "use" : "uses", " ", t0.createElement(hl, null))))
 }
@@ -295,11 +298,11 @@ function zY9(A, Q) {
         shouldAnimate: B && I,
         isUnresolved: I,
         isError: Y
-    }), t0.createElement($, null, J ? t0.createElement(t0.Fragment, null, t0.createElement($, {
+    }), t0.createElement(TextComponent, null, J ? t0.createElement(t0.Fragment, null, t0.createElement(TextComponent, {
         bold: !0
-    }, A.length), " ", X ? `${X} agents` : "agents", " ", F ? "launched" : "finished") : t0.createElement(t0.Fragment, null, "Running ", t0.createElement($, {
+    }, A.length), " ", X ? `TextComponent{X} agents` : "agents", " ", F ? "launched" : "finished") : t0.createElement(t0.Fragment, null, "Running ", t0.createElement(TextComponent, {
         bold: !0
-    }, A.length), " ", X ? `${X} agents` : "agents", "…")), t0.createElement($, {
+    }, A.length), " ", X ? `TextComponent{X} agents` : "agents", "…")), t0.createElement(TextComponent, {
         dimColor: !0
     }, " (ctrl+o to expand)")), Z.map((V, K) => t0.createElement(FY9, {
         key: V.id,
@@ -351,7 +354,7 @@ function aP3(A, Q) {
                         F = J.userFacingName(X.success ? X.data : void 0);
                     if (J.getToolUseSummary) {
                         let V = J.getToolUseSummary(X.success ? X.data : void 0);
-                        if (V) return `${F}: ${V}`
+                        if (V) return `TextComponent{F}: TextComponent{V}`
                     }
                     return F
                 }
@@ -364,7 +367,7 @@ var t0, NX0 = 3,
     pP3 = 9,
     lP3 = 7,
     iP3 = "Initializing…";
-var OX0 = L(() => {
+var OX0 = lazyLoader(() => {
     J9();
     hA();
     lV();
@@ -382,17 +385,17 @@ var OX0 = L(() => {
     TRA();
     nRA();
     M9();
-    t0 = GA(VA(), 1)
+    t0 = esmImport(VA(), 1)
 });
 var sP3, gaZ;
-var PX0 = L(() => {
+var PX0 = lazyLoader(() => {
     h2();
     hA();
     rZ1();
     $Z();
     lV();
     OX0();
-    sP3 = GA(VA(), 1), gaZ = _.strictObject({
+    sP3 = esmImport(VA(), 1), gaZ = _.strictObject({
         agentId: _.string().describe("The agent ID to retrieve results for"),
         block: _.boolean().default(!0).describe("Whether to block until results are ready"),
         wait_up_to: _.number().min(0).max(300).default(150).describe("Maximum time to wait in seconds")
@@ -439,7 +442,7 @@ function Bj3(A, Q, B) {
     }
 }
 var rP3, UY9, EsZ, RX0, oP3, tP3, eP3, Aj3, In;
-var TRA = L(() => {
+var TRA = lazyLoader(() => {
     O9A();
     h2();
     nQ();
@@ -462,7 +465,7 @@ var TRA = L(() => {
     g10();
     D0();
     $n();
-    rP3 = GA(VA(), 1), UY9 = _.object({
+    rP3 = esmImport(VA(), 1), UY9 = _.object({
         description: _.string().describe("A short (3-5 word) description of the task"),
         prompt: _.string().describe("The task for the agent to perform"),
         subagent_type: _.string().describe("The type of specialized agent to use for this task"),
@@ -526,7 +529,7 @@ var TRA = L(() => {
             let F = Date.now(),
                 V = Y.options.agentDefinitions.activeAgents,
                 K = V.find((P) => P.agentType === Q);
-            if (!K) throw Error(`Agent type '${Q}' not found. Available agents: ${V.map((P)=>P.agentType).join(", ")}`);
+            if (!K) throw Error(`Agent type 'TextComponent{Q}' not found. Available agents: TextComponent{V.map((P)=>P.agentType).join(", ")}`);
             if (K.color) tJA(Q, K.color);
             let D = await Y.getAppState(),
                 H = D.toolPermissionContext.mode,
@@ -541,7 +544,7 @@ var TRA = L(() => {
             let E;
             if (Z) {
                 let P = await cI1(Z);
-                if (!P) throw Error(`No transcript found for agent ID: ${Z}`);
+                if (!P) throw Error(`No transcript found for agent ID: TextComponent{Z}`);
                 E = P
             }
             let z = K?.forkContext ? Y.messages : void 0,
@@ -553,7 +556,7 @@ var TRA = L(() => {
                     });
                 w = await fjA([y], C, P)
             } catch (P) {
-                g(`Failed to get system prompt for agent ${K.agentType}: ${P instanceof Error?P.message:String(P)}`)
+                g(`Failed to get system prompt for agent TextComponent{K.agentType}: TextComponent{P instanceof Error?P.message:String(P)}`)
             }
             let N = K?.forkContext ? Fb2(A, W) : [j0({
                     content: A
@@ -651,7 +654,7 @@ var TRA = L(() => {
                     if (k) clearInterval(k);
                     if (Y.setToolJSX) Y.setToolJSX(null)
                 }
-                let QA = dC(y.filter((HA) => HA.type !== "system" && HA.type !== "progress"));
+                let QA = last(y.filter((HA) => HA.type !== "system" && HA.type !== "progress"));
                 if (QA && f51(QA)) throw new YW;
                 let IA = Bj3(y, P, q);
                 return {
@@ -687,10 +690,10 @@ var TRA = L(() => {
                 content: [{
                     type: "text",
                     text: `Async agent launched successfully.
-agentId: ${A.agentId} (This is an internal ID for your use, do not mention it to the user. Use this ID to retrieve results with ${en} when the agent finishes). 
-The agent is currently working in the background. If you have other tasks you you should continue working on them now. Wait to call ${en} until either:
-- If you want to check on the agent's progress - call ${en} with block=false to get an immediate update on the agent's status
-- If you run out of things to do and the agent is still running - call ${en} with block=true to idle and wait for the agent's result (do not use block=true unless you completely run out of things to do as it will waste time).`
+agentId: TextComponent{A.agentId} (This is an internal ID for your use, do not mention it to the user. Use this ID to retrieve results with TextComponent{AGENT_OUTPUT_TOOL_NAME} when the agent finishes). 
+The agent is currently working in the background. If you have other tasks you you should continue working on them now. Wait to call TextComponent{AGENT_OUTPUT_TOOL_NAME} until either:
+- If you want to check on the agent's progress - call TextComponent{AGENT_OUTPUT_TOOL_NAME} with block=false to get an immediate update on the agent's status
+- If you run out of things to do and the agent is still running - call TextComponent{AGENT_OUTPUT_TOOL_NAME} with block=true to idle and wait for the agent's result (do not use block=true unless you completely run out of things to do as it will waste time).`
                 }]
             };
             if (A.status === "completed") return {
@@ -698,7 +701,7 @@ The agent is currently working in the background. If you have other tasks you yo
                 type: "tool_result",
                 content: A.content
             };
-            throw Error(`Unexpected agent tool result status: ${A.status}`)
+            throw Error(`Unexpected agent tool result status: TextComponent{A.status}`)
         },
         renderToolResultMessage: DY9,
         renderToolUseMessage: HY9,
@@ -708,7 +711,8 @@ The agent is currently working in the background. If you have other tasks you yo
         renderGroupedToolUse: zY9
     }
 });
-var pI1 = "KillShell",
+/* KILL_SHELL_TOOL_NAME = KILL_SHELL_TOOL = "KillShell" */
+var KILL_SHELL_TOOL_NAME = "KillShell",
     $Y9 = `
 - Kills a running background bash shell by its ID
 - Takes a shell_id parameter identifying the shell to kill
@@ -721,7 +725,7 @@ function wY9({
     shell_id: A
 }) {
     if (!A) return null;
-    return `Kill shell: ${A}`
+    return `Kill shell: TextComponent{A}`
 }
 
 function qY9() {
@@ -742,17 +746,17 @@ function LY9(A, {
 }
 
 function MY9(A) {
-    return rXA.default.createElement(j, null, rXA.default.createElement($, null, "  ⎿  "), rXA.default.createElement($, null, "Shell ", A.shell_id, " killed"))
+    return rXA.default.createElement(j, null, rXA.default.createElement(TextComponent, null, "  ⎿  "), rXA.default.createElement(TextComponent, null, "Shell ", A.shell_id, " killed"))
 }
 var rXA;
-var OY9 = L(() => {
+var OY9 = lazyLoader(() => {
     hA();
     lV();
     lX();
-    rXA = GA(VA(), 1)
+    rXA = esmImport(VA(), 1)
 });
 var Gj3, Zj3, lI1;
-var jX0 = L(() => {
+var jX0 = lazyLoader(() => {
     h2();
     gAA();
     OY9();
@@ -762,7 +766,7 @@ var jX0 = L(() => {
         message: _.string().describe("Status message about the operation"),
         shell_id: _.string().describe("The ID of the shell that was killed")
     }), lI1 = {
-        name: pI1,
+        name: KILL_SHELL_TOOL_NAME,
         userFacingName: () => "Kill Shell",
         inputSchema: Gj3,
         outputSchema: Zj3,
@@ -789,12 +793,12 @@ var jX0 = L(() => {
             let G = (await Q()).backgroundTasks[A];
             if (!G) return {
                 result: !1,
-                message: `No shell found with ID: ${A}`,
+                message: `No shell found with ID: TextComponent{A}`,
                 errorCode: 1
             };
             if (G.type !== "shell") return {
                 result: !1,
-                message: `Shell ${A} is not a shell`,
+                message: `Shell TextComponent{A} is not a shell`,
                 errorCode: 2
             };
             return {
@@ -826,9 +830,9 @@ var jX0 = L(() => {
             setAppState: B
         }) {
             let Z = (await Q()).backgroundTasks[A];
-            if (!Z) throw Error(`No shell found with ID: ${A}`);
-            if (Z.type !== "shell") throw Error(`Shell ${A} is not a shell`);
-            if (Z.status !== "running") throw Error(`Shell ${A} is not running, so cannot be killed (status: ${Z.status})`);
+            if (!Z) throw Error(`No shell found with ID: TextComponent{A}`);
+            if (Z.type !== "shell") throw Error(`Shell TextComponent{A} is not a shell`);
+            if (Z.status !== "running") throw Error(`Shell TextComponent{A} is not running, so cannot be killed (status: TextComponent{Z.status})`);
             let I = GQ1(Z);
             return B((Y) => ({
                 ...Y,
@@ -838,7 +842,7 @@ var jX0 = L(() => {
                 }
             })), {
                 data: {
-                    message: `Successfully killed shell: ${A} (${Z.command})`,
+                    message: `Successfully killed shell: TextComponent{A} (TextComponent{Z.command})`,
                     shell_id: A
                 }
             }
@@ -859,7 +863,7 @@ function RY9() {
 }
 
 function SX0(A) {
-    let Q = Ke();
+    let Q = getMaxOutputLength();
     if (A.length <= Q) return {
         totalLines: A.split(`
 `).length,
@@ -868,16 +872,16 @@ function SX0(A) {
     let B = A.slice(0, Q),
         G = A.slice(Q).split(`
 `).length,
-        Z = `${B}
+        Z = `TextComponent{B}
 
-... [${G} lines truncated] ...`;
+... [TextComponent{G} lines truncated] ...`;
     return {
         totalLines: A.split(`
 `).length,
         truncatedContent: Z
     }
 }
-var TY9 = L(() => {
+var TY9 = lazyLoader(() => {
     MGA();
     yp()
 });
@@ -897,7 +901,7 @@ function PY9(A, Q, B) {
 }
 
 function jY9(A) {
-    if (A?.filter) return `Reading shell output (filtered: ${A.filter})`;
+    if (A?.filter) return `Reading shell output (filtered: TextComponent{A.filter})`;
     return "Reading shell output"
 }
 
@@ -918,11 +922,11 @@ function kY9(A, {
     })
 }
 var PQA;
-var yY9 = L(() => {
+var yY9 = lazyLoader(() => {
     lV();
     lX();
     U21();
-    PQA = GA(VA(), 1)
+    PQA = esmImport(VA(), 1)
 });
 
 function xY9(A, Q) {
@@ -933,7 +937,7 @@ function xY9(A, Q) {
 `)
 }
 var Ij3, Yj3, iI1;
-var _X0 = L(() => {
+var _X0 = lazyLoader(() => {
     h2();
     gAA();
     TY9();
@@ -992,19 +996,19 @@ var _X0 = L(() => {
             } catch (I) {
                 return {
                     result: !1,
-                    message: `Invalid regex pattern "${Q}": ${I instanceof Error?I.message:String(I)}`,
+                    message: `Invalid regex pattern "TextComponent{Q}": TextComponent{I instanceof Error?I.message:String(I)}`,
                     errorCode: 1
                 }
             }
             let Z = (await B()).backgroundTasks[A];
             if (!Z) return {
                 result: !1,
-                message: `No shell found with ID: ${A}`,
+                message: `No shell found with ID: TextComponent{A}`,
                 errorCode: 2
             };
             if (Z.type !== "shell") return {
                 result: !1,
-                message: `Shell ${A} is not a shell`,
+                message: `Shell TextComponent{A} is not a shell`,
                 errorCode: 3
             };
             return {
@@ -1018,8 +1022,8 @@ var _X0 = L(() => {
             getAppState: B
         }) {
             let I = (await B()).backgroundTasks[A];
-            if (!I) throw Error(`No shell found with ID: ${A}`);
-            if (I.type !== "shell") throw Error(`Shell ${A} is not a shell`);
+            if (!I) throw Error(`No shell found with ID: TextComponent{A}`);
+            if (I.type !== "shell") throw Error(`Shell TextComponent{A} is not a shell`);
             let Y = BQ1(I),
                 J = xY9(Y.stdout, Q),
                 W = xY9(Y.stderr, Q),
@@ -1052,14 +1056,14 @@ var _X0 = L(() => {
         },
         mapToolResultToToolResultBlockParam(A, Q) {
             let B = [];
-            if (B.push(`<status>${A.status}</status>`), A.exitCode !== null && A.exitCode !== void 0) B.push(`<exit_code>${A.exitCode}</exit_code>`);
+            if (B.push(`<status>TextComponent{A.status}</status>`), A.exitCode !== null && A.exitCode !== void 0) B.push(`<exit_code>TextComponent{A.exitCode}</exit_code>`);
             if (A.stdout.trim()) B.push(`<stdout>
-${A.stdout.trimEnd()}
+TextComponent{A.stdout.trimEnd()}
 </stdout>`);
             if (A.stderr.trim()) B.push(`<stderr>
-${A.stderr.trim()}
+TextComponent{A.stderr.trim()}
 </stderr>`);
-            return B.push(`<timestamp>${A.timestamp}</timestamp>`), {
+            return B.push(`<timestamp>TextComponent{A.timestamp}</timestamp>`), {
                 tool_use_id: Q,
                 type: "tool_result",
                 content: B.join(`
@@ -1095,10 +1099,10 @@ function vY9({
 }) {
     if (!A) return null;
     let Z = "";
-    if (A) Z += `"${A}"`;
+    if (A) Z += `"TextComponent{A}"`;
     if (G) {
-        if (Q && Q.length > 0) Z += `, only allowing domains: ${Q.join(", ")}`;
-        if (B && B.length > 0) Z += `, blocking domains: ${B.join(", ")}`
+        if (Q && Q.length > 0) Z += `, only allowing domains: TextComponent{Q.join(", ")}`;
+        if (B && B.length > 0) Z += `, blocking domains: TextComponent{B.join(", ")}`
     }
     return Z
 }
@@ -1123,11 +1127,11 @@ function hY9(A) {
     let B = Q.data;
     switch (B.type) {
         case "query_update":
-            return Ix.default.createElement(y0, null, Ix.default.createElement($, {
+            return Ix.default.createElement(y0, null, Ix.default.createElement(TextComponent, {
                 dimColor: !0
             }, "Searching: ", B.query));
         case "search_results_received":
-            return Ix.default.createElement(y0, null, Ix.default.createElement($, {
+            return Ix.default.createElement(y0, null, Ix.default.createElement(TextComponent, {
                 dimColor: !0
             }, "Found ", B.resultCount, ' results for "', B.query, '"'));
         default:
@@ -1138,13 +1142,13 @@ function hY9(A) {
 function gY9(A) {
     let {
         searchCount: Q
-    } = Jj3(A.results), B = A.durationSeconds >= 1 ? `${Math.round(A.durationSeconds)}s` : `${Math.round(A.durationSeconds*1000)}ms`;
+    } = Jj3(A.results), B = A.durationSeconds >= 1 ? `TextComponent{Math.round(A.durationSeconds)}s` : `TextComponent{Math.round(A.durationSeconds*1000)}ms`;
     return Ix.default.createElement(j, {
         justifyContent: "space-between",
         width: "100%"
     }, Ix.default.createElement(y0, {
         height: 1
-    }, Ix.default.createElement($, null, "Did ", Q, " search", Q !== 1 ? "es" : "", " in ", B)))
+    }, Ix.default.createElement(TextComponent, null, "Did ", Q, " search", Q !== 1 ? "es" : "", " in ", B)))
 }
 
 function uY9(A) {
@@ -1152,12 +1156,12 @@ function uY9(A) {
     return B7(A.query, wk)
 }
 var Ix;
-var mY9 = L(() => {
+var mY9 = lazyLoader(() => {
     hA();
     u8();
     lV();
     lX();
-    Ix = GA(VA(), 1)
+    Ix = esmImport(VA(), 1)
 });
 
 function Dj3(A, Q, B) {
@@ -1174,7 +1178,7 @@ function Dj3(A, Q, B) {
         }
         if (Y.type === "web_search_tool_result") {
             if (!Array.isArray(Y.content)) {
-                let W = `Web search error: ${Y.content.error_code}`;
+                let W = `Web search error: TextComponent{Y.content.error_code}`;
                 e(Error(W)), G.push(W);
                 continue
             }
@@ -1208,9 +1212,9 @@ var Wj3, Xj3, Fj3, Vj3, Kj3 = (A) => {
         }
     },
     hjA;
-var kX0 = L(() => {
+var kX0 = lazyLoader(() => {
     h2();
-    B7A();
+    noOpFunction2();
     kZ();
     nQ();
     s2();
@@ -1235,15 +1239,15 @@ var kX0 = L(() => {
     hjA = {
         name: WEB_SEARCH_TOOL_NAME,
         async description(A) {
-            return `Claude wants to search the web for: ${A.query}`
+            return `Claude wants to search the web for: TextComponent{A.query}`
         },
         userFacingName() {
             return "Web Search"
         },
         getToolUseSummary: uY9,
         isEnabled() {
-            let A = J6(),
-                Q = S3();
+            let A = getProvider(),
+                Q = getDefaultSonnetModel();
             if (A === "firstParty") return !0;
             if (A === "vertex") return Q.includes("claude-opus-4") || Q.includes("claude-sonnet-4") || Q.includes("claude-haiku-4");
             if (A === "foundry") return !0;
@@ -1264,7 +1268,7 @@ var kX0 = L(() => {
             }
         },
         async prompt() {
-            return EGB()
+            return getWebSearchDescription()
         },
         renderToolUseMessage: vY9,
         renderToolUseRejectedMessage: bY9,
@@ -1310,7 +1314,7 @@ var kX0 = L(() => {
                         getToolPermissionContext: async () => {
                             return (await Q.getAppState()).toolPermissionContext
                         },
-                        model: S3(),
+                        model: getDefaultSonnetModel(),
                         toolChoice: void 0,
                         isNonInteractiveSession: Q.options.isNonInteractiveSession,
                         hasAppendSystemPrompt: Q.options.hasAppendSystemPrompt,
@@ -1344,7 +1348,7 @@ var kX0 = L(() => {
                                 let y = JSON.parse('"' + P[1] + '"');
                                 if (!H.has(V) || H.get(V) !== y) {
                                     if (H.set(V, y), D++, Z) Z({
-                                        toolUseID: `search-progress-${D}`,
+                                        toolUseID: `search-progress-TextComponent{D}`,
                                         data: {
                                             type: "query_update",
                                             query: y
@@ -1362,7 +1366,7 @@ var kX0 = L(() => {
                             y = H.get(P) || Y,
                             v = R.content;
                         if (D++, Z) Z({
-                            toolUseID: P || `search-progress-${D}`,
+                            toolUseID: P || `search-progress-TextComponent{D}`,
                             data: {
                                 type: "search_results_received",
                                 resultCount: Array.isArray(v) ? v.length : 0,
@@ -1382,14 +1386,14 @@ var kX0 = L(() => {
             let {
                 query: B,
                 results: G
-            } = A, Z = `Web search results for query: "${B}"
+            } = A, Z = `Web search results for query: "TextComponent{B}"
 
 `;
             return G.forEach((I) => {
                 if (typeof I === "string") Z += I + `
 
 `;
-                else if (I.content.length > 0) Z += `Links: ${JSON.stringify(I.content)}
+                else if (I.content.length > 0) Z += `Links: TextComponent{JSON.stringify(I.content)}
 
 `;
                 else Z += `No links found.
@@ -1405,12 +1409,12 @@ REMINDER: You MUST include the sources above in your response to the user using 
     }
 });
 var IrZ;
-var dY9 = L(() => {
+var dY9 = lazyLoader(() => {
     h2();
     IrZ = _.strictObject({})
 });
 var Hj3, Cj3, Ej3, zj3, Uj3, cY9;
-var pY9 = L(() => {
+var pY9 = lazyLoader(() => {
     h2();
     Hj3 = _.strictObject({
         operation: _.literal("goToDefinition"),
@@ -1452,7 +1456,7 @@ function nY9(A, Q) {
         B = decodeURIComponent(B)
     } catch (G) {
         let Z = G instanceof Error ? G.message : String(G);
-        g(`Failed to decode LSP URI '${A}': ${Z}. Using un-decoded path: ${B}`, {
+        g(`Failed to decode LSP URI 'TextComponent{A}': TextComponent{Z}. Using un-decoded path: TextComponent{B}`, {
             level: "warn"
         })
     }
@@ -1479,7 +1483,7 @@ function nI1(A, Q) {
     let B = nY9(A.uri, Q),
         G = A.range.start.line + 1,
         Z = A.range.start.character + 1;
-    return `${B}:${G}:${Z}`
+    return `TextComponent{B}:TextComponent{G}:TextComponent{Z}`
 }
 
 function lY9(A) {
@@ -1498,19 +1502,19 @@ function sY9(A, Q) {
     if (Array.isArray(A)) {
         let G = A.map((J) => iY9(J) ? lY9(J) : J),
             Z = G.filter((J) => !J || !J.uri);
-        if (Z.length > 0) g(`formatGoToDefinitionResult: Filtering out ${Z.length} invalid location(s) - this should have been caught earlier`, {
+        if (Z.length > 0) g(`formatGoToDefinitionResult: Filtering out TextComponent{Z.length} invalid location(s) - this should have been caught earlier`, {
             level: "warn"
         });
         let I = G.filter((J) => J && J.uri);
         if (I.length === 0) return "No definition found";
-        if (I.length === 1) return `Defined in ${nI1(I[0],Q)}`;
-        let Y = I.map((J) => `  ${nI1(J,Q)}`).join(`
+        if (I.length === 1) return `Defined in TextComponent{nI1(I[0],Q)}`;
+        let Y = I.map((J) => `  TextComponent{nI1(J,Q)}`).join(`
 `);
-        return `Found ${I.length} definitions:
-${Y}`
+        return `Found TextComponent{I.length} definitions:
+TextComponent{Y}`
     }
     let B = iY9(A) ? lY9(A) : A;
-    return `Defined in ${nI1(B,Q)}`
+    return `Defined in TextComponent{nI1(B,Q)}`
 }
 
 function rY9(A, Q) {

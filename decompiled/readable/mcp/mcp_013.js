@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_013.js
+ * 处理时间: 2025-12-09T03:41:37.896Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.013Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -91,19 +94,19 @@
     }
     var H52 = new b75;
 
-function h75(A, Q, B) {}
+    function h75(A, Q, B) {}
 
-function g75(A, Q, B) {}
+    function g75(A, Q, B) {}
 
-function u75(A, Q, B) {}
+    function u75(A, Q, B) {}
 
-function m75(A, Q, B) {}
+    function m75(A, Q, B) {}
 
-function C52(A) {
+    function C52(A) {
         return A.replace(c75, "&lt;").replace(p75, "&gt;")
     }
 
-function d75(A, Q, B, G) {
+    function d75(A, Q, B, G) {
         if (B = q52(B), Q === "href" || Q === "src") {
             if (B = fB1.trim(B), B === "#") return "#";
             if (!(B.substr(0, 7) === "http://" || B.substr(0, 8) === "https://" || B.substr(0, 7) === "mailto:" || B.substr(0, 4) === "tel:" || B.substr(0, 11) === "data:image/" || B.substr(0, 6) === "ftp://" || B.substr(0, 2) === "./" || B.substr(0, 3) === "../" || B[0] === "#" || B[0] === "/")) return ""
@@ -129,15 +132,15 @@ function d75(A, Q, B, G) {
         V52 = /e\s*x\s*p\s*r\s*e\s*s\s*s\s*i\s*o\s*n\s*\(.*/gi,
         K52 = /u\s*r\s*l\s*\(.*/gi;
 
-function E52(A) {
+    function E52(A) {
         return A.replace(l75, "&quot;")
     }
 
-function z52(A) {
+    function z52(A) {
         return A.replace(i75, '"')
     }
 
-function U52(A) {
+    function U52(A) {
         return A.replace(n75, function(B, G) {
             return G[0] === "x" || G[0] === "X" ? String.fromCharCode(parseInt(G.substr(1), 16)) : String.fromCharCode(parseInt(G, 10))
         })
@@ -147,34 +150,33 @@ function U52(A) {
         return A.replace(a75, ":").replace(s75, " ")
     }
 
-function w52(A) {
+    function w52(A) {
         var Q = "";
         for (var B = 0, G = A.length; B < G; B++) Q += A.charCodeAt(B) < 32 ? " " : A.charAt(B);
         return fB1.trim(Q)
     }
 
-function q52(A) {
+    function q52(A) {
         return A = z52(A), A = U52(A), A = $52(A), A = w52(A), A
     }
 
-function N52(A) {
+    function N52(A) {
         return A = E52(A), A = C52(A), A
     }
 
-function r75() {
+    function r75() {
         return ""
     }
 
-function o75(A, Q) {
+    function o75(A, Q) {
         if (typeof Q !== "function") Q = function() {};
         var B = !Array.isArray(A);
 
-function G(Y) {
+        function G(Y) {
             if (B) return !0;
             return fB1.indexOf(A, Y) !== -1
         }
-
-var Z = [],
+        var Z = [],
             I = !1;
         return {
             onIgnoreTag: function(Y, J, W) {
@@ -199,7 +201,7 @@ var Z = [],
         }
     }
 
-function t75(A) {
+    function t75(A) {
         var Q = "",
             B = 0;
         while (B < A.length) {
@@ -216,7 +218,7 @@ function t75(A) {
         return Q
     }
 
-function e75(A) {
+    function e75(A) {
         var Q = A.split("");
         return Q = Q.filter(function(B) {
             var G = B.charCodeAt(0);
@@ -251,10 +253,10 @@ function e75(A) {
     AG5.cssFilter = H52;
     AG5.getDefaultCSSWhiteList = f75
 });
-var lA0 = U((kG5) => {
+var lA0 = moduleWrapper((kG5) => {
     var Zi = vB1();
 
-function LG5(A) {
+    function LG5(A) {
         var Q = Zi.spaceIndex(A),
             B;
         if (Q === -1) B = A.slice(1, -1);
@@ -264,11 +266,11 @@ function LG5(A) {
         return B
     }
 
-function MG5(A) {
+    function MG5(A) {
         return A.slice(0, 2) === "</"
     }
 
-function OG5(A, Q, B) {
+    function OG5(A, Q, B) {
         var G = "",
             Z = 0,
             I = !1,
@@ -314,14 +316,14 @@ function OG5(A, Q, B) {
     }
     var RG5 = /[^a-zA-Z0-9\\_:.-]/gim;
 
-function TG5(A, Q) {
+    function TG5(A, Q) {
         var B = 0,
             G = 0,
             Z = [],
             I = !1,
             Y = A.length;
 
-function J(K, D) {
+        function J(K, D) {
             if (K = Zi.trim(K), K = K.replace(RG5, "").toLowerCase(), K.length < 1) return;
             var H = Q(K, D || "");
             if (H) Z.push(H)
@@ -361,7 +363,7 @@ function J(K, D) {
         return Zi.trim(Z.join(" "))
     }
 
-function PG5(A, Q) {
+    function PG5(A, Q) {
         for (; Q < A.length; Q++) {
             var B = A[Q];
             if (B === " ") continue;
@@ -370,7 +372,7 @@ function PG5(A, Q) {
         }
     }
 
-function jG5(A, Q) {
+    function jG5(A, Q) {
         for (; Q < A.length; Q++) {
             var B = A[Q];
             if (B === " ") continue;
@@ -379,7 +381,7 @@ function jG5(A, Q) {
         }
     }
 
-function SG5(A, Q) {
+    function SG5(A, Q) {
         for (; Q > 0; Q--) {
             var B = A[Q];
             if (B === " ") continue;
@@ -388,19 +390,19 @@ function SG5(A, Q) {
         }
     }
 
-function _G5(A) {
+    function _G5(A) {
         if (A[0] === '"' && A[A.length - 1] === '"' || A[0] === "'" && A[A.length - 1] === "'") return !0;
         else return !1
     }
 
-function L52(A) {
+    function L52(A) {
         if (_G5(A)) return A.substr(1, A.length - 2);
         else return A
     }
     kG5.parseTag = OG5;
     kG5.parseAttr = TG5
 });
-var T52 = U((vTG, R52) => {
+var T52 = moduleWrapper((vTG, R52) => {
     var vG5 = xB1().FilterCSS,
         iM = pA0(),
         M52 = lA0(),
@@ -408,11 +410,11 @@ var T52 = U((vTG, R52) => {
         fG5 = M52.parseAttr,
         gB1 = vB1();
 
-function hB1(A) {
+    function hB1(A) {
         return A === void 0 || A === null
     }
 
-function hG5(A) {
+    function hG5(A) {
         var Q = gB1.spaceIndex(A);
         if (Q === -1) return {
             html: "",
@@ -427,13 +429,13 @@ function hG5(A) {
         }
     }
 
-function gG5(A) {
+    function gG5(A) {
         var Q = {};
         for (var B in A) Q[B] = A[B];
         return Q
     }
 
-function uG5(A) {
+    function uG5(A) {
         var Q = {};
         for (var B in A)
             if (Array.isArray(A[B])) Q[B.toLowerCase()] = A[B].map(function(G) {
@@ -443,7 +445,7 @@ function uG5(A) {
         return Q
     }
 
-function O52(A) {
+    function O52(A) {
         if (A = gG5(A || {}), A.stripIgnoreTag) {
             if (A.onIgnoreTag) console.error('Notes: cannot use these two options "stripIgnoreTag" and "onIgnoreTag" at the same time');
             A.onIgnoreTag = iM.onIgnoreTagStripAll
@@ -508,12 +510,12 @@ function O52(A) {
     };
     R52.exports = O52
 });
-var k52 = U((mIA, uB1) => {
+var k52 = moduleWrapper((mIA, uB1) => {
     var P52 = pA0(),
         j52 = lA0(),
         S52 = T52();
 
-function _52(A, Q) {
+    function _52(A, Q) {
         var B = new S52(Q);
         return B.process(A)
     }
@@ -526,7 +528,7 @@ function _52(A, Q) {
     })();
     if (typeof window < "u") window.filterXSS = uB1.exports;
 
-function mG5() {
+    function mG5() {
         return typeof self < "u" && typeof DedicatedWorkerGlobalScope < "u" && self instanceof DedicatedWorkerGlobalScope
     }
     if (mG5()) self.filterXSS = uB1.exports
@@ -546,7 +548,6 @@ function nG5() {
     let A = parseInt(process.env.MCP_OAUTH_CALLBACK_PORT || "", 10);
     return A > 0 ? A : void 0
 }
-// Async function: aG5
 async function aG5() {
     let A = nG5();
     if (A) return A;
@@ -586,9 +587,8 @@ function eAA(A, Q) {
             headers: Q.headers || {}
         }),
         G = cG5("sha256").update(B).digest("hex").substring(0, 16);
-    return `${A}|${G}`
+    return `TextComponent{A}|TextComponent{G}`
 }
-
 async function aA0(A, Q) {
     let G = Gw().read();
     if (!G?.mcpOAuth) return;
@@ -606,13 +606,13 @@ async function aA0(A, Q) {
         }
         f0(A, "Revoking tokens on server");
         let J = String(Y.revocation_endpoint);
-        f0(A, `Revocation endpoint: ${J}`);
+        f0(A, `Revocation endpoint: TextComponent{J}`);
         let W = new URLSearchParams;
         if (W.set("token", I.accessToken), W.set("token_type_hint", "access_token"), I.clientId) W.set("client_id", I.clientId);
         if (await GQ.post(J, W, {
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
-                    Authorization: `Bearer ${I.accessToken}`
+                    Authorization: `Bearer TextComponent{I.accessToken}`
                 }
             }), f0(A, "Successfully revoked access token"), I.refreshToken) {
             let X = new URLSearchParams;
@@ -620,13 +620,13 @@ async function aA0(A, Q) {
             await GQ.post(J, X, {
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
-                    Authorization: `Bearer ${I.accessToken}`
+                    Authorization: `Bearer TextComponent{I.accessToken}`
                 }
             }), f0(A, "Successfully revoked refresh token")
         }
     } catch (Y) {
-        if (GQ.isAxiosError(Y) && Y.response) f0(A, `Failed to revoke tokens on server: ${Y.message}, Status: ${Y.response.status}, Data: ${JSON.stringify(Y.response.data)}`);
-        else f0(A, `Failed to revoke tokens on server: ${Y}`)
+        if (GQ.isAxiosError(Y) && Y.response) f0(A, `Failed to revoke tokens on server: TextComponent{Y.message}, Status: TextComponent{Y.response.status}, Data: TextComponent{JSON.stringify(Y.response.data)}`);
+        else f0(A, `Failed to revoke tokens on server: TextComponent{Y}`)
     }
     x52(A, Q)
 }
@@ -638,20 +638,19 @@ function x52(A, Q) {
     let Z = eAA(A, Q);
     if (G.mcpOAuth[Z]) delete G.mcpOAuth[Z], B.update(G), f0(A, "Cleared stored tokens")
 }
-
 async function v52(A, Q, B, G) {
     x52(A, Q), BA("tengu_mcp_oauth_flow_start", {
         isOAuthFlow: !0
     });
     let Z = await aG5(),
-        I = `http://localhost:${Z}/callback`;
-    f0(A, `Using redirect port: ${Z}`);
+        I = `http://localhost:TextComponent{Z}/callback`;
+    f0(A, `Using redirect port: TextComponent{Z}`);
     let Y = new A1A(A, Q, I, !0);
     try {
         let D = await bLA(Q.url);
-        if (D) Y.setMetadata(D), f0(A, `Fetched OAuth metadata with scope: ${D.scope||D.default_scope||D.scopes_supported?.join(" ")||"NONE"}`)
+        if (D) Y.setMetadata(D), f0(A, `Fetched OAuth metadata with scope: TextComponent{D.scope||D.default_scope||D.scopes_supported?.join(" ")||"NONE"}`)
     } catch (D) {
-        f0(A, `Failed to fetch OAuth metadata: ${D instanceof Error?D.message:String(D)}`)
+        f0(A, `Failed to fetch OAuth metadata: TextComponent{D instanceof Error?D.message:String(D)}`)
     }
     let J, W = await Y.state(),
         X = null,
@@ -692,10 +691,10 @@ async function v52(A, Q, B, G) {
                         });
                         let y = nA0.default(String(q)),
                             v = R ? nA0.default(String(R)) : "";
-                        E.end(`<h1>Authentication Error</h1><p>${y}: ${v}</p><p>You can close this window.</p>`), V();
-                        let x = `OAuth error: ${q}`;
-                        if (R) x += ` - ${R}`;
-                        if (P) x += ` (See: ${P})`;
+                        E.end(`<h1>Authentication Error</h1><p>TextComponent{y}: TextComponent{v}</p><p>You can close this window.</p>`), V();
+                        let x = `OAuth error: TextComponent{q}`;
+                        if (R) x += ` - TextComponent{R}`;
+                        if (P) x += ` (See: TextComponent{P})`;
                         H(Error(x));
                         return
                     }
@@ -705,14 +704,14 @@ async function v52(A, Q, B, G) {
                 }
             }), X.listen(Z, async () => {
                 try {
-                    f0(A, "Starting SDK auth"), f0(A, `Server URL: ${Q.url}`);
+                    f0(A, "Starting SDK auth"), f0(A, `Server URL: TextComponent{Q.url}`);
                     let C = await oT(Y, {
                         serverUrl: Q.url
                     });
-                    if (f0(A, `Initial auth result: ${C}`), J = Y.authorizationUrl, J) B(J);
-                    if (C !== "REDIRECT") f0(A, `Unexpected auth result, expected REDIRECT: ${C}`)
+                    if (f0(A, `Initial auth result: TextComponent{C}`), J = Y.authorizationUrl, J) B(J);
+                    if (C !== "REDIRECT") f0(A, `Unexpected auth result, expected REDIRECT: TextComponent{C}`)
                 } catch (C) {
-                    f0(A, `SDK auth error: ${C}`), V(), H(C)
+                    f0(A, `SDK auth error: TextComponent{C}`), V(), H(C)
                 }
             }), F = setTimeout(() => {
                 V(), H(Error("Authentication timeout"))
@@ -724,13 +723,13 @@ async function v52(A, Q, B, G) {
             serverUrl: Q.url,
             authorizationCode: K
         });
-        if (f0(A, `Auth result: ${D}`), D === "AUTHORIZED") {
+        if (f0(A, `Auth result: TextComponent{D}`), D === "AUTHORIZED") {
             let H = await Y.tokens();
-            if (f0(A, `Tokens after auth: ${H?"Present":"Missing"}`), H) f0(A, `Token access_token length: ${H.access_token?.length}`), f0(A, `Token expires_in: ${H.expires_in}`);
+            if (f0(A, `Tokens after auth: TextComponent{H?"Present":"Missing"}`), H) f0(A, `Token access_token length: TextComponent{H.access_token?.length}`), f0(A, `Token expires_in: TextComponent{H.expires_in}`);
             BA("tengu_mcp_oauth_flow_success", {})
         } else throw Error("Unexpected auth result: " + D)
     } catch (D) {
-        if (f0(A, `Error during auth completion: ${D}`), GQ.isAxiosError(D)) try {
+        if (f0(A, `Error during auth completion: TextComponent{D}`), GQ.isAxiosError(D)) try {
             let H = QB1.parse(D.response?.data);
             if (H.error === "invalid_client" && H.error_description?.includes("Client not found")) {
                 let C = Gw(),
@@ -742,7 +741,6 @@ async function v52(A, Q, B, G) {
         throw BA("tengu_mcp_oauth_flow_error", {}), D
     }
 }
-
 class A1A {
     serverName;
     serverConfig;
@@ -765,14 +763,14 @@ class A1A {
     }
     get clientMetadata() {
         let A = {
-                client_name: `Claude Code (${this.serverName})`,
+                client_name: `Claude Code (TextComponent{this.serverName})`,
                 redirect_uris: [this.redirectUri],
                 grant_types: ["authorization_code", "refresh_token"],
                 response_types: ["code"],
                 token_endpoint_auth_method: "none"
             },
             Q = this._metadata?.scope || this._metadata?.default_scope || this._metadata?.scopes_supported?.join(" ");
-        if (Q) A.scope = Q, f0(this.serverName, `Using scope from metadata: ${A.scope}`);
+        if (Q) A.scope = Q, f0(this.serverName, `Using scope from metadata: TextComponent{A.scope}`);
         return A
     }
     setMetadata(A) {
@@ -828,7 +826,7 @@ class A1A {
             return
         }
         if (Z <= 300 && G.refreshToken) {
-            if (!this._refreshInProgress) f0(this.serverName, `Token expires in ${Math.floor(Z)}s, attempting proactive refresh`), this._refreshInProgress = this.refreshAuthorization(G.refreshToken).finally(() => {
+            if (!this._refreshInProgress) f0(this.serverName, `Token expires in TextComponent{Math.floor(Z)}s, attempting proactive refresh`), this._refreshInProgress = this.refreshAuthorization(G.refreshToken).finally(() => {
                 this._refreshInProgress = void 0
             });
             else f0(this.serverName, "Token refresh already in progress, reusing existing promise");
@@ -837,7 +835,7 @@ class A1A {
                 if (Y) return f0(this.serverName, "Token refreshed successfully"), Y;
                 f0(this.serverName, "Token refresh failed, returning current tokens")
             } catch (Y) {
-                f0(this.serverName, `Token refresh error: ${Y instanceof Error?Y.message:String(Y)}`)
+                f0(this.serverName, `Token refresh error: TextComponent{Y instanceof Error?Y.message:String(Y)}`)
             }
         }
         let I = {
@@ -847,13 +845,13 @@ class A1A {
             scope: G.scope,
             token_type: "Bearer"
         };
-        return f0(this.serverName, "Returning tokens"), f0(this.serverName, `Token length: ${I.access_token?.length}`), f0(this.serverName, `Has refresh token: ${!!I.refresh_token}`), f0(this.serverName, `Expires in: ${Math.floor(Z)}s`), I
+        return f0(this.serverName, "Returning tokens"), f0(this.serverName, `Token length: TextComponent{I.access_token?.length}`), f0(this.serverName, `Has refresh token: TextComponent{!!I.refresh_token}`), f0(this.serverName, `Expires in: TextComponent{Math.floor(Z)}s`), I
     }
     async saveTokens(A) {
         let Q = Gw(),
             B = Q.read() || {},
             G = eAA(this.serverName, this.serverConfig);
-        f0(this.serverName, "Saving tokens"), f0(this.serverName, `Token expires in: ${A.expires_in}`), f0(this.serverName, `Has refresh token: ${!!A.refresh_token}`);
+        f0(this.serverName, "Saving tokens"), f0(this.serverName, `Token expires in: TextComponent{A.expires_in}`), f0(this.serverName, `Has refresh token: TextComponent{!!A.refresh_token}`);
         let Z = {
             ...B,
             mcpOAuth: {
@@ -874,10 +872,10 @@ class A1A {
     async redirectToAuthorization(A) {
         this._authorizationUrl = A.toString();
         let Q = A.searchParams.get("scope");
-        if (f0(this.serverName, `Authorization URL: ${A.toString()}`), f0(this.serverName, `Scopes in URL: ${Q||"NOT FOUND"}`), Q) this._scopes = Q, f0(this.serverName, `Captured scopes from authorization URL: ${Q}`);
+        if (f0(this.serverName, `Authorization URL: TextComponent{A.toString()}`), f0(this.serverName, `Scopes in URL: TextComponent{Q||"NOT FOUND"}`), Q) this._scopes = Q, f0(this.serverName, `Captured scopes from authorization URL: TextComponent{Q}`);
         else {
             let Z = this._metadata?.scope || this._metadata?.default_scope || this._metadata?.scopes_supported?.join(" ");
-            if (Z) this._scopes = Z, f0(this.serverName, `Using scopes from metadata: ${Z}`);
+            if (Z) this._scopes = Z, f0(this.serverName, `Using scopes from metadata: TextComponent{Z}`);
             else f0(this.serverName, "No scopes available from URL or metadata")
         }
         if (!this.handleRedirection) {
@@ -886,7 +884,7 @@ class A1A {
         }
         let B = A.toString();
         if (!B.startsWith("http://") && !B.startsWith("https://")) throw Error("Invalid authorization URL: must use http:// or https:// scheme");
-        if (f0(this.serverName, "Redirecting to authorization URL"), f0(this.serverName, `Authorization URL: ${B}`), f0(this.serverName, `Opening authorization URL: ${B}`), !await gZ(B)) process.stdout.write(`
+        if (f0(this.serverName, "Redirecting to authorization URL"), f0(this.serverName, `Authorization URL: TextComponent{B}`), f0(this.serverName, `Opening authorization URL: TextComponent{B}`), !await gZ(B)) process.stdout.write(`
 Couldn't open browser automatically. Please manually open the URL above in your browser.
 `)
     }
@@ -920,14 +918,14 @@ Couldn't open browser automatically. Please manually open the URL above in your 
             f0(this.serverName, "Token refresh returned no tokens");
             return
         } catch (Q) {
-            f0(this.serverName, `Token refresh failed: ${Q instanceof Error?Q.message:String(Q)}`);
+            f0(this.serverName, `Token refresh failed: TextComponent{Q instanceof Error?Q.message:String(Q)}`);
             return
         }
     }
 }
 var nA0, mB1, lG5, y52 = 3118,
     iG5 = "http://localhost:3118/callback";
-var dB1 = L(() => {
+var dB1 = lazyLoader(() => {
     vvA();
     w0();
     BB1();
@@ -936,7 +934,7 @@ var dB1 = L(() => {
     w3();
     u1();
     s5();
-    nA0 = GA(k52(), 1);
+    nA0 = esmImport(k52(), 1);
     mB1 = class mB1 extends Error {
         constructor() {
             super("Authentication was cancelled");
@@ -955,12 +953,11 @@ var dB1 = L(() => {
 function sG5(A) {
     return A.scope === "project" || A.scope === "local"
 }
-
 async function rG5(A, Q) {
     if (!Q.headersHelper) return null;
     if ("scope" in Q && sG5(Q) && !H5()) {
         if (!_X(!0)) {
-            let G = Error(`Security: headersHelper for MCP server '${A}' executed before workspace trust is confirmed. If you see this message, post in ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.FEEDBACK_CHANNEL}.`);
+            let G = Error(`Security: headersHelper for MCP server 'TextComponent{A}' executed before workspace trust is confirmed. If you see this message, post in TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.FEEDBACK_CHANNEL}.`);
             return yN("MCP headersHelper invoked before trust check", G), BA("tengu_mcp_headersHelper_missing_trust", {}), null
         }
     }
@@ -970,18 +967,17 @@ async function rG5(A, Q) {
             shell: !0,
             timeout: 1e4
         });
-        if (B.code !== 0 || !B.stdout) throw Error(`headersHelper for MCP server '${A}' did not return a valid value`);
+        if (B.code !== 0 || !B.stdout) throw Error(`headersHelper for MCP server 'TextComponent{A}' did not return a valid value`);
         let G = B.stdout.trim(),
             Z = JSON.parse(G);
-        if (typeof Z !== "object" || Z === null || Array.isArray(Z)) throw Error(`headersHelper for MCP server '${A}' must return a JSON object with string key-value pairs`);
+        if (typeof Z !== "object" || Z === null || Array.isArray(Z)) throw Error(`headersHelper for MCP server 'TextComponent{A}' must return a JSON object with string key-value pairs`);
         for (let [I, Y] of Object.entries(Z))
-            if (typeof Y !== "string") throw Error(`headersHelper for MCP server '${A}' returned non-string value for key "${I}": ${typeof Y}`);
-        return f0(A, `Successfully retrieved ${Object.keys(Z).length} headers from headersHelper`), Z
+            if (typeof Y !== "string") throw Error(`headersHelper for MCP server 'TextComponent{A}' returned non-string value for key "TextComponent{I}": TextComponent{typeof Y}`);
+        return f0(A, `Successfully retrieved TextComponent{Object.keys(Z).length} headers from headersHelper`), Z
     } catch (B) {
-        return CI(A, `Error getting headers from headersHelper: ${B instanceof Error?B.message:String(B)}`), e(Error(`Error getting MCP headers from headersHelper for server '${A}': ${B instanceof Error?B.message:String(B)}`)), null
+        return CI(A, `Error getting headers from headersHelper: TextComponent{B instanceof Error?B.message:String(B)}`), e(Error(`Error getting MCP headers from headersHelper for server 'TextComponent{A}': TextComponent{B instanceof Error?B.message:String(B)}`)), null
     }
 }
-
 async function cB1(A, Q) {
     let B = Q.headers || {},
         G = await rG5(A, Q) || {};
@@ -990,7 +986,7 @@ async function cB1(A, Q) {
         ...G
     }
 }
-var b52 = L(() => {
+var b52 = lazyLoader(() => {
     I6();
     jQ();
     u1();
@@ -998,7 +994,6 @@ var b52 = L(() => {
     w0();
     S0()
 });
-
 class sA0 {
     serverName;
     sendMcpMessage;
@@ -1039,9 +1034,8 @@ function QZ5(A) {
 }
 
 function f52(A, Q) {
-    return `${A}-${JSON.stringify(Q)}`
+    return `TextComponent{A}-TextComponent{JSON.stringify(Q)}`
 }
-
 async function cIA(A, Q) {
     let B = f52(A, Q);
     try {
@@ -1050,7 +1044,6 @@ async function cIA(A, Q) {
     } catch {}
     dIA.cache.delete(B)
 }
-
 async function Wh(A, Q, B) {
     return m52({
         client: B,
@@ -1059,7 +1052,6 @@ async function Wh(A, Q, B) {
         signal: s9().signal
     })
 }
-
 async function Q1A(A, Q) {
     try {
         await cIA(A, Q);
@@ -1082,7 +1074,7 @@ async function Q1A(A, Q) {
             resources: Y.length > 0 ? Y : void 0
         }
     } catch (B) {
-        return CI(A, `Error during reconnection: ${B instanceof Error?B.message:String(B)}`), {
+        return CI(A, `Error during reconnection: TextComponent{B instanceof Error?B.message:String(B)}`), {
             client: {
                 name: A,
                 type: "failed",
@@ -1093,14 +1085,12 @@ async function Q1A(A, Q) {
         }
     }
 }
-
 async function BZ5(A, Q, B) {
     for (let G = 0; G < A.length; G += Q) {
         let Z = A.slice(G, G + Q);
         await Promise.all(Z.map(B))
     }
 }
-
 async function oA0(A, Q) {
     let B = !1,
         G = Object.entries(Q ?? (await $_()).servers),
@@ -1151,7 +1141,7 @@ async function oA0(A, Q) {
                 resources: z.length > 0 ? z : void 0
             })
         } catch (K) {
-            CI(F, `Error fetching tools/commands/resources: ${K instanceof Error?K.message:String(K)}`), A({
+            CI(F, `Error fetching tools/commands/resources: TextComponent{K instanceof Error?K.message:String(K)}`), A({
                 client: {
                     name: F,
                     type: "failed",
@@ -1163,7 +1153,6 @@ async function oA0(A, Q) {
         }
     })
 }
-
 async function u52(A, Q) {
     switch (A.type) {
         case "text":
@@ -1185,10 +1174,10 @@ async function u52(A, Q) {
         }
         case "resource": {
             let B = A.resource,
-                G = `[Resource from ${Q} at ${B.uri}] `;
+                G = `[Resource from TextComponent{Q} at TextComponent{B.uri}] `;
             if ("text" in B) return [{
                 type: "text",
-                text: `${G}${B.text}`
+                text: `TextComponent{G}TextComponent{B.text}`
             }];
             else if ("blob" in B)
                 if (oG5.has(B.mimeType ?? "")) {
@@ -1209,14 +1198,14 @@ async function u52(A, Q) {
                     }), J
                 } else return [{
                     type: "text",
-                    text: `${G}Base64 data (${B.mimeType||"unknown type"}) ${B.blob}`
+                    text: `TextComponent{G}Base64 data (TextComponent{B.mimeType||"unknown type"}) TextComponent{B.blob}`
                 }];
             return []
         }
         case "resource_link": {
             let B = A,
-                G = `[Resource link: ${B.name}] ${B.uri}`;
-            if (B.description) G += ` (${B.description})`;
+                G = `[Resource link: TextComponent{B.name}] TextComponent{B.uri}`;
+            if (B.description) G += ` (TextComponent{B.description})`;
             return [{
                 type: "text",
                 text: G
@@ -1231,17 +1220,16 @@ function lB1(A, Q = 2) {
     if (A === null) return "null";
     if (Array.isArray(A)) {
         if (A.length === 0) return "[]";
-        return `[${lB1(A[0],Q-1)}]`
+        return `[TextComponent{lB1(A[0],Q-1)}]`
     }
     if (typeof A === "object") {
         if (Q <= 0) return "{...}";
-        let G = Object.entries(A).slice(0, 10).map(([I, Y]) => `${I}: ${lB1(Y,Q-1)}`),
+        let G = Object.entries(A).slice(0, 10).map(([I, Y]) => `TextComponent{I}: TextComponent{lB1(Y,Q-1)}`),
             Z = Object.keys(A).length > 10 ? ", ..." : "";
-        return `{${G.join(", ")}${Z}}`
+        return `{TextComponent{G.join(", ")}TextComponent{Z}}`
     }
     return typeof A
 }
-
 async function tA0(A, Q, B) {
     if (A && typeof A === "object") {
         if ("toolResult" in A) return {
@@ -1262,10 +1250,9 @@ async function tA0(A, Q, B) {
             }
         }
     }
-    let G = `Unexpected response format from tool ${Q}`;
+    let G = `Unexpected response format from tool TextComponent{Q}`;
     throw CI(B, G), Error(G)
 }
-
 async function GZ5(A, Q, B) {
     let {
         content: G
@@ -1273,7 +1260,6 @@ async function GZ5(A, Q, B) {
     if (B !== "ide") return await M62(G);
     return G
 }
-
 async function m52({
     client: {
         client: A,
@@ -1287,10 +1273,10 @@ async function m52({
     let Y = Date.now(),
         J;
     try {
-        f0(Q, `Calling MCP tool: ${B}`), J = setInterval(() => {
+        f0(Q, `Calling MCP tool: TextComponent{B}`), J = setInterval(() => {
             let V = Date.now() - Y,
-                D = `${Math.floor(V/1000)}s`;
-            f0(Q, `Tool '${B}' still running (${D} elapsed)`)
+                D = `TextComponent{Math.floor(V/1000)}s`;
+            f0(Q, `Tool 'TextComponent{B}' still running (TextComponent{D} elapsed)`)
         }, 30000);
         let W = await A.callTool({
             name: B,
@@ -1309,12 +1295,12 @@ async function m52({
             throw CI(Q, V), Error(V)
         }
         let X = Date.now() - Y,
-            F = X < 1000 ? `${X}ms` : X < 60000 ? `${Math.floor(X/1000)}s` : `${Math.floor(X/60000)}m ${Math.floor(X%60000/1000)}s`;
-        return f0(Q, `Tool '${B}' completed successfully in ${F}`), await GZ5(W, B, Q)
+            F = X < 1000 ? `TextComponent{X}ms` : X < 60000 ? `TextComponent{Math.floor(X/1000)}s` : `TextComponent{Math.floor(X/60000)}m TextComponent{Math.floor(X%60000/1000)}s`;
+        return f0(Q, `Tool 'TextComponent{B}' completed successfully in TextComponent{F}`), await GZ5(W, B, Q)
     } catch (W) {
         if (J !== void 0) clearInterval(J);
         let X = Date.now() - Y;
-        if (W instanceof Error && W.name !== "AbortError") f0(Q, `Tool '${B}' failed after ${Math.floor(X/1000)}s: ${W.message}`);
+        if (W instanceof Error && W.name !== "AbortError") f0(Q, `Tool 'TextComponent{B}' failed after TextComponent{Math.floor(X/1000)}s: TextComponent{W.message}`);
         if (!(W instanceof Error) || W.name !== "AbortError") throw W
     } finally {
         if (J !== void 0) clearInterval(J)
@@ -1325,7 +1311,6 @@ function ZZ5(A) {
     if (A.message.content[0]?.type !== "tool_use") return;
     return A.message.content[0].id
 }
-
 async function d52(A, Q) {
     let B = [],
         G = [],
@@ -1369,7 +1354,7 @@ async function d52(A, Q) {
                     tools: V
                 }
             } catch (X) {
-                return CI(I, `Failed to connect SDK MCP server: ${X}`), {
+                return CI(I, `Failed to connect SDK MCP server: TextComponent{X}`), {
                     client: {
                         type: "failed",
                         name: I,
@@ -1390,7 +1375,7 @@ async function d52(A, Q) {
     }
 }
 var oG5, AZ5, dIA, rA0, h52, g52, iB1;
-var Tk = L(() => {
+var Tk = lazyLoader(() => {
     o2();
     fUA();
     j82();
@@ -1443,7 +1428,7 @@ var Tk = L(() => {
                     fetch: async (P, y) => {
                         let v = {},
                             x = await N.tokens();
-                        if (x) v.Authorization = `Bearer ${x.access_token}`;
+                        if (x) v.Authorization = `Bearer TextComponent{x.access_token}`;
                         let p = F3A();
                         return fetch(P, {
                             ...y,
@@ -1460,7 +1445,7 @@ var Tk = L(() => {
                 };
                 Z = new CB1(new URL(Q.url), R), f0(A, "SSE transport initialized, awaiting connection")
             } else if (Q.type === "sse-ide") {
-                f0(A, `Setting up SSE-IDE transport to ${Q.url}`);
+                f0(A, `Setting up SSE-IDE transport to TextComponent{Q.url}`);
                 let N = F3A(),
                     q = N.dispatcher ? {
                         eventSourceInit: {
@@ -1492,29 +1477,29 @@ var Tk = L(() => {
                     R = new bUA.default(Q.url, ["mcp"], Object.keys(q).length > 0 ? q : void 0);
                 Z = new PB1(R)
             } else if (Q.type === "ws") {
-                f0(A, `Initializing WebSocket transport to ${Q.url}`);
+                f0(A, `Initializing WebSocket transport to TextComponent{Q.url}`);
                 let N = await cB1(A, Q),
                     q = cy1(),
                     R = {
                         headers: {
                             "User-Agent": lt(),
                             ...I && {
-                                Authorization: `Bearer ${I}`
+                                Authorization: `Bearer TextComponent{I}`
                             },
                             ...N
                         },
                         agent: hEA(Q.url),
                         ...q || {}
                     };
-                f0(A, `WebSocket transport options: ${JSON.stringify({url:Q.url,headers:R.headers,hasSessionAuth:!!I})}`);
+                f0(A, `WebSocket transport options: TextComponent{JSON.stringify({url:Q.url,headers:R.headers,hasSessionAuth:!!I})}`);
                 let P = new bUA.default(Q.url, ["mcp"], Object.keys(R).length > 0 ? R : void 0);
                 Z = new PB1(P)
             } else if (Q.type === "http") {
-                f0(A, `Initializing HTTP transport to ${Q.url}`), f0(A, `Node version: ${process.version}, Platform: ${process.platform}`), f0(A, `Environment: ${JSON.stringify({NODE_OPTIONS:process.env.NODE_OPTIONS||"not set",UV_THREADPOOL_SIZE:process.env.UV_THREADPOOL_SIZE||"default",HTTP_PROXY:process.env.HTTP_PROXY||"not set",HTTPS_PROXY:process.env.HTTPS_PROXY||"not set",NO_PROXY:process.env.NO_PROXY||"not set"})}`);
+                f0(A, `Initializing HTTP transport to TextComponent{Q.url}`), f0(A, `Node version: TextComponent{process.version}, Platform: TextComponent{process.platform}`), f0(A, `Environment: TextComponent{JSON.stringify({NODE_OPTIONS:process.env.NODE_OPTIONS||"not set",UV_THREADPOOL_SIZE:process.env.UV_THREADPOOL_SIZE||"default",HTTP_PROXY:process.env.HTTP_PROXY||"not set",HTTPS_PROXY:process.env.HTTPS_PROXY||"not set",NO_PROXY:process.env.NO_PROXY||"not set"})}`);
                 let N = new A1A(A, Q),
                     q = await cB1(A, Q),
                     R = F3A();
-                f0(A, `Proxy options: ${R.dispatcher?"custom dispatcher":"default"}`);
+                f0(A, `Proxy options: TextComponent{R.dispatcher?"custom dispatcher":"default"}`);
                 let P = {
                     authProvider: N,
                     requestInit: {
@@ -1522,12 +1507,12 @@ var Tk = L(() => {
                         headers: {
                             "User-Agent": lt(),
                             ...I && {
-                                Authorization: `Bearer ${I}`
+                                Authorization: `Bearer TextComponent{I}`
                             },
                             ...q
                         },
                         signal: AbortSignal.timeout(60000)
                     }
                 };
-                f0(A, `HTTP transport options: ${JSON.stringify({url:Q.url,headers:P.requestInit?.headers,hasAuthProvider:!!N,timeoutMs:60000})}`), Z = new PA0(new URL(Q.url), P), f0(A, "HTTP transport created successfully")
+                f0(A, `HTTP transport options: TextComponent{JSON.stringify({url:Q.url,headers:P.requestInit?.headers,hasAuthProvider:!!N,timeoutMs:60000})}`), Z = new PA0(new URL(Q.url), P), f0(A, "HTTP transport created successfully")
             } else if (Q.type === "sdk") throw Error("SDK servers should be handled in print.ts");

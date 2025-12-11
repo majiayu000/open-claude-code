@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_029.js
+ * 处理时间: 2025-12-09T03:41:39.309Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.121Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -18,14 +21,14 @@
  */
 
 var fX, th1, XJB = (A) => {
-        return A?.replace(`file://${VJB()}/`, "")
+        return A?.replace(`file://TextComponent{VJB()}/`, "")
     },
     FJB;
-var KJB = L(() => {
+var KJB = lazyLoader(() => {
     IJB();
     lUA();
     oh1();
-    fX = GA(VA(), 1), th1 = GA(QJB(), 1), FJB = new th1.default({
+    fX = esmImport(VA(), 1), th1 = esmImport(QJB(), 1), FJB = new th1.default({
         cwd: VJB(),
         internals: th1.default.nodeInternals()
     })
@@ -137,7 +140,7 @@ var b96, f96, h96 = "\x1B[200~",
         else if (A.length === 1 && A >= "0" && A <= "9") B.name = "number";
         else if (A.length === 1 && A >= "a" && A <= "z") B.name = A;
         else if (A.length === 1 && A >= "A" && A <= "Z") B.name = A.toLowerCase(), B.shift = !0;
-        else if (Q = b96.exec(A)) B.meta = !0, B.shift = /^[A-Z]$/.test(Q[1]);
+        else if (Q = b96.exec(A)) B.meta = !0, B.shift = /^[A-Z]TextComponent/.test(Q[1]);
         else if (Q = f96.exec(A)) {
             let G = [...A];
             if (G[0] === "\x1B" && G[1] === "\x1B") B.option = !0;
@@ -183,9 +186,9 @@ var b96, f96, h96 = "\x1B[200~",
         }
         return B
     };
-var Ag1 = L(() => {
-    b96 = /^(?:\x1b)([a-zA-Z0-9])$/, f96 = /^(?:\x1b+)(O|N|\[|\[\[)(?:(\d+)(?:;(\d+))?([~^$])|(?:1;)?(\d+)?([a-zA-Z]))/;
-    u96 = new RegExp("^(.*?)(" + ["\\x1b\\][0-9]*(?:;[^\\x07\\x1b]*)*(?:\\x07|\\x1b\\\\)", "\\x1bP[^\\x1b]*\\x1b\\\\", "\\x1b\\[[0-9]*(?:;[0-9]*)*[A-Za-z~]", "\\x1bO[A-Za-z]", "\\x1b[\\x00-\\x7F]", "\\x1b\\x1b", "$"].map((A) => `(?:${A})`).join("|") + ")", "s"), m96 = new RegExp("(.*?)(" + ["\\x1b\\][0-9]*(?:;[^\\x07\\x1b]*)*$", "\\x1bP[^\\x1b]*$", "\\x1b\\[[0-9]*(?:;[0-9]*)*$", "\\x1bO$", "\\x1b$", "$"].map((A) => `(?:${A})`).join("|") + ")", "s"), HJB = {
+var Ag1 = lazyLoader(() => {
+    b96 = /^(?:\x1b)([a-zA-Z0-9])TextComponent/, f96 = /^(?:\x1b+)(O|N|\[|\[\[)(?:(\d+)(?:;(\d+))?([~^TextComponent])|(?:1;)?(\d+)?([a-zA-Z]))/;
+    u96 = new RegExp("^(.*?)(" + ["\\x1b\\][0-9]*(?:;[^\\x07\\x1b]*)*(?:\\x07|\\x1b\\\\)", "\\x1bP[^\\x1b]*\\x1b\\\\", "\\x1b\\[[0-9]*(?:;[0-9]*)*[A-Za-z~]", "\\x1bO[A-Za-z]", "\\x1b[\\x00-\\x7F]", "\\x1b\\x1b", "TextComponent"].map((A) => `(?:TextComponent{A})`).join("|") + ")", "s"), m96 = new RegExp("(.*?)(" + ["\\x1b\\][0-9]*(?:;[^\\x07\\x1b]*)*TextComponent", "\\x1bP[^\\x1b]*TextComponent", "\\x1b\\[[0-9]*(?:;[0-9]*)*TextComponent", "\\x1bO$", "\\x1b$", "TextComponent"].map((A) => `(?:TextComponent{A})`).join("|") + ")", "s"), HJB = {
         mode: "NORMAL",
         incomplete: ""
     };
@@ -261,12 +264,11 @@ var Ag1 = L(() => {
     }, zJB = [...Object.values(EJB), "backspace"]
 });
 var kaA, Mg7, Og7, Rg7, Tg7, Pg7, jg7, Sg7, _g7, kg7, nUA, yg7, xg7, vg7, bg7, fg7;
-var UJB = L(() => {
+var UJB = lazyLoader(() => {
     kaA = globalThis.window?.document !== void 0, Mg7 = globalThis.process?.versions?.node !== void 0, Og7 = globalThis.process?.versions?.bun !== void 0, Rg7 = globalThis.Deno?.version?.deno !== void 0, Tg7 = globalThis.process?.versions?.electron !== void 0, Pg7 = globalThis.navigator?.userAgent?.includes("jsdom") === !0, jg7 = typeof WorkerGlobalScope < "u" && globalThis instanceof WorkerGlobalScope, Sg7 = typeof DedicatedWorkerGlobalScope < "u" && globalThis instanceof DedicatedWorkerGlobalScope, _g7 = typeof SharedWorkerGlobalScope < "u" && globalThis instanceof SharedWorkerGlobalScope, kg7 = typeof ServiceWorkerGlobalScope < "u" && globalThis instanceof ServiceWorkerGlobalScope, nUA = globalThis.navigator?.userAgentData?.platform, yg7 = nUA === "macOS" || globalThis.navigator?.platform === "MacIntel" || globalThis.navigator?.userAgent?.includes(" Mac ") === !0 || globalThis.process?.platform === "darwin", xg7 = nUA === "Windows" || globalThis.navigator?.platform === "Win32" || globalThis.process?.platform === "win32", vg7 = nUA === "Linux" || globalThis.navigator?.platform?.startsWith("Linux") === !0 || globalThis.navigator?.userAgent?.includes(" Linux ") === !0 || globalThis.process?.platform === "linux", bg7 = nUA === "iOS" || globalThis.navigator?.platform === "MacIntel" && globalThis.navigator?.maxTouchPoints > 1 || /iPad|iPhone|iPod/.test(globalThis.navigator?.platform), fg7 = nUA === "Android" || globalThis.navigator?.platform === "Android" || globalThis.navigator?.userAgent?.includes(" Android ") === !0 || globalThis.process?.platform === "android"
 });
-
 var XM = {};
-pG(XM, {
+esmExport(XM, {
     scrollUp: () => X46,
     scrollDown: () => F46,
     link: () => E46,
@@ -331,21 +333,21 @@ var w7 = "\x1B[",
     I46, Y46, NJB, J46, W46, Qg1, X46, F46, V46 = "\x1Bc",
     K46, D46, H46, C46, E46 = (A, Q) => [sUA, "8", aUA, aUA, Q, O7A, A, sUA, "8", aUA, aUA, O7A].join(""),
     z46 = (A, Q = {}) => {
-        let B = `${sUA}1337;File=inline=1`;
-        if (Q.width) B += `;width=${Q.width}`;
-        if (Q.height) B += `;height=${Q.height}`;
+        let B = `TextComponent{sUA}1337;File=inline=1`;
+        if (Q.width) B += `;width=TextComponent{Q.width}`;
+        if (Q.height) B += `;height=TextComponent{Q.height}`;
         if (Q.preserveAspectRatio === !1) B += ";preserveAspectRatio=0";
         return B + ":" + Buffer.from(A).toString("base64") + O7A
     },
     U46;
-var Zg1 = L(() => {
+var Zg1 = lazyLoader(() => {
     UJB();
     $JB = !kaA && Bg1.env.TERM_PROGRAM === "Apple_Terminal", l96 = !kaA && Bg1.platform === "win32", i96 = kaA ? () => {
         throw Error("`process.cwd()` only works in Node.js, not the browser.")
-    } : Bg1.cwd, qJB = w7 + "G", t96 = $JB ? "\x1B7" : w7 + "s", e96 = $JB ? "\x1B8" : w7 + "u", A46 = w7 + "6n", Q46 = w7 + "E", B46 = w7 + "F", G46 = w7 + "?25l", Gg1 = w7 + "?25h", I46 = w7 + "K", Y46 = w7 + "1K", NJB = w7 + "2K", J46 = w7 + "J", W46 = w7 + "1J", Qg1 = w7 + "2J", X46 = w7 + "S", F46 = w7 + "T", K46 = l96 ? `${Qg1}${w7}0f` : `${Qg1}${w7}3J${w7}H`, D46 = w7 + "?1049h", H46 = w7 + "?1049l", C46 = O7A, U46 = {
-        setCwd: (A = i96()) => `${sUA}50;CurrentDir=${A}${O7A}`,
+    } : Bg1.cwd, qJB = w7 + "G", t96 = $JB ? "\x1B7" : w7 + "s", e96 = $JB ? "\x1B8" : w7 + "u", A46 = w7 + "6n", Q46 = w7 + "E", B46 = w7 + "F", G46 = w7 + "?25l", Gg1 = w7 + "?25h", I46 = w7 + "K", Y46 = w7 + "1K", NJB = w7 + "2K", J46 = w7 + "J", W46 = w7 + "1J", Qg1 = w7 + "2J", X46 = w7 + "S", F46 = w7 + "T", K46 = l96 ? `TextComponent{Qg1}TextComponent{w7}0f` : `TextComponent{Qg1}TextComponent{w7}3J${w7}H`, D46 = w7 + "?1049h", H46 = w7 + "?1049l", C46 = O7A, U46 = {
+        setCwd: (A = i96()) => `TextComponent{sUA}50;CurrentDir=TextComponent{A}TextComponent{O7A}`,
         annotation(A, Q = {}) {
-            let B = `${sUA}1337;`,
+            let B = `TextComponent{sUA}1337;`,
                 G = Q.x !== void 0,
                 Z = Q.y !== void 0;
             if ((G || Z) && !(G && Z && Q.length !== void 0)) throw Error("`x`, `y` and `length` must be defined when `x` or `y` is defined");
@@ -355,7 +357,7 @@ var Zg1 = L(() => {
         }
     }
 });
-var yaA = L(() => {
+var yaA = lazyLoader(() => {
     Zg1();
     Zg1()
 });
@@ -388,7 +390,7 @@ function $46(A) {
     return [Q, B]
 }
 var xaA;
-var Ig1 = L(() => {
+var Ig1 = lazyLoader(() => {
     Ag1();
     xaA = class xaA extends M7A {
         keypress;
@@ -402,18 +404,18 @@ var Ig1 = L(() => {
     }
 });
 var LJB, ec;
-var rUA = L(() => {
-    LJB = GA(VA(), 1), ec = LJB.createContext(!1)
+var rUA = lazyLoader(() => {
+    LJB = esmImport(VA(), 1), ec = LJB.createContext(!1)
 });
 var MJB, oUA;
-var vaA = L(() => {
-    MJB = GA(VA(), 1), oUA = MJB.createContext(null)
+var vaA = lazyLoader(() => {
+    MJB = esmImport(VA(), 1), oUA = MJB.createContext(null)
 });
 var S_, w46 = "\t",
     q46 = "\x1B[Z",
     N46 = "\x1B",
     L46, baA;
-var OJB = L(() => {
+var OJB = lazyLoader(() => {
     NaA();
     ch1();
     ph1();
@@ -425,7 +427,7 @@ var OJB = L(() => {
     Ig1();
     rUA();
     vaA();
-    S_ = GA(VA(), 1), L46 = process.platform !== "win32";
+    S_ = esmImport(VA(), 1), L46 = process.platform !== "win32";
     baA = class baA extends S_.PureComponent {
         static displayName = "InternalApp";
         static getDerivedStateFromError(A) {
@@ -666,7 +668,7 @@ Read about how to prevent this error on https://github.com/vadimdemedes/ink/#isr
         }
     }
 });
-var tUA = U((Yu7, RJB) => {
+var tUA = moduleWrapper((Yu7, RJB) => {
     var M46 = Number.MAX_SAFE_INTEGER || 9007199254740991,
         O46 = ["major", "premajor", "minor", "preminor", "patch", "prepatch", "prerelease"];
     RJB.exports = {
@@ -680,11 +682,11 @@ var tUA = U((Yu7, RJB) => {
         FLAG_LOOSE: 2
     }
 });
-var eUA = U((Ju7, TJB) => {
+var eUA = moduleWrapper((Ju7, TJB) => {
     var R46 = typeof process === "object" && process.env && process.env.NODE_DEBUG && /\bsemver\b/i.test(process.env.NODE_DEBUG) ? (...A) => console.error("SEMVER", ...A) : () => {};
     TJB.exports = R46
 });
-var R7A = U((__, PJB) => {
+var R7A = moduleWrapper((__, PJB) => {
     var {
         MAX_SAFE_COMPONENT_LENGTH: Yg1,
         MAX_SAFE_BUILD_LENGTH: T46,
@@ -704,7 +706,7 @@ var R7A = U((__, PJB) => {
             [Jg1, T46]
         ],
         v46 = (A) => {
-            for (let [Q, B] of x46) A = A.split(`${Q}*`).join(`${Q}{0,${B}}`).split(`${Q}+`).join(`${Q}{1,${B}}`);
+            for (let [Q, B] of x46) A = A.split(`TextComponent{Q}*`).join(`TextComponent{Q}{0,TextComponent{B}}`).split(`TextComponent{Q}+`).join(`TextComponent{Q}{1,TextComponent{B}}`);
             return A
         },
         K8 = (A, Q, B) => {
@@ -714,52 +716,52 @@ var R7A = U((__, PJB) => {
         };
     K8("NUMERICIDENTIFIER", "0|[1-9]\\d*");
     K8("NUMERICIDENTIFIERLOOSE", "\\d+");
-    K8("NONNUMERICIDENTIFIER", `\\d*[a-zA-Z-]${Jg1}*`);
-    K8("MAINVERSION", `(${aB[sB.NUMERICIDENTIFIER]})\\.(${aB[sB.NUMERICIDENTIFIER]})\\.(${aB[sB.NUMERICIDENTIFIER]})`);
-    K8("MAINVERSIONLOOSE", `(${aB[sB.NUMERICIDENTIFIERLOOSE]})\\.(${aB[sB.NUMERICIDENTIFIERLOOSE]})\\.(${aB[sB.NUMERICIDENTIFIERLOOSE]})`);
-    K8("PRERELEASEIDENTIFIER", `(?:${aB[sB.NUMERICIDENTIFIER]}|${aB[sB.NONNUMERICIDENTIFIER]})`);
-    K8("PRERELEASEIDENTIFIERLOOSE", `(?:${aB[sB.NUMERICIDENTIFIERLOOSE]}|${aB[sB.NONNUMERICIDENTIFIER]})`);
-    K8("PRERELEASE", `(?:-(${aB[sB.PRERELEASEIDENTIFIER]}(?:\\.${aB[sB.PRERELEASEIDENTIFIER]})*))`);
-    K8("PRERELEASELOOSE", `(?:-?(${aB[sB.PRERELEASEIDENTIFIERLOOSE]}(?:\\.${aB[sB.PRERELEASEIDENTIFIERLOOSE]})*))`);
-    K8("BUILDIDENTIFIER", `${Jg1}+`);
-    K8("BUILD", `(?:\\+(${aB[sB.BUILDIDENTIFIER]}(?:\\.${aB[sB.BUILDIDENTIFIER]})*))`);
-    K8("FULLPLAIN", `v?${aB[sB.MAINVERSION]}${aB[sB.PRERELEASE]}?${aB[sB.BUILD]}?`);
-    K8("FULL", `^${aB[sB.FULLPLAIN]}$`);
-    K8("LOOSEPLAIN", `[v=\\s]*${aB[sB.MAINVERSIONLOOSE]}${aB[sB.PRERELEASELOOSE]}?${aB[sB.BUILD]}?`);
-    K8("LOOSE", `^${aB[sB.LOOSEPLAIN]}$`);
+    K8("NONNUMERICIDENTIFIER", `\\d*[a-zA-Z-]TextComponent{Jg1}*`);
+    K8("MAINVERSION", `(TextComponent{aB[sB.NUMERICIDENTIFIER]})\\.(TextComponent{aB[sB.NUMERICIDENTIFIER]})\\.(TextComponent{aB[sB.NUMERICIDENTIFIER]})`);
+    K8("MAINVERSIONLOOSE", `(TextComponent{aB[sB.NUMERICIDENTIFIERLOOSE]})\\.(TextComponent{aB[sB.NUMERICIDENTIFIERLOOSE]})\\.(TextComponent{aB[sB.NUMERICIDENTIFIERLOOSE]})`);
+    K8("PRERELEASEIDENTIFIER", `(?:TextComponent{aB[sB.NUMERICIDENTIFIER]}|TextComponent{aB[sB.NONNUMERICIDENTIFIER]})`);
+    K8("PRERELEASEIDENTIFIERLOOSE", `(?:TextComponent{aB[sB.NUMERICIDENTIFIERLOOSE]}|TextComponent{aB[sB.NONNUMERICIDENTIFIER]})`);
+    K8("PRERELEASE", `(?:-(TextComponent{aB[sB.PRERELEASEIDENTIFIER]}(?:\\.TextComponent{aB[sB.PRERELEASEIDENTIFIER]})*))`);
+    K8("PRERELEASELOOSE", `(?:-?(TextComponent{aB[sB.PRERELEASEIDENTIFIERLOOSE]}(?:\\.TextComponent{aB[sB.PRERELEASEIDENTIFIERLOOSE]})*))`);
+    K8("BUILDIDENTIFIER", `TextComponent{Jg1}+`);
+    K8("BUILD", `(?:\\+(TextComponent{aB[sB.BUILDIDENTIFIER]}(?:\\.TextComponent{aB[sB.BUILDIDENTIFIER]})*))`);
+    K8("FULLPLAIN", `v?TextComponent{aB[sB.MAINVERSION]}TextComponent{aB[sB.PRERELEASE]}?TextComponent{aB[sB.BUILD]}?`);
+    K8("FULL", `^TextComponent{aB[sB.FULLPLAIN]}TextComponent`);
+    K8("LOOSEPLAIN", `[v=\\s]*TextComponent{aB[sB.MAINVERSIONLOOSE]}TextComponent{aB[sB.PRERELEASELOOSE]}?TextComponent{aB[sB.BUILD]}?`);
+    K8("LOOSE", `^TextComponent{aB[sB.LOOSEPLAIN]}TextComponent`);
     K8("GTLT", "((?:<|>)?=?)");
-    K8("XRANGEIDENTIFIERLOOSE", `${aB[sB.NUMERICIDENTIFIERLOOSE]}|x|X|\\*`);
-    K8("XRANGEIDENTIFIER", `${aB[sB.NUMERICIDENTIFIER]}|x|X|\\*`);
-    K8("XRANGEPLAIN", `[v=\\s]*(${aB[sB.XRANGEIDENTIFIER]})(?:\\.(${aB[sB.XRANGEIDENTIFIER]})(?:\\.(${aB[sB.XRANGEIDENTIFIER]})(?:${aB[sB.PRERELEASE]})?${aB[sB.BUILD]}?)?)?`);
-    K8("XRANGEPLAINLOOSE", `[v=\\s]*(${aB[sB.XRANGEIDENTIFIERLOOSE]})(?:\\.(${aB[sB.XRANGEIDENTIFIERLOOSE]})(?:\\.(${aB[sB.XRANGEIDENTIFIERLOOSE]})(?:${aB[sB.PRERELEASELOOSE]})?${aB[sB.BUILD]}?)?)?`);
-    K8("XRANGE", `^${aB[sB.GTLT]}\\s*${aB[sB.XRANGEPLAIN]}$`);
-    K8("XRANGELOOSE", `^${aB[sB.GTLT]}\\s*${aB[sB.XRANGEPLAINLOOSE]}$`);
-    K8("COERCEPLAIN", `(^|[^\\d])(\\d{1,${Yg1}})(?:\\.(\\d{1,${Yg1}}))?(?:\\.(\\d{1,${Yg1}}))?`);
-    K8("COERCE", `${aB[sB.COERCEPLAIN]}(?:$|[^\\d])`);
-    K8("COERCEFULL", aB[sB.COERCEPLAIN] + `(?:${aB[sB.PRERELEASE]})?(?:${aB[sB.BUILD]})?(?:$|[^\\d])`);
+    K8("XRANGEIDENTIFIERLOOSE", `TextComponent{aB[sB.NUMERICIDENTIFIERLOOSE]}|x|X|\\*`);
+    K8("XRANGEIDENTIFIER", `TextComponent{aB[sB.NUMERICIDENTIFIER]}|x|X|\\*`);
+    K8("XRANGEPLAIN", `[v=\\s]*(TextComponent{aB[sB.XRANGEIDENTIFIER]})(?:\\.(TextComponent{aB[sB.XRANGEIDENTIFIER]})(?:\\.(TextComponent{aB[sB.XRANGEIDENTIFIER]})(?:TextComponent{aB[sB.PRERELEASE]})?TextComponent{aB[sB.BUILD]}?)?)?`);
+    K8("XRANGEPLAINLOOSE", `[v=\\s]*(TextComponent{aB[sB.XRANGEIDENTIFIERLOOSE]})(?:\\.(TextComponent{aB[sB.XRANGEIDENTIFIERLOOSE]})(?:\\.(TextComponent{aB[sB.XRANGEIDENTIFIERLOOSE]})(?:TextComponent{aB[sB.PRERELEASELOOSE]})?TextComponent{aB[sB.BUILD]}?)?)?`);
+    K8("XRANGE", `^TextComponent{aB[sB.GTLT]}\\s*TextComponent{aB[sB.XRANGEPLAIN]}TextComponent`);
+    K8("XRANGELOOSE", `^TextComponent{aB[sB.GTLT]}\\s*TextComponent{aB[sB.XRANGEPLAINLOOSE]}TextComponent`);
+    K8("COERCEPLAIN", `(^|[^\\d])(\\d{1,TextComponent{Yg1}})(?:\\.(\\d{1,TextComponent{Yg1}}))?(?:\\.(\\d{1,TextComponent{Yg1}}))?`);
+    K8("COERCE", `TextComponent{aB[sB.COERCEPLAIN]}(?:TextComponent|[^\\d])`);
+    K8("COERCEFULL", aB[sB.COERCEPLAIN] + `(?:TextComponent{aB[sB.PRERELEASE]})?(?:TextComponent{aB[sB.BUILD]})?(?:TextComponent|[^\\d])`);
     K8("COERCERTL", aB[sB.COERCE], !0);
     K8("COERCERTLFULL", aB[sB.COERCEFULL], !0);
     K8("LONETILDE", "(?:~>?)");
-    K8("TILDETRIM", `(\\s*)${aB[sB.LONETILDE]}\\s+`, !0);
+    K8("TILDETRIM", `(\\s*)TextComponent{aB[sB.LONETILDE]}\\s+`, !0);
     __.tildeTrimReplace = "$1~";
-    K8("TILDE", `^${aB[sB.LONETILDE]}${aB[sB.XRANGEPLAIN]}$`);
-    K8("TILDELOOSE", `^${aB[sB.LONETILDE]}${aB[sB.XRANGEPLAINLOOSE]}$`);
+    K8("TILDE", `^TextComponent{aB[sB.LONETILDE]}TextComponent{aB[sB.XRANGEPLAIN]}TextComponent`);
+    K8("TILDELOOSE", `^TextComponent{aB[sB.LONETILDE]}TextComponent{aB[sB.XRANGEPLAINLOOSE]}TextComponent`);
     K8("LONECARET", "(?:\\^)");
-    K8("CARETTRIM", `(\\s*)${aB[sB.LONECARET]}\\s+`, !0);
+    K8("CARETTRIM", `(\\s*)TextComponent{aB[sB.LONECARET]}\\s+`, !0);
     __.caretTrimReplace = "$1^";
-    K8("CARET", `^${aB[sB.LONECARET]}${aB[sB.XRANGEPLAIN]}$`);
-    K8("CARETLOOSE", `^${aB[sB.LONECARET]}${aB[sB.XRANGEPLAINLOOSE]}$`);
-    K8("COMPARATORLOOSE", `^${aB[sB.GTLT]}\\s*(${aB[sB.LOOSEPLAIN]})$|^$`);
-    K8("COMPARATOR", `^${aB[sB.GTLT]}\\s*(${aB[sB.FULLPLAIN]})$|^$`);
-    K8("COMPARATORTRIM", `(\\s*)${aB[sB.GTLT]}\\s*(${aB[sB.LOOSEPLAIN]}|${aB[sB.XRANGEPLAIN]})`, !0);
+    K8("CARET", `^TextComponent{aB[sB.LONECARET]}TextComponent{aB[sB.XRANGEPLAIN]}TextComponent`);
+    K8("CARETLOOSE", `^TextComponent{aB[sB.LONECARET]}TextComponent{aB[sB.XRANGEPLAINLOOSE]}TextComponent`);
+    K8("COMPARATORLOOSE", `^TextComponent{aB[sB.GTLT]}\\s*(TextComponent{aB[sB.LOOSEPLAIN]})TextComponent|^TextComponent`);
+    K8("COMPARATOR", `^TextComponent{aB[sB.GTLT]}\\s*(TextComponent{aB[sB.FULLPLAIN]})TextComponent|^TextComponent`);
+    K8("COMPARATORTRIM", `(\\s*)TextComponent{aB[sB.GTLT]}\\s*(TextComponent{aB[sB.LOOSEPLAIN]}|TextComponent{aB[sB.XRANGEPLAIN]})`, !0);
     __.comparatorTrimReplace = "$1$2$3";
-    K8("HYPHENRANGE", `^\\s*(${aB[sB.XRANGEPLAIN]})\\s+-\\s+(${aB[sB.XRANGEPLAIN]})\\s*$`);
-    K8("HYPHENRANGELOOSE", `^\\s*(${aB[sB.XRANGEPLAINLOOSE]})\\s+-\\s+(${aB[sB.XRANGEPLAINLOOSE]})\\s*$`);
+    K8("HYPHENRANGE", `^\\s*(TextComponent{aB[sB.XRANGEPLAIN]})\\s+-\\s+(TextComponent{aB[sB.XRANGEPLAIN]})\\s*TextComponent`);
+    K8("HYPHENRANGELOOSE", `^\\s*(TextComponent{aB[sB.XRANGEPLAINLOOSE]})\\s+-\\s+(TextComponent{aB[sB.XRANGEPLAINLOOSE]})\\s*TextComponent`);
     K8("STAR", "(<|>)?=?\\s*\\*");
-    K8("GTE0", "^\\s*>=\\s*0\\.0\\.0\\s*$");
-    K8("GTE0PRE", "^\\s*>=\\s*0\\.0\\.0-0\\s*$")
+    K8("GTE0", "^\\s*>=\\s*0\\.0\\.0\\s*TextComponent");
+    K8("GTE0PRE", "^\\s*>=\\s*0\\.0\\.0-0\\s*TextComponent")
 });
-var faA = U((Wu7, jJB) => {
+var faA = moduleWrapper((Wu7, jJB) => {
     var b46 = Object.freeze({
             loose: !0
         }),
@@ -771,8 +773,8 @@ var faA = U((Wu7, jJB) => {
         };
     jJB.exports = h46
 });
-var Wg1 = U((Xu7, kJB) => {
-    var SJB = /^[0-9]+$/,
+var Wg1 = moduleWrapper((Xu7, kJB) => {
+    var SJB = /^[0-9]+TextComponent/,
         _JB = (A, Q) => {
             let B = SJB.test(A),
                 G = SJB.test(Q);
@@ -785,7 +787,7 @@ var Wg1 = U((Xu7, kJB) => {
         rcompareIdentifiers: g46
     }
 });
-var vH = U((Fu7, bJB) => {
+var vH = moduleWrapper((Fu7, bJB) => {
     var haA = eUA(),
         {
             MAX_LENGTH: yJB,
@@ -800,23 +802,22 @@ var vH = U((Fu7, bJB) => {
         {
             compareIdentifiers: T7A
         } = Wg1();
-
-class ET {
+    class ET {
         constructor(A, Q) {
             if (Q = u46(Q), A instanceof ET)
                 if (A.loose === !!Q.loose && A.includePrerelease === !!Q.includePrerelease) return A;
                 else A = A.version;
-            else if (typeof A !== "string") throw TypeError(`Invalid version. Must be a string. Got type "${typeof A}".`);
-            if (A.length > yJB) throw TypeError(`version is longer than ${yJB} characters`);
+            else if (typeof A !== "string") throw TypeError(`Invalid version. Must be a string. Got type "TextComponent{typeof A}".`);
+            if (A.length > yJB) throw TypeError(`version is longer than TextComponent{yJB} characters`);
             haA("SemVer", A, Q), this.options = Q, this.loose = !!Q.loose, this.includePrerelease = !!Q.includePrerelease;
             let B = A.trim().match(Q.loose ? xJB[uaA.LOOSE] : xJB[uaA.FULL]);
-            if (!B) throw TypeError(`Invalid Version: ${A}`);
+            if (!B) throw TypeError(`Invalid Version: TextComponent{A}`);
             if (this.raw = A, this.major = +B[1], this.minor = +B[2], this.patch = +B[3], this.major > gaA || this.major < 0) throw TypeError("Invalid major version");
             if (this.minor > gaA || this.minor < 0) throw TypeError("Invalid minor version");
             if (this.patch > gaA || this.patch < 0) throw TypeError("Invalid patch version");
             if (!B[4]) this.prerelease = [];
             else this.prerelease = B[4].split(".").map((G) => {
-                if (/^[0-9]+$/.test(G)) {
+                if (/^[0-9]+TextComponent/.test(G)) {
                     let Z = +G;
                     if (Z >= 0 && Z < gaA) return Z
                 }
@@ -825,7 +826,7 @@ class ET {
             this.build = B[5] ? B[5].split(".") : [], this.format()
         }
         format() {
-            if (this.version = `${this.major}.${this.minor}.${this.patch}`, this.prerelease.length) this.version += `-${this.prerelease.join(".")}`;
+            if (this.version = `TextComponent{this.major}.TextComponent{this.minor}.TextComponent{this.patch}`, this.prerelease.length) this.version += `-TextComponent{this.prerelease.join(".")}`;
             return this.version
         }
         toString() {
@@ -876,9 +877,9 @@ class ET {
             if (A.startsWith("pre")) {
                 if (!Q && B === !1) throw Error("invalid increment argument: identifier is empty");
                 if (Q) {
-                    let G = new RegExp(`^${this.options.loose?vJB[uaA.PRERELEASELOOSE]:vJB[uaA.PRERELEASE]}$`),
-                        Z = `-${Q}`.match(G);
-                    if (!Z || Z[1] !== Q) throw Error(`invalid identifier: ${Q}`)
+                    let G = new RegExp(`^TextComponent{this.options.loose?vJB[uaA.PRERELEASELOOSE]:vJB[uaA.PRERELEASE]}TextComponent`),
+                        Z = `-TextComponent{Q}`.match(G);
+                    if (!Z || Z[1] !== Q) throw Error(`invalid identifier: TextComponent{Q}`)
                 }
             }
             switch (A) {
@@ -896,7 +897,7 @@ class ET {
                     this.inc("pre", Q, B);
                     break;
                 case "release":
-                    if (this.prerelease.length === 0) throw Error(`version ${this.raw} is not a prerelease`);
+                    if (this.prerelease.length === 0) throw Error(`version TextComponent{this.raw} is not a prerelease`);
                     this.prerelease.length = 0;
                     break;
                 case "major":
@@ -933,15 +934,15 @@ class ET {
                     break
                 }
                 default:
-                    throw Error(`invalid increment argument: ${A}`)
+                    throw Error(`invalid increment argument: TextComponent{A}`)
             }
-            if (this.raw = this.format(), this.build.length) this.raw += `+${this.build.join(".")}`;
+            if (this.raw = this.format(), this.build.length) this.raw += `+TextComponent{this.build.join(".")}`;
             return this
         }
     }
     bJB.exports = ET
 });
-var Pt = U((Vu7, hJB) => {
+var Pt = moduleWrapper((Vu7, hJB) => {
     var fJB = vH(),
         m46 = (A, Q, B = !1) => {
             if (A instanceof fJB) return A;
@@ -954,7 +955,7 @@ var Pt = U((Vu7, hJB) => {
         };
     hJB.exports = m46
 });
-var uJB = U((Ku7, gJB) => {
+var uJB = moduleWrapper((Ku7, gJB) => {
     var d46 = Pt(),
         c46 = (A, Q) => {
             let B = d46(A, Q);
@@ -962,7 +963,7 @@ var uJB = U((Ku7, gJB) => {
         };
     gJB.exports = c46
 });
-var dJB = U((Du7, mJB) => {
+var dJB = moduleWrapper((Du7, mJB) => {
     var p46 = Pt(),
         l46 = (A, Q) => {
             let B = p46(A.trim().replace(/^[=v]+/, ""), Q);
@@ -970,7 +971,7 @@ var dJB = U((Du7, mJB) => {
         };
     mJB.exports = l46
 });
-var lJB = U((Hu7, pJB) => {
+var lJB = moduleWrapper((Hu7, pJB) => {
     var cJB = vH(),
         i46 = (A, Q, B, G, Z) => {
             if (typeof B === "string") Z = G, G = B, B = void 0;
@@ -982,7 +983,7 @@ var lJB = U((Hu7, pJB) => {
         };
     pJB.exports = i46
 });
-var aJB = U((Cu7, nJB) => {
+var aJB = moduleWrapper((Cu7, nJB) => {
     var iJB = Pt(),
         n46 = (A, Q) => {
             let B = iJB(A, null, !0),
@@ -1008,22 +1009,22 @@ var aJB = U((Cu7, nJB) => {
         };
     nJB.exports = n46
 });
-var rJB = U((Eu7, sJB) => {
+var rJB = moduleWrapper((Eu7, sJB) => {
     var a46 = vH(),
         s46 = (A, Q) => new a46(A, Q).major;
     sJB.exports = s46
 });
-var tJB = U((zu7, oJB) => {
+var tJB = moduleWrapper((zu7, oJB) => {
     var r46 = vH(),
         o46 = (A, Q) => new r46(A, Q).minor;
     oJB.exports = o46
 });
-var AWB = U((Uu7, eJB) => {
+var AWB = moduleWrapper((Uu7, eJB) => {
     var t46 = vH(),
         e46 = (A, Q) => new t46(A, Q).patch;
     eJB.exports = e46
 });
-var BWB = U(($u7, QWB) => {
+var BWB = moduleWrapper(($u7, QWB) => {
     var A86 = Pt(),
         Q86 = (A, Q) => {
             let B = A86(A, Q);
@@ -1031,22 +1032,22 @@ var BWB = U(($u7, QWB) => {
         };
     QWB.exports = Q86
 });
-var FM = U((wu7, ZWB) => {
+var FM = moduleWrapper((wu7, ZWB) => {
     var GWB = vH(),
         B86 = (A, Q, B) => new GWB(A, B).compare(new GWB(Q, B));
     ZWB.exports = B86
 });
-var YWB = U((qu7, IWB) => {
+var YWB = moduleWrapper((qu7, IWB) => {
     var G86 = FM(),
         Z86 = (A, Q, B) => G86(Q, A, B);
     IWB.exports = Z86
 });
-var WWB = U((Nu7, JWB) => {
+var WWB = moduleWrapper((Nu7, JWB) => {
     var I86 = FM(),
         Y86 = (A, Q) => I86(A, Q, !0);
     JWB.exports = Y86
 });
-var maA = U((Lu7, FWB) => {
+var maA = moduleWrapper((Lu7, FWB) => {
     var XWB = vH(),
         J86 = (A, Q, B) => {
             let G = new XWB(A, B),
@@ -1055,47 +1056,47 @@ var maA = U((Lu7, FWB) => {
         };
     FWB.exports = J86
 });
-var KWB = U((Mu7, VWB) => {
+var KWB = moduleWrapper((Mu7, VWB) => {
     var W86 = maA(),
         X86 = (A, Q) => A.sort((B, G) => W86(B, G, Q));
     VWB.exports = X86
 });
-var HWB = U((Ou7, DWB) => {
+var HWB = moduleWrapper((Ou7, DWB) => {
     var F86 = maA(),
         V86 = (A, Q) => A.sort((B, G) => F86(G, B, Q));
     DWB.exports = V86
 });
-var A$A = U((Ru7, CWB) => {
+var A$A = moduleWrapper((Ru7, CWB) => {
     var K86 = FM(),
         D86 = (A, Q, B) => K86(A, Q, B) > 0;
     CWB.exports = D86
 });
-var daA = U((Tu7, EWB) => {
+var daA = moduleWrapper((Tu7, EWB) => {
     var H86 = FM(),
         C86 = (A, Q, B) => H86(A, Q, B) < 0;
     EWB.exports = C86
 });
-var Xg1 = U((Pu7, zWB) => {
+var Xg1 = moduleWrapper((Pu7, zWB) => {
     var E86 = FM(),
         z86 = (A, Q, B) => E86(A, Q, B) === 0;
     zWB.exports = z86
 });
-var Fg1 = U((ju7, UWB) => {
+var Fg1 = moduleWrapper((ju7, UWB) => {
     var U86 = FM(),
         $86 = (A, Q, B) => U86(A, Q, B) !== 0;
     UWB.exports = $86
 });
-var Q$A = U((Su7, $WB) => {
+var Q$A = moduleWrapper((Su7, $WB) => {
     var w86 = FM(),
         q86 = (A, Q, B) => w86(A, Q, B) >= 0;
     $WB.exports = q86
 });
-var caA = U((_u7, wWB) => {
+var caA = moduleWrapper((_u7, wWB) => {
     var N86 = FM(),
         L86 = (A, Q, B) => N86(A, Q, B) <= 0;
     wWB.exports = L86
 });
-var Vg1 = U((ku7, qWB) => {
+var Vg1 = moduleWrapper((ku7, qWB) => {
     var M86 = Xg1(),
         O86 = Fg1(),
         R86 = A$A(),
@@ -1127,12 +1128,12 @@ var Vg1 = U((ku7, qWB) => {
                 case "<=":
                     return j86(A, B, G);
                 default:
-                    throw TypeError(`Invalid operator: ${Q}`)
+                    throw TypeError(`Invalid operator: TextComponent{Q}`)
             }
         };
     qWB.exports = S86
 });
-var Kg1 = U((yu7, NWB) => {
+var Kg1 = moduleWrapper((yu7, NWB) => {
     var _86 = vH(),
         k86 = Pt(),
         {
@@ -1159,13 +1160,13 @@ var Kg1 = U((yu7, NWB) => {
             let G = B[2],
                 Z = B[3] || "0",
                 I = B[4] || "0",
-                Y = Q.includePrerelease && B[5] ? `-${B[5]}` : "",
-                J = Q.includePrerelease && B[6] ? `+${B[6]}` : "";
-            return k86(`${G}.${Z}.${I}${Y}${J}`, Q)
+                Y = Q.includePrerelease && B[5] ? `-TextComponent{B[5]}` : "",
+                J = Q.includePrerelease && B[6] ? `+TextComponent{B[6]}` : "";
+            return k86(`TextComponent{G}.TextComponent{Z}.TextComponent{I}TextComponent{Y}TextComponent{J}`, Q)
         };
     NWB.exports = y86
 });
-var OWB = U((xu7, MWB) => {
+var OWB = moduleWrapper((xu7, MWB) => {
     class LWB {
         constructor() {
             this.max = 1000, this.map = new Map
@@ -1191,10 +1192,9 @@ var OWB = U((xu7, MWB) => {
     }
     MWB.exports = LWB
 });
-var VM = U((vu7, jWB) => {
+var VM = moduleWrapper((vu7, jWB) => {
     var x86 = /\s+/g;
-
-class B$A {
+    class B$A {
         constructor(A, Q) {
             if (Q = b86(Q), A instanceof B$A)
                 if (A.loose === !!Q.loose && A.includePrerelease === !!Q.includePrerelease) return A;
@@ -1202,7 +1202,7 @@ class B$A {
             if (A instanceof Dg1) return this.raw = A.value, this.set = [
                 [A]
             ], this.formatted = void 0, this;
-            if (this.options = Q, this.loose = !!Q.loose, this.includePrerelease = !!Q.includePrerelease, this.raw = A.trim().replace(x86, " "), this.set = this.raw.split("||").map((B) => this.parseRange(B.trim())).filter((B) => B.length), !this.set.length) throw TypeError(`Invalid SemVer Range: ${this.raw}`);
+            if (this.options = Q, this.loose = !!Q.loose, this.includePrerelease = !!Q.includePrerelease, this.raw = A.trim().replace(x86, " "), this.set = this.raw.split("||").map((B) => this.parseRange(B.trim())).filter((B) => B.length), !this.set.length) throw TypeError(`Invalid SemVer Range: TextComponent{this.raw}`);
             if (this.set.length > 1) {
                 let B = this.set[0];
                 if (this.set = this.set.filter((G) => !TWB(G[0])), this.set.length === 0) this.set = [B];
@@ -1324,10 +1324,10 @@ class B$A {
                 FI("tilde", A, G, Z, I, Y, J);
                 let W;
                 if (JE(Z)) W = "";
-                else if (JE(I)) W = `>=${Z}.0.0 <${+Z+1}.0.0-0`;
-                else if (JE(Y)) W = `>=${Z}.${I}.0 <${Z}.${+I+1}.0-0`;
-                else if (J) FI("replaceTilde pr", J), W = `>=${Z}.${I}.${Y}-${J} <${Z}.${+I+1}.0-0`;
-                else W = `>=${Z}.${I}.${Y} <${Z}.${+I+1}.0-0`;
+                else if (JE(I)) W = `>=TextComponent{Z}.0.0 <TextComponent{+Z+1}.0.0-0`;
+                else if (JE(Y)) W = `>=TextComponent{Z}.TextComponent{I}.0 <TextComponent{Z}.TextComponent{+I+1}.0-0`;
+                else if (J) FI("replaceTilde pr", J), W = `>=TextComponent{Z}.TextComponent{I}.TextComponent{Y}-TextComponent{J} <TextComponent{Z}.TextComponent{+I+1}.0-0`;
+                else W = `>=TextComponent{Z}.TextComponent{I}.TextComponent{Y} <TextComponent{Z}.TextComponent{+I+1}.0-0`;
                 return FI("tilde return", W), W
             })
         },
@@ -1342,19 +1342,19 @@ class B$A {
                 FI("caret", A, Z, I, Y, J, W);
                 let X;
                 if (JE(I)) X = "";
-                else if (JE(Y)) X = `>=${I}.0.0${G} <${+I+1}.0.0-0`;
+                else if (JE(Y)) X = `>=TextComponent{I}.0.0${G} <TextComponent{+I+1}.0.0-0`;
                 else if (JE(J))
-                    if (I === "0") X = `>=${I}.${Y}.0${G} <${I}.${+Y+1}.0-0`;
-                    else X = `>=${I}.${Y}.0${G} <${+I+1}.0.0-0`;
+                    if (I === "0") X = `>=TextComponent{I}.TextComponent{Y}.0${G} <TextComponent{I}.TextComponent{+Y+1}.0-0`;
+                    else X = `>=TextComponent{I}.TextComponent{Y}.0${G} <TextComponent{+I+1}.0.0-0`;
                 else if (W)
                     if (FI("replaceCaret pr", W), I === "0")
-                        if (Y === "0") X = `>=${I}.${Y}.${J}-${W} <${I}.${Y}.${+J+1}-0`;
-                        else X = `>=${I}.${Y}.${J}-${W} <${I}.${+Y+1}.0-0`;
-                else X = `>=${I}.${Y}.${J}-${W} <${+I+1}.0.0-0`;
+                        if (Y === "0") X = `>=TextComponent{I}.TextComponent{Y}.TextComponent{J}-TextComponent{W} <TextComponent{I}.TextComponent{Y}.TextComponent{+J+1}-0`;
+                        else X = `>=TextComponent{I}.TextComponent{Y}.TextComponent{J}-TextComponent{W} <TextComponent{I}.TextComponent{+Y+1}.0-0`;
+                else X = `>=TextComponent{I}.TextComponent{Y}.TextComponent{J}-TextComponent{W} <TextComponent{+I+1}.0.0-0`;
                 else if (FI("no pr"), I === "0")
-                    if (Y === "0") X = `>=${I}.${Y}.${J}${G} <${I}.${Y}.${+J+1}-0`;
-                    else X = `>=${I}.${Y}.${J}${G} <${I}.${+Y+1}.0-0`;
-                else X = `>=${I}.${Y}.${J} <${+I+1}.0.0-0`;
+                    if (Y === "0") X = `>=TextComponent{I}.TextComponent{Y}.TextComponent{J}TextComponent{G} <TextComponent{I}.TextComponent{Y}.TextComponent{+J+1}-0`;
+                    else X = `>=TextComponent{I}.TextComponent{Y}.TextComponent{J}TextComponent{G} <TextComponent{I}.TextComponent{+Y+1}.0-0`;
+                else X = `>=TextComponent{I}.TextComponent{Y}.TextComponent{J} <TextComponent{+I+1}.0.0-0`;
                 return FI("caret return", X), X
             })
         },
@@ -1383,9 +1383,9 @@ class B$A {
                         if (Z = "<", F) I = +I + 1;
                         else Y = +Y + 1;
                     if (Z === "<") W = "-0";
-                    G = `${Z+I}.${Y}.${J}${W}`
-                } else if (F) G = `>=${I}.0.0${W} <${+I+1}.0.0-0`;
-                else if (V) G = `>=${I}.${Y}.0${W} <${I}.${+Y+1}.0-0`;
+                    G = `TextComponent{Z+I}.TextComponent{Y}.TextComponent{J}TextComponent{W}`
+                } else if (F) G = `>=TextComponent{I}.0.0${W} <TextComponent{+I+1}.0.0-0`;
+                else if (V) G = `>=TextComponent{I}.TextComponent{Y}.0${W} <TextComponent{I}.TextComponent{+Y+1}.0-0`;
                 return FI("xRange return", G), G
             })
         },
@@ -1397,17 +1397,17 @@ class B$A {
         },
         e86 = (A) => (Q, B, G, Z, I, Y, J, W, X, F, V, K) => {
             if (JE(G)) B = "";
-            else if (JE(Z)) B = `>=${G}.0.0${A?"-0":""}`;
-            else if (JE(I)) B = `>=${G}.${Z}.0${A?"-0":""}`;
-            else if (Y) B = `>=${B}`;
-            else B = `>=${B}${A?"-0":""}`;
+            else if (JE(Z)) B = `>=TextComponent{G}.0.0${A?"-0":""}`;
+            else if (JE(I)) B = `>=TextComponent{G}.TextComponent{Z}.0${A?"-0":""}`;
+            else if (Y) B = `>=TextComponent{B}`;
+            else B = `>=TextComponent{B}TextComponent{A?"-0":""}`;
             if (JE(X)) W = "";
-            else if (JE(F)) W = `<${+X+1}.0.0-0`;
-            else if (JE(V)) W = `<${X}.${+F+1}.0-0`;
-            else if (K) W = `<=${X}.${F}.${V}-${K}`;
-            else if (A) W = `<${X}.${F}.${+V+1}-0`;
-            else W = `<=${W}`;
-            return `${B} ${W}`.trim()
+            else if (JE(F)) W = `<TextComponent{+X+1}.0.0-0`;
+            else if (JE(V)) W = `<TextComponent{X}.TextComponent{+F+1}.0-0`;
+            else if (K) W = `<=TextComponent{X}.TextComponent{F}.TextComponent{V}-TextComponent{K}`;
+            else if (A) W = `<TextComponent{X}.TextComponent{F}.TextComponent{+V+1}-0`;
+            else W = `<=TextComponent{W}`;
+            return `TextComponent{B} TextComponent{W}`.trim()
         },
         A66 = (A, Q, B) => {
             for (let G = 0; G < A.length; G++)
@@ -1425,10 +1425,9 @@ class B$A {
             return !0
         }
 });
-var G$A = U((bu7, vWB) => {
+var G$A = moduleWrapper((bu7, vWB) => {
     var Z$A = Symbol("SemVer ANY");
-
-class iaA {
+    class iaA {
         static get ANY() {
             return Z$A
         }
@@ -1443,7 +1442,7 @@ class iaA {
         parse(A) {
             let Q = this.options.loose ? _WB[kWB.COMPARATORLOOSE] : _WB[kWB.COMPARATOR],
                 B = A.match(Q);
-            if (!B) throw TypeError(`Invalid comparator: ${A}`);
+            if (!B) throw TypeError(`Invalid comparator: TextComponent{A}`);
             if (this.operator = B[1] !== void 0 ? B[1] : "", this.operator === "=") this.operator = "";
             if (!B[2]) this.semver = Z$A;
             else this.semver = new yWB(B[2], this.options.loose)
@@ -1490,7 +1489,7 @@ class iaA {
         yWB = vH(),
         xWB = VM()
 });
-var P7A = U((fu7, bWB) => {
+var P7A = moduleWrapper((fu7, bWB) => {
     var Q66 = VM(),
         B66 = (A, Q, B) => {
             try {
@@ -1502,12 +1501,12 @@ var P7A = U((fu7, bWB) => {
         };
     bWB.exports = B66
 });
-var hWB = U((hu7, fWB) => {
+var hWB = moduleWrapper((hu7, fWB) => {
     var G66 = VM(),
         Z66 = (A, Q) => new G66(A, Q).set.map((B) => B.map((G) => G.value).join(" ").trim().split(" "));
     fWB.exports = Z66
 });
-var uWB = U((gu7, gWB) => {
+var uWB = moduleWrapper((gu7, gWB) => {
     var I66 = vH(),
         Y66 = VM(),
         J66 = (A, Q, B) => {

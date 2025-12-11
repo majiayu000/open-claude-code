@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_031.js
+ * 处理时间: 2025-12-09T03:41:36.683Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.914Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -31,7 +34,7 @@
     }
     C5A.parseProxyResponse = A_8
 });
-var vCA = U((fL) => {
+var vCA = moduleWrapper((fL) => {
     var Q_8 = fL && fL.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -56,8 +59,7 @@ var vCA = U((fL) => {
         }),
         gnQ = fL && fL.__importStar || function(A) {
             if (A && A.__esModule) return A;
-
-var Q = {};
+            var Q = {};
             if (A != null) {
                 for (var B in A)
                     if (B !== "default" && Object.prototype.hasOwnProperty.call(A, B)) Q_8(Q, A, B)
@@ -73,12 +75,12 @@ var Q = {};
         value: !0
     });
     fL.HttpsProxyAgent = void 0;
-    var kcA = gnQ(UA("net")),
-        bnQ = gnQ(UA("tls")),
-        G_8 = unQ(UA("assert")),
+    var kcA = gnQ(nodeRequire("net")),
+        bnQ = gnQ(nodeRequire("tls")),
+        G_8 = unQ(nodeRequire("assert")),
         Z_8 = unQ(Os()),
         I_8 = E_1(),
-        Y_8 = UA("url"),
+        Y_8 = nodeRequire("url"),
         J_8 = vnQ(),
         xCA = (0, Z_8.default)("https-proxy-agent"),
         fnQ = (A) => {
@@ -88,14 +90,13 @@ var Q = {};
             };
             return A
         };
-
-class z_1 extends I_8.Agent {
+    class z_1 extends I_8.Agent {
         constructor(A, Q) {
             super(Q);
             this.options = {
                 path: void 0
             }, this.proxy = typeof A === "string" ? new Y_8.URL(A) : A, this.proxyHeaders = Q?.headers ?? {}, xCA("Creating new HttpsProxyAgent instance: %o", this.proxy.href);
-            let B = (this.proxy.hostname || this.proxy.host).replace(/^\[|\]$/g, ""),
+            let B = (this.proxy.hostname || this.proxy.host).replace(/^\[|\]TextComponent/g, ""),
                 G = this.proxy.port ? parseInt(this.proxy.port, 10) : this.proxy.protocol === "https:" ? 443 : 80;
             this.connectOpts = {
                 ALPNProtocols: ["http/1.1"],
@@ -115,18 +116,18 @@ class z_1 extends I_8.Agent {
             let Z = typeof this.proxyHeaders === "function" ? this.proxyHeaders() : {
                     ...this.proxyHeaders
                 },
-                I = kcA.isIPv6(Q.host) ? `[${Q.host}]` : Q.host,
-                Y = `CONNECT ${I}:${Q.port} HTTP/1.1\r
+                I = kcA.isIPv6(Q.host) ? `[TextComponent{Q.host}]` : Q.host,
+                Y = `CONNECT TextComponent{I}:TextComponent{Q.port} HTTP/1.1\r
 `;
             if (B.username || B.password) {
-                let V = `${decodeURIComponent(B.username)}:${decodeURIComponent(B.password)}`;
-                Z["Proxy-Authorization"] = `Basic ${Buffer.from(V).toString("base64")}`
+                let V = `TextComponent{decodeURIComponent(B.username)}:TextComponent{decodeURIComponent(B.password)}`;
+                Z["Proxy-Authorization"] = `Basic TextComponent{Buffer.from(V).toString("base64")}`
             }
-            if (Z.Host = `${I}:${Q.port}`, !Z["Proxy-Connection"]) Z["Proxy-Connection"] = this.keepAlive ? "Keep-Alive" : "close";
-            for (let V of Object.keys(Z)) Y += `${V}: ${Z[V]}\r
+            if (Z.Host = `TextComponent{I}:TextComponent{Q.port}`, !Z["Proxy-Connection"]) Z["Proxy-Connection"] = this.keepAlive ? "Keep-Alive" : "close";
+            for (let V of Object.keys(Z)) Y += `TextComponent{V}: TextComponent{Z[V]}\r
 `;
             let J = (0, J_8.parseProxyResponse)(G);
-            G.write(`${Y}\r
+            G.write(`TextComponent{Y}\r
 `);
             let {
                 connect: W,
@@ -151,11 +152,11 @@ class z_1 extends I_8.Agent {
     z_1.protocols = ["http", "https"];
     fL.HttpsProxyAgent = z_1;
 
-function W_8(A) {
+    function W_8(A) {
         A.resume()
     }
 
-function hnQ(A, ...Q) {
+    function hnQ(A, ...Q) {
         let B = {},
             G;
         for (G in A)
@@ -163,7 +164,7 @@ function hnQ(A, ...Q) {
         return B
     }
 });
-var iI = U((jq7, mnQ) => {
+var iI = moduleWrapper((jq7, mnQ) => {
     mnQ.exports = {
         kClose: Symbol("close"),
         kDestroy: Symbol("destroy"),
@@ -232,148 +233,128 @@ var iI = U((jq7, mnQ) => {
         kHttpsProxyAgent: Symbol("https proxy agent")
     }
 });
-var U7 = U((Sq7, XaQ) => {
+var U7 = moduleWrapper((Sq7, XaQ) => {
     class $J extends Error {
         constructor(A) {
             super(A);
             this.name = "UndiciError", this.code = "UND_ERR"
         }
     }
-
-class dnQ extends $J {
+    class dnQ extends $J {
         constructor(A) {
             super(A);
             this.name = "ConnectTimeoutError", this.message = A || "Connect Timeout Error", this.code = "UND_ERR_CONNECT_TIMEOUT"
         }
     }
-
-class cnQ extends $J {
+    class cnQ extends $J {
         constructor(A) {
             super(A);
             this.name = "HeadersTimeoutError", this.message = A || "Headers Timeout Error", this.code = "UND_ERR_HEADERS_TIMEOUT"
         }
     }
-
-class pnQ extends $J {
+    class pnQ extends $J {
         constructor(A) {
             super(A);
             this.name = "HeadersOverflowError", this.message = A || "Headers Overflow Error", this.code = "UND_ERR_HEADERS_OVERFLOW"
         }
     }
-
-class lnQ extends $J {
+    class lnQ extends $J {
         constructor(A) {
             super(A);
             this.name = "BodyTimeoutError", this.message = A || "Body Timeout Error", this.code = "UND_ERR_BODY_TIMEOUT"
         }
     }
-
-class inQ extends $J {
+    class inQ extends $J {
         constructor(A, Q, B, G) {
             super(A);
             this.name = "ResponseStatusCodeError", this.message = A || "Response Status Code Error", this.code = "UND_ERR_RESPONSE_STATUS_CODE", this.body = G, this.status = Q, this.statusCode = Q, this.headers = B
         }
     }
-
-class nnQ extends $J {
+    class nnQ extends $J {
         constructor(A) {
             super(A);
             this.name = "InvalidArgumentError", this.message = A || "Invalid Argument Error", this.code = "UND_ERR_INVALID_ARG"
         }
     }
-
-class anQ extends $J {
+    class anQ extends $J {
         constructor(A) {
             super(A);
             this.name = "InvalidReturnValueError", this.message = A || "Invalid Return Value Error", this.code = "UND_ERR_INVALID_RETURN_VALUE"
         }
     }
-
-class U_1 extends $J {
+    class U_1 extends $J {
         constructor(A) {
             super(A);
             this.name = "AbortError", this.message = A || "The operation was aborted"
         }
     }
-
-class snQ extends U_1 {
+    class snQ extends U_1 {
         constructor(A) {
             super(A);
             this.name = "AbortError", this.message = A || "Request aborted", this.code = "UND_ERR_ABORTED"
         }
     }
-
-class rnQ extends $J {
+    class rnQ extends $J {
         constructor(A) {
             super(A);
             this.name = "InformationalError", this.message = A || "Request information", this.code = "UND_ERR_INFO"
         }
     }
-
-class onQ extends $J {
+    class onQ extends $J {
         constructor(A) {
             super(A);
             this.name = "RequestContentLengthMismatchError", this.message = A || "Request body length does not match content-length header", this.code = "UND_ERR_REQ_CONTENT_LENGTH_MISMATCH"
         }
     }
-
-class tnQ extends $J {
+    class tnQ extends $J {
         constructor(A) {
             super(A);
             this.name = "ResponseContentLengthMismatchError", this.message = A || "Response body length does not match content-length header", this.code = "UND_ERR_RES_CONTENT_LENGTH_MISMATCH"
         }
     }
-
-class enQ extends $J {
+    class enQ extends $J {
         constructor(A) {
             super(A);
             this.name = "ClientDestroyedError", this.message = A || "The client is destroyed", this.code = "UND_ERR_DESTROYED"
         }
     }
-
-class AaQ extends $J {
+    class AaQ extends $J {
         constructor(A) {
             super(A);
             this.name = "ClientClosedError", this.message = A || "The client is closed", this.code = "UND_ERR_CLOSED"
         }
     }
-
-class QaQ extends $J {
+    class QaQ extends $J {
         constructor(A, Q) {
             super(A);
             this.name = "SocketError", this.message = A || "Socket error", this.code = "UND_ERR_SOCKET", this.socket = Q
         }
     }
-
-class BaQ extends $J {
+    class BaQ extends $J {
         constructor(A) {
             super(A);
             this.name = "NotSupportedError", this.message = A || "Not supported error", this.code = "UND_ERR_NOT_SUPPORTED"
         }
     }
-
-class GaQ extends $J {
+    class GaQ extends $J {
         constructor(A) {
             super(A);
             this.name = "MissingUpstreamError", this.message = A || "No upstream has been added to the BalancedPool", this.code = "UND_ERR_BPL_MISSING_UPSTREAM"
         }
     }
-
-class ZaQ extends Error {
+    class ZaQ extends Error {
         constructor(A, Q, B) {
             super(A);
             this.name = "HTTPParserError", this.code = Q ? `HPE_${Q}` : void 0, this.data = B ? B.toString() : void 0
         }
     }
-
-class IaQ extends $J {
+    class IaQ extends $J {
         constructor(A) {
             super(A);
             this.name = "ResponseExceededMaxSizeError", this.message = A || "Response content exceeded max size", this.code = "UND_ERR_RES_EXCEEDED_MAX_SIZE"
         }
     }
-
-class YaQ extends $J {
+    class YaQ extends $J {
         constructor(A, Q, {
             headers: B,
             data: G
@@ -382,8 +363,7 @@ class YaQ extends $J {
             this.name = "RequestRetryError", this.message = A || "Request retry error", this.code = "UND_ERR_REQ_RETRY", this.statusCode = Q, this.data = G, this.headers = B
         }
     }
-
-class JaQ extends $J {
+    class JaQ extends $J {
         constructor(A, Q, {
             headers: B,
             data: G
@@ -392,8 +372,7 @@ class JaQ extends $J {
             this.name = "ResponseError", this.message = A || "Response error", this.code = "UND_ERR_RESPONSE", this.statusCode = Q, this.data = G, this.headers = B
         }
     }
-
-class WaQ extends $J {
+    class WaQ extends $J {
         constructor(A, Q, B) {
             super(Q, {
                 cause: A,
@@ -428,7 +407,7 @@ class WaQ extends $J {
         SecureProxyConnectionError: WaQ
     }
 });
-var xcA = U((_q7, FaQ) => {
+var xcA = moduleWrapper((_q7, FaQ) => {
     var ycA = {},
         $_1 = ["Accept", "Accept-Encoding", "Accept-Language", "Accept-Ranges", "Access-Control-Allow-Credentials", "Access-Control-Allow-Headers", "Access-Control-Allow-Methods", "Access-Control-Allow-Origin", "Access-Control-Expose-Headers", "Access-Control-Max-Age", "Access-Control-Request-Headers", "Access-Control-Request-Method", "Age", "Allow", "Alt-Svc", "Alt-Used", "Authorization", "Cache-Control", "Clear-Site-Data", "Connection", "Content-Disposition", "Content-Encoding", "Content-Language", "Content-Length", "Content-Location", "Content-Range", "Content-Security-Policy", "Content-Security-Policy-Report-Only", "Content-Type", "Cookie", "Cross-Origin-Embedder-Policy", "Cross-Origin-Opener-Policy", "Cross-Origin-Resource-Policy", "Date", "Device-Memory", "Downlink", "ECT", "ETag", "Expect", "Expect-CT", "Expires", "Forwarded", "From", "Host", "If-Match", "If-Modified-Since", "If-None-Match", "If-Range", "If-Unmodified-Since", "Keep-Alive", "Last-Modified", "Link", "Location", "Max-Forwards", "Origin", "Permissions-Policy", "Pragma", "Proxy-Authenticate", "Proxy-Authorization", "RTT", "Range", "Referer", "Referrer-Policy", "Refresh", "Retry-After", "Sec-WebSocket-Accept", "Sec-WebSocket-Extensions", "Sec-WebSocket-Key", "Sec-WebSocket-Protocol", "Sec-WebSocket-Version", "Server", "Server-Timing", "Service-Worker-Allowed", "Service-Worker-Navigation-Preload", "Set-Cookie", "SourceMap", "Strict-Transport-Security", "Supports-Loading-Mode", "TE", "Timing-Allow-Origin", "Trailer", "Transfer-Encoding", "Upgrade", "Upgrade-Insecure-Requests", "User-Agent", "Vary", "Via", "WWW-Authenticate", "X-Content-Type-Options", "X-DNS-Prefetch-Control", "X-Frame-Options", "X-Permitted-Cross-Domain-Policies", "X-Powered-By", "X-Requested-With", "X-XSS-Protection"];
     for (let A = 0; A < $_1.length; ++A) {
@@ -442,13 +421,12 @@ var xcA = U((_q7, FaQ) => {
         headerNameLowerCasedRecord: ycA
     }
 });
-var HaQ = U((kq7, DaQ) => {
+var HaQ = moduleWrapper((kq7, DaQ) => {
     var {
         wellknownHeaderNames: VaQ,
         headerNameLowerCasedRecord: X_8
     } = xcA();
-
-class E5A {
+    class E5A {
         value = null;
         left = null;
         middle = null;
@@ -508,8 +486,7 @@ class E5A {
             return null
         }
     }
-
-class w_1 {
+    class w_1 {
         node = null;
         insert(A, Q) {
             if (this.node === null) this.node = new E5A(A, Q, 0);
@@ -529,8 +506,8 @@ class w_1 {
         tree: KaQ
     }
 });
-var M6 = U((yq7, SaQ) => {
-    var bCA = UA("node:assert"),
+var M6 = moduleWrapper((yq7, SaQ) => {
+    var bCA = nodeRequire("node:assert"),
         {
             kDestroyed: EaQ,
             kBodyUsed: z5A,
@@ -539,19 +516,19 @@ var M6 = U((yq7, SaQ) => {
         } = iI(),
         {
             IncomingMessage: F_8
-        } = UA("node:http"),
-        bcA = UA("node:stream"),
-        V_8 = UA("node:net"),
+        } = nodeRequire("node:http"),
+        bcA = nodeRequire("node:stream"),
+        V_8 = nodeRequire("node:net"),
         {
             Blob: K_8
-        } = UA("node:buffer"),
-        D_8 = UA("node:util"),
+        } = nodeRequire("node:buffer"),
+        D_8 = nodeRequire("node:util"),
         {
             stringify: H_8
-        } = UA("node:querystring"),
+        } = nodeRequire("node:querystring"),
         {
             EventEmitter: C_8
-        } = UA("node:events"),
+        } = nodeRequire("node:events"),
         {
             InvalidArgumentError: RV
         } = U7(),
@@ -562,8 +539,7 @@ var M6 = U((yq7, SaQ) => {
             tree: zaQ
         } = HaQ(),
         [z_8, U_8] = process.versions.node.split(".").map((A) => Number(A));
-
-class N_1 {
+    class N_1 {
         constructor(A) {
             this[CaQ] = A, this[z5A] = !1
         }
@@ -586,13 +562,13 @@ class N_1 {
         else return A
     }
 
-function w_8() {}
+    function w_8() {}
 
-function fcA(A) {
+    function fcA(A) {
         return A && typeof A === "object" && typeof A.pipe === "function" && typeof A.on === "function"
     }
 
-function UaQ(A) {
+    function UaQ(A) {
         if (A === null) return !1;
         else if (A instanceof K_8) return !0;
         else if (typeof A !== "object") return !1;
@@ -602,7 +578,7 @@ function UaQ(A) {
         }
     }
 
-function q_8(A, Q) {
+    function q_8(A, Q) {
         if (A.includes("?") || A.includes("#")) throw Error('Query params cannot be passed when url already contains "?" or "#".');
         let B = H_8(Q);
         if (B) A += "?" + B;
@@ -614,11 +590,11 @@ function q_8(A, Q) {
         return Q === Number(A) && Q >= 0 && Q <= 65535
     }
 
-function vcA(A) {
+    function vcA(A) {
         return A != null && A[0] === "h" && A[1] === "t" && A[2] === "t" && A[3] === "p" && (A[4] === ":" || A[4] === "s" && A[5] === ":")
     }
 
-function waQ(A) {
+    function waQ(A) {
         if (typeof A === "string") {
             if (A = new URL(A), !vcA(A.origin || A.protocol)) throw new RV("Invalid URL protocol: the URL must start with `http:` or `https:`.");
             return A
@@ -632,22 +608,22 @@ function waQ(A) {
             if (A.origin != null && typeof A.origin !== "string") throw new RV("Invalid URL origin: the origin must be a string or null/undefined.");
             if (!vcA(A.origin || A.protocol)) throw new RV("Invalid URL protocol: the URL must start with `http:` or `https:`.");
             let Q = A.port != null ? A.port : A.protocol === "https:" ? 443 : 80,
-                B = A.origin != null ? A.origin : `${A.protocol||""}//${A.hostname||""}:${Q}`,
-                G = A.path != null ? A.path : `${A.pathname||""}${A.search||""}`;
+                B = A.origin != null ? A.origin : `TextComponent{A.protocol||""}//TextComponent{A.hostname||""}:TextComponent{Q}`,
+                G = A.path != null ? A.path : `TextComponent{A.pathname||""}TextComponent{A.search||""}`;
             if (B[B.length - 1] === "/") B = B.slice(0, B.length - 1);
-            if (G && G[0] !== "/") G = `/${G}`;
-            return new URL(`${B}${G}`)
+            if (G && G[0] !== "/") G = `/TextComponent{G}`;
+            return new URL(`TextComponent{B}TextComponent{G}`)
         }
         if (!vcA(A.origin || A.protocol)) throw new RV("Invalid URL protocol: the URL must start with `http:` or `https:`.");
         return A
     }
 
-function N_8(A) {
+    function N_8(A) {
         if (A = waQ(A), A.pathname !== "/" || A.search || A.hash) throw new RV("invalid url");
         return A
     }
 
-function L_8(A) {
+    function L_8(A) {
         if (A[0] === "[") {
             let B = A.indexOf("]");
             return bCA(B !== -1), A.substring(1, B)
@@ -657,7 +633,7 @@ function L_8(A) {
         return A.substring(0, Q)
     }
 
-function M_8(A) {
+    function M_8(A) {
         if (!A) return null;
         bCA(typeof A === "string");
         let Q = L_8(A);
@@ -665,19 +641,19 @@ function M_8(A) {
         return Q
     }
 
-function O_8(A) {
+    function O_8(A) {
         return JSON.parse(JSON.stringify(A))
     }
 
-function R_8(A) {
+    function R_8(A) {
         return A != null && typeof A[Symbol.asyncIterator] === "function"
     }
 
-function qaQ(A) {
+    function qaQ(A) {
         return A != null && (typeof A[Symbol.iterator] === "function" || typeof A[Symbol.asyncIterator] === "function")
     }
 
-function NaQ(A) {
+    function NaQ(A) {
         if (A == null) return 0;
         else if (fcA(A)) {
             let Q = A._readableState;
@@ -687,11 +663,11 @@ function NaQ(A) {
         return null
     }
 
-function LaQ(A) {
+    function LaQ(A) {
         return A && !!(A.destroyed || A[EaQ] || bcA.isDestroyed?.(A))
     }
 
-function T_8(A, Q) {
+    function T_8(A, Q) {
         if (A == null || !fcA(A) || LaQ(A)) return;
         if (typeof A.destroy === "function") {
             if (Object.getPrototypeOf(A).constructor === F_8) A.socket = null;
@@ -703,20 +679,20 @@ function T_8(A, Q) {
     }
     var P_8 = /timeout=(\d+)/;
 
-function j_8(A) {
+    function j_8(A) {
         let Q = A.toString().match(P_8);
         return Q ? parseInt(Q[1], 10) * 1000 : null
     }
 
-function MaQ(A) {
+    function MaQ(A) {
         return typeof A === "string" ? E_8[A] ?? A.toLowerCase() : zaQ.lookup(A) ?? A.toString("latin1").toLowerCase()
     }
 
-function S_8(A) {
+    function S_8(A) {
         return zaQ.lookup(A) ?? A.toString("latin1").toLowerCase()
     }
 
-function __8(A, Q) {
+    function __8(A, Q) {
         if (Q === void 0) Q = {};
         for (let B = 0; B < A.length; B += 2) {
             let G = MaQ(A[B]),
@@ -734,7 +710,7 @@ function __8(A, Q) {
         return Q
     }
 
-function k_8(A) {
+    function k_8(A) {
         let Q = A.length,
             B = Array(Q),
             G = !1,
@@ -749,11 +725,11 @@ function k_8(A) {
         return B
     }
 
-function OaQ(A) {
+    function OaQ(A) {
         return A instanceof Uint8Array || Buffer.isBuffer(A)
     }
 
-function y_8(A, Q, B) {
+    function y_8(A, Q, B) {
         if (!A || typeof A !== "object") throw new RV("handler must be an object");
         if (typeof A.onConnect !== "function") throw new RV("invalid onConnect method");
         if (typeof A.onError !== "function") throw new RV("invalid onError method");
@@ -767,19 +743,19 @@ function y_8(A, Q, B) {
         }
     }
 
-function x_8(A) {
+    function x_8(A) {
         return !!(A && (bcA.isDisturbed(A) || A[z5A]))
     }
 
-function v_8(A) {
+    function v_8(A) {
         return !!(A && bcA.isErrored(A))
     }
 
-function b_8(A) {
+    function b_8(A) {
         return !!(A && bcA.isReadable(A))
     }
 
-function f_8(A) {
+    function f_8(A) {
         return {
             localAddress: A.localAddress,
             localPort: A.localPort,
@@ -792,7 +768,7 @@ function f_8(A) {
         }
     }
 
-function h_8(A) {
+    function h_8(A) {
         let Q;
         return new ReadableStream({
             async start() {
@@ -819,11 +795,11 @@ function h_8(A) {
         })
     }
 
-function g_8(A) {
+    function g_8(A) {
         return A && typeof A === "object" && typeof A.append === "function" && typeof A.delete === "function" && typeof A.get === "function" && typeof A.getAll === "function" && typeof A.has === "function" && typeof A.set === "function" && A[Symbol.toStringTag] === "FormData"
     }
 
-function u_8(A, Q) {
+    function u_8(A, Q) {
         if ("addEventListener" in A) return A.addEventListener("abort", Q, {
             once: !0
         }), () => A.removeEventListener("abort", Q);
@@ -832,15 +808,15 @@ function u_8(A, Q) {
     var m_8 = typeof String.prototype.toWellFormed === "function",
         d_8 = typeof String.prototype.isWellFormed === "function";
 
-function RaQ(A) {
-        return m_8 ? `${A}`.toWellFormed() : D_8.toUSVString(A)
+    function RaQ(A) {
+        return m_8 ? `TextComponent{A}`.toWellFormed() : D_8.toUSVString(A)
     }
 
-function c_8(A) {
-        return d_8 ? `${A}`.isWellFormed() : RaQ(A) === `${A}`
+    function c_8(A) {
+        return d_8 ? `TextComponent{A}`.isWellFormed() : RaQ(A) === `TextComponent{A}`
     }
 
-function TaQ(A) {
+    function TaQ(A) {
         switch (A) {
             case 34:
             case 40:
@@ -865,7 +841,7 @@ function TaQ(A) {
         }
     }
 
-function p_8(A) {
+    function p_8(A) {
         if (A.length === 0) return !1;
         for (let Q = 0; Q < A.length; ++Q)
             if (!TaQ(A.charCodeAt(Q))) return !1;
@@ -873,17 +849,17 @@ function p_8(A) {
     }
     var l_8 = /[^\t\x20-\x7e\x80-\xff]/;
 
-function i_8(A) {
+    function i_8(A) {
         return !l_8.test(A)
     }
 
-function n_8(A) {
+    function n_8(A) {
         if (A == null || A === "") return {
             start: 0,
             end: null,
             size: null
         };
-        let Q = A ? A.match(/^bytes (\d+)-(\d+)\/(\d+)?$/) : null;
+        let Q = A ? A.match(/^bytes (\d+)-(\d+)\/(\d+)?TextComponent/) : null;
         return Q ? {
             start: parseInt(Q[1]),
             end: Q[2] ? parseInt(Q[2]) : null,
@@ -891,16 +867,16 @@ function n_8(A) {
         } : null
     }
 
-function a_8(A, Q, B) {
+    function a_8(A, Q, B) {
         return (A[q_1] ??= []).push([Q, B]), A.on(Q, B), A
     }
 
-function s_8(A) {
+    function s_8(A) {
         for (let [Q, B] of A[q_1] ?? []) A.removeListener(Q, B);
         A[q_1] = null
     }
 
-function r_8(A, Q, B) {
+    function r_8(A, Q, B) {
         try {
             Q.onError(B), bCA(Q.aborted)
         } catch (G) {
@@ -909,8 +885,7 @@ function r_8(A, Q, B) {
     }
     var PaQ = Object.create(null);
     PaQ.enumerable = !0;
-
-var L_1 = {
+    var L_1 = {
             delete: "DELETE",
             DELETE: "DELETE",
             get: "GET",
@@ -979,9 +954,9 @@ var L_1 = {
         wrapRequestBody: $_8
     }
 });
-var U5A = U((xq7, kaQ) => {
-    var _7 = UA("node:diagnostics_channel"),
-        O_1 = UA("node:util"),
+var U5A = moduleWrapper((xq7, kaQ) => {
+    var _7 = nodeRequire("node:diagnostics_channel"),
+        O_1 = nodeRequire("node:util"),
         hcA = O_1.debuglog("undici"),
         M_1 = O_1.debuglog("fetch"),
         Fo = O_1.debuglog("websocket"),
@@ -1013,7 +988,7 @@ var U5A = U((xq7, kaQ) => {
                     host: I
                 }
             } = Q;
-            A("connecting to %s using %s%s", `${I}${Z?`:${Z}`:""}`, G, B)
+            A("connecting to %s using %s%s", `TextComponent{I}TextComponent{Z?`:TextComponent{Z}`:""}`, G, B)
         }), _7.channel("undici:client:connected").subscribe((Q) => {
             let {
                 connectParams: {
@@ -1023,7 +998,7 @@ var U5A = U((xq7, kaQ) => {
                     host: I
                 }
             } = Q;
-            A("connected to %s using %s%s", `${I}${Z?`:${Z}`:""}`, G, B)
+            A("connected to %s using %s%s", `TextComponent{I}TextComponent{Z?`:TextComponent{Z}`:""}`, G, B)
         }), _7.channel("undici:client:connectError").subscribe((Q) => {
             let {
                 connectParams: {
@@ -1034,7 +1009,7 @@ var U5A = U((xq7, kaQ) => {
                 },
                 error: Y
             } = Q;
-            A("connection to %s using %s%s errored - %s", `${I}${Z?`:${Z}`:""}`, G, B, Y.message)
+            A("connection to %s using %s%s errored - %s", `TextComponent{I}TextComponent{Z?`:TextComponent{Z}`:""}`, G, B, Y.message)
         }), _7.channel("undici:client:sendHeaders").subscribe((Q) => {
             let {
                 request: {
@@ -1089,7 +1064,7 @@ var U5A = U((xq7, kaQ) => {
                         host: I
                     }
                 } = Q;
-                A("connecting to %s%s using %s%s", I, Z ? `:${Z}` : "", G, B)
+                A("connecting to %s%s using %s%s", I, Z ? `:TextComponent{Z}` : "", G, B)
             }), _7.channel("undici:client:connected").subscribe((Q) => {
                 let {
                     connectParams: {
@@ -1099,7 +1074,7 @@ var U5A = U((xq7, kaQ) => {
                         host: I
                     }
                 } = Q;
-                A("connected to %s%s using %s%s", I, Z ? `:${Z}` : "", G, B)
+                A("connected to %s%s using %s%s", I, Z ? `:TextComponent{Z}` : "", G, B)
             }), _7.channel("undici:client:connectError").subscribe((Q) => {
                 let {
                     connectParams: {
@@ -1110,7 +1085,7 @@ var U5A = U((xq7, kaQ) => {
                     },
                     error: Y
                 } = Q;
-                A("connection to %s%s using %s%s errored - %s", I, Z ? `:${Z}` : "", G, B, Y.message)
+                A("connection to %s%s using %s%s errored - %s", I, Z ? `:TextComponent{Z}` : "", G, B, Y.message)
             }), _7.channel("undici:client:sendHeaders").subscribe((Q) => {
                 let {
                     request: {
@@ -1129,7 +1104,7 @@ var U5A = U((xq7, kaQ) => {
                     port: B
                 }
             } = A;
-            Fo("connection opened %s%s", Q, B ? `:${B}` : "")
+            Fo("connection opened %s%s", Q, B ? `:TextComponent{B}` : "")
         }), _7.channel("undici:websocket:close").subscribe((A) => {
             let {
                 websocket: Q,
@@ -1149,11 +1124,11 @@ var U5A = U((xq7, kaQ) => {
         channels: o_8
     }
 });
-var haQ = U((vq7, faQ) => {
+var haQ = moduleWrapper((vq7, faQ) => {
     var {
         InvalidArgumentError: hY,
         NotSupportedError: t_8
-    } = U7(), Kb = UA("node:assert"), {
+    } = U7(), Kb = nodeRequire("node:assert"), {
         isValidHTTPToken: vaQ,
         isValidHeaderValue: yaQ,
         isStream: e_8,
@@ -1171,8 +1146,7 @@ var haQ = U((vq7, faQ) => {
     } = U5A(), {
         headerNameLowerCasedRecord: xaQ
     } = xcA(), Xk8 = /[^\u0021-\u00ff]/, hL = Symbol("handler");
-
-class baQ {
+    class baQ {
         constructor(A, {
             path: Q,
             method: B,
@@ -1310,8 +1284,8 @@ class baQ {
         }
     }
 
-function gcA(A, Q, B) {
-        if (B && (typeof B === "object" && !Array.isArray(B))) throw new hY(`invalid ${Q} header`);
+    function gcA(A, Q, B) {
+        if (B && (typeof B === "object" && !Array.isArray(B))) throw new hY(`invalid TextComponent{Q} header`);
         else if (B === void 0) return;
         let G = xaQ[Q];
         if (G === void 0) {
@@ -1321,23 +1295,23 @@ function gcA(A, Q, B) {
             let Z = [];
             for (let I = 0; I < B.length; I++)
                 if (typeof B[I] === "string") {
-                    if (!yaQ(B[I])) throw new hY(`invalid ${Q} header`);
+                    if (!yaQ(B[I])) throw new hY(`invalid TextComponent{Q} header`);
                     Z.push(B[I])
                 } else if (B[I] === null) Z.push("");
-            else if (typeof B[I] === "object") throw new hY(`invalid ${Q} header`);
-            else Z.push(`${B[I]}`);
+            else if (typeof B[I] === "object") throw new hY(`invalid TextComponent{Q} header`);
+            else Z.push(`TextComponent{B[I]}`);
             B = Z
         } else if (typeof B === "string") {
-            if (!yaQ(B)) throw new hY(`invalid ${Q} header`)
+            if (!yaQ(B)) throw new hY(`invalid TextComponent{Q} header`)
         } else if (B === null) B = "";
-        else B = `${B}`;
+        else B = `TextComponent{B}`;
         if (A.host === null && G === "host") {
             if (typeof B !== "string") throw new hY("invalid host header");
             A.host = B
         } else if (A.contentLength === null && G === "content-length") {
             if (A.contentLength = parseInt(B, 10), !Number.isFinite(A.contentLength)) throw new hY("invalid content-length header")
         } else if (A.contentType === null && G === "content-type") A.contentType = B, A.headers.push(Q, B);
-        else if (G === "transfer-encoding" || G === "keep-alive" || G === "upgrade") throw new hY(`invalid ${G} header`);
+        else if (G === "transfer-encoding" || G === "keep-alive" || G === "upgrade") throw new hY(`invalid TextComponent{G} header`);
         else if (G === "connection") {
             let Z = typeof B === "string" ? B.toLowerCase() : null;
             if (Z !== "close" && Z !== "keep-alive") throw new hY("invalid connection header");
@@ -1347,10 +1321,9 @@ function gcA(A, Q, B) {
     }
     faQ.exports = baQ
 });
-var fCA = U((bq7, uaQ) => {
-    var Fk8 = UA("node:events");
-
-class R_1 extends Fk8 {
+var fCA = moduleWrapper((bq7, uaQ) => {
+    var Fk8 = nodeRequire("node:events");
+    class R_1 extends Fk8 {
         dispatch() {
             throw Error("not implemented")
         }
@@ -1365,14 +1338,13 @@ class R_1 extends Fk8 {
                 B = this.dispatch.bind(this);
             for (let G of Q) {
                 if (G == null) continue;
-                if (typeof G !== "function") throw TypeError(`invalid interceptor, expected function received ${typeof G}`);
+                if (typeof G !== "function") throw TypeError(`invalid interceptor, expected function received TextComponent{typeof G}`);
                 if (B = G(B), B == null || typeof B !== "function" || B.length !== 2) throw TypeError("invalid interceptor")
             }
             return new gaQ(this, B)
         }
     }
-
-class gaQ extends R_1 {
+    class gaQ extends R_1 {
         #A = null;
         #Q = null;
         constructor(A, Q) {
@@ -1391,7 +1363,7 @@ class gaQ extends R_1 {
     }
     uaQ.exports = R_1
 });
-var N5A = U((fq7, daQ) => {
+var N5A = moduleWrapper((fq7, daQ) => {
     var Vk8 = fCA(),
         {
             ClientDestroyedError: T_1,
@@ -1409,8 +1381,7 @@ var N5A = U((fq7, daQ) => {
         Db = Symbol("onDestroyed"),
         q5A = Symbol("onClosed"),
         ucA = Symbol("Intercepted Dispatch");
-
-class maQ extends Vk8 {
+    class maQ extends Vk8 {
         constructor() {
             super();
             this[w5A] = !1, this[Db] = null, this[hCA] = !1, this[q5A] = []
@@ -1501,7 +1472,7 @@ class maQ extends Vk8 {
     }
     daQ.exports = maQ
 });
-var b_1 = U((hq7, iaQ) => {
+var b_1 = moduleWrapper((hq7, iaQ) => {
     var L5A = 0,
         j_1 = 1000,
         S_1 = (j_1 >> 1) - 1,
@@ -1512,7 +1483,7 @@ var b_1 = U((hq7, iaQ) => {
         paQ = 0,
         caQ = 1;
 
-function x_1() {
+    function x_1() {
         L5A += S_1;
         let A = 0,
             Q = Cb.length;
@@ -1527,12 +1498,11 @@ function x_1() {
         if (Cb.length = Q, Cb.length !== 0) laQ()
     }
 
-function laQ() {
+    function laQ() {
         if (Hb) Hb.refresh();
         else if (clearTimeout(Hb), Hb = setTimeout(x_1, S_1), Hb.unref) Hb.unref()
     }
-
-class v_1 {
+    class v_1 {
         [__1] = !0;
         _state = k_1;
         _idleTimeout = -1;

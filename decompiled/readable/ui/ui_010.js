@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_010.js
+ * 处理时间: 2025-12-09T03:41:39.006Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.097Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -28,7 +30,7 @@
     }
     var FE4 = new RegExp(`([^\\s=]+)\\s*(=\\s*(['"])([\\s\\S]*?)\\3)?`, "gm");
 
-function VE4(A, Q, B) {
+    function VE4(A, Q, B) {
         if (!this.options.ignoreAttributes && typeof A === "string") {
             let G = Q1Q.getAllMatches(A, FE4),
                 Z = G.length,
@@ -58,8 +60,7 @@ function VE4(A, Q, B) {
             return I
         }
     }
-
-var KE4 = function(A) {
+    var KE4 = function(A) {
         A = A.replace(/\r\n?/g, `
 `);
         let Q = new JDA("!xml"),
@@ -78,7 +79,7 @@ var KE4 = function(A) {
                     if (this.options.transformTagName) W = this.options.transformTagName(W);
                     if (B) G = this.saveTextToParentTag(G, B, Z);
                     let X = Z.substring(Z.lastIndexOf(".") + 1);
-                    if (W && this.options.unpairedTags.indexOf(W) !== -1) throw Error(`Unpaired tag can not be used as closing tag: </${W}>`);
+                    if (W && this.options.unpairedTags.indexOf(W) !== -1) throw Error(`Unpaired tag can not be used as closing tag: </TextComponent{W}>`);
                     let F = 0;
                     if (X && this.options.unpairedTags.indexOf(X) !== -1) F = Z.lastIndexOf(".", Z.lastIndexOf(".") - 1), this.tagsNodeStack.pop();
                     else F = Z.lastIndexOf(".");
@@ -139,7 +140,7 @@ var KE4 = function(A) {
                 } else if (this.options.unpairedTags.indexOf(W) !== -1) I = J.closeIndex;
                 else {
                     let E = this.readStopNodeData(A, X, K + 1);
-                    if (!E) throw Error(`Unexpected end of ${X}`);
+                    if (!E) throw Error(`Unexpected end of TextComponent{X}`);
                     I = E.i, H = E.tagContent
                 }
                 let C = new JDA(W);
@@ -165,14 +166,13 @@ var KE4 = function(A) {
         return Q.child
     };
 
-function DE4(A, Q, B) {
+    function DE4(A, Q, B) {
         let G = this.options.updateTag(Q.tagname, B, Q[":@"]);
         if (G === !1);
         else if (typeof G === "string") Q.tagname = G, A.addChild(Q);
         else A.addChild(Q)
     }
-
-var HE4 = function(A) {
+    var HE4 = function(A) {
         if (this.options.processEntities) {
             for (let Q in this.docTypeEntities) {
                 let B = this.docTypeEntities[Q];
@@ -192,7 +192,7 @@ var HE4 = function(A) {
         return A
     };
 
-function CE4(A, Q, B, G) {
+    function CE4(A, Q, B, G) {
         if (A) {
             if (G === void 0) G = Object.keys(Q.child).length === 0;
             if (A = this.parseTextData(A, Q.tagname, B, !1, Q[":@"] ? Object.keys(Q[":@"]).length !== 0 : !1, G), A !== void 0 && A !== "") Q.add(this.options.textNodeName, A);
@@ -201,7 +201,7 @@ function CE4(A, Q, B, G) {
         return A
     }
 
-function EE4(A, Q, B) {
+    function EE4(A, Q, B) {
         let G = "*." + B;
         for (let Z in A) {
             let I = A[Z];
@@ -210,7 +210,7 @@ function EE4(A, Q, B) {
         return !1
     }
 
-function zE4(A, Q, B = ">") {
+    function zE4(A, Q, B = ">") {
         let G, Z = "";
         for (let I = Q; I < A.length; I++) {
             let Y = A[I];
@@ -232,13 +232,13 @@ function zE4(A, Q, B = ">") {
         }
     }
 
-function Cr(A, Q, B, G) {
+    function Cr(A, Q, B, G) {
         let Z = A.indexOf(Q, B);
         if (Z === -1) throw Error(G);
         else return Z + Q.length - 1
     }
 
-function dz1(A, Q, B, G = ">") {
+    function dz1(A, Q, B, G = ">") {
         let Z = zE4(A, Q + 1, G);
         if (!Z) return;
         let {
@@ -260,13 +260,13 @@ function dz1(A, Q, B, G = ">") {
         }
     }
 
-function UE4(A, Q, B) {
+    function UE4(A, Q, B) {
         let G = B,
             Z = 1;
         for (; B < A.length; B++)
             if (A[B] === "<")
                 if (A[B + 1] === "/") {
-                    let I = Cr(A, ">", B, `${Q} is not closed`);
+                    let I = Cr(A, ">", B, `TextComponent{Q} is not closed`);
                     if (A.substring(B + 2, I).trim() === Q) {
                         if (Z--, Z === 0) return {
                             tagContent: A.substring(G, B),
@@ -286,7 +286,7 @@ function UE4(A, Q, B) {
         }
     }
 
-function cz1(A, Q, B) {
+    function cz1(A, Q, B) {
         if (Q && typeof A === "string") {
             let G = A.trim();
             if (G === "true") return !0;
@@ -297,12 +297,12 @@ function cz1(A, Q, B) {
     }
     G1Q.exports = B1Q
 });
-var Y1Q = U((LE4) => {
+var Y1Q = moduleWrapper((LE4) => {
     function $E4(A, Q) {
         return I1Q(A, Q)
     }
 
-function I1Q(A, Q, B) {
+    function I1Q(A, Q, B) {
         let G, Z = {};
         for (let I = 0; I < A.length; I++) {
             let Y = A[I],
@@ -335,7 +335,7 @@ function I1Q(A, Q, B) {
         return Z
     }
 
-function wE4(A) {
+    function wE4(A) {
         let Q = Object.keys(A);
         for (let B = 0; B < Q.length; B++) {
             let G = Q[B];
@@ -343,7 +343,7 @@ function wE4(A) {
         }
     }
 
-function qE4(A, Q, B, G) {
+    function qE4(A, Q, B, G) {
         if (Q) {
             let Z = Object.keys(Q),
                 I = Z.length;
@@ -355,7 +355,7 @@ function qE4(A, Q, B, G) {
         }
     }
 
-function NE4(A, Q) {
+    function NE4(A, Q) {
         let {
             textNodeName: B
         } = Q, G = Object.keys(A).length;
@@ -365,14 +365,13 @@ function NE4(A, Q) {
     }
     LE4.prettify = $E4
 });
-var X1Q = U((sJ7, W1Q) => {
+var X1Q = moduleWrapper((sJ7, W1Q) => {
     var {
         buildOptions: OE4
     } = nAQ(), RE4 = Z1Q(), {
         prettify: TE4
     } = Y1Q(), PE4 = mz1();
-
-class J1Q {
+    class J1Q {
         constructor(A) {
             this.externalEntities = {}, this.options = OE4(A)
         }
@@ -383,7 +382,7 @@ class J1Q {
             if (Q) {
                 if (Q === !0) Q = {};
                 let Z = PE4.validate(A, Q);
-                if (Z !== !0) throw Error(`${Z.err.msg}:${Z.err.line}:${Z.err.col}`)
+                if (Z !== !0) throw Error(`TextComponent{Z.err.msg}:TextComponent{Z.err.line}:TextComponent{Z.err.col}`)
             }
             let B = new RE4(this.options);
             B.addExternalEntities(this.externalEntities);
@@ -400,7 +399,7 @@ class J1Q {
     }
     W1Q.exports = J1Q
 });
-var H1Q = U((rJ7, D1Q) => {
+var H1Q = moduleWrapper((rJ7, D1Q) => {
     function jE4(A, Q) {
         let B = "";
         if (Q.format && Q.indentBy.length > 0) B = `
@@ -408,7 +407,7 @@ var H1Q = U((rJ7, D1Q) => {
         return V1Q(A, Q, "", B)
     }
 
-function V1Q(A, Q, B, G) {
+    function V1Q(A, Q, B, G) {
         let Z = "",
             I = !1;
         for (let Y = 0; Y < A.length; Y++) {
@@ -417,7 +416,7 @@ function V1Q(A, Q, B, G) {
             if (W === void 0) continue;
             let X = "";
             if (B.length === 0) X = W;
-            else X = `${B}.${W}`;
+            else X = `TextComponent{B}.TextComponent{W}`;
             if (W === Q.textNodeName) {
                 let H = J[W];
                 if (!_E4(X, Q)) H = Q.tagValueProcessor(W, H), H = K1Q(H, Q);
@@ -426,39 +425,39 @@ function V1Q(A, Q, B, G) {
                 continue
             } else if (W === Q.cdataPropName) {
                 if (I) Z += G;
-                Z += `<![CDATA[${J[W][0][Q.textNodeName]}]]>`, I = !1;
+                Z += `<![CDATA[TextComponent{J[W][0][Q.textNodeName]}]]>`, I = !1;
                 continue
             } else if (W === Q.commentPropName) {
-                Z += G + `<!--${J[W][0][Q.textNodeName]}-->`, I = !0;
+                Z += G + `<!--TextComponent{J[W][0][Q.textNodeName]}-->`, I = !0;
                 continue
             } else if (W[0] === "?") {
                 let H = F1Q(J[":@"], Q),
                     C = W === "?xml" ? "" : G,
                     E = J[W][0][Q.textNodeName];
-                E = E.length !== 0 ? " " + E : "", Z += C + `<${W}${E}${H}?>`, I = !0;
+                E = E.length !== 0 ? " " + E : "", Z += C + `<TextComponent{W}TextComponent{E}TextComponent{H}?>`, I = !0;
                 continue
             }
             let F = G;
             if (F !== "") F += Q.indentBy;
             let V = F1Q(J[":@"], Q),
-                K = G + `<${W}${V}`,
+                K = G + `<TextComponent{W}TextComponent{V}`,
                 D = V1Q(J[W], Q, X, F);
             if (Q.unpairedTags.indexOf(W) !== -1)
                 if (Q.suppressUnpairedNode) Z += K + ">";
                 else Z += K + "/>";
             else if ((!D || D.length === 0) && Q.suppressEmptyNode) Z += K + "/>";
-            else if (D && D.endsWith(">")) Z += K + `>${D}${G}</${W}>`;
+            else if (D && D.endsWith(">")) Z += K + `>TextComponent{D}TextComponent{G}</TextComponent{W}>`;
             else {
                 if (Z += K + ">", D && G !== "" && (D.includes("/>") || D.includes("</"))) Z += G + Q.indentBy + D + G;
                 else Z += D;
-                Z += `</${W}>`
+                Z += `</TextComponent{W}>`
             }
             I = !0
         }
         return Z
     }
 
-function SE4(A) {
+    function SE4(A) {
         let Q = Object.keys(A);
         for (let B = 0; B < Q.length; B++) {
             let G = Q[B];
@@ -467,19 +466,19 @@ function SE4(A) {
         }
     }
 
-function F1Q(A, Q) {
+    function F1Q(A, Q) {
         let B = "";
         if (A && !Q.ignoreAttributes)
             for (let G in A) {
                 if (!A.hasOwnProperty(G)) continue;
                 let Z = Q.attributeValueProcessor(G, A[G]);
-                if (Z = K1Q(Z, Q), Z === !0 && Q.suppressBooleanAttributes) B += ` ${G.substr(Q.attributeNamePrefix.length)}`;
-                else B += ` ${G.substr(Q.attributeNamePrefix.length)}="${Z}"`
+                if (Z = K1Q(Z, Q), Z === !0 && Q.suppressBooleanAttributes) B += ` TextComponent{G.substr(Q.attributeNamePrefix.length)}`;
+                else B += ` TextComponent{G.substr(Q.attributeNamePrefix.length)}="TextComponent{Z}"`
             }
         return B
     }
 
-function _E4(A, Q) {
+    function _E4(A, Q) {
         A = A.substr(0, A.length - Q.textNodeName.length - 1);
         let B = A.substr(A.lastIndexOf(".") + 1);
         for (let G in Q.stopNodes)
@@ -487,7 +486,7 @@ function _E4(A, Q) {
         return !1
     }
 
-function K1Q(A, Q) {
+    function K1Q(A, Q) {
         if (A && A.length > 0 && Q.processEntities)
             for (let B = 0; B < Q.entities.length; B++) {
                 let G = Q.entities[B];
@@ -497,7 +496,7 @@ function K1Q(A, Q) {
     }
     D1Q.exports = jE4
 });
-var E1Q = U((oJ7, C1Q) => {
+var E1Q = moduleWrapper((oJ7, C1Q) => {
     var kE4 = H1Q(),
         yE4 = {
             attributeNamePrefix: "@_",
@@ -540,7 +539,7 @@ var E1Q = U((oJ7, C1Q) => {
             oneListGroup: !1
         };
 
-function nm(A) {
+    function nm(A) {
         if (this.options = Object.assign({}, yE4, A), this.options.ignoreAttributes || this.options.attributesGroupName) this.isAttribute = function() {
             return !1
         };
@@ -618,7 +617,7 @@ function nm(A) {
         else return " " + A + '="' + Q + '"'
     };
 
-function xE4(A, Q, B) {
+    function xE4(A, Q, B) {
         let G = this.j2x(A, B + 1);
         if (A[this.options.textNodeName] !== void 0 && Object.keys(A).length === 1) return this.buildTextValNode(A[this.options.textNodeName], Q, G.attrStr, B);
         else return this.buildObjectNode(G.val, Q, G.attrStr, B)
@@ -632,7 +631,7 @@ function xE4(A, Q, B) {
                 I = "";
             if (Q[0] === "?") I = "?", Z = "";
             if ((B || B === "") && A.indexOf("<") === -1) return this.indentate(G) + "<" + Q + B + I + ">" + A + Z;
-            else if (this.options.commentPropName !== !1 && Q === this.options.commentPropName && I.length === 0) return this.indentate(G) + `<!--${A}-->` + this.newLine;
+            else if (this.options.commentPropName !== !1 && Q === this.options.commentPropName && I.length === 0) return this.indentate(G) + `<!--TextComponent{A}-->` + this.newLine;
             else return this.indentate(G) + "<" + Q + B + I + this.tagEndChar + A + this.indentate(G) + Z
         }
     };
@@ -641,12 +640,12 @@ function xE4(A, Q, B) {
         if (this.options.unpairedTags.indexOf(A) !== -1) {
             if (!this.options.suppressUnpairedNode) Q = "/"
         } else if (this.options.suppressEmptyNode) Q = "/";
-        else Q = `></${A}`;
+        else Q = `></TextComponent{A}`;
         return Q
     };
     nm.prototype.buildTextValNode = function(A, Q, B, G) {
-        if (this.options.cdataPropName !== !1 && Q === this.options.cdataPropName) return this.indentate(G) + `<![CDATA[${A}]]>` + this.newLine;
-        else if (this.options.commentPropName !== !1 && Q === this.options.commentPropName) return this.indentate(G) + `<!--${A}-->` + this.newLine;
+        if (this.options.cdataPropName !== !1 && Q === this.options.cdataPropName) return this.indentate(G) + `<![CDATA[TextComponent{A}]]>` + this.newLine;
+        else if (this.options.commentPropName !== !1 && Q === this.options.commentPropName) return this.indentate(G) + `<!--TextComponent{A}-->` + this.newLine;
         else if (Q[0] === "?") return this.indentate(G) + "<" + Q + B + "?" + this.tagEndChar;
         else {
             let Z = this.options.tagValueProcessor(Q, A);
@@ -663,17 +662,17 @@ function xE4(A, Q, B) {
         return A
     };
 
-function vE4(A) {
+    function vE4(A) {
         return this.options.indentBy.repeat(A)
     }
 
-function bE4(A) {
+    function bE4(A) {
         if (A.startsWith(this.options.attributeNamePrefix) && A !== this.options.textNodeName) return A.substr(this.attrPrefixLen);
         else return !1
     }
     C1Q.exports = nm
 });
-var ZS = U((tJ7, z1Q) => {
+var ZS = moduleWrapper((tJ7, z1Q) => {
     var fE4 = mz1(),
         hE4 = X1Q(),
         gE4 = E1Q();
@@ -683,7 +682,7 @@ var ZS = U((tJ7, z1Q) => {
         XMLBuilder: gE4
     }
 });
-var WDA = U((eJ7, N1Q) => {
+var WDA = moduleWrapper((eJ7, N1Q) => {
     var {
         defineProperty: XfA,
         getOwnPropertyDescriptor: uE4,
@@ -719,12 +718,11 @@ var WDA = U((eJ7, N1Q) => {
     }
     FfA($1Q, "escapeAttribute");
 
-function w1Q(A) {
+    function w1Q(A) {
         return A.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&apos;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r/g, "&#x0D;").replace(/\n/g, "&#x0A;").replace(/\u0085/g, "&#x85;").replace(/\u2028/, "&#x2028;")
     }
     FfA(w1Q, "escapeElement");
-
-var q1Q = class {
+    var q1Q = class {
             constructor(A) {
                 this.value = A
             }
@@ -793,17 +791,17 @@ var q1Q = class {
             }
             toString() {
                 let Q = Boolean(this.children.length),
-                    B = `<${this.name}`,
+                    B = `<TextComponent{this.name}`,
                     G = this.attributes;
                 for (let Z of Object.keys(G)) {
                     let I = G[Z];
-                    if (I != null) B += ` ${Z}="${$1Q(""+I)}"`
+                    if (I != null) B += ` TextComponent{Z}="TextComponent{$1Q(""+I)}"`
                 }
-                return B += !Q ? "/>" : `>${this.children.map((Z)=>Z.toString()).join("")}</${this.name}>`
+                return B += !Q ? "/>" : `>TextComponent{this.children.map((Z)=>Z.toString()).join("")}</TextComponent{this.name}>`
             }
         }
 });
-var h1Q = U((QW7, f1Q) => {
+var h1Q = moduleWrapper((QW7, f1Q) => {
     var {
         defineProperty: KfA,
         getOwnPropertyDescriptor: nE4,
@@ -857,11 +855,11 @@ var h1Q = U((QW7, f1Q) => {
     var eE4 = o5((A) => {
             if (A == null) return A;
             if (typeof A === "number" || typeof A === "bigint") {
-                let Q = Error(`Received number ${A} where a string was expected.`);
+                let Q = Error(`Received number TextComponent{A} where a string was expected.`);
                 return Q.name = "Warning", console.warn(Q), String(A)
             }
             if (typeof A === "boolean") {
-                let Q = Error(`Received boolean ${A} where a string was expected.`);
+                let Q = Error(`Received boolean TextComponent{A} where a string was expected.`);
                 return Q.name = "Warning", console.warn(Q), String(A)
             }
             return A
@@ -871,7 +869,7 @@ var h1Q = U((QW7, f1Q) => {
             if (typeof A === "string") {
                 let Q = A.toLowerCase();
                 if (A !== "" && Q !== "false" && Q !== "true") {
-                    let B = Error(`Received string "${A}" where a boolean was expected.`);
+                    let B = Error(`Received string "TextComponent{A}" where a boolean was expected.`);
                     B.name = "Warning", console.warn(B)
                 }
                 return A !== "" && Q !== "false"
@@ -883,7 +881,7 @@ var h1Q = U((QW7, f1Q) => {
             if (typeof A === "string") {
                 let Q = Number(A);
                 if (Q.toString() !== A) {
-                    let B = Error(`Received string "${A}" where a number was expected.`);
+                    let B = Error(`Received string "TextComponent{A}" where a number was expected.`);
                     return B.name = "Warning", console.warn(B), A
                 }
                 return Q
@@ -907,7 +905,7 @@ var h1Q = U((QW7, f1Q) => {
         Zz4 = lm(),
         Iz4 = c6();
 
-function P1Q(A, Q, B) {
+    function P1Q(A, Q, B) {
         if (B?.source) {
             let G = B.source;
             if (typeof Q === "number") {
@@ -1045,13 +1043,13 @@ function P1Q(A, Q, B) {
                 if (this.stage === 2) throw Error("@aws-sdk/core/protocols - JsonReplacer exhausted.");
                 return this.stage = 1, (A, Q) => {
                     if (Q instanceof Fz4.NumericValue) {
-                        let B = `${L1Q+NaN+this.counter++}_` + Q.string;
-                        return this.values.set(`"${B}"`, Q.string), B
+                        let B = `TextComponent{L1Q+NaN+this.counter++}_` + Q.string;
+                        return this.values.set(`"TextComponent{B}"`, Q.string), B
                     }
                     if (typeof Q === "bigint") {
                         let B = Q.toString(),
-                            G = `${L1Q+"b"+this.counter++}_` + B;
-                        return this.values.set(`"${G}"`, B), G
+                            G = `TextComponent{L1Q+"b"+this.counter++}_` + B;
+                        return this.values.set(`"TextComponent{G}"`, B), G
                     }
                     return Q
                 }
@@ -1181,7 +1179,7 @@ function P1Q(A, Q, B) {
                 let G = await super.serializeRequest(A, Q, B);
                 if (!G.path.endsWith("/")) G.path += "/";
                 if (Object.assign(G.headers, {
-                        "content-type": `application/x-amz-json-${this.getJsonRpcVersion()}`,
+                        "content-type": `application/x-amz-json-TextComponent{this.getJsonRpcVersion()}`,
                         "x-amz-target": (this.getJsonRpcVersion() === "1.0" ? "JsonRpc10." : "JsonProtocol.") + q4A.NormalizedSchema.of(A).getName()
                     }), (0, q4A.deref)(A.input) === "unit" || !G.body) G.body = "{}";
                 try {
@@ -1452,7 +1450,7 @@ function P1Q(A, Q, B) {
                         return J
                     }
                     if (B.isDocumentSchema()) return Q;
-                    throw Error(`@aws-sdk/core/protocols - xml deserializer unhandled schema type for ${B.getName(!0)}`)
+                    throw Error(`@aws-sdk/core/protocols - xml deserializer unhandled schema type for TextComponent{B.getName(!0)}`)
                 } else {
                     if (B.isListSchema()) return [];
                     else if (B.isMapSchema() || B.isStructSchema()) return {};

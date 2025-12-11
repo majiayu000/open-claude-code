@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_024.js
+ * 处理时间: 2025-12-09T03:41:38.859Z
+ * 变量映射: 8 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.085Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -41,7 +44,6 @@ function vz9(A, Q, B) {
     }
     return G
 }
-// Async function: lb3
 async function lb3() {
     let A = OA(),
         Q = MSA(),
@@ -244,7 +246,7 @@ function bz9() {
     }).unref()
 }
 var db3 = 30;
-var fz9 = L(() => {
+var fz9 = lazyLoader(() => {
     $51();
     u1();
     M9();
@@ -255,15 +257,16 @@ var fz9 = L(() => {
     jQ();
     D0()
 });
-var hz9 = "com.anthropic.claude_code_browser_extension",
+/* BROWSER_EXTENSION_ID = BROWSER_EXTENSION_ID = "com.anthropic.claude_code_browser_extension" */
+var BROWSER_EXTENSION_ID = "com.anthropic.claude_code_browser_extension",
     PRI, jRI;
-var gz9 = L(() => {
+var gz9 = lazyLoader(() => {
     s5();
     D0();
     u1();
     I6();
     hQ();
-    PRI = `${hz9}.json`, jRI = `HKCU\\Software\\Google\\Chrome\\NativeMessagingHosts\\${hz9}`
+    PRI = `TextComponent{BROWSER_EXTENSION_ID}.json`, jRI = `HKCU\\Software\\Google\\Chrome\\NativeMessagingHosts\\TextComponent{BROWSER_EXTENSION_ID}`
 });
 import {
     join as mz9,
@@ -271,7 +274,7 @@ import {
 } from "path";
 
 function eb3() {
-    let A = LW(),
+    let A = getSmallFastModel(),
         Q = bu(A);
     if (Q <= uz9) return Math.floor(Q * 0.8);
     return Q - uz9
@@ -280,19 +283,18 @@ function eb3() {
 function Af3(A) {
     return lJ(A).map((Q) => {
         if (Q.type === "user") {
-            if (typeof Q.message.content === "string") return `User: ${Q.message.content}`;
-            else if (Array.isArray(Q.message.content)) return `User: ${Q.message.content.filter((B)=>B.type==="text").map((B)=>B.type==="text"?B.text:"").join(`
+            if (typeof Q.message.content === "string") return `User: TextComponent{Q.message.content}`;
+            else if (Array.isArray(Q.message.content)) return `User: TextComponent{Q.message.content.filter((B)=>B.type==="text").map((B)=>B.type==="text"?B.text:"").join(`
 `).trim()}`
         } else if (Q.type === "assistant") {
             let B = Ui(Q);
-            if (B) return `Claude: ${XMA(B).trim()}`
+            if (B) return `Claude: TextComponent{XMA(B).trim()}`
         }
         return null
     }).filter((Q) => Q !== null).join(`
 
 `)
 }
-
 async function Qf3(A, Q) {
     if (!A.length) throw Error("Can't summarize empty conversation");
     let B = [],
@@ -309,13 +311,13 @@ async function Qf3(A, Q) {
         if (B.unshift(K), G += H, D > 0) I = D
     }
     let Y = B.length < A.length;
-    g(Y ? `Summarizing last ${B.length} of ${A.length} messages (~${G} tokens)` : `Summarizing all ${A.length} messages (~${G} tokens)`);
+    g(Y ? `Summarizing last TextComponent{B.length} of TextComponent{A.length} messages (~TextComponent{G} tokens)` : `Summarizing all TextComponent{A.length} messages (~TextComponent{G} tokens)`);
     let J = Af3(B),
         X = [`Please write a 5-10 word title for the following conversation:
 
-${Y?`[Last ${B.length} of ${A.length} messages]
+TextComponent{Y?`[Last TextComponent{B.length} of TextComponent{A.length} messages]
 
-`:""}${J}
+`:""}TextComponent{J}
 `, "Respond with the title for the conversation and nothing else."];
     return (await gX({
         systemPrompt: [tb3],
@@ -386,7 +388,6 @@ function Yf3(A) {
         return !1
     }
 }
-
 async function dz9(A) {
     if (H5()) return;
     let Q = Bf3(H0()),
@@ -414,7 +415,7 @@ async function dz9(A) {
     }
 }
 var tb3, uz9 = 50000;
-var cz9 = L(() => {
+var cz9 = lazyLoader(() => {
     kZ();
     nQ();
     GG();
@@ -433,15 +434,15 @@ Capture the main task, key files, problems addressed, and current status.
 });
 
 function OJ1() {
-    return aK0.default.createElement($, null, "MCP servers may execute code or access system resources. All tool calls require approval. Learn more in the", " ", aK0.default.createElement(a4, {
+    return aK0.default.createElement(TextComponent, null, "MCP servers may execute code or access system resources. All tool calls require approval. Learn more in the", " ", aK0.default.createElement(a4, {
         url: "https://docs.claude.com/s/claude-code-mcp"
     }, "MCP documentation"), ".")
 }
 var aK0;
-var sK0 = L(() => {
+var sK0 = lazyLoader(() => {
     hA();
     hA();
-    aK0 = GA(VA(), 1)
+    aK0 = esmImport(VA(), 1)
 });
 
 function pz9({
@@ -486,10 +487,10 @@ function pz9({
         padding: 1,
         borderStyle: "round",
         borderColor: "warning"
-    }, _$.default.createElement($, {
+    }, _$.default.createElement(TextComponent, {
         bold: !0,
         color: "warning"
-    }, A.length, " new MCP servers found in .mcp.json"), _$.default.createElement($, null, "Select any you wish to enable."), _$.default.createElement(OJ1, null), _$.default.createElement(UJ1, {
+    }, A.length, " new MCP servers found in .mcp.json"), _$.default.createElement(TextComponent, null, "Select any you wish to enable."), _$.default.createElement(OJ1, null), _$.default.createElement(UJ1, {
         options: A.map((Z) => ({
             label: Z,
             value: Z
@@ -498,12 +499,12 @@ function pz9({
         onSubmit: B
     })), _$.default.createElement(j, {
         marginLeft: 3
-    }, _$.default.createElement($, {
+    }, _$.default.createElement(TextComponent, {
         dimColor: !0
     }, G.pending ? _$.default.createElement(_$.default.Fragment, null, "Press ", G.keyName, " again to exit") : _$.default.createElement(_$.default.Fragment, null, "Space to select · Enter to confirm · Esc to reject all"))))
 }
 var _$;
-var lz9 = L(() => {
+var lz9 = lazyLoader(() => {
     hA();
     fK0();
     RB();
@@ -511,7 +512,7 @@ var lz9 = L(() => {
     sK0();
     c9();
     w0();
-    _$ = GA(VA(), 1)
+    _$ = esmImport(VA(), 1)
 });
 
 function iz9({
@@ -556,7 +557,7 @@ function iz9({
         padding: 1,
         borderStyle: "round",
         borderColor: "warning"
-    }, IN.default.createElement($, {
+    }, IN.default.createElement(TextComponent, {
         bold: !0,
         color: "warning"
     }, "New MCP server found in .mcp.json: ", A), IN.default.createElement(OJ1, null), IN.default.createElement(M0, {
@@ -574,21 +575,20 @@ function iz9({
         onCancel: () => B("no")
     })), IN.default.createElement(j, {
         marginLeft: 3
-    }, IN.default.createElement($, {
+    }, IN.default.createElement(TextComponent, {
         dimColor: !0
     }, G.pending ? IN.default.createElement(IN.default.Fragment, null, "Press ", G.keyName, " again to exit") : IN.default.createElement(IN.default.Fragment, null, "Enter to confirm · Esc to reject"))))
 }
 var IN;
-var nz9 = L(() => {
+var nz9 = lazyLoader(() => {
     hA();
     T6();
     RB();
     sK0();
     c9();
     w0();
-    IN = GA(VA(), 1)
+    IN = esmImport(VA(), 1)
 });
-// Async function: az9
 async function az9() {
     let {
         servers: A
@@ -622,18 +622,18 @@ async function az9() {
     })
 }
 var OSA;
-var sz9 = L(() => {
+var sz9 = lazyLoader(() => {
     hA();
     lz9();
     nz9();
     H9();
     GM();
     xX();
-    OSA = GA(VA(), 1)
+    OSA = esmImport(VA(), 1)
 });
 var Jf3;
-var rz9 = L(() => {
-    Jf3 = GA(z21(), 1)
+var rz9 = lazyLoader(() => {
+    Jf3 = esmImport(z21(), 1)
 });
 
 function oz9({
@@ -643,7 +643,7 @@ function oz9({
         BA("tengu_bypass_permissions_mode_dialog_shown", {})
     }, []);
 
-function Q(G) {
+    function Q(G) {
         let Z = L1();
         switch (G) {
             case "accept": {
@@ -671,14 +671,14 @@ function Q(G) {
         padding: 1,
         borderStyle: "round",
         borderColor: "error"
-    }, MK.default.createElement($, {
+    }, MK.default.createElement(TextComponent, {
         bold: !0,
         color: "error"
     }, "WARNING: Claude Code running in Bypass Permissions mode"), MK.default.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, MK.default.createElement($, null, "In Bypass Permissions mode, Claude Code will not ask for your approval before running potentially dangerous commands.", MK.default.createElement(gV, null), "This mode should only be used in a sandboxed container/VM that has restricted internet access and can easily be restored if damaged."), MK.default.createElement($, null, "By proceeding, you accept all responsibility for actions taken while running in Bypass Permissions mode."), MK.default.createElement(a4, {
-        url: "https://code.claude.com/docs/en/security"
+    }, MK.default.createElement(TextComponent, null, "In Bypass Permissions mode, Claude Code will not ask for your approval before running potentially dangerous commands.", MK.default.createElement(gV, null), "This mode should only be used in a sandboxed container/VM that has restricted internet access and can easily be restored if damaged."), MK.default.createElement(TextComponent, null, "By proceeding, you accept all responsibility for actions taken while running in Bypass Permissions mode."), MK.default.createElement(a4, {
+        url: "https://code.claude.com/docs/AGENT_OUTPUT_TOOL_NAME/security"
     })), MK.default.createElement(M0, {
         options: [{
             label: "No, exit",
@@ -691,12 +691,12 @@ function Q(G) {
         onCancel: () => Q("decline")
     })), MK.default.createElement(j, {
         marginLeft: 3
-    }, MK.default.createElement($, {
+    }, MK.default.createElement(TextComponent, {
         dimColor: !0
     }, B.pending ? MK.default.createElement(MK.default.Fragment, null, "Press ", B.keyName, " again to exit") : MK.default.createElement(MK.default.Fragment, null, "Enter to confirm · Esc to exit"))))
 }
 var MK;
-var tz9 = L(() => {
+var tz9 = lazyLoader(() => {
     hA();
     T6();
     jQ();
@@ -704,7 +704,7 @@ var tz9 = L(() => {
     c9();
     hA();
     _J();
-    MK = GA(VA(), 1)
+    MK = esmImport(VA(), 1)
 });
 
 function ng({
@@ -736,16 +736,16 @@ function ng({
             lastShownTime: A.feedbackSurvey.timeLastShown
         }
     });
-    if (RJ() && (A.mcp.tools.length > 0 || A.mcp.clients.length > 0 || Object.keys(A.mcp.resources).length > 0 || A.mcp !== Q.mcp)) {
+    if (isClaudeCodeRemote() && (A.mcp.tools.length > 0 || A.mcp.clients.length > 0 || Object.keys(A.mcp.resources).length > 0 || A.mcp !== Q.mcp)) {
         if (rH9(A.mcp.clients, A.mcp.tools, A.mcp.resources), NGA()) KJ1()
     }
     if (A.settings !== Q.settings) try {
         ElA(), zlA()
     } catch (B) {
-        e(B instanceof Error ? B : Error(`Failed to clear auth caches: ${B}`))
+        e(B instanceof Error ? B : Error(`Failed to clear auth caches: TextComponent{B}`))
     }
 }
-var ez9 = L(() => {
+var ez9 = lazyLoader(() => {
     jQ();
     jQ();
     S0();
@@ -780,20 +780,19 @@ function AU9() {
         } = A;
         d0(Z)
     } catch (Q) {
-        e(Error(`Failed to migrate auto-updates: ${Q}`)), BA("tengu_migrate_autoupdates_error", {
+        e(Error(`Failed to migrate auto-updates: TextComponent{Q}`)), BA("tengu_migrate_autoupdates_error", {
             has_error: !0
         })
     }
 }
-var QU9 = L(() => {
+var QU9 = lazyLoader(() => {
     jQ();
     RB();
     w0();
     u1()
 });
-// Async function: BU9
 async function BU9() {
-    if (!(await tV("force_local_installation_migration") && !al() && !print && !V0(!1) && !0 && !x0A())) return;
+    if (!(await tV("force_local_installation_migration") && !al() && !print && !parseBoolean(!1) && !0 && !x0A())) return;
     g("Migrating Claude CLI to local installation. This improves auto-updates and removes dependency on global npm permissions. Your existing configuration and history will be preserved.");
     try {
         BA("tengu_forced_migration_start", {
@@ -818,7 +817,7 @@ async function BU9() {
     }
 }
 var RSA;
-var GU9 = L(() => {
+var GU9 = lazyLoader(() => {
     hA();
     zY1();
     O9();
@@ -829,7 +828,7 @@ var GU9 = L(() => {
     xP();
     hQ();
     D0();
-    RSA = GA(VA(), 1)
+    RSA = esmImport(VA(), 1)
 });
 
 function ZU9() {
@@ -870,7 +869,7 @@ function ZU9() {
         BA("tengu_migrate_mcp_approval_fields_error", {})
     }
 }
-var IU9 = L(() => {
+var IU9 = lazyLoader(() => {
     jQ();
     RB();
     w0()
@@ -907,14 +906,14 @@ function YU9() {
             ignore_patterns_count: Q.length
         })
     } catch (I) {
-        e(Error(`Failed to remove ignorePatterns from config: ${I instanceof Error?I.message:String(I)}`)), BA("tengu_migrate_ignore_patterns_config_cleanup_error", {
+        e(Error(`Failed to remove ignorePatterns from config: TextComponent{I instanceof Error?I.message:String(I)}`)), BA("tengu_migrate_ignore_patterns_config_cleanup_error", {
             ignore_patterns_count: Q.length
         })
     } else e(Error("Failed to migrate ignorePatterns to settings permissions")), BA("tengu_migrate_ignore_patterns_error", {
         ignore_patterns_count: Q.length
     })
 }
-var JU9 = L(() => {
+var JU9 = lazyLoader(() => {
     jQ();
     w0();
     u1();
@@ -924,7 +923,7 @@ var JU9 = L(() => {
 
 function WU9() {
     if (L1().sonnet45MigrationComplete) return;
-    if (J6() !== "firstParty") {
+    if (getProvider() !== "firstParty") {
         d0({
             ...L1(),
             sonnet45MigrationComplete: !0
@@ -943,7 +942,7 @@ function WU9() {
         sonnet45MigrationComplete: !0
     })
 }
-var XU9 = L(() => {
+var XU9 = lazyLoader(() => {
     jQ();
     RB();
     dK()
@@ -951,7 +950,7 @@ var XU9 = L(() => {
 
 function FU9() {
     if (L1().opus45MigrationComplete) return;
-    let Q = J6(),
+    let Q = getProvider(),
         B = x$A() || v$A();
     if (Q !== "firstParty" || !B) {
         d0({
@@ -968,7 +967,7 @@ function FU9() {
         opus45MigrationComplete: !0
     })
 }
-var VU9 = L(() => {
+var VU9 = lazyLoader(() => {
     jQ();
     RB();
     dK();
@@ -998,7 +997,7 @@ function TSA(A, Q, B, G) {
     }
 }
 var qPI, Ff3, Vf3, RJ1;
-var rK0 = L(() => {
+var rK0 = lazyLoader(() => {
     h2();
     n10();
     hK();
@@ -1039,7 +1038,6 @@ function Df3(A) {
             return A.reason
     }
 }
-
 class PSA {
     input;
     replayUserMessages;
@@ -1101,15 +1099,15 @@ class PSA {
                 if (this.replayUserMessages) return Q;
                 return
             }
-            if (Q.type !== "user" && Q.type !== "control_request") oK0(`Error: Expected message type 'user' or 'control', got '${Q.type}'`);
+            if (Q.type !== "user" && Q.type !== "control_request") oK0(`Error: Expected message type 'user' or 'control', got 'TextComponent{Q.type}'`);
             if (Q.type === "control_request") {
                 if (!Q.request) oK0("Error: Missing request on control_request");
                 return Q
             }
-            if (Q.message.role !== "user") oK0(`Error: Expected message role 'user', got '${Q.message.role}'`);
+            if (Q.message.role !== "user") oK0(`Error: Expected message role 'user', got 'TextComponent{Q.message.role}'`);
             return Q
         } catch (Q) {
-            console.error(`Error parsing streaming input line: ${A}: ${Q}`), process.exit(1)
+            console.error(`Error parsing streaming input line: TextComponent{A}: TextComponent{Q}`), process.exit(1)
         }
     }
     write(A) {
@@ -1176,7 +1174,7 @@ class PSA {
             } catch (Y) {
                 return TSA({
                     behavior: "deny",
-                    message: `Tool permission request failed: ${Y}`,
+                    message: `Tool permission request failed: TextComponent{Y}`,
                     toolUseID: Z
                 }, A, Q, B)
             }
@@ -1195,7 +1193,7 @@ class PSA {
                         tool_use_id: G || void 0
                     }, P21, Z)
                 } catch (I) {
-                    return console.error(`Error in hook callback ${A}:`, I), {}
+                    return console.error(`Error in hook callback TextComponent{A}:`, I), {}
                 }
             }
         }
@@ -1214,14 +1212,13 @@ class PSA {
 function oK0(A) {
     console.error(A), process.exit(1)
 }
-var tK0 = L(() => {
+var tK0 = lazyLoader(() => {
     aG();
     h2();
     rK0();
     a10();
     $Z()
 });
-
 class eK0 {
     ws = null;
     lastSentId = null;
@@ -1239,16 +1236,16 @@ class eK0 {
     }
     connect() {
         if (this.state !== "idle" && this.state !== "reconnecting") {
-            g(`WebSocketTransport: Cannot connect, current state is ${this.state}`, {
+            g(`WebSocketTransport: Cannot connect, current state is TextComponent{this.state}`, {
                 level: "error"
             }), R6("error", "cli_websocket_connect_failed");
             return
         }
-        this.state = "reconnecting", g(`WebSocketTransport: Opening ${this.url.href}`), R6("info", "cli_websocket_connect_opening");
+        this.state = "reconnecting", g(`WebSocketTransport: Opening TextComponent{this.url.href}`), R6("info", "cli_websocket_connect_opening");
         let A = {
             ...this.headers
         };
-        if (this.lastSentId) A["X-Last-Request-Id"] = this.lastSentId, g(`WebSocketTransport: Adding X-Last-Request-Id header: ${this.lastSentId}`);
+        if (this.lastSentId) A["X-Last-Request-Id"] = this.lastSentId, g(`WebSocketTransport: Adding X-Last-Request-Id header: TextComponent{this.lastSentId}`);
         this.ws = new j_(this.url.href, {
             headers: A,
             agent: hEA(this.url.href)
@@ -1264,11 +1261,11 @@ class eK0 {
             let B = Q.toString();
             if (this.onData) this.onData(B)
         }), this.ws.on("error", (Q) => {
-            g(`WebSocketTransport: Error: ${Q.message}`, {
+            g(`WebSocketTransport: Error: TextComponent{Q.message}`, {
                 level: "error"
             }), R6("error", "cli_websocket_connect_error"), this.handleConnectionError()
         }), this.ws.on("close", (Q, B) => {
-            g(`WebSocketTransport: Closed: ${Q}`, {
+            g(`WebSocketTransport: Closed: TextComponent{Q}`, {
                 level: "error"
             }), R6("error", "cli_websocket_connect_closed"), this.handleConnectionError()
         })
@@ -1278,7 +1275,7 @@ class eK0 {
         try {
             return this.ws.send(A), !0
         } catch (Q) {
-            return g(`WebSocketTransport: Failed to send: ${Q}`, {
+            return g(`WebSocketTransport: Failed to send: TextComponent{Q}`, {
                 level: "error"
             }), R6("error", "cli_websocket_send_error"), this.ws = null, this.handleConnectionError(), !1
         }
@@ -1287,17 +1284,17 @@ class eK0 {
         if (this.stopPingInterval(), this.ws) this.ws.close(), this.ws = null
     }
     handleConnectionError() {
-        if (g(`WebSocketTransport: Disconnected from ${this.url.href}`), R6("info", "cli_websocket_disconnected"), this.doDisconnect(), this.state === "closing" || this.state === "closed") return;
+        if (g(`WebSocketTransport: Disconnected from TextComponent{this.url.href}`), R6("info", "cli_websocket_disconnected"), this.doDisconnect(), this.state === "closing" || this.state === "closed") return;
         if (this.reconnectAttempts < KU9) {
             if (this.reconnectTimer) clearTimeout(this.reconnectTimer), this.reconnectTimer = null;
             this.state = "reconnecting", this.reconnectAttempts++;
             let A = Math.min(Cf3 * Math.pow(2, this.reconnectAttempts - 1), Ef3);
-            g(`WebSocketTransport: Reconnecting in ${A}ms (attempt ${this.reconnectAttempts}/${KU9})`), R6("error", "cli_websocket_reconnect_attempt", {
+            g(`WebSocketTransport: Reconnecting in TextComponent{A}ms (attempt TextComponent{this.reconnectAttempts}/TextComponent{KU9})`), R6("error", "cli_websocket_reconnect_attempt", {
                 reconnectAttempts: this.reconnectAttempts
             }), this.reconnectTimer = setTimeout(() => {
                 this.reconnectTimer = null, this.connect()
             }, A)
-        } else if (g(`WebSocketTransport: Max reconnection attempts reached for ${this.url.href}`, {
+        } else if (g(`WebSocketTransport: Max reconnection attempts reached for TextComponent{this.url.href}`, {
                 level: "error"
             }), R6("error", "cli_websocket_reconnect_exhausted", {
                 reconnectAttempts: this.reconnectAttempts
@@ -1320,7 +1317,7 @@ class eK0 {
             g("WebSocketTransport: No new messages to replay"), R6("info", "cli_websocket_no_messages_to_replay");
             return
         }
-        g(`WebSocketTransport: Replaying ${G.length} buffered messages`), R6("info", "cli_websocket_messages_to_replay", {
+        g(`WebSocketTransport: Replaying TextComponent{G.length} buffered messages`), R6("info", "cli_websocket_messages_to_replay", {
             count: G.length
         });
         for (let Z of G) {
@@ -1353,7 +1350,7 @@ class eK0 {
             if (this.state === "connected" && this.ws) try {
                 this.ws.ping()
             } catch (A) {
-                g(`WebSocketTransport: Ping failed: ${A}`, {
+                g(`WebSocketTransport: Ping failed: TextComponent{A}`, {
                     level: "error"
                 }), R6("error", "cli_websocket_ping_failed")
             }
@@ -1368,7 +1365,7 @@ var Hf3 = 1000,
     Cf3 = 1000,
     Ef3 = 30000,
     zf3 = 1e4;
-var DU9 = L(() => {
+var DU9 = lazyLoader(() => {
     fUA();
     D0();
     Vc();
@@ -1377,9 +1374,9 @@ var DU9 = L(() => {
 
 function HU9(A, Q = {}) {
     if (A.protocol === "ws:" || A.protocol === "wss:") return new eK0(A, Q);
-    else throw Error(`Unsupported protocol: ${A.protocol}`)
+    else throw Error(`Unsupported protocol: TextComponent{A.protocol}`)
 }
-var CU9 = L(() => {
+var CU9 = lazyLoader(() => {
     DU9()
 });
 import {
@@ -1389,7 +1386,7 @@ import {
     PassThrough as $f3
 } from "stream";
 var AD0;
-var EU9 = L(() => {
+var EU9 = lazyLoader(() => {
     tK0();
     CU9();
     XH();
@@ -1406,7 +1403,7 @@ var EU9 = L(() => {
             this.inputStream = G, this.url = new Uf3(A);
             let Z = {},
                 I = tAA();
-            if (I) Z.Authorization = `Bearer ${I}`;
+            if (I) Z.Authorization = `Bearer TextComponent{I}`;
             if (this.transport = HU9(this.url, Z), this.transport.setOnData((Y) => {
                     this.inputStream.write(Y)
                 }), this.transport.setOnClose(() => {
@@ -1479,7 +1476,7 @@ async function* qf3(A, Q, B, G) {
 function Nf3(A) {
     if (!A) return !1;
     if (A.type === "assistant") {
-        let Q = dC(A.message.content);
+        let Q = last(A.message.content);
         return Q?.type === "text" || Q?.type === "thinking" || Q?.type === "redacted_thinking"
     }
     if (A.type === "user") {

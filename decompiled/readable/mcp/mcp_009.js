@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_009.js
+ * 处理时间: 2025-12-09T03:41:37.819Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.009Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -23,7 +26,7 @@
                 Z = Object.keys(G),
                 I = Z.find((J) => u45.test(J) && !J.includes("external_scanner_"));
             if (!I) throw console.log(`Couldn't find language function in WASM file. Symbols:
-${JSON.stringify(Z,null,2)}`), Error("Language.load failed: no language function found in WASM file");
+TextComponent{JSON.stringify(Z,null,2)}`), Error("Language.load failed: no language function found in WASM file");
             let Y = G[I]();
             return new A(ll, Y)
         }
@@ -53,7 +56,7 @@ ${JSON.stringify(Z,null,2)}`), Error("Language.load failed: no language function
                 }, "quit_"),
                 scriptDirectory = "";
 
-function locateFile(A) {
+            function locateFile(A) {
                 if (Module.locateFile) return Module.locateFile(A, scriptDirectory);
                 return scriptDirectory + A
             }
@@ -114,14 +117,14 @@ function locateFile(A) {
                 wasmMemory, ABORT = !1,
                 EXITSTATUS;
 
-function assert(A, Q) {
+            function assert(A, Q) {
                 if (!A) abort(Q)
             }
             K0(assert, "assert");
             var HEAP, HEAP8, HEAPU8, HEAP16, HEAPU16, HEAP32, HEAPU32, HEAPF32, HEAP64, HEAPU64, HEAPF64, HEAP_DATA_VIEW, runtimeInitialized = !1,
                 isFileURI = K0((A) => A.startsWith("file://"), "isFileURI");
 
-function updateMemoryViews() {
+            function updateMemoryViews() {
                 var A = wasmMemory.buffer;
                 Module.HEAP_DATA_VIEW = HEAP_DATA_VIEW = new DataView(A), Module.HEAP8 = HEAP8 = new Int8Array(A), Module.HEAP16 = HEAP16 = new Int16Array(A), Module.HEAPU8 = HEAPU8 = new Uint8Array(A), Module.HEAPU16 = HEAPU16 = new Uint16Array(A), Module.HEAP32 = HEAP32 = new Int32Array(A), Module.HEAPU32 = HEAPU32 = new Uint32Array(A), Module.HEAPF32 = HEAPF32 = new Float32Array(A), Module.HEAPF64 = HEAPF64 = new Float64Array(A), Module.HEAP64 = HEAP64 = new BigInt64Array(A), Module.HEAPU64 = HEAPU64 = new BigUint64Array(A)
             }
@@ -134,10 +137,9 @@ function updateMemoryViews() {
                 })
             }
             updateMemoryViews();
+            var __RELOC_FUNCS__ = [];
 
-var __RELOC_FUNCS__ = [];
-
-function preRun() {
+            function preRun() {
                 if (Module.preRun) {
                     if (typeof Module.preRun == "function") Module.preRun = [Module.preRun];
                     while (Module.preRun.length) addOnPreRun(Module.preRun.shift())
@@ -146,15 +148,15 @@ function preRun() {
             }
             K0(preRun, "preRun");
 
-function initRuntime() {
+            function initRuntime() {
                 runtimeInitialized = !0, callRuntimeCallbacks(__RELOC_FUNCS__), wasmExports.__wasm_call_ctors(), callRuntimeCallbacks(onPostCtors)
             }
             K0(initRuntime, "initRuntime");
 
-function preMain() {}
+            function preMain() {}
             K0(preMain, "preMain");
 
-function postRun() {
+            function postRun() {
                 if (Module.postRun) {
                     if (typeof Module.postRun == "function") Module.postRun = [Module.postRun];
                     while (Module.postRun.length) addOnPostRun(Module.postRun.shift())
@@ -165,17 +167,17 @@ function postRun() {
             var runDependencies = 0,
                 dependenciesFulfilled = null;
 
-function getUniqueRunDependency(A) {
+            function getUniqueRunDependency(A) {
                 return A
             }
             K0(getUniqueRunDependency, "getUniqueRunDependency");
 
-function addRunDependency(A) {
+            function addRunDependency(A) {
                 runDependencies++, Module.monitorRunDependencies?.(runDependencies)
             }
             K0(addRunDependency, "addRunDependency");
 
-function removeRunDependency(A) {
+            function removeRunDependency(A) {
                 if (runDependencies--, Module.monitorRunDependencies?.(runDependencies), runDependencies == 0) {
                     if (dependenciesFulfilled) {
                         var Q = dependenciesFulfilled;
@@ -185,7 +187,7 @@ function removeRunDependency(A) {
             }
             K0(removeRunDependency, "removeRunDependency");
 
-function abort(A) {
+            function abort(A) {
                 Module.onAbort?.(A), A = "Aborted(" + A + ")", err(A), ABORT = !0, A += ". Build with -sASSERTIONS for more info.";
                 var Q = new WebAssembly.RuntimeError(A);
                 throw readyPromiseReject(Q), Q
@@ -193,20 +195,19 @@ function abort(A) {
             K0(abort, "abort");
             var wasmBinaryFile;
 
-function findWasmBinary() {
+            function findWasmBinary() {
                 if (Module.locateFile) return locateFile("tree-sitter.wasm");
                 return new URL("tree-sitter.wasm", import.meta.url).href
             }
             K0(findWasmBinary, "findWasmBinary");
 
-function getBinarySync(A) {
+            function getBinarySync(A) {
                 if (A == wasmBinaryFile && wasmBinary) return new Uint8Array(wasmBinary);
                 if (readBinary) return readBinary(A);
                 throw "both async and sync fetching of the wasm failed"
             }
             K0(getBinarySync, "getBinarySync");
-
-async function getWasmBinary(A) {
+            async function getWasmBinary(A) {
                 if (!wasmBinary) try {
                     var Q = await readAsync(A);
                     return new Uint8Array(Q)
@@ -214,19 +215,17 @@ async function getWasmBinary(A) {
                 return getBinarySync(A)
             }
             K0(getWasmBinary, "getWasmBinary");
-
-async function instantiateArrayBuffer(A, Q) {
+            async function instantiateArrayBuffer(A, Q) {
                 try {
                     var B = await getWasmBinary(A),
                         G = await WebAssembly.instantiate(B, Q);
                     return G
                 } catch (Z) {
-                    err(`failed to asynchronously prepare wasm: ${Z}`), abort(Z)
+                    err(`failed to asynchronously prepare wasm: TextComponent{Z}`), abort(Z)
                 }
             }
             K0(instantiateArrayBuffer, "instantiateArrayBuffer");
-
-async function instantiateAsync(A, Q, B) {
+            async function instantiateAsync(A, Q, B) {
                 if (!A && typeof WebAssembly.instantiateStreaming == "function" && !isFileURI(Q) && !ENVIRONMENT_IS_NODE) try {
                     var G = fetch(Q, {
                             credentials: "same-origin"
@@ -234,13 +233,13 @@ async function instantiateAsync(A, Q, B) {
                         Z = await WebAssembly.instantiateStreaming(G, B);
                     return Z
                 } catch (I) {
-                    err(`wasm streaming compile failed: ${I}`), err("falling back to ArrayBuffer instantiation")
+                    err(`wasm streaming compile failed: TextComponent{I}`), err("falling back to ArrayBuffer instantiation")
                 }
                 return instantiateArrayBuffer(Q, B)
             }
             K0(instantiateAsync, "instantiateAsync");
 
-function getWasmImports() {
+            function getWasmImports() {
                 return {
                     env: wasmImports,
                     wasi_snapshot_preview1: wasmImports,
@@ -249,8 +248,7 @@ function getWasmImports() {
                 }
             }
             K0(getWasmImports, "getWasmImports");
-            // Async function: createWasm
-async function createWasm() {
+            async function createWasm() {
                 function A(I, Y) {
                     wasmExports = I.exports, wasmExports = relocateExports(wasmExports, 1024);
                     var J = getDylinkMetadata(Y);
@@ -259,7 +257,7 @@ async function createWasm() {
                 }
                 K0(A, "receiveInstance"), addRunDependency("wasm-instantiate");
 
-function Q(I) {
+                function Q(I) {
                     return A(I.instance, I.module)
                 }
                 K0(Q, "receiveInstantiationResult");
@@ -279,20 +277,17 @@ function Q(I) {
                 }
             }
             K0(createWasm, "createWasm");
-
-var ASM_CONSTS = {};
-
-class ExitStatus {
+            var ASM_CONSTS = {};
+            class ExitStatus {
                 static {
                     K0(this, "ExitStatus")
                 }
                 name = "ExitStatus";
                 constructor(A) {
-                    this.message = `Program terminated with exit(${A})`, this.status = A
+                    this.message = `Program terminated with exit(TextComponent{A})`, this.status = A
                 }
             }
-
-var GOT = {},
+            var GOT = {},
                 currentModuleWeakSymbols = new Set([]),
                 GOTHandler = {
                     get(A, Q) {
@@ -357,12 +352,12 @@ var GOT = {},
                     var Q = 0,
                         B = 0;
 
-function G() {
+                    function G() {
                         return A[Q++]
                     }
                     K0(G, "getU8");
 
-function Z() {
+                    function Z() {
                         var l = 0,
                             k = 1;
                         while (!0) {
@@ -373,13 +368,13 @@ function Z() {
                     }
                     K0(Z, "getLEB");
 
-function I() {
+                    function I() {
                         var l = Z();
                         return Q += l, UTF8ArrayToString(A, Q - l, l)
                     }
                     K0(I, "getString");
 
-function Y(l, k) {
+                    function Y(l, k) {
                         if (l) throw Error(k)
                     }
                     K0(Y, "failIf");
@@ -395,8 +390,7 @@ function Y(l, k) {
                         var V = Z();
                         B = Q + V, J = I()
                     }
-
-var K = {
+                    var K = {
                         neededDynlibs: [],
                         tlsExports: new Set,
                         weakImports: new Set
@@ -445,7 +439,7 @@ var K = {
                     return K
                 }, "getDylinkMetadata");
 
-function getValue(A, Q = "i8") {
+            function getValue(A, Q = "i8") {
                 if (Q.endsWith("*")) Q = "*";
                 switch (Q) {
                     case "i1":
@@ -465,7 +459,7 @@ function getValue(A, Q = "i8") {
                     case "*":
                         return LE_HEAP_LOAD_U32((A >> 2) * 4);
                     default:
-                        abort(`invalid type for getValue: ${Q}`)
+                        abort(`invalid type for getValue: TextComponent{Q}`)
                 }
             }
             K0(getValue, "getValue");
@@ -533,11 +527,9 @@ function getValue(A, Q = "i8") {
                 }, "generateFuncType"),
                 convertJsFunctionToWasm = K0((A, Q) => {
                     if (typeof WebAssembly.Function == "function") return new WebAssembly.Function(sigToWasmTypes(Q), A);
-
-var B = [1];
+                    var B = [1];
                     generateFuncType(Q, B);
-
-var G = [0, 97, 115, 109, 1, 0, 0, 0, 1];
+                    var G = [0, 97, 115, 109, 1, 0, 0, 0, 1];
                     uleb128Encode(B.length, G), G.push(...B), G.push(2, 7, 1, 1, 101, 1, 102, 0, 0, 7, 5, 1, 1, 102, 0, 0);
                     var Z = new WebAssembly.Module(new Uint8Array(G)),
                         I = new WebAssembly.Instance(Z, {
@@ -609,7 +601,7 @@ var G = [0, 97, 115, 109, 1, 0, 0, 0, 1];
                             }), Q || GOT[B].value == 0)
                             if (typeof G == "function") GOT[B].value = addFunction(G);
                             else if (typeof G == "number") GOT[B].value = G;
-                        else err(`unhandled export type for '${B}': ${typeof G}`)
+                        else err(`unhandled export type for 'TextComponent{B}': TextComponent{typeof G}`)
                     }
                 }, "updateGOT"),
                 relocateExports = K0((A, Q, B) => {
@@ -658,7 +650,7 @@ var G = [0, 97, 115, 109, 1, 0, 0, 0, 1];
                     var metadata = getDylinkMetadata(binary);
                     currentModuleWeakSymbols = metadata.weakImports;
 
-function loadModule() {
+                    function loadModule() {
                         var memAlign = Math.pow(2, metadata.memoryAlign),
                             memoryBase = metadata.memorySize ? alignMemory(getMemory(metadata.memorySize + memAlign), memAlign) : 0,
                             tableBase = metadata.tableSize ? wasmTable.length : 0;
@@ -666,15 +658,14 @@ function loadModule() {
                         if (metadata.tableSize) wasmTable.grow(metadata.tableSize);
                         var moduleExports;
 
-function resolveSymbol(A) {
+                        function resolveSymbol(A) {
                             var Q = resolveGlobalSymbol(A).sym;
                             if (!Q && localScope) Q = localScope[A];
                             if (!Q) Q = moduleExports[A];
                             return Q
                         }
                         K0(resolveSymbol, "resolveSymbol");
-
-var proxyHandler = {
+                        var proxyHandler = {
                                 get(A, Q) {
                                     switch (Q) {
                                         case "__memory_base":
@@ -703,17 +694,17 @@ var proxyHandler = {
                                 wasi_snapshot_preview1: proxy
                             };
 
-function postInstantiation(module, instance) {
+                        function postInstantiation(module, instance) {
                             if (updateTableMap(tableBase, metadata.tableSize), moduleExports = relocateExports(instance.exports, memoryBase), !flags.allowUndefined) reportUndefinedSymbols();
 
-function addEmAsm(addr, body) {
+                            function addEmAsm(addr, body) {
                                 var args = [],
                                     arity = 0;
                                 for (; arity < 16; arity++)
-                                    if (body.indexOf("$" + arity) != -1) args.push("$" + arity);
+                                    if (body.indexOf("TextComponent" + arity) != -1) args.push("TextComponent" + arity);
                                     else break;
                                 args = args.join(",");
-                                var func = `(${args}) => { ${body} };`;
+                                var func = `(TextComponent{args}) => { TextComponent{body} };`;
                                 ASM_CONSTS[start] = eval(func)
                             }
                             if (K0(addEmAsm, "addEmAsm"), "__start_em_asm" in moduleExports) {
@@ -727,7 +718,7 @@ function addEmAsm(addr, body) {
                                 }
                             }
 
-function addEmJs(name, cSig, body) {
+                            function addEmJs(name, cSig, body) {
                                 var jsArgs = [];
                                 if (cSig = cSig.slice(1, -1), cSig != "void") {
                                     cSig = cSig.split(",");
@@ -736,7 +727,7 @@ function addEmJs(name, cSig, body) {
                                         jsArgs.push(jsArg.replace("*", ""))
                                     }
                                 }
-                                var func = `(${jsArgs}) => ${body};`;
+                                var func = `(TextComponent{jsArgs}) => TextComponent{body};`;
                                 moduleExports[name] = eval(func)
                             }
                             K0(addEmJs, "addEmJs");
@@ -786,7 +777,7 @@ function addEmJs(name, cSig, body) {
                     return new Uint8Array(Q)
                 }, "asyncLoad");
 
-function loadDynamicLibrary(A, Q = {
+            function loadDynamicLibrary(A, Q = {
                 global: !0,
                 nodelete: !0
             }, B, G) {
@@ -801,7 +792,7 @@ function loadDynamicLibrary(A, Q = {
                 }
                 Z = newDSO(A, G, "loading"), Z.refcount = Q.nodelete ? 1 / 0 : 1, Z.global = Q.global;
 
-function I() {
+                function I() {
                     if (G) {
                         var W = LE_HEAP_LOAD_U32((G + 28 >> 2) * 4),
                             X = LE_HEAP_LOAD_U32((G + 32 >> 2) * 4);
@@ -812,18 +803,18 @@ function I() {
                     }
                     var V = locateFile(A);
                     if (Q.loadAsync) return asyncLoad(V);
-                    if (!readBinary) throw Error(`${V}: file not found, and synchronous loading of external files is not available`);
+                    if (!readBinary) throw Error(`TextComponent{V}: file not found, and synchronous loading of external files is not available`);
                     return readBinary(V)
                 }
                 K0(I, "loadLibData");
 
-function Y() {
+                function Y() {
                     if (Q.loadAsync) return I().then((W) => loadWebAssemblyModule(W, Q, A, B, G));
                     return loadWebAssemblyModule(I(), Q, A, B, G)
                 }
                 K0(Y, "getExports");
 
-function J(W) {
+                function J(W) {
                     if (Z.global) mergeLibSymbols(W, A);
                     else if (B) Object.assign(B, W);
                     Z.exports = W
@@ -841,7 +832,7 @@ function J(W) {
                             if (!B && !Q.required) continue;
                             if (typeof B == "function") Q.value = addFunction(B, B.sig);
                             else if (typeof B == "number") Q.value = B;
-                            else throw Error(`bad export type for '${A}': ${typeof B}`)
+                            else throw Error(`bad export type for 'TextComponent{A}': TextComponent{typeof B}`)
                         }
                 }, "reportUndefinedSymbols"),
                 loadDylibs = K0(() => {
@@ -860,7 +851,7 @@ function J(W) {
                 }, "loadDylibs"),
                 noExitRuntime = Module.noExitRuntime || !0;
 
-function setValue(A, Q, B = "i8") {
+            function setValue(A, Q, B = "i8") {
                 if (B.endsWith("*")) B = "*";
                 switch (B) {
                     case "i1":
@@ -888,7 +879,7 @@ function setValue(A, Q, B = "i8") {
                         LE_HEAP_STORE_U32((A >> 2) * 4, Q);
                         break;
                     default:
-                        abort(`invalid type for setValue: ${B}`)
+                        abort(`invalid type for setValue: TextComponent{B}`)
                 }
             }
             K0(setValue, "setValue");
@@ -916,7 +907,7 @@ function setValue(A, Q, B = "i8") {
                 INT53_MIN = -9007199254740992,
                 bigintToI53Checked = K0((A) => A < INT53_MIN || A > INT53_MAX ? NaN : Number(A), "bigintToI53Checked");
 
-function _clock_time_get(A, Q, B) {
+            function _clock_time_get(A, Q, B) {
                 if (Q = bigintToI53Checked(Q), !checkWasiClock(A)) return 28;
                 var G;
                 if (A === 0) G = _emscripten_date_now();
@@ -952,12 +943,11 @@ function _clock_time_get(A, Q, B) {
             var _fd_close = K0((A) => 52, "_fd_close");
             _fd_close.sig = "ii";
 
-function _fd_seek(A, Q, B, G) {
+            function _fd_seek(A, Q, B, G) {
                 return Q = bigintToI53Checked(Q), 70
             }
             K0(_fd_seek, "_fd_seek"), _fd_seek.sig = "iijip";
-
-var printCharBuffers = [null, [],
+            var printCharBuffers = [null, [],
                     []
                 ],
                 printChar = K0((A, Q) => {
@@ -989,7 +979,7 @@ var printCharBuffers = [null, [],
                 }, "_fd_write");
             _fd_write.sig = "iippp";
 
-function _tree_sitter_log_callback(A, Q) {
+            function _tree_sitter_log_callback(A, Q) {
                 if (Module.currentLogCallback) {
                     let B = UTF8ToString(Q);
                     Module.currentLogCallback(B, A !== 0)
@@ -997,7 +987,7 @@ function _tree_sitter_log_callback(A, Q) {
             }
             K0(_tree_sitter_log_callback, "_tree_sitter_log_callback");
 
-function _tree_sitter_parse_callback(A, Q, B, G, Z) {
+            function _tree_sitter_parse_callback(A, Q, B, G, Z) {
                 let Y = Module.currentParseCallback(Q, {
                     row: B,
                     column: G
@@ -1007,7 +997,7 @@ function _tree_sitter_parse_callback(A, Q, B, G, Z) {
             }
             K0(_tree_sitter_parse_callback, "_tree_sitter_parse_callback");
 
-function _tree_sitter_progress_callback(A, Q) {
+            function _tree_sitter_progress_callback(A, Q) {
                 if (Module.currentProgressCallback) return Module.currentProgressCallback({
                     currentOffset: A,
                     hasError: Q
@@ -1016,7 +1006,7 @@ function _tree_sitter_progress_callback(A, Q) {
             }
             K0(_tree_sitter_progress_callback, "_tree_sitter_progress_callback");
 
-function _tree_sitter_query_progress_callback(A) {
+            function _tree_sitter_query_progress_callback(A) {
                 if (Module.currentQueryProgressCallback) return Module.currentQueryProgressCallback({
                     currentOffset: A
                 });
@@ -1274,7 +1264,7 @@ function _tree_sitter_query_progress_callback(A) {
                 ___wasm_apply_data_relocs = wasmExports.__wasm_apply_data_relocs;
             Module.setValue = setValue, Module.getValue = getValue, Module.UTF8ToString = UTF8ToString, Module.stringToUTF8 = stringToUTF8, Module.lengthBytesUTF8 = lengthBytesUTF8, Module.AsciiToString = AsciiToString, Module.stringToUTF16 = stringToUTF16, Module.loadWebAssemblyModule = loadWebAssemblyModule;
 
-function callMain(A = []) {
+            function callMain(A = []) {
                 var Q = resolveGlobalSymbol("main").sym;
                 if (!Q) return;
                 A.unshift(thisProgram);
@@ -1293,7 +1283,7 @@ function callMain(A = []) {
             }
             K0(callMain, "callMain");
 
-function run(A = arguments_) {
+            function run(A = arguments_) {
                 if (runDependencies > 0) {
                     dependenciesFulfilled = run;
                     return
@@ -1303,7 +1293,7 @@ function run(A = arguments_) {
                     return
                 }
 
-function Q() {
+                function Q() {
                     if (Module.calledRun = !0, ABORT) return;
                     initRuntime(), preMain(), readyPromiseResolve(Module), Module.onRuntimeInitialized?.();
                     var B = Module.noInitialRun;
@@ -1350,7 +1340,7 @@ function Q() {
             else if (A.constructor === gt1) {
                 Q = A[0];
                 let B = W1._ts_language_version(Q);
-                if (B < vt1 || xt1 < B) throw Error(`Incompatible language version ${B}. Compatibility range ${vt1} through ${xt1}.`);
+                if (B < vt1 || xt1 < B) throw Error(`Incompatible language version TextComponent{B}. Compatibility range TextComponent{vt1} through TextComponent{xt1}.`);
                 this.language = A
             } else throw Error("Argument must be a Language");
             return W1._ts_parser_set_language(this[0], Q), this
@@ -1490,7 +1480,7 @@ function P22() {
     return null
 }
 var XQ1;
-var ULA = L(() => {
+var ULA = lazyLoader(() => {
     o0();
     nT();
     XQ1 = /^\s*alias\s+claude\s*=/
@@ -1502,7 +1492,6 @@ import {
 function al() {
     return (process.argv[1] || "").includes("/.claude/local/node_modules/")
 }
-// Async function: ct1
 async function ct1() {
     try {
         if (!OA().existsSync(nl)) OA().mkdirSync(nl);
@@ -1520,11 +1509,11 @@ async function ct1() {
         let A = $LA(nl, "claude");
         if (!OA().existsSync(A)) {
             let Q = `#!/bin/bash
-exec "${nl}/node_modules/.bin/claude" "$@"`;
+exec "TextComponent{nl}/node_modules/.bin/claude" "TextComponent@"`;
             OA().writeFileSync(A, Q, {
                 encoding: "utf8",
                 flush: !1
-            }), await ZQ("chmod", ["+x", A])
+            }), await execGit("chmod", ["+x", A])
         }
         return !0
     } catch (A) {

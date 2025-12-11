@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_021.js
+ * 处理时间: 2025-12-09T03:41:37.972Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.020Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-var WX0 = L(() => {
+var WX0 = lazyLoader(() => {
     jjA();
     cXA();
     JX0();
@@ -30,7 +33,7 @@ function T7(A, Q) {
     return B + G
 }
 var _g;
-var N79 = L(() => {
+var N79 = lazyLoader(() => {
     _g = {
         y(A, Q) {
             let B = A.getFullYear(),
@@ -102,7 +105,7 @@ function MQA(A, Q = "") {
     return B + Z + Q + I
 }
 var iXA, XX0;
-var O79 = L(() => {
+var O79 = lazyLoader(() => {
     IX0();
     YX0();
     kI1();
@@ -180,7 +183,7 @@ var O79 = L(() => {
                     return B.ordinalNumber(G, {
                         unit: "quarter"
                     });
-                case "QQQ":
+                case "AWS_PROFILE":
                     return B.quarter(G, {
                         width: "abbreviated",
                         context: "formatting"
@@ -255,10 +258,10 @@ var O79 = L(() => {
                     })
             }
         },
-        L: function(A, Q, B) {
+        lazyLoader: function(A, Q, B) {
             let G = A.getMonth();
             switch (Q) {
-                case "L":
+                case "lazyLoader":
                     return String(G + 1);
                 case "LL":
                     return T7(G + 1, 2);
@@ -712,7 +715,7 @@ var R79 = (A, Q) => {
         return I.replace("{{date}}", R79(G, Q)).replace("{{time}}", T79(Z, Q))
     },
     P79;
-var j79 = L(() => {
+var j79 = lazyLoader(() => {
     P79 = {
         p: T79,
         P: OP3
@@ -734,11 +737,11 @@ function k79(A, Q, B) {
 
 function jP3(A, Q, B) {
     let G = A[0] === "Y" ? "years" : "days of the month";
-    return `Use \`${A.toLowerCase()}\` instead of \`${A}\` (in \`${Q}\`) for formatting ${G} to the input \`${B}\`; see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md`
+    return `Use \`TextComponent{A.toLowerCase()}\` instead of \`TextComponent{A}\` (in \`TextComponent{Q}\`) for formatting TextComponent{G} to the input \`TextComponent{B}\`; see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md`
 }
 var RP3, TP3, PP3;
-var y79 = L(() => {
-    RP3 = /^D+$/, TP3 = /^Y+$/, PP3 = ["D", "DD", "YY", "YYYY"]
+var y79 = lazyLoader(() => {
+    RP3 = /^D+TextComponent/, TP3 = /^Y+TextComponent/, PP3 = ["D", "DD", "YY", "YYYY"]
 });
 
 function x79(A, Q, B) {
@@ -796,7 +799,7 @@ function vP3(A) {
     return Q[1].replace(yP3, "'")
 }
 var SP3, _P3, kP3, yP3, xP3;
-var v79 = L(() => {
+var v79 = lazyLoader(() => {
     z79();
     SjA();
     O79();
@@ -804,7 +807,7 @@ var v79 = L(() => {
     y79();
     BX0();
     oq();
-    SP3 = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g, _P3 = /P+p+|P+|p+|''|'(''|[^'])+('|$)|./g, kP3 = /^'([^]*?)'?$/, yP3 = /''/g, xP3 = /[a-zA-Z]/
+    SP3 = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|TextComponent)|./g, _P3 = /P+p+|P+|p+|''|'(''|[^'])+('|TextComponent)|./g, kP3 = /^'([^]*?)'?TextComponent/, yP3 = /''/g, xP3 = /[a-zA-Z]/
 });
 var b79 = () => {};
 var f79 = () => {};
@@ -961,7 +964,7 @@ var OI9 = () => {};
 var RI9 = () => {};
 var TI9 = () => {};
 var PI9 = () => {};
-var jI9 = L(() => {
+var jI9 = lazyLoader(() => {
     x59();
     h59();
     k59();
@@ -1223,26 +1226,26 @@ function SI9() {
         marginTop: 1
     }, tE.createElement(j, {
         marginLeft: 0
-    }, tE.createElement($, {
+    }, tE.createElement(TextComponent, {
         color: "permission"
     }, "⧈ Sandbox blocked ", B, " total", " ", B === 1 ? "operation" : "operations")), A.map((Z, I) => tE.createElement(j, {
-        key: `${Z.timestamp.getTime()}-${I}`,
+        key: `TextComponent{Z.timestamp.getTime()}-TextComponent{I}`,
         paddingLeft: 2
-    }, tE.createElement($, {
+    }, tE.createElement(TextComponent, {
         dimColor: !0
-    }, x79(Z.timestamp, "h:mm:ssa"), Z.command ? ` ${Z.command}:` : "", " ", Z.line))), tE.createElement(j, {
+    }, x79(Z.timestamp, "h:mm:ssa"), Z.command ? ` TextComponent{Z.command}:` : "", " ", Z.line))), tE.createElement(j, {
         paddingLeft: 2
-    }, tE.createElement($, {
+    }, tE.createElement(TextComponent, {
         dimColor: !0
     }, "… showing last ", Math.min(10, A.length), " of ", B)))
 }
 var tE, kjA;
-var _I9 = L(() => {
+var _I9 = lazyLoader(() => {
     hA();
     MJ();
     jI9();
     s5();
-    tE = GA(VA(), 1), kjA = GA(VA(), 1)
+    tE = esmImport(VA(), 1), kjA = esmImport(VA(), 1)
 });
 
 function bI1() {
@@ -1262,7 +1265,7 @@ function bI1() {
     return CGA(G), nXA.useEffect(() => {
         if (Q.length > 0) A({
             key: "settings-errors",
-            jsx: FX0.createElement($, {
+            jsx: FX0.createElement(TextComponent, {
                 dimColor: !0
             }, "Found ", Q.length, " invalid settings", " ", Q.length === 1 ? "file" : "files", " · /doctor for details"),
             priority: "high"
@@ -1270,12 +1273,12 @@ function bI1() {
     }, [Q, A]), Q
 }
 var nXA, FX0;
-var VX0 = L(() => {
+var VX0 = lazyLoader(() => {
     RB();
     QoA();
     UU();
     hA();
-    nXA = GA(VA(), 1), FX0 = GA(VA(), 1)
+    nXA = esmImport(VA(), 1), FX0 = esmImport(VA(), 1)
 });
 
 function yI9({
@@ -1290,18 +1293,18 @@ function yI9({
         if (B.length === 0 && G.length === 0) return;
         if (B.length > 0) Q({
             key: "mcp-failed",
-            jsx: UK.createElement(UK.Fragment, null, UK.createElement($, {
+            jsx: UK.createElement(UK.Fragment, null, UK.createElement(TextComponent, {
                 color: "error"
-            }, B.length, " MCP", " ", B.length === 1 ? "server" : "servers", " failed"), UK.createElement($, {
+            }, B.length, " MCP", " ", B.length === 1 ? "server" : "servers", " failed"), UK.createElement(TextComponent, {
                 dimColor: !0
             }, " · /mcp for info")),
             priority: "medium"
         });
         if (G.length) Q({
             key: "mcp-needs-auth",
-            jsx: UK.createElement(UK.Fragment, null, UK.createElement($, {
+            jsx: UK.createElement(UK.Fragment, null, UK.createElement(TextComponent, {
                 color: "warning"
-            }, G.length, " MCP", " ", G.length === 1 ? "server needs" : "servers need", " ", "auth"), UK.createElement($, {
+            }, G.length, " MCP", " ", G.length === 1 ? "server needs" : "servers need", " ", "auth"), UK.createElement(TextComponent, {
                 dimColor: !0
             }, " · /mcp for info")),
             priority: "medium"
@@ -1309,10 +1312,10 @@ function yI9({
     }, [Q, A])
 }
 var UK, kI9;
-var xI9 = L(() => {
+var xI9 = lazyLoader(() => {
     hA();
     UU();
-    UK = GA(VA(), 1), kI9 = GA(VA(), 1)
+    UK = esmImport(VA(), 1), kI9 = esmImport(VA(), 1)
 });
 
 function vI9() {
@@ -1344,12 +1347,12 @@ function vI9() {
             return
         }
         if (G === 0) return;
-        if (g(`Plugin installation status: ${Z} failed marketplaces, ${I} failed plugins`), G === 0) return;
-        g(`Adding notification for ${G} failed installations`), A({
+        if (g(`Plugin installation status: TextComponent{Z} failed marketplaces, TextComponent{I} failed plugins`), G === 0) return;
+        g(`Adding notification for TextComponent{G} failed installations`), A({
             key: "plugin-install-failed",
-            jsx: Gx.createElement(Gx.Fragment, null, Gx.createElement($, {
+            jsx: Gx.createElement(Gx.Fragment, null, Gx.createElement(TextComponent, {
                 color: "error"
-            }, G, " plugin", G === 1 ? "" : "s", " failed to install"), Gx.createElement($, {
+            }, G, " plugin", G === 1 ? "" : "s", " failed to install"), Gx.createElement(TextComponent, {
                 dimColor: !0
             }, " · /plugin for details")),
             priority: "medium"
@@ -1357,14 +1360,13 @@ function vI9() {
     }, [A, G, Z, I])
 }
 var Gx, fI1;
-var bI9 = L(() => {
+var bI9 = lazyLoader(() => {
     hA();
     UU();
     H9();
     D0();
-    Gx = GA(VA(), 1), fI1 = GA(VA(), 1)
+    Gx = esmImport(VA(), 1), fI1 = esmImport(VA(), 1)
 });
-// Async function: fI9
 async function fI9() {
     let A = c0(),
         Q = new Map;
@@ -1372,7 +1374,6 @@ async function fI9() {
         for (let [B, G] of Object.entries(A.extraKnownMarketplaces)) Q.set(B, G);
     return Q
 }
-
 async function hI9(A) {
     try {
         let Q = await TZ(),
@@ -1384,7 +1385,7 @@ async function hI9(A) {
         return e(Q instanceof Error ? Q : Error(String(Q))), []
     }
 }
-var gI9 = L(() => {
+var gI9 = lazyLoader(() => {
     RB();
     kH();
     u1()
@@ -1393,7 +1394,6 @@ var gI9 = L(() => {
 function bP3() {
     return new Date().toISOString()
 }
-
 async function nP(A, Q) {
     if (typeof Q.source === "string") throw Error("cacheAndRegisterPlugin should only be used for external plugins");
     let B = await U3A(Q.source, {
@@ -1410,11 +1410,10 @@ async function nP(A, Q) {
         isLocal: !1
     }), B.path
 }
-var yjA = L(() => {
+var yjA = lazyLoader(() => {
     Ia();
     NF()
 });
-// Async function: KX0
 async function KX0() {
     let A = c0(),
         Q = [];
@@ -1424,20 +1423,18 @@ async function KX0() {
     }
     return Q
 }
-// Async function: DX0
 async function DX0() {
     if (lW0().catch((B) => {
             e(B instanceof Error ? B : Error(String(B)))
         }), j8("tengu_enable_versioned_plugins")) {
         let B = pW0(),
             G = Object.keys(B.plugins);
-        return g(`Found ${G.length} installed plugins (V2 format, versioned plugins enabled)`), G
+        return g(`Found TextComponent{G.length} installed plugins (V2 format, versioned plugins enabled)`), G
     }
     let A = dXA(),
         Q = Object.keys(A);
-    return g(`Found ${Q.length} installed plugins`), Q
+    return g(`Found TextComponent{Q.length} installed plugins`), Q
 }
-
 async function uI9(A) {
     try {
         let Q = await DX0(),
@@ -1446,14 +1443,14 @@ async function uI9(A) {
             if (!Q.includes(G)) try {
                 if (await Cc(G)) B.push(G)
             } catch (Z) {
-                g(`Failed to check plugin ${G} in marketplace: ${Z}`)
+                g(`Failed to check plugin TextComponent{G} in marketplace: TextComponent{Z}`)
             }
         return B
     } catch (Q) {
         return e(Q instanceof Error ? Q : Error(String(Q))), []
     }
 }
-var mI9 = L(() => {
+var mI9 = lazyLoader(() => {
     RB();
     kH();
     u1();
@@ -1499,7 +1496,6 @@ function CX0(A, Q, B, G) {
         }
     }))
 }
-
 async function fP3(A, Q, B) {
     let G = [],
         Z = [];

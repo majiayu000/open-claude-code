@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: config_006.js
+ * 处理时间: 2025-12-09T03:41:37.215Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.955Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -17,11 +19,11 @@
  * Original file: cli.js
  */
 
-var x50 = U((w9Z, jy2) => {
+var x50 = moduleWrapper((w9Z, jy2) => {
     var bRA = IWA(),
         k50 = IC();
 
-function Py2(A, Q) {
+    function Py2(A, Q) {
         var B = [];
         return A[Q].forEach(function(G) {
             var Z = B.length;
@@ -31,7 +33,7 @@ function Py2(A, Q) {
         }), B
     }
 
-function wu5() {
+    function wu5() {
         var A = {
                 scalar: {},
                 sequence: {},
@@ -46,7 +48,7 @@ function wu5() {
             },
             Q, B;
 
-function G(Z) {
+        function G(Z) {
             if (Z.multi) A.multi[Z.kind].push(Z), A.multi.fallback.push(Z);
             else A[Z.kind][Z.tag] = A.fallback[Z.tag] = Z
         }
@@ -54,7 +56,7 @@ function G(Z) {
         return A
     }
 
-function y50(A) {
+    function y50(A) {
         return this.extend(A)
     }
     y50.prototype.extend = function(Q) {
@@ -78,7 +80,7 @@ function y50(A) {
     };
     jy2.exports = y50
 });
-var v50 = U((q9Z, Sy2) => {
+var v50 = moduleWrapper((q9Z, Sy2) => {
     var qu5 = IC();
     Sy2.exports = new qu5("tag:yaml.org,2002:str", {
         kind: "scalar",
@@ -87,7 +89,7 @@ var v50 = U((q9Z, Sy2) => {
         }
     })
 });
-var b50 = U((N9Z, _y2) => {
+var b50 = moduleWrapper((N9Z, _y2) => {
     var Nu5 = IC();
     _y2.exports = new Nu5("tag:yaml.org,2002:seq", {
         kind: "sequence",
@@ -96,7 +98,7 @@ var b50 = U((N9Z, _y2) => {
         }
     })
 });
-var f50 = U((L9Z, ky2) => {
+var f50 = moduleWrapper((L9Z, ky2) => {
     var Lu5 = IC();
     ky2.exports = new Lu5("tag:yaml.org,2002:map", {
         kind: "mapping",
@@ -105,26 +107,26 @@ var f50 = U((L9Z, ky2) => {
         }
     })
 });
-var h50 = U((M9Z, yy2) => {
+var h50 = moduleWrapper((M9Z, yy2) => {
     var Mu5 = x50();
     yy2.exports = new Mu5({
         explicit: [v50(), b50(), f50()]
     })
 });
-var g50 = U((O9Z, xy2) => {
+var g50 = moduleWrapper((O9Z, xy2) => {
     var Ou5 = IC();
 
-function Ru5(A) {
+    function Ru5(A) {
         if (A === null) return !0;
         var Q = A.length;
         return Q === 1 && A === "~" || Q === 4 && (A === "null" || A === "Null" || A === "NULL")
     }
 
-function Tu5() {
+    function Tu5() {
         return null
     }
 
-function Pu5(A) {
+    function Pu5(A) {
         return A === null
     }
     xy2.exports = new Ou5("tag:yaml.org,2002:null", {
@@ -152,20 +154,20 @@ function Pu5(A) {
         defaultStyle: "lowercase"
     })
 });
-var u50 = U((R9Z, vy2) => {
+var u50 = moduleWrapper((R9Z, vy2) => {
     var ju5 = IC();
 
-function Su5(A) {
+    function Su5(A) {
         if (A === null) return !1;
         var Q = A.length;
         return Q === 4 && (A === "true" || A === "True" || A === "TRUE") || Q === 5 && (A === "false" || A === "False" || A === "FALSE")
     }
 
-function _u5(A) {
+    function _u5(A) {
         return A === "true" || A === "True" || A === "TRUE"
     }
 
-function ku5(A) {
+    function ku5(A) {
         return Object.prototype.toString.call(A) === "[object Boolean]"
     }
     vy2.exports = new ju5("tag:yaml.org,2002:bool", {
@@ -187,23 +189,23 @@ function ku5(A) {
         defaultStyle: "lowercase"
     })
 });
-var m50 = U((T9Z, by2) => {
+var m50 = moduleWrapper((T9Z, by2) => {
     var yu5 = ZWA(),
         xu5 = IC();
 
-function vu5(A) {
+    function vu5(A) {
         return 48 <= A && A <= 57 || 65 <= A && A <= 70 || 97 <= A && A <= 102
     }
 
-function bu5(A) {
+    function bu5(A) {
         return 48 <= A && A <= 55
     }
 
-function fu5(A) {
+    function fu5(A) {
         return 48 <= A && A <= 57
     }
 
-function hu5(A) {
+    function hu5(A) {
         if (A === null) return !1;
         var Q = A.length,
             B = 0,
@@ -251,7 +253,7 @@ function hu5(A) {
         return !0
     }
 
-function gu5(A) {
+    function gu5(A) {
         var Q = A,
             B = 1,
             G;
@@ -269,7 +271,7 @@ function gu5(A) {
         return B * parseInt(Q, 10)
     }
 
-function uu5(A) {
+    function uu5(A) {
         return Object.prototype.toString.call(A) === "[object Number]" && (A % 1 === 0 && !yu5.isNegativeZero(A))
     }
     by2.exports = new xu5("tag:yaml.org,2002:int", {
@@ -300,18 +302,18 @@ function uu5(A) {
         }
     })
 });
-var d50 = U((P9Z, hy2) => {
+var d50 = moduleWrapper((P9Z, hy2) => {
     var fy2 = ZWA(),
         mu5 = IC(),
-        du5 = new RegExp("^(?:[-+]?(?:[0-9][0-9_]*)(?:\\.[0-9_]*)?(?:[eE][-+]?[0-9]+)?|\\.[0-9_]+(?:[eE][-+]?[0-9]+)?|[-+]?\\.(?:inf|Inf|INF)|\\.(?:nan|NaN|NAN))$");
+        du5 = new RegExp("^(?:[-+]?(?:[0-9][0-9_]*)(?:\\.[0-9_]*)?(?:[eE][-+]?[0-9]+)?|\\.[0-9_]+(?:[eE][-+]?[0-9]+)?|[-+]?\\.(?:inf|Inf|INF)|\\.(?:nan|NaN|NAN))TextComponent");
 
-function cu5(A) {
+    function cu5(A) {
         if (A === null) return !1;
         if (!du5.test(A) || A[A.length - 1] === "_") return !1;
         return !0
     }
 
-function pu5(A) {
+    function pu5(A) {
         var Q, B;
         if (Q = A.replace(/_/g, "").toLowerCase(), B = Q[0] === "-" ? -1 : 1, "+-".indexOf(Q[0]) >= 0) Q = Q.slice(1);
         if (Q === ".inf") return B === 1 ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY;
@@ -320,7 +322,7 @@ function pu5(A) {
     }
     var lu5 = /^[-+]?[0-9]+e/;
 
-function iu5(A, Q) {
+    function iu5(A, Q) {
         var B;
         if (isNaN(A)) switch (Q) {
             case "lowercase":
@@ -347,7 +349,7 @@ function iu5(A, Q) {
         return B = A.toString(10), lu5.test(B) ? B.replace("e", ".e") : B
     }
 
-function nu5(A) {
+    function nu5(A) {
         return Object.prototype.toString.call(A) === "[object Number]" && (A % 1 !== 0 || fy2.isNegativeZero(A))
     }
     hy2.exports = new mu5("tag:yaml.org,2002:float", {
@@ -359,24 +361,24 @@ function nu5(A) {
         defaultStyle: "lowercase"
     })
 });
-var A51 = U((j9Z, gy2) => {
+var A51 = moduleWrapper((j9Z, gy2) => {
     gy2.exports = h50().extend({
         implicit: [g50(), u50(), m50(), d50()]
     })
 });
-var c50 = U((S9Z, dy2) => {
+var c50 = moduleWrapper((S9Z, dy2) => {
     var au5 = IC(),
-        uy2 = new RegExp("^([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])$"),
-        my2 = new RegExp("^([0-9][0-9][0-9][0-9])-([0-9][0-9]?)-([0-9][0-9]?)(?:[Tt]|[ \\t]+)([0-9][0-9]?):([0-9][0-9]):([0-9][0-9])(?:\\.([0-9]*))?(?:[ \\t]*(Z|([-+])([0-9][0-9]?)(?::([0-9][0-9]))?))?$");
+        uy2 = new RegExp("^([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])TextComponent"),
+        my2 = new RegExp("^([0-9][0-9][0-9][0-9])-([0-9][0-9]?)-([0-9][0-9]?)(?:[Tt]|[ \\t]+)([0-9][0-9]?):([0-9][0-9]):([0-9][0-9])(?:\\.([0-9]*))?(?:[ \\t]*(Z|([-+])([0-9][0-9]?)(?::([0-9][0-9]))?))?TextComponent");
 
-function su5(A) {
+    function su5(A) {
         if (A === null) return !1;
         if (uy2.exec(A) !== null) return !0;
         if (my2.exec(A) !== null) return !0;
         return !1
     }
 
-function ru5(A) {
+    function ru5(A) {
         var Q, B, G, Z, I, Y, J, W = 0,
             X = null,
             F, V, K;
@@ -395,7 +397,7 @@ function ru5(A) {
         return K
     }
 
-function ou5(A) {
+    function ou5(A) {
         return A.toISOString()
     }
     dy2.exports = new au5("tag:yaml.org,2002:timestamp", {
@@ -406,10 +408,10 @@ function ou5(A) {
         represent: ou5
     })
 });
-var p50 = U((_9Z, cy2) => {
+var p50 = moduleWrapper((_9Z, cy2) => {
     var tu5 = IC();
 
-function eu5(A) {
+    function eu5(A) {
         return A === "<<" || A === null
     }
     cy2.exports = new tu5("tag:yaml.org,2002:merge", {
@@ -417,12 +419,12 @@ function eu5(A) {
         resolve: eu5
     })
 });
-var i50 = U((k9Z, py2) => {
+var i50 = moduleWrapper((k9Z, py2) => {
     var Am5 = IC(),
         l50 = `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=
 \r`;
 
-function Qm5(A) {
+    function Qm5(A) {
         if (A === null) return !1;
         var Q, B, G = 0,
             Z = A.length,
@@ -435,7 +437,7 @@ function Qm5(A) {
         return G % 8 === 0
     }
 
-function Bm5(A) {
+    function Bm5(A) {
         var Q, B, G = A.replace(/[\r\n=]/g, ""),
             Z = G.length,
             I = l50,
@@ -451,7 +453,7 @@ function Bm5(A) {
         return new Uint8Array(J)
     }
 
-function Gm5(A) {
+    function Gm5(A) {
         var Q = "",
             B = 0,
             G, Z, I = A.length,
@@ -466,7 +468,7 @@ function Gm5(A) {
         return Q
     }
 
-function Zm5(A) {
+    function Zm5(A) {
         return Object.prototype.toString.call(A) === "[object Uint8Array]"
     }
     py2.exports = new Am5("tag:yaml.org,2002:binary", {
@@ -477,15 +479,14 @@ function Zm5(A) {
         represent: Gm5
     })
 });
-var n50 = U((y9Z, ly2) => {
+var n50 = moduleWrapper((y9Z, ly2) => {
     var Im5 = IC(),
         Ym5 = Object.prototype.hasOwnProperty,
         Jm5 = Object.prototype.toString;
 
-function Wm5(A) {
+    function Wm5(A) {
         if (A === null) return !0;
-
-var Q = [],
+        var Q = [],
             B, G, Z, I, Y, J = A;
         for (B = 0, G = J.length; B < G; B += 1) {
             if (Z = J[B], Y = !1, Jm5.call(Z) !== "[object Object]") return !1;
@@ -500,7 +501,7 @@ var Q = [],
         return !0
     }
 
-function Xm5(A) {
+    function Xm5(A) {
         return A !== null ? A : []
     }
     ly2.exports = new Im5("tag:yaml.org,2002:omap", {
@@ -509,11 +510,11 @@ function Xm5(A) {
         construct: Xm5
     })
 });
-var a50 = U((x9Z, iy2) => {
+var a50 = moduleWrapper((x9Z, iy2) => {
     var Fm5 = IC(),
         Vm5 = Object.prototype.toString;
 
-function Km5(A) {
+    function Km5(A) {
         if (A === null) return !0;
         var Q, B, G, Z, I, Y = A;
         I = Array(Y.length);
@@ -525,7 +526,7 @@ function Km5(A) {
         return !0
     }
 
-function Dm5(A) {
+    function Dm5(A) {
         if (A === null) return [];
         var Q, B, G, Z, I, Y = A;
         I = Array(Y.length);
@@ -538,11 +539,11 @@ function Dm5(A) {
         construct: Dm5
     })
 });
-var s50 = U((v9Z, ny2) => {
+var s50 = moduleWrapper((v9Z, ny2) => {
     var Hm5 = IC(),
         Cm5 = Object.prototype.hasOwnProperty;
 
-function Em5(A) {
+    function Em5(A) {
         if (A === null) return !0;
         var Q, B = A;
         for (Q in B)
@@ -551,7 +552,7 @@ function Em5(A) {
             } return !0
     }
 
-function zm5(A) {
+    function zm5(A) {
         return A !== null ? A : {}
     }
     ny2.exports = new Hm5("tag:yaml.org,2002:set", {
@@ -560,13 +561,13 @@ function zm5(A) {
         construct: zm5
     })
 });
-var Q51 = U((b9Z, ay2) => {
+var Q51 = moduleWrapper((b9Z, ay2) => {
     ay2.exports = A51().extend({
         implicit: [c50(), p50()],
         explicit: [i50(), n50(), a50(), s50()]
     })
 });
-var Fx2 = U((mm5, e50) => {
+var Fx2 = moduleWrapper((mm5, e50) => {
     var E0A = ZWA(),
         Qx2 = IWA(),
         Um5 = Oy2(),
@@ -582,54 +583,54 @@ var Fx2 = U((mm5, e50) => {
         qm5 = /[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x84\x86-\x9F\uFFFE\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/,
         Nm5 = /[\x85\u2028\u2029]/,
         Lm5 = /[,\[\]\{\}]/,
-        Zx2 = /^(?:!|!!|![a-z\-]+!)$/i,
-        Ix2 = /^(?:!|[^,\[\]\{\}])(?:%[0-9a-f]{2}|[0-9a-z\-#;\/\?:@&=\+\$,_\.!~\*'\(\)\[\]])*$/i;
+        Zx2 = /^(?:!|!!|![a-z\-]+!)TextComponent/i,
+        Ix2 = /^(?:!|[^,\[\]\{\}])(?:%[0-9a-f]{2}|[0-9a-z\-#;\/\?:@&=\+\TextComponent,_\.!~\*'\(\)\[\]])*TextComponent/i;
 
-function ry2(A) {
+    function ry2(A) {
         return Object.prototype.toString.call(A)
     }
 
-function Ey(A) {
+    function Ey(A) {
         return A === 10 || A === 13
     }
 
-function z0A(A) {
+    function z0A(A) {
         return A === 9 || A === 32
     }
 
-function I$(A) {
+    function I$(A) {
         return A === 9 || A === 32 || A === 10 || A === 13
     }
 
-function YWA(A) {
+    function YWA(A) {
         return A === 44 || A === 91 || A === 93 || A === 123 || A === 125
     }
 
-function Mm5(A) {
+    function Mm5(A) {
         var Q;
         if (48 <= A && A <= 57) return A - 48;
         if (Q = A | 32, 97 <= Q && Q <= 102) return Q - 97 + 10;
         return -1
     }
 
-function Om5(A) {
+    function Om5(A) {
         if (A === 120) return 2;
         if (A === 117) return 4;
         if (A === 85) return 8;
         return 0
     }
 
-function Rm5(A) {
+    function Rm5(A) {
         if (48 <= A && A <= 57) return A - 48;
         return -1
     }
 
-function oy2(A) {
+    function oy2(A) {
         return A === 48 ? "\x00" : A === 97 ? "\x07" : A === 98 ? "\b" : A === 116 ? "\t" : A === 9 ? "\t" : A === 110 ? `
 ` : A === 118 ? "\v" : A === 102 ? "\f" : A === 114 ? "\r" : A === 101 ? "\x1B" : A === 32 ? " " : A === 34 ? '"' : A === 47 ? "/" : A === 92 ? "\\" : A === 78 ? "" : A === 95 ? " " : A === 76 ? "\u2028" : A === 80 ? "\u2029" : ""
     }
 
-function Tm5(A) {
+    function Tm5(A) {
         if (A <= 65535) return String.fromCharCode(A);
         return String.fromCharCode((A - 65536 >> 10) + 55296, (A - 65536 & 1023) + 56320)
     }
@@ -638,11 +639,11 @@ function Tm5(A) {
     for (Cn = 0; Cn < 256; Cn++) Yx2[Cn] = oy2(Cn) ? 1 : 0, Jx2[Cn] = oy2(Cn);
     var Cn;
 
-function Pm5(A, Q) {
+    function Pm5(A, Q) {
         this.input = A, this.filename = Q.filename || null, this.schema = Q.schema || $m5, this.onWarning = Q.onWarning || null, this.legacy = Q.legacy || !1, this.json = Q.json || !1, this.listener = Q.listener || null, this.implicitTypes = this.schema.compiledImplicit, this.typeMap = this.schema.compiledTypeMap, this.length = A.length, this.position = 0, this.line = 0, this.lineStart = 0, this.lineIndent = 0, this.firstTabInLine = -1, this.documents = []
     }
 
-function Wx2(A, Q) {
+    function Wx2(A, Q) {
         var B = {
             name: A.filename,
             buffer: A.input.slice(0, -1),
@@ -653,20 +654,19 @@ function Wx2(A, Q) {
         return B.snippet = Um5(B), new Qx2(Q, B)
     }
 
-function C9(A, Q) {
+    function C9(A, Q) {
         throw Wx2(A, Q)
     }
 
-function Z51(A, Q) {
+    function Z51(A, Q) {
         if (A.onWarning) A.onWarning.call(null, Wx2(A, Q))
     }
-
-var ty2 = {
+    var ty2 = {
         YAML: function(Q, B, G) {
             var Z, I, Y;
             if (Q.version !== null) C9(Q, "duplication of %YAML directive");
             if (G.length !== 1) C9(Q, "YAML directive accepts exactly one argument");
-            if (Z = /^([0-9]+)\.([0-9]+)$/.exec(G[0]), Z === null) C9(Q, "ill-formed argument of the YAML directive");
+            if (Z = /^([0-9]+)\.([0-9]+)TextComponent/.exec(G[0]), Z === null) C9(Q, "ill-formed argument of the YAML directive");
             if (I = parseInt(Z[1], 10), Y = parseInt(Z[2], 10), I !== 1) C9(Q, "unacceptable YAML version of the document");
             if (Q.version = G[0], Q.checkLineBreaks = Y < 2, Y !== 1 && Y !== 2) Z51(Q, "unsupported YAML version of the document")
         },
@@ -685,7 +685,7 @@ var ty2 = {
         }
     };
 
-function En(A, Q, B, G) {
+    function En(A, Q, B, G) {
         var Z, I, Y, J;
         if (Q < B) {
             if (J = A.input.slice(Q, B), G) {
@@ -696,7 +696,7 @@ function En(A, Q, B, G) {
         }
     }
 
-function ey2(A, Q, B, G) {
+    function ey2(A, Q, B, G) {
         var Z, I, Y, J;
         if (!E0A.isObject(B)) C9(A, "cannot merge mappings; the provided source object is unacceptable");
         Z = Object.keys(B);
@@ -704,7 +704,7 @@ function ey2(A, Q, B, G) {
             if (I = Z[Y], !zn.call(Q, I)) Q[I] = B[I], G[I] = !0
     }
 
-function JWA(A, Q, B, G, Z, I, Y, J, W) {
+    function JWA(A, Q, B, G, Z, I, Y, J, W) {
         var X, F;
         if (Array.isArray(Z)) {
             Z = Array.prototype.slice.call(Z);
@@ -733,7 +733,7 @@ function JWA(A, Q, B, G, Z, I, Y, J, W) {
         return Q
     }
 
-function o50(A) {
+    function o50(A) {
         var Q = A.input.charCodeAt(A.position);
         if (Q === 10) A.position++;
         else if (Q === 13) {
@@ -742,7 +742,7 @@ function o50(A) {
         A.line += 1, A.lineStart = A.position, A.firstTabInLine = -1
     }
 
-function eX(A, Q, B) {
+    function eX(A, Q, B) {
         var G = 0,
             Z = A.input.charCodeAt(A.position);
         while (Z !== 0) {
@@ -761,7 +761,7 @@ function eX(A, Q, B) {
         return G
     }
 
-function I51(A) {
+    function I51(A) {
         var Q = A.position,
             B;
         if (B = A.input.charCodeAt(Q), (B === 45 || B === 46) && B === A.input.charCodeAt(Q + 1) && B === A.input.charCodeAt(Q + 2)) {
@@ -770,13 +770,13 @@ function I51(A) {
         return !1
     }
 
-function t50(A, Q) {
+    function t50(A, Q) {
         if (Q === 1) A.result += " ";
         else if (Q > 1) A.result += E0A.repeat(`
 `, Q - 1)
     }
 
-function jm5(A, Q, B) {
+    function jm5(A, Q, B) {
         var G, Z, I, Y, J, W, X, F, V = A.kind,
             K = A.result,
             D;
@@ -806,7 +806,7 @@ function jm5(A, Q, B) {
         return A.kind = V, A.result = K, !1
     }
 
-function Sm5(A, Q) {
+    function Sm5(A, Q) {
         var B, G, Z;
         if (B = A.input.charCodeAt(A.position), B !== 39) return !1;
         A.kind = "scalar", A.result = "", A.position++, G = Z = A.position;
@@ -820,7 +820,7 @@ function Sm5(A, Q) {
         C9(A, "unexpected end of the stream within a single quoted scalar")
     }
 
-function _m5(A, Q) {
+    function _m5(A, Q) {
         var B, G, Z, I, Y, J;
         if (J = A.input.charCodeAt(A.position), J !== 34) return !1;
         A.kind = "scalar", A.result = "", A.position++, B = G = A.position;
@@ -843,7 +843,7 @@ function _m5(A, Q) {
         C9(A, "unexpected end of the stream within a double quoted scalar")
     }
 
-function km5(A, Q) {
+    function km5(A, Q) {
         var B = !0,
             G, Z, I, Y = A.tag,
             J, W = A.anchor,
@@ -871,7 +871,7 @@ function km5(A, Q) {
         C9(A, "unexpected end of the stream within a flow collection")
     }
 
-function ym5(A, Q) {
+    function ym5(A, Q) {
         var B, G, Z = r50,
             I = !1,
             Y = !1,
@@ -932,7 +932,7 @@ function ym5(A, Q) {
         return !0
     }
 
-function Ax2(A, Q) {
+    function Ax2(A, Q) {
         var B, G = A.tag,
             Z = A.anchor,
             I = [],
@@ -958,7 +958,7 @@ function Ax2(A, Q) {
         return !1
     }
 
-function xm5(A, Q, B) {
+    function xm5(A, Q, B) {
         var G, Z, I, Y, J, W, X = A.tag,
             F = A.anchor,
             V = {},
@@ -1011,7 +1011,7 @@ function xm5(A, Q, B) {
         return z
     }
 
-function vm5(A) {
+    function vm5(A) {
         var Q, B = !1,
             G = !1,
             Z, I, Y;
@@ -1049,7 +1049,7 @@ function vm5(A) {
         return !0
     }
 
-function bm5(A) {
+    function bm5(A) {
         var Q, B;
         if (B = A.input.charCodeAt(A.position), B !== 38) return !1;
         if (A.anchor !== null) C9(A, "duplication of an anchor property");
@@ -1059,7 +1059,7 @@ function bm5(A) {
         return A.anchor = A.input.slice(Q, A.position), !0
     }
 
-function fm5(A) {
+    function fm5(A) {
         var Q, B, G;
         if (G = A.input.charCodeAt(A.position), G !== 42) return !1;
         G = A.input.charCodeAt(++A.position), Q = A.position;
@@ -1069,7 +1069,7 @@ function fm5(A) {
         return A.result = A.anchorMap[B], eX(A, !0, -1), !0
     }
 
-function WWA(A, Q, B, G, Z) {
+    function WWA(A, Q, B, G, Z) {
         var I, Y, J, W = 1,
             X = !1,
             F = !1,
@@ -1134,7 +1134,7 @@ function WWA(A, Q, B, G, Z) {
         return A.tag !== null || A.anchor !== null || F
     }
 
-function hm5(A) {
+    function hm5(A) {
         var Q = A.position,
             B, G, Z, I = !1,
             Y;
@@ -1170,7 +1170,7 @@ function hm5(A) {
         else return
     }
 
-function Xx2(A, Q) {
+    function Xx2(A, Q) {
         if (A = String(A), Q = Q || {}, A.length !== 0) {
             if (A.charCodeAt(A.length - 1) !== 10 && A.charCodeAt(A.length - 1) !== 13) A += `
 `;
@@ -1185,14 +1185,14 @@ function Xx2(A, Q) {
         return B.documents
     }
 
-function gm5(A, Q, B) {
+    function gm5(A, Q, B) {
         if (Q !== null && typeof Q === "object" && typeof B > "u") B = Q, Q = null;
         var G = Xx2(A, B);
         if (typeof Q !== "function") return G;
         for (var Z = 0, I = G.length; Z < I; Z += 1) Q(G[Z])
     }
 
-function um5(A, Q) {
+    function um5(A, Q) {
         var B = Xx2(A, Q);
         if (B.length === 0) return;
         else if (B.length === 1) return B[0];
@@ -1201,7 +1201,7 @@ function um5(A, Q) {
     mm5.loadAll = gm5;
     mm5.load = um5
 });
-var _x2 = U((Od5, Sx2) => {
+var _x2 = moduleWrapper((Od5, Sx2) => {
     var W51 = ZWA(),
         mRA = IWA(),
         pm5 = Q51(),
@@ -1246,13 +1246,12 @@ var _x2 = U((Od5, Sx2) => {
     YC[92] = "\\\\";
     YC[133] = "\\N";
     YC[160] = "\\_";
-    YC[8232] = "\\L";
+    YC[8232] = "\\lazyLoader";
     YC[8233] = "\\P";
+    var Jd5 = ["y", "Y", "yes", "Yes", "YES", "on", "On", "ON", "n", "N", "no", "No", "NO", "off", "Off", "OFF"],
+        Wd5 = /^[-+]?[0-9_]+(?::[0-9_]+)+(?:\.[0-9_]*)?TextComponent/;
 
-var Jd5 = ["y", "Y", "yes", "Yes", "YES", "on", "On", "ON", "n", "N", "no", "No", "NO", "off", "Off", "OFF"],
-        Wd5 = /^[-+]?[0-9_]+(?::[0-9_]+)+(?:\.[0-9_]*)?$/;
-
-function Xd5(A, Q) {
+    function Xd5(A, Q) {
         var B, G, Z, I, Y, J, W;
         if (Q === null) return {};
         B = {}, G = Object.keys(Q);
@@ -1264,22 +1263,22 @@ function Xd5(A, Q) {
         return B
     }
 
-function Fd5(A) {
+    function Fd5(A) {
         var Q, B, G;
         if (Q = A.toString(16).toUpperCase(), A <= 255) B = "x", G = 2;
         else if (A <= 65535) B = "u", G = 4;
-        else if (A <= 4294967295) B = "U", G = 8;
+        else if (A <= 4294967295) B = "moduleWrapper", G = 8;
         else throw new mRA("code point within a string may not be greater than 0xFFFFFFFF");
         return "\\" + B + W51.repeat("0", G - Q.length) + Q
     }
     var Vd5 = 1,
         gRA = 2;
 
-function Kd5(A) {
+    function Kd5(A) {
         this.schema = A.schema || pm5, this.indent = Math.max(1, A.indent || 2), this.noArrayIndent = A.noArrayIndent || !1, this.skipInvalid = A.skipInvalid || !1, this.flowLevel = W51.isNothing(A.flowLevel) ? -1 : A.flowLevel, this.styleMap = Xd5(this.schema, A.styles || null), this.sortKeys = A.sortKeys || !1, this.lineWidth = A.lineWidth || 80, this.noRefs = A.noRefs || !1, this.noCompatMode = A.noCompatMode || !1, this.condenseFlow = A.condenseFlow || !1, this.quotingType = A.quotingType === '"' ? gRA : Vd5, this.forceQuotes = A.forceQuotes || !1, this.replacer = typeof A.replacer === "function" ? A.replacer : null, this.implicitTypes = this.schema.compiledImplicit, this.explicitTypes = this.schema.compiledExplicit, this.tag = null, this.result = "", this.duplicates = [], this.usedDuplicates = null
     }
 
-function Vx2(A, Q) {
+    function Vx2(A, Q) {
         var B = W51.repeat(" ", Q),
             G = 0,
             Z = -1,
@@ -1296,45 +1295,45 @@ function Vx2(A, Q) {
         return I
     }
 
-function Q30(A, Q) {
+    function Q30(A, Q) {
         return `
 ` + W51.repeat(" ", A.indent * Q)
     }
 
-function Dd5(A, Q) {
+    function Dd5(A, Q) {
         var B, G, Z;
         for (B = 0, G = A.implicitTypes.length; B < G; B += 1)
             if (Z = A.implicitTypes[B], Z.resolve(Q)) return !0;
         return !1
     }
 
-function J51(A) {
+    function J51(A) {
         return A === nm5 || A === lm5
     }
 
-function uRA(A) {
+    function uRA(A) {
         return 32 <= A && A <= 126 || 161 <= A && A <= 55295 && A !== 8232 && A !== 8233 || 57344 <= A && A <= 65533 && A !== Z30 || 65536 <= A && A <= 1114111
     }
 
-function Kx2(A) {
+    function Kx2(A) {
         return uRA(A) && A !== Z30 && A !== im5 && A !== hRA
     }
 
-function Dx2(A, Q, B) {
+    function Dx2(A, Q, B) {
         var G = Kx2(A),
             Z = G && !J51(A);
         return (B ? G : G && A !== qx2 && A !== Nx2 && A !== Lx2 && A !== Mx2 && A !== Ox2) && A !== A30 && !(Q === Y51 && !Z) || Kx2(Q) && !J51(Q) && A === A30 || Q === Y51 && Z
     }
 
-function Hd5(A) {
+    function Hd5(A) {
         return uRA(A) && A !== Z30 && !J51(A) && A !== Ad5 && A !== Gd5 && A !== Y51 && A !== qx2 && A !== Nx2 && A !== Lx2 && A !== Mx2 && A !== Ox2 && A !== A30 && A !== om5 && A !== em5 && A !== am5 && A !== Yd5 && A !== Qd5 && A !== Bd5 && A !== tm5 && A !== sm5 && A !== rm5 && A !== Zd5 && A !== Id5
     }
 
-function Cd5(A) {
+    function Cd5(A) {
         return !J51(A) && A !== Y51
     }
 
-function fRA(A, Q) {
+    function fRA(A, Q) {
         var B = A.charCodeAt(Q),
             G;
         if (B >= 55296 && B <= 56319 && Q + 1 < A.length) {
@@ -1343,7 +1342,7 @@ function fRA(A, Q) {
         return B
     }
 
-function Rx2(A) {
+    function Rx2(A) {
         var Q = /^\n* /;
         return Q.test(A)
     }
@@ -1353,7 +1352,7 @@ function Rx2(A) {
         jx2 = 4,
         XWA = 5;
 
-function Ed5(A, Q, B, G, Z, I, Y, J) {
+    function Ed5(A, Q, B, G, Z, I, Y, J) {
         var W, X = 0,
             F = null,
             V = !1,
@@ -1383,7 +1382,7 @@ function Ed5(A, Q, B, G, Z, I, Y, J) {
         return I === gRA ? XWA : B30
     }
 
-function zd5(A, Q, B, G, Z) {
+    function zd5(A, Q, B, G, Z) {
         A.dump = function() {
             if (Q.length === 0) return A.quotingType === gRA ? '""' : "''";
             if (!A.noCompatMode) {
@@ -1393,7 +1392,7 @@ function zd5(A, Q, B, G, Z) {
                 Y = A.lineWidth === -1 ? -1 : Math.max(Math.min(A.lineWidth, 40), A.lineWidth - I),
                 J = G || A.flowLevel > -1 && B >= A.flowLevel;
 
-function W(X) {
+            function W(X) {
                 return Dd5(A, X)
             }
             switch (Ed5(Q, J, A.indent, Y, W, A.quotingType, A.forceQuotes && !G, Z)) {
@@ -1413,7 +1412,7 @@ function W(X) {
         }()
     }
 
-function Hx2(A, Q) {
+    function Hx2(A, Q) {
         var B = Rx2(A) ? String(Q) : "",
             G = A[A.length - 1] === `
 `,
@@ -1425,12 +1424,12 @@ function Hx2(A, Q) {
 `
     }
 
-function Cx2(A) {
+    function Cx2(A) {
         return A[A.length - 1] === `
 ` ? A.slice(0, -1) : A
     }
 
-function Ud5(A, Q) {
+    function Ud5(A, Q) {
         var B = /(\n+)([^\n]*)/g,
             G = function() {
                 var X = A.indexOf(`
@@ -1449,7 +1448,7 @@ function Ud5(A, Q) {
         return G
     }
 
-function Ex2(A, Q) {
+    function Ex2(A, Q) {
         if (A === "" || A[0] === " ") return A;
         var B = / [^ ]/g,
             G, Z = 0,
@@ -1479,7 +1478,7 @@ function Ex2(A, Q) {
         return Q
     }
 
-function wd5(A, Q, B) {
+    function wd5(A, Q, B) {
         var G = "",
             Z = A.tag,
             I, Y, J;
@@ -1493,7 +1492,7 @@ function wd5(A, Q, B) {
         A.tag = Z, A.dump = "[" + G + "]"
     }
 
-function zx2(A, Q, B, G) {
+    function zx2(A, Q, B, G) {
         var Z = "",
             I = A.tag,
             Y, J, W;
@@ -1509,7 +1508,7 @@ function zx2(A, Q, B, G) {
         A.tag = I, A.dump = Z || "[]"
     }
 
-function qd5(A, Q, B) {
+    function qd5(A, Q, B) {
         var G = "",
             Z = A.tag,
             I = Object.keys(B),

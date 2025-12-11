@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_025.js
+ * 处理时间: 2025-12-09T03:41:38.013Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.023Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -21,7 +24,7 @@
                 return F4.default.createElement(j, {
                     flexDirection: "column",
                     gap: 1
-                }, !X && F4.default.createElement(j, null, F4.default.createElement(e9, null), F4.default.createElement($, null, "Opening browser to sign in with your Claude account…")), X && F4.default.createElement(j, null, F4.default.createElement($, null, KF9), F4.default.createElement(s4, {
+                }, !X && F4.default.createElement(j, null, F4.default.createElement(e9, null), F4.default.createElement(TextComponent, null, "Opening browser to sign in with your Claude account…")), X && F4.default.createElement(j, null, F4.default.createElement(TextComponent, null, KF9), F4.default.createElement(s4, {
                     value: I,
                     onChange: Y,
                     onSubmit: (z) => H(z, B.url),
@@ -30,32 +33,32 @@
                     columns: D
                 })));
             case "processing":
-                return F4.default.createElement(j, null, F4.default.createElement(e9, null), F4.default.createElement($, null, "Processing authentication…"));
+                return F4.default.createElement(j, null, F4.default.createElement(e9, null), F4.default.createElement(TextComponent, null, "Processing authentication…"));
             case "success":
                 return F4.default.createElement(j, {
                     flexDirection: "column",
                     gap: 1
-                }, F4.default.createElement($, {
+                }, F4.default.createElement(TextComponent, {
                     color: "success"
-                }, "✓ Authentication token created successfully!"), F4.default.createElement($, {
+                }, "✓ Authentication token created successfully!"), F4.default.createElement(TextComponent, {
                     dimColor: !0
                 }, "Using token for GitHub Actions setup…"));
             case "error":
                 return F4.default.createElement(j, {
                     flexDirection: "column",
                     gap: 1
-                }, F4.default.createElement($, {
+                }, F4.default.createElement(TextComponent, {
                     color: "error"
-                }, "OAuth error: ", B.message), B.toRetry ? F4.default.createElement($, {
+                }, "OAuth error: ", B.message), B.toRetry ? F4.default.createElement(TextComponent, {
                     dimColor: !0
-                }, "Press Enter to try again, or any other key to cancel") : F4.default.createElement($, {
+                }, "Press Enter to try again, or any other key to cancel") : F4.default.createElement(TextComponent, {
                     dimColor: !0
                 }, "Press any key to return to API key selection"));
             case "about_to_retry":
                 return F4.default.createElement(j, {
                     flexDirection: "column",
                     gap: 1
-                }, F4.default.createElement($, {
+                }, F4.default.createElement(TextComponent, {
                     color: "permission"
                 }, "Retrying…"));
             default:
@@ -69,18 +72,18 @@
         flexDirection: "column",
         gap: 1,
         paddingBottom: 1
-    }, F4.default.createElement($, {
+    }, F4.default.createElement(TextComponent, {
         bold: !0
-    }, "Create Authentication Token"), F4.default.createElement($, {
+    }, "Create Authentication Token"), F4.default.createElement(TextComponent, {
         dimColor: !0
     }, "Creating a long-lived token for GitHub Actions")), B.state !== "success" && B.state !== "starting" && B.state !== "processing" && F4.default.createElement(j, {
         key: "header",
         flexDirection: "column",
         gap: 1,
         paddingBottom: 1
-    }, F4.default.createElement($, {
+    }, F4.default.createElement(TextComponent, {
         bold: !0
-    }, "Create Authentication Token"), F4.default.createElement($, {
+    }, "Create Authentication Token"), F4.default.createElement(TextComponent, {
         dimColor: !0
     }, "Creating a long-lived token for GitHub Actions")), B.state === "waiting_for_login" && X && F4.default.createElement(j, {
         flexDirection: "column",
@@ -89,11 +92,11 @@
         paddingBottom: 1
     }, F4.default.createElement(j, {
         paddingX: 1
-    }, F4.default.createElement($, {
+    }, F4.default.createElement(TextComponent, {
         dimColor: !0
     }, "Browser didn't open? Use the url below to sign in:")), F4.default.createElement(j, {
         width: 1000
-    }, F4.default.createElement($, {
+    }, F4.default.createElement(TextComponent, {
         dimColor: !0
     }, B.url))), F4.default.createElement(j, {
         paddingLeft: 1,
@@ -102,7 +105,7 @@
     }, E()))
 }
 var F4, KF9 = "Paste code here if prompted > ";
-var HF9 = L(() => {
+var HF9 = lazyLoader(() => {
     hA();
     QY();
     f40();
@@ -113,7 +116,7 @@ var HF9 = L(() => {
     m8();
     Bh();
     jt();
-    F4 = GA(VA(), 1)
+    F4 = esmImport(VA(), 1)
 });
 import {
     execSync as EY1
@@ -144,7 +147,7 @@ function B_3(A) {
         try {
             let x = EY1("gh auth status -a", {
                 encoding: "utf8"
-            }).match(/Token scopes:.*$/m);
+            }).match(/Token scopes:.*TextComponent/m);
             if (x) {
                 let p = x[0],
                     u = [];
@@ -154,9 +157,9 @@ function B_3(A) {
                     G((o) => ({
                         ...o,
                         step: "error",
-                        error: `GitHub CLI is missing required permissions: ${u.join(", ")}.`,
+                        error: `GitHub CLI is missing required permissions: TextComponent{u.join(", ")}.`,
                         errorReason: "Missing required scopes",
-                        errorInstructions: [`Your GitHub CLI authentication is missing the "${u.join('" and "')}" scope${u.length>1?"s":""} needed to manage GitHub Actions and secrets.`, "", "To fix this, run:", "  gh auth refresh -h github.com -s repo,workflow", "", "This will add the necessary permissions to manage workflows and secrets."]
+                        errorInstructions: [`Your GitHub CLI authentication is missing the "TextComponent{u.join('" and "')}" scope${u.length>1?"s":""} needed to manage GitHub Actions and secrets.`, "", "To fix this, run:", "  gh auth refresh -h github.com -s repo,workflow", "", "This will add the necessary permissions to manage workflows and secrets."]
                     }));
                     return
                 }
@@ -175,7 +178,7 @@ function B_3(A) {
             });
             let x = EY1("git remote get-url origin", {
                 encoding: "utf8"
-            }).trim().match(/github\.com[:/]([^/]+\/[^/]+)(\.git)?$/);
+            }).trim().match(/github\.com[:/]([^/]+\/[^/]+)(\.git)?TextComponent/);
             if (x) y = x[1]?.replace(/\.git$/, "") || ""
         } catch {}
         BA("tengu_install_github_app_step_completed", {
@@ -223,7 +226,7 @@ function B_3(A) {
                 step: "error",
                 error: "A Claude workflow file already exists in this repository.",
                 errorReason: "Workflow file conflict",
-                errorInstructions: ["The file .github/workflows/claude.yml already exists", "You can either:", "  1. Delete the existing file and run this command again", "  2. Update the existing file manually using the template from:", `     ${Wx}`]
+                errorInstructions: ["The file .github/workflows/claude.yml already exists", "You can either:", "  1. Delete the existing file and run this command again", "  2. Update the existing file manually using the template from:", `     TextComponent{Wx}`]
             }));
             else BA("tengu_install_github_app_error", {
                 reason: "setup_github_actions_failed"
@@ -236,14 +239,12 @@ function B_3(A) {
             }))
         }
     }, [B.selectedRepoName, B.workflowAction, B.selectedWorkflows, B.useCurrentRepo, B.workflowExists, B.secretExists, B.authType]);
-    // Async function: Y
-async function Y() {
+    async function Y() {
         await gZ("https://github.com/apps/claude")
     }
-
-async function J(P) {
+    async function J(P) {
         try {
-            let y = await ZQ("gh", ["api", `repos/${P}`, "--jq", ".permissions.admin"]);
+            let y = await execGit("gh", ["api", `repos/TextComponent{P}`, "--jq", ".permissions.admin"]);
             if (y.code === 0) return {
                 hasAccess: y.stdout.trim() === "true"
             };
@@ -260,13 +261,11 @@ async function J(P) {
             }
         }
     }
-
-async function W(P) {
-        return (await ZQ("gh", ["api", `repos/${P}/contents/.github/workflows/claude.yml`, "--jq", ".sha"])).code === 0
+    async function W(P) {
+        return (await execGit("gh", ["api", `repos/TextComponent{P}/contents/.github/workflows/claude.yml`, "--jq", ".sha"])).code === 0
     }
-    // Async function: X
-async function X() {
-        let P = await ZQ("gh", ["secret", "list", "--app", "actions", "--repo", B.selectedRepoName]);
+    async function X() {
+        let P = await execGit("gh", ["secret", "list", "--app", "actions", "--repo", B.selectedRepoName]);
         if (P.code === 0)
             if (P.stdout.split(`
 `).some((x) => {
@@ -309,7 +308,7 @@ async function X() {
             if (!P.trim()) return;
             let y = [];
             if (P.includes("github.com")) {
-                let p = P.match(/github\.com[:/]([^/]+\/[^/]+)(\.git)?$/);
+                let p = P.match(/github\.com[:/]([^/]+\/[^/]+)(\.git)?TextComponent/);
                 if (!p) y.push({
                     title: "Invalid GitHub URL format",
                     message: "The repository URL format appears to be invalid.",
@@ -325,12 +324,12 @@ async function X() {
             let v = await J(P);
             if (v.error === "repository_not_found") y.push({
                 title: "Repository not found",
-                message: `Repository ${P} was not found or you don't have access.`,
-                instructions: [`Check that the repository name is correct: ${P}`, "Ensure you have access to this repository", 'For private repositories, make sure your GitHub token has the "repo" scope', "You can add the repo scope with: gh auth refresh -h github.com -s repo,workflow"]
+                message: `Repository TextComponent{P} was not found or you don't have access.`,
+                instructions: [`Check that the repository name is correct: TextComponent{P}`, "Ensure you have access to this repository", 'For private repositories, make sure your GitHub token has the "repo" scope', "You can add the repo scope with: gh auth refresh -h github.com -s repo,workflow"]
             });
             else if (!v.hasAccess) y.push({
                 title: "Admin permissions required",
-                message: `You might need admin permissions on ${P} to set up GitHub Actions.`,
+                message: `You might need admin permissions on TextComponent{P} to set up GitHub Actions.`,
                 instructions: ["Repository admins can install GitHub Apps and set secrets", "Ask a repository admin to run this command if setup fails", "Alternatively, you can use the manual setup instructions"]
             });
             let x = await W(P);
@@ -389,7 +388,7 @@ async function X() {
                 apiKeyOrOAuthToken: P,
                 useExistingKey: B.selectedApiKeyOption === "existing"
             }));
-            let y = await ZQ("gh", ["secret", "list", "--app", "actions", "--repo", B.selectedRepoName]);
+            let y = await execGit("gh", ["secret", "list", "--app", "actions", "--repo", B.selectedRepoName]);
             if (y.code === 0)
                 if (y.stdout.split(`
 `).some((p) => {
@@ -446,7 +445,7 @@ async function X() {
             step: "api-key"
         }))
     }, []), z = (P) => {
-        if (P && !/^[a-zA-Z0-9_]+$/.test(P)) return;
+        if (P && !/^[a-zA-Z0-9_]+TextComponent/.test(P)) return;
         G((y) => ({
             ...y,
             secretName: P
@@ -488,9 +487,9 @@ async function X() {
     switch (h1(() => {
             if (B.step === "success" || B.step === "error") {
                 if (B.step === "success") BA("tengu_install_github_app_completed", {});
-                A.onDone(B.step === "success" ? "GitHub Actions setup complete!" : B.error ? `Couldn't install GitHub App: ${B.error}
-For manual setup instructions, see: ${Wx}` : `GitHub App installation failed
-For manual setup instructions, see: ${Wx}`)
+                A.onDone(B.step === "success" ? "GitHub Actions setup complete!" : B.error ? `Couldn't install GitHub App: TextComponent{B.error}
+For manual setup instructions, see: TextComponent{Wx}` : `GitHub App installation failed
+For manual setup instructions, see: TextComponent{Wx}`)
             }
         }), B.step) {
         case "check-gh":
@@ -585,7 +584,7 @@ For manual setup instructions, see: ${Wx}`)
     }
 }
 var qI, Q_3, G_3, CF9;
-var EF9 = L(() => {
+var EF9 = lazyLoader(() => {
     hA();
     hB();
     c9();
@@ -605,7 +604,7 @@ var EF9 = L(() => {
     VF9();
     HF9();
     w0();
-    qI = GA(VA(), 1), Q_3 = {
+    qI = esmImport(VA(), 1), Q_3 = {
         step: "check-gh",
         selectedRepoName: "",
         currentRepo: "",
@@ -645,9 +644,9 @@ function YFA({
     return h1((Q, B) => {
         if (B.return) A();
         else if (B.escape) c8(1)
-    }), H2.default.createElement($, null, "Press ", H2.default.createElement($, {
+    }), H2.default.createElement(TextComponent, null, "Press ", H2.default.createElement(TextComponent, {
         bold: !0
-    }, "Enter"), " to continue or ", H2.default.createElement($, {
+    }, "Enter"), " to continue or ", H2.default.createElement(TextComponent, {
         bold: !0
     }, "Esc"), " to exit")
 }
@@ -671,7 +670,7 @@ function JFA() {
                             G("Update already in progress"), Q("error"), rl("failure", "in_progress");
                             break;
                         case "install_failed":
-                            G(`Install of ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL} failed`), Q("error"), rl("failure", "other_failure");
+                            G(`Install of TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL} failed`), Q("error"), rl("failure", "other_failure");
                             break
                     }
                 } catch (X) {
@@ -708,13 +707,13 @@ function JFA() {
         }, [A]), A === "intro") return H2.default.createElement(j, {
         flexDirection: "column",
         marginY: 1
-    }, H2.default.createElement($, {
+    }, H2.default.createElement(TextComponent, {
         bold: !0
     }, "Claude Code Local Installer"), H2.default.createElement(j, {
         flexDirection: "column"
-    }, H2.default.createElement($, {
+    }, H2.default.createElement(TextComponent, {
         dimColor: !0
-    }, "This will install Claude Code to ~/.claude/local"), H2.default.createElement($, {
+    }, "This will install Claude Code to ~/.claude/local"), H2.default.createElement(TextComponent, {
         dimColor: !0
     }, "instead of using a global npm installation.")), H2.default.createElement(YFA, {
         onPress: () => Q("installing")
@@ -722,110 +721,110 @@ function JFA() {
     if (A === "installing") return H2.default.createElement(j, {
         flexDirection: "column",
         marginY: 1
-    }, H2.default.createElement($, {
+    }, H2.default.createElement(TextComponent, {
         bold: !0
     }, "Installing Claude Code locally..."), H2.default.createElement(j, {
         marginY: 1
-    }, H2.default.createElement(e9, null), H2.default.createElement($, null, " Installing to ", il)));
+    }, H2.default.createElement(e9, null), H2.default.createElement(TextComponent, null, " Installing to ", il)));
     if (A === "success") return H2.default.createElement(j, {
         flexDirection: "column",
         marginY: 1
-    }, H2.default.createElement($, {
+    }, H2.default.createElement(TextComponent, {
         bold: !0,
         color: "success"
     }, "✓ Local installation successful!"), H2.default.createElement(j, {
         marginY: 1
-    }, H2.default.createElement($, null, "Next, let's add an alias for `claude`")), H2.default.createElement(YFA, {
+    }, H2.default.createElement(TextComponent, null, "Next, let's add an alias for `claude`")), H2.default.createElement(YFA, {
         onPress: () => Q("setup-alias")
     }));
     if (A === "setup-alias") return H2.default.createElement(j, {
         flexDirection: "column",
         marginY: 1
-    }, H2.default.createElement($, {
+    }, H2.default.createElement(TextComponent, {
         bold: !0
     }, "Setting up alias for claude..."), H2.default.createElement(j, {
         marginY: 1
-    }, H2.default.createElement(e9, null), H2.default.createElement($, null, " Configuring shell environment")));
+    }, H2.default.createElement(e9, null), H2.default.createElement(TextComponent, null, " Configuring shell environment")));
     if (A === "setup") return H2.default.createElement(j, {
         flexDirection: "column",
         marginY: 1
-    }, H2.default.createElement($, {
+    }, H2.default.createElement(TextComponent, {
         bold: !0
     }, "Alias setup complete"), H2.default.createElement(j, {
         flexDirection: "column",
         marginY: 1
-    }, H2.default.createElement($, null, Z), H2.default.createElement(j, {
+    }, H2.default.createElement(TextComponent, null, Z), H2.default.createElement(j, {
         marginY: 1
-    }, H2.default.createElement($, null, "Next, we'll remove the globally installed npm package"))), H2.default.createElement(YFA, {
+    }, H2.default.createElement(TextComponent, null, "Next, we'll remove the globally installed npm package"))), H2.default.createElement(YFA, {
         onPress: () => Q("uninstall")
     }));
     if (A === "uninstall") return H2.default.createElement(j, {
         flexDirection: "column",
         marginY: 1
-    }, H2.default.createElement($, {
+    }, H2.default.createElement(TextComponent, {
         bold: !0
     }, "Uninstalling global Claude Code..."), H2.default.createElement(j, {
         marginY: 1
-    }, H2.default.createElement(e9, null), H2.default.createElement($, null, " Removing global npm installation")));
+    }, H2.default.createElement(e9, null), H2.default.createElement(TextComponent, null, " Removing global npm installation")));
     if (A === "uninstall-success") return H2.default.createElement(j, {
         flexDirection: "column",
         marginY: 1
-    }, H2.default.createElement($, {
+    }, H2.default.createElement(TextComponent, {
         bold: !0,
         color: "success"
     }, "✓ Global installation removed successfully!"), H2.default.createElement(j, {
         flexDirection: "column",
         marginY: 1
-    }, H2.default.createElement($, null, "Claude Code is now installed locally."), H2.default.createElement($, null, "Please restart your shell, then run", " ", H2.default.createElement($, {
+    }, H2.default.createElement(TextComponent, null, "Claude Code is now installed locally."), H2.default.createElement(TextComponent, null, "Please restart your shell, then run", " ", H2.default.createElement(TextComponent, {
         color: "claude"
     }, oA.bold("claude")), "."), H2.default.createElement(j, {
         flexDirection: "row",
         marginY: 1
-    }, H2.default.createElement(e9, null), H2.default.createElement($, null, " Happy Clauding!"))), H2.default.createElement(YFA, {
+    }, H2.default.createElement(e9, null), H2.default.createElement(TextComponent, null, " Happy Clauding!"))), H2.default.createElement(YFA, {
         onPress: () => c8(0)
     }));
     if (A === "uninstall-failed") return H2.default.createElement(j, {
         flexDirection: "column",
         marginY: 1
-    }, H2.default.createElement($, {
+    }, H2.default.createElement(TextComponent, {
         bold: !0,
         color: "warning"
     }, "! Could not remove global installation"), H2.default.createElement(j, {
         marginY: 1
-    }, H2.default.createElement($, null, "The local installation is installed, but we couldn't remove the global npm package automatically.")), H2.default.createElement(j, {
+    }, H2.default.createElement(TextComponent, null, "The local installation is installed, but we couldn't remove the global npm package automatically.")), H2.default.createElement(j, {
         marginY: 1
-    }, H2.default.createElement($, null, "You can remove it manually later with:", `
-`, oA.bold(`npm uninstall -g --force ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}`))), H2.default.createElement(YFA, {
+    }, H2.default.createElement(TextComponent, null, "You can remove it manually later with:", `
+`, oA.bold(`npm uninstall -g --force TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}`))), H2.default.createElement(YFA, {
         onPress: () => c8(0)
     }));
     return H2.default.createElement(j, {
         flexDirection: "column",
         marginY: 1
-    }, H2.default.createElement($, {
+    }, H2.default.createElement(TextComponent, {
         bold: !0,
         color: "error"
     }, "✗ Installation failed"), H2.default.createElement(j, {
         marginY: 1
-    }, H2.default.createElement($, null, B || "An unexpected error occurred during installation.")), H2.default.createElement(YFA, {
+    }, H2.default.createElement(TextComponent, null, B || "An unexpected error occurred during installation.")), H2.default.createElement(YFA, {
         onPress: () => c8(1)
     }))
 }
 var H2;
-var zY1 = L(() => {
+var zY1 = lazyLoader(() => {
     hA();
     J9();
     zI();
     c9();
     nT();
     _J();
-    H2 = GA(VA(), 1)
+    H2 = esmImport(VA(), 1)
 });
 var zF9, Z_3, UF9;
-var $F9 = L(() => {
+var $F9 = lazyLoader(() => {
     hA();
     zY1();
     nT();
-    zF9 = GA(VA(), 1), Z_3 = {
+    zF9 = esmImport(VA(), 1), Z_3 = {
         type: "local",
         name: "migrate-installer",
         description: "Migrate from global npm installation to local installation",
@@ -860,12 +859,12 @@ function jF0({
             let X = "",
                 F = "",
                 V = "";
-            if (W.client.type === "disabled") F = tQ("inactive", G)(V1.radioOff), X = "disabled · Enter to view details", V = `${F} ${X}`;
-            else if (W.client.type === "connected") F = tQ("success", G)(V1.tick), X = "connected · Enter to view details", V = `${F} ${X}`;
-            else if (W.client.type === "pending") F = tQ("inactive", G)(V1.radioOff), X = "connecting...", V = `${F} ${X}`;
-            else if (W.client.type === "needs-auth") F = tQ("warning", G)(V1.triangleUpOutline), X = "needs authentication · Enter to login", V = `${F} ${X}`;
-            else if (W.client.type === "failed") F = tQ("error", G)(V1.cross), X = "failed · Enter to view details", V = `${F} ${X}`;
-            else F = tQ("error", G)(V1.cross), X = "failed", V = `${F} ${X}`;
+            if (W.client.type === "disabled") F = tQ("inactive", G)(V1.radioOff), X = "disabled · Enter to view details", V = `TextComponent{F} TextComponent{X}`;
+            else if (W.client.type === "connected") F = tQ("success", G)(V1.tick), X = "connected · Enter to view details", V = `TextComponent{F} TextComponent{X}`;
+            else if (W.client.type === "pending") F = tQ("inactive", G)(V1.radioOff), X = "connecting...", V = `TextComponent{F} TextComponent{X}`;
+            else if (W.client.type === "needs-auth") F = tQ("warning", G)(V1.triangleUpOutline), X = "needs authentication · Enter to login", V = `TextComponent{F} TextComponent{X}`;
+            else if (W.client.type === "failed") F = tQ("error", G)(V1.cross), X = "failed · Enter to view details", V = `TextComponent{F} TextComponent{X}`;
+            else F = tQ("error", G)(V1.cross), X = "failed", V = `TextComponent{F} TextComponent{X}`;
             return {
                 label: oA.bold(W.name),
                 value: W.name,
@@ -882,7 +881,7 @@ function jF0({
         borderDimColor: !0
     }, HY.default.createElement(j, {
         marginBottom: 1
-    }, HY.default.createElement($, {
+    }, HY.default.createElement(TextComponent, {
         bold: !0
     }, "Manage MCP servers")), HY.default.createElement(M0, {
         options: J,
@@ -895,40 +894,40 @@ function jF0({
         })
     }), Y && HY.default.createElement(j, {
         marginTop: 1
-    }, HY.default.createElement($, {
+    }, HY.default.createElement(TextComponent, {
         dimColor: !0
     }, "※ Tip:", " ", I ? `Error logs will be shown inline. Log files are also saved in
-  ${Xx.baseLogs()}` : `Run claude --debug to see logs inline, or view log files in
-  ${Xx.baseLogs()}`)), HY.default.createElement(j, {
+  TextComponent{Xx.baseLogs()}` : `Run claude --debug to see logs inline, or view log files in
+  TextComponent{Xx.baseLogs()}`)), HY.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, HY.default.createElement($, {
+    }, HY.default.createElement(TextComponent, {
         dimColor: !0
     }, "MCP Config locations (by scope):"), ["user", "project", "local"].map((W) => HY.default.createElement(j, {
         key: W,
         flexDirection: "column",
         marginLeft: 1
-    }, HY.default.createElement($, {
+    }, HY.default.createElement(TextComponent, {
         dimColor: !0
     }, "• ", Gt(W), ":"), HY.default.createElement(j, {
         marginLeft: 2
-    }, HY.default.createElement($, {
+    }, HY.default.createElement(TextComponent, {
         dimColor: !0
     }, "• ", mw(W)))))), HY.default.createElement(j, {
         marginTop: 1,
         marginLeft: 0
-    }, HY.default.createElement($, {
+    }, HY.default.createElement(TextComponent, {
         dimColor: !0
     }, "For help configuring MCP servers, see:", " ", HY.default.createElement(a4, {
-        url: "https://docs.claude.com/en/docs/claude-code/mcp"
-    }, "https://docs.claude.com/en/docs/claude-code/mcp")))), HY.default.createElement(j, {
+        url: "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/mcp"
+    }, "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/mcp")))), HY.default.createElement(j, {
         marginLeft: 3
-    }, HY.default.createElement($, {
+    }, HY.default.createElement(TextComponent, {
         dimColor: !0
     }, Z.pending ? HY.default.createElement(HY.default.Fragment, null, "Press ", Z.keyName, " again to exit") : HY.default.createElement(HY.default.Fragment, null, "Esc to exit"))))
 }
 var HY;
-var SF0 = L(() => {
+var SF0 = lazyLoader(() => {
     hA();
     M9();
     D0();
@@ -939,7 +938,7 @@ var SF0 = L(() => {
     $F0();
     xX();
     hA();
-    HY = GA(VA(), 1)
+    HY = esmImport(VA(), 1)
 });
 
 function $Y1({
@@ -951,42 +950,42 @@ function $Y1({
     if (A > 0) G.push("tools");
     if (B > 0) G.push("resources");
     if (Q > 0) G.push("prompts");
-    return UY1.default.createElement(j, null, UY1.default.createElement($, {
+    return UY1.default.createElement(j, null, UY1.default.createElement(TextComponent, {
         bold: !0
-    }, "Capabilities: "), UY1.default.createElement($, {
+    }, "Capabilities: "), UY1.default.createElement(TextComponent, {
         color: "text"
     }, G.length > 0 ? G.join(" · ") : "none"))
 }
 var UY1;
-var _F0 = L(() => {
+var _F0 = lazyLoader(() => {
     hA();
-    UY1 = GA(VA(), 1)
+    UY1 = esmImport(VA(), 1)
 });
 
 function wY1(A, Q) {
     switch (A.client.type) {
         case "connected":
             return {
-                message: `Reconnected to ${Q}.`, success: !0
+                message: `Reconnected to TextComponent{Q}.`, success: !0
             };
         case "needs-auth":
             return {
-                message: `${Q} requires authentication. Use the 'Authenticate' option.`, success: !1
+                message: `TextComponent{Q} requires authentication. Use the 'Authenticate' option.`, success: !1
             };
         case "failed":
             return {
-                message: `Failed to reconnect to ${Q}.`, success: !1
+                message: `Failed to reconnect to TextComponent{Q}.`, success: !1
             };
         default:
             return {
-                message: `Unknown result when reconnecting to ${Q}.`, success: !1
+                message: `Unknown result when reconnecting to TextComponent{Q}.`, success: !1
             }
     }
 }
 
 function qY1(A, Q) {
     let B = A instanceof Error ? A.message : String(A);
-    return `Error reconnecting to ${Q}: ${B}`
+    return `Error reconnecting to TextComponent{Q}: TextComponent{B}`
 }
 
 function kF0({
@@ -1001,7 +1000,7 @@ function kF0({
         try {
             await X(A.name), G()
         } catch (z) {
-            Z(`Failed to ${E?"disable":"enable"} MCP server '${A.name}': ${z instanceof Error?z.message:String(z)}`)
+            Z(`Failed to TextComponent{E?"disable":"enable"} MCP server 'TextComponent{A.name}': TextComponent{z instanceof Error?z.message:String(z)}`)
         }
     }, [A.client.type, A.name, X, G, Z]), D = String(A.name).charAt(0).toUpperCase() + String(A.name).slice(1), H = ciA(J.mcp.commands, A.name).length, C = [];
     if (A.client.type !== "disabled" && Q > 0) C.push({
@@ -1023,11 +1022,11 @@ function kF0({
         flexDirection: "column",
         gap: 1,
         padding: 1
-    }, j4.default.createElement($, {
+    }, j4.default.createElement(TextComponent, {
         color: "text"
-    }, "Reconnecting to ", j4.default.createElement($, {
+    }, "Reconnecting to ", j4.default.createElement(TextComponent, {
         bold: !0
-    }, A.name)), j4.default.createElement(j, null, j4.default.createElement(e9, null), j4.default.createElement($, null, " Restarting MCP server process")), j4.default.createElement($, {
+    }, A.name)), j4.default.createElement(j, null, j4.default.createElement(e9, null), j4.default.createElement(TextComponent, null, " Restarting MCP server process")), j4.default.createElement(TextComponent, {
         dimColor: !0
     }, "This may take a few moments."));
     return j4.default.createElement(j4.default.Fragment, null, j4.default.createElement(j, {
@@ -1036,34 +1035,34 @@ function kF0({
         borderStyle: "round"
     }, j4.default.createElement(j, {
         marginBottom: 1
-    }, j4.default.createElement($, {
+    }, j4.default.createElement(TextComponent, {
         bold: !0
     }, D, " MCP Server")), j4.default.createElement(j, {
         flexDirection: "column",
         gap: 0
-    }, j4.default.createElement(j, null, j4.default.createElement($, {
+    }, j4.default.createElement(j, null, j4.default.createElement(TextComponent, {
         bold: !0
-    }, "Status: "), A.client.type === "disabled" ? j4.default.createElement($, null, tQ("inactive", I)(V1.radioOff), " disabled") : A.client.type === "connected" ? j4.default.createElement($, null, tQ("success", I)(V1.tick), " connected") : A.client.type === "pending" ? j4.default.createElement(j4.default.Fragment, null, j4.default.createElement($, {
+    }, "Status: "), A.client.type === "disabled" ? j4.default.createElement(TextComponent, null, tQ("inactive", I)(V1.radioOff), " disabled") : A.client.type === "connected" ? j4.default.createElement(TextComponent, null, tQ("success", I)(V1.tick), " connected") : A.client.type === "pending" ? j4.default.createElement(j4.default.Fragment, null, j4.default.createElement(TextComponent, {
         dimColor: !0
-    }, V1.radioOff), j4.default.createElement($, null, " connecting…")) : j4.default.createElement($, null, tQ("error", I)(V1.cross), " failed")), j4.default.createElement(j, null, j4.default.createElement($, {
+    }, V1.radioOff), j4.default.createElement(TextComponent, null, " connecting…")) : j4.default.createElement(TextComponent, null, tQ("error", I)(V1.cross), " failed")), j4.default.createElement(j, null, j4.default.createElement(TextComponent, {
         bold: !0
-    }, "Command: "), j4.default.createElement($, {
+    }, "Command: "), j4.default.createElement(TextComponent, {
         dimColor: !0
-    }, A.config.command)), A.config.args && A.config.args.length > 0 && j4.default.createElement(j, null, j4.default.createElement($, {
+    }, A.config.command)), A.config.args && A.config.args.length > 0 && j4.default.createElement(j, null, j4.default.createElement(TextComponent, {
         bold: !0
-    }, "Args: "), j4.default.createElement($, {
+    }, "Args: "), j4.default.createElement(TextComponent, {
         dimColor: !0
-    }, A.config.args.join(" "))), j4.default.createElement(j, null, j4.default.createElement($, {
+    }, A.config.args.join(" "))), j4.default.createElement(j, null, j4.default.createElement(TextComponent, {
         bold: !0
-    }, "Config location: "), j4.default.createElement($, {
+    }, "Config location: "), j4.default.createElement(TextComponent, {
         dimColor: !0
     }, mw(l3A(A.name)?.scope ?? "dynamic"))), A.client.type === "connected" && j4.default.createElement($Y1, {
         serverToolsCount: Q,
         serverPromptsCount: H,
         serverResourcesCount: J.mcp.resources[A.name]?.length || 0
-    }), A.client.type === "connected" && Q > 0 && j4.default.createElement(j, null, j4.default.createElement($, {
+    }), A.client.type === "connected" && Q > 0 && j4.default.createElement(j, null, j4.default.createElement(TextComponent, {
         bold: !0
-    }, "Tools: "), j4.default.createElement($, {
+    }, "Tools: "), j4.default.createElement(TextComponent, {
         dimColor: !0
     }, Q, " tools"))), C.length > 0 && j4.default.createElement(j, {
         marginTop: 1
@@ -1090,12 +1089,12 @@ function kF0({
         onCancel: G
     }))), j4.default.createElement(j, {
         marginLeft: 3
-    }, j4.default.createElement($, {
+    }, j4.default.createElement(TextComponent, {
         dimColor: !0
     }, Y.pending ? j4.default.createElement(j4.default.Fragment, null, "Press ", Y.keyName, " again to exit") : j4.default.createElement(j4.default.Fragment, null, "Esc to go back"))))
 }
 var j4;
-var yF0 = L(() => {
+var yF0 = lazyLoader(() => {
     hA();
     T6();
     c9();
@@ -1106,7 +1105,7 @@ var yF0 = L(() => {
     _F0();
     FQA();
     zI();
-    j4 = GA(VA(), 1)
+    j4 = esmImport(VA(), 1)
 });
 
 function xF0({
@@ -1132,7 +1131,7 @@ function xF0({
             try {
                 await P(A.name), G()
             } catch (o) {
-                Z?.(`Failed to ${u?"disable":"enable"} MCP server '${A.name}': ${o instanceof Error?o.message:String(o)}`)
+                Z?.(`Failed to TextComponent{u?"disable":"enable"} MCP server 'TextComponent{A.name}': TextComponent{o instanceof Error?o.message:String(o)}`)
             }
         }, [A.client.type, A.name, P, G, Z]),
         v = q2.default.useCallback(async () => {
@@ -1147,7 +1146,7 @@ function xF0({
                     });
                     let o = await R(A.name);
                     if (o.client.type === "connected") {
-                        let l = A.isAuthenticated ? `Authentication successful. Reconnected to ${A.name}.` : `Authentication successful. Connected to ${A.name}.`;
+                        let l = A.isAuthenticated ? `Authentication successful. Reconnected to TextComponent{A.name}.` : `Authentication successful. Connected to TextComponent{A.name}.`;
                         Z?.(l)
                     } else if (o.client.type === "needs-auth") Z?.("Authentication successful, but server still requires authentication. You may need to manually restart Claude Code.");
                     else f0(A.name, "Reconnection failed after authentication"), Z?.("Authentication successful, but server reconnection failed. You may need to manually restart Claude Code for the changes to take effect.")
@@ -1179,34 +1178,34 @@ function xF0({
                         resources: d
                     }
                 }
-            }), Z?.(`Authentication cleared for ${A.name}.`)
+            }), Z?.(`Authentication cleared for TextComponent{A.name}.`)
         };
     if (J) return q2.default.createElement(j, {
         flexDirection: "column",
         gap: 1,
         padding: 1
-    }, q2.default.createElement($, {
+    }, q2.default.createElement(TextComponent, {
         color: "claude"
-    }, "Authenticating with ", A.name, "…"), q2.default.createElement(j, null, q2.default.createElement(e9, null), q2.default.createElement($, null, " A browser window will open for authentication")), D && q2.default.createElement(j, {
+    }, "Authenticating with ", A.name, "…"), q2.default.createElement(j, null, q2.default.createElement(e9, null), q2.default.createElement(TextComponent, null, " A browser window will open for authentication")), D && q2.default.createElement(j, {
         flexDirection: "column"
-    }, q2.default.createElement($, {
+    }, q2.default.createElement(TextComponent, {
         dimColor: !0
     }, "If your browser doesn't open automatically, copy this URL manually:"), q2.default.createElement(a4, {
         url: D
     })), q2.default.createElement(j, {
         marginLeft: 3
-    }, q2.default.createElement($, {
+    }, q2.default.createElement(TextComponent, {
         dimColor: !0
     }, "Return here after authenticating in your browser. Press Esc to go back.")));
     if (C) return q2.default.createElement(j, {
         flexDirection: "column",
         gap: 1,
         padding: 1
-    }, q2.default.createElement($, {
+    }, q2.default.createElement(TextComponent, {
         color: "text"
-    }, "Reconnecting to ", q2.default.createElement($, {
+    }, "Reconnecting to ", q2.default.createElement(TextComponent, {
         bold: !0
-    }, A.name), "…"), q2.default.createElement(j, null, q2.default.createElement(e9, null), q2.default.createElement($, null, " Establishing connection to MCP server")), q2.default.createElement($, {
+    }, A.name), "…"), q2.default.createElement(j, null, q2.default.createElement(e9, null), q2.default.createElement(TextComponent, null, " Establishing connection to MCP server")), q2.default.createElement(TextComponent, {
         dimColor: !0
     }, "This may take a few moments."));
     let p = [];
@@ -1242,34 +1241,34 @@ function xF0({
         borderStyle: "round"
     }, q2.default.createElement(j, {
         marginBottom: 1
-    }, q2.default.createElement($, {
+    }, q2.default.createElement(TextComponent, {
         bold: !0
     }, N, " MCP Server")), q2.default.createElement(j, {
         flexDirection: "column",
         gap: 0
-    }, q2.default.createElement(j, null, q2.default.createElement($, {
+    }, q2.default.createElement(j, null, q2.default.createElement(TextComponent, {
         bold: !0
-    }, "Status: "), A.client.type === "disabled" ? q2.default.createElement($, null, tQ("inactive", I)(V1.radioOff), " disabled") : A.client.type === "connected" ? q2.default.createElement(q2.default.Fragment, null, q2.default.createElement($, null, tQ("success", I)(V1.tick), " connected"), A.isAuthenticated && q2.default.createElement($, null, "  ", tQ("success", I)(V1.tick), " authenticated")) : A.client.type === "pending" ? q2.default.createElement(q2.default.Fragment, null, q2.default.createElement($, {
+    }, "Status: "), A.client.type === "disabled" ? q2.default.createElement(TextComponent, null, tQ("inactive", I)(V1.radioOff), " disabled") : A.client.type === "connected" ? q2.default.createElement(q2.default.Fragment, null, q2.default.createElement(TextComponent, null, tQ("success", I)(V1.tick), " connected"), A.isAuthenticated && q2.default.createElement(TextComponent, null, "  ", tQ("success", I)(V1.tick), " authenticated")) : A.client.type === "pending" ? q2.default.createElement(q2.default.Fragment, null, q2.default.createElement(TextComponent, {
         dimColor: !0
-    }, V1.radioOff), q2.default.createElement($, null, " connecting…")) : A.client.type === "needs-auth" ? q2.default.createElement($, null, tQ("warning", I)(V1.triangleUpOutline), " needs authentication") : q2.default.createElement($, null, tQ("error", I)(V1.cross), " failed")), q2.default.createElement(j, null, q2.default.createElement($, {
+    }, V1.radioOff), q2.default.createElement(TextComponent, null, " connecting…")) : A.client.type === "needs-auth" ? q2.default.createElement(TextComponent, null, tQ("warning", I)(V1.triangleUpOutline), " needs authentication") : q2.default.createElement(TextComponent, null, tQ("error", I)(V1.cross), " failed")), q2.default.createElement(j, null, q2.default.createElement(TextComponent, {
         bold: !0
-    }, "URL: "), q2.default.createElement($, {
+    }, "URL: "), q2.default.createElement(TextComponent, {
         dimColor: !0
-    }, A.config.url)), q2.default.createElement(j, null, q2.default.createElement($, {
+    }, A.config.url)), q2.default.createElement(j, null, q2.default.createElement(TextComponent, {
         bold: !0
-    }, "Config location: "), q2.default.createElement($, {
+    }, "Config location: "), q2.default.createElement(TextComponent, {
         dimColor: !0
     }, mw(l3A(A.name)?.scope ?? "dynamic"))), A.client.type === "connected" && q2.default.createElement($Y1, {
         serverToolsCount: Q,
         serverPromptsCount: q,
         serverResourcesCount: V.mcp.resources[A.name]?.length || 0
-    }), A.client.type === "connected" && Q > 0 && q2.default.createElement(j, null, q2.default.createElement($, {
+    }), A.client.type === "connected" && Q > 0 && q2.default.createElement(j, null, q2.default.createElement(TextComponent, {
         bold: !0
-    }, "Tools: "), q2.default.createElement($, {
+    }, "Tools: "), q2.default.createElement(TextComponent, {
         dimColor: !0
     }, Q, " tools"))), X && q2.default.createElement(j, {
         marginTop: 1
-    }, q2.default.createElement($, {
+    }, q2.default.createElement(TextComponent, {
         color: "error"
     }, "Error: ", X)), p.length > 0 && q2.default.createElement(j, {
         marginTop: 1
@@ -1312,12 +1311,12 @@ function xF0({
         onCancel: G
     }))), q2.default.createElement(j, {
         marginLeft: 3
-    }, q2.default.createElement($, {
+    }, q2.default.createElement(TextComponent, {
         dimColor: !0
     }, Y.pending ? q2.default.createElement(q2.default.Fragment, null, "Press ", Y.keyName, " again to exit") : q2.default.createElement(q2.default.Fragment, null, "Esc to go back"))))
 }
 var q2;
-var vF0 = L(() => {
+var vF0 = lazyLoader(() => {
     hA();
     T6();
     w0();
@@ -1333,7 +1332,7 @@ var vF0 = L(() => {
     _F0();
     hA();
     FQA();
-    q2 = GA(VA(), 1)
+    q2 = esmImport(VA(), 1)
 });
 
 function bF0({
@@ -1373,11 +1372,11 @@ function bF0({
         borderStyle: "round"
     }, Gz.default.createElement(j, {
         marginBottom: 1
-    }, Gz.default.createElement($, {
+    }, Gz.default.createElement(TextComponent, {
         bold: !0
-    }, "Tools for ", A.name), Gz.default.createElement($, {
+    }, "Tools for ", A.name), Gz.default.createElement(TextComponent, {
         dimColor: !0
-    }, " (", I.length, " tools)")), I.length === 0 ? Gz.default.createElement($, {
+    }, " (", I.length, " tools)")), I.length === 0 ? Gz.default.createElement(TextComponent, {
         dimColor: !0
     }, "No tools available") : Gz.default.createElement(M0, {
         options: Y,
@@ -1389,18 +1388,18 @@ function bF0({
         onCancel: B
     })), Gz.default.createElement(j, {
         marginLeft: 3
-    }, Gz.default.createElement($, {
+    }, Gz.default.createElement(TextComponent, {
         dimColor: !0
     }, G.pending ? Gz.default.createElement(Gz.default.Fragment, null, "Press ", G.keyName, " again to exit") : Gz.default.createElement(Gz.default.Fragment, null, "Esc to go back"))))
 }
 var Gz;
-var fF0 = L(() => {
+var fF0 = lazyLoader(() => {
     hA();
     T6();
     xX();
     H9();
     c9();
-    Gz = GA(VA(), 1)
+    Gz = esmImport(VA(), 1)
 });
 
 function hF0({
@@ -1420,8 +1419,7 @@ function hF0({
         F = A.isDestructive?.({}) ?? !1,
         V = A.isOpenWorld?.({}) ?? !1;
     return D3.default.useEffect(() => {
-        // Async function: K
-async function K() {
+        async function K() {
             try {
                 let D = await A.description({}, {
                     isNonInteractiveSession: !1,
@@ -1449,65 +1447,65 @@ async function K() {
         borderStyle: "round"
     }, D3.default.createElement(j, {
         marginBottom: 1
-    }, D3.default.createElement($, {
+    }, D3.default.createElement(TextComponent, {
         bold: !0
-    }, W, D3.default.createElement($, {
+    }, W, D3.default.createElement(TextComponent, {
         dimColor: !0
-    }, " (", Q.name, ")"), X && D3.default.createElement($, {
+    }, " (", Q.name, ")"), X && D3.default.createElement(TextComponent, {
         color: "success"
-    }, " [read-only]"), F && D3.default.createElement($, {
+    }, " [read-only]"), F && D3.default.createElement(TextComponent, {
         color: "error"
-    }, " [destructive]"), V && D3.default.createElement($, {
+    }, " [destructive]"), V && D3.default.createElement(TextComponent, {
         dimColor: !0
     }, " [open-world]"))), D3.default.createElement(j, {
         flexDirection: "column"
-    }, D3.default.createElement(j, null, D3.default.createElement($, {
+    }, D3.default.createElement(j, null, D3.default.createElement(TextComponent, {
         bold: !0
-    }, "Tool name: "), D3.default.createElement($, {
+    }, "Tool name: "), D3.default.createElement(TextComponent, {
         dimColor: !0
-    }, Y)), D3.default.createElement(j, null, D3.default.createElement($, {
+    }, Y)), D3.default.createElement(j, null, D3.default.createElement(TextComponent, {
         bold: !0
-    }, "Full name: "), D3.default.createElement($, {
+    }, "Full name: "), D3.default.createElement(TextComponent, {
         dimColor: !0
     }, A.name)), Z && D3.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, D3.default.createElement($, {
+    }, D3.default.createElement(TextComponent, {
         bold: !0
-    }, "Description:"), D3.default.createElement($, {
+    }, "Description:"), D3.default.createElement(TextComponent, {
         wrap: "wrap"
     }, Z)), A.inputJSONSchema && A.inputJSONSchema.properties && Object.keys(A.inputJSONSchema.properties).length > 0 && D3.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, D3.default.createElement($, {
+    }, D3.default.createElement(TextComponent, {
         bold: !0
     }, "Parameters:"), D3.default.createElement(j, {
         marginLeft: 2,
         flexDirection: "column"
     }, Object.entries(A.inputJSONSchema.properties).map(([K, D]) => {
         let C = A.inputJSONSchema?.required?.includes(K);
-        return D3.default.createElement($, {
+        return D3.default.createElement(TextComponent, {
             key: K
-        }, "• ", K, C && D3.default.createElement($, {
+        }, "• ", K, C && D3.default.createElement(TextComponent, {
             dimColor: !0
-        }, " (required)"), ":", " ", D3.default.createElement($, {
+        }, " (required)"), ":", " ", D3.default.createElement(TextComponent, {
             dimColor: !0
-        }, typeof D === "object" && D && "type" in D ? String(D.type) : "unknown"), typeof D === "object" && D && "description" in D && D3.default.createElement($, {
+        }, typeof D === "object" && D && "type" in D ? String(D.type) : "unknown"), typeof D === "object" && D && "description" in D && D3.default.createElement(TextComponent, {
             dimColor: !0
         }, " ", "- ", String(D.description)))
     }))))), D3.default.createElement(j, {
         marginLeft: 3
-    }, D3.default.createElement($, {
+    }, D3.default.createElement(TextComponent, {
         dimColor: !0
     }, G.pending ? D3.default.createElement(D3.default.Fragment, null, "Press ", G.keyName, " again to exit") : D3.default.createElement(D3.default.Fragment, null, "Esc to go back"))))
 }
 var D3;
-var gF0 = L(() => {
+var gF0 = lazyLoader(() => {
     hA();
     hA();
     c9();
     xX();
-    D3 = GA(VA(), 1)
+    D3 = esmImport(VA(), 1)
 });
 
 function uF0({

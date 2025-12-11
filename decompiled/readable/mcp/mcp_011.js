@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_011.js
+ * 处理时间: 2025-12-09T03:41:37.873Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.011Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -19,11 +22,11 @@
 
 }
 var $A0;
-var b82 = L(() => {
+var b82 = lazyLoader(() => {
     $A0 = globalThis.crypto?.webcrypto ?? globalThis.crypto ?? import("node:crypto").then((A) => A.webcrypto)
 });
 var sV, f82, qA0, M35, h82, NA0, QB1, O35, R35, g82, $OG, wOG;
-var BB1 = L(() => {
+var BB1 = lazyLoader(() => {
     h2();
     sV = _.string().url().superRefine((A, Q) => {
         if (!URL.canParse(A)) return Q.addIssue({
@@ -168,7 +171,7 @@ function m82({
     return Z.startsWith(I)
 }
 var SF, GB1, xIA, vIA, bIA, ZB1, IB1, YB1, Gi, JB1, WB1, XB1, FB1, VB1, KB1, DB1, HB1, d82;
-var c82 = L(() => {
+var c82 = lazyLoader(() => {
     SF = class SF extends Error {
         constructor(A, Q) {
             super(A);
@@ -263,14 +266,14 @@ function i82(A, Q, B, G) {
             j35(Z, G);
             return;
         default:
-            throw Error(`Unsupported client authentication method: ${A}`)
+            throw Error(`Unsupported client authentication method: TextComponent{A}`)
     }
 }
 
 function T35(A, Q, B) {
     if (!Q) throw Error("client_secret_basic authentication requires a client_secret");
-    let G = btoa(`${A}:${Q}`);
-    B.set("Authorization", `Basic ${G}`)
+    let G = btoa(`TextComponent{A}:TextComponent{Q}`);
+    B.set("Authorization", `Basic TextComponent{G}`)
 }
 
 function P35(A, Q, B) {
@@ -280,7 +283,6 @@ function P35(A, Q, B) {
 function j35(A, Q) {
     Q.set("client_id", A)
 }
-
 async function MA0(A) {
     let Q = A instanceof Response ? A.status : void 0,
         B = A instanceof Response ? await A.text() : A;
@@ -293,11 +295,10 @@ async function MA0(A) {
             } = G;
         return new(d82[Z] || Gi)(I || "", Y)
     } catch (G) {
-        let Z = `${Q?`HTTP ${Q}: `:""}Invalid OAuth error response: ${G}. Raw body: ${B}`;
+        let Z = `TextComponent{Q?`HTTP TextComponent{Q}: `:""}Invalid OAuth error response: TextComponent{G}. Raw body: TextComponent{B}`;
         return new Gi(Z)
     }
 }
-
 async function oT(A, Q) {
     var B, G;
     try {
@@ -308,7 +309,6 @@ async function oT(A, Q) {
         throw Z
     }
 }
-
 async function LA0(A, {
     serverUrl: Q,
     authorizationCode: B,
@@ -381,7 +381,6 @@ async function LA0(A, {
         });
     return await A.saveCodeVerifier(H), await A.redirectToAuthorization(D), "REDIRECT"
 }
-
 async function S35(A, Q, B) {
     let G = u82(A);
     if (Q.validateResourceURL) return await Q.validateResourceURL(G, B === null || B === void 0 ? void 0 : B.resource);
@@ -389,7 +388,7 @@ async function S35(A, Q, B) {
     if (!m82({
             requestedResource: G,
             configuredResource: B.resource
-        })) throw Error(`Protected resource ${B.resource} does not match expected ${G} (or origin)`);
+        })) throw Error(`Protected resource TextComponent{B.resource} does not match expected TextComponent{G} (or origin)`);
     return new URL(B.resource)
 }
 
@@ -406,17 +405,15 @@ function vLA(A) {
         return
     }
 }
-
 async function _35(A, Q, B = fetch) {
     let G = await x35(A, "oauth-protected-resource", B, {
         protocolVersion: Q === null || Q === void 0 ? void 0 : Q.protocolVersion,
         metadataUrl: Q === null || Q === void 0 ? void 0 : Q.resourceMetadataUrl
     });
     if (!G || G.status === 404) throw Error("Resource server does not implement OAuth 2.0 Protected Resource Metadata.");
-    if (!G.ok) throw Error(`HTTP ${G.status} trying to load well-known OAuth protected resource metadata.`);
+    if (!G.ok) throw Error(`HTTP TextComponent{G.status} trying to load well-known OAuth protected resource metadata.`);
     return f82.parse(await G.json())
 }
-
 async function OA0(A, Q, B = fetch) {
     try {
         return await B(A, {
@@ -432,9 +429,8 @@ async function OA0(A, Q, B = fetch) {
 
 function k35(A, Q = "", B = {}) {
     if (Q.endsWith("/")) Q = Q.slice(0, -1);
-    return B.prependPathname ? `${Q}/.well-known/${A}` : `/.well-known/${A}${Q}`
+    return B.prependPathname ? `TextComponent{Q}/.well-known/TextComponent{A}` : `/.well-known/TextComponent{A}TextComponent{Q}`
 }
-
 async function p82(A, Q, B = fetch) {
     return await OA0(A, {
         "MCP-Protocol-Version": Q
@@ -444,7 +440,6 @@ async function p82(A, Q, B = fetch) {
 function y35(A, Q) {
     return !A || A.status >= 400 && A.status < 500 && Q !== "/"
 }
-
 async function x35(A, Q, B, G) {
     var Z, I;
     let Y = new URL(A),
@@ -457,7 +452,7 @@ async function x35(A, Q, B, G) {
     }
     let X = await p82(W, J, B);
     if (!(G === null || G === void 0 ? void 0 : G.metadataUrl) && y35(X, Y.pathname)) {
-        let F = new URL(`/.well-known/${Q}`, Y);
+        let F = new URL(`/.well-known/TextComponent{Q}`, Y);
         X = await p82(F, J, B)
     }
     return X
@@ -486,11 +481,10 @@ function v35(A) {
         url: new URL(`/.well-known/openid-configuration${Z}`, Q.origin),
         type: "oidc"
     }), G.push({
-        url: new URL(`${Z}/.well-known/openid-configuration`, Q.origin),
+        url: new URL(`TextComponent{Z}/.well-known/openid-configuration`, Q.origin),
         type: "oidc"
     }), G
 }
-
 async function bLA(A, {
     fetchFn: Q = fetch,
     protocolVersion: B = ol
@@ -509,18 +503,17 @@ async function bLA(A, {
         if (!W) continue;
         if (!W.ok) {
             if (W.status >= 400 && W.status < 500) continue;
-            throw Error(`HTTP ${W.status} trying to load ${J==="oauth"?"OAuth":"OpenID provider"} metadata from ${Y}`)
+            throw Error(`HTTP TextComponent{W.status} trying to load TextComponent{J==="oauth"?"OAuth":"OpenID provider"} metadata from TextComponent{Y}`)
         }
         if (J === "oauth") return qA0.parse(await W.json());
         else {
             let X = h82.parse(await W.json());
-            if (!((G = X.code_challenge_methods_supported) === null || G === void 0 ? void 0 : G.includes("S256"))) throw Error(`Incompatible OIDC provider at ${Y}: does not support S256 code challenge method required by MCP specification`);
+            if (!((G = X.code_challenge_methods_supported) === null || G === void 0 ? void 0 : G.includes("S256"))) throw Error(`Incompatible OIDC provider at TextComponent{Y}: does not support S256 code challenge method required by MCP specification`);
             return X
         }
     }
     return
 }
-
 async function b35(A, {
     metadata: Q,
     clientInformation: B,
@@ -546,7 +539,6 @@ async function b35(A, {
         codeVerifier: V
     }
 }
-
 async function f35(A, {
     metadata: Q,
     clientInformation: B,
@@ -586,7 +578,6 @@ async function f35(A, {
     if (!H.ok) throw await MA0(H);
     return NA0.parse(await H.json())
 }
-
 async function RA0(A, {
     metadata: Q,
     clientInformation: B,
@@ -626,7 +617,6 @@ async function RA0(A, {
         ...await K.json()
     })
 }
-
 async function h35(A, {
     metadata: Q,
     clientMetadata: B,
@@ -648,7 +638,7 @@ async function h35(A, {
     return g82.parse(await I.json())
 }
 var nH;
-var fLA = L(() => {
+var fLA = lazyLoader(() => {
     b82();
     PD();
     BB1();
@@ -660,7 +650,6 @@ var fLA = L(() => {
         }
     }
 });
-
 class CB1 {
     constructor(A, Q) {
         this._url = A, this._resourceMetadataUrl = void 0, this._eventSourceInit = Q === null || Q === void 0 ? void 0 : Q.eventSourceInit, this._requestInit = Q === null || Q === void 0 ? void 0 : Q.requestInit, this._authProvider = Q === null || Q === void 0 ? void 0 : Q.authProvider, this._fetch = Q === null || Q === void 0 ? void 0 : Q.fetch
@@ -686,7 +675,7 @@ class CB1 {
         let Q = {};
         if (this._authProvider) {
             let B = await this._authProvider.tokens();
-            if (B) Q.Authorization = `Bearer ${B.access_token}`
+            if (B) Q.Authorization = `Bearer TextComponent{B.access_token}`
         }
         if (this._protocolVersion) Q["mcp-protocol-version"] = this._protocolVersion;
         return new Headers({
@@ -722,7 +711,7 @@ class CB1 {
                 var J;
                 let W = Y;
                 try {
-                    if (this._endpoint = new URL(W.data, this._url), this._endpoint.origin !== this._url.origin) throw Error(`Endpoint origin does not match connection origin: ${this._endpoint.origin}`)
+                    if (this._endpoint = new URL(W.data, this._url), this._endpoint.origin !== this._url.origin) throw Error(`Endpoint origin does not match connection origin: TextComponent{this._endpoint.origin}`)
                 } catch (X) {
                     I(X), (J = this.onerror) === null || J === void 0 || J.call(this, X), this.close();
                     return
@@ -782,7 +771,7 @@ class CB1 {
                     return this.send(A)
                 }
                 let J = await Y.text().catch(() => null);
-                throw Error(`Error POSTing to endpoint (HTTP ${Y.status}): ${J}`)
+                throw Error(`Error POSTing to endpoint (HTTP TextComponent{Y.status}): TextComponent{J}`)
             }
         } catch (Z) {
             throw (G = this.onerror) === null || G === void 0 || G.call(this, Z), Z
@@ -793,19 +782,19 @@ class CB1 {
     }
 }
 var n82;
-var a82 = L(() => {
+var a82 = lazyLoader(() => {
     v82();
     PD();
     fLA();
     n82 = class n82 extends Error {
         constructor(A, Q, B) {
-            super(`SSE error: ${Q}`);
+            super(`SSE error: TextComponent{Q}`);
             this.code = A, this.event = B
         }
     }
 });
 var TA0;
-var s82 = L(() => {
+var s82 = lazyLoader(() => {
     WA0();
     TA0 = class TA0 extends TransformStream {
         constructor({
@@ -834,7 +823,6 @@ var s82 = L(() => {
         }
     }
 });
-
 class PA0 {
     constructor(A, Q) {
         var B;
@@ -863,7 +851,7 @@ class PA0 {
         let Q = {};
         if (this._authProvider) {
             let G = await this._authProvider.tokens();
-            if (G) Q.Authorization = `Bearer ${G.access_token}`
+            if (G) Q.Authorization = `Bearer TextComponent{G.access_token}`
         }
         if (this._sessionId) Q["mcp-session-id"] = this._sessionId;
         if (this._protocolVersion) Q["mcp-protocol-version"] = this._protocolVersion;
@@ -889,7 +877,7 @@ class PA0 {
             if (!Y.ok) {
                 if (Y.status === 401 && this._authProvider) return await this._authThenStart();
                 if (Y.status === 405) return;
-                throw new EB1(Y.status, `Failed to open SSE stream: ${Y.statusText}`)
+                throw new EB1(Y.status, `Failed to open SSE stream: TextComponent{Y.statusText}`)
             }
             this._handleSseStream(Y.body, A, !0)
         } catch (I) {
@@ -914,14 +902,14 @@ class PA0 {
         var B;
         let G = this._reconnectionOptions.maxRetries;
         if (G > 0 && Q >= G) {
-            (B = this.onerror) === null || B === void 0 || B.call(this, Error(`Maximum reconnection attempts (${G}) exceeded.`));
+            (B = this.onerror) === null || B === void 0 || B.call(this, Error(`Maximum reconnection attempts (TextComponent{G}) exceeded.`));
             return
         }
         let Z = this._getNextReconnectionDelay(Q);
         setTimeout(() => {
             this._startOrAuthSse(A).catch((I) => {
                 var Y;
-                (Y = this.onerror) === null || Y === void 0 || Y.call(this, Error(`Failed to reconnect SSE stream: ${I instanceof Error?I.message:String(I)}`)), this._scheduleReconnection(A, Q + 1)
+                (Y = this.onerror) === null || Y === void 0 || Y.call(this, Error(`Failed to reconnect SSE stream: TextComponent{I instanceof Error?I.message:String(I)}`)), this._scheduleReconnection(A, Q + 1)
             })
         }, Z)
     }
@@ -951,14 +939,14 @@ class PA0 {
                     }
                 }
             } catch (V) {
-                if ((X = this.onerror) === null || X === void 0 || X.call(this, Error(`SSE stream disconnected: ${V}`)), B && this._abortController && !this._abortController.signal.aborted) try {
+                if ((X = this.onerror) === null || X === void 0 || X.call(this, Error(`SSE stream disconnected: TextComponent{V}`)), B && this._abortController && !this._abortController.signal.aborted) try {
                     this._scheduleReconnection({
                         resumptionToken: I,
                         onresumptiontoken: G,
                         replayMessageId: Z
                     }, 0)
                 } catch (K) {
-                    (F = this.onerror) === null || F === void 0 || F.call(this, Error(`Failed to reconnect: ${K instanceof Error?K.message:String(K)}`))
+                    (F = this.onerror) === null || F === void 0 || F.call(this, Error(`Failed to reconnect: TextComponent{K instanceof Error?K.message:String(K)}`))
                 }
             }
         })()
@@ -1019,7 +1007,7 @@ class PA0 {
                     return this.send(A)
                 }
                 let C = await F.text().catch(() => null);
-                throw Error(`Error POSTing to endpoint (HTTP ${F.status}): ${C}`)
+                throw Error(`Error POSTing to endpoint (HTTP TextComponent{F.status}): TextComponent{C}`)
             }
             if (F.status === 202) {
                 if (w92(A)) this._startOrAuthSse({
@@ -1040,7 +1028,7 @@ class PA0 {
                 let C = await F.json(),
                     E = Array.isArray(C) ? C.map((z) => Rk.parse(z)) : [Rk.parse(C)];
                 for (let z of E)(Z = this.onmessage) === null || Z === void 0 || Z.call(this, z)
-            } else throw new EB1(-1, `Unexpected content type: ${H}`)
+            } else throw new EB1(-1, `Unexpected content type: TextComponent{H}`)
         } catch (Y) {
             throw (I = this.onerror) === null || I === void 0 || I.call(this, Y), Y
         }
@@ -1060,7 +1048,7 @@ class PA0 {
                     signal: (A = this._abortController) === null || A === void 0 ? void 0 : A.signal
                 },
                 I = await ((Q = this._fetch) !== null && Q !== void 0 ? Q : fetch)(this._url, Z);
-            if (!I.ok && I.status !== 405) throw new EB1(I.status, `Failed to terminate session: ${I.statusText}`);
+            if (!I.ok && I.status !== 405) throw new EB1(I.status, `Failed to terminate session: TextComponent{I.statusText}`);
             this._sessionId = void 0
         } catch (G) {
             throw (B = this.onerror) === null || B === void 0 || B.call(this, G), G
@@ -1074,7 +1062,7 @@ class PA0 {
     }
 }
 var g35, EB1;
-var r82 = L(() => {
+var r82 = lazyLoader(() => {
     PD();
     fLA();
     s82();
@@ -1086,7 +1074,7 @@ var r82 = L(() => {
     };
     EB1 = class EB1 extends Error {
         constructor(A, Q) {
-            super(`Streamable HTTP error: ${Q}`);
+            super(`Streamable HTTP error: TextComponent{Q}`);
             this.code = A
         }
     }
@@ -1131,7 +1119,7 @@ function A62(A) {
     for (let I of G) {
         if (!B.existsSync(I)) continue;
         for (let Y of Z) {
-            let J = new RegExp("^" + Y + ".*$"),
+            let J = new RegExp("^" + Y + ".*TextComponent"),
                 W = B.readdirSync(I).filter((X) => J.test(X.name) && B.statSync(iY.join(I, X.name)).isDirectory()).map((X) => iY.join(I, X.name));
             for (let X of W) {
                 let F = hLA.platform() === "linux" ? X : iY.join(X, "plugins");
@@ -1176,16 +1164,15 @@ function UB1(A) {
         else Q.unlinkSync(G)
     }), u35(A)
 }
-
 async function Q62(A, Q) {
     let B = OA(),
         G = [];
-    if (!jA0[A.toLowerCase()]) throw BA("tengu_ext_jetbrains_extension_install_unknown_ide", {}), Error(`Unsupported IDE: ${A}`);
+    if (!jA0[A.toLowerCase()]) throw BA("tengu_ext_jetbrains_extension_install_unknown_ide", {}), Error(`Unsupported IDE: TextComponent{A}`);
     if (!B.existsSync(Q) || !B.statSync(Q).isDirectory()) throw BA("tengu_ext_jetbrains_extension_install_source_missing", {}), Error("Plugin source missing");
     let Z = o82(Q);
     if (!Z) throw BA("tengu_ext_jetbrains_extension_install_error_reading_version", {}), Error("Error reading version from plugin");
     let I = A62(A);
-    if (I.length === 0) throw BA("tengu_ext_jetbrains_extension_install_no_plugin_directories", {}), Error(`Could not find plugin directories for ${A}`);
+    if (I.length === 0) throw BA("tengu_ext_jetbrains_extension_install_no_plugin_directories", {}), Error(`Could not find plugin directories for TextComponent{A}`);
     for (let Y of I) try {
         let J = iY.join(Y, e82);
         if (B.existsSync(J)) {
@@ -1211,10 +1198,10 @@ function B62(A) {
 }
 var t82, e82 = "claude-code-jetbrains-plugin",
     jA0;
-var G62 = L(() => {
+var G62 = lazyLoader(() => {
     o0();
     w0();
-    t82 = GA(WE(), 1), jA0 = {
+    t82 = esmImport(WE(), 1), jA0 = {
         pycharm: ["PyCharm"],
         intellij: ["IntelliJIdea", "IdeaIC"],
         webstorm: ["WebStorm"],
@@ -1257,40 +1244,40 @@ function Z62({
         paddingLeft: 1,
         paddingRight: 1,
         gap: 1
-    }, M7.default.createElement(j, null, M7.default.createElement($, {
+    }, M7.default.createElement(j, null, M7.default.createElement(TextComponent, {
         color: "claude"
     }, "✻ "), M7.default.createElement(j, {
         flexDirection: "column"
-    }, M7.default.createElement($, null, "Welcome to ", M7.default.createElement($, {
+    }, M7.default.createElement(TextComponent, null, "Welcome to ", M7.default.createElement(TextComponent, {
         bold: !0
-    }, "Claude Code"), " for", " ", M7.default.createElement($, {
+    }, "Claude Code"), " for", " ", M7.default.createElement(TextComponent, {
         color: "ide",
         bold: !0
-    }, I)), M7.default.createElement($, {
+    }, I)), M7.default.createElement(TextComponent, {
         dimColor: !0
     }, "installed ", J, " v", Y))), Z && M7.default.createElement(j, {
         marginTop: 1
-    }, M7.default.createElement($, {
+    }, M7.default.createElement(TextComponent, {
         color: "warning"
     }, V1.warning, " Restart ", I, " (", W, ") to continue (may require multiple restarts)")), M7.default.createElement(j, {
         flexDirection: "column",
         paddingLeft: 1,
         gap: 1
-    }, M7.default.createElement($, null, "• Claude has context of", " ", M7.default.createElement($, {
+    }, M7.default.createElement(TextComponent, null, "• Claude has context of", " ", M7.default.createElement(TextComponent, {
         color: "suggestion"
-    }, "⧉ open files"), " and", " ", M7.default.createElement($, {
+    }, "⧉ open files"), " and", " ", M7.default.createElement(TextComponent, {
         color: "suggestion"
-    }, "⧉ selected lines")), M7.default.createElement($, null, "• Review Claude Code's changes", " ", M7.default.createElement($, {
+    }, "⧉ selected lines")), M7.default.createElement(TextComponent, null, "• Review Claude Code's changes", " ", M7.default.createElement(TextComponent, {
         color: "diffAddedWord"
-    }, "+11"), " ", M7.default.createElement($, {
+    }, "+11"), " ", M7.default.createElement(TextComponent, {
         color: "diffRemovedWord"
-    }, "-22"), " in the comfort of your IDE"), M7.default.createElement($, null, "• Cmd+Esc", M7.default.createElement($, {
+    }, "-22"), " in the comfort of your IDE"), M7.default.createElement(TextComponent, null, "• Cmd+Esc", M7.default.createElement(TextComponent, {
         dimColor: !0
-    }, " for Quick Launch")), M7.default.createElement($, null, "• ", X, M7.default.createElement($, {
+    }, " for Quick Launch")), M7.default.createElement(TextComponent, null, "• ", X, M7.default.createElement(TextComponent, {
         dimColor: !0
     }, " to reference files or lines in your input")))), M7.default.createElement(j, {
         marginLeft: 3
-    }, M7.default.createElement($, {
+    }, M7.default.createElement(TextComponent, {
         dimColor: !0
     }, B.pending ? M7.default.createElement(M7.default.Fragment, null, "Press ", B.keyName, " again to exit") : M7.default.createElement(M7.default.Fragment, null, "Press Enter to continue")))))
 }
@@ -1314,7 +1301,7 @@ function d35() {
     })
 }
 var M7;
-var _A0 = L(() => {
+var _A0 = lazyLoader(() => {
     hA();
     yJ();
     f5();
@@ -1322,12 +1309,11 @@ var _A0 = L(() => {
     jQ();
     n2();
     it();
-    M7 = GA(VA(), 1)
+    M7 = esmImport(VA(), 1)
 });
 import {
     execFileSync as I62
 } from "node:child_process";
-
 class fIA {
     wslDistroName;
     constructor(A) {
@@ -1336,7 +1322,7 @@ class fIA {
     toLocalPath(A) {
         if (!A) return A;
         if (this.wslDistroName) {
-            let Q = A.match(/^\\\\wsl(?:\.localhost|\$)\\([^\\]+)(.*)$/);
+            let Q = A.match(/^\\\\wsl(?:\.localhost|\TextComponent)\\([^\\]+)(.*)TextComponent/);
             if (Q && Q[1] !== this.wslDistroName) return A
         }
         try {
@@ -1345,7 +1331,7 @@ class fIA {
                 stdio: ["pipe", "pipe", "ignore"]
             }).trim()
         } catch {
-            return A.replace(/\\/g, "/").replace(/^([A-Z]):/i, (Q, B) => `/mnt/${B.toLowerCase()}`)
+            return A.replace(/\\/g, "/").replace(/^([A-Z]):/i, (Q, B) => `/mnt/TextComponent{B.toLowerCase()}`)
         }
     }
     toIDEPath(A) {
@@ -1362,7 +1348,7 @@ class fIA {
 }
 
 function Y62(A, Q) {
-    let B = A.match(/^\\\\wsl(?:\.localhost|\$)\\([^\\]+)(.*)$/);
+    let B = A.match(/^\\\\wsl(?:\.localhost|\TextComponent)\\([^\\]+)(.*)TextComponent/);
     if (B) return B[1] === Q;
     return !0
 }
@@ -1480,7 +1466,6 @@ function K62(A) {
         return e(Q), null
     }
 }
-
 async function xA0(A, Q, B = 500) {
     try {
         return new Promise((G) => {

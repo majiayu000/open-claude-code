@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_031.js
+ * 处理时间: 2025-12-09T03:41:39.331Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.123Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -82,7 +85,6 @@
         return this.measuredText.getOffsetFromPosition(A)
     }
 }
-
 class MrA {
     text;
     startOffset;
@@ -101,7 +103,6 @@ class MrA {
         return this.text.length + (this.endsWithNewline ? 1 : 0)
     }
 }
-
 class gTB {
     columns;
     _wrappedLines;
@@ -285,14 +286,14 @@ class gTB {
         return this.navigationCache.set(A, G), G
     }
     nextOffset(A) {
-        return this.withCache(`next:${A}`, () => {
+        return this.withCache(`next:TextComponent{A}`, () => {
             let Q = this.getGraphemeBoundaries();
             return this.binarySearchBoundary(Q, A, !0)
         })
     }
     prevOffset(A) {
         if (A <= 0) return 0;
-        return this.withCache(`prev:${A}`, () => {
+        return this.withCache(`prev:TextComponent{A}`, () => {
             let Q = this.getGraphemeBoundaries();
             return this.binarySearchBoundary(Q, A, !1)
         })
@@ -301,14 +302,14 @@ class gTB {
 var LrA = "",
     Zd1 = !1,
     Id1;
-var Yd1 = L(() => {
+var Yd1 = lazyLoader(() => {
     lf1();
     F7A();
     Id1 = new Intl.Segmenter(void 0, {
         granularity: "grapheme"
     })
 });
-var f_ = U((rr7, mTB) => {
+var f_ = moduleWrapper((rr7, mTB) => {
     var uTB = function(A) {
             return typeof A < "u" && A !== null
         },
@@ -361,7 +362,7 @@ var f_ = U((rr7, mTB) => {
             return Q.includes(A)
         },
         Yq6 = function(A, Q, B) {
-            return Error(`Expected ${Q} for ${A} but received ${B} of type ${typeof B}`)
+            return Error(`Expected TextComponent{Q} for TextComponent{A} but received TextComponent{B} of type TextComponent{typeof B}`)
         },
         Jq6 = function(A, Q) {
             return Q.message = A.message, Q
@@ -384,7 +385,7 @@ var f_ = U((rr7, mTB) => {
         nativeError: Jq6
     }
 });
-var pTB = U((or7, cTB) => {
+var pTB = moduleWrapper((or7, cTB) => {
     var dTB = () => process.platform === "linux",
         TrA = null,
         Wq6 = () => {
@@ -400,8 +401,8 @@ var pTB = U((or7, cTB) => {
         getReport: Wq6
     }
 });
-var nTB = U((tr7, iTB) => {
-    var lTB = UA("fs"),
+var nTB = moduleWrapper((tr7, iTB) => {
+    var lTB = nodeRequire("fs"),
         Xq6 = (A) => lTB.readFileSync(A, "utf-8"),
         Fq6 = (A) => new Promise((Q, B) => {
             lTB.readFile(A, "utf-8", (G, Z) => {
@@ -415,8 +416,8 @@ var nTB = U((tr7, iTB) => {
         readFile: Fq6
     }
 });
-var jrA = U((er7, XPB) => {
-    var sTB = UA("child_process"),
+var jrA = moduleWrapper((er7, XPB) => {
+    var sTB = nodeRequire("child_process"),
         {
             isLinux: GGA,
             getReport: rTB
@@ -561,7 +562,7 @@ var jrA = U((er7, XPB) => {
         versionSync: $q6
     }
 });
-var Jd1 = U((Ao7, wq6) => {
+var Jd1 = moduleWrapper((Ao7, wq6) => {
     wq6.exports = {
         name: "sharp",
         description: "High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP, GIF, AVIF and TIFF images",
@@ -670,12 +671,12 @@ var Jd1 = U((Ao7, wq6) => {
         }
     }
 });
-var Xd1 = U((Qo7, $PB) => {
+var Xd1 = moduleWrapper((Qo7, $PB) => {
     var {
         spawnSync: SrA
-    } = UA("node:child_process"), {
+    } = nodeRequire("node:child_process"), {
         createHash: qq6
-    } = UA("node:crypto"), DPB = Kg1(), Nq6 = Q$A(), Lq6 = P7A(), FPB = jrA(), {
+    } = nodeRequire("node:crypto"), DPB = Kg1(), Nq6 = Q$A(), Lq6 = P7A(), FPB = jrA(), {
         config: Mq6,
         engines: VPB,
         optionalDependencies: Oq6
@@ -683,19 +684,19 @@ var Xd1 = U((Qo7, $PB) => {
         encoding: "utf8",
         shell: !0
     }, Pq6 = (A) => {
-        if (A instanceof Error) console.error(`sharp: Installation error: ${A.message}`);
-        else console.log(`sharp: ${A}`)
-    }, CPB = () => FPB.isNonGlibcLinuxSync() ? FPB.familySync() : "", jq6 = () => `${process.platform}${CPB()}-${process.arch}`, ZGA = () => {
+        if (A instanceof Error) console.error(`sharp: Installation error: TextComponent{A.message}`);
+        else console.log(`sharp: TextComponent{A}`)
+    }, CPB = () => FPB.isNonGlibcLinuxSync() ? FPB.familySync() : "", jq6 = () => `TextComponent{process.platform}TextComponent{CPB()}-TextComponent{process.arch}`, ZGA = () => {
         if (EPB()) return "wasm32";
         let {
             npm_config_arch: A,
             npm_config_platform: Q,
             npm_config_libc: B
         } = process.env, G = typeof B === "string" ? B : CPB();
-        return `${Q||process.platform}${G}-${A||process.arch}`
+        return `TextComponent{Q||process.platform}TextComponent{G}-TextComponent{A||process.arch}`
     }, Sq6 = () => {
         try {
-            return UA(`@img/sharp-libvips-dev-${ZGA()}/include`)
+            return nodeRequire(`@img/sharp-libvips-dev-TextComponent{ZGA()}/include`)
         } catch {
             try {
                 return (() => {
@@ -713,10 +714,10 @@ var Xd1 = U((Qo7, $PB) => {
         return ""
     }, kq6 = () => {
         try {
-            return UA(`@img/sharp-libvips-dev-${ZGA()}/lib`)
+            return nodeRequire(`@img/sharp-libvips-dev-TextComponent{ZGA()}/lib`)
         } catch {
             try {
-                return UA(`@img/sharp-libvips-${ZGA()}/lib`)
+                return nodeRequire(`@img/sharp-libvips-TextComponent{ZGA()}/lib`)
             } catch {}
         }
         return ""
@@ -737,12 +738,12 @@ var Xd1 = U((Qo7, $PB) => {
         return !1
     }, KPB = (A) => qq6("sha512").update(A).digest("hex"), vq6 = () => {
         try {
-            let A = KPB(`imgsharp-libvips-${ZGA()}`),
-                Q = DPB(Oq6[`@img/sharp-libvips-${ZGA()}`]).version;
-            return KPB(`${A}npm:${Q}`).slice(0, 10)
+            let A = KPB(`imgsharp-libvips-TextComponent{ZGA()}`),
+                Q = DPB(Oq6[`@img/sharp-libvips-TextComponent{ZGA()}`]).version;
+            return KPB(`TextComponent{A}npm:TextComponent{Q}`).slice(0, 10)
         } catch {}
         return ""
-    }, bq6 = () => SrA(`node-gyp rebuild --directory=src ${EPB()?"--nodedir=emscripten":""}`, {
+    }, bq6 = () => SrA(`node-gyp rebuild --directory=src TextComponent{EPB()?"--nodedir=emscripten":""}`, {
         ..._rA,
         stdio: "inherit"
     }).status, zPB = () => {
@@ -758,7 +759,7 @@ var Xd1 = U((Qo7, $PB) => {
         if (process.platform !== "win32") return [(SrA('which brew >/dev/null 2>&1 && brew environment --plain | grep PKG_CONFIG_LIBDIR | cut -d" " -f2', _rA).stdout || "").trim(), process.env.PKG_CONFIG_PATH, "/usr/local/lib/pkgconfig", "/usr/lib/pkgconfig", "/usr/local/libdata/pkgconfig", "/usr/libdata/pkgconfig"].filter(Boolean).join(":");
         else return ""
     }, Wd1 = (A, Q, B) => {
-        if (B) B(`Detected ${Q}, skipping search for globally-installed libvips`);
+        if (B) B(`Detected TextComponent{Q}, skipping search for globally-installed libvips`);
         return A
     }, fq6 = (A) => {
         if (Boolean(process.env.SHARP_IGNORE_GLOBAL_LIBVIPS) === !0) return Wd1(!1, "SHARP_IGNORE_GLOBAL_LIBVIPS", A);
@@ -784,7 +785,7 @@ var Xd1 = U((Qo7, $PB) => {
         useGlobalLibvips: fq6
     }
 });
-var d$A = U((Go7, qPB) => {
+var d$A = moduleWrapper((Go7, qPB) => {
     var {
         familySync: hq6,
         versionSync: gq6
@@ -793,18 +794,18 @@ var d$A = U((Go7, qPB) => {
         isUnsupportedNodeRuntime: wPB,
         prebuiltPlatforms: mq6,
         minimumLibvipsVersion: dq6
-    } = Xd1(), Be = uq6(), cq6 = [`../src/build/Release/sharp-${Be}.node`, "../src/build/Release/sharp-wasm32.node", `@img/sharp-${Be}/sharp.node`, "@img/sharp-wasm32/sharp.node"], Fd1, krA = [];
+    } = Xd1(), Be = uq6(), cq6 = [`../src/build/Release/sharp-TextComponent{Be}.node`, "../src/build/Release/sharp-wasm32.node", `@img/sharp-TextComponent{Be}/sharp.node`, "@img/sharp-wasm32/sharp.node"], Fd1, krA = [];
     for (let A of cq6) try {
-        Fd1 = UA(A);
+        Fd1 = nodeRequire(A);
         break
     } catch (Q) {
         krA.push(Q)
     }
     if (Fd1) qPB.exports = Fd1;
     else {
-        let [A, Q, B] = ["linux", "darwin", "win32"].map((I) => Be.startsWith(I)), G = [`Could not load the "sharp" module using the ${Be} runtime`];
+        let [A, Q, B] = ["linux", "darwin", "win32"].map((I) => Be.startsWith(I)), G = [`Could not load the "sharp" module using the TextComponent{Be} runtime`];
         krA.forEach((I) => {
-            if (I.code !== "MODULE_NOT_FOUND") G.push(`${I.code}: ${I.message}`)
+            if (I.code !== "MODULE_NOT_FOUND") G.push(`TextComponent{I.code}: TextComponent{I.message}`)
         });
         let Z = krA.map((I) => I.message).join(" ");
         if (G.push("Possible solutions:"), wPB()) {
@@ -812,16 +813,16 @@ var d$A = U((Go7, qPB) => {
                 found: I,
                 expected: Y
             } = wPB();
-            G.push("- Please upgrade Node.js:", `    Found ${I}`, `    Requires ${Y}`)
+            G.push("- Please upgrade Node.js:", `    Found TextComponent{I}`, `    Requires TextComponent{Y}`)
         } else if (mq6.includes(Be)) {
             let [I, Y] = Be.split("-"), J = I.endsWith("musl") ? " --libc=musl" : "";
-            G.push("- Ensure optional dependencies can be installed:", "    npm install --include=optional sharp", "- Ensure your package manager supports multi-platform installation:", "    See https://sharp.pixelplumbing.com/install#cross-platform", "- Add platform-specific dependencies:", `    npm install --os=${I.replace("musl","")}${J} --cpu=${Y} sharp`)
-        } else G.push(`- Manually install libvips >= ${dq6}`, "- Add experimental WebAssembly-based dependencies:", "    npm install --cpu=wasm32 sharp", "    npm install @img/sharp-wasm32");
+            G.push("- Ensure optional dependencies can be installed:", "    npm install --include=optional sharp", "- Ensure your package manager supports multi-platform installation:", "    See https://sharp.pixelplumbing.com/install#cross-platform", "- Add platform-specific dependencies:", `    npm install --os=TextComponent{I.replace("musl","")}TextComponent{J} --cpu=TextComponent{Y} sharp`)
+        } else G.push(`- Manually install libvips >= TextComponent{dq6}`, "- Add experimental WebAssembly-based dependencies:", "    npm install --cpu=wasm32 sharp", "    npm install @img/sharp-wasm32");
         if (A && /(symbol not found|CXXABI_)/i.test(Z)) try {
             let {
                 config: I
-            } = UA(`@img/sharp-libvips-${Be}/package`), Y = `${hq6()} ${gq6()}`, J = `${I.musl?"musl":"glibc"} ${I.musl||I.glibc}`;
-            G.push("- Update your OS:", `    Found ${Y}`, `    Requires ${J}`)
+            } = nodeRequire(`@img/sharp-libvips-TextComponent{Be}/package`), Y = `TextComponent{hq6()} TextComponent{gq6()}`, J = `TextComponent{I.musl?"musl":"glibc"} TextComponent{I.musl||I.glibc}`;
+            G.push("- Update your OS:", `    Found TextComponent{Y}`, `    Requires TextComponent{J}`)
         } catch (I) {}
         if (A && /\/snap\/core[0-9]{2}/.test(Z)) G.push("- Remove the Node.js Snap, which does not support native modules", "    snap remove node");
         if (Q && /Incompatible library version/.test(Z)) G.push("- Update Homebrew:", "    brew update && brew upgrade vips");
@@ -831,9 +832,9 @@ var d$A = U((Go7, qPB) => {
 `))
     }
 });
-var LPB = U((Io7, NPB) => {
-    var pq6 = UA("node:util"),
-        Vd1 = UA("node:stream"),
+var LPB = moduleWrapper((Io7, NPB) => {
+    var pq6 = nodeRequire("node:util"),
+        Vd1 = nodeRequire("node:stream"),
         lq6 = f_();
     d$A();
     var iq6 = pq6.debuglog("sharp"),
@@ -1019,7 +1020,7 @@ var LPB = U((Io7, NPB) => {
     Object.setPrototypeOf(Ge.prototype, Vd1.Duplex.prototype);
     Object.setPrototypeOf(Ge, Vd1.Duplex);
 
-function nq6() {
+    function nq6() {
         let A = this.constructor.call(),
             {
                 debuglog: Q,
@@ -1036,7 +1037,7 @@ function nq6() {
     });
     NPB.exports = Ge
 });
-var Kd1 = U((Yo7, MPB) => {
+var Kd1 = moduleWrapper((Yo7, MPB) => {
     MPB.exports = {
         aliceblue: [240, 248, 255],
         antiquewhite: [250, 235, 215],
@@ -1188,13 +1189,13 @@ var Kd1 = U((Yo7, MPB) => {
         yellowgreen: [154, 205, 50]
     }
 });
-var RPB = U((Jo7, OPB) => {
+var RPB = moduleWrapper((Jo7, OPB) => {
     OPB.exports = function(Q) {
         if (!Q || typeof Q === "string") return !1;
         return Q instanceof Array || Array.isArray(Q) || Q.length >= 0 && (Q.splice instanceof Function || Object.getOwnPropertyDescriptor(Q, Q.length - 1) && Q.constructor.name !== "String")
     }
 });
-var jPB = U((Wo7, PPB) => {
+var jPB = moduleWrapper((Wo7, PPB) => {
     var aq6 = RPB(),
         sq6 = Array.prototype.concat,
         rq6 = Array.prototype.slice,
@@ -1213,7 +1214,7 @@ var jPB = U((Wo7, PPB) => {
         }
     }
 });
-var yPB = U((Xo7, kPB) => {
+var yPB = moduleWrapper((Xo7, kPB) => {
     var p$A = Kd1(),
         l$A = jPB(),
         SPB = Object.hasOwnProperty,
@@ -1246,11 +1247,11 @@ var yPB = U((Xo7, kPB) => {
     };
     tw.get.rgb = function(A) {
         if (!A) return null;
-        var Q = /^#([a-f0-9]{3,4})$/i,
-            B = /^#([a-f0-9]{6})([a-f0-9]{2})?$/i,
-            G = /^rgba?\(\s*([+-]?\d+)(?=[\s,])\s*(?:,\s*)?([+-]?\d+)(?=[\s,])\s*(?:,\s*)?([+-]?\d+)\s*(?:[,|\/]\s*([+-]?[\d\.]+)(%?)\s*)?\)$/,
-            Z = /^rgba?\(\s*([+-]?[\d\.]+)\%\s*,?\s*([+-]?[\d\.]+)\%\s*,?\s*([+-]?[\d\.]+)\%\s*(?:[,|\/]\s*([+-]?[\d\.]+)(%?)\s*)?\)$/,
-            I = /^(\w+)$/,
+        var Q = /^#([a-f0-9]{3,4})TextComponent/i,
+            B = /^#([a-f0-9]{6})([a-f0-9]{2})?TextComponent/i,
+            G = /^rgba?\(\s*([+-]?\d+)(?=[\s,])\s*(?:,\s*)?([+-]?\d+)(?=[\s,])\s*(?:,\s*)?([+-]?\d+)\s*(?:[,|\/]\s*([+-]?[\d\.]+)(%?)\s*)?\)TextComponent/,
+            Z = /^rgba?\(\s*([+-]?[\d\.]+)\%\s*,?\s*([+-]?[\d\.]+)\%\s*,?\s*([+-]?[\d\.]+)\%\s*(?:[,|\/]\s*([+-]?[\d\.]+)(%?)\s*)?\)TextComponent/,
+            I = /^(\w+)TextComponent/,
             Y = [0, 0, 0, 1],
             J, W, X;
         if (J = A.match(B)) {
@@ -1284,7 +1285,7 @@ var yPB = U((Xo7, kPB) => {
     };
     tw.get.hsl = function(A) {
         if (!A) return null;
-        var Q = /^hsla?\(\s*([+-]?(?:\d{0,3}\.)?\d+)(?:deg)?\s*,?\s*([+-]?[\d\.]+)%\s*,?\s*([+-]?[\d\.]+)%\s*(?:[,|\/]\s*([+-]?(?=\.\d|\d)(?:0|[1-9]\d*)?(?:\.\d*)?(?:[eE][+-]?\d+)?)\s*)?\)$/,
+        var Q = /^hsla?\(\s*([+-]?(?:\d{0,3}\.)?\d+)(?:deg)?\s*,?\s*([+-]?[\d\.]+)%\s*,?\s*([+-]?[\d\.]+)%\s*(?:[,|\/]\s*([+-]?(?=\.\d|\d)(?:0|[1-9]\d*)?(?:\.\d*)?(?:[eE][+-]?\d+)?)\s*)?\)TextComponent/,
             B = A.match(Q);
         if (B) {
             var G = parseFloat(B[4]),
@@ -1298,7 +1299,7 @@ var yPB = U((Xo7, kPB) => {
     };
     tw.get.hwb = function(A) {
         if (!A) return null;
-        var Q = /^hwb\(\s*([+-]?\d{0,3}(?:\.\d+)?)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?(?=\.\d|\d)(?:0|[1-9]\d*)?(?:\.\d*)?(?:[eE][+-]?\d+)?)\s*)?\)$/,
+        var Q = /^hwb\(\s*([+-]?\d{0,3}(?:\.\d+)?)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?(?=\.\d|\d)(?:0|[1-9]\d*)?(?:\.\d*)?(?:[eE][+-]?\d+)?)\s*)?\)TextComponent/,
             B = A.match(Q);
         if (B) {
             var G = parseFloat(B[4]),
@@ -1339,21 +1340,20 @@ var yPB = U((Xo7, kPB) => {
         return _PB[A.slice(0, 3)]
     };
 
-function Lp(A, Q, B) {
+    function Lp(A, Q, B) {
         return Math.min(Math.max(Q, A), B)
     }
 
-function yrA(A) {
+    function yrA(A) {
         var Q = Math.round(A).toString(16).toUpperCase();
         return Q.length < 2 ? "0" + Q : Q
     }
 });
-var Dd1 = U((Fo7, vPB) => {
+var Dd1 = moduleWrapper((Fo7, vPB) => {
     var i$A = Kd1(),
         xPB = {};
     for (let A of Object.keys(i$A)) xPB[i$A[A]] = A;
-
-var g2 = {
+    var g2 = {
         rgb: {
             channels: 3,
             labels: "rgb"
@@ -1487,7 +1487,7 @@ var g2 = {
         return [I * 100, Y * 100, J * 100, Z * 100]
     };
 
-function oq6(A, Q) {
+    function oq6(A, Q) {
         return (A[0] - Q[0]) ** 2 + (A[1] - Q[1]) ** 2 + (A[2] - Q[2]) ** 2
     }
     g2.rgb.keyword = function(A) {

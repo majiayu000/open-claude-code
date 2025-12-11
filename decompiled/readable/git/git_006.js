@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_006.js
+ * 处理时间: 2025-12-09T03:41:37.332Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.966Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-var NG = U((yW7, HDA) => {
+var NG = moduleWrapper((yW7, HDA) => {
     var {
         defineProperty: RfA,
         getOwnPropertyDescriptor: O$4,
@@ -45,7 +48,7 @@ var NG = U((yW7, HDA) => {
     P$4(DDA, {
         CONFIG_PREFIX_SEPARATOR: () => Ur,
         DEFAULT_PROFILE: () => BQQ,
-        ENV_PROFILE: () => QQQ,
+        ENV_PROFILE: () => AWS_PROFILE,
         getProfileName: () => S$4,
         loadSharedConfigFiles: () => ZQQ,
         loadSsoSessionData: () => c$4,
@@ -53,9 +56,10 @@ var NG = U((yW7, HDA) => {
     });
     HDA.exports = j$4(DDA);
     XU1(DDA, O4A(), HDA.exports);
-    var QQQ = "AWS_PROFILE",
+    /* AWS_PROFILE = AWS_PROFILE env key */
+var AWS_PROFILE = "AWS_PROFILE",
         BQQ = "default",
-        S$4 = nN((A) => A.profile || process.env[QQQ] || BQQ, "getProfileName");
+        S$4 = nN((A) => A.profile || process.env[AWS_PROFILE] || BQQ, "getProfileName");
     XU1(DDA, ZU1(), HDA.exports);
     XU1(DDA, u0Q(), HDA.exports);
     var MfA = r0Q(),
@@ -72,7 +76,7 @@ var NG = U((yW7, HDA) => {
                 default: A.default
             }
         }), "getConfigData"),
-        OfA = UA("path"),
+        OfA = nodeRequire("path"),
         k$4 = O4A(),
         y$4 = "AWS_CONFIG_FILE",
         GQQ = nN(() => process.env[y$4] || (0, OfA.join)((0, k$4.getHomeDir)(), ".aws", "config"), "getConfigFilepath"),
@@ -95,7 +99,7 @@ var NG = U((yW7, HDA) => {
                         let [, X, , F] = W;
                         if (Object.values(MfA.IniSectionType).includes(X)) B = [X, F].join(Ur)
                     } else B = J;
-                    if (g$4.includes(J)) throw Error(`Found invalid profile name "${J}"`)
+                    if (g$4.includes(J)) throw Error(`Found invalid profile name "TextComponent{J}"`)
                 } else if (B) {
                     let J = I.indexOf("=");
                     if (![0, -1].includes(J)) {
@@ -153,7 +157,7 @@ var NG = U((yW7, HDA) => {
             return p$4(Q.configFile, Q.credentialsFile)
         }, "parseKnownFiles")
 });
-var xI = U((xW7, JQQ) => {
+var xI = moduleWrapper((xW7, JQQ) => {
     var {
         defineProperty: TfA,
         getOwnPropertyDescriptor: i$4,
@@ -184,7 +188,7 @@ var xI = U((xW7, JQQ) => {
     JQQ.exports = o$4(YQQ);
     var CDA = P2();
 
-function FU1(A) {
+    function FU1(A) {
         try {
             let Q = new Set(Array.from(A.match(/([A-Z_]){3,}/g) ?? []));
             return Q.delete("CONFIG"), Q.delete("CONFIG_PREFIX_SEPARATOR"), Q.delete("ENV"), [...Q].join(", ")
@@ -199,7 +203,7 @@ function FU1(A) {
                 if (B === void 0) throw Error();
                 return B
             } catch (B) {
-                throw new CDA.CredentialsProviderError(B.message || `Not found in ENV: ${FU1(A.toString())}`, {
+                throw new CDA.CredentialsProviderError(B.message || `Not found in ENV: TextComponent{FU1(A.toString())}`, {
                     logger: Q?.logger
                 })
             }
@@ -228,7 +232,7 @@ function FU1(A) {
                 if (F === void 0) throw Error();
                 return F
             } catch (X) {
-                throw new CDA.CredentialsProviderError(X.message || `Not found in config files w/ profile [${G}]: ${FU1(A.toString())}`, {
+                throw new CDA.CredentialsProviderError(X.message || `Not found in config files w/ profile [TextComponent{G}]: TextComponent{FU1(A.toString())}`, {
                     logger: B.logger
                 })
             }
@@ -250,7 +254,7 @@ function FU1(A) {
             return (0, CDA.memoize)((0, CDA.chain)(t$4(A, Y), e$4(Q, G), Qw4(B)))
         }, "loadConfig")
 });
-var DQQ = U((VQQ) => {
+var DQQ = moduleWrapper((VQQ) => {
     Object.defineProperty(VQQ, "__esModule", {
         value: !0
     });
@@ -284,7 +288,7 @@ var DQQ = U((VQQ) => {
         });
     VQQ.getEndpointUrlConfig = Gw4
 });
-var VU1 = U((HQQ) => {
+var VU1 = moduleWrapper((HQQ) => {
     Object.defineProperty(HQQ, "__esModule", {
         value: !0
     });
@@ -294,7 +298,7 @@ var VU1 = U((HQQ) => {
         Yw4 = async (A) => (0, Zw4.loadConfig)((0, Iw4.getEndpointUrlConfig)(A !== null && A !== void 0 ? A : ""))();
     HQQ.getEndpointFromConfig = Yw4
 });
-var $QQ = U((fW7, UQQ) => {
+var $QQ = moduleWrapper((fW7, UQQ) => {
     var {
         defineProperty: PfA,
         getOwnPropertyDescriptor: Jw4,
@@ -324,7 +328,7 @@ var $QQ = U((fW7, UQQ) => {
     });
     UQQ.exports = Dw4(EQQ);
 
-function zQQ(A) {
+    function zQQ(A) {
         let Q = {};
         if (A = A.replace(/^\?/, ""), A)
             for (let B of A.split("&")) {
@@ -338,7 +342,7 @@ function zQQ(A) {
     }
     Fw4(zQQ, "parseQueryString")
 });
-var zJ = U((hW7, NQQ) => {
+var zJ = moduleWrapper((hW7, NQQ) => {
     var {
         defineProperty: jfA,
         getOwnPropertyDescriptor: Hw4,
@@ -387,7 +391,7 @@ var zJ = U((hW7, NQQ) => {
             }
         }, "parseUrl")
 });
-var E5 = U((gW7, jQQ) => {
+var E5 = moduleWrapper((gW7, jQQ) => {
     var {
         defineProperty: _fA,
         getOwnPropertyDescriptor: Nw4,
@@ -432,13 +436,13 @@ var E5 = U((gW7, jQQ) => {
             if (A.DisableMultiRegionAccessPoints) A.disableMultiRegionAccessPoints = !0, A.DisableMRAP = !0;
             return A
         }, "resolveParamsForS3"),
-        jw4 = /^[a-z0-9][a-z0-9\.\-]{1,61}[a-z0-9]$/,
+        jw4 = /^[a-z0-9][a-z0-9\.\-]{1,61}[a-z0-9]TextComponent/,
         Sw4 = /(\d+\.){3}\d+/,
         _w4 = /\.\./,
         kw4 = aN((A) => jw4.test(A) && !Sw4.test(A) && !_w4.test(A), "isDnsCompatibleBucketName"),
         yw4 = aN((A) => {
             let [Q, B, G, , , Z] = A.split(":"), I = Q === "arn" && A.split(":").length >= 6, Y = Boolean(I && B && G && Z);
-            if (I && !Y) throw Error(`Invalid ARN: ${A} was an invalid ARN.`);
+            if (I && !Y) throw Error(`Invalid ARN: TextComponent{A} was an invalid ARN.`);
             return Y
         }, "isArnBucketName"),
         xw4 = aN((A, Q, B) => {
@@ -466,7 +470,7 @@ var E5 = U((gW7, jQQ) => {
                             port: J,
                             path: W
                         } = Z;
-                        return `${I}//${Y}${J?":"+J:""}${W}`
+                        return `TextComponent{I}//TextComponent{Y}TextComponent{J?":"+J:""}TextComponent{W}`
                     }
                 }
                 return Z
@@ -597,7 +601,7 @@ var E5 = U((gW7, jQQ) => {
             return A
         }, "resolveEndpointRequiredConfig")
 });
-var DU1 = U((uW7, hQQ) => {
+var DU1 = moduleWrapper((uW7, hQQ) => {
     var {
         defineProperty: kfA,
         getOwnPropertyDescriptor: dw4,
@@ -689,7 +693,7 @@ var DU1 = U((uW7, hQQ) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(fQQ || {})
 });
-var pQQ = U((mW7, cQQ) => {
+var pQQ = moduleWrapper((mW7, cQQ) => {
     var {
         defineProperty: xfA,
         getOwnPropertyDescriptor: ew4,
@@ -768,7 +772,7 @@ var pQQ = U((mW7, cQQ) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values
@@ -802,7 +806,7 @@ var pQQ = U((mW7, cQQ) => {
                 om(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -824,7 +828,7 @@ var pQQ = U((mW7, cQQ) => {
             }
         };
 
-function mQQ(A) {
+    function mQQ(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -834,8 +838,7 @@ function mQQ(A) {
         }, {})
     }
     om(mQQ, "cloneQuery");
-
-var Fq4 = class {
+    var Fq4 = class {
         static {
             om(this, "HttpResponse")
         }
@@ -849,19 +852,19 @@ var Fq4 = class {
         }
     };
 
-function dQQ(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function dQQ(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     om(dQQ, "isValidHostname")
 });
-var HU1 = U((lQQ) => {
+var HU1 = moduleWrapper((lQQ) => {
     Object.defineProperty(lQQ, "__esModule", {
         value: !0
     });
     lQQ.default = Dq4;
-    var Vq4 = Kq4(UA("crypto"));
+    var Vq4 = Kq4(nodeRequire("crypto"));
 
-function Kq4(A) {
+    function Kq4(A) {
         return A && A.__esModule ? A : {
             default: A
         }
@@ -869,39 +872,39 @@ function Kq4(A) {
     var bfA = new Uint8Array(256),
         vfA = bfA.length;
 
-function Dq4() {
+    function Dq4() {
         if (vfA > bfA.length - 16) Vq4.default.randomFillSync(bfA), vfA = 0;
         return bfA.slice(vfA, vfA += 16)
     }
 });
-var aQQ = U((iQQ) => {
+var aQQ = moduleWrapper((iQQ) => {
     Object.defineProperty(iQQ, "__esModule", {
         value: !0
     });
     iQQ.default = void 0;
-    var Cq4 = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
+    var Cq4 = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)TextComponent/i;
     iQQ.default = Cq4
 });
-var EDA = U((sQQ) => {
+var EDA = moduleWrapper((sQQ) => {
     Object.defineProperty(sQQ, "__esModule", {
         value: !0
     });
     sQQ.default = void 0;
     var Eq4 = zq4(aQQ());
 
-function zq4(A) {
+    function zq4(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 
-function Uq4(A) {
+    function Uq4(A) {
         return typeof A === "string" && Eq4.default.test(A)
     }
     var $q4 = Uq4;
     sQQ.default = $q4
 });
-var zDA = U((tQQ) => {
+var zDA = moduleWrapper((tQQ) => {
     Object.defineProperty(tQQ, "__esModule", {
         value: !0
     });
@@ -909,20 +912,19 @@ var zDA = U((tQQ) => {
     tQQ.unsafeStringify = oQQ;
     var wq4 = qq4(EDA());
 
-function qq4(A) {
+    function qq4(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
-
-var lK = [];
+    var lK = [];
     for (let A = 0; A < 256; ++A) lK.push((A + 256).toString(16).slice(1));
 
-function oQQ(A, Q = 0) {
+    function oQQ(A, Q = 0) {
         return lK[A[Q + 0]] + lK[A[Q + 1]] + lK[A[Q + 2]] + lK[A[Q + 3]] + "-" + lK[A[Q + 4]] + lK[A[Q + 5]] + "-" + lK[A[Q + 6]] + lK[A[Q + 7]] + "-" + lK[A[Q + 8]] + lK[A[Q + 9]] + "-" + lK[A[Q + 10]] + lK[A[Q + 11]] + lK[A[Q + 12]] + lK[A[Q + 13]] + lK[A[Q + 14]] + lK[A[Q + 15]]
     }
 
-function Nq4(A, Q = 0) {
+    function Nq4(A, Q = 0) {
         let B = oQQ(A, Q);
         if (!(0, wq4.default)(B)) throw TypeError("Stringified UUID is invalid");
         return B
@@ -930,7 +932,7 @@ function Nq4(A, Q = 0) {
     var Lq4 = Nq4;
     tQQ.default = Lq4
 });
-var GBQ = U((QBQ) => {
+var GBQ = moduleWrapper((QBQ) => {
     Object.defineProperty(QBQ, "__esModule", {
         value: !0
     });
@@ -938,7 +940,7 @@ var GBQ = U((QBQ) => {
     var Oq4 = Tq4(HU1()),
         Rq4 = zDA();
 
-function Tq4(A) {
+    function Tq4(A) {
         return A && A.__esModule ? A : {
             default: A
         }
@@ -946,7 +948,7 @@ function Tq4(A) {
     var ABQ, CU1, EU1 = 0,
         zU1 = 0;
 
-function Pq4(A, Q, B) {
+    function Pq4(A, Q, B) {
         let G = Q && B || 0,
             Z = Q || Array(16);
         A = A || {};
@@ -974,20 +976,20 @@ function Pq4(A, Q, B) {
     var jq4 = Pq4;
     QBQ.default = jq4
 });
-var UU1 = U((ZBQ) => {
+var UU1 = moduleWrapper((ZBQ) => {
     Object.defineProperty(ZBQ, "__esModule", {
         value: !0
     });
     ZBQ.default = void 0;
     var Sq4 = _q4(EDA());
 
-function _q4(A) {
+    function _q4(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 
-function kq4(A) {
+    function kq4(A) {
         if (!(0, Sq4.default)(A)) throw TypeError("Invalid UUID");
         let Q, B = new Uint8Array(16);
         return B[0] = (Q = parseInt(A.slice(0, 8), 16)) >>> 24, B[1] = Q >>> 16 & 255, B[2] = Q >>> 8 & 255, B[3] = Q & 255, B[4] = (Q = parseInt(A.slice(9, 13), 16)) >>> 8, B[5] = Q & 255, B[6] = (Q = parseInt(A.slice(14, 18), 16)) >>> 8, B[7] = Q & 255, B[8] = (Q = parseInt(A.slice(19, 23), 16)) >>> 8, B[9] = Q & 255, B[10] = (Q = parseInt(A.slice(24, 36), 16)) / 1099511627776 & 255, B[11] = Q / 4294967296 & 255, B[12] = Q >>> 24 & 255, B[13] = Q >>> 16 & 255, B[14] = Q >>> 8 & 255, B[15] = Q & 255, B
@@ -995,7 +997,7 @@ function kq4(A) {
     var yq4 = kq4;
     ZBQ.default = yq4
 });
-var $U1 = U((WBQ) => {
+var $U1 = moduleWrapper((WBQ) => {
     Object.defineProperty(WBQ, "__esModule", {
         value: !0
     });
@@ -1004,13 +1006,13 @@ var $U1 = U((WBQ) => {
     var xq4 = zDA(),
         vq4 = bq4(UU1());
 
-function bq4(A) {
+    function bq4(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 
-function fq4(A) {
+    function fq4(A) {
         A = unescape(encodeURIComponent(A));
         let Q = [];
         for (let B = 0; B < A.length; ++B) Q.push(A.charCodeAt(B));
@@ -1021,7 +1023,7 @@ function fq4(A) {
     var JBQ = "6ba7b811-9dad-11d1-80b4-00c04fd430c8";
     WBQ.URL = JBQ;
 
-function hq4(A, Q, B) {
+    function hq4(A, Q, B) {
         function G(Z, I, Y, J) {
             var W;
             if (typeof Z === "string") Z = fq4(Z);
@@ -1041,20 +1043,20 @@ function hq4(A, Q, B) {
         return G.DNS = YBQ, G.URL = JBQ, G
     }
 });
-var KBQ = U((FBQ) => {
+var KBQ = moduleWrapper((FBQ) => {
     Object.defineProperty(FBQ, "__esModule", {
         value: !0
     });
     FBQ.default = void 0;
-    var mq4 = dq4(UA("crypto"));
+    var mq4 = dq4(nodeRequire("crypto"));
 
-function dq4(A) {
+    function dq4(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 
-function cq4(A) {
+    function cq4(A) {
         if (Array.isArray(A)) A = Buffer.from(A);
         else if (typeof A === "string") A = Buffer.from(A, "utf8");
         return mq4.default.createHash("md5").update(A).digest()
@@ -1062,7 +1064,7 @@ function cq4(A) {
     var pq4 = cq4;
     FBQ.default = pq4
 });
-var EBQ = U((HBQ) => {
+var EBQ = moduleWrapper((HBQ) => {
     Object.defineProperty(HBQ, "__esModule", {
         value: !0
     });
@@ -1070,7 +1072,7 @@ var EBQ = U((HBQ) => {
     var lq4 = DBQ($U1()),
         iq4 = DBQ(KBQ());
 
-function DBQ(A) {
+    function DBQ(A) {
         return A && A.__esModule ? A : {
             default: A
         }
@@ -1079,25 +1081,24 @@ function DBQ(A) {
         aq4 = nq4;
     HBQ.default = aq4
 });
-var $BQ = U((zBQ) => {
+var $BQ = moduleWrapper((zBQ) => {
     Object.defineProperty(zBQ, "__esModule", {
         value: !0
     });
     zBQ.default = void 0;
-    var sq4 = rq4(UA("crypto"));
+    var sq4 = rq4(nodeRequire("crypto"));
 
-function rq4(A) {
+    function rq4(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
-
-var oq4 = {
+    var oq4 = {
         randomUUID: sq4.default.randomUUID
     };
     zBQ.default = oq4
 });
-var MBQ = U((NBQ) => {
+var MBQ = moduleWrapper((NBQ) => {
     Object.defineProperty(NBQ, "__esModule", {
         value: !0
     });
@@ -1106,13 +1107,13 @@ var MBQ = U((NBQ) => {
         tq4 = qBQ(HU1()),
         eq4 = zDA();
 
-function qBQ(A) {
+    function qBQ(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 
-function AN4(A, Q, B) {
+    function AN4(A, Q, B) {
         if (wBQ.default.randomUUID && !Q && !A) return wBQ.default.randomUUID();
         A = A || {};
         let G = A.random || (A.rng || tq4.default)();
@@ -1126,20 +1127,20 @@ function AN4(A, Q, B) {
     var QN4 = AN4;
     NBQ.default = QN4
 });
-var TBQ = U((OBQ) => {
+var TBQ = moduleWrapper((OBQ) => {
     Object.defineProperty(OBQ, "__esModule", {
         value: !0
     });
     OBQ.default = void 0;
-    var BN4 = GN4(UA("crypto"));
+    var BN4 = GN4(nodeRequire("crypto"));
 
-function GN4(A) {
+    function GN4(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 
-function ZN4(A) {
+    function ZN4(A) {
         if (Array.isArray(A)) A = Buffer.from(A);
         else if (typeof A === "string") A = Buffer.from(A, "utf8");
         return BN4.default.createHash("sha1").update(A).digest()
@@ -1147,7 +1148,7 @@ function ZN4(A) {
     var IN4 = ZN4;
     OBQ.default = IN4
 });
-var _BQ = U((jBQ) => {
+var _BQ = moduleWrapper((jBQ) => {
     Object.defineProperty(jBQ, "__esModule", {
         value: !0
     });
@@ -1155,7 +1156,7 @@ var _BQ = U((jBQ) => {
     var YN4 = PBQ($U1()),
         JN4 = PBQ(TBQ());
 
-function PBQ(A) {
+    function PBQ(A) {
         return A && A.__esModule ? A : {
             default: A
         }
@@ -1164,7 +1165,7 @@ function PBQ(A) {
         XN4 = WN4;
     jBQ.default = XN4
 });
-var xBQ = U((kBQ) => {
+var xBQ = moduleWrapper((kBQ) => {
     Object.defineProperty(kBQ, "__esModule", {
         value: !0
     });
@@ -1172,27 +1173,27 @@ var xBQ = U((kBQ) => {
     var FN4 = "00000000-0000-0000-0000-000000000000";
     kBQ.default = FN4
 });
-var fBQ = U((vBQ) => {
+var fBQ = moduleWrapper((vBQ) => {
     Object.defineProperty(vBQ, "__esModule", {
         value: !0
     });
     vBQ.default = void 0;
     var VN4 = KN4(EDA());
 
-function KN4(A) {
+    function KN4(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 
-function DN4(A) {
+    function DN4(A) {
         if (!(0, VN4.default)(A)) throw TypeError("Invalid UUID");
         return parseInt(A.slice(14, 15), 16)
     }
     var HN4 = DN4;
     vBQ.default = HN4
 });
-var UDA = U((SR) => {
+var UDA = moduleWrapper((SR) => {
     Object.defineProperty(SR, "__esModule", {
         value: !0
     });
@@ -1260,13 +1261,13 @@ var UDA = U((SR) => {
         NN4 = Dv(zDA()),
         LN4 = Dv(UU1());
 
-function Dv(A) {
+    function Dv(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 });
-var qU1 = U((JX7, mBQ) => {
+var qU1 = moduleWrapper((JX7, mBQ) => {
     var {
         defineProperty: ffA,
         getOwnPropertyDescriptor: MN4,
@@ -1301,8 +1302,7 @@ var qU1 = U((JX7, mBQ) => {
         isTransientError: () => wU1
     });
     mBQ.exports = jN4(hBQ);
-
-var SN4 = ["AuthFailure", "InvalidSignatureException", "RequestExpired", "RequestInTheFuture", "RequestTimeTooSkewed", "SignatureDoesNotMatch"],
+    var SN4 = ["AuthFailure", "InvalidSignatureException", "RequestExpired", "RequestInTheFuture", "RequestTimeTooSkewed", "SignatureDoesNotMatch"],
         _N4 = ["BandwidthLimitExceeded", "EC2ThrottledException", "LimitExceededException", "PriorRequestNotComplete", "ProvisionedThroughputExceededException", "RequestLimitExceeded", "RequestThrottled", "RequestThrottledException", "SlowDown", "ThrottledException", "Throttling", "ThrottlingException", "TooManyRequestsException", "TransactionInProgressException"],
         kN4 = ["TimeoutError", "RequestTimeout", "RequestTimeoutException"],
         yN4 = [500, 502, 503, 504],
@@ -1327,7 +1327,7 @@ var SN4 = ["AuthFailure", "InvalidSignatureException", "RequestExpired", "Reques
             return !1
         }, "isServerError")
 });
-var FW = U((WX7, rBQ) => {
+var FW = moduleWrapper((WX7, rBQ) => {
     var {
         defineProperty: hfA,
         getOwnPropertyDescriptor: uN4,
@@ -1518,6 +1518,6 @@ var FW = U((WX7, rBQ) => {
                 try {
                     return await this.maxAttemptsProvider()
                 } catch (A) {
-                    return console.warn(`Max attempts provider could not resolve. Using default of ${NU1}`), NU1
+                    return console.warn(`Max attempts provider could not resolve. Using default of TextComponent{NU1}`), NU1
                 }
             }

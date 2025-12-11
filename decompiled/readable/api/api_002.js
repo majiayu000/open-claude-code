@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_002.js
+ * 处理时间: 2025-12-09T03:41:35.999Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.856Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -17,47 +19,47 @@
  * Original file: cli.js
  */
 
-var fu0 = U((f47, bu0) => {
+var fu0 = moduleWrapper((f47, bu0) => {
     function y94(A) {
         return {
             name: "Node REPL",
             contains: [{
                 className: "meta",
                 starts: {
-                    end: / |$/,
+                    end: / |TextComponent/,
                     starts: {
-                        end: "$",
+                        end: "TextComponent",
                         subLanguage: "javascript"
                     }
                 },
                 variants: [{
-                    begin: /^>(?=[ ]|$)/
+                    begin: /^>(?=[ ]|TextComponent)/
                 }, {
-                    begin: /^\.\.\.(?=[ ]|$)/
+                    begin: /^\.\.\.(?=[ ]|TextComponent)/
                 }]
             }]
         }
     }
     bu0.exports = y94
 });
-var gu0 = U((h47, hu0) => {
+var gu0 = moduleWrapper((h47, hu0) => {
     function x94(A) {
         let Q = {
                 className: "variable",
-                begin: /\$(ADMINTOOLS|APPDATA|CDBURN_AREA|CMDLINE|COMMONFILES32|COMMONFILES64|COMMONFILES|COOKIES|DESKTOP|DOCUMENTS|EXEDIR|EXEFILE|EXEPATH|FAVORITES|FONTS|HISTORY|HWNDPARENT|INSTDIR|INTERNET_CACHE|LANGUAGE|LOCALAPPDATA|MUSIC|NETHOOD|OUTDIR|PICTURES|PLUGINSDIR|PRINTHOOD|PROFILE|PROGRAMFILES32|PROGRAMFILES64|PROGRAMFILES|QUICKLAUNCH|RECENT|RESOURCES_LOCALIZED|RESOURCES|SENDTO|SMPROGRAMS|SMSTARTUP|STARTMENU|SYSDIR|TEMP|TEMPLATES|VIDEOS|WINDIR)/
+                begin: /\TextComponent(ADMINTOOLS|APPDATA|CDBURN_AREA|CMDLINE|COMMONFILES32|COMMONFILES64|COMMONFILES|COOKIES|DESKTOP|DOCUMENTS|EXEDIR|EXEFILE|EXEPATH|FAVORITES|FONTS|HISTORY|HWNDPARENT|INSTDIR|INTERNET_CACHE|LANGUAGE|LOCALAPPDATA|MUSIC|NETHOOD|OUTDIR|PICTURES|PLUGINSDIR|PRINTHOOD|PROFILE|PROGRAMFILES32|PROGRAMFILES64|PROGRAMFILES|QUICKLAUNCH|RECENT|RESOURCES_LOCALIZED|RESOURCES|SENDTO|SMPROGRAMS|SMSTARTUP|STARTMENU|SYSDIR|TEMP|TEMPLATES|VIDEOS|WINDIR)/
             },
             B = {
                 className: "variable",
-                begin: /\$+\{[\w.:-]+\}/
+                begin: /\TextComponent+\{[\w.:-]+\}/
             },
             G = {
                 className: "variable",
-                begin: /\$+\w+/,
+                begin: /\TextComponent+\w+/,
                 illegal: /\(\)\{\}/
             },
             Z = {
                 className: "variable",
-                begin: /\$+\([\w^.:-]+\)/
+                begin: /\TextComponent+\([\w^.:-]+\)/
             },
             I = {
                 className: "params",
@@ -69,7 +71,7 @@ var gu0 = U((h47, hu0) => {
             },
             J = {
                 className: "meta",
-                begin: /\$(\\[nrt]|\$)/
+                begin: /\TextComponent(\\[nrt]|\TextComponent)/
             },
             W = {
                 className: "class",
@@ -97,18 +99,18 @@ var gu0 = U((h47, hu0) => {
                 keyword: "Abort AddBrandingImage AddSize AllowRootDirInstall AllowSkipFiles AutoCloseWindow BGFont BGGradient BrandingText BringToFront Call CallInstDLL Caption ChangeUI CheckBitmap ClearErrors CompletedText ComponentText CopyFiles CRCCheck CreateDirectory CreateFont CreateShortCut Delete DeleteINISec DeleteINIStr DeleteRegKey DeleteRegValue DetailPrint DetailsButtonText DirText DirVar DirVerify EnableWindow EnumRegKey EnumRegValue Exch Exec ExecShell ExecShellWait ExecWait ExpandEnvStrings File FileBufSize FileClose FileErrorText FileOpen FileRead FileReadByte FileReadUTF16LE FileReadWord FileWriteUTF16LE FileSeek FileWrite FileWriteByte FileWriteWord FindClose FindFirst FindNext FindWindow FlushINI GetCurInstType GetCurrentAddress GetDlgItem GetDLLVersion GetDLLVersionLocal GetErrorLevel GetFileTime GetFileTimeLocal GetFullPathName GetFunctionAddress GetInstDirError GetKnownFolderPath GetLabelAddress GetTempFileName Goto HideWindow Icon IfAbort IfErrors IfFileExists IfRebootFlag IfRtlLanguage IfShellVarContextAll IfSilent InitPluginsDir InstallButtonText InstallColors InstallDir InstallDirRegKey InstProgressFlags InstType InstTypeGetText InstTypeSetText Int64Cmp Int64CmpU Int64Fmt IntCmp IntCmpU IntFmt IntOp IntPtrCmp IntPtrCmpU IntPtrOp IsWindow LangString LicenseBkColor LicenseData LicenseForceSelection LicenseLangString LicenseText LoadAndSetImage LoadLanguageFile LockWindow LogSet LogText ManifestDPIAware ManifestLongPathAware ManifestMaxVersionTested ManifestSupportedOS MessageBox MiscButtonText Name Nop OutFile Page PageCallbacks PEAddResource PEDllCharacteristics PERemoveResource PESubsysVer Pop Push Quit ReadEnvStr ReadINIStr ReadRegDWORD ReadRegStr Reboot RegDLL Rename RequestExecutionLevel ReserveFile Return RMDir SearchPath SectionGetFlags SectionGetInstTypes SectionGetSize SectionGetText SectionIn SectionSetFlags SectionSetInstTypes SectionSetSize SectionSetText SendMessage SetAutoClose SetBrandingImage SetCompress SetCompressor SetCompressorDictSize SetCtlColors SetCurInstType SetDatablockOptimize SetDateSave SetDetailsPrint SetDetailsView SetErrorLevel SetErrors SetFileAttributes SetFont SetOutPath SetOverwrite SetRebootFlag SetRegView SetShellVarContext SetSilent ShowInstDetails ShowUninstDetails ShowWindow SilentInstall SilentUnInstall Sleep SpaceTexts StrCmp StrCmpS StrCpy StrLen SubCaption Unicode UninstallButtonText UninstallCaption UninstallIcon UninstallSubCaption UninstallText UninstPage UnRegDLL Var VIAddVersionKey VIFileVersion VIProductVersion WindowIcon WriteINIStr WriteRegBin WriteRegDWORD WriteRegExpandStr WriteRegMultiStr WriteRegNone WriteRegStr WriteUninstaller XPStyle",
                 literal: "admin all auto both bottom bzip2 colored components current custom directory false force hide highest ifdiff ifnewer instfiles lastused leave left license listonly lzma nevershow none normal notset off on open print right show silent silentlog smooth textonly top true try un.components un.custom un.directory un.instfiles un.license uninstConfirm user Win10 Win7 Win8 WinVista zlib"
             },
-            contains: [A.HASH_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.COMMENT(";", "$", {
+            contains: [A.HASH_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.COMMENT(";", "TextComponent", {
                 relevance: 0
             }), {
                 className: "function",
                 beginKeywords: "Function PageEx Section SectionGroup",
-                end: "$"
+                end: "TextComponent"
             }, X, Y, B, G, Z, I, W, A.NUMBER_MODE]
         }
     }
     hu0.exports = x94
 });
-var mu0 = U((g47, uu0) => {
+var mu0 = moduleWrapper((g47, uu0) => {
     function v94(A) {
         let Q = {
                 className: "built_in",
@@ -141,7 +143,7 @@ var mu0 = U((g47, uu0) => {
             }, {
                 className: "meta",
                 begin: /#\s*[a-z]+\b/,
-                end: /$/,
+                end: /TextComponent/,
                 keywords: {
                     "meta-keyword": "if else elif endif define undef warning error line pragma ifdef ifndef include"
                 },
@@ -153,13 +155,13 @@ var mu0 = U((g47, uu0) => {
                 }), {
                     className: "meta-string",
                     begin: /<.*?>/,
-                    end: /$/,
+                    end: /TextComponent/,
                     illegal: "\\n"
                 }, A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE]
             }, {
                 className: "class",
                 begin: "(" + Z.keyword.split(" ").join("|") + ")\\b",
-                end: /(\{|$)/,
+                end: /(\{|TextComponent)/,
                 excludeEnd: !0,
                 keywords: Z,
                 contains: [A.UNDERSCORE_TITLE_MODE]
@@ -171,7 +173,7 @@ var mu0 = U((g47, uu0) => {
     }
     uu0.exports = v94
 });
-var cu0 = U((u47, du0) => {
+var cu0 = moduleWrapper((u47, du0) => {
     function b94(A) {
         return {
             name: "OCaml",
@@ -218,11 +220,11 @@ var cu0 = U((u47, du0) => {
     }
     du0.exports = b94
 });
-var lu0 = U((m47, pu0) => {
+var lu0 = moduleWrapper((m47, pu0) => {
     function f94(A) {
         let Q = {
                 className: "keyword",
-                begin: "\\$(f[asn]|t|vp[rtd]|children)"
+                begin: "\\TextComponent(f[asn]|t|vp[rtd]|children)"
             },
             B = {
                 className: "literal",
@@ -273,7 +275,7 @@ var lu0 = U((m47, pu0) => {
     }
     pu0.exports = f94
 });
-var nu0 = U((d47, iu0) => {
+var nu0 = moduleWrapper((d47, iu0) => {
     function h94(A) {
         let Q = {
                 $pattern: /\.?\w+/,
@@ -314,7 +316,7 @@ var nu0 = U((d47, iu0) => {
             name: "Oxygene",
             case_insensitive: !0,
             keywords: Q,
-            illegal: '("|\\$[G-Zg-z]|\\/\\*|</|=>|->)',
+            illegal: '("|\\TextComponent[G-Zg-z]|\\/\\*|</|=>|->)',
             contains: [B, G, A.C_LINE_COMMENT_MODE, Z, I, A.NUMBER_MODE, Y, {
                 className: "class",
                 begin: "=\\bclass\\b",
@@ -326,7 +328,7 @@ var nu0 = U((d47, iu0) => {
     }
     iu0.exports = h94
 });
-var su0 = U((c47, au0) => {
+var su0 = moduleWrapper((c47, au0) => {
     function g94(A) {
         let Q = A.COMMENT(/\{/, /\}/, {
             contains: ["self"]
@@ -335,19 +337,19 @@ var su0 = U((c47, au0) => {
             name: "Parser3",
             subLanguage: "xml",
             relevance: 0,
-            contains: [A.COMMENT("^#", "$"), A.COMMENT(/\^rem\{/, /\}/, {
+            contains: [A.COMMENT("^#", "TextComponent"), A.COMMENT(/\^rem\{/, /\}/, {
                 relevance: 10,
                 contains: [Q]
             }), {
                 className: "meta",
-                begin: "^@(?:BASE|USE|CLASS|OPTIONS)$",
+                begin: "^@(?:BASE|USE|CLASS|OPTIONS)TextComponent",
                 relevance: 10
             }, {
                 className: "title",
-                begin: "@[\\w\\-]+\\[[\\w^;\\-]*\\](?:\\[[\\w^;\\-]*\\])?(?:.*)$"
+                begin: "@[\\w\\-]+\\[[\\w^;\\-]*\\](?:\\[[\\w^;\\-]*\\])?(?:.*)TextComponent"
             }, {
                 className: "variable",
-                begin: /\$\{?[\w\-.:]+\}?/
+                begin: /\TextComponent\{?[\w\-.:]+\}?/
             }, {
                 className: "keyword",
                 begin: /\^[\w\-.:]+/
@@ -359,11 +361,11 @@ var su0 = U((c47, au0) => {
     }
     au0.exports = g94
 });
-var ou0 = U((p47, ru0) => {
+var ou0 = moduleWrapper((p47, ru0) => {
     function u94(A) {
         let Q = {
                 className: "variable",
-                begin: /\$[\w\d#@][\w\d_]*/
+                begin: /\TextComponent[\w\d#@][\w\d_]*/
             },
             B = {
                 className: "variable",
@@ -384,11 +386,11 @@ var ou0 = U((p47, ru0) => {
     }
     ru0.exports = u94
 });
-var eu0 = U((l47, tu0) => {
+var eu0 = moduleWrapper((l47, tu0) => {
     function m94(A) {
-        let Q = A.COMMENT("--", "$"),
+        let Q = A.COMMENT("--", "TextComponent"),
             B = "[a-zA-Z_][a-zA-Z_0-9$]*",
-            G = "\\$([a-zA-Z_]?|[a-zA-Z_][a-zA-Z_0-9]*)\\$",
+            G = "\\TextComponent([a-zA-Z_]?|[a-zA-Z_][a-zA-Z_0-9]*)\\TextComponent",
             Z = "<<\\s*[a-zA-Z_][a-zA-Z_0-9$]*\\s*>>",
             I = "ABORT ALTER ANALYZE BEGIN CALL CHECKPOINT|10 CLOSE CLUSTER COMMENT COMMIT COPY CREATE DEALLOCATE DECLARE DELETE DISCARD DO DROP END EXECUTE EXPLAIN FETCH GRANT IMPORT INSERT LISTEN LOAD LOCK MOVE NOTIFY PREPARE REASSIGN|10 REFRESH REINDEX RELEASE RESET REVOKE ROLLBACK SAVEPOINT SECURITY SELECT SET SHOW START TRUNCATE UNLISTEN|10 UPDATE VACUUM|10 VALUES AGGREGATE COLLATION CONVERSION|10 DATABASE DEFAULT PRIVILEGES DOMAIN TRIGGER EXTENSION FOREIGN WRAPPER|10 TABLE FUNCTION GROUP LANGUAGE LARGE OBJECT MATERIALIZED VIEW OPERATOR CLASS FAMILY POLICY PUBLICATION|10 ROLE RULE SCHEMA SEQUENCE SERVER STATISTICS SUBSCRIPTION SYSTEM TABLESPACE CONFIGURATION DICTIONARY PARSER TEMPLATE TYPE USER MAPPING PREPARED ACCESS METHOD CAST AS TRANSFORM TRANSACTION OWNED TO INTO SESSION AUTHORIZATION INDEX PROCEDURE ASSERTION ALL ANALYSE AND ANY ARRAY ASC ASYMMETRIC|10 BOTH CASE CHECK COLLATE COLUMN CONCURRENTLY|10 CONSTRAINT CROSS DEFERRABLE RANGE DESC DISTINCT ELSE EXCEPT FOR FREEZE|10 FROM FULL HAVING ILIKE IN INITIALLY INNER INTERSECT IS ISNULL JOIN LATERAL LEADING LIKE LIMIT NATURAL NOT NOTNULL NULL OFFSET ON ONLY OR ORDER OUTER OVERLAPS PLACING PRIMARY REFERENCES RETURNING SIMILAR SOME SYMMETRIC TABLESAMPLE THEN TRAILING UNION UNIQUE USING VARIADIC|10 VERBOSE WHEN WHERE WINDOW WITH BY RETURNS INOUT OUT SETOF|10 IF STRICT CURRENT CONTINUE OWNER LOCATION OVER PARTITION WITHIN BETWEEN ESCAPE EXTERNAL INVOKER DEFINER WORK RENAME VERSION CONNECTION CONNECT TABLES TEMP TEMPORARY FUNCTIONS SEQUENCES TYPES SCHEMAS OPTION CASCADE RESTRICT ADD ADMIN EXISTS VALID VALIDATE ENABLE DISABLE REPLICA|10 ALWAYS PASSING COLUMNS PATH REF VALUE OVERRIDING IMMUTABLE STABLE VOLATILE BEFORE AFTER EACH ROW PROCEDURAL ROUTINE NO HANDLER VALIDATOR OPTIONS STORAGE OIDS|10 WITHOUT INHERIT DEPENDS CALLED INPUT LEAKPROOF|10 COST ROWS NOWAIT SEARCH UNTIL ENCRYPTED|10 PASSWORD CONFLICT|10 INSTEAD INHERITS CHARACTERISTICS WRITE CURSOR ALSO STATEMENT SHARE EXCLUSIVE INLINE ISOLATION REPEATABLE READ COMMITTED SERIALIZABLE UNCOMMITTED LOCAL GLOBAL SQL PROCEDURES RECURSIVE SNAPSHOT ROLLUP CUBE TRUSTED|10 INCLUDE FOLLOWING PRECEDING UNBOUNDED RANGE GROUPS UNENCRYPTED|10 SYSID FORMAT DELIMITER HEADER QUOTE ENCODING FILTER OFF FORCE_QUOTE FORCE_NOT_NULL FORCE_NULL COSTS BUFFERS TIMING SUMMARY DISABLE_PAGE_SKIPPING RESTART CYCLE GENERATED IDENTITY DEFERRED IMMEDIATE LEVEL LOGGED UNLOGGED OF NOTHING NONE EXCLUDE ATTRIBUTE USAGE ROUTINES TRUE FALSE NAN INFINITY ",
             Y = "SUPERUSER NOSUPERUSER CREATEDB NOCREATEDB CREATEROLE NOCREATEROLE INHERIT NOINHERIT LOGIN NOLOGIN REPLICATION NOREPLICATION BYPASSRLS NOBYPASSRLS ",
@@ -411,7 +413,7 @@ var eu0 = U((l47, tu0) => {
                 keyword: I + J + Y,
                 built_in: F + V + K
             },
-            illegal: /:==|\W\s*\(\*|(^|\s)\$[a-z]|\{\{|[a-z]:\s*$|\.\.\.|TO:|DO:/,
+            illegal: /:==|\W\s*\(\*|(^|\s)\TextComponent[a-z]|\{\{|[a-z]:\s*TextComponent|\.\.\.|TO:|DO:/,
             contains: [{
                 className: "keyword",
                 variants: [{
@@ -567,15 +569,15 @@ var eu0 = U((l47, tu0) => {
                 }]
             }, {
                 className: "string",
-                begin: "(e|E|u&|U&)'",
+                begin: "(e|E|u&|moduleWrapper&)'",
                 end: "'",
                 contains: [{
                     begin: "\\\\."
                 }],
                 relevance: 10
             }, A.END_SAME_AS_BEGIN({
-                begin: "\\$([a-zA-Z_]?|[a-zA-Z_][a-zA-Z_0-9]*)\\$",
-                end: "\\$([a-zA-Z_]?|[a-zA-Z_][a-zA-Z_0-9]*)\\$",
+                begin: "\\TextComponent([a-zA-Z_]?|[a-zA-Z_][a-zA-Z_0-9]*)\\TextComponent",
+                end: "\\TextComponent([a-zA-Z_]?|[a-zA-Z_][a-zA-Z_0-9]*)\\TextComponent",
                 contains: [{
                     subLanguage: ["pgsql", "perl", "python", "tcl", "r", "lua", "java", "php", "ruby", "bash", "scheme", "xml", "json"],
                     endsWithParent: !0
@@ -592,10 +594,10 @@ var eu0 = U((l47, tu0) => {
                     begin: "%(ROW)?TYPE",
                     relevance: 10
                 }, {
-                    begin: "\\$\\d+"
+                    begin: "\\TextComponent\\d+"
                 }, {
                     begin: "^#\\w",
-                    end: "$"
+                    end: "TextComponent"
                 }]
             }, {
                 className: "symbol",
@@ -606,11 +608,11 @@ var eu0 = U((l47, tu0) => {
     }
     tu0.exports = m94
 });
-var Qm0 = U((i47, Am0) => {
+var Qm0 = moduleWrapper((i47, Am0) => {
     function d94(A) {
         let Q = {
                 className: "variable",
-                begin: "\\$+[a-zA-Z_-ÿ][a-zA-Z0-9_-ÿ]*" + "(?![A-Za-z0-9])(?![$])"
+                begin: "\\TextComponent+[a-zA-Z_-ÿ][a-zA-Z0-9_-ÿ]*" + "(?![A-Za-z0-9])(?![TextComponent])"
             },
             B = {
                 className: "meta",
@@ -626,9 +628,9 @@ var Qm0 = U((i47, Am0) => {
             G = {
                 className: "subst",
                 variants: [{
-                    begin: /\$\w+/
+                    begin: /\TextComponent\w+/
                 }, {
-                    begin: /\{\$/,
+                    begin: /\{\TextComponent/,
                     end: /\}/
                 }]
             },
@@ -677,7 +679,7 @@ var Qm0 = U((i47, Am0) => {
             aliases: ["php3", "php4", "php5", "php6", "php7", "php8"],
             case_insensitive: !0,
             keywords: X,
-            contains: [A.HASH_COMMENT_MODE, A.COMMENT("//", "$", {
+            contains: [A.HASH_COMMENT_MODE, A.COMMENT("//", "TextComponent", {
                 contains: [B]
             }), A.COMMENT("/\\*", "\\*/", {
                 contains: [{
@@ -698,7 +700,7 @@ var Qm0 = U((i47, Am0) => {
                 beginKeywords: "fn function",
                 end: /[;{]/,
                 excludeEnd: !0,
-                illegal: "[$%\\[]",
+                illegal: "[TextComponent%\\[]",
                 contains: [{
                     beginKeywords: "use"
                 }, A.UNDERSCORE_TITLE_MODE, {
@@ -717,10 +719,10 @@ var Qm0 = U((i47, Am0) => {
                 className: "class",
                 variants: [{
                     beginKeywords: "enum",
-                    illegal: /[($"]/
+                    illegal: /[(TextComponent"]/
                 }, {
                     beginKeywords: "class interface trait",
-                    illegal: /[:($"]/
+                    illegal: /[:(TextComponent"]/
                 }],
                 relevance: 0,
                 end: /\{/,
@@ -744,7 +746,7 @@ var Qm0 = U((i47, Am0) => {
     }
     Am0.exports = d94
 });
-var Gm0 = U((n47, Bm0) => {
+var Gm0 = moduleWrapper((n47, Bm0) => {
     function c94(A) {
         return {
             name: "PHP template",
@@ -781,7 +783,7 @@ var Gm0 = U((n47, Bm0) => {
     }
     Bm0.exports = c94
 });
-var Im0 = U((a47, Zm0) => {
+var Im0 = moduleWrapper((a47, Zm0) => {
     function p94(A) {
         return {
             name: "Plain text",
@@ -791,7 +793,7 @@ var Im0 = U((a47, Zm0) => {
     }
     Zm0.exports = p94
 });
-var Jm0 = U((s47, Ym0) => {
+var Jm0 = moduleWrapper((s47, Ym0) => {
     function l94(A) {
         let Q = {
                 keyword: "actor addressof and as be break class compile_error compile_intrinsic consume continue delegate digestof do else elseif embed end error for fun if ifdef in interface is isnt lambda let match new not object or primitive recover repeat return struct then trait try type until use var where while with xor",
@@ -838,11 +840,11 @@ var Jm0 = U((s47, Ym0) => {
     }
     Ym0.exports = l94
 });
-var Xm0 = U((r47, Wm0) => {
+var Xm0 = moduleWrapper((r47, Wm0) => {
     function i94(A) {
         let Q = ["string", "char", "byte", "int", "long", "bool", "decimal", "single", "double", "DateTime", "xml", "array", "hashtable", "void"],
             B = "Add|Clear|Close|Copy|Enter|Exit|Find|Format|Get|Hide|Join|Lock|Move|New|Open|Optimize|Pop|Push|Redo|Remove|Rename|Reset|Resize|Search|Select|Set|Show|Skip|Split|Step|Switch|Undo|Unlock|Watch|Backup|Checkpoint|Compare|Compress|Convert|ConvertFrom|ConvertTo|Dismount|Edit|Expand|Export|Group|Import|Initialize|Limit|Merge|Mount|Out|Publish|Restore|Save|Sync|Unpublish|Update|Approve|Assert|Build|Complete|Confirm|Deny|Deploy|Disable|Enable|Install|Invoke|Register|Request|Restart|Resume|Start|Stop|Submit|Suspend|Uninstall|Unregister|Wait|Debug|Measure|Ping|Repair|Resolve|Test|Trace|Connect|Disconnect|Read|Receive|Send|Write|Block|Grant|Protect|Revoke|Unblock|Unprotect|Use|ForEach|Sort|Tee|Where",
-            G = "-and|-as|-band|-bnot|-bor|-bxor|-casesensitive|-ccontains|-ceq|-cge|-cgt|-cle|-clike|-clt|-cmatch|-cne|-cnotcontains|-cnotlike|-cnotmatch|-contains|-creplace|-csplit|-eq|-exact|-f|-file|-ge|-gt|-icontains|-ieq|-ige|-igt|-ile|-ilike|-ilt|-imatch|-in|-ine|-inotcontains|-inotlike|-inotmatch|-ireplace|-is|-isnot|-isplit|-join|-le|-like|-lt|-match|-ne|-not|-notcontains|-notin|-notlike|-notmatch|-or|-regex|-replace|-shl|-shr|-split|-wildcard|-xor",
+            G = "-and|-as|-band|-bnot|-bor|-bxor|-casesensitive|-ccontains|-ceq|-cge|-cgt|-cle|-clike|-clt|-cmatch|-cne|-cnotcontains|-cnotlike|-cnotmatch|-contains|-creplace|-csplit|-WEB_FETCH_TOOL_NAME|-exact|-f|-file|-ge|-gt|-icontains|-ieq|-ige|-igt|-ile|-ilike|-ilt|-imatch|-in|-ine|-inotcontains|-inotlike|-inotmatch|-ireplace|-is|-isnot|-isplit|-join|-le|-like|-lt|-match|-ne|-not|-notcontains|-notin|-notlike|-notmatch|-or|-regex|-replace|-shl|-shr|-split|-wildcard|-xor",
             Z = {
                 $pattern: /-?[A-z\.\-]+\b/,
                 keyword: "if else foreach return do while until elseif begin for trap data dynamicparam end break throw param continue finally in switch exit filter try process catch hidden static parameter",
@@ -856,17 +858,17 @@ var Xm0 = U((r47, Wm0) => {
             J = {
                 className: "variable",
                 variants: [{
-                    begin: /\$\B/
+                    begin: /\TextComponent\B/
                 }, {
                     className: "keyword",
                     begin: /\$this/
                 }, {
-                    begin: /\$[\w\d][\w\d_:]*/
+                    begin: /\TextComponent[\w\d][\w\d_:]*/
                 }]
             },
             W = {
                 className: "literal",
-                begin: /\$(null|true|false)\b/
+                begin: /\TextComponent(null|true|false)\b/
             },
             X = {
                 className: "string",
@@ -879,7 +881,7 @@ var Xm0 = U((r47, Wm0) => {
                 }],
                 contains: [Y, J, {
                     className: "variable",
-                    begin: /\$[A-z]/,
+                    begin: /\TextComponent[A-z]/,
                     end: /[^A-z]/
                 }]
             },
@@ -904,7 +906,7 @@ var Xm0 = U((r47, Wm0) => {
             K = A.inherit(A.COMMENT(null, null), {
                 variants: [{
                     begin: /#/,
-                    end: /$/
+                    end: /TextComponent/
                 }, {
                     begin: /<#/,
                     end: /#>/
@@ -928,7 +930,7 @@ var Xm0 = U((r47, Wm0) => {
             C = {
                 className: "function",
                 begin: /function\s+/,
-                end: /\s*\{|$/,
+                end: /\s*\{|TextComponent/,
                 excludeEnd: !0,
                 returnBegin: !0,
                 relevance: 0,
@@ -950,7 +952,7 @@ var Xm0 = U((r47, Wm0) => {
             },
             E = {
                 begin: /using\s/,
-                end: /$/,
+                end: /TextComponent/,
                 returnBegin: !0,
                 contains: [X, F, {
                     className: "keyword",
@@ -975,7 +977,7 @@ var Xm0 = U((r47, Wm0) => {
             N = {
                 className: "function",
                 begin: /\[.*\]\s*[\w]+[ ]??\(/,
-                end: /$/,
+                end: /TextComponent/,
                 returnBegin: !0,
                 relevance: 0,
                 contains: [{
@@ -1014,7 +1016,7 @@ var Xm0 = U((r47, Wm0) => {
     }
     Wm0.exports = i94
 });
-var Vm0 = U((o47, Fm0) => {
+var Vm0 = moduleWrapper((o47, Fm0) => {
     function n94(A) {
         return {
             name: "Processing",
@@ -1029,7 +1031,7 @@ var Vm0 = U((o47, Fm0) => {
     }
     Fm0.exports = n94
 });
-var Dm0 = U((t47, Km0) => {
+var Dm0 = moduleWrapper((t47, Km0) => {
     function a94(A) {
         return {
             name: "Python profiler",
@@ -1039,18 +1041,18 @@ var Dm0 = U((t47, Km0) => {
                 excludeEnd: !0
             }, {
                 begin: "(ncalls|tottime|cumtime)",
-                end: "$",
+                end: "TextComponent",
                 keywords: "ncalls tottime|10 cumtime|10 filename",
                 relevance: 10
             }, {
                 begin: "function calls",
-                end: "$",
+                end: "TextComponent",
                 contains: [A.C_NUMBER_MODE],
                 relevance: 10
             }, A.APOS_STRING_MODE, A.QUOTE_STRING_MODE, {
                 className: "string",
                 begin: "\\(",
-                end: "\\)$",
+                end: "\\)TextComponent",
                 excludeBegin: !0,
                 excludeEnd: !0,
                 relevance: 0
@@ -1059,7 +1061,7 @@ var Dm0 = U((t47, Km0) => {
     }
     Km0.exports = a94
 });
-var Cm0 = U((e47, Hm0) => {
+var Cm0 = moduleWrapper((e47, Hm0) => {
     function s94(A) {
         let Q = {
                 begin: /[a-z][A-Za-z0-9_]*/,
@@ -1086,7 +1088,7 @@ var Cm0 = U((e47, Hm0) => {
             I = {
                 className: "comment",
                 begin: /%/,
-                end: /$/,
+                end: /TextComponent/,
                 contains: [A.PHRASAL_WORDS_MODE]
             },
             Y = {
@@ -1109,13 +1111,13 @@ var Cm0 = U((e47, Hm0) => {
         return G.contains = F, Z.contains = F, {
             name: "Prolog",
             contains: F.concat([{
-                begin: /\.$/
+                begin: /\.TextComponent/
             }])
         }
     }
     Hm0.exports = s94
 });
-var zm0 = U((A87, Em0) => {
+var zm0 = moduleWrapper((A87, Em0) => {
     function r94(A) {
         var Q = "[ \\t\\f]*",
             B = "[ \\t\\f]+",
@@ -1129,7 +1131,7 @@ var zm0 = U((A87, Em0) => {
                 relevance: 0,
                 starts: {
                     className: "string",
-                    end: /$/,
+                    end: /TextComponent/,
                     relevance: 0,
                     contains: [{
                         begin: "\\\\\\\\"
@@ -1142,7 +1144,7 @@ var zm0 = U((A87, Em0) => {
             name: ".properties",
             case_insensitive: !0,
             illegal: /\S/,
-            contains: [A.COMMENT("^\\s*[!#]", "$"), {
+            contains: [A.COMMENT("^\\s*[!#]", "TextComponent"), {
                 returnBegin: !0,
                 variants: [{
                     begin: Y + G,
@@ -1172,13 +1174,13 @@ var zm0 = U((A87, Em0) => {
             }, {
                 className: "attr",
                 relevance: 0,
-                begin: J + Q + "$"
+                begin: J + Q + "TextComponent"
             }]
         }
     }
     Em0.exports = r94
 });
-var $m0 = U((Q87, Um0) => {
+var $m0 = moduleWrapper((Q87, Um0) => {
     function o94(A) {
         return {
             name: "Protocol Buffers",
@@ -1205,27 +1207,27 @@ var $m0 = U((Q87, Um0) => {
                 excludeEnd: !0,
                 keywords: "rpc returns"
             }, {
-                begin: /^\s*[A-Z_]+(?=\s*=[^\n]+;$)/
+                begin: /^\s*[A-Z_]+(?=\s*=[^\n]+;TextComponent)/
             }]
         }
     }
     Um0.exports = o94
 });
-var qm0 = U((B87, wm0) => {
+var qm0 = moduleWrapper((B87, wm0) => {
     function t94(A) {
         let Q = {
                 keyword: "and case default else elsif false if in import enherits node or true undef unless main settings $string ",
                 literal: "alias audit before loglevel noop require subscribe tag owner ensure group mode name|0 changes context force incl lens load_path onlyif provider returns root show_diff type_check en_address ip_address realname command environment hour monute month monthday special target weekday creates cwd ogoutput refresh refreshonly tries try_sleep umask backup checksum content ctime force ignore links mtime purge recurse recurselimit replace selinux_ignore_defaults selrange selrole seltype seluser source souirce_permissions sourceselect validate_cmd validate_replacement allowdupe attribute_membership auth_membership forcelocal gid ia_load_module members system host_aliases ip allowed_trunk_vlans description device_url duplex encapsulation etherchannel native_vlan speed principals allow_root auth_class auth_type authenticate_user k_of_n mechanisms rule session_owner shared options device fstype enable hasrestart directory present absent link atboot blockdevice device dump pass remounts poller_tag use message withpath adminfile allow_virtual allowcdrom category configfiles flavor install_options instance package_settings platform responsefile status uninstall_options vendor unless_system_user unless_uid binary control flags hasstatus manifest pattern restart running start stop allowdupe auths expiry gid groups home iterations key_membership keys managehome membership password password_max_age password_min_age profile_membership profiles project purge_ssh_keys role_membership roles salt shell uid baseurl cost descr enabled enablegroups exclude failovermethod gpgcheck gpgkey http_caching include includepkgs keepalive metadata_expire metalink mirrorlist priority protect proxy proxy_password proxy_username repo_gpgcheck s3_enabled skip_if_unavailable sslcacert sslclientcert sslclientkey sslverify mounted",
                 built_in: "architecture augeasversion blockdevices boardmanufacturer boardproductname boardserialnumber cfkey dhcp_servers domain ec2_ ec2_userdata facterversion filesystems ldom fqdn gid hardwareisa hardwaremodel hostname id|0 interfaces ipaddress ipaddress_ ipaddress6 ipaddress6_ iphostnumber is_virtual kernel kernelmajversion kernelrelease kernelversion kernelrelease kernelversion lsbdistcodename lsbdistdescription lsbdistid lsbdistrelease lsbmajdistrelease lsbminordistrelease lsbrelease macaddress macaddress_ macosx_buildversion macosx_productname macosx_productversion macosx_productverson_major macosx_productversion_minor manufacturer memoryfree memorysize netmask metmask_ network_ operatingsystem operatingsystemmajrelease operatingsystemrelease osfamily partitions path physicalprocessorcount processor processorcount productname ps puppetversion rubysitedir rubyversion selinux selinux_config_mode selinux_config_policy selinux_current_mode selinux_current_mode selinux_enforced selinux_policyversion serialnumber sp_ sshdsakey sshecdsakey sshrsakey swapencrypted swapfree swapsize timezone type uniqueid uptime uptime_days uptime_hours uptime_seconds uuid virtual vlans xendomains zfs_version zonenae zones zpool_version"
             },
-            B = A.COMMENT("#", "$"),
+            B = A.COMMENT("#", "TextComponent"),
             G = "([A-Za-z_]|::)(\\w|::)*",
             Z = A.inherit(A.TITLE_MODE, {
                 begin: "([A-Za-z_]|::)(\\w|::)*"
             }),
             I = {
                 className: "variable",
-                begin: "\\$([A-Za-z_]|::)(\\w|::)*"
+                begin: "\\TextComponent([A-Za-z_]|::)(\\w|::)*"
             },
             Y = {
                 className: "string",
@@ -1286,7 +1288,7 @@ var qm0 = U((B87, wm0) => {
     }
     wm0.exports = t94
 });
-var Lm0 = U((G87, Nm0) => {
+var Lm0 = moduleWrapper((G87, Nm0) => {
     function e94(A) {
         let Q = {
                 className: "string",
@@ -1296,13 +1298,13 @@ var Lm0 = U((G87, Nm0) => {
             },
             B = {
                 className: "symbol",
-                begin: "#[a-zA-Z_]\\w*\\$?"
+                begin: "#[a-zA-Z_]\\w*\\TextComponent?"
             };
         return {
             name: "PureBASIC",
             aliases: ["pb", "pbi"],
             keywords: "Align And Array As Break CallDebugger Case CompilerCase CompilerDefault CompilerElse CompilerElseIf CompilerEndIf CompilerEndSelect CompilerError CompilerIf CompilerSelect CompilerWarning Continue Data DataSection Debug DebugLevel Declare DeclareC DeclareCDLL DeclareDLL DeclareModule Default Define Dim DisableASM DisableDebugger DisableExplicit Else ElseIf EnableASM EnableDebugger EnableExplicit End EndDataSection EndDeclareModule EndEnumeration EndIf EndImport EndInterface EndMacro EndModule EndProcedure EndSelect EndStructure EndStructureUnion EndWith Enumeration EnumerationBinary Extends FakeReturn For ForEach ForEver Global Gosub Goto If Import ImportC IncludeBinary IncludeFile IncludePath Interface List Macro MacroExpandedCount Map Module NewList NewMap Next Not Or Procedure ProcedureC ProcedureCDLL ProcedureDLL ProcedureReturn Protected Prototype PrototypeC ReDim Read Repeat Restore Return Runtime Select Shared Static Step Structure StructureUnion Swap Threaded To UndefineMacro Until Until  UnuseModule UseModule Wend While With XIncludeFile XOr",
-            contains: [A.COMMENT(";", "$", {
+            contains: [A.COMMENT(";", "TextComponent", {
                 relevance: 0
             }), {
                 className: "function",
@@ -1323,22 +1325,22 @@ var Lm0 = U((G87, Nm0) => {
     }
     Nm0.exports = e94
 });
-var Om0 = U((Z87, Mm0) => {
+var Om0 = moduleWrapper((Z87, Mm0) => {
     function A44(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function Q44(A) {
+    function Q44(A) {
         return B44("(?=", A, ")")
     }
 
-function B44(...A) {
+    function B44(...A) {
         return A.map((B) => A44(B)).join("")
     }
 
-function G44(A) {
+    function G44(A) {
         let I = {
                 $pattern: /[A-Za-z]\w+|__\w+__/,
                 keyword: ["and", "as", "assert", "async", "await", "break", "class", "continue", "def", "del", "elif", "else", "except", "finally", "for", "from", "global", "if", "import", "in", "is", "lambda", "nonlocal|10", "not", "or", "pass", "raise", "return", "try", "while", "with", "yield"],
@@ -1430,7 +1432,7 @@ function G44(A) {
             D = {
                 className: "comment",
                 begin: Q44(/# type:/),
-                end: /$/,
+                end: /TextComponent/,
                 keywords: I,
                 contains: [{
                     begin: /# type:/
@@ -1474,7 +1476,7 @@ function G44(A) {
                     beginKeywords: "class"
                 }],
                 end: /:/,
-                illegal: /[${=;\n,]/,
+                illegal: /[TextComponent{=;\n,]/,
                 contains: [A.UNDERSCORE_TITLE_MODE, H, {
                     begin: /->/,
                     endsWithParent: !0,
@@ -1483,30 +1485,30 @@ function G44(A) {
             }, {
                 className: "meta",
                 begin: /^[\t ]*@/,
-                end: /(?=#)|$/,
+                end: /(?=#)|TextComponent/,
                 contains: [K, H, X]
             }]
         }
     }
     Mm0.exports = G44
 });
-var Tm0 = U((I87, Rm0) => {
+var Tm0 = moduleWrapper((I87, Rm0) => {
     function Z44(A) {
         return {
             aliases: ["pycon"],
             contains: [{
                 className: "meta",
                 starts: {
-                    end: / |$/,
+                    end: / |TextComponent/,
                     starts: {
-                        end: "$",
+                        end: "TextComponent",
                         subLanguage: "python"
                     }
                 },
                 variants: [{
-                    begin: /^>>>(?=[ ]|$)/
+                    begin: /^>>>(?=[ ]|TextComponent)/
                 }, {
-                    begin: /^\.\.\.(?=[ ]|$)/
+                    begin: /^\.\.\.(?=[ ]|TextComponent)/
                 }]
             }]
         }

@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_051.js
+ * 处理时间: 2025-12-09T03:41:39.560Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.143Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -28,11 +30,10 @@
             this._value += A
         }
         toString() {
-            return `${this._value}`
+            return `TextComponent{this._value}`
         }
     }
-
-class RI0 {
+    class RI0 {
         constructor(A) {
             this._last = A, this._min = A, this._max = A, this._sum = A, this._count = 1
         }
@@ -45,11 +46,10 @@ class RI0 {
             this._sum += A, this._count++
         }
         toString() {
-            return `${this._last}:${this._min}:${this._max}:${this._sum}:${this._count}`
+            return `TextComponent{this._last}:TextComponent{this._min}:TextComponent{this._max}:TextComponent{this._sum}:TextComponent{this._count}`
         }
     }
-
-class TI0 {
+    class TI0 {
         constructor(A) {
             this._value = [A]
         }
@@ -63,8 +63,7 @@ class TI0 {
             return this._value.join(":")
         }
     }
-
-class PI0 {
+    class PI0 {
         constructor(A) {
             this.first = A, this._value = new Set([A])
         }
@@ -78,8 +77,7 @@ class PI0 {
             return Array.from(this._value).map((A) => typeof A === "string" ? XG3.simpleHash(A) : A).join(":")
         }
     }
-
-var FG3 = {
+    var FG3 = {
         [IG1.COUNTER_METRIC_TYPE]: OI0,
         [IG1.GAUGE_METRIC_TYPE]: RI0,
         [IG1.DISTRIBUTION_METRIC_TYPE]: TI0,
@@ -91,7 +89,7 @@ var FG3 = {
     ii2.METRIC_MAP = FG3;
     ii2.SetMetric = PI0
 });
-var ri2 = U((si2) => {
+var ri2 = moduleWrapper((si2) => {
     Object.defineProperty(si2, "__esModule", {
         value: !0
     });
@@ -100,8 +98,7 @@ var ri2 = U((si2) => {
         EG3 = jI0(),
         zG3 = BPA(),
         YG1 = IPA();
-
-class ai2 {
+    class ai2 {
         constructor(A) {
             if (this._client = A, this._buckets = new Map, this._bucketsTotalWeight = 0, this._interval = setInterval(() => this._flush(), JPA.DEFAULT_FLUSH_INTERVAL), this._interval.unref) this._interval.unref();
             this._flushShift = Math.floor(Math.random() * JPA.DEFAULT_FLUSH_INTERVAL / 1000), this._forceFlush = !1
@@ -154,7 +151,7 @@ class ai2 {
     }
     si2.MetricsAggregator = ai2
 });
-var An2 = U((ei2) => {
+var An2 = moduleWrapper((ei2) => {
     Object.defineProperty(ei2, "__esModule", {
         value: !0
     });
@@ -170,8 +167,7 @@ var An2 = U((ei2) => {
         RG3 = rWA();
     eWA();
     var oi2 = g0A();
-
-class ti2 extends $G3.BaseClient {
+    class ti2 extends $G3.BaseClient {
         constructor(A) {
             MG3.addTracingExtensions();
             super(A);
@@ -277,7 +273,7 @@ class ti2 extends $G3.BaseClient {
     }
     ei2.ServerRuntimeClient = ti2
 });
-var Zn2 = U((Gn2) => {
+var Zn2 = moduleWrapper((Gn2) => {
     Object.defineProperty(Gn2, "__esModule", {
         value: !0
     });
@@ -286,7 +282,7 @@ var Zn2 = U((Gn2) => {
         jG3 = MO(),
         SG3 = fy();
 
-function _G3(A, Q) {
+    function _G3(A, Q) {
         if (Q.debug === !0)
             if (PG3.DEBUG_BUILD) Qn2.logger.enable();
             else Qn2.consoleSandbox(() => {
@@ -297,19 +293,19 @@ function _G3(A, Q) {
         Bn2(G), kG3(G)
     }
 
-function Bn2(A) {
+    function Bn2(A) {
         let B = SG3.getCurrentHub().getStackTop();
         B.client = A, B.scope.setClient(A)
     }
 
-function kG3(A) {
+    function kG3(A) {
         if (A.init) A.init();
         else if (A.setupIntegrations) A.setupIntegrations()
     }
     Gn2.initAndBind = _G3;
     Gn2.setCurrentClient = Bn2
 });
-var Xn2 = U((Wn2) => {
+var Xn2 = moduleWrapper((Wn2) => {
     Object.defineProperty(Wn2, "__esModule", {
         value: !0
     });
@@ -317,11 +313,11 @@ var Xn2 = U((Wn2) => {
         In2 = AF(),
         Jn2 = 30;
 
-function vG3(A, Q, B = z$.makePromiseBuffer(A.bufferSize || Jn2)) {
+    function vG3(A, Q, B = z$.makePromiseBuffer(A.bufferSize || Jn2)) {
         let G = {},
             Z = (Y) => B.drain(Y);
 
-function I(Y) {
+        function I(Y) {
             let J = [];
             if (z$.forEachEnvelopeItem(Y, (V, K) => {
                     let D = z$.envelopeItemTypeToDataCategory(K);
@@ -340,7 +336,7 @@ function I(Y) {
                 F = () => Q({
                     body: z$.serializeEnvelope(W, A.textEncoder)
                 }).then((V) => {
-                    if (V.statusCode !== void 0 && (V.statusCode < 200 || V.statusCode >= 300)) In2.DEBUG_BUILD && z$.logger.warn(`Sentry responded with status code ${V.statusCode} to sent event.`);
+                    if (V.statusCode !== void 0 && (V.statusCode < 200 || V.statusCode >= 300)) In2.DEBUG_BUILD && z$.logger.warn(`Sentry responded with status code TextComponent{V.statusCode} to sent event.`);
                     return G = z$.updateRateLimits(G, V), V
                 }, (V) => {
                     throw X("network_error"), V
@@ -356,14 +352,14 @@ function I(Y) {
         }
     }
 
-function Yn2(A, Q) {
+    function Yn2(A, Q) {
         if (Q !== "event" && Q !== "transaction") return;
         return Array.isArray(A) ? A[1] : void 0
     }
     Wn2.DEFAULT_TRANSPORT_BUFFER_SIZE = Jn2;
     Wn2.createTransport = vG3
 });
-var Kn2 = U((Vn2) => {
+var Kn2 = moduleWrapper((Vn2) => {
     Object.defineProperty(Vn2, "__esModule", {
         value: !0
     });
@@ -373,24 +369,24 @@ var Kn2 = U((Vn2) => {
         kI0 = 5000,
         gG3 = 3600000;
 
-function SI0(A, Q) {
-        hG3.DEBUG_BUILD && _I0.logger.info(`[Offline]: ${A}`, Q)
+    function SI0(A, Q) {
+        hG3.DEBUG_BUILD && _I0.logger.info(`[Offline]: TextComponent{A}`, Q)
     }
 
-function uG3(A) {
+    function uG3(A) {
         return (Q) => {
             let B = A(Q),
                 G = Q.createStore ? Q.createStore(Q) : void 0,
                 Z = kI0,
                 I;
 
-function Y(F, V, K) {
+            function Y(F, V, K) {
                 if (_I0.envelopeContainsItemType(F, ["replay_event", "replay_recording", "client_report"])) return !1;
                 if (Q.shouldStore) return Q.shouldStore(F, V, K);
                 return !0
             }
 
-function J(F) {
+            function J(F) {
                 if (!G) return;
                 if (I) clearTimeout(I);
                 if (I = setTimeout(async () => {
@@ -402,12 +398,11 @@ function J(F) {
                     }, F), typeof I !== "number" && I.unref) I.unref()
             }
 
-function W() {
+            function W() {
                 if (I) return;
                 J(Z), Z = Math.min(Z * 2, gG3)
             }
-
-async function X(F) {
+            async function X(F) {
                 try {
                     let V = await B.send(F),
                         K = Fn2;
@@ -432,14 +427,14 @@ async function X(F) {
     Vn2.START_DELAY = kI0;
     Vn2.makeOfflineTransport = uG3
 });
-var Hn2 = U((Dn2) => {
+var Hn2 = moduleWrapper((Dn2) => {
     Object.defineProperty(Dn2, "__esModule", {
         value: !0
     });
     var yI0 = l0(),
         pG3 = BG1();
 
-function xI0(A, Q) {
+    function xI0(A, Q) {
         let B;
         return yI0.forEachEnvelopeItem(A, (G, Z) => {
             if (Q.includes(Z)) B = Array.isArray(G) ? G[1] : void 0;
@@ -447,7 +442,7 @@ function xI0(A, Q) {
         }), B
     }
 
-function lG3(A, Q) {
+    function lG3(A, Q) {
         return (B) => {
             let G = A(B);
             return {
@@ -461,20 +456,20 @@ function lG3(A, Q) {
         }
     }
 
-function iG3(A, Q) {
+    function iG3(A, Q) {
         return yI0.createEnvelope(Q ? {
             ...A[0],
             dsn: Q
         } : A[0], A[1])
     }
 
-function nG3(A, Q) {
+    function nG3(A, Q) {
         return (B) => {
             let G = A(B),
                 Z = new Map;
 
-function I(W, X) {
-                let F = X ? `${W}:${X}` : W,
+            function I(W, X) {
+                let F = X ? `TextComponent{W}:TextComponent{X}` : W,
                     V = Z.get(F);
                 if (!V) {
                     let K = yI0.dsnFromString(W);
@@ -490,8 +485,7 @@ function I(W, X) {
                 }
                 return [W, V]
             }
-
-async function Y(W) {
+            async function Y(W) {
                 function X(K) {
                     let D = K && K.length ? K : ["event"];
                     return xI0(W, D)
@@ -506,8 +500,7 @@ async function Y(W) {
                 if (F.length === 0) F.push(["", G]);
                 return (await Promise.all(F.map(([K, D]) => D.send(iG3(W, K)))))[0]
             }
-
-async function J(W) {
+            async function J(W) {
                 let X = [await G.flush(W)];
                 for (let [, F] of Z) X.push(await F.flush(W));
                 return X.every((F) => F)
@@ -521,13 +514,13 @@ async function J(W) {
     Dn2.eventFromEnvelope = xI0;
     Dn2.makeMultiplexedTransport = nG3
 });
-var zn2 = U((En2) => {
+var zn2 = moduleWrapper((En2) => {
     Object.defineProperty(En2, "__esModule", {
         value: !0
     });
     var Cn2 = l0();
 
-function rG3(A, Q) {
+    function rG3(A, Q) {
         let B = {
             sent_at: new Date().toISOString()
         };
@@ -536,66 +529,66 @@ function rG3(A, Q) {
         return Cn2.createEnvelope(B, G)
     }
 
-function oG3(A) {
+    function oG3(A) {
         return [{
             type: "span"
         }, A]
     }
     En2.createSpanEnvelope = rG3
 });
-var wn2 = U(($n2) => {
+var wn2 = moduleWrapper(($n2) => {
     Object.defineProperty($n2, "__esModule", {
         value: !0
     });
 
-function eG3(A, Q) {
+    function eG3(A, Q) {
         let B = Q && BZ3(Q) ? Q.getClient() : Q,
             G = B && B.getDsn(),
             Z = B && B.getOptions().tunnel;
         return QZ3(A, G) || AZ3(A, Z)
     }
 
-function AZ3(A, Q) {
+    function AZ3(A, Q) {
         if (!Q) return !1;
         return Un2(A) === Un2(Q)
     }
 
-function QZ3(A, Q) {
+    function QZ3(A, Q) {
         return Q ? A.includes(Q.host) : !1
     }
 
-function Un2(A) {
+    function Un2(A) {
         return A[A.length - 1] === "/" ? A.slice(0, -1) : A
     }
 
-function BZ3(A) {
+    function BZ3(A) {
         return A.getClient !== void 0
     }
     $n2.isSentryRequestUrl = eG3
 });
-var Nn2 = U((qn2) => {
+var Nn2 = moduleWrapper((qn2) => {
     Object.defineProperty(qn2, "__esModule", {
         value: !0
     });
 
-function ZZ3(A, ...Q) {
+    function ZZ3(A, ...Q) {
         let B = new String(String.raw(A, ...Q));
         return B.__sentry_template_string__ = A.join("\x00").replace(/%/g, "%%").replace(/\0/g, "%s"), B.__sentry_template_values__ = Q, B
     }
     qn2.parameterize = ZZ3
 });
-var On2 = U((Mn2) => {
+var On2 = moduleWrapper((Mn2) => {
     Object.defineProperty(Mn2, "__esModule", {
         value: !0
     });
     var Ln2 = g71();
 
-function YZ3(A, Q, B = [Q], G = "npm") {
+    function YZ3(A, Q, B = [Q], G = "npm") {
         let Z = A._metadata || {};
         if (!Z.sdk) Z.sdk = {
-            name: `sentry.javascript.${Q}`,
+            name: `sentry.javascript.TextComponent{Q}`,
             packages: B.map((I) => ({
-                name: `${G}:@sentry/${I}`,
+                name: `TextComponent{G}:@sentry/TextComponent{I}`,
                 version: Ln2.SDK_VERSION
             })),
             version: Ln2.SDK_VERSION
@@ -604,7 +597,7 @@ function YZ3(A, Q, B = [Q], G = "npm") {
     }
     Mn2.applySdkMetadata = YZ3
 });
-var Sn2 = U((jn2) => {
+var Sn2 = moduleWrapper((jn2) => {
     Object.defineProperty(jn2, "__esModule", {
         value: !0
     });
@@ -612,7 +605,7 @@ var Sn2 = U((jn2) => {
         Tn2 = new Map,
         Rn2 = new Set;
 
-function WZ3(A) {
+    function WZ3(A) {
         if (!vI0.GLOBAL_OBJ._sentryModuleMetadata) return;
         for (let Q of Object.keys(vI0.GLOBAL_OBJ._sentryModuleMetadata)) {
             let B = vI0.GLOBAL_OBJ._sentryModuleMetadata[Q];
@@ -627,11 +620,11 @@ function WZ3(A) {
         }
     }
 
-function Pn2(A, Q) {
+    function Pn2(A, Q) {
         return WZ3(A), Tn2.get(Q)
     }
 
-function XZ3(A, Q) {
+    function XZ3(A, Q) {
         try {
             Q.exception.values.forEach((B) => {
                 if (!B.stacktrace) return;
@@ -644,7 +637,7 @@ function XZ3(A, Q) {
         } catch (B) {}
     }
 
-function FZ3(A) {
+    function FZ3(A) {
         try {
             A.exception.values.forEach((Q) => {
                 if (!Q.stacktrace) return;
@@ -656,7 +649,7 @@ function FZ3(A) {
     jn2.getMetadataForUrl = Pn2;
     jn2.stripMetadataFromStackFrames = FZ3
 });
-var bn2 = U((vn2) => {
+var bn2 = moduleWrapper((vn2) => {
     Object.defineProperty(vn2, "__esModule", {
         value: !0
     });
@@ -690,7 +683,7 @@ var bn2 = U((vn2) => {
     vn2.ModuleMetadata = EZ3;
     vn2.moduleMetadataIntegration = xn2
 });
-var dn2 = U((mn2) => {
+var dn2 = moduleWrapper((mn2) => {
     Object.defineProperty(mn2, "__esModule", {
         value: !0
     });
@@ -760,7 +753,7 @@ var dn2 = U((mn2) => {
         un2 = hn2.defineIntegration(wZ3),
         qZ3 = hn2.convertIntegrationFnToClass(gn2, un2);
 
-function NZ3(A) {
+    function NZ3(A) {
         let {
             transactionNamingScheme: Q,
             include: {
@@ -790,7 +783,7 @@ function NZ3(A) {
         }
     }
 
-function LZ3(A) {
+    function LZ3(A) {
         try {
             return A.getOptions()._metadata.sdk.name
         } catch (Q) {
@@ -800,14 +793,14 @@ function LZ3(A) {
     mn2.RequestData = qZ3;
     mn2.requestDataIntegration = un2
 });
-var fI0 = U((in2) => {
+var fI0 = moduleWrapper((in2) => {
     Object.defineProperty(in2, "__esModule", {
         value: !0
     });
     var DK = l0(),
         c0A = AF(),
         cn2 = Ig(),
-        RZ3 = [/^Script error\.?$/, /^Javascript error: Script error\.? on line 0$/, /^ResizeObserver loop completed with undelivered notifications.$/, /^Cannot redefine property: googletag$/],
+        RZ3 = [/^Script error\.?TextComponent/, /^Javascript error: Script error\.? on line 0$/, /^ResizeObserver loop completed with undelivered notifications.TextComponent/, /^Cannot redefine property: googletag$/],
         TZ3 = [/^.*\/healthcheck$/, /^.*\/healthy$/, /^.*\/live$/, /^.*\/ready$/, /^.*\/heartbeat$/, /^.*\/health$/, /^.*\/healthz$/],
         pn2 = "InboundFilters",
         PZ3 = (A = {}) => {
@@ -824,7 +817,7 @@ var fI0 = U((in2) => {
         ln2 = cn2.defineIntegration(PZ3),
         jZ3 = cn2.convertIntegrationFnToClass(pn2, ln2);
 
-function SZ3(A = {}, Q = {}) {
+    function SZ3(A = {}, Q = {}) {
         return {
             allowUrls: [...A.allowUrls || [], ...Q.allowUrls || []],
             denyUrls: [...A.denyUrls || [], ...Q.denyUrls || []],
@@ -834,46 +827,46 @@ function SZ3(A = {}, Q = {}) {
         }
     }
 
-function _Z3(A, Q) {
+    function _Z3(A, Q) {
         if (Q.ignoreInternal && fZ3(A)) return c0A.DEBUG_BUILD && DK.logger.warn(`Event dropped due to being internal Sentry Error.
-Event: ${DK.getEventDescription(A)}`), !0;
+Event: TextComponent{DK.getEventDescription(A)}`), !0;
         if (kZ3(A, Q.ignoreErrors)) return c0A.DEBUG_BUILD && DK.logger.warn(`Event dropped due to being matched by \`ignoreErrors\` option.
-Event: ${DK.getEventDescription(A)}`), !0;
+Event: TextComponent{DK.getEventDescription(A)}`), !0;
         if (yZ3(A, Q.ignoreTransactions)) return c0A.DEBUG_BUILD && DK.logger.warn(`Event dropped due to being matched by \`ignoreTransactions\` option.
-Event: ${DK.getEventDescription(A)}`), !0;
+Event: TextComponent{DK.getEventDescription(A)}`), !0;
         if (xZ3(A, Q.denyUrls)) return c0A.DEBUG_BUILD && DK.logger.warn(`Event dropped due to being matched by \`denyUrls\` option.
-Event: ${DK.getEventDescription(A)}.
-Url: ${WG1(A)}`), !0;
+Event: TextComponent{DK.getEventDescription(A)}.
+Url: TextComponent{WG1(A)}`), !0;
         if (!vZ3(A, Q.allowUrls)) return c0A.DEBUG_BUILD && DK.logger.warn(`Event dropped due to not being matched by \`allowUrls\` option.
-Event: ${DK.getEventDescription(A)}.
-Url: ${WG1(A)}`), !0;
+Event: TextComponent{DK.getEventDescription(A)}.
+Url: TextComponent{WG1(A)}`), !0;
         return !1
     }
 
-function kZ3(A, Q) {
+    function kZ3(A, Q) {
         if (A.type || !Q || !Q.length) return !1;
         return bZ3(A).some((B) => DK.stringMatchesSomePattern(B, Q))
     }
 
-function yZ3(A, Q) {
+    function yZ3(A, Q) {
         if (A.type !== "transaction" || !Q || !Q.length) return !1;
         let B = A.transaction;
         return B ? DK.stringMatchesSomePattern(B, Q) : !1
     }
 
-function xZ3(A, Q) {
+    function xZ3(A, Q) {
         if (!Q || !Q.length) return !1;
         let B = WG1(A);
         return !B ? !1 : DK.stringMatchesSomePattern(B, Q)
     }
 
-function vZ3(A, Q) {
+    function vZ3(A, Q) {
         if (!Q || !Q.length) return !0;
         let B = WG1(A);
         return !B ? !0 : DK.stringMatchesSomePattern(B, Q)
     }
 
-function bZ3(A) {
+    function bZ3(A) {
         let Q = [];
         if (A.message) Q.push(A.message);
         let B;
@@ -882,21 +875,21 @@ function bZ3(A) {
         } catch (G) {}
         if (B) {
             if (B.value) {
-                if (Q.push(B.value), B.type) Q.push(`${B.type}: ${B.value}`)
+                if (Q.push(B.value), B.type) Q.push(`TextComponent{B.type}: TextComponent{B.value}`)
             }
         }
-        if (c0A.DEBUG_BUILD && Q.length === 0) DK.logger.error(`Could not extract message for event ${DK.getEventDescription(A)}`);
+        if (c0A.DEBUG_BUILD && Q.length === 0) DK.logger.error(`Could not extract message for event TextComponent{DK.getEventDescription(A)}`);
         return Q
     }
 
-function fZ3(A) {
+    function fZ3(A) {
         try {
             return A.exception.values[0].type === "SentryError"
         } catch (Q) {}
         return !1
     }
 
-function hZ3(A = []) {
+    function hZ3(A = []) {
         for (let Q = A.length - 1; Q >= 0; Q--) {
             let B = A[Q];
             if (B && B.filename !== "<anonymous>" && B.filename !== "[native code]") return B.filename || null
@@ -904,7 +897,7 @@ function hZ3(A = []) {
         return null
     }
 
-function WG1(A) {
+    function WG1(A) {
         try {
             let Q;
             try {
@@ -912,13 +905,13 @@ function WG1(A) {
             } catch (B) {}
             return Q ? hZ3(Q) : null
         } catch (Q) {
-            return c0A.DEBUG_BUILD && DK.logger.error(`Cannot extract url for event ${DK.getEventDescription(A)}`), null
+            return c0A.DEBUG_BUILD && DK.logger.error(`Cannot extract url for event TextComponent{DK.getEventDescription(A)}`), null
         }
     }
     in2.InboundFilters = jZ3;
     in2.inboundFiltersIntegration = ln2
 });
-var hI0 = U((tn2) => {
+var hI0 = moduleWrapper((tn2) => {
     Object.defineProperty(tn2, "__esModule", {
         value: !0
     });
@@ -950,7 +943,7 @@ var hI0 = U((tn2) => {
     tn2.FunctionToString = pZ3;
     tn2.functionToStringIntegration = on2
 });
-var gI0 = U((Ga2) => {
+var gI0 = moduleWrapper((Ga2) => {
     Object.defineProperty(Ga2, "__esModule", {
         value: !0
     });
@@ -976,7 +969,7 @@ var gI0 = U((Ga2) => {
     Ga2.LinkedErrors = rZ3;
     Ga2.linkedErrorsIntegration = Ba2
 });
-var Ia2 = U((Za2) => {
+var Ia2 = moduleWrapper((Za2) => {
     Object.defineProperty(Za2, "__esModule", {
         value: !0
     });
@@ -987,7 +980,7 @@ var Ia2 = U((Za2) => {
     Za2.InboundFilters = AI3.InboundFilters;
     Za2.LinkedErrors = QI3.LinkedErrors
 });
-var Xa2 = U((Wa2) => {
+var Xa2 = moduleWrapper((Wa2) => {
     Object.defineProperty(Wa2, "__esModule", {
         value: !0
     });
@@ -996,8 +989,7 @@ var Xa2 = U((Wa2) => {
         YI3 = jI0(),
         JI3 = BPA(),
         XG1 = IPA();
-
-class Ja2 {
+    class Ja2 {
         constructor(A) {
             this._client = A, this._buckets = new Map, this._interval = setInterval(() => this.flush(), Ya2.DEFAULT_BROWSER_FLUSH_INTERVAL)
         }
@@ -1036,7 +1028,7 @@ class Ja2 {
     }
     Wa2.BrowserMetricsAggregator = Ja2
 });
-var Ha2 = U((Da2) => {
+var Ha2 = moduleWrapper((Da2) => {
     Object.defineProperty(Da2, "__esModule", {
         value: !0
     });
@@ -1057,7 +1049,7 @@ var Ha2 = U((Da2) => {
     Da2.MetricsAggregator = VI3;
     Da2.metricsAggregatorIntegration = Ka2
 });
-var Ma2 = U((La2) => {
+var Ma2 = moduleWrapper((La2) => {
     Object.defineProperty(La2, "__esModule", {
         value: !0
     });
@@ -1068,7 +1060,7 @@ var Ma2 = U((La2) => {
         FG1 = YPA(),
         Ua2 = Ha2();
 
-function VG1(A, Q, B, G = {}) {
+    function VG1(A, Q, B, G = {}) {
         let Z = za2.getClient(),
             I = za2.getCurrentScope();
         if (Z) {
@@ -1087,7 +1079,7 @@ function VG1(A, Q, B, G = {}) {
             if (X) K.release = X;
             if (F) K.environment = F;
             if (V) K.transaction = HI3.spanToJSON(V).description || "";
-            Ea2.DEBUG_BUILD && Ca2.logger.log(`Adding value of ${B} to ${A} metric ${Q}`), Z.metricsAggregator.add(A, Q, B, Y, {
+            Ea2.DEBUG_BUILD && Ca2.logger.log(`Adding value of TextComponent{B} to TextComponent{A} metric TextComponent{Q}`), Z.metricsAggregator.add(A, Q, B, Y, {
                 ...K,
                 ...J
             }, W)
@@ -1098,19 +1090,18 @@ function VG1(A, Q, B, G = {}) {
         VG1(FG1.COUNTER_METRIC_TYPE, A, Q, B)
     }
 
-function wa2(A, Q, B) {
+    function wa2(A, Q, B) {
         VG1(FG1.DISTRIBUTION_METRIC_TYPE, A, Q, B)
     }
 
-function qa2(A, Q, B) {
+    function qa2(A, Q, B) {
         VG1(FG1.SET_METRIC_TYPE, A, Q, B)
     }
 
-function Na2(A, Q, B) {
+    function Na2(A, Q, B) {
         VG1(FG1.GAUGE_METRIC_TYPE, A, Q, B)
     }
-
-var CI3 = {
+    var CI3 = {
         increment: $a2,
         distribution: wa2,
         set: qa2,
@@ -1124,7 +1115,7 @@ var CI3 = {
     La2.metrics = CI3;
     La2.set = qa2
 });
-var P4 = U((dI0) => {
+var P4 = moduleWrapper((dI0) => {
     Object.defineProperty(dI0, "__esModule", {
         value: !0
     });
@@ -1297,14 +1288,14 @@ var P4 = U((dI0) => {
     dI0.metrics = dI3.metrics;
     dI0.Integrations = cI3
 });
-var U$ = U((ua2) => {
+var U$ = moduleWrapper((ua2) => {
     Object.defineProperty(ua2, "__esModule", {
         value: !0
     });
     var eJ3 = typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__;
     ua2.DEBUG_BUILD = eJ3
 });
-var dn = U((da2) => {
+var dn = moduleWrapper((da2) => {
     var {
         _optionalChain: ma2
     } = l0();
@@ -1312,13 +1303,13 @@ var dn = U((da2) => {
         value: !0
     });
 
-function QW3(A) {
+    function QW3(A) {
         let Q = ma2([A, "call", (G) => G(), "access", (G) => G.getClient, "call", (G) => G(), "optionalAccess", (G) => G.getOptions, "call", (G) => G()]);
         return (ma2([Q, "optionalAccess", (G) => G.instrumenter]) || "sentry") !== "sentry"
     }
     da2.shouldDisableAutoInstrumentation = QW3
 });
-var na2 = U((ia2) => {
+var na2 = moduleWrapper((ia2) => {
     var {
         _optionalChain: bP
     } = l0();
@@ -1329,8 +1320,7 @@ var na2 = U((ia2) => {
         $$ = l0(),
         CG1 = U$(),
         GW3 = dn();
-
-class EG1 {
+    class EG1 {
         static __initStatic() {
             this.id = "Express"
         }
@@ -1351,7 +1341,7 @@ class EG1 {
     }
     EG1.__initStatic();
 
-function ca2(A, Q) {
+    function ca2(A, Q) {
         let B = A.length;
         switch (B) {
             case 2:
@@ -1360,7 +1350,7 @@ function ca2(A, Q) {
                     if (I) {
                         let Y = I.startChild({
                             description: A.name,
-                            op: `middleware.express.${Q}`,
+                            op: `middleware.express.TextComponent{Q}`,
                             origin: "auto.middleware.express"
                         });
                         Z.once("finish", () => {
@@ -1374,7 +1364,7 @@ function ca2(A, Q) {
                     let Y = Z.__sentry_transaction,
                         J = bP([Y, "optionalAccess", (W) => W.startChild, "call", (W) => W({
                             description: A.name,
-                            op: `middleware.express.${Q}`,
+                            op: `middleware.express.TextComponent{Q}`,
                             origin: "auto.middleware.express"
                         })]);
                     A.call(this, G, Z, function(...W) {
@@ -1386,7 +1376,7 @@ function ca2(A, Q) {
                     let J = I.__sentry_transaction,
                         W = bP([J, "optionalAccess", (X) => X.startChild, "call", (X) => X({
                             description: A.name,
-                            op: `middleware.express.${Q}`,
+                            op: `middleware.express.TextComponent{Q}`,
                             origin: "auto.middleware.express"
                         })]);
                     A.call(this, G, Z, I, function(...X) {
@@ -1394,11 +1384,11 @@ function ca2(A, Q) {
                     })
                 };
             default:
-                throw Error(`Express middleware takes 2-4 arguments. Got: ${B}`)
+                throw Error(`Express middleware takes 2-4 arguments. Got: TextComponent{B}`)
         }
     }
 
-function ZW3(A, Q) {
+    function ZW3(A, Q) {
         return A.map((B) => {
             if (typeof B === "function") return ca2(B, Q);
             if (Array.isArray(B)) return B.map((G) => {
@@ -1409,18 +1399,18 @@ function ZW3(A, Q) {
         })
     }
 
-function IW3(A, Q) {
+    function IW3(A, Q) {
         let B = A[Q];
         return A[Q] = function(...G) {
             return B.call(this, ...ZW3(G, Q))
         }, A
     }
 
-function YW3(A, Q = []) {
+    function YW3(A, Q = []) {
         Q.forEach((B) => IW3(A, B))
     }
 
-function JW3(A) {
+    function JW3(A) {
         let Q = "settings" in A;
         if (Q && A._router === void 0 && A.lazyrouter) A.lazyrouter();
         let B = Q ? A._router : A;
@@ -1443,7 +1433,7 @@ function JW3(A) {
             if (V) C = V;
             else C = la2(W.originalUrl, W._reconstructedRoute, Y.path) || "";
             let E = C.split("/").filter((N) => N.length > 0 && (K || D || !N.includes("*"))).join("/");
-            if (E && E.length > 0) W._reconstructedRoute += `/${E}${K?"/":""}`;
+            if (E && E.length > 0) W._reconstructedRoute += `/TextComponent{E}TextComponent{K?"/":""}`;
             let z = $$.getNumberOfUrlSegments($$.stripUrlQueryAndFragment(W.originalUrl || "")) + H,
                 w = $$.getNumberOfUrlSegments(W._reconstructedRoute);
             if (z === w) {
@@ -1468,7 +1458,7 @@ function JW3(A) {
     var pa2 = (A, Q, B) => {
         if (!A || !Q || !B || Object.keys(B).length === 0 || bP([B, "access", (X) => X[0], "optionalAccess", (X) => X.offset]) === void 0 || bP([B, "access", (X) => X[0], "optionalAccess", (X) => X.offset]) === null) return;
         let G = B.sort((X, F) => X.offset - F.offset),
-            I = new RegExp(Q, `${Q.flags}d`).exec(A);
+            I = new RegExp(Q, `TextComponent{Q.flags}d`).exec(A);
         if (!I || !I.indices) return;
         let [, ...Y] = I.indices;
         if (Y.length !== G.length) return;
@@ -1476,13 +1466,13 @@ function JW3(A) {
             W = 0;
         return Y.forEach((X, F) => {
             if (X) {
-                let [V, K] = X, D = J.substring(0, V - W), H = `:${G[F].name}`, C = J.substring(K - W);
+                let [V, K] = X, D = J.substring(0, V - W), H = `:TextComponent{G[F].name}`, C = J.substring(K - W);
                 J = D + H + C, W = W + (K - V - H.length)
             }
         }), J
     };
 
-function WW3(A) {
+    function WW3(A) {
         let Q = bP([A, "access", (Y) => Y.route, "optionalAccess", (Y) => Y.path]),
             B = $$.isRegExp(Q),
             G = Array.isArray(Q);
@@ -1504,18 +1494,18 @@ function WW3(A) {
         }
     }
 
-function XW3(A) {
+    function XW3(A) {
         return A.reduce((Q, B) => {
             return Q + $$.getNumberOfUrlSegments(B.toString())
         }, 0)
     }
 
-function FW3(A, Q) {
+    function FW3(A, Q) {
         if (A) return Q.map((B) => B.toString()).join(",");
         return Q && Q.toString()
     }
 
-function la2(A, Q, B) {
+    function la2(A, Q, B) {
         let G = $$.stripUrlQueryAndFragment(A || ""),
             Z = bP([G, "optionalAccess", (W) => W.split, "call", (W) => W("/"), "access", (W) => W.filter, "call", (W) => W((X) => !!X)]),
             I = 0,

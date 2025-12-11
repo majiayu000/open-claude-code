@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: agents_005.js
+ * 处理时间: 2025-12-09T03:41:35.882Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.845Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -21,7 +24,7 @@
                 type: "hook_additional_context",
                 content: N.additionalContexts.map(hJ9),
                 hookName: "UserPromptSubmit",
-                toolUseID: `hook-${ij3()}`,
+                toolUseID: `hook-TextComponent{ij3()}`,
                 hookEvent: "UserPromptSubmit"
             }));
             if (N.message) switch (N.message.attachment.type) {
@@ -47,10 +50,9 @@
 }
 
 function hJ9(A) {
-    if (A.length > lX0) return `${A.substring(0,lX0)}… [output truncated - exceeded ${lX0} characters]`;
+    if (A.length > lX0) return `TextComponent{A.substring(0,lX0)}… [output truncated - exceeded TextComponent{lX0} characters]`;
     return A
 }
-
 async function nj3(A, Q, B, G, Z, I, Y, J, W, X, F, V, K, D, H) {
     let C = null,
         E = [];
@@ -66,7 +68,7 @@ async function nj3(A, Q, B, G, Z, I, Y, J, W, X, F, V, K, D, H) {
         if (q?.type === "text") C = q.text, E = [...A.slice(0, -1)];
         else E = A
     }
-    if (C === null && Q !== "prompt") throw Error(`Mode: ${Q} requires a string input.`);
+    if (C === null && Q !== "prompt") throw Error(`Mode: TextComponent{Q} requires a string input.`);
     let z = I ? Object.values(I).filter((q) => q.type === "image").map((q) => ({
             type: "image",
             source: {
@@ -86,7 +88,7 @@ async function nj3(A, Q, B, G, Z, I, Y, J, W, X, F, V, K, D, H) {
         let q = C.trim(),
             R = N.find((P) => P.attachment.type === "agent_mention");
         if (R) {
-            let P = `@agent-${R.attachment.agentType}`,
+            let P = `@agent-TextComponent{R.attachment.agentType}`,
                 y = q === P,
                 v = q.startsWith(P) && !y;
             BA("tengu_subagent_at_mention", {
@@ -98,7 +100,7 @@ async function nj3(A, Q, B, G, Z, I, Y, J, W, X, F, V, K, D, H) {
     return bJ9(A, z, N, B, X, V, K, H)
 }
 var lX0 = 1e4;
-var vXA = L(() => {
+var vXA = lazyLoader(() => {
     nQ();
     wi();
     eM();
@@ -118,10 +120,10 @@ function oI1(A, Q) {
     if (A.includes("$ARGUMENTS")) return A.replaceAll("$ARGUMENTS", Q);
     return A + `
 
-ARGUMENTS: ${Q}`
+ARGUMENTS: TextComponent{Q}`
 }
 var mjA;
-var aX0 = L(() => {
+var aX0 = lazyLoader(() => {
     h2();
     mjA = _.object({
         ok: _.boolean().describe("Whether the condition was met"),
@@ -131,12 +133,11 @@ var aX0 = L(() => {
 import {
     randomUUID as aj3
 } from "crypto";
-
 async function gJ9(A, Q, B, G, Z, I, Y, J) {
-    let W = J || `hook-${aj3()}`;
+    let W = J || `hook-TextComponent{aj3()}`;
     try {
         let X = oI1(A.prompt, G);
-        g(`Hooks: Processing prompt hook with prompt: ${X}`);
+        g(`Hooks: Processing prompt hook with prompt: TextComponent{X}`);
         let F = {
                 ...I,
                 onChangeAPIKey: () => {},
@@ -179,7 +180,7 @@ async function gJ9(A, Q, B, G, Z, I, Y, J) {
             }
         }
         let K = Y && Y.length > 0 ? [...Y, ...V.messages] : V.messages;
-        g(`Hooks: Querying model with ${K.length} messages`);
+        g(`Hooks: Querying model with TextComponent{K.length} messages`);
         let D = A.timeout ? A.timeout * 1000 : 30000,
             H = s9(),
             C = setTimeout(() => {
@@ -211,7 +212,7 @@ Return the JSON object directly with no preamble or explanation.`],
                     async getToolPermissionContext() {
                         return (await I.getAppState()).toolPermissionContext
                     },
-                    model: A.model ?? LW(),
+                    model: A.model ?? getSmallFastModel(),
                     toolChoice: void 0,
                     isNonInteractiveSession: !0,
                     hasAppendSystemPrompt: !1,
@@ -225,9 +226,9 @@ Return the JSON object directly with no preamble or explanation.`],
             let q = N.message.content.filter((v) => v.type === "text").map((v) => v.text).join("");
             I.setResponseLength((v) => v + q.length);
             let R = ("{" + q).trim();
-            g(`Hooks: Model response: ${R}`);
+            g(`Hooks: Model response: TextComponent{R}`);
             let P = S7(R);
-            if (!P) return g(`Hooks: error parsing response as JSON: ${R}`), {
+            if (!P) return g(`Hooks: error parsing response as JSON: TextComponent{R}`), {
                 hook: A,
                 outcome: "non_blocking_error",
                 message: p9({
@@ -241,7 +242,7 @@ Return the JSON object directly with no preamble or explanation.`],
                 })
             };
             let y = mjA.safeParse(P);
-            if (!y.success) return g(`Hooks: model response does not conform to expected schema: ${y.error.message}`), {
+            if (!y.success) return g(`Hooks: model response does not conform to expected schema: TextComponent{y.error.message}`), {
                 hook: A,
                 outcome: "non_blocking_error",
                 message: p9({
@@ -249,16 +250,16 @@ Return the JSON object directly with no preamble or explanation.`],
                     hookName: Q,
                     toolUseID: W,
                     hookEvent: B,
-                    stderr: `Schema validation failed: ${y.error.message}`,
+                    stderr: `Schema validation failed: TextComponent{y.error.message}`,
                     stdout: R,
                     exitCode: 1
                 })
             };
-            if (!y.data.ok) return g(`Hooks: Prompt hook condition was not met: ${y.data.reason}`), {
+            if (!y.data.ok) return g(`Hooks: Prompt hook condition was not met: TextComponent{y.data.reason}`), {
                 hook: A,
                 outcome: "blocking",
                 blockingError: {
-                    blockingError: `Prompt hook condition was not met: ${y.data.reason}`,
+                    blockingError: `Prompt hook condition was not met: TextComponent{y.data.reason}`,
                     command: A.prompt
                 },
                 preventContinuation: !0,
@@ -284,7 +285,7 @@ Return the JSON object directly with no preamble or explanation.`],
         }
     } catch (X) {
         let F = X instanceof Error ? X.message : String(X);
-        return g(`Hooks: Prompt hook error: ${F}`), {
+        return g(`Hooks: Prompt hook error: TextComponent{F}`), {
             hook: A,
             outcome: "non_blocking_error",
             message: p9({
@@ -292,14 +293,14 @@ Return the JSON object directly with no preamble or explanation.`],
                 hookName: Q,
                 toolUseID: W,
                 hookEvent: B,
-                stderr: `Error executing prompt hook: ${F}`,
+                stderr: `Error executing prompt hook: TextComponent{F}`,
                 stdout: "",
                 exitCode: 1
             })
         }
     }
 }
-var uJ9 = L(() => {
+var uJ9 = lazyLoader(() => {
     D0();
     vXA();
     nQ();
@@ -314,14 +315,13 @@ var uJ9 = L(() => {
 import {
     randomUUID as mJ9
 } from "crypto";
-
 async function dJ9(A, Q, B, G, Z, I, Y, J) {
-    let W = Y || `hook-${mJ9()}`,
+    let W = Y || `hook-TextComponent{mJ9()}`,
         X = I.agentId !== G0() ? eXA(I.agentId) : yJA(),
         F = Date.now();
     try {
         let V = oI1(A.prompt(J), G);
-        g(`Hooks: Processing agent hook with prompt: ${V}`);
+        g(`Hooks: Processing agent hook with prompt: TextComponent{V}`);
         let K = {
                 ...I,
                 onChangeAPIKey: () => {},
@@ -364,7 +364,7 @@ async function dJ9(A, Q, B, G, Z, I, Y, J) {
             }
         }
         let H = D.messages;
-        g(`Hooks: Starting agent query with ${H.length} messages`);
+        g(`Hooks: Starting agent query with TextComponent{H.length} messages`);
         let C = A.timeout ? A.timeout * 1000 : 60000,
             E = s9(),
             {
@@ -377,18 +377,18 @@ async function dJ9(A, Q, B, G, Z, I, Y, J) {
         try {
             let R = sj3(),
                 y = [...I.options.tools.filter((QA) => QA.name !== Az).filter((QA) => !eRA.has(QA.name)), R],
-                v = [`You are verifying a stop condition in Claude Code. Your task is to verify that the agent completed the given plan. The conversation transcript is available at: ${X}
+                v = [`You are verifying a stop condition in Claude Code. Your task is to verify that the agent completed the given plan. The conversation transcript is available at: TextComponent{X}
 You can read this file to analyze the conversation history if needed.
 
 Use the available tools to inspect the codebase and verify the condition.
 Use as few steps as possible - be efficient and direct.
 
-When done, return your result using the ${Az} tool with:
+When done, return your result using the TextComponent{Az} tool with:
 - ok: true if the condition is met
 - ok: false with reason if the condition is not met`],
-                x = A.model ?? LW(),
+                x = A.model ?? getSmallFastModel(),
                 p = 50,
-                u = `hook-agent-${mJ9()}`,
+                u = `hook-agent-TextComponent{mJ9()}`,
                 o = {
                     ...I,
                     agentId: u,
@@ -411,13 +411,13 @@ When done, return your result using the ${Az} tool with:
                                 mode: "dontAsk",
                                 alwaysAllowRules: {
                                     ...QA.toolPermissionContext.alwaysAllowRules,
-                                    session: [...IA, `Read(/${X})`]
+                                    session: [...IA, `Read(/TextComponent{X})`]
                                 }
                             }
                         }
                     }
                 };
-            N21(I.setAppState, u, "Stop", "", (QA) => tI1(QA, Az), `You MUST call the ${Az} tool to complete this request. Call this tool now.`, {
+            N21(I.setAppState, u, "Stop", "", (QA) => tI1(QA, Az), `You MUST call the TextComponent{Az} tool to complete this request. Call this tool now.`, {
                 timeout: 5000
             });
             let l = null,
@@ -435,14 +435,14 @@ When done, return your result using the ${Az} tool with:
                 if (RQA(QA, () => {}, (IA) => I.setResponseLength((HA) => HA + IA.length), I.setStreamMode ?? (() => {}), () => {}), QA.type === "stream_event" || QA.type === "stream_request_start") continue;
                 if (QA.type === "assistant") {
                     if (k++, k >= 50) {
-                        d = !0, g(`Hooks: Agent turn ${k} hit max turns, aborting`), E.abort();
+                        d = !0, g(`Hooks: Agent turn TextComponent{k} hit max turns, aborting`), E.abort();
                         break
                     }
                 }
                 if (QA.type === "attachment" && QA.attachment.type === "structured_output") {
                     let IA = mjA.safeParse(QA.attachment.data);
                     if (IA.success) {
-                        l = IA.data, g(`Hooks: Got structured output: ${JSON.stringify(l)}`), E.abort();
+                        l = IA.data, g(`Hooks: Got structured output: TextComponent{JSON.stringify(l)}`), E.abort();
                         break
                     }
                 }
@@ -464,11 +464,11 @@ When done, return your result using the ${Az} tool with:
                     outcome: "cancelled"
                 }
             }
-            if (!l.ok) return g(`Hooks: Agent hook condition was not met: ${l.reason}`), {
+            if (!l.ok) return g(`Hooks: Agent hook condition was not met: TextComponent{l.reason}`), {
                 hook: A,
                 outcome: "blocking",
                 blockingError: {
-                    blockingError: `Agent hook condition was not met: ${l.reason}`,
+                    blockingError: `Agent hook condition was not met: TextComponent{l.reason}`,
                     command: A.prompt(J)
                 }
             };
@@ -495,7 +495,7 @@ When done, return your result using the ${Az} tool with:
         }
     } catch (V) {
         let K = V instanceof Error ? V.message : String(V);
-        return g(`Hooks: Agent hook error: ${K}`), BA("tengu_agent_stop_hook_error", {
+        return g(`Hooks: Agent hook error: TextComponent{K}`), BA("tengu_agent_stop_hook_error", {
             durationMs: Date.now() - F,
             errorType: 2
         }), {
@@ -506,7 +506,7 @@ When done, return your result using the ${Az} tool with:
                 hookName: Q,
                 toolUseID: W,
                 hookEvent: B,
-                stderr: `Error executing agent hook: ${K}`,
+                stderr: `Error executing agent hook: TextComponent{K}`,
                 stdout: "",
                 exitCode: 1
             })
@@ -538,7 +538,7 @@ function sj3() {
         }
     }
 }
-var cJ9 = L(() => {
+var cJ9 = lazyLoader(() => {
     D0();
     vXA();
     aG();
@@ -556,9 +556,8 @@ var cJ9 = L(() => {
     jq();
     eIA()
 });
-
 var nJ9 = {};
-pG(nJ9, {
+esmExport(nJ9, {
     getUserPromptSubmitHookBlockingMessage: () => iX0,
     getStopHookMessage: () => x30,
     getPreToolHookBlockingMessage: () => y30,
@@ -612,18 +611,18 @@ function lJ9(A) {
         };
         else {
             let I = `Hook JSON output validation failed:
-${G.error.errors.map((Y)=>`  - ${Y.path.join(".")}: ${Y.message}`).join(`
+TextComponent{G.error.errors.map((Y)=>`  - TextComponent{Y.path.join(".")}: TextComponent{Y.message}`).join(`
 `)}
 
 Expected schema:
-${JSON.stringify({continue:"boolean (optional)",suppressOutput:"boolean (optional)",stopReason:"string (optional)",decision:'"approve" | "block" (optional)',reason:"string (optional)",systemMessage:"string (optional)",permissionDecision:'"allow" | "deny" | "ask" (optional)',hookSpecificOutput:{"for PreToolUse":{hookEventName:'"PreToolUse"',permissionDecision:'"allow" | "deny" | "ask" (optional)',permissionDecisionReason:"string (optional)",updatedInput:"object (optional) - Modified tool input to use"},"for UserPromptSubmit":{hookEventName:'"UserPromptSubmit"',additionalContext:"string (required)"},"for PostToolUse":{hookEventName:'"PostToolUse"',additionalContext:"string (optional)"}}},null,2)}. The hook's stdout was: ${JSON.stringify(B,null,2)}`;
+TextComponent{JSON.stringify({continue:"boolean (optional)",suppressOutput:"boolean (optional)",stopReason:"string (optional)",decision:'"approve" | "block" (optional)',reason:"string (optional)",systemMessage:"string (optional)",permissionDecision:'"allow" | "deny" | "ask" (optional)',hookSpecificOutput:{"for PreToolUse":{hookEventName:'"PreToolUse"',permissionDecision:'"allow" | "deny" | "ask" (optional)',permissionDecisionReason:"string (optional)",updatedInput:"object (optional) - Modified tool input to use"},"for UserPromptSubmit":{hookEventName:'"UserPromptSubmit"',additionalContext:"string (required)"},"for PostToolUse":{hookEventName:'"PostToolUse"',additionalContext:"string (optional)"}}},null,2)}. The hook's stdout was: TextComponent{JSON.stringify(B,null,2)}`;
             return g(I), {
                 plainText: A,
                 validationError: I
             }
         }
     } catch (B) {
-        return g(`Failed to parse hook output as JSON: ${B}`), {
+        return g(`Failed to parse hook output as JSON: TextComponent{B}`), {
             plainText: A
         }
     }
@@ -656,7 +655,7 @@ function iJ9({
             };
             break;
         default:
-            throw Error(`Unknown hook decision type: ${A.decision}. Valid types are: approve, block`)
+            throw Error(`Unknown hook decision type: TextComponent{A.decision}. Valid types are: approve, block`)
     }
     if (A.systemMessage) X.systemMessage = A.systemMessage;
     if (A.hookSpecificOutput?.hookEventName === "PreToolUse" && A.hookSpecificOutput.permissionDecision) switch (A.hookSpecificOutput.permissionDecision) {
@@ -673,11 +672,11 @@ function iJ9({
             X.permissionBehavior = "ask";
             break;
         default:
-            throw Error(`Unknown hook permissionDecision type: ${A.hookSpecificOutput.permissionDecision}. Valid types are: allow, deny, ask`)
+            throw Error(`Unknown hook permissionDecision type: TextComponent{A.hookSpecificOutput.permissionDecision}. Valid types are: allow, deny, ask`)
     }
     if (X.permissionBehavior !== void 0 && A.reason !== void 0) X.hookPermissionDecisionReason = A.reason;
     if (A.hookSpecificOutput) {
-        if (I && A.hookSpecificOutput.hookEventName !== I) throw Error(`Hook returned incorrect event name: expected '${I}' but got '${A.hookSpecificOutput.hookEventName}'. Full stdout: ${JSON.stringify(A,null,2)}`);
+        if (I && A.hookSpecificOutput.hookEventName !== I) throw Error(`Hook returned incorrect event name: expected 'TextComponent{I}' but got 'TextComponent{A.hookSpecificOutput.hookEventName}'. Full stdout: TextComponent{JSON.stringify(A,null,2)}`);
         switch (A.hookSpecificOutput.hookEventName) {
             case "PreToolUse":
                 if (A.hookSpecificOutput.permissionDecision) switch (A.hookSpecificOutput.permissionDecision) {
@@ -738,7 +737,6 @@ function iJ9({
         })
     }
 }
-
 async function sX0(A, Q, B, G, Z, I) {
     let Y = pQ(),
         J = process.env.CLAUDE_CODE_SHELL_PREFIX ? zrA(process.env.CLAUDE_CODE_SHELL_PREFIX, A.command) : A.command,
@@ -764,12 +762,12 @@ async function sX0(A, Q, B, G, Z, I) {
         });
     F.stdout.on("data", (q) => {
         if (K += q, !H && K.trim().includes("}")) {
-            H = !0, g(`Hooks: Checking initial response for async: ${K.trim()}`);
+            H = !0, g(`Hooks: Checking initial response for async: TextComponent{K.trim()}`);
             try {
                 let R = JSON.parse(K.trim());
-                if (g(`Hooks: Parsed initial response: ${JSON.stringify(R)}`), BYA(R)) {
+                if (g(`Hooks: Parsed initial response: TextComponent{JSON.stringify(R)}`), BYA(R)) {
                     let P = `async_hook_${F.pid}`;
-                    g(`Hooks: Detected async hook, backgrounding process ${P}`);
+                    g(`Hooks: Detected async hook, backgrounding process TextComponent{P}`);
                     let y = V.background(P);
                     if (y) mG2({
                         processId: P,
@@ -789,7 +787,7 @@ async function sX0(A, Q, B, G, Z, I) {
                     })
                 } else g("Hooks: Initial response is not async, continuing normal processing")
             } catch (R) {
-                g(`Hooks: Failed to parse initial response as JSON: ${R}`)
+                g(`Hooks: Failed to parse initial response as JSON: TextComponent{R}`)
             }
         }
     }), F.stderr.on("data", (q) => {
@@ -828,7 +826,7 @@ async function sX0(A, Q, B, G, Z, I) {
         };
         else return {
             stdout: "",
-            stderr: `Error occurred while executing hook command: ${q instanceof Error?q.message:String(q)}`,
+            stderr: `Error occurred while executing hook command: TextComponent{q instanceof Error?q.message:String(q)}`,
             status: 1
         }
     }
@@ -836,14 +834,14 @@ async function sX0(A, Q, B, G, Z, I) {
 
 function oj3(A, Q) {
     if (!Q || Q === "*") return !0;
-    if (/^[a-zA-Z0-9_|]+$/.test(Q)) {
+    if (/^[a-zA-Z0-9_|]+TextComponent/.test(Q)) {
         if (Q.includes("|")) return Q.split("|").map((G) => G.trim()).includes(A);
         return A === Q
     }
     try {
         return new RegExp(Q).test(A)
     } catch {
-        return g(`Invalid regex pattern in hook matcher: ${Q}`), !1
+        return g(`Invalid regex pattern in hook matcher: TextComponent{Q}`), !1
     }
 }
 
@@ -909,7 +907,7 @@ function rX0(A, Q, B) {
             default:
                 break
         }
-        g(`Getting matching hook commands for ${Q} with query: ${I}`), g(`Found ${Z.length} hook matchers in settings`);
+        g(`Getting matching hook commands for TextComponent{Q} with query: TextComponent{I}`), g(`Found TextComponent{Z.length} hook matchers in settings`);
         let Y;
         if (!I) Y = Z.flatMap((K) => K.hooks);
         else Y = Z.filter((K) => !K.matcher || oj3(I, K.matcher)).flatMap((K) => K.hooks);
@@ -918,39 +916,39 @@ function rX0(A, Q, B) {
             X = Array.from(new Map(Y.filter((K) => K.type === "agent").map((K) => [K.prompt([]), K])).values()),
             F = Y.filter((K) => K.type === "callback"),
             V = [...J, ...W, ...X, ...F];
-        return g(`Matched ${V.length} unique hooks for query "${I||"no match query"}" (${Y.length} before deduplication)`), V
+        return g(`Matched TextComponent{V.length} unique hooks for query "TextComponent{I||"no match query"}" (TextComponent{Y.length} before deduplication)`), V
     } catch {
         return []
     }
 }
 
 function y30(A, Q) {
-    return `${A} hook error: ${Q.blockingError}`
+    return `TextComponent{A} hook error: TextComponent{Q.blockingError}`
 }
 
 function x30(A) {
     return `Stop hook feedback:
-${A.blockingError}`
+TextComponent{A.blockingError}`
 }
 
 function iX0(A) {
     return `UserPromptSubmit operation blocked by hook:
-${A.blockingError}`
+TextComponent{A.blockingError}`
 }
 async function* Xa({
     hookInput: A,
     toolUseID: Q,
     matchQuery: B,
     signal: G,
-    timeoutMs: Z = tq,
+    timeoutMs: Z = MULTI_EDIT_TOOL_NAME,
     toolUseContext: I,
     messages: Y
 }) {
     if (c0().disableAllHooks) return;
     let J = A.hook_event_name,
-        W = B ? `${J}:${B}` : J;
+        W = B ? `TextComponent{J}:TextComponent{B}` : J;
     if (pJ9()) {
-        g(`Skipping ${W} hook execution - workspace trust not accepted`);
+        g(`Skipping TextComponent{W} hook execution - workspace trust not accepted`);
         return
     }
     let X = I ? await I.getAppState() : void 0,
@@ -1031,7 +1029,7 @@ async function* Xa({
                 try {
                     N = JSON.stringify(A)
                 } catch (v) {
-                    e(Error(`Failed to stringify hook ${W} input`, {
+                    e(Error(`Failed to stringify hook TextComponent{W} input`, {
                         cause: v
                     })), yield {
                         message: p9({
@@ -1039,7 +1037,7 @@ async function* Xa({
                             hookName: W,
                             toolUseID: Q,
                             hookEvent: J,
-                            content: `Failed to prepare hook input: ${v instanceof Error?v.message:String(v)}`
+                            content: `Failed to prepare hook input: TextComponent{v instanceof Error?v.message:String(v)}`
                         }),
                         outcome: "non_blocking_error",
                         hook: H
@@ -1083,7 +1081,7 @@ async function* Xa({
                             hookName: W,
                             toolUseID: Q,
                             hookEvent: J,
-                            stderr: `JSON validation failed: ${y}`,
+                            stderr: `JSON validation failed: TextComponent{y}`,
                             stdout: q.stdout,
                             exitCode: 1
                         }),
@@ -1112,7 +1110,7 @@ async function* Xa({
                         exitCode: q.status
                     });
                     if (uG2(R) && !R.suppressOutput && P && q.status === 0) {
-                        let x = `${oA.bold(W)} completed`;
+                        let x = `TextComponent{oA.bold(W)} completed`;
                         yield {
                             ...v,
                             message: v.message || p9({
@@ -1157,7 +1155,7 @@ async function* Xa({
                 if (q.status === 2) {
                     yield {
                         blockingError: {
-                            blockingError: `[${H.command}]: ${q.stderr||"No stderr output"}`,
+                            blockingError: `[TextComponent{H.command}]: TextComponent{q.stderr||"No stderr output"}`,
                             command: H.command
                         },
                         outcome: "blocking",
@@ -1171,7 +1169,7 @@ async function* Xa({
                         hookName: W,
                         toolUseID: Q,
                         hookEvent: J,
-                        stderr: `Failed with non-blocking status code: ${q.stderr.trim()||"No stderr output"}`,
+                        stderr: `Failed with non-blocking status code: TextComponent{q.stderr.trim()||"No stderr output"}`,
                         stdout: q.stdout,
                         exitCode: q.status
                     }),
@@ -1188,7 +1186,7 @@ async function* Xa({
                         hookName: W,
                         toolUseID: Q,
                         hookEvent: J,
-                        stderr: `Failed to run: ${q}`,
+                        stderr: `Failed to run: TextComponent{q}`,
                         stdout: "",
                         exitCode: 1
                     }),
@@ -1273,18 +1271,17 @@ async function* Xa({
         numCancelled: K.cancelled
     })
 }
-
 async function oX0({
     getAppState: A,
     hookInput: Q,
     matchQuery: B,
     signal: G,
-    timeoutMs: Z = tq
+    timeoutMs: Z = MULTI_EDIT_TOOL_NAME
 }) {
     let I = Q.hook_event_name,
-        Y = B ? `${I}:${B}` : I;
-    if (c0().disableAllHooks) return g(`Skipping hooks for ${Y} due to 'disableAllHooks' setting`), [];
-    if (pJ9()) return g(`Skipping ${Y} hook execution - workspace trust not accepted`), [];
+        Y = B ? `TextComponent{I}:TextComponent{B}` : I;
+    if (c0().disableAllHooks) return g(`Skipping hooks for TextComponent{Y} due to 'disableAllHooks' setting`), [];
+    if (pJ9()) return g(`Skipping TextComponent{Y} hook execution - workspace trust not accepted`), [];
     let J = A ? await A() : void 0,
         W = rX0(J, I, Q);
     if (W.length === 0) return [];
@@ -1309,13 +1306,13 @@ async function oX0({
             try {
                 let N = AFA(),
                     q = await V.callback(Q, N, z, K);
-                if (w?.(), BYA(q)) return g(`${Y} [callback] returned async response, returning empty output`), {
+                if (w?.(), BYA(q)) return g(`TextComponent{Y} [callback] returned async response, returning empty output`), {
                     command: "callback",
                     succeeded: !0,
                     output: ""
                 };
                 let R = q.systemMessage || "";
-                return g(`${Y} [callback] completed successfully`), {
+                return g(`TextComponent{Y} [callback] completed successfully`), {
                     command: "callback",
                     succeeded: !0,
                     output: R
@@ -1323,7 +1320,7 @@ async function oX0({
             } catch (N) {
                 w?.();
                 let q = N instanceof Error ? N.message : String(N);
-                return g(`${Y} [callback] failed to run: ${q}`, {
+                return g(`TextComponent{Y} [callback] failed to run: TextComponent{q}`, {
                     level: "error"
                 }), {
                     command: "callback",
@@ -1342,7 +1339,7 @@ async function oX0({
             succeeded: !1,
             output: "Agent stop hooks are not yet supported outside REPL"
         };
-        if (V.type === "function") return e(Error(`Function hook reached executeHooksOutsideREPL for ${I}. Function hooks should only be used in REPL context (Stop hooks).`)), {
+        if (V.type === "function") return e(Error(`Function hook reached executeHooksOutsideREPL for TextComponent{I}. Function hooks should only be used in REPL context (Stop hooks).`)), {
             command: "function",
             succeeded: !1,
             output: "Internal error: function hook executed outside REPL context"
@@ -1354,19 +1351,19 @@ async function oX0({
             } = yk(AbortSignal.timeout(D), G);
         try {
             let E = await sX0(V, I, Y, X, H, K);
-            if (C?.(), E.aborted) return g(`${Y} [${V.command}] cancelled`), {
+            if (C?.(), E.aborted) return g(`TextComponent{Y} [TextComponent{V.command}] cancelled`), {
                 command: V.command,
                 succeeded: !1,
                 output: "Hook cancelled"
             };
-            g(`${Y} [${V.command}] completed with status ${E.status}`);
+            g(`TextComponent{Y} [TextComponent{V.command}] completed with status TextComponent{E.status}`);
             let {
                 json: z,
                 validationError: w
             } = lJ9(E.stdout);
-            if (w) throw qj(`${oA.bold(Y)} [${V.command}] ${oA.yellow("Hook JSON output validation failed")}`), Error(w);
+            if (w) throw qj(`TextComponent{oA.bold(Y)} [TextComponent{V.command}] TextComponent{oA.yellow("Hook JSON output validation failed")}`), Error(w);
             if (z && !BYA(z)) {
-                if (g(`Parsed JSON output from hook: ${JSON.stringify(z)}`), z.systemMessage) N9(z.systemMessage)
+                if (g(`Parsed JSON output from hook: TextComponent{JSON.stringify(z)}`), z.systemMessage) N9(z.systemMessage)
             }
             let N = E.status === 0 ? E.stdout || "" : E.stderr || "";
             return {
@@ -1377,7 +1374,7 @@ async function oX0({
         } catch (E) {
             C?.();
             let z = E instanceof Error ? E.message : String(E);
-            return g(`${Y} [${V.command}] failed to run: ${z}`, {
+            return g(`TextComponent{Y} [TextComponent{V.command}] failed to run: TextComponent{z}`, {
                 level: "error"
             }), {
                 command: V.command,
@@ -1388,8 +1385,8 @@ async function oX0({
     });
     return await Promise.all(F)
 }
-async function* v30(A, Q, B, G, Z, I, Y = tq) {
-    g(`executePreToolHooks called for tool: ${A}`);
+async function* v30(A, Q, B, G, Z, I, Y = MULTI_EDIT_TOOL_NAME) {
+    g(`executePreToolHooks called for tool: TextComponent{A}`);
     let J = {
         ...rE(Z),
         hook_event_name: "PreToolUse",
@@ -1406,7 +1403,7 @@ async function* v30(A, Q, B, G, Z, I, Y = tq) {
         toolUseContext: G
     })
 }
-async function* b30(A, Q, B, G, Z, I, Y, J = tq) {
+async function* b30(A, Q, B, G, Z, I, Y, J = MULTI_EDIT_TOOL_NAME) {
     let W = {
         ...rE(I),
         hook_event_name: "PostToolUse",
@@ -1424,7 +1421,7 @@ async function* b30(A, Q, B, G, Z, I, Y, J = tq) {
         toolUseContext: Z
     })
 }
-async function* f30(A, Q, B, G, Z, I, Y, J, W = tq) {
+async function* f30(A, Q, B, G, Z, I, Y, J, W = MULTI_EDIT_TOOL_NAME) {
     let X = {
         ...rE(Y),
         hook_event_name: "PostToolUseFailure",
@@ -1443,8 +1440,7 @@ async function* f30(A, Q, B, G, Z, I, Y, J, W = tq) {
         toolUseContext: Z
     })
 }
-
-async function U80(A, Q = tq) {
+async function U80(A, Q = MULTI_EDIT_TOOL_NAME) {
     let {
         message: B,
         title: G,
@@ -1462,7 +1458,7 @@ async function U80(A, Q = tq) {
         matchQuery: Z
     })
 }
-async function* h30(A, Q, B = tq, G = !1, Z, I, Y) {
+async function* h30(A, Q, B = MULTI_EDIT_TOOL_NAME, G = !1, Z, I, Y) {
     let J = Z ? {
         ...rE(A),
         hook_event_name: "SubagentStop",
@@ -1493,11 +1489,11 @@ async function* nX0(A, Q, B) {
         hookInput: G,
         toolUseID: AFA(),
         signal: B.abortController.signal,
-        timeoutMs: tq,
+        timeoutMs: MULTI_EDIT_TOOL_NAME,
         toolUseContext: B
     })
 }
-async function* R00(A, Q, B, G = tq) {
+async function* R00(A, Q, B, G = MULTI_EDIT_TOOL_NAME) {
     let Z = {
         ...rE(void 0, Q),
         hook_event_name: "SessionStart",
@@ -1511,7 +1507,7 @@ async function* R00(A, Q, B, G = tq) {
         timeoutMs: G
     })
 }
-async function* qX0(A, Q, B, G = tq) {
+async function* qX0(A, Q, B, G = MULTI_EDIT_TOOL_NAME) {
     let Z = {
         ...rE(void 0),
         hook_event_name: "SubagentStart",

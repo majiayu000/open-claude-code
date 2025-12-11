@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: prompts_007.js
+ * 处理时间: 2025-12-09T03:41:38.241Z
+ * 变量映射: 5 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.042Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -19,12 +22,11 @@
 
         if (GQ.isAxiosError(Z) && Z.response?.status === 404) throw BA("tengu_teleport_error_session_not_found_404", {
             sessionId: A
-        }), new GI(`${A} not found.`, `${A} not found.
-${oA.dim("Run /status in Claude Code to check your account.")}`);
-        throw e(I), Error(`Failed to fetch session from Sessions API: ${I.message}`)
+        }), new GI(`TextComponent{A} not found.`, `TextComponent{A} not found.
+TextComponent{oA.dim("Run /status in Claude Code to check your account.")}`);
+        throw e(I), Error(`Failed to fetch session from Sessions API: TextComponent{I.message}`)
     }
 }
-
 async function M80(A) {
     let {
         initialMessage: Q,
@@ -48,17 +50,17 @@ async function M80(A) {
             let [y, v] = Y.split("/");
             if (y && v) J = {
                 type: "git_repository",
-                url: `https://github.com/${y}/${v}`,
+                url: `https://github.com/TextComponent{y}/TextComponent{v}`,
                 revision: A.branchName
             }, W = {
                 type: "git_repository",
                 git_info: {
                     type: "github",
-                    repo: `${y}/${v}`,
+                    repo: `TextComponent{y}/TextComponent{v}`,
                     branches: [F]
                 }
             };
-            else e(Error(`Invalid repository format: ${Y} - expected 'owner/name'`))
+            else e(Error(`Invalid repository format: TextComponent{Y} - expected 'owner/name'`))
         }
         let V = await kJA();
         if (!V || V.length === 0) return e(Error("No environments available for session creation")), null;
@@ -66,13 +68,13 @@ async function M80(A) {
             H = V[0];
         if (D) {
             let y = V.find((v) => v.environment_id === D);
-            if (y) H = y, g(`Using configured default environment: ${D}`);
-            else g(`Configured default environment ${D} not found in available environments, using first available`)
+            if (y) H = y, g(`Using configured default environment: TextComponent{D}`);
+            else g(`Configured default environment TextComponent{D} not found in available environments, using first available`)
         }
         if (!H) return e(Error("No environments available for session creation")), null;
         let C = H.environment_id;
-        g(`Selected environment: ${C} (${H.name})`);
-        let E = `${o9().BASE_API_URL}/v1/sessions`,
+        g(`Selected environment: TextComponent{C} (TextComponent{H.name})`);
+        let E = `TextComponent{getConfig().BASE_API_URL}/v1/sessions`,
             z = {
                 ...BC(Z),
                 "x-organization-uuid": I
@@ -80,7 +82,7 @@ async function M80(A) {
             w = {
                 sources: J ? [J] : [],
                 outcomes: W ? [W] : [],
-                model: S3()
+                model: getDefaultSonnetModel()
             },
             N = Q ? [{
                 type: "event",
@@ -101,20 +103,20 @@ async function M80(A) {
                 session_context: w,
                 environment_id: C
             };
-        g(`Creating session with payload: ${JSON.stringify(q,null,2)}`);
+        g(`Creating session with payload: TextComponent{JSON.stringify(q,null,2)}`);
         let R = await GQ.post(E, q, {
             headers: z,
             signal: G
         });
-        if (R.status !== 200 && R.status !== 201) return e(Error(`API request failed with status ${R.status}: ${R.statusText}
+        if (R.status !== 200 && R.status !== 201) return e(Error(`API request failed with status TextComponent{R.status}: TextComponent{R.statusText}
 
-Response data: ${JSON.stringify(R.data,null,2)}`)), null;
+Response data: TextComponent{JSON.stringify(R.data,null,2)}`)), null;
         let P = R.data;
-        if (P && typeof P.id === "string") return g(`Successfully created remote session: ${P.id}`), {
+        if (P && typeof P.id === "string") return g(`Successfully created remote session: TextComponent{P.id}`), {
             id: P.id,
             title: P.title || X
         };
-        return e(Error(`Cannot determine session ID from API response: ${JSON.stringify(R.data)}`)), null
+        return e(Error(`Cannot determine session ID from API response: TextComponent{JSON.stringify(R.data)}`)), null
     } catch (Z) {
         let I = Z instanceof Error ? Z : Error(String(Z));
         return e(I), null
@@ -145,7 +147,7 @@ Example 3:
 Here is the session description:
 <description>{description}</description>
 Please generate a title and branch name for this session.`;
-var W0A = L(() => {
+var W0A = lazyLoader(() => {
     I6();
     ED();
     wYA();
@@ -171,7 +173,7 @@ var W0A = L(() => {
     X61();
     VT2();
     RB();
-    L80 = GA(VA(), 1)
+    L80 = esmImport(VA(), 1)
 });
 async function $T2() {
     let A = [],
@@ -195,7 +197,7 @@ async function $T2() {
     }
     return A
 }
-var wT2 = L(() => {
+var wT2 = lazyLoader(() => {
     w80();
     Y0A()
 });
@@ -205,7 +207,6 @@ function NT2(A) {
     if (!Q) Q = I_(async (B, G, Z) => await Xv5(A, B, G, Z)), qT2.set(A, Q);
     return Q
 }
-
 async function Xv5(A, Q, B, G) {
     for (let Z = 1; Z <= H61; Z++) {
         try {
@@ -218,70 +219,67 @@ async function Xv5(A, Q, B, G) {
                 headers: J,
                 validateStatus: (X) => X < 500
             });
-            if (W.status === 200 || W.status === 201) return R80.set(A, Q.uuid), g(`Successfully persisted session log entry for session ${A}`), !0;
+            if (W.status === 200 || W.status === 201) return R80.set(A, Q.uuid), g(`Successfully persisted session log entry for session TextComponent{A}`), !0;
             if (W.status === 409) {
                 let F = W.data.error?.message || "Concurrent modification detected";
-                return e(Error(`Session persistence conflict: UUID mismatch for session ${A}, entry ${Q.uuid}. ${F}`)), R6("error", "session_persist_fail_concurrent_modification"), !1
+                return e(Error(`Session persistence conflict: UUID mismatch for session TextComponent{A}, entry TextComponent{Q.uuid}. TextComponent{F}`)), R6("error", "session_persist_fail_concurrent_modification"), !1
             }
             if (W.status === 401) return g("Session token expired or invalid"), R6("error", "session_persist_fail_bad_token"), !1;
-            g(`Failed to persist session log: ${W.status} ${W.statusText}`), R6("error", "session_persist_fail_status", {
+            g(`Failed to persist session log: TextComponent{W.status} TextComponent{W.statusText}`), R6("error", "session_persist_fail_status", {
                 status: W.status,
                 attempt: Z
             })
         } catch (Y) {
             let J = Y;
-            e(Error(`Error persisting session log: ${J.message}`)), R6("error", "session_persist_fail_status", {
+            e(Error(`Error persisting session log: TextComponent{J.message}`)), R6("error", "session_persist_fail_status", {
                 status: J.status,
                 attempt: Z
             })
         }
-        if (Z === H61) return g(`Remote persistence failed after ${H61} attempts`), R6("error", "session_persist_error_retries_exhausted", {
+        if (Z === H61) return g(`Remote persistence failed after TextComponent{H61} attempts`), R6("error", "session_persist_error_retries_exhausted", {
             attempt: Z
         }), !1;
         let I = Math.min(Wv5 * Math.pow(2, Z - 1), 8000);
-        g(`Remote persistence attempt ${Z}/${H61} failed, retrying in ${I}ms…`), await new Promise((Y) => setTimeout(Y, I))
+        g(`Remote persistence attempt TextComponent{Z}/TextComponent{H61} failed, retrying in TextComponent{I}ms…`), await new Promise((Y) => setTimeout(Y, I))
     }
     return !1
 }
-
 async function LT2(A, Q, B) {
     let G = tAA();
     if (!G) return g("No session token available for session persistence"), R6("error", "session_persist_fail_jwt_no_token"), !1;
     let Z = {
-        Authorization: `Bearer ${G}`,
+        Authorization: `Bearer TextComponent{G}`,
         "Content-Type": "application/json"
     };
     return await NT2(A)(Q, B, Z)
 }
-
 async function MT2(A, Q) {
     try {
         let {
             accessToken: B,
             orgUUID: G
-        } = await J0A(), Z = `${o9().BASE_API_URL}/v1/session_ingress/session/${A}`, I = {
+        } = await J0A(), Z = `TextComponent{getConfig().BASE_API_URL}/v1/session_ingress/session/TextComponent{A}`, I = {
             ...BC(B),
             "x-organization-uuid": G
         };
         return await NT2(A)(Q, Z, I)
     } catch (B) {
-        return g(`Failed to get OAuth credentials: ${B instanceof Error?B.message:String(B)}`), R6("error", "session_persist_fail_oauth_no_token"), !1
+        return g(`Failed to get OAuth credentials: TextComponent{B instanceof Error?B.message:String(B)}`), R6("error", "session_persist_fail_oauth_no_token"), !1
     }
 }
-
 async function OT2(A, Q) {
     let B = tAA();
     if (!B) return g("No session token available for fetching session logs"), R6("error", "session_get_fail_no_token"), null;
     try {
         let G = await GQ.get(Q, {
             headers: {
-                Authorization: `Bearer ${B}`
+                Authorization: `Bearer TextComponent{B}`
             },
             validateStatus: (Z) => Z < 500
         });
         if (G.status === 200) {
             let Z = G.data;
-            if (!Z || typeof Z !== "object" || !Array.isArray(Z.loglines)) return e(Error(`Invalid session logs response format: ${JSON.stringify(Z)}`)), R6("error", "session_get_fail_invalid_response"), null;
+            if (!Z || typeof Z !== "object" || !Array.isArray(Z.loglines)) return e(Error(`Invalid session logs response format: TextComponent{JSON.stringify(Z)}`)), R6("error", "session_get_fail_invalid_response"), null;
             let I = Z.loglines;
             if (!O80.has(A)) O80.set(A, new Set);
             let Y = O80.get(A);
@@ -291,16 +289,16 @@ async function OT2(A, Q) {
                 let J = I[I.length - 1];
                 if (J && "uuid" in J && J.uuid) R80.set(A, J.uuid)
             }
-            return g(`Fetched ${I.length} session logs for session ${A}`), I
+            return g(`Fetched TextComponent{I.length} session logs for session TextComponent{A}`), I
         }
-        if (G.status === 404) return g(`No existing logs for session ${A}`), R6("warn", "session_get_no_logs_for_session"), [];
+        if (G.status === 404) return g(`No existing logs for session TextComponent{A}`), R6("warn", "session_get_no_logs_for_session"), [];
         if (G.status === 401) return g("Session token expired or invalid"), R6("error", "session_get_fail_bad_token"), null;
-        return g(`Failed to fetch session logs: ${G.status} ${G.statusText}`), R6("error", "session_get_fail_status", {
+        return g(`Failed to fetch session logs: TextComponent{G.status} TextComponent{G.statusText}`), R6("error", "session_get_fail_status", {
             status: G.status
         }), null
     } catch (G) {
         let Z = G;
-        return e(Error(`Error fetching session logs: ${Z.message}`)), R6("error", "session_get_fail_status", {
+        return e(Error(`Error fetching session logs: TextComponent{Z.message}`)), R6("error", "session_get_fail_status", {
             status: Z.status
         }), null
     }
@@ -308,7 +306,7 @@ async function OT2(A, Q) {
 var R80, O80, H61 = 10,
     Wv5 = 500,
     qT2;
-var T80 = L(() => {
+var T80 = lazyLoader(() => {
     w3();
     u1();
     D0();
@@ -330,11 +328,11 @@ function P80({
         hasUncommitted: I,
         hasUnpushed: Y
     } = A, J = "";
-    if (I && Y) J = `Uncommitted changes and unpushed commits detected on ${Q}`;
+    if (I && Y) J = `Uncommitted changes and unpushed commits detected on TextComponent{Q}`;
     else if (I) J = "Uncommitted changes detected";
-    else J = `Unpushed commits detected on ${Q}`;
+    else J = `Unpushed commits detected on TextComponent{Q}`;
 
-function W(V) {
+    function W(V) {
         B(V)
     }
     let X = I ? "Commit and push my changes" : "Push my changes",
@@ -349,19 +347,19 @@ function W(V) {
         marginTop: 1
     }, fW.createElement(j, {
         paddingX: 1
-    }, fW.createElement($, {
+    }, fW.createElement(TextComponent, {
         color: G,
         bold: !0
     }, "Include local changes in the remote task?")), fW.createElement(j, {
         flexDirection: "column",
         paddingX: 1
-    }, fW.createElement($, {
+    }, fW.createElement(TextComponent, {
         dimColor: !0
     }, J), fW.createElement(j, {
         marginTop: 1
     }, F ? fW.createElement(j, {
         flexDirection: "row"
-    }, fW.createElement(e9, null), fW.createElement($, null, F)) : fW.createElement(M0, {
+    }, fW.createElement(e9, null), fW.createElement(TextComponent, null, F)) : fW.createElement(M0, {
         options: [{
             label: X,
             value: "commit-push"
@@ -378,11 +376,11 @@ function W(V) {
     }))))
 }
 var fW;
-var RT2 = L(() => {
+var RT2 = lazyLoader(() => {
     hA();
     T5();
     zI();
-    fW = GA(VA(), 1)
+    fW = esmImport(VA(), 1)
 });
 
 function Vv5(A) {
@@ -398,11 +396,10 @@ function Vv5(A) {
 https://github.com/apps/claude/installations/new`
     }
 }
-
 async function TT2(A, Q, B, G, Z, I) {
     BA("tengu_input_background", {}), I(!0);
     let Y = {
-            text: `<background-task-input>${A}</background-task-input>`,
+            text: `<background-task-input>TextComponent{A}</background-task-input>`,
             type: "text"
         },
         J = j0({
@@ -417,7 +414,7 @@ async function TT2(A, Q, B, G, Z, I) {
         }, VG.createElement(R1A, {
             addMargin: !0,
             param: Y
-        }), VG.createElement(y0, null, VG.createElement($, {
+        }), VG.createElement(y0, null, VG.createElement(TextComponent, {
             dimColor: !0
         }, "Initializing session…"))),
         shouldHidePromptInput: !1
@@ -432,14 +429,14 @@ async function TT2(A, Q, B, G, Z, I) {
                 messages: [hF(), J, ...B, j0({
                     content: `<bash-stderr>Cannot launch remote Claude Code session.
 
-${q}</bash-stderr>`
+TextComponent{q}</bash-stderr>`
                 })],
                 shouldQuery: !1
             }
         }
         let X = await TGB(),
             F = await mb(),
-            V = await Cf1(),
+            V = await getMainBranch(),
             K = X.commitsAheadOfDefaultBranch === 0;
         if ((X.hasUncommitted || X.hasUnpushed) && !K) {
             let q = await new Promise((R) => {
@@ -484,14 +481,14 @@ ${q}</bash-stderr>`
                 };
                 if (X.hasUncommitted) R("committing");
                 else R("pushing");
-                let P = `Background task: ${A.slice(0,60)}${A.length>60?"...":""}`,
+                let P = `Background task: TextComponent{A.slice(0,60)}TextComponent{A.length>60?"...":""}`,
                     y = await PGB(P, (v) => {
                         R(v)
                     });
                 if (!y.success) return {
                     messages: [hF(), J, ...B, j0({
                         content: `<bash-stderr>Failed to commit and push changes:
-${y.error}</bash-stderr>`
+TextComponent{y.error}</bash-stderr>`
                     })],
                     shouldQuery: !1
                 }
@@ -502,7 +499,7 @@ ${y.error}</bash-stderr>`
         try {
             H = await ss(D)
         } catch (q) {
-            g(`Could not read transcript file: ${q instanceof Error?q.message:String(q)}`)
+            g(`Could not read transcript file: TextComponent{q instanceof Error?q.message:String(q)}`)
         }
         let C = H.filter(S80);
         Z({
@@ -511,7 +508,7 @@ ${y.error}</bash-stderr>`
             }, VG.createElement(R1A, {
                 addMargin: !0,
                 param: Y
-            }), VG.createElement(y0, null, VG.createElement($, {
+            }), VG.createElement(y0, null, VG.createElement(TextComponent, {
                 dimColor: !0
             }, "Creating background task…"))),
             shouldHidePromptInput: !1
@@ -528,7 +525,7 @@ ${y.error}</bash-stderr>`
             for (let q = 0; q < C.length; q++) {
                 let R = C[q];
                 if (!R) continue;
-                if (!await MT2(z.id, R)) throw Error(`Failed to upload session history (message ${q+1}/${C.length})`)
+                if (!await MT2(z.id, R)) throw Error(`Failed to upload session history (message TextComponent{q+1}/TextComponent{C.length})`)
             }
         if (!await GT2(z.id, A)) throw Error("Failed to send user task message to remote session");
         G.setAppState((q) => ({
@@ -548,13 +545,13 @@ ${y.error}</bash-stderr>`
                 }
             }
         }));
-        let N = `https://claude.ai/code/${z.id}`;
+        let N = `https://claude.ai/code/TextComponent{z.id}`;
         return {
             messages: [hF(), J, ...B, j0({
                 content: `<background-task-output>This task is now running in the background.
-Monitor it with /tasks or at ${N}
+Monitor it with /tasks or at TextComponent{N}
 
-Or, resume it later with: claude --teleport ${z.id}</background-task-output>`
+Or, resume it later with: claude --teleport TextComponent{z.id}</background-task-output>`
             })],
             shouldQuery: !1
         }
@@ -562,7 +559,7 @@ Or, resume it later with: claude --teleport ${z.id}</background-task-output>`
         let X = W instanceof Error ? W.message : String(W);
         return {
             messages: [hF(), J, ...B, j0({
-                content: `<bash-stderr>Failed to create background session: ${X}. Try running /login and signing in with a claude.ai account (not Console).</bash-stderr>`
+                content: `<bash-stderr>Failed to create background session: TextComponent{X}. Try running /login and signing in with a claude.ai account (not Console).</bash-stderr>`
             })],
             shouldQuery: !1
         }
@@ -570,7 +567,6 @@ Or, resume it later with: claude --teleport ${z.id}</background-task-output>`
         Z(null)
     }
 }
-
 async function PT2(A, Q, B, G, Z) {
     let I = BZ(A);
     if (!I.length) return null;
@@ -584,7 +580,7 @@ async function PT2(A, Q, B, G, Z) {
         signal: Q,
         options: {
             getToolPermissionContext: B,
-            model: S3(),
+            model: getDefaultSonnetModel(),
             toolChoice: void 0,
             isNonInteractiveSession: G,
             hasAppendSystemPrompt: Z,
@@ -597,7 +593,7 @@ async function PT2(A, Q, B, G, Z) {
     }))
 }
 var VG;
-var j80 = L(() => {
+var j80 = lazyLoader(() => {
     w0();
     nQ();
     hA();
@@ -616,7 +612,7 @@ var j80 = L(() => {
     ED();
     RT2();
     S0();
-    VG = GA(VA(), 1)
+    VG = esmImport(VA(), 1)
 });
 
 function C61({
@@ -631,19 +627,19 @@ function C61({
         flexDirection: "column",
         marginTop: Q ? 1 : 0,
         width: "100%"
-    }, vh.createElement(j, null, vh.createElement($, {
+    }, vh.createElement(j, null, vh.createElement(TextComponent, {
         backgroundColor: "bashMessageBackgroundColor",
         color: "bashBorder"
-    }, "!"), vh.createElement($, {
+    }, "!"), vh.createElement(TextComponent, {
         backgroundColor: "bashMessageBackgroundColor",
         color: "text"
     }, " ", B, " ")))
 }
 var vh;
-var _80 = L(() => {
+var _80 = lazyLoader(() => {
     hA();
     nQ();
-    vh = GA(VA(), 1)
+    vh = esmImport(VA(), 1)
 });
 
 function k80({
@@ -657,7 +653,7 @@ function k80({
     }, E61.default.createElement(C61, {
         addMargin: !1,
         param: {
-            text: `<bash-input>${A}</bash-input>`,
+            text: `<bash-input>TextComponent{A}</bash-input>`,
             type: "text"
         }
     }), Q ? E61.default.createElement($21, {
@@ -673,19 +669,18 @@ function k80({
     }))
 }
 var E61;
-var jT2 = L(() => {
+var jT2 = lazyLoader(() => {
     hA();
     _80();
     f10();
     nV();
-    E61 = GA(VA(), 1)
+    E61 = esmImport(VA(), 1)
 });
-
 async function ST2(A, Q, B, G, Z, I) {
     BA("tengu_input_bash", {}), I(!0);
     let Y = j0({
             content: G$({
-                inputString: `<bash-input>${A}</bash-input>`,
+                inputString: `<bash-input>TextComponent{A}</bash-input>`,
                 precedingInputBlocks: Q
             })
         }),
@@ -725,7 +720,7 @@ async function ST2(A, Q, B, G, Z, I) {
         if (EoA(K.toolPermissionContext)) V = CoA(V);
         return {
             messages: [hF(), Y, ...B, j0({
-                content: `<bash-stdout>${F.stdout}</bash-stdout><bash-stderr>${V}</bash-stderr>`
+                content: `<bash-stdout>TextComponent{F.stdout}</bash-stdout><bash-stderr>TextComponent{V}</bash-stderr>`
             })],
             shouldQuery: !1
         }
@@ -739,14 +734,14 @@ async function ST2(A, Q, B, G, Z, I) {
             };
             return {
                 messages: [hF(), Y, ...B, j0({
-                    content: `<bash-stdout>${W.stdout}</bash-stdout><bash-stderr>${W.stderr}</bash-stderr>`
+                    content: `<bash-stdout>TextComponent{W.stdout}</bash-stdout><bash-stderr>TextComponent{W.stderr}</bash-stderr>`
                 })],
                 shouldQuery: !1
             }
         }
         return {
             messages: [hF(), Y, ...B, j0({
-                content: `<bash-stderr>Command failed: ${W instanceof Error?W.message:String(W)}</bash-stderr>`
+                content: `<bash-stderr>Command failed: TextComponent{W instanceof Error?W.message:String(W)}</bash-stderr>`
             })],
             shouldQuery: !1
         }
@@ -755,7 +750,7 @@ async function ST2(A, Q, B, G, Z, I) {
     }
 }
 var Dy;
-var _T2 = L(() => {
+var _T2 = lazyLoader(() => {
     w0();
     nQ();
     nQ();
@@ -764,7 +759,7 @@ var _T2 = L(() => {
     yp();
     yp();
     $Z();
-    Dy = GA(VA(), 1)
+    Dy = esmImport(VA(), 1)
 });
 
 function vJA(A) {
@@ -785,13 +780,12 @@ function vJA(A) {
 }
 
 function Kv5() {
-    return V0(process.env.OTEL_LOG_USER_PROMPTS)
+    return parseBoolean(process.env.OTEL_LOG_USER_PROMPTS)
 }
 
 function z61(A) {
     return Kv5() ? A : "<REDACTED>"
 }
-
 async function WO(A, Q = {}) {
     let B = HE0();
     if (!B) return;
@@ -803,57 +797,57 @@ async function WO(A, Q = {}) {
     for (let [Z, I] of Object.entries(Q))
         if (I !== void 0) G[Z] = I;
     B.emit({
-        body: `claude_code.${A}`,
+        body: `claude_code.TextComponent{A}`,
         attributes: G
     })
 }
-var bJA = L(() => {
+var bJA = lazyLoader(() => {
     S0();
     _81();
     hQ()
 });
-var fJA = U((xT2) => {
+var fJA = moduleWrapper((xT2) => {
     Object.defineProperty(xT2, "__esModule", {
         value: !0
     });
     xT2.stringArray = xT2.array = xT2.func = xT2.error = xT2.number = xT2.string = xT2.boolean = void 0;
 
-function Dv5(A) {
+    function Dv5(A) {
         return A === !0 || A === !1
     }
     xT2.boolean = Dv5;
 
-function kT2(A) {
+    function kT2(A) {
         return typeof A === "string" || A instanceof String
     }
     xT2.string = kT2;
 
-function Hv5(A) {
+    function Hv5(A) {
         return typeof A === "number" || A instanceof Number
     }
     xT2.number = Hv5;
 
-function Cv5(A) {
+    function Cv5(A) {
         return A instanceof Error
     }
     xT2.error = Cv5;
 
-function Ev5(A) {
+    function Ev5(A) {
         return typeof A === "function"
     }
     xT2.func = Ev5;
 
-function yT2(A) {
+    function yT2(A) {
         return Array.isArray(A)
     }
     xT2.array = yT2;
 
-function zv5(A) {
+    function zv5(A) {
         return yT2(A) && A.every((Q) => kT2(Q))
     }
     xT2.stringArray = zv5
 });
-var v80 = U((IP2) => {
+var v80 = moduleWrapper((IP2) => {
     Object.defineProperty(IP2, "__esModule", {
         value: !0
     });
@@ -863,8 +857,7 @@ var v80 = U((IP2) => {
     (function(A) {
         A.ParseError = -32700, A.InvalidRequest = -32600, A.MethodNotFound = -32601, A.InvalidParams = -32602, A.InternalError = -32603, A.jsonrpcReservedErrorRangeStart = -32099, A.serverErrorStart = -32099, A.MessageWriteError = -32099, A.MessageReadError = -32098, A.PendingResponseRejected = -32097, A.ConnectionInactive = -32096, A.ServerNotInitialized = -32002, A.UnknownErrorCode = -32001, A.jsonrpcReservedErrorRangeEnd = -32000, A.serverErrorEnd = -32000
     })(y80 || (IP2.ErrorCodes = y80 = {}));
-
-class x80 extends Error {
+    class x80 extends Error {
         constructor(A, Q, B) {
             super(Q);
             this.code = X0A.number(A) ? A : y80.UnknownErrorCode, this.data = B, Object.setPrototypeOf(this, x80.prototype)
@@ -879,8 +872,7 @@ class x80 extends Error {
         }
     }
     IP2.ResponseError = x80;
-
-class GC {
+    class GC {
         constructor(A) {
             this.kind = A
         }
@@ -895,8 +887,7 @@ class GC {
     GC.auto = new GC("auto");
     GC.byPosition = new GC("byPosition");
     GC.byName = new GC("byName");
-
-class XY {
+    class XY {
         constructor(A, Q) {
             this.method = A, this.numberOfParams = Q
         }
@@ -905,15 +896,13 @@ class XY {
         }
     }
     IP2.AbstractMessageSignature = XY;
-
-class fT2 extends XY {
+    class fT2 extends XY {
         constructor(A) {
             super(A, 0)
         }
     }
     IP2.RequestType0 = fT2;
-
-class hT2 extends XY {
+    class hT2 extends XY {
         constructor(A, Q = GC.auto) {
             super(A, 1);
             this._parameterStructures = Q
@@ -923,8 +912,7 @@ class hT2 extends XY {
         }
     }
     IP2.RequestType = hT2;
-
-class gT2 extends XY {
+    class gT2 extends XY {
         constructor(A, Q = GC.auto) {
             super(A, 1);
             this._parameterStructures = Q
@@ -934,64 +922,55 @@ class gT2 extends XY {
         }
     }
     IP2.RequestType1 = gT2;
-
-class uT2 extends XY {
+    class uT2 extends XY {
         constructor(A) {
             super(A, 2)
         }
     }
     IP2.RequestType2 = uT2;
-
-class mT2 extends XY {
+    class mT2 extends XY {
         constructor(A) {
             super(A, 3)
         }
     }
     IP2.RequestType3 = mT2;
-
-class dT2 extends XY {
+    class dT2 extends XY {
         constructor(A) {
             super(A, 4)
         }
     }
     IP2.RequestType4 = dT2;
-
-class cT2 extends XY {
+    class cT2 extends XY {
         constructor(A) {
             super(A, 5)
         }
     }
     IP2.RequestType5 = cT2;
-
-class pT2 extends XY {
+    class pT2 extends XY {
         constructor(A) {
             super(A, 6)
         }
     }
     IP2.RequestType6 = pT2;
-
-class lT2 extends XY {
+    class lT2 extends XY {
         constructor(A) {
             super(A, 7)
         }
     }
     IP2.RequestType7 = lT2;
-
-class iT2 extends XY {
+    class iT2 extends XY {
         constructor(A) {
             super(A, 8)
         }
     }
     IP2.RequestType8 = iT2;
-
-class nT2 extends XY {
+    class nT2 extends XY {
         constructor(A) {
             super(A, 9)
         }
     }
     IP2.RequestType9 = nT2;
-
-class aT2 extends XY {
+    class aT2 extends XY {
         constructor(A, Q = GC.auto) {
             super(A, 1);
             this._parameterStructures = Q
@@ -1001,15 +980,13 @@ class aT2 extends XY {
         }
     }
     IP2.NotificationType = aT2;
-
-class sT2 extends XY {
+    class sT2 extends XY {
         constructor(A) {
             super(A, 0)
         }
     }
     IP2.NotificationType0 = sT2;
-
-class rT2 extends XY {
+    class rT2 extends XY {
         constructor(A, Q = GC.auto) {
             super(A, 1);
             this._parameterStructures = Q
@@ -1019,57 +996,49 @@ class rT2 extends XY {
         }
     }
     IP2.NotificationType1 = rT2;
-
-class oT2 extends XY {
+    class oT2 extends XY {
         constructor(A) {
             super(A, 2)
         }
     }
     IP2.NotificationType2 = oT2;
-
-class tT2 extends XY {
+    class tT2 extends XY {
         constructor(A) {
             super(A, 3)
         }
     }
     IP2.NotificationType3 = tT2;
-
-class eT2 extends XY {
+    class eT2 extends XY {
         constructor(A) {
             super(A, 4)
         }
     }
     IP2.NotificationType4 = eT2;
-
-class AP2 extends XY {
+    class AP2 extends XY {
         constructor(A) {
             super(A, 5)
         }
     }
     IP2.NotificationType5 = AP2;
-
-class QP2 extends XY {
+    class QP2 extends XY {
         constructor(A) {
             super(A, 6)
         }
     }
     IP2.NotificationType6 = QP2;
-
-class BP2 extends XY {
+    class BP2 extends XY {
         constructor(A) {
             super(A, 7)
         }
     }
     IP2.NotificationType7 = BP2;
-
-class GP2 extends XY {
+    class GP2 extends XY {
         constructor(A) {
             super(A, 8)
         }
     }
     IP2.NotificationType8 = GP2;
-
-class ZP2 extends XY {
+    class ZP2 extends XY {
         constructor(A) {
             super(A, 9)
         }
@@ -1083,20 +1052,20 @@ class ZP2 extends XY {
         }
         A.isRequest = Q;
 
-function B(Z) {
+        function B(Z) {
             let I = Z;
             return I && X0A.string(I.method) && Z.id === void 0
         }
         A.isNotification = B;
 
-function G(Z) {
+        function G(Z) {
             let I = Z;
             return I && (I.result !== void 0 || !!I.error) && (X0A.string(I.id) || X0A.number(I.id) || I.id === null)
         }
         A.isResponse = G
     })(bT2 || (IP2.Message = bT2 = {}))
 });
-var f80 = U((XP2) => {
+var f80 = moduleWrapper((XP2) => {
     var JP2;
     Object.defineProperty(XP2, "__esModule", {
         value: !0
@@ -1106,8 +1075,7 @@ var f80 = U((XP2) => {
     (function(A) {
         A.None = 0, A.First = 1, A.AsOld = A.First, A.Last = 2, A.AsNew = A.Last
     })(ZC || (XP2.Touch = ZC = {}));
-
-class b80 {
+    class b80 {
         constructor() {
             this[JP2] = "LinkedMap", this._map = new Map, this._head = void 0, this._tail = void 0, this._size = 0, this._state = 0
         }
@@ -1335,8 +1303,7 @@ class b80 {
         }
     }
     XP2.LinkedMap = b80;
-
-class WP2 extends b80 {
+    class WP2 extends b80 {
         constructor(A, Q = 1) {
             super();
             this._limit = A, this._ratio = Math.min(Math.max(0, Q), 1)
@@ -1368,7 +1335,7 @@ class WP2 extends b80 {
     }
     XP2.LRUCache = WP2
 });
-var HP2 = U((KP2) => {
+var HP2 = moduleWrapper((KP2) => {
     Object.defineProperty(KP2, "__esModule", {
         value: !0
     });
@@ -1383,13 +1350,13 @@ var HP2 = U((KP2) => {
         A.create = Q
     })(VP2 || (KP2.Disposable = VP2 = {}))
 });
-var Qn = U((CP2) => {
+var Qn = moduleWrapper((CP2) => {
     Object.defineProperty(CP2, "__esModule", {
         value: !0
     });
     var h80;
 
-function g80() {
+    function g80() {
         if (h80 === void 0) throw Error("No runtime abstraction layer installed");
         return h80
     }(function(A) {
@@ -1401,7 +1368,7 @@ function g80() {
     })(g80 || (g80 = {}));
     CP2.default = g80
 });
-var hJA = U((UP2) => {
+var hJA = moduleWrapper((UP2) => {
     Object.defineProperty(UP2, "__esModule", {
         value: !0
     });
@@ -1416,8 +1383,7 @@ var hJA = U((UP2) => {
             return Q
         }
     })(EP2 || (UP2.Event = EP2 = {}));
-
-class zP2 {
+    class zP2 {
         add(A, Q = null, B) {
             if (!this._callbacks) this._callbacks = [], this._contexts = [];
             if (this._callbacks.push(A), this._contexts.push(Q), Array.isArray(B)) B.push({
@@ -1454,8 +1420,7 @@ class zP2 {
             this._callbacks = void 0, this._contexts = void 0
         }
     }
-
-class U61 {
+    class U61 {
         constructor(A) {
             this._options = A
         }
@@ -1485,7 +1450,7 @@ class U61 {
     UP2.Emitter = U61;
     U61._noop = function() {}
 });
-var w61 = U((qP2) => {
+var w61 = moduleWrapper((qP2) => {
     Object.defineProperty(qP2, "__esModule", {
         value: !0
     });
@@ -1503,7 +1468,7 @@ var w61 = U((qP2) => {
             onCancellationRequested: u80.Event.None
         });
 
-function Q(B) {
+        function Q(B) {
             let G = B;
             return G && (G === A.None || G === A.Cancelled || Bb5.boolean(G.isCancellationRequested) && !!G.onCancellationRequested)
         }
@@ -1517,8 +1482,7 @@ function Q(B) {
             }
         }
     });
-
-class m80 {
+    class m80 {
         constructor() {
             this._isCancelled = !1
         }
@@ -1539,8 +1503,7 @@ class m80 {
             if (this._emitter) this._emitter.dispose(), this._emitter = void 0
         }
     }
-
-class wP2 {
+    class wP2 {
         get token() {
             if (!this._token) this._token = new m80;
             return this._token

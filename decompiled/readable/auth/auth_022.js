@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_022.js
+ * 处理时间: 2025-12-09T03:41:36.579Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.906Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -110,7 +112,7 @@
                     }
                 }
 
-function D(C) {
+                function D(C) {
                     try {
                         H(W.throw(C))
                     } catch (E) {
@@ -118,7 +120,7 @@ function D(C) {
                     }
                 }
 
-function H(C) {
+                function H(C) {
                     C.done ? F(C.value) : X(C.value).then(K, D)
                 }
                 H((W = W.apply(I, Y || [])).next())
@@ -138,13 +140,13 @@ function H(C) {
                 return this
             }), V;
 
-function K(H) {
+            function K(H) {
                 return function(C) {
                     return D([H, C])
                 }
             }
 
-function D(H) {
+            function D(H) {
                 if (W) throw TypeError("Generator is already executing.");
                 while (V && (V = 0, H[0] && (J = 0)), J) try {
                     if (W = 1, X && (F = H[0] & 2 ? X.return : H[0] ? X.throw || ((F = X.return) && F.call(X), 0) : X.next) && !(F = F.call(X, H[1])).done) return F;
@@ -276,13 +278,13 @@ function D(H) {
                 return this
             }, X;
 
-function V(w) {
+            function V(w) {
                 return function(N) {
                     return Promise.resolve(N).then(w, E)
                 }
             }
 
-function K(w, N) {
+            function K(w, N) {
                 if (W[w]) {
                     if (X[w] = function(q) {
                             return new Promise(function(R, P) {
@@ -292,7 +294,7 @@ function K(w, N) {
                 }
             }
 
-function D(w, N) {
+            function D(w, N) {
                 try {
                     H(W[w](N))
                 } catch (q) {
@@ -300,19 +302,19 @@ function D(w, N) {
                 }
             }
 
-function H(w) {
+            function H(w) {
                 w.value instanceof B6A ? Promise.resolve(w.value.v).then(C, E) : z(F[0][2], w)
             }
 
-function C(w) {
+            function C(w) {
                 D("next", w)
             }
 
-function E(w) {
+            function E(w) {
                 D("throw", w)
             }
 
-function z(w, N) {
+            function z(w, N) {
                 if (w(N), F.shift(), F.length) D(F[0][0], F[0][1])
             }
         }, PLQ = function(I) {
@@ -323,7 +325,7 @@ function z(w, N) {
                 return this
             }, Y;
 
-function W(X, F) {
+            function W(X, F) {
                 Y[X] = I[X] ? function(V) {
                     return (J = !J) ? {
                         value: B6A(I[X](V)),
@@ -339,7 +341,7 @@ function W(X, F) {
                 return this
             }, J);
 
-function W(F) {
+            function W(F) {
                 J[F] = I[F] && function(V) {
                     return new Promise(function(K, D) {
                         V = I[F](V), X(K, D, V.done, V.value)
@@ -347,7 +349,7 @@ function W(F) {
                 }
             }
 
-function X(F, V, K, D) {
+            function X(F, V, K, D) {
                 Promise.resolve(D).then(function(H) {
                     F({
                         value: H,
@@ -380,8 +382,7 @@ function X(F, V, K, D) {
             };
         _LQ = function(I) {
             if (I && I.__esModule) return I;
-
-var Y = {};
+            var Y = {};
             if (I != null) {
                 for (var J = G(I), W = 0; W < J.length; W++)
                     if (J[W] !== "default") iuA(Y, I, J[W])
@@ -443,7 +444,7 @@ var Y = {};
             }
             var J, W = 0;
 
-function X() {
+            function X() {
                 while (J = I.stack.pop()) try {
                     if (!J.async && W === 1) return W = 0, I.stack.push(J), Promise.resolve().then(X);
                     if (J.dispose) {
@@ -460,14 +461,14 @@ function X() {
             }
             return X()
         }, hLQ = function(I, Y) {
-            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
+            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)TextComponent|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
                 return W ? Y ? ".jsx" : ".js" : X && (!F || !V) ? J : X + F + "." + V.toLowerCase() + "js"
             });
             return I
         }, A("__extends", VLQ), A("__assign", KLQ), A("__rest", DLQ), A("__decorate", HLQ), A("__param", CLQ), A("__esDecorate", ELQ), A("__runInitializers", zLQ), A("__propKey", ULQ), A("__setFunctionName", $LQ), A("__metadata", wLQ), A("__awaiter", qLQ), A("__generator", NLQ), A("__exportStar", LLQ), A("__createBinding", iuA), A("__values", luA), A("__read", PO1), A("__spread", MLQ), A("__spreadArrays", OLQ), A("__spreadArray", RLQ), A("__await", B6A), A("__asyncGenerator", TLQ), A("__asyncDelegator", PLQ), A("__asyncValues", jLQ), A("__makeTemplateObject", SLQ), A("__importStar", _LQ), A("__importDefault", kLQ), A("__classPrivateFieldGet", yLQ), A("__classPrivateFieldSet", xLQ), A("__classPrivateFieldIn", vLQ), A("__addDisposableResource", bLQ), A("__disposeResources", fLQ), A("__rewriteRelativeImportExtension", hLQ)
     })
 });
-var bR = U((pC7, cLQ) => {
+var bR = moduleWrapper((pC7, cLQ) => {
     var {
         defineProperty: auA,
         getOwnPropertyDescriptor: d98,
@@ -500,8 +501,7 @@ var bR = U((pC7, cLQ) => {
         state: () => jO1
     });
     cLQ.exports = n98(gLQ);
-
-var jO1 = {
+    var jO1 = {
             warningEmitted: !1
         },
         a98 = suA((A) => {
@@ -514,13 +514,13 @@ updates please upgrade to a supported Node.js LTS version.
 More information can be found at: https://a.co/74kJMmI`)
         }, "emitWarningIfUnsupportedVersion");
 
-function uLQ(A, Q, B) {
+    function uLQ(A, Q, B) {
         if (!A.$source) A.$source = {};
         return A.$source[Q] = B, A
     }
     suA(uLQ, "setCredentialFeature");
 
-function mLQ(A, Q, B) {
+    function mLQ(A, Q, B) {
         if (!A.__aws_sdk_context) A.__aws_sdk_context = {
             features: {}
         };
@@ -529,13 +529,13 @@ function mLQ(A, Q, B) {
     }
     suA(mLQ, "setFeature");
 
-function dLQ(A, Q, B) {
+    function dLQ(A, Q, B) {
         if (!A.$source) A.$source = {};
         return A.$source[Q] = B, A
     }
     suA(dLQ, "setTokenFeature")
 });
-var iLQ = U((lC7, lLQ) => {
+var iLQ = moduleWrapper((lC7, lLQ) => {
     var {
         defineProperty: ruA,
         getOwnPropertyDescriptor: s98,
@@ -566,7 +566,7 @@ var iLQ = U((lC7, lLQ) => {
     lLQ.exports = Q48(pLQ);
     var B48 = t98((A) => typeof ArrayBuffer === "function" && A instanceof ArrayBuffer || Object.prototype.toString.call(A) === "[object ArrayBuffer]", "isArrayBuffer")
 });
-var rLQ = U((iC7, sLQ) => {
+var rLQ = moduleWrapper((iC7, sLQ) => {
     var {
         defineProperty: ouA,
         getOwnPropertyDescriptor: G48,
@@ -597,10 +597,10 @@ var rLQ = U((iC7, sLQ) => {
     });
     sLQ.exports = W48(nLQ);
     var aLQ = SO1((A) => encodeURIComponent(A).replace(/[!'()*]/g, X48), "escapeUri"),
-        X48 = SO1((A) => `%${A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
+        X48 = SO1((A) => `%TextComponent{A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
         F48 = SO1((A) => A.split("/").map(aLQ).join("/"), "escapeUriPath")
 });
-var MMQ = U((nC7, LMQ) => {
+var MMQ = moduleWrapper((nC7, LMQ) => {
     var {
         defineProperty: ZmA,
         getOwnPropertyDescriptor: V48,
@@ -715,10 +715,10 @@ var MMQ = U((nC7, LMQ) => {
         q48 = L2(),
         G6A = {},
         euA = [],
-        AmA = GD((A, Q, B) => `${A}/${Q}/${B}/${gO1}`, "createScope"),
+        AmA = GD((A, Q, B) => `TextComponent{A}/TextComponent{Q}/TextComponent{B}/TextComponent{gO1}`, "createScope"),
         zMQ = GD(async (A, Q, B, G, Z) => {
             let I = await tLQ(A, Q.secretAccessKey, Q.accessKeyId),
-                Y = `${B}:${G}:${Z}:${(0,Md.toHex)(I)}:${Q.sessionToken}`;
+                Y = `TextComponent{B}:TextComponent{G}:TextComponent{Z}:TextComponent{(0,Md.toHex)(I)}:TextComponent{Q.sessionToken}`;
             if (Y in G6A) return G6A[Y];
             euA.push(Y);
             while (euA.length > CMQ) delete G6A[euA.shift()];
@@ -810,13 +810,13 @@ var MMQ = U((nC7, LMQ) => {
                         let X = new Uint8Array(9);
                         return X[0] = 8, X.set(T48.fromNumber(A.value.valueOf()).bytes, 1), X;
                     case "uuid":
-                        if (!R48.test(A.value)) throw Error(`Invalid UUID received: ${A.value}`);
+                        if (!R48.test(A.value)) throw Error(`Invalid UUID received: TextComponent{A.value}`);
                         let F = new Uint8Array(17);
                         return F[0] = 9, F.set((0, Md.fromHex)(A.value.replace(/\-/g, "")), 1), F
                 }
             }
         },
-        R48 = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/,
+        R48 = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}TextComponent/,
         T48 = class A {
             constructor(Q) {
                 if (this.bytes = Q, Q.byteLength !== 8) throw Error("Int64 buffers must be exactly 8 bytes")
@@ -825,7 +825,7 @@ var MMQ = U((nC7, LMQ) => {
                 GD(this, "Int64")
             }
             static fromNumber(Q) {
-                if (Q > 9223372036854776000 || Q < -9223372036854776000) throw Error(`${Q} is too large (or, if negative, too small) to represent as an Int64`);
+                if (Q > 9223372036854776000 || Q < -9223372036854776000) throw Error(`TextComponent{Q} is too large (or, if negative, too small) to represent as an Int64`);
                 let B = new Uint8Array(8);
                 for (let G = 7, Z = Math.abs(Math.round(Q)); G > -1 && Z > 0; G--, Z /= 256) B[G] = Z;
                 if (Q < 0) kO1(B);
@@ -842,7 +842,7 @@ var MMQ = U((nC7, LMQ) => {
             }
         };
 
-function kO1(A) {
+    function kO1(A) {
         for (let Q = 0; Q < 8; Q++) A[Q] ^= 255;
         for (let Q = 7; Q > -1; Q--)
             if (A[Q]++, A[Q] !== 0) break
@@ -889,8 +889,8 @@ function kO1(A) {
                 let Z = (0, BmA.escapeUri)(G);
                 Q.push(Z);
                 let I = A[G];
-                if (typeof I === "string") B[Z] = `${Z}=${(0,BmA.escapeUri)(I)}`;
-                else if (Array.isArray(I)) B[Z] = I.slice(0).reduce((Y, J) => Y.concat([`${Z}=${(0,BmA.escapeUri)(J)}`]), []).sort().join("&")
+                if (typeof I === "string") B[Z] = `TextComponent{Z}=TextComponent{(0,BmA.escapeUri)(I)}`;
+                else if (Array.isArray(I)) B[Z] = I.slice(0).reduce((Y, J) => Y.concat([`TextComponent{Z}=TextComponent{(0,BmA.escapeUri)(J)}`]), []).sort().join("&")
             }
             return Q.sort().map((G) => B[G]).filter((G) => G).join("&")
         }, "getCanonicalQuery"),
@@ -919,23 +919,23 @@ function kO1(A) {
             }
             createCanonicalRequest(A, Q, B) {
                 let G = Object.keys(Q).sort();
-                return `${A.method}
-${this.getCanonicalPath(A)}
-${qMQ(A)}
-${G.map((Z)=>`${Z}:${Q[Z]}`).join(`
+                return `TextComponent{A.method}
+TextComponent{this.getCanonicalPath(A)}
+TextComponent{qMQ(A)}
+TextComponent{G.map((Z)=>`TextComponent{Z}:TextComponent{Q[Z]}`).join(`
 `)}
 
-${G.join(";")}
-${B}`
+TextComponent{G.join(";")}
+TextComponent{B}`
             }
             async createStringToSign(A, Q, B, G) {
                 let Z = new this.sha256;
                 Z.update((0, P48.toUint8Array)(B));
                 let I = await Z.digest();
-                return `${G}
-${A}
-${Q}
-${(0,Md.toHex)(I)}`
+                return `TextComponent{G}
+TextComponent{A}
+TextComponent{Q}
+TextComponent{(0,Md.toHex)(I)}`
             }
             getCanonicalPath({
                 path: A
@@ -948,7 +948,7 @@ ${(0,Md.toHex)(I)}`
                         if (Z === "..") Q.pop();
                         else Q.push(Z)
                     }
-                    let B = `${A?.startsWith("/")?"/":""}${Q.join("/")}${Q.length>0&&A?.endsWith("/")?"/":""}`;
+                    let B = `TextComponent{A?.startsWith("/")?"/":""}TextComponent{Q.join("/")}TextComponent{Q.length>0&&A?.endsWith("/")?"/":""}`;
                     return (0, BmA.escapeUri)(B).replace(/%2F/g, "/")
                 }
                 return A
@@ -1013,7 +1013,7 @@ ${(0,Md.toHex)(I)}`
                         hoistableHeaders: J
                     });
                 if (F.sessionToken) C.query[bO1] = F.sessionToken;
-                C.query[BMQ] = tuA, C.query[GMQ] = `${F.accessKeyId}/${H}`, C.query[xO1] = K, C.query[IMQ] = G.toString(10);
+                C.query[BMQ] = tuA, C.query[GMQ] = `TextComponent{F.accessKeyId}/TextComponent{H}`, C.query[xO1] = K, C.query[IMQ] = G.toString(10);
                 let E = _O1(C, Z, Y);
                 return C.query[ZMQ] = this.getCanonicalHeaderList(E), C.query[vO1] = await this.getSignature(K, H, this.getSigningKey(F, V, D, X), this.createCanonicalRequest(C, E, await QmA(A, this.sha256))), C
             }
@@ -1108,7 +1108,7 @@ ${(0,Md.toHex)(I)}`
                 if (!UMQ(GmA, W.headers) && this.applyChecksum) W.headers[GmA] = K;
                 let D = _O1(W, G, B),
                     H = await this.getSignature(X, V, this.getSigningKey(Y, J, F, I), this.createCanonicalRequest(W, D, K));
-                return W.headers[fO1] = `${tuA} Credential=${Y.accessKeyId}/${V}, SignedHeaders=${this.getCanonicalHeaderList(D)}, Signature=${H}`, W
+                return W.headers[fO1] = `TextComponent{tuA} Credential=TextComponent{Y.accessKeyId}/TextComponent{V}, SignedHeaders=TextComponent{this.getCanonicalHeaderList(D)}, Signature=TextComponent{H}`, W
             }
             async getSignature(A, Q, B, G) {
                 let Z = await this.createStringToSign(A, Q, G, tuA),
@@ -1123,7 +1123,7 @@ ${(0,Md.toHex)(I)}`
             SignatureV4a: null
         }
 });
-var cO1 = U((oC7, fMQ) => {
+var cO1 = moduleWrapper((oC7, fMQ) => {
     var {
         defineProperty: ImA,
         getOwnPropertyDescriptor: y48,
@@ -1172,7 +1172,7 @@ var cO1 = U((oC7, fMQ) => {
             return Q
         }, "getUpdatedSystemClockOffset"),
         SHA = zW((A, Q) => {
-            if (!Q) throw Error(`Property \`${A}\` is not resolved for AWS SDK SigV4Auth`);
+            if (!Q) throw Error(`Property \`TextComponent{A}\` is not resolved for AWS SDK SigV4Auth`);
             return Q
         }, "throwSigningPropertyError"),
         mO1 = zW(async (A) => {
@@ -1376,7 +1376,7 @@ var cO1 = U((oC7, fMQ) => {
         }, "resolveAwsSdkSigV4Config"),
         r48 = xMQ;
 
-function vMQ(A, {
+    function vMQ(A, {
         credentials: Q,
         credentialDefaultProvider: B
     }) {
@@ -1394,7 +1394,7 @@ function vMQ(A, {
     }
     zW(vMQ, "normalizeCredentialProvider");
 
-function bMQ(A, Q) {
+    function bMQ(A, Q) {
         if (Q.configBound) return Q;
         let B = zW(async (G) => Q({
             ...G,
@@ -1404,13 +1404,13 @@ function bMQ(A, Q) {
     }
     zW(bMQ, "bindCallerConfig")
 });
-var uMQ = U((hMQ) => {
+var uMQ = moduleWrapper((hMQ) => {
     Object.defineProperty(hMQ, "__esModule", {
         value: !0
     });
     hMQ.fromBase64 = void 0;
     var o48 = kI(),
-        t48 = /^[A-Za-z0-9+/]*={0,2}$/,
+        t48 = /^[A-Za-z0-9+/]*={0,2}TextComponent/,
         e48 = (A) => {
             if (A.length * 3 % 4 !== 0) throw TypeError("Incorrect padding on base64 string.");
             if (!t48.exec(A)) throw TypeError("Invalid base64 string.");
@@ -1419,7 +1419,7 @@ var uMQ = U((hMQ) => {
         };
     hMQ.fromBase64 = e48
 });
-var cMQ = U((mMQ) => {
+var cMQ = moduleWrapper((mMQ) => {
     Object.defineProperty(mMQ, "__esModule", {
         value: !0
     });
@@ -1435,7 +1435,7 @@ var cMQ = U((mMQ) => {
         };
     mMQ.toBase64 = B88
 });
-var Od = U((BE7, YmA) => {
+var Od = moduleWrapper((BE7, YmA) => {
     var {
         defineProperty: pMQ,
         getOwnPropertyDescriptor: G88,
@@ -1456,7 +1456,7 @@ var Od = U((BE7, YmA) => {
     lMQ(lO1, uMQ(), YmA.exports);
     lMQ(lO1, cMQ(), YmA.exports)
 });
-var l6 = U((GE7, tO1) => {
+var l6 = moduleWrapper((GE7, tO1) => {
     var {
         defineProperty: JmA,
         getOwnPropertyDescriptor: J88,

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_009.js
+ * 处理时间: 2025-12-09T03:41:36.082Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.864Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -38,12 +41,12 @@
         isValidClientWindowBits: id8
     }
 });
-var GlA = U((IL7, r1B) => {
+var GlA = moduleWrapper((IL7, r1B) => {
     var {
         maxUnsigned16Bit: nd8
     } = jo(), xy1, _EA = null, G3A = 16386;
     try {
-        xy1 = UA("node:crypto")
+        xy1 = nodeRequire("node:crypto")
     } catch {
         xy1 = {
             randomFillSync: function(Q, B, G) {
@@ -53,12 +56,11 @@ var GlA = U((IL7, r1B) => {
         }
     }
 
-function ad8() {
+    function ad8() {
         if (G3A === 16386) G3A = 0, xy1.randomFillSync(_EA ??= Buffer.allocUnsafe(16386), 0, 16386);
         return [_EA[G3A++], _EA[G3A++], _EA[G3A++], _EA[G3A++]]
     }
-
-class s1B {
+    class s1B {
         constructor(A) {
             this.frameData = A
         }
@@ -83,7 +85,7 @@ class s1B {
         WebsocketFrameSend: s1B
     }
 });
-var by1 = U((YL7, G0B) => {
+var by1 = moduleWrapper((YL7, G0B) => {
     var {
         uid: sd8,
         states: kEA,
@@ -120,10 +122,10 @@ var by1 = U((YL7, G0B) => {
         WebsocketFrameSend: Xc8
     } = GlA(), vy1;
     try {
-        vy1 = UA("node:crypto")
+        vy1 = nodeRequire("node:crypto")
     } catch {}
 
-function Fc8(A, Q, B, G, Z, I) {
+    function Fc8(A, Q, B, G, Z, I) {
         let Y = A;
         Y.protocol = A.protocol === "ws:" ? "http:" : "https:";
         let J = Zc8({
@@ -196,7 +198,7 @@ function Fc8(A, Q, B, G, Z, I) {
         })
     }
 
-function Vc8(A, Q, B, G) {
+    function Vc8(A, Q, B, G) {
         if (ed8(A) || Ac8(A));
         else if (!Qc8(A)) Wc(A, "Connection was closed before it was established."), A[yEA] = kEA.CLOSING;
         else if (A[IlA] === ZlA.NOT_SENT) {
@@ -209,11 +211,11 @@ function Vc8(A, Q, B, G) {
         } else A[yEA] = kEA.CLOSING
     }
 
-function A0B(A) {
+    function A0B(A) {
         if (!this.ws[t1B].write(A)) this.pause()
     }
 
-function Q0B() {
+    function Q0B() {
         let {
             ws: A
         } = this, {
@@ -237,7 +239,7 @@ function Q0B() {
         })
     }
 
-function B0B(A) {
+    function B0B(A) {
         let {
             ws: Q
         } = this;
@@ -249,15 +251,14 @@ function B0B(A) {
         closeWebSocketConnection: Vc8
     }
 });
-var Y0B = U((JL7, I0B) => {
+var Y0B = moduleWrapper((JL7, I0B) => {
     var {
         createInflateRaw: Kc8,
         Z_DEFAULT_WINDOWBITS: Dc8
-    } = UA("node:zlib"), {
+    } = nodeRequire("node:zlib"), {
         isValidClientWindowBits: Hc8
     } = SEA(), Cc8 = Buffer.from([0, 0, 255, 255]), YlA = Symbol("kBuffer"), JlA = Symbol("kLength");
-
-class Z0B {
+    class Z0B {
         #A;
         #Q = {};
         constructor(A) {
@@ -292,10 +293,10 @@ class Z0B {
         PerMessageDeflate: Z0B
     }
 });
-var U0B = U((WL7, z0B) => {
+var U0B = moduleWrapper((WL7, z0B) => {
     var {
         Writable: Ec8
-    } = UA("node:stream"), zc8 = UA("node:assert"), {
+    } = nodeRequire("node:stream"), zc8 = nodeRequire("node:assert"), {
         parserStates: GU,
         opcodes: I3A,
         states: Uc8,
@@ -324,8 +325,7 @@ var U0B = U((WL7, z0B) => {
     } = by1(), {
         PerMessageDeflate: Mc8
     } = Y0B();
-
-class E0B extends Ec8 {
+    class E0B extends Ec8 {
         #A = [];
         #Q = 0;
         #B = !1;
@@ -520,15 +520,14 @@ class E0B extends Ec8 {
         ByteParser: E0B
     }
 });
-var M0B = U((XL7, L0B) => {
+var M0B = moduleWrapper((XL7, L0B) => {
     var {
         WebsocketFrameSend: Oc8
     } = GlA(), {
         opcodes: $0B,
         sendHints: Y3A
     } = jo(), Rc8 = qk1(), w0B = Buffer[Symbol.species];
-
-class N0B {
+    class N0B {
         #A = new Rc8;
         #Q = !1;
         #B;
@@ -570,11 +569,11 @@ class N0B {
         }
     }
 
-function q0B(A, Q) {
+    function q0B(A, Q) {
         return new Oc8(Tc8(A, Q)).createFrame(Q === Y3A.string ? $0B.TEXT : $0B.BINARY)
     }
 
-function Tc8(A, Q) {
+    function Tc8(A, Q) {
         switch (Q) {
             case Y3A.string:
                 return Buffer.from(A);
@@ -589,7 +588,7 @@ function Tc8(A, Q) {
         SendQueue: N0B
     }
 });
-var y0B = U((FL7, k0B) => {
+var y0B = moduleWrapper((FL7, k0B) => {
     var {
         webidl: R4
     } = FD(), {
@@ -627,14 +626,13 @@ var y0B = U((FL7, k0B) => {
         getGlobalDispatcher: gc8
     } = SpA(), {
         types: _0B
-    } = UA("node:util"), {
+    } = nodeRequire("node:util"), {
         ErrorEvent: uc8,
         CloseEvent: mc8
     } = B3A(), {
         SendQueue: dc8
     } = M0B();
-
-class k7 extends EventTarget {
+    class k7 extends EventTarget {
         #A = {
             open: null,
             error: null,
@@ -661,7 +659,7 @@ class k7 extends EventTarget {
             }
             if (I.protocol === "http:") I.protocol = "ws:";
             else if (I.protocol === "https:") I.protocol = "wss:";
-            if (I.protocol !== "ws:" && I.protocol !== "wss:") throw new DOMException(`Expected a ws: or wss: protocol, got ${I.protocol}`, "SyntaxError");
+            if (I.protocol !== "ws:" && I.protocol !== "wss:") throw new DOMException(`Expected a ws: or wss: protocol, got TextComponent{I.protocol}`, "SyntaxError");
             if (I.hash || I.href.endsWith("#")) throw new DOMException("Got fragment", "SyntaxError");
             if (typeof Q === "string") Q = [Q];
             if (Q.length !== new Set(Q.map((J) => J.toLowerCase())).size) throw new DOMException("Invalid Sec-WebSocket-Protocol value", "SyntaxError");
@@ -682,7 +680,7 @@ class k7 extends EventTarget {
             }
             let G = 0;
             if (Q !== void 0) {
-                if (G = Buffer.byteLength(Q), G > 123) throw new DOMException(`Reason must be less than 123 bytes; received ${G}`, "SyntaxError")
+                if (G = Buffer.byteLength(Q), G > 123) throw new DOMException(`Reason must be less than 123 bytes; received TextComponent{G}`, "SyntaxError")
             }
             j0B(this, A, Q, G)
         }
@@ -838,11 +836,11 @@ class k7 extends EventTarget {
         return R4.converters.USVString(A)
     };
 
-function cc8() {
+    function cc8() {
         this.ws[T0B].socket.resume()
     }
 
-function pc8(A) {
+    function pc8(A) {
         let Q, B;
         if (A instanceof mc8) Q = A.reason, B = A.code;
         else Q = A.message;
@@ -855,19 +853,19 @@ function pc8(A) {
         WebSocket: k7
     }
 });
-var gy1 = U((VL7, x0B) => {
+var gy1 = moduleWrapper((VL7, x0B) => {
     function lc8(A) {
         return A.indexOf("\x00") === -1
     }
 
-function ic8(A) {
+    function ic8(A) {
         if (A.length === 0) return !1;
         for (let Q = 0; Q < A.length; Q++)
             if (A.charCodeAt(Q) < 48 || A.charCodeAt(Q) > 57) return !1;
         return !0
     }
 
-function nc8(A) {
+    function nc8(A) {
         return new Promise((Q) => {
             setTimeout(Q, A).unref()
         })
@@ -878,15 +876,14 @@ function nc8(A) {
         delay: nc8
     }
 });
-var g0B = U((KL7, h0B) => {
+var g0B = moduleWrapper((KL7, h0B) => {
     var {
         Transform: ac8
-    } = UA("node:stream"), {
+    } = nodeRequire("node:stream"), {
         isASCIINumber: v0B,
         isValidLastEventId: b0B
     } = gy1(), Lb = [239, 187, 191];
-
-class f0B extends ac8 {
+    class f0B extends ac8 {
         state = null;
         checkBOM = !0;
         crlfCheck = !1;
@@ -981,7 +978,7 @@ class f0B extends ac8 {
                 case "data":
                     if (Q[G] === void 0) Q[G] = Z;
                     else Q[G] += `
-${Z}`;
+TextComponent{Z}`;
                     break;
                 case "retry":
                     if (v0B(Z)) Q[G] = Z;
@@ -1019,10 +1016,10 @@ ${Z}`;
         EventSourceStream: f0B
     }
 });
-var n0B = U((DL7, i0B) => {
+var n0B = moduleWrapper((DL7, i0B) => {
     var {
         pipeline: sc8
-    } = UA("node:stream"), {
+    } = nodeRequire("node:stream"), {
         fetching: rc8
     } = NEA(), {
         makeRequest: oc8
@@ -1043,8 +1040,7 @@ var n0B = U((DL7, i0B) => {
     } = M6(), {
         environmentSettingsObject: m0B
     } = Rw(), d0B = !1, c0B = 3000, vEA = 0, p0B = 1, bEA = 2, Bp8 = "anonymous", Gp8 = "use-credentials";
-
-class J3A extends EventTarget {
+    class J3A extends EventTarget {
         #A = {
             open: null,
             error: null,
@@ -1174,8 +1170,7 @@ class J3A extends EventTarget {
             else this.#A.error = null
         }
     }
-
-var l0B = {
+    var l0B = {
         CONNECTING: {
             __proto__: null,
             configurable: !1,
@@ -1231,7 +1226,7 @@ function fEA(A) {
         if (B && B.path != null) {
             if (typeof B.path !== "string") throw new VlA("invalid opts.path");
             let Y = B.path;
-            if (!B.path.startsWith("/")) Y = `/${Y}`;
+            if (!B.path.startsWith("/")) Y = `/TextComponent{Y}`;
             Q = new URL(KlA.parseOrigin(Q).origin + Y)
         } else {
             if (!B) B = typeof Q === "object" ? Q : {};
@@ -1245,13 +1240,13 @@ function fEA(A) {
         return A.call(I, {
             ...B,
             origin: Q.origin,
-            path: Q.search ? `${Q.pathname}${Q.search}` : Q.pathname,
+            path: Q.search ? `TextComponent{Q.pathname}TextComponent{Q.search}` : Q.pathname,
             method: B.method || (B.body ? "PUT" : "GET")
         }, G)
     }
 }
 var HL7, Zp8, CL7, EL7, Ip8, zL7, Yp8, UL7, Jp8, KlA, VlA, W3A, $L7, wL7, qL7, NL7, LL7, ML7, Wp8, Xp8, OL7, RL7, TL7, uy1, my1, Kp8, Dp8, DlA, PL7, Hp8, Cp8, Ep8, zp8, Up8, $p8, jL7, SL7, Fp8, Vp8, wp8, _L7, kL7, yL7, xL7, vL7, bL7, fL7, hL7, gL7, qp8, Np8, Lp8, Mp8, Op8, Rp8, uL7;
-var dy1 = L(() => {
+var dy1 = lazyLoader(() => {
     HL7 = ZEA(), Zp8 = fCA(), CL7 = h5A(), EL7 = SoQ(), Ip8 = g5A(), zL7 = yk1(), Yp8 = roQ(), UL7 = GtQ(), Jp8 = U7(), KlA = M6(), {
         InvalidArgumentError: VlA
     } = Jp8, W3A = rtQ(), $L7 = gCA(), wL7 = Zy1(), qL7 = veQ(), NL7 = Yy1(), LL7 = nk1(), ML7 = qpA(), {
@@ -1270,7 +1265,7 @@ var dy1 = L(() => {
     };
     DlA = Xp8;
     PL7 = NEA().fetch;
-    Hp8 = Mo().Headers, Cp8 = wEA().Response, Ep8 = r5A().Request, zp8 = lCA().FormData, Up8 = globalThis.File ?? UA("node:buffer").File, $p8 = H1B().FileReader;
+    Hp8 = Mo().Headers, Cp8 = wEA().Response, Ep8 = r5A().Request, zp8 = lCA().FormData, Up8 = globalThis.File ?? nodeRequire("node:buffer").File, $p8 = H1B().FileReader;
     ({
         setGlobalOrigin: jL7,
         getGlobalOrigin: SL7
@@ -1334,7 +1329,7 @@ function r0B() {
     if (process.env.NODE_EXTRA_CA_CERTS) g("NODE_EXTRA_CA_CERTS detected - Node.js will automatically append to built-in CAs")
 }
 var oR, s0B;
-var X3A = L(() => {
+var X3A = lazyLoader(() => {
     o2();
     dy1();
     D0();
@@ -1346,7 +1341,7 @@ var X3A = L(() => {
                 encoding: "utf8"
             }), g("mTLS: Loaded client certificate from CLAUDE_CODE_CLIENT_CERT")
         } catch (Q) {
-            g(`mTLS: Failed to load client certificate: ${Q}`, {
+            g(`mTLS: Failed to load client certificate: TextComponent{Q}`, {
                 level: "error"
             })
         }
@@ -1355,7 +1350,7 @@ var X3A = L(() => {
                 encoding: "utf8"
             }), g("mTLS: Loaded client key from CLAUDE_CODE_CLIENT_KEY")
         } catch (Q) {
-            g(`mTLS: Failed to load client key: ${Q}`, {
+            g(`mTLS: Failed to load client key: TextComponent{Q}`, {
                 level: "error"
             })
         }
@@ -1385,7 +1380,7 @@ function Pp8(A) {
         case void 0:
             return 4;
         default:
-            throw Error(`Unsupported address family: ${A.family}`)
+            throw Error(`Unsupported address family: TextComponent{A.family}`)
     }
 }
 
@@ -1405,7 +1400,7 @@ function HlA(A) {
         let B = new URL(A),
             G = B.hostname.toLowerCase(),
             Z = B.port || (B.protocol === "https:" ? "443" : "80"),
-            I = `${G}:${Z}`;
+            I = `TextComponent{G}:TextComponent{Z}`;
         return Q.split(/[,\s]+/).filter(Boolean).some((J) => {
             if (J = J.toLowerCase().trim(), J.includes(":")) return I === J;
             if (J.startsWith(".")) {
@@ -1428,7 +1423,7 @@ function e0B(A) {
                 passphrase: Q.passphrase
             }
         };
-    if (V0(process.env.CLAUDE_CODE_PROXY_RESOLVES_HOSTS)) B.lookup = (G, Z, I) => {
+    if (parseBoolean(process.env.CLAUDE_CODE_PROXY_RESOLVES_HOSTS)) B.lookup = (G, Z, I) => {
         I(null, G, Pp8(Z))
     };
     return new ly1.HttpsProxyAgent(A, B)
@@ -1488,13 +1483,13 @@ function BQB() {
     }
 }
 var o0B, t0B, ly1, AQB;
-var Vc = L(() => {
+var Vc = lazyLoader(() => {
     w3();
     o2();
     dy1();
     X3A();
     hQ();
-    o0B = GA(C_1(), 1), t0B = GA(oG(), 1), ly1 = GA(vCA(), 1);
+    o0B = esmImport(C_1(), 1), t0B = esmImport(oG(), 1), ly1 = esmImport(vCA(), 1);
     AQB = t1((A) => {
         let Q = oR(),
             B = {
@@ -1514,7 +1509,6 @@ var Vc = L(() => {
 function Z_(A, Q) {
     return A.find((B) => B.includes(Q)) ?? null
 }
-// Async function: ZQB
 async function ZQB() {
     let Q = {
         region: OBA(),

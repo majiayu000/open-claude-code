@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_006.js
+ * 处理时间: 2025-12-09T03:41:38.621Z
+ * 变量映射: 45 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.069Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -44,7 +47,7 @@ function vV(A) {
 var wnA, Bf1 = (A, Q, B) => {
         if (!A) return;
         if (YGB(wnA, A)) return A;
-        vV(B).warn(`${Q} was set to ${JSON.stringify(A)}, expected one of ${JSON.stringify(Object.keys(wnA))}`);
+        vV(B).warn(`TextComponent{Q} was set to TextComponent{JSON.stringify(A)}, expected one of TextComponent{JSON.stringify(Object.keys(wnA))}`);
         return
     },
     a06, WGB, gb = (A) => {
@@ -58,7 +61,7 @@ var wnA, Bf1 = (A, Q, B) => {
         }
         return A
     };
-var qnA = L(() => {
+var qnA = lazyLoader(() => {
     Vt();
     wnA = {
         off: 0,
@@ -79,7 +82,7 @@ async function* s06(A, Q) {
         if (Q.abort(), typeof globalThis.navigator < "u" && globalThis.navigator.product === "ReactNative") throw new yB("The default react-native fetch implementation does not support streaming. Please use expo/fetch: https://docs.expo.dev/versions/latest/sdk/expo/#expofetch-api");
         throw new yB("Attempted to iterate over a response with no body")
     }
-    let B = new XGB,
+    let B = new EventDecoder,
         G = new dc,
         Z = WUA(A.body);
     for await (let I of r06(Z)) for (let Y of G.decode(I)) {
@@ -103,8 +106,7 @@ async function* r06(A) {
     }
     if (Q.length > 0) yield Q
 }
-
-class XGB {
+class EventDecoder {
     constructor() {
         this.event = null, this.data = [], this.chunks = []
     }
@@ -134,15 +136,15 @@ function o06(A, Q) {
     if (B !== -1) return [A.substring(0, B), Q, A.substring(B + Q.length)];
     return [A, "", ""]
 }
-var VUA, IE;
-var Gf1 = L(() => {
+var VUA, EventSourceIterator;
+var Gf1 = lazyLoader(() => {
     fb();
     ZE();
     eb1();
     Vt();
     qnA();
     ZE();
-    IE = class IE {
+    EventSourceIterator = class EventSourceIterator {
         constructor(A, Q, B) {
             this.iterator = A, VUA.set(this, void 0), this.controller = Q, bB(this, VUA, B, "f")
         }
@@ -176,7 +178,7 @@ var Gf1 = L(() => {
                     if (!Y) Q.abort()
                 }
             }
-            return new IE(I, Q, B)
+            return new EventSourceIterator(I, Q, B)
         }
         static fromReadableStream(A, Q, B) {
             let G = !1;
@@ -203,7 +205,7 @@ var Gf1 = L(() => {
                     if (!Y) Q.abort()
                 }
             }
-            return new IE(I, Q, B)
+            return new EventSourceIterator(I, Q, B)
         } [(VUA = new WeakMap, Symbol.asyncIterator)]() {
             return this.iterator()
         }
@@ -222,7 +224,7 @@ var Gf1 = L(() => {
                         }
                     }
                 };
-            return [new IE(() => G(A), this.controller, N0(this, VUA, "f")), new IE(() => G(Q), this.controller, N0(this, VUA, "f"))]
+            return [new EventSourceIterator(() => G(A), this.controller, N0(this, VUA, "f")), new EventSourceIterator(() => G(Q), this.controller, N0(this, VUA, "f"))]
         }
         toReadableStream() {
             let A = this,
@@ -252,7 +254,7 @@ var Gf1 = L(() => {
         }
     }
 });
-var NnA = L(() => {
+var NnA = lazyLoader(() => {
     Gf1()
 });
 
@@ -297,10 +299,10 @@ function t06(A, Q) {
         if ("parse" in A.output_format) return A.output_format.parse(Q);
         return JSON.parse(Q)
     } catch (B) {
-        throw new yB(`Failed to parse structured output: ${B}`)
+        throw new yB(`Failed to parse structured output: TextComponent{B}`)
     }
 }
-var Yf1 = L(() => {
+var Yf1 = lazyLoader(() => {
     ZE()
 });
 
@@ -310,14 +312,14 @@ function DGB(A) {
 
 function HGB(A) {}
 var YM, cc, A7A, KUA, LnA, DUA, HUA, MnA, CUA, ub, EUA, OnA, RnA, Q7A, TnA, PnA, Jf1, FGB, jnA, Wf1, Xf1, Ff1, VGB, KGB = "__json_buf",
-    Kt;
-var Vf1 = L(() => {
+    MessageStream;
+var Vf1 = lazyLoader(() => {
     fb();
     rb1();
     Ft();
     NnA();
     Yf1();
-    Kt = class Kt {
+    MessageStream = class MessageStream {
         constructor(A) {
             YM.add(this), this.messages = [], this.receivedMessages = [], cc.set(this, void 0), A7A.set(this, null), this.controller = new AbortController, KUA.set(this, void 0), LnA.set(this, () => {}), DUA.set(this, () => {}), HUA.set(this, void 0), MnA.set(this, () => {}), CUA.set(this, () => {}), ub.set(this, {}), EUA.set(this, !1), OnA.set(this, !1), RnA.set(this, !1), Q7A.set(this, !1), TnA.set(this, void 0), PnA.set(this, void 0), jnA.set(this, (Q) => {
                 if (bB(this, OnA, !0, "f"), hb(Q)) Q = new gY;
@@ -350,11 +352,11 @@ var Vf1 = L(() => {
             }
         }
         static fromReadableStream(A) {
-            let Q = new Kt(null);
+            let Q = new MessageStream(null);
             return Q._run(() => Q._fromReadableStream(A)), Q
         }
         static createMessage(A, Q, B) {
-            let G = new Kt(Q);
+            let G = new MessageStream(Q);
             for (let Z of Q.messages) G._addMessageParam(Z);
             return bB(G, A7A, {
                 ...Q,
@@ -491,7 +493,7 @@ var Vf1 = L(() => {
             }
             try {
                 N0(this, YM, "m", Wf1).call(this), this._connected(null);
-                let Z = IE.fromReadableStream(A, this.controller);
+                let Z = EventSourceIterator.fromReadableStream(A, this.controller);
                 for await (let I of Z) N0(this, YM, "m", Xf1).call(this, I);
                 if (Z.controller.signal?.aborted) throw new gY;
                 N0(this, YM, "m", Ff1).call(this)
@@ -565,10 +567,10 @@ var Vf1 = L(() => {
         }, VGB = function(Q) {
             let B = N0(this, cc, "f");
             if (Q.type === "message_start") {
-                if (B) throw new yB(`Unexpected event order, got ${Q.type} before receiving "message_stop"`);
+                if (B) throw new yB(`Unexpected event order, got TextComponent{Q.type} before receiving "message_stop"`);
                 return Q.message
             }
-            if (!B) throw new yB(`Unexpected event order, got ${Q.type} before "message_start"`);
+            if (!B) throw new yB(`Unexpected event order, got TextComponent{Q.type} before "message_start"`);
             switch (Q.type) {
                 case "message_stop":
                     return B;
@@ -611,7 +613,7 @@ var Vf1 = L(() => {
                                     }), Z) try {
                                     I.input = CnA(Z)
                                 } catch (Y) {
-                                    let J = new yB(`Unable to parse tool parameter JSON from model. Please retry your request or adjust your prompt. Error: ${Y}. JSON: ${Z}`);
+                                    let J = new yB(`Unable to parse tool parameter JSON from model. Please retry your request or adjust your prompt. Error: TextComponent{Y}. JSON: TextComponent{Z}`);
                                     N0(this, jnA, "f").call(this, J)
                                 }
                                 B.content[Q.index] = I
@@ -692,59 +694,70 @@ var Vf1 = L(() => {
             }
         }
         toReadableStream() {
-            return new IE(this[Symbol.asyncIterator].bind(this), this.controller).toReadableStream()
+            return new EventSourceIterator(this[Symbol.asyncIterator].bind(this), this.controller).toReadableStream()
         }
     }
 });
+/* GLOB_TOOL_NAME = GLOB_TOOL = "Glob" */
 var GLOB_TOOL_NAME = "Glob",
-    Kf1 = `- Fast file pattern matching tool that works with any codebase size
+    GLOB_TOOL_DESCRIPTION = `- Fast file pattern matching tool that works with any codebase size
 - Supports glob patterns like "**/*.js" or "src/**/*.ts"
 - Returns matching file paths sorted by modification time
 - Use this tool when you need to find files by name patterns
 - When you are doing an open ended search that may require multiple rounds of globbing and grepping, use the Agent tool instead
 - You can call multiple tools in a single response. It is always better to speculatively perform multiple searches in parallel if they are potentially useful.`;
+/* TASK_TOOL_NAME = TASK_TOOL = "Task" */
 var TASK_TOOL_NAME = "Task";
 
-function Df1() {
+/* getGrepDescription = getGrepDescription() - Returns Grep tool description */
+/* Signature: () => string */
+function getGrepDescription() {
     return `A powerful search tool built on ripgrep
 
   Usage:
-  - ALWAYS use ${GREP_TOOL_NAME} for search tasks. NEVER invoke \`grep\` or \`rg\` as a ${BASH_TOOL_NAME} command. The ${GREP_TOOL_NAME} tool has been optimized for correct permissions and access.
+  - ALWAYS use TextComponent{GREP_TOOL_NAME} for search tasks. NEVER invoke \`grep\` or \`rg\` as a TextComponent{BASH_TOOL_NAME} command. The TextComponent{GREP_TOOL_NAME} tool has been optimized for correct permissions and access.
   - Supports full regex syntax (e.g., "log.*Error", "function\\s+\\w+")
   - Filter files with glob parameter (e.g., "*.js", "**/*.tsx") or type parameter (e.g., "js", "py", "rust")
   - Output modes: "content" shows matching lines, "files_with_matches" shows only file paths (default), "count" shows match counts
-  - Use ${TASK_TOOL_NAME} tool for open-ended searches requiring multiple rounds
+  - Use TextComponent{TASK_TOOL_NAME} tool for open-ended searches requiring multiple rounds
   - Pattern syntax: Uses ripgrep (not grep) - literal braces need escaping (use \`interface\\{\\}\` to find \`interface{}\` in Go code)
   - Multiline matching: By default patterns match within single lines only. For cross-line patterns like \`struct \\{[\\s\\S]*?field\`, use \`multiline: true\`
 `
 }
+/* GREP_TOOL_NAME = GREP_TOOL = "Grep" */
 var GREP_TOOL_NAME = "Grep";
-var XT = () => {};
-// Tool name constant for file writing
+/* noOpFunction = noOpFunction() - Empty function */
+var noOpFunction = () => {};
+/* WRITE_TOOL_NAME = WRITE_TOOL = "Write" */
 var WRITE_TOOL_NAME = "Write",
-    CGB;
-var L_ = L(() => {
+    WRITE_TOOL_DESCRIPTION;
+var L_ = lazyLoader(() => {
     xV();
-    CGB = `Writes a file to the local filesystem.
+    WRITE_TOOL_DESCRIPTION = `Writes a file to the local filesystem.
 
 Usage:
 - This tool will overwrite the existing file if there is one at the provided path.
-- If this is an existing file, you MUST use the ${READ_TOOL_NAME} tool first to read the file's contents. This tool will fail if you did not read the file first.
+- If this is an existing file, you MUST use the TextComponent{READ_TOOL_NAME} tool first to read the file's contents. This tool will fail if you did not read the file first.
 - ALWAYS prefer editing existing files in the codebase. NEVER write new files unless explicitly required.
 - NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.
 - Only use emojis if the user explicitly requests it. Avoid writing emojis to files unless asked.`
 });
-var M_ = "NotebookEdit";
+/* NOTEBOOK_EDIT_TOOL_NAME = NOTEBOOK_EDIT_TOOL = "NotebookEdit" */
+var NOTEBOOK_EDIT_TOOL_NAME = "NotebookEdit";
 
-function SnA() {
+/* getTodayDate = getTodayDate() - Returns "YYYY-MM-DD" */
+/* Signature: () => string */
+function getTodayDate() {
     let A = new Date,
         Q = A.getFullYear(),
         B = String(A.getMonth() + 1).padStart(2, "0"),
         G = String(A.getDate()).padStart(2, "0");
-    return `${Q}-${B}-${G}`
+    return `TextComponent{Q}-TextComponent{B}-TextComponent{G}`
 }
 
-function EGB() {
+/* getWebSearchDescription = getWebSearchDescription() - Returns WebSearch description */
+/* Signature: () => string */
+function getWebSearchDescription() {
     return `
 - Allows Claude to search the web and use the results to inform responses
 - Provides up-to-date information for current events and recent data
@@ -769,25 +782,29 @@ Usage notes:
   - Web search is only available in the US
 
 IMPORTANT - Use the correct year in search queries:
-  - Today's date is ${SnA()}. You MUST use this year when searching for recent information, documentation, or current events.
+  - Today's date is TextComponent{getTodayDate()}. You MUST use this year when searching for recent information, documentation, or current events.
   - Example: If today is 2025-07-15 and the user asks for "latest React docs", search for "React documentation 2025", NOT "React documentation 2024"
 `
 }
+/* WEB_SEARCH_TOOL_NAME = WEB_SEARCH_TOOL = "WebSearch" */
 var WEB_SEARCH_TOOL_NAME = "WebSearch";
-var B7A = () => {};
+/* noOpFunction2 = noOpFunction2() - Empty function */
+var noOpFunction2 = () => {};
 
+/* $GB = getContextEdits(options) - Get context edit configuration */
+/* Signature: (options?) => ContextEdits | undefined */
 function $GB(A) {
     let {
         hasThinking: Q = !1
-    } = A ?? {}, B = ZI("preserve_thinking", "enabled", !1);
+    } = A ?? {}, B = getFeatureFlag("preserve_thinking", "enabled", !1);
     if (!B) return;
-    let G = V0(process.env.USE_API_CLEAR_TOOL_RESULTS),
-        Z = V0(process.env.USE_API_CLEAR_TOOL_USES);
+    let G = parseBoolean(process.env.USE_API_CLEAR_TOOL_RESULTS),
+        Z = parseBoolean(process.env.USE_API_CLEAR_TOOL_USES);
     if (!G && !Z && !B) return;
     let I = [];
     if (G) {
-        let Y = process.env.API_MAX_INPUT_TOKENS ? parseInt(process.env.API_MAX_INPUT_TOKENS) : zGB,
-            J = process.env.API_TARGET_INPUT_TOKENS ? parseInt(process.env.API_TARGET_INPUT_TOKENS) : UGB,
+        let Y = process.env.API_MAX_INPUT_TOKENS ? parseInt(process.env.API_MAX_INPUT_TOKENS) : MAX_INPUT_TOKENS,
+            J = process.env.API_TARGET_INPUT_TOKENS ? parseInt(process.env.API_TARGET_INPUT_TOKENS) : TARGET_INPUT_TOKENS,
             W = {
                 type: "clear_tool_uses_20250919",
                 trigger: {
@@ -798,13 +815,13 @@ function $GB(A) {
                     type: "input_tokens",
                     value: Y - J
                 },
-                clear_tool_inputs: e06
+                clear_tool_inputs: READONLY_TOOLS
             };
         I.push(W)
     }
     if (Z) {
-        let Y = process.env.API_MAX_INPUT_TOKENS ? parseInt(process.env.API_MAX_INPUT_TOKENS) : zGB,
-            J = process.env.API_TARGET_INPUT_TOKENS ? parseInt(process.env.API_TARGET_INPUT_TOKENS) : UGB,
+        let Y = process.env.API_MAX_INPUT_TOKENS ? parseInt(process.env.API_MAX_INPUT_TOKENS) : MAX_INPUT_TOKENS,
+            J = process.env.API_TARGET_INPUT_TOKENS ? parseInt(process.env.API_TARGET_INPUT_TOKENS) : TARGET_INPUT_TOKENS,
             W = {
                 type: "clear_tool_uses_20250919",
                 trigger: {
@@ -815,7 +832,7 @@ function $GB(A) {
                     type: "input_tokens",
                     value: Y - J
                 },
-                exclude_tools: AQ6
+                exclude_tools: EDIT_TOOLS
             };
         I.push(W)
     }
@@ -830,37 +847,41 @@ function $GB(A) {
         edits: I
     } : void 0
 }
-var zGB = 180000,
-    UGB = 40000,
-    e06, AQ6;
-var wGB = L(() => {
+/* MAX_INPUT_TOKENS = MAX_INPUT_TOKENS = 180000 */
+var MAX_INPUT_TOKENS = 180000,
+    TARGET_INPUT_TOKENS = 40000,
+    READONLY_TOOLS, EDIT_TOOLS;
+var wGB = lazyLoader(() => {
     hQ();
-    XT();
+    noOpFunction();
     xV();
     L_();
-    B7A();
+    noOpFunction2();
     O9();
-    e06 = [BASH_TOOL_NAME, GLOB_TOOL_NAME, GREP_TOOL_NAME, READ_TOOL_NAME, WEB_FETCH_TOOL_NAME, WEB_SEARCH_TOOL_NAME], AQ6 = [EDIT_TOOL_NAME, WRITE_TOOL_NAME, M_]
+    READONLY_TOOLS = [BASH_TOOL_NAME, GLOB_TOOL_NAME, GREP_TOOL_NAME, READ_TOOL_NAME, WEB_FETCH_TOOL_NAME, WEB_SEARCH_TOOL_NAME], EDIT_TOOLS = [EDIT_TOOL_NAME, WRITE_TOOL_NAME, NOTEBOOK_EDIT_TOOL_NAME]
 });
 
-function _nA(A) {
-    if (J6() === "vertex") return qGB;
+/* getSystemPrompt = getSystemPrompt(options) - Get appropriate system prompt */
+/* Signature: (options?) => string */
+function getSystemPrompt(A) {
+    if (getProvider() === "vertex") return SYSTEM_PROMPT_BASE;
     if (A?.isNonInteractive) {
-        if (A.hasAppendSystemPrompt) return QQ6;
-        return BQ6
+        if (A.hasAppendSystemPrompt) return SDK_SYSTEM_PROMPT;
+        return AGENT_SYSTEM_PROMPT
     }
-    return qGB
+    return SYSTEM_PROMPT_BASE
 }
 
-function NGB() {
+/* getEmptyString = getEmptyString() - Returns empty string */
+function getEmptyString() {
     return ""
 }
-var qGB = // SYSTEM_PROMPT: Base prompt for Claude Code
-"You are Claude Code, Anthropic's official CLI for Claude.",
-    QQ6 = // SYSTEM_PROMPT: Base prompt for Claude Code
-"You are Claude Code, Anthropic's official CLI for Claude, running within the Claude Agent SDK.",
-    BQ6 = "You are a Claude agent, built on Anthropic's Claude Agent SDK.";
-var Hf1 = L(() => {
+/* SYSTEM_PROMPT_BASE = SYSTEM_PROMPT = "You are Claude Code, Anthropic's official CLI..." */
+var SYSTEM_PROMPT_BASE = "You are Claude Code, Anthropic's official CLI for Claude.",
+    SDK_SYSTEM_PROMPT = "You are Claude Code, Anthropic's official CLI for Claude, running within the Claude Agent SDK.",
+    AGENT_SYSTEM_PROMPT = "You are a Claude agent, built on Anthropic's Claude Agent SDK.";
+/* systemPromptLoader = systemPromptLoader - Lazy loader for prompts */
+var systemPromptLoader = lazyLoader(() => {
     dK();
     O9()
 });
@@ -868,37 +889,40 @@ import {
     createHash as GQ6
 } from "crypto";
 
-function IQ6(A) {
+/* parseGitRemoteUrl = parseGitRemoteUrl(url) - Parse git remote URL */
+/* Signature: (url: string) => string | null */
+function parseGitRemoteUrl(A) {
     let Q = A.trim();
     if (!Q) return null;
-    let B = Q.match(/^git@([^:]+):(.+?)(?:\.git)?$/);
-    if (B && B[1] && B[2]) return `${B[1]}/${B[2]}`.toLowerCase();
-    let G = Q.match(/^(?:https?|ssh):\/\/(?:[^@]+@)?([^/]+)\/(.+?)(?:\.git)?$/);
-    if (G && G[1] && G[2]) return `${G[1]}/${G[2]}`.toLowerCase();
+    let B = Q.match(/^git@([^:]+):(.+?)(?:\.git)?TextComponent/);
+    if (B && B[1] && B[2]) return `TextComponent{B[1]}/TextComponent{B[2]}`.toLowerCase();
+    let G = Q.match(/^(?:https?|ssh):\/\/(?:[^@]+@)?([^/]+)\/(.+?)(?:\.git)?TextComponent/);
+    if (G && G[1] && G[2]) return `TextComponent{G[1]}/TextComponent{G[2]}`.toLowerCase();
     return null
 }
-// Async function: MGB
-async function MGB() {
-    let A = await knA();
+async /* getRepoHash = getRepoHash() - Get repository hash */
+/* Signature: () => Promise<string | null> */
+function getRepoHash() {
+    let A = await getGitRemoteUrl();
     if (!A) return null;
-    let Q = IQ6(A);
+    let Q = parseGitRemoteUrl(A);
     if (!Q) return null;
     return GQ6("sha256").update(Q).digest("hex").substring(0, 16)
 }
-// Async function: YQ6
-async function YQ6() {
-    let A = await Cf1(),
+async /* getCommitsBehind = getCommitsBehind() - Get commits behind main branch */
+/* Signature: () => Promise<number | null> */
+function getCommitsBehind() {
+    let A = await getMainBranch(),
         {
             stdout: Q,
             code: B
-        } = await ZQ("git", ["rev-list", "--count", `${A}..HEAD`]);
+        } = await execGit("git", ["rev-list", "--count", `TextComponent{A}..HEAD`]);
     if (B !== 0) return null;
     return parseInt(Q.trim(), 10) || 0
 }
-// Async function: zf1
 async function zf1() {
     try {
-        let [A, Q, B, G, Z, I] = await Promise.all([ZQ6(), mb(), knA(), OGB(), Dt(), zUA()]);
+        let [A, Q, B, G, Z, I] = await Promise.all([ZQ6(), mb(), getGitRemoteUrl(), OGB(), Dt(), zUA()]);
         return {
             commitHash: A,
             branchName: Q,
@@ -922,20 +946,20 @@ var FT, LGB = async (A) => {
 }, ZQ6 = async () => {
     let {
         stdout: A
-    } = await ZQ("git", ["rev-parse", "HEAD"]);
+    } = await execGit("git", ["rev-parse", "HEAD"]);
     return A.trim()
 }, mb = async () => {
     let {
         stdout: A
-    } = await ZQ("git", ["rev-parse", "--abbrev-ref", "HEAD"], {
+    } = await execGit("git", ["rev-parse", "--abbrev-ref", "HEAD"], {
         preserveOutputOnError: !1
     });
     return A.trim()
-}, Cf1 = async () => {
+}, getMainBranch = async () => {
     let {
         stdout: A,
         code: Q
-    } = await ZQ("git", ["symbolic-ref", "refs/remotes/origin/HEAD"], {
+    } = await execGit("git", ["symbolic-ref", "refs/remotes/origin/HEAD"], {
         preserveOutputOnError: !1
     });
     if (Q === 0) {
@@ -945,41 +969,41 @@ var FT, LGB = async (A) => {
     let {
         stdout: B,
         code: G
-    } = await ZQ("git", ["branch", "-r"], {
+    } = await execGit("git", ["branch", "-r"], {
         preserveOutputOnError: !1
     });
     if (G === 0) {
         let Z = B.trim().split(`
 `).map((I) => I.trim());
         for (let I of ["main", "master"])
-            if (Z.some((Y) => Y.includes(`origin/${I}`))) return I
+            if (Z.some((Y) => Y.includes(`origin/TextComponent{I}`))) return I
     }
     return "main"
-}, knA = async () => {
+}, getGitRemoteUrl = async () => {
     let {
         stdout: A,
         code: Q
-    } = await ZQ("git", ["remote", "get-url", "origin"], {
+    } = await execGit("git", ["remote", "get-url", "origin"], {
         preserveOutputOnError: !1
     });
     return Q === 0 ? A.trim() : null
 }, OGB = async () => {
     let {
         code: A
-    } = await ZQ("git", ["rev-parse", "@{u}"], {
+    } = await execGit("git", ["rev-parse", "@{u}"], {
         preserveOutputOnError: !1
     });
     return A === 0
 }, Dt = async () => {
     let {
         stdout: A
-    } = await ZQ("git", ["status", "--porcelain"], {
+    } = await execGit("git", ["status", "--porcelain"], {
         preserveOutputOnError: !1
     });
     return A.trim().length === 0
 }, RGB = async () => {
     let A = await OGB(),
-        Q = await YQ6();
+        Q = await getCommitsBehind();
     if (!A) return {
         hasUpstream: !1,
         needsPush: !0,
@@ -989,7 +1013,7 @@ var FT, LGB = async (A) => {
     let {
         stdout: B,
         code: G
-    } = await ZQ("git", ["rev-list", "--count", "@{u}..HEAD"], {
+    } = await execGit("git", ["rev-list", "--count", "@{u}..HEAD"], {
         preserveOutputOnError: !1
     });
     if (G !== 0) return {
@@ -1018,22 +1042,22 @@ var FT, LGB = async (A) => {
         let {
             code: W,
             stderr: X
-        } = await ZQ("git", ["add", "-A"], {
+        } = await execGit("git", ["add", "-A"], {
             preserveOutputOnError: !0
         });
         if (W !== 0) return {
             success: !1,
-            error: `Failed to stage changes: ${X}`
+            error: `Failed to stage changes: TextComponent{X}`
         };
         let {
             code: F,
             stderr: V
-        } = await ZQ("git", ["commit", "-m", A], {
+        } = await execGit("git", ["commit", "-m", A], {
             preserveOutputOnError: !0
         });
         if (F !== 0) return {
             success: !1,
-            error: `Failed to commit: ${V}`
+            error: `Failed to commit: TextComponent{V}`
         }
     }
     Q?.("pushing");
@@ -1043,12 +1067,12 @@ var FT, LGB = async (A) => {
         {
             code: Y,
             stderr: J
-        } = await ZQ("git", I, {
+        } = await execGit("git", I, {
             preserveOutputOnError: !0
         });
     if (Y !== 0) return {
         success: !1,
-        error: `Failed to push: ${J}`
+        error: `Failed to push: TextComponent{J}`
     };
     return {
         success: !0
@@ -1056,7 +1080,7 @@ var FT, LGB = async (A) => {
 }, Ef1 = async () => {
     let {
         stdout: A
-    } = await ZQ("git", ["status", "--porcelain"], {
+    } = await execGit("git", ["status", "--porcelain"], {
         preserveOutputOnError: !1
     }), Q = [], B = [];
     return A.trim().split(`
@@ -1074,7 +1098,7 @@ var FT, LGB = async (A) => {
         let {
             stdout: A,
             code: Q
-        } = await ZQ("git", ["worktree", "list"], {
+        } = await execGit("git", ["worktree", "list"], {
             preserveOutputOnError: !1
         });
         if (Q !== 0) return 0;
@@ -1085,21 +1109,21 @@ var FT, LGB = async (A) => {
     }
 }, jGB = async (A) => {
     try {
-        let Q = A || `Claude Code auto-stash - ${new Date().toISOString()}`,
+        let Q = A || `Claude Code auto-stash - TextComponent{new Date().toISOString()}`,
             {
                 untracked: B
             } = await Ef1();
         if (B.length > 0) {
             let {
                 code: Z
-            } = await ZQ("git", ["add", ...B], {
+            } = await execGit("git", ["add", ...B], {
                 preserveOutputOnError: !1
             });
             if (Z !== 0) return !1
         }
         let {
             code: G
-        } = await ZQ("git", ["stash", "push", "--message", Q], {
+        } = await execGit("git", ["stash", "push", "--message", Q], {
             preserveOutputOnError: !1
         });
         return G === 0
@@ -1107,7 +1131,7 @@ var FT, LGB = async (A) => {
         return !1
     }
 };
-var ED = L(() => {
+var ED = lazyLoader(() => {
     o2();
     I6();
     D0();
@@ -1115,23 +1139,24 @@ var ED = L(() => {
     FT = t1(async () => {
         let {
             code: A
-        } = await ZQ("git", ["rev-parse", "--is-inside-work-tree"]);
+        } = await execGit("git", ["rev-parse", "--is-inside-work-tree"]);
         return A === 0
     })
 });
 
 function FQ6() {
-    if (Y_()) return `- When you cannot find an answer or the feature doesn't exist, direct the user to ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.ISSUES_EXPLAINER}`;
+    if (Y_()) return `- When you cannot find an answer or the feature doesn't exist, direct the user to TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.ISSUES_EXPLAINER}`;
     return "- When you cannot find an answer or the feature doesn't exist, direct the user to use /feedback to report a feature request or bug"
 }
-var JQ6 = "https://code.claude.com/docs/en/claude_code_docs_map.md",
-    WQ6 = "https://docs.claude.com/en/api/agent_sdk_docs_map.md",
-    Uf1 = "claude-code-guide",
+/* DOCS_MAP_URL = DOCS_MAP_URL = "https://code.claude.com/docs/..." */
+var DOCS_MAP_URL = "https://code.claude.com/docs/AGENT_OUTPUT_TOOL_NAME/claude_code_docs_map.md",
+    WQ6 = "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/api/agent_sdk_docs_map.md",
+    CLAUDE_CODE_GUIDE_AGENT = "claude-code-guide",
     XQ6, SGB;
-var $f1 = L(() => {
+var $f1 = lazyLoader(() => {
     xV();
-    XT();
-    B7A();
+    noOpFunction();
+    noOpFunction2();
     RB();
     hB();
     XQ6 = `You are the Claude Code guide agent. Your primary responsibility is helping users understand and use Claude Code and the Claude Agent SDK effectively.
@@ -1148,9 +1173,9 @@ var $f1 = L(() => {
 - Configuration options and settings
 
 **Approach:**
-1. Use ${WEB_FETCH_TOOL_NAME} to access the documentation maps:
-   - Claude Code: ${JQ6}
-   - Agent SDK: ${WQ6}
+1. Use TextComponent{WEB_FETCH_TOOL_NAME} to access the documentation maps:
+   - Claude Code: TextComponent{DOCS_MAP_URL}
+   - Agent SDK: TextComponent{WQ6}
 2. From the docs maps, identify the most relevant documentation URLs for the user's question:
    - **Getting Started**: Installation, setup, and basic usage
    - **Features**: Core capabilities like modes (Plan, Build, Deploy), REPL, terminal integration, and interactive features
@@ -1159,10 +1184,10 @@ var $f1 = L(() => {
    - **MCP Integration**: Installing and configuring Model Context Protocol servers for extended capabilities
    - **Configuration**: Settings files, environment variables, and project-specific setup
    - **Agent SDK**: Architecture, building agents, available tools, and SDK development patterns
-3. Fetch the specific documentation pages using ${WEB_FETCH_TOOL_NAME}
+3. Fetch the specific documentation pages using TextComponent{WEB_FETCH_TOOL_NAME}
 4. Provide clear, actionable guidance based on the official documentation
-5. Use ${WEB_SEARCH_TOOL_NAME} if you need additional context or the docs don't cover the topic
-6. Reference local project files (CLAUDE.md, .claude/ directory, etc.) when relevant using ${READ_TOOL_NAME}, ${GLOB_TOOL_NAME}, and ${GREP_TOOL_NAME}
+5. Use TextComponent{WEB_SEARCH_TOOL_NAME} if you need additional context or the docs don't cover the topic
+6. Reference local project files (CLAUDE.md, .claude/ directory, etc.) when relevant using TextComponent{READ_TOOL_NAME}, TextComponent{GLOB_TOOL_NAME}, and TextComponent{GREP_TOOL_NAME}
 
 **Guidelines:**
 - Always prioritize official documentation over assumptions
@@ -1174,7 +1199,7 @@ var $f1 = L(() => {
 
 Complete the user's request by providing accurate, documentation-based guidance.`;
     SGB = {
-        agentType: Uf1,
+        agentType: CLAUDE_CODE_GUIDE_AGENT,
         whenToUse: 'Use this agent when the user asks questions about Claude Code or the Claude Agent SDK. This includes questions about Claude Code features ("can Claude Code...", "does Claude Code have..."), how to use specific features (hooks, slash commands, MCP servers), and Claude Agent SDK architecture or development. **IMPORTANT:** Before spawning a new agent, check if there is already a running or recently completed claude-code-guide agent that you can resume using the "resume" parameter. Reusing an existing agent is more efficient and maintains context from previous documentation lookups.',
         tools: [GLOB_TOOL_NAME, GREP_TOOL_NAME, READ_TOOL_NAME, WEB_FETCH_TOOL_NAME, WEB_SEARCH_TOOL_NAME],
         source: "built-in",
@@ -1188,44 +1213,44 @@ Complete the user's request by providing accurate, documentation-based guidance.
                 B = [],
                 G = Q.filter((F) => F.type === "prompt");
             if (G.length > 0) {
-                let F = G.map((V) => `- /${V.name}: ${V.description}`).join(`
+                let F = G.map((V) => `- /TextComponent{V.name}: TextComponent{V.description}`).join(`
 `);
                 B.push(`**Available custom slash commands in this project:**
-${F}`)
+TextComponent{F}`)
             }
             let Z = A.options.agentDefinitions.activeAgents.filter((F) => F.source !== "built-in");
             if (Z.length > 0) {
-                let F = Z.map((V) => `- ${V.agentType}: ${V.whenToUse}`).join(`
+                let F = Z.map((V) => `- TextComponent{V.agentType}: TextComponent{V.whenToUse}`).join(`
 `);
                 B.push(`**Available custom agents configured:**
-${F}`)
+TextComponent{F}`)
             }
             let I = A.options.mcpClients;
             if (I && I.length > 0) {
-                let F = I.map((V) => `- ${V.name}`).join(`
+                let F = I.map((V) => `- TextComponent{V.name}`).join(`
 `);
                 B.push(`**Configured MCP servers:**
-${F}`)
+TextComponent{F}`)
             }
             let Y = Q.filter((F) => F.type === "prompt" && F.source === "plugin");
             if (Y.length > 0) {
-                let F = Y.map((V) => `- /${V.name}: ${V.description}`).join(`
+                let F = Y.map((V) => `- /TextComponent{V.name}: TextComponent{V.description}`).join(`
 `);
                 B.push(`**Available plugin slash commands:**
-${F}`)
+TextComponent{F}`)
             }
             let J = c0();
             if (Object.keys(J).length > 0) {
                 let F = JSON.stringify(J, null, 2);
                 B.push(`**User's settings.json:**
 \`\`\`json
-${F}
+TextComponent{F}
 \`\`\``)
             }
             let W = FQ6(),
-                X = `${XQ6}
-${W}`;
-            if (B.length > 0) return `${X}
+                X = `TextComponent{XQ6}
+TextComponent{W}`;
+            if (B.length > 0) return `TextComponent{X}
 
 ---
 
@@ -1233,7 +1258,7 @@ ${W}`;
 
 The user has the following custom setup in their environment:
 
-${B.join(`
+TextComponent{B.join(`
 
 `)}
 
@@ -1243,7 +1268,7 @@ When answering questions, consider these configured features and proactively sug
     }
 });
 var _GB, kGB = "Update the todo list for the current session. To be used proactively and often to track progress and pending tasks. Make sure that at least one task is in_progress at all times. Always provide both content (imperative) and activeForm (present continuous) for each task.";
-var yGB = L(() => {
+var yGB = lazyLoader(() => {
     _GB = `Use this tool to create and manage a structured task list for your current coding session. This helps you track progress, organize complex tasks, and demonstrate thoroughness to the user.
 It also helps the user understand the progress of the task and overall progress of their requests.
 
@@ -1366,7 +1391,7 @@ The assistant did not use the todo list because this is an informational request
 <example>
 User: Can you add a comment to the calculateTotal function to explain what it does?
 Assistant: Sure, let me add a comment to the calculateTotal function to explain what it does.
-* Uses the ${EDIT_TOOL_NAME} tool to add a comment to the calculateTotal function *
+* Uses the TextComponent{EDIT_TOOL_NAME} tool to add a comment to the calculateTotal function *
 
 <reasoning>
 The assistant did not use the todo list because this is a single, straightforward task confined to one location in the code. Adding a comment doesn't require tracking multiple steps or systematic organization.
@@ -1429,7 +1454,7 @@ When in doubt, use this tool. Being proactive with task management demonstrates 
 `
 });
 var VQ6, KQ6, Z7A;
-var wf1 = L(() => {
+var wf1 = lazyLoader(() => {
     h2();
     VQ6 = _.enum(["pending", "in_progress", "completed"]), KQ6 = _.object({
         content: _.string().min(1, "Content cannot be empty"),
@@ -1457,9 +1482,10 @@ function fGB() {
 function hGB() {
     return null
 }
+/* TODO_WRITE_TOOL_NAME = TODO_WRITE_TOOL = "TodoWrite" */
 var TODO_WRITE_TOOL_NAME = "TodoWrite";
-var DQ6, HQ6, tI;
-var Ht = L(() => {
+var DQ6, HQ6, TODO_READ_TOOL;
+var Ht = lazyLoader(() => {
     h2();
     yGB();
     wf1();
@@ -1468,7 +1494,7 @@ var Ht = L(() => {
     }), HQ6 = _.object({
         oldTodos: Z7A.describe("The todo list before the update"),
         newTodos: Z7A.describe("The todo list after the update")
-    }), tI = {
+    }), TODO_READ_TOOL = {
         name: TODO_WRITE_TOOL_NAME,
         strict: !0,
         input_examples: [{

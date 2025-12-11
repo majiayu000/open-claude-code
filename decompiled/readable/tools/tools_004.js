@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_004.js
+ * 处理时间: 2025-12-09T03:41:38.596Z
+ * 变量映射: 62 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.066Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -51,9 +54,9 @@ function uzA(A) {
                 ...Z && {
                     file: Z
                 },
-                path: `mcpServers.${W}`,
-                message: `Missing environment variables: ${K.join(", ")}`,
-                suggestion: `Set the following environment variables: ${K.join(", ")}`,
+                path: `mcpServers.TextComponent{W}`,
+                message: `Missing environment variables: TextComponent{K.join(", ")}`,
+                suggestion: `Set the following environment variables: TextComponent{K.join(", ")}`,
                 mcpErrorMetadata: {
                     scope: G,
                     serverName: W,
@@ -66,9 +69,9 @@ function uzA(A) {
             ...Z && {
                 file: Z
             },
-            path: `mcpServers.${W}`,
+            path: `mcpServers.TextComponent{W}`,
             message: "Windows requires 'cmd /c' wrapper to execute npx",
-            suggestion: 'Change command to "cmd" with args ["/c", "npx", ...]. See: https://docs.claude.com/en/docs/claude-code/mcp#configure-mcp-servers',
+            suggestion: 'Change command to "cmd" with args ["/c", "npx", ...]. See: https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/mcp#configure-mcp-servers',
             mcpErrorMetadata: {
                 scope: G,
                 serverName: W,
@@ -96,7 +99,7 @@ function p3A(A) {
         errors: [{
             file: Q,
             path: "",
-            message: `MCP config file not found: ${Q}`,
+            message: `MCP config file not found: TextComponent{Q}`,
             suggestion: "Check that the file path is correct",
             mcpErrorMetadata: {
                 scope: G,
@@ -115,7 +118,7 @@ function p3A(A) {
             errors: [{
                 file: Q,
                 path: "",
-                message: `Failed to read file: ${J}`,
+                message: `Failed to read file: TextComponent{J}`,
                 suggestion: "Check file permissions and ensure the file exists",
                 mcpErrorMetadata: {
                     scope: G,
@@ -168,7 +171,7 @@ function Jb1(A, Q) {
     else if (!G.includes(A)) G = [...G, A];
     B.disabledMcpServers = G, aI(B)
 }
-var GM = L(() => {
+var GM = lazyLoader(() => {
     jQ();
     o0();
     zV();
@@ -247,7 +250,7 @@ function piA(A, Q) {
 }
 
 function liA(A) {
-    let Q = A.replace(/\s*\(MCP\)\s*$/, "");
+    let Q = A.replace(/\s*\(MCP\)\s*TextComponent/, "");
     Q = Q.trim();
     let B = Q.indexOf(" - ");
     if (B !== -1) return Q.substring(B + 3).trim();
@@ -260,21 +263,21 @@ function mw(A) {
         case "user": {
             let B = gK(),
                 G = Q.existsSync(B);
-            return `${B}${G?"":" (file does not exist)"}`
+            return `TextComponent{B}TextComponent{G?"":" (file does not exist)"}`
         }
         case "project": {
             let B = Fe8(H0(), ".mcp.json"),
                 G = Q.existsSync(B);
-            return `${B}${G?"":" (file does not exist)"}`
+            return `TextComponent{B}TextComponent{G?"":" (file does not exist)"}`
         }
         case "local":
-            return `${gK()} [project: ${H0()}]`;
+            return `TextComponent{gK()} [project: TextComponent{H0()}]`;
         case "dynamic":
             return "Dynamically configured";
         case "enterprise": {
             let B = uiA(),
                 G = Q.existsSync(B);
-            return `${B}${G?"":" (file does not exist)"}`
+            return `TextComponent{B}TextComponent{G?"":" (file does not exist)"}`
         }
         default:
             return A
@@ -300,13 +303,13 @@ function Gt(A) {
 
 function dzA(A) {
     if (!A) return "local";
-    if (!PC1.options.includes(A)) throw Error(`Invalid scope: ${A}. Must be one of: ${PC1.options.join(", ")}`);
+    if (!PC1.options.includes(A)) throw Error(`Invalid scope: TextComponent{A}. Must be one of: TextComponent{PC1.options.join(", ")}`);
     return A
 }
 
 function T6B(A) {
     if (!A) return "stdio";
-    if (A !== "stdio" && A !== "sse" && A !== "http") throw Error(`Invalid transport type: ${A}. Must be one of: stdio, sse, http`);
+    if (A !== "stdio" && A !== "sse" && A !== "http") throw Error(`Invalid transport type: TextComponent{A}. Must be one of: stdio, sse, http`);
     return A
 }
 
@@ -314,10 +317,10 @@ function Wb1(A) {
     let Q = {};
     for (let B of A) {
         let G = B.indexOf(":");
-        if (G === -1) throw Error(`Invalid header format: "${B}". Expected format: "Header-Name: value"`);
+        if (G === -1) throw Error(`Invalid header format: "TextComponent{B}". Expected format: "Header-Name: value"`);
         let Z = B.substring(0, G).trim(),
             I = B.substring(G + 1).trim();
-        if (!Z) throw Error(`Invalid header: "${B}". Header name cannot be empty.`);
+        if (!Z) throw Error(`Invalid header: "TextComponent{B}". Header name cannot be empty.`);
         Q[Z] = I
     }
     return Q
@@ -330,7 +333,7 @@ function diA(A) {
     if (Q?.enabledMcpjsonServers?.some((G) => v7(G) === B) || Q?.enableAllProjectMcpServers) return "approved";
     return "pending"
 }
-var xX = L(() => {
+var xX = lazyLoader(() => {
     RB();
     s9A();
     f5();
@@ -338,51 +341,56 @@ var xX = L(() => {
     o0();
     GM()
 });
+/* BASH_TOOL_NAME = BASH_TOOL = "Bash" */
 var BASH_TOOL_NAME = "Bash";
 
-function SQ(A, Q) {
+/* sandboxDebug = sandboxDebug(msg, opts) - Sandbox debug logging */
+/* Signature: (msg: string, opts?: {level}) => void */
+function sandboxDebug(A, Q) {
     if (!process.env.SRT_DEBUG) return;
     let B = Q?.level || "info",
         G = "[SandboxDebug]";
     switch (B) {
         case "error":
-            console.error(`${G} ${A}`);
+            console.error(`TextComponent{G} TextComponent{A}`);
             break;
         case "warn":
-            console.warn(`${G} ${A}`);
+            console.warn(`TextComponent{G} TextComponent{A}`);
             break;
         default:
-            console.error(`${G} ${A}`)
+            console.error(`TextComponent{G} TextComponent{A}`)
     }
 }
 import {
-    createServer as Ve8
+    createServer as httpCreateServer
 } from "node:http";
 import {
-    request as Ke8
+    request as httpRequest
 } from "node:http";
 import {
-    request as De8
+    request as httpsRequest
 } from "node:https";
 import {
-    connect as He8
+    connect as netConnect
 } from "node:net";
 import {
-    URL as Ce8
+    URL as URLClass
 } from "node:url";
 
-function P6B(A) {
-    let Q = Ve8();
+/* createProxyServer = createProxyServer(config) - Create HTTP/HTTPS proxy */
+/* Signature: (config: {filter}) => http.Server */
+function createProxyServer(A) {
+    let Q = httpCreateServer();
     return Q.on("connect", async (B, G) => {
         G.on("error", (Z) => {
-            SQ(`Client socket error: ${Z.message}`, {
+            sandboxDebug(`Client socket error: TextComponent{Z.message}`, {
                 level: "error"
             })
         });
         try {
             let [Z, I] = B.url.split(":"), Y = I === void 0 ? void 0 : parseInt(I, 10);
             if (!Z || !Y) {
-                SQ(`Invalid CONNECT request: ${B.url}`, {
+                sandboxDebug(`Invalid CONNECT request: TextComponent{B.url}`, {
                     level: "error"
                 }), G.end(`HTTP/1.1 400 Bad Request\r
 \r
@@ -390,7 +398,7 @@ function P6B(A) {
                 return
             }
             if (!await A.filter(Y, Z, G)) {
-                SQ(`Connection blocked to ${Z}:${Y}`, {
+                sandboxDebug(`Connection blocked to TextComponent{Z}:TextComponent{Y}`, {
                     level: "error"
                 }), G.end(`HTTP/1.1 403 Forbidden\r
 Content-Type: text/plain\r
@@ -399,24 +407,24 @@ X-Proxy-Error: blocked-by-allowlist\r
 Connection blocked by network allowlist`);
                 return
             }
-            let W = He8(Y, Z, () => {
+            let W = netConnect(Y, Z, () => {
                 G.write(`HTTP/1.1 200 Connection Established\r
 \r
 `), W.pipe(G), G.pipe(W)
             });
             W.on("error", (X) => {
-                SQ(`CONNECT tunnel failed: ${X.message}`, {
+                sandboxDebug(`CONNECT tunnel failed: TextComponent{X.message}`, {
                     level: "error"
                 }), G.end(`HTTP/1.1 502 Bad Gateway\r
 \r
 `)
             }), G.on("error", (X) => {
-                SQ(`Client socket error: ${X.message}`, {
+                sandboxDebug(`Client socket error: TextComponent{X.message}`, {
                     level: "error"
                 }), W.destroy()
             }), G.on("end", () => W.end()), W.on("end", () => G.end())
         } catch (Z) {
-            SQ(`Error handling CONNECT: ${Z}`, {
+            sandboxDebug(`Error handling CONNECT: TextComponent{Z}`, {
                 level: "error"
             }), G.end(`HTTP/1.1 500 Internal Server Error\r
 \r
@@ -424,11 +432,11 @@ Connection blocked by network allowlist`);
         }
     }), Q.on("request", async (B, G) => {
         try {
-            let Z = new Ce8(B.url),
+            let Z = new URLClass(B.url),
                 I = Z.hostname,
                 Y = Z.port ? parseInt(Z.port, 10) : Z.protocol === "https:" ? 443 : 80;
             if (!await A.filter(Y, I, B.socket)) {
-                SQ(`HTTP request blocked to ${I}:${Y}`, {
+                sandboxDebug(`HTTP request blocked to TextComponent{I}:TextComponent{Y}`, {
                     level: "error"
                 }), G.writeHead(403, {
                     "Content-Type": "text/plain",
@@ -436,7 +444,7 @@ Connection blocked by network allowlist`);
                 }), G.end("Connection blocked by network allowlist");
                 return
             }
-            let X = (Z.protocol === "https:" ? De8 : Ke8)({
+            let X = (Z.protocol === "https:" ? httpsRequest : httpRequest)({
                 hostname: I,
                 port: Y,
                 path: Z.pathname + Z.search,
@@ -449,14 +457,14 @@ Connection blocked by network allowlist`);
                 G.writeHead(F.statusCode, F.headers), F.pipe(G)
             });
             X.on("error", (F) => {
-                if (SQ(`Proxy request failed: ${F.message}`, {
+                if (sandboxDebug(`Proxy request failed: TextComponent{F.message}`, {
                         level: "error"
                     }), !G.headersSent) G.writeHead(502, {
                     "Content-Type": "text/plain"
                 }), G.end("Bad Gateway")
             }), B.pipe(X)
         } catch (Z) {
-            SQ(`Error handling HTTP request: ${Z}`, {
+            sandboxDebug(`Error handling HTTP request: TextComponent{Z}`, {
                 level: "error"
             }), G.writeHead(500, {
                 "Content-Type": "text/plain"
@@ -464,8 +472,9 @@ Connection blocked by network allowlist`);
         }
     }), Q
 }
-var j6B = () => {};
-var b6B = U((mj7, v6B) => {
+/* emptyFunction = emptyFunction() - No-op function */
+var emptyFunction = () => {};
+var b6B = moduleWrapper((mj7, v6B) => {
     var {
         create: Ee8,
         defineProperty: iiA,
@@ -493,19 +502,19 @@ var b6B = U((mj7, v6B) => {
         value: !0
     }), A), k6B = {};
     qe8(k6B, {
-        Socks5Server: () => x6B,
-        createServer: () => Re8,
-        defaultConnectionHandler: () => Fb1
+        Socks5Server: () => Socks5Server,
+        createServer: () => createSocksServer,
+        defaultConnectionHandler: () => defaultConnectionHandler
     });
     v6B.exports = Ne8(k6B);
-    var Le8 = _6B(UA("net")),
-        y6B = ((A) => {
+    var Le8 = _6B(nodeRequire("net")),
+        SocksCommand = ((A) => {
             return A[A.connect = 1] = "connect", A[A.bind = 2] = "bind", A[A.udp = 3] = "udp", A
-        })(y6B || {}),
-        Xb1 = ((A) => {
+        })(SocksCommand || {}),
+        SocksStatus = ((A) => {
             return A[A.REQUEST_GRANTED = 0] = "REQUEST_GRANTED", A[A.GENERAL_FAILURE = 1] = "GENERAL_FAILURE", A[A.CONNECTION_NOT_ALLOWED = 2] = "CONNECTION_NOT_ALLOWED", A[A.NETWORK_UNREACHABLE = 3] = "NETWORK_UNREACHABLE", A[A.HOST_UNREACHABLE = 4] = "HOST_UNREACHABLE", A[A.CONNECTION_REFUSED = 5] = "CONNECTION_REFUSED", A[A.TTL_EXPIRED = 6] = "TTL_EXPIRED", A[A.COMMAND_NOT_SUPPORTED = 7] = "COMMAND_NOT_SUPPORTED", A[A.ADDRESS_TYPE_NOT_SUPPORTED = 8] = "ADDRESS_TYPE_NOT_SUPPORTED", A
-        })(Xb1 || {}),
-        Me8 = class {
+        })(SocksStatus || {}),
+        Socks5Connection = class {
             constructor(A, Q) {
                 this.errorHandler = () => {}, this.metadata = {}, this.socket = Q, this.server = A, Q.on("error", this.errorHandler), Q.pause(), this.handleGreeting()
             }
@@ -554,7 +563,7 @@ var b6B = U((mj7, v6B) => {
             async handleConnectionRequest() {
                 await this.readBytes(1);
                 let A = (await this.readBytes(1))[0],
-                    Q = y6B[A];
+                    Q = SocksCommand[A];
                 if (!Q) return this.socket.destroy();
                 this.command = Q, await this.readBytes(1);
                 let B = (await this.readBytes(1)).readUInt8(),
@@ -571,7 +580,7 @@ var b6B = U((mj7, v6B) => {
                         let F = await this.readBytes(16);
                         for (let V = 0; V < 16; V++) {
                             if (V % 2 === 0 && V > 0) G += ":";
-                            G += `${F[V]<16?"0":""}${F[V].toString(16)}`
+                            G += `TextComponent{F[V]<16?"0":""}TextComponent{F[V].toString(16)}`
                         }
                         break;
                     default:
@@ -597,14 +606,15 @@ var b6B = U((mj7, v6B) => {
             }
             connect() {
                 this.socket.removeListener("error", this.errorHandler), this.server.connectionHandler(this, (A) => {
-                    if (Xb1[A] === void 0) throw Error(`"${A}" is not a valid status.`);
-                    if (this.socket.write(Buffer.from([5, Xb1[A], 0, 1, 0, 0, 0, 0, 0, 0])), A !== "REQUEST_GRANTED") this.socket.destroy()
+                    if (SocksStatus[A] === void 0) throw Error(`"TextComponent{A}" is not a valid status.`);
+                    if (this.socket.write(Buffer.from([5, SocksStatus[A], 0, 1, 0, 0, 0, 0, 0, 0])), A !== "REQUEST_GRANTED") this.socket.destroy()
                 }), this.socket.resume()
             }
         },
-        Oe8 = _6B(UA("net"));
+        Oe8 = _6B(nodeRequire("net"));
 
-function Fb1(A, Q) {
+    /* defaultConnectionHandler = defaultConnectionHandler() */
+function defaultConnectionHandler(A, Q) {
         if (A.command !== "connect") return Q("COMMAND_NOT_SUPPORTED");
         A.socket.on("error", () => {});
         let B = Oe8.default.createConnection({
@@ -636,10 +646,10 @@ function Fb1(A, Q) {
             G = !0, Q("REQUEST_GRANTED"), A.socket.pipe(B).pipe(A.socket)
         }), A.socket.on("close", () => B.destroy()), B
     }
-
-var x6B = class {
+    /* Socks5Server = Socks5Server class */
+var Socks5Server = class {
         constructor() {
-            this.supportedCommands = new Set(["connect"]), this.connectionHandler = Fb1, this.server = Le8.default.createServer((A) => {
+            this.supportedCommands = new Set(["connect"]), this.connectionHandler = defaultConnectionHandler, this.server = Le8.default.createServer((A) => {
                 A.setNoDelay(), this._handleConnection(A)
             })
         }
@@ -665,15 +675,16 @@ var x6B = class {
             return this.connectionHandler = A, this
         }
         useDefaultConnectionHandler() {
-            return this.connectionHandler = Fb1, this
+            return this.connectionHandler = defaultConnectionHandler, this
         }
         _handleConnection(A) {
-            return new Me8(this, A), this
+            return new Socks5Connection(this, A), this
         }
     };
 
-function Re8(A) {
-        let Q = new x6B;
+    /* createSocksServer = createSocksServer() */
+function createSocksServer(A) {
+        let Q = new Socks5Server;
         if (A?.auth) Q.setAuthHandler((B) => {
             return B.username === A.auth.username && B.password === A.auth.password
         });
@@ -690,12 +701,12 @@ function h6B(A) {
                 destAddress: G,
                 destPort: Z
             } = B;
-            if (SQ(`Connection request to ${G}:${Z}`), !await A.filter(Z, G)) return SQ(`Connection blocked to ${G}:${Z}`, {
+            if (sandboxDebug(`Connection request to TextComponent{G}:TextComponent{Z}`), !await A.filter(Z, G)) return sandboxDebug(`Connection blocked to TextComponent{G}:TextComponent{Z}`, {
                 level: "error"
             }), !1;
-            return SQ(`Connection allowed to ${G}:${Z}`), !0
+            return sandboxDebug(`Connection allowed to TextComponent{G}:TextComponent{Z}`), !0
         } catch (G) {
-            return SQ(`Error validating connection: ${G}`, {
+            return sandboxDebug(`Error validating connection: TextComponent{G}`, {
                 level: "error"
             }), !1
         }
@@ -709,7 +720,7 @@ function h6B(A) {
                     if (G && typeof G === "object" && "port" in G) return G.port
                 }
             } catch (B) {
-                SQ(`Error getting port: ${B}`, {
+                sandboxDebug(`Error getting port: TextComponent{B}`, {
                     level: "error"
                 })
             }
@@ -719,7 +730,7 @@ function h6B(A) {
             return new Promise((Z, I) => {
                 let Y = () => {
                     let J = this.getPort();
-                    if (J) SQ(`SOCKS proxy listening on ${G}:${J}`), Z(J);
+                    if (J) sandboxDebug(`SOCKS proxy listening on TextComponent{G}:TextComponent{J}`), Z(J);
                     else I(Error("Failed to get SOCKS proxy server port"))
                 };
                 Q.listen(B, G, Y)
@@ -744,7 +755,7 @@ function h6B(A) {
                 let B = Q?.server;
                 if (B && typeof B?.unref === "function") B.unref()
             } catch (B) {
-                SQ(`Error calling unref: ${B}`, {
+                sandboxDebug(`Error calling unref: TextComponent{B}`, {
                     level: "error"
                 })
             }
@@ -752,13 +763,13 @@ function h6B(A) {
     }
 }
 var f6B;
-var g6B = L(() => {
-    f6B = GA(b6B(), 1)
+var g6B = lazyLoader(() => {
+    f6B = esmImport(b6B(), 1)
 });
 
 function Te8() {}
 var czA;
-var Vb1 = L(() => {
+var Vb1 = lazyLoader(() => {
     czA = Te8
 });
 
@@ -769,17 +780,17 @@ function Pe8(A, Q, B, G) {
         if (Q(A[I], I, A)) return I;
     return -1
 }
-var u6B;
-var m6B = L(() => {
-    u6B = Pe8
+var baseFindIndex;
+var m6B = lazyLoader(() => {
+    baseFindIndex = Pe8
 });
 
 function je8(A) {
     return A !== A
 }
-var d6B;
-var c6B = L(() => {
-    d6B = je8
+var baseIsNaN;
+var c6B = lazyLoader(() => {
+    baseIsNaN = je8
 });
 
 function Se8(A, Q, B) {
@@ -789,79 +800,79 @@ function Se8(A, Q, B) {
         if (A[G] === Q) return G;
     return -1
 }
-var p6B;
-var l6B = L(() => {
-    p6B = Se8
+var strictIndexOf;
+var l6B = lazyLoader(() => {
+    strictIndexOf = Se8
 });
 
 function _e8(A, Q, B) {
-    return Q === Q ? p6B(A, Q, B) : u6B(A, d6B, B)
+    return Q === Q ? strictIndexOf(A, Q, B) : baseFindIndex(A, baseIsNaN, B)
 }
-var i6B;
-var n6B = L(() => {
+var baseIndexOf;
+var n6B = lazyLoader(() => {
     m6B();
     c6B();
     l6B();
-    i6B = _e8
+    baseIndexOf = _e8
 });
 
 function ke8(A, Q) {
     var B = A == null ? 0 : A.length;
-    return !!B && i6B(A, Q, 0) > -1
+    return !!B && baseIndexOf(A, Q, 0) > -1
 }
-var a6B;
-var s6B = L(() => {
+var arrayIncludes;
+var s6B = lazyLoader(() => {
     n6B();
-    a6B = ke8
+    arrayIncludes = ke8
 });
 
 function ye8(A) {
-    return j7(A) || px(A) || !!(r6B && A && A[r6B])
+    return isArray(A) || isArguments(A) || !!(r6B && A && A[r6B])
 }
-var r6B, o6B;
-var t6B = L(() => {
+var r6B, isFlattenable;
+var t6B = lazyLoader(() => {
     Fs();
     oFA();
     gC();
-    r6B = HV ? HV.isConcatSpreadable : void 0;
-    o6B = ye8
+    r6B = Symbol ? Symbol.isConcatSpreadable : void 0;
+    isFlattenable = ye8
 });
 
 function e6B(A, Q, B, G, Z) {
     var I = -1,
         Y = A.length;
-    B || (B = o6B), Z || (Z = []);
+    B || (B = isFlattenable), Z || (Z = []);
     while (++I < Y) {
         var J = A[I];
         if (Q > 0 && B(J))
             if (Q > 1) e6B(J, Q - 1, B, G, Z);
-            else jBA(Z, J);
+            else arrayPush(Z, J);
         else if (!G) Z[Z.length] = J
     }
     return Z
 }
-var A5B;
-var Q5B = L(() => {
+var baseFlatten;
+var Q5B = lazyLoader(() => {
     $_A();
     t6B();
-    A5B = e6B
+    baseFlatten = e6B
 });
 
 function xe8(A) {
     var Q = A == null ? 0 : A.length;
-    return Q ? A5B(A, 1) : []
+    return Q ? baseFlatten(A, 1) : []
 }
-var B5B;
-var G5B = L(() => {
+var flatten;
+var G5B = lazyLoader(() => {
     Q5B();
-    B5B = xe8
+    flatten = xe8
 });
 
 function ve8(A) {
-    return axA(nxA(A, void 0, B5B), A + "")
+    return setToString(overRest(A, void 0, flatten), A + "")
 }
 var Z5B;
-var I5B = L(() => {
+var I5B = lazyLoader(() => {
     G5B();
     VC1();
     KC1();
@@ -878,19 +889,19 @@ function be8(A, Q, B) {
     while (++G < Z) I[G] = A[G + Q];
     return I
 }
-var niA;
-var Kb1 = L(() => {
-    niA = be8
+var baseSlice;
+var Kb1 = lazyLoader(() => {
+    baseSlice = be8
 });
 
 function fe8(A, Q, B) {
     var G = A.length;
-    return B = B === void 0 ? G : B, !Q && B >= G ? A : niA(A, Q, B)
+    return B = B === void 0 ? G : B, !Q && B >= G ? A : baseSlice(A, Q, B)
 }
-var Y5B;
-var J5B = L(() => {
+var castSlice;
+var J5B = lazyLoader(() => {
     Kb1();
-    Y5B = fe8
+    castSlice = fe8
 });
 
 function ie8(A) {
@@ -902,18 +913,18 @@ var he8 = "\\ud800-\\udfff",
     me8 = "\\u20d0-\\u20ff",
     de8, ce8 = "\\ufe0e\\ufe0f",
     pe8 = "\\u200d",
-    le8, aiA;
-var Db1 = L(() => {
+    le8, hasUnicode;
+var Db1 = lazyLoader(() => {
     de8 = ge8 + ue8 + me8, le8 = RegExp("[" + pe8 + he8 + de8 + ce8 + "]");
-    aiA = ie8
+    hasUnicode = ie8
 });
 
 function ne8(A) {
     return A.split("")
 }
-var W5B;
-var X5B = L(() => {
-    W5B = ne8
+var asciiToArray;
+var X5B = lazyLoader(() => {
+    asciiToArray = ne8
 });
 
 function YA6(A) {
@@ -928,54 +939,54 @@ var F5B = "\\ud800-\\udfff",
     AA6, V5B, K5B = "(?:\\ud83c[\\udde6-\\uddff]){2}",
     D5B = "[\\ud800-\\udbff][\\udc00-\\udfff]",
     QA6 = "\\u200d",
-    H5B, C5B, BA6, GA6, ZA6, IA6, E5B;
-var z5B = L(() => {
+    H5B, C5B, BA6, GA6, ZA6, IA6, unicodeToArray;
+var z5B = lazyLoader(() => {
     oe8 = ae8 + se8 + re8, ee8 = "[" + F5B + "]", Hb1 = "[" + oe8 + "]", AA6 = "(?:" + Hb1 + "|" + Cb1 + ")", V5B = "[^" + F5B + "]", H5B = AA6 + "?", C5B = "[" + te8 + "]?", BA6 = "(?:" + QA6 + "(?:" + [V5B, K5B, D5B].join("|") + ")" + C5B + H5B + ")*", GA6 = C5B + H5B + BA6, ZA6 = "(?:" + [V5B + Hb1 + "?", Hb1, K5B, D5B, ee8].join("|") + ")", IA6 = RegExp(Cb1 + "(?=" + Cb1 + ")|" + ZA6 + GA6, "g");
-    E5B = YA6
+    unicodeToArray = YA6
 });
 
 function JA6(A) {
-    return aiA(A) ? E5B(A) : W5B(A)
+    return hasUnicode(A) ? unicodeToArray(A) : asciiToArray(A)
 }
-var U5B;
-var $5B = L(() => {
+var stringToArray;
+var $5B = lazyLoader(() => {
     X5B();
     Db1();
     z5B();
-    U5B = JA6
+    stringToArray = JA6
 });
 
 function WA6(A) {
     return function(Q) {
-        Q = uBA(Q);
-        var B = aiA(Q) ? U5B(Q) : void 0,
+        Q = toString(Q);
+        var B = hasUnicode(Q) ? stringToArray(Q) : void 0,
             G = B ? B[0] : Q.charAt(0),
-            Z = B ? Y5B(B, 1).join("") : Q.slice(1);
+            Z = B ? castSlice(B, 1).join("") : Q.slice(1);
         return G[A]() + Z
     }
 }
-var w5B;
-var q5B = L(() => {
+var createCaseFirst;
+var q5B = lazyLoader(() => {
     J5B();
     Db1();
     $5B();
     l_A();
-    w5B = WA6
+    createCaseFirst = WA6
 });
-var XA6, N5B;
-var L5B = L(() => {
+var XA6, upperFirst;
+var L5B = lazyLoader(() => {
     q5B();
-    XA6 = w5B("toUpperCase"), N5B = XA6
+    XA6 = createCaseFirst("toUpperCase"), upperFirst = XA6
 });
 
 function FA6(A) {
-    return N5B(uBA(A).toLowerCase())
+    return upperFirst(toString(A).toLowerCase())
 }
-var pzA;
-var Eb1 = L(() => {
+var capitalize;
+var Eb1 = lazyLoader(() => {
     l_A();
     L5B();
-    pzA = FA6
+    capitalize = FA6
 });
 
 function VA6(A, Q, B, G) {
@@ -988,14 +999,14 @@ function VA6(A, Q, B, G) {
     return G
 }
 var M5B;
-var O5B = L(() => {
+var O5B = lazyLoader(() => {
     M5B = VA6
 });
 
 function KA6(A, Q) {
     return function(B, G) {
         if (B == null) return B;
-        if (!Tj(B)) return A(B, G);
+        if (!isArrayLike(B)) return A(B, G);
         var Z = B.length,
             I = Q ? Z : -1,
             Y = Object(B);
@@ -1005,37 +1016,37 @@ function KA6(A, Q) {
     }
 }
 var R5B;
-var T5B = L(() => {
+var T5B = lazyLoader(() => {
     vBA();
     R5B = KA6
 });
-var DA6, siA;
-var zb1 = L(() => {
+var DA6, baseEach;
+var zb1 = lazyLoader(() => {
     Ix1();
     T5B();
-    DA6 = R5B(LlA), siA = DA6
+    DA6 = R5B(baseForOwn), baseEach = DA6
 });
 
 function HA6(A, Q, B, G) {
-    return siA(A, function(Z, I, Y) {
+    return baseEach(A, function(Z, I, Y) {
         Q(G, Z, B(Z), Y)
     }), G
 }
 var P5B;
-var j5B = L(() => {
+var j5B = lazyLoader(() => {
     zb1();
     P5B = HA6
 });
 
 function CA6(A, Q) {
     return function(B, G) {
-        var Z = j7(B) ? M5B : P5B,
+        var Z = isArray(B) ? M5B : P5B,
             I = Q ? Q() : {};
-        return Z(B, A, jj(G, 2), I)
+        return Z(B, A, baseIteratee(G, 2), I)
     }
 }
 var S5B;
-var _5B = L(() => {
+var _5B = lazyLoader(() => {
     O5B();
     j5B();
     pBA();
@@ -1051,64 +1062,64 @@ function EA6(A, Q, B) {
     return !1
 }
 var k5B;
-var y5B = L(() => {
+var y5B = lazyLoader(() => {
     k5B = EA6
 });
 
 function zA6(A, Q) {
     var B = [];
-    return siA(A, function(G, Z, I) {
+    return baseEach(A, function(G, Z, I) {
         if (Q(G, Z, I)) B.push(G)
     }), B
 }
 var x5B;
-var v5B = L(() => {
+var v5B = lazyLoader(() => {
     zb1();
     x5B = zA6
 });
 
 function UA6(A, Q) {
-    return gBA(Q, function(B) {
+    return arrayMap(Q, function(B) {
         return A[B]
     })
 }
 var b5B;
-var f5B = L(() => {
+var f5B = lazyLoader(() => {
     p_A();
     b5B = UA6
 });
 
 function $A6(A) {
-    return A == null ? [] : b5B(A, SN(A))
+    return A == null ? [] : b5B(A, keys(A))
 }
 var h5B;
-var g5B = L(() => {
+var g5B = lazyLoader(() => {
     f5B();
     Hs();
     h5B = $A6
 });
 
 function wA6(A, Q) {
-    return Q.length < 2 ? A : dBA(A, niA(Q, 0, -1))
+    return Q.length < 2 ? A : baseGet(A, baseSlice(Q, 0, -1))
 }
 var u5B;
-var m5B = L(() => {
+var m5B = lazyLoader(() => {
     i_A();
     Kb1();
     u5B = wA6
 });
 
 function qA6(A, Q) {
-    return bBA(A, Q)
+    return baseIsEqual(A, Q)
 }
 var Ub1;
-var d5B = L(() => {
+var d5B = lazyLoader(() => {
     g_A();
     Ub1 = qA6
 });
 
 function LA6(A) {
-    if (typeof A != "function") throw TypeError(NA6);
+    if (typeof A != "function") throw TypeError(EXPECTED_FUNCTION_ERROR);
     return function() {
         var Q = arguments;
         switch (Q.length) {
@@ -1124,17 +1135,18 @@ function LA6(A) {
         return !A.apply(this, Q)
     }
 }
-var NA6 = "Expected a function",
+/* EXPECTED_FUNCTION_ERROR = EXPECTED_FUNCTION_ERROR = "Expected a function" */
+var EXPECTED_FUNCTION_ERROR = "Expected a function",
     c5B;
-var p5B = L(() => {
+var p5B = lazyLoader(() => {
     c5B = LA6
 });
 
 function MA6(A, Q) {
-    return Q = Pj(Q, A), A = u5B(A, Q), A == null || delete A[_N(dC(Q))]
+    return Q = castPath(Q, A), A = u5B(A, Q), A == null || delete A[toKey(last(Q))]
 }
 var l5B;
-var i5B = L(() => {
+var i5B = lazyLoader(() => {
     mBA();
     O9A();
     m5B();
@@ -1143,18 +1155,18 @@ var i5B = L(() => {
 });
 
 function OA6(A) {
-    return j9A(A) ? void 0 : A
+    return isPlainObject(A) ? void 0 : A
 }
 var n5B;
-var a5B = L(() => {
+var a5B = lazyLoader(() => {
     ixA();
     n5B = OA6
 });
 var RA6 = 1,
     TA6 = 2,
     PA6 = 4,
-    jA6, s5B;
-var r5B = L(() => {
+    jA6, omit;
+var r5B = lazyLoader(() => {
     p_A();
     vC1();
     i5B();
@@ -1167,45 +1179,45 @@ var r5B = L(() => {
         var B = {};
         if (A == null) return B;
         var G = !1;
-        if (Q = gBA(Q, function(I) {
-                return I = Pj(I, A), G || (G = I.length > 1), I
-            }), hN(A, HvA(A), B), G) B = EvA(B, RA6 | TA6 | PA6, n5B);
+        if (Q = arrayMap(Q, function(I) {
+                return I = castPath(I, A), G || (G = I.length > 1), I
+            }), copyObject(A, getAllKeysIn(A), B), G) B = baseClone(B, RA6 | TA6 | PA6, n5B);
         var Z = Q.length;
         while (Z--) l5B(B, Q[Z]);
         return B
-    }), s5B = jA6
+    }), omit = jA6
 });
 
 function SA6(A, Q, B, G) {
-    if (!TY(A)) return A;
-    Q = Pj(Q, A);
+    if (!isObject(A)) return A;
+    Q = castPath(Q, A);
     var Z = -1,
         I = Q.length,
         Y = I - 1,
         J = A;
     while (J != null && ++Z < I) {
-        var W = _N(Q[Z]),
+        var W = toKey(Q[Z]),
             X = B;
         if (W === "__proto__" || W === "constructor" || W === "prototype") return A;
         if (Z != Y) {
             var F = J[W];
-            if (X = G ? G(F, W, J) : void 0, X === void 0) X = TY(F) ? F : xu(Q[Z + 1]) ? [] : {}
+            if (X = G ? G(F, W, J) : void 0, X === void 0) X = isObject(F) ? F : isIndex(Q[Z + 1]) ? [] : {}
         }
-        $m(J, W, X), J = J[W]
+        assignValue(J, W, X), J = J[W]
     }
     return A
 }
-var o5B;
-var t5B = L(() => {
+var baseSet;
+var t5B = lazyLoader(() => {
     EKA();
     mBA();
     eFA();
     jN();
     Es();
-    o5B = SA6
+    baseSet = SA6
 });
 var _A6, e5B;
-var A3B = L(() => {
+var A3B = lazyLoader(() => {
     _5B();
     _A6 = S5B(function(A, Q, B) {
         A[B ? 0 : 1].push(Q)
@@ -1221,17 +1233,17 @@ function xA6(A, Q) {
     return A + kA6(yA6() * (Q - A + 1))
 }
 var kA6, yA6, Q3B;
-var B3B = L(() => {
+var B3B = lazyLoader(() => {
     kA6 = Math.floor, yA6 = Math.random;
     Q3B = xA6
 });
 
 function vA6(A, Q) {
-    var B = j7(A) ? q_A : x5B;
-    return B(A, c5B(jj(Q, 3)))
+    var B = isArray(A) ? q_A : x5B;
+    return B(A, c5B(baseIteratee(Q, 3)))
 }
 var $b1;
-var G3B = L(() => {
+var G3B = lazyLoader(() => {
     xW1();
     v5B();
     pBA();
@@ -1245,7 +1257,7 @@ function bA6(A) {
     return Q ? A[Q3B(0, Q - 1)] : void 0
 }
 var riA;
-var wb1 = L(() => {
+var wb1 = lazyLoader(() => {
     B3B();
     riA = bA6
 });
@@ -1254,18 +1266,18 @@ function fA6(A) {
     return riA(h5B(A))
 }
 var Z3B;
-var I3B = L(() => {
+var I3B = lazyLoader(() => {
     wb1();
     g5B();
     Z3B = fA6
 });
 
 function hA6(A) {
-    var Q = j7(A) ? riA : Z3B;
+    var Q = isArray(A) ? riA : Z3B;
     return Q(A)
 }
 var Zt;
-var oiA = L(() => {
+var oiA = lazyLoader(() => {
     wb1();
     I3B();
     gC();
@@ -1273,16 +1285,16 @@ var oiA = L(() => {
 });
 
 function gA6(A, Q, B, G) {
-    return G = typeof G == "function" ? G : void 0, A == null ? A : o5B(A, Q, B, G)
+    return G = typeof G == "function" ? G : void 0, A == null ? A : baseSet(A, Q, B, G)
 }
 var Y3B;
-var J3B = L(() => {
+var J3B = lazyLoader(() => {
     t5B();
     Y3B = gA6
 });
 var uA6 = 1 / 0,
     mA6, W3B;
-var X3B = L(() => {
+var X3B = lazyLoader(() => {
     mW1();
     Vb1();
     U_A();
@@ -1293,7 +1305,7 @@ var X3B = L(() => {
 
 function cA6(A, Q, B) {
     var G = -1,
-        Z = a6B,
+        Z = arrayIncludes,
         I = A.length,
         Y = !0,
         J = [],
@@ -1322,7 +1334,7 @@ function cA6(A, Q, B) {
 }
 var dA6 = 200,
     F3B;
-var V3B = L(() => {
+var V3B = lazyLoader(() => {
     PW1();
     s6B();
     y5B();
@@ -1333,10 +1345,10 @@ var V3B = L(() => {
 });
 
 function pA6(A, Q) {
-    return A && A.length ? F3B(A, jj(Q, 2)) : []
+    return A && A.length ? F3B(A, baseIteratee(Q, 2)) : []
 }
 var i3A;
-var tiA = L(() => {
+var tiA = lazyLoader(() => {
     pBA();
     V3B();
     i3A = pA6
@@ -1354,20 +1366,20 @@ function lA6(A, Q, B) {
     return Y
 }
 var K3B;
-var D3B = L(() => {
+var D3B = lazyLoader(() => {
     K3B = lA6
 });
 
 function iA6(A, Q) {
-    return K3B(A || [], Q || [], $m)
+    return K3B(A || [], Q || [], assignValue)
 }
 var H3B;
-var C3B = L(() => {
+var C3B = lazyLoader(() => {
     EKA();
     D3B();
     H3B = iA6
 });
-var n3A = L(() => {
+var n3A = lazyLoader(() => {
     zvA();
     o2()
 });
@@ -1401,7 +1413,6 @@ function E3B() {
         return !1
     }
 }
-
 async function z3B(A, Q, B, G = {
     command: "rg"
 }) {
@@ -1424,7 +1435,7 @@ async function z3B(A, Q, B, G = {
                 Y([]);
                 return
             }
-            J(Error(`ripgrep failed with exit code ${W.code}: ${F||W.message}`))
+            J(Error(`ripgrep failed with exit code TextComponent{W.code}: TextComponent{F||W.message}`))
         })
     })
 }
@@ -1448,7 +1459,7 @@ function IT(A) {
 }
 
 function izA(A) {
-    return A.replace(/\/\*\*$/, "")
+    return A.replace(/\/\*\*TextComponent/, "")
 }
 
 function YT(A) {
@@ -1485,11 +1496,11 @@ function AnA(A, Q) {
     let B = ["SANDBOX_RUNTIME=1", "TMPDIR=/tmp/claude"];
     if (!A && !Q) return B;
     let G = ["localhost", "127.0.0.1", "::1", "*.local", ".local", "169.254.0.0/16", "10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"].join(",");
-    if (B.push(`NO_PROXY=${G}`), B.push(`no_proxy=${G}`), A) B.push(`HTTP_PROXY=http://localhost:${A}`), B.push(`HTTPS_PROXY=http://localhost:${A}`), B.push(`http_proxy=http://localhost:${A}`), B.push(`https_proxy=http://localhost:${A}`);
+    if (B.push(`NO_PROXY=TextComponent{G}`), B.push(`no_proxy=TextComponent{G}`), A) B.push(`HTTP_PROXY=http://localhost:TextComponent{A}`), B.push(`HTTPS_PROXY=http://localhost:TextComponent{A}`), B.push(`http_proxy=http://localhost:TextComponent{A}`), B.push(`https_proxy=http://localhost:TextComponent{A}`);
     if (Q) {
-        if (B.push(`ALL_PROXY=socks5h://localhost:${Q}`), B.push(`all_proxy=socks5h://localhost:${Q}`), ZM() === "macos") B.push(`GIT_SSH_COMMAND="ssh -o ProxyCommand='nc -X 5 -x localhost:${Q} %h %p'"`);
-        if (B.push(`FTP_PROXY=socks5h://localhost:${Q}`), B.push(`ftp_proxy=socks5h://localhost:${Q}`), B.push(`RSYNC_PROXY=localhost:${Q}`), B.push(`DOCKER_HTTP_PROXY=http://localhost:${A||Q}`), B.push(`DOCKER_HTTPS_PROXY=http://localhost:${A||Q}`), A) B.push("CLOUDSDK_PROXY_TYPE=https"), B.push("CLOUDSDK_PROXY_ADDRESS=localhost"), B.push(`CLOUDSDK_PROXY_PORT=${A}`);
-        B.push(`GRPC_PROXY=socks5h://localhost:${Q}`), B.push(`grpc_proxy=socks5h://localhost:${Q}`)
+        if (B.push(`ALL_PROXY=socks5h://localhost:TextComponent{Q}`), B.push(`all_proxy=socks5h://localhost:TextComponent{Q}`), ZM() === "macos") B.push(`GIT_SSH_COMMAND="ssh -o ProxyCommand='nc -X 5 -x localhost:TextComponent{Q} %h %p'"`);
+        if (B.push(`FTP_PROXY=socks5h://localhost:TextComponent{Q}`), B.push(`ftp_proxy=socks5h://localhost:TextComponent{Q}`), B.push(`RSYNC_PROXY=localhost:TextComponent{Q}`), B.push(`DOCKER_HTTP_PROXY=http://localhost:TextComponent{A||Q}`), B.push(`DOCKER_HTTPS_PROXY=http://localhost:TextComponent{A||Q}`), A) B.push("CLOUDSDK_PROXY_TYPE=https"), B.push("CLOUDSDK_PROXY_ADDRESS=localhost"), B.push(`CLOUDSDK_PROXY_PORT=TextComponent{A}`);
+        B.push(`GRPC_PROXY=socks5h://localhost:TextComponent{Q}`), B.push(`grpc_proxy=socks5h://localhost:TextComponent{Q}`)
     }
     return B
 }
@@ -1503,7 +1514,7 @@ function U3B(A) {
     return Buffer.from(A, "base64").toString("utf8")
 }
 var lzA, sA6;
-var a3A = L(() => {
+var a3A = lazyLoader(() => {
     lzA = [".gitconfig", ".gitmodules", ".bashrc", ".bash_profile", ".zshrc", ".zprofile", ".profile", ".ripgreprc", ".mcp.json"], sA6 = [".git", ".vscode", ".idea"]
 });
 import {

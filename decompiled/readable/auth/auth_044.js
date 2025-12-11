@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_044.js
+ * 处理时间: 2025-12-09T03:41:36.843Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.926Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -41,7 +44,7 @@
         license: "Apache-2.0"
     }
 });
-var BqA = U((giB) => {
+var BqA = moduleWrapper((giB) => {
     Object.defineProperty(giB, "__esModule", {
         value: !0
     });
@@ -50,8 +53,7 @@ var BqA = U((giB) => {
         Ja6 = fiB(),
         Wa6 = mi1(),
         hiB = "google-api-nodejs-client";
-
-class QqA {
+    class QqA {
         constructor() {
             this.instance = new Ya6.Gaxios
         }
@@ -59,10 +61,10 @@ class QqA {
             if (A.headers = A.headers || {}, typeof window > "u") {
                 let Q = A.headers["User-Agent"];
                 if (!Q) A.headers["User-Agent"] = QqA.USER_AGENT;
-                else if (!Q.includes(`${hiB}/`)) A.headers["User-Agent"] = `${Q} ${QqA.USER_AGENT}`;
+                else if (!Q.includes(`TextComponent{hiB}/`)) A.headers["User-Agent"] = `TextComponent{Q} TextComponent{QqA.USER_AGENT}`;
                 if (!A.headers["x-goog-api-client"]) {
                     let B = process.version.replace(/^v/, "");
-                    A.headers["x-goog-api-client"] = `gl-node/${B}`
+                    A.headers["x-goog-api-client"] = `gl-node/TextComponent{B}`
                 }
             }
             return A
@@ -92,20 +94,20 @@ class QqA {
         }
     }
     giB.DefaultTransporter = QqA;
-    QqA.USER_AGENT = `${hiB}/${Wa6.version}`
+    QqA.USER_AGENT = `TextComponent{hiB}/TextComponent{Wa6.version}`
 });
-var Gk = U((di1, diB) => {
+var Gk = moduleWrapper((di1, diB) => {
     /*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
-    var VA1 = UA("buffer"),
+    var VA1 = nodeRequire("buffer"),
         Bk = VA1.Buffer;
 
-function miB(A, Q) {
+    function miB(A, Q) {
         for (var B in A) Q[B] = A[B]
     }
     if (Bk.from && Bk.alloc && Bk.allocUnsafe && Bk.allocUnsafeSlow) diB.exports = VA1;
     else miB(VA1, di1), di1.Buffer = Te;
 
-function Te(A, Q, B) {
+    function Te(A, Q, B) {
         return Bk(A, Q, B)
     }
     Te.prototype = Object.create(Bk.prototype);
@@ -132,26 +134,25 @@ function Te(A, Q, B) {
         return VA1.SlowBuffer(A)
     }
 });
-var piB = U((n8G, ciB) => {
+var piB = moduleWrapper((n8G, ciB) => {
     function ci1(A) {
         var Q = (A / 8 | 0) + (A % 8 === 0 ? 0 : 1);
         return Q
     }
-
-var Xa6 = {
+    var Xa6 = {
         ES256: ci1(256),
         ES384: ci1(384),
         ES512: ci1(521)
     };
 
-function Fa6(A) {
+    function Fa6(A) {
         var Q = Xa6[A];
         if (Q) return Q;
         throw Error('Unknown algorithm "' + A + '"')
     }
     ciB.exports = Fa6
 });
-var CA1 = U((a8G, riB) => {
+var CA1 = moduleWrapper((a8G, riB) => {
     var KA1 = Gk().Buffer,
         iiB = piB(),
         DA1 = 128,
@@ -162,17 +163,17 @@ var CA1 = U((a8G, riB) => {
         aiB = Ka6 | Va6 | niB << 6,
         HA1 = Da6 | niB << 6;
 
-function Ha6(A) {
+    function Ha6(A) {
         return A.replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_")
     }
 
-function siB(A) {
+    function siB(A) {
         if (KA1.isBuffer(A)) return A;
         else if (typeof A === "string") return KA1.from(A, "base64");
         throw TypeError("ECDSA signature must be a Base64 string or a Buffer")
     }
 
-function Ca6(A, Q) {
+    function Ca6(A, Q) {
         A = siB(A);
         var B = iiB(Q),
             G = B + 1,
@@ -202,7 +203,7 @@ function Ca6(A, Q) {
         return A.copy(D, I, F + Math.max(-K, 0), F + X), D = D.toString("base64"), D = Ha6(D), D
     }
 
-function liB(A, Q, B) {
+    function liB(A, Q, B) {
         var G = 0;
         while (Q + G < B && A[Q + G] === 0) ++G;
         var Z = A[Q + G] >= DA1;
@@ -210,7 +211,7 @@ function liB(A, Q, B) {
         return G
     }
 
-function Ea6(A, Q) {
+    function Ea6(A, Q) {
         A = siB(A);
         var B = iiB(Q),
             G = A.length;
@@ -236,7 +237,7 @@ function Ea6(A, Q) {
         joseToDer: Ea6
     }
 });
-var Bl = U((Ql) => {
+var Bl = moduleWrapper((Ql) => {
     var ST = Ql && Ql.__classPrivateFieldGet || function(A, Q, B, G) {
             if (B === "a" && !G) throw TypeError("Private accessor was defined without a getter");
             if (typeof Q === "function" ? A !== Q || !G : !Q.has(A)) throw TypeError("Cannot read private member from an object whose class did not declare it");
@@ -250,11 +251,11 @@ var Bl = U((Ql) => {
     Ql.snakeToCamel = oiB;
     Ql.originalOrCamelOptions = za6;
 
-function oiB(A) {
+    function oiB(A) {
         return A.replace(/([_][^_])/g, (Q) => Q.slice(1).toUpperCase())
     }
 
-function za6(A) {
+    function za6(A) {
         function Q(B) {
             var G;
             let Z = A || {};
@@ -264,8 +265,7 @@ function za6(A) {
             get: Q
         }
     }
-
-class tiB {
+    class tiB {
         constructor(A) {
             VZA.add(this), Lf.set(this, new Map), this.capacity = A.capacity, this.maxAge = A.maxAge
         }
@@ -290,19 +290,18 @@ class tiB {
         while (!B.done && (ST(this, Lf, "f").size > this.capacity || B.value[1].lastAccessed < Q)) ST(this, Lf, "f").delete(B.value[0]), B = ST(this, Lf, "f").entries().next()
     }
 });
-var Zk = U((BnB) => {
+var Zk = moduleWrapper((BnB) => {
     Object.defineProperty(BnB, "__esModule", {
         value: !0
     });
     BnB.AuthClient = BnB.DEFAULT_EAGER_REFRESH_THRESHOLD_MILLIS = BnB.DEFAULT_UNIVERSE = void 0;
-    var Ua6 = UA("events"),
+    var Ua6 = nodeRequire("events"),
         eiB = PT(),
         AnB = BqA(),
         $a6 = Bl();
     BnB.DEFAULT_UNIVERSE = "googleapis.com";
     BnB.DEFAULT_EAGER_REFRESH_THRESHOLD_MILLIS = 300000;
-
-class QnB extends Ua6.EventEmitter {
+    class QnB extends Ua6.EventEmitter {
         constructor(A = {}) {
             var Q, B, G, Z, I;
             super();
@@ -336,13 +335,12 @@ class QnB extends Ua6.EventEmitter {
     }
     BnB.AuthClient = QnB
 });
-var ni1 = U((YnB) => {
+var ni1 = moduleWrapper((YnB) => {
     Object.defineProperty(YnB, "__esModule", {
         value: !0
     });
     YnB.LoginTicket = void 0;
-
-class InB {
+    class InB {
         constructor(A, Q) {
             this.envelope = A, this.payload = Q
         }
@@ -366,14 +364,14 @@ class InB {
     }
     YnB.LoginTicket = InB
 });
-var Pe = U((XnB) => {
+var Pe = moduleWrapper((XnB) => {
     Object.defineProperty(XnB, "__esModule", {
         value: !0
     });
     XnB.OAuth2Client = XnB.ClientAuthentication = XnB.CertificateFormat = XnB.CodeChallengeMethod = void 0;
     var wa6 = PT(),
-        ai1 = UA("querystring"),
-        qa6 = UA("stream"),
+        ai1 = nodeRequire("querystring"),
+        qa6 = nodeRequire("stream"),
         Na6 = CA1(),
         si1 = XZA(),
         La6 = Zk(),
@@ -390,8 +388,7 @@ var Pe = U((XnB) => {
     (function(A) {
         A.ClientSecretPost = "ClientSecretPost", A.ClientSecretBasic = "ClientSecretBasic", A.None = "None"
     })(GqA || (XnB.ClientAuthentication = GqA = {}));
-
-class qE extends La6.AuthClient {
+    class qE extends La6.AuthClient {
         constructor(A, Q, B) {
             let G = A && typeof A === "object" ? A : {
                 clientId: A,
@@ -447,8 +444,8 @@ class qE extends La6.AuthClient {
                     redirect_uri: A.redirect_uri || this.redirectUri
                 };
             if (this.clientAuthentication === GqA.ClientSecretBasic) {
-                let Y = Buffer.from(`${this._clientId}:${this._clientSecret}`);
-                B.Authorization = `Basic ${Y.toString("base64")}`
+                let Y = Buffer.from(`TextComponent{this._clientId}:TextComponent{this._clientSecret}`);
+                B.Authorization = `Basic TextComponent{Y.toString("base64")}`
             }
             if (this.clientAuthentication === GqA.ClientSecretPost) G.client_secret = this._clientSecret;
             let Z = await this.transporter.request({
@@ -580,7 +577,7 @@ class qE extends La6.AuthClient {
                 B = await this.refreshToken(Q.refresh_token), G = B.tokens
             } catch (Y) {
                 let J = Y;
-                if (J.response && (J.response.status === 403 || J.response.status === 404)) J.message = `Could not refresh access token: ${J.message}`;
+                if (J.response && (J.response.status === 403 || J.response.status === 404)) J.message = `Could not refresh access token: TextComponent{J.message}`;
                 throw J
             }
             let Z = this.credentials;
@@ -669,7 +666,7 @@ class qE extends La6.AuthClient {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
-                    Authorization: `Bearer ${A}`
+                    Authorization: `Bearer TextComponent{A}`
                 },
                 url: this.endpoints.tokenInfoUrl.toString()
             }), B = Object.assign({
@@ -698,7 +695,7 @@ class qE extends La6.AuthClient {
                     G = this.endpoints.oauth2FederatedSignonJwkCertsUrl.toString();
                     break;
                 default:
-                    throw Error(`Unsupported certificate format ${Q}`)
+                    throw Error(`Unsupported certificate format TextComponent{Q}`)
             }
             try {
                 B = await this.transporter.request({
@@ -706,7 +703,7 @@ class qE extends La6.AuthClient {
                     url: G
                 })
             } catch (W) {
-                if (W instanceof Error) W.message = `Failed to retrieve verification certificates: ${W.message}`;
+                if (W instanceof Error) W.message = `Failed to retrieve verification certificates: TextComponent{W.message}`;
                 throw W
             }
             let Z = B ? B.headers["cache-control"] : void 0,
@@ -724,7 +721,7 @@ class qE extends La6.AuthClient {
                     for (let W of B.data.keys) Y[W.kid] = W;
                     break;
                 default:
-                    throw Error(`Unsupported certificate format ${Q}`)
+                    throw Error(`Unsupported certificate format TextComponent{Q}`)
             }
             let J = new Date;
             return this.certificateExpiry = I === -1 ? null : new Date(J.getTime() + I), this.certificateCache = Y, this.certificateCacheFormat = Q, {
@@ -745,7 +742,7 @@ class qE extends La6.AuthClient {
                     url: Q
                 })
             } catch (B) {
-                if (B instanceof Error) B.message = `Failed to retrieve verification certificates: ${B.message}`;
+                if (B instanceof Error) B.message = `Failed to retrieve verification certificates: TextComponent{B.message}`;
                 throw B
             }
             return {
@@ -767,14 +764,14 @@ class qE extends La6.AuthClient {
             try {
                 X = JSON.parse(I.decodeBase64StringUtf8(Y[0]))
             } catch (w) {
-                if (w instanceof Error) w.message = `Can't parse token envelope: ${Y[0]}': ${w.message}`;
+                if (w instanceof Error) w.message = `Can't parse token envelope: TextComponent{Y[0]}': TextComponent{w.message}`;
                 throw w
             }
             if (!X) throw Error("Can't parse token envelope: " + Y[0]);
             try {
                 F = JSON.parse(I.decodeBase64StringUtf8(Y[1]))
             } catch (w) {
-                if (w instanceof Error) w.message = `Can't parse token payload '${Y[0]}`;
+                if (w instanceof Error) w.message = `Can't parse token payload 'TextComponent{Y[0]}`;
                 throw w
             }
             if (!F) throw Error("Can't parse token payload: " + Y[1]);
@@ -822,7 +819,7 @@ class qE extends La6.AuthClient {
     qE.CLOCK_SKEW_SECS_ = 300;
     qE.DEFAULT_MAX_TOKEN_LIFETIME_SECS_ = 86400
 });
-var ri1 = U((DnB) => {
+var ri1 = moduleWrapper((DnB) => {
     Object.defineProperty(DnB, "__esModule", {
         value: !0
     });
@@ -830,8 +827,7 @@ var ri1 = U((DnB) => {
     var Pa6 = PT(),
         VnB = AqA(),
         ja6 = Pe();
-
-class KnB extends ja6.OAuth2Client {
+    class KnB extends ja6.OAuth2Client {
         constructor(A = {}) {
             super(A);
             this.credentials = {
@@ -840,7 +836,7 @@ class KnB extends ja6.OAuth2Client {
             }, this.serviceAccountEmail = A.serviceAccountEmail || "default", this.scopes = Array.isArray(A.scopes) ? A.scopes : A.scopes ? [A.scopes] : []
         }
         async refreshTokenNoCache(A) {
-            let Q = `service-accounts/${this.serviceAccountEmail}/token`,
+            let Q = `service-accounts/TextComponent{this.serviceAccountEmail}/token`,
                 B;
             try {
                 let Z = {
@@ -851,7 +847,7 @@ class KnB extends ja6.OAuth2Client {
                 };
                 B = await VnB.instance(Z)
             } catch (Z) {
-                if (Z instanceof Pa6.GaxiosError) Z.message = `Could not refresh access token: ${Z.message}`, this.wrapError(Z);
+                if (Z instanceof Pa6.GaxiosError) Z.message = `Could not refresh access token: TextComponent{Z.message}`, this.wrapError(Z);
                 throw Z
             }
             let G = B;
@@ -862,7 +858,7 @@ class KnB extends ja6.OAuth2Client {
             }
         }
         async fetchIdToken(A) {
-            let Q = `service-accounts/${this.serviceAccountEmail}/identity?format=full&audience=${A}`,
+            let Q = `service-accounts/TextComponent{this.serviceAccountEmail}/identity?format=full&audience=TextComponent{A}`,
                 B;
             try {
                 let G = {
@@ -870,7 +866,7 @@ class KnB extends ja6.OAuth2Client {
                 };
                 B = await VnB.instance(G)
             } catch (G) {
-                if (G instanceof Error) G.message = `Could not fetch ID token: ${G.message}`;
+                if (G instanceof Error) G.message = `Could not fetch ID token: TextComponent{G.message}`;
                 throw G
             }
             return B
@@ -885,14 +881,13 @@ class KnB extends ja6.OAuth2Client {
     }
     DnB.Compute = KnB
 });
-var oi1 = U((EnB) => {
+var oi1 = moduleWrapper((EnB) => {
     Object.defineProperty(EnB, "__esModule", {
         value: !0
     });
     EnB.IdTokenClient = void 0;
     var Sa6 = Pe();
-
-class CnB extends Sa6.OAuth2Client {
+    class CnB extends Sa6.OAuth2Client {
         constructor(A) {
             super(A);
             this.targetAudience = A.targetAudience, this.idTokenProvider = A.idTokenProvider
@@ -918,7 +913,7 @@ class CnB extends Sa6.OAuth2Client {
     }
     EnB.IdTokenClient = CnB
 });
-var ti1 = U(($nB) => {
+var ti1 = moduleWrapper(($nB) => {
     Object.defineProperty($nB, "__esModule", {
         value: !0
     });
@@ -932,16 +927,14 @@ var ti1 = U(($nB) => {
     })(Of || ($nB.GCPEnv = Of = {}));
     var ZqA;
 
-function _a6() {
+    function _a6() {
         ZqA = void 0
     }
-    // Async function: ka6
-async function ka6() {
+    async function ka6() {
         if (ZqA) return ZqA;
         return ZqA = ya6(), ZqA
     }
-    // Async function: ya6
-async function ya6() {
+    async function ya6() {
         let A = Of.NONE;
         if (xa6()) A = Of.APP_ENGINE;
         else if (va6()) A = Of.CLOUD_FUNCTIONS;
@@ -953,36 +946,34 @@ async function ya6() {
         return A
     }
 
-function xa6() {
+    function xa6() {
         return !!(process.env.GAE_SERVICE || process.env.GAE_MODULE_NAME)
     }
 
-function va6() {
+    function va6() {
         return !!(process.env.FUNCTION_NAME || process.env.FUNCTION_TARGET)
     }
 
-function ba6() {
+    function ba6() {
         return !!process.env.K_CONFIGURATION
     }
-    // Async function: fa6
-async function fa6() {
+    async function fa6() {
         try {
             return await UnB.instance("attributes/cluster-name"), !0
         } catch (A) {
             return !1
         }
     }
-    // Async function: ha6
-async function ha6() {
+    async function ha6() {
         return UnB.isAvailable()
     }
 });
-var ei1 = U((B6G, qnB) => {
+var ei1 = moduleWrapper((B6G, qnB) => {
     var EA1 = Gk().Buffer,
-        ma6 = UA("stream"),
-        da6 = UA("util");
+        ma6 = nodeRequire("stream"),
+        da6 = nodeRequire("util");
 
-function zA1(A) {
+    function zA1(A) {
         if (this.buffer = null, this.writable = !0, this.readable = !0, !A) return this.buffer = EA1.alloc(0), this;
         if (typeof A.pipe === "function") return this.buffer = EA1.alloc(0), A.pipe(this), this;
         if (A.length || typeof A === "object") return this.buffer = A, this.writable = !1, process.nextTick(function() {
@@ -1000,12 +991,12 @@ function zA1(A) {
     };
     qnB.exports = zA1
 });
-var Qn1 = U((G6G, NnB) => {
-    var IqA = UA("buffer").Buffer,
-        An1 = UA("buffer").SlowBuffer;
+var Qn1 = moduleWrapper((G6G, NnB) => {
+    var IqA = nodeRequire("buffer").Buffer,
+        An1 = nodeRequire("buffer").SlowBuffer;
     NnB.exports = UA1;
 
-function UA1(A, Q) {
+    function UA1(A, Q) {
         if (!IqA.isBuffer(A) || !IqA.isBuffer(Q)) return !1;
         if (A.length !== Q.length) return !1;
         var B = 0;
@@ -1023,11 +1014,11 @@ function UA1(A, Q) {
         IqA.prototype.equal = ca6, An1.prototype.equal = pa6
     }
 });
-var In1 = U((Z6G, _nB) => {
+var In1 = moduleWrapper((Z6G, _nB) => {
     var DZA = Gk().Buffer,
-        SM = UA("crypto"),
+        SM = nodeRequire("crypto"),
         MnB = CA1(),
-        LnB = UA("util"),
+        LnB = nodeRequire("util"),
         la6 = `"%s" is not a valid algorithm.
   Supported algorithms are:
   "HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "PS256", "PS384", "PS512", "ES256", "ES384", "ES512" and "none".`,
@@ -1037,7 +1028,7 @@ var In1 = U((Z6G, _nB) => {
         Gn1 = typeof SM.createPublicKey === "function";
     if (Gn1) KZA += " or a KeyObject", YqA += "or a KeyObject";
 
-function OnB(A) {
+    function OnB(A) {
         if (DZA.isBuffer(A)) return;
         if (typeof A === "string") return;
         if (!Gn1) throw _T(KZA);
@@ -1047,14 +1038,14 @@ function OnB(A) {
         if (typeof A.export !== "function") throw _T(KZA)
     }
 
-function RnB(A) {
+    function RnB(A) {
         if (DZA.isBuffer(A)) return;
         if (typeof A === "string") return;
         if (typeof A === "object") return;
         throw _T(ia6)
     }
 
-function na6(A) {
+    function na6(A) {
         if (DZA.isBuffer(A)) return;
         if (typeof A === "string") return A;
         if (!Gn1) throw _T(YqA);
@@ -1063,11 +1054,11 @@ function na6(A) {
         if (typeof A.export !== "function") throw _T(YqA)
     }
 
-function Zn1(A) {
+    function Zn1(A) {
         return A.replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_")
     }
 
-function TnB(A) {
+    function TnB(A) {
         A = A.toString();
         var Q = 4 - A.length % 4;
         if (Q !== 4)
@@ -1075,22 +1066,22 @@ function TnB(A) {
         return A.replace(/\-/g, "+").replace(/_/g, "/")
     }
 
-function _T(A) {
+    function _T(A) {
         var Q = [].slice.call(arguments, 1),
             B = LnB.format.bind(LnB, A).apply(null, Q);
         return TypeError(B)
     }
 
-function aa6(A) {
+    function aa6(A) {
         return DZA.isBuffer(A) || typeof A === "string"
     }
 
-function JqA(A) {
+    function JqA(A) {
         if (!aa6(A)) A = JSON.stringify(A);
         return A
     }
 
-function PnB(A) {
+    function PnB(A) {
         return function(B, G) {
             na6(G), B = JqA(B);
             var Z = SM.createHmac("sha" + A, G),
@@ -1106,14 +1097,14 @@ function PnB(A) {
         return Bn1(Q, B)
     };
 
-function ra6(A) {
+    function ra6(A) {
         return function(B, G, Z) {
             var I = PnB(A)(B, Z);
             return sa6(DZA.from(G), DZA.from(I))
         }
     }
 
-function jnB(A) {
+    function jnB(A) {
         return function(B, G) {
             RnB(G), B = JqA(B);
             var Z = SM.createSign("RSA-SHA" + A),
@@ -1122,7 +1113,7 @@ function jnB(A) {
         }
     }
 
-function SnB(A) {
+    function SnB(A) {
         return function(B, G, Z) {
             OnB(Z), B = JqA(B), G = TnB(G);
             var I = SM.createVerify("RSA-SHA" + A);
@@ -1130,7 +1121,7 @@ function SnB(A) {
         }
     }
 
-function oa6(A) {
+    function oa6(A) {
         return function(B, G) {
             RnB(G), B = JqA(B);
             var Z = SM.createSign("RSA-SHA" + A),
@@ -1143,7 +1134,7 @@ function oa6(A) {
         }
     }
 
-function ta6(A) {
+    function ta6(A) {
         return function(B, G, Z) {
             OnB(Z), B = JqA(B), G = TnB(G);
             var I = SM.createVerify("RSA-SHA" + A);
@@ -1155,7 +1146,7 @@ function ta6(A) {
         }
     }
 
-function ea6(A) {
+    function ea6(A) {
         var Q = jnB(A);
         return function() {
             var G = Q.apply(null, arguments);
@@ -1163,7 +1154,7 @@ function ea6(A) {
         }
     }
 
-function As6(A) {
+    function As6(A) {
         var Q = SnB(A);
         return function(G, Z, I) {
             Z = MnB.joseToDer(Z, "ES" + A).toString("base64");
@@ -1172,13 +1163,13 @@ function As6(A) {
         }
     }
 
-function Qs6() {
+    function Qs6() {
         return function() {
             return ""
         }
     }
 
-function Bs6() {
+    function Bs6() {
         return function(Q, B) {
             return B === ""
         }
@@ -1198,7 +1189,7 @@ function Bs6() {
                 es: As6,
                 none: Bs6
             },
-            Z = Q.match(/^(RS|PS|ES|HS)(256|384|512)$|^(none)$/);
+            Z = Q.match(/^(RS|PS|ES|HS)(256|384|512)TextComponent|^(none)TextComponent/);
         if (!Z) throw _T(la6, Q);
         var I = (Z[1] || Z[3]).toLowerCase(),
             Y = Z[2];
@@ -1208,34 +1199,34 @@ function Bs6() {
         }
     }
 });
-var Yn1 = U((I6G, knB) => {
-    var Gs6 = UA("buffer").Buffer;
+var Yn1 = moduleWrapper((I6G, knB) => {
+    var Gs6 = nodeRequire("buffer").Buffer;
     knB.exports = function(Q) {
         if (typeof Q === "string") return Q;
         if (typeof Q === "number" || Gs6.isBuffer(Q)) return Q.toString();
         return JSON.stringify(Q)
     }
 });
-var hnB = U((Y6G, fnB) => {
+var hnB = moduleWrapper((Y6G, fnB) => {
     var Zs6 = Gk().Buffer,
         ynB = ei1(),
         Is6 = In1(),
-        Ys6 = UA("stream"),
+        Ys6 = nodeRequire("stream"),
         xnB = Yn1(),
-        Jn1 = UA("util");
+        Jn1 = nodeRequire("util");
 
-function vnB(A, Q) {
+    function vnB(A, Q) {
         return Zs6.from(A, Q).toString("base64").replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_")
     }
 
-function Js6(A, Q, B) {
+    function Js6(A, Q, B) {
         B = B || "utf8";
         var G = vnB(xnB(A), "binary"),
             Z = vnB(xnB(Q), B);
         return Jn1.format("%s.%s", G, Z)
     }
 
-function bnB(A) {
+    function bnB(A) {
         var {
             header: Q,
             payload: B
@@ -1269,20 +1260,20 @@ function bnB(A) {
     $A1.sign = bnB;
     fnB.exports = $A1
 });
-var anB = U((J6G, nnB) => {
+var anB = moduleWrapper((J6G, nnB) => {
     var unB = Gk().Buffer,
         gnB = ei1(),
         Ws6 = In1(),
-        Xs6 = UA("stream"),
+        Xs6 = nodeRequire("stream"),
         mnB = Yn1(),
-        Fs6 = UA("util"),
-        Vs6 = /^[a-zA-Z0-9\-_]+?\.[a-zA-Z0-9\-_]+?\.([a-zA-Z0-9\-_]+)?$/;
+        Fs6 = nodeRequire("util"),
+        Vs6 = /^[a-zA-Z0-9\-_]+?\.[a-zA-Z0-9\-_]+?\.([a-zA-Z0-9\-_]+)?TextComponent/;
 
-function Ks6(A) {
+    function Ks6(A) {
         return Object.prototype.toString.call(A) === "[object Object]"
     }
 
-function Ds6(A) {
+    function Ds6(A) {
         if (Ks6(A)) return A;
         try {
             return JSON.parse(A)
@@ -1291,30 +1282,30 @@ function Ds6(A) {
         }
     }
 
-function dnB(A) {
+    function dnB(A) {
         var Q = A.split(".", 1)[0];
         return Ds6(unB.from(Q, "base64").toString("binary"))
     }
 
-function Hs6(A) {
+    function Hs6(A) {
         return A.split(".", 2).join(".")
     }
 
-function cnB(A) {
+    function cnB(A) {
         return A.split(".")[2]
     }
 
-function Cs6(A, Q) {
+    function Cs6(A, Q) {
         Q = Q || "utf8";
         var B = A.split(".")[1];
         return unB.from(B, "base64").toString(Q)
     }
 
-function pnB(A) {
+    function pnB(A) {
         return Vs6.test(A) && !!dnB(A)
     }
 
-function lnB(A, Q, B) {
+    function lnB(A, Q, B) {
         if (!Q) {
             var G = Error("Missing algorithm parameter for jws.verify");
             throw G.code = "MISSING_ALGORITHM", G
@@ -1326,7 +1317,7 @@ function lnB(A, Q, B) {
         return Y.verify(I, Z, B)
     }
 
-function inB(A, Q) {
+    function inB(A, Q) {
         if (Q = Q || {}, A = mnB(A), !pnB(A)) return null;
         var B = dnB(A);
         if (!B) return null;
@@ -1339,7 +1330,7 @@ function inB(A, Q) {
         }
     }
 
-function HZA(A) {
+    function HZA(A) {
         A = A || {};
         var Q = A.secret || A.publicKey || A.key,
             B = new gnB(Q);
@@ -1364,7 +1355,7 @@ function HZA(A) {
     HZA.verify = lnB;
     nnB.exports = HZA
 });
-var Wn1 = U((zs6) => {
+var Wn1 = moduleWrapper((zs6) => {
     var snB = hnB(),
         wA1 = anB(),
         Es6 = ["HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "PS256", "PS384", "PS512", "ES256", "ES384", "ES512"];
@@ -1380,7 +1371,7 @@ var Wn1 = U((zs6) => {
         return new wA1(Q)
     }
 });
-var ZaB = U((Gl) => {
+var ZaB = moduleWrapper((Gl) => {
     var kT = Gl && Gl.__classPrivateFieldGet || function(A, Q, B, G) {
             if (B === "a" && !G) throw TypeError("Private accessor was defined without a getter");
             if (typeof Q === "function" ? A !== Q || !G : !Q.has(A)) throw TypeError("Cannot read private member from an object whose class did not declare it");
@@ -1397,23 +1388,21 @@ var ZaB = U((Gl) => {
         value: !0
     });
     Gl.GoogleToken = void 0;
-    var AaB = UA("fs"),
+    var AaB = nodeRequire("fs"),
         Os6 = PT(),
         Rs6 = Wn1(),
-        Ts6 = UA("path"),
-        Ps6 = UA("util"),
+        Ts6 = nodeRequire("path"),
+        Ps6 = nodeRequire("util"),
         QaB = AaB.readFile ? (0, Ps6.promisify)(AaB.readFile) : async () => {
             throw new EZA("use key rather than keyFile.", "MISSING_CREDENTIALS")
         }, BaB = "https://www.googleapis.com/oauth2/v4/token", js6 = "https://accounts.google.com/o/oauth2/revoke?token=";
-
-class EZA extends Error {
+    class EZA extends Error {
         constructor(A, Q) {
             super(A);
             this.code = Q
         }
     }
-
-class GaB {
+    class GaB {
         get accessToken() {
             return this.rawToken ? this.rawToken.access_token : void 0
         }

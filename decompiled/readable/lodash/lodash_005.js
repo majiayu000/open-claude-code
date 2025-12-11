@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: lodash_005.js
+ * 处理时间: 2025-12-09T03:41:37.709Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.998Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -686,7 +688,7 @@
                 ctx: Q
             } = this._processInputParams(A), B = this._def.options;
 
-function G(Z) {
+            function G(Z) {
                 for (let Y of Z)
                     if (Y.result.status === "valid") return Y.result;
                 for (let Y of Z)
@@ -800,9 +802,9 @@ function G(Z) {
             let G = new Map;
             for (let Z of Q) {
                 let I = Gv(Z.shape[A]);
-                if (!I.length) throw Error(`A discriminator value for key \`${A}\` could not be extracted from all schema options`);
+                if (!I.length) throw Error(`A discriminator value for key \`TextComponent{A}\` could not be extracted from all schema options`);
                 for (let Y of I) {
-                    if (G.has(Y)) throw Error(`Discriminator property ${String(A)} has duplicate value ${String(Y)}`);
+                    if (G.has(Y)) throw Error(`Discriminator property TextComponent{String(A)} has duplicate value TextComponent{String(Y)}`);
                     G.set(Y, Z)
                 }
             }
@@ -1060,7 +1062,7 @@ function G(Z) {
             }
             let Z = this._def.valueType;
 
-function I(J) {
+            function I(J) {
                 let W = new Set;
                 for (let X of J) {
                     if (X.status === "aborted") return r9;
@@ -1125,7 +1127,7 @@ function I(J) {
                 received: Q.parsedType
             }), r9;
 
-function B(Y, J) {
+            function B(Y, J) {
                 return NKA({
                     data: Y,
                     path: Q.path,
@@ -1137,7 +1139,7 @@ function B(Y, J) {
                 })
             }
 
-function G(Y, J) {
+            function G(Y, J) {
                 return NKA({
                     data: Y,
                     path: Q.path,

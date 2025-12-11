@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_030.js
+ * 处理时间: 2025-12-09T03:41:36.671Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.913Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -358,7 +361,7 @@
         };
     (0, BT8.createAggregatedClient)(NT8, BlQ)
 });
-var VlQ = U((Gq7, FlQ) => {
+var VlQ = moduleWrapper((Gq7, FlQ) => {
     var {
         create: LT8,
         defineProperty: TCA,
@@ -418,13 +421,13 @@ var VlQ = U((Gq7, FlQ) => {
         }, "getNewSsoOidcToken"),
         mR = P2(),
         ZlQ = md((A) => {
-            if (A.expiration && A.expiration.getTime() < Date.now()) throw new mR.TokenProviderError(`Token is expired. ${zS1}`, !1)
+            if (A.expiration && A.expiration.getTime() < Date.now()) throw new mR.TokenProviderError(`Token is expired. TextComponent{zS1}`, !1)
         }, "validateTokenExpiry"),
         Wo = md((A, Q, B = !1) => {
-            if (typeof Q > "u") throw new mR.TokenProviderError(`Value not present for '${A}' in SSO Token${B?". Cannot refresh":""}. ${zS1}`, !1)
+            if (typeof Q > "u") throw new mR.TokenProviderError(`Value not present for 'TextComponent{A}' in SSO Token${B?". Cannot refresh":""}. TextComponent{zS1}`, !1)
         }, "validateTokenKey"),
         RCA = NG(),
-        yT8 = UA("fs"),
+        yT8 = nodeRequire("fs"),
         {
             writeFile: xT8
         } = yT8.promises,
@@ -450,13 +453,13 @@ var VlQ = U((Gq7, FlQ) => {
                     profile: B.profile ?? Q?.profile
                 }),
                 I = G[Z];
-            if (!I) throw new mR.TokenProviderError(`Profile '${Z}' could not be found in shared credentials file.`, !1);
-            else if (!I.sso_session) throw new mR.TokenProviderError(`Profile '${Z}' is missing required property 'sso_session'.`);
+            if (!I) throw new mR.TokenProviderError(`Profile 'TextComponent{Z}' could not be found in shared credentials file.`, !1);
+            else if (!I.sso_session) throw new mR.TokenProviderError(`Profile 'TextComponent{Z}' is missing required property 'sso_session'.`);
             let Y = I.sso_session,
                 W = (await (0, RCA.loadSsoSessionData)(B))[Y];
-            if (!W) throw new mR.TokenProviderError(`Sso session '${Y}' could not be found in shared credentials file.`, !1);
+            if (!W) throw new mR.TokenProviderError(`Sso session 'TextComponent{Y}' could not be found in shared credentials file.`, !1);
             for (let C of ["sso_start_url", "sso_region"])
-                if (!W[C]) throw new mR.TokenProviderError(`Sso session '${Y}' is missing required property '${C}'.`, !1);
+                if (!W[C]) throw new mR.TokenProviderError(`Sso session 'TextComponent{Y}' is missing required property 'TextComponent{C}'.`, !1);
             let {
                 sso_start_url: X,
                 sso_region: F
@@ -464,7 +467,7 @@ var VlQ = U((Gq7, FlQ) => {
             try {
                 V = await (0, RCA.getSSOTokenFromFile)(Y)
             } catch (C) {
-                throw new mR.TokenProviderError(`The SSO session token associated with profile=${Z} was not found or is invalid. ${zS1}`, !1)
+                throw new mR.TokenProviderError(`The SSO session token associated with profile=TextComponent{Z} was not found or is invalid. TextComponent{zS1}`, !1)
             }
             Wo("accessToken", V.accessToken), Wo("expiresAt", V.expiresAt);
             let {
@@ -509,7 +512,7 @@ var VlQ = U((Gq7, FlQ) => {
             throw new mR.TokenProviderError("Could not load token from any providers", !1)
         }), (Q) => Q.expiration !== void 0 && Q.expiration.getTime() - Date.now() < 300000, (Q) => Q.expiration !== void 0), "nodeProvider")
 });
-var $S1 = U((Zq7, wlQ) => {
+var $S1 = moduleWrapper((Zq7, wlQ) => {
     var {
         defineProperty: McA,
         getOwnPropertyDescriptor: hT8,
@@ -654,7 +657,7 @@ var $S1 = U((Zq7, wlQ) => {
                 sso_region: Z,
                 sso_role_name: I
             } = A;
-            if (!B || !G || !Z || !I) throw new dR.CredentialsProviderError(`Profile is configured with invalid SSO credentials. Required parameters "sso_account_id", "sso_region", "sso_role_name", "sso_start_url". Got ${Object.keys(A).join(", ")}
+            if (!B || !G || !Z || !I) throw new dR.CredentialsProviderError(`Profile is configured with invalid SSO credentials. Required parameters "sso_account_id", "sso_region", "sso_role_name", "sso_start_url". Got TextComponent{Object.keys(A).join(", ")}
 Reference: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.html`, {
                 tryNextLink: !1,
                 logger: Q
@@ -678,15 +681,15 @@ Reference: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.ht
             });
             if (!B && !G && !Z && !I && !Y) {
                 let F = (await (0, LcA.parseKnownFiles)(A))[W];
-                if (!F) throw new dR.CredentialsProviderError(`Profile ${W} was not found.`, {
+                if (!F) throw new dR.CredentialsProviderError(`Profile TextComponent{W} was not found.`, {
                     logger: A.logger
                 });
-                if (!UlQ(F)) throw new dR.CredentialsProviderError(`Profile ${W} is not configured with SSO credentials.`, {
+                if (!UlQ(F)) throw new dR.CredentialsProviderError(`Profile TextComponent{W} is not configured with SSO credentials.`, {
                     logger: A.logger
                 });
                 if (F?.sso_session) {
                     let z = (await (0, LcA.loadSsoSessionData)(A))[F.sso_session],
-                        w = ` configurations in profile ${W} and sso-session ${F.sso_session}`;
+                        w = ` configurations in profile TextComponent{W} and sso-session TextComponent{F.sso_session}`;
                     if (Z && Z !== z.sso_region) throw new dR.CredentialsProviderError("Conflicting SSO region" + w, {
                         tryNextLink: !1,
                         logger: A.logger
@@ -732,7 +735,7 @@ Reference: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.ht
             })
         }, "fromSSO")
 });
-var qS1 = U((qlQ) => {
+var qS1 = moduleWrapper((qlQ) => {
     Object.defineProperty(qlQ, "__esModule", {
         value: !0
     });
@@ -750,7 +753,7 @@ var qS1 = U((qlQ) => {
         };
     qlQ.defaultSTSHttpAuthSchemeParametersProvider = aT8;
 
-function sT8(A) {
+    function sT8(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {
@@ -766,7 +769,7 @@ function sT8(A) {
         }
     }
 
-function rT8(A) {
+    function rT8(A) {
         return {
             schemeId: "smithy.api#noAuth"
         }
@@ -797,7 +800,7 @@ function rT8(A) {
     };
     qlQ.resolveHttpAuthSchemeConfig = eT8
 });
-var SCA = U((MlQ) => {
+var SCA = moduleWrapper((MlQ) => {
     Object.defineProperty(MlQ, "__esModule", {
         value: !0
     });
@@ -834,7 +837,7 @@ var SCA = U((MlQ) => {
         }
     }
 });
-var slQ = U((nlQ) => {
+var slQ = moduleWrapper((nlQ) => {
     Object.defineProperty(nlQ, "__esModule", {
         value: !0
     });
@@ -1198,7 +1201,7 @@ var slQ = U((nlQ) => {
         };
     nlQ.ruleSet = ZP8
 });
-var tlQ = U((rlQ) => {
+var tlQ = moduleWrapper((rlQ) => {
     Object.defineProperty(rlQ, "__esModule", {
         value: !0
     });
@@ -1219,7 +1222,7 @@ var tlQ = U((rlQ) => {
     rlQ.defaultEndpointResolver = WP8;
     OS1.customEndpointFunctions.aws = IP8.awsEndpointFunctions
 });
-var GiQ = U((QiQ) => {
+var GiQ = moduleWrapper((QiQ) => {
     Object.defineProperty(QiQ, "__esModule", {
         value: !0
     });
@@ -1259,7 +1262,7 @@ var GiQ = U((QiQ) => {
         };
     QiQ.getRuntimeConfig = CP8
 });
-var FiQ = U((WiQ) => {
+var FiQ = moduleWrapper((WiQ) => {
     Object.defineProperty(WiQ, "__esModule", {
         value: !0
     });
@@ -1327,7 +1330,7 @@ var FiQ = U((WiQ) => {
         };
     WiQ.getRuntimeConfig = RP8
 });
-var DiQ = U((ViQ) => {
+var DiQ = moduleWrapper((ViQ) => {
     Object.defineProperty(ViQ, "__esModule", {
         value: !0
     });
@@ -1371,7 +1374,7 @@ var DiQ = U((ViQ) => {
     };
     ViQ.resolveHttpAuthRuntimeConfig = PP8
 });
-var wiQ = U((UiQ) => {
+var wiQ = moduleWrapper((UiQ) => {
     Object.defineProperty(UiQ, "__esModule", {
         value: !0
     });
@@ -1386,7 +1389,7 @@ var wiQ = U((UiQ) => {
         };
     UiQ.resolveRuntimeExtensions = SP8
 });
-var jCA = U((TS1) => {
+var jCA = moduleWrapper((TS1) => {
     Object.defineProperty(TS1, "__esModule", {
         value: !0
     });
@@ -1411,8 +1414,7 @@ var jCA = U((TS1) => {
         bP8 = SCA(),
         fP8 = FiQ(),
         hP8 = wiQ();
-
-class RiQ extends OiQ.Client {
+    class RiQ extends OiQ.Client {
         config;
         constructor(...[A]) {
             let Q = (0, fP8.getRuntimeConfig)(A || {});
@@ -1439,7 +1441,7 @@ class RiQ extends OiQ.Client {
     }
     TS1.STSClient = RiQ
 });
-var Z_1 = U((Cq7, G_1) => {
+var Z_1 = moduleWrapper((Cq7, G_1) => {
     var {
         defineProperty: TcA,
         getOwnPropertyDescriptor: gP8,

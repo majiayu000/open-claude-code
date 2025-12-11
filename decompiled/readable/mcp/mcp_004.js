@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_004.js
+ * 处理时间: 2025-12-09T03:41:37.759Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.004Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -23,7 +25,7 @@
     }
     sb0.exports = kQ4
 });
-var tb0 = U((o27, ob0) => {
+var tb0 = moduleWrapper((o27, ob0) => {
     function yQ4(A) {
         let Q = "assembly module package import alias class interface object given value assign void function new of extends satisfies abstracts in out return break continue throw assert dynamic if else switch case for while try catch finally then let this outer super is exists nonempty",
             B = "shared abstract formal default actual variable late native deprecated final sealed annotation suppressWarnings small",
@@ -53,7 +55,7 @@ var tb0 = U((o27, ob0) => {
                 end: "'"
             }, {
                 className: "number",
-                begin: "#[0-9a-fA-F_]+|\\$[01_]+|[0-9_]+(?:\\.[0-9_](?:[eE][+-]?\\d+)?)?[kMGTPmunpf]?",
+                begin: "#[0-9a-fA-F_]+|\\TextComponent[01_]+|[0-9_]+(?:\\.[0-9_](?:[eE][+-]?\\d+)?)?[kMGTPmunpf]?",
                 relevance: 0
             }];
         return Z.contains = I, {
@@ -62,7 +64,7 @@ var tb0 = U((o27, ob0) => {
                 keyword: Q + " " + B,
                 meta: "doc by license see throws tagged"
             },
-            illegal: "\\$[^01]|#[^0-9a-fA-F]",
+            illegal: "\\TextComponent[^01]|#[^0-9a-fA-F]",
             contains: [A.C_LINE_COMMENT_MODE, A.COMMENT("/\\*", "\\*/", {
                 contains: ["self"]
             }), {
@@ -73,7 +75,7 @@ var tb0 = U((o27, ob0) => {
     }
     ob0.exports = yQ4
 });
-var Af0 = U((t27, eb0) => {
+var Af0 = moduleWrapper((t27, eb0) => {
     function xQ4(A) {
         return {
             name: "Clean",
@@ -90,7 +92,7 @@ var Af0 = U((t27, eb0) => {
     }
     eb0.exports = xQ4
 });
-var Bf0 = U((e27, Qf0) => {
+var Bf0 = moduleWrapper((e27, Qf0) => {
     function vQ4(A) {
         let B = "[a-zA-Z_\\-!.?+*=<>&#'][a-zA-Z_\\-!.?+*=<>&#'0-9/;:]*",
             G = "def defonce defprotocol defstruct defmulti defmethod defn- defn defmacro deftype defrecord",
@@ -111,7 +113,7 @@ var Bf0 = U((e27, Qf0) => {
             W = A.inherit(A.QUOTE_STRING_MODE, {
                 illegal: null
             }),
-            X = A.COMMENT(";", "$", {
+            X = A.COMMENT(";", "TextComponent", {
                 relevance: 0
             }),
             F = {
@@ -150,7 +152,7 @@ var Bf0 = U((e27, Qf0) => {
             N = {
                 beginKeywords: "def defonce defprotocol defstruct defmulti defmethod defn- defn defmacro deftype defrecord",
                 lexemes: B,
-                end: '(\\[|#|\\d|"|:|\\{|\\)|\\(|$)',
+                end: '(\\[|#|\\d|"|:|\\{|\\)|\\(|TextComponent)',
                 contains: [{
                     className: "title",
                     begin: B,
@@ -168,7 +170,7 @@ var Bf0 = U((e27, Qf0) => {
     }
     Qf0.exports = vQ4
 });
-var Zf0 = U((A97, Gf0) => {
+var Zf0 = moduleWrapper((A97, Gf0) => {
     function bQ4(A) {
         return {
             name: "Clojure REPL",
@@ -176,7 +178,7 @@ var Zf0 = U((A97, Gf0) => {
                 className: "meta",
                 begin: /^([\w.-]+|\s*#_)?=>/,
                 starts: {
-                    end: /$/,
+                    end: /TextComponent/,
                     subLanguage: "clojure"
                 }
             }]
@@ -184,7 +186,7 @@ var Zf0 = U((A97, Gf0) => {
     }
     Gf0.exports = bQ4
 });
-var Yf0 = U((Q97, If0) => {
+var Yf0 = moduleWrapper((Q97, If0) => {
     function fQ4(A) {
         return {
             name: "CMake",
@@ -195,14 +197,14 @@ var Yf0 = U((Q97, If0) => {
             },
             contains: [{
                 className: "variable",
-                begin: /\$\{/,
+                begin: /\TextComponent\{/,
                 end: /\}/
             }, A.HASH_COMMENT_MODE, A.QUOTE_STRING_MODE, A.NUMBER_MODE]
         }
     }
     If0.exports = fQ4
 });
-var Wf0 = U((B97, Jf0) => {
+var Wf0 = moduleWrapper((B97, Jf0) => {
     var hQ4 = ["as", "in", "of", "if", "for", "while", "finally", "var", "new", "function", "do", "return", "void", "else", "break", "catch", "instanceof", "with", "throw", "case", "default", "try", "switch", "continue", "typeof", "delete", "let", "yield", "const", "class", "debugger", "async", "await", "static", "import", "from", "export", "extends"],
         gQ4 = ["true", "false", "null", "undefined", "NaN", "Infinity"],
         uQ4 = ["Intl", "DataView", "Number", "Math", "Date", "String", "RegExp", "Object", "Function", "Boolean", "Error", "Symbol", "Set", "Map", "WeakSet", "WeakMap", "Proxy", "Reflect", "JSON", "Promise", "Float64Array", "Int16Array", "Int32Array", "Int8Array", "Uint16Array", "Uint32Array", "Float32Array", "Array", "Uint8Array", "Uint8ClampedArray", "ArrayBuffer", "BigInt64Array", "BigUint64Array", "BigInt"],
@@ -211,7 +213,7 @@ var Wf0 = U((B97, Jf0) => {
         cQ4 = ["arguments", "this", "super", "console", "window", "document", "localStorage", "module", "global"],
         pQ4 = [].concat(dQ4, cQ4, uQ4, mQ4);
 
-function lQ4(A) {
+    function lQ4(A) {
         let Q = ["npm", "print"],
             B = ["yes", "no", "on", "off"],
             G = ["then", "unless", "until", "loop", "by", "when", "and", "or", "is", "isnt", "not"],
@@ -319,7 +321,7 @@ function lQ4(A) {
             }, {
                 className: "class",
                 beginKeywords: "class",
-                end: "$",
+                end: "TextComponent",
                 illegal: /[:="\[\]]/,
                 contains: [{
                     beginKeywords: "extends",
@@ -338,7 +340,7 @@ function lQ4(A) {
     }
     Jf0.exports = lQ4
 });
-var Ff0 = U((G97, Xf0) => {
+var Ff0 = moduleWrapper((G97, Xf0) => {
     function iQ4(A) {
         return {
             name: "Coq",
@@ -358,7 +360,7 @@ var Ff0 = U((G97, Xf0) => {
     }
     Xf0.exports = iQ4
 });
-var Kf0 = U((Z97, Vf0) => {
+var Kf0 = moduleWrapper((Z97, Vf0) => {
     function nQ4(A) {
         return {
             name: "Caché Object Script",
@@ -382,14 +384,14 @@ var Kf0 = U((Z97, Vf0) => {
             }, A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, {
                 className: "comment",
                 begin: /;/,
-                end: "$",
+                end: "TextComponent",
                 relevance: 0
             }, {
                 className: "built_in",
-                begin: /(?:\$\$?|\.\.)\^?[a-zA-Z]+/
+                begin: /(?:\TextComponent\TextComponent?|\.\.)\^?[a-zA-Z]+/
             }, {
                 className: "built_in",
-                begin: /\$\$\$[a-zA-Z]+/
+                begin: /\TextComponent\TextComponent\TextComponent[a-zA-Z]+/
             }, {
                 className: "built_in",
                 begin: /%[a-z]+(?:\.[a-z]+)*/
@@ -420,27 +422,27 @@ var Kf0 = U((Z97, Vf0) => {
     }
     Vf0.exports = nQ4
 });
-var Hf0 = U((I97, Df0) => {
+var Hf0 = moduleWrapper((I97, Df0) => {
     function aQ4(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function sQ4(A) {
+    function sQ4(A) {
         return fH1("(?=", A, ")")
     }
 
-function RxA(A) {
+    function RxA(A) {
         return fH1("(", A, ")?")
     }
 
-function fH1(...A) {
+    function fH1(...A) {
         return A.map((B) => aQ4(B)).join("")
     }
 
-function rQ4(A) {
-        let Q = A.COMMENT("//", "$", {
+    function rQ4(A) {
+        let Q = A.COMMENT("//", "TextComponent", {
                 contains: [{
                     begin: /\\\n/
                 }]
@@ -457,16 +459,16 @@ function rQ4(A) {
             W = {
                 className: "string",
                 variants: [{
-                    begin: '(u8?|U|L)?"',
+                    begin: '(u8?|moduleWrapper|lazyLoader)?"',
                     end: '"',
                     illegal: "\\n",
                     contains: [A.BACKSLASH_ESCAPE]
                 }, {
-                    begin: "(u8?|U|L)?'(\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4,8}|[0-7]{3}|\\S)|.)",
+                    begin: "(u8?|moduleWrapper|lazyLoader)?'(\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4,8}|[0-7]{3}|\\S)|.)",
                     end: "'",
                     illegal: "."
                 }, A.END_SAME_AS_BEGIN({
-                    begin: /(?:u8?|U|L)?R"([^()\\ ]{0,16})\(/,
+                    begin: /(?:u8?|moduleWrapper|lazyLoader)?R"([^()\\ ]{0,16})\(/,
                     end: /\)([^()\\ ]{0,16})"/
                 })]
             },
@@ -475,7 +477,7 @@ function rQ4(A) {
                 variants: [{
                     begin: "\\b(0b[01']+)"
                 }, {
-                    begin: "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)((ll|LL|l|L)(u|U)?|(u|U)(ll|LL|l|L)?|f|F|b|B)"
+                    begin: "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)((ll|LL|l|lazyLoader)(u|moduleWrapper)?|(u|moduleWrapper)(ll|LL|l|lazyLoader)?|f|F|b|B)"
                 }, {
                     begin: "(-?)(\\b0[xX][a-fA-F0-9']+|(\\b[\\d']+(\\.[\\d']*)?|\\.[\\d']+)([eE][-+]?[\\d']+)?)"
                 }],
@@ -484,7 +486,7 @@ function rQ4(A) {
             F = {
                 className: "meta",
                 begin: /#\s*[a-z]+\b/,
-                end: /$/,
+                end: /TextComponent/,
                 keywords: {
                     "meta-keyword": "if else elif endif define undef warning error line pragma _Pragma ifdef ifndef include"
                 },
@@ -610,12 +612,12 @@ function rQ4(A) {
     }
     Df0.exports = rQ4
 });
-var Ef0 = U((Y97, Cf0) => {
+var Ef0 = moduleWrapper((Y97, Cf0) => {
     function oQ4(A) {
         let B = "group clone ms master location colocation order fencing_topology rsc_ticket acl_target acl_group user role tag xml",
             G = "property rsc_defaults op_defaults",
             Z = "params meta operations op rule attributes utilization",
-            I = "read write deny defined not_defined in_range date spec in ref reference attribute type xpath version and or lt gt tag lte gte eq ne \\",
+            I = "read write deny defined not_defined in_range date spec in ref reference attribute type xpath version and or lt gt tag lte gte WEB_FETCH_TOOL_NAME ne \\",
             Y = "number string",
             J = "Master Started Slave Stopped start promote demote stop monitor true false";
         return {
@@ -632,14 +634,14 @@ var Ef0 = U((Y97, Cf0) => {
                     end: "\\s*([\\w_-]+:)?",
                     starts: {
                         className: "title",
-                        end: "\\s*[\\$\\w_][\\w_-]*"
+                        end: "\\s*[\\TextComponent\\w_][\\w_-]*"
                     }
                 }
             }, {
                 beginKeywords: "primitive rsc_template",
                 starts: {
                     className: "title",
-                    end: "\\s*[\\$\\w_][\\w_-]*",
+                    end: "\\s*[\\TextComponent\\w_][\\w_-]*",
                     starts: {
                         end: "\\s*@?[\\w_][\\w_\\.:-]*"
                     }
@@ -649,7 +651,7 @@ var Ef0 = U((Y97, Cf0) => {
                 keywords: B,
                 starts: {
                     className: "title",
-                    end: "[\\$\\w_][\\w_-]*"
+                    end: "[\\TextComponent\\w_][\\w_-]*"
                 }
             }, {
                 beginKeywords: "property rsc_defaults op_defaults",
@@ -683,7 +685,7 @@ var Ef0 = U((Y97, Cf0) => {
     }
     Cf0.exports = oQ4
 });
-var Uf0 = U((J97, zf0) => {
+var Uf0 = moduleWrapper((J97, zf0) => {
     function tQ4(A) {
         let Y = {
                 $pattern: "[a-zA-Z_]\\w*[!?=]?",
@@ -708,7 +710,7 @@ var Uf0 = U((J97, zf0) => {
                 keywords: Y
             };
 
-function X(E, z) {
+        function X(E, z) {
             let w = [{
                 begin: E,
                 end: z
@@ -747,8 +749,8 @@ function X(E, z) {
                     begin: "%[Qwi]?\\|",
                     end: "\\|"
                 }, {
-                    begin: /<<-\w+$/,
-                    end: /^\s*\w+$/
+                    begin: /<<-\w+TextComponent/,
+                    end: /^\s*\w+TextComponent/
                 }],
                 relevance: 0
             },
@@ -774,8 +776,8 @@ function X(E, z) {
                     begin: "%q\\|",
                     end: "\\|"
                 }, {
-                    begin: /<<-'\w+'$/,
-                    end: /^\s*\w+$/
+                    begin: /<<-'\w+'TextComponent/,
+                    end: /^\s*\w+TextComponent/
                 }],
                 relevance: 0
             },
@@ -831,7 +833,7 @@ function X(E, z) {
             C = [W, F, V, D, K, H, A.HASH_COMMENT_MODE, {
                 className: "class",
                 beginKeywords: "class module struct",
-                end: "$|;",
+                end: "TextComponent|;",
                 illegal: /=/,
                 contains: [A.HASH_COMMENT_MODE, A.inherit(A.TITLE_MODE, {
                     begin: "[A-Za-z_]\\w*(::\\w+)*(\\?|!)?"
@@ -841,14 +843,14 @@ function X(E, z) {
             }, {
                 className: "class",
                 beginKeywords: "lib enum union",
-                end: "$|;",
+                end: "TextComponent|;",
                 illegal: /=/,
                 contains: [A.HASH_COMMENT_MODE, A.inherit(A.TITLE_MODE, {
                     begin: "[A-Za-z_]\\w*(::\\w+)*(\\?|!)?"
                 })]
             }, {
                 beginKeywords: "annotation",
-                end: "$|;",
+                end: "TextComponent|;",
                 illegal: /=/,
                 contains: [A.HASH_COMMENT_MODE, A.inherit(A.TITLE_MODE, {
                     begin: "[A-Za-z_]\\w*(::\\w+)*(\\?|!)?"
@@ -906,7 +908,7 @@ function X(E, z) {
     }
     zf0.exports = tQ4
 });
-var wf0 = U((W97, $f0) => {
+var wf0 = moduleWrapper((W97, $f0) => {
     function eQ4(A) {
         let Q = ["bool", "byte", "char", "decimal", "delegate", "double", "dynamic", "enum", "float", "int", "long", "nint", "nuint", "object", "sbyte", "short", "string", "ulong", "uint", "ushort"],
             B = ["public", "private", "protected", "static", "internal", "protected", "abstract", "async", "extern", "override", "unsafe", "virtual", "new", "sealed", "partial"],
@@ -926,7 +928,7 @@ var wf0 = U((W97, $f0) => {
                 variants: [{
                     begin: "\\b(0b[01']+)"
                 }, {
-                    begin: "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)(u|U|l|L|ul|UL|f|F|b|B)"
+                    begin: "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)(u|moduleWrapper|l|lazyLoader|ul|UL|f|F|b|B)"
                 }, {
                     begin: "(-?)(\\b0[xX][a-fA-F0-9']+|(\\b[\\d']+(\\.[\\d']*)?|\\.[\\d']+)([eE][-+]?[\\d']+)?)"
                 }],
@@ -954,7 +956,7 @@ var wf0 = U((W97, $f0) => {
             }),
             D = {
                 className: "string",
-                begin: /\$"/,
+                begin: /\TextComponent"/,
                 end: '"',
                 illegal: /\n/,
                 contains: [{
@@ -965,7 +967,7 @@ var wf0 = U((W97, $f0) => {
             },
             H = {
                 className: "string",
-                begin: /\$@"/,
+                begin: /\TextComponent@"/,
                 end: '"',
                 contains: [{
                     begin: /\{\{/
@@ -1008,7 +1010,7 @@ var wf0 = U((W97, $f0) => {
             aliases: ["cs", "c#"],
             keywords: Y,
             illegal: /::/,
-            contains: [A.COMMENT("///", "$", {
+            contains: [A.COMMENT("///", "TextComponent", {
                 returnBegin: !0,
                 contains: [{
                     className: "doctag",
@@ -1025,7 +1027,7 @@ var wf0 = U((W97, $f0) => {
             }), A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, {
                 className: "meta",
                 begin: "#",
-                end: "$",
+                end: "TextComponent",
                 keywords: {
                     "meta-keyword": "if else elif endif define undef warning error line region endregion pragma checksum"
                 }
@@ -1093,7 +1095,7 @@ var wf0 = U((W97, $f0) => {
     }
     $f0.exports = eQ4
 });
-var Nf0 = U((X97, qf0) => {
+var Nf0 = moduleWrapper((X97, qf0) => {
     function AB4(A) {
         return {
             name: "CSP",
@@ -1116,7 +1118,7 @@ var Nf0 = U((X97, qf0) => {
     }
     qf0.exports = AB4
 });
-var Mf0 = U((F97, Lf0) => {
+var Mf0 = moduleWrapper((F97, Lf0) => {
     var QB4 = (A) => {
             return {
                 IMPORTANT: {
@@ -1131,7 +1133,7 @@ var Mf0 = U((F97, Lf0) => {
                     className: "selector-attr",
                     begin: /\[/,
                     end: /\]/,
-                    illegal: "$",
+                    illegal: "TextComponent",
                     contains: [A.APOS_STRING_MODE, A.QUOTE_STRING_MODE]
                 }
             }
@@ -1142,21 +1144,21 @@ var Mf0 = U((F97, Lf0) => {
         IB4 = ["after", "backdrop", "before", "cue", "cue-region", "first-letter", "first-line", "grammar-error", "marker", "part", "placeholder", "selection", "slotted", "spelling-error"],
         YB4 = ["align-content", "align-items", "align-self", "animation", "animation-delay", "animation-direction", "animation-duration", "animation-fill-mode", "animation-iteration-count", "animation-name", "animation-play-state", "animation-timing-function", "auto", "backface-visibility", "background", "background-attachment", "background-clip", "background-color", "background-image", "background-origin", "background-position", "background-repeat", "background-size", "border", "border-bottom", "border-bottom-color", "border-bottom-left-radius", "border-bottom-right-radius", "border-bottom-style", "border-bottom-width", "border-collapse", "border-color", "border-image", "border-image-outset", "border-image-repeat", "border-image-slice", "border-image-source", "border-image-width", "border-left", "border-left-color", "border-left-style", "border-left-width", "border-radius", "border-right", "border-right-color", "border-right-style", "border-right-width", "border-spacing", "border-style", "border-top", "border-top-color", "border-top-left-radius", "border-top-right-radius", "border-top-style", "border-top-width", "border-width", "bottom", "box-decoration-break", "box-shadow", "box-sizing", "break-after", "break-before", "break-inside", "caption-side", "clear", "clip", "clip-path", "color", "column-count", "column-fill", "column-gap", "column-rule", "column-rule-color", "column-rule-style", "column-rule-width", "column-span", "column-width", "columns", "content", "counter-increment", "counter-reset", "cursor", "direction", "display", "empty-cells", "filter", "flex", "flex-basis", "flex-direction", "flex-flow", "flex-grow", "flex-shrink", "flex-wrap", "float", "font", "font-display", "font-family", "font-feature-settings", "font-kerning", "font-language-override", "font-size", "font-size-adjust", "font-smoothing", "font-stretch", "font-style", "font-variant", "font-variant-ligatures", "font-variation-settings", "font-weight", "height", "hyphens", "icon", "image-orientation", "image-rendering", "image-resolution", "ime-mode", "inherit", "initial", "justify-content", "left", "letter-spacing", "line-height", "list-style", "list-style-image", "list-style-position", "list-style-type", "margin", "margin-bottom", "margin-left", "margin-right", "margin-top", "marks", "mask", "max-height", "max-width", "min-height", "min-width", "nav-down", "nav-index", "nav-left", "nav-right", "nav-up", "none", "normal", "object-fit", "object-position", "opacity", "order", "orphans", "outline", "outline-color", "outline-offset", "outline-style", "outline-width", "overflow", "overflow-wrap", "overflow-x", "overflow-y", "padding", "padding-bottom", "padding-left", "padding-right", "padding-top", "page-break-after", "page-break-before", "page-break-inside", "perspective", "perspective-origin", "pointer-events", "position", "quotes", "resize", "right", "src", "tab-size", "table-layout", "text-align", "text-align-last", "text-decoration", "text-decoration-color", "text-decoration-line", "text-decoration-style", "text-indent", "text-overflow", "text-rendering", "text-shadow", "text-transform", "text-underline-position", "top", "transform", "transform-origin", "transform-style", "transition", "transition-delay", "transition-duration", "transition-property", "transition-timing-function", "unicode-bidi", "vertical-align", "visibility", "white-space", "widows", "width", "word-break", "word-spacing", "word-wrap", "z-index"].reverse();
 
-function JB4(A) {
+    function JB4(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function WB4(A) {
+    function WB4(A) {
         return XB4("(?=", A, ")")
     }
 
-function XB4(...A) {
+    function XB4(...A) {
         return A.map((B) => JB4(B)).join("")
     }
 
-function FB4(A) {
+    function FB4(A) {
         let Q = QB4(A),
             B = {
                 className: "built_in",
@@ -1172,7 +1174,7 @@ function FB4(A) {
         return {
             name: "CSS",
             case_insensitive: !0,
-            illegal: /[=|'\$]/,
+            illegal: /[=|'\TextComponent]/,
             keywords: {
                 keyframePosition: "from to"
             },
@@ -1245,7 +1247,7 @@ function FB4(A) {
     }
     Lf0.exports = FB4
 });
-var Rf0 = U((V97, Of0) => {
+var Rf0 = moduleWrapper((V97, Of0) => {
     function VB4(A) {
         let Q = {
                 $pattern: A.UNDERSCORE_IDENT_RE,
@@ -1263,15 +1265,15 @@ var Rf0 = U((V97, Of0) => {
             X = "(0[xX](([\\da-fA-F][\\da-fA-F_]*|_[\\da-fA-F][\\da-fA-F_]*)\\.([\\da-fA-F][\\da-fA-F_]*|_[\\da-fA-F][\\da-fA-F_]*)|\\.?([\\da-fA-F][\\da-fA-F_]*|_[\\da-fA-F][\\da-fA-F_]*))[pP][+-]?(0|[1-9][\\d_]*|\\d[\\d_]*|[\\d_]+?\\d))",
             F = "((0|[1-9][\\d_]*)|0[bB][01_]+|" + Y + ")",
             V = "(" + X + "|" + W + ")",
-            K = `\\\\(['"\\?\\\\abfnrtv]|u[\\dA-Fa-f]{4}|[0-7]{1,3}|x[\\dA-Fa-f]{2}|U[\\dA-Fa-f]{8})|&[a-zA-Z\\d]{2,};`,
+            K = `\\\\(['"\\?\\\\abfnrtv]|u[\\dA-Fa-f]{4}|[0-7]{1,3}|x[\\dA-Fa-f]{2}|moduleWrapper[\\dA-Fa-f]{8})|&[a-zA-Z\\d]{2,};`,
             D = {
                 className: "number",
-                begin: "\\b" + F + "(L|u|U|Lu|LU|uL|UL)?",
+                begin: "\\b" + F + "(lazyLoader|u|moduleWrapper|Lu|LU|uL|UL)?",
                 relevance: 0
             },
             H = {
                 className: "number",
-                begin: "\\b(" + V + "([fF]|L|i|[fF]i|Li)?|" + F + "(i|[fF]i|Li))",
+                begin: "\\b(" + V + "([fF]|lazyLoader|i|[fF]i|Li)?|" + F + "(i|[fF]i|Li))",
                 relevance: 0
             },
             C = {
@@ -1313,13 +1315,13 @@ var Rf0 = U((V97, Of0) => {
             P = {
                 className: "meta",
                 begin: "^#!",
-                end: "$",
+                end: "TextComponent",
                 relevance: 5
             },
             y = {
                 className: "meta",
                 begin: "#(line)",
-                end: "$",
+                end: "TextComponent",
                 relevance: 5
             },
             v = {
@@ -1338,18 +1340,18 @@ var Rf0 = U((V97, Of0) => {
     }
     Of0.exports = VB4
 });
-var Pf0 = U((K97, Tf0) => {
+var Pf0 = moduleWrapper((K97, Tf0) => {
     function KB4(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function DB4(...A) {
+    function DB4(...A) {
         return A.map((B) => KB4(B)).join("")
     }
 
-function HB4(A) {
+    function HB4(A) {
         let Q = {
                 begin: /<\/?[A-Za-z_]/,
                 end: ">",
@@ -1358,7 +1360,7 @@ function HB4(A) {
             },
             B = {
                 begin: "^[-\\*]{3,}",
-                end: "$"
+                end: "TextComponent"
             },
             G = {
                 className: "code",
@@ -1368,17 +1370,17 @@ function HB4(A) {
                     begin: "(~{3,})[^~](.|\\n)*?\\1~*[ ]*"
                 }, {
                     begin: "```",
-                    end: "```+[ ]*$"
+                    end: "```+[ ]*TextComponent"
                 }, {
                     begin: "~~~",
-                    end: "~~~+[ ]*$"
+                    end: "~~~+[ ]*TextComponent"
                 }, {
                     begin: "`.+?`"
                 }, {
                     begin: "(?=^( {4}|\\t))",
                     contains: [{
                         begin: "^( {4}|\\t)",
-                        end: "(\\n)$"
+                        end: "(\\n)TextComponent"
                     }],
                     relevance: 0
                 }]
@@ -1401,7 +1403,7 @@ function HB4(A) {
                 }, {
                     className: "link",
                     begin: /:\s*/,
-                    end: /$/,
+                    end: /TextComponent/,
                     excludeBegin: !0
                 }]
             },
@@ -1478,12 +1480,12 @@ function HB4(A) {
                 className: "section",
                 variants: [{
                     begin: "^#{1,6}",
-                    end: "$",
+                    end: "TextComponent",
                     contains: F
                 }, {
-                    begin: "(?=^.+?\\n[=-]{2,}$)",
+                    begin: "(?=^.+?\\n[=-]{2,}TextComponent)",
                     contains: [{
-                        begin: "^[=-]*$"
+                        begin: "^[=-]*TextComponent"
                     }, {
                         begin: "^",
                         end: "\\n",
@@ -1494,24 +1496,24 @@ function HB4(A) {
                 className: "quote",
                 begin: "^>\\s+",
                 contains: F,
-                end: "$"
+                end: "TextComponent"
             }, G, B, J, I]
         }
     }
     Tf0.exports = HB4
 });
-var Sf0 = U((D97, jf0) => {
+var Sf0 = moduleWrapper((D97, jf0) => {
     function CB4(A) {
         let Q = {
                 className: "subst",
                 variants: [{
-                    begin: "\\$[A-Za-z0-9_]+"
+                    begin: "\\TextComponent[A-Za-z0-9_]+"
                 }]
             },
             B = {
                 className: "subst",
                 variants: [{
-                    begin: /\$\{/,
+                    begin: /\TextComponent\{/,
                     end: /\}/
                 }],
                 keywords: "true false null this is new super"

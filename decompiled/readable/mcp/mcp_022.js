@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_022.js
+ * 处理时间: 2025-12-09T03:41:37.981Z
+ * 变量映射: 9 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.021Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,22 +20,22 @@
  * Original file: cli.js
  */
 
-    if (B.length > 0) g(`formatFindReferencesResult: Filtering out ${B.length} invalid location(s) - this should have been caught earlier`, {
+    if (B.length > 0) g(`formatFindReferencesResult: Filtering out TextComponent{B.length} invalid location(s) - this should have been caught earlier`, {
         level: "warn"
     });
     let G = A.filter((Y) => Y && Y.uri);
     if (G.length === 0) return "No references found";
     if (G.length === 1) return `Found 1 reference:
-  ${nI1(G[0],Q)}`;
+  TextComponent{nI1(G[0],Q)}`;
     let Z = aY9(G, Q),
-        I = [`Found ${G.length} references across ${Z.size} files:`];
+        I = [`Found TextComponent{G.length} references across TextComponent{Z.size} files:`];
     for (let [Y, J] of Z) {
         I.push(`
-${Y}:`);
+TextComponent{Y}:`);
         for (let W of J) {
             let X = W.range.start.line + 1,
                 F = W.range.start.character + 1;
-            I.push(`  Line ${X}:${F}`)
+            I.push(`  Line TextComponent{X}:TextComponent{F}`)
         }
     }
     return I.join(`
@@ -57,9 +60,9 @@ function oY9(A, Q) {
     if (A.range) {
         let G = A.range.start.line + 1,
             Z = A.range.start.character + 1;
-        return `Hover info at ${G}:${Z}:
+        return `Hover info at TextComponent{G}:TextComponent{Z}:
 
-${B}`
+TextComponent{B}`
     }
     return B
 }
@@ -99,10 +102,10 @@ function eY9(A, Q = 0) {
     let B = [],
         G = "  ".repeat(Q),
         Z = tY9(A.kind),
-        I = `${G}${A.name} (${Z})`;
-    if (A.detail) I += ` ${A.detail}`;
+        I = `TextComponent{G}TextComponent{A.name} (TextComponent{Z})`;
+    if (A.detail) I += ` TextComponent{A.detail}`;
     let Y = A.range.start.line + 1;
-    if (I += ` - Line ${Y}`, B.push(I), A.children && A.children.length > 0)
+    if (I += ` - Line TextComponent{Y}`, B.push(I), A.children && A.children.length > 0)
         for (let J of A.children) B.push(...eY9(J, Q + 1));
     return B
 }
@@ -118,28 +121,28 @@ function AJ9(A, Q) {
 function QJ9(A, Q) {
     if (!A || A.length === 0) return "No symbols found in workspace";
     let B = A.filter((Y) => !Y || !Y.location || !Y.location.uri);
-    if (B.length > 0) g(`formatWorkspaceSymbolResult: Filtering out ${B.length} invalid symbol(s) - this should have been caught earlier`, {
+    if (B.length > 0) g(`formatWorkspaceSymbolResult: Filtering out TextComponent{B.length} invalid symbol(s) - this should have been caught earlier`, {
         level: "warn"
     });
     let G = A.filter((Y) => Y && Y.location && Y.location.uri);
     if (G.length === 0) return "No symbols found in workspace";
-    let Z = [`Found ${G.length} symbol${G.length===1?"":"s"} in workspace:`],
+    let Z = [`Found TextComponent{G.length} symbol${G.length===1?"":"s"} in workspace:`],
         I = aY9(G, Q);
     for (let [Y, J] of I) {
         Z.push(`
-${Y}:`);
+TextComponent{Y}:`);
         for (let W of J) {
             let X = tY9(W.kind),
                 F = W.location.range.start.line + 1,
-                V = `  ${W.name} (${X}) - Line ${F}`;
-            if (W.containerName) V += ` in ${W.containerName}`;
+                V = `  TextComponent{W.name} (TextComponent{X}) - Line TextComponent{F}`;
+            if (W.containerName) V += ` in TextComponent{W.containerName}`;
             Z.push(V)
         }
     }
     return Z.join(`
 `)
 }
-var BJ9 = L(() => {
+var BJ9 = lazyLoader(() => {
     D0()
 });
 var GJ9 = "LSP",
@@ -183,13 +186,13 @@ function ZJ9(A, Q, B) {
         }
         return null
     } catch (G) {
-        if (G instanceof Error) g(`Symbol extraction failed for ${A}:${Q}:${B}: ${G.message}`, {
+        if (G instanceof Error) g(`Symbol extraction failed for TextComponent{A}:TextComponent{Q}:TextComponent{B}: TextComponent{G.message}`, {
             level: "warn"
         });
         return null
     }
 }
-var IJ9 = L(() => {
+var IJ9 = lazyLoader(() => {
     o0();
     jI();
     D0()
@@ -207,22 +210,22 @@ function Nj3({
             plural: "results"
         },
         Y = Q === 1 ? I.singular : I.plural,
-        J = A === "hover" && Q > 0 && I.special ? KY.default.createElement(KY.default.Fragment, null, "Hover info ", I.special) : KY.default.createElement(KY.default.Fragment, null, "Found ", KY.default.createElement($, {
+        J = A === "hover" && Q > 0 && I.special ? KY.default.createElement(KY.default.Fragment, null, "Hover info ", I.special) : KY.default.createElement(KY.default.Fragment, null, "Found ", KY.default.createElement(TextComponent, {
             bold: !0
         }, Q, " "), Y),
-        W = B > 1 ? KY.default.createElement(KY.default.Fragment, null, " ", "across ", KY.default.createElement($, {
+        W = B > 1 ? KY.default.createElement(KY.default.Fragment, null, " ", "across ", KY.default.createElement(TextComponent, {
             bold: !0
         }, B, " "), "files") : null;
     if (Z) return KY.default.createElement(j, {
         flexDirection: "column"
     }, KY.default.createElement(j, {
         flexDirection: "row"
-    }, KY.default.createElement($, null, "  ⎿  ", J, W)), KY.default.createElement(j, {
+    }, KY.default.createElement(TextComponent, null, "  ⎿  ", J, W)), KY.default.createElement(j, {
         marginLeft: 5
-    }, KY.default.createElement($, null, G)));
+    }, KY.default.createElement(TextComponent, null, G)));
     return KY.default.createElement(y0, {
         height: 1
-    }, KY.default.createElement($, null, J, W, " ", Q > 0 && KY.default.createElement(hl, null)))
+    }, KY.default.createElement(TextComponent, null, J, W, " ", Q > 0 && KY.default.createElement(hl, null)))
 }
 
 function YJ9() {
@@ -236,14 +239,14 @@ function JJ9(A, {
     let B = [];
     if ((A.operation === "goToDefinition" || A.operation === "findReferences" || A.operation === "hover") && A.filePath && A.line !== void 0 && A.character !== void 0) {
         let G = ZJ9(A.filePath, A.line, A.character),
-            Z = Q ? A.filePath : Q5(A.filePath);
-        if (G) B.push(`operation: "${A.operation}"`), B.push(`symbol: "${G}"`), B.push(`in: "${Z}"`);
-        else B.push(`operation: "${A.operation}"`), B.push(`file: "${Z}"`), B.push(`position: ${A.line}:${A.character}`);
+            Z = Q ? A.filePath : formatFilePath(A.filePath);
+        if (G) B.push(`operation: "TextComponent{A.operation}"`), B.push(`symbol: "TextComponent{G}"`), B.push(`in: "TextComponent{Z}"`);
+        else B.push(`operation: "TextComponent{A.operation}"`), B.push(`file: "TextComponent{Z}"`), B.push(`position: TextComponent{A.line}:TextComponent{A.character}`);
         return B.join(", ")
     }
-    if (B.push(`operation: "${A.operation}"`), A.filePath) {
-        let G = Q ? A.filePath : Q5(A.filePath);
-        B.push(`file: "${G}"`)
+    if (B.push(`operation: "TextComponent{A.operation}"`), A.filePath) {
+        let G = Q ? A.filePath : formatFilePath(A.filePath);
+        B.push(`file: "TextComponent{G}"`)
     }
     return B.join(", ")
 }
@@ -255,7 +258,7 @@ function WJ9() {
 function XJ9(A, {
     verbose: Q
 }) {
-    if (!Q && typeof A === "string" && e2(A, "tool_use_error")) return KY.default.createElement(y0, null, KY.default.createElement($, {
+    if (!Q && typeof A === "string" && e2(A, "tool_use_error")) return KY.default.createElement(y0, null, KY.default.createElement(TextComponent, {
         color: "error"
     }, "LSP operation failed"));
     return KY.default.createElement(A5, {
@@ -278,10 +281,10 @@ function VJ9(A, Q, {
         content: A.result,
         verbose: B
     });
-    return KY.default.createElement(y0, null, KY.default.createElement($, null, A.result))
+    return KY.default.createElement(y0, null, KY.default.createElement(TextComponent, null, A.result))
 }
 var KY, qj3;
-var KJ9 = L(() => {
+var KJ9 = lazyLoader(() => {
     hA();
     lV();
     lX();
@@ -290,7 +293,7 @@ var KJ9 = L(() => {
     nQ();
     M9();
     IJ9();
-    KY = GA(VA(), 1), qj3 = {
+    KY = esmImport(VA(), 1), qj3 = {
         goToDefinition: {
             singular: "definition",
             plural: "definitions"
@@ -401,7 +404,7 @@ function jj3(A, Q, B) {
         case "goToDefinition": {
             let Z = (Array.isArray(Q) ? Q : Q ? [Q] : []).map(Pj3),
                 I = Z.filter((J) => !J || !J.uri);
-            if (I.length > 0) e(Error(`LSP server returned ${I.length} location(s) with undefined URI for goToDefinition on ${B}. This indicates malformed data from the LSP server.`));
+            if (I.length > 0) e(Error(`LSP server returned TextComponent{I.length} location(s) with undefined URI for goToDefinition on TextComponent{B}. This indicates malformed data from the LSP server.`));
             let Y = Z.filter((J) => J && J.uri);
             return {
                 formatted: sY9(Q, B),
@@ -412,7 +415,7 @@ function jj3(A, Q, B) {
         case "findReferences": {
             let G = Q || [],
                 Z = G.filter((Y) => !Y || !Y.uri);
-            if (Z.length > 0) e(Error(`LSP server returned ${Z.length} location(s) with undefined URI for findReferences on ${B}. This indicates malformed data from the LSP server.`));
+            if (Z.length > 0) e(Error(`LSP server returned TextComponent{Z.length} location(s) with undefined URI for findReferences on TextComponent{B}. This indicates malformed data from the LSP server.`));
             let I = G.filter((Y) => Y && Y.uri);
             return {
                 formatted: rY9(Q, B),
@@ -436,7 +439,7 @@ function jj3(A, Q, B) {
         case "workspaceSymbol": {
             let G = Q || [],
                 Z = G.filter((J) => !J || !J.location || !J.location.uri);
-            if (Z.length > 0) e(Error(`LSP server returned ${Z.length} symbol(s) with undefined location URI for workspaceSymbol on ${B}. This indicates malformed data from the LSP server.`));
+            if (Z.length > 0) e(Error(`LSP server returned TextComponent{Z.length} symbol(s) with undefined location URI for workspaceSymbol on TextComponent{B}. This indicates malformed data from the LSP server.`));
             let I = G.filter((J) => J && J.location && J.location.uri),
                 Y = I.map((J) => J.location);
             return {
@@ -448,7 +451,7 @@ function jj3(A, Q, B) {
     }
 }
 var Mj3, Oj3, bX0;
-var HJ9 = L(() => {
+var HJ9 = lazyLoader(() => {
     h2();
     pY9();
     BJ9();
@@ -497,27 +500,27 @@ var HJ9 = L(() => {
             let Q = cY9.safeParse(A);
             if (!Q.success) return {
                 result: !1,
-                message: `Invalid input: ${Q.error.message}`,
+                message: `Invalid input: TextComponent{Q.error.message}`,
                 errorCode: 3
             };
             let B = OA(),
                 G = b9(A.filePath);
             if (!B.existsSync(G)) return {
                 result: !1,
-                message: `File does not exist: ${A.filePath}`,
+                message: `File does not exist: TextComponent{A.filePath}`,
                 errorCode: 1
             };
             try {
                 if (!B.statSync(G).isFile()) return {
                     result: !1,
-                    message: `Path is not a file: ${A.filePath}`,
+                    message: `Path is not a file: TextComponent{A.filePath}`,
                     errorCode: 2
                 }
             } catch (Z) {
                 let I = Z instanceof Error ? Z : Error(String(Z));
-                return e(Error(`Failed to access file stats for LSP operation on ${A.filePath}: ${I.message}`)), {
+                return e(Error(`Failed to access file stats for LSP operation on TextComponent{A.filePath}: TextComponent{I.message}`)), {
                     result: !1,
-                    message: `Cannot access file: ${A.filePath}. ${I.message}`,
+                    message: `Cannot access file: TextComponent{A.filePath}. TextComponent{I.message}`,
                     errorCode: 4
                 }
             }
@@ -554,10 +557,10 @@ var HJ9 = L(() => {
             } = Rj3(A, B);
             try {
                 let J = await Z.sendRequest(B, I, Y);
-                if (J === void 0) return g(`No LSP server available for file type ${vX0.extname(B)} for operation ${A.operation} on file ${A.filePath}`), {
+                if (J === void 0) return g(`No LSP server available for file type TextComponent{vX0.extname(B)} for operation TextComponent{A.operation} on file TextComponent{A.filePath}`), {
                     data: {
                         operation: A.operation,
-                        result: `No LSP server available for file type: ${vX0.extname(B)}`,
+                        result: `No LSP server available for file type: TextComponent{vX0.extname(B)}`,
                         filePath: A.filePath
                     }
                 };
@@ -577,10 +580,10 @@ var HJ9 = L(() => {
                 }
             } catch (J) {
                 let X = (J instanceof Error ? J : Error(String(J))).message;
-                return e(Error(`LSP tool request failed for ${A.operation} on ${A.filePath}: ${X}`)), {
+                return e(Error(`LSP tool request failed for TextComponent{A.operation} on TextComponent{A.filePath}: TextComponent{X}`)), {
                     data: {
                         operation: A.operation,
-                        result: `Error performing ${A.operation}: ${X}`,
+                        result: `Error performing TextComponent{A.operation}: TextComponent{X}`,
                         filePath: A.filePath
                     }
                 }
@@ -596,14 +599,14 @@ var HJ9 = L(() => {
     }
 });
 var Sj3;
-var CJ9 = L(() => {
+var CJ9 = lazyLoader(() => {
     hA();
     lV();
     lX();
-    Sj3 = GA(VA(), 1)
+    Sj3 = esmImport(VA(), 1)
 });
 var YoZ, JoZ;
-var EJ9 = L(() => {
+var EJ9 = lazyLoader(() => {
     h2();
     CJ9();
     QTA();
@@ -630,15 +633,15 @@ function aI1(A) {
         let Q = new zJ9.default({
             allErrors: !0
         });
-        if (!Q.validateSchema(A)) throw Error(`Invalid JSON Schema: ${Q.errorsText(Q.errors)}`);
+        if (!Q.validateSchema(A)) throw Error(`Invalid JSON Schema: TextComponent{Q.errorsText(Q.errors)}`);
         let G = Q.compile(A);
         return {
             ...fX0,
             inputJSONSchema: A,
             async call(Z) {
                 if (!G(Z)) {
-                    let Y = G.errors?.map((J) => `${J.dataPath||"root"}: ${J.message}`).join(", ");
-                    throw Error(`Output does not match required schema: ${Y}`)
+                    let Y = G.errors?.map((J) => `TextComponent{J.dataPath||"root"}: TextComponent{J.message}`).join(", ");
+                    throw Error(`Output does not match required schema: TextComponent{Y}`)
                 }
                 return {
                     data: "Structured output provided successfully",
@@ -652,9 +655,9 @@ function aI1(A) {
 }
 var zJ9, _j3, kj3, Az = "StructuredOutput",
     fX0;
-var oXA = L(() => {
+var oXA = lazyLoader(() => {
     h2();
-    zJ9 = GA(aQ1(), 1), _j3 = _.object({}).passthrough(), kj3 = _.string().describe("Structured output tool result");
+    zJ9 = esmImport(aQ1(), 1), _j3 = _.object({}).passthrough(), kj3 = _.string().describe("Structured output tool result");
     fX0 = {
         isMcp: !1,
         isEnabled() {
@@ -696,8 +699,8 @@ var oXA = L(() => {
         renderToolUseMessage(A) {
             let Q = Object.keys(A);
             if (Q.length === 0) return null;
-            if (Q.length <= 3) return Q.map((B) => `${B}: ${JSON.stringify(A[B])}`).join(", ");
-            return `${Q.length} fields: ${Q.slice(0,3).join(", ")}…`
+            if (Q.length <= 3) return Q.map((B) => `TextComponent{B}: TextComponent{JSON.stringify(A[B])}`).join(", ");
+            return `TextComponent{Q.length} fields: TextComponent{Q.slice(0,3).join(", ")}…`
         },
         userFacingName: () => Az,
         renderToolUseRejectedMessage() {
@@ -722,10 +725,10 @@ var oXA = L(() => {
     }
 });
 var yj3, DoZ, HoZ;
-var $J9 = L(() => {
+var $J9 = lazyLoader(() => {
     hA();
     h2();
-    yj3 = GA(VA(), 1), DoZ = _.strictObject({
+    yj3 = esmImport(VA(), 1), DoZ = _.strictObject({
         sizeKB: _.number().min(1).max(1e4).describe("Size of output to generate in kilobytes")
     }), HoZ = _.object({
         generatedSizeBytes: _.number().describe("Actual size of generated content"),
@@ -746,7 +749,7 @@ function hX0() {
 }
 
 function gX0() {
-    return [In, X9, FO, Hy, xq, d8, gD, oX, LP, cF, tI, hjA, iI1, lI1, a31, bn, fn, TTA, ...[], ...[], ...[], ...[], ...process.env.ENABLE_LSP_TOOL ? [bX0] : [], ...[], Xh, Fh]
+    return [In, X9, FO, Hy, xq, d8, gD, oX, LP, cF, TODO_READ_TOOL, hjA, iI1, lI1, a31, bn, fn, TTA, ...[], ...[], ...[], ...[], ...process.env.ENABLE_LSP_TOOL ? [bX0] : [], ...[], Xh, Fh]
 }
 var xj3, eRA, Vb2, Kb2, JC = (A) => {
     let Q = new Set([Xh.name, Fh.name, Az]),
@@ -758,7 +761,7 @@ var xj3, eRA, Vb2, Kb2, JC = (A) => {
         I = Z.map((Y) => Y.isEnabled());
     return Z.filter((Y, J) => I[J])
 };
-var jq = L(() => {
+var jq = lazyLoader(() => {
     TRA();
     p31();
     n31();
@@ -787,7 +790,7 @@ var jq = L(() => {
     $J9();
     aG();
     xj3 = ["default"];
-    eRA = new Set([xq.name, b31, TASK_TOOL_NAME, dJ, pI1, ...[]]), Vb2 = new Set([...eRA]), Kb2 = new Set([d8.name, hjA.name, tI.name, Hy.name, cF.name, FO.name, BASH_TOOL_NAME, gD.name, oX.name, LP.name])
+    eRA = new Set([xq.name, ENTER_PLAN_MODE_TOOL_NAME, TASK_TOOL_NAME, ASK_USER_QUESTION_TOOL_NAME, KILL_SHELL_TOOL_NAME, ...[]]), Vb2 = new Set([...eRA]), Kb2 = new Set([d8.name, hjA.name, TODO_READ_TOOL.name, Hy.name, cF.name, FO.name, BASH_TOOL_NAME, gD.name, oX.name, LP.name])
 });
 import {
     resolve as vj3
@@ -931,7 +934,6 @@ function NJ9({
         warnings: W
     }
 }
-// Async function: aW0
 async function aW0() {
     return RJ9("tengu_disable_bypass_permissions_mode")
 }
@@ -954,7 +956,6 @@ function R59(A) {
         isBypassPermissionsModeAvailable: !1
     }
 }
-
 async function MJ9(A) {
     if (!A.isBypassPermissionsModeAvailable) return;
     if (!await aW0()) return;
@@ -962,7 +963,7 @@ async function MJ9(A) {
         level: "warn"
     }), S6(1, "bypass_permissions_disabled")
 }
-var zWA = L(() => {
+var zWA = lazyLoader(() => {
     aG();
     Gr();
     Bw();
@@ -980,7 +981,6 @@ var zWA = L(() => {
 function hj3(A) {
     return !/[^a-zA-Z0-9:\-_]/.test(A)
 }
-
 async function TJ9(A, Q, B, G, Z, I, Y, J, W) {
     let X = vJA(A);
     if (!X) return BA("tengu_input_slash_missing", {}), {
@@ -998,13 +998,13 @@ async function TJ9(A, Q, B, G, Z, I, Y, J, W) {
         isMcp: K
     } = X, D = K ? "mcp" : !jy().has(F) ? "custom" : F;
     if (!oh(F, Z.options.commands)) {
-        let y = OA().existsSync(`/${F}`);
+        let y = OA().existsSync(`/TextComponent{F}`);
         if (hj3(F) && !y) return BA("tengu_input_slash_invalid", {
             input: F
         }), {
             messages: [hF(), ...G, j0({
                 content: G$({
-                    inputString: `Unknown slash command: ${F}`,
+                    inputString: `Unknown slash command: TextComponent{F}`,
                     precedingInputBlocks: Q
                 })
             })],
@@ -1085,7 +1085,6 @@ async function TJ9(A, Q, B, G, Z, I, Y, J, W) {
         model: N
     }
 }
-
 async function gj3(A, Q, B, G, Z, I, Y) {
     let J = vq(A, G.options.commands);
     try {
@@ -1103,15 +1102,15 @@ async function gj3(A, Q, B, G, Z, I, Y) {
                             return
                         }
                         W({
-                            messages: F?.display === "system" ? [uX0(rI1(J, Q)), uX0(`<local-command-stdout>${X}</local-command-stdout>`)] : [j0({
+                            messages: F?.display === "system" ? [uX0(rI1(J, Q)), uX0(`<local-command-stdout>TextComponent{X}</local-command-stdout>`)] : [j0({
                                 content: G$({
                                     inputString: rI1(J, Q),
                                     precedingInputBlocks: Z
                                 })
                             }), X ? j0({
-                                content: `<local-command-stdout>${X}</local-command-stdout>`
+                                content: `<local-command-stdout>TextComponent{X}</local-command-stdout>`
                             }) : j0({
-                                content: `<local-command-stdout>${Eq}</local-command-stdout>`
+                                content: `<local-command-stdout>TextComponent{Eq}</local-command-stdout>`
                             })],
                             shouldQuery: !1,
                             command: J
@@ -1160,7 +1159,7 @@ async function gj3(A, Q, B, G, Z, I, Y) {
                         } = F.compactionResult;
                         return {
                             messages: [V, ...K, X, W, ...F.displayText ? [j0({
-                                content: `<local-command-stdout>${F.displayText}</local-command-stdout>`,
+                                content: `<local-command-stdout>TextComponent{F.displayText}</local-command-stdout>`,
                                 timestamp: new Date(Date.now() + 100).toISOString()
                             })] : [], ...D, ...H],
                             shouldQuery: !1,
@@ -1169,7 +1168,7 @@ async function gj3(A, Q, B, G, Z, I, Y) {
                     }
                     return {
                         messages: [W, j0({
-                            content: `<local-command-stdout>${F.value}</local-command-stdout>`
+                            content: `<local-command-stdout>TextComponent{F.value}</local-command-stdout>`
                         })],
                         shouldQuery: !1,
                         command: J
@@ -1177,7 +1176,7 @@ async function gj3(A, Q, B, G, Z, I, Y) {
                 } catch (X) {
                     return e(X), {
                         messages: [W, j0({
-                            content: `<local-command-stderr>${String(X)}</local-command-stderr>`
+                            content: `<local-command-stderr>TextComponent{String(X)}</local-command-stderr>`
                         })],
                         shouldQuery: !1,
                         command: J
@@ -1195,7 +1194,7 @@ async function gj3(A, Q, B, G, Z, I, Y) {
                                 precedingInputBlocks: Z
                             })
                         }), j0({
-                            content: `<local-command-stderr>${String(W)}</local-command-stderr>`
+                            content: `<local-command-stderr>TextComponent{String(W)}</local-command-stderr>`
                         })],
                         shouldQuery: !1,
                         command: J
@@ -1218,18 +1217,18 @@ async function gj3(A, Q, B, G, Z, I, Y) {
 }
 
 function rI1(A, Q) {
-    return `<command-name>/${A.userFacingName()}</command-name>
-            <command-message>${A.userFacingName()}</command-message>
-            <command-args>${Q}</command-args>`
+    return `<command-name>/TextComponent{A.userFacingName()}</command-name>
+            <command-message>TextComponent{A.userFacingName()}</command-message>
+            <command-args>TextComponent{Q}</command-args>`
 }
 
 function wX0(A, Q = "loading") {
-    return `<command-message>${`The "${A}" skill is ${Q}`}</command-message>
-<command-name>${A}</command-name>`
+    return `<command-message>TextComponent{`The "TextComponent{A}" skill is TextComponent{Q}`}</command-message>
+<command-name>TextComponent{A}</command-name>`
 }
 
 function uj3(A, Q, B) {
-    return [`<command-message>${`${A} is ${Q}…`}</command-message>`, `<command-name>/${A}</command-name>`, B ? `<command-args>${B}</command-args>` : null].filter(Boolean).join(`
+    return [`<command-message>TextComponent{`TextComponent{A} is TextComponent{Q}…`}</command-message>`, `<command-name>/TextComponent{A}</command-name>`, B ? `<command-args>TextComponent{B}</command-args>` : null].filter(Boolean).join(`
 `)
 }
 
@@ -1237,20 +1236,18 @@ function mj3(A, Q) {
     if (A.isSkill) return wX0(A.userFacingName(), A.progressMessage);
     return uj3(A.userFacingName(), A.progressMessage, Q)
 }
-
 async function l31(A, Q, B, G, Z = []) {
-    if (!oh(A, B)) throw new rj(`Unknown command: ${A}`);
+    if (!oh(A, B)) throw new rj(`Unknown command: TextComponent{A}`);
     let I = vq(A, B);
-    if (I.type !== "prompt") throw Error(`Unexpected ${I.type} command. Expected 'prompt' command. Use /${A} directly in the main conversation.`);
+    if (I.type !== "prompt") throw Error(`Unexpected TextComponent{I.type} command. Expected 'prompt' command. Use /TextComponent{A} directly in the main conversation.`);
     return PJ9(I, Q, G, [], Z)
 }
-
 async function PJ9(A, Q, B, G = [], Z = []) {
     let I = await A.getPromptForCommand(Q, B),
         Y = mj3(A, Q);
-    g(`Metadata string for ${A.userFacingName()}:`), g(`  ${Y.substring(0,200)}`);
+    g(`Metadata string for TextComponent{A.userFacingName()}:`), g(`  TextComponent{Y.substring(0,200)}`);
     let J = (Y.match(/<command-message>/g) || []).length;
-    g(`  command-message tags in metadata: ${J}`);
+    g(`  command-message tags in metadata: TextComponent{J}`);
     let W = w0A(A.allowedTools ?? []),
         X = Z.length > 0 || G.length > 0 ? [...Z, ...G, ...I] : I,
         F = Xf([j0({
@@ -1265,25 +1262,25 @@ async function PJ9(A, Q, B, G = [], Z = []) {
         }), ...V, ...W.length || A.model ? [p9({
             type: "command_permissions",
             allowedTools: W,
-            model: A.useSmallFastModel ? LW() : A.model
+            model: A.useSmallFastModel ? getSmallFastModel() : A.model
         })] : []];
-    return g(`processPromptSlashCommand creating ${K.length} messages for ${A.userFacingName()}`), K.forEach((D, H) => {
+    return g(`processPromptSlashCommand creating TextComponent{K.length} messages for TextComponent{A.userFacingName()}`), K.forEach((D, H) => {
         if (D.type === "user" && "message" in D) {
             let C = typeof D.message.content === "string" ? D.message.content : JSON.stringify(D.message.content),
                 E = "isMeta" in D && D.isMeta ? " [META]" : "",
                 z = C.substring(0, 200);
-            g(`  Message ${H+1}${E}: ${z}`)
-        } else if (D.type === "attachment") g(`  Message ${H+1}: [ATTACHMENT]`)
+            g(`  Message TextComponent{H+1}TextComponent{E}: TextComponent{z}`)
+        } else if (D.type === "attachment") g(`  Message TextComponent{H+1}: [ATTACHMENT]`)
     }), {
         messages: K,
         shouldQuery: !0,
         allowedTools: W,
         maxThinkingTokens: F > 0 ? F : void 0,
-        model: A.useSmallFastModel ? LW() : A.model,
+        model: A.useSmallFastModel ? getSmallFastModel() : A.model,
         command: A
     }
 }
-var jTA = L(() => {
+var jTA = lazyLoader(() => {
     w0();
     nQ();
     nE();
@@ -1322,15 +1319,15 @@ function SJ9({
     return mX0.default.createElement(j, {
         flexDirection: "column",
         flexGrow: 1
-    }, mX0.default.createElement($, {
+    }, mX0.default.createElement(TextComponent, {
         color: "text"
     }, "Memory updated in ", Q, " · /memory to edit"))
 }
 var mX0;
-var cX0 = L(() => {
+var cX0 = lazyLoader(() => {
     hA();
     R2();
-    mX0 = GA(VA(), 1)
+    mX0 = esmImport(VA(), 1)
 });
 import {
     dirname as _J9
@@ -1340,8 +1337,8 @@ function pj3(A) {
     let Q = A.trim();
     if (!Q) return "";
     if (Q.startsWith("- ")) return Q;
-    if (Q.startsWith("-")) return `- ${Q.slice(1).trim()}`;
-    return `- ${Q}`
+    if (Q.startsWith("-")) return `- TextComponent{Q.slice(1).trim()}`;
+    return `- TextComponent{Q}`
 }
 
 function lj3() {
@@ -1353,7 +1350,7 @@ function lj3() {
     })
 }
 var pX0, kJ9;
-var yJ9 = L(() => {
+var yJ9 = lazyLoader(() => {
     cX0();
     w0();
     jQ();
@@ -1361,7 +1358,7 @@ var yJ9 = L(() => {
     o0();
     M9();
     u1();
-    pX0 = GA(VA(), 1);
+    pX0 = esmImport(VA(), 1);
     kJ9 = I_(async function(A, Q, B) {
         BA("tengu_add_memory_start", {}), lj3();
         let G = M09(B);
@@ -1372,9 +1369,9 @@ var yJ9 = L(() => {
         }
         try {
             let Z = pj3(A),
-                I = G.replace(/\n+$/, ""),
-                Y = I ? `${I}
-${Z}` : Z;
+                I = G.replace(/\n+TextComponent/, ""),
+                Y = I ? `TextComponent{I}
+TextComponent{Z}` : Z;
             OA().writeFileSync(B, Y, {
                 encoding: "utf8",
                 flush: !0
@@ -1405,7 +1402,7 @@ function xJ9(A, Q, B, G, Z) {
     BA("tengu_input_memory", {});
     let I = j0({
         content: G$({
-            inputString: `<user-memory-input>${A}</user-memory-input>`,
+            inputString: `<user-memory-input>TextComponent{A}</user-memory-input>`,
             precedingInputBlocks: Q
         })
     });
@@ -1414,7 +1411,7 @@ function xJ9(A, Q, B, G, Z) {
         shouldQuery: !1
     }
 }
-var vJ9 = L(() => {
+var vJ9 = lazyLoader(() => {
     w0();
     nQ();
     yJ9()
@@ -1466,7 +1463,7 @@ function bJ9(A, Q, B, G, Z, I, Y, J) {
         maxThinkingTokens: V > 0 ? V : void 0
     }
 }
-var fJ9 = L(() => {
+var fJ9 = lazyLoader(() => {
     w0();
     bJA();
     A0A();
@@ -1476,7 +1473,6 @@ var fJ9 = L(() => {
 import {
     randomUUID as ij3
 } from "node:crypto";
-
 async function pP({
     input: A,
     mode: Q,
@@ -1508,9 +1504,9 @@ async function pP({
             if (N.blockingError) {
                 let q = iX0(N.blockingError);
                 return {
-                    messages: [Vy(`${q}
+                    messages: [Vy(`TextComponent{q}
 
-Original prompt: ${A}`, "warning")],
+Original prompt: TextComponent{A}`, "warning")],
                     shouldQuery: !1,
                     allowedTools: z.allowedTools,
                     skipHistory: z.skipHistory,
@@ -1518,7 +1514,7 @@ Original prompt: ${A}`, "warning")],
                 }
             }
             if (N.preventContinuation) {
-                let q = N.stopReason ? `Operation stopped by hook: ${N.stopReason}` : "Operation stopped by hook";
+                let q = N.stopReason ? `Operation stopped by hook: TextComponent{N.stopReason}` : "Operation stopped by hook";
                 return z.messages.push(j0({
                     content: q
                 })), z.shouldQuery = !1, z

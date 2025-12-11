@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_017.js
+ * 处理时间: 2025-12-09T03:41:36.523Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.901Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -27,9 +29,9 @@
                 else return (0, Hd.setCredentialFeature)(Z, "CREDENTIALS_PROFILE_SSO_LEGACY", "t")
             })
         }, "resolveSsoCredentials"),
-        fl4 = MX((A) => A && (typeof A.sso_start_url === "string" || typeof A.sso_account_id === "string" || typeof A.sso_session === "string" || typeof A.sso_region === "string" || typeof A.sso_role_name === "string"), "isSsoProfile"),
-        lVQ = MX((A) => Boolean(A) && typeof A === "object" && typeof A.aws_access_key_id === "string" && typeof A.aws_secret_access_key === "string" && ["undefined", "string"].indexOf(typeof A.aws_session_token) > -1 && ["undefined", "string"].indexOf(typeof A.aws_account_id) > -1, "isStaticCredsProfile"),
-        iVQ = MX(async (A, Q) => {
+        fl4 = EDIT_TOOL_NAME((A) => A && (typeof A.sso_start_url === "string" || typeof A.sso_account_id === "string" || typeof A.sso_session === "string" || typeof A.sso_region === "string" || typeof A.sso_role_name === "string"), "isSsoProfile"),
+        lVQ = EDIT_TOOL_NAME((A) => Boolean(A) && typeof A === "object" && typeof A.aws_access_key_id === "string" && typeof A.aws_secret_access_key === "string" && ["undefined", "string"].indexOf(typeof A.aws_session_token) > -1 && ["undefined", "string"].indexOf(typeof A.aws_account_id) > -1, "isStaticCredsProfile"),
+        iVQ = EDIT_TOOL_NAME(async (A, Q) => {
             Q?.logger?.debug("@aws-sdk/credential-provider-ini - resolveStaticCredentials");
             let B = {
                 accessKeyId: A.aws_access_key_id,
@@ -44,8 +46,8 @@
             };
             return (0, Hd.setCredentialFeature)(B, "CREDENTIALS_PROFILE", "n")
         }, "resolveStaticCredentials"),
-        hl4 = MX((A) => Boolean(A) && typeof A === "object" && typeof A.web_identity_token_file === "string" && typeof A.role_arn === "string" && ["undefined", "string"].indexOf(typeof A.role_session_name) > -1, "isWebIdentityProfile"),
-        gl4 = MX(async (A, Q) => Promise.resolve().then(() => Dd(YL1())).then(({
+        hl4 = EDIT_TOOL_NAME((A) => Boolean(A) && typeof A === "object" && typeof A.web_identity_token_file === "string" && typeof A.role_arn === "string" && ["undefined", "string"].indexOf(typeof A.role_session_name) > -1, "isWebIdentityProfile"),
+        gl4 = EDIT_TOOL_NAME(async (A, Q) => Promise.resolve().then(() => Dd(YL1())).then(({
             fromTokenFile: B
         }) => B({
             webIdentityTokenFile: A.web_identity_token_file,
@@ -55,7 +57,7 @@
             logger: Q.logger,
             parentClientConfig: Q.parentClientConfig
         })().then((G) => (0, Hd.setCredentialFeature)(G, "CREDENTIALS_PROFILE_STS_WEB_ID_TOKEN", "q"))), "resolveWebIdentityCredentials"),
-        sVQ = MX(async (A, Q, B, G = {}, Z = !1) => {
+        sVQ = EDIT_TOOL_NAME(async (A, Q, B, G = {}, Z = !1) => {
             let I = Q[A];
             if (Object.keys(G).length > 0 && lVQ(I)) return iVQ(I, B);
             if (Z || Sl4(I, {
@@ -66,11 +68,11 @@
             if (hl4(I)) return gl4(I, B);
             if (xl4(I)) return vl4(B, A);
             if (fl4(I)) return await bl4(A, I, B);
-            throw new QHA.CredentialsProviderError(`Could not resolve credentials using profile: [${A}] in configuration/credentials file(s).`, {
+            throw new QHA.CredentialsProviderError(`Could not resolve credentials using profile: [TextComponent{A}] in configuration/credentials file(s).`, {
                 logger: B.logger
             })
         }, "resolveProfileData"),
-        ul4 = MX((A = {}) => async ({
+        ul4 = EDIT_TOOL_NAME((A = {}) => async ({
             callerClientConfig: Q
         } = {}) => {
             let B = {
@@ -87,7 +89,7 @@
             }), G, B)
         }, "fromIni")
 });
-var IKQ = U((pK7, ZKQ) => {
+var IKQ = moduleWrapper((pK7, ZKQ) => {
     var {
         create: ml4,
         defineProperty: GHA,
@@ -213,7 +215,7 @@ var IKQ = U((pK7, ZKQ) => {
         BKQ = wgA((A) => A?.expiration !== void 0, "credentialsWillNeedRefresh"),
         GKQ = wgA((A) => A?.expiration !== void 0 && A.expiration.getTime() - Date.now() < 300000, "credentialsTreatedAsExpired")
 });
-var NKQ = U((wKQ) => {
+var MAX_TIMEOUT_MS = moduleWrapper((wKQ) => {
     Object.defineProperty(wKQ, "__esModule", {
         value: !0
     });
@@ -455,14 +457,14 @@ var NKQ = U((wKQ) => {
         };
     wKQ.ruleSet = ol4
 });
-var OKQ = U((LKQ) => {
+var OKQ = moduleWrapper((LKQ) => {
     Object.defineProperty(LKQ, "__esModule", {
         value: !0
     });
     LKQ.defaultEndpointResolver = void 0;
     var tl4 = Z8A(),
         KL1 = II(),
-        el4 = NKQ(),
+        el4 = MAX_TIMEOUT_MS(),
         Ai4 = new KL1.EndpointCache({
             size: 50,
             params: ["Endpoint", "Region", "UseDualStack", "UseFIPS"]
@@ -476,7 +478,7 @@ var OKQ = U((LKQ) => {
     LKQ.defaultEndpointResolver = Qi4;
     KL1.customEndpointFunctions.aws = tl4.awsEndpointFunctions
 });
-var SKQ = U((PKQ) => {
+var SKQ = moduleWrapper((PKQ) => {
     Object.defineProperty(PKQ, "__esModule", {
         value: !0
     });
@@ -516,7 +518,7 @@ var SKQ = U((PKQ) => {
         };
     PKQ.getRuntimeConfig = Wi4
 });
-var fKQ = U((vKQ) => {
+var fKQ = moduleWrapper((vKQ) => {
     Object.defineProperty(vKQ, "__esModule", {
         value: !0
     });
@@ -578,7 +580,7 @@ var fKQ = U((vKQ) => {
         };
     vKQ.getRuntimeConfig = $i4
 });
-var vDQ = U((sK7, xDQ) => {
+var vDQ = moduleWrapper((sK7, xDQ) => {
     var {
         defineProperty: LgA,
         getOwnPropertyDescriptor: wi4,

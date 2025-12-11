@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_026.js
+ * 处理时间: 2025-12-09T03:41:36.625Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.909Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -71,7 +73,7 @@
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(whQ || {})
 });
-var ZCA = U((x$7, RhQ) => {
+var ZCA = moduleWrapper((x$7, RhQ) => {
     var {
         defineProperty: MdA,
         getOwnPropertyDescriptor: nz8,
@@ -150,7 +152,7 @@ var ZCA = U((x$7, RhQ) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values
@@ -184,7 +186,7 @@ var ZCA = U((x$7, RhQ) => {
                 bd(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -206,7 +208,7 @@ var ZCA = U((x$7, RhQ) => {
             }
         };
 
-function MhQ(A) {
+    function MhQ(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -216,8 +218,7 @@ function MhQ(A) {
         }, {})
     }
     bd(MhQ, "cloneQuery");
-
-var ZU8 = class {
+    var ZU8 = class {
         static {
             bd(this, "HttpResponse")
         }
@@ -231,12 +232,12 @@ var ZU8 = class {
         }
     };
 
-function OhQ(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function OhQ(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     bd(OhQ, "isValidHostname")
 });
-var jhQ = U((h$7, PhQ) => {
+var jhQ = moduleWrapper((h$7, PhQ) => {
     var {
         defineProperty: OdA,
         getOwnPropertyDescriptor: IU8,
@@ -267,7 +268,7 @@ var jhQ = U((h$7, PhQ) => {
     PhQ.exports = VU8(ThQ);
     var KU8 = WU8((A) => typeof ArrayBuffer === "function" && A instanceof ArrayBuffer || Object.prototype.toString.call(A) === "[object ArrayBuffer]", "isArrayBuffer")
 });
-var yhQ = U((g$7, khQ) => {
+var yhQ = moduleWrapper((g$7, khQ) => {
     var {
         defineProperty: RdA,
         getOwnPropertyDescriptor: DU8,
@@ -298,10 +299,10 @@ var yhQ = U((g$7, khQ) => {
     });
     khQ.exports = UU8(ShQ);
     var _hQ = iP1((A) => encodeURIComponent(A).replace(/[!'()*]/g, $U8), "escapeUri"),
-        $U8 = iP1((A) => `%${A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
+        $U8 = iP1((A) => `%TextComponent{A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
         wU8 = iP1((A) => A.split("/").map(_hQ).join("/"), "escapeUriPath")
 });
-var JgQ = U((u$7, YgQ) => {
+var JgQ = moduleWrapper((u$7, YgQ) => {
     var {
         defineProperty: ydA,
         getOwnPropertyDescriptor: qU8,
@@ -416,10 +417,10 @@ var JgQ = U((u$7, YgQ) => {
         _U8 = L2(),
         v6A = {},
         PdA = [],
-        jdA = YD((A, Q, B) => `${A}/${Q}/${B}/${Qj1}`, "createScope"),
+        jdA = YD((A, Q, B) => `TextComponent{A}/TextComponent{Q}/TextComponent{B}/TextComponent{Qj1}`, "createScope"),
         AgQ = YD(async (A, Q, B, G, Z) => {
             let I = await vhQ(A, Q.secretAccessKey, Q.accessKeyId),
-                Y = `${B}:${G}:${Z}:${(0,fd.toHex)(I)}:${Q.sessionToken}`;
+                Y = `TextComponent{B}:TextComponent{G}:TextComponent{Z}:TextComponent{(0,fd.toHex)(I)}:TextComponent{Q.sessionToken}`;
             if (Y in v6A) return v6A[Y];
             PdA.push(Y);
             while (PdA.length > thQ) delete v6A[PdA.shift()];
@@ -511,13 +512,13 @@ var JgQ = U((u$7, YgQ) => {
                         let X = new Uint8Array(9);
                         return X[0] = 8, X.set(fU8.fromNumber(A.value.valueOf()).bytes, 1), X;
                     case "uuid":
-                        if (!bU8.test(A.value)) throw Error(`Invalid UUID received: ${A.value}`);
+                        if (!bU8.test(A.value)) throw Error(`Invalid UUID received: TextComponent{A.value}`);
                         let F = new Uint8Array(17);
                         return F[0] = 9, F.set((0, fd.fromHex)(A.value.replace(/\-/g, "")), 1), F
                 }
             }
         },
-        bU8 = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/,
+        bU8 = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}TextComponent/,
         fU8 = class A {
             constructor(Q) {
                 if (this.bytes = Q, Q.byteLength !== 8) throw Error("Int64 buffers must be exactly 8 bytes")
@@ -526,7 +527,7 @@ var JgQ = U((u$7, YgQ) => {
                 YD(this, "Int64")
             }
             static fromNumber(Q) {
-                if (Q > 9223372036854776000 || Q < -9223372036854776000) throw Error(`${Q} is too large (or, if negative, too small) to represent as an Int64`);
+                if (Q > 9223372036854776000 || Q < -9223372036854776000) throw Error(`TextComponent{Q} is too large (or, if negative, too small) to represent as an Int64`);
                 let B = new Uint8Array(8);
                 for (let G = 7, Z = Math.abs(Math.round(Q)); G > -1 && Z > 0; G--, Z /= 256) B[G] = Z;
                 if (Q < 0) aP1(B);
@@ -543,7 +544,7 @@ var JgQ = U((u$7, YgQ) => {
             }
         };
 
-function aP1(A) {
+    function aP1(A) {
         for (let Q = 0; Q < 8; Q++) A[Q] ^= 255;
         for (let Q = 7; Q > -1; Q--)
             if (A[Q]++, A[Q] !== 0) break
@@ -590,8 +591,8 @@ function aP1(A) {
                 let Z = (0, _dA.escapeUri)(G);
                 Q.push(Z);
                 let I = A[G];
-                if (typeof I === "string") B[Z] = `${Z}=${(0,_dA.escapeUri)(I)}`;
-                else if (Array.isArray(I)) B[Z] = I.slice(0).reduce((Y, J) => Y.concat([`${Z}=${(0,_dA.escapeUri)(J)}`]), []).sort().join("&")
+                if (typeof I === "string") B[Z] = `TextComponent{Z}=TextComponent{(0,_dA.escapeUri)(I)}`;
+                else if (Array.isArray(I)) B[Z] = I.slice(0).reduce((Y, J) => Y.concat([`TextComponent{Z}=TextComponent{(0,_dA.escapeUri)(J)}`]), []).sort().join("&")
             }
             return Q.sort().map((G) => B[G]).filter((G) => G).join("&")
         }, "getCanonicalQuery"),
@@ -620,23 +621,23 @@ function aP1(A) {
             }
             createCanonicalRequest(A, Q, B) {
                 let G = Object.keys(Q).sort();
-                return `${A.method}
-${this.getCanonicalPath(A)}
-${ZgQ(A)}
-${G.map((Z)=>`${Z}:${Q[Z]}`).join(`
+                return `TextComponent{A.method}
+TextComponent{this.getCanonicalPath(A)}
+TextComponent{ZgQ(A)}
+TextComponent{G.map((Z)=>`TextComponent{Z}:TextComponent{Q[Z]}`).join(`
 `)}
 
-${G.join(";")}
-${B}`
+TextComponent{G.join(";")}
+TextComponent{B}`
             }
             async createStringToSign(A, Q, B, G) {
                 let Z = new this.sha256;
                 Z.update((0, hU8.toUint8Array)(B));
                 let I = await Z.digest();
-                return `${G}
-${A}
-${Q}
-${(0,fd.toHex)(I)}`
+                return `TextComponent{G}
+TextComponent{A}
+TextComponent{Q}
+TextComponent{(0,fd.toHex)(I)}`
             }
             getCanonicalPath({
                 path: A
@@ -649,7 +650,7 @@ ${(0,fd.toHex)(I)}`
                         if (Z === "..") Q.pop();
                         else Q.push(Z)
                     }
-                    let B = `${A?.startsWith("/")?"/":""}${Q.join("/")}${Q.length>0&&A?.endsWith("/")?"/":""}`;
+                    let B = `TextComponent{A?.startsWith("/")?"/":""}TextComponent{Q.join("/")}TextComponent{Q.length>0&&A?.endsWith("/")?"/":""}`;
                     return (0, _dA.escapeUri)(B).replace(/%2F/g, "/")
                 }
                 return A
@@ -714,7 +715,7 @@ ${(0,fd.toHex)(I)}`
                         hoistableHeaders: J
                     });
                 if (F.sessionToken) C.query[tP1] = F.sessionToken;
-                C.query[ghQ] = TdA, C.query[uhQ] = `${F.accessKeyId}/${H}`, C.query[rP1] = K, C.query[dhQ] = G.toString(10);
+                C.query[ghQ] = TdA, C.query[uhQ] = `TextComponent{F.accessKeyId}/TextComponent{H}`, C.query[rP1] = K, C.query[dhQ] = G.toString(10);
                 let E = nP1(C, Z, Y);
                 return C.query[mhQ] = this.getCanonicalHeaderList(E), C.query[oP1] = await this.getSignature(K, H, this.getSigningKey(F, V, D, X), this.createCanonicalRequest(C, E, await SdA(A, this.sha256))), C
             }
@@ -809,7 +810,7 @@ ${(0,fd.toHex)(I)}`
                 if (!QgQ(kdA, W.headers) && this.applyChecksum) W.headers[kdA] = K;
                 let D = nP1(W, G, B),
                     H = await this.getSignature(X, V, this.getSigningKey(Y, J, F, I), this.createCanonicalRequest(W, D, K));
-                return W.headers[eP1] = `${TdA} Credential=${Y.accessKeyId}/${V}, SignedHeaders=${this.getCanonicalHeaderList(D)}, Signature=${H}`, W
+                return W.headers[eP1] = `TextComponent{TdA} Credential=TextComponent{Y.accessKeyId}/TextComponent{V}, SignedHeaders=TextComponent{this.getCanonicalHeaderList(D)}, Signature=TextComponent{H}`, W
             }
             async getSignature(A, Q, B, G) {
                 let Z = await this.createStringToSign(A, Q, G, TdA),
@@ -824,7 +825,7 @@ ${(0,fd.toHex)(I)}`
             SignatureV4a: null
         }
 });
-var zgQ = U((p$7, EgQ) => {
+var zgQ = moduleWrapper((p$7, EgQ) => {
     var {
         defineProperty: xdA,
         getOwnPropertyDescriptor: cU8,
@@ -871,7 +872,7 @@ var zgQ = U((p$7, EgQ) => {
             return Q
         }, "getUpdatedSystemClockOffset"),
         ICA = JD((A, Q) => {
-            if (!Q) throw Error(`Property \`${A}\` is not resolved for AWS SDK SigV4Auth`);
+            if (!Q) throw Error(`Property \`TextComponent{A}\` is not resolved for AWS SDK SigV4Auth`);
             return Q
         }, "throwSigningPropertyError"),
         Gj1 = JD(async (A) => {
@@ -1057,7 +1058,7 @@ var zgQ = U((p$7, EgQ) => {
         }, "resolveAwsSdkSigV4Config"),
         I$8 = DgQ;
 
-function HgQ(A, {
+    function HgQ(A, {
         credentials: Q,
         credentialDefaultProvider: B
     }) {
@@ -1075,7 +1076,7 @@ function HgQ(A, {
     }
     JD(HgQ, "normalizeCredentialProvider");
 
-function CgQ(A, Q) {
+    function CgQ(A, Q) {
         if (Q.configBound) return Q;
         let B = JD(async (G) => Q({
             ...G,
@@ -1085,7 +1086,7 @@ function CgQ(A, Q) {
     }
     JD(CgQ, "bindCallerConfig")
 });
-var hdA = U((n$7, vgQ) => {
+var hdA = moduleWrapper((n$7, vgQ) => {
     var {
         defineProperty: fdA,
         getOwnPropertyDescriptor: Y$8,
@@ -1320,7 +1321,7 @@ var hdA = U((n$7, vgQ) => {
                         let X = new G(Y);
                         if (typeof J === "function") this.send(X, J);
                         else if (typeof W === "function") {
-                            if (typeof J !== "object") throw Error(`Expected http options but got ${typeof J}`);
+                            if (typeof J !== "object") throw Error(`Expected http options but got TextComponent{typeof J}`);
                             this.send(X, J || {}, W)
                         } else return this.send(X, J)
                     }, "methodImpl"),
@@ -1335,49 +1336,49 @@ var hdA = U((n$7, vgQ) => {
                 case "false":
                     return !1;
                 default:
-                    throw Error(`Unable to parse boolean value "${A}"`)
+                    throw Error(`Unable to parse boolean value "TextComponent{A}"`)
             }
         }, "parseBoolean"),
         z$8 = FB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "number") {
-                if (A === 0 || A === 1) XCA.warn(bdA(`Expected boolean, got ${typeof A}: ${A}`));
+                if (A === 0 || A === 1) XCA.warn(bdA(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`));
                 if (A === 0) return !1;
                 if (A === 1) return !0
             }
             if (typeof A === "string") {
                 let Q = A.toLowerCase();
-                if (Q === "false" || Q === "true") XCA.warn(bdA(`Expected boolean, got ${typeof A}: ${A}`));
+                if (Q === "false" || Q === "true") XCA.warn(bdA(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`));
                 if (Q === "false") return !1;
                 if (Q === "true") return !0
             }
             if (typeof A === "boolean") return A;
-            throw TypeError(`Expected boolean, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectBoolean"),
         JCA = FB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "string") {
                 let Q = parseFloat(A);
                 if (!Number.isNaN(Q)) {
-                    if (String(Q) !== String(A)) XCA.warn(bdA(`Expected number but observed string: ${A}`));
+                    if (String(Q) !== String(A)) XCA.warn(bdA(`Expected number but observed string: TextComponent{A}`));
                     return Q
                 }
             }
             if (typeof A === "number") return A;
-            throw TypeError(`Expected number, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected number, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectNumber"),
         U$8 = Math.ceil(340282346638528860000000000000000000000),
         vdA = FB((A) => {
             let Q = JCA(A);
             if (Q !== void 0 && !Number.isNaN(Q) && Q !== 1 / 0 && Q !== -1 / 0) {
-                if (Math.abs(Q) > U$8) throw TypeError(`Expected 32-bit float, got ${A}`)
+                if (Math.abs(Q) > U$8) throw TypeError(`Expected 32-bit float, got TextComponent{A}`)
             }
             return Q
         }, "expectFloat32"),
         WCA = FB((A) => {
             if (A === null || A === void 0) return;
             if (Number.isInteger(A) && !Number.isNaN(A)) return A;
-            throw TypeError(`Expected integer, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected integer, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectLong"),
         $$8 = WCA,
         Wj1 = FB((A) => Kj1(A, 32), "expectInt32"),
@@ -1385,7 +1386,7 @@ var hdA = U((n$7, vgQ) => {
         Fj1 = FB((A) => Kj1(A, 8), "expectByte"),
         Kj1 = FB((A, Q) => {
             let B = WCA(A);
-            if (B !== void 0 && w$8(B, Q) !== B) throw TypeError(`Expected ${Q}-bit integer, got ${A}`);
+            if (B !== void 0 && w$8(B, Q) !== B) throw TypeError(`Expected TextComponent{Q}-bit integer, got TextComponent{A}`);
             return B
         }, "expectSizedInt"),
         w$8 = FB((A, Q) => {
@@ -1400,7 +1401,7 @@ var hdA = U((n$7, vgQ) => {
         }, "castInt"),
         q$8 = FB((A, Q) => {
             if (A === null || A === void 0) {
-                if (Q) throw TypeError(`Expected a non-null value for ${Q}`);
+                if (Q) throw TypeError(`Expected a non-null value for TextComponent{Q}`);
                 throw TypeError("Expected a non-null value")
             }
             return A
@@ -1409,20 +1410,20 @@ var hdA = U((n$7, vgQ) => {
             if (A === null || A === void 0) return;
             if (typeof A === "object" && !Array.isArray(A)) return A;
             let Q = Array.isArray(A) ? "array" : typeof A;
-            throw TypeError(`Expected object, got ${Q}: ${A}`)
+            throw TypeError(`Expected object, got TextComponent{Q}: TextComponent{A}`)
         }, "expectObject"),
         N$8 = FB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "string") return A;
-            if (["boolean", "number", "bigint"].includes(typeof A)) return XCA.warn(bdA(`Expected string, got ${typeof A}: ${A}`)), String(A);
-            throw TypeError(`Expected string, got ${typeof A}: ${A}`)
+            if (["boolean", "number", "bigint"].includes(typeof A)) return XCA.warn(bdA(`Expected string, got TextComponent{typeof A}: TextComponent{A}`)), String(A);
+            throw TypeError(`Expected string, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectString"),
         L$8 = FB((A) => {
             if (A === null || A === void 0) return;
             let Q = NgQ(A),
                 B = Object.entries(Q).filter(([, G]) => G != null).map(([G]) => G);
             if (B.length === 0) throw TypeError("Unions must have exactly one non-null member. None were found.");
-            if (B.length > 1) throw TypeError(`Unions must have exactly one non-null member. Keys ${B} were not null.`);
+            if (B.length > 1) throw TypeError(`Unions must have exactly one non-null member. Keys TextComponent{B} were not null.`);
             return Q
         }, "expectUnion"),
         Dj1 = FB((A) => {
@@ -1459,7 +1460,7 @@ var hdA = U((n$7, vgQ) => {
                 case "-Infinity":
                     return -1 / 0;
                 default:
-                    throw Error(`Unable to parse float value: ${A}`)
+                    throw Error(`Unable to parse float value: TextComponent{A}`)
             }
         }, "parseFloatString"),
         OgQ = FB((A) => {
@@ -1490,7 +1491,7 @@ var hdA = U((n$7, vgQ) => {
         _$8 = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
         Cj1 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-function TgQ(A) {
+    function TgQ(A) {
         let Q = A.getUTCFullYear(),
             B = A.getUTCMonth(),
             G = A.getUTCDay(),
@@ -1498,14 +1499,14 @@ function TgQ(A) {
             I = A.getUTCHours(),
             Y = A.getUTCMinutes(),
             J = A.getUTCSeconds(),
-            W = Z < 10 ? `0${Z}` : `${Z}`,
-            X = I < 10 ? `0${I}` : `${I}`,
-            F = Y < 10 ? `0${Y}` : `${Y}`,
-            V = J < 10 ? `0${J}` : `${J}`;
-        return `${_$8[G]}, ${W} ${Cj1[B]} ${Q} ${X}:${F}:${V} GMT`
+            W = Z < 10 ? `0${Z}` : `TextComponent{Z}`,
+            X = I < 10 ? `0${I}` : `TextComponent{I}`,
+            F = Y < 10 ? `0${Y}` : `TextComponent{Y}`,
+            V = J < 10 ? `0${J}` : `TextComponent{J}`;
+        return `TextComponent{_$8[G]}, TextComponent{W} TextComponent{Cj1[B]} TextComponent{Q} TextComponent{X}:TextComponent{F}:TextComponent{V} GMT`
     }
     FB(TgQ, "dateToUtcString");
-    var k$8 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?[zZ]$/),
+    var k$8 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?[zZ]TextComponent/),
         y$8 = FB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-3339 date-times must be expressed as strings");

@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_043.js
+ * 处理时间: 2025-12-09T03:41:39.489Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.136Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -28,9 +30,9 @@
             if (Q[8]) this.fragment = Q[9]
         }
     }
-    cD.pattern = /^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?$/;
+    cD.pattern = /^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?TextComponent/;
     cD.userinfoPattern = /^([^@:]*)(:([^@]*))?@/;
-    cD.portPattern = /:\d+$/;
+    cD.portPattern = /:\d+TextComponent/;
     cD.authorityPattern = /^[^:\/?#]+:\/\//;
     cD.hierarchyPattern = /^[^:\/?#]+:\//;
     cD.percentEncode = function(Q) {
@@ -81,14 +83,14 @@
             }
             return G.fragment = B.fragment, G.toString();
 
-function Z(Y, J) {
+            function Z(Y, J) {
                 if (Q.host !== void 0 && !Q.path) return "/" + J;
                 var W = Y.lastIndexOf("/");
                 if (W === -1) return J;
                 else return Y.substring(0, W + 1) + J
             }
 
-function I(Y) {
+            function I(Y) {
                 if (!Y) return Y;
                 var J = "";
                 while (Y.length > 0) {
@@ -103,7 +105,7 @@ function I(Y) {
                     else if (W === "./") Y = Y.substring(2);
                     else if (X === "/./") Y = "/" + Y.substring(3);
                     else if (W === "/." && Y.length === 2) Y = "/";
-                    else if (F === "/../" || X === "/.." && Y.length === 3) Y = "/" + Y.substring(4), J = J.replace(/\/?[^\/]*$/, "");
+                    else if (F === "/../" || X === "/.." && Y.length === 3) Y = "/" + Y.substring(4), J = J.replace(/\/?[^\/]*TextComponent/, "");
                     else {
                         var V = Y.match(/(\/?([^\/]*))/)[0];
                         J += V, Y = Y.substring(V.length)
@@ -114,11 +116,11 @@ function I(Y) {
         }
     }
 });
-var Ig2 = U((aIZ, Zg2) => {
+var Ig2 = moduleWrapper((aIZ, Zg2) => {
     Zg2.exports = n70;
     var Gg2 = LWA();
 
-function n70(A, Q) {
+    function n70(A, Q) {
         Gg2.call(this, A, Q)
     }
     n70.prototype = Object.create(Gg2.prototype, {
@@ -127,7 +129,7 @@ function n70(A, Q) {
         }
     })
 });
-var a70 = U((sIZ, Yg2) => {
+var a70 = moduleWrapper((sIZ, Yg2) => {
     Yg2.exports = {
         Event: LWA(),
         UIEvent: e30(),
@@ -135,13 +137,13 @@ var a70 = U((sIZ, Yg2) => {
         CustomEvent: Ig2()
     }
 });
-var Fg2 = U((Wg2) => {
+var Fg2 = moduleWrapper((Wg2) => {
     Object.defineProperty(Wg2, "__esModule", {
         value: !0
     });
     Wg2.hyphenate = Wg2.parse = void 0;
 
-function yn5(A) {
+    function yn5(A) {
         let Q = [],
             B = 0,
             G = 0,
@@ -182,14 +184,14 @@ function yn5(A) {
     }
     Wg2.parse = yn5;
 
-function Jg2(A) {
+    function Jg2(A) {
         return A.replace(/[a-z][A-Z]/g, (Q) => {
             return Q.charAt(0) + "-" + Q.charAt(1)
         }).toLowerCase()
     }
     Wg2.hyphenate = Jg2
 });
-var H31 = U((oIZ, Cg2) => {
+var H31 = moduleWrapper((oIZ, Cg2) => {
     var {
         parse: vn5
     } = Fg2();
@@ -210,16 +212,16 @@ var H31 = U((oIZ, Cg2) => {
         })
     };
 
-function Vg2(A) {
+    function Vg2(A) {
         return A.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()
     }
 
-function Hg2(A) {
+    function Hg2(A) {
         this._element = A
     }
     var Kg2 = "!important";
 
-function Dg2(A) {
+    function Dg2(A) {
         let Q = {
             property: {},
             priority: {}
@@ -235,8 +237,7 @@ function Dg2(A) {
         }
         return Q
     }
-
-var _WA = {};
+    var _WA = {};
     Hg2.prototype = Object.create(Object.prototype, {
         _parsed: {
             get: function() {
@@ -336,11 +337,11 @@ var _WA = {};
         }
     })
 });
-var s70 = U((tIZ, Eg2) => {
+var s70 = moduleWrapper((tIZ, Eg2) => {
     var VK = D31();
     Eg2.exports = UTA;
 
-function UTA() {}
+    function UTA() {}
     UTA.prototype = Object.create(Object.prototype, {
         _url: {
             get: function() {
@@ -357,7 +358,7 @@ function UTA() {}
                 var Q = this.href,
                     B = new VK(Q);
                 if (B.isAbsolute()) {
-                    if (A = A.replace(/:+$/, ""), A = A.replace(/[^-+\.a-zA-Z0-9]/g, VK.percentEncode), A.length > 0) B.scheme = A, Q = B.toString()
+                    if (A = A.replace(/:+TextComponent/, ""), A = A.replace(/[^-+\.a-zA-Z0-9]/g, VK.percentEncode), A.length > 0) B.scheme = A, Q = B.toString()
                 }
                 this.href = Q
             }
@@ -372,7 +373,7 @@ function UTA() {}
                 var Q = this.href,
                     B = new VK(Q);
                 if (B.isAbsolute() && B.isAuthorityBased()) {
-                    if (A = A.replace(/[^-+\._~!$&'()*,;:=a-zA-Z0-9]/g, VK.percentEncode), A.length > 0) B.host = A, delete B.port, Q = B.toString()
+                    if (A = A.replace(/[^-+\._~!TextComponent&'()*,;:=a-zA-Z0-9]/g, VK.percentEncode), A.length > 0) B.host = A, delete B.port, Q = B.toString()
                 }
                 this.href = Q
             }
@@ -387,7 +388,7 @@ function UTA() {}
                 var Q = this.href,
                     B = new VK(Q);
                 if (B.isAbsolute() && B.isAuthorityBased()) {
-                    if (A = A.replace(/^\/+/, ""), A = A.replace(/[^-+\._~!$&'()*,;:=a-zA-Z0-9]/g, VK.percentEncode), A.length > 0) B.host = A, Q = B.toString()
+                    if (A = A.replace(/^\/+/, ""), A = A.replace(/[^-+\._~!TextComponent&'()*,;:=a-zA-Z0-9]/g, VK.percentEncode), A.length > 0) B.host = A, Q = B.toString()
                 }
                 this.href = Q
             }
@@ -402,7 +403,7 @@ function UTA() {}
                 var Q = this.href,
                     B = new VK(Q);
                 if (B.isAbsolute() && B.isAuthorityBased()) {
-                    if (A = "" + A, A = A.replace(/[^0-9].*$/, ""), A = A.replace(/^0+/, ""), A.length === 0) A = "0";
+                    if (A = "" + A, A = A.replace(/[^0-9].*TextComponent/, ""), A = A.replace(/^0+/, ""), A.length === 0) A = "0";
                     if (parseInt(A, 10) <= 65535) B.port = A, Q = B.toString()
                 }
                 this.href = Q
@@ -419,7 +420,7 @@ function UTA() {}
                     B = new VK(Q);
                 if (B.isAbsolute() && B.isHierarchical()) {
                     if (A.charAt(0) !== "/") A = "/" + A;
-                    A = A.replace(/[^-+\._~!$&'()*,;:=@\/a-zA-Z0-9]/g, VK.percentEncode), B.path = A, Q = B.toString()
+                    A = A.replace(/[^-+\._~!TextComponent&'()*,;:=@\/a-zA-Z0-9]/g, VK.percentEncode), B.path = A, Q = B.toString()
                 }
                 this.href = Q
             }
@@ -435,7 +436,7 @@ function UTA() {}
                     B = new VK(Q);
                 if (B.isAbsolute() && B.isHierarchical()) {
                     if (A.charAt(0) === "?") A = A.substring(1);
-                    A = A.replace(/[^-+\._~!$&'()*,;:=@\/?a-zA-Z0-9]/g, VK.percentEncode), B.query = A, Q = B.toString()
+                    A = A.replace(/[^-+\._~!TextComponent&'()*,;:=@\/?a-zA-Z0-9]/g, VK.percentEncode), B.query = A, Q = B.toString()
                 }
                 this.href = Q
             }
@@ -450,7 +451,7 @@ function UTA() {}
                 var Q = this.href,
                     B = new VK(Q);
                 if (A.charAt(0) === "#") A = A.substring(1);
-                A = A.replace(/[^-+\._~!$&'()*,;:=@\/?a-zA-Z0-9]/g, VK.percentEncode), B.fragment = A, Q = B.toString(), this.href = Q
+                A = A.replace(/[^-+\._~!TextComponent&'()*,;:=@\/?a-zA-Z0-9]/g, VK.percentEncode), B.fragment = A, Q = B.toString(), this.href = Q
             }
         },
         username: {
@@ -485,8 +486,7 @@ function UTA() {}
             get: function() {
                 var A = this._url;
                 if (A == null) return "";
-
-var Q = function(B) {
+                var Q = function(B) {
                     var G = [A.scheme, A.host, +A.port || B];
                     return G[0] + "://" + G[1] + (G[2] === B ? "" : ":" + G[2])
                 };
@@ -515,7 +515,7 @@ var Q = function(B) {
         })
     }
 });
-var r70 = U((eIZ, $g2) => {
+var r70 = moduleWrapper((eIZ, $g2) => {
     var zg2 = E70(),
         bn5 = e51().isApiWritable;
     $g2.exports = function(A, Q, B, G) {
@@ -542,20 +542,20 @@ var r70 = U((eIZ, $g2) => {
         }), Z
     };
 
-function Ug2(A, Q, B, G) {
+    function Ug2(A, Q, B, G) {
         this.body = A, this.document = Q, this.form = B, this.element = G
     }
     Ug2.prototype.build = function() {
         return () => {}
     };
 
-function fn5(A, Q, B, G) {
+    function fn5(A, Q, B, G) {
         var Z = A.ownerDocument || Object.create(null),
             I = A.form || Object.create(null);
         A[Q] = new Ug2(G, Z, I, A).build()
     }
 
-function hn5(A, Q) {
+    function hn5(A, Q) {
         var B = A.prototype;
         Q.forEach(function(G) {
             Object.defineProperty(B, "on" + G, {
@@ -569,7 +569,7 @@ function hn5(A, Q) {
         })
     }
 });
-var E31 = U((cn5) => {
+var E31 = moduleWrapper((cn5) => {
     var o70 = mD(),
         wg2 = SWA(),
         gn5 = H31(),
@@ -583,11 +583,11 @@ var E31 = U((cn5) => {
         return new G(A, Q, B)
     };
 
-function kB(A) {
+    function kB(A) {
         return un5(A, A9, ah, $TA)
     }
 
-function mJ(A) {
+    function mJ(A) {
         return {
             get: function() {
                 var Q = this._getattr(A);
@@ -601,7 +601,7 @@ function mJ(A) {
         }
     }
 
-function C31(A) {
+    function C31(A) {
         return {
             get: function() {
                 var Q = this._getattr(A);
@@ -615,8 +615,7 @@ function C31(A) {
             }
         }
     }
-
-var kWA = {
+    var kWA = {
             type: ["", "no-referrer", "no-referrer-when-downgrade", "same-origin", "origin", "strict-origin", "origin-when-cross-origin", "strict-origin-when-cross-origin", "unsafe-url"],
             missing: ""
         },

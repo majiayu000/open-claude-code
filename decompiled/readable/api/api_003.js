@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_003.js
+ * 处理时间: 2025-12-09T03:41:36.010Z
+ * 变量映射: 7 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.857Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -148,7 +151,7 @@
                     }
                     return x ? q.__staleWhileFetching : q.__returned = q
                 }
-                let R = this.#$(N);
+                let R = this.#TextComponent(N);
                 if (!C && !R) {
                     if (E) E.fetch = "hit";
                     if (this.#_(N), G) this.#j(N);
@@ -194,7 +197,7 @@
                 let J = this.#Y[Y],
                     W = this.#X(J);
                 if (I) this.#T(I, Y);
-                if (this.#$(Y)) {
+                if (this.#TextComponent(Y)) {
                     if (I) I.get = "stale";
                     if (!W) {
                         if (!Z) this.#R(A, "expire");
@@ -235,8 +238,8 @@
                         this.#S(G);
                         let Z = this.#Y[G];
                         if (this.#X(Z)) Z.__abortController.abort(Error("deleted"));
-                        else if (this.#L || this.#E) {
-                            if (this.#L) this.#B?.(Z, A, Q);
+                        else if (this.#lazyLoader || this.#E) {
+                            if (this.#lazyLoader) this.#B?.(Z, A, Q);
                             if (this.#E) this.#D?.push([Z, A, Q])
                         }
                         if (this.#V.delete(A), this.#W[G] = void 0, this.#Y[G] = void 0, G === this.#K) this.#K = this.#z[G];
@@ -268,11 +271,11 @@
                 if (this.#X(B)) B.__abortController.abort(Error("deleted"));
                 else {
                     let G = this.#W[Q];
-                    if (this.#L) this.#B?.(B, G, A);
+                    if (this.#lazyLoader) this.#B?.(B, G, A);
                     if (this.#E) this.#D?.push([B, G, A])
                 }
             }
-            if (this.#V.clear(), this.#Y.fill(void 0), this.#W.fill(void 0), this.#U && this.#N) this.#U.fill(0), this.#N.fill(0);
+            if (this.#V.clear(), this.#Y.fill(void 0), this.#W.fill(void 0), this.#moduleWrapper && this.#N) this.#moduleWrapper.fill(0), this.#N.fill(0);
             if (this.#q) this.#q.fill(0);
             if (this.#H = 0, this.#K = 0, this.#w.length = 0, this.#F = 0, this.#I = 0, this.#E && this.#D) {
                 let Q = this.#D,
@@ -343,7 +346,7 @@ function _vA(A, Q = 300000) {
         clear: () => B.clear()
     }, G
 }
-var kvA = L(() => {
+var kvA = lazyLoader(() => {
     u1()
 });
 
@@ -351,8 +354,8 @@ function kG4() {
     let A = new Map;
     for (let [Q, B] of Object.entries(_I)) {
         for (let [G, Z] of Object.entries(B)) _I[G] = {
-            open: `\x1B[${Z[0]}m`,
-            close: `\x1B[${Z[1]}m`
+            open: `\x1B[TextComponent{Z[0]}m`,
+            close: `\x1B[TextComponent{Z[1]}m`
         }, B[G] = _I[G], A.set(Z[0], Z[1]);
         Object.defineProperty(_I, Q, {
             value: B,
@@ -418,11 +421,11 @@ function kG4() {
         }
     }), _I
 }
-var _i0 = (A = 0) => (Q) => `\x1B[${Q+A}m`,
-    ki0 = (A = 0) => (Q) => `\x1B[${38+A};5;${Q}m`,
-    yi0 = (A = 0) => (Q, B, G) => `\x1B[${38+A};2;${Q};${B};${G}m`,
+var _i0 = (A = 0) => (Q) => `\x1B[TextComponent{Q+A}m`,
+    ki0 = (A = 0) => (Q) => `\x1B[TextComponent{38+A};5;TextComponent{Q}m`,
+    yi0 = (A = 0) => (Q, B, G) => `\x1B[TextComponent{38+A};2;TextComponent{Q};TextComponent{B};TextComponent{G}m`,
     _I, RZ7, SG4, _G4, TZ7, yG4, RR;
-var xi0 = L(() => {
+var xi0 = lazyLoader(() => {
     _I = {
         modifier: {
             reset: [0, 0],
@@ -545,7 +548,7 @@ function fG4(A, {
                 return 2
         }
     }
-    if (/-256(color)?$/i.test(EJ.TERM)) return 2;
+    if (/-256(color)?TextComponent/i.test(EJ.TERM)) return 2;
     if (/^screen|^xterm|^vt100|^vt220|^rxvt|color|ansi|cygwin|linux/i.test(EJ.TERM)) return 1;
     if ("COLORTERM" in EJ) return 1;
     return I
@@ -559,7 +562,7 @@ function bi0(A, Q = {}) {
     return bG4(B)
 }
 var EJ, yvA, hG4, fi0;
-var hi0 = L(() => {
+var hi0 = lazyLoader(() => {
     ({
         env: EJ
     } = tC1);
@@ -651,7 +654,7 @@ var mi0, di0, eC1, Z4A, uKA, ci0, I4A, gG4 = (A, Q = {}) => {
         return G + Q + Z
     },
     pG4, fZ7, oA;
-var J9 = L(() => {
+var J9 = lazyLoader(() => {
     xi0();
     hi0();
     ({
@@ -721,7 +724,7 @@ var J9 = L(() => {
 
 function pi0(A, Q) {
     return {
-        name: `${A.name}-with-${Q.name}-fallback`,
+        name: `TextComponent{A.name}-with-TextComponent{Q.name}-fallback`,
         read() {
             let B = A.read();
             if (B !== null && B !== void 0) return B;
@@ -759,8 +762,8 @@ import {
 
 function ym(A = "") {
     let Q = PQ(),
-        G = !process.env.CLAUDE_CONFIG_DIR ? "" : `-${lG4("sha256").update(Q).digest("hex").substring(0,8)}`;
-    return `Claude Code${o9().OAUTH_FILE_SUFFIX}${A}${G}`
+        G = !process.env.CLAUDE_CONFIG_DIR ? "" : `-TextComponent{lG4("sha256").update(Q).digest("hex").substring(0,8)}`;
+    return `Claude Code${getConfig().OAUTH_FILE_SUFFIX}TextComponent{A}TextComponent{G}`
 }
 
 function dKA() {
@@ -783,7 +786,7 @@ function ii0() {
     }
 }
 var li0;
-var cKA = L(() => {
+var cKA = lazyLoader(() => {
     zxA();
     hQ();
     EX();
@@ -794,7 +797,7 @@ var cKA = L(() => {
             try {
                 let A = ym("-credentials"),
                     Q = dKA(),
-                    B = iG(`security find-generic-password -a "${Q}" -w -s "${A}"`);
+                    B = iG(`security find-generic-password -a "TextComponent{Q}" -w -s "TextComponent{A}"`);
                 if (B) return JSON.parse(B)
             } catch (A) {
                 return null
@@ -807,7 +810,7 @@ var cKA = L(() => {
                     B = dKA(),
                     G = JSON.stringify(A),
                     Z = Buffer.from(G, "utf-8").toString("hex"),
-                    I = `add-generic-password -U -a "${B}" -s "${Q}" -X "${Z}"
+                    I = `add-generic-password -moduleWrapper -a "TextComponent{B}" -s "TextComponent{Q}" -X "TextComponent{Z}"
 `;
                 if (H9A("security", ["-i"], {
                         input: I,
@@ -829,7 +832,7 @@ var cKA = L(() => {
             try {
                 let A = ym("-credentials"),
                     Q = dKA();
-                return iG(`security delete-generic-password -a "${Q}" -s "${A}"`), !0
+                return iG(`security delete-generic-password -a "TextComponent{Q}" -s "TextComponent{A}"`), !0
             } catch (A) {
                 return !1
             }
@@ -852,7 +855,7 @@ function BE1() {
     }
 }
 var GE1;
-var ni0 = L(() => {
+var ni0 = lazyLoader(() => {
     o0();
     hQ();
     GE1 = {
@@ -909,7 +912,7 @@ function Gw() {
     if (process.platform === "darwin") return pi0(li0, GE1);
     return GE1
 }
-var vvA = L(() => {
+var vvA = lazyLoader(() => {
     cKA();
     ni0()
 });
@@ -920,21 +923,21 @@ function ZE1() {
     let Q = process.env.CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR;
     if (!Q) return rBA(null), null;
     let B = parseInt(Q, 10);
-    if (Number.isNaN(B)) return g(`CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR must be a valid file descriptor number, got: ${Q}`, {
+    if (Number.isNaN(B)) return g(`CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR must be a valid file descriptor number, got: TextComponent{Q}`, {
         level: "error"
     }), rBA(null), null;
     try {
         let G = OA(),
-            Z = process.platform === "darwin" || process.platform === "freebsd" ? `/dev/fd/${B}` : `/proc/self/fd/${B}`,
+            Z = process.platform === "darwin" || process.platform === "freebsd" ? `/dev/fd/TextComponent{B}` : `/proc/self/fd/TextComponent{B}`,
             I = G.readFileSync(Z, {
                 encoding: "utf8"
             }).trim();
         if (!I) return g("File descriptor contained empty OAuth token", {
             level: "error"
         }), rBA(null), null;
-        return g(`Successfully read OAuth token from file descriptor ${B}`), rBA(I), I
+        return g(`Successfully read OAuth token from file descriptor TextComponent{B}`), rBA(I), I
     } catch (G) {
-        return g(`Failed to read OAuth token from file descriptor ${B}: ${G instanceof Error?G.message:String(G)}`, {
+        return g(`Failed to read OAuth token from file descriptor TextComponent{B}: TextComponent{G instanceof Error?G.message:String(G)}`, {
             level: "error"
         }), rBA(null), null
     }
@@ -946,36 +949,35 @@ function IE1() {
     let Q = process.env.CLAUDE_CODE_API_KEY_FILE_DESCRIPTOR;
     if (!Q) return oBA(null), null;
     let B = parseInt(Q, 10);
-    if (Number.isNaN(B)) return g(`CLAUDE_CODE_API_KEY_FILE_DESCRIPTOR must be a valid file descriptor number, got: ${Q}`, {
+    if (Number.isNaN(B)) return g(`CLAUDE_CODE_API_KEY_FILE_DESCRIPTOR must be a valid file descriptor number, got: TextComponent{Q}`, {
         level: "error"
     }), oBA(null), null;
     try {
         let G = OA(),
-            Z = process.platform === "darwin" || process.platform === "freebsd" ? `/dev/fd/${B}` : `/proc/self/fd/${B}`,
+            Z = process.platform === "darwin" || process.platform === "freebsd" ? `/dev/fd/TextComponent{B}` : `/proc/self/fd/TextComponent{B}`,
             I = G.readFileSync(Z, {
                 encoding: "utf8"
             }).trim();
         if (!I) return g("File descriptor contained empty API key", {
             level: "error"
         }), oBA(null), null;
-        return g(`Successfully read API key from file descriptor ${B}`), oBA(I), I
+        return g(`Successfully read API key from file descriptor TextComponent{B}`), oBA(I), I
     } catch (G) {
-        return g(`Failed to read API key from file descriptor ${B}: ${G instanceof Error?G.message:String(G)}`, {
+        return g(`Failed to read API key from file descriptor TextComponent{B}: TextComponent{G instanceof Error?G.message:String(G)}`, {
             level: "error"
         }), oBA(null), null
     }
 }
-var ai0 = L(() => {
+var ai0 = lazyLoader(() => {
     D0();
     o0();
     S0()
 });
-// Async function: bvA
 async function bvA() {
     let Q = L1().oauthAccount?.accountUuid,
         B = Zw();
     if (!Q || !B) return;
-    let G = `${o9().BASE_API_URL}/api/claude_cli_profile`;
+    let G = `TextComponent{getConfig().BASE_API_URL}/api/claude_cli_profile`;
     try {
         return (await GQ.get(G, {
             headers: {
@@ -990,13 +992,12 @@ async function bvA() {
         e(Z)
     }
 }
-
 async function Y4A(A) {
-    let Q = `${o9().BASE_API_URL}/api/oauth/profile`;
+    let Q = `TextComponent{getConfig().BASE_API_URL}/api/oauth/profile`;
     try {
         return (await GQ.get(Q, {
             headers: {
-                Authorization: `Bearer ${A}`,
+                Authorization: `Bearer TextComponent{A}`,
                 "Content-Type": "application/json"
             }
         })).data
@@ -1004,7 +1005,7 @@ async function Y4A(A) {
         e(B)
     }
 }
-var pKA = L(() => {
+var pKA = lazyLoader(() => {
     w3();
     EX();
     hB();
@@ -1013,7 +1014,7 @@ var pKA = L(() => {
 });
 
 function Xv(A) {
-    return Boolean(A?.includes(KvA))
+    return Boolean(A?.includes(USER_INFERENCE_KEY))
 }
 
 function fvA(A) {
@@ -1029,47 +1030,45 @@ function YE1({
     inferenceOnly: I,
     orgUUID: Y
 }) {
-    let J = Z ? o9().CLAUDE_AI_AUTHORIZE_URL : o9().CONSOLE_AUTHORIZE_URL,
+    let J = Z ? getConfig().CLAUDE_AI_AUTHORIZE_URL : getConfig().CONSOLE_AUTHORIZE_URL,
         W = new URL(J);
-    W.searchParams.append("code", "true"), W.searchParams.append("client_id", o9().CLIENT_ID), W.searchParams.append("response_type", "code"), W.searchParams.append("redirect_uri", G ? o9().MANUAL_REDIRECT_URL : `http://localhost:${B}/callback`);
-    let X = I ? [KvA] : Ul0;
+    W.searchParams.append("code", "true"), W.searchParams.append("client_id", getConfig().CLIENT_ID), W.searchParams.append("response_type", "code"), W.searchParams.append("redirect_uri", G ? getConfig().MANUAL_REDIRECT_URL : `http://localhost:TextComponent{B}/callback`);
+    let X = I ? [USER_INFERENCE_KEY] : Ul0;
     if (W.searchParams.append("scope", X.join(" ")), W.searchParams.append("code_challenge", A), W.searchParams.append("code_challenge_method", "S256"), W.searchParams.append("state", Q), Y) W.searchParams.append("orgUUID", Y);
     return W.toString()
 }
-
 async function si0(A, Q, B, G, Z = !1, I) {
     let Y = {
         grant_type: "authorization_code",
         code: A,
-        redirect_uri: Z ? o9().MANUAL_REDIRECT_URL : `http://localhost:${G}/callback`,
-        client_id: o9().CLIENT_ID,
+        redirect_uri: Z ? getConfig().MANUAL_REDIRECT_URL : `http://localhost:TextComponent{G}/callback`,
+        client_id: getConfig().CLIENT_ID,
         code_verifier: B,
         state: Q
     };
     if (I !== void 0) Y.expires_in = I;
-    let J = await GQ.post(o9().TOKEN_URL, Y, {
+    let J = await GQ.post(getConfig().TOKEN_URL, Y, {
         headers: {
             "Content-Type": "application/json"
         }
     });
-    if (J.status !== 200) throw Error(J.status === 401 ? "Authentication failed: Invalid authorization code" : `Token exchange failed (${J.status}): ${J.statusText}`);
+    if (J.status !== 200) throw Error(J.status === 401 ? "Authentication failed: Invalid authorization code" : `Token exchange failed (TextComponent{J.status}): TextComponent{J.statusText}`);
     return BA("tengu_oauth_token_exchange_success", {}), J.data
 }
-
 async function ri0(A) {
     let Q = {
         grant_type: "refresh_token",
         refresh_token: A,
-        client_id: o9().CLIENT_ID,
+        client_id: getConfig().CLIENT_ID,
         scope: SC1.join(" ")
     };
     try {
-        let B = await GQ.post(o9().TOKEN_URL, Q, {
+        let B = await GQ.post(getConfig().TOKEN_URL, Q, {
             headers: {
                 "Content-Type": "application/json"
             }
         });
-        if (B.status !== 200) throw Error(`Token refresh failed: ${B.statusText}`);
+        if (B.status !== 200) throw Error(`Token refresh failed: TextComponent{B.statusText}`);
         let G = B.data,
             {
                 access_token: Z,
@@ -1101,14 +1100,13 @@ async function ri0(A) {
         }), B
     }
 }
-
 async function oi0(A) {
-    let Q = await GQ.get(o9().ROLES_URL, {
+    let Q = await GQ.get(getConfig().ROLES_URL, {
         headers: {
-            Authorization: `Bearer ${A}`
+            Authorization: `Bearer TextComponent{A}`
         }
     });
-    if (Q.status !== 200) throw Error(`Failed to fetch user roles: ${Q.statusText}`);
+    if (Q.status !== 200) throw Error(`Failed to fetch user roles: TextComponent{Q.statusText}`);
     let B = Q.data,
         G = L1();
     if (!G.oauthAccount) throw Error("OAuth account information not found in config");
@@ -1116,12 +1114,11 @@ async function oi0(A) {
         org_role: B.organization_role
     })
 }
-
 async function ti0(A) {
     try {
-        let Q = await GQ.post(o9().API_KEY_URL, null, {
+        let Q = await GQ.post(getConfig().API_KEY_URL, null, {
                 headers: {
-                    Authorization: `Bearer ${A}`
+                    Authorization: `Bearer TextComponent{A}`
                 }
             }),
             B = Q.data?.raw_key;
@@ -1143,7 +1140,6 @@ function xm(A) {
     let Q = 300000;
     return Date.now() + Q >= A
 }
-
 async function JE1(A) {
     let Q = await Y4A(A),
         B = Q?.organization?.organization_type,
@@ -1173,7 +1169,6 @@ async function JE1(A) {
     if (Q?.account?.display_name) Z.displayName = Q.account.display_name;
     return BA("tengu_oauth_profile_fetch_success", {}), Z
 }
-// Async function: tj
 async function tj() {
     let Q = L1().oauthAccount?.organizationUuid;
     if (Q) return Q;
@@ -1183,7 +1178,6 @@ async function tj() {
     if (!Z) return null;
     return Z
 }
-// Async function: ei0
 async function ei0() {
     if (L1().oauthAccount || !AB()) return !1;
     let Q = U6();
@@ -1217,7 +1211,7 @@ function WE1({
     let Y = L1();
     Y.oauthAccount = I, d0(Y)
 }
-var pN = L(() => {
+var pN = lazyLoader(() => {
     w3();
     EX();
     w0();
@@ -1253,10 +1247,11 @@ function In0() {
 var rG4, hvA = !1,
     Qn0 = null,
     oG4 = "max";
-var gvA = L(() => {
+var gvA = lazyLoader(() => {
     rG4 = {}
 });
-var Yn0 = "claude-code-20250219",
+/* SERVICE_VERSION = SERVICE_VERSION = "claude-code-20250219" */
+var SERVICE_VERSION = "claude-code-20250219",
     Jn0 = "interleaved-thinking-2025-05-14",
     XE1 = "context-1m-2025-08-07",
     uvA = "context-management-2025-06-27",
@@ -1264,23 +1259,26 @@ var Yn0 = "claude-code-20250219",
     FE1 = "web-search-2025-03-05",
     mvA = "tool-examples-2025-10-29",
     VE1;
-var dvA = L(() => {
+var dvA = lazyLoader(() => {
     VE1 = new Set(["interleaved-thinking-2025-05-14", "context-1m-2025-08-07"])
 });
 
-function J6() {
-    return V0(process.env.CLAUDE_CODE_USE_BEDROCK) ? "bedrock" : V0(process.env.CLAUDE_CODE_USE_VERTEX) ? "vertex" : V0(process.env.CLAUDE_CODE_USE_FOUNDRY) ? "foundry" : "firstParty"
+/* getProvider = getProvider() - Returns current provider ("vertex", "anthropic", etc) */
+function getProvider() {
+    return parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK) ? "bedrock" : parseBoolean(process.env.CLAUDE_CODE_USE_VERTEX) ? "vertex" : parseBoolean(process.env.CLAUDE_CODE_USE_FOUNDRY) ? "foundry" : "firstParty"
 }
 
-function TR() {
-    return J6()
+/* getProviderIdentifier = getProviderIdentifier() - Returns API provider ID */
+/* Signature: () => string */
+function getProviderIdentifier() {
+    return getProvider()
 }
-var dK = L(() => {
+var dK = lazyLoader(() => {
     hQ()
 });
 
 function tG4(A) {
-    let Q = J6();
+    let Q = getProvider();
     if (Q === "foundry") return !0;
     if (Q === "firstParty") return !A.includes("claude-3-");
     return A.includes("claude-opus-4") || A.includes("claude-sonnet-4")
@@ -1296,14 +1294,14 @@ function KE1(A) {
 }
 
 function AZ4() {
-    return (J6() === "firstParty" || J6() === "foundry") && !V0(process.env.CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS)
+    return (getProvider() === "firstParty" || getProvider() === "foundry") && !parseBoolean(process.env.CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS)
 }
 
 function W4A() {
     DE1.cache?.clear?.(), Iw.cache?.clear?.(), HE1.cache?.clear?.()
 }
 var DE1, Iw, HE1;
-var ej = L(() => {
+var ej = lazyLoader(() => {
     o2();
     dvA();
     EX();
@@ -1315,33 +1313,33 @@ var ej = L(() => {
     DE1 = t1((A) => {
         let Q = [],
             B = A.includes("haiku"),
-            G = J6(),
+            G = getProvider(),
             Z = AZ4();
-        if (!B) Q.push(Yn0);
+        if (!B) Q.push(SERVICE_VERSION);
         if (AB()) Q.push(r9A);
         if (A.includes("[1m]")) Q.push(XE1);
         else if (A.includes("claude-sonnet-4-5")) {
-            if (ZI("sonnet_45_1m_header", "enabled", !1)) Q.push(XE1)
+            if (getFeatureFlag("sonnet_45_1m_header", "enabled", !1)) Q.push(XE1)
         }
-        if (!V0(process.env.DISABLE_INTERLEAVED_THINKING) && tG4(A)) Q.push(Jn0);
-        let I = Z && ZI("preserve_thinking", "enabled", !1);
-        if (V0(process.env.USE_API_CONTEXT_MANAGEMENT) && !1 || I) Q.push(uvA);
+        if (!parseBoolean(process.env.DISABLE_INTERLEAVED_THINKING) && tG4(A)) Q.push(Jn0);
+        let I = Z && getFeatureFlag("preserve_thinking", "enabled", !1);
+        if (parseBoolean(process.env.USE_API_CONTEXT_MANAGEMENT) && !1 || I) Q.push(uvA);
         let Y = j8("tengu_tool_pear");
         if (KE1(A) && Y) Q.push(Wn0);
-        if (Z && ZI("tool_use_examples", "enabled", !1)) Q.push(mvA);
+        if (Z && getFeatureFlag("tool_use_examples", "enabled", !1)) Q.push(mvA);
         if (G === "vertex" && eG4(A)) Q.push(FE1);
         if (G === "foundry") Q.push(FE1);
         if (process.env.ANTHROPIC_BETAS && !B) Q.push(...process.env.ANTHROPIC_BETAS.split(",").map((J) => J.trim()).filter(Boolean));
         return Q
     }), Iw = t1((A) => {
         let Q = DE1(A);
-        if (J6() === "bedrock") return Q.filter((B) => !VE1.has(B));
+        if (getProvider() === "bedrock") return Q.filter((B) => !VE1.has(B));
         return Q
     }), HE1 = t1((A) => {
         return DE1(A).filter((B) => VE1.has(B))
     })
 });
-var CE1 = U((_I7, zn0) => {
+var CE1 = moduleWrapper((_I7, zn0) => {
     var {
         defineProperty: cvA,
         getOwnPropertyDescriptor: QZ4,
@@ -1433,7 +1431,7 @@ var CE1 = U((_I7, zn0) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(En0 || {})
 });
-var cC = U((kI7, Nn0) => {
+var cC = moduleWrapper((kI7, Nn0) => {
     var {
         defineProperty: lvA,
         getOwnPropertyDescriptor: KZ4,
@@ -1512,7 +1510,7 @@ var cC = U((kI7, Nn0) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values

@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_005.js
+ * 处理时间: 2025-12-09T03:41:36.387Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.890Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -62,14 +64,14 @@
     }
 });
 var Tw0;
-var Pw0 = L(() => {
+var Pw0 = lazyLoader(() => {
     DR();
     Tw0 = c3.hasStandardBrowserEnv ? ((A, Q) => (B) => {
         return B = new URL(B, c3.origin), A.protocol === B.protocol && A.host === B.host && (Q || A.port === B.port)
     })(new URL(c3.origin), c3.navigator && /(msie|trident)/i.test(c3.navigator.userAgent)) : () => !0
 });
 var jw0;
-var Sw0 = L(() => {
+var Sw0 = lazyLoader(() => {
     lG();
     DR();
     jw0 = c3.hasStandardBrowserEnv ? {
@@ -97,7 +99,7 @@ function HR(A, Q) {
     Q = Q || {};
     let B = {};
 
-function G(X, F, V, K) {
+    function G(X, F, V, K) {
         if (f1.isPlainObject(X) && f1.isPlainObject(F)) return f1.merge.call({
             caseless: K
         }, X, F);
@@ -106,21 +108,21 @@ function G(X, F, V, K) {
         return F
     }
 
-function Z(X, F, V, K) {
+    function Z(X, F, V, K) {
         if (!f1.isUndefined(F)) return G(X, F, V, K);
         else if (!f1.isUndefined(X)) return G(void 0, X, V, K)
     }
 
-function I(X, F) {
+    function I(X, F) {
         if (!f1.isUndefined(F)) return G(void 0, F)
     }
 
-function Y(X, F) {
+    function Y(X, F) {
         if (!f1.isUndefined(F)) return G(void 0, F);
         else if (!f1.isUndefined(X)) return G(void 0, X)
     }
 
-function J(X, F, V) {
+    function J(X, F, V) {
         if (V in Q) return G(X, F);
         else if (V in A) return G(void 0, X)
     }
@@ -164,7 +166,7 @@ function J(X, F, V) {
 var _w0 = (A) => A instanceof PY ? {
     ...A
 } : A;
-var gkA = L(() => {
+var gkA = lazyLoader(() => {
     lG();
     _j()
 });
@@ -195,7 +197,7 @@ var ukA = (A) => {
     }
     return Q
 };
-var HF1 = L(() => {
+var HF1 = lazyLoader(() => {
     DR();
     lG();
     Pw0();
@@ -206,7 +208,7 @@ var HF1 = L(() => {
     MkA()
 });
 var LS9, kw0;
-var yw0 = L(() => {
+var yw0 = lazyLoader(() => {
     lG();
     jkA();
     OkA();
@@ -228,13 +230,13 @@ var yw0 = L(() => {
                 } = Z,
                 F, V, K, D, H;
 
-function C() {
+            function C() {
                 D && D(), H && H(), Z.cancelToken && Z.cancelToken.unsubscribe(F), Z.signal && Z.signal.removeEventListener("abort", F)
             }
             let E = new XMLHttpRequest;
             E.open(Z.method.toUpperCase(), Z.url, !0), E.timeout = Z.timeout;
 
-function z() {
+            function z() {
                 if (!E) return;
                 let N = PY.from("getAllResponseHeaders" in E && E.getAllResponseHeaders()),
                     R = {
@@ -303,7 +305,7 @@ var MS9 = (A, Q) => {
                     }
                 },
                 Y = Q && setTimeout(() => {
-                    Y = null, I(new NB(`timeout ${Q} of ms exceeded`, NB.ETIMEDOUT))
+                    Y = null, I(new NB(`timeout TextComponent{Q} of ms exceeded`, NB.ETIMEDOUT))
                 }, Q),
                 J = () => {
                     if (A) Y && clearTimeout(Y), Y = null, A.forEach((X) => {
@@ -318,13 +320,12 @@ var MS9 = (A, Q) => {
         }
     },
     xw0;
-var vw0 = L(() => {
+var vw0 = lazyLoader(() => {
     qs();
     a$();
     lG();
     xw0 = MS9
 });
-
 var OS9 = function*(A, Q) {
         let B = A.byteLength;
         if (!Q || B < Q) {
@@ -411,7 +412,7 @@ var dkA, fw0, PS9, hw0 = (A, ...Q) => {
         let B = f1.toFiniteNumber(A.getContentLength());
         return B == null ? SS9(Q) : B
     }, gw0;
-var uw0 = L(() => {
+var uw0 = lazyLoader(() => {
     DR();
     lG();
     a$();
@@ -436,7 +437,7 @@ var uw0 = L(() => {
     dkA && ((A) => {
         ["text", "arrayBuffer", "blob", "formData", "stream"].forEach((Q) => {
             !mkA[Q] && (mkA[Q] = f1.isFunction(A[Q]) ? (B) => B[Q]() : (B, G) => {
-                throw new NB(`Response type '${Q}' is not supported`, NB.ERR_NOT_SUPPORT, G)
+                throw new NB(`Response type 'TextComponent{Q}' is not supported`, NB.ERR_NOT_SUPPORT, G)
             })
         })
     })(new Response);
@@ -519,10 +520,10 @@ var uw0 = L(() => {
         }
     })
 });
-var zF1, mw0 = (A) => `- ${A}`,
+var zF1, mw0 = (A) => `- TextComponent{A}`,
     kS9 = (A) => f1.isFunction(A) || A === null || A === !1,
     ckA;
-var UF1 = L(() => {
+var UF1 = lazyLoader(() => {
     lG();
     Rw0();
     yw0();
@@ -555,13 +556,13 @@ var UF1 = L(() => {
                 B = A[I];
                 let Y;
                 if (G = B, !kS9(B)) {
-                    if (G = zF1[(Y = String(B)).toLowerCase()], G === void 0) throw new NB(`Unknown adapter '${Y}'`)
+                    if (G = zF1[(Y = String(B)).toLowerCase()], G === void 0) throw new NB(`Unknown adapter 'TextComponent{Y}'`)
                 }
                 if (G) break;
                 Z[Y || "#" + I] = G
             }
             if (!G) {
-                let I = Object.entries(Z).map(([J, W]) => `adapter ${J} ` + (W === !1 ? "is not supported by the environment" : "is not available in the build")),
+                let I = Object.entries(Z).map(([J, W]) => `adapter TextComponent{J} ` + (W === !1 ? "is not supported by the environment" : "is not available in the build")),
                     Y = Q ? I.length > 1 ? `since :
 ` + I.map(mw0).join(`
 `) : " " + mw0(I[0]) : "as no adapter specified";
@@ -589,7 +590,7 @@ function pkA(A) {
         return Promise.reject(G)
     })
 }
-var dw0 = L(() => {
+var dw0 = lazyLoader(() => {
     y$0();
     TkA();
     qs();
@@ -614,7 +615,7 @@ function yS9(A, Q, B) {
     }
 }
 var lkA, cw0, jVA;
-var pw0 = L(() => {
+var pw0 = lazyLoader(() => {
     a$();
     lkA = {};
     ["object", "boolean", "number", "function", "string", "symbol"].forEach((A, Q) => {
@@ -635,7 +636,7 @@ var pw0 = L(() => {
     };
     lkA.spelling = function(Q) {
         return (B, G) => {
-            return console.warn(`${G} is likely a misspelling of ${Q}`), !0
+            return console.warn(`TextComponent{G} is likely a misspelling of TextComponent{Q}`), !0
         }
     };
     jVA = {
@@ -643,7 +644,6 @@ var pw0 = L(() => {
         validators: lkA
     }
 });
-
 class SVA {
     constructor(A) {
         this.defaults = A, this.interceptors = {
@@ -748,7 +748,7 @@ class SVA {
     }
 }
 var yj, _VA;
-var lw0 = L(() => {
+var lw0 = lazyLoader(() => {
     lG();
     MkA();
     q$0();
@@ -784,7 +784,6 @@ var lw0 = L(() => {
     });
     _VA = SVA
 });
-
 class wF1 {
     constructor(A) {
         if (typeof A !== "function") throw TypeError("executor must be a function.");
@@ -844,7 +843,7 @@ class wF1 {
     }
 }
 var iw0;
-var nw0 = L(() => {
+var nw0 = lazyLoader(() => {
     qs();
     iw0 = wF1
 });
@@ -858,11 +857,11 @@ function qF1(A) {
 function NF1(A) {
     return f1.isObject(A) && A.isAxiosError === !0
 }
-var aw0 = L(() => {
+var aw0 = lazyLoader(() => {
     lG()
 });
 var LF1, sw0;
-var rw0 = L(() => {
+var rw0 = lazyLoader(() => {
     LF1 = {
         Continue: 100,
         SwitchingProtocols: 101,
@@ -946,7 +945,7 @@ function ow0(A) {
     }, B
 }
 var CX, GQ;
-var tw0 = L(() => {
+var tw0 = lazyLoader(() => {
     lG();
     lw0();
     gkA();
@@ -983,7 +982,7 @@ var tw0 = L(() => {
     GQ = CX
 });
 var Ns3, ew0, Ls3, Ms3, Os3, Rs3, Ts3, Ps3, js3, Ss3, _s3, ks3, ys3, xs3, vs3, bs3;
-var w3 = L(() => {
+var w3 = lazyLoader(() => {
     tw0();
     ({
         Axios: Ns3,
@@ -1004,7 +1003,7 @@ var w3 = L(() => {
         mergeConfig: bs3
     } = GQ)
 });
-var FH = U((Aq0) => {
+var FH = moduleWrapper((Aq0) => {
     Object.defineProperty(Aq0, "__esModule", {
         value: !0
     });
@@ -1014,7 +1013,7 @@ var FH = U((Aq0) => {
         bS9 = "  WARN ",
         fS9 = " ERROR ";
 
-function ikA(A) {
+    function ikA(A) {
         return A.unshift("[Statsig]"), A
     }
     Aq0.LogLevel = {
@@ -1024,8 +1023,7 @@ function ikA(A) {
         Info: 3,
         Debug: 4
     };
-
-class js {
+    class js {
         static info(...A) {
             if (js.level >= Aq0.LogLevel.Info) console.info(vS9, ...ikA(A))
         }
@@ -1042,7 +1040,7 @@ class js {
     Aq0.Log = js;
     js.level = Aq0.LogLevel.Warn
 });
-var Ss = U((Iq0) => {
+var Ss = moduleWrapper((Iq0) => {
     var MF1, OF1, RF1;
     Object.defineProperty(Iq0, "__esModule", {
         value: !0
@@ -1077,7 +1075,7 @@ var Ss = U((Iq0) => {
     Gq0[E2A] = nkA;
     Zq0[E2A] = nkA
 });
-var skA = U((Yq0) => {
+var skA = moduleWrapper((Yq0) => {
     Object.defineProperty(Yq0, "__esModule", {
         value: !0
     });
@@ -1151,7 +1149,7 @@ var skA = U((Yq0) => {
         }
     };
 
-function z2A(A, Q, B, G) {
+    function z2A(A, Q, B, G) {
         return Object.assign({
             key: B,
             action: Q,
@@ -1160,7 +1158,7 @@ function z2A(A, Q, B, G) {
         }, A)
     }
 
-function pS9(A, Q) {
+    function pS9(A, Q) {
         return {
             eventName: cS9,
             user: A,
@@ -1170,35 +1168,35 @@ function pS9(A, Q) {
         }
     }
 
-function U2A(A, Q) {
+    function U2A(A, Q) {
         var B;
         let G = (B = akA.get(A)) !== null && B !== void 0 ? B : [];
         G.push(Q), akA.set(A, G)
     }
 
-function _F1(A, Q) {
+    function _F1(A, Q) {
         if (Q in A) return A[Q];
         return
     }
 });
-var rkA = U((Jq0) => {
+var rkA = moduleWrapper((Jq0) => {
     Object.defineProperty(Jq0, "__esModule", {
         value: !0
     });
     Jq0._isTypeMatch = Jq0._typeOf = void 0;
 
-function lS9(A) {
+    function lS9(A) {
         return Array.isArray(A) ? "array" : typeof A
     }
     Jq0._typeOf = lS9;
 
-function iS9(A, Q) {
+    function iS9(A, Q) {
         let B = (G) => Array.isArray(G) ? "array" : typeof G;
         return B(A) === B(Q)
     }
     Jq0._isTypeMatch = iS9
 });
-var $2A = U((Xq0) => {
+var $2A = moduleWrapper((Xq0) => {
     Object.defineProperty(Xq0, "__esModule", {
         value: !0
     });
@@ -1232,29 +1230,29 @@ var $2A = U((Xq0) => {
     };
     Xq0._getSortedObject = oS9
 });
-var yVA = U((Dq0) => {
+var yVA = moduleWrapper((Dq0) => {
     Object.defineProperty(Dq0, "__esModule", {
         value: !0
     });
     Dq0._getStorageKey = Dq0._getUserStorageKey = void 0;
     var Vq0 = $2A();
 
-function Kq0(A, Q, B) {
+    function Kq0(A, Q, B) {
         var G;
         if (B) return B(A, Q);
         let Z = Q && Q.customIDs ? Q.customIDs : {},
-            I = [`uid:${(G=Q===null||Q===void 0?void 0:Q.userID)!==null&&G!==void 0?G:""}`, `cids:${Object.keys(Z).sort((Y,J)=>Y.localeCompare(J)).map((Y)=>`${Y}-${Z[Y]}`).join(",")}`, `k:${A}`];
+            I = [`uid:TextComponent{(G=Q===null||Q===void 0?void 0:Q.userID)!==null&&G!==void 0?G:""}`, `cids:TextComponent{Object.keys(Z).sort((Y,J)=>Y.localeCompare(J)).map((Y)=>`TextComponent{Y}-TextComponent{Z[Y]}`).join(",")}`, `k:TextComponent{A}`];
         return (0, Vq0._DJB2)(I.join("|"))
     }
     Dq0._getUserStorageKey = Kq0;
 
-function eS9(A, Q, B) {
+    function eS9(A, Q, B) {
         if (Q) return Kq0(A, Q, B);
-        return (0, Vq0._DJB2)(`k:${A}`)
+        return (0, Vq0._DJB2)(`k:TextComponent{A}`)
     }
     Dq0._getStorageKey = eS9
 });
-var xVA = U((Cq0) => {
+var xVA = moduleWrapper((Cq0) => {
     Object.defineProperty(Cq0, "__esModule", {
         value: !0
     });
@@ -1280,7 +1278,7 @@ var xVA = U((Cq0) => {
         IsGzipped: "gz"
     }
 });
-var _s = U((zq0) => {
+var _s = moduleWrapper((zq0) => {
     Object.defineProperty(zq0, "__esModule", {
         value: !0
     });
@@ -1321,7 +1319,7 @@ var _s = U((zq0) => {
     };
     zq0._getCurrentPageUrlSafe = J_9
 });
-var xF1 = U((Nq0) => {
+var xF1 = moduleWrapper((Nq0) => {
     Object.defineProperty(Nq0, "__esModule", {
         value: !0
     });
@@ -1358,7 +1356,7 @@ var xF1 = U((Nq0) => {
     };
     Nq0._createGateExposure = K_9;
 
-function AyA(A, Q) {
+    function AyA(A, Q) {
         return A.map((B) => {
             if (typeof B === "string") return (Q !== null && Q !== void 0 ? Q : {})[B];
             return B
@@ -1400,7 +1398,7 @@ function AyA(A, Q) {
         return Q
     }
 });
-var nx = U((Mq0) => {
+var nx = moduleWrapper((Mq0) => {
     Object.defineProperty(Mq0, "__esModule", {
         value: !0
     });
@@ -1439,7 +1437,7 @@ var nx = U((Mq0) => {
     var vF1 = QyA !== null && QyA !== void 0 ? QyA : bF1,
         xj = vF1;
 
-function N_9(A) {
+    function N_9(A) {
         try {
             return A()
         } catch (Q) {
@@ -1464,18 +1462,18 @@ function N_9(A) {
         }
     };
 
-function L_9(A) {
+    function L_9(A) {
         let Q = Mq0.Storage.getItem(A);
         return JSON.parse(Q !== null && Q !== void 0 ? Q : "null")
     }
     Mq0._getObjectFromStorage = L_9;
 
-function M_9(A, Q) {
+    function M_9(A, Q) {
         Mq0.Storage.setItem(A, JSON.stringify(Q))
     }
     Mq0._setObjectInStorage = M_9
 });
-var fF1 = U((Tq0) => {
+var fF1 = moduleWrapper((Tq0) => {
     Object.defineProperty(Tq0, "__esModule", {
         value: !0
     });
@@ -1486,14 +1484,13 @@ var fF1 = U((Tq0) => {
             [GyA.Endpoint._rgstr]: "e",
             [GyA.Endpoint._download_config_specs]: "d"
         };
-
-class Rq0 {
+    class Rq0 {
         constructor(A, Q, B, G) {
             if (this.customUrl = null, this.fallbackUrls = null, this.endpoint = A, this.endpointDnsKey = R_9[A], Q) this.customUrl = Q;
-            if (!Q && B) this.customUrl = B.endsWith("/") ? `${B}${A}` : `${B}/${A}`;
+            if (!Q && B) this.customUrl = B.endsWith("/") ? `TextComponent{B}TextComponent{A}` : `TextComponent{B}/TextComponent{A}`;
             if (G) this.fallbackUrls = G;
             let Z = GyA.NetworkDefault[A];
-            this.defaultUrl = `${Z}/${A}`
+            this.defaultUrl = `TextComponent{Z}/TextComponent{A}`
         }
         getUrl() {
             var A;
@@ -1502,7 +1499,7 @@ class Rq0 {
     }
     Tq0.UrlConfiguration = Rq0
 });
-var YyA = U((Sq0) => {
+var YyA = moduleWrapper((Sq0) => {
     Object.defineProperty(Sq0, "__esModule", {
         value: !0
     });

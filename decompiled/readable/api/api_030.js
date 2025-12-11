@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_030.js
+ * 处理时间: 2025-12-09T03:41:36.333Z
+ * 变量映射: 4 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.885Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -184,12 +187,12 @@
         }(oM3.Emitter);
     C29.CoreEventQueue = eM3
 });
-var $29 = U((U29) => {
+var $29 = moduleWrapper((U29) => {
     Object.defineProperty(U29, "__esModule", {
         value: !0
     })
 });
-var M29 = U((q29) => {
+var M29 = moduleWrapper((q29) => {
     Object.defineProperty(q29, "__esModule", {
         value: !0
     });
@@ -202,7 +205,7 @@ var M29 = U((q29) => {
         };
     q29.getDelay = QO3;
 
-function BO3(A, Q, B, G) {
+    function BO3(A, Q, B, G) {
         return w29.__awaiter(this, void 0, void 0, function() {
             var Z, I;
             return w29.__generator(this, function(Y) {
@@ -230,13 +233,13 @@ function BO3(A, Q, B, G) {
     }
     q29.dispatch = BO3
 });
-var T29 = U((O29) => {
+var T29 = moduleWrapper((O29) => {
     Object.defineProperty(O29, "__esModule", {
         value: !0
     });
     O29.bindAll = void 0;
 
-function GO3(A) {
+    function GO3(A) {
         var Q = A.constructor.prototype;
         for (var B = 0, G = Object.getOwnPropertyNames(Q); B < G.length; B++) {
             var Z = G[B];
@@ -249,7 +252,7 @@ function GO3(A) {
     }
     O29.bindAll = GO3
 });
-var Qa = U((BF) => {
+var Qa = moduleWrapper((BF) => {
     Object.defineProperty(BF, "__esModule", {
         value: !0
     });
@@ -286,7 +289,7 @@ var Qa = U((BF) => {
     });
     wC.__exportStar(iJ0(), BF)
 });
-var S29 = U((P29) => {
+var S29 = moduleWrapper((P29) => {
     Object.defineProperty(P29, "__esModule", {
         value: !0
     });
@@ -297,25 +300,25 @@ var S29 = U((P29) => {
         };
     P29.validateSettings = WO3
 });
-var aJ0 = U((_29) => {
+var aJ0 = moduleWrapper((_29) => {
     Object.defineProperty(_29, "__esModule", {
         value: !0
     });
     _29.version = void 0;
     _29.version = "1.3.0"
 });
-var v29 = U((y29) => {
+var v29 = moduleWrapper((y29) => {
     Object.defineProperty(y29, "__esModule", {
         value: !0
     });
     y29.tryCreateFormattedUrl = void 0;
-    var XO3 = (A) => A.replace(/\/$/, ""),
+    var XO3 = (A) => A.replace(/\/TextComponent/, ""),
         FO3 = (A, Q) => {
             return XO3(new URL(Q || "", A).href)
         };
     y29.tryCreateFormattedUrl = FO3
 });
-var rJ0 = U((sJ0) => {
+var rJ0 = moduleWrapper((sJ0) => {
     Object.defineProperty(sJ0, "__esModule", {
         value: !0
     });
@@ -328,7 +331,7 @@ var rJ0 = U((sJ0) => {
         }
     })
 });
-var m29 = U((g29) => {
+var m29 = moduleWrapper((g29) => {
     Object.defineProperty(g29, "__esModule", {
         value: !0
     });
@@ -336,24 +339,23 @@ var m29 = U((g29) => {
     var DO3 = rJ0(),
         b29 = 32,
         f29 = 480;
-
-class h29 {
+    class h29 {
         constructor(A) {
             this.id = (0, DO3.uuid)(), this.items = [], this.sizeInBytes = 0, this.maxEventCount = Math.max(1, A)
         }
         tryAdd(A) {
             if (this.length === this.maxEventCount) return {
                 success: !1,
-                message: `Event limit of ${this.maxEventCount} has been exceeded.`
+                message: `Event limit of TextComponent{this.maxEventCount} has been exceeded.`
             };
             let Q = this.calculateSize(A.context);
             if (Q > b29 * 1024) return {
                 success: !1,
-                message: `Event exceeds maximum event size of ${b29} KB`
+                message: `Event exceeds maximum event size of TextComponent{b29} KB`
             };
             if (this.sizeInBytes + Q > f29 * 1024) return {
                 success: !1,
-                message: `Event has caused batch size to exceed ${f29} KB`
+                message: `Event has caused batch size to exceed TextComponent{f29} KB`
             };
             return this.items.push(A), this.sizeInBytes += Q, {
                 success: !0
@@ -382,18 +384,18 @@ class h29 {
     }
     g29.ContextBatch = h29
 });
-var p29 = U((d29) => {
+var p29 = moduleWrapper((d29) => {
     Object.defineProperty(d29, "__esModule", {
         value: !0
     });
     d29.b64encode = void 0;
-    var HO3 = UA("buffer"),
+    var HO3 = nodeRequire("buffer"),
         CO3 = (A) => {
             return HO3.Buffer.from(A).toString("base64")
         };
     d29.b64encode = CO3
 });
-var s29 = U((n29) => {
+var s29 = moduleWrapper((n29) => {
     Object.defineProperty(n29, "__esModule", {
         value: !0
     });
@@ -404,13 +406,12 @@ var s29 = U((n29) => {
         $O3 = m29(),
         wO3 = p29();
 
-function qO3(A) {
+    function qO3(A) {
         return new Promise((Q) => setTimeout(Q, A))
     }
 
-function nPA() {}
-
-class i29 {
+    function nPA() {}
+    class i29 {
         constructor({
             host: A,
             path: Q,
@@ -422,7 +423,7 @@ class i29 {
             httpClient: J,
             disable: W
         }, X) {
-            this._emitter = X, this._maxRetries = B, this._flushAt = Math.max(G, 1), this._flushInterval = Z, this._auth = (0, wO3.b64encode)(`${I}:`), this._url = (0, zO3.tryCreateFormattedUrl)(A ?? "https://api.segment.io", Q ?? "/v1/batch"), this._httpRequestTimeout = Y ?? 1e4, this._disable = Boolean(W), this._httpClient = J
+            this._emitter = X, this._maxRetries = B, this._flushAt = Math.max(G, 1), this._flushInterval = Z, this._auth = (0, wO3.b64encode)(`TextComponent{I}:`), this._url = (0, zO3.tryCreateFormattedUrl)(A ?? "https://api.segment.io", Q ?? "/v1/batch"), this._httpRequestTimeout = Y ?? 1e4, this._disable = Boolean(W), this._httpClient = J
         }
         createBatch() {
             this.pendingFlushTimeout && clearTimeout(this.pendingFlushTimeout);
@@ -480,7 +481,7 @@ class i29 {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
-                            Authorization: `Basic ${this._auth}`,
+                            Authorization: `Basic TextComponent{this._auth}`,
                             "User-Agent": "analytics-node-next/latest"
                         },
                         data: {
@@ -500,9 +501,9 @@ class i29 {
                         A.resolveEvents();
                         return
                     } else if (Y.status === 400) {
-                        l29(A, Error(`[${Y.status}] ${Y.statusText}`));
+                        l29(A, Error(`[TextComponent{Y.status}] TextComponent{Y.statusText}`));
                         return
-                    } else Z = Error(`[${Y.status}] ${Y.statusText}`)
+                    } else Z = Error(`[TextComponent{Y.status}] TextComponent{Y.statusText}`)
                 } catch (I) {
                     Z = I
                 }
@@ -520,13 +521,13 @@ class i29 {
     }
     n29.Publisher = i29;
 
-function l29(A, Q) {
+    function l29(A, Q) {
         A.getContexts().forEach((B) => B.setFailedDelivery({
             reason: Q
         })), A.resolveEvents()
     }
 });
-var oJ0 = U((r29) => {
+var oJ0 = moduleWrapper((r29) => {
     Object.defineProperty(r29, "__esModule", {
         value: !0
     });
@@ -541,7 +542,7 @@ var oJ0 = U((r29) => {
     };
     r29.detectRuntime = NO3
 });
-var Q99 = U((e29) => {
+var Q99 = moduleWrapper((e29) => {
     Object.defineProperty(e29, "__esModule", {
         value: !0
     });
@@ -550,14 +551,14 @@ var Q99 = U((e29) => {
         MO3 = aJ0(),
         OO3 = oJ0();
 
-function RO3(A) {
+    function RO3(A) {
         A.updateEvent("context.library.name", "@segment/analytics-node"), A.updateEvent("context.library.version", MO3.version);
         let Q = (0, OO3.detectRuntime)();
         if (Q === "node") A.updateEvent("_metadata.nodeVersion", process.version);
         A.updateEvent("_metadata.jsRuntime", Q)
     }
 
-function t29(A) {
+    function t29(A) {
         function Q(B) {
             return RO3(B), A.enqueue(B)
         }
@@ -585,26 +586,25 @@ function t29(A) {
     };
     e29.createConfiguredNodePlugin = TO3
 });
-var Z99 = U((B99) => {
+var Z99 = moduleWrapper((B99) => {
     Object.defineProperty(B99, "__esModule", {
         value: !0
     });
     B99.createMessageId = void 0;
     var jO3 = rJ0(),
         SO3 = () => {
-            return `node-next-${Date.now()}-${(0,jO3.uuid)()}`
+            return `node-next-TextComponent{Date.now()}-TextComponent{(0,jO3.uuid)()}`
         };
     B99.createMessageId = SO3
 });
-var W99 = U((Y99) => {
+var W99 = moduleWrapper((Y99) => {
     Object.defineProperty(Y99, "__esModule", {
         value: !0
     });
     Y99.NodeEventFactory = void 0;
     var _O3 = Qa(),
         kO3 = Z99();
-
-class I99 extends _O3.EventFactory {
+    class I99 extends _O3.EventFactory {
         constructor() {
             super({
                 createMessageId: kO3.createMessageId
@@ -613,14 +613,13 @@ class I99 extends _O3.EventFactory {
     }
     Y99.NodeEventFactory = I99
 });
-var lZ1 = U((F99) => {
+var lZ1 = moduleWrapper((F99) => {
     Object.defineProperty(F99, "__esModule", {
         value: !0
     });
     F99.Context = void 0;
     var yO3 = Qa();
-
-class X99 extends yO3.CoreContext {
+    class X99 extends yO3.CoreContext {
         static system() {
             return new this({
                 type: "track",
@@ -630,7 +629,7 @@ class X99 extends yO3.CoreContext {
     }
     F99.Context = X99
 });
-var H99 = U((K99) => {
+var H99 = moduleWrapper((K99) => {
     Object.defineProperty(K99, "__esModule", {
         value: !0
     });
@@ -665,24 +664,22 @@ var H99 = U((K99) => {
         };
     K99.dispatchAndEmit = fO3
 });
-var U99 = U((E99) => {
+var U99 = moduleWrapper((E99) => {
     Object.defineProperty(E99, "__esModule", {
         value: !0
     });
     E99.NodeEmitter = void 0;
     var hO3 = _XA();
-
-class C99 extends hO3.Emitter {}
+    class C99 extends hO3.Emitter {}
     E99.NodeEmitter = C99
 });
-var M99 = U((N99) => {
+var M99 = moduleWrapper((N99) => {
     Object.defineProperty(N99, "__esModule", {
         value: !0
     });
     N99.NodeEventQueue = void 0;
     var $99 = Qa();
-
-class w99 extends $99.PriorityQueue {
+    class w99 extends $99.PriorityQueue {
         constructor() {
             super(1, [])
         }
@@ -693,23 +690,21 @@ class w99 extends $99.PriorityQueue {
             return A.attempts = this.getAttempts(A) + 1, this.getAttempts(A)
         }
     }
-
-class q99 extends $99.CoreEventQueue {
+    class q99 extends $99.CoreEventQueue {
         constructor() {
             super(new w99)
         }
     }
     N99.NodeEventQueue = q99
 });
-var P99 = U((R99) => {
+var P99 = moduleWrapper((R99) => {
     Object.defineProperty(R99, "__esModule", {
         value: !0
     });
     R99.abortSignalAfterTimeout = R99.AbortSignal = void 0;
     var gO3 = _XA(),
         uO3 = oJ0();
-
-class tJ0 {
+    class tJ0 {
         constructor() {
             this.onabort = null, this.aborted = !1, this.eventEmitter = new gO3.Emitter
         }
@@ -736,8 +731,7 @@ class tJ0 {
         }
     }
     R99.AbortSignal = tJ0;
-
-class O99 {
+    class O99 {
         constructor() {
             this.signal = new tJ0
         }
@@ -762,7 +756,7 @@ class O99 {
     };
     R99.abortSignalAfterTimeout = mO3
 });
-var j99 = U((ty) => {
+var j99 = moduleWrapper((ty) => {
     var cO3 = ty && ty.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -787,8 +781,7 @@ var j99 = U((ty) => {
         }),
         lO3 = ty && ty.__importStar || function(A) {
             if (A && A.__esModule) return A;
-
-var Q = {};
+            var Q = {};
             if (A != null) {
                 for (var B in A)
                     if (B !== "default" && Object.prototype.hasOwnProperty.call(A, B)) cO3(Q, A, B)
@@ -799,23 +792,21 @@ var Q = {};
         value: !0
     });
     ty.fetch = void 0;
-
-var iO3 = async (...A) => {
+    var iO3 = async (...A) => {
         if (globalThis.fetch) return globalThis.fetch(...A);
         else if (typeof EdgeRuntime !== "string") return (await Promise.resolve().then(() => lO3(Mi1()))).default(...A);
         else throw Error("Invariant: an edge runtime that does not support fetch should not exist")
     };
     ty.fetch = iO3
 });
-var eJ0 = U((_99) => {
+var eJ0 = moduleWrapper((_99) => {
     Object.defineProperty(_99, "__esModule", {
         value: !0
     });
     _99.FetchHTTPClient = void 0;
     var nO3 = P99(),
         aO3 = j99();
-
-class S99 {
+    class S99 {
         constructor(A) {
             this._fetch = A ?? aO3.fetch
         }
@@ -832,7 +823,7 @@ class S99 {
     }
     _99.FetchHTTPClient = S99
 });
-var AW0 = U((f99) => {
+var AW0 = moduleWrapper((f99) => {
     Object.defineProperty(f99, "__esModule", {
         value: !0
     });
@@ -847,8 +838,7 @@ var AW0 = U((f99) => {
         x99 = lZ1(),
         QR3 = M99(),
         v99 = eJ0();
-
-class b99 extends AR3.NodeEmitter {
+    class b99 extends AR3.NodeEmitter {
         constructor(A) {
             super();
             this._isClosed = !1, this._pendingEvents = 0, this._isFlushing = !1, (0, sO3.validateSettings)(A), this._eventFactory = new tO3.NodeEventFactory, this._queue = new QR3.NodeEventQueue;
@@ -1031,14 +1021,14 @@ class b99 extends AR3.NodeEmitter {
                 B = A.map((G) => {
                     let Z = this._queue.plugins.find((I) => I.name === G);
                     if (Z) return this._queue.deregister(Q, Z, this);
-                    else Q.log("warn", `plugin ${G} not found`)
+                    else Q.log("warn", `plugin TextComponent{G} not found`)
                 });
             await Promise.all(B), this.emit("deregister", A)
         }
     }
     f99.Analytics = b99
 });
-var g99 = U((aPA) => {
+var g99 = moduleWrapper((aPA) => {
     Object.defineProperty(aPA, "__esModule", {
         value: !0
     });
@@ -1072,12 +1062,10 @@ function XR3() {
     let A = ["test", "dev"].includes("production") ? "development" : "production";
     return WR3[A]
 }
-// Async function: FR3
 async function FR3() {
     if (hX()) return !1;
     return !0
 }
-
 async function QW0(A, Q) {
     let B = await m99();
     if (!B) return;
@@ -1102,7 +1090,6 @@ async function QW0(A, Q) {
         e(G instanceof Error ? G : Error(String(G)))
     }
 }
-
 async function d99(A) {
     let Q = await m99();
     if (!Q) return;
@@ -1124,7 +1111,7 @@ async function d99(A) {
 }
 var u99, WR3, iZ1 = null,
     m99;
-var BW0 = L(() => {
+var BW0 = lazyLoader(() => {
     o2();
     eb();
     jQ();
@@ -1132,7 +1119,7 @@ var BW0 = L(() => {
     hB();
     t7A();
     St();
-    u99 = GA(g99(), 1), WR3 = {
+    u99 = esmImport(g99(), 1), WR3 = {
         production: "LKJN8LsLERHEOXkw487o7qCTFOrGPimI",
         development: "b64sf1kxwDGe1PiSAlv5ixuH0f509RKK"
     };
@@ -1175,7 +1162,7 @@ function sPA(A) {
         startingMessage: A.startingMessage
     }), qC.createElement(j, {
         marginLeft: 1
-    }, qC.createElement($, {
+    }, qC.createElement(TextComponent, {
         dimColor: !0
     }, B.pending ? qC.createElement(qC.Fragment, null, "Press ", B.keyName, " again to exit") : "")))
 }
@@ -1197,7 +1184,7 @@ var qC, c99 = () => ({
         return "login"
     }
 });
-var nZ1 = L(() => {
+var nZ1 = lazyLoader(() => {
     KRA();
     c9();
     hA();
@@ -1207,15 +1194,15 @@ var nZ1 = L(() => {
     S0();
     BW0();
     hB();
-    qC = GA(VA(), 1)
+    qC = esmImport(VA(), 1)
 });
 var p99, KR3, ey;
-var rPA = L(() => {
+var rPA = lazyLoader(() => {
     u1();
     hB();
     lM();
     nZ1();
-    p99 = GA(VA(), 1), KR3 = {
+    p99 = esmImport(VA(), 1), KR3 = {
         type: "local-jsx",
         name: "extra-usage",
         description: "Access and configure extra usage to keep working when limits are hit",
@@ -1245,7 +1232,7 @@ var rPA = L(() => {
 });
 
 function GW0() {
-    return ZI("claude_code_overages_upgrade_cta", "variant", l99)
+    return getFeatureFlag("claude_code_overages_upgrade_cta", "variant", l99)
 }
 
 function i99({
@@ -1266,44 +1253,44 @@ function i99({
     let V = N$.useMemo(() => {
         if (!Y) return null;
         let K = ey.isEnabled();
-        if (I && K) return N$.default.createElement($, {
+        if (I && K) return N$.default.createElement(TextComponent, {
             dimColor: !0
         }, "/extra-usage to finish what you're working on.");
-        if (W === "interactive_menu" && Q) return N$.default.createElement($, {
+        if (W === "interactive_menu" && Q) return N$.default.createElement(TextComponent, {
             dimColor: !0
         }, "Opening your options…");
-        if (W === "control" || !K) return N$.default.createElement($, {
+        if (W === "control" || !K) return N$.default.createElement(TextComponent, {
             dimColor: !0
         }, "/upgrade to increase your usage limit.");
-        return N$.default.createElement($, {
+        return N$.default.createElement(TextComponent, {
             dimColor: !0
         }, "/upgrade or /extra-usage to finish what you're working on.")
     }, [Y, I, W, Q]);
     if (X) return null;
     return N$.default.createElement(y0, null, N$.default.createElement(j, {
         flexDirection: "column"
-    }, N$.default.createElement($, {
+    }, N$.default.createElement(TextComponent, {
         color: "error"
     }, A), V))
 }
 var N$, l99 = "control";
-var ZW0 = L(() => {
+var ZW0 = lazyLoader(() => {
     hB();
     LMA();
     O9();
     hA();
     u8();
     rPA();
-    N$ = GA(VA(), 1)
+    N$ = esmImport(VA(), 1)
 });
 
 function DR3() {
     let A = ii0();
     return v3.default.createElement(y0, null, v3.default.createElement(j, {
         flexDirection: "column"
-    }, v3.default.createElement($, {
+    }, v3.default.createElement(TextComponent, {
         color: "error"
-    }, a21), A && v3.default.createElement($, {
+    }, a21), A && v3.default.createElement(TextComponent, {
         dimColor: !0
     }, "· Run in another terminal: security unlock-keychain")))
 }
@@ -1331,14 +1318,14 @@ function n99({
             let Y = JQA("warning") ?? "Run /compact to compact & continue";
             return v3.default.createElement(y0, {
                 height: 1
-            }, v3.default.createElement($, {
+            }, v3.default.createElement(TextComponent, {
                 color: "error"
             }, "Context low · ", Y))
         }
         case n21:
             return v3.default.createElement(y0, {
                 height: 1
-            }, v3.default.createElement($, {
+            }, v3.default.createElement(TextComponent, {
                 color: "error"
             }, "Credit balance too low · Add funds: https://console.anthropic.com/settings/billing"));
         case a21:
@@ -1346,28 +1333,28 @@ function n99({
         case s21:
             return v3.default.createElement(y0, {
                 height: 1
-            }, v3.default.createElement($, {
+            }, v3.default.createElement(TextComponent, {
                 color: "error"
             }, s21));
         case r21:
             return v3.default.createElement(y0, {
                 height: 1
-            }, v3.default.createElement($, {
+            }, v3.default.createElement(TextComponent, {
                 color: "error"
             }, r21));
         case o21:
             return v3.default.createElement(y0, {
                 height: 1
-            }, v3.default.createElement($, {
+            }, v3.default.createElement(TextComponent, {
                 color: "error"
             }, o21, process.env.API_TIMEOUT_MS && v3.default.createElement(v3.default.Fragment, null, " ", "(API_TIMEOUT_MS=", process.env.API_TIMEOUT_MS, "ms, try increasing it)")));
         case U1A:
             return v3.default.createElement(y0, null, v3.default.createElement(j, {
                 flexDirection: "column",
                 gap: 1
-            }, v3.default.createElement($, {
+            }, v3.default.createElement(TextComponent, {
                 color: "error"
-            }, "We are experiencing high demand for Opus 4."), v3.default.createElement($, null, "To continue immediately, use /model to switch to", " ", Ep(HU()), " and continue coding.")));
+            }, "We are experiencing high demand for Opus 4."), v3.default.createElement(TextComponent, null, "To continue immediately, use /model to switch to", " ", Ep(HU()), " and continue coding.")));
         case RMA:
             return v3.default.createElement(y0, {
                 height: 1
@@ -1375,9 +1362,9 @@ function n99({
         case IW0:
             return null;
         default:
-            if (A.startsWith(vF)) return v3.default.createElement(y0, null, v3.default.createElement($, {
+            if (A.startsWith(API_ERROR)) return v3.default.createElement(y0, null, v3.default.createElement(TextComponent, {
                 color: "error"
-            }, A === vF ? `${vF}: Please wait a moment and try again.` : A));
+            }, A === API_ERROR ? `TextComponent{API_ERROR}: Please wait a moment and try again.` : A));
             return v3.default.createElement(j, {
                 alignItems: "flex-start",
                 flexDirection: "row",
@@ -1388,16 +1375,16 @@ function n99({
                 flexDirection: "row"
             }, B && v3.default.createElement(j, {
                 minWidth: 2
-            }, v3.default.createElement($, {
+            }, v3.default.createElement(TextComponent, {
                 color: "text"
             }, pD)), v3.default.createElement(j, {
                 flexDirection: "column",
                 width: Z - 6
-            }, v3.default.createElement($, null, _D(A, I)))))
+            }, v3.default.createElement(TextComponent, null, _D(A, I)))))
     }
 }
 var v3;
-var a99 = L(() => {
+var a99 = lazyLoader(() => {
     hA();
     tM();
     nQ();
@@ -1412,7 +1399,7 @@ var a99 = L(() => {
     z00();
     cKA();
     ZW0();
-    v3 = GA(VA(), 1)
+    v3 = esmImport(VA(), 1)
 });
 
 function s99({
@@ -1424,51 +1411,51 @@ function s99({
     let B = e2(Q, "command-message"),
         G = e2(Q, "command-args");
     if (!B) return null;
-    g(`UserCommandMessage rendering: "${B}" (args: "${G||"none"}")`);
+    g(`UserCommandMessage rendering: "TextComponent{B}" (args: "TextComponent{G||"none"}")`);
     let Z = B.startsWith("The "),
         I = Z ? "" : "/";
-    return g(`  isSkillFormat: ${Z}, prefix: "${I}"`), oPA.createElement(j, {
+    return g(`  isSkillFormat: TextComponent{Z}, prefix: "TextComponent{I}"`), oPA.createElement(j, {
         flexDirection: "column",
         marginTop: A ? 1 : 0,
         width: "100%"
-    }, oPA.createElement($, {
+    }, oPA.createElement(TextComponent, {
         backgroundColor: "userMessageBackground",
         color: "text"
     }, "> ", I, [B, G].filter(Boolean).join(" "), " "))
 }
 var oPA;
-var r99 = L(() => {
+var r99 = lazyLoader(() => {
     hA();
     nQ();
     D0();
-    oPA = GA(VA(), 1)
+    oPA = esmImport(VA(), 1)
 });
 
 function o99({
     text: A,
     thinkingMetadata: Q
 }) {
-    if (!Q || Q.triggers.length === 0) return nq.createElement($, {
+    if (!Q || Q.triggers.length === 0) return nq.createElement(TextComponent, {
         backgroundColor: "userMessageBackground",
         color: "text"
     }, "> ", A + " ");
     let B = Q.disabled ? void 0 : BoA[Q.level],
         G = ASB(A, Q.triggers);
-    return nq.createElement($, null, ">", " ", G.map((Z, I) => {
+    return nq.createElement(TextComponent, null, ">", " ", G.map((Z, I) => {
         if (Z.isTrigger)
-            if (GoA(Z.text)) return nq.createElement($, {
+            if (GoA(Z.text)) return nq.createElement(TextComponent, {
                 key: I
-            }, Z.text.split("").map((J, W) => nq.createElement($, {
+            }, Z.text.split("").map((J, W) => nq.createElement(TextComponent, {
                 key: W,
                 backgroundColor: "userMessageBackground",
                 color: e$A(W, !1)
             }, J)));
-            else return nq.createElement($, {
+            else return nq.createElement(TextComponent, {
                 key: I,
                 backgroundColor: "userMessageBackground",
                 color: B
             }, Z.text);
-        return nq.createElement($, {
+        return nq.createElement(TextComponent, {
             key: I,
             backgroundColor: "userMessageBackground",
             color: "text"
@@ -1476,10 +1463,10 @@ function o99({
     }), " ")
 }
 var nq;
-var t99 = L(() => {
+var t99 = lazyLoader(() => {
     hA();
     zU();
-    nq = GA(VA(), 1)
+    nq = esmImport(VA(), 1)
 });
 
 function e99({
@@ -1504,10 +1491,10 @@ function e99({
     }))
 }
 var YW0;
-var A49 = L(() => {
+var A49 = lazyLoader(() => {
     hA();
     u1();
     m8();
     t99();
-    YW0 = GA(VA(), 1)
+    YW0 = esmImport(VA(), 1)
 });

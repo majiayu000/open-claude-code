@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: agents_010.js
+ * 处理时间: 2025-12-09T03:41:35.933Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.850Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -32,7 +35,7 @@
                 tool_count: G.finalAgent.tools?.length ?? "all",
                 has_custom_model: !!G.finalAgent.model,
                 has_custom_color: !!G.finalAgent.color
-            }), B(`Created agent: ${oA.bold(G.finalAgent.agentType)}`)
+            }), B(`Created agent: TextComponent{oA.bold(G.finalAgent.agentType)}`)
         } catch (X) {
             I(X instanceof Error ? X.message : "Failed to save agent")
         }
@@ -63,7 +66,7 @@
                 has_custom_model: !!G.finalAgent.model,
                 has_custom_color: !!G.finalAgent.color,
                 opened_in_editor: !0
-            }), B(`Created agent: ${oA.bold(G.finalAgent.agentType)} and opened in editor. If you made edits, restart to load the latest version.`)
+            }), B(`Created agent: TextComponent{oA.bold(G.finalAgent.agentType)} and opened in editor. If you made edits, restart to load the latest version.`)
         } catch (X) {
             I(X instanceof Error ? X.message : "Failed to save agent")
         }
@@ -77,7 +80,7 @@
     })
 }
 var vQA;
-var wK9 = L(() => {
+var wK9 = lazyLoader(() => {
     J9();
     QN();
     UK9();
@@ -86,7 +89,7 @@ var wK9 = L(() => {
     vn();
     w0();
     H9();
-    vQA = GA(VA(), 1)
+    vQA = esmImport(VA(), 1)
 });
 
 function qK9({
@@ -113,7 +116,7 @@ function qK9({
     })
 }
 var ejA;
-var NK9 = L(() => {
+var NK9 = lazyLoader(() => {
     QN();
     rV9();
     tV9();
@@ -125,7 +128,7 @@ var NK9 = L(() => {
     HK9();
     EK9();
     wK9();
-    ejA = GA(VA(), 1)
+    ejA = esmImport(VA(), 1)
 });
 
 function LK9({
@@ -137,7 +140,7 @@ function LK9({
     let [, Z] = _Q(), [I, Y] = fO.useState("menu"), [J, W] = fO.useState(0), [X, F] = fO.useState(null), [V, K] = fO.useState(A.color), D = fO.useCallback(async () => {
         try {
             let N = _Y1(A);
-            await xn(N), B(`Opened ${A.agentType} in editor. If you made edits, restart to load the latest version.`)
+            await xn(N), B(`Opened TextComponent{A.agentType} in editor. If you made edits, restart to load the latest version.`)
         } catch (N) {
             F(N instanceof Error ? N.message : "Failed to open editor")
         }
@@ -166,7 +169,7 @@ function LK9({
                         allAgents: o
                     }
                 }
-            }), B(`Updated agent: ${oA.bold(A.agentType)}`), !0
+            }), B(`Updated agent: TextComponent{oA.bold(A.agentType)}`), !0
         } catch (u) {
             return F(u instanceof Error ? u.message : "Failed to save agent"), !1
         }
@@ -202,17 +205,17 @@ function LK9({
     });
     let w = () => rF.createElement(j, {
         flexDirection: "column"
-    }, rF.createElement($, {
+    }, rF.createElement(TextComponent, {
         dimColor: !0
     }, "Source: ", XFA(A.source)), rF.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, C.map((N, q) => rF.createElement($, {
+    }, C.map((N, q) => rF.createElement(TextComponent, {
         key: N.label,
         color: q === J ? "suggestion" : void 0
-    }, q === J ? `${V1.pointer} ` : "  ", N.label))), X && rF.createElement(j, {
+    }, q === J ? `TextComponent{V1.pointer} ` : "  ", N.label))), X && rF.createElement(j, {
         marginTop: 1
-    }, rF.createElement($, {
+    }, rF.createElement(TextComponent, {
         color: "error"
     }, X)));
     switch (I) {
@@ -252,7 +255,7 @@ function LK9({
     }
 }
 var rF, fO;
-var MK9 = L(() => {
+var MK9 = lazyLoader(() => {
     hA();
     J9();
     Oy();
@@ -265,7 +268,7 @@ var MK9 = L(() => {
     n2();
     kY1();
     H9();
-    rF = GA(VA(), 1), fO = GA(VA(), 1)
+    rF = esmImport(VA(), 1), fO = esmImport(VA(), 1)
 });
 
 function OK9({
@@ -278,42 +281,42 @@ function OK9({
         if (X.escape || X.return) B()
     });
 
-function J() {
-        if (Z.hasWildcard) return l2.createElement($, null, "All tools");
-        if (!A.tools || A.tools.length === 0) return l2.createElement($, null, "None");
-        return l2.createElement(l2.Fragment, null, Z.validTools.length > 0 && l2.createElement($, null, Z.validTools.join(", ")), Z.invalidTools.length > 0 && l2.createElement($, {
+    function J() {
+        if (Z.hasWildcard) return l2.createElement(TextComponent, null, "All tools");
+        if (!A.tools || A.tools.length === 0) return l2.createElement(TextComponent, null, "None");
+        return l2.createElement(l2.Fragment, null, Z.validTools.length > 0 && l2.createElement(TextComponent, null, Z.validTools.join(", ")), Z.invalidTools.length > 0 && l2.createElement(TextComponent, {
             color: "warning"
         }, V1.warning, " Unrecognized:", " ", Z.invalidTools.join(", ")))
     }
     return l2.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, l2.createElement($, {
+    }, l2.createElement(TextComponent, {
         dimColor: !0
     }, I), l2.createElement(j, {
         flexDirection: "column"
-    }, l2.createElement($, null, l2.createElement($, {
+    }, l2.createElement(TextComponent, null, l2.createElement(TextComponent, {
         bold: !0
     }, "Description"), " (tells Claude when to use this agent):"), l2.createElement(j, {
         marginLeft: 2
-    }, l2.createElement($, null, A.whenToUse))), l2.createElement(j, null, l2.createElement($, null, l2.createElement($, {
+    }, l2.createElement(TextComponent, null, A.whenToUse))), l2.createElement(j, null, l2.createElement(TextComponent, null, l2.createElement(TextComponent, {
         bold: !0
-    }, "Tools"), ":", " "), J()), l2.createElement($, null, l2.createElement($, {
+    }, "Tools"), ":", " "), J()), l2.createElement(TextComponent, null, l2.createElement(TextComponent, {
         bold: !0
-    }, "Model"), ": ", XrA(A.model)), Y && l2.createElement(j, null, l2.createElement($, null, l2.createElement($, {
+    }, "Model"), ": ", XrA(A.model)), Y && l2.createElement(j, null, l2.createElement(TextComponent, null, l2.createElement(TextComponent, {
         bold: !0
-    }, "Color"), ":", " ", l2.createElement($, {
+    }, "Color"), ":", " ", l2.createElement(TextComponent, {
         backgroundColor: Y,
         color: "inverseText"
-    }, " ", A.agentType, " "))), !Ly(A) && l2.createElement(l2.Fragment, null, l2.createElement(j, null, l2.createElement($, null, l2.createElement($, {
+    }, " ", A.agentType, " "))), !Ly(A) && l2.createElement(l2.Fragment, null, l2.createElement(j, null, l2.createElement(TextComponent, null, l2.createElement(TextComponent, {
         bold: !0
     }, "System prompt"), ":")), l2.createElement(j, {
         marginLeft: 2,
         marginRight: 2
-    }, l2.createElement($, null, _D(A.getSystemPrompt(), G)))))
+    }, l2.createElement(TextComponent, null, _D(A.getSystemPrompt(), G)))))
 }
 var l2;
-var RK9 = L(() => {
+var RK9 = lazyLoader(() => {
     hA();
     n2();
     Oy();
@@ -322,7 +325,7 @@ var RK9 = L(() => {
     WFA();
     Yn();
     s2();
-    l2 = GA(VA(), 1)
+    l2 = esmImport(VA(), 1)
 });
 
 function VFA({
@@ -331,15 +334,15 @@ function VFA({
     let Q = DQ();
     return ASA.createElement(j, {
         marginLeft: 3
-    }, ASA.createElement($, {
+    }, ASA.createElement(TextComponent, {
         dimColor: !0
-    }, Q.pending ? `Press ${Q.keyName} again to exit` : A))
+    }, Q.pending ? `Press TextComponent{Q.keyName} again to exit` : A))
 }
 var ASA;
-var TK9 = L(() => {
+var TK9 = lazyLoader(() => {
     hA();
     c9();
-    ASA = GA(VA(), 1)
+    ASA = esmImport(VA(), 1)
 });
 
 function PK9({
@@ -367,7 +370,7 @@ function PK9({
     h1((H, C) => {
         if (!C.escape) return;
         let E = W.length > 0 ? `Agent changes:
-${W.join(`
+TextComponent{W.join(`
 `)}` : void 0;
         switch (B.mode) {
             case "list-agents":
@@ -401,7 +404,7 @@ ${W.join(`
                             activeAgents: My(E)
                         }
                     }
-                }), X((C) => [...C, `Deleted agent: ${oA.bold(H.agentType)}`]), G({
+                }), X((C) => [...C, `Deleted agent: TextComponent{oA.bold(H.agentType)}`]), G({
                     mode: "list-agents",
                     source: "all"
                 })
@@ -427,7 +430,7 @@ ${W.join(`
                 agents: E,
                 onBack: () => {
                     let z = W.length > 0 ? `Agent changes:
-${W.join(`
+TextComponent{W.join(`
 `)}` : void 0;
                     Q(z ?? "Agents dialog dismissed", {
                         display: W.length === 0 ? "system" : void 0
@@ -509,7 +512,7 @@ ${W.join(`
                 onCancel: () => G(B.previousMode)
             }), W.length > 0 && oB.createElement(j, {
                 marginTop: 1
-            }, oB.createElement($, {
+            }, oB.createElement(TextComponent, {
                 dimColor: !0
             }, W[W.length - 1])))), oB.createElement(VFA, null))
         }
@@ -542,11 +545,11 @@ ${W.join(`
                 title: "Delete agent",
                 titleColor: "error",
                 borderColor: "error"
-            }, oB.createElement($, null, "Are you sure you want to delete the agent", " ", oB.createElement($, {
+            }, oB.createElement(TextComponent, null, "Are you sure you want to delete the agent", " ", oB.createElement(TextComponent, {
                 bold: !0
             }, B.agent.agentType), "?"), oB.createElement(j, {
                 marginTop: 1
-            }, oB.createElement($, {
+            }, oB.createElement(TextComponent, {
                 dimColor: !0
             }, "Source: ", B.agent.source)), oB.createElement(j, {
                 marginTop: 1
@@ -566,7 +569,7 @@ ${W.join(`
         case "edit-agent": {
             let C = Y.find((E) => E.agentType === B.agent.agentType && E.source === B.agent.source) || B.agent;
             return oB.createElement(oB.Fragment, null, oB.createElement(Da, {
-                title: `Edit agent: ${C.agentType}`
+                title: `Edit agent: TextComponent{C.agentType}`
             }, oB.createElement(LK9, {
                 agent: C,
                 tools: F,
@@ -581,7 +584,7 @@ ${W.join(`
     }
 }
 var oB, Ha;
-var jK9 = L(() => {
+var jK9 = lazyLoader(() => {
     hA();
     hA();
     J9();
@@ -598,13 +601,13 @@ var jK9 = L(() => {
     GV0();
     H9();
     NW0();
-    oB = GA(VA(), 1), Ha = GA(VA(), 1)
+    oB = esmImport(VA(), 1), Ha = esmImport(VA(), 1)
 });
 var UV0, x_3, SK9;
-var _K9 = L(() => {
+var _K9 = lazyLoader(() => {
     jK9();
     jq();
-    UV0 = GA(VA(), 1), x_3 = {
+    UV0 = esmImport(VA(), 1), x_3 = {
         type: "local-jsx",
         name: "agents",
         description: "Manage agent configurations",
@@ -656,7 +659,7 @@ function kK9({
         borderStyle: "round"
     }, EY.createElement(j, {
         marginBottom: 1
-    }, EY.createElement($, {
+    }, EY.createElement(TextComponent, {
         bold: !0
     }, "Plugins")), EY.createElement(M0, {
         options: F,
@@ -680,17 +683,17 @@ function kK9({
         onCancel: () => Q()
     })), EY.createElement(j, {
         marginLeft: 3
-    }, EY.createElement($, {
+    }, EY.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, B.pending ? EY.createElement(EY.Fragment, null, "Press ", B.keyName, " again to exit") : EY.createElement(EY.Fragment, null, "Press ↑↓ to navigate · Enter to select · Esc to exit"))))
 }
 var EY;
-var yK9 = L(() => {
+var yK9 = lazyLoader(() => {
     hA();
     T5();
     H9();
-    EY = GA(VA(), 1)
+    EY = esmImport(VA(), 1)
 });
 import {
     join as v_3,
@@ -701,7 +704,7 @@ function xK9(A, Q) {
     let B = [],
         G = OA();
 
-function Z(I) {
+    function Z(I) {
         try {
             let Y = G.readdirSync(I);
             for (let J of Y) {
@@ -713,7 +716,7 @@ function Z(I) {
                 }
             }
         } catch (Y) {
-            g(`Failed to scan output-styles directory ${I}: ${Y}`, {
+            g(`Failed to scan output-styles directory TextComponent{I}: TextComponent{Y}`, {
                 level: "error"
             })
         }
@@ -733,8 +736,8 @@ function vK9(A, Q) {
             } = yF(G),
             Y = b_3(A, ".md"),
             J = Z.name || Y,
-            W = `${Q}:${J}`,
-            X = Z.description || qy(I, `Output style from ${Q} plugin`);
+            W = `TextComponent{Q}:TextComponent{J}`,
+            X = Z.description || qy(I, `Output style from TextComponent{Q} plugin`);
         return {
             name: W,
             description: X,
@@ -742,7 +745,7 @@ function vK9(A, Q) {
             source: "plugin"
         }
     } catch (G) {
-        return g(`Failed to load output style from ${A}: ${G}`, {
+        return g(`Failed to load output style from TextComponent{A}: TextComponent{G}`, {
             level: "error"
         }), null
     }
@@ -752,7 +755,7 @@ function wV0() {
     $V0.cache?.clear?.()
 }
 var $V0;
-var gY1 = L(() => {
+var gY1 = lazyLoader(() => {
     o2();
     o0();
     NF();
@@ -763,13 +766,13 @@ var gY1 = L(() => {
             enabled: A,
             errors: Q
         } = await y7(), B = [];
-        if (Q.length > 0) g(`Plugin loading errors: ${Q.map((G)=>BM(G)).join(", ")}`);
+        if (Q.length > 0) g(`Plugin loading errors: TextComponent{Q.map((G)=>BM(G)).join(", ")}`);
         for (let G of A) {
             if (G.outputStylesPath) try {
                 let Z = xK9(G.outputStylesPath, G.name);
-                if (B.push(...Z), Z.length > 0) g(`Loaded ${Z.length} output styles from plugin ${G.name} default directory`)
+                if (B.push(...Z), Z.length > 0) g(`Loaded TextComponent{Z.length} output styles from plugin TextComponent{G.name} default directory`)
             } catch (Z) {
-                g(`Failed to load output styles from plugin ${G.name} default directory: ${Z}`, {
+                g(`Failed to load output styles from plugin TextComponent{G.name} default directory: TextComponent{Z}`, {
                     level: "error"
                 })
             }
@@ -778,18 +781,18 @@ var gY1 = L(() => {
                     let Y = OA().statSync(Z);
                     if (Y.isDirectory()) {
                         let J = xK9(Z, G.name);
-                        if (B.push(...J), J.length > 0) g(`Loaded ${J.length} output styles from plugin ${G.name} custom path: ${Z}`)
+                        if (B.push(...J), J.length > 0) g(`Loaded TextComponent{J.length} output styles from plugin TextComponent{G.name} custom path: TextComponent{Z}`)
                     } else if (Y.isFile() && Z.endsWith(".md")) {
                         let J = vK9(Z, G.name);
-                        if (J) B.push(J), g(`Loaded output style from plugin ${G.name} custom file: ${Z}`)
+                        if (J) B.push(J), g(`Loaded output style from plugin TextComponent{G.name} custom file: TextComponent{Z}`)
                     }
                 } catch (I) {
-                    g(`Failed to load output styles from plugin ${G.name} custom path ${Z}: ${I}`, {
+                    g(`Failed to load output styles from plugin TextComponent{G.name} custom path TextComponent{Z}: TextComponent{I}`, {
                         level: "error"
                     })
                 }
         }
-        return g(`Total plugin output styles loaded: ${B.length}`), B
+        return g(`Total plugin output styles loaded: TextComponent{B.length}`), B
     })
 });
 
@@ -800,7 +803,7 @@ function f_3() {
 function oF() {
     f_3(), bK9()
 }
-var bQA = L(() => {
+var bQA = lazyLoader(() => {
     NF();
     VjA();
     ATA();
@@ -818,7 +821,7 @@ import {
 function uY1(A) {
     let Q = A.trim(),
         B = OA(),
-        G = Q.match(/^(git@[^:]+:.+\.git)(#(.+))?$/);
+        G = Q.match(/^(git@[^:]+:.+\.git)(#(.+))?TextComponent/);
     if (G?.[1]) {
         let Z = G[1],
             I = G[3];
@@ -832,7 +835,7 @@ function uY1(A) {
         }
     }
     if (Q.startsWith("http://") || Q.startsWith("https://")) {
-        let Z = Q.match(/^([^#]+)(#(.+))?$/),
+        let Z = Q.match(/^([^#]+)(#(.+))?TextComponent/),
             I = Z?.[1] || Q,
             Y = Z?.[3];
         if (I.endsWith(".git")) return Y ? {
@@ -853,8 +856,8 @@ function uY1(A) {
             }
         }
         if (J.hostname === "github.com" || J.hostname === "www.github.com") {
-            if (J.pathname.match(/^\/([^/]+\/[^/]+?)(\/|\.git|$)/)?.[1]) {
-                let X = I.endsWith(".git") ? I : `${I}.git`;
+            if (J.pathname.match(/^\/([^/]+\/[^/]+?)(\/|\.git|TextComponent)/)?.[1]) {
+                let X = I.endsWith(".git") ? I : `TextComponent{I}.git`;
                 return Y ? {
                     source: "git",
                     url: X,
@@ -873,7 +876,7 @@ function uY1(A) {
     if (Q.startsWith("./") || Q.startsWith("../") || Q.startsWith("/") || Q.startsWith("~")) {
         let Z = h_3(Q.startsWith("~") ? Q.replace(/^~/, g_3()) : Q);
         if (!B.existsSync(Z)) return {
-            error: `Path does not exist: ${Z}`
+            error: `Path does not exist: TextComponent{Z}`
         };
         let I = B.statSync(Z);
         if (I.isFile())
@@ -882,19 +885,19 @@ function uY1(A) {
                 path: Z
             };
             else return {
-                error: `File path must point to a .json file (marketplace.json), but got: ${Z}`
+                error: `File path must point to a .json file (marketplace.json), but got: TextComponent{Z}`
             };
         else if (I.isDirectory()) return {
             source: "directory",
             path: Z
         };
         else return {
-            error: `Path is neither a file nor a directory: ${Z}`
+            error: `Path is neither a file nor a directory: TextComponent{Z}`
         }
     }
     if (Q.includes("/") && !Q.startsWith("@")) {
         if (Q.includes(":")) return null;
-        let Z = Q.match(/^([^#]+)(#(.+))?$/),
+        let Z = Q.match(/^([^#]+)(#(.+))?TextComponent/),
             I = Z?.[1] || Q,
             Y = Z?.[3];
         return Y ? {
@@ -908,7 +911,7 @@ function uY1(A) {
     }
     return null
 }
-var qV0 = L(() => {
+var qV0 = lazyLoader(() => {
     o0()
 });
 
@@ -957,14 +960,14 @@ function fK9({
                 if (BA("tengu_marketplace_added", {
                         source_type: q
                     }), X) await X();
-                if (C(""), D(!1), F) J(`Successfully added marketplace: ${N}`);
+                if (C(""), D(!1), F) J(`Successfully added marketplace: TextComponent{N}`);
                 else W({
                     type: "browse-marketplace",
                     targetMarketplace: N
                 })
             } catch (N) {
                 let q = N instanceof Error ? N : Error(String(N));
-                if (e(q), I(q.message), C(""), D(!1), F) J(`Error: ${q.message}`);
+                if (e(q), I(q.message), C(""), D(!1), F) J(`Error: TextComponent{q.message}`);
                 else J(null)
             }
         };
@@ -978,19 +981,19 @@ function fK9({
         borderStyle: "round"
     }, Q8.createElement(j, {
         marginBottom: 1
-    }, Q8.createElement($, {
+    }, Q8.createElement(TextComponent, {
         bold: !0
     }, "Add Marketplace")), Q8.createElement(j, {
         flexDirection: "column"
-    }, Q8.createElement($, null, "Enter marketplace source:"), Q8.createElement($, {
+    }, Q8.createElement(TextComponent, null, "Enter marketplace source:"), Q8.createElement(TextComponent, {
         dimColor: !0
-    }, "Examples:"), Q8.createElement($, {
+    }, "Examples:"), Q8.createElement(TextComponent, {
         dimColor: !0
-    }, " • owner/repo (GitHub)"), Q8.createElement($, {
+    }, " • owner/repo (GitHub)"), Q8.createElement(TextComponent, {
         dimColor: !0
-    }, " • git@github.com:owner/repo.git (SSH)"), Q8.createElement($, {
+    }, " • git@github.com:owner/repo.git (SSH)"), Q8.createElement(TextComponent, {
         dimColor: !0
-    }, " • https://example.com/marketplace.json"), Q8.createElement($, {
+    }, " • https://example.com/marketplace.json"), Q8.createElement(TextComponent, {
         dimColor: !0
     }, " • ./path/to/marketplace"), Q8.createElement(j, {
         marginTop: 1
@@ -1005,21 +1008,21 @@ function fK9({
         showCursor: !0
     }))), K && Q8.createElement(j, {
         marginTop: 1
-    }, Q8.createElement(e9, null), Q8.createElement($, null, H || "Adding marketplace to configuration…")), Z && Q8.createElement(j, {
+    }, Q8.createElement(e9, null), Q8.createElement(TextComponent, null, H || "Adding marketplace to configuration…")), Z && Q8.createElement(j, {
         marginTop: 1
-    }, Q8.createElement($, {
+    }, Q8.createElement(TextComponent, {
         color: "error"
     }, Z)), Y && Q8.createElement(j, {
         marginTop: 1
-    }, Q8.createElement($, null, Y))), Q8.createElement(j, {
+    }, Q8.createElement(TextComponent, null, Y))), Q8.createElement(j, {
         marginLeft: 3
-    }, Q8.createElement($, {
+    }, Q8.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "Enter to add · Esc to cancel")))
 }
 var Q8, fQA;
-var hK9 = L(() => {
+var hK9 = lazyLoader(() => {
     hA();
     QY();
     kH();
@@ -1028,7 +1031,7 @@ var hK9 = L(() => {
     qV0();
     zI();
     u1();
-    Q8 = GA(VA(), 1), fQA = GA(VA(), 1)
+    Q8 = esmImport(VA(), 1), fQA = esmImport(VA(), 1)
 });
 
 function gK9({
@@ -1043,8 +1046,7 @@ function gK9({
 }) {
     let [W, X] = Iz.useState([]), [F, V] = Iz.useState(!0), [K, D] = Iz.useState(0), [H, C] = Iz.useState(!1), [E, z] = Iz.useState(null), [w, N] = Iz.useState(null), [q, R] = Iz.useState(null), [P, y] = Iz.useState("list"), [v, x] = Iz.useState(null), [p, u] = Iz.useState(0), o = Iz.useRef(!1);
     Iz.useEffect(() => {
-        // Async function: wA
-async function wA() {
+        async function wA() {
             try {
                 let KA = await TZ(),
                     {
@@ -1063,7 +1065,7 @@ async function wA() {
                         data: zA
                     }
                     of qA) {
-                    let $A = NA.filter((LA) => LA.source.endsWith(`@${WA}`));
+                    let $A = NA.filter((LA) => LA.source.endsWith(`@TextComponent{WA}`));
                     yA.push({
                         name: WA,
                         source: BzA(XA.source),
@@ -1091,7 +1093,7 @@ async function wA() {
                         X(XA), setTimeout(() => {
                             d(XA)
                         }, 100)
-                    } else if (B) B(`Marketplace not found: ${Y}`)
+                    } else if (B) B(`Marketplace not found: TextComponent{Y}`)
                 }
             } catch (KA) {
                 if (B) B(KA instanceof Error ? KA.message : "Failed to load marketplaces");
@@ -1164,7 +1166,7 @@ async function wA() {
                         data: TA
                     }
                     of WA) {
-                    let eA = K1.filter((aA) => aA.source.endsWith(`@${$A}`));
+                    let eA = K1.filter((BASE64_CHARS) => BASE64_CHARS.source.endsWith(`@TextComponent{$A}`));
                     XA.push({
                         name: $A,
                         source: BzA(LA.source),
@@ -1180,10 +1182,10 @@ async function wA() {
                     if ($A) x($A)
                 }
                 let zA = [];
-                if (NA > 0) zA.push(`Updated ${NA} marketplace${NA>1?"s":""}`);
-                if (qA > 0) zA.push(`Removed ${qA} marketplace${qA>1?"s":""}`);
+                if (NA > 0) zA.push(`Updated TextComponent{NA} marketplace${NA>1?"s":""}`);
+                if (qA > 0) zA.push(`Removed TextComponent{qA} marketplace${qA>1?"s":""}`);
                 if (zA.length > 0) {
-                    let $A = `${V1.tick} ${zA.join(", ")}`;
+                    let $A = `TextComponent{V1.tick} TextComponent{zA.join(", ")}`;
                     if (SA) N($A);
                     else G($A), setTimeout(() => {
                         A({
@@ -1227,7 +1229,7 @@ async function wA() {
             if (P === "list") {
                 if (KA.upArrow || wA === "k") D((SA) => Math.max(0, SA - 1));
                 else if (KA.downArrow || wA === "j") D((SA) => Math.min(W.length - 1, SA + 1));
-                else if (wA === "u" || wA === "U") X((SA) => SA.map((sA, NA) => NA === K ? {
+                else if (wA === "u" || wA === "moduleWrapper") X((SA) => SA.map((sA, NA) => NA === K ? {
                     ...sA,
                     pendingUpdate: !sA.pendingUpdate,
                     pendingRemove: sA.pendingUpdate ? sA.pendingRemove : !1
@@ -1266,17 +1268,17 @@ async function wA() {
         flexDirection: "column",
         paddingX: 1,
         borderStyle: "round"
-    }, r1.createElement($, null, "Loading marketplaces…")));
+    }, r1.createElement(TextComponent, null, "Loading marketplaces…")));
     if (W.length === 0) return r1.createElement(j, {
         flexDirection: "column"
     }, r1.createElement(j, {
         flexDirection: "column",
         paddingX: 1,
         borderStyle: "round"
-    }, r1.createElement($, null, "No marketplaces configured.")), r1.createElement(j, {
+    }, r1.createElement(TextComponent, null, "No marketplaces configured.")), r1.createElement(j, {
         marginLeft: 3,
         marginTop: 1
-    }, r1.createElement($, {
+    }, r1.createElement(TextComponent, {
         dimColor: !0
     }, Z.pending ? r1.createElement(r1.Fragment, null, "Press ", Z.keyName, " again to go back") : r1.createElement(r1.Fragment, null, "Esc to go back"))));
     if (P === "confirm-remove" && v) {
@@ -1287,29 +1289,29 @@ async function wA() {
             flexDirection: "column",
             paddingX: 1,
             borderStyle: "round"
-        }, r1.createElement($, {
+        }, r1.createElement(TextComponent, {
             bold: !0,
             color: "warning"
-        }, "Remove marketplace ", r1.createElement($, {
+        }, "Remove marketplace ", r1.createElement(TextComponent, {
             italic: !0
         }, v.name), "?"), r1.createElement(j, {
             flexDirection: "column"
         }, wA > 0 && r1.createElement(j, {
             marginTop: 1
-        }, r1.createElement($, {
+        }, r1.createElement(TextComponent, {
             color: "warning"
         }, "This will also uninstall ", wA, " plugin", wA !== 1 ? "s" : "", " from this marketplace:")), v.installedPlugins && v.installedPlugins.length > 0 && r1.createElement(j, {
             flexDirection: "column",
             marginTop: 1,
             marginLeft: 2
-        }, v.installedPlugins.map((KA) => r1.createElement($, {
+        }, v.installedPlugins.map((KA) => r1.createElement(TextComponent, {
             key: KA.name,
             dimColor: !0
         }, "• ", KA.name))), r1.createElement(j, {
             marginTop: 1
-        }, r1.createElement($, null, "Press ", r1.createElement($, {
+        }, r1.createElement(TextComponent, null, "Press ", r1.createElement(TextComponent, {
             bold: !0
-        }, "y"), " to confirm or ", r1.createElement($, {
+        }, "y"), " to confirm or ", r1.createElement(TextComponent, {
             bold: !0
         }, "n"), " to cancel")))))
     }
@@ -1331,18 +1333,18 @@ async function wA() {
             flexDirection: "column",
             paddingX: 1,
             borderStyle: "round"
-        }, r1.createElement($, {
+        }, r1.createElement(TextComponent, {
             bold: !0
-        }, v.name), r1.createElement($, {
+        }, v.name), r1.createElement(TextComponent, {
             dimColor: !0
-        }, v.source), v.lastUpdated && r1.createElement($, {
+        }, v.source), v.lastUpdated && r1.createElement(TextComponent, {
             dimColor: !0
         }, "Last updated:", " ", new Date(v.lastUpdated).toLocaleDateString()), r1.createElement(j, {
             marginTop: 1
-        }, r1.createElement($, null, v.pluginCount || 0, " available plugin", v.pluginCount !== 1 ? "s" : "")), v.installedPlugins && v.installedPlugins.length > 0 && r1.createElement(j, {
+        }, r1.createElement(TextComponent, null, v.pluginCount || 0, " available plugin", v.pluginCount !== 1 ? "s" : "")), v.installedPlugins && v.installedPlugins.length > 0 && r1.createElement(j, {
             flexDirection: "column",
             marginTop: 1
-        }, r1.createElement($, {
+        }, r1.createElement(TextComponent, {
             bold: !0
         }, "Installed plugins (", v.installedPlugins.length, "):"), r1.createElement(j, {
             flexDirection: "column",
@@ -1351,24 +1353,24 @@ async function wA() {
             key: SA.name,
             flexDirection: "row",
             gap: 1
-        }, r1.createElement($, null, V1.bullet), r1.createElement(j, {
+        }, r1.createElement(TextComponent, null, V1.bullet), r1.createElement(j, {
             flexDirection: "column"
-        }, r1.createElement($, null, SA.name), r1.createElement($, {
+        }, r1.createElement(TextComponent, null, SA.name), r1.createElement(TextComponent, {
             dimColor: !0
         }, SA.manifest.description)))))), wA && r1.createElement(j, {
             marginTop: 1,
             flexDirection: "column"
-        }, r1.createElement($, {
+        }, r1.createElement(TextComponent, {
             color: "claude"
-        }, "Updating marketplace…"), q && r1.createElement($, {
+        }, "Updating marketplace…"), q && r1.createElement(TextComponent, {
             dimColor: !0
         }, q)), !wA && w && r1.createElement(j, {
             marginTop: 1
-        }, r1.createElement($, {
+        }, r1.createElement(TextComponent, {
             color: "claude"
         }, w)), !wA && E && r1.createElement(j, {
             marginTop: 1
-        }, r1.createElement($, {
+        }, r1.createElement(TextComponent, {
             color: "error"
         }, E)), !wA && r1.createElement(j, {
             flexDirection: "column",
@@ -1378,12 +1380,12 @@ async function wA() {
             let NA = sA === p;
             return r1.createElement(j, {
                 key: SA.value
-            }, r1.createElement($, {
+            }, r1.createElement(TextComponent, {
                 color: NA ? "claude" : void 0
             }, NA ? V1.pointer : " ", " ", SA.label))
         }))), r1.createElement(j, {
             marginLeft: 3
-        }, r1.createElement($, {
+        }, r1.createElement(TextComponent, {
             dimColor: !0,
             italic: !0
         }, wA ? r1.createElement(r1.Fragment, null, "Please wait…") : r1.createElement(r1.Fragment, null, V1.arrowUp, V1.arrowDown, " · enter to select · Esc to go back"))))
@@ -1400,7 +1402,7 @@ async function wA() {
         borderStyle: "round"
     }, r1.createElement(j, {
         marginBottom: 1
-    }, r1.createElement($, {
+    }, r1.createElement(TextComponent, {
         bold: !0
     }, "Manage marketplaces")), r1.createElement(j, {
         flexDirection: "column"
@@ -1414,7 +1416,7 @@ async function wA() {
             flexDirection: "row",
             gap: 1,
             marginBottom: 1
-        }, r1.createElement($, {
+        }, r1.createElement(TextComponent, {
             color: SA ? "claude" : void 0
         }, SA ? V1.pointer : " ", " ", wA.pendingRemove ? V1.cross : V1.bullet), r1.createElement(j, {
             flexDirection: "column",
@@ -1422,33 +1424,33 @@ async function wA() {
         }, r1.createElement(j, {
             flexDirection: "row",
             gap: 1
-        }, r1.createElement($, {
+        }, r1.createElement(TextComponent, {
             bold: !0,
             strikethrough: wA.pendingRemove,
             dimColor: wA.pendingRemove
-        }, wA.name), sA.length > 0 && r1.createElement($, {
+        }, wA.name), sA.length > 0 && r1.createElement(TextComponent, {
             color: "warning"
-        }, "[", sA.join(", "), "]")), r1.createElement($, {
+        }, "[", sA.join(", "), "]")), r1.createElement(TextComponent, {
             dimColor: !0
-        }, wA.source), r1.createElement($, {
+        }, wA.source), r1.createElement(TextComponent, {
             dimColor: !0
         }, wA.pluginCount !== void 0 && r1.createElement(r1.Fragment, null, wA.pluginCount, " available"), wA.installedPlugins && wA.installedPlugins.length > 0 && r1.createElement(r1.Fragment, null, " • ", wA.installedPlugins.length, " installed"), wA.lastUpdated && r1.createElement(r1.Fragment, null, " ", "• Updated", " ", new Date(wA.lastUpdated).toLocaleDateString()))))
     })), l() && r1.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, r1.createElement($, null, r1.createElement($, {
+    }, r1.createElement(TextComponent, null, r1.createElement(TextComponent, {
         bold: !0
-    }, "Pending changes:"), " ", r1.createElement($, {
+    }, "Pending changes:"), " ", r1.createElement(TextComponent, {
         dimColor: !0
-    }, "Enter to apply")), IA > 0 && r1.createElement($, null, "• Update ", IA, " marketplace", IA > 1 ? "s" : ""), HA > 0 && r1.createElement($, {
+    }, "Enter to apply")), IA > 0 && r1.createElement(TextComponent, null, "• Update ", IA, " marketplace", IA > 1 ? "s" : ""), HA > 0 && r1.createElement(TextComponent, {
         color: "warning"
     }, "• Remove ", HA, " marketplace", HA > 1 ? "s" : "")), H && r1.createElement(j, {
         marginTop: 1
-    }, r1.createElement($, {
+    }, r1.createElement(TextComponent, {
         color: "claude"
     }, "Processing changes…")), E && r1.createElement(j, {
         marginTop: 1
-    }, r1.createElement($, {
+    }, r1.createElement(TextComponent, {
         color: "error"
     }, E))), r1.createElement(u_3, {
         exitState: Z,
@@ -1461,21 +1463,21 @@ function u_3({
     hasPendingActions: Q
 }) {
     let B = [];
-    if (A.pending) B.push(`Press ${A.keyName} again to go back`);
+    if (A.pending) B.push(`Press TextComponent{A.keyName} again to go back`);
     else {
-        if (B.push(`${V1.arrowUp}${V1.arrowDown}`), Q) B.push("Enter to apply changes");
+        if (B.push(`TextComponent{V1.arrowUp}TextComponent{V1.arrowDown}`), Q) B.push("Enter to apply changes");
         else B.push("Enter for details"), B.push("u update"), B.push("r remove");
         B.push(Q ? "Esc to cancel" : "Esc to go back")
     }
     return r1.createElement(j, {
         marginLeft: 3
-    }, r1.createElement($, {
+    }, r1.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, B.join(" · ")))
 }
 var r1, Iz;
-var uK9 = L(() => {
+var uK9 = lazyLoader(() => {
     hA();
     hA();
     n2();
@@ -1486,7 +1488,7 @@ var uK9 = L(() => {
     YzA();
     lM();
     RB();
-    r1 = GA(VA(), 1), Iz = GA(VA(), 1)
+    r1 = esmImport(VA(), 1), Iz = esmImport(VA(), 1)
 });
 
 function mK9({
@@ -1501,8 +1503,7 @@ function mK9({
 }) {
     let [W, X] = qK.useState("marketplace-list"), [F, V] = qK.useState(null), [K, D] = qK.useState(null), [H, C] = qK.useState([]), [E, z] = qK.useState([]), [w, N] = qK.useState(!0), [q, R] = qK.useState(0), [P, y] = qK.useState(new Set), [v, x] = qK.useState(new Set), [p, u] = qK.useState(0), [o, l] = qK.useState(!1), [k, d] = qK.useState(null), [QA, IA] = qK.useState(null);
     qK.useEffect(() => {
-        // Async function: KA
-async function KA() {
+        async function KA() {
             try {
                 let SA = await TZ(),
                     {

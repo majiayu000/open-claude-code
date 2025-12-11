@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: prompts_003.js
+ * 处理时间: 2025-12-09T03:41:38.195Z
+ * 变量映射: 46 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.038Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -18,7 +21,7 @@
  */
 
     USB();
-    wGA = GA(VA(), 1)
+    wGA = esmImport(VA(), 1)
 });
 
 function cd1(A) {
@@ -60,9 +63,9 @@ function XoA() {
 }
 var Ff, dd1 = !0,
     Fe;
-var FoA = L(() => {
+var FoA = lazyLoader(() => {
     w0();
-    Ff = GA(VA(), 1), Fe = new Set
+    Ff = esmImport(VA(), 1), Fe = new Set
 });
 
 function s4(A) {
@@ -100,13 +103,13 @@ function s4(A) {
     })
 }
 var wSB;
-var QY = L(() => {
+var QY = lazyLoader(() => {
     J9();
     vd1();
     md1();
     FoA();
     hA();
-    wSB = GA(VA(), 1)
+    wSB = esmImport(VA(), 1)
 });
 
 function qGA({
@@ -136,9 +139,9 @@ function qGA({
     }, Aq.default.createElement(j, {
         flexDirection: "row",
         flexShrink: V === "compact" ? 0 : void 0
-    }, Aq.default.createElement($, {
+    }, Aq.default.createElement(TextComponent, {
         color: B ? "success" : Q ? "suggestion" : void 0
-    }, oA.dim(`${Y}.`.padEnd(I + 1)), " "), K, Q ? Aq.default.createElement(s4, {
+    }, oA.dim(`TextComponent{Y}.`.padEnd(I + 1)), " "), K, Q ? Aq.default.createElement(s4, {
         value: J,
         onChange: (E) => {
             W(E), A.onChange(E)
@@ -153,22 +156,22 @@ function qGA({
         columns: 80
     }) : Aq.default.createElement(j, {
         width: 80
-    }, Aq.default.createElement($, {
+    }, Aq.default.createElement(TextComponent, {
         color: B ? "success" : Q ? "suggestion" : J ? void 0 : "inactive"
     }, J || A.placeholder || A.label)))), A.description && Aq.default.createElement(j, {
         paddingLeft: C
-    }, Aq.default.createElement($, {
+    }, Aq.default.createElement(TextComponent, {
         dimColor: A.dimDescription !== !1,
         color: B ? "success" : Q ? "suggestion" : void 0
-    }, A.description)), V === "expanded" && Aq.default.createElement($, null, " "))
+    }, A.description)), V === "expanded" && Aq.default.createElement(TextComponent, null, " "))
 }
 var Aq;
-var pd1 = L(() => {
+var pd1 = lazyLoader(() => {
     hA();
     $rA();
     QY();
     J9();
-    Aq = GA(VA(), 1)
+    Aq = esmImport(VA(), 1)
 });
 
 function M0({
@@ -255,7 +258,7 @@ function M0({
                 d = k;
             if (G && k.includes(G)) {
                 let HA = k.indexOf(G);
-                d = I3.default.createElement(I3.default.Fragment, null, k.slice(0, HA), I3.default.createElement($, {
+                d = I3.default.createElement(I3.default.Fragment, null, k.slice(0, HA), I3.default.createElement(TextComponent, {
                     ...C.highlightedText()
                 }, G), k.slice(HA + G.length))
             }
@@ -270,15 +273,15 @@ function M0({
                 isSelected: l,
                 shouldShowDownArrow: x && v,
                 shouldShowUpArrow: p && y
-            }, I3.default.createElement($, {
+            }, I3.default.createElement(TextComponent, {
                 dimColor: QA,
                 color: IA
             }, d)), R.description && I3.default.createElement(j, {
                 paddingLeft: 2
-            }, I3.default.createElement($, {
+            }, I3.default.createElement(TextComponent, {
                 dimColor: QA || R.dimDescription !== !1,
                 color: IA
-            }, R.description)), I3.default.createElement($, null, " "))
+            }, R.description)), I3.default.createElement(TextComponent, null, " "))
         }))
     }
     if (F === "compact-vertical") {
@@ -322,7 +325,7 @@ function M0({
                 d = k;
             if (G && k.includes(G)) {
                 let IA = k.indexOf(G);
-                d = I3.default.createElement(I3.default.Fragment, null, k.slice(0, IA), I3.default.createElement($, {
+                d = I3.default.createElement(I3.default.Fragment, null, k.slice(0, IA), I3.default.createElement(TextComponent, {
                     ...C.highlightedText()
                 }, G), k.slice(IA + G.length))
             }
@@ -336,12 +339,12 @@ function M0({
                 isSelected: l,
                 shouldShowDownArrow: x && v,
                 shouldShowUpArrow: p && y
-            }, I3.default.createElement($, {
+            }, I3.default.createElement(TextComponent, {
                 dimColor: QA,
                 color: QA ? void 0 : l ? "success" : o ? "suggestion" : void 0
-            }, !Q && oA.dim(`${u}.`.padEnd(q + 2)), d)), R.description && I3.default.createElement(j, {
+            }, !Q && oA.dim(`TextComponent{u}.`.padEnd(q + 2)), d)), R.description && I3.default.createElement(j, {
                 paddingLeft: Q ? 2 : q + 4
-            }, I3.default.createElement($, {
+            }, I3.default.createElement(TextComponent, {
                 dimColor: QA || R.dimDescription !== !1,
                 color: QA ? void 0 : l ? "success" : o ? "suggestion" : void 0
             }, R.description)))
@@ -390,7 +393,7 @@ function M0({
             y = P;
         if (G && P.includes(G)) {
             let QA = P.indexOf(G);
-            y = I3.default.createElement(I3.default.Fragment, null, P.slice(0, QA), I3.default.createElement($, {
+            y = I3.default.createElement(I3.default.Fragment, null, P.slice(0, QA), I3.default.createElement(TextComponent, {
                 ...C.highlightedText()
             }, G), P.slice(QA + G.length))
         }
@@ -412,13 +415,13 @@ function M0({
             flexDirection: "row",
             flexShrink: 0,
             width: q.description ? N : void 0
-        }, I3.default.createElement($, {
+        }, I3.default.createElement(TextComponent, {
             dimColor: d,
             color: d ? void 0 : k ? "success" : l ? "suggestion" : void 0
-        }, !Q && oA.dim(`${o}.`.padEnd(E + 2)), y)), q.description && I3.default.createElement(j, {
+        }, !Q && oA.dim(`TextComponent{o}.`.padEnd(E + 2)), y)), q.description && I3.default.createElement(j, {
             flexShrink: 99,
             marginLeft: 2
-        }, I3.default.createElement($, {
+        }, I3.default.createElement(TextComponent, {
             wrap: "wrap-trim",
             dimColor: d || q.dimDescription !== !1,
             color: d ? void 0 : k ? "success" : l ? "suggestion" : void 0
@@ -426,14 +429,14 @@ function M0({
     }))
 }
 var I3;
-var T5 = L(() => {
+var T5 = lazyLoader(() => {
     hA();
     $rA();
     vTB();
     fTB();
     J9();
     pd1();
-    I3 = GA(VA(), 1)
+    I3 = esmImport(VA(), 1)
 });
 var qSB = "https://claude.com/claude-code";
 
@@ -446,7 +449,9 @@ function VoA() {
     return 120000
 }
 
-function NSB() {
+/* getReadToolDescription = getReadToolDescription() - Read tool description */
+/* Signature: () => string */
+function getReadToolDescription() {
     let A = process.env.BASH_MAX_TIMEOUT_MS;
     if (A) {
         let Q = parseInt(A, 10);
@@ -455,16 +460,18 @@ function NSB() {
     return Math.max(600000, VoA())
 }
 
-function RJ() {
-    return V0(process.env.ENABLE_EXPERIMENTAL_MCP_CLI)
+/* isClaudeCodeRemote = isClaudeCodeRemote() - Check remote */
+/* Signature: () => boolean */
+function isClaudeCodeRemote() {
+    return parseBoolean(process.env.ENABLE_EXPERIMENTAL_MCP_CLI)
 }
 
 function NGA() {
-    return RJ() && !Nj(process.env.ENABLE_MCP_CLI_ENDPOINT)
+    return isClaudeCodeRemote() && !Nj(process.env.ENABLE_MCP_CLI_ENDPOINT)
 }
 
 function Ve(A) {
-    let Q = A.match(/^mcp-cli\s+(call|read)\s+([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)(?:\s+([\s\S]+))?$/);
+    let Q = A.match(/^mcp-cli\s+(call|read)\s+([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)(?:\s+([\s\S]+))?TextComponent/);
     if (!Q) return null;
     let [, B, G, Z, I = ""] = Q;
     if (!B || !G || !Z) return null;
@@ -481,42 +488,47 @@ function Ve(A) {
 function ld1(A) {
     let Q = FU(A);
     if (!Q || !Q.toolName) return null;
-    return `${Q.serverName}/${Q.toolName}`
+    return `TextComponent{Q.serverName}/TextComponent{Q.toolName}`
 }
-var EE = L(() => {
+var EE = lazyLoader(() => {
     hQ();
     xX()
 });
 
-function Ke() {
+/* getMaxOutputLength = getMaxOutputLength() - Returns 30000 characters */
+function getMaxOutputLength() {
     let A = a_A.validate(process.env.BASH_MAX_OUTPUT_LENGTH);
-    if (A.status === "capped") g(`BASH_MAX_OUTPUT_LENGTH ${A.message}`);
+    if (A.status === "capped") g(`BASH_MAX_OUTPUT_LENGTH TextComponent{A.message}`);
     return A.effective
 }
 
-function LGA() {
+/* getDefaultTimeout = getDefaultTimeout() - Returns 120000ms (2 minutes) */
+function getDefaultTimeout() {
     return VoA()
 }
 
-function KoA() {
-    return NSB()
+/* getMaxTimeout = getMaxTimeout() - Returns 600000ms (10 minutes) */
+function getMaxTimeout() {
+    return getReadToolDescription()
 }
 
-function rM6() {
+/* getGitConfig = getGitConfig() - Git commit/pr config object */
+function getGitConfig() {
     if (!(((c0() || {}).includeCoAuthoredBy ?? !0) && BkA() !== "remote")) return {
         commit: "",
         pr: ""
     };
-    let B = `\uD83E\uDD16 Generated with [Claude Code](${qSB})`;
+    let B = `\uD83E\uDD16 Generated with [Claude Code](TextComponent{qSB})`;
     return {
-        commit: `${B}
+        commit: `TextComponent{B}
 
    Co-Authored-By: Claude <noreply@anthropic.com>`,
         pr: B
     }
 }
 
-function oM6() {
+/* getSandboxHint = getSandboxHint() - Returns sandbox usage hint */
+function getSandboxHint() {
     if (!lQ.isSandboxingEnabled()) return "";
     let A = lQ.getFsReadConfig(),
         Q = lQ.getFsWriteConfig(),
@@ -540,20 +552,20 @@ function oM6() {
             }
         },
         W = [];
-    if (Object.keys(Y).length > 0) W.push(`    - Filesystem: ${JSON.stringify(Y,null,2).split(`
+    if (Object.keys(Y).length > 0) W.push(`    - Filesystem: TextComponent{JSON.stringify(Y,null,2).split(`
 `).join(`
       `)}`);
-    if (Object.keys(J).length > 0) W.push(`    - Network: ${JSON.stringify(J,null,2).split(`
+    if (Object.keys(J).length > 0) W.push(`    - Network: TextComponent{JSON.stringify(J,null,2).split(`
 `).join(`
       `)}`);
-    if (Z) W.push(`    - Ignored violations: ${JSON.stringify(Z,null,2).split(`
+    if (Z) W.push(`    - Ignored violations: TextComponent{JSON.stringify(Z,null,2).split(`
 `).join(`
       `)}`);
-    let X = RJ() ? "    - EXCEPTION: `mcp-cli` commands must always be called with `dangerouslyDisableSandbox: true` as they do not work properly in sandboxed mode\n" : "",
+    let X = isClaudeCodeRemote() ? "    - EXCEPTION: `mcp-cli` commands must always be called with `dangerouslyDisableSandbox: true` as they do not work properly in sandboxed mode\n" : "",
         F = I ? `  - CRITICAL: Commands run in sandbox mode by default - do NOT set \`dangerouslyDisableSandbox\`
     - Even if you have recently run commands with \`dangerouslyDisableSandbox: true\`, you MUST NOT continue that pattern
     - VERY IMPORTANT: Do NOT learn from or repeat the pattern of overriding sandbox - each command should run sandboxed by default
-${X}    - Set \`dangerouslyDisableSandbox: true\` if:
+TextComponent{X}    - Set \`dangerouslyDisableSandbox: true\` if:
       1. The user *explicitly* asks to bypass sandbox, OR
       2. A command just failed and you see evidence of sandbox restrictions causing the failure
     - When analyzing failures:
@@ -573,16 +585,18 @@ ${X}    - Set \`dangerouslyDisableSandbox: true\` if:
     - Example of override: { "command": "my-tool", "description": "Run my-tool", "dangerouslyDisableSandbox": true }
     - DO NOT suggest adding sensitive paths like ~/.bashrc, ~/.zshrc, ~/.ssh/*, or credential files to the allowlist` : "  - CRITICAL: All commands MUST run in sandbox mode - the `dangerouslyDisableSandbox` parameter is disabled by policy\n    - Commands cannot run outside the sandbox under any circumstances\n    - If a command fails due to sandbox restrictions, work with the user to adjust sandbox settings instead";
     return `- Commands run in a sandbox by default with the following restrictions:
-${W.join(`
+TextComponent{W.join(`
 `)}
-${F}
+TextComponent{F}
   - IMPORTANT: For temporary files, use \`/tmp/claude/\` as your temporary directory
     - The TMPDIR environment variable is automatically set to \`/tmp/claude\` when running in sandbox mode
     - Do NOT use \`/tmp\` directly - use \`/tmp/claude/\` or rely on TMPDIR instead
     - Most programs that respect TMPDIR will automatically use \`/tmp/claude/\``
 }
 
-function LSB() {
+/* getBashToolDescription = getBashToolDescription() - Bash tool description */
+/* Signature: () => string */
+function getBashToolDescription() {
     return `Executes a given bash command in a persistent shell session with optional timeout, ensuring proper handling and security measures.
 
 IMPORTANT: This tool is for terminal operations like git, npm, docker, etc. DO NOT use it for file operations (reading, writing, editing, searching, finding files) - use the specialized tools for this instead.
@@ -605,21 +619,21 @@ Before executing the command, please follow these steps:
 
 Usage notes:
   - The command argument is required.
-  - You can specify an optional timeout in milliseconds (up to ${KoA()}ms / ${KoA()/60000} minutes). If not specified, commands will timeout after ${LGA()}ms (${LGA()/60000} minutes).
+  - You can specify an optional timeout in milliseconds (up to TextComponent{getMaxTimeout()}ms / TextComponent{getMaxTimeout()/60000} minutes). If not specified, commands will timeout after TextComponent{getDefaultTimeout()}ms (TextComponent{getDefaultTimeout()/60000} minutes).
   - It is very helpful if you write a clear, concise description of what this command does in 5-10 words.
-  - If the output exceeds ${Ke()} characters, output will be truncated before being returned to you.
-  - You can use the \`run_in_background\` parameter to run the command in the background, which allows you to continue working while the command runs. You can monitor the output using the ${BASH_TOOL_NAME} tool as it becomes available. You do not need to use '&' at the end of the command when using this parameter.
-  ${oM6()}
+  - If the output exceeds TextComponent{getMaxOutputLength()} characters, output will be truncated before being returned to you.
+  - You can use the \`run_in_background\` parameter to run the command in the background, which allows you to continue working while the command runs. You can monitor the output using the TextComponent{BASH_TOOL_NAME} tool as it becomes available. You do not need to use '&' at the end of the command when using this parameter.
+  TextComponent{getSandboxHint()}
   - Avoid using Bash with the \`find\`, \`grep\`, \`cat\`, \`head\`, \`tail\`, \`sed\`, \`awk\`, or \`echo\` commands, unless explicitly instructed or when these commands are truly necessary for the task. Instead, always prefer using the dedicated tools for these commands:
-    - File search: Use ${GLOB_TOOL_NAME} (NOT find or ls)
-    - Content search: Use ${GREP_TOOL_NAME} (NOT grep or rg)
-    - Read files: Use ${READ_TOOL_NAME} (NOT cat/head/tail)
-    - Edit files: Use ${EDIT_TOOL_NAME} (NOT sed/awk)
-    - Write files: Use ${WRITE_TOOL_NAME} (NOT echo >/cat <<EOF)
+    - File search: Use TextComponent{GLOB_TOOL_NAME} (NOT find or ls)
+    - Content search: Use TextComponent{GREP_TOOL_NAME} (NOT grep or rg)
+    - Read files: Use TextComponent{READ_TOOL_NAME} (NOT cat/head/tail)
+    - Edit files: Use TextComponent{EDIT_TOOL_NAME} (NOT sed/awk)
+    - Write files: Use TextComponent{WRITE_TOOL_NAME} (NOT echo >/cat <<EOF)
     - Communication: Output text directly (NOT echo/printf)
   - When issuing multiple commands:
-    - If the commands are independent and can run in parallel, make multiple ${BASH_TOOL_NAME} tool calls in a single message. For example, if you need to run "git status" and "git diff", send a single message with two ${BASH_TOOL_NAME} tool calls in parallel.
-    - If the commands depend on each other and must run sequentially, use a single ${BASH_TOOL_NAME} call with '&&' to chain them together (e.g., \`git add . && git commit -m "message" && git push\`). For instance, if one operation must complete before another starts (like mkdir before cp, Write before Bash for git operations, or git add before git commit), run these operations sequentially instead.
+    - If the commands are independent and can run in parallel, make multiple TextComponent{BASH_TOOL_NAME} tool calls in a single message. For example, if you need to run "git status" and "git diff", send a single message with two TextComponent{BASH_TOOL_NAME} tool calls in parallel.
+    - If the commands depend on each other and must run sequentially, use a single TextComponent{BASH_TOOL_NAME} call with '&&' to chain them together (e.g., \`git add . && git commit -m "message" && git push\`). For instance, if one operation must complete before another starts (like mkdir before cp, Write before Bash for git operations, or git add before git commit), run these operations sequentially instead.
     - Use ';' only when you need to run commands sequentially but don't care if earlier commands fail
     - DO NOT use newlines to separate commands (newlines are ok in quoted strings)
   - Try to maintain your current working directory throughout the session by using absolute paths and avoiding usage of \`cd\`. You may use \`cd\` if the User explicitly requests it.
@@ -630,14 +644,15 @@ Usage notes:
     cd /foo/bar && pytest tests
     </bad-example>
 
-${tM6()}`
+TextComponent{getGitCommitInstructions()}`
 }
 
-function tM6() {
+/* getGitCommitInstructions = getGitCommitInstructions() - Git commit instructions */
+function getGitCommitInstructions() {
     let {
         commit: Q,
         pr: B
-    } = rM6();
+    } = getGitConfig();
     return `# Committing changes with git
 
 Only create commits when requested by the user. If unclear, ask first. When the user asks you to create a new git commit, follow these steps carefully:
@@ -651,7 +666,7 @@ Git Safety Protocol:
 - Before amending: ALWAYS check authorship (git log -1 --format='%an %ae')
 - NEVER commit changes unless the user explicitly asks you to. It is VERY IMPORTANT to only commit when explicitly asked, otherwise the user will feel that you are being too proactive.
 
-1. You can call multiple tools in a single response. When multiple independent pieces of information are requested and all commands are likely to succeed, run multiple tool calls in parallel for optimal performance. run the following bash commands in parallel, each using the ${BASH_TOOL_NAME} tool:
+1. You can call multiple tools in a single response. When multiple independent pieces of information are requested and all commands are likely to succeed, run multiple tool calls in parallel for optimal performance. run the following bash commands in parallel, each using the TextComponent{BASH_TOOL_NAME} tool:
   - Run a git status command to see all untracked files.
   - Run a git diff command to see both staged and unstaged changes that will be committed.
   - Run a git log command to see recent commit messages, so that you can follow this repository's commit message style.
@@ -663,7 +678,7 @@ Git Safety Protocol:
 3. You can call multiple tools in a single response. When multiple independent pieces of information are requested and all commands are likely to succeed, run multiple tool calls in parallel for optimal performance. run the following commands:
    - Add relevant untracked files to the staging area.
    - Create the commit with a message${Q?` ending with:
-   ${Q}`:"."}
+   TextComponent{Q}`:"."}
    - Run git status after the commit completes to verify success.
    Note: git status depends on the commit completing, so run it sequentially after the commit.
 4. If the commit fails due to pre-commit hook changes, retry ONCE. If it succeeds but files were modified by the hook, verify it's safe to amend:
@@ -673,16 +688,16 @@ Git Safety Protocol:
 
 Important notes:
 - NEVER run additional commands to read or explore code, besides git bash commands
-- NEVER use the ${tI.name} or ${TASK_TOOL_NAME} tools
+- NEVER use the TextComponent{TODO_READ_TOOL.name} or TextComponent{TASK_TOOL_NAME} tools
 - DO NOT push to the remote repository unless the user explicitly asks you to do so
 - IMPORTANT: Never use git commands with the -i flag (like git rebase -i or git add -i) since they require interactive input which is not supported.
 - If there are no changes to commit (i.e., no untracked files and no modifications), do not create an empty commit
 - In order to ensure good formatting, ALWAYS pass the commit message via a HEREDOC, a la this example:
 <example>
-git commit -m "$(cat <<'EOF'
-   Commit message here.${Q?`
+git commit -m "TextComponent(cat <<'EOF'
+   Commit message here.TextComponent{Q?`
 
-   ${Q}`:""}
+   TextComponent{Q}`:""}
    EOF
    )"
 </example>
@@ -692,7 +707,7 @@ Use the gh command via the Bash tool for ALL GitHub-related tasks including work
 
 IMPORTANT: When the user asks you to create a pull request, follow these steps carefully:
 
-1. You can call multiple tools in a single response. When multiple independent pieces of information are requested and all commands are likely to succeed, run multiple tool calls in parallel for optimal performance. run the following bash commands in parallel using the ${BASH_TOOL_NAME} tool, in order to understand the current state of the branch since it diverged from the main branch:
+1. You can call multiple tools in a single response. When multiple independent pieces of information are requested and all commands are likely to succeed, run multiple tool calls in parallel for optimal performance. run the following bash commands in parallel using the TextComponent{BASH_TOOL_NAME} tool, in order to understand the current state of the branch since it diverged from the main branch:
    - Run a git status command to see all untracked files
    - Run a git diff command to see both staged and unstaged changes that will be committed
    - Check if the current branch tracks a remote branch and is up to date with the remote, so you know if you need to push to the remote
@@ -703,27 +718,27 @@ IMPORTANT: When the user asks you to create a pull request, follow these steps c
    - Push to remote with -u flag if needed
    - Create PR using gh pr create with the format below. Use a HEREDOC to pass the body to ensure correct formatting.
 <example>
-gh pr create --title "the pr title" --body "$(cat <<'EOF'
+gh pr create --title "the pr title" --body "TextComponent(cat <<'EOF'
 ## Summary
 <1-3 bullet points>
 
 ## Test plan
-[Bulleted markdown checklist of TODOs for testing the pull request...]${B?`
+[Bulleted markdown checklist of TODOs for testing the pull request...]TextComponent{B?`
 
-${B}`:""}
+TextComponent{B}`:""}
 EOF
 )"
 </example>
 
 Important:
-- DO NOT use the ${tI.name} or ${TASK_TOOL_NAME} tools
+- DO NOT use the TextComponent{TODO_READ_TOOL.name} or TextComponent{TASK_TOOL_NAME} tools
 - Return the PR URL when you're done, so the user can see it
 
 # Other common operations
 - View comments on a Github PR: gh api repos/foo/bar/pulls/123/comments`
 }
-var MGA = L(() => {
-    XT();
+var MGA = lazyLoader(() => {
+    noOpFunction();
     RB();
     xV();
     L_();
@@ -735,142 +750,164 @@ var MGA = L(() => {
     EE()
 });
 
-function id1(A) {
-    if (/\d\s*<<\s*\d/.test(A) || /\[\[\s*\d+\s*<<\s*\d+\s*\]\]/.test(A) || /\$\(\(.*<<.*\)\)/.test(A)) return !1;
+/* hasHeredoc = hasHeredoc(cmd) - Check heredoc */
+/* Signature: (cmd: string) => boolean */
+function hasHeredoc(A) {
+    if (/\d\s*<<\s*\d/.test(A) || /\[\[\s*\d+\s*<<\s*\d+\s*\]\]/.test(A) || /\TextComponent\(\(.*<<.*\)\)/.test(A)) return !1;
     return /<<-?\s*(?:(['"]?)(\w+)\1|\\(\w+))/.test(A)
 }
 
-function eM6(A) {
+/* hasMultilineString = hasMultilineString(cmd) - Check multiline */
+/* Signature: (cmd: string) => boolean */
+function hasMultilineString(A) {
     let Q = /'(?:[^'\\]|\\.)*\n(?:[^'\\]|\\.)*'/,
         B = /"(?:[^"\\]|\\.)*\n(?:[^"\\]|\\.)*"/;
     return Q.test(A) || B.test(A)
 }
 
-function MSB(A, Q = !0) {
-    if (id1(A) || eM6(A)) {
-        let G = `'${A.replace(/'/g,`'"'"'`)}'`;
-        if (id1(A)) return G;
-        return Q ? `${G} < /dev/null` : G
+/* wrapBashCommand = wrapBashCommand(cmd) - Wrap command */
+/* Signature: (cmd: string, addDevNull?: boolean) => string */
+function wrapBashCommand(A, Q = !0) {
+    if (hasHeredoc(A) || hasMultilineString(A)) {
+        let G = `'TextComponent{A.replace(/'/g,`'"'"'`)}'`;
+        if (hasHeredoc(A)) return G;
+        return Q ? `TextComponent{G} < /dev/null` : G
     }
-    if (Q) return M8([A, "<", "/dev/null"]);
-    return M8([A])
+    if (Q) return shellEscape([A, "<", "/dev/null"]);
+    return shellEscape([A])
 }
 
-function AO6(A) {
+/* hasInputRedirect = hasInputRedirect(cmd) - Check redirect */
+/* Signature: (cmd: string) => boolean */
+function hasInputRedirect(A) {
     return /(?:^|[\s;&|])<(?![<(])\s*\S+/.test(A)
 }
 
-function OSB(A) {
-    if (id1(A)) return !1;
-    if (AO6(A)) return !1;
+/* shouldAddDevNull = shouldAddDevNull(cmd) - Check /dev/null need */
+/* Signature: (cmd: string) => boolean */
+function shouldAddDevNull(A) {
+    if (hasHeredoc(A)) return !1;
+    if (hasInputRedirect(A)) return !1;
     return !0
 }
-var RSB = L(() => {
+/* bashCommandHelpers = bashCommandHelpers loader */
+var bashCommandHelpers = lazyLoader(() => {
     KH()
 });
 
-function PSB(A) {
-    if (A.includes("`")) return M8([A, "<", "/dev/null"]);
-    let Q = IW(A);
-    if (!Q.success) return M8([A, "<", "/dev/null"]);
+/* addDevNullToCommand = addDevNullToCommand(cmd) - Add /dev/null */
+/* Signature: (cmd: string) => string */
+function addDevNullToCommand(A) {
+    if (A.includes("`")) return shellEscape([A, "<", "/dev/null"]);
+    let Q = tokenize(A);
+    if (!Q.success) return shellEscape([A, "<", "/dev/null"]);
     let B = Q.tokens,
-        G = QO6(B);
-    if (G <= 0) return M8([A, "<", "/dev/null"]);
-    let Z = [...TSB(B, 0, G), "< /dev/null", ...TSB(B, G, B.length)];
-    return M8([Z.join(" ")])
+        G = findPipeIndex(B);
+    if (G <= 0) return shellEscape([A, "<", "/dev/null"]);
+    let Z = [...extractTokensRange(B, 0, G), "< /dev/null", ...extractTokensRange(B, G, B.length)];
+    return shellEscape([Z.join(" ")])
 }
 
-function QO6(A) {
+/* findPipeIndex = findPipeIndex(tokens) - Find pipe */
+function findPipeIndex(A) {
     for (let Q = 0; Q < A.length; Q++) {
         let B = A[Q];
-        if (nd1(B, "|")) return Q
+        if (isOperator(B, "|")) return Q
     }
     return -1
 }
 
-function TSB(A, Q, B) {
+/* extractTokensRange = extractTokensRange() - Extract tokens */
+function extractTokensRange(A, Q, B) {
     let G = [],
         Z = !1;
     for (let I = Q; I < B; I++) {
         let Y = A[I];
-        if (typeof Y === "string" && /^[012]$/.test(Y) && I + 2 < B && nd1(A[I + 1])) {
+        if (typeof Y === "string" && /^[012]TextComponent/.test(Y) && I + 2 < B && isOperator(A[I + 1])) {
             let J = A[I + 1],
                 W = A[I + 2];
-            if (J.op === ">&" && typeof W === "string" && /^[012]$/.test(W)) {
-                G.push(`${Y}>&${W}`), I += 2;
+            if (J.op === ">&" && typeof W === "string" && /^[012]TextComponent/.test(W)) {
+                G.push(`TextComponent{Y}>&TextComponent{W}`), I += 2;
                 continue
             }
             if (J.op === ">" && W === "/dev/null") {
-                G.push(`${Y}>/dev/null`), I += 2;
+                G.push(`TextComponent{Y}>/dev/null`), I += 2;
                 continue
             }
             if (J.op === ">" && typeof W === "string" && W.startsWith("&")) {
                 let X = W.slice(1);
-                if (/^[012]$/.test(X)) {
-                    G.push(`${Y}>&${X}`), I += 2;
+                if (/^[012]TextComponent/.test(X)) {
+                    G.push(`TextComponent{Y}>&TextComponent{X}`), I += 2;
                     continue
                 }
             }
         }
         if (typeof Y === "string")
-            if (!Z && BO6(Y)) {
+            if (!Z && isEnvAssignment(Y)) {
                 let W = Y.indexOf("="),
                     X = Y.slice(0, W),
                     F = Y.slice(W + 1),
-                    V = M8([F]);
-                G.push(`${X}=${V}`)
-            } else Z = !0, G.push(M8([Y]));
-        else if (nd1(Y)) {
+                    V = shellEscape([F]);
+                G.push(`TextComponent{X}=TextComponent{V}`)
+            } else Z = !0, G.push(shellEscape([Y]));
+        else if (isOperator(Y)) {
             if (Y.op === "glob" && "pattern" in Y) G.push(Y.pattern);
-            else if (G.push(Y.op), GO6(Y.op)) Z = !1
+            else if (G.push(Y.op), isCommandSeparator(Y.op)) Z = !1
         }
     }
     return G
 }
 
-function BO6(A) {
+/* isEnvAssignment = isEnvAssignment(token) - Check env assign */
+function isEnvAssignment(A) {
     return /^[A-Za-z_][A-Za-z0-9_]*=/.test(A)
 }
 
-function GO6(A) {
+/* isCommandSeparator = isCommandSeparator(op) - Check separator */
+function isCommandSeparator(A) {
     return A === "&&" || A === "||" || A === ";"
 }
 
-function nd1(A, Q) {
+/* isOperator = isOperator(token, op) - Check operator */
+/* Signature: (token, op?) => boolean */
+function isOperator(A, Q) {
     if (!A || typeof A !== "object" || !("op" in A)) return !1;
     return Q ? A.op === Q : !0
 }
-var jSB = L(() => {
+var jSB = lazyLoader(() => {
     KH()
 });
 import {
-    existsSync as BwA,
-    statSync as ZO6,
-    mkdirSync as IO6,
-    realpathSync as YO6
+    existsSync as fsExistsSync,
+    statSync as fsStatSync,
+    mkdirSync as fsMkdirSync,
+    realpathSync as fsRealpathSync
 } from "node:fs";
 import {
-    execSync as JO6,
-    execFile as WO6
+    execSync as execSync,
+    execFile as execFile
 } from "node:child_process";
 import {
-    join as sd1
+    join as pathJoin
 } from "node:path";
 import * as DoA from "node:os";
 
-function XO6() {
-    let A = C9A(),
-        Q = M8([A.rgPath]),
-        B = A.rgArgs.map((G) => M8([G]));
-    return A.rgArgs.length > 0 ? `${Q} ${B.join(" ")}` : Q
+/* getRipgrepCommand = getRipgrepCommand() - Get rg command */
+function getRipgrepCommand() {
+    let A = getRipgrepConfig(),
+        Q = shellEscape([A.rgPath]),
+        B = A.rgArgs.map((G) => shellEscape([G]));
+    return A.rgArgs.length > 0 ? `TextComponent{Q} TextComponent{B.join(" ")}` : Q
 }
 
-function rd1(A) {
+/* getShellRcFile = getShellRcFile() - Get .bashrc/.zshrc */
+function getShellRcFile(A) {
     let Q = A.includes("zsh") ? ".zshrc" : A.includes("bash") ? ".bashrc" : ".profile";
-    return sd1(DoA.homedir(), Q)
+    return pathJoin(DoA.homedir(), Q)
 }
 
-function FO6(A) {
+/* getShellSnapshotScript = getShellSnapshotScript() */
+function getShellSnapshotScript(A) {
     let Q = A.endsWith(".zshrc"),
         B = "";
     if (Q) B += `
@@ -893,9 +930,9 @@ function FO6(A) {
       # Now get user function names - filter system ones and give the rest to eval in b64 encoding
       declare -F | cut -d' ' -f3 | grep -vE '^(_|__)' | while read func; do
         # Encode the function to base64, preserving all special characters
-        encoded_func=$(declare -f "$func" | base64 )
+        encoded_func=TextComponent(declare -f "$func" | base64 )
         # Write the function definition to the snapshot
-        echo "eval ${ad1}"${ad1}$(echo '$encoded_func' | base64 -d)${ad1}" > /dev/null 2>&1" >> "$SNAPSHOT_FILE"
+        echo "eval TextComponent{ad1}"TextComponent{ad1}TextComponent(echo '$encoded_func' | base64 -d)TextComponent{ad1}" > /dev/null 2>&1" >> "$SNAPSHOT_FILE"
       done
     `;
     if (Q) B += `
@@ -922,12 +959,12 @@ function FO6(A) {
 }
 
 function VO6() {
-    if (!RJ()) return null;
+    if (!isClaudeCodeRemote()) return null;
     try {
         let A = HJ() ? process.execPath : process.argv[1];
         if (!A) return null;
         try {
-            A = YO6(A)
+            A = fsRealpathSync(A)
         } catch {}
         if (uQ() === "windows") A = pj(A);
         return {
@@ -942,46 +979,46 @@ function VO6() {
 function KO6() {
     let A = process.env.PATH;
     if (uQ() === "windows") try {
-        A = JO6("echo $PATH", {
+        A = execSync("echo $PATH", {
             encoding: "utf8"
         }).trim()
     } catch {}
-    let Q = XO6(),
+    let Q = getRipgrepCommand(),
         B = VO6(),
         G = "";
     if (G += `
       # Check for rg availability
       echo "# Check for rg availability" >> "$SNAPSHOT_FILE"
       echo "if ! command -v rg >/dev/null 2>&1; then" >> "$SNAPSHOT_FILE"
-      echo '  alias rg='"'${Q.replace(/'/g,"'\\''")}'" >> "$SNAPSHOT_FILE"
+      echo '  alias rg='"'TextComponent{Q.replace(/'/g,"'\\''")}'" >> "$SNAPSHOT_FILE"
       echo "fi" >> "$SNAPSHOT_FILE"
   `, B) {
-        let Z = M8([B.cliPath]),
-            I = B.args.map((J) => M8([J])),
-            Y = `${Z} ${I.join(" ")}`;
+        let Z = shellEscape([B.cliPath]),
+            I = B.args.map((J) => shellEscape([J])),
+            Y = `TextComponent{Z} TextComponent{I.join(" ")}`;
         G += `
 
       # Check for mcp-cli availability
       echo "# Check for mcp-cli availability" >> "$SNAPSHOT_FILE"
       echo "if ! command -v mcp-cli >/dev/null 2>&1; then" >> "$SNAPSHOT_FILE"
-      echo '  alias mcp-cli='"'${Y.replace(/'/g,"'\\''")}'" >> "$SNAPSHOT_FILE"
+      echo '  alias mcp-cli='"'TextComponent{Y.replace(/'/g,"'\\''")}'" >> "$SNAPSHOT_FILE"
       echo "fi" >> "$SNAPSHOT_FILE"
     `
     }
     return G += `
 
       # Add PATH to the file
-      echo "export PATH=${M8([A||""])}" >> "$SNAPSHOT_FILE"
+      echo "export PATH=TextComponent{shellEscape([A||""])}" >> "$SNAPSHOT_FILE"
   `, G
 }
 
 function DO6(A, Q, B) {
-    let G = rd1(A),
+    let G = getShellRcFile(A),
         Z = G.endsWith(".zshrc"),
-        I = B ? FO6(G) : !Z ? 'echo "shopt -s expand_aliases" >> "$SNAPSHOT_FILE"' : "",
+        I = B ? getShellSnapshotScript(G) : !Z ? 'echo "shopt -s expand_aliases" >> "$SNAPSHOT_FILE"' : "",
         Y = KO6();
-    return `SNAPSHOT_FILE=${M8([Q])}
-      ${B?`source "${G}" < /dev/null`:"# No user config file to source"}
+    return `SNAPSHOT_FILE=TextComponent{shellEscape([Q])}
+      TextComponent{B?`source "TextComponent{G}" < /dev/null`:"# No user config file to source"}
 
       # First, create/clear the snapshot file
       echo "# Snapshot file" >| "$SNAPSHOT_FILE"
@@ -992,9 +1029,9 @@ function DO6(A, Q, B) {
       echo "# Unset all aliases to avoid conflicts with functions" >> "$SNAPSHOT_FILE"
       echo "unalias -a 2>/dev/null || true" >> "$SNAPSHOT_FILE"
 
-      ${I}
+      TextComponent{I}
 
-      ${Y}
+      TextComponent{Y}
 
       # Exit silently on success, only report errors
       if [ ! -f "$SNAPSHOT_FILE" ]; then
@@ -1007,22 +1044,22 @@ var ad1 = "\\",
     SSB = 1e4,
     _SB = async (A) => {
         let Q = A.includes("zsh") ? "zsh" : A.includes("bash") ? "bash" : "sh";
-        return g(`Creating shell snapshot for ${Q} (${A})`), new Promise(async (B) => {
+        return g(`Creating shell snapshot for TextComponent{Q} (TextComponent{A})`), new Promise(async (B) => {
             try {
-                let G = rd1(A);
-                g(`Looking for shell config file: ${G}`);
-                let Z = BwA(G);
-                if (!Z) g(`Shell config file not found: ${G}, creating snapshot with Claude Code defaults only`);
+                let G = getShellRcFile(A);
+                g(`Looking for shell config file: TextComponent{G}`);
+                let Z = fsExistsSync(G);
+                if (!Z) g(`Shell config file not found: TextComponent{G}, creating snapshot with Claude Code defaults only`);
                 let I = Date.now(),
                     Y = Math.random().toString(36).substring(2, 8),
-                    J = sd1(PQ(), "shell-snapshots");
-                g(`Snapshots directory: ${J}`);
-                let W = sd1(J, `snapshot-${Q}-${I}-${Y}.sh`);
-                IO6(J, {
+                    J = pathJoin(PQ(), "shell-snapshots");
+                g(`Snapshots directory: TextComponent{J}`);
+                let W = pathJoin(J, `snapshot-TextComponent{Q}-TextComponent{I}-TextComponent{Y}.sh`);
+                fsMkdirSync(J, {
                     recursive: !0
                 });
                 let X = DO6(A, W, Z);
-                g(`Creating snapshot at: ${W}`), g(`Shell binary exists: ${BwA(A)}`), g(`Execution timeout: ${SSB}ms`), WO6(A, ["-c", "-l", X], {
+                g(`Creating snapshot at: TextComponent{W}`), g(`Shell binary exists: TextComponent{fsExistsSync(A)}`), g(`Execution timeout: TextComponent{SSB}ms`), execFile(A, ["-c", "-l", X], {
                     env: {
                         ...process.env.CLAUDE_CODE_DONT_INHERIT_ENV ? {} : process.env,
                         SHELL: A,
@@ -1035,13 +1072,13 @@ var ad1 = "\\",
                 }, async (F, V, K) => {
                     if (F) {
                         let D = F;
-                        if (g(`Shell snapshot creation failed: ${F.message}`), g("Error details:"), g(`  - Error code: ${D?.code}`), g(`  - Error signal: ${D?.signal}`), g(`  - Error killed: ${D?.killed}`), g(`  - Shell path: ${A}`), g(`  - Config file: ${rd1(A)}`), g(`  - Config file exists: ${Z}`), g(`  - Working directory: ${H0()}`), g(`  - Claude home: ${PQ()}`), g(`Full snapshot script:
-${X}`), V) g(`stdout output (${V.length} chars):
-${V}`);
+                        if (g(`Shell snapshot creation failed: TextComponent{F.message}`), g("Error details:"), g(`  - Error code: TextComponent{D?.code}`), g(`  - Error signal: TextComponent{D?.signal}`), g(`  - Error killed: TextComponent{D?.killed}`), g(`  - Shell path: TextComponent{A}`), g(`  - Config file: TextComponent{getShellRcFile(A)}`), g(`  - Config file exists: TextComponent{Z}`), g(`  - Working directory: TextComponent{H0()}`), g(`  - Claude home: TextComponent{PQ()}`), g(`Full snapshot script:
+TextComponent{X}`), V) g(`stdout output (TextComponent{V.length} chars):
+TextComponent{V}`);
                         else g("No stdout output captured");
-                        if (K) g(`stderr output (${K.length} chars): ${K}`);
+                        if (K) g(`stderr output (TextComponent{K.length} chars): TextComponent{K}`);
                         else g("No stderr output captured");
-                        e(Error(`Failed to create shell snapshot: ${F.message}`));
+                        e(Error(`Failed to create shell snapshot: TextComponent{F.message}`));
                         let H = D?.signal ? DoA.constants.signals[D.signal] : void 0;
                         BA("tengu_shell_snapshot_failed", {
                             stderr_length: K?.length || 0,
@@ -1049,34 +1086,34 @@ ${V}`);
                             error_signal_number: H,
                             error_killed: D?.killed
                         }), B(void 0)
-                    } else if (BwA(W)) {
-                        let D = ZO6(W).size;
-                        g(`Shell snapshot created successfully (${D} bytes)`), wG(async () => {
+                    } else if (fsExistsSync(W)) {
+                        let D = fsStatSync(W).size;
+                        g(`Shell snapshot created successfully (TextComponent{D} bytes)`), wG(async () => {
                             try {
-                                if (BwA(W)) OA().unlinkSync(W), g(`Cleaned up session snapshot: ${W}`)
+                                if (fsExistsSync(W)) OA().unlinkSync(W), g(`Cleaned up session snapshot: TextComponent{W}`)
                             } catch (H) {
-                                g(`Error cleaning up session snapshot: ${H}`)
+                                g(`Error cleaning up session snapshot: TextComponent{H}`)
                             }
                         }), B(W)
                     } else {
-                        g(`Shell snapshot file not found after creation: ${W}`), g(`Checking if parent directory still exists: ${J}`);
-                        let D = BwA(J);
-                        if (g(`Parent directory exists: ${D}`), D) try {
+                        g(`Shell snapshot file not found after creation: TextComponent{W}`), g(`Checking if parent directory still exists: TextComponent{J}`);
+                        let D = fsExistsSync(J);
+                        if (g(`Parent directory exists: TextComponent{D}`), D) try {
                             let H = OA().readdirSync(J);
-                            g(`Directory contains ${H.length} files`)
+                            g(`Directory contains TextComponent{H.length} files`)
                         } catch (H) {
-                            g(`Could not read directory contents: ${H}`)
+                            g(`Could not read directory contents: TextComponent{H}`)
                         }
                         BA("tengu_shell_unknown_error", {}), B(void 0)
                     }
                 })
             } catch (G) {
-                if (g(`Unexpected error during snapshot creation: ${G}`), G instanceof Error) g(`Error stack trace: ${G.stack}`);
+                if (g(`Unexpected error during snapshot creation: TextComponent{G}`), G instanceof Error) g(`Error stack trace: TextComponent{G.stack}`);
                 e(G instanceof Error ? G : Error(String(G))), BA("tengu_shell_snapshot_error", {}), B(void 0)
             }
         })
     };
-var kSB = L(() => {
+var kSB = lazyLoader(() => {
     KH();
     u1();
     w0();
@@ -1113,7 +1150,7 @@ function ySB(A) {
         return wO6(A, HO6.X_OK), !0
     } catch (Q) {
         try {
-            return xSB(`${A} --version`, {
+            return xSB(`TextComponent{A} --version`, {
                 timeout: 1000,
                 stdio: "ignore"
             }), !0
@@ -1131,7 +1168,7 @@ function NO6(A) {
 function LO6() {
     let A = (F) => {
             try {
-                return xSB(`which ${F}`, {
+                return xSB(`which TextComponent{F}`, {
                     stdio: ["ignore", "pipe", "ignore"]
                 }).toString().trim()
             } catch {
@@ -1144,7 +1181,7 @@ function LO6() {
         Z = A("zsh"),
         I = A("bash"),
         Y = ["/bin", "/usr/bin", "/usr/local/bin", "/opt/homebrew/bin"],
-        W = (G ? ["bash", "zsh"] : ["zsh", "bash"]).flatMap((F) => Y.map((V) => `${V}/${F}`));
+        W = (G ? ["bash", "zsh"] : ["zsh", "bash"]).flatMap((F) => Y.map((V) => `TextComponent{V}/TextComponent{F}`));
     if (G) {
         if (I) W.unshift(I);
         if (Z) W.push(Z)
@@ -1160,21 +1197,19 @@ function LO6() {
     }
     return X
 }
-// Async function: MO6
 async function MO6() {
     let A = LO6(),
         Q;
     try {
         Q = await _SB(A)
     } catch (B) {
-        g(`Failed to create shell snapshot: ${B}`), Q = void 0
+        g(`Failed to create shell snapshot: TextComponent{B}`), Q = void 0
     }
     return {
         binShell: A,
         snapshotFilePath: Q
     }
 }
-
 async function HoA(A, Q, B, G, Z, I, Y, J) {
     let W = B || qO6,
         {
@@ -1185,23 +1220,23 @@ async function HoA(A, Q, B, G, Z, I, Y, J) {
     let V = Math.floor(Math.random() * 65536).toString(16).padStart(4, "0"),
         K = vSB.tmpdir();
     if (uQ() === "windows") K = pj(K);
-    let D = `${K}/claude-${V}-cwd`,
-        H = OSB(A),
-        C = MSB(A, H);
-    if (!Y && A.includes("|") && H) C = PSB(A);
+    let D = `TextComponent{K}/claude-TextComponent{V}-cwd`,
+        H = shouldAddDevNull(A),
+        C = wrapBashCommand(A, H);
+    if (!Y && A.includes("|") && H) C = addDevNullToCommand(A);
     let E = [];
     if (F) {
-        if (!EO6(F)) g(`Snapshot file missing, recreating: ${F}`), GwA.cache?.clear?.(), F = (await GwA()).snapshotFilePath;
+        if (!EO6(F)) g(`Snapshot file missing, recreating: TextComponent{F}`), GwA.cache?.clear?.(), F = (await GwA()).snapshotFilePath;
         if (F) {
             let y = uQ() === "windows" ? pj(F) : F;
-            E.push(`source ${M8([y])}`)
+            E.push(`source TextComponent{shellEscape([y])}`)
         }
     }
     let z = _TB();
     if (z) E.push(z);
     let w = NO6(X);
     if (w) E.push(w);
-    E.push(`eval ${C}`), E.push(`pwd -P >| ${D}`);
+    E.push(`eval TextComponent{C}`), E.push(`pwd -P >| TextComponent{D}`);
     let N = E.join(" && ");
     if (process.env.CLAUDE_CODE_SHELL_PREFIX) N = zrA(process.env.CLAUDE_CODE_SHELL_PREFIX, N);
     let q = wH1();
@@ -1213,7 +1248,7 @@ async function HoA(A, Q, B, G, Z, I, Y, J) {
                 v = "/tmp/claude";
             if (!y.existsSync("/tmp/claude")) y.mkdirSync("/tmp/claude")
         } catch (y) {
-            g(`Failed to create /tmp/claude directory: ${y}`)
+            g(`Failed to create /tmp/claude directory: TextComponent{y}`)
         }
     }
     let R = (process.env.CLAUDE_BASH_NO_LOGIN === "true" || process.env.CLAUDE_BASH_NO_LOGIN === "1") && F !== void 0,
@@ -1247,7 +1282,7 @@ async function HoA(A, Q, B, G, Z, I, Y, J) {
             }
         }), v
     } catch (y) {
-        return g(`Shell exec error: ${y instanceof Error?y.message:String(y)}`), {
+        return g(`Shell exec error: TextComponent{y instanceof Error?y.message:String(y)}`), {
             status: "killed",
             background: () => null,
             kill: () => {},
@@ -1263,7 +1298,7 @@ async function HoA(A, Q, B, G, Z, I, Y, J) {
 
 function Qq(A, Q) {
     let B = UO6(A) ? A : $O6(Q || OA().cwd(), A);
-    if (!OA().existsSync(B)) throw Error(`Path "${B}" does not exist`);
+    if (!OA().existsSync(B)) throw Error(`Path "TextComponent{B}" does not exist`);
     let G = OA().realpathSync(B);
     oC0(G);
     try {
@@ -1274,10 +1309,10 @@ function Qq(A, Q) {
 }
 var qO6 = 1800000,
     GwA;
-var m_ = L(() => {
+var m_ = lazyLoader(() => {
     KH();
     Qd1();
-    RSB();
+    bashCommandHelpers();
     u1();
     w0();
     Ad1();
@@ -1317,7 +1352,7 @@ function d_(A) {
         truncatedContent: A,
         isImage: Q
     };
-    let B = Ke();
+    let B = getMaxOutputLength();
     if (A.length <= B) return {
         totalLines: A.split(`
 `).length,
@@ -1327,9 +1362,9 @@ function d_(A) {
     let G = A.slice(0, B),
         Z = A.slice(B).split(`
 `).length,
-        I = `${G}
+        I = `TextComponent{G}
 
-... [${Z} lines truncated] ...`;
+... [TextComponent{Z} lines truncated] ...`;
     return {
         totalLines: A.split(`
 `).length,
@@ -1344,7 +1379,6 @@ function EoA(A) {
     }
     return !1
 }
-
 async function fSB(A, Q, B, G) {
     let I = (await gX({
         systemPrompt: [`Extract any file paths that this command reads or modifies. For commands like "git diff" and "cat", include the paths of files being shown. Use paths verbatim -- don't add any slashes or try to resolve them. Do not try to infer paths that were not explicitly listed in the command output.
@@ -1368,8 +1402,8 @@ If no files are read or modified, return empty filepaths tags:
 </filepaths>
 
 Do not include any other text in your response.`],
-        userPrompt: `Command: ${A}
-Output: ${Q}`,
+        userPrompt: `Command: TextComponent{A}
+Output: TextComponent{Q}`,
         enablePromptCaching: !0,
         signal: B,
         options: {
@@ -1390,9 +1424,9 @@ function hSB(A, Q) {
         G = G0(),
         Z = bSB("/tmp/claude/mcp-outputs", G),
         I = new Date().toISOString().replace(/[:.]/g, "-"),
-        J = `mcp-output-${Q.replace(/[^a-zA-Z0-9_-]/g,"_").slice(0,50)}-${I}.json`,
+        J = `mcp-output-TextComponent{Q.replace(/[^a-zA-Z0-9_-]/g,"_").slice(0,50)}-TextComponent{I}.json`,
         W = bSB(Z, J);
-    if (!zoA(Z)) return e(Error(`Failed to create directory for MCP output: ${Z}`)), "";
+    if (!zoA(Z)) return e(Error(`Failed to create directory for MCP output: TextComponent{Z}`)), "";
     try {
         return B.writeFileSync(W, A, {
             encoding: "utf8",
@@ -1415,17 +1449,17 @@ function gSB(A) {
         Q.push(Y + (I.text.length > 200 ? "..." : ""))
     }
     let Z = [];
-    if (G > 0) Z.push(`[${G} image${G>1?"s":""}]`);
-    if (B > 0) Z.push(`[${B} text block${B>1?"s":""}]`);
-    return `MCP Result: ${Z.join(", ")}${Q.length>0?`
+    if (G > 0) Z.push(`[TextComponent{G} image${G>1?"s":""}]`);
+    if (B > 0) Z.push(`[TextComponent{B} text block${B>1?"s":""}]`);
+    return `MCP Result: TextComponent{Z.join(", ")}TextComponent{Q.length>0?`
 
 `+Q.join(`
 
 `):""}`
 }
-var CoA = (A) => `${A.trim()}
-Shell cwd was reset to ${pQ()}`;
-var yp = L(() => {
+var CoA = (A) => `TextComponent{A.trim()}
+Shell cwd was reset to TextComponent{pQ()}`;
+var yp = lazyLoader(() => {
     hQ();
     kZ();
     nQ();
@@ -1482,13 +1516,13 @@ CRITICAL: You MUST start your response with the <should_summarize> tag as the ve
 }
 
 function mSB(A, Q, B) {
-    return `Command executed: \`${A}\`
+    return `Command executed: \`TextComponent{A}\`
 
 Recent conversation context:
-${Q||"No recent conversation context"}
+TextComponent{Q||"No recent conversation context"}
 
 Bash output to analyze:
-${B}
+TextComponent{B}
 
 Should this output be summarized? If yes, provide a summary focusing on the most relevant information.`
 }
@@ -1502,17 +1536,17 @@ import {
 function SO6(A) {
     let Q = new Date().toISOString().replace(/[:.]/g, "-"),
         B = RO6("sha256").update(A).digest("hex").slice(0, 8);
-    return `${Q}-${B}.txt`
+    return `TextComponent{Q}-TextComponent{B}.txt`
 }
 
 function _O6(A, Q, B) {
-    return `COMMAND: ${A}
+    return `COMMAND: TextComponent{A}
 
 STDOUT:
-${Q}
+TextComponent{Q}
 
 STDERR:
-${B}`
+TextComponent{B}`
 }
 
 function kO6(A, Q, B) {

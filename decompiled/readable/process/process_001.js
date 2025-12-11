@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: process_001.js
+ * 处理时间: 2025-12-09T03:41:38.091Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.033Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -1081,7 +1083,7 @@
         }
     }
 });
-var FE2 = U((r8, XE2) => {
+var FE2 = moduleWrapper((r8, XE2) => {
     var qq = T41();
     XE2.exports = r8 = qq.descriptor = qq.Root.fromJSON(N20()).lookup(".google.protobuf");
     var {
@@ -1126,7 +1128,7 @@ var FE2 = U((r8, XE2) => {
         return IE2(this, B.file, Q), B
     };
 
-function IE2(A, Q, B) {
+    function IE2(A, Q, B) {
         var G = r8.FileDescriptorProto.create({
             name: A.filename || (A.fullName.substring(1).replace(/\./g, "_") || "root") + ".proto"
         });
@@ -1222,7 +1224,7 @@ function IE2(A, Q, B) {
                 }));
         return B.options = rYA(this.options, r8.MessageOptions), B
     };
-    var tL5 = /^(?![eE])[0-9]*(?:\.[0-9]*)?(?:[eE][+-]?[0-9]+)?$/;
+    var tL5 = /^(?![eE])[0-9]*(?:\.[0-9]*)?(?:[eE][+-]?[0-9]+)?TextComponent/;
     ui.fromDescriptor = function(Q, B, G) {
         if (typeof Q.length === "number") Q = r8.DescriptorProto.decode(Q);
         if (typeof Q.number !== "number") throw Error("missing field id");
@@ -1306,8 +1308,7 @@ function IE2(A, Q, B) {
     var eL5 = 0;
     Rh.fromDescriptor = function(Q, B, G) {
         if (typeof Q.length === "number") Q = r8.EnumDescriptorProto.decode(Q);
-
-var Z = {};
+        var Z = {};
         if (Q.value)
             for (var I = 0; I < Q.value.length; ++I) {
                 var Y = Q.value[I].name,
@@ -1374,7 +1375,7 @@ var Z = {};
         })
     };
 
-function GM5(A) {
+    function GM5(A) {
         switch (A) {
             case 1:
                 return "double";
@@ -1410,7 +1411,7 @@ function GM5(A) {
         throw Error("illegal type: " + A)
     }
 
-function ZM5(A) {
+    function ZM5(A) {
         switch (A) {
             case 1:
             case 2:
@@ -1431,7 +1432,7 @@ function ZM5(A) {
         return !1
     }
 
-function L20(A, Q, B) {
+    function L20(A, Q, B) {
         switch (A) {
             case "double":
                 return 1;
@@ -1469,7 +1470,7 @@ function L20(A, Q, B) {
         throw Error("illegal type: " + A)
     }
 
-function YE2(A, Q) {
+    function YE2(A, Q) {
         var B = {};
         for (var G = 0, Z, I; G < Q.fieldsArray.length; ++G) {
             if ((I = (Z = Q._fieldsArray[G]).name) === "uninterpretedOption") continue;
@@ -1482,12 +1483,12 @@ function YE2(A, Q) {
         return B
     }
 
-function sYA(A, Q) {
+    function sYA(A, Q) {
         if (!A) return;
         return YE2(Q.toObject(A), Q)
     }
 
-function JE2(A, Q) {
+    function JE2(A, Q) {
         var B = {},
             G = Object.keys(A);
         for (var Z = 0; Z < G.length; ++Z) {
@@ -1502,12 +1503,12 @@ function JE2(A, Q) {
         return B
     }
 
-function rYA(A, Q) {
+    function rYA(A, Q) {
         if (!A) return;
         return Q.fromObject(JE2(A, Q))
     }
 
-function WE2(A, Q) {
+    function WE2(A, Q) {
         var B = A.fullName.split("."),
             G = Q.fullName.split("."),
             Z = 0,

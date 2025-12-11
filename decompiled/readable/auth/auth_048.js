@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_048.js
+ * 处理时间: 2025-12-09T03:41:36.893Z
+ * 变量映射: 7 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.930Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -20,7 +23,7 @@
     return Cs1
 }
 var Cs1;
-var YeB = L(() => {
+var YeB = lazyLoader(() => {
     _f()
 });
 
@@ -55,7 +58,7 @@ function Te6(A, Q, B) {
             let Y = Fl(Q, I, B),
                 J = Wk(I);
             if (Y = A.serializer.serialize(I.mapper, Y, J), !I.skipEncoding) Y = encodeURIComponent(Y);
-            Z.set(`{${I.mapper.serializedName||J}}`, Y)
+            Z.set(`{TextComponent{I.mapper.serializedName||J}}`, Y)
         }
     return Z
 }
@@ -68,13 +71,13 @@ function je6(A, Q) {
     if (!Q) return A;
     let B = new URL(A),
         G = B.pathname;
-    if (!G.endsWith("/")) G = `${G}/`;
+    if (!G.endsWith("/")) G = `TextComponent{G}/`;
     if (Q.startsWith("/")) Q = Q.substring(1);
     let Z = Q.indexOf("?");
     if (Z !== -1) {
         let I = Q.substring(0, Z),
             Y = Q.substring(Z + 1);
-        if (G = G + I, Y) B.search = B.search ? `${B.search}&${Y}` : Y
+        if (G = G + I, Y) B.search = B.search ? `TextComponent{B.search}&TextComponent{Y}` : Y
     } else G = G + Q;
     return B.pathname = G, B.toString()
 }
@@ -146,14 +149,14 @@ function ke6(A, Q, B, G = !1) {
     }
     let Y = [];
     for (let [J, W] of I)
-        if (typeof W === "string") Y.push(`${J}=${W}`);
+        if (typeof W === "string") Y.push(`TextComponent{J}=TextComponent{W}`);
         else if (Array.isArray(W))
-        for (let X of W) Y.push(`${J}=${X}`);
-    else Y.push(`${J}=${W}`);
-    return Z.search = Y.length ? `?${Y.join("&")}` : "", Z.toString()
+        for (let X of W) Y.push(`TextComponent{J}=TextComponent{X}`);
+    else Y.push(`TextComponent{J}=TextComponent{W}`);
+    return Z.search = Y.length ? `?TextComponent{Y.join("&")}` : "", Z.toString()
 }
 var Re6;
-var XeB = L(() => {
+var XeB = lazyLoader(() => {
     _qA();
     X11();
     Re6 = {
@@ -165,11 +168,10 @@ var XeB = L(() => {
     }
 });
 var FeB;
-var VeB = L(() => {
+var VeB = lazyLoader(() => {
     Se();
     FeB = Jl("core-client")
 });
-
 class F11 {
     constructor(A = {}) {
         var Q, B;
@@ -245,12 +247,12 @@ function ye6(A) {
 
 function xe6(A) {
     if (A.credentialScopes) return A.credentialScopes;
-    if (A.endpoint) return `${A.endpoint}/.default`;
-    if (A.baseUri) return `${A.baseUri}/.default`;
+    if (A.endpoint) return `TextComponent{A.endpoint}/.default`;
+    if (A.baseUri) return `TextComponent{A.baseUri}/.default`;
     if (A.credential && !A.credentialScopes) throw Error("When using credentials, the ServiceClientOptions must contain either a endpoint or a credentialScopes. Unable to create a bearerTokenAuthenticationPolicy");
     return
 }
-var KeB = L(() => {
+var KeB = lazyLoader(() => {
     _f();
     ZeB();
     KrB();
@@ -260,7 +262,7 @@ var KeB = L(() => {
     X11();
     VeB()
 });
-var DeB = L(() => {
+var DeB = lazyLoader(() => {
     KeB()
 });
 
@@ -269,7 +271,7 @@ function HeB(A) {
     else return "oauth2/v2.0/token"
 }
 var GY;
-var Iq = L(() => {
+var Iq = lazyLoader(() => {
     MZA();
     Fs1();
     GY = PqA({
@@ -298,7 +300,7 @@ function EeB(A) {
         if (!isNaN(B)) return B
     }
     if (typeof A.expires_in === "number") return Date.now() + A.expires_in * 1000;
-    throw Error(`Failed to parse token expiration from body. expires_in="${A.expires_in}", expires_on="${A.expires_on}"`)
+    throw Error(`Failed to parse token expiration from body. expires_in="TextComponent{A.expires_in}", expires_on="TextComponent{A.expires_on}"`)
 }
 
 function zeB(A) {
@@ -310,19 +312,21 @@ function zeB(A) {
             let B = Date.parse(A.refresh_on);
             if (!isNaN(B)) return B
         }
-        throw Error(`Failed to parse refresh_on from body. refresh_on="${A.refresh_on}"`)
+        throw Error(`Failed to parse refresh_on from body. refresh_on="TextComponent{A.refresh_on}"`)
     } else return
 }
-var CeB = "Specifying a `clientId` or `resourceId` is not supported by the Service Fabric managed identity environment. The managed identity configuration is determined by the Service Fabric cluster resource configuration. See https://aka.ms/servicefabricmi for more information";
+/* SERVICE_FABRIC_NOT_SUPPORTED = SERVICE_FABRIC_NOT_SUPPORTED message */
+var SERVICE_FABRIC_NOT_SUPPORTED = "Specifying a `clientId` or `resourceId` is not supported by the Service Fabric managed identity environment. The managed identity configuration is determined by the Service Fabric cluster resource configuration. See https://aka.ms/servicefabricmi for more information";
 
 function ve6(A) {
     let Q = A === null || A === void 0 ? void 0 : A.authorityHost;
     if (Z11) Q = Q !== null && Q !== void 0 ? Q : process.env.AZURE_AUTHORITY_HOST;
     return Q !== null && Q !== void 0 ? Q : HqA
 }
-var yqA = "noCorrelationId",
+/* NO_CORRELATION_ID = NO_CORRELATION_ID error */
+var NO_CORRELATION_ID = "noCorrelationId",
     fZA;
-var Es1 = L(() => {
+var Es1 = lazyLoader(() => {
     DeB();
     Xl();
     _f();
@@ -333,8 +337,8 @@ var Es1 = L(() => {
     fZA = class fZA extends F11 {
         constructor(A) {
             var Q, B;
-            let G = `azsdk-js-identity/${kA1}`,
-                Z = ((Q = A === null || A === void 0 ? void 0 : A.userAgentOptions) === null || Q === void 0 ? void 0 : Q.userAgentPrefix) ? `${A.userAgentOptions.userAgentPrefix} ${G}` : `${G}`,
+            let G = `azsdk-js-identity/TextComponent{kA1}`,
+                Z = ((Q = A === null || A === void 0 ? void 0 : A.userAgentOptions) === null || Q === void 0 ? void 0 : Q.userAgentPrefix) ? `TextComponent{A.userAgentOptions.userAgentPrefix} TextComponent{G}` : `TextComponent{G}`,
                 I = ve6(A);
             if (!I.startsWith("https:")) throw Error("The authorityHost address must use the 'https' protocol.");
             super(Object.assign(Object.assign({
@@ -351,7 +355,7 @@ var Es1 = L(() => {
             if (this.allowInsecureConnection = !1, this.authorityHost = I, this.abortControllers = new Map, this.allowLoggingAccountIdentifiers = (B = A === null || A === void 0 ? void 0 : A.loggingOptions) === null || B === void 0 ? void 0 : B.allowLoggingAccountIdentifiers, this.tokenCredentialOptions = Object.assign({}, A), A === null || A === void 0 ? void 0 : A.allowInsecureConnection) this.allowInsecureConnection = A.allowInsecureConnection
         }
         async sendTokenRequest(A) {
-            _M.info(`IdentityClient: sending token request to [${A.url}]`);
+            _M.info(`IdentityClient: sending token request to [TextComponent{A.url}]`);
             let Q = await this.sendRequest(A);
             if (Q.bodyAsText && (Q.status === 200 || Q.status === 201)) {
                 let B = JSON.parse(Q.bodyAsText);
@@ -366,15 +370,15 @@ var Es1 = L(() => {
                     },
                     refreshToken: B.refresh_token
                 };
-                return _M.info(`IdentityClient: [${A.url}] token acquired, expires on ${G.accessToken.expiresOnTimestamp}`), G
+                return _M.info(`IdentityClient: [TextComponent{A.url}] token acquired, expires on TextComponent{G.accessToken.expiresOnTimestamp}`), G
             } else {
                 let B = new CqA(Q.status, Q.bodyAsText);
-                throw _M.warning(`IdentityClient: authentication error. HTTP status: ${Q.status}, ${B.errorResponse.errorDescription}`), B
+                throw _M.warning(`IdentityClient: authentication error. HTTP status: TextComponent{Q.status}, TextComponent{B.errorResponse.errorDescription}`), B
             }
         }
         async refreshAccessToken(A, Q, B, G, Z, I = {}) {
             if (G === void 0) return null;
-            _M.info(`IdentityClient: refreshing access token with client ID: ${Q}, scopes: ${B} started`);
+            _M.info(`IdentityClient: refreshing access token with client ID: TextComponent{Q}, scopes: TextComponent{B} started`);
             let Y = {
                 grant_type: "refresh_token",
                 client_id: Q,
@@ -387,7 +391,7 @@ var Es1 = L(() => {
                 try {
                     let X = HeB(A),
                         F = hT({
-                            url: `${this.authorityHost}/${A}/${X}`,
+                            url: `TextComponent{this.authorityHost}/TextComponent{A}/TextComponent{X}`,
                             method: "POST",
                             body: J.toString(),
                             abortSignal: I.abortSignal,
@@ -398,10 +402,10 @@ var Es1 = L(() => {
                             tracingOptions: W.tracingOptions
                         }),
                         V = await this.sendTokenRequest(F);
-                    return _M.info(`IdentityClient: refreshed token for client ID: ${Q}`), V
+                    return _M.info(`IdentityClient: refreshed token for client ID: TextComponent{Q}`), V
                 } catch (X) {
-                    if (X.name === Ca1 && X.errorResponse.error === "interaction_required") return _M.info(`IdentityClient: interaction required for client ID: ${Q}`), null;
-                    else throw _M.warning(`IdentityClient: failed refreshing token for client ID: ${Q}: ${X}`), X
+                    if (X.name === Ca1 && X.errorResponse.error === "interaction_required") return _M.info(`IdentityClient: interaction required for client ID: TextComponent{Q}`), null;
+                    else throw _M.warning(`IdentityClient: failed refreshing token for client ID: TextComponent{Q}: TextComponent{X}`), X
                 }
             })
         }
@@ -415,8 +419,8 @@ var Es1 = L(() => {
             }, Q.signal
         }
         abortRequests(A) {
-            let Q = A || yqA,
-                B = [...this.abortControllers.get(Q) || [], ...this.abortControllers.get(yqA) || []];
+            let Q = A || NO_CORRELATION_ID,
+                B = [...this.abortControllers.get(Q) || [], ...this.abortControllers.get(NO_CORRELATION_ID) || []];
             if (!B.length) return;
             for (let G of B) G.abort();
             this.abortControllers.set(Q, void 0)
@@ -424,7 +428,7 @@ var Es1 = L(() => {
         getCorrelationId(A) {
             var Q;
             let B = (Q = A === null || A === void 0 ? void 0 : A.body) === null || Q === void 0 ? void 0 : Q.split("&").map((G) => G.split("=")).find(([G]) => G === "client-request-id");
-            return B && B.length ? B[1] || yqA : yqA
+            return B && B.length ? B[1] || NO_CORRELATION_ID : NO_CORRELATION_ID
         }
         async sendGetRequestAsync(A, Q) {
             let B = hT({
@@ -433,7 +437,7 @@ var Es1 = L(() => {
                     body: Q === null || Q === void 0 ? void 0 : Q.body,
                     allowInsecureConnection: this.allowInsecureConnection,
                     headers: ye(Q === null || Q === void 0 ? void 0 : Q.headers),
-                    abortSignal: this.generateAbortSignal(yqA)
+                    abortSignal: this.generateAbortSignal(NO_CORRELATION_ID)
                 }),
                 G = await this.sendRequest(B);
             return this.logIdentifiers(G), {
@@ -474,7 +478,7 @@ var Es1 = L(() => {
                         tid: J,
                         oid: W
                     } = JSON.parse(Buffer.from(Z, "base64").toString("utf8"));
-                _M.info(`[Authenticated account] Client ID: ${I}. Tenant ID: ${J}. User Principal Name: ${Y||Q}. Object ID (user): ${W}`)
+                _M.info(`[Authenticated account] Client ID: TextComponent{I}. Tenant ID: TextComponent{J}. User Principal Name: TextComponent{Y||Q}. Object ID (user): TextComponent{W}`)
             } catch (B) {
                 _M.warning("allowLoggingAccountIdentifiers was set, but we couldn't log the account information. Error:", B.message)
             }
@@ -482,7 +486,6 @@ var Es1 = L(() => {
     }
 });
 var UeB = () => {};
-
 class xe {
     static serializeJSONBlob(A) {
         return JSON.stringify(A)
@@ -583,14 +586,14 @@ class xe {
         }
     }
 }
-var V11 = L(() => {
+var V11 = lazyLoader(() => {
     /*! @azure/msal-node v3.8.1 2025-10-29 */ });
 var L0, o4, pH, zs1, vZ, TU, ve, Vl, K11, hZA, Xk, PU, be, yf, g7, xqA = "appmetadata",
     $eB = "client_info",
     Kl = "1",
     gZA, ME, RF, e6, Fk, vqA, bqA, fe, D11, IZ, uZA = 300,
     ND;
-var bZ = L(() => {
+var bZ = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */
     L0 = {
         LIBRARY_NAME: "MSAL.JS",
@@ -758,31 +761,31 @@ var bZ = L(() => {
         UTF8: "utf-8"
     }
 });
-
 var mZA = {};
-pG(mZA, {
-    unexpectedError: () => fqA,
+esmExport(mZA, {
+    unexpectedError: () => UNEXPECTED_ERROR,
     postRequestFailed: () => hqA
 });
-var fqA = "unexpected_error",
+/* UNEXPECTED_ERROR = UNEXPECTED_ERROR type */
+var UNEXPECTED_ERROR = "unexpected_error",
     hqA = "post_request_failed";
-var Us1 = L(() => {
+var Us1 = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
 
 function ws1(A, Q) {
-    return new t4(A, Q ? `${H11[A]} ${Q}` : H11[A])
+    return new t4(A, Q ? `TextComponent{H11[A]} TextComponent{Q}` : H11[A])
 }
 var H11, $s1, t4;
-var yM = L(() => {
+var yM = lazyLoader(() => {
     bZ();
     Us1(); /*! @azure/msal-common v15.13.1 2025-10-29 */
     H11 = {
-        [fqA]: "Unexpected error in authentication.",
+        [UNEXPECTED_ERROR]: "Unexpected error in authentication.",
         [hqA]: "Post request failed from the network, could be a 4xx/5xx or a network unavailability. Please check the exact error code for details."
     }, $s1 = {
         unexpectedError: {
-            code: fqA,
-            desc: H11[fqA]
+            code: UNEXPECTED_ERROR,
+            desc: H11[UNEXPECTED_ERROR]
         },
         postRequestFailed: {
             code: hqA,
@@ -791,7 +794,7 @@ var yM = L(() => {
     };
     t4 = class t4 extends Error {
         constructor(A, Q, B) {
-            let G = Q ? `${A}: ${Q}` : A;
+            let G = Q ? `TextComponent{A}: TextComponent{Q}` : A;
             super(G);
             Object.setPrototypeOf(this, t4.prototype), this.errorCode = A || L0.EMPTY_STRING, this.errorMessage = Q || L0.EMPTY_STRING, this.subError = B || L0.EMPTY_STRING, this.name = "AuthError"
         }
@@ -800,9 +803,8 @@ var yM = L(() => {
         }
     }
 });
-
 var PG = {};
-pG(PG, {
+esmExport(PG, {
     userTimeoutReached: () => aqA,
     userCanceled: () => oqA,
     unexpectedCredentialType: () => lqA,
@@ -841,14 +843,15 @@ pG(PG, {
     deviceCodePollingCancelled: () => mqA,
     deviceCodeExpired: () => dqA,
     clientInfoEmptyError: () => he,
-    clientInfoDecodingError: () => Dl,
+    clientInfoDecodingError: () => CLIENT_INFO_DECODING_ERROR,
     cannotRemoveEmptyScope: () => ae,
     cannotAppendScopeSet: () => se,
     bindingKeyNotRemoved: () => sqA,
     authorizationCodeMissingFromServerResponse: () => te,
     authTimeNotFound: () => xf
 });
-var Dl = "client_info_decoding_error",
+/* CLIENT_INFO_DECODING_ERROR = CLIENT_INFO_DECODING_ERROR */
+var CLIENT_INFO_DECODING_ERROR = "client_info_decoding_error",
     he = "client_info_empty_error",
     Hl = "token_parsing_error",
     ge = "null_or_empty_token",
@@ -892,18 +895,18 @@ var Dl = "client_info_decoding_error",
     tqA = "missing_tenant_id_error",
     g8 = "method_not_implemented",
     eqA = "nested_app_auth_bridge_disabled";
-var PW = L(() => {
+var PW = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
 
 function v0(A, Q) {
     return new Ul(A, Q)
 }
 var e4, qs1, Ul;
-var mX = L(() => {
+var mX = lazyLoader(() => {
     yM();
     PW(); /*! @azure/msal-common v15.13.1 2025-10-29 */
     e4 = {
-        [Dl]: "The client info could not be parsed/decoded correctly",
+        [CLIENT_INFO_DECODING_ERROR]: "The client info could not be parsed/decoded correctly",
         [he]: "The client info was empty",
         [Hl]: "Token cannot be parsed",
         [ge]: "The token is null or empty",
@@ -949,8 +952,8 @@ var mX = L(() => {
         [eqA]: "The nested app auth bridge is disabled"
     }, qs1 = {
         clientInfoDecodingError: {
-            code: Dl,
-            desc: e4[Dl]
+            code: CLIENT_INFO_DECODING_ERROR,
+            desc: e4[CLIENT_INFO_DECODING_ERROR]
         },
         clientInfoEmptyError: {
             code: he,
@@ -1123,13 +1126,13 @@ var mX = L(() => {
     };
     Ul = class Ul extends t4 {
         constructor(A, Q) {
-            super(A, Q ? `${e4[A]}: ${Q}` : e4[A]);
+            super(A, Q ? `TextComponent{e4[A]}: TextComponent{Q}` : e4[A]);
             this.name = "ClientAuthError", Object.setPrototypeOf(this, Ul.prototype)
         }
     }
 });
 var dZA;
-var Ns1 = L(() => {
+var Ns1 = lazyLoader(() => {
     mX();
     PW(); /*! @azure/msal-common v15.13.1 2025-10-29 */
     dZA = {
@@ -1165,7 +1168,6 @@ var Ns1 = L(() => {
         }
     }
 });
-
 class jU {
     constructor(A, Q, B) {
         this.level = pY.Info;
@@ -1192,7 +1194,7 @@ class jU {
     }
     logMessage(A, Q) {
         if (Q.logLevel > this.level || !this.piiLoggingEnabled && Q.containsPii) return;
-        let Z = `${`[${new Date().toUTCString()}] : [${Q.correlationId||this.correlationId||""}]`} : ${this.packageName}@${this.packageVersion} : ${pY[Q.logLevel]} - ${A}`;
+        let Z = `TextComponent{`[TextComponent{new Date().toUTCString()}] : [TextComponent{Q.correlationId||this.correlationId||""}]`} : TextComponent{this.packageName}@TextComponent{this.packageVersion} : TextComponent{pY[Q.logLevel]} - TextComponent{A}`;
         this.executeCallback(Q.logLevel, Z, Q.containsPii || !1)
     }
     executeCallback(A, Q, B) {
@@ -1273,7 +1275,7 @@ class jU {
     }
 }
 var pY;
-var C11 = L(() => {
+var C11 = lazyLoader(() => {
     bZ(); /*! @azure/msal-common v15.13.1 2025-10-29 */
     (function(A) {
         A[A.Error = 0] = "Error", A[A.Warning = 1] = "Warning", A[A.Info = 2] = "Info", A[A.Verbose = 3] = "Verbose", A[A.Trace = 4] = "Trace"
@@ -1281,10 +1283,10 @@ var C11 = L(() => {
 });
 var E11 = "@azure/msal-common",
     cZA = "15.13.1";
-var z11 = L(() => {
+var z11 = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
 var hf;
-var U11 = L(() => {
+var U11 = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */
     hf = {
         None: "none",
@@ -1295,14 +1297,13 @@ var U11 = L(() => {
         AzureUsGovernment: "https://login.microsoftonline.us"
     }
 });
-
 var pZA = {};
-pG(pZA, {
+esmExport(pZA, {
     urlParseError: () => Vk,
     urlEmptyError: () => GAA,
     untrustedAuthority: () => XAA,
     tokenRequestEmpty: () => IAA,
-    redirectUriEmpty: () => QAA,
+    redirectUriEmpty: () => REDIRECT_URI_EMPTY,
     pkceParamsMissing: () => JAA,
     missingSshKid: () => BNA,
     missingSshJwk: () => gf,
@@ -1322,7 +1323,8 @@ pG(pZA, {
     authorityUriInsecure: () => BAA,
     authorityMismatch: () => JNA
 });
-var QAA = "redirect_uri_empty",
+/* REDIRECT_URI_EMPTY = REDIRECT_URI_EMPTY error */
+var REDIRECT_URI_EMPTY = "redirect_uri_empty",
     ANA = "claims_request_parsing_error",
     BAA = "authority_uri_insecure",
     Vk = "url_parse_error",
@@ -1345,20 +1347,20 @@ var QAA = "redirect_uri_empty",
     JNA = "authority_mismatch",
     WNA = "invalid_request_method_for_EAR",
     XNA = "invalid_authorize_post_body_parameters";
-var uf = L(() => {
+var uf = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
 
 function jG(A) {
     return new lZA(A)
 }
 var ZY, Ls1, lZA;
-var ql = L(() => {
+var ql = lazyLoader(() => {
     yM();
     uf(); /*! @azure/msal-common v15.13.1 2025-10-29 */
     ZY = {
-        [QAA]: "A redirect URI is required for all calls, and none has been set.",
+        [REDIRECT_URI_EMPTY]: "A redirect URI is required for all calls, and none has been set.",
         [ANA]: "Could not parse the given claims request object.",
-        [BAA]: "Authority URIs must use https.  Please see here for valid authority configuration options: https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-js-initializing-client-applications#configuration-options",
+        [BAA]: "Authority URIs must use https.  Please see here for valid authority configuration options: https://docs.microsoft.com/AGENT_OUTPUT_TOOL_NAME-us/azure/active-directory/develop/msal-js-initializing-client-applications#configuration-options",
         [Vk]: "URL could not be parsed into appropriate segments.",
         [GAA]: "URL was empty or null.",
         [ZAA]: "Scopes cannot be passed as null, undefined or empty array because they are required to obtain an access token.",
@@ -1381,8 +1383,8 @@ var ql = L(() => {
         [WNA]: "Invalid request method for EAR protocol mode. The request method cannot be GET when using EAR protocol mode. Please change the request method to POST."
     }, Ls1 = {
         redirectUriNotSet: {
-            code: QAA,
-            desc: ZY[QAA]
+            code: REDIRECT_URI_EMPTY,
+            desc: ZY[REDIRECT_URI_EMPTY]
         },
         claimsRequestParsingError: {
             code: ANA,
@@ -1480,7 +1482,6 @@ var ql = L(() => {
         }
     }
 });
-
 class YZ {
     static isEmptyObj(A) {
         if (A) try {

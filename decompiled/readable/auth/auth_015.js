@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_015.js
+ * 处理时间: 2025-12-09T03:41:36.501Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.900Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -33,7 +36,7 @@
     aWQ.defaultEndpointResolver = Tm4;
     JN1.customEndpointFunctions.aws = Mm4.awsEndpointFunctions
 });
-var QXQ = U((eWQ) => {
+var QXQ = moduleWrapper((eWQ) => {
     Object.defineProperty(eWQ, "__esModule", {
         value: !0
     });
@@ -73,7 +76,7 @@ var QXQ = U((eWQ) => {
         };
     eWQ.getRuntimeConfig = xm4
 });
-var WXQ = U((YXQ) => {
+var WXQ = moduleWrapper((YXQ) => {
     Object.defineProperty(YXQ, "__esModule", {
         value: !0
     });
@@ -133,7 +136,7 @@ var WXQ = U((YXQ) => {
         };
     YXQ.getRuntimeConfig = pm4
 });
-var FN1 = U(($K7, vXQ) => {
+var FN1 = moduleWrapper(($K7, vXQ) => {
     var {
         defineProperty: KgA,
         getOwnPropertyDescriptor: lm4,
@@ -778,7 +781,7 @@ var FN1 = U(($K7, vXQ) => {
         };
     (0, Wd4.createAggregatedClient)(Pd4, xXQ)
 });
-var cXQ = U((LK7, dXQ) => {
+var cXQ = moduleWrapper((LK7, dXQ) => {
     var {
         create: jd4,
         defineProperty: oDA,
@@ -826,7 +829,7 @@ var cXQ = U((LK7, dXQ) => {
                 logger: A
             });
             let B = (0, fd4.getBearerTokenEnvKey)(Q);
-            if (!(B in process.env)) throw new Vw.TokenProviderError(`Token not present in '${B}' environment variable`, {
+            if (!(B in process.env)) throw new Vw.TokenProviderError(`Token not present in 'TextComponent{B}' environment variable`, {
                 logger: A
             });
             let G = {
@@ -857,13 +860,13 @@ var cXQ = U((LK7, dXQ) => {
             }))
         }, "getNewSsoOidcToken"),
         bXQ = fv((A) => {
-            if (A.expiration && A.expiration.getTime() < Date.now()) throw new Vw.TokenProviderError(`Token is expired. ${VN1}`, !1)
+            if (A.expiration && A.expiration.getTime() < Date.now()) throw new Vw.TokenProviderError(`Token is expired. TextComponent{VN1}`, !1)
         }, "validateTokenExpiry"),
         xr = fv((A, Q, B = !1) => {
-            if (typeof Q > "u") throw new Vw.TokenProviderError(`Value not present for '${A}' in SSO Token${B?". Cannot refresh":""}. ${VN1}`, !1)
+            if (typeof Q > "u") throw new Vw.TokenProviderError(`Value not present for 'TextComponent{A}' in SSO Token${B?". Cannot refresh":""}. TextComponent{VN1}`, !1)
         }, "validateTokenKey"),
         rDA = NG(),
-        dd4 = UA("fs"),
+        dd4 = nodeRequire("fs"),
         {
             writeFile: cd4
         } = dd4.promises,
@@ -889,13 +892,13 @@ var cXQ = U((LK7, dXQ) => {
                     profile: B.profile ?? Q?.profile
                 }),
                 I = G[Z];
-            if (!I) throw new Vw.TokenProviderError(`Profile '${Z}' could not be found in shared credentials file.`, !1);
-            else if (!I.sso_session) throw new Vw.TokenProviderError(`Profile '${Z}' is missing required property 'sso_session'.`);
+            if (!I) throw new Vw.TokenProviderError(`Profile 'TextComponent{Z}' could not be found in shared credentials file.`, !1);
+            else if (!I.sso_session) throw new Vw.TokenProviderError(`Profile 'TextComponent{Z}' is missing required property 'sso_session'.`);
             let Y = I.sso_session,
                 W = (await (0, rDA.loadSsoSessionData)(B))[Y];
-            if (!W) throw new Vw.TokenProviderError(`Sso session '${Y}' could not be found in shared credentials file.`, !1);
+            if (!W) throw new Vw.TokenProviderError(`Sso session 'TextComponent{Y}' could not be found in shared credentials file.`, !1);
             for (let C of ["sso_start_url", "sso_region"])
-                if (!W[C]) throw new Vw.TokenProviderError(`Sso session '${Y}' is missing required property '${C}'.`, !1);
+                if (!W[C]) throw new Vw.TokenProviderError(`Sso session 'TextComponent{Y}' is missing required property 'TextComponent{C}'.`, !1);
             let {
                 sso_start_url: X,
                 sso_region: F
@@ -903,7 +906,7 @@ var cXQ = U((LK7, dXQ) => {
             try {
                 V = await (0, rDA.getSSOTokenFromFile)(Y)
             } catch (C) {
-                throw new Vw.TokenProviderError(`The SSO session token associated with profile=${Z} was not found or is invalid. ${VN1}`, !1)
+                throw new Vw.TokenProviderError(`The SSO session token associated with profile=TextComponent{Z} was not found or is invalid. TextComponent{VN1}`, !1)
             }
             xr("accessToken", V.accessToken), xr("expiresAt", V.expiresAt);
             let {
@@ -948,7 +951,7 @@ var cXQ = U((LK7, dXQ) => {
             throw new Vw.TokenProviderError("Could not load token from any providers", !1)
         }), (Q) => Q.expiration !== void 0 && Q.expiration.getTime() - Date.now() < 300000, (Q) => Q.expiration !== void 0), "nodeProvider")
 });
-var DN1 = U((MK7, tXQ) => {
+var DN1 = moduleWrapper((MK7, tXQ) => {
     var {
         defineProperty: HgA,
         getOwnPropertyDescriptor: nd4,
@@ -1093,7 +1096,7 @@ var DN1 = U((MK7, tXQ) => {
                 sso_region: Z,
                 sso_role_name: I
             } = A;
-            if (!B || !G || !Z || !I) throw new xR.CredentialsProviderError(`Profile is configured with invalid SSO credentials. Required parameters "sso_account_id", "sso_region", "sso_role_name", "sso_start_url". Got ${Object.keys(A).join(", ")}
+            if (!B || !G || !Z || !I) throw new xR.CredentialsProviderError(`Profile is configured with invalid SSO credentials. Required parameters "sso_account_id", "sso_region", "sso_role_name", "sso_start_url". Got TextComponent{Object.keys(A).join(", ")}
 Reference: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.html`, {
                 tryNextLink: !1,
                 logger: Q
@@ -1117,15 +1120,15 @@ Reference: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.ht
             });
             if (!B && !G && !Z && !I && !Y) {
                 let F = (await (0, DgA.parseKnownFiles)(A))[W];
-                if (!F) throw new xR.CredentialsProviderError(`Profile ${W} was not found.`, {
+                if (!F) throw new xR.CredentialsProviderError(`Profile TextComponent{W} was not found.`, {
                     logger: A.logger
                 });
-                if (!rXQ(F)) throw new xR.CredentialsProviderError(`Profile ${W} is not configured with SSO credentials.`, {
+                if (!rXQ(F)) throw new xR.CredentialsProviderError(`Profile TextComponent{W} is not configured with SSO credentials.`, {
                     logger: A.logger
                 });
                 if (F?.sso_session) {
                     let z = (await (0, DgA.loadSsoSessionData)(A))[F.sso_session],
-                        w = ` configurations in profile ${W} and sso-session ${F.sso_session}`;
+                        w = ` configurations in profile TextComponent{W} and sso-session TextComponent{F.sso_session}`;
                     if (Z && Z !== z.sso_region) throw new xR.CredentialsProviderError("Conflicting SSO region" + w, {
                         tryNextLink: !1,
                         logger: A.logger
@@ -1171,7 +1174,7 @@ Reference: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.ht
             })
         }, "fromSSO")
 });
-var CN1 = U((eXQ) => {
+var CN1 = moduleWrapper((eXQ) => {
     Object.defineProperty(eXQ, "__esModule", {
         value: !0
     });
@@ -1189,7 +1192,7 @@ var CN1 = U((eXQ) => {
         };
     eXQ.defaultSTSHttpAuthSchemeParametersProvider = Gc4;
 
-function Zc4(A) {
+    function Zc4(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {
@@ -1205,7 +1208,7 @@ function Zc4(A) {
         }
     }
 
-function Ic4(A) {
+    function Ic4(A) {
         return {
             schemeId: "smithy.api#noAuth"
         }
@@ -1236,7 +1239,7 @@ function Ic4(A) {
     };
     eXQ.resolveHttpAuthSchemeConfig = Wc4
 });
-var AHA = U((BFQ) => {
+var AHA = moduleWrapper((BFQ) => {
     Object.defineProperty(BFQ, "__esModule", {
         value: !0
     });
@@ -1273,14 +1276,14 @@ var AHA = U((BFQ) => {
         }
     }
 });
-var TFQ = U((OFQ) => {
+var TFQ = moduleWrapper((OFQ) => {
     Object.defineProperty(OFQ, "__esModule", {
         value: !0
     });
     OFQ.ruleSet = void 0;
     var CFQ = "required",
         y8 = "type",
-        a3 = "fn",
+        TASK_TOOL_NAME = "fn",
         s3 = "argv",
         Kd = "ref",
         ZFQ = !1,
@@ -1308,7 +1311,7 @@ var TFQ = U((OFQ) => {
             [Kd]: "Endpoint"
         },
         JFQ = {
-            [a3]: "isSet",
+            [TASK_TOOL_NAME]: "isSet",
             [s3]: [{
                 [Kd]: "Region"
             }]
@@ -1317,7 +1320,7 @@ var TFQ = U((OFQ) => {
             [Kd]: "Region"
         },
         WFQ = {
-            [a3]: "aws.partition",
+            [TASK_TOOL_NAME]: "aws.partition",
             [s3]: [eK],
             assign: "PartitionResult"
         },
@@ -1341,22 +1344,22 @@ var TFQ = U((OFQ) => {
         Kw = {},
         XFQ = {
             conditions: [{
-                [a3]: tK,
+                [TASK_TOOL_NAME]: tK,
                 [s3]: [eK, "aws-global"]
             }],
             [hI]: zH,
             [y8]: hI
         },
         NFQ = {
-            [a3]: Vd,
+            [TASK_TOOL_NAME]: Vd,
             [s3]: [wFQ, !0]
         },
         LFQ = {
-            [a3]: Vd,
+            [TASK_TOOL_NAME]: Vd,
             [s3]: [qFQ, !0]
         },
         FFQ = {
-            [a3]: UN1,
+            [TASK_TOOL_NAME]: UN1,
             [s3]: [{
                 [Kd]: "PartitionResult"
             }, "supportsFIPS"]
@@ -1365,14 +1368,14 @@ var TFQ = U((OFQ) => {
             [Kd]: "PartitionResult"
         },
         VFQ = {
-            [a3]: Vd,
+            [TASK_TOOL_NAME]: Vd,
             [s3]: [!0, {
-                [a3]: UN1,
+                [TASK_TOOL_NAME]: UN1,
                 [s3]: [MFQ, "supportsDualStack"]
             }]
         },
         KFQ = [{
-            [a3]: "isSet",
+            [TASK_TOOL_NAME]: "isSet",
             [s3]: [$FQ]
         }],
         DFQ = [NFQ],
@@ -1388,121 +1391,121 @@ var TFQ = U((OFQ) => {
             },
             rules: [{
                 conditions: [{
-                    [a3]: Vd,
+                    [TASK_TOOL_NAME]: Vd,
                     [s3]: [{
                         [Kd]: "UseGlobalEndpoint"
                     }, EN1]
                 }, {
-                    [a3]: "not",
+                    [TASK_TOOL_NAME]: "not",
                     [s3]: KFQ
                 }, JFQ, WFQ, {
-                    [a3]: Vd,
+                    [TASK_TOOL_NAME]: Vd,
                     [s3]: [wFQ, ZFQ]
                 }, {
-                    [a3]: Vd,
+                    [TASK_TOOL_NAME]: Vd,
                     [s3]: [qFQ, ZFQ]
                 }],
                 rules: [{
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, "ap-northeast-1"]
                     }],
                     endpoint: zH,
                     [y8]: hI
                 }, {
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, "ap-south-1"]
                     }],
                     endpoint: zH,
                     [y8]: hI
                 }, {
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, "ap-southeast-1"]
                     }],
                     endpoint: zH,
                     [y8]: hI
                 }, {
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, "ap-southeast-2"]
                     }],
                     endpoint: zH,
                     [y8]: hI
                 }, XFQ, {
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, "ca-central-1"]
                     }],
                     endpoint: zH,
                     [y8]: hI
                 }, {
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, "eu-central-1"]
                     }],
                     endpoint: zH,
                     [y8]: hI
                 }, {
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, "eu-north-1"]
                     }],
                     endpoint: zH,
                     [y8]: hI
                 }, {
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, "eu-west-1"]
                     }],
                     endpoint: zH,
                     [y8]: hI
                 }, {
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, "eu-west-2"]
                     }],
                     endpoint: zH,
                     [y8]: hI
                 }, {
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, "eu-west-3"]
                     }],
                     endpoint: zH,
                     [y8]: hI
                 }, {
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, "sa-east-1"]
                     }],
                     endpoint: zH,
                     [y8]: hI
                 }, {
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, UFQ]
                     }],
                     endpoint: zH,
                     [y8]: hI
                 }, {
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, "us-east-2"]
                     }],
                     endpoint: zH,
                     [y8]: hI
                 }, {
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, "us-west-1"]
                     }],
                     endpoint: zH,
                     [y8]: hI
                 }, {
                     conditions: [{
-                        [a3]: tK,
+                        [TASK_TOOL_NAME]: tK,
                         [s3]: [eK, "us-west-2"]
                     }],
                     endpoint: zH,

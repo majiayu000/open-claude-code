@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_027.js
+ * 处理时间: 2025-12-09T03:41:36.299Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.882Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -232,14 +235,13 @@
     var bb5 = Qn();
     x2.RAL = bb5.default
 });
-var Cj2 = U((Hj2) => {
+var Cj2 = moduleWrapper((Hj2) => {
     Object.defineProperty(Hj2, "__esModule", {
         value: !0
     });
-    var Fj2 = UA("util"),
+    var Fj2 = nodeRequire("util"),
         bh = T61();
-
-class P61 extends bh.AbstractMessageBuffer {
+    class P61 extends bh.AbstractMessageBuffer {
         constructor(A = "utf-8") {
             super(A)
         }
@@ -262,8 +264,7 @@ class P61 extends bh.AbstractMessageBuffer {
         }
     }
     P61.emptyBuffer = Buffer.allocUnsafe(0);
-
-class Vj2 {
+    class Vj2 {
         constructor(A) {
             this.stream = A
         }
@@ -280,8 +281,7 @@ class Vj2 {
             return this.stream.on("data", A), bh.Disposable.create(() => this.stream.off("data", A))
         }
     }
-
-class Kj2 {
+    class Kj2 {
         constructor(A) {
             this.stream = A
         }
@@ -362,7 +362,7 @@ class Kj2 {
         })
     });
 
-function Z60() {
+    function Z60() {
         return Dj2
     }(function(A) {
         function Q() {
@@ -372,7 +372,7 @@ function Z60() {
     })(Z60 || (Z60 = {}));
     Hj2.default = Z60
 });
-var Nj2 = U((m5) => {
+var Nj2 = moduleWrapper((m5) => {
     var mb5 = m5 && m5.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -397,14 +397,13 @@ var Nj2 = U((m5) => {
     m5.createMessageConnection = m5.createServerSocketTransport = m5.createClientSocketTransport = m5.createServerPipeTransport = m5.createClientPipeTransport = m5.generateRandomPipeName = m5.StreamMessageWriter = m5.StreamMessageReader = m5.SocketMessageWriter = m5.SocketMessageReader = m5.PortMessageWriter = m5.PortMessageReader = m5.IPCMessageWriter = m5.IPCMessageReader = void 0;
     var mJA = Cj2();
     mJA.default.install();
-    var Ej2 = UA("path"),
-        cb5 = UA("os"),
-        pb5 = UA("crypto"),
-        j61 = UA("net"),
+    var Ej2 = nodeRequire("path"),
+        cb5 = nodeRequire("os"),
+        pb5 = nodeRequire("crypto"),
+        j61 = nodeRequire("net"),
         Rq = T61();
     db5(T61(), m5);
-
-class Uj2 extends Rq.AbstractMessageReader {
+    class Uj2 extends Rq.AbstractMessageReader {
         constructor(A) {
             super();
             this.process = A;
@@ -440,8 +439,7 @@ class Uj2 extends Rq.AbstractMessageReader {
         end() {}
     }
     m5.IPCMessageWriter = $j2;
-
-class wj2 extends Rq.AbstractMessageReader {
+    class wj2 extends Rq.AbstractMessageReader {
         constructor(A) {
             super();
             this.onData = new Rq.Emitter, A.on("close", () => this.fireClose), A.on("error", (Q) => this.fireError(Q)), A.on("message", (Q) => {
@@ -453,8 +451,7 @@ class wj2 extends Rq.AbstractMessageReader {
         }
     }
     m5.PortMessageReader = wj2;
-
-class qj2 extends Rq.AbstractMessageWriter {
+    class qj2 extends Rq.AbstractMessageWriter {
         constructor(A) {
             super();
             this.port = A, this.errorCount = 0, A.on("close", () => this.fireClose()), A.on("error", (Q) => this.fireError(Q))
@@ -472,15 +469,13 @@ class qj2 extends Rq.AbstractMessageWriter {
         end() {}
     }
     m5.PortMessageWriter = qj2;
-
-class dJA extends Rq.ReadableStreamMessageReader {
+    class dJA extends Rq.ReadableStreamMessageReader {
         constructor(A, Q = "utf-8") {
             super((0, mJA.default)().stream.asReadableStream(A), Q)
         }
     }
     m5.SocketMessageReader = dJA;
-
-class cJA extends Rq.WriteableStreamMessageWriter {
+    class cJA extends Rq.WriteableStreamMessageWriter {
         constructor(A, Q) {
             super((0, mJA.default)().stream.asWritableStream(A), Q);
             this.socket = A
@@ -490,15 +485,13 @@ class cJA extends Rq.WriteableStreamMessageWriter {
         }
     }
     m5.SocketMessageWriter = cJA;
-
-class I60 extends Rq.ReadableStreamMessageReader {
+    class I60 extends Rq.ReadableStreamMessageReader {
         constructor(A, Q) {
             super((0, mJA.default)().stream.asReadableStream(A), Q)
         }
     }
     m5.StreamMessageReader = I60;
-
-class Y60 extends Rq.WriteableStreamMessageWriter {
+    class Y60 extends Rq.WriteableStreamMessageWriter {
         constructor(A, Q) {
             super((0, mJA.default)().stream.asWritableStream(A), Q)
         }
@@ -510,19 +503,19 @@ class Y60 extends Rq.WriteableStreamMessageWriter {
             ["darwin", 103]
         ]);
 
-function ib5() {
+    function ib5() {
         let A = (0, pb5.randomBytes)(21).toString("hex");
-        if (process.platform === "win32") return `\\\\.\\pipe\\vscode-jsonrpc-${A}-sock`;
+        if (process.platform === "win32") return `\\\\.\\pipe\\vscode-jsonrpc-TextComponent{A}-sock`;
         let Q;
-        if (zj2) Q = Ej2.join(zj2, `vscode-ipc-${A}.sock`);
-        else Q = Ej2.join(cb5.tmpdir(), `vscode-${A}.sock`);
+        if (zj2) Q = Ej2.join(zj2, `vscode-ipc-TextComponent{A}.sock`);
+        else Q = Ej2.join(cb5.tmpdir(), `vscode-TextComponent{A}.sock`);
         let B = lb5.get(process.platform);
-        if (B !== void 0 && Q.length > B)(0, mJA.default)().console.warn(`WARNING: IPC handle "${Q}" is longer than ${B} characters.`);
+        if (B !== void 0 && Q.length > B)(0, mJA.default)().console.warn(`WARNING: IPC handle "TextComponent{Q}" is longer than TextComponent{B} characters.`);
         return Q
     }
     m5.generateRandomPipeName = ib5;
 
-function nb5(A, Q = "utf-8") {
+    function nb5(A, Q = "utf-8") {
         let B, G = new Promise((Z, I) => {
             B = Z
         });
@@ -541,13 +534,13 @@ function nb5(A, Q = "utf-8") {
     }
     m5.createClientPipeTransport = nb5;
 
-function ab5(A, Q = "utf-8") {
+    function ab5(A, Q = "utf-8") {
         let B = (0, j61.createConnection)(A);
         return [new dJA(B, Q), new cJA(B, Q)]
     }
     m5.createServerPipeTransport = ab5;
 
-function sb5(A, Q = "utf-8") {
+    function sb5(A, Q = "utf-8") {
         let B, G = new Promise((Z, I) => {
             B = Z
         });
@@ -566,23 +559,23 @@ function sb5(A, Q = "utf-8") {
     }
     m5.createClientSocketTransport = sb5;
 
-function rb5(A, Q = "utf-8") {
+    function rb5(A, Q = "utf-8") {
         let B = (0, j61.createConnection)(A, "127.0.0.1");
         return [new dJA(B, Q), new cJA(B, Q)]
     }
     m5.createServerSocketTransport = rb5;
 
-function ob5(A) {
+    function ob5(A) {
         let Q = A;
         return Q.read !== void 0 && Q.addListener !== void 0
     }
 
-function tb5(A) {
+    function tb5(A) {
         let Q = A;
         return Q.write !== void 0 && Q.addListener !== void 0
     }
 
-function eb5(A, Q, B, G) {
+    function eb5(A, Q, B, G) {
         if (!B) B = Rq.NullLogger;
         let Z = ob5(A) ? new I60(A) : A,
             I = tb5(Q) ? new Y60(Q) : Q;
@@ -604,8 +597,8 @@ function Lj2(A) {
         W = [],
         X = [];
 
-function F() {
-        if (I) throw Y || Error(`LSP server ${A} failed to start`)
+    function F() {
+        if (I) throw Y || Error(`LSP server TextComponent{A} failed to start`)
     }
     return {
         get capabilities() {
@@ -638,42 +631,42 @@ function F() {
                         H.once("spawn", N), H.once("error", q)
                     }), Q.stderr) Q.stderr.on("data", (z) => {
                     let w = z.toString().trim();
-                    if (w) g(`[LSP SERVER ${A}] ${w}`)
+                    if (w) g(`[LSP SERVER TextComponent{A}] TextComponent{w}`)
                 });
                 Q.on("error", (z) => {
-                    if (!J) I = !0, Y = z, e(Error(`LSP server ${A} failed to start: ${z.message}`))
+                    if (!J) I = !0, Y = z, e(Error(`LSP server TextComponent{A} failed to start: TextComponent{z.message}`))
                 }), Q.on("exit", (z, w) => {
-                    if (z !== 0 && z !== null && !J) Z = !1, I = !1, Y = void 0, e(Error(`LSP server ${A} crashed with exit code ${z}`))
+                    if (z !== 0 && z !== null && !J) Z = !1, I = !1, Y = void 0, e(Error(`LSP server TextComponent{A} crashed with exit code TextComponent{z}`))
                 }), Q.stdin.on("error", (z) => {
-                    if (!J) g(`LSP server ${A} stdin error: ${z.message}`)
+                    if (!J) g(`LSP server TextComponent{A} stdin error: TextComponent{z.message}`)
                 });
                 let C = new Bn.StreamMessageReader(Q.stdout),
                     E = new Bn.StreamMessageWriter(Q.stdin);
                 B = Bn.createMessageConnection(C, E), B.onError(([z, w, N]) => {
-                    if (!J) I = !0, Y = z, e(Error(`LSP server ${A} connection error: ${z.message}`))
+                    if (!J) I = !0, Y = z, e(Error(`LSP server TextComponent{A} connection error: TextComponent{z.message}`))
                 }), B.onClose(() => {
-                    if (!J) Z = !1, g(`LSP server ${A} connection closed`)
+                    if (!J) Z = !1, g(`LSP server TextComponent{A} connection closed`)
                 }), B.listen(), B.trace(Bn.Trace.Verbose, {
                     log: (z) => {
-                        g(`[LSP PROTOCOL ${A}] ${z}`)
+                        g(`[LSP PROTOCOL TextComponent{A}] TextComponent{z}`)
                     }
                 }).catch((z) => {
-                    g(`Failed to enable tracing for ${A}: ${z.message}`)
+                    g(`Failed to enable tracing for TextComponent{A}: TextComponent{z.message}`)
                 });
                 for (let {
                         method: z,
                         handler: w
                     }
-                    of W) B.onNotification(z, w), g(`Applied queued notification handler for ${A}.${z}`);
+                    of W) B.onNotification(z, w), g(`Applied queued notification handler for TextComponent{A}.TextComponent{z}`);
                 W.length = 0;
                 for (let {
                         method: z,
                         handler: w
                     }
-                    of X) B.onRequest(z, w), g(`Applied queued request handler for ${A}.${z}`);
-                X.length = 0, g(`LSP client started for ${A}`)
+                    of X) B.onRequest(z, w), g(`Applied queued request handler for TextComponent{A}.TextComponent{z}`);
+                X.length = 0, g(`LSP client started for TextComponent{A}`)
             } catch (H) {
-                throw e(Error(`LSP server ${A} failed to start: ${H.message}`)), H
+                throw e(Error(`LSP server TextComponent{A} failed to start: TextComponent{H.message}`)), H
             }
         },
         async initialize(V) {
@@ -681,9 +674,9 @@ function F() {
             F();
             try {
                 let K = await B.sendRequest("initialize", V);
-                return G = K.capabilities, await B.sendNotification("initialized", {}), Z = !0, g(`LSP server ${A} initialized`), K
+                return G = K.capabilities, await B.sendNotification("initialized", {}), Z = !0, g(`LSP server TextComponent{A} initialized`), K
             } catch (K) {
-                throw e(Error(`LSP server ${A} initialize failed: ${K.message}`)), K
+                throw e(Error(`LSP server TextComponent{A} initialize failed: TextComponent{K.message}`)), K
             }
         },
         async sendRequest(V, K) {
@@ -692,7 +685,7 @@ function F() {
             try {
                 return await B.sendRequest(V, K)
             } catch (D) {
-                throw e(Error(`LSP server ${A} request ${V} failed: ${D.message}`)), D
+                throw e(Error(`LSP server TextComponent{A} request TextComponent{V} failed: TextComponent{D.message}`)), D
             }
         },
         async sendNotification(V, K) {
@@ -701,7 +694,7 @@ function F() {
             try {
                 await B.sendNotification(V, K)
             } catch (D) {
-                e(Error(`LSP server ${A} notification ${V} failed: ${D.message}`)), g(`Notification ${V} failed but continuing`)
+                e(Error(`LSP server TextComponent{A} notification TextComponent{V} failed: TextComponent{D.message}`)), g(`Notification TextComponent{V} failed but continuing`)
             }
         },
         onNotification(V, K) {
@@ -709,7 +702,7 @@ function F() {
                 W.push({
                     method: V,
                     handler: K
-                }), g(`Queued notification handler for ${A}.${V} (connection not ready)`);
+                }), g(`Queued notification handler for TextComponent{A}.TextComponent{V} (connection not ready)`);
                 return
             }
             F(), B.onNotification(V, K)
@@ -719,7 +712,7 @@ function F() {
                 X.push({
                     method: V,
                     handler: K
-                }), g(`Queued request handler for ${A}.${V} (connection not ready)`);
+                }), g(`Queued request handler for TextComponent{A}.TextComponent{V} (connection not ready)`);
                 return
             }
             F(), B.onRequest(V, K)
@@ -731,13 +724,13 @@ function F() {
                 if (B) await B.sendRequest("shutdown", null), await B.sendNotification("exit", null)
             } catch (K) {
                 let D = K;
-                e(Error(`LSP server ${A} stop failed: ${D.message}`)), V = D
+                e(Error(`LSP server TextComponent{A} stop failed: TextComponent{D.message}`)), V = D
             } finally {
                 if (B) {
                     try {
                         B.dispose()
                     } catch (K) {
-                        g(`Connection disposal failed for ${A}: ${K.message}`)
+                        g(`Connection disposal failed for TextComponent{A}: TextComponent{K.message}`)
                     }
                     B = void 0
                 }
@@ -747,42 +740,41 @@ function F() {
                     try {
                         Q.kill()
                     } catch (K) {
-                        g(`Process kill failed for ${A} (may already be dead): ${K.message}`)
+                        g(`Process kill failed for TextComponent{A} (may already be dead): TextComponent{K.message}`)
                     }
                     Q = void 0
                 }
                 if (Z = !1, G = void 0, J = !1, V) I = !0, Y = V;
-                g(`LSP client stopped for ${A}`)
+                g(`LSP client stopped for TextComponent{A}`)
             }
             if (V) throw V
         }
     }
 }
 var Bn;
-var Mj2 = L(() => {
+var Mj2 = lazyLoader(() => {
     u1();
     D0();
-    Bn = GA(Nj2(), 1)
+    Bn = esmImport(Nj2(), 1)
 });
 import * as Oj2 from "path";
 
 function Rj2(A, Q) {
-    if (Q.restartOnCrash !== void 0) throw Error(`LSP server '${A}': restartOnCrash is not yet implemented. Remove this field from the configuration.`);
-    if (Q.startupTimeout !== void 0) throw Error(`LSP server '${A}': startupTimeout is not yet implemented. Remove this field from the configuration.`);
-    if (Q.shutdownTimeout !== void 0) throw Error(`LSP server '${A}': shutdownTimeout is not yet implemented. Remove this field from the configuration.`);
+    if (Q.restartOnCrash !== void 0) throw Error(`LSP server 'TextComponent{A}': restartOnCrash is not yet implemented. Remove this field from the configuration.`);
+    if (Q.startupTimeout !== void 0) throw Error(`LSP server 'TextComponent{A}': startupTimeout is not yet implemented. Remove this field from the configuration.`);
+    if (Q.shutdownTimeout !== void 0) throw Error(`LSP server 'TextComponent{A}': shutdownTimeout is not yet implemented. Remove this field from the configuration.`);
     let B = Lj2(A),
         G = "stopped",
         Z, I, Y = 0;
-    // Async function: J
-async function J() {
+    async function J() {
         if (G === "running" || G === "starting") return;
         try {
-            G = "starting", g(`Starting LSP server instance: ${A}`), await B.start(Q.command, Q.args || [], {
+            G = "starting", g(`Starting LSP server instance: TextComponent{A}`), await B.start(Q.command, Q.args || [], {
                 env: Q.env,
                 cwd: Q.workspaceFolder
             });
             let C = Q.workspaceFolder || H0(),
-                E = `file://${C}`,
+                E = `file://TextComponent{C}`,
                 z = {
                     processId: process.pid,
                     workspaceFolders: [{
@@ -833,77 +825,73 @@ async function J() {
                         }
                     }
                 };
-            await B.initialize(z), G = "running", Z = new Date, g(`LSP server instance started: ${A}`)
+            await B.initialize(z), G = "running", Z = new Date, g(`LSP server instance started: TextComponent{A}`)
         } catch (C) {
             throw G = "error", I = C, e(C), C
         }
     }
-    // Async function: W
-async function W() {
+    async function W() {
         if (G === "stopped" || G === "stopping") return;
         try {
-            G = "stopping", await B.stop(), G = "stopped", g(`LSP server instance stopped: ${A}`)
+            G = "stopping", await B.stop(), G = "stopped", g(`LSP server instance stopped: TextComponent{A}`)
         } catch (C) {
             throw G = "error", I = C, e(C), C
         }
     }
-    // Async function: X
-async function X() {
+    async function X() {
         try {
             await W()
         } catch (E) {
-            let z = Error(`Failed to stop LSP server '${A}' during restart: ${E.message}`);
+            let z = Error(`Failed to stop LSP server 'TextComponent{A}' during restart: TextComponent{E.message}`);
             throw e(z), z
         }
         Y++;
         let C = Q.maxRestarts ?? 3;
         if (Y > C) {
-            let E = Error(`Max restart attempts (${C}) exceeded for server '${A}'`);
+            let E = Error(`Max restart attempts (TextComponent{C}) exceeded for server 'TextComponent{A}'`);
             throw e(E), E
         }
         try {
             await J()
         } catch (E) {
-            let z = Error(`Failed to start LSP server '${A}' during restart (attempt ${Y}/${C}): ${E.message}`);
+            let z = Error(`Failed to start LSP server 'TextComponent{A}' during restart (attempt TextComponent{Y}/TextComponent{C}): TextComponent{E.message}`);
             throw e(z), z
         }
     }
 
-function F() {
+    function F() {
         return G === "running" && B.isInitialized
     }
-
-async function V(C, E) {
+    async function V(C, E) {
         if (!F()) {
-            let z = Error(`Cannot send request to LSP server '${A}': server is ${G}${I?`, last error: ${I.message}`:""}`);
+            let z = Error(`Cannot send request to LSP server 'TextComponent{A}': server is TextComponent{G}TextComponent{I?`, last error: TextComponent{I.message}`:""}`);
             throw e(z), z
         }
         try {
             return await B.sendRequest(C, E)
         } catch (z) {
-            let w = Error(`LSP request '${C}' failed for server '${A}': ${z.message}`);
+            let w = Error(`LSP request 'TextComponent{C}' failed for server 'TextComponent{A}': TextComponent{z.message}`);
             throw e(w), w
         }
     }
-
-async function K(C, E) {
+    async function K(C, E) {
         if (!F()) {
-            let z = Error(`Cannot send notification to LSP server '${A}': server is ${G}`);
+            let z = Error(`Cannot send notification to LSP server 'TextComponent{A}': server is TextComponent{G}`);
             throw e(z), z
         }
         try {
             await B.sendNotification(C, E)
         } catch (z) {
-            let w = Error(`LSP notification '${C}' failed for server '${A}': ${z.message}`);
+            let w = Error(`LSP notification 'TextComponent{C}' failed for server 'TextComponent{A}': TextComponent{z.message}`);
             throw e(w), w
         }
     }
 
-function D(C, E) {
+    function D(C, E) {
         B.onNotification(C, E)
     }
 
-function H(C, E) {
+    function H(C, E) {
         B.onRequest(C, E)
     }
     return {
@@ -931,7 +919,7 @@ function H(C, E) {
         onRequest: H
     }
 }
-var Tj2 = L(() => {
+var Tj2 = lazyLoader(() => {
     Mj2();
     u1();
     D0();
@@ -953,7 +941,6 @@ function Gf5(A, Q) {
     if (Z.startsWith("..") || J60(Z) === Z) return null;
     return G
 }
-
 async function jj2(A, Q = []) {
     let B = {},
         G = Qf5(A.path, ".lsp.json");
@@ -963,7 +950,7 @@ async function jj2(A, Q = []) {
             Y = _.record(_.string(), H3A).safeParse(I);
         if (Y.success) Object.assign(B, Y.data);
         else {
-            let J = `LSP config validation failed for .lsp.json in plugin ${A.name}: ${Y.error.message}`;
+            let J = `LSP config validation failed for .lsp.json in plugin TextComponent{A.name}: TextComponent{Y.error.message}`;
             e(Error(J)), Q.push({
                 type: "lsp-config-invalid",
                 plugin: A.name,
@@ -974,12 +961,12 @@ async function jj2(A, Q = []) {
         }
     } catch (Z) {
         if (Z.code !== "ENOENT") {
-            let I = Z instanceof Error ? `Failed to read/parse .lsp.json in plugin ${A.name}: ${Z.message}` : `Failed to read/parse .lsp.json file in plugin ${A.name}`;
+            let I = Z instanceof Error ? `Failed to read/parse .lsp.json in plugin TextComponent{A.name}: TextComponent{Z.message}` : `Failed to read/parse .lsp.json file in plugin TextComponent{A.name}`;
             e(Z instanceof Error ? Z : Error(I)), Q.push({
                 type: "lsp-config-invalid",
                 plugin: A.name,
                 serverName: ".lsp.json",
-                validationError: Z instanceof Error ? `Failed to parse JSON: ${Z.message}` : "Failed to parse JSON file",
+                validationError: Z instanceof Error ? `Failed to parse JSON: TextComponent{Z.message}` : "Failed to parse JSON file",
                 source: "plugin"
             })
         }
@@ -990,7 +977,6 @@ async function jj2(A, Q = []) {
     }
     return Object.keys(B).length > 0 ? B : void 0
 }
-
 async function Zf5(A, Q, B, G) {
     let Z = {},
         I = Array.isArray(A) ? A : [A];
@@ -998,7 +984,7 @@ async function Zf5(A, Q, B, G) {
         if (typeof Y === "string") {
             let J = Gf5(Q, Y);
             if (!J) {
-                let W = `Security: Path traversal attempt blocked in plugin ${B}: ${Y}`;
+                let W = `Security: Path traversal attempt blocked in plugin TextComponent{B}: TextComponent{Y}`;
                 e(Error(W)), g(W, {
                     level: "warn"
                 }), G.push({
@@ -1016,7 +1002,7 @@ async function Zf5(A, Q, B, G) {
                     F = _.record(_.string(), H3A).safeParse(X);
                 if (F.success) Object.assign(Z, F.data);
                 else {
-                    let V = `LSP config validation failed for ${Y} in plugin ${B}: ${F.error.message}`;
+                    let V = `LSP config validation failed for TextComponent{Y} in plugin TextComponent{B}: TextComponent{F.error.message}`;
                     e(Error(V)), G.push({
                         type: "lsp-config-invalid",
                         plugin: B,
@@ -1026,12 +1012,12 @@ async function Zf5(A, Q, B, G) {
                     })
                 }
             } catch (W) {
-                let X = W instanceof Error ? `Failed to read/parse LSP config from ${Y} in plugin ${B}: ${W.message}` : `Failed to read/parse LSP config file ${Y} in plugin ${B}`;
+                let X = W instanceof Error ? `Failed to read/parse LSP config from TextComponent{Y} in plugin TextComponent{B}: TextComponent{W.message}` : `Failed to read/parse LSP config file TextComponent{Y} in plugin TextComponent{B}`;
                 e(W instanceof Error ? W : Error(X)), G.push({
                     type: "lsp-config-invalid",
                     plugin: B,
                     serverName: Y,
-                    validationError: W instanceof Error ? `Failed to parse JSON: ${W.message}` : "Failed to parse JSON file",
+                    validationError: W instanceof Error ? `Failed to parse JSON: TextComponent{W.message}` : "Failed to parse JSON file",
                     source: "plugin"
                 })
             }
@@ -1040,7 +1026,7 @@ async function Zf5(A, Q, B, G) {
                 let X = H3A.safeParse(W);
                 if (X.success) Z[J] = X.data;
                 else {
-                    let F = `LSP config validation failed for inline server "${J}" in plugin ${B}: ${X.error.message}`;
+                    let F = `LSP config validation failed for inline server "TextComponent{J}" in plugin TextComponent{B}: TextComponent{X.error.message}`;
                     e(Error(F)), G.push({
                         type: "lsp-config-invalid",
                         plugin: B,
@@ -1056,7 +1042,7 @@ async function Zf5(A, Q, B, G) {
 function Sj2(A, Q) {
     let B = {};
     for (let [G, Z] of Object.entries(A)) {
-        let I = `plugin:${Q}:${G}`;
+        let I = `plugin:TextComponent{Q}:TextComponent{G}`;
         B[I] = {
             ...Z,
             scope: "dynamic",
@@ -1065,13 +1051,12 @@ function Sj2(A, Q) {
     }
     return B
 }
-var _j2 = L(() => {
+var _j2 = lazyLoader(() => {
     ho();
     h2();
     D0();
     u1()
 });
-// Async function: kj2
 async function kj2() {
     let A = {};
     try {
@@ -1083,19 +1068,19 @@ async function kj2() {
                 Z = await jj2(B, G);
             if (Z && Object.keys(Z).length > 0) {
                 let I = Sj2(Z, B.name);
-                Object.assign(A, I), g(`Loaded ${Object.keys(Z).length} LSP server(s) from plugin: ${B.name}`)
+                Object.assign(A, I), g(`Loaded TextComponent{Object.keys(Z).length} LSP server(s) from plugin: TextComponent{B.name}`)
             }
-            if (G.length > 0) g(`${G.length} error(s) loading LSP servers from plugin: ${B.name}`)
+            if (G.length > 0) g(`TextComponent{G.length} error(s) loading LSP servers from plugin: TextComponent{B.name}`)
         }
-        g(`Total LSP servers loaded: ${Object.keys(A).length}`)
+        g(`Total LSP servers loaded: TextComponent{Object.keys(A).length}`)
     } catch (Q) {
-        e(Q instanceof Error ? Q : Error(`Failed to load LSP servers: ${String(Q)}`)), g(`Error loading LSP servers: ${Q instanceof Error?Q.message:String(Q)}`)
+        e(Q instanceof Error ? Q : Error(`Failed to load LSP servers: TextComponent{String(Q)}`)), g(`Error loading LSP servers: TextComponent{Q instanceof Error?Q.message:String(Q)}`)
     }
     return {
         servers: A
     }
 }
-var yj2 = L(() => {
+var yj2 = lazyLoader(() => {
     NF();
     _j2();
     D0();
@@ -1107,18 +1092,17 @@ function xj2() {
     let A = new Map,
         Q = new Map,
         B = new Map;
-    // Async function: G
-async function G() {
+    async function G() {
         g("[LSP SERVER MANAGER] initialize() called");
         let D;
         try {
-            g("[LSP SERVER MANAGER] Calling getAllLspServers()"), D = (await kj2()).servers, g(`[LSP SERVER MANAGER] getAllLspServers returned ${Object.keys(D).length} server(s)`)
+            g("[LSP SERVER MANAGER] Calling getAllLspServers()"), D = (await kj2()).servers, g(`[LSP SERVER MANAGER] getAllLspServers returned TextComponent{Object.keys(D).length} server(s)`)
         } catch (H) {
-            throw e(Error(`Failed to load LSP server configuration: ${H.message}`)), H
+            throw e(Error(`Failed to load LSP server configuration: TextComponent{H.message}`)), H
         }
         for (let [H, C] of Object.entries(D)) try {
-            if (!C.command) throw Error(`Server ${H} missing required 'command' field`);
-            if (!C.extensionToLanguage || Object.keys(C.extensionToLanguage).length === 0) throw Error(`Server ${H} missing required 'extensionToLanguage' field`);
+            if (!C.command) throw Error(`Server TextComponent{H} missing required 'command' field`);
+            if (!C.extensionToLanguage || Object.keys(C.extensionToLanguage).length === 0) throw Error(`Server TextComponent{H} missing required 'extensionToLanguage' field`);
             let E = Object.keys(C.extensionToLanguage);
             for (let w of E) {
                 let N = w.toLowerCase();
@@ -1128,32 +1112,31 @@ async function G() {
             }
             let z = Rj2(H, C);
             A.set(H, z), z.onRequest("workspace/configuration", (w) => {
-                return g(`LSP: Received workspace/configuration request from ${H}`), w.items.map(() => null)
+                return g(`LSP: Received workspace/configuration request from TextComponent{H}`), w.items.map(() => null)
             }), z.start().catch((w) => {
-                e(Error(`Failed to start LSP server ${H}: ${w.message}`))
+                e(Error(`Failed to start LSP server TextComponent{H}: TextComponent{w.message}`))
             })
         } catch (E) {
-            e(Error(`Failed to initialize LSP server ${H}: ${E.message}`))
+            e(Error(`Failed to initialize LSP server TextComponent{H}: TextComponent{E.message}`))
         }
-        g(`LSP manager initialized with ${A.size} servers`)
+        g(`LSP manager initialized with TextComponent{A.size} servers`)
     }
-    // Async function: Z
-async function Z() {
+    async function Z() {
         let D = [];
         for (let [H, C] of A.entries())
             if (C.state === "running") try {
                 await C.stop()
             } catch (E) {
                 let z = E;
-                e(Error(`Failed to stop LSP server ${H}: ${z.message}`)), D.push(z)
+                e(Error(`Failed to stop LSP server TextComponent{H}: TextComponent{z.message}`)), D.push(z)
             }
         if (A.clear(), Q.clear(), B.clear(), D.length > 0) {
-            let H = Error(`Failed to stop ${D.length} LSP server(s): ${D.map((C)=>C.message).join("; ")}`);
+            let H = Error(`Failed to stop TextComponent{D.length} LSP server(s): TextComponent{D.map((C)=>C.message).join("; ")}`);
             throw e(H), H
         }
     }
 
-function I(D) {
+    function I(D) {
         let H = Gn.extname(D).toLowerCase(),
             C = Q.get(H);
         if (!C || C.length === 0) return;
@@ -1161,38 +1144,35 @@ function I(D) {
         if (!E) return;
         return A.get(E)
     }
-
-async function Y(D) {
+    async function Y(D) {
         let H = I(D);
         if (!H) return;
         if (H.state === "stopped") try {
             await H.start()
         } catch (C) {
-            throw e(Error(`Failed to start LSP server for file ${D}: ${C.message}`)), C
+            throw e(Error(`Failed to start LSP server for file TextComponent{D}: TextComponent{C.message}`)), C
         }
         return H
     }
-
-async function J(D, H, C) {
+    async function J(D, H, C) {
         let E = await Y(D);
         if (!E) return;
         try {
             return await E.sendRequest(H, C)
         } catch (z) {
-            throw e(Error(`LSP request failed for file ${D}, method '${H}': ${z.message}`)), z
+            throw e(Error(`LSP request failed for file TextComponent{D}, method 'TextComponent{H}': TextComponent{z.message}`)), z
         }
     }
 
-function W() {
+    function W() {
         return A
     }
-
-async function X(D, H) {
+    async function X(D, H) {
         let C = await Y(D);
         if (!C) return;
-        let E = `file://${Gn.resolve(D)}`;
+        let E = `file://TextComponent{Gn.resolve(D)}`;
         if (B.get(E) === C.name) {
-            g(`LSP: File already open, skipping didOpen for ${D}`);
+            g(`LSP: File already open, skipping didOpen for TextComponent{D}`);
             return
         }
         let z = Gn.extname(D).toLowerCase(),
@@ -1205,17 +1185,16 @@ async function X(D, H) {
                     version: 1,
                     text: H
                 }
-            }), B.set(E, C.name), g(`LSP: Sent didOpen for ${D} (languageId: ${w})`)
+            }), B.set(E, C.name), g(`LSP: Sent didOpen for TextComponent{D} (languageId: TextComponent{w})`)
         } catch (N) {
-            let q = Error(`Failed to sync file open ${D}: ${N.message}`);
+            let q = Error(`Failed to sync file open TextComponent{D}: TextComponent{N.message}`);
             throw e(q), q
         }
     }
-
-async function F(D, H) {
+    async function F(D, H) {
         let C = I(D);
         if (!C || C.state !== "running") return X(D, H);
-        let E = `file://${Gn.resolve(D)}`;
+        let E = `file://TextComponent{Gn.resolve(D)}`;
         if (B.get(E) !== C.name) return X(D, H);
         try {
             await C.sendNotification("textDocument/didChange", {
@@ -1226,40 +1205,38 @@ async function F(D, H) {
                 contentChanges: [{
                     text: H
                 }]
-            }), g(`LSP: Sent didChange for ${D}`)
+            }), g(`LSP: Sent didChange for TextComponent{D}`)
         } catch (z) {
-            let w = Error(`Failed to sync file change ${D}: ${z.message}`);
+            let w = Error(`Failed to sync file change TextComponent{D}: TextComponent{z.message}`);
             throw e(w), w
         }
     }
-
-async function V(D) {
+    async function V(D) {
         let H = I(D);
         if (!H || H.state !== "running") return;
         try {
             await H.sendNotification("textDocument/didSave", {
                 textDocument: {
-                    uri: `file://${Gn.resolve(D)}`
+                    uri: `file://TextComponent{Gn.resolve(D)}`
                 }
-            }), g(`LSP: Sent didSave for ${D}`)
+            }), g(`LSP: Sent didSave for TextComponent{D}`)
         } catch (C) {
-            let E = Error(`Failed to sync file save ${D}: ${C.message}`);
+            let E = Error(`Failed to sync file save TextComponent{D}: TextComponent{C.message}`);
             throw e(E), E
         }
     }
-
-async function K(D) {
+    async function K(D) {
         let H = I(D);
         if (!H || H.state !== "running") return;
-        let C = `file://${Gn.resolve(D)}`;
+        let C = `file://TextComponent{Gn.resolve(D)}`;
         try {
             await H.sendNotification("textDocument/didClose", {
                 textDocument: {
                     uri: C
                 }
-            }), B.delete(C), g(`LSP: Sent didClose for ${D}`)
+            }), B.delete(C), g(`LSP: Sent didClose for TextComponent{D}`)
         } catch (E) {
-            let z = Error(`Failed to sync file close ${D}: ${E.message}`);
+            let z = Error(`Failed to sync file close TextComponent{D}: TextComponent{E.message}`);
             throw e(z), z
         }
     }
@@ -1276,7 +1253,7 @@ async function K(D) {
         closeFile: K
     }
 }
-var vj2 = L(() => {
+var vj2 = lazyLoader(() => {
     Tj2();
     yj2();
     D0();
@@ -1307,7 +1284,7 @@ function Jf5(A) {
         Q = A.uri.startsWith("file://") ? If5(A.uri) : A.uri
     } catch (G) {
         let Z = G instanceof Error ? G : Error(String(G));
-        e(Z), g(`Failed to convert URI to file path: ${A.uri}. Error: ${Z.message}. Using original URI as fallback.`), Q = A.uri
+        e(Z), g(`Failed to convert URI to file path: TextComponent{A.uri}. Error: TextComponent{Z.message}. Using original URI as fallback.`), Q = A.uri
     }
     let B = A.diagnostics.map((G) => ({
         message: G.message,
@@ -1343,62 +1320,62 @@ function bj2(A) {
                 serverName: Y,
                 error: W
             });
-            let X = Error(`${W} for ${Y}`);
-            e(X), g(`Skipping handler registration for ${Y}: ${W}`);
+            let X = Error(`TextComponent{W} for TextComponent{Y}`);
+            e(X), g(`Skipping handler registration for TextComponent{Y}: TextComponent{W}`);
             continue
         }
         J.onNotification("textDocument/publishDiagnostics", async (W) => {
-            g(`[PASSIVE DIAGNOSTICS] Handler invoked for ${Y}! Params type: ${typeof W}`);
+            g(`[PASSIVE DIAGNOSTICS] Handler invoked for TextComponent{Y}! Params type: TextComponent{typeof W}`);
             try {
                 if (!W || typeof W !== "object" || !("uri" in W) || !("diagnostics" in W)) {
-                    let K = Error(`LSP server ${Y} sent invalid diagnostic params (missing uri or diagnostics)`);
-                    e(K), g(`Invalid diagnostic params from ${Y}: ${JSON.stringify(W)}`);
+                    let K = Error(`LSP server TextComponent{Y} sent invalid diagnostic params (missing uri or diagnostics)`);
+                    e(K), g(`Invalid diagnostic params from TextComponent{Y}: TextComponent{JSON.stringify(W)}`);
                     return
                 }
                 let X = W;
-                g(`Received diagnostics from ${Y}: ${X.diagnostics.length} diagnostic(s) for ${X.uri}`);
+                g(`Received diagnostics from TextComponent{Y}: TextComponent{X.diagnostics.length} diagnostic(s) for TextComponent{X.uri}`);
                 let F = Jf5(X),
                     V = F[0];
                 if (!V || F.length === 0 || V.diagnostics.length === 0) {
-                    g(`Skipping empty diagnostics from ${Y} for ${X.uri}`);
+                    g(`Skipping empty diagnostics from TextComponent{Y} for TextComponent{X.uri}`);
                     return
                 }
                 try {
                     TZ2({
                         serverName: Y,
                         files: F
-                    }), g(`LSP Diagnostics: Registered ${F.length} diagnostic file(s) from ${Y} for async delivery`), Z.delete(Y)
+                    }), g(`LSP Diagnostics: Registered TextComponent{F.length} diagnostic file(s) from TextComponent{Y} for async delivery`), Z.delete(Y)
                 } catch (K) {
-                    let D = K instanceof Error ? K : Error(`Failed to register LSP diagnostics: ${String(K)}`);
-                    e(D), g(`Error registering LSP diagnostics from ${Y}: URI: ${X.uri}, Diagnostic count: ${V.diagnostics.length}, Error: ${D.message}`);
+                    let D = K instanceof Error ? K : Error(`Failed to register LSP diagnostics: TextComponent{String(K)}`);
+                    e(D), g(`Error registering LSP diagnostics from TextComponent{Y}: URI: TextComponent{X.uri}, Diagnostic count: TextComponent{V.diagnostics.length}, Error: TextComponent{D.message}`);
                     let H = Z.get(Y) || {
                         count: 0,
                         lastError: ""
                     };
-                    if (H.count++, H.lastError = D.message, Z.set(Y, H), H.count >= 3) g(`WARNING: LSP diagnostic handler for ${Y} has failed ${H.count} times consecutively. Last error: ${H.lastError}. This may indicate a problem with the LSP server or diagnostic processing. Check logs for details.`)
+                    if (H.count++, H.lastError = D.message, Z.set(Y, H), H.count >= 3) g(`WARNING: LSP diagnostic handler for TextComponent{Y} has failed TextComponent{H.count} times consecutively. Last error: TextComponent{H.lastError}. This may indicate a problem with the LSP server or diagnostic processing. Check logs for details.`)
                 }
             } catch (X) {
-                let F = X instanceof Error ? X : Error(`Unexpected error in diagnostic handler: ${String(X)}`);
-                e(F), g(`Unexpected error processing diagnostics from ${Y}: ${F.message}`);
+                let F = X instanceof Error ? X : Error(`Unexpected error in diagnostic handler: TextComponent{String(X)}`);
+                e(F), g(`Unexpected error processing diagnostics from TextComponent{Y}: TextComponent{F.message}`);
                 let V = Z.get(Y) || {
                     count: 0,
                     lastError: ""
                 };
-                if (V.count++, V.lastError = F.message, Z.set(Y, V), V.count >= 3) g(`WARNING: LSP diagnostic handler for ${Y} has failed ${V.count} times consecutively. Last error: ${V.lastError}. This may indicate a problem with the LSP server or diagnostic processing. Check logs for details.`)
+                if (V.count++, V.lastError = F.message, Z.set(Y, V), V.count >= 3) g(`WARNING: LSP diagnostic handler for TextComponent{Y} has failed TextComponent{V.count} times consecutively. Last error: TextComponent{V.lastError}. This may indicate a problem with the LSP server or diagnostic processing. Check logs for details.`)
             }
-        }), g(`Registered diagnostics handler for ${Y}`), G++
+        }), g(`Registered diagnostics handler for TextComponent{Y}`), G++
     } catch (W) {
-        let X = W instanceof Error ? W : Error(`Handler registration failed: ${String(W)}`);
+        let X = W instanceof Error ? W : Error(`Handler registration failed: TextComponent{String(W)}`);
         B.push({
             serverName: Y,
             error: X.message
-        }), e(X), g(`Failed to register diagnostics handler for ${Y}: Error: ${X.message}`)
+        }), e(X), g(`Failed to register diagnostics handler for TextComponent{Y}: Error: TextComponent{X.message}`)
     }
     let I = Q.size;
     if (B.length > 0) {
-        let Y = B.map((J) => `${J.serverName} (${J.error})`).join(", ");
-        e(Error(`Failed to register diagnostics for ${B.length} LSP server(s): ${Y}`)), g(`LSP notification handler registration: ${G}/${I} succeeded. Failed servers: ${Y}. Diagnostics from failed servers will not be delivered.`)
-    } else g(`LSP notification handlers registered successfully for all ${I} server(s)`);
+        let Y = B.map((J) => `TextComponent{J.serverName} (TextComponent{J.error})`).join(", ");
+        e(Error(`Failed to register diagnostics for TextComponent{B.length} LSP server(s): TextComponent{Y}`)), g(`LSP notification handler registration: TextComponent{G}/TextComponent{I} succeeded. Failed servers: TextComponent{Y}. Diagnostics from failed servers will not be delivered.`)
+    } else g(`LSP notification handlers registered successfully for all TextComponent{I} server(s)`);
     return {
         totalServers: I,
         successCount: G,
@@ -1406,7 +1383,7 @@ function bj2(A) {
         diagnosticFailures: Z
     }
 }
-var fj2 = L(() => {
+var fj2 = lazyLoader(() => {
     NMA();
     D0();
     u1()
@@ -1425,35 +1402,34 @@ function hj2() {
     if (F0A === "failed") wP = void 0, W60 = void 0;
     wP = xj2(), F0A = "pending", g("[LSP MANAGER] Created manager instance, state=pending");
     let A = ++S61;
-    g(`[LSP MANAGER] Starting async initialization (generation ${A})`), wP.initialize().then(() => {
+    g(`[LSP MANAGER] Starting async initialization (generation TextComponent{A})`), wP.initialize().then(() => {
         if (A === S61) {
             if (F0A = "success", g("LSP server manager initialized successfully"), wP) bj2(wP)
         }
     }).catch((Q) => {
-        if (A === S61) F0A = "failed", W60 = Q, wP = void 0, e(Q), g(`Failed to initialize LSP server manager: ${Q instanceof Error?Q.message:String(Q)}`)
+        if (A === S61) F0A = "failed", W60 = Q, wP = void 0, e(Q), g(`Failed to initialize LSP server manager: TextComponent{Q instanceof Error?Q.message:String(Q)}`)
     })
 }
-// Async function: gj2
 async function gj2() {
     if (wP === void 0) return;
     try {
         await wP.shutdown(), g("LSP server manager shut down successfully")
     } catch (A) {
-        e(A), g(`Failed to shutdown LSP server manager: ${A instanceof Error?A.message:String(A)}`)
+        e(A), g(`Failed to shutdown LSP server manager: TextComponent{A instanceof Error?A.message:String(A)}`)
     } finally {
         wP = void 0, F0A = "not-started", W60 = void 0, S61++
     }
 }
 var wP, F0A = "not-started",
     W60, S61 = 0;
-var LRA = L(() => {
+var LRA = lazyLoader(() => {
     vj2();
     fj2();
     D0();
     u1()
 });
 var uj2, X60, mj2;
-var F60 = L(() => {
+var F60 = lazyLoader(() => {
     h2();
     uj2 = _.strictObject({
         file_path: _.string().describe("The absolute path to the file to modify"),

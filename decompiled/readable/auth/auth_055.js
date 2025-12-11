@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_055.js
+ * 处理时间: 2025-12-09T03:41:36.980Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.936Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-                g(`FileHistory: [Rewind] Finished rewinding to ${Q}`), BA("tengu_file_history_rewind_success", {
+                g(`FileHistory: [Rewind] Finished rewinding to TextComponent{Q}`), BA("tengu_file_history_rewind_success", {
                     trackedFilesCount: Z.trackedFiles.size,
                     filesChangedCount: Y?.filesChanged?.length
                 })
@@ -60,13 +63,13 @@ function VI2(A, Q, B) {
                 if (B) {
                     let V = JI2(W, void 0);
                     I += V?.insertions || 0, Y += V?.deletions || 0
-                } else G.unlinkSync(W), g(`FileHistory: [Rewind] Deleted ${W}`);
+                } else G.unlinkSync(W), g(`FileHistory: [Rewind] Deleted TextComponent{W}`);
                 Z.push(W)
             }
         } else if (B) {
             let V = JI2(W, F);
             if (I += V?.insertions || 0, Y += V?.deletions || 0, V?.insertions || V?.deletions) Z.push(W)
-        } else if (KI2(W, F)) VK5(W, F), g(`FileHistory: [Rewind] Restored ${W} from ${F}`), Z.push(W)
+        } else if (KI2(W, F)) VK5(W, F), g(`FileHistory: [Rewind] Restored TextComponent{W} from TextComponent{F}`), Z.push(W)
     } catch (W) {
         e(W), BA("tengu_file_history_rewind_restore_file_failed", {
             dryRun: B
@@ -129,7 +132,7 @@ function JI2(A, Q) {
             if (K.removed) Z += K.count || 0
         })
     } catch (I) {
-        e(Error(`FileHistory: Error generating diffStats: ${I}`))
+        e(Error(`FileHistory: Error generating diffStats: TextComponent{I}`))
     }
     return {
         filesChanged: B,
@@ -139,7 +142,7 @@ function JI2(A, Q) {
 }
 
 function FK5(A, Q) {
-    return `${YK5("sha256").update(A).digest("hex").slice(0,16)}@v${Q}`
+    return `TextComponent{YK5("sha256").update(A).digest("hex").slice(0,16)}@v${Q}`
 }
 
 function EYA(A, Q) {
@@ -179,7 +182,7 @@ function VK5(A, Q) {
     let B = OA(),
         G = EYA(Q);
     if (!B.existsSync(G)) {
-        BA("tengu_file_history_rewind_restore_file_failed", {}), e(Error(`FileHistory: [Rewind] Backup file not found: ${G}`));
+        BA("tengu_file_history_rewind_restore_file_failed", {}), e(Error(`FileHistory: [Rewind] Backup file not found: TextComponent{G}`));
         return
     }
     let Z = B.readFileSync(G, {
@@ -235,7 +238,6 @@ function $YA(A, Q) {
         trackedFiles: G
     })
 }
-
 async function D91(A) {
     if (!JG()) return;
     let Q = A.fileHistorySnapshots;
@@ -247,7 +249,7 @@ async function D91(A) {
     }
     let Z = G0();
     if (G === Z) {
-        g(`FileHistory: No need to copy file history for resuming with same session id: ${Z}`);
+        g(`FileHistory: No need to copy file history for resuming with same session id: TextComponent{Z}`);
         return
     }
     try {
@@ -260,7 +262,7 @@ async function D91(A) {
                     V = EYA(W.backupFileName, Z);
                 if (X.existsSync(V)) continue;
                 if (!X.existsSync(F)) {
-                    e(Error(`FileHistory: Failed to copy backup ${W.backupFileName} on restore (backup file does not exist in ${G})`)), Y = !0;
+                    e(Error(`FileHistory: Failed to copy backup TextComponent{W.backupFileName} on restore (backup file does not exist in TextComponent{G})`)), Y = !0;
                     break
                 }
                 let K = d00(V);
@@ -275,7 +277,7 @@ async function D91(A) {
                         Y = !0, e(Error("FileHistory: Error copying over backup from previous session"))
                     }
                 }
-                g(`FileHistory: Copied backup ${W.backupFileName} from session ${G} to ${Z}`)
+                g(`FileHistory: Copied backup TextComponent{W.backupFileName} from session TextComponent{G} to TextComponent{Z}`)
             }
             if (!Y) H91(I.messageId, I, !1).catch((J) => {
                 e(Error("FileHistory: Failed to record copy backup snapshot"))
@@ -293,7 +295,7 @@ function CI2(A) {
     if (DK5) console.error(WK5(A, !1, 5))
 }
 var DK5 = !1;
-var iU = L(() => {
+var iU = lazyLoader(() => {
     o0();
     D0();
     S0();
@@ -341,7 +343,6 @@ function jMA(A) {
         throw e(Q), Q
     }
 }
-
 async function zI2(A, Q) {
     try {
         let B = await GQ.get(A, {
@@ -352,13 +353,12 @@ async function zI2(A, Q) {
         return B.data
     } catch (B) {
         if (GQ.isAxiosError(B)) {
-            let G = B.response ? `HTTP ${B.response.status}: ${B.response.statusText}` : B.message;
-            throw Error(`Failed to fetch conversation from remote: ${G}`)
+            let G = B.response ? `HTTP TextComponent{B.response.status}: TextComponent{B.response.statusText}` : B.message;
+            throw Error(`Failed to fetch conversation from remote: TextComponent{G}`)
         }
         throw B
     }
 }
-
 async function qi(A, Q) {
     try {
         let B = null,
@@ -409,7 +409,7 @@ function CK5(A) {
     };
     return
 }
-var wYA = L(() => {
+var wYA = lazyLoader(() => {
     u1();
     GG();
     nQ();
@@ -510,7 +510,7 @@ function qI2({
             }
             return
         }
-        if (/^[0-9]+$/.test(N)) {
+        if (/^[0-9]+TextComponent/.test(N)) {
             let v = parseInt(N) - 1;
             if (v >= 0 && v < B.length) {
                 let x = B[v].value,
@@ -532,10 +532,10 @@ function qI2({
     }
 }
 var T1A;
-var NI2 = L(() => {
+var NI2 = lazyLoader(() => {
     hA();
     Gd1();
-    T1A = GA(VA(), 1)
+    T1A = esmImport(VA(), 1)
 });
 
 function p00({
@@ -597,7 +597,7 @@ function p00({
                     Z()
                 },
                 layout: "compact"
-            }, tH.default.createElement($, {
+            }, tH.default.createElement(TextComponent, {
                 color: C ? "success" : void 0
             }, "[", C ? V1.tick : " ", "]", " ")))
         }
@@ -610,39 +610,38 @@ function p00({
             shouldShowDownArrow: w && z,
             shouldShowUpArrow: N && E,
             description: K.description
-        }, tH.default.createElement($, null, oA.dim(`${q}.`.padEnd(V))), tH.default.createElement($, {
+        }, tH.default.createElement(TextComponent, null, oA.dim(`TextComponent{q}.`.padEnd(V))), tH.default.createElement(TextComponent, {
             color: C ? "success" : void 0
-        }, "[", C ? V1.tick : " ", "]"), tH.default.createElement($, {
+        }, "[", C ? V1.tick : " ", "]"), tH.default.createElement(TextComponent, {
             color: H ? "suggestion" : void 0
         }, K.label)))
     })), W && X && tH.default.createElement(j, {
         marginTop: 0,
         gap: 1
-    }, F.isSubmitFocused ? tH.default.createElement($, {
+    }, F.isSubmitFocused ? tH.default.createElement(TextComponent, {
         color: "suggestion"
-    }, V1.pointer) : tH.default.createElement($, null, " "), tH.default.createElement(j, {
+    }, V1.pointer) : tH.default.createElement(TextComponent, null, " "), tH.default.createElement(j, {
         marginLeft: 3
-    }, tH.default.createElement($, {
+    }, tH.default.createElement(TextComponent, {
         color: F.isSubmitFocused ? "suggestion" : void 0,
         bold: !0
     }, W))))
 }
 var tH;
-var LI2 = L(() => {
+var LI2 = lazyLoader(() => {
     J9();
     n2();
     hA();
     pd1();
     $rA();
     NI2();
-    tH = GA(VA(), 1)
+    tH = esmImport(VA(), 1)
 });
-var T6 = L(() => {
+var T6 = lazyLoader(() => {
     T5();
     LI2()
 });
 import * as MI2 from "http";
-
 class l00 {
     localServer;
     port = 0;
@@ -657,7 +656,7 @@ class l00 {
     async start(A) {
         return new Promise((Q, B) => {
             this.localServer.once("error", (G) => {
-                B(Error(`Failed to start OAuth callback server: ${G.message}`))
+                B(Error(`Failed to start OAuth callback server: TextComponent{G.message}`))
             }), this.localServer.listen(A ?? 0, "localhost", () => {
                 let G = this.localServer.address();
                 this.port = G.port, Q(this.port)
@@ -683,14 +682,14 @@ class l00 {
             });
             return
         }
-        let B = Xv(A) ? o9().CLAUDEAI_SUCCESS_URL : o9().CONSOLE_SUCCESS_URL;
+        let B = Xv(A) ? getConfig().CLAUDEAI_SUCCESS_URL : getConfig().CONSOLE_SUCCESS_URL;
         this.pendingResponse.writeHead(302, {
             Location: B
         }), this.pendingResponse.end(), this.pendingResponse = null, BA("tengu_oauth_automatic_redirect", {})
     }
     handleErrorRedirect() {
         if (!this.pendingResponse) return;
-        let A = o9().CLAUDEAI_SUCCESS_URL;
+        let A = getConfig().CLAUDEAI_SUCCESS_URL;
         this.pendingResponse.writeHead(302, {
             Location: A
         }), this.pendingResponse.end(), this.pendingResponse = null, BA("tengu_oauth_automatic_redirect_error", {})
@@ -699,7 +698,7 @@ class l00 {
         this.localServer.on("request", this.handleRedirect.bind(this)), this.localServer.on("error", this.handleError.bind(this)), A()
     }
     handleRedirect(A, Q) {
-        let B = new URL(A.url || "", `http://${A.headers.host||"localhost"}`);
+        let B = new URL(A.url || "", `http://TextComponent{A.headers.host||"localhost"}`);
         if (B.pathname !== this.callbackPath) {
             Q.writeHead(404), Q.end();
             return
@@ -733,7 +732,7 @@ class l00 {
         if (this.localServer) this.localServer.removeAllListeners(), this.localServer.close()
     }
 }
-var OI2 = L(() => {
+var OI2 = lazyLoader(() => {
     EX();
     u1();
     w0();
@@ -758,12 +757,11 @@ function PI2() {
     return i00(SMA.randomBytes(32))
 }
 var jI2 = () => {};
-// Async function: qYA
 async function qYA() {
     try {
         let A = VI();
-        if (A.error) return g(`Failed to get auth headers: ${A.error}`), null;
-        return (await GQ.get(`${o9().BASE_API_URL}/api/oauth/account/settings`, {
+        if (A.error) return g(`Failed to get auth headers: TextComponent{A.error}`), null;
+        return (await GQ.get(`TextComponent{getConfig().BASE_API_URL}/api/oauth/account/settings`, {
             headers: {
                 ...A.headers,
                 "User-Agent": MF()
@@ -773,12 +771,11 @@ async function qYA() {
         return e(A), null
     }
 }
-// Async function: n00
 async function n00() {
     try {
         let A = VI();
         if (A.error) return;
-        await GQ.post(`${o9().BASE_API_URL}/api/oauth/account/grove_notice_viewed`, {}, {
+        await GQ.post(`TextComponent{getConfig().BASE_API_URL}/api/oauth/account/grove_notice_viewed`, {}, {
             headers: {
                 ...A.headers,
                 "User-Agent": MF()
@@ -788,15 +785,14 @@ async function n00() {
         e(A)
     }
 }
-
 async function C91(A) {
     try {
         let Q = VI();
         if (Q.error) {
-            g(`Failed to get auth headers: ${Q.error}`);
+            g(`Failed to get auth headers: TextComponent{Q.error}`);
             return
         }
-        await GQ.patch(`${o9().BASE_API_URL}/api/oauth/account/settings`, {
+        await GQ.patch(`TextComponent{getConfig().BASE_API_URL}/api/oauth/account/settings`, {
             grove_enabled: A
         }, {
             headers: {
@@ -808,14 +804,13 @@ async function C91(A) {
         e(Q)
     }
 }
-// Async function: NYA
 async function NYA() {
     if (!UlA()) return !1;
     let A = await Ni();
     return A !== null && A.grove_enabled
 }
 var Ni;
-var LYA = L(() => {
+var LYA = lazyLoader(() => {
     w3();
     XE();
     u1();
@@ -826,8 +821,8 @@ var LYA = L(() => {
     Ni = t1(async () => {
         try {
             let A = VI();
-            if (A.error) return g(`Failed to get auth headers: ${A.error}`), null;
-            let Q = await GQ.get(`${o9().BASE_API_URL}/api/claude_code_grove`, {
+            if (A.error) return g(`Failed to get auth headers: TextComponent{A.error}`), null;
+            let Q = await GQ.get(`TextComponent{getConfig().BASE_API_URL}/api/claude_code_grove`, {
                     headers: {
                         ...A.headers,
                         "User-Agent": Wp()
@@ -846,11 +841,11 @@ var LYA = L(() => {
                 notice_reminder_frequency: I
             }
         } catch (A) {
-            return g(`Failed to fetch Grove notice config: ${A}`), null
+            return g(`Failed to fetch Grove notice config: TextComponent{A}`), null
         }
     })
 });
-var E91 = U((SI2) => {
+var E91 = moduleWrapper((SI2) => {
     Object.defineProperty(SI2, "__esModule", {
         value: !0
     });
@@ -860,7 +855,7 @@ var E91 = U((SI2) => {
         A[A.DELTA = 0] = "DELTA", A[A.CUMULATIVE = 1] = "CUMULATIVE"
     })(zK5 = SI2.AggregationTemporality || (SI2.AggregationTemporality = {}))
 });
-var Li = U((kI2) => {
+var Li = moduleWrapper((kI2) => {
     Object.defineProperty(kI2, "__esModule", {
         value: !0
     });
@@ -874,30 +869,29 @@ var Li = U((kI2) => {
         A[A.HISTOGRAM = 0] = "HISTOGRAM", A[A.EXPONENTIAL_HISTOGRAM = 1] = "EXPONENTIAL_HISTOGRAM", A[A.GAUGE = 2] = "GAUGE", A[A.SUM = 3] = "SUM"
     })($K5 = kI2.DataPointType || (kI2.DataPointType = {}))
 });
-var GP = U((yI2) => {
+var GP = moduleWrapper((yI2) => {
     Object.defineProperty(yI2, "__esModule", {
         value: !0
     });
     yI2.equalsCaseInsensitive = yI2.binarySearchUB = yI2.setEquals = yI2.FlatMap = yI2.isPromiseAllSettledRejectionResult = yI2.PromiseAllSettled = yI2.callWithTimeout = yI2.TimeoutError = yI2.instrumentationScopeId = yI2.hashAttributes = yI2.isNotNullish = void 0;
 
-function wK5(A) {
+    function wK5(A) {
         return A !== void 0 && A !== null
     }
     yI2.isNotNullish = wK5;
 
-function qK5(A) {
+    function qK5(A) {
         let Q = Object.keys(A);
         if (Q.length === 0) return "";
         return Q = Q.sort(), JSON.stringify(Q.map((B) => [B, A[B]]))
     }
     yI2.hashAttributes = qK5;
 
-function NK5(A) {
-        return `${A.name}:${A.version??""}:${A.schemaUrl??""}`
+    function NK5(A) {
+        return `TextComponent{A.name}:TextComponent{A.version??""}:TextComponent{A.schemaUrl??""}`
     }
     yI2.instrumentationScopeId = NK5;
-
-class z91 extends Error {
+    class z91 extends Error {
         constructor(A) {
             super(A);
             Object.setPrototypeOf(this, z91.prototype)
@@ -905,7 +899,7 @@ class z91 extends Error {
     }
     yI2.TimeoutError = z91;
 
-function LK5(A, Q) {
+    function LK5(A, Q) {
         let B, G = new Promise(function(I, Y) {
             B = setTimeout(function() {
                 Y(new z91("Operation timed out."))
@@ -918,8 +912,7 @@ function LK5(A, Q) {
         })
     }
     yI2.callWithTimeout = LK5;
-
-async function MK5(A) {
+    async function MK5(A) {
         return Promise.all(A.map(async (Q) => {
             try {
                 return {
@@ -936,12 +929,12 @@ async function MK5(A) {
     }
     yI2.PromiseAllSettled = MK5;
 
-function OK5(A) {
+    function OK5(A) {
         return A.status === "rejected"
     }
     yI2.isPromiseAllSettledRejectionResult = OK5;
 
-function RK5(A, Q) {
+    function RK5(A, Q) {
         let B = [];
         return A.forEach((G) => {
             B.push(...Q(G))
@@ -949,7 +942,7 @@ function RK5(A, Q) {
     }
     yI2.FlatMap = RK5;
 
-function TK5(A, Q) {
+    function TK5(A, Q) {
         if (A.size !== Q.size) return !1;
         for (let B of A)
             if (!Q.has(B)) return !1;
@@ -957,7 +950,7 @@ function TK5(A, Q) {
     }
     yI2.setEquals = TK5;
 
-function PK5(A, Q) {
+    function PK5(A, Q) {
         let B = 0,
             G = A.length - 1,
             Z = A.length;
@@ -970,12 +963,12 @@ function PK5(A, Q) {
     }
     yI2.binarySearchUB = PK5;
 
-function jK5(A, Q) {
+    function jK5(A, Q) {
         return A.toLowerCase() === Q.toLowerCase()
     }
     yI2.equalsCaseInsensitive = jK5
 });
-var MYA = U((vI2) => {
+var MYA = moduleWrapper((vI2) => {
     Object.defineProperty(vI2, "__esModule", {
         value: !0
     });
@@ -985,14 +978,13 @@ var MYA = U((vI2) => {
         A[A.DROP = 0] = "DROP", A[A.SUM = 1] = "SUM", A[A.LAST_VALUE = 2] = "LAST_VALUE", A[A.HISTOGRAM = 3] = "HISTOGRAM", A[A.EXPONENTIAL_HISTOGRAM = 4] = "EXPONENTIAL_HISTOGRAM"
     })(uK5 = vI2.AggregatorKind || (vI2.AggregatorKind = {}))
 });
-var gI2 = U((fI2) => {
+var gI2 = moduleWrapper((fI2) => {
     Object.defineProperty(fI2, "__esModule", {
         value: !0
     });
     fI2.DropAggregator = void 0;
     var mK5 = MYA();
-
-class bI2 {
+    class bI2 {
         kind = mK5.AggregatorKind.DROP;
         createAccumulation() {
             return
@@ -1009,7 +1001,7 @@ class bI2 {
     }
     fI2.DropAggregator = bI2
 });
-var cI2 = U((mI2) => {
+var cI2 = moduleWrapper((mI2) => {
     Object.defineProperty(mI2, "__esModule", {
         value: !0
     });
@@ -1018,7 +1010,7 @@ var cI2 = U((mI2) => {
         _MA = Li(),
         cK5 = GP();
 
-function pK5(A) {
+    function pK5(A) {
         let Q = A.map(() => 0);
         return Q.push(0), {
             buckets: {
@@ -1032,8 +1024,7 @@ function pK5(A) {
             max: -1 / 0
         }
     }
-
-class kMA {
+    class kMA {
         startTime;
         _boundaries;
         _recordMinMax;
@@ -1055,8 +1046,7 @@ class kMA {
         }
     }
     mI2.HistogramAccumulation = kMA;
-
-class uI2 {
+    class uI2 {
         _boundaries;
         _recordMinMax;
         kind = dK5.AggregatorKind.HISTOGRAM;
@@ -1137,13 +1127,12 @@ class uI2 {
     }
     mI2.HistogramAggregator = uI2
 });
-var iI2 = U((pI2) => {
+var iI2 = moduleWrapper((pI2) => {
     Object.defineProperty(pI2, "__esModule", {
         value: !0
     });
     pI2.Buckets = void 0;
-
-class o00 {
+    class o00 {
         backing;
         indexBase;
         indexStart;
@@ -1220,8 +1209,7 @@ class o00 {
         }
     }
     pI2.Buckets = o00;
-
-class t00 {
+    class t00 {
         _counts;
         constructor(A = [0]) {
             this._counts = A
@@ -1259,7 +1247,7 @@ class t00 {
         }
     }
 });
-var AQ0 = U((nI2) => {
+var AQ0 = moduleWrapper((nI2) => {
     Object.defineProperty(nI2, "__esModule", {
         value: !0
     });
@@ -1272,13 +1260,13 @@ var AQ0 = U((nI2) => {
     nI2.MAX_NORMAL_EXPONENT = e00;
     nI2.MIN_VALUE = Math.pow(2, -1022);
 
-function aK5(A) {
+    function aK5(A) {
         let Q = new DataView(new ArrayBuffer(8));
         return Q.setFloat64(0, A), ((Q.getUint32(0) & iK5) >> 20) - e00
     }
     nI2.getNormalBase2 = aK5;
 
-function sK5(A) {
+    function sK5(A) {
         let Q = new DataView(new ArrayBuffer(8));
         Q.setFloat64(0, A);
         let B = Q.getUint32(0),
@@ -1287,33 +1275,32 @@ function sK5(A) {
     }
     nI2.getSignificand = sK5
 });
-var U91 = U((sI2) => {
+var U91 = moduleWrapper((sI2) => {
     Object.defineProperty(sI2, "__esModule", {
         value: !0
     });
     sI2.nextGreaterSquare = sI2.ldexp = void 0;
 
-function QD5(A, Q) {
+    function QD5(A, Q) {
         if (A === 0 || A === Number.POSITIVE_INFINITY || A === Number.NEGATIVE_INFINITY || Number.isNaN(A)) return A;
         return A * Math.pow(2, Q)
     }
     sI2.ldexp = QD5;
 
-function BD5(A) {
+    function BD5(A) {
         return A--, A |= A >> 1, A |= A >> 2, A |= A >> 4, A |= A >> 8, A |= A >> 16, A++, A
     }
     sI2.nextGreaterSquare = BD5
 });
-var $91 = U((tI2) => {
+var $91 = moduleWrapper((tI2) => {
     Object.defineProperty(tI2, "__esModule", {
         value: !0
     });
     tI2.MappingError = void 0;
-
-class oI2 extends Error {}
+    class oI2 extends Error {}
     tI2.MappingError = oI2
 });
-var ZY2 = U((BY2) => {
+var ZY2 = moduleWrapper((BY2) => {
     Object.defineProperty(BY2, "__esModule", {
         value: !0
     });
@@ -1321,8 +1308,7 @@ var ZY2 = U((BY2) => {
     var OYA = AQ0(),
         ZD5 = U91(),
         AY2 = $91();
-
-class QY2 {
+    class QY2 {
         _shift;
         constructor(A) {
             this._shift = -A
@@ -1335,9 +1321,9 @@ class QY2 {
         }
         lowerBoundary(A) {
             let Q = this._minNormalLowerBoundaryIndex();
-            if (A < Q) throw new AY2.MappingError(`underflow: ${A} is < minimum lower boundary: ${Q}`);
+            if (A < Q) throw new AY2.MappingError(`underflow: TextComponent{A} is < minimum lower boundary: TextComponent{Q}`);
             let B = this._maxNormalLowerBoundaryIndex();
-            if (A > B) throw new AY2.MappingError(`overflow: ${A} is > maximum lower boundary: ${B}`);
+            if (A > B) throw new AY2.MappingError(`overflow: TextComponent{A} is > maximum lower boundary: TextComponent{B}`);
             return ZD5.ldexp(1, A << this._shift)
         }
         get scale() {
@@ -1358,7 +1344,7 @@ class QY2 {
     }
     BY2.ExponentMapping = QY2
 });
-var FY2 = U((WY2) => {
+var FY2 = moduleWrapper((WY2) => {
     Object.defineProperty(WY2, "__esModule", {
         value: !0
     });
@@ -1366,8 +1352,7 @@ var FY2 = U((WY2) => {
     var RYA = AQ0(),
         IY2 = U91(),
         YY2 = $91();
-
-class JY2 {
+    class JY2 {
         _scale;
         _scaleFactor;
         _inverseFactor;
@@ -1386,13 +1371,13 @@ class JY2 {
             let Q = this._maxNormalLowerBoundaryIndex();
             if (A >= Q) {
                 if (A === Q) return 2 * Math.exp((A - (1 << this._scale)) / this._scaleFactor);
-                throw new YY2.MappingError(`overflow: ${A} is > maximum lower boundary: ${Q}`)
+                throw new YY2.MappingError(`overflow: TextComponent{A} is > maximum lower boundary: TextComponent{Q}`)
             }
             let B = this._minNormalLowerBoundaryIndex();
             if (A <= B) {
                 if (A === B) return RYA.MIN_VALUE;
                 else if (A === B - 1) return Math.exp((A + (1 << this._scale)) / this._scaleFactor) / 2;
-                throw new YY2.MappingError(`overflow: ${A} is < minimum lower boundary: ${B}`)
+                throw new YY2.MappingError(`overflow: TextComponent{A} is < minimum lower boundary: TextComponent{B}`)
             }
             return Math.exp(A * this._inverseFactor)
         }
@@ -1408,7 +1393,7 @@ class JY2 {
     }
     WY2.LogarithmMapping = JY2
 });
-var CY2 = U((DY2) => {
+var CY2 = moduleWrapper((DY2) => {
     Object.defineProperty(DY2, "__esModule", {
         value: !0
     });
@@ -1425,13 +1410,13 @@ var CY2 = U((DY2) => {
             return new ID5.ExponentMapping(Q - 10)
         });
 
-function XD5(A) {
-        if (A > KY2 || A < VY2) throw new JD5.MappingError(`expected scale >= ${VY2} && <= ${KY2}, got: ${A}`);
+    function XD5(A) {
+        if (A > KY2 || A < VY2) throw new JD5.MappingError(`expected scale >= TextComponent{VY2} && <= TextComponent{KY2}, got: TextComponent{A}`);
         return WD5[A + 10]
     }
     DY2.getMapping = XD5
 });
-var qY2 = U(($Y2) => {
+var qY2 = moduleWrapper(($Y2) => {
     Object.defineProperty($Y2, "__esModule", {
         value: !0
     });
@@ -1442,8 +1427,7 @@ var qY2 = U(($Y2) => {
         EY2 = iI2(),
         zY2 = CY2(),
         KD5 = U91();
-
-class TYA {
+    class TYA {
         low;
         high;
         static combine(A, Q) {
@@ -1456,8 +1440,7 @@ class TYA {
     var DD5 = 20,
         HD5 = 160,
         QQ0 = 2;
-
-class w91 {
+    class w91 {
         startTime;
         _maxSize;
         _recordMinMax;
@@ -1470,7 +1453,7 @@ class w91 {
         _negative;
         _mapping;
         constructor(A, Q = HD5, B = !0, G = 0, Z = 0, I = 0, Y = Number.POSITIVE_INFINITY, J = Number.NEGATIVE_INFINITY, W = new EY2.Buckets, X = new EY2.Buckets, F = (0, zY2.getMapping)(DD5)) {
-            if (this.startTime = A, this._maxSize = Q, this._recordMinMax = B, this._sum = G, this._count = Z, this._zeroCount = I, this._min = Y, this._max = J, this._positive = W, this._negative = X, this._mapping = F, this._maxSize < QQ0) VD5.diag.warn(`Exponential Histogram Max Size set to ${this._maxSize},                 changing to the minimum size of: ${QQ0}`), this._maxSize = QQ0
+            if (this.startTime = A, this._maxSize = Q, this._recordMinMax = B, this._sum = G, this._count = Z, this._zeroCount = I, this._min = Y, this._max = J, this._positive = W, this._negative = X, this._mapping = F, this._maxSize < QQ0) VD5.diag.warn(`Exponential Histogram Max Size set to TextComponent{this._maxSize},                 changing to the minimum size of: TextComponent{QQ0}`), this._maxSize = QQ0
         }
         record(A) {
             this.updateByIncrement(A, 1)

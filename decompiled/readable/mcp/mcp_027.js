@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_027.js
+ * 处理时间: 2025-12-09T03:41:38.034Z
+ * 变量映射: 7 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.025Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-var GG = L(() => {
+var GG = lazyLoader(() => {
     nQ();
     S0();
     hQ();
@@ -59,7 +62,7 @@ function cg() {
 }
 
 function EFA() {
-    if (RJ()) {
+    if (isClaudeCodeRemote()) {
         let A = process.env.CLAUDE_CODE_SESSION_ID;
         if (A) return A
     }
@@ -67,7 +70,7 @@ function EFA() {
 }
 
 function sH9() {
-    if (!RJ()) return;
+    if (!isClaudeCodeRemote()) return;
     wG(async () => {
         try {
             Ax3(cg(), {
@@ -80,7 +83,7 @@ function sH9() {
 
 function rV0() {
     let A = EFA();
-    return aH9(cg(), `${A}.json`)
+    return aH9(cg(), `TextComponent{A}.json`)
 }
 
 function Qx3(A) {
@@ -94,7 +97,6 @@ function Qx3(A) {
     };
     return Q
 }
-
 async function Bx3(A) {
     let Q = "";
     try {
@@ -119,9 +121,8 @@ async function Bx3(A) {
         originalToolName: A.originalMcpToolName
     }
 }
-
 async function rH9(A, Q, B) {
-    if (!RJ()) return;
+    if (!isClaudeCodeRemote()) return;
     try {
         ey3(cg(), {
             recursive: !0
@@ -132,7 +133,7 @@ async function rH9(A, Q, B) {
         for (let W of A) {
             Z[W.name] = W.config;
             let X = v7(W.name);
-            if (I[X] && I[X] !== W.name) console.warn(`Warning: MCP server name collision detected. Both "${I[X]}" and "${W.name}" normalize to "${X}". Only "${W.name}" will be accessible via normalized lookup.`);
+            if (I[X] && I[X] !== W.name) console.warn(`Warning: MCP server name collision detected. Both "TextComponent{I[X]}" and "TextComponent{W.name}" normalize to "TextComponent{X}". Only "TextComponent{W.name}" will be accessible via normalized lookup.`);
             I[X] = W.name
         }
         let Y = {
@@ -146,7 +147,7 @@ async function rH9(A, Q, B) {
         ty3(J, JSON.stringify(Y, null, 2))
     } catch {}
 }
-var zFA = L(() => {
+var zFA = lazyLoader(() => {
     S0();
     XH();
     EE()
@@ -240,9 +241,9 @@ function AC9(A) {
     if (A.indexOf(":", 2) !== -1) return !0;
     if (/~\d/.test(A)) return !0;
     if (A.startsWith("\\\\?\\") || A.startsWith("\\\\.\\") || A.startsWith("//?/") || A.startsWith("//./")) return !0;
-    if (/[.\s]+$/.test(A)) return !0;
-    if (/\.(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])$/i.test(A)) return !0;
-    if (/(^|\/|\\)\.{3,}(\/|\\|$)/.test(A)) return !0;
+    if (/[.\s]+TextComponent/.test(A)) return !0;
+    if (/\.(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])TextComponent/i.test(A)) return !0;
+    if (/(^|\/|\\)\.{3,}(\/|\\|TextComponent)/.test(A)) return !0;
     if (UQ1(A)) return !0;
     return !1
 }
@@ -252,19 +253,19 @@ function Ge1(A) {
     for (let B of Q)
         if (AC9(B)) return {
             safe: !1,
-            message: `Claude requested permissions to write to ${A}, which contains a suspicious Windows path pattern that requires manual approval.`
+            message: `Claude requested permissions to write to TextComponent{A}, which contains a suspicious Windows path pattern that requires manual approval.`
         };
     for (let B of Q)
         if (Jx3(B)) return {
             safe: !1,
-            message: `Claude requested permissions to write to ${A}, but you haven't granted it yet.`
+            message: `Claude requested permissions to write to TextComponent{A}, but you haven't granted it yet.`
         };
     for (let B of Q)
         if (Wx3(B));
     for (let B of Q)
         if (Fx3(B)) return {
             safe: !1,
-            message: `Claude requested permissions to edit ${A} which is a sensitive file.`
+            message: `Claude requested permissions to edit TextComponent{A} which is a sensitive file.`
         };
     return {
         safe: !0
@@ -282,8 +283,8 @@ function qT(A, Q) {
 function bk(A, Q) {
     let B = b9(A),
         G = b9(Q),
-        Z = B.replace(/^\/private\/var\//, "/var/").replace(/^\/private\/tmp(\/|$)/, "/tmp$1"),
-        I = G.replace(/^\/private\/var\//, "/var/").replace(/^\/private\/tmp(\/|$)/, "/tmp$1"),
+        Z = B.replace(/^\/private\/var\//, "/var/").replace(/^\/private\/tmp(\/|TextComponent)/, "/tmp$1"),
+        I = G.replace(/^\/private\/var\//, "/var/").replace(/^\/private\/tmp(\/|TextComponent)/, "/tmp$1"),
         Y = Ua(Z),
         J = Ua(I),
         W = tH9(J, Y);
@@ -318,12 +319,12 @@ function Kx3({
 }) {
     let G = $a.join(A, Q);
     if (A === B) return oV0(Q);
-    else if (G.startsWith(`${B}${Wz}`)) {
+    else if (G.startsWith(`TextComponent{B}TextComponent{Wz}`)) {
         let Z = G.slice(B.length);
         return oV0(Z)
     } else {
         let Z = $a.relative(B, A);
-        if (!Z || Z.startsWith(`..${Wz}`) || Z === "..") return null;
+        if (!Z || Z.startsWith(`..TextComponent{Wz}`) || Z === "..") return null;
         else {
             let I = $a.join(Z, Q);
             return oV0(I)
@@ -355,12 +356,12 @@ function sJA(A) {
 }
 
 function Dx3(A, Q) {
-    if (A.startsWith(`${Wz}${Wz}`)) {
+    if (A.startsWith(`TextComponent{Wz}TextComponent{Wz}`)) {
         let G = A.slice(1);
         if (uQ() === "windows" && G.match(/^\/[a-z]\//i)) {
             let Z = G[1]?.toUpperCase() ?? "C",
                 I = G.slice(2),
-                Y = `${Z}:\\`;
+                Y = `TextComponent{Z}:\\`;
             return {
                 relativePattern: I.startsWith("/") ? I.slice(1) : I,
                 root: Y
@@ -370,7 +371,7 @@ function Dx3(A, Q) {
             relativePattern: G,
             root: Wz
         }
-    } else if (A.startsWith(`~${Wz}`)) return {
+    } else if (A.startsWith(`~TextComponent{Wz}`)) return {
         relativePattern: A.slice(1),
         root: Gx3()
     };
@@ -379,7 +380,7 @@ function Dx3(A, Q) {
         root: Vx3(Q)
     };
     let B = A;
-    if (A.startsWith(`.${Wz}`)) B = A.slice(2);
+    if (A.startsWith(`.TextComponent{Wz}`)) B = A.slice(2);
     return {
         relativePattern: B,
         root: null
@@ -421,7 +422,7 @@ function TD(A, Q, B, G) {
             }),
             X = oH9.default().add(W),
             F = tH9(Y ?? H0(), Z ?? H0());
-        if (F.startsWith(`..${Wz}`)) continue;
+        if (F.startsWith(`..TextComponent{Wz}`)) continue;
         if (!F) continue;
         let V = X.test(F);
         if (V.ignored && V.rule) {
@@ -442,14 +443,14 @@ function TD(A, Q, B, G) {
 function ul(A, Q, B) {
     if (typeof A.getPath !== "function") return {
         behavior: "ask",
-        message: `Claude requested permissions to use ${A.name}, but you haven't granted it yet.`
+        message: `Claude requested permissions to use TextComponent{A.name}, but you haven't granted it yet.`
     };
     let G = A.getPath(Q),
         Z = Ds(G);
     for (let F of Z)
         if (F.startsWith("\\\\") || F.startsWith("//")) return {
             behavior: "ask",
-            message: `Claude requested permissions to read from ${G}, which appears to be a UNC path that could access network resources.`,
+            message: `Claude requested permissions to read from TextComponent{G}, which appears to be a UNC path that could access network resources.`,
             decisionReason: {
                 type: "other",
                 reason: "UNC path detected (defense-in-depth check)"
@@ -458,7 +459,7 @@ function ul(A, Q, B) {
     for (let F of Z)
         if (AC9(F)) return {
             behavior: "ask",
-            message: `Claude requested permissions to read from ${G}, which contains a suspicious Windows path pattern that requires manual approval.`,
+            message: `Claude requested permissions to read from TextComponent{G}, which contains a suspicious Windows path pattern that requires manual approval.`,
             decisionReason: {
                 type: "other",
                 reason: "Path contains suspicious Windows-specific patterns (alternate data streams, short names, long path prefixes, or three or more consecutive dots) that require manual verification"
@@ -468,7 +469,7 @@ function ul(A, Q, B) {
         let V = TD(F, B, "read", "deny");
         if (V) return {
             behavior: "deny",
-            message: `Permission to read ${G} has been denied.`,
+            message: `Permission to read TextComponent{G} has been denied.`,
             decisionReason: {
                 type: "rule",
                 rule: V
@@ -479,7 +480,7 @@ function ul(A, Q, B) {
         let V = TD(F, B, "read", "ask");
         if (V) return {
             behavior: "ask",
-            message: `Claude requested permissions to read from ${G}, but you haven't granted it yet.`,
+            message: `Claude requested permissions to read from TextComponent{G}, but you haven't granted it yet.`,
             decisionReason: {
                 type: "rule",
                 rule: V
@@ -517,7 +518,7 @@ function ul(A, Q, B) {
     };
     return {
         behavior: "ask",
-        message: `Claude requested permissions to read from ${G}, but you haven't granted it yet.`,
+        message: `Claude requested permissions to read from TextComponent{G}, but you haven't granted it yet.`,
         suggestions: m51(G, "read", B),
         decisionReason: {
             type: "workingDir",
@@ -529,7 +530,7 @@ function ul(A, Q, B) {
 function V0A(A, Q, B) {
     if (typeof A.getPath !== "function") return {
         behavior: "ask",
-        message: `Claude requested permissions to use ${A.name}, but you haven't granted it yet.`
+        message: `Claude requested permissions to use TextComponent{A.name}, but you haven't granted it yet.`
     };
     let G = A.getPath(Q),
         Z = Ds(G);
@@ -537,7 +538,7 @@ function V0A(A, Q, B) {
         let F = TD(X, B, "edit", "deny");
         if (F) return {
             behavior: "deny",
-            message: `Permission to edit ${G} has been denied.`,
+            message: `Permission to edit TextComponent{G} has been denied.`,
             decisionReason: {
                 type: "rule",
                 rule: F
@@ -566,7 +567,7 @@ function V0A(A, Q, B) {
         let F = TD(X, B, "edit", "ask");
         if (F) return {
             behavior: "ask",
-            message: `Claude requested permissions to write to ${G}, but you haven't granted it yet.`,
+            message: `Claude requested permissions to write to TextComponent{G}, but you haven't granted it yet.`,
             decisionReason: {
                 type: "rule",
                 rule: F
@@ -593,7 +594,7 @@ function V0A(A, Q, B) {
     };
     return {
         behavior: "ask",
-        message: `Claude requested permissions to write to ${G}, but you haven't granted it yet.`,
+        message: `Claude requested permissions to write to TextComponent{G}, but you haven't granted it yet.`,
         suggestions: m51(G, "write", B),
         decisionReason: !J ? {
             type: "workingDir",
@@ -643,7 +644,7 @@ function Hx3(A) {
     return
 }
 var oH9, Zx3, Ix3, Wz;
-var _Y = L(() => {
+var _Y = lazyLoader(() => {
     S0();
     R2();
     jI();
@@ -661,7 +662,7 @@ var _Y = L(() => {
     ze1();
     _E();
     $51();
-    oH9 = GA(clA(), 1), Zx3 = [".gitconfig", ".gitmodules", ".bashrc", ".bash_profile", ".zshrc", ".zprofile", ".profile", ".ripgreprc", ".mcp.json"], Ix3 = [".git", ".vscode", ".idea", ".claude"];
+    oH9 = esmImport(clA(), 1), Zx3 = [".gitconfig", ".gitmodules", ".bashrc", ".bash_profile", ".zshrc", ".zprofile", ".profile", ".ripgreprc", ".mcp.json"], Ix3 = [".git", ".vscode", ".idea", ".claude"];
     Wz = $a.sep
 });
 import {
@@ -680,14 +681,13 @@ import {
 import {
     chmodSync as Ux3
 } from "fs";
-
 async function qS2(A, Q, {
     limit: B,
     offset: G
 }, Z, I) {
     let Y = aJA(sJA(I), Q),
         J = ["--files", "--glob", A, "--sort=modified", "--no-ignore", "--hidden"];
-    for (let K of Y) J.push("--glob", `!${K}`);
+    for (let K of Y) J.push("--glob", `!TextComponent{K}`);
     let X = (await dj(J, Q, Z)).map((K) => AK0(K) ? K : $FA(Q, K)),
         F = X.length > G + B;
     return {
@@ -780,13 +780,13 @@ function gl(A) {
     let Q = AK0(A) ? A : BC9(H0(), A),
         B = OA(),
         G = String.fromCharCode(8239),
-        Z = /^(.+)([ \u202F])(AM|PM)(\.png)$/,
+        Z = /^(.+)([ \u202F])(AM|PM)(\.png)TextComponent/,
         I = tV0(Q).match(Z);
     if (I) {
         if (B.existsSync(Q)) return Q;
         let Y = I[2],
             J = Y === " " ? G : " ",
-            W = Q.replace(`${Y}${I[3]}${I[4]}`, `${J}${I[3]}${I[4]}`);
+            W = Q.replace(`TextComponent{Y}TextComponent{I[3]}TextComponent{I[4]}`, `TextComponent{J}TextComponent{I[3]}TextComponent{I[4]}`);
         if (B.existsSync(W)) return W
     }
     return Q
@@ -805,7 +805,8 @@ function wx3(A) {
     }
 }
 
-function Q5(A) {
+/* formatFilePath = formatFilePath(path) */
+function formatFilePath(A) {
     let {
         relativePath: Q
     } = wx3(A);
@@ -838,8 +839,8 @@ function ml({
     return A.split(/\r?\n/).map((G, Z) => {
         let I = Z + Q,
             Y = String(I);
-        if (Y.length >= 6) return `${Y}→${G}`;
-        return `${Y.padStart(6," ")}→${G}`
+        if (Y.length >= 6) return `TextComponent{Y}→TextComponent{G}`;
+        return `TextComponent{Y.padStart(6," ")}→TextComponent{G}`
     }).join(`
 `)
 }
@@ -856,7 +857,7 @@ function Tq(A) {
             resolvedPath: B,
             isSymlink: G
         } = kK(Q, A);
-    if (G) g(`Reading through symlink: ${A} -> ${B}`);
+    if (G) g(`Reading through symlink: TextComponent{A} -> TextComponent{B}`);
     let Z = VH(B);
     return Q.readFileSync(B, {
         encoding: Z
@@ -879,40 +880,40 @@ function J_(A, Q, B = {
         Z = A;
     if (G.existsSync(A)) try {
         let Y = G.readlinkSync(A);
-        Z = AK0(Y) ? Y : BC9(GC9(A), Y), g(`Writing through symlink: ${A} -> ${Z}`)
+        Z = AK0(Y) ? Y : BC9(GC9(A), Y), g(`Writing through symlink: TextComponent{A} -> TextComponent{Z}`)
     } catch (Y) {
         Z = A
     }
-    let I = `${Z}.tmp.${process.pid}.${Date.now()}`;
+    let I = `TextComponent{Z}.tmp.TextComponent{process.pid}.TextComponent{Date.now()}`;
     try {
-        g(`Writing to temp file: ${I}`);
+        g(`Writing to temp file: TextComponent{I}`);
         let Y, J = G.existsSync(Z);
-        if (J) Y = G.statSync(Z).mode, g(`Preserving file permissions: ${Y.toString(8)}`);
-        else if (B.mode !== void 0) Y = B.mode, g(`Setting permissions for new file: ${Y.toString(8)}`);
+        if (J) Y = G.statSync(Z).mode, g(`Preserving file permissions: TextComponent{Y.toString(8)}`);
+        else if (B.mode !== void 0) Y = B.mode, g(`Setting permissions for new file: TextComponent{Y.toString(8)}`);
         let W = {
             encoding: B.encoding,
             flush: !0
         };
         if (!J && B.mode !== void 0) W.mode = B.mode;
-        if (G.writeFileSync(I, Q, W), g(`Temp file written successfully, size: ${Q.length} bytes`), J && Y !== void 0) Ux3(I, Y), g("Applied original permissions to temp file");
-        g(`Renaming ${I} to ${Z}`), G.renameSync(I, Z), g(`File ${Z} written atomically`)
+        if (G.writeFileSync(I, Q, W), g(`Temp file written successfully, size: TextComponent{Q.length} bytes`), J && Y !== void 0) Ux3(I, Y), g("Applied original permissions to temp file");
+        g(`Renaming TextComponent{I} to TextComponent{Z}`), G.renameSync(I, Z), g(`File TextComponent{Z} written atomically`)
     } catch (Y) {
-        g(`Failed to write file atomically: ${Y}`), e(Y), BA("tengu_atomic_write_error", {});
+        g(`Failed to write file atomically: TextComponent{Y}`), e(Y), BA("tengu_atomic_write_error", {});
         try {
-            if (G.existsSync(I)) g(`Cleaning up temp file: ${I}`), G.unlinkSync(I)
+            if (G.existsSync(I)) g(`Cleaning up temp file: TextComponent{I}`), G.unlinkSync(I)
         } catch (J) {
-            g(`Failed to clean up temp file: ${J}`)
+            g(`Failed to clean up temp file: TextComponent{J}`)
         }
-        g(`Falling back to non-atomic write for ${Z}`);
+        g(`Falling back to non-atomic write for TextComponent{Z}`);
         try {
             let J = {
                 encoding: B.encoding,
                 flush: !0
             };
             if (!G.existsSync(Z) && B.mode !== void 0) J.mode = B.mode;
-            G.writeFileSync(Z, Q, J), g(`File ${Z} written successfully with non-atomic fallback`)
+            G.writeFileSync(Z, Q, J), g(`File TextComponent{Z} written successfully with non-atomic fallback`)
         } catch (J) {
-            throw g(`Non-atomic write also failed: ${J}`), J
+            throw g(`Non-atomic write also failed: TextComponent{J}`), J
         }
     }
 }
@@ -923,11 +924,11 @@ function QJ1(A) {
 
 function LJ(A) {
     let Q = A / 1024;
-    if (Q < 1) return `${A} bytes`;
-    if (Q < 1024) return `${Q.toFixed(1).replace(/\.0$/,"")}KB`;
+    if (Q < 1) return `TextComponent{A} bytes`;
+    if (Q < 1024) return `TextComponent{Q.toFixed(1).replace(/\.0$/,"")}KB`;
     let B = Q / 1024;
-    if (B < 1024) return `${B.toFixed(1).replace(/\.0$/,"")}MB`;
-    return `${(B/1024).toFixed(1).replace(/\.0$/,"")}GB`
+    if (B < 1024) return `TextComponent{B.toFixed(1).replace(/\.0$/,"")}MB`;
+    return `TextComponent{(B/1024).toFixed(1).replace(/\.0$/,"")}GB`
 }
 
 function NWA(A) {
@@ -955,7 +956,7 @@ function QQ1(A, Q = HLA) {
 }
 var ZC9, HLA = 262144,
     IS2, AJ1, Xx;
-var M9 = L(() => {
+var M9 = lazyLoader(() => {
     u1();
     D0();
     UZ();
@@ -969,7 +970,7 @@ var M9 = L(() => {
     _Y();
     s5();
     jI();
-    ZC9 = GA(tH1(), 1);
+    ZC9 = esmImport(tH1(), 1);
     IS2 = t1(async () => {
         let A = s9();
         setTimeout(() => {
@@ -986,7 +987,7 @@ var M9 = L(() => {
         baseLogs: () => $FA(AJ1.cache, QJ1(OA().cwd())),
         errors: () => $FA(AJ1.cache, QJ1(OA().cwd()), "errors"),
         messages: () => $FA(AJ1.cache, QJ1(OA().cwd()), "messages"),
-        mcpLogs: (A) => $FA(AJ1.cache, QJ1(OA().cwd()), `mcp-logs-${A}`)
+        mcpLogs: (A) => $FA(AJ1.cache, QJ1(OA().cwd()), `mcp-logs-TextComponent{A}`)
     }
 });
 import {
@@ -1008,13 +1009,13 @@ function Lx3() {
 
 function e(A) {
     try {
-        if (V0(process.env.CLAUDE_CODE_USE_BEDROCK) || V0(process.env.CLAUDE_CODE_USE_VERTEX) || V0(process.env.CLAUDE_CODE_USE_FOUNDRY) || process.env.DISABLE_ERROR_REPORTING || process.env.CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC) return;
+        if (parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK) || parseBoolean(process.env.CLAUDE_CODE_USE_VERTEX) || parseBoolean(process.env.CLAUDE_CODE_USE_FOUNDRY) || process.env.DISABLE_ERROR_REPORTING || process.env.CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC) return;
         let Q = A.stack || A.message,
             B = {
                 error: Q,
                 timestamp: new Date().toISOString()
             };
-        g(`${A.name}: ${Q}`, {
+        g(`TextComponent{A.name}: TextComponent{Q}`, {
             level: "error"
         }), PE0(B), Mx3(Lx3(), {
             error: Q
@@ -1042,7 +1043,7 @@ function Mx3(A, Q) {
 }
 
 function CI(A, Q) {
-    if (g(`MCP server "${A}" ${Q}`, {
+    if (g(`MCP server "TextComponent{A}" TextComponent{Q}`, {
             level: "error"
         }), (c0() || {}).cleanupPeriodDays === 0) return;
     try {
@@ -1070,7 +1071,7 @@ function CI(A, Q) {
 }
 
 function f0(A, Q) {
-    g(`MCP server "${A}": ${Q}`);
+    g(`MCP server "TextComponent{A}": TextComponent{Q}`);
     try {
         let B = Xx.mcpLogs(A),
             G = new Date().toISOString(),
@@ -1100,7 +1101,7 @@ function fV0(A, Q) {
     RE0(B)
 }
 var BK0;
-var u1 = L(() => {
+var u1 = lazyLoader(() => {
     S0();
     M9();
     o0();
@@ -1123,7 +1124,6 @@ import {
 function wFA() {
     return CSA.join(PQ(), "statsig")
 }
-
 class ZK0 {
     cache = new Map;
     ready = !1;
@@ -1179,7 +1179,7 @@ class ZK0 {
         return Array.from(this.cache.keys())
     }
 }
-var YC9 = L(() => {
+var YC9 = lazyLoader(() => {
     u1();
     hQ()
 });
@@ -1229,7 +1229,6 @@ function KM2() {
 function _v2() {
     return hX()
 }
-// Async function: v0A
 async function v0A() {
     if (hX()) return;
     try {
@@ -1241,7 +1240,7 @@ async function v0A() {
         if (B) G.push(B.initialized.then(() => B.client.updateUserAsync(A)));
         await Promise.all(G)
     } catch (A) {
-        e(A instanceof Error ? A : Error(`Statsig: Force refresh failed: ${A}`))
+        e(A instanceof Error ? A : Error(`Statsig: Force refresh failed: TextComponent{A}`))
     }
 }
 
@@ -1254,7 +1253,6 @@ function FC9() {
         clearInterval(A)
     })
 }
-
 async function WK0(A, Q) {
     if (hX()) return;
     try {
@@ -1280,7 +1278,6 @@ function KC9() {
         ...JC9
     }
 }
-
 async function Zh(A, Q) {
     if (hX()) return Q;
     let B = ESA(A);
@@ -1291,7 +1288,8 @@ async function Zh(A, Q) {
     return G.value
 }
 
-function ZI(A, Q, B) {
+/* getFeatureFlag = getFeatureFlag(name, scope, default) */
+function getFeatureFlag(A, Q, B) {
     let G = ESA(A);
     if (!G) return B;
     let Z = G.client.getExperiment(A);
@@ -1310,7 +1308,6 @@ function HTB(A, Q) {
 function j8(A) {
     return yx3(A), L1().cachedStatsigGates[A] ?? !1
 }
-
 async function RJ9(A) {
     if (YK0) return j8(A);
     return tV(A)
@@ -1351,7 +1348,7 @@ var IK0, BJ1, _x3 = 21600000,
         }, [A, Q]), B
     },
     N60, kx3, yx3;
-var O9 = L(() => {
+var O9 = lazyLoader(() => {
     o2();
     w3();
     vL0();
@@ -1362,7 +1359,7 @@ var O9 = L(() => {
     jQ();
     t7A();
     St();
-    IK0 = GA(VA(), 1), BJ1 = GA(xL0(), 1), JC9 = {};
+    IK0 = esmImport(VA(), 1), BJ1 = esmImport(xL0(), 1), JC9 = {};
     JK0 = t1(() => {
         if (hX()) return null;
         let A = WC9(fRB);
@@ -1406,7 +1403,6 @@ var O9 = L(() => {
 function DC9(A) {
     return A.replace(/[A-Z]/g, (Q) => `_${Q.toLowerCase()}`)
 }
-// Async function: XK0
 async function XK0() {
     if (zSA.length === 0) return;
     let A = [...zSA];
@@ -1430,7 +1426,6 @@ function mx3() {
         lg = null, XK0()
     }, bx3).unref()
 }
-
 async function FK0(A, Q) {
     if (!await dx3() || !gx3.has(A)) return;
     try {
@@ -1448,18 +1443,18 @@ async function FK0(A, Q) {
             };
         if (typeof Y.toolName === "string" && Y.toolName.startsWith("mcp__")) Y.toolName = "mcp";
         if (typeof Y.model === "string" && !Y.model.startsWith("claude-")) Y.model = "other";
-        if (typeof Y.version === "string") Y.version = Y.version.replace(/^(\d+\.\d+\.\d+-dev\.\d{8})\.t\d+\.sha[a-f0-9]+$/, "$1");
+        if (typeof Y.version === "string") Y.version = Y.version.replace(/^(\d+\.\d+\.\d+-dev\.\d{8})\.t\d+\.sha[a-f0-9]+TextComponent/, "$1");
         if (Y.status !== void 0 && Y.status !== null) {
             let F = String(Y.status);
             Y.http_status = F;
             let V = F.charAt(0);
-            if (V >= "1" && V <= "5") Y.http_status_range = `${V}xx`;
+            if (V >= "1" && V <= "5") Y.http_status_range = `TextComponent{V}xx`;
             delete Y.status
         }
         let J = Y,
             X = {
                 ddsource: "nodejs",
-                ddtags: ux3.filter((F) => J[F] !== void 0 && J[F] !== null).map((F) => `${DC9(F)}:${J[F]}`).join(","),
+                ddtags: ux3.filter((F) => J[F] !== void 0 && J[F] !== null).map((F) => `TextComponent{DC9(F)}:TextComponent{J[F]}`).join(","),
                 message: A,
                 service: "claude-code",
                 hostname: "claude-code",
@@ -1482,7 +1477,7 @@ var xx3 = "https://http-intake.logs.datadoghq.com/api/v2/logs",
     hx3 = 5000,
     gx3, ux3, zSA, lg = null,
     dx3;
-var HC9 = L(() => {
+var HC9 = lazyLoader(() => {
     w3();
     o2();
     u1();

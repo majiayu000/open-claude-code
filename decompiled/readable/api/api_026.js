@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_026.js
+ * 处理时间: 2025-12-09T03:41:36.288Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.881Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-var jP2 = U((TP2) => {
+var jP2 = moduleWrapper((TP2) => {
     Object.defineProperty(TP2, "__esModule", {
         value: !0
     });
@@ -27,8 +30,7 @@ var jP2 = U((TP2) => {
     (function(A) {
         A.Continue = 0, A.Cancelled = 1
     })(zRA || (zRA = {}));
-
-class LP2 {
+    class LP2 {
         constructor() {
             this.buffers = new Map
         }
@@ -52,8 +54,7 @@ class LP2 {
         }
     }
     TP2.SharedArraySenderStrategy = LP2;
-
-class MP2 {
+    class MP2 {
         constructor(A) {
             this.data = new Int32Array(A, 0, 1)
         }
@@ -64,16 +65,14 @@ class MP2 {
             throw Error("Cancellation over SharedArrayBuffer doesn't support cancellation events")
         }
     }
-
-class OP2 {
+    class OP2 {
         constructor(A) {
             this.token = new MP2(A)
         }
         cancel() {}
         dispose() {}
     }
-
-class RP2 {
+    class RP2 {
         constructor() {
             this.kind = "request"
         }
@@ -85,14 +84,13 @@ class RP2 {
     }
     TP2.SharedArrayReceiverStrategy = RP2
 });
-var d80 = U((_P2) => {
+var d80 = moduleWrapper((_P2) => {
     Object.defineProperty(_P2, "__esModule", {
         value: !0
     });
     _P2.Semaphore = void 0;
     var Jb5 = Qn();
-
-class SP2 {
+    class SP2 {
         constructor(A = 1) {
             if (A <= 0) throw Error("Capacity must be greater than 0");
             this._capacity = A, this._active = 0, this._waiting = []
@@ -132,7 +130,7 @@ class SP2 {
     }
     _P2.Semaphore = SP2
 });
-var fP2 = U((vP2) => {
+var fP2 = moduleWrapper((vP2) => {
     Object.defineProperty(vP2, "__esModule", {
         value: !0
     });
@@ -149,8 +147,7 @@ var fP2 = U((vP2) => {
         }
         A.is = Q
     })(yP2 || (vP2.MessageReader = yP2 = {}));
-
-class i80 {
+    class i80 {
         constructor() {
             this.errorEmitter = new c80.Emitter, this.closeEmitter = new c80.Emitter, this.partialMessageEmitter = new c80.Emitter
         }
@@ -177,7 +174,7 @@ class i80 {
         }
         asError(A) {
             if (A instanceof Error) return A;
-            else return Error(`Reader received error. Reason: ${gJA.string(A.message)?A.message:"unknown"}`)
+            else return Error(`Reader received error. Reason: TextComponent{gJA.string(A.message)?A.message:"unknown"}`)
         }
     }
     vP2.AbstractMessageReader = i80;
@@ -206,8 +203,7 @@ class i80 {
         }
         A.fromOptions = Q
     })(l80 || (l80 = {}));
-
-class xP2 extends i80 {
+    class xP2 extends i80 {
         constructor(A, Q) {
             super();
             this.readable = A, this.options = l80.fromOptions(Q), this.buffer = (0, p80.default)().messageBuffer.create(this.options.charset), this._partialMessageTimeout = 1e4, this.nextMessageLength = -1, this.messageToken = 0, this.readSemaphore = new Wb5.Semaphore(1)
@@ -235,12 +231,12 @@ class xP2 extends i80 {
                         let G = B.get("content-length");
                         if (!G) {
                             this.fireError(Error(`Header must provide a Content-Length property.
-${JSON.stringify(Object.fromEntries(B))}`));
+TextComponent{JSON.stringify(Object.fromEntries(B))}`));
                             return
                         }
                         let Z = parseInt(G);
                         if (isNaN(Z)) {
-                            this.fireError(Error(`Content-Length value must be a number. Got ${G}`));
+                            this.fireError(Error(`Content-Length value must be a number. Got TextComponent{G}`));
                             return
                         }
                         this.nextMessageLength = Z
@@ -277,7 +273,7 @@ ${JSON.stringify(Object.fromEntries(B))}`));
     }
     vP2.ReadableStreamMessageReader = xP2
 });
-var lP2 = U((cP2) => {
+var lP2 = moduleWrapper((cP2) => {
     Object.defineProperty(cP2, "__esModule", {
         value: !0
     });
@@ -297,8 +293,7 @@ var lP2 = U((cP2) => {
         }
         A.is = Q
     })(mP2 || (cP2.MessageWriter = mP2 = {}));
-
-class a80 {
+    class a80 {
         constructor() {
             this.errorEmitter = new gP2.Emitter, this.closeEmitter = new gP2.Emitter
         }
@@ -319,7 +314,7 @@ class a80 {
         }
         asError(A) {
             if (A instanceof Error) return A;
-            else return Error(`Writer received error. Reason: ${URA.string(A.message)?A.message:"unknown"}`)
+            else return Error(`Writer received error. Reason: TextComponent{URA.string(A.message)?A.message:"unknown"}`)
         }
     }
     cP2.AbstractMessageWriter = a80;
@@ -338,8 +333,7 @@ class a80 {
         }
         A.fromOptions = Q
     })(n80 || (n80 = {}));
-
-class dP2 extends a80 {
+    class dP2 extends a80 {
         constructor(A, Q) {
             super();
             this.writable = A, this.options = n80.fromOptions(Q), this.errorCount = 0, this.writeSemaphore = new Vb5.Semaphore(1), this.writable.onError((B) => this.fireError(B)), this.writable.onClose(() => this.fireClose())
@@ -373,7 +367,7 @@ class dP2 extends a80 {
     }
     cP2.WriteableStreamMessageWriter = dP2
 });
-var sP2 = U((nP2) => {
+var sP2 = moduleWrapper((nP2) => {
     Object.defineProperty(nP2, "__esModule", {
         value: !0
     });
@@ -382,8 +376,7 @@ var sP2 = U((nP2) => {
         Eb5 = 10,
         zb5 = `\r
 `;
-
-class iP2 {
+    class iP2 {
         constructor(A = "utf-8") {
             this._encoding = A, this._chunks = [], this._totalLength = 0
         }
@@ -445,7 +438,7 @@ class iP2 {
                 let X = J[W],
                     F = X.indexOf(":");
                 if (F === -1) throw Error(`Message header must separate key and value using ':'
-${X}`);
+TextComponent{X}`);
                 let V = X.substr(0, F),
                     K = X.substr(F + 1).trim();
                 Y.set(A ? V.toLowerCase() : V, K)
@@ -486,7 +479,7 @@ ${X}`);
     }
     nP2.AbstractMessageBuffer = iP2
 });
-var Yj2 = U((Qj2) => {
+var Yj2 = moduleWrapper((Qj2) => {
     Object.defineProperty(Qj2, "__esModule", {
         value: !0
     });
@@ -499,7 +492,7 @@ var Yj2 = U((Qj2) => {
         s80 = w61(),
         NRA;
     (function(A) {
-        A.type = new H4.NotificationType("$/cancelRequest")
+        A.type = new H4.NotificationType("TextComponent/cancelRequest")
     })(NRA || (NRA = {}));
     var r80;
     (function(A) {
@@ -510,10 +503,9 @@ var Yj2 = U((Qj2) => {
     })(r80 || (Qj2.ProgressToken = r80 = {}));
     var wRA;
     (function(A) {
-        A.type = new H4.NotificationType("$/progress")
+        A.type = new H4.NotificationType("TextComponent/progress")
     })(wRA || (wRA = {}));
-
-class Aj2 {
+    class Aj2 {
         constructor() {}
     }
     Qj2.ProgressType = Aj2;
@@ -556,7 +548,7 @@ class Aj2 {
         }
         A.fromString = Q;
 
-function B(G) {
+        function B(G) {
             switch (G) {
                 case A.Off:
                     return "off";
@@ -586,18 +578,17 @@ function B(G) {
     })(Oq || (Qj2.TraceFormat = Oq = {}));
     var t80;
     (function(A) {
-        A.type = new H4.NotificationType("$/setTrace")
+        A.type = new H4.NotificationType("TextComponent/setTrace")
     })(t80 || (Qj2.SetTraceNotification = t80 = {}));
     var q61;
     (function(A) {
-        A.type = new H4.NotificationType("$/logTrace")
+        A.type = new H4.NotificationType("TextComponent/logTrace")
     })(q61 || (Qj2.LogTraceNotification = q61 = {}));
     var qRA;
     (function(A) {
         A[A.Closed = 1] = "Closed", A[A.Disposed = 2] = "Disposed", A[A.AlreadyListening = 3] = "AlreadyListening"
     })(qRA || (Qj2.ConnectionErrors = qRA = {}));
-
-class uJA extends Error {
+    class uJA extends Error {
         constructor(A, Q) {
             super(Q);
             this.code = A, Object.setPrototypeOf(this, uJA.prototype)
@@ -636,7 +627,7 @@ class uJA extends Error {
             }
         });
 
-function Q(B) {
+        function Q(B) {
             return N61.is(B) || A60.is(B)
         }
         A.is = Q
@@ -652,7 +643,7 @@ function Q(B) {
             cleanup(B) {}
         });
 
-function Q(B) {
+        function Q(B) {
             let G = B;
             return G && aY.func(G.sendCancellation) && aY.func(G.cleanup)
         }
@@ -665,7 +656,7 @@ function Q(B) {
             sender: M61.Message
         });
 
-function Q(B) {
+        function Q(B) {
             let G = B;
             return G && L61.is(G.receiver) && M61.is(G.sender)
         }
@@ -692,7 +683,7 @@ function Q(B) {
         A[A.New = 1] = "New", A[A.Listening = 2] = "Listening", A[A.Closed = 3] = "Closed", A[A.Disposed = 4] = "Disposed"
     })($P || ($P = {}));
 
-function Ub5(A, Q, B, G) {
+    function Ub5(A, Q, B, G) {
         let Z = B !== void 0 ? B : Qj2.NullLogger,
             I = 0,
             Y = 0,
@@ -717,70 +708,70 @@ function Ub5(A, Q, B, G) {
             u = new $RA.Emitter,
             o = G && G.cancellationStrategy ? G.cancellationStrategy : O61.Message;
 
-function l(F1) {
+        function l(F1) {
             if (F1 === null) throw Error("Can't send requests with id null since the response can't be correlated.");
             return "req-" + F1.toString()
         }
 
-function k(F1) {
+        function k(F1) {
             if (F1 === null) return "res-unknown-" + (++J).toString();
             else return "res-" + F1.toString()
         }
 
-function d() {
+        function d() {
             return "not-" + (++Y).toString()
         }
 
-function QA(F1, R1) {
+        function QA(F1, R1) {
             if (H4.Message.isRequest(R1)) F1.set(l(R1.id), R1);
             else if (H4.Message.isResponse(R1)) F1.set(k(R1.id), R1);
             else F1.set(d(), R1)
         }
 
-function IA(F1) {
+        function IA(F1) {
             return
         }
 
-function HA() {
+        function HA() {
             return P === $P.Listening
         }
 
-function wA() {
+        function wA() {
             return P === $P.Closed
         }
 
-function KA() {
+        function KA() {
             return P === $P.Disposed
         }
 
-function SA() {
+        function SA() {
             if (P === $P.New || P === $P.Listening) P = $P.Closed, v.fire(void 0)
         }
 
-function sA(F1) {
+        function sA(F1) {
             y.fire([F1, void 0, void 0])
         }
 
-function NA(F1) {
+        function NA(F1) {
             y.fire(F1)
         }
         A.onClose(SA), A.onError(sA), Q.onClose(SA), Q.onError(NA);
 
-function qA() {
+        function qA() {
             if (H || C.size === 0) return;
             H = (0, rP2.default)().timer.setImmediate(() => {
                 H = void 0, yA()
             })
         }
 
-function DA(F1) {
+        function DA(F1) {
             if (H4.Message.isRequest(F1)) K1(F1);
             else if (H4.Message.isNotification(F1)) XA(F1);
             else if (H4.Message.isResponse(F1)) WA(F1);
             else zA(F1)
         }
 
-function yA() {
+        function yA() {
             if (C.size === 0) return;
             let F1 = C.shift();
             try {
@@ -817,10 +808,10 @@ function yA() {
             }
         };
 
-function K1(F1) {
+        function K1(F1) {
             if (KA()) return;
 
-function R1(ZB, rQ, PB) {
+            function R1(ZB, rQ, PB) {
                 let IQ = {
                     jsonrpc: W,
                     id: F1.id
@@ -830,7 +821,7 @@ function R1(ZB, rQ, PB) {
                 eA(IQ, rQ, PB), Q.write(IQ).catch(() => Z.error("Sending response failed."))
             }
 
-function N1(ZB, rQ, PB) {
+            function N1(ZB, rQ, PB) {
                 let IQ = {
                     jsonrpc: W,
                     id: F1.id,
@@ -839,7 +830,7 @@ function N1(ZB, rQ, PB) {
                 eA(IQ, rQ, PB), Q.write(IQ).catch(() => Z.error("Sending response failed."))
             }
 
-function Z0(ZB, rQ, PB) {
+            function Z0(ZB, rQ, PB) {
                 if (ZB === void 0) ZB = null;
                 let IQ = {
                     jsonrpc: W,
@@ -848,7 +839,7 @@ function Z0(ZB, rQ, PB) {
                 };
                 eA(IQ, rQ, PB), Q.write(IQ).catch(() => Z.error("Sending response failed."))
             }
-            aA(F1);
+            BASE64_CHARS(F1);
             let J0 = F.get(F1.method),
                 s1, p0;
             if (J0) s1 = J0.type, p0 = J0.handler;
@@ -863,19 +854,19 @@ function Z0(ZB, rQ, PB) {
                     if (p0)
                         if (F1.params === void 0) {
                             if (s1 !== void 0 && s1.numberOfParams !== 0) {
-                                N1(new H4.ResponseError(H4.ErrorCodes.InvalidParams, `Request ${F1.method} defines ${s1.numberOfParams} params but received none.`), F1.method, HQ);
+                                N1(new H4.ResponseError(H4.ErrorCodes.InvalidParams, `Request TextComponent{F1.method} defines TextComponent{s1.numberOfParams} params but received none.`), F1.method, HQ);
                                 return
                             }
                             PB = p0(rQ.token)
                         } else if (Array.isArray(F1.params)) {
                         if (s1 !== void 0 && s1.parameterStructures === H4.ParameterStructures.byName) {
-                            N1(new H4.ResponseError(H4.ErrorCodes.InvalidParams, `Request ${F1.method} defines parameters by name but received parameters by position`), F1.method, HQ);
+                            N1(new H4.ResponseError(H4.ErrorCodes.InvalidParams, `Request TextComponent{F1.method} defines parameters by name but received parameters by position`), F1.method, HQ);
                             return
                         }
                         PB = p0(...F1.params, rQ.token)
                     } else {
                         if (s1 !== void 0 && s1.parameterStructures === H4.ParameterStructures.byPosition) {
-                            N1(new H4.ResponseError(H4.ErrorCodes.InvalidParams, `Request ${F1.method} defines parameters by position but received parameters by name`), F1.method, HQ);
+                            N1(new H4.ResponseError(H4.ErrorCodes.InvalidParams, `Request TextComponent{F1.method} defines parameters by position but received parameters by name`), F1.method, HQ);
                             return
                         }
                         PB = p0(F1.params, rQ.token)
@@ -886,23 +877,23 @@ function Z0(ZB, rQ, PB) {
                         w.delete(ZB), R1(l9, F1.method, HQ)
                     }, (l9) => {
                         if (w.delete(ZB), l9 instanceof H4.ResponseError) N1(l9, F1.method, HQ);
-                        else if (l9 && aY.string(l9.message)) N1(new H4.ResponseError(H4.ErrorCodes.InternalError, `Request ${F1.method} failed with message: ${l9.message}`), F1.method, HQ);
-                        else N1(new H4.ResponseError(H4.ErrorCodes.InternalError, `Request ${F1.method} failed unexpectedly without providing any details.`), F1.method, HQ)
+                        else if (l9 && aY.string(l9.message)) N1(new H4.ResponseError(H4.ErrorCodes.InternalError, `Request TextComponent{F1.method} failed with message: TextComponent{l9.message}`), F1.method, HQ);
+                        else N1(new H4.ResponseError(H4.ErrorCodes.InternalError, `Request TextComponent{F1.method} failed unexpectedly without providing any details.`), F1.method, HQ)
                     });
                     else w.delete(ZB), R1(PB, F1.method, HQ)
                 } catch (PB) {
                     if (w.delete(ZB), PB instanceof H4.ResponseError) R1(PB, F1.method, HQ);
-                    else if (PB && aY.string(PB.message)) N1(new H4.ResponseError(H4.ErrorCodes.InternalError, `Request ${F1.method} failed with message: ${PB.message}`), F1.method, HQ);
-                    else N1(new H4.ResponseError(H4.ErrorCodes.InternalError, `Request ${F1.method} failed unexpectedly without providing any details.`), F1.method, HQ)
+                    else if (PB && aY.string(PB.message)) N1(new H4.ResponseError(H4.ErrorCodes.InternalError, `Request TextComponent{F1.method} failed with message: TextComponent{PB.message}`), F1.method, HQ);
+                    else N1(new H4.ResponseError(H4.ErrorCodes.InternalError, `Request TextComponent{F1.method} failed unexpectedly without providing any details.`), F1.method, HQ)
                 }
-            } else N1(new H4.ResponseError(H4.ErrorCodes.MethodNotFound, `Unhandled method ${F1.method}`), F1.method, HQ)
+            } else N1(new H4.ResponseError(H4.ErrorCodes.MethodNotFound, `Unhandled method TextComponent{F1.method}`), F1.method, HQ)
         }
 
-function WA(F1) {
+        function WA(F1) {
             if (KA()) return;
             if (F1.id === null)
                 if (F1.error) Z.error(`Received response message without id: Error is: 
-${JSON.stringify(F1.error,void 0,4)}`);
+TextComponent{JSON.stringify(F1.error,void 0,4)}`);
                 else Z.error("Received response message without id. No further error information provided.");
             else {
                 let R1 = F1.id,
@@ -916,14 +907,14 @@ ${JSON.stringify(F1.error,void 0,4)}`);
                         } else if (F1.result !== void 0) N1.resolve(F1.result);
                         else throw Error("Should never happen.")
                     } catch (Z0) {
-                        if (Z0.message) Z.error(`Response handler '${N1.method}' failed with message: ${Z0.message}`);
-                        else Z.error(`Response handler '${N1.method}' failed unexpectedly.`)
+                        if (Z0.message) Z.error(`Response handler 'TextComponent{N1.method}' failed with message: TextComponent{Z0.message}`);
+                        else Z.error(`Response handler 'TextComponent{N1.method}' failed unexpectedly.`)
                     }
                 }
             }
         }
 
-function XA(F1) {
+        function XA(F1) {
             if (KA()) return;
             let R1 = void 0,
                 N1;
@@ -939,7 +930,7 @@ function XA(F1) {
                 if (I1(F1), N1)
                     if (F1.params === void 0) {
                         if (R1 !== void 0) {
-                            if (R1.numberOfParams !== 0 && R1.parameterStructures !== H4.ParameterStructures.byName) Z.error(`Notification ${F1.method} defines ${R1.numberOfParams} params but received none.`)
+                            if (R1.numberOfParams !== 0 && R1.parameterStructures !== H4.ParameterStructures.byName) Z.error(`Notification TextComponent{F1.method} defines TextComponent{R1.numberOfParams} params but received none.`)
                         }
                         N1()
                     } else if (Array.isArray(F1.params)) {
@@ -950,28 +941,28 @@ function XA(F1) {
                     });
                     else {
                         if (R1 !== void 0) {
-                            if (R1.parameterStructures === H4.ParameterStructures.byName) Z.error(`Notification ${F1.method} defines parameters by name but received parameters by position`);
-                            if (R1.numberOfParams !== F1.params.length) Z.error(`Notification ${F1.method} defines ${R1.numberOfParams} params but received ${Z0.length} arguments`)
+                            if (R1.parameterStructures === H4.ParameterStructures.byName) Z.error(`Notification TextComponent{F1.method} defines parameters by name but received parameters by position`);
+                            if (R1.numberOfParams !== F1.params.length) Z.error(`Notification TextComponent{F1.method} defines TextComponent{R1.numberOfParams} params but received TextComponent{Z0.length} arguments`)
                         }
                         N1(...Z0)
                     }
                 } else {
-                    if (R1 !== void 0 && R1.parameterStructures === H4.ParameterStructures.byPosition) Z.error(`Notification ${F1.method} defines parameters by position but received parameters by name`);
+                    if (R1 !== void 0 && R1.parameterStructures === H4.ParameterStructures.byPosition) Z.error(`Notification TextComponent{F1.method} defines parameters by position but received parameters by name`);
                     N1(F1.params)
                 } else if (V) V(F1.method, F1.params)
             } catch (Z0) {
-                if (Z0.message) Z.error(`Notification handler '${F1.method}' failed with message: ${Z0.message}`);
-                else Z.error(`Notification handler '${F1.method}' failed unexpectedly.`)
+                if (Z0.message) Z.error(`Notification handler 'TextComponent{F1.method}' failed with message: TextComponent{Z0.message}`);
+                else Z.error(`Notification handler 'TextComponent{F1.method}' failed unexpectedly.`)
             } else x.fire(F1)
         }
 
-function zA(F1) {
+        function zA(F1) {
             if (!F1) {
                 Z.error("Received empty message.");
                 return
             }
             Z.error(`Received message which is neither a response nor a notification message:
-${JSON.stringify(F1,null,4)}`);
+TextComponent{JSON.stringify(F1,null,4)}`);
             let R1 = F1;
             if (aY.string(R1.id) || aY.number(R1.id)) {
                 let N1 = R1.id,
@@ -992,86 +983,87 @@ ${JSON.stringify(F1,null,4)}`);
             }
         }
 
-function LA(F1) {
+        function LA(F1) {
             if (N === O7.Off || !R) return;
             if (q === Oq.Text) {
                 let R1 = void 0;
-                if ((N === O7.Verbose || N === O7.Compact) && F1.params) R1 = `Params: ${$A(F1.params)}
+                if ((N === O7.Verbose || N === O7.Compact) && F1.params) R1 = `Params: TextComponent{$A(F1.params)}
 
 `;
-                R.log(`Sending request '${F1.method} - (${F1.id})'.`, R1)
+                R.log(`Sending request 'TextComponent{F1.method} - (TextComponent{F1.id})'.`, R1)
             } else PA("send-request", F1)
         }
 
-function TA(F1) {
+        function TA(F1) {
             if (N === O7.Off || !R) return;
             if (q === Oq.Text) {
                 let R1 = void 0;
                 if (N === O7.Verbose || N === O7.Compact)
-                    if (F1.params) R1 = `Params: ${$A(F1.params)}
+                    if (F1.params) R1 = `Params: TextComponent{$A(F1.params)}
 
 `;
                     else R1 = `No parameters provided.
 
 `;
-                R.log(`Sending notification '${F1.method}'.`, R1)
+                R.log(`Sending notification 'TextComponent{F1.method}'.`, R1)
             } else PA("send-notification", F1)
         }
 
-function eA(F1, R1, N1) {
+        function eA(F1, R1, N1) {
             if (N === O7.Off || !R) return;
             if (q === Oq.Text) {
                 let Z0 = void 0;
                 if (N === O7.Verbose || N === O7.Compact) {
-                    if (F1.error && F1.error.data) Z0 = `Error data: ${$A(F1.error.data)}
+                    if (F1.error && F1.error.data) Z0 = `Error data: TextComponent{$A(F1.error.data)}
 
 `;
-                    else if (F1.result) Z0 = `Result: ${$A(F1.result)}
+                    else if (F1.result) Z0 = `Result: TextComponent{$A(F1.result)}
 
 `;
                     else if (F1.error === void 0) Z0 = `No result returned.
 
 `
                 }
-                R.log(`Sending response '${R1} - (${F1.id})'. Processing request took ${Date.now()-N1}ms`, Z0)
+                R.log(`Sending response 'TextComponent{R1} - (TextComponent{F1.id})'. Processing request took TextComponent{Date.now()-N1}ms`, Z0)
             } else PA("send-response", F1)
         }
 
-function aA(F1) {
+        /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+function BASE64_CHARS(F1) {
             if (N === O7.Off || !R) return;
             if (q === Oq.Text) {
                 let R1 = void 0;
-                if ((N === O7.Verbose || N === O7.Compact) && F1.params) R1 = `Params: ${$A(F1.params)}
+                if ((N === O7.Verbose || N === O7.Compact) && F1.params) R1 = `Params: TextComponent{$A(F1.params)}
 
 `;
-                R.log(`Received request '${F1.method} - (${F1.id})'.`, R1)
+                R.log(`Received request 'TextComponent{F1.method} - (TextComponent{F1.id})'.`, R1)
             } else PA("receive-request", F1)
         }
 
-function I1(F1) {
+        function I1(F1) {
             if (N === O7.Off || !R || F1.method === q61.type.method) return;
             if (q === Oq.Text) {
                 let R1 = void 0;
                 if (N === O7.Verbose || N === O7.Compact)
-                    if (F1.params) R1 = `Params: ${$A(F1.params)}
+                    if (F1.params) R1 = `Params: TextComponent{$A(F1.params)}
 
 `;
                     else R1 = `No parameters provided.
 
 `;
-                R.log(`Received notification '${F1.method}'.`, R1)
+                R.log(`Received notification 'TextComponent{F1.method}'.`, R1)
             } else PA("receive-notification", F1)
         }
 
-function w1(F1, R1) {
+        function w1(F1, R1) {
             if (N === O7.Off || !R) return;
             if (q === Oq.Text) {
                 let N1 = void 0;
                 if (N === O7.Verbose || N === O7.Compact) {
-                    if (F1.error && F1.error.data) N1 = `Error data: ${$A(F1.error.data)}
+                    if (F1.error && F1.error.data) N1 = `Error data: TextComponent{$A(F1.error.data)}
 
 `;
-                    else if (F1.result) N1 = `Result: ${$A(F1.result)}
+                    else if (F1.result) N1 = `Result: TextComponent{$A(F1.result)}
 
 `;
                     else if (F1.error === void 0) N1 = `No result returned.
@@ -1079,13 +1071,13 @@ function w1(F1, R1) {
 `
                 }
                 if (R1) {
-                    let Z0 = F1.error ? ` Request failed: ${F1.error.message} (${F1.error.code}).` : "";
-                    R.log(`Received response '${R1.method} - (${F1.id})' in ${Date.now()-R1.timerStart}ms.${Z0}`, N1)
-                } else R.log(`Received response ${F1.id} without active response promise.`, N1)
+                    let Z0 = F1.error ? ` Request failed: TextComponent{F1.error.message} (TextComponent{F1.error.code}).` : "";
+                    R.log(`Received response 'TextComponent{R1.method} - (TextComponent{F1.id})' in TextComponent{Date.now()-R1.timerStart}ms.TextComponent{Z0}`, N1)
+                } else R.log(`Received response TextComponent{F1.id} without active response promise.`, N1)
             } else PA("receive-response", F1)
         }
 
-function PA(F1, R1) {
+        function PA(F1, R1) {
             if (!R || N === O7.Off) return;
             let N1 = {
                 isLSPMessage: !0,
@@ -1096,34 +1088,34 @@ function PA(F1, R1) {
             R.log(N1)
         }
 
-function B1() {
+        function B1() {
             if (wA()) throw new uJA(qRA.Closed, "Connection is closed.");
             if (KA()) throw new uJA(qRA.Disposed, "Connection is disposed.")
         }
 
-function Q0() {
+        function Q0() {
             if (HA()) throw new uJA(qRA.AlreadyListening, "Connection is already listening")
         }
 
-function b1() {
+        function b1() {
             if (!HA()) throw Error("Call listen() first.")
         }
 
-function Y0(F1) {
+        function Y0(F1) {
             if (F1 === void 0) return null;
             else return F1
         }
 
-function x0(F1) {
+        function x0(F1) {
             if (F1 === null) return;
             else return F1
         }
 
-function u0(F1) {
+        function u0(F1) {
             return F1 !== void 0 && F1 !== null && !Array.isArray(F1) && typeof F1 === "object"
         }
 
-function k1(F1, R1) {
+        function k1(F1, R1) {
             switch (F1) {
                 case H4.ParameterStructures.auto:
                     if (u0(R1)) return x0(R1);
@@ -1134,11 +1126,11 @@ function k1(F1, R1) {
                 case H4.ParameterStructures.byPosition:
                     return [Y0(R1)];
                 default:
-                    throw Error(`Unknown parameter structure ${F1.toString()}`)
+                    throw Error(`Unknown parameter structure TextComponent{F1.toString()}`)
             }
         }
 
-function T0(F1, R1) {
+        function T0(F1, R1) {
             let N1, Z0 = F1.numberOfParams;
             switch (Z0) {
                 case 0:
@@ -1176,7 +1168,7 @@ function T0(F1, R1) {
                             Z0 = k1(HQ, R1[p0]);
                             break;
                         default:
-                            if (HQ === H4.ParameterStructures.byName) throw Error(`Received ${rQ} parameters for 'by Name' notification parameter structure.`);
+                            if (HQ === H4.ParameterStructures.byName) throw Error(`Received TextComponent{rQ} parameters for 'by Name' notification parameter structure.`);
                             Z0 = R1.slice(p0, ZB).map((PB) => Y0(PB));
                             break
                     }
@@ -1214,7 +1206,7 @@ function T0(F1, R1) {
                 }
             },
             onProgress: (F1, R1, N1) => {
-                if (D.has(R1)) throw Error(`Progress handler for token ${R1} already registered`);
+                if (D.has(R1)) throw Error(`Progress handler for token TextComponent{R1} already registered`);
                 return D.set(R1, N1), {
                     dispose: () => {
                         D.delete(R1)
@@ -1249,7 +1241,7 @@ function T0(F1, R1) {
                             Z0 = k1(IQ, R1[PB]);
                             break;
                         default:
-                            if (IQ === H4.ParameterStructures.byName) throw Error(`Received ${h4} parameters for 'by Name' request parameter structure.`);
+                            if (IQ === H4.ParameterStructures.byName) throw Error(`Received TextComponent{h4} parameters for 'by Name' request parameter structure.`);
                             Z0 = R1.slice(PB, l9).map((p5) => Y0(p5));
                             break
                     }
@@ -1263,9 +1255,9 @@ function T0(F1, R1) {
                     p0;
                 if (J0) p0 = J0.onCancellationRequested(() => {
                     let ZB = o.sender.sendCancellation(fQ, s1);
-                    if (ZB === void 0) return Z.log(`Received no promise from cancellation strategy when cancelling id ${s1}`), Promise.resolve();
+                    if (ZB === void 0) return Z.log(`Received no promise from cancellation strategy when cancelling id TextComponent{s1}`), Promise.resolve();
                     else return ZB.catch(() => {
-                        Z.log(`Sending cancellation messages for id ${s1} failed`)
+                        Z.log(`Sending cancellation messages for id TextComponent{s1} failed`)
                     })
                 });
                 let HQ = {
@@ -1365,7 +1357,7 @@ function T0(F1, R1) {
     }
     Qj2.createMessageConnection = Ub5
 });
-var T61 = U((x2) => {
+var T61 = moduleWrapper((x2) => {
     Object.defineProperty(x2, "__esModule", {
         value: !0
     });

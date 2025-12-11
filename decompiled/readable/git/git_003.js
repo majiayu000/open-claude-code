@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_003.js
+ * 处理时间: 2025-12-09T03:41:37.298Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.963Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -26,12 +29,12 @@
         }), G
     }
 });
-var Os0 = U((Ls0) => {
+var Os0 = moduleWrapper((Ls0) => {
     Object.defineProperty(Ls0, "__esModule", {
         value: !0
     });
     Ls0.getAwsChunkedEncodingStream = void 0;
-    var $J4 = UA("stream"),
+    var $J4 = nodeRequire("stream"),
         wJ4 = (A, Q) => {
             let {
                 base64Encoder: B,
@@ -44,14 +47,14 @@ var Os0 = U((Ls0) => {
             });
             return A.on("data", (F) => {
                 let V = G(F) || 0;
-                X.push(`${V.toString(16)}\r
+                X.push(`TextComponent{V.toString(16)}\r
 `), X.push(F), X.push(`\r
 `)
             }), A.on("end", async () => {
                 if (X.push(`0\r
 `), J) {
                     let F = B(await W);
-                    X.push(`${I}:${F}\r
+                    X.push(`TextComponent{I}:TextComponent{F}\r
 `), X.push(`\r
 `)
                 }
@@ -60,13 +63,12 @@ var Os0 = U((Ls0) => {
         };
     Ls0.getAwsChunkedEncodingStream = wJ4
 });
-var Ts0 = U((Rs0) => {
+var Ts0 = moduleWrapper((Rs0) => {
     Object.defineProperty(Rs0, "__esModule", {
         value: !0
     });
     Rs0.headStream = qJ4;
-
-async function qJ4(A, Q) {
+    async function qJ4(A, Q) {
         var B;
         let G = 0,
             Z = [],
@@ -94,12 +96,12 @@ async function qJ4(A, Q) {
         return J
     }
 });
-var _s0 = U((js0) => {
+var _s0 = moduleWrapper((js0) => {
     Object.defineProperty(js0, "__esModule", {
         value: !0
     });
     js0.headStream = void 0;
-    var LJ4 = UA("stream"),
+    var LJ4 = nodeRequire("stream"),
         MJ4 = Ts0(),
         OJ4 = hm(),
         RJ4 = (A, Q) => {
@@ -115,8 +117,7 @@ var _s0 = U((js0) => {
             })
         };
     js0.headStream = RJ4;
-
-class Ps0 extends LJ4.Writable {
+    class Ps0 extends LJ4.Writable {
         constructor() {
             super(...arguments);
             this.buffers = [], this.limit = 1 / 0, this.bytesBuffered = 0
@@ -132,7 +133,7 @@ class Ps0 extends LJ4.Writable {
         }
     }
 });
-var ms0 = U((CY7, us0) => {
+var ms0 = moduleWrapper((CY7, us0) => {
     var {
         defineProperty: DbA,
         getOwnPropertyDescriptor: TJ4,
@@ -224,7 +225,7 @@ var ms0 = U((CY7, us0) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(gs0 || {})
 });
-var ns0 = U((EY7, is0) => {
+var ns0 = moduleWrapper((EY7, is0) => {
     var {
         defineProperty: CbA,
         getOwnPropertyDescriptor: hJ4,
@@ -303,7 +304,7 @@ var ns0 = U((EY7, is0) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values
@@ -337,7 +338,7 @@ var ns0 = U((EY7, is0) => {
                 gm(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -359,7 +360,7 @@ var ns0 = U((EY7, is0) => {
             }
         };
 
-function ps0(A) {
+    function ps0(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -369,8 +370,7 @@ function ps0(A) {
         }, {})
     }
     gm(ps0, "cloneQuery");
-
-var sJ4 = class {
+    var sJ4 = class {
         static {
             gm(this, "HttpResponse")
         }
@@ -384,12 +384,12 @@ var sJ4 = class {
         }
     };
 
-function ls0(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function ls0(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     gm(ls0, "isValidHostname")
 });
-var os0 = U((wY7, rs0) => {
+var os0 = moduleWrapper((wY7, rs0) => {
     var {
         defineProperty: EbA,
         getOwnPropertyDescriptor: rJ4,
@@ -420,10 +420,10 @@ var os0 = U((wY7, rs0) => {
     });
     rs0.exports = QW4(as0);
     var ss0 = RE1((A) => encodeURIComponent(A).replace(/[!'()*]/g, BW4), "escapeUri"),
-        BW4 = RE1((A) => `%${A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
+        BW4 = RE1((A) => `%TextComponent{A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
         GW4 = RE1((A) => A.split("/").map(ss0).join("/"), "escapeUriPath")
 });
-var Qr0 = U((qY7, Ar0) => {
+var Qr0 = moduleWrapper((qY7, Ar0) => {
     var {
         defineProperty: zbA,
         getOwnPropertyDescriptor: ZW4,
@@ -454,15 +454,15 @@ var Qr0 = U((qY7, Ar0) => {
     Ar0.exports = FW4(ts0);
     var TE1 = os0();
 
-function es0(A) {
+    function es0(A) {
         let Q = [];
         for (let B of Object.keys(A).sort()) {
             let G = A[B];
             if (B = (0, TE1.escapeUri)(B), Array.isArray(G))
-                for (let Z = 0, I = G.length; Z < I; Z++) Q.push(`${B}=${(0,TE1.escapeUri)(G[Z])}`);
+                for (let Z = 0, I = G.length; Z < I; Z++) Q.push(`TextComponent{B}=TextComponent{(0,TE1.escapeUri)(G[Z])}`);
             else {
                 let Z = B;
-                if (G || typeof G === "string") Z += `=${(0,TE1.escapeUri)(G)}`;
+                if (G || typeof G === "string") Z += `=TextComponent{(0,TE1.escapeUri)(G)}`;
                 Q.push(Z)
             }
         }
@@ -470,7 +470,7 @@ function es0(A) {
     }
     JW4(es0, "buildQueryString")
 });
-var oG = U((NY7, Cr0) => {
+var oG = moduleWrapper((NY7, Cr0) => {
     var {
         create: VW4,
         defineProperty: aKA,
@@ -509,8 +509,8 @@ var oG = U((NY7, Cr0) => {
     Cr0.exports = UW4(Jr0);
     var Wr0 = ns0(),
         Xr0 = Qr0(),
-        PE1 = UA("http"),
-        jE1 = UA("https"),
+        PE1 = nodeRequire("http"),
+        jE1 = nodeRequire("https"),
         $W4 = ["ECONNRESET", "EPIPE", "ETIMEDOUT"],
         Fr0 = rG((A) => {
             let Q = {};
@@ -529,7 +529,7 @@ var oG = U((NY7, Cr0) => {
             if (!B) return -1;
             let G = rG((Z) => {
                 let I = mz.setTimeout(() => {
-                        A.destroy(), Q(Object.assign(Error(`Socket timed out without establishing a connection within ${B} ms`), {
+                        A.destroy(), Q(Object.assign(Error(`Socket timed out without establishing a connection within TextComponent{B} ms`), {
                             name: "TimeoutError"
                         }))
                     }, B - Z),
@@ -565,7 +565,7 @@ var oG = U((NY7, Cr0) => {
             let G = rG((Z) => {
                 let I = B - Z,
                     Y = rG(() => {
-                        A.destroy(), Q(Object.assign(Error(`Connection timed out after ${B} ms`), {
+                        A.destroy(), Q(Object.assign(Error(`Connection timed out after TextComponent{B} ms`), {
                             name: "TimeoutError"
                         }))
                     }, "onTimeout");
@@ -575,10 +575,9 @@ var oG = U((NY7, Cr0) => {
             if (0 < B && B < 6000) return G(0), 0;
             return mz.setTimeout(G.bind(null, B === 0 ? 0 : Gr0), Gr0)
         }, "setSocketTimeout"),
-        Vr0 = UA("stream"),
+        Vr0 = nodeRequire("stream"),
         Zr0 = 6000;
-
-async function SE1(A, Q, B = Zr0) {
+    async function SE1(A, Q, B = Zr0) {
         let G = Q.headers ?? {},
             Z = G.Expect || G.expect,
             I = -1,
@@ -598,7 +597,7 @@ async function SE1(A, Q, B = Zr0) {
     }
     rG(SE1, "writeRequestBody");
 
-function Kr0(A, Q) {
+    function Kr0(A, Q) {
         if (Q instanceof Vr0.Readable) {
             Q.pipe(A);
             return
@@ -651,7 +650,7 @@ function Kr0(A, Q) {
                     for (let W in Z) {
                         let X = Z[W]?.length ?? 0,
                             F = I[W]?.length ?? 0;
-                        if (X >= Y && F >= 2 * Y) return G?.warn?.(`@smithy/node-http-handler:WARN - socket usage at capacity=${X} and ${F} additional requests are enqueued.
+                        if (X >= Y && F >= 2 * Y) return G?.warn?.(`@smithy/node-http-handler:WARN - socket usage at capacity=TextComponent{X} and TextComponent{F} additional requests are enqueued.
 See https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/node-configuring-maxsockets.html
 or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler config.`), Date.now()
                     }
@@ -721,11 +720,11 @@ or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler conf
                     if (Q.username != null || Q.password != null) {
                         let N = Q.username ?? "",
                             q = Q.password ?? "";
-                        K = `${N}:${q}`
+                        K = `TextComponent{N}:TextComponent{q}`
                     }
                     let D = Q.path;
-                    if (V) D += `?${V}`;
-                    if (Q.fragment) D += `#${Q.fragment}`;
+                    if (V) D += `?TextComponent{V}`;
+                    if (Q.fragment) D += `#TextComponent{Q.fragment}`;
                     let H = Q.hostname ?? "";
                     if (H[0] === "[" && H.endsWith("]")) H = Q.hostname.slice(1, -1);
                     else H = Q.hostname;
@@ -790,8 +789,8 @@ or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler conf
                 return this.config ?? {}
             }
         },
-        Ir0 = UA("http2"),
-        OW4 = zW4(UA("http2")),
+        Ir0 = nodeRequire("http2"),
+        OW4 = zW4(nodeRequire("http2")),
         RW4 = class {
             constructor(A) {
                 this.sessions = [], this.sessions = A ?? []
@@ -934,9 +933,9 @@ or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler conf
                     if (Q.username != null || Q.password != null) {
                         let v = Q.username ?? "",
                             x = Q.password ?? "";
-                        E = `${v}:${x}@`
+                        E = `TextComponent{v}:TextComponent{x}@`
                     }
-                    let z = `${H}//${E}${V}${D?`:${D}`:""}`,
+                    let z = `TextComponent{H}//TextComponent{E}TextComponent{V}TextComponent{D?`:TextComponent{D}`:""}`,
                         w = {
                             destination: new URL(z)
                         },
@@ -950,8 +949,8 @@ or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler conf
                         }, "rejectWithDestroy"),
                         R = (0, Xr0.buildQueryString)(C || {}),
                         P = Q.path;
-                    if (R) P += `?${R}`;
-                    if (Q.fragment) P += `#${Q.fragment}`;
+                    if (R) P += `?TextComponent{R}`;
+                    if (Q.fragment) P += `#TextComponent{Q.fragment}`;
                     let y = N.request({
                         ...Q.headers,
                         [Ir0.constants.HTTP2_HEADER_PATH]: P,
@@ -968,7 +967,7 @@ or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler conf
                                 }), Z) N.close(), this.connectionManager.deleteSession(z, N)
                         }), G) y.setTimeout(G, () => {
                         y.close();
-                        let v = Error(`Stream timed out because of no activity for ${G} ms`);
+                        let v = Error(`Stream timed out because of no activity for TextComponent{G} ms`);
                         v.name = "TimeoutError", q(v)
                     });
                     if (B) {
@@ -985,9 +984,9 @@ or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler conf
                         } else B.onabort = v
                     }
                     y.on("frameError", (v, x, p) => {
-                        q(Error(`Frame type id ${v} in stream id ${p} has failed with code ${x}.`))
+                        q(Error(`Frame type id TextComponent{v} in stream id TextComponent{p} has failed with code TextComponent{x}.`))
                     }), y.on("error", q), y.on("aborted", () => {
-                        q(Error(`HTTP/2 stream is abnormally aborted in mid-communication with result code ${y.rstCode}.`))
+                        q(Error(`HTTP/2 stream is abnormally aborted in mid-communication with result code TextComponent{y.rstCode}.`))
                     }), y.on("close", () => {
                         if (N.unref(), Z) N.destroy();
                         if (!J) q(Error("Unexpected error: http2 request did not get a response"))
@@ -1034,8 +1033,7 @@ or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler conf
             })
         }, "streamCollector"),
         _W4 = rG((A) => typeof ReadableStream === "function" && A instanceof ReadableStream, "isReadableStreamInstance");
-
-async function Hr0(A) {
+    async function Hr0(A) {
         let Q = [],
             B = A.getReader(),
             G = !1,
@@ -1055,7 +1053,7 @@ async function Hr0(A) {
     }
     rG(Hr0, "collectReadableStream")
 });
-var Or0 = U((RY7, Mr0) => {
+var Or0 = moduleWrapper((RY7, Mr0) => {
     var {
         defineProperty: UbA,
         getOwnPropertyDescriptor: kW4,
@@ -1147,7 +1145,7 @@ var Or0 = U((RY7, Mr0) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(Lr0 || {})
 });
-var _r0 = U((TY7, Sr0) => {
+var _r0 = moduleWrapper((TY7, Sr0) => {
     var {
         defineProperty: wbA,
         getOwnPropertyDescriptor: cW4,
@@ -1226,7 +1224,7 @@ var _r0 = U((TY7, Sr0) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values
@@ -1260,7 +1258,7 @@ var _r0 = U((TY7, Sr0) => {
                 um(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -1282,7 +1280,7 @@ var _r0 = U((TY7, Sr0) => {
             }
         };
 
-function Pr0(A) {
+    function Pr0(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -1292,8 +1290,7 @@ function Pr0(A) {
         }, {})
     }
     um(Pr0, "cloneQuery");
-
-var AX4 = class {
+    var AX4 = class {
         static {
             um(this, "HttpResponse")
         }
@@ -1307,12 +1304,12 @@ var AX4 = class {
         }
     };
 
-function jr0(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function jr0(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     um(jr0, "isValidHostname")
 });
-var vr0 = U((_Y7, xr0) => {
+var vr0 = moduleWrapper((_Y7, xr0) => {
     var {
         defineProperty: qbA,
         getOwnPropertyDescriptor: QX4,
@@ -1343,10 +1340,10 @@ var vr0 = U((_Y7, xr0) => {
     });
     xr0.exports = YX4(kr0);
     var yr0 = _E1((A) => encodeURIComponent(A).replace(/[!'()*]/g, JX4), "escapeUri"),
-        JX4 = _E1((A) => `%${A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
+        JX4 = _E1((A) => `%TextComponent{A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
         WX4 = _E1((A) => A.split("/").map(yr0).join("/"), "escapeUriPath")
 });
-var gr0 = U((kY7, hr0) => {
+var gr0 = moduleWrapper((kY7, hr0) => {
     var {
         defineProperty: NbA,
         getOwnPropertyDescriptor: XX4,
@@ -1377,15 +1374,15 @@ var gr0 = U((kY7, hr0) => {
     hr0.exports = CX4(br0);
     var kE1 = vr0();
 
-function fr0(A) {
+    function fr0(A) {
         let Q = [];
         for (let B of Object.keys(A).sort()) {
             let G = A[B];
             if (B = (0, kE1.escapeUri)(B), Array.isArray(G))
-                for (let Z = 0, I = G.length; Z < I; Z++) Q.push(`${B}=${(0,kE1.escapeUri)(G[Z])}`);
+                for (let Z = 0, I = G.length; Z < I; Z++) Q.push(`TextComponent{B}=TextComponent{(0,kE1.escapeUri)(G[Z])}`);
             else {
                 let Z = B;
-                if (G || typeof G === "string") Z += `=${(0,kE1.escapeUri)(G)}`;
+                if (G || typeof G === "string") Z += `=TextComponent{(0,kE1.escapeUri)(G)}`;
                 Q.push(Z)
             }
         }
@@ -1393,7 +1390,7 @@ function fr0(A) {
     }
     KX4(fr0, "buildQueryString")
 });
-var nr0 = U((yY7, ir0) => {
+var nr0 = moduleWrapper((yY7, ir0) => {
     var {
         defineProperty: MbA,
         getOwnPropertyDescriptor: EX4,
@@ -1427,22 +1424,21 @@ var nr0 = U((yY7, ir0) => {
     var ur0 = _r0(),
         NX4 = gr0();
 
-function yE1(A, Q) {
+    function yE1(A, Q) {
         return new Request(A, Q)
     }
     AS(yE1, "createRequest");
 
-function dr0(A = 0) {
+    function dr0(A = 0) {
         return new Promise((Q, B) => {
             if (A) setTimeout(() => {
-                let G = Error(`Request did not complete within ${A} ms`);
+                let G = Error(`Request did not complete within TextComponent{A} ms`);
                 G.name = "TimeoutError", B(G)
             }, A)
         })
     }
     AS(dr0, "requestTimeout");
-
-var LbA = {
+    var LbA = {
             supported: void 0
         },
         LX4 = class A {
@@ -1472,18 +1468,18 @@ var LbA = {
                 }
                 let Y = Q.path,
                     J = (0, NX4.buildQueryString)(Q.query || {});
-                if (J) Y += `?${J}`;
-                if (Q.fragment) Y += `#${Q.fragment}`;
+                if (J) Y += `?TextComponent{J}`;
+                if (Q.fragment) Y += `#TextComponent{Q.fragment}`;
                 let W = "";
                 if (Q.username != null || Q.password != null) {
                     let z = Q.username ?? "",
                         w = Q.password ?? "";
-                    W = `${z}:${w}@`
+                    W = `TextComponent{z}:TextComponent{w}@`
                 }
                 let {
                     port: X,
                     method: F
-                } = Q, V = `${Q.protocol}//${W}${Q.hostname}${X?`:${X}`:""}${Y}`, K = F === "GET" || F === "HEAD" ? void 0 : Q.body, D = {
+                } = Q, V = `TextComponent{Q.protocol}//TextComponent{W}TextComponent{Q.hostname}TextComponent{X?`:TextComponent{X}`:""}TextComponent{Y}`, K = F === "GET" || F === "HEAD" ? void 0 : Q.body, D = {
                     body: K,
                     headers: new Headers(Q.headers),
                     method: F,

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: config_003.js
+ * 处理时间: 2025-12-09T03:41:37.178Z
+ * 变量映射: 9 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.952Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -20,7 +23,7 @@
     return B
 }
 var O64, R64, Vp0;
-var Kp0 = L(() => {
+var Kp0 = lazyLoader(() => {
     jN();
     y_A();
     Fp0();
@@ -29,10 +32,10 @@ var Kp0 = L(() => {
 });
 
 function P64(A) {
-    return Tj(A) ? k_A(A, !0) : Vp0(A)
+    return isArrayLike(A) ? k_A(A, !0) : Vp0(A)
 }
 var lj;
-var S9A = L(() => {
+var S9A = lazyLoader(() => {
     hW1();
     Kp0();
     vBA();
@@ -40,10 +43,10 @@ var S9A = L(() => {
 });
 
 function j64(A) {
-    return hN(A, lj(A))
+    return copyObject(A, lj(A))
 }
 var Dp0;
-var Hp0 = L(() => {
+var Hp0 = lazyLoader(() => {
     ns();
     S9A();
     Dp0 = j64
@@ -60,25 +63,25 @@ function S64(A, Q, B, G, Z, I, Y) {
     var F = I ? I(J, W, B + "", A, Q, Y) : void 0,
         V = F === void 0;
     if (V) {
-        var K = j7(W),
+        var K = isArray(W),
             D = !K && Oj(W),
             H = !K && !D && yBA(W);
         if (F = W, K || D || H)
-            if (j7(J)) F = J;
+            if (isArray(J)) F = J;
             else if (Yp0(J)) F = cxA(J);
         else if (D) V = !1, F = HKA(W, !0);
         else if (H) V = !1, F = dxA(W, !0);
         else F = [];
-        else if (j9A(W) || px(W)) {
-            if (F = J, px(J)) F = Dp0(J);
-            else if (!TY(J) || wBA(J)) F = lxA(W)
+        else if (isPlainObject(W) || isArguments(W)) {
+            if (F = J, isArguments(J)) F = Dp0(J);
+            else if (!isObject(J) || wBA(J)) F = lxA(W)
         } else V = !1
     }
     if (V) Y.set(W, F), Z(F, W, G, I, Y), Y.delete(W);
     DKA(A, B, F)
 }
 var Cp0;
-var Ep0 = L(() => {
+var Ep0 = lazyLoader(() => {
     ZC1();
     YC1();
     JC1();
@@ -100,7 +103,7 @@ var Ep0 = L(() => {
 function zp0(A, Q, B, G, Z) {
     if (A === Q) return;
     hxA(Q, function(I, Y) {
-        if (Z || (Z = new Lj), TY(I)) Cp0(A, Q, Y, B, zp0, G, Z);
+        if (Z || (Z = new Lj), isObject(I)) Cp0(A, Q, Y, B, zp0, G, Z);
         else {
             var J = G ? G(CKA(A, Y), I, Y + "", A, Q, Z) : void 0;
             if (J === void 0) J = I;
@@ -109,7 +112,7 @@ function zp0(A, Q, B, G, Z) {
     }, lj)
 }
 var Up0;
-var $p0 = L(() => {
+var $p0 = lazyLoader(() => {
     rFA();
     ZC1();
     IC1();
@@ -134,7 +137,7 @@ function _64(A, Q, B) {
     return A.apply(Q, B)
 }
 var wp0;
-var qp0 = L(() => {
+var qp0 = lazyLoader(() => {
     wp0 = _64
 });
 
@@ -152,11 +155,11 @@ function k64(A, Q, B) {
             return J[Q] = B(Y), wp0(A, this, J)
         }
 }
-var Np0, nxA;
-var VC1 = L(() => {
+var Np0, overRest;
+var VC1 = lazyLoader(() => {
     qp0();
     Np0 = Math.max;
-    nxA = k64
+    overRest = k64
 });
 
 function y64(A) {
@@ -165,11 +168,11 @@ function y64(A) {
     }
 }
 var Lp0;
-var Mp0 = L(() => {
+var Mp0 = lazyLoader(() => {
     Lp0 = y64
 });
 var x64, Op0;
-var Rp0 = L(() => {
+var Rp0 = lazyLoader(() => {
     Mp0();
     GC1();
     n_A();
@@ -198,22 +201,22 @@ function h64(A) {
 var v64 = 800,
     b64 = 16,
     f64, Tp0;
-var Pp0 = L(() => {
+var Pp0 = lazyLoader(() => {
     f64 = Date.now;
     Tp0 = h64
 });
-var g64, axA;
-var KC1 = L(() => {
+var g64, setToString;
+var KC1 = lazyLoader(() => {
     Rp0();
     Pp0();
-    g64 = Tp0(Op0), axA = g64
+    g64 = Tp0(Op0), setToString = g64
 });
 
 function u64(A, Q) {
-    return axA(nxA(A, Q, cBA), A + "")
+    return setToString(overRest(A, Q, cBA), A + "")
 }
 var jp0;
-var Sp0 = L(() => {
+var Sp0 = lazyLoader(() => {
     n_A();
     VC1();
     KC1();
@@ -221,13 +224,13 @@ var Sp0 = L(() => {
 });
 
 function m64(A, Q, B) {
-    if (!TY(B)) return !1;
+    if (!isObject(B)) return !1;
     var G = typeof Q;
-    if (G == "number" ? Tj(B) && xu(Q, B.length) : G == "string" && (Q in B)) return wj(B[Q], A);
+    if (G == "number" ? isArrayLike(B) && isIndex(Q, B.length) : G == "string" && (Q in B)) return wj(B[Q], A);
     return !1
 }
 var _p0;
-var kp0 = L(() => {
+var kp0 = lazyLoader(() => {
     NBA();
     vBA();
     eFA();
@@ -251,13 +254,13 @@ function d64(A) {
     })
 }
 var yp0;
-var xp0 = L(() => {
+var xp0 = lazyLoader(() => {
     Sp0();
     kp0();
     yp0 = d64
 });
 var c64, DC1;
-var vp0 = L(() => {
+var vp0 = lazyLoader(() => {
     $p0();
     xp0();
     c64 = yp0(function(A, Q, B, G) {
@@ -277,7 +280,7 @@ function UKA(A, Q = !1) {
         F = 0,
         V = 0;
 
-function K(N, q) {
+    function K(N, q) {
         let R = 0,
             P = 0;
         while (R < N || !q) {
@@ -292,11 +295,11 @@ function K(N, q) {
         return P
     }
 
-function D(N) {
+    function D(N) {
         G = N, Z = "", I = 0, Y = 16, V = 0
     }
 
-function H() {
+    function H() {
         let N = G;
         if (A.charCodeAt(G) === 48) G++;
         else {
@@ -320,7 +323,7 @@ function H() {
         return A.substring(N, q)
     }
 
-function C() {
+    function C() {
         let N = "",
             q = G;
         while (!0) {
@@ -385,7 +388,7 @@ function C() {
         return N
     }
 
-function E() {
+    function E() {
         if (Z = "", V = 0, I = G, W = J, F = X, G >= B) return I = B, Y = 17;
         let N = A.charCodeAt(G);
         if (HC1(N)) {
@@ -471,7 +474,7 @@ function E() {
         }
     }
 
-function z(N) {
+    function z(N) {
         if (HC1(N) || zKA(N)) return !1;
         switch (N) {
             case 125:
@@ -487,7 +490,7 @@ function z(N) {
         return !0
     }
 
-function w() {
+    function w() {
         let N;
         do N = E(); while (N >= 12 && N <= 15);
         return N
@@ -518,13 +521,13 @@ function _9A(A) {
     return A >= 48 && A <= 57
 }
 var bp0;
-var sxA = L(() => {
+var sxA = lazyLoader(() => {
     (function(A) {
-        A[A.lineFeed = 10] = "lineFeed", A[A.carriageReturn = 13] = "carriageReturn", A[A.space = 32] = "space", A[A._0 = 48] = "_0", A[A._1 = 49] = "_1", A[A._2 = 50] = "_2", A[A._3 = 51] = "_3", A[A._4 = 52] = "_4", A[A._5 = 53] = "_5", A[A._6 = 54] = "_6", A[A._7 = 55] = "_7", A[A._8 = 56] = "_8", A[A._9 = 57] = "_9", A[A.a = 97] = "a", A[A.b = 98] = "b", A[A.c = 99] = "c", A[A.d = 100] = "d", A[A.e = 101] = "e", A[A.f = 102] = "f", A[A.g = 103] = "g", A[A.h = 104] = "h", A[A.i = 105] = "i", A[A.j = 106] = "j", A[A.k = 107] = "k", A[A.l = 108] = "l", A[A.m = 109] = "m", A[A.n = 110] = "n", A[A.o = 111] = "o", A[A.p = 112] = "p", A[A.q = 113] = "q", A[A.r = 114] = "r", A[A.s = 115] = "s", A[A.t = 116] = "t", A[A.u = 117] = "u", A[A.v = 118] = "v", A[A.w = 119] = "w", A[A.x = 120] = "x", A[A.y = 121] = "y", A[A.z = 122] = "z", A[A.A = 65] = "A", A[A.B = 66] = "B", A[A.C = 67] = "C", A[A.D = 68] = "D", A[A.E = 69] = "E", A[A.F = 70] = "F", A[A.G = 71] = "G", A[A.H = 72] = "H", A[A.I = 73] = "I", A[A.J = 74] = "J", A[A.K = 75] = "K", A[A.L = 76] = "L", A[A.M = 77] = "M", A[A.N = 78] = "N", A[A.O = 79] = "O", A[A.P = 80] = "P", A[A.Q = 81] = "Q", A[A.R = 82] = "R", A[A.S = 83] = "S", A[A.T = 84] = "T", A[A.U = 85] = "U", A[A.V = 86] = "V", A[A.W = 87] = "W", A[A.X = 88] = "X", A[A.Y = 89] = "Y", A[A.Z = 90] = "Z", A[A.asterisk = 42] = "asterisk", A[A.backslash = 92] = "backslash", A[A.closeBrace = 125] = "closeBrace", A[A.closeBracket = 93] = "closeBracket", A[A.colon = 58] = "colon", A[A.comma = 44] = "comma", A[A.dot = 46] = "dot", A[A.doubleQuote = 34] = "doubleQuote", A[A.minus = 45] = "minus", A[A.openBrace = 123] = "openBrace", A[A.openBracket = 91] = "openBracket", A[A.plus = 43] = "plus", A[A.slash = 47] = "slash", A[A.formFeed = 12] = "formFeed", A[A.tab = 9] = "tab"
+        A[A.lineFeed = 10] = "lineFeed", A[A.carriageReturn = 13] = "carriageReturn", A[A.space = 32] = "space", A[A._0 = 48] = "_0", A[A._1 = 49] = "_1", A[A._2 = 50] = "_2", A[A._3 = 51] = "_3", A[A._4 = 52] = "_4", A[A._5 = 53] = "_5", A[A._6 = 54] = "_6", A[A._7 = 55] = "_7", A[A.BASH_TOOL_NAME = 56] = "BASH_TOOL_NAME", A[A._9 = 57] = "_9", A[A.a = 97] = "a", A[A.b = 98] = "b", A[A.c = 99] = "c", A[A.d = 100] = "d", A[A.e = 101] = "e", A[A.f = 102] = "f", A[A.g = 103] = "g", A[A.h = 104] = "h", A[A.i = 105] = "i", A[A.j = 106] = "j", A[A.k = 107] = "k", A[A.l = 108] = "l", A[A.m = 109] = "m", A[A.n = 110] = "n", A[A.o = 111] = "o", A[A.p = 112] = "p", A[A.q = 113] = "q", A[A.r = 114] = "r", A[A.s = 115] = "s", A[A.t = 116] = "t", A[A.u = 117] = "u", A[A.v = 118] = "v", A[A.w = 119] = "w", A[A.x = 120] = "x", A[A.y = 121] = "y", A[A.z = 122] = "z", A[A.A = 65] = "A", A[A.B = 66] = "B", A[A.C = 67] = "C", A[A.D = 68] = "D", A[A.E = 69] = "E", A[A.F = 70] = "F", A[A.G = 71] = "G", A[A.H = 72] = "H", A[A.I = 73] = "I", A[A.J = 74] = "J", A[A.K = 75] = "K", A[A.lazyLoader = 76] = "lazyLoader", A[A.M = 77] = "M", A[A.N = 78] = "N", A[A.O = 79] = "O", A[A.P = 80] = "P", A[A.Q = 81] = "Q", A[A.R = 82] = "R", A[A.S = 83] = "S", A[A.T = 84] = "T", A[A.moduleWrapper = 85] = "moduleWrapper", A[A.V = 86] = "V", A[A.W = 87] = "W", A[A.X = 88] = "X", A[A.Y = 89] = "Y", A[A.Z = 90] = "Z", A[A.asterisk = 42] = "asterisk", A[A.backslash = 92] = "backslash", A[A.closeBrace = 125] = "closeBrace", A[A.closeBracket = 93] = "closeBracket", A[A.colon = 58] = "colon", A[A.comma = 44] = "comma", A[A.dot = 46] = "dot", A[A.doubleQuote = 34] = "doubleQuote", A[A.minus = 45] = "minus", A[A.openBrace = 123] = "openBrace", A[A.openBracket = 91] = "openBracket", A[A.plus = 43] = "plus", A[A.slash = 47] = "slash", A[A.formFeed = 12] = "formFeed", A[A.tab = 9] = "tab"
     })(bp0 || (bp0 = {}))
 });
 var t$, CC1, fp0;
-var hp0 = L(() => {
+var hp0 = lazyLoader(() => {
     t$ = Array(20).fill(0).map((A, Q) => {
         return " ".repeat(Q)
     }), CC1 = {
@@ -579,7 +582,7 @@ function EC1(A, Q, B) {
         H = UKA(Z, !1),
         C = !1;
 
-function E() {
+    function E() {
         if (F > 1) return k9A(W, F) + k9A(K, G + V);
         let R = K.length * (G + V);
         if (!X || R > CC1[D][W].length) return W + k9A(K, G + V);
@@ -587,7 +590,7 @@ function E() {
         return CC1[D][W][R]
     }
 
-function z() {
+    function z() {
         let R = H.scan();
         F = 0;
         while (R === 15 || R === 14) {
@@ -599,7 +602,7 @@ function z() {
     }
     let w = [];
 
-function N(R, P, y) {
+    function N(R, P, y) {
         if (!C && (!Q || P < J && y > Y) && A.substring(P, y) !== R) w.push({
             offset: P,
             length: y - P,
@@ -721,7 +724,7 @@ function $KA(A, Q) {
     return `\r
 `.indexOf(A.charAt(Q)) !== -1
 }
-var zC1 = L(() => {
+var zC1 = lazyLoader(() => {
     sxA();
     hp0()
 });
@@ -731,7 +734,7 @@ function gp0(A, Q = [], B = wKA.DEFAULT) {
         Z = [],
         I = [];
 
-function Y(W) {
+    function Y(W) {
         if (Array.isArray(Z)) Z.push(W);
         else if (G !== null) Z[G] = W
     }
@@ -773,11 +776,11 @@ function UC1(A, Q = [], B = wKA.DEFAULT) {
         parent: void 0
     };
 
-function Z(W) {
+    function Z(W) {
         if (G.type === "property") G.length = W - G.offset, G = G.parent
     }
 
-function I(W) {
+    function I(W) {
         return G.children.push(W), W
     }
     $C1(A, {
@@ -871,19 +874,19 @@ function $C1(A, Q, B = wKA.DEFAULT) {
     let G = UKA(A, !1),
         Z = [];
 
-function I(o) {
+    function I(o) {
         return o ? () => o(G.getTokenOffset(), G.getTokenLength(), G.getTokenStartLine(), G.getTokenStartCharacter()) : () => !0
     }
 
-function Y(o) {
+    function Y(o) {
         return o ? () => o(G.getTokenOffset(), G.getTokenLength(), G.getTokenStartLine(), G.getTokenStartCharacter(), () => Z.slice()) : () => !0
     }
 
-function J(o) {
+    function J(o) {
         return o ? (l) => o(l, G.getTokenOffset(), G.getTokenLength(), G.getTokenStartLine(), G.getTokenStartCharacter()) : () => !0
     }
 
-function W(o) {
+    function W(o) {
         return o ? (l) => o(l, G.getTokenOffset(), G.getTokenLength(), G.getTokenStartLine(), G.getTokenStartCharacter(), () => Z.slice()) : () => !0
     }
     let X = Y(Q.onObjectBegin),
@@ -898,7 +901,7 @@ function W(o) {
         w = B && B.disallowComments,
         N = B && B.allowTrailingComma;
 
-function q() {
+    function q() {
         while (!0) {
             let o = G.scan();
             switch (G.getTokenError()) {
@@ -939,7 +942,7 @@ function q() {
         }
     }
 
-function R(o, l = [], k = []) {
+    function R(o, l = [], k = []) {
         if (z(o), l.length + k.length > 0) {
             let d = G.getToken();
             while (d !== 17) {
@@ -952,14 +955,14 @@ function R(o, l = [], k = []) {
         }
     }
 
-function P(o) {
+    function P(o) {
         let l = G.getTokenValue();
         if (o) H(l);
         else F(l), Z.push(l);
         return q(), !0
     }
 
-function y() {
+    function y() {
         switch (G.getToken()) {
             case 11:
                 let o = G.getTokenValue(),
@@ -982,7 +985,7 @@ function y() {
         return q(), !0
     }
 
-function v() {
+    function v() {
         if (G.getToken() !== 10) return R(3, [], [2, 5]), !1;
         if (P(!1), G.getToken() === 6) {
             if (C(":"), q(), !u()) R(4, [], [2, 5])
@@ -990,7 +993,7 @@ function v() {
         return Z.pop(), !0
     }
 
-function x() {
+    function x() {
         X(), q();
         let o = !1;
         while (G.getToken() !== 2 && G.getToken() !== 17) {
@@ -1006,7 +1009,7 @@ function x() {
         return !0
     }
 
-function p() {
+    function p() {
         K(), q();
         let o = !0,
             l = !1;
@@ -1026,7 +1029,7 @@ function p() {
         return !0
     }
 
-function u() {
+    function u() {
         switch (G.getToken()) {
             case 3:
                 return p();
@@ -1065,7 +1068,7 @@ function a64(A) {
     }
 }
 var wKA;
-var wC1 = L(() => {
+var wC1 = lazyLoader(() => {
     sxA();
     (function(A) {
         A.DEFAULT = {
@@ -1116,7 +1119,7 @@ function up0(A, Q, B, G) {
             }, G);
         else {
             if (B === void 0) return [];
-            let F = `${JSON.stringify(W)}: ${JSON.stringify(B)}`,
+            let F = `TextComponent{JSON.stringify(W)}: TextComponent{JSON.stringify(B)}`,
                 V = G.getInsertionIndex ? G.getInsertionIndex(J.children.map((D) => D.children[0].value)) : J.children.length,
                 K;
             if (V > 0) {
@@ -1141,7 +1144,7 @@ function up0(A, Q, B, G) {
     } else if (J.type === "array" && typeof W === "number" && Array.isArray(J.children)) {
         let X = W;
         if (X === -1) {
-            let F = `${JSON.stringify(B)}`,
+            let F = `TextComponent{JSON.stringify(B)}`,
                 V;
             if (J.children.length === 0) V = {
                 offset: J.offset + 1,
@@ -1182,7 +1185,7 @@ function up0(A, Q, B, G) {
             };
             return as(A, K, G)
         } else if (B !== void 0) {
-            let F, V = `${JSON.stringify(B)}`;
+            let F, V = `TextComponent{JSON.stringify(B)}`;
             if (!G.isArrayInsertion && J.children.length > W) {
                 let K = J.children[W];
                 F = {
@@ -1205,8 +1208,8 @@ function up0(A, Q, B, G) {
                 }
             }
             return as(A, F, G)
-        } else throw Error(`Can not ${B===void 0?"remove":G.isArrayInsertion?"insert":"modify"} Array index ${X} as length is not sufficient`)
-    } else throw Error(`Can not add ${typeof W!=="number"?"index":"property"} to parent of type ${J.type}`)
+        } else throw Error(`Can not TextComponent{B===void 0?"remove":G.isArrayInsertion?"insert":"modify"} Array index TextComponent{X} as length is not sufficient`)
+    } else throw Error(`Can not add TextComponent{typeof W!=="number"?"index":"property"} to parent of type TextComponent{J.type}`)
 }
 
 function as(A, Q, B) {
@@ -1240,7 +1243,7 @@ function as(A, Q, B) {
 function oxA(A, Q) {
     return A.substring(0, Q.offset) + Q.content + A.substring(Q.offset + Q.length)
 }
-var mp0 = L(() => {
+var mp0 = lazyLoader(() => {
     zC1();
     wC1()
 });
@@ -1265,7 +1268,7 @@ function ip0(A, Q) {
     return A
 }
 var dp0, cp0, qC1, pp0;
-var np0 = L(() => {
+var np0 = lazyLoader(() => {
     zC1();
     mp0();
     sxA();
@@ -1293,7 +1296,6 @@ function ap0(A) {
         return e(Q), null
     }
 }
-
 async function ss(A) {
     try {
         let Q = await o64(A, "utf8");
@@ -1303,11 +1305,11 @@ async function ss(A) {
             try {
                 return JSON.parse(B)
             } catch (G) {
-                return e(Error(`Error parsing line in ${A}: ${G}`)), null
+                return e(Error(`Error parsing line in TextComponent{A}: TextComponent{G}`)), null
             }
         }).filter((B) => B !== null)
     } catch (Q) {
-        return e(Error(`Error opening file ${A}: ${Q}`)), []
+        return e(Error(`Error opening file TextComponent{A}: TextComponent{Q}`)), []
     }
 }
 
@@ -1335,7 +1337,7 @@ function sp0(A, Q) {
     }
 }
 var S7;
-var zV = L(() => {
+var zV = lazyLoader(() => {
     u1();
     np0();
     o2();
@@ -1380,7 +1382,7 @@ function rp0(A) {
             B.push("localSettings");
             break;
         default:
-            throw Error(`Invalid setting source: ${G}. Valid options are: user, project, local`)
+            throw Error(`Invalid setting source: TextComponent{G}. Valid options are: user, project, local`)
     }
     return B
 }
@@ -1395,7 +1397,7 @@ function DH(A) {
     return rs().includes(A)
 }
 var gN, op0 = "https://json.schemastore.org/claude-code-settings.json";
-var UF = L(() => {
+var UF = lazyLoader(() => {
     S0();
     gN = ["userSettings", "projectSettings", "localSettings", "flagSettings", "policySettings"]
 });
@@ -1427,14 +1429,14 @@ var d6, NC1, aQ, ij = (A) => {
             return aQ.unknown
     }
 };
-var qKA = L(() => {
+var qKA = lazyLoader(() => {
     (function(A) {
         A.assertEqual = (Z) => {};
 
-function Q(Z) {}
+        function Q(Z) {}
         A.assertIs = Q;
 
-function B(Z) {
+        function B(Z) {
             throw Error()
         }
         A.assertNever = B, A.arrayToEnum = (Z) => {
@@ -1461,8 +1463,8 @@ function B(Z) {
             return
         }, A.isInteger = typeof Number.isInteger === "function" ? (Z) => Number.isInteger(Z) : (Z) => typeof Z === "number" && Number.isFinite(Z) && Math.floor(Z) === Z;
 
-function G(Z, I = " | ") {
-            return Z.map((Y) => typeof Y === "string" ? `'${Y}'` : Y).join(I)
+        function G(Z, I = " | ") {
+            return Z.map((Y) => typeof Y === "string" ? `'TextComponent{Y}'` : Y).join(I)
         }
         A.joinValues = G, A.jsonStringifyReplacer = (Z, I) => {
             if (typeof I === "bigint") return I.toString();
@@ -1483,7 +1485,7 @@ var wQ, t64 = (A) => {
         return JSON.stringify(A, null, 2).replace(/"([^"]+)":/g, "$1:")
     },
     gz;
-var txA = L(() => {
+var txA = lazyLoader(() => {
     qKA();
     wQ = d6.arrayToEnum(["invalid_type", "invalid_literal", "custom", "invalid_union", "invalid_union_discriminator", "invalid_enum_value", "unrecognized_keys", "invalid_arguments", "invalid_return_type", "invalid_date", "invalid_string", "too_small", "too_big", "invalid_intersection_types", "not_multiple_of", "not_finite"]);
     gz = class gz extends Error {

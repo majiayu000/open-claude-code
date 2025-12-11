@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_015.js
+ * 处理时间: 2025-12-09T03:41:37.435Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.974Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -25,7 +28,7 @@
         return 0
     }
 
-function UiA(A) {
+    function UiA(A) {
         var Q = 1,
             B;
         if ((B = A >>> 16) != 0) A = B, Q += 16;
@@ -36,24 +39,24 @@ function UiA(A) {
         return Q
     }
 
-function js8() {
+    function js8() {
         if (this.t <= 0) return 0;
         return this.DB * (this.t - 1) + UiA(this.data[this.t - 1] ^ this.s & this.DM)
     }
 
-function Ss8(A, Q) {
+    function Ss8(A, Q) {
         var B;
         for (B = this.t - 1; B >= 0; --B) Q.data[B + A] = this.data[B];
         for (B = A - 1; B >= 0; --B) Q.data[B] = 0;
         Q.t = this.t + A, Q.s = this.s
     }
 
-function _s8(A, Q) {
+    function _s8(A, Q) {
         for (var B = A; B < this.t; ++B) Q.data[B - A] = this.data[B];
         Q.t = Math.max(this.t - A, 0), Q.s = this.s
     }
 
-function ks8(A, Q) {
+    function ks8(A, Q) {
         var B = A % this.DB,
             G = this.DB - B,
             Z = (1 << G) - 1,
@@ -65,7 +68,7 @@ function ks8(A, Q) {
         Q.data[I] = Y, Q.t = this.t + I + 1, Q.s = this.s, Q.clamp()
     }
 
-function ys8(A, Q) {
+    function ys8(A, Q) {
         Q.s = this.s;
         var B = Math.floor(A / this.DB);
         if (B >= this.t) {
@@ -81,7 +84,7 @@ function ys8(A, Q) {
         Q.t = this.t - B, Q.clamp()
     }
 
-function xs8(A, Q) {
+    function xs8(A, Q) {
         var B = 0,
             G = 0,
             Z = Math.min(A.t, this.t);
@@ -100,7 +103,7 @@ function xs8(A, Q) {
         Q.t = B, Q.clamp()
     }
 
-function vs8(A, Q) {
+    function vs8(A, Q) {
         var B = this.abs(),
             G = A.abs(),
             Z = B.t;
@@ -110,7 +113,7 @@ function vs8(A, Q) {
         if (Q.s = 0, Q.clamp(), this.s != A.s) FQ.ZERO.subTo(Q, Q)
     }
 
-function bs8(A) {
+    function bs8(A) {
         var Q = this.abs(),
             B = A.t = 2 * Q.t;
         while (--B >= 0) A.data[B] = 0;
@@ -122,7 +125,7 @@ function bs8(A) {
         A.s = 0, A.clamp()
     }
 
-function fs8(A, Q, B) {
+    function fs8(A, Q, B) {
         var G = A.abs();
         if (G.t <= 0) return;
         var Z = this.abs();
@@ -165,34 +168,34 @@ function fs8(A, Q, B) {
         if (Y < 0) FQ.ZERO.subTo(B, B)
     }
 
-function hs8(A) {
+    function hs8(A) {
         var Q = j3();
         if (this.abs().divRemTo(A, null, Q), this.s < 0 && Q.compareTo(FQ.ZERO) > 0) A.subTo(Q, Q);
         return Q
     }
 
-function no(A) {
+    function no(A) {
         this.m = A
     }
 
-function gs8(A) {
+    function gs8(A) {
         if (A.s < 0 || A.compareTo(this.m) >= 0) return A.mod(this.m);
         else return A
     }
 
-function us8(A) {
+    function us8(A) {
         return A
     }
 
-function ms8(A) {
+    function ms8(A) {
         A.divRemTo(this.m, null, A)
     }
 
-function ds8(A, Q, B) {
+    function ds8(A, Q, B) {
         A.multiplyTo(Q, B), this.reduce(B)
     }
 
-function cs8(A, Q) {
+    function cs8(A, Q) {
         A.squareTo(Q), this.reduce(Q)
     }
     no.prototype.convert = gs8;
@@ -201,7 +204,7 @@ function cs8(A, Q) {
     no.prototype.mulTo = ds8;
     no.prototype.sqrTo = cs8;
 
-function ps8() {
+    function ps8() {
         if (this.t < 1) return 0;
         var A = this.data[0];
         if ((A & 1) == 0) return 0;
@@ -209,22 +212,22 @@ function ps8() {
         return Q = Q * (2 - (A & 15) * Q) & 15, Q = Q * (2 - (A & 255) * Q) & 255, Q = Q * (2 - ((A & 65535) * Q & 65535)) & 65535, Q = Q * (2 - A * Q % this.DV) % this.DV, Q > 0 ? this.DV - Q : -Q
     }
 
-function ao(A) {
+    function ao(A) {
         this.m = A, this.mp = A.invDigit(), this.mpl = this.mp & 32767, this.mph = this.mp >> 15, this.um = (1 << A.DB - 15) - 1, this.mt2 = 2 * A.t
     }
 
-function ls8(A) {
+    function ls8(A) {
         var Q = j3();
         if (A.abs().dlShiftTo(this.m.t, Q), Q.divRemTo(this.m, null, Q), A.s < 0 && Q.compareTo(FQ.ZERO) > 0) this.m.subTo(Q, Q);
         return Q
     }
 
-function is8(A) {
+    function is8(A) {
         var Q = j3();
         return A.copyTo(Q), this.reduce(Q), Q
     }
 
-function ns8(A) {
+    function ns8(A) {
         while (A.t <= this.mt2) A.data[A.t++] = 0;
         for (var Q = 0; Q < this.m.t; ++Q) {
             var B = A.data[Q] & 32767,
@@ -235,11 +238,11 @@ function ns8(A) {
         if (A.clamp(), A.drShiftTo(this.m.t, A), A.compareTo(this.m) >= 0) A.subTo(this.m, A)
     }
 
-function as8(A, Q) {
+    function as8(A, Q) {
         A.squareTo(Q), this.reduce(Q)
     }
 
-function ss8(A, Q, B) {
+    function ss8(A, Q, B) {
         A.multiplyTo(Q, B), this.reduce(B)
     }
     ao.prototype.convert = ls8;
@@ -248,11 +251,11 @@ function ss8(A, Q, B) {
     ao.prototype.mulTo = ss8;
     ao.prototype.sqrTo = as8;
 
-function rs8() {
+    function rs8() {
         return (this.t > 0 ? this.data[0] & 1 : this.s) == 0
     }
 
-function os8(A, Q) {
+    function os8(A, Q) {
         if (A > 4294967295 || A < 1) return FQ.ONE;
         var B = j3(),
             G = j3(),
@@ -267,7 +270,7 @@ function os8(A, Q) {
             } return Q.revert(B)
     }
 
-function ts8(A, Q) {
+    function ts8(A, Q) {
         var B;
         if (A < 256 || Q.isEven()) B = new no(Q);
         else B = new ao(Q);
@@ -298,12 +301,12 @@ function ts8(A, Q) {
     FQ.ZERO = Pc(0);
     FQ.ONE = Pc(1);
 
-function es8() {
+    function es8() {
         var A = j3();
         return this.copyTo(A), A
     }
 
-function Ar8() {
+    function Ar8() {
         if (this.s < 0) {
             if (this.t == 1) return this.data[0] - this.DV;
             else if (this.t == 0) return -1
@@ -312,25 +315,25 @@ function Ar8() {
         return (this.data[1] & (1 << 32 - this.DB) - 1) << this.DB | this.data[0]
     }
 
-function Qr8() {
+    function Qr8() {
         return this.t == 0 ? this.s : this.data[0] << 24 >> 24
     }
 
-function Br8() {
+    function Br8() {
         return this.t == 0 ? this.s : this.data[0] << 16 >> 16
     }
 
-function Gr8(A) {
+    function Gr8(A) {
         return Math.floor(Math.LN2 * this.DB / Math.log(A))
     }
 
-function Zr8() {
+    function Zr8() {
         if (this.s < 0) return -1;
         else if (this.t <= 0 || this.t == 1 && this.data[0] <= 0) return 0;
         else return 1
     }
 
-function Ir8(A) {
+    function Ir8(A) {
         if (A == null) A = 10;
         if (this.signum() == 0 || A < 2 || A > 36) return "0";
         var Q = this.chunkSize(A),
@@ -344,7 +347,7 @@ function Ir8(A) {
         return I.intValue().toString(A) + Y
     }
 
-function Yr8(A, Q) {
+    function Yr8(A, Q) {
         if (this.fromInt(0), Q == null) Q = 10;
         var B = this.chunkSize(Q),
             G = Math.pow(Q, B),
@@ -363,7 +366,7 @@ function Yr8(A, Q) {
         if (Z) FQ.ZERO.subTo(this, this)
     }
 
-function Jr8(A, Q, B) {
+    function Jr8(A, Q, B) {
         if (typeof Q == "number")
             if (A < 2) this.fromInt(1);
             else {
@@ -381,7 +384,7 @@ function Jr8(A, Q, B) {
         }
     }
 
-function Wr8() {
+    function Wr8() {
         var A = this.t,
             Q = [];
         Q[0] = this.s;
@@ -400,19 +403,19 @@ function Wr8() {
         return Q
     }
 
-function Xr8(A) {
+    function Xr8(A) {
         return this.compareTo(A) == 0
     }
 
-function Fr8(A) {
+    function Fr8(A) {
         return this.compareTo(A) < 0 ? this : A
     }
 
-function Vr8(A) {
+    function Vr8(A) {
         return this.compareTo(A) > 0 ? this : A
     }
 
-function Kr8(A, Q, B) {
+    function Kr8(A, Q, B) {
         var G, Z, I = Math.min(A.t, this.t);
         for (G = 0; G < I; ++G) B.data[G] = Q(this.data[G], A.data[G]);
         if (A.t < this.t) {
@@ -427,43 +430,43 @@ function Kr8(A, Q, B) {
         B.s = Q(this.s, A.s), B.clamp()
     }
 
-function Dr8(A, Q) {
+    function Dr8(A, Q) {
         return A & Q
     }
 
-function Hr8(A) {
+    function Hr8(A) {
         var Q = j3();
         return this.bitwiseTo(A, Dr8, Q), Q
     }
 
-function Yv1(A, Q) {
+    function Yv1(A, Q) {
         return A | Q
     }
 
-function Cr8(A) {
+    function Cr8(A) {
         var Q = j3();
         return this.bitwiseTo(A, Yv1, Q), Q
     }
 
-function S4B(A, Q) {
+    function S4B(A, Q) {
         return A ^ Q
     }
 
-function Er8(A) {
+    function Er8(A) {
         var Q = j3();
         return this.bitwiseTo(A, S4B, Q), Q
     }
 
-function _4B(A, Q) {
+    function _4B(A, Q) {
         return A & ~Q
     }
 
-function zr8(A) {
+    function zr8(A) {
         var Q = j3();
         return this.bitwiseTo(A, _4B, Q), Q
     }
 
-function Ur8() {
+    function Ur8() {
         var A = j3();
         for (var Q = 0; Q < this.t; ++Q) A.data[Q] = this.DM & ~this.data[Q];
         return A.t = this.t, A.s = ~this.s, A
@@ -476,14 +479,14 @@ function Ur8() {
         return Q
     }
 
-function wr8(A) {
+    function wr8(A) {
         var Q = j3();
         if (A < 0) this.lShiftTo(-A, Q);
         else this.rShiftTo(A, Q);
         return Q
     }
 
-function qr8(A) {
+    function qr8(A) {
         if (A == 0) return -1;
         var Q = 0;
         if ((A & 65535) == 0) A >>= 16, Q += 16;
@@ -494,50 +497,50 @@ function qr8(A) {
         return Q
     }
 
-function Nr8() {
+    function Nr8() {
         for (var A = 0; A < this.t; ++A)
             if (this.data[A] != 0) return A * this.DB + qr8(this.data[A]);
         if (this.s < 0) return this.t * this.DB;
         return -1
     }
 
-function Lr8(A) {
+    function Lr8(A) {
         var Q = 0;
         while (A != 0) A &= A - 1, ++Q;
         return Q
     }
 
-function Mr8() {
+    function Mr8() {
         var A = 0,
             Q = this.s & this.DM;
         for (var B = 0; B < this.t; ++B) A += Lr8(this.data[B] ^ Q);
         return A
     }
 
-function Or8(A) {
+    function Or8(A) {
         var Q = Math.floor(A / this.DB);
         if (Q >= this.t) return this.s != 0;
         return (this.data[Q] & 1 << A % this.DB) != 0
     }
 
-function Rr8(A, Q) {
+    function Rr8(A, Q) {
         var B = FQ.ONE.shiftLeft(A);
         return this.bitwiseTo(B, Q, B), B
     }
 
-function Tr8(A) {
+    function Tr8(A) {
         return this.changeBit(A, Yv1)
     }
 
-function Pr8(A) {
+    function Pr8(A) {
         return this.changeBit(A, _4B)
     }
 
-function jr8(A) {
+    function jr8(A) {
         return this.changeBit(A, S4B)
     }
 
-function Sr8(A, Q) {
+    function Sr8(A, Q) {
         var B = 0,
             G = 0,
             Z = Math.min(A.t, this.t);
@@ -556,42 +559,42 @@ function Sr8(A, Q) {
         Q.t = B, Q.clamp()
     }
 
-function _r8(A) {
+    function _r8(A) {
         var Q = j3();
         return this.addTo(A, Q), Q
     }
 
-function kr8(A) {
+    function kr8(A) {
         var Q = j3();
         return this.subTo(A, Q), Q
     }
 
-function yr8(A) {
+    function yr8(A) {
         var Q = j3();
         return this.multiplyTo(A, Q), Q
     }
 
-function xr8(A) {
+    function xr8(A) {
         var Q = j3();
         return this.divRemTo(A, Q, null), Q
     }
 
-function vr8(A) {
+    function vr8(A) {
         var Q = j3();
         return this.divRemTo(A, null, Q), Q
     }
 
-function br8(A) {
+    function br8(A) {
         var Q = j3(),
             B = j3();
         return this.divRemTo(A, Q, B), [Q, B]
     }
 
-function fr8(A) {
+    function fr8(A) {
         this.data[this.t] = this.am(0, A - 1, this, 0, 0, this.t), ++this.t, this.clamp()
     }
 
-function hr8(A, Q) {
+    function hr8(A, Q) {
         if (A == 0) return;
         while (this.t <= Q) this.data[this.t++] = 0;
         this.data[Q] += A;
@@ -601,17 +604,17 @@ function hr8(A, Q) {
         }
     }
 
-function RzA() {}
+    function RzA() {}
 
-function k4B(A) {
+    function k4B(A) {
         return A
     }
 
-function gr8(A, Q, B) {
+    function gr8(A, Q, B) {
         A.multiplyTo(Q, B)
     }
 
-function ur8(A, Q) {
+    function ur8(A, Q) {
         A.squareTo(Q)
     }
     RzA.prototype.convert = k4B;
@@ -619,11 +622,11 @@ function ur8(A, Q) {
     RzA.prototype.mulTo = gr8;
     RzA.prototype.sqrTo = ur8;
 
-function mr8(A) {
+    function mr8(A) {
         return this.exp(A, new RzA)
     }
 
-function dr8(A, Q, B) {
+    function dr8(A, Q, B) {
         var G = Math.min(this.t + A.t, Q);
         B.s = 0, B.t = G;
         while (G > 0) B.data[--G] = 0;
@@ -633,7 +636,7 @@ function dr8(A, Q, B) {
         B.clamp()
     }
 
-function cr8(A, Q, B) {
+    function cr8(A, Q, B) {
         --Q;
         var G = B.t = this.t + A.t - Q;
         B.s = 0;
@@ -642,11 +645,11 @@ function cr8(A, Q, B) {
         B.clamp(), B.drShiftTo(1, B)
     }
 
-function k3A(A) {
+    function k3A(A) {
         this.r2 = j3(), this.q3 = j3(), FQ.ONE.dlShiftTo(2 * A.t, this.r2), this.mu = this.r2.divide(A), this.m = A
     }
 
-function pr8(A) {
+    function pr8(A) {
         if (A.s < 0 || A.t > 2 * this.m.t) return A.mod(this.m);
         else if (A.compareTo(this.m) < 0) return A;
         else {
@@ -655,11 +658,11 @@ function pr8(A) {
         }
     }
 
-function lr8(A) {
+    function lr8(A) {
         return A
     }
 
-function ir8(A) {
+    function ir8(A) {
         if (A.drShiftTo(this.m.t - 1, this.r2), A.t > this.m.t + 1) A.t = this.m.t + 1, A.clamp();
         this.mu.multiplyUpperTo(this.r2, this.m.t + 1, this.q3), this.m.multiplyLowerTo(this.q3, this.m.t + 1, this.r2);
         while (A.compareTo(this.r2) < 0) A.dAddOffset(1, this.m.t + 1);
@@ -667,11 +670,11 @@ function ir8(A) {
         while (A.compareTo(this.m) >= 0) A.subTo(this.m, A)
     }
 
-function nr8(A, Q) {
+    function nr8(A, Q) {
         A.squareTo(Q), this.reduce(Q)
     }
 
-function ar8(A, Q, B) {
+    function ar8(A, Q, B) {
         A.multiplyTo(Q, B), this.reduce(B)
     }
     k3A.prototype.convert = pr8;
@@ -680,7 +683,7 @@ function ar8(A, Q, B) {
     k3A.prototype.mulTo = ar8;
     k3A.prototype.sqrTo = nr8;
 
-function sr8(A, Q) {
+    function sr8(A, Q) {
         var B = A.bitLength(),
             G, Z = Pc(1),
             I;
@@ -693,8 +696,7 @@ function sr8(A, Q) {
         if (B < 8) I = new no(Q);
         else if (Q.isEven()) I = new k3A(Q);
         else I = new ao(Q);
-
-var Y = [],
+        var Y = [],
             J = 3,
             W = G - 1,
             X = (1 << G) - 1;
@@ -727,7 +729,7 @@ var Y = [],
         return I.revert(Z)
     }
 
-function rr8(A) {
+    function rr8(A) {
         var Q = this.s < 0 ? this.negate() : this.clone(),
             B = A.s < 0 ? A.negate() : A.clone();
         if (Q.compareTo(B) < 0) {
@@ -749,7 +751,7 @@ function rr8(A) {
         return B
     }
 
-function or8(A) {
+    function or8(A) {
         if (A <= 0) return 0;
         var Q = this.DV % A,
             B = this.s < 0 ? A - 1 : 0;
@@ -760,7 +762,7 @@ function or8(A) {
         return B
     }
 
-function tr8(A) {
+    function tr8(A) {
         var Q = A.isEven();
         if (this.isEven() && Q || A.signum() == 0) return FQ.ZERO;
         var B = A.clone(),
@@ -799,11 +801,10 @@ function tr8(A) {
         if (J.signum() < 0) return J.add(A);
         else return J
     }
-
-var ZT = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509],
+    var ZT = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509],
         er8 = 67108864 / ZT[ZT.length - 1];
 
-function Ao8(A) {
+    function Ao8(A) {
         var Q, B = this.abs();
         if (B.t == 1 && B.data[0] <= ZT[ZT.length - 1]) {
             for (Q = 0; Q < ZT.length; ++Q)
@@ -823,7 +824,7 @@ function Ao8(A) {
         return B.millerRabin(A)
     }
 
-function Qo8(A) {
+    function Qo8(A) {
         var Q = this.subtract(FQ.ONE),
             B = Q.getLowestSetBit();
         if (B <= 0) return !1;
@@ -843,7 +844,7 @@ function Qo8(A) {
         return !0
     }
 
-function Bo8() {
+    function Bo8() {
         return {
             nextBytes: function(A) {
                 for (var Q = 0; Q < A.length; ++Q) A[Q] = Math.floor(Math.random() * 256)
@@ -897,7 +898,7 @@ function Bo8() {
     FQ.prototype.gcd = rr8;
     FQ.prototype.isProbablePrime = Ao8
 });
-var y3A = U((zT7, f4B) => {
+var y3A = moduleWrapper((zT7, f4B) => {
     var C_ = n8();
     F_();
     P3();
@@ -921,7 +922,7 @@ var y3A = U((zT7, f4B) => {
             var Z = G.messageLengthSize / 4;
             for (var I = 0; I < Z; ++I) G.fullMessageLength.push(0);
             return Q = C_.util.createBuffer(), A = {
-                h0: 1732584193,
+                RENDER_ERROR: 1732584193,
                 h1: 4023233417,
                 h2: 2562383102,
                 h3: 271733878,
@@ -943,9 +944,8 @@ var y3A = U((zT7, f4B) => {
             var J, W, X = G.fullMessageLength[0] * 8;
             for (var F = 0; F < G.fullMessageLength.length - 1; ++F) J = G.fullMessageLength[F + 1] * 8, W = J / 4294967296 >>> 0, X += W, Z.putInt32(X >>> 0), X = J >>> 0;
             Z.putInt32(X);
-
-var V = {
-                h0: A.h0,
+            var V = {
+                RENDER_ERROR: A.RENDER_ERROR,
                 h1: A.h1,
                 h2: A.h2,
                 h3: A.h3,
@@ -953,31 +953,31 @@ var V = {
             };
             x4B(V, B, Z);
             var K = C_.util.createBuffer();
-            return K.putInt32(V.h0), K.putInt32(V.h1), K.putInt32(V.h2), K.putInt32(V.h3), K.putInt32(V.h4), K
+            return K.putInt32(V.RENDER_ERROR), K.putInt32(V.h1), K.putInt32(V.h2), K.putInt32(V.h3), K.putInt32(V.h4), K
         }, G
     };
     var Jv1 = null,
         b4B = !1;
 
-function Go8() {
+    function Go8() {
         Jv1 = String.fromCharCode(128), Jv1 += C_.util.fillString(String.fromCharCode(0), 64), b4B = !0
     }
 
-function x4B(A, Q, B) {
+    function x4B(A, Q, B) {
         var G, Z, I, Y, J, W, X, F, V = B.length();
         while (V >= 64) {
-            Z = A.h0, I = A.h1, Y = A.h2, J = A.h3, W = A.h4;
+            Z = A.RENDER_ERROR, I = A.h1, Y = A.h2, J = A.h3, W = A.h4;
             for (F = 0; F < 16; ++F) G = B.getInt32(), Q[F] = G, X = J ^ I & (Y ^ J), G = (Z << 5 | Z >>> 27) + X + W + 1518500249 + G, W = J, J = Y, Y = (I << 30 | I >>> 2) >>> 0, I = Z, Z = G;
             for (; F < 20; ++F) G = Q[F - 3] ^ Q[F - 8] ^ Q[F - 14] ^ Q[F - 16], G = G << 1 | G >>> 31, Q[F] = G, X = J ^ I & (Y ^ J), G = (Z << 5 | Z >>> 27) + X + W + 1518500249 + G, W = J, J = Y, Y = (I << 30 | I >>> 2) >>> 0, I = Z, Z = G;
             for (; F < 32; ++F) G = Q[F - 3] ^ Q[F - 8] ^ Q[F - 14] ^ Q[F - 16], G = G << 1 | G >>> 31, Q[F] = G, X = I ^ Y ^ J, G = (Z << 5 | Z >>> 27) + X + W + 1859775393 + G, W = J, J = Y, Y = (I << 30 | I >>> 2) >>> 0, I = Z, Z = G;
             for (; F < 40; ++F) G = Q[F - 6] ^ Q[F - 16] ^ Q[F - 28] ^ Q[F - 32], G = G << 2 | G >>> 30, Q[F] = G, X = I ^ Y ^ J, G = (Z << 5 | Z >>> 27) + X + W + 1859775393 + G, W = J, J = Y, Y = (I << 30 | I >>> 2) >>> 0, I = Z, Z = G;
             for (; F < 60; ++F) G = Q[F - 6] ^ Q[F - 16] ^ Q[F - 28] ^ Q[F - 32], G = G << 2 | G >>> 30, Q[F] = G, X = I & Y | J & (I ^ Y), G = (Z << 5 | Z >>> 27) + X + W + 2400959708 + G, W = J, J = Y, Y = (I << 30 | I >>> 2) >>> 0, I = Z, Z = G;
             for (; F < 80; ++F) G = Q[F - 6] ^ Q[F - 16] ^ Q[F - 28] ^ Q[F - 32], G = G << 2 | G >>> 30, Q[F] = G, X = I ^ Y ^ J, G = (Z << 5 | Z >>> 27) + X + W + 3395469782 + G, W = J, J = Y, Y = (I << 30 | I >>> 2) >>> 0, I = Z, Z = G;
-            A.h0 = A.h0 + Z | 0, A.h1 = A.h1 + I | 0, A.h2 = A.h2 + Y | 0, A.h3 = A.h3 + J | 0, A.h4 = A.h4 + W | 0, V -= 64
+            A.RENDER_ERROR = A.RENDER_ERROR + Z | 0, A.h1 = A.h1 + I | 0, A.h2 = A.h2 + Y | 0, A.h3 = A.h3 + J | 0, A.h4 = A.h4 + W | 0, V -= 64
         }
     }
 });
-var Wv1 = U((UT7, g4B) => {
+var Wv1 = moduleWrapper((UT7, g4B) => {
     var E_ = n8();
     P3();
     aL();
@@ -1067,7 +1067,7 @@ var Wv1 = U((UT7, g4B) => {
         return G.substring(0, Q)
     }
 });
-var Fv1 = U(($T7, Xv1) => {
+var Fv1 = moduleWrapper(($T7, Xv1) => {
     var jc = n8();
     P3();
     TzA();
@@ -1082,8 +1082,7 @@ var Fv1 = U(($T7, Xv1) => {
             B = [6, 4, 2, 4, 2, 4, 6, 2],
             G = new Q(null);
         G.fromInt(30);
-
-var Z = function(V, K) {
+        var Z = function(V, K) {
             return V | K
         };
         A.generateProbablePrime = function(V, K, D) {
@@ -1105,12 +1104,12 @@ var Z = function(V, K) {
             throw Error("Invalid prime generation algorithm: " + H.name)
         };
 
-function I(V, K, D, H) {
+        function I(V, K, D, H) {
             if ("workers" in D) return W(V, K, D, H);
             return Y(V, K, D, H)
         }
 
-function Y(V, K, D, H) {
+        function Y(V, K, D, H) {
             var C = X(V, K),
                 E = 0,
                 z = F(C.bitLength());
@@ -1120,7 +1119,7 @@ function Y(V, K, D, H) {
             J(C, V, K, E, z, w, H)
         }
 
-function J(V, K, D, H, C, E, z) {
+        function J(V, K, D, H, C, E, z) {
             var w = +new Date;
             do {
                 if (V.bitLength() > K) V = X(K, D);
@@ -1132,7 +1131,7 @@ function J(V, K, D, H, C, E, z) {
             })
         }
 
-function W(V, K, D, H) {
+        function W(V, K, D, H) {
             if (typeof Worker > "u") return Y(V, K, D, H);
             var C = X(V, K),
                 E = D.workers,
@@ -1145,16 +1144,15 @@ function W(V, K, D, H) {
             });
             q();
 
-function q() {
+            function q() {
                 E = Math.max(1, E);
-
-var R = [];
+                var R = [];
                 for (var P = 0; P < E; ++P) R[P] = new Worker(N);
                 var y = E;
                 for (var P = 0; P < E; ++P) R[P].addEventListener("message", x);
                 var v = !1;
 
-function x(p) {
+                function x(p) {
                     if (v) return;
                     --y;
                     var u = p.data;
@@ -1172,14 +1170,14 @@ function x(p) {
             }
         }
 
-function X(V, K) {
+        function X(V, K) {
             var D = new Q(V, K),
                 H = V - 1;
             if (!D.testBit(H)) D.bitwiseTo(Q.ONE.shiftLeft(H), Z, D);
             return D.dAddOffset(31 - D.mod(G).byteValue(), 0), D
         }
 
-function F(V) {
+        function F(V) {
             if (V <= 100) return 27;
             if (V <= 150) return 18;
             if (V <= 200) return 15;
@@ -1195,7 +1193,7 @@ function F(V) {
         }
     })()
 });
-var PzA = U((wT7, i4B) => {
+var PzA = moduleWrapper((wT7, i4B) => {
     var T9 = n8();
     GT();
     TzA();
@@ -1205,7 +1203,7 @@ var PzA = U((wT7, i4B) => {
     aL();
     P3();
     if (typeof h5 > "u") h5 = T9.jsbn.BigInteger;
-    var h5, Vv1 = T9.util.isNodejs ? UA("crypto") : null,
+    var h5, Vv1 = T9.util.isNodejs ? nodeRequire("crypto") : null,
         F0 = T9.asn1,
         rL = T9.util;
     T9.pki = T9.pki || {};

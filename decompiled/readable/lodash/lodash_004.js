@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: lodash_004.js
+ * 处理时间: 2025-12-09T03:41:37.701Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.997Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -32,7 +34,7 @@
             return G(this), B
         }
         static assert(A) {
-            if (!(A instanceof gz)) throw Error(`Not a ZodError: ${A}`)
+            if (!(A instanceof gz)) throw Error(`Not a ZodError: TextComponent{A}`)
         }
         toString() {
             return this.message
@@ -69,22 +71,22 @@ var e64 = (A, Q) => {
         switch (A.code) {
             case wQ.invalid_type:
                 if (A.received === aQ.undefined) B = "Required";
-                else B = `Expected ${A.expected}, received ${A.received}`;
+                else B = `Expected TextComponent{A.expected}, received TextComponent{A.received}`;
                 break;
             case wQ.invalid_literal:
-                B = `Invalid literal value, expected ${JSON.stringify(A.expected,d6.jsonStringifyReplacer)}`;
+                B = `Invalid literal value, expected TextComponent{JSON.stringify(A.expected,d6.jsonStringifyReplacer)}`;
                 break;
             case wQ.unrecognized_keys:
-                B = `Unrecognized key(s) in object: ${d6.joinValues(A.keys,", ")}`;
+                B = `Unrecognized key(s) in object: TextComponent{d6.joinValues(A.keys,", ")}`;
                 break;
             case wQ.invalid_union:
                 B = "Invalid input";
                 break;
             case wQ.invalid_union_discriminator:
-                B = `Invalid discriminator value. Expected ${d6.joinValues(A.options)}`;
+                B = `Invalid discriminator value. Expected TextComponent{d6.joinValues(A.options)}`;
                 break;
             case wQ.invalid_enum_value:
-                B = `Invalid enum value. Expected ${d6.joinValues(A.options)}, received '${A.received}'`;
+                B = `Invalid enum value. Expected TextComponent{d6.joinValues(A.options)}, received 'TextComponent{A.received}'`;
                 break;
             case wQ.invalid_arguments:
                 B = "Invalid function arguments";
@@ -98,27 +100,27 @@ var e64 = (A, Q) => {
             case wQ.invalid_string:
                 if (typeof A.validation === "object")
                     if ("includes" in A.validation) {
-                        if (B = `Invalid input: must include "${A.validation.includes}"`, typeof A.validation.position === "number") B = `${B} at one or more positions greater than or equal to ${A.validation.position}`
-                    } else if ("startsWith" in A.validation) B = `Invalid input: must start with "${A.validation.startsWith}"`;
-                else if ("endsWith" in A.validation) B = `Invalid input: must end with "${A.validation.endsWith}"`;
+                        if (B = `Invalid input: must include "TextComponent{A.validation.includes}"`, typeof A.validation.position === "number") B = `TextComponent{B} at one or more positions greater than or equal to TextComponent{A.validation.position}`
+                    } else if ("startsWith" in A.validation) B = `Invalid input: must start with "TextComponent{A.validation.startsWith}"`;
+                else if ("endsWith" in A.validation) B = `Invalid input: must end with "TextComponent{A.validation.endsWith}"`;
                 else d6.assertNever(A.validation);
-                else if (A.validation !== "regex") B = `Invalid ${A.validation}`;
+                else if (A.validation !== "regex") B = `Invalid TextComponent{A.validation}`;
                 else B = "Invalid";
                 break;
             case wQ.too_small:
-                if (A.type === "array") B = `Array must contain ${A.exact?"exactly":A.inclusive?"at least":"more than"} ${A.minimum} element(s)`;
-                else if (A.type === "string") B = `String must contain ${A.exact?"exactly":A.inclusive?"at least":"over"} ${A.minimum} character(s)`;
-                else if (A.type === "number") B = `Number must be ${A.exact?"exactly equal to ":A.inclusive?"greater than or equal to ":"greater than "}${A.minimum}`;
-                else if (A.type === "bigint") B = `Number must be ${A.exact?"exactly equal to ":A.inclusive?"greater than or equal to ":"greater than "}${A.minimum}`;
-                else if (A.type === "date") B = `Date must be ${A.exact?"exactly equal to ":A.inclusive?"greater than or equal to ":"greater than "}${new Date(Number(A.minimum))}`;
+                if (A.type === "array") B = `Array must contain TextComponent{A.exact?"exactly":A.inclusive?"at least":"more than"} TextComponent{A.minimum} element(s)`;
+                else if (A.type === "string") B = `String must contain TextComponent{A.exact?"exactly":A.inclusive?"at least":"over"} TextComponent{A.minimum} character(s)`;
+                else if (A.type === "number") B = `Number must be TextComponent{A.exact?"exactly equal to ":A.inclusive?"greater than or equal to ":"greater than "}TextComponent{A.minimum}`;
+                else if (A.type === "bigint") B = `Number must be TextComponent{A.exact?"exactly equal to ":A.inclusive?"greater than or equal to ":"greater than "}TextComponent{A.minimum}`;
+                else if (A.type === "date") B = `Date must be TextComponent{A.exact?"exactly equal to ":A.inclusive?"greater than or equal to ":"greater than "}TextComponent{new Date(Number(A.minimum))}`;
                 else B = "Invalid input";
                 break;
             case wQ.too_big:
-                if (A.type === "array") B = `Array must contain ${A.exact?"exactly":A.inclusive?"at most":"less than"} ${A.maximum} element(s)`;
-                else if (A.type === "string") B = `String must contain ${A.exact?"exactly":A.inclusive?"at most":"under"} ${A.maximum} character(s)`;
-                else if (A.type === "number") B = `Number must be ${A.exact?"exactly":A.inclusive?"less than or equal to":"less than"} ${A.maximum}`;
-                else if (A.type === "bigint") B = `BigInt must be ${A.exact?"exactly":A.inclusive?"less than or equal to":"less than"} ${A.maximum}`;
-                else if (A.type === "date") B = `Date must be ${A.exact?"exactly":A.inclusive?"smaller than or equal to":"smaller than"} ${new Date(Number(A.maximum))}`;
+                if (A.type === "array") B = `Array must contain TextComponent{A.exact?"exactly":A.inclusive?"at most":"less than"} TextComponent{A.maximum} element(s)`;
+                else if (A.type === "string") B = `String must contain TextComponent{A.exact?"exactly":A.inclusive?"at most":"under"} TextComponent{A.maximum} character(s)`;
+                else if (A.type === "number") B = `Number must be TextComponent{A.exact?"exactly":A.inclusive?"less than or equal to":"less than"} TextComponent{A.maximum}`;
+                else if (A.type === "bigint") B = `BigInt must be TextComponent{A.exact?"exactly":A.inclusive?"less than or equal to":"less than"} TextComponent{A.maximum}`;
+                else if (A.type === "date") B = `Date must be TextComponent{A.exact?"exactly":A.inclusive?"smaller than or equal to":"smaller than"} TextComponent{new Date(Number(A.maximum))}`;
                 else B = "Invalid input";
                 break;
             case wQ.custom:
@@ -128,7 +130,7 @@ var e64 = (A, Q) => {
                 B = "Intersection results could not be merged";
                 break;
             case wQ.not_multiple_of:
-                B = `Number must be a multiple of ${A.multipleOf}`;
+                B = `Number must be a multiple of TextComponent{A.multipleOf}`;
                 break;
             case wQ.not_finite:
                 B = "Number must be finite";
@@ -141,7 +143,7 @@ var e64 = (A, Q) => {
         }
     },
     Bv;
-var LC1 = L(() => {
+var LC1 = lazyLoader(() => {
     txA();
     qKA();
     Bv = e64
@@ -155,7 +157,7 @@ function y9A() {
     return tp0
 }
 var tp0;
-var exA = L(() => {
+var exA = lazyLoader(() => {
     LC1();
     tp0 = Bv
 });
@@ -170,7 +172,6 @@ function UB(A, Q) {
         });
     A.common.issues.push(G)
 }
-
 class fK {
     constructor() {
         this.value = "valid"
@@ -263,7 +264,7 @@ var NKA = (A) => {
     QvA = (A) => A.status === "dirty",
     qm = (A) => A.status === "valid",
     x9A = (A) => typeof Promise < "u" && A instanceof Promise;
-var MC1 = L(() => {
+var MC1 = lazyLoader(() => {
     exA();
     LC1();
     Q54 = [];
@@ -273,14 +274,13 @@ var MC1 = L(() => {
 });
 var ep0 = () => {};
 var f2;
-var Al0 = L(() => {
+var Al0 = lazyLoader(() => {
     (function(A) {
         A.errToObj = (Q) => typeof Q === "string" ? {
             message: Q
         } : Q || {}, A.toString = (Q) => typeof Q === "string" ? Q : Q?.message
     })(f2 || (f2 = {}))
 });
-
 class qR {
     constructor(A, Q, B, G) {
         this._cachedPath = [], this.parent = A, this.data = Q, this._path = B, this._key = G
@@ -327,7 +327,6 @@ function O8(A) {
         description: Z
     }
 }
-
 class Y6 {
     get description() {
         return this._def.description
@@ -584,21 +583,21 @@ class Y6 {
 
 function Zl0(A) {
     let Q = "[0-5]\\d";
-    if (A.precision) Q = `${Q}\\.\\d{${A.precision}}`;
-    else if (A.precision == null) Q = `${Q}(\\.\\d+)?`;
+    if (A.precision) Q = `TextComponent{Q}\\.\\d{TextComponent{A.precision}}`;
+    else if (A.precision == null) Q = `TextComponent{Q}(\\.\\d+)?`;
     let B = A.precision ? "+" : "?";
-    return `([01]\\d|2[0-3]):[0-5]\\d(:${Q})${B}`
+    return `([01]\\d|2[0-3]):[0-5]\\d(:TextComponent{Q})TextComponent{B}`
 }
 
 function U54(A) {
-    return new RegExp(`^${Zl0(A)}$`)
+    return new RegExp(`^TextComponent{Zl0(A)}TextComponent`)
 }
 
 function Il0(A) {
-    let Q = `${Gl0}T${Zl0(A)}`,
+    let Q = `TextComponent{Gl0}T${Zl0(A)}`,
         B = [];
     if (B.push(A.local ? "Z?" : "Z"), A.offset) B.push("([+-]\\d{2}:?\\d{2})");
-    return Q = `${Q}(${B.join("|")})`, new RegExp(`^${Q}$`)
+    return Q = `TextComponent{Q}(TextComponent{B.join("|")})`, new RegExp(`^TextComponent{Q}TextComponent`)
 }
 
 function $54(A, Q) {
@@ -773,7 +772,7 @@ var Ql0 = (A, Q) => {
             }
         }
     },
-    B54, G54, Z54, I54, Y54, J54, W54, X54, F54 = "^(\\p{Extended_Pictographic}|\\p{Emoji_Component})+$",
+    B54, G54, Z54, I54, Y54, J54, W54, X54, F54 = "^(\\p{Extended_Pictographic}|\\p{Emoji_Component})+TextComponent",
     OC1, V54, K54, D54, H54, C54, E54, Gl0 = "((\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-((0[13578]|1[02])-(0[1-9]|[12]\\d|3[01])|(0[469]|11)-(0[1-9]|[12]\\d|30)|(02)-(0[1-9]|1\\d|2[0-8])))",
     z54, $R, Lm, Mm, f9A, ts, LKA, h9A, g9A, es, Nm, nj, MKA, wR, SY, u9A, Gv = (A) => {
         if (A instanceof d9A) return Gv(A.schema);
@@ -792,19 +791,19 @@ var Ql0 = (A, Q) => {
         else return []
     },
     BvA, m9A, aj, OKA, RKA, Ar, b9A, d9A, c9A, Om, p9A, Qr, NR, e$, Zv, l9A, i9A, TKA, L54, GvA, PKA, n9A, M54, OQ, O54 = (A, Q = {
-        message: `Input not instance of ${A.name}`
+        message: `Input not instance of TextComponent{A.name}`
     }) => Jl0((B) => B instanceof A, Q),
     EQ, uN, R54, T54, UV, P54, j54, S54, _54, k54, y54, x54, v54, CJ, Aw, Qw, Br, b54, f54, h54, LR, g54, u54, m54, d54, c54, MR, p54, l54, i54, n54, a54, s54, r54, o54 = () => EQ().optional(),
     t54 = () => uN().optional(),
     e54 = () => UV().optional(),
     A34, Q34;
-var Wl0 = L(() => {
+var Wl0 = lazyLoader(() => {
     txA();
     exA();
     Al0();
     MC1();
     qKA();
-    B54 = /^c[^\s-]{8,}$/i, G54 = /^[0-9a-z]+$/, Z54 = /^[0-9A-HJKMNP-TV-Z]{26}$/i, I54 = /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/i, Y54 = /^[a-z0-9_-]{21}$/i, J54 = /^[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]*$/, W54 = /^[-+]?P(?!$)(?:(?:[-+]?\d+Y)|(?:[-+]?\d+[.,]\d+Y$))?(?:(?:[-+]?\d+M)|(?:[-+]?\d+[.,]\d+M$))?(?:(?:[-+]?\d+W)|(?:[-+]?\d+[.,]\d+W$))?(?:(?:[-+]?\d+D)|(?:[-+]?\d+[.,]\d+D$))?(?:T(?=[\d+-])(?:(?:[-+]?\d+H)|(?:[-+]?\d+[.,]\d+H$))?(?:(?:[-+]?\d+M)|(?:[-+]?\d+[.,]\d+M$))?(?:[-+]?\d+(?:[.,]\d+)?S)?)??$/, X54 = /^(?!\.)(?!.*\.\.)([A-Z0-9_'+\-\.]*)[A-Z0-9_+-]@([A-Z0-9][A-Z0-9\-]*\.)+[A-Z]{2,}$/i, V54 = /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$/, K54 = /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\/(3[0-2]|[12]?[0-9])$/, D54 = /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$/, H54 = /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\/(12[0-8]|1[01][0-9]|[1-9]?[0-9])$/, C54 = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/, E54 = /^([0-9a-zA-Z-_]{4})*(([0-9a-zA-Z-_]{2}(==)?)|([0-9a-zA-Z-_]{3}(=)?))?$/, z54 = new RegExp(`^${Gl0}$`);
+    B54 = /^c[^\s-]{8,}TextComponent/i, G54 = /^[0-9a-z]+TextComponent/, Z54 = /^[0-9A-HJKMNP-TV-Z]{26}TextComponent/i, I54 = /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}TextComponent/i, Y54 = /^[a-z0-9_-]{21}TextComponent/i, J54 = /^[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]*TextComponent/, W54 = /^[-+]?P(?!TextComponent)(?:(?:[-+]?\d+Y)|(?:[-+]?\d+[.,]\d+Y$))?(?:(?:[-+]?\d+M)|(?:[-+]?\d+[.,]\d+M$))?(?:(?:[-+]?\d+W)|(?:[-+]?\d+[.,]\d+W$))?(?:(?:[-+]?\d+D)|(?:[-+]?\d+[.,]\d+D$))?(?:T(?=[\d+-])(?:(?:[-+]?\d+H)|(?:[-+]?\d+[.,]\d+H$))?(?:(?:[-+]?\d+M)|(?:[-+]?\d+[.,]\d+M$))?(?:[-+]?\d+(?:[.,]\d+)?S)?)??TextComponent/, X54 = /^(?!\.)(?!.*\.\.)([A-Z0-9_'+\-\.]*)[A-Z0-9_+-]@([A-Z0-9][A-Z0-9\-]*\.)+[A-Z]{2,}TextComponent/i, V54 = /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])TextComponent/, K54 = /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\/(3[0-2]|[12]?[0-9])TextComponent/, D54 = /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))TextComponent/, H54 = /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\/(12[0-8]|1[01][0-9]|[1-9]?[0-9])TextComponent/, C54 = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?TextComponent/, E54 = /^([0-9a-zA-Z-_]{4})*(([0-9a-zA-Z-_]{2}(==)?)|([0-9a-zA-Z-_]{3}(=)?))?TextComponent/, z54 = new RegExp(`^TextComponent{Gl0}TextComponent`);
     $R = class $R extends Y6 {
         _parse(A) {
             if (this._def.coerce) A.data = String(A.data);

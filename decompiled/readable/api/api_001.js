@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_001.js
+ * 处理时间: 2025-12-09T03:41:35.983Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.855Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -1428,7 +1431,7 @@
         }
     }
 });
-var zz0 = U((xp3, Ez0) => {
+var zz0 = moduleWrapper((xp3, Ez0) => {
     /*!
      * mime-db
      * Copyright(c) 2014 Jonathan Ong
@@ -1437,7 +1440,7 @@ var zz0 = U((xp3, Ez0) => {
      */
     Ez0.exports = Cz0()
 });
-var Nz0 = U((eR9) => {
+var Nz0 = moduleWrapper((eR9) => {
     /*!
      * mime-types
      * Copyright(c) 2014 Jonathan Ong
@@ -1445,8 +1448,8 @@ var Nz0 = U((eR9) => {
      * MIT Licensed
      */
     var HkA = zz0(),
-        nR9 = UA("path").extname,
-        Uz0 = /^\s*([^;\s]*)(?:;|\s|$)/,
+        nR9 = nodeRequire("path").extname,
+        Uz0 = /^\s*([^;\s]*)(?:;|\s|TextComponent)/,
         aR9 = /^text\//i;
     eR9.charset = $z0;
     eR9.charsets = {
@@ -1468,7 +1471,7 @@ var Nz0 = U((eR9) => {
         return !1
     }
 
-function sR9(A) {
+    function sR9(A) {
         if (!A || typeof A !== "string") return !1;
         var Q = A.indexOf("/") === -1 ? eR9.lookup(A) : A;
         if (!Q) return !1;
@@ -1479,7 +1482,7 @@ function sR9(A) {
         return Q
     }
 
-function rR9(A) {
+    function rR9(A) {
         if (!A || typeof A !== "string") return !1;
         var Q = Uz0.exec(A),
             B = Q && eR9.extensions[Q[1].toLowerCase()];
@@ -1487,14 +1490,14 @@ function rR9(A) {
         return B[0]
     }
 
-function oR9(A) {
+    function oR9(A) {
         if (!A || typeof A !== "string") return !1;
         var Q = nR9("x." + A).toLowerCase().substr(1);
         if (!Q) return !1;
         return eR9.types[Q] || !1
     }
 
-function tR9(A, Q) {
+    function tR9(A, Q) {
         var B = ["nginx", "apache", void 0, "iana"];
         Object.keys(HkA).forEach(function(Z) {
             var I = HkA[Z],
@@ -1513,5 +1516,5 @@ function tR9(A, Q) {
         })
     }
 });
-var Mz0 = U((bp3, Lz0) => {
+var Mz0 = moduleWrapper((bp3, Lz0) => {
     Lz0.exports = GT9;

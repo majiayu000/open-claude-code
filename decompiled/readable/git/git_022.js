@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_022.js
+ * 处理时间: 2025-12-09T03:41:37.520Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.981Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -20,15 +23,14 @@
             return U1 === nA
         }
 
-function k1(U1, nA) {
+        function k1(U1, nA) {
             return U1 && U1.toString().replace(!nA || !nA.iri ? W.ESCAPE : X.ESCAPE, yA)
         }
 
-function T0(U1, nA) {
+        function T0(U1, nA) {
             return U1 && U1.toString().replace(!nA || !nA.iri ? W.PCT_ENCODED : X.PCT_ENCODED, rA)
         }
-
-var fQ = {
+        var fQ = {
                 scheme: "http",
                 domainHost: !0,
                 parse: function(nA, C1) {
@@ -49,11 +51,10 @@ var fQ = {
                 serialize: fQ.serialize
             };
 
-function R1(U1) {
+        function R1(U1) {
             return typeof U1.secure === "boolean" ? U1.secure : String(U1.scheme).toLowerCase() === "wss"
         }
-
-var N1 = {
+        var N1 = {
                 scheme: "ws",
                 domainHost: !0,
                 parse: function(nA, C1) {
@@ -84,22 +85,21 @@ var N1 = {
             p0 = "[A-Za-z0-9\\-\\.\\_\\~" + (s1 ? "\\xA0-\\u200D\\u2010-\\u2029\\u202F-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF" : "") + "]",
             HQ = "[0-9A-Fa-f]",
             ZB = B(B("%[EFef]" + HQ + "%" + HQ + HQ + "%" + HQ + HQ) + "|" + B("%[89A-Fa-f]" + HQ + "%" + HQ + HQ) + "|" + B("%" + HQ + HQ)),
-            rQ = "[A-Za-z0-9\\!\\$\\%\\'\\*\\+\\-\\^\\_\\`\\{\\|\\}\\~]",
-            PB = "[\\!\\$\\%\\'\\(\\)\\*\\+\\,\\-\\.0-9\\<\\>A-Z\\x5E-\\x7E]",
+            rQ = "[A-Za-z0-9\\!\\TextComponent\\%\\'\\*\\+\\-\\^\\_\\`\\{\\|\\}\\~]",
+            PB = "[\\!\\TextComponent\\%\\'\\(\\)\\*\\+\\,\\-\\.0-9\\<\\>A-Z\\x5E-\\x7E]",
             IQ = Q(PB, "[\\\"\\\\]"),
-            l9 = "[\\!\\$\\'\\(\\)\\*\\+\\,\\;\\:\\@]",
+            l9 = "[\\!\\TextComponent\\'\\(\\)\\*\\+\\,\\;\\:\\@]",
             h4 = new RegExp(p0, "g"),
             p5 = new RegExp(ZB, "g"),
             uG = new RegExp(Q("[^]", rQ, "[\\.]", "[\\\"]", IQ), "g"),
             DG = new RegExp(Q("[^]", p0, l9), "g"),
             C3 = DG;
 
-function CZ(U1) {
+        function CZ(U1) {
             var nA = rA(U1);
             return !nA.match(h4) ? U1 : nA
         }
-
-var LI = {
+        var LI = {
                 scheme: "mailto",
                 parse: function(nA, C1) {
                     var O1 = nA,
@@ -161,8 +161,7 @@ var LI = {
                     var A6 = nA.headers = nA.headers || {};
                     if (nA.subject) A6.subject = nA.subject;
                     if (nA.body) A6.body = nA.body;
-
-var v6 = [];
+                    var v6 = [];
                     for (var w8 in A6)
                         if (A6[w8] !== J0[w8]) v6.push(w8.replace(p5, CZ).replace(p5, Z).replace(DG, yA) + "=" + A6[w8].replace(p5, CZ).replace(p5, Z).replace(C3, yA));
                     if (v6.length) O1.query = v6.join("&");
@@ -196,7 +195,7 @@ var v6 = [];
                     return lB.path = (y1 || C1.nid) + ":" + k9, lB
                 }
             },
-            mG = /^[0-9A-Fa-f]{8}(?:\-[0-9A-Fa-f]{4}){3}\-[0-9A-Fa-f]{12}$/,
+            mG = /^[0-9A-Fa-f]{8}(?:\-[0-9A-Fa-f]{4}){3}\-[0-9A-Fa-f]{12}TextComponent/,
             dG = {
                 scheme: "urn:uuid",
                 parse: function(nA, C1) {
@@ -214,7 +213,7 @@ var v6 = [];
         })
     })
 });
-var _Q1 = U((HMG, S92) => {
+var _Q1 = moduleWrapper((HMG, S92) => {
     S92.exports = function A(Q, B) {
         if (Q === B) return !0;
         if (Q && B && typeof Q == "object" && typeof B == "object") {
@@ -241,7 +240,7 @@ var _Q1 = U((HMG, S92) => {
         return Q !== Q && B !== B
     }
 });
-var k92 = U((CMG, _92) => {
+var k92 = moduleWrapper((CMG, _92) => {
     _92.exports = function(Q) {
         var B = 0,
             G = Q.length,
@@ -253,7 +252,7 @@ var k92 = U((CMG, _92) => {
             } return B
     }
 });
-var sAA = U((EMG, v92) => {
+var sAA = moduleWrapper((EMG, v92) => {
     v92.exports = {
         copy: x65,
         checkDataType: xe1,
@@ -279,13 +278,13 @@ var sAA = U((EMG, v92) => {
         escapeJsonPointer: ge1
     };
 
-function x65(A, Q) {
+    function x65(A, Q) {
         Q = Q || {};
         for (var B in A) Q[B] = A[B];
         return Q
     }
 
-function xe1(A, Q, B, G) {
+    function xe1(A, Q, B, G) {
         var Z = G ? " !== " : " === ",
             I = G ? " || " : " && ",
             Y = G ? "!" : "",
@@ -306,7 +305,7 @@ function xe1(A, Q, B, G) {
         }
     }
 
-function v65(A, Q, B) {
+    function v65(A, Q, B) {
         switch (A.length) {
             case 1:
                 return xe1(A[0], Q, B, !0);
@@ -321,7 +320,7 @@ function v65(A, Q, B) {
     }
     var y92 = be1(["string", "number", "integer", "boolean", "null"]);
 
-function b65(A, Q) {
+    function b65(A, Q) {
         if (Array.isArray(Q)) {
             var B = [];
             for (var G = 0; G < Q.length; G++) {
@@ -334,67 +333,67 @@ function b65(A, Q) {
         else if (A === "array" && Q === "array") return ["array"]
     }
 
-function be1(A) {
+    function be1(A) {
         var Q = {};
         for (var B = 0; B < A.length; B++) Q[A[B]] = !0;
         return Q
     }
-    var f65 = /^[a-z$_][a-z$_0-9]*$/i,
+    var f65 = /^[a-z$_][a-z$_0-9]*TextComponent/i,
         h65 = /'|\\/g;
 
-function fe1(A) {
+    function fe1(A) {
         return typeof A == "number" ? "[" + A + "]" : f65.test(A) ? "." + A : "['" + he1(A) + "']"
     }
 
-function he1(A) {
-        return A.replace(h65, "\\$&").replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\f/g, "\\f").replace(/\t/g, "\\t")
+    function he1(A) {
+        return A.replace(h65, "\\TextComponent&").replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\f/g, "\\f").replace(/\t/g, "\\t")
     }
 
-function g65(A, Q) {
+    function g65(A, Q) {
         Q += "[^0-9]";
         var B = A.match(new RegExp(Q, "g"));
         return B ? B.length : 0
     }
 
-function u65(A, Q, B) {
-        return Q += "([^0-9])", B = B.replace(/\$/g, "$$$$"), A.replace(new RegExp(Q, "g"), B + "$1")
+    function u65(A, Q, B) {
+        return Q += "([^0-9])", B = B.replace(/\TextComponent/g, "$$$$"), A.replace(new RegExp(Q, "g"), B + "$1")
     }
 
-function m65(A, Q) {
+    function m65(A, Q) {
         if (typeof A == "boolean") return !A;
         for (var B in A)
             if (Q[B]) return !0
     }
 
-function d65(A, Q, B) {
+    function d65(A, Q, B) {
         if (typeof A == "boolean") return !A && B != "not";
         for (var G in A)
             if (G != B && Q[G]) return !0
     }
 
-function c65(A, Q) {
+    function c65(A, Q) {
         if (typeof A == "boolean") return;
         for (var B in A)
             if (!Q[B]) return B
     }
 
-function ve1(A) {
+    function ve1(A) {
         return "'" + he1(A) + "'"
     }
 
-function p65(A, Q, B, G) {
+    function p65(A, Q, B, G) {
         var Z = B ? "'/' + " + Q + (G ? "" : ".replace(/~/g, '~0').replace(/\\//g, '~1')") : G ? "'[' + " + Q + " + ']'" : "'[\\'' + " + Q + " + '\\']'";
         return x92(A, Z)
     }
 
-function l65(A, Q, B) {
+    function l65(A, Q, B) {
         var G = B ? ve1("/" + ge1(Q)) : ve1(fe1(Q));
         return x92(A, G)
     }
-    var i65 = /^\/(?:[^~]|~0|~1)*$/,
-        n65 = /^([0-9]+)(#|\/(?:[^~]|~0|~1)*)?$/;
+    var i65 = /^\/(?:[^~]|~0|~1)*TextComponent/,
+        n65 = /^([0-9]+)(#|\/(?:[^~]|~0|~1)*)?TextComponent/;
 
-function a65(A, Q, B) {
+    function a65(A, Q, B) {
         var G, Z, I, Y;
         if (A === "") return "rootData";
         if (A[0] == "/") {
@@ -418,36 +417,36 @@ function a65(A, Q, B) {
         return J
     }
 
-function x92(A, Q) {
+    function x92(A, Q) {
         if (A == '""') return Q;
         return (A + " + " + Q).replace(/([^\\])' \+ '/g, "$1")
     }
 
-function s65(A) {
+    function s65(A) {
         return ue1(decodeURIComponent(A))
     }
 
-function r65(A) {
+    function r65(A) {
         return encodeURIComponent(ge1(A))
     }
 
-function ge1(A) {
+    function ge1(A) {
         return A.replace(/~/g, "~0").replace(/\//g, "~1")
     }
 
-function ue1(A) {
+    function ue1(A) {
         return A.replace(/~1/g, "/").replace(/~0/g, "~")
     }
 });
-var me1 = U((zMG, b92) => {
+var me1 = moduleWrapper((zMG, b92) => {
     var o65 = sAA();
     b92.exports = t65;
 
-function t65(A) {
+    function t65(A) {
         o65.copy(A, this)
     }
 });
-var h92 = U((UMG, f92) => {
+var h92 = moduleWrapper((UMG, f92) => {
     var el = f92.exports = function(A, Q, B) {
         if (typeof Q == "function") B = Q, Q = {};
         B = Q.cb || B;
@@ -496,7 +495,7 @@ var h92 = U((UMG, f92) => {
         minProperties: !0
     };
 
-function kQ1(A, Q, B, G, Z, I, Y, J, W, X) {
+    function kQ1(A, Q, B, G, Z, I, Y, J, W, X) {
         if (G && typeof G == "object" && !Array.isArray(G)) {
             Q(G, Z, I, Y, J, W, X);
             for (var F in G) {
@@ -513,11 +512,11 @@ function kQ1(A, Q, B, G, Z, I, Y, J, W, X) {
         }
     }
 
-function e65(A) {
+    function e65(A) {
         return A.replace(/~/g, "~0").replace(/\//g, "~1")
     }
 });
-var hQ1 = U(($MG, d92) => {
+var hQ1 = moduleWrapper(($MG, d92) => {
     var jLA = j92(),
         g92 = _Q1(),
         bQ1 = sAA(),
@@ -531,7 +530,7 @@ var hQ1 = U(($MG, d92) => {
     Qi.inlineRef = de1;
     Qi.schema = fQ1;
 
-function Qi(A, Q, B) {
+    function Qi(A, Q, B) {
         var G = this._refs[B];
         if (typeof G == "string")
             if (this._refs[G]) G = this._refs[G];
@@ -545,7 +544,7 @@ function Qi(A, Q, B) {
         return Y
     }
 
-function fQ1(A, Q) {
+    function fQ1(A, Q) {
         var B = jLA.parse(Q),
             G = m92(B),
             Z = xQ1(this._getId(A.schema));
@@ -571,7 +570,7 @@ function fQ1(A, Q) {
         return u92.call(this, B, Z, A.schema, A)
     }
 
-function Q55(A, Q, B) {
+    function Q55(A, Q, B) {
         var G = fQ1.call(this, A, Q);
         if (G) {
             var {
@@ -586,7 +585,7 @@ function Q55(A, Q, B) {
     }
     var B55 = bQ1.toHash(["properties", "patternProperties", "enum", "dependencies", "definitions"]);
 
-function u92(A, Q, B, G) {
+    function u92(A, Q, B, G) {
         if (A.fragment = A.fragment || "", A.fragment.slice(0, 1) != "/") return;
         var Z = A.fragment.split("/");
         for (var I = 1; I < Z.length; I++) {
@@ -612,13 +611,13 @@ function u92(A, Q, B, G) {
     }
     var G55 = bQ1.toHash(["type", "format", "pattern", "maxLength", "minLength", "maxProperties", "minProperties", "maxItems", "minItems", "maximum", "minimum", "uniqueItems", "multipleOf", "required", "enum"]);
 
-function de1(A, Q) {
+    function de1(A, Q) {
         if (Q === !1) return !1;
         if (Q === void 0 || Q === !0) return ce1(A);
         else if (Q) return pe1(A) <= Q
     }
 
-function ce1(A) {
+    function ce1(A) {
         var Q;
         if (Array.isArray(A)) {
             for (var B = 0; B < A.length; B++)
@@ -631,7 +630,7 @@ function ce1(A) {
         return !0
     }
 
-function pe1(A) {
+    function pe1(A) {
         var Q = 0,
             B;
         if (Array.isArray(A))
@@ -650,26 +649,26 @@ function pe1(A) {
         return Q
     }
 
-function xQ1(A, Q) {
+    function xQ1(A, Q) {
         if (Q !== !1) A = Ai(A);
         var B = jLA.parse(A);
         return m92(B)
     }
 
-function m92(A) {
+    function m92(A) {
         return jLA.serialize(A).split("#")[0] + "#"
     }
-    var Z55 = /#\/?$/;
+    var Z55 = /#\/?TextComponent/;
 
-function Ai(A) {
+    function Ai(A) {
         return A ? A.replace(Z55, "") : ""
     }
 
-function vQ1(A, Q) {
+    function vQ1(A, Q) {
         return Q = Ai(Q), jLA.resolve(A, Q)
     }
 
-function I55(A) {
+    function I55(A) {
         var Q = Ai(this._getId(A)),
             B = {
                 "": Q
@@ -703,29 +702,29 @@ function I55(A) {
         }), Z
     }
 });
-var gQ1 = U((wMG, p92) => {
+var gQ1 = moduleWrapper((wMG, p92) => {
     var le1 = hQ1();
     p92.exports = {
         Validation: c92(Y55),
         MissingRef: c92(ie1)
     };
 
-function Y55(A) {
+    function Y55(A) {
         this.message = "validation failed", this.errors = A, this.ajv = this.validation = !0
     }
     ie1.message = function(A, Q) {
         return "can't resolve reference " + Q + " from id " + A
     };
 
-function ie1(A, Q, B) {
+    function ie1(A, Q, B) {
         this.message = B || ie1.message(A, Q), this.missingRef = le1.url(A, Q), this.missingSchema = le1.normalizeId(le1.fullPath(this.missingRef))
     }
 
-function c92(A) {
+    function c92(A) {
         return A.prototype = Object.create(Error.prototype), A.prototype.constructor = A, A
     }
 });
-var ne1 = U((qMG, l92) => {
+var ne1 = moduleWrapper((qMG, l92) => {
     l92.exports = function(A, Q) {
         if (!Q) Q = {};
         if (typeof Q === "function") Q = {
@@ -781,7 +780,7 @@ var ne1 = U((qMG, l92) => {
         }(A)
     }
 });
-var ae1 = U((NMG, i92) => {
+var ae1 = moduleWrapper((NMG, i92) => {
     i92.exports = function(Q, B, G) {
         var Z = "",
             I = Q.schema.$async === !0,
@@ -1007,10 +1006,10 @@ var ae1 = U((NMG, i92) => {
                         }
                         var TA = o.rules;
                         if (TA) {
-                            var eA, aA = -1,
+                            var eA, BASE64_CHARS = -1,
                                 I1 = TA.length - 1;
-                            while (aA < I1)
-                                if (eA = TA[aA += 1], B1(eA)) {
+                            while (BASE64_CHARS < I1)
+                                if (eA = TA[BASE64_CHARS += 1], B1(eA)) {
                                     var w1 = eA.code(Q, eA.keyword, o.type);
                                     if (w1) {
                                         if (Z += " " + w1 + " ", R) P += "}"
@@ -1058,17 +1057,17 @@ var ae1 = U((NMG, i92) => {
             Z += " }; return validate;"
         } else Z += " var " + q + " = errors === errs_" + F + ";";
 
-function PA(b1) {
+        function PA(b1) {
             var Y0 = b1.rules;
             for (var x0 = 0; x0 < Y0.length; x0++)
                 if (B1(Y0[x0])) return !0
         }
 
-function B1(b1) {
+        function B1(b1) {
             return Q.schema[b1.keyword] !== void 0 || b1.implements && Q0(b1)
         }
 
-function Q0(b1) {
+        function Q0(b1) {
             var Y0 = b1.implements;
             for (var x0 = 0; x0 < Y0.length; x0++)
                 if (Q.schema[Y0[x0]] !== void 0) return !0
@@ -1076,7 +1075,7 @@ function Q0(b1) {
         return Z
     }
 });
-var o92 = U((LMG, r92) => {
+var o92 = moduleWrapper((LMG, r92) => {
     var uQ1 = hQ1(),
         dQ1 = sAA(),
         a92 = gQ1(),
@@ -1087,7 +1086,7 @@ var o92 = U((LMG, r92) => {
         F55 = a92.Validation;
     r92.exports = se1;
 
-function se1(A, Q, B, G) {
+    function se1(A, Q, B, G) {
         var Z = this,
             I = this._opts,
             Y = [void 0],
@@ -1119,13 +1118,13 @@ function se1(A, Q, B, G) {
             K55.call(this, A, Q, G)
         }
 
-function N() {
+        function N() {
             var l = H.validate,
                 k = l.apply(this, arguments);
             return N.errors = l.errors, k
         }
 
-function q(l, k, d, QA) {
+        function q(l, k, d, QA) {
             var IA = !k || k && k.schema == l;
             if (k.schema != Q.schema) return se1.call(Z, l, k, d, QA);
             var HA = l.$async === !0,
@@ -1169,7 +1168,7 @@ function q(l, k, d, QA) {
             return KA
         }
 
-function R(l, k, d) {
+        function R(l, k, d) {
             k = uQ1.url(l, k);
             var QA = J[k],
                 IA, HA;
@@ -1188,21 +1187,21 @@ function R(l, k, d) {
             else return v(k, KA), x(KA, HA)
         }
 
-function P(l, k) {
+        function P(l, k) {
             var d = Y.length;
             return Y[d] = k, J[l] = d, "refVal" + d
         }
 
-function y(l) {
+        function y(l) {
             delete J[l]
         }
 
-function v(l, k) {
+        function v(l, k) {
             var d = J[l];
             Y[d] = k
         }
 
-function x(l, k) {
+        function x(l, k) {
             return typeof l == "object" || typeof l == "boolean" ? {
                 code: k,
                 schema: l,
@@ -1213,13 +1212,13 @@ function x(l, k) {
             }
         }
 
-function p(l) {
+        function p(l) {
             var k = X[l];
             if (k === void 0) k = X[l] = W.length, W[k] = l;
             return "pattern" + k
         }
 
-function u(l) {
+        function u(l) {
             switch (typeof l) {
                 case "boolean":
                 case "number":
@@ -1235,7 +1234,7 @@ function u(l) {
             }
         }
 
-function o(l, k, d, QA) {
+        function o(l, k, d, QA) {
             if (Z._opts.validateSchema !== !1) {
                 var IA = l.definition.dependencies;
                 if (IA && !IA.every(function(yA) {
@@ -1269,7 +1268,7 @@ function o(l, k, d, QA) {
         }
     }
 
-function V55(A, Q, B) {
+    function V55(A, Q, B) {
         var G = s92.call(this, A, Q, B);
         if (G >= 0) return {
             index: G,
@@ -1285,12 +1284,12 @@ function V55(A, Q, B) {
         }
     }
 
-function K55(A, Q, B) {
+    function K55(A, Q, B) {
         var G = s92.call(this, A, Q, B);
         if (G >= 0) this._compilations.splice(G, 1)
     }
 
-function s92(A, Q, B) {
+    function s92(A, Q, B) {
         for (var G = 0; G < this._compilations.length; G++) {
             var Z = this._compilations[G];
             if (Z.schema == A && Z.root == Q && Z.baseId == B) return G
@@ -1298,30 +1297,30 @@ function s92(A, Q, B) {
         return -1
     }
 
-function D55(A, Q) {
+    function D55(A, Q) {
         return "var pattern" + A + " = new RegExp(" + dQ1.toQuotedString(Q[A]) + ");"
     }
 
-function H55(A) {
+    function H55(A) {
         return "var default" + A + " = defaults[" + A + "];"
     }
 
-function C55(A, Q) {
+    function C55(A, Q) {
         return Q[A] === void 0 ? "" : "var refVal" + A + " = refVal[" + A + "];"
     }
 
-function E55(A) {
+    function E55(A) {
         return "var customRule" + A + " = customRules[" + A + "];"
     }
 
-function mQ1(A, Q) {
+    function mQ1(A, Q) {
         if (!A.length) return "";
         var B = "";
         for (var G = 0; G < A.length; G++) B += Q(G, A);
         return B
     }
 });
-var e92 = U((MMG, t92) => {
+var e92 = moduleWrapper((MMG, t92) => {
     var cQ1 = t92.exports = function() {
         this._cache = {}
     };
@@ -1338,37 +1337,37 @@ var e92 = U((MMG, t92) => {
         this._cache = {}
     }
 });
-var V42 = U((OMG, F42) => {
+var V42 = moduleWrapper((OMG, F42) => {
     var z55 = sAA(),
-        U55 = /^(\d\d\d\d)-(\d\d)-(\d\d)$/,
+        U55 = /^(\d\d\d\d)-(\d\d)-(\d\d)TextComponent/,
         $55 = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
-        w55 = /^(\d\d):(\d\d):(\d\d)(\.\d+)?(z|[+-]\d\d(?::?\d\d)?)?$/i,
-        A42 = /^(?=.{1,253}\.?$)[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[-0-9a-z]{0,61}[0-9a-z])?)*\.?$/i,
-        q55 = /^(?:[a-z][a-z0-9+\-.]*:)(?:\/?\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:]|%[0-9a-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9a-f]{1,4}:){6}|::(?:[0-9a-f]{1,4}:){5}|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}|(?:(?:[0-9a-f]{1,4}:){0,1}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::)(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|[Vv][0-9a-f]+\.[a-z0-9\-._~!$&'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)|(?:[a-z0-9\-._~!$&'()*+,;=]|%[0-9a-f]{2})*)(?::\d*)?(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*|\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?|(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)(?:\?(?:[a-z0-9\-._~!$&'()*+,;=:@/?]|%[0-9a-f]{2})*)?(?:#(?:[a-z0-9\-._~!$&'()*+,;=:@/?]|%[0-9a-f]{2})*)?$/i,
-        N55 = /^(?:[a-z][a-z0-9+\-.]*:)?(?:\/?\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:]|%[0-9a-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9a-f]{1,4}:){6}|::(?:[0-9a-f]{1,4}:){5}|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}|(?:(?:[0-9a-f]{1,4}:){0,1}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::)(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|[Vv][0-9a-f]+\.[a-z0-9\-._~!$&'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)|(?:[a-z0-9\-._~!$&'"()*+,;=]|%[0-9a-f]{2})*)(?::\d*)?(?:\/(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})*)*|\/(?:(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})*)*)?|(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})*)*)?(?:\?(?:[a-z0-9\-._~!$&'"()*+,;=:@/?]|%[0-9a-f]{2})*)?(?:#(?:[a-z0-9\-._~!$&'"()*+,;=:@/?]|%[0-9a-f]{2})*)?$/i,
-        Q42 = /^(?:(?:[^\x00-\x20"'<>%\\^`{|}]|%[0-9a-f]{2})|\{[+#./;?&=,!@|]?(?:[a-z0-9_]|%[0-9a-f]{2})+(?::[1-9][0-9]{0,3}|\*)?(?:,(?:[a-z0-9_]|%[0-9a-f]{2})+(?::[1-9][0-9]{0,3}|\*)?)*\})*$/i,
-        B42 = /^(?:(?:http[s\u017F]?|ftp):\/\/)(?:(?:[\0-\x08\x0E-\x1F!-\x9F\xA1-\u167F\u1681-\u1FFF\u200B-\u2027\u202A-\u202E\u2030-\u205E\u2060-\u2FFF\u3001-\uD7FF\uE000-\uFEFE\uFF00-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])+(?::(?:[\0-\x08\x0E-\x1F!-\x9F\xA1-\u167F\u1681-\u1FFF\u200B-\u2027\u202A-\u202E\u2030-\u205E\u2060-\u2FFF\u3001-\uD7FF\uE000-\uFEFE\uFF00-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])*)?@)?(?:(?!10(?:\.[0-9]{1,3}){3})(?!127(?:\.[0-9]{1,3}){3})(?!169\.254(?:\.[0-9]{1,3}){2})(?!192\.168(?:\.[0-9]{1,3}){2})(?!172\.(?:1[6-9]|2[0-9]|3[01])(?:\.[0-9]{1,3}){2})(?:[1-9][0-9]?|1[0-9][0-9]|2[01][0-9]|22[0-3])(?:\.(?:1?[0-9]{1,2}|2[0-4][0-9]|25[0-5])){2}(?:\.(?:[1-9][0-9]?|1[0-9][0-9]|2[0-4][0-9]|25[0-4]))|(?:(?:(?:[0-9a-z\xA1-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])+-)*(?:[0-9a-z\xA1-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])+)(?:\.(?:(?:[0-9a-z\xA1-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])+-)*(?:[0-9a-z\xA1-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])+)*(?:\.(?:(?:[a-z\xA1-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]){2,})))(?::[0-9]{2,5})?(?:\/(?:[\0-\x08\x0E-\x1F!-\x9F\xA1-\u167F\u1681-\u1FFF\u200B-\u2027\u202A-\u202E\u2030-\u205E\u2060-\u2FFF\u3001-\uD7FF\uE000-\uFEFE\uFF00-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])*)?$/i,
-        G42 = /^(?:urn:uuid:)?[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i,
-        Z42 = /^(?:\/(?:[^~/]|~0|~1)*)*$/,
-        I42 = /^#(?:\/(?:[a-z0-9_\-.!$&'()*+,;:=@]|%[0-9a-f]{2}|~0|~1)*)*$/i,
-        Y42 = /^(?:0|[1-9][0-9]*)(?:#|(?:\/(?:[^~/]|~0|~1)*)*)$/;
+        w55 = /^(\d\d):(\d\d):(\d\d)(\.\d+)?(z|[+-]\d\d(?::?\d\d)?)?TextComponent/i,
+        A42 = /^(?=.{1,253}\.?TextComponent)[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[-0-9a-z]{0,61}[0-9a-z])?)*\.?TextComponent/i,
+        q55 = /^(?:[a-z][a-z0-9+\-.]*:)(?:\/?\/(?:(?:[a-z0-9\-._~!TextComponent&'()*+,;=:]|%[0-9a-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9a-f]{1,4}:){6}|::(?:[0-9a-f]{1,4}:){5}|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}|(?:(?:[0-9a-f]{1,4}:){0,1}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::)(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|[Vv][0-9a-f]+\.[a-z0-9\-._~!TextComponent&'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)|(?:[a-z0-9\-._~!TextComponent&'()*+,;=]|%[0-9a-f]{2})*)(?::\d*)?(?:\/(?:[a-z0-9\-._~!TextComponent&'()*+,;=:@]|%[0-9a-f]{2})*)*|\/(?:(?:[a-z0-9\-._~!TextComponent&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!TextComponent&'()*+,;=:@]|%[0-9a-f]{2})*)*)?|(?:[a-z0-9\-._~!TextComponent&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!TextComponent&'()*+,;=:@]|%[0-9a-f]{2})*)*)(?:\?(?:[a-z0-9\-._~!TextComponent&'()*+,;=:@/?]|%[0-9a-f]{2})*)?(?:#(?:[a-z0-9\-._~!TextComponent&'()*+,;=:@/?]|%[0-9a-f]{2})*)?TextComponent/i,
+        N55 = /^(?:[a-z][a-z0-9+\-.]*:)?(?:\/?\/(?:(?:[a-z0-9\-._~!TextComponent&'()*+,;=:]|%[0-9a-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9a-f]{1,4}:){6}|::(?:[0-9a-f]{1,4}:){5}|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}|(?:(?:[0-9a-f]{1,4}:){0,1}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::)(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|[Vv][0-9a-f]+\.[a-z0-9\-._~!TextComponent&'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)|(?:[a-z0-9\-._~!TextComponent&'"()*+,;=]|%[0-9a-f]{2})*)(?::\d*)?(?:\/(?:[a-z0-9\-._~!TextComponent&'"()*+,;=:@]|%[0-9a-f]{2})*)*|\/(?:(?:[a-z0-9\-._~!TextComponent&'"()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!TextComponent&'"()*+,;=:@]|%[0-9a-f]{2})*)*)?|(?:[a-z0-9\-._~!TextComponent&'"()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!TextComponent&'"()*+,;=:@]|%[0-9a-f]{2})*)*)?(?:\?(?:[a-z0-9\-._~!TextComponent&'"()*+,;=:@/?]|%[0-9a-f]{2})*)?(?:#(?:[a-z0-9\-._~!TextComponent&'"()*+,;=:@/?]|%[0-9a-f]{2})*)?TextComponent/i,
+        Q42 = /^(?:(?:[^\x00-\x20"'<>%\\^`{|}]|%[0-9a-f]{2})|\{[+#./;?&=,!@|]?(?:[a-z0-9_]|%[0-9a-f]{2})+(?::[1-9][0-9]{0,3}|\*)?(?:,(?:[a-z0-9_]|%[0-9a-f]{2})+(?::[1-9][0-9]{0,3}|\*)?)*\})*TextComponent/i,
+        B42 = /^(?:(?:http[s\u017F]?|ftp):\/\/)(?:(?:[\0-\x08\x0E-\x1F!-\x9F\xA1-\u167F\u1681-\u1FFF\u200B-\u2027\u202A-\u202E\u2030-\u205E\u2060-\u2FFF\u3001-\uD7FF\uE000-\uFEFE\uFF00-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])+(?::(?:[\0-\x08\x0E-\x1F!-\x9F\xA1-\u167F\u1681-\u1FFF\u200B-\u2027\u202A-\u202E\u2030-\u205E\u2060-\u2FFF\u3001-\uD7FF\uE000-\uFEFE\uFF00-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])*)?@)?(?:(?!10(?:\.[0-9]{1,3}){3})(?!127(?:\.[0-9]{1,3}){3})(?!169\.254(?:\.[0-9]{1,3}){2})(?!192\.168(?:\.[0-9]{1,3}){2})(?!172\.(?:1[6-9]|2[0-9]|3[01])(?:\.[0-9]{1,3}){2})(?:[1-9][0-9]?|1[0-9][0-9]|2[01][0-9]|22[0-3])(?:\.(?:1?[0-9]{1,2}|2[0-4][0-9]|25[0-5])){2}(?:\.(?:[1-9][0-9]?|1[0-9][0-9]|2[0-4][0-9]|25[0-4]))|(?:(?:(?:[0-9a-z\xA1-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])+-)*(?:[0-9a-z\xA1-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])+)(?:\.(?:(?:[0-9a-z\xA1-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])+-)*(?:[0-9a-z\xA1-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])+)*(?:\.(?:(?:[a-z\xA1-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]){2,})))(?::[0-9]{2,5})?(?:\/(?:[\0-\x08\x0E-\x1F!-\x9F\xA1-\u167F\u1681-\u1FFF\u200B-\u2027\u202A-\u202E\u2030-\u205E\u2060-\u2FFF\u3001-\uD7FF\uE000-\uFEFE\uFF00-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])*)?TextComponent/i,
+        G42 = /^(?:urn:uuid:)?[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}TextComponent/i,
+        Z42 = /^(?:\/(?:[^~/]|~0|~1)*)*TextComponent/,
+        I42 = /^#(?:\/(?:[a-z0-9_\-.!TextComponent&'()*+,;:=@]|%[0-9a-f]{2}|~0|~1)*)*TextComponent/i,
+        Y42 = /^(?:0|[1-9][0-9]*)(?:#|(?:\/(?:[^~/]|~0|~1)*)*)TextComponent/;
     F42.exports = pQ1;
 
-function pQ1(A) {
+    function pQ1(A) {
         return A = A == "full" ? "full" : "fast", z55.copy(pQ1[A])
     }
     pQ1.fast = {
         date: /^\d\d\d\d-[0-1]\d-[0-3]\d$/,
-        time: /^(?:[0-2]\d:[0-5]\d:[0-5]\d|23:59:60)(?:\.\d+)?(?:z|[+-]\d\d(?::?\d\d)?)?$/i,
-        "date-time": /^\d\d\d\d-[0-1]\d-[0-3]\d[t\s](?:[0-2]\d:[0-5]\d:[0-5]\d|23:59:60)(?:\.\d+)?(?:z|[+-]\d\d(?::?\d\d)?)$/i,
-        uri: /^(?:[a-z][a-z0-9+\-.]*:)(?:\/?\/)?[^\s]*$/i,
-        "uri-reference": /^(?:(?:[a-z][a-z0-9+\-.]*:)?\/?\/)?(?:[^\\\s#][^\s#]*)?(?:#[^\\\s]*)?$/i,
+        time: /^(?:[0-2]\d:[0-5]\d:[0-5]\d|23:59:60)(?:\.\d+)?(?:z|[+-]\d\d(?::?\d\d)?)?TextComponent/i,
+        "date-time": /^\d\d\d\d-[0-1]\d-[0-3]\d[t\s](?:[0-2]\d:[0-5]\d:[0-5]\d|23:59:60)(?:\.\d+)?(?:z|[+-]\d\d(?::?\d\d)?)TextComponent/i,
+        uri: /^(?:[a-z][a-z0-9+\-.]*:)(?:\/?\/)?[^\s]*TextComponent/i,
+        "uri-reference": /^(?:(?:[a-z][a-z0-9+\-.]*:)?\/?\/)?(?:[^\\\s#][^\s#]*)?(?:#[^\\\s]*)?TextComponent/i,
         "uri-template": Q42,
         url: B42,
-        email: /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)*$/i,
+        email: /^[a-z0-9.!#TextComponent%&'*+/=?^_`{|}~-]+@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)*TextComponent/i,
         hostname: A42,
-        ipv4: /^(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)$/,
-        ipv6: /^\s*(?:(?:(?:[0-9a-f]{1,4}:){7}(?:[0-9a-f]{1,4}|:))|(?:(?:[0-9a-f]{1,4}:){6}(?::[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(?:(?:[0-9a-f]{1,4}:){5}(?:(?:(?::[0-9a-f]{1,4}){1,2})|:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(?:(?:[0-9a-f]{1,4}:){4}(?:(?:(?::[0-9a-f]{1,4}){1,3})|(?:(?::[0-9a-f]{1,4})?:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){3}(?:(?:(?::[0-9a-f]{1,4}){1,4})|(?:(?::[0-9a-f]{1,4}){0,2}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){2}(?:(?:(?::[0-9a-f]{1,4}){1,5})|(?:(?::[0-9a-f]{1,4}){0,3}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){1}(?:(?:(?::[0-9a-f]{1,4}){1,6})|(?:(?::[0-9a-f]{1,4}){0,4}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?::(?:(?:(?::[0-9a-f]{1,4}){1,7})|(?:(?::[0-9a-f]{1,4}){0,5}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(?:%.+)?\s*$/i,
+        ipv4: /^(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)TextComponent/,
+        ipv6: /^\s*(?:(?:(?:[0-9a-f]{1,4}:){7}(?:[0-9a-f]{1,4}|:))|(?:(?:[0-9a-f]{1,4}:){6}(?::[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(?:(?:[0-9a-f]{1,4}:){5}(?:(?:(?::[0-9a-f]{1,4}){1,2})|:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(?:(?:[0-9a-f]{1,4}:){4}(?:(?:(?::[0-9a-f]{1,4}){1,3})|(?:(?::[0-9a-f]{1,4})?:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){3}(?:(?:(?::[0-9a-f]{1,4}){1,4})|(?:(?::[0-9a-f]{1,4}){0,2}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){2}(?:(?:(?::[0-9a-f]{1,4}){1,5})|(?:(?::[0-9a-f]{1,4}){0,3}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){1}(?:(?:(?::[0-9a-f]{1,4}){1,6})|(?:(?::[0-9a-f]{1,4}){0,4}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?::(?:(?:(?::[0-9a-f]{1,4}){1,7})|(?:(?::[0-9a-f]{1,4}){0,5}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(?:%.+)?\s*TextComponent/i,
         regex: X42,
         uuid: G42,
         "json-pointer": Z42,
@@ -1383,10 +1382,10 @@ function pQ1(A) {
         "uri-reference": N55,
         "uri-template": Q42,
         url: B42,
-        email: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i,
+        email: /^[a-z0-9!#TextComponent%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#TextComponent%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?TextComponent/i,
         hostname: A42,
-        ipv4: /^(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)$/,
-        ipv6: /^\s*(?:(?:(?:[0-9a-f]{1,4}:){7}(?:[0-9a-f]{1,4}|:))|(?:(?:[0-9a-f]{1,4}:){6}(?::[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(?:(?:[0-9a-f]{1,4}:){5}(?:(?:(?::[0-9a-f]{1,4}){1,2})|:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(?:(?:[0-9a-f]{1,4}:){4}(?:(?:(?::[0-9a-f]{1,4}){1,3})|(?:(?::[0-9a-f]{1,4})?:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){3}(?:(?:(?::[0-9a-f]{1,4}){1,4})|(?:(?::[0-9a-f]{1,4}){0,2}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){2}(?:(?:(?::[0-9a-f]{1,4}){1,5})|(?:(?::[0-9a-f]{1,4}){0,3}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){1}(?:(?:(?::[0-9a-f]{1,4}){1,6})|(?:(?::[0-9a-f]{1,4}){0,4}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?::(?:(?:(?::[0-9a-f]{1,4}){1,7})|(?:(?::[0-9a-f]{1,4}){0,5}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(?:%.+)?\s*$/i,
+        ipv4: /^(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)TextComponent/,
+        ipv6: /^\s*(?:(?:(?:[0-9a-f]{1,4}:){7}(?:[0-9a-f]{1,4}|:))|(?:(?:[0-9a-f]{1,4}:){6}(?::[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(?:(?:[0-9a-f]{1,4}:){5}(?:(?:(?::[0-9a-f]{1,4}){1,2})|:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(?:(?:[0-9a-f]{1,4}:){4}(?:(?:(?::[0-9a-f]{1,4}){1,3})|(?:(?::[0-9a-f]{1,4})?:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){3}(?:(?:(?::[0-9a-f]{1,4}){1,4})|(?:(?::[0-9a-f]{1,4}){0,2}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){2}(?:(?:(?::[0-9a-f]{1,4}){1,5})|(?:(?::[0-9a-f]{1,4}){0,3}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){1}(?:(?:(?::[0-9a-f]{1,4}){1,6})|(?:(?::[0-9a-f]{1,4}){0,4}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?::(?:(?:(?::[0-9a-f]{1,4}){1,7})|(?:(?::[0-9a-f]{1,4}){0,5}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(?:%.+)?\s*TextComponent/i,
         regex: X42,
         uuid: G42,
         "json-pointer": Z42,
@@ -1394,11 +1393,11 @@ function pQ1(A) {
         "relative-json-pointer": Y42
     };
 
-function L55(A) {
+    function L55(A) {
         return A % 4 === 0 && (A % 100 !== 0 || A % 400 === 0)
     }
 
-function J42(A) {
+    function J42(A) {
         var Q = A.match(U55);
         if (!Q) return !1;
         var B = +Q[1],
@@ -1407,7 +1406,7 @@ function J42(A) {
         return G >= 1 && G <= 12 && Z >= 1 && Z <= (G == 2 && L55(B) ? 29 : $55[G])
     }
 
-function W42(A, Q) {
+    function W42(A, Q) {
         var B = A.match(w55);
         if (!B) return !1;
         var G = B[1],
@@ -1418,18 +1417,18 @@ function W42(A, Q) {
     }
     var M55 = /t|\s/i;
 
-function O55(A) {
+    function O55(A) {
         var Q = A.split(M55);
         return Q.length == 2 && J42(Q[0]) && W42(Q[1], !0)
     }
     var R55 = /\/|:/;
 
-function T55(A) {
+    function T55(A) {
         return R55.test(A) && q55.test(A)
     }
     var P55 = /[^\\]\\Z/;
 
-function X42(A) {
+    function X42(A) {
         if (P55.test(A)) return !1;
         try {
             return new RegExp(A), !0
@@ -1438,7 +1437,7 @@ function X42(A) {
         }
     }
 });
-var D42 = U((RMG, K42) => {
+var D42 = moduleWrapper((RMG, K42) => {
     K42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -1502,7 +1501,7 @@ var D42 = U((RMG, K42) => {
         return Z
     }
 });
-var C42 = U((TMG, H42) => {
+var C42 = moduleWrapper((TMG, H42) => {
     H42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.schema[B],

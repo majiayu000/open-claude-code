@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_031.js
+ * 处理时间: 2025-12-09T03:41:37.624Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.991Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -21,7 +24,7 @@
     Yp2.parseUrl = R13;
     Yp2.stripUrlQueryAndFragment = T13
 });
-var Kp2 = U((Vp2) => {
+var Kp2 = moduleWrapper((Vp2) => {
     Object.defineProperty(Vp2, "__esModule", {
         value: !0
     });
@@ -40,7 +43,7 @@ var Kp2 = U((Vp2) => {
         u13 = ["cookies", "data", "headers", "method", "query_string", "url"],
         Wp2 = ["id", "username", "email"];
 
-function m13(A, Q, B) {
+    function m13(A, Q, B) {
         if (!A) return;
         if (!A.metadata.source || A.metadata.source === "url") {
             let [G, Z] = T71(Q, {
@@ -55,11 +58,11 @@ function m13(A, Q, B) {
         A.setData("query", Xp2(Q, B))
     }
 
-function T71(A, Q = {}) {
+    function T71(A, Q = {}) {
         let B = A.method && A.method.toUpperCase(),
             G = "",
             Z = "url";
-        if (Q.customRoute || A.route) G = Q.customRoute || `${A.baseUrl||""}${A.route&&A.route.path}`, Z = "route";
+        if (Q.customRoute || A.route) G = Q.customRoute || `TextComponent{A.baseUrl||""}TextComponent{A.route&&A.route.path}`, Z = "route";
         else if (A.originalUrl || A.url) G = h13.stripUrlQueryAndFragment(A.originalUrl || A.url || "");
         let I = "";
         if (Q.method && B) I += B;
@@ -68,7 +71,7 @@ function T71(A, Q = {}) {
         return [I, Z]
     }
 
-function d13(A, Q) {
+    function d13(A, Q) {
         switch (Q) {
             case "path":
                 return T71(A, {
@@ -88,18 +91,18 @@ function d13(A, Q) {
         }
     }
 
-function c13(A, Q) {
+    function c13(A, Q) {
         let B = {};
         return (Array.isArray(Q) ? Q : Wp2).forEach((Z) => {
             if (A && Z in A) B[Z] = A[Z]
         }), B
     }
 
-function SZ0(A, Q) {
+    function SZ0(A, Q) {
         let {
             include: B = u13,
             deps: G
-        } = Q || {}, Z = {}, I = A.headers || {}, Y = A.method, J = I.host || A.hostname || A.host || "<no host>", W = A.protocol === "https" || A.socket && A.socket.encrypted ? "https" : "http", X = A.originalUrl || A.url || "", F = X.startsWith(W) ? X : `${W}://${J}${X}`;
+        } = Q || {}, Z = {}, I = A.headers || {}, Y = A.method, J = I.host || A.hostname || A.host || "<no host>", W = A.protocol === "https" || A.socket && A.socket.encrypted ? "https" : "http", X = A.originalUrl || A.url || "", F = X.startsWith(W) ? X : `TextComponent{W}://TextComponent{J}TextComponent{X}`;
         return B.forEach((V) => {
             switch (V) {
                 case "headers": {
@@ -133,7 +136,7 @@ function SZ0(A, Q) {
         }), Z
     }
 
-function p13(A, Q, B) {
+    function p13(A, Q, B) {
         let G = {
             ...g13,
             ...B && B.include
@@ -168,7 +171,7 @@ function p13(A, Q, B) {
         return A
     }
 
-function Xp2(A, Q) {
+    function Xp2(A, Q) {
         let B = A.originalUrl || A.url || "";
         if (!B) return;
         if (B.startsWith("/")) B = `http://dogs.are.great${B}`;
@@ -179,7 +182,7 @@ function Xp2(A, Q) {
         }
     }
 
-function Fp2(A) {
+    function Fp2(A) {
         let Q = {};
         try {
             A.forEach((B, G) => {
@@ -191,7 +194,7 @@ function Fp2(A) {
         return Q
     }
 
-function l13(A) {
+    function l13(A) {
         let Q = Fp2(A.headers);
         return {
             method: A.method,
@@ -207,25 +210,24 @@ function l13(A) {
     Vp2.winterCGHeadersToDict = Fp2;
     Vp2.winterCGRequestToRequestData = l13
 });
-var Ep2 = U((Cp2) => {
+var Ep2 = moduleWrapper((Cp2) => {
     Object.defineProperty(Cp2, "__esModule", {
         value: !0
     });
+    var Dp2 = ["fatal", "error", "warning", "log", "info", "debug"];
 
-var Dp2 = ["fatal", "error", "warning", "log", "info", "debug"];
-
-function e13(A) {
+    function e13(A) {
         return Hp2(A)
     }
 
-function Hp2(A) {
+    function Hp2(A) {
         return A === "warn" ? "warning" : Dp2.includes(A) ? A : "log"
     }
     Cp2.severityFromString = e13;
     Cp2.severityLevelFromString = Hp2;
     Cp2.validSeverityLevels = Dp2
 });
-var _Z0 = U((qp2) => {
+var _Z0 = moduleWrapper((qp2) => {
     Object.defineProperty(qp2, "__esModule", {
         value: !0
     });
@@ -236,7 +238,7 @@ var _Z0 = U((qp2) => {
         return Date.now() / Up2
     }
 
-function G03() {
+    function G03() {
         let {
             performance: A
         } = zp2.GLOBAL_OBJ;
@@ -276,7 +278,7 @@ function G03() {
     qp2.timestampInSeconds = wp2;
     qp2.timestampWithMs = Z03
 });
-var yZ0 = U((Op2) => {
+var yZ0 = moduleWrapper((Op2) => {
     Object.defineProperty(Op2, "__esModule", {
         value: !0
     });
@@ -288,7 +290,7 @@ var yZ0 = U((Op2) => {
         Lp2 = /^sentry-/,
         Mp2 = 8192;
 
-function H03(A) {
+    function H03(A) {
         if (!V03.isString(A) && !Array.isArray(A)) return;
         let Q = {};
         if (Array.isArray(A)) Q = A.reduce((G, Z) => {
@@ -311,27 +313,27 @@ function H03(A) {
         else return
     }
 
-function C03(A) {
+    function C03(A) {
         if (!A) return;
         let Q = Object.entries(A).reduce((B, [G, Z]) => {
-            if (Z) B[`${kZ0}${G}`] = Z;
+            if (Z) B[`TextComponent{kZ0}TextComponent{G}`] = Z;
             return B
         }, {});
         return E03(Q)
     }
 
-function Np2(A) {
+    function Np2(A) {
         return A.split(",").map((Q) => Q.split("=").map((B) => decodeURIComponent(B.trim()))).reduce((Q, [B, G]) => {
             return Q[B] = G, Q
         }, {})
     }
 
-function E03(A) {
+    function E03(A) {
         if (Object.keys(A).length === 0) return;
         return Object.entries(A).reduce((Q, [B, G], Z) => {
-            let I = `${encodeURIComponent(B)}=${encodeURIComponent(G)}`,
-                Y = Z === 0 ? I : `${Q},${I}`;
-            if (Y.length > Mp2) return F03.DEBUG_BUILD && K03.logger.warn(`Not adding key: ${B} with val: ${G} to baggage header due to exceeding baggage size limits.`), Q;
+            let I = `TextComponent{encodeURIComponent(B)}=TextComponent{encodeURIComponent(G)}`,
+                Y = Z === 0 ? I : `TextComponent{Q},TextComponent{I}`;
+            if (Y.length > Mp2) return F03.DEBUG_BUILD && K03.logger.warn(`Not adding key: TextComponent{B} with val: TextComponent{G} to baggage header due to exceeding baggage size limits.`), Q;
             else return Y
         }, "")
     }
@@ -342,15 +344,15 @@ function E03(A) {
     Op2.baggageHeaderToDynamicSamplingContext = H03;
     Op2.dynamicSamplingContextToSentryBaggageHeader = C03
 });
-var jp2 = U((Pp2) => {
+var jp2 = moduleWrapper((Pp2) => {
     Object.defineProperty(Pp2, "__esModule", {
         value: !0
     });
     var Rp2 = yZ0(),
         LO = fTA(),
-        Tp2 = new RegExp("^[ \\t]*([0-9a-f]{32})?-?([0-9a-f]{16})?-?([01])?[ \\t]*$");
+        Tp2 = new RegExp("^[ \\t]*([0-9a-f]{32})?-?([0-9a-f]{16})?-?([01])?[ \\t]*TextComponent");
 
-function xZ0(A) {
+    function xZ0(A) {
         if (!A) return;
         let Q = A.match(Tp2);
         if (!Q) return;
@@ -364,7 +366,7 @@ function xZ0(A) {
         }
     }
 
-function L03(A, Q) {
+    function L03(A, Q) {
         let B = xZ0(A),
             G = Rp2.baggageHeaderToDynamicSamplingContext(Q),
             {
@@ -393,7 +395,7 @@ function L03(A, Q) {
         }
     }
 
-function M03(A, Q) {
+    function M03(A, Q) {
         let B = xZ0(A),
             G = Rp2.baggageHeaderToDynamicSamplingContext(Q),
             {
@@ -414,10 +416,10 @@ function M03(A, Q) {
         }
     }
 
-function O03(A = LO.uuid4(), Q = LO.uuid4().substring(16), B) {
+    function O03(A = LO.uuid4(), Q = LO.uuid4().substring(16), B) {
         let G = "";
         if (B !== void 0) G = B ? "-1" : "-0";
-        return `${A}-${Q}${G}`
+        return `TextComponent{A}-TextComponent{Q}TextComponent{G}`
     }
     Pp2.TRACEPARENT_REGEXP = Tp2;
     Pp2.extractTraceparentData = xZ0;
@@ -425,7 +427,7 @@ function O03(A = LO.uuid4(), Q = LO.uuid4().substring(16), B) {
     Pp2.propagationContextFromHeaders = M03;
     Pp2.tracingContextFromHeaders = L03
 });
-var bZ0 = U((kp2) => {
+var bZ0 = moduleWrapper((kp2) => {
     Object.defineProperty(kp2, "__esModule", {
         value: !0
     });
@@ -433,16 +435,16 @@ var bZ0 = U((kp2) => {
         k03 = mTA(),
         Sp2 = NO();
 
-function y03(A, Q = []) {
+    function y03(A, Q = []) {
         return [A, Q]
     }
 
-function x03(A, Q) {
+    function x03(A, Q) {
         let [B, G] = A;
         return [B, [...G, Q]]
     }
 
-function _p2(A, Q) {
+    function _p2(A, Q) {
         let B = A[1];
         for (let G of B) {
             let Z = G[0].type;
@@ -451,25 +453,25 @@ function _p2(A, Q) {
         return !1
     }
 
-function v03(A, Q) {
+    function v03(A, Q) {
         return _p2(A, (B, G) => Q.includes(G))
     }
 
-function vZ0(A, Q) {
+    function vZ0(A, Q) {
         return (Q || new TextEncoder).encode(A)
     }
 
-function b03(A, Q) {
+    function b03(A, Q) {
         let [B, G] = A, Z = JSON.stringify(B);
 
-function I(Y) {
+        function I(Y) {
             if (typeof Z === "string") Z = typeof Y === "string" ? Z + Y : [vZ0(Z, Q), Y];
             else Z.push(typeof Y === "string" ? vZ0(Y, Q) : Y)
         }
         for (let Y of G) {
             let [J, W] = Y;
             if (I(`
-${JSON.stringify(J)}
+TextComponent{JSON.stringify(J)}
 `), typeof W === "string" || W instanceof Uint8Array) I(W);
             else {
                 let X;
@@ -484,7 +486,7 @@ ${JSON.stringify(J)}
         return typeof Z === "string" ? Z : f03(Z)
     }
 
-function f03(A) {
+    function f03(A) {
         let Q = A.reduce((Z, I) => Z + I.length, 0),
             B = new Uint8Array(Q),
             G = 0;
@@ -492,15 +494,15 @@ function f03(A) {
         return B
     }
 
-function h03(A, Q, B) {
+    function h03(A, Q, B) {
         let G = typeof A === "string" ? Q.encode(A) : A;
 
-function Z(W) {
+        function Z(W) {
             let X = G.subarray(0, W);
             return G = G.subarray(W + 1), X
         }
 
-function I() {
+        function I() {
             let W = G.indexOf(10);
             if (W < 0) W = G.length;
             return JSON.parse(B.decode(Z(W)))
@@ -515,7 +517,7 @@ function I() {
         return [Y, J]
     }
 
-function g03(A, Q) {
+    function g03(A, Q) {
         let B = typeof A.data === "string" ? vZ0(A.data, Q) : A.data;
         return [Sp2.dropUndefinedKeys({
             type: "attachment",
@@ -525,8 +527,7 @@ function g03(A, Q) {
             attachment_type: A.attachmentType
         }), B]
     }
-
-var u03 = {
+    var u03 = {
         session: "session",
         sessions: "session",
         attachment: "attachment",
@@ -543,11 +544,11 @@ var u03 = {
         statsd: "metric_bucket"
     };
 
-function m03(A) {
+    function m03(A) {
         return u03[A]
     }
 
-function d03(A) {
+    function d03(A) {
         if (!A || !A.sdk) return;
         let {
             name: Q,
@@ -559,7 +560,7 @@ function d03(A) {
         }
     }
 
-function c03(A, Q, B, G) {
+    function c03(A, Q, B, G) {
         let Z = A.sdkProcessingMetadata && A.sdkProcessingMetadata.dynamicSamplingContext;
         return {
             event_id: A.event_id,
@@ -588,14 +589,14 @@ function c03(A, Q, B, G) {
     kp2.parseEnvelope = h03;
     kp2.serializeEnvelope = b03
 });
-var xp2 = U((yp2) => {
+var xp2 = moduleWrapper((yp2) => {
     Object.defineProperty(yp2, "__esModule", {
         value: !0
     });
     var AQ3 = bZ0(),
         QQ3 = _Z0();
 
-function BQ3(A, Q, B) {
+    function BQ3(A, Q, B) {
         let G = [{
             type: "client_report"
         }, {
@@ -608,29 +609,29 @@ function BQ3(A, Q, B) {
     }
     yp2.createClientReportEnvelope = BQ3
 });
-var gp2 = U((hp2) => {
+var gp2 = moduleWrapper((hp2) => {
     Object.defineProperty(hp2, "__esModule", {
         value: !0
     });
     var vp2 = 60000;
 
-function bp2(A, Q = Date.now()) {
-        let B = parseInt(`${A}`, 10);
+    function bp2(A, Q = Date.now()) {
+        let B = parseInt(`TextComponent{A}`, 10);
         if (!isNaN(B)) return B * 1000;
-        let G = Date.parse(`${A}`);
+        let G = Date.parse(`TextComponent{A}`);
         if (!isNaN(G)) return G - Q;
         return vp2
     }
 
-function fp2(A, Q) {
+    function fp2(A, Q) {
         return A[Q] || A.all || 0
     }
 
-function ZQ3(A, Q, B = Date.now()) {
+    function ZQ3(A, Q, B = Date.now()) {
         return fp2(A, Q) > B
     }
 
-function IQ3(A, {
+    function IQ3(A, {
         statusCode: Q,
         headers: B
     }, G = Date.now()) {
@@ -658,12 +659,12 @@ function IQ3(A, {
     hp2.parseRetryAfterHeader = bp2;
     hp2.updateRateLimits = IQ3
 });
-var cp2 = U((dp2) => {
+var cp2 = moduleWrapper((dp2) => {
     Object.defineProperty(dp2, "__esModule", {
         value: !0
     });
 
-function up2(A, Q, B) {
+    function up2(A, Q, B) {
         let G = Q.match(/([a-z_]+)\.(.*)/i);
         if (G === null) A[Q] = B;
         else {
@@ -672,11 +673,11 @@ function up2(A, Q, B) {
         }
     }
 
-function VQ3(A, Q, B = {}) {
+    function VQ3(A, Q, B = {}) {
         return Array.isArray(Q) ? mp2(A, Q, B) : KQ3(A, Q, B)
     }
 
-function mp2(A, Q, B) {
+    function mp2(A, Q, B) {
         let G = Q.find((Z) => Z.name === A.name);
         if (G) {
             for (let [Z, I] of Object.entries(B)) up2(G, Z, I);
@@ -685,7 +686,7 @@ function mp2(A, Q, B) {
         return [...Q, A]
     }
 
-function KQ3(A, Q, B) {
+    function KQ3(A, Q, B) {
         return (Z) => {
             let I = Q(Z);
             if (A.allowExclusionByUser) {
@@ -696,12 +697,12 @@ function KQ3(A, Q, B) {
     }
     dp2.addOrUpdateIntegration = VQ3
 });
-var lp2 = U((pp2) => {
+var lp2 = moduleWrapper((pp2) => {
     Object.defineProperty(pp2, "__esModule", {
         value: !0
     });
 
-function HQ3(A) {
+    function HQ3(A) {
         let Q = [],
             B = {};
         return {
@@ -735,7 +736,7 @@ function HQ3(A) {
     }
     pp2.makeFifoCache = HQ3
 });
-var sp2 = U((ap2) => {
+var sp2 = moduleWrapper((ap2) => {
     Object.defineProperty(ap2, "__esModule", {
         value: !0
     });
@@ -744,11 +745,11 @@ var sp2 = U((ap2) => {
         EQ3 = mTA(),
         zQ3 = NO();
 
-function hZ0(A, Q) {
+    function hZ0(A, Q) {
         return A(Q.stack || "", 1)
     }
 
-function np2(A, Q) {
+    function np2(A, Q) {
         let B = {
                 type: Q.name || Q.constructor.name,
                 value: Q.message
@@ -760,13 +761,13 @@ function np2(A, Q) {
         return B
     }
 
-function UQ3(A) {
+    function UQ3(A) {
         if ("name" in A && typeof A.name === "string") {
-            let Q = `'${A.name}' captured as exception`;
-            if ("message" in A && typeof A.message === "string") Q += ` with message '${A.message}'`;
+            let Q = `'TextComponent{A.name}' captured as exception`;
+            if ("message" in A && typeof A.message === "string") Q += ` with message 'TextComponent{A.message}'`;
             return Q
         } else if ("message" in A && typeof A.message === "string") return A.message;
-        else return `Object captured as exception with keys: ${zQ3.extractExceptionKeysForMessage(A)}`
+        else return `Object captured as exception with keys: TextComponent{zQ3.extractExceptionKeysForMessage(A)}`
     }
 
     function $Q3(A, Q, B, G) {
@@ -800,7 +801,7 @@ function UQ3(A) {
         }
     }
 
-function wQ3(A, Q, B = "info", G, Z) {
+    function wQ3(A, Q, B = "info", G, Z) {
         let I = {
             event_id: G && G.event_id,
             level: B
@@ -833,14 +834,14 @@ function wQ3(A, Q, B = "info", G, Z) {
     ap2.exceptionFromError = np2;
     ap2.parseStackFrames = hZ0
 });
-var op2 = U((rp2) => {
+var op2 = moduleWrapper((rp2) => {
     Object.defineProperty(rp2, "__esModule", {
         value: !0
     });
     var OQ3 = NO(),
         RQ3 = V71();
 
-function TQ3(A, Q, B, G) {
+    function TQ3(A, Q, B, G) {
         let Z = A(),
             I = !1,
             Y = !0;
@@ -860,7 +861,7 @@ function TQ3(A, Q, B, G) {
         }
     }
 
-function PQ3(A, Q, B) {
+    function PQ3(A, Q, B) {
         let G = Q ? Q.replace(/^file:\/\//, "") : void 0,
             Z = A.location.columnNumber ? A.location.columnNumber + 1 : void 0,
             I = A.location.lineNumber ? A.location.lineNumber + 1 : void 0;
@@ -876,12 +877,11 @@ function PQ3(A, Q, B) {
     rp2.callFrameToStackFrame = PQ3;
     rp2.watchdogTimer = TQ3
 });
-var Al2 = U((ep2) => {
+var Al2 = moduleWrapper((ep2) => {
     Object.defineProperty(ep2, "__esModule", {
         value: !0
     });
-
-class tp2 {
+    class tp2 {
         constructor(A) {
             this._maxSize = A, this._cache = new Map
         }
@@ -915,33 +915,31 @@ class tp2 {
     }
     ep2.LRUMap = tp2
 });
-var gZ0 = U((Ql2) => {
+var gZ0 = moduleWrapper((Ql2) => {
     Object.defineProperty(Ql2, "__esModule", {
         value: !0
     });
 
-function kQ3(A, Q) {
+    function kQ3(A, Q) {
         return A != null ? A : Q()
     }
     Ql2._nullishCoalesce = kQ3
 });
-var Gl2 = U((Bl2) => {
+var Gl2 = moduleWrapper((Bl2) => {
     Object.defineProperty(Bl2, "__esModule", {
         value: !0
     });
     var xQ3 = gZ0();
-
-async function vQ3(A, Q) {
+    async function vQ3(A, Q) {
         return xQ3._nullishCoalesce(A, Q)
     }
     Bl2._asyncNullishCoalesce = vQ3
 });
-var uZ0 = U((Zl2) => {
+var uZ0 = moduleWrapper((Zl2) => {
     Object.defineProperty(Zl2, "__esModule", {
         value: !0
     });
-
-async function fQ3(A) {
+    async function fQ3(A) {
         let Q = void 0,
             B = A[0],
             G = 1;
@@ -956,24 +954,23 @@ async function fQ3(A) {
     }
     Zl2._asyncOptionalChain = fQ3
 });
-var Yl2 = U((Il2) => {
+var Yl2 = moduleWrapper((Il2) => {
     Object.defineProperty(Il2, "__esModule", {
         value: !0
     });
     var gQ3 = uZ0();
-
-async function uQ3(A) {
+    async function uQ3(A) {
         let Q = await gQ3._asyncOptionalChain(A);
         return Q == null ? !0 : Q
     }
     Il2._asyncOptionalChainDelete = uQ3
 });
-var mZ0 = U((Jl2) => {
+var mZ0 = moduleWrapper((Jl2) => {
     Object.defineProperty(Jl2, "__esModule", {
         value: !0
     });
 
-function dQ3(A) {
+    function dQ3(A) {
         let Q = void 0,
             B = A[0],
             G = 1;
@@ -988,29 +985,29 @@ function dQ3(A) {
     }
     Jl2._optionalChain = dQ3
 });
-var Xl2 = U((Wl2) => {
+var Xl2 = moduleWrapper((Wl2) => {
     Object.defineProperty(Wl2, "__esModule", {
         value: !0
     });
     var pQ3 = mZ0();
 
-function lQ3(A) {
+    function lQ3(A) {
         let Q = pQ3._optionalChain(A);
         return Q == null ? !0 : Q
     }
     Wl2._optionalChainDelete = lQ3
 });
-var Vl2 = U((Fl2) => {
+var Vl2 = moduleWrapper((Fl2) => {
     Object.defineProperty(Fl2, "__esModule", {
         value: !0
     });
 
-function nQ3(A) {
-        return A.replace(/[|\\{}()[\]^$+*?.]/g, "\\$&").replace(/-/g, "\\x2d")
+    function nQ3(A) {
+        return A.replace(/[|\\{}()[\]^TextComponent+*?.]/g, "\\TextComponent&").replace(/-/g, "\\x2d")
     }
     Fl2.escapeStringForRegex = nQ3
 });
-var l0 = U((nZ0) => {
+var l0 = moduleWrapper((nZ0) => {
     Object.defineProperty(nZ0, "__esModule", {
         value: !0
     });
@@ -1233,36 +1230,37 @@ var l0 = U((nZ0) => {
     nZ0.escapeStringForRegex = $B3.escapeStringForRegex;
     nZ0.supportsHistory = wB3.supportsHistory
 });
-var AF = U((Cl2) => {
+var AF = moduleWrapper((Cl2) => {
     Object.defineProperty(Cl2, "__esModule", {
         value: !0
     });
     var q43 = typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__;
     Cl2.DEBUG_BUILD = q43
 });
-var aWA = U((El2) => {
+var aWA = moduleWrapper((El2) => {
     Object.defineProperty(El2, "__esModule", {
         value: !0
     });
-    var L43 = "production";
-    El2.DEFAULT_ENVIRONMENT = L43
+    /* PRODUCTION = PRODUCTION = "production" */
+var PRODUCTION = "production";
+    El2.DEFAULT_ENVIRONMENT = PRODUCTION
 });
-var aTA = U((Ul2) => {
+var aTA = moduleWrapper((Ul2) => {
     Object.defineProperty(Ul2, "__esModule", {
         value: !0
     });
     var y71 = l0(),
         O43 = AF();
 
-function zl2() {
+    function zl2() {
         return y71.getGlobalSingleton("globalEventProcessors", () => [])
     }
 
-function R43(A) {
+    function R43(A) {
         zl2().push(A)
     }
 
-function aZ0(A, Q, B, G = 0) {
+    function aZ0(A, Q, B, G = 0) {
         return new y71.SyncPromise((Z, I) => {
             let Y = A[G];
             if (Q === null || typeof Y !== "function") Z(Q);
@@ -1270,7 +1268,7 @@ function aZ0(A, Q, B, G = 0) {
                 let J = Y({
                     ...Q
                 }, B);
-                if (O43.DEBUG_BUILD && Y.id && J === null && y71.logger.log(`Event processor "${Y.id}" dropped event`), y71.isThenable(J)) J.then((W) => aZ0(A, W, B, G + 1).then(Z)).then(null, I);
+                if (O43.DEBUG_BUILD && Y.id && J === null && y71.logger.log(`Event processor "TextComponent{Y.id}" dropped event`), y71.isThenable(J)) J.then((W) => aZ0(A, W, B, G + 1).then(Z)).then(null, I);
                 else aZ0(A, J, B, G + 1).then(Z).then(null, I)
             }
         })
@@ -1279,13 +1277,13 @@ function aZ0(A, Q, B, G = 0) {
     Ul2.getGlobalEventProcessors = zl2;
     Ul2.notifyEventProcessors = aZ0
 });
-var sWA = U(($l2) => {
+var sWA = moduleWrapper(($l2) => {
     Object.defineProperty($l2, "__esModule", {
         value: !0
     });
     var sTA = l0();
 
-function S43(A) {
+    function S43(A) {
         let Q = sTA.timestampInSeconds(),
             B = {
                 sid: sTA.uuid4(),
@@ -1302,7 +1300,7 @@ function S43(A) {
         return B
     }
 
-function sZ0(A, Q = {}) {
+    function sZ0(A, Q = {}) {
         if (Q.user) {
             if (!A.ipAddress && Q.user.ip_address) A.ipAddress = Q.user.ip_address;
             if (!A.did && !Q.did) A.did = Q.user.id || Q.user.email || Q.user.username
@@ -1311,7 +1309,7 @@ function sZ0(A, Q = {}) {
         if (Q.ignoreDuration) A.ignoreDuration = Q.ignoreDuration;
         if (Q.sid) A.sid = Q.sid.length === 32 ? Q.sid : sTA.uuid4();
         if (Q.init !== void 0) A.init = Q.init;
-        if (!A.did && Q.did) A.did = `${Q.did}`;
+        if (!A.did && Q.did) A.did = `TextComponent{Q.did}`;
         if (typeof Q.started === "number") A.started = Q.started;
         if (A.ignoreDuration) A.duration = void 0;
         else if (typeof Q.duration === "number") A.duration = Q.duration;
@@ -1327,7 +1325,7 @@ function sZ0(A, Q = {}) {
         if (Q.status) A.status = Q.status
     }
 
-function _43(A, Q) {
+    function _43(A, Q) {
         let B = {};
         if (Q) B = {
             status: Q
@@ -1338,15 +1336,15 @@ function _43(A, Q) {
         sZ0(A, B)
     }
 
-function k43(A) {
+    function k43(A) {
         return sTA.dropUndefinedKeys({
-            sid: `${A.sid}`,
+            sid: `TextComponent{A.sid}`,
             init: A.init,
             started: new Date(A.started * 1000).toISOString(),
             timestamp: new Date(A.timestamp * 1000).toISOString(),
             status: A.status,
             errors: A.errors,
-            did: typeof A.did === "number" || typeof A.did === "string" ? `${A.did}` : void 0,
+            did: typeof A.did === "number" || typeof A.did === "string" ? `TextComponent{A.did}` : void 0,
             duration: A.duration,
             abnormal_mechanism: A.abnormal_mechanism,
             attrs: {
@@ -1361,7 +1359,7 @@ function k43(A) {
     $l2.makeSession = S43;
     $l2.updateSession = sZ0
 });
-var C$ = U((Ml2) => {
+var C$ = moduleWrapper((Ml2) => {
     Object.defineProperty(Ml2, "__esModule", {
         value: !0
     });
@@ -1369,7 +1367,7 @@ var C$ = U((Ml2) => {
         b43 = 0,
         ql2 = 1;
 
-function f43(A) {
+    function f43(A) {
         let {
             spanId: Q,
             traceId: B
@@ -1393,7 +1391,7 @@ function f43(A) {
         })
     }
 
-function h43(A) {
+    function h43(A) {
         let {
             traceId: Q,
             spanId: B
@@ -1401,28 +1399,28 @@ function h43(A) {
         return rZ0.generateSentryTraceHeader(Q, B, G)
     }
 
-function g43(A) {
+    function g43(A) {
         if (typeof A === "number") return wl2(A);
         if (Array.isArray(A)) return A[0] + A[1] / 1e9;
         if (A instanceof Date) return wl2(A.getTime());
         return rZ0.timestampInSeconds()
     }
 
-function wl2(A) {
+    function wl2(A) {
         return A > 9999999999 ? A / 1000 : A
     }
 
-function Nl2(A) {
+    function Nl2(A) {
         if (u43(A)) return A.getSpanJSON();
         if (typeof A.toJSON === "function") return A.toJSON();
         return {}
     }
 
-function u43(A) {
+    function u43(A) {
         return typeof A.getSpanJSON === "function"
     }
 
-function Ll2(A) {
+    function Ll2(A) {
         let {
             traceFlags: Q
         } = A.spanContext();
@@ -1436,7 +1434,7 @@ function Ll2(A) {
     Ml2.spanToTraceContext = f43;
     Ml2.spanToTraceHeader = h43
 });
-var x71 = U((jl2) => {
+var x71 = moduleWrapper((jl2) => {
     Object.defineProperty(jl2, "__esModule", {
         value: !0
     });
@@ -1447,7 +1445,7 @@ var x71 = U((jl2) => {
         oZ0 = v71(),
         s43 = C$();
 
-function r43(A, Q, B, G, Z, I) {
+    function r43(A, Q, B, G, Z, I) {
         let {
             normalizeDepth: Y = 3,
             normalizeMaxBreadth: J = 1000
@@ -1480,7 +1478,7 @@ function r43(A, Q, B, G, Z, I) {
         })
     }
 
-function o43(A, Q) {
+    function o43(A, Q) {
         let {
             environment: B,
             release: G,
@@ -1498,7 +1496,7 @@ function o43(A, Q) {
     }
     var Rl2 = new WeakMap;
 
-function Tl2(A, Q) {
+    function Tl2(A, Q) {
         let B = hq.GLOBAL_OBJ._sentryDebugIds;
         if (!B) return;
         let G, Z = Rl2.get(Q);

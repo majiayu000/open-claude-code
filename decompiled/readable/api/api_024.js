@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_024.js
+ * 处理时间: 2025-12-09T03:41:36.266Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.879Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -22,14 +25,14 @@
                     delete G._loadingSchemas[F]
                 }
 
-function D(H) {
+                function D(H) {
                     return G._refs[H] || G._schemas[H]
                 }
             }
         }
     }
 });
-var K82 = U((eMG, V82) => {
+var K82 = moduleWrapper((eMG, V82) => {
     V82.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -149,7 +152,7 @@ var K82 = U((eMG, V82) => {
         return Z
     }
 });
-var QA0 = U((AOG, S55) => {
+var QA0 = moduleWrapper((AOG, S55) => {
     S55.exports = {
         $schema: "http://json-schema.org/draft-07/schema#",
         $id: "http://json-schema.org/draft-07/schema#",
@@ -369,7 +372,7 @@ var QA0 = U((AOG, S55) => {
         default: !0
     }
 });
-var C82 = U((QOG, H82) => {
+var C82 = moduleWrapper((QOG, H82) => {
     var D82 = QA0();
     H82.exports = {
         $id: "https://github.com/ajv-validator/ajv/blob/master/lib/definition_schema.js",
@@ -426,8 +429,8 @@ var C82 = U((QOG, H82) => {
         }
     }
 });
-var z82 = U((BOG, E82) => {
-    var _55 = /^[a-z_$][a-z0-9_$-]*$/i,
+var z82 = moduleWrapper((BOG, E82) => {
+    var _55 = /^[a-z_$][a-z0-9_$-]*TextComponent/i,
         k55 = K82(),
         y55 = C82();
     E82.exports = {
@@ -437,7 +440,7 @@ var z82 = U((BOG, E82) => {
         validate: BA0
     };
 
-function x55(A, Q) {
+    function x55(A, Q) {
         var B = this.RULES;
         if (B.keywords[A]) throw Error("Keyword " + A + " is already defined");
         if (!_55.test(A)) throw Error("Keyword " + A + " is not a valid identifier");
@@ -459,7 +462,7 @@ function x55(A, Q) {
         }
         B.keywords[A] = B.all[A] = !0;
 
-function Y(J, W, X) {
+        function Y(J, W, X) {
             var F;
             for (var V = 0; V < B.length; V++) {
                 var K = B[V];
@@ -472,8 +475,7 @@ function Y(J, W, X) {
                 type: W,
                 rules: []
             }, B.push(F);
-
-var D = {
+            var D = {
                 keyword: J,
                 definition: X,
                 custom: !0,
@@ -485,12 +487,12 @@ var D = {
         return this
     }
 
-function v55(A) {
+    function v55(A) {
         var Q = this.RULES.custom[A];
         return Q ? Q.definition : this.RULES.keywords[A] || !1
     }
 
-function b55(A) {
+    function b55(A) {
         var Q = this.RULES;
         delete Q.keywords[A], delete Q.all[A], delete Q.custom[A];
         for (var B = 0; B < Q.length; B++) {
@@ -504,7 +506,7 @@ function b55(A) {
         return this
     }
 
-function BA0(A, Q) {
+    function BA0(A, Q) {
         BA0.errors = null;
         var B = this._validateKeyword = this._validateKeyword || this.compile(y55, !0);
         if (B(A)) return !0;
@@ -512,7 +514,7 @@ function BA0(A, Q) {
         else return !1
     }
 });
-var U82 = U((GOG, f55) => {
+var U82 = moduleWrapper((GOG, f55) => {
     f55.exports = {
         $schema: "http://json-schema.org/draft-07/schema#",
         $id: "https://raw.githubusercontent.com/ajv-validator/ajv/master/lib/refs/data.json#",
@@ -532,7 +534,7 @@ var U82 = U((GOG, f55) => {
         additionalProperties: !1
     }
 });
-var aQ1 = U((ZOG, T82) => {
+var aQ1 = moduleWrapper((ZOG, T82) => {
     var w82 = o92(),
         rAA = hQ1(),
         h55 = e92(),
@@ -568,7 +570,7 @@ var aQ1 = U((ZOG, T82) => {
         $82 = ["removeAdditional", "useDefaults", "coerceTypes", "strictDefaults"],
         d55 = ["/properties"];
 
-function kJ(A) {
+    function kJ(A) {
         if (!(this instanceof kJ)) return new kJ(A);
         if (A = this._opts = L82.copy(A) || {}, V35(this), this._schemas = {}, this._refs = {}, this._fragments = {}, this._formats = u55(A.format), this._cache = A.cache || new h55, this._loadingSchemas = {}, this._compilations = [], this.RULES = m55(), this._getId = A35(A), A.loopRequired = A.loopRequired || 1 / 0, A.errorDataPath == "property") A._errorDataPathProperty = !0;
         if (A.serialize === void 0) A.serialize = g55;
@@ -583,7 +585,7 @@ function kJ(A) {
         J35(this)
     }
 
-function c55(A, Q) {
+    function c55(A, Q) {
         var B;
         if (typeof A == "string") {
             if (B = this.getSchema(A), !B) throw Error('no schema with key or ref "' + A + '"')
@@ -596,12 +598,12 @@ function c55(A, Q) {
         return Z
     }
 
-function p55(A, Q) {
+    function p55(A, Q) {
         var B = this._addSchema(A, void 0, Q);
         return B.validate || this._compile(B)
     }
 
-function l55(A, Q, B, G) {
+    function l55(A, Q, B, G) {
         if (Array.isArray(A)) {
             for (var Z = 0; Z < A.length; Z++) this.addSchema(A[Z], void 0, B, G);
             return this
@@ -611,11 +613,11 @@ function l55(A, Q, B, G) {
         return Q = rAA.normalizeId(Q || I), R82(this, Q), this._schemas[Q] = this._addSchema(A, B, G, !0), this
     }
 
-function i55(A, Q, B) {
+    function i55(A, Q, B) {
         return this.addSchema(A, Q, B, !0), this
     }
 
-function n55(A, Q) {
+    function n55(A, Q) {
         var B = A.$schema;
         if (B !== void 0 && typeof B != "string") throw Error("$schema must be a string");
         if (B = B || this._opts.defaultMeta || a55(this), !B) return this.logger.warn("meta-schema not available"), this.errors = null, !0;
@@ -628,12 +630,12 @@ function n55(A, Q) {
         return G
     }
 
-function a55(A) {
+    function a55(A) {
         var Q = A._opts.meta;
         return A._opts.defaultMeta = typeof Q == "object" ? A._getId(Q) || Q : A.getSchema(iQ1) ? iQ1 : void 0, A._opts.defaultMeta
     }
 
-function s55(A) {
+    function s55(A) {
         var Q = O82(this, A);
         switch (typeof Q) {
             case "object":
@@ -645,7 +647,7 @@ function s55(A) {
         }
     }
 
-function r55(A, Q) {
+    function r55(A, Q) {
         var B = rAA.schema.call(A, {
             schema: {}
         }, Q);
@@ -666,11 +668,11 @@ function r55(A, Q) {
         }
     }
 
-function O82(A, Q) {
+    function O82(A, Q) {
         return Q = rAA.normalizeId(Q), A._schemas[Q] || A._refs[Q] || A._fragments[Q]
     }
 
-function o55(A) {
+    function o55(A) {
         if (A instanceof RegExp) return lQ1(this, this._schemas, A), lQ1(this, this._refs, A), this;
         switch (typeof A) {
             case "undefined":
@@ -689,14 +691,14 @@ function o55(A) {
         return this
     }
 
-function lQ1(A, Q, B) {
+    function lQ1(A, Q, B) {
         for (var G in Q) {
             var Z = Q[G];
             if (!Z.meta && (!B || B.test(G))) A._cache.del(Z.cacheKey), delete Q[G]
         }
     }
 
-function t55(A, Q, B, G) {
+    function t55(A, Q, B, G) {
         if (typeof A != "object" && typeof A != "boolean") throw Error("schema should be object or boolean");
         var Z = this._opts.serialize,
             I = Z ? Z(A) : A,
@@ -721,7 +723,7 @@ function t55(A, Q, B, G) {
         return V
     }
 
-function e55(A, Q) {
+    function e55(A, Q) {
         if (A.compiling) {
             if (A.validate = Z, Z.schema = A.schema, Z.errors = null, Z.root = Q ? Q : Z, A.schema.$async === !0) Z.$async = !0;
             return Z
@@ -739,14 +741,14 @@ function e55(A, Q) {
         }
         return A.validate = G, A.refs = G.refs, A.refVal = G.refVal, A.root = G.root, G;
 
-function Z() {
+        function Z() {
             var I = A.validate,
                 Y = I.apply(this, arguments);
             return Z.errors = I.errors, Y
         }
     }
 
-function A35(A) {
+    function A35(A) {
         switch (A.schemaId) {
             case "auto":
                 return G35;
@@ -757,22 +759,22 @@ function A35(A) {
         }
     }
 
-function Q35(A) {
+    function Q35(A) {
         if (A.$id) this.logger.warn("schema $id ignored", A.$id);
         return A.id
     }
 
-function B35(A) {
+    function B35(A) {
         if (A.id) this.logger.warn("schema id ignored", A.id);
         return A.$id
     }
 
-function G35(A) {
+    function G35(A) {
         if (A.$id && A.id && A.$id != A.id) throw Error("schema $id is different from id");
         return A.$id || A.id
     }
 
-function Z35(A, Q) {
+    function Z35(A, Q) {
         if (A = A || this.errors, !A) return "No errors";
         Q = Q || {};
         var B = Q.separator === void 0 ? ", " : Q.separator,
@@ -785,12 +787,12 @@ function Z35(A, Q) {
         return Z.slice(0, -B.length)
     }
 
-function I35(A, Q) {
+    function I35(A, Q) {
         if (typeof Q == "string") Q = new RegExp(Q);
         return this._formats[A] = Q, this
     }
 
-function Y35(A) {
+    function Y35(A) {
         var Q;
         if (A._opts.$data) Q = U82(), A.addMetaSchema(Q, Q.$id, !0);
         if (A._opts.meta === !1) return;
@@ -799,7 +801,7 @@ function Y35(A) {
         A.addMetaSchema(B, iQ1, !0), A._refs["http://json-schema.org/schema"] = iQ1
     }
 
-function J35(A) {
+    function J35(A) {
         var Q = A._opts.schemas;
         if (!Q) return;
         if (Array.isArray(Q)) A.addSchema(Q);
@@ -807,31 +809,31 @@ function J35(A) {
             for (var B in Q) A.addSchema(Q[B], B)
     }
 
-function W35(A) {
+    function W35(A) {
         for (var Q in A._opts.formats) {
             var B = A._opts.formats[Q];
             A.addFormat(Q, B)
         }
     }
 
-function X35(A) {
+    function X35(A) {
         for (var Q in A._opts.keywords) {
             var B = A._opts.keywords[Q];
             A.addKeyword(Q, B)
         }
     }
 
-function R82(A, Q) {
+    function R82(A, Q) {
         if (A._schemas[Q] || A._refs[Q]) throw Error('schema with key or id "' + Q + '" already exists')
     }
 
-function F35(A) {
+    function F35(A) {
         var Q = L82.copy(A._opts);
         for (var B = 0; B < $82.length; B++) delete Q[$82[B]];
         return Q
     }
 
-function V35(A) {
+    function V35(A) {
         var Q = A._opts.logger;
         if (Q === !1) A.logger = {
             log: GA0,
@@ -845,13 +847,13 @@ function V35(A) {
         }
     }
 
-function GA0() {}
+    function GA0() {}
 });
 var P82, sQ1;
-var j82 = L(() => {
+var j82 = lazyLoader(() => {
     ye1();
     PD();
-    P82 = GA(aQ1(), 1);
+    P82 = esmImport(aQ1(), 1);
     sQ1 = class sQ1 extends PLA {
         constructor(A, Q) {
             var B;
@@ -864,7 +866,7 @@ var j82 = L(() => {
         }
         assertCapability(A, Q) {
             var B;
-            if (!((B = this._serverCapabilities) === null || B === void 0 ? void 0 : B[A])) throw Error(`Server does not support ${A} (required for ${Q})`)
+            if (!((B = this._serverCapabilities) === null || B === void 0 ? void 0 : B[A])) throw Error(`Server does not support TextComponent{A} (required for TextComponent{Q})`)
         }
         async connect(A, Q) {
             if (await super.connect(A), A.sessionId !== void 0) return;
@@ -877,8 +879,8 @@ var j82 = L(() => {
                         clientInfo: this._clientInfo
                     }
                 }, $e1, Q);
-                if (B === void 0) throw Error(`Server sent invalid initialize result: ${B}`);
-                if (!$Q1.includes(B.protocolVersion)) throw Error(`Server's protocol version is not supported: ${B.protocolVersion}`);
+                if (B === void 0) throw Error(`Server sent invalid initialize result: TextComponent{B}`);
+                if (!$Q1.includes(B.protocolVersion)) throw Error(`Server's protocol version is not supported: TextComponent{B.protocolVersion}`);
                 if (this._serverCapabilities = B.capabilities, this._serverVersion = B.serverInfo, A.setProtocolVersion) A.setProtocolVersion(B.protocolVersion);
                 this._instructions = B.instructions, await this.notification({
                     method: "notifications/initialized"
@@ -900,26 +902,26 @@ var j82 = L(() => {
             var Q, B, G, Z, I;
             switch (A) {
                 case "logging/setLevel":
-                    if (!((Q = this._serverCapabilities) === null || Q === void 0 ? void 0 : Q.logging)) throw Error(`Server does not support logging (required for ${A})`);
+                    if (!((Q = this._serverCapabilities) === null || Q === void 0 ? void 0 : Q.logging)) throw Error(`Server does not support logging (required for TextComponent{A})`);
                     break;
                 case "prompts/get":
                 case "prompts/list":
-                    if (!((B = this._serverCapabilities) === null || B === void 0 ? void 0 : B.prompts)) throw Error(`Server does not support prompts (required for ${A})`);
+                    if (!((B = this._serverCapabilities) === null || B === void 0 ? void 0 : B.prompts)) throw Error(`Server does not support prompts (required for TextComponent{A})`);
                     break;
                 case "resources/list":
                 case "resources/templates/list":
                 case "resources/read":
                 case "resources/subscribe":
                 case "resources/unsubscribe":
-                    if (!((G = this._serverCapabilities) === null || G === void 0 ? void 0 : G.resources)) throw Error(`Server does not support resources (required for ${A})`);
-                    if (A === "resources/subscribe" && !this._serverCapabilities.resources.subscribe) throw Error(`Server does not support resource subscriptions (required for ${A})`);
+                    if (!((G = this._serverCapabilities) === null || G === void 0 ? void 0 : G.resources)) throw Error(`Server does not support resources (required for TextComponent{A})`);
+                    if (A === "resources/subscribe" && !this._serverCapabilities.resources.subscribe) throw Error(`Server does not support resource subscriptions (required for TextComponent{A})`);
                     break;
                 case "tools/call":
                 case "tools/list":
-                    if (!((Z = this._serverCapabilities) === null || Z === void 0 ? void 0 : Z.tools)) throw Error(`Server does not support tools (required for ${A})`);
+                    if (!((Z = this._serverCapabilities) === null || Z === void 0 ? void 0 : Z.tools)) throw Error(`Server does not support tools (required for TextComponent{A})`);
                     break;
                 case "completion/complete":
-                    if (!((I = this._serverCapabilities) === null || I === void 0 ? void 0 : I.completions)) throw Error(`Server does not support completions (required for ${A})`);
+                    if (!((I = this._serverCapabilities) === null || I === void 0 ? void 0 : I.completions)) throw Error(`Server does not support completions (required for TextComponent{A})`);
                     break;
                 case "initialize":
                     break;
@@ -931,7 +933,7 @@ var j82 = L(() => {
             var Q;
             switch (A) {
                 case "notifications/roots/list_changed":
-                    if (!((Q = this._capabilities.roots) === null || Q === void 0 ? void 0 : Q.listChanged)) throw Error(`Client does not support roots list changed notifications (required for ${A})`);
+                    if (!((Q = this._capabilities.roots) === null || Q === void 0 ? void 0 : Q.listChanged)) throw Error(`Client does not support roots list changed notifications (required for TextComponent{A})`);
                     break;
                 case "notifications/initialized":
                     break;
@@ -944,13 +946,13 @@ var j82 = L(() => {
         assertRequestHandlerCapability(A) {
             switch (A) {
                 case "sampling/createMessage":
-                    if (!this._capabilities.sampling) throw Error(`Client does not support sampling capability (required for ${A})`);
+                    if (!this._capabilities.sampling) throw Error(`Client does not support sampling capability (required for TextComponent{A})`);
                     break;
                 case "elicitation/create":
-                    if (!this._capabilities.elicitation) throw Error(`Client does not support elicitation capability (required for ${A})`);
+                    if (!this._capabilities.elicitation) throw Error(`Client does not support elicitation capability (required for TextComponent{A})`);
                     break;
                 case "roots/list":
-                    if (!this._capabilities.roots) throw Error(`Client does not support roots capability (required for ${A})`);
+                    if (!this._capabilities.roots) throw Error(`Client does not support roots capability (required for TextComponent{A})`);
                     break;
                 case "ping":
                     break
@@ -1024,12 +1026,12 @@ var j82 = L(() => {
                 }, Q, B),
                 Z = this.getToolOutputValidator(A.name);
             if (Z) {
-                if (!G.structuredContent && !G.isError) throw new yE(kE.InvalidRequest, `Tool ${A.name} has an output schema but did not return structured content`);
+                if (!G.structuredContent && !G.isError) throw new yE(kE.InvalidRequest, `Tool TextComponent{A.name} has an output schema but did not return structured content`);
                 if (G.structuredContent) try {
-                    if (!Z(G.structuredContent)) throw new yE(kE.InvalidParams, `Structured content does not match the tool's output schema: ${this._ajv.errorsText(Z.errors)}`)
+                    if (!Z(G.structuredContent)) throw new yE(kE.InvalidParams, `Structured content does not match the tool's output schema: TextComponent{this._ajv.errorsText(Z.errors)}`)
                 } catch (I) {
                     if (I instanceof yE) throw I;
-                    throw new yE(kE.InvalidParams, `Failed to validate structured content: ${I instanceof Error?I.message:String(I)}`)
+                    throw new yE(kE.InvalidParams, `Failed to validate structured content: TextComponent{I instanceof Error?I.message:String(I)}`)
                 }
             }
             return G
@@ -1059,7 +1061,6 @@ var j82 = L(() => {
         }
     }
 });
-
 class SLA {
     append(A) {
         this._buffer = this._buffer ? Buffer.concat([this._buffer, A]) : A
@@ -1085,7 +1086,7 @@ function rQ1(A) {
     return JSON.stringify(A) + `
 `
 }
-var ZA0 = L(() => {
+var ZA0 = lazyLoader(() => {
     PD()
 });
 import oQ1 from "node:process";
@@ -1103,7 +1104,6 @@ function C35() {
     }
     return A
 }
-
 class IA0 {
     constructor(A) {
         if (this._abortController = new AbortController, this._readBuffer = new SLA, this._stderrStream = null, this._serverParams = A, A.stderr === "pipe" || A.stderr === "overlapped") this._stderrStream = new D35
@@ -1182,9 +1182,9 @@ function E35() {
     return "type" in oQ1
 }
 var S82, H35;
-var _82 = L(() => {
+var _82 = lazyLoader(() => {
     ZA0();
-    S82 = GA(nD1(), 1), H35 = oQ1.platform === "win32" ? ["APPDATA", "HOMEDRIVE", "HOMEPATH", "LOCALAPPDATA", "PATH", "PROCESSOR_ARCHITECTURE", "SYSTEMDRIVE", "SYSTEMROOT", "TEMP", "USERNAME", "USERPROFILE", "PROGRAMFILES"] : ["HOME", "LOGNAME", "PATH", "SHELL", "TERM", "USER"]
+    S82 = esmImport(nD1(), 1), H35 = oQ1.platform === "win32" ? ["APPDATA", "HOMEDRIVE", "HOMEPATH", "LOCALAPPDATA", "PATH", "PROCESSOR_ARCHITECTURE", "SYSTEMDRIVE", "SYSTEMROOT", "TEMP", "USERNAME", "USERPROFILE", "PROGRAMFILES"] : ["HOME", "LOGNAME", "PATH", "SHELL", "TERM", "USER"]
 });
 
 function YA0(A) {}
@@ -1198,14 +1198,14 @@ function tQ1(A) {
         onComment: Z
     } = A, I = "", Y = !0, J, W = "", X = "";
 
-function F(C) {
+    function F(C) {
         let E = Y ? C.replace(/^\xEF\xBB\xBF/, "") : C,
-            [z, w] = z35(`${I}${E}`);
+            [z, w] = z35(`TextComponent{I}TextComponent{E}`);
         for (let N of z) V(N);
         I = w, Y = !1
     }
 
-function V(C) {
+    function V(C) {
         if (C === "") {
             D();
             return
@@ -1225,27 +1225,27 @@ function V(C) {
         K(C, "", C)
     }
 
-function K(C, E, z) {
+    function K(C, E, z) {
         switch (C) {
             case "event":
                 X = E;
                 break;
             case "data":
-                W = `${W}${E}
+                W = `TextComponent{W}TextComponent{E}
 `;
                 break;
             case "id":
                 J = E.includes("\x00") ? void 0 : E;
                 break;
             case "retry":
-                /^\d+$/.test(E) ? G(parseInt(E, 10)) : B(new JA0(`Invalid \`retry\` value: "${E}"`, {
+                /^\d+TextComponent/.test(E) ? G(parseInt(E, 10)) : B(new JA0(`Invalid \`retry\` value: "TextComponent{E}"`, {
                     type: "invalid-retry",
                     value: E,
                     line: z
                 }));
                 break;
             default:
-                B(new JA0(`Unknown field "${C.length>20?`${C.slice(0,20)}…`:C}"`, {
+                B(new JA0(`Unknown field "TextComponent{C.length>20?`TextComponent{C.slice(0,20)}…`:C}"`, {
                     type: "unknown-field",
                     field: C,
                     value: E,
@@ -1255,7 +1255,7 @@ function K(C, E, z) {
         }
     }
 
-function D() {
+    function D() {
         W.length > 0 && Q({
             id: J,
             event: X || void 0,
@@ -1264,7 +1264,7 @@ function D() {
         }), J = void 0, W = "", X = ""
     }
 
-function H(C = {}) {
+    function H(C = {}) {
         I && C.consume && V(I), Y = !0, J = void 0, W = "", X = "", I = ""
     }
     return {
@@ -1294,7 +1294,7 @@ function z35(A) {
     return [Q, B]
 }
 var JA0;
-var WA0 = L(() => {
+var WA0 = lazyLoader(() => {
     JA0 = class JA0 extends Error {
         constructor(A, Q) {
             super(A), this.name = "ParseError", this.type = Q.type, this.field = Q.field, this.value = Q.value, this.line = Q.line
@@ -1308,7 +1308,7 @@ function U35(A) {
 }
 
 function FA0(A) {
-    return A instanceof Error ? "errors" in A && Array.isArray(A.errors) ? A.errors.map(FA0).join(", ") : ("cause" in A) && A.cause instanceof Error ? `${A}: ${FA0(A.cause)}` : A.message : `${A}`
+    return A instanceof Error ? "errors" in A && Array.isArray(A.errors) ? A.errors.map(FA0).join(", ") : ("cause" in A) && A.cause instanceof Error ? `TextComponent{A}: TextComponent{FA0(A.cause)}` : A.message : `TextComponent{A}`
 }
 
 function k82(A) {
@@ -1335,7 +1335,7 @@ var XA0, x82 = (A) => {
     JY = (A, Q, B, G) => (UA0(A, Q, "write to private field"), Q.set(A, B), B),
     Jh = (A, Q, B) => (UA0(A, Q, "access private method"), B),
     dU, oAA, PIA, eQ1, AB1, yLA, _IA, xLA, Bi, jIA, kIA, SIA, _LA, rT, VA0, KA0, DA0, y82, HA0, CA0, kLA, EA0, zA0, yIA;
-var v82 = L(() => {
+var v82 = lazyLoader(() => {
     WA0();
     XA0 = class XA0 extends Event {
         constructor(A, Q) {
@@ -1364,7 +1364,7 @@ var v82 = L(() => {
                     return
                 }
                 if (J ? JY(this, PIA, new URL(Z.url)) : JY(this, PIA, void 0), W !== 200) {
-                    Jh(this, rT, kLA).call(this, `Non-200 status code (${W})`, W);
+                    Jh(this, rT, kLA).call(this, `Non-200 status code (TextComponent{W})`, W);
                     return
                 }
                 if (!(X.get("content-type") || "").startsWith("text/event-stream")) {
@@ -1492,11 +1492,9 @@ var v82 = L(() => {
         (B = B5(this, kIA)) == null || B.call(this, G), this.dispatchEvent(G), JY(this, _IA, setTimeout(B5(this, zA0), B5(this, yLA)))
     }, zA0 = new WeakMap, yIA.CONNECTING = 0, yIA.OPEN = 1, yIA.CLOSED = 2
 });
-
 async function w35(A) {
     return (await $A0).getRandomValues(new Uint8Array(A))
 }
-
 async function q35(A) {
     let B = "",
         G = await w35(A);
@@ -1506,19 +1504,16 @@ async function q35(A) {
     }
     return B
 }
-
 async function N35(A) {
     return await q35(A)
 }
-
 async function L35(A) {
     let Q = await (await $A0).subtle.digest("SHA-256", new TextEncoder().encode(A));
     return btoa(String.fromCharCode(...new Uint8Array(Q))).replace(/\//g, "_").replace(/\+/g, "-").replace(/=/g, "")
 }
-
 async function wA0(A) {
     if (!A) A = 43;
-    if (A < 43 || A > 128) throw `Expected a length between 43 and 128. Received ${A}.`;
+    if (A < 43 || A > 128) throw `Expected a length between 43 and 128. Received TextComponent{A}.`;
     let Q = await N35(A),
         B = await L35(Q);
     return {

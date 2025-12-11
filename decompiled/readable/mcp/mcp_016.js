@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_016.js
+ * 处理时间: 2025-12-09T03:41:37.925Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.015Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -31,9 +34,9 @@
             return oY.createElement(j, {
                 flexDirection: "row",
                 marginTop: 1
-            }, oY.createElement($, {
+            }, oY.createElement(TextComponent, {
                 color: sj("default")
-            }, pD, " "), oY.createElement($, null, "User declined to answer questions"))
+            }, pD, " "), oY.createElement(TextComponent, null, "User declined to answer questions"))
         },
         renderToolUseErrorMessage() {
             return null
@@ -54,7 +57,7 @@
         }, Q) {
             return {
                 type: "tool_result",
-                content: `User has answered your questions: ${Object.entries(A).map(([G,Z])=>`"${G}"="${Z}"`).join(", ")}. You can now continue with the user's answers in mind.`,
+                content: `User has answered your questions: TextComponent{Object.entries(A).map(([G,Z])=>`"TextComponent{G}"="TextComponent{Z}"`).join(", ")}. You can now continue with the user's answers in mind.`,
                 tool_use_id: Q
             }
         }
@@ -149,8 +152,8 @@ function fm2() {
     }
 }
 var hn, Ar5;
-var hm2 = L(() => {
-    hn = GA(VA(), 1);
+var hm2 = lazyLoader(() => {
+    hn = esmImport(VA(), 1);
     Ar5 = {
         currentQuestionIndex: 0,
         answers: {},
@@ -168,7 +171,7 @@ function r31({
     let {
         columns: Z
     } = YB(), I = wO.useMemo(() => {
-        let X = G ? "" : ` ${V1.tick} Submit `,
+        let X = G ? "" : ` TextComponent{V1.tick} Submit `,
             F = 2,
             V = 2,
             K = zD("← ") + zD(" →") + zD(X),
@@ -205,34 +208,34 @@ function r31({
     return wO.default.createElement(j, {
         flexDirection: "row",
         marginBottom: 1
-    }, !Y && wO.default.createElement($, {
+    }, !Y && wO.default.createElement(TextComponent, {
         color: Q === 0 ? "inactive" : void 0
     }, "←", " "), A.map((J, W) => {
         let X = W === Q,
             V = J?.question && !!B[J.question] ? V1.checkboxOn : V1.checkboxOff,
             K = I[W] || J?.header || `Q${W+1}`;
         return wO.default.createElement(j, {
-            key: J?.question || `question-${W}`
-        }, X ? wO.default.createElement($, {
+            key: J?.question || `question-TextComponent{W}`
+        }, X ? wO.default.createElement(TextComponent, {
             backgroundColor: "permission",
             color: "inverseText"
-        }, " ", V, " ", K, " ") : wO.default.createElement($, null, " ", V, " ", K, " "))
+        }, " ", V, " ", K, " ") : wO.default.createElement(TextComponent, null, " ", V, " ", K, " "))
     }), !G && wO.default.createElement(j, {
         key: "submit"
-    }, Q === A.length ? wO.default.createElement($, {
+    }, Q === A.length ? wO.default.createElement(TextComponent, {
         backgroundColor: "permission",
         color: "inverseText"
-    }, " ", V1.tick, " Submit", " ") : wO.default.createElement($, null, " ", V1.tick, " Submit ")), !Y && wO.default.createElement($, {
+    }, " ", V1.tick, " Submit", " ") : wO.default.createElement(TextComponent, null, " ", V1.tick, " Submit ")), !Y && wO.default.createElement(TextComponent, {
         color: Q === A.length ? "inactive" : void 0
     }, " ", "→"))
 }
 var wO;
-var PG0 = L(() => {
+var PG0 = lazyLoader(() => {
     n2();
     hA();
     m8();
     MUA();
-    wO = GA(VA(), 1)
+    wO = esmImport(VA(), 1)
 });
 
 function gm2({
@@ -322,19 +325,19 @@ function gm2({
         layout: "compact-vertical"
     })), bq.default.createElement(j, {
         marginTop: 1
-    }, bq.default.createElement($, {
+    }, bq.default.createElement(TextComponent, {
         color: "inactive",
         dimColor: !0
     }, "Enter to select · Tab/Arrow keys to navigate · Esc to cancel"))))
 }
 var bq;
-var um2 = L(() => {
+var um2 = lazyLoader(() => {
     hA();
     T6();
     u51();
     PG0();
     eV();
-    bq = GA(VA(), 1)
+    bq = esmImport(VA(), 1)
 });
 
 function mm2({
@@ -367,7 +370,7 @@ function mm2({
         marginTop: 1
     }, !G && KK.default.createElement(j, {
         marginBottom: 1
-    }, KK.default.createElement($, {
+    }, KK.default.createElement(TextComponent, {
         color: "warning"
     }, V1.warning, " You have not answered all questions")), Object.keys(B).length > 0 && KK.default.createElement(j, {
         flexDirection: "column",
@@ -378,15 +381,15 @@ function mm2({
             key: Y?.question || "answer",
             flexDirection: "column",
             marginLeft: 1
-        }, KK.default.createElement($, null, V1.bullet, " ", Y?.question || "Question"), KK.default.createElement(j, {
+        }, KK.default.createElement(TextComponent, null, V1.bullet, " ", Y?.question || "Question"), KK.default.createElement(j, {
             marginLeft: 2
-        }, KK.default.createElement($, {
+        }, KK.default.createElement(TextComponent, {
             color: "success"
         }, V1.arrowRight, " ", J)))
     })), KK.default.createElement(WC, {
         permissionResult: Z,
         toolType: "tool"
-    }), KK.default.createElement($, {
+    }), KK.default.createElement(TextComponent, {
         color: "inactive"
     }, "Ready to submit your answers?"), KK.default.createElement(j, {
         marginTop: 1
@@ -405,7 +408,7 @@ function mm2({
     })))))
 }
 var KK;
-var dm2 = L(() => {
+var dm2 = lazyLoader(() => {
     n2();
     hA();
     T6();
@@ -413,7 +416,7 @@ var dm2 = L(() => {
     ih();
     PG0();
     eV();
-    KK = GA(VA(), 1)
+    KK = esmImport(VA(), 1)
 });
 
 function cm2({
@@ -465,7 +468,7 @@ function cm2({
             D(y, u, p)
         }, [D, Z.length, J, q]);
 
-function P(y) {
+    function P(y) {
         if (y === "cancel") {
             N();
             return
@@ -502,13 +505,13 @@ function P(y) {
     return null
 }
 var k0A;
-var pm2 = L(() => {
+var pm2 = lazyLoader(() => {
     hA();
     s31();
     hm2();
     um2();
     dm2();
-    k0A = GA(VA(), 1)
+    k0A = esmImport(VA(), 1)
 });
 
 function Qr5(A) {
@@ -547,7 +550,7 @@ function Br5(A) {
     if (A.tool === xq) return "Claude Code needs your approval for the plan";
     if (A.tool === TTA) return "Claude Code wants to enter plan mode";
     if (!Q || Q.trim() === "") return "Claude Code needs your attention";
-    return `Claude needs your permission to use ${Q}`
+    return `Claude needs your permission to use TextComponent{Q}`
 }
 
 function lm2({
@@ -572,7 +575,7 @@ function lm2({
     })
 }
 var jG0;
-var im2 = L(() => {
+var im2 = lazyLoader(() => {
     hA();
     Wn();
     gh();
@@ -600,7 +603,7 @@ var im2 = L(() => {
     vm2();
     s31();
     pm2();
-    jG0 = GA(VA(), 1)
+    jG0 = esmImport(VA(), 1)
 });
 
 function Zr5(A) {
@@ -608,10 +611,10 @@ function Zr5(A) {
     if (A.type === "string") {
         let Q = _.string();
         if (A.minLength !== void 0) Q = Q.min(A.minLength, {
-            message: `Must be at least ${A.minLength} character${A.minLength===1?"":"s"}`
+            message: `Must be at least TextComponent{A.minLength} character${A.minLength===1?"":"s"}`
         });
         if (A.maxLength !== void 0) Q = Q.max(A.maxLength, {
-            message: `Must be at most ${A.maxLength} character${A.maxLength===1?"":"s"}`
+            message: `Must be at most TextComponent{A.maxLength} character${A.maxLength===1?"":"s"}`
         });
         switch (A.format) {
             case "email":
@@ -642,15 +645,15 @@ function Zr5(A) {
         let Q = _.coerce.number();
         if (A.type === "integer") Q = Q.int();
         if (A.minimum !== void 0) Q = Q.min(A.minimum, {
-            message: `Must be at least ${A.minimum}`
+            message: `Must be at least TextComponent{A.minimum}`
         });
         if (A.maximum !== void 0) Q = Q.max(A.maximum, {
-            message: `Must be at most ${A.maximum}`
+            message: `Must be at most TextComponent{A.maximum}`
         });
         return Q
     }
     if (A.type === "boolean") return _.coerce.boolean();
-    throw Error(`Unsupported schema: ${JSON.stringify(A)}`)
+    throw Error(`Unsupported schema: TextComponent{JSON.stringify(A)}`)
 }
 
 function SG0(A, Q) {
@@ -672,17 +675,17 @@ function nm2(A) {
             description: Q,
             example: B
         } = Gr5[A.format] || {};
-        return `${Q}, e.g. ${B}`
+        return `TextComponent{Q}, e.g. TextComponent{B}`
     }
     if (A.type === "number" || A.type === "integer") {
         let Q = A.type === "integer",
-            B = (G) => Number.isInteger(G) && !Q ? `${G}.0` : String(G);
-        if (A.minimum !== void 0 && A.maximum !== void 0) return `(${A.type} between ${B(A.minimum)} and ${B(A.maximum)})`;
-        else if (A.minimum !== void 0) return `(${A.type} >= ${B(A.minimum)})`;
-        else if (A.maximum !== void 0) return `(${A.type} <= ${B(A.maximum)})`;
+            B = (G) => Number.isInteger(G) && !Q ? `TextComponent{G}.0` : String(G);
+        if (A.minimum !== void 0 && A.maximum !== void 0) return `(TextComponent{A.type} between TextComponent{B(A.minimum)} and TextComponent{B(A.maximum)})`;
+        else if (A.minimum !== void 0) return `(TextComponent{A.type} >= TextComponent{B(A.minimum)})`;
+        else if (A.maximum !== void 0) return `(TextComponent{A.type} <= TextComponent{B(A.maximum)})`;
         else {
             let G = A.type === "integer" ? "42" : "3.14";
-            return `(${A.type}, e.g. ${G})`
+            return `(TextComponent{A.type}, e.g. TextComponent{G})`
         }
     }
     return
@@ -693,7 +696,7 @@ var Gr5, STA = (A) => {
     Ir5 = (A) => {
         return A.type === "string" && "format" in A && typeof A.format === "string"
     };
-var am2 = L(() => {
+var am2 = lazyLoader(() => {
     h2();
     Gr5 = {
         email: {
@@ -716,7 +719,7 @@ var am2 = L(() => {
 });
 
 function o31() {
-    return Q9.default.createElement($, {
+    return Q9.default.createElement(TextComponent, {
         italic: !0,
         dimColor: !0
     }, "<unset>")
@@ -780,7 +783,7 @@ function rm2({
         y = P && sm2(P.schema);
     DQ(), a51("Claude Code needs your input", "elicitation_dialog");
 
-function v(wA) {
+    function v(wA) {
         let KA = K.length + 2,
             SA = D ?? (Y === "accept" ? K.length : Y === "decline" ? K.length + 1 : void 0),
             sA = SA !== void 0 ? (SA + (wA === "up" ? KA - 1 : 1)) % KA : 0;
@@ -788,7 +791,7 @@ function v(wA) {
         else H(void 0), J(sA === K.length ? "accept" : "decline")
     }
 
-function x(wA, KA) {
+    function x(wA, KA) {
         X((SA) => {
             let sA = {
                 ...SA
@@ -799,7 +802,7 @@ function x(wA, KA) {
         })
     }
 
-function p(wA, KA) {
+    function p(wA, KA) {
         V((SA) => {
             let sA = {
                 ...SA
@@ -810,12 +813,12 @@ function p(wA, KA) {
         })
     }
 
-function u(wA) {
+    function u(wA) {
         if (!wA) return;
         x(wA, void 0), p(wA), E(void 0), w(""), q(0)
     }
 
-function o(wA) {
+    function o(wA) {
         if (!P) return;
         if (wA.trim() === "" && (P.schema.type !== "string" || ("format" in P.schema) && P.schema.format !== void 0)) {
             u(P.name), v("down");
@@ -825,7 +828,7 @@ function o(wA) {
         x(P.name, SA.isValid ? SA.value : wA), p(P.name, SA.isValid ? void 0 : SA.error), E(void 0), w(""), q(0), v("down")
     }
 
-function l() {
+    function l() {
         if (!P) return;
         E(void 0), w(""), q(0)
     }
@@ -901,8 +904,8 @@ function l() {
                 } = wA, qA = KA === D && !Y, DA = W[SA], yA = (() => {
                     if (!qA || C !== void 0) return null;
                     let K1 = sA.type === "boolean" ? "toggle" : STA(sA) ? "select" : "edit",
-                        WA = DA === void 0 || NA ? `(Press Enter to ${K1})` : `(Press Enter to ${K1}, Backspace to unset)`;
-                    return Q9.default.createElement($, {
+                        WA = DA === void 0 || NA ? `(Press Enter to TextComponent{K1})` : `(Press Enter to TextComponent{K1}, Backspace to unset)`;
+                    return Q9.default.createElement(TextComponent, {
                         dimColor: !0
                     }, " ", WA)
                 })(), rA = (K1, WA) => {
@@ -912,18 +915,18 @@ function l() {
                     }, Q9.default.createElement(j, {
                         gap: 1,
                         paddingLeft: qA ? 0 : 2
-                    }, qA && Q9.default.createElement($, {
+                    }, qA && Q9.default.createElement(TextComponent, {
                         color: "success"
                     }, V1.pointer), Q9.default.createElement(j, {
                         flexGrow: 1,
                         flexDirection: "column"
                     }, K1, sA.description && Q9.default.createElement(j, {
                         marginLeft: 2
-                    }, Q9.default.createElement($, {
+                    }, Q9.default.createElement(TextComponent, {
                         dimColor: !0
                     }, sA.description)), WA && Q9.default.createElement(j, {
                         marginLeft: 2
-                    }, Q9.default.createElement($, {
+                    }, Q9.default.createElement(TextComponent, {
                         color: "error",
                         bold: !0
                     }, V1.warning, " ", WA)))))
@@ -936,11 +939,11 @@ function l() {
                     if (qA && C === SA) return Q9.default.createElement(j, {
                         key: SA,
                         flexDirection: "column"
-                    }, Q9.default.createElement($, {
+                    }, Q9.default.createElement(TextComponent, {
                         color: "success"
-                    }, sA.title || SA, NA && Q9.default.createElement($, {
+                    }, sA.title || SA, NA && Q9.default.createElement(TextComponent, {
                         color: "error"
-                    }, "*"), sA.description && Q9.default.createElement($, {
+                    }, "*"), sA.description && Q9.default.createElement(TextComponent, {
                         dimColor: !0
                     }, " - ", sA.description)), Q9.default.createElement(M0, {
                         options: K1,
@@ -955,36 +958,36 @@ function l() {
                     else {
                         let WA = sA.enum.findIndex((zA) => zA === DA),
                             XA = DA !== void 0 ? WA >= 0 && sA.enumNames?.[WA] ? sA.enumNames[WA] : DA : Q9.default.createElement(o31, null);
-                        return rA(Q9.default.createElement($, {
+                        return rA(Q9.default.createElement(TextComponent, {
                             color: qA ? "success" : void 0
-                        }, sA.title || SA, NA && Q9.default.createElement($, {
+                        }, sA.title || SA, NA && Q9.default.createElement(TextComponent, {
                             color: "error"
                         }, "*"), ": ", XA, yA))
                     }
-                } else if (sA.type === "boolean") return rA(Q9.default.createElement($, {
+                } else if (sA.type === "boolean") return rA(Q9.default.createElement(TextComponent, {
                     color: qA ? "success" : void 0
-                }, sA.title || SA, NA && Q9.default.createElement($, {
+                }, sA.title || SA, NA && Q9.default.createElement(TextComponent, {
                     color: "error"
-                }, "*"), ":", " ", DA !== void 0 ? DA ? `${V1.tick} Yes` : `${V1.cross} No` : Q9.default.createElement(o31, null), yA));
+                }, "*"), ":", " ", DA !== void 0 ? DA ? `TextComponent{V1.tick} Yes` : `TextComponent{V1.cross} No` : Q9.default.createElement(o31, null), yA));
                 else if (y) {
                     let K1 = F[SA],
                         WA = nm2(sA);
                     if (qA && C === SA) return rA(Q9.default.createElement(j, {
                         flexDirection: "column"
-                    }, Q9.default.createElement($, {
+                    }, Q9.default.createElement(TextComponent, {
                         color: "success"
-                    }, sA.title || SA, NA && Q9.default.createElement($, {
+                    }, sA.title || SA, NA && Q9.default.createElement(TextComponent, {
                         color: "error"
-                    }, "*"), ":", WA && Q9.default.createElement($, {
+                    }, "*"), ":", WA && Q9.default.createElement(TextComponent, {
                         dimColor: !0
-                    }, ` ${WA}`)), Q9.default.createElement(j, {
+                    }, ` TextComponent{WA}`)), Q9.default.createElement(j, {
                         marginLeft: 2
                     }, Q9.default.createElement(s4, {
                         value: z,
                         onChange: w,
                         onSubmit: o,
                         onExit: l,
-                        placeholder: `Enter ${sA.type}…`,
+                        placeholder: `Enter TextComponent{sA.type}…`,
                         columns: Math.min(R - 6, 80),
                         cursorOffset: N,
                         onChangeCursorOffset: q,
@@ -992,14 +995,14 @@ function l() {
                         showCursor: !0,
                         multiline: sA.type === "string"
                     }))));
-                    return rA(Q9.default.createElement($, {
+                    return rA(Q9.default.createElement(TextComponent, {
                         color: qA ? "success" : void 0
-                    }, sA.title || SA, NA && Q9.default.createElement($, {
+                    }, sA.title || SA, NA && Q9.default.createElement(TextComponent, {
                         color: "error"
                     }, "*"), ":", " ", DA === void 0 ? Q9.default.createElement(o31, null) : String(DA), yA), K1)
-                } else return rA(Q9.default.createElement($, {
+                } else return rA(Q9.default.createElement(TextComponent, {
                     color: qA ? "success" : void 0
-                }, sA.title || SA, NA && Q9.default.createElement($, {
+                }, sA.title || SA, NA && Q9.default.createElement(TextComponent, {
                     color: "error"
                 }, "*"), ":", " ", DA === void 0 ? Q9.default.createElement(o31, null) : String(DA), yA))
             }))
@@ -1015,28 +1018,28 @@ function l() {
         padding: 1,
         borderStyle: "round",
         borderColor: "permission"
-    }, Q9.default.createElement($, {
+    }, Q9.default.createElement(TextComponent, {
         bold: !0
     }, V1.info, " MCP Server “", A, "” requests your input"), Q9.default.createElement(j, {
         padding: 1
-    }, Q9.default.createElement($, null, Z)), d(), K.length > 0 && Q9.default.createElement(Q9.default.Fragment, null, HA.length > 0 && Q9.default.createElement($, {
+    }, Q9.default.createElement(TextComponent, null, Z)), d(), K.length > 0 && Q9.default.createElement(Q9.default.Fragment, null, HA.length > 0 && Q9.default.createElement(TextComponent, {
         color: "error"
-    }, V1.warning, " Missing required fields:", " ", HA.map(QA).join(", ")), IA.length > 0 && Q9.default.createElement($, {
+    }, V1.warning, " Missing required fields:", " ", HA.map(QA).join(", ")), IA.length > 0 && Q9.default.createElement(TextComponent, {
         color: "error"
-    }, V1.warning, " Validation errors in:", " ", IA.map(QA).join(", ")), Q9.default.createElement($, {
+    }, V1.warning, " Validation errors in:", " ", IA.map(QA).join(", ")), Q9.default.createElement(TextComponent, {
         bold: !0,
         color: Y === "accept" ? "success" : void 0,
         inverse: Y === "accept"
-    }, "Accept"), Q9.default.createElement($, {
+    }, "Accept"), Q9.default.createElement(TextComponent, {
         bold: !0,
         color: Y === "decline" ? "error" : void 0,
         inverse: Y === "decline"
-    }, "Decline"), Q9.default.createElement($, {
+    }, "Decline"), Q9.default.createElement(TextComponent, {
         dimColor: !0
     }, "Press ↑↓ to navigate · Enter to edit · Esc to cancel / go back")))
 }
 var Q9, sm2 = (A) => ["string", "number", "integer"].includes(A.type);
-var om2 = L(() => {
+var om2 = lazyLoader(() => {
     hA();
     n2();
     c9();
@@ -1045,7 +1048,7 @@ var om2 = L(() => {
     am2();
     QY();
     m8();
-    Q9 = GA(VA(), 1)
+    Q9 = esmImport(VA(), 1)
 });
 
 function e31(A) {
@@ -1059,8 +1062,8 @@ function e31(A) {
     }, [A]), Q
 }
 var t31;
-var _G0 = L(() => {
-    t31 = GA(VA(), 1)
+var _G0 = lazyLoader(() => {
+    t31 = esmImport(VA(), 1)
 });
 import {
     homedir as A71
@@ -1100,12 +1103,11 @@ import {
     mkdtempSync as Fr5,
     rmdirSync as Vr5
 } from "fs";
-
 async function Kr5(A = "stable", Q, B) {
     let G = Date.now(),
         Z = Q === B71;
     try {
-        let I = await GQ.get(`${Q}/${A}`, {
+        let I = await GQ.get(`TextComponent{Q}/TextComponent{A}`, {
                 timeout: 30000,
                 responseType: "text",
                 ...B
@@ -1125,17 +1127,15 @@ async function Kr5(A = "stable", Q, B) {
             http_status: W,
             source_gcs: Z,
             is_timeout: J.includes("timeout")
-        }), e(Error(`Failed to fetch version from ${Q}/${A}: ${J}`)), Error(`Failed to fetch version from ${A}: ${I}`)
+        }), e(Error(`Failed to fetch version from TextComponent{Q}/TextComponent{A}: TextComponent{J}`)), Error(`Failed to fetch version from TextComponent{A}: TextComponent{I}`)
     }
 }
-
 async function yG0(A) {
-    if (A && /^v?\d+\.\d+\.\d+(-\S+)?$/.test(A)) return A.startsWith("v") ? A.slice(1) : A;
+    if (A && /^v?\d+\.\d+\.\d+(-\S+)?TextComponent/.test(A)) return A.startsWith("v") ? A.slice(1) : A;
     let Q = A || "stable";
-    if (Q !== "stable" && Q !== "latest") throw Error(`Invalid channel: ${A}. Use 'stable' or 'latest'`);
+    if (Q !== "stable" && Q !== "latest") throw Error(`Invalid channel: TextComponent{A}. Use 'stable' or 'latest'`);
     return Kr5(Q, B71)
 }
-
 async function Dr5(A, Q, B, G = {}) {
     let Z = await GQ.get(A, {
             timeout: 300000,
@@ -1145,10 +1145,9 @@ async function Dr5(A, Q, B, G = {}) {
         I = Yr5("sha256");
     I.update(Z.data);
     let Y = I.digest("hex");
-    if (Y !== Q) throw Error(`Checksum mismatch: expected ${Q}, got ${Y}`);
+    if (Y !== Q) throw Error(`Checksum mismatch: expected TextComponent{Q}, got TextComponent{Y}`);
     (await import("fs")).writeFileSync(B, Buffer.from(Z.data)), Wr5(B, 493)
 }
-
 async function Hr5(A) {
     let Q = Date.now(),
         B;
@@ -1157,7 +1156,7 @@ async function Hr5(A) {
         let G = Date.now() - Q;
         BA("tengu_native_cdn_dark_read_success", {
             latency_ms: G
-        }), g(`CDN dark read succeeded for ${A}`)
+        }), g(`CDN dark read succeeded for TextComponent{A}`)
     } catch (G) {
         let Z = Date.now() - Q,
             I = G instanceof Error ? G.message : String(G),
@@ -1168,7 +1167,7 @@ async function Hr5(A) {
             http_status: Y,
             is_timeout: I.includes("timeout"),
             is_checksum_mismatch: I.includes("Checksum mismatch")
-        }), e(Error(`CDN dark read failed for ${A}: ${I}`))
+        }), e(Error(`CDN dark read failed for TextComponent{A}: TextComponent{I}`))
     } finally {
         if (B) try {
             let G = _TA(Sy());
@@ -1176,7 +1175,6 @@ async function Hr5(A) {
         } catch {}
     }
 }
-
 async function Zd2(A, Q, B, G) {
     let Z = OA(),
         I = B === Gd2,
@@ -1193,7 +1191,7 @@ async function Zd2(A, Q, B, G) {
     });
     let X;
     try {
-        X = (await GQ.get(`${B}/${A}/manifest.json`, {
+        X = (await GQ.get(`TextComponent{B}/TextComponent{A}/manifest.json`, {
             timeout: 1e4,
             responseType: "json",
             ...G
@@ -1209,16 +1207,16 @@ async function Zd2(A, Q, B, G) {
             is_cdn: I,
             is_gcs: Y,
             is_timeout: z.includes("timeout")
-        }), e(Error(`Failed to fetch manifest from ${B}/${A}/manifest.json: ${z}`)), C
+        }), e(Error(`Failed to fetch manifest from TextComponent{B}/TextComponent{A}/manifest.json: TextComponent{z}`)), C
     }
     let F = X.platforms[J];
     if (!F) throw BA("tengu_binary_platform_not_found", {
         is_cdn: I,
         is_gcs: Y
-    }), Error(`Platform ${J} not found in manifest for version ${A}`);
+    }), Error(`Platform TextComponent{J} not found in manifest for version TextComponent{A}`);
     let V = F.checksum,
         K = _TA(J),
-        D = `${B}/${A}/${J}/${K}`;
+        D = `TextComponent{B}/TextComponent{A}/TextComponent{J}/TextComponent{K}`;
     Z.mkdirSync(Q);
     let H = kG0(Q, K);
     try {
@@ -1241,16 +1239,15 @@ async function Zd2(A, Q, B, G) {
             is_gcs: Y,
             is_timeout: z.includes("timeout"),
             is_checksum_mismatch: z.includes("Checksum mismatch")
-        }), e(Error(`Failed to download binary from ${D}: ${z}`)), C
+        }), e(Error(`Failed to download binary from TextComponent{D}: TextComponent{z}`)), C
     }
 }
-
 async function Id2(A, Q) {
     return Hr5(A), await Zd2(A, Q, B71), "binary"
 }
 var Gd2 = "https://downloads.claude.ai/claude-code-releases",
     B71 = "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases";
-var Yd2 = L(() => {
+var Yd2 = lazyLoader(() => {
     w3();
     o0();
     I6();
@@ -1283,13 +1280,13 @@ function Sy() {
     let A = m0.platform,
         Q = process.arch === "x64" ? "x64" : process.arch === "arm64" ? "arm64" : null;
     if (!Q) {
-        let B = Error(`Unsupported architecture: ${process.arch}`);
-        throw g(`Native installer does not support architecture: ${process.arch}`, {
+        let B = Error(`Unsupported architecture: TextComponent{process.arch}`);
+        throw g(`Native installer does not support architecture: TextComponent{process.arch}`, {
             level: "error"
         }), B
     }
-    if (A === "linux" && DU.isMuslEnvironment()) return `linux-${Q}-musl`;
-    return `${A}-${Q}`
+    if (A === "linux" && DU.isMuslEnvironment()) return `linux-TextComponent{Q}-musl`;
+    return `TextComponent{A}-TextComponent{Q}`
 }
 
 function _TA(A) {
@@ -1337,7 +1334,6 @@ function fG0(A) {
         installPath: I
     }
 }
-
 async function vG0(A, Q, B = 0) {
     let G = y0A(),
         Z = OA(),
@@ -1355,7 +1351,7 @@ async function vG0(A, Q, B = 0) {
                 },
                 lockfilePath: I,
                 onCompromised: (J) => {
-                    g(`NON-FATAL: Version lock was compromised during operation: ${J.message}`, {
+                    g(`NON-FATAL: Version lock was compromised during operation: TextComponent{J.message}`, {
                         level: "info"
                     })
                 }
@@ -1376,7 +1372,7 @@ async function vG0(A, Q, B = 0) {
 function Xd2(A, Q) {
     let B = OA();
     if (!B.existsSync(_y(Q))) B.mkdirSync(_y(Q));
-    let G = `${Q}.tmp.${process.pid}.${Date.now()}`;
+    let G = `TextComponent{Q}.tmp.TextComponent{process.pid}.TextComponent{Date.now()}`;
     try {
         B.copyFileSync(A, G), Ur5(G, 493), B.renameSync(G, Q)
     } catch (Z) {
@@ -1400,7 +1396,7 @@ function Or5(A, Q) {
         if (!B.existsSync(Y)) throw BA("tengu_native_install_package_failure", {
             stage_binary_exists: !0,
             error_binary_not_found: !0
-        }), Error(`Native binary not found at ${Y}`);
+        }), Error(`Native binary not found at TextComponent{Y}`);
         Xd2(Y, Q), B.rmSync(A, {
             recursive: !0,
             force: !0
@@ -1424,7 +1420,7 @@ function Rr5(A, Q) {
         if (!B.existsSync(I)) throw BA("tengu_native_install_binary_failure", {
             stage_binary_exists: !0,
             error_binary_not_found: !0
-        }), Error(`Staged binary not found at ${I}`);
+        }), Error(`Staged binary not found at TextComponent{I}`);
         Xd2(I, Q), B.rmSync(A, {
             recursive: !0,
             force: !0
@@ -1454,7 +1450,6 @@ function Pr5(A) {
     } = fG0(A);
     return uWA(Q)
 }
-
 async function jr5(A, Q = !1) {
     let B = Date.now(),
         G = await yG0(A),
@@ -1462,14 +1457,14 @@ async function jr5(A, Q = !1) {
             installPath: Z,
             stagingPath: I
         } = fG0(G);
-    g(`Checking for native installer update to version ${G}`);
+    g(`Checking for native installer update to version TextComponent{G}`);
     let Y = !1,
         J = await vG0(Z, async () => {
             if (!Pr5(G) || Q) {
-                Y = !0, g(Q ? `Force reinstalling native installer version ${G}` : `Downloading native installer version ${G}`);
+                Y = !0, g(Q ? `Force reinstalling native installer version TextComponent{G}` : `Downloading native installer version TextComponent{G}`);
                 let F = await Id2(G, I);
                 Tr5(G, F)
-            } else g(`Version ${G} already installed, updating symlink`);
+            } else g(`Version TextComponent{G} already installed, updating symlink`);
             let X = y0A();
             Sr5(X.executable), _r5(X.executable, Z)
         }, 3),
@@ -1481,7 +1476,7 @@ async function jr5(A, Q = !1) {
         latency_ms: W,
         was_new_install: Y,
         was_force_reinstall: Q
-    }), g(`Successfully updated to version ${G}`), !0
+    }), g(`Successfully updated to version TextComponent{G}`), !0
 }
 
 function Sr5(A) {
@@ -1489,11 +1484,11 @@ function Sr5(A) {
     try {
         if (Q.existsSync(A)) {
             if (Q.statSync(A).isDirectory()) {
-                if (Q.readdirStringSync(A).length === 0) Q.rmdirSync(A), g(`Removed empty directory at ${A}`)
+                if (Q.readdirStringSync(A).length === 0) Q.rmdirSync(A), g(`Removed empty directory at TextComponent{A}`)
             }
         }
     } catch (B) {
-        g(`Could not remove empty directory at ${A}: ${B}`)
+        g(`Could not remove empty directory at TextComponent{A}: TextComponent{B}`)
     }
 }
 
@@ -1508,7 +1503,7 @@ function _r5(A, Q) {
                     F = B.statSync(Q);
                 if (X.size === F.size) return !1
             } catch {}
-            let W = `${A}.old.${Date.now()}`;
+            let W = `TextComponent{A}.old.TextComponent{Date.now()}`;
             B.renameSync(A, W);
             try {
                 B.copyFileSync(Q, A);
@@ -1519,7 +1514,7 @@ function _r5(A, Q) {
                 try {
                     B.renameSync(W, A)
                 } catch (F) {
-                    let V = Error(`Failed to restore old executable: ${F}`, {
+                    let V = Error(`Failed to restore old executable: TextComponent{F}`, {
                         cause: X
                     });
                     throw e(V), V

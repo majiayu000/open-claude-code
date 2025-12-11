@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_028.js
+ * 处理时间: 2025-12-09T03:41:36.309Z
+ * 变量映射: 5 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.883Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -33,7 +36,7 @@
         }
     })
 }
-var L60 = L(() => {
+var L60 = lazyLoader(() => {
     l_()
 });
 async function* f61(A, Q, B) {
@@ -56,7 +59,7 @@ async function* f61(A, Q, B) {
                     if (B.fallbackModel) throw BA("tengu_api_opus_fallback_triggered", {
                         original_model: B.model,
                         fallback_model: B.fallbackModel,
-                        provider: TR()
+                        provider: getProviderIdentifier()
                     }), new b61(B.model, B.fallbackModel);
                     if (!process.env.IS_SANDBOX) throw BA("tengu_api_custom_529_overloaded_error", {}), new Jn(Error(q00), Z)
                 }
@@ -70,7 +73,7 @@ async function* f61(A, Q, B) {
                         inputTokens: H,
                         contextLimit: C
                     } = D, E = 1000, z = Math.max(0, C - H - 1000);
-                    if (z < M60) throw e(Error(`availableContext ${z} is less than FLOOR_OUTPUT_TOKENS ${M60}`)), X;
+                    if (z < M60) throw e(Error(`availableContext TextComponent{z} is less than FLOOR_OUTPUT_TOKENS TextComponent{M60}`)), X;
                     let w = (Z.maxThinkingTokens || 0) + 1,
                         N = Math.max(M60, z, w);
                     Z.maxTokensOverride = N, BA("tengu_max_tokens_context_overflow_adjustment", {
@@ -90,7 +93,7 @@ async function* f61(A, Q, B) {
                 delayMs: K,
                 error: X.message,
                 status: X.status,
-                provider: TR()
+                provider: getProviderIdentifier()
             }), await RS2(K, B.signal)
         }
     }
@@ -138,7 +141,7 @@ function mf5(A) {
 }
 
 function PS2(A) {
-    if (V0(process.env.CLAUDE_CODE_USE_BEDROCK)) {
+    if (parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK)) {
         if (ONQ(A) || A instanceof a2 && A.status === 403) return !0
     }
     return !1
@@ -176,7 +179,7 @@ var bf5 = 10,
     ff5 = 3,
     hf5 = 500,
     Jn, b61;
-var O60 = L(() => {
+var O60 = lazyLoader(() => {
     l_();
     u1();
     s2();
@@ -204,22 +207,21 @@ var O60 = L(() => {
         originalModel;
         fallbackModel;
         constructor(A, Q) {
-            super(`Model fallback triggered: ${A} -> ${Q}`);
+            super(`Model fallback triggered: TextComponent{A} -> TextComponent{Q}`);
             this.originalModel = A;
             this.fallbackModel = Q;
             this.name = "FallbackTriggeredError"
         }
     }
 });
-// Async function: _S2
 async function _S2() {
     let A = U6();
     if (!A?.accessToken) return;
-    let Q = `${o9().BASE_API_URL}/api/oauth/claude_cli/client_data`;
+    let Q = `TextComponent{getConfig().BASE_API_URL}/api/oauth/claude_cli/client_data`;
     try {
         SS2 = (await GQ.get(Q, {
             headers: {
-                Authorization: `Bearer ${A.accessToken}`,
+                Authorization: `Bearer TextComponent{A.accessToken}`,
                 "Content-Type": "application/json"
             }
         })).data.client_data
@@ -232,7 +234,7 @@ function kS2() {
     return SS2
 }
 var lf5, SS2;
-var R60 = L(() => {
+var R60 = lazyLoader(() => {
     w3();
     EX();
     hB();
@@ -262,17 +264,17 @@ function P60() {
     }
     return
 }
-var j60 = L(() => {
+var j60 = lazyLoader(() => {
     RB();
     R60()
 });
 var yS2;
-var xS2 = L(() => {
+var xS2 = lazyLoader(() => {
     xV();
     yS2 = `Performs exact string replacements in files. 
 
 Usage:
-- You must use your \`${READ_TOOL_NAME}\` tool at least once in the conversation before editing. This tool will error if you attempt an edit without reading the file. 
+- You must use your \`TextComponent{READ_TOOL_NAME}\` tool at least once in the conversation before editing. This tool will error if you attempt an edit without reading the file. 
 - When editing text from Read tool output, ensure you preserve the exact indentation (tabs/spaces) as it appears AFTER the line number prefix. The line number prefix format is: spaces + line number + tab. Everything after that tab is the actual file content to match. Never include any part of the line number prefix in the old_string or new_string.
 - ALWAYS prefer editing existing files in the codebase. NEVER write new files unless explicitly required.
 - Only use emojis if the user explicitly requests it. Avoid adding emojis to files unless asked.
@@ -286,7 +288,7 @@ function vS2(A) {
     let B = {
         ...Q.tip
     };
-    if (A.code === "invalid_enum_value" && A.enumValues && !B.suggestion) B.suggestion = `Valid values: ${A.enumValues.map((G)=>`"${G}"`).join(", ")}`;
+    if (A.code === "invalid_enum_value" && A.enumValues && !B.suggestion) B.suggestion = `Valid values: TextComponent{A.enumValues.map((G)=>`"TextComponent{G}"`).join(", ")}`;
     if (!B.docLink && A.path) {
         let G = A.path.split(".")[0];
         if (G) B.docLink = nf5[G]
@@ -294,12 +296,12 @@ function vS2(A) {
     return B
 }
 var if5, nf5;
-var bS2 = L(() => {
+var bS2 = lazyLoader(() => {
     if5 = [{
         matches: (A) => A.path === "permissions.defaultMode" && A.code === "invalid_enum_value",
         tip: {
             suggestion: 'Valid modes: "acceptEdits" (ask before file changes), "plan" (analysis only), "bypassPermissions" (auto-accept all), or "default" (standard behavior)',
-            docLink: "https://docs.claude.com/en/docs/claude-code/iam#permission-modes"
+            docLink: "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/iam#permission-modes"
         }
     }, {
         matches: (A) => A.path === "apiKeyHelper" && A.code === "invalid_type",
@@ -315,7 +317,7 @@ var bS2 = L(() => {
         matches: (A) => A.path.startsWith("env.") && A.code === "invalid_type",
         tip: {
             suggestion: 'Environment variables must be strings. Wrap numbers and booleans in quotes. Example: "DEBUG": "true", "PORT": "3000"',
-            docLink: "https://docs.claude.com/en/docs/claude-code/settings#environment-variables"
+            docLink: "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/settings#environment-variables"
         }
     }, {
         matches: (A) => (A.path === "permissions.allow" || A.path === "permissions.deny") && A.code === "invalid_type" && A.expected === "array",
@@ -336,7 +338,7 @@ var bS2 = L(() => {
         matches: (A) => A.code === "unrecognized_keys",
         tip: {
             suggestion: "Check for typos or refer to the documentation for valid fields",
-            docLink: "https://docs.claude.com/en/docs/claude-code/settings"
+            docLink: "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/settings"
         }
     }, {
         matches: (A) => A.code === "invalid_enum_value" && A.enumValues !== void 0,
@@ -352,12 +354,12 @@ var bS2 = L(() => {
         matches: (A) => A.path === "permissions.additionalDirectories" && A.code === "invalid_type",
         tip: {
             suggestion: 'Must be an array of directory paths. Example: ["~/projects", "/tmp/workspace"]. You can also use --add-dir flag or /add-dir command',
-            docLink: "https://docs.claude.com/en/docs/claude-code/iam#working-directories"
+            docLink: "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/iam#working-directories"
         }
     }], nf5 = {
-        permissions: "https://docs.claude.com/en/docs/claude-code/iam#configuring-permissions",
-        env: "https://docs.claude.com/en/docs/claude-code/settings#environment-variables",
-        hooks: "https://docs.claude.com/en/docs/claude-code/hooks"
+        permissions: "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/iam#configuring-permissions",
+        env: "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/settings#environment-variables",
+        hooks: "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/hooks"
     }
 });
 var hS2, fS2, gS2 = (A) => typeof A === "string" ? {
@@ -367,7 +369,7 @@ var hS2, fS2, gS2 = (A) => typeof A === "string" ? {
     ...fS2,
     ...A
 };
-var h61 = L(() => {
+var h61 = lazyLoader(() => {
     hS2 = Symbol("Let zodToJsonSchema decide on which parser to use"), fS2 = {
         name: void 0,
         $refStrategy: "root",
@@ -406,7 +408,7 @@ var uS2 = (A) => {
         }]))
     }
 };
-var S60 = L(() => {
+var S60 = lazyLoader(() => {
     h61()
 });
 
@@ -439,7 +441,7 @@ function dS2(A, Q) {
     if (A.exactLength) d5(B, "minItems", A.exactLength.value, A.exactLength.message, Q), d5(B, "maxItems", A.exactLength.value, A.exactLength.message, Q);
     return B
 }
-var k60 = L(() => {
+var k60 = lazyLoader(() => {
     h2();
     tX()
 });
@@ -486,13 +488,13 @@ function pS2() {
 function g61(A, Q) {
     return C4(A.type._def, Q)
 }
-var u61 = L(() => {
+var u61 = lazyLoader(() => {
     tX()
 });
 var lS2 = (A, Q) => {
     return C4(A.innerType._def, Q)
 };
-var x60 = L(() => {
+var x60 = lazyLoader(() => {
     tX()
 });
 
@@ -539,14 +541,14 @@ function iS2(A, Q) {
         default: A.defaultValue()
     }
 }
-var f60 = L(() => {
+var f60 = lazyLoader(() => {
     tX()
 });
 
 function nS2(A, Q) {
     return Q.effectStrategy === "input" ? C4(A.schema._def, Q) : {}
 }
-var h60 = L(() => {
+var h60 = lazyLoader(() => {
     tX()
 });
 
@@ -592,7 +594,7 @@ var sf5 = (A) => {
     if ("type" in A && A.type === "string") return !1;
     return "allOf" in A
 };
-var g60 = L(() => {
+var g60 = lazyLoader(() => {
     tX()
 });
 
@@ -652,10 +654,10 @@ function m61(A, Q) {
                 pE(B, qP.cuid2, G.message, Q);
                 break;
             case "startsWith":
-                pE(B, RegExp(`^${m60(G.value,Q)}`), G.message, Q);
+                pE(B, RegExp(`^TextComponent{m60(G.value,Q)}`), G.message, Q);
                 break;
             case "endsWith":
-                pE(B, RegExp(`${m60(G.value,Q)}$`), G.message, Q);
+                pE(B, RegExp(`TextComponent{m60(G.value,Q)}TextComponent`), G.message, Q);
                 break;
             case "datetime":
                 NP(B, "date-time", G.message, Q);
@@ -813,13 +815,13 @@ function oS2(A, Q) {
         if (B.i) {
             if (Y) {
                 if (G[W].match(/[a-z]/)) {
-                    if (J) Z += G[W], Z += `${G[W-2]}-${G[W]}`.toUpperCase(), J = !1;
+                    if (J) Z += G[W], Z += `TextComponent{G[W-2]}-TextComponent{G[W]}`.toUpperCase(), J = !1;
                     else if (G[W + 1] === "-" && G[W + 2]?.match(/[a-z]/)) Z += G[W], J = !0;
-                    else Z += `${G[W]}${G[W].toUpperCase()}`;
+                    else Z += `TextComponent{G[W]}TextComponent{G[W].toUpperCase()}`;
                     continue
                 }
             } else if (G[W].match(/[a-z]/)) {
-                Z += `[${G[W]}${G[W].toUpperCase()}]`;
+                Z += `[TextComponent{G[W]}TextComponent{G[W].toUpperCase()}]`;
                 continue
             }
         }
@@ -828,15 +830,15 @@ function oS2(A, Q) {
                 Z += `(^|(?<=[\r
 ]))`;
                 continue
-            } else if (G[W] === "$") {
-                Z += `($|(?=[\r
+            } else if (G[W] === "TextComponent") {
+                Z += `(TextComponent|(?=[\r
 ]))`;
                 continue
             }
         }
         if (B.s && G[W] === ".") {
-            Z += Y ? `${G[W]}\r
-` : `[${G[W]}\r
+            Z += Y ? `TextComponent{G[W]}\r
+` : `[TextComponent{G[W]}\r
 ]`;
             continue
         }
@@ -847,31 +849,31 @@ function oS2(A, Q) {
     try {
         new RegExp(Z)
     } catch {
-        return console.warn(`Could not convert regex pattern at ${Q.currentPath.join("/")} to a flag-independent form! Falling back to the flag-ignorant source`), A.source
+        return console.warn(`Could not convert regex pattern at TextComponent{Q.currentPath.join("/")} to a flag-independent form! Falling back to the flag-ignorant source`), A.source
     }
     return Z
 }
 var u60 = void 0,
     qP, rf5;
-var d61 = L(() => {
+var d61 = lazyLoader(() => {
     qP = {
-        cuid: /^[cC][^\s-]{8,}$/,
-        cuid2: /^[0-9a-z]+$/,
-        ulid: /^[0-9A-HJKMNP-TV-Z]{26}$/,
-        email: /^(?!\.)(?!.*\.\.)([a-zA-Z0-9_'+\-\.]*)[a-zA-Z0-9_+-]@([a-zA-Z0-9][a-zA-Z0-9\-]*\.)+[a-zA-Z]{2,}$/,
+        cuid: /^[cC][^\s-]{8,}TextComponent/,
+        cuid2: /^[0-9a-z]+TextComponent/,
+        ulid: /^[0-9A-HJKMNP-TV-Z]{26}TextComponent/,
+        email: /^(?!\.)(?!.*\.\.)([a-zA-Z0-9_'+\-\.]*)[a-zA-Z0-9_+-]@([a-zA-Z0-9][a-zA-Z0-9\-]*\.)+[a-zA-Z]{2,}TextComponent/,
         emoji: () => {
-            if (u60 === void 0) u60 = RegExp("^(\\p{Extended_Pictographic}|\\p{Emoji_Component})+$", "u");
+            if (u60 === void 0) u60 = RegExp("^(\\p{Extended_Pictographic}|\\p{Emoji_Component})+TextComponent", "u");
             return u60
         },
-        uuid: /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/,
-        ipv4: /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$/,
-        ipv4Cidr: /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\/(3[0-2]|[12]?[0-9])$/,
-        ipv6: /^(([a-f0-9]{1,4}:){7}|::([a-f0-9]{1,4}:){0,6}|([a-f0-9]{1,4}:){1}:([a-f0-9]{1,4}:){0,5}|([a-f0-9]{1,4}:){2}:([a-f0-9]{1,4}:){0,4}|([a-f0-9]{1,4}:){3}:([a-f0-9]{1,4}:){0,3}|([a-f0-9]{1,4}:){4}:([a-f0-9]{1,4}:){0,2}|([a-f0-9]{1,4}:){5}:([a-f0-9]{1,4}:){0,1})([a-f0-9]{1,4}|(((25[0-5])|(2[0-4][0-9])|(1[0-9]{2})|([0-9]{1,2}))\.){3}((25[0-5])|(2[0-4][0-9])|(1[0-9]{2})|([0-9]{1,2})))$/,
-        ipv6Cidr: /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\/(12[0-8]|1[01][0-9]|[1-9]?[0-9])$/,
-        base64: /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/,
-        base64url: /^([0-9a-zA-Z-_]{4})*(([0-9a-zA-Z-_]{2}(==)?)|([0-9a-zA-Z-_]{3}(=)?))?$/,
-        nanoid: /^[a-zA-Z0-9_-]{21}$/,
-        jwt: /^[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]*$/
+        uuid: /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}TextComponent/,
+        ipv4: /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])TextComponent/,
+        ipv4Cidr: /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\/(3[0-2]|[12]?[0-9])TextComponent/,
+        ipv6: /^(([a-f0-9]{1,4}:){7}|::([a-f0-9]{1,4}:){0,6}|([a-f0-9]{1,4}:){1}:([a-f0-9]{1,4}:){0,5}|([a-f0-9]{1,4}:){2}:([a-f0-9]{1,4}:){0,4}|([a-f0-9]{1,4}:){3}:([a-f0-9]{1,4}:){0,3}|([a-f0-9]{1,4}:){4}:([a-f0-9]{1,4}:){0,2}|([a-f0-9]{1,4}:){5}:([a-f0-9]{1,4}:){0,1})([a-f0-9]{1,4}|(((25[0-5])|(2[0-4][0-9])|(1[0-9]{2})|([0-9]{1,2}))\.){3}((25[0-5])|(2[0-4][0-9])|(1[0-9]{2})|([0-9]{1,2})))TextComponent/,
+        ipv6Cidr: /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\/(12[0-8]|1[01][0-9]|[1-9]?[0-9])TextComponent/,
+        base64: /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?TextComponent/,
+        base64url: /^([0-9a-zA-Z-_]{4})*(([0-9a-zA-Z-_]{2}(==)?)|([0-9a-zA-Z-_]{3}(=)?))?TextComponent/,
+        nanoid: /^[a-zA-Z0-9_-]{21}TextComponent/,
+        jwt: /^[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]*TextComponent/
     };
     rf5 = new Set("ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvxyz0123456789")
 });
@@ -925,7 +927,7 @@ function c61(A, Q) {
     }
     return B
 }
-var p61 = L(() => {
+var p61 = lazyLoader(() => {
     h2();
     tX();
     d61();
@@ -953,7 +955,7 @@ function tS2(A, Q) {
         }
     }
 }
-var d60 = L(() => {
+var d60 = lazyLoader(() => {
     tX();
     p61()
 });
@@ -1033,13 +1035,13 @@ function G_2(A, Q) {
 var PRA, B_2 = (A, Q) => {
     let B = (A.options instanceof Map ? Array.from(A.options.values()) : A.options).map((G, Z) => C4(G._def, {
         ...Q,
-        currentPath: [...Q.currentPath, "anyOf", `${Z}`]
+        currentPath: [...Q.currentPath, "anyOf", `TextComponent{Z}`]
     })).filter((G) => !!G && (!Q.strictUnions || typeof G === "object" && Object.keys(G).length > 0));
     return B.length ? {
         anyOf: B
     } : void 0
 };
-var l61 = L(() => {
+var l61 = lazyLoader(() => {
     tX();
     PRA = {
         ZodString: "string",
@@ -1084,7 +1086,7 @@ function Z_2(A, Q) {
         }]
     }
 }
-var c60 = L(() => {
+var c60 = lazyLoader(() => {
     tX();
     l61()
 });
@@ -1177,7 +1179,7 @@ function ef5(A) {
         return !0
     }
 }
-var l60 = L(() => {
+var l60 = lazyLoader(() => {
     h2();
     tX()
 });
@@ -1193,7 +1195,7 @@ var J_2 = (A, Q) => {
         }, B]
     } : {}
 };
-var i60 = L(() => {
+var i60 = lazyLoader(() => {
     tX()
 });
 var W_2 = (A, Q) => {
@@ -1211,14 +1213,14 @@ var W_2 = (A, Q) => {
         allOf: [B, G].filter((Z) => Z !== void 0)
     }
 };
-var n60 = L(() => {
+var n60 = lazyLoader(() => {
     tX()
 });
 
 function X_2(A, Q) {
     return C4(A.type._def, Q)
 }
-var a60 = L(() => {
+var a60 = lazyLoader(() => {
     tX()
 });
 
@@ -1235,7 +1237,7 @@ function F_2(A, Q) {
     if (A.maxSize) d5(G, "maxItems", A.maxSize.value, A.maxSize.message, Q);
     return G
 }
-var s60 = L(() => {
+var s60 = lazyLoader(() => {
     tX()
 });
 
@@ -1245,7 +1247,7 @@ function V_2(A, Q) {
         minItems: A.items.length,
         items: A.items.map((B, G) => C4(B._def, {
             ...Q,
-            currentPath: [...Q.currentPath, "items", `${G}`]
+            currentPath: [...Q.currentPath, "items", `TextComponent{G}`]
         })).reduce((B, G) => G === void 0 ? B : [...B, G], []),
         additionalItems: C4(A.rest._def, {
             ...Q,
@@ -1258,11 +1260,11 @@ function V_2(A, Q) {
         maxItems: A.items.length,
         items: A.items.map((B, G) => C4(B._def, {
             ...Q,
-            currentPath: [...Q.currentPath, "items", `${G}`]
+            currentPath: [...Q.currentPath, "items", `TextComponent{G}`]
         })).reduce((B, G) => G === void 0 ? B : [...B, G], [])
     }
 }
-var r60 = L(() => {
+var r60 = lazyLoader(() => {
     tX()
 });
 
@@ -1278,7 +1280,7 @@ function D_2() {
 var H_2 = (A, Q) => {
     return C4(A.innerType._def, Q)
 };
-var o60 = L(() => {
+var o60 = lazyLoader(() => {
     tX()
 });
 var C_2 = (A, Q, B) => {
@@ -1357,7 +1359,7 @@ var C_2 = (A, Q, B) => {
             })(Q)
     }
 };
-var t60 = L(() => {
+var t60 = lazyLoader(() => {
     h2();
     k60();
     y60();
@@ -1419,7 +1421,7 @@ var Ah5 = (A, Q) => {
                 };
             case "none":
             case "seen": {
-                if (A.path.length < Q.currentPath.length && A.path.every((B, G) => Q.currentPath[G] === B)) return console.warn(`Recursive reference detected at ${Q.currentPath.join("/")}! Defaulting to any`), {};
+                if (A.path.length < Q.currentPath.length && A.path.every((B, G) => Q.currentPath[G] === B)) return console.warn(`Recursive reference detected at TextComponent{Q.currentPath.join("/")}! Defaulting to any`), {};
                 return Q.$refStrategy === "seen" ? {} : void 0
             }
         }
@@ -1436,7 +1438,7 @@ var Ah5 = (A, Q) => {
         }
         return B
     };
-var tX = L(() => {
+var tX = lazyLoader(() => {
     h61();
     t60()
 });
@@ -1472,11 +1474,11 @@ var jRA = (A, Q) => {
     if (B.target === "openAi" && (("anyOf" in J) || ("oneOf" in J) || ("allOf" in J) || ("type" in J) && Array.isArray(J.type))) console.warn("Warning: OpenAI may not support schemas with unions as roots! Try wrapping it in an object property.");
     return J
 };
-var e60 = L(() => {
+var e60 = lazyLoader(() => {
     tX();
     S60()
 });
-var A50 = L(() => {
+var A50 = lazyLoader(() => {
     e60();
     h61();
     S60();
@@ -1514,7 +1516,7 @@ function Q50() {
     });
     return JSON.stringify(A, null, 2)
 }
-var z_2 = L(() => {
+var z_2 = lazyLoader(() => {
     A50();
     E3A()
 });

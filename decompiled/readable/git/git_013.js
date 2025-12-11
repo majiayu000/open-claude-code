@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_013.js
+ * 处理时间: 2025-12-09T03:41:37.412Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.972Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -108,7 +111,7 @@
         return g1.decodeUtf8(this.bytes())
     };
 
-function aa8(A, Q) {
+    function aa8(A, Q) {
         Q = Q || {}, this.read = Q.readOffset || 0, this.growSize = Q.growSize || 1024;
         var B = g1.isArrayBuffer(A),
             G = g1.isArrayBufferView(A);
@@ -338,7 +341,8 @@ function aa8(A, Q) {
     g1.int32ToBytes = function(A) {
         return String.fromCharCode(A >> 24 & 255) + String.fromCharCode(A >> 16 & 255) + String.fromCharCode(A >> 8 & 255) + String.fromCharCode(A & 255)
     };
-    var Mc = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+    /* BASE64_CHARS_WITH_PAD = BASE64_CHARS_WITH_PAD = "ABCDEF...+/=" */
+var BASE64_CHARS_WITH_PAD = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
         Oc = [62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, 64, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
         s9B = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
     g1.encode64 = function(A, Q) {
@@ -346,8 +350,8 @@ function aa8(A, Q) {
             G = "",
             Z, I, Y, J = 0;
         while (J < A.length) {
-            if (Z = A.charCodeAt(J++), I = A.charCodeAt(J++), Y = A.charCodeAt(J++), B += Mc.charAt(Z >> 2), B += Mc.charAt((Z & 3) << 4 | I >> 4), isNaN(I)) B += "==";
-            else B += Mc.charAt((I & 15) << 2 | Y >> 6), B += isNaN(Y) ? "=" : Mc.charAt(Y & 63);
+            if (Z = A.charCodeAt(J++), I = A.charCodeAt(J++), Y = A.charCodeAt(J++), B += BASE64_CHARS_WITH_PAD.charAt(Z >> 2), B += BASE64_CHARS_WITH_PAD.charAt((Z & 3) << 4 | I >> 4), isNaN(I)) B += "==";
+            else B += BASE64_CHARS_WITH_PAD.charAt((I & 15) << 2 | Y >> 6), B += isNaN(Y) ? "=" : BASE64_CHARS_WITH_PAD.charAt(Y & 63);
             if (Q && B.length > Q) G += B.substr(0, Q) + `\r
 `, B = B.substr(Q)
         }
@@ -405,8 +409,8 @@ function aa8(A, Q) {
             G = "",
             Z, I, Y, J = 0;
         while (J < A.byteLength) {
-            if (Z = A[J++], I = A[J++], Y = A[J++], B += Mc.charAt(Z >> 2), B += Mc.charAt((Z & 3) << 4 | I >> 4), isNaN(I)) B += "==";
-            else B += Mc.charAt((I & 15) << 2 | Y >> 6), B += isNaN(Y) ? "=" : Mc.charAt(Y & 63);
+            if (Z = A[J++], I = A[J++], Y = A[J++], B += BASE64_CHARS_WITH_PAD.charAt(Z >> 2), B += BASE64_CHARS_WITH_PAD.charAt((Z & 3) << 4 | I >> 4), isNaN(I)) B += "==";
+            else B += BASE64_CHARS_WITH_PAD.charAt((I & 15) << 2 | Y >> 6), B += isNaN(Y) ? "=" : BASE64_CHARS_WITH_PAD.charAt(Y & 63);
             if (Q && B.length > Q) G += B.substr(0, Q) + `\r
 `, B = B.substr(Q)
         }
@@ -471,8 +475,7 @@ function aa8(A, Q) {
         var G = A.inflate(g1.encode64(Q)).rval;
         return G === null ? null : g1.decode64(G)
     };
-
-var dx1 = function(A, Q, B) {
+    var dx1 = function(A, Q, B) {
             if (!A) throw Error("WebStorage not available.");
             var G;
             if (B === null) G = A.removeItem(Q);
@@ -642,15 +645,13 @@ var dx1 = function(A, Q, B) {
     };
     g1.bytesToIPv4 = function(A) {
         if (A.length !== 4) return null;
-
-var Q = [];
+        var Q = [];
         for (var B = 0; B < A.length; ++B) Q.push(A.charCodeAt(B));
         return Q.join(".")
     };
     g1.bytesToIPv6 = function(A) {
         if (A.length !== 16) return null;
-
-var Q = [],
+        var Q = [],
             B = [],
             G = 0;
         for (var Z = 0; Z < A.length; Z += 2) {
@@ -697,7 +698,7 @@ var Q = [],
         }));
         G([], 5, 16);
 
-function G(Y, J, W) {
+        function G(Y, J, W) {
             if (J === 0) {
                 var X = Math.floor(Y.reduce(function(F, V) {
                     return F + V
@@ -709,7 +710,7 @@ function G(Y, J, W) {
             })
         }
 
-function Z(Y, J) {
+        function Z(Y, J) {
             var W = [],
                 X = [];
             for (var F = 0; F < Y; ++F) {
@@ -724,7 +725,7 @@ function Z(Y, J) {
             for (var F = 0; F < Y; ++F) W[F].postMessage(F)
         }
 
-function I(Y, J) {
+        function I(Y, J) {
             var W = [];
             for (var X = 0; X < Y; ++X) {
                 var F = J[X],
@@ -741,7 +742,7 @@ function I(Y, J) {
         }
     }
 });
-var ZiA = U((QT7, o9B) => {
+var ZiA = moduleWrapper((QT7, o9B) => {
     var SV = n8();
     P3();
     o9B.exports = SV.cipher = SV.cipher || {};
@@ -782,8 +783,7 @@ var ZiA = U((QT7, o9B) => {
     };
     px1.prototype.start = function(A) {
         A = A || {};
-
-var Q = {};
+        var Q = {};
         for (var B in A) Q[B] = A[B];
         Q.decrypt = this._decrypt, this._finish = !1, this._input = SV.util.createBuffer(), this.output = A.output || SV.util.createBuffer(), this.mode.start(Q)
     };
@@ -798,8 +798,7 @@ var Q = {};
         }, this.mode.unpad = function(B) {
             return A(this.blockSize, B, !0)
         };
-
-var Q = {};
+        var Q = {};
         if (Q.decrypt = this._decrypt, Q.overflow = this._input.length() % this.blockSize, !this._decrypt && this.mode.pad) {
             if (!this.mode.pad(this._input, Q)) return !1
         }
@@ -812,7 +811,7 @@ var Q = {};
         return !0
     }
 });
-var ix1 = U((BT7, t9B) => {
+var ix1 = moduleWrapper((BT7, t9B) => {
     var _V = n8();
     P3();
     _V.cipher = _V.cipher || {};
@@ -1041,8 +1040,7 @@ var ix1 = U((BT7, t9B) => {
         this.tag = _V.util.createBuffer();
         var G = this._aDataLength.concat(lx1(this._cipherLength * 8));
         this._s = this.ghash(this._hashSubkey, this._s, G);
-
-var Z = [];
+        var Z = [];
         this.cipher.encrypt(this._j0, Z);
         for (var I = 0; I < this._ints; ++I) this.tag.putInt32(this._s[I] ^ Z[I]);
         if (this.tag.truncate(this.tag.length() % (this._tagLength / 8)), Q.decrypt && this.tag.bytes() !== this._tag) B = !1;
@@ -1113,7 +1111,7 @@ var Z = [];
         return Z
     };
 
-function IiA(A, Q) {
+    function IiA(A, Q) {
         if (typeof A === "string") A = _V.util.createBuffer(A);
         if (_V.util.isArray(A) && A.length > 4) {
             var B = A;
@@ -1130,15 +1128,15 @@ function IiA(A, Q) {
         return A
     }
 
-function YiA(A) {
+    function YiA(A) {
         A[A.length - 1] = A[A.length - 1] + 1 & 4294967295
     }
 
-function lx1(A) {
+    function lx1(A) {
         return [A / 4294967296 | 0, A & 4294967295]
     }
 });
-var Rc = U((GT7, B4B) => {
+var Rc = moduleWrapper((GT7, B4B) => {
     var PZ = n8();
     ZiA();
     ix1();
@@ -1227,7 +1225,7 @@ var Rc = U((GT7, B4B) => {
     P3A("AES-CTR", PZ.cipher.modes.ctr);
     P3A("AES-GCM", PZ.cipher.modes.gcm);
 
-function P3A(A, Q) {
+    function P3A(A, Q) {
         var B = function() {
             return new PZ.aes.Algorithm(A, Q)
         };
@@ -1237,7 +1235,7 @@ function P3A(A, Q) {
         T3A = 4,
         eC, nx1, e9B, lo, BT;
 
-function A4B() {
+    function A4B() {
         sx1 = !0, e9B = [0, 1, 2, 4, 8, 16, 32, 64, 128, 27, 54];
         var A = Array(256);
         for (var Q = 0; Q < 128; ++Q) A[Q] = Q << 1, A[Q + 128] = Q + 128 << 1 ^ 283;
@@ -1254,7 +1252,7 @@ function A4B() {
         }
     }
 
-function Q4B(A, Q) {
+    function Q4B(A, Q) {
         var B = A.slice(0),
             G, Z = 1,
             I = B.length,
@@ -1281,7 +1279,7 @@ function Q4B(A, Q) {
         return B
     }
 
-function ax1(A, Q, B, G) {
+    function ax1(A, Q, B, G) {
         var Z = A.length / 4 - 1,
             I, Y, J, W, X;
         if (G) I = BT[0], Y = BT[1], J = BT[2], W = BT[3], X = nx1;
@@ -1293,7 +1291,7 @@ function ax1(A, Q, B, G) {
         B[0] = X[F >>> 24] << 24 ^ X[V >>> 16 & 255] << 16 ^ X[K >>> 8 & 255] << 8 ^ X[D & 255] ^ A[++z], B[G ? 3 : 1] = X[V >>> 24] << 24 ^ X[K >>> 16 & 255] << 16 ^ X[D >>> 8 & 255] << 8 ^ X[F & 255] ^ A[++z], B[2] = X[K >>> 24] << 24 ^ X[D >>> 16 & 255] << 16 ^ X[F >>> 8 & 255] << 8 ^ X[V & 255] ^ A[++z], B[G ? 1 : 3] = X[D >>> 24] << 24 ^ X[F >>> 16 & 255] << 16 ^ X[V >>> 8 & 255] << 8 ^ X[K & 255] ^ A[++z]
     }
 
-function JiA(A) {
+    function JiA(A) {
         A = A || {};
         var Q = (A.mode || "CBC").toUpperCase(),
             B = "AES-" + Q,
@@ -1308,7 +1306,7 @@ function JiA(A) {
         }, G
     }
 });
-var Tc = U((ZT7, G4B) => {
+var Tc = moduleWrapper((ZT7, G4B) => {
     var NzA = n8();
     NzA.pki = NzA.pki || {};
     var rx1 = G4B.exports = NzA.pki.oids = NzA.oids = NzA.oids || {};
@@ -1317,7 +1315,7 @@ var Tc = U((ZT7, G4B) => {
         rx1[A] = Q, rx1[Q] = A
     }
 
-function x7(A, Q) {
+    function x7(A, Q) {
         rx1[A] = Q
     }
     $Q("1.2.840.113549.1.1.1", "rsaEncryption");
@@ -1449,7 +1447,7 @@ function x7(A, Q) {
     $Q("1.3.6.1.5.5.7.3.4", "emailProtection");
     $Q("1.3.6.1.5.5.7.3.8", "timeStamping")
 });
-var GT = U((IT7, I4B) => {
+var GT = moduleWrapper((IT7, I4B) => {
     var JI = n8();
     P3();
     Tc();
@@ -1490,8 +1488,7 @@ var GT = U((IT7, I4B) => {
                 if (G[Y] !== void 0) I.push(G[Y]);
             G = I
         }
-
-var J = {
+        var J = {
             tagClass: A,
             type: Q,
             constructed: B,

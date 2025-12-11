@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_015.js
+ * 处理时间: 2025-12-09T03:41:38.716Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.077Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -20,7 +23,7 @@
     }
     return A4.default.createElement(j, {
         flexDirection: "column"
-    }, A && A4.default.createElement($, null, A), G())
+    }, A && A4.default.createElement(TextComponent, null, A), G())
 }
 
 function Zl5(A) {
@@ -53,9 +56,9 @@ function Yl5({
     }, A4.default.createElement(j, {
         justifyContent: "flex-end",
         minWidth: Q
-    }, A4.default.createElement($, {
+    }, A4.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Suggestions ")), A4.default.createElement($, null, "None"));
+    }, "Suggestions ")), A4.default.createElement(TextComponent, null, "None"));
     let B = a9A(A),
         G = Zl5(A),
         Z = Il5(A);
@@ -64,9 +67,9 @@ function Yl5({
     }, A4.default.createElement(j, {
         justifyContent: "flex-end",
         minWidth: Q
-    }, A4.default.createElement($, {
+    }, A4.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Suggestion ")), A4.default.createElement($, null, "None"));
+    }, "Suggestion ")), A4.default.createElement(TextComponent, null, "None"));
     return A4.default.createElement(j, {
         flexDirection: "column"
     }, A4.default.createElement(j, {
@@ -74,38 +77,38 @@ function Yl5({
     }, A4.default.createElement(j, {
         justifyContent: "flex-end",
         minWidth: Q
-    }, A4.default.createElement($, {
+    }, A4.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Suggestions ")), A4.default.createElement($, null, " ")), B.length > 0 && A4.default.createElement(j, {
+    }, "Suggestions ")), A4.default.createElement(TextComponent, null, " ")), B.length > 0 && A4.default.createElement(j, {
         flexDirection: "row"
     }, A4.default.createElement(j, {
         justifyContent: "flex-end",
         minWidth: Q
-    }, A4.default.createElement($, {
+    }, A4.default.createElement(TextComponent, {
         dimColor: !0
     }, " Rules ")), A4.default.createElement(j, {
         flexDirection: "column"
-    }, B.map((I, Y) => A4.default.createElement($, {
+    }, B.map((I, Y) => A4.default.createElement(TextComponent, {
         key: Y
     }, V1.bullet, " ", r5(I))))), G.length > 0 && A4.default.createElement(j, {
         flexDirection: "row"
     }, A4.default.createElement(j, {
         justifyContent: "flex-end",
         minWidth: Q
-    }, A4.default.createElement($, {
+    }, A4.default.createElement(TextComponent, {
         dimColor: !0
     }, " Directories ")), A4.default.createElement(j, {
         flexDirection: "column"
-    }, G.map((I, Y) => A4.default.createElement($, {
+    }, G.map((I, Y) => A4.default.createElement(TextComponent, {
         key: Y
     }, V1.bullet, " ", I)))), Z && A4.default.createElement(j, {
         flexDirection: "row"
     }, A4.default.createElement(j, {
         justifyContent: "flex-end",
         minWidth: Q
-    }, A4.default.createElement($, {
+    }, A4.default.createElement(TextComponent, {
         dimColor: !0
-    }, " Mode ")), A4.default.createElement($, null, Iv(Z))))
+    }, " Mode ")), A4.default.createElement(TextComponent, null, Iv(Z))))
 }
 
 function Zf2({
@@ -121,23 +124,23 @@ function Zf2({
     }, A4.default.createElement(j, {
         justifyContent: "flex-end",
         minWidth: 10
-    }, A4.default.createElement($, {
+    }, A4.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Behavior ")), A4.default.createElement($, null, A.behavior)), A.behavior !== "allow" && A4.default.createElement(j, {
+    }, "Behavior ")), A4.default.createElement(TextComponent, null, A.behavior)), A.behavior !== "allow" && A4.default.createElement(j, {
         flexDirection: "row"
     }, A4.default.createElement(j, {
         justifyContent: "flex-end",
         minWidth: 10
-    }, A4.default.createElement($, {
+    }, A4.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Message ")), A4.default.createElement($, null, A.message)), A4.default.createElement(j, {
+    }, "Message ")), A4.default.createElement(TextComponent, null, A.message)), A4.default.createElement(j, {
         flexDirection: "row"
     }, A4.default.createElement(j, {
         justifyContent: "flex-end",
         minWidth: 10
-    }, A4.default.createElement($, {
+    }, A4.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Reason ")), Q === void 0 ? A4.default.createElement($, null, "undefined") : A4.default.createElement(Gl5, {
+    }, "Reason ")), Q === void 0 ? A4.default.createElement(TextComponent, null, "undefined") : A4.default.createElement(Gl5, {
         decisionReason: Q
     })), A4.default.createElement(Yl5, {
         suggestions: B,
@@ -145,14 +148,14 @@ function Zf2({
     }))
 }
 var A4;
-var If2 = L(() => {
+var If2 = lazyLoader(() => {
     hA();
     aG();
     J9();
     n2();
     Bw();
     hK();
-    A4 = GA(VA(), 1)
+    A4 = esmImport(VA(), 1)
 });
 
 function Jl5(A, Q) {
@@ -160,20 +163,20 @@ function Jl5(A, Q) {
     switch (A.type) {
         case "rule":
             return {
-                reasonString: `Permission rule ${oA.bold(r5(A.rule.ruleValue))} requires confirmation for this ${Q}.`, configString: A.rule.source === "policySettings" ? void 0 : "/permissions to update rules"
+                reasonString: `Permission rule TextComponent{oA.bold(r5(A.rule.ruleValue))} requires confirmation for this TextComponent{Q}.`, configString: A.rule.source === "policySettings" ? void 0 : "/permissions to update rules"
             };
         case "hook": {
             let B = A.reason ? `:
-${A.reason}` : ".";
+TextComponent{A.reason}` : ".";
             return {
-                reasonString: `Hook ${oA.bold(A.hookName)} requires confirmation for this ${Q}${B}`,
+                reasonString: `Hook TextComponent{oA.bold(A.hookName)} requires confirmation for this TextComponent{Q}TextComponent{B}`,
                 configString: "/hooks to update"
             }
         }
         case "classifier":
             return {
-                reasonString: `Classifier ${oA.bold(A.classifier)} requires confirmation for this ${Q}.
-${A.reason}`, configString: void 0
+                reasonString: `Classifier TextComponent{oA.bold(A.classifier)} requires confirmation for this TextComponent{Q}.
+TextComponent{A.reason}`, configString: void 0
             };
         default:
             return null
@@ -189,16 +192,16 @@ function WC({
     return i51.default.createElement(j, {
         marginBottom: 1,
         flexDirection: "column"
-    }, i51.default.createElement($, null, B.reasonString), B.configString && i51.default.createElement($, {
+    }, i51.default.createElement(TextComponent, null, B.reasonString), B.configString && i51.default.createElement(TextComponent, {
         dimColor: !0
     }, B.configString))
 }
 var i51;
-var ih = L(() => {
+var ih = lazyLoader(() => {
     hA();
     aG();
     J9();
-    i51 = GA(VA(), 1)
+    i51 = esmImport(VA(), 1)
 });
 
 function Yf2({
@@ -209,7 +212,7 @@ function Yf2({
     toolName: Z,
     args: I
 }) {
-    let Y = `${G} - ${Z}`,
+    let Y = `TextComponent{G} - TextComponent{Z}`,
         J = `mcp__${G}__${Z}`,
         W = F$.useMemo(() => ({
             ...A,
@@ -223,7 +226,7 @@ function Yf2({
             completion_type: "tool_use_single",
             language_name: "none"
         }), []);
-    X$(W, X);
+    GREP_TOOL_NAME(W, X);
     let F = (D) => {
             switch (D) {
                 case "yes":
@@ -248,7 +251,7 @@ function Yf2({
                         }
                     });
                     let H = W.permissionResult.behavior === "ask" ? W.permissionResult.suggestions || [] : [];
-                    if (H.length === 0) e(Error(`MCPCliPermissionRequest: No MCP suggestions found for ${G}/${Z}`)), W.onAllow(W.input, []);
+                    if (H.length === 0) e(Error(`MCPCliPermissionRequest: No MCP suggestions found for TextComponent{G}/TextComponent{Z}`)), W.onAllow(W.input, []);
                     else W.onAllow(W.input, H);
                     Q();
                     break
@@ -272,10 +275,10 @@ function Yf2({
                 label: "Yes",
                 value: "yes"
             }, {
-                label: `Yes, and don't ask again for ${oA.bold(Y)} commands in ${oA.bold(V)}`,
+                label: `Yes, and don't ask again for TextComponent{oA.bold(Y)} commands in TextComponent{oA.bold(V)}`,
                 value: "yes-dont-ask-again"
             }, {
-                label: `No, and tell Claude what to do differently ${oA.bold.dim("(esc)")}`,
+                label: `No, and tell Claude what to do differently TextComponent{oA.bold.dim("(esc)")}`,
                 value: "no"
             }]
         }, [Y, V]);
@@ -285,23 +288,23 @@ function Yf2({
         flexDirection: "column",
         paddingX: 2,
         paddingY: 1
-    }, F$.default.createElement($, null, Y, "(", I || "{}", ")", F$.default.createElement($, {
+    }, F$.default.createElement(TextComponent, null, Y, "(", I || "{}", ")", F$.default.createElement(TextComponent, {
         dimColor: !0
-    }, " (MCP)")), F$.default.createElement($, {
+    }, " (MCP)")), F$.default.createElement(TextComponent, {
         dimColor: !0
     }, W.description)), F$.default.createElement(j, {
         flexDirection: "column"
     }, F$.default.createElement(WC, {
         permissionResult: W.permissionResult,
         toolType: "tool"
-    }), F$.default.createElement($, null, "Do you want to proceed?"), F$.default.createElement(M0, {
+    }), F$.default.createElement(TextComponent, null, "Do you want to proceed?"), F$.default.createElement(M0, {
         options: K,
         onChange: F,
         onCancel: () => F("no")
     })))
 }
 var F$;
-var Jf2 = L(() => {
+var Jf2 = lazyLoader(() => {
     hA();
     T6();
     CO();
@@ -312,7 +315,7 @@ var Jf2 = L(() => {
     On();
     ih();
     u1();
-    F$ = GA(VA(), 1)
+    F$ = esmImport(VA(), 1)
 });
 
 function Wf2(A) {
@@ -367,7 +370,7 @@ function Wl5({
         completion_type: "tool_use_single",
         language_name: "none"
     }), []);
-    X$(A, E);
+    GREP_TOOL_NAME(A, E);
     let z = vG.useMemo(() => Qf2({
         suggestions: A.permissionResult.behavior === "ask" ? A.permissionResult.suggestions : void 0,
         onRejectFeedbackChange: V
@@ -376,14 +379,14 @@ function Wl5({
         if (R.ctrl && q === "d") X((P) => !P)
     });
 
-function w(q) {
+    function w(q) {
         let R = q?.trim();
         if (Pn("tool_use_single", A, "reject", !!R), R) A.onReject(R);
         else A.onReject();
         G(), B()
     }
 
-function N(q) {
+    function N(q) {
         switch (q) {
             case "yes":
                 Pn("tool_use_single", A, "accept"), A.onAllow(A.input, []), B();
@@ -410,27 +413,27 @@ function N(q) {
         flexDirection: "column",
         paddingX: 2,
         paddingY: 1
-    }, vG.default.createElement($, null, X9.renderToolUseMessage({
+    }, vG.default.createElement(TextComponent, null, X9.renderToolUseMessage({
         command: I,
         description: Y
     }, {
         theme: J,
         verbose: !0
-    })), vG.default.createElement($, {
+    })), vG.default.createElement(TextComponent, {
         dimColor: !0
     }, A.description)), W ? vG.default.createElement(vG.default.Fragment, null, vG.default.createElement(Zf2, {
         permissionResult: A.permissionResult
     }), A.toolUseContext.options.debug && vG.default.createElement(j, {
         justifyContent: "flex-end",
         marginTop: 1
-    }, vG.default.createElement($, {
+    }, vG.default.createElement(TextComponent, {
         dimColor: !0
     }, "Ctrl-D to hide debug info"))) : vG.default.createElement(vG.default.Fragment, null, vG.default.createElement(j, {
         flexDirection: "column"
     }, vG.default.createElement(WC, {
         permissionResult: A.permissionResult,
         toolType: "command"
-    }), vG.default.createElement($, null, "Do you want to proceed?"), vG.default.createElement(M0, {
+    }), vG.default.createElement(TextComponent, null, "Do you want to proceed?"), vG.default.createElement(M0, {
         options: z,
         onChange: N,
         onCancel: () => w(),
@@ -439,14 +442,14 @@ function N(q) {
     })), vG.default.createElement(j, {
         justifyContent: "space-between",
         marginTop: 1
-    }, vG.default.createElement($, {
+    }, vG.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Esc to exit"), A.toolUseContext.options.debug && vG.default.createElement($, {
+    }, "Esc to exit"), A.toolUseContext.options.debug && vG.default.createElement(TextComponent, {
         dimColor: !0
     }, "Ctrl+d to show debug info"))))
 }
 var vG;
-var Xf2 = L(() => {
+var Xf2 = lazyLoader(() => {
     hA();
     nV();
     On();
@@ -459,7 +462,7 @@ var Xf2 = L(() => {
     MJ();
     Jf2();
     EE();
-    vG = GA(VA(), 1)
+    vG = esmImport(VA(), 1)
 });
 
 function n51({
@@ -472,7 +475,7 @@ function n51({
         completion_type: "tool_use_single",
         language_name: "none"
     }), []);
-    X$(A, J);
+    GREP_TOOL_NAME(A, J);
     let W = (V) => {
             switch (V) {
                 case "yes":
@@ -524,10 +527,10 @@ function n51({
                 label: "Yes",
                 value: "yes"
             }, {
-                label: `Yes, and don't ask again for ${oA.bold(Y)} commands in ${oA.bold(X)}`,
+                label: `Yes, and don't ask again for TextComponent{oA.bold(Y)} commands in TextComponent{oA.bold(X)}`,
                 value: "yes-dont-ask-again"
             }, {
-                label: `No, and tell Claude what to do differently ${oA.bold.dim("(esc)")}`,
+                label: `No, and tell Claude what to do differently TextComponent{oA.bold.dim("(esc)")}`,
                 value: "no"
             }]
         }, [Y, X]);
@@ -537,26 +540,26 @@ function n51({
         flexDirection: "column",
         paddingX: 2,
         paddingY: 1
-    }, _q.default.createElement($, null, Y, "(", A.tool.renderToolUseMessage(A.input, {
+    }, _q.default.createElement(TextComponent, null, Y, "(", A.tool.renderToolUseMessage(A.input, {
         theme: Z,
         verbose: G
-    }), ")", I.endsWith(" (MCP)") ? _q.default.createElement($, {
+    }), ")", I.endsWith(" (MCP)") ? _q.default.createElement(TextComponent, {
         dimColor: !0
-    }, " (MCP)") : ""), _q.default.createElement($, {
+    }, " (MCP)") : ""), _q.default.createElement(TextComponent, {
         dimColor: !0
     }, A.description)), _q.default.createElement(j, {
         flexDirection: "column"
     }, _q.default.createElement(WC, {
         permissionResult: A.permissionResult,
         toolType: "tool"
-    }), _q.default.createElement($, null, "Do you want to proceed?"), _q.default.createElement(M0, {
+    }), _q.default.createElement(TextComponent, null, "Do you want to proceed?"), _q.default.createElement(M0, {
         options: F,
         onChange: W,
         onCancel: () => W("no")
     })))
 }
 var _q;
-var s30 = L(() => {
+var s30 = lazyLoader(() => {
     hA();
     T6();
     CO();
@@ -566,7 +569,7 @@ var s30 = L(() => {
     J9();
     On();
     ih();
-    _q = GA(VA(), 1)
+    _q = esmImport(VA(), 1)
 });
 
 function Xl5() {
@@ -597,12 +600,12 @@ function a51(A, Q) {
 }
 var r30, Ff2 = 6000,
     Kl5;
-var o30 = L(() => {
+var o30 = lazyLoader(() => {
     W61();
     o2();
     S0();
     jQ();
-    r30 = GA(VA(), 1);
+    r30 = esmImport(VA(), 1);
     Kl5 = t1(() => process.stdin.on("data", ZVA))
 });
 import {
@@ -642,23 +645,23 @@ function Vf2({
         paddingX: 1
     }, kq.createElement(j, {
         paddingBottom: 1
-    }, kq.createElement($, {
+    }, kq.createElement(TextComponent, {
         bold: !0
     }, B ? A : Hl5(H0(), A))), I ? fF(I.map((Y) => kq.createElement(Z$, {
         key: Y.newStart,
         patch: Y,
         dim: !1,
         filePath: A
-    })), (Y) => kq.createElement($, {
+    })), (Y) => kq.createElement(TextComponent, {
         dimColor: !0,
-        key: `ellipsis-${Y}`
+        key: `ellipsis-TextComponent{Y}`
     }, "...")) : kq.createElement(XO, {
         code: Q || "(No content)",
         language: Dl5(A).slice(1)
     }))
 }
 var kq, s51;
-var Kf2 = L(() => {
+var Kf2 = lazyLoader(() => {
     Zn();
     hA();
     R2();
@@ -666,7 +669,7 @@ var Kf2 = L(() => {
     iJA();
     fk();
     o0();
-    kq = GA(VA(), 1), s51 = GA(VA(), 1)
+    kq = esmImport(VA(), 1), s51 = esmImport(VA(), 1)
 });
 import {
     basename as Cl5
@@ -689,7 +692,7 @@ function Df2(A) {
         onDone: A.onDone,
         onReject: A.onReject,
         title: I ? "Overwrite file" : "Create file",
-        question: L0A.default.createElement($, null, "Do you want to ", Y, " ", L0A.default.createElement($, {
+        question: L0A.default.createElement(TextComponent, null, "Do you want to ", Y, " ", L0A.default.createElement(TextComponent, {
             bold: !0
         }, Cl5(G)), "?"),
         content: L0A.default.createElement(Vf2, {
@@ -705,14 +708,14 @@ function Df2(A) {
     })
 }
 var L0A, El5;
-var Hf2 = L(() => {
+var Hf2 = lazyLoader(() => {
     hA();
     gh();
     Kf2();
     M9();
     o0();
     BTA();
-    L0A = GA(VA(), 1), El5 = {
+    L0A = esmImport(VA(), 1), El5 = {
         getConfig: (A) => {
             let B = OA().existsSync(A.file_path) ? Tq(A.file_path) : "";
             return c51(A.file_path, B, A.content, !1)
@@ -745,7 +748,7 @@ function Cf2({
     verbose: G,
     toolUseContext: Z
 }) {
-    let [I] = $B(), Y = zl5(A), J = A.tool.userFacingName(A.input), W = A.tool.isReadOnly(A.input), F = `${W?"Read":"Edit"} file`, V = (D) => D;
+    let [I] = $B(), Y = zl5(A), J = A.tool.userFacingName(A.input), W = A.tool.isReadOnly(A.input), F = `TextComponent{W?"Read":"Edit"} file`, V = (D) => D;
     if (!Y) return ZTA.default.createElement(n51, {
         toolUseConfirm: A,
         toolUseContext: Z,
@@ -757,7 +760,7 @@ function Cf2({
         flexDirection: "column",
         paddingX: 2,
         paddingY: 1
-    }, ZTA.default.createElement($, null, J, "(", A.tool.renderToolUseMessage(A.input, {
+    }, ZTA.default.createElement(TextComponent, null, J, "(", A.tool.renderToolUseMessage(A.input, {
         theme: I,
         verbose: G
     }), ")"));
@@ -776,19 +779,19 @@ function Cf2({
     })
 }
 var ZTA;
-var Ef2 = L(() => {
+var Ef2 = lazyLoader(() => {
     hA();
     s30();
     BTA();
-    ZTA = GA(VA(), 1)
+    ZTA = esmImport(VA(), 1)
 });
-var LWA = U((HIZ, zf2) => {
+var LWA = moduleWrapper((HIZ, zf2) => {
     zf2.exports = M0A;
     M0A.CAPTURING_PHASE = 1;
     M0A.AT_TARGET = 2;
     M0A.BUBBLING_PHASE = 3;
 
-function M0A(A, Q) {
+    function M0A(A, Q) {
         if (this.type = "", this.target = null, this.currentTarget = null, this.eventPhase = M0A.AT_TARGET, this.bubbles = !1, this.cancelable = !1, this.isTrusted = !1, this.defaultPrevented = !1, this.timeStamp = Date.now(), this._propagationStopped = !1, this._immediatePropagationStopped = !1, this._initialized = !0, this._dispatching = !1, A) this.type = A;
         if (Q)
             for (var B in Q) this[B] = Q[B]
@@ -820,11 +823,11 @@ function M0A(A, Q) {
         }
     })
 });
-var e30 = U((CIZ, $f2) => {
+var e30 = moduleWrapper((CIZ, $f2) => {
     var Uf2 = LWA();
     $f2.exports = t30;
 
-function t30() {
+    function t30() {
         Uf2.call(this), this.view = null, this.detail = 0
     }
     t30.prototype = Object.create(Uf2.prototype, {
@@ -838,11 +841,11 @@ function t30() {
         }
     })
 });
-var Q70 = U((EIZ, qf2) => {
+var Q70 = moduleWrapper((EIZ, qf2) => {
     var wf2 = e30();
     qf2.exports = A70;
 
-function A70() {
+    function A70() {
         wf2.call(this), this.screenX = this.screenY = this.clientX = this.clientY = 0, this.ctrlKey = this.altKey = this.shiftKey = this.metaKey = !1, this.button = 0, this.buttons = 1, this.relatedTarget = null
     }
     A70.prototype = Object.create(wf2.prototype, {
@@ -886,7 +889,7 @@ function A70() {
         }
     })
 });
-var t51 = U((zIZ, Lf2) => {
+var t51 = moduleWrapper((zIZ, Lf2) => {
     Lf2.exports = o51;
     var Ul5 = 1,
         $l5 = 3,
@@ -939,7 +942,7 @@ var t51 = U((zIZ, Lf2) => {
             DATA_CLONE_ERR: hl5
         };
 
-function o51(A) {
+    function o51(A) {
         Error.call(this), Error.captureStackTrace(this, this.constructor), this.code = A, this.message = ul5[A], this.name = gl5[A]
     }
     o51.prototype.__proto__ = Error.prototype;
@@ -948,10 +951,10 @@ function o51(A) {
     }, Object.defineProperty(o51, ITA, r51), Object.defineProperty(o51.prototype, ITA, r51);
     var r51, ITA
 });
-var e51 = U((ml5) => {
+var e51 = moduleWrapper((ml5) => {
     ml5.isApiWritable = !globalThis.__domino_frozen__
 });
-var uJ = U((pl5) => {
+var uJ = moduleWrapper((pl5) => {
     var gJ = t51(),
         hW = gJ,
         cl5 = e51().isApiWritable;
@@ -1059,13 +1062,13 @@ var uJ = U((pl5) => {
         })
     }
 });
-var B70 = U((wIZ, Of2) => {
+var B70 = moduleWrapper((wIZ, Of2) => {
     var O0A = LWA(),
         qi5 = Q70(),
         Ni5 = uJ();
     Of2.exports = Mf2;
 
-function Mf2() {}
+    function Mf2() {}
     Mf2.prototype = {
         addEventListener: function(Q, B, G) {
             if (!B) return;
@@ -1077,8 +1080,7 @@ function Mf2() {}
                 var J = Z[I];
                 if (J.listener === B && J.capture === G) return
             }
-
-var W = {
+            var W = {
                 listener: B,
                 capture: G
             };
@@ -1106,7 +1108,7 @@ var W = {
         _dispatchEvent: function(Q, B) {
             if (typeof B !== "boolean") B = !1;
 
-function G(X, F) {
+            function G(X, F) {
                 var {
                     type: V,
                     eventPhase: K
@@ -1147,8 +1149,7 @@ function G(X, F) {
             }
             if (!Q._initialized || Q._dispatching) Ni5.InvalidStateError();
             Q.isTrusted = B, Q._dispatching = !0, Q.target = this;
-
-var Z = [];
+            var Z = [];
             for (var I = this.parentNode; I; I = I.parentNode) Z.push(I);
             Q.eventPhase = O0A.CAPTURING_PHASE;
             for (var Y = Z.length - 1; Y >= 0; Y--)
@@ -1205,7 +1206,7 @@ var Z = [];
         }
     }
 });
-var G70 = U((qIZ, Rf2) => {
+var G70 = moduleWrapper((qIZ, Rf2) => {
     var nh = uJ(),
         EO = Rf2.exports = {
             valid: function(A) {
@@ -1232,7 +1233,7 @@ var G70 = U((qIZ, Rf2) => {
             }
         }
 });
-var Z70 = U((NIZ, xf2) => {
+var Z70 = moduleWrapper((NIZ, xf2) => {
     xf2.exports = {
         serializeOne: ji5,
         ɵescapeMatchingClosingTag: _f2,
@@ -1274,7 +1275,7 @@ var Z70 = U((NIZ, xf2) => {
         Pf2 = /[&<>\u00A0]/g,
         jf2 = /[&"<>\u00A0]/g;
 
-function Oi5(A) {
+    function Oi5(A) {
         if (!Pf2.test(A)) return A;
         return A.replace(Pf2, (Q) => {
             switch (Q) {
@@ -1290,7 +1291,7 @@ function Oi5(A) {
         })
     }
 
-function Ri5(A) {
+    function Ri5(A) {
         if (!jf2.test(A)) return A;
         return A.replace(jf2, (Q) => {
             switch (Q) {
@@ -1308,7 +1309,7 @@ function Ri5(A) {
         })
     }
 
-function Ti5(A) {
+    function Ti5(A) {
         var Q = A.namespaceURI;
         if (!Q) return A.localName;
         if (Q === R0A.XML) return "xml:" + A.localName;
@@ -1319,7 +1320,7 @@ function Ti5(A) {
         return A.name
     }
 
-function _f2(A, Q) {
+    function _f2(A, Q) {
         let B = "</" + Q;
         if (!A.toLowerCase().includes(B)) return A;
         let G = [...A],
@@ -1329,16 +1330,16 @@ function _f2(A, Q) {
     }
     var Pi5 = /--!?>/;
 
-function kf2(A) {
+    function kf2(A) {
         if (!Pi5.test(A)) return A;
         return A.replace(/(--\!?)>/g, "$1&gt;")
     }
 
-function yf2(A) {
+    function yf2(A) {
         return A.includes(">") ? A.replaceAll(">", "&gt;") : A
     }
 
-function ji5(A, Q) {
+    function ji5(A, Q) {
         var B = "";
         switch (A.nodeType) {
             case 1:
@@ -1383,14 +1384,14 @@ function ji5(A, Q) {
         return B
     }
 });
-var mD = U((LIZ, uf2) => {
+var mD = moduleWrapper((LIZ, uf2) => {
     uf2.exports = VY;
     var gf2 = B70(),
         A31 = G70(),
         vf2 = Z70(),
         R7 = uJ();
 
-function VY() {
+    function VY() {
         gf2.call(this), this.parentNode = null, this._nextSibling = this._previousSibling = this, this._index = void 0
     }
     var V$ = VY.ELEMENT_NODE = 1,

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_010.js
+ * 处理时间: 2025-12-09T03:41:36.092Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.864Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -25,7 +28,7 @@
         };
     gWB.exports = J66
 });
-var dWB = U((uu7, mWB) => {
+var dWB = moduleWrapper((uu7, mWB) => {
     var W66 = vH(),
         X66 = VM(),
         F66 = (A, Q, B) => {
@@ -45,7 +48,7 @@ var dWB = U((uu7, mWB) => {
         };
     mWB.exports = F66
 });
-var lWB = U((mu7, pWB) => {
+var lWB = moduleWrapper((mu7, pWB) => {
     var Eg1 = vH(),
         V66 = VM(),
         cWB = A$A(),
@@ -73,7 +76,7 @@ var lWB = U((mu7, pWB) => {
                             case "<=":
                                 break;
                             default:
-                                throw Error(`Unexpected operation: ${Y.operator}`)
+                                throw Error(`Unexpected operation: TextComponent{Y.operator}`)
                         }
                     }), I && (!B || cWB(B, I))) B = I
             }
@@ -82,7 +85,7 @@ var lWB = U((mu7, pWB) => {
         };
     pWB.exports = K66
 });
-var nWB = U((du7, iWB) => {
+var nWB = moduleWrapper((du7, iWB) => {
     var D66 = VM(),
         H66 = (A, Q) => {
             try {
@@ -93,7 +96,7 @@ var nWB = U((du7, iWB) => {
         };
     iWB.exports = H66
 });
-var naA = U((cu7, oWB) => {
+var naA = moduleWrapper((cu7, oWB) => {
     var C66 = vH(),
         rWB = G$A(),
         {
@@ -135,24 +138,24 @@ var naA = U((cu7, oWB) => {
         };
     oWB.exports = q66
 });
-var eWB = U((pu7, tWB) => {
+var eWB = moduleWrapper((pu7, tWB) => {
     var N66 = naA(),
         L66 = (A, Q, B) => N66(A, Q, ">", B);
     tWB.exports = L66
 });
-var QXB = U((lu7, AXB) => {
+var QXB = moduleWrapper((lu7, AXB) => {
     var M66 = naA(),
         O66 = (A, Q, B) => M66(A, Q, "<", B);
     AXB.exports = O66
 });
-var ZXB = U((iu7, GXB) => {
+var ZXB = moduleWrapper((iu7, GXB) => {
     var BXB = VM(),
         R66 = (A, Q, B) => {
             return A = new BXB(A, B), Q = new BXB(Q, B), A.intersects(Q, B)
         };
     GXB.exports = R66
 });
-var YXB = U((nu7, IXB) => {
+var YXB = moduleWrapper((nu7, IXB) => {
     var T66 = P7A(),
         P66 = FM();
     IXB.exports = (A, Q, B) => {
@@ -171,15 +174,15 @@ var YXB = U((nu7, IXB) => {
         for (let [F, V] of G)
             if (F === V) J.push(F);
             else if (!V && F === Y[0]) J.push("*");
-        else if (!V) J.push(`>=${F}`);
-        else if (F === Y[0]) J.push(`<=${V}`);
-        else J.push(`${F} - ${V}`);
+        else if (!V) J.push(`>=TextComponent{F}`);
+        else if (F === Y[0]) J.push(`<=TextComponent{V}`);
+        else J.push(`TextComponent{F} - TextComponent{V}`);
         let W = J.join(" || "),
             X = typeof Q.raw === "string" ? Q.raw : String(Q);
         return W.length < X.length ? W : Q
     }
 });
-var KXB = U((au7, VXB) => {
+var KXB = moduleWrapper((au7, VXB) => {
     var JXB = VM(),
         Ug1 = G$A(),
         {
@@ -269,7 +272,7 @@ var KXB = U((au7, VXB) => {
         };
     VXB.exports = j66
 });
-var WE = U((su7, CXB) => {
+var WE = moduleWrapper((su7, CXB) => {
     var wg1 = R7A(),
         DXB = tUA(),
         k66 = vH(),
@@ -329,7 +332,7 @@ var WE = U((su7, CXB) => {
         rsort: n66,
         gt: a66,
         lt: s66,
-        eq: r66,
+        WEB_FETCH_TOOL_NAME: r66,
         neq: o66,
         gte: t66,
         lte: e66,
@@ -377,7 +380,7 @@ function qg1() {
     else return "\x1B[2J\x1B[3J\x1B[H"
 }
 var ru7;
-var EXB = L(() => {
+var EXB = lazyLoader(() => {
     ru7 = qg1()
 });
 
@@ -393,7 +396,7 @@ function U56() {
 }
 
 function $56(A) {
-    return `${xh1}8${N7A}${N7A}${A}${q7A}`
+    return `TextComponent{xh1}8${N7A}TextComponent{N7A}TextComponent{A}TextComponent{q7A}`
 }
 
 function Ng1(A, Q) {
@@ -441,7 +444,7 @@ function w56(A) {
     let Q = q56(A.state),
         B = A.percentage ?? 0,
         G = Math.max(0, Math.min(100, Math.round(B)));
-    return `${xh1}9;4;${Q};${G}${q7A}`
+    return `TextComponent{xh1}9;4;TextComponent{Q};TextComponent{G}TextComponent{q7A}`
 }
 
 function q56(A) {
@@ -457,13 +460,12 @@ function q56(A) {
     }
 }
 var Y$A;
-var zXB = L(() => {
+var zXB = lazyLoader(() => {
     zaA();
     yaA();
     EXB();
-    Y$A = GA(WE(), 1)
+    Y$A = esmImport(WE(), 1)
 });
-
 class aaA {
     options;
     log;
@@ -605,8 +607,8 @@ class aaA {
     patchConsole() {
         if (this.options.debug) return;
         return aGB((A, Q) => {
-            if (A === "stdout") g(`console.log: ${Q}`);
-            if (A === "stderr") e(Error(`console.error: ${Q}`))
+            if (A === "stdout") g(`console.log: TextComponent{Q}`);
+            if (A === "stderr") e(Error(`console.error: TextComponent{Q}`))
         })
     }
 }
@@ -617,7 +619,7 @@ function ih1(A) {
     })
 }
 var UXB;
-var rh1 = L(() => {
+var rh1 = lazyLoader(() => {
     lGB();
     BH1();
     sGB();
@@ -633,14 +635,14 @@ var rh1 = L(() => {
     zXB();
     fh1();
     $t();
-    UXB = GA(VA(), 1)
+    UXB = esmImport(VA(), 1)
 });
 
 function bH() {
     if (Nj(void 0)) return !1;
-    return V0(void 0) || !1
+    return parseBoolean(void 0) || !1
 }
-var jt = L(() => {
+var jt = lazyLoader(() => {
     hQ();
     O9()
 });
@@ -683,7 +685,7 @@ var L56 = (A, Q) => {
         if (!B) B = Q(), nb.set(A, B);
         return B
     };
-var $XB = L(() => {
+var $XB = lazyLoader(() => {
     rh1();
     onA();
     qaA();
@@ -698,11 +700,11 @@ function J$A(A, Q) {
     return Q[A]
 }
 var saA, wXB, j;
-var qXB = L(() => {
+var qXB = lazyLoader(() => {
     KaA();
     iUA();
     lUA();
-    saA = GA(VA(), 1);
+    saA = esmImport(VA(), 1);
     wXB = saA.forwardRef(({
         borderColor: A,
         borderTopColor: Q,
@@ -735,8 +737,8 @@ function NXB({
     }, A)
 }
 var Lg1, T56, P56;
-var Mg1 = L(() => {
-    Lg1 = GA(VA(), 1), T56 = GA(VA(), 1), P56 = Lg1.default.createContext(!1)
+var Mg1 = lazyLoader(() => {
+    Lg1 = esmImport(VA(), 1), T56 = esmImport(VA(), 1), P56 = Lg1.default.createContext(!1)
 });
 
 function Ap(A) {
@@ -768,14 +770,14 @@ function Ap(A) {
     }, J))
 }
 var KM;
-var LXB = L(() => {
+var LXB = lazyLoader(() => {
     Mg1();
     rUA();
-    KM = GA(VA(), 1)
+    KM = esmImport(VA(), 1)
 });
-var RXB = U((gm7, OXB) => {
-    var j56 = UA("os"),
-        MXB = UA("tty"),
+var RXB = moduleWrapper((gm7, OXB) => {
+    var j56 = nodeRequire("os"),
+        MXB = nodeRequire("tty"),
         DM = NVA(),
         {
             env: hV
@@ -788,7 +790,7 @@ var RXB = U((gm7, OXB) => {
         else if (hV.FORCE_COLOR === "false") Qp = 0;
     else Qp = hV.FORCE_COLOR.length === 0 ? 1 : Math.min(parseInt(hV.FORCE_COLOR, 10), 3);
 
-function Og1(A) {
+    function Og1(A) {
         if (A === 0) return !1;
         return {
             level: A,
@@ -798,7 +800,7 @@ function Og1(A) {
         }
     }
 
-function Rg1(A, Q) {
+    function Rg1(A, Q) {
         if (Qp === 0) return 0;
         if (DM("color=16m") || DM("color=full") || DM("color=truecolor")) return 3;
         if (DM("color=256")) return 2;
@@ -825,13 +827,13 @@ function Rg1(A, Q) {
                     return 2
             }
         }
-        if (/-256(color)?$/i.test(hV.TERM)) return 2;
+        if (/-256(color)?TextComponent/i.test(hV.TERM)) return 2;
         if (/^screen|^xterm|^vt100|^vt220|^rxvt|color|ansi|cygwin|linux/i.test(hV.TERM)) return 1;
         if ("COLORTERM" in hV) return 1;
         return B
     }
 
-function S56(A) {
+    function S56(A) {
         let Q = Rg1(A, A && A.isTTY);
         return Og1(Q)
     }
@@ -841,12 +843,12 @@ function S56(A) {
         stderr: Og1(Rg1(!0, MXB.isatty(2)))
     }
 });
-var jXB = U((um7, PXB) => {
+var jXB = moduleWrapper((um7, PXB) => {
     var _56 = RXB(),
         j7A = NVA();
 
-function TXB(A) {
-        if (/^\d{3,4}$/.test(A)) {
+    function TXB(A) {
+        if (/^\d{3,4}TextComponent/.test(A)) {
             let B = /(\d{1,2})(\d{2})/.exec(A);
             return {
                 major: 0,
@@ -862,7 +864,7 @@ function TXB(A) {
         }
     }
 
-function Tg1(A) {
+    function Tg1(A) {
         let {
             env: Q
         } = process;
@@ -909,8 +911,8 @@ function raA() {
     return !1
 }
 var SXB, k56;
-var Pg1 = L(() => {
-    SXB = GA(jXB(), 1), k56 = ["ghostty", "Hyper", "kitty", "alacritty"]
+var Pg1 = lazyLoader(() => {
+    SXB = esmImport(jXB(), 1), k56 = ["ghostty", "Hyper", "kitty", "alacritty"]
 });
 
 function a4({
@@ -925,10 +927,10 @@ function a4({
     return oaA.default.createElement(Tt, null, B ?? G)
 }
 var oaA;
-var _XB = L(() => {
+var _XB = lazyLoader(() => {
     Pg1();
     jaA();
-    oaA = GA(VA(), 1)
+    oaA = esmImport(VA(), 1)
 });
 
 function gV({
@@ -938,13 +940,13 @@ function gV({
 `.repeat(A))
 }
 var kXB;
-var yXB = L(() => {
-    kXB = GA(VA(), 1)
+var yXB = lazyLoader(() => {
+    kXB = esmImport(VA(), 1)
 });
 var y56;
-var xXB = L(() => {
+var xXB = lazyLoader(() => {
     lUA();
-    y56 = GA(VA(), 1)
+    y56 = esmImport(VA(), 1)
 });
 
 function taA({
@@ -957,14 +959,14 @@ function taA({
     })
 }
 var vXB;
-var bXB = L(() => {
-    vXB = GA(VA(), 1)
+var bXB = lazyLoader(() => {
+    vXB = esmImport(VA(), 1)
 });
 var fXB, x56 = () => fXB.useContext(MaA),
     Bp;
-var eaA = L(() => {
+var eaA = lazyLoader(() => {
     ph1();
-    fXB = GA(VA(), 1), Bp = x56
+    fXB = esmImport(VA(), 1), Bp = x56
 });
 var jg1, v56 = (A, Q = {}) => {
         let {
@@ -995,42 +997,42 @@ var jg1, v56 = (A, Q = {}) => {
         }, [Q.isActive, B, Z, A])
     },
     h1;
-var hXB = L(() => {
+var hXB = lazyLoader(() => {
     Eh1();
     eaA();
-    jg1 = GA(VA(), 1), h1 = v56
+    jg1 = esmImport(VA(), 1), h1 = v56
 });
 var gXB, b56 = () => gXB.useContext(LaA),
     Sg1;
-var uXB = L(() => {
+var uXB = lazyLoader(() => {
     ch1();
-    gXB = GA(VA(), 1), Sg1 = b56
+    gXB = esmImport(VA(), 1), Sg1 = b56
 });
 var _g1;
-var mXB = L(() => {
+var mXB = lazyLoader(() => {
     RaA();
     eaA();
-    _g1 = GA(VA(), 1)
+    _g1 = esmImport(VA(), 1)
 });
 var f56;
-var dXB = L(() => {
+var dXB = lazyLoader(() => {
     RaA();
-    f56 = GA(VA(), 1)
+    f56 = esmImport(VA(), 1)
 });
 var h56 = (A) => ({
         width: A.yogaNode?.getComputedWidth() ?? 0,
         height: A.yogaNode?.getComputedHeight() ?? 0
     }),
     kg1;
-var cXB = L(() => {
+var cXB = lazyLoader(() => {
     kg1 = h56
 });
 var S7A;
-var pXB = L(() => {
+var pXB = lazyLoader(() => {
     vaA();
-    S7A = GA(VA(), 1)
+    S7A = esmImport(VA(), 1)
 });
-var hA = L(() => {
+var hA = lazyLoader(() => {
     $XB();
     lUA();
     qXB();
@@ -1076,24 +1078,24 @@ function ab(A, Q, B) {
     }, [A, Q, B, I])
 }
 var Gp, lXB = 800;
-var AsA = L(() => {
-    Gp = GA(VA(), 1)
+var AsA = lazyLoader(() => {
+    Gp = esmImport(VA(), 1)
 });
 
 function hX() {
-    return V0(process.env.CLAUDE_CODE_USE_BEDROCK) || V0(process.env.CLAUDE_CODE_USE_VERTEX) || V0(process.env.CLAUDE_CODE_USE_FOUNDRY) || !!process.env.DISABLE_TELEMETRY || !!process.env.CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC
+    return parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK) || parseBoolean(process.env.CLAUDE_CODE_USE_VERTEX) || parseBoolean(process.env.CLAUDE_CODE_USE_FOUNDRY) || !!process.env.DISABLE_TELEMETRY || !!process.env.CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC
 }
-var St = L(() => {
+var St = lazyLoader(() => {
     hQ()
 });
-var aXB = U((iXB) => {
+var aXB = moduleWrapper((iXB) => {
     Object.defineProperty(iXB, "__esModule", {
         value: !0
     });
     iXB._globalThis = void 0;
     iXB._globalThis = typeof globalThis === "object" ? globalThis : global
 });
-var sXB = U((_t) => {
+var sXB = moduleWrapper((_t) => {
     var g56 = _t && _t.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             Object.defineProperty(A, G, {
@@ -1115,7 +1117,7 @@ var sXB = U((_t) => {
     });
     u56(aXB(), _t)
 });
-var rXB = U((kt) => {
+var rXB = moduleWrapper((kt) => {
     var m56 = kt && kt.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             Object.defineProperty(A, G, {
@@ -1137,22 +1139,22 @@ var rXB = U((kt) => {
     });
     d56(sXB(), kt)
 });
-var yg1 = U((oXB) => {
+var yg1 = moduleWrapper((oXB) => {
     Object.defineProperty(oXB, "__esModule", {
         value: !0
     });
     oXB.VERSION = void 0;
     oXB.VERSION = "1.9.0"
 });
-var GFB = U((QFB) => {
+var GFB = moduleWrapper((QFB) => {
     Object.defineProperty(QFB, "__esModule", {
         value: !0
     });
     QFB.isCompatible = QFB._makeCompatibilityCheck = void 0;
     var c56 = yg1(),
-        eXB = /^(\d+)\.(\d+)\.(\d+)(-(.+))?$/;
+        eXB = /^(\d+)\.(\d+)\.(\d+)(-(.+))?TextComponent/;
 
-function AFB(A) {
+    function AFB(A) {
         let Q = new Set([A]),
             B = new Set,
             G = A.match(eXB);
@@ -1167,11 +1169,11 @@ function AFB(A) {
             return W === A
         };
 
-function I(J) {
+        function I(J) {
             return B.add(J), !1
         }
 
-function Y(J) {
+        function Y(J) {
             return Q.add(J), !0
         }
         return function(W) {
@@ -1198,7 +1200,7 @@ function Y(J) {
     QFB._makeCompatibilityCheck = AFB;
     QFB.isCompatible = AFB(c56.VERSION)
 });
-var yt = U((ZFB) => {
+var yt = moduleWrapper((ZFB) => {
     Object.defineProperty(ZFB, "__esModule", {
         value: !0
     });
@@ -1207,27 +1209,27 @@ var yt = U((ZFB) => {
         _7A = yg1(),
         i56 = GFB(),
         n56 = _7A.VERSION.split(".")[0],
-        W$A = Symbol.for(`opentelemetry.js.api.${n56}`),
+        W$A = Symbol.for(`opentelemetry.js.api.TextComponent{n56}`),
         X$A = l56._globalThis;
 
-function a56(A, Q, B, G = !1) {
+    function a56(A, Q, B, G = !1) {
         var Z;
         let I = X$A[W$A] = (Z = X$A[W$A]) !== null && Z !== void 0 ? Z : {
             version: _7A.VERSION
         };
         if (!G && I[A]) {
-            let Y = Error(`@opentelemetry/api: Attempted duplicate registration of API: ${A}`);
+            let Y = Error(`@opentelemetry/api: Attempted duplicate registration of API: TextComponent{A}`);
             return B.error(Y.stack || Y.message), !1
         }
         if (I.version !== _7A.VERSION) {
-            let Y = Error(`@opentelemetry/api: Registration of version v${I.version} for ${A} does not match previously registered API v${_7A.VERSION}`);
+            let Y = Error(`@opentelemetry/api: Registration of version v${I.version} for TextComponent{A} does not match previously registered API v${_7A.VERSION}`);
             return B.error(Y.stack || Y.message), !1
         }
-        return I[A] = Q, B.debug(`@opentelemetry/api: Registered a global for ${A} v${_7A.VERSION}.`), !0
+        return I[A] = Q, B.debug(`@opentelemetry/api: Registered a global for TextComponent{A} v${_7A.VERSION}.`), !0
     }
     ZFB.registerGlobal = a56;
 
-function s56(A) {
+    function s56(A) {
         var Q, B;
         let G = (Q = X$A[W$A]) === null || Q === void 0 ? void 0 : Q.version;
         if (!G || !(0, i56.isCompatible)(G)) return;
@@ -1235,21 +1237,20 @@ function s56(A) {
     }
     ZFB.getGlobal = s56;
 
-function r56(A, Q) {
-        Q.debug(`@opentelemetry/api: Unregistering a global for ${A} v${_7A.VERSION}.`);
+    function r56(A, Q) {
+        Q.debug(`@opentelemetry/api: Unregistering a global for TextComponent{A} v${_7A.VERSION}.`);
         let B = X$A[W$A];
         if (B) delete B[A]
     }
     ZFB.unregisterGlobal = r56
 });
-var XFB = U((JFB) => {
+var XFB = moduleWrapper((JFB) => {
     Object.defineProperty(JFB, "__esModule", {
         value: !0
     });
     JFB.DiagComponentLogger = void 0;
     var e56 = yt();
-
-class YFB {
+    class YFB {
         constructor(A) {
             this._namespace = A.namespace || "DiagComponentLogger"
         }
@@ -1271,13 +1272,13 @@ class YFB {
     }
     JFB.DiagComponentLogger = YFB;
 
-function F$A(A, Q, B) {
+    function F$A(A, Q, B) {
         let G = (0, e56.getGlobal)("diag");
         if (!G) return;
         return B.unshift(Q), G[A](...B)
     }
 });
-var QsA = U((FFB) => {
+var QsA = moduleWrapper((FFB) => {
     Object.defineProperty(FFB, "__esModule", {
         value: !0
     });
@@ -1287,19 +1288,19 @@ var QsA = U((FFB) => {
         A[A.NONE = 0] = "NONE", A[A.ERROR = 30] = "ERROR", A[A.WARN = 50] = "WARN", A[A.INFO = 60] = "INFO", A[A.DEBUG = 70] = "DEBUG", A[A.VERBOSE = 80] = "VERBOSE", A[A.ALL = 9999] = "ALL"
     })(A36 = FFB.DiagLogLevel || (FFB.DiagLogLevel = {}))
 });
-var DFB = U((VFB) => {
+var DFB = moduleWrapper((VFB) => {
     Object.defineProperty(VFB, "__esModule", {
         value: !0
     });
     VFB.createLogLevelDiagLogger = void 0;
     var sb = QsA();
 
-function Q36(A, Q) {
+    function Q36(A, Q) {
         if (A < sb.DiagLogLevel.NONE) A = sb.DiagLogLevel.NONE;
         else if (A > sb.DiagLogLevel.ALL) A = sb.DiagLogLevel.ALL;
         Q = Q || {};
 
-function B(G, Z) {
+        function B(G, Z) {
             let I = Q[G];
             if (typeof I === "function" && A >= Z) return I.bind(Q);
             return function() {}
@@ -1314,7 +1315,7 @@ function B(G, Z) {
     }
     VFB.createLogLevelDiagLogger = Q36
 });
-var xt = U((CFB) => {
+var xt = moduleWrapper((CFB) => {
     Object.defineProperty(CFB, "__esModule", {
         value: !0
     });
@@ -1324,8 +1325,7 @@ var xt = U((CFB) => {
         HFB = QsA(),
         BsA = yt(),
         Z36 = "diag";
-
-class vg1 {
+    class vg1 {
         constructor() {
             function A(G) {
                 return function(...Z) {
@@ -1350,7 +1350,7 @@ class vg1 {
                         X = (0, G36.createLogLevelDiagLogger)((Y = Z.logLevel) !== null && Y !== void 0 ? Y : HFB.DiagLogLevel.INFO, G);
                     if (W && !Z.suppressOverrideMessage) {
                         let F = (J = Error().stack) !== null && J !== void 0 ? J : "<failed to generate stacktrace>";
-                        W.warn(`Current logger will be overwritten from ${F}`), X.warn(`Current logger will overwrite one already registered from ${F}`)
+                        W.warn(`Current logger will be overwritten from TextComponent{F}`), X.warn(`Current logger will overwrite one already registered from TextComponent{F}`)
                     }
                     return (0, BsA.registerGlobal)("diag", X, Q, !0)
                 };
@@ -1367,13 +1367,12 @@ class vg1 {
     }
     CFB.DiagAPI = vg1
 });
-var $FB = U((zFB) => {
+var $FB = moduleWrapper((zFB) => {
     Object.defineProperty(zFB, "__esModule", {
         value: !0
     });
     zFB.BaggageImpl = void 0;
-
-class k7A {
+    class k7A {
         constructor(A) {
             this._entries = A ? new Map(A) : new Map
         }
@@ -1404,14 +1403,14 @@ class k7A {
     }
     zFB.BaggageImpl = k7A
 });
-var NFB = U((wFB) => {
+var NFB = moduleWrapper((wFB) => {
     Object.defineProperty(wFB, "__esModule", {
         value: !0
     });
     wFB.baggageEntryMetadataSymbol = void 0;
     wFB.baggageEntryMetadataSymbol = Symbol("BaggageEntryMetadata")
 });
-var bg1 = U((LFB) => {
+var bg1 = moduleWrapper((LFB) => {
     Object.defineProperty(LFB, "__esModule", {
         value: !0
     });
@@ -1421,13 +1420,13 @@ var bg1 = U((LFB) => {
         J36 = NFB(),
         W36 = I36.DiagAPI.instance();
 
-function X36(A = {}) {
+    function X36(A = {}) {
         return new Y36.BaggageImpl(new Map(Object.entries(A)))
     }
     LFB.createBaggage = X36;
 
-function F36(A) {
-        if (typeof A !== "string") W36.error(`Cannot create baggage metadata from unknown type: ${typeof A}`), A = "";
+    function F36(A) {
+        if (typeof A !== "string") W36.error(`Cannot create baggage metadata from unknown type: TextComponent{typeof A}`), A = "";
         return {
             __TYPE__: J36.baggageEntryMetadataSymbol,
             toString() {
@@ -1437,18 +1436,17 @@ function F36(A) {
     }
     LFB.baggageEntryMetadataFromString = F36
 });
-var V$A = U((OFB) => {
+var V$A = moduleWrapper((OFB) => {
     Object.defineProperty(OFB, "__esModule", {
         value: !0
     });
     OFB.ROOT_CONTEXT = OFB.createContextKey = void 0;
 
-function K36(A) {
+    function K36(A) {
         return Symbol.for(A)
     }
     OFB.createContextKey = K36;
-
-class GsA {
+    class GsA {
         constructor(A) {
             let Q = this;
             Q._currentContext = A ? new Map(A) : new Map, Q.getValue = (B) => Q._currentContext.get(B), Q.setValue = (B, G) => {
@@ -1462,13 +1460,12 @@ class GsA {
     }
     OFB.ROOT_CONTEXT = new GsA
 });
-var SFB = U((PFB) => {
+var SFB = moduleWrapper((PFB) => {
     Object.defineProperty(PFB, "__esModule", {
         value: !0
     });
     PFB.DiagConsoleLogger = void 0;
-
-var fg1 = [{
+    var fg1 = [{
         n: "error",
         c: "error"
     }, {
@@ -1484,8 +1481,7 @@ var fg1 = [{
         n: "verbose",
         c: "trace"
     }];
-
-class TFB {
+    class TFB {
         constructor() {
             function A(Q) {
                 return function(...B) {
@@ -1501,13 +1497,12 @@ class TFB {
     }
     PFB.DiagConsoleLogger = TFB
 });
-var ig1 = U((_FB) => {
+var ig1 = moduleWrapper((_FB) => {
     Object.defineProperty(_FB, "__esModule", {
         value: !0
     });
     _FB.createNoopMeter = _FB.NOOP_OBSERVABLE_UP_DOWN_COUNTER_METRIC = _FB.NOOP_OBSERVABLE_GAUGE_METRIC = _FB.NOOP_OBSERVABLE_COUNTER_METRIC = _FB.NOOP_UP_DOWN_COUNTER_METRIC = _FB.NOOP_HISTOGRAM_METRIC = _FB.NOOP_GAUGE_METRIC = _FB.NOOP_COUNTER_METRIC = _FB.NOOP_METER = _FB.NoopObservableUpDownCounterMetric = _FB.NoopObservableGaugeMetric = _FB.NoopObservableCounterMetric = _FB.NoopObservableMetric = _FB.NoopHistogramMetric = _FB.NoopGaugeMetric = _FB.NoopUpDownCounterMetric = _FB.NoopCounterMetric = _FB.NoopMetric = _FB.NoopMeter = void 0;
-
-class hg1 {
+    class hg1 {
         constructor() {}
         createGauge(A, Q) {
             return _FB.NOOP_GAUGE_METRIC

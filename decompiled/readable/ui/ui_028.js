@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_028.js
+ * 处理时间: 2025-12-09T03:41:39.298Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.120Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -55,7 +58,7 @@ function E96(A) {
         }
         B.push(Z)
     }
-    return B.map((G) => `\x1B[${G}m`)
+    return B.map((G) => `\x1B[TextComponent{G}m`)
 }
 
 function qYB(A, Q = Number.POSITIVE_INFINITY) {
@@ -101,11 +104,11 @@ var F96 = 48,
     V96 = 57,
     K96 = 59,
     D96 = 109;
-var NYB = L(() => {
+var NYB = lazyLoader(() => {
     wYB();
     dUA()
 });
-var zaA = L(() => {
+var zaA = lazyLoader(() => {
     dUA();
     _h1();
     EaA();
@@ -121,11 +124,11 @@ function UaA(A, Q) {
 function NW(A, Q) {
     if (A === void 0) return;
     if (Number.isInteger(A)) return;
-    g(`${Q} should be an integer, got ${A}`, {
+    g(`TextComponent{Q} should be an integer, got TextComponent{A}`, {
         level: "warn"
     })
 }
-var yh1 = L(() => {
+var yh1 = lazyLoader(() => {
     D0()
 });
 var MYB = "\x1B[?2026h",
@@ -218,7 +221,7 @@ function yYB(A, Q) {
     return B
 }
 var PYB, z96, SYB;
-var cUA = L(() => {
+var cUA = lazyLoader(() => {
     yh1();
     PYB = Object.freeze({
         char: " ",
@@ -232,9 +235,8 @@ var cUA = L(() => {
         width: 2,
         hyperlink: void 0
     });
-    SYB = new RegExp(`^${RYB}\\]8${N7A}${N7A}([^${q7A}]*)${q7A}$`)
+    SYB = new RegExp(`^TextComponent{RYB}\\]8${N7A}TextComponent{N7A}([^TextComponent{q7A}]*)TextComponent{q7A}TextComponent`)
 });
-
 class pUA {
     width;
     height;
@@ -463,7 +465,7 @@ function q96(A) {
     return B
 }
 var xYB, vYB;
-var bYB = L(() => {
+var bYB = lazyLoader(() => {
     Mh1();
     mnA();
     zaA();
@@ -489,7 +491,7 @@ function bh1(A) {
             ink2: Y
         } = B, J = A.yogaNode?.getComputedHeight(), W = A.yogaNode?.getComputedWidth(), X = J === void 0 || !Number.isFinite(J) || J < 0, F = W === void 0 || !Number.isFinite(W) || W < 0;
         if (!A.yogaNode || X || F) {
-            if (A.yogaNode && (X || F)) g(`Invalid yoga dimensions: width=${W}, height=${J}, childNodes=${A.childNodes.length}, terminalWidth=${G}, terminalRows=${Z}`);
+            if (A.yogaNode && (X || F)) g(`Invalid yoga dimensions: width=TextComponent{W}, height=TextComponent{J}, childNodes=TextComponent{A.childNodes.length}, terminalWidth=TextComponent{G}, terminalRows=TextComponent{Z}`);
             return {
                 output: "",
                 outputHeight: 0,
@@ -537,7 +539,7 @@ function bh1(A) {
         return {
             output: z,
             outputHeight: w,
-            staticOutput: K ? `${K.get().output}
+            staticOutput: K ? `TextComponent{K.get().output}
 ` : "",
             rows: Z,
             columns: G,
@@ -571,7 +573,7 @@ function fYB(A) {
             if (B) return B
         } return
 }
-var hYB = L(() => {
+var hYB = lazyLoader(() => {
     FYB();
     bYB();
     cUA();
@@ -605,10 +607,9 @@ function gYB(A, Q) {
         Z = A.outputHeight >= A.rows;
     return B || G || Z
 }
-var fh1 = L(() => {
+var fh1 = lazyLoader(() => {
     cUA()
 });
-
 class mh1 {
     options;
     state;
@@ -980,7 +981,6 @@ function uh1(A, Q) {
         ]
     })
 }
-
 class dh1 {
     viewportWidth;
     cursor;
@@ -1000,17 +1000,16 @@ class dh1 {
         }
     }
 }
-var cYB = L(() => {
+var cYB = lazyLoader(() => {
     mf1();
     fh1();
     cUA();
     zaA()
 });
 var L96, nb;
-var qaA = L(() => {
+var qaA = lazyLoader(() => {
     L96 = new Map, nb = L96
 });
-
 class M7A {
     _didStopImmediatePropagation = !1;
     didStopImmediatePropagation() {
@@ -1024,7 +1023,7 @@ import {
     EventEmitter as M96
 } from "events";
 var oc;
-var NaA = L(() => {
+var NaA = lazyLoader(() => {
     oc = class oc extends M96 {
         emit(A, ...Q) {
             if (A === "error") return super.emit(A, ...Q);
@@ -1038,17 +1037,17 @@ var NaA = L(() => {
     }
 });
 var pYB, lYB, LaA;
-var ch1 = L(() => {
-    pYB = GA(VA(), 1), lYB = pYB.createContext({
+var ch1 = lazyLoader(() => {
+    pYB = esmImport(VA(), 1), lYB = pYB.createContext({
         exit() {}
     });
     lYB.displayName = "InternalAppContext";
     LaA = lYB
 });
 var iYB, nYB, MaA;
-var ph1 = L(() => {
+var ph1 = lazyLoader(() => {
     NaA();
-    iYB = GA(VA(), 1), nYB = iYB.createContext({
+    iYB = esmImport(VA(), 1), nYB = iYB.createContext({
         stdin: process.stdin,
         internal_eventEmitter: new oc,
         setRawMode() {},
@@ -1059,8 +1058,8 @@ var ph1 = L(() => {
     MaA = nYB
 });
 var aYB, sYB, OaA;
-var RaA = L(() => {
-    aYB = GA(VA(), 1), sYB = aYB.createContext({
+var RaA = lazyLoader(() => {
+    aYB = esmImport(VA(), 1), sYB = aYB.createContext({
         activeId: void 0,
         add() {},
         remove() {},
@@ -1075,20 +1074,19 @@ var RaA = L(() => {
     sYB.displayName = "InternalFocusContext";
     OaA = sYB
 });
-var oYB = U((Bg7, rYB) => {
-    var O96 = /[|\\{}()[\]^$+*?.-]/g;
+var oYB = moduleWrapper((Bg7, rYB) => {
+    var O96 = /[|\\{}()[\]^TextComponent+*?.-]/g;
     rYB.exports = (A) => {
         if (typeof A !== "string") throw TypeError("Expected a string");
-        return A.replace(O96, "\\$&")
+        return A.replace(O96, "\\TextComponent&")
     }
 });
-var QJB = U((Gg7, AJB) => {
+var QJB = moduleWrapper((Gg7, AJB) => {
     var R96 = oYB(),
         T96 = typeof process === "object" && process && typeof process.cwd === "function" ? process.cwd() : ".",
-        eYB = [].concat(UA("module").builtinModules, "bootstrap_node", "node").map((A) => new RegExp(`(?:\\((?:node:)?${A}(?:\\.js)?:\\d+:\\d+\\)$|^\\s*at (?:node:)?${A}(?:\\.js)?:\\d+:\\d+$)`));
-    eYB.push(/\((?:node:)?internal\/[^:]+:\d+:\d+\)$/, /\s*at (?:node:)?internal\/[^:]+:\d+:\d+$/, /\/\.node-spawn-wrap-\w+-\w+\/node:\d+:\d+\)?$/);
-
-class lh1 {
+        eYB = [].concat(nodeRequire("module").builtinModules, "bootstrap_node", "node").map((A) => new RegExp(`(?:\\((?:node:)?TextComponent{A}(?:\\.js)?:\\d+:\\d+\\)TextComponent|^\\s*at (?:node:)?TextComponent{A}(?:\\.js)?:\\d+:\\d+TextComponent)`));
+    eYB.push(/\((?:node:)?internal\/[^:]+:\d+:\d+\)TextComponent/, /\s*at (?:node:)?internal\/[^:]+:\d+:\d+TextComponent/, /\/\.node-spawn-wrap-\w+-\w+\/node:\d+:\d+\)?TextComponent/);
+    class lh1 {
         constructor(A) {
             if (A = {
                     ignoredPackages: [],
@@ -1112,12 +1110,12 @@ class lh1 {
                 let Y = /^\s*at /.test(I);
                 if (B) I = I.trimEnd().replace(/^(\s+)at /, "$1");
                 else if (I = I.trim(), Y) I = I.slice(3);
-                if (I = I.replace(`${this._cwd}/`, ""), I)
+                if (I = I.replace(`TextComponent{this._cwd}/`, ""), I)
                     if (Y) {
                         if (G) Z.push(G), G = null;
                         Z.push(I)
                     } else B = !0, G = I
-            }), Z.map((I) => `${Q}${I}
+            }), Z.map((I) => `TextComponent{Q}TextComponent{I}
 `).join("")
         }
         captureString(A, Q = this.captureString) {
@@ -1201,7 +1199,7 @@ class lh1 {
                     else if (W.charAt(E) === "(" && W.charAt(E - 1) === " ") {
                     if (C--, C === -1 && W.charAt(E - 1) === " ") {
                         let z = W.slice(0, E - 1);
-                        W = W.slice(E + 1), G += ` (${z}`;
+                        W = W.slice(E + 1), G += ` (TextComponent{z}`;
                         break
                     }
                 }
@@ -1222,27 +1220,27 @@ class lh1 {
         }
     }
 
-function tYB(A, Q, B) {
+    function tYB(A, Q, B) {
         if (Q) {
-            if (Q = Q.replace(/\\/g, "/"), Q.startsWith(`${B}/`)) Q = Q.slice(B.length + 1);
+            if (Q = Q.replace(/\\/g, "/"), Q.startsWith(`TextComponent{B}/`)) Q = Q.slice(B.length + 1);
             A.file = Q
         }
     }
 
-function P96(A) {
+    function P96(A) {
         if (A.length === 0) return [];
         let Q = A.map((B) => R96(B));
-        return new RegExp(`[/\\\\]node_modules[/\\\\](?:${Q.join("|")})[/\\\\][^:]+:\\d+:\\d+`)
+        return new RegExp(`[/\\\\]node_modules[/\\\\](?:TextComponent{Q.join("|")})[/\\\\][^:]+:\\d+:\\d+`)
     }
-    var j96 = new RegExp("^(?:\\s*at )?(?:(new) )?(?:(.*?) \\()?(?:eval at ([^ ]+) \\((.+?):(\\d+):(\\d+)\\), )?(?:(.+?):(\\d+):(\\d+)|(native))(\\)?)$"),
-        S96 = /^(.*?) \[as (.*?)\]$/;
+    var j96 = new RegExp("^(?:\\s*at )?(?:(new) )?(?:(.*?) \\()?(?:eval at ([^ ]+) \\((.+?):(\\d+):(\\d+)\\), )?(?:(.+?):(\\d+):(\\d+)|(native))(\\)?)TextComponent"),
+        S96 = /^(.*?) \[as (.*?)\]TextComponent/;
     AJB.exports = lh1
 });
 var _96 = (A, Q = 2) => {
         return A.replace(/^\t+/gm, (B) => " ".repeat(B.length * Q))
     },
     BJB;
-var GJB = L(() => {
+var GJB = lazyLoader(() => {
     BJB = _96
 });
 var k96 = (A, Q) => {
@@ -1264,14 +1262,14 @@ var k96 = (A, Q) => {
         }))
     },
     ZJB;
-var IJB = L(() => {
+var IJB = lazyLoader(() => {
     GJB();
     ZJB = y96
 });
 var TaA, YJB, VU;
-var lUA = L(() => {
+var lUA = lazyLoader(() => {
     yh1();
-    TaA = GA(VA(), 1), YJB = TaA.forwardRef(({
+    TaA = esmImport(VA(), 1), YJB = TaA.forwardRef(({
         children: A,
         flexWrap: Q = "nowrap",
         flexDirection: B = "row",
@@ -1343,10 +1341,10 @@ function sh1() {
     }
 }
 var PaA, tc, nh1;
-var iUA = L(() => {
+var iUA = lazyLoader(() => {
     jQ();
     rh1();
-    PaA = GA(VA(), 1), tc = GA(VA(), 1), nh1 = tc.createContext({
+    PaA = esmImport(VA(), 1), tc = esmImport(VA(), 1), nh1 = tc.createContext({
         theme: null,
         setTheme: (A) => A,
         setPreviewTheme: (A) => A,
@@ -1405,8 +1403,8 @@ function Tt({
     }, X)
 }
 var JJB;
-var jaA = L(() => {
-    JJB = GA(VA(), 1)
+var jaA = lazyLoader(() => {
+    JJB = esmImport(VA(), 1)
 });
 
 function x96(A, Q) {
@@ -1415,7 +1413,7 @@ function x96(A, Q) {
     return Q[A]
 }
 
-function $({
+function TextComponent({
     color: A,
     backgroundColor: Q,
     dimColor: B = !1,
@@ -1440,11 +1438,11 @@ function $({
     }, X)
 }
 var WJB;
-var oh1 = L(() => {
+var oh1 = lazyLoader(() => {
     KaA();
     iUA();
     jaA();
-    WJB = GA(VA(), 1)
+    WJB = esmImport(VA(), 1)
 });
 import * as SaA from "node:fs";
 import {
@@ -1470,12 +1468,12 @@ function eh1({
     return fX.default.createElement(VU, {
         flexDirection: "column",
         padding: 1
-    }, fX.default.createElement(VU, null, fX.default.createElement($, {
+    }, fX.default.createElement(VU, null, fX.default.createElement(TextComponent, {
         backgroundColor: "error",
         color: "text"
-    }, " ", "ERROR", " "), fX.default.createElement($, null, " ", A.message)), B && G && fX.default.createElement(VU, {
+    }, " ", "ERROR", " "), fX.default.createElement(TextComponent, null, " ", A.message)), B && G && fX.default.createElement(VU, {
         marginTop: 1
-    }, fX.default.createElement($, {
+    }, fX.default.createElement(TextComponent, {
         dimColor: !0
     }, G, ":", B.line, ":", B.column)), B && Z && fX.default.createElement(VU, {
         marginTop: 1,
@@ -1487,11 +1485,11 @@ function eh1({
         key: Y
     }, fX.default.createElement(VU, {
         width: I + 1
-    }, fX.default.createElement($, {
+    }, fX.default.createElement(TextComponent, {
         dimColor: Y !== B.line,
         backgroundColor: Y === B.line ? "error" : void 0,
         color: Y === B.line ? "text" : void 0
-    }, String(Y).padStart(I, " "), ":")), fX.default.createElement($, {
+    }, String(Y).padStart(I, " "), ":")), fX.default.createElement(TextComponent, {
         key: Y,
         backgroundColor: Y === B.line ? "error" : void 0,
         color: Y === B.line ? "text" : void 0
@@ -1503,20 +1501,20 @@ function eh1({
         let J = FJB.parseLine(Y);
         if (!J) return fX.default.createElement(VU, {
             key: Y
-        }, fX.default.createElement($, {
+        }, fX.default.createElement(TextComponent, {
             dimColor: !0
-        }, "- "), fX.default.createElement($, {
+        }, "- "), fX.default.createElement(TextComponent, {
             dimColor: !0,
             bold: !0
         }, Y));
         return fX.default.createElement(VU, {
             key: Y
-        }, fX.default.createElement($, {
+        }, fX.default.createElement(TextComponent, {
             dimColor: !0
-        }, "- "), fX.default.createElement($, {
+        }, "- "), fX.default.createElement(TextComponent, {
             dimColor: !0,
             bold: !0
-        }, J.function), fX.default.createElement($, {
+        }, J.function), fX.default.createElement(TextComponent, {
             dimColor: !0
         }, " ", "(", XJB(J.file) ?? "", ":", J.line, ":", J.column, ")"))
     })))

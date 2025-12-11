@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: agents_001.js
+ * 处理时间: 2025-12-09T03:41:35.838Z
+ * 变量映射: 5 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.840Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -31,7 +34,6 @@
         return J
     })
 }
-
 class PO {
     constructor(A, Q = {}, B) {
         this.options = {
@@ -144,7 +146,7 @@ class PO {
             Z = {},
             I = [];
         return G.forEach(({
-            $: Y,
+            TextComponent: Y,
             i: J
         }) => {
             if (cq(Y)) {
@@ -172,7 +174,7 @@ class PO {
             } = this._myIndex,
             Z = [];
         return G.forEach(({
-            $: I,
+            TextComponent: I,
             i: Y
         }) => {
             if (!cq(I)) return;
@@ -239,10 +241,10 @@ class PO {
 }
 var IN3 = 1 / 0,
     FN3 = "Incorrect 'index' type",
-    VN3 = (A) => `Invalid value for key ${A}`,
-    KN3 = (A) => `Pattern length exceeds max of ${A}.`,
-    DN3 = (A) => `Missing ${A} property in key`,
-    HN3 = (A) => `Property 'weight' in key '${A}' must be a positive integer`,
+    VN3 = (A) => `Invalid value for key TextComponent{A}`,
+    KN3 = (A) => `Pattern length exceeds max of TextComponent{A}.`,
+    DN3 = (A) => `Missing TextComponent{A} property in key`,
+    HN3 = (A) => `Property 'weight' in key 'TextComponent{A}' must be a positive integer`,
     X19, EN3, zN3, UN3, $N3, A8, wN3, XQA = 32,
     w19, q19, N19, L19, M19, O19, iY0, nY0, uY0, K19, RN3, TN3 = "|",
     jN3, mY0, KZ1, cY0, pY0 = (A) => !!(A[KZ1.AND] || A[KZ1.OR]),
@@ -253,7 +255,7 @@ var IN3 = 1 / 0,
             [Q]: A[Q]
         }))
     });
-var HZ1 = L(() => {
+var HZ1 = lazyLoader(() => {
     X19 = Object.prototype.hasOwnProperty;
     EN3 = {
         includeMatches: !1,
@@ -289,10 +291,10 @@ var HZ1 = L(() => {
             return "exact"
         }
         static get multiRegex() {
-            return /^="(.*)"$/
+            return /^="(.*)"TextComponent/
         }
         static get singleRegex() {
-            return /^=(.*)$/
+            return /^=(.*)TextComponent/
         }
         search(A) {
             let Q = A === this.pattern;
@@ -311,10 +313,10 @@ var HZ1 = L(() => {
             return "inverse-exact"
         }
         static get multiRegex() {
-            return /^!"(.*)"$/
+            return /^!"(.*)"TextComponent/
         }
         static get singleRegex() {
-            return /^!(.*)$/
+            return /^!(.*)TextComponent/
         }
         search(A) {
             let B = A.indexOf(this.pattern) === -1;
@@ -333,10 +335,10 @@ var HZ1 = L(() => {
             return "prefix-exact"
         }
         static get multiRegex() {
-            return /^\^"(.*)"$/
+            return /^\^"(.*)"TextComponent/
         }
         static get singleRegex() {
-            return /^\^(.*)$/
+            return /^\^(.*)TextComponent/
         }
         search(A) {
             let Q = A.startsWith(this.pattern);
@@ -355,10 +357,10 @@ var HZ1 = L(() => {
             return "inverse-prefix-exact"
         }
         static get multiRegex() {
-            return /^!\^"(.*)"$/
+            return /^!\^"(.*)"TextComponent/
         }
         static get singleRegex() {
-            return /^!\^(.*)$/
+            return /^!\^(.*)TextComponent/
         }
         search(A) {
             let Q = !A.startsWith(this.pattern);
@@ -440,10 +442,10 @@ var HZ1 = L(() => {
             return "fuzzy"
         }
         static get multiRegex() {
-            return /^"(.*)"$/
+            return /^"(.*)"TextComponent/
         }
         static get singleRegex() {
-            return /^(.*)$/
+            return /^(.*)TextComponent/
         }
         search(A) {
             return this._bitapSearch.searchIn(A)
@@ -457,10 +459,10 @@ var HZ1 = L(() => {
             return "include"
         }
         static get multiRegex() {
-            return /^'"(.*)"$/
+            return /^'"(.*)"TextComponent/
         }
         static get singleRegex() {
-            return /^'(.*)$/
+            return /^'(.*)TextComponent/
         }
         search(A) {
             let Q = 0,
@@ -475,7 +477,7 @@ var HZ1 = L(() => {
             }
         }
     };
-    uY0 = [w19, nY0, N19, L19, O19, M19, q19, iY0], K19 = uY0.length, RN3 = / +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)/;
+    uY0 = [w19, nY0, N19, L19, O19, M19, q19, iY0], K19 = uY0.length, RN3 = / +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*TextComponent)/;
     jN3 = new Set([iY0.type, nY0.type]);
     mY0 = [];
     KZ1 = {
@@ -505,16 +507,16 @@ function hN3(A) {
 }
 
 function gN3(A) {
-    return `/${A} `
+    return `/TextComponent{A} `
 }
 
 function P19(A) {
     let Q = A.userFacingName(),
-        B = A.aliases && A.aliases.length > 0 ? ` (${A.aliases.join(", ")})` : "";
+        B = A.aliases && A.aliases.length > 0 ? ` (TextComponent{A.aliases.join(", ")})` : "";
     return {
         id: Q,
-        displayText: `/${Q}${B}`,
-        description: A.description + (A.type === "prompt" && A.argNames?.length ? ` (arguments: ${A.argNames.join(", ")})` : ""),
+        displayText: `/TextComponent{Q}TextComponent{B}`,
+        description: A.description + (A.type === "prompt" && A.argNames?.length ? ` (arguments: TextComponent{A.argNames.join(", ")})` : ""),
         metadata: A
     }
 }
@@ -584,7 +586,7 @@ function aY0(A, Q, B, G, Z, I) {
     }
 }
 var fN3;
-var S19 = L(() => {
+var S19 = lazyLoader(() => {
     HZ1();
     nE();
     fN3 = /[:_-]/g
@@ -628,7 +630,6 @@ function aN3(A) {
         return e(B instanceof Error ? B : Error(String(B))), []
     }
 }
-
 async function k19(A, Q = {}) {
     let {
         basePath: B = H0(),
@@ -647,7 +648,7 @@ async function k19(A, Q = {}) {
 var lN3 = 500,
     iN3 = 300000,
     _19;
-var y19 = L(() => {
+var y19 = lazyLoader(() => {
     SvA();
     R2();
     o0();
@@ -658,14 +659,13 @@ var y19 = L(() => {
         ttl: iN3
     })
 });
-
 var sY0 = {};
-pG(sY0, {
+esmExport(sY0, {
     default: () => rN3,
     FileIndex: () => sN3
 });
 var CZ1, sN3, rN3;
-var rY0 = L(() => {
+var rY0 = lazyLoader(() => {
     try {
         CZ1 = (() => {
             throw new Error("Cannot require module " + "../../file-index.node");
@@ -676,14 +676,13 @@ var rY0 = L(() => {
     sN3 = CZ1?.FileIndex, rN3 = CZ1?.FileIndex
 });
 import * as CK from "path";
-// Async function: oN3
 async function oN3() {
     if (oY0) return null;
     if (EZ1) return EZ1;
     if (HJ()) try {
         return EZ1 = new(await Promise.resolve().then(() => (rY0(), sY0))).FileIndex, EZ1
     } catch (A) {
-        return oY0 = !0, g(`[FileIndex] Rust module unavailable, falling back to Fuse.js: ${A instanceof Error?A.message:String(A)}`), e(A), null
+        return oY0 = !0, g(`[FileIndex] Rust module unavailable, falling back to Fuse.js: TextComponent{A instanceof Error?A.message:String(A)}`), e(A), null
     } else return oY0 = !0, g("[FileIndex] Not in bundled mode, using Fuse.js fallback"), null
 }
 
@@ -694,11 +693,9 @@ function eN3(A) {
         while (Z !== "." && Z !== CK.parse(Z).root) Q.add(Z), Z = CK.dirname(Z)
     }), [...Q].map((B) => B + CK.sep)
 }
-// Async function: AL3
 async function AL3() {
     return (await Promise.all(Cb2.map((Q) => qn(Q)))).flatMap((Q) => Q.map((B) => B.filePath))
 }
-// Async function: QL3
 async function QL3() {
     let A = s9(),
         Q = setTimeout(() => {
@@ -712,7 +709,7 @@ async function QL3() {
         if (V) try {
             V.loadFromFileList(X)
         } catch (K) {
-            g(`[FileIndex] Failed to load Rust index, using Fuse.js fallback: ${K instanceof Error?K.message:String(K)}`), e(K), F = X
+            g(`[FileIndex] Failed to load Rust index, using Fuse.js fallback: TextComponent{K instanceof Error?K.message:String(K)}`), e(K), F = X
         } else F = X;
         return {
             fileIndex: V,
@@ -743,19 +740,18 @@ function v19(A) {
 
 function zZ1(A, Q) {
     return {
-        id: `file-${A}`,
+        id: `file-TextComponent{A}`,
         displayText: A,
         metadata: Q !== void 0 ? {
             score: Q
         } : void 0
     }
 }
-
 async function GL3(A, Q, B) {
     if (A) try {
         return A.search(B, yPA).map((X) => zZ1(X.path, X.score))
     } catch (W) {
-        g(`[FileIndex] Rust search failed, falling back to Fuse.js: ${W instanceof Error?W.message:String(W)}`), e(W)
+        g(`[FileIndex] Rust search failed, falling back to Fuse.js: TextComponent{W instanceof Error?W.message:String(W)}`), e(W)
     }
     g("[FileIndex] Using Fuse.js fallback for search");
     let G = [...new Set(Q)];
@@ -804,13 +800,12 @@ function tY0() {
     if (!MXA) MXA = QL3().then((A) => {
         return eY0 = A.fileIndex, AJ0 = A.fileList, x19 = Date.now(), MXA = null, A
     }).catch((A) => {
-        return g(`[FileIndex] Cache refresh failed: ${A instanceof Error?A.message:String(A)}`), e(A), MXA = null, {
+        return g(`[FileIndex] Cache refresh failed: TextComponent{A instanceof Error?A.message:String(A)}`), e(A), MXA = null, {
             fileIndex: null,
             fileList: []
         }
     })
 }
-// Async function: ZL3
 async function ZL3() {
     let A = OA(),
         Q = H0();
@@ -824,7 +819,6 @@ async function ZL3() {
         return e(B), []
     }
 }
-
 async function b19(A, Q = !1) {
     if (!A && !Q) return [];
     if (A === "" || A === "." || A === "./") {
@@ -860,7 +854,7 @@ var EZ1 = null,
     x19 = 0,
     tN3 = 60000,
     yPA = 15;
-var QJ0 = L(() => {
+var QJ0 = lazyLoader(() => {
     HZ1();
     S0();
     u1();
@@ -880,7 +874,7 @@ function h19(A) {
 }
 
 function f19(A) {
-    if (A.startsWith("$")) return "variable";
+    if (A.startsWith("TextComponent")) return "variable";
     if (A.includes("/") || A.startsWith("~") || A.startsWith(".")) return "file";
     return "command"
 }
@@ -902,12 +896,12 @@ function WL3(A, Q) {
 
 function XL3(A, Q) {
     let B = A.slice(0, Q),
-        G = B.match(/\$[a-zA-Z_][a-zA-Z0-9_]*$/);
+        G = B.match(/\TextComponent[a-zA-Z_][a-zA-Z0-9_]*TextComponent/);
     if (G) return {
         prefix: G[0],
         completionType: "variable"
     };
-    let Z = IW(B);
+    let Z = tokenize(B);
     if (!Z.success) {
         let W = B.split(/\s+/),
             X = W[W.length - 1] || "",
@@ -944,19 +938,18 @@ function XL3(A, Q) {
 function FL3(A, Q) {
     if (Q === "variable") {
         let B = A.slice(1);
-        return `compgen -v ${M8([B])} 2>/dev/null`
-    } else if (Q === "file") return `compgen -f ${M8([A])} 2>/dev/null | head -${BJ0} | while IFS= read -r f; do [ -d "$f" ] && echo "$f/" || echo "$f "; done`;
-    else return `compgen -c ${M8([A])} 2>/dev/null`
+        return `compgen -v TextComponent{shellEscape([B])} 2>/dev/null`
+    } else if (Q === "file") return `compgen -f TextComponent{shellEscape([A])} 2>/dev/null | head -TextComponent{BJ0} | while IFS= read -r f; do [ -d "$f" ] && echo "$f/" || echo "$f "; done`;
+    else return `compgen -c TextComponent{shellEscape([A])} 2>/dev/null`
 }
 
 function VL3(A, Q) {
     if (Q === "variable") {
         let B = A.slice(1);
-        return `print -rl -- \${(k)parameters[(I)${M8([B])}*]} 2>/dev/null`
-    } else if (Q === "file") return `for f in ${M8([A])}*(N[1,${BJ0}]); do [[ -d "$f" ]] && echo "$f/" || echo "$f "; done`;
-    else return `print -rl -- \${(k)commands[(I)${M8([A])}*]} 2>/dev/null`
+        return `print -rl -- \TextComponent{(k)parameters[(I)TextComponent{shellEscape([B])}*]} 2>/dev/null`
+    } else if (Q === "file") return `for f in TextComponent{shellEscape([A])}*(N[1,TextComponent{BJ0}]); do [[ -d "$f" ]] && echo "$f/" || echo "$f "; done`;
+    else return `print -rl -- \TextComponent{(k)commands[(I)TextComponent{shellEscape([A])}*]} 2>/dev/null`
 }
-
 async function KL3(A, Q, B, G) {
     let Z;
     if (A === "bash") Z = FL3(Q, B);
@@ -972,7 +965,6 @@ async function KL3(A, Q, B, G) {
         }
     }))
 }
-
 async function g19(A, Q, B) {
     let G = pAA();
     if (G !== "bash" && G !== "zsh") return [];
@@ -990,13 +982,13 @@ async function g19(A, Q, B) {
             }
         }))
     } catch (Z) {
-        return g(`Shell completion failed: ${Z}`), []
+        return g(`Shell completion failed: TextComponent{Z}`), []
     }
 }
 var BJ0 = 15,
     IL3 = 1000,
     YL3;
-var u19 = L(() => {
+var u19 = lazyLoader(() => {
     nT();
     m_();
     D0();
@@ -1009,19 +1001,19 @@ function m19(A) {
     switch (A.type) {
         case "file":
             return {
-                id: `file-${A.path}`, displayText: A.displayText, description: A.description
+                id: `file-TextComponent{A.path}`, displayText: A.displayText, description: A.description
             };
         case "mcp_resource":
             return {
-                id: `mcp-resource-${A.server}__${A.uri}`, displayText: A.displayText, description: A.description
+                id: `mcp-resource-TextComponent{A.server}__${A.uri}`, displayText: A.displayText, description: A.description
             };
         case "agent":
             return {
-                id: `agent-${A.agentType}`, displayText: A.displayText, description: A.description, color: A.color
+                id: `agent-TextComponent{A.agentType}`, displayText: A.displayText, description: A.description, color: A.color
             };
         case "mcp_server":
             return {
-                id: `mcp-server-${A.serverName}`, displayText: A.displayText, description: A.description, metadata: {
+                id: `mcp-server-TextComponent{A.serverName}`, displayText: A.displayText, description: A.description, metadata: {
                     serverName: A.serverName,
                     enabled: A.enabled
                 }
@@ -1039,8 +1031,8 @@ function HL3(A, Q, B = !1) {
     try {
         let G = A.map((I) => ({
             type: "agent",
-            displayText: `agent-${I.agentType}`,
-            description: `Agent: ${DL3(I.whenToUse)}`,
+            displayText: `agent-TextComponent{I.agentType}`,
+            description: `Agent: TextComponent{DL3(I.whenToUse)}`,
             agentType: I.agentType,
             color: oJA(I.agentType)
         }));
@@ -1060,8 +1052,8 @@ function CL3(A, Q, B = !1) {
             X = J ? "enabled" : "disabled";
         return {
             type: "mcp_server",
-            displayText: `${W} [mcp] ${Y.name}`,
-            description: `${X} (⏎ to toggle)`,
+            displayText: `TextComponent{W} [mcp] TextComponent{Y.name}`,
+            description: `TextComponent{X} (⏎ to toggle)`,
             serverName: Y.name,
             enabled: J
         }
@@ -1070,7 +1062,6 @@ function CL3(A, Q, B = !1) {
     let I = Q.toLowerCase();
     return Z.filter((Y) => Y.serverName.toLowerCase().includes(I))
 }
-
 async function ZJ0(A, Q, B, G = !1, Z = []) {
     if (!A && !G) return [];
     let [I, Y, J] = await Promise.all([b19(A, G), Promise.resolve(HL3(B, A, G)), Promise.resolve(CL3(Z, A, G))]), W = I.map((K) => ({
@@ -1082,8 +1073,8 @@ async function ZJ0(A, Q, B, G = !1, Z = []) {
         score: K.metadata?.score
     })), X = Object.values(Q).flat().map((K) => ({
         type: "mcp_resource",
-        displayText: `${K.server}:${K.uri}`,
-        description: K.name + (K.description ? ` - ${K.description}` : ""),
+        displayText: `TextComponent{K.server}:TextComponent{K.uri}`,
+        description: K.name + (K.description ? ` - TextComponent{K.description}` : ""),
         server: K.server,
         uri: K.uri,
         name: K.name || K.uri
@@ -1130,20 +1121,20 @@ async function ZJ0(A, Q, B, G = !1, Z = []) {
 }
 var GJ0 = 15,
     d19 = 60;
-var p19 = L(() => {
+var p19 = lazyLoader(() => {
     HZ1();
     Yn();
     u1();
     QJ0()
 });
-var l19 = L(() => {
+var l19 = lazyLoader(() => {
     PD();
     u1()
 });
 
 function i19(A) {
     let Q = "plugin" in A ? A.plugin : "no-plugin";
-    return `${A.type}:${A.source}:${Q}`
+    return `TextComponent{A.type}:TextComponent{A.source}:TextComponent{Q}`
 }
 
 function n19(A, Q) {
@@ -1178,7 +1169,7 @@ function a19(A, Q = !1, B) {
                         ...H.mcp.resources,
                         ...D && D.length > 0 ? {
                             [F.name]: D
-                        } : s5B(H.mcp.resources, F.name)
+                        } : omit(H.mcp.resources, F.name)
                     }
                 }
             }
@@ -1193,26 +1184,26 @@ function a19(A, Q = !1, B) {
             case "connected": {
                 F.client.onclose = () => {
                     if (cIA(F.name, F.config).catch(() => {
-                            g(`Failed to invalidate the server cache: ${F.name}`)
+                            g(`Failed to invalidate the server cache: TextComponent{F.name}`)
                         }), miA(F.name)) {
                         f0(F.name, "Server is disabled, skipping automatic reconnection");
                         return
                     }
                     if (F.config.type === "sse" || F.config.type === "http" || F.config.type === "sse-ide") {
                         let H = F.config.type === "http" ? "HTTP" : "SSE";
-                        f0(F.name, `${H} transport closed/disconnected, attempting automatic reconnection`), I({
+                        f0(F.name, `TextComponent{H} transport closed/disconnected, attempting automatic reconnection`), I({
                             ...F,
                             type: "pending"
                         });
                         let C = Date.now();
                         Q1A(F.name, F.config).then((E) => {
                             let z = Date.now() - C;
-                            if (E.client.type === "connected") f0(F.name, `${H} reconnection successful after ${z}ms`);
-                            else f0(F.name, `${H} reconnection attempt completed with status: ${E.client.type}`);
+                            if (E.client.type === "connected") f0(F.name, `TextComponent{H} reconnection successful after TextComponent{z}ms`);
+                            else f0(F.name, `TextComponent{H} reconnection attempt completed with status: TextComponent{E.client.type}`);
                             Y(E)
                         }).catch((E) => {
                             let z = Date.now() - C;
-                            CI(F.name, `${H} reconnection failed after ${z}ms: ${E}`), I({
+                            CI(F.name, `TextComponent{H} reconnection failed after TextComponent{z}ms: TextComponent{E}`), I({
                                 ...F,
                                 type: "failed"
                             })
@@ -1232,8 +1223,7 @@ function a19(A, Q = !1, B) {
         }
     }, [I]), J = G0();
     jO.useEffect(() => {
-        // Async function: F
-async function F() {
+        async function F() {
             let {
                 servers: V,
                 errors: K
@@ -1262,12 +1252,11 @@ async function F() {
             })
         }
         F().catch((V) => {
-            CI("useManageMCPConnections", `Failed to initialize servers as pending: ${V instanceof Error?V.message:String(V)}`)
+            CI("useManageMCPConnections", `Failed to initialize servers as pending: TextComponent{V instanceof Error?V.message:String(V)}`)
         })
     }, [Q, A, Z, J]), jO.useEffect(() => {
         let F = !1;
-        // Async function: V
-async function V() {
+        async function V() {
             let {
                 servers: K,
                 errors: D
@@ -1282,7 +1271,7 @@ async function V() {
                 ...A
             };
             oA0(Y, H).catch((C) => {
-                CI("useManageMcpConnections", `Failed to get MCP resources: ${C instanceof Error?C.message:String(C)}`)
+                CI("useManageMcpConnections", `Failed to get MCP resources: TextComponent{C instanceof Error?C.message:String(C)}`)
             })
         }
         return V(), () => {
@@ -1291,13 +1280,13 @@ async function V() {
     }, [Q, A, Y, J]), jO.useEffect(() => {}, [G.mcp.clients, Z]), jO.useEffect(() => B?.updateClients(G.mcp.clients), [B, G.mcp.clients]), jO.useEffect(() => B?.updateTools(G.mcp.tools), [B, G.mcp.tools]), jO.useEffect(() => B?.updateResources(G.mcp.resources), [B, G.mcp.resources]);
     let W = jO.useCallback(async (F) => {
             let V = G.mcp.clients.find((D) => D.name === F);
-            if (!V) throw Error(`MCP server ${F} not found`);
+            if (!V) throw Error(`MCP server TextComponent{F} not found`);
             let K = await Q1A(F, V.config);
             return Y(K), K
         }, [G.mcp.clients, Y, Z]),
         X = jO.useCallback(async (F) => {
             let V = G.mcp.clients.find((D) => D.name === F);
-            if (!V) throw Error(`MCP server ${F} not found`);
+            if (!V) throw Error(`MCP server TextComponent{F} not found`);
             if (V.type !== "disabled") {
                 if (Jb1(F, !1), V.type === "connected") await cIA(F, V.config);
                 I({
@@ -1321,7 +1310,7 @@ async function V() {
     }
 }
 var jO;
-var s19 = L(() => {
+var s19 = lazyLoader(() => {
     S0();
     Tk();
     u1();
@@ -1332,7 +1321,7 @@ var s19 = L(() => {
     xX();
     D0();
     l19();
-    jO = GA(VA(), 1)
+    jO = esmImport(VA(), 1)
 });
 
 function OXA() {
@@ -1365,9 +1354,9 @@ function $Z1({
     }, A)
 }
 var zg, IJ0;
-var FQA = L(() => {
+var FQA = lazyLoader(() => {
     s19();
-    zg = GA(VA(), 1), IJ0 = zg.createContext(null)
+    zg = esmImport(VA(), 1), IJ0 = zg.createContext(null)
 });
 
 function r19(A) {
@@ -1381,7 +1370,7 @@ function wZ1(A, Q, B) {
 }
 
 function o19(A) {
-    if (A.isQuoted) return A.token.slice(2).replace(/"$/, "");
+    if (A.isQuoted) return A.token.slice(2).replace(/"TextComponent/, "");
     else if (A.token.startsWith("@")) return A.token.substring(1);
     else return A.token
 }
@@ -1395,21 +1384,20 @@ function YJ0(A) {
         isQuoted: I,
         isComplete: Y
     } = A, J = Y ? " " : "";
-    if (I || Z) return B === "bash" ? `"${Q}"${J}` : `@"${Q}"${J}`;
-    else if (G) return B === "bash" ? `${Q}${J}` : `@${Q}${J}`;
+    if (I || Z) return B === "bash" ? `"TextComponent{Q}"TextComponent{J}` : `@"TextComponent{Q}"TextComponent{J}`;
+    else if (G) return B === "bash" ? `TextComponent{Q}TextComponent{J}` : `@TextComponent{Q}TextComponent{J}`;
     else return Q
 }
 
 function JJ0(A, Q, B, G, Z, I) {
     let W = Q.slice(0, B).lastIndexOf(" ") + 1,
         X;
-    if (I === "variable") X = "$" + A.displayText + " ";
+    if (I === "variable") X = "TextComponent" + A.displayText + " ";
     else if (I === "command") X = A.displayText + " ";
     else X = A.displayText;
     let F = Q.slice(0, W) + X + Q.slice(B);
     G(F), Z(W + X.length)
 }
-
 async function EL3(A, Q) {
     try {
         if (qZ1) qZ1.abort();
@@ -1423,7 +1411,7 @@ function xPA(A, Q, B = !1) {
     if (!A) return null;
     let G = A.substring(0, Q);
     if (B) {
-        let Y = /@"([^"]*)"?$/,
+        let Y = /@"([^"]*)"?TextComponent/,
             J = G.match(Y);
         if (J && J.index !== void 0) return {
             token: J[0],
@@ -1431,7 +1419,7 @@ function xPA(A, Q, B = !1) {
             isQuoted: !0
         }
     }
-    let Z = B ? /(@[a-zA-Z0-9_\-./\\()[\]~]*|[a-zA-Z0-9_\-./\\()[\]~]+)$/ : /[a-zA-Z0-9_\-./\\()[\]~]+$/,
+    let Z = B ? /(@[a-zA-Z0-9_\-./\\()[\]~]*|[a-zA-Z0-9_\-./\\()[\]~]+)TextComponent/ : /[a-zA-Z0-9_\-./\\()[\]~]+TextComponent/,
         I = G.match(Z);
     if (!I || I.index === void 0) return null;
     return {
@@ -1511,7 +1499,7 @@ function t19({
                 v.cancel(), P();
                 return
             }
-            let QA = l.substring(0, d).match(/(^|\s)@([a-zA-Z0-9_\-./\\()[\]~]*|"[^"]*"?)$/),
+            let QA = l.substring(0, d).match(/(^|\s)@([a-zA-Z0-9_\-./\\()[\]~]*|"[^"]*"?)TextComponent/),
                 IA = d === l.length && d > 0 && l.length > 0 && l[d - 1] === " ";
             if (Y === "prompt" && LXA(l) && d > 0) {
                 let HA = zL3(l);
@@ -1519,7 +1507,7 @@ function t19({
                     let {
                         args: wA
                     } = HA;
-                    if (wA.match(/\s+$/)) {
+                    if (wA.match(/\s+TextComponent/)) {
                         v.cancel(), P();
                         return
                     }

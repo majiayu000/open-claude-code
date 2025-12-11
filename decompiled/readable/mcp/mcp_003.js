@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_003.js
+ * 处理时间: 2025-12-09T03:41:37.743Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.002Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -20,12 +23,12 @@
         return A.classNameAliases = zm(A.classNameAliases || {}), Y(A)
     }
 
-function mv0(A) {
+    function mv0(A) {
         if (!A) return !1;
         return A.endsWithParent || mv0(A.starts)
     }
 
-function k04(A) {
+    function k04(A) {
         if (A.variants && !A.cachedVariants) A.cachedVariants = A.variants.map(function(Q) {
             return zm(A, {
                 variants: null
@@ -40,11 +43,11 @@ function k04(A) {
     }
     var y04 = "10.7.3";
 
-function x04(A) {
+    function x04(A) {
         return Boolean(A || A === "")
     }
 
-function v04(A) {
+    function v04(A) {
         let Q = {
             props: ["language", "code", "autodetect"],
             data: function() {
@@ -59,7 +62,7 @@ function v04(A) {
                     return "hljs " + this.detectedLanguage
                 },
                 highlighted() {
-                    if (!this.autoDetect && !A.getLanguage(this.language)) return console.warn(`The language "${this.language}" you specified could not be found.`), this.unknownLanguage = !0, E9A(this.code);
+                    if (!this.autoDetect && !A.getLanguage(this.language)) return console.warn(`The language "TextComponent{this.language}" you specified could not be found.`), this.unknownLanguage = !0, E9A(this.code);
                     let G = {};
                     if (this.autoDetect) G = A.highlightAuto(this.code), this.detectedLanguage = G.language;
                     else G = A.highlight(this.language, this.code, this.ignoreIllegals), this.detectedLanguage = this.language;
@@ -90,8 +93,7 @@ function v04(A) {
             }
         }
     }
-
-var b04 = {
+    var b04 = {
         "after:highlightElement": ({
             el: A,
             result: Q,
@@ -104,11 +106,11 @@ var b04 = {
         }
     };
 
-function jH1(A) {
+    function jH1(A) {
         return A.nodeName.toLowerCase()
     }
 
-function Pv0(A) {
+    function Pv0(A) {
         let Q = [];
         return function B(G, Z) {
             for (let I = G.firstChild; I; I = I.nextSibling)
@@ -128,29 +130,29 @@ function Pv0(A) {
         }(A, 0), Q
     }
 
-function f04(A, Q, B) {
+    function f04(A, Q, B) {
         let G = 0,
             Z = "",
             I = [];
 
-function Y() {
+        function Y() {
             if (!A.length || !Q.length) return A.length ? A : Q;
             if (A[0].offset !== Q[0].offset) return A[0].offset < Q[0].offset ? A : Q;
             return Q[0].event === "start" ? A : Q
         }
 
-function J(F) {
+        function J(F) {
             function V(K) {
                 return " " + K.nodeName + '="' + E9A(K.value) + '"'
             }
             Z += "<" + jH1(F) + [].map.call(F.attributes, V).join("") + ">"
         }
 
-function W(F) {
+        function W(F) {
             Z += "</" + jH1(F) + ">"
         }
 
-function X(F) {
+        function X(F) {
             (F.event === "start" ? J : W)(F.node)
         }
         while (A.length || Q.length) {
@@ -167,17 +169,16 @@ function X(F) {
         }
         return Z + E9A(B.substr(G))
     }
-
-var jv0 = {},
+    var jv0 = {},
         RH1 = (A) => {
             console.error(A)
         },
         Sv0 = (A, ...Q) => {
-            console.log(`WARN: ${A}`, ...Q)
+            console.log(`WARN: TextComponent{A}`, ...Q)
         },
         fN = (A, Q) => {
-            if (jv0[`${A}/${Q}`]) return;
-            console.log(`Deprecated as of ${A}. ${Q}`), jv0[`${A}/${Q}`] = !0
+            if (jv0[`TextComponent{A}/TextComponent{Q}`]) return;
+            console.log(`Deprecated as of TextComponent{A}. TextComponent{Q}`), jv0[`TextComponent{A}/TextComponent{Q}`] = !0
         },
         TH1 = E9A,
         _v0 = zm,
@@ -195,7 +196,7 @@ var jv0 = {},
                     contains: []
                 },
                 W = {
-                    noHighlightRe: /^(no-?highlight)$/i,
+                    noHighlightRe: /^(no-?highlight)TextComponent/i,
                     languageDetectRe: /\blang(?:uage)?-([\w-]+)\b/i,
                     classPrefix: "hljs-",
                     tabReplace: null,
@@ -204,11 +205,11 @@ var jv0 = {},
                     __emitter: vv0
                 };
 
-function X(NA) {
+            function X(NA) {
                 return W.noHighlightRe.test(NA)
             }
 
-function F(NA) {
+            function F(NA) {
                 let qA = NA.className + " ";
                 qA += NA.parentNode ? NA.parentNode.className : "";
                 let DA = W.languageDetectRe.exec(qA);
@@ -220,7 +221,7 @@ function F(NA) {
                 return qA.split(/\s+/).find((yA) => X(yA) || d(yA))
             }
 
-function V(NA, qA, DA, yA) {
+            function V(NA, qA, DA, yA) {
                 let rA = "",
                     K1 = "";
                 if (typeof qA === "object") rA = NA, DA = qA.ignoreIllegals, K1 = qA.language, yA = void 0;
@@ -235,13 +236,13 @@ https://github.com/highlightjs/highlight.js/issues/2277`), K1 = NA, rA = qA;
                 return XA.code = WA.code, KA("after:highlight", XA), XA
             }
 
-function K(NA, qA, DA, yA) {
+            function K(NA, qA, DA, yA) {
                 function rA(R1, N1) {
                     let Z0 = PA.case_insensitive ? N1[0].toLowerCase() : N1[0];
                     return Object.prototype.hasOwnProperty.call(R1.keywords, Z0) && R1.keywords[Z0]
                 }
 
-function K1() {
+                function K1() {
                     if (!b1.keywords) {
                         x0.addText(u0);
                         return
@@ -266,7 +267,7 @@ function K1() {
                     Z0 += u0.substr(R1), x0.addText(Z0)
                 }
 
-function WA() {
+                function WA() {
                     if (u0 === "") return;
                     let R1 = null;
                     if (typeof b1.subLanguage === "string") {
@@ -280,13 +281,13 @@ function WA() {
                     x0.addSublanguage(R1.emitter, R1.language)
                 }
 
-function XA() {
+                function XA() {
                     if (b1.subLanguage != null) WA();
                     else K1();
                     u0 = ""
                 }
 
-function zA(R1) {
+                function zA(R1) {
                     if (R1.className) x0.openNode(PA.classNameAliases[R1.className] || R1.className);
                     return b1 = Object.create(R1, {
                         parent: {
@@ -310,12 +311,12 @@ function zA(R1) {
                     if (R1.endsWithParent) return $A(R1.parent, N1, Z0)
                 }
 
-function LA(R1) {
+                function LA(R1) {
                     if (b1.matcher.regexIndex === 0) return u0 += R1[0], 1;
                     else return F1 = !0, 0
                 }
 
-function TA(R1) {
+                function TA(R1) {
                     let N1 = R1[0],
                         Z0 = R1.rule,
                         J0 = new PH1(Z0),
@@ -333,7 +334,7 @@ function TA(R1) {
                     return zA(Z0), Z0.returnBegin ? 0 : N1.length
                 }
 
-function eA(R1) {
+                function eA(R1) {
                     let N1 = R1[0],
                         Z0 = qA.substr(R1.index),
                         J0 = $A(b1, R1, Z0);
@@ -356,7 +357,8 @@ function eA(R1) {
                     return s1.returnEnd ? 0 : N1.length
                 }
 
-function aA() {
+                /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+function BASE64_CHARS() {
                     let R1 = [];
                     for (let N1 = b1; N1 !== PA; N1 = N1.parent)
                         if (N1.className) R1.unshift(N1.className);
@@ -364,7 +366,7 @@ function aA() {
                 }
                 let I1 = {};
 
-function w1(R1, N1) {
+                function w1(R1, N1) {
                     let Z0 = N1 && N1[0];
                     if (u0 += R1, Z0 == null) return XA(), 0;
                     if (I1.type === "begin" && N1.type === "end" && I1.index === N1.index && Z0 === "") {
@@ -395,7 +397,7 @@ function w1(R1, N1) {
                     b1 = yA || B1,
                     Y0 = {},
                     x0 = new W.__emitter(W);
-                aA();
+                BASE64_CHARS();
                 let u0 = "",
                     k1 = 0,
                     T0 = 0,
@@ -447,7 +449,7 @@ function w1(R1, N1) {
                 }
             }
 
-function D(NA) {
+            function D(NA) {
                 let qA = {
                     relevance: 0,
                     emitter: new W.__emitter(W),
@@ -458,7 +460,7 @@ function D(NA) {
                 return qA.emitter.addText(NA), qA
             }
 
-function H(NA, qA) {
+            function H(NA, qA) {
                 qA = qA || W.languages || Object.keys(Q);
                 let DA = D(NA),
                     yA = qA.filter(d).filter(IA).map((zA) => K(zA, NA, !1));
@@ -476,7 +478,7 @@ function H(NA, qA) {
                 return XA.second_best = WA, XA
             }
 
-function C(NA) {
+            function C(NA) {
                 if (!(W.tabReplace || W.useBR)) return NA;
                 return NA.replace(I, (qA) => {
                     if (qA === `
@@ -486,7 +488,7 @@ function C(NA) {
                 })
             }
 
-function E(NA, qA, DA) {
+            function E(NA, qA, DA) {
                 let yA = qA ? B[qA] : DA;
                 if (NA.classList.add("hljs"), yA) NA.classList.add(yA)
             }
@@ -512,7 +514,7 @@ function E(NA, qA, DA) {
                     }
                 };
 
-function q(NA) {
+            function q(NA) {
                 let qA = null,
                     DA = F(NA);
                 if (X(DA)) return;
@@ -540,7 +542,7 @@ function q(NA) {
                 }
             }
 
-function R(NA) {
+            function R(NA) {
                 if (NA.useBR) fN("10.3.0", "'useBR' will be removed entirely in v11.0"), fN("10.3.0", "Please see https://github.com/highlightjs/highlight.js/issues/2559");
                 W = _v0(W, NA)
             }
@@ -549,12 +551,12 @@ function R(NA) {
                 P.called = !0, fN("10.6.0", "initHighlighting() is deprecated.  Use highlightAll() instead."), document.querySelectorAll("pre code").forEach(q)
             };
 
-function y() {
+            function y() {
                 fN("10.6.0", "initHighlightingOnLoad() is deprecated.  Use highlightAll() instead."), v = !0
             }
             let v = !1;
 
-function x() {
+            function x() {
                 if (document.readyState === "loading") {
                     v = !0;
                     return
@@ -562,12 +564,12 @@ function x() {
                 document.querySelectorAll("pre code").forEach(q)
             }
 
-function p() {
+            function p() {
                 if (v) x()
             }
             if (typeof window < "u" && window.addEventListener) window.addEventListener("DOMContentLoaded", p, !1);
 
-function u(NA, qA) {
+            function u(NA, qA) {
                 let DA = null;
                 try {
                     DA = qA(A)
@@ -582,28 +584,28 @@ function u(NA, qA) {
                 })
             }
 
-function o(NA) {
+            function o(NA) {
                 delete Q[NA];
                 for (let qA of Object.keys(B))
                     if (B[qA] === NA) delete B[qA]
             }
 
-function l() {
+            function l() {
                 return Object.keys(Q)
             }
 
-function k(NA) {
+            function k(NA) {
                 fN("10.4.0", "requireLanguage will be removed entirely in v11."), fN("10.4.0", "Please see https://github.com/highlightjs/highlight.js/pull/2844");
                 let qA = d(NA);
                 if (qA) return qA;
                 throw Error("The '{}' language is required, but not loaded.".replace("{}", NA))
             }
 
-function d(NA) {
+            function d(NA) {
                 return NA = (NA || "").toLowerCase(), Q[NA] || Q[B[NA]]
             }
 
-function QA(NA, {
+            function QA(NA, {
                 languageName: qA
             }) {
                 if (typeof NA === "string") NA = [NA];
@@ -612,12 +614,12 @@ function QA(NA, {
                 })
             }
 
-function IA(NA) {
+            function IA(NA) {
                 let qA = d(NA);
                 return qA && !qA.disableAutodetect
             }
 
-function HA(NA) {
+            function HA(NA) {
                 if (NA["before:highlightBlock"] && !NA["before:highlightElement"]) NA["before:highlightElement"] = (qA) => {
                     NA["before:highlightBlock"](Object.assign({
                         block: qA.el
@@ -630,22 +632,22 @@ function HA(NA) {
                 }
             }
 
-function wA(NA) {
+            function wA(NA) {
                 HA(NA), G.push(NA)
             }
 
-function KA(NA, qA) {
+            function KA(NA, qA) {
                 let DA = NA;
                 G.forEach(function(yA) {
                     if (yA[DA]) yA[DA](qA)
                 })
             }
 
-function SA(NA) {
+            function SA(NA) {
                 return fN("10.2.0", "fixMarkup will be removed entirely in v11.0"), fN("10.2.0", "Please see https://github.com/highlightjs/highlight.js/issues/2534"), C(NA)
             }
 
-function sA(NA) {
+            function sA(NA) {
                 return fN("10.7.0", "highlightBlock will be removed entirely in v12.0"), fN("10.7.0", "Please use highlightElement now."), q(NA)
             }
             Object.assign(A, {
@@ -680,7 +682,7 @@ function sA(NA) {
         g04 = h04({});
     dv0.exports = g04
 });
-var lv0 = U((M27, pv0) => {
+var lv0 = moduleWrapper((M27, pv0) => {
     function u04(A) {
         var Q = "[A-Za-zА-Яа-яёЁ_][A-Za-zА-Яа-яёЁ_0-9]+",
             B = "далее ",
@@ -725,7 +727,7 @@ var lv0 = U((M27, pv0) => {
             DA = {
                 className: "string",
                 begin: '"|\\|',
-                end: '"|$',
+                end: '"|TextComponent',
                 contains: [{
                     begin: '""'
                 }]
@@ -744,7 +746,7 @@ var lv0 = U((M27, pv0) => {
             K1 = {
                 className: "meta",
                 begin: "#|&",
-                end: "$",
+                end: "TextComponent",
                 keywords: {
                     $pattern: Q,
                     "meta-keyword": Z + J
@@ -804,24 +806,24 @@ var lv0 = U((M27, pv0) => {
     }
     pv0.exports = u04
 });
-var nv0 = U((O27, iv0) => {
+var nv0 = moduleWrapper((O27, iv0) => {
     function m04(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function d04(...A) {
+    function d04(...A) {
         return A.map((B) => m04(B)).join("")
     }
 
-function c04(A) {
+    function c04(A) {
         let Q = {
                 ruleDeclaration: /^[a-zA-Z][a-zA-Z0-9-]*/,
-                unexpectedChars: /[!@#$^&',?+~`|:]/
+                unexpectedChars: /[!@#TextComponent^&',?+~`|:]/
             },
             B = ["ALPHA", "BIT", "CHAR", "CR", "CRLF", "CTL", "DIGIT", "DQUOTE", "HEXDIG", "HTAB", "LF", "LWSP", "OCTET", "SP", "VCHAR", "WSP"],
-            G = A.COMMENT(/;/, /$/),
+            G = A.COMMENT(/;/, /TextComponent/),
             Z = {
                 className: "symbol",
                 begin: /%b[0-1]+(-[0-1]+|(\.[0-1]+)+){0,1}/
@@ -851,22 +853,22 @@ function c04(A) {
     }
     iv0.exports = c04
 });
-var rv0 = U((R27, sv0) => {
+var rv0 = moduleWrapper((R27, sv0) => {
     function av0(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function p04(...A) {
+    function p04(...A) {
         return A.map((B) => av0(B)).join("")
     }
 
-function l04(...A) {
+    function l04(...A) {
         return "(" + A.map((B) => av0(B)).join("|") + ")"
     }
 
-function i04(A) {
+    function i04(A) {
         let Q = ["GET", "POST", "HEAD", "PUT", "DELETE", "CONNECT", "OPTIONS", "PATCH", "TRACE"];
         return {
             name: "Apache Access Log",
@@ -917,18 +919,18 @@ function i04(A) {
     }
     sv0.exports = i04
 });
-var tv0 = U((T27, ov0) => {
+var tv0 = moduleWrapper((T27, ov0) => {
     function n04(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function a04(...A) {
+    function a04(...A) {
         return A.map((B) => n04(B)).join("")
     }
 
-function s04(A) {
+    function s04(A) {
         let Q = /[a-zA-Z_$][a-zA-Z0-9_$]*/,
             B = /([*]|[a-zA-Z_$][a-zA-Z0-9_$]*)/,
             G = {
@@ -984,7 +986,7 @@ function s04(A) {
     }
     ov0.exports = s04
 });
-var Ab0 = U((P27, ev0) => {
+var Ab0 = moduleWrapper((P27, ev0) => {
     function r04(A) {
         let B = "[eE][-+]?\\d(_|\\d)*",
             G = "\\d(_|\\d)*(\\.\\d(_|\\d)*)?(" + B + ")?",
@@ -992,10 +994,10 @@ var Ab0 = U((P27, ev0) => {
             Y = "\\b(" + ("\\d(_|\\d)*#\\w+(\\.\\w+)?#(" + B + ")?") + "|" + G + ")",
             J = "[A-Za-z](_?[A-Za-z0-9.])*",
             W = `[]\\{\\}%#'"`,
-            X = A.COMMENT("--", "$"),
+            X = A.COMMENT("--", "TextComponent"),
             F = {
                 begin: "\\s+:\\s+",
-                end: "\\s*(:=|;|\\)|=>|$)",
+                end: "\\s*(:=|;|\\)|=>|TextComponent)",
                 illegal: `[]\\{\\}%#'"`,
                 contains: [{
                     beginKeywords: "loop for declare others",
@@ -1038,7 +1040,7 @@ var Ab0 = U((P27, ev0) => {
             }, {
                 className: "title",
                 begin: "(\\bwith\\s+)?(\\bprivate\\s+)?\\bpackage\\s+(\\bbody\\s+)?",
-                end: "(is|$)",
+                end: "(is|TextComponent)",
                 keywords: "package body",
                 excludeBegin: !0,
                 excludeEnd: !0,
@@ -1051,14 +1053,14 @@ var Ab0 = U((P27, ev0) => {
                 contains: [X, {
                     className: "title",
                     begin: "(\\bwith\\s+)?\\b(function|procedure)\\s+",
-                    end: "(\\(|\\s+|$)",
+                    end: "(\\(|\\s+|TextComponent)",
                     excludeBegin: !0,
                     excludeEnd: !0,
                     illegal: `[]\\{\\}%#'"`
                 }, F, {
                     className: "type",
                     begin: "\\breturn\\s+",
-                    end: "(\\s+|;|$)",
+                    end: "(\\s+|;|TextComponent)",
                     keywords: "return",
                     excludeBegin: !0,
                     excludeEnd: !0,
@@ -1077,7 +1079,7 @@ var Ab0 = U((P27, ev0) => {
     }
     ev0.exports = r04
 });
-var Bb0 = U((j27, Qb0) => {
+var Bb0 = moduleWrapper((j27, Qb0) => {
     function o04(A) {
         var Q = {
                 className: "built_in",
@@ -1097,7 +1099,7 @@ var Bb0 = U((j27, Qb0) => {
             name: "AngelScript",
             aliases: ["asc"],
             keywords: "for in|0 break continue while do|0 return if else case switch namespace is cast or and xor not get|0 in inout|10 out override set|0 private public const default|0 final shared external mixin|10 enum typedef funcdef this super import from interface abstract|0 try catch protected explicit property",
-            illegal: "(^using\\s+[A-Za-z0-9_\\.]+;$|\\bfunction\\s*[^\\(])",
+            illegal: "(^using\\s+[A-Za-z0-9_\\.]+;TextComponent|\\bfunction\\s*[^\\(])",
             contains: [{
                 className: "string",
                 begin: "'",
@@ -1155,11 +1157,11 @@ var Bb0 = U((j27, Qb0) => {
     }
     Qb0.exports = o04
 });
-var Zb0 = U((S27, Gb0) => {
+var Zb0 = moduleWrapper((S27, Gb0) => {
     function t04(A) {
         let Q = {
                 className: "number",
-                begin: /[$%]\d+/
+                begin: /[TextComponent%]\d+/
             },
             B = {
                 className: "number",
@@ -1192,7 +1194,7 @@ var Zb0 = U((S27, Gb0) => {
                     nomarkup: "order deny allow setenv rewriterule rewriteengine rewritecond documentroot sethandler errordocument loadmodule options header listen serverroot servername"
                 },
                 starts: {
-                    end: /$/,
+                    end: /TextComponent/,
                     relevance: 0,
                     keywords: {
                         literal: "on off all deny allow"
@@ -1200,10 +1202,10 @@ var Zb0 = U((S27, Gb0) => {
                     contains: [{
                         className: "meta",
                         begin: /\s\[/,
-                        end: /\]$/
+                        end: /\]TextComponent/
                     }, {
                         className: "variable",
-                        begin: /[\$%]\{/,
+                        begin: /[\TextComponent%]\{/,
                         end: /\}/,
                         contains: ["self", Q]
                     }, G, B, A.QUOTE_STRING_MODE]
@@ -1214,22 +1216,22 @@ var Zb0 = U((S27, Gb0) => {
     }
     Gb0.exports = t04
 });
-var Xb0 = U((_27, Wb0) => {
+var Xb0 = moduleWrapper((_27, Wb0) => {
     function Jb0(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function Ib0(...A) {
+    function Ib0(...A) {
         return A.map((B) => Jb0(B)).join("")
     }
 
-function Yb0(...A) {
+    function Yb0(...A) {
         return "(" + A.map((B) => Jb0(B)).join("|") + ")"
     }
 
-function e04(A) {
+    function e04(A) {
         let Q = A.inherit(A.QUOTE_STRING_MODE, {
                 illegal: null
             }),
@@ -1239,7 +1241,7 @@ function e04(A) {
                 end: /\)/,
                 contains: ["self", A.C_NUMBER_MODE, Q]
             },
-            G = A.COMMENT(/--/, /$/),
+            G = A.COMMENT(/--/, /TextComponent/),
             Z = A.COMMENT(/\(\*/, /\*\)/, {
                 contains: ["self", G]
             }),
@@ -1268,7 +1270,7 @@ function e04(A) {
                 begin: Ib0(/\b/, Yb0(...Y), /\b/)
             }, {
                 beginKeywords: "on",
-                illegal: /[${=;\n]/,
+                illegal: /[TextComponent{=;\n]/,
                 contains: [A.UNDERSCORE_TITLE_MODE, B]
             }, ...I],
             illegal: /\/\/|->|=>|\[\[/
@@ -1276,7 +1278,7 @@ function e04(A) {
     }
     Wb0.exports = e04
 });
-var Vb0 = U((k27, Fb0) => {
+var Vb0 = moduleWrapper((k27, Fb0) => {
     function AQ4(A) {
         let B = {
                 keyword: "if for while var new function do return void else break",
@@ -1285,7 +1287,7 @@ var Vb0 = U((k27, Fb0) => {
             },
             G = {
                 className: "symbol",
-                begin: "\\$[datastore|feature|layer|map|measure|sourcefeature|sourcelayer|targetfeature|targetlayer|value|view]+"
+                begin: "\\TextComponent[datastore|feature|layer|map|measure|sourcefeature|sourcelayer|targetfeature|targetlayer|value|view]+"
             },
             Z = {
                 className: "number",
@@ -1300,7 +1302,7 @@ var Vb0 = U((k27, Fb0) => {
             },
             I = {
                 className: "subst",
-                begin: "\\$\\{",
+                begin: "\\TextComponent\\{",
                 end: "\\}",
                 keywords: B,
                 contains: []
@@ -1371,34 +1373,34 @@ var Vb0 = U((k27, Fb0) => {
                 }],
                 illegal: /\[|%/
             }, {
-                begin: /\$[(.]/
+                begin: /\TextComponent[(.]/
             }],
             illegal: /#(?!!)/
         }
     }
     Fb0.exports = AQ4
 });
-var Db0 = U((y27, Kb0) => {
+var Db0 = moduleWrapper((y27, Kb0) => {
     function QQ4(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function BQ4(A) {
+    function BQ4(A) {
         return xH1("(?=", A, ")")
     }
 
-function LxA(A) {
+    function LxA(A) {
         return xH1("(", A, ")?")
     }
 
-function xH1(...A) {
+    function xH1(...A) {
         return A.map((B) => QQ4(B)).join("")
     }
 
-function GQ4(A) {
-        let Q = A.COMMENT("//", "$", {
+    function GQ4(A) {
+        let Q = A.COMMENT("//", "TextComponent", {
                 contains: [{
                     begin: /\\\n/
                 }]
@@ -1415,16 +1417,16 @@ function GQ4(A) {
             W = {
                 className: "string",
                 variants: [{
-                    begin: '(u8?|U|L)?"',
+                    begin: '(u8?|moduleWrapper|lazyLoader)?"',
                     end: '"',
                     illegal: "\\n",
                     contains: [A.BACKSLASH_ESCAPE]
                 }, {
-                    begin: "(u8?|U|L)?'(\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4,8}|[0-7]{3}|\\S)|.)",
+                    begin: "(u8?|moduleWrapper|lazyLoader)?'(\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4,8}|[0-7]{3}|\\S)|.)",
                     end: "'",
                     illegal: "."
                 }, A.END_SAME_AS_BEGIN({
-                    begin: /(?:u8?|U|L)?R"([^()\\ ]{0,16})\(/,
+                    begin: /(?:u8?|moduleWrapper|lazyLoader)?R"([^()\\ ]{0,16})\(/,
                     end: /\)([^()\\ ]{0,16})"/
                 })]
             },
@@ -1433,7 +1435,7 @@ function GQ4(A) {
                 variants: [{
                     begin: "\\b(0b[01']+)"
                 }, {
-                    begin: "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)((ll|LL|l|L)(u|U)?|(u|U)(ll|LL|l|L)?|f|F|b|B)"
+                    begin: "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)((ll|LL|l|lazyLoader)(u|moduleWrapper)?|(u|moduleWrapper)(ll|LL|l|lazyLoader)?|f|F|b|B)"
                 }, {
                     begin: "(-?)(\\b0[xX][a-fA-F0-9']+|(\\b[\\d']+(\\.[\\d']*)?|\\.[\\d']+)([eE][-+]?[\\d']+)?)"
                 }],
@@ -1442,7 +1444,7 @@ function GQ4(A) {
             F = {
                 className: "meta",
                 begin: /#\s*[a-z]+\b/,
-                end: /$/,
+                end: /TextComponent/,
                 keywords: {
                     "meta-keyword": "if else elif endif define undef warning error line pragma _Pragma ifdef ifndef include"
                 },

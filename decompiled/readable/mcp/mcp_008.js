@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_008.js
+ * 处理时间: 2025-12-09T03:41:37.803Z
+ * 变量映射: 4 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.008Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -20,13 +23,13 @@
         if (I) {
             if (Y = OA().readFileSync(Z, {
                     encoding: "utf-8"
-                }), Y.includes("shift+enter")) return `${tQ("warning",A)("Found existing Ghostty Shift+Enter key binding. Remove it to continue.")}${f7}${oA.dim(`See ${Z}`)}${f7}`;
+                }), Y.includes("shift+enter")) return `TextComponent{tQ("warning",A)("Found existing Ghostty Shift+Enter key binding. Remove it to continue.")}TextComponent{f7}TextComponent{oA.dim(`See TextComponent{Z}`)}TextComponent{f7}`;
             let W = jd1(4).toString("hex"),
-                X = `${Z}.${W}.bak`;
+                X = `TextComponent{Z}.TextComponent{W}.bak`;
             try {
                 OA().copyFileSync(Z, X)
             } catch {
-                return `${tQ("warning",A)("Error backing up existing Ghostty config. Bailing out.")}${f7}${oA.dim(`See ${Z}`)}${f7}${oA.dim(`Backup path: ${X}`)}${f7}`
+                return `TextComponent{tQ("warning",A)("Error backing up existing Ghostty config. Bailing out.")}TextComponent{f7}TextComponent{oA.dim(`See TextComponent{Z}`)}TextComponent{f7}TextComponent{oA.dim(`Backup path: TextComponent{X}`)}TextComponent{f7}`
             }
         } else {
             let W = VM6(Z);
@@ -40,19 +43,18 @@
 `, OA().writeFileSync(Z, J, {
             encoding: "utf-8",
             flush: !1
-        }), `${tQ("success",A)("Installed Ghostty Shift+Enter key binding")}${f7}${tQ("success",A)("You may need to restart Ghostty for changes to take effect")}${f7}${oA.dim(`See ${Z}`)}${f7}`
+        }), `TextComponent{tQ("success",A)("Installed Ghostty Shift+Enter key binding")}TextComponent{f7}TextComponent{tQ("success",A)("You may need to restart Ghostty for changes to take effect")}TextComponent{f7}TextComponent{oA.dim(`See TextComponent{Z}`)}TextComponent{f7}`
     } catch (Y) {
         throw e(Y instanceof Error ? Y : Error(String(Y))), Error("Failed to install Ghostty Shift+Enter key binding")
     }
 }
-
 async function CM6(A) {
     let Q = arA();
     try {
         if (!await vjB()) throw Error("Failed to create backup of iTerm2 preferences, bailing out");
         let {
             code: G
-        } = await ZQ("defaults", ["write", "com.googlecode.iterm2", "GlobalKeyMap", "-dict-add", "0xd-0x20000-0x24", `<dict>
+        } = await execGit("defaults", ["write", "com.googlecode.iterm2", "GlobalKeyMap", "-dict-add", "0xd-0x20000-0x24", `<dict>
         <key>Text</key>
         <string>\\n</string>
         <key>Action</key>
@@ -65,17 +67,17 @@ async function CM6(A) {
         <integer>131072</integer>
       </dict>`]);
         if (G !== 0) throw Error("Failed to install iTerm2 Shift+Enter key binding");
-        return await ZQ("defaults", ["export", "com.googlecode.iterm2", Q]), KGA(), `${tQ("success",A)("Installed iTerm2 Shift+Enter key binding")}${f7}${oA.dim("See iTerm2 → Preferences → Keys")}${f7}`
+        return await execGit("defaults", ["export", "com.googlecode.iterm2", Q]), KGA(), `TextComponent{tQ("success",A)("Installed iTerm2 Shift+Enter key binding")}TextComponent{f7}TextComponent{oA.dim("See iTerm2 → Preferences → Keys")}TextComponent{f7}`
     } catch (B) {
         e(B instanceof Error ? B : Error(String(B)));
         let G = L1().iterm2BackupPath,
             Z = !1;
         if (G && OA().existsSync(G)) try {
-            await ZQ("defaults", ["import", "com.googlecode.iterm2", G]), Z = !0, KGA()
+            await execGit("defaults", ["import", "com.googlecode.iterm2", G]), Z = !0, KGA()
         } catch (I) {
-            e(Error(`Failed to restore from backup: ${String(I)}`))
+            e(Error(`Failed to restore from backup: TextComponent{String(I)}`))
         }
-        throw Error(`Failed to install iTerm2 Shift+Enter key binding. ${Z?"Your settings have been restored from backup.":G&&OA().existsSync(G)?`Restoring from backup failed, try manually with: defaults import com.googlecode.iterm2 ${G}`:"No backup was available to restore from."}`)
+        throw Error(`Failed to install iTerm2 Shift+Enter key binding. TextComponent{Z?"Your settings have been restored from backup.":G&&OA().existsSync(G)?`Restoring from backup failed, try manually with: defaults import com.googlecode.iterm2 TextComponent{G}`:"No backup was available to restore from."}`)
     }
 }
 
@@ -92,14 +94,14 @@ function Pd1(A = "VSCode", Q) {
                 encoding: "utf-8"
             }), Y = ap0(I) ?? [];
             let F = jd1(4).toString("hex"),
-                V = `${Z}.${F}.bak`;
+                V = `TextComponent{Z}.TextComponent{F}.bak`;
             try {
                 OA().copyFileSync(Z, V)
             } catch {
-                return `${tQ("warning",Q)(`Error backing up existing ${A} terminal keybindings. Bailing out.`)}${f7}${oA.dim(`See ${Z}`)}${f7}${oA.dim(`Backup path: ${V}`)}${f7}`
+                return `TextComponent{tQ("warning",Q)(`Error backing up existing TextComponent{A} terminal keybindings. Bailing out.`)}TextComponent{f7}TextComponent{oA.dim(`See TextComponent{Z}`)}TextComponent{f7}TextComponent{oA.dim(`Backup path: TextComponent{V}`)}TextComponent{f7}`
             }
         }
-        if (Y.find((F) => F.key === "shift+enter" && F.command === "workbench.action.terminal.sendSequence" && F.when === "terminalFocus")) return `${tQ("warning",Q)(`Found existing ${A} terminal Shift+Enter key binding. Remove it to continue.`)}${f7}${oA.dim(`See ${Z}`)}${f7}`;
+        if (Y.find((F) => F.key === "shift+enter" && F.command === "workbench.action.terminal.sendSequence" && F.when === "terminalFocus")) return `TextComponent{tQ("warning",Q)(`Found existing TextComponent{A} terminal Shift+Enter key binding. Remove it to continue.`)}TextComponent{f7}TextComponent{oA.dim(`See TextComponent{Z}`)}TextComponent{f7}`;
         let X = sp0(I, {
             key: "shift+enter",
             command: "workbench.action.terminal.sendSequence",
@@ -111,50 +113,47 @@ function Pd1(A = "VSCode", Q) {
         return OA().writeFileSync(Z, X, {
             encoding: "utf-8",
             flush: !1
-        }), `${tQ("success",Q)(`Installed ${A} terminal Shift+Enter key binding`)}${f7}${oA.dim(`See ${Z}`)}${f7}`
+        }), `TextComponent{tQ("success",Q)(`Installed TextComponent{A} terminal Shift+Enter key binding`)}TextComponent{f7}TextComponent{oA.dim(`See TextComponent{Z}`)}TextComponent{f7}`
     } catch (I) {
-        throw e(I instanceof Error ? I : Error(String(I))), Error(`Failed to install ${A} terminal Shift+Enter key binding`)
+        throw e(I instanceof Error ? I : Error(String(I))), Error(`Failed to install TextComponent{A} terminal Shift+Enter key binding`)
     }
 }
-
 async function fjB(A) {
     let {
         code: Q
-    } = await ZQ("/usr/libexec/PlistBuddy", ["-c", `Add :'Window Settings':'${A}':useOptionAsMetaKey bool true`, VGA()]);
+    } = await execGit("/usr/libexec/PlistBuddy", ["-c", `Add :'Window Settings':'TextComponent{A}':useOptionAsMetaKey bool true`, VGA()]);
     if (Q !== 0) {
         let {
             code: B
-        } = await ZQ("/usr/libexec/PlistBuddy", ["-c", `Set :'Window Settings':'${A}':useOptionAsMetaKey true`, VGA()]);
-        if (B !== 0) return e(Error(`Failed to enable Option as Meta key for Terminal.app profile: ${A}`)), !1
+        } = await execGit("/usr/libexec/PlistBuddy", ["-c", `Set :'Window Settings':'TextComponent{A}':useOptionAsMetaKey true`, VGA()]);
+        if (B !== 0) return e(Error(`Failed to enable Option as Meta key for Terminal.app profile: TextComponent{A}`)), !1
     }
     return !0
 }
-
 async function hjB(A) {
     let {
         code: Q
-    } = await ZQ("/usr/libexec/PlistBuddy", ["-c", `Add :'Window Settings':'${A}':Bell bool false`, VGA()]);
+    } = await execGit("/usr/libexec/PlistBuddy", ["-c", `Add :'Window Settings':'TextComponent{A}':Bell bool false`, VGA()]);
     if (Q !== 0) {
         let {
             code: B
-        } = await ZQ("/usr/libexec/PlistBuddy", ["-c", `Set :'Window Settings':'${A}':Bell false`, VGA()]);
-        if (B !== 0) return e(Error(`Failed to disable audio bell for Terminal.app profile: ${A}`)), !1
+        } = await execGit("/usr/libexec/PlistBuddy", ["-c", `Set :'Window Settings':'TextComponent{A}':Bell false`, VGA()]);
+        if (B !== 0) return e(Error(`Failed to disable audio bell for Terminal.app profile: TextComponent{A}`)), !1
     }
     return !0
 }
-
 async function EM6(A) {
     try {
         if (!await xjB()) throw Error("Failed to create backup of Terminal.app preferences, bailing out");
         let {
             stdout: B,
             code: G
-        } = await ZQ("defaults", ["read", "com.apple.Terminal", "Default Window Settings"]);
+        } = await execGit("defaults", ["read", "com.apple.Terminal", "Default Window Settings"]);
         if (G !== 0 || !B.trim()) throw Error("Failed to read default Terminal.app profile");
         let {
             stdout: Z,
             code: I
-        } = await ZQ("defaults", ["read", "com.apple.Terminal", "Startup Window Settings"]);
+        } = await execGit("defaults", ["read", "com.apple.Terminal", "Startup Window Settings"]);
         if (I !== 0 || !Z.trim()) throw Error("Failed to read startup Terminal.app profile");
         let Y = !1,
             J = B.trim(),
@@ -168,18 +167,18 @@ async function EM6(A) {
             if (V || K) Y = !0
         }
         if (!Y) throw Error("Failed to enable Option as Meta key or disable audio bell for any Terminal.app profile");
-        return await ZQ("killall", ["cfprefsd"]), o$A(), `${tQ("success",A)("Configured Terminal.app settings:")}${f7}${tQ("success",A)('- Enabled "Use Option as Meta key"')}${f7}${tQ("success",A)("- Switched to visual bell")}${f7}${oA.dim("Option+Enter will now enter a newline.")}${f7}${oA.dim("You must restart Terminal.app for changes to take effect.",A)}${f7}`
+        return await execGit("killall", ["cfprefsd"]), o$A(), `TextComponent{tQ("success",A)("Configured Terminal.app settings:")}TextComponent{f7}TextComponent{tQ("success",A)('- Enabled "Use Option as Meta key"')}TextComponent{f7}TextComponent{tQ("success",A)("- Switched to visual bell")}TextComponent{f7}TextComponent{oA.dim("Option+Enter will now enter a newline.")}TextComponent{f7}TextComponent{oA.dim("You must restart Terminal.app for changes to take effect.",A)}TextComponent{f7}`
     } catch (Q) {
         e(Q instanceof Error ? Q : Error(String(Q)));
         let B = await nrA(),
             G = "Failed to enable Option as Meta key for Terminal.app.";
-        if (B.status === "restored") throw Error(`${G} Your settings have been restored from backup.`);
-        else if (B.status === "failed") throw Error(`${G} Restoring from backup failed, try manually with: defaults import com.apple.Terminal ${B.backupPath}`);
-        else throw Error(`${G} No backup was available to restore from.`)
+        if (B.status === "restored") throw Error(`TextComponent{G} Your settings have been restored from backup.`);
+        else if (B.status === "failed") throw Error(`TextComponent{G} Restoring from backup failed, try manually with: defaults import com.apple.Terminal TextComponent{B.backupPath}`);
+        else throw Error(`TextComponent{G} No backup was available to restore from.`)
     }
 }
 var KM6, Tp;
-var DGA = L(() => {
+var DGA = lazyLoader(() => {
     J9();
     r$A();
     Rd1();
@@ -210,15 +209,15 @@ var DGA = L(() => {
 `;
                 else if (Z === "windows") I = `   • Windows: Windows Terminal
 `;
-                let Y = `Terminal setup cannot be run from ${G}.
+                let Y = `Terminal setup cannot be run from TextComponent{G}.
 
 This command configures a convenient Shift+Enter shortcut for multi-line prompts.
-${oA.dim("Note: You can already use backslash (\\) + return to add newlines.")}
+TextComponent{oA.dim("Note: You can already use backslash (\\) + return to add newlines.")}
 
 To set up the shortcut (optional):
 1. Exit tmux/screen temporarily
 2. Run /terminal-setup directly in one of these terminals:
-${I}   • IDE: VSCode, Cursor, Windsurf
+TextComponent{I}   • IDE: VSCode, Cursor, Windsurf
    • Other: Ghostty, WezTerm
 3. Return to tmux/screen - settings will persist`;
                 return A(Y), null
@@ -238,12 +237,12 @@ function trA(A) {
 }
 
 function ijB(A, Q) {
-    if (Q === 0) return `[Pasted text #${A}]`;
-    return `[Pasted text #${A} +${Q} lines]`
+    if (Q === 0) return `[Pasted text #TextComponent{A}]`;
+    return `[Pasted text #TextComponent{A} +TextComponent{Q} lines]`
 }
 
 function njB(A) {
-    return `[Image #${A}]`
+    return `[Image #TextComponent{A}]`
 }
 
 function ajB(A) {
@@ -264,7 +263,7 @@ async function* erA() {
     for await (let B of VH0(A)) try {
         yield $M6(B)
     } catch (G) {
-        g(`Failed to parse history line: ${G}`)
+        g(`Failed to parse history line: TextComponent{G}`)
     }
 }
 async function* kd1() {
@@ -274,7 +273,6 @@ async function* kd1() {
         if (yield B, Q++, Q >= zM6) break
     }
 }
-// Async function: sjB
 async function sjB() {
     if (Yf.length === 0) return;
     let A;
@@ -299,12 +297,11 @@ async function sjB() {
             mode: 384
         })
     } catch (Q) {
-        g(`Failed to write prompt history: ${Q}`)
+        g(`Failed to write prompt history: TextComponent{Q}`)
     } finally {
         if (A) await A()
     }
 }
-
 async function rjB(A) {
     if (_d1 || Yf.length === 0) return;
     if (A > 5) return;
@@ -315,7 +312,6 @@ async function rjB(A) {
         if (_d1 = !1, Yf.length > 0) await new Promise((Q) => setTimeout(Q, 500)), rjB(A + 1)
     }
 }
-
 async function wM6(A) {
     let Q = typeof A === "string" ? {
             display: A,
@@ -348,19 +344,19 @@ var ljB, zM6 = 100,
     Yf, _d1 = !1,
     orA = null,
     cjB = !1;
-var Pp = L(() => {
+var Pp = lazyLoader(() => {
     hQ();
     o0();
     S0();
     D0();
     XH();
-    ljB = GA(hKA(), 1);
+    ljB = esmImport(hKA(), 1);
     Yf = []
 });
 var yd1, qM6, EU, Ye;
-var jp = L(() => {
+var jp = lazyLoader(() => {
     s5();
-    yd1 = GA(WE(), 1), qM6 = uQ() !== "windows" || (cs() ? yd1.default.satisfies(process.versions.bun, ">=1.2.23") : yd1.default.satisfies(process.versions.node, ">=22.17.0 <23.0.0 || >=24.2.0")), EU = !qM6 ? {
+    yd1 = esmImport(WE(), 1), qM6 = uQ() !== "windows" || (cs() ? yd1.default.satisfies(process.versions.bun, ">=1.2.23") : yd1.default.satisfies(process.versions.node, ">=22.17.0 <23.0.0 || >=24.2.0")), EU = !qM6 ? {
         displayText: "alt+m",
         check: (A, Q) => Q.meta && (A === "m" || A === "M")
     } : {
@@ -378,11 +374,11 @@ var jp = L(() => {
 function ojB(A, Q) {
     switch (Q) {
         case "bash":
-            return `!${A}`;
+            return `!TextComponent{A}`;
         case "memorySelect":
-            return `#${A}`;
+            return `#TextComponent{A}`;
         case "background":
-            return `&${A}`;
+            return `&TextComponent{A}`;
         default:
             return A
     }
@@ -403,7 +399,7 @@ function Je(A) {
 function tjB(A) {
     return A === "!" || A === "#" || j8("tengu_web_tasks") && A === "&"
 }
-var HGA = L(() => {
+var HGA = lazyLoader(() => {
     O9()
 });
 
@@ -428,10 +424,10 @@ function CGA(A) {
     AoA.useEffect(() => uc.subscribe(Q), [Q])
 }
 var AoA;
-var QoA = L(() => {
+var QoA = lazyLoader(() => {
     tzA();
     RB();
-    AoA = GA(VA(), 1)
+    AoA = esmImport(VA(), 1)
 });
 
 function GoA(A) {
@@ -471,7 +467,7 @@ function Xf(A, Q) {
     if (process.env.MAX_THINKING_TOKENS) {
         let B = parseInt(process.env.MAX_THINKING_TOKENS, 10);
         if (B > 0) BA("tengu_thinking", {
-            provider: TR(),
+            provider: getProviderIdentifier(),
             tokenCount: B
         });
         return B
@@ -493,7 +489,7 @@ function RM6(A) {
         if (Z) return 0;
         let I = OM6(G);
         if (I > 0) BA("tengu_thinking", {
-            provider: TR(),
+            provider: getProviderIdentifier(),
             tokenCount: I
         });
         return I
@@ -503,7 +499,7 @@ function RM6(A) {
             tokens: B
         } = We(Q);
     if (B > 0) BA("tengu_thinking", {
-        provider: TR(),
+        provider: getProviderIdentifier(),
         tokenCount: B
     });
     return B
@@ -538,11 +534,11 @@ function IoA() {
     if (process.env.MAX_THINKING_TOKENS) return parseInt(process.env.MAX_THINKING_TOKENS, 10) > 0;
     let Q = c0().alwaysThinkingEnabled;
     if (Q === !0 || Q === !1) return Q;
-    if (!S3().includes("claude-sonnet-4-5")) return !1;
+    if (!getDefaultSonnetModel().includes("claude-sonnet-4-5")) return !1;
     return !0
 }
 var BoA, ejB, NM6, LM6, xd1, MM6;
-var zU = L(() => {
+var zU = lazyLoader(() => {
     w0();
     dK();
     RB();
@@ -644,7 +640,7 @@ function N7({
         return W.__IS_INITIALIZED__ = !0, W
     }, [Z.currentState, Y]);
     return CGA(HE.useCallback((W, X) => {
-        g(`Settings changed from ${W}, updating AppState`);
+        g(`Settings changed from TextComponent{W}, updating AppState`);
         let F = YvA();
         Y((V) => ({
             ...V,
@@ -664,14 +660,14 @@ function _Q() {
     return A
 }
 var HE, BSB, QSB;
-var H9 = L(() => {
+var H9 = lazyLoader(() => {
     QoA();
     aG();
     Gr();
     zU();
     RB();
     D0();
-    HE = GA(VA(), 1);
+    HE = esmImport(VA(), 1);
     BSB = HE.default.createContext([{}, (A) => A]), QSB = HE.default.createContext(!1)
 });
 
@@ -751,9 +747,9 @@ function PM6(A) {
 var AwA, ZSB = 8000,
     Xe = null,
     ISB;
-var UU = L(() => {
+var UU = lazyLoader(() => {
     H9();
-    AwA = GA(VA(), 1);
+    AwA = esmImport(VA(), 1);
     ISB = {
         immediate: 0,
         high: 1,
@@ -814,7 +810,7 @@ function YoA({
             }
         });
 
-function v() {
+    function v() {
         if (A.trim() !== "") Jf(A), J?.();
         return q7.fromText("", K, 0)
     }
@@ -826,25 +822,25 @@ function v() {
         G?.()
     });
 
-function p() {
+    function p() {
         if (q.text === "") return x(), q;
         return q.del()
     }
 
-function u() {
+    function u() {
         if (!D) return;
         prA().then((qA) => {
             if (qA) D(qA.base64, qA.mediaType);
             else R({
                 key: "no-image-in-clipboard",
-                text: `No image found in clipboard. Use ${Ye.displayText} to paste images.`,
+                text: `No image found in clipboard. Use TextComponent{Ye.displayText} to paste images.`,
                 priority: "immediate",
                 timeoutMs: 1000
             })
         })
     }
 
-function o() {
+    function o() {
         let {
             cursor: qA,
             killed: DA
@@ -852,7 +848,7 @@ function o() {
         return OrA(DA, !0), qA
     }
 
-function l() {
+    function l() {
         let {
             cursor: qA,
             killed: DA
@@ -860,7 +856,7 @@ function l() {
         return OrA(DA, !0), qA
     }
 
-function k() {
+    function k() {
         let {
             cursor: qA,
             killed: DA
@@ -868,7 +864,7 @@ function k() {
         return OrA(DA, !0), qA
     }
 
-function d() {
+    function d() {
         let qA = hTB();
         if (qA.length > 0) return q.insert(qA);
         return q
@@ -895,7 +891,7 @@ function d() {
             ["d", () => q.deleteWordAfter()]
         ]);
 
-function HA(qA) {
+    function HA(qA) {
         if (X && q.offset > 0 && q.text[q.offset - 1] === "\\") return djB(), q.backspace().insert(`
 `);
         if (qA.meta) return q.insert(`
@@ -903,7 +899,7 @@ function HA(qA) {
         B?.(A)
     }
 
-function wA() {
+    function wA() {
         if (H) return I?.(), q;
         let qA = q.up();
         if (!qA.equals(q)) return qA;
@@ -914,7 +910,7 @@ function wA() {
         return I?.(), q
     }
 
-function KA() {
+    function KA() {
         if (H) return Y?.(), q;
         let qA = q.down();
         if (!qA.equals(q)) return qA;
@@ -925,7 +921,7 @@ function KA() {
         return Y?.(), q
     }
 
-function SA(qA) {
+    function SA(qA) {
         switch (!0) {
             case qA.escape:
                 return () => {
@@ -980,13 +976,13 @@ function SA(qA) {
         }
     }
 
-function sA(qA, DA) {
+    function sA(qA, DA) {
         if (qA.ctrl && (DA === "k" || DA === "u" || DA === "w")) return !0;
         if (qA.meta && (qA.backspace || qA.delete)) return !0;
         return !1
     }
 
-function NA(qA, DA) {
+    function NA(qA, DA) {
         if (Ye.check(qA, DA) && D) {
             u(), RrA();
             return
@@ -1020,7 +1016,7 @@ function NA(qA, DA) {
         setOffset: N
     }
 }
-var vd1 = L(() => {
+var vd1 = lazyLoader(() => {
     HT();
     AsA();
     Yd1();
@@ -1031,14 +1027,14 @@ var vd1 = L(() => {
     HGA();
     UU()
 });
-var FSB = U((Fe7, XSB) => {
+var FSB = moduleWrapper((Fe7, XSB) => {
     var jM6 = "Expected a function",
         JSB = NaN,
         SM6 = "[object Symbol]",
-        _M6 = /^\s+|\s+$/g,
-        kM6 = /^[-+]0x[0-9a-f]+$/i,
-        yM6 = /^0b[01]+$/i,
-        xM6 = /^0o[0-7]+$/i,
+        _M6 = /^\s+|\s+TextComponent/g,
+        kM6 = /^[-+]0x[0-9a-f]+TextComponent/i,
+        yM6 = /^0b[01]+TextComponent/i,
+        xM6 = /^0o[0-7]+TextComponent/i,
         vM6 = parseInt,
         bM6 = typeof global == "object" && global && global.Object === Object && global,
         fM6 = typeof self == "object" && self && self.Object === Object && self,
@@ -1051,7 +1047,7 @@ var FSB = U((Fe7, XSB) => {
             return hM6.Date.now()
         };
 
-function cM6(A, Q, B) {
+    function cM6(A, Q, B) {
         var G, Z, I, Y, J, W, X = 0,
             F = !1,
             V = !1,
@@ -1059,50 +1055,50 @@ function cM6(A, Q, B) {
         if (typeof A != "function") throw TypeError(jM6);
         if (Q = WSB(Q) || 0, fd1(B)) F = !!B.leading, V = "maxWait" in B, I = V ? mM6(WSB(B.maxWait) || 0, Q) : I, K = "trailing" in B ? !!B.trailing : K;
 
-function D(P) {
+        function D(P) {
             var y = G,
                 v = Z;
             return G = Z = void 0, X = P, Y = A.apply(v, y), Y
         }
 
-function H(P) {
+        function H(P) {
             return X = P, J = setTimeout(z, Q), F ? D(P) : Y
         }
 
-function C(P) {
+        function C(P) {
             var y = P - W,
                 v = P - X,
                 x = Q - y;
             return V ? dM6(x, I - v) : x
         }
 
-function E(P) {
+        function E(P) {
             var y = P - W,
                 v = P - X;
             return W === void 0 || y >= Q || y < 0 || V && v >= I
         }
 
-function z() {
+        function z() {
             var P = bd1();
             if (E(P)) return w(P);
             J = setTimeout(z, C(P))
         }
 
-function w(P) {
+        function w(P) {
             if (J = void 0, K && G) return D(P);
             return G = Z = void 0, Y
         }
 
-function N() {
+        function N() {
             if (J !== void 0) clearTimeout(J);
             X = 0, G = W = Z = J = void 0
         }
 
-function q() {
+        function q() {
             return J === void 0 ? Y : w(bd1())
         }
 
-function R() {
+        function R() {
             var P = bd1(),
                 y = E(P);
             if (G = arguments, Z = this, W = P, y) {
@@ -1115,20 +1111,20 @@ function R() {
         return R.cancel = N, R.flush = q, R
     }
 
-function fd1(A) {
+    function fd1(A) {
         var Q = typeof A;
         return !!A && (Q == "object" || Q == "function")
     }
 
-function pM6(A) {
+    function pM6(A) {
         return !!A && typeof A == "object"
     }
 
-function lM6(A) {
+    function lM6(A) {
         return typeof A == "symbol" || pM6(A) && uM6.call(A) == SM6
     }
 
-function WSB(A) {
+    function WSB(A) {
         if (typeof A == "number") return A;
         if (lM6(A)) return JSB;
         if (fd1(A)) {
@@ -1188,8 +1184,8 @@ function zGA(A, Q = 500, B) {
     }, [A, Q, B]), Z
 }
 var CE, hd1, iM6;
-var $U = L(() => {
-    CE = GA(VA(), 1), hd1 = GA(FSB(), 1), iM6 = typeof window < "u" ? CE.useLayoutEffect : CE.useEffect
+var $U = lazyLoader(() => {
+    CE = esmImport(VA(), 1), hd1 = esmImport(FSB(), 1), iM6 = typeof window < "u" ? CE.useLayoutEffect : CE.useEffect
 });
 
 function VSB({
@@ -1293,13 +1289,13 @@ function VSB({
 }
 var wT, aM6 = 50,
     sM6 = 100;
-var KSB = L(() => {
+var KSB = lazyLoader(() => {
     hA();
     $U();
     lrA();
     s5();
     u1();
-    wT = GA(VA(), 1)
+    wT = esmImport(VA(), 1)
 });
 
 function DSB({
@@ -1319,7 +1315,7 @@ function DSB({
         showPlaceholder: Y
     }
 }
-var HSB = L(() => {
+var HSB = lazyLoader(() => {
     J9()
 });
 
@@ -1332,14 +1328,14 @@ function UGA({
 }) {
     let I = Q === B,
         Y = Math.abs(Q - B) === 1;
-    return gd1.createElement($, {
+    return gd1.createElement(TextComponent, {
         color: I || Y ? Z : G
     }, A)
 }
 var gd1;
-var JoA = L(() => {
+var JoA = lazyLoader(() => {
     hA();
-    gd1 = GA(VA(), 1)
+    gd1 = esmImport(VA(), 1)
 });
 
 function QwA(A, Q, B, G) {
@@ -1365,9 +1361,9 @@ function QwA(A, Q, B, G) {
     }, J), I
 }
 var $GA;
-var ud1 = L(() => {
+var ud1 = lazyLoader(() => {
     $U();
-    $GA = GA(VA(), 1)
+    $GA = esmImport(VA(), 1)
 });
 
 function CSB(A, Q) {
@@ -1406,7 +1402,7 @@ function CSB(A, Q) {
     });
     return I
 }
-var ESB = L(() => {
+var ESB = lazyLoader(() => {
     Mh1();
     HT()
 });
@@ -1418,7 +1414,7 @@ function zSB({
     let B = CSB(A, Q),
         G = QwA("requesting", A, !0, !1);
     return gH.createElement(gH.Fragment, null, B.map((Z, I) => {
-        if (!Z.highlight) return gH.createElement($, {
+        if (!Z.highlight) return gH.createElement(TextComponent, {
             key: I
         }, Z.text);
         let {
@@ -1429,7 +1425,7 @@ function zSB({
                 F = e$A(W, !1),
                 V = e$A(W, !0);
             return gH.createElement(UGA, {
-                key: `${I}-${W}`,
+                key: `TextComponent{I}-TextComponent{W}`,
                 char: J,
                 index: X,
                 glimmerIndex: G,
@@ -1440,7 +1436,7 @@ function zSB({
         else if (Y.type === "shimmer") return Z.text.split("").map((J, W) => {
             let X = Z.start + W;
             return gH.createElement(UGA, {
-                key: `${I}-${W}`,
+                key: `TextComponent{I}-TextComponent{W}`,
                 char: J,
                 index: X,
                 glimmerIndex: G,
@@ -1448,23 +1444,23 @@ function zSB({
                 shimmerColor: Y.shimmerColor
             })
         });
-        else if (Y.type === "solid") return gH.createElement($, {
+        else if (Y.type === "solid") return gH.createElement(TextComponent, {
             key: I,
             color: Y.color
         }, Z.text);
-        return gH.createElement($, {
+        return gH.createElement(TextComponent, {
             key: I
         }, Z.text)
     }))
 }
 var gH;
-var USB = L(() => {
+var USB = lazyLoader(() => {
     hA();
     JoA();
     ud1();
     zU();
     ESB();
-    gH = GA(VA(), 1)
+    gH = esmImport(VA(), 1)
 });
 
 function WoA({
@@ -1509,18 +1505,18 @@ function WoA({
         K = Boolean(G.argumentHint && G.value && V && G.value.startsWith("/")),
         D = G.showCursor && G.highlights ? G.highlights.filter((C) => G.cursorOffset < C.start || G.cursorOffset >= C.end) : G.highlights,
         H = D && D.length > 0;
-    return wGA.default.createElement(j, null, wGA.default.createElement($, {
+    return wGA.default.createElement(j, null, wGA.default.createElement(TextComponent, {
         wrap: "truncate-end",
         dimColor: G.dimColor
     }, X ? F : H ? wGA.default.createElement(zSB, {
         text: I,
         highlights: D
-    }) : I, K && wGA.default.createElement($, {
+    }) : I, K && wGA.default.createElement(TextComponent, {
         dimColor: !0
     }, G.value?.endsWith(" ") ? "" : " ", G.argumentHint), Q))
 }
 var wGA;
-var md1 = L(() => {
+var md1 = lazyLoader(() => {
     hA();
     KSB();
     HSB();

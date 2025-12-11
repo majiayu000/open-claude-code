@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_056.js
+ * 处理时间: 2025-12-09T03:41:36.991Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.937Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -26,7 +29,7 @@
     }
     KV2.toScopeMetrics = FV2;
 
-function VV2(A, Q) {
+    function VV2(A, Q) {
         let B = {
                 name: A.descriptor.name,
                 description: A.descriptor.description,
@@ -63,7 +66,7 @@ function VV2(A, Q) {
     }
     KV2.toMetric = VV2;
 
-function fE5(A, Q, B) {
+    function fE5(A, Q, B) {
         let G = {
             attributes: (0, nMA.toAttributes)(A.attributes),
             startTimeUnixNano: B.encodeHrTime(A.startTime),
@@ -80,13 +83,13 @@ function fE5(A, Q, B) {
         return G
     }
 
-function WV2(A, Q) {
+    function WV2(A, Q) {
         return A.dataPoints.map((B) => {
             return fE5(B, A.descriptor.valueType, Q)
         })
     }
 
-function hE5(A, Q) {
+    function hE5(A, Q) {
         return A.dataPoints.map((B) => {
             let G = B.value;
             return {
@@ -103,7 +106,7 @@ function hE5(A, Q) {
         })
     }
 
-function gE5(A, Q) {
+    function gE5(A, Q) {
         return A.dataPoints.map((B) => {
             let G = B.value;
             return {
@@ -128,7 +131,7 @@ function gE5(A, Q) {
         })
     }
 
-function uE5(A) {
+    function uE5(A) {
         switch (A) {
             case yYA.AggregationTemporality.DELTA:
                 return JV2.EAggregationTemporality.AGGREGATION_TEMPORALITY_DELTA;
@@ -137,14 +140,14 @@ function uE5(A) {
         }
     }
 
-function mE5(A, Q) {
+    function mE5(A, Q) {
         return {
             resourceMetrics: A.map((B) => XV2(B, Q))
         }
     }
     KV2.createExportMetricsServiceRequest = mE5
 });
-var zV2 = U((CV2) => {
+var zV2 = moduleWrapper((CV2) => {
     Object.defineProperty(CV2, "__esModule", {
         value: !0
     });
@@ -163,7 +166,7 @@ var zV2 = U((CV2) => {
         }
     }
 });
-var UV2 = U((oQ0) => {
+var UV2 = moduleWrapper((oQ0) => {
     Object.defineProperty(oQ0, "__esModule", {
         value: !0
     });
@@ -176,7 +179,7 @@ var UV2 = U((oQ0) => {
         }
     })
 });
-var tQ0 = U((NV2) => {
+var tQ0 = moduleWrapper((NV2) => {
     Object.defineProperty(NV2, "__esModule", {
         value: !0
     });
@@ -211,7 +214,7 @@ var tQ0 = U((NV2) => {
     }
     NV2.sdkSpanToOtlpSpan = $V2;
 
-function wV2(A, Q) {
+    function wV2(A, Q) {
         return {
             attributes: A.attributes ? (0, aMA.toAttributes)(A.attributes) : [],
             spanId: Q.encodeSpanContext(A.context.spanId),
@@ -222,7 +225,7 @@ function wV2(A, Q) {
     }
     NV2.toOtlpLink = wV2;
 
-function qV2(A, Q) {
+    function qV2(A, Q) {
         return {
             attributes: A.attributes ? (0, aMA.toAttributes)(A.attributes) : [],
             name: A.name,
@@ -232,7 +235,7 @@ function qV2(A, Q) {
     }
     NV2.toOtlpSpanEvent = qV2;
 
-function oE5(A, Q) {
+    function oE5(A, Q) {
         let B = (0, rE5.getOtlpEncoder)(Q);
         return {
             resourceSpans: eE5(A, B)
@@ -240,12 +243,12 @@ function oE5(A, Q) {
     }
     NV2.createExportTraceServiceRequest = oE5;
 
-function tE5(A) {
+    function tE5(A) {
         let Q = new Map;
         for (let B of A) {
             let G = Q.get(B.resource);
             if (!G) G = new Map, Q.set(B.resource, G);
-            let Z = `${B.instrumentationScope.name}@${B.instrumentationScope.version||""}:${B.instrumentationScope.schemaUrl||""}`,
+            let Z = `TextComponent{B.instrumentationScope.name}@TextComponent{B.instrumentationScope.version||""}:TextComponent{B.instrumentationScope.schemaUrl||""}`,
                 I = G.get(Z);
             if (!I) I = [], G.set(Z, I);
             I.push(B)
@@ -253,7 +256,7 @@ function tE5(A) {
         return Q
     }
 
-function eE5(A, Q) {
+    function eE5(A, Q) {
         let B = tE5(A),
             G = [],
             Z = B.entries(),
@@ -283,7 +286,7 @@ function eE5(A, Q) {
         return G
     }
 });
-var TV2 = U((OV2) => {
+var TV2 = moduleWrapper((OV2) => {
     Object.defineProperty(OV2, "__esModule", {
         value: !0
     });
@@ -302,7 +305,7 @@ var TV2 = U((OV2) => {
         }
     }
 });
-var PV2 = U((eQ0) => {
+var PV2 = moduleWrapper((eQ0) => {
     Object.defineProperty(eQ0, "__esModule", {
         value: !0
     });
@@ -315,7 +318,7 @@ var PV2 = U((eQ0) => {
         }
     })
 });
-var _V2 = U((jV2) => {
+var _V2 = moduleWrapper((jV2) => {
     Object.defineProperty(jV2, "__esModule", {
         value: !0
     });
@@ -335,7 +338,7 @@ var _V2 = U((jV2) => {
         }
     }
 });
-var kV2 = U((AB0) => {
+var kV2 = moduleWrapper((AB0) => {
     Object.defineProperty(AB0, "__esModule", {
         value: !0
     });
@@ -348,7 +351,7 @@ var kV2 = U((AB0) => {
         }
     })
 });
-var vV2 = U((yV2) => {
+var vV2 = moduleWrapper((yV2) => {
     Object.defineProperty(yV2, "__esModule", {
         value: !0
     });
@@ -367,7 +370,7 @@ var vV2 = U((yV2) => {
         }
     }
 });
-var bV2 = U((QB0) => {
+var bV2 = moduleWrapper((QB0) => {
     Object.defineProperty(QB0, "__esModule", {
         value: !0
     });
@@ -380,7 +383,7 @@ var bV2 = U((QB0) => {
         }
     })
 });
-var gV2 = U((fV2) => {
+var gV2 = moduleWrapper((fV2) => {
     Object.defineProperty(fV2, "__esModule", {
         value: !0
     });
@@ -400,7 +403,7 @@ var gV2 = U((fV2) => {
         }
     }
 });
-var uV2 = U((BB0) => {
+var uV2 = moduleWrapper((BB0) => {
     Object.defineProperty(BB0, "__esModule", {
         value: !0
     });
@@ -413,7 +416,7 @@ var uV2 = U((BB0) => {
         }
     })
 });
-var pk = U((Pi) => {
+var pk = moduleWrapper((Pi) => {
     Object.defineProperty(Pi, "__esModule", {
         value: !0
     });
@@ -461,32 +464,32 @@ var pk = U((Pi) => {
         }
     })
 });
-var cV2 = U((mV2) => {
+var cV2 = moduleWrapper((mV2) => {
     Object.defineProperty(mV2, "__esModule", {
         value: !0
     });
     mV2.VERSION = void 0;
     mV2.VERSION = "0.204.0"
 });
-var iV2 = U((pV2) => {
+var iV2 = moduleWrapper((pV2) => {
     Object.defineProperty(pV2, "__esModule", {
         value: !0
     });
     pV2.validateAndNormalizeHeaders = void 0;
     var Mz5 = W9();
 
-function Oz5(A) {
+    function Oz5(A) {
         return () => {
             let Q = {};
             return Object.entries(A?.() ?? {}).forEach(([B, G]) => {
                 if (typeof G < "u") Q[B] = String(G);
-                else Mz5.diag.warn(`Header "${B}" has invalid value (${G}) and will be ignored`)
+                else Mz5.diag.warn(`Header "TextComponent{B}" has invalid value (TextComponent{G}) and will be ignored`)
             }), Q
         }
     }
     pV2.validateAndNormalizeHeaders = Oz5
 });
-var GB0 = U((sV2) => {
+var GB0 = moduleWrapper((sV2) => {
     Object.defineProperty(sV2, "__esModule", {
         value: !0
     });
@@ -494,7 +497,7 @@ var GB0 = U((sV2) => {
     var nV2 = cMA(),
         Rz5 = iV2();
 
-function Tz5(A, Q, B) {
+    function Tz5(A, Q, B) {
         let G = {
                 ...B()
             },
@@ -506,17 +509,17 @@ function Tz5(A, Q, B) {
         }
     }
 
-function Pz5(A) {
+    function Pz5(A) {
         if (A == null) return;
         try {
             let Q = globalThis.location?.href;
             return new URL(A, Q).href
         } catch {
-            throw Error(`Configuration: Could not parse user-provided export URL: '${A}'`)
+            throw Error(`Configuration: Could not parse user-provided export URL: 'TextComponent{A}'`)
         }
     }
 
-function aV2(A) {
+    function aV2(A) {
         return async (Q) => {
             let B = Q === "http:" ? import("http") : import("https"),
                 {
@@ -527,7 +530,7 @@ function aV2(A) {
     }
     sV2.httpAgentFactoryFromOptions = aV2;
 
-function jz5(A, Q, B) {
+    function jz5(A, Q, B) {
         return {
             ...(0, nV2.mergeOtlpSharedConfigurationWithDefaults)(A, Q, B),
             headers: Tz5((0, Rz5.validateAndNormalizeHeaders)(A.headers), Q.headers, B.headers),
@@ -537,7 +540,7 @@ function jz5(A, Q, B) {
     }
     sV2.mergeOtlpHttpConfigurationWithDefaults = jz5;
 
-function Sz5(A, Q) {
+    function Sz5(A, Q) {
         return {
             ...(0, nV2.getSharedConfigurationDefaults)(),
             headers: () => A,
@@ -549,18 +552,18 @@ function Sz5(A, Q) {
     }
     sV2.getHttpConfigurationDefaults = Sz5
 });
-var eV2 = U((oV2) => {
+var eV2 = moduleWrapper((oV2) => {
     Object.defineProperty(oV2, "__esModule", {
         value: !0
     });
     oV2.parseRetryAfterToMills = oV2.isExportRetryable = void 0;
 
-function yz5(A) {
+    function yz5(A) {
         return [429, 502, 503, 504].includes(A)
     }
     oV2.isExportRetryable = yz5;
 
-function xz5(A) {
+    function xz5(A) {
         if (A == null) return;
         let Q = Number.parseInt(A, 10);
         if (Number.isInteger(Q)) return Q > 0 ? Q * 1000 : -1;
@@ -570,17 +573,17 @@ function xz5(A) {
     }
     oV2.parseRetryAfterToMills = xz5
 });
-var ZK2 = U((BK2) => {
+var ZK2 = moduleWrapper((BK2) => {
     Object.defineProperty(BK2, "__esModule", {
         value: !0
     });
     BK2.compressAndSend = BK2.sendWithHttp = void 0;
-    var bz5 = UA("zlib"),
-        fz5 = UA("stream"),
+    var bz5 = nodeRequire("zlib"),
+        fz5 = nodeRequire("stream"),
         AK2 = eV2(),
         hz5 = S91();
 
-function gz5(A, Q, B, G, Z, I) {
+    function gz5(A, Q, B, G, Z, I) {
         let Y = new URL(Q.url),
             J = {
                 hostname: Y.hostname,
@@ -631,26 +634,25 @@ function gz5(A, Q, B, G, Z, I) {
     }
     BK2.sendWithHttp = gz5;
 
-function QK2(A, Q, B, G) {
+    function QK2(A, Q, B, G) {
         let Z = uz5(B);
         if (Q === "gzip") A.setHeader("Content-Encoding", "gzip"), Z = Z.on("error", G).pipe(bz5.createGzip()).on("error", G);
         Z.pipe(A).on("error", G)
     }
     BK2.compressAndSend = QK2;
 
-function uz5(A) {
+    function uz5(A) {
         let Q = new fz5.Readable;
         return Q.push(A), Q.push(null), Q
     }
 });
-var WK2 = U((YK2) => {
+var WK2 = moduleWrapper((YK2) => {
     Object.defineProperty(YK2, "__esModule", {
         value: !0
     });
     YK2.createHttpExporterTransport = void 0;
     var dz5 = ZK2();
-
-class IK2 {
+    class IK2 {
         _parameters;
         _utils = null;
         constructor(A) {
@@ -681,8 +683,7 @@ class IK2 {
             return A
         }
     }
-
-async function cz5(A) {
+    async function cz5(A) {
         let Q = A === "http:" ? import("http") : import("https"),
             {
                 request: B
@@ -690,12 +691,12 @@ async function cz5(A) {
         return B
     }
 
-function pz5(A) {
+    function pz5(A) {
         return new IK2(A)
     }
     YK2.createHttpExporterTransport = pz5
 });
-var DK2 = U((VK2) => {
+var DK2 = moduleWrapper((VK2) => {
     Object.defineProperty(VK2, "__esModule", {
         value: !0
     });
@@ -706,11 +707,10 @@ var DK2 = U((VK2) => {
         az5 = 1.5,
         XK2 = 0.2;
 
-function sz5() {
+    function sz5() {
         return Math.random() * (2 * XK2) - XK2
     }
-
-class FK2 {
+    class FK2 {
         _transport;
         constructor(A) {
             this._transport = A
@@ -743,12 +743,12 @@ class FK2 {
         }
     }
 
-function rz5(A) {
+    function rz5(A) {
         return new FK2(A.transport)
     }
     VK2.createRetryingTransport = rz5
 });
-var EK2 = U((HK2) => {
+var EK2 = moduleWrapper((HK2) => {
     Object.defineProperty(HK2, "__esModule", {
         value: !0
     });
@@ -758,7 +758,7 @@ var EK2 = U((HK2) => {
         ez5 = wQ0(),
         AU5 = DK2();
 
-function QU5(A, Q) {
+    function QU5(A, Q) {
         return (0, oz5.createOtlpExportDelegate)({
             transport: (0, AU5.createRetryingTransport)({
                 transport: (0, tz5.createHttpExporterTransport)(A)
@@ -771,44 +771,44 @@ function QU5(A, Q) {
     }
     HK2.createOtlpHttpExportDelegate = QU5
 });
-var ZB0 = U((wK2) => {
+var ZB0 = moduleWrapper((wK2) => {
     Object.defineProperty(wK2, "__esModule", {
         value: !0
     });
     wK2.getSharedConfigurationFromEnvironment = void 0;
     var $K2 = W9();
 
-function zK2(A) {
+    function zK2(A) {
         let Q = process.env[A]?.trim();
         if (Q != null && Q !== "") {
             let B = Number(Q);
             if (Number.isFinite(B) && B > 0) return B;
-            $K2.diag.warn(`Configuration: ${A} is invalid, expected number greater than 0 (actual: ${Q})`)
+            $K2.diag.warn(`Configuration: TextComponent{A} is invalid, expected number greater than 0 (actual: TextComponent{Q})`)
         }
         return
     }
 
-function BU5(A) {
+    function BU5(A) {
         let Q = zK2(`OTEL_EXPORTER_OTLP_${A}_TIMEOUT`),
             B = zK2("OTEL_EXPORTER_OTLP_TIMEOUT");
         return Q ?? B
     }
 
-function UK2(A) {
+    function UK2(A) {
         let Q = process.env[A]?.trim();
         if (Q === "") return;
         if (Q == null || Q === "none" || Q === "gzip") return Q;
-        $K2.diag.warn(`Configuration: ${A} is invalid, expected 'none' or 'gzip' (actual: '${Q}')`);
+        $K2.diag.warn(`Configuration: TextComponent{A} is invalid, expected 'none' or 'gzip' (actual: 'TextComponent{Q}')`);
         return
     }
 
-function GU5(A) {
+    function GU5(A) {
         let Q = UK2(`OTEL_EXPORTER_OTLP_${A}_COMPRESSION`),
             B = UK2("OTEL_EXPORTER_OTLP_COMPRESSION");
         return Q ?? B
     }
 
-function ZU5(A) {
+    function ZU5(A) {
         return {
             timeoutMillis: BU5(A),
             compression: GU5(A)
@@ -816,7 +816,7 @@ function ZU5(A) {
     }
     wK2.getSharedConfigurationFromEnvironment = ZU5
 });
-var MK2 = U((NK2) => {
+var MK2 = moduleWrapper((NK2) => {
     Object.defineProperty(NK2, "__esModule", {
         value: !0
     });
@@ -826,7 +826,7 @@ var MK2 = U((NK2) => {
         IU5 = ZB0(),
         YU5 = cMA();
 
-function JU5(A) {
+    function JU5(A) {
         let Q = (0, ji.getStringFromEnv)(`OTEL_EXPORTER_OTLP_${A}_HEADERS`),
             B = (0, ji.getStringFromEnv)("OTEL_EXPORTER_OTLP_HEADERS"),
             G = (0, ji.parseKeyPairsIntoRecord)(Q),
@@ -835,20 +835,20 @@ function JU5(A) {
         return Object.assign({}, (0, ji.parseKeyPairsIntoRecord)(B), (0, ji.parseKeyPairsIntoRecord)(Q))
     }
 
-function WU5(A) {
+    function WU5(A) {
         try {
             return new URL(A).toString()
         } catch {
-            IB0.diag.warn(`Configuration: Could not parse environment-provided export URL: '${A}', falling back to undefined`);
+            IB0.diag.warn(`Configuration: Could not parse environment-provided export URL: 'TextComponent{A}', falling back to undefined`);
             return
         }
     }
 
-function XU5(A, Q) {
+    function XU5(A, Q) {
         try {
             new URL(A)
         } catch {
-            IB0.diag.warn(`Configuration: Could not parse environment-provided export URL: '${A}', falling back to undefined`);
+            IB0.diag.warn(`Configuration: Could not parse environment-provided export URL: 'TextComponent{A}', falling back to undefined`);
             return
         }
         if (!A.endsWith("/")) A = A + "/";
@@ -856,25 +856,25 @@ function XU5(A, Q) {
         try {
             new URL(A)
         } catch {
-            IB0.diag.warn(`Configuration: Provided URL appended with '${Q}' is not a valid URL, using 'undefined' instead of '${A}'`);
+            IB0.diag.warn(`Configuration: Provided URL appended with 'TextComponent{Q}' is not a valid URL, using 'undefined' instead of 'TextComponent{A}'`);
             return
         }
         return A
     }
 
-function FU5(A) {
+    function FU5(A) {
         let Q = (0, ji.getStringFromEnv)("OTEL_EXPORTER_OTLP_ENDPOINT");
         if (Q === void 0) return;
         return XU5(Q, A)
     }
 
-function VU5(A) {
+    function VU5(A) {
         let Q = (0, ji.getStringFromEnv)(`OTEL_EXPORTER_OTLP_${A}_ENDPOINT`);
         if (Q === void 0) return;
         return WU5(Q)
     }
 
-function KU5(A, Q) {
+    function KU5(A, Q) {
         return {
             ...(0, IU5.getSharedConfigurationFromEnvironment)(A),
             url: VU5(A) ?? FU5(Q),
@@ -883,7 +883,7 @@ function KU5(A, Q) {
     }
     NK2.getHttpConfigurationFromEnvironment = KU5
 });
-var TK2 = U((OK2) => {
+var TK2 = moduleWrapper((OK2) => {
     Object.defineProperty(OK2, "__esModule", {
         value: !0
     });
@@ -893,7 +893,7 @@ var TK2 = U((OK2) => {
         HU5 = W9(),
         CU5 = cMA();
 
-function EU5(A) {
+    function EU5(A) {
         if (typeof A.httpAgentOptions === "function") return A.httpAgentOptions;
         let Q = A.httpAgentOptions;
         if (A.keepAlive != null) Q = {
@@ -904,7 +904,7 @@ function EU5(A) {
         else return
     }
 
-function zU5(A, Q, B, G) {
+    function zU5(A, Q, B, G) {
         if (A.metadata) HU5.diag.warn("Metadata cannot be set when using http");
         return (0, YB0.mergeOtlpHttpConfigurationWithDefaults)({
             url: A.url,
@@ -917,7 +917,7 @@ function zU5(A, Q, B, G) {
     }
     OK2.convertLegacyHttpOptions = zU5
 });
-var Si = U((xYA) => {
+var Si = moduleWrapper((xYA) => {
     Object.defineProperty(xYA, "__esModule", {
         value: !0
     });
@@ -951,7 +951,7 @@ var Si = U((xYA) => {
         }
     })
 });
-var kK2 = U((SK2) => {
+var kK2 = moduleWrapper((SK2) => {
     Object.defineProperty(SK2, "__esModule", {
         value: !0
     });
@@ -961,10 +961,9 @@ var kK2 = U((SK2) => {
         OU5 = cV2(),
         PK2 = Si(),
         RU5 = {
-            "User-Agent": `OTel-OTLP-Exporter-JavaScript/${OU5.VERSION}`
+            "User-Agent": `OTel-OTLP-Exporter-JavaScript/TextComponent{OU5.VERSION}`
         };
-
-class jK2 extends LU5.OTLPMetricExporterBase {
+    class jK2 extends LU5.OTLPMetricExporterBase {
         constructor(A) {
             super((0, PK2.createOtlpHttpExportDelegate)((0, PK2.convertLegacyHttpOptions)(A ?? {}, "METRICS", "v1/metrics", {
                 ...RU5,
@@ -974,7 +973,7 @@ class jK2 extends LU5.OTLPMetricExporterBase {
     }
     SK2.OTLPMetricExporter = jK2
 });
-var yK2 = U((JB0) => {
+var yK2 = moduleWrapper((JB0) => {
     Object.defineProperty(JB0, "__esModule", {
         value: !0
     });
@@ -987,7 +986,7 @@ var yK2 = U((JB0) => {
         }
     })
 });
-var xK2 = U((WB0) => {
+var xK2 = moduleWrapper((WB0) => {
     Object.defineProperty(WB0, "__esModule", {
         value: !0
     });
@@ -1000,7 +999,7 @@ var xK2 = U((WB0) => {
         }
     })
 });
-var c91 = U((_i) => {
+var c91 = moduleWrapper((_i) => {
     Object.defineProperty(_i, "__esModule", {
         value: !0
     });
@@ -1045,14 +1044,14 @@ var c91 = U((_i) => {
         }
     })
 });
-var fK2 = U((vK2) => {
+var fK2 = moduleWrapper((vK2) => {
     Object.defineProperty(vK2, "__esModule", {
         value: !0
     });
     vK2.VERSION = void 0;
     vK2.VERSION = "0.204.0"
 });
-var dK2 = U((uK2) => {
+var dK2 = moduleWrapper((uK2) => {
     Object.defineProperty(uK2, "__esModule", {
         value: !0
     });
@@ -1061,18 +1060,17 @@ var dK2 = U((uK2) => {
         vU5 = pk(),
         bU5 = fK2(),
         hK2 = Si();
-
-class gK2 extends xU5.OTLPMetricExporterBase {
+    class gK2 extends xU5.OTLPMetricExporterBase {
         constructor(A) {
             super((0, hK2.createOtlpHttpExportDelegate)((0, hK2.convertLegacyHttpOptions)(A ?? {}, "METRICS", "v1/metrics", {
-                "User-Agent": `OTel-OTLP-Exporter-JavaScript/${bU5.VERSION}`,
+                "User-Agent": `OTel-OTLP-Exporter-JavaScript/TextComponent{bU5.VERSION}`,
                 "Content-Type": "application/x-protobuf"
             }), vU5.ProtobufMetricsSerializer), A)
         }
     }
     uK2.OTLPMetricExporter = gK2
 });
-var cK2 = U((XB0) => {
+var cK2 = moduleWrapper((XB0) => {
     Object.defineProperty(XB0, "__esModule", {
         value: !0
     });
@@ -1085,7 +1083,7 @@ var cK2 = U((XB0) => {
         }
     })
 });
-var pK2 = U((FB0) => {
+var pK2 = moduleWrapper((FB0) => {
     Object.defineProperty(FB0, "__esModule", {
         value: !0
     });
@@ -1098,7 +1096,7 @@ var pK2 = U((FB0) => {
         }
     })
 });
-var lK2 = U((VB0) => {
+var lK2 = moduleWrapper((VB0) => {
     Object.defineProperty(VB0, "__esModule", {
         value: !0
     });
@@ -1111,7 +1109,7 @@ var lK2 = U((VB0) => {
         }
     })
 });
-var K6 = U((sK2) => {
+var K6 = moduleWrapper((sK2) => {
     Object.defineProperty(sK2, "__esModule", {
         value: !0
     });
@@ -1131,7 +1129,7 @@ var K6 = U((sK2) => {
     sK2.DEFAULT_MAX_SEND_MESSAGE_LENGTH = -1;
     sK2.DEFAULT_MAX_RECEIVE_MESSAGE_LENGTH = 4194304
 });
-var KB0 = U((ugG, nU5) => {
+var KB0 = moduleWrapper((ugG, nU5) => {
     nU5.exports = {
         name: "@grpc/grpc-js",
         version: "1.14.0",
@@ -1206,7 +1204,7 @@ var KB0 = U((ugG, nU5) => {
         files: ["src/**/*.ts", "build/src/**/*.{js,d.ts,js.map}", "proto/**/*.proto", "proto/**/LICENSE", "LICENSE", "deps/envoy-api/envoy/api/v2/**/*.proto", "deps/envoy-api/envoy/config/**/*.proto", "deps/envoy-api/envoy/service/**/*.proto", "deps/envoy-api/envoy/type/**/*.proto", "deps/udpa/udpa/**/*.proto", "deps/googleapis/google/api/*.proto", "deps/googleapis/google/rpc/*.proto", "deps/protoc-gen-validate/validate/**/*.proto"]
     }
 });
-var XZ = U((eK2) => {
+var XZ = moduleWrapper((eK2) => {
     var DB0, HB0, CB0, EB0;
     Object.defineProperty(eK2, "__esModule", {
         value: !0
@@ -1215,7 +1213,7 @@ var XZ = U((eK2) => {
     eK2.trace = Z$5;
     eK2.isTracerEnabled = tK2;
     var ki = K6(),
-        aU5 = UA("process"),
+        aU5 = nodeRequire("process"),
         sU5 = KB0().version,
         rU5 = {
             error: (A, ...Q) => {
@@ -1285,32 +1283,32 @@ var XZ = U((eK2) => {
         else zB0.add(A);
     var G$5 = zB0.has("all");
 
-function Z$5(A, Q, B) {
+    function Z$5(A, Q, B) {
         if (tK2(Q)) eK2.log(A, new Date().toISOString() + " | v" + sU5 + " " + aU5.pid + " | " + Q + " | " + B)
     }
 
-function tK2(A) {
+    function tK2(A) {
         return !oK2.has(A) && (G$5 || zB0.has(A))
     }
 });
-var p91 = U((AD2) => {
+var p91 = moduleWrapper((AD2) => {
     Object.defineProperty(AD2, "__esModule", {
         value: !0
     });
     AD2.getErrorMessage = F$5;
     AD2.getErrorCode = V$5;
 
-function F$5(A) {
+    function F$5(A) {
         if (A instanceof Error) return A.message;
         else return String(A)
     }
 
-function V$5(A) {
+    function V$5(A) {
         if (typeof A === "object" && A !== null && "code" in A && typeof A.code === "number") return A.code;
         else return null
     }
 });
-var BK = U((GD2) => {
+var BK = moduleWrapper((GD2) => {
     Object.defineProperty(GD2, "__esModule", {
         value: !0
     });
@@ -1318,30 +1316,30 @@ var BK = U((GD2) => {
     var H$5 = XZ(),
         C$5 = K6(),
         E$5 = p91(),
-        z$5 = /^[:0-9a-z_.-]+$/,
-        U$5 = /^[ -~]*$/;
+        z$5 = /^[:0-9a-z_.-]+TextComponent/,
+        U$5 = /^[ -~]*TextComponent/;
 
     function $$5(A) {
         return z$5.test(A)
     }
 
-function w$5(A) {
+    function w$5(A) {
         return U$5.test(A)
     }
 
-function BD2(A) {
+    function BD2(A) {
         return A.endsWith("-bin")
     }
 
-function q$5(A) {
+    function q$5(A) {
         return !A.startsWith("grpc-")
     }
 
-function l91(A) {
+    function l91(A) {
         return A.toLowerCase()
     }
 
-function QD2(A, Q) {
+    function QD2(A, Q) {
         if (!$$5(A)) throw Error('Metadata key "' + A + '" contains illegal characters');
         if (Q !== null && Q !== void 0)
             if (BD2(A)) {
@@ -1351,8 +1349,7 @@ function QD2(A, Q) {
                 if (!w$5(Q)) throw Error('Metadata string value "' + Q + '" contains illegal characters')
             }
     }
-
-class i91 {
+    class i91 {
         constructor(A = {}) {
             this.internalRepr = new Map, this.opaqueData = new Map, this.options = A
         }
@@ -1442,7 +1439,7 @@ class i91 {
                     });
                     else if (G !== void 0) Q.add(B, G)
                 } catch (Z) {
-                    let I = `Failed to add metadata entry ${B}: ${G}. ${(0,E$5.getErrorMessage)(Z)}. For more information see https://github.com/grpc/grpc-node/issues/1173`;
+                    let I = `Failed to add metadata entry TextComponent{B}: TextComponent{G}. TextComponent{(0,E$5.getErrorMessage)(Z)}. For more information see https://github.com/grpc/grpc-node/issues/1173`;
                     (0, H$5.log)(C$5.LogVerbosity.ERROR, I)
                 }
             }
@@ -1454,18 +1451,17 @@ class i91 {
         return Buffer.isBuffer(A) ? A.toString("base64") : A
     }
 });
-var a91 = U((ID2) => {
+var a91 = moduleWrapper((ID2) => {
     Object.defineProperty(ID2, "__esModule", {
         value: !0
     });
     ID2.CallCredentials = void 0;
     var $B0 = BK();
 
-function L$5(A) {
+    function L$5(A) {
         return "getRequestHeaders" in A && typeof A.getRequestHeaders === "function"
     }
-
-class bYA {
+    class bYA {
         static createFromMetadataGenerator(A) {
             return new wB0(A)
         }
@@ -1500,8 +1496,7 @@ class bYA {
         }
     }
     ID2.CallCredentials = bYA;
-
-class n91 extends bYA {
+    class n91 extends bYA {
         constructor(A) {
             super();
             this.creds = A
@@ -1521,7 +1516,6 @@ class n91 extends bYA {
             else return !1
         }
     }
-
-class wB0 extends bYA {
+    class wB0 extends bYA {
         constructor(A) {
             super();

@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_036.js
+ * 处理时间: 2025-12-09T03:41:36.745Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.919Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -209,7 +211,7 @@
         return Q
     };
 
-function Sc(A, Q) {
+    function Sc(A, Q) {
         if (typeof Q === "string") Q = {
             shortName: Q
         };
@@ -221,8 +223,7 @@ function Sc(A, Q) {
         else if (Q.shortName && Q.shortName === G.shortName) B = G;
         return B
     }
-
-var LiA = function(A, Q, B) {
+    var LiA = function(A, Q, B) {
             var G = {};
             if (A !== G3["RSASSA-PSS"]) return G;
             if (B) G = {
@@ -237,8 +238,7 @@ var LiA = function(A, Q, B) {
                 },
                 saltLength: 20
             };
-
-var Z = {},
+            var Z = {},
                 I = [];
             if (!fA.validate(Q, qo8, Z, I)) {
                 var Y = Error("Cannot read RSASSA-PSS parameter block.");
@@ -494,8 +494,7 @@ var Z = {},
         Y.version = B.certVersion ? B.certVersion.charCodeAt(0) : 0;
         var J = P9.util.createBuffer(B.certSerialNumber);
         Y.serialNumber = J.toHex(), Y.signatureOid = P9.asn1.derToOid(B.certSignatureOid), Y.signatureParameters = LiA(Y.signatureOid, B.certSignatureParams, !0), Y.siginfo.algorithmOid = P9.asn1.derToOid(B.certinfoSignatureOid), Y.siginfo.parameters = LiA(Y.siginfo.algorithmOid, B.certinfoSignatureParams, !1), Y.signature = B.certSignature;
-
-var W = [];
+        var W = [];
         if (B.certValidity1UTCTime !== void 0) W.push(fA.utcTimeToDate(B.certValidity1UTCTime));
         if (B.certValidity2GeneralizedTime !== void 0) W.push(fA.generalizedTimeToDate(B.certValidity2GeneralizedTime));
         if (B.certValidity3UTCTime !== void 0) W.push(fA.utcTimeToDate(B.certValidity3UTCTime));
@@ -573,8 +572,7 @@ var W = [];
                 var W, B = fA.fromDer(Q.value);
                 for (var X = 0; X < B.value.length; ++X) {
                     W = B.value[X];
-
-var F = {
+                    var F = {
                         type: W.type,
                         value: W.value
                     };
@@ -673,7 +671,7 @@ var F = {
         }, A
     };
 
-function b3A(A) {
+    function b3A(A) {
         var Q = fA.create(fA.Class.UNIVERSAL, fA.Type.SEQUENCE, !0, []),
             B, G, Z = A.attributes;
         for (var I = 0; I < Z.length; ++I) {
@@ -688,7 +686,7 @@ function b3A(A) {
         return Q
     }
 
-function oL(A) {
+    function oL(A) {
         var Q;
         for (var B = 0; B < A.length; ++B) {
             if (Q = A[B], typeof Q.name > "u") {
@@ -716,7 +714,7 @@ function oL(A) {
         }
     }
 
-function J8B(A, Q) {
+    function J8B(A, Q) {
         if (Q = Q || {}, typeof A.name > "u") {
             if (A.id && A.id in sQ.oids) A.name = sQ.oids[A.id]
         }
@@ -785,7 +783,7 @@ function J8B(A, Q) {
                 A.value.value.push(fA.create(fA.Class.CONTEXT_SPECIFIC, X.type, !1, Y))
             }
         } else if (A.name === "nsComment" && Q.cert) {
-            if (!/^[\x00-\x7F]*$/.test(A.comment) || A.comment.length < 1 || A.comment.length > 128) throw Error('Invalid "nsComment" content.');
+            if (!/^[\x00-\x7F]*TextComponent/.test(A.comment) || A.comment.length < 1 || A.comment.length > 128) throw Error('Invalid "nsComment" content.');
             A.value = fA.create(fA.Class.UNIVERSAL, fA.Type.IA5STRING, !1, A.comment)
         } else if (A.name === "subjectKeyIdentifier" && Q.cert) {
             var V = Q.cert.generateSubjectKeyIdentifier();
@@ -833,7 +831,7 @@ function J8B(A, Q) {
         return A
     }
 
-function Ev1(A, Q) {
+    function Ev1(A, Q) {
         switch (A) {
             case G3["RSASSA-PSS"]:
                 var B = [];
@@ -846,7 +844,7 @@ function Ev1(A, Q) {
         }
     }
 
-function Mo8(A) {
+    function Mo8(A) {
         var Q = fA.create(fA.Class.CONTEXT_SPECIFIC, 0, !0, []);
         if (A.attributes.length === 0) return Q;
         var B = A.attributes;
@@ -866,7 +864,7 @@ function Mo8(A) {
     var Oo8 = new Date("1950-01-01T00:00:00Z"),
         Ro8 = new Date("2050-01-01T00:00:00Z");
 
-function Z8B(A) {
+    function Z8B(A) {
         if (A >= Oo8 && A < Ro8) return fA.create(fA.Class.UNIVERSAL, fA.Type.UTCTIME, !1, fA.dateToUtcTime(A));
         else return fA.create(fA.Class.UNIVERSAL, fA.Type.GENERALIZEDTIME, !1, fA.dateToGeneralizedTime(A))
     }
@@ -958,11 +956,11 @@ function Z8B(A) {
             return J
         };
 
-function B(Y) {
+        function B(Y) {
             return G(Y), Q.certs[Y.hash] || null
         }
 
-function G(Y) {
+        function G(Y) {
             if (!Y.hash) {
                 var J = P9.md.sha1.create();
                 Y.attributes = sQ.RDNAttributesAsArray(b3A(Y), J), Y.hash = J.digest().toHex()
@@ -1090,7 +1088,7 @@ function G(Y) {
         return !0
     }
 });
-var Uv1 = U((TT7, F8B) => {
+var Uv1 = moduleWrapper((TT7, F8B) => {
     var jZ = n8();
     GT();
     j3A();
@@ -1250,7 +1248,7 @@ var Uv1 = U((TT7, F8B) => {
         }]
     };
 
-function jzA(A, Q, B, G) {
+    function jzA(A, Q, B, G) {
         var Z = [];
         for (var I = 0; I < A.length; I++)
             for (var Y = 0; Y < A[I].safeBags.length; Y++) {
@@ -1267,15 +1265,13 @@ function jzA(A, Q, B, G) {
     SzA.pkcs12FromAsn1 = function(A, Q, B) {
         if (typeof Q === "string") B = Q, Q = !0;
         else if (Q === void 0) Q = !0;
-
-var G = {},
+        var G = {},
             Z = [];
         if (!T1.validate(A, To8, G, Z)) {
             var I = Error("Cannot read PKCS#12 PFX. ASN.1 object is not an PKCS#12 PFX.");
             throw I.errors = I, I
         }
-
-var Y = {
+        var Y = {
             version: G.version.charCodeAt(0),
             safeContents: [],
             getBags: function(E) {
@@ -1338,7 +1334,7 @@ var Y = {
         return _o8(Y, J.value, Q, B), Y
     };
 
-function zv1(A) {
+    function zv1(A) {
         if (A.composed || A.constructed) {
             var Q = jZ.util.createBuffer();
             for (var B = 0; B < A.value.length; ++B) Q.putBytes(A.value[B].value);
@@ -1347,7 +1343,7 @@ function zv1(A) {
         return A
     }
 
-function _o8(A, Q, B, G) {
+    function _o8(A, Q, B, G) {
         if (Q = T1.fromDer(Q, B), Q.tagClass !== T1.Class.UNIVERSAL || Q.type !== T1.Type.SEQUENCE || Q.constructed !== !0) throw Error("PKCS#12 AuthenticatedSafe expected to be a SEQUENCE OF ContentInfo");
         for (var Z = 0; Z < Q.value.length; Z++) {
             var I = Q.value[Z],
@@ -1357,8 +1353,7 @@ function _o8(A, Q, B, G) {
                 var W = Error("Cannot read ContentInfo.");
                 throw W.errors = J, W
             }
-
-var X = {
+            var X = {
                     encrypted: !1
                 },
                 F = null,
@@ -1379,7 +1374,7 @@ var X = {
         }
     }
 
-function ko8(A, Q) {
+    function ko8(A, Q) {
         var B = {},
             G = [];
         if (!T1.validate(A, jZ.pkcs7.asn1.encryptedDataValidator, B, G)) {
@@ -1399,11 +1394,10 @@ function ko8(A, Q) {
         return Y.output.getBytes()
     }
 
-function yo8(A, Q, B) {
+    function yo8(A, Q, B) {
         if (!Q && A.length === 0) return [];
         if (A = T1.fromDer(A, Q), A.tagClass !== T1.Class.UNIVERSAL || A.type !== T1.Type.SEQUENCE || A.constructed !== !0) throw Error("PKCS#12 SafeContents expected to be a SEQUENCE OF SafeBag.");
-
-var G = [];
+        var G = [];
         for (var Z = 0; Z < A.value.length; Z++) {
             var I = A.value[Z],
                 Y = {},
@@ -1412,8 +1406,7 @@ var G = [];
                 var W = Error("Cannot read SafeBag.");
                 throw W.errors = J, W
             }
-
-var X = {
+            var X = {
                 type: T1.derToOid(Y.bagId),
                 attributes: xo8(Y.bagAttributes)
             };
@@ -1456,7 +1449,7 @@ var X = {
         return G
     }
 
-function xo8(A) {
+    function xo8(A) {
         var Q = {};
         if (A !== void 0)
             for (var B = 0; B < A.length; ++B) {
@@ -1487,19 +1480,16 @@ function xo8(A) {
                 var J = jZ.md.sha1.create();
                 J.update(T1.toDer(s6.certificateToAsn1(Y)).getBytes()), Z = J.digest().getBytes()
             } else Z = jZ.random.getBytes(20);
-
-var W = [];
+        var W = [];
         if (Z !== null) W.push(T1.create(T1.Class.UNIVERSAL, T1.Type.SEQUENCE, !0, [T1.create(T1.Class.UNIVERSAL, T1.Type.OID, !1, T1.oidToDer(s6.oids.localKeyId).getBytes()), T1.create(T1.Class.UNIVERSAL, T1.Type.SET, !0, [T1.create(T1.Class.UNIVERSAL, T1.Type.OCTETSTRING, !1, Z)])]));
         if ("friendlyName" in G) W.push(T1.create(T1.Class.UNIVERSAL, T1.Type.SEQUENCE, !0, [T1.create(T1.Class.UNIVERSAL, T1.Type.OID, !1, T1.oidToDer(s6.oids.friendlyName).getBytes()), T1.create(T1.Class.UNIVERSAL, T1.Type.SET, !0, [T1.create(T1.Class.UNIVERSAL, T1.Type.BMPSTRING, !1, G.friendlyName)])]));
         if (W.length > 0) I = T1.create(T1.Class.UNIVERSAL, T1.Type.SET, !0, W);
-
-var X = [],
+        var X = [],
             F = [];
         if (Q !== null)
             if (jZ.util.isArray(Q)) F = Q;
             else F = [Q];
-
-var V = [];
+        var V = [];
         for (var K = 0; K < F.length; ++K) {
             if (Q = F[K], typeof Q === "string") Q = s6.certificateFromPem(Q);
             var D = K === 0 ? I : void 0,

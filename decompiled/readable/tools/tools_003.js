@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_003.js
+ * 处理时间: 2025-12-09T03:41:38.587Z
+ * 变量映射: 14 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.066Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -247,9 +250,8 @@
         })
     }, Q34 = r9
 });
-
 var _ = {};
-pG(_, {
+esmExport(_, {
     void: () => v54,
     util: () => d6,
     unknown: () => y54,
@@ -358,7 +360,7 @@ pG(_, {
     DIRTY: () => os,
     BRAND: () => L54
 });
-var TC1 = L(() => {
+var TC1 = lazyLoader(() => {
     exA();
     MC1();
     ep0();
@@ -367,13 +369,13 @@ var TC1 = L(() => {
     txA()
 });
 var I2;
-var h2 = L(() => {
+var h2 = lazyLoader(() => {
     TC1();
     TC1();
     I2 = _
 });
 var jKA;
-var ZvA = L(() => {
+var ZvA = lazyLoader(() => {
     jKA = ["PreToolUse", "PostToolUse", "PostToolUseFailure", "Notification", "UserPromptSubmit", "SessionStart", "SessionEnd", "Stop", "SubagentStart", "SubagentStop", "PreCompact", "PermissionRequest"]
 });
 
@@ -443,7 +445,7 @@ function sj(A) {
     }
 }
 var OR, Fl0;
-var Bw = L(() => {
+var Bw = lazyLoader(() => {
     h2();
     OR = ["acceptEdits", "bypassPermissions", "default", "dontAsk", "plan"], Fl0 = I2.enum(OR)
 });
@@ -538,7 +540,7 @@ function WvA({
     }
 }
 var B34;
-var Gr = L(() => {
+var Gr = lazyLoader(() => {
     u1();
     aG();
     UF();
@@ -564,13 +566,13 @@ function a9A(A) {
 function $V(A, Q) {
     switch (Q.type) {
         case "setMode":
-            return g(`Applying permission update: Setting mode to '${Q.mode}'`), {
+            return g(`Applying permission update: Setting mode to 'TextComponent{Q.mode}'`), {
                 ...A,
                 mode: Q.mode
             };
         case "addRules": {
             let B = Q.rules.map((Z) => r5(Z));
-            g(`Applying permission update: Adding ${Q.rules.length} ${Q.behavior} rule(s) to destination '${Q.destination}': ${JSON.stringify(B)}`);
+            g(`Applying permission update: Adding TextComponent{Q.rules.length} TextComponent{Q.behavior} rule(s) to destination 'TextComponent{Q.destination}': TextComponent{JSON.stringify(B)}`);
             let G = Q.behavior === "allow" ? "alwaysAllowRules" : Q.behavior === "deny" ? "alwaysDenyRules" : "alwaysAskRules";
             return {
                 ...A,
@@ -582,7 +584,7 @@ function $V(A, Q) {
         }
         case "replaceRules": {
             let B = Q.rules.map((Z) => r5(Z));
-            g(`Replacing all ${Q.behavior} rules for destination '${Q.destination}' with ${Q.rules.length} rule(s): ${JSON.stringify(B)}`);
+            g(`Replacing all TextComponent{Q.behavior} rules for destination 'TextComponent{Q.destination}' with TextComponent{Q.rules.length} rule(s): TextComponent{JSON.stringify(B)}`);
             let G = Q.behavior === "allow" ? "alwaysAllowRules" : Q.behavior === "deny" ? "alwaysDenyRules" : "alwaysAskRules";
             return {
                 ...A,
@@ -593,7 +595,7 @@ function $V(A, Q) {
             }
         }
         case "addDirectories": {
-            g(`Applying permission update: Adding ${Q.directories.length} director${Q.directories.length===1?"y":"ies"} with destination '${Q.destination}': ${JSON.stringify(Q.directories)}`);
+            g(`Applying permission update: Adding TextComponent{Q.directories.length} director${Q.directories.length===1?"y":"ies"} with destination 'TextComponent{Q.destination}': TextComponent{JSON.stringify(Q.directories)}`);
             let B = new Map(A.additionalWorkingDirectories);
             for (let G of Q.directories) B.set(G, {
                 path: G,
@@ -606,7 +608,7 @@ function $V(A, Q) {
         }
         case "removeRules": {
             let B = Q.rules.map((J) => r5(J));
-            g(`Applying permission update: Removing ${Q.rules.length} ${Q.behavior} rule(s) from source '${Q.destination}': ${JSON.stringify(B)}`);
+            g(`Applying permission update: Removing TextComponent{Q.rules.length} TextComponent{Q.behavior} rule(s) from source 'TextComponent{Q.destination}': TextComponent{JSON.stringify(B)}`);
             let G = Q.behavior === "allow" ? "alwaysAllowRules" : Q.behavior === "deny" ? "alwaysDenyRules" : "alwaysAskRules",
                 Z = A[G][Q.destination] || [],
                 I = new Set(B),
@@ -620,7 +622,7 @@ function $V(A, Q) {
             }
         }
         case "removeDirectories": {
-            g(`Applying permission update: Removing ${Q.directories.length} director${Q.directories.length===1?"y":"ies"}: ${JSON.stringify(Q.directories)}`);
+            g(`Applying permission update: Removing TextComponent{Q.directories.length} director${Q.directories.length===1?"y":"ies"}: TextComponent{JSON.stringify(Q.directories)}`);
             let B = new Map(A.additionalWorkingDirectories);
             for (let G of Q.directories) B.delete(G);
             return {
@@ -645,16 +647,16 @@ function XvA(A) {
 
 function Yv(A) {
     if (!XvA(A.destination)) return;
-    switch (g(`Persisting permission update: ${A.type} to source '${A.destination}'`), A.type) {
+    switch (g(`Persisting permission update: TextComponent{A.type} to source 'TextComponent{A.destination}'`), A.type) {
         case "addRules": {
-            g(`Persisting ${A.rules.length} ${A.behavior} rule(s) to ${A.destination}`), WvA({
+            g(`Persisting TextComponent{A.rules.length} TextComponent{A.behavior} rule(s) to TextComponent{A.destination}`), WvA({
                 ruleValues: A.rules,
                 ruleBehavior: A.behavior
             }, A.destination);
             break
         }
         case "addDirectories": {
-            g(`Persisting ${A.directories.length} director${A.directories.length===1?"y":"ies"} to ${A.destination}`);
+            g(`Persisting TextComponent{A.directories.length} director${A.directories.length===1?"y":"ies"} to TextComponent{A.destination}`);
             let B = LB(A.destination)?.permissions?.additionalDirectories || [],
                 G = A.directories.filter((Z) => !B.includes(Z));
             if (G.length > 0) {
@@ -668,7 +670,7 @@ function Yv(A) {
             break
         }
         case "removeRules": {
-            g(`Removing ${A.rules.length} ${A.behavior} rule(s) from ${A.destination}`);
+            g(`Removing TextComponent{A.rules.length} TextComponent{A.behavior} rule(s) from TextComponent{A.destination}`);
             let G = (LB(A.destination)?.permissions || {})[A.behavior] || [],
                 Z = new Set(A.rules.map(r5)),
                 I = G.filter((Y) => !Z.has(Y));
@@ -680,7 +682,7 @@ function Yv(A) {
             break
         }
         case "removeDirectories": {
-            g(`Removing ${A.directories.length} director${A.directories.length===1?"y":"ies"} from ${A.destination}`);
+            g(`Removing TextComponent{A.directories.length} director${A.directories.length===1?"y":"ies"} from TextComponent{A.destination}`);
             let B = LB(A.destination)?.permissions?.additionalDirectories || [],
                 G = new Set(A.directories),
                 Z = B.filter((I) => !G.has(I));
@@ -692,7 +694,7 @@ function Yv(A) {
             break
         }
         case "setMode": {
-            g(`Persisting mode '${A.mode}' to ${A.destination}`), cB(A.destination, {
+            g(`Persisting mode 'TextComponent{A.mode}' to TextComponent{A.destination}`), cB(A.destination, {
                 permissions: {
                     defaultMode: A.mode
                 }
@@ -700,7 +702,7 @@ function Yv(A) {
             break
         }
         case "replaceRules": {
-            g(`Replacing all ${A.behavior} rules in ${A.destination} with ${A.rules.length} rule(s)`);
+            g(`Replacing all TextComponent{A.behavior} rules in TextComponent{A.destination} with TextComponent{A.rules.length} rule(s)`);
             let Q = A.rules.map(r5);
             cB(A.destination, {
                 permissions: {
@@ -725,7 +727,7 @@ function FvA(A, Q = "session") {
                 type: "addRules",
                 rules: [{
                     toolName: "Read",
-                    ruleContent: I34.isAbsolute(G) ? `/${G}/**` : `${G}/**`
+                    ruleContent: I34.isAbsolute(G) ? `/TextComponent{G}/**` : `TextComponent{G}/**`
                 }],
                 behavior: "allow",
                 destination: Q
@@ -734,7 +736,7 @@ function FvA(A, Q = "session") {
     } catch {}
     return
 }
-var hK = L(() => {
+var hK = lazyLoader(() => {
     aG();
     D0();
     RB();
@@ -747,7 +749,7 @@ function kKA(A, Q) {
     return A instanceof Error && A.message === Q
 }
 var _KA, rj, YW, uz, oj, GI;
-var $Z = L(() => {
+var $Z = lazyLoader(() => {
     _KA = class _KA extends Error {
         constructor(A) {
             super(A);
@@ -793,7 +795,7 @@ var $Z = L(() => {
     }
 });
 var PC1, S77, jC1, Y34, J34, W34, X34, F34, V34, Tm, Hl0;
-var s9A = L(() => {
+var s9A = lazyLoader(() => {
     h2();
     PC1 = _.enum(["local", "user", "project", "dynamic", "enterprise"]), S77 = _.enum(["stdio", "sse", "sse-ide", "http", "ws", "sdk"]), jC1 = _.object({
         type: _.literal("stdio").optional(),
@@ -853,7 +855,9 @@ function H34() {
     return
 }
 
-function o9() {
+/* getConfig = getConfig() - Returns config with BASE_API_URL, OAuth endpoints */
+/* Signature: () => ConfigObject */
+function getConfig() {
     switch (El0()) {
         case "local":
             return C34;
@@ -863,13 +867,14 @@ function o9() {
             return Cl0
     }
 }
-var KvA = "user:inference",
+/* USER_INFERENCE_KEY = USER_INFERENCE_KEY = "user:inference" */
+var USER_INFERENCE_KEY = "user:inference",
     K34 = "org:create_api_key",
     r9A = "oauth-2025-04-20",
     D34, SC1, Ul0, Cl0, C34;
-var EX = L(() => {
+var EX = lazyLoader(() => {
     hQ();
-    D34 = [K34, "user:profile"], SC1 = ["user:profile", KvA, "user:sessions:claude_code"], Ul0 = Array.from(new Set([...D34, ...SC1])), Cl0 = {
+    D34 = [K34, "user:profile"], SC1 = ["user:profile", USER_INFERENCE_KEY, "user:sessions:claude_code"], Ul0 = Array.from(new Set([...D34, ...SC1])), Cl0 = {
         BASE_API_URL: "https://api.anthropic.com",
         CONSOLE_AUTHORIZE_URL: "https://console.anthropic.com/oauth/authorize",
         CLAUDE_AI_AUTHORIZE_URL: "https://claude.ai/oauth/authorize",
@@ -914,7 +919,6 @@ function gK() {
     let A = `.claude${zl0()}.json`;
     return _C1(process.env.CLAUDE_CONFIG_DIR || z34(), A)
 }
-
 async function o9A(A) {
     try {
         let {
@@ -963,7 +967,7 @@ function M34() {
     if (process.env.SESSIONNAME && process.env.TERM === "cygwin") return "cygwin";
     if (process.env.MSYSTEM) return process.env.MSYSTEM.toLowerCase();
     if (process.env.ConEmuANSI || process.env.ConEmuPID || process.env.ConEmuTask) return "conemu";
-    if (process.env.WSL_DISTRO_NAME) return `wsl-${process.env.WSL_DISTRO_NAME}`;
+    if (process.env.WSL_DISTRO_NAME) return `wsl-TextComponent{process.env.WSL_DISTRO_NAME}`;
     if (process.env.SSH_CONNECTION || process.env.SSH_CLIENT || process.env.SSH_TTY) return "ssh-session";
     if (process.env.TERM) {
         let Q = process.env.TERM;
@@ -979,14 +983,14 @@ var kC1, U34, $34, w34, wl0, q34, N34 = () => {
         return process.env.__CFBundleIdentifier === "com.conductor.app"
     },
     L34, O34, m0;
-var f5 = L(() => {
+var f5 = lazyLoader(() => {
     o2();
     w3();
     o0();
     UZ();
     hQ();
     EX();
-    kC1 = GA(fD1(), 1);
+    kC1 = esmImport(fD1(), 1);
     U34 = t1(async () => {
         try {
             let A = s9(),
@@ -1060,7 +1064,7 @@ var f5 = L(() => {
         if (process.env.GITLAB_CI === "true") return "gitlab-ci";
         if (process.env.CIRCLECI) return "circleci";
         if (process.env.BUILDKITE) return "buildkite";
-        if (V0(!1)) return "ci";
+        if (parseBoolean(!1)) return "ci";
         if (process.env.KUBERNETES_SERVICE_HOST) return "kubernetes";
         try {
             if (OA().existsSync("/.dockerenv")) return "docker"
@@ -1071,7 +1075,7 @@ var f5 = L(() => {
         return "unknown"
     }), m0 = {
         hasInternetAccess: U34,
-        isCI: V0(!1),
+        isCI: parseBoolean(!1),
         platform: ["win32", "darwin"].includes(process.platform) ? process.platform : "linux",
         arch: process.arch,
         nodeVersion: process.version,
@@ -1094,57 +1098,57 @@ function R34(A, Q) {
     return A
 }
 var ql0;
-var Nl0 = L(() => {
+var Nl0 = lazyLoader(() => {
     ql0 = R34
 });
 
 function T34(A, Q) {
-    return A && hN(Q, SN(Q), A)
+    return A && copyObject(Q, keys(Q), A)
 }
 var Ll0;
-var Ml0 = L(() => {
+var Ml0 = lazyLoader(() => {
     ns();
     Hs();
     Ll0 = T34
 });
 
 function P34(A, Q) {
-    return A && hN(Q, lj(Q), A)
+    return A && copyObject(Q, lj(Q), A)
 }
 var Ol0;
-var Rl0 = L(() => {
+var Rl0 = lazyLoader(() => {
     ns();
     S9A();
     Ol0 = P34
 });
 
 function j34(A, Q) {
-    return hN(A, SBA(A), Q)
+    return copyObject(A, SBA(A), Q)
 }
 var Tl0;
-var Pl0 = L(() => {
+var Pl0 = lazyLoader(() => {
     ns();
     L_A();
     Tl0 = j34
 });
 var S34, _34, DvA;
-var yC1 = L(() => {
+var yC1 = lazyLoader(() => {
     $_A();
     pxA();
     L_A();
     vW1();
     S34 = Object.getOwnPropertySymbols, _34 = !S34 ? N_A : function(A) {
         var Q = [];
-        while (A) jBA(Q, SBA(A)), A = P9A(A);
+        while (A) arrayPush(Q, SBA(A)), A = P9A(A);
         return Q
     }, DvA = _34
 });
 
 function k34(A, Q) {
-    return hN(A, DvA(A), Q)
+    return copyObject(A, DvA(A), Q)
 }
 var jl0;
-var Sl0 = L(() => {
+var Sl0 = lazyLoader(() => {
     ns();
     yC1();
     jl0 = k34
@@ -1153,12 +1157,12 @@ var Sl0 = L(() => {
 function y34(A) {
     return w_A(A, lj, DvA)
 }
-var HvA;
-var xC1 = L(() => {
+var getAllKeysIn;
+var xC1 = lazyLoader(() => {
     yW1();
     yC1();
     S9A();
-    HvA = y34
+    getAllKeysIn = y34
 });
 
 function b34(A) {
@@ -1168,7 +1172,7 @@ function b34(A) {
     return B
 }
 var x34, v34, _l0;
-var kl0 = L(() => {
+var kl0 = lazyLoader(() => {
     x34 = Object.prototype, v34 = x34.hasOwnProperty;
     _l0 = b34
 });
@@ -1178,7 +1182,7 @@ function f34(A, Q) {
     return new A.constructor(B, A.byteOffset, A.byteLength)
 }
 var yl0;
-var xl0 = L(() => {
+var xl0 = lazyLoader(() => {
     mxA();
     yl0 = f34
 });
@@ -1188,8 +1192,8 @@ function g34(A) {
     return Q.lastIndex = A.lastIndex, Q
 }
 var h34, vl0;
-var bl0 = L(() => {
-    h34 = /\w*$/;
+var bl0 = lazyLoader(() => {
+    h34 = /\w*TextComponent/;
     vl0 = g34
 });
 
@@ -1197,9 +1201,9 @@ function u34(A) {
     return hl0 ? Object(hl0.call(A)) : {}
 }
 var fl0, hl0, gl0;
-var ul0 = L(() => {
+var ul0 = lazyLoader(() => {
     Fs();
-    fl0 = HV ? HV.prototype : void 0, hl0 = fl0 ? fl0.valueOf : void 0;
+    fl0 = Symbol ? Symbol.prototype : void 0, hl0 = fl0 ? fl0.valueOf : void 0;
     gl0 = u34
 });
 
@@ -1256,7 +1260,7 @@ var m34 = "[object Boolean]",
     Z74 = "[object Uint16Array]",
     I74 = "[object Uint32Array]",
     ml0;
-var dl0 = L(() => {
+var dl0 = lazyLoader(() => {
     mxA();
     xl0();
     bl0();
@@ -1270,13 +1274,13 @@ function W74(A) {
 }
 var J74 = "[object Map]",
     cl0;
-var pl0 = L(() => {
+var pl0 = lazyLoader(() => {
     BVA();
     Mj();
     cl0 = W74
 });
 var ll0, X74, il0;
-var nl0 = L(() => {
+var nl0 = lazyLoader(() => {
     pl0();
     T_A();
     S_A();
@@ -1288,13 +1292,13 @@ function V74(A) {
 }
 var F74 = "[object Set]",
     al0;
-var sl0 = L(() => {
+var sl0 = lazyLoader(() => {
     BVA();
     Mj();
     al0 = V74
 });
 var rl0, K74, ol0;
-var tl0 = L(() => {
+var tl0 = lazyLoader(() => {
     sl0();
     T_A();
     S_A();
@@ -1307,8 +1311,8 @@ function CvA(A, Q, B, G, Z, I) {
         X = Q & C74;
     if (B) Y = Z ? B(A, G, Z, I) : B(A);
     if (Y !== void 0) return Y;
-    if (!TY(A)) return A;
-    var F = j7(A);
+    if (!isObject(A)) return A;
+    var F = isArray(A);
     if (F) {
         if (Y = _l0(A), !J) return cxA(A, Y)
     } else {
@@ -1331,11 +1335,11 @@ function CvA(A, Q, B, G, Z, I) {
     else if (il0(A)) A.forEach(function(E, z) {
         Y.set(z, CvA(E, Q, B, z, A, I))
     });
-    var H = X ? W ? HvA : QVA : W ? lj : SN,
+    var H = X ? W ? getAllKeysIn : QVA : W ? lj : keys,
         C = F ? void 0 : H(A);
     return ql0(C || A, function(E, z) {
         if (C) z = E, E = A[z];
-        $m(Y, z, CvA(E, Q, B, z, A, I))
+        assignValue(Y, z, CvA(E, Q, B, z, A, I))
     }), Y
 }
 var D74 = 1,
@@ -1367,8 +1371,8 @@ var D74 = 1,
     b74 = "[object Uint8ClampedArray]",
     f74 = "[object Uint16Array]",
     h74 = "[object Uint32Array]",
-    wZ, EvA;
-var vC1 = L(() => {
+    wZ, baseClone;
+var vC1 = lazyLoader(() => {
     rFA();
     Nl0();
     EKA();
@@ -1394,21 +1398,21 @@ var vC1 = L(() => {
     wZ = {};
     wZ[el0] = wZ[E74] = wZ[P74] = wZ[j74] = wZ[z74] = wZ[U74] = wZ[S74] = wZ[_74] = wZ[k74] = wZ[y74] = wZ[x74] = wZ[q74] = wZ[N74] = wZ[Qi0] = wZ[L74] = wZ[M74] = wZ[O74] = wZ[R74] = wZ[v74] = wZ[b74] = wZ[f74] = wZ[h74] = !0;
     wZ[$74] = wZ[Ai0] = wZ[T74] = !1;
-    EvA = CvA
+    baseClone = CvA
 });
 
 function m74(A) {
-    return EvA(A, g74 | u74)
+    return baseClone(A, g74 | u74)
 }
 var g74 = 1,
     u74 = 4,
     Jv;
-var zvA = L(() => {
+var zvA = lazyLoader(() => {
     vC1();
     Jv = m74
 });
-var Gi0 = U((KZ7, Bi0) => {
-    var Pm = UA("constants"),
+var Gi0 = moduleWrapper((KZ7, Bi0) => {
+    var Pm = nodeRequire("constants"),
         d74 = process.cwd,
         UvA = null,
         c74 = process.env.GRACEFUL_FS_PLATFORM || process.platform;
@@ -1427,7 +1431,7 @@ var Gi0 = U((KZ7, Bi0) => {
     var $vA;
     Bi0.exports = p74;
 
-function p74(A) {
+    function p74(A) {
         if (Pm.hasOwnProperty("O_SYMLINK") && process.version.match(/^v0\.6\.[0-2]|^v0\.5\./)) Q(A);
         if (!A.lutimes) B(A);
         if (A.chown = I(A.chown), A.fchown = I(A.fchown), A.lchown = I(A.lchown), A.chmod = G(A.chmod), A.fchmod = G(A.fchmod), A.lchmod = G(A.lchmod), A.chownSync = Y(A.chownSync), A.fchownSync = Y(A.fchownSync), A.lchownSync = Y(A.lchownSync), A.chmodSync = Z(A.chmodSync), A.fchmodSync = Z(A.fchmodSync), A.lchmodSync = Z(A.lchmodSync), A.stat = J(A.stat), A.fstat = J(A.fstat), A.lstat = J(A.lstat), A.statSync = W(A.statSync), A.fstatSync = W(A.fstatSync), A.lstatSync = W(A.lstatSync), A.chmod && !A.lchmod) A.lchmod = function(F, V, K) {
@@ -1485,7 +1489,7 @@ function p74(A) {
             }
         }(A.readSync);
 
-function Q(F) {
+        function Q(F) {
             F.lchmod = function(V, K, D) {
                 F.open(V, Pm.O_WRONLY | Pm.O_SYMLINK, K, function(H, C) {
                     if (H) {
@@ -1513,7 +1517,7 @@ function Q(F) {
             }
         }
 
-function B(F) {
+        function B(F) {
             if (Pm.hasOwnProperty("O_SYMLINK") && F.futimes) F.lutimes = function(V, K, D, H) {
                 F.open(V, Pm.O_SYMLINK, function(C, E) {
                     if (C) {

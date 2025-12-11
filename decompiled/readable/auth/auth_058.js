@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_058.js
+ * 处理时间: 2025-12-09T03:41:37.017Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.939Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -30,7 +33,7 @@
     }
     var _41 = null;
 
-function uE2() {
+    function uE2() {
         if (_41) return _41;
         let A = S20().loadSync,
             Q = A("channelz.proto", {
@@ -39,27 +42,27 @@ function uE2() {
                 enums: String,
                 defaults: !0,
                 oneofs: !0,
-                includeDirs: [`${__dirname}/../../proto`]
+                includeDirs: [`TextComponent{__dirname}/../../proto`]
             });
         return _41 = (0, uM5.loadPackageDefinition)(Q).grpc.channelz.v1.Channelz.service, _41
     }
 
-function eM5() {
+    function eM5() {
         (0, gM5.registerAdminService)(uE2, gE2)
     }
 });
-var v41 = U((cE2) => {
+var v41 = moduleWrapper((cE2) => {
     Object.defineProperty(cE2, "__esModule", {
         value: !0
     });
     cE2.getNextCallNumber = HO5;
     var DO5 = 0;
 
-function HO5() {
+    function HO5() {
         return DO5++
     }
 });
-var b20 = U((lE2) => {
+var b20 = moduleWrapper((lE2) => {
     Object.defineProperty(lE2, "__esModule", {
         value: !0
     });
@@ -69,13 +72,12 @@ var b20 = U((lE2) => {
         A[A.identity = 0] = "identity", A[A.deflate = 1] = "deflate", A[A.gzip = 2] = "gzip"
     })(pE2 || (lE2.CompressionAlgorithms = pE2 = {}))
 });
-var f20 = U((aE2) => {
+var f20 = moduleWrapper((aE2) => {
     Object.defineProperty(aE2, "__esModule", {
         value: !0
     });
     aE2.BaseFilter = void 0;
-
-class nE2 {
+    class nE2 {
         async sendMetadata(A) {
             return A
         }
@@ -94,12 +96,12 @@ class nE2 {
     }
     aE2.BaseFilter = nE2
 });
-var g20 = U((Bz2) => {
+var g20 = moduleWrapper((Bz2) => {
     Object.defineProperty(Bz2, "__esModule", {
         value: !0
     });
     Bz2.CompressionFilterFactory = Bz2.CompressionFilter = void 0;
-    var b41 = UA("zlib"),
+    var b41 = nodeRequire("zlib"),
         oE2 = b20(),
         tYA = K6(),
         EO5 = f20(),
@@ -107,8 +109,7 @@ var g20 = U((Bz2) => {
         UO5 = (A) => {
             return typeof A === "number" && typeof oE2.CompressionAlgorithms[A] === "string"
         };
-
-class wOA {
+    class wOA {
         async writeMessage(A, Q) {
             let B = A;
             if (Q) B = await this.compressMessage(B);
@@ -122,8 +123,7 @@ class wOA {
             return B
         }
     }
-
-class eYA extends wOA {
+    class eYA extends wOA {
         async compressMessage(A) {
             return A
         }
@@ -135,8 +135,7 @@ class eYA extends wOA {
             return Promise.reject(Error('Received compressed message but "grpc-encoding" header was identity'))
         }
     }
-
-class tE2 extends wOA {
+    class tE2 extends wOA {
         constructor(A) {
             super();
             this.maxRecvMessageLength = A
@@ -157,7 +156,7 @@ class tE2 extends wOA {
                 I.on("data", (Y) => {
                     if (Z.push(Y), G += Y.byteLength, this.maxRecvMessageLength !== -1 && G > this.maxRecvMessageLength) I.destroy(), B({
                         code: tYA.Status.RESOURCE_EXHAUSTED,
-                        details: `Received message that decompresses to a size larger than ${this.maxRecvMessageLength}`
+                        details: `Received message that decompresses to a size larger than TextComponent{this.maxRecvMessageLength}`
                     })
                 }), I.on("end", () => {
                     Q(Buffer.concat(Z))
@@ -165,8 +164,7 @@ class tE2 extends wOA {
             })
         }
     }
-
-class eE2 extends wOA {
+    class eE2 extends wOA {
         constructor(A) {
             super();
             this.maxRecvMessageLength = A
@@ -187,7 +185,7 @@ class eE2 extends wOA {
                 I.on("data", (Y) => {
                     if (Z.push(Y), G += Y.byteLength, this.maxRecvMessageLength !== -1 && G > this.maxRecvMessageLength) I.destroy(), B({
                         code: tYA.Status.RESOURCE_EXHAUSTED,
-                        details: `Received message that decompresses to a size larger than ${this.maxRecvMessageLength}`
+                        details: `Received message that decompresses to a size larger than TextComponent{this.maxRecvMessageLength}`
                     })
                 }), I.on("end", () => {
                     Q(Buffer.concat(Z))
@@ -195,21 +193,20 @@ class eE2 extends wOA {
             })
         }
     }
-
-class Az2 extends wOA {
+    class Az2 extends wOA {
         constructor(A) {
             super();
             this.compressionName = A
         }
         compressMessage(A) {
-            return Promise.reject(Error(`Received message compressed with unsupported compression method ${this.compressionName}`))
+            return Promise.reject(Error(`Received message compressed with unsupported compression method TextComponent{this.compressionName}`))
         }
         decompressMessage(A) {
-            return Promise.reject(Error(`Compression method not supported: ${this.compressionName}`))
+            return Promise.reject(Error(`Compression method not supported: TextComponent{this.compressionName}`))
         }
     }
 
-function rE2(A, Q) {
+    function rE2(A, Q) {
         switch (A) {
             case "identity":
                 return new eYA;
@@ -221,8 +218,7 @@ function rE2(A, Q) {
                 return new Az2(A)
         }
     }
-
-class h20 extends EO5.BaseFilter {
+    class h20 extends EO5.BaseFilter {
         constructor(A, Q) {
             var B, G, Z;
             super();
@@ -233,7 +229,7 @@ class h20 extends EO5.BaseFilter {
                     let Y = oE2.CompressionAlgorithms[I],
                         J = (Z = Q.serverSupportedEncodingHeader) === null || Z === void 0 ? void 0 : Z.split(",");
                     if (!J || J.includes(Y)) this.currentCompressionAlgorithm = Y, this.sendCompression = rE2(this.currentCompressionAlgorithm, -1)
-                } else zO5.log(tYA.LogVerbosity.ERROR, `Invalid value provided for grpc.default_compression_algorithm option: ${I}`)
+                } else zO5.log(tYA.LogVerbosity.ERROR, `Invalid value provided for grpc.default_compression_algorithm option: TextComponent{I}`)
         }
         async sendMetadata(A) {
             let Q = await A;
@@ -259,7 +255,7 @@ class h20 extends EO5.BaseFilter {
             let B = await A;
             if (this.maxSendMessageLength !== -1 && B.message.length > this.maxSendMessageLength) throw {
                 code: tYA.Status.RESOURCE_EXHAUSTED,
-                details: `Attempted to send message with a size larger than ${this.maxSendMessageLength}`
+                details: `Attempted to send message with a size larger than TextComponent{this.maxSendMessageLength}`
             };
             let G;
             if (this.sendCompression instanceof eYA) G = !1;
@@ -274,8 +270,7 @@ class h20 extends EO5.BaseFilter {
         }
     }
     Bz2.CompressionFilter = h20;
-
-class Qz2 {
+    class Qz2 {
         constructor(A, Q) {
             this.options = Q, this.sharedFilterConfig = {}
         }
@@ -285,7 +280,7 @@ class Qz2 {
     }
     Bz2.CompressionFilterFactory = Qz2
 });
-var qOA = U((Zz2) => {
+var qOA = moduleWrapper((Zz2) => {
     Object.defineProperty(Zz2, "__esModule", {
         value: !0
     });
@@ -293,10 +288,10 @@ var qOA = U((Zz2) => {
     var ek = K6(),
         wO5 = [ek.Status.OK, ek.Status.INVALID_ARGUMENT, ek.Status.NOT_FOUND, ek.Status.ALREADY_EXISTS, ek.Status.FAILED_PRECONDITION, ek.Status.ABORTED, ek.Status.OUT_OF_RANGE, ek.Status.DATA_LOSS];
 
-function qO5(A, Q) {
+    function qO5(A, Q) {
         if (wO5.includes(A)) return {
             code: ek.Status.INTERNAL,
-            details: `Invalid status from control plane: ${A} ${ek.Status[A]} ${Q}`
+            details: `Invalid status from control plane: TextComponent{A} TextComponent{ek.Status[A]} TextComponent{Q}`
         };
         else return {
             code: A,
@@ -304,7 +299,7 @@ function qO5(A, Q) {
         }
     }
 });
-var AJA = U((Iz2) => {
+var AJA = moduleWrapper((Iz2) => {
     Object.defineProperty(Iz2, "__esModule", {
         value: !0
     });
@@ -314,7 +309,7 @@ var AJA = U((Iz2) => {
     Iz2.deadlineToString = PO5;
     Iz2.formatDateDifference = jO5;
 
-function LO5(...A) {
+    function LO5(...A) {
         let Q = 1 / 0;
         for (let B of A) {
             let G = B instanceof Date ? B.getTime() : B;
@@ -322,15 +317,14 @@ function LO5(...A) {
         }
         return Q
     }
-
-var MO5 = [
+    var MO5 = [
         ["m", 1],
         ["S", 1000],
         ["M", 60000],
         ["H", 3600000]
     ];
 
-function OO5(A) {
+    function OO5(A) {
         let Q = new Date().getTime();
         if (A instanceof Date) A = A.getTime();
         let B = Math.max(A - Q, 0);
@@ -342,7 +336,7 @@ function OO5(A) {
     }
     var RO5 = 2147483647;
 
-function TO5(A) {
+    function TO5(A) {
         let Q = A instanceof Date ? A.getTime() : A,
             B = new Date().getTime(),
             G = Q - B;
@@ -351,7 +345,7 @@ function TO5(A) {
         else return G
     }
 
-function PO5(A) {
+    function PO5(A) {
         if (A instanceof Date) return A.toISOString();
         else {
             let Q = new Date(A);
@@ -360,17 +354,16 @@ function PO5(A) {
         }
     }
 
-function jO5(A, Q) {
+    function jO5(A, Q) {
         return ((Q.getTime() - A.getTime()) / 1000).toFixed(3) + "s"
     }
 });
-var f41 = U((Yz2) => {
+var f41 = moduleWrapper((Yz2) => {
     Object.defineProperty(Yz2, "__esModule", {
         value: !0
     });
     Yz2.FilterStackFactory = Yz2.FilterStack = void 0;
-
-class u20 {
+    class u20 {
         constructor(A) {
             this.filters = A
         }
@@ -407,8 +400,7 @@ class u20 {
         }
     }
     Yz2.FilterStack = u20;
-
-class m20 {
+    class m20 {
         constructor(A) {
             this.factories = A
         }
@@ -424,7 +416,7 @@ class m20 {
     }
     Yz2.FilterStackFactory = m20
 });
-var Kz2 = U((Fz2) => {
+var Kz2 = moduleWrapper((Fz2) => {
     Object.defineProperty(Fz2, "__esModule", {
         value: !0
     });
@@ -440,8 +432,7 @@ var Kz2 = U((Fz2) => {
         d20 = BK(),
         dO5 = JP(),
         h41 = mE();
-
-class Wz2 {
+    class Wz2 {
         constructor(A, Q, B, G, Z) {
             var I, Y;
             this.subchannel = A, this.method = Q, this.options = G, this.callNumber = Z, this.childCall = null, this.pendingMessage = null, this.readPending = !1, this.halfClosePending = !1, this.pendingStatus = null, this.readFilterPending = !1, this.writeFilterPending = !1;
@@ -449,7 +440,7 @@ class Wz2 {
                 W = "";
             if (J.length >= 2) W = J[1];
             let X = (Y = (I = (0, h41.splitHostPort)(this.options.host)) === null || I === void 0 ? void 0 : I.host) !== null && Y !== void 0 ? Y : "localhost";
-            this.serviceUrl = `https://${X}/${W}`;
+            this.serviceUrl = `https://TextComponent{X}/TextComponent{W}`;
             let F = (0, uO5.getRelativeTimeout)(G.deadline);
             if (F !== 1 / 0)
                 if (F <= 0) this.cancelWithStatus(LOA.Status.DEADLINE_EXCEEDED, "Deadline exceeded");
@@ -495,7 +486,7 @@ class Wz2 {
                     {
                         code: J,
                         details: W
-                    } = (0, gO5.restrictControlPlaneStatusCode)(typeof Y.code === "number" ? Y.code : LOA.Status.UNKNOWN, `Getting metadata from plugin failed with error: ${Y.message}`);
+                    } = (0, gO5.restrictControlPlaneStatusCode)(typeof Y.code === "number" ? Y.code : LOA.Status.UNKNOWN, `Getting metadata from plugin failed with error: TextComponent{Y.message}`);
                 Q.onReceiveStatus({
                     code: J,
                     details: W,
@@ -555,11 +546,10 @@ class Wz2 {
             else return null
         }
     }
-
-class Xz2 {
+    class Xz2 {
         constructor(A, Q, B) {
             if (this.subchannel = A, this.target = Q, this.channelzEnabled = !1, this.channelzTrace = new NOA.ChannelzTrace, this.callTracker = new NOA.ChannelzCallTracker, this.childrenTracker = new NOA.ChannelzChildrenTracker, this.channelzEnabled = B["grpc.enable_channelz"] !== 0, this.channelzRef = (0, NOA.registerChannelzChannel)((0, h41.uriToString)(Q), () => ({
-                    target: `${(0,h41.uriToString)(Q)} (${A.getAddress()})`,
+                    target: `TextComponent{(0,h41.uriToString)(Q)} (TextComponent{A.getAddress()})`,
                     state: this.subchannel.getConnectivityState(),
                     trace: this.channelzTrace,
                     callTracker: this.callTracker,
@@ -595,7 +585,7 @@ class Xz2 {
     }
     Fz2.SingleSubchannelChannel = Xz2
 });
-var Ez2 = U((Hz2) => {
+var Ez2 = moduleWrapper((Hz2) => {
     Object.defineProperty(Hz2, "__esModule", {
         value: !0
     });
@@ -610,8 +600,7 @@ var Ez2 = U((Hz2) => {
         iO5 = Kz2(),
         nO5 = "subchannel",
         aO5 = 2147483647;
-
-class Dz2 {
+    class Dz2 {
         constructor(A, Q, B, G, Z) {
             var I;
             this.channelTarget = A, this.subchannelAddress = Q, this.options = B, this.connector = Z, this.connectivityState = yG.ConnectivityState.IDLE, this.transport = null, this.continueConnecting = !1, this.stateListeners = new Set, this.refcount = 0, this.channelzEnabled = !0, this.dataProducers = new Map, this.subchannelChannel = null;
@@ -662,11 +651,11 @@ class Dz2 {
                 if (this.transitionToState([yG.ConnectivityState.CONNECTING], yG.ConnectivityState.READY)) {
                     if (this.transport = Q, this.channelzEnabled) this.childrenTracker.refChild(Q.getChannelzRef());
                     Q.addDisconnectListener((B) => {
-                        if (this.transitionToState([yG.ConnectivityState.READY], yG.ConnectivityState.IDLE), B && this.keepaliveTime > 0) this.keepaliveTime *= 2, c20.log(g41.LogVerbosity.ERROR, `Connection to ${(0,pO5.uriToString)(this.channelTarget)} at ${this.subchannelAddressString} rejected by server because of excess pings. Increasing ping interval to ${this.keepaliveTime} ms`)
+                        if (this.transitionToState([yG.ConnectivityState.READY], yG.ConnectivityState.IDLE), B && this.keepaliveTime > 0) this.keepaliveTime *= 2, c20.log(g41.LogVerbosity.ERROR, `Connection to TextComponent{(0,pO5.uriToString)(this.channelTarget)} at TextComponent{this.subchannelAddressString} rejected by server because of excess pings. Increasing ping interval to TextComponent{this.keepaliveTime} ms`)
                     })
                 } else Q.shutdown()
             }, (Q) => {
-                this.transitionToState([yG.ConnectivityState.CONNECTING], yG.ConnectivityState.TRANSIENT_FAILURE, `${Q}`)
+                this.transitionToState([yG.ConnectivityState.CONNECTING], yG.ConnectivityState.TRANSIENT_FAILURE, `TextComponent{Q}`)
             })
         }
         transitionToState(A, Q, B) {
@@ -694,7 +683,7 @@ class Dz2 {
                     (Z = this.transport) === null || Z === void 0 || Z.shutdown(), this.transport = null;
                     break;
                 default:
-                    throw Error(`Invalid state: unknown ConnectivityState ${Q}`)
+                    throw Error(`Invalid state: unknown ConnectivityState TextComponent{Q}`)
             }
             for (let Y of this.stateListeners) Y(this, I, Q, this.keepaliveTime, B);
             return !0
@@ -786,7 +775,7 @@ class Dz2 {
     }
     Hz2.Subchannel = Dz2
 });
-var $z2 = U((zz2) => {
+var $z2 = moduleWrapper((zz2) => {
     var p20;
     Object.defineProperty(zz2, "__esModule", {
         value: !0
@@ -794,14 +783,14 @@ var $z2 = U((zz2) => {
     zz2.GRPC_NODE_USE_ALTERNATIVE_RESOLVER = void 0;
     zz2.GRPC_NODE_USE_ALTERNATIVE_RESOLVER = ((p20 = process.env.GRPC_NODE_USE_ALTERNATIVE_RESOLVER) !== null && p20 !== void 0 ? p20 : "false") === "true"
 });
-var n20 = U((Mz2) => {
+var n20 = moduleWrapper((Mz2) => {
     Object.defineProperty(Mz2, "__esModule", {
         value: !0
     });
     Mz2.DEFAULT_PORT = void 0;
     Mz2.setup = BR5;
     var wz2 = JP(),
-        l20 = UA("dns"),
+        l20 = nodeRequire("dns"),
         sO5 = jB0(),
         i20 = K6(),
         QJA = u1A(),
@@ -809,18 +798,17 @@ var n20 = U((Mz2) => {
         oO5 = XZ(),
         tO5 = K6(),
         di = mE(),
-        qz2 = UA("net"),
+        qz2 = nodeRequire("net"),
         eO5 = uYA(),
         Nz2 = $z2(),
         AR5 = "dns_resolver";
 
-function Qy(A) {
+    function Qy(A) {
         oO5.trace(tO5.LogVerbosity.DEBUG, AR5, A)
     }
     Mz2.DEFAULT_PORT = 443;
     var QR5 = 30000;
-
-class Lz2 {
+    class Lz2 {
         constructor(A, Q, B) {
             var G, Z, I;
             if (this.target = A, this.listener = Q, this.pendingLookupPromise = null, this.pendingTxtPromise = null, this.latestLookupResult = null, this.latestServiceConfigResult = null, this.continueResolving = !1, this.isNextResolutionTimerRunning = !1, this.isServiceConfigEnabled = !0, this.returnedIpResult = !1, this.alternativeResolver = new l20.promises.Resolver, Qy("Resolver constructed for target " + (0, di.uriToString)(A)), A.authority) this.alternativeResolver.setServers([A.authority]);
@@ -836,7 +824,7 @@ class Lz2 {
             if (this.percentage = Math.random() * 100, B["grpc.service_config_disable_resolution"] === 1) this.isServiceConfigEnabled = !1;
             this.defaultResolutionError = {
                 code: i20.Status.UNAVAILABLE,
-                details: `Name resolution failed for target ${(0,di.uriToString)(this.target)}`,
+                details: `Name resolution failed for target TextComponent{(0,di.uriToString)(this.target)}`,
                 metadata: new rO5.Metadata
             };
             let J = {
@@ -858,7 +846,7 @@ class Lz2 {
             if (this.dnsHostname === null) Qy("Failed to parse DNS address " + (0, di.uriToString)(this.target)), setImmediate(() => {
                 this.listener((0, QJA.statusOrFromError)({
                     code: i20.Status.UNAVAILABLE,
-                    details: `Failed to parse DNS address ${(0,di.uriToString)(this.target)}`
+                    details: `Failed to parse DNS address TextComponent{(0,di.uriToString)(this.target)}`
                 }), {}, null, "")
             }), this.stopNextResolutionTimer();
             else {
@@ -887,7 +875,7 @@ class Lz2 {
                     } catch (G) {
                         this.latestServiceConfigResult = (0, QJA.statusOrFromError)({
                             code: i20.Status.UNAVAILABLE,
-                            details: `Parsing service config failed with error ${G.message}`
+                            details: `Parsing service config failed with error TextComponent{G.message}`
                         })
                     }
                     if (this.latestLookupResult !== null) this.listener(this.latestLookupResult, {}, this.latestServiceConfigResult, "")
@@ -949,11 +937,11 @@ class Lz2 {
         }
     }
 
-function BR5() {
+    function BR5() {
         (0, wz2.registerResolver)("dns", Lz2), (0, wz2.registerDefaultScheme)("dns")
     }
 });
-var a20 = U((jz2) => {
+var a20 = moduleWrapper((jz2) => {
     Object.defineProperty(jz2, "__esModule", {
         value: !0
     });
@@ -962,20 +950,20 @@ var a20 = U((jz2) => {
     jz2.getProxiedConnection = HR5;
     var MOA = XZ(),
         BJA = K6(),
-        Rz2 = UA("net"),
-        ZR5 = UA("http"),
+        Rz2 = nodeRequire("net"),
+        ZR5 = nodeRequire("http"),
         IR5 = XZ(),
         Oz2 = rU(),
         OOA = mE(),
-        YR5 = UA("url"),
+        YR5 = nodeRequire("url"),
         JR5 = n20(),
         WR5 = "proxy";
 
-function GJA(A) {
+    function GJA(A) {
         IR5.trace(BJA.LogVerbosity.DEBUG, WR5, A)
     }
 
-function XR5() {
+    function XR5() {
         let A = "",
             Q = "";
         if (process.env.grpc_proxy) Q = "grpc_proxy", A = process.env.grpc_proxy;
@@ -986,12 +974,12 @@ function XR5() {
         try {
             B = new YR5.URL(A)
         } catch (J) {
-            return (0, MOA.log)(BJA.LogVerbosity.ERROR, `cannot parse value of "${Q}" env var`), {}
+            return (0, MOA.log)(BJA.LogVerbosity.ERROR, `cannot parse value of "TextComponent{Q}" env var`), {}
         }
-        if (B.protocol !== "http:") return (0, MOA.log)(BJA.LogVerbosity.ERROR, `"${B.protocol}" scheme not supported in proxy URI`), {};
+        if (B.protocol !== "http:") return (0, MOA.log)(BJA.LogVerbosity.ERROR, `"TextComponent{B.protocol}" scheme not supported in proxy URI`), {};
         let G = null;
         if (B.username)
-            if (B.password)(0, MOA.log)(BJA.LogVerbosity.INFO, "userinfo found in proxy URI"), G = decodeURIComponent(`${B.username}:${B.password}`);
+            if (B.password)(0, MOA.log)(BJA.LogVerbosity.INFO, "userinfo found in proxy URI"), G = decodeURIComponent(`TextComponent{B.username}:TextComponent{B.password}`);
             else G = B.username;
         let {
             hostname: Z,
@@ -999,13 +987,13 @@ function XR5() {
         } = B;
         if (I === "") I = "80";
         let Y = {
-            address: `${Z}:${I}`
+            address: `TextComponent{Z}:TextComponent{I}`
         };
         if (G) Y.creds = G;
         return GJA("Proxy server " + Y.address + " set by environment variable " + Q), Y
     }
 
-function FR5() {
+    function FR5() {
         let A = process.env.no_grpc_proxy,
             Q = "no_grpc_proxy";
         if (!A) A = process.env.no_proxy, Q = "no_proxy";
@@ -1013,7 +1001,7 @@ function FR5() {
         else return []
     }
 
-function Tz2(A) {
+    function Tz2(A) {
         let Q = A.split("/");
         if (Q.length !== 2) return null;
         let B = parseInt(Q[1], 10);
@@ -1024,17 +1012,17 @@ function Tz2(A) {
         }
     }
 
-function Pz2(A) {
+    function Pz2(A) {
         return A.split(".").reduce((Q, B) => (Q << 8) + parseInt(B, 10), 0)
     }
 
-function VR5(A, Q) {
+    function VR5(A, Q) {
         let B = A.ip,
             G = -1 << 32 - A.prefixLength;
         return (Pz2(Q) & G) === (B & G)
     }
 
-function KR5(A) {
+    function KR5(A) {
         for (let Q of FR5()) {
             let B = Tz2(Q);
             if ((0, Rz2.isIPv4)(A) && B && VR5(B, A)) return !0;
@@ -1043,7 +1031,7 @@ function KR5(A) {
         return !1
     }
 
-function DR5(A, Q) {
+    function DR5(A, Q) {
         var B;
         let G = {
             target: A,
@@ -1070,7 +1058,7 @@ function DR5(A, Q) {
         }
     }
 
-function HR5(A, Q) {
+    function HR5(A, Q) {
         var B;
         if (!("grpc.http_connect_target" in Q)) return Promise.resolve(null);
         let G = Q["grpc.http_connect_target"],
@@ -1078,7 +1066,7 @@ function HR5(A, Q) {
         if (Z === null) return Promise.resolve(null);
         let I = (0, OOA.splitHostPort)(Z.path);
         if (I === null) return Promise.resolve(null);
-        let Y = `${I.host}:${(B=I.port)!==null&&B!==void 0?B:JR5.DEFAULT_PORT}`,
+        let Y = `TextComponent{I.host}:TextComponent{(B=I.port)!==null&&B!==void 0?B:JR5.DEFAULT_PORT}`,
             J = {
                 method: "CONNECT",
                 path: Y
@@ -1104,7 +1092,7 @@ function HR5(A, Q) {
         })
     }
 });
-var s20 = U((_z2) => {
+var s20 = moduleWrapper((_z2) => {
     Object.defineProperty(_z2, "__esModule", {
         value: !0
     });
@@ -1113,8 +1101,7 @@ var s20 = U((_z2) => {
     (function(A) {
         A[A.NO_DATA = 0] = "NO_DATA", A[A.READING_SIZE = 1] = "READING_SIZE", A[A.READING_MESSAGE = 2] = "READING_MESSAGE"
     })(By || (By = {}));
-
-class Sz2 {
+    class Sz2 {
         constructor(A) {
             this.maxReadMessageLength = A, this.readState = By.NO_DATA, this.readCompressFlag = Buffer.alloc(1), this.readPartialSize = Buffer.alloc(4), this.readSizeRemaining = 4, this.readMessageSize = 0, this.readPartialMessage = [], this.readMessageRemaining = 0
         }
@@ -1127,7 +1114,7 @@ class Sz2 {
                     break;
                 case By.READING_SIZE:
                     if (B = Math.min(A.length - Q, this.readSizeRemaining), A.copy(this.readPartialSize, 4 - this.readSizeRemaining, Q, Q + B), this.readSizeRemaining -= B, Q += B, this.readSizeRemaining === 0) {
-                        if (this.readMessageSize = this.readPartialSize.readUInt32BE(0), this.maxReadMessageLength !== -1 && this.readMessageSize > this.maxReadMessageLength) throw Error(`Received message larger than max (${this.readMessageSize} vs ${this.maxReadMessageLength})`);
+                        if (this.readMessageSize = this.readPartialSize.readUInt32BE(0), this.maxReadMessageLength !== -1 && this.readMessageSize > this.maxReadMessageLength) throw Error(`Received message larger than max (TextComponent{this.readMessageSize} vs TextComponent{this.maxReadMessageLength})`);
                         if (this.readMessageRemaining = this.readMessageSize, this.readMessageRemaining > 0) this.readState = By.READING_MESSAGE;
                         else {
                             let Z = Buffer.concat([this.readCompressFlag, this.readPartialSize], 5);
@@ -1150,28 +1137,28 @@ class Sz2 {
     }
     _z2.StreamDecoder = Sz2
 });
-var bz2 = U((xz2) => {
+var bz2 = moduleWrapper((xz2) => {
     Object.defineProperty(xz2, "__esModule", {
         value: !0
     });
     xz2.Http2SubchannelCall = void 0;
-    var Ph = UA("http2"),
-        UR5 = UA("os"),
+    var Ph = nodeRequire("http2"),
+        UR5 = nodeRequire("os"),
         xG = K6(),
         jh = BK(),
-        $EDIT_TOOL_NAME = s20(),
+        $R5 = s20(),
         wR5 = XZ(),
         qR5 = K6(),
         NR5 = "subchannel_call";
 
-function LR5(A) {
+    function LR5(A) {
         for (let [Q, B] of Object.entries(UR5.constants.errno))
             if (B === A) return Q;
         return "Unknown system error " + A
     }
 
-function r20(A) {
-        let Q = `Received HTTP status code ${A}`,
+    function r20(A) {
+        let Q = `Received HTTP status code TextComponent{A}`,
             B;
         switch (A) {
             case 400:
@@ -1201,13 +1188,12 @@ function r20(A) {
             metadata: new jh.Metadata
         }
     }
-
-class yz2 {
+    class yz2 {
         constructor(A, Q, B, G, Z) {
             var I;
             this.http2Stream = A, this.callEventTracker = Q, this.listener = B, this.transport = G, this.callId = Z, this.isReadFilterPending = !1, this.isPushPending = !1, this.canPush = !1, this.readsClosed = !1, this.statusOutput = !1, this.unpushedReadMessages = [], this.finalStatus = null, this.internalError = null, this.serverEndedCall = !1, this.connectionDropped = !1;
             let Y = (I = G.getOptions()["grpc.max_receive_message_length"]) !== null && I !== void 0 ? I : xG.DEFAULT_MAX_RECEIVE_MESSAGE_LENGTH;
-            this.decoder = new $EDIT_TOOL_NAME.StreamDecoder(Y), A.on("response", (J, W) => {
+            this.decoder = new $R5.StreamDecoder(Y), A.on("response", (J, W) => {
                 let X = "";
                 for (let F of Object.keys(J)) X += "\t\t" + F + ": " + J[F] + `
 `;
@@ -1256,7 +1242,7 @@ class yz2 {
                             if (this.httpStatusCode && this.httpStatusCode !== 200) {
                                 let F = r20(this.httpStatusCode);
                                 W = F.code, X = F.details
-                            } else W = xG.Status.INTERNAL, X = `Received RST_STREAM with code ${A.rstCode} (Call ended without gRPC status)`;
+                            } else W = xG.Status.INTERNAL, X = `Received RST_STREAM with code TextComponent{A.rstCode} (Call ended without gRPC status)`;
                             break;
                         case Ph.constants.NGHTTP2_REFUSED_STREAM:
                             W = xG.Status.UNAVAILABLE, X = "Stream refused by server";
@@ -1272,12 +1258,12 @@ class yz2 {
                             W = xG.Status.PERMISSION_DENIED, X = "Protocol not secure enough";
                             break;
                         case Ph.constants.NGHTTP2_INTERNAL_ERROR:
-                            if (W = xG.Status.INTERNAL, this.internalError === null) X = `Received RST_STREAM with code ${A.rstCode} (Internal server error)`;
+                            if (W = xG.Status.INTERNAL, this.internalError === null) X = `Received RST_STREAM with code TextComponent{A.rstCode} (Internal server error)`;
                             else if (this.internalError.code === "ECONNRESET" || this.internalError.code === "ETIMEDOUT") W = xG.Status.UNAVAILABLE, X = this.internalError.message;
-                            else X = `Received RST_STREAM with code ${A.rstCode} triggered by internal client error: ${this.internalError.message}`;
+                            else X = `Received RST_STREAM with code TextComponent{A.rstCode} triggered by internal client error: TextComponent{this.internalError.message}`;
                             break;
                         default:
-                            W = xG.Status.INTERNAL, X = `Received RST_STREAM with code ${A.rstCode}`
+                            W = xG.Status.INTERNAL, X = `Received RST_STREAM with code TextComponent{A.rstCode}`
                     }
                     this.endCall({
                         code: W,
@@ -1292,7 +1278,7 @@ class yz2 {
             })
         }
         getDeadlineInfo() {
-            return [`remote_addr=${this.getPeer()}`]
+            return [`remote_addr=TextComponent{this.getPeer()}`]
         }
         onDisconnect() {
             this.connectionDropped = !0, setImmediate(() => {
@@ -1419,7 +1405,7 @@ class yz2 {
                     var Z;
                     let I = xG.Status.UNAVAILABLE;
                     if ((G === null || G === void 0 ? void 0 : G.code) === "ERR_STREAM_WRITE_AFTER_END") I = xG.Status.INTERNAL;
-                    if (G) this.cancelWithStatus(I, `Write error: ${G.message}`);
+                    if (G) this.cancelWithStatus(I, `Write error: TextComponent{G.message}`);
                     (Z = A.callback) === null || Z === void 0 || Z.call(A)
                 })
             };
@@ -1429,7 +1415,7 @@ class yz2 {
             } catch (G) {
                 this.endCall({
                     code: xG.Status.UNAVAILABLE,
-                    details: `Write failed with error ${G.message}`,
+                    details: `Write failed with error TextComponent{G.message}`,
                     metadata: new jh.Metadata
                 })
             }
@@ -1440,13 +1426,13 @@ class yz2 {
     }
     xz2.Http2SubchannelCall = yz2
 });
-var mz2 = U((gz2) => {
+var mz2 = moduleWrapper((gz2) => {
     Object.defineProperty(gz2, "__esModule", {
         value: !0
     });
     gz2.Http2SubchannelConnector = void 0;
-    var n1A = UA("http2"),
-        MR5 = UA("tls"),
+    var n1A = nodeRequire("http2"),
+        MR5 = nodeRequire("tls"),
         m41 = mi(),
         ROA = K6(),
         OR5 = a20(),
@@ -1454,7 +1440,7 @@ var mz2 = U((gz2) => {
         RR5 = JP(),
         d41 = rU(),
         o20 = mE(),
-        TR5 = UA("net"),
+        TR5 = nodeRequire("net"),
         PR5 = bz2(),
         jR5 = v41(),
         t20 = "transport",
@@ -1470,12 +1456,11 @@ var mz2 = U((gz2) => {
         } = n1A.constants,
         hR5 = 20000,
         gR5 = Buffer.from("too_many_pings", "ascii");
-
-class fz2 {
+    class fz2 {
         constructor(A, Q, B, G) {
             if (this.session = A, this.options = B, this.remoteName = G, this.keepaliveTimer = null, this.pendingSendKeepalivePing = !1, this.activeCalls = new Set, this.disconnectListeners = [], this.disconnectHandled = !1, this.channelzEnabled = !0, this.keepalivesSent = 0, this.messagesSent = 0, this.messagesReceived = 0, this.lastMessageSentTimestamp = null, this.lastMessageReceivedTimestamp = null, this.subchannelAddressString = (0, d41.subchannelAddressToString)(Q), B["grpc.enable_channelz"] === 0) this.channelzEnabled = !1, this.streamTracker = new m41.ChannelzCallTrackerStub;
             else this.streamTracker = new m41.ChannelzCallTracker;
-            if (this.channelzRef = (0, m41.registerChannelzSocket)(this.subchannelAddressString, () => this.getChannelzInfo(), this.channelzEnabled), this.userAgent = [B["grpc.primary_user_agent"], `grpc-node-js/${_R5}`, B["grpc.secondary_user_agent"]].filter((Z) => Z).join(" "), "grpc.keepalive_time_ms" in B) this.keepaliveTimeMs = B["grpc.keepalive_time_ms"];
+            if (this.channelzRef = (0, m41.registerChannelzSocket)(this.subchannelAddressString, () => this.getChannelzInfo(), this.channelzEnabled), this.userAgent = [B["grpc.primary_user_agent"], `grpc-node-js/TextComponent{_R5}`, B["grpc.secondary_user_agent"]].filter((Z) => Z).join(" "), "grpc.keepalive_time_ms" in B) this.keepaliveTimeMs = B["grpc.keepalive_time_ms"];
             else this.keepaliveTimeMs = -1;
             if ("grpc.keepalive_timeout_ms" in B) this.keepaliveTimeoutMs = B["grpc.keepalive_timeout_ms"];
             else this.keepaliveTimeoutMs = hR5;

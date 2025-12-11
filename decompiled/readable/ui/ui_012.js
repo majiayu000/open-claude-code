@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_012.js
+ * 处理时间: 2025-12-09T03:41:39.029Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.099Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-            else throw new MHA.CredentialsProviderError(`Unsupported credential source in profile ${Q}. Got ${A}, expected EcsContainer or Ec2InstanceMetadata or Environment.`, {
+            else throw new MHA.CredentialsProviderError(`Unsupported credential source in profile TextComponent{Q}. Got TextComponent{A}, expected EcsContainer or Ec2InstanceMetadata or Environment.`, {
                 logger: B
             })
         }, "resolveCredentialSource"),
@@ -39,7 +42,7 @@
             logger: B
         }) => {
             let G = typeof A.source_profile === "string" && typeof A.credential_source > "u";
-            if (G) B?.debug?.(`    ${Q} isAssumeRoleWithSourceProfile source_profile=${A.source_profile}`);
+            if (G) B?.debug?.(`    TextComponent{Q} isAssumeRoleWithSourceProfile source_profile=TextComponent{A.source_profile}`);
             return G
         }, "isAssumeRoleWithSourceProfile"),
         pB8 = RX((A, {
@@ -47,7 +50,7 @@
             logger: B
         }) => {
             let G = typeof A.credential_source === "string" && typeof A.source_profile > "u";
-            if (G) B?.debug?.(`    ${Q} isCredentialSourceProfile credential_source=${A.credential_source}`);
+            if (G) B?.debug?.(`    TextComponent{Q} isCredentialSourceProfile credential_source=TextComponent{A.credential_source}`);
             return G
         }, "isCredentialSourceProfile"),
         lB8 = RX(async (A, Q, B, G = {}) => {
@@ -70,10 +73,10 @@
                     }
                 }, B.clientPlugins)
             }
-            if (I && I in G) throw new MHA.CredentialsProviderError(`Detected a cycle attempting to resolve credentials for profile ${(0,UO1.getProfileName)(B)}. Profiles visited: ` + Object.keys(G).join(", "), {
+            if (I && I in G) throw new MHA.CredentialsProviderError(`Detected a cycle attempting to resolve credentials for profile TextComponent{(0,UO1.getProfileName)(B)}. Profiles visited: ` + Object.keys(G).join(", "), {
                 logger: B.logger
             });
-            B.logger?.debug(`@aws-sdk/credential-provider-ini - finding credential resolver using ${I?`source_profile=[${I}]`:`profile=[${A}]`}`);
+            B.logger?.debug(`@aws-sdk/credential-provider-ini - finding credential resolver using TextComponent{I?`source_profile=[TextComponent{I}]`:`profile=[TextComponent{A}]`}`);
             let J = I ? uqQ(I, Q, B, {
                 ...G,
                 [I]: !0
@@ -82,7 +85,7 @@
             else {
                 let W = {
                         RoleArn: Z.role_arn,
-                        RoleSessionName: Z.role_session_name || `aws-sdk-js-${Date.now()}`,
+                        RoleSessionName: Z.role_session_name || `aws-sdk-js-TextComponent{Date.now()}`,
                         ExternalId: Z.external_id,
                         DurationSeconds: parseInt(Z.duration_seconds || "3600", 10)
                     },
@@ -90,7 +93,7 @@
                         mfa_serial: X
                     } = Z;
                 if (X) {
-                    if (!B.mfaCodeProvider) throw new MHA.CredentialsProviderError(`Profile ${A} requires multi-factor authentication, but no MFA code callback was provided.`, {
+                    if (!B.mfaCodeProvider) throw new MHA.CredentialsProviderError(`Profile TextComponent{A} requires multi-factor authentication, but no MFA code callback was provided.`, {
                         logger: B.logger,
                         tryNextLink: !1
                     });
@@ -163,7 +166,7 @@
             if (rB8(I)) return oB8(I, B);
             if (iB8(I)) return nB8(B, A);
             if (sB8(I)) return await aB8(A, I, B);
-            throw new MHA.CredentialsProviderError(`Could not resolve credentials using profile: [${A}] in configuration/credentials file(s).`, {
+            throw new MHA.CredentialsProviderError(`Could not resolve credentials using profile: [TextComponent{A}] in configuration/credentials file(s).`, {
                 logger: B.logger
             })
         }, "resolveProfileData"),
@@ -184,7 +187,7 @@
             }), G, B)
         }, "fromIni")
 });
-var pqQ = U((dqQ) => {
+var pqQ = moduleWrapper((dqQ) => {
     Object.defineProperty(dqQ, "__esModule", {
         value: !0
     });
@@ -195,7 +198,7 @@ var pqQ = U((dqQ) => {
         });
     dqQ.fromIni = A28
 });
-var nqQ = U((lqQ) => {
+var nqQ = moduleWrapper((lqQ) => {
     Object.defineProperty(lqQ, "__esModule", {
         value: !0
     });
@@ -207,7 +210,7 @@ var nqQ = U((lqQ) => {
         };
     lqQ.fromInstanceMetadata = G28
 });
-var QNQ = U((qC7, ANQ) => {
+var QNQ = moduleWrapper((qC7, ANQ) => {
     var {
         create: Z28,
         defineProperty: RHA,
@@ -333,7 +336,7 @@ var QNQ = U((qC7, ANQ) => {
         tqQ = kuA((A) => A?.expiration !== void 0, "credentialsWillNeedRefresh"),
         eqQ = kuA((A) => A?.expiration !== void 0 && A.expiration.getTime() - Date.now() < 300000, "credentialsTreatedAsExpired")
 });
-var qO1 = U((BNQ) => {
+var qO1 = moduleWrapper((BNQ) => {
     Object.defineProperty(BNQ, "__esModule", {
         value: !0
     });
@@ -344,7 +347,7 @@ var qO1 = U((BNQ) => {
         });
     BNQ.fromNodeProviderChain = C28
 });
-var YNQ = U((ZNQ) => {
+var YNQ = moduleWrapper((ZNQ) => {
     Object.defineProperty(ZNQ, "__esModule", {
         value: !0
     });
@@ -353,7 +356,7 @@ var YNQ = U((ZNQ) => {
         z28 = (A) => (0, E28.fromProcess)(A);
     ZNQ.fromProcess = z28
 });
-var XNQ = U((JNQ) => {
+var XNQ = moduleWrapper((JNQ) => {
     Object.defineProperty(JNQ, "__esModule", {
         value: !0
     });
@@ -366,7 +369,7 @@ var XNQ = U((JNQ) => {
         };
     JNQ.fromSSO = $28
 });
-var VNQ = U((yuA) => {
+var VNQ = moduleWrapper((yuA) => {
     Object.defineProperty(yuA, "__esModule", {
         value: !0
     });
@@ -385,7 +388,7 @@ var VNQ = U((yuA) => {
         }
     })
 });
-var HNQ = U((OS) => {
+var HNQ = moduleWrapper((OS) => {
     var q28 = OS && OS.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -419,8 +422,7 @@ var HNQ = U((OS) => {
             };
             return function(Q) {
                 if (Q && Q.__esModule) return Q;
-
-var B = {};
+                var B = {};
                 if (Q != null) {
                     for (var G = A(Q), Z = 0; Z < G.length; Z++)
                         if (G[Z] !== "default") q28(B, Q, G[Z])
@@ -477,7 +479,7 @@ var B = {};
                         w = "STS default requestHandler";
                     if (z[0]) w = "options.clientConfig.requestHandler";
                     else if (z[1]) w = "caller client's requestHandler";
-                    J?.debug?.(`@aws-sdk/credential-providers - fromTemporaryCredentials STS client init with ${E}=${await(0,M28.normalizeProvider)(xuA(C))()}, ${H}, ${w}.`), G = new F({
+                    J?.debug?.(`@aws-sdk/credential-providers - fromTemporaryCredentials STS client init with TextComponent{E}=TextComponent{await(0,M28.normalizeProvider)(xuA(C))()}, TextComponent{H}, TextComponent{w}.`), G = new F({
                         ...A.clientConfig,
                         credentials: xuA(D),
                         logger: J,
@@ -491,7 +493,7 @@ var B = {};
                 let {
                     Credentials: V
                 } = await G.send(new X(W));
-                if (!V || !V.AccessKeyId || !V.SecretAccessKey) throw new KNQ.CredentialsProviderError(`Invalid response from STS.assumeRole call with role ${W.RoleArn}`, {
+                if (!V || !V.AccessKeyId || !V.SecretAccessKey) throw new KNQ.CredentialsProviderError(`Invalid response from STS.assumeRole call with role TextComponent{W.RoleArn}`, {
                     logger: J
                 });
                 return {
@@ -512,7 +514,7 @@ var B = {};
                 if (Q !== void 0) return Q
         }
 });
-var zNQ = U((CNQ) => {
+var zNQ = moduleWrapper((CNQ) => {
     Object.defineProperty(CNQ, "__esModule", {
         value: !0
     });
@@ -539,7 +541,7 @@ var zNQ = U((CNQ) => {
         };
     CNQ.fromTemporaryCredentials = _28
 });
-var wNQ = U((UNQ) => {
+var wNQ = moduleWrapper((UNQ) => {
     Object.defineProperty(UNQ, "__esModule", {
         value: !0
     });
@@ -550,7 +552,7 @@ var wNQ = U((UNQ) => {
         });
     UNQ.fromTokenFile = y28
 });
-var LNQ = U((qNQ) => {
+var LNQ = moduleWrapper((qNQ) => {
     Object.defineProperty(qNQ, "__esModule", {
         value: !0
     });
@@ -561,7 +563,7 @@ var LNQ = U((qNQ) => {
         });
     qNQ.fromWebToken = v28
 });
-var NO1 = U((qH) => {
+var NO1 = moduleWrapper((qH) => {
     Object.defineProperty(qH, "__esModule", {
         value: !0
     });
@@ -600,7 +602,6 @@ function RNQ(A) {
     let B = Q.Credentials;
     return typeof B.AccessKeyId === "string" && typeof B.SecretAccessKey === "string" && typeof B.SessionToken === "string" && B.AccessKeyId.length > 0 && B.SecretAccessKey.length > 0 && B.SessionToken.length > 0
 }
-// Async function: TNQ
 async function TNQ() {
     try {
         g("Clearing AWS credential provider cache"), await MNQ.fromIni({
@@ -613,11 +614,11 @@ async function TNQ() {
 var vuA, MNQ, LO1 = async () => {
     await new vuA.STSClient().send(new vuA.GetCallerIdentityCommand({}))
 };
-var MO1 = L(() => {
+var MO1 = lazyLoader(() => {
     D0();
-    vuA = GA(YGQ(), 1), MNQ = GA(NO1(), 1)
+    vuA = esmImport(YGQ(), 1), MNQ = esmImport(NO1(), 1)
 });
-var OO1 = U((xC7, bNQ) => {
+var OO1 = moduleWrapper((xC7, bNQ) => {
     var {
         defineProperty: buA,
         getOwnPropertyDescriptor: h28,
@@ -709,7 +710,7 @@ var OO1 = U((xC7, bNQ) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(vNQ || {})
 });
-var lz = U((vC7, mNQ) => {
+var lz = moduleWrapper((vC7, mNQ) => {
     var {
         defineProperty: huA,
         getOwnPropertyDescriptor: s28,
@@ -788,7 +789,7 @@ var lz = U((vC7, mNQ) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values
@@ -822,7 +823,7 @@ var lz = U((vC7, mNQ) => {
                 Ld(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -844,7 +845,7 @@ var lz = U((vC7, mNQ) => {
             }
         };
 
-function gNQ(A) {
+    function gNQ(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -854,8 +855,7 @@ function gNQ(A) {
         }, {})
     }
     Ld(gNQ, "cloneQuery");
-
-var Y98 = class {
+    var Y98 = class {
         static {
             Ld(this, "HttpResponse")
         }
@@ -869,12 +869,12 @@ var Y98 = class {
         }
     };
 
-function uNQ(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function uNQ(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     Ld(uNQ, "isValidHostname")
 });
-var THA = U((gC7, iNQ) => {
+var THA = moduleWrapper((gC7, iNQ) => {
     var {
         defineProperty: uuA,
         getOwnPropertyDescriptor: J98,
@@ -908,7 +908,7 @@ var THA = U((gC7, iNQ) => {
     iNQ.exports = K98(dNQ);
     var D98 = lz();
 
-function cNQ(A) {
+    function cNQ(A) {
         return A
     }
     guA(cNQ, "resolveHostHeaderConfig");
@@ -922,7 +922,7 @@ function cNQ(A) {
             if (Z.indexOf("h2") >= 0 && !G.headers[":authority"]) delete G.headers.host, G.headers[":authority"] = G.hostname + (G.port ? ":" + G.port : "");
             else if (!G.headers.host) {
                 let I = G.hostname;
-                if (G.port != null) I += `:${G.port}`;
+                if (G.port != null) I += `:TextComponent{G.port}`;
                 G.headers.host = I
             }
             return Q(B)
@@ -940,7 +940,7 @@ function cNQ(A) {
             }, "applyToStack")
         }), "getHostHeaderPlugin")
 });
-var PHA = U((uC7, rNQ) => {
+var PHA = moduleWrapper((uC7, rNQ) => {
     var {
         defineProperty: muA,
         getOwnPropertyDescriptor: C98,
@@ -1027,7 +1027,7 @@ var PHA = U((uC7, rNQ) => {
             }, "applyToStack")
         }), "getLoggerPlugin")
 });
-var jHA = U((mC7, ALQ) => {
+var jHA = moduleWrapper((mC7, ALQ) => {
     var {
         defineProperty: cuA,
         getOwnPropertyDescriptor: N98,
@@ -1091,7 +1091,7 @@ var jHA = U((mC7, ALQ) => {
             }, "applyToStack")
         }), "getRecursionDetectionPlugin")
 });
-var Q6A = U((dC7, FLQ) => {
+var Q6A = moduleWrapper((dC7, FLQ) => {
     var {
         defineProperty: puA,
         getOwnPropertyDescriptor: k98,
@@ -1187,7 +1187,7 @@ var Q6A = U((dC7, FLQ) => {
                     supportsDualStack: !0,
                     supportsFIPS: !0
                 },
-                regionRegex: "^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$",
+                regionRegex: "^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "af-south-1": {
                         description: "Africa (Cape Town)"
@@ -1302,7 +1302,7 @@ var Q6A = U((dC7, FLQ) => {
                     supportsDualStack: !0,
                     supportsFIPS: !0
                 },
-                regionRegex: "^cn\\-\\w+\\-\\d+$",
+                regionRegex: "^cn\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-cn-global": {
                         description: "AWS China global region"
@@ -1324,7 +1324,7 @@ var Q6A = U((dC7, FLQ) => {
                     supportsDualStack: !0,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-gov\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-gov\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-us-gov-global": {
                         description: "AWS GovCloud (US) global region"
@@ -1346,7 +1346,7 @@ var Q6A = U((dC7, FLQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-iso\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-iso\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-global": {
                         description: "AWS ISO (US) global region"
@@ -1368,7 +1368,7 @@ var Q6A = U((dC7, FLQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-isob\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-isob\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-b-global": {
                         description: "AWS ISOB (US) global region"
@@ -1387,7 +1387,7 @@ var Q6A = U((dC7, FLQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^eu\\-isoe\\-\\w+\\-\\d+$",
+                regionRegex: "^eu\\-isoe\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-e-global": {
                         description: "AWS ISOE (Europe) global region"
@@ -1406,7 +1406,7 @@ var Q6A = U((dC7, FLQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-isof\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-isof\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-f-global": {
                         description: "AWS ISOF global region"
@@ -1428,7 +1428,7 @@ var Q6A = U((dC7, FLQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^eusc\\-(de)\\-\\w+\\-\\d+$",
+                regionRegex: "^eusc\\-(de)\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "eusc-de-east-1": {
                         description: "EU (Germany)"
@@ -1483,7 +1483,7 @@ var Q6A = U((dC7, FLQ) => {
         };
     MZ.customEndpointFunctions.aws = XLQ
 });
-var nr = U((cC7, nuA) => {
+var nr = moduleWrapper((cC7, nuA) => {
     var VLQ, KLQ, DLQ, HLQ, CLQ, ELQ, zLQ, ULQ, $LQ, wLQ, qLQ, NLQ, LLQ, luA, PO1, MLQ, OLQ, RLQ, B6A, TLQ, PLQ, jLQ, SLQ, _LQ, kLQ, yLQ, xLQ, vLQ, iuA, bLQ, fLQ, hLQ;
     (function(A) {
         var Q = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
@@ -1493,7 +1493,7 @@ var nr = U((cC7, nuA) => {
         else if (typeof nuA === "object" && typeof cC7 === "object") A(B(Q, B(cC7)));
         else A(B(Q));
 
-function B(G, Z) {
+        function B(G, Z) {
             if (G !== Q)
                 if (typeof Object.create === "function") Object.defineProperty(G, "__esModule", {
                     value: !0
@@ -1517,6 +1517,6 @@ function B(G, Z) {
             if (typeof Y !== "function" && Y !== null) throw TypeError("Class extends value " + String(Y) + " is not a constructor or null");
             Q(I, Y);
 
-function J() {
+            function J() {
                 this.constructor = I
             }

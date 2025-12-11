@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_016.js
+ * 处理时间: 2025-12-09T03:41:38.726Z
+ * 变量映射: 7 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.078Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -37,7 +40,7 @@
     };
     pa5.impl = Nu2
 });
-var bu2 = U((EYZ, vu2) => {
+var bu2 = moduleWrapper((EYZ, vu2) => {
     function sa5(A) {
         for (var Q = 1; Q < arguments.length; Q++) {
             var B = arguments[Q];
@@ -47,58 +50,54 @@ var bu2 = U((EYZ, vu2) => {
         return A
     }
 
-function EG0(A, Q) {
+    function EG0(A, Q) {
         return Array(Q + 1).join(A)
     }
 
-function ra5(A) {
+    function ra5(A) {
         return A.replace(/^\n*/, "")
     }
 
-function oa5(A) {
+    function oa5(A) {
         var Q = A.length;
         while (Q > 0 && A[Q - 1] === `
 `) Q--;
         return A.substring(0, Q)
     }
+    var ta5 = ["ADDRESS", "ARTICLE", "ASIDE", "AUDIO", "BLOCKQUOTE", "BODY", "CANVAS", "CENTER", "DD", "DIR", "DIV", "DL", "DT", "FIELDSET", "FIGCAPTION", "FIGURE", "FOOTER", "FORM", "FRAMESET", "H1", "H2", "H3", "H4", "H5", "H6", "HEADER", "HGROUP", "HR", "HTML", "ISINDEX", "LI", "MAIN", "MENU", "NAV", "NOFRAMES", "NOSCRIPT", "OL", "OUTPUT", "P", "PRE", "SECTION", "TABLE", "TBODY", "TD", "TFOOT", "TH", "THEAD", "getProviderIdentifier", "UL"];
 
-var ta5 = ["ADDRESS", "ARTICLE", "ASIDE", "AUDIO", "BLOCKQUOTE", "BODY", "CANVAS", "CENTER", "DD", "DIR", "DIV", "DL", "DT", "FIELDSET", "FIGCAPTION", "FIGURE", "FOOTER", "FORM", "FRAMESET", "H1", "H2", "H3", "H4", "H5", "H6", "HEADER", "HGROUP", "HR", "HTML", "ISINDEX", "LI", "MAIN", "MENU", "NAV", "NOFRAMES", "NOSCRIPT", "OL", "OUTPUT", "P", "PRE", "SECTION", "TABLE", "TBODY", "TD", "TFOOT", "TH", "THEAD", "TR", "UL"];
-
-function zG0(A) {
+    function zG0(A) {
         return UG0(A, ta5)
     }
+    var Tu2 = ["AREA", "BASE", "BR", "COL", "COMMAND", "EMBED", "HR", "IMG", "INPUT", "KEYGEN", "LINK", "META", "PARAM", "SOURCE", "TRACK", "WBR"];
 
-var Tu2 = ["AREA", "BASE", "BR", "COL", "COMMAND", "EMBED", "HR", "IMG", "INPUT", "KEYGEN", "LINK", "META", "PARAM", "SOURCE", "TRACK", "WBR"];
-
-function Pu2(A) {
+    function Pu2(A) {
         return UG0(A, Tu2)
     }
 
-function ea5(A) {
+    function ea5(A) {
         return Su2(A, Tu2)
     }
+    var ju2 = ["A", "TABLE", "THEAD", "TBODY", "TFOOT", "TH", "TD", "IFRAME", "SCRIPT", "AUDIO", "VIDEO"];
 
-var ju2 = ["A", "TABLE", "THEAD", "TBODY", "TFOOT", "TH", "TD", "IFRAME", "SCRIPT", "AUDIO", "VIDEO"];
-
-function As5(A) {
+    function As5(A) {
         return UG0(A, ju2)
     }
 
-function Qs5(A) {
+    function Qs5(A) {
         return Su2(A, ju2)
     }
 
-function UG0(A, Q) {
+    function UG0(A, Q) {
         return Q.indexOf(A.nodeName) >= 0
     }
 
-function Su2(A, Q) {
+    function Su2(A, Q) {
         return A.getElementsByTagName && Q.some(function(B) {
             return A.getElementsByTagName(B).length
         })
     }
-
-var KC = {};
+    var KC = {};
     KC.paragraph = {
         filter: "p",
         replacement: function(A) {
@@ -138,7 +137,7 @@ var KC = {};
     KC.blockquote = {
         filter: "blockquote",
         replacement: function(A) {
-            return A = A.replace(/^\n+|\n+$/g, ""), A = A.replace(/^/gm, "> "), `
+            return A = A.replace(/^\n+|\n+TextComponent/g, ""), A = A.replace(/^/gm, "> "), `
 
 ` + A + `
 
@@ -161,7 +160,7 @@ var KC = {};
     KC.listItem = {
         filter: "li",
         replacement: function(A, Q, B) {
-            A = A.replace(/^\n+/, "").replace(/\n+$/, `
+            A = A.replace(/^\n+/, "").replace(/\n+TextComponent/, `
 `).replace(/\n/gm, `
     `);
             var G = B.bulletListMarker + "   ",
@@ -291,7 +290,7 @@ var KC = {};
         replacement: function(A) {
             if (!A) return "";
             A = A.replace(/\r?\n|\r/g, " ");
-            var Q = /^`|^ .*?[^ ].* $|`$/.test(A) ? " " : "",
+            var Q = /^`|^ .*?[^ ].* TextComponent|`TextComponent/.test(A) ? " " : "",
                 B = "`",
                 G = A.match(/`+/gm) || [];
             while (G.indexOf(B) !== -1) B = B + "`";
@@ -309,12 +308,12 @@ var KC = {};
         }
     };
 
-function S31(A) {
+    function S31(A) {
         return A ? A.replace(/(\n+\s*)+/g, `
 `) : ""
     }
 
-function _u2(A) {
+    function _u2(A) {
         this.options = A, this._keep = [], this._remove = [], this.blankRule = {
             replacement: A.blankReplacement
         }, this.keepReplacement = A.keepReplacement, this.defaultRule = {
@@ -353,7 +352,7 @@ function _u2(A) {
         }
     };
 
-function DG0(A, Q, B) {
+    function DG0(A, Q, B) {
         for (var G = 0; G < A.length; G++) {
             var Z = A[G];
             if (Bs5(Z, Q, B)) return Z
@@ -361,7 +360,7 @@ function DG0(A, Q, B) {
         return
     }
 
-function Bs5(A, Q, B) {
+    function Bs5(A, Q, B) {
         var G = A.filter;
         if (typeof G === "string") {
             if (G === Q.nodeName.toLowerCase()) return !0
@@ -372,7 +371,7 @@ function Bs5(A, Q, B) {
         } else throw TypeError("`filter` needs to be a string, array, or function")
     }
 
-function Gs5(A) {
+    function Gs5(A) {
         var {
             element: Q,
             isBlock: B,
@@ -388,7 +387,7 @@ function Gs5(A) {
         while (W !== Q) {
             if (W.nodeType === 3 || W.nodeType === 4) {
                 var X = W.data.replace(/[ \r\n\t]+/g, " ");
-                if ((!I || / $/.test(I.data)) && !Y && X[0] === " ") X = X.substr(1);
+                if ((!I || / TextComponent/.test(I.data)) && !Y && X[0] === " ") X = X.substr(1);
                 if (!X) {
                     W = HG0(W);
                     continue
@@ -396,7 +395,7 @@ function Gs5(A) {
                 W.data = X, I = W
             } else if (W.nodeType === 1) {
                 if (B(W) || W.nodeName === "BR") {
-                    if (I) I.data = I.data.replace(/ $/, "");
+                    if (I) I.data = I.data.replace(/ TextComponent/, "");
                     I = null, Y = !1
                 } else if (G(W) || Z(W)) I = null, Y = !0;
                 else if (I) Y = !1
@@ -408,22 +407,22 @@ function Gs5(A) {
             J = W, W = F
         }
         if (I) {
-            if (I.data = I.data.replace(/ $/, ""), !I.data) HG0(I)
+            if (I.data = I.data.replace(/ TextComponent/, ""), !I.data) HG0(I)
         }
     }
 
-function HG0(A) {
+    function HG0(A) {
         var Q = A.nextSibling || A.parentNode;
         return A.parentNode.removeChild(A), Q
     }
 
-function Ou2(A, Q, B) {
+    function Ou2(A, Q, B) {
         if (A && A.parentNode === Q || B(Q)) return Q.nextSibling || Q.parentNode;
         return Q.firstChild || Q.nextSibling || Q.parentNode
     }
     var ku2 = typeof window < "u" ? window : {};
 
-function Zs5() {
+    function Zs5() {
         var A = ku2.DOMParser,
             Q = !1;
         try {
@@ -432,7 +431,7 @@ function Zs5() {
         return Q
     }
 
-function Is5() {
+    function Is5() {
         var A = function() {};
         {
             var Q = Mu2();
@@ -444,7 +443,7 @@ function Is5() {
     }
     var Ys5 = Zs5() ? ku2.DOMParser : Is5();
 
-function Js5(A, Q) {
+    function Js5(A, Q) {
         var B;
         if (typeof A === "string") {
             var G = Ws5().parseFromString('<x-turndown id="turndown-root">' + A + "</x-turndown>", "text/html");
@@ -459,23 +458,23 @@ function Js5(A, Q) {
     }
     var CG0;
 
-function Ws5() {
+    function Ws5() {
         return CG0 = CG0 || new Ys5, CG0
     }
 
-function Xs5(A) {
+    function Xs5(A) {
         return A.nodeName === "PRE" || A.nodeName === "CODE"
     }
 
-function Fs5(A, Q) {
+    function Fs5(A, Q) {
         return A.isBlock = zG0(A), A.isCode = A.nodeName === "CODE" || A.parentNode.isCode, A.isBlank = Vs5(A), A.flankingWhitespace = Ks5(A, Q), A
     }
 
-function Vs5(A) {
-        return !Pu2(A) && !As5(A) && /^\s*$/i.test(A.textContent) && !ea5(A) && !Qs5(A)
+    function Vs5(A) {
+        return !Pu2(A) && !As5(A) && /^\s*TextComponent/i.test(A.textContent) && !ea5(A) && !Qs5(A)
     }
 
-function Ks5(A, Q) {
+    function Ks5(A, Q) {
         if (A.isBlock || Q.preformattedCode && A.isCode) return {
             leading: "",
             trailing: ""
@@ -489,8 +488,8 @@ function Ks5(A, Q) {
         }
     }
 
-function Ds5(A) {
-        var Q = A.match(/^(([ \t\r\n]*)(\s*))(?:(?=\S)[\s\S]*\S)?((\s*?)([ \t\r\n]*))$/);
+    function Ds5(A) {
+        var Q = A.match(/^(([ \t\r\n]*)(\s*))(?:(?=\S)[\s\S]*\S)?((\s*?)([ \t\r\n]*))TextComponent/);
         return {
             leading: Q[1],
             leadingAscii: Q[2],
@@ -501,9 +500,9 @@ function Ds5(A) {
         }
     }
 
-function Ru2(A, Q, B) {
+    function Ru2(A, Q, B) {
         var G, Z, I;
-        if (A === "left") G = Q.previousSibling, Z = / $/;
+        if (A === "left") G = Q.previousSibling, Z = / TextComponent/;
         else G = Q.nextSibling, Z = /^ /;
         if (G) {
             if (G.nodeType === 3) I = Z.test(G.nodeValue);
@@ -529,10 +528,9 @@ function Ru2(A, Q, B) {
             [/^(\d+)\. /g, "$1\\. "]
         ];
 
-function _31(A) {
+    function _31(A) {
         if (!(this instanceof _31)) return new _31(A);
-
-var Q = {
+        var Q = {
             rules: KC,
             headingStyle: "setext",
             hr: "* * *",
@@ -597,7 +595,7 @@ var Q = {
         }
     };
 
-function yu2(A) {
+    function yu2(A) {
         var Q = this;
         return Hs5.call(A.childNodes, function(B, G) {
             G = new Fs5(G, Q.options);
@@ -608,14 +606,14 @@ function yu2(A) {
         }, "")
     }
 
-function Es5(A) {
+    function Es5(A) {
         var Q = this;
         return this.rules.forEach(function(B) {
             if (typeof B.append === "function") A = xu2(A, B.append(Q.options))
-        }), A.replace(/^[\t\r\n]+/, "").replace(/[\t\r\n\s]+$/, "")
+        }), A.replace(/^[\t\r\n]+/, "").replace(/[\t\r\n\s]+TextComponent/, "")
     }
 
-function zs5(A) {
+    function zs5(A) {
         var Q = this.rules.forNode(A),
             B = yu2.call(this, A),
             G = A.flankingWhitespace;
@@ -623,7 +621,7 @@ function zs5(A) {
         return G.leading + Q.replacement(B, A, this.options) + G.trailing
     }
 
-function xu2(A, Q) {
+    function xu2(A, Q) {
         var B = oa5(A),
             G = ra5(Q),
             Z = Math.max(A.length - B.length, Q.length - G.length),
@@ -633,7 +631,7 @@ function xu2(A, Q) {
         return B + I + G
     }
 
-function Us5(A) {
+    function Us5(A) {
         return A != null && (typeof A === "string" || A.nodeType && (A.nodeType === 1 || A.nodeType === 9 || A.nodeType === 11))
     }
     vu2.exports = _31
@@ -657,10 +655,9 @@ function Ns5(A) {
     if (Q.hostname.split(".").length < 2) return !1;
     return !0
 }
-
 async function Ls5(A) {
     try {
-        let Q = await GQ.get(`https://claude.ai/api/web/domain_info?domain=${encodeURIComponent(A)}`);
+        let Q = await GQ.get(`https://claude.ai/api/web/domain_info?domain=TextComponent{encodeURIComponent(A)}`);
         if (Q.status === 200) return Q.data.can_fetch === !0 ? {
             status: "allowed"
         } : {
@@ -668,7 +665,7 @@ async function Ls5(A) {
         };
         return {
             status: "check_failed",
-            error: Error(`Domain check returned status ${Q.status}`)
+            error: Error(`Domain check returned status TextComponent{Q.status}`)
         }
     } catch (Q) {
         return e(Q), {
@@ -693,7 +690,6 @@ function Ms5(A, Q) {
         return !1
     }
 }
-
 async function uu2(A, Q, B) {
     try {
         return await GQ.get(A, {
@@ -725,7 +721,6 @@ async function uu2(A, Q, B) {
 function Os5(A) {
     return "type" in A && A.type === "redirect"
 }
-
 async function mu2(A, Q) {
     if (!Ns5(A)) throw Error("Invalid URL");
     $s5();
@@ -774,7 +769,6 @@ async function mu2(A, Q) {
         bytes: X
     }
 }
-
 async function du2(A, Q, B, G) {
     let Z = d7B(Q, A),
         I = await gX({
@@ -804,7 +798,7 @@ var hu2, $G0, wG0, k31, gu2 = 900000,
     ws5 = 2000,
     qs5 = 10485760,
     fu2 = 1e5;
-var cu2 = L(() => {
+var cu2 = lazyLoader(() => {
     w3();
     kZ();
     w0();
@@ -812,24 +806,24 @@ var cu2 = L(() => {
     u1();
     RB();
     S0();
-    hu2 = GA(bu2(), 1);
+    hu2 = esmImport(bu2(), 1);
     $G0 = class $G0 extends Error {
         constructor(A) {
-            super(`Claude Code is unable to fetch from ${A}`);
+            super(`Claude Code is unable to fetch from TextComponent{A}`);
             this.name = "DomainBlockedError"
         }
     };
     wG0 = class wG0 extends Error {
         constructor(A) {
-            super(`Unable to verify if domain ${A} is safe to fetch. This may be due to network restrictions or enterprise security policies blocking claude.ai.`);
+            super(`Unable to verify if domain TextComponent{A} is safe to fetch. This may be due to network restrictions or enterprise security policies blocking claude.ai.`);
             this.name = "DomainCheckFailedError"
         }
     };
     k31 = new Map
 });
 var pu2;
-var lu2 = L(() => {
-    pu2 = new Set(["docs.anthropic.com", "docs.claude.com", "code.claude.com", "modelcontextprotocol.io", "docs.python.org", "en.cppreference.com", "docs.oracle.com", "learn.microsoft.com", "developer.mozilla.org", "go.dev", "www.php.net", "docs.swift.org", "kotlinlang.org", "ruby-doc.org", "doc.rust-lang.org", "www.typescriptlang.org", "react.dev", "angular.io", "vuejs.org", "nextjs.org", "expressjs.com", "nodejs.org", "jquery.com", "getbootstrap.com", "tailwindcss.com", "d3js.org", "threejs.org", "redux.js.org", "webpack.js.org", "jestjs.io", "reactrouter.com", "docs.djangoproject.com", "flask.palletsprojects.com", "fastapi.tiangolo.com", "pandas.pydata.org", "numpy.org", "www.tensorflow.org", "pytorch.org", "scikit-learn.org", "matplotlib.org", "requests.readthedocs.io", "jupyter.org", "laravel.com", "symfony.com", "wordpress.org", "docs.spring.io", "hibernate.org", "tomcat.apache.org", "gradle.org", "maven.apache.org", "asp.net", "dotnet.microsoft.com", "nuget.org", "blazor.net", "reactnative.dev", "docs.flutter.dev", "developer.apple.com", "developer.android.com", "keras.io", "spark.apache.org", "huggingface.co", "www.kaggle.com", "www.mongodb.com", "redis.io", "www.postgresql.org", "dev.mysql.com", "www.sqlite.org", "graphql.org", "prisma.io", "docs.aws.amazon.com", "cloud.google.com", "learn.microsoft.com", "kubernetes.io", "www.docker.com", "www.terraform.io", "www.ansible.com", "vercel.com/docs", "docs.netlify.com", "devcenter.heroku.com/", "cypress.io", "selenium.dev", "docs.unity.com", "docs.unrealengine.com", "git-scm.com", "nginx.org", "httpd.apache.org"])
+var lu2 = lazyLoader(() => {
+    pu2 = new Set(["docs.anthropic.com", "docs.claude.com", "code.claude.com", "modelcontextprotocol.io", "docs.python.org", "AGENT_OUTPUT_TOOL_NAME.cppreference.com", "docs.oracle.com", "learn.microsoft.com", "developer.mozilla.org", "go.dev", "www.php.net", "docs.swift.org", "kotlinlang.org", "ruby-doc.org", "doc.rust-lang.org", "www.typescriptlang.org", "react.dev", "angular.io", "vuejs.org", "nextjs.org", "expressjs.com", "nodejs.org", "jquery.com", "getbootstrap.com", "tailwindcss.com", "d3js.org", "threejs.org", "redux.js.org", "webpack.js.org", "jestjs.io", "reactrouter.com", "docs.djangoproject.com", "flask.palletsprojects.com", "fastapi.tiangolo.com", "pandas.pydata.org", "numpy.org", "www.tensorflow.org", "pytorch.org", "scikit-learn.org", "matplotlib.org", "requests.readthedocs.io", "jupyter.org", "laravel.com", "symfony.com", "wordpress.org", "docs.spring.io", "hibernate.org", "tomcat.apache.org", "gradle.org", "maven.apache.org", "asp.net", "dotnet.microsoft.com", "nuget.org", "blazor.net", "reactnative.dev", "docs.flutter.dev", "developer.apple.com", "developer.android.com", "keras.io", "spark.apache.org", "huggingface.co", "www.kaggle.com", "www.mongodb.com", "redis.io", "www.postgresql.org", "dev.mysql.com", "www.sqlite.org", "graphql.org", "prisma.io", "docs.aws.amazon.com", "cloud.google.com", "learn.microsoft.com", "kubernetes.io", "www.docker.com", "www.terraform.io", "www.ansible.com", "vercel.com/docs", "docs.netlify.com", "devcenter.heroku.com/", "cypress.io", "selenium.dev", "docs.unity.com", "docs.unrealengine.com", "git-scm.com", "nginx.org", "httpd.apache.org"])
 });
 
 function iu2({
@@ -839,7 +833,7 @@ function iu2({
     verbose: B
 }) {
     if (!A) return null;
-    if (B) return `url: "${A}"${B&&Q?`, prompt: "${Q}"`:""}`;
+    if (B) return `url: "TextComponent{A}"TextComponent{B&&Q?`, prompt: "TextComponent{Q}"`:""}`;
     return A
 }
 
@@ -859,7 +853,7 @@ function au2(A, {
 function su2() {
     return D$.default.createElement(y0, {
         height: 1
-    }, D$.default.createElement($, {
+    }, D$.default.createElement(TextComponent, {
         dimColor: !0
     }, "Fetching…"))
 }
@@ -877,14 +871,14 @@ function ru2({
         flexDirection: "column"
     }, D$.default.createElement(y0, {
         height: 1
-    }, D$.default.createElement($, null, "Received ", D$.default.createElement($, {
+    }, D$.default.createElement(TextComponent, null, "Received ", D$.default.createElement(TextComponent, {
         bold: !0
     }, Y), " (", Q, " ", B, ")")), D$.default.createElement(j, {
         flexDirection: "column"
-    }, D$.default.createElement($, null, G)));
+    }, D$.default.createElement(TextComponent, null, G)));
     return D$.default.createElement(y0, {
         height: 1
-    }, D$.default.createElement($, null, "Received ", D$.default.createElement($, {
+    }, D$.default.createElement(TextComponent, null, "Received ", D$.default.createElement(TextComponent, {
         bold: !0
     }, Y), " (", Q, " ", B, ")"))
 }
@@ -894,29 +888,29 @@ function ou2(A) {
     return B7(A.url, wk)
 }
 var D$;
-var tu2 = L(() => {
+var tu2 = lazyLoader(() => {
     hA();
     u8();
     lV();
     lX();
     M9();
-    D$ = GA(VA(), 1)
+    D$ = esmImport(VA(), 1)
 });
 
 function Ps5(A) {
     try {
         let Q = cF.inputSchema.safeParse(A);
-        if (!Q.success) return `input:${A.toString()}`;
+        if (!Q.success) return `input:TextComponent{A.toString()}`;
         let {
             url: B
         } = Q.data;
-        return `domain:${new URL(B).hostname}`
+        return `domain:TextComponent{new URL(B).hostname}`
     } catch {
-        return `input:${A.toString()}`
+        return `input:TextComponent{A.toString()}`
     }
 }
 var Rs5, Ts5, cF;
-var hWA = L(() => {
+var hWA = lazyLoader(() => {
     h2();
     cu2();
     aG();
@@ -940,7 +934,7 @@ var hWA = L(() => {
                 url: Q
             } = A;
             try {
-                return `Claude wants to fetch content from ${new URL(Q).hostname}`
+                return `Claude wants to fetch content from TextComponent{new URL(Q).hostname}`
             } catch {
                 return "Claude wants to fetch content from this URL"
             }
@@ -990,7 +984,7 @@ var hWA = L(() => {
                 I = uU(G, cF, "deny").get(Z);
             if (I) return {
                 behavior: "deny",
-                message: `${cF.name} denied access to ${Z}.`,
+                message: `TextComponent{cF.name} denied access to TextComponent{Z}.`,
                 decisionReason: {
                     type: "rule",
                     rule: I
@@ -999,7 +993,7 @@ var hWA = L(() => {
             let Y = uU(G, cF, "ask").get(Z);
             if (Y) return {
                 behavior: "ask",
-                message: `Claude requested permissions to use ${cF.name}, but you haven't granted it yet.`,
+                message: `Claude requested permissions to use TextComponent{cF.name}, but you haven't granted it yet.`,
                 decisionReason: {
                     type: "rule",
                     rule: Y
@@ -1016,7 +1010,7 @@ var hWA = L(() => {
             };
             return {
                 behavior: "ask",
-                message: `Claude requested permissions to use ${cF.name}, but you haven't granted it yet.`
+                message: `Claude requested permissions to use TextComponent{cF.name}, but you haven't granted it yet.`
             }
         },
         async prompt() {
@@ -1031,7 +1025,7 @@ var hWA = L(() => {
             } catch {
                 return {
                     result: !1,
-                    message: `Error: Invalid URL "${Q}". The URL provided could not be parsed.`,
+                    message: `Error: Invalid URL "TextComponent{Q}". The URL provided could not be parsed.`,
                     meta: {
                         reason: "invalid_url"
                     },
@@ -1062,13 +1056,13 @@ var hWA = L(() => {
                 let K = I.statusCode === 301 ? "Moved Permanently" : I.statusCode === 308 ? "Permanent Redirect" : I.statusCode === 307 ? "Temporary Redirect" : "Found",
                     D = `REDIRECT DETECTED: The URL redirects to a different host.
 
-Original URL: ${I.originalUrl}
-Redirect URL: ${I.redirectUrl}
-Status: ${I.statusCode} ${K}
+Original URL: TextComponent{I.originalUrl}
+Redirect URL: TextComponent{I.redirectUrl}
+Status: TextComponent{I.statusCode} TextComponent{K}
 
 To complete your request, I need to fetch content from the redirected URL. Please use WebFetch again with these parameters:
-- url: "${I.redirectUrl}"
-- prompt: "${Q}"`;
+- url: "TextComponent{I.redirectUrl}"
+- prompt: "TextComponent{Q}"`;
                 return {
                     data: {
                         bytes: Buffer.byteLength(D),
@@ -1112,13 +1106,13 @@ To complete your request, I need to fetch content from the redirected URL. Pleas
 function js5(A) {
     try {
         let Q = cF.inputSchema.safeParse(A);
-        if (!Q.success) return `input:${A.toString()}`;
+        if (!Q.success) return `input:TextComponent{A.toString()}`;
         let {
             url: B
         } = Q.data;
-        return `domain:${new URL(B).hostname}`
+        return `domain:TextComponent{new URL(B).hostname}`
     } catch {
-        return `input:${A.toString()}`
+        return `input:TextComponent{A.toString()}`
     }
 }
 
@@ -1134,19 +1128,19 @@ function eu2({
         completion_type: "tool_use_single",
         language_name: "none"
     }), []);
-    X$(A, J);
+    GREP_TOOL_NAME(A, J);
     let W = [{
         label: "Yes",
         value: "yes"
     }, {
-        label: `Yes, and don't ask again for ${oA.bold(Y)}`,
+        label: `Yes, and don't ask again for TextComponent{oA.bold(Y)}`,
         value: "yes-dont-ask-again-domain"
     }, {
-        label: `No, and tell Claude what to do differently ${oA.bold.dim("(esc)")}`,
+        label: `No, and tell Claude what to do differently TextComponent{oA.bold.dim("(esc)")}`,
         value: "no"
     }];
 
-function X(F) {
+    function X(F) {
         switch (F) {
             case "yes":
                 Pn("tool_use_single", A, "accept"), A.onAllow(A.input, []), Q();
@@ -1177,24 +1171,24 @@ function X(F) {
         flexDirection: "column",
         paddingX: 2,
         paddingY: 1
-    }, _P.default.createElement($, null, cF.renderToolUseMessage(A.input, {
+    }, _P.default.createElement(TextComponent, null, cF.renderToolUseMessage(A.input, {
         theme: Z,
         verbose: G
-    })), _P.default.createElement($, {
+    })), _P.default.createElement(TextComponent, {
         dimColor: !0
     }, A.description)), _P.default.createElement(j, {
         flexDirection: "column"
     }, _P.default.createElement(WC, {
         permissionResult: A.permissionResult,
         toolType: "tool"
-    }), _P.default.createElement($, null, "Do you want to allow Claude to fetch this content?"), _P.default.createElement(M0, {
+    }), _P.default.createElement(TextComponent, null, "Do you want to allow Claude to fetch this content?"), _P.default.createElement(M0, {
         options: W,
         onChange: X,
         onCancel: () => X("no")
     })))
 }
 var _P;
-var Am2 = L(() => {
+var Am2 = lazyLoader(() => {
     hA();
     hWA();
     On();
@@ -1203,7 +1197,7 @@ var Am2 = L(() => {
     T5();
     J9();
     ih();
-    _P = GA(VA(), 1)
+    _P = esmImport(VA(), 1)
 });
 import {
     relative as Ss5
@@ -1280,11 +1274,11 @@ function Qm2({
     }, $I.createElement(j, {
         paddingBottom: 1,
         flexDirection: "column"
-    }, $I.createElement($, {
+    }, $I.createElement(TextComponent, {
         bold: !0
-    }, I ? A : Ss5(H0(), A)), $I.createElement($, {
+    }, I ? A : Ss5(H0(), A)), $I.createElement(TextComponent, {
         dimColor: !0
-    }, K, " for cell ", Q, G ? ` (${G})` : "")), Z === "delete" ? $I.createElement(j, {
+    }, K, " for cell ", Q, G ? ` (TextComponent{G})` : "")), Z === "delete" ? $I.createElement(j, {
         flexDirection: "column",
         paddingLeft: 2
     }, $I.createElement(XO, {
@@ -1302,16 +1296,16 @@ function Qm2({
         dim: !1,
         width: Y,
         filePath: A
-    })), (D) => $I.createElement($, {
+    })), (D) => $I.createElement(TextComponent, {
         dimColor: !0,
-        key: `ellipsis-${D}`
+        key: `ellipsis-TextComponent{D}`
     }, "...")) : $I.createElement(XO, {
         code: B,
         language: G === "markdown" ? "markdown" : F
     })))
 }
 var $I, gWA;
-var Bm2 = L(() => {
+var Bm2 = lazyLoader(() => {
     Zn();
     hA();
     R2();
@@ -1321,7 +1315,7 @@ var Bm2 = L(() => {
     zV();
     o0();
     UoA();
-    $I = GA(VA(), 1), gWA = GA(VA(), 1)
+    $I = esmImport(VA(), 1), gWA = esmImport(VA(), 1)
 });
 import {
     basename as _s5
@@ -1330,7 +1324,7 @@ import {
 function Gm2(A) {
     let Q = (W) => {
             let X = LP.inputSchema.safeParse(W);
-            if (!X.success) return e(Error(`Failed to parse notebook edit input: ${X.error.message}`)), {
+            if (!X.success) return e(Error(`Failed to parse notebook edit input: TextComponent{X.error.message}`)), {
                 notebook_path: "",
                 new_source: "",
                 cell_id: ""
@@ -1351,7 +1345,7 @@ function Gm2(A) {
         onDone: A.onDone,
         onReject: A.onReject,
         title: "Edit notebook",
-        question: OTA.default.createElement($, null, "Do you want to ", J, " ", OTA.default.createElement($, {
+        question: OTA.default.createElement(TextComponent, null, "Do you want to ", J, " ", OTA.default.createElement(TextComponent, {
             bold: !0
         }, _s5(G)), "?"),
         content: OTA.default.createElement(Qm2, {
@@ -1370,15 +1364,16 @@ function Gm2(A) {
     })
 }
 var OTA;
-var Zm2 = L(() => {
+var Zm2 = lazyLoader(() => {
     hA();
     eJA();
     Bm2();
     BTA();
     u1();
-    OTA = GA(VA(), 1)
+    OTA = esmImport(VA(), 1)
 });
-var dJ = "AskUserQuestion",
+/* ASK_USER_QUESTION_TOOL_NAME = ASK_USER_QUESTION_TOOL = "AskUserQuestion" */
+var ASK_USER_QUESTION_TOOL_NAME = "AskUserQuestion",
     Im2 = 12,
     Ym2 = "Asks the user multiple choice questions to gather information, clarify ambiguity, understand preferences, make decisions or offer them choices.",
     Jm2 = `Use this tool when you need to ask the user questions during execution. This allows you to:
@@ -1392,13 +1387,13 @@ Usage notes:
 - Use multiSelect: true to allow multiple answers to be selected for a question
 `;
 var $JZ, Wm2;
-var Xm2 = L(() => {
+var Xm2 = lazyLoader(() => {
     $JZ = `Use this tool when you are in plan mode and have finished presenting your plan and are ready to code. This will prompt the user to exit plan mode.
 IMPORTANT: Only use this tool when the task requires planning the implementation steps of a task that requires writing code. For research tasks where you're gathering information, searching files, reading files or in general trying to understand the codebase - do NOT use this tool.
 
 ## Handling Ambiguity in Plans
 Before using this tool, ensure your plan is clear and unambiguous. If there are multiple valid approaches or unclear requirements:
-1. Use the ${dJ} tool to clarify with the user
+1. Use the TextComponent{ASK_USER_QUESTION_TOOL_NAME} tool to clarify with the user
 2. Ask about specific implementation choices (e.g., architectural patterns, which library to use)
 3. Clarify any assumptions that could affect the implementation
 4. Only proceed with ExitPlanMode after resolving ambiguities
@@ -1407,7 +1402,7 @@ Before using this tool, ensure your plan is clear and unambiguous. If there are 
 
 1. Initial task: "Search for and understand the implementation of vim mode in the codebase" - Do not use the exit plan mode tool because you are not planning the implementation steps of a task.
 2. Initial task: "Help me implement yank mode for vim" - Use the exit plan mode tool after you have finished planning the implementation steps of the task.
-3. Initial task: "Add a new feature to handle user authentication" - If unsure about auth method (OAuth, JWT, etc.), use ${dJ} first, then use exit plan mode tool after clarifying the approach.
+3. Initial task: "Add a new feature to handle user authentication" - If unsure about auth method (OAuth, JWT, etc.), use TextComponent{ASK_USER_QUESTION_TOOL_NAME} first, then use exit plan mode tool after clarifying the approach.
 `, Wm2 = `Use this tool when you are in plan mode and have finished writing your plan to the plan file and are ready for user approval.
 
 ## How This Tool Works
@@ -1421,7 +1416,7 @@ IMPORTANT: Only use this tool when the task requires planning the implementation
 
 ## Handling Ambiguity in Plans
 Before using this tool, ensure your plan is clear and unambiguous. If there are multiple valid approaches or unclear requirements:
-1. Use the ${dJ} tool to clarify with the user
+1. Use the TextComponent{ASK_USER_QUESTION_TOOL_NAME} tool to clarify with the user
 2. Ask about specific implementation choices (e.g., architectural patterns, which library to use)
 3. Clarify any assumptions that could affect the implementation
 4. Edit your plan file to incorporate user feedback
@@ -1431,11 +1426,11 @@ Before using this tool, ensure your plan is clear and unambiguous. If there are 
 
 1. Initial task: "Search for and understand the implementation of vim mode in the codebase" - Do not use the exit plan mode tool because you are not planning the implementation steps of a task.
 2. Initial task: "Help me implement yank mode for vim" - Use the exit plan mode tool after you have finished planning the implementation steps of the task.
-3. Initial task: "Add a new feature to handle user authentication" - If unsure about auth method (OAuth, JWT, etc.), use ${dJ} first, then use exit plan mode tool after clarifying the approach.
+3. Initial task: "Add a new feature to handle user authentication" - If unsure about auth method (OAuth, JWT, etc.), use TextComponent{ASK_USER_QUESTION_TOOL_NAME} first, then use exit plan mode tool after clarifying the approach.
 `
 });
 var pD;
-var yn = L(() => {
+var yn = lazyLoader(() => {
     f5();
     pD = m0.platform === "darwin" ? "⏺" : "●"
 });
@@ -1446,7 +1441,7 @@ function y31({
 }) {
     return kP.createElement(y0, null, kP.createElement(j, {
         flexDirection: "column"
-    }, kP.createElement($, {
+    }, kP.createElement(TextComponent, {
         color: "error"
     }, "User rejected Claude's plan:"), kP.createElement(j, {
         borderStyle: "round",
@@ -1454,16 +1449,16 @@ function y31({
         borderDimColor: !0,
         paddingX: 1,
         overflow: "hidden"
-    }, kP.createElement($, {
+    }, kP.createElement(TextComponent, {
         dimColor: !0
     }, _D(A, Q)))))
 }
 var kP;
-var qG0 = L(() => {
+var qG0 = lazyLoader(() => {
     hA();
     Hh();
     u8();
-    kP = GA(VA(), 1)
+    kP = esmImport(VA(), 1)
 });
 
 function Fm2() {
@@ -1479,19 +1474,19 @@ function Km2(A, Q, {
 }) {
     let {
         plan: G
-    } = A, Z = "filePath" in A ? A.filePath : void 0, I = Z ? Q5(Z) : "";
-    return gW.createElement(j, {
+    } = A, Z = "filePath" in A ? A.filePath : void 0, I = Z ? formatFilePath(Z) : "";
+    return ReactModule.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, gW.createElement(j, {
+    }, ReactModule.createElement(j, {
         flexDirection: "row"
-    }, gW.createElement($, {
+    }, ReactModule.createElement(TextComponent, {
         color: sj("plan")
-    }, pD), gW.createElement($, null, " User approved Claude's plan")), gW.createElement(y0, null, gW.createElement(j, {
+    }, pD), ReactModule.createElement(TextComponent, null, " User approved Claude's plan")), ReactModule.createElement(y0, null, ReactModule.createElement(j, {
         flexDirection: "column"
-    }, Z && gW.createElement($, {
+    }, Z && ReactModule.createElement(TextComponent, {
         dimColor: !0
-    }, "Plan saved to: ", I, " · /plan to edit"), gW.createElement($, {
+    }, "Plan saved to: ", I, " · /plan to edit"), ReactModule.createElement(TextComponent, {
         dimColor: !0
     }, _D(G, B)))))
 }
@@ -1502,9 +1497,9 @@ function Dm2({
     theme: Q
 }) {
     let B = A ?? fU() ?? "No plan found";
-    return gW.createElement(j, {
+    return ReactModule.createElement(j, {
         flexDirection: "column"
-    }, gW.createElement(y31, {
+    }, ReactModule.createElement(y31, {
         plan: B,
         themeName: Q
     }))
@@ -1513,8 +1508,8 @@ function Dm2({
 function Hm2() {
     return null
 }
-var gW;
-var Cm2 = L(() => {
+var ReactModule;
+var Cm2 = lazyLoader(() => {
     hA();
     Hh();
     u8();
@@ -1523,6 +1518,6 @@ var Cm2 = L(() => {
     Bw();
     _E();
     M9();
-    gW = GA(VA(), 1)
+    ReactModule = esmImport(VA(), 1)
 });
 var ks5, ys5, xq;

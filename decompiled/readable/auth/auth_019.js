@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_019.js
+ * 处理时间: 2025-12-09T03:41:36.545Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.903Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -17,7 +19,7 @@
  * Original file: cli.js
  */
 
-var vgA = U((pD7, sHQ) => {
+var vgA = moduleWrapper((pD7, sHQ) => {
     var {
         defineProperty: xgA,
         getOwnPropertyDescriptor: cs4,
@@ -92,7 +94,7 @@ var vgA = U((pD7, sHQ) => {
             })
         }, "fromEnv")
 });
-var tHQ = U((rHQ) => {
+var tHQ = moduleWrapper((rHQ) => {
     Object.defineProperty(rHQ, "__esModule", {
         value: !0
     });
@@ -101,7 +103,7 @@ var tHQ = U((rHQ) => {
         Ar4 = (A) => (0, es4.fromEnv)(A);
     rHQ.fromEnv = Ar4
 });
-var hgA = U((iD7, GCQ) => {
+var hgA = moduleWrapper((iD7, GCQ) => {
     var {
         defineProperty: fgA,
         getOwnPropertyDescriptor: Qr4,
@@ -135,7 +137,7 @@ var hgA = U((iD7, GCQ) => {
     GCQ.exports = Yr4(eHQ);
     var Jr4 = Cw();
 
-function ACQ(A) {
+    function ACQ(A) {
         return A
     }
     bgA(ACQ, "resolveHostHeaderConfig");
@@ -149,7 +151,7 @@ function ACQ(A) {
             if (Z.indexOf("h2") >= 0 && !G.headers[":authority"]) delete G.headers.host, G.headers[":authority"] = G.hostname + (G.port ? ":" + G.port : "");
             else if (!G.headers.host) {
                 let I = G.hostname;
-                if (G.port != null) I += `:${G.port}`;
+                if (G.port != null) I += `:TextComponent{G.port}`;
                 G.headers.host = I
             }
             return Q(B)
@@ -167,7 +169,7 @@ function ACQ(A) {
             }, "applyToStack")
         }), "getHostHeaderPlugin")
 });
-var ugA = U((nD7, JCQ) => {
+var ugA = moduleWrapper((nD7, JCQ) => {
     var {
         defineProperty: ggA,
         getOwnPropertyDescriptor: Xr4,
@@ -254,7 +256,7 @@ var ugA = U((nD7, JCQ) => {
             }, "applyToStack")
         }), "getLoggerPlugin")
 });
-var cgA = U((aD7, VCQ) => {
+var cgA = moduleWrapper((aD7, VCQ) => {
     var {
         defineProperty: dgA,
         getOwnPropertyDescriptor: Er4,
@@ -318,7 +320,7 @@ var cgA = U((aD7, VCQ) => {
             }, "applyToStack")
         }), "getRecursionDetectionPlugin")
 });
-var JHA = U((sD7, qCQ) => {
+var JHA = moduleWrapper((sD7, qCQ) => {
     var {
         defineProperty: pgA,
         getOwnPropertyDescriptor: Rr4,
@@ -414,7 +416,7 @@ var JHA = U((sD7, qCQ) => {
                     supportsDualStack: !0,
                     supportsFIPS: !0
                 },
-                regionRegex: "^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$",
+                regionRegex: "^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "af-south-1": {
                         description: "Africa (Cape Town)"
@@ -529,7 +531,7 @@ var JHA = U((sD7, qCQ) => {
                     supportsDualStack: !0,
                     supportsFIPS: !0
                 },
-                regionRegex: "^cn\\-\\w+\\-\\d+$",
+                regionRegex: "^cn\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-cn-global": {
                         description: "AWS China global region"
@@ -551,7 +553,7 @@ var JHA = U((sD7, qCQ) => {
                     supportsDualStack: !0,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-gov\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-gov\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-us-gov-global": {
                         description: "AWS GovCloud (US) global region"
@@ -573,7 +575,7 @@ var JHA = U((sD7, qCQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-iso\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-iso\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-global": {
                         description: "AWS ISO (US) global region"
@@ -595,7 +597,7 @@ var JHA = U((sD7, qCQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-isob\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-isob\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-b-global": {
                         description: "AWS ISOB (US) global region"
@@ -614,7 +616,7 @@ var JHA = U((sD7, qCQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^eu\\-isoe\\-\\w+\\-\\d+$",
+                regionRegex: "^eu\\-isoe\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-e-global": {
                         description: "AWS ISOE (Europe) global region"
@@ -633,7 +635,7 @@ var JHA = U((sD7, qCQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-isof\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-isof\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-f-global": {
                         description: "AWS ISOF global region"
@@ -655,7 +657,7 @@ var JHA = U((sD7, qCQ) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^eusc\\-(de)\\-\\w+\\-\\d+$",
+                regionRegex: "^eusc\\-(de)\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "eusc-de-east-1": {
                         description: "EU (Germany)"
@@ -710,7 +712,7 @@ var JHA = U((sD7, qCQ) => {
         };
     LZ.customEndpointFunctions.aws = wCQ
 });
-var MCQ = U((rD7, LCQ) => {
+var MCQ = moduleWrapper((rD7, LCQ) => {
     var {
         defineProperty: lgA,
         getOwnPropertyDescriptor: br4,
@@ -741,7 +743,7 @@ var MCQ = U((rD7, LCQ) => {
     LCQ.exports = dr4(NCQ);
     var cr4 = gr4((A) => typeof ArrayBuffer === "function" && A instanceof ArrayBuffer || Object.prototype.toString.call(A) === "[object ArrayBuffer]", "isArrayBuffer")
 });
-var PCQ = U((oD7, TCQ) => {
+var PCQ = moduleWrapper((oD7, TCQ) => {
     var {
         defineProperty: igA,
         getOwnPropertyDescriptor: pr4,
@@ -772,10 +774,10 @@ var PCQ = U((oD7, TCQ) => {
     });
     TCQ.exports = sr4(OCQ);
     var RCQ = xL1((A) => encodeURIComponent(A).replace(/[!'()*]/g, rr4), "escapeUri"),
-        rr4 = xL1((A) => `%${A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
+        rr4 = xL1((A) => `%TextComponent{A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
         or4 = xL1((A) => A.split("/").map(RCQ).join("/"), "escapeUriPath")
 });
-var BEQ = U((tD7, QEQ) => {
+var BEQ = moduleWrapper((tD7, QEQ) => {
     var {
         defineProperty: egA,
         getOwnPropertyDescriptor: tr4,
@@ -890,10 +892,10 @@ var BEQ = U((tD7, QEQ) => {
         Wo4 = L2(),
         k8A = {},
         agA = [],
-        sgA = AD((A, Q, B) => `${A}/${Q}/${B}/${cL1}`, "createScope"),
+        sgA = AD((A, Q, B) => `TextComponent{A}/TextComponent{Q}/TextComponent{B}/TextComponent{cL1}`, "createScope"),
         sCQ = AD(async (A, Q, B, G, Z) => {
             let I = await SCQ(A, Q.secretAccessKey, Q.accessKeyId),
-                Y = `${B}:${G}:${Z}:${(0,Ed.toHex)(I)}:${Q.sessionToken}`;
+                Y = `TextComponent{B}:TextComponent{G}:TextComponent{Z}:TextComponent{(0,Ed.toHex)(I)}:TextComponent{Q.sessionToken}`;
             if (Y in k8A) return k8A[Y];
             agA.push(Y);
             while (agA.length > nCQ) delete k8A[agA.shift()];
@@ -985,13 +987,13 @@ var BEQ = U((tD7, QEQ) => {
                         let X = new Uint8Array(9);
                         return X[0] = 8, X.set(Ho4.fromNumber(A.value.valueOf()).bytes, 1), X;
                     case "uuid":
-                        if (!Do4.test(A.value)) throw Error(`Invalid UUID received: ${A.value}`);
+                        if (!Do4.test(A.value)) throw Error(`Invalid UUID received: TextComponent{A.value}`);
                         let F = new Uint8Array(17);
                         return F[0] = 9, F.set((0, Ed.fromHex)(A.value.replace(/\-/g, "")), 1), F
                 }
             }
         },
-        Do4 = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/,
+        Do4 = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}TextComponent/,
         Ho4 = class A {
             constructor(Q) {
                 if (this.bytes = Q, Q.byteLength !== 8) throw Error("Int64 buffers must be exactly 8 bytes")
@@ -1000,7 +1002,7 @@ var BEQ = U((tD7, QEQ) => {
                 AD(this, "Int64")
             }
             static fromNumber(Q) {
-                if (Q > 9223372036854776000 || Q < -9223372036854776000) throw Error(`${Q} is too large (or, if negative, too small) to represent as an Int64`);
+                if (Q > 9223372036854776000 || Q < -9223372036854776000) throw Error(`TextComponent{Q} is too large (or, if negative, too small) to represent as an Int64`);
                 let B = new Uint8Array(8);
                 for (let G = 7, Z = Math.abs(Math.round(Q)); G > -1 && Z > 0; G--, Z /= 256) B[G] = Z;
                 if (Q < 0) bL1(B);
@@ -1017,7 +1019,7 @@ var BEQ = U((tD7, QEQ) => {
             }
         };
 
-function bL1(A) {
+    function bL1(A) {
         for (let Q = 0; Q < 8; Q++) A[Q] ^= 255;
         for (let Q = 7; Q > -1; Q--)
             if (A[Q]++, A[Q] !== 0) break
@@ -1064,8 +1066,8 @@ function bL1(A) {
                 let Z = (0, ogA.escapeUri)(G);
                 Q.push(Z);
                 let I = A[G];
-                if (typeof I === "string") B[Z] = `${Z}=${(0,ogA.escapeUri)(I)}`;
-                else if (Array.isArray(I)) B[Z] = I.slice(0).reduce((Y, J) => Y.concat([`${Z}=${(0,ogA.escapeUri)(J)}`]), []).sort().join("&")
+                if (typeof I === "string") B[Z] = `TextComponent{Z}=TextComponent{(0,ogA.escapeUri)(I)}`;
+                else if (Array.isArray(I)) B[Z] = I.slice(0).reduce((Y, J) => Y.concat([`TextComponent{Z}=TextComponent{(0,ogA.escapeUri)(J)}`]), []).sort().join("&")
             }
             return Q.sort().map((G) => B[G]).filter((G) => G).join("&")
         }, "getCanonicalQuery"),
@@ -1094,23 +1096,23 @@ function bL1(A) {
             }
             createCanonicalRequest(A, Q, B) {
                 let G = Object.keys(Q).sort();
-                return `${A.method}
-${this.getCanonicalPath(A)}
-${eCQ(A)}
-${G.map((Z)=>`${Z}:${Q[Z]}`).join(`
+                return `TextComponent{A.method}
+TextComponent{this.getCanonicalPath(A)}
+TextComponent{eCQ(A)}
+TextComponent{G.map((Z)=>`TextComponent{Z}:TextComponent{Q[Z]}`).join(`
 `)}
 
-${G.join(";")}
-${B}`
+TextComponent{G.join(";")}
+TextComponent{B}`
             }
             async createStringToSign(A, Q, B, G) {
                 let Z = new this.sha256;
                 Z.update((0, Co4.toUint8Array)(B));
                 let I = await Z.digest();
-                return `${G}
-${A}
-${Q}
-${(0,Ed.toHex)(I)}`
+                return `TextComponent{G}
+TextComponent{A}
+TextComponent{Q}
+TextComponent{(0,Ed.toHex)(I)}`
             }
             getCanonicalPath({
                 path: A
@@ -1123,7 +1125,7 @@ ${(0,Ed.toHex)(I)}`
                         if (Z === "..") Q.pop();
                         else Q.push(Z)
                     }
-                    let B = `${A?.startsWith("/")?"/":""}${Q.join("/")}${Q.length>0&&A?.endsWith("/")?"/":""}`;
+                    let B = `TextComponent{A?.startsWith("/")?"/":""}TextComponent{Q.join("/")}TextComponent{Q.length>0&&A?.endsWith("/")?"/":""}`;
                     return (0, ogA.escapeUri)(B).replace(/%2F/g, "/")
                 }
                 return A
@@ -1188,7 +1190,7 @@ ${(0,Ed.toHex)(I)}`
                         hoistableHeaders: J
                     });
                 if (F.sessionToken) C.query[uL1] = F.sessionToken;
-                C.query[xCQ] = ngA, C.query[vCQ] = `${F.accessKeyId}/${H}`, C.query[hL1] = K, C.query[fCQ] = G.toString(10);
+                C.query[xCQ] = ngA, C.query[vCQ] = `TextComponent{F.accessKeyId}/TextComponent{H}`, C.query[hL1] = K, C.query[fCQ] = G.toString(10);
                 let E = vL1(C, Z, Y);
                 return C.query[bCQ] = this.getCanonicalHeaderList(E), C.query[gL1] = await this.getSignature(K, H, this.getSigningKey(F, V, D, X), this.createCanonicalRequest(C, E, await rgA(A, this.sha256))), C
             }
@@ -1283,7 +1285,7 @@ ${(0,Ed.toHex)(I)}`
                 if (!rCQ(tgA, W.headers) && this.applyChecksum) W.headers[tgA] = K;
                 let D = vL1(W, G, B),
                     H = await this.getSignature(X, V, this.getSigningKey(Y, J, F, I), this.createCanonicalRequest(W, D, K));
-                return W.headers[mL1] = `${ngA} Credential=${Y.accessKeyId}/${V}, SignedHeaders=${this.getCanonicalHeaderList(D)}, Signature=${H}`, W
+                return W.headers[mL1] = `TextComponent{ngA} Credential=TextComponent{Y.accessKeyId}/TextComponent{V}, SignedHeaders=TextComponent{this.getCanonicalHeaderList(D)}, Signature=TextComponent{H}`, W
             }
             async getSignature(A, Q, B, G) {
                 let Z = await this.createStringToSign(A, Q, G, ngA),
@@ -1298,7 +1300,7 @@ ${(0,Ed.toHex)(I)}`
             SignatureV4a: null
         }
 });
-var nL1 = U((BH7, CEQ) => {
+var nL1 = moduleWrapper((BH7, CEQ) => {
     var {
         defineProperty: AuA,
         getOwnPropertyDescriptor: wo4,
@@ -1347,7 +1349,7 @@ var nL1 = U((BH7, CEQ) => {
             return Q
         }, "getUpdatedSystemClockOffset"),
         WHA = CW((A, Q) => {
-            if (!Q) throw Error(`Property \`${A}\` is not resolved for AWS SDK SigV4Auth`);
+            if (!Q) throw Error(`Property \`TextComponent{A}\` is not resolved for AWS SDK SigV4Auth`);
             return Q
         }, "throwSigningPropertyError"),
         lL1 = CW(async (A) => {

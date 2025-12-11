@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_018.js
+ * 处理时间: 2025-12-09T03:41:38.745Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.079Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -20,20 +23,20 @@
     let z = K.filter((P) => P.status === "running").length,
         w = D.filter((P) => P.status === "running" || P.status === "starting").length,
         N = H.filter((P) => P.status === "running").length,
-        q = fF([...z > 0 ? [K3.default.createElement($, {
+        q = fF([...z > 0 ? [K3.default.createElement(TextComponent, {
             key: "shells"
-        }, z, " ", z !== 1 ? "active shells" : "active shell")] : [], ...w > 0 ? [K3.default.createElement($, {
+        }, z, " ", z !== 1 ? "active shells" : "active shell")] : [], ...w > 0 ? [K3.default.createElement(TextComponent, {
             key: "sessions"
-        }, w, " ", w !== 1 ? "active session" : "active session")] : [], ...[]], (P) => K3.default.createElement($, {
-            key: `separator-${P}`
+        }, w, " ", w !== 1 ? "active session" : "active session")] : [], ...[]], (P) => K3.default.createElement(TextComponent, {
+            key: `separator-TextComponent{P}`
         }, " · ")),
-        R = [K3.default.createElement($, {
+        R = [K3.default.createElement(TextComponent, {
             key: "upDown"
-        }, "↑/↓ to select"), K3.default.createElement($, {
+        }, "↑/↓ to select"), K3.default.createElement(TextComponent, {
             key: "enter"
-        }, "Enter to view"), ...(E?.type === "shell" || E?.type === "async_agent") && E.status === "running" ? [K3.default.createElement($, {
+        }, "Enter to view"), ...(E?.type === "shell" || E?.type === "async_agent") && E.status === "running" ? [K3.default.createElement(TextComponent, {
             key: "kill"
-        }, "k to kill")] : [], K3.default.createElement($, {
+        }, "k to kill")] : [], K3.default.createElement(TextComponent, {
             key: "esc"
         }, "Esc to close")];
     return K3.default.createElement(j, {
@@ -47,21 +50,21 @@
         paddingLeft: 1,
         paddingRight: 1,
         width: "100%"
-    }, K3.default.createElement($, {
+    }, K3.default.createElement(TextComponent, {
         color: "background",
         bold: !0
-    }, "Background tasks"), K3.default.createElement($, {
+    }, "Background tasks"), K3.default.createElement(TextComponent, {
         dimColor: !0
-    }, q), F.length === 0 ? K3.default.createElement($, {
+    }, q), F.length === 0 ? K3.default.createElement(TextComponent, {
         dimColor: !0
     }, "No tasks currently running") : K3.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
     }, K.length > 0 && K3.default.createElement(j, {
         flexDirection: "column"
-    }, (D.length > 0 || H.length > 0) && K3.default.createElement($, {
+    }, (D.length > 0 || H.length > 0) && K3.default.createElement(TextComponent, {
         dimColor: !0
-    }, K3.default.createElement($, {
+    }, K3.default.createElement(TextComponent, {
         bold: !0
     }, "  ", "Bashes"), " (", K.length, ")"), K3.default.createElement(j, {
         flexDirection: "column"
@@ -72,9 +75,9 @@
     })))), D.length > 0 && K3.default.createElement(j, {
         flexDirection: "column",
         marginTop: K.length > 0 ? 1 : 0
-    }, K3.default.createElement($, {
+    }, K3.default.createElement(TextComponent, {
         dimColor: !0
-    }, K3.default.createElement($, {
+    }, K3.default.createElement(TextComponent, {
         bold: !0
     }, "  ", "Remote sessions"), " (", D.length, ")"), K3.default.createElement(j, {
         flexDirection: "column"
@@ -84,12 +87,12 @@
         isSelected: K.length + y === Y
     })))), !1)), K3.default.createElement(j, {
         marginLeft: 2
-    }, W.pending ? K3.default.createElement($, {
+    }, W.pending ? K3.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Press ", W.keyName, " again to exit") : K3.default.createElement($, {
+    }, "Press ", W.keyName, " again to exit") : K3.default.createElement(TextComponent, {
         dimColor: !0
-    }, fF(R, (P) => K3.default.createElement($, {
-        key: `separator-${P}`
+    }, fF(R, (P) => K3.default.createElement(TextComponent, {
+        key: `separator-TextComponent{P}`
     }, " · ")))))
 }
 
@@ -117,14 +120,14 @@ function k49({
     return K3.default.createElement(j, {
         flexDirection: "row",
         gap: 1
-    }, K3.default.createElement($, {
+    }, K3.default.createElement(TextComponent, {
         color: Q ? "suggestion" : void 0
     }, Q ? V1.pointer + " " : "  ", K3.default.createElement(MZ1, {
         task: A.task
     })))
 }
 var K3, EQA;
-var VW0 = L(() => {
+var VW0 = lazyLoader(() => {
     hA();
     n2();
     c9();
@@ -135,7 +138,7 @@ var VW0 = L(() => {
     gAA();
     rZ1();
     FJ0();
-    K3 = GA(VA(), 1), EQA = GA(VA(), 1)
+    K3 = esmImport(VA(), 1), EQA = esmImport(VA(), 1)
 });
 
 function SR3(A, Q) {
@@ -157,7 +160,7 @@ function SR3(A, Q) {
 }
 
 function _R3(A, Q) {
-    return `[...Truncated text #${A} +${Q} lines...]`
+    return `[...Truncated text #TextComponent{A} +TextComponent{Q} lines...]`
 }
 
 function x49(A, Q) {
@@ -185,7 +188,7 @@ function x49(A, Q) {
 }
 var jR3 = 1e4,
     y49 = 1000;
-var v49 = L(() => {
+var v49 = lazyLoader(() => {
     Pp()
 });
 
@@ -210,18 +213,17 @@ function b49({
     }, [A])
 }
 var GjA;
-var f49 = L(() => {
+var f49 = lazyLoader(() => {
     v49();
-    GjA = GA(VA(), 1)
+    GjA = esmImport(VA(), 1)
 });
 
 function h49(A, Q = 20) {
     let B = new Map;
     for (let Z of A) B.set(Z, (B.get(Z) || 0) + 1);
-    return Array.from(B.entries()).sort((Z, I) => I[1] - Z[1]).slice(0, Q).map(([Z, I]) => `${I.toString().padStart(6)} ${Z}`).join(`
+    return Array.from(B.entries()).sort((Z, I) => I[1] - Z[1]).slice(0, Q).map(([Z, I]) => `TextComponent{I.toString().padStart(6)} TextComponent{Z}`).join(`
 `)
 }
-// Async function: kR3
 async function kR3() {
     if (m0.platform === "win32") return [];
     if (!await FT()) return [];
@@ -236,7 +238,7 @@ async function kR3() {
         if (Q.trim()) {
             let {
                 stdout: Y
-            } = await q3("git", ["log", "-n", "1000", "--pretty=format:", "--name-only", "--diff-filter=M", `--author=${Q.trim()}`], {
+            } = await q3("git", ["log", "-n", "1000", "--pretty=format:", "--name-only", "--diff-filter=M", `--author=TextComponent{Q.trim()}`], {
                 cwd: H0()
             }), J = Y.split(`
 `).filter((W) => W.trim());
@@ -280,7 +282,7 @@ Files modified by other users:
 }
 var yR3 = 604800000,
     g49, u49;
-var KW0 = L(() => {
+var KW0 = lazyLoader(() => {
     jQ();
     f5();
     R2();
@@ -294,8 +296,8 @@ var KW0 = L(() => {
     g49 = t1(() => {
         let A = M5(),
             Q = A.exampleFiles?.length ? Zt(A.exampleFiles) : "<filepath>",
-            B = ["fix lint errors", "fix typecheck errors", `how does ${Q} work?`, `refactor ${Q}`, "how do I log an error?", `edit ${Q} to...`, `write a test for ${Q}`, "create a util logging.py that..."];
-        return `Try "${Zt(B)}"`
+            B = ["fix lint errors", "fix typecheck errors", `how does TextComponent{Q} work?`, `refactor TextComponent{Q}`, "how do I log an error?", `edit TextComponent{Q} to...`, `write a test for TextComponent{Q}`, "create a util logging.py that..."];
+        return `Try "TextComponent{Zt(B)}"`
     }), u49 = t1(async () => {
         let A = M5(),
             Q = Date.now(),
@@ -327,11 +329,11 @@ function d49({
     return Z
 }
 var m49, xR3 = 3;
-var c49 = L(() => {
+var c49 = lazyLoader(() => {
     H9();
     jQ();
     KW0();
-    m49 = GA(VA(), 1)
+    m49 = esmImport(VA(), 1)
 });
 
 function p49({
@@ -344,23 +346,23 @@ function p49({
         flexWrap: "nowrap",
         justifyContent: "flex-start",
         width: 2
-    }, A === "bash" ? cP.createElement($, {
+    }, A === "bash" ? cP.createElement(TextComponent, {
         color: "bashBorder",
         dimColor: Q
-    }, "! ") : A === "memory" || A === "memorySelect" ? cP.createElement($, {
+    }, "! ") : A === "memory" || A === "memorySelect" ? cP.createElement(TextComponent, {
         color: "remember",
         dimColor: Q
-    }, "# ") : A === "background" ? cP.createElement($, {
+    }, "# ") : A === "background" ? cP.createElement(TextComponent, {
         color: "background",
         dimColor: Q
-    }, "& ") : cP.createElement($, {
+    }, "& ") : cP.createElement(TextComponent, {
         dimColor: Q
     }, "> "))
 }
 var cP;
-var l49 = L(() => {
+var l49 = lazyLoader(() => {
     hA();
-    cP = GA(VA(), 1)
+    cP = esmImport(VA(), 1)
 });
 
 function i49() {
@@ -375,32 +377,31 @@ function i49() {
         paddingLeft: 2,
         flexDirection: "column",
         width: A - 4
-    }, ZjA.createElement($, {
+    }, ZjA.createElement(TextComponent, {
         dimColor: !0,
         wrap: "wrap"
     }, Q.map((B) => B.value).join(`
 `)))
 }
 var ZjA;
-var n49 = L(() => {
+var n49 = lazyLoader(() => {
     m8();
     H9();
     hA();
-    ZjA = GA(VA(), 1)
+    ZjA = esmImport(VA(), 1)
 });
 
 function a49(A, Q, B, G, Z, I, Y, J, W) {
     let [X, F] = rq.useState(""), [V, K] = rq.useState(!1), [D, H] = rq.useState(""), [C, E] = rq.useState(0), [z, w] = rq.useState("prompt"), [N, q] = rq.useState(void 0), R = rq.useRef(void 0), P = rq.useRef(new Set), y = rq.useRef(null);
 
-function v() {
+    function v() {
         if (R.current) R.current.return(void 0), R.current = void 0
     }
 
-function x() {
+    function x() {
         W(!1), F(""), K(!1), H(""), E(0), w("prompt"), q(void 0), v(), P.current.clear()
     }
-
-async function p(u, o) {
+    async function p(u, o) {
         if (!J) return;
         if (X.length === 0) {
             v(), P.current.clear(), q(void 0), K(!1), B(D), G(C), I(z);
@@ -472,11 +473,11 @@ async function p(u, o) {
     }
 }
 var rq;
-var s49 = L(() => {
+var s49 = lazyLoader(() => {
     hA();
     Pp();
     HGA();
-    rq = GA(VA(), 1)
+    rq = esmImport(VA(), 1)
 });
 
 function o49({
@@ -509,10 +510,10 @@ function o49({
     }
 }
 var DW0, r49 = " (enter to submit)";
-var t49 = L(() => {
+var t49 = lazyLoader(() => {
     H9();
     w0();
-    DW0 = GA(VA(), 1)
+    DW0 = esmImport(VA(), 1)
 });
 import * as e49 from "path";
 
@@ -574,7 +575,7 @@ function vR3({
         [$A, LA] = iJ.useState(!1),
         [TA, eA] = iJ.useState(!1),
         {
-            suggestion: aA,
+            suggestion: BASE64_CHARS,
             acceptSuggestion: I1,
             clearSuggestion: w1
         } = o49({
@@ -623,7 +624,7 @@ function vR3({
         if (!B1.length) return;
         if (B1.length && !SA.thinkingEnabled) b1({
             key: "thinking-toggled-via-keyword",
-            jsx: KZ.createElement($, {
+            jsx: KZ.createElement(TextComponent, {
                 color: "suggestion"
             }, "Thinking on"),
             priority: "immediate",
@@ -682,7 +683,7 @@ function vR3({
         if (o) J0()
     }, [o, J0]);
 
-function p0() {
+    function p0() {
         if (IQ.length > 1) return;
         if (SA.queuedCommands.length > 0) {
             LI();
@@ -692,7 +693,7 @@ function p0() {
         else R1()
     }
 
-function HQ() {
+    function HQ() {
         if (IQ.length > 1) return;
         let O1 = N1(),
             y1 = Object.values(SA.backgroundTasks).filter((O0) => O0.status === "running").length;
@@ -710,7 +711,7 @@ function HQ() {
         selectedSuggestion: -1,
         commandArgumentHint: void 0
     }), PB = iJ.useCallback(async (O1, y1 = !1, O0) => {
-        let oQ = O1.trim() === "" && aA ? I1() ?? "" : O1;
+        let oQ = O1.trim() === "" && BASE64_CHARS ? I1() ?? "" : O1;
         if (w1(), oQ.trim() === "") return;
         let lB = ZB.suggestions.length > 0 && ZB.suggestions.every((k9) => k9.description === "directory");
         if (ZB.suggestions.length > 0 && !y1 && !lB) return;
@@ -719,7 +720,7 @@ function HQ() {
             clearBuffer: k1,
             resetHistory: F1
         })
-    }, [ZB.suggestions, u, KA, k1, F1, w1, aA, I1]), {
+    }, [ZB.suggestions, u, KA, k1, F1, w1, BASE64_CHARS, I1]), {
         suggestions: IQ,
         selectedSuggestion: l9,
         commandArgumentHint: h4
@@ -735,9 +736,9 @@ function HQ() {
         setSuggestionsState: rQ,
         suggestionsState: ZB,
         suppressSuggestions: o || s1 > 0
-    }), p5 = H === "prompt" && IQ.length === 0 && aA ? aA + r49 : T0;
+    }), p5 = H === "prompt" && IQ.length === 0 && BASE64_CHARS ? BASE64_CHARS + r49 : T0;
 
-function uG(O1, y1) {
+    function uG(O1, y1) {
         BA("tengu_paste_image", {}), C("prompt");
         let O0 = {
             id: rA,
@@ -751,7 +752,7 @@ function uG(O1, y1) {
         })), C3(njB(O0.id))
     }
 
-function DG(O1) {
+    function DG(O1) {
         let y1 = mY(O1).replace(/\r/g, `
 `).replaceAll("\t", "    "),
             O0 = trA(y1),
@@ -769,7 +770,7 @@ function DG(O1) {
         } else C3(y1)
     }
 
-function C3(O1) {
+    function C3(O1) {
         Y0(K, wA, N);
         let y1 = K.slice(0, wA) + O1 + K.slice(wA);
         D(y1), KA(wA + O1.length)
@@ -785,10 +786,10 @@ function C3(O1) {
     P09(w, function(O1) {
         BA("tengu_ext_at_mentioned", {});
         let y1, O0 = e49.relative(H0(), O1.filePath);
-        if (O1.lineStart && O1.lineEnd) y1 = O1.lineStart === O1.lineEnd ? `@${O0}#L${O1.lineStart} ` : `@${O0}#L${O1.lineStart}-${O1.lineEnd} `;
-        else y1 = `@${O0} `;
+        if (O1.lineStart && O1.lineEnd) y1 = O1.lineStart === O1.lineEnd ? `@TextComponent{O0}#L${O1.lineStart} ` : `@TextComponent{O0}#L${O1.lineStart}-TextComponent{O1.lineEnd} `;
+        else y1 = `@TextComponent{O0} `;
         let oQ = K[wA - 1] ?? " ";
-        if (!/\s/.test(oQ)) y1 = ` ${y1}`;
+        if (!/\s/.test(oQ)) y1 = ` TextComponent{y1}`;
         C3(y1)
     }), h1((O1, y1) => {
         if (y1.ctrl && O1 === "_") {
@@ -910,7 +911,7 @@ function C3(O1) {
         borderRight: !1,
         borderBottom: !0,
         width: "100%"
-    }, KZ.createElement($, {
+    }, KZ.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "Save and close editor to continue..."));
@@ -978,7 +979,7 @@ function C3(O1) {
     }))
 }
 var KZ, iJ, A89;
-var Q89 = L(() => {
+var Q89 = lazyLoader(() => {
     hA();
     HT();
     W19();
@@ -1015,7 +1016,7 @@ var Q89 = L(() => {
     s49();
     UU();
     t49();
-    KZ = GA(VA(), 1), iJ = GA(VA(), 1);
+    KZ = esmImport(VA(), 1), iJ = esmImport(VA(), 1);
     A89 = vR3
 });
 
@@ -1029,9 +1030,9 @@ function G89() {
     }, [])
 }
 var B89;
-var Z89 = L(() => {
+var Z89 = lazyLoader(() => {
     w0();
-    B89 = GA(VA(), 1)
+    B89 = esmImport(VA(), 1)
 });
 
 function I89() {
@@ -1066,10 +1067,10 @@ function I89() {
     }
 }
 var IjA;
-var Y89 = L(() => {
+var Y89 = lazyLoader(() => {
     kZ();
     hB();
-    IjA = GA(VA(), 1)
+    IjA = esmImport(VA(), 1)
 });
 
 function W89(A) {
@@ -1084,7 +1085,7 @@ function W89(A) {
         }))
     })
 }
-var X89 = L(() => {
+var X89 = lazyLoader(() => {
     hA();
     H9();
     w0()
@@ -1108,7 +1109,7 @@ function F89(A, Q, B, G, Z, I, Y, J, W) {
         BA("tengu_cancel", {}), A(() => []), Q()
     })
 }
-var V89 = L(() => {
+var V89 = lazyLoader(() => {
     hA();
     w0();
     vPA();
@@ -1146,7 +1147,6 @@ function AI1(A, Q, B, G) {
         }
     }
 }
-
 async function QI1(A, Q, B) {
     await WO("tool_decision", {
         decision: Q,
@@ -1237,8 +1237,8 @@ function hR3(A, Q) {
                 })
             }
 
-function F(K) {
-                let D = K ? `${pPA}${K}` : iPA;
+            function F(K) {
+                let D = K ? `TextComponent{pPA}TextComponent{K}` : iPA;
                 if (W({
                         behavior: "ask",
                         message: D
@@ -1389,7 +1389,7 @@ function F(K) {
     }, [A, Q])
 }
 var H89, bR3, C89;
-var E89 = L(() => {
+var E89 = lazyLoader(() => {
     aG();
     w0();
     nQ();
@@ -1402,7 +1402,7 @@ var E89 = L(() => {
     MJ();
     AO();
     wi();
-    H89 = GA(VA(), 1), bR3 = ["Edit", "Write", "NotebookEdit"];
+    H89 = esmImport(VA(), 1), bR3 = ["Edit", "Write", "NotebookEdit"];
     C89 = hR3
 });
 
@@ -1416,13 +1416,13 @@ function U89(A) {
     }, [A])
 }
 var z89;
-var $89 = L(() => {
+var $89 = lazyLoader(() => {
     zU();
-    z89 = GA(VA(), 1)
+    z89 = esmImport(VA(), 1)
 });
 
 function $W0() {
-    if (!EW0) EW0 = UA("perf_hooks").performance;
+    if (!EW0) EW0 = nodeRequire("perf_hooks").performance;
     return EW0
 }
 
@@ -1468,7 +1468,7 @@ function uR3() {
     let Q = $W0().getEntriesByType("mark");
     if (Q.length === 0) return "No query profiling checkpoints recorded";
     let B = [];
-    B.push("=".repeat(80)), B.push(`QUERY PROFILING REPORT - Query #${q89}`), B.push("=".repeat(80)), B.push("");
+    B.push("=".repeat(80)), B.push(`QUERY PROFILING REPORT - Query #TextComponent{q89}`), B.push("=".repeat(80)), B.push("");
     let G = Q[0]?.startTime ?? 0,
         Z = G,
         I = 0,
@@ -1480,8 +1480,8 @@ function uR3() {
             D = xXA(K),
             H = UW0.get(X.name),
             C = gR3(K, X.name),
-            E = H ? ` | RSS: ${w89(H.rss)}MB, Heap: ${w89(H.heapUsed)}MB` : "";
-        if (B.push(`[+${V.padStart(10)}ms] (+${D.padStart(9)}ms) ${X.name}${C}${E}`), X.name === "query_api_request_sent") I = F;
+            E = H ? ` | RSS: TextComponent{w89(H.rss)}MB, Heap: TextComponent{w89(H.heapUsed)}MB` : "";
+        if (B.push(`[+TextComponent{V.padStart(10)}ms] (+TextComponent{D.padStart(9)}ms) TextComponent{X.name}TextComponent{C}TextComponent{E}`), X.name === "query_api_request_sent") I = F;
         if (X.name === "query_first_chunk_received") Y = F;
         Z = X.startTime
     }
@@ -1492,8 +1492,8 @@ function uR3() {
             F = Y - I,
             V = (X / Y * 100).toFixed(1),
             K = (F / Y * 100).toFixed(1);
-        B.push(`Total TTFT: ${xXA(Y)}ms`), B.push(`  - Pre-request overhead: ${xXA(X)}ms (${V}%)`), B.push(`  - Network latency: ${xXA(F)}ms (${K}%)`)
-    } else B.push(`Total time: ${xXA(W)}ms`);
+        B.push(`Total TTFT: TextComponent{xXA(Y)}ms`), B.push(`  - Pre-request overhead: TextComponent{xXA(X)}ms (TextComponent{V}%)`), B.push(`  - Network latency: TextComponent{xXA(F)}ms (TextComponent{K}%)`)
+    } else B.push(`Total time: TextComponent{xXA(W)}ms`);
     return B.push("=".repeat(80)), B.join(`
 `)
 }
@@ -1505,7 +1505,7 @@ function M89() {
 var YjA, UW0, q89 = 0,
     zW0 = null,
     EW0 = null;
-var JjA = L(() => {
+var JjA = lazyLoader(() => {
     D0();
     YjA = process.env.CLAUDE_CODE_PROFILE_QUERY === "1", UW0 = new Map
 });

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_032.js
+ * 处理时间: 2025-12-09T03:41:37.637Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.992Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -21,11 +24,11 @@
     var h53 = a71(),
         QPA;
 
-function Ji2(A) {
+    function Ji2(A) {
         return QPA ? QPA.get(A) : void 0
     }
 
-function g53(A) {
+    function g53(A) {
         let Q = Ji2(A);
         if (!Q) return;
         let B = {};
@@ -36,11 +39,11 @@ function g53(A) {
         return B
     }
 
-function u53(A, Q, B, G, Z, I) {
+    function u53(A, Q, B, G, Z, I) {
         let Y = h53.getActiveSpan();
         if (Y) {
             let J = Ji2(Y) || new Map,
-                W = `${A}:${Q}@${G}`,
+                W = `TextComponent{A}:TextComponent{Q}@TextComponent{G}`,
                 X = J.get(I);
             if (X) {
                 let [, F] = X;
@@ -65,11 +68,12 @@ function u53(A, Q, B, G, Z, I) {
     Wi2.getMetricSummaryJsonForSpan = g53;
     Wi2.updateMetricSummaryOnActiveSpan = u53
 });
-var GPA = U((Xi2) => {
+var GPA = moduleWrapper((Xi2) => {
     Object.defineProperty(Xi2, "__esModule", {
         value: !0
     });
-    var c53 = "sentry.source",
+    /* SENTRY_SOURCE = SENTRY_SOURCE = "sentry.source" */
+var SENTRY_SOURCE = "sentry.source",
         p53 = "sentry.sample_rate",
         l53 = "sentry.op",
         i53 = "sentry.origin",
@@ -78,9 +82,9 @@ var GPA = U((Xi2) => {
     Xi2.SEMANTIC_ATTRIBUTE_SENTRY_OP = l53;
     Xi2.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN = i53;
     Xi2.SEMANTIC_ATTRIBUTE_SENTRY_SAMPLE_RATE = p53;
-    Xi2.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE = c53
+    Xi2.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE = SENTRY_SOURCE
 });
-var s71 = U((Di2) => {
+var s71 = moduleWrapper((Di2) => {
     Object.defineProperty(Di2, "__esModule", {
         value: !0
     });
@@ -91,8 +95,7 @@ var s71 = U((Di2) => {
         Vi2 = rWA(),
         QXA = C$(),
         A33 = eWA();
-
-class Ki2 {
+    class Ki2 {
         constructor(A = 1000) {
             this._maxlen = A, this.spans = []
         }
@@ -101,8 +104,7 @@ class Ki2 {
             else this.spans.push(A)
         }
     }
-
-class KI0 {
+    class KI0 {
         constructor(A = {}) {
             if (this._traceId = A.traceId || m0A.uuid4(), this._spanId = A.spanId || m0A.uuid4().substring(16), this._startTime = A.startTimestamp || m0A.timestampInSeconds(), this.tags = A.tags ? {
                     ...A.tags
@@ -218,7 +220,7 @@ class KI0 {
                 let G = A && A.op || "< unknown op >",
                     Z = QXA.spanToJSON(Q).description || "< unknown name >",
                     I = B.spanContext().spanId,
-                    Y = `[Tracing] Starting '${G}' span on transaction '${Z}' (${I}).`;
+                    Y = `[Tracing] Starting 'TextComponent{G}' span on transaction 'TextComponent{Z}' (TextComponent{I}).`;
                 m0A.logger.log(Y), this._logMessage = Y
             }
             return Q
@@ -334,7 +336,7 @@ class KI0 {
     Di2.Span = KI0;
     Di2.SpanRecorder = Ki2
 });
-var t71 = U((zi2) => {
+var t71 = moduleWrapper((zi2) => {
     Object.defineProperty(zi2, "__esModule", {
         value: !0
     });
@@ -347,8 +349,7 @@ var t71 = U((zi2) => {
         Hi2 = g0A(),
         Ci2 = s71(),
         I33 = a71();
-
-class Ei2 extends Ci2.Span {
+    class Ei2 extends Ci2.Span {
         constructor(A, Q) {
             super(A);
             this._contexts = {}, this._hub = Q || G33.getCurrentHub(), this._name = A.name || "", this._metadata = {
@@ -485,12 +486,12 @@ class Ei2 extends Ci2.Span {
                 }
             };
             if (Object.keys(this._measurements).length > 0) r71.DEBUG_BUILD && BXA.logger.log("[Measurements] Adding measurements to transaction", JSON.stringify(this._measurements, void 0, 2)), J.measurements = this._measurements;
-            return r71.DEBUG_BUILD && BXA.logger.log(`[Tracing] Finishing ${this.op} transaction: ${this._name}.`), J
+            return r71.DEBUG_BUILD && BXA.logger.log(`[Tracing] Finishing TextComponent{this.op} transaction: TextComponent{this._name}.`), J
         }
     }
     zi2.Transaction = Ei2
 });
-var HI0 = U(($i2) => {
+var HI0 = moduleWrapper(($i2) => {
     Object.defineProperty($i2, "__esModule", {
         value: !0
     });
@@ -506,8 +507,7 @@ var HI0 = U(($i2) => {
         },
         X33 = "finishReason",
         GXA = ["heartbeatFailed", "idleTimeout", "documentHidden", "finalTimeout", "externalFinish", "cancelled"];
-
-class DI0 extends J33.SpanRecorder {
+    class DI0 extends J33.SpanRecorder {
         constructor(A, Q, B, G) {
             super(G);
             this._pushActivity = A, this._popActivity = Q, this.transactionSpanId = B
@@ -522,11 +522,10 @@ class DI0 extends J33.SpanRecorder {
             super.add(A)
         }
     }
-
-class Ui2 extends W33.Transaction {
+    class Ui2 extends W33.Transaction {
         constructor(A, Q, B = AG1.idleTimeout, G = AG1.finalTimeout, Z = AG1.heartbeatInterval, I = !1, Y = !1) {
             super(A, Q);
-            if (this._idleHub = Q, this._idleTimeout = B, this._finalTimeout = G, this._heartbeatInterval = Z, this._onScope = I, this.activities = {}, this._heartbeatCounter = 0, this._finished = !1, this._idleTimeoutCanceledPermanently = !1, this._beforeFinishCallbacks = [], this._finishReason = GXA[4], this._autoFinishAllowed = !Y, I) E$.DEBUG_BUILD && EC.logger.log(`Setting idle transaction on scope. Span ID: ${this.spanContext().spanId}`), Q.getScope().setSpan(this);
+            if (this._idleHub = Q, this._idleTimeout = B, this._finalTimeout = G, this._heartbeatInterval = Z, this._onScope = I, this.activities = {}, this._heartbeatCounter = 0, this._finished = !1, this._idleTimeoutCanceledPermanently = !1, this._beforeFinishCallbacks = [], this._finishReason = GXA[4], this._autoFinishAllowed = !Y, I) E$.DEBUG_BUILD && EC.logger.log(`Setting idle transaction on scope. Span ID: TextComponent{this.spanContext().spanId}`), Q.getScope().setSpan(this);
             if (!Y) this._restartIdleTimeout();
             setTimeout(() => {
                 if (!this._finished) this.setStatus("deadline_exceeded"), this._finishReason = GXA[3], this.end()
@@ -599,10 +598,10 @@ class Ui2 extends W33.Transaction {
         _pushActivity(A) {
             this.cancelIdleTimeout(void 0, {
                 restartOnChildSpanChange: !this._idleTimeoutCanceledPermanently
-            }), E$.DEBUG_BUILD && EC.logger.log(`[Tracing] pushActivity: ${A}`), this.activities[A] = !0, E$.DEBUG_BUILD && EC.logger.log("[Tracing] new activities count", Object.keys(this.activities).length)
+            }), E$.DEBUG_BUILD && EC.logger.log(`[Tracing] pushActivity: TextComponent{A}`), this.activities[A] = !0, E$.DEBUG_BUILD && EC.logger.log("[Tracing] new activities count", Object.keys(this.activities).length)
         }
         _popActivity(A) {
-            if (this.activities[A]) E$.DEBUG_BUILD && EC.logger.log(`[Tracing] popActivity ${A}`), delete this.activities[A], E$.DEBUG_BUILD && EC.logger.log("[Tracing] new activities count", Object.keys(this.activities).length);
+            if (this.activities[A]) E$.DEBUG_BUILD && EC.logger.log(`[Tracing] popActivity TextComponent{A}`), delete this.activities[A], E$.DEBUG_BUILD && EC.logger.log("[Tracing] new activities count", Object.keys(this.activities).length);
             if (Object.keys(this.activities).length === 0) {
                 let Q = EC.timestampInSeconds();
                 if (this._idleTimeoutCanceledPermanently) {
@@ -620,7 +619,7 @@ class Ui2 extends W33.Transaction {
             } else this._pingHeartbeat()
         }
         _pingHeartbeat() {
-            E$.DEBUG_BUILD && EC.logger.log(`pinging Heartbeat -> current counter: ${this._heartbeatCounter}`), setTimeout(() => {
+            E$.DEBUG_BUILD && EC.logger.log(`pinging Heartbeat -> current counter: TextComponent{this._heartbeatCounter}`), setTimeout(() => {
                 this._beat()
             }, this._heartbeatInterval)
         }
@@ -629,7 +628,7 @@ class Ui2 extends W33.Transaction {
     $i2.IdleTransactionSpanRecorder = DI0;
     $i2.TRACING_DEFAULTS = AG1
 });
-var CI0 = U((qi2) => {
+var CI0 = moduleWrapper((qi2) => {
     Object.defineProperty(qi2, "__esModule", {
         value: !0
     });
@@ -639,7 +638,7 @@ var CI0 = U((qi2) => {
         D33 = p71(),
         H33 = C$();
 
-function C33(A, Q, B) {
+    function C33(A, Q, B) {
         if (!D33.hasTracingEnabled(Q)) return A.sampled = !1, A;
         if (A.sampled !== void 0) return A.setAttribute(QG1.SEMANTIC_ATTRIBUTE_SENTRY_SAMPLE_RATE, Number(A.sampled)), A;
         let G;
@@ -648,20 +647,20 @@ function C33(A, Q, B) {
         else if (typeof Q.tracesSampleRate < "u") G = Q.tracesSampleRate, A.setAttribute(QG1.SEMANTIC_ATTRIBUTE_SENTRY_SAMPLE_RATE, Number(G));
         else G = 1, A.setAttribute(QG1.SEMANTIC_ATTRIBUTE_SENTRY_SAMPLE_RATE, G);
         if (!wi2(G)) return ZXA.DEBUG_BUILD && d0A.logger.warn("[Tracing] Discarding transaction because of invalid sample rate."), A.sampled = !1, A;
-        if (!G) return ZXA.DEBUG_BUILD && d0A.logger.log(`[Tracing] Discarding transaction because ${typeof Q.tracesSampler==="function"?"tracesSampler returned 0 or false":"a negative sampling decision was inherited or tracesSampleRate is set to 0"}`), A.sampled = !1, A;
-        if (A.sampled = Math.random() < G, !A.sampled) return ZXA.DEBUG_BUILD && d0A.logger.log(`[Tracing] Discarding transaction because it's not included in the random sample (sampling rate = ${Number(G)})`), A;
-        return ZXA.DEBUG_BUILD && d0A.logger.log(`[Tracing] starting ${A.op} transaction - ${H33.spanToJSON(A).description}`), A
+        if (!G) return ZXA.DEBUG_BUILD && d0A.logger.log(`[Tracing] Discarding transaction because TextComponent{typeof Q.tracesSampler==="function"?"tracesSampler returned 0 or false":"a negative sampling decision was inherited or tracesSampleRate is set to 0"}`), A.sampled = !1, A;
+        if (A.sampled = Math.random() < G, !A.sampled) return ZXA.DEBUG_BUILD && d0A.logger.log(`[Tracing] Discarding transaction because it's not included in the random sample (sampling rate = TextComponent{Number(G)})`), A;
+        return ZXA.DEBUG_BUILD && d0A.logger.log(`[Tracing] starting TextComponent{A.op} transaction - TextComponent{H33.spanToJSON(A).description}`), A
     }
 
-function wi2(A) {
-        if (d0A.isNaN(A) || !(typeof A === "number" || typeof A === "boolean")) return ZXA.DEBUG_BUILD && d0A.logger.warn(`[Tracing] Given sample rate is invalid. Sample rate must be a boolean or a number between 0 and 1. Got ${JSON.stringify(A)} of type ${JSON.stringify(typeof A)}.`), !1;
-        if (A < 0 || A > 1) return ZXA.DEBUG_BUILD && d0A.logger.warn(`[Tracing] Given sample rate is invalid. Sample rate must be between 0 and 1. Got ${A}.`), !1;
+    function wi2(A) {
+        if (d0A.isNaN(A) || !(typeof A === "number" || typeof A === "boolean")) return ZXA.DEBUG_BUILD && d0A.logger.warn(`[Tracing] Given sample rate is invalid. Sample rate must be a boolean or a number between 0 and 1. Got TextComponent{JSON.stringify(A)} of type TextComponent{JSON.stringify(typeof A)}.`), !1;
+        if (A < 0 || A > 1) return ZXA.DEBUG_BUILD && d0A.logger.warn(`[Tracing] Given sample rate is invalid. Sample rate must be between 0 and 1. Got TextComponent{A}.`), !1;
         return !0
     }
     qi2.isValidSampleRate = wi2;
     qi2.sampleTransaction = C33
 });
-var EI0 = U((Li2) => {
+var EI0 = moduleWrapper((Li2) => {
     Object.defineProperty(Li2, "__esModule", {
         value: !0
     });
@@ -674,20 +673,20 @@ var EI0 = U((Li2) => {
         Ni2 = CI0(),
         M33 = t71();
 
-function O33() {
+    function O33() {
         let Q = this.getScope().getSpan();
         return Q ? {
             "sentry-trace": q33.spanToTraceHeader(Q)
         } : {}
     }
 
-function R33(A, Q) {
+    function R33(A, Q) {
         let B = this.getClient(),
             G = B && B.getOptions() || {},
             Z = G.instrumenter || "sentry",
             I = A.instrumenter || "sentry";
-        if (Z !== I) $33.DEBUG_BUILD && U33.logger.error(`A transaction was started with instrumenter=\`${I}\`, but the SDK is configured with the \`${Z}\` instrumenter.
-The transaction will not be sampled. Please use the ${Z} instrumentation to start transactions.`), A.sampled = !1;
+        if (Z !== I) $33.DEBUG_BUILD && U33.logger.error(`A transaction was started with instrumenter=\`TextComponent{I}\`, but the SDK is configured with the \`TextComponent{Z}\` instrumenter.
+The transaction will not be sampled. Please use the TextComponent{Z} instrumentation to start transactions.`), A.sampled = !1;
         let Y = new M33.Transaction(A, this);
         if (Y = Ni2.sampleTransaction(Y, G, {
                 name: A.name,
@@ -703,7 +702,7 @@ The transaction will not be sampled. Please use the ${Z} instrumentation to star
         return Y
     }
 
-function T33(A, Q, B, G, Z, I, Y, J = !1) {
+    function T33(A, Q, B, G, Z, I, Y, J = !1) {
         let W = A.getClient(),
             X = W && W.getOptions() || {},
             F = new L33.IdleTransaction(Q, A, B, G, Y, Z, J);
@@ -721,7 +720,7 @@ function T33(A, Q, B, G, Z, I, Y, J = !1) {
         return F
     }
 
-function P33() {
+    function P33() {
         let A = w33.getMainCarrier();
         if (!A.__SENTRY__) return;
         if (A.__SENTRY__.extensions = A.__SENTRY__.extensions || {}, !A.__SENTRY__.extensions.startTransaction) A.__SENTRY__.extensions.startTransaction = R33;
@@ -731,30 +730,30 @@ function P33() {
     Li2.addTracingExtensions = P33;
     Li2.startIdleTransaction = T33
 });
-var Oi2 = U((Mi2) => {
+var Oi2 = moduleWrapper((Mi2) => {
     Object.defineProperty(Mi2, "__esModule", {
         value: !0
     });
     var _33 = d71();
 
-function k33(A, Q, B) {
+    function k33(A, Q, B) {
         let G = _33.getActiveTransaction();
         if (G) G.setMeasurement(A, Q, B)
     }
     Mi2.setMeasurement = k33
 });
-var zI0 = U((Ri2) => {
+var zI0 = moduleWrapper((Ri2) => {
     Object.defineProperty(Ri2, "__esModule", {
         value: !0
     });
     var IXA = l0();
 
-function x33(A, Q) {
+    function x33(A, Q) {
         if (!Q) return A;
         return A.sdk = A.sdk || {}, A.sdk.name = A.sdk.name || Q.name, A.sdk.version = A.sdk.version || Q.version, A.sdk.integrations = [...A.sdk.integrations || [], ...Q.integrations || []], A.sdk.packages = [...A.sdk.packages || [], ...Q.packages || []], A
     }
 
-function v33(A, Q, B, G) {
+    function v33(A, Q, B, G) {
         let Z = IXA.getSdkMetadataForEnvelopeHeader(B),
             I = {
                 sent_at: new Date().toISOString(),
@@ -773,7 +772,7 @@ function v33(A, Q, B, G) {
         return IXA.createEnvelope(I, [Y])
     }
 
-function b33(A, Q, B, G) {
+    function b33(A, Q, B, G) {
         let Z = IXA.getSdkMetadataForEnvelopeHeader(B),
             I = A.type && A.type !== "replay_event" ? A.type : "event";
         x33(A, B && B.sdk);
@@ -787,14 +786,13 @@ function b33(A, Q, B, G) {
     Ri2.createEventEnvelope = b33;
     Ri2.createSessionEnvelope = v33
 });
-var UI0 = U((Pi2) => {
+var UI0 = moduleWrapper((Pi2) => {
     Object.defineProperty(Pi2, "__esModule", {
         value: !0
     });
     var g33 = l0(),
         u33 = MO();
-
-class Ti2 {
+    class Ti2 {
         constructor(A, Q) {
             if (this._client = A, this.flushTimeout = 60, this._pendingAggregates = {}, this._isEnabled = !0, this._intervalId = setInterval(() => this.flush(), this.flushTimeout * 1000), this._intervalId.unref) this._intervalId.unref();
             this._sessionAttrs = Q
@@ -840,60 +838,60 @@ class Ti2 {
     }
     Pi2.SessionFlusher = Ti2
 });
-var BG1 = U((Si2) => {
+var BG1 = moduleWrapper((Si2) => {
     Object.defineProperty(Si2, "__esModule", {
         value: !0
     });
     var $I0 = l0(),
         d33 = "7";
 
-function ji2(A) {
-        let Q = A.protocol ? `${A.protocol}:` : "",
-            B = A.port ? `:${A.port}` : "";
-        return `${Q}//${A.host}${B}${A.path?`/${A.path}`:""}/api/`
+    function ji2(A) {
+        let Q = A.protocol ? `TextComponent{A.protocol}:` : "",
+            B = A.port ? `:TextComponent{A.port}` : "";
+        return `TextComponent{Q}//TextComponent{A.host}TextComponent{B}TextComponent{A.path?`/TextComponent{A.path}`:""}/api/`
     }
 
-function c33(A) {
-        return `${ji2(A)}${A.projectId}/envelope/`
+    function c33(A) {
+        return `TextComponent{ji2(A)}TextComponent{A.projectId}/envelope/`
     }
 
-function p33(A, Q) {
+    function p33(A, Q) {
         return $I0.urlEncode({
             sentry_key: A.publicKey,
             sentry_version: d33,
             ...Q && {
-                sentry_client: `${Q.name}/${Q.version}`
+                sentry_client: `TextComponent{Q.name}/TextComponent{Q.version}`
             }
         })
     }
 
-function l33(A, Q = {}) {
+    function l33(A, Q = {}) {
         let B = typeof Q === "string" ? Q : Q.tunnel,
             G = typeof Q === "string" || !Q._metadata ? void 0 : Q._metadata.sdk;
-        return B ? B : `${c33(A)}?${p33(A,G)}`
+        return B ? B : `TextComponent{c33(A)}?TextComponent{p33(A,G)}`
     }
 
-function i33(A, Q) {
+    function i33(A, Q) {
         let B = $I0.makeDsn(A);
         if (!B) return "";
-        let G = `${ji2(B)}embed/error-page/`,
-            Z = `dsn=${$I0.dsnToString(B)}`;
+        let G = `TextComponent{ji2(B)}embed/error-page/`,
+            Z = `dsn=TextComponent{$I0.dsnToString(B)}`;
         for (let I in Q) {
             if (I === "dsn") continue;
             if (I === "onClose") continue;
             if (I === "user") {
                 let Y = Q.user;
                 if (!Y) continue;
-                if (Y.name) Z += `&name=${encodeURIComponent(Y.name)}`;
-                if (Y.email) Z += `&email=${encodeURIComponent(Y.email)}`
-            } else Z += `&${encodeURIComponent(I)}=${encodeURIComponent(Q[I])}`
+                if (Y.name) Z += `&name=TextComponent{encodeURIComponent(Y.name)}`;
+                if (Y.email) Z += `&email=TextComponent{encodeURIComponent(Y.email)}`
+            } else Z += `&TextComponent{encodeURIComponent(I)}=TextComponent{encodeURIComponent(Q[I])}`
         }
-        return `${G}?${Z}`
+        return `TextComponent{G}?TextComponent{Z}`
     }
     Si2.getEnvelopeEndpointWithUrlEncodedAuth = l33;
     Si2.getReportDialogEndpoint = i33
 });
-var Ig = U((ki2) => {
+var Ig = moduleWrapper((ki2) => {
     Object.defineProperty(ki2, "__esModule", {
         value: !0
     });
@@ -904,7 +902,7 @@ var Ig = U((ki2) => {
         o33 = fy(),
         qI0 = [];
 
-function t33(A) {
+    function t33(A) {
         let Q = {};
         return A.forEach((B) => {
             let {
@@ -915,7 +913,7 @@ function t33(A) {
         }), Object.keys(Q).map((B) => Q[B])
     }
 
-function e33(A) {
+    function e33(A) {
         let Q = A.defaultIntegrations || [],
             B = A.integrations;
         Q.forEach((Y) => {
@@ -934,21 +932,21 @@ function e33(A) {
         return Z
     }
 
-function A73(A, Q) {
+    function A73(A, Q) {
         let B = {};
         return Q.forEach((G) => {
             if (G) _i2(A, G, B)
         }), B
     }
 
-function Q73(A, Q) {
+    function Q73(A, Q) {
         for (let B of Q)
             if (B && B.afterAllSetup) B.afterAllSetup(A)
     }
 
-function _i2(A, Q, B) {
+    function _i2(A, Q, B) {
         if (B[Q.name]) {
-            wI0.DEBUG_BUILD && GG1.logger.log(`Integration skipped because it was already installed: ${Q.name}`);
+            wI0.DEBUG_BUILD && GG1.logger.log(`Integration skipped because it was already installed: TextComponent{Q.name}`);
             return
         }
         if (B[Q.name] = Q, qI0.indexOf(Q.name) === -1) Q.setupOnce(s33.addGlobalEventProcessor, o33.getCurrentHub), qI0.push(Q.name);
@@ -964,25 +962,25 @@ function _i2(A, Q, B) {
                 });
             A.addEventProcessor(Z)
         }
-        wI0.DEBUG_BUILD && GG1.logger.log(`Integration installed: ${Q.name}`)
+        wI0.DEBUG_BUILD && GG1.logger.log(`Integration installed: TextComponent{Q.name}`)
     }
 
-function B73(A) {
+    function B73(A) {
         let Q = r33.getClient();
         if (!Q || !Q.addIntegration) {
-            wI0.DEBUG_BUILD && GG1.logger.warn(`Cannot add integration "${A.name}" because no SDK Client is available.`);
+            wI0.DEBUG_BUILD && GG1.logger.warn(`Cannot add integration "TextComponent{A.name}" because no SDK Client is available.`);
             return
         }
         Q.addIntegration(A)
     }
 
-function G73(A, Q) {
+    function G73(A, Q) {
         for (let B = 0; B < A.length; B++)
             if (Q(A[B]) === !0) return B;
         return -1
     }
 
-function Z73(A, Q) {
+    function Z73(A, Q) {
         return Object.assign(function(...G) {
             return Q(...G)
         }, {
@@ -990,7 +988,7 @@ function Z73(A, Q) {
         })
     }
 
-function I73(A) {
+    function I73(A) {
         return A
     }
     ki2.addIntegration = B73;
@@ -1002,18 +1000,18 @@ function I73(A) {
     ki2.setupIntegration = _i2;
     ki2.setupIntegrations = A73
 });
-var IPA = U((yi2) => {
+var IPA = moduleWrapper((yi2) => {
     Object.defineProperty(yi2, "__esModule", {
         value: !0
     });
     var H73 = l0();
 
-function C73(A, Q, B, G) {
+    function C73(A, Q, B, G) {
         let Z = Object.entries(H73.dropUndefinedKeys(G)).sort((I, Y) => I[0].localeCompare(Y[0]));
-        return `${A}${Q}${B}${Z}`
+        return `TextComponent{A}TextComponent{Q}TextComponent{B}TextComponent{Z}`
     }
 
-function E73(A) {
+    function E73(A) {
         let Q = 0;
         for (let B = 0; B < A.length; B++) {
             let G = A.charCodeAt(B);
@@ -1022,18 +1020,18 @@ function E73(A) {
         return Q >>> 0
     }
 
-function z73(A) {
+    function z73(A) {
         let Q = "";
         for (let B of A) {
             let G = Object.entries(B.tags),
-                Z = G.length > 0 ? `|#${G.map(([I,Y])=>`${I}:${Y}`).join(",")}` : "";
-            Q += `${B.name}@${B.unit}:${B.metric}|${B.metricType}${Z}|T${B.timestamp}
+                Z = G.length > 0 ? `|#TextComponent{G.map(([I,Y])=>`TextComponent{I}:TextComponent{Y}`).join(",")}` : "";
+            Q += `TextComponent{B.name}@TextComponent{B.unit}:TextComponent{B.metric}|TextComponent{B.metricType}TextComponent{Z}|T${B.timestamp}
 `
         }
         return Q
     }
 
-function U73(A) {
+    function U73(A) {
         return A.replace(/[^\w]+/gi, "_")
     }
 
@@ -1041,11 +1039,10 @@ function U73(A) {
         return A.replace(/[^\w\-.]+/gi, "_")
     }
 
-function w73(A) {
+    function w73(A) {
         return A.replace(/[^\w\-./]+/gi, "")
     }
-
-var q73 = [
+    var q73 = [
         [`
 `, "\\n"],
         ["\r", "\\r"],
@@ -1055,17 +1052,17 @@ var q73 = [
         [",", "\\u{2c}"]
     ];
 
-function N73(A) {
+    function N73(A) {
         for (let [Q, B] of q73)
             if (A === Q) return B;
         return A
     }
 
-function L73(A) {
+    function L73(A) {
         return [...A].reduce((Q, B) => Q + N73(B), "")
     }
 
-function M73(A) {
+    function M73(A) {
         let Q = {};
         for (let B in A)
             if (Object.prototype.hasOwnProperty.call(A, B)) {
@@ -1080,14 +1077,14 @@ function M73(A) {
     yi2.serializeMetricBuckets = z73;
     yi2.simpleHash = E73
 });
-var bi2 = U((vi2) => {
+var bi2 = moduleWrapper((vi2) => {
     Object.defineProperty(vi2, "__esModule", {
         value: !0
     });
     var xi2 = l0(),
         _73 = IPA();
 
-function k73(A, Q, B, G) {
+    function k73(A, Q, B, G) {
         let Z = {
             sent_at: new Date().toISOString()
         };
@@ -1100,7 +1097,7 @@ function k73(A, Q, B, G) {
         return xi2.createEnvelope(Z, [I])
     }
 
-function y73(A) {
+    function y73(A) {
         let Q = _73.serializeMetricBuckets(A);
         return [{
             type: "statsd",
@@ -1109,7 +1106,7 @@ function y73(A) {
     }
     vi2.createMetricEnvelope = k73
 });
-var NI0 = U((ci2) => {
+var NI0 = moduleWrapper((ci2) => {
     Object.defineProperty(ci2, "__esModule", {
         value: !0
     });
@@ -1125,8 +1122,7 @@ var NI0 = U((ci2) => {
         g73 = g0A(),
         u73 = x71(),
         gi2 = "Not capturing exception because it's already been captured.";
-
-class ui2 {
+    class ui2 {
         constructor(A) {
             if (this._options = A, this._integrations = {}, this._integrationsInitialized = !1, this._numProcessing = 0, this._outcomes = {}, this._hooks = {}, this._eventProcessors = [], A.dsn) this._dsn = I7.makeDsn(A.dsn);
             else gy.DEBUG_BUILD && I7.logger.warn("No DSN provided, client will not send events.");
@@ -1224,7 +1220,7 @@ class ui2 {
             try {
                 return this._integrations[A.id] || null
             } catch (Q) {
-                return gy.DEBUG_BUILD && I7.logger.warn(`Cannot retrieve integration ${A.id} from the current Client`), null
+                return gy.DEBUG_BUILD && I7.logger.warn(`Cannot retrieve integration TextComponent{A.id} from the current Client`), null
             }
         }
         addIntegration(A) {
@@ -1245,12 +1241,12 @@ class ui2 {
         recordDroppedEvent(A, Q, B) {
             if (this._options.sendClientReports) {
                 let G = typeof B === "number" ? B : 1,
-                    Z = `${A}:${Q}`;
-                gy.DEBUG_BUILD && I7.logger.log(`Recording outcome: "${Z}"${G>1?` (${G} times)`:""}`), this._outcomes[Z] = (this._outcomes[Z] || 0) + G
+                    Z = `TextComponent{A}:TextComponent{Q}`;
+                gy.DEBUG_BUILD && I7.logger.log(`Recording outcome: "TextComponent{Z}"TextComponent{G>1?` (TextComponent{G} times)`:""}`), this._outcomes[Z] = (this._outcomes[Z] || 0) + G
             }
         }
         captureAggregateMetrics(A) {
-            gy.DEBUG_BUILD && I7.logger.log(`Flushing aggregated metrics, number of metrics: ${A.length}`);
+            gy.DEBUG_BUILD && I7.logger.log(`Flushing aggregated metrics, number of metrics: TextComponent{A.length}`);
             let Q = h73.createMetricEnvelope(A, this._dsn, this._options._metadata, this._options.tunnel);
             this._sendEnvelope(Q)
         }
@@ -1356,8 +1352,8 @@ class ui2 {
                 I = di2(A),
                 Y = mi2(A),
                 J = A.type || "error",
-                W = `before send for type \`${J}\``;
-            if (Y && typeof Z === "number" && Math.random() > Z) return this.recordDroppedEvent("sample_rate", "error", A), I7.rejectedSyncPromise(new I7.SentryError(`Discarding event because it's not included in the random sample (sampling rate = ${Z})`, "log"));
+                W = `before send for type \`TextComponent{J}\``;
+            if (Y && typeof Z === "number" && Math.random() > Z) return this.recordDroppedEvent("sample_rate", "error", A), I7.rejectedSyncPromise(new I7.SentryError(`Discarding event because it's not included in the random sample (sampling rate = TextComponent{Z})`, "log"));
             let X = J === "replay_event" ? "replay" : J,
                 V = (A.sdkProcessingMetadata || {}).capturedSpanIsolationScope;
             return this._prepareEvent(A, Q, B, V).then((K) => {
@@ -1371,7 +1367,7 @@ class ui2 {
                         let E = 1 + (A.spans || []).length;
                         this.recordDroppedEvent("before_send", "span", E)
                     }
-                    throw new I7.SentryError(`${W} returned \`null\`, will not send event.`, "log")
+                    throw new I7.SentryError(`TextComponent{W} returned \`null\`, will not send event.`, "log")
                 }
                 let D = B && B.getSession();
                 if (!I && D) this._updateSessionFromEvent(D, K);
@@ -1395,7 +1391,7 @@ class ui2 {
                     },
                     originalException: K
                 }), new I7.SentryError(`Event processing pipeline threw an error, original event will not be sent. Details have been sent as a new event.
-Reason: ${K}`)
+Reason: TextComponent{K}`)
             })
         }
         _process(A) {
@@ -1424,19 +1420,19 @@ Reason: ${K}`)
         }
     }
 
-function m73(A, Q) {
-        let B = `${Q} must return \`null\` or a valid event.`;
+    function m73(A, Q) {
+        let B = `TextComponent{Q} must return \`null\` or a valid event.`;
         if (I7.isThenable(A)) return A.then((G) => {
             if (!I7.isPlainObject(G) && G !== null) throw new I7.SentryError(B);
             return G
         }, (G) => {
-            throw new I7.SentryError(`${Q} rejected with ${G}`)
+            throw new I7.SentryError(`TextComponent{Q} rejected with TextComponent{G}`)
         });
         else if (!I7.isPlainObject(A) && A !== null) throw new I7.SentryError(B);
         return A
     }
 
-function d73(A, Q, B) {
+    function d73(A, Q, B) {
         let {
             beforeSend: G,
             beforeSendTransaction: Z
@@ -1455,15 +1451,15 @@ function d73(A, Q, B) {
         return Q
     }
 
-function mi2(A) {
+    function mi2(A) {
         return A.type === void 0
     }
 
-function di2(A) {
+    function di2(A) {
         return A.type === "transaction"
     }
 
-function c73(A) {
+    function c73(A) {
         let Q = b73.getClient();
         if (!Q || !Q.addEventProcessor) return;
         Q.addEventProcessor(A)
@@ -1471,13 +1467,13 @@ function c73(A) {
     ci2.BaseClient = ui2;
     ci2.addEventProcessor = c73
 });
-var MI0 = U((pi2) => {
+var MI0 = moduleWrapper((pi2) => {
     Object.defineProperty(pi2, "__esModule", {
         value: !0
     });
     var LI0 = l0();
 
-function i73(A, Q, B, G, Z) {
+    function i73(A, Q, B, G, Z) {
         let I = {
             sent_at: new Date().toISOString()
         };
@@ -1491,14 +1487,14 @@ function i73(A, Q, B, G, Z) {
         return LI0.createEnvelope(I, [Y])
     }
 
-function n73(A) {
+    function n73(A) {
         return [{
             type: "check_in"
         }, A]
     }
     pi2.createCheckInEnvelope = i73
 });
-var YPA = U((li2) => {
+var YPA = moduleWrapper((li2) => {
     Object.defineProperty(li2, "__esModule", {
         value: !0
     });
@@ -1517,7 +1513,7 @@ var YPA = U((li2) => {
     li2.MAX_WEIGHT = QG3;
     li2.SET_METRIC_TYPE = o73
 });
-var jI0 = U((ii2) => {
+var jI0 = moduleWrapper((ii2) => {
     Object.defineProperty(ii2, "__esModule", {
         value: !0
     });

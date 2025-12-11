@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_038.js
+ * 处理时间: 2025-12-09T03:41:36.772Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.921Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -37,20 +40,20 @@
             return A.forEach((Q) => {
                 Object.keys(Q).forEach((B) => {
                     let G = Q[B];
-                    if (G.length > 1) throw Error(`Parameter "${B}" must have only a single value`);
+                    if (G.length > 1) throw Error(`Parameter "TextComponent{B}" must have only a single value`);
                     if (G = G[0], B === "client_max_window_bits") {
                         if (G !== !0) {
                             let Z = +G;
-                            if (!Number.isInteger(Z) || Z < 8 || Z > 15) throw TypeError(`Invalid value for parameter "${B}": ${G}`);
+                            if (!Number.isInteger(Z) || Z < 8 || Z > 15) throw TypeError(`Invalid value for parameter "TextComponent{B}": TextComponent{G}`);
                             G = Z
-                        } else if (!this._isServer) throw TypeError(`Invalid value for parameter "${B}": ${G}`)
+                        } else if (!this._isServer) throw TypeError(`Invalid value for parameter "TextComponent{B}": TextComponent{G}`)
                     } else if (B === "server_max_window_bits") {
                         let Z = +G;
-                        if (!Number.isInteger(Z) || Z < 8 || Z > 15) throw TypeError(`Invalid value for parameter "${B}": ${G}`);
+                        if (!Number.isInteger(Z) || Z < 8 || Z > 15) throw TypeError(`Invalid value for parameter "TextComponent{B}": TextComponent{G}`);
                         G = Z
                     } else if (B === "client_no_context_takeover" || B === "server_no_context_takeover") {
-                        if (G !== !0) throw TypeError(`Invalid value for parameter "${B}": ${G}`)
-                    } else throw Error(`Unknown parameter "${B}"`);
+                        if (G !== !0) throw TypeError(`Invalid value for parameter "TextComponent{B}": TextComponent{G}`)
+                    } else throw Error(`Unknown parameter "TextComponent{B}"`);
                     Q[B] = G
                 })
             }), A
@@ -72,7 +75,7 @@
         _decompress(A, Q, B) {
             let G = this._isServer ? "client" : "server";
             if (!this._inflate) {
-                let Z = `${G}_max_window_bits`,
+                let Z = `TextComponent{G}_max_window_bits`,
                     I = typeof this.params[Z] !== "number" ? jUA.Z_DEFAULT_WINDOWBITS : this.params[Z];
                 this._inflate = jUA.createInflateRaw({
                     ...this._options.zlibInflateOptions,
@@ -88,14 +91,14 @@
                 }
                 let I = oZB.concat(this._inflate[lc], this._inflate[lb]);
                 if (this._inflate._readableState.endEmitted) this._inflate.close(), this._inflate = null;
-                else if (this._inflate[lb] = 0, this._inflate[lc] = [], Q && this.params[`${G}_no_context_takeover`]) this._inflate.reset();
+                else if (this._inflate[lb] = 0, this._inflate[lc] = [], Q && this.params[`TextComponent{G}_no_context_takeover`]) this._inflate.reset();
                 B(null, I)
             })
         }
         _compress(A, Q, B) {
             let G = this._isServer ? "server" : "client";
             if (!this._deflate) {
-                let Z = `${G}_max_window_bits`,
+                let Z = `TextComponent{G}_max_window_bits`,
                     I = typeof this.params[Z] !== "number" ? jUA.Z_DEFAULT_WINDOWBITS : this.params[Z];
                 this._deflate = jUA.createDeflateRaw({
                     ...this._options.zlibDeflateOptions,
@@ -106,18 +109,18 @@
                 if (!this._deflate) return;
                 let Z = oZB.concat(this._deflate[lc], this._deflate[lb]);
                 if (Q) Z = new qB6(Z.buffer, Z.byteOffset, Z.length - 4);
-                if (this._deflate[D7A] = null, this._deflate[lb] = 0, this._deflate[lc] = [], Q && this.params[`${G}_no_context_takeover`]) this._deflate.reset();
+                if (this._deflate[D7A] = null, this._deflate[lb] = 0, this._deflate[lc] = [], Q && this.params[`TextComponent{G}_no_context_takeover`]) this._deflate.reset();
                 B(null, Z)
             })
         }
     }
     QIB.exports = eZB;
 
-function LB6(A) {
+    function LB6(A) {
         this[lc].push(A), this[lb] += A.length
     }
 
-function AIB(A) {
+    function AIB(A) {
         if (this[lb] += A.length, this[AaA]._maxPayload < 1 || this[lb] <= this[AaA]._maxPayload) {
             this[lc].push(A);
             return
@@ -125,7 +128,7 @@ function AIB(A) {
         this[H7A] = RangeError("Max payload size exceeded"), this[H7A].code = "WS_ERR_UNSUPPORTED_MESSAGE_LENGTH", this[H7A][tZB] = 1009, this.removeListener("data", AIB), this.reset()
     }
 
-function MB6(A) {
+    function MB6(A) {
         if (this[AaA]._inflate = null, this[H7A]) {
             this[D7A](this[H7A]);
             return
@@ -133,18 +136,18 @@ function MB6(A) {
         A[tZB] = 1007, this[D7A](A)
     }
 });
-var C7A = U((Qf7, QaA) => {
+var C7A = moduleWrapper((Qf7, QaA) => {
     var {
         isUtf8: BIB
-    } = UA("buffer"), {
+    } = nodeRequire("buffer"), {
         hasBlob: OB6
     } = pb(), RB6 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0];
 
-function TB6(A) {
+    function TB6(A) {
         return A >= 1000 && A <= 1014 && A !== 1004 && A !== 1005 && A !== 1006 || A >= 3000 && A <= 4999
     }
 
-function Zh1(A) {
+    function Zh1(A) {
         let Q = A.length,
             B = 0;
         while (B < Q)
@@ -162,7 +165,7 @@ function Zh1(A) {
         return !0
     }
 
-function PB6(A) {
+    function PB6(A) {
         return OB6 && typeof A === "object" && typeof A.arrayBuffer === "function" && typeof A.type === "string" && typeof A.stream === "function" && (A[Symbol.toStringTag] === "Blob" || A[Symbol.toStringTag] === "File")
     }
     QaA.exports = {
@@ -183,10 +186,10 @@ function PB6(A) {
         }
     } catch (A) {}
 });
-var Yh1 = U((Bf7, JIB) => {
+var Yh1 = moduleWrapper((Bf7, JIB) => {
     var {
         Writable: jB6
-    } = UA("stream"), GIB = SUA(), {
+    } = nodeRequire("stream"), GIB = SUA(), {
         BINARY_TYPES: SB6,
         EMPTY_BUFFER: ZIB,
         kStatusCode: _B6,
@@ -199,8 +202,7 @@ var Yh1 = U((Bf7, JIB) => {
         isValidStatusCode: vB6,
         isValidUTF8: IIB
     } = C7A(), BaA = Buffer[Symbol.species];
-
-class YIB extends jB6 {
+    class YIB extends jB6 {
         constructor(A = {}) {
             super();
             this._allowSynchronousEvents = A.allowSynchronousEvents !== void 0 ? A.allowSynchronousEvents : !0, this._binaryType = A.binaryType || SB6[0], this._extensions = A.extensions || {}, this._isServer = !!A.isServer, this._maxPayload = A.maxPayload | 0, this._skipUTF8Validation = !!A.skipUTF8Validation, this[kB6] = void 0, this._bufferedBytes = 0, this._buffers = [], this._compressed = !1, this._payloadLength = 0, this._mask = void 0, this._fragmented = 0, this._masked = !1, this._fin = !1, this._opcode = 0, this._totalPayloadLength = 0, this._messageLength = 0, this._fragments = [], this._errored = !1, this._loop = !1, this._state = 0
@@ -282,7 +284,7 @@ class YIB extends jB6 {
                 this._opcode = this._fragmented
             } else if (this._opcode === 1 || this._opcode === 2) {
                 if (this._fragmented) {
-                    let G = this.createError(RangeError, `invalid opcode ${this._opcode}`, !0, 1002, "WS_ERR_INVALID_OPCODE");
+                    let G = this.createError(RangeError, `invalid opcode TextComponent{this._opcode}`, !0, 1002, "WS_ERR_INVALID_OPCODE");
                     A(G);
                     return
                 }
@@ -299,12 +301,12 @@ class YIB extends jB6 {
                     return
                 }
                 if (this._payloadLength > 125 || this._opcode === 8 && this._payloadLength === 1) {
-                    let G = this.createError(RangeError, `invalid payload length ${this._payloadLength}`, !0, 1002, "WS_ERR_INVALID_CONTROL_PAYLOAD_LENGTH");
+                    let G = this.createError(RangeError, `invalid payload length TextComponent{this._payloadLength}`, !0, 1002, "WS_ERR_INVALID_CONTROL_PAYLOAD_LENGTH");
                     A(G);
                     return
                 }
             } else {
-                let G = this.createError(RangeError, `invalid opcode ${this._opcode}`, !0, 1002, "WS_ERR_INVALID_OPCODE");
+                let G = this.createError(RangeError, `invalid opcode TextComponent{this._opcode}`, !0, 1002, "WS_ERR_INVALID_OPCODE");
                 A(G);
                 return
             }
@@ -433,7 +435,7 @@ class YIB extends jB6 {
                 else {
                     let B = A.readUInt16BE(0);
                     if (!vB6(B)) {
-                        let Z = this.createError(RangeError, `invalid status code ${B}`, !0, 1002, "WS_ERR_INVALID_CLOSE_CODE");
+                        let Z = this.createError(RangeError, `invalid status code TextComponent{B}`, !0, 1002, "WS_ERR_INVALID_CLOSE_CODE");
                         Q(Z);
                         return
                     }
@@ -455,18 +457,18 @@ class YIB extends jB6 {
         }
         createError(A, Q, B, G, Z) {
             this._loop = !1, this._errored = !0;
-            let I = new A(B ? `Invalid WebSocket frame: ${Q}` : Q);
+            let I = new A(B ? `Invalid WebSocket frame: TextComponent{Q}` : Q);
             return Error.captureStackTrace(I, this.createError), I.code = Z, I[_B6] = G, I
         }
     }
     JIB.exports = YIB
 });
-var Wh1 = U((Zf7, FIB) => {
+var Wh1 = moduleWrapper((Zf7, FIB) => {
     var {
         Duplex: Gf7
-    } = UA("stream"), {
+    } = nodeRequire("stream"), {
         randomFillSync: bB6
-    } = UA("crypto"), WIB = SUA(), {
+    } = nodeRequire("crypto"), WIB = SUA(), {
         EMPTY_BUFFER: fB6,
         kWebSocket: hB6,
         NOOP: gB6
@@ -477,8 +479,7 @@ var Wh1 = U((Zf7, FIB) => {
         mask: XIB,
         toBuffer: qt
     } = PUA(), WM = Symbol("kByteLength"), mB6 = Buffer.alloc(4), Nt, z7A = 8192, CT = 0, dB6 = 1, cB6 = 2;
-
-class ic {
+    class ic {
         constructor(A, Q, B) {
             if (this._extensions = Q || {}, B) this._generateMask = B, this._maskBuffer = Buffer.alloc(4);
             this._socket = A, this._firstFragment = !0, this._compress = !1, this._bufferedBytes = 0, this._queue = [], this._state = CT, this.onerror = gB6, this[hB6] = void 0
@@ -658,7 +659,7 @@ class ic {
     }
     FIB.exports = ic;
 
-function Jh1(A, Q, B) {
+    function Jh1(A, Q, B) {
         if (typeof B === "function") B(Q);
         for (let G = 0; G < A._queue.length; G++) {
             let Z = A._queue[G],
@@ -667,17 +668,16 @@ function Jh1(A, Q, B) {
         }
     }
 
-function pB6(A, Q, B) {
+    function pB6(A, Q, B) {
         Jh1(A, Q, B), A.onerror(Q)
     }
 });
-var $IB = U((If7, UIB) => {
+var $IB = moduleWrapper((If7, UIB) => {
     var {
         kForOnEventAttribute: _UA,
         kListener: Xh1
     } = pb(), VIB = Symbol("kCode"), KIB = Symbol("kData"), DIB = Symbol("kError"), HIB = Symbol("kMessage"), CIB = Symbol("kReason"), U7A = Symbol("kTarget"), EIB = Symbol("kType"), zIB = Symbol("kWasClean");
-
-class nc {
+    class nc {
         constructor(A) {
             this[U7A] = null, this[EIB] = A
         }
@@ -718,8 +718,7 @@ class nc {
     Object.defineProperty($7A.prototype, "wasClean", {
         enumerable: !0
     });
-
-class kUA extends nc {
+    class kUA extends nc {
         constructor(A, Q = {}) {
             super(A);
             this[DIB] = Q.error === void 0 ? null : Q.error, this[HIB] = Q.message === void 0 ? "" : Q.message
@@ -737,8 +736,7 @@ class kUA extends nc {
     Object.defineProperty(kUA.prototype, "message", {
         enumerable: !0
     });
-
-class ZaA extends nc {
+    class ZaA extends nc {
         constructor(A, Q = {}) {
             super(A);
             this[KIB] = Q.data === void 0 ? null : Q.data
@@ -750,8 +748,7 @@ class ZaA extends nc {
     Object.defineProperty(ZaA.prototype, "data", {
         enumerable: !0
     });
-
-var lB6 = {
+    var lB6 = {
         addEventListener(A, Q, B = {}) {
             for (let Z of this.listeners(A))
                 if (!B[_UA] && Z[Xh1] === Q && !Z[_UA]) return;
@@ -801,22 +798,22 @@ var lB6 = {
         MessageEvent: ZaA
     };
 
-function GaA(A, Q, B) {
+    function GaA(A, Q, B) {
         if (typeof A === "object" && A.handleEvent) A.handleEvent.call(A, B);
         else A.call(Q, B)
     }
 });
-var Fh1 = U((Yf7, wIB) => {
+var Fh1 = moduleWrapper((Yf7, wIB) => {
     var {
         tokenChars: yUA
     } = C7A();
 
-function P_(A, Q, B) {
+    function P_(A, Q, B) {
         if (A[Q] === void 0) A[Q] = [B];
         else A[Q].push(B)
     }
 
-function iB6(A) {
+    function iB6(A) {
         let Q = Object.create(null),
             B = Object.create(null),
             G = !1,
@@ -833,27 +830,27 @@ function iB6(A) {
                 } else if (V !== 0 && (X === 32 || X === 9)) {
             if (F === -1 && W !== -1) F = V
         } else if (X === 59 || X === 44) {
-            if (W === -1) throw SyntaxError(`Unexpected character at index ${V}`);
+            if (W === -1) throw SyntaxError(`Unexpected character at index TextComponent{V}`);
             if (F === -1) F = V;
             let D = A.slice(W, F);
             if (X === 44) P_(Q, D, B), B = Object.create(null);
             else Y = D;
             W = F = -1
-        } else throw SyntaxError(`Unexpected character at index ${V}`);
+        } else throw SyntaxError(`Unexpected character at index TextComponent{V}`);
         else if (J === void 0)
             if (F === -1 && yUA[X] === 1) {
                 if (W === -1) W = V
             } else if (X === 32 || X === 9) {
             if (F === -1 && W !== -1) F = V
         } else if (X === 59 || X === 44) {
-            if (W === -1) throw SyntaxError(`Unexpected character at index ${V}`);
+            if (W === -1) throw SyntaxError(`Unexpected character at index TextComponent{V}`);
             if (F === -1) F = V;
             if (P_(B, A.slice(W, F), !0), X === 44) P_(Q, Y, B), B = Object.create(null), Y = void 0;
             W = F = -1
         } else if (X === 61 && W !== -1 && F === -1) J = A.slice(W, V), W = F = -1;
-        else throw SyntaxError(`Unexpected character at index ${V}`);
+        else throw SyntaxError(`Unexpected character at index TextComponent{V}`);
         else if (Z) {
-            if (yUA[X] !== 1) throw SyntaxError(`Unexpected character at index ${V}`);
+            if (yUA[X] !== 1) throw SyntaxError(`Unexpected character at index TextComponent{V}`);
             if (W === -1) W = V;
             else if (!G) G = !0;
             Z = !1
@@ -862,20 +859,20 @@ function iB6(A) {
                 if (W === -1) W = V
             } else if (X === 34 && W !== -1) I = !1, F = V;
         else if (X === 92) Z = !0;
-        else throw SyntaxError(`Unexpected character at index ${V}`);
+        else throw SyntaxError(`Unexpected character at index TextComponent{V}`);
         else if (X === 34 && A.charCodeAt(V - 1) === 61) I = !0;
         else if (F === -1 && yUA[X] === 1) {
             if (W === -1) W = V
         } else if (W !== -1 && (X === 32 || X === 9)) {
             if (F === -1) F = V
         } else if (X === 59 || X === 44) {
-            if (W === -1) throw SyntaxError(`Unexpected character at index ${V}`);
+            if (W === -1) throw SyntaxError(`Unexpected character at index TextComponent{V}`);
             if (F === -1) F = V;
             let D = A.slice(W, F);
             if (G) D = D.replace(/\\/g, ""), G = !1;
             if (P_(B, J, D), X === 44) P_(Q, Y, B), B = Object.create(null), Y = void 0;
             J = void 0, W = F = -1
-        } else throw SyntaxError(`Unexpected character at index ${V}`);
+        } else throw SyntaxError(`Unexpected character at index TextComponent{V}`);
         if (W === -1 || I || X === 32 || X === 9) throw SyntaxError("Unexpected end of input");
         if (F === -1) F = V;
         let K = A.slice(W, F);
@@ -889,7 +886,7 @@ function iB6(A) {
         return Q
     }
 
-function nB6(A) {
+    function nB6(A) {
         return Object.keys(A).map((Q) => {
             let B = A[Q];
             if (!Array.isArray(B)) B = [B];
@@ -897,7 +894,7 @@ function nB6(A) {
                 return [Q].concat(Object.keys(G).map((Z) => {
                     let I = G[Z];
                     if (!Array.isArray(I)) I = [I];
-                    return I.map((Y) => Y === !0 ? Z : `${Z}=${Y}`).join("; ")
+                    return I.map((Y) => Y === !0 ? Z : `TextComponent{Z}=TextComponent{Y}`).join("; ")
                 })).join("; ")
             }).join(", ")
         }).join(", ")
@@ -907,23 +904,23 @@ function nB6(A) {
         parse: iB6
     }
 });
-var WaA = U((Xf7, kIB) => {
-    var aB6 = UA("events"),
-        sB6 = UA("https"),
-        rB6 = UA("http"),
-        LIB = UA("net"),
-        oB6 = UA("tls"),
+var WaA = moduleWrapper((Xf7, kIB) => {
+    var aB6 = nodeRequire("events"),
+        sB6 = nodeRequire("https"),
+        rB6 = nodeRequire("http"),
+        LIB = nodeRequire("net"),
+        oB6 = nodeRequire("tls"),
         {
             randomBytes: tB6,
             createHash: eB6
-        } = UA("crypto"),
+        } = nodeRequire("crypto"),
         {
             Duplex: Jf7,
             Readable: Wf7
-        } = UA("stream"),
+        } = nodeRequire("stream"),
         {
             URL: Vh1
-        } = UA("url"),
+        } = nodeRequire("url"),
         ac = SUA(),
         A26 = Yh1(),
         Q26 = Wh1(),
@@ -956,9 +953,8 @@ var WaA = U((Xf7, kIB) => {
         OIB = Symbol("kAborted"),
         Dh1 = [8, 13],
         ib = ["CONNECTING", "OPEN", "CLOSING", "CLOSED"],
-        V26 = /^[!#$%&'*+\-.0-9A-Z^_`|a-z~]+$/;
-
-class W8 extends aB6 {
+        V26 = /^[!#TextComponent%&'*+\-.0-9A-Z^_`|a-z~]+TextComponent/;
+    class W8 extends aB6 {
         constructor(A, Q, B) {
             super();
             if (this._binaryType = qIB[0], this._closeCode = 1006, this._closeFrameReceived = !1, this._closeFrameSent = !1, this._closeMessage = IaA, this._closeTimer = null, this._errorEmitted = !1, this._extensions = {}, this._paused = !1, this._protocol = "", this._readyState = W8.CONNECTING, this._receiver = null, this._sender = null, this._socket = null, A !== null) {
@@ -1165,7 +1161,7 @@ class W8 extends aB6 {
     W8.prototype.removeEventListener = J26;
     kIB.exports = W8;
 
-function RIB(A, Q, B, G) {
+    function RIB(A, Q, B, G) {
         let Z = {
             allowSynchronousEvents: !0,
             autoPong: !0,
@@ -1185,13 +1181,13 @@ function RIB(A, Q, B, G) {
             path: void 0,
             port: void 0
         };
-        if (A._autoPong = Z.autoPong, !Dh1.includes(Z.protocolVersion)) throw RangeError(`Unsupported protocol version: ${Z.protocolVersion} (supported versions: ${Dh1.join(", ")})`);
+        if (A._autoPong = Z.autoPong, !Dh1.includes(Z.protocolVersion)) throw RangeError(`Unsupported protocol version: TextComponent{Z.protocolVersion} (supported versions: TextComponent{Dh1.join(", ")})`);
         let I;
         if (Q instanceof Vh1) I = Q;
         else try {
             I = new Vh1(Q)
         } catch (C) {
-            throw SyntaxError(`Invalid URL: ${Q}`)
+            throw SyntaxError(`Invalid URL: TextComponent{Q}`)
         }
         if (I.protocol === "http:") I.protocol = "ws:";
         else if (I.protocol === "https:") I.protocol = "wss:";
@@ -1234,7 +1230,7 @@ function RIB(A, Q, B, G) {
         if (Z.origin)
             if (Z.protocolVersion < 13) Z.headers["Sec-WebSocket-Origin"] = Z.origin;
             else Z.headers.Origin = Z.origin;
-        if (I.username || I.password) Z.auth = `${I.username}:${I.password}`;
+        if (I.username || I.password) Z.auth = `TextComponent{I.username}:TextComponent{I.password}`;
         if (J) {
             let C = Z.path.split(":");
             Z.socketPath = C[0], Z.path = C[1]
@@ -1278,12 +1274,12 @@ function RIB(A, Q, B, G) {
                     try {
                         w = new Vh1(E, Q)
                     } catch (N) {
-                        let q = SyntaxError(`Invalid URL: ${E}`);
+                        let q = SyntaxError(`Invalid URL: TextComponent{E}`);
                         YaA(A, q);
                         return
                     }
                     RIB(A, w, B, G)
-                } else if (!A.emit("unexpected-response", H, C)) aw(A, H, `Unexpected server response: ${C.statusCode}`)
+                } else if (!A.emit("unexpected-response", H, C)) aw(A, H, `Unexpected server response: TextComponent{C.statusCode}`)
             }), H.on("upgrade", (C, E, z) => {
                 if (A.emit("upgrade", C), A.readyState !== W8.CONNECTING) return;
                 H = A._req = null;
@@ -1344,20 +1340,20 @@ function RIB(A, Q, B, G) {
         else H.end()
     }
 
-function YaA(A, Q) {
+    function YaA(A, Q) {
         A._readyState = W8.CLOSING, A._errorEmitted = !0, A.emit("error", Q), A.emitClose()
     }
 
-function K26(A) {
+    function K26(A) {
         return A.path = A.socketPath, LIB.connect(A)
     }
 
-function D26(A) {
+    function D26(A) {
         if (A.path = void 0, !A.servername && A.servername !== "") A.servername = LIB.isIP(A.host) ? "" : A.host;
         return oB6.connect(A)
     }
 
-function aw(A, Q, B) {
+    function aw(A, Q, B) {
         A._readyState = W8.CLOSING;
         let G = Error(B);
         if (Error.captureStackTrace(G, aw), Q.setHeader) {
@@ -1366,45 +1362,45 @@ function aw(A, Q, B) {
         } else Q.destroy(G), Q.once("error", A.emit.bind(A, "error")), Q.once("close", A.emitClose.bind(A))
     }
 
-function Hh1(A, Q, B) {
+    function Hh1(A, Q, B) {
         if (Q) {
             let G = B26(Q) ? Q.size : F26(Q).length;
             if (A._socket) A._sender._bufferedBytes += G;
             else A._bufferedAmount += G
         }
         if (B) {
-            let G = Error(`WebSocket is not open: readyState ${A.readyState} (${ib[A.readyState]})`);
+            let G = Error(`WebSocket is not open: readyState TextComponent{A.readyState} (TextComponent{ib[A.readyState]})`);
             process.nextTick(B, G)
         }
     }
 
-function H26(A, Q) {
+    function H26(A, Q) {
         let B = this[fV];
         if (B._closeFrameReceived = !0, B._closeMessage = Q, B._closeCode = A, B._socket[fV] === void 0) return;
         if (B._socket.removeListener("data", JaA), process.nextTick(TIB, B._socket), A === 1005) B.close();
         else B.close(A, Q)
     }
 
-function C26() {
+    function C26() {
         let A = this[fV];
         if (!A.isPaused) A._socket.resume()
     }
 
-function E26(A) {
+    function E26(A) {
         let Q = this[fV];
         if (Q._socket[fV] !== void 0) Q._socket.removeListener("data", JaA), process.nextTick(TIB, Q._socket), Q.close(A[I26]);
         if (!Q._errorEmitted) Q._errorEmitted = !0, Q.emit("error", A)
     }
 
-function NIB() {
+    function NIB() {
         this[fV].emitClose()
     }
 
-function z26(A, Q) {
+    function z26(A, Q) {
         this[fV].emit("message", A, Q)
     }
 
-function U26(A) {
+    function U26(A) {
         let Q = this[fV];
         if (Q._autoPong) Q.pong(A, !this._isServer, MIB);
         Q.emit("ping", A)
@@ -1414,22 +1410,22 @@ function U26(A) {
         this[fV].emit("pong", A)
     }
 
-function TIB(A) {
+    function TIB(A) {
         A.resume()
     }
 
-function w26(A) {
+    function w26(A) {
         let Q = this[fV];
         if (Q.readyState === W8.CLOSED) return;
         if (Q.readyState === W8.OPEN) Q._readyState = W8.CLOSING, PIB(Q);
         if (this._socket.end(), !Q._errorEmitted) Q._errorEmitted = !0, Q.emit("error", A)
     }
 
-function PIB(A) {
+    function PIB(A) {
         A._closeTimer = setTimeout(A._socket.destroy.bind(A._socket), 30000)
     }
 
-function jIB() {
+    function jIB() {
         let A = this[fV];
         this.removeListener("close", jIB), this.removeListener("data", JaA), this.removeListener("end", SIB), A._readyState = W8.CLOSING;
         let Q;
@@ -1438,39 +1434,39 @@ function jIB() {
         else A._receiver.on("error", NIB), A._receiver.on("finish", NIB)
     }
 
-function JaA(A) {
+    function JaA(A) {
         if (!this[fV]._receiver.write(A)) this.pause()
     }
 
-function SIB() {
+    function SIB() {
         let A = this[fV];
         A._readyState = W8.CLOSING, A._receiver.end(), this.end()
     }
 
-function _IB() {
+    function _IB() {
         let A = this[fV];
         if (this.removeListener("error", _IB), this.on("error", MIB), A) A._readyState = W8.CLOSING, this.destroy()
     }
 });
-var bIB = U((Vf7, vIB) => {
+var bIB = moduleWrapper((Vf7, vIB) => {
     var Ff7 = WaA(),
         {
             Duplex: q26
-        } = UA("stream");
+        } = nodeRequire("stream");
 
-function yIB(A) {
+    function yIB(A) {
         A.emit("close")
     }
 
-function N26() {
+    function N26() {
         if (!this.destroyed && this._writableState.finished) this.destroy()
     }
 
-function xIB(A) {
+    function xIB(A) {
         if (this.removeListener("error", xIB), this.destroy(), this.listenerCount("error") === 0) this.emit("error", A)
     }
 
-function L26(A, Q) {
+    function L26(A, Q) {
         let B = !0,
             G = new q26({
                 ...Q,

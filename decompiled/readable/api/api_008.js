@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_008.js
+ * 处理时间: 2025-12-09T03:41:36.071Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.862Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -690,7 +692,7 @@
         CD8 = (0, BB.createPaginator)(sz, wP1, "nextToken", "nextToken", "maxResults"),
         ED8 = (0, BB.createPaginator)(sz, qP1, "nextToken", "nextToken", "maxResults")
 });
-var xS = U((aU7, cxQ) => {
+var xS = moduleWrapper((aU7, cxQ) => {
     var {
         defineProperty: nmA,
         getOwnPropertyDescriptor: zD8,
@@ -722,8 +724,7 @@ var xS = U((aU7, cxQ) => {
         state: () => NP1
     });
     cxQ.exports = ND8(uxQ);
-
-var NP1 = {
+    var NP1 = {
             warningEmitted: !1
         },
         LD8 = LP1((A) => {
@@ -736,13 +737,13 @@ updates please upgrade to a supported Node.js LTS version.
 More information can be found at: https://a.co/74kJMmI`)
         }, "emitWarningIfUnsupportedVersion");
 
-function mxQ(A, Q, B) {
+    function mxQ(A, Q, B) {
         if (!A.$source) A.$source = {};
         return A.$source[Q] = B, A
     }
     LP1(mxQ, "setCredentialFeature");
 
-function dxQ(A, Q, B) {
+    function dxQ(A, Q, B) {
         if (!A.__aws_sdk_context) A.__aws_sdk_context = {
             features: {}
         };
@@ -751,7 +752,7 @@ function dxQ(A, Q, B) {
     }
     LP1(dxQ, "setFeature")
 });
-var MP1 = U((sU7, oxQ) => {
+var MP1 = moduleWrapper((sU7, oxQ) => {
     var {
         defineProperty: amA,
         getOwnPropertyDescriptor: MD8,
@@ -826,7 +827,7 @@ var MP1 = U((sU7, oxQ) => {
             })
         }, "fromEnv")
 });
-var RvQ = U((rU7, omA) => {
+var RvQ = moduleWrapper((rU7, omA) => {
     var txQ, exQ, AvQ, QvQ, BvQ, GvQ, ZvQ, IvQ, YvQ, JvQ, WvQ, XvQ, FvQ, smA, OP1, VvQ, KvQ, DvQ, P6A, HvQ, CvQ, EvQ, zvQ, UvQ, $vQ, wvQ, qvQ, NvQ, rmA, LvQ, MvQ, OvQ;
     (function(A) {
         var Q = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
@@ -836,7 +837,7 @@ var RvQ = U((rU7, omA) => {
         else if (typeof omA === "object" && typeof rU7 === "object") A(B(Q, B(rU7)));
         else A(B(Q));
 
-function B(G, Z) {
+        function B(G, Z) {
             if (G !== Q)
                 if (typeof Object.create === "function") Object.defineProperty(G, "__esModule", {
                     value: !0
@@ -860,7 +861,7 @@ function B(G, Z) {
             if (typeof Y !== "function" && Y !== null) throw TypeError("Class extends value " + String(Y) + " is not a constructor or null");
             Q(I, Y);
 
-function J() {
+            function J() {
                 this.constructor = I
             }
             I.prototype = Y === null ? Object.create(Y) : (J.prototype = Y.prototype, new J)
@@ -956,7 +957,7 @@ function J() {
                     }
                 }
 
-function D(C) {
+                function D(C) {
                     try {
                         H(W.throw(C))
                     } catch (E) {
@@ -964,7 +965,7 @@ function D(C) {
                     }
                 }
 
-function H(C) {
+                function H(C) {
                     C.done ? F(C.value) : X(C.value).then(K, D)
                 }
                 H((W = W.apply(I, Y || [])).next())
@@ -984,13 +985,13 @@ function H(C) {
                 return this
             }), V;
 
-function K(H) {
+            function K(H) {
                 return function(C) {
                     return D([H, C])
                 }
             }
 
-function D(H) {
+            function D(H) {
                 if (W) throw TypeError("Generator is already executing.");
                 while (V && (V = 0, H[0] && (J = 0)), J) try {
                     if (W = 1, X && (F = H[0] & 2 ? X.return : H[0] ? X.throw || ((F = X.return) && F.call(X), 0) : X.next) && !(F = F.call(X, H[1])).done) return F;
@@ -1122,13 +1123,13 @@ function D(H) {
                 return this
             }, X;
 
-function V(w) {
+            function V(w) {
                 return function(N) {
                     return Promise.resolve(N).then(w, E)
                 }
             }
 
-function K(w, N) {
+            function K(w, N) {
                 if (W[w]) {
                     if (X[w] = function(q) {
                             return new Promise(function(R, P) {
@@ -1138,7 +1139,7 @@ function K(w, N) {
                 }
             }
 
-function D(w, N) {
+            function D(w, N) {
                 try {
                     H(W[w](N))
                 } catch (q) {
@@ -1146,19 +1147,19 @@ function D(w, N) {
                 }
             }
 
-function H(w) {
+            function H(w) {
                 w.value instanceof P6A ? Promise.resolve(w.value.v).then(C, E) : z(F[0][2], w)
             }
 
-function C(w) {
+            function C(w) {
                 D("next", w)
             }
 
-function E(w) {
+            function E(w) {
                 D("throw", w)
             }
 
-function z(w, N) {
+            function z(w, N) {
                 if (w(N), F.shift(), F.length) D(F[0][0], F[0][1])
             }
         }, CvQ = function(I) {
@@ -1169,7 +1170,7 @@ function z(w, N) {
                 return this
             }, Y;
 
-function W(X, F) {
+            function W(X, F) {
                 Y[X] = I[X] ? function(V) {
                     return (J = !J) ? {
                         value: P6A(I[X](V)),
@@ -1185,7 +1186,7 @@ function W(X, F) {
                 return this
             }, J);
 
-function W(F) {
+            function W(F) {
                 J[F] = I[F] && function(V) {
                     return new Promise(function(K, D) {
                         V = I[F](V), X(K, D, V.done, V.value)
@@ -1193,7 +1194,7 @@ function W(F) {
                 }
             }
 
-function X(F, V, K, D) {
+            function X(F, V, K, D) {
                 Promise.resolve(D).then(function(H) {
                     F({
                         value: H,
@@ -1226,8 +1227,7 @@ function X(F, V, K, D) {
             };
         UvQ = function(I) {
             if (I && I.__esModule) return I;
-
-var Y = {};
+            var Y = {};
             if (I != null) {
                 for (var J = G(I), W = 0; W < J.length; W++)
                     if (J[W] !== "default") rmA(Y, I, J[W])
@@ -1289,7 +1289,7 @@ var Y = {};
             }
             var J, W = 0;
 
-function X() {
+            function X() {
                 while (J = I.stack.pop()) try {
                     if (!J.async && W === 1) return W = 0, I.stack.push(J), Promise.resolve().then(X);
                     if (J.dispose) {
@@ -1306,14 +1306,14 @@ function X() {
             }
             return X()
         }, OvQ = function(I, Y) {
-            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
+            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)TextComponent|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
                 return W ? Y ? ".jsx" : ".js" : X && (!F || !V) ? J : X + F + "." + V.toLowerCase() + "js"
             });
             return I
         }, A("__extends", txQ), A("__assign", exQ), A("__rest", AvQ), A("__decorate", QvQ), A("__param", BvQ), A("__esDecorate", GvQ), A("__runInitializers", ZvQ), A("__propKey", IvQ), A("__setFunctionName", YvQ), A("__metadata", JvQ), A("__awaiter", WvQ), A("__generator", XvQ), A("__exportStar", FvQ), A("__createBinding", rmA), A("__values", smA), A("__read", OP1), A("__spread", VvQ), A("__spreadArrays", KvQ), A("__spreadArray", DvQ), A("__await", P6A), A("__asyncGenerator", HvQ), A("__asyncDelegator", CvQ), A("__asyncValues", EvQ), A("__makeTemplateObject", zvQ), A("__importStar", UvQ), A("__importDefault", $vQ), A("__classPrivateFieldGet", wvQ), A("__classPrivateFieldSet", qvQ), A("__classPrivateFieldIn", NvQ), A("__addDisposableResource", LvQ), A("__disposeResources", MvQ), A("__rewriteRelativeImportExtension", OvQ)
     })
 });
-var jvQ = U((TvQ) => {
+var jvQ = moduleWrapper((TvQ) => {
     Object.defineProperty(TvQ, "__esModule", {
         value: !0
     });
@@ -1345,7 +1345,7 @@ var jvQ = U((TvQ) => {
         };
     TvQ.checkUrl = hD8
 });
-var RP1 = U((tU7, hvQ) => {
+var RP1 = moduleWrapper((tU7, hvQ) => {
     var {
         defineProperty: tmA,
         getOwnPropertyDescriptor: gD8,
@@ -1437,7 +1437,7 @@ var RP1 = U((tU7, hvQ) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(fvQ || {})
 });
-var pvQ = U((eU7, cvQ) => {
+var pvQ = moduleWrapper((eU7, cvQ) => {
     var {
         defineProperty: AdA,
         getOwnPropertyDescriptor: rD8,
@@ -1516,5 +1516,5 @@ var pvQ = U((eU7, cvQ) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }

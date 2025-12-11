@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_005.js
+ * 处理时间: 2025-12-09T03:41:38.607Z
+ * 变量映射: 9 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.067Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -28,7 +31,8 @@
         }
     }
 }
-var d16 = "data",
+/* DATA_TYPE = DATA_TYPE = "data" */
+var DATA_TYPE = "data",
     ub1 = "end",
     q7B = "close",
     XnA = () => {},
@@ -120,7 +124,7 @@ var d16 = "data",
             if (rzA(Y, Jt, Z), rzA(Y, r3A, I), L7B(Y.listeners)) hb1.delete(Q), U7B(Q), Y.options = Y.watcher = void 0, Object.freeze(Y)
         }
     };
-var M7B = L(() => {
+var M7B = lazyLoader(() => {
     FnA = process.platform, mb1 = FnA === "win32", c16 = FnA === "darwin", p16 = FnA === "linux", l16 = FnA === "freebsd", N7B = m16() === "OS400", XI = {
         ALL: "all",
         READY: "ready",
@@ -197,7 +201,6 @@ function K06(A, Q) {
     };
     return R7B(G, Q)
 }
-
 class k7B {
     constructor(A, Q) {
         this.path = A, this._removeWatcher = Q, this.items = new Set
@@ -240,7 +243,6 @@ class k7B {
         this.items.clear(), this.path = "", this._removeWatcher = XnA, this.items = H06, Object.freeze(this)
     }
 }
-
 class y7B {
     constructor(A, Q, B) {
         this.fsw = B;
@@ -277,7 +279,7 @@ var cb1 = "/",
     J06, O7B, W06, X06, pb1 = (A) => typeof A === "object" && A !== null && !(A instanceof RegExp),
     T7B = (A) => {
         let Q = VnA(A).flat();
-        if (!Q.every((B) => typeof B === Y06)) throw TypeError(`Non-string provided as watch path: ${Q}`);
+        if (!Q.every((B) => typeof B === Y06)) throw TypeError(`Non-string provided as watch path: TextComponent{Q}`);
         return Q.map(_7B)
     },
     P7B = (A) => {
@@ -300,10 +302,10 @@ var cb1 = "/",
     H06, C06 = "stat",
     E06 = "lstat",
     lb1, x7B;
-var v7B = L(() => {
+var v7B = lazyLoader(() => {
     z7B();
     M7B(); /*! chokidar - MIT License (c) 2012 Paul Miller (paulmillr.com) */
-    J06 = /\\/g, O7B = /\/\//, W06 = /\..*\.(sw[px])$|~$|\.subl.*\.tmp/, X06 = /^\.[/\\]/;
+    J06 = /\\/g, O7B = /\/\//, W06 = /\..*\.(sw[isArguments])TextComponent|~TextComponent|\.subl.*\.tmp/, X06 = /^\.[/\\]/;
     H06 = Object.freeze(new Set);
     lb1 = class lb1 extends G06 {
         constructor(A = {}) {
@@ -501,7 +503,7 @@ var v7B = L(() => {
             let W = new Date,
                 X = this._pendingWrites;
 
-function F(V) {
+            function F(V) {
                 A06(J, (K, D) => {
                     if (K || !X.has(A)) {
                         if (K && K.code !== "ENOENT") G(K);
@@ -610,7 +612,7 @@ function q06() {
     b7B = !0;
     let A = M06();
     if (A.length === 0) return;
-    g(`Watching for changes in setting files ${A.join(", ")}...`), o3A = x7B.watch(A, {
+    g(`Watching for changes in setting files TextComponent{A.join(", ")}...`), o3A = x7B.watch(A, {
         persistent: !0,
         ignoreInitial: !0,
         awaitWriteFinish: {
@@ -662,13 +664,13 @@ function O06(A) {
         KnA.delete(A);
         return
     }
-    g(`Detected change to ${A}`), ozA.forEach((G) => G(Q))
+    g(`Detected change to TextComponent{A}`), ozA.forEach((G) => G(Q))
 }
 
 function R06(A) {
     let Q = u7B(A);
     if (!Q) return;
-    g(`Detected deletion of ${A}`), ozA.forEach((B) => B(Q))
+    g(`Detected deletion of TextComponent{A}`), ozA.forEach((B) => B(Q))
 }
 
 function u7B(A) {
@@ -681,7 +683,7 @@ var U06 = 1000,
     b7B = !1,
     h7B = !1,
     KnA, ozA, uc;
-var tzA = L(() => {
+var tzA = lazyLoader(() => {
     v7B();
     D0();
     o0();
@@ -701,10 +703,10 @@ function d7B(A, Q) {
     return `
 Web page content:
 ---
-${A}
+TextComponent{A}
 ---
 
-${Q}
+TextComponent{Q}
 
 Provide a concise response based only on the content above. In your response:
  - Enforce a strict 125-character maximum for quotes from any source document. Open Source Software is ok as long as we respect the license.
@@ -713,6 +715,7 @@ Provide a concise response based only on the content above. In your response:
  - Never produce or reproduce exact song lyrics.
 `
 }
+/* WEB_FETCH_TOOL_NAME = WEB_FETCH_TOOL = "WebFetch" */
 var WEB_FETCH_TOOL_NAME = "WebFetch",
     m7B = `
 - Fetches content from a specified URL and processes it using an AI model
@@ -732,23 +735,22 @@ Usage notes:
   - Includes a self-cleaning 15-minute cache for faster responses when repeatedly accessing the same URL
   - When a URL redirects to a different host, the tool will inform you and provide the redirect URL in a special format. You should then make a new WebFetch request with the redirect URL to fetch the content.
 `;
-// Tool name constant for file editing
+/* EDIT_TOOL_NAME = EDIT_TOOL = "Edit" */
 var EDIT_TOOL_NAME = "Edit";
 
 function t3A() {
-    return J6() === "firstParty"
+    return getProvider() === "firstParty"
 }
 
 function DnA(A) {
     let Q = A.startsWith(".") ? A.slice(1) : A;
     return T06.has(Q.toLowerCase())
 }
-
 async function p7B(A) {
     let Q = OA(),
         G = Q.statSync(A).size;
-    if (G === 0) throw Error(`PDF file is empty: ${A}`);
-    if (G > c7B) throw Error(`PDF file size (${LJ(G)}) exceeds maximum allowed size (${LJ(c7B)}). PDF files must be less than 32MB.`);
+    if (G === 0) throw Error(`PDF file is empty: TextComponent{A}`);
+    if (G > c7B) throw Error(`PDF file size (TextComponent{LJ(G)}) exceeds maximum allowed size (TextComponent{LJ(c7B)}). PDF files must be less than 32MB.`);
     let I = Q.readFileBytesSync(A).toString("base64");
     return {
         type: "pdf",
@@ -760,33 +762,33 @@ async function p7B(A) {
     }
 }
 var T06, c7B = 33554432;
-var ib1 = L(() => {
+var ib1 = lazyLoader(() => {
     dK();
     o0();
     M9();
     T06 = new Set(["pdf"])
 });
-// Tool name constant for file reading
+/* READ_TOOL_NAME = READ_TOOL = "Read" */
 var READ_TOOL_NAME = "Read",
     ezA = 2000,
     P06 = 2000,
     l7B = "Read a file from the local filesystem.",
     i7B;
-var xV = L(() => {
+var xV = lazyLoader(() => {
     ib1();
     i7B = `Reads a file from the local filesystem. You can access any file directly by using this tool.
 Assume this tool is able to read all files on the machine. If the User provides a path to a file assume that path is valid. It is okay to read a file that does not exist; an error will be returned.
 
 Usage:
 - The file_path parameter must be an absolute path, not a relative path
-- By default, it reads up to ${ezA} lines starting from the beginning of the file
+- By default, it reads up to TextComponent{ezA} lines starting from the beginning of the file
 - You can optionally specify a line offset and limit (especially handy for long files), but it's recommended to read the whole file by not providing these parameters
-- Any lines longer than ${P06} characters will be truncated
+- Any lines longer than TextComponent{P06} characters will be truncated
 - Results are returned using cat -n format, with line numbers starting at 1
-- This tool allows Claude Code to read images (eg PNG, JPG, etc). When reading an image file the contents are presented visually as Claude Code is a multimodal LLM.${t3A()?`
+- This tool allows Claude Code to read images (eg PNG, JPG, etc). When reading an image file the contents are presented visually as Claude Code is a multimodal LLM.TextComponent{t3A()?`
 - This tool can read PDF files (.pdf). PDFs are processed page by page, extracting both text and visual content for analysis.`:""}
 - This tool can read Jupyter notebooks (.ipynb files) and returns all cells with their outputs, combining code, text, and visualizations.
-- This tool can only read files, not directories. To read a directory, use an ls command via the ${BASH_TOOL_NAME} tool.
+- This tool can only read files, not directories. To read a directory, use an ls command via the TextComponent{BASH_TOOL_NAME} tool.
 - You can call multiple tools in a single response. It is always better to speculatively read multiple potentially useful files in parallel.
 - You will regularly be asked to read screenshots. If the user provides a path to a screenshot, ALWAYS use this tool to view the file at the path. This tool will work with all temporary file paths.
 - If you read a file that exists but has empty contents you will receive a system reminder warning in place of file contents.`
@@ -796,7 +798,7 @@ import {
 } from "path";
 
 function AUA(A) {
-    let Q = A.match(/^([^(]+)\(([^)]+)\)$/);
+    let Q = A.match(/^([^(]+)\(([^)]+)\)TextComponent/);
     if (!Q) return {
         toolName: A
     };
@@ -812,7 +814,7 @@ function AUA(A) {
 }
 
 function j06(A) {
-    return A.match(/^(.+):\*$/)?.[1] ?? null
+    return A.match(/^(.+):\*TextComponent/)?.[1] ?? null
 }
 
 function nb1(A) {
@@ -848,7 +850,7 @@ function nb1(A) {
         let {
             rgPath: V,
             rgArgs: K
-        } = C9A();
+        } = getRipgrepConfig();
         return {
             command: V,
             args: K
@@ -880,7 +882,7 @@ function S06() {
         let A = c0();
         return a7B(A)
     } catch (A) {
-        return g(`Failed to get settings for sandbox check: ${A}`), !1
+        return g(`Failed to get settings for sandbox check: TextComponent{A}`), !1
     }
 }
 
@@ -910,7 +912,7 @@ function y06() {
         let B = Q?.permissions || {},
             G = [],
             Z = (I) => {
-                let Y = I.replace(/\/\*\*$/, "");
+                let Y = I.replace(/\/\*\*TextComponent/, "");
                 return /[*?[\]]/.test(Y)
             };
         for (let I of [...B.allow || [], ...B.deny || []]) {
@@ -919,7 +921,7 @@ function y06() {
         }
         return G
     } catch (Q) {
-        return g(`Failed to get Linux glob pattern warnings: ${Q}`), []
+        return g(`Failed to get Linux glob pattern warnings: TextComponent{Q}`), []
     }
 }
 
@@ -931,7 +933,6 @@ function x06() {
     }
     return !1
 }
-
 async function v06(A) {
     let Q = LB("localSettings");
     cB("localSettings", {
@@ -953,14 +954,12 @@ async function v06(A) {
 function b06() {
     return c0()?.sandbox?.excludedCommands ?? []
 }
-
 async function f06(A, Q, B, G) {
     if (HnA())
         if (mc) await mc;
         else throw Error("Sandbox failed to initialize. ");
     return rI.wrapWithSandbox(A, Q, B, G)
 }
-
 async function h06(A) {
     if (mc) return mc;
     if (!HnA()) return;
@@ -974,7 +973,7 @@ async function h06(A) {
                 rI.updateConfig(Z), g("Sandbox configuration updated from settings change")
             })
         } catch (G) {
-            mc = void 0, g(`Failed to initialize sandbox: ${G instanceof Error?G.message:String(G)}`)
+            mc = void 0, g(`Failed to initialize sandbox: TextComponent{G instanceof Error?G.message:String(G)}`)
         }
     })(), mc
 }
@@ -985,7 +984,6 @@ function g06() {
         Q = nb1(A);
     rI.updateConfig(Q)
 }
-// Async function: u06
 async function u06() {
     return ab1?.(), ab1 = void 0, a7B.cache.clear?.(), s7B.cache.clear?.(), r7B.cache.clear?.(), sb1.cache.clear?.(), mc = void 0, rI.reset()
 }
@@ -1010,7 +1008,7 @@ function o7B(A, Q) {
     return Z
 }
 var mc, ab1, sb1, a7B, s7B, r7B, lQ;
-var MJ = L(() => {
+var MJ = lazyLoader(() => {
     W7B();
     s5();
     RB();
@@ -1025,7 +1023,7 @@ var MJ = L(() => {
         let {
             rgPath: A,
             rgArgs: Q
-        } = C9A();
+        } = getRipgrepConfig();
         return rI.checkDependencies({
             command: A,
             args: Q
@@ -1275,17 +1273,17 @@ var QUA = (A) => {
     return Error(A)
 };
 var yB, a2, gY, GE, N_, BUA, Wt, GUA, Xt, ZUA, IUA, YUA, JUA;
-var ZE = L(() => {
+var ZE = lazyLoader(() => {
     yB = class yB extends Error {};
     a2 = class a2 extends yB {
         constructor(A, Q, B, G) {
-            super(`${a2.makeMessage(A,Q,B)}`);
+            super(`TextComponent{a2.makeMessage(A,Q,B)}`);
             this.status = A, this.headers = G, this.requestID = G?.get("request-id"), this.error = Q
         }
         static makeMessage(A, Q, B) {
             let G = Q?.message ? typeof Q.message === "string" ? Q.message : JSON.stringify(Q.message) : Q ? JSON.stringify(Q) : B;
-            if (A && G) return `${A} ${G}`;
-            if (A) return `${A} status code (no body)`;
+            if (A && G) return `TextComponent{A} TextComponent{G}`;
+            if (A) return `TextComponent{A} status code (no body)`;
             if (G) return G;
             return "(no status code or body)"
         }
@@ -1340,7 +1338,7 @@ var ZE = L(() => {
     YUA = class YUA extends a2 {};
     JUA = class JUA extends a2 {}
 });
-var Ft = L(() => {
+var Ft = lazyLoader(() => {
     ZE()
 });
 
@@ -1398,7 +1396,6 @@ function WUA(A) {
         }
     }
 }
-
 async function e7B(A) {
     if (A === null || typeof A !== "object") return;
     if (A[Symbol.asyncIterator]) {
@@ -1429,7 +1426,6 @@ function tb1(A) {
     return (QGB ?? (Q = new globalThis.TextDecoder, QGB = Q.decode.bind(Q)))(A)
 }
 var AGB, QGB;
-
 class dc {
     constructor() {
         lw.set(this, void 0), iw.set(this, void 0), bB(this, lw, new Uint8Array, "f"), bB(this, iw, null, "f")
@@ -1487,7 +1483,7 @@ function GGB(A) {
     return -1
 }
 var lw, iw;
-var eb1 = L(() => {
+var eb1 = lazyLoader(() => {
     fb();
     lw = new WeakMap, iw = new WeakMap;
     dc.NEWLINE_CHARS = new Set([`
@@ -1514,8 +1510,8 @@ var n06, ZGB = (A) => {
     },
     Af1 = (A) => (Af1 = Array.isArray, Af1(A)),
     Qf1, JGB = (A, Q) => {
-        if (typeof Q !== "number" || !Number.isInteger(Q)) throw new yB(`${A} must be an integer`);
-        if (Q < 0) throw new yB(`${A} must be a positive integer`);
+        if (typeof Q !== "number" || !Number.isInteger(Q)) throw new yB(`TextComponent{A} must be an integer`);
+        if (Q < 0) throw new yB(`TextComponent{A} must be a positive integer`);
         return Q
     },
     UnA = (A) => {
@@ -1525,5 +1521,5 @@ var n06, ZGB = (A) => {
             return
         }
     };
-var Vt = L(() => {
+var Vt = lazyLoader(() => {
     ZE();

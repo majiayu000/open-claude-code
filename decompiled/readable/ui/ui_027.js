@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_027.js
+ * 处理时间: 2025-12-09T03:41:39.290Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.119Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -34,13 +37,13 @@
                     })
                 }
 
-function t(b) {
+                function t(b) {
                     var a = {};
                     for (var c in b) a[c] = b[c];
                     return a
                 }
 
-function EA(b, a, c, s, r, bA) {
+                function EA(b, a, c, s, r, bA) {
                     var Y1, Q1 = b.getInstanceAndStyle({
                         id: a,
                         rendererID: c
@@ -96,7 +99,7 @@ function EA(b, a, c, s, r, bA) {
                     b.emit("hideNativeHighlight")
                 }
 
-function G1(b, a, c, s, r) {
+                function G1(b, a, c, s, r) {
                     var bA = b.getInstanceAndStyle({
                         id: a,
                         rendererID: c
@@ -139,11 +142,11 @@ function G1(b, a, c, s, r) {
                     b.emit("hideNativeHighlight")
                 }
 
-function n1(b) {
+                function n1(b) {
                     q0(b)
                 }
 
-function q0(b) {
+                function q0(b) {
                     if (b.getConsolePatchSettings == null) return;
                     var a = b.getConsolePatchSettings();
                     if (a == null) return;
@@ -152,7 +155,7 @@ function q0(b) {
                     Xu(c)
                 }
 
-function CQ(b) {
+                function CQ(b) {
                     var a, c, s, r, bA, Y1 = JSON.parse(b !== null && b !== void 0 ? b : "{}"),
                         Q1 = Y1.appendComponentStack,
                         uA = Y1.breakOnConsoleErrors,
@@ -168,7 +171,7 @@ function CQ(b) {
                     }
                 }
 
-function dB(b, a) {
+                function dB(b, a) {
                     if (b.setConsolePatchSettings == null) return;
                     b.setConsolePatchSettings(JSON.stringify(a))
                 }
@@ -176,7 +179,7 @@ function dB(b, a) {
                 var Z9 = window.__REACT_DEVTOOLS_GLOBAL_HOOK__,
                     zB = qY();
 
-function n5(b) {
+                function n5(b) {
                     if (H) {
                         var a;
                         for (var c = arguments.length, s = Array(c > 1 ? c - 1 : 0), r = 1; r < c; r++) s[r - 1] = arguments[r];
@@ -184,7 +187,7 @@ function n5(b) {
                     }
                 }
 
-function u3(b) {
+                function u3(b) {
                     if (Z9 == null) return;
                     var a = b || {},
                         c = a.host,
@@ -207,7 +210,7 @@ function u3(b) {
                         I9 = Y1 ? "wss" : "ws",
                         m4 = null;
 
-function x5() {
+                    function x5() {
                         if (m4 === null) m4 = setTimeout(function() {
                             return u3(b)
                         }, QQ)
@@ -282,18 +285,18 @@ function x5() {
                         }
                     };
 
-function Y8() {
+                    function Y8() {
                         if (H) n5("WebSocket.onclose");
                         if (SB !== null) SB.emit("shutdown");
                         x5()
                     }
 
-function U3() {
+                    function U3() {
                         if (H) n5("WebSocket.onerror");
                         x5()
                     }
 
-function RY(V4) {
+                    function RY(V4) {
                         var JJ;
                         try {
                             if (typeof V4.data === "string") {
@@ -316,12 +319,11 @@ function RY(V4) {
         })()
     })
 });
-
 var h26 = {};
 var iIB;
-var nIB = L(() => {
+var nIB = lazyLoader(() => {
     pIB();
-    iIB = GA(lIB(), 1);
+    iIB = esmImport(lIB(), 1);
     iIB.default.connectToDevTools()
 });
 var rIB, aIB = (A, Q) => {
@@ -347,12 +349,12 @@ var rIB, aIB = (A, Q) => {
         if (Q) Q.unsetMeasureFunc(), oIB(A), Q.freeRecursive()
     },
     sc;
-var Eh1 = L(() => {
+var Eh1 = lazyLoader(() => {
     IZB();
     $t();
     onA();
     mZB();
-    rIB = GA(ZZB(), 1);
+    rIB = esmImport(ZZB(), 1);
     if (process.env.DEV === "true") try {
         Promise.resolve().then(() => nIB())
     } catch (A) {
@@ -362,7 +364,7 @@ but this failed as it was not installed. Debugging with React Devtools requires 
 
 To install use this command:
 
-$ npm install --save-dev react-devtools-core
+TextComponent npm install --save-dev react-devtools-core
 				`.trim() + `
 `);
         else throw A
@@ -414,7 +416,7 @@ $ npm install --save-dev react-devtools-core
             return I
         },
         createTextInstance(A, Q, B) {
-            if (!B.isInsideText) throw Error(`Text string "${A}" must be rendered inside <Text> component`);
+            if (!B.isInsideText) throw Error(`Text string "TextComponent{A}" must be rendered inside <Text> component`);
             return gZB(A)
         },
         resetTextContent() {},
@@ -504,23 +506,23 @@ function zh1(A, Q = 1, B = {}) {
         indent: G = " ",
         includeEmptyLines: Z = !1
     } = B;
-    if (typeof A !== "string") throw TypeError(`Expected \`input\` to be a \`string\`, got \`${typeof A}\``);
-    if (typeof Q !== "number") throw TypeError(`Expected \`count\` to be a \`number\`, got \`${typeof Q}\``);
-    if (Q < 0) throw RangeError(`Expected \`count\` to be at least 0, got \`${Q}\``);
-    if (typeof G !== "string") throw TypeError(`Expected \`options.indent\` to be a \`string\`, got \`${typeof G}\``);
+    if (typeof A !== "string") throw TypeError(`Expected \`input\` to be a \`string\`, got \`TextComponent{typeof A}\``);
+    if (typeof Q !== "number") throw TypeError(`Expected \`count\` to be a \`number\`, got \`TextComponent{typeof Q}\``);
+    if (Q < 0) throw RangeError(`Expected \`count\` to be at least 0, got \`TextComponent{Q}\``);
+    if (typeof G !== "string") throw TypeError(`Expected \`options.indent\` to be a \`string\`, got \`TextComponent{typeof G}\``);
     if (Q === 0) return A;
-    let I = Z ? /^/gm : /^(?!\s*$)/gm;
+    let I = Z ? /^/gm : /^(?!\s*TextComponent)/gm;
     return A.replace(I, G.repeat(Q))
 }
 var g26 = (A) => {
         return A.getComputedWidth() - A.getComputedPadding(O6.Left) - A.getComputedPadding(O6.Right) - A.getComputedBorder(O6.Left) - A.getComputedBorder(O6.Right)
     },
     tIB;
-var eIB = L(() => {
+var eIB = lazyLoader(() => {
     $t();
     tIB = g26
 });
-var AYB = U((Rf7, u26) => {
+var AYB = moduleWrapper((Rf7, u26) => {
     u26.exports = {
         single: {
             topLeft: "┌",
@@ -604,7 +606,7 @@ var AYB = U((Rf7, u26) => {
         }
     }
 });
-var BYB = U((Tf7, Uh1) => {
+var BYB = moduleWrapper((Tf7, Uh1) => {
     var QYB = AYB();
     Uh1.exports = QYB;
     Uh1.exports.default = QYB
@@ -627,7 +629,7 @@ function w7A(A) {
     }
 }
 var m26, d26, c26, p26, l26, i26;
-var KaA = L(() => {
+var KaA = lazyLoader(() => {
     m26 = {
         autoAccept: "rgb(135,0,255)",
         bashBorder: "rgb(255,0,135)",
@@ -1069,10 +1071,10 @@ var n26, a26, hUA = (A, Q, B) => {
     }
     return A
 };
-var mUA = L(() => {
+var mUA = lazyLoader(() => {
     J9();
     KaA();
-    n26 = /^rgb\(\s?(\d+),\s?(\d+),\s?(\d+)\s?\)$/, a26 = /^ansi256\(\s?(\d+)\s?\)$/
+    n26 = /^rgb\(\s?(\d+),\s?(\d+),\s?(\d+)\s?\)TextComponent/, a26 = /^ansi256\(\s?(\d+)\s?\)TextComponent/
 });
 
 function GYB(A, Q, B, G = 0, Z) {
@@ -1138,11 +1140,11 @@ var ZYB, s26, r26 = (A, Q, B, G) => {
         }
     },
     IYB;
-var YYB = L(() => {
+var YYB = lazyLoader(() => {
     J9();
     F7A();
     mUA();
-    ZYB = GA(BYB(), 1), s26 = {
+    ZYB = esmImport(BYB(), 1), s26 = {
         dashed: {
             top: "╌",
             left: "╎",
@@ -1158,7 +1160,7 @@ var YYB = L(() => {
 });
 
 function $h1(A, Q) {
-    return `${JYB}8;;${Q}${WYB}${A}${JYB}8;;${WYB}`
+    return `TextComponent{JYB}8;;TextComponent{Q}TextComponent{WYB}TextComponent{A}TextComponent{JYB}8;;TextComponent{WYB}`
 }
 
 function o26(A) {
@@ -1296,7 +1298,7 @@ function XYB(A, Q, {
 var JYB = "\x1B]",
     WYB = "\x07",
     wh1;
-var FYB = L(() => {
+var FYB = lazyLoader(() => {
     mnA();
     $t();
     inA();
@@ -1311,7 +1313,7 @@ function qh1(A) {
     if (!Number.isInteger(A)) return !1;
     return wt(A) === 2
 }
-var VYB = L(() => {
+var VYB = lazyLoader(() => {
     LUA()
 });
 
@@ -1406,7 +1408,7 @@ function Ot(A, Q, B) {
     return Y += J96(Z), Y
 }
 var A96, Q96, B96, Lh1, Nh1;
-var Mh1 = L(() => {
+var Mh1 = lazyLoader(() => {
     V7A();
     VYB();
     A96 = new Set([27, 155]), Q96 = "0".codePointAt(0), B96 = "9".codePointAt(0), Lh1 = new Set, Nh1 = new Map;
@@ -1430,11 +1432,11 @@ function Rt(A) {
 var DYB, HYB, CYB, DaA, Oh1, HaA = "\x1B]8;;",
     Rh1, EYB = "\x07",
     of7, W96;
-var dUA = L(() => {
+var dUA = lazyLoader(() => {
     V7A();
     DYB = new Set([27, 155]), HYB = "[".codePointAt(0), CYB = "]".codePointAt(0), DaA = new Set, Oh1 = new Map;
     for (let [A, Q] of b7.codes) DaA.add(b7.color.ansi(Q)), Oh1.set(b7.color.ansi(A), b7.color.ansi(Q));
-    Rh1 = HaA.split("").map((A) => A.charCodeAt(0)), of7 = EYB.charCodeAt(0), W96 = `\x1B]8;;${EYB}`
+    Rh1 = HaA.split("").map((A) => A.charCodeAt(0)), of7 = EYB.charCodeAt(0), W96 = `\x1B]8;;TextComponent{EYB}`
 });
 
 function Ph1(A) {
@@ -1451,7 +1453,7 @@ function CaA(A, Q) {
     } else B = B.filter((I) => I.endCode !== G.endCode), B.push(G);
     return B
 }
-var EaA = L(() => {
+var EaA = lazyLoader(() => {
     V7A();
     dUA()
 });
@@ -1462,7 +1464,7 @@ function jh1(A) {
         code: Q.endCode
     }))
 }
-var Sh1 = L(() => {
+var Sh1 = lazyLoader(() => {
     EaA()
 });
 
@@ -1471,7 +1473,7 @@ function rc(A, Q) {
         G = new Set(A.map((Z) => Z.code));
     return [...jh1(A.filter((Z) => !B.has(Z.endCode))), ...Q.filter((Z) => !G.has(Z.code))]
 }
-var _h1 = L(() => {
+var _h1 = lazyLoader(() => {
     Sh1()
 });
 
@@ -1497,7 +1499,7 @@ function UYB(A) {
     }
     return Q
 }
-var $YB = L(() => {
+var $YB = lazyLoader(() => {
     dUA();
     _h1();
     EaA()
@@ -1507,7 +1509,7 @@ function kh1(A) {
     if (!Number.isInteger(A)) return !1;
     return qUA(A) || NUA(A)
 }
-var wYB = L(() => {
+var wYB = lazyLoader(() => {
     LUA()
 });
 

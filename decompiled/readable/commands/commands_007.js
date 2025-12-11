@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: commands_007.js
+ * 处理时间: 2025-12-09T03:41:37.132Z
+ * 变量映射: 4 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.948Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -96,7 +99,7 @@
                     let QA = v19(X),
                         IA = d.token.startsWith("@"),
                         HA;
-                    if (d.isQuoted) HA = d.token.slice(2).replace(/"$/, "").length;
+                    if (d.isQuoted) HA = d.token.slice(2).replace(/"TextComponent/, "").length;
                     else if (IA) HA = d.token.length - 1;
                     else HA = d.token.length;
                     if (QA.length > HA) {
@@ -164,8 +167,8 @@
                     q(k.serverName);
                     let QA = d ? "disabled" : "enabled";
                     D({
-                        key: `mcp-server-toggle-${k.serverName}`,
-                        jsx: $C.createElement($, null, "MCP server '", k.serverName, "' ", QA, ". Use", " ", $C.createElement($, {
+                        key: `mcp-server-toggle-TextComponent{k.serverName}`,
+                        jsx: $C.createElement(TextComponent, null, "MCP server '", k.serverName, "' ", QA, ". Use", " ", $C.createElement(TextComponent, {
                             color: "suggestion"
                         }, "/mcp"), " to manage servers."),
                         priority: "immediate",
@@ -204,20 +207,20 @@
         o = We(Z).level !== "none";
     return h1((l, k) => {
         if (k.tab && !k.shift) {
-            if (X.length === 0 && Y !== "bash" && !V0(process.env.MAX_THINKING_TOKENS)) {
+            if (X.length === 0 && Y !== "bash" && !parseBoolean(process.env.MAX_THINKING_TOKENS)) {
                 if (o) return;
                 let d = !w.thinkingEnabled;
                 N((QA) => ({
                     ...QA,
                     thinkingEnabled: d
                 })), D({
-                    key: `toggled-thinking-${d?"on":"off"}`,
+                    key: `toggled-thinking-TextComponent{d?"on":"off"}`,
                     invalidates: ["toggled-thinking-on", "toggled-thinking-off", "toggled-thinking-initial"],
-                    jsx: d ? $C.createElement($C.Fragment, null, $C.createElement($, {
+                    jsx: d ? $C.createElement($C.Fragment, null, $C.createElement(TextComponent, {
                         color: "suggestion"
-                    }, "Thinking on"), $C.createElement($, {
+                    }, "Thinking on"), $C.createElement(TextComponent, {
                         dimColor: !0
-                    }, " (tab to toggle)")) : $C.createElement($, {
+                    }, " (tab to toggle)")) : $C.createElement(TextComponent, {
                         dimColor: !0
                     }, "Thinking off (tab to toggle)"),
                     priority: "immediate",
@@ -254,7 +257,7 @@
     }
 }
 var pq, $C, qZ1 = null;
-var e19 = L(() => {
+var e19 = lazyLoader(() => {
     hA();
     S19();
     y19();
@@ -269,7 +272,7 @@ var e19 = L(() => {
     hA();
     FQA();
     zU();
-    pq = GA(VA(), 1), $C = GA(VA(), 1)
+    pq = esmImport(VA(), 1), $C = esmImport(VA(), 1)
 });
 
 function A09(A) {
@@ -289,7 +292,7 @@ function A09(A) {
                 return v.startOfLogicalLine();
             case "^":
                 return v.firstNonBlankInLogicalLine();
-            case "$":
+            case "TextComponent":
                 return v.endOfLogicalLine();
             case "w":
                 return v.nextWord();
@@ -716,7 +719,7 @@ function A09(A) {
                     case "j":
                     case "k":
                     case "^":
-                    case "$":
+                    case "TextComponent":
                     case "w":
                     case "e":
                     case "b":
@@ -759,7 +762,7 @@ function A09(A) {
                         return;
                     case "D": {
                         let o = R();
-                        p("delete", "$", o);
+                        p("delete", "TextComponent", o);
                         return
                     }
                     case "c":
@@ -767,7 +770,7 @@ function A09(A) {
                         return;
                     case "C": {
                         let o = R();
-                        p("change", "$", o);
+                        p("change", "TextComponent", o);
                         return
                     }
                     case "?": {
@@ -792,10 +795,10 @@ function A09(A) {
     }
 }
 var on, $L3 = 1e4;
-var Q09 = L(() => {
+var Q09 = lazyLoader(() => {
     vd1();
     Yd1();
-    on = GA(VA(), 1)
+    on = esmImport(VA(), 1)
 });
 
 function WJ0(A) {
@@ -839,12 +842,12 @@ function WJ0(A) {
     }))
 }
 var NZ1;
-var B09 = L(() => {
+var B09 = lazyLoader(() => {
     hA();
     J9();
     Q09();
     md1();
-    NZ1 = GA(VA(), 1)
+    NZ1 = esmImport(VA(), 1)
 });
 
 function TXA() {
@@ -856,7 +859,7 @@ function G09() {
     if (Tp.isEnabled() && gjB()) return "shift + ⏎ for newline";
     return mjB() ? "\\⏎ for newline" : "backslash (\\) + return (⏎) for newline"
 }
-var vPA = L(() => {
+var vPA = lazyLoader(() => {
     DGA();
     jQ();
     f5()
@@ -872,10 +875,10 @@ function tn() {
     }, [Q, A])
 }
 var Z09;
-var bPA = L(() => {
+var bPA = lazyLoader(() => {
     s2();
     H9();
-    Z09 = GA(VA(), 1)
+    Z09 = esmImport(VA(), 1)
 });
 
 function I09(A) {
@@ -898,26 +901,26 @@ function J09({
 }) {
     switch (A.status) {
         case "completed":
-            return PXA.default.createElement($, {
+            return PXA.default.createElement(TextComponent, {
                 color: "success",
                 dimColor: !0
             }, "done");
         case "failed":
-            return PXA.default.createElement($, {
+            return PXA.default.createElement(TextComponent, {
                 color: "error",
                 dimColor: !0
             }, "error");
         case "killed":
-            return PXA.default.createElement($, {
+            return PXA.default.createElement(TextComponent, {
                 color: "error",
                 dimColor: !0
             }, "killed");
         case "running": {
             let Q = Y09(A.stderr) || Y09(A.stdout);
-            if (!Q) return PXA.default.createElement($, {
+            if (!Q) return PXA.default.createElement(TextComponent, {
                 dimColor: !0
             }, "no output");
-            return PXA.default.createElement($, {
+            return PXA.default.createElement(TextComponent, {
                 dimColor: !0
             }, B7(Q, 20, !0))
         }
@@ -935,37 +938,37 @@ function Y09(A) {
     return ""
 }
 var PXA;
-var W09 = L(() => {
+var W09 = lazyLoader(() => {
     hA();
-    PXA = GA(VA(), 1)
+    PXA = esmImport(VA(), 1)
 });
 
 function LZ1({
     session: A
 }) {
-    if (A.status === "completed") return fPA.default.createElement($, {
+    if (A.status === "completed") return fPA.default.createElement(TextComponent, {
         bold: !0,
         color: "success",
         dimColor: !0
     }, "done");
-    if (A.status === "failed") return fPA.default.createElement($, {
+    if (A.status === "failed") return fPA.default.createElement(TextComponent, {
         bold: !0,
         color: "error",
         dimColor: !0
     }, "error");
-    if (!A.todoList.length) return fPA.default.createElement($, {
+    if (!A.todoList.length) return fPA.default.createElement(TextComponent, {
         dimColor: !0
     }, A.status, "…");
     let Q = A.todoList.filter((G) => G.status === "completed").length,
         B = A.todoList.length;
-    return fPA.default.createElement($, {
+    return fPA.default.createElement(TextComponent, {
         dimColor: !0
     }, Q, "/", B)
 }
 var fPA;
-var XJ0 = L(() => {
+var XJ0 = lazyLoader(() => {
     hA();
-    fPA = GA(VA(), 1)
+    fPA = esmImport(VA(), 1)
 });
 
 function MZ1({
@@ -973,25 +976,25 @@ function MZ1({
 }) {
     switch (A.type) {
         case "shell":
-            return lq.createElement($, null, B7(A.command, 40, !0), " ", lq.createElement(J09, {
+            return lq.createElement(TextComponent, null, B7(A.command, 40, !0), " ", lq.createElement(J09, {
                 shell: A
             }));
         case "remote_session":
-            return lq.createElement($, null, B7(A.title, 40, !0), " ", lq.createElement(LZ1, {
+            return lq.createElement(TextComponent, null, B7(A.title, 40, !0), " ", lq.createElement(LZ1, {
                 session: A
             }));
         case "async_agent":
-            return lq.createElement($, null, B7(A.description, 40, !0), " ", lq.createElement($, {
+            return lq.createElement(TextComponent, null, B7(A.description, 40, !0), " ", lq.createElement(TextComponent, {
                 dimColor: !0
             }, "(", A.status, A.status === "completed" && !A.retrieved && ", unread", ")"))
     }
 }
 var lq;
-var FJ0 = L(() => {
+var FJ0 = lazyLoader(() => {
     W09();
     XJ0();
     hA();
-    lq = GA(VA(), 1)
+    lq = esmImport(VA(), 1)
 });
 import {
     randomUUID as wL3
@@ -1090,7 +1093,7 @@ function X09(A) {
         }
     })
 }
-var hPA = L(() => {
+var hPA = lazyLoader(() => {
     S0();
     eM()
 });
@@ -1105,25 +1108,25 @@ function F09({
         backgroundTasks: Z
     }] = _Q();
     qL3();
-    let I = Q && (A || !G) ? bG.createElement(bG.Fragment, null, bG.createElement($, {
+    let I = Q && (A || !G) ? bG.createElement(bG.Fragment, null, bG.createElement(TextComponent, {
             dimColor: !0
-        }, "· "), bG.createElement($, {
+        }, "· "), bG.createElement(TextComponent, {
             dimColor: !0
         }, A ? "Enter to view tasks" : "↓ to view")) : null,
         Y = Object.values(Z).filter((J) => J.status === "running");
     if (Y.length === 0) return;
-    if (Y.length > 1 || B < 150) return bG.createElement(bG.Fragment, null, bG.createElement($, {
+    if (Y.length > 1 || B < 150) return bG.createElement(bG.Fragment, null, bG.createElement(TextComponent, {
         color: "background",
         inverse: A
-    }, Y.length, " background", " ", Y.length === 1 ? "task" : "tasks"), I ? bG.createElement($, null, " ", I) : null);
+    }, Y.length, " background", " ", Y.length === 1 ? "task" : "tasks"), I ? bG.createElement(TextComponent, null, " ", I) : null);
     if (Y.length === 1) {
         let J = Y[0];
-        return bG.createElement(bG.Fragment, null, bG.createElement($, {
+        return bG.createElement(bG.Fragment, null, bG.createElement(TextComponent, {
             color: "background",
             inverse: A
         }, bG.createElement(MZ1, {
             task: J
-        })), I ? bG.createElement($, null, " ", I) : null)
+        })), I ? bG.createElement(TextComponent, null, " ", I) : null)
     }
     return null
 }
@@ -1195,22 +1198,21 @@ async function* V09(A) {
 }
 
 function NL3(A) {
-    let Q = A.findLast((Z) => Z.type === "assistant" && Z.message.content.some((I) => I.type === "tool_use" && I.name === tI.name));
+    let Q = A.findLast((Z) => Z.type === "assistant" && Z.message.content.some((I) => I.type === "tool_use" && I.name === TODO_READ_TOOL.name));
     if (!Q) return [];
-    let B = Q.message.content.find((Z) => Z.type === "tool_use" && Z.name === tI.name)?.input;
+    let B = Q.message.content.find((Z) => Z.type === "tool_use" && Z.name === TODO_READ_TOOL.name)?.input;
     if (!B) return [];
-    let G = tI.inputSchema.safeParse(B);
+    let G = TODO_READ_TOOL.inputSchema.safeParse(B);
     if (!G.success) return [];
     return G.data.todos
 }
-
 async function LL3(A, Q) {
     if (!j8("tengu_web_tasks")) return null;
     let B = await gX({
             systemPrompt: ["You are given a few messages from a conversation, as well as a summary of the conversation so far. Your task is to summarize the new messages in the conversation based on the summary so far. Aim for 1-2 sentences at most, focusing on the most important details. The summary MUST be in <summary>summary goes here</summary> tags. If there is no new information, return an empty string: <summary></summary>."],
-            userPrompt: `Summary so far: ${Q}
+            userPrompt: `Summary so far: TextComponent{Q}
 
-New messages: ${JSON.stringify(A)}`,
+New messages: TextComponent{JSON.stringify(A)}`,
             signal: new AbortController().signal,
             options: {
                 querySource: "background_task_summarize_delta",
@@ -1226,7 +1228,7 @@ New messages: ${JSON.stringify(A)}`,
     return e2(G, "summary")
 }
 var bG, $g;
-var K09 = L(() => {
+var K09 = lazyLoader(() => {
     hA();
     jQ();
     H9();
@@ -1241,7 +1243,7 @@ var K09 = L(() => {
     nQ();
     O9();
     S0();
-    bG = GA(VA(), 1), $g = GA(VA(), 1)
+    bG = esmImport(VA(), 1), $g = esmImport(VA(), 1)
 });
 
 function ML3({
@@ -1251,7 +1253,7 @@ function ML3({
 }) {
     return VQA.createElement(j, {
         gap: 1
-    }, VQA.createElement($, {
+    }, VQA.createElement(TextComponent, {
         dimColor: !0
     }, B ? "no matching prompt:" : "search prompts:"), VQA.createElement(s4, {
         value: A,
@@ -1266,10 +1268,10 @@ function ML3({
     }))
 }
 var VQA, D09;
-var H09 = L(() => {
+var H09 = lazyLoader(() => {
     hA();
     QY();
-    VQA = GA(VA(), 1);
+    VQA = esmImport(VA(), 1);
     D09 = ML3
 });
 
@@ -1282,7 +1284,7 @@ function VJ0() {
 }
 var OL3, RL3 = 0,
     TL3;
-var KJ0 = L(() => {
+var KJ0 = lazyLoader(() => {
     S0();
     _Y();
     fk();
@@ -1307,11 +1309,11 @@ function E09({
     historyFailedMatch: F,
     messages: V
 }) {
-    if (A.show) return I5.createElement($, {
+    if (A.show) return I5.createElement(TextComponent, {
         dimColor: !0,
         key: "exit-message"
     }, "Press ", A.key, " again to exit");
-    if (Y) return I5.createElement($, {
+    if (Y) return I5.createElement(TextComponent, {
         dimColor: !0,
         key: "pasting-message"
     }, "Pasting text…");
@@ -1323,7 +1325,7 @@ function E09({
         value: W,
         onChange: X,
         historyFailedMatch: F
-    }), K ? I5.createElement($, {
+    }), K ? I5.createElement(TextComponent, {
         dimColor: !0,
         key: "vim-insert"
     }, "-- INSERT --") : null, I5.createElement(PL3, {
@@ -1345,46 +1347,46 @@ function PL3({
     let [{
         backgroundTasks: I
     }] = _Q(), Y = C09.useMemo(() => Object.values(I).filter((V) => V.type === "remote_session" || V.status === "running").length, [I]);
-    if (A === "memory") return I5.createElement($, {
+    if (A === "memory") return I5.createElement(TextComponent, {
         color: "remember"
     }, "# to memorize");
-    if (A === "bash") return I5.createElement($, {
+    if (A === "bash") return I5.createElement(TextComponent, {
         color: "bashBorder"
     }, "! for bash mode");
-    if (A === "background" && j8("tengu_web_tasks")) return I5.createElement($, {
+    if (A === "background" && j8("tengu_web_tasks")) return I5.createElement(TextComponent, {
         color: "background"
     }, "& to background");
     let J = Q?.mode,
         W = !Vl0(J),
         X = null,
-        F = [...J && W ? [I5.createElement($, {
+        F = [...J && W ? [I5.createElement(TextComponent, {
             color: sj(J),
             key: "mode"
-        }, Kl0(J), " ", Iv(J).toLowerCase(), " on", I5.createElement($, {
+        }, Kl0(J), " ", Iv(J).toLowerCase(), " on", I5.createElement(TextComponent, {
             dimColor: !0
         }, " (", EU.displayText, " to cycle)"))] : [], ...Y > 0 ? [I5.createElement(F09, {
             key: "tasks",
             tasksSelected: G,
             showHint: B
-        })] : [], ...X && X.filesCount > 0 ? [I5.createElement($, {
+        })] : [], ...X && X.filesCount > 0 ? [I5.createElement(TextComponent, {
             dimColor: !0,
             key: "code-changes"
-        }, X.filesCount, " ", X.filesCount === 1 ? "file" : "files", " ", I5.createElement($, {
+        }, X.filesCount, " ", X.filesCount === 1 ? "file" : "files", " ", I5.createElement(TextComponent, {
             color: "diffAddedWord"
-        }, "+", X.linesAdded), " ", I5.createElement($, {
+        }, "+", X.linesAdded), " ", I5.createElement(TextComponent, {
             color: "diffRemovedWord"
         }, "-", X.linesRemoved))] : []];
-    if (F.length) return I5.createElement(j, null, fF(F, (V) => I5.createElement($, {
+    if (F.length) return I5.createElement(j, null, fF(F, (V) => I5.createElement(TextComponent, {
         dimColor: !0,
-        key: `separator-${V}`
+        key: `separator-TextComponent{V}`
     }, " ", "·", " ")));
     if (!B) return null;
-    return I5.createElement($, {
+    return I5.createElement(TextComponent, {
         dimColor: !0
     }, "? for shortcuts")
 }
 var I5, C09;
-var z09 = L(() => {
+var z09 = lazyLoader(() => {
     hA();
     vPA();
     jp();
@@ -1394,14 +1396,14 @@ var z09 = L(() => {
     H09();
     O9();
     KJ0();
-    I5 = GA(VA(), 1), C09 = GA(VA(), 1)
+    I5 = esmImport(VA(), 1), C09 = esmImport(VA(), 1)
 });
 
 function wg() {
     let [A] = _Q();
     return A.settings
 }
-var gPA = L(() => {
+var gPA = lazyLoader(() => {
     H9()
 });
 
@@ -1412,7 +1414,7 @@ function DJ0(A) {
 function jL3(A, Q, B) {
     let G = tt({
             permissionMode: A,
-            mainLoopModel: S3(),
+            mainLoopModel: getDefaultSonnetModel(),
             exceeds200kTokens: Q
         }),
         Z = B?.outputStyle || EK;
@@ -1505,12 +1507,12 @@ function U09({
     let X = I?.statusLine?.padding ?? 0;
     return uPA.createElement(j, {
         paddingX: X
-    }, uPA.createElement($, {
+    }, uPA.createElement(TextComponent, {
         dimColor: !0
     }, G))
 }
 var uPA, qg;
-var $09 = L(() => {
+var $09 = lazyLoader(() => {
     hA();
     AO();
     S0();

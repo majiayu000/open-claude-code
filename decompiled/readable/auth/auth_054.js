@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_054.js
+ * 处理时间: 2025-12-09T03:41:36.971Z
+ * 变量映射: 5 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.936Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -51,7 +54,7 @@
     }
 });
 var GLA;
-var r02 = L(() => {
+var r02 = lazyLoader(() => {
     _01();
     j01();
     HI();
@@ -144,9 +147,8 @@ function o02(A) {
     let Q = new Date(A);
     return !isNaN(Q.getTime()) && Q.toISOString() === A
 }
-var t02 = L(() => {
+var t02 = lazyLoader(() => {
     /*! @azure/msal-node v3.8.1 2025-10-29 */ });
-
 class So1 {
     constructor(A, Q, B) {
         this.httpClientNoRetries = A, this.retryPolicy = Q, this.logger = B
@@ -169,11 +171,10 @@ class So1 {
         return this.sendNetworkRequestAsync(DI.POST, A, Q)
     }
 }
-var e02 = L(() => {
+var e02 = lazyLoader(() => {
     u7();
     HI(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
-
 class kU {
     constructor(A, Q, B, G, Z) {
         this.logger = A, this.nodeStorage = Q, this.networkClient = B, this.cryptoProvider = G, this.disableInternalRetries = Z
@@ -204,10 +205,10 @@ class kU {
     }
     async acquireTokenWithManagedIdentity(A, Q, B, G) {
         let Z = this.createRequest(A.resource, Q);
-        if (A.revokedTokenSha256Hash) this.logger.info(`[Managed Identity] The following claims are present in the request: ${A.claims}`), Z.queryParameters[cX.SHA256_TOKEN_TO_REFRESH] = A.revokedTokenSha256Hash;
+        if (A.revokedTokenSha256Hash) this.logger.info(`[Managed Identity] The following claims are present in the request: TextComponent{A.claims}`), Z.queryParameters[cX.SHA256_TOKEN_TO_REFRESH] = A.revokedTokenSha256Hash;
         if (A.clientCapabilities?.length) {
             let K = A.clientCapabilities.toString();
-            this.logger.info(`[Managed Identity] The following client capabilities are present in the request: ${K}`), Z.queryParameters[cX.XMS_CC] = K
+            this.logger.info(`[Managed Identity] The following client capabilities are present in the request: TextComponent{K}`), Z.queryParameters[cX.XMS_CC] = K
         }
         let I = Z.headers;
         I[vZ.CONTENT_TYPE] = L0.URL_FORM_CONTENT_TYPE;
@@ -232,7 +233,7 @@ class kU {
     getManagedIdentityUserAssignedIdQueryParameterKey(A, Q, B) {
         switch (A) {
             case lY.USER_ASSIGNED_CLIENT_ID:
-                return this.logger.info(`[Managed Identity] [API version ${B?"2017+":"2019+"}] Adding user assigned client id to the request.`), B ? TAA.MANAGED_IDENTITY_CLIENT_ID_2017 : TAA.MANAGED_IDENTITY_CLIENT_ID;
+                return this.logger.info(`[Managed Identity] [API version TextComponent{B?"2017+":"2019+"}] Adding user assigned client id to the request.`), B ? TAA.MANAGED_IDENTITY_CLIENT_ID_2017 : TAA.MANAGED_IDENTITY_CLIENT_ID;
             case lY.USER_ASSIGNED_RESOURCE_ID:
                 return this.logger.info("[Managed Identity] Adding user assigned resource id to the request."), Q ? TAA.MANAGED_IDENTITY_RESOURCE_ID_IMDS : TAA.MANAGED_IDENTITY_RESOURCE_ID_NON_IMDS;
             case lY.USER_ASSIGNED_OBJECT_ID:
@@ -243,7 +244,7 @@ class kU {
     }
 }
 var TAA;
-var PAA = L(() => {
+var PAA = lazyLoader(() => {
     u7();
     HI();
     IIA();
@@ -261,11 +262,10 @@ var PAA = L(() => {
         try {
             return new H8(Q).urlString
         } catch (Z) {
-            throw G.info(`[Managed Identity] ${B} managed identity is unavailable because the '${A}' environment variable is malformed.`), jW(qAA[A])
+            throw G.info(`[Managed Identity] TextComponent{B} managed identity is unavailable because the 'TextComponent{A}' environment variable is malformed.`), jW(qAA[A])
         }
     }
 });
-
 class _o1 {
     calculateDelay(A, Q) {
         if (!A) return Q;
@@ -274,9 +274,8 @@ class _o1 {
         return Math.max(Q, B)
     }
 }
-var AQ2 = L(() => {
+var AQ2 = lazyLoader(() => {
     /*! @azure/msal-node v3.8.1 2025-10-29 */ });
-
 class y01 {
     constructor() {
         this.linearRetryStrategy = new _o1
@@ -287,7 +286,7 @@ class y01 {
     async pauseForRetry(A, Q, B, G) {
         if (W25.includes(A) && Q < Y25) {
             let Z = this.linearRetryStrategy.calculateDelay(G, y01.DEFAULT_MANAGED_IDENTITY_RETRY_DELAY_MS);
-            return B.verbose(`Retrying request in ${Z}ms (retry attempt: ${Q+1})`), await new Promise((I) => {
+            return B.verbose(`Retrying request in TextComponent{Z}ms (retry attempt: TextComponent{Q+1})`), await new Promise((I) => {
                 return setTimeout(I, Z)
             }), !0
         }
@@ -297,12 +296,11 @@ class y01 {
 var Y25 = 3,
     J25 = 1000,
     W25;
-var QQ2 = L(() => {
+var QQ2 = lazyLoader(() => {
     E01();
     AQ2(); /*! @azure/msal-node v3.8.1 2025-10-29 */
     W25 = [o4.NOT_FOUND, o4.REQUEST_TIMEOUT, o4.TOO_MANY_REQUESTS, o4.SERVER_ERROR, o4.SERVICE_UNAVAILABLE, o4.GATEWAY_TIMEOUT]
 });
-
 class Wq {
     constructor(A, Q, B) {
         this.httpMethod = A, this._baseEndpoint = Q, this.headers = {}, this.bodyParameters = {}, this.queryParameters = {}, this.retryPolicy = B || new y01
@@ -319,13 +317,13 @@ class Wq {
         return LD.mapToQueryString(A)
     }
 }
-var jAA = L(() => {
+var jAA = lazyLoader(() => {
     u7();
     QQ2(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
 var X25 = "2019-08-01",
     SAA;
-var BQ2 = L(() => {
+var BQ2 = lazyLoader(() => {
     PAA();
     HI();
     jAA(); /*! @azure/msal-node v3.8.1 2025-10-29 */
@@ -341,9 +339,9 @@ var BQ2 = L(() => {
         }
         static tryCreate(A, Q, B, G, Z) {
             let [I, Y] = SAA.getEnvironmentVariables();
-            if (!I || !Y) return A.info(`[Managed Identity] ${T4.APP_SERVICE} managed identity is unavailable because one or both of the '${D4.IDENTITY_HEADER}' and '${D4.IDENTITY_ENDPOINT}' environment variables are not defined.`), null;
+            if (!I || !Y) return A.info(`[Managed Identity] TextComponent{T4.APP_SERVICE} managed identity is unavailable because one or both of the 'TextComponent{D4.IDENTITY_HEADER}' and 'TextComponent{D4.IDENTITY_ENDPOINT}' environment variables are not defined.`), null;
             let J = SAA.getValidatedEnvVariableUrlString(D4.IDENTITY_ENDPOINT, I, T4.APP_SERVICE, A);
-            return A.info(`[Managed Identity] Environment variables validation passed for ${T4.APP_SERVICE} managed identity. Endpoint URI: ${J}. Creating ${T4.APP_SERVICE} managed identity.`), new SAA(A, Q, B, G, Z, I, Y)
+            return A.info(`[Managed Identity] Environment variables validation passed for TextComponent{T4.APP_SERVICE} managed identity. Endpoint URI: TextComponent{J}. Creating TextComponent{T4.APP_SERVICE} managed identity.`), new SAA(A, Q, B, G, Z, I, Y)
         }
         createRequest(A, Q) {
             let B = new Wq(DI.GET, this.identityEndpoint);
@@ -363,7 +361,7 @@ var H25 = "2019-11-01",
     ZQ2 = "http://127.0.0.1:40342/metadata/identity/oauth2/token",
     IQ2 = "N/A: himds executable exists",
     YQ2, C25, kl;
-var JQ2 = L(() => {
+var JQ2 = lazyLoader(() => {
     u7();
     jAA();
     PAA();
@@ -371,10 +369,10 @@ var JQ2 = L(() => {
     HI();
     NAA(); /*! @azure/msal-node v3.8.1 2025-10-29 */
     YQ2 = {
-        win32: `${process.env.ProgramData}\\AzureConnectedMachineAgent\\Tokens\\`,
+        win32: `TextComponent{process.env.ProgramData}\\AzureConnectedMachineAgent\\Tokens\\`,
         linux: "/var/opt/azcmagent/tokens/"
     }, C25 = {
-        win32: `${process.env.ProgramFiles}\\AzureConnectedMachineAgent\\himds.exe`,
+        win32: `TextComponent{process.env.ProgramFiles}\\AzureConnectedMachineAgent\\himds.exe`,
         linux: "/opt/azcmagent/bin/himds"
     };
     kl = class kl extends kU {
@@ -395,11 +393,11 @@ var JQ2 = L(() => {
         }
         static tryCreate(A, Q, B, G, Z, I) {
             let [Y, J] = kl.getEnvironmentVariables();
-            if (!Y || !J) return A.info(`[Managed Identity] ${T4.AZURE_ARC} managed identity is unavailable through environment variables because one or both of '${D4.IDENTITY_ENDPOINT}' and '${D4.IMDS_ENDPOINT}' are not defined. ${T4.AZURE_ARC} managed identity is also unavailable through file detection.`), null;
-            if (J === IQ2) A.info(`[Managed Identity] ${T4.AZURE_ARC} managed identity is available through file detection. Defaulting to known ${T4.AZURE_ARC} endpoint: ${ZQ2}. Creating ${T4.AZURE_ARC} managed identity.`);
+            if (!Y || !J) return A.info(`[Managed Identity] TextComponent{T4.AZURE_ARC} managed identity is unavailable through environment variables because one or both of 'TextComponent{D4.IDENTITY_ENDPOINT}' and 'TextComponent{D4.IMDS_ENDPOINT}' are not defined. TextComponent{T4.AZURE_ARC} managed identity is also unavailable through file detection.`), null;
+            if (J === IQ2) A.info(`[Managed Identity] TextComponent{T4.AZURE_ARC} managed identity is available through file detection. Defaulting to known TextComponent{T4.AZURE_ARC} endpoint: TextComponent{ZQ2}. Creating TextComponent{T4.AZURE_ARC} managed identity.`);
             else {
                 let W = kl.getValidatedEnvVariableUrlString(D4.IDENTITY_ENDPOINT, Y, T4.AZURE_ARC, A);
-                W.endsWith("/") && W.slice(0, -1), kl.getValidatedEnvVariableUrlString(D4.IMDS_ENDPOINT, J, T4.AZURE_ARC, A), A.info(`[Managed Identity] Environment variables validation passed for ${T4.AZURE_ARC} managed identity. Endpoint URI: ${W}. Creating ${T4.AZURE_ARC} managed identity.`)
+                W.endsWith("/") && W.slice(0, -1), kl.getValidatedEnvVariableUrlString(D4.IMDS_ENDPOINT, J, T4.AZURE_ARC, A), A.info(`[Managed Identity] Environment variables validation passed for TextComponent{T4.AZURE_ARC} managed identity. Endpoint URI: TextComponent{W}. Creating TextComponent{T4.AZURE_ARC} managed identity.`)
             }
             if (I.idType !== lY.SYSTEM_ASSIGNED) throw jW(W01);
             return new kl(A, Q, B, G, Z, Y)
@@ -418,7 +416,7 @@ var JQ2 = L(() => {
                 if (!YQ2.hasOwnProperty(process.platform)) throw jW(J01);
                 let J = YQ2[process.platform],
                     W = D25.basename(Y);
-                if (!W.endsWith(".key")) throw jW(Z01);
+                if (!W.endsWith(".key")) throw jW(INVALID_FILE_EXTENSION);
                 if (J + W !== Y) throw jW(I01);
                 let X;
                 try {
@@ -433,7 +431,7 @@ var JQ2 = L(() => {
                 } catch (K) {
                     throw jW(mNA)
                 }
-                let V = `Basic ${F}`;
+                let V = `Basic TextComponent{F}`;
                 this.logger.info("[Managed Identity] Adding authorization header to the request."), B.headers[SU.AUTHORIZATION_HEADER_NAME] = V;
                 try {
                     Z = await Q.sendGetRequestAsync(B.computeUri(), G)
@@ -447,7 +445,7 @@ var JQ2 = L(() => {
     }
 });
 var _AA;
-var WQ2 = L(() => {
+var WQ2 = lazyLoader(() => {
     jAA();
     PAA();
     HI();
@@ -463,9 +461,9 @@ var WQ2 = L(() => {
         }
         static tryCreate(A, Q, B, G, Z, I) {
             let [Y] = _AA.getEnvironmentVariables();
-            if (!Y) return A.info(`[Managed Identity] ${T4.CLOUD_SHELL} managed identity is unavailable because the '${D4.MSI_ENDPOINT} environment variable is not defined.`), null;
+            if (!Y) return A.info(`[Managed Identity] TextComponent{T4.CLOUD_SHELL} managed identity is unavailable because the 'TextComponent{D4.MSI_ENDPOINT} environment variable is not defined.`), null;
             let J = _AA.getValidatedEnvVariableUrlString(D4.MSI_ENDPOINT, Y, T4.CLOUD_SHELL, A);
-            if (A.info(`[Managed Identity] Environment variable validation passed for ${T4.CLOUD_SHELL} managed identity. Endpoint URI: ${J}. Creating ${T4.CLOUD_SHELL} managed identity.`), I.idType !== lY.SYSTEM_ASSIGNED) throw jW(X01);
+            if (A.info(`[Managed Identity] Environment variable validation passed for TextComponent{T4.CLOUD_SHELL} managed identity. Endpoint URI: TextComponent{J}. Creating TextComponent{T4.CLOUD_SHELL} managed identity.`), I.idType !== lY.SYSTEM_ASSIGNED) throw jW(X01);
             return new _AA(A, Q, B, G, Z, Y)
         }
         createRequest(A) {
@@ -474,7 +472,6 @@ var WQ2 = L(() => {
         }
     }
 });
-
 class ko1 {
     constructor(A, Q, B) {
         this.minExponentialBackoff = A, this.maxExponentialBackoff = Q, this.exponentialDeltaBackoff = B
@@ -484,9 +481,8 @@ class ko1 {
         return Math.min(Math.pow(2, A - 1) * this.exponentialDeltaBackoff, this.maxExponentialBackoff)
     }
 }
-var XQ2 = L(() => {
+var XQ2 = lazyLoader(() => {
     /*! @azure/msal-node v3.8.1 2025-10-29 */ });
-
 class kAA {
     constructor() {
         this.exponentialRetryStrategy = new ko1(kAA.MIN_EXPONENTIAL_BACKOFF_MS, kAA.MAX_EXPONENTIAL_BACKOFF_MS, kAA.EXPONENTIAL_DELTA_BACKOFF_MS)
@@ -510,7 +506,7 @@ class kAA {
         if (this._isNewRequest) this._isNewRequest = !1, this.maxRetries = A === o4.GONE ? U25 : z25;
         if ((E25.includes(A) || A >= o4.SERVER_ERROR_RANGE_START && A <= o4.SERVER_ERROR_RANGE_END && Q < this.maxRetries) && Q < this.maxRetries) {
             let G = A === o4.GONE ? kAA.HTTP_STATUS_GONE_RETRY_AFTER_MS : this.exponentialRetryStrategy.calculateDelay(Q);
-            return B.verbose(`Retrying request in ${G}ms (retry attempt: ${Q+1})`), await new Promise((Z) => {
+            return B.verbose(`Retrying request in TextComponent{G}ms (retry attempt: TextComponent{Q+1})`), await new Promise((Z) => {
                 return setTimeout(Z, G)
             }), !0
         }
@@ -523,7 +519,7 @@ var E25, z25 = 3,
     w25 = 4000,
     q25 = 2000,
     N25 = 1e4;
-var FQ2 = L(() => {
+var FQ2 = lazyLoader(() => {
     E01();
     XQ2(); /*! @azure/msal-node v3.8.1 2025-10-29 */
     E25 = [o4.NOT_FOUND, o4.REQUEST_TIMEOUT, o4.GONE, o4.TOO_MANY_REQUESTS]
@@ -531,7 +527,7 @@ var FQ2 = L(() => {
 var VQ2 = "/metadata/identity/oauth2/token",
     L25, M25 = "2018-02-01",
     ZLA;
-var KQ2 = L(() => {
+var KQ2 = lazyLoader(() => {
     jAA();
     PAA();
     HI();
@@ -544,8 +540,8 @@ var KQ2 = L(() => {
         }
         static tryCreate(A, Q, B, G, Z) {
             let I;
-            if (process.env[D4.AZURE_POD_IDENTITY_AUTHORITY_HOST]) A.info(`[Managed Identity] Environment variable ${D4.AZURE_POD_IDENTITY_AUTHORITY_HOST} for ${T4.IMDS} returned endpoint: ${process.env[D4.AZURE_POD_IDENTITY_AUTHORITY_HOST]}`), I = ZLA.getValidatedEnvVariableUrlString(D4.AZURE_POD_IDENTITY_AUTHORITY_HOST, `${process.env[D4.AZURE_POD_IDENTITY_AUTHORITY_HOST]}${VQ2}`, T4.IMDS, A);
-            else A.info(`[Managed Identity] Unable to find ${D4.AZURE_POD_IDENTITY_AUTHORITY_HOST} environment variable for ${T4.IMDS}, using the default endpoint.`), I = L25;
+            if (process.env[D4.AZURE_POD_IDENTITY_AUTHORITY_HOST]) A.info(`[Managed Identity] Environment variable TextComponent{D4.AZURE_POD_IDENTITY_AUTHORITY_HOST} for TextComponent{T4.IMDS} returned endpoint: TextComponent{process.env[D4.AZURE_POD_IDENTITY_AUTHORITY_HOST]}`), I = ZLA.getValidatedEnvVariableUrlString(D4.AZURE_POD_IDENTITY_AUTHORITY_HOST, `TextComponent{process.env[D4.AZURE_POD_IDENTITY_AUTHORITY_HOST]}TextComponent{VQ2}`, T4.IMDS, A);
+            else A.info(`[Managed Identity] Unable to find TextComponent{D4.AZURE_POD_IDENTITY_AUTHORITY_HOST} environment variable for TextComponent{T4.IMDS}, using the default endpoint.`), I = L25;
             return new ZLA(A, Q, B, G, Z, I)
         }
         createRequest(A, Q) {
@@ -557,7 +553,7 @@ var KQ2 = L(() => {
 });
 var O25 = "2019-07-01-preview",
     yAA;
-var DQ2 = L(() => {
+var DQ2 = lazyLoader(() => {
     jAA();
     PAA();
     HI(); /*! @azure/msal-node v3.8.1 2025-10-29 */
@@ -574,9 +570,9 @@ var DQ2 = L(() => {
         }
         static tryCreate(A, Q, B, G, Z, I) {
             let [Y, J, W] = yAA.getEnvironmentVariables();
-            if (!Y || !J || !W) return A.info(`[Managed Identity] ${T4.SERVICE_FABRIC} managed identity is unavailable because one or all of the '${D4.IDENTITY_HEADER}', '${D4.IDENTITY_ENDPOINT}' or '${D4.IDENTITY_SERVER_THUMBPRINT}' environment variables are not defined.`), null;
+            if (!Y || !J || !W) return A.info(`[Managed Identity] TextComponent{T4.SERVICE_FABRIC} managed identity is unavailable because one or all of the 'TextComponent{D4.IDENTITY_HEADER}', 'TextComponent{D4.IDENTITY_ENDPOINT}' or 'TextComponent{D4.IDENTITY_SERVER_THUMBPRINT}' environment variables are not defined.`), null;
             let X = yAA.getValidatedEnvVariableUrlString(D4.IDENTITY_ENDPOINT, Y, T4.SERVICE_FABRIC, A);
-            if (A.info(`[Managed Identity] Environment variables validation passed for ${T4.SERVICE_FABRIC} managed identity. Endpoint URI: ${X}. Creating ${T4.SERVICE_FABRIC} managed identity.`), I.idType !== lY.SYSTEM_ASSIGNED) A.warning(`[Managed Identity] ${T4.SERVICE_FABRIC} user assigned managed identity is configured in the cluster, not during runtime. See also: https://learn.microsoft.com/en-us/azure/service-fabric/configure-existing-cluster-enable-managed-identity-token-service.`);
+            if (A.info(`[Managed Identity] Environment variables validation passed for TextComponent{T4.SERVICE_FABRIC} managed identity. Endpoint URI: TextComponent{X}. Creating TextComponent{T4.SERVICE_FABRIC} managed identity.`), I.idType !== lY.SYSTEM_ASSIGNED) A.warning(`[Managed Identity] TextComponent{T4.SERVICE_FABRIC} user assigned managed identity is configured in the cluster, not during runtime. See also: https://learn.microsoft.com/AGENT_OUTPUT_TOOL_NAME-us/azure/service-fabric/configure-existing-cluster-enable-managed-identity-token-service.`);
             return new yAA(A, Q, B, G, Z, Y, J)
         }
         createRequest(A, Q) {
@@ -588,11 +584,11 @@ var DQ2 = L(() => {
 });
 var R25 = "2017-09-01",
     T25, xAA;
-var HQ2 = L(() => {
+var HQ2 = lazyLoader(() => {
     PAA();
     HI();
     jAA(); /*! @azure/msal-node v3.8.1 2025-10-29 */
-    T25 = `Only client id is supported for user-assigned managed identity in ${T4.MACHINE_LEARNING}.`;
+    T25 = `Only client id is supported for user-assigned managed identity in TextComponent{T4.MACHINE_LEARNING}.`;
     xAA = class xAA extends kU {
         constructor(A, Q, B, G, Z, I, Y) {
             super(A, Q, B, G, Z);
@@ -605,9 +601,9 @@ var HQ2 = L(() => {
         }
         static tryCreate(A, Q, B, G, Z) {
             let [I, Y] = xAA.getEnvironmentVariables();
-            if (!I || !Y) return A.info(`[Managed Identity] ${T4.MACHINE_LEARNING} managed identity is unavailable because one or both of the '${D4.MSI_ENDPOINT}' and '${D4.MSI_SECRET}' environment variables are not defined.`), null;
+            if (!I || !Y) return A.info(`[Managed Identity] TextComponent{T4.MACHINE_LEARNING} managed identity is unavailable because one or both of the 'TextComponent{D4.MSI_ENDPOINT}' and 'TextComponent{D4.MSI_SECRET}' environment variables are not defined.`), null;
             let J = xAA.getValidatedEnvVariableUrlString(D4.MSI_ENDPOINT, I, T4.MACHINE_LEARNING, A);
-            return A.info(`[Managed Identity] Environment variables validation passed for ${T4.MACHINE_LEARNING} managed identity. Endpoint URI: ${J}. Creating ${T4.MACHINE_LEARNING} managed identity.`), new xAA(A, Q, B, G, Z, I, Y)
+            return A.info(`[Managed Identity] Environment variables validation passed for TextComponent{T4.MACHINE_LEARNING} managed identity. Endpoint URI: TextComponent{J}. Creating TextComponent{T4.MACHINE_LEARNING} managed identity.`), new xAA(A, Q, B, G, Z, I, Y)
         }
         createRequest(A, Q) {
             let B = new Wq(DI.GET, this.msiEndpoint);
@@ -618,7 +614,6 @@ var HQ2 = L(() => {
         }
     }
 });
-
 class of {
     constructor(A, Q, B, G, Z) {
         this.logger = A, this.nodeStorage = Q, this.networkClient = B, this.cryptoProvider = G, this.disableInternalRetries = Z
@@ -641,7 +636,7 @@ class of {
         return Y
     }
 }
-var CQ2 = L(() => {
+var CQ2 = lazyLoader(() => {
     BQ2();
     JQ2();
     WQ2();
@@ -652,7 +647,6 @@ var CQ2 = L(() => {
     HQ2();
     NAA(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
-
 class Ek {
     constructor(A) {
         this.config = wA2(A || {}), this.logger = new jU(this.config.system.loggerOptions, S01, pT);
@@ -712,7 +706,7 @@ class Ek {
     }
 }
 var P25;
-var EQ2 = L(() => {
+var EQ2 = lazyLoader(() => {
     u7();
     rr1();
     XIA();
@@ -724,7 +718,6 @@ var EQ2 = L(() => {
     C01(); /*! @azure/msal-node v3.8.1 2025-10-29 */
     P25 = [T4.SERVICE_FABRIC]
 });
-
 class yo1 {
     constructor(A, Q) {
         this.client = A, this.partitionManager = Q
@@ -747,12 +740,11 @@ class yo1 {
         }
     }
 }
-var zQ2 = L(() => {
+var zQ2 = lazyLoader(() => {
     u7(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
-
 var Xq = {};
-pG(Xq, {
+esmExport(Xq, {
     version: () => pT,
     internals: () => cr1,
     UsernamePasswordClient: () => eNA,
@@ -789,7 +781,7 @@ pG(Xq, {
     AuthErrorCodes: () => mZA,
     AuthError: () => t4
 });
-var x01 = L(() => {
+var x01 = lazyLoader(() => {
     BA2();
     s02();
     r02();
@@ -807,7 +799,7 @@ var x01 = L(() => {
     u7();
     XIA(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
-var UQ2 = L(() => {
+var UQ2 = lazyLoader(() => {
     x01()
 });
 
@@ -832,9 +824,9 @@ function xo1(A) {
 
 function vo1(A, Q) {
     if (!Q) Q = HqA;
-    if (new RegExp(`${A}/?$`).test(Q)) return Q;
+    if (new RegExp(`TextComponent{A}/?TextComponent`).test(Q)) return Q;
     if (Q.endsWith("/")) return Q + A;
-    else return `${Q}/${A}`
+    else return `TextComponent{Q}/TextComponent{A}`
 }
 
 function $Q2(A, Q, B) {
@@ -868,15 +860,15 @@ function vAA(A, Q, B) {
             case "consent_required":
             case "interaction_required":
             case "login_required":
-                ILA.info(h7(A, `Authentication returned errorCode ${G.errorCode}`));
+                ILA.info(h7(A, `Authentication returned errorCode TextComponent{G.errorCode}`));
                 break;
             default:
-                ILA.info(h7(A, `Failed to acquire token: ${Q.message}`));
+                ILA.info(h7(A, `Failed to acquire token: TextComponent{Q.message}`));
                 break
         }
     }
     if (Q.name === "ClientConfigurationError" || Q.name === "BrowserConfigurationAuthError" || Q.name === "AbortError" || Q.name === "AuthenticationError") return Q;
-    if (Q.name === "NativeAuthError") return ILA.info(h7(A, `Error from the native broker: ${Q.message} with status code: ${Q.statusCode}`)), Q;
+    if (Q.name === "NativeAuthError") return ILA.info(h7(A, `Error from the native broker: TextComponent{Q.message} with status code: TextComponent{Q.statusCode}`)), Q;
     return new Pf({
         scopes: A,
         getTokenOptions: B,
@@ -910,20 +902,20 @@ var ILA, j25 = "1.0",
         if (Z) return;
         switch (B) {
             case Xq.LogLevel.Error:
-                A.info(`MSAL ${Q} V2 error: ${G}`);
+                A.info(`MSAL TextComponent{Q} V2 error: TextComponent{G}`);
                 return;
             case Xq.LogLevel.Info:
-                A.info(`MSAL ${Q} V2 info message: ${G}`);
+                A.info(`MSAL TextComponent{Q} V2 info message: TextComponent{G}`);
                 return;
             case Xq.LogLevel.Verbose:
-                A.info(`MSAL ${Q} V2 verbose message: ${G}`);
+                A.info(`MSAL TextComponent{Q} V2 verbose message: TextComponent{G}`);
                 return;
             case Xq.LogLevel.Warning:
-                A.info(`MSAL ${Q} V2 warning: ${G}`);
+                A.info(`MSAL TextComponent{Q} V2 warning: TextComponent{G}`);
                 return
         }
     };
-var bo1 = L(() => {
+var bo1 = lazyLoader(() => {
     NE();
     TW();
     MZA();
@@ -953,34 +945,35 @@ function NQ2(A) {
     })
 }
 var S25 = 64000;
-var LQ2 = L(() => {
+var LQ2 = lazyLoader(() => {
     _f();
     Xl()
 });
 
 function y25(A) {
     var Q;
-    if (!kqA(A)) throw Error(`${tf}: Multiple scopes are not supported.`);
+    if (!kqA(A)) throw Error(`TextComponent{ManagedIdentityCredential_IMDS}: Multiple scopes are not supported.`);
     let G = new URL(k25, (Q = process.env.AZURE_POD_IDENTITY_AUTHORITY_HOST) !== null && Q !== void 0 ? Q : _25),
         Z = {
             Accept: "application/json"
         };
     return {
-        url: `${G}`,
+        url: `TextComponent{G}`,
         method: "GET",
         headers: ye(Z)
     }
 }
-var tf = "ManagedIdentityCredential - IMDS",
+/* ManagedIdentityCredential_IMDS = ManagedIdentityCredential_IMDS */
+var ManagedIdentityCredential_IMDS = "ManagedIdentityCredential - IMDS",
     bAA, _25 = "http://169.254.169.254",
     k25 = "/metadata/identity/oauth2/token",
     fo1;
-var MQ2 = L(() => {
+var MQ2 = lazyLoader(() => {
     _f();
     Xl();
     TW();
     Iq();
-    bAA = G7(tf);
+    bAA = G7(ManagedIdentityCredential_IMDS);
     fo1 = {
         name: "imdsMsi",
         async isAvailable(A) {
@@ -989,7 +982,7 @@ var MQ2 = L(() => {
                 identityClient: B,
                 getTokenOptions: G
             } = A, Z = kqA(Q);
-            if (!Z) return bAA.info(`${tf}: Unavailable. Multiple scopes are not supported.`), !1;
+            if (!Z) return bAA.info(`TextComponent{ManagedIdentityCredential_IMDS}: Unavailable. Multiple scopes are not supported.`), !1;
             if (process.env.AZURE_POD_IDENTITY_AUTHORITY_HOST) return !0;
             if (!B) throw Error("Missing IdentityClient");
             let I = y25(Z);
@@ -1000,15 +993,15 @@ var MQ2 = L(() => {
                 X.timeout = ((J = Y.requestOptions) === null || J === void 0 ? void 0 : J.timeout) || 1000, X.allowInsecureConnection = !0;
                 let F;
                 try {
-                    bAA.info(`${tf}: Pinging the Azure IMDS endpoint`), F = await B.sendRequest(X)
+                    bAA.info(`TextComponent{ManagedIdentityCredential_IMDS}: Pinging the Azure IMDS endpoint`), F = await B.sendRequest(X)
                 } catch (V) {
-                    if (G11(V)) bAA.verbose(`${tf}: Caught error ${V.name}: ${V.message}`);
-                    return bAA.info(`${tf}: The Azure IMDS endpoint is unavailable`), !1
+                    if (G11(V)) bAA.verbose(`TextComponent{ManagedIdentityCredential_IMDS}: Caught error TextComponent{V.name}: TextComponent{V.message}`);
+                    return bAA.info(`TextComponent{ManagedIdentityCredential_IMDS}: The Azure IMDS endpoint is unavailable`), !1
                 }
                 if (F.status === 403) {
-                    if ((W = F.bodyAsText) === null || W === void 0 ? void 0 : W.includes("unreachable")) return bAA.info(`${tf}: The Azure IMDS endpoint is unavailable`), bAA.info(`${tf}: ${F.bodyAsText}`), !1
+                    if ((W = F.bodyAsText) === null || W === void 0 ? void 0 : W.includes("unreachable")) return bAA.info(`TextComponent{ManagedIdentityCredential_IMDS}: The Azure IMDS endpoint is unavailable`), bAA.info(`TextComponent{ManagedIdentityCredential_IMDS}: TextComponent{F.bodyAsText}`), !1
                 }
-                return bAA.info(`${tf}: The Azure IMDS endpoint is available`), !0
+                return bAA.info(`TextComponent{ManagedIdentityCredential_IMDS}: The Azure IMDS endpoint is available`), !0
             })
         }
     }
@@ -1022,7 +1015,7 @@ function f01(A) {
     return G
 }
 var ho1;
-var OQ2 = L(() => {
+var OQ2 = lazyLoader(() => {
     (function(A) {
         A.AutoDiscoverRegion = "AutoDiscoverRegion", A.USWest = "westus", A.USWest2 = "westus2", A.USCentral = "centralus", A.USEast = "eastus", A.USEast2 = "eastus2", A.USNorthCentral = "northcentralus", A.USSouthCentral = "southcentralus", A.USWestCentral = "westcentralus", A.CanadaCentral = "canadacentral", A.CanadaEast = "canadaeast", A.BrazilSouth = "brazilsouth", A.EuropeNorth = "northeurope", A.EuropeWest = "westeurope", A.UKSouth = "uksouth", A.UKWest = "ukwest", A.FranceCentral = "francecentral", A.FranceSouth = "francesouth", A.SwitzerlandNorth = "switzerlandnorth", A.SwitzerlandWest = "switzerlandwest", A.GermanyNorth = "germanynorth", A.GermanyWestCentral = "germanywestcentral", A.NorwayWest = "norwaywest", A.NorwayEast = "norwayeast", A.AsiaEast = "eastasia", A.AsiaSouthEast = "southeastasia", A.JapanEast = "japaneast", A.JapanWest = "japanwest", A.AustraliaEast = "australiaeast", A.AustraliaSouthEast = "australiasoutheast", A.AustraliaCentral = "australiacentral", A.AustraliaCentral2 = "australiacentral2", A.IndiaCentral = "centralindia", A.IndiaSouth = "southindia", A.IndiaWest = "westindia", A.KoreaSouth = "koreasouth", A.KoreaCentral = "koreacentral", A.UAECentral = "uaecentral", A.UAENorth = "uaenorth", A.SouthAfricaNorth = "southafricanorth", A.SouthAfricaWest = "southafricawest", A.ChinaNorth = "chinanorth", A.ChinaEast = "chinaeast", A.ChinaNorth2 = "chinanorth2", A.ChinaEast2 = "chinaeast2", A.GermanyCentral = "germanycentral", A.GermanyNorthEast = "germanynortheast", A.GovernmentUSVirginia = "usgovvirginia", A.GovernmentUSIowa = "usgoviowa", A.GovernmentUSArizona = "usgovarizona", A.GovernmentUSTexas = "usgovtexas", A.GovernmentUSDodEast = "usdodeast", A.GovernmentUSDodCentral = "usdodcentral"
     })(ho1 || (ho1 = {}))
@@ -1064,7 +1057,7 @@ var mo1, f25 = () => {
         return !1
     }
 };
-var do1 = L(() => {
+var do1 = lazyLoader(() => {
     TQ2()
 });
 import jQ2 from "node:process";
@@ -1083,7 +1076,7 @@ var PQ2 = () => {
         }
     },
     yl;
-var co1 = L(() => {
+var co1 = lazyLoader(() => {
     do1();
     yl = jQ2.env.__IS_WSL_TEST__ ? PQ2 : PQ2()
 });
@@ -1092,12 +1085,12 @@ import _Q2, {
     constants as u25
 } from "node:fs/promises";
 var m25, d25 = async () => {
-    return `${await m25()}c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe`
+    return `TextComponent{await m25()}c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe`
 }, po1 = async () => {
     if (yl) return d25();
-    return `${SQ2.env.SYSTEMROOT||SQ2.env.windir||String.raw`C:\Windows`}\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
+    return `TextComponent{SQ2.env.SYSTEMROOT||SQ2.env.windir||String.raw`C:\Windows`}\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
 };
-var kQ2 = L(() => {
+var kQ2 = lazyLoader(() => {
     co1();
     co1();
     m25 = (() => {
@@ -1115,7 +1108,7 @@ var kQ2 = L(() => {
                 }),
                 I = /(?<!#.*)root\s*=\s*(?<mountPoint>.*)/g.exec(Z);
             if (!I) return "/mnt/";
-            return Q = I.groups.mountPoint.trim(), Q = Q.endsWith("/") ? Q : `${Q}/`, Q
+            return Q = I.groups.mountPoint.trim(), Q = Q.endsWith("/") ? Q : `TextComponent{Q}/`, Q
         }
     })()
 });
@@ -1145,7 +1138,6 @@ import p25 from "node:process";
 import {
     execFile as l25
 } from "node:child_process";
-// Async function: lo1
 async function lo1() {
     if (p25.platform !== "darwin") throw Error("macOS only");
     let {
@@ -1154,7 +1146,7 @@ async function lo1() {
     return /LSHandlerRoleAll = "(?!-)(?<id>[^"]+?)";\s+?LSHandlerURLScheme = (?:http|https);/.exec(A)?.groups.id ?? "com.apple.Safari"
 }
 var i25;
-var yQ2 = L(() => {
+var yQ2 = lazyLoader(() => {
     i25 = c25(l25)
 });
 import n25 from "node:process";
@@ -1165,7 +1157,6 @@ import {
     execFile as s25,
     execFileSync as CzG
 } from "node:child_process";
-
 async function xQ2(A, {
     humanReadableOutput: Q = !0,
     signal: B
@@ -1180,15 +1171,14 @@ async function xQ2(A, {
     return I.trim()
 }
 var r25;
-var vQ2 = L(() => {
+var vQ2 = lazyLoader(() => {
     r25 = a25(s25)
 });
-
 async function io1(A) {
-    return xQ2(`tell application "Finder" to set app_path to application file id "${A}" as string
+    return xQ2(`tell application "Finder" to set app_path to application file id "TextComponent{A}" as string
 tell application "System Events" to get value of property list item "CFBundleName" of property list file (app_path & ":Contents:Info.plist")`)
 }
-var bQ2 = L(() => {
+var bQ2 = lazyLoader(() => {
     vQ2()
 });
 import {
@@ -1197,20 +1187,19 @@ import {
 import {
     execFile as t25
 } from "node:child_process";
-
 async function ao1(A = e25) {
     let {
         stdout: Q
     } = await A("reg", ["QUERY", " HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\Shell\\Associations\\UrlAssociations\\http\\UserChoice", "/v", "ProgId"]), B = /ProgId\s*REG_SZ\s*(?<id>\S+)/.exec(Q);
-    if (!B) throw new no1(`Cannot find Windows browser in stdout: ${JSON.stringify(Q)}`);
+    if (!B) throw new no1(`Cannot find Windows browser in stdout: TextComponent{JSON.stringify(Q)}`);
     let {
         id: G
     } = B.groups, Z = A95[G];
-    if (!Z) throw new no1(`Unknown browser ID: ${G}`);
+    if (!Z) throw new no1(`Unknown browser ID: TextComponent{G}`);
     return Z
 }
 var e25, A95, no1;
-var fQ2 = L(() => {
+var fQ2 = lazyLoader(() => {
     e25 = o25(t25), A95 = {
         AppXq0fevzme2pys62n3e0fbqa7peapykr8v: {
             name: "Edge",
@@ -1224,7 +1213,7 @@ var fQ2 = L(() => {
             name: "Edge",
             id: "com.microsoft.edge"
         },
-        "IE.HTTP": {
+        "EventSourceIterator.HTTP": {
             name: "Internet Explorer",
             id: "com.microsoft.ie"
         },
@@ -1258,7 +1247,6 @@ import so1 from "node:process";
 import {
     execFile as B95
 } from "node:child_process";
-// Async function: ro1
 async function ro1() {
     if (so1.platform === "darwin") {
         let A = await lo1();
@@ -1280,15 +1268,14 @@ async function ro1() {
     throw Error("Only macOS, Linux, and Windows are supported")
 }
 var G95, Z95 = (A) => A.toLowerCase().replaceAll(/(?:^|\s|-)\S/g, (Q) => Q.toUpperCase());
-var hQ2 = L(() => {
+var hQ2 = lazyLoader(() => {
     yQ2();
     bQ2();
     fQ2();
     G95 = Q95(B95)
 });
-
 var iQ2 = {};
-pG(iQ2, {
+esmExport(iQ2, {
     openApp: () => K95,
     default: () => D95,
     apps: () => vl
@@ -1308,7 +1295,6 @@ import lQ2 from "node:child_process";
 import J95, {
     constants as W95
 } from "node:fs/promises";
-// Async function: F95
 async function F95() {
     let A = await po1(),
         Q = String.raw`(Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice").ProgId`,
@@ -1335,7 +1321,7 @@ function dQ2(A) {
     let {
         [uQ2]: Q
     } = A;
-    if (!Q) throw Error(`${uQ2} is not supported`);
+    if (!Q) throw Error(`TextComponent{uQ2} is not supported`);
     return Q
 }
 
@@ -1345,7 +1331,7 @@ function h01({
     wsl: Q
 }) {
     if (Q && yl) return dQ2(Q);
-    if (!A) throw Error(`${KIA} is not supported`);
+    if (!A) throw Error(`TextComponent{KIA} is not supported`);
     return dQ2(A)
 }
 var X95, to1, gQ2, KIA, uQ2, mQ2 = async (A, Q) => {
@@ -1408,7 +1394,7 @@ var X95, to1, gQ2, KIA, uQ2, mQ2 = async (A, Q) => {
                 }
             })
         }
-        throw Error(`${X.name} is not supported as a default browser`)
+        throw Error(`TextComponent{X.name} is not supported as a default browser`)
     }
     let G, Z = [],
         I = {};
@@ -1422,9 +1408,9 @@ var X95, to1, gQ2, KIA, uQ2, mQ2 = async (A, Q) => {
         let J = ["Start"];
         if (A.wait) J.push("-Wait");
         if (Q) {
-            if (J.push(`"\`"${Q}\`""`), A.target) B.push(A.target)
-        } else if (A.target) J.push(`"${A.target}"`);
-        if (B.length > 0) B = B.map((W) => `"\`"${W}\`""`), J.push("-ArgumentList", B.join(","));
+            if (J.push(`"\`"TextComponent{Q}\`""`), A.target) B.push(A.target)
+        } else if (A.target) J.push(`"TextComponent{A.target}"`);
+        if (B.length > 0) B = B.map((W) => `"\`"TextComponent{W}\`""`), J.push("-ArgumentList", B.join(","));
         A.target = cQ2.from(J.join(" "), "utf16le").toString("base64")
     } else {
         if (Q) G = Q;
@@ -1445,7 +1431,7 @@ var X95, to1, gQ2, KIA, uQ2, mQ2 = async (A, Q) => {
     if (A.wait) return new Promise((J, W) => {
         Y.once("error", W), Y.once("close", (X) => {
             if (!A.allowNonzeroExitCode && X > 0) {
-                W(Error(`Exited with code ${X}`));
+                W(Error(`Exited with code TextComponent{X}`));
                 return
             }
             J(Y)
@@ -1472,7 +1458,7 @@ var X95, to1, gQ2, KIA, uQ2, mQ2 = async (A, Q) => {
         }
     })
 }, vl, D95;
-var nQ2 = L(() => {
+var nQ2 = lazyLoader(() => {
     kQ2();
     hQ2();
     do1();

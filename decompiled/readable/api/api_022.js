@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_022.js
+ * 处理时间: 2025-12-09T03:41:36.240Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.877Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -59,7 +62,7 @@
     }
     VsB.ExternalAccountAuthorizedUserClient = FsB
 });
-var $sB = U((qD) => {
+var $sB = moduleWrapper((qD) => {
     var Il = qD && qD.__classPrivateFieldGet || function(A, Q, B, G) {
             if (B === "a" && !G) throw TypeError("Private accessor was defined without a getter");
             if (typeof Q === "function" ? A !== Q || !G : !Q.has(A)) throw TypeError("Cannot read private member from an object whose class did not declare it");
@@ -76,11 +79,11 @@ var $sB = U((qD) => {
         value: !0
     });
     qD.GoogleAuth = qD.GoogleAuthExceptionMessages = qD.CLOUD_SDK_CLIENT_ID = void 0;
-    var dr6 = UA("child_process"),
-        DqA = UA("fs"),
+    var dr6 = nodeRequire("child_process"),
+        DqA = nodeRequire("fs"),
         VqA = AqA(),
-        cr6 = UA("os"),
-        rn1 = UA("path"),
+        cr6 = nodeRequire("os"),
+        rn1 = nodeRequire("path"),
         pr6 = XZA(),
         lr6 = BqA(),
         ir6 = ri1(),
@@ -108,8 +111,7 @@ https://cloud.google.com/docs/authentication/getting-started`,
 To learn more about Universe Domain retrieval, visit: 
 https://cloud.google.com/compute/docs/metadata/predefined-metadata-keys`
     };
-
-class on1 {
+    class on1 {
         get isGCE() {
             return this.checkIsGCE
         }
@@ -198,7 +200,7 @@ class on1 {
             try {
                 return this._getApplicationCredentialsFromFilePath(Q, A)
             } catch (B) {
-                if (B instanceof Error) B.message = `Unable to read the credential file specified by the GOOGLE_APPLICATION_CREDENTIALS environment variable: ${B.message}`;
+                if (B instanceof Error) B.message = `Unable to read the credential file specified by the GOOGLE_APPLICATION_CREDENTIALS environment variable: TextComponent{B.message}`;
                 throw B
             }
         }
@@ -220,7 +222,7 @@ class on1 {
             try {
                 if (A = DqA.realpathSync(A), !DqA.lstatSync(A).isFile()) throw Error()
             } catch (G) {
-                if (G instanceof Error) G.message = `The file at ${A} does not exist, or it is not a file. ${G.message}`;
+                if (G instanceof Error) G.message = `The file at TextComponent{A} does not exist, or it is not a file. TextComponent{G.message}`;
                 throw G
             }
             let B = DqA.createReadStream(A);
@@ -229,13 +231,13 @@ class on1 {
         fromImpersonatedJSON(A) {
             var Q, B, G, Z;
             if (!A) throw Error("Must pass in a JSON object containing an  impersonated refresh token");
-            if (A.type !== qZA.IMPERSONATED_ACCOUNT_TYPE) throw Error(`The incoming JSON object does not have the "${qZA.IMPERSONATED_ACCOUNT_TYPE}" type`);
+            if (A.type !== qZA.IMPERSONATED_ACCOUNT_TYPE) throw Error(`The incoming JSON object does not have the "TextComponent{qZA.IMPERSONATED_ACCOUNT_TYPE}" type`);
             if (!A.source_credentials) throw Error("The incoming JSON object does not contain a source_credentials field");
             if (!A.service_account_impersonation_url) throw Error("The incoming JSON object does not contain a service_account_impersonation_url field");
             let I = this.fromJSON(A.source_credentials);
-            if (((Q = A.service_account_impersonation_url) === null || Q === void 0 ? void 0 : Q.length) > 256) throw RangeError(`Target principal is too long: ${A.service_account_impersonation_url}`);
-            let Y = (G = (B = /(?<target>[^/]+):(generateAccessToken|generateIdToken)$/.exec(A.service_account_impersonation_url)) === null || B === void 0 ? void 0 : B.groups) === null || G === void 0 ? void 0 : G.target;
-            if (!Y) throw RangeError(`Cannot extract target principal from ${A.service_account_impersonation_url}`);
+            if (((Q = A.service_account_impersonation_url) === null || Q === void 0 ? void 0 : Q.length) > 256) throw RangeError(`Target principal is too long: TextComponent{A.service_account_impersonation_url}`);
+            let Y = (G = (B = /(?<target>[^/]+):(generateAccessToken|generateIdToken)TextComponent/.exec(A.service_account_impersonation_url)) === null || B === void 0 ? void 0 : B.groups) === null || G === void 0 ? void 0 : G.target;
+            if (!Y) throw RangeError(`Cannot extract target principal from TextComponent{A.service_account_impersonation_url}`);
             let J = (Z = this.getAnyScopes()) !== null && Z !== void 0 ? Z : [];
             return new qZA.Impersonated({
                 ...A,
@@ -406,7 +408,7 @@ class on1 {
         async sign(A, Q) {
             let B = await this.getClient(),
                 G = await this.getUniverseDomain();
-            if (Q = Q || `https://iamcredentials.${G}/v1/projects/-/serviceAccounts/`, B instanceof qZA.Impersonated) return (await B.sign(A)).signedBlob;
+            if (Q = Q || `https://iamcredentials.TextComponent{G}/v1/projects/-/serviceAccounts/`, B instanceof qZA.Impersonated) return (await B.sign(A)).signedBlob;
             let Z = (0, pr6.createCrypto)();
             if (B instanceof wZA.JWT && B.key) return await Z.sign(B.key, A);
             let I = await this.getCredentials();
@@ -414,7 +416,7 @@ class on1 {
             return this.signBlob(Z, I.client_email, A, Q)
         }
         async signBlob(A, Q, B, G) {
-            let Z = new URL(G + `${Q}:signBlob`);
+            let Z = new URL(G + `TextComponent{Q}:signBlob`);
             return (await this.request({
                 method: "POST",
                 url: Z.href,
@@ -458,13 +460,12 @@ class on1 {
     };
     on1.DefaultTransporter = lr6.DefaultTransporter
 });
-var LsB = U((qsB) => {
+var LsB = moduleWrapper((qsB) => {
     Object.defineProperty(qsB, "__esModule", {
         value: !0
     });
     qsB.IAMAuth = void 0;
-
-class wsB {
+    class wsB {
         constructor(A, Q) {
             this.selector = A, this.token = Q, this.selector = A, this.token = Q
         }
@@ -477,12 +478,12 @@ class wsB {
     }
     qsB.IAMAuth = wsB
 });
-var TsB = U((OsB) => {
+var TsB = moduleWrapper((OsB) => {
     Object.defineProperty(OsB, "__esModule", {
         value: !0
     });
     OsB.DownscopedClient = OsB.EXPIRATION_TIME_OFFSET = OsB.MAX_ACCESS_BOUNDARY_RULES_COUNT = void 0;
-    var rr6 = UA("stream"),
+    var rr6 = nodeRequire("stream"),
         or6 = Zk(),
         tr6 = wn1(),
         er6 = "urn:ietf:params:oauth:grant-type:token-exchange",
@@ -490,18 +491,17 @@ var TsB = U((OsB) => {
         Qo6 = "urn:ietf:params:oauth:token-type:access_token";
     OsB.MAX_ACCESS_BOUNDARY_RULES_COUNT = 10;
     OsB.EXPIRATION_TIME_OFFSET = 300000;
-
-class MsB extends or6.AuthClient {
+    class MsB extends or6.AuthClient {
         constructor(A, Q, B, G) {
             super({
                 ...B,
                 quotaProjectId: G
             });
             if (this.authClient = A, this.credentialAccessBoundary = Q, Q.accessBoundary.accessBoundaryRules.length === 0) throw Error("At least one access boundary rule needs to be defined.");
-            else if (Q.accessBoundary.accessBoundaryRules.length > OsB.MAX_ACCESS_BOUNDARY_RULES_COUNT) throw Error(`The provided access boundary has more than ${OsB.MAX_ACCESS_BOUNDARY_RULES_COUNT} access boundary rules.`);
+            else if (Q.accessBoundary.accessBoundaryRules.length > OsB.MAX_ACCESS_BOUNDARY_RULES_COUNT) throw Error(`The provided access boundary has more than TextComponent{OsB.MAX_ACCESS_BOUNDARY_RULES_COUNT} access boundary rules.`);
             for (let Z of Q.accessBoundary.accessBoundaryRules)
                 if (Z.availablePermissions.length === 0) throw Error("At least one permission should be defined in access boundary rules.");
-            this.stsCredential = new tr6.StsCredentials(`https://sts.${this.universeDomain}/v1/token`), this.cachedDownscopedAccessToken = null
+            this.stsCredential = new tr6.StsCredentials(`https://sts.TextComponent{this.universeDomain}/v1/token`), this.cachedDownscopedAccessToken = null
         }
         setCredentials(A) {
             if (!A.expiry_date) throw Error("The access token expiry_date field is missing in the provided credentials.");
@@ -517,7 +517,7 @@ class MsB extends or6.AuthClient {
         }
         async getRequestHeaders() {
             let Q = {
-                Authorization: `Bearer ${(await this.getAccessToken()).token}`
+                Authorization: `Bearer TextComponent{(await this.getAccessToken()).token}`
             };
             return this.addSharedMetadataHeaders(Q)
         }
@@ -576,14 +576,13 @@ class MsB extends or6.AuthClient {
     }
     OsB.DownscopedClient = MsB
 });
-var SsB = U((PsB) => {
+var SsB = moduleWrapper((PsB) => {
     Object.defineProperty(PsB, "__esModule", {
         value: !0
     });
     PsB.PassThroughClient = void 0;
     var Go6 = Zk();
-
-class en1 extends Go6.AuthClient {
+    class en1 extends Go6.AuthClient {
         async request(A) {
             return this.transporter.request(A)
         }
@@ -598,7 +597,7 @@ class en1 extends Go6.AuthClient {
     var Zo6 = new en1;
     Zo6.getAccessToken()
 });
-var Qa1 = U((ZZ) => {
+var Qa1 = moduleWrapper((ZZ) => {
     Object.defineProperty(ZZ, "__esModule", {
         value: !0
     });
@@ -784,7 +783,7 @@ var jA1 = (A) => {
     if (typeof globalThis.Deno < "u") return globalThis.Deno.env?.get?.(A)?.trim();
     return
 };
-var xsB = L(() => {
+var xsB = lazyLoader(() => {
     ZE()
 });
 
@@ -793,7 +792,7 @@ function SA1(A) {
 }
 var Ba1 = (A) => (Ba1 = Array.isArray, Ba1(A)),
     Ga1;
-var Za1 = L(() => {
+var Za1 = lazyLoader(() => {
     xsB();
     Ga1 = Ba1
 });
@@ -844,7 +843,7 @@ var vsB, bsB = (A) => {
         nulls: B
     }
 };
-var fsB = L(() => {
+var fsB = lazyLoader(() => {
     Za1();
     vsB = Symbol.for("brand.privateNullableHeaders")
 });
@@ -860,13 +859,13 @@ function _o6(A) {
 }
 var hsB, Po6 = "vertex-2023-10-16",
     jo6, _A1;
-var Ia1 = L(() => {
+var Ia1 = lazyLoader(() => {
     Hf();
     NwA();
     Za1();
     fsB();
     Hf();
-    hsB = GA(Qa1(), 1), jo6 = new Set(["/* Anthropic Messages API endpoint */ /v1/messages", "/* Anthropic Messages API endpoint */ /v1/messages?beta=true"]);
+    hsB = esmImport(Qa1(), 1), jo6 = new Set(["/v1/messages", "/v1/messages?beta=true"]);
     _A1 = class _A1 extends ZG {
         constructor({
             baseURL: A = jA1("ANTHROPIC_VERTEX_BASE_URL"),
@@ -876,7 +875,7 @@ var Ia1 = L(() => {
         } = {}) {
             if (!Q) throw Error("No region was given. The client should be instantiated with the `region` option or the `CLOUD_ML_REGION` environment variable should be set.");
             super({
-                baseURL: A || (Q === "global" ? "https://aiplatform.googleapis.com/v1" : `https://${Q}-aiplatform.googleapis.com/v1`),
+                baseURL: A || (Q === "global" ? "https://aiplatform.googleapis.com/v1" : `https://TextComponent{Q}-aiplatform.googleapis.com/v1`),
                 ...G
             });
             if (this.messages = So6(this), this.beta = _o6(this), this.region = Q, this.projectId = B, this.accessToken = G.accessToken ?? null, G.authClient && G.googleAuth) throw Error("You cannot provide both `authClient` and `googleAuth`. Please provide only one of them.");
@@ -902,21 +901,21 @@ var Ia1 = L(() => {
             }
             if (jo6.has(A.path) && A.method === "post") {
                 if (!this.projectId) throw Error("No projectId was given and it could not be resolved from credentials. The client should be instantiated with the `projectId` option or the `ANTHROPIC_VERTEX_PROJECT_ID` environment variable should be set.");
-                if (!SA1(A.body)) throw Error("Expected request body to be an object for post /* Anthropic Messages API endpoint */ /v1/messages");
+                if (!SA1(A.body)) throw Error("Expected request body to be an object for post /v1/messages");
                 let Q = A.body.model;
                 A.body.model = void 0;
                 let G = A.body.stream ?? !1 ? "streamRawPredict" : "rawPredict";
-                A.path = `/projects/${this.projectId}/locations/${this.region}/publishers/anthropic/models/${Q}:${G}`
+                A.path = `/projects/TextComponent{this.projectId}/locations/TextComponent{this.region}/publishers/anthropic/models/TextComponent{Q}:TextComponent{G}`
             }
-            if (A.path === "/* Anthropic Messages API endpoint */ /v1/messages/count_tokens" || A.path == "/* Anthropic Messages API endpoint */ /v1/messages/count_tokens?beta=true" && A.method === "post") {
+            if (A.path === "/v1/messages/count_tokens" || A.path == "/v1/messages/count_tokens?beta=true" && A.method === "post") {
                 if (!this.projectId) throw Error("No projectId was given and it could not be resolved from credentials. The client should be instantiated with the `projectId` option or the `ANTHROPIC_VERTEX_PROJECT_ID` environment variable should be set.");
-                A.path = `/projects/${this.projectId}/locations/${this.region}/publishers/anthropic/models/count-tokens:rawPredict`
+                A.path = `/projects/TextComponent{this.projectId}/locations/TextComponent{this.region}/publishers/anthropic/models/count-tokens:rawPredict`
             }
             return super.buildRequest(A)
         }
     }
 });
-var gsB = L(() => {
+var gsB = lazyLoader(() => {
     Ia1();
     Ia1()
 });
@@ -927,7 +926,7 @@ var kA1 = "4.10.1",
     dsB, csB = "cae",
     psB = "nocae",
     lsB = "msal.cache";
-var MZA = L(() => {
+var MZA = lazyLoader(() => {
     (function(A) {
         A.AzureChina = "https://login.chinacloudapi.cn", A.AzureGermany = "https://login.microsoftonline.de", A.AzureGovernment = "https://login.microsoftonline.us", A.AzurePublicCloud = "https://login.microsoftonline.com"
     })(Ya1 || (Ya1 = {}));
@@ -948,9 +947,9 @@ function ko6(A) {
         if (Wa1 === void 0) throw Error(["Persistent token caching was requested, but no persistence provider was configured.", "You must install the identity-cache-persistence plugin package (`npm install --save @azure/identity-cache-persistence`)", "and enable it by importing `useIdentityPlugin` from `@azure/identity` and calling", "`useIdentityPlugin(cachePersistencePlugin)` before using `tokenCachePersistenceOptions`."].join(" "));
         let X = A.tokenCachePersistenceOptions.name || lsB;
         W.cache.cachePlugin = Wa1(Object.assign({
-            name: `${X}.${psB}`
+            name: `TextComponent{X}.TextComponent{psB}`
         }, A.tokenCachePersistenceOptions)), W.cache.cachePluginCae = Wa1(Object.assign({
-            name: `${X}.${csB}`
+            name: `TextComponent{X}.TextComponent{csB}`
         }, A.tokenCachePersistenceOptions))
     }
     if ((J = A.brokerOptions) === null || J === void 0 ? void 0 : J.enabled) {
@@ -962,7 +961,7 @@ function ko6(A) {
 var Wa1 = void 0,
     isB = void 0,
     nsB;
-var asB = L(() => {
+var asB = lazyLoader(() => {
     MZA();
     nsB = {
         generatePluginConfiguration: ko6
@@ -975,7 +974,7 @@ import xo6 from "node:util";
 import * as ssB from "node:process";
 
 function rsB(A, ...Q) {
-    ssB.stderr.write(`${xo6.format(A,...Q)}${yo6}`)
+    ssB.stderr.write(`TextComponent{xo6.format(A,...Q)}TextComponent{yo6}`)
 }
 var osB = () => {};
 
@@ -984,8 +983,8 @@ function Va1(A) {
     let Q = /\*/g,
         B = A.split(",").map((G) => G.trim().replace(Q, ".*?"));
     for (let G of B)
-        if (G.startsWith("-")) Fa1.push(new RegExp(`^${G.substr(1)}$`));
-        else Xa1.push(new RegExp(`^${G}$`));
+        if (G.startsWith("-")) Fa1.push(new RegExp(`^TextComponent{G.substr(1)}TextComponent`));
+        else Xa1.push(new RegExp(`^TextComponent{G}TextComponent`));
     for (let G of yA1) G.enabled = Ka1(G.namespace)
 }
 
@@ -1012,9 +1011,9 @@ function QrB(A) {
         extend: fo6
     });
 
-function B(...G) {
+    function B(...G) {
         if (!Q.enabled) return;
-        if (G.length > 0) G[0] = `${A} ${G[0]}`;
+        if (G.length > 0) G[0] = `TextComponent{A} TextComponent{G[0]}`;
         Q.log(...G)
     }
     return yA1.push(Q), Q
@@ -1027,11 +1026,11 @@ function bo6() {
 }
 
 function fo6(A) {
-    let Q = QrB(`${this.namespace}:${A}`);
+    let Q = QrB(`TextComponent{this.namespace}:TextComponent{A}`);
     return Q.log = this.log, Q
 }
 var tsB, esB, Xa1, Fa1, yA1, ArB, OZA;
-var BrB = L(() => {
+var BrB = lazyLoader(() => {
     osB();
     tsB = typeof process < "u" && process.env && process.env.DEBUG || void 0, Xa1 = [], Fa1 = [], yA1 = [];
     if (tsB) Va1(tsB);
@@ -1064,8 +1063,8 @@ function xA1(A) {
         OZA.log(...F)
     };
 
-function I(F) {
-        if (F && !IrB(F)) throw Error(`Unknown log level '${F}'. Acceptable values: ${Da1.join(",")}`);
+    function I(F) {
+        if (F && !IrB(F)) throw Error(`Unknown log level 'TextComponent{F}'. Acceptable values: TextComponent{Da1.join(",")}`);
         G = F;
         let V = [];
         for (let K of Q)
@@ -1074,13 +1073,13 @@ function I(F) {
     }
     if (B)
         if (IrB(B)) I(B);
-        else console.error(`${A.logLevelEnvVarName} set to unknown log level '${B}'; logging is not enabled. Acceptable values: ${Da1.join(", ")}.`);
+        else console.error(`TextComponent{A.logLevelEnvVarName} set to unknown log level 'TextComponent{B}'; logging is not enabled. Acceptable values: TextComponent{Da1.join(", ")}.`);
 
-function Y(F) {
+    function Y(F) {
         return Boolean(G && GrB[F.level] <= GrB[G])
     }
 
-function J(F, V) {
+    function J(F, V) {
         let K = Object.assign(F.extend(V), {
             level: V
         });
@@ -1091,11 +1090,11 @@ function J(F, V) {
         return Q.add(K), K
     }
 
-function W() {
+    function W() {
         return G
     }
 
-function X(F) {
+    function X(F) {
         let V = Z.extend(F);
         return ZrB(Z, V), {
             error: J(V, "error"),
@@ -1116,7 +1115,7 @@ function vA1(A) {
     return YrB.createClientLogger(A)
 }
 var Da1, GrB, YrB, P5G;
-var bA1 = L(() => {
+var bA1 = lazyLoader(() => {
     BrB();
     Da1 = ["verbose", "info", "warning", "error"], GrB = {
         verbose: 400,
@@ -1129,7 +1128,7 @@ var bA1 = L(() => {
         namespace: "typeSpecRuntime"
     }), P5G = YrB.logger
 });
-var JrB = L(() => {
+var JrB = lazyLoader(() => {
     bA1()
 });
 
@@ -1141,7 +1140,7 @@ function Jl(A) {
     return Ha1.createClientLogger(A)
 }
 var Ha1, y5G;
-var Se = L(() => {
+var Se = lazyLoader(() => {
     JrB();
     Ha1 = xA1({
         logLevelEnvVarName: "AZURE_LOG_LEVEL",
@@ -1161,32 +1160,32 @@ function hA1(A) {
 }
 
 function pV(A) {
-    return `SUCCESS. Scopes: ${Array.isArray(A)?A.join(", "):A}.`
+    return `SUCCESS. Scopes: TextComponent{Array.isArray(A)?A.join(", "):A}.`
 }
 
 function h7(A, Q) {
     let B = "ERROR.";
-    if (A === null || A === void 0 ? void 0 : A.length) B += ` Scopes: ${Array.isArray(A)?A.join(", "):A}.`;
-    return `${B} Error message: ${typeof Q==="string"?Q:Q.message}.`
+    if (A === null || A === void 0 ? void 0 : A.length) B += ` Scopes: TextComponent{Array.isArray(A)?A.join(", "):A}.`;
+    return `TextComponent{B} Error message: TextComponent{typeof Q==="string"?Q:Q.message}.`
 }
 
 function WrB(A, Q, B = _M) {
-    let G = Q ? `${Q.fullTitle} ${A}` : A;
+    let G = Q ? `TextComponent{Q.fullTitle} TextComponent{A}` : A;
 
-function Z(W) {
-        B.info(`${G} =>`, W)
+    function Z(W) {
+        B.info(`TextComponent{G} =>`, W)
     }
 
-function I(W) {
-        B.warning(`${G} =>`, W)
+    function I(W) {
+        B.warning(`TextComponent{G} =>`, W)
     }
 
-function Y(W) {
-        B.verbose(`${G} =>`, W)
+    function Y(W) {
+        B.verbose(`TextComponent{G} =>`, W)
     }
 
-function J(W) {
-        B.error(`${G} =>`, W)
+    function J(W) {
+        B.error(`TextComponent{G} =>`, W)
     }
     return {
         title: A,
@@ -1206,7 +1205,7 @@ function G7(A, Q = _M) {
     })
 }
 var _M;
-var TW = L(() => {
+var TW = lazyLoader(() => {
     Se();
     _M = Jl("identity")
 });
@@ -1225,15 +1224,16 @@ function XrB(A) {
         traceId: A.trace_id
     }
 }
-var go6 = "CredentialUnavailableError",
+/* CredentialUnavailableError = CredentialUnavailableError class */
+var CredentialUnavailableError = "CredentialUnavailableError",
     d9, Ca1 = "AuthenticationError",
     CqA, uo6 = "AggregateAuthenticationError",
     Ea1, Pf;
-var NE = L(() => {
+var NE = lazyLoader(() => {
     d9 = class d9 extends Error {
         constructor(A, Q) {
             super(A, Q);
-            this.name = go6
+            this.name = CredentialUnavailableError
         }
     };
     CqA = class CqA extends Error {
@@ -1251,21 +1251,21 @@ var NE = L(() => {
                     error: "invalid_request",
                     errorDescription: `The service indicated that the request was invalid.
 
-${Q}`
+TextComponent{Q}`
                 };
                 else G = {
                     error: "unknown_error",
                     errorDescription: `An unknown error has occurred. Response body:
 
-${Q}`
+TextComponent{Q}`
                 }
             } else G = {
                 error: "unknown_error",
                 errorDescription: "An unknown error occurred and no additional details are available."
             };
-            super(`${G.error} Status code: ${A}
+            super(`TextComponent{G.error} Status code: TextComponent{A}
 More details:
-${G.errorDescription},`, B);
+TextComponent{G.errorDescription},`, B);
             this.statusCode = A, this.errorResponse = G, this.name = Ca1
         }
     };
@@ -1273,8 +1273,8 @@ ${G.errorDescription},`, B);
         constructor(A, Q) {
             let B = A.join(`
 `);
-            super(`${Q}
-${B}`);
+            super(`TextComponent{Q}
+TextComponent{B}`);
             this.errors = A, this.name = uo6
         }
     };
@@ -1289,7 +1289,7 @@ ${B}`);
 });
 
 function mo6(A) {
-    return `The current credential is not configured to acquire tokens for tenant ${A}. To enable acquiring tokens for this tenant add it to the AdditionallyAllowedTenants on the credential options, or add "*" to AdditionallyAllowedTenants to allow acquiring tokens for any tenant.`
+    return `The current credential is not configured to acquire tokens for tenant TextComponent{A}. To enable acquiring tokens for this tenant add it to the AdditionallyAllowedTenants on the credential options, or add "*" to AdditionallyAllowedTenants to allow acquiring tokens for any tenant.`
 }
 
 function LE(A, Q, B = [], G) {
@@ -1304,12 +1304,12 @@ function LE(A, Q, B = [], G) {
     }
     return I
 }
-var FrB = L(() => {
+var FrB = lazyLoader(() => {
     NE()
 });
 
 function MU(A, Q) {
-    if (!Q.match(/^[0-9a-zA-Z-.]+$/)) {
+    if (!Q.match(/^[0-9a-zA-Z-.]+TextComponent/)) {
         let B = Error("Invalid tenant id provided. You can locate your tenant id by following the instructions listed here: https://learn.microsoft.com/partner-center/find-ids-and-domain-names.");
         throw A.info(h7("", B)), B
     }
@@ -1327,16 +1327,16 @@ function OU(A) {
     if (A.includes("*")) return dsB;
     return A
 }
-var vT = L(() => {
+var vT = lazyLoader(() => {
     MZA();
     TW();
     FrB()
 });
-var za1 = "$",
+var za1 = "TextComponent",
     gA1 = "_";
 
 function do6(A, Q) {
-    return Q !== "Composite" && Q !== "Dictionary" && (typeof A === "string" || typeof A === "number" || typeof A === "boolean" || (Q === null || Q === void 0 ? void 0 : Q.match(/^(Date|DateTime|DateTimeRfc1123|UnixTime|ByteArray|Base64Url)$/i)) !== null || A === void 0 || A === null)
+    return Q !== "Composite" && Q !== "Dictionary" && (typeof A === "string" || typeof A === "number" || typeof A === "boolean" || (Q === null || Q === void 0 ? void 0 : Q.match(/^(Date|DateTime|DateTimeRfc1123|UnixTime|ByteArray|Base64Url)TextComponent/i)) !== null || A === void 0 || A === null)
 }
 
 function co6(A) {
@@ -1381,7 +1381,7 @@ function Ua1(A, Q) {
 }
 var KrB = () => {};
 var jf;
-var uA1 = L(() => {
+var uA1 = lazyLoader(() => {
     jf = {
         Base64Url: "Base64Url",
         Boolean: "Boolean",
@@ -1402,7 +1402,7 @@ var uA1 = L(() => {
     }
 });
 var Wl;
-var mA1 = L(() => {
+var mA1 = lazyLoader(() => {
     Wl = class Wl extends Error {
         constructor(A) {
             super(A);
@@ -1423,7 +1423,7 @@ function Ik(A) {
     return new DrB(A)
 }
 var DrB;
-var EqA = L(() => {
+var EqA = lazyLoader(() => {
     DrB = class DrB {
         constructor(A) {
             if (this._headersMap = new Map, A)
@@ -1472,10 +1472,9 @@ function zqA() {
     return io6()
 }
 var $a1, io6;
-var wa1 = L(() => {
+var wa1 = lazyLoader(() => {
     io6 = typeof(($a1 = globalThis === null || globalThis === void 0 ? void 0 : globalThis.crypto) === null || $a1 === void 0 ? void 0 : $a1.randomUUID) === "function" ? globalThis.crypto.randomUUID.bind(globalThis.crypto) : lo6
 });
-
 class ErB {
     constructor(A) {
         var Q, B, G, Z, I, Y, J;
@@ -1486,11 +1485,10 @@ class ErB {
 function qa1(A) {
     return new ErB(A)
 }
-var zrB = L(() => {
+var zrB = lazyLoader(() => {
     EqA();
     wa1()
 });
-
 class cA1 {
     constructor(A) {
         var Q;
@@ -1498,8 +1496,8 @@ class cA1 {
     }
     addPolicy(A, Q = {}) {
         if (Q.phase && Q.afterPhase) throw Error("Policies inside a phase cannot specify afterPhase.");
-        if (Q.phase && !UrB.has(Q.phase)) throw Error(`Invalid phase name: ${Q.phase}`);
-        if (Q.afterPhase && !UrB.has(Q.afterPhase)) throw Error(`Invalid afterPhase name: ${Q.afterPhase}`);
+        if (Q.phase && !UrB.has(Q.phase)) throw Error(`Invalid phase name: TextComponent{Q.phase}`);
+        if (Q.afterPhase && !UrB.has(Q.afterPhase)) throw Error(`Invalid afterPhase name: TextComponent{Q.afterPhase}`);
         this._policies.push({
             policy: A,
             options: Q

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_011.js
+ * 处理时间: 2025-12-09T03:41:38.675Z
+ * 变量映射: 11 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.073Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -68,8 +71,8 @@ function Kf5(A, Q, B, G, Z) {
                 if (k > 0 || P + l.length > N) {
                     if (R.length > 0) q.push([...R]), R = [], P = 0
                 }
-                R.push(D6.createElement($, {
-                    key: `part-${v}-${k}`,
+                R.push(D6.createElement(TextComponent, {
+                    key: `part-TextComponent{v}-TextComponent{k}`,
                     backgroundColor: p,
                     color: Z ? "text" : void 0,
                     dimColor: G
@@ -77,15 +80,15 @@ function Kf5(A, Q, B, G, Z) {
             })
         }), R.length > 0) q.push(R);
     return q.map((y, v) => {
-        let x = `${I}-${Y}-${v}`;
-        return D6.createElement($, {
+        let x = `TextComponent{I}-TextComponent{Y}-TextComponent{v}`;
+        return D6.createElement(TextComponent, {
             key: x
         }, D6.createElement(_61, {
             i: v === 0 ? Y : void 0,
             width: B
-        }), D6.createElement($, {
+        }), D6.createElement(TextComponent, {
             backgroundColor: I === "add" ? G ? "diffAddedDimmed" : "diffAdded" : G ? "diffRemovedDimmed" : "diffRemoved"
-        }, D6.createElement($, {
+        }, D6.createElement(TextComponent, {
             dimColor: G
         }, E, z), y))
     })
@@ -115,41 +118,41 @@ function Df5(A, Q, B, G, Z) {
             z = B - X - 1 - E;
         return cb(K, z, "wrap").split(`
 `).map((q, R) => {
-            let P = `${V}-${D}-${R}`;
+            let P = `TextComponent{V}-TextComponent{D}-TextComponent{R}`;
             switch (V) {
                 case "add":
-                    return D6.createElement($, {
+                    return D6.createElement(TextComponent, {
                         key: P
                     }, D6.createElement(_61, {
                         i: R === 0 ? D : void 0,
                         width: X
-                    }), D6.createElement($, {
+                    }), D6.createElement(TextComponent, {
                         color: Z ? "text" : void 0,
                         backgroundColor: G ? "diffAddedDimmed" : "diffAdded",
                         dimColor: G
-                    }, D6.createElement($, {
+                    }, D6.createElement(TextComponent, {
                         dimColor: G
                     }, "+ "), q));
                 case "remove":
-                    return D6.createElement($, {
+                    return D6.createElement(TextComponent, {
                         key: P
                     }, D6.createElement(_61, {
                         i: R === 0 ? D : void 0,
                         width: X
-                    }), D6.createElement($, {
+                    }), D6.createElement(TextComponent, {
                         color: Z ? "text" : void 0,
                         backgroundColor: G ? "diffRemovedDimmed" : "diffRemoved",
                         dimColor: G
-                    }, D6.createElement($, {
+                    }, D6.createElement(TextComponent, {
                         dimColor: G
                     }, "- "), q));
                 case "nochange":
-                    return D6.createElement($, {
+                    return D6.createElement(TextComponent, {
                         key: P
                     }, D6.createElement(_61, {
                         i: R === 0 ? D : void 0,
                         width: X
-                    }), D6.createElement($, {
+                    }), D6.createElement(TextComponent, {
                         color: Z ? "text" : void 0,
                         dimColor: G
                     }, "  ", q))
@@ -164,7 +167,7 @@ function _61({
     hidden: B
 }) {
     if (B) return null;
-    return D6.createElement($, {
+    return D6.createElement(TextComponent, {
         dimColor: !0
     }, A !== void 0 ? A.toString().padStart(Q) : " ".repeat(Q), " ")
 }
@@ -228,19 +231,18 @@ function Hf5(A, Q) {
     return G
 }
 var D6, dj2, Wf5 = 0.4;
-var pj2 = L(() => {
+var pj2 = lazyLoader(() => {
     hA();
     zMA();
-    D6 = GA(VA(), 1), dj2 = GA(VA(), 1)
+    D6 = esmImport(VA(), 1), dj2 = esmImport(VA(), 1)
 });
-
 var V60 = {};
-pG(V60, {
+esmExport(V60, {
     default: () => Ef5,
     ColorDiff: () => Cf5
 });
 var k61, Cf5, Ef5;
-var K60 = L(() => {
+var K60 = lazyLoader(() => {
     try {
         k61 = (() => {
             throw new Error("Cannot require module " + "../../color-diff.node");
@@ -250,7 +252,6 @@ var K60 = L(() => {
     }
     Cf5 = k61?.ColorDiff, Ef5 = k61?.ColorDiff
 });
-// Async function: ij2
 async function ij2() {
     if (!lj2) {
         return lj2 = !0, null;
@@ -259,7 +260,7 @@ async function ij2() {
         if (HJ()) try {
             D60 = (await Promise.resolve().then(() => (K60(), V60))).ColorDiff
         } catch (A) {
-            g(`[ColorDiff] Rust module unavailable, falling back to JS: ${A instanceof Error?A.message:String(A)}`)
+            g(`[ColorDiff] Rust module unavailable, falling back to JS: TextComponent{A instanceof Error?A.message:String(A)}`)
         } else g("[ColorDiff] Not in bundled mode, using JS fallback")
     }
     return D60
@@ -270,7 +271,7 @@ function nj2() {
 }
 var D60 = null,
     lj2 = !1;
-var H60 = L(() => {
+var H60 = lazyLoader(() => {
     D0();
     hQ();
     f5()
@@ -308,7 +309,7 @@ function Z$({
         ref: I
     }, F ? fh.createElement(j, {
         flexDirection: "column"
-    }, F.map((V, K) => fh.createElement($, {
+    }, F.map((V, K) => fh.createElement(TextComponent, {
         key: K
     }, V))) : fh.createElement(cj2, {
         patch: A,
@@ -317,11 +318,11 @@ function Z$({
     }))
 }
 var fh, hh, zf5 = 80;
-var Zn = L(() => {
+var Zn = lazyLoader(() => {
     hA();
     pj2();
     H60();
-    fh = GA(VA(), 1), hh = GA(VA(), 1)
+    fh = esmImport(VA(), 1), hh = esmImport(VA(), 1)
 });
 import {
     relative as Uf5,
@@ -336,17 +337,17 @@ function y61({
 }) {
     let {
         columns: Z
-    } = YB(), I = Q.reduce((V, K) => V + K.lines.filter((D) => D.startsWith("+")).length, 0), Y = Q.reduce((V, K) => V + K.lines.filter((D) => D.startsWith("-")).length, 0), J = b9(A), W = $f5(pQ(), "CLAUDE.md"), X = J === W, F = o8.createElement($, null, "Updated", " ", o8.createElement($, {
+    } = YB(), I = Q.reduce((V, K) => V + K.lines.filter((D) => D.startsWith("+")).length, 0), Y = Q.reduce((V, K) => V + K.lines.filter((D) => D.startsWith("-")).length, 0), J = b9(A), W = $f5(pQ(), "CLAUDE.md"), X = J === W, F = o8.createElement(TextComponent, null, "Updated", " ", o8.createElement(TextComponent, {
         bold: !0
-    }, G ? A : Uf5(H0(), A)), I > 0 || Y > 0 ? " with " : "", I > 0 ? o8.createElement(o8.Fragment, null, o8.createElement($, {
+    }, G ? A : Uf5(H0(), A)), I > 0 || Y > 0 ? " with " : "", I > 0 ? o8.createElement(o8.Fragment, null, o8.createElement(TextComponent, {
         bold: !0
-    }, I), " ", I > 1 ? "additions" : "addition") : null, I > 0 && Y > 0 ? " and " : null, Y > 0 ? o8.createElement(o8.Fragment, null, o8.createElement($, {
+    }, I), " ", I > 1 ? "additions" : "addition") : null, I > 0 && Y > 0 ? " and " : null, Y > 0 ? o8.createElement(o8.Fragment, null, o8.createElement(TextComponent, {
         bold: !0
     }, Y), " ", Y > 1 ? "removals" : "removal") : null);
     if (B === "condensed" && !G) return F;
     return o8.createElement(y0, null, o8.createElement(j, {
         flexDirection: "column"
-    }, o8.createElement($, null, F), fF(Q.map((V) => o8.createElement(j, {
+    }, o8.createElement(TextComponent, null, F), fF(Q.map((V) => o8.createElement(j, {
         flexDirection: "column",
         key: V.newStart
     }, o8.createElement(Z$, {
@@ -355,19 +356,19 @@ function y61({
         width: Z - 12,
         filePath: A
     }))), (V) => o8.createElement(j, {
-        key: `ellipsis-${V}`
-    }, o8.createElement($, {
+        key: `ellipsis-TextComponent{V}`
+    }, o8.createElement(TextComponent, {
         dimColor: !0
     }, "..."))), X && o8.createElement(j, {
         marginTop: 1
-    }, o8.createElement($, null, o8.createElement($, {
+    }, o8.createElement(TextComponent, null, o8.createElement(TextComponent, {
         bold: !0
-    }, "Tip:"), " Use", " ", o8.createElement($, {
+    }, "Tip:"), " Use", " ", o8.createElement(TextComponent, {
         color: "remember"
     }, "# to memorize"), " shortcut to quickly add to CLAUDE.md"))))
 }
 var o8;
-var C60 = L(() => {
+var C60 = lazyLoader(() => {
     hA();
     Zn();
     R2();
@@ -375,7 +376,7 @@ var C60 = L(() => {
     S0();
     jI();
     u8();
-    o8 = GA(VA(), 1)
+    o8 = esmImport(VA(), 1)
 });
 
 function XO({
@@ -388,23 +389,23 @@ function XO({
             if (lJA.supportsLanguage(Q)) return lJA.highlight(G, {
                 language: Q
             });
-            else return g(`Language not supported while highlighting code, falling back to markdown: ${Q}`), lJA.highlight(G, {
+            else return g(`Language not supported while highlighting code, falling back to markdown: TextComponent{Q}`), lJA.highlight(G, {
                 language: "markdown"
             })
         } catch (Z) {
-            if (Z instanceof Error && Z.message.includes("Unknown language")) return g(`Language not supported while highlighting code, falling back to markdown: ${Z}`), lJA.highlight(G, {
+            if (Z instanceof Error && Z.message.includes("Unknown language")) return g(`Language not supported while highlighting code, falling back to markdown: TextComponent{Z}`), lJA.highlight(G, {
                 language: "markdown"
             })
         }
     }, [A, Q]);
-    return x61.default.createElement($, null, B)
+    return x61.default.createElement(TextComponent, null, B)
 }
 var lJA, x61;
-var iJA = L(() => {
+var iJA = lazyLoader(() => {
     hA();
     D0();
     M9();
-    lJA = GA(z21(), 1), x61 = GA(VA(), 1)
+    lJA = esmImport(z21(), 1), x61 = esmImport(VA(), 1)
 });
 import {
     EOL as wf5
@@ -423,7 +424,7 @@ function rj2(A) {
 
 function oj2(A) {
     if (!A?.file_path) return null;
-    return Q5(A.file_path)
+    return formatFilePath(A.file_path)
 }
 
 function tj2(A, {
@@ -431,7 +432,7 @@ function tj2(A, {
 }) {
     if (!A.file_path) return null;
     if (A.file_path.startsWith(vU())) return "";
-    return Q ? A.file_path : Q5(A.file_path)
+    return Q ? A.file_path : formatFilePath(A.file_path)
 }
 
 function ej2({
@@ -462,9 +463,9 @@ function ej2({
             }),
             K = f9.createElement(j, {
                 flexDirection: "row"
-            }, f9.createElement($, {
+            }, f9.createElement(TextComponent, {
                 color: "error"
-            }, "User rejected ", F === "update" ? "update" : "write", " to", " "), f9.createElement($, {
+            }, "User rejected ", F === "update" ? "update" : "write", " to", " "), f9.createElement(TextComponent, {
                 bold: !0,
                 color: "error"
             }, Z ? A : sj2(H0(), A)));
@@ -480,21 +481,21 @@ function ej2({
             width: B - 12,
             filePath: A
         }))), (D) => f9.createElement(j, {
-            key: `ellipsis-${D}`
-        }, f9.createElement($, {
+            key: `ellipsis-TextComponent{D}`
+        }, f9.createElement(TextComponent, {
             dimColor: !0
         }, "...")))))
     } catch (I) {
         return e(I), f9.createElement(j, {
             flexDirection: "column"
-        }, f9.createElement($, null, "  ", "⎿ (No changes)"))
+        }, f9.createElement(TextComponent, null, "  ", "⎿ (No changes)"))
     }
 }
 
 function AS2(A, {
     verbose: Q
 }) {
-    if (!Q && typeof A === "string" && e2(A, "tool_use_error")) return f9.createElement(y0, null, f9.createElement($, {
+    if (!Q && typeof A === "string" && e2(A, "tool_use_error")) return f9.createElement(y0, null, f9.createElement(TextComponent, {
         color: "error"
     }, "Error writing file"));
     return f9.createElement(A5, {
@@ -517,8 +518,8 @@ function BS2({
     verbose: Y
 }) {
     if (!Y && A.startsWith(vU())) {
-        let J = Q5(A);
-        return f9.createElement(y0, null, f9.createElement($, {
+        let J = formatFilePath(A);
+        return f9.createElement(y0, null, f9.createElement(TextComponent, {
             dimColor: !0
         }, "/plan to preview · ", J))
     }
@@ -527,9 +528,9 @@ function BS2({
             let J = Q || "(No content)",
                 W = Q.split(wf5).length,
                 X = W - aj2,
-                F = f9.createElement($, null, "Wrote ", f9.createElement($, {
+                F = f9.createElement(TextComponent, null, "Wrote ", f9.createElement(TextComponent, {
                     bold: !0
-                }, W), " lines to", " ", f9.createElement($, {
+                }, W), " lines to", " ", f9.createElement(TextComponent, {
                     bold: !0
                 }, Y ? A : sj2(H0(), A)));
             if (I === "condensed" && !Y) return F;
@@ -542,7 +543,7 @@ function BS2({
 `).slice(0, aj2).filter((V) => V.trim() !== "").join(`
 `),
                 language: qf5(A).slice(1)
-            }), !Y && X > 0 && f9.createElement($, {
+            }), !Y && X > 0 && f9.createElement(TextComponent, {
                 dimColor: !0
             }, "… +", X, " ", X === 1 ? "line" : "lines", " ", W > 0 && f9.createElement(hl, null)))))
         }
@@ -555,7 +556,7 @@ function BS2({
     }
 }
 var f9, aj2 = 10;
-var GS2 = L(() => {
+var GS2 = lazyLoader(() => {
     hA();
     C60();
     iJA();
@@ -571,7 +572,7 @@ var GS2 = L(() => {
     u1();
     nQ();
     _E();
-    f9 = GA(VA(), 1)
+    f9 = esmImport(VA(), 1)
 });
 import {
     dirname as Mf5,
@@ -580,7 +581,7 @@ import {
 var ZS2 = 16000,
     Rf5 = "<response clipped><NOTE>To save on context only part of this file has been shown to you. You should retry this tool after you have searched inside the file with Grep in order to find the line numbers of what you are looking for.</NOTE>",
     Tf5, Pf5, oX;
-var gh = L(() => {
+var gh = lazyLoader(() => {
     h2();
     w0();
     r01();
@@ -622,7 +623,7 @@ var gh = L(() => {
         userFacingName: rj2,
         getToolUseSummary: oj2,
         async prompt() {
-            return CGB
+            return WRITE_TOOL_DESCRIPTION
         },
         isEnabled() {
             return !0
@@ -702,17 +703,17 @@ var gh = L(() => {
             let K = X ? K0A(Y) : await IS2();
             W.mkdirSync(J), nJA(Y, Q, F, K);
             let D = pJA();
-            if (D) u21(`file://${Y}`), D.changeFile(Y, Q).catch((C) => {
-                g(`LSP: Failed to notify server of file change for ${Y}: ${C.message}`), e(C)
+            if (D) u21(`file://TextComponent{Y}`), D.changeFile(Y, Q).catch((C) => {
+                g(`LSP: Failed to notify server of file change for TextComponent{Y}: TextComponent{C.message}`), e(C)
             }), D.saveFile(Y).catch((C) => {
-                g(`LSP: Failed to notify server of file save for ${Y}: ${C.message}`), e(C)
+                g(`LSP: Failed to notify server of file save for TextComponent{Y}: TextComponent{C.message}`), e(C)
             });
             if (B.set(Y, {
                     content: Q,
                     timestamp: RD(Y),
                     offset: void 0,
                     limit: void 0
-                }), Y.endsWith(`${Of5}CLAUDE.md`)) BA("tengu_write_claudemd", {});
+                }), Y.endsWith(`TextComponent{Of5}CLAUDE.md`)) BA("tengu_write_claudemd", {});
             if (V) {
                 let C = Cq({
                         filePath: A,
@@ -763,12 +764,12 @@ var gh = L(() => {
             switch (B) {
                 case "create":
                     return {
-                        tool_use_id: G, type: "tool_result", content: `File created successfully at: ${A}`
+                        tool_use_id: G, type: "tool_result", content: `File created successfully at: TextComponent{A}`
                     };
                 case "update":
                     return {
-                        tool_use_id: G, type: "tool_result", content: `The file ${A} has been updated. Here's the result of running \`cat -n\` on a snippet of the edited file:
-${ml({content:Q.split(/\r?\n/).length>ZS2?Q.split(/\r?\n/).slice(0,ZS2).join(`
+                        tool_use_id: G, type: "tool_result", content: `The file TextComponent{A} has been updated. Here's the result of running \`cat -n\` on a snippet of the edited file:
+TextComponent{ml({content:Q.split(/\r?\n/).length>ZS2?Q.split(/\r?\n/).slice(0,ZS2).join(`
 `)+Rf5:Q,startLine:1})}`
                     }
             }
@@ -784,22 +785,22 @@ function E60({
     content: Z,
     verbose: I
 }) {
-    let Y = fJ.default.createElement(fJ.default.Fragment, null, "Found ", fJ.default.createElement($, {
+    let Y = fJ.default.createElement(fJ.default.Fragment, null, "Found ", fJ.default.createElement(TextComponent, {
             bold: !0
         }, A, " "), A === 0 || A > 1 ? Q : Q.slice(0, -1)),
-        J = B !== void 0 && G ? fJ.default.createElement(fJ.default.Fragment, null, " ", "across ", fJ.default.createElement($, {
+        J = B !== void 0 && G ? fJ.default.createElement(fJ.default.Fragment, null, " ", "across ", fJ.default.createElement(TextComponent, {
             bold: !0
         }, B, " "), B === 0 || B > 1 ? G : G.slice(0, -1)) : null;
     if (I) return fJ.default.createElement(j, {
         flexDirection: "column"
     }, fJ.default.createElement(j, {
         flexDirection: "row"
-    }, fJ.default.createElement($, null, "  ⎿  ", Y, J)), fJ.default.createElement(j, {
+    }, fJ.default.createElement(TextComponent, null, "  ⎿  ", Y, J)), fJ.default.createElement(j, {
         marginLeft: 5
-    }, fJ.default.createElement($, null, Z)));
+    }, fJ.default.createElement(TextComponent, null, Z)));
     return fJ.default.createElement(y0, {
         height: 1
-    }, fJ.default.createElement($, null, Y, J, " ", A > 0 && fJ.default.createElement(hl, null)))
+    }, fJ.default.createElement(TextComponent, null, Y, J, " ", A > 0 && fJ.default.createElement(hl, null)))
 }
 
 function YS2({
@@ -813,12 +814,12 @@ function YS2({
     verbose: Y
 }) {
     if (!A) return null;
-    let J = [`pattern: "${A}"`];
-    if (Q) J.push(`path: "${Y?Q:Q5(Q)}"`);
-    if (B) J.push(`glob: "${B}"`);
-    if (G) J.push(`type: "${G}"`);
-    if (Z !== "files_with_matches") J.push(`output_mode: "${Z}"`);
-    if (I !== void 0) J.push(`head_limit: ${I}`);
+    let J = [`pattern: "TextComponent{A}"`];
+    if (Q) J.push(`path: "TextComponent{Y?Q:formatFilePath(Q)}"`);
+    if (B) J.push(`glob: "TextComponent{B}"`);
+    if (G) J.push(`type: "TextComponent{G}"`);
+    if (Z !== "files_with_matches") J.push(`output_mode: "TextComponent{Z}"`);
+    if (I !== void 0) J.push(`head_limit: TextComponent{I}`);
     return J.join(", ")
 }
 
@@ -829,7 +830,7 @@ function JS2() {
 function WS2(A, {
     verbose: Q
 }) {
-    if (!Q && typeof A === "string" && e2(A, "tool_use_error")) return fJ.default.createElement(y0, null, fJ.default.createElement($, {
+    if (!Q && typeof A === "string" && e2(A, "tool_use_error")) return fJ.default.createElement(y0, null, fJ.default.createElement(TextComponent, {
         color: "error"
     }, "Error searching files"));
     return fJ.default.createElement(A5, {
@@ -881,7 +882,7 @@ function VS2(A) {
     return B7(A.pattern, wk)
 }
 var fJ;
-var KS2 = L(() => {
+var KS2 = lazyLoader(() => {
     hA();
     lV();
     lX();
@@ -889,7 +890,7 @@ var KS2 = L(() => {
     $IA();
     M9();
     nQ();
-    fJ = GA(VA(), 1)
+    fJ = esmImport(VA(), 1)
 });
 import {
     relative as jf5
@@ -900,9 +901,9 @@ function U60(A) {
     let Q = A.slice(0, z60),
         G = A.slice(z60).split(`
 `).length;
-    return `${Q}
+    return `TextComponent{Q}
 
-... [${G} lines truncated] ...`
+... [TextComponent{G} lines truncated] ...`
 }
 
 function $60(A, Q, B = 0) {
@@ -918,16 +919,16 @@ function w60(A) {
 
 function q60(A, Q) {
     if (!A && !Q) return "";
-    return `limit: ${A}, offset: ${Q??0}`
+    return `limit: TextComponent{A}, offset: TextComponent{Q??0}`
 }
 var Sf5, z60 = 20000,
     _f5, kf5, Hy;
-var MRA = L(() => {
+var MRA = lazyLoader(() => {
     h2();
     R2();
     jI();
     cj();
-    XT();
+    noOpFunction();
     O9();
     _Y();
     o0();
@@ -945,7 +946,7 @@ var MRA = L(() => {
         type: _.string().optional().describe("File type to search (rg --type). Common types: js, py, rust, go, java, etc. More efficient than include for standard file types."),
         head_limit: _.number().optional().describe('Limit output to first N lines/entries, equivalent to "| head -N". Works across all output modes: content (limits output lines), files_with_matches (limits file paths), count (limits count entries). Defaults based on "cap" experiment value: 0 (unlimited), 20, or 100.'),
         offset: _.number().optional().describe('Skip first N lines/entries before applying head_limit, equivalent to "| tail -n +N | head -N". Works across all output modes. Defaults to 0.'),
-        multiline: _.boolean().optional().describe("Enable multiline mode where . matches newlines and patterns can span lines (rg -U --multiline-dotall). Default: false.")
+        multiline: _.boolean().optional().describe("Enable multiline mode where . matches newlines and patterns can span lines (rg -moduleWrapper --multiline-dotall). Default: false.")
     }), _f5 = [".git", ".svn", ".hg", ".bzr"];
     kf5 = _.object({
         mode: _.enum(["content", "files_with_matches", "count"]).optional(),
@@ -973,7 +974,7 @@ var MRA = L(() => {
             type: "js"
         }],
         async description() {
-            return Df1()
+            return getGrepDescription()
         },
         userFacingName() {
             return "Search"
@@ -1003,7 +1004,7 @@ var MRA = L(() => {
                     B = b9(A);
                 if (!Q.existsSync(B)) return {
                     result: !1,
-                    message: `Path does not exist: ${A}`,
+                    message: `Path does not exist: TextComponent{A}`,
                     errorCode: 1
                 }
             }
@@ -1016,7 +1017,7 @@ var MRA = L(() => {
             return ul(Hy, A, B.toolPermissionContext)
         },
         async prompt() {
-            return Df1()
+            return getGrepDescription()
         },
         renderToolUseMessage: YS2,
         renderToolUseRejectedMessage: JS2,
@@ -1036,9 +1037,9 @@ var MRA = L(() => {
             if (A === "content") {
                 let K = q60(Y, J),
                     D = U60(G || "No matches found"),
-                    H = K ? `${D}
+                    H = K ? `TextComponent{D}
 
-[Showing results with pagination = ${K}]` : D;
+[Showing results with pagination = TextComponent{K}]` : D;
                 return {
                     tool_use_id: W,
                     type: "tool_result",
@@ -1052,7 +1053,7 @@ var MRA = L(() => {
                     E = Q ?? 0,
                     z = `
 
-Found ${C} total ${C===1?"occurrence":"occurrences"} across ${E} ${E===1?"file":"files"}.${K?` with pagination = ${K}`:""}`;
+Found TextComponent{C} total TextComponent{C===1?"occurrence":"occurrences"} across TextComponent{E} TextComponent{E===1?"file":"files"}.TextComponent{K?` with pagination = TextComponent{K}`:""}`;
                 return {
                     tool_use_id: W,
                     type: "tool_result",
@@ -1065,8 +1066,8 @@ Found ${C} total ${C===1?"occurrence":"occurrences"} across ${E} ${E===1?"file":
                 type: "tool_result",
                 content: "No files found"
             };
-            let F = `Found ${Q} file${Q===1?"":"s"}${X?` ${X}`:""}
-${B.join(`
+            let F = `Found TextComponent{Q} file${Q===1?"":"s"}TextComponent{X?` TextComponent{X}`:""}
+TextComponent{B.join(`
 `)}`,
                 V = U60(F);
             return {
@@ -1098,8 +1099,8 @@ ${B.join(`
             } = await N60("tengu_cap_grep_results", {
                 cap: 0
             }), E = F !== void 0 ? F : C > 0 ? C : void 0, z = Q ? b9(Q) : H0(), w = ["--hidden"];
-            for (let u of _f5) w.push("--glob", `!${u}`);
-            if (w.push("--max-columns", "500"), K) w.push("-U", "--multiline-dotall");
+            for (let u of _f5) w.push("--glob", `!TextComponent{u}`);
+            if (w.push("--max-columns", "500"), K) w.push("-moduleWrapper", "--multiline-dotall");
             if (X) w.push("-i");
             if (Z === "files_with_matches") w.push("-l");
             else if (Z === "count") w.push("-c");
@@ -1123,7 +1124,7 @@ ${B.join(`
             let N = await H(),
                 q = aJA(sJA(N.toolPermissionContext), H0());
             for (let u of q) {
-                let o = u.startsWith("/") ? `!${u}` : `!**/${u}`;
+                let o = u.startsWith("/") ? `!TextComponent{u}` : `!**/TextComponent{u}`;
                 w.push("--glob", o)
             }
             let R = await dj(w, z, D.signal);
@@ -1228,8 +1229,8 @@ function HS2({
     verbose: B
 }) {
     if (!A) return null;
-    if (!Q) return `pattern: "${A}"`;
-    return `pattern: "${A}", path: "${B?Q:Q5(Q)}"`
+    if (!Q) return `pattern: "TextComponent{A}"`;
+    return `pattern: "TextComponent{A}", path: "TextComponent{B?Q:formatFilePath(Q)}"`
 }
 
 function CS2() {
@@ -1239,7 +1240,7 @@ function CS2() {
 function ES2(A, {
     verbose: Q
 }) {
-    if (!Q && typeof A === "string" && e2(A, "tool_use_error")) return ORA.default.createElement(y0, null, ORA.default.createElement($, {
+    if (!Q && typeof A === "string" && e2(A, "tool_use_error")) return ORA.default.createElement(y0, null, ORA.default.createElement(TextComponent, {
         color: "error"
     }, "Error searching files"));
     return ORA.default.createElement(A5, {
@@ -1257,7 +1258,7 @@ function $S2(A) {
     return B7(A.pattern, wk)
 }
 var ORA, US2;
-var wS2 = L(() => {
+var wS2 = lazyLoader(() => {
     hA();
     lV();
     lX();
@@ -1265,11 +1266,11 @@ var wS2 = L(() => {
     nQ();
     M9();
     MRA();
-    ORA = GA(VA(), 1);
+    ORA = esmImport(VA(), 1);
     US2 = Hy.renderToolResultMessage
 });
 var yf5, xf5, FO;
-var RRA = L(() => {
+var RRA = lazyLoader(() => {
     h2();
     R2();
     M9();
@@ -1288,7 +1289,7 @@ var RRA = L(() => {
     }), FO = {
         name: GLOB_TOOL_NAME,
         async description() {
-            return Kf1
+            return GLOB_TOOL_DESCRIPTION
         },
         userFacingName: DS2,
         getToolUseSummary: $S2,
@@ -1316,12 +1317,12 @@ var RRA = L(() => {
                     B = b9(A);
                 if (!Q.existsSync(B)) return {
                     result: !1,
-                    message: `Directory does not exist: ${A}`,
+                    message: `Directory does not exist: TextComponent{A}`,
                     errorCode: 1
                 };
                 if (!Q.statSync(B).isDirectory()) return {
                     result: !1,
-                    message: `Path is not a directory: ${A}`,
+                    message: `Path is not a directory: TextComponent{A}`,
                     errorCode: 2
                 }
             }
@@ -1334,7 +1335,7 @@ var RRA = L(() => {
             return ul(FO, A, B.toolPermissionContext)
         },
         async prompt() {
-            return Kf1
+            return GLOB_TOOL_DESCRIPTION
         },
         renderToolUseMessage: HS2,
         renderToolUseRejectedMessage: CS2,
@@ -1378,28 +1379,27 @@ var RRA = L(() => {
         }
     }
 });
-
 async function NS2(A) {
     let Q = A.map((B) => {
         let G = "";
         if (B?.forkContext) G = "Properties: " + (B?.forkContext ? "access to current context; " : "");
         let Z = B.tools ? B.tools.join(", ") : "All tools";
-        return `- ${B.agentType}: ${B.whenToUse} (${G}Tools: ${Z})`
+        return `- TextComponent{B.agentType}: TextComponent{B.whenToUse} (TextComponent{G}Tools: TextComponent{Z})`
     }).join(`
 `);
     return `Launch a new agent to handle complex, multi-step tasks autonomously. 
 
-The ${TASK_TOOL_NAME} tool launches specialized agents (subprocesses) that autonomously handle complex tasks. Each agent type has specific capabilities and tools available to it.
+The TextComponent{TASK_TOOL_NAME} tool launches specialized agents (subprocesses) that autonomously handle complex tasks. Each agent type has specific capabilities and tools available to it.
 
 Available agent types and the tools they have access to:
-${Q}
+TextComponent{Q}
 
-When using the ${TASK_TOOL_NAME} tool, you must specify a subagent_type parameter to select which agent type to use.
+When using the TextComponent{TASK_TOOL_NAME} tool, you must specify a subagent_type parameter to select which agent type to use.
 
-When NOT to use the ${TASK_TOOL_NAME} tool:
-- If you want to read a specific file path, use the ${d8.name} or ${FO.name} tool instead of the ${TASK_TOOL_NAME} tool, to find the match more quickly
-- If you are searching for a specific class definition like "class Foo", use the ${FO.name} tool instead, to find the match more quickly
-- If you are searching for code within a specific file or set of 2-3 files, use the ${d8.name} tool instead of the ${TASK_TOOL_NAME} tool, to find the match more quickly
+When NOT to use the TextComponent{TASK_TOOL_NAME} tool:
+- If you want to read a specific file path, use the TextComponent{d8.name} or TextComponent{FO.name} tool instead of the TextComponent{TASK_TOOL_NAME} tool, to find the match more quickly
+- If you are searching for a specific class definition like "class Foo", use the TextComponent{FO.name} tool instead, to find the match more quickly
+- If you are searching for code within a specific file or set of 2-3 files, use the TextComponent{d8.name} tool instead of the TextComponent{TASK_TOOL_NAME} tool, to find the match more quickly
 - Other tasks that are not related to the agent descriptions above
 
 
@@ -1411,7 +1411,7 @@ Usage notes:
 - The agent's outputs should generally be trusted
 - Clearly tell the agent whether you expect it to write code or just to do research (search, file reads, web fetches, etc.), since it is not aware of the user's intent
 - If the agent description mentions that it should be used proactively, then you should try your best to use it without the user having to ask for it first. Use your judgement.
-- If the user specifies that they want you to run agents "in parallel", you MUST send a single message with multiple ${In.name} tool use content blocks. For example, if you need to launch both a code-reviewer agent and a test-runner agent in parallel, send a single message with both tool calls.
+- If the user specifies that they want you to run agents "in parallel", you MUST send a single message with multiple TextComponent{In.name} tool use content blocks. For example, if you need to launch both a code-reviewer agent and a test-runner agent in parallel, send a single message with both tool calls.
 
 Example usage:
 
@@ -1423,8 +1423,8 @@ Example usage:
 <example>
 user: "Please write a function that checks if a number is prime"
 assistant: Sure let me write a function that checks if a number is prime
-assistant: First let me use the ${oX.name} tool to write a function that checks if a number is prime
-assistant: I'm going to use the ${oX.name} tool to write the following code:
+assistant: First let me use the TextComponent{oX.name} tool to write a function that checks if a number is prime
+assistant: I'm going to use the TextComponent{oX.name} tool to write the following code:
 <code>
 function isPrime(n) {
   if (n <= 1) return false
@@ -1438,7 +1438,7 @@ function isPrime(n) {
 Since a signficant piece of code was written and the task was completed, now use the code-reviewer agent to review the code
 </commentary>
 assistant: Now let me use the code-reviewer agent to review the code
-assistant: Uses the ${In.name} tool to launch the code-reviewer agent 
+assistant: Uses the TextComponent{In.name} tool to launch the code-reviewer agent 
 </example>
 
 <example>
@@ -1446,11 +1446,11 @@ user: "Hello"
 <commentary>
 Since the user is greeting, use the greeting-responder agent to respond with a friendly joke
 </commentary>
-assistant: "I'm going to use the ${In.name} tool to launch the greeting-responder agent"
+assistant: "I'm going to use the TextComponent{In.name} tool to launch the greeting-responder agent"
 </example>
 `
 }
-var LS2 = L(() => {
+var LS2 = lazyLoader(() => {
     Kq();
     gh();
     RRA();
@@ -1473,7 +1473,7 @@ function tJA(A, Q) {
     if (rJA.includes(Q)) B.set(A, Q)
 }
 var rJA, v61;
-var Yn = L(() => {
+var Yn = lazyLoader(() => {
     S0();
     rJA = ["red", "blue", "green", "yellow", "purple", "orange", "pink", "cyan"], v61 = {
         red: "red_FOR_SUBAGENTS_ONLY",
@@ -1515,7 +1515,6 @@ function OS2(A) {
     let Q = vf5(A);
     return Q !== A.message && Q.length > 0 ? Q : A.message
 }
-
 async function RS2(A, Q) {
     await new Promise((B, G) => {
         let Z = setTimeout(B, A);

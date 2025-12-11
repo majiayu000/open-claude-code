@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_004.js
+ * 处理时间: 2025-12-09T03:41:36.377Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.889Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -29,7 +32,7 @@ function kj(A, Q, B) {
     if (!B.status || !G || G(B.status)) A(B);
     else Q(new NB("Request failed with status code " + B.status, [NB.ERR_BAD_REQUEST, NB.ERR_BAD_RESPONSE][Math.floor(B.status / 100) - 4], B.config, B.request, B))
 }
-var jkA = L(() => {
+var jkA = lazyLoader(() => {
     a$()
 });
 
@@ -38,7 +41,7 @@ function iX1(A) {
 }
 
 function nX1(A, Q) {
-    return Q ? A.replace(/\/?\/$/, "") + "/" + Q.replace(/^\/+/, "") : A
+    return Q ? A.replace(/\/?\/TextComponent/, "") + "/" + Q.replace(/^\/+/, "") : A
 }
 
 function Ns(A, Q, B) {
@@ -47,8 +50,8 @@ function Ns(A, Q, B) {
     return Q
 }
 var SkA = () => {};
-var v$0 = U((Qj9) => {
-    var rP9 = UA("url").parse,
+var v$0 = moduleWrapper((Qj9) => {
+    var rP9 = nodeRequire("url").parse,
         oP9 = {
             ftp: 21,
             gopher: 70,
@@ -61,25 +64,25 @@ var v$0 = U((Qj9) => {
             return A.length <= this.length && this.indexOf(A, this.length - A.length) !== -1
         };
 
-function eP9(A) {
+    function eP9(A) {
         var Q = typeof A === "string" ? rP9(A) : A || {},
             B = Q.protocol,
             G = Q.host,
             Z = Q.port;
         if (typeof G !== "string" || !G || typeof B !== "string") return "";
-        if (B = B.split(":", 1)[0], G = G.replace(/:\d*$/, ""), Z = parseInt(Z) || oP9[B] || 0, !Aj9(G, Z)) return "";
+        if (B = B.split(":", 1)[0], G = G.replace(/:\d*TextComponent/, ""), Z = parseInt(Z) || oP9[B] || 0, !Aj9(G, Z)) return "";
         var I = W2A("npm_config_" + B + "_proxy") || W2A(B + "_proxy") || W2A("npm_config_proxy") || W2A("all_proxy");
         if (I && I.indexOf("://") === -1) I = B + "://" + I;
         return I
     }
 
-function Aj9(A, Q) {
+    function Aj9(A, Q) {
         var B = (W2A("npm_config_no_proxy") || W2A("no_proxy")).toLowerCase();
         if (!B) return !0;
         if (B === "*") return !1;
         return B.split(/[,\s]/).every(function(G) {
             if (!G) return !0;
-            var Z = G.match(/^(.+):(\d+)$/),
+            var Z = G.match(/^(.+):(\d+)TextComponent/),
                 I = Z ? Z[1] : G,
                 Y = Z ? parseInt(Z[2]) : 0;
             if (Y && Y !== Q) return !0;
@@ -89,12 +92,12 @@ function Aj9(A, Q) {
         })
     }
 
-function W2A(A) {
+    function W2A(A) {
         return process.env[A.toLowerCase()] || process.env[A.toUpperCase()] || ""
     }
     Qj9.getProxyForUrl = eP9
 });
-var aX1 = U((ki3, b$0) => {
+var aX1 = moduleWrapper((ki3, b$0) => {
     var X2A = 1000,
         F2A = X2A * 60,
         V2A = F2A * 60,
@@ -109,9 +112,9 @@ var aX1 = U((ki3, b$0) => {
         throw Error("val is not a non-empty string or a valid number. val=" + JSON.stringify(A))
     };
 
-function Ij9(A) {
+    function Ij9(A) {
         if (A = String(A), A.length > 100) return;
-        var Q = /^(-?(?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec(A);
+        var Q = /^(-?(?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?TextComponent/i.exec(A);
         if (!Q) return;
         var B = parseFloat(Q[1]),
             G = (Q[2] || "ms").toLowerCase();
@@ -159,7 +162,7 @@ function Ij9(A) {
         }
     }
 
-function Yj9(A) {
+    function Yj9(A) {
         var Q = Math.abs(A);
         if (Q >= Ls) return Math.round(A / Ls) + "d";
         if (Q >= V2A) return Math.round(A / V2A) + "h";
@@ -168,7 +171,7 @@ function Yj9(A) {
         return A + "ms"
     }
 
-function Jj9(A) {
+    function Jj9(A) {
         var Q = Math.abs(A);
         if (Q >= Ls) return _kA(A, Q, Ls, "day");
         if (Q >= V2A) return _kA(A, Q, V2A, "hour");
@@ -177,29 +180,29 @@ function Jj9(A) {
         return A + " ms"
     }
 
-function _kA(A, Q, B, G) {
+    function _kA(A, Q, B, G) {
         var Z = Q >= B * 1.5;
         return Math.round(A / B) + " " + G + (Z ? "s" : "")
     }
 });
-var sX1 = U((yi3, f$0) => {
+var sX1 = moduleWrapper((yi3, f$0) => {
     function Wj9(A) {
         B.debug = B, B.default = B, B.coerce = W, B.disable = Y, B.enable = Z, B.enabled = J, B.humanize = aX1(), B.destroy = X, Object.keys(A).forEach((F) => {
             B[F] = A[F]
         }), B.names = [], B.skips = [], B.formatters = {};
 
-function Q(F) {
+        function Q(F) {
             let V = 0;
             for (let K = 0; K < F.length; K++) V = (V << 5) - V + F.charCodeAt(K), V |= 0;
             return B.colors[Math.abs(V) % B.colors.length]
         }
         B.selectColor = Q;
 
-function B(F) {
+        function B(F) {
             let V, K = null,
                 D, H;
 
-function C(...E) {
+            function C(...E) {
                 if (!C.enabled) return;
                 let z = C,
                     w = Number(new Date),
@@ -232,12 +235,12 @@ function C(...E) {
             return C
         }
 
-function G(F, V) {
+        function G(F, V) {
             let K = B(this.namespace + (typeof V > "u" ? ":" : V) + F);
             return K.log = this.log, K
         }
 
-function Z(F) {
+        function Z(F) {
             B.save(F), B.namespaces = F, B.names = [], B.skips = [];
             let V = (typeof F === "string" ? F : "").trim().replace(" ", ",").split(",").filter(Boolean);
             for (let K of V)
@@ -245,7 +248,7 @@ function Z(F) {
                 else B.names.push(K)
         }
 
-function I(F, V) {
+        function I(F, V) {
             let K = 0,
                 D = 0,
                 H = -1,
@@ -260,12 +263,12 @@ function I(F, V) {
             return D === V.length
         }
 
-function Y() {
+        function Y() {
             let F = [...B.names, ...B.skips.map((V) => "-" + V)].join(",");
             return B.enable(""), F
         }
 
-function J(F) {
+        function J(F) {
             for (let V of B.skips)
                 if (I(F, V)) return !1;
             for (let V of B.names)
@@ -273,19 +276,19 @@ function J(F) {
             return !1
         }
 
-function W(F) {
+        function W(F) {
             if (F instanceof Error) return F.stack || F.message;
             return F
         }
 
-function X() {
+        function X() {
             console.warn("Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.")
         }
         return B.enable(B.load()), B
     }
     f$0.exports = Wj9
 });
-var g$0 = U((h$0, ykA) => {
+var g$0 = moduleWrapper((h$0, ykA) => {
     h$0.formatArgs = Fj9;
     h$0.save = Vj9;
     h$0.load = Kj9;
@@ -299,14 +302,14 @@ var g$0 = U((h$0, ykA) => {
     })();
     h$0.colors = ["#0000CC", "#0000FF", "#0033CC", "#0033FF", "#0066CC", "#0066FF", "#0099CC", "#0099FF", "#00CC00", "#00CC33", "#00CC66", "#00CC99", "#00CCCC", "#00CCFF", "#3300CC", "#3300FF", "#3333CC", "#3333FF", "#3366CC", "#3366FF", "#3399CC", "#3399FF", "#33CC00", "#33CC33", "#33CC66", "#33CC99", "#33CCCC", "#33CCFF", "#6600CC", "#6600FF", "#6633CC", "#6633FF", "#66CC00", "#66CC33", "#9900CC", "#9900FF", "#9933CC", "#9933FF", "#99CC00", "#99CC33", "#CC0000", "#CC0033", "#CC0066", "#CC0099", "#CC00CC", "#CC00FF", "#CC3300", "#CC3333", "#CC3366", "#CC3399", "#CC33CC", "#CC33FF", "#CC6600", "#CC6633", "#CC9900", "#CC9933", "#CCCC00", "#CCCC33", "#FF0000", "#FF0033", "#FF0066", "#FF0099", "#FF00CC", "#FF00FF", "#FF3300", "#FF3333", "#FF3366", "#FF3399", "#FF33CC", "#FF33FF", "#FF6600", "#FF6633", "#FF9900", "#FF9933", "#FFCC00", "#FFCC33"];
 
-function Xj9() {
+    function Xj9() {
         if (typeof window < "u" && window.process && (window.process.type === "renderer" || window.process.__nwjs)) return !0;
         if (typeof navigator < "u" && navigator.userAgent && navigator.userAgent.toLowerCase().match(/(edge|trident)\/(\d+)/)) return !1;
         let A;
         return typeof document < "u" && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance || typeof window < "u" && window.console && (window.console.firebug || window.console.exception && window.console.table) || typeof navigator < "u" && navigator.userAgent && (A = navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/)) && parseInt(A[1], 10) >= 31 || typeof navigator < "u" && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/)
     }
 
-function Fj9(A) {
+    function Fj9(A) {
         if (A[0] = (this.useColors ? "%c" : "") + this.namespace + (this.useColors ? " %c" : " ") + A[0] + (this.useColors ? "%c " : " ") + "+" + ykA.exports.humanize(this.diff), !this.useColors) return;
         let Q = "color: " + this.color;
         A.splice(1, 0, Q, "color: inherit");
@@ -319,14 +322,14 @@ function Fj9(A) {
     }
     h$0.log = console.debug || console.log || (() => {});
 
-function Vj9(A) {
+    function Vj9(A) {
         try {
             if (A) h$0.storage.setItem("debug", A);
             else h$0.storage.removeItem("debug")
         } catch (Q) {}
     }
 
-function Kj9() {
+    function Kj9() {
         let A;
         try {
             A = h$0.storage.getItem("debug")
@@ -335,7 +338,7 @@ function Kj9() {
         return A
     }
 
-function Dj9() {
+    function Dj9() {
         try {
             return localStorage
         } catch (A) {}
@@ -352,7 +355,7 @@ function Dj9() {
         }
     }
 });
-var NVA = U((vi3, u$0) => {
+var NVA = moduleWrapper((vi3, u$0) => {
     u$0.exports = (A, Q = process.argv) => {
         let B = A.startsWith("-") ? "" : A.length === 1 ? "-" : "--",
             G = Q.indexOf(B + A),
@@ -360,9 +363,9 @@ var NVA = U((vi3, u$0) => {
         return G !== -1 && (Z === -1 || G < Z)
     }
 });
-var c$0 = U((bi3, d$0) => {
-    var Nj9 = UA("os"),
-        m$0 = UA("tty"),
+var c$0 = moduleWrapper((bi3, d$0) => {
+    var Nj9 = nodeRequire("os"),
+        m$0 = nodeRequire("tty"),
         xN = NVA(),
         {
             env: EV
@@ -371,7 +374,7 @@ var c$0 = U((bi3, d$0) => {
     if (xN("no-color") || xN("no-colors") || xN("color=false") || xN("color=never")) xkA = 0;
     else if (xN("color") || xN("colors") || xN("color=true") || xN("color=always")) xkA = 1;
 
-function Lj9() {
+    function Lj9() {
         if ("FORCE_COLOR" in EV) {
             if (EV.FORCE_COLOR === "true") return 1;
             if (EV.FORCE_COLOR === "false") return 0;
@@ -379,7 +382,7 @@ function Lj9() {
         }
     }
 
-function Mj9(A) {
+    function Mj9(A) {
         if (A === 0) return !1;
         return {
             level: A,
@@ -389,7 +392,7 @@ function Mj9(A) {
         }
     }
 
-function Oj9(A, {
+    function Oj9(A, {
         streamIsTTY: Q,
         sniffFlags: B = !0
     } = {}) {
@@ -424,13 +427,13 @@ function Oj9(A, {
                     return 2
             }
         }
-        if (/-256(color)?$/i.test(EV.TERM)) return 2;
+        if (/-256(color)?TextComponent/i.test(EV.TERM)) return 2;
         if (/^screen|^xterm|^vt100|^vt220|^rxvt|color|ansi|cygwin|linux/i.test(EV.TERM)) return 1;
         if ("COLORTERM" in EV) return 1;
         return I
     }
 
-function rX1(A, Q = {}) {
+    function rX1(A, Q = {}) {
         let B = Oj9(A, {
             streamIsTTY: A && A.isTTY,
             ...Q
@@ -447,9 +450,9 @@ function rX1(A, Q = {}) {
         })
     }
 });
-var n$0 = U((l$0, bkA) => {
-    var Rj9 = UA("tty"),
-        vkA = UA("util");
+var n$0 = moduleWrapper((l$0, bkA) => {
+    var Rj9 = nodeRequire("tty"),
+        vkA = nodeRequire("util");
     l$0.init = yj9;
     l$0.log = Sj9;
     l$0.formatArgs = Pj9;
@@ -469,18 +472,18 @@ var n$0 = U((l$0, bkA) => {
                 return I.toUpperCase()
             }),
             G = process.env[Q];
-        if (/^(yes|on|true|enabled)$/i.test(G)) G = !0;
-        else if (/^(no|off|false|disabled)$/i.test(G)) G = !1;
+        if (/^(yes|on|true|enabled)TextComponent/i.test(G)) G = !0;
+        else if (/^(no|off|false|disabled)TextComponent/i.test(G)) G = !1;
         else if (G === "null") G = null;
         else G = Number(G);
         return A[B] = G, A
     }, {});
 
-function Tj9() {
+    function Tj9() {
         return "colors" in l$0.inspectOpts ? Boolean(l$0.inspectOpts.colors) : Rj9.isatty(process.stderr.fd)
     }
 
-function Pj9(A) {
+    function Pj9(A) {
         let {
             namespace: Q,
             useColors: B
@@ -488,33 +491,33 @@ function Pj9(A) {
         if (B) {
             let G = this.color,
                 Z = "\x1B[3" + (G < 8 ? G : "8;5;" + G),
-                I = `  ${Z};1m${Q} \x1B[0m`;
+                I = `  TextComponent{Z};1m${Q} \x1B[0m`;
             A[0] = I + A[0].split(`
 `).join(`
 ` + I), A.push(Z + "m+" + bkA.exports.humanize(this.diff) + "\x1B[0m")
         } else A[0] = jj9() + Q + " " + A[0]
     }
 
-function jj9() {
+    function jj9() {
         if (l$0.inspectOpts.hideDate) return "";
         return new Date().toISOString() + " "
     }
 
-function Sj9(...A) {
+    function Sj9(...A) {
         return process.stderr.write(vkA.formatWithOptions(l$0.inspectOpts, ...A) + `
 `)
     }
 
-function _j9(A) {
+    function _j9(A) {
         if (A) process.env.DEBUG = A;
         else delete process.env.DEBUG
     }
 
-function kj9() {
+    function kj9() {
         return process.env.DEBUG
     }
 
-function yj9(A) {
+    function yj9(A) {
         A.inspectOpts = {};
         let Q = Object.keys(l$0.inspectOpts);
         for (let B = 0; B < Q.length; B++) A.inspectOpts[Q[B]] = l$0.inspectOpts[Q[B]]
@@ -531,11 +534,11 @@ function yj9(A) {
         return this.inspectOpts.colors = this.useColors, vkA.inspect(A, this.inspectOpts)
     }
 });
-var Os = U((hi3, oX1) => {
+var Os = moduleWrapper((hi3, oX1) => {
     if (typeof process > "u" || process.type === "renderer" || !1 || process.__nwjs) oX1.exports = g$0();
     else oX1.exports = n$0()
 });
-var s$0 = U((gi3, a$0) => {
+var s$0 = moduleWrapper((gi3, a$0) => {
     var LVA;
     a$0.exports = function() {
         if (!LVA) {
@@ -547,13 +550,13 @@ var s$0 = U((gi3, a$0) => {
         LVA.apply(null, arguments)
     }
 });
-var Aw0 = U((ui3, XF1) => {
-    var OVA = UA("url"),
+var Aw0 = moduleWrapper((ui3, XF1) => {
+    var OVA = nodeRequire("url"),
         MVA = OVA.URL,
-        mj9 = UA("http"),
-        dj9 = UA("https"),
-        BF1 = UA("stream").Writable,
-        GF1 = UA("assert"),
+        mj9 = nodeRequire("http"),
+        dj9 = nodeRequire("https"),
+        BF1 = nodeRequire("stream").Writable,
+        GF1 = nodeRequire("assert"),
         r$0 = s$0();
     (function() {
         var Q = typeof process < "u",
@@ -567,8 +570,7 @@ var Aw0 = U((ui3, XF1) => {
     } catch (A) {
         ZF1 = A.code === "ERR_INVALID_URL"
     }
-
-var cj9 = ["auth", "host", "hostname", "href", "path", "pathname", "port", "protocol", "query", "search", "hash"],
+    var cj9 = ["auth", "host", "hostname", "href", "path", "pathname", "port", "protocol", "query", "search", "hash"],
         IF1 = ["abort", "aborted", "connect", "error", "socket", "timeout"],
         YF1 = Object.create(null);
     IF1.forEach(function(A) {
@@ -583,7 +585,7 @@ var cj9 = ["auth", "host", "hostname", "href", "path", "pathname", "port", "prot
         ij9 = RVA("ERR_STREAM_WRITE_AFTER_END", "write after end"),
         nj9 = BF1.prototype.destroy || t$0;
 
-function vz(A, Q) {
+    function vz(A, Q) {
         if (BF1.call(this), this._sanitizeOptions(A), this._options = A, this._ended = !1, this._ending = !1, this._redirectCount = 0, this._redirects = [], this._requestBodyLength = 0, this._requestBodyBuffers = [], Q) this.on("response", Q);
         var B = this;
         this._onNativeResponse = function(G) {
@@ -638,18 +640,18 @@ function vz(A, Q) {
     vz.prototype.setTimeout = function(A, Q) {
         var B = this;
 
-function G(Y) {
+        function G(Y) {
             Y.setTimeout(A), Y.removeListener("timeout", Y.destroy), Y.addListener("timeout", Y.destroy)
         }
 
-function Z(Y) {
+        function Z(Y) {
             if (B._timeout) clearTimeout(B._timeout);
             B._timeout = setTimeout(function() {
                 B.emit("timeout"), I()
             }, A), G(Y)
         }
 
-function I() {
+        function I() {
             if (B._timeout) clearTimeout(B._timeout), B._timeout = null;
             if (B.removeListener("abort", I), B.removeListener("error", I), B.removeListener("response", I), B.removeListener("close", I), Q) B.removeListener("timeout", Q);
             if (!B.socket) B._currentRequest.removeListener("socket", Z)
@@ -727,7 +729,7 @@ function I() {
             Host: A.req.getHeader("host")
         }, this._options.headers);
         var I = this._options.method;
-        if ((Q === 301 || Q === 302) && this._options.method === "POST" || Q === 303 && !/^(?:GET|HEAD)$/.test(this._options.method)) this._options.method = "GET", this._requestBodyBuffers = [], tX1(/^content-/i, this._options.headers);
+        if ((Q === 301 || Q === 302) && this._options.method === "POST" || Q === 303 && !/^(?:GET|HEAD)TextComponent/.test(this._options.method)) this._options.method = "GET", this._requestBodyBuffers = [], tX1(/^content-/i, this._options.headers);
         var Y = tX1(/^host$/i, this._options.headers),
             J = JF1(this._currentUrl),
             W = Y || J.host,
@@ -735,7 +737,7 @@ function I() {
                 host: W
             })),
             F = aj9(B, X);
-        if (r$0("redirecting to", F.href), this._isRedirect = !0, QF1(F, this._options), F.protocol !== J.protocol && F.protocol !== "https:" || F.host !== W && !sj9(F.host, W)) tX1(/^(?:(?:proxy-)?authorization|cookie)$/i, this._options.headers);
+        if (r$0("redirecting to", F.href), this._isRedirect = !0, QF1(F, this._options), F.protocol !== J.protocol && F.protocol !== "https:" || F.host !== W && !sj9(F.host, W)) tX1(/^(?:(?:proxy-)?authorization|cookie)TextComponent/i, this._options.headers);
         if (Ts(Z)) {
             var V = {
                     headers: A.headers,
@@ -751,7 +753,7 @@ function I() {
         this._performRequest()
     };
 
-function o$0(A) {
+    function o$0(A) {
         var Q = {
                 maxRedirects: 21,
                 maxBodyLength: 10485760
@@ -762,7 +764,7 @@ function o$0(A) {
                 I = B[Z] = A[G],
                 Y = Q[G] = Object.create(I);
 
-function J(X, F, V) {
+            function J(X, F, V) {
                 if (oj9(X)) X = QF1(X);
                 else if (Rs(X)) X = QF1(JF1(X));
                 else V = F, F = e$0(X), X = {
@@ -776,7 +778,7 @@ function J(X, F, V) {
                 return GF1.equal(F.protocol, Z, "protocol mismatch"), r$0("options", F), new vz(F, V)
             }
 
-function W(X, F, V) {
+            function W(X, F, V) {
                 var K = Y.request(X, F, V);
                 return K.end(), K
             }
@@ -797,9 +799,9 @@ function W(X, F, V) {
         }), Q
     }
 
-function t$0() {}
+    function t$0() {}
 
-function JF1(A) {
+    function JF1(A) {
         var Q;
         if (ZF1) Q = new MVA(A);
         else if (Q = e$0(OVA.parse(A)), !Rs(Q.protocol)) throw new eX1({
@@ -808,21 +810,21 @@ function JF1(A) {
         return Q
     }
 
-function aj9(A, Q) {
+    function aj9(A, Q) {
         return ZF1 ? new MVA(A, Q) : JF1(OVA.resolve(Q, A))
     }
 
-function e$0(A) {
-        if (/^\[/.test(A.hostname) && !/^\[[:0-9a-f]+\]$/i.test(A.hostname)) throw new eX1({
+    function e$0(A) {
+        if (/^\[/.test(A.hostname) && !/^\[[:0-9a-f]+\]TextComponent/i.test(A.hostname)) throw new eX1({
             input: A.href || A
         });
-        if (/^\[/.test(A.host) && !/^\[[:0-9a-f]+\](:\d+)?$/i.test(A.host)) throw new eX1({
+        if (/^\[/.test(A.host) && !/^\[[:0-9a-f]+\](:\d+)?TextComponent/i.test(A.host)) throw new eX1({
             input: A.href || A
         });
         return A
     }
 
-function QF1(A, Q) {
+    function QF1(A, Q) {
         var B = Q || {};
         for (var G of cj9) B[G] = A[G];
         if (B.hostname.startsWith("[")) B.hostname = B.hostname.slice(1, -1);
@@ -830,14 +832,14 @@ function QF1(A, Q) {
         return B.path = B.search ? B.pathname + B.search : B.pathname, B
     }
 
-function tX1(A, Q) {
+    function tX1(A, Q) {
         var B;
         for (var G in Q)
             if (A.test(G)) B = Q[G], delete Q[G];
         return B === null || typeof B > "u" ? void 0 : String(B).trim()
     }
 
-function RVA(A, Q, B) {
+    function RVA(A, Q, B) {
         function G(Z) {
             if (Ts(Error.captureStackTrace)) Error.captureStackTrace(this, this.constructor);
             Object.assign(this, Z || {}), this.code = A, this.message = this.cause ? Q + ": " + this.cause.message : Q
@@ -854,30 +856,30 @@ function RVA(A, Q, B) {
         }), G
     }
 
-function WF1(A, Q) {
+    function WF1(A, Q) {
         for (var B of IF1) A.removeListener(B, YF1[B]);
         A.on("error", t$0), A.destroy(Q)
     }
 
-function sj9(A, Q) {
+    function sj9(A, Q) {
         GF1(Rs(A) && Rs(Q));
         var B = A.length - Q.length - 1;
         return B > 0 && A[B] === "." && A.endsWith(Q)
     }
 
-function Rs(A) {
+    function Rs(A) {
         return typeof A === "string" || A instanceof String
     }
 
-function Ts(A) {
+    function Ts(A) {
         return typeof A === "function"
     }
 
-function rj9(A) {
+    function rj9(A) {
         return typeof A === "object" && "length" in A
     }
 
-function oj9(A) {
+    function oj9(A) {
         return MVA && A instanceof MVA
     }
     XF1.exports = o$0({
@@ -916,14 +918,14 @@ function FF1(A, Q, B) {
     throw new NB("Unsupported protocol " + Z, NB.ERR_NOT_SUPPORT)
 }
 var tj9;
-var Qw0 = L(() => {
+var Qw0 = lazyLoader(() => {
     a$();
     DR();
-    tj9 = /^(?:([^;]+);)?(?:[^;]+;)?(base64|),([\s\S]*)$/
+    tj9 = /^(?:([^;]+);)?(?:[^;]+;)?(base64|),([\s\S]*)TextComponent/
 });
 import ej9 from "stream";
 var VF1, Bw0, KF1;
-var Gw0 = L(() => {
+var Gw0 = lazyLoader(() => {
     lG();
     VF1 = Symbol("internals");
     Bw0 = class Bw0 extends ej9.Transform {
@@ -1015,7 +1017,7 @@ var Zw0, AS9 = async function*(A) {
     else if (A[Zw0]) yield* A[Zw0]();
     else yield A
 }, fkA;
-var DF1 = L(() => {
+var DF1 = lazyLoader(() => {
     ({
         asyncIterator: Zw0
     } = Symbol), fkA = AS9
@@ -1024,14 +1026,13 @@ import QS9 from "util";
 import {
     Readable as BS9
 } from "stream";
-
 class Iw0 {
     constructor(A, Q) {
         let {
             escapeName: B
-        } = this.constructor, G = f1.isString(Q), Z = `Content-Disposition: form-data; name="${B(A)}"${!G&&Q.name?`; filename="${B(Q.name)}"`:""}${uu}`;
+        } = this.constructor, G = f1.isString(Q), Z = `Content-Disposition: form-data; name="TextComponent{B(A)}"TextComponent{!G&&Q.name?`; filename="TextComponent{B(Q.name)}"`:""}TextComponent{uu}`;
         if (G) Q = PVA.encode(String(Q).replace(/\r?\n|\r\n?/g, uu));
-        else Z += `Content-Type: ${Q.type||"application/octet-stream"}${uu}`;
+        else Z += `Content-Type: TextComponent{Q.type||"application/octet-stream"}TextComponent{uu}`;
         this.headers = PVA.encode(Z + uu), this.contentLength = G ? Q.byteLength : Q.size, this.size = this.headers.byteLength + this.contentLength + IS9, this.name = A, this.value = Q
     }
     async * encode() {
@@ -1071,7 +1072,7 @@ var GS9, PVA, uu = `\r
             });
         W += Y.byteLength * X.length, W = f1.toFiniteNumber(W);
         let F = {
-            "Content-Type": `multipart/form-data; boundary=${I}`
+            "Content-Type": `multipart/form-data; boundary=TextComponent{I}`
         };
         if (Number.isFinite(W)) F["Content-Length"] = W;
         return Q && Q(F), BS9.from(async function*() {
@@ -1080,7 +1081,7 @@ var GS9, PVA, uu = `\r
         }())
     },
     Yw0;
-var Jw0 = L(() => {
+var Jw0 = lazyLoader(() => {
     lG();
     DF1();
     DR();
@@ -1089,7 +1090,7 @@ var Jw0 = L(() => {
 });
 import JS9 from "stream";
 var Ww0, Xw0;
-var Fw0 = L(() => {
+var Fw0 = lazyLoader(() => {
     Ww0 = class Ww0 extends JS9.Transform {
         __transform(A, Q, B) {
             this.push(A), B()
@@ -1119,7 +1120,7 @@ var WS9 = (A, Q) => {
         } : A
     },
     Vw0;
-var Kw0 = L(() => {
+var Kw0 = lazyLoader(() => {
     lG();
     Vw0 = WS9
 });
@@ -1147,7 +1148,7 @@ function XS9(A, Q) {
         }
 }
 var Dw0;
-var Hw0 = L(() => {
+var Hw0 = lazyLoader(() => {
     Dw0 = XS9
 });
 
@@ -1168,7 +1169,7 @@ function FS9(A, Q) {
     }, () => Z && Y(Z)]
 }
 var Cw0;
-var Ew0 = L(() => {
+var Ew0 = lazyLoader(() => {
     Cw0 = FS9
 });
 var ix = (A, Q, B = 3) => {
@@ -1204,7 +1205,7 @@ var ix = (A, Q, B = 3) => {
         }), Q[1]]
     },
     D2A = (A) => (...Q) => f1.asap(() => A(...Q));
-var hkA = L(() => {
+var hkA = lazyLoader(() => {
     Hw0();
     Ew0();
     lG()
@@ -1238,7 +1239,7 @@ function Mw0(A, Q, B) {
         }
         A.headers.host = A.hostname + (A.port ? ":" + A.port : "");
         let Z = G.hostname || G.host;
-        if (A.hostname = Z, A.host = Z, A.port = G.port, A.path = B, G.protocol) A.protocol = G.protocol.includes(":") ? G.protocol : `${G.protocol}:`
+        if (A.hostname = Z, A.host = Z, A.port = G.port, A.path = B, G.protocol) A.protocol = G.protocol.includes(":") ? G.protocol : `TextComponent{G.protocol}:`
     }
     A.beforeRedirects.proxy = function(I) {
         Mw0(I, Q, I.href)
@@ -1277,7 +1278,7 @@ var Nw0, Lw0, zw0, CS9, Uw0, ES9, zS9, US9, $w0, ww0 = (A, [Q, B]) => {
         family: Q
     }),
     Ow0;
-var Rw0 = L(() => {
+var Rw0 = lazyLoader(() => {
     lG();
     jkA();
     SkA();
@@ -1294,7 +1295,7 @@ var Rw0 = L(() => {
     Fw0();
     Kw0();
     hkA();
-    Nw0 = GA(v$0(), 1), Lw0 = GA(Aw0(), 1), zw0 = {
+    Nw0 = esmImport(v$0(), 1), Lw0 = esmImport(Aw0(), 1), zw0 = {
         flush: mu.constants.Z_SYNC_FLUSH,
         finishFlush: mu.constants.Z_SYNC_FLUSH
     }, CS9 = {
@@ -1336,7 +1337,7 @@ var Rw0 = L(() => {
                 if (K = !0, HA) D = !0, E()
             });
 
-function z(IA) {
+            function z(IA) {
                 C.emit("abort", !IA || IA.type ? new s$(null, Q, H) : IA)
             }
             if (C.once("abort", Z), Q.cancelToken || Q.signal) {
@@ -1383,7 +1384,7 @@ function z(IA) {
                 Y = Yw0(Y, (HA) => {
                     R.set(HA)
                 }, {
-                    tag: `axios-${Ps}-boundary`,
+                    tag: `axios-TextComponent{Ps}-boundary`,
                     boundary: IA && IA[1] || void 0
                 })
             } else if (f1.isFormData(Y) && f1.isFunction(Y.getHeaders)) {

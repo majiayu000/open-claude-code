@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_007.js
+ * 处理时间: 2025-12-09T03:41:37.793Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.007Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -63,25 +66,25 @@ Private-MAC: ` + w.digest().toHex() + `\r
         return I
     };
 
-function U_(A, Q) {
+    function U_(A, Q) {
         var B = Q.toString(16);
         if (B[0] >= "8") B = "00" + B;
         var G = kX.util.hexToBytes(B);
         A.putInt32(G.length), A.putBytes(G)
     }
 
-function d3A(A, Q) {
+    function d3A(A, Q) {
         A.putInt32(Q.length), A.putString(Q)
     }
 
-function xiA() {
+    function xiA() {
         var A = kX.md.sha1.create(),
             Q = arguments.length;
         for (var B = 0; B < Q; ++B) A.update(arguments[B]);
         return A.digest()
     }
 });
-var A6B = U((gT7, e8B) => {
+var A6B = moduleWrapper((gT7, e8B) => {
     e8B.exports = n8();
     Rc();
     N8B();
@@ -116,14 +119,14 @@ import {
     promisify as yt8
 } from "util";
 var kt8, dT7;
-var pv1 = L(() => {
-    kt8 = GA(A6B(), 1), dT7 = yt8(_t8)
+var pv1 = lazyLoader(() => {
+    kt8 = esmImport(A6B(), 1), dT7 = yt8(_t8)
 });
-var lv1 = L(() => {
+var lv1 = lazyLoader(() => {
     pv1()
 });
 var Q6B, vt8, bt8, ft8, ht8, gt8, ut8, mt8, dt8, ct8, sT7, pt8, rT7;
-var B6B = L(() => {
+var B6B = lazyLoader(() => {
     h2();
     Q6B = Aw({
         command: EQ(),
@@ -204,13 +207,13 @@ var B6B = L(() => {
     })
 });
 var lt8, it8;
-var iv1 = L(() => {
+var iv1 = lazyLoader(() => {
     lv1();
     XzA();
     B6B();
-    lt8 = GA(g9B(), 1), it8 = GA(d9B(), 1)
+    lt8 = esmImport(g9B(), 1), it8 = esmImport(d9B(), 1)
 });
-var G6B = L(() => {
+var G6B = lazyLoader(() => {
     qx1();
     iv1();
     XzA();
@@ -221,9 +224,9 @@ function nv1(A, Q) {
     if (typeof A === "string") {
         let B = A;
         for (let [G, Z] of Object.entries(Q)) {
-            let I = new RegExp(`\\$\\{${G}\\}`, "g");
+            let I = new RegExp(`\\TextComponent\\{TextComponent{G}\\}`, "g");
             if (B.match(I))
-                if (Array.isArray(Z)) console.warn(`Cannot replace ${G} with array value in string context: "${A}"`, {
+                if (Array.isArray(Z)) console.warn(`Cannot replace TextComponent{G} with array value in string context: "TextComponent{A}"`, {
                     key: G,
                     replacement: Z
                 });
@@ -233,8 +236,8 @@ function nv1(A, Q) {
     } else if (Array.isArray(A)) {
         let B = [];
         for (let G of A)
-            if (typeof G === "string" && G.match(/^\$\{user_config\.[^}]+\}$/)) {
-                let Z = G.match(/^\$\{([^}]+)\}$/)?.[1];
+            if (typeof G === "string" && G.match(/^\TextComponent\{user_config\.[^}]+\}TextComponent/)) {
+                let Z = G.match(/^\TextComponent\{([^}]+)\}TextComponent/)?.[1];
                 if (Z && Q[Z]) {
                     let I = Q[Z];
                     if (Array.isArray(I)) B.push(...I);
@@ -249,7 +252,6 @@ function nv1(A, Q) {
     }
     return A
 }
-
 async function c3A(A) {
     let {
         manifest: Q,
@@ -273,7 +275,7 @@ async function c3A(A) {
             manifest: Q,
             userConfig: Z
         })) {
-        Y?.warn(`Extension ${Q.name} has missing required configuration, skipping MCP config`);
+        Y?.warn(`Extension TextComponent{Q.name} has missing required configuration, skipping MCP config`);
         return
     }
     let X = {
@@ -289,7 +291,7 @@ async function c3A(A) {
     }
     if (Z) Object.assign(F, Z);
     for (let [V, K] of Object.entries(F)) {
-        let D = `user_config.${V}`;
+        let D = `user_config.TextComponent{V}`;
         if (Array.isArray(K)) X[D] = K.map(String);
         else if (typeof K === "boolean") X[D] = K ? "true" : "false";
         else X[D] = String(K)
@@ -314,7 +316,7 @@ function nt8({
         } return !1
 }
 var I6B = () => {};
-var vzA = L(() => {
+var vzA = lazyLoader(() => {
     Vx1();
     G6B();
     lv1();
@@ -329,8 +331,8 @@ function Y6B(A) {
     let Q = ylA.safeParse(A);
     if (!Q.success) {
         let B = Q.error.flatten(),
-            G = [...Object.entries(B.fieldErrors).map(([Z, I]) => `${Z}: ${I?.join(", ")}`), ...B.formErrors || []].filter(Boolean).join("; ");
-        throw Error(`Invalid manifest: ${G}`)
+            G = [...Object.entries(B.fieldErrors).map(([Z, I]) => `TextComponent{Z}: TextComponent{I?.join(", ")}`), ...B.formErrors || []].filter(Boolean).join("; ");
+        throw Error(`Invalid manifest: TextComponent{G}`)
     }
     return Q.data
 }
@@ -340,7 +342,7 @@ function at8(A) {
     try {
         Q = JSON.parse(A)
     } catch (B) {
-        throw Error(`Invalid JSON in manifest.json: ${B instanceof Error?B.message:String(B)}`)
+        throw Error(`Invalid JSON in manifest.json: TextComponent{B instanceof Error?B.message:String(B)}`)
     }
     return Y6B(Q)
 }
@@ -349,7 +351,7 @@ function biA(A) {
     let Q = new TextDecoder().decode(A);
     return at8(Q)
 }
-var av1 = L(() => {
+var av1 = lazyLoader(() => {
     vzA()
 });
 import * as fiA from "path";
@@ -364,13 +366,13 @@ function st8(A) {
 function rt8(A, Q) {
     Q.fileCount++;
     let B;
-    if (Q.fileCount > vc.MAX_FILE_COUNT) B = `Archive contains too many files: ${Q.fileCount} (max: ${vc.MAX_FILE_COUNT})`;
-    if (!st8(A.name)) B = `Unsafe file path detected: "${A.name}". Path traversal or absolute paths are not allowed.`;
+    if (Q.fileCount > vc.MAX_FILE_COUNT) B = `Archive contains too many files: TextComponent{Q.fileCount} (max: TextComponent{vc.MAX_FILE_COUNT})`;
+    if (!st8(A.name)) B = `Unsafe file path detected: "TextComponent{A.name}". Path traversal or absolute paths are not allowed.`;
     let G = A.originalSize || 0;
-    if (G > vc.MAX_FILE_SIZE) B = `File "${A.name}" is too large: ${Math.round(G/1024/1024)}MB (max: ${Math.round(vc.MAX_FILE_SIZE/1024/1024)}MB)`;
-    if (Q.totalUncompressedSize += G, Q.totalUncompressedSize > vc.MAX_TOTAL_SIZE) B = `Archive total size is too large: ${Math.round(Q.totalUncompressedSize/1024/1024)}MB (max: ${Math.round(vc.MAX_TOTAL_SIZE/1024/1024)}MB)`;
+    if (G > vc.MAX_FILE_SIZE) B = `File "TextComponent{A.name}" is too large: TextComponent{Math.round(G/1024/1024)}MB (max: TextComponent{Math.round(vc.MAX_FILE_SIZE/1024/1024)}MB)`;
+    if (Q.totalUncompressedSize += G, Q.totalUncompressedSize > vc.MAX_TOTAL_SIZE) B = `Archive total size is too large: TextComponent{Math.round(Q.totalUncompressedSize/1024/1024)}MB (max: TextComponent{Math.round(vc.MAX_TOTAL_SIZE/1024/1024)}MB)`;
     let Z = Q.totalUncompressedSize / Q.compressedSize;
-    if (Z > vc.MAX_COMPRESSION_RATIO) B = `Suspicious compression ratio detected: ${Z.toFixed(1)}:1 (max: ${vc.MAX_COMPRESSION_RATIO}:1). This may be a zip bomb.`;
+    if (Z > vc.MAX_COMPRESSION_RATIO) B = `Suspicious compression ratio detected: TextComponent{Z.toFixed(1)}:1 (max: TextComponent{vc.MAX_COMPRESSION_RATIO}:1). This may be a zip bomb.`;
     return B ? {
         isValid: !1,
         error: B
@@ -378,10 +380,9 @@ function rt8(A, Q) {
         isValid: !0
     }
 }
-
 async function sv1(A) {
     let Q = OA();
-    if (!Q.existsSync(A)) throw Error(`Zip file does not exist: ${A}`);
+    if (!Q.existsSync(A)) throw Error(`Zip file does not exist: TextComponent{A}`);
     try {
         let B = Q.readFileBytesSync(A),
             G = B.length;
@@ -399,17 +400,17 @@ async function sv1(A) {
                         return !0
                     }
                 }, (X, F) => {
-                    if (X) Y(Error(`Failed to unzip file: ${X.message||String(X)}`));
-                    else g(`Zip extraction completed: ${J.fileCount} files, ${Math.round(J.totalUncompressedSize/1024)}KB uncompressed`), I(F)
+                    if (X) Y(Error(`Failed to unzip file: TextComponent{X.message||String(X)}`));
+                    else g(`Zip extraction completed: TextComponent{J.fileCount} files, TextComponent{Math.round(J.totalUncompressedSize/1024)}KB uncompressed`), I(F)
                 })
         })
     } catch (B) {
         let G = B instanceof Error ? B.message : String(B);
-        throw Error(`Failed to read or unzip file: ${G}`)
+        throw Error(`Failed to read or unzip file: TextComponent{G}`)
     }
 }
 var vc;
-var rv1 = L(() => {
+var rv1 = lazyLoader(() => {
     HBB();
     D0();
     o0();
@@ -456,7 +457,7 @@ function bc() {
         }
     }
 }
-var bzA = L(() => {
+var bzA = lazyLoader(() => {
     s5();
     D0()
 });
@@ -489,17 +490,17 @@ function H6B(A) {
 
 function C6B(A, Q) {
     let B = tv1("md5").update(Q).digest("hex").substring(0, 8);
-    return fc(A, `${B}.metadata.json`)
+    return fc(A, `TextComponent{B}.metadata.json`)
 }
 
 function W6B(A, Q) {
     try {
         let G = c0().pluginConfigs?.[A]?.mcpServers?.[Q];
         if (!G) return null;
-        return g(`Loaded user config for ${A}/${Q} from settings`), G
+        return g(`Loaded user config for TextComponent{A}/TextComponent{Q} from settings`), G
     } catch (B) {
         let G = B instanceof Error ? B : Error(String(B));
-        return e(G), g(`Failed to load user config for ${A}/${Q}: ${B}`, {
+        return e(G), g(`Failed to load user config for TextComponent{A}/TextComponent{Q}: TextComponent{B}`, {
             level: "error"
         }), null
     }
@@ -514,10 +515,10 @@ function X6B(A, Q, B) {
         G.pluginConfigs[A].mcpServers[Q] = B;
         let Z = cB("userSettings", G);
         if (Z.error) throw Z.error;
-        g(`Saved user config for ${A}/${Q} to user settings`)
+        g(`Saved user config for TextComponent{A}/TextComponent{Q} to user settings`)
     } catch (G) {
         let Z = G instanceof Error ? G : Error(String(G));
-        throw e(Z), Error(`Failed to save user configuration for ${A}/${Q}: ${Z.message}`)
+        throw e(Z), Error(`Failed to save user configuration for TextComponent{A}/TextComponent{Q}: TextComponent{Z.message}`)
     }
 }
 
@@ -526,21 +527,21 @@ function F6B(A, Q) {
     for (let [G, Z] of Object.entries(Q)) {
         let I = A[G];
         if (Z.required && (I === void 0 || I === "")) {
-            B.push(`${Z.title||G} is required but not provided`);
+            B.push(`TextComponent{Z.title||G} is required but not provided`);
             continue
         }
         if (I === void 0 || I === "") continue;
         if (Z.type === "string") {
             if (Array.isArray(I)) {
-                if (!Z.multiple) B.push(`${Z.title||G} must be a string, not an array`);
-                else if (!I.every((Y) => typeof Y === "string")) B.push(`${Z.title||G} must be an array of strings`)
-            } else if (typeof I !== "string") B.push(`${Z.title||G} must be a string`)
-        } else if (Z.type === "number" && typeof I !== "number") B.push(`${Z.title||G} must be a number`);
-        else if (Z.type === "boolean" && typeof I !== "boolean") B.push(`${Z.title||G} must be a boolean`);
-        else if ((Z.type === "file" || Z.type === "directory") && typeof I !== "string") B.push(`${Z.title||G} must be a path string`);
+                if (!Z.multiple) B.push(`TextComponent{Z.title||G} must be a string, not an array`);
+                else if (!I.every((Y) => typeof Y === "string")) B.push(`TextComponent{Z.title||G} must be an array of strings`)
+            } else if (typeof I !== "string") B.push(`TextComponent{Z.title||G} must be a string`)
+        } else if (Z.type === "number" && typeof I !== "number") B.push(`TextComponent{Z.title||G} must be a number`);
+        else if (Z.type === "boolean" && typeof I !== "boolean") B.push(`TextComponent{Z.title||G} must be a boolean`);
+        else if ((Z.type === "file" || Z.type === "directory") && typeof I !== "string") B.push(`TextComponent{Z.title||G} must be a path string`);
         if (Z.type === "number" && typeof I === "number") {
-            if (Z.min !== void 0 && I < Z.min) B.push(`${Z.title||G} must be at least ${Z.min}`);
-            if (Z.max !== void 0 && I > Z.max) B.push(`${Z.title||G} must be at most ${Z.max}`)
+            if (Z.min !== void 0 && I < Z.min) B.push(`TextComponent{Z.title||G} must be at least TextComponent{Z.min}`);
+            if (Z.max !== void 0 && I > Z.max) B.push(`TextComponent{Z.title||G} must be at most TextComponent{Z.max}`)
         }
     }
     return {
@@ -548,7 +549,6 @@ function F6B(A, Q) {
         errors: B
     }
 }
-
 async function V6B(A, Q) {
     let B = await c3A({
         manifest: A,
@@ -558,12 +558,11 @@ async function V6B(A, Q) {
         pathSeparator: "/"
     });
     if (!B) {
-        let G = Error(`Failed to generate MCP server configuration from manifest "${A.name}"`);
+        let G = Error(`Failed to generate MCP server configuration from manifest "TextComponent{A.name}"`);
         throw e(G), G
     }
     return B
 }
-
 async function E6B(A, Q) {
     let B = OA(),
         G = C6B(A, Q);
@@ -575,12 +574,11 @@ async function E6B(A, Q) {
         return JSON.parse(Z)
     } catch (Z) {
         let I = Z instanceof Error ? Z : Error(String(Z));
-        return e(I), g(`Failed to load MCPB cache metadata: ${Z}`, {
+        return e(I), g(`Failed to load MCPB cache metadata: TextComponent{Z}`, {
             level: "error"
         }), null
     }
 }
-
 async function ov1(A, Q, B) {
     let G = OA(),
         Z = C6B(A, Q);
@@ -589,9 +587,8 @@ async function ov1(A, Q, B) {
         flush: !1
     })
 }
-
 async function et8(A, Q, B) {
-    if (g(`Downloading MCPB from ${A}`), B) B(`Downloading ${A}...`);
+    if (g(`Downloading MCPB from TextComponent{A}`), B) B(`Downloading TextComponent{A}...`);
     try {
         let G = await GQ.get(A, {
                 timeout: 120000,
@@ -600,20 +597,19 @@ async function et8(A, Q, B) {
                 onDownloadProgress: (I) => {
                     if (I.total && B) {
                         let Y = Math.round(I.loaded / I.total * 100);
-                        B(`Downloading... ${Y}%`)
+                        B(`Downloading... TextComponent{Y}%`)
                     }
                 }
             }),
             Z = new Uint8Array(G.data);
-        if (K6B(Q, Buffer.from(Z)), g(`Downloaded ${Z.length} bytes to ${Q}`), B) B("Download complete");
+        if (K6B(Q, Buffer.from(Z)), g(`Downloaded TextComponent{Z.length} bytes to TextComponent{Q}`), B) B("Download complete");
         return Z
     } catch (G) {
         let Z = G instanceof Error ? G.message : String(G),
-            I = Error(`Failed to download MCPB file from ${A}: ${Z}`);
+            I = Error(`Failed to download MCPB file from TextComponent{A}: TextComponent{Z}`);
         throw e(I), I
     }
 }
-
 async function Ae8(A, Q, B) {
     let G = OA();
     if (B) B("Extracting files...");
@@ -631,38 +627,36 @@ async function Ae8(A, Q, B) {
                 flush: !1
             })
         } else K6B(W, Buffer.from(J));
-        if (Z++, B && Z % 10 === 0) B(`Extracted ${Z}/${I} files`)
+        if (Z++, B && Z % 10 === 0) B(`Extracted TextComponent{Z}/TextComponent{I} files`)
     }
-    if (g(`Extracted ${Z} files to ${Q}`), B) B(`Extraction complete (${Z} files)`)
+    if (g(`Extracted TextComponent{Z} files to TextComponent{Q}`), B) B(`Extraction complete (TextComponent{Z} files)`)
 }
-
 async function Qe8(A, Q) {
     let B = OA(),
         G = H6B(Q),
         Z = await E6B(G, A);
     if (!Z) return !0;
-    if (!B.existsSync(Z.extractedPath)) return g(`MCPB extraction path missing: ${Z.extractedPath}`), !0;
+    if (!B.existsSync(Z.extractedPath)) return g(`MCPB extraction path missing: TextComponent{Z.extractedPath}`), !0;
     if (!D6B(A)) {
         let I = fc(Q, A);
-        if (!B.existsSync(I)) return g(`MCPB source file missing: ${I}`), !0;
+        if (!B.existsSync(I)) return g(`MCPB source file missing: TextComponent{I}`), !0;
         let Y = B.statSync(I),
             J = new Date(Z.cachedAt).getTime(),
             W = Y.mtimeMs;
-        if (W > J) return g(`MCPB file modified: ${new Date(W)} > ${new Date(J)}`), !0
+        if (W > J) return g(`MCPB file modified: TextComponent{new Date(W)} > TextComponent{new Date(J)}`), !0
     }
     return !1
 }
-
 async function fzA(A, Q, B, G, Z, I) {
     let Y = OA(),
         J = H6B(Q);
-    Y.mkdirSync(J), g(`Loading MCPB from source: ${A}`);
+    Y.mkdirSync(J), g(`Loading MCPB from source: TextComponent{A}`);
     let W = await E6B(J, A);
     if (W && !await Qe8(A, Q)) {
-        g(`Using cached MCPB from ${W.extractedPath} (hash: ${W.contentHash})`);
+        g(`Using cached MCPB from TextComponent{W.extractedPath} (hash: TextComponent{W.contentHash})`);
         let w = fc(W.extractedPath, "manifest.json");
         if (!Y.existsSync(w)) {
-            let y = Error(`Cached manifest not found: ${w}`);
+            let y = Error(`Cached manifest not found: TextComponent{w}`);
             throw e(y), y
         }
         let N = Y.readFileSync(w, {
@@ -693,7 +687,7 @@ async function fzA(A, Q, B, G, Z, I) {
                 pathSeparator: "/"
             });
             if (!u) {
-                let o = Error(`Failed to generate MCP server configuration from manifest "${R.name}"`);
+                let o = Error(`Failed to generate MCP server configuration from manifest "TextComponent{R.name}"`);
                 throw e(o), o
             }
             return {
@@ -714,18 +708,18 @@ async function fzA(A, Q, B, G, Z, I) {
     let X, F;
     if (D6B(A)) {
         let w = tv1("md5").update(A).digest("hex").substring(0, 8);
-        F = fc(J, `${w}.mcpb`), X = await et8(A, F, G)
+        F = fc(J, `TextComponent{w}.mcpb`), X = await et8(A, F, G)
     } else {
         let w = fc(Q, A);
         if (!Y.existsSync(w)) {
-            let N = Error(`MCPB file not found: ${w}`);
+            let N = Error(`MCPB file not found: TextComponent{w}`);
             throw e(N), N
         }
-        if (G) G(`Loading ${A}...`);
+        if (G) G(`Loading TextComponent{A}...`);
         X = Y.readFileBytesSync(w), F = w
     }
     let V = tt8(X);
-    if (g(`MCPB content hash: ${V}`), G) G("Extracting MCPB archive...");
+    if (g(`MCPB content hash: TextComponent{V}`), G) G("Extracting MCPB archive...");
     let K = await sv1(F),
         D = K["manifest.json"];
     if (!D) {
@@ -733,8 +727,8 @@ async function fzA(A, Q, B, G, Z, I) {
         throw e(w), w
     }
     let H = biA(D);
-    if (g(`MCPB manifest: ${H.name} v${H.version} by ${H.author.name}`), !H.server) {
-        let w = Error(`MCPB manifest for "${H.name}" does not define a server configuration`);
+    if (g(`MCPB manifest: TextComponent{H.name} v${H.version} by TextComponent{H.author.name}`), !H.server) {
+        let w = Error(`MCPB manifest for "TextComponent{H.name}" does not define a server configuration`);
         throw e(w), w
     }
     let C = fc(J, V);
@@ -771,7 +765,7 @@ async function fzA(A, Q, B, G, Z, I) {
             pathSeparator: "/"
         });
         if (!P) {
-            let v = Error(`Failed to generate MCP server configuration from manifest "${H.name}"`);
+            let v = Error(`Failed to generate MCP server configuration from manifest "TextComponent{H.name}"`);
             throw e(v), v
         }
         let y = {
@@ -797,14 +791,14 @@ async function fzA(A, Q, B, G, Z, I) {
             cachedAt: new Date().toISOString(),
             lastChecked: new Date().toISOString()
         };
-    return await ov1(J, A, z), g(`Successfully loaded MCPB: ${H.name} (extracted to ${C})`), {
+    return await ov1(J, A, z), g(`Successfully loaded MCPB: TextComponent{H.name} (extracted to TextComponent{C})`), {
         manifest: H,
         mcpConfig: E,
         extractedPath: C,
         contentHash: V
     }
 }
-var ev1 = L(() => {
+var ev1 = lazyLoader(() => {
     w3();
     vzA();
     av1();
@@ -818,26 +812,25 @@ var ev1 = L(() => {
 import {
     join as Be8
 } from "path";
-
 async function z6B(A, Q, B) {
     try {
-        g(`Loading MCP servers from MCPB: ${Q}`);
+        g(`Loading MCP servers from MCPB: TextComponent{Q}`);
         let G = A.repository,
             Z = await fzA(Q, A.path, G, (J) => {
-                g(`MCPB [${A.name}]: ${J}`)
+                g(`MCPB [TextComponent{A.name}]: TextComponent{J}`)
             });
-        if ("status" in Z && Z.status === "needs-config") return g(`MCPB ${Q} requires user configuration. ` + `User can configure via: /plugin → Manage plugins → ${A.name} → Configure`), null;
+        if ("status" in Z && Z.status === "needs-config") return g(`MCPB TextComponent{Q} requires user configuration. ` + `User can configure via: /plugin → Manage plugins → TextComponent{A.name} → Configure`), null;
         let I = Z,
             Y = I.manifest.name;
-        return g(`Loaded MCP server "${Y}" from MCPB (extracted to ${I.extractedPath})`), {
+        return g(`Loaded MCP server "TextComponent{Y}" from MCPB (extracted to TextComponent{I.extractedPath})`), {
             [Y]: I.mcpConfig
         }
     } catch (G) {
         let Z = G instanceof Error ? G.message : String(G);
-        g(`Failed to load MCPB ${Q}: ${Z}`, {
+        g(`Failed to load MCPB TextComponent{Q}: TextComponent{Z}`, {
             level: "error"
         });
-        let I = `${A.name}@${A.repository}`;
+        let I = `TextComponent{A.name}@TextComponent{A.repository}`;
         if (Q.startsWith("http") && (Z.includes("download") || Z.includes("network"))) B.push({
             type: "mcpb-download-failed",
             source: I,
@@ -862,7 +855,6 @@ async function z6B(A, Q, B) {
         return null
     }
 }
-
 async function Ge8(A, Q = []) {
     let B = {},
         G = Ab1(A.path, ".mcp.json");
@@ -928,13 +920,13 @@ function Ab1(A, Q) {
         for (let [W, X] of Object.entries(Y)) {
             let F = Tm.safeParse(X);
             if (F.success) J[W] = F.data;
-            else g(`Invalid MCP server config for ${W} in ${G}: ${F.error.message}`, {
+            else g(`Invalid MCP server config for TextComponent{W} in TextComponent{G}: TextComponent{F.error.message}`, {
                 level: "error"
             })
         }
         return J
     } catch (Z) {
-        return g(`Failed to load MCP servers from ${G}: ${Z}`, {
+        return g(`Failed to load MCP servers from TextComponent{G}: TextComponent{Z}`, {
             level: "error"
         }), null
     }
@@ -943,7 +935,7 @@ function Ab1(A, Q) {
 function Ze8(A, Q) {
     let B = {};
     for (let [G, Z] of Object.entries(A)) {
-        let I = `plugin:${Q}:${G}`;
+        let I = `plugin:TextComponent{Q}:TextComponent{G}`;
         B[I] = {
             ...Z,
             scope: "dynamic"
@@ -953,13 +945,13 @@ function Ze8(A, Q) {
 }
 
 function Qb1(A, Q) {
-    return A.replace(/\$\{CLAUDE_PLUGIN_ROOT\}/g, Q)
+    return A.replace(/\TextComponent\{CLAUDE_PLUGIN_ROOT\}/g, Q)
 }
 
 function Ie8(A, Q) {
-    return A.replace(/\$\{user_config\.([^}]+)\}/g, (B, G) => {
+    return A.replace(/\TextComponent\{user_config\.([^}]+)\}/g, (B, G) => {
         let Z = Q[G];
-        if (Z === void 0) throw Error(`Missing required user configuration value: ${G}. This should have been validated before variable substitution.`);
+        if (Z === void 0) throw Error(`Missing required user configuration value: TextComponent{G}. This should have been validated before variable substitution.`);
         return String(Z)
     })
 }
@@ -989,7 +981,7 @@ function Ye8(A, Q, B, G) {
             if (W !== "CLAUDE_PLUGIN_ROOT") J[W] = I(X);
         if (Y.env = J, G && Z.length > 0) {
             let W = [...new Set(Z)];
-            g(`Missing environment variables in plugin MCP config: ${W.join(", ")}`, {
+            g(`Missing environment variables in plugin MCP config: TextComponent{W.join(", ")}`, {
                 level: "warn"
             })
         }
@@ -997,13 +989,12 @@ function Ye8(A, Q, B, G) {
     }
     if (G && Z.length > 0) {
         let Y = [...new Set(Z)];
-        g(`Missing environment variables in plugin MCP config: ${Y.join(", ")}`, {
+        g(`Missing environment variables in plugin MCP config: TextComponent{Y.join(", ")}`, {
             level: "warn"
         })
     }
     return A
 }
-
 async function U6B(A, Q = []) {
     if (!A.enabled) return;
     let B = A.mcpServers || await Ge8(A, Q);
@@ -1012,7 +1003,7 @@ async function U6B(A, Q = []) {
     for (let [Z, I] of Object.entries(B)) G[Z] = Ye8(I, A.path, void 0, Q);
     return Ze8(G, A.name)
 }
-var Bb1 = L(() => {
+var Bb1 = lazyLoader(() => {
     o0();
     D0();
     s9A();
@@ -1024,50 +1015,50 @@ function BM(A) {
         case "generic-error":
             return A.error;
         case "path-not-found":
-            return `Path not found: ${A.path} (${A.component})`;
+            return `Path not found: TextComponent{A.path} (TextComponent{A.component})`;
         case "git-auth-failed":
-            return `Git authentication failed (${A.authType}): ${A.gitUrl}`;
+            return `Git authentication failed (TextComponent{A.authType}): TextComponent{A.gitUrl}`;
         case "git-timeout":
-            return `Git ${A.operation} timeout: ${A.gitUrl}`;
+            return `Git TextComponent{A.operation} timeout: TextComponent{A.gitUrl}`;
         case "network-error":
-            return `Network error: ${A.url}${A.details?` - ${A.details}`:""}`;
+            return `Network error: TextComponent{A.url}TextComponent{A.details?` - TextComponent{A.details}`:""}`;
         case "manifest-parse-error":
-            return `Manifest parse error: ${A.parseError}`;
+            return `Manifest parse error: TextComponent{A.parseError}`;
         case "manifest-validation-error":
-            return `Manifest validation failed: ${A.validationErrors.join(", ")}`;
+            return `Manifest validation failed: TextComponent{A.validationErrors.join(", ")}`;
         case "plugin-not-found":
-            return `Plugin ${A.pluginId} not found in marketplace ${A.marketplace}`;
+            return `Plugin TextComponent{A.pluginId} not found in marketplace TextComponent{A.marketplace}`;
         case "marketplace-not-found":
-            return `Marketplace ${A.marketplace} not found`;
+            return `Marketplace TextComponent{A.marketplace} not found`;
         case "marketplace-load-failed":
-            return `Marketplace ${A.marketplace} failed to load: ${A.reason}`;
+            return `Marketplace TextComponent{A.marketplace} failed to load: TextComponent{A.reason}`;
         case "repository-scan-failed":
-            return `Repository scan failed: ${A.reason}`;
+            return `Repository scan failed: TextComponent{A.reason}`;
         case "mcp-config-invalid":
-            return `MCP server ${A.serverName} invalid: ${A.validationError}`;
+            return `MCP server TextComponent{A.serverName} invalid: TextComponent{A.validationError}`;
         case "hook-load-failed":
-            return `Hook load failed: ${A.reason}`;
+            return `Hook load failed: TextComponent{A.reason}`;
         case "component-load-failed":
-            return `${A.component} load failed from ${A.path}: ${A.reason}`;
+            return `TextComponent{A.component} load failed from TextComponent{A.path}: TextComponent{A.reason}`;
         case "mcpb-download-failed":
-            return `Failed to download MCPB from ${A.url}: ${A.reason}`;
+            return `Failed to download MCPB from TextComponent{A.url}: TextComponent{A.reason}`;
         case "mcpb-extract-failed":
-            return `Failed to extract MCPB ${A.mcpbPath}: ${A.reason}`;
+            return `Failed to extract MCPB TextComponent{A.mcpbPath}: TextComponent{A.reason}`;
         case "mcpb-invalid-manifest":
-            return `MCPB manifest invalid at ${A.mcpbPath}: ${A.validationError}`;
+            return `MCPB manifest invalid at TextComponent{A.mcpbPath}: TextComponent{A.validationError}`;
         case "lsp-config-invalid":
-            return `Plugin "${A.plugin}" has invalid LSP server config for "${A.serverName}": ${A.validationError}`;
+            return `Plugin "TextComponent{A.plugin}" has invalid LSP server config for "TextComponent{A.serverName}": TextComponent{A.validationError}`;
         case "lsp-server-start-failed":
-            return `Plugin "${A.plugin}" failed to start LSP server "${A.serverName}": ${A.reason}`;
+            return `Plugin "TextComponent{A.plugin}" failed to start LSP server "TextComponent{A.serverName}": TextComponent{A.reason}`;
         case "lsp-server-crashed":
-            if (A.signal) return `Plugin "${A.plugin}" LSP server "${A.serverName}" crashed with signal ${A.signal}`;
-            return `Plugin "${A.plugin}" LSP server "${A.serverName}" crashed with exit code ${A.exitCode??"unknown"}`;
+            if (A.signal) return `Plugin "TextComponent{A.plugin}" LSP server "TextComponent{A.serverName}" crashed with signal TextComponent{A.signal}`;
+            return `Plugin "TextComponent{A.plugin}" LSP server "TextComponent{A.serverName}" crashed with exit code TextComponent{A.exitCode??"unknown"}`;
         case "lsp-request-timeout":
-            return `Plugin "${A.plugin}" LSP server "${A.serverName}" timed out on ${A.method} request after ${A.timeoutMs}ms`;
+            return `Plugin "TextComponent{A.plugin}" LSP server "TextComponent{A.serverName}" timed out on TextComponent{A.method} request after TextComponent{A.timeoutMs}ms`;
         case "lsp-request-failed":
-            return `Plugin "${A.plugin}" LSP server "${A.serverName}" ${A.method} request failed: ${A.error}`;
+            return `Plugin "TextComponent{A.plugin}" LSP server "TextComponent{A.serverName}" TextComponent{A.method} request failed: TextComponent{A.error}`;
         case "marketplace-blocked-by-policy":
-            return `Marketplace '${A.marketplace}' is not allowed by enterprise policy`
+            return `Marketplace 'TextComponent{A.marketplace}' is not allowed by enterprise policy`
     }
 }
 import {
@@ -1155,7 +1146,7 @@ function Gb1(A, Q) {
 function Xe8(A) {
     let Q = [];
 
-function B(Z) {
+    function B(Z) {
         let {
             expanded: I,
             missingVars: Y
@@ -1201,29 +1192,29 @@ function B(Z) {
 }
 
 function Bt(A, Q, B) {
-    if (A.match(/[^a-zA-Z0-9_-]/)) throw Error(`Invalid name ${A}. Names can only contain letters, numbers, hyphens, and underscores.`);
+    if (A.match(/[^a-zA-Z0-9_-]/)) throw Error(`Invalid name TextComponent{A}. Names can only contain letters, numbers, hyphens, and underscores.`);
     let G = Tm.safeParse(Q);
     if (!G.success) {
-        let I = G.error.errors.map((Y) => `${Y.path.join(".")}: ${Y.message}`).join(", ");
-        throw Error(`Invalid configuration: ${I}`)
+        let I = G.error.errors.map((Y) => `TextComponent{Y.path.join(".")}: TextComponent{Y.message}`).join(", ");
+        throw Error(`Invalid configuration: TextComponent{I}`)
     }
     let Z = G.data;
-    if (N6B(A, Z)) throw Error(`Cannot add MCP server "${A}": server is explicitly blocked by enterprise policy`);
-    if (!Gb1(A, Z)) throw Error(`Cannot add MCP server "${A}": not allowed by enterprise policy`);
+    if (N6B(A, Z)) throw Error(`Cannot add MCP server "TextComponent{A}": server is explicitly blocked by enterprise policy`);
+    if (!Gb1(A, Z)) throw Error(`Cannot add MCP server "TextComponent{A}": not allowed by enterprise policy`);
     switch (B) {
         case "project": {
             let {
                 servers: I
             } = Zb1();
-            if (I[A]) throw Error(`MCP server ${A} already exists in .mcp.json`);
+            if (I[A]) throw Error(`MCP server TextComponent{A} already exists in .mcp.json`);
             break
         }
         case "user": {
-            if (L1().mcpServers?.[A]) throw Error(`MCP server ${A} already exists in user config`);
+            if (L1().mcpServers?.[A]) throw Error(`MCP server TextComponent{A} already exists in user config`);
             break
         }
         case "local": {
-            if (M5().mcpServers?.[A]) throw Error(`MCP server ${A} already exists in local config`);
+            if (M5().mcpServers?.[A]) throw Error(`MCP server TextComponent{A} already exists in local config`);
             break
         }
         case "dynamic":
@@ -1250,7 +1241,7 @@ function Bt(A, Q, B) {
             try {
                 $6B(J)
             } catch (W) {
-                throw Error(`Failed to write to mcp.json: ${W}`)
+                throw Error(`Failed to write to mcp.json: TextComponent{W}`)
             }
             break
         }
@@ -1267,7 +1258,7 @@ function Bt(A, Q, B) {
             break
         }
         default:
-            throw Error(`Cannot add MCP server to scope: ${B}`)
+            throw Error(`Cannot add MCP server to scope: TextComponent{B}`)
     }
 }
 
@@ -1277,7 +1268,7 @@ function Ib1(A, Q) {
             let {
                 servers: B
             } = Zb1();
-            if (!B[A]) throw Error(`No MCP server found with name: ${A} in .mcp.json`);
+            if (!B[A]) throw Error(`No MCP server found with name: TextComponent{A} in .mcp.json`);
             let G = {};
             for (let [I, Y] of Object.entries(B))
                 if (I !== A) {
@@ -1292,24 +1283,24 @@ function Ib1(A, Q) {
             try {
                 $6B(Z)
             } catch (I) {
-                throw Error(`Failed to remove from .mcp.json: ${I}`)
+                throw Error(`Failed to remove from .mcp.json: TextComponent{I}`)
             }
             break
         }
         case "user": {
             let B = L1();
-            if (!B.mcpServers?.[A]) throw Error(`No user-scoped MCP server found with name: ${A}`);
+            if (!B.mcpServers?.[A]) throw Error(`No user-scoped MCP server found with name: TextComponent{A}`);
             delete B.mcpServers[A], d0(B);
             break
         }
         case "local": {
             let B = M5();
-            if (!B.mcpServers?.[A]) throw Error(`No project-local MCP server found with name: ${A}`);
+            if (!B.mcpServers?.[A]) throw Error(`No project-local MCP server found with name: TextComponent{A}`);
             delete B.mcpServers[A], aI(B);
             break
         }
         default:
-            throw Error(`Cannot remove MCP server from scope: ${Q}`)
+            throw Error(`Cannot remove MCP server from scope: TextComponent{Q}`)
     }
 }
 
@@ -1486,18 +1477,18 @@ async function $_() {
     if (I.errors.length > 0)
         for (let V of I.errors)
             if (V.type === "mcp-config-invalid" || V.type === "mcpb-download-failed" || V.type === "mcpb-extract-failed" || V.type === "mcpb-invalid-manifest") {
-                let K = `Plugin MCP loading error - ${V.type}: ${BM(V)}`;
+                let K = `Plugin MCP loading error - TextComponent{V.type}: TextComponent{BM(V)}`;
                 e(Error(K))
             } else {
                 let K = V.type;
-                g(`Plugin not available for MCP: ${V.source} - error type: ${K}`)
+                g(`Plugin not available for MCP: TextComponent{V.source} - error type: TextComponent{K}`)
             } for (let V of I.enabled) {
         let K = await U6B(V, Y);
         if (K) Object.assign(Z, K)
     }
     if (Y.length > 0)
         for (let V of Y) {
-            let K = `Plugin MCP server error - ${V.type}: ${BM(V)}`;
+            let K = `Plugin MCP server error - TextComponent{V.type}: TextComponent{BM(V)}`;
             e(Error(K))
         }
     let J = {};

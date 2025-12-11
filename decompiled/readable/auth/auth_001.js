@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_001.js
+ * 处理时间: 2025-12-09T03:41:36.343Z
+ * 变量映射: 14 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.886Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -22,7 +25,7 @@ var HM9 = 1,
     XC0 = "[object Array]",
     h_A = "[object Object]",
     CM9, FC0, VC0;
-var KC0 = L(() => {
+var KC0 = lazyLoader(() => {
     rFA();
     SW1();
     yH0();
@@ -40,11 +43,11 @@ function DC0(A, Q, B, G, Z) {
     if (A == null || Q == null || !zF(A) && !zF(Q)) return A !== A && Q !== Q;
     return VC0(A, Q, B, G, DC0, Z)
 }
-var bBA;
-var g_A = L(() => {
+var baseIsEqual;
+var g_A = lazyLoader(() => {
     KC0();
     Mj();
-    bBA = DC0
+    baseIsEqual = DC0
 });
 
 function $M9(A, Q, B, G) {
@@ -67,7 +70,7 @@ function $M9(A, Q, B, G) {
         } else {
             var V = new Lj;
             if (G) var K = G(X, F, W, A, Q, V);
-            if (!(K === void 0 ? bBA(F, X, zM9 | UM9, G, V) : K)) return !1
+            if (!(K === void 0 ? baseIsEqual(F, X, zM9 | UM9, G, V) : K)) return !1
         }
     }
     return !0
@@ -75,23 +78,23 @@ function $M9(A, Q, B, G) {
 var zM9 = 1,
     UM9 = 2,
     HC0;
-var CC0 = L(() => {
+var CC0 = lazyLoader(() => {
     rFA();
     g_A();
     HC0 = $M9
 });
 
 function wM9(A) {
-    return A === A && !TY(A)
+    return A === A && !isObject(A)
 }
 var u_A;
-var dW1 = L(() => {
+var dW1 = lazyLoader(() => {
     jN();
     u_A = wM9
 });
 
 function qM9(A) {
-    var Q = SN(A),
+    var Q = keys(A),
         B = Q.length;
     while (B--) {
         var G = Q[B],
@@ -101,7 +104,7 @@ function qM9(A) {
     return Q
 }
 var EC0;
-var zC0 = L(() => {
+var zC0 = lazyLoader(() => {
     dW1();
     Hs();
     EC0 = qM9
@@ -114,7 +117,7 @@ function NM9(A, Q) {
     }
 }
 var m_A;
-var cW1 = L(() => {
+var cW1 = lazyLoader(() => {
     m_A = NM9
 });
 
@@ -126,7 +129,7 @@ function LM9(A) {
     }
 }
 var UC0;
-var $C0 = L(() => {
+var $C0 = lazyLoader(() => {
     CC0();
     zC0();
     cW1();
@@ -138,23 +141,23 @@ function OM9(A) {
 }
 var MM9 = "[object Symbol]",
     fBA;
-var d_A = L(() => {
+var d_A = lazyLoader(() => {
     Vs();
     Mj();
     fBA = OM9
 });
 
 function PM9(A, Q) {
-    if (j7(A)) return !1;
+    if (isArray(A)) return !1;
     var B = typeof A;
     if (B == "number" || B == "symbol" || B == "boolean" || A == null || fBA(A)) return !0;
     return TM9.test(A) || !RM9.test(A) || Q != null && A in Object(Q)
 }
 var RM9, TM9, hBA;
-var c_A = L(() => {
+var c_A = lazyLoader(() => {
     gC();
     d_A();
-    RM9 = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/, TM9 = /^\w*$/;
+    RM9 = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/, TM9 = /^\w*TextComponent/;
     hBA = PM9
 });
 
@@ -168,14 +171,14 @@ function SM9(A) {
 }
 var jM9 = 500,
     wC0;
-var qC0 = L(() => {
+var qC0 = lazyLoader(() => {
     o2();
     wC0 = SM9
 });
 var _M9, kM9, yM9, NC0;
-var LC0 = L(() => {
+var LC0 = lazyLoader(() => {
     qC0();
-    _M9 = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g, kM9 = /\\(\\)?/g, yM9 = wC0(function(A) {
+    _M9 = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|TextComponent))/g, kM9 = /\\(\\)?/g, yM9 = wC0(function(A) {
         var Q = [];
         if (A.charCodeAt(0) === 46) Q.push("");
         return A.replace(_M9, function(B, G, Z, I) {
@@ -191,49 +194,49 @@ function xM9(A, Q) {
     while (++B < G) Z[B] = Q(A[B], B, A);
     return Z
 }
-var gBA;
-var p_A = L(() => {
-    gBA = xM9
+var arrayMap;
+var p_A = lazyLoader(() => {
+    arrayMap = xM9
 });
 
 function RC0(A) {
     if (typeof A == "string") return A;
-    if (j7(A)) return gBA(A, RC0) + "";
+    if (isArray(A)) return arrayMap(A, RC0) + "";
     if (fBA(A)) return OC0 ? OC0.call(A) : "";
     var Q = A + "";
     return Q == "0" && 1 / A == -vM9 ? "-0" : Q
 }
 var vM9 = 1 / 0,
     MC0, OC0, TC0;
-var PC0 = L(() => {
+var PC0 = lazyLoader(() => {
     Fs();
     p_A();
     gC();
     d_A();
-    MC0 = HV ? HV.prototype : void 0, OC0 = MC0 ? MC0.toString : void 0;
+    MC0 = Symbol ? Symbol.prototype : void 0, OC0 = MC0 ? MC0.toString : void 0;
     TC0 = RC0
 });
 
 function bM9(A) {
     return A == null ? "" : TC0(A)
 }
-var uBA;
-var l_A = L(() => {
+var toString;
+var l_A = lazyLoader(() => {
     PC0();
-    uBA = bM9
+    toString = bM9
 });
 
 function fM9(A, Q) {
-    if (j7(A)) return A;
-    return hBA(A, Q) ? [A] : NC0(uBA(A))
+    if (isArray(A)) return A;
+    return hBA(A, Q) ? [A] : NC0(toString(A))
 }
-var Pj;
-var mBA = L(() => {
+var castPath;
+var mBA = lazyLoader(() => {
     gC();
     c_A();
     LC0();
     l_A();
-    Pj = fM9
+    castPath = fM9
 });
 
 function gM9(A) {
@@ -242,32 +245,32 @@ function gM9(A) {
     return Q == "0" && 1 / A == -hM9 ? "-0" : Q
 }
 var hM9 = 1 / 0,
-    _N;
-var Es = L(() => {
+    toKey;
+var Es = lazyLoader(() => {
     d_A();
-    _N = gM9
+    toKey = gM9
 });
 
 function uM9(A, Q) {
-    Q = Pj(Q, A);
+    Q = castPath(Q, A);
     var B = 0,
         G = Q.length;
-    while (A != null && B < G) A = A[_N(Q[B++])];
+    while (A != null && B < G) A = A[toKey(Q[B++])];
     return B && B == G ? A : void 0
 }
-var dBA;
-var i_A = L(() => {
+var baseGet;
+var i_A = lazyLoader(() => {
     mBA();
     Es();
-    dBA = uM9
+    baseGet = uM9
 });
 
 function mM9(A, Q, B) {
-    var G = A == null ? void 0 : dBA(A, Q);
+    var G = A == null ? void 0 : baseGet(A, Q);
     return G === void 0 ? B : G
 }
 var jC0;
-var SC0 = L(() => {
+var SC0 = lazyLoader(() => {
     i_A();
     jC0 = mM9
 });
@@ -276,25 +279,25 @@ function dM9(A, Q) {
     return A != null && Q in Object(A)
 }
 var _C0;
-var kC0 = L(() => {
+var kC0 = lazyLoader(() => {
     _C0 = dM9
 });
 
 function cM9(A, Q, B) {
-    Q = Pj(Q, A);
+    Q = castPath(Q, A);
     var G = -1,
         Z = Q.length,
         I = !1;
     while (++G < Z) {
-        var Y = _N(Q[G]);
+        var Y = toKey(Q[G]);
         if (!(I = A != null && B(A, Y))) break;
         A = A[Y]
     }
     if (I || ++G != Z) return I;
-    return Z = A == null ? 0 : A.length, !!Z && _BA(Z) && xu(Y, Z) && (j7(A) || px(A))
+    return Z = A == null ? 0 : A.length, !!Z && _BA(Z) && isIndex(Y, Z) && (isArray(A) || isArguments(A))
 }
 var yC0;
-var xC0 = L(() => {
+var xC0 = lazyLoader(() => {
     mBA();
     oFA();
     gC();
@@ -308,23 +311,23 @@ function pM9(A, Q) {
     return A != null && yC0(A, Q, _C0)
 }
 var vC0;
-var bC0 = L(() => {
+var bC0 = lazyLoader(() => {
     kC0();
     xC0();
     vC0 = pM9
 });
 
 function nM9(A, Q) {
-    if (hBA(A) && u_A(Q)) return m_A(_N(A), Q);
+    if (hBA(A) && u_A(Q)) return m_A(toKey(A), Q);
     return function(B) {
         var G = jC0(B, A);
-        return G === void 0 && G === Q ? vC0(B, A) : bBA(Q, G, lM9 | iM9)
+        return G === void 0 && G === Q ? vC0(B, A) : baseIsEqual(Q, G, lM9 | iM9)
     }
 }
 var lM9 = 1,
     iM9 = 2,
     fC0;
-var hC0 = L(() => {
+var hC0 = lazyLoader(() => {
     g_A();
     SC0();
     bC0();
@@ -339,7 +342,7 @@ function aM9(A) {
     return A
 }
 var cBA;
-var n_A = L(() => {
+var n_A = lazyLoader(() => {
     cBA = aM9
 });
 
@@ -349,26 +352,26 @@ function sM9(A) {
     }
 }
 var gC0;
-var uC0 = L(() => {
+var uC0 = lazyLoader(() => {
     gC0 = sM9
 });
 
 function rM9(A) {
     return function(Q) {
-        return dBA(Q, A)
+        return baseGet(Q, A)
     }
 }
 var mC0;
-var dC0 = L(() => {
+var dC0 = lazyLoader(() => {
     i_A();
     mC0 = rM9
 });
 
 function oM9(A) {
-    return hBA(A) ? gC0(_N(A)) : mC0(A)
+    return hBA(A) ? gC0(toKey(A)) : mC0(A)
 }
 var cC0;
-var pC0 = L(() => {
+var pC0 = lazyLoader(() => {
     uC0();
     dC0();
     c_A();
@@ -379,17 +382,17 @@ var pC0 = L(() => {
 function tM9(A) {
     if (typeof A == "function") return A;
     if (A == null) return cBA;
-    if (typeof A == "object") return j7(A) ? fC0(A[0], A[1]) : UC0(A);
+    if (typeof A == "object") return isArray(A) ? fC0(A[0], A[1]) : UC0(A);
     return cC0(A)
 }
-var jj;
-var pBA = L(() => {
+var baseIteratee;
+var pBA = lazyLoader(() => {
     $C0();
     hC0();
     n_A();
     gC();
     pC0();
-    jj = tM9
+    baseIteratee = tM9
 });
 
 function eM9(A, Q) {
@@ -402,21 +405,21 @@ function eM9(A, Q) {
     return B
 }
 var lC0;
-var iC0 = L(() => {
+var iC0 = lazyLoader(() => {
     lC0 = eM9
 });
 
 function AO9(A, Q) {
-    return A && A.length ? lC0(A, jj(Q, 2)) : 0
+    return A && A.length ? lC0(A, baseIteratee(Q, 2)) : 0
 }
 var lBA;
-var nC0 = L(() => {
+var nC0 = lazyLoader(() => {
     pBA();
     iC0();
     lBA = AO9
 });
 var a_A, s_A;
-var r_A = L(() => {
+var r_A = lazyLoader(() => {
     a_A = {
         name: "BASH_MAX_OUTPUT_LENGTH",
         default: 30000,
@@ -429,12 +432,12 @@ var r_A = L(() => {
             if (isNaN(G) || G <= 0) return {
                 effective: 30000,
                 status: "invalid",
-                message: `Invalid value "${A}" (using default: 30000)`
+                message: `Invalid value "TextComponent{A}" (using default: 30000)`
             };
             if (G > 150000) return {
                 effective: 150000,
                 status: "capped",
-                message: `Capped from ${G} to 150000`
+                message: `Capped from TextComponent{G} to 150000`
             };
             return {
                 effective: G,
@@ -453,12 +456,12 @@ var r_A = L(() => {
             if (isNaN(G) || G <= 0) return {
                 effective: 32000,
                 status: "invalid",
-                message: `Invalid value "${A}" (using default: 32000)`
+                message: `Invalid value "TextComponent{A}" (using default: 32000)`
             };
             if (G > 64000) return {
                 effective: 64000,
                 status: "capped",
-                message: `Capped from ${G} to 64000`
+                message: `Capped from TextComponent{G} to 64000`
             };
             return {
                 effective: G,
@@ -899,7 +902,7 @@ function JVA() {
     return JQ.planSlugCache
 }
 var JQ;
-var S0 = L(() => {
+var S0 = lazyLoader(() => {
     nC0();
     r_A();
     JQ = GO9()
@@ -914,16 +917,16 @@ function fE0({
     let Z = [],
         I = null;
 
-function Y() {
+    function Y() {
         if (I) clearTimeout(I), I = null
     }
 
-function J() {
+    function J() {
         if (Z.length === 0) return;
         A(Z.join("")), Z = [], Y()
     }
 
-function W() {
+    function W() {
         if (!I) I = setTimeout(J, Q)
     }
     return {
@@ -944,12 +947,11 @@ function W() {
 function wG(A) {
     return GX1.add(A), () => GX1.delete(A)
 }
-// Async function: hE0
 async function hE0() {
     await Promise.all(Array.from(GX1).map((A) => A()))
 }
 var GX1;
-var XH = L(() => {
+var XH = lazyLoader(() => {
     GX1 = new Set
 });
 import {
@@ -989,7 +991,7 @@ function g(A, {
     if (!IO9(A)) return;
     if (uE0 && A.includes(`
 `)) A = JSON.stringify(A);
-    let G = `${new Date().toISOString()} [${Q.toUpperCase()}] ${A.trim()}
+    let G = `TextComponent{new Date().toISOString()} [TextComponent{Q.toUpperCase()}] TextComponent{A.trim()}
 `;
     if (Sj()) {
         qj(G);
@@ -999,7 +1001,7 @@ function g(A, {
 }
 
 function WVA() {
-    return process.env.CLAUDE_CODE_DEBUG_LOGS_DIR ?? gE0(PQ(), "debug", `${G0()}.txt`)
+    return process.env.CLAUDE_CODE_DEBUG_LOGS_DIR ?? gE0(PQ(), "debug", `TextComponent{G0()}.txt`)
 }
 
 function yN(A, Q) {
@@ -1008,7 +1010,7 @@ function yN(A, Q) {
 var tBA, ZO9, Sj, uE0 = !1,
     YkA = null,
     JO9;
-var D0 = L(() => {
+var D0 = lazyLoader(() => {
     o2();
     FH0();
     o0();
@@ -1016,7 +1018,7 @@ var D0 = L(() => {
     S0();
     XH();
     tBA = t1(() => {
-        return V0(process.env.DEBUG) || V0(process.env.DEBUG_SDK) || process.argv.includes("--debug") || process.argv.includes("-d") || Sj() || process.argv.some((A) => A.startsWith("--debug="))
+        return parseBoolean(process.env.DEBUG) || parseBoolean(process.env.DEBUG_SDK) || process.argv.includes("--debug") || process.argv.includes("-d") || Sj() || process.argv.some((A) => A.startsWith("--debug="))
     }), ZO9 = t1(() => {
         let A = process.argv.find((B) => B.startsWith("--debug="));
         if (!A) return null;
@@ -1038,7 +1040,7 @@ var D0 = L(() => {
         } catch {}
     })
 });
-var VA = U((LO9) => {
+var VA = moduleWrapper((LO9) => {
     var XVA = Symbol.for("react.element"),
         WO9 = Symbol.for("react.portal"),
         XO9 = Symbol.for("react.fragment"),
@@ -1052,12 +1054,11 @@ var VA = U((LO9) => {
         zO9 = Symbol.for("react.lazy"),
         dE0 = Symbol.iterator;
 
-function UO9(A) {
+    function UO9(A) {
         if (A === null || typeof A !== "object") return null;
         return A = dE0 && A[dE0] || A["@@iterator"], typeof A === "function" ? A : null
     }
-
-var lE0 = {
+    var lE0 = {
             isMounted: function() {
                 return !1
             },
@@ -1068,7 +1069,7 @@ var lE0 = {
         iE0 = Object.assign,
         nE0 = {};
 
-function eBA(A, Q, B) {
+    function eBA(A, Q, B) {
         this.props = A, this.context = Q, this.refs = nE0, this.updater = B || lE0
     }
     eBA.prototype.isReactComponent = {};
@@ -1080,10 +1081,10 @@ function eBA(A, Q, B) {
         this.updater.enqueueForceUpdate(this, A, "forceUpdate")
     };
 
-function aE0() {}
+    function aE0() {}
     aE0.prototype = eBA.prototype;
 
-function YX1(A, Q, B) {
+    function YX1(A, Q, B) {
         this.props = A, this.context = Q, this.refs = nE0, this.updater = B || lE0
     }
     var JX1 = YX1.prototype = new aE0;
@@ -1102,7 +1103,7 @@ function YX1(A, Q, B) {
             __source: !0
         };
 
-function oE0(A, Q, B) {
+    function oE0(A, Q, B) {
         var G, Z = {},
             I = null,
             Y = null;
@@ -1137,26 +1138,26 @@ function oE0(A, Q, B) {
         }
     }
 
-function XX1(A) {
+    function XX1(A) {
         return typeof A === "object" && A !== null && A.$$typeof === XVA
     }
 
-function wO9(A) {
+    function wO9(A) {
         var Q = {
             "=": "=0",
             ":": "=2"
         };
-        return "$" + A.replace(/[=:]/g, function(B) {
+        return "TextComponent" + A.replace(/[=:]/g, function(B) {
             return Q[B]
         })
     }
     var pE0 = /\/+/g;
 
-function IX1(A, Q) {
+    function IX1(A, Q) {
         return typeof A === "object" && A !== null && A.key != null ? wO9("" + A.key) : Q.toString(36)
     }
 
-function WkA(A, Q, B, G, Z) {
+    function WkA(A, Q, B, G, Z) {
         var I = typeof A;
         if (I === "undefined" || I === "boolean") A = null;
         var Y = !1;
@@ -1173,9 +1174,9 @@ function WkA(A, Q, B, G, Z) {
                         Y = !0
                 }
         }
-        if (Y) return Y = A, Z = Z(Y), A = G === "" ? "." + IX1(Y, 0) : G, cE0(Z) ? (B = "", A != null && (B = A.replace(pE0, "$&/") + "/"), WkA(Z, Q, B, "", function(X) {
+        if (Y) return Y = A, Z = Z(Y), A = G === "" ? "." + IX1(Y, 0) : G, cE0(Z) ? (B = "", A != null && (B = A.replace(pE0, "TextComponent&/") + "/"), WkA(Z, Q, B, "", function(X) {
             return X
-        })) : Z != null && (XX1(Z) && (Z = $O9(Z, B + (!Z.key || Y && Y.key === Z.key ? "" : ("" + Z.key).replace(pE0, "$&/") + "/") + A)), Q.push(Z)), 1;
+        })) : Z != null && (XX1(Z) && (Z = $O9(Z, B + (!Z.key || Y && Y.key === Z.key ? "" : ("" + Z.key).replace(pE0, "TextComponent&/") + "/") + A)), Q.push(Z)), 1;
         if (Y = 0, G = G === "" ? "." : G + ":", cE0(A))
             for (var J = 0; J < A.length; J++) {
                 I = A[J];
@@ -1187,17 +1188,16 @@ function WkA(A, Q, B, G, Z) {
         return Y
     }
 
-function JkA(A, Q, B) {
+    function JkA(A, Q, B) {
         if (A == null) return A;
-
-var G = [],
+        var G = [],
             Z = 0;
         return WkA(A, G, "", "", function(I) {
             return Q.call(B, I, Z++)
         }), G
     }
 
-function qO9(A) {
+    function qO9(A) {
         if (A._status === -1) {
             var Q = A._result;
             Q = Q(), Q.then(function(B) {
@@ -1209,8 +1209,7 @@ function qO9(A) {
         if (A._status === 1) return A._result.default;
         throw A._result
     }
-
-var uC = {
+    var uC = {
             current: null
         },
         XkA = {
@@ -1222,7 +1221,7 @@ var uC = {
             ReactCurrentOwner: WX1
         };
 
-function tE0() {
+    function tE0() {
         throw Error("act(...) is not supported in production builds of React.")
     }
     LO9.Children = {
@@ -1463,7 +1462,7 @@ var YR9, VX1, VkA, VR = (A) => {
         let Q;
         return A && (typeof FormData === "function" && A instanceof FormData || n$(A.append) && ((Q = VkA(A)) === "formdata" || Q === "object" && n$(A.toString) && A.toString() === "[object FormData]"))
     },
-    zR9, UR9, $R9, wR9, qR9, NR9 = (A) => A.trim ? A.trim() : A.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, ""),
+    zR9, UR9, $R9, wR9, qR9, NR9 = (A) => A.trim ? A.trim() : A.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+TextComponent/g, ""),
     Us, Gz0 = (A) => !VVA(A) && A !== Us,
     LR9 = (A, Q, B, {
         allOwnKeys: G

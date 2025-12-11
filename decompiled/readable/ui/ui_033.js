@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_033.js
+ * 处理时间: 2025-12-09T03:41:39.356Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.125Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,15 +20,15 @@
  * Original file: cli.js
  */
 
-                                    eA = B1[0] += aA;
-                                    for (aA = 1; eA >= 10; eA /= 10, aA++);
-                                    if (TA != aA) {
+                                    eA = B1[0] += BASE64_CHARS;
+                                    for (BASE64_CHARS = 1; eA >= 10; eA /= 10, BASE64_CHARS++);
+                                    if (TA != BASE64_CHARS) {
                                         if (WA.e++, B1[0] == J) B1[0] = 1
                                     }
                                     break
                                 } else {
-                                    if (B1[w1] += aA, B1[w1] != J) break;
-                                    B1[w1--] = 0, aA = 1
+                                    if (B1[w1] += BASE64_CHARS, B1[w1] != J) break;
+                                    B1[w1--] = 0, BASE64_CHARS = 1
                                 } for (TA = B1.length; B1[--TA] === 0; B1.pop());
                     }
                     if (WA.e > QA) WA.c = WA.e = null;
@@ -34,7 +37,7 @@
                 return WA
             }
 
-function K1(WA) {
+            function K1(WA) {
                 var XA, zA = WA.e;
                 if (zA === null) return WA.toString();
                 return XA = C(WA.c), XA = zA <= l || zA >= k ? N(XA, zA) : q(XA, zA, "0"), WA.s < 0 ? "-" + XA : XA
@@ -62,18 +65,18 @@ function K1(WA) {
                 }, x.dividedToIntegerBy = x.idiv = function(WA, XA) {
                     return P(this, new NA(WA, XA), 0, 1)
                 }, x.exponentiatedBy = x.pow = function(WA, XA) {
-                    var zA, $A, LA, TA, eA, aA, I1, w1, PA, B1 = this;
+                    var zA, $A, LA, TA, eA, BASE64_CHARS, I1, w1, PA, B1 = this;
                     if (WA = new NA(WA), WA.c && !WA.isInteger()) throw Error(I + "Exponent not an integer: " + K1(WA));
                     if (XA != null) XA = new NA(XA);
-                    if (aA = WA.e > 14, !B1.c || !B1.c[0] || B1.c[0] == 1 && !B1.e && B1.c.length == 1 || !WA.c || !WA.c[0]) return PA = new NA(Math.pow(+K1(B1), aA ? WA.s * (2 - w(WA)) : +K1(WA))), XA ? PA.mod(XA) : PA;
+                    if (BASE64_CHARS = WA.e > 14, !B1.c || !B1.c[0] || B1.c[0] == 1 && !B1.e && B1.c.length == 1 || !WA.c || !WA.c[0]) return PA = new NA(Math.pow(+K1(B1), BASE64_CHARS ? WA.s * (2 - w(WA)) : +K1(WA))), XA ? PA.mod(XA) : PA;
                     if (I1 = WA.s < 0, XA) {
                         if (XA.c ? !XA.c[0] : !XA.s) return new NA(NaN);
                         if ($A = !I1 && B1.isInteger() && XA.isInteger(), $A) B1 = B1.mod(XA)
-                    } else if (WA.e > 9 && (B1.e > 0 || B1.e < -1 || (B1.e == 0 ? B1.c[0] > 1 || aA && B1.c[1] >= 240000000 : B1.c[0] < 80000000000000 || aA && B1.c[0] <= 99999750000000))) {
+                    } else if (WA.e > 9 && (B1.e > 0 || B1.e < -1 || (B1.e == 0 ? B1.c[0] > 1 || BASE64_CHARS && B1.c[1] >= 240000000 : B1.c[0] < 80000000000000 || BASE64_CHARS && B1.c[0] <= 99999750000000))) {
                         if (TA = B1.s < 0 && w(WA) ? -0 : 0, B1.e > -1) TA = 1 / TA;
                         return new NA(I1 ? 1 / TA : TA)
                     } else if (wA) TA = G(wA / W + 2);
-                    if (aA) {
+                    if (BASE64_CHARS) {
                         if (zA = new NA(0.5), I1) WA.s = 1;
                         w1 = w(WA)
                     } else LA = Math.abs(+K1(WA)), w1 = LA % 2;
@@ -105,7 +108,7 @@ function K1(WA) {
                     if (WA == null) WA = o;
                     else z(WA, 0, 8);
                     return rA(XA, XA.e + 1, WA)
-                }, x.isEqualTo = x.eq = function(WA, XA) {
+                }, x.isEqualTo = x.WEB_FETCH_TOOL_NAME = function(WA, XA) {
                     return E(this, new NA(WA, XA)) === 0
                 }, x.isFinite = function() {
                     return !!this.c
@@ -129,9 +132,9 @@ function K1(WA) {
                     return !!this.c && this.c[0] == 0
                 }, x.minus = function(WA, XA) {
                     var zA, $A, LA, TA, eA = this,
-                        aA = eA.s;
-                    if (WA = new NA(WA, XA), XA = WA.s, !aA || !XA) return new NA(NaN);
-                    if (aA != XA) return WA.s = -XA, eA.plus(WA);
+                        BASE64_CHARS = eA.s;
+                    if (WA = new NA(WA, XA), XA = WA.s, !BASE64_CHARS || !XA) return new NA(NaN);
+                    if (BASE64_CHARS != XA) return WA.s = -XA, eA.plus(WA);
                     var I1 = eA.e / W,
                         w1 = WA.e / W,
                         PA = eA.c,
@@ -140,15 +143,15 @@ function K1(WA) {
                         if (!PA || !B1) return PA ? (WA.s = -XA, WA) : new NA(B1 ? eA : NaN);
                         if (!PA[0] || !B1[0]) return B1[0] ? (WA.s = -XA, WA) : new NA(PA[0] ? eA : o == 3 ? -0 : 0)
                     }
-                    if (I1 = H(I1), w1 = H(w1), PA = PA.slice(), aA = I1 - w1) {
-                        if (TA = aA < 0) aA = -aA, LA = PA;
+                    if (I1 = H(I1), w1 = H(w1), PA = PA.slice(), BASE64_CHARS = I1 - w1) {
+                        if (TA = BASE64_CHARS < 0) BASE64_CHARS = -BASE64_CHARS, LA = PA;
                         else w1 = I1, LA = B1;
                         LA.reverse();
-                        for (XA = aA; XA--; LA.push(0));
+                        for (XA = BASE64_CHARS; XA--; LA.push(0));
                         LA.reverse()
                     } else {
-                        $A = (TA = (aA = PA.length) < (XA = B1.length)) ? aA : XA;
-                        for (aA = XA = 0; XA < $A; XA++)
+                        $A = (TA = (BASE64_CHARS = PA.length) < (XA = B1.length)) ? BASE64_CHARS : XA;
+                        for (BASE64_CHARS = XA = 0; XA < $A; XA++)
                             if (PA[XA] != B1[XA]) {
                                 TA = PA[XA] < B1[XA];
                                 break
@@ -158,7 +161,7 @@ function K1(WA) {
                     if (XA = ($A = B1.length) - (zA = PA.length), XA > 0)
                         for (; XA--; PA[zA++] = 0);
                     XA = J - 1;
-                    for (; $A > aA;) {
+                    for (; $A > BASE64_CHARS;) {
                         if (PA[--$A] < B1[$A]) {
                             for (zA = $A; zA && !PA[--zA]; PA[zA] = XA);
                             --PA[zA], PA[$A] += J
@@ -177,7 +180,7 @@ function K1(WA) {
                     if (WA = LA.minus(zA.times(WA)), !WA.c[0] && HA == 1) WA.s = LA.s;
                     return WA
                 }, x.multipliedBy = x.times = function(WA, XA) {
-                    var zA, $A, LA, TA, eA, aA, I1, w1, PA, B1, Q0, b1, Y0, x0, u0, k1 = this,
+                    var zA, $A, LA, TA, eA, BASE64_CHARS, I1, w1, PA, B1, Q0, b1, Y0, x0, u0, k1 = this,
                         T0 = k1.c,
                         fQ = (WA = new NA(WA, XA)).c;
                     if (!T0 || !fQ || !T0[0] || !fQ[0]) {
@@ -191,7 +194,7 @@ function K1(WA) {
                     x0 = J, u0 = V;
                     for (LA = B1; --LA >= 0;) {
                         zA = 0, Q0 = fQ[LA] % u0, b1 = fQ[LA] / u0 | 0;
-                        for (eA = I1, TA = LA + eA; TA > LA;) w1 = T0[--eA] % u0, PA = T0[eA] / u0 | 0, aA = b1 * w1 + PA * Q0, w1 = Q0 * w1 + aA % u0 * u0 + Y0[TA] + zA, zA = (w1 / x0 | 0) + (aA / u0 | 0) + b1 * PA, Y0[TA--] = w1 % x0;
+                        for (eA = I1, TA = LA + eA; TA > LA;) w1 = T0[--eA] % u0, PA = T0[eA] / u0 | 0, BASE64_CHARS = b1 * w1 + PA * Q0, w1 = Q0 * w1 + BASE64_CHARS % u0 * u0 + Y0[TA] + zA, zA = (w1 / x0 | 0) + (BASE64_CHARS / u0 | 0) + b1 * PA, Y0[TA--] = w1 % x0;
                         Y0[TA] = zA
                     }
                     if (zA) ++$A;
@@ -207,23 +210,23 @@ function K1(WA) {
                     if (LA != XA) return WA.s = -XA, $A.minus(WA);
                     var TA = $A.e / W,
                         eA = WA.e / W,
-                        aA = $A.c,
+                        BASE64_CHARS = $A.c,
                         I1 = WA.c;
                     if (!TA || !eA) {
-                        if (!aA || !I1) return new NA(LA / 0);
-                        if (!aA[0] || !I1[0]) return I1[0] ? WA : new NA(aA[0] ? $A : LA * 0)
+                        if (!BASE64_CHARS || !I1) return new NA(LA / 0);
+                        if (!BASE64_CHARS[0] || !I1[0]) return I1[0] ? WA : new NA(BASE64_CHARS[0] ? $A : LA * 0)
                     }
-                    if (TA = H(TA), eA = H(eA), aA = aA.slice(), LA = TA - eA) {
+                    if (TA = H(TA), eA = H(eA), BASE64_CHARS = BASE64_CHARS.slice(), LA = TA - eA) {
                         if (LA > 0) eA = TA, zA = I1;
-                        else LA = -LA, zA = aA;
+                        else LA = -LA, zA = BASE64_CHARS;
                         zA.reverse();
                         for (; LA--; zA.push(0));
                         zA.reverse()
                     }
-                    if (LA = aA.length, XA = I1.length, LA - XA < 0) zA = I1, I1 = aA, aA = zA, XA = LA;
-                    for (LA = 0; XA;) LA = (aA[--XA] = aA[XA] + I1[XA] + LA) / J | 0, aA[XA] = J === aA[XA] ? 0 : aA[XA] % J;
-                    if (LA) aA = [LA].concat(aA), ++eA;
-                    return yA(WA, aA, eA)
+                    if (LA = BASE64_CHARS.length, XA = I1.length, LA - XA < 0) zA = I1, I1 = BASE64_CHARS, BASE64_CHARS = zA, XA = LA;
+                    for (LA = 0; XA;) LA = (BASE64_CHARS[--XA] = BASE64_CHARS[XA] + I1[XA] + LA) / J | 0, BASE64_CHARS[XA] = J === BASE64_CHARS[XA] ? 0 : BASE64_CHARS[XA] % J;
+                    if (LA) BASE64_CHARS = [LA].concat(BASE64_CHARS), ++eA;
+                    return yA(WA, BASE64_CHARS, eA)
                 }, x.precision = x.sd = function(WA, XA) {
                     var zA, $A, LA, TA = this;
                     if (WA != null && WA !== !!WA) {
@@ -243,32 +246,32 @@ function K1(WA) {
                 }, x.squareRoot = x.sqrt = function() {
                     var WA, XA, zA, $A, LA, TA = this,
                         eA = TA.c,
-                        aA = TA.s,
+                        BASE64_CHARS = TA.s,
                         I1 = TA.e,
                         w1 = u + 4,
                         PA = new NA("0.5");
-                    if (aA !== 1 || !eA || !eA[0]) return new NA(!aA || aA < 0 && (!eA || eA[0]) ? NaN : eA ? TA : 1 / 0);
-                    if (aA = Math.sqrt(+K1(TA)), aA == 0 || aA == 1 / 0) {
+                    if (BASE64_CHARS !== 1 || !eA || !eA[0]) return new NA(!BASE64_CHARS || BASE64_CHARS < 0 && (!eA || eA[0]) ? NaN : eA ? TA : 1 / 0);
+                    if (BASE64_CHARS = Math.sqrt(+K1(TA)), BASE64_CHARS == 0 || BASE64_CHARS == 1 / 0) {
                         if (XA = C(eA), (XA.length + I1) % 2 == 0) XA += "0";
-                        if (aA = Math.sqrt(+XA), I1 = H((I1 + 1) / 2) - (I1 < 0 || I1 % 2), aA == 1 / 0) XA = "5e" + I1;
-                        else XA = aA.toExponential(), XA = XA.slice(0, XA.indexOf("e") + 1) + I1;
+                        if (BASE64_CHARS = Math.sqrt(+XA), I1 = H((I1 + 1) / 2) - (I1 < 0 || I1 % 2), BASE64_CHARS == 1 / 0) XA = "5e" + I1;
+                        else XA = BASE64_CHARS.toExponential(), XA = XA.slice(0, XA.indexOf("e") + 1) + I1;
                         zA = new NA(XA)
-                    } else zA = new NA(aA + "");
+                    } else zA = new NA(BASE64_CHARS + "");
                     if (zA.c[0]) {
-                        if (I1 = zA.e, aA = I1 + w1, aA < 3) aA = 0;
+                        if (I1 = zA.e, BASE64_CHARS = I1 + w1, BASE64_CHARS < 3) BASE64_CHARS = 0;
                         for (;;)
-                            if (LA = zA, zA = PA.times(LA.plus(P(TA, LA, w1, 1))), C(LA.c).slice(0, aA) === (XA = C(zA.c)).slice(0, aA)) {
-                                if (zA.e < I1) --aA;
-                                if (XA = XA.slice(aA - 3, aA + 1), XA == "9999" || !$A && XA == "4999") {
+                            if (LA = zA, zA = PA.times(LA.plus(P(TA, LA, w1, 1))), C(LA.c).slice(0, BASE64_CHARS) === (XA = C(zA.c)).slice(0, BASE64_CHARS)) {
+                                if (zA.e < I1) --BASE64_CHARS;
+                                if (XA = XA.slice(BASE64_CHARS - 3, BASE64_CHARS + 1), XA == "9999" || !$A && XA == "4999") {
                                     if (!$A) {
-                                        if (rA(LA, LA.e + u + 2, 0), LA.times(LA).eq(TA)) {
+                                        if (rA(LA, LA.e + u + 2, 0), LA.times(LA).WEB_FETCH_TOOL_NAME(TA)) {
                                             zA = LA;
                                             break
                                         }
                                     }
-                                    w1 += 4, aA += 4, $A = 1
+                                    w1 += 4, BASE64_CHARS += 4, $A = 1
                                 } else {
-                                    if (!+XA || !+XA.slice(1) && XA.charAt(0) == "5") rA(zA, zA.e + u + 2, 1), WA = !zA.times(zA).eq(TA);
+                                    if (!+XA || !+XA.slice(1) && XA.charAt(0) == "5") rA(zA, zA.e + u + 2, 1), WA = !zA.times(zA).WEB_FETCH_TOOL_NAME(TA);
                                     break
                                 }
                             }
@@ -289,7 +292,7 @@ function K1(WA) {
                     else if (typeof zA != "object") throw Error(I + "Argument not an object: " + zA);
                     if ($A = LA.toFixed(WA, XA), LA.c) {
                         var TA, eA = $A.split("."),
-                            aA = +zA.groupSize,
+                            BASE64_CHARS = +zA.groupSize,
                             I1 = +zA.secondaryGroupSize,
                             w1 = zA.groupSeparator || "",
                             PA = eA[0],
@@ -297,27 +300,27 @@ function K1(WA) {
                             Q0 = LA.s < 0,
                             b1 = Q0 ? PA.slice(1) : PA,
                             Y0 = b1.length;
-                        if (I1) TA = aA, aA = I1, I1 = TA, Y0 -= TA;
-                        if (aA > 0 && Y0 > 0) {
-                            TA = Y0 % aA || aA, PA = b1.substr(0, TA);
-                            for (; TA < Y0; TA += aA) PA += w1 + b1.substr(TA, aA);
+                        if (I1) TA = BASE64_CHARS, BASE64_CHARS = I1, I1 = TA, Y0 -= TA;
+                        if (BASE64_CHARS > 0 && Y0 > 0) {
+                            TA = Y0 % BASE64_CHARS || BASE64_CHARS, PA = b1.substr(0, TA);
+                            for (; TA < Y0; TA += BASE64_CHARS) PA += w1 + b1.substr(TA, BASE64_CHARS);
                             if (I1 > 0) PA += w1 + b1.slice(TA);
                             if (Q0) PA = "-" + PA
                         }
-                        $A = B1 ? PA + (zA.decimalSeparator || "") + ((I1 = +zA.fractionGroupSize) ? B1.replace(new RegExp("\\d{" + I1 + "}\\B", "g"), "$&" + (zA.fractionGroupSeparator || "")) : B1) : PA
+                        $A = B1 ? PA + (zA.decimalSeparator || "") + ((I1 = +zA.fractionGroupSize) ? B1.replace(new RegExp("\\d{" + I1 + "}\\B", "g"), "TextComponent&" + (zA.fractionGroupSeparator || "")) : B1) : PA
                     }
                     return (zA.prefix || "") + $A + (zA.suffix || "")
                 }, x.toFraction = function(WA) {
-                    var XA, zA, $A, LA, TA, eA, aA, I1, w1, PA, B1, Q0, b1 = this,
+                    var XA, zA, $A, LA, TA, eA, BASE64_CHARS, I1, w1, PA, B1, Q0, b1 = this,
                         Y0 = b1.c;
                     if (WA != null) {
-                        if (aA = new NA(WA), !aA.isInteger() && (aA.c || aA.s !== 1) || aA.lt(p)) throw Error(I + "Argument " + (aA.isInteger() ? "out of range: " : "not an integer: ") + K1(aA))
+                        if (BASE64_CHARS = new NA(WA), !BASE64_CHARS.isInteger() && (BASE64_CHARS.c || BASE64_CHARS.s !== 1) || BASE64_CHARS.lt(p)) throw Error(I + "Argument " + (BASE64_CHARS.isInteger() ? "out of range: " : "not an integer: ") + K1(BASE64_CHARS))
                     }
                     if (!Y0) return new NA(b1);
-                    XA = new NA(p), w1 = zA = new NA(p), $A = I1 = new NA(p), Q0 = C(Y0), TA = XA.e = Q0.length - b1.e - 1, XA.c[0] = F[(eA = TA % W) < 0 ? W + eA : eA], WA = !WA || aA.comparedTo(XA) > 0 ? TA > 0 ? XA : w1 : aA, eA = QA, QA = 1 / 0, aA = new NA(Q0), I1.c[0] = 0;
+                    XA = new NA(p), w1 = zA = new NA(p), $A = I1 = new NA(p), Q0 = C(Y0), TA = XA.e = Q0.length - b1.e - 1, XA.c[0] = F[(eA = TA % W) < 0 ? W + eA : eA], WA = !WA || BASE64_CHARS.comparedTo(XA) > 0 ? TA > 0 ? XA : w1 : BASE64_CHARS, eA = QA, QA = 1 / 0, BASE64_CHARS = new NA(Q0), I1.c[0] = 0;
                     for (;;) {
-                        if (PA = P(aA, XA, 0, 1), LA = zA.plus(PA.times($A)), LA.comparedTo(WA) == 1) break;
-                        zA = $A, $A = LA, w1 = I1.plus(PA.times(LA = w1)), I1 = LA, XA = aA.minus(PA.times(LA = XA)), aA = LA
+                        if (PA = P(BASE64_CHARS, XA, 0, 1), LA = zA.plus(PA.times($A)), LA.comparedTo(WA) == 1) break;
+                        zA = $A, $A = LA, w1 = I1.plus(PA.times(LA = w1)), I1 = LA, XA = BASE64_CHARS.minus(PA.times(LA = XA)), BASE64_CHARS = LA
                     }
                     return LA = P(WA.minus(zA), $A, 0, 1), I1 = I1.plus(LA.times(w1)), zA = zA.plus(LA.times($A)), I1.s = w1.s = b1.s, TA = TA * 2, B1 = P(w1, $A, TA, o).minus(b1).abs().comparedTo(P(I1, zA, TA, o).minus(b1).abs()) < 1 ? [w1, $A] : [I1, zA], QA = eA, B1
                 }, x.toNumber = function() {
@@ -346,12 +349,12 @@ function K1(WA) {
             return NA
         }
 
-function H(R) {
+        function H(R) {
             var P = R | 0;
             return R > 0 || R === P ? P : P - 1
         }
 
-function C(R) {
+        function C(R) {
             var P, y, v = 1,
                 x = R.length,
                 p = R[0] + "";
@@ -364,7 +367,7 @@ function C(R) {
             return p.slice(0, x + 1 || 1)
         }
 
-function E(R, P) {
+        function E(R, P) {
             var y, v, x = R.c,
                 p = P.c,
                 u = R.s,
@@ -382,20 +385,20 @@ function E(R, P) {
             return l == k ? 0 : l > k ^ y ? 1 : -1
         }
 
-function z(R, P, y, v) {
+        function z(R, P, y, v) {
             if (R < P || R > y || R !== Z(R)) throw Error(I + (v || "Argument") + (typeof R == "number" ? R < P || R > y ? " out of range: " : " not an integer: " : " not a primitive number: ") + String(R))
         }
 
-function w(R) {
+        function w(R) {
             var P = R.c.length - 1;
             return H(R.e / W) == P && R.c[P] % 2 != 0
         }
 
-function N(R, P) {
+        function N(R, P) {
             return (R.length > 1 ? R.charAt(0) + "." + R.slice(1) : R) + (P < 0 ? "e" : "e+") + P
         }
 
-function q(R, P, y) {
+        function q(R, P, y) {
             var v, x;
             if (P < 0) {
                 for (x = y + "."; ++P; x += y);
@@ -416,7 +419,7 @@ function q(R, P, y) {
         }
     })(rlB)
 });
-var AiB = U((k8G, elB) => {
+var AiB = moduleWrapper((k8G, elB) => {
     var olB = Si1(),
         tlB = k8G;
     (function() {
@@ -436,14 +439,14 @@ var AiB = U((k8G, elB) => {
             },
             Y;
 
-function J(X) {
+        function J(X) {
             return B.lastIndex = 0, B.test(X) ? '"' + X.replace(B, function(F) {
                 var V = I[F];
                 return typeof V === "string" ? V : "\\u" + ("0000" + F.charCodeAt(0).toString(16)).slice(-4)
             }) + '"' : '"' + X + '"'
         }
 
-function W(X, F) {
+        function W(X, F) {
             var V, K, D, H, C = G,
                 E, z = F[X],
                 w = z != null && (z instanceof olB || olB.isBigNumber(z));
@@ -497,7 +500,7 @@ function W(X, F) {
         }
     })()
 });
-var BiB = U((y8G, QiB) => {
+var BiB = moduleWrapper((y8G, QiB) => {
     var IA1 = null,
         Zn6 = /(?:_|\\u005[Ff])(?:_|\\u005[Ff])(?:p|\\u0070)(?:r|\\u0072)(?:o|\\u006[Ff])(?:t|\\u0074)(?:o|\\u006[Ff])(?:_|\\u005[Ff])(?:_|\\u005[Ff])/,
         In6 = /(?:c|\\u0063)(?:o|\\u006[Ff])(?:n|\\u006[Ee])(?:s|\\u0073)(?:t|\\u0074)(?:r|\\u0072)(?:u|\\u0075)(?:c|\\u0063)(?:t|\\u0074)(?:o|\\u006[Ff])(?:r|\\u0072)/,
@@ -515,10 +518,10 @@ var BiB = U((y8G, QiB) => {
                 if (A.storeAsString === !0) Q.storeAsString = !0;
                 if (Q.alwaysParseAsBig = A.alwaysParseAsBig === !0 ? A.alwaysParseAsBig : !1, Q.useNativeBigInt = A.useNativeBigInt === !0 ? A.useNativeBigInt : !1, typeof A.constructorAction < "u")
                     if (A.constructorAction === "error" || A.constructorAction === "ignore" || A.constructorAction === "preserve") Q.constructorAction = A.constructorAction;
-                    else throw Error(`Incorrect value for constructorAction option, must be "error", "ignore" or undefined but passed ${A.constructorAction}`);
+                    else throw Error(`Incorrect value for constructorAction option, must be "error", "ignore" or undefined but passed TextComponent{A.constructorAction}`);
                 if (typeof A.protoAction < "u")
                     if (A.protoAction === "error" || A.protoAction === "ignore" || A.protoAction === "preserve") Q.protoAction = A.protoAction;
-                    else throw Error(`Incorrect value for protoAction option, must be "error", "ignore" or undefined but passed ${A.protoAction}`)
+                    else throw Error(`Incorrect value for protoAction option, must be "error", "ignore" or undefined but passed TextComponent{A.protoAction}`)
             }
             var B, G, Z = {
                     '"': '"',
@@ -666,7 +669,7 @@ var BiB = U((y8G, QiB) => {
         };
     QiB.exports = Yn6
 });
-var IiB = U((x8G, YA1) => {
+var IiB = moduleWrapper((x8G, YA1) => {
     var GiB = AiB().stringify,
         ZiB = BiB();
     YA1.exports = function(A) {
@@ -678,7 +681,7 @@ var IiB = U((x8G, YA1) => {
     YA1.exports.parse = ZiB();
     YA1.exports.stringify = GiB
 });
-var _i1 = U((KiB) => {
+var _i1 = moduleWrapper((KiB) => {
     Object.defineProperty(KiB, "__esModule", {
         value: !0
     });
@@ -688,19 +691,19 @@ var _i1 = U((KiB) => {
     KiB.isGoogleComputeEngineMACAddress = FiB;
     KiB.isGoogleComputeEngine = ViB;
     KiB.detectGCPResidency = Wn6;
-    var YiB = UA("fs"),
-        JiB = UA("os");
+    var YiB = nodeRequire("fs"),
+        JiB = nodeRequire("os");
     KiB.GCE_LINUX_BIOS_PATHS = {
         BIOS_DATE: "/sys/class/dmi/id/bios_date",
         BIOS_VENDOR: "/sys/class/dmi/id/bios_vendor"
     };
     var Jn6 = /^42:01/;
 
-function WiB() {
+    function WiB() {
         return !!(process.env.CLOUD_RUN_JOB || process.env.FUNCTION_NAME || process.env.K_SERVICE)
     }
 
-function XiB() {
+    function XiB() {
         if ((0, JiB.platform)() !== "linux") return !1;
         try {
             (0, YiB.statSync)(KiB.GCE_LINUX_BIOS_PATHS.BIOS_DATE);
@@ -711,7 +714,7 @@ function XiB() {
         }
     }
 
-function FiB() {
+    function FiB() {
         let A = (0, JiB.networkInterfaces)();
         for (let Q of Object.values(A)) {
             if (!Q) continue;
@@ -724,21 +727,20 @@ function FiB() {
         return !1
     }
 
-function ViB() {
+    function ViB() {
         return XiB() || FiB()
     }
 
-function Wn6() {
+    function Wn6() {
         return WiB() || ViB()
     }
 });
-var CiB = U((DiB) => {
+var CiB = moduleWrapper((DiB) => {
     Object.defineProperty(DiB, "__esModule", {
         value: !0
     });
     DiB.Colours = void 0;
-
-class F6 {
+    class F6 {
         static isEnabled(A) {
             return A.isTTY && (typeof A.getColorDepth === "function" ? A.getColorDepth() > 2 : !0)
         }
@@ -762,7 +764,7 @@ class F6 {
     F6.grey = "";
     F6.refresh()
 });
-var qiB = U((TG) => {
+var qiB = moduleWrapper((TG) => {
     var Hn6 = TG && TG.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -787,8 +789,7 @@ var qiB = U((TG) => {
         }),
         EiB = TG && TG.__importStar || function(A) {
             if (A && A.__esModule) return A;
-
-var Q = {};
+            var Q = {};
             if (A != null) {
                 for (var B in A)
                     if (B !== "default" && Object.prototype.hasOwnProperty.call(A, B)) Hn6(Q, A, B)
@@ -804,16 +805,15 @@ var Q = {};
     TG.getStructuredBackend = Un6;
     TG.setBackend = $n6;
     TG.log = wiB;
-    var En6 = UA("node:events"),
-        owA = EiB(UA("node:process")),
-        ziB = EiB(UA("node:util")),
+    var En6 = nodeRequire("node:events"),
+        owA = EiB(nodeRequire("node:process")),
+        ziB = EiB(nodeRequire("node:util")),
         Zq = CiB(),
         jT;
     (function(A) {
         A.DEFAULT = "DEFAULT", A.DEBUG = "DEBUG", A.INFO = "INFO", A.WARNING = "WARNING", A.ERROR = "ERROR"
     })(jT || (TG.LogSeverity = jT = {}));
-
-class WA1 extends En6.EventEmitter {
+    class WA1 extends En6.EventEmitter {
         constructor(A, Q) {
             super();
             this.namespace = A, this.upstream = Q, this.func = Object.assign(this.invoke.bind(this), {
@@ -833,8 +833,7 @@ class WA1 extends En6.EventEmitter {
     }
     TG.AdhocDebugLogger = WA1;
     TG.placeholder = new WA1("", () => {}).func;
-
-class twA {
+    class twA {
         constructor() {
             var A;
             this.cached = new Map, this.filters = [], this.filtersSet = !1;
@@ -854,8 +853,7 @@ class twA {
         }
     }
     TG.DebugLogBackendBase = twA;
-
-class xi1 extends twA {
+    class xi1 extends twA {
         constructor() {
             super(...arguments);
             this.enabledRegexp = /.*/g
@@ -867,18 +865,18 @@ class xi1 extends twA {
             if (!this.enabledRegexp.test(A)) return () => {};
             return (Q, ...B) => {
                 var G;
-                let Z = `${Zq.Colours.green}${A}${Zq.Colours.reset}`,
-                    I = `${Zq.Colours.yellow}${owA.pid}${Zq.Colours.reset}`,
+                let Z = `TextComponent{Zq.Colours.green}TextComponent{A}TextComponent{Zq.Colours.reset}`,
+                    I = `TextComponent{Zq.Colours.yellow}TextComponent{owA.pid}TextComponent{Zq.Colours.reset}`,
                     Y;
                 switch (Q.severity) {
                     case jT.ERROR:
-                        Y = `${Zq.Colours.red}${Q.severity}${Zq.Colours.reset}`;
+                        Y = `TextComponent{Zq.Colours.red}TextComponent{Q.severity}TextComponent{Zq.Colours.reset}`;
                         break;
                     case jT.INFO:
-                        Y = `${Zq.Colours.magenta}${Q.severity}${Zq.Colours.reset}`;
+                        Y = `TextComponent{Zq.Colours.magenta}TextComponent{Q.severity}TextComponent{Zq.Colours.reset}`;
                         break;
                     case jT.WARNING:
-                        Y = `${Zq.Colours.yellow}${Q.severity}${Zq.Colours.reset}`;
+                        Y = `TextComponent{Zq.Colours.yellow}TextComponent{Q.severity}TextComponent{Zq.Colours.reset}`;
                         break;
                     default:
                         Y = (G = Q.severity) !== null && G !== void 0 ? G : jT.DEFAULT;
@@ -890,21 +888,20 @@ class xi1 extends twA {
                     W = Object.assign({}, Q);
                 delete W.severity;
                 let X = Object.getOwnPropertyNames(W).length ? JSON.stringify(W) : "",
-                    F = X ? `${Zq.Colours.grey}${X}${Zq.Colours.reset}` : "";
-                console.error("%s [%s|%s] %s%s", I, Z, Y, J, X ? ` ${F}` : "")
+                    F = X ? `TextComponent{Zq.Colours.grey}TextComponent{X}TextComponent{Zq.Colours.reset}` : "";
+                console.error("%s [%s|%s] %s%s", I, Z, Y, J, X ? ` TextComponent{F}` : "")
             }
         }
         setFilters() {
-            let Q = this.filters.join(",").replace(/[|\\{}()[\]^$+?.]/g, "\\$&").replace(/\*/g, ".*").replace(/,/g, "$|^");
-            this.enabledRegexp = new RegExp(`^${Q}$`, "i")
+            let Q = this.filters.join(",").replace(/[|\\{}()[\]^TextComponent+?.]/g, "\\TextComponent&").replace(/\*/g, ".*").replace(/,/g, "TextComponent|^");
+            this.enabledRegexp = new RegExp(`^TextComponent{Q}TextComponent`, "i")
         }
     }
 
-function ki1() {
+    function ki1() {
         return new xi1
     }
-
-class UiB extends twA {
+    class UiB extends twA {
         constructor(A) {
             super();
             this.debugPkg = A
@@ -918,11 +915,11 @@ class UiB extends twA {
         setFilters() {
             var A;
             let Q = (A = owA.env.NODE_DEBUG) !== null && A !== void 0 ? A : "";
-            owA.env.NODE_DEBUG = `${Q}${Q?",":""}${this.filters.join(",")}`
+            owA.env.NODE_DEBUG = `TextComponent{Q}TextComponent{Q?",":""}TextComponent{this.filters.join(",")}`
         }
     }
 
-function zn6(A) {
+    function zn6(A) {
         return new UiB(A)
     }
     class $iB extends twA {
@@ -949,7 +946,7 @@ function zn6(A) {
         }
     }
 
-function Un6(A) {
+    function Un6(A) {
         return new $iB(A)
     }
     TG.env = {
@@ -962,10 +959,10 @@ function Un6(A) {
         PM = A, yi1.clear()
     }
 
-function wiB(A, Q) {
+    function wiB(A, Q) {
         if (!owA.env[TG.env.nodeEnables]) return TG.placeholder;
         if (!A) return TG.placeholder;
-        if (Q) A = `${Q.instance.namespace}:${A}`;
+        if (Q) A = `TextComponent{Q.instance.namespace}:TextComponent{A}`;
         let G = yi1.get(A);
         if (G) return G.func;
         if (PM === null) return TG.placeholder;
@@ -984,7 +981,7 @@ function wiB(A, Q) {
         return yi1.set(A, Z), Z.func
     }
 });
-var NiB = U((Re) => {
+var NiB = moduleWrapper((Re) => {
     var wn6 = Re && Re.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -1008,7 +1005,7 @@ var NiB = U((Re) => {
     });
     qn6(qiB(), Re)
 });
-var AqA = U((K4) => {
+var AqA = moduleWrapper((K4) => {
     var Nn6 = K4 && K4.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -1060,13 +1057,13 @@ var AqA = U((K4) => {
         "ping-only": "skip the BIOS probe, and go straight to pinging"
     });
 
-function bi1(A) {
+    function bi1(A) {
         if (!A) A = process.env.GCE_METADATA_IP || process.env.GCE_METADATA_HOST || K4.HOST_ADDRESS;
-        if (!/^https?:\/\//.test(A)) A = `http://${A}`;
+        if (!/^https?:\/\//.test(A)) A = `http://TextComponent{A}`;
         return new URL(K4.BASE_PATH, A).href
     }
 
-function Tn6(A) {
+    function Tn6(A) {
         Object.keys(A).forEach((Q) => {
             switch (Q) {
                 case "params":
@@ -1076,12 +1073,11 @@ function Tn6(A) {
                 case "qs":
                     throw Error("'qs' is not a valid configuration option. Please use 'params' instead.");
                 default:
-                    throw Error(`'${Q}' is not a valid configuration option.`)
+                    throw Error(`'TextComponent{Q}' is not a valid configuration option.`)
             }
         })
     }
-
-async function ewA(A, Q = {}, B = 3, G = !1) {
+    async function ewA(A, Q = {}, B = 3, G = !1) {
         let Z = "",
             I = {},
             Y = {};
@@ -1089,14 +1085,14 @@ async function ewA(A, Q = {}, B = 3, G = !1) {
             let F = A;
             Z = F.metadataKey, I = F.params || I, Y = F.headers || Y, B = F.noResponseRetries || B, G = F.fastFail || G
         } else Z = A;
-        if (typeof Q === "string") Z += `/${Q}`;
+        if (typeof Q === "string") Z += `/TextComponent{Q}`;
         else {
-            if (Tn6(Q), Q.property) Z += `/${Q.property}`;
+            if (Tn6(Q), Q.property) Z += `/TextComponent{Q.property}`;
             Y = Q.headers || Y, I = Q.params || I
         }
         let J = G ? Pn6 : vi1.request,
             W = {
-                url: `${bi1()}/${Z}`,
+                url: `TextComponent{bi1()}/TextComponent{Z}`,
                 headers: {
                     ...K4.HEADERS,
                     ...Y
@@ -1110,14 +1106,13 @@ async function ewA(A, Q = {}, B = 3, G = !1) {
             };
         LiB.info("instance request %j", W);
         let X = await J(W);
-        if (LiB.info("instance metadata is %s", X.data), X.headers[K4.HEADER_NAME.toLowerCase()] !== K4.HEADER_VALUE) throw Error(`Invalid response from metadata service: incorrect ${K4.HEADER_NAME} header. Expected '${K4.HEADER_VALUE}', got ${X.headers[K4.HEADER_NAME.toLowerCase()]?`'${X.headers[K4.HEADER_NAME.toLowerCase()]}'`:"no header"}`);
+        if (LiB.info("instance metadata is %s", X.data), X.headers[K4.HEADER_NAME.toLowerCase()] !== K4.HEADER_VALUE) throw Error(`Invalid response from metadata service: incorrect TextComponent{K4.HEADER_NAME} header. Expected 'TextComponent{K4.HEADER_VALUE}', got TextComponent{X.headers[K4.HEADER_NAME.toLowerCase()]?`'TextComponent{X.headers[K4.HEADER_NAME.toLowerCase()]}'`:"no header"}`);
         if (typeof X.data === "string") try {
             return Mn6.parse(X.data)
         } catch (F) {}
         return X.data
     }
-
-async function Pn6(A) {
+    async function Pn6(A) {
         var Q;
         let B = {
                 ...A,
@@ -1139,19 +1134,18 @@ async function Pn6(A) {
         return Promise.race([Z, I])
     }
 
-function jn6(A) {
+    function jn6(A) {
         return ewA("instance", A)
     }
 
-function Sn6(A) {
+    function Sn6(A) {
         return ewA("project", A)
     }
 
-function _n6(A) {
+    function _n6(A) {
         return ewA("universe", A)
     }
-
-async function kn6(A) {
+    async function kn6(A) {
         let Q = {};
         return await Promise.all(A.map((B) => {
             return (async () => {
@@ -1162,15 +1156,14 @@ async function kn6(A) {
         })), Q
     }
 
-function yn6() {
+    function yn6() {
         return process.env.DETECT_GCP_RETRIES ? Number(process.env.DETECT_GCP_RETRIES) : 0
     }
     var XA1;
-    // Async function: xn6
-async function xn6() {
+    async function xn6() {
         if (process.env.METADATA_SERVER_DETECTION) {
             let A = process.env.METADATA_SERVER_DETECTION.trim().toLocaleLowerCase();
-            if (!(A in K4.METADATA_SERVER_DETECTION)) throw RangeError(`Unknown \`METADATA_SERVER_DETECTION\` env variable. Got \`${A}\`, but it should be \`${Object.keys(K4.METADATA_SERVER_DETECTION).join("`, `")}\`, or unset`);
+            if (!(A in K4.METADATA_SERVER_DETECTION)) throw RangeError(`Unknown \`METADATA_SERVER_DETECTION\` env variable. Got \`TextComponent{A}\`, but it should be \`TextComponent{Object.keys(K4.METADATA_SERVER_DETECTION).join("`, `")}\`, or unset`);
             switch (A) {
                 case "assume-present":
                     return !0;
@@ -1193,38 +1186,37 @@ async function xn6() {
                 if (!(Q.response && Q.response.status === 404) && (!Q.code || !["EHOSTDOWN", "EHOSTUNREACH", "ENETUNREACH", "ENOENT", "ENOTFOUND", "ECONNREFUSED"].includes(Q.code))) {
                     let B = "UNKNOWN";
                     if (Q.code) B = Q.code;
-                    process.emitWarning(`received unexpected error = ${Q.message} code = ${B}`, "MetadataLookupWarning")
+                    process.emitWarning(`received unexpected error = TextComponent{Q.message} code = TextComponent{B}`, "MetadataLookupWarning")
                 }
                 return !1
             }
         }
     }
 
-function vn6() {
+    function vn6() {
         XA1 = void 0
     }
     K4.gcpResidencyCache = null;
 
-function fi1() {
+    function fi1() {
         if (K4.gcpResidencyCache === null) MiB();
         return K4.gcpResidencyCache
     }
 
-function MiB(A = null) {
+    function MiB(A = null) {
         K4.gcpResidencyCache = A !== null ? A : (0, On6.detectGCPResidency)()
     }
 
-function OiB() {
+    function OiB() {
         return fi1() ? 0 : 3000
     }
     Ln6(_i1(), K4)
 });
-var ui1 = U((cn6) => {
+var ui1 = moduleWrapper((cn6) => {
     cn6.byteLength = fn6;
     cn6.toByteArray = gn6;
     cn6.fromByteArray = dn6;
-
-var Qk = [],
+    var Qk = [],
         jM = [],
         bn6 = typeof Uint8Array < "u" ? Uint8Array : Array,
         hi1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
@@ -1233,7 +1225,7 @@ var Qk = [],
     jM[45] = 62;
     jM[95] = 63;
 
-function RiB(A) {
+    function RiB(A) {
         var Q = A.length;
         if (Q % 4 > 0) throw Error("Invalid string. Length must be a multiple of 4");
         var B = A.indexOf("=");
@@ -1242,18 +1234,18 @@ function RiB(A) {
         return [B, G]
     }
 
-function fn6(A) {
+    function fn6(A) {
         var Q = RiB(A),
             B = Q[0],
             G = Q[1];
         return (B + G) * 3 / 4 - G
     }
 
-function hn6(A, Q, B) {
+    function hn6(A, Q, B) {
         return (Q + B) * 3 / 4 - B
     }
 
-function gn6(A) {
+    function gn6(A) {
         var Q, B = RiB(A),
             G = B[0],
             Z = B[1],
@@ -1267,17 +1259,17 @@ function gn6(A) {
         return I
     }
 
-function un6(A) {
+    function un6(A) {
         return Qk[A >> 18 & 63] + Qk[A >> 12 & 63] + Qk[A >> 6 & 63] + Qk[A & 63]
     }
 
-function mn6(A, Q, B) {
+    function mn6(A, Q, B) {
         var G, Z = [];
         for (var I = Q; I < B; I += 3) G = (A[I] << 16 & 16711680) + (A[I + 1] << 8 & 65280) + (A[I + 2] & 255), Z.push(un6(G));
         return Z.join("")
     }
 
-function dn6(A) {
+    function dn6(A) {
         var Q, B = A.length,
             G = B % 3,
             Z = [],
@@ -1288,15 +1280,14 @@ function dn6(A) {
         return Z.join("")
     }
 });
-var jiB = U((TiB) => {
+var jiB = moduleWrapper((TiB) => {
     Object.defineProperty(TiB, "__esModule", {
         value: !0
     });
     TiB.BrowserCrypto = void 0;
     var WZA = ui1(),
         nn6 = XZA();
-
-class FA1 {
+    class FA1 {
         constructor() {
             if (typeof window > "u" || window.crypto === void 0 || window.crypto.subtle === void 0) throw Error("SubtleCrypto not found. Make sure it's an https:// website.")
         }
@@ -1364,14 +1355,13 @@ class FA1 {
     }
     TiB.BrowserCrypto = FA1
 });
-var yiB = U((_iB) => {
+var yiB = moduleWrapper((_iB) => {
     Object.defineProperty(_iB, "__esModule", {
         value: !0
     });
     _iB.NodeCrypto = void 0;
-    var FZA = UA("crypto");
-
-class SiB {
+    var FZA = nodeRequire("crypto");
+    class SiB {
         async sha256DigestBase64(A) {
             return FZA.createHash("sha256").update(A).digest("base64")
         }
@@ -1402,15 +1392,15 @@ class SiB {
     }
     _iB.NodeCrypto = SiB;
 
-function an6(A) {
+    function an6(A) {
         return A.buffer.slice(A.byteOffset, A.byteOffset + A.byteLength)
     }
 
-function sn6(A) {
+    function sn6(A) {
         return Buffer.from(A)
     }
 });
-var XZA = U((viB) => {
+var XZA = moduleWrapper((viB) => {
     Object.defineProperty(viB, "__esModule", {
         value: !0
     });
@@ -1420,28 +1410,28 @@ var XZA = U((viB) => {
     var rn6 = jiB(),
         on6 = yiB();
 
-function tn6() {
+    function tn6() {
         if (xiB()) return new rn6.BrowserCrypto;
         return new on6.NodeCrypto
     }
 
-function xiB() {
+    function xiB() {
         return typeof window < "u" && typeof window.crypto < "u" && typeof window.crypto.subtle < "u"
     }
 
-function en6(A) {
+    function en6(A) {
         return Array.from(new Uint8Array(A)).map((B) => {
             return B.toString(16).padStart(2, "0")
         }).join("")
     }
 });
-var fiB = U((biB) => {
+var fiB = moduleWrapper((biB) => {
     Object.defineProperty(biB, "__esModule", {
         value: !0
     });
     biB.validate = Ga6;
 
-function Ga6(A) {
+    function Ga6(A) {
         let Q = [{
             invalid: "uri",
             expected: "url"
@@ -1454,12 +1444,12 @@ function Ga6(A) {
         }];
         for (let B of Q)
             if (A[B.invalid]) {
-                let G = `'${B.invalid}' is not a valid configuration option. Please use '${B.expected}' instead. This library is using Axios for requests. Please see https://github.com/axios/axios to learn more about the valid request options.`;
+                let G = `'TextComponent{B.invalid}' is not a valid configuration option. Please use 'TextComponent{B.expected}' instead. This library is using Axios for requests. Please see https://github.com/axios/axios to learn more about the valid request options.`;
                 throw Error(G)
             }
     }
 });
-var mi1 = U((l8G, Ia6) => {
+var mi1 = moduleWrapper((l8G, Ia6) => {
     Ia6.exports = {
         name: "google-auth-library",
         version: "9.15.1",

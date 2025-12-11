@@ -25,129 +25,187 @@
 
 ---
 
-## 后续步骤
+## 一键执行方案 (推荐)
 
-### 1. 扩展 LLM 推断范围
-
-当前 LLM 只分析了前 50 个函数，可以增加分析范围：
+### 快速开始
 
 ```bash
-# 修改 src/index.js 中的配置
-llmMaxFunctions: 200  # 增加到 200 或更多
+# 1. 设置 API Key
+export ANTHROPIC_API_KEY='your-api-key'
 
-# 或者直接修改 LLMInferrer.js
-this.options.maxFunctions = 200;
+# 2. 一键执行完整分析
+./scripts/run-all.sh
+
+# 或者只执行静态分析 (不需要 API Key)
+./scripts/run-all.sh --no-llm
 ```
 
-**注意**: 增加分析数量会增加 API 调用次数和成本。
+### 执行模式
 
-### 2. 优先分析的核心模块
+| 模式 | 命令 | 说明 |
+|------|------|------|
+| 完整模式 | `./scripts/run-all.sh` | 执行所有分析步骤 |
+| 快速模式 | `./scripts/run-all.sh --fast` | 限制 LLM 分析数量 |
+| 静态分析 | `./scripts/run-all.sh --no-llm` | 只执行静态分析 |
+| 断点恢复 | `./scripts/run-all.sh --resume` | 从上次中断处继续 |
+| 仅验证 | `./scripts/run-all.sh --validate` | 只执行验证步骤 |
 
-#### 2.1 消息处理模块 (高优先级)
+### 输出文件
+
+执行完成后，以下文件将被生成/更新：
+
+```
+decompiled/readable/
+├── cli.readable.js          # 可读代码 (变量已替换)
+├── VARIABLE_MAPPING.json    # JSON 格式映射表
+├── VARIABLE_MAPPING.md      # Markdown 格式映射表
+├── ANALYSIS_REPORT.md       # 详细分析报告
+└── VALIDATION_REPORT.md     # 验证结果报告
+```
+
+---
+
+## 自动化流水线架构
+
+### 流程图
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    完整流水线架构                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  [1] 加载已有映射                                            │
+│       │                                                     │
+│       ▼                                                     │
+│  [2] 静态分析 ─────────────────────────────────────────┐    │
+│       │  • 字符串常量匹配                              │    │
+│       │  • 数值常量匹配                                │    │
+│       ▼                                               │    │
+│  [3] 模式识别 ─────────────────────────────────────────┤    │
+│       │  • React 组件模式                              │    │
+│       │  • 错误类模式                                  │    │
+│       │  • Getter 函数模式                             │    │
+│       ▼                                               │    │
+│  [4] LLM 推断 (可选) ──────────────────────────────────┤    │
+│       │  • 批量并行处理                                │    │
+│       │  • 断点续传支持                                │    │
+│       │  • 优先级队列                                  │    │
+│       ▼                                               │    │
+│  [5] 代码转换 ◄───────────────────────────────────────┘    │
+│       │  • 变量替换                                         │
+│       │  • 安全检查                                         │
+│       ▼                                                     │
+│  [6] 质量验证                                               │
+│       │  • 语法检查                                         │
+│       │  • 冲突检测                                         │
+│       │  • 一致性验证                                       │
+│       ▼                                                     │
+│  [7] 报告生成                                               │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 脚本文件说明
+
+| 文件 | 说明 |
+|------|------|
+| `scripts/run-all.sh` | 一键执行入口脚本 |
+| `scripts/full-pipeline.js` | 主流水线逻辑 |
+| `scripts/pipeline.config.js` | 配置文件 (可自定义) |
+| `scripts/validate-mappings.js` | 验证工具 |
+
+---
+
+## 配置自定义
+
+编辑 `scripts/pipeline.config.js` 可调整：
+
+### LLM 推断配置
+
 ```javascript
-// 搜索关键词
-grep -n "message|content|assistant|user" cli.readable.js
+llmInference: {
+  enabled: true,
+  model: 'claude-sonnet-4-5-20250929',
+  batchSize: 10,           // 每批分析的函数数
+  maxConcurrent: 3,        // 最大并发请求
+  maxFunctions: 8500,      // 最大分析函数数
+  minConfidence: 0.6,      // 置信度阈值
+  checkpointInterval: 100, // 断点保存间隔
+}
 ```
-- API 消息构建
-- 流式响应处理
-- 内容块解析
 
-#### 2.2 权限系统 (高优先级)
+### 优先级模块
+
+高优先级模块将优先被 LLM 分析：
+
 ```javascript
-// 搜索关键词
-grep -n "permission|allow|deny|approve" cli.readable.js
+priorityModules: [
+  { pattern: /message|content|stream/, priority: 1 },  // 消息处理
+  { pattern: /permission|allow|deny/, priority: 1 },   // 权限系统
+  { pattern: /agent|subagent|spawn/, priority: 2 },    // Agent 引擎
+  { pattern: /render|Box|Text|Ink/, priority: 2 },     // UI 组件
+  { pattern: /auth|oauth|token/, priority: 3 },        // 认证
+  { pattern: /file|read|write|glob/, priority: 4 },    // 文件操作
+]
 ```
-- 工具权限控制
-- 文件访问规则
-- 用户授权流程
 
-#### 2.3 Agent 执行引擎 (中优先级)
-```javascript
-// 搜索关键词
-grep -n "agent|subagent|spawn|execute" cli.readable.js
-```
-- 子代理创建
-- 任务分发
-- 结果收集
+---
 
-#### 2.4 Ink UI 组件 (中优先级)
-```javascript
-// 搜索关键词
-grep -n "render|Box|Text|Spinner" cli.readable.js
-```
-- 终端渲染
-- 用户交互
-- 进度显示
+## 手动分析流程
 
-#### 2.5 文件操作模块 (低优先级)
-```javascript
-// 搜索关键词
-grep -n "readFile|writeFile|glob|grep" cli.readable.js
-```
-- 文件读写
-- 目录遍历
-- 内容搜索
+如果需要手动补充映射：
 
-### 3. 手动分析流程
+### 1. 搜索特定模块
 
 ```bash
-# 1. 搜索特定模块
 cd tools/deobfuscator
 grep -n "关键词" output/cli.readable.js | head -50
+```
 
-# 2. 读取上下文 (使用行号)
+### 2. 读取上下文
+
+```bash
 sed -n '12345,12445p' output/cli.readable.js
+```
 
-# 3. 添加映射到 data/existing-mappings.json
+### 3. 添加映射
+
+编辑 `tools/deobfuscator/data/existing-mappings.json`:
+
+```json
 {
   "original": "xyz",
   "readable": "functionName",
   "confidence": 0.9,
   "source": "manual-analysis"
 }
-
-# 4. 重新运行工具
-node src/index.js
 ```
 
-### 4. 验证映射质量
+### 4. 重新运行
 
 ```bash
-# 检查输出中的替换效果
-grep -n "functionName" output/cli.readable.js
-
-# 确保没有误替换
-grep -C3 "functionName" output/cli.readable.js | head -30
+./scripts/run-all.sh
 ```
 
 ---
 
-## 工具使用
+## 验证映射质量
 
-### 基本运行
 ```bash
-cd tools/deobfuscator
-node src/index.js                    # 基本模式
-node src/index.js --llm              # 启用 LLM 推断
-node src/index.js --verbose          # 详细输出
-node src/index.js /path/to/file.js   # 指定输入文件
+# 运行验证工具
+node scripts/validate-mappings.js
+
+# 严格模式 (警告也视为失败)
+node scripts/validate-mappings.js --strict
 ```
 
-### 输出文件
-- `output/cli.readable.js` - 转换后的可读代码
-- `output/mappings.json` - 完整映射表
-- `output/MAPPINGS.md` - Markdown 格式映射表
-
-### 映射文件格式
-```json
-{
-  "original": "混淆名",
-  "readable": "可读名",
-  "confidence": 0.9,
-  "source": "来源",
-  "context": "上下文说明"
-}
-```
+验证检查项：
+- 重复映射检测
+- 命名规范检查
+- JavaScript 保留字检查
+- 置信度分布分析
+- 语法正确性验证
+- 替换一致性检查
 
 ---
 
@@ -172,6 +230,24 @@ node src/index.js /path/to/file.js   # 指定输入文件
 
 ---
 
+## 估算
+
+### 完整执行时间
+
+| 模式 | 预计时间 | API 调用 |
+|------|----------|----------|
+| 静态分析 | ~2 分钟 | 0 |
+| 快速模式 | ~10 分钟 | ~10 |
+| 完整模式 | ~60-90 分钟 | ~850 |
+
+### API 成本估算 (完整模式)
+
+- 每批 10 个函数
+- 约 850 次 API 调用
+- 预计成本: $5-15 (取决于模型和响应长度)
+
+---
+
 ## 参考资源
 
 - 项目仓库: https://github.com/majiayu000/open-claude-code
@@ -184,7 +260,7 @@ node src/index.js /path/to/file.js   # 指定输入文件
 
 1. Fork 项目
 2. 添加新映射到 `data/existing-mappings.json`
-3. 运行工具验证
+3. 运行工具验证: `./scripts/run-all.sh --validate`
 4. 提交 PR
 
 映射命名规范:

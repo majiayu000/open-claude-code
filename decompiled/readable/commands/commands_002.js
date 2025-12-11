@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: commands_002.js
+ * 处理时间: 2025-12-09T03:41:37.079Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.944Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -33,7 +36,7 @@
         }
     }
 
-function ehA(A) {
+    function ehA(A) {
         return {
             schemeId: "smithy.api#noAuth"
         }
@@ -71,7 +74,7 @@ function ehA(A) {
     };
     JJQ.resolveHttpAuthSchemeConfig = mg4
 });
-var XJQ = U((eV7, pg4) => {
+var XJQ = moduleWrapper((eV7, pg4) => {
     pg4.exports = {
         name: "@aws-sdk/client-sso",
         description: "AWS SDK for JavaScript Sso Client for Node.js, Browser and React Native",
@@ -167,7 +170,7 @@ var XJQ = U((eV7, pg4) => {
         }
     }
 });
-var pDA = U((AK7, EJQ) => {
+var pDA = moduleWrapper((AK7, EJQ) => {
     var {
         defineProperty: QgA,
         getOwnPropertyDescriptor: lg4,
@@ -201,8 +204,8 @@ var pDA = U((AK7, EJQ) => {
         defaultUserAgent: () => tg4
     });
     EJQ.exports = rg4(VJQ);
-    var FJQ = UA("os"),
-        rq1 = UA("process"),
+    var FJQ = nodeRequire("os"),
+        rq1 = nodeRequire("process"),
         KJQ = {
             isCrtAvailable: !1
         },
@@ -218,16 +221,16 @@ var pDA = U((AK7, EJQ) => {
                 let G = [
                         ["aws-sdk-js", Q],
                         ["ua", "2.1"],
-                        [`os/${(0,FJQ.platform)()}`, (0, FJQ.release)()],
+                        [`os/TextComponent{(0,FJQ.platform)()}`, (0, FJQ.release)()],
                         ["lang/js"],
-                        ["md/nodejs", `${rq1.versions.node}`]
+                        ["md/nodejs", `TextComponent{rq1.versions.node}`]
                     ],
                     Z = og4();
                 if (Z) G.push(Z);
-                if (A) G.push([`api/${A}`, Q]);
-                if (rq1.env.AWS_EXECUTION_ENV) G.push([`exec-env/${rq1.env.AWS_EXECUTION_ENV}`]);
+                if (A) G.push([`api/TextComponent{A}`, Q]);
+                if (rq1.env.AWS_EXECUTION_ENV) G.push([`exec-env/TextComponent{rq1.env.AWS_EXECUTION_ENV}`]);
                 let I = await B?.userAgentAppId?.();
-                return I ? [...G, [`app/${I}`]] : [...G]
+                return I ? [...G, [`app/TextComponent{I}`]] : [...G]
             }
         }, "createDefaultUserAgentProvider"),
         tg4 = DJQ,
@@ -241,7 +244,7 @@ var pDA = U((AK7, EJQ) => {
             default: eg4.DEFAULT_UA_APP_ID
         }
 });
-var yJQ = U((_JQ) => {
+var yJQ = moduleWrapper((_JQ) => {
     Object.defineProperty(_JQ, "__esModule", {
         value: !0
     });
@@ -437,7 +440,7 @@ var yJQ = U((_JQ) => {
         };
     _JQ.ruleSet = Bu4
 });
-var bJQ = U((xJQ) => {
+var bJQ = moduleWrapper((xJQ) => {
     Object.defineProperty(xJQ, "__esModule", {
         value: !0
     });
@@ -458,7 +461,7 @@ var bJQ = U((xJQ) => {
     xJQ.defaultEndpointResolver = Yu4;
     eq1.customEndpointFunctions.aws = Gu4.awsEndpointFunctions
 });
-var mJQ = U((gJQ) => {
+var mJQ = moduleWrapper((gJQ) => {
     Object.defineProperty(gJQ, "__esModule", {
         value: !0
     });
@@ -498,7 +501,7 @@ var mJQ = U((gJQ) => {
         };
     gJQ.getRuntimeConfig = Du4
 });
-var aJQ = U((iJQ) => {
+var aJQ = moduleWrapper((iJQ) => {
     Object.defineProperty(iJQ, "__esModule", {
         value: !0
     });
@@ -558,7 +561,7 @@ var aJQ = U((iJQ) => {
         };
     iJQ.getRuntimeConfig = Lu4
 });
-var iDA = U((IK7, AWQ) => {
+var iDA = moduleWrapper((IK7, AWQ) => {
     var {
         defineProperty: GgA,
         getOwnPropertyDescriptor: Mu4,
@@ -642,7 +645,7 @@ var iDA = U((IK7, AWQ) => {
             })
         }, "resolveRegionConfig")
 });
-var PWQ = U((YK7, TWQ) => {
+var PWQ = moduleWrapper((YK7, TWQ) => {
     var {
         defineProperty: ZgA,
         getOwnPropertyDescriptor: vu4,
@@ -1138,7 +1141,7 @@ var PWQ = U((YK7, TWQ) => {
     var Km4 = (0, vv.createPaginator)(YgA, AN1, "nextToken", "nextToken", "maxResults"),
         Dm4 = (0, vv.createPaginator)(YgA, QN1, "nextToken", "nextToken", "maxResults")
 });
-var GN1 = U((jWQ) => {
+var GN1 = moduleWrapper((jWQ) => {
     Object.defineProperty(jWQ, "__esModule", {
         value: !0
     });
@@ -1155,7 +1158,7 @@ var GN1 = U((jWQ) => {
         };
     jWQ.defaultSSOOIDCHttpAuthSchemeParametersProvider = Cm4;
 
-function Em4(A) {
+    function Em4(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {
@@ -1171,7 +1174,7 @@ function Em4(A) {
         }
     }
 
-function zm4(A) {
+    function zm4(A) {
         return {
             schemeId: "smithy.api#noAuth"
         }
@@ -1197,7 +1200,7 @@ function zm4(A) {
     };
     jWQ.resolveHttpAuthSchemeConfig = $m4
 });
-var ZN1 = U((HK7, Nm4) => {
+var ZN1 = moduleWrapper((HK7, Nm4) => {
     Nm4.exports = {
         name: "@aws-sdk/nested-clients",
         version: "3.840.0",
@@ -1306,7 +1309,7 @@ var ZN1 = U((HK7, Nm4) => {
         }
     }
 });
-var nWQ = U((lWQ) => {
+var nWQ = moduleWrapper((lWQ) => {
     Object.defineProperty(lWQ, "__esModule", {
         value: !0
     });
@@ -1502,7 +1505,7 @@ var nWQ = U((lWQ) => {
         };
     lWQ.ruleSet = Lm4
 });
-var rWQ = U((aWQ) => {
+var rWQ = moduleWrapper((aWQ) => {
     Object.defineProperty(aWQ, "__esModule", {
         value: !0
     });

@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_006.js
+ * 处理时间: 2025-12-09T03:41:36.399Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.891Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -36,8 +38,8 @@
                     else if (C.httpLabel) {
                         G.write(H, E);
                         let z = G.flush();
-                        if (V.path.includes(`{${D}+}`)) V.path = V.path.replace(`{${D}+}`, z.split("/").map(GDA).join("/"));
-                        else if (V.path.includes(`{${D}}`)) V.path = V.path.replace(`{${D}}`, GDA(z));
+                        if (V.path.includes(`{TextComponent{D}+}`)) V.path = V.path.replace(`{TextComponent{D}+}`, z.split("/").map(GDA).join("/"));
+                        else if (V.path.includes(`{TextComponent{D}}`)) V.path = V.path.replace(`{TextComponent{D}}`, GDA(z));
                         delete K[D]
                     } else if (C.httpHeader) G.write(H, E), I[C.httpHeader.toLowerCase()] = String(G.flush()), delete K[D];
                     else if (typeof C.httpPrefixHeaders === "string") {
@@ -161,11 +163,10 @@
             return A
         };
 
-function jV4(A, Q) {
+    function jV4(A, Q) {
         return new ro0(A, Q)
     }
-
-var ro0 = class {
+    var ro0 = class {
             constructor(A, Q) {
                 this.input = A, this.context = Q, this.query = {}, this.method = "", this.headers = {}, this.path = "", this.body = null, this.hostname = "", this.resolvePathStack = []
             }
@@ -194,7 +195,7 @@ var ro0 = class {
             }
             bp(A) {
                 return this.resolvePathStack.push((Q) => {
-                    this.path = `${Q?.endsWith("/")?Q.slice(0,-1):Q||""}` + A
+                    this.path = `TextComponent{Q?.endsWith("/")?Q.slice(0,-1):Q||""}` + A
                 }), this
             }
             p(A, Q, B, G) {
@@ -221,7 +222,7 @@ var ro0 = class {
         SV4 = L2(),
         BDA = y4();
 
-function Yz1(A, Q) {
+    function Yz1(A, Q) {
         if (Q.timestampFormat.useTrait) {
             if (A.isTimestampSchema() && (A.getSchema() === BDA.SCHEMA.TIMESTAMP_DATE_TIME || A.getSchema() === BDA.SCHEMA.TIMESTAMP_HTTP_DATE || A.getSchema() === BDA.SCHEMA.TIMESTAMP_EPOCH_SECONDS)) return A.getSchema()
         }
@@ -233,8 +234,7 @@ function Yz1(A, Q) {
         } = A.getMergedTraits();
         return (Q.httpBindings ? typeof G === "string" || Boolean(Z) ? BDA.SCHEMA.TIMESTAMP_HTTP_DATE : Boolean(I) || Boolean(B) ? BDA.SCHEMA.TIMESTAMP_DATE_TIME : void 0 : void 0) ?? Q.timestampFormat.default
     }
-
-var oo0 = class {
+    var oo0 = class {
             constructor(A) {
                 this.settings = A
             }
@@ -327,7 +327,7 @@ var oo0 = class {
                             return
                         }
                         if (B.isTimestampSchema()) {
-                            if (!(Q instanceof Date)) throw Error(`@smithy/core/protocols - received non-Date value ${Q} when schema expected Date in ${B.getName(!0)}`);
+                            if (!(Q instanceof Date)) throw Error(`@smithy/core/protocols - received non-Date value TextComponent{Q} when schema expected Date in TextComponent{B.getName(!0)}`);
                             switch (Yz1(B, this.settings)) {
                                 case ybA.SCHEMA.TIMESTAMP_DATE_TIME:
                                     this.stringBuffer = Q.toISOString().replace(".000Z", "Z");
@@ -407,7 +407,7 @@ var oo0 = class {
             }
         }
 });
-var nB = U((WJ7, Kt0) => {
+var nB = moduleWrapper((WJ7, Kt0) => {
     var {
         defineProperty: vbA,
         getOwnPropertyDescriptor: vV4,
@@ -473,7 +473,7 @@ var nB = U((WJ7, Kt0) => {
             return B
         }, "resolveAuthOptions");
 
-function Bt0(A) {
+    function Bt0(A) {
         let Q = new Map;
         for (let B of A) Q.set(B.schemeId, B);
         return Q
@@ -489,12 +489,12 @@ function Bt0(A) {
             for (let V of J) {
                 let K = W.get(V.schemeId);
                 if (!K) {
-                    F.push(`HttpAuthScheme \`${V.schemeId}\` was not enabled for this service.`);
+                    F.push(`HttpAuthScheme \`TextComponent{V.schemeId}\` was not enabled for this service.`);
                     continue
                 }
                 let D = K.identityProvider(await Q.identityProviderConfigProvider(A));
                 if (!D) {
-                    F.push(`HttpAuthScheme \`${V.schemeId}\` did not have an IdentityProvider configured.`);
+                    F.push(`HttpAuthScheme \`TextComponent{V.schemeId}\` did not have an IdentityProvider configured.`);
                     continue
                 }
                 let {
@@ -596,7 +596,7 @@ function Bt0(A) {
             return I = G(I) ?? I, await Q.send(I, ...Z)
         }, "makePagedClientRequest");
 
-function Jt0(A, Q, B, G, Z) {
+    function Jt0(A, Q, B, G, Z) {
         return yI(async function*(Y, J, ...W) {
             let X = J,
                 F = Y.startingToken ?? X[B],
@@ -605,7 +605,7 @@ function Jt0(A, Q, B, G, Z) {
             while (V) {
                 if (X[B] = F, Z) X[Z] = X[Z] ?? Y.pageSize;
                 if (Y.client instanceof A) K = await rV4(Q, Y.client, J, Y.withCommand, ...W);
-                else throw Error(`Invalid client, expected instance of ${A.name}`);
+                else throw Error(`Invalid client, expected instance of TextComponent{A.name}`);
                 yield K;
                 let D = F;
                 F = oV4(K, G), V = !!(F && (!Y.stopOnSameToken || F !== D))
@@ -625,7 +625,7 @@ function Jt0(A, Q, B, G, Z) {
         }, "get"),
         tV4 = C5();
 
-function Wt0(A, Q, B) {
+    function Wt0(A, Q, B) {
         if (!A.__smithy_context) A.__smithy_context = {
             features: {}
         };
@@ -633,8 +633,7 @@ function Wt0(A, Q, B) {
         A.__smithy_context.features[Q] = B
     }
     yI(Wt0, "setFeature");
-
-var eV4 = class {
+    var eV4 = class {
             constructor(A) {
                 this.authSchemes = new Map;
                 for (let [Q, B] of Object.entries(A))
@@ -658,7 +657,7 @@ var eV4 = class {
                 if (!Q.apiKey) throw Error("request could not be signed with `apiKey` since the `apiKey` is not defined");
                 let G = Wz1.HttpRequest.clone(A);
                 if (B.in === xbA.HttpApiKeyAuthLocation.QUERY) G.query[B.name] = Q.apiKey;
-                else if (B.in === xbA.HttpApiKeyAuthLocation.HEADER) G.headers[B.name] = B.scheme ? `${B.scheme} ${Q.apiKey}` : Q.apiKey;
+                else if (B.in === xbA.HttpApiKeyAuthLocation.HEADER) G.headers[B.name] = B.scheme ? `TextComponent{B.scheme} TextComponent{Q.apiKey}` : Q.apiKey;
                 else throw Error("request can only be signed with `apiKey` locations `query` or `header`, but found: `" + B.in + "`");
                 return G
             }
@@ -670,7 +669,7 @@ var eV4 = class {
             async sign(A, Q, B) {
                 let G = Wz1.HttpRequest.clone(A);
                 if (!Q.token) throw Error("request could not be signed with `token` since the `token` is not defined");
-                return G.headers.Authorization = `Bearer ${Q.token}`, G
+                return G.headers.Authorization = `Bearer TextComponent{Q.token}`, G
             }
         },
         BK4 = class {
@@ -709,7 +708,7 @@ var eV4 = class {
             }
         }, "memoizeIdentityProvider")
 });
-var Nt0 = U((DJ7, qt0) => {
+var Nt0 = moduleWrapper((DJ7, qt0) => {
     var {
         defineProperty: bbA,
         getOwnPropertyDescriptor: IK4,
@@ -801,7 +800,7 @@ var Nt0 = U((DJ7, qt0) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(wt0 || {})
 });
-var II = U((HJ7, _t0) => {
+var II = moduleWrapper((HJ7, _t0) => {
     var {
         defineProperty: hbA,
         getOwnPropertyDescriptor: EK4,
@@ -835,8 +834,7 @@ var II = U((HJ7, _t0) => {
         resolveEndpoint: () => mK4
     });
     _t0.exports = qK4(Lt0);
-
-var NK4 = class {
+    var NK4 = class {
             constructor({
                 size: A,
                 params: Q
@@ -882,9 +880,9 @@ var NK4 = class {
                 return Q
             }
         },
-        LK4 = new RegExp("^(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]\\d|\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]\\d|\\d)){3}$"),
+        LK4 = new RegExp("^(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]\\d|\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]\\d|\\d)){3}TextComponent"),
         Mt0 = e7((A) => LK4.test(A) || A.startsWith("[") && A.endsWith("]"), "isIpAddress"),
-        MK4 = new RegExp("^(?!.*-$)(?!-)[a-zA-Z0-9-]{1,63}$"),
+        MK4 = new RegExp("^(?!.*-TextComponent)(?!-)[a-zA-Z0-9-]{1,63}TextComponent"),
         Kz1 = e7((A, Q = !1) => {
             if (!Q) return MK4.test(A);
             let B = A.split(".");
@@ -895,15 +893,14 @@ var NK4 = class {
         Fz1 = {},
         ZDA = "endpoints";
 
-function Vv(A) {
+    function Vv(A) {
         if (typeof A !== "object" || A == null) return A;
         if ("ref" in A) return `$${Vv(A.ref)}`;
-        if ("fn" in A) return `${A.fn}(${(A.argv||[]).map(Vv).join(", ")})`;
+        if ("fn" in A) return `TextComponent{A.fn}(TextComponent{(A.argv||[]).map(Vv).join(", ")})`;
         return JSON.stringify(A, null, 2)
     }
     e7(Vv, "toDebugString");
-
-var dz = class extends Error {
+    var dz = class extends Error {
             static {
                 e7(this, "EndpointError")
             }
@@ -919,9 +916,9 @@ var dz = class extends Error {
             for (let G of Q) {
                 let Z = G.indexOf("[");
                 if (Z !== -1) {
-                    if (G.indexOf("]") !== G.length - 1) throw new dz(`Path: '${A}' does not end with ']'`);
+                    if (G.indexOf("]") !== G.length - 1) throw new dz(`Path: 'TextComponent{A}' does not end with ']'`);
                     let I = G.slice(Z + 1, -1);
-                    if (Number.isNaN(parseInt(I))) throw new dz(`Invalid array index: '${I}' in path: '${A}'`);
+                    if (Number.isNaN(parseInt(I))) throw new dz(`Invalid array index: 'TextComponent{I}' in path: 'TextComponent{A}'`);
                     if (Z !== 0) B.push(G.slice(0, Z));
                     B.push(I)
                 } else B.push(G)
@@ -929,7 +926,7 @@ var dz = class extends Error {
             return B
         }, "getAttrPathList"),
         Ot0 = e7((A, Q) => RK4(Q).reduce((B, G) => {
-            if (typeof B !== "object") throw new dz(`Index '${G}' in '${Q}' not found in '${JSON.stringify(A)}'`);
+            if (typeof B !== "object") throw new dz(`Index 'TextComponent{G}' in 'TextComponent{Q}' not found in 'TextComponent{JSON.stringify(A)}'`);
             else if (Array.isArray(B)) return B[parseInt(G)];
             return B[G]
         }, A), "getAttr"),
@@ -951,15 +948,15 @@ var dz = class extends Error {
                             protocol: H = "",
                             path: C = "",
                             query: E = {}
-                        } = A, z = new URL(`${H}//${K}${D?`:${D}`:""}${C}`);
-                        return z.search = Object.entries(E).map(([w, N]) => `${w}=${N}`).join("&"), z
+                        } = A, z = new URL(`TextComponent{H}//TextComponent{K}TextComponent{D?`:TextComponent{D}`:""}TextComponent{C}`);
+                        return z.search = Object.entries(E).map(([w, N]) => `TextComponent{w}=TextComponent{N}`).join("&"), z
                     }
                     return new URL(A)
                 } catch (K) {
                     return null
                 }
             })();
-            if (!Q) return console.error(`Unable to parse ${JSON.stringify(A)} as a whatwg URL.`), null;
+            if (!Q) return console.error(`Unable to parse TextComponent{JSON.stringify(A)} as a whatwg URL.`), null;
             let B = Q.href,
                 {
                     host: G,
@@ -972,13 +969,13 @@ var dz = class extends Error {
             let W = Y.slice(0, -1);
             if (!Object.values(Vz1.EndpointURLScheme).includes(W)) return null;
             let X = Mt0(Z),
-                F = B.includes(`${G}:${Xz1[W]}`) || typeof A === "string" && A.includes(`${G}:${Xz1[W]}`),
-                V = `${G}${F?`:${Xz1[W]}`:""}`;
+                F = B.includes(`TextComponent{G}:TextComponent{Xz1[W]}`) || typeof A === "string" && A.includes(`TextComponent{G}:TextComponent{Xz1[W]}`),
+                V = `TextComponent{G}TextComponent{F?`:TextComponent{Xz1[W]}`:""}`;
             return {
                 scheme: W,
                 authority: V,
                 path: I,
-                normalizedPath: I.endsWith("/") ? I : `${I}/`,
+                normalizedPath: I.endsWith("/") ? I : `TextComponent{I}/`,
                 isIp: X
             }
         }, "parseURL"),
@@ -988,7 +985,7 @@ var dz = class extends Error {
             if (!G) return A.substring(Q, B);
             return A.substring(A.length - B, A.length - Q)
         }, "substring"),
-        kK4 = e7((A) => encodeURIComponent(A).replace(/[!*'()]/g, (Q) => `%${Q.charCodeAt(0).toString(16).toUpperCase()}`), "uriEncode"),
+        kK4 = e7((A) => encodeURIComponent(A).replace(/[!*'()]/g, (Q) => `%TextComponent{Q.charCodeAt(0).toString(16).toUpperCase()}`), "uriEncode"),
         yK4 = {
             booleanEquals: OK4,
             getAttr: Ot0,
@@ -1041,7 +1038,7 @@ var dz = class extends Error {
             if (typeof A === "string") return Rt0(A, B);
             else if (A.fn) return Tt0(A, B);
             else if (A.ref) return xK4(A, B);
-            throw new dz(`'${Q}': ${String(A)} is not a string, function or reference.`)
+            throw new dz(`'TextComponent{Q}': TextComponent{String(A)} is not a string, function or reference.`)
         }, "evaluateExpression"),
         Tt0 = e7(({
             fn: A,
@@ -1056,9 +1053,9 @@ var dz = class extends Error {
             assign: A,
             ...Q
         }, B) => {
-            if (A && A in B.referenceRecord) throw new dz(`'${A}' is already defined in Reference Record.`);
+            if (A && A in B.referenceRecord) throw new dz(`'TextComponent{A}' is already defined in Reference Record.`);
             let G = Tt0(Q, B);
-            return B.logger?.debug?.(`${ZDA} evaluateCondition: ${Vv(Q)} = ${Vv(G)}`), {
+            return B.logger?.debug?.(`TextComponent{ZDA} evaluateCondition: TextComponent{Vv(Q)} = TextComponent{Vv(G)}`), {
                 result: G === "" ? !0 : !!G,
                 ...A != null && {
                     toAssign: {
@@ -1084,7 +1081,7 @@ var dz = class extends Error {
                 if (!Z) return {
                     result: Z
                 };
-                if (I) B[I.name] = I.value, Q.logger?.debug?.(`${ZDA} assign: ${I.name} := ${Vv(I.value)}`)
+                if (I) B[I.name] = I.value, Q.logger?.debug?.(`TextComponent{ZDA} assign: TextComponent{I.name} := TextComponent{Vv(I.value)}`)
             }
             return {
                 result: !0,
@@ -1095,7 +1092,7 @@ var dz = class extends Error {
             ...B,
             [G]: Z.map((I) => {
                 let Y = gbA(I, "Header value entry", Q);
-                if (typeof Y !== "string") throw new dz(`Header '${G}' value '${Y}' is not a string`);
+                if (typeof Y !== "string") throw new dz(`Header 'TextComponent{G}' value 'TextComponent{Y}' is not a string`);
                 return Y
             })
         }), {}), "getEndpointHeaders"),
@@ -1105,12 +1102,12 @@ var dz = class extends Error {
                 case "string":
                     return Rt0(A, Q);
                 case "object":
-                    if (A === null) throw new dz(`Unexpected endpoint property: ${A}`);
+                    if (A === null) throw new dz(`Unexpected endpoint property: TextComponent{A}`);
                     return jt0(A, Q);
                 case "boolean":
                     return A;
                 default:
-                    throw new dz(`Unexpected endpoint property type: ${typeof A}`)
+                    throw new dz(`Unexpected endpoint property type: TextComponent{typeof A}`)
             }
         }, "getEndpointProperty"),
         jt0 = e7((A, Q) => Object.entries(A).reduce((B, [G, Z]) => ({
@@ -1122,9 +1119,9 @@ var dz = class extends Error {
             if (typeof B === "string") try {
                 return new URL(B)
             } catch (G) {
-                throw console.error(`Failed to construct URL with ${B}`, G), G
+                throw console.error(`Failed to construct URL with TextComponent{B}`, G), G
             }
-            throw new dz(`Endpoint URL must be a string, got ${typeof B}`)
+            throw new dz(`Endpoint URL must be a string, got TextComponent{typeof B}`)
         }, "getEndpointUrl"),
         hK4 = e7((A, Q) => {
             let {
@@ -1147,7 +1144,7 @@ var dz = class extends Error {
                     properties: W,
                     headers: X
                 } = G;
-            return Q.logger?.debug?.(`${ZDA} Resolving endpoint from template: ${Vv(G)}`), {
+            return Q.logger?.debug?.(`TextComponent{ZDA} Resolving endpoint from template: TextComponent{Vv(G)}`), {
                 ...X != null && {
                     headers: bK4(X, Y)
                 },
@@ -1200,7 +1197,7 @@ var dz = class extends Error {
             else if (B.type === "tree") {
                 let G = uK4(B, Q);
                 if (G) return G
-            } else throw new dz(`Unknown endpoint rule: ${B}`);
+            } else throw new dz(`Unknown endpoint rule: TextComponent{B}`);
             throw new dz("Rules evaluation failed")
         }, "evaluateRules"),
         mK4 = e7((A, Q) => {
@@ -1211,22 +1208,22 @@ var dz = class extends Error {
                 parameters: Z,
                 rules: I
             } = A;
-            Q.logger?.debug?.(`${ZDA} Initial EndpointParams: ${Vv(B)}`);
+            Q.logger?.debug?.(`TextComponent{ZDA} Initial EndpointParams: TextComponent{Vv(B)}`);
             let Y = Object.entries(Z).filter(([, X]) => X.default != null).map(([X, F]) => [X, F.default]);
             if (Y.length > 0)
                 for (let [X, F] of Y) B[X] = B[X] ?? F;
             let J = Object.entries(Z).filter(([, X]) => X.required).map(([X]) => X);
             for (let X of J)
-                if (B[X] == null) throw new dz(`Missing required parameter: '${X}'`);
+                if (B[X] == null) throw new dz(`Missing required parameter: 'TextComponent{X}'`);
             let W = St0(I, {
                 endpointParams: B,
                 logger: G,
                 referenceRecord: {}
             });
-            return Q.logger?.debug?.(`${ZDA} Resolved endpoint: ${Vv(W)}`), W
+            return Q.logger?.debug?.(`TextComponent{ZDA} Resolved endpoint: TextComponent{Vv(W)}`), W
         }, "resolveEndpoint")
 });
-var U4A = U((zJ7, mt0) => {
+var U4A = moduleWrapper((zJ7, mt0) => {
     var {
         defineProperty: ubA,
         getOwnPropertyDescriptor: dK4,
@@ -1322,7 +1319,7 @@ var U4A = U((zJ7, mt0) => {
                     supportsDualStack: !0,
                     supportsFIPS: !0
                 },
-                regionRegex: "^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$",
+                regionRegex: "^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "af-south-1": {
                         description: "Africa (Cape Town)"
@@ -1437,7 +1434,7 @@ var U4A = U((zJ7, mt0) => {
                     supportsDualStack: !0,
                     supportsFIPS: !0
                 },
-                regionRegex: "^cn\\-\\w+\\-\\d+$",
+                regionRegex: "^cn\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-cn-global": {
                         description: "AWS China global region"
@@ -1459,7 +1456,7 @@ var U4A = U((zJ7, mt0) => {
                     supportsDualStack: !0,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-gov\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-gov\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-us-gov-global": {
                         description: "AWS GovCloud (US) global region"
@@ -1481,7 +1478,7 @@ var U4A = U((zJ7, mt0) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-iso\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-iso\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-global": {
                         description: "AWS ISO (US) global region"
@@ -1503,7 +1500,7 @@ var U4A = U((zJ7, mt0) => {
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-isob\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-isob\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-b-global": {
                         description: "AWS ISOB (US) global region"

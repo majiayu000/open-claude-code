@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_020.js
+ * 处理时间: 2025-12-09T03:41:36.556Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.904Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -21,12 +24,12 @@
         YM1 = "x-amz-user-agent",
         mEQ = " ",
         JM1 = "/",
-        lt4 = /[^\!\$\%\&\'\*\+\-\.\^\_\`\|\~\d\w]/g,
-        it4 = /[^\!\$\%\&\'\*\+\-\.\^\_\`\|\~\d\w\#]/g,
+        lt4 = /[^\!\TextComponent\%\&\'\*\+\-\.\^\_\`\|\~\d\w]/g,
+        it4 = /[^\!\TextComponent\%\&\'\*\+\-\.\^\_\`\|\~\d\w\#]/g,
         dEQ = "-",
         nt4 = 1024;
 
-function aEQ(A) {
+    function aEQ(A) {
         let Q = "";
         for (let B in A) {
             let G = A[B];
@@ -50,15 +53,15 @@ function aEQ(A) {
             } = Z, Y = B?.userAgent?.map(ZuA) || [], J = (await A.defaultUserAgentProvider()).map(ZuA);
             await nEQ(B, A, G);
             let W = B;
-            J.push(`m/${aEQ(Object.assign({},B.__smithy_context?.features,W.__aws_sdk_context?.features))}`);
+            J.push(`m/TextComponent{aEQ(Object.assign({},B.__smithy_context?.features,W.__aws_sdk_context?.features))}`);
             let X = A?.customUserAgent?.map(ZuA) || [],
                 F = await A.userAgentAppId();
-            if (F) J.push(ZuA([`app/${F}`]));
+            if (F) J.push(ZuA([`app/TextComponent{F}`]));
             let V = (0, dt4.getUserAgentPrefix)(),
                 K = (V ? [V] : []).concat([...J, ...Y, ...X]).join(mEQ),
                 D = [...J.filter((H) => H.startsWith("aws-sdk-")), ...X].join(mEQ);
             if (A.runtime !== "browser") {
-                if (D) I[YM1] = I[YM1] ? `${I[uEQ]} ${D}` : D;
+                if (D) I[YM1] = I[YM1] ? `TextComponent{I[uEQ]} TextComponent{D}` : D;
                 I[uEQ] = K
             } else I[YM1] = K;
             return Q({
@@ -78,9 +81,9 @@ function aEQ(A) {
                     case 0:
                         return J;
                     case 1:
-                        return `${Y}/${J}`;
+                        return `TextComponent{Y}/TextComponent{J}`;
                     default:
-                        return `${Y}#${J}`
+                        return `TextComponent{Y}#TextComponent{J}`
                 }
             }, "")
         }, "escapeUserAgent"),
@@ -97,7 +100,7 @@ function aEQ(A) {
             }, "applyToStack")
         }), "getUserAgentPlugin")
 });
-var XM1 = U((tEQ) => {
+var XM1 = moduleWrapper((tEQ) => {
     Object.defineProperty(tEQ, "__esModule", {
         value: !0
     });
@@ -115,7 +118,7 @@ var XM1 = U((tEQ) => {
         };
     tEQ.defaultSTSHttpAuthSchemeParametersProvider = ot4;
 
-function tt4(A) {
+    function tt4(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {
@@ -131,7 +134,7 @@ function tt4(A) {
         }
     }
 
-function et4(A) {
+    function et4(A) {
         return {
             schemeId: "smithy.api#noAuth"
         }
@@ -162,7 +165,7 @@ function et4(A) {
     };
     tEQ.resolveHttpAuthSchemeConfig = Be4
 });
-var CHA = U((QzQ) => {
+var CHA = moduleWrapper((QzQ) => {
     Object.defineProperty(QzQ, "__esModule", {
         value: !0
     });
@@ -199,7 +202,7 @@ var CHA = U((QzQ) => {
         }
     }
 });
-var FM1 = U((jH7, Je4) => {
+var FM1 = moduleWrapper((jH7, Je4) => {
     Je4.exports = {
         name: "@aws-sdk/nested-clients",
         version: "3.840.0",
@@ -308,7 +311,7 @@ var FM1 = U((jH7, Je4) => {
         }
     }
 });
-var WuA = U((SH7, XzQ) => {
+var WuA = moduleWrapper((SH7, XzQ) => {
     var {
         defineProperty: JuA,
         getOwnPropertyDescriptor: We4,
@@ -342,8 +345,8 @@ var WuA = U((SH7, XzQ) => {
         defaultUserAgent: () => Ce4
     });
     XzQ.exports = De4(ZzQ);
-    var GzQ = UA("os"),
-        VM1 = UA("process"),
+    var GzQ = nodeRequire("os"),
+        VM1 = nodeRequire("process"),
         IzQ = {
             isCrtAvailable: !1
         },
@@ -359,16 +362,16 @@ var WuA = U((SH7, XzQ) => {
                 let G = [
                         ["aws-sdk-js", Q],
                         ["ua", "2.1"],
-                        [`os/${(0,GzQ.platform)()}`, (0, GzQ.release)()],
+                        [`os/TextComponent{(0,GzQ.platform)()}`, (0, GzQ.release)()],
                         ["lang/js"],
-                        ["md/nodejs", `${VM1.versions.node}`]
+                        ["md/nodejs", `TextComponent{VM1.versions.node}`]
                     ],
                     Z = He4();
                 if (Z) G.push(Z);
-                if (A) G.push([`api/${A}`, Q]);
-                if (VM1.env.AWS_EXECUTION_ENV) G.push([`exec-env/${VM1.env.AWS_EXECUTION_ENV}`]);
+                if (A) G.push([`api/TextComponent{A}`, Q]);
+                if (VM1.env.AWS_EXECUTION_ENV) G.push([`exec-env/TextComponent{VM1.env.AWS_EXECUTION_ENV}`]);
                 let I = await B?.userAgentAppId?.();
-                return I ? [...G, [`app/${I}`]] : [...G]
+                return I ? [...G, [`app/TextComponent{I}`]] : [...G]
             }
         }, "createDefaultUserAgentProvider"),
         Ce4 = YzQ,
@@ -382,7 +385,7 @@ var WuA = U((SH7, XzQ) => {
             default: Ee4.DEFAULT_UA_APP_ID
         }
 });
-var yzQ = U((_zQ) => {
+var yzQ = moduleWrapper((_zQ) => {
     Object.defineProperty(_zQ, "__esModule", {
         value: !0
     });
@@ -746,7 +749,7 @@ var yzQ = U((_zQ) => {
         };
     _zQ.ruleSet = $e4
 });
-var bzQ = U((xzQ) => {
+var bzQ = moduleWrapper((xzQ) => {
     Object.defineProperty(xzQ, "__esModule", {
         value: !0
     });
@@ -767,7 +770,7 @@ var bzQ = U((xzQ) => {
     xzQ.defaultEndpointResolver = Le4;
     CM1.customEndpointFunctions.aws = we4.awsEndpointFunctions
 });
-var mzQ = U((gzQ) => {
+var mzQ = moduleWrapper((gzQ) => {
     Object.defineProperty(gzQ, "__esModule", {
         value: !0
     });
@@ -807,7 +810,7 @@ var mzQ = U((gzQ) => {
         };
     gzQ.getRuntimeConfig = Se4
 });
-var nzQ = U((lzQ) => {
+var nzQ = moduleWrapper((lzQ) => {
     Object.defineProperty(lzQ, "__esModule", {
         value: !0
     });
@@ -877,7 +880,7 @@ var nzQ = U((lzQ) => {
         };
     lzQ.getRuntimeConfig = me4
 });
-var VuA = U((vH7, ezQ) => {
+var VuA = moduleWrapper((vH7, ezQ) => {
     var {
         defineProperty: FuA,
         getOwnPropertyDescriptor: de4,
@@ -961,7 +964,7 @@ var VuA = U((vH7, ezQ) => {
             })
         }, "resolveRegionConfig")
 });
-var BUQ = U((AUQ) => {
+var BUQ = moduleWrapper((AUQ) => {
     Object.defineProperty(AUQ, "__esModule", {
         value: !0
     });
@@ -1005,7 +1008,7 @@ var BUQ = U((AUQ) => {
     };
     AUQ.resolveHttpAuthRuntimeConfig = AA8
 });
-var XUQ = U((JUQ) => {
+var XUQ = moduleWrapper((JUQ) => {
     Object.defineProperty(JUQ, "__esModule", {
         value: !0
     });
@@ -1020,7 +1023,7 @@ var XUQ = U((JUQ) => {
         };
     JUQ.resolveRuntimeExtensions = BA8
 });
-var HHA = U((UM1) => {
+var HHA = moduleWrapper((UM1) => {
     Object.defineProperty(UM1, "__esModule", {
         value: !0
     });
@@ -1045,8 +1048,7 @@ var HHA = U((UM1) => {
         WA8 = CHA(),
         XA8 = nzQ(),
         FA8 = XUQ();
-
-class CUQ extends HUQ.Client {
+    class CUQ extends HUQ.Client {
         config;
         constructor(...[A]) {
             let Q = (0, XA8.getRuntimeConfig)(A || {});
@@ -1073,7 +1075,7 @@ class CUQ extends HUQ.Client {
     }
     UM1.STSClient = CUQ
 });
-var DuA = U((uH7, aM1) => {
+var DuA = moduleWrapper((uH7, aM1) => {
     var {
         defineProperty: KuA,
         getOwnPropertyDescriptor: VA8,
@@ -1413,7 +1415,7 @@ var DuA = U((uH7, aM1) => {
                 let G = SUQ(A[m8A], Q);
                 if (A[m8A]?.length === 0) B.PolicyArns = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `PolicyArns.${Z}`;
+                    let Y = `PolicyArns.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -1423,7 +1425,7 @@ var DuA = U((uH7, aM1) => {
                 let G = dA8(A[vM1], Q);
                 if (A[vM1]?.length === 0) B.Tags = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `Tags.${Z}`;
+                    let Y = `Tags.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -1431,7 +1433,7 @@ var DuA = U((uH7, aM1) => {
                 let G = mA8(A[fM1], Q);
                 if (A[fM1]?.length === 0) B.TransitiveTagKeys = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `TransitiveTagKeys.${Z}`;
+                    let Y = `TransitiveTagKeys.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -1443,7 +1445,7 @@ var DuA = U((uH7, aM1) => {
                 let G = gA8(A[PM1], Q);
                 if (A[PM1]?.length === 0) B.ProvidedContexts = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `ProvidedContexts.${Z}`;
+                    let Y = `ProvidedContexts.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -1459,7 +1461,7 @@ var DuA = U((uH7, aM1) => {
                 let G = SUQ(A[m8A], Q);
                 if (A[m8A]?.length === 0) B.PolicyArns = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `PolicyArns.${Z}`;
+                    let Y = `PolicyArns.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -1474,7 +1476,7 @@ var DuA = U((uH7, aM1) => {
                 if (Z === null) continue;
                 let I = fA8(Z, Q);
                 Object.entries(I).forEach(([Y, J]) => {
-                    B[`member.${G}.${Y}`] = J
+                    B[`member.TextComponent{G}.TextComponent{Y}`] = J
                 }), G++
             }
             return B
@@ -1497,7 +1499,7 @@ var DuA = U((uH7, aM1) => {
                 if (Z === null) continue;
                 let I = hA8(Z, Q);
                 Object.entries(I).forEach(([Y, J]) => {
-                    B[`member.${G}.${Y}`] = J
+                    B[`member.TextComponent{G}.TextComponent{Y}`] = J
                 }), G++
             }
             return B
@@ -1513,5 +1515,5 @@ var DuA = U((uH7, aM1) => {
                 G = 1;
             for (let Z of A) {
                 if (Z === null) continue;
-                B[`member.${G}`] = Z, G++
+                B[`member.TextComponent{G}`] = Z, G++
             }

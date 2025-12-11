@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_014.js
+ * 处理时间: 2025-12-09T03:41:37.425Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.973Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -34,14 +37,13 @@
         return B
     };
 
-function LzA(A, Q, B) {
+    function LzA(A, Q, B) {
         if (B > Q) {
             var G = Error("Too few bytes to parse DER.");
             throw G.available = A.length(), G.remaining = Q, G.requested = B, G
         }
     }
-
-var ea8 = function(A, Q) {
+    var ea8 = function(A, Q) {
         var B = A.getByte();
         if (Q--, B === 128) return;
         var G, Z = B & 128;
@@ -77,7 +79,7 @@ var ea8 = function(A, Q) {
         return G
     };
 
-function WiA(A, Q, B, G) {
+    function WiA(A, Q, B, G) {
         var Z;
         LzA(A, Q, 2);
         var I = A.getByte();
@@ -112,8 +114,7 @@ function WiA(A, Q, B, G) {
             if (J === TB.Type.BITSTRING) LzA(A, Q, 1), C = A.getByte(), Q--;
             if (C === 0) try {
                 Z = A.length();
-
-var E = {
+                var E = {
                         strict: !0,
                         decodeBitStrings: !0
                     },
@@ -446,12 +447,12 @@ var E = {
         return G
     }
 });
-var F_ = U((YT7, Y4B) => {
+var F_ = moduleWrapper((YT7, Y4B) => {
     var XiA = n8();
     Y4B.exports = XiA.md = XiA.md || {};
     XiA.md.algorithms = XiA.md.algorithms || {}
 });
-var j3A = U((JT7, J4B) => {
+var j3A = moduleWrapper((JT7, J4B) => {
     var _b = n8();
     F_();
     P3();
@@ -498,7 +499,7 @@ var j3A = U((JT7, J4B) => {
         }, Z.digest = Z.getMac, Z
     }
 });
-var ViA = U((WT7, V4B) => {
+var ViA = moduleWrapper((WT7, V4B) => {
     var V_ = n8();
     F_();
     P3();
@@ -522,7 +523,7 @@ var ViA = U((WT7, V4B) => {
             var Z = G.messageLengthSize / 4;
             for (var I = 0; I < Z; ++I) G.fullMessageLength.push(0);
             return Q = V_.util.createBuffer(), A = {
-                h0: 1732584193,
+                RENDER_ERROR: 1732584193,
                 h1: 4023233417,
                 h2: 2562383102,
                 h3: 271733878
@@ -542,16 +543,15 @@ var ViA = U((WT7, V4B) => {
             Z.putBytes(ox1.substr(0, G.blockLength - Y));
             var J, W = 0;
             for (var X = G.fullMessageLength.length - 1; X >= 0; --X) J = G.fullMessageLength[X] * 8 + W, W = J / 4294967296 >>> 0, Z.putInt32Le(J >>> 0);
-
-var F = {
-                h0: A.h0,
+            var F = {
+                RENDER_ERROR: A.RENDER_ERROR,
                 h1: A.h1,
                 h2: A.h2,
                 h3: A.h3
             };
             W4B(F, B, Z);
             var V = V_.util.createBuffer();
-            return V.putInt32Le(F.h0), V.putInt32Le(F.h1), V.putInt32Le(F.h2), V.putInt32Le(F.h3), V
+            return V.putInt32Le(F.RENDER_ERROR), V.putInt32Le(F.h1), V.putInt32Le(F.h2), V.putInt32Le(F.h3), V
         }, G
     };
     var ox1 = null,
@@ -560,25 +560,25 @@ var F = {
         S3A = null,
         F4B = !1;
 
-function Qs8() {
+    function Qs8() {
         ox1 = String.fromCharCode(128), ox1 += V_.util.fillString(String.fromCharCode(0), 64), FiA = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 6, 11, 0, 5, 10, 15, 4, 9, 14, 3, 8, 13, 2, 7, 12, 5, 8, 11, 14, 1, 4, 7, 10, 13, 0, 3, 6, 9, 12, 15, 2, 0, 7, 14, 5, 12, 3, 10, 1, 8, 15, 6, 13, 4, 11, 2, 9], MzA = [7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22, 5, 9, 14, 20, 5, 9, 14, 20, 5, 9, 14, 20, 5, 9, 14, 20, 4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23, 6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21], S3A = Array(64);
         for (var A = 0; A < 64; ++A) S3A[A] = Math.floor(Math.abs(Math.sin(A + 1)) * 4294967296);
         F4B = !0
     }
 
-function W4B(A, Q, B) {
+    function W4B(A, Q, B) {
         var G, Z, I, Y, J, W, X, F, V = B.length();
         while (V >= 64) {
-            Z = A.h0, I = A.h1, Y = A.h2, J = A.h3;
+            Z = A.RENDER_ERROR, I = A.h1, Y = A.h2, J = A.h3;
             for (F = 0; F < 16; ++F) Q[F] = B.getInt32Le(), W = J ^ I & (Y ^ J), G = Z + W + S3A[F] + Q[F], X = MzA[F], Z = J, J = Y, Y = I, I += G << X | G >>> 32 - X;
             for (; F < 32; ++F) W = Y ^ J & (I ^ Y), G = Z + W + S3A[F] + Q[FiA[F]], X = MzA[F], Z = J, J = Y, Y = I, I += G << X | G >>> 32 - X;
             for (; F < 48; ++F) W = I ^ Y ^ J, G = Z + W + S3A[F] + Q[FiA[F]], X = MzA[F], Z = J, J = Y, Y = I, I += G << X | G >>> 32 - X;
             for (; F < 64; ++F) W = Y ^ (I | ~J), G = Z + W + S3A[F] + Q[FiA[F]], X = MzA[F], Z = J, J = Y, Y = I, I += G << X | G >>> 32 - X;
-            A.h0 = A.h0 + Z | 0, A.h1 = A.h1 + I | 0, A.h2 = A.h2 + Y | 0, A.h3 = A.h3 + J | 0, V -= 64
+            A.RENDER_ERROR = A.RENDER_ERROR + Z | 0, A.h1 = A.h1 + I | 0, A.h2 = A.h2 + Y | 0, A.h3 = A.h3 + J | 0, V -= 64
         }
     }
 });
-var io = U((XT7, D4B) => {
+var io = moduleWrapper((XT7, D4B) => {
     var DiA = n8();
     P3();
     var K4B = D4B.exports = DiA.pem = DiA.pem || {};
@@ -620,8 +620,7 @@ var io = U((XT7, D4B) => {
             if (I = B.exec(A), !I) break;
             var Y = I[1];
             if (Y === "NEW CERTIFICATE REQUEST") Y = "CERTIFICATE REQUEST";
-
-var J = {
+            var J = {
                 type: Y,
                 procType: null,
                 contentDomain: null,
@@ -633,7 +632,7 @@ var J = {
             var W = I[2].split(Z),
                 X = 0;
             while (I && X < W.length) {
-                var F = W[X].replace(/\s+$/, "");
+                var F = W[X].replace(/\s+TextComponent/, "");
                 for (var V = X + 1; V < W.length; ++V) {
                     var K = W[V];
                     if (!/\s/.test(K[0])) break;
@@ -669,7 +668,7 @@ var J = {
         return Q
     };
 
-function KiA(A) {
+    function KiA(A) {
         var Q = A.name + ": ",
             B = [],
             G = function(W, X) {
@@ -692,11 +691,11 @@ function KiA(A) {
         return Q
     }
 
-function Bs8(A) {
+    function Bs8(A) {
         return A.replace(/^\s+/, "")
     }
 });
-var OzA = U((FT7, C4B) => {
+var OzA = moduleWrapper((FT7, C4B) => {
     var sI = n8();
     ZiA();
     ix1();
@@ -769,14 +768,13 @@ var OzA = U((FT7, C4B) => {
     K_("3DES-OFB", sI.cipher.modes.ofb);
     K_("3DES-CTR", sI.cipher.modes.ctr);
 
-function K_(A, Q) {
+    function K_(A, Q) {
         var B = function() {
             return new sI.des.Algorithm(A, Q)
         };
         sI.cipher.registerAlgorithm(A, B)
     }
-
-var Gs8 = [16843776, 0, 65536, 16843780, 16842756, 66564, 4, 65536, 1024, 16843776, 16843780, 1024, 16778244, 16842756, 16777216, 4, 1028, 16778240, 16778240, 66560, 66560, 16842752, 16842752, 16778244, 65540, 16777220, 16777220, 65540, 0, 1028, 66564, 16777216, 65536, 16843780, 4, 16842752, 16843776, 16777216, 16777216, 1024, 16842756, 65536, 66560, 16777220, 1024, 4, 16778244, 66564, 16843780, 65540, 16842752, 16778244, 16777220, 1028, 66564, 16843776, 1028, 16778240, 16778240, 0, 65540, 66560, 0, 16842756],
+    var Gs8 = [16843776, 0, 65536, 16843780, 16842756, 66564, 4, 65536, 1024, 16843776, 16843780, 1024, 16778244, 16842756, 16777216, 4, 1028, 16778240, 16778240, 66560, 66560, 16842752, 16842752, 16778244, 65540, 16777220, 16777220, 65540, 0, 1028, 66564, 16777216, 65536, 16843780, 4, 16842752, 16843776, 16777216, 16777216, 1024, 16842756, 65536, 66560, 16777220, 1024, 4, 16778244, 66564, 16843780, 65540, 16842752, 16778244, 16777220, 1028, 66564, 16843776, 1028, 16778240, 16778240, 0, 65540, 66560, 0, 16842756],
         Zs8 = [-2146402272, -2147450880, 32768, 1081376, 1048576, 32, -2146435040, -2147450848, -2147483616, -2146402272, -2146402304, -2147483648, -2147450880, 1048576, 32, -2146435040, 1081344, 1048608, -2147450848, 0, -2147483648, 32768, 1081376, -2146435072, 1048608, -2147483616, 0, 1081344, 32800, -2146402304, -2146435072, 32800, 0, 1081376, -2146435040, 1048576, -2147450848, -2146435072, -2146402304, 32768, -2146435072, -2147450880, 32, -2146402272, 1081376, 32, 32768, -2147483648, 32800, -2146402304, 1048576, -2147483616, 1048608, -2147450848, -2147483616, 1048608, 1081344, 0, -2147450880, 32800, -2147483648, -2146435040, -2146402272, 1081344],
         Is8 = [520, 134349312, 0, 134348808, 134218240, 0, 131592, 134218240, 131080, 134217736, 134217736, 131072, 134349320, 131080, 134348800, 520, 134217728, 8, 134349312, 512, 131584, 134348800, 134348808, 131592, 134218248, 131584, 131072, 134218248, 8, 134349320, 512, 134217728, 134349312, 134217728, 131080, 520, 131072, 134349312, 134218240, 0, 512, 131080, 134349320, 134218240, 134217736, 512, 0, 134348808, 134218248, 131072, 134217728, 134349320, 8, 131592, 131584, 134217736, 134348800, 134218248, 520, 134348800, 131592, 8, 134348808, 131584],
         Ys8 = [8396801, 8321, 8321, 128, 8396928, 8388737, 8388609, 8193, 0, 8396800, 8396800, 8396929, 129, 0, 8388736, 8388609, 1, 8192, 8388608, 8396801, 128, 8388608, 8193, 8320, 8388737, 1, 8320, 8388736, 8192, 8396928, 8396929, 129, 8388736, 8388609, 8396800, 8396929, 129, 0, 0, 8396800, 8320, 8388736, 8388737, 1, 8396801, 8321, 8321, 128, 8396929, 129, 1, 8192, 8388609, 8193, 8396928, 8388737, 8193, 8320, 8388608, 8396801, 128, 8388608, 8192, 8396928],
@@ -785,7 +783,7 @@ var Gs8 = [16843776, 0, 65536, 16843780, 16842756, 66564, 4, 65536, 1024, 168437
         Xs8 = [2097152, 69206018, 67110914, 0, 2048, 67110914, 2099202, 69208064, 69208066, 2097152, 0, 67108866, 2, 67108864, 69206018, 2050, 67110912, 2099202, 2097154, 67110912, 67108866, 69206016, 69208064, 2097154, 69206016, 2048, 2050, 69208066, 2099200, 2, 67108864, 2099200, 67108864, 2099200, 2097152, 67110914, 67110914, 69206018, 69206018, 2, 2097154, 67108864, 67110912, 2097152, 69208064, 2050, 2099202, 69208064, 2050, 67108866, 69208066, 69206016, 2099200, 0, 2, 69208066, 0, 2099202, 69206016, 2048, 67108866, 67110912, 2048, 2097154],
         Fs8 = [268439616, 4096, 262144, 268701760, 268435456, 268439616, 64, 268435456, 262208, 268697600, 268701760, 266240, 268701696, 266304, 4096, 64, 268697600, 268435520, 268439552, 4160, 266240, 262208, 268697664, 268701696, 4160, 0, 0, 268697664, 268435520, 268439552, 266304, 262144, 266304, 262144, 268701696, 4096, 64, 268697664, 4096, 266304, 268439552, 64, 268435520, 268697600, 268697664, 268435456, 262144, 268439616, 0, 268701760, 262208, 268435520, 268697600, 268439552, 268439616, 0, 268701760, 266240, 266240, 4160, 4160, 262208, 268435456, 268701696];
 
-function Vs8(A) {
+    function Vs8(A) {
         var Q = [0, 4, 536870912, 536870916, 65536, 65540, 536936448, 536936452, 512, 516, 536871424, 536871428, 66048, 66052, 536936960, 536936964],
             B = [0, 1, 1048576, 1048577, 67108864, 67108865, 68157440, 68157441, 256, 257, 1048832, 1048833, 67109120, 67109121, 68157696, 68157697],
             G = [0, 8, 2048, 2056, 16777216, 16777224, 16779264, 16779272, 0, 8, 2048, 2056, 16777216, 16777224, 16779264, 16779272],
@@ -821,7 +819,7 @@ function Vs8(A) {
         return E
     }
 
-function H4B(A, Q, B, G) {
+    function H4B(A, Q, B, G) {
         var Z = A.length === 32 ? 3 : 9,
             I;
         if (Z === 3) I = G ? [30, -2, -2] : [0, 32, 2];
@@ -842,7 +840,7 @@ function H4B(A, Q, B, G) {
         J = J >>> 1 | J << 31, W = W >>> 1 | W << 31, Y = (J >>> 1 ^ W) & 1431655765, W ^= Y, J ^= Y << 1, Y = (W >>> 8 ^ J) & 16711935, J ^= Y, W ^= Y << 8, Y = (W >>> 2 ^ J) & 858993459, J ^= Y, W ^= Y << 2, Y = (J >>> 16 ^ W) & 65535, W ^= Y, J ^= Y << 16, Y = (J >>> 4 ^ W) & 252645135, W ^= Y, J ^= Y << 4, B[0] = J, B[1] = W
     }
 
-function HiA(A) {
+    function HiA(A) {
         A = A || {};
         var Q = (A.mode || "CBC").toUpperCase(),
             B = "DES-" + Q,
@@ -857,14 +855,14 @@ function HiA(A) {
         }, G
     }
 });
-var CiA = U((VT7, E4B) => {
+var CiA = moduleWrapper((VT7, E4B) => {
     var AE = n8();
     j3A();
     F_();
     P3();
     var Ks8 = AE.pkcs5 = AE.pkcs5 || {},
         kb;
-    if (AE.util.isNodejs && !AE.options.usePureJavaScript) kb = UA("crypto");
+    if (AE.util.isNodejs && !AE.options.usePureJavaScript) kb = nodeRequire("crypto");
     E4B.exports = AE.pbkdf2 = Ks8.pbkdf2 = function(A, Q, B, G, Z, I) {
         if (typeof Z === "function") I = Z, Z = null;
         if (AE.util.isNodejs && !AE.options.usePureJavaScript && kb.pbkdf2 && (Z === null || typeof Z !== "object") && (kb.pbkdf2Sync.length > 4 || (!Z || Z === "sha1"))) {
@@ -910,19 +908,19 @@ var CiA = U((VT7, E4B) => {
         var C = 1,
             E;
 
-function z() {
+        function z() {
             if (C > W) return I(null, V);
             F.start(null, null), F.update(Q), F.update(AE.util.int32ToBytes(C)), K = H = F.digest().getBytes(), E = 2, w()
         }
 
-function w() {
+        function w() {
             if (E <= B) return F.start(null, null), F.update(H), D = F.digest().getBytes(), K = AE.util.xorBytes(K, D, Y), H = D, ++E, AE.util.setImmediate(w);
             V += C < W ? K : K.substr(0, X), ++C, z()
         }
         z()
     }
 });
-var ex1 = U((KT7, q4B) => {
+var ex1 = moduleWrapper((KT7, q4B) => {
     var D_ = n8();
     F_();
     P3();
@@ -946,7 +944,7 @@ var ex1 = U((KT7, q4B) => {
             var Z = G.messageLengthSize / 4;
             for (var I = 0; I < Z; ++I) G.fullMessageLength.push(0);
             return Q = D_.util.createBuffer(), A = {
-                h0: 1779033703,
+                RENDER_ERROR: 1779033703,
                 h1: 3144134277,
                 h2: 1013904242,
                 h3: 2773480762,
@@ -971,9 +969,8 @@ var ex1 = U((KT7, q4B) => {
             var J, W, X = G.fullMessageLength[0] * 8;
             for (var F = 0; F < G.fullMessageLength.length - 1; ++F) J = G.fullMessageLength[F + 1] * 8, W = J / 4294967296 >>> 0, X += W, Z.putInt32(X >>> 0), X = J >>> 0;
             Z.putInt32(X);
-
-var V = {
-                h0: A.h0,
+            var V = {
+                RENDER_ERROR: A.RENDER_ERROR,
                 h1: A.h1,
                 h2: A.h2,
                 h3: A.h3,
@@ -984,33 +981,33 @@ var V = {
             };
             z4B(V, B, Z);
             var K = D_.util.createBuffer();
-            return K.putInt32(V.h0), K.putInt32(V.h1), K.putInt32(V.h2), K.putInt32(V.h3), K.putInt32(V.h4), K.putInt32(V.h5), K.putInt32(V.h6), K.putInt32(V.h7), K
+            return K.putInt32(V.RENDER_ERROR), K.putInt32(V.h1), K.putInt32(V.h2), K.putInt32(V.h3), K.putInt32(V.h4), K.putInt32(V.h5), K.putInt32(V.h6), K.putInt32(V.h7), K
         }, G
     };
     var tx1 = null,
         $4B = !1,
         w4B = null;
 
-function Ds8() {
+    function Ds8() {
         tx1 = String.fromCharCode(128), tx1 += D_.util.fillString(String.fromCharCode(0), 64), w4B = [1116352408, 1899447441, 3049323471, 3921009573, 961987163, 1508970993, 2453635748, 2870763221, 3624381080, 310598401, 607225278, 1426881987, 1925078388, 2162078206, 2614888103, 3248222580, 3835390401, 4022224774, 264347078, 604807628, 770255983, 1249150122, 1555081692, 1996064986, 2554220882, 2821834349, 2952996808, 3210313671, 3336571891, 3584528711, 113926993, 338241895, 666307205, 773529912, 1294757372, 1396182291, 1695183700, 1986661051, 2177026350, 2456956037, 2730485921, 2820302411, 3259730800, 3345764771, 3516065817, 3600352804, 4094571909, 275423344, 430227734, 506948616, 659060556, 883997877, 958139571, 1322822218, 1537002063, 1747873779, 1955562222, 2024104815, 2227730452, 2361852424, 2428436474, 2756734187, 3204031479, 3329325298], $4B = !0
     }
 
-function z4B(A, Q, B) {
+    function z4B(A, Q, B) {
         var G, Z, I, Y, J, W, X, F, V, K, D, H, C, E, z, w = B.length();
         while (w >= 64) {
             for (X = 0; X < 16; ++X) Q[X] = B.getInt32();
             for (; X < 64; ++X) G = Q[X - 2], G = (G >>> 17 | G << 15) ^ (G >>> 19 | G << 13) ^ G >>> 10, Z = Q[X - 15], Z = (Z >>> 7 | Z << 25) ^ (Z >>> 18 | Z << 14) ^ Z >>> 3, Q[X] = G + Q[X - 7] + Z + Q[X - 16] | 0;
-            F = A.h0, V = A.h1, K = A.h2, D = A.h3, H = A.h4, C = A.h5, E = A.h6, z = A.h7;
+            F = A.RENDER_ERROR, V = A.h1, K = A.h2, D = A.h3, H = A.h4, C = A.h5, E = A.h6, z = A.h7;
             for (X = 0; X < 64; ++X) Y = (H >>> 6 | H << 26) ^ (H >>> 11 | H << 21) ^ (H >>> 25 | H << 7), J = E ^ H & (C ^ E), I = (F >>> 2 | F << 30) ^ (F >>> 13 | F << 19) ^ (F >>> 22 | F << 10), W = F & V | K & (F ^ V), G = z + Y + J + w4B[X] + Q[X], Z = I + W, z = E, E = C, C = H, H = D + G >>> 0, D = K, K = V, V = F, F = G + Z >>> 0;
-            A.h0 = A.h0 + F | 0, A.h1 = A.h1 + V | 0, A.h2 = A.h2 + K | 0, A.h3 = A.h3 + D | 0, A.h4 = A.h4 + H | 0, A.h5 = A.h5 + C | 0, A.h6 = A.h6 + E | 0, A.h7 = A.h7 + z | 0, w -= 64
+            A.RENDER_ERROR = A.RENDER_ERROR + F | 0, A.h1 = A.h1 + V | 0, A.h2 = A.h2 + K | 0, A.h3 = A.h3 + D | 0, A.h4 = A.h4 + H | 0, A.h5 = A.h5 + C | 0, A.h6 = A.h6 + E | 0, A.h7 = A.h7 + z | 0, w -= 64
         }
     }
 });
-var Av1 = U((DT7, N4B) => {
+var Av1 = moduleWrapper((DT7, N4B) => {
     var H_ = n8();
     P3();
     var EiA = null;
-    if (H_.util.isNodejs && !H_.options.usePureJavaScript && !process.versions["node-webkit"]) EiA = UA("crypto");
+    if (H_.util.isNodejs && !H_.options.usePureJavaScript && !process.versions["node-webkit"]) EiA = nodeRequire("crypto");
     var Hs8 = N4B.exports = H_.prng = H_.prng || {};
     Hs8.create = function(A) {
         var Q = {
@@ -1034,7 +1031,7 @@ var Av1 = U((DT7, N4B) => {
                 C = H_.util.createBuffer();
             Q.key = null, E();
 
-function E(z) {
+            function E(z) {
                 if (z) return F(z);
                 if (C.length() >= X) return F(null, C.getBytes(X));
                 if (Q.generated > 1048575) Q.key = null;
@@ -1060,7 +1057,7 @@ function E(z) {
             return H.getBytes(X)
         };
 
-function I(X) {
+        function I(X) {
             if (Q.pools[0].messageLength >= 32) return J(), X();
             var F = 32 - Q.pools[0].messageLength << 5;
             Q.seedFile(F, function(V, K) {
@@ -1069,13 +1066,13 @@ function I(X) {
             })
         }
 
-function Y() {
+        function Y() {
             if (Q.pools[0].messageLength >= 32) return J();
             var X = 32 - Q.pools[0].messageLength << 5;
             Q.collect(Q.seedFileSync(X)), J()
         }
 
-function J() {
+        function J() {
             Q.reseeds = Q.reseeds === 4294967295 ? 0 : Q.reseeds + 1;
             var X = Q.plugin.md.create();
             X.update(Q.keyBytes);
@@ -1089,7 +1086,7 @@ function J() {
             Q.key = Q.plugin.formatKey(Q.keyBytes), Q.seed = Q.plugin.formatSeed(K), Q.generated = 0
         }
 
-function W(X) {
+        function W(X) {
             var F = null,
                 V = H_.util.globalScope,
                 K = V.crypto || V.msCrypto;
@@ -1172,7 +1169,7 @@ function W(X) {
         }, Q
     }
 });
-var aL = U((HT7, Qv1) => {
+var aL = moduleWrapper((HT7, Qv1) => {
     var kV = n8();
     Rc();
     ex1();
@@ -1198,7 +1195,7 @@ var aL = U((HT7, Qv1) => {
                 return ++V[3], V
             }, Q.md = kV.md.sha256;
 
-function Z() {
+            function Z() {
                 var V = kV.prng.create(Q);
                 return V.getBytes = function(K, D) {
                     return V.generate(K, D)
@@ -1235,11 +1232,10 @@ function Z() {
         })(typeof jQuery < "u" ? jQuery : null)
     })()
 });
-var Gv1 = U((CT7, O4B) => {
+var Gv1 = moduleWrapper((CT7, O4B) => {
     var WU = n8();
     P3();
-
-var Bv1 = [217, 120, 249, 196, 25, 221, 181, 237, 40, 233, 253, 121, 74, 160, 216, 157, 198, 126, 55, 131, 43, 118, 83, 142, 98, 76, 100, 136, 68, 139, 251, 162, 23, 154, 89, 245, 135, 179, 79, 19, 97, 69, 109, 141, 9, 129, 125, 50, 189, 143, 64, 235, 134, 183, 123, 11, 240, 149, 33, 34, 92, 107, 78, 130, 84, 214, 101, 147, 206, 96, 178, 28, 115, 86, 192, 20, 167, 140, 241, 220, 18, 117, 202, 31, 59, 190, 228, 209, 66, 61, 212, 48, 163, 60, 182, 38, 111, 191, 14, 218, 70, 105, 7, 87, 39, 242, 29, 155, 188, 148, 67, 3, 248, 17, 199, 246, 144, 239, 62, 231, 6, 195, 213, 47, 200, 102, 30, 215, 8, 232, 234, 222, 128, 82, 238, 247, 132, 170, 114, 172, 53, 77, 106, 42, 150, 26, 210, 113, 90, 21, 73, 116, 75, 159, 208, 94, 4, 24, 164, 236, 194, 224, 65, 110, 15, 81, 203, 204, 36, 145, 175, 80, 161, 244, 112, 57, 153, 124, 58, 133, 35, 184, 180, 122, 252, 2, 54, 91, 37, 85, 151, 49, 45, 93, 250, 152, 227, 138, 146, 174, 5, 223, 41, 16, 103, 108, 186, 201, 211, 0, 230, 207, 225, 158, 168, 44, 99, 22, 1, 63, 88, 226, 137, 169, 13, 56, 52, 27, 171, 51, 255, 176, 187, 72, 12, 95, 185, 177, 205, 46, 197, 243, 219, 71, 229, 165, 156, 119, 10, 166, 32, 104, 254, 127, 193, 173],
+    var Bv1 = [217, 120, 249, 196, 25, 221, 181, 237, 40, 233, 253, 121, 74, 160, 216, 157, 198, 126, 55, 131, 43, 118, 83, 142, 98, 76, 100, 136, 68, 139, 251, 162, 23, 154, 89, 245, 135, 179, 79, 19, 97, 69, 109, 141, 9, 129, 125, 50, 189, 143, 64, 235, 134, 183, 123, 11, 240, 149, 33, 34, 92, 107, 78, 130, 84, 214, 101, 147, 206, 96, 178, 28, 115, 86, 192, 20, 167, 140, 241, 220, 18, 117, 202, 31, 59, 190, 228, 209, 66, 61, 212, 48, 163, 60, 182, 38, 111, 191, 14, 218, 70, 105, 7, 87, 39, 242, 29, 155, 188, 148, 67, 3, 248, 17, 199, 246, 144, 239, 62, 231, 6, 195, 213, 47, 200, 102, 30, 215, 8, 232, 234, 222, 128, 82, 238, 247, 132, 170, 114, 172, 53, 77, 106, 42, 150, 26, 210, 113, 90, 21, 73, 116, 75, 159, 208, 94, 4, 24, 164, 236, 194, 224, 65, 110, 15, 81, 203, 204, 36, 145, 175, 80, 161, 244, 112, 57, 153, 124, 58, 133, 35, 184, 180, 122, 252, 2, 54, 91, 37, 85, 151, 49, 45, 93, 250, 152, 227, 138, 146, 174, 5, 223, 41, 16, 103, 108, 186, 201, 211, 0, 230, 207, 225, 158, 168, 44, 99, 22, 1, 63, 88, 226, 137, 169, 13, 56, 52, 27, 171, 51, 255, 176, 187, 72, 12, 95, 185, 177, 205, 46, 197, 243, 219, 71, 229, 165, 156, 119, 10, 166, 32, 104, 254, 127, 193, 173],
         L4B = [1, 2, 3, 5],
         Cs8 = function(A, Q) {
             return A << Q & 65535 | (A & 65535) >> 16 - Q
@@ -1262,8 +1258,7 @@ var Bv1 = [217, 120, 249, 196, 25, 221, 181, 237, 40, 233, 253, 121, 74, 160, 21
         for (J = 127 - I; J >= 0; J--) B.setAt(J, Bv1[B.at(J + 1) ^ B.at(J + I)]);
         return B
     };
-
-var M4B = function(A, Q, B) {
+    var M4B = function(A, Q, B) {
         var G = !1,
             Z = null,
             I = null,
@@ -1281,8 +1276,7 @@ var M4B = function(A, Q, B) {
         }, W = function(H) {
             for (X = 3; X >= 0; X--) H[X] -= V[H[(X + 3) % 4] & 63]
         };
-
-var K = function(H) {
+        var K = function(H) {
                 var C = [];
                 for (X = 0; X < 4; X++) {
                     var E = Z.getInt16Le();
@@ -1356,13 +1350,13 @@ var K = function(H) {
         return M4B(A, Q, !1)
     }
 });
-var TzA = U((ET7, y4B) => {
+var TzA = moduleWrapper((ET7, y4B) => {
     var Zv1 = n8();
     y4B.exports = Zv1.jsbn = Zv1.jsbn || {};
     var yb, zs8 = 244837814094590,
         R4B = (zs8 & 16777215) == 15715070;
 
-function FQ(A, Q, B) {
+    function FQ(A, Q, B) {
         if (this.data = [], A != null)
             if (typeof A == "number") this.fromNumber(A, Q, B);
             else if (Q == null && typeof A != "string") this.fromString(A, 256);
@@ -1370,11 +1364,11 @@ function FQ(A, Q, B) {
     }
     Zv1.jsbn.BigInteger = FQ;
 
-function j3() {
+    function j3() {
         return new FQ(null)
     }
 
-function Us8(A, Q, B, G, Z, I) {
+    function Us8(A, Q, B, G, Z, I) {
         while (--I >= 0) {
             var Y = Q * this.data[A++] + B.data[G] + Z;
             Z = Math.floor(Y / 67108864), B.data[G++] = Y & 67108863
@@ -1382,7 +1376,7 @@ function Us8(A, Q, B, G, Z, I) {
         return Z
     }
 
-    function $TASK_TOOL_NAME(A, Q, B, G, Z, I) {
+    function $s8(A, Q, B, G, Z, I) {
         var Y = Q & 32767,
             J = Q >> 15;
         while (--I >= 0) {
@@ -1394,7 +1388,7 @@ function Us8(A, Q, B, G, Z, I) {
         return Z
     }
 
-function T4B(A, Q, B, G, Z, I) {
+    function T4B(A, Q, B, G, Z, I) {
         var Y = Q & 16383,
             J = Q >> 14;
         while (--I >= 0) {
@@ -1406,7 +1400,7 @@ function T4B(A, Q, B, G, Z, I) {
         return Z
     }
     if (typeof navigator > "u") FQ.prototype.am = T4B, yb = 28;
-    else if (R4B && navigator.appName == "Microsoft Internet Explorer") FQ.prototype.am = $TASK_TOOL_NAME, yb = 30;
+    else if (R4B && navigator.appName == "Microsoft Internet Explorer") FQ.prototype.am = $s8, yb = 30;
     else if (R4B && navigator.appName != "Netscape") FQ.prototype.am = Us8, yb = 26;
     else FQ.prototype.am = T4B, yb = 28;
     FQ.prototype.DB = yb;
@@ -1426,32 +1420,32 @@ function T4B(A, Q, B, G, Z, I) {
     _3A = 65;
     for (sL = 10; sL < 36; ++sL) ziA[_3A++] = sL;
 
-function P4B(A) {
+    function P4B(A) {
         return ws8.charAt(A)
     }
 
-function j4B(A, Q) {
+    function j4B(A, Q) {
         var B = ziA[A.charCodeAt(Q)];
         return B == null ? -1 : B
     }
 
-function qs8(A) {
+    function qs8(A) {
         for (var Q = this.t - 1; Q >= 0; --Q) A.data[Q] = this.data[Q];
         A.t = this.t, A.s = this.s
     }
 
-function Ns8(A) {
+    function Ns8(A) {
         if (this.t = 1, this.s = A < 0 ? -1 : 0, A > 0) this.data[0] = A;
         else if (A < -1) this.data[0] = A + this.DV;
         else this.t = 0
     }
 
-function Pc(A) {
+    function Pc(A) {
         var Q = j3();
         return Q.fromInt(A), Q
     }
 
-function Ls8(A, Q) {
+    function Ls8(A, Q) {
         var B;
         if (Q == 16) B = 4;
         else if (Q == 8) B = 3;
@@ -1484,12 +1478,12 @@ function Ls8(A, Q) {
         if (this.clamp(), Z) FQ.ZERO.subTo(this, this)
     }
 
-function Ms8() {
+    function Ms8() {
         var A = this.s & this.DM;
         while (this.t > 0 && this.data[this.t - 1] == A) --this.t
     }
 
-function Os8(A) {
+    function Os8(A) {
         if (this.s < 0) return "-" + this.negate().toString(A);
         var Q;
         if (A == 16) Q = 4;
@@ -1515,14 +1509,14 @@ function Os8(A) {
         return Z ? I : "0"
     }
 
-function Rs8() {
+    function Rs8() {
         var A = j3();
         return FQ.ZERO.subTo(this, A), A
     }
 
-function Ts8() {
+    function Ts8() {
         return this.s < 0 ? this.negate() : this
     }
 
-function Ps8(A) {
+    function Ps8(A) {
         var Q = this.s - A.s;

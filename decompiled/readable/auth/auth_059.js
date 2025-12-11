@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_059.js
+ * 处理时间: 2025-12-09T03:41:37.034Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.940Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -176,8 +179,7 @@
             this.session.close(), (0, m41.unregisterChannelzRef)(this.channelzRef)
         }
     }
-
-class hz2 {
+    class hz2 {
         constructor(A) {
             this.channelTarget = A, this.session = null, this.isShutdown = !1
         }
@@ -200,12 +202,12 @@ class hz2 {
                     E = () => {
                         var v;
                         (v = this.session) === null || v === void 0 || v.destroy(), this.session = null, setImmediate(() => {
-                            if (!y) y = !0, Z(`${P.trim()} (${new Date().toISOString()})`)
+                            if (!y) y = !0, Z(`TextComponent{P.trim()} (TextComponent{new Date().toISOString()})`)
                         })
                     },
                     z = (v) => {
                         var x;
-                        if ((x = this.session) === null || x === void 0 || x.destroy(), P = v.message, this.trace("connection failed with error " + P), !y) y = !0, Z(`${P} (${new Date().toISOString()})`)
+                        if ((x = this.session) === null || x === void 0 || x.destroy(), P = v.message, this.trace("connection failed with error " + P), !y) y = !0, Z(`TextComponent{P} (TextComponent{new Date().toISOString()})`)
                     },
                     w = {
                         createConnection: (v, x) => {
@@ -215,7 +217,7 @@ class hz2 {
                             initialWindowSize: (W = (I = B["grpc-node.flow_control_window"]) !== null && I !== void 0 ? I : (J = (Y = n1A.getDefaultSettings) === null || Y === void 0 ? void 0 : Y.call(n1A)) === null || J === void 0 ? void 0 : J.initialWindowSize) !== null && W !== void 0 ? W : 65535
                         }
                     },
-                    N = n1A.connect(`${H}://${C}`, w),
+                    N = n1A.connect(`TextComponent{H}://TextComponent{C}`, w),
                     q = (V = (F = (X = n1A.getDefaultSettings) === null || X === void 0 ? void 0 : X.call(n1A)) === null || F === void 0 ? void 0 : F.initialWindowSize) !== null && V !== void 0 ? V : 65535,
                     R = B["grpc-node.flow_control_window"];
                 this.session = N;
@@ -268,7 +270,7 @@ class hz2 {
     }
     gz2.Http2SubchannelConnector = hz2
 });
-var pz2 = U((dz2) => {
+var pz2 = moduleWrapper((dz2) => {
     Object.defineProperty(dz2, "__esModule", {
         value: !0
     });
@@ -280,8 +282,7 @@ var pz2 = U((dz2) => {
         cR5 = mE(),
         pR5 = mz2(),
         lR5 = 1e4;
-
-class c41 {
+    class c41 {
         constructor() {
             this.pool = Object.create(null), this.cleanupTimer = null
         }
@@ -321,12 +322,12 @@ class c41 {
     dz2.SubchannelPool = c41;
     var iR5 = new c41;
 
-function nR5(A) {
+    function nR5(A) {
         if (A) return iR5;
         else return new c41
     }
 });
-var rz2 = U((az2) => {
+var rz2 = moduleWrapper((az2) => {
     Object.defineProperty(az2, "__esModule", {
         value: !0
     });
@@ -339,10 +340,9 @@ var rz2 = U((az2) => {
         sR5 = mE(),
         rR5 = XZ(),
         e20 = qOA(),
-        oR5 = UA("http2"),
+        oR5 = nodeRequire("http2"),
         tR5 = "load_balancing_call";
-
-class nz2 {
+    class nz2 {
         constructor(A, Q, B, G, Z, I, Y) {
             var J, W;
             this.channel = A, this.callConfig = Q, this.methodName = B, this.host = G, this.credentials = Z, this.deadline = I, this.callNumber = Y, this.child = null, this.readPending = !1, this.pendingMessage = null, this.pendingHalfClose = !1, this.ended = !1, this.metadata = null, this.listener = null, this.onCallEnded = null, this.childStartTime = null;
@@ -350,7 +350,7 @@ class nz2 {
                 F = "";
             if (X.length >= 2) F = X[1];
             let V = (W = (J = (0, sR5.splitHostPort)(this.host)) === null || J === void 0 ? void 0 : J.host) !== null && W !== void 0 ? W : "localhost";
-            this.serviceUrl = `https://${V}/${F}`, this.startTime = new Date
+            this.serviceUrl = `https://TextComponent{V}/TextComponent{F}`, this.startTime = new Date
         }
         getDeadlineInfo() {
             var A, Q;
@@ -358,7 +358,7 @@ class nz2 {
             if (this.childStartTime) {
                 if (this.childStartTime > this.startTime) {
                     if ((A = this.metadata) === null || A === void 0 ? void 0 : A.getOptions().waitForReady) B.push("wait_for_ready");
-                    B.push(`LB pick: ${(0,iz2.formatDateDifference)(this.startTime,this.childStartTime)}`)
+                    B.push(`LB pick: TextComponent{(0,iz2.formatDateDifference)(this.startTime,this.childStartTime)}`)
                 }
                 return B.push(...this.child.getDeadlineInfo()), B
             } else {
@@ -437,7 +437,7 @@ class nz2 {
                         let {
                             code: X,
                             details: F
-                        } = (0, e20.restrictControlPlaneStatusCode)(typeof W.code === "number" ? W.code : p41.Status.UNKNOWN, `Getting metadata from plugin failed with error: ${W.message}`);
+                        } = (0, e20.restrictControlPlaneStatusCode)(typeof W.code === "number" ? W.code : p41.Status.UNKNOWN, `Getting metadata from plugin failed with error: TextComponent{W.message}`);
                         this.outputStatus({
                             code: X,
                             details: F,
@@ -520,7 +520,7 @@ class nz2 {
     }
     az2.LoadBalancingCall = nz2
 });
-var QU2 = U((ez2) => {
+var QU2 = moduleWrapper((ez2) => {
     Object.defineProperty(ez2, "__esModule", {
         value: !0
     });
@@ -532,8 +532,7 @@ var QU2 = U((ez2) => {
         AT5 = XZ(),
         QT5 = qOA(),
         BT5 = "resolving_call";
-
-class tz2 {
+    class tz2 {
         constructor(A, Q, B, G, Z) {
             if (this.channel = A, this.method = Q, this.filterStackFactory = G, this.callNumber = Z, this.child = null, this.readPending = !1, this.pendingMessage = null, this.pendingHalfClose = !1, this.ended = !1, this.readFilterPending = !1, this.writeFilterPending = !1, this.pendingChildStatus = null, this.metadata = null, this.listener = null, this.statusWatchers = [], this.deadlineTimer = setTimeout(() => {}, 0), this.filterStack = null, this.deadlineStartTime = null, this.configReceivedTime = null, this.childStartTime = null, this.credentials = eR5.CallCredentials.createEmpty(), this.deadline = B.deadline, this.host = B.host, B.parentCall) {
                 if (B.flags & a1A.Propagate.CANCELLATION) B.parentCall.on("cancelled", () => {
@@ -558,10 +557,10 @@ class tz2 {
                     }
                     let B = [],
                         G = new Date;
-                    if (B.push(`Deadline exceeded after ${(0,s1A.formatDateDifference)(this.deadlineStartTime,G)}`), this.configReceivedTime) {
-                        if (this.configReceivedTime > this.deadlineStartTime) B.push(`name resolution: ${(0,s1A.formatDateDifference)(this.deadlineStartTime,this.configReceivedTime)}`);
+                    if (B.push(`Deadline exceeded after TextComponent{(0,s1A.formatDateDifference)(this.deadlineStartTime,G)}`), this.configReceivedTime) {
+                        if (this.configReceivedTime > this.deadlineStartTime) B.push(`name resolution: TextComponent{(0,s1A.formatDateDifference)(this.deadlineStartTime,this.configReceivedTime)}`);
                         if (this.childStartTime) {
-                            if (this.childStartTime > this.configReceivedTime) B.push(`metadata filters: ${(0,s1A.formatDateDifference)(this.configReceivedTime,this.childStartTime)}`)
+                            if (this.childStartTime > this.configReceivedTime) B.push(`metadata filters: TextComponent{(0,s1A.formatDateDifference)(this.configReceivedTime,this.childStartTime)}`)
                         } else B.push("waiting for metadata filters")
                     } else B.push("waiting for name resolution");
                     if (this.child) B.push(...this.child.getDeadlineInfo());
@@ -698,7 +697,7 @@ class tz2 {
     }
     ez2.ResolvingCall = tz2
 });
-var JU2 = U((IU2) => {
+var JU2 = moduleWrapper((IU2) => {
     Object.defineProperty(IU2, "__esModule", {
         value: !0
     });
@@ -708,8 +707,7 @@ var JU2 = U((IU2) => {
         ZT5 = BK(),
         IT5 = XZ(),
         YT5 = "retrying_call";
-
-class BU2 {
+    class BU2 {
         constructor(A, Q, B) {
             if (this.maxTokens = A, this.tokenRatio = Q, B) this.tokens = B.tokens * (A / B.maxTokens);
             else this.tokens = A
@@ -725,8 +723,7 @@ class BU2 {
         }
     }
     IU2.RetryThrottler = BU2;
-
-class GU2 {
+    class GU2 {
         constructor(A, Q) {
             this.totalLimit = A, this.limitPerCall = Q, this.totalAllocated = 0, this.allocatedPerCall = new Map
         }
@@ -738,24 +735,23 @@ class GU2 {
         }
         free(A, Q) {
             var B;
-            if (this.totalAllocated < A) throw Error(`Invalid buffer allocation state: call ${Q} freed ${A} > total allocated ${this.totalAllocated}`);
+            if (this.totalAllocated < A) throw Error(`Invalid buffer allocation state: call TextComponent{Q} freed TextComponent{A} > total allocated TextComponent{this.totalAllocated}`);
             this.totalAllocated -= A;
             let G = (B = this.allocatedPerCall.get(Q)) !== null && B !== void 0 ? B : 0;
-            if (G < A) throw Error(`Invalid buffer allocation state: call ${Q} freed ${A} > allocated for call ${G}`);
+            if (G < A) throw Error(`Invalid buffer allocation state: call TextComponent{Q} freed TextComponent{A} > allocated for call TextComponent{G}`);
             this.allocatedPerCall.set(Q, G - A)
         }
         freeAll(A) {
             var Q;
             let B = (Q = this.allocatedPerCall.get(A)) !== null && Q !== void 0 ? Q : 0;
-            if (this.totalAllocated < B) throw Error(`Invalid buffer allocation state: call ${A} allocated ${B} > total allocated ${this.totalAllocated}`);
+            if (this.totalAllocated < B) throw Error(`Invalid buffer allocation state: call TextComponent{A} allocated TextComponent{B} > total allocated TextComponent{this.totalAllocated}`);
             this.totalAllocated -= B, this.allocatedPerCall.delete(A)
         }
     }
     IU2.MessageBufferTracker = GU2;
     var A90 = "grpc-previous-rpc-attempts",
         JT5 = 5;
-
-class ZU2 {
+    class ZU2 {
         constructor(A, Q, B, G, Z, I, Y, J, W) {
             var X;
             this.channel = A, this.callConfig = Q, this.methodName = B, this.host = G, this.credentials = Z, this.deadline = I, this.callNumber = Y, this.bufferTracker = J, this.retryThrottler = W, this.listener = null, this.initialMetadata = null, this.underlyingCalls = [], this.writeBuffer = [], this.writeBufferOffset = 0, this.readStarted = !1, this.transparentRetryUsed = !1, this.attempts = 0, this.hedgingTimer = null, this.committedCallIndex = null, this.initialRetryBackoffSec = 0, this.nextRetryBackoffSec = 0;
@@ -773,8 +769,8 @@ class ZU2 {
             if (this.underlyingCalls.length === 0) return [];
             let A = [],
                 Q = this.underlyingCalls[this.underlyingCalls.length - 1];
-            if (this.underlyingCalls.length > 1) A.push(`previous attempts: ${this.underlyingCalls.length-1}`);
-            if (Q.startTime > this.startTime) A.push(`time to current attempt start: ${(0,GT5.formatDateDifference)(this.startTime,Q.startTime)}`);
+            if (this.underlyingCalls.length > 1) A.push(`previous attempts: TextComponent{this.underlyingCalls.length-1}`);
+            if (Q.startTime > this.startTime) A.push(`time to current attempt start: TextComponent{(0,GT5.formatDateDifference)(this.startTime,Q.startTime)}`);
             return A.push(...Q.call.getDeadlineInfo()), A
         }
         getCallNumber() {
@@ -999,18 +995,18 @@ class ZU2 {
             });
             let B = this.attempts - 1,
                 G = this.initialMetadata.clone();
-            if (B > 0) G.set(A90, `${B}`);
+            if (B > 0) G.set(A90, `TextComponent{B}`);
             let Z = !1;
             if (A.start(G, {
                     onReceiveMetadata: (I) => {
-                        if (this.trace("Received metadata from child [" + A.getCallNumber() + "]"), this.commitCall(Q), Z = !0, B > 0) I.set(A90, `${B}`);
+                        if (this.trace("Received metadata from child [" + A.getCallNumber() + "]"), this.commitCall(Q), Z = !0, B > 0) I.set(A90, `TextComponent{B}`);
                         if (this.underlyingCalls[Q].state === "ACTIVE") this.listener.onReceiveMetadata(I)
                     },
                     onReceiveMessage: (I) => {
                         if (this.trace("Received message from child [" + A.getCallNumber() + "]"), this.commitCall(Q), this.underlyingCalls[Q].state === "ACTIVE") this.listener.onReceiveMessage(I)
                     },
                     onReceiveStatus: (I) => {
-                        if (this.trace("Received status from child [" + A.getCallNumber() + "]"), !Z && B > 0) I.metadata.set(A90, `${B}`);
+                        if (this.trace("Received status from child [" + A.getCallNumber() + "]"), !Z && B > 0) I.metadata.set(A90, `TextComponent{B}`);
                         this.handleChildStatus(I, Q)
                     }
                 }), this.sendNextChildMessage(Q), this.readStarted) A.startRead()
@@ -1107,13 +1103,12 @@ class ZU2 {
     }
     IU2.RetryingCall = ZU2
 });
-var POA = U((XU2) => {
+var POA = moduleWrapper((XU2) => {
     Object.defineProperty(XU2, "__esModule", {
         value: !0
     });
     XU2.BaseSubchannelWrapper = void 0;
-
-class WU2 {
+    class WU2 {
         constructor(A) {
             this.child = A, this.healthy = !0, this.healthListeners = new Set, this.refcount = 0, this.dataWatchers = new Set, A.addHealthStateWatcher((Q) => {
                 if (this.healthy) this.updateHealthListeners()
@@ -1184,7 +1179,7 @@ class WU2 {
     }
     XU2.BaseSubchannelWrapper = WU2
 });
-var Z90 = U((EU2) => {
+var Z90 = moduleWrapper((EU2) => {
     Object.defineProperty(EU2, "__esModule", {
         value: !0
     });
@@ -1216,8 +1211,7 @@ var Z90 = U((EU2) => {
         s41 = new Map,
         OT5 = 16777216,
         RT5 = 1048576;
-
-class KU2 extends qT5.BaseSubchannelWrapper {
+    class KU2 extends qT5.BaseSubchannelWrapper {
         constructor(A, Q) {
             super(A);
             this.channel = Q, this.refCount = 0, this.subchannelStateListener = (B, G, Z, I) => {
@@ -1232,8 +1226,7 @@ class KU2 extends qT5.BaseSubchannelWrapper {
             if (this.child.unref(), this.refCount -= 1, this.refCount <= 0) this.child.removeConnectivityStateListener(this.subchannelStateListener), this.channel.removeWrappedSubchannel(this)
         }
     }
-
-class DU2 {
+    class DU2 {
         pick(A) {
             return {
                 pickResultType: G90.PickResultType.DROP,
@@ -1249,8 +1242,7 @@ class DU2 {
         }
     }
     EU2.SUBCHANNEL_ARGS_EXCLUDE_KEY_PREFIX = "grpc.internal.no_subchannel";
-
-class HU2 {
+    class HU2 {
         constructor(A) {
             this.target = A, this.trace = new jOA.ChannelzTrace, this.callTracker = new jOA.ChannelzCallTracker, this.childrenTracker = new jOA.ChannelzChildrenTracker, this.state = IO.ConnectivityState.IDLE
         }
@@ -1266,8 +1258,7 @@ class HU2 {
             }
         }
     }
-
-class CU2 {
+    class CU2 {
         constructor(A, Q, B) {
             var G, Z, I, Y, J, W;
             if (this.credentials = Q, this.options = B, this.connectivityState = IO.ConnectivityState.IDLE, this.currentPicker = new G90.UnavailablePicker, this.configSelectionQueue = [], this.pickQueue = [], this.connectivityStateWatchers = [], this.callRefTimer = null, this.configSelector = null, this.currentResolutionError = null, this.wrappedSubchannels = new Set, this.callCount = 0, this.idleTimer = null, this.channelzEnabled = !0, this.randomChannelId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER), typeof A !== "string") throw TypeError("Channel target must be a string");
@@ -1277,9 +1268,9 @@ class CU2 {
             }
             this.channelzInfoTracker = new HU2(A);
             let X = (0, a41.parseUri)(A);
-            if (X === null) throw Error(`Could not parse target name "${A}"`);
+            if (X === null) throw Error(`Could not parse target name "TextComponent{A}"`);
             let F = (0, VU2.mapUriDefaultScheme)(X);
-            if (F === null) throw Error(`Could not find a default scheme for target name "${A}"`);
+            if (F === null) throw Error(`Could not find a default scheme for target name "TextComponent{A}"`);
             if (this.options["grpc.enable_channelz"] === 0) this.channelzEnabled = !1;
             if (this.channelzRef = (0, jOA.registerChannelzChannel)(A, this.channelzInfoTracker.getChannelzInfoCallback(), this.channelzEnabled), this.channelzEnabled) this.channelzInfoTracker.trace.addTrace("CT_INFO", "Channel created");
             if (this.options["grpc.default_authority"]) this.defaultAuthority = this.options["grpc.default_authority"];
@@ -1508,7 +1499,7 @@ class CU2 {
     }
     EU2.InternalChannel = CU2
 });
-var hB0 = U((wU2) => {
+var hB0 = moduleWrapper((wU2) => {
     Object.defineProperty(wU2, "__esModule", {
         value: !0
     });

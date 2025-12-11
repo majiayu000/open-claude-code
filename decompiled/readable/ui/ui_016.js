@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_016.js
+ * 处理时间: 2025-12-09T03:41:39.093Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.104Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -18,14 +21,14 @@
  */
 
                 if (G.dereference) W = DzA.resolve(process.cwd(), W);
-                if (HzA.isSrcSubdir(Y, W)) return Z(Error(`Cannot copy '${Y}' to a subdirectory of itself, '${W}'.`));
-                if (A.isDirectory() && HzA.isSrcSubdir(W, Y)) return Z(Error(`Cannot overwrite '${W}' with '${Y}'.`));
+                if (HzA.isSrcSubdir(Y, W)) return Z(Error(`Cannot copy 'TextComponent{Y}' to a subdirectory of itself, 'TextComponent{W}'.`));
+                if (A.isDirectory() && HzA.isSrcSubdir(W, Y)) return Z(Error(`Cannot overwrite 'TextComponent{W}' with 'TextComponent{Y}'.`));
                 return Xn8(Y, B, Z)
             })
         })
     }
 
-function Xn8(A, Q, B) {
+    function Xn8(A, Q, B) {
         JU.unlink(Q, (G) => {
             if (G) return B(G);
             return JU.symlink(A, Q, B)
@@ -33,14 +36,14 @@ function Xn8(A, Q, B) {
     }
     iBB.exports = oi8
 });
-var tBB = U((LR7, oBB) => {
+var tBB = moduleWrapper((LR7, oBB) => {
     var yH = mK(),
-        CzA = UA("path"),
+        CzA = nodeRequire("path"),
         Fn8 = AT().mkdirsSync,
         Vn8 = Rx1().utimesMillisSync,
         EzA = po();
 
-function Kn8(A, Q, B) {
+    function Kn8(A, Q, B) {
         if (typeof B === "function") B = {
             filter: B
         };
@@ -54,49 +57,49 @@ function Kn8(A, Q, B) {
         return EzA.checkParentPathsSync(A, G, Q, "copy"), Dn8(Z, A, Q, B)
     }
 
-function Dn8(A, Q, B, G) {
+    function Dn8(A, Q, B, G) {
         if (G.filter && !G.filter(Q, B)) return;
         let Z = CzA.dirname(B);
         if (!yH.existsSync(Z)) Fn8(Z);
         return aBB(A, Q, B, G)
     }
 
-function Hn8(A, Q, B, G) {
+    function Hn8(A, Q, B, G) {
         if (G.filter && !G.filter(Q, B)) return;
         return aBB(A, Q, B, G)
     }
 
-function aBB(A, Q, B, G) {
+    function aBB(A, Q, B, G) {
         let I = (G.dereference ? yH.statSync : yH.lstatSync)(Q);
         if (I.isDirectory()) return qn8(I, A, Q, B, G);
         else if (I.isFile() || I.isCharacterDevice() || I.isBlockDevice()) return Cn8(I, A, Q, B, G);
         else if (I.isSymbolicLink()) return Mn8(A, Q, B, G);
-        else if (I.isSocket()) throw Error(`Cannot copy a socket file: ${Q}`);
-        else if (I.isFIFO()) throw Error(`Cannot copy a FIFO pipe: ${Q}`);
-        throw Error(`Unknown file: ${Q}`)
+        else if (I.isSocket()) throw Error(`Cannot copy a socket file: TextComponent{Q}`);
+        else if (I.isFIFO()) throw Error(`Cannot copy a FIFO pipe: TextComponent{Q}`);
+        throw Error(`Unknown file: TextComponent{Q}`)
     }
 
-function Cn8(A, Q, B, G, Z) {
+    function Cn8(A, Q, B, G, Z) {
         if (!Q) return sBB(A, B, G, Z);
         return En8(A, B, G, Z)
     }
 
-function En8(A, Q, B, G) {
+    function En8(A, Q, B, G) {
         if (G.overwrite) return yH.unlinkSync(B), sBB(A, Q, B, G);
-        else if (G.errorOnExist) throw Error(`'${B}' already exists`)
+        else if (G.errorOnExist) throw Error(`'TextComponent{B}' already exists`)
     }
 
-function sBB(A, Q, B, G) {
+    function sBB(A, Q, B, G) {
         if (yH.copyFileSync(Q, B), G.preserveTimestamps) zn8(A.mode, Q, B);
         return Px1(B, A.mode)
     }
 
-function zn8(A, Q, B) {
+    function zn8(A, Q, B) {
         if (Un8(A)) $n8(B, A);
         return wn8(Q, B)
     }
 
-function Un8(A) {
+    function Un8(A) {
         return (A & 128) === 0
     }
 
@@ -104,29 +107,29 @@ function Un8(A) {
         return Px1(A, Q | 128)
     }
 
-function Px1(A, Q) {
+    function Px1(A, Q) {
         return yH.chmodSync(A, Q)
     }
 
-function wn8(A, Q) {
+    function wn8(A, Q) {
         let B = yH.statSync(A);
         return Vn8(Q, B.atime, B.mtime)
     }
 
-function qn8(A, Q, B, G, Z) {
+    function qn8(A, Q, B, G, Z) {
         if (!Q) return Nn8(A.mode, B, G, Z);
         return rBB(B, G, Z)
     }
 
-function Nn8(A, Q, B, G) {
+    function Nn8(A, Q, B, G) {
         return yH.mkdirSync(B), rBB(Q, B, G), Px1(B, A)
     }
 
-function rBB(A, Q, B) {
+    function rBB(A, Q, B) {
         yH.readdirSync(A).forEach((G) => Ln8(G, A, Q, B))
     }
 
-function Ln8(A, Q, B, G) {
+    function Ln8(A, Q, B, G) {
         let Z = CzA.join(Q, A),
             I = CzA.join(B, A),
             {
@@ -135,7 +138,7 @@ function Ln8(A, Q, B, G) {
         return Hn8(Y, Z, I, G)
     }
 
-function Mn8(A, Q, B, G) {
+    function Mn8(A, Q, B, G) {
         let Z = yH.readlinkSync(Q);
         if (G.dereference) Z = CzA.resolve(process.cwd(), Z);
         if (!A) return yH.symlinkSync(Z, B);
@@ -148,37 +151,37 @@ function Mn8(A, Q, B, G) {
                 throw Y
             }
             if (G.dereference) I = CzA.resolve(process.cwd(), I);
-            if (EzA.isSrcSubdir(Z, I)) throw Error(`Cannot copy '${Z}' to a subdirectory of itself, '${I}'.`);
-            if (yH.statSync(B).isDirectory() && EzA.isSrcSubdir(I, Z)) throw Error(`Cannot overwrite '${I}' with '${Z}'.`);
+            if (EzA.isSrcSubdir(Z, I)) throw Error(`Cannot copy 'TextComponent{Z}' to a subdirectory of itself, 'TextComponent{I}'.`);
+            if (yH.statSync(B).isDirectory() && EzA.isSrcSubdir(I, Z)) throw Error(`Cannot overwrite 'TextComponent{I}' with 'TextComponent{Z}'.`);
             return On8(Z, B)
         }
     }
 
-function On8(A, Q) {
+    function On8(A, Q) {
         return yH.unlinkSync(Q), yH.symlinkSync(A, Q)
     }
     oBB.exports = Kn8
 });
-var nlA = U((MR7, eBB) => {
+var nlA = moduleWrapper((MR7, eBB) => {
     var Rn8 = IU().fromCallback;
     eBB.exports = {
         copy: Rn8(nBB()),
         copySync: tBB()
     }
 });
-var W2B = U((OR7, J2B) => {
+var W2B = moduleWrapper((OR7, J2B) => {
     var A2B = mK(),
-        Z2B = UA("path"),
-        eG = UA("assert"),
+        Z2B = nodeRequire("path"),
+        eG = nodeRequire("assert"),
         zzA = process.platform === "win32";
 
-function I2B(A) {
+    function I2B(A) {
         ["unlink", "chmod", "stat", "lstat", "rmdir", "readdir"].forEach((B) => {
             A[B] = A[B] || A2B[B], B = B + "Sync", A[B] = A[B] || A2B[B]
         }), A.maxBusyTries = A.maxBusyTries || 3
     }
 
-function jx1(A, Q, B) {
+    function jx1(A, Q, B) {
         let G = 0;
         if (typeof Q === "function") B = Q, Q = {};
         eG(A, "rimraf: missing path"), eG.strictEqual(typeof A, "string", "rimraf: path should be a string"), eG.strictEqual(typeof B, "function", "rimraf: callback function required"), eG(Q, "rimraf: invalid options argument provided"), eG.strictEqual(typeof Q, "object", "rimraf: options should be object"), I2B(Q), Q2B(A, Q, function Z(I) {
@@ -194,7 +197,7 @@ function jx1(A, Q, B) {
         })
     }
 
-function Q2B(A, Q, B) {
+    function Q2B(A, Q, B) {
         eG(A), eG(Q), eG(typeof B === "function"), Q.lstat(A, (G, Z) => {
             if (G && G.code === "ENOENT") return B(null);
             if (G && G.code === "EPERM" && zzA) return B2B(A, Q, G, B);
@@ -210,7 +213,7 @@ function Q2B(A, Q, B) {
         })
     }
 
-function B2B(A, Q, B, G) {
+    function B2B(A, Q, B, G) {
         eG(A), eG(Q), eG(typeof G === "function"), Q.chmod(A, 438, (Z) => {
             if (Z) G(Z.code === "ENOENT" ? null : B);
             else Q.stat(A, (I, Y) => {
@@ -221,7 +224,7 @@ function B2B(A, Q, B, G) {
         })
     }
 
-function G2B(A, Q, B) {
+    function G2B(A, Q, B) {
         let G;
         eG(A), eG(Q);
         try {
@@ -240,7 +243,7 @@ function G2B(A, Q, B) {
         else Q.unlinkSync(A)
     }
 
-function alA(A, Q, B, G) {
+    function alA(A, Q, B, G) {
         eG(A), eG(Q), eG(typeof G === "function"), Q.rmdir(A, (Z) => {
             if (Z && (Z.code === "ENOTEMPTY" || Z.code === "EEXIST" || Z.code === "EPERM")) Tn8(A, Q, G);
             else if (Z && Z.code === "ENOTDIR") G(B);
@@ -248,7 +251,7 @@ function alA(A, Q, B, G) {
         })
     }
 
-function Tn8(A, Q, B) {
+    function Tn8(A, Q, B) {
         eG(A), eG(Q), eG(typeof B === "function"), Q.readdir(A, (G, Z) => {
             if (G) return B(G);
             let I = Z.length,
@@ -264,7 +267,7 @@ function Tn8(A, Q, B) {
         })
     }
 
-function Y2B(A, Q) {
+    function Y2B(A, Q) {
         let B;
         Q = Q || {}, I2B(Q), eG(A, "rimraf: missing path"), eG.strictEqual(typeof A, "string", "rimraf: path should be a string"), eG(Q, "rimraf: missing options"), eG.strictEqual(typeof Q, "object", "rimraf: options should be object");
         try {
@@ -284,7 +287,7 @@ function Y2B(A, Q) {
         }
     }
 
-function slA(A, Q, B) {
+    function slA(A, Q, B) {
         eG(A), eG(Q);
         try {
             Q.rmdirSync(A)
@@ -295,7 +298,7 @@ function slA(A, Q, B) {
         }
     }
 
-function Pn8(A, Q) {
+    function Pn8(A, Q) {
         if (eG(A), eG(Q), Q.readdirSync(A).forEach((B) => Y2B(Z2B.join(A, B), Q)), zzA) {
             let B = Date.now();
             do try {
@@ -307,12 +310,12 @@ function Pn8(A, Q) {
     J2B.exports = jx1;
     jx1.sync = Y2B
 });
-var UzA = U((RR7, F2B) => {
+var UzA = moduleWrapper((RR7, F2B) => {
     var rlA = mK(),
         jn8 = IU().fromCallback,
         X2B = W2B();
 
-function Sn8(A, Q) {
+    function Sn8(A, Q) {
         if (rlA.rm) return rlA.rm(A, {
             recursive: !0,
             force: !0
@@ -320,7 +323,7 @@ function Sn8(A, Q) {
         X2B(A, Q)
     }
 
-function _n8(A) {
+    function _n8(A) {
         if (rlA.rmSync) return rlA.rmSync(A, {
             recursive: !0,
             force: !0
@@ -332,10 +335,10 @@ function _n8(A) {
         removeSync: _n8
     }
 });
-var U2B = U((TR7, z2B) => {
+var U2B = moduleWrapper((TR7, z2B) => {
     var kn8 = IU().fromPromise,
         D2B = co(),
-        H2B = UA("path"),
+        H2B = nodeRequire("path"),
         C2B = AT(),
         E2B = UzA(),
         V2B = kn8(async function(Q) {
@@ -348,7 +351,7 @@ var U2B = U((TR7, z2B) => {
             return Promise.all(B.map((G) => E2B.remove(H2B.join(Q, G))))
         });
 
-function K2B(A) {
+    function K2B(A) {
         let Q;
         try {
             Q = D2B.readdirSync(A)
@@ -366,13 +369,13 @@ function K2B(A) {
         emptydir: V2B
     }
 });
-var N2B = U((PR7, q2B) => {
+var N2B = moduleWrapper((PR7, q2B) => {
     var yn8 = IU().fromCallback,
-        $2B = UA("path"),
+        $2B = nodeRequire("path"),
         Uc = mK(),
         w2B = AT();
 
-function xn8(A, Q) {
+    function xn8(A, Q) {
         function B() {
             Uc.writeFile(A, "", (G) => {
                 if (G) return Q(G);
@@ -398,7 +401,7 @@ function xn8(A, Q) {
         })
     }
 
-function vn8(A) {
+    function vn8(A) {
         let Q;
         try {
             Q = Uc.statSync(A)
@@ -418,9 +421,9 @@ function vn8(A) {
         createFileSync: vn8
     }
 });
-var T2B = U((jR7, R2B) => {
+var T2B = moduleWrapper((jR7, R2B) => {
     var bn8 = IU().fromCallback,
-        L2B = UA("path"),
+        L2B = nodeRequire("path"),
         $c = mK(),
         M2B = AT(),
         fn8 = zc().pathExists,
@@ -428,7 +431,7 @@ var T2B = U((jR7, R2B) => {
             areIdentical: O2B
         } = po();
 
-function hn8(A, Q, B) {
+    function hn8(A, Q, B) {
         function G(Z, I) {
             $c.link(Z, I, (Y) => {
                 if (Y) return B(Y);
@@ -452,7 +455,7 @@ function hn8(A, Q, B) {
         })
     }
 
-function gn8(A, Q) {
+    function gn8(A, Q) {
         let B;
         try {
             B = $c.lstatSync(Q)
@@ -472,12 +475,12 @@ function gn8(A, Q) {
         createLinkSync: gn8
     }
 });
-var j2B = U((SR7, P2B) => {
-    var wc = UA("path"),
+var j2B = moduleWrapper((SR7, P2B) => {
+    var wc = nodeRequire("path"),
         $zA = mK(),
         un8 = zc().pathExists;
 
-function mn8(A, Q, B) {
+    function mn8(A, Q, B) {
         if (wc.isAbsolute(A)) return $zA.lstat(A, (G) => {
             if (G) return G.message = G.message.replace("lstat", "ensureSymlink"), B(G);
             return B(null, {
@@ -505,7 +508,7 @@ function mn8(A, Q, B) {
         }
     }
 
-function dn8(A, Q) {
+    function dn8(A, Q) {
         let B;
         if (wc.isAbsolute(A)) {
             if (B = $zA.existsSync(A), !B) throw Error("absolute srcpath does not exist");
@@ -534,10 +537,10 @@ function dn8(A, Q) {
         symlinkPathsSync: dn8
     }
 });
-var k2B = U((_R7, _2B) => {
+var k2B = moduleWrapper((_R7, _2B) => {
     var S2B = mK();
 
-function cn8(A, Q, B) {
+    function cn8(A, Q, B) {
         if (B = typeof Q === "function" ? Q : B, Q = typeof Q === "function" ? !1 : Q, Q) return B(null, Q);
         S2B.lstat(A, (G, Z) => {
             if (G) return B(null, "file");
@@ -545,7 +548,7 @@ function cn8(A, Q, B) {
         })
     }
 
-function pn8(A, Q) {
+    function pn8(A, Q) {
         let B;
         if (Q) return Q;
         try {
@@ -560,9 +563,9 @@ function pn8(A, Q) {
         symlinkTypeSync: pn8
     }
 });
-var u2B = U((kR7, g2B) => {
+var u2B = moduleWrapper((kR7, g2B) => {
     var ln8 = IU().fromCallback,
-        x2B = UA("path"),
+        x2B = nodeRequire("path"),
         QT = co(),
         v2B = AT(),
         in8 = v2B.mkdirs,
@@ -578,7 +581,7 @@ var u2B = U((kR7, g2B) => {
             areIdentical: h2B
         } = po();
 
-function en8(A, Q, B, G) {
+    function en8(A, Q, B, G) {
         G = typeof B === "function" ? B : G, B = typeof B === "function" ? !1 : B, QT.lstat(Q, (Z, I) => {
             if (!Z && I.isSymbolicLink()) Promise.all([QT.stat(A), QT.stat(Q)]).then(([Y, J]) => {
                 if (h2B(Y, J)) return G(null);
@@ -588,7 +591,7 @@ function en8(A, Q, B, G) {
         })
     }
 
-function y2B(A, Q, B, G) {
+    function y2B(A, Q, B, G) {
         an8(A, Q, (Z, I) => {
             if (Z) return G(Z);
             A = I.toDst, rn8(I.toCwd, B, (Y, J) => {
@@ -606,7 +609,7 @@ function y2B(A, Q, B, G) {
         })
     }
 
-function Aa8(A, Q, B) {
+    function Aa8(A, Q, B) {
         let G;
         try {
             G = QT.lstatSync(Q)
@@ -627,7 +630,7 @@ function Aa8(A, Q, B) {
         createSymlinkSync: Aa8
     }
 });
-var a2B = U((yR7, n2B) => {
+var a2B = moduleWrapper((yR7, n2B) => {
     var {
         createFile: m2B,
         createFileSync: d2B
@@ -653,7 +656,7 @@ var a2B = U((yR7, n2B) => {
         ensureSymlinkSync: i2B
     }
 });
-var olA = U((xR7, s2B) => {
+var olA = moduleWrapper((xR7, s2B) => {
     function Qa8(A, {
         EOL: Q = `
 `,
@@ -665,7 +668,7 @@ var olA = U((xR7, s2B) => {
         return JSON.stringify(A, G, Z).replace(/\n/g, Q) + I
     }
 
-function Ba8(A) {
+    function Ba8(A) {
         if (Buffer.isBuffer(A)) A = A.toString("utf8");
         return A.replace(/^\uFEFF/, "")
     }
@@ -674,20 +677,19 @@ function Ba8(A) {
         stripBom: Ba8
     }
 });
-var e2B = U((vR7, t2B) => {
+var e2B = moduleWrapper((vR7, t2B) => {
     var O3A;
     try {
         O3A = mK()
     } catch (A) {
-        O3A = UA("fs")
+        O3A = nodeRequire("fs")
     }
     var tlA = IU(),
         {
             stringify: r2B,
             stripBom: o2B
         } = olA();
-
-async function Ga8(A, Q = {}) {
+    async function Ga8(A, Q = {}) {
         if (typeof Q === "string") Q = {
             encoding: Q
         };
@@ -699,14 +701,14 @@ async function Ga8(A, Q = {}) {
         try {
             I = JSON.parse(Z, Q ? Q.reviver : null)
         } catch (Y) {
-            if (G) throw Y.message = `${A}: ${Y.message}`, Y;
+            if (G) throw Y.message = `TextComponent{A}: TextComponent{Y.message}`, Y;
             else return null
         }
         return I
     }
     var Za8 = tlA.fromPromise(Ga8);
 
-function Ia8(A, Q = {}) {
+    function Ia8(A, Q = {}) {
         if (typeof Q === "string") Q = {
             encoding: Q
         };
@@ -716,25 +718,23 @@ function Ia8(A, Q = {}) {
             let Z = B.readFileSync(A, Q);
             return Z = o2B(Z), JSON.parse(Z, Q.reviver)
         } catch (Z) {
-            if (G) throw Z.message = `${A}: ${Z.message}`, Z;
+            if (G) throw Z.message = `TextComponent{A}: TextComponent{Z.message}`, Z;
             else return null
         }
     }
-
-async function Ya8(A, Q, B = {}) {
+    async function Ya8(A, Q, B = {}) {
         let G = B.fs || O3A,
             Z = r2B(Q, B);
         await tlA.fromCallback(G.writeFile)(A, Z, B)
     }
     var Ja8 = tlA.fromPromise(Ya8);
 
-function Wa8(A, Q, B = {}) {
+    function Wa8(A, Q, B = {}) {
         let G = B.fs || O3A,
             Z = r2B(Q, B);
         return G.writeFileSync(A, Z, B)
     }
-
-var Xa8 = {
+    var Xa8 = {
         readFile: Za8,
         readFileSync: Ia8,
         writeFile: Ja8,
@@ -742,7 +742,7 @@ var Xa8 = {
     };
     t2B.exports = Xa8
 });
-var Q9B = U((bR7, A9B) => {
+var Q9B = moduleWrapper((bR7, A9B) => {
     var elA = e2B();
     A9B.exports = {
         readJson: elA.readFile,
@@ -751,14 +751,14 @@ var Q9B = U((bR7, A9B) => {
         writeJsonSync: elA.writeFileSync
     }
 });
-var AiA = U((fR7, Z9B) => {
+var AiA = moduleWrapper((fR7, Z9B) => {
     var Fa8 = IU().fromCallback,
         wzA = mK(),
-        B9B = UA("path"),
+        B9B = nodeRequire("path"),
         G9B = AT(),
         Va8 = zc().pathExists;
 
-function Ka8(A, Q, B, G) {
+    function Ka8(A, Q, B, G) {
         if (typeof B === "function") G = B, B = "utf8";
         let Z = B9B.dirname(A);
         Va8(Z, (I, Y) => {
@@ -771,7 +771,7 @@ function Ka8(A, Q, B, G) {
         })
     }
 
-function Da8(A, ...Q) {
+    function Da8(A, ...Q) {
         let B = B9B.dirname(A);
         if (wzA.existsSync(B)) return wzA.writeFileSync(A, ...Q);
         G9B.mkdirsSync(B), wzA.writeFileSync(A, ...Q)
@@ -781,20 +781,19 @@ function Da8(A, ...Q) {
         outputFileSync: Da8
     }
 });
-var Y9B = U((hR7, I9B) => {
+var Y9B = moduleWrapper((hR7, I9B) => {
     var {
         stringify: Ha8
     } = olA(), {
         outputFile: Ca8
     } = AiA();
-
-async function Ea8(A, Q, B = {}) {
+    async function Ea8(A, Q, B = {}) {
         let G = Ha8(Q, B);
         await Ca8(A, G, B)
     }
     I9B.exports = Ea8
 });
-var W9B = U((gR7, J9B) => {
+var W9B = moduleWrapper((gR7, J9B) => {
     var {
         stringify: za8
     } = olA(), {
@@ -807,7 +806,7 @@ var W9B = U((gR7, J9B) => {
     }
     J9B.exports = $a8
 });
-var F9B = U((uR7, X9B) => {
+var F9B = moduleWrapper((uR7, X9B) => {
     var wa8 = IU().fromPromise,
         tC = Q9B();
     tC.outputJson = wa8(Y9B());
@@ -820,16 +819,16 @@ var F9B = U((uR7, X9B) => {
     tC.readJSONSync = tC.readJsonSync;
     X9B.exports = tC
 });
-var C9B = U((mR7, H9B) => {
+var C9B = moduleWrapper((mR7, H9B) => {
     var qa8 = mK(),
-        _x1 = UA("path"),
+        _x1 = nodeRequire("path"),
         Na8 = nlA().copy,
         D9B = UzA().remove,
         La8 = AT().mkdirp,
         Ma8 = zc().pathExists,
         V9B = po();
 
-function Oa8(A, Q, B, G) {
+    function Oa8(A, Q, B, G) {
         if (typeof B === "function") G = B, B = {};
         B = B || {};
         let Z = B.overwrite || B.clobber || !1;
@@ -850,12 +849,12 @@ function Oa8(A, Q, B, G) {
         })
     }
 
-function Ra8(A) {
+    function Ra8(A) {
         let Q = _x1.dirname(A);
         return _x1.parse(Q).root === Q
     }
 
-function K9B(A, Q, B, G, Z) {
+    function K9B(A, Q, B, G, Z) {
         if (G) return Sx1(A, Q, B, Z);
         if (B) return D9B(Q, (I) => {
             if (I) return Z(I);
@@ -868,7 +867,7 @@ function K9B(A, Q, B, G, Z) {
         })
     }
 
-function Sx1(A, Q, B, G) {
+    function Sx1(A, Q, B, G) {
         qa8.rename(A, Q, (Z) => {
             if (!Z) return G();
             if (Z.code !== "EXDEV") return G(Z);
@@ -876,7 +875,7 @@ function Sx1(A, Q, B, G) {
         })
     }
 
-function Ta8(A, Q, B, G) {
+    function Ta8(A, Q, B, G) {
         Na8(A, Q, {
             overwrite: B,
             errorOnExist: !0
@@ -887,15 +886,15 @@ function Ta8(A, Q, B, G) {
     }
     H9B.exports = Oa8
 });
-var w9B = U((dR7, $9B) => {
+var w9B = moduleWrapper((dR7, $9B) => {
     var z9B = mK(),
-        yx1 = UA("path"),
+        yx1 = nodeRequire("path"),
         Pa8 = nlA().copySync,
         U9B = UzA().removeSync,
         ja8 = AT().mkdirpSync,
         E9B = po();
 
-function Sa8(A, Q, B) {
+    function Sa8(A, Q, B) {
         B = B || {};
         let G = B.overwrite || B.clobber || !1,
             {
@@ -906,19 +905,19 @@ function Sa8(A, Q, B) {
         return ka8(A, Q, G, I)
     }
 
-function _a8(A) {
+    function _a8(A) {
         let Q = yx1.dirname(A);
         return yx1.parse(Q).root === Q
     }
 
-function ka8(A, Q, B, G) {
+    function ka8(A, Q, B, G) {
         if (G) return kx1(A, Q, B);
         if (B) return U9B(Q), kx1(A, Q, B);
         if (z9B.existsSync(Q)) throw Error("dest already exists.");
         return kx1(A, Q, B)
     }
 
-function kx1(A, Q, B) {
+    function kx1(A, Q, B) {
         try {
             z9B.renameSync(A, Q)
         } catch (G) {
@@ -927,7 +926,7 @@ function kx1(A, Q, B) {
         }
     }
 
-function ya8(A, Q, B) {
+    function ya8(A, Q, B) {
         return Pa8(A, Q, {
             overwrite: B,
             errorOnExist: !0
@@ -935,14 +934,14 @@ function ya8(A, Q, B) {
     }
     $9B.exports = Sa8
 });
-var N9B = U((cR7, q9B) => {
+var N9B = moduleWrapper((cR7, q9B) => {
     var xa8 = IU().fromCallback;
     q9B.exports = {
         move: xa8(C9B()),
         moveSync: w9B()
     }
 });
-var xx1 = U((pR7, L9B) => {
+var xx1 = moduleWrapper((pR7, L9B) => {
     L9B.exports = {
         ...co(),
         ...nlA(),
@@ -956,7 +955,7 @@ var xx1 = U((pR7, L9B) => {
         ...UzA()
     }
 });
-var vx1 = U((O9B) => {
+var vx1 = moduleWrapper((O9B) => {
     Object.defineProperty(O9B, "__esModule", {
         value: !0
     });
@@ -1045,7 +1044,7 @@ var vx1 = U((O9B) => {
     };
     O9B.childDepType = ba8
 });
-var P9B = U((T9B) => {
+var P9B = moduleWrapper((T9B) => {
     Object.defineProperty(T9B, "__esModule", {
         value: !0
     });
@@ -1055,22 +1054,21 @@ var P9B = U((T9B) => {
         A[A.NONE = 0] = "NONE", A[A.NODE_GYP = 1] = "NODE_GYP", A[A.PREBUILD = 2] = "PREBUILD"
     })(ha8 = T9B.NativeModuleType || (T9B.NativeModuleType = {}))
 });
-var k9B = U((S9B) => {
+var k9B = moduleWrapper((S9B) => {
     Object.defineProperty(S9B, "__esModule", {
         value: !0
     });
     S9B.Walker = void 0;
     var ga8 = Os(),
         QiA = xx1(),
-        qc = UA("path"),
+        qc = nodeRequire("path"),
         nL = vx1(),
         fx1 = P9B(),
         Sb = ga8("flora-colossus");
-
-class j9B {
+    class j9B {
         constructor(A) {
             if (this.modules = [], this.walkHistory = new Set, this.cache = null, !A || typeof A !== "string") throw Error("modulePath must be provided as a string");
-            Sb(`creating walker with rootModule=${A}`), this.rootModule = A
+            Sb(`creating walker with rootModule=TextComponent{A}`), this.rootModule = A
         }
         relativeModule(A, Q) {
             return qc.resolve(A, "node_modules", Q)
@@ -1095,7 +1093,7 @@ class j9B {
                 else {
                     if (qc.basename(qc.dirname(G)) !== "node_modules") G = qc.dirname(G);
                     G = qc.dirname(qc.dirname(G))
-                } if (!Z && B !== nL.DepType.OPTIONAL && B !== nL.DepType.DEV_OPTIONAL) throw Error(`Failed to locate module "${A}" from "${Q}"
+                } if (!Z && B !== nL.DepType.OPTIONAL && B !== nL.DepType.DEV_OPTIONAL) throw Error(`Failed to locate module "TextComponent{A}" from "TextComponent{Q}"
 
         This normally means that either you have deleted this package already somehow (check your ignore settings if using electron-packager).  Or your module installation failed.`);
             if (Z) await this.walkDependenciesForModule(Z, B)
@@ -1109,7 +1107,7 @@ class j9B {
             if (Sb("walk reached:", A, " Type is:", nL.DepType[Q]), this.walkHistory.has(A)) {
                 Sb("already walked this route");
                 let G = this.modules.find((Z) => Z.path === A);
-                if ((0, nL.depTypeGreater)(Q, G.depType)) Sb(`existing module has a type of "${G.depType}", new module type would be "${Q}" therefore updating`), G.depType = Q;
+                if ((0, nL.depTypeGreater)(Q, G.depType)) Sb(`existing module has a type of "TextComponent{G.depType}", new module type would be "TextComponent{Q}" therefore updating`), G.depType = Q;
                 return
             }
             let B = await this.loadPackageJSON(A);
@@ -1125,7 +1123,7 @@ class j9B {
             });
             for (let G in B.dependencies) {
                 if (G in B.optionalDependencies) {
-                    Sb(`found ${G} in prod deps of ${A} but it is also marked optional`);
+                    Sb(`found TextComponent{G} in prod deps of TextComponent{A} but it is also marked optional`);
                     continue
                 }
                 await this.walkDependenciesForModuleInModule(G, A, (0, nL.childDepType)(Q, nL.DepType.PROD))
@@ -1156,7 +1154,7 @@ class j9B {
     }
     S9B.Walker = j9B
 });
-var hx1 = U((Nc) => {
+var hx1 = moduleWrapper((Nc) => {
     var ua8 = Nc && Nc.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -1181,16 +1179,15 @@ var hx1 = U((Nc) => {
     y9B(k9B(), Nc);
     y9B(vx1(), Nc)
 });
-var f9B = U((v9B) => {
+var f9B = moduleWrapper((v9B) => {
     Object.defineProperty(v9B, "__esModule", {
         value: !0
     });
     v9B.DestroyerOfModules = void 0;
     var BiA = xx1(),
-        R3A = UA("path"),
+        R3A = nodeRequire("path"),
         gx1 = hx1();
-
-class x9B {
+    class x9B {
         constructor({
             rootDirectory: A,
             walker: Q,
@@ -1220,7 +1217,7 @@ class x9B {
             for (let Z of Q)
                 if (this.shouldKeepModule(Z)) {
                     let I = Z.path;
-                    if (A) I = I.replace(`${G}${R3A.sep}`, "");
+                    if (A) I = I.replace(`TextComponent{G}TextComponent{R3A.sep}`, "");
                     B.set(I, Z)
                 } return B
         }
@@ -1236,7 +1233,7 @@ class x9B {
     }
     v9B.DestroyerOfModules = x9B
 });
-var g9B = U((Lc) => {
+var g9B = moduleWrapper((Lc) => {
     var ma8 = Lc && Lc.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -1261,7 +1258,7 @@ var g9B = U((Lc) => {
     h9B(f9B(), Lc);
     h9B(hx1(), Lc)
 });
-var d9B = U((oR7, m9B) => {
+var d9B = moduleWrapper((oR7, m9B) => {
     var da8 = ["B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"],
         ca8 = ["B", "kiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"],
         pa8 = ["b", "kbit", "Mbit", "Gbit", "Tbit", "Pbit", "Ebit", "Zbit", "Ybit"],
@@ -1273,13 +1270,13 @@ var d9B = U((oR7, m9B) => {
             return G
         };
     m9B.exports = (A, Q) => {
-        if (!Number.isFinite(A)) throw TypeError(`Expected a finite number, got ${typeof A}: ${A}`);
+        if (!Number.isFinite(A)) throw TypeError(`Expected a finite number, got TextComponent{typeof A}: TextComponent{A}`);
         Q = Object.assign({
             bits: !1,
             binary: !1
         }, Q);
         let B = Q.bits ? Q.binary ? la8 : pa8 : Q.binary ? ca8 : da8;
-        if (Q.signed && A === 0) return ` 0 ${B[0]}`;
+        if (Q.signed && A === 0) return ` 0 TextComponent{B[0]}`;
         let G = A < 0,
             Z = G ? "-" : Q.signed ? "+" : "";
         if (G) A = -A;
@@ -1301,18 +1298,17 @@ var d9B = U((oR7, m9B) => {
         return Z + J + " " + W
     }
 });
-var n8 = U((tR7, c9B) => {
+var n8 = moduleWrapper((tR7, c9B) => {
     c9B.exports = {
         options: {
             usePureJavaScript: !1
         }
     }
 });
-var i9B = U((eR7, l9B) => {
+var i9B = moduleWrapper((eR7, l9B) => {
     var ux1 = {};
     l9B.exports = ux1;
-
-var p9B = {};
+    var p9B = {};
     ux1.encode = function(A, Q, B) {
         if (typeof Q !== "string") throw TypeError('"alphabet" must be a string.');
         if (B !== void 0 && typeof B !== "number") throw TypeError('"maxline" must be a number.');
@@ -1360,7 +1356,7 @@ var p9B = {};
         return new Uint8Array(Y.reverse())
     };
 
-function ia8(A, Q) {
+    function ia8(A, Q) {
         var B = 0,
             G = Q.length,
             Z = Q.charAt(0),
@@ -1375,7 +1371,7 @@ function ia8(A, Q) {
         return W
     }
 });
-var P3 = U((AT7, r9B) => {
+var P3 = moduleWrapper((AT7, r9B) => {
     var n9B = n8(),
         a9B = i9B(),
         g1 = r9B.exports = n9B.util = n9B.util || {};
@@ -1448,12 +1444,12 @@ var P3 = U((AT7, r9B) => {
         return A && g1.isArrayBuffer(A.buffer) && A.byteLength !== void 0
     };
 
-function qzA(A) {
+    function qzA(A) {
         if (!(A === 8 || A === 16 || A === 24 || A === 32)) throw Error("Only 8, 16, 24, or 32 bits supported: " + A)
     }
     g1.ByteBuffer = mx1;
 
-function mx1(A) {
+    function mx1(A) {
         if (this.data = "", this.read = 0, typeof A === "string") this.data = A;
         else if (g1.isArrayBuffer(A) || g1.isArrayBufferView(A))
             if (typeof Buffer < "u" && A instanceof Buffer) this.data = A.toString("binary");

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_011.js
+ * 处理时间: 2025-12-09T03:41:37.386Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.970Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -25,11 +28,11 @@
             Q.onConnect?.((P) => Q.onError(P), null), Q.onHeaders?.(Z, q, H, YeQ(Z)), Q.onData?.(Buffer.from(N)), Q.onComplete?.(R), ak1(C, B)
         }
 
-function H() {}
+        function H() {}
         return !0
     }
 
-function sh8() {
+    function sh8() {
         let A = this[gh8],
             Q = this[mh8],
             B = this[uh8];
@@ -39,22 +42,22 @@ function sh8() {
             } catch (Y) {
                 if (Y instanceof qo) {
                     let J = A[dh8]();
-                    if (J === !1) throw new qo(`${Y.message}: subsequent request to origin ${Q} was not allowed (net.connect disabled)`);
+                    if (J === !1) throw new qo(`TextComponent{Y.message}: subsequent request to origin TextComponent{Q} was not allowed (net.connect disabled)`);
                     if (WeQ(J, Q)) B.call(this, Z, I);
-                    else throw new qo(`${Y.message}: subsequent request to origin ${Q} was not allowed (net.connect is not enabled for this origin)`)
+                    else throw new qo(`TextComponent{Y.message}: subsequent request to origin TextComponent{Q} was not allowed (net.connect is not enabled for this origin)`)
                 } else throw Y
             } else B.call(this, Z, I)
         }
     }
 
-function WeQ(A, Q) {
+    function WeQ(A, Q) {
         let B = new URL(Q);
         if (A === !0) return !0;
         else if (Array.isArray(A) && A.some((G) => wb(G, B.host))) return !0;
         return !1
     }
 
-function rh8(A) {
+    function rh8(A) {
         if (A) {
             let {
                 agent: Q,
@@ -81,7 +84,7 @@ function rh8(A) {
         buildHeadersFromArray: rk1
     }
 });
-var By1 = U((Ag8, Qy1) => {
+var By1 = moduleWrapper((Ag8, Qy1) => {
     var {
         getResponseData: oh8,
         buildKey: th8,
@@ -90,7 +93,7 @@ var By1 = U((Ag8, Qy1) => {
         kDispatches: LpA,
         kDispatchKey: MpA,
         kDefaultHeaders: tk1,
-        kDefaultTrailers: ek1,
+        kDefaultTrailers: getSystemPromptHeader,
         kContentLength: Ay1,
         kMockDispatch: OpA
     } = i5A(), {
@@ -98,8 +101,7 @@ var By1 = U((Ag8, Qy1) => {
     } = U7(), {
         buildURL: eh8
     } = M6();
-
-class zEA {
+    class zEA {
         constructor(A) {
             this[OpA] = A
         }
@@ -115,8 +117,7 @@ class zEA {
             return this[OpA].times = A, this
         }
     }
-
-class FeQ {
+    class FeQ {
         constructor(A, Q) {
             if (typeof A !== "object") throw new Q_("opts must be an object");
             if (typeof A.path > "u") throw new Q_("opts.path must be defined");
@@ -127,7 +128,7 @@ class FeQ {
                     let B = new URL(A.path, "data://");
                     A.path = B.pathname + B.search
                 } if (typeof A.method === "string") A.method = A.method.toUpperCase();
-            this[MpA] = th8(A), this[LpA] = Q, this[tk1] = {}, this[ek1] = {}, this[Ay1] = !1
+            this[MpA] = th8(A), this[LpA] = Q, this[tk1] = {}, this[getSystemPromptHeader] = {}, this[Ay1] = !1
         }
         createMockScopeDispatchData({
             statusCode: A,
@@ -144,7 +145,7 @@ class FeQ {
                     ...B.headers
                 },
                 Y = {
-                    ...this[ek1],
+                    ...this[getSystemPromptHeader],
                     ...B.trailers
                 };
             return {
@@ -198,7 +199,7 @@ class FeQ {
         }
         defaultReplyTrailers(A) {
             if (typeof A > "u") throw new Q_("trailers must be defined");
-            return this[ek1] = A, this
+            return this[getSystemPromptHeader] = A, this
         }
         replyContentLength() {
             return this[Ay1] = !0, this
@@ -207,10 +208,10 @@ class FeQ {
     Ag8.MockInterceptor = FeQ;
     Ag8.MockScope = zEA
 });
-var Zy1 = U((RN7, UeQ) => {
+var Zy1 = moduleWrapper((RN7, UeQ) => {
     var {
         promisify: Gg8
-    } = UA("node:util"), Zg8 = ZEA(), {
+    } = nodeRequire("node:util"), Zg8 = ZEA(), {
         buildMockDispatch: Ig8
     } = EEA(), {
         kDispatches: VeQ,
@@ -225,8 +226,7 @@ var Zy1 = U((RN7, UeQ) => {
     } = By1(), EeQ = iI(), {
         InvalidArgumentError: Wg8
     } = U7();
-
-class zeQ extends Zg8 {
+    class zeQ extends Zg8 {
         constructor(A, Q) {
             super(A, Q);
             if (!Q || !Q.agent || typeof Q.agent.dispatch !== "function") throw new Wg8("Argument opts.agent must implement Agent");
@@ -244,10 +244,10 @@ class zeQ extends Zg8 {
     }
     UeQ.exports = zeQ
 });
-var Yy1 = U((TN7, ReQ) => {
+var Yy1 = moduleWrapper((TN7, ReQ) => {
     var {
         promisify: Xg8
-    } = UA("node:util"), Fg8 = h5A(), {
+    } = nodeRequire("node:util"), Fg8 = h5A(), {
         buildMockDispatch: Vg8
     } = EEA(), {
         kDispatches: $eQ,
@@ -262,8 +262,7 @@ var Yy1 = U((TN7, ReQ) => {
     } = By1(), MeQ = iI(), {
         InvalidArgumentError: Hg8
     } = U7();
-
-class OeQ extends Fg8 {
+    class OeQ extends Fg8 {
         constructor(A, Q) {
             super(A, Q);
             if (!Q || !Q.agent || typeof Q.agent.dispatch !== "function") throw new Hg8("Argument opts.agent must implement Agent");
@@ -281,7 +280,7 @@ class OeQ extends Fg8 {
     }
     ReQ.exports = OeQ
 });
-var PeQ = U((PN7, TeQ) => {
+var PeQ = moduleWrapper((PN7, TeQ) => {
     var Cg8 = {
             pronoun: "it",
             is: "is",
@@ -310,12 +309,12 @@ var PeQ = U((PN7, TeQ) => {
         }
     }
 });
-var SeQ = U((jN7, jeQ) => {
+var SeQ = moduleWrapper((jN7, jeQ) => {
     var {
         Transform: zg8
-    } = UA("node:stream"), {
+    } = nodeRequire("node:stream"), {
         Console: Ug8
-    } = UA("node:console"), $g8 = process.versions.icu ? "✅" : "Y ", wg8 = process.versions.icu ? "❌" : "N ";
+    } = nodeRequire("node:console"), $g8 = process.versions.icu ? "✅" : "Y ", wg8 = process.versions.icu ? "❌" : "N ";
     jeQ.exports = class {
         constructor({
             disableColors: Q
@@ -355,7 +354,7 @@ var SeQ = U((jN7, jeQ) => {
         }
     }
 });
-var veQ = U((SN7, xeQ) => {
+var veQ = moduleWrapper((SN7, xeQ) => {
     var {
         kClients: No
     } = iI(), qg8 = g5A(), {
@@ -375,8 +374,7 @@ var veQ = U((SN7, xeQ) => {
         InvalidArgumentError: keQ,
         UndiciError: Tg8
     } = U7(), Pg8 = fCA(), jg8 = PeQ(), Sg8 = SeQ();
-
-class yeQ extends Pg8 {
+    class yeQ extends Pg8 {
         constructor(A) {
             super(A);
             if (this[Lo] = !0, this[TpA] = !0, A?.agent && typeof A.agent.dispatch !== "function") throw new keQ("Argument opts.agent must implement Agent");
@@ -450,15 +448,15 @@ class yeQ extends Pg8 {
             if (Q.length === 0) return;
             let B = new jg8("interceptor", "interceptors").pluralize(Q.length);
             throw new Tg8(`
-${B.count} ${B.noun} ${B.is} pending:
+TextComponent{B.count} TextComponent{B.noun} TextComponent{B.is} pending:
 
-${A.format(Q)}
+TextComponent{A.format(Q)}
 `.trim())
         }
     }
     xeQ.exports = yeQ
 });
-var SpA = U((_N7, geQ) => {
+var SpA = moduleWrapper((_N7, geQ) => {
     var beQ = Symbol.for("undici.globalDispatcher.1"),
         {
             InvalidArgumentError: _g8
@@ -466,7 +464,7 @@ var SpA = U((_N7, geQ) => {
         kg8 = g5A();
     if (heQ() === void 0) feQ(new kg8);
 
-function feQ(A) {
+    function feQ(A) {
         if (!A || typeof A.dispatch !== "function") throw new _g8("Argument agent must implement Agent");
         Object.defineProperty(globalThis, beQ, {
             value: A,
@@ -476,7 +474,7 @@ function feQ(A) {
         })
     }
 
-function heQ() {
+    function heQ() {
         return globalThis[beQ]
     }
     geQ.exports = {
@@ -484,7 +482,7 @@ function heQ() {
         getGlobalDispatcher: heQ
     }
 });
-var _pA = U((kN7, ueQ) => {
+var _pA = moduleWrapper((kN7, ueQ) => {
     ueQ.exports = class {
         #A;
         constructor(Q) {
@@ -517,7 +515,7 @@ var _pA = U((kN7, ueQ) => {
         }
     }
 });
-var deQ = U((yN7, meQ) => {
+var deQ = moduleWrapper((yN7, meQ) => {
     var yg8 = VpA();
     meQ.exports = (A) => {
         let Q = A?.maxRedirections;
@@ -534,7 +532,7 @@ var deQ = U((yN7, meQ) => {
         }
     }
 });
-var peQ = U((xN7, ceQ) => {
+var peQ = moduleWrapper((xN7, ceQ) => {
     var xg8 = qpA();
     ceQ.exports = (A) => {
         return (Q) => {
@@ -553,15 +551,14 @@ var peQ = U((xN7, ceQ) => {
         }
     }
 });
-var neQ = U((vN7, ieQ) => {
+var neQ = moduleWrapper((vN7, ieQ) => {
     var vg8 = M6(),
         {
             InvalidArgumentError: bg8,
             RequestAbortedError: fg8
         } = U7(),
         hg8 = _pA();
-
-class leQ extends hg8 {
+    class leQ extends hg8 {
         #A = 1048576;
         #Q = null;
         #B = !1;
@@ -584,7 +581,7 @@ class leQ extends hg8 {
         }
         onHeaders(A, Q, B, G) {
             let I = vg8.parseHeaders(Q)["content-length"];
-            if (I != null && I > this.#A) throw new fg8(`Response size (${I}) larger than maxSize (${this.#A})`);
+            if (I != null && I > this.#A) throw new fg8(`Response size (TextComponent{I}) larger than maxSize (TextComponent{this.#A})`);
             if (this.#Z) return !0;
             return this.#I.onHeaders(A, Q, B, G)
         }
@@ -608,7 +605,7 @@ class leQ extends hg8 {
         }
     }
 
-function gg8({
+    function gg8({
         maxSize: A
     } = {
         maxSize: 1048576
@@ -626,17 +623,16 @@ function gg8({
     }
     ieQ.exports = gg8
 });
-var teQ = U((bN7, oeQ) => {
+var teQ = moduleWrapper((bN7, oeQ) => {
     var {
         isIP: ug8
-    } = UA("node:net"), {
+    } = nodeRequire("node:net"), {
         lookup: mg8
-    } = UA("node:dns"), dg8 = _pA(), {
+    } = nodeRequire("node:dns"), dg8 = _pA(), {
         InvalidArgumentError: n5A,
         InformationalError: cg8
     } = U7(), aeQ = Math.pow(2, 31) - 1;
-
-class seQ {
+    class seQ {
         #A = 0;
         #Q = 0;
         #B = new Map;
@@ -674,10 +670,10 @@ class seQ {
                 let J = this.#B.get(A.hostname),
                     W = this.pick(A, J, Z.affinity),
                     X;
-                if (typeof W.port === "number") X = `:${W.port}`;
-                else if (A.port !== "") X = `:${A.port}`;
+                if (typeof W.port === "number") X = `:TextComponent{W.port}`;
+                else if (A.port !== "") X = `:TextComponent{A.port}`;
                 else X = "";
-                B(null, `${A.protocol}//${W.family===6?`[${W.address}]`:W.address}${X}`)
+                B(null, `TextComponent{A.protocol}//TextComponent{W.family===6?`[TextComponent{W.address}]`:W.address}TextComponent{X}`)
             });
             else {
                 let I = this.pick(A, G, Z.affinity);
@@ -686,10 +682,10 @@ class seQ {
                     return
                 }
                 let Y;
-                if (typeof I.port === "number") Y = `:${I.port}`;
-                else if (A.port !== "") Y = `:${A.port}`;
+                if (typeof I.port === "number") Y = `:TextComponent{I.port}`;
+                else if (A.port !== "") Y = `:TextComponent{A.port}`;
                 else Y = "";
-                B(null, `${A.protocol}//${I.family===6?`[${I.address}]`:I.address}${Y}`)
+                B(null, `TextComponent{A.protocol}//TextComponent{I.family===6?`[TextComponent{I.address}]`:I.address}TextComponent{Y}`)
             }
         }
         #Z(A, Q, B) {
@@ -700,7 +696,7 @@ class seQ {
             }, (G, Z) => {
                 if (G) return B(G);
                 let I = new Map;
-                for (let Y of Z) I.set(`${Y.address}:${Y.family}`, Y);
+                for (let Y of Z) I.set(`TextComponent{Y.address}:TextComponent{Y.family}`, Y);
                 B(null, I.values())
             })
         }
@@ -748,8 +744,7 @@ class seQ {
             return new reQ(this, A, Q)
         }
     }
-
-class reQ extends dg8 {
+    class reQ extends dg8 {
         #A = null;
         #Q = null;
         #B = null;
@@ -836,7 +831,7 @@ class reQ extends dg8 {
         }
     }
 });
-var Mo = U((fN7, IAB) => {
+var Mo = moduleWrapper((fN7, IAB) => {
     var {
         kConstruct: pg8
     } = iI(), {
@@ -847,13 +842,13 @@ var Mo = U((fN7, IAB) => {
         isValidHeaderValue: AAB
     } = Rw(), {
         webidl: B3
-    } = FD(), Xy1 = UA("node:assert"), kpA = UA("node:util"), jX = Symbol("headers map"), jw = Symbol("headers map sorted");
+    } = FD(), Xy1 = nodeRequire("node:assert"), kpA = nodeRequire("node:util"), jX = Symbol("headers map"), jw = Symbol("headers map sorted");
 
-function eeQ(A) {
+    function eeQ(A) {
         return A === 10 || A === 13 || A === 9 || A === 32
     }
 
-function QAB(A) {
+    function QAB(A) {
         let Q = 0,
             B = A.length;
         while (B > Q && eeQ(A.charCodeAt(B - 1))) --B;
@@ -861,13 +856,13 @@ function QAB(A) {
         return Q === 0 && B === A.length ? A : A.substring(Q, B)
     }
 
-function BAB(A, Q) {
+    function BAB(A, Q) {
         if (Array.isArray(Q))
             for (let B = 0; B < Q.length; ++B) {
                 let G = Q[B];
                 if (G.length !== 2) throw B3.errors.exception({
                     header: "Headers constructor",
-                    message: `expected name/value pair to be length 2, found ${G.length}.`
+                    message: `expected name/value pair to be length 2, found TextComponent{G.length}.`
                 });
                 Fy1(A, G[0], G[1])
             } else if (typeof Q === "object" && Q !== null) {
@@ -880,7 +875,7 @@ function BAB(A, Q) {
             })
     }
 
-function Fy1(A, Q, B) {
+    function Fy1(A, Q, B) {
         if (B = QAB(B), !UEA(Q)) throw B3.errors.invalidArgument({
             prefix: "Headers.append",
             value: Q,
@@ -895,11 +890,10 @@ function Fy1(A, Q, B) {
         return Vy1(A).append(Q, B, !1)
     }
 
-function GAB(A, Q) {
+    function GAB(A, Q) {
         return A[0] < Q[0] ? -1 : 1
     }
-
-class ypA {
+    class ypA {
         cookies = null;
         constructor(A) {
             if (A instanceof ypA) this[jX] = new Map(A[jX]), this[jw] = A[jw], this.cookies = A.cookies === null ? null : [...A.cookies];
@@ -919,7 +913,7 @@ class ypA {
                 let I = G === "cookie" ? "; " : ", ";
                 this[jX].set(G, {
                     name: Z.name,
-                    value: `${Z.value}${I}${Q}`
+                    value: `TextComponent{Z.value}TextComponent{I}TextComponent{Q}`
                 })
             } else this[jX].set(G, {
                 name: A,
@@ -1015,8 +1009,7 @@ class ypA {
             }
         }
     }
-
-class PH {
+    class PH {
         #A;
         #Q;
         constructor(A = void 0) {
@@ -1099,7 +1092,7 @@ class PH {
             }
             return this.#Q[jw] = A
         } [kpA.inspect.custom](A, Q) {
-            return Q.depth ??= A, `Headers ${kpA.formatWithOptions(Q,this.#Q.entries)}`
+            return Q.depth ??= A, `Headers TextComponent{kpA.formatWithOptions(Q,this.#Q.entries)}`
         }
         static getHeadersGuard(A) {
             return A.#A
@@ -1166,7 +1159,7 @@ class PH {
         getHeadersList: Vy1
     }
 });
-var wEA = U((hN7, CAB) => {
+var wEA = moduleWrapper((hN7, CAB) => {
     var {
         Headers: VAB,
         HeadersList: YAB,
@@ -1181,7 +1174,7 @@ var wEA = U((hN7, CAB) => {
         hasFinalizationRegistry: tg8,
         streamRegistry: eg8,
         bodyUnusable: Au8
-    } = _5A(), Ky1 = M6(), WAB = UA("node:util"), {
+    } = _5A(), Ky1 = M6(), WAB = nodeRequire("node:util"), {
         kEnumerableProperty: Sw
     } = Ky1, {
         isValidReasonPhrase: Qu8,
@@ -1206,11 +1199,10 @@ var wEA = U((hN7, CAB) => {
         URLSerializer: XAB
     } = tz(), {
         kConstruct: vpA
-    } = iI(), Dy1 = UA("node:assert"), {
+    } = iI(), Dy1 = nodeRequire("node:assert"), {
         types: Ku8
-    } = UA("node:util"), Du8 = new TextEncoder("utf-8");
-
-class jH {
+    } = nodeRequire("node:util"), Du8 = new TextEncoder("utf-8");
+    class jH {
         static error() {
             return $EA(bpA(), "immutable")
         }
@@ -1230,11 +1222,11 @@ class jH {
             try {
                 B = new URL(A, Wu8.settingsObject.baseUrl)
             } catch (I) {
-                throw TypeError(`Failed to parse URL from ${A}`, {
+                throw TypeError(`Failed to parse URL from TextComponent{A}`, {
                     cause: I
                 })
             }
-            if (!Xu8.has(Q)) throw RangeError(`Invalid status code ${Q}`);
+            if (!Xu8.has(Q)) throw RangeError(`Invalid status code TextComponent{Q}`);
             let G = $EA(s5A({}), "immutable");
             G[qJ].status = Q;
             let Z = Ju8(XAB(B));
@@ -1306,7 +1298,7 @@ class jH {
                 type: this.type,
                 url: this.url
             };
-            return `Response ${WAB.formatWithOptions(Q,B)}`
+            return `Response TextComponent{WAB.formatWithOptions(Q,B)}`
         }
     }
     og8(jH);
@@ -1332,7 +1324,7 @@ class jH {
         error: Sw
     });
 
-function Hy1(A) {
+    function Hy1(A) {
         if (A.internalResponse) return HAB(Hy1(A.internalResponse), A.type);
         let Q = s5A({
             ...A,
@@ -1342,7 +1334,7 @@ function Hy1(A) {
         return Q
     }
 
-function s5A(A) {
+    function s5A(A) {
         return {
             aborted: !1,
             rangeRequested: !1,
@@ -1359,7 +1351,7 @@ function s5A(A) {
         }
     }
 
-function bpA(A) {
+    function bpA(A) {
         let Q = Yu8(A);
         return s5A({
             type: "error",
@@ -1369,11 +1361,11 @@ function bpA(A) {
         })
     }
 
-function Hu8(A) {
+    function Hu8(A) {
         return A.type === "error" && A.status === 0
     }
 
-function xpA(A, Q) {
+    function xpA(A, Q) {
         return Q = {
             internalResponse: A,
             ...Q
@@ -1387,7 +1379,7 @@ function xpA(A, Q) {
         })
     }
 
-function HAB(A, Q) {
+    function HAB(A, Q) {
         if (Q === "basic") return xpA(A, {
             type: "basic",
             headersList: A.headersList
@@ -1413,7 +1405,7 @@ function HAB(A, Q) {
         else Dy1(!1)
     }
 
-function Cu8(A, Q = null) {
+    function Cu8(A, Q = null) {
         return Dy1(Bu8(A)), Gu8(A) ? bpA(Object.assign(new DOMException("The operation was aborted.", "AbortError"), {
             cause: Q
         })) : bpA(Object.assign(new DOMException("Request was cancelled."), {
@@ -1421,7 +1413,7 @@ function Cu8(A, Q = null) {
         }))
     }
 
-function FAB(A, Q, B) {
+    function FAB(A, Q, B) {
         if (Q.status !== null && (Q.status < 200 || Q.status > 599)) throw RangeError('init["status"] must be in the range of 200 to 599, inclusive.');
         if ("statusText" in Q && Q.statusText != null) {
             if (!Qu8(String(Q.statusText))) throw TypeError("Invalid statusText")
@@ -1432,7 +1424,7 @@ function FAB(A, Q, B) {
         if (B) {
             if (Fu8.includes(A.status)) throw f8.errors.exception({
                 header: "Response constructor",
-                message: `Invalid response status code ${A.status}`
+                message: `Invalid response status code TextComponent{A.status}`
             });
             if (A[qJ].body = B.body, B.type != null && !A[qJ].headersList.contains("content-type", !0)) A[qJ].headersList.append("content-type", B.type, !0)
         }
@@ -1486,13 +1478,12 @@ function FAB(A, Q, B) {
         fromInnerResponse: $EA
     }
 });
-var qAB = U((gN7, wAB) => {
+var qAB = moduleWrapper((gN7, wAB) => {
     var {
         kConnected: EAB,
         kSize: zAB
     } = iI();
-
-class UAB {
+    class UAB {
         constructor(A) {
             this.value = A
         }

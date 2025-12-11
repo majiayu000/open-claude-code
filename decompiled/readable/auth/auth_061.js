@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_061.js
+ * 处理时间: 2025-12-09T03:41:37.056Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.942Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -23,7 +26,7 @@
         }
     }
 
-function pF3(A, Q, B) {
+    function pF3(A, Q, B) {
         if (!Wg.hasTracingEnabled(Q)) return !1;
         let G;
         if (A !== void 0 && typeof Q.tracesSampler === "function") G = Q.tracesSampler({
@@ -52,14 +55,14 @@ function pF3(A, Q, B) {
     Jr2.startTrackingLongTasks = SF3;
     Jr2.startTrackingWebVitals = jF3
 });
-var ZY0 = U((Xr2) => {
+var ZY0 = moduleWrapper((Xr2) => {
     Object.defineProperty(Xr2, "__esModule", {
         value: !0
     });
     var dy = P4(),
         a0A = l0();
 
-function tF3(A, Q, B, G, Z = "auto.http.browser") {
+    function tF3(A, Q, B, G, Z = "auto.http.browser") {
         if (!dy.hasTracingEnabled() || !A.fetchData) return;
         let I = Q(A.fetchData.url);
         if (A.endTimestamp && I) {
@@ -78,7 +81,7 @@ function tF3(A, Q, B, G, Z = "auto.http.browser") {
             F = eF3(X),
             V = F ? a0A.parseUrl(F).host : void 0,
             K = I ? dy.startInactiveSpan({
-                name: `${W} ${X}`,
+                name: `TextComponent{W} TextComponent{X}`,
                 onlyIfParent: !0,
                 attributes: {
                     url: X,
@@ -100,7 +103,7 @@ function tF3(A, Q, B, G, Z = "auto.http.browser") {
         return K
     }
 
-function Wr2(A, Q, B, G, Z) {
+    function Wr2(A, Q, B, G, Z) {
         let I = Z || B.getSpan(),
             Y = dy.getIsolationScope(),
             {
@@ -141,7 +144,7 @@ function Wr2(A, Q, B, G, Z) {
         }
     }
 
-function eF3(A) {
+    function eF3(A) {
         try {
             return new URL(A).href
         } catch (Q) {
@@ -149,7 +152,7 @@ function eF3(A) {
         }
     }
 
-function AV3(A, Q) {
+    function AV3(A, Q) {
         if (Q.response) {
             dy.setHttpStatus(A, Q.response.status);
             let B = Q.response && Q.response.headers && Q.response.headers.get("content-length");
@@ -163,7 +166,7 @@ function AV3(A, Q) {
     Xr2.addTracingHeadersToFetchRequest = Wr2;
     Xr2.instrumentFetchRequest = tF3
 });
-var kG1 = U((Cr2) => {
+var kG1 = moduleWrapper((Cr2) => {
     Object.defineProperty(Cr2, "__esModule", {
         value: !0
     });
@@ -171,7 +174,7 @@ var kG1 = U((Cr2) => {
         hP = l0(),
         GV3 = ZY0(),
         ZV3 = DXA(),
-        IV3 = gq(),
+        IV3 = MODEL_OPUS(),
         _G1 = ["localhost", /^\/(?!\/)/],
         IY0 = {
             traceFetch: !0,
@@ -181,7 +184,7 @@ var kG1 = U((Cr2) => {
             tracePropagationTargets: _G1
         };
 
-function YV3(A) {
+    function YV3(A) {
         let {
             traceFetch: Q,
             traceXHR: B,
@@ -212,11 +215,11 @@ function YV3(A) {
         })
     }
 
-function JV3(A) {
+    function JV3(A) {
         return A.entryType === "resource" && "initiatorType" in A && typeof A.nextHopProtocol === "string" && (A.initiatorType === "fetch" || A.initiatorType === "xmlhttprequest")
     }
 
-function Fr2(A) {
+    function Fr2(A) {
         let {
             url: Q
         } = fP.spanToJSON(A).data || {};
@@ -230,7 +233,7 @@ function Fr2(A) {
         })
     }
 
-function Vr2(A) {
+    function Vr2(A) {
         let Q = "unknown",
             B = "unknown",
             G = "";
@@ -252,11 +255,11 @@ function Vr2(A) {
         }
     }
 
-function cy(A = 0) {
+    function cy(A = 0) {
         return ((hP.browserPerformanceTimeOrigin || performance.timeOrigin) + A) / 1000
     }
 
-function WV3(A) {
+    function WV3(A) {
         let {
             name: Q,
             version: B
@@ -275,11 +278,11 @@ function WV3(A) {
         ]
     }
 
-function Kr2(A, Q) {
+    function Kr2(A, Q) {
         return hP.stringMatchesSomePattern(A, Q || _G1)
     }
 
-function Dr2(A, Q, B, G) {
+    function Dr2(A, Q, B, G) {
         let Z = A.xhr,
             I = Z && Z[hP.SENTRY_XHR_DATA_KEY];
         if (!fP.hasTracingEnabled() || !Z || Z.__sentry_own_request__ || !I) return;
@@ -296,7 +299,7 @@ function Dr2(A, Q, B, G) {
             X = Hr2(I.url),
             F = X ? hP.parseUrl(X).host : void 0,
             V = Y ? fP.startInactiveSpan({
-                name: `${I.method} ${I.url}`,
+                name: `TextComponent{I.method} TextComponent{I.url}`,
                 onlyIfParent: !0,
                 attributes: {
                     type: "xhr",
@@ -325,13 +328,13 @@ function Dr2(A, Q, B, G) {
         return V
     }
 
-function XV3(A, Q, B) {
+    function XV3(A, Q, B) {
         try {
             if (A.setRequestHeader("sentry-trace", Q), B) A.setRequestHeader(hP.BAGGAGE_HEADER_NAME, B)
         } catch (G) {}
     }
 
-function Hr2(A) {
+    function Hr2(A) {
         try {
             return new URL(A, IV3.WINDOW.location.origin).href
         } catch (Q) {
@@ -345,15 +348,15 @@ function Hr2(A) {
     Cr2.shouldAttachHeaders = Kr2;
     Cr2.xhrCallback = Dr2
 });
-var Ur2 = U((zr2) => {
+var Ur2 = moduleWrapper((zr2) => {
     Object.defineProperty(zr2, "__esModule", {
         value: !0
     });
     var zPA = l0(),
         Er2 = U$(),
-        UPA = gq();
+        UPA = MODEL_OPUS();
 
-function EV3(A, Q = !0, B = !0) {
+    function EV3(A, Q = !0, B = !0) {
         if (!UPA.WINDOW || !UPA.WINDOW.location) {
             Er2.DEBUG_BUILD && zPA.logger.warn("Could not initialize routing instrumentation due to invalid location");
             return
@@ -378,7 +381,7 @@ function EV3(A, Q = !0, B = !0) {
                 return
             }
             if (Y !== I) {
-                if (G = void 0, Z) Er2.DEBUG_BUILD && zPA.logger.log(`[Tracing] Finishing current transaction with op: ${Z.op}`), Z.end();
+                if (G = void 0, Z) Er2.DEBUG_BUILD && zPA.logger.log(`[Tracing] Finishing current transaction with op: TextComponent{Z.op}`), Z.end();
                 Z = A({
                     name: UPA.WINDOW.location.pathname,
                     op: "navigation",
@@ -392,7 +395,7 @@ function EV3(A, Q = !0, B = !0) {
     }
     zr2.instrumentRoutingWithDefaults = EV3
 });
-var Or2 = U((Mr2) => {
+var Or2 = moduleWrapper((Mr2) => {
     Object.defineProperty(Mr2, "__esModule", {
         value: !0
     });
@@ -404,7 +407,7 @@ var Or2 = U((Mr2) => {
         $PA = GY0(),
         qr2 = kG1(),
         $V3 = Ur2(),
-        s0A = gq(),
+        s0A = MODEL_OPUS(),
         Nr2 = "BrowserTracing",
         wV3 = {
             ...gP.TRACING_DEFAULTS,
@@ -419,8 +422,7 @@ var Or2 = U((Mr2) => {
             ...qr2.defaultRequestInstrumentationOptions
         },
         wr2 = 10;
-
-class Lr2 {
+    class Lr2 {
         constructor(A) {
             if (this.name = Nr2, this._hasSetTracePropagationTargets = !1, gP.addTracingExtensions(), ln.DEBUG_BUILD) this._hasSetTracePropagationTargets = !!(A && (A.tracePropagationTargets || A.tracingOrigins));
             if (this.options = {
@@ -470,7 +472,7 @@ class Lr2 {
         }
         _createRouteTransaction(A) {
             if (!this._getCurrentHub) {
-                ln.DEBUG_BUILD && Vg.logger.warn(`[Tracing] Did not create ${A.op} transaction because _getCurrentHub is invalid.`);
+                ln.DEBUG_BUILD && Vg.logger.warn(`[Tracing] Did not create TextComponent{A.op} transaction because _getCurrentHub is invalid.`);
                 return
             }
             let Q = this._getCurrentHub(),
@@ -514,8 +516,8 @@ class Lr2 {
             if (X.metadata = X.name !== J.name ? {
                     ...X.metadata,
                     source: "custom"
-                } : X.metadata, this._latestRoute.name = X.name, this._latestRoute.context = X, X.sampled === !1) ln.DEBUG_BUILD && Vg.logger.log(`[Tracing] Will not send ${X.op} transaction because of beforeNavigate.`);
-            ln.DEBUG_BUILD && Vg.logger.log(`[Tracing] Starting ${X.op} transaction on scope`);
+                } : X.metadata, this._latestRoute.name = X.name, this._latestRoute.context = X, X.sampled === !1) ln.DEBUG_BUILD && Vg.logger.log(`[Tracing] Will not send TextComponent{X.op} transaction because of beforeNavigate.`);
+            ln.DEBUG_BUILD && Vg.logger.log(`[Tracing] Starting TextComponent{X.op} transaction on scope`);
             let {
                 location: F
             } = s0A.WINDOW, V = gP.startIdleTransaction(Q, X, G, Z, !0, {
@@ -626,26 +628,26 @@ class Lr2 {
         }
     }
 
-function YY0(A) {
-        let Q = Vg.getDomElement(`meta[name=${A}]`);
+    function YY0(A) {
+        let Q = Vg.getDomElement(`meta[name=TextComponent{A}]`);
         return Q ? Q.getAttribute("content") : void 0
     }
 
-function qV3(A) {
+    function qV3(A) {
         let Q = A.attributes && A.attributes[gP.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE],
             B = A.data && A.data[gP.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE],
             G = A.metadata && A.metadata.source;
         return Q || B || G
     }
 
-function NV3(A) {
+    function NV3(A) {
         return "duration" in A
     }
     Mr2.BROWSER_TRACING_INTEGRATION_ID = Nr2;
     Mr2.BrowserTracing = Lr2;
     Mr2.getMetaContent = YY0
 });
-var yr2 = U((kr2) => {
+var yr2 = moduleWrapper((kr2) => {
     Object.defineProperty(kr2, "__esModule", {
         value: !0
     });
@@ -656,7 +658,7 @@ var yr2 = U((kr2) => {
         Rr2 = DXA(),
         wPA = GY0(),
         Pr2 = kG1(),
-        mq = gq(),
+        mq = MODEL_OPUS(),
         jr2 = "BrowserTracing",
         TV3 = {
             ...dW.TRACING_DEFAULTS,
@@ -686,7 +688,7 @@ var yr2 = U((kr2) => {
                 context: void 0
             };
 
-function Y(J) {
+            function Y(J) {
                 let W = dW.getCurrentHub(),
                     {
                         beforeStartSpan: X,
@@ -724,8 +726,8 @@ function Y(J) {
                 if (C.metadata = C.name !== H.name ? {
                         ...C.metadata,
                         source: "custom"
-                    } : C.metadata, I.name = C.name, I.context = C, C.sampled === !1) nn.DEBUG_BUILD && OO.logger.log(`[Tracing] Will not send ${C.op} transaction because of beforeNavigate.`);
-                nn.DEBUG_BUILD && OO.logger.log(`[Tracing] Starting ${C.op} transaction on scope`);
+                    } : C.metadata, I.name = C.name, I.context = C, C.sampled === !1) nn.DEBUG_BUILD && OO.logger.log(`[Tracing] Will not send TextComponent{C.op} transaction because of beforeNavigate.`);
+                nn.DEBUG_BUILD && OO.logger.log(`[Tracing] Starting TextComponent{C.op} transaction on scope`);
                 let {
                     location: E
                 } = mq.WINDOW, z = dW.startIdleTransaction(W, C, F, V, !0, {
@@ -758,13 +760,13 @@ function Y(J) {
                     if (nn.DEBUG_BUILD && Q && C) OO.logger.warn("[Tracing] The `tracePropagationTargets` option was set in the BrowserTracing integration and top level `Sentry.init`. The top level `Sentry.init` value is being used.");
                     let z, w = mq.WINDOW.location && mq.WINDOW.location.href;
                     if (J.on) J.on("startNavigationSpan", (N) => {
-                        if (z) nn.DEBUG_BUILD && OO.logger.log(`[Tracing] Finishing current transaction with op: ${dW.spanToJSON(z).op}`), z.end();
+                        if (z) nn.DEBUG_BUILD && OO.logger.log(`[Tracing] Finishing current transaction with op: TextComponent{dW.spanToJSON(z).op}`), z.end();
                         z = Y({
                             op: "navigation",
                             ...N
                         })
                     }), J.on("startPageLoadSpan", (N) => {
-                        if (z) nn.DEBUG_BUILD && OO.logger.log(`[Tracing] Finishing current transaction with op: ${dW.spanToJSON(z).op}`), z.end();
+                        if (z) nn.DEBUG_BUILD && OO.logger.log(`[Tracing] Finishing current transaction with op: TextComponent{dW.spanToJSON(z).op}`), z.end();
                         z = Y({
                             op: "pageload",
                             ...N
@@ -816,26 +818,26 @@ function Y(J) {
             }
         };
 
-function Sr2(A, Q) {
+    function Sr2(A, Q) {
         if (!A.emit) return;
         A.emit("startPageLoadSpan", Q);
         let B = dW.getActiveSpan();
         return (B && dW.spanToJSON(B).op) === "pageload" ? B : void 0
     }
 
-function _r2(A, Q) {
+    function _r2(A, Q) {
         if (!A.emit) return;
         A.emit("startNavigationSpan", Q);
         let B = dW.getActiveSpan();
         return (B && dW.spanToJSON(B).op) === "navigation" ? B : void 0
     }
 
-function JY0(A) {
-        let Q = OO.getDomElement(`meta[name=${A}]`);
+    function JY0(A) {
+        let Q = OO.getDomElement(`meta[name=TextComponent{A}]`);
         return Q ? Q.getAttribute("content") : void 0
     }
 
-function jV3(A, Q) {
+    function jV3(A, Q) {
         let B, G = () => {
             let {
                 idleTimeout: Z,
@@ -873,12 +875,12 @@ function jV3(A, Q) {
         })
     }
 
-function SV3(A) {
+    function SV3(A) {
         return "duration" in A
     }
     var Tr2 = 10;
 
-function _V3(A, Q) {
+    function _V3(A, Q) {
         let B = ({
             entries: G
         }) => {
@@ -930,7 +932,7 @@ function _V3(A, Q) {
         Rr2.addPerformanceInstrumentationHandler("event", B), Rr2.addPerformanceInstrumentationHandler("first-input", B)
     }
 
-function kV3(A) {
+    function kV3(A) {
         let Q = A.attributes && A.attributes[dW.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE],
             B = A.data && A.data[dW.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE],
             G = A.metadata && A.metadata.source;
@@ -942,14 +944,14 @@ function kV3(A) {
     kr2.startBrowserTracingNavigationSpan = _r2;
     kr2.startBrowserTracingPageLoadSpan = Sr2
 });
-var br2 = U((vr2, qPA) => {
+var br2 = moduleWrapper((vr2, qPA) => {
     Object.defineProperty(vr2, "__esModule", {
         value: !0
     });
     var xr2 = P4(),
         HXA = l0();
 
-function hV3() {
+    function hV3() {
         let A = xr2.getMainCarrier();
         if (!A.__SENTRY__) return;
         let Q = {
@@ -976,12 +978,12 @@ function hV3() {
         if (B.length > 0) A.__SENTRY__.integrations = [...A.__SENTRY__.integrations || [], ...B]
     }
 
-function gV3() {
+    function gV3() {
         if (xr2.addTracingExtensions(), HXA.isNodeEnv()) hV3()
     }
     vr2.addExtensionMethods = gV3
 });
-var XY0 = U((mr2) => {
+var XY0 = moduleWrapper((mr2) => {
     Object.defineProperty(mr2, "__esModule", {
         value: !0
     });
@@ -1035,14 +1037,14 @@ var XY0 = U((mr2) => {
     mr2.instrumentFetchRequest = ur2.instrumentFetchRequest;
     mr2.addExtensionMethods = sV3.addExtensionMethods
 });
-var cr2 = U((dr2) => {
+var cr2 = moduleWrapper((dr2) => {
     Object.defineProperty(dr2, "__esModule", {
         value: !0
     });
     var jK3 = XY0(),
         SK3 = l0();
 
-function _K3() {
+    function _K3() {
         let A = jK3.lazyLoadedNodePerformanceMonitoringIntegrations.map((Q) => {
             try {
                 return Q()
@@ -1055,15 +1057,14 @@ function _K3() {
     }
     dr2.autoDiscoverNodePerformanceMonitoringIntegrations = _K3
 });
-var FY0 = U((ir2) => {
+var FY0 = moduleWrapper((ir2) => {
     Object.defineProperty(ir2, "__esModule", {
         value: !0
     });
-    var yK3 = UA("os"),
-        xK3 = UA("util"),
+    var yK3 = nodeRequire("os"),
+        xK3 = nodeRequire("util"),
         pr2 = P4();
-
-class lr2 extends pr2.ServerRuntimeClient {
+    class lr2 extends pr2.ServerRuntimeClient {
         constructor(A) {
             pr2.applySdkMetadata(A, "node"), A.transportOptions = {
                 textEncoder: new xK3.TextEncoder,
@@ -1083,18 +1084,17 @@ class lr2 extends pr2.ServerRuntimeClient {
     }
     ir2.NodeClient = lr2
 });
-var or2 = U((rr2) => {
+var or2 = moduleWrapper((rr2) => {
     var {
         _nullishCoalesce: nr2
     } = l0();
     Object.defineProperty(rr2, "__esModule", {
         value: !0
     });
-    var ar2 = UA("http");
-    UA("https");
+    var ar2 = nodeRequire("http");
+    nodeRequire("https");
     var py = Symbol("AgentBaseInternalState");
-
-class sr2 extends ar2.Agent {
+    class sr2 extends ar2.Agent {
         constructor(A) {
             super(A);
             this[py] = {}
@@ -1141,40 +1141,40 @@ class sr2 extends ar2.Agent {
     }
     rr2.Agent = sr2
 });
-var er2 = U((tr2) => {
+var er2 = moduleWrapper((tr2) => {
     Object.defineProperty(tr2, "__esModule", {
         value: !0
     });
     var fK3 = l0();
 
-function xG1(...A) {
+    function xG1(...A) {
         fK3.logger.log("[https-proxy-agent:parse-proxy-response]", ...A)
     }
 
-function hK3(A) {
+    function hK3(A) {
         return new Promise((Q, B) => {
             let G = 0,
                 Z = [];
 
-function I() {
+            function I() {
                 let F = A.read();
                 if (F) X(F);
                 else A.once("readable", I)
             }
 
-function Y() {
+            function Y() {
                 A.removeListener("end", J), A.removeListener("error", W), A.removeListener("readable", I)
             }
 
-function J() {
+            function J() {
                 Y(), xG1("onend"), B(Error("Proxy connection ended before receiving CONNECT response"))
             }
 
-function W(F) {
+            function W(F) {
                 Y(), xG1("onerror %o", F), B(F)
             }
 
-function X(F) {
+            function X(F) {
                 Z.push(F), G += F.length;
                 let V = Buffer.concat(Z, G),
                     K = V.indexOf(`\r
@@ -1195,7 +1195,7 @@ function X(F) {
                 for (let N of D) {
                     if (!N) continue;
                     let q = N.indexOf(":");
-                    if (q === -1) return A.destroy(), B(Error(`Invalid header from proxy CONNECT response: "${N}"`));
+                    if (q === -1) return A.destroy(), B(Error(`Invalid header from proxy CONNECT response: "TextComponent{N}"`));
                     let R = N.slice(0, q).toLowerCase(),
                         P = N.slice(q + 1).trimStart(),
                         y = w[R];
@@ -1217,7 +1217,7 @@ function X(F) {
     }
     tr2.parseProxyResponse = hK3
 });
-var Go2 = U((Bo2) => {
+var Go2 = moduleWrapper((Bo2) => {
     var {
         _nullishCoalesce: uK3,
         _optionalChain: mK3
@@ -1225,25 +1225,24 @@ var Go2 = U((Bo2) => {
     Object.defineProperty(Bo2, "__esModule", {
         value: !0
     });
-    var NPA = UA("net"),
-        Ao2 = UA("tls"),
-        dK3 = UA("url"),
+    var NPA = nodeRequire("net"),
+        Ao2 = nodeRequire("tls"),
+        dK3 = nodeRequire("url"),
         cK3 = l0(),
         pK3 = or2(),
         lK3 = er2();
 
-function LPA(...A) {
+    function LPA(...A) {
         cK3.logger.log("[https-proxy-agent]", ...A)
     }
-
-class VY0 extends pK3.Agent {
+    class VY0 extends pK3.Agent {
         static __initStatic() {
             this.protocols = ["http", "https"]
         }
         constructor(A, Q) {
             super(Q);
             this.options = {}, this.proxy = typeof A === "string" ? new dK3.URL(A) : A, this.proxyHeaders = uK3(mK3([Q, "optionalAccess", (Z) => Z.headers]), () => ({})), LPA("Creating new HttpsProxyAgent instance: %o", this.proxy.href);
-            let B = (this.proxy.hostname || this.proxy.host).replace(/^\[|\]$/g, ""),
+            let B = (this.proxy.hostname || this.proxy.host).replace(/^\[|\]TextComponent/g, ""),
                 G = this.proxy.port ? parseInt(this.proxy.port, 10) : this.proxy.protocol === "https:" ? 443 : 80;
             this.connectOpts = {
                 ALPNProtocols: ["http/1.1"],
@@ -1269,18 +1268,18 @@ class VY0 extends pK3.Agent {
             let Z = typeof this.proxyHeaders === "function" ? this.proxyHeaders() : {
                     ...this.proxyHeaders
                 },
-                I = NPA.isIPv6(Q.host) ? `[${Q.host}]` : Q.host,
-                Y = `CONNECT ${I}:${Q.port} HTTP/1.1\r
+                I = NPA.isIPv6(Q.host) ? `[TextComponent{Q.host}]` : Q.host,
+                Y = `CONNECT TextComponent{I}:TextComponent{Q.port} HTTP/1.1\r
 `;
             if (B.username || B.password) {
-                let V = `${decodeURIComponent(B.username)}:${decodeURIComponent(B.password)}`;
-                Z["Proxy-Authorization"] = `Basic ${Buffer.from(V).toString("base64")}`
+                let V = `TextComponent{decodeURIComponent(B.username)}:TextComponent{decodeURIComponent(B.password)}`;
+                Z["Proxy-Authorization"] = `Basic TextComponent{Buffer.from(V).toString("base64")}`
             }
-            if (Z.Host = `${I}:${Q.port}`, !Z["Proxy-Connection"]) Z["Proxy-Connection"] = this.keepAlive ? "Keep-Alive" : "close";
-            for (let V of Object.keys(Z)) Y += `${V}: ${Z[V]}\r
+            if (Z.Host = `TextComponent{I}:TextComponent{Q.port}`, !Z["Proxy-Connection"]) Z["Proxy-Connection"] = this.keepAlive ? "Keep-Alive" : "close";
+            for (let V of Object.keys(Z)) Y += `TextComponent{V}: TextComponent{Z[V]}\r
 `;
             let J = lK3.parseProxyResponse(G);
-            G.write(`${Y}\r
+            G.write(`TextComponent{Y}\r
 `);
             let {
                 connect: W,
@@ -1309,11 +1308,11 @@ class VY0 extends pK3.Agent {
     }
     VY0.__initStatic();
 
-function iK3(A) {
+    function iK3(A) {
         A.resume()
     }
 
-function Qo2(A, ...Q) {
+    function Qo2(A, ...Q) {
         let B = {},
             G;
         for (G in A)
@@ -1322,24 +1321,24 @@ function Qo2(A, ...Q) {
     }
     Bo2.HttpsProxyAgent = VY0
 });
-var DY0 = U((Yo2) => {
+var DY0 = moduleWrapper((Yo2) => {
     var {
         _nullishCoalesce: KY0
     } = l0();
     Object.defineProperty(Yo2, "__esModule", {
         value: !0
     });
-    var aK3 = UA("http"),
-        sK3 = UA("https"),
-        rK3 = UA("stream"),
-        Io2 = UA("url"),
-        oK3 = UA("zlib"),
+    var aK3 = nodeRequire("http"),
+        sK3 = nodeRequire("https"),
+        rK3 = nodeRequire("stream"),
+        Io2 = nodeRequire("url"),
+        oK3 = nodeRequire("zlib"),
         Zo2 = P4(),
         tK3 = l0(),
         eK3 = Go2(),
         AD3 = 32768;
 
-function QD3(A) {
+    function QD3(A) {
         return new rK3.Readable({
             read() {
                 this.push(A), this.push(null)
@@ -1347,7 +1346,7 @@ function QD3(A) {
         })
     }
 
-function BD3(A) {
+    function BD3(A) {
         let Q;
         try {
             Q = new Io2.URL(A.url)
@@ -1369,7 +1368,7 @@ function BD3(A) {
         return Zo2.createTransport(A, J)
     }
 
-function GD3(A, Q) {
+    function GD3(A, Q) {
         let {
             no_proxy: B
         } = process.env;
@@ -1377,7 +1376,7 @@ function GD3(A, Q) {
         else return Q
     }
 
-function ZD3(A, Q, B) {
+    function ZD3(A, Q, B) {
         let {
             hostname: G,
             pathname: Z,
@@ -1397,7 +1396,7 @@ function ZD3(A, Q, B) {
                     agent: B,
                     headers: D,
                     hostname: G,
-                    path: `${Z}${J}`,
+                    path: `TextComponent{Z}TextComponent{J}`,
                     port: I,
                     protocol: Y,
                     ca: A.caCerts
@@ -1419,7 +1418,7 @@ function ZD3(A, Q, B) {
     }
     Yo2.makeNodeTransport = BD3
 });
-var r0A = U((Jo2) => {
+var r0A = moduleWrapper((Jo2) => {
     Object.defineProperty(Jo2, "__esModule", {
         value: !0
     });
@@ -1427,32 +1426,32 @@ var r0A = U((Jo2) => {
         JD3 = YD3.parseSemver(process.versions.node);
     Jo2.NODE_VERSION = JD3
 });
-var Vo2 = U((Fo2) => {
+var Vo2 = moduleWrapper((Fo2) => {
     var {
         _optionalChain: XD3
     } = l0();
     Object.defineProperty(Fo2, "__esModule", {
         value: !0
     });
-    var Wo2 = UA("domain"),
+    var Wo2 = nodeRequire("domain"),
         o0A = P4();
 
-function Xo2() {
+    function Xo2() {
         return Wo2.active
     }
 
-function FD3() {
+    function FD3() {
         let A = Xo2();
         if (!A) return;
         return o0A.ensureHubOnCarrier(A), o0A.getHubFromCarrier(A)
     }
 
-function VD3(A) {
+    function VD3(A) {
         let Q = {};
         return o0A.ensureHubOnCarrier(Q, A), o0A.getHubFromCarrier(Q)
     }
 
-function KD3(A, Q) {
+    function KD3(A, Q) {
         let B = Xo2();
         if (B && XD3([Q, "optionalAccess", (Y) => Y.reuseExisting])) return A();
         let G = Wo2.create(),
@@ -1463,7 +1462,7 @@ function KD3(A, Q) {
         })()
     }
 
-function DD3() {
+    function DD3() {
         o0A.setAsyncContextStrategy({
             getCurrentHub: FD3,
             runWithAsyncContext: KD3
@@ -1471,7 +1470,7 @@ function DD3() {
     }
     Fo2.setDomainAsyncContextStrategy = DD3
 });
-var Do2 = U((Ko2) => {
+var Do2 = moduleWrapper((Ko2) => {
     var {
         _optionalChain: CD3
     } = l0();
@@ -1479,22 +1478,22 @@ var Do2 = U((Ko2) => {
         value: !0
     });
     var HY0 = P4(),
-        ED3 = UA("async_hooks"),
+        ED3 = nodeRequire("async_hooks"),
         vG1;
 
-function zD3() {
+    function zD3() {
         if (!vG1) vG1 = new ED3.AsyncLocalStorage;
 
-function A() {
+        function A() {
             return vG1.getStore()
         }
 
-function Q(G) {
+        function Q(G) {
             let Z = {};
             return HY0.ensureHubOnCarrier(Z, G), HY0.getHubFromCarrier(Z)
         }
 
-function B(G, Z) {
+        function B(G, Z) {
             let I = A();
             if (I && CD3([Z, "optionalAccess", (J) => J.reuseExisting])) return G();
             let Y = Q(I);
@@ -1509,7 +1508,7 @@ function B(G, Z) {
     }
     Ko2.setHooksAsyncContextStrategy = zD3
 });
-var Co2 = U((Ho2) => {
+var Co2 = moduleWrapper((Ho2) => {
     Object.defineProperty(Ho2, "__esModule", {
         value: !0
     });
@@ -1517,7 +1516,7 @@ var Co2 = U((Ho2) => {
         wD3 = Vo2(),
         qD3 = Do2();
 
-function ND3() {
+    function ND3() {
         if ($D3.NODE_VERSION.major >= 14) qD3.setHooksAsyncContextStrategy();
         else wD3.setDomainAsyncContextStrategy()
     }

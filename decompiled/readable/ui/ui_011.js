@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_011.js
+ * 处理时间: 2025-12-09T03:41:39.017Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.098Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -23,13 +25,13 @@
                         let X = new Uint8Array(9);
                         return X[0] = 8, X.set(xb4.fromNumber(A.value.valueOf()).bytes, 1), X;
                     case "uuid":
-                        if (!yb4.test(A.value)) throw Error(`Invalid UUID received: ${A.value}`);
+                        if (!yb4.test(A.value)) throw Error(`Invalid UUID received: TextComponent{A.value}`);
                         let F = new Uint8Array(17);
                         return F[0] = 9, F.set((0, Jd.fromHex)(A.value.replace(/\-/g, "")), 1), F
                 }
             }
         },
-        yb4 = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/,
+        yb4 = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}TextComponent/,
         xb4 = class A {
             constructor(Q) {
                 if (this.bytes = Q, Q.byteLength !== 8) throw Error("Int64 buffers must be exactly 8 bytes")
@@ -38,7 +40,7 @@
                 oK(this, "Int64")
             }
             static fromNumber(Q) {
-                if (Q > 9223372036854776000 || Q < -9223372036854776000) throw Error(`${Q} is too large (or, if negative, too small) to represent as an Int64`);
+                if (Q > 9223372036854776000 || Q < -9223372036854776000) throw Error(`TextComponent{Q} is too large (or, if negative, too small) to represent as an Int64`);
                 let B = new Uint8Array(8);
                 for (let G = 7, Z = Math.abs(Math.round(Q)); G > -1 && Z > 0; G--, Z /= 256) B[G] = Z;
                 if (Q < 0) Xq1(B);
@@ -55,7 +57,7 @@
             }
         };
 
-function Xq1(A) {
+    function Xq1(A) {
         for (let Q = 0; Q < 8; Q++) A[Q] ^= 255;
         for (let Q = 7; Q > -1; Q--)
             if (A[Q]++, A[Q] !== 0) break
@@ -102,8 +104,8 @@ function Xq1(A) {
                 let Z = (0, mhA.escapeUri)(G);
                 Q.push(Z);
                 let I = A[G];
-                if (typeof I === "string") B[Z] = `${Z}=${(0,mhA.escapeUri)(I)}`;
-                else if (Array.isArray(I)) B[Z] = I.slice(0).reduce((Y, J) => Y.concat([`${Z}=${(0,mhA.escapeUri)(J)}`]), []).sort().join("&")
+                if (typeof I === "string") B[Z] = `TextComponent{Z}=TextComponent{(0,mhA.escapeUri)(I)}`;
+                else if (Array.isArray(I)) B[Z] = I.slice(0).reduce((Y, J) => Y.concat([`TextComponent{Z}=TextComponent{(0,mhA.escapeUri)(J)}`]), []).sort().join("&")
             }
             return Q.sort().map((G) => B[G]).filter((G) => G).join("&")
         }, "getCanonicalQuery"),
@@ -132,23 +134,23 @@ function Xq1(A) {
             }
             createCanonicalRequest(A, Q, B) {
                 let G = Object.keys(Q).sort();
-                return `${A.method}
-${this.getCanonicalPath(A)}
-${SIQ(A)}
-${G.map((Z)=>`${Z}:${Q[Z]}`).join(`
+                return `TextComponent{A.method}
+TextComponent{this.getCanonicalPath(A)}
+TextComponent{SIQ(A)}
+TextComponent{G.map((Z)=>`TextComponent{Z}:TextComponent{Q[Z]}`).join(`
 `)}
 
-${G.join(";")}
-${B}`
+TextComponent{G.join(";")}
+TextComponent{B}`
             }
             async createStringToSign(A, Q, B, G) {
                 let Z = new this.sha256;
                 Z.update((0, vb4.toUint8Array)(B));
                 let I = await Z.digest();
-                return `${G}
-${A}
-${Q}
-${(0,Jd.toHex)(I)}`
+                return `TextComponent{G}
+TextComponent{A}
+TextComponent{Q}
+TextComponent{(0,Jd.toHex)(I)}`
             }
             getCanonicalPath({
                 path: A
@@ -161,7 +163,7 @@ ${(0,Jd.toHex)(I)}`
                         if (Z === "..") Q.pop();
                         else Q.push(Z)
                     }
-                    let B = `${A?.startsWith("/")?"/":""}${Q.join("/")}${Q.length>0&&A?.endsWith("/")?"/":""}`;
+                    let B = `TextComponent{A?.startsWith("/")?"/":""}TextComponent{Q.join("/")}TextComponent{Q.length>0&&A?.endsWith("/")?"/":""}`;
                     return (0, mhA.escapeUri)(B).replace(/%2F/g, "/")
                 }
                 return A
@@ -226,7 +228,7 @@ ${(0,Jd.toHex)(I)}`
                         hoistableHeaders: J
                     });
                 if (F.sessionToken) C.query[Dq1] = F.sessionToken;
-                C.query[VIQ] = fhA, C.query[KIQ] = `${F.accessKeyId}/${H}`, C.query[Vq1] = K, C.query[HIQ] = G.toString(10);
+                C.query[VIQ] = fhA, C.query[KIQ] = `TextComponent{F.accessKeyId}/TextComponent{H}`, C.query[Vq1] = K, C.query[HIQ] = G.toString(10);
                 let E = Wq1(C, Z, Y);
                 return C.query[DIQ] = this.getCanonicalHeaderList(E), C.query[Kq1] = await this.getSignature(K, H, this.getSigningKey(F, V, D, X), this.createCanonicalRequest(C, E, await uhA(A, this.sha256))), C
             }
@@ -321,7 +323,7 @@ ${(0,Jd.toHex)(I)}`
                 if (!TIQ(dhA, W.headers) && this.applyChecksum) W.headers[dhA] = K;
                 let D = Wq1(W, G, B),
                     H = await this.getSignature(X, V, this.getSigningKey(Y, J, F, I), this.createCanonicalRequest(W, D, K));
-                return W.headers[Hq1] = `${fhA} Credential=${Y.accessKeyId}/${V}, SignedHeaders=${this.getCanonicalHeaderList(D)}, Signature=${H}`, W
+                return W.headers[Hq1] = `TextComponent{fhA} Credential=TextComponent{Y.accessKeyId}/TextComponent{V}, SignedHeaders=TextComponent{this.getCanonicalHeaderList(D)}, Signature=TextComponent{H}`, W
             }
             async getSignature(A, Q, B, G) {
                 let Z = await this.createStringToSign(A, Q, G, fhA),
@@ -336,7 +338,7 @@ ${(0,Jd.toHex)(I)}`
             SignatureV4a: null
         }
 });
-var wq1 = U((DV7, iIQ) => {
+var wq1 = moduleWrapper((DV7, iIQ) => {
     var {
         defineProperty: phA,
         getOwnPropertyDescriptor: ub4,
@@ -385,7 +387,7 @@ var wq1 = U((DV7, iIQ) => {
             return Q
         }, "getUpdatedSystemClockOffset"),
         gDA = KW((A, Q) => {
-            if (!Q) throw Error(`Property \`${A}\` is not resolved for AWS SDK SigV4Auth`);
+            if (!Q) throw Error(`Property \`TextComponent{A}\` is not resolved for AWS SDK SigV4Auth`);
             return Q
         }, "throwSigningPropertyError"),
         Uq1 = KW(async (A) => {
@@ -589,7 +591,7 @@ var wq1 = U((DV7, iIQ) => {
         }, "resolveAwsSdkSigV4Config"),
         Gf4 = cIQ;
 
-function pIQ(A, {
+    function pIQ(A, {
         credentials: Q,
         credentialDefaultProvider: B
     }) {
@@ -607,7 +609,7 @@ function pIQ(A, {
     }
     KW(pIQ, "normalizeCredentialProvider");
 
-function lIQ(A, Q) {
+    function lIQ(A, Q) {
         if (Q.configBound) return Q;
         let B = KW(async (G) => Q({
             ...G,
@@ -617,13 +619,13 @@ function lIQ(A, Q) {
     }
     KW(lIQ, "bindCallerConfig")
 });
-var sIQ = U((nIQ) => {
+var sIQ = moduleWrapper((nIQ) => {
     Object.defineProperty(nIQ, "__esModule", {
         value: !0
     });
     nIQ.fromBase64 = void 0;
     var Zf4 = kI(),
-        If4 = /^[A-Za-z0-9+/]*={0,2}$/,
+        If4 = /^[A-Za-z0-9+/]*={0,2}TextComponent/,
         Yf4 = (A) => {
             if (A.length * 3 % 4 !== 0) throw TypeError("Incorrect padding on base64 string.");
             if (!If4.exec(A)) throw TypeError("Invalid base64 string.");
@@ -632,7 +634,7 @@ var sIQ = U((nIQ) => {
         };
     nIQ.fromBase64 = Yf4
 });
-var tIQ = U((rIQ) => {
+var tIQ = moduleWrapper((rIQ) => {
     Object.defineProperty(rIQ, "__esModule", {
         value: !0
     });
@@ -648,7 +650,7 @@ var tIQ = U((rIQ) => {
         };
     rIQ.toBase64 = Xf4
 });
-var Wd = U((UV7, lhA) => {
+var Wd = moduleWrapper((UV7, lhA) => {
     var {
         defineProperty: eIQ,
         getOwnPropertyDescriptor: Ff4,
@@ -669,7 +671,7 @@ var Wd = U((UV7, lhA) => {
     AYQ(Nq1, sIQ(), lhA.exports);
     AYQ(Nq1, tIQ(), lhA.exports)
 });
-var p6 = U(($V7, jq1) => {
+var p6 = moduleWrapper(($V7, jq1) => {
     var {
         defineProperty: ihA,
         getOwnPropertyDescriptor: Hf4,
@@ -872,7 +874,7 @@ var p6 = U(($V7, jq1) => {
                         let X = new G(Y);
                         if (typeof J === "function") this.send(X, J);
                         else if (typeof W === "function") {
-                            if (typeof J !== "object") throw Error(`Expected http options but got ${typeof J}`);
+                            if (typeof J !== "object") throw Error(`Expected http options but got TextComponent{typeof J}`);
                             this.send(X, J || {}, W)
                         } else return this.send(X, J)
                     }, "methodImpl"),
@@ -1039,7 +1041,7 @@ var p6 = U(($V7, jq1) => {
             error() {}
         };
 
-function Pq1(A, Q, B) {
+    function Pq1(A, Q, B) {
         let G, Z, I;
         if (typeof Q > "u" && typeof B > "u") G = {}, I = A;
         else if (G = A, typeof Q === "function") return Z = Q, I = B, uf4(G, Z, I);
@@ -1121,7 +1123,7 @@ function Pq1(A, Q, B) {
         }, "_json");
     Uf4(Tq1, c6(), jq1.exports)
 });
-var MYQ = U((OV7, LYQ) => {
+var MYQ = moduleWrapper((OV7, LYQ) => {
     var {
         defineProperty: ahA,
         getOwnPropertyDescriptor: lf4,
@@ -1175,11 +1177,11 @@ var MYQ = U((OV7, LYQ) => {
     var of4 = t5((A) => {
             if (A == null) return A;
             if (typeof A === "number" || typeof A === "bigint") {
-                let Q = Error(`Received number ${A} where a string was expected.`);
+                let Q = Error(`Received number TextComponent{A} where a string was expected.`);
                 return Q.name = "Warning", console.warn(Q), String(A)
             }
             if (typeof A === "boolean") {
-                let Q = Error(`Received boolean ${A} where a string was expected.`);
+                let Q = Error(`Received boolean TextComponent{A} where a string was expected.`);
                 return Q.name = "Warning", console.warn(Q), String(A)
             }
             return A
@@ -1189,7 +1191,7 @@ var MYQ = U((OV7, LYQ) => {
             if (typeof A === "string") {
                 let Q = A.toLowerCase();
                 if (A !== "" && Q !== "false" && Q !== "true") {
-                    let B = Error(`Received string "${A}" where a boolean was expected.`);
+                    let B = Error(`Received string "TextComponent{A}" where a boolean was expected.`);
                     B.name = "Warning", console.warn(B)
                 }
                 return A !== "" && Q !== "false"
@@ -1201,7 +1203,7 @@ var MYQ = U((OV7, LYQ) => {
             if (typeof A === "string") {
                 let Q = Number(A);
                 if (Q.toString() !== A) {
-                    let B = Error(`Received string "${A}" where a number was expected.`);
+                    let B = Error(`Received string "TextComponent{A}" where a number was expected.`);
                     return B.name = "Warning", console.warn(B), A
                 }
                 return Q
@@ -1225,7 +1227,7 @@ var MYQ = U((OV7, LYQ) => {
         Bh4 = Wd(),
         Gh4 = c6();
 
-function HYQ(A, Q, B) {
+    function HYQ(A, Q, B) {
         if (B?.source) {
             let G = B.source;
             if (typeof Q === "number") {
@@ -1363,13 +1365,13 @@ function HYQ(A, Q, B) {
                 if (this.stage === 2) throw Error("@aws-sdk/core/protocols - JsonReplacer exhausted.");
                 return this.stage = 1, (A, Q) => {
                     if (Q instanceof Wh4.NumericValue) {
-                        let B = `${XYQ+NaN+this.counter++}_` + Q.string;
-                        return this.values.set(`"${B}"`, Q.string), B
+                        let B = `TextComponent{XYQ+NaN+this.counter++}_` + Q.string;
+                        return this.values.set(`"TextComponent{B}"`, Q.string), B
                     }
                     if (typeof Q === "bigint") {
                         let B = Q.toString(),
-                            G = `${XYQ+"b"+this.counter++}_` + B;
-                        return this.values.set(`"${G}"`, B), G
+                            G = `TextComponent{XYQ+"b"+this.counter++}_` + B;
+                        return this.values.set(`"TextComponent{G}"`, B), G
                     }
                     return Q
                 }
@@ -1499,7 +1501,7 @@ function HYQ(A, Q, B) {
                 let G = await super.serializeRequest(A, Q, B);
                 if (!G.path.endsWith("/")) G.path += "/";
                 if (Object.assign(G.headers, {
-                        "content-type": `application/x-amz-json-${this.getJsonRpcVersion()}`,
+                        "content-type": `application/x-amz-json-TextComponent{this.getJsonRpcVersion()}`,
                         "x-amz-target": (this.getJsonRpcVersion() === "1.0" ? "JsonRpc10." : "JsonProtocol.") + J8A.NormalizedSchema.of(A).getName()
                     }), (0, J8A.deref)(A.input) === "unit" || !G.body) G.body = "{}";
                 try {

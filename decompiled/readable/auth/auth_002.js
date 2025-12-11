@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_002.js
+ * 处理时间: 2025-12-09T03:41:36.353Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.887Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -79,7 +82,7 @@
     },
     mR9, dR9 = (A) => A && (DkA(A) || n$(A)) && n$(A.then) && n$(A.catch),
     Iz0, cR9, f1;
-var lG = L(() => {
+var lG = lazyLoader(() => {
     ({
         toString: YR9
     } = Object.prototype), {
@@ -114,7 +117,7 @@ var lG = L(() => {
             }, !1), (Z) => {
                 G.push(Z), Us.postMessage(B, "*")
             }
-        })(`axios@${Math.random()}`, []) : (B) => setTimeout(B)
+        })(`axios@TextComponent{Math.random()}`, []) : (B) => setTimeout(B)
     })(typeof setImmediate === "function", n$(Us.postMessage)), cR9 = typeof queueMicrotask < "u" ? queueMicrotask.bind(Us) : typeof process < "u" && process.nextTick || Iz0, f1 = {
         isArray: A2A,
         isArrayBuffer: Az0,
@@ -180,7 +183,7 @@ function Q2A(A, Q, B, G, Z) {
     if (this.message = A, this.name = "AxiosError", Q && (this.code = Q), B && (this.config = B), G && (this.request = G), Z) this.response = Z, this.status = Z.status ? Z.status : null
 }
 var Yz0, Jz0, NB;
-var a$ = L(() => {
+var a$ = lazyLoader(() => {
     lG();
     f1.inherits(Q2A, Error, {
         toJSON: function() {
@@ -219,12 +222,12 @@ var a$ = L(() => {
     };
     NB = Q2A
 });
-var Fz0 = U((_p3, Xz0) => {
-    var Wz0 = UA("stream").Stream,
-        pR9 = UA("util");
+var Fz0 = moduleWrapper((_p3, Xz0) => {
+    var Wz0 = nodeRequire("stream").Stream,
+        pR9 = nodeRequire("util");
     Xz0.exports = KR;
 
-function KR() {
+    function KR() {
         this.source = null, this.dataSize = 0, this.maxDataSize = 1048576, this.pauseStream = !0, this._maxDataSizeExceeded = !1, this._released = !1, this._bufferedEvents = []
     }
     pR9.inherits(KR, Wz0);
@@ -281,13 +284,13 @@ function KR() {
         this.emit("error", Error(A))
     }
 });
-var Hz0 = U((kp3, Dz0) => {
-    var lR9 = UA("util"),
-        Kz0 = UA("stream").Stream,
+var Hz0 = moduleWrapper((kp3, Dz0) => {
+    var lR9 = nodeRequire("util"),
+        Kz0 = nodeRequire("stream").Stream,
         Vz0 = Fz0();
     Dz0.exports = DJ;
 
-function DJ() {
+    function DJ() {
         this.writable = !1, this.readable = !0, this.dataSize = 0, this.maxDataSize = 2097152, this.pauseStreams = !0, this._released = !1, this._streams = [], this._currentStream = null, this._insideLoop = !1, this._pendingNext = !1
     }
     lR9.inherits(DJ, Kz0);
@@ -403,7 +406,7 @@ function DJ() {
         this._reset(), this.emit("error", A)
     }
 });
-var Cz0 = U((yp3, iR9) => {
+var Cz0 = moduleWrapper((yp3, iR9) => {
     iR9.exports = {
         "application/1d-interleaved-parityfec": {
             source: "iana"

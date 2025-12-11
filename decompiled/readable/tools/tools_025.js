@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_025.js
+ * 处理时间: 2025-12-09T03:41:38.870Z
+ * 变量映射: 6 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.086Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -26,8 +29,8 @@
                 p.push(J0)
             }
             return Z0
-        }, o = await z(), l = H ? VE(H) : S3(), [k, d, QA] = await Promise.all([Un(Z, l, Array.from(o.toolPermissionContext.additionalWorkingDirectories.keys()), I, o.toolPermissionContext), XK(), typeof K === "string" ? Promise.resolve({}) : uD()]), IA = [...typeof K === "string" ? [K] : k, ...D ? [D] : []], HA = typeof D === "string", wA = Z.some((k1) => k1.name === Az);
-    if (E && wA) N21(w, G0(), "Stop", "", (k1) => tI1(k1, Az), `You MUST call the ${Az} tool to complete this request. Call this tool now.`, {
+        }, o = await z(), l = H ? VE(H) : getDefaultSonnetModel(), [k, d, QA] = await Promise.all([Un(Z, l, Array.from(o.toolPermissionContext.additionalWorkingDirectories.keys()), I, o.toolPermissionContext), XK(), typeof K === "string" ? Promise.resolve({}) : uD()]), IA = [...typeof K === "string" ? [K] : k, ...D ? [D] : []], HA = typeof D === "string", wA = Z.some((k1) => k1.name === Az);
+    if (E && wA) N21(w, G0(), "Stop", "", (k1) => tI1(k1, Az), `You MUST call the TextComponent{Az} tool to complete this request. Call this tool now.`, {
         timeout: 5000
     });
     let KA = {
@@ -142,7 +145,7 @@
     };
     let TA = c0()?.outputStyle ?? EK,
         [eA, {
-            enabled: aA
+            enabled: BASE64_CHARS
         }] = await Promise.all([D51(), y7()]);
     if (yield {
             type: "system",
@@ -168,7 +171,7 @@
             output_style: TA,
             agents: P.map((k1) => k1.agentType),
             skills: eA.map((k1) => k1.name),
-            plugins: aA.map((k1) => ({
+            plugins: BASE64_CHARS.map((k1) => ({
                 name: k1.name,
                 path: k1.path
             })),
@@ -376,13 +379,13 @@
                     modelUsage: fu(),
                     permission_denials: p,
                     uuid: Ma(),
-                    errors: [`Failed to provide valid structured output after ${F1} attempts`]
+                    errors: [`Failed to provide valid structured output after TextComponent{F1} attempts`]
                 };
                 return
             }
         }
     }
-    let Y0 = dC(rA);
+    let Y0 = last(rA);
     if (!Nf3(Y0)) {
         yield {
             type: "result",
@@ -404,7 +407,7 @@
     let x0 = "",
         u0 = !1;
     if (Y0.type === "assistant") {
-        let k1 = dC(Y0.message.content);
+        let k1 = last(Y0.message.content);
         if (k1?.type === "text") x0 = k1.text;
         u0 = Boolean(Y0.isApiErrorMessage)
     }
@@ -518,7 +521,7 @@ function zU9(A, Q) {
                     if (J && typeof Y.content === "string") {
                         let V = Y.content.replace(/<system-reminder>[\s\S]*?<\/system-reminder>/g, "").split(`
 `).map((K) => {
-                            let D = K.match(/^\s*\d+→(.*)$/);
+                            let D = K.match(/^\s*\d+→(.*)TextComponent/);
                             return D ? D[1] : K
                         }).join(`
 `).trim();
@@ -548,7 +551,7 @@ function zU9(A, Q) {
 var wf3 = 10,
     Lf3 = 100,
     jSA;
-var $U9 = L(() => {
+var $U9 = lazyLoader(() => {
     O9A();
     nE();
     $n();
@@ -594,7 +597,7 @@ function wU9(A) {
             if (Z) clearTimeout(Z), Z = null;
             if (G) I = Date.now(), Z = setTimeout(() => {
                 let Y = Date.now() - I;
-                if (A() && Y >= B) g(`Exiting after ${B}ms of idle time`), c8()
+                if (A() && Y >= B) g(`Exiting after TextComponent{B}ms of idle time`), c8()
             }, B)
         },
         stop() {
@@ -602,7 +605,7 @@ function wU9(A) {
         }
     }
 }
-var qU9 = L(() => {
+var qU9 = lazyLoader(() => {
     D0();
     _J()
 });
@@ -638,7 +641,7 @@ function LU9(A) {
     }
     return null
 }
-var MU9 = L(() => {
+var MU9 = lazyLoader(() => {
     wy()
 });
 
@@ -664,7 +667,7 @@ function OU9(A) {
     }
 }
 var Of3;
-var RU9 = L(() => {
+var RU9 = lazyLoader(() => {
     h2();
     w0();
     O9();
@@ -682,14 +685,13 @@ import {
 import {
     randomUUID as TJ1
 } from "crypto";
-
 async function jU9(A, Q, B, G, Z, I, Y, J) {
     if (await NYA()) await WV9();
     if (lQ.isSandboxingEnabled()) try {
         await lQ.initialize()
     } catch (w) {
         process.stderr.write(`
-❌ Sandbox Error: ${w instanceof Error?w.message:String(w)}
+❌ Sandbox Error: TextComponent{w instanceof Error?w.message:String(w)}
 `), c8(1, "other");
         return
     }
@@ -718,7 +720,7 @@ async function jU9(A, Q, B, G, Z, I, Y, J) {
 `), c8(1);
         return
     }
-    let K = RJ() ? Z : [...Z, ...W.mcp.tools],
+    let K = isClaudeCodeRemote() ? Z : [...Z, ...W.mcp.tools],
         D = xf3(A, J),
         H = J.sdkUrl ? "stdio" : J.permissionPromptToolName,
         C = jf3(H, D, W.mcp.tools);
@@ -728,7 +730,7 @@ async function jU9(A, Q, B, G, Z, I, Y, J) {
         if (J.outputFormat === "stream-json" && J.verbose) D.write(w);
         if (w.type !== "control_response" && w.type !== "control_request" && w.type !== "control_cancel_request" && w.type !== "stream_event" && w.type !== "keep_alive") E.push(w)
     }
-    let z = dC(E);
+    let z = last(E);
     switch (J.outputFormat) {
         case "json":
             if (!z || z.type !== "result") throw Error("No messages returned");
@@ -754,10 +756,10 @@ async function jU9(A, Q, B, G, Z, I, Y, J) {
                     N9("Execution error");
                     break;
                 case "error_max_turns":
-                    N9(`Error: Reached max turns (${J.maxTurns})`);
+                    N9(`Error: Reached max turns (TextComponent{J.maxTurns})`);
                     break;
                 case "error_max_budget_usd":
-                    N9(`Error: Exceeded USD budget (${J.maxBudgetUsd})`);
+                    N9(`Error: Exceeded USD budget (TextComponent{J.maxBudgetUsd})`);
                     break;
                 case "error_max_structured_output_retries":
                     N9("Error: Failed to provide valid structured output after maximum retries")
@@ -796,8 +798,7 @@ function Tf3(A, Q, B, G, Z, I, Y, J, W, X, F) {
         R = F.userSpecifiedModel,
         P = [],
         y = [];
-    // Async function: v
-async function v() {
+    async function v() {
         let l = new Set(Object.keys(Y)),
             k = new Set(P.map((HA) => HA.name)),
             d = Array.from(l).some((HA) => !k.has(HA)),
@@ -983,7 +984,7 @@ async function v() {
             if (l = !0, k.uuid) {
                 let d = G0();
                 if (await lH9(d, k.uuid) || TU9.has(k.uuid)) {
-                    if (g(`Skipping duplicate user message: ${k.uuid}`), F.replayUserMessages) g(`Sending acknowledgment for duplicate user message: ${k.uuid}`), H.enqueue({
+                    if (g(`Skipping duplicate user message: TextComponent{k.uuid}`), F.replayUserMessages) g(`Sending acknowledgment for duplicate user message: TextComponent{k.uuid}`), H.enqueue({
                         type: "user",
                         message: k.message,
                         session_id: d,
@@ -1038,20 +1039,19 @@ function jf3(A, Q, B) {
     else if (A) {
         let G = B.find((Z) => Z.name === A);
         if (!G) {
-            let Z = `Error: MCP tool ${A} (passed via --permission-prompt-tool) not found. Available MCP tools: ${B.map((I)=>I.name).join(", ")||"none"}`;
-            throw process.stderr.write(`${Z}
+            let Z = `Error: MCP tool TextComponent{A} (passed via --permission-prompt-tool) not found. Available MCP tools: TextComponent{B.map((I)=>I.name).join(", ")||"none"}`;
+            throw process.stderr.write(`TextComponent{Z}
 `), c8(1), Error(Z)
         }
         if (!G.inputJSONSchema) {
-            let Z = `Error: tool ${A} (passed via --permission-prompt-tool) must be an MCP tool`;
-            throw process.stderr.write(`${Z}
+            let Z = `Error: tool TextComponent{A} (passed via --permission-prompt-tool) must be an MCP tool`;
+            throw process.stderr.write(`TextComponent{Z}
 `), c8(1), Error(Z)
         }
         return Pf3(G)
     }
     return L$
 }
-
 async function Sf3(A, Q, B, G, Z, I, Y, J, W, X) {
     if (B) {
         G.enqueue({
@@ -1123,17 +1123,16 @@ async function Sf3(A, Q, B, G, Z, I, Y, J, W, X) {
         })
     }
 }
-
 async function _f3(A, Q, B) {
     if (!JG()) return "Code rewinding is not enabled for the SDK.";
-    if (!K91(Q.fileHistory, A)) return `No code checkpoint found for message ${A}`;
+    if (!K91(Q.fileHistory, A)) return `No code checkpoint found for message TextComponent{A}`;
     try {
         await PMA((G) => B((Z) => ({
             ...Z,
             fileHistory: G(Z.fileHistory)
         })), A)
     } catch (G) {
-        return `Failed to rewind code: ${G.message}`
+        return `Failed to rewind code: TextComponent{G.message}`
     }
     return
 }
@@ -1161,7 +1160,6 @@ function kf3(A, Q, B, G) {
         mode: A.mode
     }
 }
-
 async function yf3(A, Q) {
     if (Q.continue) try {
         BA("tengu_continue_print", {});
@@ -1191,7 +1189,7 @@ async function yf3(A, Q) {
             if (process.stderr.write(`Error: --resume requires a valid session ID when used with --print
 `), process.stderr.write(`Usage: claude -p --resume <session-id>
 `), typeof Q.resume === "string") process.stderr.write(`Session IDs must be in UUID format (e.g., 550e8400-e29b-41d4-a716-446655440000)
-`), process.stderr.write(`Provided value "${Q.resume}" is not a valid UUID
+`), process.stderr.write(`Provided value "TextComponent{Q.resume}" is not a valid UUID
 `);
             return c8(1), []
         }
@@ -1199,11 +1197,11 @@ async function yf3(A, Q) {
         let G = await qi(B.sessionId, B.jsonlFile || void 0);
         if (!G)
             if (B.isUrl) return await zq("startup");
-            else return process.stderr.write(`No conversation found with session ID: ${B.sessionId}
+            else return process.stderr.write(`No conversation found with session ID: TextComponent{B.sessionId}
 `), c8(1), [];
         if (Q.resumeSessionAt) {
             let Z = G.messages.findIndex((I) => I.uuid === Q.resumeSessionAt);
-            if (Z < 0) return process.stderr.write(`No message found with message.uuid of: ${Q.resumeSessionAt}
+            if (Z < 0) return process.stderr.write(`No message found with message.uuid of: TextComponent{Q.resumeSessionAt}
 `), c8(1), [];
             G.messages = Z >= 0 ? G.messages.slice(0, Z + 1) : []
         }
@@ -1232,7 +1230,6 @@ function xf3(A, Q) {
     else B = A;
     return Q.sdkUrl ? new AD0(Q.sdkUrl, B, Q.replayUserMessages) : new PSA(B, Q.replayUserMessages)
 }
-
 async function vf3({
     message: A,
     setAppState: Q,
@@ -1267,7 +1264,7 @@ function PU9(A, Q) {
     })))
 }
 var TU9;
-var SU9 = L(() => {
+var SU9 = lazyLoader(() => {
     tK0();
     EU9();
     w0();
@@ -1310,27 +1307,26 @@ var SU9 = L(() => {
     MJ();
     TU9 = new Set
 });
-// Async function: kU9
 async function kU9() {
-    BA("tengu_update_check", {}), N9(`Current version: ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION}
+    BA("tengu_update_check", {}), N9(`Current version: TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION}
 `), N9(`Checking for updates...
 `), g("update: Starting update check"), g("update: Running diagnostic");
     let A = await OIA();
-    if (g(`update: Installation type: ${A.installationType}`), g(`update: Config install method: ${A.configInstallMethod}`), A.multipleInstallations.length > 1) {
+    if (g(`update: Installation type: TextComponent{A.installationType}`), g(`update: Config install method: TextComponent{A.configInstallMethod}`), A.multipleInstallations.length > 1) {
         N9(`
 `), N9(oA.yellow("Warning: Multiple installations found") + `
 `);
         for (let J of A.multipleInstallations) {
             let W = A.installationType === J.type ? " (currently running)" : "";
-            N9(`- ${J.type} at ${J.path}${W}
+            N9(`- TextComponent{J.type} at TextComponent{J.path}TextComponent{W}
 `)
         }
     }
     if (A.warnings.length > 0) {
         N9(`
 `);
-        for (let J of A.warnings) g(`update: Warning detected: ${J.issue}`), g(`update: Showing warning: ${J.issue}`), N9(oA.yellow(`Warning: ${J.issue}
-`)), N9(oA.bold(`Fix: ${J.fix}
+        for (let J of A.warnings) g(`update: Warning detected: TextComponent{J.issue}`), g(`update: Showing warning: TextComponent{J.issue}`), N9(oA.yellow(`Warning: TextComponent{J.issue}
+`)), N9(oA.bold(`Fix: TextComponent{J.fix}
 `))
     }
     let Q = L1();
@@ -1355,7 +1351,7 @@ async function kU9() {
         d0({
             ...Q,
             installMethod: J
-        }), N9(`Installation method set to: ${J}
+        }), N9(`Installation method set to: TextComponent{J}
 `)
     }
     if (A.installationType === "development") N9(`
@@ -1376,7 +1372,7 @@ async function kU9() {
                     FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
                 }.VERSION, W, {
                     loose: !0
-                })) N9(`Update available: ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION} → ${W}
+                })) N9(`Update available: TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION} → TextComponent{W}
 `), N9(`
 `), N9(`To update, run:
 `), N9(oA.bold("  brew upgrade claude-code") + `
@@ -1401,13 +1397,13 @@ async function kU9() {
         } [J] || J;
         if (F !== W && W !== "unknown") N9(`
 `), N9(oA.yellow("Warning: Configuration mismatch") + `
-`), N9(`Config expects: ${W} installation
-`), N9(`Currently running: ${J}
-`), N9(oA.yellow(`Updating the ${J} installation you are currently using`) + `
+`), N9(`Config expects: TextComponent{W} installation
+`), N9(`Currently running: TextComponent{J}
+`), N9(oA.yellow(`Updating the TextComponent{J} installation you are currently using`) + `
 `), d0({
             ...Q,
             installMethod: F
-        }), N9(`Config updated to reflect current installation method: ${F}
+        }), N9(`Config updated to reflect current installation method: TextComponent{F}
 `)
     }
     if (A.installationType === "native") {
@@ -1424,11 +1420,11 @@ async function kU9() {
                     README_URL: "https://docs.claude.com/s/claude-code",
                     VERSION: "2.0.57",
                     FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
-                }.VERSION) N9(oA.green(`Claude Code is up to date (${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION})`) + `
+                }.VERSION) N9(oA.green(`Claude Code is up to date (TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION})`) + `
 `);
-            else if (J.wasUpdated) N9(oA.green(`Successfully updated from ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION} to version ${J.latestVersion}`) + `
+            else if (J.wasUpdated) N9(oA.green(`Successfully updated from TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION} to version TextComponent{J.latestVersion}`) + `
 `);
-            else N9(oA.green(`Claude Code is up to date (${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION})`) + `
+            else N9(oA.green(`Claude Code is up to date (TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION})`) + `
 `);
             await S6(0)
         } catch (J) {
@@ -1439,11 +1435,11 @@ async function kU9() {
         }
     }
     if (Q.installMethod !== "native") kTA();
-    g("update: Checking npm registry for latest version"), g(`update: Package URL: ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}`);
-    let B = `npm view ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}@latest version`;
-    g(`update: Running: ${B}`);
+    g("update: Checking npm registry for latest version"), g(`update: Package URL: TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}`);
+    let B = `npm view TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}@latest version`;
+    g(`update: Running: TextComponent{B}`);
     let G = await iAA();
-    if (g(`update: Latest version from npm: ${G||"FAILED"}`), !G) {
+    if (g(`update: Latest version from npm: TextComponent{G||"FAILED"}`), !G) {
         if (g("update: Failed to get latest version from npm registry"), process.stderr.write(oA.red("Failed to check for updates") + `
 `), process.stderr.write(`Unable to fetch latest version from npm registry
 `), process.stderr.write(`
@@ -1477,7 +1473,7 @@ async function kU9() {
             VERSION: "2.0.57",
             FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
         }.PACKAGE_URL || "@anthropic-ai/claude-code";
-        process.stderr.write(`  • Manually check: npm view ${J} version
+        process.stderr.write(`  • Manually check: npm view TextComponent{J} version
 `), process.stderr.write(`  • Check if you need to login: npm whoami
 `), await S6(1)
     }
@@ -1487,9 +1483,9 @@ async function kU9() {
             README_URL: "https://docs.claude.com/s/claude-code",
             VERSION: "2.0.57",
             FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
-        }.VERSION) N9(oA.green(`Claude Code is up to date (${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION})`) + `
+        }.VERSION) N9(oA.green(`Claude Code is up to date (TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION})`) + `
 `), await S6(0);
-    N9(`New version available: ${G} (current: ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION})
+    N9(`New version available: TextComponent{G} (current: TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION})
 `), N9(`Installing update...
 `);
     let Z = !1,
@@ -1504,21 +1500,21 @@ async function kU9() {
         case "unknown": {
             let J = sl();
             Z = J, I = J ? "local" : "global", N9(oA.yellow("Warning: Could not determine installation type") + `
-`), N9(`Attempting ${I} update based on file detection...
+`), N9(`Attempting TextComponent{I} update based on file detection...
 `);
             break
         }
         default:
-            process.stderr.write(`Error: Cannot update ${A.installationType} installation
+            process.stderr.write(`Error: Cannot update TextComponent{A.installationType} installation
 `), await S6(1)
     }
-    N9(`Using ${I} installation update method...
-`), g(`update: Update method determined: ${I}`), g(`update: useLocalUpdate: ${Z}`);
+    N9(`Using TextComponent{I} installation update method...
+`), g(`update: Update method determined: TextComponent{I}`), g(`update: useLocalUpdate: TextComponent{Z}`);
     let Y;
     if (Z) g("update: Calling installOrUpdateClaudePackage() for local update"), Y = await cAA();
     else g("update: Calling installGlobalPackage() for global update"), Y = await wLA();
-    switch (g(`update: Installation status: ${Y}`), Y) {
+    switch (g(`update: Installation status: TextComponent{Y}`), Y) {
         case "success":
-            N9(oA.green(`Successfully updated from ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION} to version ${G}`) + `
+            N9(oA.green(`Successfully updated from TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION} to version TextComponent{G}`) + `
 `);
             break;

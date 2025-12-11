@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_004.js
+ * 处理时间: 2025-12-09T03:41:36.021Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.858Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -37,9 +40,9 @@
                     if (Q instanceof L68.NumericValue) return Q.string;
                     return String(Q)
                 } else if (B.isMapSchema() || B.isListSchema()) throw Error("@aws-sdk/core/protocols - xml serializer, cannot call _write() on List/Map schema, call writeList or writeMap() instead.");
-                else throw Error(`@aws-sdk/core/protocols - xml serializer, unhandled schema type for object value and schema: ${B.getName(!0)}`);
+                else throw Error(`@aws-sdk/core/protocols - xml serializer, unhandled schema type for object value and schema: TextComponent{B.getName(!0)}`);
                 if (B.isStringSchema() || B.isBooleanSchema() || B.isNumericSchema() || B.isBigIntegerSchema() || B.isBigDecimalSchema()) G = String(Q);
-                if (G === null) throw Error(`Unhandled schema-value pair ${B.getName(!0)}=${Q}`);
+                if (G === null) throw Error(`Unhandled schema-value pair TextComponent{B.getName(!0)}=TextComponent{Q}`);
                 return G
             }
             writeSimpleInto(A, Q, B, G) {
@@ -53,7 +56,7 @@
             getXmlnsAttribute(A, Q) {
                 let B = A.getMergedTraits(),
                     [G, Z] = B.xmlNamespace ?? [];
-                if (Z && Z !== Q) return [G ? `xmlns:${G}` : "xmlns", Z];
+                if (Z && Z !== Q) return [G ? `xmlns:TextComponent{G}` : "xmlns", Z];
                 return [void 0, void 0]
             }
         },
@@ -177,7 +180,7 @@
             }
         }
 });
-var MV = U((xHA) => {
+var MV = moduleWrapper((xHA) => {
     Object.defineProperty(xHA, "__esModule", {
         value: !0
     });
@@ -186,7 +189,7 @@ var MV = U((xHA) => {
     WR1.__exportStar(cO1(), xHA);
     WR1.__exportStar(COQ(), xHA)
 });
-var J6A = U((TE7, TOQ) => {
+var J6A = moduleWrapper((TE7, TOQ) => {
     var {
         defineProperty: VmA,
         getOwnPropertyDescriptor: O68,
@@ -222,13 +225,13 @@ var J6A = U((TE7, TOQ) => {
     var _68 = nB(),
         wOQ = void 0;
 
-function qOQ(A) {
+    function qOQ(A) {
         if (A === void 0) return !0;
         return typeof A === "string" && A.length <= 50
     }
     ov(qOQ, "isValidUserAgentAppId");
 
-function NOQ(A) {
+    function NOQ(A) {
         let Q = (0, _68.normalizeProvider)(A.userAgentAppId ?? wOQ),
             {
                 customUserAgent: B
@@ -253,8 +256,7 @@ function NOQ(A) {
         y68 = lz(),
         TS = MV(),
         x68 = /\d{12}\.ddb/;
-
-async function LOQ(A, Q, B) {
+    async function LOQ(A, Q, B) {
         if (B.request?.headers?.["smithy-protocol"] === "rpc-v2-cbor")(0, TS.setFeature)(A, "PROTOCOL_RPC_V2_CBOR", "M");
         if (typeof Q.retryStrategy === "function") {
             let I = await Q.retryStrategy();
@@ -290,12 +292,12 @@ async function LOQ(A, Q, B) {
         XR1 = "x-amz-user-agent",
         zOQ = " ",
         FR1 = "/",
-        v68 = /[^\!\$\%\&\'\*\+\-\.\^\_\`\|\~\d\w]/g,
-        b68 = /[^\!\$\%\&\'\*\+\-\.\^\_\`\|\~\d\w\#]/g,
+        v68 = /[^\!\TextComponent\%\&\'\*\+\-\.\^\_\`\|\~\d\w]/g,
+        b68 = /[^\!\TextComponent\%\&\'\*\+\-\.\^\_\`\|\~\d\w\#]/g,
         UOQ = "-",
         f68 = 1024;
 
-function MOQ(A) {
+    function MOQ(A) {
         let Q = "";
         for (let B in A) {
             let G = A[B];
@@ -319,15 +321,15 @@ function MOQ(A) {
             } = Z, Y = B?.userAgent?.map(FmA) || [], J = (await A.defaultUserAgentProvider()).map(FmA);
             await LOQ(B, A, G);
             let W = B;
-            J.push(`m/${MOQ(Object.assign({},B.__smithy_context?.features,W.__aws_sdk_context?.features))}`);
+            J.push(`m/TextComponent{MOQ(Object.assign({},B.__smithy_context?.features,W.__aws_sdk_context?.features))}`);
             let X = A?.customUserAgent?.map(FmA) || [],
                 F = await A.userAgentAppId();
-            if (F) J.push(FmA([`app/${F}`]));
+            if (F) J.push(FmA([`app/TextComponent{F}`]));
             let V = (0, k68.getUserAgentPrefix)(),
                 K = (V ? [V] : []).concat([...J, ...Y, ...X]).join(zOQ),
                 D = [...J.filter((H) => H.startsWith("aws-sdk-")), ...X].join(zOQ);
             if (A.runtime !== "browser") {
-                if (D) I[XR1] = I[XR1] ? `${I[EOQ]} ${D}` : D;
+                if (D) I[XR1] = I[XR1] ? `TextComponent{I[EOQ]} TextComponent{D}` : D;
                 I[EOQ] = K
             } else I[XR1] = K;
             return Q({
@@ -347,9 +349,9 @@ function MOQ(A) {
                     case 0:
                         return J;
                     case 1:
-                        return `${Y}/${J}`;
+                        return `TextComponent{Y}/TextComponent{J}`;
                     default:
-                        return `${Y}#${J}`
+                        return `TextComponent{Y}#TextComponent{J}`
                 }
             }, "")
         }, "escapeUserAgent"),
@@ -366,7 +368,7 @@ function MOQ(A) {
             }, "applyToStack")
         }), "getUserAgentPlugin")
 });
-var DR1 = U((POQ) => {
+var DR1 = moduleWrapper((POQ) => {
     Object.defineProperty(POQ, "__esModule", {
         value: !0
     });
@@ -384,7 +386,7 @@ var DR1 = U((POQ) => {
         };
     POQ.defaultBedrockHttpAuthSchemeParametersProvider = u68;
 
-function m68(A) {
+    function m68(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {
@@ -400,7 +402,7 @@ function m68(A) {
         }
     }
 
-function d68(A) {
+    function d68(A) {
         return {
             schemeId: "smithy.api#httpBearerAuth",
             propertiesExtractor: ({
@@ -437,7 +439,7 @@ function d68(A) {
     };
     POQ.resolveHttpAuthSchemeConfig = p68
 });
-var SOQ = U((jE7, n68) => {
+var SOQ = moduleWrapper((jE7, n68) => {
     n68.exports = {
         name: "@aws-sdk/client-bedrock",
         description: "AWS SDK for JavaScript Bedrock Client for Node.js, Browser and React Native",
@@ -537,7 +539,7 @@ var SOQ = U((jE7, n68) => {
         }
     }
 });
-var HR1 = U((SE7, hOQ) => {
+var HR1 = moduleWrapper((SE7, hOQ) => {
     var {
         defineProperty: KmA,
         getOwnPropertyDescriptor: a68,
@@ -612,7 +614,7 @@ var HR1 = U((SE7, hOQ) => {
             })
         }, "fromEnv")
 });
-var mOQ = U((gOQ) => {
+var mOQ = moduleWrapper((gOQ) => {
     Object.defineProperty(gOQ, "__esModule", {
         value: !0
     });
@@ -644,7 +646,7 @@ var mOQ = U((gOQ) => {
         };
     gOQ.checkUrl = W58
 });
-var cOQ = U((dOQ) => {
+var cOQ = moduleWrapper((dOQ) => {
     Object.defineProperty(dOQ, "__esModule", {
         value: !0
     });
@@ -655,7 +657,7 @@ var cOQ = U((dOQ) => {
         F58 = l6(),
         V58 = cm();
 
-function K58(A) {
+    function K58(A) {
         return new X58.HttpRequest({
             protocol: A.protocol,
             hostname: A.hostname,
@@ -667,8 +669,7 @@ function K58(A) {
             fragment: A.hash
         })
     }
-
-async function D58(A, Q) {
+    async function D58(A, Q) {
         let G = await (0, V58.sdkStreamMixin)(A.body).transformToString();
         if (A.statusCode === 200) {
             let Z = JSON.parse(G);
@@ -687,19 +688,19 @@ async function D58(A, Q) {
             try {
                 Z = JSON.parse(G)
             } catch (I) {}
-            throw Object.assign(new CR1.CredentialsProviderError(`Server responded with status: ${A.statusCode}`, {
+            throw Object.assign(new CR1.CredentialsProviderError(`Server responded with status: TextComponent{A.statusCode}`, {
                 logger: Q
             }), {
                 Code: Z.Code,
                 Message: Z.Message
             })
         }
-        throw new CR1.CredentialsProviderError(`Server responded with status: ${A.statusCode}`, {
+        throw new CR1.CredentialsProviderError(`Server responded with status: TextComponent{A.statusCode}`, {
             logger: Q
         })
     }
 });
-var iOQ = U((pOQ) => {
+var iOQ = moduleWrapper((pOQ) => {
     Object.defineProperty(pOQ, "__esModule", {
         value: !0
     });
@@ -716,7 +717,7 @@ var iOQ = U((pOQ) => {
     };
     pOQ.retryWrapper = E58
 });
-var oOQ = U((sOQ) => {
+var oOQ = moduleWrapper((sOQ) => {
     Object.defineProperty(sOQ, "__esModule", {
         value: !0
     });
@@ -725,7 +726,7 @@ var oOQ = U((sOQ) => {
         U58 = bR(),
         $58 = oG(),
         nOQ = P2(),
-        w58 = z58.__importDefault(UA("fs/promises")),
+        w58 = z58.__importDefault(nodeRequire("fs/promises")),
         q58 = mOQ(),
         aOQ = cOQ(),
         N58 = iOQ(),
@@ -744,7 +745,7 @@ var oOQ = U((sOQ) => {
             if (B && G) Y("@aws-sdk/credential-provider-http: you have set both awsContainerCredentialsRelativeUri and awsContainerCredentialsFullUri."), Y("awsContainerCredentialsFullUri will take precedence.");
             if (Z && I) Y("@aws-sdk/credential-provider-http: you have set both awsContainerAuthorizationToken and awsContainerAuthorizationTokenFile."), Y("awsContainerAuthorizationToken will take precedence.");
             if (G) Q = G;
-            else if (B) Q = `${M58}${B}`;
+            else if (B) Q = `TextComponent{M58}TextComponent{B}`;
             else throw new nOQ.CredentialsProviderError(`No HTTP credential provider host provided.
 Set AWS_CONTAINER_CREDENTIALS_FULL_URI or AWS_CONTAINER_CREDENTIALS_RELATIVE_URI.`, {
                 logger: A.logger
@@ -771,7 +772,7 @@ Set AWS_CONTAINER_CREDENTIALS_FULL_URI or AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
         };
     sOQ.fromHttp = P58
 });
-var zR1 = U((ER1) => {
+var zR1 = moduleWrapper((ER1) => {
     Object.defineProperty(ER1, "__esModule", {
         value: !0
     });
@@ -784,7 +785,7 @@ var zR1 = U((ER1) => {
         }
     })
 });
-var $R1 = U((tOQ) => {
+var $R1 = moduleWrapper((tOQ) => {
     Object.defineProperty(tOQ, "__esModule", {
         value: !0
     });
@@ -801,7 +802,7 @@ var $R1 = U((tOQ) => {
         };
     tOQ.defaultSSOHttpAuthSchemeParametersProvider = k58;
 
-function y58(A) {
+    function y58(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {
@@ -817,7 +818,7 @@ function y58(A) {
         }
     }
 
-function DmA(A) {
+    function DmA(A) {
         return {
             schemeId: "smithy.api#noAuth"
         }
@@ -855,7 +856,7 @@ function DmA(A) {
     };
     tOQ.resolveHttpAuthSchemeConfig = v58
 });
-var ARQ = U((fE7, h58) => {
+var ARQ = moduleWrapper((fE7, h58) => {
     h58.exports = {
         name: "@aws-sdk/client-sso",
         description: "AWS SDK for JavaScript Sso Client for Node.js, Browser and React Native",
@@ -951,7 +952,7 @@ var ARQ = U((fE7, h58) => {
         }
     }
 });
-var vHA = U((hE7, JRQ) => {
+var vHA = moduleWrapper((hE7, JRQ) => {
     var {
         defineProperty: CmA,
         getOwnPropertyDescriptor: g58,
@@ -985,8 +986,8 @@ var vHA = U((hE7, JRQ) => {
         defaultUserAgent: () => i58
     });
     JRQ.exports = p58(BRQ);
-    var QRQ = UA("os"),
-        wR1 = UA("process"),
+    var QRQ = nodeRequire("os"),
+        wR1 = nodeRequire("process"),
         GRQ = {
             isCrtAvailable: !1
         },
@@ -1002,16 +1003,16 @@ var vHA = U((hE7, JRQ) => {
                 let G = [
                         ["aws-sdk-js", Q],
                         ["ua", "2.1"],
-                        [`os/${(0,QRQ.platform)()}`, (0, QRQ.release)()],
+                        [`os/TextComponent{(0,QRQ.platform)()}`, (0, QRQ.release)()],
                         ["lang/js"],
-                        ["md/nodejs", `${wR1.versions.node}`]
+                        ["md/nodejs", `TextComponent{wR1.versions.node}`]
                     ],
                     Z = l58();
                 if (Z) G.push(Z);
-                if (A) G.push([`api/${A}`, Q]);
-                if (wR1.env.AWS_EXECUTION_ENV) G.push([`exec-env/${wR1.env.AWS_EXECUTION_ENV}`]);
+                if (A) G.push([`api/TextComponent{A}`, Q]);
+                if (wR1.env.AWS_EXECUTION_ENV) G.push([`exec-env/TextComponent{wR1.env.AWS_EXECUTION_ENV}`]);
                 let I = await B?.userAgentAppId?.();
-                return I ? [...G, [`app/${I}`]] : [...G]
+                return I ? [...G, [`app/TextComponent{I}`]] : [...G]
             }
         }, "createDefaultUserAgentProvider"),
         i58 = ZRQ,
@@ -1025,7 +1026,7 @@ var vHA = U((hE7, JRQ) => {
             default: n58.DEFAULT_UA_APP_ID
         }
 });
-var MRQ = U((NRQ) => {
+var MRQ = moduleWrapper((NRQ) => {
     Object.defineProperty(NRQ, "__esModule", {
         value: !0
     });
@@ -1221,7 +1222,7 @@ var MRQ = U((NRQ) => {
         };
     NRQ.ruleSet = r58
 });
-var TRQ = U((ORQ) => {
+var TRQ = moduleWrapper((ORQ) => {
     Object.defineProperty(ORQ, "__esModule", {
         value: !0
     });
@@ -1242,7 +1243,7 @@ var TRQ = U((ORQ) => {
     ORQ.defaultEndpointResolver = A38;
     LR1.customEndpointFunctions.aws = o58.awsEndpointFunctions
 });
-var kRQ = U((SRQ) => {
+var kRQ = moduleWrapper((SRQ) => {
     Object.defineProperty(SRQ, "__esModule", {
         value: !0
     });
@@ -1282,7 +1283,7 @@ var kRQ = U((SRQ) => {
         };
     SRQ.getRuntimeConfig = J38
 });
-var gRQ = U((fRQ) => {
+var gRQ = moduleWrapper((fRQ) => {
     Object.defineProperty(fRQ, "__esModule", {
         value: !0
     });
@@ -1342,7 +1343,7 @@ var gRQ = U((fRQ) => {
         };
     fRQ.getRuntimeConfig = z38
 });
-var fHA = U((cE7, lRQ) => {
+var fHA = moduleWrapper((cE7, lRQ) => {
     var {
         defineProperty: zmA,
         getOwnPropertyDescriptor: U38,
@@ -1426,7 +1427,7 @@ var fHA = U((cE7, lRQ) => {
             })
         }, "resolveRegionConfig")
 });
-var $TQ = U((pE7, UTQ) => {
+var $TQ = moduleWrapper((pE7, UTQ) => {
     var {
         defineProperty: UmA,
         getOwnPropertyDescriptor: j38,

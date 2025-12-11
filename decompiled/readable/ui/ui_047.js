@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_047.js
+ * 处理时间: 2025-12-09T03:41:39.525Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.140Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -76,7 +79,7 @@
             else x.push([CA])
         }
 
-function LA() {
+        function LA() {
             ng2.lastIndex = I - 1;
             var CA = ng2.exec(G);
             if (!CA) throw Error("should never happen");
@@ -98,55 +101,56 @@ function LA() {
             return x.push([MA, H1]), !0
         }
 
-function TA() {
+        function TA() {
             p = !1, E = "", x.length = 0
         }
 
-function eA() {
+        function eA() {
             p = !0, E = "", x.length = 0
         }
 
-function aA() {
+        /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+function BASE64_CHARS() {
             w.length = 0
         }
 
-function I1() {
+        function I1() {
             N = ""
         }
 
-function w1() {
+        function w1() {
             q = ""
         }
 
-function PA() {
+        function PA() {
             R.length = 0
         }
 
-function B1() {
+        function B1() {
             P.length = 0, y = null, v = null
         }
 
-function Q0() {
+        function Q0() {
             y = []
         }
 
-function b1() {
+        function b1() {
             v = []
         }
 
-function Y0() {
+        function Y0() {
             SA = !0
         }
 
-function x0() {
+        function x0() {
             return k.top && k.top.namespaceURI !== "http://www.w3.org/1999/xhtml"
         }
 
-function u0(CA) {
+        function u0(CA) {
             return z === CA
         }
 
-function k1() {
+        function k1() {
             if (qA.length > 0) {
                 var CA = VC(qA);
                 if (qA.length = 0, yA) {
@@ -159,7 +163,7 @@ function k1() {
             yA = !1
         }
 
-function T0(CA) {
+        function T0(CA) {
             CA.lastIndex = I - 1;
             var MA = CA.exec(G);
             if (MA && MA.index === I - 1) {
@@ -168,14 +172,14 @@ function T0(CA) {
             } else throw Error("should never happen")
         }
 
-function fQ(CA) {
+        function fQ(CA) {
             CA.lastIndex = I - 1;
             var MA = CA.exec(G)[0];
             if (!MA) return !1;
             return F1(MA), I += MA.length - 1, !0
         }
 
-function F1(CA) {
+        function F1(CA) {
             if (qA.length > 0) k1();
             if (yA) {
                 if (yA = !1, CA[0] === `
@@ -185,7 +189,7 @@ function F1(CA) {
             p0(bWA, CA)
         }
 
-function R1() {
+        function R1() {
             if (p) p0(Z5, E);
             else {
                 var CA = E;
@@ -193,7 +197,7 @@ function R1() {
             }
         }
 
-function N1() {
+        function N1() {
             if (I === Z) return !1;
             ig2.lastIndex = I;
             var CA = ig2.exec(G);
@@ -206,16 +210,16 @@ function N1() {
             return !0
         }
 
-function Z0() {
+        function Z0() {
             if (p) p0(Z5, E, null, !0);
             else p0(FC, E, x, !0)
         }
 
-function J0() {
+        function J0() {
             p0(Ca5, VC(P), y ? VC(y) : void 0, v ? VC(v) : void 0)
         }
 
-function s1() {
+        function s1() {
             k1(), u(q31), K1.modclock = 1
         }
         var p0 = rA.insertToken = function(MA, H1, X0, z0) {
@@ -227,7 +231,7 @@ function s1() {
             else WN(MA, H1, X0, z0)
         };
 
-function HQ(CA) {
+        function HQ(CA) {
             var MA = k.top;
             if (PB && c7(MA, fWA)) uG(function(H1) {
                 return H1.createComment(CA)
@@ -238,7 +242,7 @@ function HQ(CA) {
             }
         }
 
-function ZB(CA) {
+        function ZB(CA) {
             var MA = k.top;
             if (PB && c7(MA, fWA)) uG(function(X0) {
                 return X0.createTextNode(CA)
@@ -251,7 +255,7 @@ function ZB(CA) {
             }
         }
 
-function rQ(CA, MA, H1) {
+        function rQ(CA, MA, H1) {
             var X0 = eg2.createElement(CA, MA, null);
             if (H1)
                 for (var z0 = 0, iQ = H1.length; z0 < iQ; z0++) X0._setAttribute(H1[z0][0], H1[z0][1]);
@@ -259,7 +263,7 @@ function rQ(CA, MA, H1) {
         }
         var PB = !1;
 
-function IQ(CA, MA) {
+        function IQ(CA, MA) {
             var H1 = l9(function(X0) {
                 return rQ(X0, CA, MA)
             });
@@ -267,7 +271,7 @@ function IQ(CA, MA) {
             return H1
         }
 
-function l9(CA) {
+        function l9(CA) {
             var MA;
             if (PB && c7(k.top, fWA)) MA = uG(CA);
             else if (k.top instanceof d7.HTMLTemplateElement) MA = CA(k.top.content.ownerDocument), k.top.content._appendChild(MA);
@@ -275,7 +279,7 @@ function l9(CA) {
             return k.push(MA), MA
         }
 
-function h4(CA, MA, H1) {
+        function h4(CA, MA, H1) {
             return l9(function(X0) {
                 var z0 = X0._createElementNS(CA, H1, null);
                 if (MA)
@@ -288,13 +292,13 @@ function h4(CA, MA, H1) {
             })
         }
 
-function p5(CA) {
+        function p5(CA) {
             for (var MA = k.elements.length - 1; MA >= 0; MA--)
                 if (k.elements[MA] instanceof CA) return MA;
             return -1
         }
 
-function uG(CA) {
+        function uG(CA) {
             var MA, H1, X0 = -1,
                 z0 = -1,
                 iQ;
@@ -315,7 +319,7 @@ function uG(CA) {
             return iQ
         }
 
-function DG() {
+        function DG() {
             var CA = !1;
             for (var MA = k.elements.length - 1; MA >= 0; MA--) {
                 var H1 = k.elements[MA];
@@ -386,22 +390,22 @@ function DG() {
             }
         }
 
-function C3(CA, MA) {
+        function C3(CA, MA) {
             IQ(CA, MA), D = y1, o = u, u = b6
         }
 
-function CZ(CA, MA) {
+        function CZ(CA, MA) {
             IQ(CA, MA), D = O1, o = u, u = b6
         }
 
-function LI(CA, MA) {
+        function LI(CA, MA) {
             return {
                 elt: rQ(CA, d.list[MA].localName, d.attrs[MA]),
                 attrs: d.attrs[MA]
             }
         }
 
-function e8() {
+        function e8() {
             if (d.list.length === 0) return;
             var CA = d.list[d.list.length - 1];
             if (CA === d.MARKER) return;
@@ -417,12 +421,11 @@ function e8() {
                 d.list[MA] = H1
             }
         }
-
-var _5 = {
+        var _5 = {
             localName: "BM"
         };
 
-function mG(CA) {
+        function mG(CA) {
             if (c7(k.top, CA) && d.indexOf(k.top) === -1) return k.pop(), !0;
             var MA = 0;
             while (MA < 8) {
@@ -472,20 +475,20 @@ function mG(CA) {
             return !0
         }
 
-function dG() {
+        function dG() {
             k.pop(), u = o;
             return
         }
 
-function U1() {
+        function U1() {
             if (delete K1._parser, k.elements.length = 0, K1.defaultView) K1.defaultView.dispatchEvent(new d7.Event("load", {}))
         }
 
-function nA(CA, MA) {
+        function nA(CA, MA) {
             D = MA, I--
         }
 
-function C1(CA) {
+        function C1(CA) {
             switch (CA) {
                 case 38:
                     H = C1, D = a7;
@@ -506,7 +509,7 @@ function C1(CA) {
             }
         }
 
-function O1(CA) {
+        function O1(CA) {
             switch (CA) {
                 case 38:
                     H = O1, D = a7;
@@ -526,7 +529,7 @@ function O1(CA) {
             }
         }
 
-function y1(CA) {
+        function y1(CA) {
             switch (CA) {
                 case 60:
                     D = w8;
@@ -543,7 +546,7 @@ function y1(CA) {
             }
         }
 
-function O0(CA) {
+        function O0(CA) {
             switch (CA) {
                 case 60:
                     D = $4;
@@ -560,7 +563,7 @@ function O0(CA) {
             }
         }
 
-function oQ(CA) {
+        function oQ(CA) {
             switch (CA) {
                 case 0:
                     qA.push(65533);
@@ -574,7 +577,7 @@ function oQ(CA) {
             }
         }
 
-function lB(CA) {
+        function lB(CA) {
             switch (CA) {
                 case 33:
                     D = dQ;
@@ -645,7 +648,7 @@ function lB(CA) {
             }
         }
 
-function k9(CA) {
+        function k9(CA) {
             switch (CA) {
                 case 65:
                 case 66:
@@ -713,7 +716,7 @@ function k9(CA) {
             }
         }
 
-function C6(CA) {
+        function C6(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -767,12 +770,12 @@ function C6(CA) {
             }
         }
 
-function y9(CA) {
-            if (CA === 47) aA(), D = A6;
+        function y9(CA) {
+            if (CA === 47) BASE64_CHARS(), D = A6;
             else qA.push(60), nA(CA, O1)
         }
 
-function A6(CA) {
+        function A6(CA) {
             switch (CA) {
                 case 65:
                 case 66:
@@ -834,7 +837,7 @@ function A6(CA) {
             }
         }
 
-function v6(CA) {
+        function v6(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -919,12 +922,12 @@ function v6(CA) {
             qA.push(60), qA.push(47), j0A(qA, w), nA(CA, O1)
         }
 
-function w8(CA) {
-            if (CA === 47) aA(), D = i9;
+        function w8(CA) {
+            if (CA === 47) BASE64_CHARS(), D = i9;
             else qA.push(60), nA(CA, y1)
         }
 
-function i9(CA) {
+        function i9(CA) {
             switch (CA) {
                 case 65:
                 case 66:
@@ -986,7 +989,7 @@ function i9(CA) {
             }
         }
 
-function Q6(CA) {
+        function Q6(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -1074,7 +1077,7 @@ function Q6(CA) {
         function $4(CA) {
             switch (CA) {
                 case 47:
-                    aA(), D = n7;
+                    BASE64_CHARS(), D = n7;
                     break;
                 case 33:
                     D = k5, qA.push(60), qA.push(33);
@@ -1085,7 +1088,7 @@ function Q6(CA) {
             }
         }
 
-function n7(CA) {
+        function n7(CA) {
             switch (CA) {
                 case 65:
                 case 66:
@@ -1147,7 +1150,7 @@ function n7(CA) {
             }
         }
 
-function B6(CA) {
+        function B6(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -1232,17 +1235,17 @@ function B6(CA) {
             qA.push(60), qA.push(47), j0A(qA, w), nA(CA, O0)
         }
 
-function k5(CA) {
+        function k5(CA) {
             if (CA === 45) D = g9, qA.push(45);
             else nA(CA, O0)
         }
 
-function g9(CA) {
+        function g9(CA) {
             if (CA === 45) D = B8, qA.push(45);
             else nA(CA, O0)
         }
 
-function g4(CA) {
+        function g4(CA) {
             switch (CA) {
                 case 45:
                     D = q8, qA.push(45);
@@ -1262,7 +1265,7 @@ function g4(CA) {
             }
         }
 
-function q8(CA) {
+        function q8(CA) {
             switch (CA) {
                 case 45:
                     D = B8, qA.push(45);
@@ -1282,7 +1285,7 @@ function q8(CA) {
             }
         }
 
-function B8(CA) {
+        function B8(CA) {
             switch (CA) {
                 case 45:
                     qA.push(45);
@@ -1305,10 +1308,10 @@ function B8(CA) {
             }
         }
 
-function W5(CA) {
+        function W5(CA) {
             switch (CA) {
                 case 47:
-                    aA(), D = u9;
+                    BASE64_CHARS(), D = u9;
                     break;
                 case 65:
                 case 66:
@@ -1362,7 +1365,7 @@ function W5(CA) {
                 case 120:
                 case 121:
                 case 122:
-                    aA(), qA.push(60), nA(CA, E3);
+                    BASE64_CHARS(), qA.push(60), nA(CA, E3);
                     break;
                 default:
                     qA.push(60), nA(CA, g4);
@@ -1370,7 +1373,7 @@ function W5(CA) {
             }
         }
 
-function u9(CA) {
+        function u9(CA) {
             switch (CA) {
                 case 65:
                 case 66:
@@ -1432,7 +1435,7 @@ function u9(CA) {
             }
         }
 
-function w4(CA) {
+        function w4(CA) {
             switch (CA) {
                 case 9:
                 case 10:

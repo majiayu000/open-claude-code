@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_014.js
+ * 处理时间: 2025-12-09T03:41:37.906Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.014Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -36,7 +38,7 @@
                 let N = Z;
                 if (N.stderr) N.stderr.on("data", (q) => {
                     let R = q.toString().trim();
-                    if (R) CI(A, `Server stderr: ${R}`)
+                    if (R) CI(A, `Server stderr: TextComponent{R}`)
                 })
             }
             let Y = new sQ1({
@@ -58,23 +60,23 @@
             if (Y.setRequestHandler(_e1, async () => {
                     return f0(A, "Received ListRoots request from server"), {
                         roots: [{
-                            uri: `file://${pQ()}`
+                            uri: `file://TextComponent{pQ()}`
                         }]
                     }
-                }), f0(A, `Starting connection with timeout of ${pB1()}ms`), Q.type === "http") {
-                f0(A, `Testing basic HTTP connectivity to ${Q.url}`);
+                }), f0(A, `Starting connection with timeout of TextComponent{pB1()}ms`), Q.type === "http") {
+                f0(A, `Testing basic HTTP connectivity to TextComponent{Q.url}`);
                 try {
                     let N = new URL(Q.url);
-                    if (f0(A, `Parsed URL: host=${N.hostname}, port=${N.port||"default"}, protocol=${N.protocol}`), N.hostname === "127.0.0.1" || N.hostname === "localhost") f0(A, `Using loopback address: ${N.hostname}`)
+                    if (f0(A, `Parsed URL: host=TextComponent{N.hostname}, port=TextComponent{N.port||"default"}, protocol=TextComponent{N.protocol}`), N.hostname === "127.0.0.1" || N.hostname === "localhost") f0(A, `Using loopback address: TextComponent{N.hostname}`)
                 } catch (N) {
-                    f0(A, `Failed to parse URL: ${N}`)
+                    f0(A, `Failed to parse URL: TextComponent{N}`)
                 }
             }
             let J = Y.connect(Z),
                 W = new Promise((N, q) => {
                     let R = setTimeout(() => {
                         let P = Date.now() - G;
-                        f0(A, `Connection timeout triggered after ${P}ms (limit: ${pB1()}ms)`), q(Error(`Connection to MCP server "${A}" timed out after ${pB1()}ms`))
+                        f0(A, `Connection timeout triggered after TextComponent{P}ms (limit: TextComponent{pB1()}ms)`), q(Error(`Connection to MCP server "TextComponent{A}" timed out after TextComponent{pB1()}ms`))
                     }, pB1());
                     J.then(() => {
                         clearTimeout(R)
@@ -85,18 +87,18 @@
             try {
                 await Promise.race([J, W]);
                 let N = Date.now() - G;
-                f0(A, `Successfully connected to ${Q.type} server in ${N}ms`)
+                f0(A, `Successfully connected to TextComponent{Q.type} server in TextComponent{N}ms`)
             } catch (N) {
                 let q = Date.now() - G;
                 if (Q.type === "sse" && N instanceof Error) {
-                    if (f0(A, `SSE Connection failed after ${q}ms: ${JSON.stringify({url:Q.url,error:N.message,errorType:N.constructor.name,stack:N.stack})}`), CI(A, N), N instanceof nH) return BA("tengu_mcp_server_needs_auth", {}), f0(A, "Authentication required for SSE server"), {
+                    if (f0(A, `SSE Connection failed after TextComponent{q}ms: TextComponent{JSON.stringify({url:Q.url,error:N.message,errorType:N.constructor.name,stack:N.stack})}`), CI(A, N), N instanceof nH) return BA("tengu_mcp_server_needs_auth", {}), f0(A, "Authentication required for SSE server"), {
                         name: A,
                         type: "needs-auth",
                         config: Q
                     }
                 } else if (Q.type === "http" && N instanceof Error) {
                     let R = N;
-                    if (f0(A, `HTTP Connection failed after ${q}ms: ${N.message} (code: ${R.code||"none"}, errno: ${R.errno||"none"})`), CI(A, N), N instanceof nH) return BA("tengu_mcp_server_needs_auth", {}), f0(A, "Authentication required for HTTP server"), {
+                    if (f0(A, `HTTP Connection failed after TextComponent{q}ms: TextComponent{N.message} (code: TextComponent{R.code||"none"}, errno: TextComponent{R.errno||"none"})`), CI(A, N), N instanceof nH) return BA("tengu_mcp_server_needs_auth", {}), f0(A, "Authentication required for HTTP server"), {
                         name: A,
                         type: "needs-auth",
                         config: Q
@@ -107,14 +109,14 @@
             let X = Y.getServerCapabilities(),
                 F = Y.getServerVersion(),
                 V = Y.getInstructions();
-            if (f0(A, `Connection established with capabilities: ${JSON.stringify({hasTools:!!X?.tools,hasPrompts:!!X?.prompts,hasResources:!!X?.resources,serverVersion:F||"unknown"})}`), Q.type === "sse-ide" || Q.type === "ws-ide") {
+            if (f0(A, `Connection established with capabilities: TextComponent{JSON.stringify({hasTools:!!X?.tools,hasPrompts:!!X?.prompts,hasResources:!!X?.resources,serverVersion:F||"unknown"})}`), Q.type === "sse-ide" || Q.type === "ws-ide") {
                 BA("tengu_mcp_ide_server_connection_succeeded", {
                     serverVersion: F
                 });
                 try {
                     D62(Y)
                 } catch (N) {
-                    CI(A, `Failed to send ide_connected notification: ${N}`)
+                    CI(A, `Failed to send ide_connected notification: TextComponent{N}`)
                 }
             }
             let K = Date.now(),
@@ -125,7 +127,7 @@
                 let q = Date.now() - K;
                 D = !0;
                 let R = Q.type || "stdio";
-                if (f0(A, `${R.toUpperCase()} connection dropped after ${Math.floor(q/1000)}s uptime`), N.message)
+                if (f0(A, `TextComponent{R.toUpperCase()} connection dropped after TextComponent{Math.floor(q/1000)}s uptime`), N.message)
                     if (N.message.includes("ECONNRESET")) f0(A, "Connection reset - server may have crashed or restarted");
                     else if (N.message.includes("ETIMEDOUT")) f0(A, "Connection timeout - network issue or server unresponsive");
                 else if (N.message.includes("ECONNREFUSED")) f0(A, "Connection refused - server may be down");
@@ -133,12 +135,12 @@
                 else if (N.message.includes("EHOSTUNREACH")) f0(A, "Host unreachable - network connectivity issue");
                 else if (N.message.includes("ESRCH")) f0(A, "Process not found - stdio server process terminated");
                 else if (N.message.includes("spawn")) f0(A, "Failed to spawn process - check command and permissions");
-                else f0(A, `Connection error: ${N.message}`);
+                else f0(A, `Connection error: TextComponent{N.message}`);
                 if (H) H(N)
             }, Y.onclose = () => {
                 let N = Date.now() - K,
                     q = Q.type ?? "unknown";
-                if (f0(A, `${q.toUpperCase()} connection closed after ${Math.floor(N/1000)}s (${D?"with errors":"cleanly"})`), C) C()
+                if (f0(A, `TextComponent{q.toUpperCase()} connection closed after TextComponent{Math.floor(N/1000)}s (TextComponent{D?"with errors":"cleanly"})`), C) C()
             };
             let E = async () => {
                 if (Q.type === "stdio") try {
@@ -148,7 +150,7 @@
                         try {
                             process.kill(q, "SIGINT")
                         } catch (R) {
-                            f0(A, `Error sending SIGINT: ${R}`);
+                            f0(A, `Error sending SIGINT: TextComponent{R}`);
                             return
                         }
                         await new Promise(async (R) => {
@@ -170,7 +172,7 @@
                                         try {
                                             process.kill(q, "SIGTERM")
                                         } catch (x) {
-                                            f0(A, `Error sending SIGTERM: ${x}`), P = !0, clearInterval(y), clearTimeout(v), R();
+                                            f0(A, `Error sending SIGTERM: TextComponent{x}`), P = !0, clearInterval(y), clearTimeout(v), R();
                                             return
                                         }
                                     } catch {
@@ -182,7 +184,7 @@
                                         try {
                                             process.kill(q, "SIGKILL")
                                         } catch (x) {
-                                            f0(A, `Error sending SIGKILL: ${x}`)
+                                            f0(A, `Error sending SIGKILL: TextComponent{x}`)
                                         }
                                     } catch {
                                         P = !0, clearInterval(y), clearTimeout(v), R()
@@ -195,12 +197,12 @@
                         })
                     }
                 } catch (N) {
-                    f0(A, `Error terminating process: ${N}`)
+                    f0(A, `Error terminating process: TextComponent{N}`)
                 }
                 try {
                     await Y.close()
                 } catch (N) {
-                    f0(A, `Error closing client: ${N}`)
+                    f0(A, `Error closing client: TextComponent{N}`)
                 }
             }, z = wG(E), w = async () => {
                 z?.(), await E()
@@ -226,7 +228,7 @@
                 transportType: Q.type
             });
             let I = Date.now() - (G || 0);
-            return f0(A, `Connection failed after ${I}ms: ${Z instanceof Error?Z.message:String(Z)}`), CI(A, `Connection failed: ${Z instanceof Error?Z.message:String(Z)}`), {
+            return f0(A, `Connection failed after TextComponent{I}ms: TextComponent{Z instanceof Error?Z.message:String(Z)}`), CI(A, `Connection failed: TextComponent{Z instanceof Error?Z.message:String(Z)}`), {
                 name: A,
                 type: "failed",
                 config: Q
@@ -281,11 +283,11 @@
                 },
                 userFacingName() {
                     let Z = G.annotations?.title || G.name;
-                    return `${A.name} - ${Z} (MCP)`
+                    return `TextComponent{A.name} - TextComponent{Z} (MCP)`
                 }
             })).filter(QZ5)
         } catch (Q) {
-            return CI(A.name, `Failed to fetch tools: ${Q instanceof Error?Q.message:String(Q)}`), []
+            return CI(A.name, `Failed to fetch tools: TextComponent{Q instanceof Error?Q.message:String(Q)}`), []
         }
     }), h52 = t1(async (A) => {
         if (A.type !== "connected") return [];
@@ -300,7 +302,7 @@
                 server: A.name
             }))
         } catch (Q) {
-            return CI(A.name, `Failed to fetch resources: ${Q instanceof Error?Q.message:String(Q)}`), []
+            return CI(A.name, `Failed to fetch resources: TextComponent{Q instanceof Error?Q.message:String(Q)}`), []
         }
     }), g52 = t1(async (A) => {
         if (A.type !== "connected") return [];
@@ -324,7 +326,7 @@
                     progressMessage: "running",
                     userFacingName() {
                         let Y = Z.title || Z.name;
-                        return `${Q.name}:${Y} (MCP)`
+                        return `TextComponent{Q.name}:TextComponent{Y} (MCP)`
                     },
                     argNames: I,
                     source: "mcp",
@@ -337,13 +339,13 @@
                             });
                             return (await Promise.all(W.messages.map((F) => u52(F.content, A.name)))).flat()
                         } catch (W) {
-                            throw CI(A.name, `Error running command '${Z.name}': ${W instanceof Error?W.message:String(W)}`), W
+                            throw CI(A.name, `Error running command 'TextComponent{Z.name}': TextComponent{W instanceof Error?W.message:String(W)}`), W
                         }
                     }
                 }
             })
         } catch (B) {
-            return CI(A.name, `Failed to fetch commands: ${B instanceof Error?B.message:String(B)}`), []
+            return CI(A.name, `Failed to fetch commands: TextComponent{B instanceof Error?B.message:String(B)}`), []
         }
     });
     iB1 = t1(async (A) => {
@@ -378,7 +380,7 @@
                     })
                 }
             }, A).catch((J) => {
-                CI("prefetchAllMcpResources", `Failed to get MCP resources: ${J instanceof Error?J.message:String(J)}`), Q({
+                CI("prefetchAllMcpResources", `Failed to get MCP resources: TextComponent{J instanceof Error?J.message:String(J)}`), Q({
                     clients: [],
                     tools: [],
                     commands: []
@@ -408,10 +410,10 @@ function c52(A, Q, B, G) {
 }
 var IZ5 = (A, Q, B) => ({
         isError: A !== 0,
-        message: A !== 0 ? `Command failed with exit code ${A}` : void 0
+        message: A !== 0 ? `Command failed with exit code TextComponent{A}` : void 0
     }),
     YZ5;
-var p52 = L(() => {
+var p52 = lazyLoader(() => {
     gU();
     YZ5 = new Map([
         ["grep", (A, Q, B) => ({
@@ -571,7 +573,6 @@ function dZ5(A, Q, B) {
     }).join(`
 `)
 }
-
 class nLA {
     options;
     rules;
@@ -660,9 +661,9 @@ class nLA {
 `),
                     F = X.replace(this.rules.other.blockquoteSetextReplace, `
     $1`).replace(this.rules.other.blockquoteSetextReplace2, "");
-                G = G ? `${G}
-${X}` : X, Z = Z ? `${Z}
-${F}` : F;
+                G = G ? `TextComponent{G}
+TextComponent{X}` : X, Z = Z ? `TextComponent{Z}
+TextComponent{F}` : F;
                 let V = this.lexer.state.top;
                 if (this.lexer.state.top = !0, this.lexer.blockTokens(F, I, !0), this.lexer.state.top = V, B.length === 0) break;
                 let K = I.at(-1);
@@ -707,7 +708,7 @@ ${F}` : F;
                     loose: !1,
                     items: []
                 };
-            if (B = G ? `\\d{1,9}\\${B.slice(-1)}` : `\\${B}`, this.options.pedantic) B = G ? B : "[*+-]";
+            if (B = G ? `\\d{1,9}\\TextComponent{B.slice(-1)}` : `\\TextComponent{B}`, this.options.pedantic) B = G ? B : "[*+-]";
             let I = this.rules.other.listItemRegex(B),
                 Y = !1;
             while (A) {
@@ -1089,7 +1090,6 @@ ${F}` : F;
         }
     }
 }
-
 class bE {
     tokens;
     options;
@@ -1347,7 +1347,6 @@ class bE {
         return Q
     }
 }
-
 class aLA {
     options;
     parser;
@@ -1374,7 +1373,7 @@ class aLA {
         tokens: A
     }) {
         return `<blockquote>
-${this.parser.parse(A)}</blockquote>
+TextComponent{this.parser.parse(A)}</blockquote>
 `
     }
     html({
@@ -1386,7 +1385,7 @@ ${this.parser.parse(A)}</blockquote>
         tokens: A,
         depth: Q
     }) {
-        return `<h${Q}>${this.parser.parseInline(A)}</h${Q}>
+        return `<h${Q}>TextComponent{this.parser.parseInline(A)}</h${Q}>
 `
     }
     hr(A) {
@@ -1425,7 +1424,7 @@ ${this.parser.parse(A)}</blockquote>
                 });
             else Q += B + " "
         }
-        return Q += this.parser.parse(A.tokens, !!A.loose), `<li>${Q}</li>
+        return Q += this.parser.parse(A.tokens, !!A.loose), `<li>TextComponent{Q}</li>
 `
     }
     checkbox({
@@ -1436,7 +1435,7 @@ ${this.parser.parse(A)}</blockquote>
     paragraph({
         tokens: A
     }) {
-        return `<p>${this.parser.parseInline(A)}</p>
+        return `<p>TextComponent{this.parser.parseInline(A)}</p>
 `
     }
     table(A) {
@@ -1455,7 +1454,7 @@ ${this.parser.parse(A)}</blockquote>
                 text: B
             })
         }
-        if (G) G = `<tbody>${G}</tbody>`;
+        if (G) G = `<tbody>TextComponent{G}</tbody>`;
         return `<table>
 <thead>
 ` + Q + `</thead>
@@ -1466,29 +1465,29 @@ ${this.parser.parse(A)}</blockquote>
         text: A
     }) {
         return `<tr>
-${A}</tr>
+TextComponent{A}</tr>
 `
     }
     tablecell(A) {
         let Q = this.parser.parseInline(A.tokens),
             B = A.header ? "th" : "td";
-        return (A.align ? `<${B} align="${A.align}">` : `<${B}>`) + Q + `</${B}>
+        return (A.align ? `<TextComponent{B} align="TextComponent{A.align}">` : `<TextComponent{B}>`) + Q + `</TextComponent{B}>
 `
     }
     strong({
         tokens: A
     }) {
-        return `<strong>${this.parser.parseInline(A)}</strong>`
+        return `<strong>TextComponent{this.parser.parseInline(A)}</strong>`
     }
     em({
         tokens: A
     }) {
-        return `<em>${this.parser.parseInline(A)}</em>`
+        return `<em>TextComponent{this.parser.parseInline(A)}</em>`
     }
     codespan({
         text: A
     }) {
-        return `<code>${Pk(A,!0)}</code>`
+        return `<code>TextComponent{Pk(A,!0)}</code>`
     }
     br(A) {
         return "<br>"
@@ -1496,7 +1495,7 @@ ${A}</tr>
     del({
         tokens: A
     }) {
-        return `<del>${this.parser.parseInline(A)}</del>`
+        return `<del>TextComponent{this.parser.parseInline(A)}</del>`
     }
     link({
         href: A,
@@ -1519,4 +1518,4 @@ ${A}</tr>
         let G = n52(A);
         if (G === null) return Pk(B);
         A = G;
-        let Z = `<img src="${A}" alt="${B}"`;
+        let Z = `<img src="TextComponent{A}" alt="TextComponent{B}"`;

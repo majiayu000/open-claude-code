@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: agents_007.js
+ * 处理时间: 2025-12-09T03:41:35.901Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.846Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -22,13 +25,13 @@
             "User-Agent": MF(),
             ...Q.headers
         },
-        G = `${o9().BASE_API_URL}/api/oauth/usage`;
+        G = `TextComponent{getConfig().BASE_API_URL}/api/oauth/usage`;
     return (await GQ.get(G, {
         headers: B,
         timeout: 5000
     })).data
 }
-var KF0 = L(() => {
+var KF0 = lazyLoader(() => {
     w3();
     XE();
     EX();
@@ -52,15 +55,15 @@ function DF0({
         let X = Q - I - 1;
         if (X > 0) Y.push(pjA[0].repeat(X))
     }
-    return gW9.default.createElement($, {
+    return gW9.default.createElement(TextComponent, {
         color: B,
         backgroundColor: G
     }, Y.join(""))
 }
 var gW9, pjA;
-var uW9 = L(() => {
+var uW9 = lazyLoader(() => {
     hA();
-    gW9 = GA(VA(), 1), pjA = [" ", "▏", "▎", "▍", "▌", "▋", "▊", "▉", "█"]
+    gW9 = esmImport(VA(), 1), pjA = [" ", "▏", "▎", "▍", "▌", "▋", "▊", "▉", "█"]
 });
 
 function mW9({
@@ -75,16 +78,16 @@ function mW9({
         resets_at: Y
     } = Q;
     if (I === null) return null;
-    let J = `${Math.floor(I)}% used`,
+    let J = `TextComponent{Math.floor(I)}% used`,
         W;
-    if (Y) W = `Resets ${bOB(Y,!0,G)}`;
+    if (Y) W = `Resets TextComponent{bOB(Y,!0,G)}`;
     if (Z)
-        if (W) W = `${Z} · ${W}`;
+        if (W) W = `TextComponent{Z} · TextComponent{W}`;
         else W = Z;
     let X = 50;
     if (B >= X + 12) return JB.createElement(j, {
         flexDirection: "column"
-    }, JB.createElement($, {
+    }, JB.createElement(TextComponent, {
         bold: !0
     }, A), JB.createElement(j, {
         flexDirection: "row",
@@ -94,21 +97,21 @@ function mW9({
         width: X,
         fillColor: "rate_limit_fill",
         emptyColor: "rate_limit_empty"
-    }), JB.createElement($, null, J)), W && JB.createElement($, {
+    }), JB.createElement(TextComponent, null, J)), W && JB.createElement(TextComponent, {
         dimColor: !0
     }, W));
     else return JB.createElement(j, {
         flexDirection: "column"
-    }, JB.createElement($, null, JB.createElement($, {
+    }, JB.createElement(TextComponent, null, JB.createElement(TextComponent, {
         bold: !0
-    }, A), W && JB.createElement(JB.Fragment, null, JB.createElement($, null, " "), JB.createElement($, {
+    }, A), W && JB.createElement(JB.Fragment, null, JB.createElement(TextComponent, null, " "), JB.createElement(TextComponent, {
         dimColor: !0
     }, "· ", W))), JB.createElement(DF0, {
         ratio: I / 100,
         width: B,
         fillColor: "rate_limit_fill",
         emptyColor: "rate_limit_empty"
-    }), JB.createElement($, null, J))
+    }), JB.createElement(TextComponent, null, J))
 }
 
 function dW9() {
@@ -123,7 +126,7 @@ function dW9() {
             e(V);
             let K = V,
                 D = K.response?.data ? JSON.stringify(K.response.data) : void 0;
-            G(D ? `Failed to load usage data: ${D}` : "Failed to load usage data")
+            G(D ? `Failed to load usage data: TextComponent{D}` : "Failed to load usage data")
         } finally {
             I(!1)
         }
@@ -136,9 +139,9 @@ function dW9() {
         flexDirection: "column",
         marginTop: 1,
         gap: 1
-    }, JB.createElement($, {
+    }, JB.createElement(TextComponent, {
         color: "error"
-    }, "Error: ", B), JB.createElement($, {
+    }, "Error: ", B), JB.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "r to retry · Esc to exit"));
@@ -146,9 +149,9 @@ function dW9() {
         flexDirection: "column",
         marginTop: 1,
         gap: 1
-    }, JB.createElement($, {
+    }, JB.createElement(TextComponent, {
         dimColor: !0
-    }, "Loading usage data…"), JB.createElement($, {
+    }, "Loading usage data…"), JB.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "Esc to exit"));
@@ -169,7 +172,7 @@ function dW9() {
         width: "100%"
     }, F.some(({
         limit: V
-    }) => V) || JB.createElement($, {
+    }) => V) || JB.createElement(TextComponent, {
         dimColor: !0
     }, "/usage is only available for subscription plans."), F.map(({
         title: V,
@@ -182,7 +185,7 @@ function dW9() {
     })), A.extra_usage && JB.createElement(jS3, {
         extraUsage: A.extra_usage,
         maxWidth: W
-    }), JB.createElement(SS3, null), JB.createElement($, {
+    }), JB.createElement(SS3, null), JB.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "Esc to exit"))
@@ -198,18 +201,18 @@ function jS3({
     if (!A.is_enabled) {
         if (GW0() !== "control" && ey.isEnabled()) return JB.createElement(j, {
             flexDirection: "column"
-        }, JB.createElement($, {
+        }, JB.createElement(TextComponent, {
             bold: !0
-        }, HF0), JB.createElement($, {
+        }, HF0), JB.createElement(TextComponent, {
             dimColor: !0
         }, "Extra usage not enabled • /extra-usage to enable"));
         return null
     }
     if (A.monthly_limit === null) return JB.createElement(j, {
         flexDirection: "column"
-    }, JB.createElement($, {
+    }, JB.createElement(TextComponent, {
         bold: !0
-    }, HF0), JB.createElement($, {
+    }, HF0), JB.createElement(TextComponent, {
         dimColor: !0
     }, "Unlimited"));
     if (typeof A.used_credits !== "number" || typeof A.utilization !== "number") return null;
@@ -224,7 +227,7 @@ function jS3({
             resets_at: J.toISOString()
         },
         showTimeInReset: !1,
-        extraSubtext: `${Z} / ${I} spent`,
+        extraSubtext: `TextComponent{Z} / TextComponent{I} spent`,
         maxWidth: Q
     })
 }
@@ -239,14 +242,14 @@ function SS3() {
     if (!Q) return null;
     return JB.createElement(j, {
         flexDirection: "column"
-    }, JB.createElement($, {
+    }, JB.createElement(TextComponent, {
         bold: !0
-    }, "Nov 24, 2025 update:"), JB.createElement($, {
+    }, "Nov 24, 2025 update:"), JB.createElement(TextComponent, {
         dimColor: !0
     }, Q))
 }
 var JB, GFA, HF0 = "Extra usage";
-var cW9 = L(() => {
+var cW9 = lazyLoader(() => {
     hA();
     m8();
     KF0();
@@ -257,7 +260,7 @@ var cW9 = L(() => {
     hB();
     ZW0();
     O9();
-    JB = GA(VA(), 1), GFA = GA(VA(), 1)
+    JB = esmImport(VA(), 1), GFA = esmImport(VA(), 1)
 });
 
 function ZFA({
@@ -302,19 +305,19 @@ function ZFA({
     }, iW.createElement(dW9, null))])))
 }
 var iW, XY1;
-var FY1 = L(() => {
+var FY1 = lazyLoader(() => {
     hA();
     eV();
     cjA();
     vW9();
     hW9();
     cW9();
-    iW = GA(VA(), 1), XY1 = GA(VA(), 1)
+    iW = esmImport(VA(), 1), XY1 = esmImport(VA(), 1)
 });
 var CF0, _S3, pW9;
-var lW9 = L(() => {
+var lW9 = lazyLoader(() => {
     FY1();
-    CF0 = GA(VA(), 1), _S3 = {
+    CF0 = esmImport(VA(), 1), _S3 = {
         aliases: ["theme"],
         type: "local-jsx",
         name: "config",
@@ -335,7 +338,7 @@ var lW9 = L(() => {
 });
 
 function kS3(A) {
-    return `${Math.round(A/1000)}k`
+    return `TextComponent{Math.round(A/1000)}k`
 }
 
 function iW9({
@@ -360,7 +363,7 @@ function iW9({
     return XQ.createElement(j, {
         flexDirection: "column",
         padding: H ? 0 : 1
-    }, XQ.createElement($, {
+    }, XQ.createElement(TextComponent, {
         bold: !0
     }, "Context Usage"), XQ.createElement(j, {
         flexDirection: "row",
@@ -373,15 +376,15 @@ function iW9({
         flexDirection: "row",
         marginLeft: -1
     }, z.map((N, q) => {
-        if (N.categoryName === "Free space") return XQ.createElement($, {
+        if (N.categoryName === "Free space") return XQ.createElement(TextComponent, {
             key: q,
             dimColor: !0
         }, "⛶ ");
-        if (N.categoryName === VY1) return XQ.createElement($, {
+        if (N.categoryName === VY1) return XQ.createElement(TextComponent, {
             key: q,
             color: N.color
         }, "⛝ ");
-        return XQ.createElement($, {
+        return XQ.createElement(TextComponent, {
             key: q,
             color: N.color
         }, N.squareFullness >= 0.7 ? "⛁ " : "⛀ ")
@@ -389,86 +392,86 @@ function iW9({
         flexDirection: "column",
         gap: 0,
         flexShrink: 0
-    }, XQ.createElement($, {
+    }, XQ.createElement(TextComponent, {
         dimColor: !0
-    }, Y, " · ", Math.round(B / 1000), "k/", Math.round(G / 1000), "k tokens (", Z, "%)"), XQ.createElement($, null, " "), C.map((z, w) => {
-        let N = z.tokens < 1000 ? `${z.tokens}` : `${(z.tokens/1000).toFixed(1)}k`,
+    }, Y, " · ", Math.round(B / 1000), "k/", Math.round(G / 1000), "k tokens (", Z, "%)"), XQ.createElement(TextComponent, null, " "), C.map((z, w) => {
+        let N = z.tokens < 1000 ? `TextComponent{z.tokens}` : `TextComponent{(z.tokens/1000).toFixed(1)}k`,
             q = (z.tokens / G * 100).toFixed(1),
             R = z.name === VY1,
             P = z.name,
             y = R ? "⛝" : "⛁";
         return XQ.createElement(j, {
             key: w
-        }, XQ.createElement($, {
+        }, XQ.createElement(TextComponent, {
             color: z.color
-        }, y), XQ.createElement($, null, " ", P, ": "), XQ.createElement($, {
+        }, y), XQ.createElement(TextComponent, null, " ", P, ": "), XQ.createElement(TextComponent, {
             dimColor: !0
         }, N, " tokens (", q, "%)"))
-    }), (Q.find((z) => z.name === "Free space")?.tokens ?? 0) > 0 && XQ.createElement(j, null, XQ.createElement($, {
+    }), (Q.find((z) => z.name === "Free space")?.tokens ?? 0) > 0 && XQ.createElement(j, null, XQ.createElement(TextComponent, {
         dimColor: !0
-    }, "⛶"), XQ.createElement($, null, " Free space: "), XQ.createElement($, {
+    }, "⛶"), XQ.createElement(TextComponent, null, " Free space: "), XQ.createElement(TextComponent, {
         dimColor: !0
-    }, kS3(Q.find((z) => z.name === "Free space")?.tokens || 0), " ", "(", ((Q.find((z) => z.name === "Free space")?.tokens || 0) / G * 100).toFixed(1), "%)")), E && E.tokens > 0 && XQ.createElement(j, null, XQ.createElement($, {
+    }, kS3(Q.find((z) => z.name === "Free space")?.tokens || 0), " ", "(", ((Q.find((z) => z.name === "Free space")?.tokens || 0) / G * 100).toFixed(1), "%)")), E && E.tokens > 0 && XQ.createElement(j, null, XQ.createElement(TextComponent, {
         color: E.color
-    }, "⛝"), XQ.createElement($, {
+    }, "⛝"), XQ.createElement(TextComponent, {
         dimColor: !0
-    }, " ", E.name, ": "), XQ.createElement($, {
+    }, " ", E.name, ": "), XQ.createElement(TextComponent, {
         dimColor: !0
-    }, E.tokens < 1000 ? `${E.tokens}` : `${(E.tokens/1000).toFixed(1)}k`, " ", "tokens (", (E.tokens / G * 100).toFixed(1), "%)")))), XQ.createElement(j, {
+    }, E.tokens < 1000 ? `TextComponent{E.tokens}` : `TextComponent{(E.tokens/1000).toFixed(1)}k`, " ", "tokens (", (E.tokens / G * 100).toFixed(1), "%)")))), XQ.createElement(j, {
         flexDirection: "column",
         marginLeft: -1
     }, W.length > 0 && XQ.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, XQ.createElement(j, null, XQ.createElement($, {
+    }, XQ.createElement(j, null, XQ.createElement(TextComponent, {
         bold: !0
-    }, "MCP tools"), XQ.createElement($, {
+    }, "MCP tools"), XQ.createElement(TextComponent, {
         dimColor: !0
     }, " · /mcp")), W.map((z, w) => XQ.createElement(j, {
         key: w
-    }, XQ.createElement($, null, "└ ", z.name, " (", z.serverName, "):", " "), XQ.createElement($, {
+    }, XQ.createElement(TextComponent, null, "└ ", z.name, " (", z.serverName, "):", " "), XQ.createElement(TextComponent, {
         dimColor: !0
-    }, z.tokens < 1000 ? `${z.tokens}` : `${(z.tokens/1000).toFixed(1)}k`, " ", "tokens")))), X.length > 0 && XQ.createElement(j, {
+    }, z.tokens < 1000 ? `TextComponent{z.tokens}` : `TextComponent{(z.tokens/1000).toFixed(1)}k`, " ", "tokens")))), X.length > 0 && XQ.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, XQ.createElement(j, null, XQ.createElement($, {
+    }, XQ.createElement(j, null, XQ.createElement(TextComponent, {
         bold: !0
-    }, "Custom agents"), XQ.createElement($, {
+    }, "Custom agents"), XQ.createElement(TextComponent, {
         dimColor: !0
     }, " · /agents")), X.map((z, w) => {
         let N = z.source === "projectSettings" ? "Project" : z.source === "userSettings" ? "User" : z.source === "localSettings" ? "Local" : z.source === "flagSettings" ? "Flag" : z.source === "policySettings" ? "Policy" : z.source === "plugin" ? "Plugin" : z.source === "built-in" ? "Built-in" : String(z.source);
         return XQ.createElement(j, {
             key: w
-        }, XQ.createElement($, null, "└ ", z.agentType, " (", N, "):", " "), XQ.createElement($, {
+        }, XQ.createElement(TextComponent, null, "└ ", z.agentType, " (", N, "):", " "), XQ.createElement(TextComponent, {
             dimColor: !0
-        }, z.tokens < 1000 ? `${z.tokens}` : `${(z.tokens/1000).toFixed(1)}k`, " ", "tokens"))
+        }, z.tokens < 1000 ? `TextComponent{z.tokens}` : `TextComponent{(z.tokens/1000).toFixed(1)}k`, " ", "tokens"))
     })), J.length > 0 && XQ.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, XQ.createElement(j, null, XQ.createElement($, {
+    }, XQ.createElement(j, null, XQ.createElement(TextComponent, {
         bold: !0
-    }, "Memory files"), XQ.createElement($, {
+    }, "Memory files"), XQ.createElement(TextComponent, {
         dimColor: !0
     }, " · /memory")), J.map((z, w) => XQ.createElement(j, {
         key: w
-    }, XQ.createElement($, null, "└ ", z.type, " (", z.path, "):", " "), XQ.createElement($, {
+    }, XQ.createElement(TextComponent, null, "└ ", z.type, " (", z.path, "):", " "), XQ.createElement(TextComponent, {
         dimColor: !0
-    }, z.tokens < 1000 ? `${z.tokens}` : `${(z.tokens/1000).toFixed(1)}k`, " ", "tokens")))), F && F.tokens > 0 && XQ.createElement(j, {
+    }, z.tokens < 1000 ? `TextComponent{z.tokens}` : `TextComponent{(z.tokens/1000).toFixed(1)}k`, " ", "tokens")))), F && F.tokens > 0 && XQ.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, XQ.createElement(j, null, XQ.createElement($, {
+    }, XQ.createElement(j, null, XQ.createElement(TextComponent, {
         bold: !0
-    }, "SlashCommand Tool"), XQ.createElement($, {
+    }, "SlashCommand Tool"), XQ.createElement(TextComponent, {
         dimColor: !0
-    }, " ", "·", " ", F.includedCommands < F.totalCommands ? `${F.includedCommands} of ${F.totalCommands} commands` : `${F.totalCommands} commands`)), XQ.createElement(j, null, XQ.createElement($, null, "└ Total: "), XQ.createElement($, {
+    }, " ", "·", " ", F.includedCommands < F.totalCommands ? `TextComponent{F.includedCommands} of TextComponent{F.totalCommands} commands` : `TextComponent{F.totalCommands} commands`)), XQ.createElement(j, null, XQ.createElement(TextComponent, null, "└ Total: "), XQ.createElement(TextComponent, {
         dimColor: !0
-    }, F.tokens < 1000 ? `${F.tokens}` : `${(F.tokens/1000).toFixed(1)}k`, " ", "tokens"))), V && V.tokens > 0 && !1, K && !1))
+    }, F.tokens < 1000 ? `TextComponent{F.tokens}` : `TextComponent{(F.tokens/1000).toFixed(1)}k`, " ", "tokens"))), V && V.tokens > 0 && !1, K && !1))
 }
 var XQ, VY1 = "Autocompact buffer";
-var nW9 = L(() => {
+var nW9 = lazyLoader(() => {
     hA();
     m8();
-    XQ = GA(VA(), 1)
+    XQ = esmImport(VA(), 1)
 });
 import {
     PassThrough as yS3
@@ -498,13 +501,13 @@ function Va(A) {
     })
 }
 var Jx;
-var ljA = L(() => {
+var ljA = lazyLoader(() => {
     hA();
-    Jx = GA(VA(), 1)
+    Jx = esmImport(VA(), 1)
 });
 
 function yg(A) {
-    return A < 1000 ? `${A}` : `${(A/1000).toFixed(1)}k`
+    return A < 1000 ? `TextComponent{A}` : `TextComponent{(A/1000).toFixed(1)}k`
 }
 
 function bS3(A) {
@@ -523,8 +526,8 @@ function bS3(A) {
     } = A, K = `## Context Usage
 
 `;
-    K += `**Model:** ${I}  
-`, K += `**Tokens:** ${yg(B)} / ${yg(G)} (${Z}%)
+    K += `**Model:** TextComponent{I}  
+`, K += `**Tokens:** TextComponent{yg(B)} / TextComponent{yg(G)} (TextComponent{Z}%)
 
 `;
     let D = Q.filter((H) => H.tokens > 0 && H.name !== "Free space" && H.name !== "Autocompact buffer");
@@ -536,19 +539,19 @@ function bS3(A) {
 `;
         for (let E of D) {
             let z = (E.tokens / G * 100).toFixed(1);
-            K += `| ${E.name} | ${yg(E.tokens)} | ${z}% |
+            K += `| TextComponent{E.name} | TextComponent{yg(E.tokens)} | TextComponent{z}% |
 `
         }
         let H = Q.find((E) => E.name === "Free space");
         if (H && H.tokens > 0) {
             let E = (H.tokens / G * 100).toFixed(1);
-            K += `| Free space | ${yg(H.tokens)} | ${E}% |
+            K += `| Free space | TextComponent{yg(H.tokens)} | TextComponent{E}% |
 `
         }
         let C = Q.find((E) => E.name === "Autocompact buffer");
         if (C && C.tokens > 0) {
             let E = (C.tokens / G * 100).toFixed(1);
-            K += `| Autocompact buffer | ${yg(C.tokens)} | ${E}% |
+            K += `| Autocompact buffer | TextComponent{yg(C.tokens)} | TextComponent{E}% |
 `
         }
         K += `
@@ -560,7 +563,7 @@ function bS3(A) {
 `, K += `| Tool | Server | Tokens |
 `, K += `|------|--------|--------|
 `;
-        for (let H of J) K += `| ${H.name} | ${H.serverName} | ${yg(H.tokens)} |
+        for (let H of J) K += `| TextComponent{H.name} | TextComponent{H.serverName} | TextComponent{yg(H.tokens)} |
 `;
         K += `
 `
@@ -598,7 +601,7 @@ function bS3(A) {
                 default:
                     C = String(H.source)
             }
-            K += `| ${H.agentType} | ${C} | ${yg(H.tokens)} |
+            K += `| TextComponent{H.agentType} | TextComponent{C} | TextComponent{yg(H.tokens)} |
 `
         }
         K += `
@@ -610,27 +613,27 @@ function bS3(A) {
 `, K += `| Type | Path | Tokens |
 `, K += `|------|------|--------|
 `;
-        for (let H of Y) K += `| ${H.type} | ${H.path} | ${yg(H.tokens)} |
+        for (let H of Y) K += `| TextComponent{H.type} | TextComponent{H.path} | TextComponent{yg(H.tokens)} |
 `;
         K += `
 `
     }
     if (X && X.tokens > 0) K += `### SlashCommand Tool
 
-`, K += `**Commands:** ${X.includedCommands<X.totalCommands?`${X.includedCommands} of ${X.totalCommands}`:X.totalCommands}  
-`, K += `**Total tokens:** ${yg(X.tokens)}
+`, K += `**Commands:** TextComponent{X.includedCommands<X.totalCommands?`TextComponent{X.includedCommands} of TextComponent{X.totalCommands}`:X.totalCommands}  
+`, K += `**Total tokens:** TextComponent{yg(X.tokens)}
 
 `;
     return F && F.tokens > 0, K
 }
 var EF0, vS3, aW9;
-var sW9 = L(() => {
+var sW9 = lazyLoader(() => {
     nW9();
     C51();
     ljA();
     N1A();
     nQ();
-    EF0 = GA(VA(), 1), vS3 = {
+    EF0 = esmImport(VA(), 1), vS3 = {
         name: "context",
         description: "Visualize current context usage as a colored grid",
         isEnabled: () => !0,
@@ -671,7 +674,7 @@ var sW9 = L(() => {
     aW9 = vS3
 });
 var fS3, rW9;
-var oW9 = L(() => {
+var oW9 = lazyLoader(() => {
     x_();
     hB();
     zi();
@@ -707,16 +710,16 @@ var oW9 = L(() => {
 var tW9 = () => {};
 
 function KY1() {
-    return ijA.createElement($, {
+    return ijA.createElement(TextComponent, {
         color: "permission"
-    }, "Press ", ijA.createElement($, {
+    }, "Press ", ijA.createElement(TextComponent, {
         bold: !0
     }, "Enter"), " to continue…")
 }
 var ijA;
-var zF0 = L(() => {
+var zF0 = lazyLoader(() => {
     hA();
-    ijA = GA(VA(), 1)
+    ijA = esmImport(VA(), 1)
 });
 
 function eW9(A, Q = {}) {
@@ -727,12 +730,12 @@ function eW9(A, Q = {}) {
         treeCharColors: I = {}
     } = Q, Y = [], J = new WeakSet;
 
-function W(V, K) {
+    function W(V, K) {
         if (!K) return V;
         return tQ(K, Z)(V)
     }
 
-function X(V, K, D, H = 0) {
+    function X(V, K, D, H = 0) {
         if (typeof V === "string") {
             Y.push(K + W(V, I.value));
             return
@@ -792,7 +795,7 @@ function X(V, K, D, H = 0) {
 `)
 }
 var njA;
-var AX9 = L(() => {
+var AX9 = lazyLoader(() => {
     n2();
     hA();
     njA = {
@@ -820,7 +823,7 @@ function hS3(A) {
                 let W = parseInt(J, 10);
                 if (!isNaN(W) && Y === G.length - 1) {
                     let X;
-                    if (typeof B.invalidValue === "string") X = `"${B.invalidValue}"`;
+                    if (typeof B.invalidValue === "string") X = `"TextComponent{B.invalidValue}"`;
                     else if (B.invalidValue === null) X = "null";
                     else if (B.invalidValue === void 0) X = "undefined";
                     else X = String(B.invalidValue);
@@ -848,7 +851,7 @@ function QX9({
         flexDirection: "column",
         marginTop: 1,
         marginBottom: 1
-    }, nW.createElement($, {
+    }, nW.createElement(TextComponent, {
         bold: !0
     }, "Invalid Settings"), G.map((Z) => {
         let I = B[Z] || [];
@@ -861,7 +864,7 @@ function QX9({
             J = new Map;
         I.forEach((X) => {
             if (X.suggestion || X.docLink) {
-                let F = `${X.suggestion||""}|${X.docLink||""}`;
+                let F = `TextComponent{X.suggestion||""}|TextComponent{X.docLink||""}`;
                 if (!J.has(F)) J.set(F, {
                     suggestion: X.suggestion,
                     docLink: X.docLink
@@ -880,32 +883,32 @@ function QX9({
         return nW.createElement(j, {
             key: Z,
             flexDirection: "column"
-        }, nW.createElement($, null, Z), nW.createElement(j, {
+        }, nW.createElement(TextComponent, null, Z), nW.createElement(j, {
             marginLeft: 1
-        }, nW.createElement($, {
+        }, nW.createElement(TextComponent, {
             dimColor: !0
         }, W)), J.size > 0 && nW.createElement(j, {
             flexDirection: "column",
             marginTop: 1
         }, Array.from(J.values()).map((X, F) => nW.createElement(j, {
-            key: `suggestion-pair-${F}`,
+            key: `suggestion-pair-TextComponent{F}`,
             flexDirection: "column",
             marginBottom: 1
-        }, X.suggestion && nW.createElement($, {
+        }, X.suggestion && nW.createElement(TextComponent, {
             dimColor: !0,
             wrap: "wrap"
-        }, X.suggestion), X.docLink && nW.createElement($, {
+        }, X.suggestion), X.docLink && nW.createElement(TextComponent, {
             dimColor: !0,
             wrap: "wrap"
         }, "Learn more: ", X.docLink)))))
     }))
 }
 var nW;
-var BX9 = L(() => {
+var BX9 = lazyLoader(() => {
     hA();
     J3B();
     AX9();
-    nW = GA(VA(), 1)
+    nW = esmImport(VA(), 1)
 });
 
 function UF0({
@@ -916,40 +919,40 @@ function UF0({
     let G = Q.length > 0,
         Z = B.length > 0;
     if (!G && !Z) return null;
-    return DZ.default.createElement(j, {
+    return READ_TOOL_NAME.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, DZ.default.createElement(j, null, (G || Z) && DZ.default.createElement($, {
+    }, READ_TOOL_NAME.default.createElement(j, null, (G || Z) && READ_TOOL_NAME.default.createElement(TextComponent, {
         color: G ? "error" : "warning"
-    }, "[", G ? "Failed to parse" : "Contains warnings", "]", " "), DZ.default.createElement($, null, Gt(A))), DZ.default.createElement(j, null, DZ.default.createElement($, {
+    }, "[", G ? "Failed to parse" : "Contains warnings", "]", " "), READ_TOOL_NAME.default.createElement(TextComponent, null, Gt(A))), READ_TOOL_NAME.default.createElement(j, null, READ_TOOL_NAME.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Location: "), DZ.default.createElement($, {
+    }, "Location: "), READ_TOOL_NAME.default.createElement(TextComponent, {
         dimColor: !0
-    }, mw(A))), DZ.default.createElement(j, {
+    }, mw(A))), READ_TOOL_NAME.default.createElement(j, {
         marginLeft: 1,
         flexDirection: "column"
     }, Q.map((I, Y) => {
         let J = I.mcpErrorMetadata?.serverName;
-        return DZ.default.createElement(j, {
-            key: `error-${Y}`
-        }, DZ.default.createElement($, null, DZ.default.createElement($, {
+        return READ_TOOL_NAME.default.createElement(j, {
+            key: `error-TextComponent{Y}`
+        }, READ_TOOL_NAME.default.createElement(TextComponent, null, READ_TOOL_NAME.default.createElement(TextComponent, {
             dimColor: !0
-        }, "└ "), DZ.default.createElement($, {
+        }, "└ "), READ_TOOL_NAME.default.createElement(TextComponent, {
             color: "error"
-        }, "[Error]"), DZ.default.createElement($, {
+        }, "[Error]"), READ_TOOL_NAME.default.createElement(TextComponent, {
             dimColor: !0
-        }, " ", J && `[${J}] `, I.path && I.path !== "" ? `${I.path}: ` : "", I.message)))
+        }, " ", J && `[TextComponent{J}] `, I.path && I.path !== "" ? `TextComponent{I.path}: ` : "", I.message)))
     }), B.map((I, Y) => {
         let J = I.mcpErrorMetadata?.serverName;
-        return DZ.default.createElement(j, {
-            key: `warning-${Y}`
-        }, DZ.default.createElement($, null, DZ.default.createElement($, {
+        return READ_TOOL_NAME.default.createElement(j, {
+            key: `warning-TextComponent{Y}`
+        }, READ_TOOL_NAME.default.createElement(TextComponent, null, READ_TOOL_NAME.default.createElement(TextComponent, {
             dimColor: !0
-        }, "└ "), DZ.default.createElement($, {
+        }, "└ "), READ_TOOL_NAME.default.createElement(TextComponent, {
             color: "warning"
-        }, "[Warning]"), DZ.default.createElement($, {
+        }, "[Warning]"), READ_TOOL_NAME.default.createElement(TextComponent, {
             dimColor: !0
-        }, " ", J && `[${J}] `, I.path && I.path !== "" ? `${I.path}: ` : "", I.message)))
+        }, " ", J && `[TextComponent{J}] `, I.path && I.path !== "" ? `TextComponent{I.path}: ` : "", I.message)))
     })))
 }
 
@@ -970,39 +973,39 @@ function DY1() {
         I = G.user.length > 0 || G.project.length > 0 || G.local.length > 0,
         Y = Z.user.length > 0 || Z.project.length > 0 || Z.local.length > 0;
     if (!I && !Y) return null;
-    return DZ.default.createElement(j, {
+    return READ_TOOL_NAME.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1,
         marginBottom: 1
-    }, DZ.default.createElement($, {
+    }, READ_TOOL_NAME.default.createElement(TextComponent, {
         bold: !0
-    }, "MCP Config Diagnostics"), DZ.default.createElement(j, {
+    }, "MCP Config Diagnostics"), READ_TOOL_NAME.default.createElement(j, {
         marginTop: 1
-    }, DZ.default.createElement($, {
+    }, READ_TOOL_NAME.default.createElement(TextComponent, {
         dimColor: !0
-    }, "For help configuring MCP servers, see:", " ", DZ.default.createElement(a4, {
-        url: "https://docs.claude.com/en/docs/claude-code/mcp"
-    }, "https://docs.claude.com/en/docs/claude-code/mcp"))), DZ.default.createElement(UF0, {
+    }, "For help configuring MCP servers, see:", " ", READ_TOOL_NAME.default.createElement(a4, {
+        url: "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/mcp"
+    }, "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/mcp"))), READ_TOOL_NAME.default.createElement(UF0, {
         scope: "user",
         parsingErrors: G.user,
         warnings: Z.user
-    }), DZ.default.createElement(UF0, {
+    }), READ_TOOL_NAME.default.createElement(UF0, {
         scope: "project",
         parsingErrors: G.project,
         warnings: Z.project
-    }), DZ.default.createElement(UF0, {
+    }), READ_TOOL_NAME.default.createElement(UF0, {
         scope: "local",
         parsingErrors: G.local,
         warnings: Z.local
     }))
 }
-var DZ;
-var $F0 = L(() => {
+var READ_TOOL_NAME;
+var $F0 = lazyLoader(() => {
     hA();
     GM();
     xX();
     hA();
-    DZ = GA(VA(), 1)
+    READ_TOOL_NAME = esmImport(VA(), 1)
 });
 
 function GX9() {
@@ -1012,47 +1015,44 @@ function GX9() {
         ...Q.validate(process.env[Q.name])
     })).filter((Q) => Q.status !== "valid")
 }
-var ZX9 = L(() => {
+var ZX9 = lazyLoader(() => {
     S0()
 });
-// Async function: gS3
 async function gS3() {
     let A = D1A();
     if (A.length === 0) return null;
-    let Q = A.sort((G, Z) => Z.content.length - G.content.length).map((G) => `${G.path}: ${G.content.length.toLocaleString()} chars`);
+    let Q = A.sort((G, Z) => Z.content.length - G.content.length).map((G) => `TextComponent{G.path}: TextComponent{G.content.length.toLocaleString()} chars`);
     return {
         type: "claudemd_files",
         severity: "warning",
-        message: A.length === 1 ? `Large CLAUDE.md file detected (${A[0].content.length.toLocaleString()} chars > ${zh.toLocaleString()})` : `${A.length} large CLAUDE.md files detected (each > ${zh.toLocaleString()} chars)`,
+        message: A.length === 1 ? `Large CLAUDE.md file detected (TextComponent{A[0].content.length.toLocaleString()} chars > TextComponent{zh.toLocaleString()})` : `TextComponent{A.length} large CLAUDE.md files detected (each > TextComponent{zh.toLocaleString()} chars)`,
         details: Q,
         currentValue: A.length,
         threshold: zh
     }
 }
-
 async function uS3(A) {
     if (!A) return null;
     let Q = DjA(A);
     if (Q <= $QA) return null;
     let B = A.activeAgents.filter((Z) => Z.source !== "built-in").map((Z) => {
-            let I = `${Z.agentType}: ${Z.whenToUse}`;
+            let I = `TextComponent{Z.agentType}: TextComponent{Z.whenToUse}`;
             return {
                 name: Z.agentType,
                 tokens: SG(I)
             }
         }).sort((Z, I) => I.tokens - Z.tokens),
-        G = B.slice(0, 5).map((Z) => `${Z.name}: ~${Z.tokens.toLocaleString()} tokens`);
-    if (B.length > 5) G.push(`(${B.length-5} more custom agents)`);
+        G = B.slice(0, 5).map((Z) => `TextComponent{Z.name}: ~TextComponent{Z.tokens.toLocaleString()} tokens`);
+    if (B.length > 5) G.push(`(TextComponent{B.length-5} more custom agents)`);
     return {
         type: "agent_descriptions",
         severity: "warning",
-        message: `Large agent descriptions (~${Q.toLocaleString()} tokens > ${$QA.toLocaleString()})`,
+        message: `Large agent descriptions (~TextComponent{Q.toLocaleString()} tokens > TextComponent{$QA.toLocaleString()})`,
         details: G,
         currentValue: Q,
         threshold: $QA
     }
 }
-
 async function mS3(A, Q, B) {
     let G = A.filter((Z) => Z.isMcp);
     if (G.length === 0) return null;
@@ -1075,12 +1075,12 @@ async function mS3(A, Q, B) {
             })
         }
         let J = Array.from(Y.entries()).sort((X, F) => F[1].tokens - X[1].tokens),
-            W = J.slice(0, 5).map(([X, F]) => `${X}: ${F.count} tools (~${F.tokens.toLocaleString()} tokens)`);
-        if (J.length > 5) W.push(`(${J.length-5} more servers)`);
+            W = J.slice(0, 5).map(([X, F]) => `TextComponent{X}: TextComponent{F.count} tools (~TextComponent{F.tokens.toLocaleString()} tokens)`);
+        if (J.length > 5) W.push(`(TextComponent{J.length-5} more servers)`);
         return {
             type: "mcp_tools",
             severity: "warning",
-            message: `Large MCP tools context (~${Z.toLocaleString()} tokens > ${IFA.toLocaleString()})`,
+            message: `Large MCP tools context (~TextComponent{Z.toLocaleString()} tokens > TextComponent{IFA.toLocaleString()})`,
             details: W,
             currentValue: Z,
             threshold: IFA
@@ -1094,14 +1094,13 @@ async function mS3(A, Q, B) {
         return {
             type: "mcp_tools",
             severity: "warning",
-            message: `Large MCP tools context (~${I.toLocaleString()} tokens estimated > ${IFA.toLocaleString()})`,
-            details: [`${G.length} MCP tools detected (token count estimated)`],
+            message: `Large MCP tools context (~TextComponent{I.toLocaleString()} tokens estimated > TextComponent{IFA.toLocaleString()})`,
+            details: [`TextComponent{G.length} MCP tools detected (token count estimated)`],
             currentValue: I,
             threshold: IFA
         }
     }
 }
-
 async function IX9(A, Q, B) {
     let [G, Z, I] = await Promise.all([gS3(), uS3(Q), mS3(A, B, Q)]);
     return {
@@ -1111,7 +1110,7 @@ async function IX9(A, Q, B) {
     }
 }
 var IFA = 25000;
-var YX9 = L(() => {
+var YX9 = lazyLoader(() => {
     uE();
     PW0();
     C51();
@@ -1163,7 +1162,7 @@ function HY1({
         }), !Z) return WB.default.createElement(j, {
         paddingX: 1,
         paddingTop: 1
-    }, WB.default.createElement($, {
+    }, WB.default.createElement(TextComponent, {
         dimColor: !0
     }, "Checking installation status…"));
     return WB.default.createElement(j, {
@@ -1173,76 +1172,76 @@ function HY1({
         paddingTop: 1
     }, WB.default.createElement(j, {
         flexDirection: "column"
-    }, WB.default.createElement($, {
+    }, WB.default.createElement(TextComponent, {
         bold: !0
-    }, "Diagnostics"), WB.default.createElement($, null, "└ Currently running: ", Z.installationType, " (", Z.version, ")"), Z.packageManager && WB.default.createElement($, null, "└ Package manager: ", Z.packageManager), WB.default.createElement($, null, "└ Path: ", Z.installationPath), WB.default.createElement($, null, "└ Invoked: ", Z.invokedBinary), WB.default.createElement($, null, "└ Config install method: ", Z.configInstallMethod), WB.default.createElement($, null, "└ Auto-updates:", " ", Z.packageManager ? "Managed by package manager" : Z.autoUpdates), Z.hasUpdatePermissions !== null && WB.default.createElement($, null, "└ Update permissions:", " ", Z.hasUpdatePermissions ? "Yes" : "No (requires sudo)"), WB.default.createElement($, null, "└ Search: ", Z.ripgrepStatus.working ? "OK" : "Not working", " (", Z.ripgrepStatus.mode === "builtin" ? HJ() ? "bundled" : "vendor" : Z.ripgrepStatus.systemPath || "system", ")"), Z.recommendation && WB.default.createElement(WB.default.Fragment, null, WB.default.createElement($, null), WB.default.createElement($, {
+    }, "Diagnostics"), WB.default.createElement(TextComponent, null, "└ Currently running: ", Z.installationType, " (", Z.version, ")"), Z.packageManager && WB.default.createElement(TextComponent, null, "└ Package manager: ", Z.packageManager), WB.default.createElement(TextComponent, null, "└ Path: ", Z.installationPath), WB.default.createElement(TextComponent, null, "└ Invoked: ", Z.invokedBinary), WB.default.createElement(TextComponent, null, "└ Config install method: ", Z.configInstallMethod), WB.default.createElement(TextComponent, null, "└ Auto-updates:", " ", Z.packageManager ? "Managed by package manager" : Z.autoUpdates), Z.hasUpdatePermissions !== null && WB.default.createElement(TextComponent, null, "└ Update permissions:", " ", Z.hasUpdatePermissions ? "Yes" : "No (requires sudo)"), WB.default.createElement(TextComponent, null, "└ Search: ", Z.ripgrepStatus.working ? "OK" : "Not working", " (", Z.ripgrepStatus.mode === "builtin" ? HJ() ? "bundled" : "vendor" : Z.ripgrepStatus.systemPath || "system", ")"), Z.recommendation && WB.default.createElement(WB.default.Fragment, null, WB.default.createElement(TextComponent, null), WB.default.createElement(TextComponent, {
         color: "warning"
     }, "Recommendation: ", Z.recommendation.split(`
-`)[0]), WB.default.createElement($, {
+`)[0]), WB.default.createElement(TextComponent, {
         dimColor: !0
     }, Z.recommendation.split(`
-`)[1])), Z.multipleInstallations.length > 1 && WB.default.createElement(WB.default.Fragment, null, WB.default.createElement($, null), WB.default.createElement($, {
+`)[1])), Z.multipleInstallations.length > 1 && WB.default.createElement(WB.default.Fragment, null, WB.default.createElement(TextComponent, null), WB.default.createElement(TextComponent, {
         color: "warning"
-    }, "Warning: Multiple installations found"), Z.multipleInstallations.map((D, H) => WB.default.createElement($, {
+    }, "Warning: Multiple installations found"), Z.multipleInstallations.map((D, H) => WB.default.createElement(TextComponent, {
         key: H
-    }, "└ ", D.type, " at ", D.path))), Z.warnings.length > 0 && WB.default.createElement(WB.default.Fragment, null, WB.default.createElement($, null), Z.warnings.map((D, H) => WB.default.createElement(j, {
+    }, "└ ", D.type, " at ", D.path))), Z.warnings.length > 0 && WB.default.createElement(WB.default.Fragment, null, WB.default.createElement(TextComponent, null), Z.warnings.map((D, H) => WB.default.createElement(j, {
         key: H,
         flexDirection: "column"
-    }, WB.default.createElement($, {
+    }, WB.default.createElement(TextComponent, {
         color: "warning"
-    }, "Warning: ", D.issue), WB.default.createElement($, null, "Fix: ", D.fix)))), V.length > 0 && WB.default.createElement(WB.default.Fragment, null, WB.default.createElement($, null), WB.default.createElement(QX9, {
+    }, "Warning: ", D.issue), WB.default.createElement(TextComponent, null, "Fix: ", D.fix)))), V.length > 0 && WB.default.createElement(WB.default.Fragment, null, WB.default.createElement(TextComponent, null), WB.default.createElement(QX9, {
         errors: V
     }))), WB.default.createElement(DY1, null), K.length > 0 && WB.default.createElement(j, {
         flexDirection: "column"
-    }, WB.default.createElement($, {
+    }, WB.default.createElement(TextComponent, {
         bold: !0
-    }, "Environment Variables"), K.map((D, H) => WB.default.createElement($, {
+    }, "Environment Variables"), K.map((D, H) => WB.default.createElement(TextComponent, {
         key: H
-    }, "└ ", D.name, ":", " ", WB.default.createElement($, {
+    }, "└ ", D.name, ":", " ", WB.default.createElement(TextComponent, {
         color: D.status === "capped" ? "warning" : "error"
     }, D.message)))), Y?.failedFiles && Y.failedFiles.length > 0 && WB.default.createElement(j, {
         flexDirection: "column"
-    }, WB.default.createElement($, {
+    }, WB.default.createElement(TextComponent, {
         bold: !0,
         color: "error"
-    }, "Agent Parse Errors"), WB.default.createElement($, {
+    }, "Agent Parse Errors"), WB.default.createElement(TextComponent, {
         color: "error"
-    }, "└ Failed to parse ", Y.failedFiles.length, " agent file(s):"), Y.failedFiles.map((D, H) => WB.default.createElement($, {
+    }, "└ Failed to parse ", Y.failedFiles.length, " agent file(s):"), Y.failedFiles.map((D, H) => WB.default.createElement(TextComponent, {
         key: H,
         dimColor: !0
     }, "  ", "└ ", D.path, ": ", D.error))), Q.plugins.errors.length > 0 && WB.default.createElement(j, {
         flexDirection: "column"
-    }, WB.default.createElement($, {
+    }, WB.default.createElement(TextComponent, {
         bold: !0,
         color: "error"
-    }, "Plugin Errors"), WB.default.createElement($, {
+    }, "Plugin Errors"), WB.default.createElement(TextComponent, {
         color: "error"
-    }, "└ ", Q.plugins.errors.length, " plugin error(s) detected:"), Q.plugins.errors.map((D, H) => WB.default.createElement($, {
+    }, "└ ", Q.plugins.errors.length, " plugin error(s) detected:"), Q.plugins.errors.map((D, H) => WB.default.createElement(TextComponent, {
         key: H,
         dimColor: !0
-    }, "  ", "└ ", D.source || "unknown", "plugin" in D && D.plugin ? ` [${D.plugin}]` : "", ":", " ", BM(D)))), W && (W.claudeMdWarning || W.agentWarning || W.mcpWarning) && WB.default.createElement(j, {
+    }, "  ", "└ ", D.source || "unknown", "plugin" in D && D.plugin ? ` [TextComponent{D.plugin}]` : "", ":", " ", BM(D)))), W && (W.claudeMdWarning || W.agentWarning || W.mcpWarning) && WB.default.createElement(j, {
         flexDirection: "column"
-    }, WB.default.createElement($, {
+    }, WB.default.createElement(TextComponent, {
         bold: !0
-    }, "Context Usage Warnings"), W.claudeMdWarning && WB.default.createElement(WB.default.Fragment, null, WB.default.createElement($, null, "└", " ", WB.default.createElement($, {
+    }, "Context Usage Warnings"), W.claudeMdWarning && WB.default.createElement(WB.default.Fragment, null, WB.default.createElement(TextComponent, null, "└", " ", WB.default.createElement(TextComponent, {
         color: "warning"
-    }, V1.warning, " ", W.claudeMdWarning.message)), WB.default.createElement($, null, "  ", "└ Files:"), W.claudeMdWarning.details.map((D, H) => WB.default.createElement($, {
+    }, V1.warning, " ", W.claudeMdWarning.message)), WB.default.createElement(TextComponent, null, "  ", "└ Files:"), W.claudeMdWarning.details.map((D, H) => WB.default.createElement(TextComponent, {
         key: H,
         dimColor: !0
-    }, "    ", "└ ", D))), W.agentWarning && WB.default.createElement(WB.default.Fragment, null, WB.default.createElement($, null, "└", " ", WB.default.createElement($, {
+    }, "    ", "└ ", D))), W.agentWarning && WB.default.createElement(WB.default.Fragment, null, WB.default.createElement(TextComponent, null, "└", " ", WB.default.createElement(TextComponent, {
         color: "warning"
-    }, V1.warning, " ", W.agentWarning.message)), WB.default.createElement($, null, "  ", "└ Top contributors:"), W.agentWarning.details.map((D, H) => WB.default.createElement($, {
+    }, V1.warning, " ", W.agentWarning.message)), WB.default.createElement(TextComponent, null, "  ", "└ Top contributors:"), W.agentWarning.details.map((D, H) => WB.default.createElement(TextComponent, {
         key: H,
         dimColor: !0
-    }, "    ", "└ ", D))), W.mcpWarning && WB.default.createElement(WB.default.Fragment, null, WB.default.createElement($, null, "└", " ", WB.default.createElement($, {
+    }, "    ", "└ ", D))), W.mcpWarning && WB.default.createElement(WB.default.Fragment, null, WB.default.createElement(TextComponent, null, "└", " ", WB.default.createElement(TextComponent, {
         color: "warning"
-    }, V1.warning, " ", W.mcpWarning.message)), WB.default.createElement($, null, "  ", "└ MCP servers:"), W.mcpWarning.details.map((D, H) => WB.default.createElement($, {
+    }, V1.warning, " ", W.mcpWarning.message)), WB.default.createElement(TextComponent, null, "  ", "└ MCP servers:"), W.mcpWarning.details.map((D, H) => WB.default.createElement(TextComponent, {
         key: H,
         dimColor: !0
     }, "    ", "└ ", D)))), WB.default.createElement(j, null, WB.default.createElement(KY1, null)))
 }
 var WB;
-var wF0 = L(() => {
+var wF0 = lazyLoader(() => {
     hA();
     n2();
     Ih();
@@ -1256,12 +1255,12 @@ var wF0 = L(() => {
     ZX9();
     YX9();
     H9();
-    WB = GA(VA(), 1)
+    WB = esmImport(VA(), 1)
 });
 var WX9, dS3, XX9;
-var FX9 = L(() => {
+var FX9 = lazyLoader(() => {
     wF0();
-    WX9 = GA(VA(), 1), dS3 = {
+    WX9 = esmImport(VA(), 1), dS3 = {
         name: "doctor",
         description: "Diagnose and verify your Claude Code installation and settings",
         isEnabled: () => !process.env.DISABLE_DOCTOR_COMMAND,
@@ -1277,17 +1276,17 @@ var FX9 = L(() => {
         }
     }, XX9 = dS3
 });
-var qF0 = L(() => {
+var qF0 = lazyLoader(() => {
     hQ()
 });
-var NF0 = L(() => {
+var NF0 = lazyLoader(() => {
     vzA();
     D0();
     o0();
     bzA();
     qF0()
 });
-var LF0 = L(() => {
+var LF0 = lazyLoader(() => {
     vzA();
     D0();
     u1();
@@ -1299,29 +1298,29 @@ var LF0 = L(() => {
     NF0()
 });
 var lS3;
-var VX9 = L(() => {
+var VX9 = lazyLoader(() => {
     hA();
     T6();
     c9();
     hA();
-    lS3 = GA(VA(), 1)
+    lS3 = esmImport(VA(), 1)
 });
 var KX9;
-var DX9 = L(() => {
+var DX9 = lazyLoader(() => {
     hA();
-    KX9 = GA(VA(), 1)
+    KX9 = esmImport(VA(), 1)
 });
 var MF0;
-var HX9 = L(() => {
+var HX9 = lazyLoader(() => {
     hA();
     QY();
     zI();
     NF0();
     D0();
-    MF0 = GA(VA(), 1)
+    MF0 = esmImport(VA(), 1)
 });
 var CY1;
-var CX9 = L(() => {
+var CX9 = lazyLoader(() => {
     hA();
     zI();
     LF0();
@@ -1329,10 +1328,10 @@ var CX9 = L(() => {
     DX9();
     HX9();
     D0();
-    CY1 = GA(VA(), 1)
+    CY1 = esmImport(VA(), 1)
 });
 var OF0;
-var EX9 = L(() => {
+var EX9 = lazyLoader(() => {
     hA();
     zI();
     LF0();
@@ -1340,7 +1339,7 @@ var EX9 = L(() => {
     o0();
     jI();
     CX9();
-    OF0 = GA(VA(), 1)
+    OF0 = esmImport(VA(), 1)
 });
 
 function nS3({
@@ -1366,15 +1365,15 @@ function nS3({
                 F = "";
             if (process.env.VISUAL) X = "$VISUAL", F = process.env.VISUAL;
             else if (process.env.EDITOR) X = "$EDITOR", F = process.env.EDITOR;
-            let V = X !== "default" ? `Using ${X}="${F}".` : "",
-                K = V ? `> ${V} To change editor, set $EDITOR or $VISUAL environment variable.` : "> To use a different editor, set the $EDITOR or $VISUAL environment variable.";
-            A(`Opened memory file at ${dX0(W)}
+            let V = X !== "default" ? `Using TextComponent{X}="TextComponent{F}".` : "",
+                K = V ? `> TextComponent{V} To change editor, set $EDITOR or $VISUAL environment variable.` : "> To use a different editor, set the $EDITOR or $VISUAL environment variable.";
+            A(`Opened memory file at TextComponent{dX0(W)}
 
-${K}`, {
+TextComponent{K}`, {
                 display: "system"
             })
         } catch (X) {
-            e(X instanceof Error ? X : Error(String(X))), A(`Error opening memory file: ${X}`)
+            e(X instanceof Error ? X : Error(String(X))), A(`Error opening memory file: TextComponent{X}`)
         }
     }, G = () => {
         A("Cancelled memory editing", {
@@ -1386,10 +1385,10 @@ ${K}`, {
     }, AN.createElement(j, {
         marginTop: 1,
         marginBottom: 1
-    }, AN.createElement($, {
+    }, AN.createElement(TextComponent, {
         dimColor: !0
     }, "Learn more:", " ", AN.createElement(a4, {
-        url: "https://docs.claude.com/en/docs/claude-code/memory"
+        url: "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/memory"
     }))), !1, !1, !1, !Y && AN.createElement(TZ1, {
         title: "Select memory to edit:",
         onSelect: B,
@@ -1397,7 +1396,7 @@ ${K}`, {
     }))
 }
 var AN, RF0, iS3, zX9;
-var UX9 = L(() => {
+var UX9 = lazyLoader(() => {
     hQ();
     u1();
     vn();
@@ -1408,7 +1407,7 @@ var UX9 = L(() => {
     hA();
     uE();
     m8();
-    AN = GA(VA(), 1), RF0 = GA(VA(), 1), iS3 = {
+    AN = esmImport(VA(), 1), RF0 = esmImport(VA(), 1), iS3 = {
         type: "local-jsx",
         name: "memory",
         description: "Edit Claude memory files",
@@ -1435,19 +1434,19 @@ function $X9({
         flexDirection: "column",
         paddingY: 1,
         gap: 1
-    }, Qz.createElement(j, null, Qz.createElement($, null, "Claude understands your codebase, makes edits with your permission, and executes commands — right from your terminal.")), Qz.createElement(j, {
+    }, Qz.createElement(j, null, Qz.createElement(TextComponent, null, "Claude understands your codebase, makes edits with your permission, and executes commands — right from your terminal.")), Qz.createElement(j, {
         flexDirection: "column"
-    }, Qz.createElement(j, null, Qz.createElement($, {
+    }, Qz.createElement(j, null, Qz.createElement(TextComponent, {
         bold: !0
     }, "Shortcuts")), Qz.createElement(OZ1, {
         gap: 2
     })))
 }
 var Qz;
-var wX9 = L(() => {
+var wX9 = lazyLoader(() => {
     hA();
     zJ0();
-    Qz = GA(VA(), 1)
+    Qz = esmImport(VA(), 1)
 });
 
 function TF0({
@@ -1459,16 +1458,16 @@ function TF0({
 }) {
     let I = Math.max(1, Q - 8),
         Y = qX9.useMemo(() => [...A].sort((J, W) => J.name.localeCompare(W.name)).map((J) => ({
-            label: `/${J.name}`,
+            label: `/TextComponent{J.name}`,
             value: J.name,
             description: J.description
         })), [A]);
     return MC.createElement(j, {
         flexDirection: "column",
         paddingY: 1
-    }, A.length === 0 && Z ? MC.createElement($, {
+    }, A.length === 0 && Z ? MC.createElement(TextComponent, {
         dimColor: !0
-    }, Z) : MC.createElement(MC.Fragment, null, MC.createElement($, null, B), MC.createElement(j, {
+    }, Z) : MC.createElement(MC.Fragment, null, MC.createElement(TextComponent, null, B), MC.createElement(j, {
         marginTop: 1
     }, MC.createElement(M0, {
         options: Y,
@@ -1479,10 +1478,10 @@ function TF0({
     }))))
 }
 var MC, qX9;
-var NX9 = L(() => {
+var NX9 = lazyLoader(() => {
     hA();
     T5();
-    MC = GA(VA(), 1), qX9 = GA(VA(), 1)
+    MC = esmImport(VA(), 1), qX9 = esmImport(VA(), 1)
 });
 
 function LX9({

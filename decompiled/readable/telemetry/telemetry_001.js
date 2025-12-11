@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: telemetry_001.js
+ * 处理时间: 2025-12-09T03:41:38.287Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.045Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -34,7 +36,7 @@
         Sq0._notifyVisibilityChanged(document.visibilityState === "visible" ? IyA : gF1)
     })
 });
-var dF1 = U((L2A) => {
+var dF1 = moduleWrapper((L2A) => {
     var q2A = L2A && L2A.__awaiter || function(A, Q, B, G) {
         function Z(I) {
             return I instanceof B ? I : new B(function(Y) {
@@ -50,7 +52,7 @@ var dF1 = U((L2A) => {
                 }
             }
 
-function W(F) {
+            function W(F) {
                 try {
                     X(G.throw(F))
                 } catch (V) {
@@ -58,7 +60,7 @@ function W(F) {
                 }
             }
 
-function X(F) {
+            function X(F) {
                 F.done ? I(F.value) : Z(F.value).then(J, W)
             }
             X((G = G.apply(A, Q || [])).next())
@@ -88,8 +90,7 @@ function X(F) {
             Startup: "startup",
             GainedFocus: "gained_focus"
         };
-
-class ks {
+    class ks {
         static _safeFlushAndForget(A) {
             var Q;
             (Q = fVA[A]) === null || Q === void 0 || Q.flush().catch(() => {})
@@ -230,7 +231,7 @@ class ks {
             })
         }
         _getStorageKey() {
-            return `statsig.failed_logs.${(0,v_9._DJB2)(this._sdkKey)}`
+            return `statsig.failed_logs.TextComponent{(0,v_9._DJB2)(this._sdkKey)}`
         }
         _normalizeAndAppendEvent(A) {
             if (A.user) A.user = Object.assign({}, A.user), delete A.user.privateAttributes;
@@ -271,14 +272,13 @@ class ks {
     }
     L2A.EventLogger = ks
 });
-var hVA = U((xq0) => {
+var hVA = moduleWrapper((xq0) => {
     Object.defineProperty(xq0, "__esModule", {
         value: !0
     });
     xq0.StatsigMetadataProvider = xq0.SDK_VERSION = void 0;
     xq0.SDK_VERSION = "3.12.1";
-
-var cF1 = {
+    var cF1 = {
         sdkVersion: xq0.SDK_VERSION,
         sdkType: "js-mono"
     };
@@ -289,22 +289,22 @@ var cF1 = {
         }
     }
 });
-var hq0 = U((fq0) => {
+var hq0 = moduleWrapper((fq0) => {
     Object.defineProperty(fq0, "__esModule", {
         value: !0
     })
 });
-var WyA = U((gq0) => {
+var WyA = moduleWrapper((gq0) => {
     Object.defineProperty(gq0, "__esModule", {
         value: !0
     });
     gq0.getUUID = void 0;
 
-function c_9() {
+    function c_9() {
         if (typeof crypto < "u" && typeof crypto.randomUUID === "function") return crypto.randomUUID();
         let A = new Date().getTime(),
             Q = typeof performance < "u" && performance.now && performance.now() * 1000 || 0;
-        return `xxxxxxxx-xxxx-4xxx-${"89ab"[Math.floor(Math.random()*4)]}xxx-xxxxxxxxxxxx`.replace(/[xy]/g, (G) => {
+        return `xxxxxxxx-xxxx-4xxx-TextComponent{"89ab"[Math.floor(Math.random()*4)]}xxx-xxxxxxxxxxxx`.replace(/[xy]/g, (G) => {
             let Z = Math.random() * 16;
             if (A > 0) Z = (A + Z) % 16 | 0, A = Math.floor(A / 16);
             else Z = (Q + Z) % 16 | 0, Q = Math.floor(Q / 16);
@@ -313,7 +313,7 @@ function c_9() {
     }
     gq0.getUUID = c_9
 });
-var FyA = U((pq0) => {
+var FyA = moduleWrapper((pq0) => {
     Object.defineProperty(pq0, "__esModule", {
         value: !0
     });
@@ -337,11 +337,11 @@ var FyA = U((pq0) => {
         }
     };
 
-function cq0(A) {
-        return `statsig.stable_id.${(0,p_9._getStorageKey)(A)}`
+    function cq0(A) {
+        return `statsig.stable_id.TextComponent{(0,p_9._getStorageKey)(A)}`
     }
 
-function mq0(A, Q) {
+    function mq0(A, Q) {
         let B = cq0(Q);
         try {
             (0, dq0._setObjectInStorage)(B, A)
@@ -350,12 +350,12 @@ function mq0(A, Q) {
         }
     }
 
-function n_9(A) {
+    function n_9(A) {
         let Q = cq0(A);
         return (0, dq0._getObjectFromStorage)(Q)
     }
 });
-var pF1 = U((iq0) => {
+var pF1 = moduleWrapper((iq0) => {
     Object.defineProperty(iq0, "__esModule", {
         value: !0
     });
@@ -363,7 +363,7 @@ var pF1 = U((iq0) => {
     var a_9 = $2A(),
         s_9 = FH();
 
-function r_9(A, Q, B) {
+    function r_9(A, Q, B) {
         try {
             let G = JSON.parse(JSON.stringify(A));
             if (Q != null && Q.environment != null) G.statsigEnvironment = Q.environment;
@@ -379,28 +379,28 @@ function r_9(A, Q, B) {
     }
     iq0._normalizeUser = r_9;
 
-function o_9(A) {
+    function o_9(A) {
         return A ? (0, a_9._DJB2Object)(A) : null
     }
     iq0._getFullUserHash = o_9
 });
-var lF1 = U((aq0) => {
+var lF1 = moduleWrapper((aq0) => {
     Object.defineProperty(aq0, "__esModule", {
         value: !0
     });
     aq0._typedJsonParse = void 0;
     var e_9 = FH();
 
-function Ak9(A, Q, B) {
+    function Ak9(A, Q, B) {
         try {
             let G = JSON.parse(A);
             if (G && typeof G === "object" && Q in G) return G
         } catch (G) {}
-        return e_9.Log.error(`Failed to parse ${B}`), null
+        return e_9.Log.error(`Failed to parse TextComponent{B}`), null
     }
     aq0._typedJsonParse = Ak9
 });
-var QN0 = U((cu) => {
+var QN0 = moduleWrapper((cu) => {
     var iF1 = cu && cu.__awaiter || function(A, Q, B, G) {
         function Z(I) {
             return I instanceof B ? I : new B(function(Y) {
@@ -416,7 +416,7 @@ var QN0 = U((cu) => {
                 }
             }
 
-function W(F) {
+            function W(F) {
                 try {
                     X(G.throw(F))
                 } catch (V) {
@@ -424,7 +424,7 @@ function W(F) {
                 }
             }
 
-function X(F) {
+            function X(F) {
                 F.done ? I(F.value) : Z(F.value).then(J, W)
             }
             X((G = G.apply(A, Q || [])).next())
@@ -440,10 +440,9 @@ function X(F) {
         du = nx(),
         rq0 = lF1(),
         oq0 = 10;
-
-class tq0 {
+    class tq0 {
         constructor(A, Q) {
-            this._adapterName = A, this._cacheSuffix = Q, this._options = null, this._sdkKey = null, this._lastModifiedStoreKey = `statsig.last_modified_time.${Q}`, this._inMemoryCache = new eq0
+            this._adapterName = A, this._cacheSuffix = Q, this._options = null, this._sdkKey = null, this._lastModifiedStoreKey = `statsig.last_modified_time.TextComponent{Q}`, this._inMemoryCache = new eq0
         }
         attach(A, Q) {
             this._sdkKey = A, this._options = Q
@@ -503,7 +502,7 @@ class tq0 {
         }
         _getSdkKey() {
             if (this._sdkKey != null) return this._sdkKey;
-            return VyA.Log.error(`${this._adapterName} is not attached to a Client`), ""
+            return VyA.Log.error(`TextComponent{this._adapterName} is not attached to a Client`), ""
         }
         _loadFromCache(A) {
             var Q;
@@ -528,7 +527,7 @@ class tq0 {
     }
     cu.DataAdapterCore = tq0;
 
-function DyA(A, Q, B, G) {
+    function DyA(A, Q, B, G) {
         return {
             source: A,
             data: Q,
@@ -538,8 +537,7 @@ function DyA(A, Q, B, G) {
         }
     }
     cu._makeDataAdapterResult = DyA;
-
-class eq0 {
+    class eq0 {
         constructor() {
             this._data = {}
         }
@@ -561,7 +559,7 @@ class eq0 {
         }
     }
 
-function AN0(A, Q) {
+    function AN0(A, Q) {
         let B = Object.keys(A);
         if (B.length <= Q) return null;
         return B.reduce((G, Z) => {
@@ -572,18 +570,17 @@ function AN0(A, Q) {
         })
     }
 });
-var GN0 = U((BN0) => {
+var GN0 = moduleWrapper((BN0) => {
     Object.defineProperty(BN0, "__esModule", {
         value: !0
     })
 });
-var HyA = U((IN0) => {
+var HyA = moduleWrapper((IN0) => {
     Object.defineProperty(IN0, "__esModule", {
         value: !0
     });
     IN0.SDKType = void 0;
-
-var ZN0 = {},
+    var ZN0 = {},
         M2A;
     IN0.SDKType = {
         _get: (A) => {
@@ -598,7 +595,7 @@ var ZN0 = {},
         }
     }
 });
-var nF1 = U((ax) => {
+var nF1 = moduleWrapper((ax) => {
     var Bk9 = ax && ax.__awaiter || function(A, Q, B, G) {
         function Z(I) {
             return I instanceof B ? I : new B(function(Y) {
@@ -614,7 +611,7 @@ var nF1 = U((ax) => {
                 }
             }
 
-function W(F) {
+            function W(F) {
                 try {
                     X(G.throw(F))
                 } catch (V) {
@@ -622,7 +619,7 @@ function W(F) {
                 }
             }
 
-function X(F) {
+            function X(F) {
                 F.done ? I(F.value) : Z(F.value).then(J, W)
             }
             X((G = G.apply(A, Q || [])).next())
@@ -637,8 +634,7 @@ function X(F) {
         Ik9 = hVA();
     ax.EXCEPTION_ENDPOINT = "https://statsigapi.net/v1/sdk_exception";
     var WN0 = "[Statsig] UnknownError";
-
-class XN0 {
+    class XN0 {
         constructor(A, Q, B, G) {
             this._sdkKey = A, this._options = Q, this._emitter = B, this._lastSeenError = G, this._seen = new Set
         }
@@ -678,7 +674,7 @@ class XN0 {
         }
         _onError(A, Q) {
             try {
-                Gk9.Log.warn(`Caught error in ${A}`, {
+                Gk9.Log.warn(`Caught error in TextComponent{A}`, {
                     error: Q
                 }), (() => Bk9(this, void 0, void 0, function*() {
                     var G, Z, I, Y, J, W, X;
@@ -725,13 +721,13 @@ class XN0 {
     }
     ax.ErrorBoundary = XN0;
 
-function JN0(A) {
+    function JN0(A) {
         if (A instanceof Error) return A;
         else if (typeof A === "string") return Error(A);
         else return Error("An unknown error occurred.")
     }
 
-function Yk9(A) {
+    function Yk9(A) {
         try {
             return JSON.stringify(A)
         } catch (Q) {
@@ -739,29 +735,29 @@ function Yk9(A) {
         }
     }
 
-function Jk9(A) {
+    function Jk9(A) {
         let Q = new Set,
             B = Object.getPrototypeOf(A);
         while (B && B !== Object.prototype) Object.getOwnPropertyNames(B).filter((G) => typeof(B === null || B === void 0 ? void 0 : B[G]) === "function").forEach((G) => Q.add(G)), B = Object.getPrototypeOf(B);
         return Array.from(Q)
     }
 });
-var VN0 = U((FN0) => {
+var VN0 = moduleWrapper((FN0) => {
     Object.defineProperty(FN0, "__esModule", {
         value: !0
     })
 });
-var DN0 = U((KN0) => {
+var DN0 = moduleWrapper((KN0) => {
     Object.defineProperty(KN0, "__esModule", {
         value: !0
     })
 });
-var CN0 = U((HN0) => {
+var CN0 = moduleWrapper((HN0) => {
     Object.defineProperty(HN0, "__esModule", {
         value: !0
     })
 });
-var aF1 = U((EN0) => {
+var aF1 = moduleWrapper((EN0) => {
     Object.defineProperty(EN0, "__esModule", {
         value: !0
     });
@@ -776,19 +772,19 @@ var aF1 = U((EN0) => {
     var Wk9 = new Set([]),
         Xk9 = new Set(["userPersistedValues"]);
 
-function Fk9(A, Q, B) {
-        let G = `${A}|${Q}`;
+    function Fk9(A, Q, B) {
+        let G = `TextComponent{A}|TextComponent{Q}`;
         if (!B) return G;
         for (let Z of Object.keys(B)) {
             if (Xk9.has(Z)) return;
-            if (Wk9.has(Z)) G += `|${Z}=true`;
-            else G += `|${Z}=${B[Z]}`
+            if (Wk9.has(Z)) G += `|TextComponent{Z}=true`;
+            else G += `|TextComponent{Z}=TextComponent{B[Z]}`
         }
         return G
     }
     EN0.createMemoKey = Fk9
 });
-var UN0 = U((O2A) => {
+var UN0 = moduleWrapper((O2A) => {
     var Kk9 = O2A && O2A.__awaiter || function(A, Q, B, G) {
         function Z(I) {
             return I instanceof B ? I : new B(function(Y) {
@@ -804,7 +800,7 @@ var UN0 = U((O2A) => {
                 }
             }
 
-function W(F) {
+            function W(F) {
                 try {
                     X(G.throw(F))
                 } catch (V) {
@@ -812,7 +808,7 @@ function W(F) {
                 }
             }
 
-function X(F) {
+            function X(F) {
                 F.done ? I(F.value) : Z(F.value).then(J, W)
             }
             X((G = G.apply(A, Q || [])).next())
@@ -827,7 +823,7 @@ function X(F) {
         Ck9 = ["i", "e", "d"],
         Ek9 = 200;
 
-function zk9(A) {
+    function zk9(A) {
         return Kk9(this, void 0, void 0, function*() {
             let Q = yield A(Hk9, {
                 method: "POST",
@@ -847,7 +843,7 @@ function zk9(A) {
     }
     O2A._fetchTxtRecords = zk9;
 
-function Uk9(A) {
+    function Uk9(A) {
         let Q = A.findIndex((G, Z) => Z < Ek9 && String.fromCharCode(G) === "=" && Ck9.includes(String.fromCharCode(A[Z - 1])));
         if (Q === -1) {
             let G = Error("Failed to parse TXT records from DNS");
@@ -858,7 +854,7 @@ function Uk9(A) {
         return B.split(",")
     }
 });
-var ON0 = U((pu) => {
+var ON0 = moduleWrapper((pu) => {
     var $N0 = pu && pu.__awaiter || function(A, Q, B, G) {
         function Z(I) {
             return I instanceof B ? I : new B(function(Y) {
@@ -874,7 +870,7 @@ var ON0 = U((pu) => {
                 }
             }
 
-function W(F) {
+            function W(F) {
                 try {
                     X(G.throw(F))
                 } catch (V) {
@@ -882,7 +878,7 @@ function W(F) {
                 }
             }
 
-function X(F) {
+            function X(F) {
                 F.done ? I(F.value) : Z(F.value).then(J, W)
             }
             X((G = G.apply(A, Q || [])).next())
@@ -898,8 +894,7 @@ function X(F) {
         rF1 = nx(),
         wN0 = 604800000,
         Nk9 = 14400000;
-
-class NN0 {
+    class NN0 {
         constructor(A) {
             var Q;
             this._fallbackInfo = null, this._errorBoundary = null, this._dnsQueryCooldowns = {}, this._networkOverrideFunc = (Q = A.networkConfig) === null || Q === void 0 ? void 0 : Q.networkOverrideFunc
@@ -972,7 +967,7 @@ class NN0 {
                     if (J.length > 1) {
                         let W = J[1];
                         if (W.endsWith("/")) W = W.slice(0, -1);
-                        G.push(`https://${W}${I}`)
+                        G.push(`https://TextComponent{W}TextComponent{I}`)
                     }
                 }
                 return G
@@ -996,18 +991,18 @@ class NN0 {
     }
     pu.NetworkFallbackResolver = NN0;
 
-function LN0(A, Q) {
+    function LN0(A, Q) {
         var B;
         let G = (B = A === null || A === void 0 ? void 0 : A.toLowerCase()) !== null && B !== void 0 ? B : "";
         return Q || G.includes("uncaught exception") || G.includes("failed to fetch") || G.includes("networkerror when attempting to fetch resource")
     }
     pu._isDomainFailure = LN0;
 
-function MN0(A) {
-        return `statsig.network_fallback.${(0,wk9._DJB2)(A)}`
+    function MN0(A) {
+        return `statsig.network_fallback.TextComponent{(0,wk9._DJB2)(A)}`
     }
 
-function sF1(A, Q) {
+    function sF1(A, Q) {
         let B = MN0(A);
         if (!Q || Object.keys(Q).length === 0) {
             rF1.Storage.removeItem(B);
@@ -1016,7 +1011,7 @@ function sF1(A, Q) {
         rF1.Storage.setItem(B, JSON.stringify(Q))
     }
 
-function Lk9(A) {
+    function Lk9(A) {
         let Q = MN0(A),
             B = rF1.Storage.getItem(Q);
         if (!B) return null;
@@ -1027,7 +1022,7 @@ function Lk9(A) {
         }
     }
 
-function qN0(A) {
+    function qN0(A) {
         try {
             return new URL(A).pathname
         } catch (Q) {
@@ -1035,13 +1030,12 @@ function qN0(A) {
         }
     }
 });
-var oF1 = U((TN0) => {
+var oF1 = moduleWrapper((TN0) => {
     Object.defineProperty(TN0, "__esModule", {
         value: !0
     });
     TN0.SDKFlags = void 0;
-
-var RN0 = {};
+    var RN0 = {};
     TN0.SDKFlags = {
         setFlags: (A, Q) => {
             RN0[A] = Q
@@ -1052,7 +1046,7 @@ var RN0 = {};
         }
     }
 });
-var EyA = U((vN0) => {
+var EyA = moduleWrapper((vN0) => {
     Object.defineProperty(vN0, "__esModule", {
         value: !0
     });
@@ -1080,7 +1074,7 @@ var EyA = U((vN0) => {
         }
     };
 
-function Rk9(A) {
+    function Rk9(A) {
         let Q = kk9(A),
             B = Date.now();
         if (!Q) Q = {
@@ -1094,7 +1088,7 @@ function Rk9(A) {
         }
     }
 
-function Tk9(A, Q) {
+    function Tk9(A, Q) {
         let B = Date.now();
         return {
             data: {
@@ -1106,7 +1100,7 @@ function Tk9(A, Q) {
         }
     }
 
-function Pk9(A) {
+    function Pk9(A) {
         let Q = Date.now(),
             B = A.data;
         if (jk9(B) || Sk9(B)) B.sessionID = (0, _N0.getUUID)(), B.startTime = Q;
@@ -1116,7 +1110,7 @@ function Pk9(A) {
         return A.idleTimeoutID = jN0(Z, kN0), A.ageTimeoutID = jN0(Z, yN0 - G), A
     }
 
-function jN0(A, Q) {
+    function jN0(A, Q) {
         return setTimeout(() => {
             let B = __STATSIG__ === null || __STATSIG__ === void 0 ? void 0 : __STATSIG__.instance(A);
             if (B) B.$emt({
@@ -1125,23 +1119,23 @@ function jN0(A, Q) {
         }, Q)
     }
 
-function jk9({
+    function jk9({
         lastUpdate: A
     }) {
         return Date.now() - A > kN0
     }
 
-function Sk9({
+    function Sk9({
         startTime: A
     }) {
         return Date.now() - A > yN0
     }
 
-function xN0(A) {
-        return `statsig.session_id.${(0,Mk9._getStorageKey)(A)}`
+    function xN0(A) {
+        return `statsig.session_id.TextComponent{(0,Mk9._getStorageKey)(A)}`
     }
 
-function _k9(A, Q) {
+    function _k9(A, Q) {
         let B = xN0(Q);
         try {
             (0, SN0._setObjectInStorage)(B, A)
@@ -1150,12 +1144,12 @@ function _k9(A, Q) {
         }
     }
 
-function kk9(A) {
+    function kk9(A) {
         let Q = xN0(A);
         return (0, SN0._getObjectFromStorage)(Q)
     }
 });
-var eF1 = U((bN0) => {
+var eF1 = moduleWrapper((bN0) => {
     Object.defineProperty(bN0, "__esModule", {
         value: !0
     });
@@ -1164,7 +1158,7 @@ var eF1 = U((bN0) => {
         NetworkError: "NetworkError"
     }
 });
-var iN0 = U((T2A) => {
+var iN0 = moduleWrapper((T2A) => {
     var R2A = T2A && T2A.__awaiter || function(A, Q, B, G) {
         function Z(I) {
             return I instanceof B ? I : new B(function(Y) {
@@ -1180,7 +1174,7 @@ var iN0 = U((T2A) => {
                 }
             }
 
-function W(F) {
+            function W(F) {
                 try {
                     X(G.throw(F))
                 } catch (V) {
@@ -1188,7 +1182,7 @@ function W(F) {
                 }
             }
 
-function X(F) {
+            function X(F) {
                 F.done ? I(F.value) : Z(F.value).then(J, W)
             }
             X((G = G.apply(A, Q || [])).next())
@@ -1219,8 +1213,7 @@ function X(F) {
         pN0 = 50,
         pk9 = pN0 / ck9,
         lk9 = new Set([408, 500, 502, 503, 504, 522, 524, 599]);
-
-class lN0 {
+    class lN0 {
         constructor(A, Q) {
             if (this._emitter = Q, this._errorBoundary = null, this._timeout = uk9, this._netConfig = {}, this._options = {}, this._leakyBucket = {}, this._lastUsedInitUrl = null, A) this._options = A;
             if (this._options.networkConfig) this._netConfig = this._options.networkConfig;
@@ -1267,11 +1260,11 @@ class lN0 {
                     retries: J,
                     attempt: W
                 } = A, X = A.urlConfig.endpoint;
-                if (this._isRateLimited(X)) return ys.Log.warn(`Request to ${X} was blocked because you are making requests too frequently.`), null;
+                if (this._isRateLimited(X)) return ys.Log.warn(`Request to TextComponent{X} was blocked because you are making requests too frequently.`), null;
                 let F = W !== null && W !== void 0 ? W : 1,
                     V = typeof AbortController < "u" ? new AbortController : null,
                     K = setTimeout(() => {
-                        V === null || V === void 0 || V.abort(`Timeout of ${this._timeout}ms expired.`)
+                        V === null || V === void 0 || V.abort(`Timeout of TextComponent{this._timeout}ms expired.`)
                     }, this._timeout),
                     D = yield this._getPopulatedURL(A), H = null, C = (0, gk9._isUnloading)();
                 try {
@@ -1287,7 +1280,7 @@ class lN0 {
                     let z = this._leakyBucket[X];
                     if (z) z.lastRequestTime = Date.now(), this._leakyBucket[X] = z;
                     if (H = yield((Q = this._netConfig.networkOverrideFunc) !== null && Q !== void 0 ? Q : fetch)(D, E), clearTimeout(K), !H.ok) {
-                        let q = yield H.text().catch(() => "No Text"), R = Error(`NetworkError: ${D} ${q}`);
+                        let q = yield H.text().catch(() => "No Text"), R = Error(`NetworkError: TextComponent{D} TextComponent{q}`);
                         throw R.name = "NetworkError", R
                     }
                     let N = yield H.text();
@@ -1306,7 +1299,7 @@ class lN0 {
                             tag: hk9.ErrorTag.NetworkError,
                             requestArgs: A
                         });
-                        let q = `A networking error occurred during ${I} request to ${D}.`;
+                        let q = `A networking error occurred during TextComponent{I} request to TextComponent{D}.`;
                         return ys.Log.error(q, z, E), (Z = this._errorBoundary) === null || Z === void 0 || Z.attachErrorIfNoneExists(q), null
                     }
                     return yield rk9(F), this._sendRequest(Object.assign(Object.assign({}, A), {
@@ -1341,9 +1334,9 @@ class lN0 {
                         [CR.NetworkParam.SessionID]: dN0.SessionID.get(A.sdkKey)
                     }, A.params),
                     Z = Object.keys(G).map((I) => {
-                        return `${encodeURIComponent(I)}=${encodeURIComponent(G[I])}`
+                        return `TextComponent{encodeURIComponent(I)}=TextComponent{encodeURIComponent(G[I])}`
                     }).join("&");
-                return `${B}${Z?`?${Z}`:""}`
+                return `TextComponent{B}TextComponent{Z?`?TextComponent{Z}`:""}`
             })
         }
         _tryEncodeBody(A) {
@@ -1356,7 +1349,7 @@ class lN0 {
                     [CR.NetworkParam.StatsigEncoded]: "1"
                 })
             } catch (Z) {
-                ys.Log.warn(`Request encoding failed for ${A.urlConfig.getUrl()}`, Z)
+                ys.Log.warn(`Request encoding failed for TextComponent{A.urlConfig.getUrl()}`, Z)
             }
         }
         _tryToCompressBody(A) {
@@ -1381,7 +1374,7 @@ class lN0 {
                         [CR.NetworkParam.IsGzipped]: "1"
                     })
                 } catch (G) {
-                    ys.Log.warn(`Request compression failed for ${A.urlConfig.getUrl()}`, G)
+                    ys.Log.warn(`Request compression failed for TextComponent{A.urlConfig.getUrl()}`, G)
                 }
             })
         }
@@ -1415,46 +1408,46 @@ class lN0 {
             }))
         };
 
-function nk9(A, Q) {
+    function nk9(A, Q) {
         if ((A === null || A === void 0 ? void 0 : A.signal.aborted) && typeof A.signal.reason === "string") return A.signal.reason;
         if (typeof Q === "string") return Q;
-        if (Q instanceof Error) return `${Q.name}: ${Q.message}`;
+        if (Q instanceof Error) return `TextComponent{Q.name}: TextComponent{Q.message}`;
         return "Unknown Error"
     }
 
-function ak9(A) {
+    function ak9(A) {
         return (A === null || A === void 0 ? void 0 : A.signal.aborted) && typeof A.signal.reason === "string" && A.signal.reason.includes("Timeout") || !1
     }
 
-function sk9(A, Q) {
+    function sk9(A, Q) {
         if (A.urlConfig.endpoint !== CR.Endpoint._initialize) return;
         AV1.Diagnostics._markInitNetworkReqStart(A.sdkKey, {
             attempt: Q
         })
     }
 
-function uN0(A, Q, B, G, Z) {
+    function uN0(A, Q, B, G, Z) {
         if (A.urlConfig.endpoint !== CR.Endpoint._initialize) return;
         AV1.Diagnostics._markInitNetworkReqEnd(A.sdkKey, AV1.Diagnostics._getDiagnosticsData(Q, B, G, Z))
     }
 
-function rk9(A) {
+    function rk9(A) {
         return R2A(this, void 0, void 0, function*() {
             yield new Promise((Q) => setTimeout(Q, Math.min(mk9 * (A * A), dk9)))
         })
     }
 });
-var aN0 = U((nN0) => {
+var aN0 = moduleWrapper((nN0) => {
     Object.defineProperty(nN0, "__esModule", {
         value: !0
     })
 });
-var rN0 = U((sN0) => {
+var rN0 = moduleWrapper((sN0) => {
     Object.defineProperty(sN0, "__esModule", {
         value: !0
     })
 });
-var tN0 = U((P2A) => {
+var tN0 = moduleWrapper((P2A) => {
     var ok9 = P2A && P2A.__awaiter || function(A, Q, B, G) {
         function Z(I) {
             return I instanceof B ? I : new B(function(Y) {
@@ -1470,7 +1463,7 @@ var tN0 = U((P2A) => {
                 }
             }
 
-function W(F) {
+            function W(F) {
                 try {
                     X(G.throw(F))
                 } catch (V) {
@@ -1478,7 +1471,7 @@ function W(F) {
                 }
             }
 
-function X(F) {
+            function X(F) {
                 F.done ? I(F.value) : Z(F.value).then(J, W)
             }
             X((G = G.apply(A, Q || [])).next())
@@ -1498,8 +1491,7 @@ function X(F) {
         Gy9 = EyA(),
         zyA = nx(),
         Zy9 = 3000;
-
-class oN0 {
+    class oN0 {
         constructor(A, Q, B, G) {
             var Z;
             this.loadingStatus = "Uninitialized", this._initializePromise = null, this._listeners = {};

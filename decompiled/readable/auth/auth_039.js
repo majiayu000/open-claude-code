@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_039.js
+ * 处理时间: 2025-12-09T03:41:36.783Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.922Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -27,43 +30,34 @@
         removeBatchObservableCallback(A) {}
     }
     _FB.NoopMeter = hg1;
-
-class y7A {}
+    class y7A {}
     _FB.NoopMetric = y7A;
-
-class gg1 extends y7A {
+    class gg1 extends y7A {
         add(A, Q) {}
     }
     _FB.NoopCounterMetric = gg1;
-
-class ug1 extends y7A {
+    class ug1 extends y7A {
         add(A, Q) {}
     }
     _FB.NoopUpDownCounterMetric = ug1;
-
-class mg1 extends y7A {
+    class mg1 extends y7A {
         record(A, Q) {}
     }
     _FB.NoopGaugeMetric = mg1;
-
-class dg1 extends y7A {
+    class dg1 extends y7A {
         record(A, Q) {}
     }
     _FB.NoopHistogramMetric = dg1;
-
-class K$A {
+    class K$A {
         addCallback(A) {}
         removeCallback(A) {}
     }
     _FB.NoopObservableMetric = K$A;
-
-class cg1 extends K$A {}
+    class cg1 extends K$A {}
     _FB.NoopObservableCounterMetric = cg1;
-
-class pg1 extends K$A {}
+    class pg1 extends K$A {}
     _FB.NoopObservableGaugeMetric = pg1;
-
-class lg1 extends K$A {}
+    class lg1 extends K$A {}
     _FB.NoopObservableUpDownCounterMetric = lg1;
     _FB.NOOP_METER = new hg1;
     _FB.NOOP_COUNTER_METRIC = new gg1;
@@ -74,12 +68,12 @@ class lg1 extends K$A {}
     _FB.NOOP_OBSERVABLE_GAUGE_METRIC = new pg1;
     _FB.NOOP_OBSERVABLE_UP_DOWN_COUNTER_METRIC = new lg1;
 
-function H36() {
+    function H36() {
         return _FB.NOOP_METER
     }
     _FB.createNoopMeter = H36
 });
-var dFB = U((mFB) => {
+var dFB = moduleWrapper((mFB) => {
     Object.defineProperty(mFB, "__esModule", {
         value: !0
     });
@@ -89,7 +83,7 @@ var dFB = U((mFB) => {
         A[A.INT = 0] = "INT", A[A.DOUBLE = 1] = "DOUBLE"
     })(O36 = mFB.ValueType || (mFB.ValueType = {}))
 });
-var ag1 = U((cFB) => {
+var ag1 = moduleWrapper((cFB) => {
     Object.defineProperty(cFB, "__esModule", {
         value: !0
     });
@@ -111,14 +105,13 @@ var ag1 = U((cFB) => {
         }
     }
 });
-var aFB = U((iFB) => {
+var aFB = moduleWrapper((iFB) => {
     Object.defineProperty(iFB, "__esModule", {
         value: !0
     });
     iFB.NoopContextManager = void 0;
     var T36 = V$A();
-
-class lFB {
+    class lFB {
         active() {
             return T36.ROOT_CONTEXT
         }
@@ -137,7 +130,7 @@ class lFB {
     }
     iFB.NoopContextManager = lFB
 });
-var D$A = U((rFB) => {
+var D$A = moduleWrapper((rFB) => {
     Object.defineProperty(rFB, "__esModule", {
         value: !0
     });
@@ -147,8 +140,7 @@ var D$A = U((rFB) => {
         sFB = xt(),
         rg1 = "context",
         j36 = new P36.NoopContextManager;
-
-class og1 {
+    class og1 {
         constructor() {}
         static getInstance() {
             if (!this._instance) this._instance = new og1;
@@ -175,7 +167,7 @@ class og1 {
     }
     rFB.ContextAPI = og1
 });
-var eg1 = U((tFB) => {
+var eg1 = moduleWrapper((tFB) => {
     Object.defineProperty(tFB, "__esModule", {
         value: !0
     });
@@ -185,7 +177,7 @@ var eg1 = U((tFB) => {
         A[A.NONE = 0] = "NONE", A[A.SAMPLED = 1] = "SAMPLED"
     })(S36 = tFB.TraceFlags || (tFB.TraceFlags = {}))
 });
-var ZsA = U((eFB) => {
+var ZsA = moduleWrapper((eFB) => {
     Object.defineProperty(eFB, "__esModule", {
         value: !0
     });
@@ -199,14 +191,13 @@ var ZsA = U((eFB) => {
         traceFlags: _36.TraceFlags.NONE
     }
 });
-var IsA = U((ZVB) => {
+var IsA = moduleWrapper((ZVB) => {
     Object.defineProperty(ZVB, "__esModule", {
         value: !0
     });
     ZVB.NonRecordingSpan = void 0;
     var k36 = ZsA();
-
-class GVB {
+    class GVB {
         constructor(A = k36.INVALID_SPAN_CONTEXT) {
             this._spanContext = A
         }
@@ -242,7 +233,7 @@ class GVB {
     }
     ZVB.NonRecordingSpan = GVB
 });
-var Bu1 = U((JVB) => {
+var Bu1 = moduleWrapper((JVB) => {
     Object.defineProperty(JVB, "__esModule", {
         value: !0
     });
@@ -252,68 +243,68 @@ var Bu1 = U((JVB) => {
         v36 = D$A(),
         Au1 = (0, y36.createContextKey)("OpenTelemetry Context Key SPAN");
 
-function Qu1(A) {
+    function Qu1(A) {
         return A.getValue(Au1) || void 0
     }
     JVB.getSpan = Qu1;
 
-function b36() {
+    function b36() {
         return Qu1(v36.ContextAPI.getInstance().active())
     }
     JVB.getActiveSpan = b36;
 
-function YVB(A, Q) {
+    function YVB(A, Q) {
         return A.setValue(Au1, Q)
     }
     JVB.setSpan = YVB;
 
-function f36(A) {
+    function f36(A) {
         return A.deleteValue(Au1)
     }
     JVB.deleteSpan = f36;
 
-function h36(A, Q) {
+    function h36(A, Q) {
         return YVB(A, new x36.NonRecordingSpan(Q))
     }
     JVB.setSpanContext = h36;
 
-function g36(A) {
+    function g36(A) {
         var Q;
         return (Q = Qu1(A)) === null || Q === void 0 ? void 0 : Q.spanContext()
     }
     JVB.getSpanContext = g36
 });
-var YsA = U((KVB) => {
+var YsA = moduleWrapper((KVB) => {
     Object.defineProperty(KVB, "__esModule", {
         value: !0
     });
     KVB.wrapSpanContext = KVB.isSpanContextValid = KVB.isValidSpanId = KVB.isValidTraceId = void 0;
     var XVB = ZsA(),
         l36 = IsA(),
-        i36 = /^([0-9a-f]{32})$/i,
-        n36 = /^[0-9a-f]{16}$/i;
+        i36 = /^([0-9a-f]{32})TextComponent/i,
+        n36 = /^[0-9a-f]{16}TextComponent/i;
 
-function FVB(A) {
+    function FVB(A) {
         return i36.test(A) && A !== XVB.INVALID_TRACEID
     }
     KVB.isValidTraceId = FVB;
 
-function VVB(A) {
+    function VVB(A) {
         return n36.test(A) && A !== XVB.INVALID_SPANID
     }
     KVB.isValidSpanId = VVB;
 
-function a36(A) {
+    function a36(A) {
         return FVB(A.traceId) && VVB(A.spanId)
     }
     KVB.isSpanContextValid = a36;
 
-function s36(A) {
+    function s36(A) {
         return new l36.NonRecordingSpan(A)
     }
     KVB.wrapSpanContext = s36
 });
-var Iu1 = U((EVB) => {
+var Iu1 = moduleWrapper((EVB) => {
     Object.defineProperty(EVB, "__esModule", {
         value: !0
     });
@@ -323,8 +314,7 @@ var Iu1 = U((EVB) => {
         Gu1 = IsA(),
         A76 = YsA(),
         Zu1 = e36.ContextAPI.getInstance();
-
-class CVB {
+    class CVB {
         startSpan(A, Q, B = Zu1.active()) {
             if (Boolean(Q === null || Q === void 0 ? void 0 : Q.root)) return new Gu1.NonRecordingSpan;
             let Z = B && (0, HVB.getSpanContext)(B);
@@ -345,19 +335,18 @@ class CVB {
     }
     EVB.NoopTracer = CVB;
 
-function Q76(A) {
+    function Q76(A) {
         return typeof A === "object" && typeof A.spanId === "string" && typeof A.traceId === "string" && typeof A.traceFlags === "number"
     }
 });
-var Yu1 = U(($VB) => {
+var Yu1 = moduleWrapper(($VB) => {
     Object.defineProperty($VB, "__esModule", {
         value: !0
     });
     $VB.ProxyTracer = void 0;
     var B76 = Iu1(),
         G76 = new B76.NoopTracer;
-
-class UVB {
+    class UVB {
         constructor(A, Q, B, G) {
             this._provider = A, this.name = Q, this.version = B, this.options = G
         }
@@ -377,21 +366,20 @@ class UVB {
     }
     $VB.ProxyTracer = UVB
 });
-var MVB = U((NVB) => {
+var MVB = moduleWrapper((NVB) => {
     Object.defineProperty(NVB, "__esModule", {
         value: !0
     });
     NVB.NoopTracerProvider = void 0;
     var Z76 = Iu1();
-
-class qVB {
+    class qVB {
         getTracer(A, Q, B) {
             return new Z76.NoopTracer
         }
     }
     NVB.NoopTracerProvider = qVB
 });
-var Ju1 = U((RVB) => {
+var Ju1 = moduleWrapper((RVB) => {
     Object.defineProperty(RVB, "__esModule", {
         value: !0
     });
@@ -399,8 +387,7 @@ var Ju1 = U((RVB) => {
     var I76 = Yu1(),
         Y76 = MVB(),
         J76 = new Y76.NoopTracerProvider;
-
-class OVB {
+    class OVB {
         getTracer(A, Q, B) {
             var G;
             return (G = this.getDelegateTracer(A, Q, B)) !== null && G !== void 0 ? G : new I76.ProxyTracer(this, A, Q, B)
@@ -419,7 +406,7 @@ class OVB {
     }
     RVB.ProxyTracerProvider = OVB
 });
-var jVB = U((PVB) => {
+var jVB = moduleWrapper((PVB) => {
     Object.defineProperty(PVB, "__esModule", {
         value: !0
     });
@@ -429,7 +416,7 @@ var jVB = U((PVB) => {
         A[A.NOT_RECORD = 0] = "NOT_RECORD", A[A.RECORD = 1] = "RECORD", A[A.RECORD_AND_SAMPLED = 2] = "RECORD_AND_SAMPLED"
     })(W76 = PVB.SamplingDecision || (PVB.SamplingDecision = {}))
 });
-var _VB = U((SVB) => {
+var _VB = moduleWrapper((SVB) => {
     Object.defineProperty(SVB, "__esModule", {
         value: !0
     });
@@ -439,7 +426,7 @@ var _VB = U((SVB) => {
         A[A.INTERNAL = 0] = "INTERNAL", A[A.SERVER = 1] = "SERVER", A[A.CLIENT = 2] = "CLIENT", A[A.PRODUCER = 3] = "PRODUCER", A[A.CONSUMER = 4] = "CONSUMER"
     })(X76 = SVB.SpanKind || (SVB.SpanKind = {}))
 });
-var yVB = U((kVB) => {
+var yVB = moduleWrapper((kVB) => {
     Object.defineProperty(kVB, "__esModule", {
         value: !0
     });
@@ -449,29 +436,29 @@ var yVB = U((kVB) => {
         A[A.UNSET = 0] = "UNSET", A[A.OK = 1] = "OK", A[A.ERROR = 2] = "ERROR"
     })(F76 = kVB.SpanStatusCode || (kVB.SpanStatusCode = {}))
 });
-var bVB = U((xVB) => {
+var bVB = moduleWrapper((xVB) => {
     Object.defineProperty(xVB, "__esModule", {
         value: !0
     });
     xVB.validateValue = xVB.validateKey = void 0;
     var Vu1 = "[_0-9a-z-*/]",
-        V76 = `[a-z]${Vu1}{0,255}`,
-        K76 = `[a-z0-9]${Vu1}{0,240}@[a-z]${Vu1}{0,13}`,
-        D76 = new RegExp(`^(?:${V76}|${K76})$`),
-        H76 = /^[ -~]{0,255}[!-~]$/,
+        V76 = `[a-z]TextComponent{Vu1}{0,255}`,
+        K76 = `[a-z0-9]TextComponent{Vu1}{0,240}@[a-z]TextComponent{Vu1}{0,13}`,
+        D76 = new RegExp(`^(?:TextComponent{V76}|TextComponent{K76})TextComponent`),
+        H76 = /^[ -~]{0,255}[!-~]TextComponent/,
         C76 = /,|=/;
 
-function E76(A) {
+    function E76(A) {
         return D76.test(A)
     }
     xVB.validateKey = E76;
 
-function z76(A) {
+    function z76(A) {
         return H76.test(A) && !C76.test(A)
     }
     xVB.validateValue = z76
 });
-var cVB = U((mVB) => {
+var cVB = moduleWrapper((mVB) => {
     Object.defineProperty(mVB, "__esModule", {
         value: !0
     });
@@ -481,8 +468,7 @@ var cVB = U((mVB) => {
         $76 = 512,
         gVB = ",",
         uVB = "=";
-
-class Ku1 {
+    class Ku1 {
         constructor(A) {
             if (this._internalState = new Map, A) this._parse(A)
         }
@@ -526,19 +512,19 @@ class Ku1 {
     }
     mVB.TraceStateImpl = Ku1
 });
-var iVB = U((pVB) => {
+var iVB = moduleWrapper((pVB) => {
     Object.defineProperty(pVB, "__esModule", {
         value: !0
     });
     pVB.createTraceState = void 0;
     var w76 = cVB();
 
-function q76(A) {
+    function q76(A) {
         return new w76.TraceStateImpl(A)
     }
     pVB.createTraceState = q76
 });
-var sVB = U((nVB) => {
+var sVB = moduleWrapper((nVB) => {
     Object.defineProperty(nVB, "__esModule", {
         value: !0
     });
@@ -546,7 +532,7 @@ var sVB = U((nVB) => {
     var N76 = D$A();
     nVB.context = N76.ContextAPI.getInstance()
 });
-var tVB = U((rVB) => {
+var tVB = moduleWrapper((rVB) => {
     Object.defineProperty(rVB, "__esModule", {
         value: !0
     });
@@ -554,14 +540,13 @@ var tVB = U((rVB) => {
     var L76 = xt();
     rVB.diag = L76.DiagAPI.instance()
 });
-var QKB = U((eVB) => {
+var QKB = moduleWrapper((eVB) => {
     Object.defineProperty(eVB, "__esModule", {
         value: !0
     });
     eVB.NOOP_METER_PROVIDER = eVB.NoopMeterProvider = void 0;
     var M76 = ig1();
-
-class Du1 {
+    class Du1 {
         getMeter(A, Q, B) {
             return M76.NOOP_METER
         }
@@ -569,7 +554,7 @@ class Du1 {
     eVB.NoopMeterProvider = Du1;
     eVB.NOOP_METER_PROVIDER = new Du1
 });
-var IKB = U((GKB) => {
+var IKB = moduleWrapper((GKB) => {
     Object.defineProperty(GKB, "__esModule", {
         value: !0
     });
@@ -578,8 +563,7 @@ var IKB = U((GKB) => {
         Hu1 = yt(),
         BKB = xt(),
         Cu1 = "metrics";
-
-class Eu1 {
+    class Eu1 {
         constructor() {}
         static getInstance() {
             if (!this._instance) this._instance = new Eu1;
@@ -600,7 +584,7 @@ class Eu1 {
     }
     GKB.MetricsAPI = Eu1
 });
-var WKB = U((YKB) => {
+var WKB = moduleWrapper((YKB) => {
     Object.defineProperty(YKB, "__esModule", {
         value: !0
     });
@@ -608,13 +592,12 @@ var WKB = U((YKB) => {
     var T76 = IKB();
     YKB.metrics = T76.MetricsAPI.getInstance()
 });
-var KKB = U((FKB) => {
+var KKB = moduleWrapper((FKB) => {
     Object.defineProperty(FKB, "__esModule", {
         value: !0
     });
     FKB.NoopTextMapPropagator = void 0;
-
-class XKB {
+    class XKB {
         inject(A, Q) {}
         extract(A, Q) {
             return A
@@ -625,7 +608,7 @@ class XKB {
     }
     FKB.NoopTextMapPropagator = XKB
 });
-var EKB = U((HKB) => {
+var EKB = moduleWrapper((HKB) => {
     Object.defineProperty(HKB, "__esModule", {
         value: !0
     });
@@ -634,27 +617,27 @@ var EKB = U((HKB) => {
         j76 = V$A(),
         zu1 = (0, j76.createContextKey)("OpenTelemetry Baggage Key");
 
-function DKB(A) {
+    function DKB(A) {
         return A.getValue(zu1) || void 0
     }
     HKB.getBaggage = DKB;
 
-function S76() {
+    function S76() {
         return DKB(P76.ContextAPI.getInstance().active())
     }
     HKB.getActiveBaggage = S76;
 
-function _76(A, Q) {
+    function _76(A, Q) {
         return A.setValue(zu1, Q)
     }
     HKB.setBaggage = _76;
 
-function k76(A) {
+    function k76(A) {
         return A.deleteValue(zu1)
     }
     HKB.deleteBaggage = k76
 });
-var qKB = U(($KB) => {
+var qKB = moduleWrapper(($KB) => {
     Object.defineProperty($KB, "__esModule", {
         value: !0
     });
@@ -667,8 +650,7 @@ var qKB = U(($KB) => {
         UKB = xt(),
         $u1 = "propagation",
         h76 = new b76.NoopTextMapPropagator;
-
-class wu1 {
+    class wu1 {
         constructor() {
             this.createBaggage = f76.createBaggage, this.getBaggage = JsA.getBaggage, this.getActiveBaggage = JsA.getActiveBaggage, this.setBaggage = JsA.setBaggage, this.deleteBaggage = JsA.deleteBaggage
         }
@@ -697,7 +679,7 @@ class wu1 {
     }
     $KB.PropagationAPI = wu1
 });
-var MKB = U((NKB) => {
+var MKB = moduleWrapper((NKB) => {
     Object.defineProperty(NKB, "__esModule", {
         value: !0
     });
@@ -705,7 +687,7 @@ var MKB = U((NKB) => {
     var g76 = qKB();
     NKB.propagation = g76.PropagationAPI.getInstance()
 });
-var SKB = U((PKB) => {
+var SKB = moduleWrapper((PKB) => {
     Object.defineProperty(PKB, "__esModule", {
         value: !0
     });
@@ -716,8 +698,7 @@ var SKB = U((PKB) => {
         x7A = Bu1(),
         TKB = xt(),
         Nu1 = "trace";
-
-class Lu1 {
+    class Lu1 {
         constructor() {
             this._proxyTracerProvider = new OKB.ProxyTracerProvider, this.wrapSpanContext = RKB.wrapSpanContext, this.isSpanContextValid = RKB.isSpanContextValid, this.deleteSpan = x7A.deleteSpan, this.getSpan = x7A.getSpan, this.getActiveSpan = x7A.getActiveSpan, this.getSpanContext = x7A.getSpanContext, this.setSpan = x7A.setSpan, this.setSpanContext = x7A.setSpanContext
         }
@@ -742,7 +723,7 @@ class Lu1 {
     }
     PKB.TraceAPI = Lu1
 });
-var yKB = U((_KB) => {
+var yKB = moduleWrapper((_KB) => {
     Object.defineProperty(_KB, "__esModule", {
         value: !0
     });
@@ -750,7 +731,7 @@ var yKB = U((_KB) => {
     var u76 = SKB();
     _KB.trace = u76.TraceAPI.getInstance()
 });
-var W9 = U((BG) => {
+var W9 = moduleWrapper((BG) => {
     Object.defineProperty(BG, "__esModule", {
         value: !0
     });
@@ -946,7 +927,7 @@ var W9 = U((BG) => {
         trace: uKB.trace
     }
 });
-var dKB = U((mKB) => {
+var dKB = moduleWrapper((mKB) => {
     Object.defineProperty(mKB, "__esModule", {
         value: !0
     });
@@ -956,26 +937,24 @@ var dKB = U((mKB) => {
         A[A.UNSPECIFIED = 0] = "UNSPECIFIED", A[A.TRACE = 1] = "TRACE", A[A.TRACE2 = 2] = "TRACE2", A[A.TRACE3 = 3] = "TRACE3", A[A.TRACE4 = 4] = "TRACE4", A[A.DEBUG = 5] = "DEBUG", A[A.DEBUG2 = 6] = "DEBUG2", A[A.DEBUG3 = 7] = "DEBUG3", A[A.DEBUG4 = 8] = "DEBUG4", A[A.INFO = 9] = "INFO", A[A.INFO2 = 10] = "INFO2", A[A.INFO3 = 11] = "INFO3", A[A.INFO4 = 12] = "INFO4", A[A.WARN = 13] = "WARN", A[A.WARN2 = 14] = "WARN2", A[A.WARN3 = 15] = "WARN3", A[A.WARN4 = 16] = "WARN4", A[A.ERROR = 17] = "ERROR", A[A.ERROR2 = 18] = "ERROR2", A[A.ERROR3 = 19] = "ERROR3", A[A.ERROR4 = 20] = "ERROR4", A[A.FATAL = 21] = "FATAL", A[A.FATAL2 = 22] = "FATAL2", A[A.FATAL3 = 23] = "FATAL3", A[A.FATAL4 = 24] = "FATAL4"
     })(QG6 = mKB.SeverityNumber || (mKB.SeverityNumber = {}))
 });
-var WsA = U((cKB) => {
+var WsA = moduleWrapper((cKB) => {
     Object.defineProperty(cKB, "__esModule", {
         value: !0
     });
     cKB.NOOP_LOGGER = cKB.NoopLogger = void 0;
-
-class Tu1 {
+    class Tu1 {
         emit(A) {}
     }
     cKB.NoopLogger = Tu1;
     cKB.NOOP_LOGGER = new Tu1
 });
-var XsA = U((lKB) => {
+var XsA = moduleWrapper((lKB) => {
     Object.defineProperty(lKB, "__esModule", {
         value: !0
     });
     lKB.NOOP_LOGGER_PROVIDER = lKB.NoopLoggerProvider = void 0;
     var GG6 = WsA();
-
-class Pu1 {
+    class Pu1 {
         getLogger(A, Q, B) {
             return new GG6.NoopLogger
         }
@@ -983,14 +962,13 @@ class Pu1 {
     lKB.NoopLoggerProvider = Pu1;
     lKB.NOOP_LOGGER_PROVIDER = new Pu1
 });
-var ju1 = U((aKB) => {
+var ju1 = moduleWrapper((aKB) => {
     Object.defineProperty(aKB, "__esModule", {
         value: !0
     });
     aKB.ProxyLogger = void 0;
     var IG6 = WsA();
-
-class nKB {
+    class nKB {
         constructor(A, Q, B, G) {
             this._provider = A, this.name = Q, this.version = B, this.options = G
         }
@@ -1006,15 +984,14 @@ class nKB {
     }
     aKB.ProxyLogger = nKB
 });
-var Su1 = U((oKB) => {
+var Su1 = moduleWrapper((oKB) => {
     Object.defineProperty(oKB, "__esModule", {
         value: !0
     });
     oKB.ProxyLoggerProvider = void 0;
     var YG6 = XsA(),
         JG6 = ju1();
-
-class rKB {
+    class rKB {
         getLogger(A, Q, B) {
             var G;
             return (G = this._getDelegateLogger(A, Q, B)) !== null && G !== void 0 ? G : new JG6.ProxyLogger(this, A, Q, B)
@@ -1033,14 +1010,14 @@ class rKB {
     }
     oKB.ProxyLoggerProvider = rKB
 });
-var QDB = U((eKB) => {
+var QDB = moduleWrapper((eKB) => {
     Object.defineProperty(eKB, "__esModule", {
         value: !0
     });
     eKB._globalThis = void 0;
     eKB._globalThis = typeof globalThis === "object" ? globalThis : global
 });
-var BDB = U((_u1) => {
+var BDB = moduleWrapper((_u1) => {
     Object.defineProperty(_u1, "__esModule", {
         value: !0
     });
@@ -1053,7 +1030,7 @@ var BDB = U((_u1) => {
         }
     })
 });
-var GDB = U((ku1) => {
+var GDB = moduleWrapper((ku1) => {
     Object.defineProperty(ku1, "__esModule", {
         value: !0
     });
@@ -1066,7 +1043,7 @@ var GDB = U((ku1) => {
         }
     })
 });
-var YDB = U((ZDB) => {
+var YDB = moduleWrapper((ZDB) => {
     Object.defineProperty(ZDB, "__esModule", {
         value: !0
     });
@@ -1075,13 +1052,13 @@ var YDB = U((ZDB) => {
     ZDB.GLOBAL_LOGS_API_KEY = Symbol.for("io.opentelemetry.js.api.logs");
     ZDB._global = KG6._globalThis;
 
-function DG6(A, Q, B) {
+    function DG6(A, Q, B) {
         return (G) => G === A ? Q : B
     }
     ZDB.makeGetter = DG6;
     ZDB.API_BACKWARDS_COMPATIBILITY_VERSION = 1
 });
-var FDB = U((WDB) => {
+var FDB = moduleWrapper((WDB) => {
     Object.defineProperty(WDB, "__esModule", {
         value: !0
     });
@@ -1089,8 +1066,7 @@ var FDB = U((WDB) => {
     var HM = YDB(),
         zG6 = XsA(),
         JDB = Su1();
-
-class yu1 {
+    class yu1 {
         constructor() {
             this._proxyLoggerProvider = new JDB.ProxyLoggerProvider
         }
@@ -1115,7 +1091,7 @@ class yu1 {
     }
     WDB.LogsAPI = yu1
 });
-var xu1 = U((rb) => {
+var xu1 = moduleWrapper((rb) => {
     Object.defineProperty(rb, "__esModule", {
         value: !0
     });
@@ -1170,7 +1146,7 @@ var xu1 = U((rb) => {
     var qG6 = FDB();
     rb.logs = qG6.LogsAPI.getInstance()
 });
-var H$A = U((HDB) => {
+var H$A = moduleWrapper((HDB) => {
     Object.defineProperty(HDB, "__esModule", {
         value: !0
     });
@@ -1178,22 +1154,22 @@ var H$A = U((HDB) => {
     var NG6 = W9(),
         vu1 = (0, NG6.createContextKey)("OpenTelemetry SDK Context Key SUPPRESS_TRACING");
 
-function LG6(A) {
+    function LG6(A) {
         return A.setValue(vu1, !0)
     }
     HDB.suppressTracing = LG6;
 
-function MG6(A) {
+    function MG6(A) {
         return A.deleteValue(vu1)
     }
     HDB.unsuppressTracing = MG6;
 
-function OG6(A) {
+    function OG6(A) {
         return A.getValue(vu1) === !0
     }
     HDB.isTracingSuppressed = OG6
 });
-var bu1 = U((EDB) => {
+var bu1 = moduleWrapper((EDB) => {
     Object.defineProperty(EDB, "__esModule", {
         value: !0
     });
@@ -1206,7 +1182,7 @@ var bu1 = U((EDB) => {
     EDB.BAGGAGE_MAX_PER_NAME_VALUE_PAIRS = 4096;
     EDB.BAGGAGE_MAX_TOTAL_LENGTH = 8192
 });
-var fu1 = U(($DB) => {
+var fu1 = moduleWrapper(($DB) => {
     Object.defineProperty($DB, "__esModule", {
         value: !0
     });
@@ -1214,24 +1190,24 @@ var fu1 = U(($DB) => {
     var xG6 = W9(),
         vt = bu1();
 
-function vG6(A) {
+    function vG6(A) {
         return A.reduce((Q, B) => {
-            let G = `${Q}${Q!==""?vt.BAGGAGE_ITEMS_SEPARATOR:""}${B}`;
+            let G = `TextComponent{Q}TextComponent{Q!==""?vt.BAGGAGE_ITEMS_SEPARATOR:""}TextComponent{B}`;
             return G.length > vt.BAGGAGE_MAX_TOTAL_LENGTH ? Q : G
         }, "")
     }
     $DB.serializeKeyPairs = vG6;
 
-function bG6(A) {
+    function bG6(A) {
         return A.getAllEntries().map(([Q, B]) => {
-            let G = `${encodeURIComponent(Q)}=${encodeURIComponent(B.value)}`;
+            let G = `TextComponent{encodeURIComponent(Q)}=TextComponent{encodeURIComponent(B.value)}`;
             if (B.metadata !== void 0) G += vt.BAGGAGE_PROPERTIES_SEPARATOR + B.metadata.toString();
             return G
         })
     }
     $DB.getKeyPairs = bG6;
 
-function UDB(A) {
+    function UDB(A) {
         let Q = A.split(vt.BAGGAGE_PROPERTIES_SEPARATOR);
         if (Q.length <= 0) return;
         let B = Q.shift();
@@ -1250,7 +1226,7 @@ function UDB(A) {
     }
     $DB.parsePairKeyValue = UDB;
 
-function fG6(A) {
+    function fG6(A) {
         let Q = {};
         if (typeof A === "string" && A.length > 0) A.split(vt.BAGGAGE_ITEMS_SEPARATOR).forEach((B) => {
             let G = UDB(B);
@@ -1260,7 +1236,7 @@ function fG6(A) {
     }
     $DB.parseKeyPairsIntoRecord = fG6
 });
-var MDB = U((NDB) => {
+var MDB = moduleWrapper((NDB) => {
     Object.defineProperty(NDB, "__esModule", {
         value: !0
     });
@@ -1269,8 +1245,7 @@ var MDB = U((NDB) => {
         mG6 = H$A(),
         bt = bu1(),
         gu1 = fu1();
-
-class qDB {
+    class qDB {
         inject(A, Q, B) {
             let G = hu1.propagation.getBaggage(A);
             if (!G || (0, mG6.isTracingSuppressed)(A)) return;
@@ -1304,13 +1279,12 @@ class qDB {
     }
     NDB.W3CBaggagePropagator = qDB
 });
-var PDB = U((RDB) => {
+var PDB = moduleWrapper((RDB) => {
     Object.defineProperty(RDB, "__esModule", {
         value: !0
     });
     RDB.AnchoredClock = void 0;
-
-class ODB {
+    class ODB {
         _monotonicClock;
         _epochMillis;
         _performanceMillis;
@@ -1324,23 +1298,23 @@ class ODB {
     }
     RDB.AnchoredClock = ODB
 });
-var vDB = U((yDB) => {
+var vDB = moduleWrapper((yDB) => {
     Object.defineProperty(yDB, "__esModule", {
         value: !0
     });
     yDB.isAttributeValue = yDB.isAttributeKey = yDB.sanitizeAttributes = void 0;
     var jDB = W9();
 
-function dG6(A) {
+    function dG6(A) {
         let Q = {};
         if (typeof A !== "object" || A == null) return Q;
         for (let [B, G] of Object.entries(A)) {
             if (!SDB(B)) {
-                jDB.diag.warn(`Invalid attribute key: ${B}`);
+                jDB.diag.warn(`Invalid attribute key: TextComponent{B}`);
                 continue
             }
             if (!_DB(G)) {
-                jDB.diag.warn(`Invalid attribute value set for key: ${B}`);
+                jDB.diag.warn(`Invalid attribute value set for key: TextComponent{B}`);
                 continue
             }
             if (Array.isArray(G)) Q[B] = G.slice();
@@ -1350,19 +1324,19 @@ function dG6(A) {
     }
     yDB.sanitizeAttributes = dG6;
 
-function SDB(A) {
+    function SDB(A) {
         return typeof A === "string" && A.length > 0
     }
     yDB.isAttributeKey = SDB;
 
-function _DB(A) {
+    function _DB(A) {
         if (A == null) return !0;
         if (Array.isArray(A)) return cG6(A);
         return kDB(A)
     }
     yDB.isAttributeValue = _DB;
 
-function cG6(A) {
+    function cG6(A) {
         let Q;
         for (let B of A) {
             if (B == null) continue;
@@ -1379,7 +1353,7 @@ function cG6(A) {
         return !0
     }
 
-function kDB(A) {
+    function kDB(A) {
         switch (typeof A) {
             case "number":
             case "boolean":
@@ -1389,26 +1363,26 @@ function kDB(A) {
         return !1
     }
 });
-var uu1 = U((bDB) => {
+var uu1 = moduleWrapper((bDB) => {
     Object.defineProperty(bDB, "__esModule", {
         value: !0
     });
     bDB.loggingErrorHandler = void 0;
     var iG6 = W9();
 
-function nG6() {
+    function nG6() {
         return (A) => {
             iG6.diag.error(aG6(A))
         }
     }
     bDB.loggingErrorHandler = nG6;
 
-function aG6(A) {
+    function aG6(A) {
         if (typeof A === "string") return A;
         else return JSON.stringify(sG6(A))
     }
 
-function sG6(A) {
+    function sG6(A) {
         let Q = {},
             B = A;
         while (B !== null) Object.getOwnPropertyNames(B).forEach((G) => {
@@ -1419,7 +1393,7 @@ function sG6(A) {
         return Q
     }
 });
-var mDB = U((gDB) => {
+var mDB = moduleWrapper((gDB) => {
     Object.defineProperty(gDB, "__esModule", {
         value: !0
     });
@@ -1427,88 +1401,88 @@ var mDB = U((gDB) => {
     var rG6 = uu1(),
         hDB = (0, rG6.loggingErrorHandler)();
 
-function oG6(A) {
+    function oG6(A) {
         hDB = A
     }
     gDB.setGlobalErrorHandler = oG6;
 
-function tG6(A) {
+    function tG6(A) {
         try {
             hDB(A)
         } catch {}
     }
     gDB.globalErrorHandler = tG6
 });
-var nDB = U((lDB) => {
+var nDB = moduleWrapper((lDB) => {
     Object.defineProperty(lDB, "__esModule", {
         value: !0
     });
     lDB.getStringListFromEnv = lDB.getBooleanFromEnv = lDB.getStringFromEnv = lDB.getNumberFromEnv = void 0;
     var dDB = W9(),
-        cDB = UA("util");
+        cDB = nodeRequire("util");
 
-function AZ6(A) {
+    function AZ6(A) {
         let Q = process.env[A];
         if (Q == null || Q.trim() === "") return;
         let B = Number(Q);
         if (isNaN(B)) {
-            dDB.diag.warn(`Unknown value ${(0,cDB.inspect)(Q)} for ${A}, expected a number, using defaults`);
+            dDB.diag.warn(`Unknown value TextComponent{(0,cDB.inspect)(Q)} for TextComponent{A}, expected a number, using defaults`);
             return
         }
         return B
     }
     lDB.getNumberFromEnv = AZ6;
 
-function pDB(A) {
+    function pDB(A) {
         let Q = process.env[A];
         if (Q == null || Q.trim() === "") return;
         return Q
     }
     lDB.getStringFromEnv = pDB;
 
-function QZ6(A) {
+    function QZ6(A) {
         let Q = process.env[A]?.trim().toLowerCase();
         if (Q == null || Q === "") return !1;
         if (Q === "true") return !0;
         else if (Q === "false") return !1;
-        else return dDB.diag.warn(`Unknown value ${(0,cDB.inspect)(Q)} for ${A}, expected 'true' or 'false', falling back to 'false' (default)`), !1
+        else return dDB.diag.warn(`Unknown value TextComponent{(0,cDB.inspect)(Q)} for TextComponent{A}, expected 'true' or 'false', falling back to 'false' (default)`), !1
     }
     lDB.getBooleanFromEnv = QZ6;
 
-function BZ6(A) {
+    function BZ6(A) {
         return pDB(A)?.split(",").map((Q) => Q.trim()).filter((Q) => Q !== "")
     }
     lDB.getStringListFromEnv = BZ6
 });
-var rDB = U((aDB) => {
+var rDB = moduleWrapper((aDB) => {
     Object.defineProperty(aDB, "__esModule", {
         value: !0
     });
     aDB._globalThis = void 0;
     aDB._globalThis = typeof globalThis === "object" ? globalThis : global
 });
-var eDB = U((oDB) => {
+var eDB = moduleWrapper((oDB) => {
     Object.defineProperty(oDB, "__esModule", {
         value: !0
     });
     oDB.otperformance = void 0;
-    var YZ6 = UA("perf_hooks");
+    var YZ6 = nodeRequire("perf_hooks");
     oDB.otperformance = YZ6.performance
 });
-var BHB = U((AHB) => {
+var BHB = moduleWrapper((AHB) => {
     Object.defineProperty(AHB, "__esModule", {
         value: !0
     });
     AHB.VERSION = void 0;
     AHB.VERSION = "2.1.0"
 });
-var mu1 = U((GHB) => {
+var mu1 = moduleWrapper((GHB) => {
     Object.defineProperty(GHB, "__esModule", {
         value: !0
     });
     GHB.createConstMap = void 0;
 
-function JZ6(A) {
+    function JZ6(A) {
         let Q = {},
             B = A.length;
         for (let G = 0; G < B; G++) {
@@ -1519,7 +1493,7 @@ function JZ6(A) {
     }
     GHB.createConstMap = JZ6
 });
-var Q$B = U((aUB) => {
+var Q$B = moduleWrapper((aUB) => {
     Object.defineProperty(aUB, "__esModule", {
         value: !0
     });

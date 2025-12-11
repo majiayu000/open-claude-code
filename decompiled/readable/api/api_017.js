@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_017.js
+ * 处理时间: 2025-12-09T03:41:36.174Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.872Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -22,7 +24,7 @@
                 case "-Infinity":
                     return -1 / 0;
                 default:
-                    throw Error(`Unable to parse float value: ${A}`)
+                    throw Error(`Unable to parse float value: TextComponent{A}`)
             }
         }, "parseFloatString"),
         MfB = HB((A) => {
@@ -53,7 +55,7 @@
         gy6 = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
         fp1 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-function RfB(A) {
+    function RfB(A) {
         let Q = A.getUTCFullYear(),
             B = A.getUTCMonth(),
             G = A.getUTCDay(),
@@ -61,14 +63,14 @@ function RfB(A) {
             I = A.getUTCHours(),
             Y = A.getUTCMinutes(),
             J = A.getUTCSeconds(),
-            W = Z < 10 ? `0${Z}` : `${Z}`,
-            X = I < 10 ? `0${I}` : `${I}`,
-            F = Y < 10 ? `0${Y}` : `${Y}`,
-            V = J < 10 ? `0${J}` : `${J}`;
-        return `${gy6[G]}, ${W} ${fp1[B]} ${Q} ${X}:${F}:${V} GMT`
+            W = Z < 10 ? `0${Z}` : `TextComponent{Z}`,
+            X = I < 10 ? `0${I}` : `TextComponent{I}`,
+            F = Y < 10 ? `0${Y}` : `TextComponent{Y}`,
+            V = J < 10 ? `0${J}` : `TextComponent{J}`;
+        return `TextComponent{gy6[G]}, TextComponent{W} TextComponent{fp1[B]} TextComponent{Q} TextComponent{X}:TextComponent{F}:TextComponent{V} GMT`
     }
     HB(RfB, "dateToUtcString");
-    var uy6 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?[zZ]$/),
+    var uy6 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?[zZ]TextComponent/),
         my6 = HB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-3339 date-times must be expressed as strings");
@@ -82,7 +84,7 @@ function RfB(A) {
                 fractionalMilliseconds: X
             })
         }, "parseRfc3339DateTime"),
-        dy6 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?(([-+]\d{2}\:\d{2})|[zZ])$/),
+        dy6 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?(([-+]\d{2}\:\d{2})|[zZ])TextComponent/),
         cy6 = HB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-3339 date-times must be expressed as strings");
@@ -99,7 +101,7 @@ function RfB(A) {
         }, "parseRfc3339DateTimeWithOffset"),
         py6 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun), (\d{2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{4}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? GMT$/),
         ly6 = new RegExp(/^(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday), (\d{2})-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)-(\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? GMT$/),
-        iy6 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ( [1-9]|\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? (\d{4})$/),
+        iy6 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ( [1-9]|\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? (\d{4})TextComponent/),
         ny6 = HB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-7231 date-times must be expressed as strings");
@@ -159,21 +161,21 @@ function RfB(A) {
         }, "adjustRfc850Year"),
         Pp1 = HB((A) => {
             let Q = fp1.indexOf(A);
-            if (Q < 0) throw TypeError(`Invalid month: ${A}`);
+            if (Q < 0) throw TypeError(`Invalid month: TextComponent{A}`);
             return Q + 1
         }, "parseMonthByShortName"),
         ty6 = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
         ey6 = HB((A, Q, B) => {
             let G = ty6[Q];
             if (Q === 1 && Ax6(A)) G = 29;
-            if (B > G) throw TypeError(`Invalid day for ${fp1[Q]} in ${A}: ${B}`)
+            if (B > G) throw TypeError(`Invalid day for TextComponent{fp1[Q]} in TextComponent{A}: TextComponent{B}`)
         }, "validateDayOfMonth"),
         Ax6 = HB((A) => {
             return A % 4 === 0 && (A % 100 !== 0 || A % 400 === 0)
         }, "isLeapYear"),
         i_ = HB((A, Q, B, G) => {
             let Z = OfB(gGA(A));
-            if (Z < B || Z > G) throw TypeError(`${Q} must be between ${B} and ${G}, inclusive`);
+            if (Z < B || Z > G) throw TypeError(`TextComponent{Q} must be between TextComponent{B} and TextComponent{G}, inclusive`);
             return Z
         }, "parseDateValue"),
         Qx6 = HB((A) => {
@@ -185,7 +187,7 @@ function RfB(A) {
                 B = 1;
             if (Q == "+") B = 1;
             else if (Q == "-") B = -1;
-            else throw TypeError(`Offset direction, ${Q}, must be "+" or "-"`);
+            else throw TypeError(`Offset direction, TextComponent{Q}, must be "+" or "-"`);
             let G = Number(A.substring(1, 3)),
                 Z = Number(A.substring(4, 6));
             return B * (G * 60 + Z) * 60 * 1000
@@ -327,7 +329,7 @@ function RfB(A) {
             }
         }, "resolveDefaultRuntimeConfig");
 
-function ktA(A) {
+    function ktA(A) {
         return encodeURIComponent(A).replace(/[!'()*]/g, function(Q) {
             return "%" + Q.charCodeAt(0).toString(16).toUpperCase()
         })
@@ -354,8 +356,7 @@ function ktA(A) {
         }
     });
     Object.setPrototypeOf(kwA, String);
-
-var kfB = class A extends kwA {
+    var kfB = class A extends kwA {
         deserializeJSON() {
             return JSON.parse(super.toString())
         }
@@ -371,7 +372,7 @@ var kfB = class A extends kwA {
     HB(kfB, "LazyJsonString");
     var Cx6 = kfB;
 
-function hp1(A, Q, B) {
+    function hp1(A, Q, B) {
         let G, Z, I;
         if (typeof Q > "u" && typeof B > "u") G = {}, I = A;
         else if (G = A, typeof Q === "function") return Z = Q, I = B, Ux6(G, Z, I);
@@ -459,7 +460,7 @@ function hp1(A, Q, B) {
             return A
         }, "_json");
 
-function xfB(A, Q, B) {
+    function xfB(A, Q, B) {
         if (B <= 0 || !Number.isInteger(B)) throw Error("Invalid number of delimiters (" + B + ") for splitEvery.");
         let G = A.split(Q);
         if (B === 1) return G;
@@ -475,7 +476,7 @@ function xfB(A, Q, B) {
     }
     HB(xfB, "splitEvery")
 });
-var ifB = U((b2G, lfB) => {
+var ifB = moduleWrapper((b2G, lfB) => {
     var {
         defineProperty: xtA,
         getOwnPropertyDescriptor: Lx6,
@@ -567,7 +568,7 @@ var ifB = U((b2G, lfB) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(pfB || {})
 });
-var tfB = U((f2G, ofB) => {
+var tfB = moduleWrapper((f2G, ofB) => {
     var {
         defineProperty: btA,
         getOwnPropertyDescriptor: xx6,
@@ -646,7 +647,7 @@ var tfB = U((f2G, ofB) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values
@@ -680,7 +681,7 @@ var tfB = U((f2G, ofB) => {
                 pp(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -702,7 +703,7 @@ var tfB = U((f2G, ofB) => {
             }
         };
 
-function sfB(A) {
+    function sfB(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -712,8 +713,7 @@ function sfB(A) {
         }, {})
     }
     pp(sfB, "cloneQuery");
-
-var lx6 = class {
+    var lx6 = class {
         static {
             pp(this, "HttpResponse")
         }
@@ -727,12 +727,12 @@ var lx6 = class {
         }
     };
 
-function rfB(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function rfB(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     pp(rfB, "isValidHostname")
 });
-var JhB = U((m2G, YhB) => {
+var JhB = moduleWrapper((m2G, YhB) => {
     var {
         defineProperty: ftA,
         getOwnPropertyDescriptor: ix6,
@@ -767,7 +767,7 @@ var JhB = U((m2G, YhB) => {
     });
     YhB.exports = ox6(efB);
 
-function AhB(A) {
+    function AhB(A) {
         let {
             signer: Q,
             signer: B
@@ -821,7 +821,7 @@ function AhB(A) {
             }, "applyToStack")
         }), "getEventStreamPlugin")
 });
-var FhB = U((d2G, XhB) => {
+var FhB = moduleWrapper((d2G, XhB) => {
     var {
         defineProperty: htA,
         getOwnPropertyDescriptor: ex6,
@@ -854,7 +854,7 @@ var FhB = U((d2G, XhB) => {
         eventStreamMarshaller: A.eventStreamSerdeProvider(A)
     }), "resolveEventStreamSerdeConfig")
 });
-var up1 = U((VhB) => {
+var up1 = moduleWrapper((VhB) => {
     Object.defineProperty(VhB, "__esModule", {
         value: !0
     });
@@ -871,7 +871,7 @@ var up1 = U((VhB) => {
         };
     VhB.defaultBedrockRuntimeHttpAuthSchemeParametersProvider = Wv6;
 
-function Xv6(A) {
+    function Xv6(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {
@@ -903,7 +903,7 @@ function Xv6(A) {
     };
     VhB.resolveHttpAuthSchemeConfig = Vv6
 });
-var mhB = U((p2G, mtA) => {
+var mhB = moduleWrapper((p2G, mtA) => {
     var DhB, HhB, ChB, EhB, zhB, UhB, $hB, whB, qhB, NhB, LhB, MhB, OhB, gtA, mp1, RhB, ThB, PhB, mGA, jhB, ShB, _hB, khB, yhB, xhB, vhB, bhB, fhB, utA, hhB, ghB, uhB;
     (function(A) {
         var Q = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
@@ -913,7 +913,7 @@ var mhB = U((p2G, mtA) => {
         else if (typeof mtA === "object" && typeof p2G === "object") A(B(Q, B(p2G)));
         else A(B(Q));
 
-function B(G, Z) {
+        function B(G, Z) {
             if (G !== Q)
                 if (typeof Object.create === "function") Object.defineProperty(G, "__esModule", {
                     value: !0
@@ -937,7 +937,7 @@ function B(G, Z) {
             if (typeof Y !== "function" && Y !== null) throw TypeError("Class extends value " + String(Y) + " is not a constructor or null");
             Q(I, Y);
 
-function J() {
+            function J() {
                 this.constructor = I
             }
             I.prototype = Y === null ? Object.create(Y) : (J.prototype = Y.prototype, new J)
@@ -1033,7 +1033,7 @@ function J() {
                     }
                 }
 
-function D(C) {
+                function D(C) {
                     try {
                         H(W.throw(C))
                     } catch (E) {
@@ -1041,7 +1041,7 @@ function D(C) {
                     }
                 }
 
-function H(C) {
+                function H(C) {
                     C.done ? F(C.value) : X(C.value).then(K, D)
                 }
                 H((W = W.apply(I, Y || [])).next())
@@ -1061,13 +1061,13 @@ function H(C) {
                 return this
             }), V;
 
-function K(H) {
+            function K(H) {
                 return function(C) {
                     return D([H, C])
                 }
             }
 
-function D(H) {
+            function D(H) {
                 if (W) throw TypeError("Generator is already executing.");
                 while (V && (V = 0, H[0] && (J = 0)), J) try {
                     if (W = 1, X && (F = H[0] & 2 ? X.return : H[0] ? X.throw || ((F = X.return) && F.call(X), 0) : X.next) && !(F = F.call(X, H[1])).done) return F;
@@ -1199,13 +1199,13 @@ function D(H) {
                 return this
             }, X;
 
-function V(w) {
+            function V(w) {
                 return function(N) {
                     return Promise.resolve(N).then(w, E)
                 }
             }
 
-function K(w, N) {
+            function K(w, N) {
                 if (W[w]) {
                     if (X[w] = function(q) {
                             return new Promise(function(R, P) {
@@ -1215,7 +1215,7 @@ function K(w, N) {
                 }
             }
 
-function D(w, N) {
+            function D(w, N) {
                 try {
                     H(W[w](N))
                 } catch (q) {
@@ -1223,19 +1223,19 @@ function D(w, N) {
                 }
             }
 
-function H(w) {
+            function H(w) {
                 w.value instanceof mGA ? Promise.resolve(w.value.v).then(C, E) : z(F[0][2], w)
             }
 
-function C(w) {
+            function C(w) {
                 D("next", w)
             }
 
-function E(w) {
+            function E(w) {
                 D("throw", w)
             }
 
-function z(w, N) {
+            function z(w, N) {
                 if (w(N), F.shift(), F.length) D(F[0][0], F[0][1])
             }
         }, ShB = function(I) {
@@ -1246,7 +1246,7 @@ function z(w, N) {
                 return this
             }, Y;
 
-function W(X, F) {
+            function W(X, F) {
                 Y[X] = I[X] ? function(V) {
                     return (J = !J) ? {
                         value: mGA(I[X](V)),
@@ -1262,7 +1262,7 @@ function W(X, F) {
                 return this
             }, J);
 
-function W(F) {
+            function W(F) {
                 J[F] = I[F] && function(V) {
                     return new Promise(function(K, D) {
                         V = I[F](V), X(K, D, V.done, V.value)
@@ -1270,7 +1270,7 @@ function W(F) {
                 }
             }
 
-function X(F, V, K, D) {
+            function X(F, V, K, D) {
                 Promise.resolve(D).then(function(H) {
                     F({
                         value: H,
@@ -1303,8 +1303,7 @@ function X(F, V, K, D) {
             };
         yhB = function(I) {
             if (I && I.__esModule) return I;
-
-var Y = {};
+            var Y = {};
             if (I != null) {
                 for (var J = G(I), W = 0; W < J.length; W++)
                     if (J[W] !== "default") utA(Y, I, J[W])
@@ -1366,7 +1365,7 @@ var Y = {};
             }
             var J, W = 0;
 
-function X() {
+            function X() {
                 while (J = I.stack.pop()) try {
                     if (!J.async && W === 1) return W = 0, I.stack.push(J), Promise.resolve().then(X);
                     if (J.dispose) {
@@ -1383,14 +1382,14 @@ function X() {
             }
             return X()
         }, uhB = function(I, Y) {
-            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
+            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)TextComponent|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
                 return W ? Y ? ".jsx" : ".js" : X && (!F || !V) ? J : X + F + "." + V.toLowerCase() + "js"
             });
             return I
         }, A("__extends", DhB), A("__assign", HhB), A("__rest", ChB), A("__decorate", EhB), A("__param", zhB), A("__esDecorate", UhB), A("__runInitializers", $hB), A("__propKey", whB), A("__setFunctionName", qhB), A("__metadata", NhB), A("__awaiter", LhB), A("__generator", MhB), A("__exportStar", OhB), A("__createBinding", utA), A("__values", gtA), A("__read", mp1), A("__spread", RhB), A("__spreadArrays", ThB), A("__spreadArray", PhB), A("__await", mGA), A("__asyncGenerator", jhB), A("__asyncDelegator", ShB), A("__asyncValues", _hB), A("__makeTemplateObject", khB), A("__importStar", yhB), A("__importDefault", xhB), A("__classPrivateFieldGet", vhB), A("__classPrivateFieldSet", bhB), A("__classPrivateFieldIn", fhB), A("__addDisposableResource", hhB), A("__disposeResources", ghB), A("__rewriteRelativeImportExtension", uhB)
     })
 });
-var dhB = U((l2G, Hv6) => {
+var dhB = moduleWrapper((l2G, Hv6) => {
     Hv6.exports = {
         name: "@aws-sdk/client-bedrock-runtime",
         description: "AWS SDK for JavaScript Bedrock Runtime Client for Node.js, Browser and React Native",
@@ -1495,7 +1494,7 @@ var dhB = U((l2G, Hv6) => {
         }
     }
 });
-var cp1 = U((i2G, ptA) => {
+var cp1 = moduleWrapper((i2G, ptA) => {
     var chB, phB, lhB, ihB, nhB, ahB, shB, rhB, ohB, thB, ehB, AgB, QgB, dtA, dp1, BgB, GgB, ZgB, dGA, IgB, YgB, JgB, WgB, XgB, FgB, VgB, KgB, DgB, ctA, HgB, CgB, EgB;
     (function(A) {
         var Q = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
@@ -1505,7 +1504,7 @@ var cp1 = U((i2G, ptA) => {
         else if (typeof ptA === "object" && typeof i2G === "object") A(B(Q, B(i2G)));
         else A(B(Q));
 
-function B(G, Z) {
+        function B(G, Z) {
             if (G !== Q)
                 if (typeof Object.create === "function") Object.defineProperty(G, "__esModule", {
                     value: !0

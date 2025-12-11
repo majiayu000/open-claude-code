@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: telemetry_003.js
+ * 处理时间: 2025-12-09T03:41:38.309Z
+ * 变量映射: 5 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.047Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -55,7 +58,7 @@
     if (Number.isInteger(A.byteLength) && Number.isInteger(A.byteOffset) && cx0.call(A.buffer) === "[object ArrayBuffer]") return "typedArray";
     return "others"
 }, cx0, IH1;
-var ZKA = L(() => {
+var ZKA = lazyLoader(() => {
     ({
         toString: cx0
     } = Object.prototype);
@@ -74,13 +77,12 @@ var YH1 = (A) => A,
         contents: A
     }) => A,
     VxA = (A) => {
-        throw Error(`Streams in object mode are not supported: ${String(A)}`)
+        throw Error(`Streams in object mode are not supported: TextComponent{String(A)}`)
     },
     KxA = (A) => A.length;
-var lx0 = L(() => {
+var lx0 = lazyLoader(() => {
     ZKA()
 });
-
 async function XH1(A, Q) {
     return GKA(A, K14, Q)
 }
@@ -118,7 +120,7 @@ var Z14 = () => ({
     }) => rx0() ? A : A.slice(0, Q),
     rx0 = () => ("resize" in ArrayBuffer.prototype),
     K14;
-var FH1 = L(() => {
+var FH1 = lazyLoader(() => {
     ZKA();
     Y14 = new TextEncoder, K14 = {
         init: Z14,
@@ -137,7 +139,6 @@ var FH1 = L(() => {
         finalize: V14
     }
 });
-
 async function DxA(A, Q) {
     if (!("Buffer" in globalThis)) throw Error("getStreamAsBuffer() is only supported in Node.js");
     try {
@@ -148,10 +149,9 @@ async function DxA(A, Q) {
     }
 }
 var ox0 = (A) => globalThis.Buffer.from(A);
-var tx0 = L(() => {
+var tx0 = lazyLoader(() => {
     FH1()
 });
-
 async function VH1(A, Q) {
     return GKA(A, z14, Q)
 }
@@ -175,7 +175,7 @@ var D14 = () => ({
         return Q === "" ? void 0 : Q
     },
     z14;
-var ex0 = L(() => {
+var ex0 = lazyLoader(() => {
     ZKA();
     z14 = {
         init: D14,
@@ -194,17 +194,17 @@ var ex0 = L(() => {
         finalize: WH1
     }
 });
-var Av0 = L(() => {
+var Av0 = lazyLoader(() => {
     lx0();
     FH1();
     tx0();
     ex0();
     ZKA()
 });
-var Bv0 = U((UB7, Qv0) => {
+var Bv0 = moduleWrapper((UB7, Qv0) => {
     var {
         PassThrough: U14
-    } = UA("stream");
+    } = nodeRequire("stream");
     Qv0.exports = function() {
         var A = [],
             Q = new U14({
@@ -212,18 +212,18 @@ var Bv0 = U((UB7, Qv0) => {
             });
         return Q.setMaxListeners(0), Q.add = B, Q.isEmpty = G, Q.on("unpipe", Z), Array.prototype.slice.call(arguments).forEach(B), Q;
 
-function B(I) {
+        function B(I) {
             if (Array.isArray(I)) return I.forEach(B), this;
             return A.push(I), I.once("end", Z.bind(null, I)), I.once("error", Q.emit.bind(Q, "error")), I.pipe(Q, {
                 end: !1
             }), this
         }
 
-function G() {
+        function G() {
             return A.length == 0
         }
 
-function Z(I) {
+        function Z(I) {
             if (A = A.filter(function(Y) {
                     return Y !== I
                 }), !A.length && Q.readable) Q.end()
@@ -333,9 +333,9 @@ var Gv0, Zv0 = (A) => {
             }, KH1(A, J), KH1(Q, W), KH1(B, X)])
         }
     };
-var Xv0 = L(() => {
+var Xv0 = lazyLoader(() => {
     Av0();
-    Gv0 = GA(Bv0(), 1)
+    Gv0 = esmImport(Bv0(), 1)
 });
 var O14, R14, HH1 = (A, Q) => {
         for (let [B, G] of R14) {
@@ -358,7 +358,7 @@ var O14, R14, HH1 = (A, Q) => {
             B(G)
         })
     });
-var Vv0 = L(() => {
+var Vv0 = lazyLoader(() => {
     O14 = (async () => {})().constructor.prototype, R14 = ["then", "catch", "finally"].map((A) => [A, Reflect.getOwnPropertyDescriptor(O14, A)])
 });
 import {
@@ -373,7 +373,7 @@ var Hv0 = (A, Q = []) => {
     },
     j14, S14 = (A) => {
         if (typeof A !== "string" || j14.test(A)) return A;
-        return `"${A.replaceAll('"',"\\\"")}"`
+        return `"TextComponent{A.replaceAll('"',"\\\"")}"`
     },
     CH1 = (A, Q) => Hv0(A, Q).join(" "),
     EH1 = (A, Q) => Hv0(A, Q).map((B) => S14(B)).join(" "),
@@ -385,11 +385,11 @@ var Hv0 = (A, Q = []) => {
             let B = typeof A.stdout;
             if (B === "string") return A.stdout;
             if (T14.isBuffer(A.stdout)) return A.stdout.toString();
-            throw TypeError(`Unexpected "${B}" stdout in template expression`)
+            throw TypeError(`Unexpected "TextComponent{B}" stdout in template expression`)
         }
-        throw TypeError(`Unexpected "${Q}" in template expression`)
+        throw TypeError(`Unexpected "TextComponent{Q}" in template expression`)
     },
-    Dv0 = (A, Q, B) => B || A.length === 0 || Q.length === 0 ? [...A, ...Q] : [...A.slice(0, -1), `${A.at(-1)}${Q[0]}`, ...Q.slice(1)],
+    Dv0 = (A, Q, B) => B || A.length === 0 || Q.length === 0 ? [...A, ...Q] : [...A.slice(0, -1), `TextComponent{A.at(-1)}TextComponent{Q[0]}`, ...Q.slice(1)],
     k14 = ({
         templates: A,
         expressions: Q,
@@ -416,8 +416,8 @@ var Hv0 = (A, Q = []) => {
         });
         return B
     };
-var Cv0 = L(() => {
-    j14 = /^[\w.-]+$/, _14 = / +/g
+var Cv0 = lazyLoader(() => {
+    j14 = /^[\w.-]+TextComponent/, _14 = / +/g
 });
 import {
     debuglog as y14
@@ -426,16 +426,16 @@ import x14 from "node:process";
 var Ev0, CxA = (A, Q) => String(A).padStart(Q, "0"),
     v14 = () => {
         let A = new Date;
-        return `${CxA(A.getHours(),2)}:${CxA(A.getMinutes(),2)}:${CxA(A.getSeconds(),2)}.${CxA(A.getMilliseconds(),3)}`
+        return `TextComponent{CxA(A.getHours(),2)}:TextComponent{CxA(A.getMinutes(),2)}:TextComponent{CxA(A.getSeconds(),2)}.TextComponent{CxA(A.getMilliseconds(),3)}`
     },
     UH1 = (A, {
         verbose: Q
     }) => {
         if (!Q) return;
-        x14.stderr.write(`[${v14()}] ${A}
+        x14.stderr.write(`[TextComponent{v14()}] TextComponent{A}
 `)
     };
-var zv0 = L(() => {
+var zv0 = lazyLoader(() => {
     Ev0 = y14("execa").enabled
 });
 import {
@@ -585,7 +585,7 @@ function qv0(A) {
         return ds(Z, I, Uv0(A))
     }
     return Q.sync = (B, ...G) => {
-        if (!Array.isArray(B)) throw TypeError("Please use $(options).sync`command` instead of $.sync(options)`command`.");
+        if (!Array.isArray(B)) throw TypeError("Please use TextComponent(options).sync`command` instead of TextComponent.sync(options)`command`.");
         let [Z, ...I] = zH1(B, G);
         return H9A(Z, I, Uv0(A))
     }, Q
@@ -652,7 +652,7 @@ var $v0, h14 = 1e8,
         ...A
     }),
     aB7;
-var YKA = L(() => {
+var YKA = lazyLoader(() => {
     Cx0();
     $x0();
     Tx0();
@@ -663,7 +663,7 @@ var YKA = L(() => {
     Vv0();
     Cv0();
     zv0();
-    $v0 = GA(nD1(), 1);
+    $v0 = esmImport(nD1(), 1);
     aB7 = qv0()
 });
 
@@ -678,7 +678,7 @@ function H0() {
         return pQ()
     }
 }
-var R2 = L(() => {
+var R2 = lazyLoader(() => {
     S0()
 });
 
@@ -714,7 +714,6 @@ function iG(A, Q, B = 10 * NH1 * qH1) {
         return null
     }
 }
-
 async function JKA(A, Q = {}) {
     let {
         abortSignal: B,
@@ -739,12 +738,13 @@ async function JKA(A, Q = {}) {
 }
 var qH1 = 1000,
     NH1 = 60;
-var zxA = L(() => {
+var zxA = lazyLoader(() => {
     YKA();
     R2()
 });
 
-function ZQ(A, Q, B = {
+/* execGit = execGit(cmd, args) - Execute git command */
+function execGit(A, Q, B = {
     timeout: 10 * MH1 * LH1,
     preserveOutputOnError: !0,
     useCwd: !0
@@ -811,7 +811,7 @@ function q3(A, Q, {
 }
 var LH1 = 1000,
     MH1 = 60;
-var I6 = L(() => {
+var I6 = lazyLoader(() => {
     YKA();
     R2();
     u1();
@@ -826,7 +826,7 @@ function HJ() {
     return cs() && Array.isArray(Bun?.embeddedFiles) && Bun.embeddedFiles.length > 0
 }
 var OH1, uQ, ps, Nv0;
-var s5 = L(() => {
+var s5 = lazyLoader(() => {
     o2();
     u1();
     o0();
@@ -876,7 +876,8 @@ import {
     execFile as c14
 } from "child_process";
 
-function C9A() {
+/* getRipgrepConfig = getRipgrepConfig() - Get rg config */
+function getRipgrepConfig() {
     let A = $xA();
     return {
         rgPath: A.command,
@@ -888,14 +889,13 @@ function n14(A, Q, B, G) {
     let {
         rgPath: Z,
         rgArgs: I
-    } = C9A();
+    } = getRipgrepConfig();
     return c14(Z, [...I, ...A, Q], {
         maxBuffer: i14,
         signal: B,
         timeout: uQ() === "wsl" ? 60000 : 1e4
     }, G)
 }
-
 async function dj(A, Q, B) {
     if (!HJ()) await s14();
     return a14().catch((G) => {
@@ -921,12 +921,11 @@ async function dj(A, Q, B) {
                 if (K = I.trim().split(`
 `).filter(Boolean), K.length > 0 && (W || X)) K = K.slice(0, -1)
             }
-            if (g(`rg error (signal=${Z.signal}, code=${Z.code}, stderr: ${Y}), ${K.length} results`), Z.code !== 2) e(Z);
+            if (g(`rg error (signal=TextComponent{Z.signal}, code=TextComponent{Z.code}, stderr: TextComponent{Y}), TextComponent{K.length} results`), Z.code !== 2) e(Z);
             G(K)
         })
     })
 }
-
 async function Ov0(A, Q, B) {
     try {
         return (await dj(["-l", "."], A, Q)).slice(0, B)
@@ -943,22 +942,21 @@ function Rv0() {
         working: UxA?.working ?? null
     }
 }
-// Async function: s14
 async function s14() {
     if (process.platform !== "darwin" || Lv0) return;
     Lv0 = !0;
     let A = $xA();
     if (A.mode !== "builtin" || HJ()) return;
     let Q = A.command;
-    if (!(await ZQ("codesign", ["-vv", "-d", Q], {
+    if (!(await execGit("codesign", ["-vv", "-d", Q], {
             preserveOutputOnError: !1
         })).stdout.split(`
 `).find((Z) => Z.includes("linker-signed"))) return;
     try {
-        let Z = await ZQ("codesign", ["--sign", "-", "--force", "--preserve-metadata=entitlements,requirements,flags,runtime", Q]);
-        if (Z.code !== 0) e(Error(`Failed to sign ripgrep: ${Z.stdout} ${Z.stderr}`));
-        let I = await ZQ("xattr", ["-d", "com.apple.quarantine", Q]);
-        if (I.code !== 0) e(Error(`Failed to remove quarantine: ${I.stdout} ${I.stderr}`))
+        let Z = await execGit("codesign", ["--sign", "-", "--force", "--preserve-metadata=entitlements,requirements,flags,runtime", Q]);
+        if (Z.code !== 0) e(Error(`Failed to sign ripgrep: TextComponent{Z.stdout} TextComponent{Z.stderr}`));
+        let I = await execGit("xattr", ["-d", "com.apple.quarantine", Q]);
+        if (I.code !== 0) e(Error(`Failed to remove quarantine: TextComponent{I.stdout} TextComponent{I.stderr}`))
     } catch (Z) {
         e(Z)
     }
@@ -966,7 +964,7 @@ async function s14() {
 var Mv0, p14, l14, $xA, i14 = 20000000,
     wxA, UxA = null,
     a14, Lv0 = !1;
-var cj = L(() => {
+var cj = lazyLoader(() => {
     o2();
     u1();
     I6();
@@ -974,7 +972,7 @@ var cj = L(() => {
     hQ();
     w0();
     s5();
-    Mv0 = GA(fD1(), 1), p14 = m14(import.meta.url), l14 = Em.join(p14, "../"), $xA = t1(() => {
+    Mv0 = esmImport(fD1(), 1), p14 = m14(import.meta.url), l14 = Em.join(p14, "../"), $xA = t1(() => {
         if (Nj(process.env.USE_BUILTIN_RIPGREP)) {
             let {
                 cmd: G
@@ -993,7 +991,7 @@ var cj = L(() => {
         let Q = Em.resolve(l14, "vendor", "ripgrep");
         return {
             mode: "builtin",
-            command: process.platform === "win32" ? Em.resolve(Q, "x64-win32", "rg.exe") : Em.resolve(Q, `${process.arch}-${process.platform}`, "rg"),
+            command: process.platform === "win32" ? Em.resolve(Q, "x64-win32", "rg.exe") : Em.resolve(Q, `TextComponent{process.arch}-TextComponent{process.platform}`, "rg"),
             args: []
         }
     });
@@ -1002,7 +1000,7 @@ var cj = L(() => {
         try {
             let G = ["--files", "--hidden"];
             B.forEach((W) => {
-                G.push("--glob", `!${W}`)
+                G.push("--glob", `!TextComponent{W}`)
             });
             let I = (await dj(G, A, Q)).length;
             if (I === 0) return 0;
@@ -1017,7 +1015,7 @@ var cj = L(() => {
         if (UxA !== null) return;
         let A = $xA();
         try {
-            let Q = await ZQ(A.command, [...A.args, "--version"], {
+            let Q = await execGit(A.command, [...A.args, "--version"], {
                     timeout: 5000
                 }),
                 B = Q.code === 0 && !!Q.stdout && Q.stdout.startsWith("ripgrep ");
@@ -1025,7 +1023,7 @@ var cj = L(() => {
                 working: B,
                 lastTested: Date.now(),
                 config: A
-            }, g(`Ripgrep first use test: ${B?"PASSED":"FAILED"} (mode=${A.mode}, path=${A.command})`), BA("tengu_ripgrep_availability", {
+            }, g(`Ripgrep first use test: TextComponent{B?"PASSED":"FAILED"} (mode=TextComponent{A.mode}, path=TextComponent{A.command})`), BA("tengu_ripgrep_availability", {
                 working: B ? 1 : 0,
                 using_system: A.mode === "system" ? 1 : 0
             })
@@ -1038,7 +1036,7 @@ var cj = L(() => {
         }
     })
 });
-var cv0 = U((L27, dv0) => {
+var cv0 = moduleWrapper((L27, dv0) => {
     function SH1(A) {
         if (A instanceof Map) A.clear = A.delete = A.set = function() {
             throw Error("map is read-only")
@@ -1054,8 +1052,7 @@ var cv0 = U((L27, dv0) => {
     var yv0 = SH1,
         r14 = SH1;
     yv0.default = r14;
-
-class PH1 {
+    class PH1 {
         constructor(A) {
             if (A.data === void 0) A.data = {};
             this.data = A.data, this.isMatchIgnored = !1
@@ -1065,11 +1062,11 @@ class PH1 {
         }
     }
 
-function E9A(A) {
+    function E9A(A) {
         return A.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;")
     }
 
-function zm(A, ...Q) {
+    function zm(A, ...Q) {
         let B = Object.create(null);
         for (let G in A) B[G] = A[G];
         return Q.forEach(function(G) {
@@ -1080,8 +1077,7 @@ function zm(A, ...Q) {
         Tv0 = (A) => {
             return !!A.kind
         };
-
-class xv0 {
+    class xv0 {
         constructor(A, Q) {
             this.buffer = "", this.classPrefix = Q.classPrefix, A.walk(this)
         }
@@ -1091,7 +1087,7 @@ class xv0 {
         openNode(A) {
             if (!Tv0(A)) return;
             let Q = A.kind;
-            if (!A.sublanguage) Q = `${this.classPrefix}${Q}`;
+            if (!A.sublanguage) Q = `TextComponent{this.classPrefix}TextComponent{Q}`;
             this.span(Q)
         }
         closeNode(A) {
@@ -1102,11 +1098,10 @@ class xv0 {
             return this.buffer
         }
         span(A) {
-            this.buffer += `<span class="${A}">`
+            this.buffer += `<span class="TextComponent{A}">`
         }
     }
-
-class _H1 {
+    class _H1 {
         constructor() {
             this.rootNode = {
                 children: []
@@ -1155,8 +1150,7 @@ class _H1 {
             })
         }
     }
-
-class vv0 extends _H1 {
+    class vv0 extends _H1 {
         constructor(A) {
             super();
             this.options = A
@@ -1181,35 +1175,35 @@ class vv0 extends _H1 {
         }
     }
 
-function t14(A) {
-        return new RegExp(A.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&"), "m")
+    function t14(A) {
+        return new RegExp(A.replace(/[-/\\^TextComponent*+?.()|[\]{}]/g, "\\TextComponent&"), "m")
     }
 
-function WKA(A) {
+    function WKA(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function e14(...A) {
+    function e14(...A) {
         return A.map((B) => WKA(B)).join("")
     }
 
-function A04(...A) {
+    function A04(...A) {
         return "(" + A.map((B) => WKA(B)).join("|") + ")"
     }
 
-function Q04(A) {
+    function Q04(A) {
         return new RegExp(A.toString() + "|").exec("").length - 1
     }
 
-function B04(A, Q) {
+    function B04(A, Q) {
         let B = A && A.exec(Q);
         return B && B.index === 0
     }
     var G04 = /\[(?:[^\\\]]|\\.)*\]|\(\??|\\([1-9][0-9]*)|\\./;
 
-function Z04(A, Q = "|") {
+    function Z04(A, Q = "|") {
         let B = 0;
         return A.map((G) => {
             B += 1;
@@ -1226,7 +1220,7 @@ function Z04(A, Q = "|") {
                 else if (Y += J[0], J[0] === "(") B++
             }
             return Y
-        }).map((G) => `(${G})`).join(Q)
+        }).map((G) => `(TextComponent{G})`).join(Q)
     }
     var I04 = /\b\B/,
         bv0 = "[a-zA-Z]\\w*",
@@ -1241,7 +1235,7 @@ function Z04(A, Q = "|") {
             return zm({
                 className: "meta",
                 begin: Q,
-                end: /$/,
+                end: /TextComponent/,
                 relevance: 0,
                 "on:begin": (B, G) => {
                     if (B.index !== 0) G.ignoreMatch()
@@ -1282,9 +1276,9 @@ function Z04(A, Q = "|") {
                 relevance: 0
             }), G
         },
-        F04 = NxA("//", "$"),
+        F04 = NxA("//", "TextComponent"),
         V04 = NxA("/\\*", "\\*/"),
-        K04 = NxA("#", "$"),
+        K04 = NxA("#", "TextComponent"),
         D04 = {
             className: "number",
             begin: yH1,
@@ -1302,7 +1296,7 @@ function Z04(A, Q = "|") {
         },
         E04 = {
             className: "number",
-            begin: yH1 + "(%|em|ex|ch|rem|vw|vh|vmin|vmax|cm|mm|in|pt|pc|px|deg|grad|rad|turn|s|ms|Hz|kHz|dpi|dpcm|dppx)?",
+            begin: yH1 + "(%|em|ex|ch|rem|vw|vh|vmin|vmax|cm|mm|in|pt|pc|isArguments|deg|grad|rad|turn|s|ms|Hz|kHz|dpi|dpcm|dppx)?",
             relevance: 0
         },
         z04 = {
@@ -1373,35 +1367,34 @@ function Z04(A, Q = "|") {
             END_SAME_AS_BEGIN: q04
         });
 
-function N04(A, Q) {
+    function N04(A, Q) {
         if (A.input[A.index - 1] === ".") Q.ignoreMatch()
     }
 
-function L04(A, Q) {
+    function L04(A, Q) {
         if (!Q) return;
         if (!A.beginKeywords) return;
         if (A.begin = "\\b(" + A.beginKeywords.split(" ").join("|") + ")(?!\\.)(?=\\b|\\s)", A.__beforeBegin = N04, A.keywords = A.keywords || A.beginKeywords, delete A.beginKeywords, A.relevance === void 0) A.relevance = 0
     }
 
-function M04(A, Q) {
+    function M04(A, Q) {
         if (!Array.isArray(A.illegal)) return;
         A.illegal = A04(...A.illegal)
     }
 
-function O04(A, Q) {
+    function O04(A, Q) {
         if (!A.match) return;
         if (A.begin || A.end) throw Error("begin & end are not supported with match");
         A.begin = A.match, delete A.match
     }
 
-function R04(A, Q) {
+    function R04(A, Q) {
         if (A.relevance === void 0) A.relevance = 1
     }
-
-var T04 = ["of", "and", "for", "in", "not", "or", "if", "then", "parent", "list", "value"],
+    var T04 = ["of", "and", "for", "in", "not", "or", "if", "then", "parent", "list", "value"],
         P04 = "keyword";
 
-function uv0(A, Q, B = P04) {
+    function uv0(A, Q, B = P04) {
         let G = {};
         if (typeof A === "string") Z(B, A.split(" "));
         else if (Array.isArray(A)) Z(B, A);
@@ -1410,7 +1403,7 @@ function uv0(A, Q, B = P04) {
         });
         return G;
 
-function Z(I, Y) {
+        function Z(I, Y) {
             if (Q) Y = Y.map((J) => J.toLowerCase());
             Y.forEach(function(J) {
                 let W = J.split("|");
@@ -1419,23 +1412,22 @@ function Z(I, Y) {
         }
     }
 
-function j04(A, Q) {
+    function j04(A, Q) {
         if (Q) return Number(Q);
         return S04(A) ? 0 : 1
     }
 
-function S04(A) {
+    function S04(A) {
         return T04.includes(A.toLowerCase())
     }
 
-function _04(A, {
+    function _04(A, {
         plugins: Q
     }) {
         function B(J, W) {
             return new RegExp(WKA(J), "m" + (A.case_insensitive ? "i" : "") + (W ? "g" : ""))
         }
-
-class G {
+        class G {
             constructor() {
                 this.matchIndexes = {}, this.regexes = [], this.matchAt = 1, this.position = 0
             }
@@ -1456,8 +1448,7 @@ class G {
                 return W.splice(0, X), Object.assign(W, F)
             }
         }
-
-class Z {
+        class Z {
             constructor() {
                 this.rules = [], this.multiRegexes = [], this.count = 0, this.lastIndex = 0, this.regexIndex = 0
             }
@@ -1491,7 +1482,7 @@ class Z {
             }
         }
 
-function I(J) {
+        function I(J) {
             let W = new Z;
             if (J.contains.forEach((X) => W.addRule(X.begin, {
                     rule: X,
@@ -1505,7 +1496,7 @@ function I(J) {
             return W
         }
 
-function Y(J, W) {
+        function Y(J, W) {
             let X = J;
             if (J.isCompiled) return X;
             [O04].forEach((V) => V(J, W)), A.compilerExtensions.forEach((V) => V(J, W)), J.__beforeBegin = null, [L04, M04, R04].forEach((V) => V(J, W)), J.isCompiled = !0;

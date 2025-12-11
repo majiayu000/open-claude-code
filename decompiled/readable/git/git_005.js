@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_005.js
+ * 处理时间: 2025-12-09T03:41:37.321Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.964Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -25,7 +28,7 @@
                             this.writeValue(String(Q.getTime() / 1000));
                             break
                     }
-                } else if (G.isDocumentSchema()) throw Error(`@aws-sdk/core/protocols - QuerySerializer unsupported document type ${G.getName(!0)}`);
+                } else if (G.isDocumentSchema()) throw Error(`@aws-sdk/core/protocols - QuerySerializer unsupported document type TextComponent{G.getName(!0)}`);
                 else if (G.isListSchema()) {
                     if (Array.isArray(Q))
                         if (Q.length === 0) {
@@ -37,7 +40,7 @@
                             for (let J of Q) {
                                 if (J == null) continue;
                                 let W = this.getKey("member", Z.getMergedTraits().xmlName),
-                                    X = I ? `${B}${Y}` : `${B}${W}.${Y}`;
+                                    X = I ? `TextComponent{B}TextComponent{Y}` : `TextComponent{B}TextComponent{W}.TextComponent{Y}`;
                                 this.write(Z, J, X), ++Y
                             }
                         }
@@ -50,9 +53,9 @@
                         for (let [W, X] of Object.entries(Q)) {
                             if (X == null) continue;
                             let F = this.getKey("key", Z.getMergedTraits().xmlName),
-                                V = Y ? `${B}${J}.${F}` : `${B}entry.${J}.${F}`,
+                                V = Y ? `TextComponent{B}TextComponent{J}.TextComponent{F}` : `TextComponent{B}entry.TextComponent{J}.TextComponent{F}`,
                                 K = this.getKey("value", I.getMergedTraits().xmlName),
-                                D = Y ? `${B}${J}.${K}` : `${B}entry.${J}.${K}`;
+                                D = Y ? `TextComponent{B}TextComponent{J}.TextComponent{K}` : `TextComponent{B}entry.TextComponent{J}.TextComponent{K}`;
                             this.write(Z, W, V), this.write(I, X, D), ++J
                         }
                     }
@@ -61,11 +64,11 @@
                         for (let [Z, I] of G.structIterator()) {
                             if (Q[Z] == null) continue;
                             let Y = this.getKey(Z, I.getMergedTraits().xmlName),
-                                J = `${B}${Y}`;
+                                J = `TextComponent{B}TextComponent{Y}`;
                             this.write(I, Q[Z], J)
                         }
                 } else if (G.isUnitSchema());
-                else throw Error(`@aws-sdk/core/protocols - QuerySerializer unrecognized schema type ${G.getName(!0)}`)
+                else throw Error(`@aws-sdk/core/protocols - QuerySerializer unrecognized schema type TextComponent{G.getName(!0)}`)
             }
             flush() {
                 if (this.buffer === void 0) throw Error("@aws-sdk/core/protocols - QuerySerializer cannot flush with nothing written to buffer.");
@@ -79,7 +82,7 @@
             }
             writeKey(A) {
                 if (A.endsWith(".")) A = A.slice(0, A.length - 1);
-                this.buffer += `&${(0,iz1.extendedEncodeURIComponent)(A)}=`
+                this.buffer += `&TextComponent{(0,iz1.extendedEncodeURIComponent)(A)}=`
             }
             writeValue(A) {
                 this.buffer += (0, iz1.extendedEncodeURIComponent)(A)
@@ -123,7 +126,7 @@
                 if (Object.assign(G.headers, {
                         "content-type": "application/x-www-form-urlencoded"
                     }), (0, am.deref)(A.input) === "unit" || !G.body) G.body = "";
-                if (G.body = `Action=${A.name.split("#")[1]}&Version=${this.options.version}` + G.body, G.body.endsWith("&")) G.body = G.body.slice(-1);
+                if (G.body = `Action=TextComponent{A.name.split("#")[1]}&Version=TextComponent{this.options.version}` + G.body, G.body.endsWith("&")) G.body = G.body.slice(-1);
                 try {
                     G.headers["content-length"] = String((0, Uz4.calculateBodyLength)(G.body))
                 } catch (Z) {}
@@ -309,7 +312,7 @@
             writeStruct(A, Q, B) {
                 let G = A.getMergedTraits(),
                     Z = A.isMemberSchema() && !G.httpPayload ? A.getMemberTraits().xmlName ?? A.getMemberName() : G.xmlName ?? A.getName();
-                if (!Z || !A.isStructSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write struct with empty name or non-struct, schema=${A.getName(!0)}.`);
+                if (!Z || !A.isStructSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write struct with empty name or non-struct, schema=TextComponent{A.getName(!0)}.`);
                 let I = IS.XmlNode.of(Z),
                     [Y, J] = this.getXmlnsAttribute(A, B);
                 if (J) I.addAttribute(Y, J);
@@ -332,7 +335,7 @@
                 return I
             }
             writeList(A, Q, B, G) {
-                if (!A.isMemberSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write non-member list: ${A.getName(!0)}`);
+                if (!A.isMemberSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write non-member list: TextComponent{A.getName(!0)}`);
                 let Z = A.getMergedTraits(),
                     I = A.getValueSchema(),
                     Y = I.getMergedTraits(),
@@ -362,7 +365,7 @@
                 }
             }
             writeMap(A, Q, B, G, Z = !1) {
-                if (!A.isMemberSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write non-member map: ${A.getName(!0)}`);
+                if (!A.isMemberSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write non-member map: TextComponent{A.getName(!0)}`);
                 let I = A.getMergedTraits(),
                     Y = A.getKeySchema(),
                     W = Y.getMergedTraits().xmlName ?? "key",
@@ -429,9 +432,9 @@
                     if (Q instanceof kz4.NumericValue) return Q.string;
                     return String(Q)
                 } else if (B.isMapSchema() || B.isListSchema()) throw Error("@aws-sdk/core/protocols - xml serializer, cannot call _write() on List/Map schema, call writeList or writeMap() instead.");
-                else throw Error(`@aws-sdk/core/protocols - xml serializer, unhandled schema type for object value and schema: ${B.getName(!0)}`);
+                else throw Error(`@aws-sdk/core/protocols - xml serializer, unhandled schema type for object value and schema: TextComponent{B.getName(!0)}`);
                 if (B.isStringSchema() || B.isBooleanSchema() || B.isNumericSchema() || B.isBigIntegerSchema() || B.isBigDecimalSchema()) G = String(Q);
-                if (G === null) throw Error(`Unhandled schema-value pair ${B.getName(!0)}=${Q}`);
+                if (G === null) throw Error(`Unhandled schema-value pair TextComponent{B.getName(!0)}=TextComponent{Q}`);
                 return G
             }
             writeSimpleInto(A, Q, B, G) {
@@ -445,7 +448,7 @@
             getXmlnsAttribute(A, Q) {
                 let B = A.getMergedTraits(),
                     [G, Z] = B.xmlNamespace ?? [];
-                if (Z && Z !== Q) return [G ? `xmlns:${G}` : "xmlns", Z];
+                if (Z && Z !== Q) return [G ? `xmlns:TextComponent{G}` : "xmlns", Z];
                 return [void 0, void 0]
             }
         },
@@ -569,7 +572,7 @@
             }
         }
 });
-var wV = U((KDA) => {
+var wV = moduleWrapper((KDA) => {
     Object.defineProperty(KDA, "__esModule", {
         value: !0
     });
@@ -578,7 +581,7 @@ var wV = U((KDA) => {
     ez1.__exportStar(jz1(), KDA);
     ez1.__exportStar(h1Q(), KDA)
 });
-var M4A = U(($W7, r1Q) => {
+var M4A = moduleWrapper(($W7, r1Q) => {
     var {
         defineProperty: HfA,
         getOwnPropertyDescriptor: xz4,
@@ -614,13 +617,13 @@ var M4A = U(($W7, r1Q) => {
     var uz4 = nB(),
         c1Q = void 0;
 
-function p1Q(A) {
+    function p1Q(A) {
         if (A === void 0) return !0;
         return typeof A === "string" && A.length <= 50
     }
     Kv(p1Q, "isValidUserAgentAppId");
 
-function l1Q(A) {
+    function l1Q(A) {
         let Q = (0, uz4.normalizeProvider)(A.userAgentAppId ?? c1Q),
             {
                 customUserAgent: B
@@ -645,8 +648,7 @@ function l1Q(A) {
         dz4 = cC(),
         YS = wV(),
         cz4 = /\d{12}\.ddb/;
-
-async function i1Q(A, Q, B) {
+    async function i1Q(A, Q, B) {
         if (B.request?.headers?.["smithy-protocol"] === "rpc-v2-cbor")(0, YS.setFeature)(A, "PROTOCOL_RPC_V2_CBOR", "M");
         if (typeof Q.retryStrategy === "function") {
             let I = await Q.retryStrategy();
@@ -678,16 +680,17 @@ async function i1Q(A, Q, B) {
         }
     }
     Kv(i1Q, "checkFeatures");
-    var g1Q = "user-agent",
+    /* USER_AGENT = USER_AGENT = "user-agent" */
+var USER_AGENT = "user-agent",
         AU1 = "x-amz-user-agent",
         u1Q = " ",
         QU1 = "/",
-        pz4 = /[^\!\$\%\&\'\*\+\-\.\^\_\`\|\~\d\w]/g,
-        lz4 = /[^\!\$\%\&\'\*\+\-\.\^\_\`\|\~\d\w\#]/g,
+        pz4 = /[^\!\TextComponent\%\&\'\*\+\-\.\^\_\`\|\~\d\w]/g,
+        lz4 = /[^\!\TextComponent\%\&\'\*\+\-\.\^\_\`\|\~\d\w\#]/g,
         m1Q = "-",
         iz4 = 1024;
 
-function n1Q(A) {
+    function n1Q(A) {
         let Q = "";
         for (let B in A) {
             let G = A[B];
@@ -711,16 +714,16 @@ function n1Q(A) {
             } = Z, Y = B?.userAgent?.map(DfA) || [], J = (await A.defaultUserAgentProvider()).map(DfA);
             await i1Q(B, A, G);
             let W = B;
-            J.push(`m/${n1Q(Object.assign({},B.__smithy_context?.features,W.__aws_sdk_context?.features))}`);
+            J.push(`m/TextComponent{n1Q(Object.assign({},B.__smithy_context?.features,W.__aws_sdk_context?.features))}`);
             let X = A?.customUserAgent?.map(DfA) || [],
                 F = await A.userAgentAppId();
-            if (F) J.push(DfA([`app/${F}`]));
+            if (F) J.push(DfA([`app/TextComponent{F}`]));
             let V = (0, mz4.getUserAgentPrefix)(),
                 K = (V ? [V] : []).concat([...J, ...Y, ...X]).join(u1Q),
                 D = [...J.filter((H) => H.startsWith("aws-sdk-")), ...X].join(u1Q);
             if (A.runtime !== "browser") {
-                if (D) I[AU1] = I[AU1] ? `${I[g1Q]} ${D}` : D;
-                I[g1Q] = K
+                if (D) I[AU1] = I[AU1] ? `TextComponent{I[USER_AGENT]} TextComponent{D}` : D;
+                I[USER_AGENT] = K
             } else I[AU1] = K;
             return Q({
                 ...G,
@@ -739,9 +742,9 @@ function n1Q(A) {
                     case 0:
                         return J;
                     case 1:
-                        return `${Y}/${J}`;
+                        return `TextComponent{Y}/TextComponent{J}`;
                     default:
-                        return `${Y}#${J}`
+                        return `TextComponent{Y}#TextComponent{J}`
                 }
             }, "")
         }, "escapeUserAgent"),
@@ -758,7 +761,7 @@ function n1Q(A) {
             }, "applyToStack")
         }), "getUserAgentPlugin")
 });
-var Q0Q = U((wW7, A0Q) => {
+var Q0Q = moduleWrapper((wW7, A0Q) => {
     var {
         defineProperty: CfA,
         getOwnPropertyDescriptor: az4,
@@ -793,19 +796,19 @@ var Q0Q = U((wW7, A0Q) => {
             if (!(Q in A)) return;
             if (A[Q] === "true") return !0;
             if (A[Q] === "false") return !1;
-            throw Error(`Cannot load ${B} "${Q}". Expected "true" or "false", got ${A[Q]}.`)
+            throw Error(`Cannot load TextComponent{B} "TextComponent{Q}". Expected "true" or "false", got TextComponent{A[Q]}.`)
         }, "booleanSelector"),
         QU4 = o1Q((A, Q, B) => {
             if (!(Q in A)) return;
             let G = parseInt(A[Q], 10);
-            if (Number.isNaN(G)) throw TypeError(`Cannot load ${B} '${Q}'. Expected number, got '${A[Q]}'.`);
+            if (Number.isNaN(G)) throw TypeError(`Cannot load TextComponent{B} 'TextComponent{Q}'. Expected number, got 'TextComponent{A[Q]}'.`);
             return G
         }, "numberSelector"),
         e1Q = ((A) => {
             return A.ENV = "env", A.CONFIG = "shared config entry", A
         })(e1Q || {})
 });
-var S8 = U((qW7, K0Q) => {
+var S8 = moduleWrapper((qW7, K0Q) => {
     var {
         defineProperty: zfA,
         getOwnPropertyDescriptor: BU4,
@@ -885,7 +888,7 @@ var S8 = U((qW7, K0Q) => {
             let {
                 tls: Q = !0
             } = A, B = await A.region();
-            if (!new RegExp(/^([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9])$/).test(B)) throw Error("Invalid region in client config");
+            if (!new RegExp(/^([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9])TextComponent/).test(B)) throw Error("Invalid region in client config");
             let Z = await A.useDualstackEndpoint(),
                 I = await A.useFipsEndpoint(),
                 {
@@ -895,7 +898,7 @@ var S8 = U((qW7, K0Q) => {
                     useFipsEndpoint: I
                 }) ?? {};
             if (!Y) throw Error("Cannot resolve hostname from client config");
-            return A.urlParser(`${Q?"https:":"http:"}//${Y}`)
+            return A.urlParser(`TextComponent{Q?"https:":"http:"}//TextComponent{Y}`)
         }, "getEndpointFromRegion"),
         HU4 = jR((A) => {
             let Q = (0, EfA.normalizeProvider)(A.useDualstackEndpoint ?? !1),
@@ -995,7 +998,7 @@ var S8 = U((qW7, K0Q) => {
                     regionHostname: X,
                     partitionHostname: F
                 });
-            if (V === void 0) throw Error(`Endpoint resolution failed for: ${{resolvedRegion:J,useFipsEndpoint:Q,useDualstackEndpoint:B}}`);
+            if (V === void 0) throw Error(`Endpoint resolution failed for: TextComponent{{resolvedRegion:J,useFipsEndpoint:Q,useDualstackEndpoint:B}}`);
             let K = wU4(V, {
                 signingRegion: Z[J]?.signingRegion,
                 regionRegex: I[Y].regionRegex,
@@ -1014,7 +1017,7 @@ var S8 = U((qW7, K0Q) => {
             }
         }, "getRegionInfo")
 });
-var N0Q = U((NW7, q0Q) => {
+var N0Q = moduleWrapper((NW7, q0Q) => {
     var {
         defineProperty: UfA,
         getOwnPropertyDescriptor: NU4,
@@ -1106,7 +1109,7 @@ var N0Q = U((NW7, q0Q) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(w0Q || {})
 });
-var P0Q = U((LW7, T0Q) => {
+var P0Q = moduleWrapper((LW7, T0Q) => {
     var {
         defineProperty: wfA,
         getOwnPropertyDescriptor: yU4,
@@ -1185,7 +1188,7 @@ var P0Q = U((LW7, T0Q) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values
@@ -1219,7 +1222,7 @@ var P0Q = U((LW7, T0Q) => {
                 rm(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -1241,7 +1244,7 @@ var P0Q = U((LW7, T0Q) => {
             }
         };
 
-function O0Q(A) {
+    function O0Q(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -1251,8 +1254,7 @@ function O0Q(A) {
         }, {})
     }
     rm(O0Q, "cloneQuery");
-
-var pU4 = class {
+    var pU4 = class {
         static {
             rm(this, "HttpResponse")
         }
@@ -1266,12 +1268,12 @@ var pU4 = class {
         }
     };
 
-function R0Q(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function R0Q(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     rm(R0Q, "isValidHostname")
 });
-var zX = U((TW7, y0Q) => {
+var zX = moduleWrapper((TW7, y0Q) => {
     var {
         defineProperty: qfA,
         getOwnPropertyDescriptor: lU4,
@@ -1305,7 +1307,7 @@ var zX = U((TW7, y0Q) => {
     var oU4 = P0Q(),
         j0Q = "content-length";
 
-function BU1(A) {
+    function BU1(A) {
         return (Q) => async (B) => {
             let G = B.request;
             if (oU4.HttpRequest.isInstance(G)) {
@@ -1328,8 +1330,7 @@ function BU1(A) {
         }
     }
     S0Q(BU1, "contentLengthMiddleware");
-
-var k0Q = {
+    var k0Q = {
             step: "build",
             tags: ["SET_CONTENT_LENGTH", "CONTENT_LENGTH"],
             name: "contentLengthMiddleware",
@@ -1341,16 +1342,16 @@ var k0Q = {
             }
         }), "getContentLengthPlugin")
 });
-var O4A = U((x0Q) => {
+var O4A = moduleWrapper((x0Q) => {
     Object.defineProperty(x0Q, "__esModule", {
         value: !0
     });
     x0Q.getHomeDir = void 0;
-    var eU4 = UA("os"),
-        A$4 = UA("path"),
+    var eU4 = nodeRequire("os"),
+        A$4 = nodeRequire("path"),
         GU1 = {},
         Q$4 = () => {
-            if (process && process.geteuid) return `${process.geteuid()}`;
+            if (process && process.geteuid) return `TextComponent{process.geteuid()}`;
             return "DEFAULT"
         },
         B$4 = () => {
@@ -1358,37 +1359,37 @@ var O4A = U((x0Q) => {
                 HOME: A,
                 USERPROFILE: Q,
                 HOMEPATH: B,
-                HOMEDRIVE: G = `C:${A$4.sep}`
+                HOMEDRIVE: G = `C:TextComponent{A$4.sep}`
             } = process.env;
             if (A) return A;
             if (Q) return Q;
-            if (B) return `${G}${B}`;
+            if (B) return `TextComponent{G}TextComponent{B}`;
             let Z = Q$4();
             if (!GU1[Z]) GU1[Z] = (0, eU4.homedir)();
             return GU1[Z]
         };
     x0Q.getHomeDir = B$4
 });
-var ZU1 = U((b0Q) => {
+var ZU1 = moduleWrapper((b0Q) => {
     Object.defineProperty(b0Q, "__esModule", {
         value: !0
     });
     b0Q.getSSOTokenFilepath = void 0;
-    var G$4 = UA("crypto"),
-        Z$4 = UA("path"),
+    var G$4 = nodeRequire("crypto"),
+        Z$4 = nodeRequire("path"),
         I$4 = O4A(),
         Y$4 = (A) => {
             let B = (0, G$4.createHash)("sha1").update(A).digest("hex");
-            return (0, Z$4.join)((0, I$4.getHomeDir)(), ".aws", "sso", "cache", `${B}.json`)
+            return (0, Z$4.join)((0, I$4.getHomeDir)(), ".aws", "sso", "cache", `TextComponent{B}.json`)
         };
     b0Q.getSSOTokenFilepath = Y$4
 });
-var u0Q = U((h0Q) => {
+var u0Q = moduleWrapper((h0Q) => {
     Object.defineProperty(h0Q, "__esModule", {
         value: !0
     });
     h0Q.getSSOTokenFromFile = void 0;
-    var J$4 = UA("fs"),
+    var J$4 = nodeRequire("fs"),
         W$4 = ZU1(),
         {
             readFile: X$4
@@ -1400,7 +1401,7 @@ var u0Q = U((h0Q) => {
         };
     h0Q.getSSOTokenFromFile = F$4
 });
-var r0Q = U((_W7, s0Q) => {
+var r0Q = moduleWrapper((_W7, s0Q) => {
     var {
         defineProperty: NfA,
         getOwnPropertyDescriptor: V$4,
@@ -1492,12 +1493,12 @@ var r0Q = U((_W7, s0Q) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(a0Q || {})
 });
-var YU1 = U((o0Q) => {
+var YU1 = moduleWrapper((o0Q) => {
     Object.defineProperty(o0Q, "__esModule", {
         value: !0
     });
     o0Q.slurpFile = void 0;
-    var N$4 = UA("fs"),
+    var N$4 = nodeRequire("fs"),
         {
             readFile: L$4
         } = N$4.promises,

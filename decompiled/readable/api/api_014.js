@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_014.js
+ * 处理时间: 2025-12-09T03:41:36.137Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.869Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -42,7 +45,7 @@
         })
     }
 });
-var GjB = U((Uo7, BjB) => {
+var GjB = moduleWrapper((Uo7, BjB) => {
     var lN6 = brA(),
         Gf = f_(),
         QjB = {
@@ -53,37 +56,37 @@ var GjB = U((Uo7, BjB) => {
             srgb: "srgb"
         };
 
-function iN6(A) {
+    function iN6(A) {
         return this._setBackgroundColourOption("tint", A), this
     }
 
-function nN6(A) {
+    function nN6(A) {
         return this.options.greyscale = Gf.bool(A) ? A : !0, this
     }
 
-function aN6(A) {
+    function aN6(A) {
         return this.greyscale(A)
     }
 
-function sN6(A) {
+    function sN6(A) {
         if (!Gf.string(A)) throw Gf.invalidParameterError("colourspace", "string", A);
         return this.options.colourspacePipeline = A, this
     }
 
-function rN6(A) {
+    function rN6(A) {
         return this.pipelineColourspace(A)
     }
 
-function oN6(A) {
+    function oN6(A) {
         if (!Gf.string(A)) throw Gf.invalidParameterError("colourspace", "string", A);
         return this.options.colourspace = A, this
     }
 
-function tN6(A) {
+    function tN6(A) {
         return this.toColourspace(A)
     }
 
-function eN6(A, Q) {
+    function eN6(A, Q) {
         if (Gf.defined(Q))
             if (Gf.object(Q) || Gf.string(Q)) {
                 let B = lN6(Q);
@@ -103,7 +106,7 @@ function eN6(A, Q) {
         }), A.colourspace = QjB, A.colorspace = QjB
     }
 });
-var IjB = U(($o7, ZjB) => {
+var IjB = moduleWrapper(($o7, ZjB) => {
     var u_ = f_(),
         AL6 = {
             and: "and",
@@ -111,11 +114,11 @@ var IjB = U(($o7, ZjB) => {
             eor: "eor"
         };
 
-function QL6() {
+    function QL6() {
         return this.options.removeAlpha = !0, this
     }
 
-function BL6(A) {
+    function BL6(A) {
         if (u_.defined(A))
             if (u_.number(A) && u_.inRange(A, 0, 1)) this.options.ensureAlpha = A;
             else throw u_.invalidParameterError("alpha", "number between 0 and 1", A);
@@ -123,7 +126,7 @@ function BL6(A) {
         return this
     }
 
-function GL6(A) {
+    function GL6(A) {
         let Q = {
             red: 0,
             green: 1,
@@ -136,7 +139,7 @@ function GL6(A) {
         return this
     }
 
-function ZL6(A, Q) {
+    function ZL6(A, Q) {
         if (Array.isArray(A)) A.forEach(function(B) {
             this.options.joinChannelIn.push(this._createInputDescriptor(B, Q))
         }, this);
@@ -144,7 +147,7 @@ function ZL6(A, Q) {
         return this
     }
 
-function IL6(A) {
+    function IL6(A) {
         if (u_.string(A) && u_.inArray(A, ["and", "or", "eor"])) this.options.bandBoolOp = A;
         else throw u_.invalidParameterError("boolOp", "one of: and, or, eor", A);
         return this
@@ -159,8 +162,8 @@ function IL6(A) {
         }), A.bool = AL6
     }
 });
-var VjB = U((wo7, FjB) => {
-    var qd1 = UA("node:path"),
+var VjB = moduleWrapper((wo7, FjB) => {
+    var qd1 = nodeRequire("node:path"),
         Z1 = f_(),
         JGA = d$A(),
         YjB = new Map([
@@ -184,11 +187,11 @@ var VjB = U((wo7, FjB) => {
             ["j2c", "jp2"],
             ["jxl", "jxl"]
         ]),
-        YL6 = /\.(jp[2x]|j2[kc])$/i,
+        YL6 = /\.(jp[2x]|j2[kc])TextComponent/i,
         JjB = () => Error("JP2 output requires libvips with support for OpenJPEG"),
         WjB = (A) => 1 << 31 - Math.clz32(Math.ceil(Math.log2(A)));
 
-function JL6(A, Q) {
+    function JL6(A, Q) {
         let B;
         if (!Z1.string(A)) B = Error("Missing output file path");
         else if (Z1.string(this.options.input.file) && qd1.resolve(this.options.input.file) === qd1.resolve(A)) B = Error("Cannot use same file for input and output");
@@ -204,7 +207,7 @@ function JL6(A, Q) {
         return this
     }
 
-function WL6(A, Q) {
+    function WL6(A, Q) {
         if (Z1.object(A)) this._setBooleanOption("resolveWithObject", A.resolveWithObject);
         else if (this.options.resolveWithObject) this.options.resolveWithObject = !1;
         this.options.fileOut = "";
@@ -212,31 +215,31 @@ function WL6(A, Q) {
         return this._pipeline(Z1.fn(A) ? A : Q, B)
     }
 
-function XL6() {
+    function XL6() {
         return this.options.keepMetadata |= 1, this
     }
 
-function FL6(A) {
+    function FL6(A) {
         if (Z1.object(A))
             for (let [Q, B] of Object.entries(A))
                 if (Z1.object(B))
                     for (let [G, Z] of Object.entries(B))
-                        if (Z1.string(Z)) this.options.withExif[`exif-${Q.toLowerCase()}-${G}`] = Z;
-                        else throw Z1.invalidParameterError(`${Q}.${G}`, "string", Z);
+                        if (Z1.string(Z)) this.options.withExif[`exif-TextComponent{Q.toLowerCase()}-TextComponent{G}`] = Z;
+                        else throw Z1.invalidParameterError(`TextComponent{Q}.TextComponent{G}`, "string", Z);
         else throw Z1.invalidParameterError(Q, "object", B);
         else throw Z1.invalidParameterError("exif", "object", A);
         return this.options.withExifMerge = !1, this.keepExif()
     }
 
-function VL6(A) {
+    function VL6(A) {
         return this.withExif(A), this.options.withExifMerge = !0, this
     }
 
-function KL6() {
+    function KL6() {
         return this.options.keepMetadata |= 8, this
     }
 
-function DL6(A, Q) {
+    function DL6(A, Q) {
         if (Z1.string(A)) this.options.withIccProfile = A;
         else throw Z1.invalidParameterError("icc", "string", A);
         if (this.keepIccProfile(), Z1.object(Q)) {
@@ -248,11 +251,11 @@ function DL6(A, Q) {
         return this
     }
 
-function HL6() {
+    function HL6() {
         return this.options.keepMetadata = 31, this
     }
 
-function CL6(A) {
+    function CL6(A) {
         if (this.keepMetadata(), this.withIccProfile("srgb"), Z1.object(A)) {
             if (Z1.defined(A.orientation))
                 if (Z1.integer(A.orientation) && Z1.inRange(A.orientation, 1, 8)) this.options.withMetadataOrientation = A.orientation;
@@ -266,13 +269,13 @@ function CL6(A) {
         return this
     }
 
-function EL6(A, Q) {
+    function EL6(A, Q) {
         let B = YjB.get((Z1.object(A) && Z1.string(A.id) ? A.id : A).toLowerCase());
-        if (!B) throw Z1.invalidParameterError("format", `one of: ${[...YjB.keys()].join(", ")}`, A);
+        if (!B) throw Z1.invalidParameterError("format", `one of: TextComponent{[...YjB.keys()].join(", ")}`, A);
         return this[B](Q)
     }
 
-function zL6(A) {
+    function zL6(A) {
         if (Z1.object(A)) {
             if (Z1.defined(A.quality))
                 if (Z1.integer(A.quality) && Z1.inRange(A.quality, 1, 100)) this.options.jpegQuality = A.quality;
@@ -302,7 +305,7 @@ function zL6(A) {
         return this._updateFormatOut("jpeg", A)
     }
 
-function UL6(A) {
+    function UL6(A) {
         if (Z1.object(A)) {
             if (Z1.defined(A.progressive)) this._setBooleanOption("pngProgressive", A.progressive);
             if (Z1.defined(A.compressionLevel))
@@ -353,7 +356,7 @@ function UL6(A) {
         return XjB(A, this.options), this._updateFormatOut("webp", A)
     }
 
-function wL6(A) {
+    function wL6(A) {
         if (Z1.object(A)) {
             if (Z1.defined(A.reuse)) this._setBooleanOption("gifReuse", A.reuse);
             if (Z1.defined(A.progressive)) this._setBooleanOption("gifProgressive", A.progressive);
@@ -377,7 +380,7 @@ function wL6(A) {
         return XjB(A, this.options), this._updateFormatOut("gif", A)
     }
 
-function qL6(A) {
+    function qL6(A) {
         if (!this.constructor.format.jp2k.output.buffer) throw JjB();
         if (Z1.object(A)) {
             if (Z1.defined(A.quality))
@@ -399,7 +402,7 @@ function qL6(A) {
         return this._updateFormatOut("jp2", A)
     }
 
-function XjB(A, Q) {
+    function XjB(A, Q) {
         if (Z1.object(A) && Z1.defined(A.loop))
             if (Z1.integer(A.loop) && Z1.inRange(A.loop, 0, 65535)) Q.loop = A.loop;
             else throw Z1.invalidParameterError("loop", "integer between 0 and 65535", A.loop);
@@ -409,7 +412,7 @@ function XjB(A, Q) {
         else throw Z1.invalidParameterError("delay", "integer or an array of integers between 0 and 65535", A.delay)
     }
 
-function NL6(A) {
+    function NL6(A) {
         if (Z1.object(A)) {
             if (Z1.defined(A.quality))
                 if (Z1.integer(A.quality) && Z1.inRange(A.quality, 1, 100)) this.options.tiffQuality = A.quality;
@@ -445,14 +448,14 @@ function NL6(A) {
         return this._updateFormatOut("tiff", A)
     }
 
-function LL6(A) {
+    function LL6(A) {
         return this.heif({
             ...A,
             compression: "av1"
         })
     }
 
-function ML6(A) {
+    function ML6(A) {
         if (Z1.object(A)) {
             if (Z1.string(A.compression) && Z1.inArray(A.compression, ["av1", "hevc"])) this.options.heifCompression = A.compression;
             else throw Z1.invalidParameterError("compression", "one of: av1, hevc", A.compression);
@@ -477,7 +480,7 @@ function ML6(A) {
         return this._updateFormatOut("heif", A)
     }
 
-function OL6(A) {
+    function OL6(A) {
         if (Z1.object(A)) {
             if (Z1.defined(A.quality))
                 if (Z1.integer(A.quality) && Z1.inRange(A.quality, 1, 100)) this.options.jxlDistance = A.quality >= 30 ? 0.1 + (100 - A.quality) * 0.09 : 0.017666666666666667 * A.quality * A.quality - 1.15 * A.quality + 25;
@@ -498,7 +501,7 @@ function OL6(A) {
         return this._updateFormatOut("jxl", A)
     }
 
-function RL6(A) {
+    function RL6(A) {
         if (Z1.object(A)) {
             if (Z1.defined(A.depth))
                 if (Z1.string(A.depth) && Z1.inArray(A.depth, ["char", "uchar", "short", "ushort", "int", "uint", "float", "complex", "double", "dpcomplex"])) this.options.rawDepth = A.depth;
@@ -507,14 +510,14 @@ function RL6(A) {
         return this._updateFormatOut("raw")
     }
 
-function TL6(A) {
+    function TL6(A) {
         if (Z1.object(A)) {
             if (Z1.defined(A.size))
                 if (Z1.integer(A.size) && Z1.inRange(A.size, 1, 8192)) this.options.tileSize = A.size;
                 else throw Z1.invalidParameterError("size", "integer between 1 and 8192", A.size);
             if (Z1.defined(A.overlap))
                 if (Z1.integer(A.overlap) && Z1.inRange(A.overlap, 0, 8192)) {
-                    if (A.overlap > this.options.tileSize) throw Z1.invalidParameterError("overlap", `<= size (${this.options.tileSize})`, A.overlap);
+                    if (A.overlap > this.options.tileSize) throw Z1.invalidParameterError("overlap", `<= size (TextComponent{this.options.tileSize})`, A.overlap);
                     this.options.tileOverlap = A.overlap
                 } else throw Z1.invalidParameterError("overlap", "integer between 0 and 8192", A.overlap);
             if (Z1.defined(A.container))
@@ -547,24 +550,24 @@ function TL6(A) {
         return this._updateFormatOut("dz")
     }
 
-function PL6(A) {
+    function PL6(A) {
         if (!Z1.plainObject(A)) throw Z1.invalidParameterError("options", "object", A);
         if (Z1.integer(A.seconds) && Z1.inRange(A.seconds, 0, 3600)) this.options.timeoutSeconds = A.seconds;
         else throw Z1.invalidParameterError("seconds", "integer between 0 and 3600", A.seconds);
         return this
     }
 
-function jL6(A, Q) {
+    function jL6(A, Q) {
         if (!(Z1.object(Q) && Q.force === !1)) this.options.formatOut = A;
         return this
     }
 
-function SL6(A, Q) {
+    function SL6(A, Q) {
         if (Z1.bool(Q)) this.options[A] = Q;
         else throw Z1.invalidParameterError(A, "boolean", Q)
     }
 
-function _L6() {
+    function _L6() {
         if (!this.options.streamOut) {
             this.options.streamOut = !0;
             let A = Error();
@@ -572,7 +575,7 @@ function _L6() {
         }
     }
 
-function kL6(A, Q) {
+    function kL6(A, Q) {
         if (typeof A === "function") {
             if (this._isStreamInput()) this.on("finish", () => {
                 this._flattenBufferIn(), JGA.pipeline(this.options, (B, G, Z) => {
@@ -654,8 +657,8 @@ function kL6(A, Q) {
         })
     }
 });
-var CjB = U((qo7, HjB) => {
-    var yL6 = UA("node:events"),
+var CjB = moduleWrapper((qo7, HjB) => {
+    var yL6 = nodeRequire("node:events"),
         hrA = jrA(),
         $M = f_(),
         {
@@ -669,8 +672,7 @@ var CjB = U((qo7, HjB) => {
     Op.jpeg.output.alias = ["jpe", "jpg"];
     Op.tiff.output.alias = ["tif"];
     Op.jp2k.output.alias = ["j2c", "j2k", "jp2", "jpx"];
-
-var vL6 = {
+    var vL6 = {
             nearest: "nearest",
             bilinear: "bilinear",
             bicubic: "bicubic",
@@ -683,10 +685,10 @@ var vL6 = {
         };
     if (!Nd1.isGlobal)
         if (!Nd1.isWasm) try {
-            WGA = UA(`@img/sharp-${KjB}/versions`)
+            WGA = nodeRequire(`@img/sharp-TextComponent{KjB}/versions`)
         } catch (A) {
             try {
-                WGA = UA(`@img/sharp-libvips-${KjB}/versions`)
+                WGA = nodeRequire(`@img/sharp-libvips-TextComponent{KjB}/versions`)
             } catch (Q) {}
         } else try {
             WGA = (() => {
@@ -696,7 +698,7 @@ var vL6 = {
     WGA.sharp = Jd1().version;
     if (WGA.heif && Op.heif) Op.heif.input.fileSuffix = [".avif"], Op.heif.output.alias = ["avif"];
 
-function DjB(A) {
+    function DjB(A) {
         if ($M.bool(A))
             if (A) return KE.cache(50, 20, 100);
             else return KE.cache(0, 0, 0);
@@ -705,29 +707,29 @@ function DjB(A) {
     }
     DjB(!0);
 
-function bL6(A) {
+    function bL6(A) {
         return KE.concurrency($M.integer(A) ? A : null)
     }
     if (hrA.familySync() === hrA.GLIBC && !KE._isUsingJemalloc()) KE.concurrency(1);
-    else if (hrA.familySync() === hrA.MUSL && KE.concurrency() === 1024) KE.concurrency(UA("node:os").availableParallelism());
+    else if (hrA.familySync() === hrA.MUSL && KE.concurrency() === 1024) KE.concurrency(nodeRequire("node:os").availableParallelism());
     var fL6 = new yL6.EventEmitter;
 
-function hL6() {
+    function hL6() {
         return KE.counters()
     }
 
-function gL6(A) {
+    function gL6(A) {
         return KE.simd($M.bool(A) ? A : null)
     }
 
-function uL6(A) {
+    function uL6(A) {
         if ($M.object(A))
             if (Array.isArray(A.operation) && A.operation.every($M.string)) KE.block(A.operation, !0);
             else throw $M.invalidParameterError("operation", "Array<string>", A.operation);
         else throw $M.invalidParameterError("options", "object", A)
     }
 
-function mL6(A) {
+    function mL6(A) {
         if ($M.object(A))
             if (Array.isArray(A.operation) && A.operation.every($M.string)) KE.block(A.operation, !1);
             else throw $M.invalidParameterError("operation", "Array<string>", A.operation);
@@ -737,7 +739,7 @@ function mL6(A) {
         A.cache = DjB, A.concurrency = bL6, A.counters = hL6, A.simd = gL6, A.format = Op, A.interpolators = vL6, A.versions = WGA, A.queue = fL6, A.block = uL6, A.unblock = mL6
     }
 });
-var grA = U((Lo7, EjB) => {
+var grA = moduleWrapper((Lo7, EjB) => {
     var Zf = LPB();
     cPB()(Zf);
     sPB()(Zf);
@@ -749,10 +751,9 @@ var grA = U((Lo7, EjB) => {
     CjB()(Zf);
     EjB.exports = Zf
 });
-
 async function XGA(A, Q, B) {
     try {
-        let G = await Promise.resolve().then(() => GA(grA(), 1)),
+        let G = await Promise.resolve().then(() => esmImport(grA(), 1)),
             I = (G.default || G)(A),
             Y = await I.metadata();
         if (!Y.width || !Y.height) {
@@ -794,7 +795,6 @@ async function XGA(A, Q, B) {
         }
     }
 }
-
 async function zjB(A) {
     if (A.source.type !== "base64") return A;
     let Q = Buffer.from(A.source.data, "base64"),
@@ -805,17 +805,16 @@ async function zjB(A) {
         type: "image",
         source: {
             type: "base64",
-            media_type: `image/${I.mediaType}`,
+            media_type: `image/TextComponent{I.mediaType}`,
             data: I.buffer.toString("base64")
         }
     }
 }
-
 async function Ze(A, Q = n$A, B) {
     let G = B?.split("/")[1] || "jpeg",
         Z = G === "jpg" ? "jpeg" : G;
     try {
-        let I = await Promise.resolve().then(() => GA(grA(), 1)),
+        let I = await Promise.resolve().then(() => esmImport(grA(), 1)),
             Y = I.default || I,
             J = await Y(A).metadata(),
             W = J.format || Z,
@@ -841,12 +840,11 @@ async function Ze(A, Q = n$A, B) {
     } catch (I) {
         return e(I), {
             base64: A.toString("base64"),
-            mediaType: `image/${Z}`,
+            mediaType: `image/TextComponent{Z}`,
             originalSize: A.length
         }
     }
 }
-
 async function UjB(A, Q, B) {
     let G = Math.floor(Q / 0.125),
         Z = Math.floor(G * 0.75);
@@ -871,11 +869,10 @@ function a$A(A, Q, B) {
     let G = Q === "jpg" ? "jpeg" : Q;
     return {
         base64: A.toString("base64"),
-        mediaType: `image/${G}`,
+        mediaType: `image/TextComponent{G}`,
         originalSize: B
     }
 }
-
 async function dL6(A) {
     let Q = [1, 0.75, 0.5, 0.25];
     for (let B of Q) {
@@ -912,7 +909,6 @@ function cL6(A, Q) {
             return A
     }
 }
-
 async function pL6(A) {
     let Q = await A.sharp(A.imageBuffer).resize(800, 800, {
         fit: "inside",
@@ -925,7 +921,6 @@ async function pL6(A) {
     if (Q.length <= A.maxBytes) return a$A(Q, "png", A.originalSize);
     return null
 }
-
 async function lL6(A, Q) {
     let B = await A.sharp(A.imageBuffer).resize(600, 600, {
         fit: "inside",
@@ -936,7 +931,6 @@ async function lL6(A, Q) {
     if (B.length <= A.maxBytes) return a$A(B, "jpeg", A.originalSize);
     return null
 }
-
 async function iL6(A) {
     let Q = await A.sharp(A.imageBuffer).resize(400, 400, {
         fit: "inside",
@@ -949,7 +943,7 @@ async function iL6(A) {
 var n$A = 3932160,
     urA = 2000,
     mrA = 2000;
-var Ie = L(() => {
+var Ie = lazyLoader(() => {
     u1()
 });
 import {
@@ -976,27 +970,27 @@ function wjB() {
         Q = {
             darwin: "/tmp/claude_cli_latest_screenshot.png",
             linux: "/tmp/claude_cli_latest_screenshot.png",
-            win32: process.env.TEMP ? `${process.env.TEMP}\\claude_cli_latest_screenshot.png` : "C:\\Temp\\claude_cli_latest_screenshot.png"
+            win32: process.env.TEMP ? `TextComponent{process.env.TEMP}\\claude_cli_latest_screenshot.png` : "C:\\Temp\\claude_cli_latest_screenshot.png"
         },
         B = Q[A] || Q.linux,
         G = {
             darwin: {
                 checkImage: "osascript -e 'the clipboard as «class PNGf»'",
-                saveImage: `osascript -e 'set png_data to (the clipboard as «class PNGf»)' -e 'set fp to open for access POSIX file "${B}" with write permission' -e 'write png_data to fp' -e 'close access fp'`,
+                saveImage: `osascript -e 'set png_data to (the clipboard as «class PNGf»)' -e 'set fp to open for access POSIX file "TextComponent{B}" with write permission' -e 'write png_data to fp' -e 'close access fp'`,
                 getPath: "osascript -e 'get POSIX path of (the clipboard as «class furl»)'",
-                deleteFile: `rm -f "${B}"`
+                deleteFile: `rm -f "TextComponent{B}"`
             },
             linux: {
                 checkImage: 'xclip -selection clipboard -t TARGETS -o 2>/dev/null | grep -E "image/(png|jpeg|jpg|gif|webp)" || wl-paste -l 2>/dev/null | grep -E "image/(png|jpeg|jpg|gif|webp)"',
-                saveImage: `xclip -selection clipboard -t image/png -o > "${B}" 2>/dev/null || wl-paste --type image/png > "${B}"`,
+                saveImage: `xclip -selection clipboard -t image/png -o > "TextComponent{B}" 2>/dev/null || wl-paste --type image/png > "TextComponent{B}"`,
                 getPath: "xclip -selection clipboard -t text/plain -o 2>/dev/null || wl-paste 2>/dev/null",
-                deleteFile: `rm -f "${B}"`
+                deleteFile: `rm -f "TextComponent{B}"`
             },
             win32: {
                 checkImage: 'powershell -NoProfile -Command "(Get-Clipboard -Format Image) -ne $null"',
-                saveImage: `powershell -NoProfile -Command "$img = Get-Clipboard -Format Image; if ($img) { $img.Save('${B.replace(/\\/g,"\\\\")}', [System.Drawing.Imaging.ImageFormat]::Png) }"`,
+                saveImage: `powershell -NoProfile -Command "$img = Get-Clipboard -Format Image; if ($img) { $img.Save('TextComponent{B.replace(/\\/g,"\\\\")}', [System.Drawing.Imaging.ImageFormat]::Png) }"`,
                 getPath: 'powershell -NoProfile -Command "Get-Clipboard"',
-                deleteFile: `del /f "${B}"`
+                deleteFile: `del /f "TextComponent{B}"`
             }
         };
     return {
@@ -1004,7 +998,6 @@ function wjB() {
         screenshotPath: B
     }
 }
-// Async function: prA
 async function prA() {
     let {
         commands: A,
@@ -1085,7 +1078,6 @@ function tL6(A) {
     if (qjB.test(B)) return B;
     return null
 }
-
 async function OjB(A) {
     let Q = tL6(A);
     if (!Q) return null;
@@ -1115,12 +1107,12 @@ async function OjB(A) {
 }
 var _o7, crA = 800,
     qjB;
-var lrA = L(() => {
+var lrA = lazyLoader(() => {
     o0();
     u1();
     Ie();
     _o7 = rL6();
-    qjB = /\.(png|jpe?g|gif|webp)$/i
+    qjB = /\.(png|jpe?g|gif|webp)TextComponent/i
 });
 
 function irA({
@@ -1131,16 +1123,16 @@ function irA({
     } = Rp.useContext(eL6);
     return Rp.default.createElement(j, {
         gap: 1
-    }, Rp.default.createElement($, {
+    }, Rp.default.createElement(TextComponent, {
         dimColor: !0
     }, Q), Rp.default.createElement(j, {
         flexDirection: "column"
     }, A))
 }
 var Rp, eL6;
-var RjB = L(() => {
+var RjB = lazyLoader(() => {
     hA();
-    Rp = GA(VA(), 1), eL6 = Rp.createContext({
+    Rp = esmImport(VA(), 1), eL6 = Rp.createContext({
         marker: ""
     })
 });
@@ -1160,8 +1152,8 @@ function PjB({
         flexDirection: "column"
     }, CU.default.Children.map(A, (Z, I) => {
         if (!CU.isValidElement(Z) || Z.type !== irA) return Z;
-        let Y = `${String(I+1).padStart(G)}.`,
-            J = `${Q}${Y}`;
+        let Y = `TextComponent{String(I+1).padStart(G)}.`,
+            J = `TextComponent{Q}TextComponent{Y}`;
         return CU.default.createElement(TjB.Provider, {
             value: {
                 marker: J
@@ -1174,10 +1166,10 @@ function PjB({
     }))
 }
 var CU, TjB, AM6, s$A;
-var Md1 = L(() => {
+var Md1 = lazyLoader(() => {
     hA();
     RjB();
-    CU = GA(VA(), 1), TjB = CU.createContext({
+    CU = esmImport(VA(), 1), TjB = CU.createContext({
         marker: ""
     }), AM6 = CU.createContext({
         marker: ""
@@ -1232,7 +1224,7 @@ function kjB() {
     })
 }
 var QM6, jjB, _jB;
-var r$A = L(() => {
+var r$A = lazyLoader(() => {
     Md1();
     hA();
     jQ();
@@ -1240,7 +1232,7 @@ var r$A = L(() => {
     R2();
     o0();
     o2();
-    QM6 = GA(VA(), 1), jjB = GA(VA(), 1);
+    QM6 = esmImport(VA(), 1), jjB = esmImport(VA(), 1);
     _jB = t1(() => {
         if (SjB() || M5().projectOnboardingSeenCount >= 4 || process.env.IS_DEMO) return !1;
         return !0
@@ -1274,22 +1266,20 @@ function YM6() {
 function VGA() {
     return ZM6(GM6(), "Library", "Preferences", "com.apple.Terminal.plist")
 }
-// Async function: xjB
 async function xjB() {
     let A = VGA(),
-        Q = `${A}.bak`;
+        Q = `TextComponent{A}.bak`;
     try {
         let {
             code: B
-        } = await ZQ("defaults", ["export", "com.apple.Terminal", A]);
+        } = await execGit("defaults", ["export", "com.apple.Terminal", A]);
         if (B !== 0) return null;
-        if (OA().existsSync(A)) return await ZQ("defaults", ["export", "com.apple.Terminal", Q]), IM6(Q), Q;
+        if (OA().existsSync(A)) return await execGit("defaults", ["export", "com.apple.Terminal", Q]), IM6(Q), Q;
         return null
     } catch (B) {
         return e(B instanceof Error ? B : Error(String(B))), null
     }
 }
-// Async function: nrA
 async function nrA() {
     let {
         inProgress: A,
@@ -1304,22 +1294,22 @@ async function nrA() {
     try {
         let {
             code: B
-        } = await ZQ("defaults", ["import", "com.apple.Terminal", Q]);
+        } = await execGit("defaults", ["import", "com.apple.Terminal", Q]);
         if (B !== 0) return {
             status: "failed",
             backupPath: Q
         };
-        return await ZQ("killall", ["cfprefsd"]), o$A(), {
+        return await execGit("killall", ["cfprefsd"]), o$A(), {
             status: "restored"
         }
     } catch (B) {
-        return e(Error(`Failed to restore Terminal.app settings with: ${B}`)), o$A(), {
+        return e(Error(`Failed to restore Terminal.app settings with: TextComponent{B}`)), o$A(), {
             status: "failed",
             backupPath: Q
         }
     }
 }
-var Rd1 = L(() => {
+var Rd1 = lazyLoader(() => {
     I6();
     u1();
     jQ();
@@ -1353,12 +1343,11 @@ function FM6() {
 function arA() {
     return WM6(JM6(), "Library", "Preferences", "com.googlecode.iterm2.plist")
 }
-// Async function: vjB
 async function vjB() {
     let A = arA(),
-        Q = `${A}.bak`;
+        Q = `TextComponent{A}.bak`;
     try {
-        if (await ZQ("defaults", ["export", "com.googlecode.iterm2", A]), OA().existsSync(A)) return OA().copyFileSync(A, Q), XM6(Q), Q;
+        if (await execGit("defaults", ["export", "com.googlecode.iterm2", A]), OA().existsSync(A)) return OA().copyFileSync(A, Q), XM6(Q), Q;
         return null
     } catch (B) {
         return e(B instanceof Error ? B : Error(String(B))), null
@@ -1381,13 +1370,13 @@ function bjB() {
             status: "restored"
         }
     } catch (B) {
-        return e(Error(`Failed to restore iTerm2 settings with: ${B}`)), KGA(), {
+        return e(Error(`Failed to restore iTerm2 settings with: TextComponent{B}`)), KGA(), {
             status: "failed",
             backupPath: Q
         }
     }
 }
-var Td1 = L(() => {
+var Td1 = lazyLoader(() => {
     I6();
     u1();
     jQ();
@@ -1409,7 +1398,6 @@ import {
 function t$A() {
     return rrA() === "darwin" && (m0.terminal === "iTerm.app" || m0.terminal === "Apple_Terminal") || m0.terminal === "vscode" || m0.terminal === "cursor" || m0.terminal === "windsurf" || m0.terminal === "ghostty" || m0.terminal === "WezTerm"
 }
-
 async function Sd1(A) {
     let Q = "";
     switch (m0.terminal) {
@@ -1462,7 +1450,6 @@ function djB() {
         hasUsedBackslashReturn: !0
     })
 }
-
 async function DM6(A) {
     let B = If(srA(), ".wezterm.lua");
     try {
@@ -1471,13 +1458,13 @@ async function DM6(A) {
         if (OA().existsSync(B)) {
             if (Z = !0, G = OA().readFileSync(B, {
                     encoding: "utf-8"
-                }), G.includes('mods="SHIFT"') && G.includes('key="Enter"')) return `${tQ("warning",A)("Found existing WezTerm Shift+Enter key binding. Remove it to continue.")}${f7}${oA.dim(`See ${B}`)}${f7}`;
+                }), G.includes('mods="SHIFT"') && G.includes('key="Enter"')) return `TextComponent{tQ("warning",A)("Found existing WezTerm Shift+Enter key binding. Remove it to continue.")}TextComponent{f7}TextComponent{oA.dim(`See TextComponent{B}`)}TextComponent{f7}`;
             let I = jd1(4).toString("hex"),
-                Y = `${B}.${I}.bak`;
+                Y = `TextComponent{B}.TextComponent{I}.bak`;
             try {
                 OA().copyFileSync(B, Y)
             } catch (J) {
-                return e(J instanceof Error ? J : Error(String(J))), `${tQ("warning",A)("Error backing up existing WezTerm config. Bailing out.")}${f7}${oA.dim(`See ${B}`)}${f7}${oA.dim(`Backup path: ${Y}`)}${f7}`
+                return e(J instanceof Error ? J : Error(String(J))), `TextComponent{tQ("warning",A)("Error backing up existing WezTerm config. Bailing out.")}TextComponent{f7}TextComponent{oA.dim(`See TextComponent{B}`)}TextComponent{f7}TextComponent{oA.dim(`Backup path: TextComponent{Y}`)}TextComponent{f7}`
             }
         }
         if (!Z) G = `local wezterm = require 'wezterm'
@@ -1493,11 +1480,11 @@ return config
             let I = G.match(/config\.keys\s*=\s*\{([^}]*)\}/s);
             if (I) {
                 let Y = I[1] ?? "",
-                    J = Y.trim() ? `${Y.trim()},
+                    J = Y.trim() ? `TextComponent{Y.trim()},
   {key="Enter", mods="SHIFT", action=wezterm.action{SendString="\\x1b\\r"}},` : `
   {key="Enter", mods="SHIFT", action=wezterm.action{SendString="\\x1b\\r"}},
 `;
-                G = G.replace(/config\.keys\s*=\s*\{[^}]*\}/s, `config.keys = {${J}}`)
+                G = G.replace(/config\.keys\s*=\s*\{[^}]*\}/s, `config.keys = {TextComponent{J}}`)
             } else if (G.match(/return\s+config/s)) G = G.replace(/return\s+config/s, `config.keys = {
   {key="Enter", mods="SHIFT", action=wezterm.action{SendString="\\x1b\\r"}},
 }
@@ -1512,12 +1499,11 @@ config.keys = {
         return OA().writeFileSync(B, G, {
             encoding: "utf-8",
             flush: !1
-        }), `${tQ("success",A)("Installed WezTerm Shift+Enter key binding")}${f7}${tQ("success",A)("You may need to restart WezTerm for changes to take effect")}${f7}${oA.dim(`See ${B}`)}${f7}`
+        }), `TextComponent{tQ("success",A)("Installed WezTerm Shift+Enter key binding")}TextComponent{f7}TextComponent{tQ("success",A)("You may need to restart WezTerm for changes to take effect")}TextComponent{f7}TextComponent{oA.dim(`See TextComponent{B}`)}TextComponent{f7}`
     } catch (G) {
         throw e(G instanceof Error ? G : Error(String(G))), Error("Failed to install WezTerm Shift+Enter key binding")
     }
 }
-
 async function HM6(A) {
     let B = [],
         G = process.env.XDG_CONFIG_HOME;

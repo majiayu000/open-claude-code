@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: telemetry_010.js
+ * 处理时间: 2025-12-09T03:41:38.416Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.055Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -58,8 +60,7 @@
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.metrics = [];
                             if (J.defaults) W.scope = null, W.schemaUrl = "";
                             if (Y.scope != null && Y.hasOwnProperty("scope")) W.scope = RA.opentelemetry.proto.common.v1.InstrumentationScope.toObject(Y.scope, J);
@@ -160,8 +161,7 @@ var W = {};
                             return this.decode(J, J.uint32())
                         }, Z.verify = function(J) {
                             if (typeof J !== "object" || J === null) return "object expected";
-
-var W = {};
+                            var W = {};
                             if (J.name != null && J.hasOwnProperty("name")) {
                                 if (!_A.isString(J.name)) return "name: string expected"
                             }
@@ -255,8 +255,7 @@ var W = {};
                             return W
                         }, Z.toObject = function(J, W) {
                             if (!W) W = {};
-
-var X = {};
+                            var X = {};
                             if (W.arrays || W.defaults) X.metadata = [];
                             if (W.defaults) X.name = "", X.description = "", X.unit = "";
                             if (J.name != null && J.hasOwnProperty("name")) X.name = J.name;
@@ -350,8 +349,7 @@ var X = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.dataPoints = [];
                             if (Y.dataPoints && Y.dataPoints.length) {
                                 W.dataPoints = [];
@@ -468,8 +466,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.dataPoints = [];
                             if (J.defaults) W.aggregationTemporality = J.enums === String ? "AGGREGATION_TEMPORALITY_UNSPECIFIED" : 0, W.isMonotonic = !1;
                             if (Y.dataPoints && Y.dataPoints.length) {
@@ -580,8 +577,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.dataPoints = [];
                             if (J.defaults) W.aggregationTemporality = J.enums === String ? "AGGREGATION_TEMPORALITY_UNSPECIFIED" : 0;
                             if (Y.dataPoints && Y.dataPoints.length) {
@@ -691,8 +687,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.dataPoints = [];
                             if (J.defaults) W.aggregationTemporality = J.enums === String ? "AGGREGATION_TEMPORALITY_UNSPECIFIED" : 0;
                             if (Y.dataPoints && Y.dataPoints.length) {
@@ -769,8 +764,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.dataPoints = [];
                             if (Y.dataPoints && Y.dataPoints.length) {
                                 W.dataPoints = [];
@@ -868,8 +862,7 @@ var W = {};
                             return this.decode(J, J.uint32())
                         }, Z.verify = function(J) {
                             if (typeof J !== "object" || J === null) return "object expected";
-
-var W = {};
+                            var W = {};
                             if (J.attributes != null && J.hasOwnProperty("attributes")) {
                                 if (!Array.isArray(J.attributes)) return "attributes: array expected";
                                 for (var X = 0; X < J.attributes.length; ++X) {
@@ -943,8 +936,7 @@ var W = {};
                             return W
                         }, Z.toObject = function(J, W) {
                             if (!W) W = {};
-
-var X = {};
+                            var X = {};
                             if (W.arrays || W.defaults) X.exemplars = [], X.attributes = [];
                             if (W.defaults) {
                                 if (_A.Long) {
@@ -1106,8 +1098,7 @@ var X = {};
                             return this.decode(J, J.uint32())
                         }, Z.verify = function(J) {
                             if (typeof J !== "object" || J === null) return "object expected";
-
-var W = {};
+                            var W = {};
                             if (J.attributes != null && J.hasOwnProperty("attributes")) {
                                 if (!Array.isArray(J.attributes)) return "attributes: array expected";
                                 for (var X = 0; X < J.attributes.length; ++X) {
@@ -1212,8 +1203,7 @@ var W = {};
                             return W
                         }, Z.toObject = function(J, W) {
                             if (!W) W = {};
-
-var X = {};
+                            var X = {};
                             if (W.arrays || W.defaults) X.bucketCounts = [], X.explicitBounds = [], X.exemplars = [], X.attributes = [];
                             if (W.defaults) {
                                 if (_A.Long) {
@@ -1392,8 +1382,7 @@ var X = {};
                             return this.decode(J, J.uint32())
                         }, Z.verify = function(J) {
                             if (typeof J !== "object" || J === null) return "object expected";
-
-var W = {};
+                            var W = {};
                             if (J.attributes != null && J.hasOwnProperty("attributes")) {
                                 if (!Array.isArray(J.attributes)) return "attributes: array expected";
                                 for (var X = 0; X < J.attributes.length; ++X) {
@@ -1507,8 +1496,7 @@ var W = {};
                             return W
                         }, Z.toObject = function(J, W) {
                             if (!W) W = {};
-
-var X = {};
+                            var X = {};
                             if (W.arrays || W.defaults) X.attributes = [], X.exemplars = [];
                             if (W.defaults) {
                                 if (_A.Long) {

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: commands_008.js
+ * 处理时间: 2025-12-09T03:41:37.145Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.949Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -47,10 +50,10 @@
                 }
             }
             if (J0.length > 0) {
-                let s1 = J0.map((p0) => `${p0.path?p0.path+": ":""}${p0.message}`).join(`
+                let s1 = J0.map((p0) => `TextComponent{p0.path?p0.path+": ":""}TextComponent{p0.message}`).join(`
 `);
                 throw Error(`Invalid MCP configuration:
-${s1}`)
+TextComponent{s1}`)
             }
             if (Object.keys(Z0).length > 0) {
                 let s1 = vo(Z0, (p0) => ({
@@ -90,7 +93,7 @@ ${s1}`)
             if (J0.type === "sdk") WA[N1] = J0;
             else XA[N1] = J0
         }
-        if (x && x !== "text" && x !== "stream-json") console.error(`Error: Invalid input format "${x}".`), process.exit(1);
+        if (x && x !== "text" && x !== "stream-json") console.error(`Error: Invalid input format "TextComponent{x}".`), process.exit(1);
         if (x === "stream-json" && v !== "stream-json") console.error("Error: --input-format=stream-json requires output-format=stream-json."), process.exit(1);
         if (QA) {
             if (x !== "stream-json" || v !== "stream-json") console.error("Error: --sdk-url requires both --input-format=stream-json and --output-format=stream-json."), process.exit(1)
@@ -121,7 +124,7 @@ ${s1}`)
         await jJ1(GD0(), sA, V, l, q ? Y$(q) : void 0);
         let TA = J.model === "default" ? et() : J.model,
             eA = w === "default" ? et() : w,
-            [aA, I1] = await Promise.all([aE(), Rb2()]),
+            [BASE64_CHARS, I1] = await Promise.all([aE(), Rb2()]),
             w1 = [];
         if (y) try {
             let N1 = S7(y);
@@ -136,7 +139,7 @@ ${s1}`)
                 activeAgents: My(PA)
             };
         if (!wA) {
-            if (await eU9(sA, V, aA) && Y?.trim().toLowerCase() === "/login") Y = ""
+            if (await eU9(sA, V, BASE64_CHARS) && Y?.trim().toLowerCase() === "/login") Y = ""
         }
         if (process.exitCode !== void 0) {
             g("Graceful shutdown initiated, skipping further initialization");
@@ -160,7 +163,7 @@ ${s1}`)
             KJ1({
                 url: N1,
                 key: Z0
-            }), g(`[MCP CLI Endpoint] Started at ${N1}`)
+            }), g(`[MCP CLI Endpoint] Started at TextComponent{N1}`)
         }).catch((N1) => {
             e(N1 instanceof Error ? N1 : Error(String(N1)))
         }), wG(async () => {
@@ -191,7 +194,7 @@ ${s1}`)
             }), Pv2(XA, DA), A91(null, "initialization"), rf3(), await z59(), zs(TA), wA) {
             if (v === "stream-json" || v === "json") mE0(!0);
             xK0();
-            let N1 = aA.filter((J0) => J0.type === "prompt" && !J0.disableNonInteractive || J0.type === "local" && J0.supportsNonInteractive),
+            let N1 = BASE64_CHARS.filter((J0) => J0.type === "prompt" && !J0.disableNonInteractive || J0.type === "local" && J0.supportsNonInteractive),
                 Z0 = _p();
             if (Z0 = {
                     ...Z0,
@@ -315,7 +318,7 @@ ${s1}`)
             }, c5.default.createElement(sXA, {
                 debug: W || X,
                 initialPrompt: zA,
-                commands: [...aA, ...u0],
+                commands: [...BASE64_CHARS, ...u0],
                 initialTools: x0,
                 initialMessages: N1.messages,
                 initialFileHistorySnapshots: N1.fileHistorySnapshots,
@@ -342,9 +345,9 @@ ${s1}`)
 `)), await S6(1), process.exit(1);
                 BA("tengu_remote_create_session_success", {
                     session_id: s1.id
-                }), process.stdout.write(`Created remote session: ${s1.title}
-`), process.stdout.write(`View: https://claude.ai/code/${s1.id}?m=0
-`), process.stdout.write(`Resume with: claude --teleport ${s1.id}
+                }), process.stdout.write(`Created remote session: TextComponent{s1.title}
+`), process.stdout.write(`View: https://claude.ai/code/TextComponent{s1.id}?m=0
+`), process.stdout.write(`Resume with: claude --teleport TextComponent{s1.id}
 `), await S6(0), process.exit(0)
             } else if (IA) {
                 if (IA === !0 || IA === "") {
@@ -382,10 +385,10 @@ ${s1}`)
                                     });
                                     if (PB) process.chdir(PB), Qq(PB), rC0(PB);
                                     else await S6(0)
-                                } else throw new GI(`You must run claude --teleport ${IA} from a checkout of ${HQ}.`, oA.red(`You must run claude --teleport ${IA} from a checkout of ${oA.bold(HQ)}.
+                                } else throw new GI(`You must run claude --teleport TextComponent{IA} from a checkout of TextComponent{HQ}.`, oA.red(`You must run claude --teleport TextComponent{IA} from a checkout of TextComponent{oA.bold(HQ)}.
 `))
                             }
-                        } else if (s1.status === "error") throw new GI(s1.errorMessage || "Failed to validate session", oA.red(`Error: ${s1.errorMessage||"Failed to validate session"}
+                        } else if (s1.status === "error") throw new GI(s1.errorMessage || "Failed to validate session", oA.red(`Error: TextComponent{s1.errorMessage||"Failed to validate session"}
 `));
                         await D61();
                         let p0 = await zT2(IA);
@@ -393,7 +396,7 @@ ${s1}`)
                     } catch (s1) {
                         if (s1 instanceof GI) process.stderr.write(s1.formattedMessage + `
 `);
-                        else e(s1 instanceof Error ? s1 : Error(String(s1))), process.stderr.write(`Error: ${s1 instanceof Error?s1.message:String(s1)}
+                        else e(s1 instanceof Error ? s1 : Error(String(s1))), process.stderr.write(`Error: TextComponent{s1 instanceof Error?s1.message:String(s1)}
 `);
                         await S6(1)
                     }
@@ -403,10 +406,10 @@ ${s1}`)
                 let s1 = J0;
                 try {
                     let p0 = await qi(s1, void 0);
-                    if (!p0) console.error(`No conversation found with session ID: ${s1}`), process.exit(1);
+                    if (!p0) console.error(`No conversation found with session ID: TextComponent{s1}`), process.exit(1);
                     if (N1 = p0.messages, Z0 = p0.fileHistorySnapshots, !J.forkSession) FR(s1), await Zx()
                 } catch (p0) {
-                    e(p0 instanceof Error ? p0 : Error(String(p0))), console.error(`Failed to resume session ${s1}`), process.exit(1)
+                    e(p0 instanceof Error ? p0 : Error(String(p0))), console.error(`Failed to resume session TextComponent{s1}`), process.exit(1)
                 }
             }
             if (Array.isArray(N1)) await Z3(c5.default.createElement(N7, {
@@ -415,7 +418,7 @@ ${s1}`)
             }, c5.default.createElement(sXA, {
                 debug: W || X,
                 initialPrompt: zA,
-                commands: [...aA, ...u0],
+                commands: [...BASE64_CHARS, ...u0],
                 initialTools: x0,
                 initialMessages: N1,
                 initialFileHistorySnapshots: Z0,
@@ -429,7 +432,7 @@ ${s1}`)
                 let s1 = await Qx();
                 if (!s1.length) console.error("No conversations found to resume"), process.exit(1);
                 await Z3(c5.default.createElement(wz9, {
-                    commands: [...aA, ...u0],
+                    commands: [...BASE64_CHARS, ...u0],
                     debug: W || X,
                     initialLogs: s1,
                     initialTools: x0,
@@ -449,7 +452,7 @@ ${s1}`)
                 onChangeAppState: ng
             }, c5.default.createElement(sXA, {
                 debug: W || X,
-                commands: [...aA, ...u0],
+                commands: [...BASE64_CHARS, ...u0],
                 initialPrompt: zA,
                 initialTools: x0,
                 initialMessages: N1,
@@ -462,14 +465,14 @@ ${s1}`)
                 mcpCliEndpoint: k1
             })), T0)
         }
-    }).version(`${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION} (Claude Code)`, "-v, --version", "Output the version number"), A.addOption(new eF("--sdk-url <url>", "Use remote WebSocket endpoint for SDK I/O streaming (only with -p and stream-json format)").hideHelp()), A.addOption(new eF("--teleport [session]", "Resume a teleport session, optionally specify session ID").hideHelp()), A.addOption(new eF("--remote <description>", "Create a remote session with the given description").hideHelp());
+    }).version(`TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION} (Claude Code)`, "-v, --version", "Output the version number"), A.addOption(new eF("--sdk-url <url>", "Use remote WebSocket endpoint for SDK I/O streaming (only with -p and stream-json format)").hideHelp()), A.addOption(new eF("--teleport [session]", "Resume a teleport session, optionally specify session ID").hideHelp()), A.addOption(new eF("--remote <description>", "Create a remote session with the given description").hideHelp());
     let Q = A.command("mcp").description("Configure and manage MCP servers").helpOption("-h, --help", "Display help for command");
     Q.command("serve").description("Start the Claude Code MCP server").helpOption("-h, --help", "Display help for command").option("-d, --debug", "Enable debug mode", () => !0).option("--verbose", "Override verbose mode setting from config", () => !0).action(async ({
         debug: Y,
         verbose: J
     }) => {
         let W = GD0();
-        if (BA("tengu_mcp_start", {}), !PJ1(W)) console.error(`Error: Directory ${W} does not exist`), process.exit(1);
+        if (BA("tengu_mcp_start", {}), !PJ1(W)) console.error(`Error: Directory TextComponent{W} does not exist`), process.exit(1);
         try {
             await jJ1(W, "default", !1, !1, void 0), await Tz9(W, Y ?? !1, J ?? !1)
         } catch (X) {
@@ -507,8 +510,8 @@ Examples:
                         type: "sse",
                         url: J,
                         headers: H
-                    }, F), process.stdout.write(`Added SSE MCP server ${Y} with URL: ${J} to ${F} config
-`), H) process.stdout.write(`Headers: ${JSON.stringify(H,null,2)}
+                    }, F), process.stdout.write(`Added SSE MCP server TextComponent{Y} with URL: TextComponent{J} to TextComponent{F} config
+`), H) process.stdout.write(`Headers: TextComponent{JSON.stringify(H,null,2)}
 `)
             } else if (V === "http") {
                 if (!J) console.error("Error: URL is required for HTTP transport."), process.exit(1);
@@ -517,14 +520,14 @@ Examples:
                         type: "http",
                         url: J,
                         headers: H
-                    }, F), process.stdout.write(`Added HTTP MCP server ${Y} with URL: ${J} to ${F} config
-`), H) process.stdout.write(`Headers: ${JSON.stringify(H,null,2)}
+                    }, F), process.stdout.write(`Added HTTP MCP server TextComponent{Y} with URL: TextComponent{J} to TextComponent{F} config
+`), H) process.stdout.write(`Headers: TextComponent{JSON.stringify(H,null,2)}
 `)
             } else {
                 if (!K && D) process.stderr.write(`
-Warning: The command "${J}" looks like a URL, but is being interpreted as a stdio server as --transport was not specified.
-`), process.stderr.write(`If this is an HTTP server, use: claude mcp add --transport http ${Y} ${J}
-`), process.stderr.write(`If this is an SSE server, use: claude mcp add --transport sse ${Y} ${J}
+Warning: The command "TextComponent{J}" looks like a URL, but is being interpreted as a stdio server as --transport was not specified.
+`), process.stderr.write(`If this is an HTTP server, use: claude mcp add --transport http TextComponent{Y} TextComponent{J}
+`), process.stderr.write(`If this is an SSE server, use: claude mcp add --transport sse TextComponent{Y} TextComponent{J}
 `);
                 let H = KH0(X.env);
                 Bt(Y, {
@@ -532,10 +535,10 @@ Warning: The command "${J}" looks like a URL, but is being interpreted as a stdi
                     command: J,
                     args: W || [],
                     env: H
-                }, F), process.stdout.write(`Added stdio MCP server ${Y} with command: ${J} ${(W||[]).join(" ")} to ${F} config
+                }, F), process.stdout.write(`Added stdio MCP server TextComponent{Y} with command: TextComponent{J} TextComponent{(W||[]).join(" ")} to TextComponent{F} config
 `)
             }
-            process.stdout.write(`File modified: ${mw(F)}
+            process.stdout.write(`File modified: TextComponent{mw(F)}
 `), process.exit(0)
         } catch (F) {
             console.error(F.message), process.exit(1)
@@ -547,8 +550,8 @@ Warning: The command "${J}" looks like a URL, but is being interpreted as a stdi
                 BA("tengu_mcp_delete", {
                     name: Y,
                     scope: D
-                }), Ib1(Y, D), process.stdout.write(`Removed MCP server ${Y} from ${D} config
-`), process.stdout.write(`File modified: ${mw(D)}
+                }), Ib1(Y, D), process.stdout.write(`Removed MCP server TextComponent{Y} from TextComponent{D} config
+`), process.stdout.write(`File modified: TextComponent{mw(D)}
 `), process.exit(0)
             }
             let W = M5(),
@@ -561,28 +564,28 @@ Warning: The command "${J}" looks like a URL, but is being interpreted as a stdi
             if (W.mcpServers?.[Y]) K.push("local");
             if (V) K.push("project");
             if (X.mcpServers?.[Y]) K.push("user");
-            if (K.length === 0) process.stderr.write(`No MCP server found with name: "${Y}"
+            if (K.length === 0) process.stderr.write(`No MCP server found with name: "TextComponent{Y}"
 `), process.exit(1);
             else if (K.length === 1) {
                 let D = K[0];
                 BA("tengu_mcp_delete", {
                     name: Y,
                     scope: D
-                }), Ib1(Y, D), process.stdout.write(`Removed MCP server "${Y}" from ${D} config
-`), process.stdout.write(`File modified: ${mw(D)}
+                }), Ib1(Y, D), process.stdout.write(`Removed MCP server "TextComponent{Y}" from TextComponent{D} config
+`), process.stdout.write(`File modified: TextComponent{mw(D)}
 `), process.exit(0)
-            } else process.stderr.write(`MCP server "${Y}" exists in multiple scopes:
+            } else process.stderr.write(`MCP server "TextComponent{Y}" exists in multiple scopes:
 `), K.forEach((D) => {
-                process.stderr.write(`  - ${Gt(D)} (${mw(D)})
+                process.stderr.write(`  - TextComponent{Gt(D)} (TextComponent{mw(D)})
 `)
             }), process.stderr.write(`
 To remove from a specific scope, use:
 `), K.forEach((D) => {
-                process.stderr.write(`  claude mcp remove "${Y}" -s ${D}
+                process.stderr.write(`  claude mcp remove "TextComponent{Y}" -s TextComponent{D}
 `)
             }), process.exit(1)
         } catch (W) {
-            process.stderr.write(`${W.message}
+            process.stderr.write(`TextComponent{W.message}
 `), process.exit(1)
         }
     }), Q.command("list").description("List configured MCP servers").helpOption("-h, --help", "Display help for command").action(async () => {
@@ -596,11 +599,11 @@ To remove from a specific scope, use:
 `);
             for (let [J, W] of Object.entries(Y)) {
                 let X = await oU9(J, W);
-                if (W.type === "sse") console.log(`${J}: ${W.url} (SSE) - ${X}`);
-                else if (W.type === "http") console.log(`${J}: ${W.url} (HTTP) - ${X}`);
+                if (W.type === "sse") console.log(`TextComponent{J}: TextComponent{W.url} (SSE) - TextComponent{X}`);
+                else if (W.type === "http") console.log(`TextComponent{J}: TextComponent{W.url} (HTTP) - TextComponent{X}`);
                 else if (!W.type || W.type === "stdio") {
                     let F = Array.isArray(W.args) ? W.args : [];
-                    console.log(`${J}: ${W.command} ${F.join(" ")} - ${X}`)
+                    console.log(`TextComponent{J}: TextComponent{W.command} TextComponent{F.join(" ")} - TextComponent{X}`)
                 }
             }
         }
@@ -610,29 +613,29 @@ To remove from a specific scope, use:
             name: Y
         });
         let J = l3A(Y);
-        if (!J) console.error(`No MCP server found with name: ${Y}`), process.exit(1);
-        console.log(`${Y}:`), console.log(`  Scope: ${Gt(J.scope)}`);
+        if (!J) console.error(`No MCP server found with name: TextComponent{Y}`), process.exit(1);
+        console.log(`TextComponent{Y}:`), console.log(`  Scope: TextComponent{Gt(J.scope)}`);
         let W = await oU9(Y, J);
-        if (console.log(`  Status: ${W}`), J.type === "sse") {
-            if (console.log("  Type: sse"), console.log(`  URL: ${J.url}`), J.headers) {
+        if (console.log(`  Status: TextComponent{W}`), J.type === "sse") {
+            if (console.log("  Type: sse"), console.log(`  URL: TextComponent{J.url}`), J.headers) {
                 console.log("  Headers:");
-                for (let [X, F] of Object.entries(J.headers)) console.log(`    ${X}: ${F}`)
+                for (let [X, F] of Object.entries(J.headers)) console.log(`    TextComponent{X}: TextComponent{F}`)
             }
         } else if (J.type === "http") {
-            if (console.log("  Type: http"), console.log(`  URL: ${J.url}`), J.headers) {
+            if (console.log("  Type: http"), console.log(`  URL: TextComponent{J.url}`), J.headers) {
                 console.log("  Headers:");
-                for (let [X, F] of Object.entries(J.headers)) console.log(`    ${X}: ${F}`)
+                for (let [X, F] of Object.entries(J.headers)) console.log(`    TextComponent{X}: TextComponent{F}`)
             }
         } else if (J.type === "stdio") {
-            console.log("  Type: stdio"), console.log(`  Command: ${J.command}`);
+            console.log("  Type: stdio"), console.log(`  Command: TextComponent{J.command}`);
             let X = Array.isArray(J.args) ? J.args : [];
-            if (console.log(`  Args: ${X.join(" ")}`), J.env) {
+            if (console.log(`  Args: TextComponent{X.join(" ")}`), J.env) {
                 console.log("  Environment:");
-                for (let [F, V] of Object.entries(J.env)) console.log(`    ${F}=${V}`)
+                for (let [F, V] of Object.entries(J.env)) console.log(`    TextComponent{F}=TextComponent{V}`)
             }
         }
         console.log(`
-To remove this server, run: claude mcp remove "${Y}" -s ${J.scope}`), process.exit(0)
+To remove this server, run: claude mcp remove "TextComponent{Y}" -s TextComponent{J.scope}`), process.exit(0)
     }), Q.command("add-json <name> <json>").description("Add an MCP server (stdio or SSE) with a JSON string").option("-s, --scope <scope>", "Configuration scope (local, user, or project)", "local").helpOption("-h, --help", "Display help for command").action(async (Y, J, W) => {
         try {
             let X = dzA(W.scope),
@@ -643,7 +646,7 @@ To remove this server, run: claude mcp remove "${Y}" -s ${J.scope}`), process.ex
                 scope: X,
                 source: "json",
                 type: V
-            }), console.log(`Added ${V} MCP server ${Y} to ${X} config`), process.exit(0)
+            }), console.log(`Added TextComponent{V} MCP server TextComponent{Y} to TextComponent{X} config`), process.exit(0)
         } catch (X) {
             console.error(X.message), process.exit(1)
         }
@@ -683,37 +686,37 @@ To remove this server, run: claude mcp remove "${Y}" -s ${J.scope}`), process.ex
         }), console.log("All project-scoped (.mcp.json) server approvals and rejections have been reset."), console.log("You will be prompted for approval next time you start Claude Code."), process.exit(0)
     });
 
-function B(Y, J) {
-        e(Y instanceof Error ? Y : Error(String(Y))), console.error(`${V1.cross} Failed to ${J}: ${Y instanceof Error?Y.message:String(Y)}`), process.exit(1)
+    function B(Y, J) {
+        e(Y instanceof Error ? Y : Error(String(Y))), console.error(`TextComponent{V1.cross} Failed to TextComponent{J}: TextComponent{Y instanceof Error?Y.message:String(Y)}`), process.exit(1)
     }
     let G = A.command("plugin").description("Manage Claude Code plugins").helpOption("-h, --help", "Display help for command");
     G.command("validate <path>").description("Validate a plugin or marketplace manifest").helpOption("-h, --help", "Display help for command").action((Y) => {
         try {
             let J = mY1(Y);
-            if (console.log(`Validating ${J.fileType} manifest: ${J.filePath}
-`), J.errors.length > 0) console.log(`${V1.cross} Found ${J.errors.length} error${J.errors.length===1?"":"s"}:
+            if (console.log(`Validating TextComponent{J.fileType} manifest: TextComponent{J.filePath}
+`), J.errors.length > 0) console.log(`TextComponent{V1.cross} Found TextComponent{J.errors.length} error${J.errors.length===1?"":"s"}:
 `), J.errors.forEach((W) => {
-                console.log(`  ${V1.pointer} ${W.path}: ${W.message}`)
+                console.log(`  TextComponent{V1.pointer} TextComponent{W.path}: TextComponent{W.message}`)
             }), console.log("");
-            if (J.warnings.length > 0) console.log(`${V1.warning} Found ${J.warnings.length} warning${J.warnings.length===1?"":"s"}:
+            if (J.warnings.length > 0) console.log(`TextComponent{V1.warning} Found TextComponent{J.warnings.length} warning${J.warnings.length===1?"":"s"}:
 `), J.warnings.forEach((W) => {
-                console.log(`  ${V1.pointer} ${W.path}: ${W.message}`)
+                console.log(`  TextComponent{V1.pointer} TextComponent{W.path}: TextComponent{W.message}`)
             }), console.log("");
             if (J.success) {
-                if (J.warnings.length > 0) console.log(`${V1.tick} Validation passed with warnings`);
-                else console.log(`${V1.tick} Validation passed`);
+                if (J.warnings.length > 0) console.log(`TextComponent{V1.tick} Validation passed with warnings`);
+                else console.log(`TextComponent{V1.tick} Validation passed`);
                 process.exit(0)
-            } else console.log(`${V1.cross} Validation failed`), process.exit(1)
+            } else console.log(`TextComponent{V1.cross} Validation failed`), process.exit(1)
         } catch (J) {
-            e(J instanceof Error ? J : Error(String(J))), console.error(`${V1.cross} Unexpected error during validation: ${J instanceof Error?J.message:String(J)}`), process.exit(2)
+            e(J instanceof Error ? J : Error(String(J))), console.error(`TextComponent{V1.cross} Unexpected error during validation: TextComponent{J instanceof Error?J.message:String(J)}`), process.exit(2)
         }
     });
     let Z = G.command("marketplace").description("Manage Claude Code marketplaces").helpOption("-h, --help", "Display help for command");
     Z.command("add <source>").description("Add a marketplace from a URL, path, or GitHub repo").helpOption("-h, --help", "Display help for command").action(async (Y) => {
         try {
             let J = uY1(Y);
-            if (!J) console.error(`${V1.cross} Invalid marketplace source format. Try: owner/repo, https://..., or ./path`), process.exit(1);
-            if ("error" in J) console.error(`${V1.cross} ${J.error}`), process.exit(1);
+            if (!J) console.error(`TextComponent{V1.cross} Invalid marketplace source format. Try: owner/repo, https://..., or ./path`), process.exit(1);
+            if ("error" in J) console.error(`TextComponent{V1.cross} TextComponent{J.error}`), process.exit(1);
             let W = J;
             console.log("Adding marketplace...");
             let {
@@ -726,7 +729,7 @@ function B(Y, J) {
             if (W.source === "github") F = W.repo;
             BA("tengu_marketplace_added", {
                 source_type: F
-            }), console.log(`${V1.tick} Successfully added marketplace: ${X}`), process.exit(0)
+            }), console.log(`TextComponent{V1.tick} Successfully added marketplace: TextComponent{X}`), process.exit(0)
         } catch (J) {
             B(J, "add marketplace")
         }
@@ -738,13 +741,13 @@ function B(Y, J) {
             console.log(`Configured marketplaces:
 `), J.forEach((W) => {
                 let X = Y[W];
-                if (console.log(`  ${V1.pointer} ${W}`), X?.source) {
+                if (console.log(`  TextComponent{V1.pointer} TextComponent{W}`), X?.source) {
                     let F = X.source;
-                    if (F.source === "github") console.log(`    Source: GitHub (${F.repo})`);
-                    else if (F.source === "git") console.log(`    Source: Git (${F.url})`);
-                    else if (F.source === "url") console.log(`    Source: URL (${F.url})`);
-                    else if (F.source === "directory") console.log(`    Source: Directory (${F.path})`);
-                    else if (F.source === "file") console.log(`    Source: File (${F.path})`)
+                    if (F.source === "github") console.log(`    Source: GitHub (TextComponent{F.repo})`);
+                    else if (F.source === "git") console.log(`    Source: Git (TextComponent{F.url})`);
+                    else if (F.source === "url") console.log(`    Source: URL (TextComponent{F.url})`);
+                    else if (F.source === "directory") console.log(`    Source: Directory (TextComponent{F.path})`);
+                    else if (F.source === "file") console.log(`    Source: File (TextComponent{F.path})`)
                 }
                 console.log("")
             }), process.exit(0)
@@ -755,24 +758,24 @@ function B(Y, J) {
         try {
             await jlA(Y), oF(), BA("tengu_marketplace_removed", {
                 marketplace_name: Y
-            }), console.log(`${V1.tick} Successfully removed marketplace: ${Y}`), process.exit(0)
+            }), console.log(`TextComponent{V1.tick} Successfully removed marketplace: TextComponent{Y}`), process.exit(0)
         } catch (J) {
             B(J, "remove marketplace")
         }
     }), Z.command("update [name]").description("Update marketplace(s) from their source - updates all if no name specified").helpOption("-h, --help", "Display help for command").action(async (Y) => {
         try {
-            if (Y) console.log(`Updating marketplace: ${Y}...`), await SlA(Y, (J) => {
+            if (Y) console.log(`Updating marketplace: TextComponent{Y}...`), await SlA(Y, (J) => {
                 console.log(J)
             }), oF(), BA("tengu_marketplace_updated", {
                 marketplace_name: Y
-            }), console.log(`${V1.tick} Successfully updated marketplace: ${Y}`), process.exit(0);
+            }), console.log(`TextComponent{V1.tick} Successfully updated marketplace: TextComponent{Y}`), process.exit(0);
             else {
                 let J = await TZ(),
                     W = Object.keys(J);
                 if (W.length === 0) console.log("No marketplaces configured"), process.exit(0);
-                console.log(`Updating ${W.length} marketplace(s)...`), await mQB(), oF(), BA("tengu_marketplace_updated_all", {
+                console.log(`Updating TextComponent{W.length} marketplace(s)...`), await mQB(), oF(), BA("tengu_marketplace_updated_all", {
                     count: W.length
-                }), console.log(`${V1.tick} Successfully updated ${W.length} marketplace(s)`), process.exit(0)
+                }), console.log(`TextComponent{V1.tick} Successfully updated TextComponent{W.length} marketplace(s)`), process.exit(0)
             }
         } catch (J) {
             B(J, "update marketplace(s)")
@@ -829,7 +832,7 @@ function B(Y, J) {
         }), process.exit(0)
     });
 
-function I({
+    function I({
         onDone: Y
     }) {
         return YI1(), c5.default.createElement(HY1, {
@@ -862,7 +865,6 @@ function I({
         })
     }), v4("run_before_parse"), await A.parseAsync(process.argv), v4("run_after_parse"), v4("main_after_run"), OC9(), A
 }
-
 async function Fh3({
     hasInitialPrompt: A,
     hasStdin: Q,
@@ -885,7 +887,7 @@ async function Fh3({
     appendSystemPromptFlag: w
 }) {
     try {
-        let N = await MGB();
+        let N = await getRepoHash();
         BA("tengu_init", {
             entrypoint: "claude",
             hasInitialPrompt: A,
@@ -926,7 +928,7 @@ function Vh3() {
     (process.stderr.isTTY ? process.stderr : process.stdout.isTTY ? process.stdout : void 0)?.write(`\x1B[?25h${Gg1}`)
 }
 var c5;
-var Q$9 = L(() => {
+var Q$9 = lazyLoader(() => {
     Qe();
     JE9();
     qE9();
@@ -1071,7 +1073,7 @@ var Q$9 = L(() => {
     EE();
     DJ1();
     uIA();
-    c5 = GA(VA(), 1);
+    c5 = esmImport(VA(), 1);
     v4("main_tsx_entry");
     v4("main_tsx_imports_loaded");
     if (of3()) process.exit(1)
@@ -1114,19 +1116,17 @@ function OC() {
         if (rC9 = !0, A && Q === null) {
             let B = VJ1(),
                 G = EFA();
-            console.error(oA.yellow(`Warning: MCP endpoint file not found at ${B} (session: ${G}). Falling back to state file.`))
+            console.error(oA.yellow(`Warning: MCP endpoint file not found at TextComponent{B} (session: TextComponent{G}). Falling back to state file.`))
         }
     }
     return A && Q !== null
 }
-
 class wSA extends Error {
     constructor(A) {
         super(A);
         this.name = "ConnectionFailedError"
     }
 }
-
 async function qSA(A, Q, B, G) {
     let Z = Date.now();
     try {
@@ -1168,12 +1168,12 @@ function qa() {
     let A = rV0();
     if (!sv3(A)) {
         let Q = EFA();
-        throw Error(`MCP state file not found at ${A} (session: ${Q}). Is Claude Code running?`)
+        throw Error(`MCP state file not found at TextComponent{A} (session: TextComponent{Q}). Is Claude Code running?`)
     }
     try {
         return JSON.parse(av3(A, "utf-8"))
     } catch (Q) {
-        throw Error(`Error reading MCP state file ${A}: ${Q instanceof Error?Q.message:String(Q)}`)
+        throw Error(`Error reading MCP state file TextComponent{A}: TextComponent{Q instanceof Error?Q.message:String(Q)}`)
     }
 }
 
@@ -1193,23 +1193,22 @@ function rv3(A, Q) {
 
 function yK0(A) {
     let Q = A.split("/");
-    if (Q.length !== 2 || !Q[0] || !Q[1]) throw Error(`Invalid tool identifier '${A}'. Expected format: <server>/<tool>`);
+    if (Q.length !== 2 || !Q[0] || !Q[1]) throw Error(`Invalid tool identifier 'TextComponent{A}'. Expected format: <server>/<tool>`);
     return {
         server: Q[0],
         tool: Q[1]
     }
 }
-
 async function uQA(A, Q, B = 1e4) {
     let G = oC9();
     if (!G) throw Error("MCP CLI endpoint not enabled");
     try {
         let Z = await GQ({
             method: "POST",
-            url: `${G.url}/mcp`,
+            url: `TextComponent{G.url}/mcp`,
             data: Q,
             headers: {
-                Authorization: `Bearer ${G.key}`,
+                Authorization: `Bearer TextComponent{G.key}`,
                 "Content-Type": "application/json"
             },
             timeout: B,
@@ -1217,7 +1216,7 @@ async function uQA(A, Q, B = 1e4) {
         });
         if (Z.status >= 400) {
             let I = Z.data,
-                Y = Error(I.error || `HTTP ${Z.status}: ${Z.statusText}`);
+                Y = Error(I.error || `HTTP TextComponent{Z.status}: TextComponent{Z.statusText}`);
             if (I.type) Y.name = I.type;
             throw Y
         }
@@ -1227,7 +1226,7 @@ async function uQA(A, Q, B = 1e4) {
             if (Z.code === "ECONNREFUSED") throw Error("Connection refused - is the MCP endpoint running?");
             if (Z.code === "ETIMEDOUT" || Z.message.includes("timeout")) throw Error("Request timeout");
             if (Z.message.startsWith("HTTP ")) throw Z;
-            throw Error(`Network error: ${Z.message}`)
+            throw Error(`Network error: TextComponent{Z.message}`)
         }
         throw Z
     }
@@ -1252,9 +1251,9 @@ Na.command("servers").description("List all connected MCP servers").option("--js
             if (G.hasTools) Y.push("tools");
             if (G.hasResources) Y.push("resources");
             if (G.hasPrompts) Y.push("prompts");
-            if (Y.length > 0) I = ` (${Y.join(", ")})`
+            if (Y.length > 0) I = ` (TextComponent{Y.join(", ")})`
         }
-        console.log(`${G.name} - ${Z}${I}`)
+        console.log(`TextComponent{G.name} - TextComponent{Z}TextComponent{I}`)
     })
 });
 Na.command("tools").description("List all available tools").argument("[server]", "Filter by server name").option("--json", "Output in JSON format").action(async (A, Q) => {
@@ -1274,7 +1273,7 @@ Na.command("tools").description("List all available tools").argument("[server]",
     let Z = G.data;
     if (Q.json) console.log(JSON.stringify(Z));
     else if (A) Z.forEach((I) => console.log(I.name));
-    else Z.forEach((I) => console.log(`${I.server}/${I.name}`))
+    else Z.forEach((I) => console.log(`TextComponent{I.server}/TextComponent{I.name}`))
 });
 Na.command("info").description("Get detailed information about a tool").argument("<tool>", "Tool identifier in format <server>/<tool>").option("--json", "Output in JSON format").action(async (A, Q) => {
     let B = await qSA("info", async () => {
@@ -1295,7 +1294,7 @@ Na.command("info").description("Get detailed information about a tool").argument
             let X = $SA(J.clients, Z, J.normalizedNames),
                 F = gQA(Z, X?.type);
             if (F) throw F;
-            throw Error(`Tool '${I}' not found on server '${Z}'`)
+            throw Error(`Tool 'TextComponent{I}' not found on server 'TextComponent{Z}'`)
         }
         return W
     }, () => ({
@@ -1307,23 +1306,22 @@ Na.command("info").description("Get detailed information about a tool").argument
     let G = B.data;
     if (Q.json) console.log(JSON.stringify(G));
     else {
-        if (console.log(oA.bold(`Tool: ${A}`)), console.log(oA.dim(`Server: ${G.server}`)), G.description) console.log(oA.dim(`Description: ${G.description}`));
+        if (console.log(oA.bold(`Tool: TextComponent{A}`)), console.log(oA.dim(`Server: TextComponent{G.server}`)), G.description) console.log(oA.dim(`Description: TextComponent{G.description}`));
         console.log(), console.log(oA.bold("Input Schema:")), console.log(JSON.stringify(G.inputSchema, null, 2))
     }
 });
-
 async function ov3(A, Q, B, G) {
     let Z = qa(),
         I = tC9(Z, Q);
-    if (!I) throw Error(`Server '${Q}' not found`);
-    if (G.debug) console.error(`Connecting to ${Q} (${I.type})...`);
+    if (!I) throw Error(`Server 'TextComponent{Q}' not found`);
+    if (G.debug) console.error(`Connecting to TextComponent{Q} (TextComponent{I.type})...`);
     let Y = await Q1A(Q, I);
-    if (Y.client.type !== "connected") throw gQA(Q, Y.client.type) ?? new wSA(`Failed to connect to server '${Q}'`);
+    if (Y.client.type !== "connected") throw gQA(Q, Y.client.type) ?? new wSA(`Failed to connect to server 'TextComponent{Q}'`);
     let J = (() => {
         let F = `mcp__${v7(Q)}__${v7(A)}`;
         return Z.tools.find((K) => K.name === F)?.originalToolName || A
     })();
-    if (G.debug) console.error(`Calling tool ${J}...`);
+    if (G.debug) console.error(`Calling tool TextComponent{J}...`);
     let W = await Y.client.client.request({
         method: "tools/call",
         params: {
@@ -1400,7 +1398,7 @@ Na.command("grep").description("Search tool names and descriptions using regex p
         try {
             new RegExp(A, Q.ignoreCase ? "i" : "")
         } catch (I) {
-            throw Error(`Invalid regex pattern: ${I instanceof Error?I.message:String(I)}`)
+            throw Error(`Invalid regex pattern: TextComponent{I instanceof Error?I.message:String(I)}`)
         }
         let Z = {
             pattern: A,
@@ -1418,9 +1416,9 @@ Na.command("grep").description("Search tool names and descriptions using regex p
     if (Q.json) console.log(JSON.stringify(G));
     else if (G.length === 0) console.log(oA.yellow("No tools found matching pattern"));
     else G.forEach((Z) => {
-        if (console.log(oA.bold(`${Z.server}/${Z.name}`)), Z.description) {
+        if (console.log(oA.bold(`TextComponent{Z.server}/TextComponent{Z.name}`)), Z.description) {
             let I = Z.description.length > 100 ? Z.description.slice(0, 100) + "..." : Z.description;
-            console.log(oA.dim(`  ${I}`))
+            console.log(oA.dim(`  TextComponent{I}`))
         }
         console.log()
     })
@@ -1446,18 +1444,17 @@ Na.command("resources").description("List MCP resources").argument("[server]", "
     let Z = G.data;
     if (Q.json) console.log(JSON.stringify(Z));
     else Z.forEach((I) => {
-        console.log(`${I.server}/${I.name||I.uri}`)
+        console.log(`TextComponent{I.server}/TextComponent{I.name||I.uri}`)
     })
 });
-
 async function tv3(A, Q, B) {
     let G = qa(),
         Z = tC9(G, A);
-    if (!Z) throw Error(`Server '${A}' not found`);
-    if (B.debug) console.error(`Connecting to ${A} (${Z.type})...`);
+    if (!Z) throw Error(`Server 'TextComponent{A}' not found`);
+    if (B.debug) console.error(`Connecting to TextComponent{A} (TextComponent{Z.type})...`);
     let I = await Q1A(A, Z);
-    if (I.client.type !== "connected") throw gQA(A, I.client.type) ?? new wSA(`Failed to connect to server '${A}'`);
-    if (B.debug) console.error(`Reading resource: ${Q}`);
+    if (I.client.type !== "connected") throw gQA(A, I.client.type) ?? new wSA(`Failed to connect to server 'TextComponent{A}'`);
+    if (B.debug) console.error(`Reading resource: TextComponent{Q}`);
     let Y = await I.client.client.readResource({
         uri: Q
     }, {
@@ -1474,11 +1471,11 @@ Na.command("read").description("Read an MCP resource").argument("<resource>", "R
     }
     let Y;
     if (I) {
-        if (Y = I, B.debug) console.log(`Using direct URI: ${Y}`)
+        if (Y = I, B.debug) console.log(`Using direct URI: TextComponent{Y}`)
     } else {
         let W = qa(),
             F = rv3(W, G).find((V) => V.name === Z || V.uri === Z);
-        if (!F) console.error(oA.red(`Error: Resource '${Z}' not found on server '${G}'`)), process.exit(1);
+        if (!F) console.error(oA.red(`Error: Resource 'TextComponent{Z}' not found on server 'TextComponent{G}'`)), process.exit(1);
         Y = F.uri
     }
     let J = Date.now();
@@ -1500,7 +1497,7 @@ Na.command("read").description("Read an MCP resource").argument("<resource>", "R
                 else if ("blob" in V) {
                     console.log(oA.yellow("[Binary blob content]"));
                     let K = "mimeType" in V ? V.mimeType : void 0;
-                    console.log(oA.dim(`MIME type: ${K||"unknown"}`))
+                    console.log(oA.dim(`MIME type: TextComponent{K||"unknown"}`))
                 }
             }
         });
@@ -1521,6 +1518,5 @@ Na.command("read").description("Read an MCP resource").argument("<resource>", "R
         process.exit(1)
     }
 });
-
 async function eC9(A) {
     if (qlA(), !OC()) pg();

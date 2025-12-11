@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_027.js
+ * 处理时间: 2025-12-09T03:41:36.637Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.910Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -24,7 +27,7 @@
                 fractionalMilliseconds: X
             })
         }, "parseRfc3339DateTime"),
-        x$8 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?(([-+]\d{2}\:\d{2})|[zZ])$/),
+        x$8 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?(([-+]\d{2}\:\d{2})|[zZ])TextComponent/),
         v$8 = FB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-3339 date-times must be expressed as strings");
@@ -41,7 +44,7 @@
         }, "parseRfc3339DateTimeWithOffset"),
         b$8 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun), (\d{2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{4}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? GMT$/),
         f$8 = new RegExp(/^(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday), (\d{2})-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)-(\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? GMT$/),
-        h$8 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ( [1-9]|\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? (\d{4})$/),
+        h$8 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ( [1-9]|\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? (\d{4})TextComponent/),
         g$8 = FB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-7231 date-times must be expressed as strings");
@@ -102,21 +105,21 @@
         }, "adjustRfc850Year"),
         Yj1 = FB((A) => {
             let Q = Cj1.indexOf(A);
-            if (Q < 0) throw TypeError(`Invalid month: ${A}`);
+            if (Q < 0) throw TypeError(`Invalid month: TextComponent{A}`);
             return Q + 1
         }, "parseMonthByShortName"),
         p$8 = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
         l$8 = FB((A, Q, B) => {
             let G = p$8[Q];
             if (Q === 1 && i$8(A)) G = 29;
-            if (B > G) throw TypeError(`Invalid day for ${Cj1[Q]} in ${A}: ${B}`)
+            if (B > G) throw TypeError(`Invalid day for TextComponent{Cj1[Q]} in TextComponent{A}: TextComponent{B}`)
         }, "validateDayOfMonth"),
         i$8 = FB((A) => {
             return A % 4 === 0 && (A % 100 !== 0 || A % 400 === 0)
         }, "isLeapYear"),
         bS = FB((A, Q, B, G) => {
             let Z = RgQ(f6A(A));
-            if (Z < B || Z > G) throw TypeError(`${Q} must be between ${B} and ${G}, inclusive`);
+            if (Z < B || Z > G) throw TypeError(`TextComponent{Q} must be between TextComponent{B} and TextComponent{G}, inclusive`);
             return Z
         }, "parseDateValue"),
         n$8 = FB((A) => {
@@ -128,7 +131,7 @@
                 B = 1;
             if (Q == "+") B = 1;
             else if (Q == "-") B = -1;
-            else throw TypeError(`Offset direction, ${Q}, must be "+" or "-"`);
+            else throw TypeError(`Offset direction, TextComponent{Q}, must be "+" or "-"`);
             let G = Number(A.substring(1, 3)),
                 Z = Number(A.substring(4, 6));
             return B * (G * 60 + Z) * 60 * 1000
@@ -306,8 +309,7 @@
         return Io(JSON.stringify(A))
     };
     Io.fromObject = Io.from;
-
-var Ww8 = class {
+    var Ww8 = class {
         static {
             FB(this, "NoOpLogger")
         }
@@ -318,7 +320,7 @@ var Ww8 = class {
         error() {}
     };
 
-function Ej1(A, Q, B) {
+    function Ej1(A, Q, B) {
         let G, Z, I;
         if (typeof Q > "u" && typeof B > "u") G = {}, I = A;
         else if (G = A, typeof Q === "function") return Z = Q, I = B, Vw8(G, Z, I);
@@ -374,8 +376,8 @@ function Ej1(A, Q, B) {
         Kw8 = FB((A) => A != null, "nonNullish"),
         Dw8 = FB((A) => A, "pass");
 
-function ygQ(A) {
-        if (A.includes(",") || A.includes('"')) A = `"${A.replace(/"/g,"\\\"")}"`;
+    function ygQ(A) {
+        if (A.includes(",") || A.includes('"')) A = `"TextComponent{A.replace(/"/g,"\\\"")}"`;
         return A
     }
     FB(ygQ, "quoteHeader");
@@ -405,7 +407,7 @@ function ygQ(A) {
             return A
         }, "_json");
 
-function xgQ(A, Q, B) {
+    function xgQ(A, Q, B) {
         if (B <= 0 || !Number.isInteger(B)) throw Error("Invalid number of delimiters (" + B + ") for splitEvery.");
         let G = A.split(Q);
         if (B === 1) return G;
@@ -448,7 +450,7 @@ function xgQ(A, Q, B) {
         })
     }, "splitHeader")
 });
-var mgQ = U((e$7, ugQ) => {
+var mgQ = moduleWrapper((e$7, ugQ) => {
     var {
         defineProperty: gdA,
         getOwnPropertyDescriptor: zw8,
@@ -489,11 +491,11 @@ var mgQ = U((e$7, ugQ) => {
     var Lw8 = rz((A) => {
             if (A == null) return A;
             if (typeof A === "number" || typeof A === "bigint") {
-                let Q = Error(`Received number ${A} where a string was expected.`);
+                let Q = Error(`Received number TextComponent{A} where a string was expected.`);
                 return Q.name = "Warning", console.warn(Q), String(A)
             }
             if (typeof A === "boolean") {
-                let Q = Error(`Received boolean ${A} where a string was expected.`);
+                let Q = Error(`Received boolean TextComponent{A} where a string was expected.`);
                 return Q.name = "Warning", console.warn(Q), String(A)
             }
             return A
@@ -503,7 +505,7 @@ var mgQ = U((e$7, ugQ) => {
             if (typeof A === "string") {
                 let Q = A.toLowerCase();
                 if (A !== "" && Q !== "false" && Q !== "true") {
-                    let B = Error(`Received string "${A}" where a boolean was expected.`);
+                    let B = Error(`Received string "TextComponent{A}" where a boolean was expected.`);
                     B.name = "Warning", console.warn(B)
                 }
                 return A !== "" && Q !== "false"
@@ -515,7 +517,7 @@ var mgQ = U((e$7, ugQ) => {
             if (typeof A === "string") {
                 let Q = Number(A);
                 if (Q.toString() !== A) {
-                    let B = Error(`Received string "${A}" where a number was expected.`);
+                    let B = Error(`Received string "TextComponent{A}" where a number was expected.`);
                     return B.name = "Warning", console.warn(B), A
                 }
                 return Q
@@ -604,7 +606,7 @@ var mgQ = U((e$7, ugQ) => {
             if (A.statusCode == 404) return "NotFound"
         }, "loadRestXmlErrorCode")
 });
-var OV = U((FCA) => {
+var OV = moduleWrapper((FCA) => {
     Object.defineProperty(FCA, "__esModule", {
         value: !0
     });
@@ -613,7 +615,7 @@ var OV = U((FCA) => {
     zj1.__exportStar(zgQ(), FCA);
     zj1.__exportStar(mgQ(), FCA)
 });
-var g6A = U((Qw7, egQ) => {
+var g6A = moduleWrapper((Qw7, egQ) => {
     var {
         defineProperty: mdA,
         getOwnPropertyDescriptor: vw8,
@@ -649,13 +651,13 @@ var g6A = U((Qw7, egQ) => {
     var mw8 = nB(),
         igQ = void 0;
 
-function ngQ(A) {
+    function ngQ(A) {
         if (A === void 0) return !0;
         return typeof A === "string" && A.length <= 50
     }
     Ib(ngQ, "isValidUserAgentAppId");
 
-function agQ(A) {
+    function agQ(A) {
         let Q = (0, mw8.normalizeProvider)(A.userAgentAppId ?? igQ),
             {
                 customUserAgent: B
@@ -680,8 +682,7 @@ function agQ(A) {
         cw8 = ffQ(),
         fS = OV(),
         pw8 = /\d{12}\.ddb/;
-
-async function sgQ(A, Q, B) {
+    async function sgQ(A, Q, B) {
         if (B.request?.headers?.["smithy-protocol"] === "rpc-v2-cbor")(0, fS.setFeature)(A, "PROTOCOL_RPC_V2_CBOR", "M");
         if (typeof Q.retryStrategy === "function") {
             let I = await Q.retryStrategy();
@@ -717,12 +718,12 @@ async function sgQ(A, Q, B) {
         Uj1 = "x-amz-user-agent",
         cgQ = " ",
         $j1 = "/",
-        lw8 = /[^\!\$\%\&\'\*\+\-\.\^\_\`\|\~\d\w]/g,
-        iw8 = /[^\!\$\%\&\'\*\+\-\.\^\_\`\|\~\d\w\#]/g,
+        lw8 = /[^\!\TextComponent\%\&\'\*\+\-\.\^\_\`\|\~\d\w]/g,
+        iw8 = /[^\!\TextComponent\%\&\'\*\+\-\.\^\_\`\|\~\d\w\#]/g,
         pgQ = "-",
         nw8 = 1024;
 
-function rgQ(A) {
+    function rgQ(A) {
         let Q = "";
         for (let B in A) {
             let G = A[B];
@@ -746,15 +747,15 @@ function rgQ(A) {
             } = Z, Y = B?.userAgent?.map(udA) || [], J = (await A.defaultUserAgentProvider()).map(udA);
             await sgQ(B, A, G);
             let W = B;
-            J.push(`m/${rgQ(Object.assign({},B.__smithy_context?.features,W.__aws_sdk_context?.features))}`);
+            J.push(`m/TextComponent{rgQ(Object.assign({},B.__smithy_context?.features,W.__aws_sdk_context?.features))}`);
             let X = A?.customUserAgent?.map(udA) || [],
                 F = await A.userAgentAppId();
-            if (F) J.push(udA([`app/${F}`]));
+            if (F) J.push(udA([`app/TextComponent{F}`]));
             let V = (0, dw8.getUserAgentPrefix)(),
                 K = (V ? [V] : []).concat([...J, ...Y, ...X]).join(cgQ),
                 D = [...J.filter((H) => H.startsWith("aws-sdk-")), ...X].join(cgQ);
             if (A.runtime !== "browser") {
-                if (D) I[Uj1] = I[Uj1] ? `${I[dgQ]} ${D}` : D;
+                if (D) I[Uj1] = I[Uj1] ? `TextComponent{I[dgQ]} TextComponent{D}` : D;
                 I[dgQ] = K
             } else I[Uj1] = K;
             return Q({
@@ -774,9 +775,9 @@ function rgQ(A) {
                     case 0:
                         return J;
                     case 1:
-                        return `${Y}/${J}`;
+                        return `TextComponent{Y}/TextComponent{J}`;
                     default:
-                        return `${Y}#${J}`
+                        return `TextComponent{Y}#TextComponent{J}`
                 }
             }, "")
         }, "escapeUserAgent"),
@@ -793,7 +794,7 @@ function rgQ(A) {
             }, "applyToStack")
         }), "getUserAgentPlugin")
 });
-var qj1 = U((AuQ) => {
+var qj1 = moduleWrapper((AuQ) => {
     Object.defineProperty(AuQ, "__esModule", {
         value: !0
     });
@@ -810,7 +811,7 @@ var qj1 = U((AuQ) => {
         };
     AuQ.defaultSSOHttpAuthSchemeParametersProvider = rw8;
 
-function ow8(A) {
+    function ow8(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {
@@ -826,7 +827,7 @@ function ow8(A) {
         }
     }
 
-function ddA(A) {
+    function ddA(A) {
         return {
             schemeId: "smithy.api#noAuth"
         }
@@ -864,7 +865,7 @@ function ddA(A) {
     };
     AuQ.resolveHttpAuthSchemeConfig = ew8
 });
-var SuQ = U((Gw7, ldA) => {
+var SuQ = moduleWrapper((Gw7, ldA) => {
     var BuQ, GuQ, ZuQ, IuQ, YuQ, JuQ, WuQ, XuQ, FuQ, VuQ, KuQ, DuQ, HuQ, cdA, Nj1, CuQ, EuQ, zuQ, u6A, UuQ, $uQ, wuQ, quQ, NuQ, LuQ, MuQ, OuQ, RuQ, pdA, TuQ, PuQ, juQ;
     (function(A) {
         var Q = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
@@ -874,7 +875,7 @@ var SuQ = U((Gw7, ldA) => {
         else if (typeof ldA === "object" && typeof Gw7 === "object") A(B(Q, B(Gw7)));
         else A(B(Q));
 
-function B(G, Z) {
+        function B(G, Z) {
             if (G !== Q)
                 if (typeof Object.create === "function") Object.defineProperty(G, "__esModule", {
                     value: !0
@@ -898,7 +899,7 @@ function B(G, Z) {
             if (typeof Y !== "function" && Y !== null) throw TypeError("Class extends value " + String(Y) + " is not a constructor or null");
             Q(I, Y);
 
-function J() {
+            function J() {
                 this.constructor = I
             }
             I.prototype = Y === null ? Object.create(Y) : (J.prototype = Y.prototype, new J)
@@ -994,7 +995,7 @@ function J() {
                     }
                 }
 
-function D(C) {
+                function D(C) {
                     try {
                         H(W.throw(C))
                     } catch (E) {
@@ -1002,7 +1003,7 @@ function D(C) {
                     }
                 }
 
-function H(C) {
+                function H(C) {
                     C.done ? F(C.value) : X(C.value).then(K, D)
                 }
                 H((W = W.apply(I, Y || [])).next())
@@ -1022,13 +1023,13 @@ function H(C) {
                 return this
             }), V;
 
-function K(H) {
+            function K(H) {
                 return function(C) {
                     return D([H, C])
                 }
             }
 
-function D(H) {
+            function D(H) {
                 if (W) throw TypeError("Generator is already executing.");
                 while (V && (V = 0, H[0] && (J = 0)), J) try {
                     if (W = 1, X && (F = H[0] & 2 ? X.return : H[0] ? X.throw || ((F = X.return) && F.call(X), 0) : X.next) && !(F = F.call(X, H[1])).done) return F;
@@ -1160,13 +1161,13 @@ function D(H) {
                 return this
             }, X;
 
-function V(w) {
+            function V(w) {
                 return function(N) {
                     return Promise.resolve(N).then(w, E)
                 }
             }
 
-function K(w, N) {
+            function K(w, N) {
                 if (W[w]) {
                     if (X[w] = function(q) {
                             return new Promise(function(R, P) {
@@ -1176,7 +1177,7 @@ function K(w, N) {
                 }
             }
 
-function D(w, N) {
+            function D(w, N) {
                 try {
                     H(W[w](N))
                 } catch (q) {
@@ -1184,19 +1185,19 @@ function D(w, N) {
                 }
             }
 
-function H(w) {
+            function H(w) {
                 w.value instanceof u6A ? Promise.resolve(w.value.v).then(C, E) : z(F[0][2], w)
             }
 
-function C(w) {
+            function C(w) {
                 D("next", w)
             }
 
-function E(w) {
+            function E(w) {
                 D("throw", w)
             }
 
-function z(w, N) {
+            function z(w, N) {
                 if (w(N), F.shift(), F.length) D(F[0][0], F[0][1])
             }
         }, $uQ = function(I) {
@@ -1207,7 +1208,7 @@ function z(w, N) {
                 return this
             }, Y;
 
-function W(X, F) {
+            function W(X, F) {
                 Y[X] = I[X] ? function(V) {
                     return (J = !J) ? {
                         value: u6A(I[X](V)),
@@ -1223,7 +1224,7 @@ function W(X, F) {
                 return this
             }, J);
 
-function W(F) {
+            function W(F) {
                 J[F] = I[F] && function(V) {
                     return new Promise(function(K, D) {
                         V = I[F](V), X(K, D, V.done, V.value)
@@ -1231,7 +1232,7 @@ function W(F) {
                 }
             }
 
-function X(F, V, K, D) {
+            function X(F, V, K, D) {
                 Promise.resolve(D).then(function(H) {
                     F({
                         value: H,
@@ -1264,8 +1265,7 @@ function X(F, V, K, D) {
             };
         NuQ = function(I) {
             if (I && I.__esModule) return I;
-
-var Y = {};
+            var Y = {};
             if (I != null) {
                 for (var J = G(I), W = 0; W < J.length; W++)
                     if (J[W] !== "default") pdA(Y, I, J[W])
@@ -1327,7 +1327,7 @@ var Y = {};
             }
             var J, W = 0;
 
-function X() {
+            function X() {
                 while (J = I.stack.pop()) try {
                     if (!J.async && W === 1) return W = 0, I.stack.push(J), Promise.resolve().then(X);
                     if (J.dispose) {
@@ -1344,14 +1344,14 @@ function X() {
             }
             return X()
         }, juQ = function(I, Y) {
-            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
+            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)TextComponent|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
                 return W ? Y ? ".jsx" : ".js" : X && (!F || !V) ? J : X + F + "." + V.toLowerCase() + "js"
             });
             return I
         }, A("__extends", BuQ), A("__assign", GuQ), A("__rest", ZuQ), A("__decorate", IuQ), A("__param", YuQ), A("__esDecorate", JuQ), A("__runInitializers", WuQ), A("__propKey", XuQ), A("__setFunctionName", FuQ), A("__metadata", VuQ), A("__awaiter", KuQ), A("__generator", DuQ), A("__exportStar", HuQ), A("__createBinding", pdA), A("__values", cdA), A("__read", Nj1), A("__spread", CuQ), A("__spreadArrays", EuQ), A("__spreadArray", zuQ), A("__await", u6A), A("__asyncGenerator", UuQ), A("__asyncDelegator", $uQ), A("__asyncValues", wuQ), A("__makeTemplateObject", quQ), A("__importStar", NuQ), A("__importDefault", LuQ), A("__classPrivateFieldGet", MuQ), A("__classPrivateFieldSet", OuQ), A("__classPrivateFieldIn", RuQ), A("__addDisposableResource", TuQ), A("__disposeResources", PuQ), A("__rewriteRelativeImportExtension", juQ)
     })
 });
-var _uQ = U((Zw7, Bq8) => {
+var _uQ = moduleWrapper((Zw7, Bq8) => {
     Bq8.exports = {
         name: "@aws-sdk/client-sso",
         description: "AWS SDK for JavaScript Sso Client for Node.js, Browser and React Native",
@@ -1447,7 +1447,7 @@ var _uQ = U((Zw7, Bq8) => {
         }
     }
 });
-var VCA = U((Iw7, huQ) => {
+var VCA = moduleWrapper((Iw7, huQ) => {
     var {
         defineProperty: ndA,
         getOwnPropertyDescriptor: Gq8,
@@ -1481,8 +1481,8 @@ var VCA = U((Iw7, huQ) => {
         defaultUserAgent: () => Fq8
     });
     huQ.exports = Wq8(yuQ);
-    var kuQ = UA("os"),
-        Lj1 = UA("process"),
+    var kuQ = nodeRequire("os"),
+        Lj1 = nodeRequire("process"),
         xuQ = {
             isCrtAvailable: !1
         },
@@ -1498,16 +1498,16 @@ var VCA = U((Iw7, huQ) => {
                 let G = [
                         ["aws-sdk-js", Q],
                         ["ua", "2.1"],
-                        [`os/${(0,kuQ.platform)()}`, (0, kuQ.release)()],
+                        [`os/TextComponent{(0,kuQ.platform)()}`, (0, kuQ.release)()],
                         ["lang/js"],
-                        ["md/nodejs", `${Lj1.versions.node}`]
+                        ["md/nodejs", `TextComponent{Lj1.versions.node}`]
                     ],
                     Z = Xq8();
                 if (Z) G.push(Z);
-                if (A) G.push([`api/${A}`, Q]);
-                if (Lj1.env.AWS_EXECUTION_ENV) G.push([`exec-env/${Lj1.env.AWS_EXECUTION_ENV}`]);
+                if (A) G.push([`api/TextComponent{A}`, Q]);
+                if (Lj1.env.AWS_EXECUTION_ENV) G.push([`exec-env/TextComponent{Lj1.env.AWS_EXECUTION_ENV}`]);
                 let I = await B?.userAgentAppId?.();
-                return I ? [...G, [`app/${I}`]] : [...G]
+                return I ? [...G, [`app/TextComponent{I}`]] : [...G]
             }
         }, "createDefaultUserAgentProvider"),
         Fq8 = vuQ,

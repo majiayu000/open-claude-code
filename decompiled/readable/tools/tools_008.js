@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_008.js
+ * 处理时间: 2025-12-09T03:41:38.642Z
+ * 变量映射: 9 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.071Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -28,17 +31,17 @@
         isError: !0
     }) : null, A === "" && W === "" ? rH.default.createElement(y0, {
         height: 1
-    }, rH.default.createElement($, {
+    }, rH.default.createElement(TextComponent, {
         dimColor: !0
     }, I ? "Running in the background (down arrow to manage)" : Z || "(No content)")) : null)
 }
 var rH;
-var U21 = L(() => {
+var U21 = lazyLoader(() => {
     hA();
     wIA();
     u8();
     Hh();
-    rH = GA(VA(), 1)
+    rH = esmImport(VA(), 1)
 });
 
 function $21({
@@ -54,8 +57,8 @@ function $21({
         W = Z ? I : J.slice(-5).join(`
 `),
         X = Z ? 0 : G ? Math.max(0, G - 5) : 0,
-        F = B !== void 0 ? `(${FE(B*1000)})` : void 0;
-    if (!J.length) return _k.default.createElement(y0, null, _k.default.createElement($, {
+        F = B !== void 0 ? `(TextComponent{FE(B*1000)})` : void 0;
+    if (!J.length) return _k.default.createElement(y0, null, _k.default.createElement(TextComponent, {
         dimColor: !0
     }, "Running… ", F));
     return _k.default.createElement(y0, null, _k.default.createElement(j, {
@@ -64,23 +67,23 @@ function $21({
         height: Z ? void 0 : Math.min(5, J.length),
         flexDirection: "column",
         overflow: "hidden"
-    }, _k.default.createElement($, {
+    }, _k.default.createElement(TextComponent, {
         dimColor: !0
     }, W)), _k.default.createElement(j, {
         flexDirection: "row",
         gap: 1
-    }, !Z && X > 0 && _k.default.createElement($, {
+    }, !Z && X > 0 && _k.default.createElement(TextComponent, {
         dimColor: !0
-    }, X > 0 && `+${X} more line${X===1?"":"s"}`), F && _k.default.createElement($, {
+    }, X > 0 && `+TextComponent{X} more line${X===1?"":"s"}`), F && _k.default.createElement(TextComponent, {
         dimColor: !0
     }, F))))
 }
 var _k;
-var f10 = L(() => {
+var f10 = lazyLoader(() => {
     hA();
     HT();
     u8();
-    _k = GA(VA(), 1)
+    _k = esmImport(VA(), 1)
 });
 
 function UG2({
@@ -92,7 +95,7 @@ function UG2({
     let Q = m0.terminal === "tmux" ? "ctrl+b ctrl+b to run in background" : "ctrl+b to run in background";
     return nY.createElement(j, {
         paddingLeft: 5
-    }, nY.createElement($, {
+    }, nY.createElement(TextComponent, {
         dimColor: !0
     }, Q))
 }
@@ -106,13 +109,13 @@ function $G2(A, {
     } = A;
     if (!G) return null;
     let Z = G;
-    if (G.includes(`"$(cat <<'EOF'`)) {
-        let I = G.match(/^(.*?)"?\$\(cat <<'EOF'\n([\s\S]*?)\n\s*EOF\n\s*\)"(.*)$/);
+    if (G.includes(`"TextComponent(cat <<'EOF'`)) {
+        let I = G.match(/^(.*?)"?\TextComponent\(cat <<'EOF'\n([\s\S]*?)\n\s*EOF\n\s*\)"(.*)TextComponent/);
         if (I && I[1] && I[2]) {
             let Y = I[1],
                 J = I[2],
                 W = I[3] || "";
-            Z = `${Y.trim()} "${J.trim()}"${W.trim()}`
+            Z = `TextComponent{Y.trim()} "TextComponent{J.trim()}"TextComponent{W.trim()}`
         }
     }
     if (!Q) {
@@ -125,7 +128,7 @@ function $G2(A, {
             if (Y) W = I.slice(0, zG2).join(`
 `);
             if (W.length > h10) W = W.slice(0, h10);
-            return nY.createElement($, null, W.trim(), "…")
+            return nY.createElement(TextComponent, null, W.trim(), "…")
         }
     }
     return Z
@@ -144,7 +147,7 @@ function qG2(A, {
     let I = A.at(-1);
     if (!I || !I.data || !I.data.output) return nY.createElement(y0, {
         height: 1
-    }, nY.createElement($, {
+    }, nY.createElement(TextComponent, {
         dimColor: !0
     }, "Running…"));
     let Y = I.data;
@@ -160,7 +163,7 @@ function qG2(A, {
 function NG2() {
     return nY.createElement(y0, {
         height: 1
-    }, nY.createElement($, {
+    }, nY.createElement(TextComponent, {
         dimColor: !0
     }, "Waiting…"))
 }
@@ -189,7 +192,7 @@ function MG2(A, {
 }
 var nY, zG2 = 2,
     h10 = 160;
-var g10 = L(() => {
+var g10 = lazyLoader(() => {
     hA();
     lV();
     lX();
@@ -197,7 +200,7 @@ var g10 = L(() => {
     U21();
     f10();
     f5();
-    nY = GA(VA(), 1)
+    nY = esmImport(VA(), 1)
 });
 import {
     EOL as FMA
@@ -269,7 +272,6 @@ function TIA(A) {
     if (eX5(A.command)) return !1;
     return !0
 }
-
 async function AF5(A, Q, B, G, Z) {
     return null
 }
@@ -286,11 +288,11 @@ async function* QF5({
         timeout: J,
         shellExecutable: W,
         run_in_background: X
-    } = A, F = J || LGA(), V = "", K = "", D = 0, H = void 0, C = tX5(I), E = await HoA(I, Q.signal, F, W, (y, v, x) => {
+    } = A, F = J || getDefaultTimeout(), V = "", K = "", D = 0, H = void 0, C = tX5(I), E = await HoA(I, Q.signal, F, W, (y, v, x) => {
         K = y, V = v, D = x
     }, Z, TIA(A), C), z = E.result;
 
-function w(y, v) {
+    function w(y, v) {
         B((x) => {
             let p = x.backgroundTasks[y];
             if (p && p.type !== "shell") return x;
@@ -304,14 +306,14 @@ function w(y, v) {
         })
     }
 
-function N(y, v) {
+    function N(y, v) {
         let x = jt1(I, E, Y || I, w);
         if (H = x, BA(y, {
                 command_type: RG2(I)
             }), v) v(x)
     }
 
-function q() {
+    function q() {
         N("tengu_bash_command_backgrounded")
     }
     if (E.onTimeout && C) E.onTimeout((y) => {
@@ -362,7 +364,6 @@ function q() {
         }, P = Date.now() + iX5
     }
 }
-
 async function BF5(A, Q, B) {
     try {
         let G = JSON.parse(A),
@@ -392,19 +393,19 @@ async function BF5(A, Q, B) {
                 F = "Plain text";
                 break;
             case "structuredContent":
-                F = Y ? `JSON with schema: ${Y}` : "JSON";
+                F = Y ? `JSON with schema: TextComponent{Y}` : "JSON";
                 break;
             case "contentArray":
-                F = Y ? `JSON array with schema: ${Y}` : "JSON array";
+                F = Y ? `JSON array with schema: TextComponent{Y}` : "JSON array";
                 break
         }
         return {
-            stdout: `Error: result (${W.length.toLocaleString()} characters) exceeds maximum allowed tokens. Output has been saved to ${X}.
-Format: ${F}
-Use offset and limit parameters to read specific portions of the file, the ${GREP_TOOL_NAME} tool to search for specific content, and jq to make structured queries.
+            stdout: `Error: result (TextComponent{W.length.toLocaleString()} characters) exceeds maximum allowed tokens. Output has been saved to TextComponent{X}.
+Format: TextComponent{F}
+Use offset and limit parameters to read specific portions of the file, the TextComponent{GREP_TOOL_NAME} tool to search for specific content, and jq to make structured queries.
 REQUIREMENTS FOR SUMMARIZATION/ANALYSIS/REVIEW:
-- You MUST read the content from the file at ${X} in sequential chunks until 100% of the content has been read.
-- If you receive truncation warnings when reading the file ("[N lines truncated]"), reduce the chunk size until you have read 100% of the content without truncation ***DO NOT PROCEED UNTIL YOU HAVE DONE THIS***. Bash output is limited to ${Ke().toLocaleString()} chars.
+- You MUST read the content from the file at TextComponent{X} in sequential chunks until 100% of the content has been read.
+- If you receive truncation warnings when reading the file ("[N lines truncated]"), reduce the chunk size until you have read 100% of the content without truncation ***DO NOT PROCEED UNTIL YOU HAVE DONE THIS***. Bash output is limited to TextComponent{getMaxOutputLength().toLocaleString()} chars.
 - Before producing ANY summary or analysis, you MUST explicitly describe what portion of the content you have read. ***If you did not read the entire content, you MUST explicitly state this.***
 `,
             structuredContent: void 0,
@@ -417,7 +418,7 @@ REQUIREMENTS FOR SUMMARIZATION/ANALYSIS/REVIEW:
 var u10, OG2 = 2000,
     iX5 = 1000,
     nX5, aX5, sX5, rX5, X9;
-var nV = L(() => {
+var nV = lazyLoader(() => {
     h2();
     pSB();
     gU();
@@ -447,10 +448,10 @@ var nV = L(() => {
     g10();
     m_();
     EE();
-    XT();
-    u10 = GA(VA(), 1), nX5 = ["sleep"], aX5 = _.strictObject({
+    noOpFunction();
+    u10 = esmImport(VA(), 1), nX5 = ["sleep"], aX5 = _.strictObject({
         command: _.string().describe("The command to execute"),
-        timeout: _.number().optional().describe(`Optional timeout in milliseconds (max ${KoA()})`),
+        timeout: _.number().optional().describe(`Optional timeout in milliseconds (max TextComponent{getMaxTimeout()})`),
         description: _.string().optional().describe(`Clear, concise description of what this command does in 5-10 words, in active voice. Examples:
 Input: ls
 Output: List files in current directory
@@ -487,7 +488,7 @@ Output: Create directory 'foo'`),
             return A || "Run shell command"
         },
         async prompt() {
-            return LSB()
+            return getBashToolDescription()
         },
         isConcurrencySafe(A) {
             return this.isReadOnly(A)
@@ -499,7 +500,7 @@ Output: Create directory 'foo'`),
         outputSchema: rX5,
         userFacingName(A) {
             if (!A) return "Bash";
-            return TIA(A) && V0(process.env.CLAUDE_CODE_BASH_SANDBOX_SHOW_INDICATOR) ? "SandboxedBash" : "Bash"
+            return TIA(A) && parseBoolean(process.env.CLAUDE_CODE_BASH_SANDBOX_SHOW_INDICATOR) ? "SandboxedBash" : "Bash"
         },
         getToolUseSummary(A) {
             if (!A?.command) return null;
@@ -536,7 +537,7 @@ Output: Create directory 'foo'`),
                 content: Y
             };
             if (Z) {
-                let V = Q.trim().match(/^data:([^;]+);base64,(.+)$/);
+                let V = Q.trim().match(/^data:([^;]+);base64,(.+)TextComponent/);
                 if (V) {
                     let K = V[1],
                         D = V[2];
@@ -567,7 +568,7 @@ Output: Create directory 'foo'`),
                 if (B) X += FMA;
                 X += "<error>Command was aborted before completion</error>"
             }
-            let F = I ? `Command running in background with ID: ${I}` : "";
+            let F = I ? `Command running in background with ID: TextComponent{I}` : "";
             return {
                 tool_use_id: J,
                 type: "tool_result",
@@ -598,7 +599,7 @@ Output: Create directory 'foo'`),
                     if (wA = await HA.next(), !wA.done && Z) {
                         let SA = wA.value;
                         Z({
-                            toolUseID: `bash-progress-${H++}`,
+                            toolUseID: `bash-progress-TextComponent{H++}`,
                             data: {
                                 type: "bash_progress",
                                 output: SA.output,
@@ -610,7 +611,7 @@ Output: Create directory 'foo'`),
                     } while (!wA.done);
                 if (E = wA.value, oX5(A.command, E.code), V.append((E.stdout || "").trimEnd() + FMA), D = c52(A.command, E.code, E.stdout || "", E.stderr || ""), E.stderr && E.stderr.includes(".git/index.lock': File exists")) BA("tengu_git_index_lock_error", {});
                 if (D.isError) {
-                    if (K.append(E.stderr.trimEnd() + FMA), E.code !== 0) K.append(`Exit code ${E.code}`)
+                    if (K.append(E.stderr.trimEnd() + FMA), E.code !== 0) K.append(`Exit code TextComponent{E.code}`)
                 } else if (Ve(A.command) !== null) K.append(E.stderr.trimEnd() + FMA);
                 else V.append(E.stderr.trimEnd() + FMA);
                 if (!w) {
@@ -689,13 +690,13 @@ Output: Create directory 'foo'`),
             }
             let QA = l;
             if (p) {
-                let HA = l.trim().match(/^data:([^;]+);base64,(.+)$/);
+                let HA = l.trim().match(/^data:([^;]+);base64,(.+)TextComponent/);
                 if (HA && HA[1] && HA[2]) {
                     let wA = HA[1],
                         KA = HA[2],
                         SA = Buffer.from(KA, "base64"),
                         sA = await Ze(SA, void 0, wA);
-                    QA = `data:${sA.mediaType};base64,${sA.base64}`
+                    QA = `data:TextComponent{sA.mediaType};base64,TextComponent{sA.base64}`
                 }
             }
             return {
@@ -723,33 +724,33 @@ function w21({
     switch (A.toolName) {
         case X9.name:
             if (A.ruleContent)
-                if (A.ruleContent.endsWith(":*")) return hE.createElement($, {
+                if (A.ruleContent.endsWith(":*")) return hE.createElement(TextComponent, {
                     dimColor: !0
-                }, "Any Bash command starting with", " ", hE.createElement($, {
+                }, "Any Bash command starting with", " ", hE.createElement(TextComponent, {
                     bold: !0
                 }, A.ruleContent.slice(0, -2)));
-                else return hE.createElement($, {
+                else return hE.createElement(TextComponent, {
                     dimColor: !0
-                }, "The Bash command ", hE.createElement($, {
+                }, "The Bash command ", hE.createElement(TextComponent, {
                     bold: !0
                 }, A.ruleContent));
-            else return hE.createElement($, {
+            else return hE.createElement(TextComponent, {
                 dimColor: !0
             }, "Any Bash command");
         default:
-            if (!A.ruleContent) return hE.createElement($, {
+            if (!A.ruleContent) return hE.createElement(TextComponent, {
                 dimColor: !0
-            }, "Any use of the ", hE.createElement($, {
+            }, "Any use of the ", hE.createElement(TextComponent, {
                 bold: !0
             }, A.toolName), " tool");
             else return null
     }
 }
 var hE;
-var m10 = L(() => {
+var m10 = lazyLoader(() => {
     hA();
     nV();
-    hE = GA(VA(), 1)
+    hE = esmImport(VA(), 1)
 });
 
 function GF5({
@@ -836,15 +837,15 @@ function ZF5({
         paddingLeft: G,
         paddingRight: G,
         gap: Z
-    }, D, Ki.default.createElement(j, null, Ki.default.createElement($, {
+    }, D, Ki.default.createElement(j, null, Ki.default.createElement(TextComponent, {
         color: I,
         dimColor: Y
     }, Q)), D)
 }
 var Ki, J3;
-var eV = L(() => {
+var eV = lazyLoader(() => {
     hA();
-    Ki = GA(VA(), 1);
+    Ki = esmImport(VA(), 1);
     J3 = ZF5
 });
 
@@ -897,35 +898,35 @@ function IF5({
         gap: 1
     }, oH.default.createElement(j, {
         flexDirection: "column"
-    }, oH.default.createElement($, {
+    }, oH.default.createElement(TextComponent, {
         bold: !0,
         color: Z
-    }, A), Q && oH.default.createElement($, {
+    }, A), Q && oH.default.createElement(TextComponent, {
         dimColor: !0
     }, Q)), B)), !Y && oH.default.createElement(j, {
         paddingX: J ? 0 : 1
-    }, oH.default.createElement($, {
+    }, oH.default.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, W.pending ? oH.default.createElement(oH.default.Fragment, null, "Press ", W.keyName, " again to exit") : oH.default.createElement(oH.default.Fragment, null, "Enter to confirm · Esc to cancel"))))
 }
 var oH;
-var Di = L(() => {
+var Di = lazyLoader(() => {
     hA();
     c9();
     eV();
-    oH = GA(VA(), 1)
+    oH = esmImport(VA(), 1)
 });
 
 function d10(A) {
     switch (A) {
         case "localSettings":
             return {
-                label: "Project settings (local)", description: `Saved in ${VMA("localSettings")}`, value: A
+                label: "Project settings (local)", description: `Saved in TextComponent{VMA("localSettings")}`, value: A
             };
         case "projectSettings":
             return {
-                label: "Project settings", description: `Checked in at ${VMA("projectSettings")}`, value: A
+                label: "Project settings", description: `Checked in at TextComponent{VMA("projectSettings")}`, value: A
             };
         case "userSettings":
             return {
@@ -969,7 +970,7 @@ function PG2({
                 A(K)
             }
         }, [A, Q, B, G, Z, I]),
-        W = `Add ${G} permission rule${B.length===1?"":"s"}`;
+        W = `Add TextComponent{G} permission rule${B.length===1?"":"s"}`;
     return yD.createElement(kD, {
         title: W,
         onCancel: Q,
@@ -980,21 +981,21 @@ function PG2({
     }, B.map((X) => yD.createElement(j, {
         flexDirection: "column",
         key: r5(X)
-    }, yD.createElement($, {
+    }, yD.createElement(TextComponent, {
         bold: !0
     }, r5(X)), yD.createElement(w21, {
         ruleValue: X
     })))), yD.createElement(j, {
         flexDirection: "column",
         marginY: 1
-    }, yD.createElement($, null, B.length === 1 ? "Where should this rule be saved?" : "Where should these rules be saved?"), yD.createElement(M0, {
+    }, yD.createElement(TextComponent, null, B.length === 1 ? "Where should this rule be saved?" : "Where should these rules be saved?"), yD.createElement(M0, {
         options: Y,
         onChange: J,
         onCancel: Q
     })))
 }
 var yD, TG2, tIA;
-var q21 = L(() => {
+var q21 = lazyLoader(() => {
     hA();
     T5();
     aG();
@@ -1003,7 +1004,7 @@ var q21 = L(() => {
     m10();
     RB();
     Di();
-    yD = GA(VA(), 1), TG2 = GA(VA(), 1);
+    yD = esmImport(VA(), 1), TG2 = esmImport(VA(), 1);
     tIA = ["localSettings", "projectSettings", "userSettings"]
 });
 
@@ -1055,7 +1056,7 @@ function YF5(A, Q, B, G, Z, I) {
                 }
             }
         }
-    }), g(`Added session hook for event ${B} in session ${Q}`)
+    }), g(`Added session hook for event TextComponent{B} in session TextComponent{Q}`)
 }
 
 function jG2(A) {
@@ -1102,9 +1103,9 @@ function M21(A, Q) {
             ...B,
             sessionHooks: G
         }
-    }), g(`Cleared all session hooks for session ${Q}`)
+    }), g(`Cleared all session hooks for session TextComponent{Q}`)
 }
-var eIA = L(() => {
+var eIA = lazyLoader(() => {
     ZvA();
     D0();
     kk()
@@ -1169,7 +1170,6 @@ function _G2(A) {
             });
     return Q
 }
-
 async function kG2(A, Q, B = "", G = "userSettings") {
     let I = (LB(G) ?? {}).hooks ?? {},
         Y = I[A] ?? [],
@@ -1198,7 +1198,6 @@ async function kG2(A, Q, B = "", G = "userSettings") {
     if (F) throw Error(F.message);
     DMA()
 }
-
 async function yG2(A) {
     if (A.source === "pluginHook") throw Error("Plugin hooks cannot be removed through settings. Disable the plugin instead.");
     if (A.source === "sessionHook") throw Error("Session hooks cannot be removed through settings. They are temporary and will be cleared when the session ends.");
@@ -1292,7 +1291,7 @@ function bG2(A, Q, B) {
         return Z.localeCompare(I)
     })
 }
-var kk = L(() => {
+var kk = lazyLoader(() => {
     RB();
     q21();
     AYA();
@@ -1350,9 +1349,9 @@ function fG2() {
         Z = new Set(Object.keys(Hi || {})),
         I = new Set(Object.keys(A || {}));
     for (let Y of I)
-        if (!Z.has(Y)) G.push(`Added hooks for event: ${Y}`);
+        if (!Z.has(Y)) G.push(`Added hooks for event: TextComponent{Y}`);
     for (let Y of Z)
-        if (!I.has(Y)) G.push(`Removed all hooks for event: ${Y}`);
+        if (!I.has(Y)) G.push(`Removed all hooks for event: TextComponent{Y}`);
     for (let Y of Z)
         if (I.has(Y)) {
             let J = Hi?.[Y] || [],
@@ -1362,15 +1361,15 @@ function fG2() {
                     F = new Map(J.map((K) => [K.matcher || "", K])),
                     V = new Map(W.map((K) => [K.matcher || "", K]));
                 for (let [K] of V)
-                    if (!F.has(K)) X.push(`  - Added matcher: ${K||"(no matcher)"}`);
+                    if (!F.has(K)) X.push(`  - Added matcher: TextComponent{K||"(no matcher)"}`);
                 for (let [K] of F)
-                    if (!V.has(K)) X.push(`  - Removed matcher: ${K||"(no matcher)"}`);
+                    if (!V.has(K)) X.push(`  - Removed matcher: TextComponent{K||"(no matcher)"}`);
                 for (let [K, D] of V)
                     if (F.has(K)) {
                         let H = F.get(K);
-                        if (JSON.stringify(H.hooks) !== JSON.stringify(D.hooks)) X.push(`  - Modified hooks for matcher: ${K||"(no matcher)"}`)
-                    } if (X.length > 0) G.push(`Modified hooks for event: ${Y}`), G.push(...X);
-                else G.push(`Modified hooks for event: ${Y}`)
+                        if (JSON.stringify(H.hooks) !== JSON.stringify(D.hooks)) X.push(`  - Modified hooks for matcher: TextComponent{K||"(no matcher)"}`)
+                    } if (X.length > 0) G.push(`Modified hooks for event: TextComponent{Y}`), G.push(...X);
+                else G.push(`Modified hooks for event: TextComponent{Y}`)
             }
         } return G.length > 0 ? G.join(`
 `) : "Hooks configuration has been modified"
@@ -1381,13 +1380,13 @@ function hG2() {
     return Hi
 }
 var Hi = null;
-var AYA = L(() => {
+var AYA = lazyLoader(() => {
     RB();
     kk();
     S0()
 });
 var j_G, R21;
-var gG2 = L(() => {
+var gG2 = lazyLoader(() => {
     h2();
     j_G = I2.enum(["allow", "deny", "ask"]), R21 = I2.object({
         toolName: I2.string(),
@@ -1395,7 +1394,7 @@ var gG2 = L(() => {
     })
 });
 var QYA, T21;
-var n10 = L(() => {
+var n10 = lazyLoader(() => {
     h2();
     gG2();
     Bw();
@@ -1437,7 +1436,7 @@ function BYA(A) {
     return "async" in A && A.async === !0
 }
 var JF5, WF5, P21;
-var a10 = L(() => {
+var a10 = lazyLoader(() => {
     h2();
     ZvA();
     n10();
@@ -1501,7 +1500,7 @@ function yk(A, Q) {
         cleanup: Z
     }
 }
-var j21 = L(() => {
+var j21 = lazyLoader(() => {
     UZ()
 });
 

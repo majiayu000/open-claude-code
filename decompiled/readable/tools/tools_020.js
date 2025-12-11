@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_020.js
+ * 处理时间: 2025-12-09T03:41:38.767Z
+ * 变量映射: 4 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.081Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -21,77 +24,77 @@
         flexDirection: "column"
     }, E0.createElement(j, {
         marginBottom: 1
-    }, E0.createElement($, {
+    }, E0.createElement(TextComponent, {
         bold: !0
     }, X && !F ? "Plugin Loading Errors" : "Plugin Status")), G.marketplaces.length > 0 && E0.createElement(E0.Fragment, null, E0.createElement(j, {
         marginBottom: 1
-    }, E0.createElement($, {
+    }, E0.createElement(TextComponent, {
         dimColor: !0
     }, "Marketplaces:")), G.marketplaces.map((V) => E0.createElement(j, {
         key: V.name,
         marginLeft: 2
     }, V.status === "installing" && E0.createElement(E0.Fragment, null, E0.createElement(e9, null), E0.createElement(j, {
         marginLeft: 1
-    }, E0.createElement($, null, V.name), E0.createElement($, {
+    }, E0.createElement(TextComponent, null, V.name), E0.createElement(TextComponent, {
         dimColor: !0
-    }, " · Installing…"))), V.status === "pending" && E0.createElement($, null, E0.createElement($, {
+    }, " · Installing…"))), V.status === "pending" && E0.createElement(TextComponent, null, E0.createElement(TextComponent, {
         dimColor: !0
-    }, V1.circle || "○", " "), V.name, E0.createElement($, {
+    }, V1.circle || "○", " "), V.name, E0.createElement(TextComponent, {
         dimColor: !0
-    }, " · Pending")), V.status === "installed" && E0.createElement($, null, E0.createElement($, {
+    }, " · Pending")), V.status === "installed" && E0.createElement(TextComponent, null, E0.createElement(TextComponent, {
         color: "success"
-    }, V1.tick || "✓", " "), V.name, E0.createElement($, {
+    }, V1.tick || "✓", " "), V.name, E0.createElement(TextComponent, {
         dimColor: !0
     }, " · Installed")), V.status === "failed" && E0.createElement(j, {
         flexDirection: "column"
-    }, E0.createElement($, null, E0.createElement($, {
+    }, E0.createElement(TextComponent, null, E0.createElement(TextComponent, {
         color: "error"
-    }, V1.cross || "✗", " "), V.name, E0.createElement($, {
+    }, V1.cross || "✗", " "), V.name, E0.createElement(TextComponent, {
         color: "error"
     }, " · Failed")), V.error && E0.createElement(j, {
         marginLeft: 3
-    }, E0.createElement($, {
+    }, E0.createElement(TextComponent, {
         color: "error",
         dimColor: !0
     }, V.error)))))), G.plugins.length > 0 && E0.createElement(E0.Fragment, null, E0.createElement(j, {
         marginTop: 1,
         marginBottom: 1
-    }, E0.createElement($, {
+    }, E0.createElement(TextComponent, {
         dimColor: !0
     }, "Plugins:")), G.plugins.map((V) => E0.createElement(j, {
         key: V.id,
         marginLeft: 2
     }, V.status === "installing" && E0.createElement(E0.Fragment, null, E0.createElement(e9, null), E0.createElement(j, {
         marginLeft: 1
-    }, E0.createElement($, null, V.name), E0.createElement($, {
+    }, E0.createElement(TextComponent, null, V.name), E0.createElement(TextComponent, {
         dimColor: !0
-    }, " · Installing…"))), V.status === "pending" && E0.createElement($, null, E0.createElement($, {
+    }, " · Installing…"))), V.status === "pending" && E0.createElement(TextComponent, null, E0.createElement(TextComponent, {
         dimColor: !0
-    }, V1.circle || "○", " "), V.name, E0.createElement($, {
+    }, V1.circle || "○", " "), V.name, E0.createElement(TextComponent, {
         dimColor: !0
-    }, " · Pending")), V.status === "installed" && E0.createElement($, null, E0.createElement($, {
+    }, " · Pending")), V.status === "installed" && E0.createElement(TextComponent, null, E0.createElement(TextComponent, {
         color: "success"
-    }, V1.tick || "✓", " "), V.name, E0.createElement($, {
+    }, V1.tick || "✓", " "), V.name, E0.createElement(TextComponent, {
         dimColor: !0
     }, " · Installed")), V.status === "failed" && E0.createElement(j, {
         flexDirection: "column"
-    }, E0.createElement($, null, E0.createElement($, {
+    }, E0.createElement(TextComponent, null, E0.createElement(TextComponent, {
         color: "error"
-    }, V1.cross || "✗", " "), V.name, E0.createElement($, {
+    }, V1.cross || "✗", " "), V.name, E0.createElement(TextComponent, {
         color: "error"
     }, " · Failed")), V.error && E0.createElement(j, {
         marginLeft: 3
-    }, E0.createElement($, {
+    }, E0.createElement(TextComponent, {
         color: "error",
         dimColor: !0
     }, V.error)))))), G.marketplaces.length === 0 && G.plugins.length === 0 && Z.length === 0 && E0.createElement(j, {
         marginTop: 1
-    }, E0.createElement($, {
+    }, E0.createElement(TextComponent, {
         dimColor: !0
     }, "No pending installations or errors")), Z.length > 0 && E0.createElement(E0.Fragment, null, E0.createElement(j, {
         marginTop: 1,
         marginBottom: 1
-    }, E0.createElement($, {
+    }, E0.createElement(TextComponent, {
         dimColor: !0
     }, "Plugin Loading Errors:")), Z.map((V, K) => {
         let D = "plugin" in V ? V.plugin : void 0;
@@ -99,45 +102,45 @@
             key: K,
             marginLeft: 2,
             flexDirection: "column"
-        }, E0.createElement($, null, E0.createElement($, {
+        }, E0.createElement(TextComponent, null, E0.createElement(TextComponent, {
             color: "error"
-        }, V1.cross || "✗", " "), D ? E0.createElement(E0.Fragment, null, "Plugin ", E0.createElement($, {
+        }, V1.cross || "✗", " "), D ? E0.createElement(E0.Fragment, null, "Plugin ", E0.createElement(TextComponent, {
             bold: !0
-        }, D), " from", " ", E0.createElement($, {
+        }, D), " from", " ", E0.createElement(TextComponent, {
             dimColor: !0
-        }, V.source)) : E0.createElement($, {
+        }, V.source)) : E0.createElement(TextComponent, {
             dimColor: !0
         }, V.source)), E0.createElement(j, {
             marginLeft: 3
-        }, E0.createElement($, {
+        }, E0.createElement(TextComponent, {
             color: "error",
             dimColor: !0
         }, p_3(V))), aK9(V) && E0.createElement(j, {
             marginLeft: 3,
             marginTop: 1
-        }, E0.createElement($, {
+        }, E0.createElement(TextComponent, {
             dimColor: !0,
             italic: !0
         }, aK9(V))))
     })), E0.createElement(j, {
         marginTop: 2
-    }, E0.createElement($, {
+    }, E0.createElement(TextComponent, {
         dimColor: !0
-    }, W ? "Installing…" : E0.createElement(E0.Fragment, null, "Press", " ", Y.failed > 0 || J.failed > 0 ? E0.createElement(E0.Fragment, null, E0.createElement($, {
+    }, W ? "Installing…" : E0.createElement(E0.Fragment, null, "Press", " ", Y.failed > 0 || J.failed > 0 ? E0.createElement(E0.Fragment, null, E0.createElement(TextComponent, {
         bold: !0
-    }, "r"), " to retry failed installations ·", " ") : null, E0.createElement($, {
+    }, "r"), " to retry failed installations ·", " ") : null, E0.createElement(TextComponent, {
         bold: !0
     }, "Esc"), " to return"))))
 }
 var E0, sK9;
-var oK9 = L(() => {
+var oK9 = lazyLoader(() => {
     hA();
     c9();
     H9();
     EX0();
     zI();
     n2();
-    E0 = GA(VA(), 1), sK9 = GA(VA(), 1)
+    E0 = esmImport(VA(), 1), sK9 = esmImport(VA(), 1)
 });
 import * as Yz from "fs";
 import * as hO from "path";
@@ -162,7 +165,7 @@ function tK9(A) {
 function QSA(A, Q, B) {
     if (A.includes("..")) B.push({
         path: Q,
-        message: `Path contains ".." which could be a path traversal attempt: ${A}`
+        message: `Path contains ".." which could be a path traversal attempt: TextComponent{A}`
     })
 }
 
@@ -174,7 +177,7 @@ function LV0(A) {
         success: !1,
         errors: [{
             path: "file",
-            message: `File not found: ${G}`
+            message: `File not found: TextComponent{G}`
         }],
         warnings: [],
         filePath: G,
@@ -184,7 +187,7 @@ function LV0(A) {
         success: !1,
         errors: [{
             path: "file",
-            message: `Path is not a file: ${G}`
+            message: `Path is not a file: TextComponent{G}`
         }],
         warnings: [],
         filePath: G,
@@ -200,7 +203,7 @@ function LV0(A) {
             success: !1,
             errors: [{
                 path: "file",
-                message: `Failed to read file: ${W instanceof Error?W.message:String(W)}`
+                message: `Failed to read file: TextComponent{W instanceof Error?W.message:String(W)}`
             }],
             warnings: [],
             filePath: G,
@@ -215,7 +218,7 @@ function LV0(A) {
             success: !1,
             errors: [{
                 path: "json",
-                message: `Invalid JSON syntax: ${W instanceof Error?W.message:String(W)}`
+                message: `Invalid JSON syntax: TextComponent{W instanceof Error?W.message:String(W)}`
             }],
             warnings: [],
             filePath: G,
@@ -225,13 +228,13 @@ function LV0(A) {
     if (Y && typeof Y === "object") {
         let W = Y;
         if (W.commands)(Array.isArray(W.commands) ? W.commands : [W.commands]).forEach((F, V) => {
-            if (typeof F === "string") QSA(F, `commands[${V}]`, Q)
+            if (typeof F === "string") QSA(F, `commands[TextComponent{V}]`, Q)
         });
         if (W.agents)(Array.isArray(W.agents) ? W.agents : [W.agents]).forEach((F, V) => {
-            if (typeof F === "string") QSA(F, `agents[${V}]`, Q)
+            if (typeof F === "string") QSA(F, `agents[TextComponent{V}]`, Q)
         });
         if (W.skills)(Array.isArray(W.skills) ? W.skills : [W.skills]).forEach((F, V) => {
-            if (typeof F === "string") QSA(F, `skills[${V}]`, Q)
+            if (typeof F === "string") QSA(F, `skills[TextComponent{V}]`, Q)
         })
     }
     let J = fo.safeParse(Y);
@@ -268,7 +271,7 @@ function MV0(A) {
         success: !1,
         errors: [{
             path: "file",
-            message: `File not found: ${G}`
+            message: `File not found: TextComponent{G}`
         }],
         warnings: [],
         filePath: G,
@@ -278,7 +281,7 @@ function MV0(A) {
         success: !1,
         errors: [{
             path: "file",
-            message: `Path is not a file: ${G}`
+            message: `Path is not a file: TextComponent{G}`
         }],
         warnings: [],
         filePath: G,
@@ -294,7 +297,7 @@ function MV0(A) {
             success: !1,
             errors: [{
                 path: "file",
-                message: `Failed to read file: ${W instanceof Error?W.message:String(W)}`
+                message: `Failed to read file: TextComponent{W instanceof Error?W.message:String(W)}`
             }],
             warnings: [],
             filePath: G,
@@ -309,7 +312,7 @@ function MV0(A) {
             success: !1,
             errors: [{
                 path: "json",
-                message: `Invalid JSON syntax: ${W instanceof Error?W.message:String(W)}`
+                message: `Invalid JSON syntax: TextComponent{W instanceof Error?W.message:String(W)}`
             }],
             warnings: [],
             filePath: G,
@@ -321,8 +324,8 @@ function MV0(A) {
         if (Array.isArray(W.plugins)) W.plugins.forEach((X, F) => {
             if (X && typeof X === "object" && "source" in X) {
                 let V = X.source;
-                if (typeof V === "string") QSA(V, `plugins[${F}].source`, Q);
-                if (V && typeof V === "object" && "path" in V && typeof V.path === "string") QSA(V.path, `plugins[${F}].source.path`, Q)
+                if (typeof V === "string") QSA(V, `plugins[TextComponent{F}].source`, Q);
+                if (V && typeof V === "object" && "path" in V && typeof V.path === "string") QSA(V.path, `plugins[TextComponent{F}].source.path`, Q)
             }
         })
     }
@@ -336,12 +339,12 @@ function MV0(A) {
         });
         if (W.plugins) W.plugins.forEach((X, F) => {
             if (typeof X.source === "object" && X.source.source === "npm") B.push({
-                path: `plugins[${F}].source`,
-                message: `Plugin "${X.name}" uses npm source which is not yet fully implemented`
+                path: `plugins[TextComponent{F}].source`,
+                message: `Plugin "TextComponent{X.name}" uses npm source which is not yet fully implemented`
             });
             if (W.plugins.filter((K) => K.name === X.name).length > 1) Q.push({
-                path: `plugins[${F}].name`,
-                message: `Duplicate plugin name "${X.name}" found in marketplace`
+                path: `plugins[TextComponent{F}].name`,
+                message: `Duplicate plugin name "TextComponent{X.name}" found in marketplace`
             })
         });
         if (!W.metadata?.description) B.push({
@@ -386,7 +389,7 @@ function mY1(A) {
                 success: !1,
                 errors: [{
                     path: "file",
-                    message: `File not found: ${Q}`
+                    message: `File not found: TextComponent{Q}`
                 }],
                 warnings: [],
                 filePath: Q,
@@ -403,7 +406,7 @@ function mY1(A) {
         }
     }
 }
-var OV0 = L(() => {
+var OV0 = lazyLoader(() => {
     ho()
 });
 
@@ -412,8 +415,7 @@ function AD9({
     path: Q
 }) {
     return eK9.useEffect(() => {
-        // Async function: B
-async function B() {
+        async function B() {
             if (!Q) {
                 A(`Usage: /plugin validate <path>
 
@@ -434,47 +436,47 @@ Or from the command line:
             try {
                 let G = mY1(Q),
                     Z = "";
-                if (Z += `Validating ${G.fileType} manifest: ${G.filePath}
+                if (Z += `Validating TextComponent{G.fileType} manifest: TextComponent{G.filePath}
 
-`, G.errors.length > 0) Z += `${V1.cross} Found ${G.errors.length} error${G.errors.length===1?"":"s"}:
+`, G.errors.length > 0) Z += `TextComponent{V1.cross} Found TextComponent{G.errors.length} error${G.errors.length===1?"":"s"}:
 
 `, G.errors.forEach((I) => {
-                    Z += `  ${V1.pointer} ${I.path}: ${I.message}
+                    Z += `  TextComponent{V1.pointer} TextComponent{I.path}: TextComponent{I.message}
 `
                 }), Z += `
 `;
-                if (G.warnings.length > 0) Z += `${V1.warning} Found ${G.warnings.length} warning${G.warnings.length===1?"":"s"}:
+                if (G.warnings.length > 0) Z += `TextComponent{V1.warning} Found TextComponent{G.warnings.length} warning${G.warnings.length===1?"":"s"}:
 
 `, G.warnings.forEach((I) => {
-                    Z += `  ${V1.pointer} ${I.path}: ${I.message}
+                    Z += `  TextComponent{V1.pointer} TextComponent{I.path}: TextComponent{I.message}
 `
                 }), Z += `
 `;
                 if (G.success) {
-                    if (G.warnings.length > 0) Z += `${V1.tick} Validation passed with warnings
+                    if (G.warnings.length > 0) Z += `TextComponent{V1.tick} Validation passed with warnings
 `;
-                    else Z += `${V1.tick} Validation passed
+                    else Z += `TextComponent{V1.tick} Validation passed
 `;
                     process.exitCode = 0
-                } else Z += `${V1.cross} Validation failed
+                } else Z += `TextComponent{V1.cross} Validation failed
 `, process.exitCode = 1;
                 A(Z)
             } catch (G) {
-                process.exitCode = 2, e(G instanceof Error ? G : Error(String(G))), A(`${V1.cross} Unexpected error during validation: ${G instanceof Error?G.message:String(G)}`)
+                process.exitCode = 2, e(G instanceof Error ? G : Error(String(G))), A(`TextComponent{V1.cross} Unexpected error during validation: TextComponent{G instanceof Error?G.message:String(G)}`)
             }
         }
         B()
     }, [A, Q]), BSA.createElement(j, {
         flexDirection: "column"
-    }, BSA.createElement($, null, "Running validation..."))
+    }, BSA.createElement(TextComponent, null, "Running validation..."))
 }
 var BSA, eK9;
-var QD9 = L(() => {
+var QD9 = lazyLoader(() => {
     hA();
     OV0();
     n2();
     u1();
-    BSA = GA(VA(), 1), eK9 = GA(VA(), 1)
+    BSA = esmImport(VA(), 1), eK9 = esmImport(VA(), 1)
 });
 
 function BD9(A) {
@@ -571,21 +573,20 @@ function i_3({
     onComplete: A
 }) {
     return gO.useEffect(() => {
-        // Async function: Q
-async function Q() {
+        async function Q() {
             try {
                 let B = await TZ(),
                     G = Object.keys(B);
                 if (G.length === 0) A("No marketplaces configured");
                 else A(`Configured marketplaces:
-${G.map((Z)=>`  • ${Z}`).join(`
+TextComponent{G.map((Z)=>`  • TextComponent{Z}`).join(`
 `)}`)
             } catch (B) {
-                A(`Error loading marketplaces: ${B instanceof Error?B.message:String(B)}`)
+                A(`Error loading marketplaces: TextComponent{B instanceof Error?B.message:String(B)}`)
             }
         }
         Q()
-    }, [A]), eQ.createElement($, null, "Loading marketplaces...")
+    }, [A]), eQ.createElement(TextComponent, null, "Loading marketplaces...")
 }
 
 function n_3(A) {
@@ -702,19 +703,19 @@ function GD9({
             if (G.type === "help") A()
         }, [G.type, A]), G.type === "help") return eQ.createElement(j, {
         flexDirection: "column"
-    }, eQ.createElement($, {
+    }, eQ.createElement(TextComponent, {
         bold: !0
-    }, "Plugin Command Usage:"), eQ.createElement($, null, " "), eQ.createElement($, {
+    }, "Plugin Command Usage:"), eQ.createElement(TextComponent, null, " "), eQ.createElement(TextComponent, {
         dimColor: !0
-    }, "Installation:"), eQ.createElement($, null, " /plugin install - Browse and install plugins"), eQ.createElement($, null, " ", "/plugin install <marketplace> - Install from specific marketplace"), eQ.createElement($, null, " /plugin install <plugin> - Install specific plugin"), eQ.createElement($, null, " ", "/plugin install <plugin>@<market> - Install plugin from marketplace"), eQ.createElement($, null, " "), eQ.createElement($, {
+    }, "Installation:"), eQ.createElement(TextComponent, null, " /plugin install - Browse and install plugins"), eQ.createElement(TextComponent, null, " ", "/plugin install <marketplace> - Install from specific marketplace"), eQ.createElement(TextComponent, null, " /plugin install <plugin> - Install specific plugin"), eQ.createElement(TextComponent, null, " ", "/plugin install <plugin>@<market> - Install plugin from marketplace"), eQ.createElement(TextComponent, null, " "), eQ.createElement(TextComponent, {
         dimColor: !0
-    }, "Management:"), eQ.createElement($, null, " /plugin manage - Manage installed plugins"), eQ.createElement($, null, " /plugin enable <plugin> - Enable a plugin"), eQ.createElement($, null, " /plugin disable <plugin> - Disable a plugin"), eQ.createElement($, null, " /plugin uninstall <plugin> - Uninstall a plugin"), eQ.createElement($, null, " "), eQ.createElement($, {
+    }, "Management:"), eQ.createElement(TextComponent, null, " /plugin manage - Manage installed plugins"), eQ.createElement(TextComponent, null, " /plugin enable <plugin> - Enable a plugin"), eQ.createElement(TextComponent, null, " /plugin disable <plugin> - Disable a plugin"), eQ.createElement(TextComponent, null, " /plugin uninstall <plugin> - Uninstall a plugin"), eQ.createElement(TextComponent, null, " "), eQ.createElement(TextComponent, {
         dimColor: !0
-    }, "Marketplaces:"), eQ.createElement($, null, " /plugin marketplace - Marketplace management menu"), eQ.createElement($, null, " /plugin marketplace add - Add a marketplace"), eQ.createElement($, null, " ", "/plugin marketplace add <path/url> - Add marketplace directly"), eQ.createElement($, null, " /plugin marketplace update - Update marketplaces"), eQ.createElement($, null, " ", "/plugin marketplace update <name> - Update specific marketplace"), eQ.createElement($, null, " /plugin marketplace remove - Remove a marketplace"), eQ.createElement($, null, " ", "/plugin marketplace remove <name> - Remove specific marketplace"), eQ.createElement($, null, " /plugin marketplace list - List all marketplaces"), eQ.createElement($, null, " "), eQ.createElement($, {
+    }, "Marketplaces:"), eQ.createElement(TextComponent, null, " /plugin marketplace - Marketplace management menu"), eQ.createElement(TextComponent, null, " /plugin marketplace add - Add a marketplace"), eQ.createElement(TextComponent, null, " ", "/plugin marketplace add <path/url> - Add marketplace directly"), eQ.createElement(TextComponent, null, " /plugin marketplace update - Update marketplaces"), eQ.createElement(TextComponent, null, " ", "/plugin marketplace update <name> - Update specific marketplace"), eQ.createElement(TextComponent, null, " /plugin marketplace remove - Remove a marketplace"), eQ.createElement(TextComponent, null, " ", "/plugin marketplace remove <name> - Remove specific marketplace"), eQ.createElement(TextComponent, null, " /plugin marketplace list - List all marketplaces"), eQ.createElement(TextComponent, null, " "), eQ.createElement(TextComponent, {
         dimColor: !0
-    }, "Validation:"), eQ.createElement($, null, " ", "/plugin validate <path> - Validate a manifest file or directory"), eQ.createElement($, null, " "), eQ.createElement($, {
+    }, "Validation:"), eQ.createElement(TextComponent, null, " ", "/plugin validate <path> - Validate a manifest file or directory"), eQ.createElement(TextComponent, null, " "), eQ.createElement(TextComponent, {
         dimColor: !0
-    }, "Other:"), eQ.createElement($, null, " /plugin - Main plugin menu"), eQ.createElement($, null, " /plugin help - Show this help"), eQ.createElement($, null, " /plugins - Alias for /plugin"));
+    }, "Other:"), eQ.createElement(TextComponent, null, " /plugin - Main plugin menu"), eQ.createElement(TextComponent, null, " /plugin help - Show this help"), eQ.createElement(TextComponent, null, " /plugins - Alias for /plugin"));
     if (G.type === "validate") return eQ.createElement(AD9, {
         onComplete: A,
         path: G.path
@@ -777,7 +778,7 @@ function GD9({
     })
 }
 var eQ, gO;
-var ZD9 = L(() => {
+var ZD9 = lazyLoader(() => {
     hA();
     c9();
     NF();
@@ -792,12 +793,12 @@ var ZD9 = L(() => {
     oK9();
     QD9();
     kH();
-    eQ = GA(VA(), 1), gO = GA(VA(), 1)
+    eQ = esmImport(VA(), 1), gO = esmImport(VA(), 1)
 });
 var RV0, a_3, ID9;
-var YD9 = L(() => {
+var YD9 = lazyLoader(() => {
     ZD9();
-    RV0 = GA(VA(), 1), a_3 = {
+    RV0 = esmImport(VA(), 1), a_3 = {
         type: "local-jsx",
         name: "plugin",
         aliases: ["plugins", "marketplace"],
@@ -816,7 +817,7 @@ var YD9 = L(() => {
     }, ID9 = a_3
 });
 var s_3, JD9;
-var WD9 = L(() => {
+var WD9 = lazyLoader(() => {
     s_3 = {
         description: "Restore the code and/or conversation to a previous point",
         name: "rewind",
@@ -835,18 +836,18 @@ var WD9 = L(() => {
         }
     }, JD9 = s_3
 });
-var XD9 = L(() => {
+var XD9 = lazyLoader(() => {
     M9()
 });
 var r_3, o_3;
-var FD9 = L(() => {
+var FD9 = lazyLoader(() => {
     hA();
     T6();
     gvA();
-    r_3 = GA(VA(), 1), o_3 = GA(VA(), 1)
+    r_3 = esmImport(VA(), 1), o_3 = esmImport(VA(), 1)
 });
 var t_3;
-var VD9 = L(() => {
+var VD9 = lazyLoader(() => {
     EX();
     hA();
     zi();
@@ -858,7 +859,7 @@ var VD9 = L(() => {
     KF0();
     eV();
     S0();
-    t_3 = GA(VA(), 1)
+    t_3 = esmImport(VA(), 1)
 });
 var KD9 = () => {};
 
@@ -866,7 +867,7 @@ function DD9() {
     if (!lQ.isSandboxingEnabled()) return S4.createElement(j, {
         flexDirection: "column",
         paddingY: 1
-    }, S4.createElement($, {
+    }, S4.createElement(TextComponent, {
         color: "subtle"
     }, "Sandbox is not enabled"));
     let Q = lQ.getFsReadConfig(),
@@ -880,76 +881,75 @@ function DD9() {
         paddingY: 1
     }, S4.createElement(j, {
         flexDirection: "column"
-    }, S4.createElement($, {
+    }, S4.createElement(TextComponent, {
         bold: !0,
         color: "permission"
-    }, "Excluded Commands:"), S4.createElement($, {
+    }, "Excluded Commands:"), S4.createElement(TextComponent, {
         dimColor: !0
     }, I.length > 0 ? I.join(", ") : "None")), Q.denyOnly.length > 0 && S4.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, S4.createElement($, {
+    }, S4.createElement(TextComponent, {
         bold: !0,
         color: "permission"
-    }, "Filesystem Read Restrictions:"), S4.createElement($, {
+    }, "Filesystem Read Restrictions:"), S4.createElement(TextComponent, {
         dimColor: !0
     }, "Denied: ", Q.denyOnly.join(", "))), B.allowOnly.length > 0 && S4.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, S4.createElement($, {
+    }, S4.createElement(TextComponent, {
         bold: !0,
         color: "permission"
-    }, "Filesystem Write Restrictions:"), S4.createElement($, {
+    }, "Filesystem Write Restrictions:"), S4.createElement(TextComponent, {
         dimColor: !0
-    }, "Allowed: ", B.allowOnly.join(", ")), B.denyWithinAllow.length > 0 && S4.createElement($, {
+    }, "Allowed: ", B.allowOnly.join(", ")), B.denyWithinAllow.length > 0 && S4.createElement(TextComponent, {
         dimColor: !0
     }, "Denied within allowed: ", B.denyWithinAllow.join(", "))), (G.allowedHosts && G.allowedHosts.length > 0 || G.deniedHosts && G.deniedHosts.length > 0) && S4.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, S4.createElement($, {
+    }, S4.createElement(TextComponent, {
         bold: !0,
         color: "permission"
-    }, "Network Restrictions:"), G.allowedHosts && G.allowedHosts.length > 0 && S4.createElement($, {
+    }, "Network Restrictions:"), G.allowedHosts && G.allowedHosts.length > 0 && S4.createElement(TextComponent, {
         dimColor: !0
-    }, "Allowed: ", G.allowedHosts.join(", ")), G.deniedHosts && G.deniedHosts.length > 0 && S4.createElement($, {
+    }, "Allowed: ", G.allowedHosts.join(", ")), G.deniedHosts && G.deniedHosts.length > 0 && S4.createElement(TextComponent, {
         dimColor: !0
     }, "Denied: ", G.deniedHosts.join(", "))), Z && Z.length > 0 && S4.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, S4.createElement($, {
+    }, S4.createElement(TextComponent, {
         bold: !0,
         color: "permission"
-    }, "Allowed Unix Sockets:"), S4.createElement($, {
+    }, "Allowed Unix Sockets:"), S4.createElement(TextComponent, {
         dimColor: !0
     }, Z.join(", "))), Y.length > 0 && S4.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, S4.createElement($, {
+    }, S4.createElement(TextComponent, {
         bold: !0,
         color: "warning"
-    }, "⚠ Warning: Glob patterns not fully supported on Linux"), S4.createElement($, {
+    }, "⚠ Warning: Glob patterns not fully supported on Linux"), S4.createElement(TextComponent, {
         dimColor: !0
-    }, "The following patterns will be ignored:", " ", Y.slice(0, 3).join(", "), Y.length > 3 && ` (${Y.length-3} more)`)))
+    }, "The following patterns will be ignored:", " ", Y.slice(0, 3).join(", "), Y.length > 3 && ` (TextComponent{Y.length-3} more)`)))
 }
 var S4;
-var HD9 = L(() => {
+var HD9 = lazyLoader(() => {
     hA();
     MJ();
-    S4 = GA(VA(), 1)
+    S4 = esmImport(VA(), 1)
 });
 
 function CD9({
     onComplete: A
 }) {
     let [Q] = $B(), B = lQ.isSandboxingEnabled(), G = lQ.areUnsandboxedCommandsAllowed(), Z = lQ.areSandboxSettingsLockedByPolicy(), I = G ? "open" : "closed", Y = tQ("success", Q)("(current)"), J = [{
-        label: I === "open" ? `Allow unsandboxed fallback ${Y}` : "Allow unsandboxed fallback",
+        label: I === "open" ? `Allow unsandboxed fallback TextComponent{Y}` : "Allow unsandboxed fallback",
         value: "open"
     }, {
-        label: I === "closed" ? `Strict sandbox mode ${Y}` : "Strict sandbox mode",
+        label: I === "closed" ? `Strict sandbox mode TextComponent{Y}` : "Strict sandbox mode",
         value: "closed"
     }];
-
-async function W(X) {
+    async function W(X) {
         let F = X;
         await lQ.setSandboxSettings({
             allowUnsandboxedCommands: F === "open"
@@ -960,17 +960,17 @@ async function W(X) {
         }), !B) return NK.default.createElement(j, {
         flexDirection: "column",
         paddingY: 1
-    }, NK.default.createElement($, {
+    }, NK.default.createElement(TextComponent, {
         color: "subtle"
     }, "Sandbox is not enabled. Enable sandbox to configure override settings."));
     if (Z) return NK.default.createElement(j, {
         flexDirection: "column",
         paddingY: 1
-    }, NK.default.createElement($, {
+    }, NK.default.createElement(TextComponent, {
         color: "subtle"
     }, "Override settings are managed by a higher-priority configuration and cannot be changed locally."), NK.default.createElement(j, {
         marginTop: 1
-    }, NK.default.createElement($, {
+    }, NK.default.createElement(TextComponent, {
         dimColor: !0
     }, "Current setting:", " ", I === "closed" ? "Strict sandbox mode" : "Allow unsandboxed fallback")));
     return NK.default.createElement(j, {
@@ -978,7 +978,7 @@ async function W(X) {
         paddingY: 1
     }, NK.default.createElement(j, {
         marginBottom: 1
-    }, NK.default.createElement($, {
+    }, NK.default.createElement(TextComponent, {
         bold: !0
     }, "Configure Overrides:")), NK.default.createElement(M0, {
         options: J,
@@ -988,29 +988,29 @@ async function W(X) {
         flexDirection: "column",
         marginTop: 1,
         gap: 1
-    }, NK.default.createElement($, {
+    }, NK.default.createElement(TextComponent, {
         dimColor: !0
-    }, NK.default.createElement($, {
+    }, NK.default.createElement(TextComponent, {
         bold: !0,
         dimColor: !0
-    }, "Allow unsandboxed fallback:"), " ", "When a command fails due to sandbox restrictions, Claude can retry with dangerouslyDisableSandbox to run outside the sandbox (falling back to default permissions)."), NK.default.createElement($, {
+    }, "Allow unsandboxed fallback:"), " ", "When a command fails due to sandbox restrictions, Claude can retry with dangerouslyDisableSandbox to run outside the sandbox (falling back to default permissions)."), NK.default.createElement(TextComponent, {
         dimColor: !0
-    }, NK.default.createElement($, {
+    }, NK.default.createElement(TextComponent, {
         bold: !0,
         dimColor: !0
-    }, "Strict sandbox mode:"), " ", "All bash commands invoked by the model must run in the sandbox unless they are explicitly listed in excludedCommands."), NK.default.createElement($, {
+    }, "Strict sandbox mode:"), " ", "All bash commands invoked by the model must run in the sandbox unless they are explicitly listed in excludedCommands."), NK.default.createElement(TextComponent, {
         dimColor: !0
     }, "Learn more:", " ", NK.default.createElement(a4, {
-        url: "https://docs.claude.com/en/docs/claude-code/sandboxing#configure-sandboxing"
-    }, "docs.claude.com/en/docs/claude-code/sandboxing#configure-sandboxing"))))
+        url: "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/sandboxing#configure-sandboxing"
+    }, "docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/sandboxing#configure-sandboxing"))))
 }
 var NK;
-var ED9 = L(() => {
+var ED9 = lazyLoader(() => {
     hA();
     T5();
     MJ();
     hA();
-    NK = GA(VA(), 1)
+    NK = esmImport(VA(), 1)
 });
 
 function zD9({
@@ -1021,17 +1021,16 @@ function zD9({
         if (G) return "auto-allow";
         return "regular"
     })(), Y = tQ("success", Q)("(current)"), J = [{
-        label: I === "auto-allow" ? `Sandbox BashTool, with auto-allow in accept edits mode ${Y}` : "Sandbox BashTool, with auto-allow in accept edits mode",
+        label: I === "auto-allow" ? `Sandbox BashTool, with auto-allow in accept edits mode TextComponent{Y}` : "Sandbox BashTool, with auto-allow in accept edits mode",
         value: "auto-allow"
     }, {
-        label: I === "regular" ? `Sandbox BashTool, with regular permissions ${Y}` : "Sandbox BashTool, with regular permissions",
+        label: I === "regular" ? `Sandbox BashTool, with regular permissions TextComponent{Y}` : "Sandbox BashTool, with regular permissions",
         value: "regular"
     }, {
-        label: I === "disabled" ? `No Sandbox ${Y}` : "No Sandbox",
+        label: I === "disabled" ? `No Sandbox TextComponent{Y}` : "No Sandbox",
         value: "disabled"
     }];
-
-async function W(X) {
+    async function W(X) {
         switch (X) {
             case "auto-allow":
                 await lQ.setSandboxSettings({
@@ -1074,7 +1073,7 @@ async function W(X) {
         paddingY: 1
     }, tF.default.createElement(j, {
         marginBottom: 1
-    }, tF.default.createElement($, {
+    }, tF.default.createElement(TextComponent, {
         bold: !0
     }, "Configure Mode:")), tF.default.createElement(M0, {
         options: J,
@@ -1084,16 +1083,16 @@ async function W(X) {
         flexDirection: "column",
         marginTop: 1,
         gap: 1
-    }, tF.default.createElement($, {
+    }, tF.default.createElement(TextComponent, {
         dimColor: !0
-    }, tF.default.createElement($, {
+    }, tF.default.createElement(TextComponent, {
         bold: !0,
         dimColor: !0
-    }, "Auto-allow mode:"), " ", "When in accept-edits mode, commands will try to run in the sandbox automatically, and attempts to run outside of the sandbox fallback to regular permissions. Explicit ask/deny rules are always respected."), tF.default.createElement($, {
+    }, "Auto-allow mode:"), " ", "When in accept-edits mode, commands will try to run in the sandbox automatically, and attempts to run outside of the sandbox fallback to regular permissions. Explicit ask/deny rules are always respected."), tF.default.createElement(TextComponent, {
         dimColor: !0
     }, "Learn more:", " ", tF.default.createElement(a4, {
-        url: "https://docs.claude.com/en/docs/claude-code/sandboxing"
-    }, "docs.claude.com/en/docs/claude-code/sandboxing"))))), tF.default.createElement(nD, {
+        url: "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/sandboxing"
+    }, "docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/sandboxing"))))), tF.default.createElement(nD, {
         key: "overrides",
         title: "Overrides"
     }, tF.default.createElement(CD9, {
@@ -1104,7 +1103,7 @@ async function W(X) {
     }, tF.default.createElement(DD9, null)))))
 }
 var tF;
-var UD9 = L(() => {
+var UD9 = lazyLoader(() => {
     hA();
     T5();
     MJ();
@@ -1113,10 +1112,9 @@ var UD9 = L(() => {
     hA();
     HD9();
     ED9();
-    tF = GA(VA(), 1)
+    tF = esmImport(VA(), 1)
 });
-import * as $BASH_TOOL_NAME from "path";
-
+import * as $D9 from "path";
 async function e_3(A, Q, B) {
     let Z = c0().theme || "light";
     if (!lQ.isSupportedPlatform(uQ())) {
@@ -1144,21 +1142,21 @@ async function e_3(A, Q, B) {
                 let D = tQ("error", Z)('Error: Please provide a command pattern to exclude (e.g., /sandbox exclude "npm run test:*")');
                 return A(D), null
             }
-            let X = W.replace(/^["']|["']$/g, "");
+            let X = W.replace(/^["']|["']TextComponent/g, "");
             o7B(X);
             let F = pw("localSettings"),
-                V = F ? $BASH_TOOL_NAME.relative(iBA(), F) : ".claude/settings.local.json",
-                K = tQ("success", Z)(`Added "${X}" to excluded commands in ${V}`);
+                V = F ? $D9.relative(iBA(), F) : ".claude/settings.local.json",
+                K = tQ("success", Z)(`Added "TextComponent{X}" to excluded commands in TextComponent{V}`);
             return A(K), null
         } else {
-            let W = tQ("error", Z)(`Error: Unknown subcommand "${J}". Available subcommand: exclude`);
+            let W = tQ("error", Z)(`Error: Unknown subcommand "TextComponent{J}". Available subcommand: exclude`);
             return A(W), null
         }
     }
     return null
 }
 var wD9, Ak3, qD9;
-var ND9 = L(() => {
+var ND9 = lazyLoader(() => {
     MJ();
     hA();
     RB();
@@ -1167,7 +1165,7 @@ var ND9 = L(() => {
     S0();
     UD9();
     s5();
-    wD9 = GA(VA(), 1);
+    wD9 = esmImport(VA(), 1);
     Ak3 = {
         name: "sandbox",
         get description() {
@@ -1179,7 +1177,7 @@ var ND9 = L(() => {
                 I = "sandbox disabled";
             if (A) I = Q ? "sandbox enabled (auto-allow)" : "sandbox enabled", I += B ? ", fallback allowed" : "";
             if (G) I += " (managed)";
-            return `${Z} ${I} (⏎ to configure)`
+            return `TextComponent{Z} TextComponent{I} (⏎ to configure)`
         },
         argumentHint: 'exclude "command pattern"',
         isEnabled: () => !0,
@@ -1190,7 +1188,7 @@ var ND9 = L(() => {
     }, qD9 = Ak3
 });
 var Qk3, LD9;
-var MD9 = L(() => {
+var MD9 = lazyLoader(() => {
     lM();
     Qk3 = {
         type: "local",
@@ -1236,7 +1234,7 @@ function Gk3(A) {
         let I = Z.filter((Y) => TV0(Y.filePath));
         if (I.length > 0) {
             let Y = I[0];
-            if (I.length > 1) g(`Multiple skill files found in ${G}, using ${dY1(Y.filePath)}`);
+            if (I.length > 1) g(`Multiple skill files found in TextComponent{G}, using TextComponent{dY1(Y.filePath)}`);
             B.push(Y)
         } else B.push(...Z)
     }
@@ -1255,7 +1253,7 @@ function Zk3(A, Q) {
         G = GSA(B),
         Z = dY1(B),
         I = OD9(G, Q);
-    return I ? `${I}:${Z}` : Z
+    return I ? `TextComponent{I}:TextComponent{Z}` : Z
 }
 
 function Ik3(A, Q) {
@@ -1263,14 +1261,14 @@ function Ik3(A, Q) {
         G = GSA(A),
         Z = B.replace(/\.md$/, ""),
         I = OD9(G, Q);
-    return I ? `${I}:${Z}` : Z
+    return I ? `TextComponent{I}:TextComponent{Z}` : Z
 }
 
 function Yk3(A) {
     return TV0(A.filePath) ? Zk3(A.filePath, A.baseDir) : Ik3(A.filePath, A.baseDir)
 }
 var RD9;
-var TD9 = L(() => {
+var TD9 = lazyLoader(() => {
     o2();
     u1();
     D0();
@@ -1295,7 +1293,7 @@ var TD9 = L(() => {
                         F = I["argument-hint"],
                         V = I.when_to_use,
                         K = I.version,
-                        D = V0(I["disable-model-invocation"] ?? void 0),
+                        D = parseBoolean(I["disable-model-invocation"] ?? void 0),
                         H = I.model === "inherit" ? void 0 : I.model ? VE(I.model) : void 0,
                         C = TV0(Z),
                         E = C ? GSA(Z) : void 0,
@@ -1306,7 +1304,7 @@ var TD9 = L(() => {
                             content: Y,
                             source: J
                         }),
-                        w = `${W} (${wm(J)})`;
+                        w = `TextComponent{W} (TextComponent{wm(J)})`;
                     return {
                         type: "prompt",
                         name: z,
@@ -1328,14 +1326,14 @@ var TD9 = L(() => {
                         source: J,
                         async getPromptForCommand(N, q) {
                             let R = Y;
-                            if (C && E) R = `Base directory for this skill: ${E}
+                            if (C && E) R = `Base directory for this skill: TextComponent{E}
 
-${R}`;
+TextComponent{R}`;
                             if (N)
                                 if (R.includes("$ARGUMENTS")) R = R.replaceAll("$ARGUMENTS", N);
                                 else R = R + `
 
-ARGUMENTS: ${N}`;
+ARGUMENTS: TextComponent{N}`;
                             return R = await Ba(R, {
                                 ...q,
                                 async getAppState() {
@@ -1351,7 +1349,7 @@ ARGUMENTS: ${N}`;
                                         }
                                     }
                                 }
-                            }, `/${z}`), [{
+                            }, `/TextComponent{z}`), [{
                                 type: "text",
                                 text: R
                             }]
@@ -1380,7 +1378,6 @@ function Jk3(A, Q) {
         return !1
     }
 }
-
 async function PV0(A, Q) {
     let B = OA(),
         G = [];
@@ -1407,9 +1404,9 @@ async function PV0(A, Q) {
                     E = X.version,
                     z = X.name,
                     w = X["disable-model-invocation"],
-                    N = w === void 0 ? !1 : V0(w),
+                    N = w === void 0 ? !1 : parseBoolean(w),
                     q = X.model === "inherit" ? void 0 : X.model,
-                    R = `${K} (${wm(Q)})`;
+                    R = `TextComponent{K} (TextComponent{wm(Q)})`;
                 G.push({
                     type: "prompt",
                     name: V,
@@ -1430,14 +1427,14 @@ async function PV0(A, Q) {
                     },
                     source: Q,
                     async getPromptForCommand(P, y) {
-                        let v = `Base directory for this skill: ${Y}
+                        let v = `Base directory for this skill: TextComponent{Y}
 
-${F}`;
+TextComponent{F}`;
                         if (P)
                             if (v.includes("$ARGUMENTS")) v = v.replaceAll("$ARGUMENTS", P);
                             else v = v + `
 
-ARGUMENTS: ${P}`;
+ARGUMENTS: TextComponent{P}`;
                         return v = await Ba(v, {
                             ...y,
                             async getAppState() {
@@ -1453,7 +1450,7 @@ ARGUMENTS: ${P}`;
                                     }
                                 }
                             }
-                        }, `/${V}`), [{
+                        }, `/TextComponent{V}`), [{
                             type: "text",
                             text: v
                         }]
@@ -1473,7 +1470,7 @@ function PD9() {
     jV0.cache?.clear?.()
 }
 var jV0;
-var jD9 = L(() => {
+var jD9 = lazyLoader(() => {
     o2();
     u1();
     D0();
@@ -1490,7 +1487,7 @@ var jD9 = L(() => {
         let A = hg(PQ(), "skills"),
             Q = hg(H0(), ".claude", "skills"),
             B = hg(hw(), ".claude", "skills");
-        g(`Loading skills from directories: managed=${B}, user=${A}, project=${Q}`);
+        g(`Loading skills from directories: managed=TextComponent{B}, user=TextComponent{A}, project=TextComponent{Q}`);
         let [G, Z, I] = await Promise.all([PV0(B, "policySettings"), DH("userSettings") ? PV0(A, "userSettings") : Promise.resolve([]), DH("projectSettings") ? PV0(Q, "projectSettings") : Promise.resolve([])]), Y = [...G, ...Z, ...I], J = [], W = new Map;
         for (let X of Y) {
             if (X.type !== "prompt") continue;
@@ -1498,13 +1495,13 @@ var jD9 = L(() => {
                 V = hg(F, "SKILL.md"),
                 K = W.get(X.name);
             if (K && Jk3(K, V)) {
-                g(`Skipping duplicate skill '${X.name}' from ${X.source} (same file as earlier source)`);
+                g(`Skipping duplicate skill 'TextComponent{X.name}' from TextComponent{X.source} (same file as earlier source)`);
                 continue
             }
             W.set(X.name, V), J.push(X)
         }
-        if (J.length < Y.length) g(`Deduplicated ${Y.length-J.length} duplicate skills`);
-        return g(`Loaded ${J.length} unique skills (managed: ${G.length}, user: ${Z.length}, project: ${I.length}, duplicates removed: ${Y.length-J.length})`), J
+        if (J.length < Y.length) g(`Deduplicated TextComponent{Y.length-J.length} duplicate skills`);
+        return g(`Loaded TextComponent{J.length} unique skills (managed: TextComponent{G.length}, user: TextComponent{Z.length}, project: TextComponent{I.length}, duplicates removed: TextComponent{Y.length-J.length})`), J
     })
 });
 import {

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_057.js
+ * 处理时间: 2025-12-09T03:41:37.004Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.938Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -36,8 +39,7 @@
             else return !1
         }
     }
-
-class qB0 extends bYA {
+    class qB0 extends bYA {
         generateMetadata(A) {
             return Promise.resolve(new $B0.Metadata)
         }
@@ -49,18 +51,18 @@ class qB0 extends bYA {
         }
     }
 });
-var LB0 = U((WD2) => {
+var LB0 = moduleWrapper((WD2) => {
     Object.defineProperty(WD2, "__esModule", {
         value: !0
     });
     WD2.CIPHER_SUITES = void 0;
     WD2.getDefaultRootsData = O$5;
-    var M$5 = UA("fs");
+    var M$5 = nodeRequire("fs");
     WD2.CIPHER_SUITES = process.env.GRPC_SSL_CIPHER_SUITES;
     var JD2 = process.env.GRPC_DEFAULT_SSL_ROOTS_FILE_PATH,
         NB0 = null;
 
-function O$5() {
+    function O$5() {
         if (JD2) {
             if (NB0 === null) NB0 = M$5.readFileSync(JD2);
             return NB0
@@ -68,7 +70,7 @@ function O$5() {
         return null
     }
 });
-var mE = U((VD2) => {
+var mE = moduleWrapper((VD2) => {
     Object.defineProperty(VD2, "__esModule", {
         value: !0
     });
@@ -76,9 +78,9 @@ var mE = U((VD2) => {
     VD2.splitHostPort = j$5;
     VD2.combineHostPort = S$5;
     VD2.uriToString = _$5;
-    var T$5 = /^(?:([A-Za-z0-9+.-]+):)?(?:\/\/([^/]*)\/)?(.+)$/;
+    var T$5 = /^(?:([A-Za-z0-9+.-]+):)?(?:\/\/([^/]*)\/)?(.+)TextComponent/;
 
-function P$5(A) {
+    function P$5(A) {
         let Q = T$5.exec(A);
         if (Q === null) return null;
         return {
@@ -87,9 +89,9 @@ function P$5(A) {
             path: Q[3]
         }
     }
-    var FD2 = /^\d+$/;
+    var FD2 = /^\d+TextComponent/;
 
-function j$5(A) {
+    function j$5(A) {
         if (A.startsWith("[")) {
             let Q = A.indexOf("]");
             if (Q === -1) return null;
@@ -121,20 +123,20 @@ function j$5(A) {
         }
     }
 
-function S$5(A) {
+    function S$5(A) {
         if (A.port === void 0) return A.host;
-        else if (A.host.includes(":")) return `[${A.host}]:${A.port}`;
-        else return `${A.host}:${A.port}`
+        else if (A.host.includes(":")) return `[TextComponent{A.host}]:TextComponent{A.port}`;
+        else return `TextComponent{A.host}:TextComponent{A.port}`
     }
 
-function _$5(A) {
+    function _$5(A) {
         let Q = "";
         if (A.scheme !== void 0) Q += A.scheme + ":";
         if (A.authority !== void 0) Q += "//" + A.authority + "/";
         return Q += A.path, Q
     }
 });
-var JP = U((KD2) => {
+var JP = moduleWrapper((KD2) => {
     Object.defineProperty(KD2, "__esModule", {
         value: !0
     });
@@ -146,29 +148,28 @@ var JP = U((KD2) => {
     KD2.mapUriDefaultScheme = u$5;
     var OB0 = mE();
     KD2.CHANNEL_ARGS_CONFIG_SELECTOR_KEY = "grpc.internal.config_selector";
-
-var fYA = {},
+    var fYA = {},
         MB0 = null;
 
-function b$5(A, Q) {
+    function b$5(A, Q) {
         fYA[A] = Q
     }
 
-function f$5(A) {
+    function f$5(A) {
         MB0 = A
     }
 
-function h$5(A, Q, B) {
+    function h$5(A, Q, B) {
         if (A.scheme !== void 0 && A.scheme in fYA) return new fYA[A.scheme](A, Q, B);
-        else throw Error(`No resolver could be created for target ${(0,OB0.uriToString)(A)}`)
+        else throw Error(`No resolver could be created for target TextComponent{(0,OB0.uriToString)(A)}`)
     }
 
-function g$5(A) {
+    function g$5(A) {
         if (A.scheme !== void 0 && A.scheme in fYA) return fYA[A.scheme].getDefaultAuthority(A);
-        else throw Error(`Invalid target ${(0,OB0.uriToString)(A)}`)
+        else throw Error(`Invalid target TextComponent{(0,OB0.uriToString)(A)}`)
     }
 
-function u$5(A) {
+    function u$5(A) {
         if (A.scheme === void 0 || !(A.scheme in fYA))
             if (MB0 !== null) return {
                 scheme: MB0,
@@ -179,13 +180,13 @@ function u$5(A) {
         return A
     }
 });
-var gYA = U((zD2) => {
+var gYA = moduleWrapper((zD2) => {
     Object.defineProperty(zD2, "__esModule", {
         value: !0
     });
     zD2.ChannelCredentials = void 0;
     zD2.createCertificateProviderChannelCredentials = s$5;
-    var rMA = UA("tls"),
+    var rMA = nodeRequire("tls"),
         o91 = a91(),
         TB0 = LB0(),
         HD2 = mE(),
@@ -193,11 +194,10 @@ var gYA = U((zD2) => {
         n$5 = XZ(),
         a$5 = K6();
 
-function RB0(A, Q) {
-        if (A && !(A instanceof Buffer)) throw TypeError(`${Q}, if provided, must be a Buffer.`)
+    function RB0(A, Q) {
+        if (A && !(A instanceof Buffer)) throw TypeError(`TextComponent{Q}, if provided, must be a Buffer.`)
     }
-
-class hYA {
+    class hYA {
         compose(A) {
             return new r91(this, A)
         }
@@ -221,8 +221,7 @@ class hYA {
         }
     }
     zD2.ChannelCredentials = hYA;
-
-class PB0 extends hYA {
+    class PB0 extends hYA {
         constructor() {
             super()
         }
@@ -254,7 +253,7 @@ class PB0 extends hYA {
         }
     }
 
-function CD2(A, Q, B, G) {
+    function CD2(A, Q, B, G) {
         var Z, I;
         let Y = {
                 secureContext: A
@@ -279,8 +278,7 @@ function CD2(A, Q, B, G) {
         if (G["grpc-node.tls_enable_trace"]) Y.enableTrace = !0;
         return Y
     }
-
-class ED2 {
+    class ED2 {
         constructor(A, Q) {
             this.connectionOptions = A, this.callCredentials = Q
         }
@@ -313,8 +311,7 @@ class ED2 {
         }
         destroy() {}
     }
-
-class s91 extends hYA {
+    class s91 extends hYA {
         constructor(A, Q) {
             super();
             this.secureContext = A, this.verifyOptions = Q
@@ -332,8 +329,7 @@ class s91 extends hYA {
             return new ED2(G, B !== null && B !== void 0 ? B : o91.CallCredentials.createEmpty())
         }
     }
-
-class sMA extends hYA {
+    class sMA extends hYA {
         constructor(A, Q, B) {
             super();
             this.caCertificateProvider = A, this.identityCertificateProvider = Q, this.verifyOptions = B, this.refcount = 0, this.latestCaUpdate = void 0, this.latestIdentityUpdate = void 0, this.caCertificateUpdateListener = this.handleCaCertificateUpdate.bind(this), this.identityCertificateUpdateListener = this.handleIdentityCertitificateUpdate.bind(this), this.secureContextWatchers = []
@@ -445,11 +441,10 @@ class sMA extends hYA {
         }
     };
 
-function s$5(A, Q, B) {
+    function s$5(A, Q, B) {
         return new sMA(A, Q, B !== null && B !== void 0 ? B : {})
     }
-
-class r91 extends hYA {
+    class r91 extends hYA {
         constructor(A, Q) {
             super();
             if (this.channelCredentials = A, this.callCredentials = Q, !A._isSecure()) throw Error("Cannot compose insecure credentials")
@@ -472,7 +467,7 @@ class r91 extends hYA {
         }
     }
 });
-var xi = U((wD2) => {
+var xi = moduleWrapper((wD2) => {
     Object.defineProperty(wD2, "__esModule", {
         value: !0
     });
@@ -487,7 +482,7 @@ var xi = U((wD2) => {
     var o$5 = XZ(),
         t$5 = K6();
 
-function e$5(A, Q) {
+    function e$5(A, Q) {
         var B, G, Z, I, Y, J, W, X, F, V;
         return {
             createSubchannel: (G = (B = Q.createSubchannel) === null || B === void 0 ? void 0 : B.bind(Q)) !== null && G !== void 0 ? G : A.createSubchannel.bind(A),
@@ -497,28 +492,27 @@ function e$5(A, Q) {
             removeChannelzChild: (V = (F = Q.removeChannelzChild) === null || F === void 0 ? void 0 : F.bind(Q)) !== null && V !== void 0 ? V : A.removeChannelzChild.bind(A)
         }
     }
-
-var yi = {},
+    var yi = {},
         oMA = null;
 
-function Aw5(A, Q, B) {
+    function Aw5(A, Q, B) {
         yi[A] = {
             LoadBalancer: Q,
             LoadBalancingConfig: B
         }
     }
 
-function Qw5(A) {
+    function Qw5(A) {
         oMA = A
     }
 
-function Bw5(A, Q) {
+    function Bw5(A, Q) {
         let B = A.getLoadBalancerName();
         if (B in yi) return new yi[B].LoadBalancer(Q);
         else return null
     }
 
-function Gw5(A) {
+    function Gw5(A) {
         return A in yi
     }
 
@@ -529,16 +523,16 @@ function Gw5(A) {
         if (B in yi) try {
             return yi[B].LoadBalancingConfig.createFromJson(A[B])
         } catch (G) {
-            throw Error(`${B}: ${G.message}`)
-        } else throw Error(`Unrecognized load balancing config name ${B}`)
+            throw Error(`TextComponent{B}: TextComponent{G.message}`)
+        } else throw Error(`Unrecognized load balancing config name TextComponent{B}`)
     }
 
-function Zw5() {
+    function Zw5() {
         if (!oMA) throw Error("No default load balancer type registered");
         return new yi[oMA].LoadBalancingConfig
     }
 
-function Iw5(A, Q = !1) {
+    function Iw5(A, Q = !1) {
         for (let B of A) try {
             return $D2(B)
         } catch (G) {
@@ -551,23 +545,23 @@ function Iw5(A, Q = !1) {
         else return null
     }
 });
-var jB0 = U((LD2) => {
+var jB0 = moduleWrapper((LD2) => {
     Object.defineProperty(LD2, "__esModule", {
         value: !0
     });
     LD2.validateRetryThrottling = qD2;
     LD2.validateServiceConfig = ND2;
     LD2.extractAndSelectServiceConfig = Lw5;
-    var Hw5 = UA("os"),
+    var Hw5 = nodeRequire("os"),
         t91 = K6(),
         e91 = /^\d+(\.\d{1,9})?s$/,
         Cw5 = "node";
 
-function Ew5(A) {
+    function Ew5(A) {
         if ("service" in A && A.service !== "") {
-            if (typeof A.service !== "string") throw Error(`Invalid method config name: invalid service: expected type string, got ${typeof A.service}`);
+            if (typeof A.service !== "string") throw Error(`Invalid method config name: invalid service: expected type string, got TextComponent{typeof A.service}`);
             if ("method" in A && A.method !== "") {
-                if (typeof A.method !== "string") throw Error(`Invalid method config name: invalid method: expected type string, got ${typeof A.service}`);
+                if (typeof A.method !== "string") throw Error(`Invalid method config name: invalid method: expected type string, got TextComponent{typeof A.service}`);
                 return {
                     service: A.service,
                     method: A.method
@@ -581,7 +575,7 @@ function Ew5(A) {
         }
     }
 
-function zw5(A) {
+    function zw5(A) {
         if (!("maxAttempts" in A) || !Number.isInteger(A.maxAttempts) || A.maxAttempts < 2) throw Error("Invalid method config retry policy: maxAttempts must be an integer at least 2");
         if (!("initialBackoff" in A) || typeof A.initialBackoff !== "string" || !e91.test(A.initialBackoff)) throw Error("Invalid method config retry policy: initialBackoff must be a string consisting of a positive integer or decimal followed by s");
         if (!("maxBackoff" in A) || typeof A.maxBackoff !== "string" || !e91.test(A.maxBackoff)) throw Error("Invalid method config retry policy: maxBackoff must be a string consisting of a positive integer or decimal followed by s");
@@ -603,7 +597,7 @@ function zw5(A) {
         }
     }
 
-function Uw5(A) {
+    function Uw5(A) {
         if (!("maxAttempts" in A) || !Number.isInteger(A.maxAttempts) || A.maxAttempts < 2) throw Error("Invalid method config hedging policy: maxAttempts must be an integer at least 2");
         if ("hedgingDelay" in A && (typeof A.hedgingDelay !== "string" || !e91.test(A.hedgingDelay))) throw Error("Invalid method config hedging policy: hedgingDelay must be a string consisting of a positive integer followed by s");
         if ("nonFatalStatusCodes" in A && Array.isArray(A.nonFatalStatusCodes))
@@ -659,7 +653,7 @@ function Uw5(A) {
         return B
     }
 
-function qD2(A) {
+    function qD2(A) {
         if (!("maxTokens" in A) || typeof A.maxTokens !== "number" || A.maxTokens <= 0 || A.maxTokens > 1000) throw Error("Invalid retryThrottling: maxTokens must be a number in (0, 1000]");
         if (!("tokenRatio" in A) || typeof A.tokenRatio !== "number" || A.tokenRatio <= 0) throw Error("Invalid retryThrottling: tokenRatio must be a number greater than 0");
         return {
@@ -668,17 +662,17 @@ function qD2(A) {
         }
     }
 
-function ww5(A) {
-        if (!(typeof A === "object" && A !== null)) throw Error(`Invalid loadBalancingConfig: unexpected type ${typeof A}`);
+    function ww5(A) {
+        if (!(typeof A === "object" && A !== null)) throw Error(`Invalid loadBalancingConfig: unexpected type TextComponent{typeof A}`);
         let Q = Object.keys(A);
-        if (Q.length > 1) throw Error(`Invalid loadBalancingConfig: unexpected multiple keys ${Q}`);
+        if (Q.length > 1) throw Error(`Invalid loadBalancingConfig: unexpected multiple keys TextComponent{Q}`);
         if (Q.length === 0) throw Error("Invalid loadBalancingConfig: load balancing policy name required");
         return {
             [Q[0]]: A[Q[0]]
         }
     }
 
-function ND2(A) {
+    function ND2(A) {
         let Q = {
             loadBalancingConfig: [],
             methodConfig: []
@@ -699,13 +693,13 @@ function ND2(A) {
         for (let G of Q.methodConfig)
             for (let Z of G.name) {
                 for (let I of B)
-                    if (Z.service === I.service && Z.method === I.method) throw Error(`Invalid service config: duplicate name ${Z.service}/${Z.method}`);
+                    if (Z.service === I.service && Z.method === I.method) throw Error(`Invalid service config: duplicate name TextComponent{Z.service}/TextComponent{Z.method}`);
                 B.push(Z)
             }
         return Q
     }
 
-function qw5(A) {
+    function qw5(A) {
         if (!("serviceConfig" in A)) throw Error("Invalid service config choice: missing service config");
         let Q = {
             serviceConfig: ND2(A.serviceConfig)
@@ -729,11 +723,11 @@ function qw5(A) {
             else throw Error("Invalid service config choice: invalid percentage");
         let B = ["clientLanguage", "percentage", "clientHostname", "serviceConfig"];
         for (let G in A)
-            if (!B.includes(G)) throw Error(`Invalid service config choice: unexpected field ${G}`);
+            if (!B.includes(G)) throw Error(`Invalid service config choice: unexpected field TextComponent{G}`);
         return Q
     }
 
-function Nw5(A, Q) {
+    function Nw5(A, Q) {
         if (!Array.isArray(A)) throw Error("Invalid service config list");
         for (let B of A) {
             let G = qw5(B);
@@ -755,7 +749,7 @@ function Nw5(A, Q) {
         throw Error("No matching service config found")
     }
 
-function Lw5(A, Q) {
+    function Lw5(A, Q) {
         for (let B of A)
             if (B.length > 0 && B[0].startsWith("grpc_config=")) {
                 let G = B.join("").substring(12),
@@ -764,7 +758,7 @@ function Lw5(A, Q) {
             } return null
     }
 });
-var dE = U((OD2) => {
+var dE = moduleWrapper((OD2) => {
     Object.defineProperty(OD2, "__esModule", {
         value: !0
     });
@@ -774,7 +768,7 @@ var dE = U((OD2) => {
         A[A.IDLE = 0] = "IDLE", A[A.CONNECTING = 1] = "CONNECTING", A[A.READY = 2] = "READY", A[A.TRANSIENT_FAILURE = 3] = "TRANSIENT_FAILURE", A[A.SHUTDOWN = 4] = "SHUTDOWN"
     })(MD2 || (OD2.ConnectivityState = MD2 = {}))
 });
-var wh = U((jD2) => {
+var wh = moduleWrapper((jD2) => {
     Object.defineProperty(jD2, "__esModule", {
         value: !0
     });
@@ -785,8 +779,7 @@ var wh = U((jD2) => {
     (function(A) {
         A[A.COMPLETE = 0] = "COMPLETE", A[A.QUEUE = 1] = "QUEUE", A[A.TRANSIENT_FAILURE = 2] = "TRANSIENT_FAILURE", A[A.DROP = 3] = "DROP"
     })(A41 || (jD2.PickResultType = A41 = {}));
-
-class TD2 {
+    class TD2 {
         constructor(A) {
             this.status = Object.assign({
                 code: Pw5.Status.UNAVAILABLE,
@@ -805,8 +798,7 @@ class TD2 {
         }
     }
     jD2.UnavailablePicker = TD2;
-
-class PD2 {
+    class PD2 {
         constructor(A, Q) {
             this.loadBalancer = A, this.childPicker = Q, this.calledExitIdle = !1
         }
@@ -826,7 +818,7 @@ class PD2 {
     }
     jD2.QueuePicker = PD2
 });
-var uYA = U((_D2) => {
+var uYA = moduleWrapper((_D2) => {
     Object.defineProperty(_D2, "__esModule", {
         value: !0
     });
@@ -839,11 +831,10 @@ var uYA = U((_D2) => {
         bw5 = 120000,
         fw5 = 0.2;
 
-function hw5(A, Q) {
+    function hw5(A, Q) {
         return Math.random() * (Q - A) + A
     }
-
-class Q41 {
+    class Q41 {
         constructor(A, Q) {
             if (this.callback = A, this.initialDelay = xw5, this.multiplier = vw5, this.maxDelay = bw5, this.jitter = fw5, this.running = !1, this.hasRef = !0, this.startTime = new Date, this.endTime = new Date, this.id = Q41.getNextId(), Q) {
                 if (Q.initialDelay) this.initialDelay = Q.initialDelay;
@@ -900,7 +891,7 @@ class Q41 {
     _D2.BackoffTimeout = Q41;
     Q41.nextId = 0
 });
-var B41 = U((xD2) => {
+var B41 = moduleWrapper((xD2) => {
     Object.defineProperty(xD2, "__esModule", {
         value: !0
     });
@@ -908,8 +899,7 @@ var B41 = U((xD2) => {
     var gw5 = xi(),
         uw5 = dE(),
         mw5 = "child_load_balancer_helper";
-
-class yD2 {
+    class yD2 {
         constructor(A) {
             this.channelControlHelper = A, this.currentChild = null, this.pendingChild = null, this.latestConfig = null, this.ChildPolicyHelper = class {
                 constructor(Q) {
@@ -985,7 +975,7 @@ class yD2 {
     }
     xD2.ChildLoadBalancerHandler = yD2
 });
-var mD2 = U((gD2) => {
+var mD2 = moduleWrapper((gD2) => {
     Object.defineProperty(gD2, "__esModule", {
         value: !0
     });
@@ -1004,13 +994,12 @@ var mD2 = U((gD2) => {
         sw5 = B41(),
         rw5 = "resolving_load_balancer";
 
-function fD2(A) {
+    function fD2(A) {
         iw5.trace(nw5.LogVerbosity.DEBUG, rw5, A)
     }
+    var ow5 = ["SERVICE_AND_METHOD", "SERVICE", "EMPTY"];
 
-var ow5 = ["SERVICE_AND_METHOD", "SERVICE", "EMPTY"];
-
-function tw5(A, Q, B, G) {
+    function tw5(A, Q, B, G) {
         for (let Z of B.name) switch (G) {
             case "EMPTY":
                 if (!Z.service && !Z.method) return !0;
@@ -1024,13 +1013,13 @@ function tw5(A, Q, B, G) {
         return !1
     }
 
-function ew5(A, Q, B, G) {
+    function ew5(A, Q, B, G) {
         for (let Z of B)
             if (tw5(A, Q, Z, G)) return Z;
         return null
     }
 
-function Aq5(A) {
+    function Aq5(A) {
         return {
             invoke(Q, B) {
                 var G, Z;
@@ -1059,8 +1048,7 @@ function Aq5(A) {
             unref() {}
         }
     }
-
-class hD2 {
+    class hD2 {
         constructor(A, Q, B, G, Z) {
             if (this.target = A, this.channelControlHelper = Q, this.channelOptions = B, this.onSuccessfulResolution = G, this.onFailedResolution = Z, this.latestChildState = sU.ConnectivityState.IDLE, this.latestChildPicker = new tMA.QueuePicker(this), this.latestChildErrorMessage = null, this.currentState = sU.ConnectivityState.IDLE, this.previousServiceConfig = null, this.continueResolving = !1, B["grpc.service_config"]) this.defaultServiceConfig = (0, cw5.validateServiceConfig)(JSON.parse(B["grpc.service_config"]));
             else this.defaultServiceConfig = {
@@ -1142,7 +1130,7 @@ class hD2 {
     }
     gD2.ResolvingLoadBalancer = hD2
 });
-var pD2 = U((dD2) => {
+var pD2 = moduleWrapper((dD2) => {
     Object.defineProperty(dD2, "__esModule", {
         value: !0
     });
@@ -1181,7 +1169,7 @@ var pD2 = U((dD2) => {
         "grpc.server_call_metric_recording": !0
     };
 
-function Qq5(A, Q) {
+    function Qq5(A, Q) {
         let B = Object.keys(A).sort(),
             G = Object.keys(Q).sort();
         if (B.length !== G.length) return !1;
@@ -1192,7 +1180,7 @@ function Qq5(A, Q) {
         return !0
     }
 });
-var rU = U((sD2) => {
+var rU = moduleWrapper((sD2) => {
     Object.defineProperty(sD2, "__esModule", {
         value: !0
     });
@@ -1204,20 +1192,20 @@ var rU = U((sD2) => {
     sD2.endpointEqual = Iq5;
     sD2.endpointToString = Yq5;
     sD2.endpointHasAddress = nD2;
-    var lD2 = UA("net");
+    var lD2 = nodeRequire("net");
 
-function AOA(A) {
+    function AOA(A) {
         return "port" in A
     }
 
-function G41(A, Q) {
+    function G41(A, Q) {
         if (!A && !Q) return !0;
         if (!A || !Q) return !1;
         if (AOA(A)) return AOA(Q) && A.host === Q.host && A.port === Q.port;
         else return !AOA(Q) && A.path === Q.path
     }
 
-function iD2(A) {
+    function iD2(A) {
         if (AOA(A))
             if ((0, lD2.isIPv6)(A.host)) return "[" + A.host + "]:" + A.port;
             else return A.host + ":" + A.port;
@@ -1225,7 +1213,7 @@ function iD2(A) {
     }
     var Gq5 = 443;
 
-function Zq5(A, Q) {
+    function Zq5(A, Q) {
         if ((0, lD2.isIP)(A)) return {
             host: A,
             port: Q !== null && Q !== void 0 ? Q : Gq5
@@ -1235,24 +1223,24 @@ function Zq5(A, Q) {
         }
     }
 
-function Iq5(A, Q) {
+    function Iq5(A, Q) {
         if (A.addresses.length !== Q.addresses.length) return !1;
         for (let B = 0; B < A.addresses.length; B++)
             if (!G41(A.addresses[B], Q.addresses[B])) return !1;
         return !0
     }
 
-function Yq5(A) {
+    function Yq5(A) {
         return "[" + A.addresses.map(iD2).join(", ") + "]"
     }
 
-function nD2(A, Q) {
+    function nD2(A, Q) {
         for (let B of A.addresses)
             if (G41(B, Q)) return !0;
         return !1
     }
 
-function eMA(A, Q) {
+    function eMA(A, Q) {
         if (A.addresses.length !== Q.addresses.length) return !1;
         for (let B of A.addresses) {
             let G = !1;
@@ -1264,8 +1252,7 @@ function eMA(A, Q) {
         }
         return !0
     }
-
-class aD2 {
+    class aD2 {
         constructor() {
             this.map = new Set
         }
@@ -1326,12 +1313,11 @@ class aD2 {
     }
     sD2.EndpointMap = aD2
 });
-var IH2 = U((ZH2) => {
+var IH2 = moduleWrapper((ZH2) => {
     Object.defineProperty(ZH2, "t", {
         value: !0
     });
-
-class _B0 {
+    class _B0 {
         constructor(A, Q, B = 1) {
             this.i = void 0, this.h = void 0, this.o = void 0, this.u = A, this.l = Q, this.p = B
         }
@@ -1384,8 +1370,7 @@ class _B0 {
             return Q
         }
     }
-
-class oD2 extends _B0 {
+    class oD2 extends _B0 {
         constructor() {
             super(...arguments);
             this.M = 1
@@ -1403,8 +1388,7 @@ class oD2 extends _B0 {
             if (this.h) this.M += this.h.M
         }
     }
-
-class tD2 {
+    class tD2 {
         constructor(A = 0) {
             this.iteratorType = A
         }
@@ -1412,8 +1396,7 @@ class tD2 {
             return this.T === A.T
         }
     }
-
-class eD2 {
+    class eD2 {
         constructor() {
             this.m = 0
         }
@@ -1427,14 +1410,12 @@ class eD2 {
             return this.m === 0
         }
     }
+    class AH2 extends eD2 {}
 
-class AH2 extends eD2 {}
-
-function g1A() {
+    function g1A() {
         throw RangeError("Iterator access denied!")
     }
-
-class QH2 extends AH2 {
+    class QH2 extends AH2 {
         constructor(A = function(B, G) {
             if (B < G) return -1;
             if (B > G) return 1;
@@ -1460,7 +1441,7 @@ class QH2 extends AH2 {
                 else B = A, A = A.i;
             return B
         }
-        L(A, Q) {
+        lazyLoader(A, Q) {
             let B = this.C;
             while (A) {
                 let G = this.A(A.u, Q);

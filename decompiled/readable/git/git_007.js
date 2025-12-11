@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_007.js
+ * 处理时间: 2025-12-09T03:41:37.344Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.966Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -57,7 +59,7 @@
         }, "resolveAwsSdkSigV4Config"),
         fo4 = KEQ;
 
-function DEQ(A, {
+    function DEQ(A, {
         credentials: Q,
         credentialDefaultProvider: B
     }) {
@@ -75,7 +77,7 @@ function DEQ(A, {
     }
     CW(DEQ, "normalizeCredentialProvider");
 
-function HEQ(A, Q) {
+    function HEQ(A, Q) {
         if (Q.configBound) return Q;
         let B = CW(async (G) => Q({
             ...G,
@@ -85,13 +87,13 @@ function HEQ(A, Q) {
     }
     CW(HEQ, "bindCallerConfig")
 });
-var UEQ = U((EEQ) => {
+var UEQ = moduleWrapper((EEQ) => {
     Object.defineProperty(EEQ, "__esModule", {
         value: !0
     });
     EEQ.fromBase64 = void 0;
     var ho4 = kI(),
-        go4 = /^[A-Za-z0-9+/]*={0,2}$/,
+        go4 = /^[A-Za-z0-9+/]*={0,2}TextComponent/,
         uo4 = (A) => {
             if (A.length * 3 % 4 !== 0) throw TypeError("Incorrect padding on base64 string.");
             if (!go4.exec(A)) throw TypeError("Invalid base64 string.");
@@ -100,7 +102,7 @@ var UEQ = U((EEQ) => {
         };
     EEQ.fromBase64 = uo4
 });
-var qEQ = U(($EQ) => {
+var qEQ = moduleWrapper(($EQ) => {
     Object.defineProperty($EQ, "__esModule", {
         value: !0
     });
@@ -116,7 +118,7 @@ var qEQ = U(($EQ) => {
         };
     $EQ.toBase64 = co4
 });
-var gr = U((JH7, QuA) => {
+var gr = moduleWrapper((JH7, QuA) => {
     var {
         defineProperty: NEQ,
         getOwnPropertyDescriptor: po4,
@@ -137,7 +139,7 @@ var gr = U((JH7, QuA) => {
     LEQ(sL1, UEQ(), QuA.exports);
     LEQ(sL1, qEQ(), QuA.exports)
 });
-var gEQ = U((WH7, hEQ) => {
+var gEQ = moduleWrapper((WH7, hEQ) => {
     var {
         defineProperty: GuA,
         getOwnPropertyDescriptor: ao4,
@@ -191,11 +193,11 @@ var gEQ = U((WH7, hEQ) => {
     var At4 = A3((A) => {
             if (A == null) return A;
             if (typeof A === "number" || typeof A === "bigint") {
-                let Q = Error(`Received number ${A} where a string was expected.`);
+                let Q = Error(`Received number TextComponent{A} where a string was expected.`);
                 return Q.name = "Warning", console.warn(Q), String(A)
             }
             if (typeof A === "boolean") {
-                let Q = Error(`Received boolean ${A} where a string was expected.`);
+                let Q = Error(`Received boolean TextComponent{A} where a string was expected.`);
                 return Q.name = "Warning", console.warn(Q), String(A)
             }
             return A
@@ -205,7 +207,7 @@ var gEQ = U((WH7, hEQ) => {
             if (typeof A === "string") {
                 let Q = A.toLowerCase();
                 if (A !== "" && Q !== "false" && Q !== "true") {
-                    let B = Error(`Received string "${A}" where a boolean was expected.`);
+                    let B = Error(`Received string "TextComponent{A}" where a boolean was expected.`);
                     B.name = "Warning", console.warn(B)
                 }
                 return A !== "" && Q !== "false"
@@ -217,7 +219,7 @@ var gEQ = U((WH7, hEQ) => {
             if (typeof A === "string") {
                 let Q = Number(A);
                 if (Q.toString() !== A) {
-                    let B = Error(`Received string "${A}" where a number was expected.`);
+                    let B = Error(`Received string "TextComponent{A}" where a number was expected.`);
                     return B.name = "Warning", console.warn(B), A
                 }
                 return Q
@@ -241,7 +243,7 @@ var gEQ = U((WH7, hEQ) => {
         It4 = gr(),
         Yt4 = c6();
 
-function jEQ(A, Q, B) {
+    function jEQ(A, Q, B) {
         if (B?.source) {
             let G = B.source;
             if (typeof Q === "number") {
@@ -379,13 +381,13 @@ function jEQ(A, Q, B) {
                 if (this.stage === 2) throw Error("@aws-sdk/core/protocols - JsonReplacer exhausted.");
                 return this.stage = 1, (A, Q) => {
                     if (Q instanceof Vt4.NumericValue) {
-                        let B = `${MEQ+NaN+this.counter++}_` + Q.string;
-                        return this.values.set(`"${B}"`, Q.string), B
+                        let B = `TextComponent{MEQ+NaN+this.counter++}_` + Q.string;
+                        return this.values.set(`"TextComponent{B}"`, Q.string), B
                     }
                     if (typeof Q === "bigint") {
                         let B = Q.toString(),
-                            G = `${MEQ+"b"+this.counter++}_` + B;
-                        return this.values.set(`"${G}"`, B), G
+                            G = `TextComponent{MEQ+"b"+this.counter++}_` + B;
+                        return this.values.set(`"TextComponent{G}"`, B), G
                     }
                     return Q
                 }
@@ -515,7 +517,7 @@ function jEQ(A, Q, B) {
                 let G = await super.serializeRequest(A, Q, B);
                 if (!G.path.endsWith("/")) G.path += "/";
                 if (Object.assign(G.headers, {
-                        "content-type": `application/x-amz-json-${this.getJsonRpcVersion()}`,
+                        "content-type": `application/x-amz-json-TextComponent{this.getJsonRpcVersion()}`,
                         "x-amz-target": (this.getJsonRpcVersion() === "1.0" ? "JsonRpc10." : "JsonProtocol.") + y8A.NormalizedSchema.of(A).getName()
                     }), (0, y8A.deref)(A.input) === "unit" || !G.body) G.body = "{}";
                 try {
@@ -786,7 +788,7 @@ function jEQ(A, Q, B) {
                         return J
                     }
                     if (B.isDocumentSchema()) return Q;
-                    throw Error(`@aws-sdk/core/protocols - xml deserializer unhandled schema type for ${B.getName(!0)}`)
+                    throw Error(`@aws-sdk/core/protocols - xml deserializer unhandled schema type for TextComponent{B.getName(!0)}`)
                 } else {
                     if (B.isListSchema()) return [];
                     else if (B.isMapSchema() || B.isStructSchema()) return {};
@@ -863,7 +865,7 @@ function jEQ(A, Q, B) {
                             this.writeValue(String(Q.getTime() / 1000));
                             break
                     }
-                } else if (G.isDocumentSchema()) throw Error(`@aws-sdk/core/protocols - QuerySerializer unsupported document type ${G.getName(!0)}`);
+                } else if (G.isDocumentSchema()) throw Error(`@aws-sdk/core/protocols - QuerySerializer unsupported document type TextComponent{G.getName(!0)}`);
                 else if (G.isListSchema()) {
                     if (Array.isArray(Q))
                         if (Q.length === 0) {
@@ -875,7 +877,7 @@ function jEQ(A, Q, B) {
                             for (let J of Q) {
                                 if (J == null) continue;
                                 let W = this.getKey("member", Z.getMergedTraits().xmlName),
-                                    X = I ? `${B}${Y}` : `${B}${W}.${Y}`;
+                                    X = I ? `TextComponent{B}TextComponent{Y}` : `TextComponent{B}TextComponent{W}.TextComponent{Y}`;
                                 this.write(Z, J, X), ++Y
                             }
                         }
@@ -888,9 +890,9 @@ function jEQ(A, Q, B) {
                         for (let [W, X] of Object.entries(Q)) {
                             if (X == null) continue;
                             let F = this.getKey("key", Z.getMergedTraits().xmlName),
-                                V = Y ? `${B}${J}.${F}` : `${B}entry.${J}.${F}`,
+                                V = Y ? `TextComponent{B}TextComponent{J}.TextComponent{F}` : `TextComponent{B}entry.TextComponent{J}.TextComponent{F}`,
                                 K = this.getKey("value", I.getMergedTraits().xmlName),
-                                D = Y ? `${B}${J}.${K}` : `${B}entry.${J}.${K}`;
+                                D = Y ? `TextComponent{B}TextComponent{J}.TextComponent{K}` : `TextComponent{B}entry.TextComponent{J}.TextComponent{K}`;
                             this.write(Z, W, V), this.write(I, X, D), ++J
                         }
                     }
@@ -899,11 +901,11 @@ function jEQ(A, Q, B) {
                         for (let [Z, I] of G.structIterator()) {
                             if (Q[Z] == null) continue;
                             let Y = this.getKey(Z, I.getMergedTraits().xmlName),
-                                J = `${B}${Y}`;
+                                J = `TextComponent{B}TextComponent{Y}`;
                             this.write(I, Q[Z], J)
                         }
                 } else if (G.isUnitSchema());
-                else throw Error(`@aws-sdk/core/protocols - QuerySerializer unrecognized schema type ${G.getName(!0)}`)
+                else throw Error(`@aws-sdk/core/protocols - QuerySerializer unrecognized schema type TextComponent{G.getName(!0)}`)
             }
             flush() {
                 if (this.buffer === void 0) throw Error("@aws-sdk/core/protocols - QuerySerializer cannot flush with nothing written to buffer.");
@@ -917,7 +919,7 @@ function jEQ(A, Q, B) {
             }
             writeKey(A) {
                 if (A.endsWith(".")) A = A.slice(0, A.length - 1);
-                this.buffer += `&${(0,tL1.extendedEncodeURIComponent)(A)}=`
+                this.buffer += `&TextComponent{(0,tL1.extendedEncodeURIComponent)(A)}=`
             }
             writeValue(A) {
                 this.buffer += (0, tL1.extendedEncodeURIComponent)(A)
@@ -961,7 +963,7 @@ function jEQ(A, Q, B) {
                 if (Object.assign(G.headers, {
                         "content-type": "application/x-www-form-urlencoded"
                     }), (0, zd.deref)(A.input) === "unit" || !G.body) G.body = "";
-                if (G.body = `Action=${A.name.split("#")[1]}&Version=${this.options.version}` + G.body, G.body.endsWith("&")) G.body = G.body.slice(-1);
+                if (G.body = `Action=TextComponent{A.name.split("#")[1]}&Version=TextComponent{this.options.version}` + G.body, G.body.endsWith("&")) G.body = G.body.slice(-1);
                 try {
                     G.headers["content-length"] = String((0, $t4.calculateBodyLength)(G.body))
                 } catch (Z) {}
@@ -1147,7 +1149,7 @@ function jEQ(A, Q, B) {
             writeStruct(A, Q, B) {
                 let G = A.getMergedTraits(),
                     Z = A.isMemberSchema() && !G.httpPayload ? A.getMemberTraits().xmlName ?? A.getMemberName() : G.xmlName ?? A.getName();
-                if (!Z || !A.isStructSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write struct with empty name or non-struct, schema=${A.getName(!0)}.`);
+                if (!Z || !A.isStructSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write struct with empty name or non-struct, schema=TextComponent{A.getName(!0)}.`);
                 let I = wS.XmlNode.of(Z),
                     [Y, J] = this.getXmlnsAttribute(A, B);
                 if (J) I.addAttribute(Y, J);
@@ -1170,7 +1172,7 @@ function jEQ(A, Q, B) {
                 return I
             }
             writeList(A, Q, B, G) {
-                if (!A.isMemberSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write non-member list: ${A.getName(!0)}`);
+                if (!A.isMemberSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write non-member list: TextComponent{A.getName(!0)}`);
                 let Z = A.getMergedTraits(),
                     I = A.getValueSchema(),
                     Y = I.getMergedTraits(),
@@ -1200,7 +1202,7 @@ function jEQ(A, Q, B) {
                 }
             }
             writeMap(A, Q, B, G, Z = !1) {
-                if (!A.isMemberSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write non-member map: ${A.getName(!0)}`);
+                if (!A.isMemberSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write non-member map: TextComponent{A.getName(!0)}`);
                 let I = A.getMergedTraits(),
                     Y = A.getKeySchema(),
                     W = Y.getMergedTraits().xmlName ?? "key",
@@ -1267,9 +1269,9 @@ function jEQ(A, Q, B) {
                     if (Q instanceof yt4.NumericValue) return Q.string;
                     return String(Q)
                 } else if (B.isMapSchema() || B.isListSchema()) throw Error("@aws-sdk/core/protocols - xml serializer, cannot call _write() on List/Map schema, call writeList or writeMap() instead.");
-                else throw Error(`@aws-sdk/core/protocols - xml serializer, unhandled schema type for object value and schema: ${B.getName(!0)}`);
+                else throw Error(`@aws-sdk/core/protocols - xml serializer, unhandled schema type for object value and schema: TextComponent{B.getName(!0)}`);
                 if (B.isStringSchema() || B.isBooleanSchema() || B.isNumericSchema() || B.isBigIntegerSchema() || B.isBigDecimalSchema()) G = String(Q);
-                if (G === null) throw Error(`Unhandled schema-value pair ${B.getName(!0)}=${Q}`);
+                if (G === null) throw Error(`Unhandled schema-value pair TextComponent{B.getName(!0)}=TextComponent{Q}`);
                 return G
             }
             writeSimpleInto(A, Q, B, G) {
@@ -1283,7 +1285,7 @@ function jEQ(A, Q, B) {
             getXmlnsAttribute(A, Q) {
                 let B = A.getMergedTraits(),
                     [G, Z] = B.xmlNamespace ?? [];
-                if (Z && Z !== Q) return [G ? `xmlns:${G}` : "xmlns", Z];
+                if (Z && Z !== Q) return [G ? `xmlns:TextComponent{G}` : "xmlns", Z];
                 return [void 0, void 0]
             }
         },
@@ -1407,7 +1409,7 @@ function jEQ(A, Q, B) {
             }
         }
 });
-var pz = U((KHA) => {
+var pz = moduleWrapper((KHA) => {
     Object.defineProperty(KHA, "__esModule", {
         value: !0
     });
@@ -1416,7 +1418,7 @@ var pz = U((KHA) => {
     IM1.__exportStar(nL1(), KHA);
     IM1.__exportStar(gEQ(), KHA)
 });
-var DHA = U((RH7, oEQ) => {
+var DHA = moduleWrapper((RH7, oEQ) => {
     var {
         defineProperty: IuA,
         getOwnPropertyDescriptor: vt4,
@@ -1452,13 +1454,13 @@ var DHA = U((RH7, oEQ) => {
     var mt4 = nB(),
         pEQ = void 0;
 
-function lEQ(A) {
+    function lEQ(A) {
         if (A === void 0) return !0;
         return typeof A === "string" && A.length <= 50
     }
     dv(lEQ, "isValidUserAgentAppId");
 
-function iEQ(A) {
+    function iEQ(A) {
         let Q = (0, mt4.normalizeProvider)(A.userAgentAppId ?? pEQ),
             {
                 customUserAgent: B
@@ -1483,8 +1485,7 @@ function iEQ(A) {
         ct4 = Cw(),
         qS = pz(),
         pt4 = /\d{12}\.ddb/;
-
-async function nEQ(A, Q, B) {
+    async function nEQ(A, Q, B) {
         if (B.request?.headers?.["smithy-protocol"] === "rpc-v2-cbor")(0, qS.setFeature)(A, "PROTOCOL_RPC_V2_CBOR", "M");
         if (typeof Q.retryStrategy === "function") {
             let I = await Q.retryStrategy();

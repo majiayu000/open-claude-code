@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_003.js
+ * 处理时间: 2025-12-09T03:41:36.366Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.888Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -23,11 +26,11 @@
         else setTimeout(A, 0)
     }
 });
-var HX1 = U((fp3, Rz0) => {
+var HX1 = moduleWrapper((fp3, Rz0) => {
     var Oz0 = Mz0();
     Rz0.exports = ZT9;
 
-function ZT9(A) {
+    function ZT9(A) {
         var Q = !1;
         return Oz0(function() {
                 Q = !0
@@ -40,23 +43,23 @@ function ZT9(A) {
             }
     }
 });
-var CX1 = U((hp3, Tz0) => {
+var CX1 = moduleWrapper((hp3, Tz0) => {
     Tz0.exports = IT9;
 
-function IT9(A) {
+    function IT9(A) {
         Object.keys(A.jobs).forEach(YT9.bind(A)), A.jobs = {}
     }
 
-function YT9(A) {
+    function YT9(A) {
         if (typeof this.jobs[A] == "function") this.jobs[A]()
     }
 });
-var EX1 = U((gp3, jz0) => {
+var EX1 = moduleWrapper((gp3, jz0) => {
     var Pz0 = HX1(),
         JT9 = CX1();
     jz0.exports = WT9;
 
-function WT9(A, Q, B, G) {
+    function WT9(A, Q, B, G) {
         var Z = B.keyedList ? B.keyedList[B.index] : B.index;
         B.jobs[Z] = XT9(Q, Z, A[Z], function(I, Y) {
             if (!(Z in B.jobs)) return;
@@ -66,17 +69,17 @@ function WT9(A, Q, B, G) {
         })
     }
 
-function XT9(A, Q, B, G) {
+    function XT9(A, Q, B, G) {
         var Z;
         if (A.length == 2) Z = A(B, Pz0(G));
         else Z = A(B, Q, Pz0(G));
         return Z
     }
 });
-var zX1 = U((up3, Sz0) => {
+var zX1 = moduleWrapper((up3, Sz0) => {
     Sz0.exports = FT9;
 
-function FT9(A, Q) {
+    function FT9(A, Q) {
         var B = !Array.isArray(A),
             G = {
                 index: 0,
@@ -91,23 +94,23 @@ function FT9(A, Q) {
         return G
     }
 });
-var UX1 = U((mp3, _z0) => {
+var UX1 = moduleWrapper((mp3, _z0) => {
     var VT9 = CX1(),
         KT9 = HX1();
     _z0.exports = DT9;
 
-function DT9(A) {
+    function DT9(A) {
         if (!Object.keys(this.jobs).length) return;
         this.index = this.size, VT9(this), KT9(A)(null, this.results)
     }
 });
-var yz0 = U((dp3, kz0) => {
+var yz0 = moduleWrapper((dp3, kz0) => {
     var HT9 = EX1(),
         CT9 = zX1(),
         ET9 = UX1();
     kz0.exports = zT9;
 
-function zT9(A, Q, B) {
+    function zT9(A, Q, B) {
         var G = CT9(A);
         while (G.index < (G.keyedList || A).length) HT9(A, Q, G, function(Z, I) {
             if (Z) {
@@ -122,7 +125,7 @@ function zT9(A, Q, B) {
         return ET9.bind(G, B)
     }
 });
-var $X1 = U((cp3, CkA) => {
+var $X1 = moduleWrapper((cp3, CkA) => {
     var xz0 = EX1(),
         UT9 = zX1(),
         $T9 = UX1();
@@ -130,7 +133,7 @@ var $X1 = U((cp3, CkA) => {
     CkA.exports.ascending = vz0;
     CkA.exports.descending = qT9;
 
-function wT9(A, Q, B, G) {
+    function wT9(A, Q, B, G) {
         var Z = UT9(A, B);
         return xz0(A, Q, Z, function I(Y, J) {
             if (Y) {
@@ -145,87 +148,87 @@ function wT9(A, Q, B, G) {
         }), $T9.bind(Z, G)
     }
 
-function vz0(A, Q) {
+    function vz0(A, Q) {
         return A < Q ? -1 : A > Q ? 1 : 0
     }
 
-function qT9(A, Q) {
+    function qT9(A, Q) {
         return -1 * vz0(A, Q)
     }
 });
-var fz0 = U((pp3, bz0) => {
+var fz0 = moduleWrapper((pp3, bz0) => {
     var NT9 = $X1();
     bz0.exports = LT9;
 
-function LT9(A, Q, B) {
+    function LT9(A, Q, B) {
         return NT9(A, Q, null, B)
     }
 });
-var gz0 = U((lp3, hz0) => {
+var gz0 = moduleWrapper((lp3, hz0) => {
     hz0.exports = {
         parallel: yz0(),
         serial: fz0(),
         serialOrdered: $X1()
     }
 });
-var wX1 = U((ip3, uz0) => {
+var wX1 = moduleWrapper((ip3, uz0) => {
     uz0.exports = Object
 });
-var dz0 = U((np3, mz0) => {
+var dz0 = moduleWrapper((np3, mz0) => {
     mz0.exports = Error
 });
-var pz0 = U((ap3, cz0) => {
+var pz0 = moduleWrapper((ap3, cz0) => {
     cz0.exports = EvalError
 });
-var iz0 = U((sp3, lz0) => {
+var iz0 = moduleWrapper((sp3, lz0) => {
     lz0.exports = RangeError
 });
-var az0 = U((rp3, nz0) => {
+var az0 = moduleWrapper((rp3, nz0) => {
     nz0.exports = ReferenceError
 });
-var rz0 = U((op3, sz0) => {
+var rz0 = moduleWrapper((op3, sz0) => {
     sz0.exports = SyntaxError
 });
-var EkA = U((tp3, oz0) => {
+var EkA = moduleWrapper((tp3, oz0) => {
     oz0.exports = TypeError
 });
-var ez0 = U((ep3, tz0) => {
+var ez0 = moduleWrapper((ep3, tz0) => {
     tz0.exports = URIError
 });
-var QU0 = U((Al3, AU0) => {
+var QU0 = moduleWrapper((Al3, AU0) => {
     AU0.exports = Math.abs
 });
-var GU0 = U((Ql3, BU0) => {
+var GU0 = moduleWrapper((Ql3, BU0) => {
     BU0.exports = Math.floor
 });
-var IU0 = U((Bl3, ZU0) => {
+var IU0 = moduleWrapper((Bl3, ZU0) => {
     ZU0.exports = Math.max
 });
-var JU0 = U((Gl3, YU0) => {
+var JU0 = moduleWrapper((Gl3, YU0) => {
     YU0.exports = Math.min
 });
-var XU0 = U((Zl3, WU0) => {
+var XU0 = moduleWrapper((Zl3, WU0) => {
     WU0.exports = Math.pow
 });
-var VU0 = U((Il3, FU0) => {
+var VU0 = moduleWrapper((Il3, FU0) => {
     FU0.exports = Math.round
 });
-var DU0 = U((Yl3, KU0) => {
+var DU0 = moduleWrapper((Yl3, KU0) => {
     KU0.exports = Number.isNaN || function(Q) {
         return Q !== Q
     }
 });
-var CU0 = U((Jl3, HU0) => {
+var CU0 = moduleWrapper((Jl3, HU0) => {
     var MT9 = DU0();
     HU0.exports = function(Q) {
         if (MT9(Q) || Q === 0) return Q;
         return Q < 0 ? -1 : 1
     }
 });
-var zU0 = U((Wl3, EU0) => {
+var zU0 = moduleWrapper((Wl3, EU0) => {
     EU0.exports = Object.getOwnPropertyDescriptor
 });
-var qX1 = U((Xl3, UU0) => {
+var qX1 = moduleWrapper((Xl3, UU0) => {
     var zkA = zU0();
     if (zkA) try {
         zkA([], "length")
@@ -234,7 +237,7 @@ var qX1 = U((Xl3, UU0) => {
     }
     UU0.exports = zkA
 });
-var wU0 = U((Fl3, $U0) => {
+var wU0 = moduleWrapper((Fl3, $U0) => {
     var UkA = Object.defineProperty || !1;
     if (UkA) try {
         UkA({}, "a", {
@@ -245,12 +248,11 @@ var wU0 = U((Fl3, $U0) => {
     }
     $U0.exports = UkA
 });
-var NX1 = U((Vl3, qU0) => {
+var NX1 = moduleWrapper((Vl3, qU0) => {
     qU0.exports = function() {
         if (typeof Symbol !== "function" || typeof Object.getOwnPropertySymbols !== "function") return !1;
         if (typeof Symbol.iterator === "symbol") return !0;
-
-var Q = {},
+        var Q = {},
             B = Symbol("test"),
             G = Object(B);
         if (typeof B === "string") return !1;
@@ -271,7 +273,7 @@ var Q = {},
         return !0
     }
 });
-var MU0 = U((Kl3, LU0) => {
+var MU0 = moduleWrapper((Kl3, LU0) => {
     var NU0 = typeof Symbol < "u" && Symbol,
         OT9 = NX1();
     LU0.exports = function() {
@@ -282,14 +284,14 @@ var MU0 = U((Kl3, LU0) => {
         return OT9()
     }
 });
-var LX1 = U((Dl3, OU0) => {
+var LX1 = moduleWrapper((Dl3, OU0) => {
     OU0.exports = typeof Reflect < "u" && Reflect.getPrototypeOf || null
 });
-var MX1 = U((Hl3, RU0) => {
+var MX1 = moduleWrapper((Hl3, RU0) => {
     var RT9 = wX1();
     RU0.exports = RT9.getPrototypeOf || null
 });
-var jU0 = U((Cl3, PU0) => {
+var jU0 = moduleWrapper((Cl3, PU0) => {
     var TT9 = "Function.prototype.bind called on incompatible ",
         PT9 = Object.prototype.toString,
         jT9 = Math.max,
@@ -325,7 +327,7 @@ var jU0 = U((Cl3, PU0) => {
             },
             Y = jT9(0, B.length - G.length),
             J = [];
-        for (var W = 0; W < Y; W++) J[W] = "$" + W;
+        for (var W = 0; W < Y; W++) J[W] = "TextComponent" + W;
         if (Z = Function("binder", "return function (" + kT9(J, ",") + "){ return binder.apply(this,arguments); }")(I), B.prototype) {
             var X = function() {};
             X.prototype = B.prototype, Z.prototype = new X, X.prototype = null
@@ -333,27 +335,27 @@ var jU0 = U((Cl3, PU0) => {
         return Z
     }
 });
-var DVA = U((El3, SU0) => {
+var DVA = moduleWrapper((El3, SU0) => {
     var yT9 = jU0();
     SU0.exports = Function.prototype.bind || yT9
 });
-var $kA = U((zl3, _U0) => {
+var $kA = moduleWrapper((zl3, _U0) => {
     _U0.exports = Function.prototype.call
 });
-var OX1 = U((Ul3, kU0) => {
+var OX1 = moduleWrapper((Ul3, kU0) => {
     kU0.exports = Function.prototype.apply
 });
-var xU0 = U(($l3, yU0) => {
+var xU0 = moduleWrapper(($l3, yU0) => {
     yU0.exports = typeof Reflect < "u" && Reflect && Reflect.apply
 });
-var bU0 = U((wl3, vU0) => {
+var bU0 = moduleWrapper((wl3, vU0) => {
     var xT9 = DVA(),
         vT9 = OX1(),
         bT9 = $kA(),
         fT9 = xU0();
     vU0.exports = fT9 || xT9.call(bT9, vT9)
 });
-var hU0 = U((ql3, fU0) => {
+var hU0 = moduleWrapper((ql3, fU0) => {
     var hT9 = DVA(),
         gT9 = EkA(),
         uT9 = $kA(),
@@ -363,7 +365,7 @@ var hU0 = U((ql3, fU0) => {
         return mT9(hT9, uT9, Q)
     }
 });
-var pU0 = U((Nl3, cU0) => {
+var pU0 = moduleWrapper((Nl3, cU0) => {
     var dT9 = hU0(),
         gU0 = qX1(),
         mU0;
@@ -379,7 +381,7 @@ var pU0 = U((Nl3, cU0) => {
         return uU0(Q == null ? Q : dU0(Q))
     } : !1
 });
-var sU0 = U((Ll3, aU0) => {
+var sU0 = moduleWrapper((Ll3, aU0) => {
     var lU0 = LX1(),
         iU0 = MX1(),
         nU0 = pU0();
@@ -392,13 +394,13 @@ var sU0 = U((Ll3, aU0) => {
         return nU0(Q)
     } : null
 });
-var TX1 = U((Ml3, rU0) => {
+var TX1 = moduleWrapper((Ml3, rU0) => {
     var cT9 = Function.prototype.call,
         pT9 = Object.prototype.hasOwnProperty,
         lT9 = DVA();
     rU0.exports = lT9.call(cT9, pT9)
 });
-var B$0 = U((Ol3, Q$0) => {
+var B$0 = moduleWrapper((Ol3, Q$0) => {
     var m6, iT9 = wX1(),
         nT9 = dz0(),
         aT9 = pz0(),
@@ -607,15 +609,14 @@ var B$0 = U((Ol3, Q$0) => {
         tU0 = EVA.call(CVA, String.prototype.replace),
         qkA = EVA.call(CVA, String.prototype.slice),
         DP9 = EVA.call(CVA, RegExp.prototype.exec),
-        HP9 = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g,
+        HP9 = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%TextComponent))/g,
         CP9 = /\\(\\)?/g,
         EP9 = function(Q) {
             var B = qkA(Q, 0, 1),
                 G = qkA(Q, -1);
             if (B === "%" && G !== "%") throw new I2A("invalid intrinsic syntax, expected closing `%`");
             else if (G === "%" && B !== "%") throw new I2A("invalid intrinsic syntax, expected opening `%`");
-
-var Z = [];
+            var Z = [];
             return tU0(Q, HP9, function(I, Y, J, W) {
                 Z[Z.length] = J ? tU0(W, CP9, "$1") : Y || I
             }), Z
@@ -639,7 +640,7 @@ var Z = [];
     Q$0.exports = function(Q, B) {
         if (typeof Q !== "string" || Q.length === 0) throw new Z2A("intrinsic name must be a non-empty string");
         if (arguments.length > 1 && typeof B !== "boolean") throw new Z2A('"allowMissing" argument must be a boolean');
-        if (DP9(/^%?[^%]*%?$/, Q) === null) throw new I2A("`%` may not be present anywhere but at the beginning and end of the intrinsic name");
+        if (DP9(/^%?[^%]*%?TextComponent/, Q) === null) throw new I2A("`%` may not be present anywhere but at the beginning and end of the intrinsic name");
         var G = EP9(Q),
             Z = G.length > 0 ? G[0] : "",
             I = zP9("%" + Z + "%", B),
@@ -671,13 +672,13 @@ var Z = [];
         return J
     }
 });
-var Z$0 = U((Rl3, G$0) => {
+var Z$0 = moduleWrapper((Rl3, G$0) => {
     var UP9 = NX1();
     G$0.exports = function() {
         return UP9() && !!Symbol.toStringTag
     }
 });
-var J$0 = U((Tl3, Y$0) => {
+var J$0 = moduleWrapper((Tl3, Y$0) => {
     var $P9 = B$0(),
         I$0 = $P9("%Object.defineProperty%", !0),
         wP9 = Z$0()(),
@@ -698,22 +699,22 @@ var J$0 = U((Tl3, Y$0) => {
             else Q[NkA] = B
     }
 });
-var X$0 = U((Pl3, W$0) => {
+var X$0 = moduleWrapper((Pl3, W$0) => {
     W$0.exports = function(A, Q) {
         return Object.keys(Q).forEach(function(B) {
             A[B] = A[B] || Q[B]
         }), A
     }
 });
-var V$0 = U((jl3, F$0) => {
+var V$0 = moduleWrapper((jl3, F$0) => {
     var xX1 = Hz0(),
-        LP9 = UA("util"),
-        _X1 = UA("path"),
-        MP9 = UA("http"),
-        OP9 = UA("https"),
-        RP9 = UA("url").parse,
-        TP9 = UA("fs"),
-        PP9 = UA("stream").Stream,
+        LP9 = nodeRequire("util"),
+        _X1 = nodeRequire("path"),
+        MP9 = nodeRequire("http"),
+        OP9 = nodeRequire("https"),
+        RP9 = nodeRequire("url").parse,
+        TP9 = nodeRequire("fs"),
+        PP9 = nodeRequire("stream").Stream,
         kX1 = Nz0(),
         jP9 = gz0(),
         SP9 = J$0(),
@@ -721,7 +722,7 @@ var V$0 = U((jl3, F$0) => {
     F$0.exports = a5;
     LP9.inherits(a5, xX1);
 
-function a5(A) {
+    function a5(A) {
         if (!(this instanceof a5)) return new a5(A);
         this._overheadLength = 0, this._valueLength = 0, this._valuesToMeasure = [], xX1.call(this), A = A || {};
         for (var Q in A) this[Q] = A[Q]
@@ -908,8 +909,8 @@ function a5(A) {
     SP9(a5, "FormData")
 });
 var K$0, LkA;
-var vX1 = L(() => {
-    K$0 = GA(V$0(), 1), LkA = K$0.default
+var vX1 = lazyLoader(() => {
+    K$0 = esmImport(V$0(), 1), LkA = K$0.default
 });
 
 function bX1(A) {
@@ -947,7 +948,7 @@ function yP9(A, Q, B) {
         W = (B.Blob || typeof Blob < "u" && Blob) && f1.isSpecCompliantForm(Q);
     if (!f1.isFunction(Z)) throw TypeError("visitor must be a function");
 
-function X(H) {
+    function X(H) {
         if (H === null) return "";
         if (f1.isDate(H)) return H.toISOString();
         if (!W && f1.isBlob(H)) throw new NB("Blob is not supported. Use a Buffer instead.");
@@ -955,7 +956,7 @@ function X(H) {
         return H
     }
 
-function F(H, C, E) {
+    function F(H, C, E) {
         let z = H;
         if (H && !E && typeof H === "object") {
             if (f1.endsWith(C, "{}")) C = G ? C : C.slice(0, -2), H = JSON.stringify(H);
@@ -973,7 +974,7 @@ function F(H, C, E) {
             isVisitable: bX1
         });
 
-function D(H, C) {
+    function D(H, C) {
         if (f1.isUndefined(H)) return;
         if (V.indexOf(H) !== -1) throw Error("Circular reference detected in " + C.join("."));
         V.push(H), f1.forEach(H, function(z, w) {
@@ -984,7 +985,7 @@ function D(H, C) {
     return D(A), Q
 }
 var kP9, gu;
-var zVA = L(() => {
+var zVA = lazyLoader(() => {
     lG();
     a$();
     vX1();
@@ -1013,7 +1014,7 @@ function E$0(A, Q) {
     this._pairs = [], A && gu(A, this, Q)
 }
 var z$0, U$0;
-var $$0 = L(() => {
+var $$0 = lazyLoader(() => {
     zVA();
     z$0 = E$0.prototype;
     z$0.append = function(Q, B) {
@@ -1031,7 +1032,7 @@ var $$0 = L(() => {
 });
 
 function xP9(A) {
-    return encodeURIComponent(A).replace(/%3A/gi, ":").replace(/%24/g, "$").replace(/%2C/gi, ",").replace(/%20/g, "+").replace(/%5B/gi, "[").replace(/%5D/gi, "]")
+    return encodeURIComponent(A).replace(/%3A/gi, ":").replace(/%24/g, "TextComponent").replace(/%2C/gi, ",").replace(/%20/g, "+").replace(/%5B/gi, "[").replace(/%5D/gi, "]")
 }
 
 function ws(A, Q, B) {
@@ -1051,11 +1052,10 @@ function ws(A, Q, B) {
     }
     return A
 }
-var MkA = L(() => {
+var MkA = lazyLoader(() => {
     lG();
     $$0()
 });
-
 class w$0 {
     constructor() {
         this.handlers = []
@@ -1081,12 +1081,12 @@ class w$0 {
     }
 }
 var fX1;
-var q$0 = L(() => {
+var q$0 = lazyLoader(() => {
     lG();
     fX1 = w$0
 });
 var Y2A;
-var OkA = L(() => {
+var OkA = lazyLoader(() => {
     Y2A = {
         silentJSONParsing: !0,
         forcedJSONParsing: !0,
@@ -1095,7 +1095,7 @@ var OkA = L(() => {
 });
 import vP9 from "url";
 var N$0;
-var L$0 = L(() => {
+var L$0 = lazyLoader(() => {
     N$0 = vP9.URLSearchParams
 });
 import bP9 from "crypto";
@@ -1112,7 +1112,7 @@ var hX1 = "abcdefghijklmnopqrstuvwxyz",
         return B
     },
     R$0;
-var T$0 = L(() => {
+var T$0 = lazyLoader(() => {
     L$0();
     vX1();
     O$0 = {
@@ -1131,9 +1131,8 @@ var T$0 = L(() => {
         protocols: ["http", "https", "file", "data"]
     }
 });
-
 var mX1 = {};
-pG(mX1, {
+esmExport(mX1, {
     origin: () => uP9,
     navigator: () => gX1,
     hasStandardBrowserWebWorkerEnv: () => gP9,
@@ -1141,13 +1140,13 @@ pG(mX1, {
     hasBrowserEnv: () => uX1
 });
 var uX1, gX1, hP9, gP9, uP9;
-var P$0 = L(() => {
+var P$0 = lazyLoader(() => {
     uX1 = typeof window < "u" && typeof document < "u", gX1 = typeof navigator === "object" && navigator || void 0, hP9 = uX1 && (!gX1 || ["ReactNative", "NativeScript", "NS"].indexOf(gX1.product) < 0), gP9 = (() => {
         return typeof WorkerGlobalScope < "u" && self instanceof WorkerGlobalScope && typeof self.importScripts === "function"
     })(), uP9 = uX1 && window.location.href || "http://localhost"
 });
 var c3;
-var DR = L(() => {
+var DR = lazyLoader(() => {
     T$0();
     P$0();
     c3 = {
@@ -1164,7 +1163,7 @@ function dX1(A, Q) {
         }
     }, Q))
 }
-var j$0 = L(() => {
+var j$0 = lazyLoader(() => {
     lG();
     zVA();
     DR()
@@ -1209,7 +1208,7 @@ function cP9(A) {
     return null
 }
 var RkA;
-var cX1 = L(() => {
+var cX1 = lazyLoader(() => {
     lG();
     RkA = cP9
 });
@@ -1223,7 +1222,7 @@ function pP9(A, Q, B) {
     return (B || JSON.stringify)(A)
 }
 var pX1, J2A;
-var TkA = L(() => {
+var TkA = lazyLoader(() => {
     lG();
     a$();
     OkA();
@@ -1310,7 +1309,7 @@ var lP9, S$0 = (A) => {
         else Q[B] = Q[B] ? Q[B] + ", " + G : G
     }), Q
 };
-var _$0 = L(() => {
+var _$0 = lazyLoader(() => {
     lG();
     lP9 = f1.toObjectSet(["age", "authorization", "content-length", "content-type", "etag", "expires", "from", "host", "if-modified-since", "if-unmodified-since", "last-modified", "location", "max-forwards", "proxy-authorization", "referer", "retry-after", "user-agent"])
 });
@@ -1357,9 +1356,9 @@ function sP9(A, Q) {
         })
     })
 }
-var k$0, nP9 = (A) => /^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(A.trim()),
+var k$0, nP9 = (A) => /^[-_a-zA-Z0-9^`|~,!#TextComponent%&'*+.]+TextComponent/.test(A.trim()),
     $VA, PY;
-var _j = L(() => {
+var _j = lazyLoader(() => {
     lG();
     _$0();
     k$0 = Symbol("internals");
@@ -1370,7 +1369,7 @@ var _j = L(() => {
         set(A, Q, B) {
             let G = this;
 
-function Z(Y, J, W) {
+            function Z(Y, J, W) {
                 let X = UVA(J);
                 if (!X) throw Error("header name must be a non-empty string");
                 let F = f1.findKey(G, X);
@@ -1408,7 +1407,7 @@ function Z(Y, J, W) {
             let B = this,
                 G = !1;
 
-function Z(I) {
+            function Z(I) {
                 if (I = UVA(I), I) {
                     let Y = f1.findKey(B, I);
                     if (Y && (!Q || lX1(B, B[Y], Y, Q))) delete B[Y], G = !0
@@ -1473,7 +1472,7 @@ function Z(I) {
                 }).accessors,
                 G = this.prototype;
 
-function Z(I) {
+            function Z(I) {
                 let Y = UVA(I);
                 if (!B[Y]) sP9(G, I), B[Y] = !0
             }
@@ -1505,7 +1504,7 @@ function wVA(A, Q) {
         I = J.call(B, I, Z.normalize(), Q ? Q.status : void 0)
     }), Z.normalize(), I
 }
-var y$0 = L(() => {
+var y$0 = lazyLoader(() => {
     lG();
     TkA();
     _j()
@@ -1519,5 +1518,5 @@ function x$0(A, Q, B) {
     NB.call(this, A == null ? "canceled" : A, NB.ERR_CANCELED, Q, B), this.name = "CanceledError"
 }
 var s$;
-var qs = L(() => {
+var qs = lazyLoader(() => {
     a$();

@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_028.js
+ * 处理时间: 2025-12-09T03:41:36.648Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.911Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -18,7 +20,7 @@
  */
 
 });
-var Mj1 = U((Yw7, nuQ) => {
+var Mj1 = moduleWrapper((Yw7, nuQ) => {
     var {
         defineProperty: adA,
         getOwnPropertyDescriptor: Hq8,
@@ -110,7 +112,7 @@ var Mj1 = U((Yw7, nuQ) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(iuQ || {})
 });
-var ECA = U((Jw7, VmQ) => {
+var ECA = moduleWrapper((Jw7, VmQ) => {
     var {
         defineProperty: tdA,
         getOwnPropertyDescriptor: Oq8,
@@ -345,7 +347,7 @@ var ECA = U((Jw7, VmQ) => {
                         let X = new G(Y);
                         if (typeof J === "function") this.send(X, J);
                         else if (typeof W === "function") {
-                            if (typeof J !== "object") throw Error(`Expected http options but got ${typeof J}`);
+                            if (typeof J !== "object") throw Error(`Expected http options but got TextComponent{typeof J}`);
                             this.send(X, J || {}, W)
                         } else return this.send(X, J)
                     }, "methodImpl"),
@@ -360,49 +362,49 @@ var ECA = U((Jw7, VmQ) => {
                 case "false":
                     return !1;
                 default:
-                    throw Error(`Unable to parse boolean value "${A}"`)
+                    throw Error(`Unable to parse boolean value "TextComponent{A}"`)
             }
         }, "parseBoolean"),
         bq8 = VB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "number") {
-                if (A === 0 || A === 1) CCA.warn(odA(`Expected boolean, got ${typeof A}: ${A}`));
+                if (A === 0 || A === 1) CCA.warn(odA(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`));
                 if (A === 0) return !1;
                 if (A === 1) return !0
             }
             if (typeof A === "string") {
                 let Q = A.toLowerCase();
-                if (Q === "false" || Q === "true") CCA.warn(odA(`Expected boolean, got ${typeof A}: ${A}`));
+                if (Q === "false" || Q === "true") CCA.warn(odA(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`));
                 if (Q === "false") return !1;
                 if (Q === "true") return !0
             }
             if (typeof A === "boolean") return A;
-            throw TypeError(`Expected boolean, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectBoolean"),
         DCA = VB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "string") {
                 let Q = parseFloat(A);
                 if (!Number.isNaN(Q)) {
-                    if (String(Q) !== String(A)) CCA.warn(odA(`Expected number but observed string: ${A}`));
+                    if (String(Q) !== String(A)) CCA.warn(odA(`Expected number but observed string: TextComponent{A}`));
                     return Q
                 }
             }
             if (typeof A === "number") return A;
-            throw TypeError(`Expected number, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected number, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectNumber"),
         fq8 = Math.ceil(340282346638528860000000000000000000000),
         rdA = VB((A) => {
             let Q = DCA(A);
             if (Q !== void 0 && !Number.isNaN(Q) && Q !== 1 / 0 && Q !== -1 / 0) {
-                if (Math.abs(Q) > fq8) throw TypeError(`Expected 32-bit float, got ${A}`)
+                if (Math.abs(Q) > fq8) throw TypeError(`Expected 32-bit float, got TextComponent{A}`)
             }
             return Q
         }, "expectFloat32"),
         HCA = VB((A) => {
             if (A === null || A === void 0) return;
             if (Number.isInteger(A) && !Number.isNaN(A)) return A;
-            throw TypeError(`Expected integer, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected integer, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectLong"),
         hq8 = HCA,
         Pj1 = VB((A) => kj1(A, 32), "expectInt32"),
@@ -410,7 +412,7 @@ var ECA = U((Jw7, VmQ) => {
         Sj1 = VB((A) => kj1(A, 8), "expectByte"),
         kj1 = VB((A, Q) => {
             let B = HCA(A);
-            if (B !== void 0 && gq8(B, Q) !== B) throw TypeError(`Expected ${Q}-bit integer, got ${A}`);
+            if (B !== void 0 && gq8(B, Q) !== B) throw TypeError(`Expected TextComponent{Q}-bit integer, got TextComponent{A}`);
             return B
         }, "expectSizedInt"),
         gq8 = VB((A, Q) => {
@@ -425,7 +427,7 @@ var ECA = U((Jw7, VmQ) => {
         }, "castInt"),
         uq8 = VB((A, Q) => {
             if (A === null || A === void 0) {
-                if (Q) throw TypeError(`Expected a non-null value for ${Q}`);
+                if (Q) throw TypeError(`Expected a non-null value for TextComponent{Q}`);
                 throw TypeError("Expected a non-null value")
             }
             return A
@@ -434,20 +436,20 @@ var ECA = U((Jw7, VmQ) => {
             if (A === null || A === void 0) return;
             if (typeof A === "object" && !Array.isArray(A)) return A;
             let Q = Array.isArray(A) ? "array" : typeof A;
-            throw TypeError(`Expected object, got ${Q}: ${A}`)
+            throw TypeError(`Expected object, got TextComponent{Q}: TextComponent{A}`)
         }, "expectObject"),
         mq8 = VB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "string") return A;
-            if (["boolean", "number", "bigint"].includes(typeof A)) return CCA.warn(odA(`Expected string, got ${typeof A}: ${A}`)), String(A);
-            throw TypeError(`Expected string, got ${typeof A}: ${A}`)
+            if (["boolean", "number", "bigint"].includes(typeof A)) return CCA.warn(odA(`Expected string, got TextComponent{typeof A}: TextComponent{A}`)), String(A);
+            throw TypeError(`Expected string, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectString"),
         dq8 = VB((A) => {
             if (A === null || A === void 0) return;
             let Q = tuQ(A),
                 B = Object.entries(Q).filter(([, G]) => G != null).map(([G]) => G);
             if (B.length === 0) throw TypeError("Unions must have exactly one non-null member. None were found.");
-            if (B.length > 1) throw TypeError(`Unions must have exactly one non-null member. Keys ${B} were not null.`);
+            if (B.length > 1) throw TypeError(`Unions must have exactly one non-null member. Keys TextComponent{B} were not null.`);
             return Q
         }, "expectUnion"),
         yj1 = VB((A) => {
@@ -484,7 +486,7 @@ var ECA = U((Jw7, VmQ) => {
                 case "-Infinity":
                     return -1 / 0;
                 default:
-                    throw Error(`Unable to parse float value: ${A}`)
+                    throw Error(`Unable to parse float value: TextComponent{A}`)
             }
         }, "parseFloatString"),
         QmQ = VB((A) => {
@@ -515,7 +517,7 @@ var ECA = U((Jw7, VmQ) => {
         rq8 = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
         vj1 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-function GmQ(A) {
+    function GmQ(A) {
         let Q = A.getUTCFullYear(),
             B = A.getUTCMonth(),
             G = A.getUTCDay(),
@@ -523,14 +525,14 @@ function GmQ(A) {
             I = A.getUTCHours(),
             Y = A.getUTCMinutes(),
             J = A.getUTCSeconds(),
-            W = Z < 10 ? `0${Z}` : `${Z}`,
-            X = I < 10 ? `0${I}` : `${I}`,
-            F = Y < 10 ? `0${Y}` : `${Y}`,
-            V = J < 10 ? `0${J}` : `${J}`;
-        return `${rq8[G]}, ${W} ${vj1[B]} ${Q} ${X}:${F}:${V} GMT`
+            W = Z < 10 ? `0${Z}` : `TextComponent{Z}`,
+            X = I < 10 ? `0${I}` : `TextComponent{I}`,
+            F = Y < 10 ? `0${Y}` : `TextComponent{Y}`,
+            V = J < 10 ? `0${J}` : `TextComponent{J}`;
+        return `TextComponent{rq8[G]}, TextComponent{W} TextComponent{vj1[B]} TextComponent{Q} TextComponent{X}:TextComponent{F}:TextComponent{V} GMT`
     }
     VB(GmQ, "dateToUtcString");
-    var oq8 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?[zZ]$/),
+    var oq8 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?[zZ]TextComponent/),
         tq8 = VB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-3339 date-times must be expressed as strings");
@@ -544,7 +546,7 @@ function GmQ(A) {
                 fractionalMilliseconds: X
             })
         }, "parseRfc3339DateTime"),
-        eq8 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?(([-+]\d{2}\:\d{2})|[zZ])$/),
+        eq8 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?(([-+]\d{2}\:\d{2})|[zZ])TextComponent/),
         AN8 = VB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-3339 date-times must be expressed as strings");
@@ -561,7 +563,7 @@ function GmQ(A) {
         }, "parseRfc3339DateTimeWithOffset"),
         QN8 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun), (\d{2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{4}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? GMT$/),
         BN8 = new RegExp(/^(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday), (\d{2})-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)-(\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? GMT$/),
-        GN8 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ( [1-9]|\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? (\d{4})$/),
+        GN8 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ( [1-9]|\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? (\d{4})TextComponent/),
         ZN8 = VB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-7231 date-times must be expressed as strings");
@@ -622,21 +624,21 @@ function GmQ(A) {
         }, "adjustRfc850Year"),
         Rj1 = VB((A) => {
             let Q = vj1.indexOf(A);
-            if (Q < 0) throw TypeError(`Invalid month: ${A}`);
+            if (Q < 0) throw TypeError(`Invalid month: TextComponent{A}`);
             return Q + 1
         }, "parseMonthByShortName"),
         XN8 = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
         FN8 = VB((A, Q, B) => {
             let G = XN8[Q];
             if (Q === 1 && VN8(A)) G = 29;
-            if (B > G) throw TypeError(`Invalid day for ${vj1[Q]} in ${A}: ${B}`)
+            if (B > G) throw TypeError(`Invalid day for TextComponent{vj1[Q]} in TextComponent{A}: TextComponent{B}`)
         }, "validateDayOfMonth"),
         VN8 = VB((A) => {
             return A % 4 === 0 && (A % 100 !== 0 || A % 400 === 0)
         }, "isLeapYear"),
         hS = VB((A, Q, B, G) => {
             let Z = BmQ(d6A(A));
-            if (Z < B || Z > G) throw TypeError(`${Q} must be between ${B} and ${G}, inclusive`);
+            if (Z < B || Z > G) throw TypeError(`TextComponent{Q} must be between TextComponent{B} and TextComponent{G}, inclusive`);
             return Z
         }, "parseDateValue"),
         KN8 = VB((A) => {
@@ -648,7 +650,7 @@ function GmQ(A) {
                 B = 1;
             if (Q == "+") B = 1;
             else if (Q == "-") B = -1;
-            else throw TypeError(`Offset direction, ${Q}, must be "+" or "-"`);
+            else throw TypeError(`Offset direction, TextComponent{Q}, must be "+" or "-"`);
             let G = Number(A.substring(1, 3)),
                 Z = Number(A.substring(4, 6));
             return B * (G * 60 + Z) * 60 * 1000
@@ -826,8 +828,7 @@ function GmQ(A) {
         return Yo(JSON.stringify(A))
     };
     Yo.fromObject = Yo.from;
-
-var TN8 = class {
+    var TN8 = class {
         static {
             VB(this, "NoOpLogger")
         }
@@ -838,7 +839,7 @@ var TN8 = class {
         error() {}
     };
 
-function bj1(A, Q, B) {
+    function bj1(A, Q, B) {
         let G, Z, I;
         if (typeof Q > "u" && typeof B > "u") G = {}, I = A;
         else if (G = A, typeof Q === "function") return Z = Q, I = B, SN8(G, Z, I);
@@ -894,8 +895,8 @@ function bj1(A, Q, B) {
         _N8 = VB((A) => A != null, "nonNullish"),
         kN8 = VB((A) => A, "pass");
 
-function XmQ(A) {
-        if (A.includes(",") || A.includes('"')) A = `"${A.replace(/"/g,"\\\"")}"`;
+    function XmQ(A) {
+        if (A.includes(",") || A.includes('"')) A = `"TextComponent{A.replace(/"/g,"\\\"")}"`;
         return A
     }
     VB(XmQ, "quoteHeader");
@@ -925,7 +926,7 @@ function XmQ(A) {
             return A
         }, "_json");
 
-function FmQ(A, Q, B) {
+    function FmQ(A, Q, B) {
         if (B <= 0 || !Number.isInteger(B)) throw Error("Invalid number of delimiters (" + B + ") for splitEvery.");
         let G = A.split(Q);
         if (B === 1) return G;
@@ -968,13 +969,13 @@ function FmQ(A, Q, B) {
         })
     }, "splitHeader")
 });
-var HmQ = U((KmQ) => {
+var HmQ = moduleWrapper((KmQ) => {
     Object.defineProperty(KmQ, "__esModule", {
         value: !0
     });
     KmQ.fromBase64 = void 0;
     var bN8 = kI(),
-        fN8 = /^[A-Za-z0-9+/]*={0,2}$/,
+        fN8 = /^[A-Za-z0-9+/]*={0,2}TextComponent/,
         hN8 = (A) => {
             if (A.length * 3 % 4 !== 0) throw TypeError("Incorrect padding on base64 string.");
             if (!fN8.exec(A)) throw TypeError("Invalid base64 string.");
@@ -983,7 +984,7 @@ var HmQ = U((KmQ) => {
         };
     KmQ.fromBase64 = hN8
 });
-var zmQ = U((CmQ) => {
+var zmQ = moduleWrapper((CmQ) => {
     Object.defineProperty(CmQ, "__esModule", {
         value: !0
     });
@@ -999,7 +1000,7 @@ var zmQ = U((CmQ) => {
         };
     CmQ.toBase64 = mN8
 });
-var wmQ = U((Cw7, edA) => {
+var wmQ = moduleWrapper((Cw7, edA) => {
     var {
         defineProperty: UmQ,
         getOwnPropertyDescriptor: dN8,
@@ -1020,7 +1021,7 @@ var wmQ = U((Cw7, edA) => {
     $mQ(hj1, HmQ(), edA.exports);
     $mQ(hj1, zmQ(), edA.exports)
 });
-var fmQ = U((vmQ) => {
+var fmQ = moduleWrapper((vmQ) => {
     Object.defineProperty(vmQ, "__esModule", {
         value: !0
     });
@@ -1216,7 +1217,7 @@ var fmQ = U((vmQ) => {
         };
     vmQ.ruleSet = iN8
 });
-var umQ = U((hmQ) => {
+var umQ = moduleWrapper((hmQ) => {
     Object.defineProperty(hmQ, "__esModule", {
         value: !0
     });
@@ -1237,7 +1238,7 @@ var umQ = U((hmQ) => {
     hmQ.defaultEndpointResolver = rN8;
     mj1.customEndpointFunctions.aws = nN8.awsEndpointFunctions
 });
-var lmQ = U((cmQ) => {
+var lmQ = moduleWrapper((cmQ) => {
     Object.defineProperty(cmQ, "__esModule", {
         value: !0
     });
@@ -1277,7 +1278,7 @@ var lmQ = U((cmQ) => {
         };
     cmQ.getRuntimeConfig = GL8
 });
-var omQ = U((smQ) => {
+var omQ = moduleWrapper((smQ) => {
     Object.defineProperty(smQ, "__esModule", {
         value: !0
     });
@@ -1335,7 +1336,7 @@ var omQ = U((smQ) => {
         };
     smQ.getRuntimeConfig = HL8
 });
-var UCA = U((ww7, GdQ) => {
+var UCA = moduleWrapper((ww7, GdQ) => {
     var {
         defineProperty: QcA,
         getOwnPropertyDescriptor: CL8,
@@ -1419,7 +1420,7 @@ var UCA = U((ww7, GdQ) => {
             })
         }, "resolveRegionConfig")
 });
-var XdQ = U((qw7, WdQ) => {
+var XdQ = moduleWrapper((qw7, WdQ) => {
     var {
         defineProperty: BcA,
         getOwnPropertyDescriptor: RL8,
@@ -1498,7 +1499,7 @@ var XdQ = U((qw7, WdQ) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values

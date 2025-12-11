@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_018.js
+ * 处理时间: 2025-12-09T03:41:36.535Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.902Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -79,15 +82,14 @@
             return new DL1.HttpRequest(X)
         }, "buildHttpRpcRequest");
 
-function uI(A) {
+    function uI(A) {
         return {
             "content-type": "application/x-amz-json-1.1",
-            "x-amz-target": `AWSCognitoIdentityService.${A}`
+            "x-amz-target": `AWSCognitoIdentityService.TextComponent{A}`
         }
     }
     g0(uI, "sharedHeaders");
-
-var VDQ = class extends b0.Command.classBuilder().ep(xY).m(function(A, Q, B, G) {
+    var VDQ = class extends b0.Command.classBuilder().ep(xY).m(function(A, Q, B, G) {
             return [(0, vY.getSerdePlugin)(B, this.serialize, this.deserialize), (0, gI.getEndpointPlugin)(B, A.getEndpointParameterInstructions())]
         }).s("AWSCognitoIdentityService", "CreateIdentityPool", {}).n("CognitoIdentityClient", "CreateIdentityPoolCommand").f(void 0, void 0).ser(gi4).de(Wn4).build() {
             static {
@@ -281,7 +283,7 @@ var VDQ = class extends b0.Command.classBuilder().ep(xY).m(function(A, Q, B, G) 
     (0, b0.createAggregatedClient)(nn4, yDQ);
     var an4 = (0, NgA.createPaginator)(HL1, CL1, "NextToken", "NextToken", "MaxResults")
 });
-var wL1 = U((qD7, iDQ) => {
+var wL1 = moduleWrapper((qD7, iDQ) => {
     var {
         defineProperty: OgA,
         getOwnPropertyDescriptor: sn4,
@@ -326,7 +328,7 @@ var wL1 = U((qD7, iDQ) => {
     iDQ.exports = en4(gDQ);
     var RgA = P2();
 
-function UL1(A) {
+    function UL1(A) {
         return Promise.all(Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             if (typeof G === "string") Q.push([B, G]);
@@ -370,21 +372,21 @@ function UL1(A) {
     }
     Hw($L1, "fromCognitoIdentity");
 
-function uDQ(A) {
+    function uDQ(A) {
         throw new RgA.CredentialsProviderError("Response from Amazon Cognito contained no access key ID", {
             logger: A
         })
     }
     Hw(uDQ, "throwOnMissingAccessKeyId");
 
-function mDQ(A) {
+    function mDQ(A) {
         throw new RgA.CredentialsProviderError("Response from Amazon Cognito contained no credentials", {
             logger: A
         })
     }
     Hw(mDQ, "throwOnMissingCredentials");
 
-function dDQ(A) {
+    function dDQ(A) {
         throw new RgA.CredentialsProviderError("Response from Amazon Cognito contained no secret key", {
             logger: A
         })
@@ -475,14 +477,14 @@ function dDQ(A) {
         },
         Ba4 = new Qa4;
 
-function cDQ() {
+    function cDQ() {
         if (typeof self === "object" && self.indexedDB) return new Aa4;
         if (typeof window === "object" && window.localStorage) return window.localStorage;
         return Ba4
     }
     Hw(cDQ, "localStorage");
 
-function pDQ({
+    function pDQ({
         accountId: A,
         cache: Q = cDQ(),
         client: B,
@@ -495,7 +497,7 @@ function pDQ({
         parentClientConfig: X
     }) {
         W?.debug("@aws-sdk/credential-provider-cognito-identity - fromCognitoIdentity");
-        let F = J ? `aws:cognito-identity-credentials:${I}:${J}` : void 0,
+        let F = J ? `aws:cognito-identity-credentials:TextComponent{I}:TextComponent{J}` : void 0,
             V = Hw(async (K) => {
                 let {
                     GetIdCommand: D,
@@ -528,14 +530,14 @@ function pDQ({
     }
     Hw(pDQ, "fromCognitoIdentityPool");
 
-function lDQ(A) {
+    function lDQ(A) {
         throw new RgA.CredentialsProviderError("Response from Amazon Cognito contained no identity ID", {
             logger: A
         })
     }
     Hw(lDQ, "throwOnMissingId")
 });
-var sDQ = U((nDQ) => {
+var sDQ = moduleWrapper((nDQ) => {
     Object.defineProperty(nDQ, "__esModule", {
         value: !0
     });
@@ -546,7 +548,7 @@ var sDQ = U((nDQ) => {
         });
     nDQ.fromCognitoIdentity = Za4
 });
-var tDQ = U((rDQ) => {
+var tDQ = moduleWrapper((rDQ) => {
     Object.defineProperty(rDQ, "__esModule", {
         value: !0
     });
@@ -557,7 +559,7 @@ var tDQ = U((rDQ) => {
         });
     rDQ.fromCognitoIdentityPool = Ya4
 });
-var QHQ = U((eDQ) => {
+var QHQ = moduleWrapper((eDQ) => {
     Object.defineProperty(eDQ, "__esModule", {
         value: !0
     });
@@ -568,7 +570,7 @@ var QHQ = U((eDQ) => {
         };
     eDQ.fromContainerMetadata = Wa4
 });
-var DL = U((TD7, YHQ) => {
+var DL = moduleWrapper((TD7, YHQ) => {
     var {
         defineProperty: TgA,
         getOwnPropertyDescriptor: Xa4,
@@ -601,8 +603,7 @@ var DL = U((TD7, YHQ) => {
         state: () => qL1
     });
     YHQ.exports = Ha4(BHQ);
-
-var qL1 = {
+    var qL1 = {
             warningEmitted: !1
         },
         Ca4 = PgA((A) => {
@@ -615,13 +616,13 @@ updates please upgrade to a supported Node.js LTS version.
 More information can be found at: https://a.co/74kJMmI`)
         }, "emitWarningIfUnsupportedVersion");
 
-function GHQ(A, Q, B) {
+    function GHQ(A, Q, B) {
         if (!A.$source) A.$source = {};
         return A.$source[Q] = B, A
     }
     PgA(GHQ, "setCredentialFeature");
 
-function ZHQ(A, Q, B) {
+    function ZHQ(A, Q, B) {
         if (!A.__aws_sdk_context) A.__aws_sdk_context = {
             features: {}
         };
@@ -630,13 +631,13 @@ function ZHQ(A, Q, B) {
     }
     PgA(ZHQ, "setFeature");
 
-function IHQ(A, Q, B) {
+    function IHQ(A, Q, B) {
         if (!A.$source) A.$source = {};
         return A.$source[Q] = B, A
     }
     PgA(IHQ, "setTokenFeature")
 });
-var XHQ = U((JHQ) => {
+var XHQ = moduleWrapper((JHQ) => {
     Object.defineProperty(JHQ, "__esModule", {
         value: !0
     });
@@ -668,7 +669,7 @@ var XHQ = U((JHQ) => {
         };
     JHQ.checkUrl = wa4
 });
-var NL1 = U((jD7, UHQ) => {
+var NL1 = moduleWrapper((jD7, UHQ) => {
     var {
         defineProperty: jgA,
         getOwnPropertyDescriptor: qa4,
@@ -760,7 +761,7 @@ var NL1 = U((jD7, UHQ) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(zHQ || {})
 });
-var Cw = U((SD7, LHQ) => {
+var Cw = moduleWrapper((SD7, MAX_OUTPUT_LENGTH) => {
     var {
         defineProperty: _gA,
         getOwnPropertyDescriptor: ka4,
@@ -795,7 +796,7 @@ var Cw = U((SD7, LHQ) => {
         isValidHostname: () => NHQ,
         resolveHttpHandlerRuntimeConfig: () => ga4
     });
-    LHQ.exports = fa4($HQ);
+    MAX_OUTPUT_LENGTH.exports = fa4($HQ);
     var ha4 = Cd((A) => {
             return {
                 setHttpHandler(Q) {
@@ -839,7 +840,7 @@ var Cw = U((SD7, LHQ) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values
@@ -873,7 +874,7 @@ var Cw = U((SD7, LHQ) => {
                 Cd(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -895,7 +896,7 @@ var Cw = U((SD7, LHQ) => {
             }
         };
 
-function qHQ(A) {
+    function qHQ(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -905,8 +906,7 @@ function qHQ(A) {
         }, {})
     }
     Cd(qHQ, "cloneQuery");
-
-var ca4 = class {
+    var ca4 = class {
         static {
             Cd(this, "HttpResponse")
         }
@@ -920,12 +920,12 @@ var ca4 = class {
         }
     };
 
-function NHQ(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function NHQ(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     Cd(NHQ, "isValidHostname")
 });
-var R3 = U((xD7, jL1) => {
+var R3 = moduleWrapper((xD7, jL1) => {
     var {
         defineProperty: kgA,
         getOwnPropertyDescriptor: pa4,
@@ -1128,7 +1128,7 @@ var R3 = U((xD7, jL1) => {
                         let X = new G(Y);
                         if (typeof J === "function") this.send(X, J);
                         else if (typeof W === "function") {
-                            if (typeof J !== "object") throw Error(`Expected http options but got ${typeof J}`);
+                            if (typeof J !== "object") throw Error(`Expected http options but got TextComponent{typeof J}`);
                             this.send(X, J || {}, W)
                         } else return this.send(X, J)
                     }, "methodImpl"),
@@ -1295,7 +1295,7 @@ var R3 = U((xD7, jL1) => {
             error() {}
         };
 
-function PL1(A, Q, B) {
+    function PL1(A, Q, B) {
         let G, Z, I;
         if (typeof Q > "u" && typeof B > "u") G = {}, I = A;
         else if (G = A, typeof Q === "function") return Z = Q, I = B, Es4(G, Z, I);
@@ -1377,7 +1377,7 @@ function PL1(A, Q, B) {
         }, "_json");
     aa4(TL1, c6(), jL1.exports)
 });
-var yHQ = U((kHQ) => {
+var yHQ = moduleWrapper((kHQ) => {
     Object.defineProperty(kHQ, "__esModule", {
         value: !0
     });
@@ -1388,7 +1388,7 @@ var yHQ = U((kHQ) => {
         Ns4 = R3(),
         Ls4 = cm();
 
-function Ms4(A) {
+    function Ms4(A) {
         return new qs4.HttpRequest({
             protocol: A.protocol,
             hostname: A.hostname,
@@ -1400,8 +1400,7 @@ function Ms4(A) {
             fragment: A.hash
         })
     }
-
-async function Os4(A, Q) {
+    async function Os4(A, Q) {
         let G = await (0, Ls4.sdkStreamMixin)(A.body).transformToString();
         if (A.statusCode === 200) {
             let Z = JSON.parse(G);
@@ -1420,19 +1419,19 @@ async function Os4(A, Q) {
             try {
                 Z = JSON.parse(G)
             } catch (I) {}
-            throw Object.assign(new SL1.CredentialsProviderError(`Server responded with status: ${A.statusCode}`, {
+            throw Object.assign(new SL1.CredentialsProviderError(`Server responded with status: TextComponent{A.statusCode}`, {
                 logger: Q
             }), {
                 Code: Z.Code,
                 Message: Z.Message
             })
         }
-        throw new SL1.CredentialsProviderError(`Server responded with status: ${A.statusCode}`, {
+        throw new SL1.CredentialsProviderError(`Server responded with status: TextComponent{A.statusCode}`, {
             logger: Q
         })
     }
 });
-var bHQ = U((xHQ) => {
+var bHQ = moduleWrapper((xHQ) => {
     Object.defineProperty(xHQ, "__esModule", {
         value: !0
     });
@@ -1449,7 +1448,7 @@ var bHQ = U((xHQ) => {
     };
     xHQ.retryWrapper = Ps4
 });
-var mHQ = U((gHQ) => {
+var mHQ = moduleWrapper((gHQ) => {
     Object.defineProperty(gHQ, "__esModule", {
         value: !0
     });
@@ -1458,7 +1457,7 @@ var mHQ = U((gHQ) => {
         Ss4 = DL(),
         _s4 = oG(),
         fHQ = P2(),
-        ks4 = js4.__importDefault(UA("fs/promises")),
+        ks4 = js4.__importDefault(nodeRequire("fs/promises")),
         ys4 = XHQ(),
         hHQ = yHQ(),
         xs4 = bHQ(),
@@ -1477,7 +1476,7 @@ var mHQ = U((gHQ) => {
             if (B && G) Y("@aws-sdk/credential-provider-http: you have set both awsContainerCredentialsRelativeUri and awsContainerCredentialsFullUri."), Y("awsContainerCredentialsFullUri will take precedence.");
             if (Z && I) Y("@aws-sdk/credential-provider-http: you have set both awsContainerAuthorizationToken and awsContainerAuthorizationTokenFile."), Y("awsContainerAuthorizationToken will take precedence.");
             if (G) Q = G;
-            else if (B) Q = `${bs4}${B}`;
+            else if (B) Q = `TextComponent{bs4}TextComponent{B}`;
             else throw new fHQ.CredentialsProviderError(`No HTTP credential provider host provided.
 Set AWS_CONTAINER_CREDENTIALS_FULL_URI or AWS_CONTAINER_CREDENTIALS_RELATIVE_URI.`, {
                 logger: A.logger
@@ -1504,7 +1503,7 @@ Set AWS_CONTAINER_CREDENTIALS_FULL_URI or AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
         };
     gHQ.fromHttp = us4
 });
-var ygA = U((_L1) => {
+var ygA = moduleWrapper((_L1) => {
     Object.defineProperty(_L1, "__esModule", {
         value: !0
     });

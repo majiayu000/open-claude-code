@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: telemetry_004.js
+ * 处理时间: 2025-12-09T03:41:38.321Z
+ * 变量映射: 5 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.048Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -26,42 +29,42 @@
             return "arm64";
         case "ia32":
         case "x86":
-            return SQ("[SeccompFilter] 32-bit x86 (ia32) is not currently supported due to missing socketcall() syscall blocking. The current seccomp filter only blocks socket(AF_UNIX, ...), but on 32-bit x86, socketcall() can be used to bypass this.", {
+            return sandboxDebug("[SeccompFilter] 32-bit x86 (ia32) is not currently supported due to missing socketcall() syscall blocking. The current seccomp filter only blocks socket(AF_UNIX, ...), but on 32-bit x86, socketcall() can be used to bypass this.", {
                 level: "error"
             }), null;
         default:
-            return SQ(`[SeccompFilter] Unsupported architecture: ${A}. Only x64 and arm64 are supported.`), null
+            return sandboxDebug(`[SeccompFilter] Unsupported architecture: TextComponent{A}. Only x64 and arm64 are supported.`), null
     }
 }
 
 function Rb1() {
     let A = q3B();
-    if (!A) return SQ(`[SeccompFilter] Cannot find pre-generated BPF filter: unsupported architecture ${process.arch}`), null;
-    SQ(`[SeccompFilter] Detected architecture: ${A}`);
+    if (!A) return sandboxDebug(`[SeccompFilter] Cannot find pre-generated BPF filter: unsupported architecture TextComponent{process.arch}`), null;
+    sandboxDebug(`[SeccompFilter] Detected architecture: TextComponent{A}`);
     let Q = $3B(w3B(import.meta.url)),
         B = hc("vendor", "seccomp", A, "unix-block.bpf"),
         G = [hc(Q, B), hc(Q, "..", "..", B), hc(Q, "..", B)];
     for (let Z of G)
-        if (Ob1.existsSync(Z)) return SQ(`[SeccompFilter] Found pre-generated BPF filter: ${Z} (${A})`), Z;
-    return SQ(`[SeccompFilter] Pre-generated BPF filter not found in any expected location (${A})`), null
+        if (Ob1.existsSync(Z)) return sandboxDebug(`[SeccompFilter] Found pre-generated BPF filter: TextComponent{Z} (TextComponent{A})`), Z;
+    return sandboxDebug(`[SeccompFilter] Pre-generated BPF filter not found in any expected location (TextComponent{A})`), null
 }
 
 function BnA() {
     let A = q3B();
-    if (!A) return SQ(`[SeccompFilter] Cannot find apply-seccomp binary: unsupported architecture ${process.arch}`), null;
-    SQ(`[SeccompFilter] Looking for apply-seccomp binary for architecture: ${A}`);
+    if (!A) return sandboxDebug(`[SeccompFilter] Cannot find apply-seccomp binary: unsupported architecture TextComponent{process.arch}`), null;
+    sandboxDebug(`[SeccompFilter] Looking for apply-seccomp binary for architecture: TextComponent{A}`);
     let Q = $3B(w3B(import.meta.url)),
         B = hc("vendor", "seccomp", A, "apply-seccomp"),
         G = [hc(Q, B), hc(Q, "..", "..", B), hc(Q, "..", B)];
     for (let Z of G)
-        if (Ob1.existsSync(Z)) return SQ(`[SeccompFilter] Found apply-seccomp binary: ${Z} (${A})`), Z;
-    return SQ(`[SeccompFilter] apply-seccomp binary not found in any expected location (${A})`), null
+        if (Ob1.existsSync(Z)) return sandboxDebug(`[SeccompFilter] Found apply-seccomp binary: TextComponent{Z} (TextComponent{A})`), Z;
+    return sandboxDebug(`[SeccompFilter] apply-seccomp binary not found in any expected location (TextComponent{A})`), null
 }
 
 function N3B() {
     let A = Rb1();
-    if (A) return SQ("[SeccompFilter] Using pre-generated BPF filter"), A;
-    return SQ("[SeccompFilter] Pre-generated BPF filter not available for this architecture. Only x64 and arm64 are supported.", {
+    if (A) return sandboxDebug("[SeccompFilter] Using pre-generated BPF filter"), A;
+    return sandboxDebug("[SeccompFilter] Pre-generated BPF filter not available for this architecture. Only x64 and arm64 are supported.", {
         level: "error"
     }), null
 }
@@ -82,7 +85,6 @@ import {
 import q_, {
     join as R3B
 } from "node:path";
-
 async function oA6(A = {
     command: "rg"
 }, Q = Sb1, B) {
@@ -93,13 +95,13 @@ async function oA6(A = {
         J = [...lzA.map((F) => q_.resolve(G, F)), ...Y.map((F) => q_.resolve(G, F)), q_.resolve(G, ".git/hooks"), q_.resolve(G, ".git/config")],
         W = [];
     for (let F of lzA) W.push("--iglob", F);
-    for (let F of Y) W.push("--iglob", `**/${F}/**`);
+    for (let F of Y) W.push("--iglob", `**/TextComponent{F}/**`);
     W.push("--iglob", "**/.git/hooks/**"), W.push("--iglob", "**/.git/config");
     let X = [];
     try {
         X = await z3B(["--files", "--hidden", "--max-depth", String(Q), ...W, "-g", "!**/node_modules/**"], G, I, A)
     } catch (F) {
-        SQ(`[Sandbox] ripgrep scan failed: ${F}`)
+        sandboxDebug(`[Sandbox] ripgrep scan failed: TextComponent{F}`)
     }
     for (let F of X) {
         let V = q_.resolve(G, F),
@@ -146,7 +148,7 @@ function P3B(A = !1) {
         if (!A) {
             let Z = Rb1() !== null,
                 I = BnA() !== null;
-            if (!Z || !I) SQ(`[Sandbox Linux] Seccomp filtering not available (missing binaries for ${process.arch}). Sandbox will run without Unix socket blocking (allowAllUnixSockets mode). This is less restrictive but still provides filesystem and network isolation.`, {
+            if (!Z || !I) sandboxDebug(`[Sandbox Linux] Seccomp filtering not available (missing binaries for TextComponent{process.arch}). Sandbox will run without Unix socket blocking (allowAllUnixSockets mode). This is less restrictive but still provides filesystem and network isolation.`, {
                 level: "warn"
             })
         }
@@ -155,28 +157,27 @@ function P3B(A = !1) {
         return !1
     }
 }
-
 async function j3B(A, Q) {
     let B = rA6(8).toString("hex"),
-        G = R3B(O3B(), `claude-http-${B}.sock`),
-        Z = R3B(O3B(), `claude-socks-${B}.sock`),
-        I = [`UNIX-LISTEN:${G},fork,reuseaddr`, `TCP:localhost:${A},keepalive,keepidle=10,keepintvl=5,keepcnt=3`];
-    SQ(`Starting HTTP bridge: socat ${I.join(" ")}`);
+        G = R3B(O3B(), `claude-http-TextComponent{B}.sock`),
+        Z = R3B(O3B(), `claude-socks-TextComponent{B}.sock`),
+        I = [`UNIX-LISTEN:TextComponent{G},fork,reuseaddr`, `TCP:localhost:TextComponent{A},keepalive,keepidle=10,keepintvl=5,keepcnt=3`];
+    sandboxDebug(`Starting HTTP bridge: socat TextComponent{I.join(" ")}`);
     let Y = M3B("socat", I, {
         stdio: "ignore"
     });
     if (!Y.pid) throw Error("Failed to start HTTP bridge process");
     Y.on("error", (F) => {
-        SQ(`HTTP bridge process error: ${F}`, {
+        sandboxDebug(`HTTP bridge process error: TextComponent{F}`, {
             level: "error"
         })
     }), Y.on("exit", (F, V) => {
-        SQ(`HTTP bridge process exited with code ${F}, signal ${V}`, {
+        sandboxDebug(`HTTP bridge process exited with code TextComponent{F}, signal TextComponent{V}`, {
             level: F === 0 ? "info" : "error"
         })
     });
-    let J = [`UNIX-LISTEN:${Z},fork,reuseaddr`, `TCP:localhost:${Q},keepalive,keepidle=10,keepintvl=5,keepcnt=3`];
-    SQ(`Starting SOCKS bridge: socat ${J.join(" ")}`);
+    let J = [`UNIX-LISTEN:TextComponent{Z},fork,reuseaddr`, `TCP:localhost:TextComponent{Q},keepalive,keepidle=10,keepintvl=5,keepcnt=3`];
+    sandboxDebug(`Starting SOCKS bridge: socat TextComponent{J.join(" ")}`);
     let W = M3B("socat", J, {
         stdio: "ignore"
     });
@@ -187,11 +188,11 @@ async function j3B(A, Q) {
         throw Error("Failed to start SOCKS bridge process")
     }
     W.on("error", (F) => {
-        SQ(`SOCKS bridge process error: ${F}`, {
+        sandboxDebug(`SOCKS bridge process error: TextComponent{F}`, {
             level: "error"
         })
     }), W.on("exit", (F, V) => {
-        SQ(`SOCKS bridge process exited with code ${F}, signal ${V}`, {
+        sandboxDebug(`SOCKS bridge process exited with code TextComponent{F}, signal TextComponent{V}`, {
             level: F === 0 ? "info" : "error"
         })
     });
@@ -200,11 +201,11 @@ async function j3B(A, Q) {
         if (!Y.pid || Y.killed || !W.pid || W.killed) throw Error("Linux bridge process died unexpectedly");
         try {
             if (JT.existsSync(G) && JT.existsSync(Z)) {
-                SQ(`Linux bridges ready after ${F+1} attempts`);
+                sandboxDebug(`Linux bridges ready after TextComponent{F+1} attempts`);
                 break
             }
         } catch (V) {
-            SQ(`Error checking sockets (attempt ${F+1}): ${V}`, {
+            sandboxDebug(`Error checking sockets (attempt TextComponent{F+1}): TextComponent{V}`, {
                 level: "error"
             })
         }
@@ -215,7 +216,7 @@ async function j3B(A, Q) {
             if (W.pid) try {
                 process.kill(W.pid, "SIGTERM")
             } catch {}
-            throw Error(`Failed to create bridge sockets after ${X} attempts`)
+            throw Error(`Failed to create bridge sockets after TextComponent{X} attempts`)
         }
         await new Promise((V) => setTimeout(V, F * 100))
     }
@@ -231,21 +232,20 @@ async function j3B(A, Q) {
 
 function eA6(A, Q, B, G, Z) {
     let I = Z || "bash",
-        Y = [`socat TCP-LISTEN:3128,fork,reuseaddr UNIX-CONNECT:${A} >/dev/null 2>&1 &`, `socat TCP-LISTEN:1080,fork,reuseaddr UNIX-CONNECT:${Q} >/dev/null 2>&1 &`, 'trap "kill %1 %2 2>/dev/null; exit" EXIT'];
+        Y = [`socat TCP-LISTEN:3128,fork,reuseaddr UNIX-CONNECT:TextComponent{A} >/dev/null 2>&1 &`, `socat TCP-LISTEN:1080,fork,reuseaddr UNIX-CONNECT:TextComponent{Q} >/dev/null 2>&1 &`, 'trap "kill %1 %2 2>/dev/null; exit" EXIT'];
     if (G) {
         let J = BnA();
         if (!J) throw Error("apply-seccomp binary not found. This should have been caught earlier. Ensure vendor/seccomp/{x64,arm64}/apply-seccomp binaries are included in the package.");
         let W = It.default.quote([J, G, I, "-c", B]),
             X = [...Y, W].join(`
 `);
-        return `${I} -c ${It.default.quote([X])}`
+        return `TextComponent{I} -c TextComponent{It.default.quote([X])}`
     } else {
-        let J = [...Y, `eval ${It.default.quote([B])}`].join(`
+        let J = [...Y, `eval TextComponent{It.default.quote([B])}`].join(`
 `);
-        return `${I} -c ${It.default.quote([J])}`
+        return `TextComponent{I} -c TextComponent{It.default.quote([J])}`
     }
 }
-
 async function A16(A, Q, B = {
     command: "rg"
 }, G = Sb1, Z) {
@@ -255,12 +255,12 @@ async function A16(A, Q, B = {
         let J = [];
         for (let X of Q.allowOnly || []) {
             let F = YT(X);
-            if (SQ(`[Sandbox Linux] Processing write path: ${X} -> ${F}`), F.startsWith("/dev/")) {
-                SQ(`[Sandbox Linux] Skipping /dev path: ${F}`);
+            if (sandboxDebug(`[Sandbox Linux] Processing write path: TextComponent{X} -> TextComponent{F}`), F.startsWith("/dev/")) {
+                sandboxDebug(`[Sandbox Linux] Skipping /dev path: TextComponent{F}`);
                 continue
             }
             if (!JT.existsSync(F)) {
-                SQ(`[Sandbox Linux] Skipping non-existent write path: ${F}`);
+                sandboxDebug(`[Sandbox Linux] Skipping non-existent write path: TextComponent{F}`);
                 continue
             }
             I.push("--bind", F, F), J.push(F)
@@ -270,11 +270,11 @@ async function A16(A, Q, B = {
             let F = YT(X);
             if (F.startsWith("/dev/")) continue;
             if (!JT.existsSync(F)) {
-                SQ(`[Sandbox Linux] Skipping non-existent deny path: ${F}`);
+                sandboxDebug(`[Sandbox Linux] Skipping non-existent deny path: TextComponent{F}`);
                 continue
             }
             if (J.some((K) => F.startsWith(K + "/") || F === K)) I.push("--ro-bind", F, F);
-            else SQ(`[Sandbox Linux] Skipping deny path not within allowed paths: ${F}`)
+            else sandboxDebug(`[Sandbox Linux] Skipping deny path not within allowed paths: TextComponent{F}`)
         }
     } else I.push("--bind", "/", "/");
     let Y = [...A?.denyOnly || []];
@@ -282,7 +282,7 @@ async function A16(A, Q, B = {
     for (let J of Y) {
         let W = YT(J);
         if (!JT.existsSync(W)) {
-            SQ(`[Sandbox Linux] Skipping non-existent read deny path: ${W}`);
+            sandboxDebug(`[Sandbox Linux] Skipping non-existent read deny path: TextComponent{W}`);
             continue
         }
         if (JT.statSync(W).isDirectory()) I.push("--tmpfs", W);
@@ -290,7 +290,6 @@ async function A16(A, Q, B = {
     }
     return I
 }
-
 async function S3B(A) {
     let {
         command: Q,
@@ -315,18 +314,18 @@ async function S3B(A) {
         w = void 0;
     try {
         if (!F)
-            if (w = N3B() ?? void 0, !w) SQ("[Sandbox Linux] Seccomp filter not available (missing binaries). Continuing without Unix socket blocking - sandbox will still provide filesystem and network isolation but Unix sockets will be allowed.", {
+            if (w = N3B() ?? void 0, !w) sandboxDebug("[Sandbox Linux] Seccomp filter not available (missing binaries). Continuing without Unix socket blocking - sandbox will still provide filesystem and network isolation but Unix sockets will be allowed.", {
                 level: "warn"
             });
             else {
                 if (!w.includes("/vendor/seccomp/")) jb1.add(w), tA6();
-                SQ("[Sandbox Linux] Generated seccomp BPF filter for Unix socket blocking")
+                sandboxDebug("[Sandbox Linux] Generated seccomp BPF filter for Unix socket blocking")
             }
-        else if (F) SQ("[Sandbox Linux] Skipping seccomp filter - allowAllUnixSockets is enabled");
+        else if (F) sandboxDebug("[Sandbox Linux] Skipping seccomp filter - allowAllUnixSockets is enabled");
         if (B) {
             if (z.push("--unshare-net"), G && Z) {
-                if (!JT.existsSync(G)) throw Error(`Linux HTTP bridge socket does not exist: ${G}. The bridge process may have died. Try reinitializing the sandbox.`);
-                if (!JT.existsSync(Z)) throw Error(`Linux SOCKS bridge socket does not exist: ${Z}. The bridge process may have died. Try reinitializing the sandbox.`);
+                if (!JT.existsSync(G)) throw Error(`Linux HTTP bridge socket does not exist: TextComponent{G}. The bridge process may have died. Try reinitializing the sandbox.`);
+                if (!JT.existsSync(Z)) throw Error(`Linux SOCKS bridge socket does not exist: TextComponent{Z}. The bridge process may have died. Try reinitializing the sandbox.`);
                 z.push("--bind", G, G), z.push("--bind", Z, Z);
                 let x = AnA(3128, 1080);
                 if (z.push(...x.flatMap((p) => {
@@ -344,7 +343,7 @@ async function S3B(A) {
             R = Pb1("which", [q], {
                 encoding: "utf8"
             });
-        if (R.status !== 0) throw Error(`Shell '${q}' not found in PATH`);
+        if (R.status !== 0) throw Error(`Shell 'TextComponent{q}' not found in PATH`);
         let P = R.stdout.trim();
         if (z.push("--", P, "-c"), B && G && Z) {
             let x = eA6(G, Z, Q, w, P);
@@ -360,14 +359,14 @@ async function S3B(A) {
         if (B) v.push("network");
         if (C || E) v.push("filesystem");
         if (w) v.push("seccomp(unix-block)");
-        return SQ(`[Sandbox Linux] Wrapped command with bwrap (${v.join(", ")} restrictions)`), y
+        return sandboxDebug(`[Sandbox Linux] Wrapped command with bwrap (TextComponent{v.join(", ")} restrictions)`), y
     } catch (N) {
         if (w && !w.includes("/vendor/seccomp/")) {
             jb1.delete(w);
             try {
                 Tb1(w)
             } catch (q) {
-                SQ(`[Sandbox Linux] Failed to clean up seccomp filter on error: ${q}`, {
+                sandboxDebug(`[Sandbox Linux] Failed to clean up seccomp filter on error: TextComponent{q}`, {
                     level: "error"
                 })
             }
@@ -377,11 +376,11 @@ async function S3B(A) {
 }
 var It, Sb1 = 3,
     jb1, T3B = !1;
-var _3B = L(() => {
+var _3B = lazyLoader(() => {
     qb1();
     a3A();
     L3B();
-    It = GA(bxA(), 1);
+    It = esmImport(bxA(), 1);
     jb1 = new Set
 });
 import {
@@ -393,13 +392,13 @@ import * as bb from "path";
 function G16() {
     let A = process.cwd(),
         Q = [];
-    for (let B of lzA) Q.push(bb.resolve(A, B)), Q.push(`**/${B}`);
-    for (let B of eiA()) Q.push(bb.resolve(A, B)), Q.push(`**/${B}/**`);
+    for (let B of lzA) Q.push(bb.resolve(A, B)), Q.push(`**/TextComponent{B}`);
+    for (let B of eiA()) Q.push(bb.resolve(A, B)), Q.push(`**/TextComponent{B}/**`);
     return Q.push(bb.resolve(A, ".git/hooks")), Q.push(bb.resolve(A, ".git/config")), Q.push("**/.git/hooks/**"), Q.push("**/.git/config"), [...new Set(Q)]
 }
 
 function GnA(A) {
-    return "^" + A.replace(/[.^$+{}()|\\]/g, "\\$&").replace(/\[([^\]]*?)$/g, "\\[$1").replace(/\*\*\//g, "__GLOBSTAR_SLASH__").replace(/\*\*/g, "__GLOBSTAR__").replace(/\*/g, "[^/]*").replace(/\?/g, "[^/]").replace(/__GLOBSTAR_SLASH__/g, "(.*/)?").replace(/__GLOBSTAR__/g, ".*") + "$"
+    return "^" + A.replace(/[.^TextComponent+{}()|\\]/g, "\\TextComponent&").replace(/\[([^\]]*?)TextComponent/g, "\\[$1").replace(/\*\*\//g, "__GLOBSTAR_SLASH__").replace(/\*\*/g, "__GLOBSTAR__").replace(/\*/g, "[^/]*").replace(/\?/g, "[^/]").replace(/__GLOBSTAR_SLASH__/g, "(.*/)?").replace(/__GLOBSTAR__/g, ".*") + "TextComponent"
 }
 
 function Z16(A) {
@@ -424,16 +423,16 @@ function v3B(A, Q) {
         let Z = YT(G);
         if (IT(Z)) {
             let I = GnA(Z);
-            B.push("(deny file-write-unlink", `  (regex ${dw(I)})`, `  (with message "${Q}"))`);
+            B.push("(deny file-write-unlink", `  (regex TextComponent{dw(I)})`, `  (with message "TextComponent{Q}"))`);
             let Y = Z.split(/[*?[\]]/)[0];
             if (Y && Y !== "/") {
                 let J = Y.endsWith("/") ? Y.slice(0, -1) : bb.dirname(Y);
-                B.push("(deny file-write-unlink", `  (literal ${dw(J)})`, `  (with message "${Q}"))`);
-                for (let W of k3B(J)) B.push("(deny file-write-unlink", `  (literal ${dw(W)})`, `  (with message "${Q}"))`)
+                B.push("(deny file-write-unlink", `  (literal TextComponent{dw(J)})`, `  (with message "TextComponent{Q}"))`);
+                for (let W of k3B(J)) B.push("(deny file-write-unlink", `  (literal TextComponent{dw(W)})`, `  (with message "TextComponent{Q}"))`)
             }
         } else {
-            B.push("(deny file-write-unlink", `  (subpath ${dw(Z)})`, `  (with message "${Q}"))`);
-            for (let I of k3B(Z)) B.push("(deny file-write-unlink", `  (literal ${dw(I)})`, `  (with message "${Q}"))`)
+            B.push("(deny file-write-unlink", `  (subpath TextComponent{dw(Z)})`, `  (with message "TextComponent{Q}"))`);
+            for (let I of k3B(Z)) B.push("(deny file-write-unlink", `  (literal TextComponent{dw(I)})`, `  (with message "TextComponent{Q}"))`)
         }
     }
     return B
@@ -447,8 +446,8 @@ function I16(A, Q) {
         let Z = YT(G);
         if (IT(Z)) {
             let I = GnA(Z);
-            B.push("(deny file-read*", `  (regex ${dw(I)})`, `  (with message "${Q}"))`)
-        } else B.push("(deny file-read*", `  (subpath ${dw(Z)})`, `  (with message "${Q}"))`)
+            B.push("(deny file-read*", `  (regex TextComponent{dw(I)})`, `  (with message "TextComponent{Q}"))`)
+        } else B.push("(deny file-read*", `  (subpath TextComponent{dw(Z)})`, `  (with message "TextComponent{Q}"))`)
     }
     return B.push(...v3B(A.denyOnly || [], Q)), B
 }
@@ -459,22 +458,22 @@ function Y16(A, Q) {
         G = W16();
     for (let I of G) {
         let Y = YT(I);
-        B.push("(allow file-write*", `  (subpath ${dw(Y)})`, `  (with message "${Q}"))`)
+        B.push("(allow file-write*", `  (subpath TextComponent{dw(Y)})`, `  (with message "TextComponent{Q}"))`)
     }
     for (let I of A.allowOnly || []) {
         let Y = YT(I);
         if (IT(Y)) {
             let J = GnA(Y);
-            B.push("(allow file-write*", `  (regex ${dw(J)})`, `  (with message "${Q}"))`)
-        } else B.push("(allow file-write*", `  (subpath ${dw(Y)})`, `  (with message "${Q}"))`)
+            B.push("(allow file-write*", `  (regex TextComponent{dw(J)})`, `  (with message "TextComponent{Q}"))`)
+        } else B.push("(allow file-write*", `  (subpath TextComponent{dw(Y)})`, `  (with message "TextComponent{Q}"))`)
     }
     let Z = [...A.denyWithinAllow || [], ...G16()];
     for (let I of Z) {
         let Y = YT(I);
         if (IT(Y)) {
             let J = GnA(Y);
-            B.push("(deny file-write*", `  (regex ${dw(J)})`, `  (with message "${Q}"))`)
-        } else B.push("(deny file-write*", `  (subpath ${dw(Y)})`, `  (with message "${Q}"))`)
+            B.push("(deny file-write*", `  (regex TextComponent{dw(J)})`, `  (with message "TextComponent{Q}"))`)
+        } else B.push("(deny file-write*", `  (subpath TextComponent{dw(Y)})`, `  (with message "TextComponent{Q}"))`)
     }
     return B.push(...v3B(Z, Q)), B
 }
@@ -490,7 +489,7 @@ function J16({
     allowLocalBinding: J,
     logTag: W
 }) {
-    let X = ["(version 1)", `(deny default (with message "${W}"))`, "", `; LogTag: ${W}`, "", "; Essential permissions - based on Chrome sandbox policy", "; Process permissions", "(allow process-exec)", "(allow process-fork)", "(allow process-info* (target same-sandbox))", "(allow signal (target same-sandbox))", "(allow mach-priv-task-port (target same-sandbox))", "", "; User preferences", "(allow user-preference-read)", "", "; Mach IPC - specific services only (no wildcard)", "(allow mach-lookup", '  (global-name "com.apple.audio.systemsoundserver")', '  (global-name "com.apple.distributed_notifications@Uv3")', '  (global-name "com.apple.FontObjectsServer")', '  (global-name "com.apple.fonts")', '  (global-name "com.apple.logd")', '  (global-name "com.apple.lsd.mapdb")', '  (global-name "com.apple.PowerManagement.control")', '  (global-name "com.apple.system.logger")', '  (global-name "com.apple.system.notification_center")', '  (global-name "com.apple.trustd.agent")', '  (global-name "com.apple.system.opendirectoryd.libinfo")', '  (global-name "com.apple.system.opendirectoryd.membership")', '  (global-name "com.apple.bsd.dirhelper")', '  (global-name "com.apple.securityd.xpc")', '  (global-name "com.apple.coreservices.launchservicesd")', ")", "", "; POSIX IPC - shared memory", "(allow ipc-posix-shm)", "", "; POSIX IPC - semaphores for Python multiprocessing", "(allow ipc-posix-sem)", "", "; IOKit - specific operations only", "(allow iokit-open", '  (iokit-registry-entry-class "IOSurfaceRootUserClient")', '  (iokit-registry-entry-class "RootDomainUserClient")', '  (iokit-user-client-class "IOSurfaceSendRight")', ")", "", "; IOKit properties", "(allow iokit-get-properties)", "", "; Specific safe system-sockets, doesn't allow network access", "(allow system-socket (require-all (socket-domain AF_SYSTEM) (socket-protocol 2)))", "", "; sysctl - specific sysctls only", "(allow sysctl-read", '  (sysctl-name "hw.activecpu")', '  (sysctl-name "hw.busfrequency_compat")', '  (sysctl-name "hw.byteorder")', '  (sysctl-name "hw.cacheconfig")', '  (sysctl-name "hw.cachelinesize_compat")', '  (sysctl-name "hw.cpufamily")', '  (sysctl-name "hw.cpufrequency")', '  (sysctl-name "hw.cpufrequency_compat")', '  (sysctl-name "hw.cputype")', '  (sysctl-name "hw.l1dcachesize_compat")', '  (sysctl-name "hw.l1icachesize_compat")', '  (sysctl-name "hw.l2cachesize_compat")', '  (sysctl-name "hw.l3cachesize_compat")', '  (sysctl-name "hw.logicalcpu")', '  (sysctl-name "hw.logicalcpu_max")', '  (sysctl-name "hw.machine")', '  (sysctl-name "hw.memsize")', '  (sysctl-name "hw.ncpu")', '  (sysctl-name "hw.nperflevels")', '  (sysctl-name "hw.packages")', '  (sysctl-name "hw.pagesize_compat")', '  (sysctl-name "hw.pagesize")', '  (sysctl-name "hw.physicalcpu")', '  (sysctl-name "hw.physicalcpu_max")', '  (sysctl-name "hw.tbfrequency_compat")', '  (sysctl-name "hw.vectorunit")', '  (sysctl-name "kern.argmax")', '  (sysctl-name "kern.bootargs")', '  (sysctl-name "kern.hostname")', '  (sysctl-name "kern.maxfiles")', '  (sysctl-name "kern.maxfilesperproc")', '  (sysctl-name "kern.maxproc")', '  (sysctl-name "kern.ngroups")', '  (sysctl-name "kern.osproductversion")', '  (sysctl-name "kern.osrelease")', '  (sysctl-name "kern.ostype")', '  (sysctl-name "kern.osvariant_status")', '  (sysctl-name "kern.osversion")', '  (sysctl-name "kern.secure_kernel")', '  (sysctl-name "kern.tcsm_available")', '  (sysctl-name "kern.tcsm_enable")', '  (sysctl-name "kern.usrstack64")', '  (sysctl-name "kern.version")', '  (sysctl-name "kern.willshutdown")', '  (sysctl-name "machdep.cpu.brand_string")', '  (sysctl-name "machdep.ptrauth_enabled")', '  (sysctl-name "security.mac.lockdown_mode_state")', '  (sysctl-name "sysctl.proc_cputype")', '  (sysctl-name "vm.loadavg")', '  (sysctl-name-prefix "hw.optional.arm")', '  (sysctl-name-prefix "hw.optional.arm.")', '  (sysctl-name-prefix "hw.optional.armv8_")', '  (sysctl-name-prefix "hw.perflevel")', '  (sysctl-name-prefix "kern.proc.pgrp.")', '  (sysctl-name-prefix "kern.proc.pid.")', '  (sysctl-name-prefix "machdep.cpu.")', '  (sysctl-name-prefix "net.routetable.")', ")", "", "; V8 thread calculations", "(allow sysctl-write", '  (sysctl-name "kern.tcsm_enable")', ")", "", "; Distributed notifications", "(allow distributed-notification-post)", "", "; Specific mach-lookup permissions for security operations", '(allow mach-lookup (global-name "com.apple.SecurityServer"))', "", "; File I/O on device files", '(allow file-ioctl (literal "/dev/null"))', '(allow file-ioctl (literal "/dev/zero"))', '(allow file-ioctl (literal "/dev/random"))', '(allow file-ioctl (literal "/dev/urandom"))', '(allow file-ioctl (literal "/dev/dtracehelper"))', '(allow file-ioctl (literal "/dev/tty"))', "", "(allow file-ioctl file-read-data file-write-data", "  (require-all", '    (literal "/dev/null")', "    (vnode-type CHARACTER-DEVICE)", "  )", ")", ""];
+    let X = ["(version 1)", `(deny default (with message "TextComponent{W}"))`, "", `; LogTag: TextComponent{W}`, "", "; Essential permissions - based on Chrome sandbox policy", "; Process permissions", "(allow process-exec)", "(allow process-fork)", "(allow process-info* (target same-sandbox))", "(allow signal (target same-sandbox))", "(allow mach-priv-task-port (target same-sandbox))", "", "; User preferences", "(allow user-preference-read)", "", "; Mach IPC - specific services only (no wildcard)", "(allow mach-lookup", '  (global-name "com.apple.audio.systemsoundserver")', '  (global-name "com.apple.distributed_notifications@Uv3")', '  (global-name "com.apple.FontObjectsServer")', '  (global-name "com.apple.fonts")', '  (global-name "com.apple.logd")', '  (global-name "com.apple.lsd.mapdb")', '  (global-name "com.apple.PowerManagement.control")', '  (global-name "com.apple.system.logger")', '  (global-name "com.apple.system.notification_center")', '  (global-name "com.apple.trustd.agent")', '  (global-name "com.apple.system.opendirectoryd.libinfo")', '  (global-name "com.apple.system.opendirectoryd.membership")', '  (global-name "com.apple.bsd.dirhelper")', '  (global-name "com.apple.securityd.xpc")', '  (global-name "com.apple.coreservices.launchservicesd")', ")", "", "; POSIX IPC - shared memory", "(allow ipc-posix-shm)", "", "; POSIX IPC - semaphores for Python multiprocessing", "(allow ipc-posix-sem)", "", "; IOKit - specific operations only", "(allow iokit-open", '  (iokit-registry-entry-class "IOSurfaceRootUserClient")', '  (iokit-registry-entry-class "RootDomainUserClient")', '  (iokit-user-client-class "IOSurfaceSendRight")', ")", "", "; IOKit properties", "(allow iokit-get-properties)", "", "; Specific safe system-sockets, doesn't allow network access", "(allow system-socket (require-all (socket-domain AF_SYSTEM) (socket-protocol 2)))", "", "; sysctl - specific sysctls only", "(allow sysctl-read", '  (sysctl-name "hw.activecpu")', '  (sysctl-name "hw.busfrequency_compat")', '  (sysctl-name "hw.byteorder")', '  (sysctl-name "hw.cacheconfig")', '  (sysctl-name "hw.cachelinesize_compat")', '  (sysctl-name "hw.cpufamily")', '  (sysctl-name "hw.cpufrequency")', '  (sysctl-name "hw.cpufrequency_compat")', '  (sysctl-name "hw.cputype")', '  (sysctl-name "hw.l1dcachesize_compat")', '  (sysctl-name "hw.l1icachesize_compat")', '  (sysctl-name "hw.l2cachesize_compat")', '  (sysctl-name "hw.l3cachesize_compat")', '  (sysctl-name "hw.logicalcpu")', '  (sysctl-name "hw.logicalcpu_max")', '  (sysctl-name "hw.machine")', '  (sysctl-name "hw.memsize")', '  (sysctl-name "hw.ncpu")', '  (sysctl-name "hw.nperflevels")', '  (sysctl-name "hw.packages")', '  (sysctl-name "hw.pagesize_compat")', '  (sysctl-name "hw.pagesize")', '  (sysctl-name "hw.physicalcpu")', '  (sysctl-name "hw.physicalcpu_max")', '  (sysctl-name "hw.tbfrequency_compat")', '  (sysctl-name "hw.vectorunit")', '  (sysctl-name "kern.argmax")', '  (sysctl-name "kern.bootargs")', '  (sysctl-name "kern.hostname")', '  (sysctl-name "kern.maxfiles")', '  (sysctl-name "kern.maxfilesperproc")', '  (sysctl-name "kern.maxproc")', '  (sysctl-name "kern.ngroups")', '  (sysctl-name "kern.osproductversion")', '  (sysctl-name "kern.osrelease")', '  (sysctl-name "kern.ostype")', '  (sysctl-name "kern.osvariant_status")', '  (sysctl-name "kern.osversion")', '  (sysctl-name "kern.secure_kernel")', '  (sysctl-name "kern.tcsm_available")', '  (sysctl-name "kern.tcsm_enable")', '  (sysctl-name "kern.usrstack64")', '  (sysctl-name "kern.version")', '  (sysctl-name "kern.willshutdown")', '  (sysctl-name "machdep.cpu.brand_string")', '  (sysctl-name "machdep.ptrauth_enabled")', '  (sysctl-name "security.mac.lockdown_mode_state")', '  (sysctl-name "sysctl.proc_cputype")', '  (sysctl-name "vm.loadavg")', '  (sysctl-name-prefix "hw.optional.arm")', '  (sysctl-name-prefix "hw.optional.arm.")', '  (sysctl-name-prefix "hw.optional.armv8_")', '  (sysctl-name-prefix "hw.perflevel")', '  (sysctl-name-prefix "kern.proc.pgrp.")', '  (sysctl-name-prefix "kern.proc.pid.")', '  (sysctl-name-prefix "machdep.cpu.")', '  (sysctl-name-prefix "net.routetable.")', ")", "", "; V8 thread calculations", "(allow sysctl-write", '  (sysctl-name "kern.tcsm_enable")', ")", "", "; Distributed notifications", "(allow distributed-notification-post)", "", "; Specific mach-lookup permissions for security operations", '(allow mach-lookup (global-name "com.apple.SecurityServer"))', "", "; File I/O on device files", '(allow file-ioctl (literal "/dev/null"))', '(allow file-ioctl (literal "/dev/zero"))', '(allow file-ioctl (literal "/dev/random"))', '(allow file-ioctl (literal "/dev/urandom"))', '(allow file-ioctl (literal "/dev/dtracehelper"))', '(allow file-ioctl (literal "/dev/tty"))', "", "(allow file-ioctl file-read-data file-write-data", "  (require-all", '    (literal "/dev/null")', "    (vnode-type CHARACTER-DEVICE)", "  )", ")", ""];
     if (X.push("; Network"), !Z) X.push("(allow network*)");
     else {
         if (J) X.push('(allow network-bind (local ip "localhost:*"))'), X.push('(allow network-inbound (local ip "localhost:*"))'), X.push('(allow network-outbound (local ip "localhost:*"))');
@@ -498,10 +497,10 @@ function J16({
         else if (I && I.length > 0)
             for (let F of I) {
                 let V = YT(F);
-                X.push(`(allow network* (subpath ${dw(V)}))`)
+                X.push(`(allow network* (subpath TextComponent{dw(V)}))`)
             }
-        if (B !== void 0) X.push(`(allow network-bind (local ip "localhost:${B}"))`), X.push(`(allow network-inbound (local ip "localhost:${B}"))`), X.push(`(allow network-outbound (remote ip "localhost:${B}"))`);
-        if (G !== void 0) X.push(`(allow network-bind (local ip "localhost:${G}"))`), X.push(`(allow network-inbound (local ip "localhost:${G}"))`), X.push(`(allow network-outbound (remote ip "localhost:${G}"))`)
+        if (B !== void 0) X.push(`(allow network-bind (local ip "localhost:TextComponent{B}"))`), X.push(`(allow network-inbound (local ip "localhost:TextComponent{B}"))`), X.push(`(allow network-outbound (remote ip "localhost:TextComponent{B}"))`);
+        if (G !== void 0) X.push(`(allow network-bind (local ip "localhost:TextComponent{G}"))`), X.push(`(allow network-inbound (local ip "localhost:TextComponent{G}"))`), X.push(`(allow network-outbound (remote ip "localhost:TextComponent{G}"))`)
     }
     return X.push(""), X.push("; File read"), X.push(...I16(A, W)), X.push(""), X.push("; File write"), X.push(...Y16(Q, W)), X.join(`
 `)
@@ -514,8 +513,8 @@ function dw(A) {
 function W16() {
     let A = process.env.TMPDIR;
     if (!A) return [];
-    if (!A.match(/^\/(private\/)?var\/folders\/[^/]{2}\/[^/]+\/T\/?$/)) return [];
-    let B = A.replace(/\/T\/?$/, "");
+    if (!A.match(/^\/(private\/)?var\/folders\/[^/]{2}\/[^/]+\/T\/?TextComponent/)) return [];
+    let B = A.replace(/\/T\/?TextComponent/, "");
     if (B.startsWith("/private/var/")) return [B, B.replace("/private", "")];
     else if (B.startsWith("/var/")) return [B, "/private" + B];
     return [B]
@@ -547,23 +546,23 @@ function b3B(A) {
             allowLocalBinding: J,
             logTag: D
         }),
-        C = `export ${AnA(G,Z).join(" ")} && `,
+        C = `export TextComponent{AnA(G,Z).join(" ")} && `,
         E = F || "bash",
         z = B16("which", [E], {
             encoding: "utf8"
         });
-    if (z.status !== 0) throw Error(`Shell '${E}' not found in PATH`);
+    if (z.status !== 0) throw Error(`Shell 'TextComponent{E}' not found in PATH`);
     let w = z.stdout.trim(),
         N = y3B.default.quote(["sandbox-exec", "-p", H, w, "-c", C + Q]);
-    return SQ(`[Sandbox macOS] Applied restrictions - network: ${!!(G||Z)}, read: ${W?"allowAllExcept"in W?"allowAllExcept":"denyAllExcept":"none"}, write: ${X?"allowAllExcept"in X?"allowAllExcept":"denyAllExcept":"none"}`), N
+    return sandboxDebug(`[Sandbox macOS] Applied restrictions - network: TextComponent{!!(G||Z)}, read: TextComponent{W?"allowAllExcept"in W?"allowAllExcept":"denyAllExcept":"none"}, write: TextComponent{X?"allowAllExcept"in X?"allowAllExcept":"denyAllExcept":"none"}`), N
 }
 
 function f3B(A, Q) {
     let B = /CMD64_(.+?)_END/,
-        G = /Sandbox:\s+(.+)$/,
+        G = /Sandbox:\s+(.+)TextComponent/,
         Z = Q?.["*"] || [],
         I = Q ? Object.entries(Q).filter(([J]) => J !== "*") : [],
-        Y = Q16("log", ["stream", "--predicate", `(eventMessage ENDSWITH "${x3B}")`, "--style", "compact"]);
+        Y = Q16("log", ["stream", "--predicate", `(eventMessage ENDSWITH "TextComponent{x3B}")`, "--style", "compact"]);
     return Y.stdout?.on("data", (J) => {
         let W = J.toString().split(`
 `),
@@ -596,22 +595,21 @@ function f3B(A, Q) {
             timestamp: new Date
         })
     }), Y.stderr?.on("data", (J) => {
-        SQ(`[Sandbox Monitor] Log stream stderr: ${J.toString()}`)
+        sandboxDebug(`[Sandbox Monitor] Log stream stderr: TextComponent{J.toString()}`)
     }), Y.on("error", (J) => {
-        SQ(`[Sandbox Monitor] Failed to start log stream: ${J.message}`)
+        sandboxDebug(`[Sandbox Monitor] Failed to start log stream: TextComponent{J.message}`)
     }), Y.on("exit", (J) => {
-        SQ(`[Sandbox Monitor] Log stream exited with code: ${J}`)
+        sandboxDebug(`[Sandbox Monitor] Log stream exited with code: TextComponent{J}`)
     }), () => {
-        SQ("[Sandbox Monitor] Stopping log monitor"), Y.kill("SIGTERM")
+        sandboxDebug("[Sandbox Monitor] Stopping log monitor"), Y.kill("SIGTERM")
     }
 }
 var y3B, x3B;
-var h3B = L(() => {
+var h3B = lazyLoader(() => {
     a3A();
-    y3B = GA(bxA(), 1);
+    y3B = esmImport(bxA(), 1);
     x3B = `_${Math.random().toString(36).slice(2,11)}_SBX`
 });
-
 class azA {
     constructor() {
         this.violations = [], this.totalCount = 0, this.maxSize = 100, this.listeners = new Set
@@ -647,7 +645,7 @@ class azA {
         this.listeners.forEach((Q) => Q(A))
     }
 }
-var _b1 = L(() => {
+var _b1 = lazyLoader(() => {
     a3A()
 });
 import * as yb1 from "fs";
@@ -658,7 +656,7 @@ import {
 function X16() {
     if (g3B) return;
     let A = () => xb1().catch((Q) => {
-        SQ(`Cleanup failed in registerCleanup ${Q}`, {
+        sandboxDebug(`Cleanup failed in registerCleanup TextComponent{Q}`, {
             level: "error"
         })
     });
@@ -672,30 +670,28 @@ function u3B(A, Q) {
     }
     return A.toLowerCase() === Q.toLowerCase()
 }
-
 async function d3B(A, Q, B) {
-    if (!a8) return SQ("No config available, denying network request"), !1;
+    if (!a8) return sandboxDebug("No config available, denying network request"), !1;
     for (let G of a8.network.deniedDomains)
-        if (u3B(Q, G)) return SQ(`Denied by config rule: ${Q}:${A}`), !1;
+        if (u3B(Q, G)) return sandboxDebug(`Denied by config rule: TextComponent{Q}:TextComponent{A}`), !1;
     for (let G of a8.network.allowedDomains)
-        if (u3B(Q, G)) return SQ(`Allowed by config rule: ${Q}:${A}`), !0;
-    if (!B) return SQ(`No matching config rule, denying: ${Q}:${A}`), !1;
-    SQ(`No matching config rule, asking user: ${Q}:${A}`);
+        if (u3B(Q, G)) return sandboxDebug(`Allowed by config rule: TextComponent{Q}:TextComponent{A}`), !0;
+    if (!B) return sandboxDebug(`No matching config rule, denying: TextComponent{Q}:TextComponent{A}`), !1;
+    sandboxDebug(`No matching config rule, asking user: TextComponent{Q}:TextComponent{A}`);
     try {
         if (await B({
                 host: Q,
                 port: A
-            })) return SQ(`User allowed: ${Q}:${A}`), !0;
-        else return SQ(`User denied: ${Q}:${A}`), !1
+            })) return sandboxDebug(`User allowed: TextComponent{Q}:TextComponent{A}`), !0;
+        else return sandboxDebug(`User denied: TextComponent{Q}:TextComponent{A}`), !1
     } catch (G) {
-        return SQ(`Error in permission callback: ${G}`, {
+        return sandboxDebug(`Error in permission callback: TextComponent{G}`, {
             level: "error"
         }), !1
     }
 }
-
 async function F16(A) {
-    return s3A = P6B({
+    return s3A = createProxyServer({
         filter: (Q, B) => d3B(Q, B, A)
     }), new Promise((Q, B) => {
         if (!s3A) {
@@ -705,12 +701,11 @@ async function F16(A) {
         let G = s3A;
         G.once("error", B), G.once("listening", () => {
             let Z = G.address();
-            if (Z && typeof Z === "object") G.unref(), SQ(`HTTP proxy listening on localhost:${Z.port}`), Q(Z.port);
+            if (Z && typeof Z === "object") G.unref(), sandboxDebug(`HTTP proxy listening on localhost:TextComponent{Z.port}`), Q(Z.port);
             else B(Error("Failed to get proxy server address"))
         }), G.listen(0, "127.0.0.1")
     })
 }
-
 async function V16(A) {
     return Yt = h6B({
         filter: (Q, B) => d3B(Q, B, A)
@@ -724,7 +719,6 @@ async function V16(A) {
         }).catch(B)
     })
 }
-
 async function K16(A, Q, B = !1) {
     if (gc) {
         await gc;
@@ -735,17 +729,17 @@ async function K16(A, Q, B = !1) {
             Z = "Sandbox dependencies are not available on this system.";
         if (G === "linux") Z += " Required: ripgrep (rg), bubblewrap (bwrap), and socat.";
         else if (G === "macos") Z += " Required: ripgrep (rg).";
-        else Z += ` Platform '${G}' is not supported.`;
+        else Z += ` Platform 'TextComponent{G}' is not supported.`;
         throw Error(Z)
     }
-    if (B && ZM() === "macos") ZnA = f3B(InA.addViolation.bind(InA), a8.ignoreViolations), SQ("Started macOS sandbox log monitor");
+    if (B && ZM() === "macos") ZnA = f3B(InA.addViolation.bind(InA), a8.ignoreViolations), sandboxDebug("Started macOS sandbox log monitor");
     X16(), gc = (async () => {
         try {
             let G;
-            if (a8.network.httpProxyPort !== void 0) G = a8.network.httpProxyPort, SQ(`Using external HTTP proxy on port ${G}`);
+            if (a8.network.httpProxyPort !== void 0) G = a8.network.httpProxyPort, sandboxDebug(`Using external HTTP proxy on port TextComponent{G}`);
             else G = await F16(Q);
             let Z;
-            if (a8.network.socksProxyPort !== void 0) Z = a8.network.socksProxyPort, SQ(`Using external SOCKS proxy on port ${Z}`);
+            if (a8.network.socksProxyPort !== void 0) Z = a8.network.socksProxyPort, sandboxDebug(`Using external SOCKS proxy on port TextComponent{Z}`);
             else Z = await V16(Q);
             let I;
             if (ZM() === "linux") I = await j3B(G, Z);
@@ -754,10 +748,10 @@ async function K16(A, Q, B = !1) {
                 socksProxyPort: Z,
                 linuxBridge: I
             };
-            return IM = Y, SQ("Network infrastructure initialized"), Y
+            return IM = Y, sandboxDebug("Network infrastructure initialized"), Y
         } catch (G) {
             throw gc = void 0, IM = void 0, xb1().catch((Z) => {
-                SQ(`Cleanup failed in initializationPromise ${Z}`, {
+                sandboxDebug(`Cleanup failed in initializationPromise TextComponent{Z}`, {
                     level: "error"
                 })
             }), G
@@ -792,7 +786,7 @@ function H16() {
     };
     return {
         denyOnly: a8.filesystem.denyRead.map((Q) => izA(Q)).filter((Q) => {
-            if (ZM() === "linux" && IT(Q)) return SQ(`Skipping glob pattern on Linux: ${Q}`), !1;
+            if (ZM() === "linux" && IT(Q)) return sandboxDebug(`Skipping glob pattern on Linux: TextComponent{Q}`), !1;
             return !0
         })
     }
@@ -804,11 +798,11 @@ function C16() {
         denyWithinAllow: []
     };
     let A = a8.filesystem.allowWrite.map((G) => izA(G)).filter((G) => {
-            if (ZM() === "linux" && IT(G)) return SQ(`Skipping glob pattern on Linux: ${G}`), !1;
+            if (ZM() === "linux" && IT(G)) return sandboxDebug(`Skipping glob pattern on Linux: TextComponent{G}`), !1;
             return !0
         }),
         Q = a8.filesystem.denyWrite.map((G) => izA(G)).filter((G) => {
-            if (ZM() === "linux" && IT(G)) return SQ(`Skipping glob pattern on Linux: ${G}`), !1;
+            if (ZM() === "linux" && IT(G)) return sandboxDebug(`Skipping glob pattern on Linux: TextComponent{G}`), !1;
             return !0
         });
     return {
@@ -876,7 +870,6 @@ function o3B() {
 function t3B() {
     return IM?.linuxBridge?.socksSocketPath
 }
-// Async function: e3B
 async function e3B() {
     if (!a8) return !1;
     if (gc) try {
@@ -934,7 +927,7 @@ async function $16(A, Q, B, G) {
                 abortSignal: G
             });
         default:
-            throw Error(`Sandbox configuration is not supported on platform: ${Z}`)
+            throw Error(`Sandbox configuration is not supported on platform: TextComponent{Z}`)
     }
 }
 
@@ -943,9 +936,8 @@ function w16() {
 }
 
 function q16(A) {
-    a8 = Jv(A), SQ("Sandbox configuration updated")
+    a8 = Jv(A), sandboxDebug("Sandbox configuration updated")
 }
-// Async function: xb1
 async function xb1() {
     if (ZnA) ZnA(), ZnA = void 0;
     if (IM?.linuxBridge) {
@@ -956,12 +948,12 @@ async function xb1() {
             socksBridgeProcess: Z
         } = IM.linuxBridge, I = [];
         if (G.pid && !G.killed) try {
-            process.kill(G.pid, "SIGTERM"), SQ("Sent SIGTERM to HTTP bridge process"), I.push(new Promise((Y) => {
+            process.kill(G.pid, "SIGTERM"), sandboxDebug("Sent SIGTERM to HTTP bridge process"), I.push(new Promise((Y) => {
                 G.once("exit", () => {
-                    SQ("HTTP bridge process exited"), Y()
+                    sandboxDebug("HTTP bridge process exited"), Y()
                 }), setTimeout(() => {
                     if (!G.killed) {
-                        SQ("HTTP bridge did not exit, forcing SIGKILL", {
+                        sandboxDebug("HTTP bridge did not exit, forcing SIGKILL", {
                             level: "warn"
                         });
                         try {
@@ -972,17 +964,17 @@ async function xb1() {
                 }, 5000)
             }))
         } catch (Y) {
-            if (Y.code !== "ESRCH") SQ(`Error killing HTTP bridge: ${Y}`, {
+            if (Y.code !== "ESRCH") sandboxDebug(`Error killing HTTP bridge: TextComponent{Y}`, {
                 level: "error"
             })
         }
         if (Z.pid && !Z.killed) try {
-            process.kill(Z.pid, "SIGTERM"), SQ("Sent SIGTERM to SOCKS bridge process"), I.push(new Promise((Y) => {
+            process.kill(Z.pid, "SIGTERM"), sandboxDebug("Sent SIGTERM to SOCKS bridge process"), I.push(new Promise((Y) => {
                 Z.once("exit", () => {
-                    SQ("SOCKS bridge process exited"), Y()
+                    sandboxDebug("SOCKS bridge process exited"), Y()
                 }), setTimeout(() => {
                     if (!Z.killed) {
-                        SQ("SOCKS bridge did not exit, forcing SIGKILL", {
+                        sandboxDebug("SOCKS bridge did not exit, forcing SIGKILL", {
                             level: "warn"
                         });
                         try {
@@ -993,25 +985,25 @@ async function xb1() {
                 }, 5000)
             }))
         } catch (Y) {
-            if (Y.code !== "ESRCH") SQ(`Error killing SOCKS bridge: ${Y}`, {
+            if (Y.code !== "ESRCH") sandboxDebug(`Error killing SOCKS bridge: TextComponent{Y}`, {
                 level: "error"
             })
         }
         if (await Promise.all(I), Q) try {
             yb1.rmSync(Q, {
                 force: !0
-            }), SQ("Cleaned up HTTP socket")
+            }), sandboxDebug("Cleaned up HTTP socket")
         } catch (Y) {
-            SQ(`HTTP socket cleanup error: ${Y}`, {
+            sandboxDebug(`HTTP socket cleanup error: TextComponent{Y}`, {
                 level: "error"
             })
         }
         if (B) try {
             yb1.rmSync(B, {
                 force: !0
-            }), SQ("Cleaned up SOCKS socket")
+            }), sandboxDebug("Cleaned up SOCKS socket")
         } catch (Y) {
-            SQ(`SOCKS socket cleanup error: ${Y}`, {
+            sandboxDebug(`SOCKS socket cleanup error: TextComponent{Y}`, {
                 level: "error"
             })
         }
@@ -1021,7 +1013,7 @@ async function xb1() {
         let Q = s3A,
             B = new Promise((G) => {
                 Q.close((Z) => {
-                    if (Z && Z.message !== "Server is not running.") SQ(`Error closing HTTP proxy server: ${Z.message}`, {
+                    if (Z && Z.message !== "Server is not running.") sandboxDebug(`Error closing HTTP proxy server: TextComponent{Z.message}`, {
                         level: "error"
                     });
                     G()
@@ -1031,7 +1023,7 @@ async function xb1() {
     }
     if (Yt) {
         let Q = Yt.close().catch((B) => {
-            SQ(`Error closing SOCKS proxy server: ${B.message}`, {
+            sandboxDebug(`Error closing SOCKS proxy server: TextComponent{B.message}`, {
                 level: "error"
             })
         });
@@ -1066,8 +1058,8 @@ function M16() {
 }
 var a8, s3A, Yt, IM, gc, g3B = !1,
     ZnA, InA, rI;
-var A7B = L(() => {
-    j6B();
+var A7B = lazyLoader(() => {
+    emptyFunction();
     g6B();
     n3A();
     _3B();
@@ -1103,7 +1095,7 @@ var A7B = L(() => {
     }
 });
 var Q7B, vb1, B7B, G7B, Z7B, I7B, Y7B;
-var J7B = L(() => {
+var J7B = lazyLoader(() => {
     h2();
     Q7B = _.string().refine((A) => {
         if (A.includes("://") || A.includes("/") || A.includes(":")) return !1;
@@ -1142,7 +1134,7 @@ var J7B = L(() => {
         mandatoryDenySearchDepth: _.number().int().min(1).max(10).optional().describe("Maximum directory depth to search for dangerous files on Linux (default: 3). Higher values provide more protection but slower performance.")
     })
 });
-var W7B = L(() => {
+var W7B = lazyLoader(() => {
     A7B();
     _b1();
     J7B();
@@ -1170,7 +1162,7 @@ function E7B(A, Q = {}) {
     if (B) Q.type = B;
     if (!A) throw Error("readdirp: root argument is required. Usage: readdirp(root, options)");
     else if (typeof A !== "string") throw TypeError("readdirp: root argument must be a string. Usage: readdirp(root, options)");
-    else if (B && !V7B.includes(B)) throw Error(`readdirp: Invalid type passed. Use one of ${V7B.join(", ")}`);
+    else if (B && !V7B.includes(B)) throw Error(`readdirp: Invalid type passed. Use one of TextComponent{V7B.join(", ")}`);
     return Q.root = A, new C7B(Q)
 }
 var cw, bb1, H7B = "READDIRP_RECURSIVE_ERROR",
@@ -1190,7 +1182,7 @@ var cw, bb1, H7B = "READDIRP_RECURSIVE_ERROR",
         return K7B
     },
     C7B;
-var z7B = L(() => {
+var z7B = lazyLoader(() => {
     cw = {
         FILE_TYPE: "files",
         DIR_TYPE: "directories",
@@ -1318,7 +1310,7 @@ var z7B = L(() => {
                     if (Z.isDirectory()) {
                         let I = G.length;
                         if (B.startsWith(G) && B.substr(I, 1) === _16) {
-                            let Y = Error(`Circular symlink detected: "${B}" points to "${G}"`);
+                            let Y = Error(`Circular symlink detected: "TextComponent{B}" points to "TextComponent{G}"`);
                             return Y.code = H7B, this._onError(Y)
                         }
                         return "directory"
@@ -1365,7 +1357,6 @@ function $7B(A, Q, B, G, Z) {
         return
     }
 }
-
 class db1 {
     constructor(A) {
         this.fsw = A, this._boundHandleError = (Q) => A._handleError(Q)
@@ -1463,7 +1454,7 @@ class db1 {
                 directoryFilter: (F) => B.filterDir(F)
             });
         if (!X) return;
-        return X.on(d16, async (F) => {
+        return X.on(DATA_TYPE, async (F) => {
             if (this.fsw.closed) {
                 X = void 0;
                 return

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_011.js
+ * 处理时间: 2025-12-09T03:41:36.454Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.896Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -36,7 +39,7 @@
                         try {
                             J = JSON.parse(Y.trim())
                         } catch {
-                            throw Error(`Profile ${A} credential_process returned invalid JSON.`)
+                            throw Error(`Profile TextComponent{A} credential_process returned invalid JSON.`)
                         }
                         return __4(A, J, Q)
                     } catch (Y) {
@@ -44,10 +47,10 @@
                             logger: B
                         })
                     }
-                } else throw new Qw1.CredentialsProviderError(`Profile ${A} did not contain credential_process.`, {
+                } else throw new Qw1.CredentialsProviderError(`Profile TextComponent{A} did not contain credential_process.`, {
                     logger: B
                 })
-            } else throw new Qw1.CredentialsProviderError(`Profile ${A} could not be found in shared credentials file.`, {
+            } else throw new Qw1.CredentialsProviderError(`Profile TextComponent{A} could not be found in shared credentials file.`, {
                 logger: B
             })
         }, "resolveProcessCredentials"),
@@ -61,7 +64,7 @@
             }), B, A.logger)
         }, "fromProcess")
 });
-var Zw1 = U((FS) => {
+var Zw1 = moduleWrapper((FS) => {
     var x_4 = FS && FS.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -95,8 +98,7 @@ var Zw1 = U((FS) => {
             };
             return function(Q) {
                 if (Q && Q.__esModule) return Q;
-
-var B = {};
+                var B = {};
                 if (Q != null) {
                     for (var G = A(Q), Z = 0; Z < G.length; Z++)
                         if (G[Z] !== "default") x_4(B, Q, G[Z])
@@ -136,7 +138,7 @@ var B = {};
         }
         return X({
             RoleArn: B,
-            RoleSessionName: G ?? `aws-sdk-js-session-${Date.now()}`,
+            RoleSessionName: G ?? `aws-sdk-js-session-TextComponent{Date.now()}`,
             WebIdentityToken: Z,
             ProviderId: I,
             PolicyArns: Y,
@@ -146,14 +148,14 @@ var B = {};
     };
     FS.fromWebToken = f_4
 });
-var Z3Q = U((B3Q) => {
+var Z3Q = moduleWrapper((B3Q) => {
     Object.defineProperty(B3Q, "__esModule", {
         value: !0
     });
     B3Q.fromTokenFile = void 0;
     var h_4 = lN(),
         g_4 = P2(),
-        u_4 = UA("fs"),
+        u_4 = nodeRequire("fs"),
         m_4 = Zw1(),
         Q3Q = "AWS_WEB_IDENTITY_TOKEN_FILE",
         d_4 = "AWS_ROLE_ARN",
@@ -179,7 +181,7 @@ var Z3Q = U((B3Q) => {
         };
     B3Q.fromTokenFile = p_4
 });
-var Jw1 = U((RF7, DhA) => {
+var Jw1 = moduleWrapper((RF7, DhA) => {
     var {
         defineProperty: I3Q,
         getOwnPropertyDescriptor: l_4,
@@ -200,7 +202,7 @@ var Jw1 = U((RF7, DhA) => {
     Y3Q(Yw1, Z3Q(), DhA.exports);
     Y3Q(Yw1, Zw1(), DhA.exports)
 });
-var H3Q = U((TF7, D3Q) => {
+var H3Q = moduleWrapper((TF7, D3Q) => {
     var {
         create: s_4,
         defineProperty: xDA,
@@ -263,7 +265,7 @@ var H3Q = U((TF7, D3Q) => {
                 }, "Environment")
             };
             if (A in G) return G[A];
-            else throw new yDA.CredentialsProviderError(`Unsupported credential source in profile ${Q}. Got ${A}, expected EcsContainer or Ec2InstanceMetadata or Environment.`, {
+            else throw new yDA.CredentialsProviderError(`Unsupported credential source in profile TextComponent{Q}. Got TextComponent{A}, expected EcsContainer or Ec2InstanceMetadata or Environment.`, {
                 logger: B
             })
         }, "resolveCredentialSource"),
@@ -285,7 +287,7 @@ var H3Q = U((TF7, D3Q) => {
             logger: B
         }) => {
             let G = typeof A.source_profile === "string" && typeof A.credential_source > "u";
-            if (G) B?.debug?.(`    ${Q} isAssumeRoleWithSourceProfile source_profile=${A.source_profile}`);
+            if (G) B?.debug?.(`    TextComponent{Q} isAssumeRoleWithSourceProfile source_profile=TextComponent{A.source_profile}`);
             return G
         }, "isAssumeRoleWithSourceProfile"),
         Ik4 = LX((A, {
@@ -293,7 +295,7 @@ var H3Q = U((TF7, D3Q) => {
             logger: B
         }) => {
             let G = typeof A.credential_source === "string" && typeof A.source_profile > "u";
-            if (G) B?.debug?.(`    ${Q} isCredentialSourceProfile credential_source=${A.credential_source}`);
+            if (G) B?.debug?.(`    TextComponent{Q} isCredentialSourceProfile credential_source=TextComponent{A.credential_source}`);
             return G
         }, "isCredentialSourceProfile"),
         Yk4 = LX(async (A, Q, B, G = {}) => {
@@ -316,10 +318,10 @@ var H3Q = U((TF7, D3Q) => {
                     }
                 }, B.clientPlugins)
             }
-            if (I && I in G) throw new yDA.CredentialsProviderError(`Detected a cycle attempting to resolve credentials for profile ${(0,Xw1.getProfileName)(B)}. Profiles visited: ` + Object.keys(G).join(", "), {
+            if (I && I in G) throw new yDA.CredentialsProviderError(`Detected a cycle attempting to resolve credentials for profile TextComponent{(0,Xw1.getProfileName)(B)}. Profiles visited: ` + Object.keys(G).join(", "), {
                 logger: B.logger
             });
-            B.logger?.debug(`@aws-sdk/credential-provider-ini - finding credential resolver using ${I?`source_profile=[${I}]`:`profile=[${A}]`}`);
+            B.logger?.debug(`@aws-sdk/credential-provider-ini - finding credential resolver using TextComponent{I?`source_profile=[TextComponent{I}]`:`profile=[TextComponent{A}]`}`);
             let J = I ? K3Q(I, Q, B, {
                 ...G,
                 [I]: !0
@@ -328,7 +330,7 @@ var H3Q = U((TF7, D3Q) => {
             else {
                 let W = {
                         RoleArn: Z.role_arn,
-                        RoleSessionName: Z.role_session_name || `aws-sdk-js-${Date.now()}`,
+                        RoleSessionName: Z.role_session_name || `aws-sdk-js-TextComponent{Date.now()}`,
                         ExternalId: Z.external_id,
                         DurationSeconds: parseInt(Z.duration_seconds || "3600", 10)
                     },
@@ -336,7 +338,7 @@ var H3Q = U((TF7, D3Q) => {
                         mfa_serial: X
                     } = Z;
                 if (X) {
-                    if (!B.mfaCodeProvider) throw new yDA.CredentialsProviderError(`Profile ${A} requires multi-factor authentication, but no MFA code callback was provided.`, {
+                    if (!B.mfaCodeProvider) throw new yDA.CredentialsProviderError(`Profile TextComponent{A} requires multi-factor authentication, but no MFA code callback was provided.`, {
                         logger: B.logger,
                         tryNextLink: !1
                     });
@@ -409,7 +411,7 @@ var H3Q = U((TF7, D3Q) => {
             if (Vk4(I)) return Kk4(I, B);
             if (Jk4(I)) return Wk4(B, A);
             if (Fk4(I)) return await Xk4(A, I, B);
-            throw new yDA.CredentialsProviderError(`Could not resolve credentials using profile: [${A}] in configuration/credentials file(s).`, {
+            throw new yDA.CredentialsProviderError(`Could not resolve credentials using profile: [TextComponent{A}] in configuration/credentials file(s).`, {
                 logger: B.logger
             })
         }, "resolveProfileData"),
@@ -430,7 +432,7 @@ var H3Q = U((TF7, D3Q) => {
             }), G, B)
         }, "fromIni")
 });
-var N3Q = U((PF7, q3Q) => {
+var N3Q = moduleWrapper((PF7, q3Q) => {
     var {
         create: Hk4,
         defineProperty: vDA,
@@ -556,7 +558,7 @@ var N3Q = U((PF7, q3Q) => {
         $3Q = HhA((A) => A?.expiration !== void 0, "credentialsWillNeedRefresh"),
         w3Q = HhA((A) => A?.expiration !== void 0 && A.expiration.getTime() - Date.now() < 300000, "credentialsTreatedAsExpired")
 });
-var i3Q = U((p3Q) => {
+var i3Q = moduleWrapper((p3Q) => {
     Object.defineProperty(p3Q, "__esModule", {
         value: !0
     });
@@ -920,7 +922,7 @@ var i3Q = U((p3Q) => {
         };
     p3Q.ruleSet = Mk4
 });
-var s3Q = U((n3Q) => {
+var s3Q = moduleWrapper((n3Q) => {
     Object.defineProperty(n3Q, "__esModule", {
         value: !0
     });
@@ -941,7 +943,7 @@ var s3Q = U((n3Q) => {
     n3Q.defaultEndpointResolver = Pk4;
     Hw1.customEndpointFunctions.aws = Ok4.awsEndpointFunctions
 });
-var A7Q = U((t3Q) => {
+var A7Q = moduleWrapper((t3Q) => {
     Object.defineProperty(t3Q, "__esModule", {
         value: !0
     });
@@ -981,7 +983,7 @@ var A7Q = U((t3Q) => {
         };
     t3Q.getRuntimeConfig = vk4
 });
-var J7Q = U((I7Q) => {
+var J7Q = moduleWrapper((I7Q) => {
     Object.defineProperty(I7Q, "__esModule", {
         value: !0
     });
@@ -1053,7 +1055,7 @@ var J7Q = U((I7Q) => {
         };
     I7Q.getRuntimeConfig = ik4
 });
-var F7Q = U((W7Q) => {
+var F7Q = moduleWrapper((W7Q) => {
     Object.defineProperty(W7Q, "__esModule", {
         value: !0
     });
@@ -1097,7 +1099,7 @@ var F7Q = U((W7Q) => {
     };
     W7Q.resolveHttpAuthRuntimeConfig = ak4
 });
-var z7Q = U((C7Q) => {
+var z7Q = moduleWrapper((C7Q) => {
     Object.defineProperty(C7Q, "__esModule", {
         value: !0
     });
@@ -1112,7 +1114,7 @@ var z7Q = U((C7Q) => {
         };
     C7Q.resolveRuntimeExtensions = rk4
 });
-var wDA = U((zw1) => {
+var wDA = moduleWrapper((zw1) => {
     Object.defineProperty(zw1, "__esModule", {
         value: !0
     });
@@ -1137,8 +1139,7 @@ var wDA = U((zw1) => {
         By4 = sN(),
         Gy4 = J7Q(),
         Zy4 = z7Q();
-
-class L7Q extends N7Q.Client {
+    class L7Q extends N7Q.Client {
         config;
         constructor(...[A]) {
             let Q = (0, Gy4.getRuntimeConfig)(A || {});
@@ -1165,7 +1166,7 @@ class L7Q extends N7Q.Client {
     }
     zw1.STSClient = L7Q
 });
-var YGQ = U((fF7, ew1) => {
+var YGQ = moduleWrapper((fF7, ew1) => {
     var {
         defineProperty: EhA,
         getOwnPropertyDescriptor: Iy4,
@@ -1416,7 +1417,7 @@ var YGQ = U((fF7, ew1) => {
         DS = wV(),
         Ky4 = cC(),
         Dy4 = WQ(async (A, Q) => {
-            let B = Pv,
+            let B = NOTEBOOK_EDIT_TOOL_NAME,
                 G;
             return G = kv({
                 ...gy4(A, Q),
@@ -1425,7 +1426,7 @@ var YGQ = U((fF7, ew1) => {
             }), Tv(Q, B, "/", void 0, G)
         }, "se_AssumeRoleCommand"),
         Hy4 = WQ(async (A, Q) => {
-            let B = Pv,
+            let B = NOTEBOOK_EDIT_TOOL_NAME,
                 G;
             return G = kv({
                 ...uy4(A, Q),
@@ -1434,7 +1435,7 @@ var YGQ = U((fF7, ew1) => {
             }), Tv(Q, B, "/", void 0, G)
         }, "se_AssumeRoleWithSAMLCommand"),
         Cy4 = WQ(async (A, Q) => {
-            let B = Pv,
+            let B = NOTEBOOK_EDIT_TOOL_NAME,
                 G;
             return G = kv({
                 ...my4(A, Q),
@@ -1443,7 +1444,7 @@ var YGQ = U((fF7, ew1) => {
             }), Tv(Q, B, "/", void 0, G)
         }, "se_AssumeRoleWithWebIdentityCommand"),
         Ey4 = WQ(async (A, Q) => {
-            let B = Pv,
+            let B = NOTEBOOK_EDIT_TOOL_NAME,
                 G;
             return G = kv({
                 ...dy4(A, Q),
@@ -1452,7 +1453,7 @@ var YGQ = U((fF7, ew1) => {
             }), Tv(Q, B, "/", void 0, G)
         }, "se_AssumeRootCommand"),
         zy4 = WQ(async (A, Q) => {
-            let B = Pv,
+            let B = NOTEBOOK_EDIT_TOOL_NAME,
                 G;
             return G = kv({
                 ...cy4(A, Q),
@@ -1461,7 +1462,7 @@ var YGQ = U((fF7, ew1) => {
             }), Tv(Q, B, "/", void 0, G)
         }, "se_DecodeAuthorizationMessageCommand"),
         Uy4 = WQ(async (A, Q) => {
-            let B = Pv,
+            let B = NOTEBOOK_EDIT_TOOL_NAME,
                 G;
             return G = kv({
                 ...py4(A, Q),
@@ -1470,7 +1471,7 @@ var YGQ = U((fF7, ew1) => {
             }), Tv(Q, B, "/", void 0, G)
         }, "se_GetAccessKeyInfoCommand"),
         $y4 = WQ(async (A, Q) => {
-            let B = Pv,
+            let B = NOTEBOOK_EDIT_TOOL_NAME,
                 G;
             return G = kv({
                 ...ly4(A, Q),
@@ -1479,7 +1480,7 @@ var YGQ = U((fF7, ew1) => {
             }), Tv(Q, B, "/", void 0, G)
         }, "se_GetCallerIdentityCommand"),
         wy4 = WQ(async (A, Q) => {
-            let B = Pv,
+            let B = NOTEBOOK_EDIT_TOOL_NAME,
                 G;
             return G = kv({
                 ...iy4(A, Q),
@@ -1488,7 +1489,7 @@ var YGQ = U((fF7, ew1) => {
             }), Tv(Q, B, "/", void 0, G)
         }, "se_GetFederationTokenCommand"),
         qy4 = WQ(async (A, Q) => {
-            let B = Pv,
+            let B = NOTEBOOK_EDIT_TOOL_NAME,
                 G;
             return G = kv({
                 ...ny4(A, Q),

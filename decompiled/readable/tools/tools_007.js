@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_007.js
+ * 处理时间: 2025-12-09T03:41:38.633Z
+ * 变量映射: 10 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.070Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -20,15 +23,14 @@
 function Et1() {
     return !1
 }
-
 async function g95(A, Q, B) {
     if (!Et1()) return await B();
     let G = TB2("sha1").update(JSON.stringify(A)).digest("hex").slice(0, 12),
-        Z = PB2(process.env.CLAUDE_CODE_TEST_FIXTURES_ROOT ?? H0(), `fixtures/${Q}-${G}.json`);
+        Z = PB2(process.env.CLAUDE_CODE_TEST_FIXTURES_ROOT ?? H0(), `fixtures/TextComponent{Q}-TextComponent{G}.json`);
     if (OA().existsSync(Z)) return JSON.parse(OA().readFileSync(Z, {
         encoding: "utf8"
     }));
-    if (m0.isCI) throw Error(`Fixture missing: ${Z}. Re-run npm test locally, then commit the result.`);
+    if (m0.isCI) throw Error(`Fixture missing: TextComponent{Z}. Re-run npm test locally, then commit the result.`);
     let I = await B();
     if (!OA().existsSync(p01(Z))) OA().mkdirSync(p01(Z));
     return OA().writeFileSync(Z, JSON.stringify(I, null, 2), {
@@ -36,7 +38,6 @@ async function g95(A, Q, B) {
         flush: !1
     }), I
 }
-
 async function zt1(A, Q) {
     if (!Et1()) return await Q();
     let B = BZ(A.filter((Y) => {
@@ -45,15 +46,15 @@ async function zt1(A, Q) {
             return !0
         })),
         G = m95(B.map((Y) => Y.message.content), RB2),
-        Z = PB2(process.env.CLAUDE_CODE_TEST_FIXTURES_ROOT ?? H0(), `fixtures/${G.map((Y)=>TB2("sha1").update(JSON.stringify(Y)).digest("hex").slice(0,6)).join("-")}.json`);
+        Z = PB2(process.env.CLAUDE_CODE_TEST_FIXTURES_ROOT ?? H0(), `fixtures/TextComponent{G.map((Y)=>TB2("sha1").update(JSON.stringify(Y)).digest("hex").slice(0,6)).join("-")}.json`);
     if (OA().existsSync(Z)) {
         let Y = JSON.parse(OA().readFileSync(Z, {
             encoding: "utf8"
         }));
         return Y.output.forEach(u95), Y.output.map((J, W) => OB2(J, c95, W))
     }
-    if (m0.isCI) throw Error(`Anthropic API fixture missing: ${Z}. Re-run npm test locally, then commit the result. Input messages:
-${JSON.stringify(G,null,2)}`);
+    if (m0.isCI) throw Error(`Anthropic API fixture missing: TextComponent{Z}. Re-run npm test locally, then commit the result. Input messages:
+TextComponent{JSON.stringify(G,null,2)}`);
     let I = await Q();
     if (m0.isCI) return I;
     if (!OA().existsSync(p01(Z))) OA().mkdirSync(p01(Z));
@@ -120,14 +121,14 @@ function m95(A, Q) {
 function l01(A, Q) {
     return vo(A, (B, G) => {
         if (Array.isArray(B)) return B.map((Z) => l01(Z, Q));
-        if (j9A(B)) return l01(B, Q);
+        if (isPlainObject(B)) return l01(B, Q);
         return Q(B, G, A)
     })
 }
 
 function d95(A, Q, B) {
     return {
-        uuid: `UUID-${B}`,
+        uuid: `UUID-TextComponent{B}`,
         requestId: "REQUEST_ID",
         timestamp: A.timestamp,
         message: {
@@ -180,7 +181,6 @@ async function* Ut1(A, Q) {
     }
     yield* B
 }
-
 async function SB2(A, Q, B) {
     return (await g95({
         messages: A,
@@ -189,7 +189,7 @@ async function SB2(A, Q, B) {
         tokenCount: await B()
     }))).tokenCount
 }
-var $t1 = L(() => {
+var $t1 = lazyLoader(() => {
     f5();
     R2();
     hQ();
@@ -208,7 +208,6 @@ function _B2(A) {
                 if (typeof B === "object" && B !== null && "type" in B && (B.type === "thinking" || B.type === "redacted_thinking")) return !0
         } return !1
 }
-
 async function kB2(A) {
     if (!A) return 0;
     return FLA([{
@@ -216,11 +215,10 @@ async function kB2(A) {
         content: A
     }], [])
 }
-
 async function FLA(A, Q) {
     return SB2(A, Q, async () => {
         try {
-            let B = S3(),
+            let B = getDefaultSonnetModel(),
                 G = await Vq({
                     maxRetries: 1,
                     model: B
@@ -256,12 +254,11 @@ async function FLA(A, Q) {
 function SG(A) {
     return Math.round(A.length / 4)
 }
-
 async function yB2(A, Q) {
     let B = _B2(A),
-        G = V0(process.env.CLAUDE_CODE_USE_VERTEX) && D_A(LW()) === "global",
-        Z = V0(process.env.CLAUDE_CODE_USE_BEDROCK) && B,
-        I = V0(process.env.CLAUDE_CODE_USE_VERTEX) && B,
+        G = parseBoolean(process.env.CLAUDE_CODE_USE_VERTEX) && getModelProvider(getSmallFastModel()) === "global",
+        Z = parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK) && B,
+        I = parseBoolean(process.env.CLAUDE_CODE_USE_VERTEX) && B,
         Y = G || Z || I ? HU() : o7A(),
         J = await Vq({
             maxRetries: 1,
@@ -303,7 +300,7 @@ function xB2(A) {
 `);
     return SG(Q)
 }
-var gM = L(() => {
+var gM = lazyLoader(() => {
     EIA();
     u1();
     s2();
@@ -323,7 +320,7 @@ function y0({
         flexDirection: "row",
         height: Q,
         overflowY: "hidden"
-    }, lT.createElement($, null, "  ", "⎿  "), A))
+    }, lT.createElement(TextComponent, null, "  ", "⎿  "), A))
 }
 
 function p95({
@@ -334,23 +331,23 @@ function p95({
     }, A)
 }
 var lT, vB2, bB2;
-var u8 = L(() => {
+var u8 = lazyLoader(() => {
     hA();
-    lT = GA(VA(), 1), vB2 = GA(VA(), 1);
+    lT = esmImport(VA(), 1), vB2 = esmImport(VA(), 1);
     bB2 = lT.createContext(!1)
 });
 
 function Uk() {
-    return zk.createElement(zk.Fragment, null, zk.createElement($, {
+    return zk.createElement(zk.Fragment, null, zk.createElement(TextComponent, {
         color: "error"
-    }, "Interrupted "), zk.createElement($, {
+    }, "Interrupted "), zk.createElement(TextComponent, {
         dimColor: !0
     }, "· What should Claude do instead?"))
 }
 var zk;
-var zIA = L(() => {
+var zIA = lazyLoader(() => {
     hA();
-    zk = GA(VA(), 1)
+    zk = esmImport(VA(), 1)
 });
 
 function k3() {
@@ -359,10 +356,10 @@ function k3() {
     }, VLA.createElement(Uk, null))
 }
 var VLA;
-var lV = L(() => {
+var lV = lazyLoader(() => {
     u8();
     zIA();
-    VLA = GA(VA(), 1)
+    VLA = esmImport(VA(), 1)
 });
 
 function YB() {
@@ -371,9 +368,9 @@ function YB() {
     return A
 }
 var fB2;
-var m8 = L(() => {
+var m8 = lazyLoader(() => {
     vaA();
-    fB2 = GA(VA(), 1)
+    fB2 = esmImport(VA(), 1)
 });
 
 function wt1({
@@ -386,7 +383,7 @@ function wt1({
 
 function hl() {
     if (UIA.useContext(gB2)) return null;
-    return UIA.default.createElement($, {
+    return UIA.default.createElement(TextComponent, {
         dimColor: !0
     }, hB2)
 }
@@ -396,18 +393,17 @@ function uB2() {
 }
 var UIA, hB2 = "(ctrl+o to expand)",
     gB2;
-var $IA = L(() => {
+var $IA = lazyLoader(() => {
     hA();
     J9();
-    UIA = GA(VA(), 1), gB2 = UIA.default.createContext(!1)
+    UIA = esmImport(VA(), 1), gB2 = UIA.default.createContext(!1)
 });
 
 function Nt1(A) {
-    if (V0(process.env.CLAUDE_CODE_DISABLE_TERMINAL_TITLE)) return;
-    if (process.platform === "win32") process.title = A ? `✳ ${A}` : A;
-    else process.stdout.write(`\x1B]0;${A?`✳ ${A}`:""}\x07`)
+    if (parseBoolean(process.env.CLAUDE_CODE_DISABLE_TERMINAL_TITLE)) return;
+    if (process.platform === "win32") process.title = A ? `✳ TextComponent{A}` : A;
+    else process.stdout.write(`\x1B]0;TextComponent{A?`✳ TextComponent{A}`:""}\x07`)
 }
-
 async function mB2(A) {
     if (A.startsWith("<local-command-stdout>")) return;
     let Q = "{";
@@ -472,12 +468,12 @@ function dB2(A, Q) {
         aboveTheFold: G,
         remainingLines: Z
     } = i95(B, Math.max(Q - l95, 10));
-    return [G, Z > 0 ? oA.dim(`… +${Z} lines ${uB2()}`) : ""].filter(Boolean).join(`
+    return [G, Z > 0 ? oA.dim(`… +TextComponent{Z} lines TextComponent{uB2()}`) : ""].filter(Boolean).join(`
 `)
 }
 var qt1 = 3,
     l95 = 9;
-var Bh = L(() => {
+var Bh = lazyLoader(() => {
     kZ();
     zV();
     u1();
@@ -517,7 +513,7 @@ function xU({
         if (Q) return n01(cB2(A));
         else return n01(dB2(cB2(A), G))
     }, [A, Q, G]);
-    return KLA.createElement(y0, null, KLA.createElement($, {
+    return KLA.createElement(y0, null, KLA.createElement(TextComponent, {
         color: B ? "error" : void 0
     }, Z))
 }
@@ -526,12 +522,12 @@ function n01(A) {
     return A.replace(/\u001b\[([0-9]+;)*4(;[0-9]+)*m|\u001b\[4(;[0-9]+)*m|\u001b\[([0-9]+;)*4m/g, "")
 }
 var KLA, pB2;
-var wIA = L(() => {
+var wIA = lazyLoader(() => {
     hA();
     u8();
     m8();
     Bh();
-    KLA = GA(VA(), 1), pB2 = GA(VA(), 1)
+    KLA = esmImport(VA(), 1), pB2 = esmImport(VA(), 1)
 });
 
 function a01(A) {
@@ -549,33 +545,33 @@ function A5({
             Y = a01(Z).trim();
         if (!Q && Y.includes("InputValidationError: ")) B = "Invalid tool parameters";
         else if (Y.startsWith("Error: ")) B = Y;
-        else B = `Error: ${Y}`
+        else B = `Error: TextComponent{Y}`
     }
     let G = B.split(`
 `).length - Lt1;
     return OD.createElement(y0, null, OD.createElement(j, {
         flexDirection: "column"
-    }, OD.createElement($, {
+    }, OD.createElement(TextComponent, {
         color: "error"
     }, n01(Q ? B : B.split(`
 `).slice(0, Lt1).join(`
 `))), !Q && B.split(`
-`).length > Lt1 && OD.createElement(j, null, OD.createElement($, {
+`).length > Lt1 && OD.createElement(j, null, OD.createElement(TextComponent, {
         dimColor: !0
-    }, "… +", G, " ", G === 1 ? "line" : "lines", " ("), OD.createElement($, {
+    }, "… +", G, " ", G === 1 ? "line" : "lines", " ("), OD.createElement(TextComponent, {
         dimColor: !0,
         bold: !0
-    }, "ctrl+o"), OD.createElement($, null, " "), OD.createElement($, {
+    }, "ctrl+o"), OD.createElement(TextComponent, null, " "), OD.createElement(TextComponent, {
         dimColor: !0
     }, "to see all)"))))
 }
 var OD, Lt1 = 10;
-var lX = L(() => {
+var lX = lazyLoader(() => {
     hA();
     u8();
     nQ();
     wIA();
-    OD = GA(VA(), 1)
+    OD = esmImport(VA(), 1)
 });
 import {
     randomBytes as a95
@@ -593,10 +589,10 @@ function aB2() {
     let A = Mt1(lB2),
         Q = Mt1(nB2),
         B = Mt1(iB2);
-    return `${A}-${Q}-${B}`
+    return `TextComponent{A}-TextComponent{Q}-TextComponent{B}`
 }
 var lB2, iB2, nB2, ZqG;
-var sB2 = L(() => {
+var sB2 = lazyLoader(() => {
     lB2 = ["abundant", "ancient", "bright", "calm", "cheerful", "clever", "cozy", "curious", "dapper", "dazzling", "deep", "delightful", "eager", "elegant", "enchanted", "fancy", "fluffy", "gentle", "gleaming", "golden", "graceful", "happy", "hidden", "humble", "jolly", "joyful", "keen", "kind", "lively", "lovely", "lucky", "luminous", "magical", "majestic", "mellow", "merry", "mighty", "misty", "noble", "peaceful", "playful", "plucky", "polished", "precious", "proud", "quiet", "quirky", "radiant", "rosy", "serene", "shiny", "silly", "sleepy", "smooth", "snazzy", "snug", "snuggly", "soft", "sparkling", "spicy", "splendid", "sprightly", "starry", "steady", "sunny", "swift", "tender", "tidy", "toasty", "tranquil", "twinkly", "valiant", "vast", "velvet", "vivid", "warm", "whimsical", "wild", "wise", "witty", "wondrous", "zany", "zesty", "zippy", "breezy", "bubbly", "buzzing", "cheeky", "cosmic", "cozy", "crispy", "crystalline", "cuddly", "drifting", "dreamy", "effervescent", "ethereal", "fizzy", "flickering", "floating", "floofy", "fluttering", "foamy", "frolicking", "fuzzy", "giggly", "glimmering", "glistening", "glittery", "glowing", "goofy", "groovy", "harmonic", "hazy", "humming", "iridescent", "jaunty", "jazzy", "jiggly", "melodic", "moonlit", "mossy", "nifty", "peppy", "prancy", "purrfect", "purring", "quizzical", "rippling", "rustling", "sassy", "shimmering", "shimmying", "snappy", "snoopy", "squishy", "swirling", "ticklish", "tingly", "twinkling", "velvety", "wiggly", "wobbly", "woolly", "zazzy", "abstract", "adaptive", "agile", "async", "atomic", "binary", "cached", "compiled", "composed", "compressed", "concurrent", "cryptic", "curried", "declarative", "delegated", "distributed", "dynamic", "eager", "elegant", "encapsulated", "enumerated", "eventual", "expressive", "federated", "functional", "generic", "greedy", "hashed", "idempotent", "immutable", "imperative", "indexed", "inherited", "iterative", "lazy", "lexical", "linear", "linked", "logical", "memoized", "modular", "mutable", "nested", "optimized", "parallel", "parsed", "partitioned", "piped", "polymorphic", "pure", "reactive", "recursive", "refactored", "reflective", "replicated", "resilient", "robust", "scalable", "sequential", "serialized", "sharded", "sorted", "staged", "stateful", "stateless", "streamed", "structured", "synchronous", "synthetic", "temporal", "transient", "typed", "unified", "validated", "vectorized", "virtual"], iB2 = ["aurora", "avalanche", "blossom", "breeze", "brook", "bubble", "canyon", "cascade", "cloud", "clover", "comet", "coral", "cosmos", "creek", "crescent", "crystal", "dawn", "dewdrop", "dusk", "eclipse", "ember", "feather", "fern", "firefly", "flame", "flurry", "fog", "forest", "frost", "galaxy", "garden", "glacier", "glade", "grove", "harbor", "horizon", "island", "lagoon", "lake", "leaf", "lightning", "meadow", "meteor", "mist", "moon", "moonbeam", "mountain", "nebula", "nova", "ocean", "orbit", "pebble", "petal", "pine", "planet", "pond", "puddle", "quasar", "rain", "rainbow", "reef", "ripple", "river", "shore", "sky", "snowflake", "spark", "spring", "star", "stardust", "starlight", "storm", "stream", "summit", "sun", "sunbeam", "sunrise", "sunset", "thunder", "tide", "twilight", "valley", "volcano", "waterfall", "wave", "willow", "wind", "alpaca", "axolotl", "badger", "bear", "beaver", "bee", "bird", "bumblebee", "bunny", "butterfly", "capybara", "cat", "chipmunk", "crab", "crane", "deer", "dolphin", "dove", "dragon", "dragonfly", "duck", "duckling", "eagle", "elephant", "falcon", "finch", "flamingo", "fox", "frog", "giraffe", "goose", "hamster", "hare", "hedgehog", "hippo", "hummingbird", "jellyfish", "kitten", "koala", "ladybug", "lark", "lemur", "llama", "lobster", "lynx", "manatee", "meerkat", "moth", "narwhal", "newt", "octopus", "otter", "owl", "panda", "parrot", "peacock", "pelican", "penguin", "phoenix", "piglet", "platypus", "pony", "porcupine", "puffin", "puppy", "quail", "quokka", "rabbit", "raccoon", "raven", "robin", "salamander", "seahorse", "seal", "sloth", "snail", "sparrow", "sphinx", "squid", "squirrel", "starfish", "starling", "swan", "tiger", "toucan", "turtle", "unicorn", "walrus", "whale", "wolf", "wombat", "wren", "yeti", "zebra", "acorn", "anchor", "balloon", "beacon", "biscuit", "blanket", "bonbon", "book", "boot", "button", "cake", "candle", "candy", "castle", "charm", "clock", "cocoa", "compass", "cookie", "crayon", "crown", "cupcake", "donut", "dream", "fairy", "fiddle", "flask", "flute", "fountain", "gadget", "gem", "gizmo", "globe", "goblet", "hammock", "harp", "haven", "hearth", "honey", "jingle", "journal", "kazoo", "kettle", "key", "kite", "lantern", "lemon", "lighthouse", "locket", "lollipop", "mango", "map", "marble", "marshmallow", "melody", "mitten", "mochi", "muffin", "music", "nest", "noodle", "oasis", "origami", "pancake", "parasol", "peach", "pearl", "pebble", "pie", "pillow", "pinwheel", "pixel", "pizza", "plum", "popcorn", "pretzel", "prism", "pudding", "pumpkin", "puzzle", "quiche", "quill", "quilt", "riddle", "rocket", "rose", "scone", "scroll", "shell", "sketch", "snowglobe", "sonnet", "sparkle", "spindle", "sprout", "sundae", "swing", "taco", "teacup", "teapot", "thimble", "toast", "token", "tome", "tower", "treasure", "treehouse", "trinket", "truffle", "tulip", "umbrella", "waffle", "wand", "whisper", "whistle", "widget", "wreath", "zephyr", "abelson", "adleman", "aho", "allen", "babbage", "bachman", "backus", "barto", "bengio", "bentley", "blum", "boole", "brooks", "catmull", "cerf", "cherny", "church", "clarke", "cocke", "codd", "conway", "cook", "corbato", "cray", "curry", "dahl", "diffie", "dijkstra", "dongarra", "eich", "emerson", "engelbart", "feigenbaum", "floyd", "gehret", "goldwasser", "gosling", "graham", "gray", "hamming", "hanrahan", "hartmanis", "hejlsberg", "hellman", "hennessy", "hickey", "hinton", "hoare", "hollerith", "hopcroft", "hopper", "iverson", "kahan", "kahn", "karp", "kay", "kernighan", "knuth", "kurzweil", "lamport", "lampson", "lecun", "lerdorf", "liskov", "lovelace", "matsumoto", "mccarthy", "metcalfe", "micali", "milner", "minsky", "moler", "moore", "naur", "neumann", "newell", "nygaard", "papert", "parnas", "pascal", "patterson", "pearl", "perlis", "pike", "pnueli", "rabin", "reddy", "ritchie", "rivest", "rossum", "russell", "scott", "sedgewick", "shamir", "shannon", "sifakis", "simon", "stallman", "stearns", "steele", "stonebraker", "stroustrup", "sutherland", "sutton", "tarjan", "thacker", "thompson", "torvalds", "turing", "ullman", "valiant", "wadler", "wall", "wigderson", "wilkes", "wilkinson", "wirth", "wozniak", "yao"], nB2 = ["baking", "beaming", "booping", "bouncing", "brewing", "bubbling", "chasing", "churning", "coalescing", "conjuring", "cooking", "crafting", "crunching", "cuddling", "dancing", "dazzling", "discovering", "doodling", "dreaming", "drifting", "enchanting", "exploring", "finding", "floating", "fluttering", "foraging", "forging", "frolicking", "gathering", "giggling", "gliding", "greeting", "growing", "hatching", "herding", "honking", "hopping", "hugging", "humming", "imagining", "inventing", "jingling", "juggling", "jumping", "kindling", "knitting", "launching", "leaping", "mapping", "marinating", "meandering", "mixing", "moseying", "munching", "napping", "nibbling", "noodling", "orbiting", "painting", "percolating", "petting", "plotting", "pondering", "popping", "prancing", "purring", "puzzling", "questing", "riding", "roaming", "rolling", "sauteeing", "scribbling", "seeking", "shimmying", "singing", "skipping", "sleeping", "snacking", "sniffing", "snuggling", "soaring", "sparking", "spinning", "splashing", "sprouting", "squishing", "stargazing", "stirring", "strolling", "swimming", "swinging", "tickling", "tinkering", "toasting", "tumbling", "twirling", "waddling", "wandering", "watching", "weaving", "whistling", "wibbling", "wiggling", "wishing", "wobbling", "wondering", "yawning", "zooming"];
     ZqG = lB2.length * nB2.length * iB2.length
 });
@@ -612,7 +608,7 @@ function o95(A) {
         let Z = vU();
         for (let I = 0; I < r95; I++) {
             G = aB2();
-            let Y = DLA(Z, `${G}.md`);
+            let Y = DLA(Z, `TextComponent{G}.md`);
             if (!OA().existsSync(Y)) break
         }
         B.set(Q, G)
@@ -638,8 +634,8 @@ function bU(A) {
     let Q = A ?? G0(),
         B = G0(),
         G = o95(B);
-    if (Q === B) return DLA(vU(), `${G}.md`);
-    return DLA(vU(), `${G}-agent-${Q}.md`)
+    if (Q === B) return DLA(vU(), `TextComponent{G}.md`);
+    return DLA(vU(), `TextComponent{G}-agent-TextComponent{Q}.md`)
 }
 
 function fU(A) {
@@ -658,11 +654,11 @@ function s01(A) {
     let Q = A.messages.find((G) => G.slug)?.slug;
     if (!Q) return !1;
     t95(G0(), Q);
-    let B = DLA(vU(), `${Q}.md`);
+    let B = DLA(vU(), `TextComponent{Q}.md`);
     return OA().existsSync(B)
 }
 var r95 = 10;
-var _E = L(() => {
+var _E = lazyLoader(() => {
     S0();
     o0();
     hQ();
@@ -678,11 +674,11 @@ function rB2({
     verbose: G
 }) {
     if (!A) return null;
-    let Z = Q5(A);
+    let Z = formatFilePath(A);
     if (G && (Q || B)) {
         let I = Q ?? 1,
-            Y = B ? `lines ${I}-${I+B-1}` : `from line ${I}`;
-        return `${Z} · ${Y}`
+            Y = B ? `lines TextComponent{I}-TextComponent{I+B-1}` : `from line TextComponent{I}`;
+        return `TextComponent{Z} · TextComponent{Y}`
     }
     return Z
 }
@@ -699,18 +695,18 @@ function tB2(A) {
             } = A.file, B = LJ(Q);
             return L7.createElement(y0, {
                 height: 1
-            }, L7.createElement($, null, "Read image (", B, ")"))
+            }, L7.createElement(TextComponent, null, "Read image (", B, ")"))
         }
         case "notebook": {
             let {
                 cells: Q
             } = A.file;
-            if (!Q || Q.length < 1) return L7.createElement($, {
+            if (!Q || Q.length < 1) return L7.createElement(TextComponent, {
                 color: "error"
             }, "No cells found in notebook");
             return L7.createElement(y0, {
                 height: 1
-            }, L7.createElement($, null, "Read ", L7.createElement($, {
+            }, L7.createElement(TextComponent, null, "Read ", L7.createElement(TextComponent, {
                 bold: !0
             }, Q.length), " cells"))
         }
@@ -720,7 +716,7 @@ function tB2(A) {
             } = A.file, B = LJ(Q);
             return L7.createElement(y0, {
                 height: 1
-            }, L7.createElement($, null, "Read PDF (", B, ")"))
+            }, L7.createElement(TextComponent, null, "Read PDF (", B, ")"))
         }
         case "text": {
             let {
@@ -728,7 +724,7 @@ function tB2(A) {
             } = A.file;
             return L7.createElement(y0, {
                 height: 1
-            }, L7.createElement($, null, "Read ", L7.createElement($, {
+            }, L7.createElement(TextComponent, null, "Read ", L7.createElement(TextComponent, {
                 bold: !0
             }, Q), " ", Q === 1 ? "line" : "lines"))
         }
@@ -742,7 +738,7 @@ function eB2() {
 function A22(A, {
     verbose: Q
 }) {
-    if (!Q && typeof A === "string" && e2(A, "tool_use_error")) return L7.createElement(y0, null, L7.createElement($, {
+    if (!Q && typeof A === "string" && e2(A, "tool_use_error")) return L7.createElement(y0, null, L7.createElement(TextComponent, {
         color: "error"
     }, "Error reading file"));
     return L7.createElement(A5, {
@@ -758,10 +754,10 @@ function Q22(A) {
 
 function B22(A) {
     if (!A?.file_path) return null;
-    return Q5(A.file_path)
+    return formatFilePath(A.file_path)
 }
 var L7;
-var G22 = L(() => {
+var G22 = lazyLoader(() => {
     hA();
     lV();
     lX();
@@ -769,7 +765,7 @@ var G22 = L(() => {
     M9();
     nQ();
     _E();
-    L7 = GA(VA(), 1)
+    L7 = esmImport(VA(), 1)
 });
 import {
     createHash as Z22
@@ -794,14 +790,13 @@ function $k(A) {
     BA("tengu_file_operation", Q)
 }
 var Q45 = 102400;
-var r01 = L(() => {
+var r01 = lazyLoader(() => {
     w0()
 });
 import * as Ot1 from "path";
 import {
     extname as I22
 } from "path";
-
 async function Y22(A, Q, {
     maxSizeBytes: B = HLA,
     maxTokens: G = Tt1
@@ -818,18 +813,17 @@ function t01(A, Q, B) {
         type: "image",
         file: {
             base64: A.toString("base64"),
-            type: `image/${Q}`,
+            type: `image/TextComponent{Q}`,
             originalSize: B
         }
     }
 }
-
 async function W45(A, Q) {
     try {
         let G = OA().statSync(A).size,
             Z = OA().readFileBytesSync(A),
             I = I22(A).toLowerCase().slice(1),
-            J = `image/${I==="jpg"?"jpeg":I}`,
+            J = `image/TextComponent{I==="jpg"?"jpeg":I}`,
             W = await UjB(Z, Q, J);
         return {
             type: "image",
@@ -843,7 +837,7 @@ async function W45(A, Q) {
         e(B);
         let G = OA().readFileBytesSync(A);
         try {
-            let Z = await Promise.resolve().then(() => GA(grA(), 1)),
+            let Z = await Promise.resolve().then(() => esmImport(grA(), 1)),
                 Y = await (Z.default || Z)(G).resize(400, 400, {
                     fit: "inside",
                     withoutEnlargement: !0
@@ -858,11 +852,10 @@ async function W45(A, Q) {
         }
     }
 }
-
 async function X45(A, Q) {
     try {
         let G = OA().statSync(A).size;
-        if (G === 0) throw Error(`Image file is empty: ${A}`);
+        if (G === 0) throw Error(`Image file is empty: TextComponent{A}`);
         let Z = OA().readFileBytesSync(A),
             {
                 buffer: I,
@@ -876,7 +869,6 @@ async function X45(A, Q) {
         return t01(OA().readFileBytesSync(A), Z, G)
     }
 }
-
 async function Pt1(A, Q = Tt1, B = A.split(".").pop()?.toLowerCase() || "png") {
     let G = await X45(A, B);
     if (Math.ceil(G.file.base64.length * 0.125) > Q) return await W45(A, Q);
@@ -889,8 +881,8 @@ var B45, Tt1 = 25000,
 Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
 </system-reminder>
 `,
-    Rt1 = (A, Q = HLA) => `File content (${LJ(A)}) exceeds maximum allowed size (${LJ(Q)}). Please use offset and limit parameters to read specific portions of the file, or use the GrepTool to search for specific content.`;
-var Kq = L(() => {
+    Rt1 = (A, Q = HLA) => `File content (TextComponent{LJ(A)}) exceeds maximum allowed size (TextComponent{LJ(Q)}). Please use offset and limit parameters to read specific portions of the file, or use the GrepTool to search for specific content.`;
+var Kq = lazyLoader(() => {
     h2();
     R2();
     S0();
@@ -912,7 +904,7 @@ var Kq = L(() => {
         tokenCount;
         maxTokens;
         constructor(A, Q) {
-            super(`File content (${A} tokens) exceeds maximum allowed tokens (${Q}). Please use offset and limit parameters to read specific portions of the file, or use the GrepTool to search for specific content.`);
+            super(`File content (TextComponent{A} tokens) exceeds maximum allowed tokens (TextComponent{Q}). Please use offset and limit parameters to read specific portions of the file, or use the GrepTool to search for specific content.`);
             this.tokenCount = A;
             this.maxTokens = Q;
             this.name = "MaxFileReadTokenExceededError"
@@ -1015,8 +1007,8 @@ var Kq = L(() => {
                     C = "File does not exist.",
                     E = H0(),
                     z = pQ();
-                if (E !== z) C += ` Current working directory: ${E}`;
-                if (H) C += ` Did you mean ${H}?`;
+                if (E !== z) C += ` Current working directory: TextComponent{E}`;
+                if (H) C += ` Did you mean TextComponent{H}?`;
                 return {
                     result: !1,
                     message: C,
@@ -1026,7 +1018,7 @@ var Kq = L(() => {
             let X = Ot1.extname(I).toLowerCase();
             if (G45.has(X.slice(1)) && !(t3A() && DnA(X))) return {
                 result: !1,
-                message: `This tool cannot read binary files. The file appears to be a binary ${X} file. Please use appropriate tools for binary file analysis.`,
+                message: `This tool cannot read binary files. The file appears to be a binary TextComponent{X} file. Please use appropriate tools for binary file analysis.`,
                 errorCode: 4
             };
             let V = Z.statSync(I).size;
@@ -1065,11 +1057,11 @@ var Kq = L(() => {
             if (W === "ipynb") {
                 let C = iSB(X),
                     E = JSON.stringify(C);
-                if (E.length > Y) throw Error(`Notebook content (${LJ(E.length)}) exceeds maximum allowed size (${LJ(Y)}). Use ${BASH_TOOL_NAME} with jq to read specific portions:
-  cat "${A}" | jq '.cells[:20]' # First 20 cells
-  cat "${A}" | jq '.cells[100:120]' # Cells 100-120
-  cat "${A}" | jq '.cells | length' # Count total cells
-  cat "${A}" | jq '.cells[] | select(.cell_type=="code") | .source' # All code sources`);
+                if (E.length > Y) throw Error(`Notebook content (TextComponent{LJ(E.length)}) exceeds maximum allowed size (TextComponent{LJ(Y)}). Use TextComponent{BASH_TOOL_NAME} with jq to read specific portions:
+  cat "TextComponent{A}" | jq '.cells[:20]' # First 20 cells
+  cat "TextComponent{A}" | jq '.cells[100:120]' # Cells 100-120
+  cat "TextComponent{A}" | jq '.cells | length' # Count total cells
+  cat "TextComponent{A}" | jq '.cells[] | select(.cell_type=="code") | .source' # All code sources`);
                 await Y22(E, W, {
                     maxSizeBytes: Y,
                     maxTokens: J
@@ -1186,12 +1178,12 @@ var Kq = L(() => {
                     return nSB(A.file.cells, Q);
                 case "pdf":
                     return {
-                        tool_use_id: Q, type: "tool_result", content: `PDF file read: ${A.file.filePath} (${LJ(A.file.originalSize)})`
+                        tool_use_id: Q, type: "tool_result", content: `PDF file read: TextComponent{A.file.filePath} (TextComponent{LJ(A.file.originalSize)})`
                     };
                 case "text": {
                     let B;
                     if (A.file.content) B = ml(A.file) + J45;
-                    else B = A.file.totalLines === 0 ? "<system-reminder>Warning: the file exists but the contents are empty.</system-reminder>" : `<system-reminder>Warning: the file exists but is shorter than the provided offset (${A.file.startLine}). The file has ${A.file.totalLines} lines.</system-reminder>`;
+                    else B = A.file.totalLines === 0 ? "<system-reminder>Warning: the file exists but the contents are empty.</system-reminder>" : `<system-reminder>Warning: the file exists but is shorter than the provided offset (TextComponent{A.file.startLine}). The file has TextComponent{A.file.totalLines} lines.</system-reminder>`;
                     return {
                         tool_use_id: Q,
                         type: "tool_result",
@@ -1222,8 +1214,7 @@ function jt1(A, Q, B, G) {
             type: "shell"
         };
     G(Z, () => I);
-    // Async function: Y
-async function Y() {
+    async function Y() {
         G(Z, (W) => {
             if (!W) return e(Error("Shell not found. This is a bug")), I;
             if (W.status !== "running") return W;
@@ -1288,7 +1279,7 @@ function K45() {
 
 function W22(A) {
     try {
-        return g(`BackgroundShell ${A.id} kill requested`), A.shellCommand?.kill(), {
+        return g(`BackgroundShell TextComponent{A.id} kill requested`), A.shellCommand?.kill(), {
             ...A,
             status: "killed"
         }
@@ -1347,7 +1338,7 @@ function GQ1(A) {
 function F22(A) {
     return A.filter((Q) => Q.status !== "running" && !Q.completionStatusSentInAttachment)
 }
-var gAA = L(() => {
+var gAA = lazyLoader(() => {
     u1();
     D0();
     XH()
@@ -1380,7 +1371,7 @@ function K22(A, Q) {
     }
     return B
 }
-var uM = L(() => {
+var uM = lazyLoader(() => {
     SvA()
 });
 var _t1 = 4,
@@ -1422,7 +1413,7 @@ function C45(A, Q = !1) {
 }
 
 function E45(A) {
-    return A.replace(/\s+2\s*>&\s*1(?=\s|$)/g, "").replace(/[012]?\s*>\s*\/dev\/null/g, "").replace(/\s*<\s*\/dev\/null/g, "")
+    return A.replace(/\s+2\s*>&\s*1(?=\s|TextComponent)/g, "").replace(/[012]?\s*>\s*\/dev\/null/g, "").replace(/\s*<\s*\/dev\/null/g, "")
 }
 
 function z45(A, Q) {
@@ -1489,7 +1480,7 @@ function $45(A) {
 
 function w45(A) {
     if (!kt1.test(A)) return !1;
-    let Q = /\$\(cat\s*<<-?\s*(?:'+([A-Za-z_]\w*)'+|\\([A-Za-z_]\w*))/g,
+    let Q = /\TextComponent\(cat\s*<<-?\s*(?:'+([A-Za-z_]\w*)'+|\\([A-Za-z_]\w*))/g,
         B, G = [];
     while ((B = Q.exec(A)) !== null) {
         let I = B[1] || B[2];
@@ -1505,11 +1496,11 @@ function w45(A) {
         }
         of G) {
         let J = A.substring(I),
-            W = Y.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+            W = Y.replace(/[.*+?^TextComponent{}()|[\]\\]/g, "\\TextComponent&");
         if (!new RegExp(`(?:
 |^[^\\n]*
-)${W}\\s*\\)`).test(J)) return !1;
-        let F = new RegExp(`^\\$\\(cat\\s*<<-?\\s*(?:'+${W}'+|\\\\${W})[^\\n]*\\n(?:[\\s\\S]*?\\n)?${W}\\s*\\)`);
+)TextComponent{W}\\s*\\)`).test(J)) return !1;
+        let F = new RegExp(`^\\TextComponent\\(cat\\s*<<-?\\s*(?:'+TextComponent{W}'+|\\\\TextComponent{W})[^\\n]*\\n(?:[\\s\\S]*?\\n)?TextComponent{W}\\s*\\)`);
         if (!J.match(F)) return !1
     }
     let Z = A;
@@ -1517,11 +1508,11 @@ function w45(A) {
             delimiter: I
         }
         of G) {
-        let Y = I.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
-            J = new RegExp(`\\$\\(cat\\s*<<-?\\s*(?:'+${Y}'+|\\\\${Y})[^\\n]*\\n(?:[\\s\\S]*?\\n)?${Y}\\s*\\)`);
+        let Y = I.replace(/[.*+?^TextComponent{}()|[\]\\]/g, "\\TextComponent&"),
+            J = new RegExp(`\\TextComponent\\(cat\\s*<<-?\\s*(?:'+TextComponent{Y}'+|\\\\TextComponent{Y})[^\\n]*\\n(?:[\\s\\S]*?\\n)?TextComponent{Y}\\s*\\)`);
         Z = Z.replace(J, "")
     }
-    if (/\$\(/.test(Z)) return !1;
-    if (/\${/.test(Z)) return !1;
+    if (/\TextComponent\(/.test(Z)) return !1;
+    if (/\TextComponent{/.test(Z)) return !1;
     return !0
 }

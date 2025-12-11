@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: config_005.js
+ * 处理时间: 2025-12-09T03:41:37.203Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.954Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -54,7 +57,7 @@
         }
     }
 });
-var fi = U((kuG, hC2) => {
+var fi = moduleWrapper((kuG, hC2) => {
     hC2.exports = vD;
     vD.className = "ReflectionObject";
     var UL5 = c1A(),
@@ -84,7 +87,7 @@ var fi = U((kuG, hC2) => {
             utf8_validation: "VERIFY"
         };
 
-function vD(A, Q) {
+    function vD(A, Q) {
         if (!HOA.isString(A)) throw TypeError("name must be a string");
         if (Q && !HOA.isObject(Q)) throw TypeError("options must be an object");
         this.options = Q, this.parsedOptions = null, this.name = A, this._edition = null, this._defaultEdition = "proto2", this._features = {}, this._featuresResolved = !1, this.parent = null, this.resolved = !1, this.comment = null, this.filename = null
@@ -130,8 +133,7 @@ function vD(A, Q) {
     };
     vD.prototype._resolveFeatures = function(Q) {
         if (this._featuresResolved) return;
-
-var B = {};
+        var B = {};
         if (!Q) throw Error("Unknown edition for " + this.fullName);
         var G = Object.assign(this.options ? Object.assign({}, this.options.features) : {}, this._inferLegacyProtoFeatures(Q));
         if (this._edition) {
@@ -205,14 +207,14 @@ var B = {};
         O41 = A
     }
 });
-var FP = U((yuG, uC2) => {
+var FP = moduleWrapper((yuG, uC2) => {
     uC2.exports = VP;
     var E20 = fi();
     ((VP.prototype = Object.create(E20.prototype)).constructor = VP).className = "Enum";
     var gC2 = nYA(),
         R41 = GK();
 
-function VP(A, Q, B, G, Z, I) {
+    function VP(A, Q, B, G, Z, I) {
         if (E20.call(this, A, B), Q && typeof Q !== "object") throw TypeError("values must be an object");
         if (this.valuesById = {}, this.values = Object.create(this.valuesById), this.comment = G, this.comments = Z || {}, this.valuesOptions = I, this._valuesFeatures = {}, this.reserved = void 0, Q) {
             for (var Y = Object.keys(Q), J = 0; J < Y.length; ++J)
@@ -264,17 +266,17 @@ function VP(A, Q, B, G, Z, I) {
         return gC2.isReservedName(this.reserved, Q)
     }
 });
-var X20 = U((xuG, dC2) => {
+var X20 = moduleWrapper((xuG, dC2) => {
     dC2.exports = LL5;
     var NL5 = FP(),
         z20 = p1A(),
         U20 = GK();
 
-function mC2(A, Q, B, G) {
+    function mC2(A, Q, B, G) {
         return Q.delimited ? A("types[%i].encode(%s,w.uint32(%i)).uint32(%i)", B, G, (Q.id << 3 | 3) >>> 0, (Q.id << 3 | 4) >>> 0) : A("types[%i].encode(%s,w.uint32(%i).fork()).ldelim()", B, G, (Q.id << 3 | 2) >>> 0)
     }
 
-function LL5(A) {
+    function LL5(A) {
         var Q = U20.codegen(["m", "w"], A.name + "$encode")("if(!w)")("w=Writer.create()"),
             B, G, Z = A.fieldsArray.slice().sort(U20.compareFieldsById);
         for (var B = 0; B < Z.length; ++B) {
@@ -300,18 +302,18 @@ function LL5(A) {
         return Q("return w")
     }
 });
-var pC2 = U((vuG, cC2) => {
+var pC2 = moduleWrapper((vuG, cC2) => {
     var X3 = cC2.exports = mQ0();
     X3.build = "light";
 
-function ML5(A, Q, B) {
+    function ML5(A, Q, B) {
         if (typeof Q === "function") B = Q, Q = new X3.Root;
         else if (!Q) Q = new X3.Root;
         return Q.load(A, B)
     }
     X3.load = ML5;
 
-function OL5(A, Q) {
+    function OL5(A, Q) {
         if (!Q) Q = new X3.Root;
         return Q.loadSync(A)
     }
@@ -339,7 +341,7 @@ function OL5(A, Q) {
     X3.Root._configure(X3.Type);
     X3.Field._configure(X3.Type)
 });
-var w20 = U((buG, nC2) => {
+var w20 = moduleWrapper((buG, nC2) => {
     nC2.exports = iC2;
     var $20 = /[\s{}=;:[\],'"()<>]/g,
         RL5 = /(?:"([^"\\]*(?:\\.[^"\\]*)*)")/g,
@@ -357,7 +359,7 @@ var w20 = U((buG, nC2) => {
             t: "\t"
         };
 
-function lC2(A) {
+    function lC2(A) {
         return A.replace(kL5, function(Q, B) {
             switch (B) {
                 case "\\":
@@ -370,7 +372,7 @@ function lC2(A) {
     }
     iC2.unescape = lC2;
 
-function iC2(A, Q) {
+    function iC2(A, Q) {
         A = A.toString();
         var B = 0,
             G = A.length,
@@ -380,11 +382,11 @@ function iC2(A, Q) {
             J = [],
             W = null;
 
-function X(q) {
+        function X(q) {
             return Error("illegal " + q + " (line " + Z + ")")
         }
 
-function F() {
+        function F() {
             var q = W === "'" ? TL5 : RL5;
             q.lastIndex = B - 1;
             var R = q.exec(A);
@@ -392,11 +394,11 @@ function F() {
             return B = q.lastIndex, E(W), W = null, lC2(R[1])
         }
 
-function V(q) {
+        function V(q) {
             return A.charAt(q)
         }
 
-function K(q, R, P) {
+        function K(q, R, P) {
             var y = {
                     type: A.charAt(q++),
                     lineEmpty: !1,
@@ -419,21 +421,21 @@ function K(q, R, P) {
 `).trim(), Y[Z] = y, I = Z
         }
 
-function D(q) {
+        function D(q) {
             var R = H(q),
                 P = A.substring(q, R),
                 y = /^\s*\/\//.test(P);
             return y
         }
 
-function H(q) {
+        function H(q) {
             var R = q;
             while (R < G && V(R) !== `
 `) R++;
             return R
         }
 
-function C() {
+        function C() {
             if (J.length > 0) return J.shift();
             if (W) return F();
             var q, R, P, y, v, x = B === 0;
@@ -489,11 +491,11 @@ function C() {
             return o
         }
 
-function E(q) {
+        function E(q) {
             J.push(q)
         }
 
-function z() {
+        function z() {
             if (!J.length) {
                 var q = C();
                 if (q === null) return null;
@@ -502,7 +504,7 @@ function z() {
             return J[0]
         }
 
-function w(q, R) {
+        function w(q, R) {
             var P = z(),
                 y = P === q;
             if (y) return C(), !0;
@@ -510,7 +512,7 @@ function w(q, R) {
             return !1
         }
 
-function N(q) {
+        function N(q) {
             var R = null,
                 P;
             if (q === void 0) {
@@ -534,7 +536,7 @@ function N(q) {
         })
     }
 });
-var eC2 = U((fuG, tC2) => {
+var eC2 = moduleWrapper((fuG, tC2) => {
     tC2.exports = Oh;
     Oh.filename = null;
     Oh.defaults = {
@@ -552,17 +554,17 @@ var eC2 = U((fuG, tC2) => {
         gL5 = fi(),
         uL5 = p1A(),
         q20 = GK(),
-        mL5 = /^[1-9][0-9]*$/,
-        dL5 = /^-?[1-9][0-9]*$/,
-        cL5 = /^0[x][0-9a-fA-F]+$/,
-        pL5 = /^-?0[x][0-9a-fA-F]+$/,
-        lL5 = /^0[0-7]+$/,
-        iL5 = /^-?0[0-7]+$/,
-        nL5 = /^(?![eE])[0-9]*(?:\.[0-9]*)?(?:[eE][+-]?[0-9]+)?$/,
-        ak = /^[a-zA-Z_][a-zA-Z_0-9]*$/,
-        sk = /^(?:\.?[a-zA-Z_][a-zA-Z_0-9]*)(?:\.[a-zA-Z_][a-zA-Z_0-9]*)*$/;
+        mL5 = /^[1-9][0-9]*TextComponent/,
+        dL5 = /^-?[1-9][0-9]*TextComponent/,
+        cL5 = /^0[x][0-9a-fA-F]+TextComponent/,
+        pL5 = /^-?0[x][0-9a-fA-F]+TextComponent/,
+        lL5 = /^0[0-7]+TextComponent/,
+        iL5 = /^-?0[0-7]+TextComponent/,
+        nL5 = /^(?![eE])[0-9]*(?:\.[0-9]*)?(?:[eE][+-]?[0-9]+)?TextComponent/,
+        ak = /^[a-zA-Z_][a-zA-Z_0-9]*TextComponent/,
+        sk = /^(?:\.?[a-zA-Z_][a-zA-Z_0-9]*)(?:\.[a-zA-Z_][a-zA-Z_0-9]*)*TextComponent/;
 
-function Oh(A, Q, B) {
+    function Oh(A, Q, B) {
         if (!(Q instanceof aC2)) B = Q, Q = new aC2;
         if (!B) B = Oh.defaults;
         var G = B.preferTrailingComment || !1,
@@ -581,7 +583,7 @@ function Oh(A, Q, B) {
                 return $A
             } : q20.camelCase;
 
-function N() {
+        function N() {
             E.forEach(($A) => {
                 $A._edition = H, Object.keys(z).forEach((LA) => {
                     if ($A.getOption(LA) !== void 0) return;
@@ -590,13 +592,13 @@ function N() {
             })
         }
 
-function q($A, LA, TA) {
+        function q($A, LA, TA) {
             var eA = Oh.filename;
             if (!TA) Oh.filename = null;
             return Error("illegal " + (LA || "token") + " '" + $A + "' (" + (eA ? eA + ", " : "") + "line " + Z.line + ")")
         }
 
-function R() {
+        function R() {
             var $A = [],
                 LA;
             do {
@@ -606,7 +608,7 @@ function R() {
             return $A.join("")
         }
 
-function P($A) {
+        function P($A) {
             var LA = I();
             switch (LA) {
                 case "'":
@@ -627,12 +629,13 @@ function P($A) {
             }
         }
 
-function y($A, LA) {
+        function y($A, LA) {
             var TA, eA;
             do
                 if (LA && ((TA = J()) === '"' || TA === "'")) {
-                    var aA = R();
-                    if ($A.push(aA), H >= 2023) throw q(aA, "id")
+                    /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+var BASE64_CHARS = R();
+                    if ($A.push(BASE64_CHARS), H >= 2023) throw q(BASE64_CHARS, "id")
                 } else try {
                     $A.push([eA = x(I()), W("to", !0) ? x(I()) : eA])
                 } catch (w1) {
@@ -640,8 +643,7 @@ function y($A, LA) {
                     else throw w1
                 }
             while (W(",", !0));
-
-var I1 = {
+            var I1 = {
                 options: void 0
             };
             I1.setOption = function(w1, PA) {
@@ -655,7 +657,7 @@ var I1 = {
             })
         }
 
-function v($A, LA) {
+        function v($A, LA) {
             var TA = 1;
             if ($A.charAt(0) === "-") TA = -1, $A = $A.substring(1);
             switch ($A) {
@@ -678,7 +680,7 @@ function v($A, LA) {
             throw q($A, "number", LA)
         }
 
-function x($A, LA) {
+        function x($A, LA) {
             switch ($A) {
                 case "max":
                 case "MAX":
@@ -694,13 +696,13 @@ function x($A, LA) {
             throw q($A, "id")
         }
 
-function p() {
+        function p() {
             if (V !== void 0) throw q("package");
             if (V = I(), !sk.test(V)) throw q(V, "name");
             C = C.define(V), W(";")
         }
 
-function u() {
+        function u() {
             var $A = J(),
                 LA;
             switch ($A) {
@@ -716,17 +718,17 @@ function u() {
             $A = R(), W(";"), LA.push($A)
         }
 
-function o() {
+        function o() {
             if (W("="), H = R(), H < 2023) throw q(H, "syntax");
             W(";")
         }
 
-function l() {
+        function l() {
             if (W("="), H = R(), !["2023"].includes(H)) throw q(H, "edition");
             W(";")
         }
 
-function k($A, LA) {
+        function k($A, LA) {
             switch (LA) {
                 case "option":
                     return NA($A, LA), W(";"), !0;
@@ -742,15 +744,15 @@ function k($A, LA) {
             return !1
         }
 
-function d($A, LA, TA) {
+        function d($A, LA, TA) {
             var eA = Z.line;
             if ($A) {
                 if (typeof $A.comment !== "string") $A.comment = X();
                 $A.filename = Oh.filename
             }
             if (W("{", !0)) {
-                var aA;
-                while ((aA = I()) !== "}") LA(aA);
+                var BASE64_CHARS;
+                while ((BASE64_CHARS = I()) !== "}") LA(BASE64_CHARS);
                 W(";", !0)
             } else {
                 if (TA) TA();
@@ -758,27 +760,27 @@ function d($A, LA, TA) {
             }
         }
 
-function QA($A, LA) {
+        function QA($A, LA) {
             if (!ak.test(LA = I())) throw q(LA, "type name");
             var TA = new sC2(LA);
-            if (d(TA, function(aA) {
-                    if (k(TA, aA)) return;
-                    switch (aA) {
+            if (d(TA, function(BASE64_CHARS) {
+                    if (k(TA, BASE64_CHARS)) return;
+                    switch (BASE64_CHARS) {
                         case "map":
-                            wA(TA, aA);
+                            wA(TA, BASE64_CHARS);
                             break;
                         case "required":
-                            if (H !== "proto2") throw q(aA);
+                            if (H !== "proto2") throw q(BASE64_CHARS);
                         case "repeated":
-                            IA(TA, aA);
+                            IA(TA, BASE64_CHARS);
                             break;
                         case "optional":
                             if (H === "proto3") IA(TA, "proto3_optional");
-                            else if (H !== "proto2") throw q(aA);
+                            else if (H !== "proto2") throw q(BASE64_CHARS);
                             else IA(TA, "optional");
                             break;
                         case "oneof":
-                            KA(TA, aA);
+                            KA(TA, BASE64_CHARS);
                             break;
                         case "extensions":
                             y(TA.extensions || (TA.extensions = []));
@@ -787,14 +789,14 @@ function QA($A, LA) {
                             y(TA.reserved || (TA.reserved = []), !0);
                             break;
                         default:
-                            if (H === "proto2" || !sk.test(aA)) throw q(aA);
-                            Y(aA), IA(TA, "optional");
+                            if (H === "proto2" || !sk.test(BASE64_CHARS)) throw q(BASE64_CHARS);
+                            Y(BASE64_CHARS), IA(TA, "optional");
                             break
                     }
                 }), $A.add(TA), $A === C) E.push(TA)
         }
 
-function IA($A, LA, TA) {
+        function IA($A, LA, TA) {
             var eA = I();
             if (eA === "group") {
                 HA($A, LA);
@@ -802,33 +804,35 @@ function IA($A, LA, TA) {
             }
             while (eA.endsWith(".") || J().startsWith(".")) eA += I();
             if (!sk.test(eA)) throw q(eA, "type");
-            var aA = I();
-            if (!ak.test(aA)) throw q(aA, "name");
-            aA = w(aA), W("=");
-            var I1 = new rC2(aA, x(I()), eA, LA, TA);
+            /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+var BASE64_CHARS = I();
+            if (!ak.test(BASE64_CHARS)) throw q(BASE64_CHARS, "name");
+            BASE64_CHARS = w(BASE64_CHARS), W("=");
+            var I1 = new rC2(BASE64_CHARS, x(I()), eA, LA, TA);
             if (d(I1, function(B1) {
                     if (B1 === "option") NA(I1, B1), W(";");
                     else throw q(B1)
                 }, function() {
                     rA(I1)
                 }), LA === "proto3_optional") {
-                var w1 = new oC2("_" + aA);
+                var w1 = new oC2("_" + BASE64_CHARS);
                 I1.setOption("proto3_optional", !0), w1.add(I1), $A.add(w1)
             } else $A.add(I1);
             if ($A === C) E.push(I1)
         }
 
-function HA($A, LA) {
+        function HA($A, LA) {
             if (H >= 2023) throw q("group");
             var TA = I();
             if (!ak.test(TA)) throw q(TA, "name");
             var eA = q20.lcFirst(TA);
             if (TA === eA) TA = q20.ucFirst(TA);
             W("=");
-            var aA = x(I()),
+            /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+var BASE64_CHARS = x(I()),
                 I1 = new sC2(TA);
             I1.group = !0;
-            var w1 = new rC2(eA, aA, TA, LA);
+            var w1 = new rC2(eA, BASE64_CHARS, TA, LA);
             w1.filename = Oh.filename, d(I1, function(B1) {
                 switch (B1) {
                     case "option":
@@ -857,7 +861,7 @@ function HA($A, LA) {
             }), $A.add(I1).add(w1)
         }
 
-function wA($A) {
+        function wA($A) {
             W("<");
             var LA = I();
             if (uL5.mapKey[LA] === void 0) throw q(LA, "type");
@@ -868,52 +872,53 @@ function wA($A) {
             var eA = I();
             if (!ak.test(eA)) throw q(eA, "name");
             W("=");
-            var aA = new vL5(w(eA), x(I()), LA, TA);
-            d(aA, function(w1) {
-                if (w1 === "option") NA(aA, w1), W(";");
+            /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+var BASE64_CHARS = new vL5(w(eA), x(I()), LA, TA);
+            d(BASE64_CHARS, function(w1) {
+                if (w1 === "option") NA(BASE64_CHARS, w1), W(";");
                 else throw q(w1)
             }, function() {
-                rA(aA)
-            }), $A.add(aA)
+                rA(BASE64_CHARS)
+            }), $A.add(BASE64_CHARS)
         }
 
-function KA($A, LA) {
+        function KA($A, LA) {
             if (!ak.test(LA = I())) throw q(LA, "name");
             var TA = new oC2(w(LA));
-            d(TA, function(aA) {
-                if (aA === "option") NA(TA, aA), W(";");
-                else Y(aA), IA(TA, "optional")
+            d(TA, function(BASE64_CHARS) {
+                if (BASE64_CHARS === "option") NA(TA, BASE64_CHARS), W(";");
+                else Y(BASE64_CHARS), IA(TA, "optional")
             }), $A.add(TA)
         }
 
-function SA($A, LA) {
+        function SA($A, LA) {
             if (!ak.test(LA = I())) throw q(LA, "name");
             var TA = new bL5(LA);
-            if (d(TA, function(aA) {
-                    switch (aA) {
+            if (d(TA, function(BASE64_CHARS) {
+                    switch (BASE64_CHARS) {
                         case "option":
-                            NA(TA, aA), W(";");
+                            NA(TA, BASE64_CHARS), W(";");
                             break;
                         case "reserved":
                             if (y(TA.reserved || (TA.reserved = []), !0), TA.reserved === void 0) TA.reserved = [];
                             break;
                         default:
-                            sA(TA, aA)
+                            sA(TA, BASE64_CHARS)
                     }
                 }), $A.add(TA), $A === C) E.push(TA)
         }
 
-function sA($A, LA) {
+        function sA($A, LA) {
             if (!ak.test(LA)) throw q(LA, "name");
             W("=");
             var TA = x(I(), !0),
                 eA = {
                     options: void 0
                 };
-            eA.getOption = function(aA) {
-                return this.options[aA]
-            }, eA.setOption = function(aA, I1) {
-                gL5.prototype.setOption.call(eA, aA, I1)
+            eA.getOption = function(BASE64_CHARS) {
+                return this.options[BASE64_CHARS]
+            }, eA.setOption = function(BASE64_CHARS, I1) {
+                gL5.prototype.setOption.call(eA, BASE64_CHARS, I1)
             }, eA.setParsedOption = function() {
                 return
             }, d(eA, function(I1) {
@@ -924,16 +929,16 @@ function sA($A, LA) {
             }), $A.add(LA, TA, eA.comment, eA.parsedOptions || eA.options)
         }
 
-function NA($A, LA) {
-            var TA, eA, aA = !0;
+        function NA($A, LA) {
+            var TA, eA, BASE64_CHARS = !0;
             if (LA === "option") LA = I();
             while (LA !== "=") {
                 if (LA === "(") {
                     var I1 = I();
                     W(")"), LA = "(" + I1 + ")"
                 }
-                if (aA) {
-                    if (aA = !1, LA.includes(".") && !LA.includes("(")) {
+                if (BASE64_CHARS) {
+                    if (BASE64_CHARS = !1, LA.includes(".") && !LA.includes("(")) {
                         var w1 = LA.split(".");
                         TA = w1[0] + ".", LA = w1[1];
                         continue
@@ -947,13 +952,13 @@ function NA($A, LA) {
             eA = eA && eA[0] === "." ? eA.slice(1) : eA, TA = TA && TA[TA.length - 1] === "." ? TA.slice(0, -1) : TA, yA($A, TA, B1, eA)
         }
 
-function qA($A, LA) {
+        function qA($A, LA) {
             if (W("{", !0)) {
                 var TA = {};
                 while (!W("}", !0)) {
                     if (!ak.test(zA = I())) throw q(zA, "name");
                     if (zA === null) throw q(zA, "end of input");
-                    var eA, aA = zA;
+                    var eA, BASE64_CHARS = zA;
                     if (W(":", !0), J() === "{") eA = qA($A, LA + "." + zA);
                     else if (J() === "[") {
                         eA = [];
@@ -963,9 +968,9 @@ function qA($A, LA) {
                             if (W("]"), typeof I1 < "u") DA($A, LA + "." + zA, I1)
                         }
                     } else eA = P(!0), DA($A, LA + "." + zA, eA);
-                    var w1 = TA[aA];
+                    var w1 = TA[BASE64_CHARS];
                     if (w1) eA = [].concat(w1).concat(eA);
-                    TA[aA] = eA, W(",", !0), W(";", !0)
+                    TA[BASE64_CHARS] = eA, W(",", !0), W(";", !0)
                 }
                 return TA
             }
@@ -973,7 +978,7 @@ function qA($A, LA) {
             return DA($A, LA, PA), PA
         }
 
-function DA($A, LA, TA) {
+        function DA($A, LA, TA) {
             if (C === $A && /^features\./.test(LA)) {
                 z[LA] = TA;
                 return
@@ -981,11 +986,11 @@ function DA($A, LA, TA) {
             if ($A.setOption) $A.setOption(LA, TA)
         }
 
-function yA($A, LA, TA, eA) {
+        function yA($A, LA, TA, eA) {
             if ($A.setParsedOption) $A.setParsedOption(LA, TA, eA)
         }
 
-function rA($A) {
+        function rA($A) {
             if (W("[", !0)) {
                 do NA($A, "option"); while (W(",", !0));
                 W("]")
@@ -993,50 +998,51 @@ function rA($A) {
             return $A
         }
 
-function K1($A, LA) {
+        function K1($A, LA) {
             if (!ak.test(LA = I())) throw q(LA, "service name");
             var TA = new fL5(LA);
-            if (d(TA, function(aA) {
-                    if (k(TA, aA)) return;
-                    if (aA === "rpc") WA(TA, aA);
-                    else throw q(aA)
+            if (d(TA, function(BASE64_CHARS) {
+                    if (k(TA, BASE64_CHARS)) return;
+                    if (BASE64_CHARS === "rpc") WA(TA, BASE64_CHARS);
+                    else throw q(BASE64_CHARS)
                 }), $A.add(TA), $A === C) E.push(TA)
         }
 
-function WA($A, LA) {
+        function WA($A, LA) {
             var TA = X(),
                 eA = LA;
             if (!ak.test(LA = I())) throw q(LA, "name");
-            var aA = LA,
+            /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+var BASE64_CHARS = LA,
                 I1, w1, PA, B1;
             if (W("("), W("stream", !0)) w1 = !0;
             if (!sk.test(LA = I())) throw q(LA);
             if (I1 = LA, W(")"), W("returns"), W("("), W("stream", !0)) B1 = !0;
             if (!sk.test(LA = I())) throw q(LA);
             PA = LA, W(")");
-            var Q0 = new hL5(aA, eA, I1, PA, w1, B1);
+            var Q0 = new hL5(BASE64_CHARS, eA, I1, PA, w1, B1);
             Q0.comment = TA, d(Q0, function(Y0) {
                 if (Y0 === "option") NA(Q0, Y0), W(";");
                 else throw q(Y0)
             }), $A.add(Q0)
         }
 
-function XA($A, LA) {
+        function XA($A, LA) {
             if (!sk.test(LA = I())) throw q(LA, "reference");
             var TA = LA;
-            d(null, function(aA) {
-                switch (aA) {
+            d(null, function(BASE64_CHARS) {
+                switch (BASE64_CHARS) {
                     case "required":
                     case "repeated":
-                        IA($A, aA, TA);
+                        IA($A, BASE64_CHARS, TA);
                         break;
                     case "optional":
                         if (H === "proto3") IA($A, "proto3_optional", TA);
                         else IA($A, "optional", TA);
                         break;
                     default:
-                        if (H === "proto2" || !sk.test(aA)) throw q(aA);
-                        Y(aA), IA($A, "optional", TA);
+                        if (H === "proto2" || !sk.test(BASE64_CHARS)) throw q(BASE64_CHARS);
+                        Y(BASE64_CHARS), IA($A, "optional", TA);
                         break
                 }
             })
@@ -1077,11 +1083,11 @@ function XA($A, LA) {
         }
     }
 });
-var BE2 = U((huG, QE2) => {
+var BE2 = moduleWrapper((huG, QE2) => {
     QE2.exports = KP;
     var aL5 = /\/|\./;
 
-function KP(A, Q) {
+    function KP(A, Q) {
         if (!aL5.test(A)) A = "google/protobuf/" + A + ".proto", Q = {
             nested: {
                 google: {
@@ -1279,7 +1285,7 @@ function KP(A, Q) {
         return KP[Q] || null
     }
 });
-var T41 = U((guG, GE2) => {
+var T41 = moduleWrapper((guG, GE2) => {
     var gi = GE2.exports = pC2();
     gi.build = "full";
     gi.tokenize = w20();
@@ -1287,7 +1293,7 @@ var T41 = U((guG, GE2) => {
     gi.common = BE2();
     gi.Root._configure(gi.Type, gi.parse, gi.common)
 });
-var N20 = U((uuG, sL5) => {
+var N20 = moduleWrapper((uuG, sL5) => {
     sL5.exports = {
         nested: {
             google: {

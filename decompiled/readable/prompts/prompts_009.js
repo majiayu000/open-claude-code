@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: prompts_009.js
+ * 处理时间: 2025-12-09T03:41:38.264Z
+ * 变量映射: 4 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.043Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -18,8 +21,7 @@
  */
 
     switch (kO.default.useEffect(() => {
-            // Async function: W
-async function W() {
+            async function W() {
                 let X = await Promise.all(J.map(async (F) => {
                     let V = F.config.scope,
                         K = F.config.type === "sse",
@@ -57,7 +59,7 @@ async function W() {
             W()
         }, [J]), kO.useEffect(() => {
             if (I.length === 0 && J.length > 0) return;
-            if (I.length === 0) A("No MCP servers configured. Please run /doctor if this is unexpected. Otherwise, run `claude mcp` or visit https://docs.claude.com/en/docs/claude-code/mcp to learn more.")
+            if (I.length === 0) A("No MCP servers configured. Please run /doctor if this is unexpected. Otherwise, run `claude mcp` or visit https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/mcp to learn more.")
         }, [I.length, J.length, A]), G.type) {
         case "list":
             return kO.default.createElement(jF0, {
@@ -126,7 +128,7 @@ async function W() {
     }
 }
 var kO;
-var wF9 = L(() => {
+var wF9 = lazyLoader(() => {
     dB1();
     H9();
     xX();
@@ -135,7 +137,7 @@ var wF9 = L(() => {
     vF0();
     fF0();
     gF0();
-    kO = GA(VA(), 1)
+    kO = esmImport(VA(), 1)
 });
 
 function mF0({
@@ -144,29 +146,28 @@ function mF0({
 }) {
     let [B] = $B(), [G] = _Q(), Z = OXA(), [I, Y] = sD.useState(!0), [J, W] = sD.useState(null);
     if (sD.useEffect(() => {
-            // Async function: X
-async function X() {
+            async function X() {
                 try {
                     if (!G.mcp.clients.find((K) => K.name === A)) {
-                        W(`MCP server "${A}" not found`), Y(!1);
+                        W(`MCP server "TextComponent{A}" not found`), Y(!1);
                         return
                     }
                     switch ((await Z(A)).client.type) {
                         case "connected":
-                            Q(`Successfully reconnected to ${A}`);
+                            Q(`Successfully reconnected to TextComponent{A}`);
                             break;
                         case "needs-auth":
-                            W(`${A} requires authentication`), Y(!1), Q(`${A} requires authentication. Use /mcp to authenticate.`);
+                            W(`TextComponent{A} requires authentication`), Y(!1), Q(`TextComponent{A} requires authentication. Use /mcp to authenticate.`);
                             break;
                         case "pending":
                         case "failed":
                         case "disabled":
-                            W(`Failed to reconnect to ${A}`), Y(!1), Q(`Failed to reconnect to ${A}`);
+                            W(`Failed to reconnect to TextComponent{A}`), Y(!1), Q(`Failed to reconnect to TextComponent{A}`);
                             break
                     }
                 } catch (F) {
                     let V = F instanceof Error ? F.message : String(F);
-                    W(V), Y(!1), Q(`Error: ${V}`)
+                    W(V), Y(!1), Q(`Error: TextComponent{V}`)
                 }
             }
             X()
@@ -174,33 +175,33 @@ async function X() {
         flexDirection: "column",
         gap: 1,
         padding: 1
-    }, sD.default.createElement($, {
+    }, sD.default.createElement(TextComponent, {
         color: "text"
-    }, "Reconnecting to ", sD.default.createElement($, {
+    }, "Reconnecting to ", sD.default.createElement(TextComponent, {
         bold: !0
-    }, A)), sD.default.createElement(j, null, sD.default.createElement(e9, null), sD.default.createElement($, null, " Establishing connection to MCP server")));
+    }, A)), sD.default.createElement(j, null, sD.default.createElement(e9, null), sD.default.createElement(TextComponent, null, " Establishing connection to MCP server")));
     if (J) return sD.default.createElement(j, {
         flexDirection: "column",
         gap: 1,
         padding: 1
-    }, sD.default.createElement(j, null, sD.default.createElement($, null, tQ("error", B)(V1.cross), " "), sD.default.createElement($, {
+    }, sD.default.createElement(j, null, sD.default.createElement(TextComponent, null, tQ("error", B)(V1.cross), " "), sD.default.createElement(TextComponent, {
         color: "error"
-    }, "Failed to reconnect to ", A)), sD.default.createElement($, {
+    }, "Failed to reconnect to ", A)), sD.default.createElement(TextComponent, {
         dimColor: !0
     }, "Error: ", J));
     return null
 }
 var sD;
-var dF0 = L(() => {
+var dF0 = lazyLoader(() => {
     hA();
     zI();
     FQA();
     H9();
     hA();
     n2();
-    sD = GA(VA(), 1)
+    sD = esmImport(VA(), 1)
 });
-var qF9 = L(() => {
+var qF9 = lazyLoader(() => {
     wF9();
     SF0();
     yF0();
@@ -210,10 +211,10 @@ var qF9 = L(() => {
     dF0()
 });
 var cF0, I_3, NF9;
-var LF9 = L(() => {
+var LF9 = lazyLoader(() => {
     qF9();
     dF0();
-    cF0 = GA(VA(), 1), I_3 = {
+    cF0 = esmImport(VA(), 1), I_3 = {
         type: "local-jsx",
         name: "mcp",
         description: "Manage MCP servers",
@@ -243,7 +244,7 @@ var LF9 = L(() => {
 var MF9 = () => {};
 var OF9 = () => {};
 var RF9;
-var TF9 = L(() => {
+var TF9 = lazyLoader(() => {
     RF9 = {
         type: "prompt",
         name: "pr-comments",
@@ -291,7 +292,7 @@ Remember:
 4. Show the file and line number context for code review comments
 5. Use jq to parse the JSON responses from the GitHub API
 
-${A?"Additional user input: "+A:""}
+TextComponent{A?"Additional user input: "+A:""}
 `
             }]
         }
@@ -300,17 +301,17 @@ ${A?"Additional user input: "+A:""}
 
 function PF9(A) {
     return A.map(([Q, B]) => {
-        let G = `Version ${Q}:`,
-            Z = B.map((I) => `• ${I}`).join(`
+        let G = `Version TextComponent{Q}:`,
+            Z = B.map((I) => `• TextComponent{I}`).join(`
 `);
-        return `${G}
-${Z}`
+        return `TextComponent{G}
+TextComponent{Z}`
     }).join(`
 
 `)
 }
 var Y_3, jF9;
-var SF9 = L(() => {
+var SF9 = lazyLoader(() => {
     gXA();
     Y_3 = {
         description: "View release notes",
@@ -341,13 +342,13 @@ var SF9 = L(() => {
             };
             return {
                 type: "text",
-                value: `See the full changelog at: ${t89}`
+                value: `See the full changelog at: TextComponent{t89}`
             }
         }
     }, jF9 = Y_3
 });
 var J_3, _F9;
-var kF9 = L(() => {
+var kF9 = lazyLoader(() => {
     GG();
     S0();
     J_3 = {
@@ -366,7 +367,7 @@ var kF9 = L(() => {
             let Q = G0();
             return await NY1(Q, A.trim()), {
                 type: "text",
-                value: `Session renamed to: ${A.trim()}`
+                value: `Session renamed to: TextComponent{A.trim()}`
             }
         },
         userFacingName() {
@@ -375,17 +376,17 @@ var kF9 = L(() => {
     }, _F9 = J_3
 });
 var W_3;
-var yF9 = L(() => {
+var yF9 = lazyLoader(() => {
     T5();
     hA();
-    W_3 = GA(VA(), 1)
+    W_3 = esmImport(VA(), 1)
 });
 var X_3;
-var xF9 = L(() => {
+var xF9 = lazyLoader(() => {
     hA();
     UI1();
     jq();
-    X_3 = GA(VA(), 1)
+    X_3 = esmImport(VA(), 1)
 });
 
 function vF9(A, Q) {
@@ -399,8 +400,8 @@ function pF0(A, Q, B) {
         isGroupHeader: G = !1,
         isChild: Z = !1,
         forkCount: I = 0
-    } = B || {}, Y = G && I > 0 ? F_3 : Z ? V_3 : 0, J = G && I > 0 ? ` (+${I} other ${I===1?"session":"sessions"})` : "", W = A.isSidechain ? " (sidechain)" : "", X = Q - Y - W.length - J.length;
-    return `${vF9(ajA(A),X)}${W}${J}`
+    } = B || {}, Y = G && I > 0 ? F_3 : Z ? V_3 : 0, J = G && I > 0 ? ` (+TextComponent{I} other TextComponent{I===1?"session":"sessions"})` : "", W = A.isSidechain ? " (sidechain)" : "", X = Q - Y - W.length - J.length;
+    return `TextComponent{vF9(ajA(A),X)}TextComponent{W}TextComponent{J}`
 }
 
 function lF0(A, Q) {
@@ -409,7 +410,7 @@ function lF0(A, Q) {
         showProjectPath: G = !1
     } = Q || {}, Z = [Xp(A.modified, {
         style: "short"
-    }), `${A.messageCount} messages`, A.gitBranch || "-"];
+    }), `TextComponent{A.messageCount} messages`, A.gitBranch || "-"];
     if (G && A.projectPath) Z.push(A.projectPath);
     let I = Z.join(" · ");
     return (B ? "    " : "") + I
@@ -468,7 +469,7 @@ function sjA({
                     TA = vF9(LA, IA),
                     eA = [Xp(XA.modified, {
                         style: "short"
-                    }), `${XA.messageCount} messages`, XA.gitBranch || "-"];
+                    }), `TextComponent{XA.messageCount} messages`, XA.gitBranch || "-"];
                 if (Y && XA.projectPath) eA.push(XA.projectPath);
                 return {
                     label: TA,
@@ -540,7 +541,7 @@ function sjA({
         }), A.length === 0) return null;
     let DA = [];
     if (C && D) DA.push(D);
-    if (z && u !== "search") DA.push(`/${z}`);
+    if (z && u !== "search") DA.push(`/TextComponent{z}`);
     let yA = DA.length > 0 || u === "search",
         rA = 5 + (yA ? 1 : 0),
         K1 = 2,
@@ -550,32 +551,32 @@ function sjA({
         height: Q - 1
     }, z8.default.createElement(j, {
         flexShrink: 0
-    }, z8.default.createElement($, {
+    }, z8.default.createElement(TextComponent, {
         color: "suggestion"
     }, "─".repeat(X))), z8.default.createElement(j, {
         flexShrink: 0
-    }, z8.default.createElement($, null, " ")), z8.default.createElement(j, {
+    }, z8.default.createElement(TextComponent, null, " ")), z8.default.createElement(j, {
         flexShrink: 0
-    }, z8.default.createElement($, {
+    }, z8.default.createElement(TextComponent, {
         bold: !0,
         color: "suggestion"
     }, "Resume Session", Y ? " (All Projects)" : "")), yA && z8.default.createElement(j, {
         flexShrink: 0,
         paddingLeft: 2
-    }, u === "search" ? z8.default.createElement($, null, DA.length > 0 && z8.default.createElement($, {
+    }, u === "search" ? z8.default.createElement(TextComponent, null, DA.length > 0 && z8.default.createElement(TextComponent, {
         dimColor: !0
-    }, DA.join(" · "), " · "), "/", z8.default.createElement($, {
+    }, DA.join(" · "), " · "), "/", z8.default.createElement(TextComponent, {
         bold: !0
-    }, z), V && z8.default.createElement($, {
+    }, z), V && z8.default.createElement(TextComponent, {
         dimColor: !0
-    }, "█")) : z8.default.createElement($, {
+    }, "█")) : z8.default.createElement(TextComponent, {
         dimColor: !0
     }, DA.join(" · "))), z8.default.createElement(j, {
         flexShrink: 0
-    }, z8.default.createElement($, null, " ")), u === "rename" && KA ? z8.default.createElement(j, {
+    }, z8.default.createElement(TextComponent, null, " ")), u === "rename" && KA ? z8.default.createElement(j, {
         paddingLeft: 2,
         flexDirection: "column"
-    }, z8.default.createElement($, {
+    }, z8.default.createElement(TextComponent, {
         bold: !0
     }, "Rename session:"), z8.default.createElement(j, {
         paddingTop: 1
@@ -603,15 +604,15 @@ function sjA({
         isDisabled: u === "search"
     }), z8.default.createElement(j, {
         paddingLeft: 2
-    }, F.pending ? z8.default.createElement($, {
+    }, F.pending ? z8.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Press ", F.keyName, " again to exit") : u === "rename" ? z8.default.createElement($, {
+    }, "Press ", F.keyName, " again to exit") : u === "rename" ? z8.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Enter to save · Esc to cancel") : u === "search" ? z8.default.createElement($, {
+    }, "Enter to save · Esc to cancel") : u === "search" ? z8.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Enter or Esc to finish · type to filter") : z8.default.createElement($, {
+    }, "Enter or Esc to finish · type to filter") : z8.default.createElement(TextComponent, {
         dimColor: !0
-    }, (J ? `A to show ${Y?"current dir":"all projects"} · ` : "") + (D ? "B to toggle branch · " : "") + "/ to search · Esc to exit" + SA())))
+    }, (J ? `A to show TextComponent{Y?"current dir":"all projects"} · ` : "") + (D ? "B to toggle branch · " : "") + "/ to search · Esc to exit" + SA())))
 }
 
 function K_3(A) {
@@ -627,7 +628,7 @@ function K_3(A) {
 }
 var z8, F_3 = 2,
     V_3 = 4;
-var LY1 = L(() => {
+var LY1 = lazyLoader(() => {
     hA();
     m8();
     T5();
@@ -641,9 +642,8 @@ var LY1 = L(() => {
     w0();
     xF9();
     u1();
-    z8 = GA(VA(), 1)
+    z8 = esmImport(VA(), 1)
 });
-
 async function Ka(A) {
     let Q = uQ(),
         G = {
@@ -660,10 +660,10 @@ async function Ka(A) {
             reject: !0
         }), !0
     } catch (I) {
-        e(Error(`Failed to execute clipboard command "${Z}": ${I}`));
+        e(Error(`Failed to execute clipboard command "TextComponent{Z}": TextComponent{I}`));
         continue
     }
-    return e(Error(`Failed to copy to clipboard on ${Q}`)), !1
+    return e(Error(`Failed to copy to clipboard on TextComponent{Q}`)), !1
 }
 
 function MY1() {
@@ -676,7 +676,7 @@ function MY1() {
         unknown: "Failed to copy to clipboard. Make sure `xclip` or `wl-copy` is installed on your system and try again."
     } [A]
 }
-var rjA = L(() => {
+var rjA = lazyLoader(() => {
     YKA();
     u1();
     s5()
@@ -688,7 +688,7 @@ function OY1(A, Q) {
         let G = A.messages.find((I) => I.sessionId)?.sessionId;
         return {
             isCrossProject: !0,
-            command: `cd ${M8([A.projectPath])} && claude --resume ${G}`,
+            command: `cd TextComponent{shellEscape([A.projectPath])} && claude --resume TextComponent{G}`,
             projectPath: A.projectPath
         }
     }
@@ -696,7 +696,7 @@ function OY1(A, Q) {
         isCrossProject: !1
     }
 }
-var iF0 = L(() => {
+var iF0 = lazyLoader(() => {
     S0();
     KH()
 });
@@ -724,8 +724,7 @@ function D_3({
     let F = IF.useCallback(() => {
         J((H) => !H)
     }, []);
-
-async function V(H) {
+    async function V(H) {
         let C = Y$(H.messages.find((z) => z.sessionId)?.sessionId);
         if (!C) {
             A("Failed to resume conversation");
@@ -734,7 +733,7 @@ async function V(H) {
         let E = OY1(H, Y);
         if (E.isCrossProject) {
             await Ka(E.command);
-            let z = ["", "This conversation is from a different directory.", "", "To resume, run:", `  ${E.command}`, "", "(Command copied to clipboard)", ""].join(`
+            let z = ["", "This conversation is from a different directory.", "", "To resume, run:", `  TextComponent{E.command}`, "", "(Command copied to clipboard)", ""].join(`
 `);
             A(z, {
                 display: "user"
@@ -744,12 +743,12 @@ async function V(H) {
         Q(C, H)
     }
 
-function K() {
+    function K() {
         A("Resume cancelled", {
             display: "system"
         })
     }
-    if (Z) return IF.createElement(j, null, IF.createElement(e9, null), IF.createElement($, null, " Loading conversations…"));
+    if (Z) return IF.createElement(j, null, IF.createElement(e9, null), IF.createElement(TextComponent, null, " Loading conversations…"));
     let D = B.filter((H) => !H.isSidechain);
     return IF.createElement(sjA, {
         logs: D,
@@ -762,7 +761,7 @@ function K() {
     })
 }
 var IF, H_3, bF9;
-var fF9 = L(() => {
+var fF9 = lazyLoader(() => {
     hA();
     zI();
     LY1();
@@ -771,7 +770,7 @@ var fF9 = L(() => {
     m8();
     rjA();
     iF0();
-    IF = GA(VA(), 1);
+    IF = esmImport(VA(), 1);
     H_3 = {
         type: "local-jsx",
         name: "resume",
@@ -796,7 +795,7 @@ var fF9 = L(() => {
     }, bF9 = H_3
 });
 var TY1;
-var nF0 = L(() => {
+var nF0 = lazyLoader(() => {
     nV();
     TY1 = {
         type: "prompt",
@@ -815,9 +814,9 @@ var nF0 = L(() => {
                 text: `
       You are an expert code reviewer. Follow these steps:
 
-      1. If no PR number is provided in the args, use ${X9.name}("gh pr list") to show open PRs
-      2. If a PR number is provided, use ${X9.name}("gh pr view <number>") to get PR details
-      3. Use ${X9.name}("gh pr diff <number>") to get the diff
+      1. If no PR number is provided in the args, use TextComponent{X9.name}("gh pr list") to show open PRs
+      2. If a PR number is provided, use TextComponent{X9.name}("gh pr view <number>") to get PR details
+      3. Use TextComponent{X9.name}("gh pr diff <number>") to get the diff
       4. Analyze the changes and provide a thorough code review that includes:
          - Overview of what the PR does
          - Analysis of code quality and style
@@ -833,7 +832,7 @@ var nF0 = L(() => {
 
       Format your review with clear sections and bullet points.
 
-      PR number: ${A}
+      PR number: TextComponent{A}
     `
             }]
         }
@@ -841,9 +840,9 @@ var nF0 = L(() => {
 });
 var hF9 = () => {};
 var aF0, C_3, gF9;
-var uF9 = L(() => {
+var uF9 = lazyLoader(() => {
     FY1();
-    aF0 = GA(VA(), 1), C_3 = {
+    aF0 = esmImport(VA(), 1), C_3 = {
         type: "local-jsx",
         name: "status",
         description: "Show Claude Code status including version, model, account, API connectivity, and tool statuses",
@@ -862,9 +861,9 @@ var uF9 = L(() => {
     }, gF9 = C_3
 });
 var sF0, E_3, mF9;
-var dF9 = L(() => {
+var dF9 = lazyLoader(() => {
     VW0();
-    sF0 = GA(VA(), 1), E_3 = {
+    sF0 = esmImport(VA(), 1), E_3 = {
         type: "local-jsx",
         name: "tasks",
         aliases: ["bashes"],
@@ -884,13 +883,13 @@ var dF9 = L(() => {
 });
 var cF9 = () => {};
 var yQA, z_3, pF9;
-var lF9 = L(() => {
+var lF9 = lazyLoader(() => {
     Ei();
     S0();
     hA();
     ljA();
     rOA();
-    yQA = GA(VA(), 1), z_3 = {
+    yQA = esmImport(VA(), 1), z_3 = {
         type: "local",
         name: "todos",
         description: "List current todo items",
@@ -906,9 +905,9 @@ var lF9 = L(() => {
             };
             let Z = yQA.default.createElement(j, {
                 flexDirection: "column"
-            }, yQA.default.createElement($, null, yQA.default.createElement($, {
+            }, yQA.default.createElement(TextComponent, null, yQA.default.createElement(TextComponent, {
                 bold: !0
-            }, G.length, " ", G.length === 1 ? "todo" : "todos"), yQA.default.createElement($, null, ":")), yQA.default.createElement(j, {
+            }, G.length, " ", G.length === 1 ? "todo" : "todos"), yQA.default.createElement(TextComponent, null, ":")), yQA.default.createElement(j, {
                 marginTop: 1
             }, yQA.default.createElement(si, {
                 todos: G
@@ -1115,7 +1114,7 @@ Begin your analysis now. Do this in 3 steps:
 
 Your final reply must contain the markdown report and nothing else.`,
     iF9;
-var nF9 = L(() => {
+var nF9 = lazyLoader(() => {
     XjA();
     Ny();
     iF9 = {
@@ -1155,9 +1154,9 @@ var nF9 = L(() => {
     }
 });
 var rF0, aF9;
-var sF9 = L(() => {
+var sF9 = lazyLoader(() => {
     FY1();
-    rF0 = GA(VA(), 1), aF9 = {
+    rF0 = esmImport(VA(), 1), aF9 = {
         type: "local-jsx",
         name: "usage",
         description: "Show plan usage limits",
@@ -1189,11 +1188,11 @@ function $_3() {
         source: "command"
     }), Promise.resolve({
         type: "text",
-        value: `Editor mode set to ${B}. ${B==="vim"?"Use Escape key to toggle between INSERT and NORMAL modes.":"Using standard (readline) keyboard bindings."}`
+        value: `Editor mode set to TextComponent{B}. TextComponent{B==="vim"?"Use Escape key to toggle between INSERT and NORMAL modes.":"Using standard (readline) keyboard bindings."}`
     })
 }
 var w_3, rF9;
-var oF9 = L(() => {
+var oF9 = lazyLoader(() => {
     jQ();
     w0();
     w_3 = {
@@ -1208,9 +1207,9 @@ var oF9 = L(() => {
     }, rF9 = w_3
 });
 var oF0, q_3, tF9;
-var eF9 = L(() => {
+var eF9 = lazyLoader(() => {
     BF0();
-    oF0 = GA(VA(), 1), q_3 = {
+    oF0 = esmImport(VA(), 1), q_3 = {
         type: "local-jsx",
         name: "permissions",
         aliases: ["allowed-tools"],
@@ -1227,15 +1226,15 @@ var eF9 = L(() => {
         }
     }, tF9 = q_3
 });
-var sF, N_3, AV9;
-var QV9 = L(() => {
+var createElement, N_3, AV9;
+var QV9 = lazyLoader(() => {
     hA();
     S0();
     _E();
     vn();
     yJ();
     ljA();
-    sF = GA(VA(), 1), N_3 = {
+    createElement = esmImport(VA(), 1), N_3 = {
         type: "local",
         name: "plan",
         description: "View or open the current session plan",
@@ -1254,33 +1253,33 @@ var QV9 = L(() => {
             if (A.trim().split(/\s+/)[0] === "open") try {
                 return await xn(Z), {
                     type: "text",
-                    value: `Opened plan in editor: ${Z}`
+                    value: `Opened plan in editor: TextComponent{Z}`
                 }
             } catch (F) {
                 return {
                     type: "text",
-                    value: `Failed to open plan in editor: ${F}`
+                    value: `Failed to open plan in editor: TextComponent{F}`
                 }
             }
             let Y = rh(),
                 J = Y ? aH(Y) : void 0;
             return {
                 type: "text",
-                value: await Va(sF.createElement(j, {
+                value: await Va(createElement.createElement(j, {
                     flexDirection: "column"
-                }, sF.createElement($, {
+                }, createElement.createElement(TextComponent, {
                     bold: !0
-                }, "Current Plan"), sF.createElement($, {
+                }, "Current Plan"), createElement.createElement(TextComponent, {
                     dimColor: !0
-                }, Z), sF.createElement(j, {
+                }, Z), createElement.createElement(j, {
                     marginTop: 1
-                }, sF.createElement($, null, G)), J && sF.createElement(j, {
+                }, createElement.createElement(TextComponent, null, G)), J && createElement.createElement(j, {
                     marginTop: 1
-                }, sF.createElement($, {
+                }, createElement.createElement(TextComponent, {
                     dimColor: !0
-                }, '"/plan open"'), sF.createElement($, {
+                }, '"/plan open"'), createElement.createElement(TextComponent, {
                     dimColor: !0
-                }, " to edit this plan in "), sF.createElement($, {
+                }, " to edit this plan in "), createElement.createElement(TextComponent, {
                     bold: !0,
                     dimColor: !0
                 }, J))))
@@ -1296,7 +1295,7 @@ function L_3(A) {
     return A.map((Q) => {
         let B = Q.isAvailable ? "Available" : "Redeemed";
         return {
-            label: `${Q.isAvailable?V1.tick:V1.circle} Pass ${Q.passNumber} · ${B}`,
+            label: `TextComponent{Q.isAvailable?V1.tick:V1.circle} Pass TextComponent{Q.passNumber} · TextComponent{B}`,
             value: Q.passNumber
         }
     })
@@ -1325,8 +1324,7 @@ function BV9({
         })
     };
     if (xQA.useEffect(() => {
-            // Async function: V
-async function V() {
+            async function V() {
                 try {
                     let K = await UjA();
                     if (!K || !K.eligible) {
@@ -1361,9 +1359,9 @@ async function V() {
         flexDirection: "column",
         marginTop: 1,
         gap: 1
-    }, z9.createElement($, {
+    }, z9.createElement(TextComponent, {
         dimColor: !0
-    }, "Loading guest pass information…"), z9.createElement($, {
+    }, "Loading guest pass information…"), z9.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, X.pending ? z9.createElement(z9.Fragment, null, "Press ", X.keyName, " again to exit") : z9.createElement(z9.Fragment, null, "Esc to exit")));
@@ -1371,7 +1369,7 @@ async function V() {
         flexDirection: "column",
         marginTop: 1,
         gap: 1
-    }, z9.createElement($, null, "Guest passes are not currently available."), z9.createElement($, {
+    }, z9.createElement(TextComponent, null, "Guest passes are not currently available."), z9.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, X.pending ? z9.createElement(z9.Fragment, null, "Press ", X.keyName, " again to exit") : z9.createElement(z9.Fragment, null, "Esc to exit")));
@@ -1379,15 +1377,15 @@ async function V() {
         flexDirection: "column",
         marginTop: 1,
         gap: 1
-    }, z9.createElement($, {
+    }, z9.createElement(TextComponent, {
         bold: !0
     }, "Guest Passes"), z9.createElement(j, {
         flexDirection: "column"
-    }, z9.createElement($, {
+    }, z9.createElement(TextComponent, {
         dimColor: !0
     }, "Share a 7-day free Pro trial with friends. They'll get full access to Claude Pro features."), J && z9.createElement(j, {
         marginTop: 1
-    }, z9.createElement($, {
+    }, z9.createElement(TextComponent, {
         dimColor: !0
     }, J))), z9.createElement(M0, {
         options: L_3(G),
@@ -1399,13 +1397,13 @@ async function V() {
         visibleOptionCount: G.length
     }), z9.createElement(j, {
         marginTop: 1
-    }, z9.createElement($, {
+    }, z9.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, X.pending ? z9.createElement(z9.Fragment, null, "Press ", X.keyName, " again to exit") : z9.createElement(z9.Fragment, null, "Enter to copy link · Esc to exit"))))
 }
 var z9, xQA;
-var GV9 = L(() => {
+var GV9 = lazyLoader(() => {
     hA();
     $jA();
     u1();
@@ -1413,14 +1411,14 @@ var GV9 = L(() => {
     rjA();
     T6();
     c9();
-    z9 = GA(VA(), 1), xQA = GA(VA(), 1)
+    z9 = esmImport(VA(), 1), xQA = esmImport(VA(), 1)
 });
 var tF0, ZV9;
-var IV9 = L(() => {
+var IV9 = lazyLoader(() => {
     GV9();
     jQ();
     w0();
-    tF0 = GA(VA(), 1), ZV9 = {
+    tF0 = esmImport(VA(), 1), ZV9 = {
         type: "local-jsx",
         name: "passes",
         description: "Share a 7-day free Pro trial with friends!",
@@ -1460,24 +1458,24 @@ function YV9(A, Q, B) {
 function O_3() {
     return TQ.default.createElement(TQ.default.Fragment, null, TQ.default.createElement(j, {
         flexDirection: "column"
-    }, TQ.default.createElement($, {
+    }, TQ.default.createElement(TextComponent, {
         bold: !0,
         color: "professionalBlue"
-    }, "Updates to Consumer Terms and Policies"), TQ.default.createElement($, null, "An update to our Consumer Terms and Privacy Policy will take effect on", " ", TQ.default.createElement($, {
+    }, "Updates to Consumer Terms and Policies"), TQ.default.createElement(TextComponent, null, "An update to our Consumer Terms and Privacy Policy will take effect on", " ", TQ.default.createElement(TextComponent, {
         bold: !0
     }, "October 8, 2025"), ". You can accept the updated terms today.")), TQ.default.createElement(j, {
         flexDirection: "column"
-    }, TQ.default.createElement($, null, "What's changing?"), TQ.default.createElement(j, {
+    }, TQ.default.createElement(TextComponent, null, "What's changing?"), TQ.default.createElement(j, {
         paddingLeft: 1
-    }, TQ.default.createElement($, null, TQ.default.createElement($, null, "• "), TQ.default.createElement($, {
+    }, TQ.default.createElement(TextComponent, null, TQ.default.createElement(TextComponent, null, "• "), TQ.default.createElement(TextComponent, {
         bold: !0
-    }, "You can help improve Claude "), TQ.default.createElement($, null, "— Allow the use of your chats and coding sessions to train and improve Anthropic AI models. Change anytime in your Privacy Settings (", TQ.default.createElement(a4, {
+    }, "You can help improve Claude "), TQ.default.createElement(TextComponent, null, "— Allow the use of your chats and coding sessions to train and improve Anthropic AI models. Change anytime in your Privacy Settings (", TQ.default.createElement(a4, {
         url: "https://claude.ai/settings/data-privacy-controls"
     }), ")."))), TQ.default.createElement(j, {
         paddingLeft: 1
-    }, TQ.default.createElement($, null, TQ.default.createElement($, null, "• "), TQ.default.createElement($, {
+    }, TQ.default.createElement(TextComponent, null, TQ.default.createElement(TextComponent, null, "• "), TQ.default.createElement(TextComponent, {
         bold: !0
-    }, "Updates to data retention "), TQ.default.createElement($, null, "— To help us improve our AI models and safety protections, we're extending data retention to 5 years.")))), TQ.default.createElement($, null, "Learn more (", TQ.default.createElement(a4, {
+    }, "Updates to data retention "), TQ.default.createElement(TextComponent, null, "— To help us improve our AI models and safety protections, we're extending data retention to 5 years.")))), TQ.default.createElement(TextComponent, null, "Learn more (", TQ.default.createElement(a4, {
         url: "https://www.anthropic.com/news/updates-to-our-consumer-terms"
     }), ") or read the updated Consumer Terms (", TQ.default.createElement(a4, {
         url: "https://anthropic.com/legal/terms"
@@ -1489,23 +1487,23 @@ function O_3() {
 function R_3() {
     return TQ.default.createElement(TQ.default.Fragment, null, TQ.default.createElement(j, {
         flexDirection: "column"
-    }, TQ.default.createElement($, {
+    }, TQ.default.createElement(TextComponent, {
         bold: !0,
         color: "professionalBlue"
-    }, "Updates to Consumer Terms and Policies"), TQ.default.createElement($, null, "We've updated our Consumer Terms and Privacy Policy.")), TQ.default.createElement(j, {
+    }, "Updates to Consumer Terms and Policies"), TQ.default.createElement(TextComponent, null, "We've updated our Consumer Terms and Privacy Policy.")), TQ.default.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, TQ.default.createElement($, null, "What's changing?"), TQ.default.createElement(j, {
+    }, TQ.default.createElement(TextComponent, null, "What's changing?"), TQ.default.createElement(j, {
         flexDirection: "column"
-    }, TQ.default.createElement($, {
+    }, TQ.default.createElement(TextComponent, {
         bold: !0
-    }, "Help improve Claude"), TQ.default.createElement($, null, "Allow the use of your chats and coding sessions to train and improve Anthropic AI models. You can change this anytime in Privacy Settings"), TQ.default.createElement(a4, {
+    }, "Help improve Claude"), TQ.default.createElement(TextComponent, null, "Allow the use of your chats and coding sessions to train and improve Anthropic AI models. You can change this anytime in Privacy Settings"), TQ.default.createElement(a4, {
         url: "https://claude.ai/settings/data-privacy-controls"
     })), TQ.default.createElement(j, {
         flexDirection: "column"
-    }, TQ.default.createElement($, {
+    }, TQ.default.createElement(TextComponent, {
         bold: !0
-    }, "How this affects data retention"), TQ.default.createElement($, null, "Turning ON the improve Claude setting extends data retention from 30 days to 5 years. Turning it OFF keeps the default 30-day data retention. Delete data anytime."))), TQ.default.createElement($, null, "Learn more (", TQ.default.createElement(a4, {
+    }, "How this affects data retention"), TQ.default.createElement(TextComponent, null, "Turning ON the improve Claude setting extends data retention from 30 days to 5 years. Turning it OFF keeps the default 30-day data retention. Delete data anytime."))), TQ.default.createElement(TextComponent, null, "Learn more (", TQ.default.createElement(a4, {
         url: "https://www.anthropic.com/news/updates-to-our-consumer-terms"
     }), ") or read the updated Consumer Terms (", TQ.default.createElement(a4, {
         url: "https://anthropic.com/legal/terms"

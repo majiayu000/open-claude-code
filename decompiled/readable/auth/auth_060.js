@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_060.js
+ * 处理时间: 2025-12-09T03:41:37.044Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.941Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -26,7 +28,7 @@
         } catch (Y) {}
     }
 
-function Pl2(A) {
+    function Pl2(A) {
         let Q = {};
         try {
             A.exception.values.forEach((G) => {
@@ -51,11 +53,11 @@ function Pl2(A) {
         })
     }
 
-function t43(A, Q) {
+    function t43(A, Q) {
         if (Q.length > 0) A.sdk = A.sdk || {}, A.sdk.integrations = [...A.sdk.integrations || [], ...Q]
     }
 
-function e43(A, Q, B) {
+    function e43(A, Q, B) {
         if (!A) return null;
         let G = {
             ...A,
@@ -88,13 +90,13 @@ function e43(A, Q, B) {
         return G
     }
 
-function A83(A, Q) {
+    function A83(A, Q) {
         if (!Q) return A;
         let B = A ? A.clone() : new tZ0.Scope;
         return B.update(Q), B
     }
 
-function Q83(A) {
+    function Q83(A) {
         if (!A) return;
         if (B83(A)) return {
             captureContext: A
@@ -105,13 +107,12 @@ function Q83(A) {
         return A
     }
 
-function B83(A) {
+    function B83(A) {
         return A instanceof tZ0.Scope || typeof A === "function"
     }
+    var G83 = ["user", "level", "extra", "contexts", "tags", "fingerprint", "requestSession", "propagationContext"];
 
-var G83 = ["user", "level", "extra", "contexts", "tags", "fingerprint", "requestSession", "propagationContext"];
-
-function Z83(A) {
+    function Z83(A) {
         return Object.keys(A).some((Q) => G83.includes(Q))
     }
     jl2.applyDebugIds = Tl2;
@@ -119,7 +120,7 @@ function Z83(A) {
     jl2.parseEventHintOrCaptureContext = Q83;
     jl2.prepareEvent = r43
 });
-var MO = U((kl2) => {
+var MO = moduleWrapper((kl2) => {
     Object.defineProperty(kl2, "__esModule", {
         value: !0
     });
@@ -130,11 +131,11 @@ var MO = U((kl2) => {
         eZ0 = sWA(),
         F83 = x71();
 
-function V83(A, Q) {
+    function V83(A, Q) {
         return mW.getCurrentHub().captureException(A, F83.parseEventHintOrCaptureContext(Q))
     }
 
-function K83(A, Q) {
+    function K83(A, Q) {
         let B = typeof Q === "string" ? Q : void 0,
             G = typeof Q !== "string" ? {
                 captureContext: Q
@@ -142,27 +143,27 @@ function K83(A, Q) {
         return mW.getCurrentHub().captureMessage(A, B, G)
     }
 
-function D83(A, Q) {
+    function D83(A, Q) {
         return mW.getCurrentHub().captureEvent(A, Q)
     }
 
-function H83(A) {
+    function H83(A) {
         mW.getCurrentHub().configureScope(A)
     }
 
-function C83(A, Q) {
+    function C83(A, Q) {
         mW.getCurrentHub().addBreadcrumb(A, Q)
     }
 
-function E83(A, Q) {
+    function E83(A, Q) {
         mW.getCurrentHub().setContext(A, Q)
     }
 
-function z83(A) {
+    function z83(A) {
         mW.getCurrentHub().setExtras(A)
     }
 
-function U83(A, Q) {
+    function U83(A, Q) {
         mW.getCurrentHub().setExtra(A, Q)
     }
 
@@ -170,15 +171,15 @@ function U83(A, Q) {
         mW.getCurrentHub().setTags(A)
     }
 
-function w83(A, Q) {
+    function w83(A, Q) {
         mW.getCurrentHub().setTag(A, Q)
     }
 
-function q83(A) {
+    function q83(A) {
         mW.getCurrentHub().setUser(A)
     }
 
-function Sl2(...A) {
+    function Sl2(...A) {
         let Q = mW.getCurrentHub();
         if (A.length === 2) {
             let [B, G] = A;
@@ -190,25 +191,25 @@ function Sl2(...A) {
         return Q.withScope(A[0])
     }
 
-function N83(A) {
+    function N83(A) {
         return mW.runWithAsyncContext(() => {
             return A(mW.getIsolationScope())
         })
     }
 
-function L83(A, Q) {
+    function L83(A, Q) {
         return Sl2((B) => {
             return B.setSpan(A), Q(B)
         })
     }
 
-function M83(A, Q) {
+    function M83(A, Q) {
         return mW.getCurrentHub().startTransaction({
             ...A
         }, Q)
     }
 
-function AI0(A, Q) {
+    function AI0(A, Q) {
         let B = rTA(),
             G = h0A();
         if (!G) f71.DEBUG_BUILD && Gg.logger.warn("Cannot capture check-in. No client defined.");
@@ -217,14 +218,14 @@ function AI0(A, Q) {
         return Gg.uuid4()
     }
 
-function O83(A, Q, B) {
+    function O83(A, Q, B) {
         let G = AI0({
                 monitorSlug: A,
                 status: "in_progress"
             }, B),
             Z = Gg.timestampInSeconds();
 
-function I(J) {
+        function I(J) {
             AI0({
                 monitorSlug: A,
                 status: J,
@@ -246,36 +247,34 @@ function I(J) {
         else I("ok");
         return Y
     }
-
-async function R83(A) {
+    async function R83(A) {
         let Q = h0A();
         if (Q) return Q.flush(A);
         return f71.DEBUG_BUILD && Gg.logger.warn("Cannot flush events. No client defined."), Promise.resolve(!1)
     }
-
-async function T83(A) {
+    async function T83(A) {
         let Q = h0A();
         if (Q) return Q.close(A);
         return f71.DEBUG_BUILD && Gg.logger.warn("Cannot flush events and disable SDK. No client defined."), Promise.resolve(!1)
     }
 
-function P83() {
+    function P83() {
         return mW.getCurrentHub().lastEventId()
     }
 
-function h0A() {
+    function h0A() {
         return mW.getCurrentHub().getClient()
     }
 
-function j83() {
+    function j83() {
         return !!h0A()
     }
 
-function rTA() {
+    function rTA() {
         return mW.getCurrentHub().getScope()
     }
 
-function S83(A) {
+    function S83(A) {
         let Q = h0A(),
             B = mW.getIsolationScope(),
             G = rTA(),
@@ -302,7 +301,7 @@ function S83(A) {
         return QI0(), B.setSession(J), G.setSession(J), J
     }
 
-function QI0() {
+    function QI0() {
         let A = mW.getIsolationScope(),
             Q = rTA(),
             B = Q.getSession() || A.getSession();
@@ -310,7 +309,7 @@ function QI0() {
         _l2(), A.setSession(), Q.setSession()
     }
 
-function _l2() {
+    function _l2() {
         let A = mW.getIsolationScope(),
             Q = rTA(),
             B = h0A(),
@@ -318,7 +317,7 @@ function _l2() {
         if (G && B && B.captureSession) B.captureSession(G)
     }
 
-function _83(A = !1) {
+    function _83(A = !1) {
         if (A) {
             QI0();
             return
@@ -352,17 +351,17 @@ function _83(A = !1) {
     kl2.withMonitor = O83;
     kl2.withScope = Sl2
 });
-var rWA = U((yl2) => {
+var rWA = moduleWrapper((yl2) => {
     Object.defineProperty(yl2, "__esModule", {
         value: !0
     });
 
-function Z63(A) {
+    function Z63(A) {
         return A.transaction
     }
     yl2.getRootSpan = Z63
 });
-var g0A = U((bl2) => {
+var g0A = moduleWrapper((bl2) => {
     Object.defineProperty(bl2, "__esModule", {
         value: !0
     });
@@ -372,7 +371,7 @@ var g0A = U((bl2) => {
         W63 = rWA(),
         BI0 = C$();
 
-function vl2(A, Q, B) {
+    function vl2(A, Q, B) {
         let G = Q.getOptions(),
             {
                 publicKey: Z
@@ -390,7 +389,7 @@ function vl2(A, Q, B) {
         return Q.emit && Q.emit("createDsc", Y), Y
     }
 
-function X63(A) {
+    function X63(A) {
         let Q = xl2.getClient();
         if (!Q) return {};
         let B = vl2(BI0.spanToJSON(A).trace_id || "", Q, xl2.getCurrentScope()),
@@ -402,7 +401,7 @@ function X63(A) {
             sampleRate: I,
             source: Y
         } = G.metadata;
-        if (I != null) B.sample_rate = `${I}`;
+        if (I != null) B.sample_rate = `TextComponent{I}`;
         let J = BI0.spanToJSON(G);
         if (Y && Y !== "url") B.transaction = J.description;
         return B.sampled = String(BI0.spanIsSampled(G)), Q.emit && Q.emit("createDsc", B), B
@@ -410,7 +409,7 @@ function X63(A) {
     bl2.getDynamicSamplingContextFromClient = vl2;
     bl2.getDynamicSamplingContextFromSpan = X63
 });
-var v71 = U((hl2) => {
+var v71 = moduleWrapper((hl2) => {
     Object.defineProperty(hl2, "__esModule", {
         value: !0
     });
@@ -419,7 +418,7 @@ var v71 = U((hl2) => {
         D63 = rWA(),
         fl2 = C$();
 
-function H63(A, Q) {
+    function H63(A, Q) {
         let {
             fingerprint: B,
             span: G,
@@ -430,7 +429,7 @@ function H63(A, Q) {
         w63(A, B), z63(A, Z), U63(A, I)
     }
 
-function C63(A, Q) {
+    function C63(A, Q) {
         let {
             extra: B,
             tags: G,
@@ -459,7 +458,7 @@ function C63(A, Q) {
         }
     }
 
-function oWA(A, Q, B) {
+    function oWA(A, Q, B) {
         if (B && Object.keys(B).length) {
             A[Q] = {
                 ...A[Q]
@@ -469,7 +468,7 @@ function oWA(A, Q, B) {
         }
     }
 
-function E63(A, Q) {
+    function E63(A, Q) {
         let {
             extra: B,
             tags: G,
@@ -501,12 +500,12 @@ function E63(A, Q) {
         if (J) A.transaction = J
     }
 
-function z63(A, Q) {
+    function z63(A, Q) {
         let B = [...A.breadcrumbs || [], ...Q];
         A.breadcrumbs = B.length ? B : void 0
     }
 
-function U63(A, Q) {
+    function U63(A, Q) {
         A.sdkProcessingMetadata = {
             ...A.sdkProcessingMetadata,
             ...Q
@@ -532,7 +531,7 @@ function U63(A, Q) {
         }
     }
 
-function w63(A, Q) {
+    function w63(A, Q) {
         if (A.fingerprint = A.fingerprint ? oTA.arrayify(A.fingerprint) : [], Q) A.fingerprint = A.fingerprint.concat(Q);
         if (A.fingerprint && !A.fingerprint.length) delete A.fingerprint
     }
@@ -540,7 +539,7 @@ function w63(A, Q) {
     hl2.mergeAndOverwriteScopeData = oWA;
     hl2.mergeScopeData = C63
 });
-var b71 = U((ml2) => {
+var b71 = moduleWrapper((ml2) => {
     Object.defineProperty(ml2, "__esModule", {
         value: !0
     });
@@ -550,8 +549,7 @@ var b71 = U((ml2) => {
         O63 = v71(),
         R63 = 100,
         h71;
-
-class tWA {
+    class tWA {
         constructor() {
             this._notifyingListeners = !1, this._scopeListeners = [], this._eventProcessors = [], this._breadcrumbs = [], this._attachments = [], this._user = {}, this._tags = {}, this._extra = {}, this._contexts = {}, this._sdkProcessingMetadata = {}, this._propagationContext = ul2()
         }
@@ -813,16 +811,16 @@ class tWA {
         }
     }
 
-function T63() {
+    function T63() {
         if (!h71) h71 = new tWA;
         return h71
     }
 
-function P63(A) {
+    function P63(A) {
         h71 = A
     }
 
-function ul2() {
+    function ul2() {
         return {
             traceId: hy.uuid4(),
             spanId: hy.uuid4().substring(16)
@@ -832,14 +830,14 @@ function ul2() {
     ml2.getGlobalScope = T63;
     ml2.setGlobalScope = P63
 });
-var g71 = U((dl2) => {
+var g71 = moduleWrapper((dl2) => {
     Object.defineProperty(dl2, "__esModule", {
         value: !0
     });
     var k63 = "7.120.3";
     dl2.SDK_VERSION = k63
 });
-var fy = U((nl2) => {
+var fy = moduleWrapper((nl2) => {
     Object.defineProperty(nl2, "__esModule", {
         value: !0
     });
@@ -851,8 +849,7 @@ var fy = U((nl2) => {
         v63 = g71(),
         u71 = parseFloat(v63.SDK_VERSION),
         b63 = 100;
-
-class eTA {
+    class eTA {
         constructor(A, Q, B, G = u71) {
             this._version = G;
             let Z;
@@ -1004,7 +1001,7 @@ class eTA {
             try {
                 return Q.getIntegration(A)
             } catch (B) {
-                return GI0.DEBUG_BUILD && sE.logger.warn(`Cannot retrieve integration ${A.id} from the current Hub`), null
+                return GI0.DEBUG_BUILD && sE.logger.warn(`Cannot retrieve integration TextComponent{A.id} from the current Hub`), null
             }
         }
         startTransaction(A, Q) {
@@ -1068,24 +1065,24 @@ Sentry.init({...});
         _callExtensionMethod(A, ...Q) {
             let G = u0A().__SENTRY__;
             if (G && G.extensions && typeof G.extensions[A] === "function") return G.extensions[A].apply(this, Q);
-            GI0.DEBUG_BUILD && sE.logger.warn(`Extension method ${A} couldn't be found, doing nothing.`)
+            GI0.DEBUG_BUILD && sE.logger.warn(`Extension method TextComponent{A} couldn't be found, doing nothing.`)
         }
     }
 
-function u0A() {
+    function u0A() {
         return sE.GLOBAL_OBJ.__SENTRY__ = sE.GLOBAL_OBJ.__SENTRY__ || {
             extensions: {},
             hub: void 0
         }, sE.GLOBAL_OBJ
     }
 
-function II0(A) {
+    function II0(A) {
         let Q = u0A(),
             B = tTA(Q);
         return m71(Q, A), B
     }
 
-function pl2() {
+    function pl2() {
         let A = u0A();
         if (A.__SENTRY__ && A.__SENTRY__.acs) {
             let Q = A.__SENTRY__.acs.getCurrentHub();
@@ -1094,16 +1091,16 @@ function pl2() {
         return ll2(A)
     }
 
-function f63() {
+    function f63() {
         return pl2().getIsolationScope()
     }
 
-function ll2(A = u0A()) {
+    function ll2(A = u0A()) {
         if (!il2(A) || tTA(A).isOlderThan(u71)) m71(A, new eTA);
         return tTA(A)
     }
 
-function h63(A, Q = ll2()) {
+    function h63(A, Q = ll2()) {
         if (!il2(A) || tTA(A).isOlderThan(u71)) {
             let B = Q.getClient(),
                 G = Q.getScope(),
@@ -1112,26 +1109,26 @@ function h63(A, Q = ll2()) {
         }
     }
 
-function g63(A) {
+    function g63(A) {
         let Q = u0A();
         Q.__SENTRY__ = Q.__SENTRY__ || {}, Q.__SENTRY__.acs = A
     }
 
-function u63(A, Q = {}) {
+    function u63(A, Q = {}) {
         let B = u0A();
         if (B.__SENTRY__ && B.__SENTRY__.acs) return B.__SENTRY__.acs.runWithAsyncContext(A, Q);
         return A()
     }
 
-function il2(A) {
+    function il2(A) {
         return !!(A && A.__SENTRY__ && A.__SENTRY__.hub)
     }
 
-function tTA(A) {
+    function tTA(A) {
         return sE.getGlobalSingleton("hub", () => new eTA, A)
     }
 
-function m71(A, Q) {
+    function m71(A, Q) {
         if (!A) return !1;
         let B = A.__SENTRY__ = A.__SENTRY__ || {};
         return B.hub = Q, !0
@@ -1148,14 +1145,14 @@ function m71(A, Q) {
     nl2.setAsyncContextStrategy = g63;
     nl2.setHubOnCarrier = m71
 });
-var d71 = U((sl2) => {
+var d71 = moduleWrapper((sl2) => {
     Object.defineProperty(sl2, "__esModule", {
         value: !0
     });
     var al2 = l0(),
         t63 = fy();
 
-function e63(A) {
+    function e63(A) {
         return (A || t63.getCurrentHub()).getScope().getTransaction()
     }
     var A53 = al2.extractTraceparentData;
@@ -1163,7 +1160,7 @@ function e63(A) {
     sl2.extractTraceparentData = A53;
     sl2.getActiveTransaction = e63
 });
-var c71 = U((ol2) => {
+var c71 = moduleWrapper((ol2) => {
     Object.defineProperty(ol2, "__esModule", {
         value: !0
     });
@@ -1172,19 +1169,19 @@ var c71 = U((ol2) => {
         I53 = d71(),
         rl2 = !1;
 
-function Y53() {
+    function Y53() {
         if (rl2) return;
         rl2 = !0, YI0.addGlobalErrorInstrumentationHandler(JI0), YI0.addGlobalUnhandledRejectionInstrumentationHandler(JI0)
     }
 
-function JI0() {
+    function JI0() {
         let A = I53.getActiveTransaction();
         if (A) Z53.DEBUG_BUILD && YI0.logger.log("[Tracing] Transaction: internal_error -> Global error occured"), A.setStatus("internal_error")
     }
     JI0.tag = "sentry_tracingErrorCallback";
     ol2.registerErrorInstrumentation = Y53
 });
-var eWA = U((tl2) => {
+var eWA = moduleWrapper((tl2) => {
     Object.defineProperty(tl2, "__esModule", {
         value: !0
     });
@@ -1225,7 +1222,7 @@ var eWA = U((tl2) => {
         A.DataLoss = z
     })(tl2.SpanStatus || (tl2.SpanStatus = {}));
 
-function XI0(A) {
+    function XI0(A) {
         if (A < 400 && A >= 100) return "ok";
         if (A >= 400 && A < 500) switch (A) {
             case 401:
@@ -1257,7 +1254,7 @@ function XI0(A) {
     }
     var W53 = XI0;
 
-function X53(A, Q) {
+    function X53(A, Q) {
         A.setTag("http.status_code", String(Q)), A.setData("http.response.status_code", Q);
         let B = XI0(Q);
         if (B !== "unknown_error") A.setStatus(B)
@@ -1266,13 +1263,13 @@ function X53(A, Q) {
     tl2.setHttpStatus = X53;
     tl2.spanStatusfromHttpCode = W53
 });
-var FI0 = U((el2) => {
+var FI0 = moduleWrapper((el2) => {
     Object.defineProperty(el2, "__esModule", {
         value: !0
     });
     var D53 = l0();
 
-function H53(A, Q, B = () => {}) {
+    function H53(A, Q, B = () => {}) {
         let G;
         try {
             G = A()
@@ -1282,7 +1279,7 @@ function H53(A, Q, B = () => {}) {
         return C53(G, Q, B)
     }
 
-function C53(A, Q, B) {
+    function C53(A, Q, B) {
         if (D53.isThenable(A)) return A.then((G) => {
             return B(), G
         }, (G) => {
@@ -1292,13 +1289,13 @@ function C53(A, Q, B) {
     }
     el2.handleCallbackErrors = H53
 });
-var p71 = U((Ai2) => {
+var p71 = moduleWrapper((Ai2) => {
     Object.defineProperty(Ai2, "__esModule", {
         value: !0
     });
     var z53 = MO();
 
-function U53(A) {
+    function U53(A) {
         if (typeof __SENTRY_TRACING__ === "boolean" && !__SENTRY_TRACING__) return !1;
         let Q = z53.getClient(),
             B = A || Q && Q.getOptions();
@@ -1306,7 +1303,7 @@ function U53(A) {
     }
     Ai2.hasTracingEnabled = U53
 });
-var a71 = U((Yi2) => {
+var a71 = moduleWrapper((Yi2) => {
     Object.defineProperty(Yi2, "__esModule", {
         value: !0
     });
@@ -1321,7 +1318,7 @@ var a71 = U((Yi2) => {
         VI0 = FI0(),
         Qi2 = p71();
 
-function N53(A, Q, B = () => {}, G = () => {}) {
+    function N53(A, Q, B = () => {}, G = () => {}) {
         let Z = mn.getCurrentHub(),
             I = AXA.getCurrentScope(),
             Y = I.getSpan(),
@@ -1339,7 +1336,7 @@ function N53(A, Q, B = () => {}, G = () => {}) {
         })
     }
 
-function Bi2(A, Q) {
+    function Bi2(A, Q) {
         let B = n71(A);
         return mn.runWithAsyncContext(() => {
             return AXA.withScope(A.scope, (G) => {
@@ -1364,7 +1361,7 @@ function Bi2(A, Q) {
     }
     var L53 = Bi2;
 
-function M53(A, Q) {
+    function M53(A, Q) {
         let B = n71(A);
         return mn.runWithAsyncContext(() => {
             return AXA.withScope(A.scope, (G) => {
@@ -1377,7 +1374,7 @@ function M53(A, Q) {
                         scope: G
                     });
 
-function W() {
+                function W() {
                     J && J.end()
                 }
                 return VI0.handleCallbackErrors(() => Q(J, W), () => {
@@ -1392,7 +1389,7 @@ function W() {
         })
     }
 
-function O53(A) {
+    function O53(A) {
         if (!Qi2.hasTracingEnabled()) return;
         let Q = n71(A),
             B = mn.getCurrentHub(),
@@ -1407,7 +1404,7 @@ function O53(A) {
         })
     }
 
-function Gi2() {
+    function Gi2() {
         return AXA.getCurrentScope().getSpan()
     }
     var R53 = ({
@@ -1420,7 +1417,7 @@ function Gi2() {
                 dynamicSamplingContext: I,
                 propagationContext: Y
             } = APA.tracingContextFromHeaders(A, Q);
-        if (G.setPropagationContext(Y), w53.DEBUG_BUILD && Z) APA.logger.log(`[Tracing] Continuing trace ${Z.traceId}.`);
+        if (G.setPropagationContext(Y), w53.DEBUG_BUILD && Z) APA.logger.log(`[Tracing] Continuing trace TextComponent{Z.traceId}.`);
         let J = {
             ...Z,
             metadata: APA.dropUndefinedKeys({
@@ -1433,7 +1430,7 @@ function Gi2() {
         })
     };
 
-function i71(A, {
+    function i71(A, {
         parentSpan: Q,
         spanContext: B,
         forceTransaction: G,
@@ -1484,7 +1481,7 @@ function i71(A, {
         return Z.setSpan(Y), T53(Y, Z, I), Y
     }
 
-function n71(A) {
+    function n71(A) {
         if (A.startTime) {
             let Q = {
                 ...A
@@ -1496,11 +1493,11 @@ function n71(A) {
     var Zi2 = "_sentryScope",
         Ii2 = "_sentryIsolationScope";
 
-function T53(A, Q, B) {
+    function T53(A, Q, B) {
         if (A) APA.addNonEnumerableProperty(A, Ii2, B), APA.addNonEnumerableProperty(A, Zi2, Q)
     }
 
-function P53(A) {
+    function P53(A) {
         return {
             scope: A[Zi2],
             isolationScope: A[Ii2]
@@ -1515,7 +1512,7 @@ function P53(A) {
     Yi2.startSpanManual = M53;
     Yi2.trace = N53
 });
-var BPA = U((Wi2) => {
+var BPA = moduleWrapper((Wi2) => {
     Object.defineProperty(Wi2, "__esModule", {
         value: !0
     });

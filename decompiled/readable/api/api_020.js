@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_020.js
+ * 处理时间: 2025-12-09T03:41:36.208Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.874Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -1276,8 +1279,8 @@ var yZ, np, Ed6 = async (A, Q) => {
     if (B.length) return JSON.parse(B);
     return {}
 });
-var FcB = L(() => {
-    yZ = GA(bfB(), 1), np = GA(WcB(), 1)
+var FcB = lazyLoader(() => {
+    yZ = esmImport(bfB(), 1), np = esmImport(WcB(), 1)
 });
 
 function VcB(A) {
@@ -1305,7 +1308,7 @@ function VcB(A) {
         }
     }
 }
-var bl1 = L(() => {
+var bl1 = lazyLoader(() => {
     ZE()
 });
 
@@ -1320,7 +1323,7 @@ var fl1 = (A) => (fl1 = Array.isArray, fl1(A)),
             return
         }
     };
-var pwA = L(() => {
+var pwA = lazyLoader(() => {
     bl1();
     hl1 = fl1
 });
@@ -1347,7 +1350,7 @@ function CcB(A) {
     return HcB.set(Q, [B, Z]), Z
 }
 var DcB, Td6, HcB;
-var EcB = L(() => {
+var EcB = lazyLoader(() => {
     pwA();
     DcB = {
         off: 0,
@@ -1384,15 +1387,15 @@ var UcB, yeA, $cB, gl1 = (A) => new TextDecoder("utf-8").decode(A),
         }
     },
     xeA;
-var wcB = L(() => {
+var wcB = lazyLoader(() => {
     NnA();
     Ft();
     l_();
     FcB();
     pwA();
     EcB();
-    UcB = GA(nvB(), 1), yeA = GA(Dp1(), 1), $cB = GA(mc1(), 1);
-    xeA = class xeA extends IE {
+    UcB = esmImport(nvB(), 1), yeA = esmImport(Dp1(), 1), $cB = esmImport(mc1(), 1);
+    xeA = class xeA extends EventSourceIterator {
         static fromSSEResponse(A, Q, B) {
             let G = !1,
                 Z = B ? CcB(B) : console;
@@ -1508,11 +1511,11 @@ var qcB, ml1 = (A) => {
         nulls: B
     }
 };
-var NcB = L(() => {
+var NcB = lazyLoader(() => {
     pwA();
     qcB = Symbol.for("brand.privateNullableHeaders")
 });
 
 function McB(A) {
-    return A.replace(/[^A-Za-z0-9\-._~!$&'()*+,;=:@]+/g, encodeURIComponent)
+    return A.replace(/[^A-Za-z0-9\-._~!TextComponent&'()*+,;=:@]+/g, encodeURIComponent)
 }

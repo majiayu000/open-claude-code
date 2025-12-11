@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: lodash_003.js
+ * 处理时间: 2025-12-09T03:41:37.690Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.996Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -675,7 +678,7 @@
         }
     })
 });
-var zy0 = U((Cy0) => {
+var zy0 = moduleWrapper((Cy0) => {
     Object.defineProperty(Cy0, "__esModule", {
         value: !0
     });
@@ -683,14 +686,14 @@ var zy0 = U((Cy0) => {
     var Mo9 = BK1(),
         Hy0 = ex();
 
-function Oo9(A, Q) {
+    function Oo9(A, Q) {
         return function(B) {
             return [Hy0.filter(A, Q)(B), Hy0.filter(Mo9.not(A, Q))(B)]
         }
     }
     Cy0.partition = Oo9
 });
-var Uy0 = U((Hm) => {
+var Uy0 = moduleWrapper((Hm) => {
     var Ro9 = Hm && Hm.__read || function(A, Q) {
             var B = typeof Symbol === "function" && A[Symbol.iterator];
             if (!B) return A;
@@ -723,14 +726,14 @@ var Uy0 = U((Hm) => {
     var Po9 = gs(),
         jo9 = tyA();
 
-function So9() {
+    function So9() {
         var A = [];
         for (var Q = 0; Q < arguments.length; Q++) A[Q] = arguments[Q];
         return jo9.raceWith.apply(void 0, To9([], Ro9(Po9.argsOrArgArray(A))))
     }
     Hm.race = So9
 });
-var $y0 = U((a0) => {
+var $y0 = moduleWrapper((a0) => {
     Object.defineProperty(a0, "__esModule", {
         value: !0
     });

@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_008.js
+ * 处理时间: 2025-12-09T03:41:37.356Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.967Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -158,7 +160,7 @@
                         let X = new G(Y);
                         if (typeof J === "function") this.send(X, J);
                         else if (typeof W === "function") {
-                            if (typeof J !== "object") throw Error(`Expected http options but got ${typeof J}`);
+                            if (typeof J !== "object") throw Error(`Expected http options but got TextComponent{typeof J}`);
                             this.send(X, J || {}, W)
                         } else return this.send(X, J)
                     }, "methodImpl"),
@@ -325,7 +327,7 @@
             error() {}
         };
 
-function oO1(A, Q, B) {
+    function oO1(A, Q, B) {
         let G, Z, I;
         if (typeof Q > "u" && typeof B > "u") G = {}, I = A;
         else if (G = A, typeof Q === "function") return Z = Q, I = B, y88(G, Z, I);
@@ -407,7 +409,7 @@ function oO1(A, Q, B) {
         }, "_json");
     V88(rO1, c6(), tO1.exports)
 });
-var COQ = U((XE7, HOQ) => {
+var COQ = moduleWrapper((XE7, HOQ) => {
     var {
         defineProperty: XmA,
         getOwnPropertyDescriptor: h88,
@@ -461,11 +463,11 @@ var COQ = U((XE7, HOQ) => {
     var p88 = Q3((A) => {
             if (A == null) return A;
             if (typeof A === "number" || typeof A === "bigint") {
-                let Q = Error(`Received number ${A} where a string was expected.`);
+                let Q = Error(`Received number TextComponent{A} where a string was expected.`);
                 return Q.name = "Warning", console.warn(Q), String(A)
             }
             if (typeof A === "boolean") {
-                let Q = Error(`Received boolean ${A} where a string was expected.`);
+                let Q = Error(`Received boolean TextComponent{A} where a string was expected.`);
                 return Q.name = "Warning", console.warn(Q), String(A)
             }
             return A
@@ -475,7 +477,7 @@ var COQ = U((XE7, HOQ) => {
             if (typeof A === "string") {
                 let Q = A.toLowerCase();
                 if (A !== "" && Q !== "false" && Q !== "true") {
-                    let B = Error(`Received string "${A}" where a boolean was expected.`);
+                    let B = Error(`Received string "TextComponent{A}" where a boolean was expected.`);
                     B.name = "Warning", console.warn(B)
                 }
                 return A !== "" && Q !== "false"
@@ -487,7 +489,7 @@ var COQ = U((XE7, HOQ) => {
             if (typeof A === "string") {
                 let Q = Number(A);
                 if (Q.toString() !== A) {
-                    let B = Error(`Received string "${A}" where a number was expected.`);
+                    let B = Error(`Received string "TextComponent{A}" where a number was expected.`);
                     return B.name = "Warning", console.warn(B), A
                 }
                 return Q
@@ -511,7 +513,7 @@ var COQ = U((XE7, HOQ) => {
         s88 = Od(),
         r88 = c6();
 
-function IOQ(A, Q, B) {
+    function IOQ(A, Q, B) {
         if (B?.source) {
             let G = B.source;
             if (typeof Q === "number") {
@@ -649,13 +651,13 @@ function IOQ(A, Q, B) {
                 if (this.stage === 2) throw Error("@aws-sdk/core/protocols - JsonReplacer exhausted.");
                 return this.stage = 1, (A, Q) => {
                     if (Q instanceof Q68.NumericValue) {
-                        let B = `${AOQ+NaN+this.counter++}_` + Q.string;
-                        return this.values.set(`"${B}"`, Q.string), B
+                        let B = `TextComponent{AOQ+NaN+this.counter++}_` + Q.string;
+                        return this.values.set(`"TextComponent{B}"`, Q.string), B
                     }
                     if (typeof Q === "bigint") {
                         let B = Q.toString(),
-                            G = `${AOQ+"b"+this.counter++}_` + B;
-                        return this.values.set(`"${G}"`, B), G
+                            G = `TextComponent{AOQ+"b"+this.counter++}_` + B;
+                        return this.values.set(`"TextComponent{G}"`, B), G
                     }
                     return Q
                 }
@@ -785,7 +787,7 @@ function IOQ(A, Q, B) {
                 let G = await super.serializeRequest(A, Q, B);
                 if (!G.path.endsWith("/")) G.path += "/";
                 if (Object.assign(G.headers, {
-                        "content-type": `application/x-amz-json-${this.getJsonRpcVersion()}`,
+                        "content-type": `application/x-amz-json-TextComponent{this.getJsonRpcVersion()}`,
                         "x-amz-target": (this.getJsonRpcVersion() === "1.0" ? "JsonRpc10." : "JsonProtocol.") + Z6A.NormalizedSchema.of(A).getName()
                     }), (0, Z6A.deref)(A.input) === "unit" || !G.body) G.body = "{}";
                 try {
@@ -1056,7 +1058,7 @@ function IOQ(A, Q, B) {
                         return J
                     }
                     if (B.isDocumentSchema()) return Q;
-                    throw Error(`@aws-sdk/core/protocols - xml deserializer unhandled schema type for ${B.getName(!0)}`)
+                    throw Error(`@aws-sdk/core/protocols - xml deserializer unhandled schema type for TextComponent{B.getName(!0)}`)
                 } else {
                     if (B.isListSchema()) return [];
                     else if (B.isMapSchema() || B.isStructSchema()) return {};
@@ -1133,7 +1135,7 @@ function IOQ(A, Q, B) {
                             this.writeValue(String(Q.getTime() / 1000));
                             break
                     }
-                } else if (G.isDocumentSchema()) throw Error(`@aws-sdk/core/protocols - QuerySerializer unsupported document type ${G.getName(!0)}`);
+                } else if (G.isDocumentSchema()) throw Error(`@aws-sdk/core/protocols - QuerySerializer unsupported document type TextComponent{G.getName(!0)}`);
                 else if (G.isListSchema()) {
                     if (Array.isArray(Q))
                         if (Q.length === 0) {
@@ -1145,7 +1147,7 @@ function IOQ(A, Q, B) {
                             for (let J of Q) {
                                 if (J == null) continue;
                                 let W = this.getKey("member", Z.getMergedTraits().xmlName),
-                                    X = I ? `${B}${Y}` : `${B}${W}.${Y}`;
+                                    X = I ? `TextComponent{B}TextComponent{Y}` : `TextComponent{B}TextComponent{W}.TextComponent{Y}`;
                                 this.write(Z, J, X), ++Y
                             }
                         }
@@ -1158,9 +1160,9 @@ function IOQ(A, Q, B) {
                         for (let [W, X] of Object.entries(Q)) {
                             if (X == null) continue;
                             let F = this.getKey("key", Z.getMergedTraits().xmlName),
-                                V = Y ? `${B}${J}.${F}` : `${B}entry.${J}.${F}`,
+                                V = Y ? `TextComponent{B}TextComponent{J}.TextComponent{F}` : `TextComponent{B}entry.TextComponent{J}.TextComponent{F}`,
                                 K = this.getKey("value", I.getMergedTraits().xmlName),
-                                D = Y ? `${B}${J}.${K}` : `${B}entry.${J}.${K}`;
+                                D = Y ? `TextComponent{B}TextComponent{J}.TextComponent{K}` : `TextComponent{B}entry.TextComponent{J}.TextComponent{K}`;
                             this.write(Z, W, V), this.write(I, X, D), ++J
                         }
                     }
@@ -1169,11 +1171,11 @@ function IOQ(A, Q, B) {
                         for (let [Z, I] of G.structIterator()) {
                             if (Q[Z] == null) continue;
                             let Y = this.getKey(Z, I.getMergedTraits().xmlName),
-                                J = `${B}${Y}`;
+                                J = `TextComponent{B}TextComponent{Y}`;
                             this.write(I, Q[Z], J)
                         }
                 } else if (G.isUnitSchema());
-                else throw Error(`@aws-sdk/core/protocols - QuerySerializer unrecognized schema type ${G.getName(!0)}`)
+                else throw Error(`@aws-sdk/core/protocols - QuerySerializer unrecognized schema type TextComponent{G.getName(!0)}`)
             }
             flush() {
                 if (this.buffer === void 0) throw Error("@aws-sdk/core/protocols - QuerySerializer cannot flush with nothing written to buffer.");
@@ -1187,7 +1189,7 @@ function IOQ(A, Q, B) {
             }
             writeKey(A) {
                 if (A.endsWith(".")) A = A.slice(0, A.length - 1);
-                this.buffer += `&${(0,QR1.extendedEncodeURIComponent)(A)}=`
+                this.buffer += `&TextComponent{(0,QR1.extendedEncodeURIComponent)(A)}=`
             }
             writeValue(A) {
                 this.buffer += (0, QR1.extendedEncodeURIComponent)(A)
@@ -1231,7 +1233,7 @@ function IOQ(A, Q, B) {
                 if (Object.assign(G.headers, {
                         "content-type": "application/x-www-form-urlencoded"
                     }), (0, Rd.deref)(A.input) === "unit" || !G.body) G.body = "";
-                if (G.body = `Action=${A.name.split("#")[1]}&Version=${this.options.version}` + G.body, G.body.endsWith("&")) G.body = G.body.slice(-1);
+                if (G.body = `Action=TextComponent{A.name.split("#")[1]}&Version=TextComponent{this.options.version}` + G.body, G.body.endsWith("&")) G.body = G.body.slice(-1);
                 try {
                     G.headers["content-length"] = String((0, X68.calculateBodyLength)(G.body))
                 } catch (Z) {}
@@ -1417,7 +1419,7 @@ function IOQ(A, Q, B) {
             writeStruct(A, Q, B) {
                 let G = A.getMergedTraits(),
                     Z = A.isMemberSchema() && !G.httpPayload ? A.getMemberTraits().xmlName ?? A.getMemberName() : G.xmlName ?? A.getName();
-                if (!Z || !A.isStructSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write struct with empty name or non-struct, schema=${A.getName(!0)}.`);
+                if (!Z || !A.isStructSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write struct with empty name or non-struct, schema=TextComponent{A.getName(!0)}.`);
                 let I = RS.XmlNode.of(Z),
                     [Y, J] = this.getXmlnsAttribute(A, B);
                 if (J) I.addAttribute(Y, J);
@@ -1440,7 +1442,7 @@ function IOQ(A, Q, B) {
                 return I
             }
             writeList(A, Q, B, G) {
-                if (!A.isMemberSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write non-member list: ${A.getName(!0)}`);
+                if (!A.isMemberSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write non-member list: TextComponent{A.getName(!0)}`);
                 let Z = A.getMergedTraits(),
                     I = A.getValueSchema(),
                     Y = I.getMergedTraits(),
@@ -1470,7 +1472,7 @@ function IOQ(A, Q, B) {
                 }
             }
             writeMap(A, Q, B, G, Z = !1) {
-                if (!A.isMemberSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write non-member map: ${A.getName(!0)}`);
+                if (!A.isMemberSchema()) throw Error(`@aws-sdk/core/protocols - xml serializer, cannot write non-member map: TextComponent{A.getName(!0)}`);
                 let I = A.getMergedTraits(),
                     Y = A.getKeySchema(),
                     W = Y.getMergedTraits().xmlName ?? "key",

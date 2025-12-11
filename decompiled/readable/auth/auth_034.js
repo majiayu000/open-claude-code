@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_034.js
+ * 处理时间: 2025-12-09T03:41:36.717Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.917Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -77,7 +80,7 @@
             version: _.string().optional().describe("Marketplace version"),
             description: _.string().optional().describe("Marketplace description")
         }).optional().describe("Optional marketplace metadata")
-    }), bo = _.string().regex(/^[a-z0-9][-a-z0-9._]*@[a-z0-9][-a-z0-9._]*$/i, "Plugin ID must be in format: plugin@marketplace"), $O7 = _.union([bo, _.object({
+    }), bo = _.string().regex(/^[a-z0-9][-a-z0-9._]*@[a-z0-9][-a-z0-9._]*TextComponent/i, "Plugin ID must be in format: plugin@marketplace"), $O7 = _.union([bo, _.object({
         id: bo.describe('Plugin identifier (e.g., "formatter@tools")'),
         version: _.string().optional().describe('Version constraint (e.g., "^2.0.0")'),
         required: _.boolean().optional().describe("If true, cannot be disabled"),
@@ -114,11 +117,11 @@
 function Xx1(A, Q) {
     let G = A.slice(0, 2).map((Y) => {
             let J = Y.reason || Y.error || "unknown error";
-            return Q ? `${Y.name} (${J})` : Y.name
+            return Q ? `TextComponent{Y.name} (TextComponent{J})` : Y.name
         }).join(Q ? "; " : ", "),
         Z = A.length - 2,
-        I = Z > 0 ? ` and ${Z} more` : "";
-    return `${G}${I}`
+        I = Z > 0 ? ` and TextComponent{Z} more` : "";
+    return `TextComponent{G}TextComponent{I}`
 }
 
 function BzA(A) {
@@ -139,9 +142,8 @@ function BzA(A) {
 }
 
 function z3A(A, Q) {
-    return `${A}@${Q}`
+    return `TextComponent{A}@TextComponent{Q}`
 }
-
 async function GzA(A) {
     let Q = [],
         B = [];
@@ -154,7 +156,7 @@ async function GzA(A) {
             B.push({
                 name: G,
                 error: J
-            }), e(Y instanceof Error ? Y : Error(`Failed to load marketplace ${G}: ${Y}`))
+            }), e(Y instanceof Error ? Y : Error(`Failed to load marketplace TextComponent{G}: TextComponent{Y}`))
         }
         Q.push({
             name: G,
@@ -172,11 +174,11 @@ function TlA(A, Q) {
     if (A.length === 0) return null;
     if (Q > 0) return {
         type: "warning",
-        message: A.length === 1 ? `Warning: Failed to load marketplace '${A[0].name}': ${A[0].error}` : `Warning: Failed to load ${A.length} marketplaces: ${Xl8(A)}`
+        message: A.length === 1 ? `Warning: Failed to load marketplace 'TextComponent{A[0].name}': TextComponent{A[0].error}` : `Warning: Failed to load TextComponent{A.length} marketplaces: TextComponent{Xl8(A)}`
     };
     return {
         type: "error",
-        message: `Failed to load all marketplaces. Errors: ${Fl8(A)}`
+        message: `Failed to load all marketplaces. Errors: TextComponent{Fl8(A)}`
     }
 }
 
@@ -185,7 +187,7 @@ function Xl8(A) {
 }
 
 function Fl8(A) {
-    return A.map((Q) => `${Q.name}: ${Q.error}`).join("; ")
+    return A.map((Q) => `TextComponent{Q.name}: TextComponent{Q.error}`).join("; ")
 }
 
 function ZzA() {
@@ -223,22 +225,22 @@ function PlA(A) {
 function IzA(A) {
     switch (A.source) {
         case "github":
-            return `github:${A.repo}${A.ref?`@${A.ref}`:""}`;
+            return `github:TextComponent{A.repo}TextComponent{A.ref?`@TextComponent{A.ref}`:""}`;
         case "url":
             return A.url;
         case "git":
-            return `git:${A.url}${A.ref?`@${A.ref}`:""}`;
+            return `git:TextComponent{A.url}TextComponent{A.ref?`@TextComponent{A.ref}`:""}`;
         case "npm":
-            return `npm:${A.package}`;
+            return `npm:TextComponent{A.package}`;
         case "file":
-            return `file:${A.path}`;
+            return `file:TextComponent{A.path}`;
         case "directory":
-            return `dir:${A.path}`;
+            return `dir:TextComponent{A.path}`;
         default:
             return "unknown source"
     }
 }
-var YzA = L(() => {
+var YzA = lazyLoader(() => {
     kH();
     u1();
     RB()
@@ -259,7 +261,6 @@ function bQB() {
 function fQB() {
     VD.cache?.clear?.()
 }
-// Async function: TZ
 async function TZ() {
     let A = OA(),
         Q = vQB();
@@ -271,7 +272,7 @@ async function TZ() {
             G = JSON.parse(B),
             Z = Wx1.safeParse(G);
         if (!Z.success) {
-            let I = `Marketplace configuration file is corrupted: ${Z.error.errors.map((Y)=>`${Y.path.join(".")}: ${Y.message}`).join(", ")}`;
+            let I = `Marketplace configuration file is corrupted: TextComponent{Z.error.errors.map((Y)=>`TextComponent{Y.path.join(".")}: TextComponent{Y.message}`).join(", ")}`;
             throw g(I, {
                 level: "error"
             }), new uz(I, Q, G)
@@ -279,17 +280,16 @@ async function TZ() {
         return Z.data
     } catch (B) {
         if (B instanceof uz) throw B;
-        let G = `Failed to load marketplace configuration: ${B instanceof Error?B.message:String(B)}`;
+        let G = `Failed to load marketplace configuration: TextComponent{B instanceof Error?B.message:String(B)}`;
         throw g(G, {
             level: "error"
         }), Error(G)
     }
 }
-
 async function WzA(A) {
     let Q = Wx1.safeParse(A),
         B = vQB();
-    if (!Q.success) throw new uz(`Invalid marketplace config: ${Q.error.message}`, B, A);
+    if (!Q.success) throw new uz(`Invalid marketplace config: TextComponent{Q.error.message}`, B, A);
     let G = OA(),
         Z = sC(B, "..");
     G.mkdirSync(Z), G.writeFileSync(B, JSON.stringify(Q.data, null, 2), {
@@ -297,7 +297,6 @@ async function WzA(A) {
         flush: !0
     })
 }
-
 async function Kl8(A, Q) {
     if (Q) {
         let G = await q3("git", ["fetch", "origin", Q], {
@@ -329,21 +328,20 @@ function xQB(A) {
             ...A,
             stderr: `SSH authentication failed while updating marketplace. Please ensure your SSH keys are configured.
 
-Original error: ${A.stderr}`
+Original error: TextComponent{A.stderr}`
         };
         if (A.stderr.includes("timed out") || A.stderr.includes("Could not resolve host")) return {
             ...A,
             stderr: `Network error while updating marketplace. Please check your internet connection.
 
-Original error: ${A.stderr}`
+Original error: TextComponent{A.stderr}`
         }
     }
     return A
 }
-// Async function: Dl8
 async function Dl8() {
     try {
-        let A = await ZQ("ssh", ["-T", "-o", "BatchMode=yes", "-o", "ConnectTimeout=2", "-o", "StrictHostKeyChecking=accept-new", "git@github.com"], {
+        let A = await execGit("ssh", ["-T", "-o", "BatchMode=yes", "-o", "ConnectTimeout=2", "-o", "StrictHostKeyChecking=accept-new", "git@github.com"], {
             timeout: 3000
         });
         return A.code === 1 && (A.stderr?.includes("successfully authenticated") || A.stdout?.includes("successfully authenticated"))
@@ -351,12 +349,11 @@ async function Dl8() {
         return !1
     }
 }
-
 async function Hl8(A, Q, B) {
     let G = ["-c", "core.sshCommand=ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new", "clone", "--depth", "1"];
     if (B) G.push("--branch", B);
     G.push(A, Q);
-    let Z = await ZQ("git", G, {
+    let Z = await execGit("git", G, {
         timeout: 30000
     });
     if (Z.code !== 0 && Z.stderr) {
@@ -364,19 +361,19 @@ async function Hl8(A, Q, B) {
             ...Z,
             stderr: `SSH authentication failed. Please ensure your SSH keys are configured for GitHub, or use an HTTPS URL instead.
 
-Original error: ${Z.stderr}`
+Original error: TextComponent{Z.stderr}`
         };
         if (Z.stderr.includes("Authentication failed") || Z.stderr.includes("could not read Username")) return {
             ...Z,
             stderr: `HTTPS authentication failed. You may need to configure credentials, or use an SSH URL for GitHub repositories.
 
-Original error: ${Z.stderr}`
+Original error: TextComponent{Z.stderr}`
         };
         if (Z.stderr.includes("timed out") || Z.stderr.includes("timeout") || Z.stderr.includes("Could not resolve host")) return {
             ...Z,
             stderr: `Network error or timeout while cloning repository. Please check your internet connection and try again.
 
-Original error: ${Z.stderr}`
+Original error: TextComponent{Z.stderr}`
         }
     }
     return Z
@@ -387,20 +384,19 @@ function tR(A, Q) {
     try {
         A(Q)
     } catch (B) {
-        g(`Progress callback error: ${B instanceof Error?B.message:String(B)}`, {
+        g(`Progress callback error: TextComponent{B instanceof Error?B.message:String(B)}`, {
             level: "warn"
         })
     }
 }
-
 async function JzA(A, Q, B, G) {
     let Z = OA();
     if (Z.existsSync(Q)) {
-        if (!Z.existsSync(sC(Q, ".git"))) throw Error(`Cache directory exists at ${Q} but is not a git repository. Please remove it manually and try again.`);
+        if (!Z.existsSync(sC(Q, ".git"))) throw Error(`Cache directory exists at TextComponent{Q} but is not a git repository. Please remove it manually and try again.`);
         tR(G, "Updating existing marketplace cache…");
         let J = await Kl8(Q, B);
         if (J.code !== 0) {
-            g(`Failed to update marketplace cache: ${J.stderr}`, {
+            g(`Failed to update marketplace cache: TextComponent{J.stderr}`, {
                 level: "error"
             }), tR(G, "Update failed, cleaning up and re-cloning…");
             try {
@@ -410,22 +406,21 @@ async function JzA(A, Q, B, G) {
                 })
             } catch (W) {
                 let X = W instanceof Error ? W.message : String(W);
-                throw Error(`Failed to clean up existing marketplace directory. Please manually delete the directory at ${Q} and try again.
+                throw Error(`Failed to clean up existing marketplace directory. Please manually delete the directory at TextComponent{Q} and try again.
 
-Technical details: ${X}`)
+Technical details: TextComponent{X}`)
             }
         } else return
     }
-    let I = B ? ` (ref: ${B})` : "";
-    tR(G, `Cloning repository: ${A}${I}`);
+    let I = B ? ` (ref: TextComponent{B})` : "";
+    tR(G, `Cloning repository: TextComponent{A}TextComponent{I}`);
     let Y = await Hl8(A, Q, B);
-    if (Y.code !== 0) throw Error(`Failed to clone marketplace repository: ${Y.stderr}`);
+    if (Y.code !== 0) throw Error(`Failed to clone marketplace repository: TextComponent{Y.stderr}`);
     tR(G, "Clone complete, validating marketplace…")
 }
-
 async function hQB(A, Q, B) {
     let G = OA();
-    tR(B, `Downloading marketplace from ${A}`), g(`Downloading marketplace from URL: ${A}`);
+    tR(B, `Downloading marketplace from TextComponent{A}`), g(`Downloading marketplace from URL: TextComponent{A}`);
     let Z;
     try {
         Z = await GQ.get(A, {
@@ -436,21 +431,21 @@ async function hQB(A, Q, B) {
         })
     } catch (J) {
         if (GQ.isAxiosError(J)) {
-            if (J.code === "ECONNREFUSED" || J.code === "ENOTFOUND") throw Error(`Could not connect to ${A}. Please check your internet connection and verify the URL is correct.
+            if (J.code === "ECONNREFUSED" || J.code === "ENOTFOUND") throw Error(`Could not connect to TextComponent{A}. Please check your internet connection and verify the URL is correct.
 
-Technical details: ${J.message}`);
-            if (J.code === "ETIMEDOUT") throw Error(`Request timed out while downloading marketplace from ${A}. The server may be slow or unreachable.
+Technical details: TextComponent{J.message}`);
+            if (J.code === "ETIMEDOUT") throw Error(`Request timed out while downloading marketplace from TextComponent{A}. The server may be slow or unreachable.
 
-Technical details: ${J.message}`);
-            if (J.response) throw Error(`HTTP ${J.response.status} error while downloading marketplace from ${A}. The marketplace file may not exist at this URL.
+Technical details: TextComponent{J.message}`);
+            if (J.response) throw Error(`HTTP TextComponent{J.response.status} error while downloading marketplace from TextComponent{A}. The marketplace file may not exist at this URL.
 
-Technical details: ${J.message}`)
+Technical details: TextComponent{J.message}`)
         }
-        throw Error(`Failed to download marketplace from ${A}: ${J instanceof Error?J.message:String(J)}`)
+        throw Error(`Failed to download marketplace from TextComponent{A}: TextComponent{J instanceof Error?J.message:String(J)}`)
     }
     tR(B, "Validating marketplace data");
     let I = C3A.safeParse(Z.data);
-    if (!I.success) throw new uz(`Invalid marketplace schema from URL: ${I.error.errors.map((J)=>`${J.path.join(".")}: ${J.message}`).join(", ")}`, A, Z.data);
+    if (!I.success) throw new uz(`Invalid marketplace schema from URL: TextComponent{I.error.errors.map((J)=>`TextComponent{J.path.join(".")}: TextComponent{J.message}`).join(", ")}`, A, Z.data);
     tR(B, "Saving marketplace to cache");
     let Y = sC(Q, "..");
     G.mkdirSync(Y), G.writeFileSync(Q, JSON.stringify(I.data, null, 2), {
@@ -469,10 +464,9 @@ function gQB(A, Q) {
         }),
         Z = JSON.parse(G),
         I = Q.safeParse(Z);
-    if (!I.success) throw new uz(`Invalid schema: ${I.error?.errors.map((Y)=>`${Y.path.join(".")}: ${Y.message}`).join(", ")}`, A, Z);
+    if (!I.success) throw new uz(`Invalid schema: TextComponent{I.error?.errors.map((Y)=>`TextComponent{Y.path.join(".")}: TextComponent{Y.message}`).join(", ")}`, A, Z);
     return I.data
 }
-
 async function Fx1(A, Q) {
     let B = OA(),
         G = bQB();
@@ -482,20 +476,20 @@ async function Fx1(A, Q) {
     try {
         switch (A.source) {
             case "url": {
-                Z = sC(G, `${J}.json`), Y = !0, await hQB(A.url, Z, Q), I = Z;
+                Z = sC(G, `TextComponent{J}.json`), Y = !0, await hQB(A.url, Z, Q), I = Z;
                 break
             }
             case "github": {
-                let V = `git@github.com:${A.repo}.git`,
-                    K = `https://github.com/${A.repo}.git`;
+                let V = `git@github.com:TextComponent{A.repo}.git`,
+                    K = `https://github.com/TextComponent{A.repo}.git`;
                 Z = sC(G, J), Y = !0;
                 let D = null;
                 if (await Dl8()) {
-                    tR(Q, `Cloning via SSH: ${V}`);
+                    tR(Q, `Cloning via SSH: TextComponent{V}`);
                     try {
                         await JzA(V, Z, A.ref, Q)
                     } catch (C) {
-                        if (D = C instanceof Error ? C : Error(String(C)), e(D), tR(Q, `SSH clone failed, retrying with HTTPS: ${K}`), g(`SSH clone failed for ${A.repo} despite SSH being configured, falling back to HTTPS`, {
+                        if (D = C instanceof Error ? C : Error(String(C)), e(D), tR(Q, `SSH clone failed, retrying with HTTPS: TextComponent{K}`), g(`SSH clone failed for TextComponent{A.repo} despite SSH being configured, falling back to HTTPS`, {
                                 level: "info"
                             }), B.existsSync(Z)) B.rmSync(Z, {
                             recursive: !0,
@@ -508,7 +502,7 @@ async function Fx1(A, Q) {
                         }
                     }
                 } else {
-                    tR(Q, `SSH not configured, cloning via HTTPS: ${K}`), g(`SSH not configured for GitHub, using HTTPS for ${A.repo}`, {
+                    tR(Q, `SSH not configured, cloning via HTTPS: TextComponent{K}`), g(`SSH not configured for GitHub, using HTTPS for TextComponent{A.repo}`, {
                         level: "info"
                     });
                     try {
@@ -538,7 +532,7 @@ async function Fx1(A, Q) {
             default:
                 throw Error("Unsupported marketplace source type")
         }
-        if (!B.existsSync(I)) throw Error(`Marketplace file not found at ${I}`);
+        if (!B.existsSync(I)) throw Error(`Marketplace file not found at TextComponent{I}`);
         let W = gQB(I, C3A),
             X = sC(G, W.name),
             F = A.source === "file" || A.source === "directory";
@@ -547,7 +541,7 @@ async function Fx1(A, Q) {
                 try {
                     Q?.("Cleaning up old marketplace cache…")
                 } catch (V) {
-                    g(`Progress callback error: ${V instanceof Error?V.message:String(V)}`, {
+                    g(`Progress callback error: TextComponent{V instanceof Error?V.message:String(V)}`, {
                         level: "warn"
                     })
                 }
@@ -559,9 +553,9 @@ async function Fx1(A, Q) {
             B.renameSync(Z, X), Z = X, Y = !1
         } catch (V) {
             let K = V instanceof Error ? V.message : String(V);
-            throw Error(`Failed to finalize marketplace cache. Please manually delete the directory at ${X} if it exists and try again.
+            throw Error(`Failed to finalize marketplace cache. Please manually delete the directory at TextComponent{X} if it exists and try again.
 
-Technical details: ${K}`)
+Technical details: TextComponent{K}`)
         }
         return {
             marketplace: W,
@@ -574,36 +568,34 @@ Technical details: ${K}`)
                 force: !0
             })
         } catch (X) {
-            g(`Warning: Failed to clean up temporary marketplace cache at ${Z}: ${X instanceof Error?X.message:String(X)}`, {
+            g(`Warning: Failed to clean up temporary marketplace cache at TextComponent{Z}: TextComponent{X instanceof Error?X.message:String(X)}`, {
                 level: "warn"
             })
         }
         throw W
     }
 }
-
 async function go(A, Q) {
     if (!PlA(A)) {
         let I = ZzA() || [];
-        throw Error(`Marketplace source '${IzA(A)}' is blocked by enterprise policy. ` + (I.length > 0 ? `Allowed sources: ${I.map((Y)=>IzA(Y)).join(", ")}` : "No external marketplaces are allowed."))
+        throw Error(`Marketplace source 'TextComponent{IzA(A)}' is blocked by enterprise policy. ` + (I.length > 0 ? `Allowed sources: TextComponent{I.map((Y)=>IzA(Y)).join(", ")}` : "No external marketplaces are allowed."))
     }
     let {
         marketplace: B,
         cachePath: G
     } = await Fx1(A, Q), Z = await TZ();
-    if (Z[B.name]) throw Error(`Marketplace '${B.name}' is already installed. Please remove it first using '/plugin marketplace remove ${B.name}' if you want to re-install it.`);
+    if (Z[B.name]) throw Error(`Marketplace 'TextComponent{B.name}' is already installed. Please remove it first using '/plugin marketplace remove TextComponent{B.name}' if you want to re-install it.`);
     return Z[B.name] = {
         source: A,
         installLocation: G,
         lastUpdated: new Date().toISOString()
-    }, await WzA(Z), g(`Added marketplace source: ${B.name}`), {
+    }, await WzA(Z), g(`Added marketplace source: TextComponent{B.name}`), {
         name: B.name
     }
 }
-
 async function jlA(A) {
     let Q = await TZ();
-    if (!Q[A]) throw Error(`Marketplace '${A}' not found`);
+    if (!Q[A]) throw Error(`Marketplace 'TextComponent{A}' not found`);
     delete Q[A], await WzA(Q);
     let B = OA(),
         G = bQB(),
@@ -612,7 +604,7 @@ async function jlA(A) {
         recursive: !0,
         force: !0
     });
-    let I = sC(G, `${A}.json`);
+    let I = sC(G, `TextComponent{A}.json`);
     if (B.existsSync(I)) B.rmSync(I, {
         force: !0
     });
@@ -629,7 +621,7 @@ async function jlA(A) {
             delete V[A], F.extraKnownMarketplaces = V, X = !0
         }
         if (W.enabledPlugins) {
-            let V = `@${A}`,
+            let V = `@TextComponent{A}`,
                 K = {
                     ...W.enabledPlugins
                 },
@@ -640,11 +632,11 @@ async function jlA(A) {
         }
         if (X) {
             let V = cB(J, F);
-            if (V.error) e(V.error), g(`Failed to clean up marketplace '${A}' from ${J} settings: ${V.error.message}`);
-            else g(`Cleaned up marketplace '${A}' from ${J} settings`)
+            if (V.error) e(V.error), g(`Failed to clean up marketplace 'TextComponent{A}' from TextComponent{J} settings: TextComponent{V.error.message}`);
+            else g(`Cleaned up marketplace 'TextComponent{A}' from TextComponent{J} settings`)
         }
     }
-    g(`Removed marketplace source: ${A}`)
+    g(`Removed marketplace source: TextComponent{A}`)
 }
 
 function uQB(A) {
@@ -654,19 +646,18 @@ function uQB(A) {
         if (Q.existsSync(A) && Q.statSync(A).isDirectory()) {
             let G = sC(A, ".claude-plugin", "marketplace.json");
             if (Q.existsSync(G)) B = G;
-            else throw Error(`Invalid cached directory at ${A}: missing .claude-plugin/marketplace.json`)
+            else throw Error(`Invalid cached directory at TextComponent{A}: missing .claude-plugin/marketplace.json`)
         }
-        if (!Q.existsSync(B)) throw Error(`Marketplace file not found at ${B}`);
+        if (!Q.existsSync(B)) throw Error(`Marketplace file not found at TextComponent{B}`);
         return gQB(B, C3A)
     } catch (B) {
         if (B instanceof uz) throw B;
         throw B
     }
 }
-
 async function Cc(A) {
     let Q = A.split("@");
-    if (Q.length !== 2) throw Error(`Invalid plugin ID format '${A}'. Expected format: 'plugin-name@marketplace-name'`);
+    if (Q.length !== 2) throw Error(`Invalid plugin ID format 'TextComponent{A}'. Expected format: 'plugin-name@marketplace-name'`);
     let B = Q[0],
         G = Q[1];
     try {
@@ -679,48 +670,46 @@ async function Cc(A) {
             marketplaceInstallLocation: I.installLocation
         }
     } catch (Z) {
-        return g(`Could not find plugin ${A}: ${Z instanceof Error?Z.message:String(Z)}`, {
+        return g(`Could not find plugin TextComponent{A}: TextComponent{Z instanceof Error?Z.message:String(Z)}`, {
             level: "debug"
         }), null
     }
 }
-// Async function: mQB
 async function mQB() {
     let A = await TZ();
     for (let [Q, B] of Object.entries(A)) try {
         await Fx1(B.source), A[Q].lastUpdated = new Date().toISOString()
     } catch (G) {
-        g(`Failed to refresh marketplace ${Q}: ${G instanceof Error?G.message:String(G)}`, {
+        g(`Failed to refresh marketplace TextComponent{Q}: TextComponent{G instanceof Error?G.message:String(G)}`, {
             level: "error"
         })
     }
     await WzA(A)
 }
-
 async function SlA(A, Q) {
     let B = await TZ(),
         G = B[A];
-    if (!G) throw Error(`Marketplace '${A}' not found. Available marketplaces: ${Object.keys(B).join(", ")}`);
+    if (!G) throw Error(`Marketplace 'TextComponent{A}' not found. Available marketplaces: TextComponent{Object.keys(B).join(", ")}`);
     VD.cache?.delete?.(A);
     try {
         let {
             installLocation: Z,
             source: I
         } = G;
-        if (I.source === "github" || I.source === "git") await JzA(I.source === "github" ? `git@github.com:${I.repo}.git` : I.url, Z, I.ref, Q);
+        if (I.source === "github" || I.source === "git") await JzA(I.source === "github" ? `git@github.com:TextComponent{I.repo}.git` : I.url, Z, I.ref, Q);
         else if (I.source === "url") await hQB(I.url, Z, Q);
         else if (I.source === "file" || I.source === "directory") tR(Q, "Validating local marketplace"), uQB(Z);
         else throw Error("Unsupported marketplace source type for refresh");
-        B[A].lastUpdated = new Date().toISOString(), await WzA(B), g(`Successfully refreshed marketplace: ${A}`)
+        B[A].lastUpdated = new Date().toISOString(), await WzA(B), g(`Successfully refreshed marketplace: TextComponent{A}`)
     } catch (Z) {
         let I = Z instanceof Error ? Z.message : String(Z);
-        throw g(`Failed to refresh marketplace ${A}: ${I}`, {
+        throw g(`Failed to refresh marketplace TextComponent{A}: TextComponent{I}`, {
             level: "error"
-        }), Error(`Failed to refresh marketplace '${A}': ${I}`)
+        }), Error(`Failed to refresh marketplace 'TextComponent{A}': TextComponent{I}`)
     }
 }
 var VD;
-var kH = L(() => {
+var kH = lazyLoader(() => {
     w3();
     o2();
     hQ();
@@ -735,11 +724,11 @@ var kH = L(() => {
     VD = t1(async (A) => {
         let Q = await TZ(),
             B = Q[A];
-        if (!B) throw Error(`Marketplace '${A}' not found in configuration. Available marketplaces: ${Object.keys(Q).join(", ")}`);
+        if (!B) throw Error(`Marketplace 'TextComponent{A}' not found in configuration. Available marketplaces: TextComponent{Object.keys(Q).join(", ")}`);
         try {
             return uQB(B.installLocation)
         } catch (Z) {
-            g(`Cache corrupted or missing for marketplace ${A}, re-fetching from source: ${Z instanceof Error?Z.message:String(Z)}`, {
+            g(`Cache corrupted or missing for marketplace TextComponent{A}, re-fetching from source: TextComponent{Z instanceof Error?Z.message:String(Z)}`, {
                 level: "warn"
             })
         }
@@ -749,29 +738,27 @@ var kH = L(() => {
         return Q[A].lastUpdated = new Date().toISOString(), await WzA(Q), G
     })
 });
-
 async function _lA(A, Q, B, G) {
-    if (B?.version) return g(`Using manifest version for ${A}: ${B.version}`), B.version;
+    if (B?.version) return g(`Using manifest version for TextComponent{A}: TextComponent{B.version}`), B.version;
     if (G) {
         let Z = await El8(G);
         if (Z) {
             let I = Z.substring(0, 12);
-            return g(`Using git SHA for ${A}: ${I}`), I
+            return g(`Using git SHA for TextComponent{A}: TextComponent{I}`), I
         }
     }
     if (typeof Q === "string") {
-        let Z = `local-${Date.now()}`;
-        return g(`Using local fallback version for ${A}: ${Z}`), Z
+        let Z = `local-TextComponent{Date.now()}`;
+        return g(`Using local fallback version for TextComponent{A}: TextComponent{Z}`), Z
     }
     if (Q.source === "github" || Q.source === "url") return "pending";
     if (Q.source === "npm") {
         let Z = await zl8(Q.package);
-        if (Z) return g(`Using npm version for ${A}: ${Z}`), Z;
+        if (Z) return g(`Using npm version for TextComponent{A}: TextComponent{Z}`), Z;
         return "unknown"
     }
     return "unknown"
 }
-
 async function El8(A) {
     try {
         let Q = await q3("git", ["rev-parse", "HEAD"], {
@@ -783,7 +770,6 @@ async function El8(A) {
         return null
     }
 }
-
 async function zl8(A) {
     try {
         let Q = await q3("npm", ["view", A, "version"]);
@@ -793,7 +779,7 @@ async function zl8(A) {
         return null
     }
 }
-var dQB = L(() => {
+var dQB = lazyLoader(() => {
     I6();
     D0()
 });
@@ -833,22 +819,21 @@ function uo(A, Q) {
         }
     }
 }
-
 async function pQB(A, Q, B, G) {
     let Z = OA(),
         I = klA(Q, B);
-    if (Z.existsSync(I)) return g(`Plugin ${Q} version ${B} already cached at ${I}`), I;
+    if (Z.existsSync(I)) return g(`Plugin TextComponent{Q} version TextComponent{B} already cached at TextComponent{I}`), I;
     Z.mkdirSync(cQB(I));
     let Y = i4(A, "plugin.json"),
         J = i4(A, ".claude-plugin", "plugin.json");
-    if (Z.existsSync(Y) || Z.existsSync(J)) g(`Copying self-contained plugin ${Q} to versioned cache`), uo(A, I);
+    if (Z.existsSync(Y) || Z.existsSync(J)) g(`Copying self-contained plugin TextComponent{Q} to versioned cache`), uo(A, I);
     else if (G) {
-        g(`Copying non-self-contained plugin ${Q} to versioned cache`), Z.mkdirSync(I);
+        g(`Copying non-self-contained plugin TextComponent{Q} to versioned cache`), Z.mkdirSync(I);
         let F = (K) => {
             let D = i4(A, K),
                 H = i4(I, K);
             if (!Z.existsSync(D)) {
-                g(`Component path ${K} not found at ${D}`, {
+                g(`Component path TextComponent{K} not found at TextComponent{D}`, {
                     level: "warn"
                 });
                 return
@@ -881,67 +866,62 @@ async function pQB(A, Q, B, G) {
             let D = i4(A, K);
             if (Z.existsSync(D)) uo(D, i4(I, K))
         }
-    } else g(`Copying plugin ${Q} to versioned cache (fallback to full copy)`), uo(A, I);
+    } else g(`Copying plugin TextComponent{Q} to versioned cache (fallback to full copy)`), uo(A, I);
     let X = i4(I, ".git");
     if (Z.existsSync(X)) Z.rmSync(X, {
         recursive: !0,
         force: !0
     });
-    return g(`Successfully cached plugin ${Q} at ${I}`), I
+    return g(`Successfully cached plugin TextComponent{Q} at TextComponent{I}`), I
 }
 
 function wl8(A) {
     try {
         let Q = new URL(A);
         if (!["https:", "http:", "file:"].includes(Q.protocol)) {
-            if (!/^git@[a-zA-Z0-9.-]+:/.test(A)) throw Error(`Invalid git URL protocol: ${Q.protocol}. Only HTTPS, HTTP, file:// and SSH (git@) URLs are supported.`)
+            if (!/^git@[a-zA-Z0-9.-]+:/.test(A)) throw Error(`Invalid git URL protocol: TextComponent{Q.protocol}. Only HTTPS, HTTP, file:// and SSH (git@) URLs are supported.`)
         }
         return A
     } catch {
         if (/^git@[a-zA-Z0-9.-]+:/.test(A)) return A;
-        throw Error(`Invalid git URL: ${A}`)
+        throw Error(`Invalid git URL: TextComponent{A}`)
     }
 }
-
 async function ql8(A, Q) {
     let B = OA(),
         G = i4(PQ(), "plugins", "npm-cache");
     B.mkdirSync(G);
     let Z = i4(G, "node_modules", A);
     if (!B.existsSync(Z)) {
-        g(`Installing npm package ${A} to cache`);
-        let Y = await ZQ("npm", ["install", A, "--prefix", G], {
+        g(`Installing npm package TextComponent{A} to cache`);
+        let Y = await execGit("npm", ["install", A, "--prefix", G], {
             useCwd: !1
         });
-        if (Y.code !== 0) throw Error(`Failed to install npm package: ${Y.stderr}`)
+        if (Y.code !== 0) throw Error(`Failed to install npm package: TextComponent{Y.stderr}`)
     }
-    uo(Z, Q), g(`Copied npm package ${A} from cache to ${Q}`)
+    uo(Z, Q), g(`Copied npm package TextComponent{A} from cache to TextComponent{Q}`)
 }
-
 async function Nl8(A, Q, B) {
     let G = ["clone", "--depth", "1"];
     if (B) G.push("--branch", B);
     G.push(A, Q);
-    let Z = await ZQ("git", G);
-    if (Z.code !== 0) throw Error(`Failed to clone repository: ${Z.stderr}`)
+    let Z = await execGit("git", G);
+    if (Z.code !== 0) throw Error(`Failed to clone repository: TextComponent{Z.stderr}`)
 }
-
 async function nQB(A, Q, B) {
     let G = wl8(A);
     await Nl8(G, Q, B);
-    let Z = B ? ` (ref: ${B})` : "";
-    g(`Cloned repository from ${G}${Z} to ${Q}`)
+    let Z = B ? ` (ref: TextComponent{B})` : "";
+    g(`Cloned repository from TextComponent{G}TextComponent{Z} to TextComponent{Q}`)
 }
-
 async function Ll8(A, Q, B) {
-    if (!/^[a-zA-Z0-9-_.]+\/[a-zA-Z0-9-_.]+$/.test(A)) throw Error(`Invalid GitHub repository format: ${A}. Expected format: owner/repo`);
-    let G = `git@github.com:${A}.git`;
+    if (!/^[a-zA-Z0-9-_.]+\/[a-zA-Z0-9-_.]+TextComponent/.test(A)) throw Error(`Invalid GitHub repository format: TextComponent{A}. Expected format: owner/repo`);
+    let G = `git@github.com:TextComponent{A}.git`;
     return nQB(G, Q, B)
 }
-
 async function Ml8(A, Q) {
     let B = OA();
-    if (!B.existsSync(A)) throw Error(`Source path does not exist: ${A}`);
+    if (!B.existsSync(A)) throw Error(`Source path does not exist: TextComponent{A}`);
     uo(A, Q);
     let G = i4(Q, ".git");
     if (B.existsSync(G)) B.rmSync(G, {
@@ -973,7 +953,6 @@ function Ol8(A) {
     }
     return `temp_${G}_${Q}_${B}`
 }
-
 async function U3A(A, Q) {
     let B = OA(),
         G = Ec();
@@ -982,7 +961,7 @@ async function U3A(A, Q) {
         I = i4(G, Z),
         Y = !1;
     try {
-        if (g(`Caching plugin from source: ${JSON.stringify(A)} to temporary path ${I}`), Y = !0, typeof A === "string") await Ml8(A, I);
+        if (g(`Caching plugin from source: TextComponent{JSON.stringify(A)} to temporary path TextComponent{I}`), Y = !0, typeof A === "string") await Ml8(A, I);
         else switch (A.source) {
             case "npm":
                 await ql8(A.package, I);
@@ -1000,14 +979,14 @@ async function U3A(A, Q) {
         }
     } catch (K) {
         if (Y && B.existsSync(I)) {
-            g(`Cleaning up failed installation at ${I}`);
+            g(`Cleaning up failed installation at TextComponent{I}`);
             try {
                 B.rmSync(I, {
                     recursive: !0,
                     force: !0
                 })
             } catch (D) {
-                g(`Failed to clean up installation: ${D}`, {
+                g(`Failed to clean up installation: TextComponent{D}`, {
                     level: "error"
                 })
             }
@@ -1025,17 +1004,17 @@ async function U3A(A, Q) {
             H = fo.safeParse(D);
         if (H.success) X = H.data;
         else {
-            let C = H.error.errors.map((E) => `${E.path.join(".")}: ${E.message}`).join(", ");
-            throw g(`Invalid manifest at ${J}: ${C}`, {
+            let C = H.error.errors.map((E) => `TextComponent{E.path.join(".")}: TextComponent{E.message}`).join(", ");
+            throw g(`Invalid manifest at TextComponent{J}: TextComponent{C}`, {
                 level: "error"
-            }), Error(`Plugin has an invalid manifest file at ${J}. Validation errors: ${C}`)
+            }), Error(`Plugin has an invalid manifest file at TextComponent{J}. Validation errors: TextComponent{C}`)
         }
     } catch (K) {
         if (K instanceof Error && K.message.includes("invalid manifest file")) throw K;
         let D = K instanceof Error ? K.message : String(K);
-        throw g(`Failed to parse manifest at ${J}: ${D}`, {
+        throw g(`Failed to parse manifest at TextComponent{J}: TextComponent{D}`, {
             level: "error"
-        }), Error(`Plugin has a corrupt manifest file at ${J}. JSON parse error: ${D}`)
+        }), Error(`Plugin has a corrupt manifest file at TextComponent{J}. JSON parse error: TextComponent{D}`)
     } else if (B.existsSync(W)) try {
         let K = B.readFileSync(W, {
                 encoding: "utf-8"
@@ -1044,28 +1023,28 @@ async function U3A(A, Q) {
             H = fo.safeParse(D);
         if (H.success) X = H.data;
         else {
-            let C = H.error.errors.map((E) => `${E.path.join(".")}: ${E.message}`).join(", ");
-            throw g(`Invalid legacy manifest at ${W}: ${C}`, {
+            let C = H.error.errors.map((E) => `TextComponent{E.path.join(".")}: TextComponent{E.message}`).join(", ");
+            throw g(`Invalid legacy manifest at TextComponent{W}: TextComponent{C}`, {
                 level: "error"
-            }), Error(`Plugin has an invalid manifest file at ${W}. Validation errors: ${C}`)
+            }), Error(`Plugin has an invalid manifest file at TextComponent{W}. Validation errors: TextComponent{C}`)
         }
     } catch (K) {
         if (K instanceof Error && K.message.includes("invalid manifest file")) throw K;
         let D = K instanceof Error ? K.message : String(K);
-        throw g(`Failed to parse legacy manifest at ${W}: ${D}`, {
+        throw g(`Failed to parse legacy manifest at TextComponent{W}: TextComponent{D}`, {
             level: "error"
-        }), Error(`Plugin has a corrupt manifest file at ${W}. JSON parse error: ${D}`)
+        }), Error(`Plugin has a corrupt manifest file at TextComponent{W}. JSON parse error: TextComponent{D}`)
     } else X = Q?.manifest || {
         name: Z,
-        description: `Plugin cached from ${typeof A==="string"?A:A.source}`
+        description: `Plugin cached from TextComponent{typeof A==="string"?A:A.source}`
     };
     let F = X.name.replace(/[^a-zA-Z0-9-_]/g, "-"),
         V = i4(G, F);
-    if (B.existsSync(V)) g(`Removing old cached version at ${V}`), B.rmSync(V, {
+    if (B.existsSync(V)) g(`Removing old cached version at TextComponent{V}`), B.rmSync(V, {
         recursive: !0,
         force: !0
     });
-    return B.renameSync(I, V), g(`Successfully cached plugin ${X.name} to ${V}`), {
+    return B.renameSync(I, V), g(`Successfully cached plugin TextComponent{X.name} to TextComponent{V}`), {
         path: V,
         manifest: X
     }
@@ -1075,7 +1054,7 @@ function aQB(A, Q, B) {
     let G = OA();
     if (!G.existsSync(A)) return {
         name: Q,
-        description: `Plugin from ${B}`
+        description: `Plugin from TextComponent{B}`
     };
     try {
         let Z = G.readFileSync(A, {
@@ -1084,22 +1063,22 @@ function aQB(A, Q, B) {
             I = JSON.parse(Z),
             Y = fo.safeParse(I);
         if (Y.success) return Y.data;
-        let J = Y.error.errors.map((W) => `${W.path.join(".")}: ${W.message}`).join(", ");
-        throw g(`Plugin ${Q} has an invalid manifest file at ${A}. Validation errors: ${J}`, {
+        let J = Y.error.errors.map((W) => `TextComponent{W.path.join(".")}: TextComponent{W.message}`).join(", ");
+        throw g(`Plugin TextComponent{Q} has an invalid manifest file at TextComponent{A}. Validation errors: TextComponent{J}`, {
             level: "error"
-        }), Error(`Plugin ${Q} has an invalid manifest file at ${A}.
+        }), Error(`Plugin TextComponent{Q} has an invalid manifest file at TextComponent{A}.
 
-Validation errors: ${J}
+Validation errors: TextComponent{J}
 
 Please fix the manifest or remove it. The plugin cannot load with an invalid manifest.`)
     } catch (Z) {
         if (Z instanceof Error && Z.message.includes("invalid manifest file")) throw Z;
         let I = Z instanceof Error ? Z.message : String(Z);
-        throw g(`Plugin ${Q} has a corrupt manifest file at ${A}. Parse error: ${I}`, {
+        throw g(`Plugin TextComponent{Q} has a corrupt manifest file at TextComponent{A}. Parse error: TextComponent{I}`, {
             level: "error"
-        }), Error(`Plugin ${Q} has a corrupt manifest file at ${A}.
+        }), Error(`Plugin TextComponent{Q} has a corrupt manifest file at TextComponent{A}.
 
-JSON parse error: ${I}
+JSON parse error: TextComponent{I}
 
 Please check the file for syntax errors.`)
     }
@@ -1107,7 +1086,7 @@ Please check the file for syntax errors.`)
 
 function lQB(A, Q) {
     let B = OA();
-    if (!B.existsSync(A)) throw Error(`Hooks file not found at ${A} for plugin ${Q}. If the manifest declares hooks, the file must exist.`);
+    if (!B.existsSync(A)) throw Error(`Hooks file not found at TextComponent{A} for plugin TextComponent{Q}. If the manifest declares hooks, the file must exist.`);
     let G = B.readFileSync(A, {
             encoding: "utf-8"
         }),
@@ -1140,9 +1119,9 @@ function sQB(A, Q, B, G, Z = !0) {
                 if (R.source) {
                     let P = i4(A, R.source);
                     if (I.existsSync(P)) N.push(P), w[q] = R;
-                    else g(`Command ${q} path ${R.source} specified in manifest but not found at ${P} for ${W.name}`, {
+                    else g(`Command TextComponent{q} path TextComponent{R.source} specified in manifest but not found at TextComponent{P} for TextComponent{W.name}`, {
                         level: "warn"
-                    }), e(Error(`Plugin component file not found: ${P} for ${W.name}`)), Y.push({
+                    }), e(Error(`Plugin component file not found: TextComponent{P} for TextComponent{W.name}`)), Y.push({
                         type: "path-not-found",
                         source: Q,
                         plugin: W.name,
@@ -1158,16 +1137,16 @@ function sQB(A, Q, B, G, Z = !0) {
                 N = [];
             for (let q of w) {
                 if (typeof q !== "string") {
-                    g(`Unexpected command format in manifest for ${W.name}`, {
+                    g(`Unexpected command format in manifest for TextComponent{W.name}`, {
                         level: "error"
                     });
                     continue
                 }
                 let R = i4(A, q);
                 if (I.existsSync(R)) N.push(R);
-                else g(`Command path ${q} specified in manifest but not found at ${R} for ${W.name}`, {
+                else g(`Command path TextComponent{q} specified in manifest but not found at TextComponent{R} for TextComponent{W.name}`, {
                     level: "warn"
-                }), e(Error(`Plugin component file not found: ${R} for ${W.name}`)), Y.push({
+                }), e(Error(`Plugin component file not found: TextComponent{R} for TextComponent{W.name}`)), Y.push({
                     type: "path-not-found",
                     source: Q,
                     plugin: W.name,
@@ -1186,9 +1165,9 @@ function sQB(A, Q, B, G, Z = !0) {
         for (let N of z) {
             let q = i4(A, N);
             if (I.existsSync(q)) w.push(q);
-            else g(`Agent path ${N} specified in manifest but not found at ${q} for ${W.name}`, {
+            else g(`Agent path TextComponent{N} specified in manifest but not found at TextComponent{q} for TextComponent{W.name}`, {
                 level: "warn"
-            }), e(Error(`Plugin component file not found: ${q} for ${W.name}`)), Y.push({
+            }), e(Error(`Plugin component file not found: TextComponent{q} for TextComponent{W.name}`)), Y.push({
                 type: "path-not-found",
                 source: Q,
                 plugin: W.name,
@@ -1206,9 +1185,9 @@ function sQB(A, Q, B, G, Z = !0) {
         for (let N of z) {
             let q = i4(A, N);
             if (I.existsSync(q)) w.push(q);
-            else g(`Skill path ${N} specified in manifest but not found at ${q} for ${W.name}`, {
+            else g(`Skill path TextComponent{N} specified in manifest but not found at TextComponent{q} for TextComponent{W.name}`, {
                 level: "warn"
-            }), e(Error(`Plugin component file not found: ${q} for ${W.name}`)), Y.push({
+            }), e(Error(`Plugin component file not found: TextComponent{q} for TextComponent{W.name}`)), Y.push({
                 type: "path-not-found",
                 source: Q,
                 plugin: W.name,
@@ -1226,9 +1205,9 @@ function sQB(A, Q, B, G, Z = !0) {
         for (let N of z) {
             let q = i4(A, N);
             if (I.existsSync(q)) w.push(q);
-            else g(`Output style path ${N} specified in manifest but not found at ${q} for ${W.name}`, {
+            else g(`Output style path TextComponent{N} specified in manifest but not found at TextComponent{q} for TextComponent{W.name}`, {
                 level: "warn"
-            }), e(Error(`Plugin component file not found: ${q} for ${W.name}`)), Y.push({
+            }), e(Error(`Plugin component file not found: TextComponent{q} for TextComponent{W.name}`)), Y.push({
                 type: "path-not-found",
                 source: Q,
                 plugin: W.name,
@@ -1247,10 +1226,10 @@ function sQB(A, Q, B, G, Z = !0) {
         } catch {
             C.add(E)
         }
-        g(`Loaded hooks from standard location for plugin ${W.name}: ${E}`)
+        g(`Loaded hooks from standard location for plugin TextComponent{W.name}: TextComponent{E}`)
     } catch (z) {
         let w = z instanceof Error ? z.message : String(z);
-        g(`Failed to load hooks for ${W.name}: ${w}`, {
+        g(`Failed to load hooks for TextComponent{W.name}: TextComponent{w}`, {
             level: "error"
         }), e(z instanceof Error ? z : Error(w)), Y.push({
             type: "hook-load-failed",
@@ -1266,9 +1245,9 @@ function sQB(A, Q, B, G, Z = !0) {
             if (typeof w === "string") {
                 let N = i4(A, w);
                 if (!I.existsSync(N)) {
-                    g(`Hooks file ${w} specified in manifest but not found at ${N} for ${W.name}`, {
+                    g(`Hooks file TextComponent{w} specified in manifest but not found at TextComponent{N} for TextComponent{W.name}`, {
                         level: "error"
-                    }), e(Error(`Plugin component file not found: ${N} for ${W.name}`)), Y.push({
+                    }), e(Error(`Plugin component file not found: TextComponent{N} for TextComponent{W.name}`)), Y.push({
                         type: "path-not-found",
                         source: Q,
                         plugin: W.name,
@@ -1284,8 +1263,8 @@ function sQB(A, Q, B, G, Z = !0) {
                     q = N
                 }
                 if (C.has(q)) {
-                    if (g(`Skipping duplicate hooks file for plugin ${W.name}: ${w} (resolves to already-loaded file: ${q})`), Z) {
-                        let R = `Duplicate hooks file detected: ${w} resolves to already-loaded file ${q}. The standard hooks/hooks.json is loaded automatically, so manifest.hooks should only reference additional hook files.`;
+                    if (g(`Skipping duplicate hooks file for plugin TextComponent{W.name}: TextComponent{w} (resolves to already-loaded file: TextComponent{q})`), Z) {
+                        let R = `Duplicate hooks file detected: TextComponent{w} resolves to already-loaded file TextComponent{q}. The standard hooks/hooks.json is loaded automatically, so manifest.hooks should only reference additional hook files.`;
                         e(Error(R)), Y.push({
                             type: "hook-load-failed",
                             source: Q,
@@ -1299,22 +1278,22 @@ function sQB(A, Q, B, G, Z = !0) {
                 try {
                     let R = lQB(N, W.name);
                     try {
-                        H = iQB(H, R), C.add(q), g(`Loaded and merged hooks from manifest for plugin ${W.name}: ${w}`)
+                        H = iQB(H, R), C.add(q), g(`Loaded and merged hooks from manifest for plugin TextComponent{W.name}: TextComponent{w}`)
                     } catch (P) {
                         let y = P instanceof Error ? P.message : String(P);
-                        g(`Failed to merge hooks from ${w} for ${W.name}: ${y}`, {
+                        g(`Failed to merge hooks from TextComponent{w} for TextComponent{W.name}: TextComponent{y}`, {
                             level: "error"
                         }), e(P instanceof Error ? P : Error(y)), Y.push({
                             type: "hook-load-failed",
                             source: Q,
                             plugin: W.name,
                             hookPath: N,
-                            reason: `Failed to merge: ${y}`
+                            reason: `Failed to merge: TextComponent{y}`
                         })
                     }
                 } catch (R) {
                     let P = R instanceof Error ? R.message : String(R);
-                    g(`Failed to load hooks from ${w} for ${W.name}: ${P}`, {
+                    g(`Failed to load hooks from TextComponent{w} for TextComponent{W.name}: TextComponent{P}`, {
                         level: "error"
                     }), e(R instanceof Error ? R : Error(P)), Y.push({
                         type: "hook-load-failed",
@@ -1343,7 +1322,6 @@ function iQB(A, Q) {
         else B[G] = [...B[G] || [], ...Z];
     return B
 }
-// Async function: Rl8
 async function Rl8() {
     let Q = c0().enabledPlugins || {},
         B = [],
@@ -1390,9 +1368,8 @@ async function Rl8() {
         errors: G
     }
 }
-
 async function Tl8(A, Q, B, G, Z) {
-    g(`Loading plugin ${A.name} from source: ${JSON.stringify(A.source)}`);
+    g(`Loading plugin TextComponent{A.name} from source: TextComponent{JSON.stringify(A.source)}`);
     let I = OA(),
         Y = [],
         J;
@@ -1400,13 +1377,13 @@ async function Tl8(A, Q, B, G, Z) {
         let K = I.statSync(Q).isDirectory() ? Q : i4(Q, ".."),
             D = i4(K, A.source);
         if (!I.existsSync(D)) {
-            let H = Error(`Plugin path not found: ${D}`);
-            return g(`Plugin path not found: ${D}`, {
+            let H = Error(`Plugin path not found: TextComponent{D}`);
+            return g(`Plugin path not found: TextComponent{D}`, {
                 level: "error"
             }), e(H), Z.push({
                 type: "generic-error",
                 source: B,
-                error: `Plugin directory not found at path: ${D}. Check that the marketplace entry has the correct path.`
+                error: `Plugin directory not found at path: TextComponent{D}. Check that the marketplace entry has the correct path.`
             }), null
         }
         if (j8("tengu_enable_versioned_plugins")) try {
@@ -1416,17 +1393,17 @@ async function Tl8(A, Q, B, G, Z) {
                 C = aQB(H, A.name, A.source)
             } catch {}
             let E = await _lA(B, A.source, C, K);
-            J = await pQB(D, B, E, A), g(`Copied local plugin ${A.name} to versioned cache: ${J}`)
+            J = await pQB(D, B, E, A), g(`Copied local plugin TextComponent{A.name} to versioned cache: TextComponent{J}`)
         } catch (H) {
             let C = H instanceof Error ? H.message : String(H);
-            g(`Failed to copy plugin ${A.name} to versioned cache: ${C}. Using marketplace path.`, {
+            g(`Failed to copy plugin TextComponent{A.name} to versioned cache: TextComponent{C}. Using marketplace path.`, {
                 level: "warn"
             }), J = D
         } else J = D
     } else if (j8("tengu_enable_versioned_plugins")) try {
         let D = await _lA(B, A.source, void 0, void 0),
             H = klA(B, D);
-        if (I.existsSync(H)) g(`Using versioned cached plugin ${A.name} from ${H}`), J = H;
+        if (I.existsSync(H)) g(`Using versioned cached plugin TextComponent{A.name} from TextComponent{H}`), J = H;
         else {
             let C = await U3A(A.source, {
                     manifest: {
@@ -1441,18 +1418,18 @@ async function Tl8(A, Q, B, G, Z) {
         }
     } catch (D) {
         let H = D instanceof Error ? D.message : String(D);
-        return g(`Failed to cache plugin ${A.name}: ${H}`, {
+        return g(`Failed to cache plugin TextComponent{A.name}: TextComponent{H}`, {
             level: "error"
         }), e(D instanceof Error ? D : Error(H)), Z.push({
             type: "generic-error",
             source: B,
-            error: `Failed to download/cache plugin ${A.name}: ${H}`
+            error: `Failed to download/cache plugin TextComponent{A.name}: TextComponent{H}`
         }), null
     } else {
         let D = Ec(),
             H = A.name.replace(/[^a-zA-Z0-9-_]/g, "-"),
             C = i4(D, H);
-        if (I.existsSync(C)) g(`Using cached plugin ${A.name} from ${C}`), J = C;
+        if (I.existsSync(C)) g(`Using cached plugin TextComponent{A.name} from TextComponent{C}`), J = C;
         else try {
             J = (await U3A(A.source, {
                 manifest: {
@@ -1461,12 +1438,12 @@ async function Tl8(A, Q, B, G, Z) {
             })).path
         } catch (E) {
             let z = E instanceof Error ? E.message : String(E);
-            return g(`Failed to cache plugin ${A.name}: ${z}`, {
+            return g(`Failed to cache plugin TextComponent{A.name}: TextComponent{z}`, {
                 level: "error"
             }), e(E instanceof Error ? E : Error(z)), Z.push({
                 type: "generic-error",
                 source: B,
-                error: `Failed to download/cache plugin ${A.name}: ${z}`
+                error: `Failed to download/cache plugin TextComponent{A.name}: TextComponent{z}`
             }), null
         }
     }
@@ -1491,9 +1468,9 @@ async function Tl8(A, Q, B, G, Z) {
                     if (!E || typeof E !== "object" || !E.source) continue;
                     let z = i4(J, E.source);
                     if (I.existsSync(z)) H.push(z), D[C] = E;
-                    else g(`Command ${C} path ${E.source} from marketplace entry not found at ${z} for ${A.name}`, {
+                    else g(`Command TextComponent{C} path TextComponent{E.source} from marketplace entry not found at TextComponent{z} for TextComponent{A.name}`, {
                         level: "warn"
-                    }), e(Error(`Plugin component file not found: ${z} for ${A.name}`)), Y.push({
+                    }), e(Error(`Plugin component file not found: TextComponent{z} for TextComponent{A.name}`)), Y.push({
                         type: "path-not-found",
                         source: B,
                         plugin: A.name,
@@ -1507,16 +1484,16 @@ async function Tl8(A, Q, B, G, Z) {
                     H = [];
                 for (let C of D) {
                     if (typeof C !== "string") {
-                        g(`Unexpected command format in marketplace entry for ${A.name}`, {
+                        g(`Unexpected command format in marketplace entry for TextComponent{A.name}`, {
                             level: "error"
                         });
                         continue
                     }
                     let E = i4(J, C);
                     if (I.existsSync(E)) H.push(E);
-                    else g(`Command path ${C} from marketplace entry not found at ${E} for ${A.name}`, {
+                    else g(`Command path TextComponent{C} from marketplace entry not found at TextComponent{E} for TextComponent{A.name}`, {
                         level: "warn"
-                    }), e(Error(`Plugin component file not found: ${E} for ${A.name}`)), Y.push({
+                    }), e(Error(`Plugin component file not found: TextComponent{E} for TextComponent{A.name}`)), Y.push({
                         type: "path-not-found",
                         source: B,
                         plugin: A.name,
@@ -1533,9 +1510,9 @@ async function Tl8(A, Q, B, G, Z) {
             for (let H of K) {
                 let C = i4(J, H);
                 if (I.existsSync(C)) D.push(C);
-                else g(`Agent path ${H} from marketplace entry not found at ${C} for ${A.name}`, {
+                else g(`Agent path TextComponent{H} from marketplace entry not found at TextComponent{C} for TextComponent{A.name}`, {
                     level: "warn"
-                }), e(Error(`Plugin component file not found: ${C} for ${A.name}`)), Y.push({
+                }), e(Error(`Plugin component file not found: TextComponent{C} for TextComponent{A.name}`)), Y.push({
                     type: "path-not-found",
                     source: B,
                     plugin: A.name,

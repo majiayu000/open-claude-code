@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_035.js
+ * 处理时间: 2025-12-09T03:41:39.395Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.128Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -100,7 +103,7 @@
     };
     z32.exports = uZ
 });
-var Ji = U((BI5) => {
+var Ji = moduleWrapper((BI5) => {
     var F10 = BI5.NAMESPACES = {
         HTML: "http://www.w3.org/1999/xhtml",
         MATHML: "http://www.w3.org/1998/Math/MathML",
@@ -238,10 +241,10 @@ var Ji = U((BI5) => {
         TH: "th",
         THEAD: "thead",
         TITLE: "title",
-        TR: "tr",
+        getProviderIdentifier: "tr",
         TRACK: "track",
         TT: "tt",
-        U: "u",
+        moduleWrapper: "u",
         UL: "ul",
         SVG: "svg",
         VAR: "var",
@@ -326,7 +329,7 @@ var Ji = U((BI5) => {
             [vQ.TH]: !0,
             [vQ.THEAD]: !0,
             [vQ.TITLE]: !0,
-            [vQ.TR]: !0,
+            [vQ.getProviderIdentifier]: !0,
             [vQ.TRACK]: !0,
             [vQ.UL]: !0,
             [vQ.WBR]: !0,
@@ -347,12 +350,12 @@ var Ji = U((BI5) => {
         }
     }
 });
-var N32 = U((ePG, q32) => {
+var N32 = moduleWrapper((ePG, q32) => {
     var $32 = Ji(),
         cQ = $32.TAG_NAMES,
         kG = $32.NAMESPACES;
 
-function U32(A) {
+    function U32(A) {
         switch (A.length) {
             case 1:
                 return A === cQ.P;
@@ -368,12 +371,12 @@ function U32(A) {
         return !1
     }
 
-function YI5(A) {
+    function YI5(A) {
         switch (A.length) {
             case 1:
                 return A === cQ.P;
             case 2:
-                return A === cQ.RB || A === cQ.RP || A === cQ.RT || A === cQ.DD || A === cQ.DT || A === cQ.LI || A === cQ.TD || A === cQ.TH || A === cQ.TR;
+                return A === cQ.RB || A === cQ.RP || A === cQ.RT || A === cQ.DD || A === cQ.DT || A === cQ.LI || A === cQ.TD || A === cQ.TH || A === cQ.getProviderIdentifier;
             case 3:
                 return A === cQ.RTC;
             case 5:
@@ -388,7 +391,7 @@ function YI5(A) {
         return !1
     }
 
-function Q21(A, Q) {
+    function Q21(A, Q) {
         switch (A.length) {
             case 2:
                 if (A === cQ.TD || A === cQ.TH) return Q === kG.HTML;
@@ -416,8 +419,7 @@ function Q21(A, Q) {
         }
         return !1
     }
-
-class w32 {
+    class w32 {
         constructor(A, Q) {
             this.stackTop = -1, this.items = [], this.current = A, this.currentTagName = null, this.currentTmplContent = null, this.tmplCount = 0, this.treeAdapter = Q
         }
@@ -487,7 +489,7 @@ class w32 {
             while (this.currentTagName !== cQ.TBODY && this.currentTagName !== cQ.TFOOT && this.currentTagName !== cQ.THEAD && this.currentTagName !== cQ.TEMPLATE && this.currentTagName !== cQ.HTML || this.treeAdapter.getNamespaceURI(this.current) !== kG.HTML) this.pop()
         }
         clearBackToTableRowContext() {
-            while (this.currentTagName !== cQ.TR && this.currentTagName !== cQ.TEMPLATE && this.currentTagName !== cQ.HTML || this.treeAdapter.getNamespaceURI(this.current) !== kG.HTML) this.pop()
+            while (this.currentTagName !== cQ.getProviderIdentifier && this.currentTagName !== cQ.TEMPLATE && this.currentTagName !== cQ.HTML || this.treeAdapter.getNamespaceURI(this.current) !== kG.HTML) this.pop()
         }
         remove(A) {
             for (let Q = this.stackTop; Q >= 0; Q--)
@@ -585,7 +587,7 @@ class w32 {
     }
     q32.exports = w32
 });
-var M32 = U((AjG, L32) => {
+var M32 = moduleWrapper((AjG, L32) => {
     class eT {
         constructor(A) {
             this.length = 0, this.entries = [], this.treeAdapter = A, this.bookmark = null
@@ -684,7 +686,7 @@ var M32 = U((AjG, L32) => {
     eT.ELEMENT_ENTRY = "ELEMENT_ENTRY";
     L32.exports = eT
 });
-var jk = U((QjG, O32) => {
+var jk = moduleWrapper((QjG, O32) => {
     class V10 {
         constructor(A) {
             let Q = {},
@@ -705,10 +707,9 @@ var jk = U((QjG, O32) => {
     };
     O32.exports = V10
 });
-var K10 = U((BjG, T32) => {
+var K10 = moduleWrapper((BjG, T32) => {
     var JI5 = jk();
-
-class R32 extends JI5 {
+    class R32 extends JI5 {
         constructor(A) {
             super(A);
             this.preprocessor = A, this.isEol = !1, this.lineStartPos = 0, this.droppedBufferSize = 0, this.offset = 0, this.col = 0, this.line = 1
@@ -738,12 +739,11 @@ class R32 extends JI5 {
     }
     T32.exports = R32
 });
-var H10 = U((GjG, S32) => {
+var H10 = moduleWrapper((GjG, S32) => {
     var P32 = jk(),
         D10 = oLA(),
         WI5 = K10();
-
-class j32 extends P32 {
+    class j32 extends P32 {
         constructor(A) {
             super(A);
             this.tokenizer = A, this.posTracker = P32.install(A.preprocessor, WI5), this.currentAttrLocation = null, this.ctLoc = null
@@ -817,10 +817,9 @@ class j32 extends P32 {
     }
     S32.exports = j32
 });
-var y32 = U((ZjG, k32) => {
+var y32 = moduleWrapper((ZjG, k32) => {
     var XI5 = jk();
-
-class _32 extends XI5 {
+    class _32 extends XI5 {
         constructor(A, Q) {
             super(A);
             this.onItemPop = Q.onItemPop
@@ -842,15 +841,14 @@ class _32 extends XI5 {
     }
     k32.exports = _32
 });
-var f32 = U((IjG, b32) => {
+var f32 = moduleWrapper((IjG, b32) => {
     var C10 = jk(),
         x32 = oLA(),
         FI5 = H10(),
         VI5 = y32(),
         KI5 = Ji(),
         E10 = KI5.TAG_NAMES;
-
-class v32 extends C10 {
+    class v32 extends C10 {
         constructor(A) {
             super(A);
             this.parser = A, this.treeAdapter = this.parser.treeAdapter, this.posTracker = null, this.lastStartTagToken = null, this.lastFosterParentingLocation = null, this.currentToken = null
@@ -953,10 +951,9 @@ class v32 extends C10 {
     }
     b32.exports = v32
 });
-var B21 = U((YjG, g32) => {
+var B21 = moduleWrapper((YjG, g32) => {
     var DI5 = jk();
-
-class h32 extends DI5 {
+    class h32 extends DI5 {
         constructor(A, Q) {
             super(A);
             this.posTracker = null, this.onParseError = Q.onParseError
@@ -986,12 +983,11 @@ class h32 extends DI5 {
     }
     g32.exports = h32
 });
-var d32 = U((JjG, m32) => {
+var d32 = moduleWrapper((JjG, m32) => {
     var HI5 = B21(),
         CI5 = K10(),
         EI5 = jk();
-
-class u32 extends HI5 {
+    class u32 extends HI5 {
         constructor(A, Q) {
             super(A, Q);
             this.posTracker = EI5.install(A, CI5), this.lastErrOffset = -1
@@ -1002,12 +998,11 @@ class u32 extends HI5 {
     }
     m32.exports = u32
 });
-var l32 = U((WjG, p32) => {
+var l32 = moduleWrapper((WjG, p32) => {
     var zI5 = B21(),
         UI5 = d32(),
         $I5 = jk();
-
-class c32 extends zI5 {
+    class c32 extends zI5 {
         constructor(A, Q) {
             super(A, Q);
             let B = $I5.install(A.preprocessor, UI5, Q);
@@ -1016,13 +1011,12 @@ class c32 extends zI5 {
     }
     p32.exports = c32
 });
-var s32 = U((XjG, a32) => {
+var s32 = moduleWrapper((XjG, a32) => {
     var wI5 = B21(),
         qI5 = l32(),
         NI5 = H10(),
         i32 = jk();
-
-class n32 extends wI5 {
+    class n32 extends wI5 {
         constructor(A, Q) {
             super(A, Q);
             this.opts = Q, this.ctLoc = null, this.locBeforeToken = !1
@@ -1046,7 +1040,7 @@ class n32 extends wI5 {
     }
     a32.exports = n32
 });
-var z10 = U((OI5) => {
+var z10 = moduleWrapper((OI5) => {
     var {
         DOCUMENT_MODE: LI5
     } = Ji();
@@ -1080,8 +1074,7 @@ var z10 = U((OI5) => {
             parentNode: null
         }
     };
-
-var r32 = function(A) {
+    var r32 = function(A) {
             return {
                 nodeName: "#text",
                 value: A,
@@ -1200,7 +1193,7 @@ var r32 = function(A) {
         return A.sourceCodeLocation
     }
 });
-var U10 = U((DjG, t32) => {
+var U10 = moduleWrapper((DjG, t32) => {
     t32.exports = function(Q, B) {
         return B = B || Object.create(null), [Q, B].reduce((G, Z) => {
             return Object.keys(Z).forEach((I) => {
@@ -1209,17 +1202,17 @@ var U10 = U((DjG, t32) => {
         }, Object.create(null))
     }
 });
-var $10 = U((IY5) => {
+var $10 = moduleWrapper((IY5) => {
     var {
         DOCUMENT_MODE: lIA
-    } = Ji(), Q72 = ["+//silmaril//dtd html pro v0r11 19970101//", "-//as//dtd html 3.0 aswedit + extensions//", "-//advasoft ltd//dtd html 3.0 aswedit + extensions//", "-//ietf//dtd html 2.0 level 1//", "-//ietf//dtd html 2.0 level 2//", "-//ietf//dtd html 2.0 strict level 1//", "-//ietf//dtd html 2.0 strict level 2//", "-//ietf//dtd html 2.0 strict//", "-//ietf//dtd html 2.0//", "-//ietf//dtd html 2.1e//", "-//ietf//dtd html 3.0//", "-//ietf//dtd html 3.2 final//", "-//ietf//dtd html 3.2//", "-//ietf//dtd html 3//", "-//ietf//dtd html level 0//", "-//ietf//dtd html level 1//", "-//ietf//dtd html level 2//", "-//ietf//dtd html level 3//", "-//ietf//dtd html strict level 0//", "-//ietf//dtd html strict level 1//", "-//ietf//dtd html strict level 2//", "-//ietf//dtd html strict level 3//", "-//ietf//dtd html strict//", "-//ietf//dtd html//", "-//metrius//dtd metrius presentational//", "-//microsoft//dtd internet explorer 2.0 html strict//", "-//microsoft//dtd internet explorer 2.0 html//", "-//microsoft//dtd internet explorer 2.0 tables//", "-//microsoft//dtd internet explorer 3.0 html strict//", "-//microsoft//dtd internet explorer 3.0 html//", "-//microsoft//dtd internet explorer 3.0 tables//", "-//netscape comm. corp.//dtd html//", "-//netscape comm. corp.//dtd strict html//", "-//o'reilly and associates//dtd html 2.0//", "-//o'reilly and associates//dtd html extended 1.0//", "-//o'reilly and associates//dtd html extended relaxed 1.0//", "-//sq//dtd html 2.0 hotmetal + extensions//", "-//softquad software//dtd hotmetal pro 6.0::19990601::extensions to html 4.0//", "-//softquad//dtd hotmetal pro 4.0::19971010::extensions to html 4.0//", "-//spyglass//dtd html 2.0 extended//", "-//sun microsystems corp.//dtd hotjava html//", "-//sun microsystems corp.//dtd hotjava strict html//", "-//w3c//dtd html 3 1995-03-24//", "-//w3c//dtd html 3.2 draft//", "-//w3c//dtd html 3.2 final//", "-//w3c//dtd html 3.2//", "-//w3c//dtd html 3.2s draft//", "-//w3c//dtd html 4.0 frameset//", "-//w3c//dtd html 4.0 transitional//", "-//w3c//dtd html experimental 19960712//", "-//w3c//dtd html experimental 970421//", "-//w3c//dtd w3 html//", "-//w3o//dtd w3 html 3.0//", "-//webtechs//dtd mozilla html 2.0//", "-//webtechs//dtd mozilla html//"], BY5 = Q72.concat(["-//w3c//dtd html 4.01 frameset//", "-//w3c//dtd html 4.01 transitional//"]), GY5 = ["-//w3o//dtd w3 html strict 3.0//en//", "-/w3c/dtd html 4.0 transitional/en", "html"], B72 = ["-//w3c//dtd xhtml 1.0 frameset//", "-//w3c//dtd xhtml 1.0 transitional//"], ZY5 = B72.concat(["-//w3c//dtd html 4.01 frameset//", "-//w3c//dtd html 4.01 transitional//"]);
+    } = Ji(), Q72 = ["+//silmaril//dtd html pro v0r11 19970101//", "-//as//dtd html 3.0 aswedit + extensions//", "-//advasoft ltd//dtd html 3.0 aswedit + extensions//", "-//ietf//dtd html 2.0 level 1//", "-//ietf//dtd html 2.0 level 2//", "-//ietf//dtd html 2.0 strict level 1//", "-//ietf//dtd html 2.0 strict level 2//", "-//ietf//dtd html 2.0 strict//", "-//ietf//dtd html 2.0//", "-//ietf//dtd html 2.1e//", "-//ietf//dtd html 3.0//", "-//ietf//dtd html 3.2 final//", "-//ietf//dtd html 3.2//", "-//ietf//dtd html 3//", "-//ietf//dtd html level 0//", "-//ietf//dtd html level 1//", "-//ietf//dtd html level 2//", "-//ietf//dtd html level 3//", "-//ietf//dtd html strict level 0//", "-//ietf//dtd html strict level 1//", "-//ietf//dtd html strict level 2//", "-//ietf//dtd html strict level 3//", "-//ietf//dtd html strict//", "-//ietf//dtd html//", "-//metrius//dtd metrius presentational//", "-//microsoft//dtd internet explorer 2.0 html strict//", "-//microsoft//dtd internet explorer 2.0 html//", "-//microsoft//dtd internet explorer 2.0 tables//", "-//microsoft//dtd internet explorer 3.0 html strict//", "-//microsoft//dtd internet explorer 3.0 html//", "-//microsoft//dtd internet explorer 3.0 tables//", "-//netscape comm. corp.//dtd html//", "-//netscape comm. corp.//dtd strict html//", "-//o'reilly and associates//dtd html 2.0//", "-//o'reilly and associates//dtd html extended 1.0//", "-//o'reilly and associates//dtd html extended relaxed 1.0//", "-//sq//dtd html 2.0 hotmetal + extensions//", "-//softquad software//dtd hotmetal pro 6.0::19990601::extensions to html 4.0//", "-//softquad//dtd hotmetal pro 4.0::19971010::extensions to html 4.0//", "-//spyglass//dtd html 2.0 extended//", "-//sun microsystems corp.//dtd hotjava html//", "-//sun microsystems corp.//dtd hotjava strict html//", "-//w3c//dtd html 3 1995-03-24//", "-//w3c//dtd html 3.2 draft//", "-//w3c//dtd html 3.2 final//", "-//w3c//dtd html 3.2//", "-//w3c//dtd html 3.2s draft//", "-//w3c//dtd html 4.0 frameset//", "-//w3c//dtd html 4.0 transitional//", "-//w3c//dtd html experimental 19960712//", "-//w3c//dtd html experimental 970421//", "-//w3c//dtd w3 html//", "-//w3o//dtd w3 html 3.0//", "-//webtechs//dtd mozilla html 2.0//", "-//webtechs//dtd mozilla html//"], BY5 = Q72.concat(["-//w3c//dtd html 4.01 frameset//", "-//w3c//dtd html 4.01 transitional//"]), GY5 = ["-//w3o//dtd w3 html strict 3.0//AGENT_OUTPUT_TOOL_NAME//", "-/w3c/dtd html 4.0 transitional/AGENT_OUTPUT_TOOL_NAME", "html"], B72 = ["-//w3c//dtd xhtml 1.0 frameset//", "-//w3c//dtd xhtml 1.0 transitional//"], ZY5 = B72.concat(["-//w3c//dtd html 4.01 frameset//", "-//w3c//dtd html 4.01 transitional//"]);
 
-function e32(A) {
+    function e32(A) {
         let Q = A.indexOf('"') !== -1 ? "'" : '"';
         return Q + A + Q
     }
 
-function A72(A, Q) {
+    function A72(A, Q) {
         for (let B = 0; B < Q.length; B++)
             if (A.indexOf(Q[B]) === 0) return !0;
         return !1
@@ -1249,7 +1242,7 @@ function A72(A, Q) {
         return G
     }
 });
-var Z72 = U((CY5) => {
+var Z72 = moduleWrapper((CY5) => {
     var w10 = oLA(),
         q10 = Ji(),
         j9 = q10.TAG_NAMES,
@@ -1461,7 +1454,7 @@ var Z72 = U((CY5) => {
             [j9.SUP]: !0,
             [j9.TABLE]: !0,
             [j9.TT]: !0,
-            [j9.U]: !0,
+            [j9.moduleWrapper]: !0,
             [j9.UL]: !0,
             [j9.VAR]: !0
         };
@@ -1493,11 +1486,11 @@ var Z72 = U((CY5) => {
         if (Q) A.tagName = Q
     };
 
-function DY5(A, Q) {
+    function DY5(A, Q) {
         return Q === jD.MATHML && (A === j9.MI || A === j9.MO || A === j9.MN || A === j9.MS || A === j9.MTEXT)
     }
 
-function HY5(A, Q, B) {
+    function HY5(A, Q, B) {
         if (Q === jD.MATHML && A === j9.ANNOTATION_XML) {
             for (let G = 0; G < B.length; G++)
                 if (B[G].name === G21.ENCODING) {

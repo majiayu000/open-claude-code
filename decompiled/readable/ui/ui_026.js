@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_026.js
+ * 处理时间: 2025-12-09T03:41:39.278Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.118Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -313,7 +315,7 @@
                         }]), c
                     }(W);
 
-function W7(b) {
+                function W7(b) {
                     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") W7 = function(c) {
                         return typeof c
                     };
@@ -323,16 +325,16 @@ function W7(b) {
                     return W7(b)
                 }
 
-function oa(b) {
+                function oa(b) {
                     return XBA(b) || jFA(b) || WBA(b) || ta()
                 }
 
-function ta() {
+                function ta() {
                     throw TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)
                 }
 
-function WBA(b, a) {
+                function WBA(b, a) {
                     if (!b) return;
                     if (typeof b === "string") return yx(b, a);
                     var c = Object.prototype.toString.call(b).slice(8, -1);
@@ -341,32 +343,32 @@ function WBA(b, a) {
                     if (c === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(c)) return yx(b, a)
                 }
 
-function jFA(b) {
+                function jFA(b) {
                     if (typeof Symbol < "u" && Symbol.iterator in Object(b)) return Array.from(b)
                 }
 
-function XBA(b) {
+                function XBA(b) {
                     if (Array.isArray(b)) return yx(b)
                 }
 
-function yx(b, a) {
+                function yx(b, a) {
                     if (a == null || a > b.length) a = b.length;
                     for (var c = 0, s = Array(a); c < a; c++) s[c] = b[c];
                     return s
                 }
 
-function FV(b) {
+                function FV(b) {
                     if (b.hasOwnProperty("__REACT_DEVTOOLS_GLOBAL_HOOK__")) return null;
                     var a = console,
                         c = {};
                     for (var s in console) c[s] = console[s];
 
-function r(QB) {
+                    function r(QB) {
                         a = QB, c = {};
                         for (var E2 in a) c[E2] = console[E2]
                     }
 
-function bA(QB) {
+                    function bA(QB) {
                         try {
                             if (typeof QB.version === "string") {
                                 if (QB.bundleType > 0) return "development";
@@ -391,7 +393,7 @@ function bA(QB) {
                         return "production"
                     }
 
-function Y1(QB) {
+                    function Y1(QB) {
                         try {
                             var E2 = Function.prototype.toString,
                                 r2 = E2.call(QB);
@@ -401,7 +403,7 @@ function Y1(QB) {
                         } catch (o7) {}
                     }
 
-function Q1(QB, E2) {
+                    function Q1(QB, E2) {
                         if (QB === void 0 || QB === null || QB.length === 0 || typeof QB[0] === "string" && QB[0].match(/([^%]|^)(%c)/g) || E2 === void 0) return QB;
                         var r2 = /([^%]|^)((%%)*)(%([oOdisf]))/g;
                         if (typeof QB[0] === "string" && QB[0].match(r2)) return ["%c".concat(QB[0]), E2].concat(oa(QB.slice(1)));
@@ -425,14 +427,13 @@ function Q1(QB, E2) {
                     }
                     var uA = null;
 
-function z1(QB) {
+                    function z1(QB) {
                         var {
                             hideConsoleLogsInStrictMode: E2,
                             browserTheme: r2
                         } = QB, o7 = ["error", "group", "groupCollapsed", "info", "log", "trace", "warn"];
                         if (uA !== null) return;
-
-var TI = {};
+                        var TI = {};
                         uA = function() {
                             for (var eZ in TI) try {
                                 a[eZ] = TI[eZ]
@@ -466,12 +467,12 @@ var TI = {};
                         })
                     }
 
-function _1() {
+                    function _1() {
                         if (uA !== null) uA(), uA = null
                     }
                     var i1 = 0;
 
-function a1(QB) {
+                    function a1(QB) {
                         var E2 = ++i1;
                         m3.set(E2, QB);
                         var r2 = QQ ? "deadcode" : bA(QB);
@@ -494,43 +495,43 @@ function a1(QB) {
                     }
                     var QQ = !1;
 
-function MQ(QB, E2) {
+                    function MQ(QB, E2) {
                         return HF.on(QB, E2),
                             function() {
                                 return HF.off(QB, E2)
                             }
                     }
 
-function N2(QB, E2) {
+                    function N2(QB, E2) {
                         if (!a9[QB]) a9[QB] = [];
                         a9[QB].push(E2)
                     }
 
-function gQ(QB, E2) {
+                    function gQ(QB, E2) {
                         if (!a9[QB]) return;
                         var r2 = a9[QB].indexOf(E2);
                         if (r2 !== -1) a9[QB].splice(r2, 1);
                         if (!a9[QB].length) delete a9[QB]
                     }
 
-function I9(QB, E2) {
+                    function I9(QB, E2) {
                         if (a9[QB]) a9[QB].map(function(r2) {
                             return r2(E2)
                         })
                     }
 
-function m4(QB) {
+                    function m4(QB) {
                         var E2 = tZ;
                         if (!E2[QB]) E2[QB] = new Set;
                         return E2[QB]
                     }
 
-function x5(QB, E2) {
+                    function x5(QB, E2) {
                         var r2 = P7.get(QB);
                         if (r2 != null) r2.handleCommitFiberUnmount(E2)
                     }
 
-function SB(QB, E2, r2) {
+                    function SB(QB, E2, r2) {
                         var o7 = HF.getFiberRoots(QB),
                             TI = E2.current,
                             zG = o7.has(E2),
@@ -541,12 +542,12 @@ function SB(QB, E2, r2) {
                         if (AI != null) AI.handleCommitFiberRoot(E2, r2)
                     }
 
-function D5(QB, E2) {
+                    function D5(QB, E2) {
                         var r2 = P7.get(QB);
                         if (r2 != null) r2.handlePostCommitFiberRoot(E2)
                     }
 
-function X7(QB, E2) {
+                    function X7(QB, E2) {
                         var r2 = P7.get(QB);
                         if (r2 != null)
                             if (E2) r2.patchConsoleForStrictMode();
@@ -560,35 +561,33 @@ function X7(QB, E2) {
                             })
                         } else _1()
                     }
-
-var d4 = [],
+                    var d4 = [],
                         Y8 = [];
 
-function U3(QB) {
+                    function U3(QB) {
                         var E2 = QB.stack.split(`
 `),
                             r2 = E2.length > 1 ? E2[1] : null;
                         return r2
                     }
 
-function RY() {
+                    function RY() {
                         return Y8
                     }
 
-function V4(QB) {
+                    function V4(QB) {
                         var E2 = U3(QB);
                         if (E2 !== null) d4.push(E2)
                     }
 
-function JJ(QB) {
+                    function JJ(QB) {
                         if (d4.length > 0) {
                             var E2 = d4.pop(),
                                 r2 = U3(QB);
                             if (r2 !== null) Y8.push([E2, r2])
                         }
                     }
-
-var tZ = {},
+                    var tZ = {},
                         P7 = new Map,
                         a9 = {},
                         m3 = new Map,
@@ -623,29 +622,29 @@ var tZ = {},
                     }), HF
                 }
 
-function oZ(b, a, c) {
+                function oZ(b, a, c) {
                     var s = b[a];
                     return b[a] = function(r) {
                         return c.call(this, s, arguments)
                     }, s
                 }
 
-function ea(b, a) {
+                function ea(b, a) {
                     var c = {};
                     for (var s in a) c[s] = oZ(b, s, a[s]);
                     return c
                 }
 
-function FBA(b, a) {
+                function FBA(b, a) {
                     for (var c in a) b[c] = a[c]
                 }
 
-function OY(b) {
+                function OY(b) {
                     if (typeof b.forceUpdate === "function") b.forceUpdate();
                     else if (b.updater != null && typeof b.updater.enqueueForceUpdate === "function") b.updater.enqueueForceUpdate(this, function() {}, "forceUpdate")
                 }
 
-function Nz(b, a) {
+                function Nz(b, a) {
                     var c = Object.keys(b);
                     if (Object.getOwnPropertySymbols) {
                         var s = Object.getOwnPropertySymbols(b);
@@ -657,7 +656,7 @@ function Nz(b, a) {
                     return c
                 }
 
-function SK(b) {
+                function SK(b) {
                     for (var a = 1; a < arguments.length; a++) {
                         var c = arguments[a] != null ? arguments[a] : {};
                         if (a % 2) Nz(Object(c), !0).forEach(function(s) {
@@ -671,7 +670,7 @@ function SK(b) {
                     return b
                 }
 
-function xx(b, a, c) {
+                function xx(b, a, c) {
                     if (a in b) Object.defineProperty(b, a, {
                         value: c,
                         enumerable: !0,
@@ -682,7 +681,7 @@ function xx(b, a, c) {
                     return b
                 }
 
-function eO(b) {
+                function eO(b) {
                     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") eO = function(c) {
                         return typeof c
                     };
@@ -692,7 +691,7 @@ function eO(b) {
                     return eO(b)
                 }
 
-function MN(b) {
+                function MN(b) {
                     var a = null,
                         c = null;
                     if (b._currentElement != null) {
@@ -707,7 +706,7 @@ function MN(b) {
                     }
                 }
 
-function DF(b) {
+                function DF(b) {
                     if (b._currentElement != null) {
                         var a = b._currentElement.type;
                         if (typeof a === "function") {
@@ -719,7 +718,7 @@ function DF(b) {
                     return UY
                 }
 
-function Lz(b) {
+                function Lz(b) {
                     var a = [];
                     if (eO(b) !== "object");
                     else if (b._currentElement === null || b._currentElement === !1);
@@ -736,7 +735,7 @@ function Lz(b) {
                     return a
                 }
 
-function VBA(b, a, c, s) {
+                function VBA(b, a, c, s) {
                     var r = new Map,
                         bA = new WeakMap,
                         Y1 = new WeakMap,
@@ -759,12 +758,12 @@ function VBA(b, a, c, s) {
                         return null
                     };
 
-function _1(i0) {
+                    function _1(i0) {
                         var BQ = r.get(i0);
                         return BQ ? MN(BQ).displayName : null
                     }
 
-function i1(i0) {
+                    function i1(i0) {
                         if (eO(i0) !== "object" || i0 === null) throw Error("Invalid internal instance: " + i0);
                         if (!bA.has(i0)) {
                             var BQ = g3();
@@ -773,14 +772,13 @@ function i1(i0) {
                         return bA.get(i0)
                     }
 
-function a1(i0, BQ) {
+                    function a1(i0, BQ) {
                         if (i0.length !== BQ.length) return !1;
                         for (var YQ = 0; YQ < i0.length; YQ++)
                             if (i0[YQ] !== BQ[YQ]) return !1;
                         return !0
                     }
-
-var QQ = [],
+                    var QQ = [],
                         MQ = null;
                     if (c.Reconciler) MQ = ea(c.Reconciler, {
                         mountComponent: function(BQ, YQ) {
@@ -866,14 +864,14 @@ var QQ = [],
                         }
                     });
 
-function N2() {
+                    function N2() {
                         if (MQ !== null)
                             if (c.Component) FBA(c.Component.Mixin, MQ);
                             else FBA(c.Reconciler, MQ);
                         MQ = null
                     }
 
-function gQ(i0, BQ, YQ) {
+                    function gQ(i0, BQ, YQ) {
                         var qQ = YQ === 0;
                         if (H) console.log("%crecordMount()", "color: green; font-weight: bold;", BQ, MN(i0).displayName);
                         if (qQ) {
@@ -891,18 +889,18 @@ function gQ(i0, BQ, YQ) {
                         }
                     }
 
-function I9(i0, BQ, YQ) {
+                    function I9(i0, BQ, YQ) {
                         V4(w), V4(BQ);
                         var qQ = YQ.map(i1);
                         V4(qQ.length);
                         for (var tB = 0; tB < qQ.length; tB++) V4(qQ[tB])
                     }
 
-function m4(i0, BQ) {
+                    function m4(i0, BQ) {
                         d4.push(BQ), r.delete(BQ)
                     }
 
-function x5(i0, BQ, YQ) {
+                    function x5(i0, BQ, YQ) {
                         if (H) console.group("crawlAndRecordInitialMounts() id:", i0);
                         var qQ = r.get(i0);
                         if (qQ != null) Y1.set(qQ, YQ), gQ(qQ, i0, BQ), Lz(qQ).forEach(function(tB) {
@@ -911,7 +909,7 @@ function x5(i0, BQ, YQ) {
                         if (H) console.groupEnd()
                     }
 
-function SB() {
+                    function SB() {
                         var i0 = c.Mount._instancesByReactRootID || c.Mount._instancesByContainerID;
                         for (var BQ in i0) {
                             var YQ = i0[BQ],
@@ -919,14 +917,13 @@ function SB() {
                             x5(qQ, 0, qQ), RY(qQ)
                         }
                     }
-
-var D5 = [],
+                    var D5 = [],
                         X7 = new Map,
                         d4 = [],
                         Y8 = 0,
                         U3 = null;
 
-function RY(i0) {
+                    function RY(i0) {
                         if (D5.length === 0 && d4.length === 0 && U3 === null) return;
                         var BQ = d4.length + (U3 === null ? 0 : 1),
                             YQ = Array(3 + Y8 + (BQ > 0 ? 2 + BQ : 0) + D5.length),
@@ -946,11 +943,11 @@ function RY(i0) {
                         b.emit("operations", YQ), D5.length = 0, d4 = [], U3 = null, X7.clear(), Y8 = 0
                     }
 
-function V4(i0) {
+                    function V4(i0) {
                         D5.push(i0)
                     }
 
-function JJ(i0) {
+                    function JJ(i0) {
                         if (i0 === null) return 0;
                         var BQ = X7.get(i0);
                         if (BQ !== void 0) return BQ;
@@ -960,7 +957,7 @@ function JJ(i0) {
                     var tZ = null,
                         P7 = {};
 
-function a9(i0) {
+                    function a9(i0) {
                         var BQ = P7;
                         i0.forEach(function(YQ) {
                             if (!BQ[YQ]) BQ[YQ] = {};
@@ -968,7 +965,7 @@ function a9(i0) {
                         })
                     }
 
-function m3(i0) {
+                    function m3(i0) {
                         return function(YQ) {
                             var qQ = P7[i0];
                             if (!qQ) return !1;
@@ -978,7 +975,7 @@ function m3(i0) {
                         }
                     }
 
-function WJ(i0) {
+                    function WJ(i0) {
                         var BQ = null,
                             YQ = null,
                             qQ = r.get(i0);
@@ -993,7 +990,7 @@ function WJ(i0) {
                         }
                     }
 
-function HF(i0) {
+                    function HF(i0) {
                         var BQ = r.get(i0);
                         if (BQ == null) {
                             console.warn('Could not find instance with id "'.concat(i0, '"'));
@@ -1020,7 +1017,7 @@ function HF(i0) {
                         }
                     }
 
-function QB(i0, BQ, YQ) {
+                    function QB(i0, BQ, YQ) {
                         var qQ = o7(i0);
                         if (qQ !== null) {
                             var tB = z0(qQ, BQ),
@@ -1029,7 +1026,7 @@ function QB(i0, BQ, YQ) {
                         }
                     }
 
-function E2(i0, BQ) {
+                    function E2(i0, BQ) {
                         var YQ = o7(i0);
                         if (YQ !== null) {
                             var qQ = z0(YQ, BQ);
@@ -1037,7 +1034,7 @@ function E2(i0, BQ) {
                         }
                     }
 
-function r2(i0, BQ, YQ, qQ) {
+                    function r2(i0, BQ, YQ, qQ) {
                         if (qQ || tZ !== BQ) tZ = BQ, P7 = {};
                         var tB = o7(BQ);
                         if (tB === null) return {
@@ -1054,7 +1051,7 @@ function r2(i0, BQ, YQ, qQ) {
                         }
                     }
 
-function o7(i0) {
+                    function o7(i0) {
                         var BQ = r.get(i0);
                         if (BQ == null) return null;
                         var YQ = MN(BQ),
@@ -1083,8 +1080,7 @@ function o7(i0) {
                         }
                         var vx = BQ._instance;
                         if (vx != null) P8 = vx.context || null, CF = vx.state || null;
-
-var VJ = [],
+                        var VJ = [],
                             d$ = [];
                         return {
                             id: i0,
@@ -1120,7 +1116,7 @@ var VJ = [],
                         }
                     }
 
-function TI(i0) {
+                    function TI(i0) {
                         var BQ = o7(i0);
                         if (BQ === null) {
                             console.warn('Could not find element with id "'.concat(i0, '"'));
@@ -1137,12 +1133,12 @@ function TI(i0) {
                         if (YQ) console.groupEnd()
                     }
 
-function zG(i0, BQ) {
+                    function zG(i0, BQ) {
                         var YQ = o7(i0);
                         if (YQ !== null) window.$attribute = z0(YQ, BQ)
                     }
 
-function eZ(i0) {
+                    function eZ(i0) {
                         var BQ = r.get(i0);
                         if (BQ == null) {
                             console.warn('Could not find instance with id "'.concat(i0, '"'));
@@ -1156,7 +1152,7 @@ function eZ(i0) {
                         s.$type = YQ.type
                     }
 
-function AI(i0, BQ, YQ, qQ) {
+                    function AI(i0, BQ, YQ, qQ) {
                         var tB = r.get(BQ);
                         if (tB != null) {
                             var c4 = tB._instance;
@@ -1179,7 +1175,7 @@ function AI(i0, BQ, YQ, qQ) {
                         }
                     }
 
-function u$(i0, BQ, YQ, qQ, tB) {
+                    function u$(i0, BQ, YQ, qQ, tB) {
                         var c4 = r.get(BQ);
                         if (c4 != null) {
                             var P8 = c4._instance;
@@ -1202,7 +1198,7 @@ function u$(i0, BQ, YQ, qQ, tB) {
                         }
                     }
 
-function ZH(i0, BQ, YQ, qQ, tB) {
+                    function ZH(i0, BQ, YQ, qQ, tB) {
                         var c4 = r.get(BQ);
                         if (c4 != null) {
                             var P8 = c4._instance;
@@ -1245,35 +1241,35 @@ function ZH(i0, BQ, YQ, qQ, tB) {
                         zu = function() {},
                         Bs = function() {};
 
-function wB() {
+                    function wB() {
                         return null
                     }
 
-function b2(i0) {
+                    function b2(i0) {
                         return null
                     }
 
-function T8(i0) {}
+                    function T8(i0) {}
 
-function g6(i0) {}
+                    function g6(i0) {}
 
-function QI(i0) {}
+                    function QI(i0) {}
 
-function UG(i0) {
+                    function UG(i0) {
                         return null
                     }
 
-function VX() {}
+                    function VX() {}
 
-function VV(i0) {}
+                    function VV(i0) {}
 
-function BW(i0) {}
+                    function BW(i0) {}
 
-function bC() {}
+                    function bC() {}
 
-function TN() {}
+                    function TN() {}
 
-function BR(i0) {
+                    function BR(i0) {
                         return r.has(i0)
                     }
                     return {
@@ -1320,14 +1316,13 @@ function BR(i0) {
                     }
                 }
 
-function As(b) {
+                function As(b) {
                     return !cG(b)
                 }
 
-function Qs(b, a, c) {
+                function Qs(b, a, c) {
                     if (b == null) return function() {};
-
-var s = [b.sub("renderer-attached", function(Y1) {
+                    var s = [b.sub("renderer-attached", function(Y1) {
                             var {
                                 id: Q1,
                                 renderer: uA,
@@ -1361,8 +1356,7 @@ var s = [b.sub("renderer-attached", function(Y1) {
                         } = Y1;
                         r(Q1, uA)
                     })), b.emit("react-devtools", a), b.reactDevtoolsAgent = a;
-
-var bA = function() {
+                    var bA = function() {
                         s.forEach(function(Q1) {
                             return Q1()
                         }), b.rendererInterfaces.forEach(function(Q1) {
@@ -1379,7 +1373,7 @@ var bA = function() {
                         }
                 }
 
-function ON(b, a) {
+                function ON(b, a) {
                     var c = !1,
                         s = {
                             bottom: 0,
@@ -1418,7 +1412,7 @@ function ON(b, a) {
                     return c ? s : null
                 }
 
-function AR(b) {
+                function AR(b) {
                     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") AR = function(c) {
                         return typeof c
                     };
@@ -1428,7 +1422,7 @@ function AR(b) {
                     return AR(b)
                 }
 
-function QR(b, a, c) {
+                function QR(b, a, c) {
                     if (a in b) Object.defineProperty(b, a, {
                         value: c,
                         enumerable: !0,
@@ -1439,7 +1433,7 @@ function QR(b, a, c) {
                     return b
                 }
 
-function O(b, a, c, s) {
+                function O(b, a, c, s) {
                     b.addListener("NativeStyleEditor_measure", function(r) {
                         var {
                             id: bA,
@@ -1472,8 +1466,7 @@ function O(b, a, c, s) {
                         validAttributes: s
                     })
                 }
-
-var T = {
+                var T = {
                         top: 0,
                         left: 0,
                         right: 0,
@@ -1481,7 +1474,7 @@ var T = {
                     },
                     f = new Map;
 
-function n(b, a, c, s, r) {
+                function n(b, a, c, s, r) {
                     var bA = b.getInstanceAndStyle({
                         id: s,
                         rendererID: r

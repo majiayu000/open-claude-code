@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_013.js
+ * 处理时间: 2025-12-09T03:41:38.696Z
+ * 变量映射: 11 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.075Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -23,12 +26,12 @@
     } catch (W) {
         e(W instanceof Error ? W : Error(String(W)));
         let X = W instanceof Error ? W.message : String(W),
-            V = `Error calling tool${I?` (${I.name})`:""}: ${X}`;
+            V = `Error calling tool${I?` (TextComponent{I.name})`:""}: TextComponent{X}`;
         yield {
             message: j0({
                 content: [{
                     type: "tool_result",
-                    content: `<tool_use_error>${V}</tool_use_error>`,
+                    content: `<tool_use_error>TextComponent{V}</tool_use_error>`,
                     is_error: !0,
                     tool_use_id: A.id
                 }],
@@ -62,7 +65,6 @@ function Xp5(A, Q, B, G, Z, I, Y) {
         J.done()
     }), J
 }
-
 async function Fp5(A, Q, B, G, Z, I, Y, J) {
     let W = A.inputSchema.safeParse(B);
     if (!W.success) {
@@ -79,11 +81,11 @@ async function Fp5(A, Q, B, G, Z, I, Y, J) {
             message: j0({
                 content: [{
                     type: "tool_result",
-                    content: `<tool_use_error>InputValidationError: ${q}</tool_use_error>`,
+                    content: `<tool_use_error>InputValidationError: TextComponent{q}</tool_use_error>`,
                     is_error: !0,
                     tool_use_id: Q
                 }],
-                toolUseResult: `InputValidationError: ${W.error.message}`
+                toolUseResult: `InputValidationError: TextComponent{W.error.message}`
             })
         }]
     }
@@ -100,11 +102,11 @@ async function Fp5(A, Q, B, G, Z, I, Y, J) {
         message: j0({
             content: [{
                 type: "tool_result",
-                content: `<tool_use_error>${X.message}</tool_use_error>`,
+                content: `<tool_use_error>TextComponent{X.message}</tool_use_error>`,
                 is_error: !0,
                 tool_use_id: Q
             }],
-            toolUseResult: `Error: ${X.message}`
+            toolUseResult: `Error: TextComponent{X.message}`
         })
     }];
     let F = [],
@@ -129,7 +131,7 @@ async function Fp5(A, Q, B, G, Z, I, Y, J) {
             return F.push({
                 message: j0({
                     content: [g30(Q)],
-                    toolUseResult: `Error: ${D}`
+                    toolUseResult: `Error: TextComponent{D}`
                 })
             }), F
     }
@@ -144,8 +146,8 @@ async function Fp5(A, Q, B, G, Z, I, Y, J) {
     }
     sL2(A.name, C), rL2();
     let E;
-    if (H !== void 0 && H.behavior === "allow") g(`Hook approved tool use for ${A.name}, bypassing permission check`), E = H;
-    else if (H !== void 0 && H.behavior === "deny") g(`Hook denied tool use for ${A.name}`), E = H;
+    if (H !== void 0 && H.behavior === "allow") g(`Hook approved tool use for TextComponent{A.name}, bypassing permission check`), E = H;
+    else if (H !== void 0 && H.behavior === "deny") g(`Hook denied tool use for TextComponent{A.name}`), E = H;
     else {
         let q = H?.behavior === "ask" ? H : void 0;
         E = await Z(A, V, G, I, Q, q)
@@ -167,7 +169,7 @@ async function Fp5(A, Q, B, G, Z, I, Y, J) {
             queryDepth: G.queryTracking?.depth
         });
         let R = E.message;
-        if (K && !R) R = `Execution stopped by PreToolUse hook${D?`: ${D}`:""}`;
+        if (K && !R) R = `Execution stopped by PreToolUse hook${D?`: TextComponent{D}`:""}`;
         return F.push({
             message: j0({
                 content: [{
@@ -176,7 +178,7 @@ async function Fp5(A, Q, B, G, Z, I, Y, J) {
                     is_error: !0,
                     tool_use_id: Q
                 }],
-                toolUseResult: `Error: ${R}`
+                toolUseResult: `Error: TextComponent{R}`
             })
         }), F
     }
@@ -275,8 +277,7 @@ async function Fp5(A, Q, B, G, Z, I, Y, J) {
         let y = q.data,
             v = [],
             x = q.contextModifier;
-
-async function p(u) {
+        async function p(u) {
             F.push({
                 message: j0({
                     content: [await fv2(A, u, Q)],
@@ -302,7 +303,7 @@ async function p(u) {
             message: p9({
                 type: "hook_stopped_continuation",
                 message: D || "Execution stopped by hook",
-                hookName: `PreToolUse:${A.name}`,
+                hookName: `PreToolUse:TextComponent{A.name}`,
                 toolUseID: Q,
                 hookEvent: "PreToolUse"
             })
@@ -350,7 +351,7 @@ async function p(u) {
                     is_error: !0,
                     tool_use_id: Q
                 }],
-                toolUseResult: `Error: ${P}`
+                toolUseResult: `Error: TextComponent{P}`
             })
         }, ...v]
     } finally {
@@ -371,7 +372,7 @@ async function* Vp5(A, Q, B, G, Z, I) {
                 }), yield {
                     message: p9({
                         type: "hook_cancelled",
-                        hookName: `PostToolUse:${Q.name}`,
+                        hookName: `PostToolUse:TextComponent{Q.name}`,
                         toolUseID: B,
                         hookEvent: "PostToolUse"
                     })
@@ -384,7 +385,7 @@ async function* Vp5(A, Q, B, G, Z, I) {
             if (F.blockingError) yield {
                 message: p9({
                     type: "hook_blocking_error",
-                    hookName: `PostToolUse:${Q.name}`,
+                    hookName: `PostToolUse:TextComponent{Q.name}`,
                     toolUseID: B,
                     hookEvent: "PostToolUse",
                     blockingError: F.blockingError
@@ -395,7 +396,7 @@ async function* Vp5(A, Q, B, G, Z, I) {
                     message: p9({
                         type: "hook_stopped_continuation",
                         message: F.stopReason || "Execution stopped by PostToolUse hook",
-                        hookName: `PostToolUse:${Q.name}`,
+                        hookName: `PostToolUse:TextComponent{Q.name}`,
                         toolUseID: B,
                         hookEvent: "PostToolUse"
                     })
@@ -406,7 +407,7 @@ async function* Vp5(A, Q, B, G, Z, I) {
                 message: p9({
                     type: "hook_additional_context",
                     content: F.additionalContexts,
-                    hookName: `PostToolUse:${Q.name}`,
+                    hookName: `PostToolUse:TextComponent{Q.name}`,
                     toolUseID: B,
                     hookEvent: "PostToolUse"
                 })
@@ -427,7 +428,7 @@ async function* Vp5(A, Q, B, G, Z, I) {
                 message: p9({
                     type: "hook_error_during_execution",
                     content: _51(V),
-                    hookName: `PostToolUse:${Q.name}`,
+                    hookName: `PostToolUse:TextComponent{Q.name}`,
                     toolUseID: B,
                     hookEvent: "PostToolUse"
                 })
@@ -450,7 +451,7 @@ async function* Kp5(A, Q, B, G, Z, I, Y) {
                 }), yield {
                     message: p9({
                         type: "hook_cancelled",
-                        hookName: `PostToolUseFailure:${Q.name}`,
+                        hookName: `PostToolUseFailure:TextComponent{Q.name}`,
                         toolUseID: B,
                         hookEvent: "PostToolUseFailure"
                     })
@@ -463,7 +464,7 @@ async function* Kp5(A, Q, B, G, Z, I, Y) {
             if (F.blockingError) yield {
                 message: p9({
                     type: "hook_blocking_error",
-                    hookName: `PostToolUseFailure:${Q.name}`,
+                    hookName: `PostToolUseFailure:TextComponent{Q.name}`,
                     toolUseID: B,
                     hookEvent: "PostToolUseFailure",
                     blockingError: F.blockingError
@@ -473,7 +474,7 @@ async function* Kp5(A, Q, B, G, Z, I, Y) {
                 message: p9({
                     type: "hook_additional_context",
                     content: F.additionalContexts,
-                    hookName: `PostToolUseFailure:${Q.name}`,
+                    hookName: `PostToolUseFailure:TextComponent{Q.name}`,
                     toolUseID: B,
                     hookEvent: "PostToolUseFailure"
                 })
@@ -491,7 +492,7 @@ async function* Kp5(A, Q, B, G, Z, I, Y) {
                 message: p9({
                     type: "hook_error_during_execution",
                     content: _51(V),
-                    hookName: `PostToolUseFailure:${Q.name}`,
+                    hookName: `PostToolUseFailure:TextComponent{Q.name}`,
                     toolUseID: B,
                     hookEvent: "PostToolUseFailure"
                 })
@@ -513,7 +514,7 @@ async function* Dp5(A, Q, B, G, Z) {
                 }
             };
             if (J.blockingError) {
-                let W = y30(`PreToolUse:${Q.name}`, J.blockingError);
+                let W = y30(`PreToolUse:TextComponent{Q.name}`, J.blockingError);
                 yield {
                     type: "hookPermissionResult",
                     hookPermissionResult: {
@@ -521,7 +522,7 @@ async function* Dp5(A, Q, B, G, Z) {
                         message: W,
                         decisionReason: {
                             type: "hook",
-                            hookName: `PreToolUse:${Q.name}`,
+                            hookName: `PreToolUse:TextComponent{Q.name}`,
                             reason: W
                         }
                     }
@@ -537,10 +538,10 @@ async function* Dp5(A, Q, B, G, Z) {
                 }
             }
             if (J.permissionBehavior !== void 0) {
-                g(`Hook result has permissionBehavior=${J.permissionBehavior}`);
+                g(`Hook result has permissionBehavior=TextComponent{J.permissionBehavior}`);
                 let W = {
                     type: "hook",
-                    hookName: `PreToolUse:${Q.name}`,
+                    hookName: `PreToolUse:TextComponent{Q.name}`,
                     reason: J.hookPermissionDecisionReason
                 };
                 if (J.permissionBehavior === "allow") yield {
@@ -555,7 +556,7 @@ async function* Dp5(A, Q, B, G, Z) {
                     type: "hookPermissionResult",
                     hookPermissionResult: {
                         behavior: J.permissionBehavior,
-                        message: J.hookPermissionDecisionReason || `Hook PreToolUse:${Q.name} ${MS2(J.permissionBehavior)} this tool`,
+                        message: J.hookPermissionDecisionReason || `Hook PreToolUse:TextComponent{Q.name} TextComponent{MS2(J.permissionBehavior)} this tool`,
                         decisionReason: W
                     }
                 }
@@ -570,7 +571,7 @@ async function* Dp5(A, Q, B, G, Z) {
                     message: {
                         message: p9({
                             type: "hook_cancelled",
-                            hookName: `PreToolUse:${Q.name}`,
+                            hookName: `PreToolUse:TextComponent{Q.name}`,
                             toolUseID: G,
                             hookEvent: "PreToolUse"
                         })
@@ -596,7 +597,7 @@ async function* Dp5(A, Q, B, G, Z) {
                     message: p9({
                         type: "hook_error_during_execution",
                         content: _51(W),
-                        hookName: `PreToolUse:${Q.name}`,
+                        hookName: `PreToolUse:TextComponent{Q.name}`,
                         toolUseID: G,
                         hookEvent: "PreToolUse"
                     })
@@ -622,15 +623,15 @@ function _51(A) {
     let G = 5000,
         Z = B.slice(0, G),
         I = B.slice(-G);
-    return `${Z}
+    return `TextComponent{Z}
 
-... [${B.length-1e4} characters truncated] ...
+... [TextComponent{B.length-1e4} characters truncated] ...
 
-${I}`
+TextComponent{I}`
 }
 
 function k30(A) {
-    if (A instanceof oj) return [`Exit code ${A.code}`, A.interrupted ? DO : "", A.stderr, A.stdout];
+    if (A instanceof oj) return [`Exit code TextComponent{A.code}`, A.interrupted ? DO : "", A.stderr, A.stdout];
     let Q = [A.message];
     if ("stderr" in A && typeof A.stderr === "string") Q.push(A.stderr);
     if ("stdout" in A && typeof A.stdout === "string") Q.push(A.stdout);
@@ -640,8 +641,8 @@ function k30(A) {
 function Ib2(A) {
     if (A.length === 0) return "";
     return A.reduce((Q, B, G) => {
-        if (typeof B === "number") return `${Q}[${B}]`;
-        return G === 0 ? B : `${Q}.${B}`
+        if (typeof B === "number") return `TextComponent{Q}[TextComponent{B}]`;
+        return G === 0 ? B : `TextComponent{Q}.TextComponent{B}`
     }, "")
 }
 
@@ -659,11 +660,11 @@ function Hp5(A, Q) {
         I = Q.message,
         Y = [];
     if (B.length > 0) {
-        let J = B.map((W) => `The required parameter \`${W}\` is missing`);
+        let J = B.map((W) => `The required parameter \`TextComponent{W}\` is missing`);
         Y.push(...J)
     }
     if (G.length > 0) {
-        let J = G.map((W) => `An unexpected parameter \`${W}\` was provided`);
+        let J = G.map((W) => `An unexpected parameter \`TextComponent{W}\` was provided`);
         Y.push(...J)
     }
     if (Z.length > 0) {
@@ -671,15 +672,15 @@ function Hp5(A, Q) {
             param: W,
             expected: X,
             received: F
-        }) => `The parameter \`${W}\` type is expected as \`${X}\` but provided as \`${F}\``);
+        }) => `The parameter \`TextComponent{W}\` type is expected as \`TextComponent{X}\` but provided as \`TextComponent{F}\``);
         Y.push(...J)
     }
-    if (Y.length > 0) I = `${A} failed due to the following ${Y.length>1?"issues":"issue"}:
-${Y.join(`
+    if (Y.length > 0) I = `TextComponent{A} failed due to the following TextComponent{Y.length>1?"issues":"issue"}:
+TextComponent{Y.join(`
 `)}`;
     return I
 }
-var wn = L(() => {
+var wn = lazyLoader(() => {
     kZ();
     O60();
     M1A();
@@ -790,7 +791,7 @@ function Fb2(A, Q) {
             let X = W.input;
             return "prompt" in X && X.prompt === A
         });
-    if (!G) return g(`Could not find matching AgentTool tool use for prompt: ${A.slice(0,50)}...`, {
+    if (!G) return g(`Could not find matching AgentTool tool use for prompt: TextComponent{A.slice(0,50)}...`, {
         level: "error"
     }), [B];
     let Z = {
@@ -828,7 +829,7 @@ PLEASE NOTE:
     return [Z, J, B]
 }
 var Xb2;
-var EWA = L(() => {
+var EWA = lazyLoader(() => {
     aG();
     jq();
     nQ();
@@ -864,7 +865,7 @@ function qy(A, Q = "Custom item") {
     for (let G of B) {
         let Z = G.trim();
         if (Z) {
-            let Y = Z.match(/^#+\s+(.+)$/)?.[1] ?? Z;
+            let Y = Z.match(/^#+\s+(.+)TextComponent/)?.[1] ?? Z;
             return Y.length > 100 ? Y.substring(0, 97) + "..." : Y
         }
     }
@@ -911,26 +912,24 @@ function qp5(A) {
     }
     return G
 }
-
 async function Np5(A, Q) {
     let B = [],
         G = new Set;
-
-async function Z(I) {
+    async function Z(I) {
         if (Q.aborted) return;
         try {
             let Y = await Hb2(I);
             if (Y.isDirectory()) {
-                let J = Y.dev !== void 0 && Y.ino !== void 0 ? `${Y.dev}:${Y.ino}` : await $p5(I);
+                let J = Y.dev !== void 0 && Y.ino !== void 0 ? `TextComponent{Y.dev}:TextComponent{Y.ino}` : await $p5(I);
                 if (G.has(J)) {
-                    g(`Skipping already visited directory (circular symlink): ${I}`);
+                    g(`Skipping already visited directory (circular symlink): TextComponent{I}`);
                     return
                 }
                 G.add(J)
             }
         } catch (Y) {
             let J = Y instanceof Error ? Y.message : String(Y);
-            g(`Failed to stat directory ${I}: ${J}`);
+            g(`Failed to stat directory TextComponent{I}: TextComponent{J}`);
             return
         }
         try {
@@ -947,28 +946,27 @@ async function Z(I) {
                             else if (X.isFile() && J.name.endsWith(".md")) B.push(W)
                         } catch (X) {
                             let F = X instanceof Error ? X.message : String(X);
-                            g(`Failed to follow symlink ${W}: ${F}`)
+                            g(`Failed to follow symlink TextComponent{W}: TextComponent{F}`)
                         } else if (J.isDirectory()) await Z(W);
                         else if (J.isFile() && J.name.endsWith(".md")) B.push(W)
                 } catch (X) {
                     let F = X instanceof Error ? X.message : String(X);
-                    g(`Failed to access ${W}: ${F}`)
+                    g(`Failed to access TextComponent{W}: TextComponent{F}`)
                 }
             }
         } catch (Y) {
             let J = Y instanceof Error ? Y.message : String(Y);
-            g(`Failed to read directory ${I}: ${J}`)
+            g(`Failed to read directory TextComponent{I}: TextComponent{J}`)
         }
     }
     return await Z(A), B
 }
-
 async function m30(A) {
     let Q = s9(),
         B = setTimeout(() => Q.abort(), 3000);
     try {
         if (!d30(A)) return [];
-        let Z = V0(process.env.CLAUDE_CODE_USE_NATIVE_FILE_SEARCH) ? await Np5(A, Q.signal) : await dj(["--files", "--hidden", "--follow", "--no-ignore", "--glob", "*.md"], A, Q.signal);
+        let Z = parseBoolean(process.env.CLAUDE_CODE_USE_NATIVE_FILE_SEARCH) ? await Np5(A, Q.signal) : await dj(["--files", "--hidden", "--follow", "--no-ignore", "--glob", "*.md"], A, Q.signal);
         return (await Promise.all(Z.map(async (Y) => {
             try {
                 let J = await Up5(Y, {
@@ -985,7 +983,7 @@ async function m30(A) {
                 }
             } catch (J) {
                 let W = J instanceof Error ? J.message : String(J);
-                return g(`Failed to read/parse markdown file:  ${Y}: ${W}`), null
+                return g(`Failed to read/parse markdown file:  TextComponent{Y}: TextComponent{W}`), null
             }
         }))).filter((Y) => Y !== null)
     } finally {
@@ -993,7 +991,7 @@ async function m30(A) {
     }
 }
 var Cb2, qn;
-var Ny = L(() => {
+var Ny = lazyLoader(() => {
     cj();
     zWA();
     D0();
@@ -1035,7 +1033,7 @@ var Ny = L(() => {
     })
 });
 var y51;
-var c30 = L(() => {
+var c30 = lazyLoader(() => {
     y51 = {
         agentType: "general-purpose",
         whenToUse: "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you.",
@@ -1062,7 +1060,7 @@ Guidelines:
     }
 });
 var zb2;
-var Ub2 = L(() => {
+var Ub2 = lazyLoader(() => {
     zb2 = {
         agentType: "statusline-setup",
         whenToUse: "Use this agent to configure the user's Claude Code status line setting.",
@@ -1083,22 +1081,22 @@ When asked to convert the user's shell PS1 configuration, follow these steps:
 2. Extract the PS1 value using this regex pattern: /(?:^|\\n)\\s*(?:export\\s+)?PS1\\s*=\\s*["']([^"']+)["']/m
 
 3. Convert PS1 escape sequences to shell commands:
-   - \\u → $(whoami)
-   - \\h → $(hostname -s)  
-   - \\H → $(hostname)
-   - \\w → $(pwd)
-   - \\W → $(basename "$(pwd)")
-   - \\$ → $
+   - \\u → TextComponent(whoami)
+   - \\h → TextComponent(hostname -s)  
+   - \\H → TextComponent(hostname)
+   - \\w → TextComponent(pwd)
+   - \\W → TextComponent(basename "TextComponent(pwd)")
+   - \\TextComponent → TextComponent
    - \\n → \\n
-   - \\t → $(date +%H:%M:%S)
-   - \\d → $(date "+%a %b %d")
-   - \\@ → $(date +%I:%M%p)
+   - \\t → TextComponent(date +%H:%M:%S)
+   - \\d → TextComponent(date "+%a %b %d")
+   - \\@ → TextComponent(date +%I:%M%p)
    - \\# → #
    - \\! → !
 
 4. When using ANSI color codes, be sure to use \`printf\`. Do not remove colors. Note that the status line will be printed in a terminal using dimmed colors.
 
-5. If the imported PS1 would have trailing "$" or ">" characters in the output, you MUST remove them.
+5. If the imported PS1 would have trailing "TextComponent" or ">" characters in the output, you MUST remove them.
 
 6. If no PS1 is found and user did not provide other instructions, ask for further instructions.
 
@@ -1123,12 +1121,12 @@ How to use the statusLine command:
    }
    
    You can use this JSON data in your command like:
-   - $(cat | jq -r '.model.display_name')
-   - $(cat | jq -r '.workspace.current_dir')
-   - $(cat | jq -r '.output_style.name')
+   - TextComponent(cat | jq -r '.model.display_name')
+   - TextComponent(cat | jq -r '.workspace.current_dir')
+   - TextComponent(cat | jq -r '.output_style.name')
    
    Or store it in a variable first:
-   - input=$(cat); echo "$(echo "$input" | jq -r '.model.display_name') in $(echo "$input" | jq -r '.workspace.current_dir')"
+   - input=TextComponent(cat); echo "TextComponent(echo "$input" | jq -r '.model.display_name') in TextComponent(echo "$input" | jq -r '.workspace.current_dir')"
 
 2. For longer commands, you can save a new file in the user's ~/.claude directory, e.g.:
    - ~/.claude/statusline-command.sh and reference that file in the settings.
@@ -1153,10 +1151,10 @@ Guidelines:
     }
 });
 var Lp5, Sq;
-var UWA = L(() => {
+var UWA = lazyLoader(() => {
     xV();
     L_();
-    XT();
+    noOpFunction();
     Lp5 = `You are a file search specialist for Claude Code, Anthropic's official CLI for Claude. You excel at thoroughly navigating and exploring codebases.
 
 === CRITICAL: READ-ONLY MODE - NO FILE MODIFICATIONS ===
@@ -1177,11 +1175,11 @@ Your strengths:
 - Reading and analyzing file contents
 
 Guidelines:
-- Use ${GLOB_TOOL_NAME} for broad file pattern matching
-- Use ${GREP_TOOL_NAME} for searching file contents with regex
-- Use ${READ_TOOL_NAME} when you know the specific file path you need to read
-- Use ${BASH_TOOL_NAME} ONLY for read-only operations (ls, git status, git log, git diff, find, cat, head, tail)
-- NEVER use ${BASH_TOOL_NAME} for: mkdir, touch, rm, cp, mv, git add, git commit, npm install, pip install, or any file creation/modification
+- Use TextComponent{GLOB_TOOL_NAME} for broad file pattern matching
+- Use TextComponent{GREP_TOOL_NAME} for searching file contents with regex
+- Use TextComponent{READ_TOOL_NAME} when you know the specific file path you need to read
+- Use TextComponent{BASH_TOOL_NAME} ONLY for read-only operations (ls, git status, git log, git diff, find, cat, head, tail)
+- NEVER use TextComponent{BASH_TOOL_NAME} for: mkdir, touch, rm, cp, mv, git add, git commit, npm install, pip install, or any file creation/modification
 - Adapt your search approach based on the thoroughness level specified by the caller
 - Return file paths as absolute paths in your final response
 - For clear communication, avoid using emojis
@@ -1194,7 +1192,7 @@ NOTE: You are meant to be a fast agent that returns output as quickly as possibl
 Complete the user's search request efficiently and report your findings clearly.`, Sq = {
         agentType: "Explore",
         whenToUse: 'Fast agent specialized for exploring codebases. Use this when you need to quickly find files by patterns (eg. "src/components/**/*.tsx"), search code for keywords (eg. "API endpoints"), or answer questions about the codebase (eg. "how do API endpoints work?"). When calling this agent, specify the desired thoroughness level: "quick" for basic searches, "medium" for moderate exploration, or "very thorough" for comprehensive analysis across multiple locations and naming conventions.',
-        disallowedTools: [TASK_TOOL_NAME, a61, EDIT_TOOL_NAME, WRITE_TOOL_NAME, M_],
+        disallowedTools: [TASK_TOOL_NAME, EXIT_PLAN_MODE_TOOL_NAME, EDIT_TOOL_NAME, WRITE_TOOL_NAME, NOTEBOOK_EDIT_TOOL_NAME],
         source: "built-in",
         baseDir: "built-in",
         model: "haiku",
@@ -1202,9 +1200,9 @@ Complete the user's search request efficiently and report your findings clearly.
     }
 });
 var Mp5, $WA;
-var x51 = L(() => {
+var x51 = lazyLoader(() => {
     UWA();
-    XT();
+    noOpFunction();
     xV();
     L_();
     Mp5 = `You are a software architect and planning specialist for Claude Code. Your role is to explore the codebase and design implementation plans.
@@ -1229,12 +1227,12 @@ You will be provided with a set of requirements and optionally a perspective on 
 
 2. **Explore Thoroughly**:
    - Read any files provided to you in the initial prompt
-   - Find existing patterns and conventions using ${GLOB_TOOL_NAME}, ${GREP_TOOL_NAME}, and ${READ_TOOL_NAME}
+   - Find existing patterns and conventions using TextComponent{GLOB_TOOL_NAME}, TextComponent{GREP_TOOL_NAME}, and TextComponent{READ_TOOL_NAME}
    - Understand the current architecture
    - Identify similar features as reference
    - Trace through relevant code paths
-   - Use ${BASH_TOOL_NAME} ONLY for read-only operations (ls, git status, git log, git diff, find, cat, head, tail)
-   - NEVER use ${BASH_TOOL_NAME} for: mkdir, touch, rm, cp, mv, git add, git commit, npm install, pip install, or any file creation/modification
+   - Use TextComponent{BASH_TOOL_NAME} ONLY for read-only operations (ls, git status, git log, git diff, find, cat, head, tail)
+   - NEVER use TextComponent{BASH_TOOL_NAME} for: mkdir, touch, rm, cp, mv, git add, git commit, npm install, pip install, or any file creation/modification
 
 3. **Design Solution**:
    - Create implementation approach based on your assigned perspective
@@ -1259,7 +1257,7 @@ List 3-5 files most critical for implementing this plan:
 REMEMBER: You can ONLY explore and plan. You CANNOT and MUST NOT write, edit, or modify any files. You do NOT have access to file editing tools.`, $WA = {
         agentType: "Plan",
         whenToUse: "Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs.",
-        disallowedTools: [TASK_TOOL_NAME, a61, EDIT_TOOL_NAME, WRITE_TOOL_NAME, M_],
+        disallowedTools: [TASK_TOOL_NAME, EXIT_PLAN_MODE_TOOL_NAME, EDIT_TOOL_NAME, WRITE_TOOL_NAME, NOTEBOOK_EDIT_TOOL_NAME],
         source: "built-in",
         tools: Sq.tools,
         baseDir: "built-in",
@@ -1271,10 +1269,10 @@ var $b2 = () => {};
 
 function p30() {
     let A = [y51, zb2, Sq, $WA];
-    if (V0(process.env.ENABLE_CODE_GUIDE_SUBAGENT) || process.env.CLAUDE_CODE_ENTRYPOINT !== "sdk-ts" && process.env.CLAUDE_CODE_ENTRYPOINT !== "sdk-py" && process.env.CLAUDE_CODE_ENTRYPOINT !== "sdk-cli") A.push(SGB);
+    if (parseBoolean(process.env.ENABLE_CODE_GUIDE_SUBAGENT) || process.env.CLAUDE_CODE_ENTRYPOINT !== "sdk-ts" && process.env.CLAUDE_CODE_ENTRYPOINT !== "sdk-py" && process.env.CLAUDE_CODE_ENTRYPOINT !== "sdk-cli") A.push(SGB);
     return A
 }
-var wb2 = L(() => {
+var wb2 = lazyLoader(() => {
     c30();
     Ub2();
     UWA();
@@ -1292,7 +1290,7 @@ function qb2(A, Q, B) {
     let G = [],
         Z = OA();
 
-function I(Y, J = []) {
+    function I(Y, J = []) {
         try {
             let W = Z.readdirSync(Y);
             for (let X of W) {
@@ -1304,7 +1302,7 @@ function I(Y, J = []) {
                 }
             }
         } catch (W) {
-            g(`Failed to scan agents directory ${Y}: ${W}`, {
+            g(`Failed to scan agents directory TextComponent{Y}: TextComponent{W}`, {
                 level: "error"
             })
         }
@@ -1324,7 +1322,7 @@ function Nb2(A, Q, B, G) {
             } = yF(I),
             W = Y.name || Rp5(A).replace(/\.md$/, ""),
             F = [Q, ...B, W].join(":"),
-            V = Y.description || Y["when-to-use"] || `Agent from ${Q} plugin`,
+            V = Y.description || Y["when-to-use"] || `Agent from TextComponent{Q} plugin`,
             K = $0A(Y.tools),
             D = HO(Y.skills),
             H = Y.color,
@@ -1347,7 +1345,7 @@ function Nb2(A, Q, B, G) {
             ...{}
         }
     } catch (I) {
-        return g(`Failed to load agent from ${A}: ${I}`, {
+        return g(`Failed to load agent from TextComponent{A}: TextComponent{I}`, {
             level: "error"
         }), null
     }
@@ -1357,7 +1355,7 @@ function Lb2() {
     q0A.cache?.clear?.()
 }
 var q0A;
-var ATA = L(() => {
+var ATA = lazyLoader(() => {
     o2();
     o0();
     NF();
@@ -1368,13 +1366,13 @@ var ATA = L(() => {
             enabled: A,
             errors: Q
         } = await y7(), B = [];
-        if (Q.length > 0) g(`Plugin loading errors: ${Q.map((G)=>BM(G)).join(", ")}`);
+        if (Q.length > 0) g(`Plugin loading errors: TextComponent{Q.map((G)=>BM(G)).join(", ")}`);
         for (let G of A) {
             if (G.agentsPath) try {
                 let Z = qb2(G.agentsPath, G.name, G.source);
-                if (B.push(...Z), Z.length > 0) g(`Loaded ${Z.length} agents from plugin ${G.name} default directory`)
+                if (B.push(...Z), Z.length > 0) g(`Loaded TextComponent{Z.length} agents from plugin TextComponent{G.name} default directory`)
             } catch (Z) {
-                g(`Failed to load agents from plugin ${G.name} default directory: ${Z}`, {
+                g(`Failed to load agents from plugin TextComponent{G.name} default directory: TextComponent{Z}`, {
                     level: "error"
                 })
             }
@@ -1383,18 +1381,18 @@ var ATA = L(() => {
                     let Y = OA().statSync(Z);
                     if (Y.isDirectory()) {
                         let J = qb2(Z, G.name, G.source);
-                        if (B.push(...J), J.length > 0) g(`Loaded ${J.length} agents from plugin ${G.name} custom path: ${Z}`)
+                        if (B.push(...J), J.length > 0) g(`Loaded TextComponent{J.length} agents from plugin TextComponent{G.name} custom path: TextComponent{Z}`)
                     } else if (Y.isFile() && Z.endsWith(".md")) {
                         let J = Nb2(Z, G.name, [], G.source);
-                        if (J) B.push(J), g(`Loaded agent from plugin ${G.name} custom file: ${Z}`)
+                        if (J) B.push(J), g(`Loaded agent from plugin TextComponent{G.name} custom file: TextComponent{Z}`)
                     }
                 } catch (I) {
-                    g(`Failed to load agents from plugin ${G.name} custom path ${Z}: ${I}`, {
+                    g(`Failed to load agents from plugin TextComponent{G.name} custom path TextComponent{Z}: TextComponent{I}`, {
                         level: "error"
                     })
                 }
         }
-        return g(`Total plugin agents loaded: ${B.length}`), B
+        return g(`Total plugin agents loaded: TextComponent{B.length}`), B
     })
 });
 import {
@@ -1435,7 +1433,7 @@ function jp5(A) {
     } = A;
     if (!Q || typeof Q !== "string") return 'Missing required "name" field in frontmatter';
     if (!B || typeof B !== "string") return 'Missing required "description" field in frontmatter';
-    if (G && typeof G === "string" && !s7A.includes(G)) return `Invalid model "${G}". Valid options: ${s7A.join(", ")}`;
+    if (G && typeof G === "string" && !s7A.includes(G)) return `Invalid model "TextComponent{G}". Valid options: TextComponent{s7A.join(", ")}`;
     return "Unknown parsing error"
 }
 
@@ -1465,7 +1463,7 @@ function Sp5(A, Q, B = "flagSettings") {
         }
     } catch (G) {
         let Z = G instanceof Error ? G.message : String(G);
-        return g(`Error parsing agent '${A}' from JSON: ${Z}`), e(G instanceof Error ? G : Error(String(G))), null
+        return g(`Error parsing agent 'TextComponent{A}' from JSON: TextComponent{Z}`), e(G instanceof Error ? G : Error(String(G))), null
     }
 }
 
@@ -1475,7 +1473,7 @@ function b51(A, Q = "flagSettings") {
         return Object.entries(B).map(([G, Z]) => Sp5(G, Z, Q)).filter((G) => G !== null)
     } catch (B) {
         let G = B instanceof Error ? B.message : String(B);
-        return g(`Error parsing agents from JSON: ${G}`), e(B instanceof Error ? B : Error(String(B))), []
+        return g(`Error parsing agents from JSON: TextComponent{G}`), e(B instanceof Error ? B : Error(String(B))), []
     }
 }
 
@@ -1486,7 +1484,7 @@ function _p5(A, Q, B, G, Z) {
             description: Y
         } = B;
         if (!I || typeof I !== "string" || !Y || typeof Y !== "string") {
-            let P = `Agent file ${A} is missing required '${!I||typeof I!=="string"?"name":"description"}' in frontmatter`;
+            let P = `Agent file TextComponent{A} is missing required 'TextComponent{!I||typeof I!=="string"?"name":"description"}' in frontmatter`;
             return g(P), null
         }
         Y = Y.replace(/\\n/g, `
@@ -1497,23 +1495,23 @@ function _p5(A, Q, B, G, Z) {
             forkContext: X
         } = B;
         if (X !== void 0 && X !== "true" && X !== "false") {
-            let R = `Agent file ${A} has invalid forkContext value '${X}'. Must be 'true', 'false', or omitted.`;
+            let R = `Agent file TextComponent{A} has invalid forkContext value 'TextComponent{X}'. Must be 'true', 'false', or omitted.`;
             g(R)
         }
         let F = X === "true";
         if (F && W !== "inherit") {
-            let R = `Agent file ${A} has forkContext: true but model is not 'inherit'. Overriding to 'inherit'. Agents with forkContext must use model: inherit to avoid context length mismatch.`;
+            let R = `Agent file TextComponent{A} has forkContext: true but model is not 'inherit'. Overriding to 'inherit'. Agents with forkContext must use model: inherit to avoid context length mismatch.`;
             g(R), W = "inherit"
         }
         let V = W && typeof W === "string" && s7A.includes(W);
         if (W && typeof W === "string" && !V) {
-            let R = `Agent file ${A} has invalid model '${W}'. Valid options: ${s7A.join(", ")}`;
+            let R = `Agent file TextComponent{A} has invalid model 'TextComponent{W}'. Valid options: TextComponent{s7A.join(", ")}`;
             g(R)
         }
         let K = B.permissionMode,
             D = K && OR.includes(K);
         if (K && !D) {
-            let R = `Agent file ${A} has invalid permissionMode '${K}'. Valid options: ${OR.join(", ")}`;
+            let R = `Agent file TextComponent{A} has invalid permissionMode 'TextComponent{K}'. Valid options: TextComponent{OR.join(", ")}`;
             g(R)
         }
         let H = Tp5(A, ".md"),

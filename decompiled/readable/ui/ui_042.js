@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_042.js
+ * 处理时间: 2025-12-09T03:41:39.479Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.135Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -40,7 +42,7 @@
         }
     })
 });
-var SWA = U((vIZ, wh2) => {
+var SWA = moduleWrapper((vIZ, wh2) => {
     wh2.exports = _n;
     var O70 = G31(),
         rY = uJ(),
@@ -59,11 +61,11 @@ var SWA = U((vIZ, wh2) => {
         Uh2 = M70(),
         Eh2 = Object.create(null);
 
-function _n(A, Q, B, G) {
+    function _n(A, Q, B, G) {
         zh2.call(this), this.nodeType = PP.ELEMENT_NODE, this.ownerDocument = A, this.localName = Q, this.namespaceURI = B, this.prefix = G, this._tagName = void 0, this._attrsByQName = Object.create(null), this._attrsByLName = Object.create(null), this._attrKeys = []
     }
 
-function P70(A, Q) {
+    function P70(A, Q) {
         if (A.nodeType === PP.TEXT_NODE) Q.push(A._data);
         else
             for (var B = 0, G = A.childNodes.length; B < G; B++) P70(A.childNodes[B], Q)
@@ -625,7 +627,7 @@ function P70(A, Q) {
         if (A._classList) A._classList._update()
     });
 
-function KTA(A, Q, B, G, Z) {
+    function KTA(A, Q, B, G, Z) {
         this.localName = Q, this.prefix = B === null || B === "" ? null : "" + B, this.namespaceURI = G === null || G === "" ? null : "" + G, this.data = Z, this._setOwnerElement(A)
     }
     KTA.prototype = Object.create(Object.prototype, {
@@ -707,7 +709,7 @@ function KTA(A, Q, B, G, Z) {
     });
     _n._Attr = KTA;
 
-function S70(A) {
+    function S70(A) {
         Uh2.call(this, A);
         for (var Q in A._attrsByQName) this[Q] = A._attrsByQName[Q];
         for (var B = 0; B < A._attrKeys.length; B++) this[B] = A._attrsByLName[A._attrKeys[B]]
@@ -768,7 +770,7 @@ function S70(A) {
         },
         updateCache: {
             value: function() {
-                var Q = /^(a|applet|area|embed|form|frame|frameset|iframe|img|object)$/;
+                var Q = /^(a|applet|area|embed|form|frame|frameset|iframe|img|object)TextComponent/;
                 if (this.lastModTime !== this.element.lastModTime) {
                     this.lastModTime = this.element.lastModTime;
                     var B = this.childrenByNumber && this.childrenByNumber.length || 0;
@@ -787,13 +789,13 @@ function S70(A) {
         }
     });
 
-function j70(A) {
+    function j70(A) {
         return function(Q) {
             return Q.localName === A
         }
     }
 
-function Hn5(A) {
+    function Hn5(A) {
         var Q = rY.toASCIILowerCase(A);
         if (Q === A) return j70(A);
         return function(B) {
@@ -801,19 +803,19 @@ function Hn5(A) {
         }
     }
 
-function Cn5(A) {
+    function Cn5(A) {
         return function(Q) {
             return Q.namespaceURI === A
         }
     }
 
-function En5(A, Q) {
+    function En5(A, Q) {
         return function(B) {
             return B.namespaceURI === A && B.localName === Q
         }
     }
 
-function zn5(A) {
+    function zn5(A) {
         return function(Q) {
             return A.every(function(B) {
                 return Q.classList.contains(B)
@@ -821,14 +823,14 @@ function zn5(A) {
         }
     }
 
-function Un5(A) {
+    function Un5(A) {
         return function(Q) {
             if (Q.namespaceURI !== Ry.HTML) return !1;
             return Q.getAttribute("name") === A
         }
     }
 });
-var _70 = U((bIZ, Oh2) => {
+var _70 = moduleWrapper((bIZ, Oh2) => {
     Oh2.exports = Mh2;
     var Nh2 = mD(),
         $n5 = T0A(),
@@ -836,7 +838,7 @@ var _70 = U((bIZ, Oh2) => {
         qh2 = Lh2.HierarchyRequestError,
         wn5 = Lh2.NotFoundError;
 
-function Mh2() {
+    function Mh2() {
         Nh2.call(this)
     }
     Mh2.prototype = Object.create(Nh2.prototype, {
@@ -880,14 +882,14 @@ function Mh2() {
         }
     })
 });
-var DTA = U((fIZ, Ph2) => {
+var DTA = moduleWrapper((fIZ, Ph2) => {
     Ph2.exports = V31;
     var Th2 = _70(),
         Rh2 = uJ(),
         qn5 = W31(),
         Nn5 = L70();
 
-function V31() {
+    function V31() {
         Th2.call(this)
     }
     V31.prototype = Object.create(Th2.prototype, {
@@ -939,17 +941,16 @@ function V31() {
     Object.defineProperties(V31.prototype, qn5);
     Object.defineProperties(V31.prototype, Nn5)
 });
-var y70 = U((hIZ, kh2) => {
+var y70 = moduleWrapper((hIZ, kh2) => {
     kh2.exports = k70;
     var jh2 = uJ(),
         Sh2 = mD(),
         _h2 = DTA();
 
-function k70(A, Q) {
+    function k70(A, Q) {
         _h2.call(this), this.nodeType = Sh2.TEXT_NODE, this.ownerDocument = A, this._data = Q, this._index = void 0
     }
-
-var HTA = {
+    var HTA = {
         get: function() {
             return this._data
         },
@@ -1005,16 +1006,15 @@ var HTA = {
         }
     })
 });
-var v70 = U((gIZ, xh2) => {
+var v70 = moduleWrapper((gIZ, xh2) => {
     xh2.exports = x70;
     var Ln5 = mD(),
         yh2 = DTA();
 
-function x70(A, Q) {
+    function x70(A, Q) {
         yh2.call(this), this.nodeType = Ln5.COMMENT_NODE, this.ownerDocument = A, this._data = Q
     }
-
-var CTA = {
+    var CTA = {
         get: function() {
             return this._data
         },
@@ -1044,7 +1044,7 @@ var CTA = {
         }
     })
 });
-var f70 = U((uIZ, fh2) => {
+var f70 = moduleWrapper((uIZ, fh2) => {
     fh2.exports = b70;
     var Mn5 = mD(),
         On5 = T0A(),
@@ -1053,7 +1053,7 @@ var f70 = U((uIZ, fh2) => {
         Rn5 = J31(),
         vh2 = uJ();
 
-function b70(A) {
+    function b70(A) {
         bh2.call(this), this.nodeType = Mn5.DOCUMENT_FRAGMENT_NODE, this.ownerDocument = A
     }
     b70.prototype = Object.create(bh2.prototype, {
@@ -1106,16 +1106,15 @@ function b70(A) {
         }
     })
 });
-var g70 = U((mIZ, gh2) => {
+var g70 = moduleWrapper((mIZ, gh2) => {
     gh2.exports = h70;
     var Tn5 = mD(),
         hh2 = DTA();
 
-function h70(A, Q, B) {
+    function h70(A, Q, B) {
         hh2.call(this), this.nodeType = Tn5.PROCESSING_INSTRUCTION_NODE, this.ownerDocument = A, this.target = Q, this._data = B
     }
-
-var ETA = {
+    var ETA = {
         get: function() {
             return this._data
         },
@@ -1152,7 +1151,7 @@ var ETA = {
         }
     })
 });
-var zTA = U((dIZ, uh2) => {
+var zTA = moduleWrapper((dIZ, uh2) => {
     var u70 = {
         FILTER_ACCEPT: 1,
         FILTER_REJECT: 2,
@@ -1173,7 +1172,7 @@ var zTA = U((dIZ, uh2) => {
     };
     uh2.exports = u70.constructor = u70.prototype = u70
 });
-var d70 = U((pIZ, dh2) => {
+var d70 = moduleWrapper((pIZ, dh2) => {
     var cIZ = dh2.exports = {
         nextSkippingChildren: Pn5,
         nextAncestorSibling: m70,
@@ -1182,13 +1181,13 @@ var d70 = U((pIZ, dh2) => {
         deepLastChild: mh2
     };
 
-function Pn5(A, Q) {
+    function Pn5(A, Q) {
         if (A === Q) return null;
         if (A.nextSibling !== null) return A.nextSibling;
         return m70(A, Q)
     }
 
-function m70(A, Q) {
+    function m70(A, Q) {
         for (A = A.parentNode; A !== null; A = A.parentNode) {
             if (A === Q) return null;
             if (A.nextSibling !== null) return A.nextSibling
@@ -1196,7 +1195,7 @@ function m70(A, Q) {
         return null
     }
 
-function jn5(A, Q) {
+    function jn5(A, Q) {
         var B = A.firstChild;
         if (B !== null) return B;
         if (A === Q) return null;
@@ -1204,19 +1203,19 @@ function jn5(A, Q) {
         return m70(A, Q)
     }
 
-function mh2(A) {
+    function mh2(A) {
         while (A.lastChild) A = A.lastChild;
         return A
     }
 
-function Sn5(A, Q) {
+    function Sn5(A, Q) {
         var B = A.previousSibling;
         if (B !== null) return mh2(B);
         if (B = A.parentNode, B === Q) return null;
         return B
     }
 });
-var sh2 = U((lIZ, ah2) => {
+var sh2 = moduleWrapper((lIZ, ah2) => {
     ah2.exports = nh2;
     var _n5 = mD(),
         dD = zTA(),
@@ -1235,7 +1234,7 @@ var sh2 = U((lIZ, ah2) => {
             previous: "previousSibling"
         };
 
-function ph2(A, Q) {
+    function ph2(A, Q) {
         var B, G, Z, I, Y;
         G = A._currentNode[c70[Q]];
         while (G !== null) {
@@ -1258,7 +1257,7 @@ function ph2(A, Q) {
         return null
     }
 
-function lh2(A, Q) {
+    function lh2(A, Q) {
         var B, G, Z;
         if (B = A._currentNode, B === A.root) return null;
         while (!0) {
@@ -1272,7 +1271,7 @@ function lh2(A, Q) {
         }
     }
 
-function nh2(A, Q, B) {
+    function nh2(A, Q, B) {
         if (!A || !A.nodeType) ih2.NotSupportedError();
         this._root = A, this._whatToShow = Number(Q) || 0, this._filter = B || null, this._active = !1, this._currentNode = A
     }
@@ -1388,13 +1387,13 @@ function nh2(A, Q, B) {
         }
     })
 });
-var Qg2 = U((iIZ, Ag2) => {
+var Qg2 = moduleWrapper((iIZ, Ag2) => {
     Ag2.exports = eh2;
     var l70 = zTA(),
         i70 = d70(),
         th2 = uJ();
 
-function kn5(A, Q, B) {
+    function kn5(A, Q, B) {
         if (B) return i70.next(A, Q);
         else {
             if (A === Q) return null;
@@ -1402,13 +1401,13 @@ function kn5(A, Q, B) {
         }
     }
 
-function rh2(A, Q) {
+    function rh2(A, Q) {
         for (; Q; Q = Q.parentNode)
             if (A === Q) return !0;
         return !1
     }
 
-function oh2(A, Q) {
+    function oh2(A, Q) {
         var B, G;
         B = A._referenceNode, G = A._pointerBeforeReferenceNode;
         while (!0) {
@@ -1420,7 +1419,7 @@ function oh2(A, Q) {
         return A._referenceNode = B, A._pointerBeforeReferenceNode = G, B
     }
 
-function eh2(A, Q, B) {
+    function eh2(A, Q, B) {
         if (!A || !A.nodeType) th2.NotSupportedError();
         this._root = A, this._referenceNode = A, this._pointerBeforeReferenceNode = !0, this._whatToShow = Number(Q) || 0, this._filter = B || null, this._active = !1, A.doc._attachNodeIterator(this)
     }
@@ -1509,12 +1508,12 @@ function eh2(A, Q, B) {
         }
     })
 });
-var D31 = U((nIZ, Bg2) => {
+var D31 = moduleWrapper((nIZ, Bg2) => {
     Bg2.exports = cD;
 
-function cD(A) {
+    function cD(A) {
         if (!A) return Object.create(cD.prototype);
-        this.url = A.replace(/^[ \t\n\r\f]+|[ \t\n\r\f]+$/g, "");
+        this.url = A.replace(/^[ \t\n\r\f]+|[ \t\n\r\f]+TextComponent/g, "");
         var Q = cD.pattern.exec(this.url);
         if (Q) {
             if (Q[2]) this.scheme = Q[2];

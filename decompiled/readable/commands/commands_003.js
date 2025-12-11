@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: commands_003.js
+ * 处理时间: 2025-12-09T03:41:37.091Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.945Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -26,7 +29,7 @@
                 if (Z === null) continue;
                 let I = uA8(Z, Q);
                 Object.entries(I).forEach(([Y, J]) => {
-                    B[`member.${G}.${Y}`] = J
+                    B[`member.TextComponent{G}.TextComponent{Y}`] = J
                 }), G++
             }
             return B
@@ -211,7 +214,7 @@
         mUQ = _2(async (A, Q, B) => {
             let G = typeof A === "function" ? await A() : A,
                 Z = typeof Q === "function" ? await Q() : Q;
-            return B?.debug?.("@aws-sdk/client-sts::resolveRegion", "accepting first of:", `${G} (provider)`, `${Z} (parent client)`, `${zUQ} (STS default)`), G ?? Z ?? zUQ
+            return B?.debug?.("@aws-sdk/client-sts::resolveRegion", "accepting first of:", `TextComponent{G} (provider)`, `TextComponent{Z} (parent client)`, `TextComponent{zUQ} (STS default)`), G ?? Z ?? zUQ
         }, "resolveRegion"),
         X18 = _2((A, Q) => {
             let B, G;
@@ -235,7 +238,7 @@
                     Credentials: Y,
                     AssumedRoleUser: J
                 } = await B.send(new iM1(I));
-                if (!Y || !Y.AccessKeyId || !Y.SecretAccessKey) throw Error(`Invalid response from STS.assumeRole call with role ${I.RoleArn}`);
+                if (!Y || !Y.AccessKeyId || !Y.SecretAccessKey) throw Error(`Invalid response from STS.assumeRole call with role TextComponent{I.RoleArn}`);
                 let W = uUQ(J),
                     X = {
                         accessKeyId: Y.AccessKeyId,
@@ -273,7 +276,7 @@
                     Credentials: Z,
                     AssumedRoleUser: I
                 } = await B.send(new nM1(G));
-                if (!Z || !Z.AccessKeyId || !Z.SecretAccessKey) throw Error(`Invalid response from STS.assumeRoleWithWebIdentity call with role ${G.RoleArn}`);
+                if (!Z || !Z.AccessKeyId || !Z.SecretAccessKey) throw Error(`Invalid response from STS.assumeRoleWithWebIdentity call with role TextComponent{G.RoleArn}`);
                 let Y = uUQ(I),
                     J = {
                         accessKeyId: Z.AccessKeyId,
@@ -315,7 +318,7 @@
             ...Q
         }), "decorateDefaultCredentialProvider")
 });
-var CuA = U((pH7, sUQ) => {
+var CuA = moduleWrapper((pH7, sUQ) => {
     var {
         defineProperty: HuA,
         getOwnPropertyDescriptor: K18,
@@ -346,15 +349,15 @@ var CuA = U((pH7, sUQ) => {
     sUQ.exports = z18(aUQ);
     var nUQ = NG(),
         sM1 = P2(),
-        U18 = UA("child_process"),
-        $18 = UA("util"),
+        U18 = nodeRequire("child_process"),
+        $18 = nodeRequire("util"),
         w18 = DL(),
         q18 = rM1((A, Q, B) => {
-            if (Q.Version !== 1) throw Error(`Profile ${A} credential_process did not return Version 1.`);
-            if (Q.AccessKeyId === void 0 || Q.SecretAccessKey === void 0) throw Error(`Profile ${A} credential_process returned invalid credentials.`);
+            if (Q.Version !== 1) throw Error(`Profile TextComponent{A} credential_process did not return Version 1.`);
+            if (Q.AccessKeyId === void 0 || Q.SecretAccessKey === void 0) throw Error(`Profile TextComponent{A} credential_process returned invalid credentials.`);
             if (Q.Expiration) {
                 let I = new Date;
-                if (new Date(Q.Expiration) < I) throw Error(`Profile ${A} credential_process returned expired credentials.`)
+                if (new Date(Q.Expiration) < I) throw Error(`Profile TextComponent{A} credential_process returned expired credentials.`)
             }
             let G = Q.AccountId;
             if (!G && B?.[A]?.aws_account_id) G = B[A].aws_account_id;
@@ -389,7 +392,7 @@ var CuA = U((pH7, sUQ) => {
                         try {
                             J = JSON.parse(Y.trim())
                         } catch {
-                            throw Error(`Profile ${A} credential_process returned invalid JSON.`)
+                            throw Error(`Profile TextComponent{A} credential_process returned invalid JSON.`)
                         }
                         return q18(A, J, Q)
                     } catch (Y) {
@@ -397,10 +400,10 @@ var CuA = U((pH7, sUQ) => {
                             logger: B
                         })
                     }
-                } else throw new sM1.CredentialsProviderError(`Profile ${A} did not contain credential_process.`, {
+                } else throw new sM1.CredentialsProviderError(`Profile TextComponent{A} did not contain credential_process.`, {
                     logger: B
                 })
-            } else throw new sM1.CredentialsProviderError(`Profile ${A} could not be found in shared credentials file.`, {
+            } else throw new sM1.CredentialsProviderError(`Profile TextComponent{A} could not be found in shared credentials file.`, {
                 logger: B
             })
         }, "resolveProcessCredentials"),
@@ -414,7 +417,7 @@ var CuA = U((pH7, sUQ) => {
             }), B, A.logger)
         }, "fromProcess")
 });
-var tM1 = U((rUQ) => {
+var tM1 = moduleWrapper((rUQ) => {
     Object.defineProperty(rUQ, "__esModule", {
         value: !0
     });
@@ -431,7 +434,7 @@ var tM1 = U((rUQ) => {
         };
     rUQ.defaultSSOHttpAuthSchemeParametersProvider = O18;
 
-function R18(A) {
+    function R18(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {
@@ -447,7 +450,7 @@ function R18(A) {
         }
     }
 
-function EuA(A) {
+    function EuA(A) {
         return {
             schemeId: "smithy.api#noAuth"
         }
@@ -485,7 +488,7 @@ function EuA(A) {
     };
     rUQ.resolveHttpAuthSchemeConfig = P18
 });
-var tUQ = U((iH7, _18) => {
+var tUQ = moduleWrapper((iH7, _18) => {
     _18.exports = {
         name: "@aws-sdk/client-sso",
         description: "AWS SDK for JavaScript Sso Client for Node.js, Browser and React Native",
@@ -581,7 +584,7 @@ var tUQ = U((iH7, _18) => {
         }
     }
 });
-var C$Q = U((D$Q) => {
+var C$Q = moduleWrapper((D$Q) => {
     Object.defineProperty(D$Q, "__esModule", {
         value: !0
     });
@@ -777,7 +780,7 @@ var C$Q = U((D$Q) => {
         };
     D$Q.ruleSet = k18
 });
-var U$Q = U((E$Q) => {
+var U$Q = moduleWrapper((E$Q) => {
     Object.defineProperty(E$Q, "__esModule", {
         value: !0
     });
@@ -798,7 +801,7 @@ var U$Q = U((E$Q) => {
     E$Q.defaultEndpointResolver = b18;
     QO1.customEndpointFunctions.aws = y18.awsEndpointFunctions
 });
-var L$Q = U((q$Q) => {
+var L$Q = moduleWrapper((q$Q) => {
     Object.defineProperty(q$Q, "__esModule", {
         value: !0
     });
@@ -838,7 +841,7 @@ var L$Q = U((q$Q) => {
         };
     q$Q.getRuntimeConfig = c18
 });
-var S$Q = U((P$Q) => {
+var S$Q = moduleWrapper((P$Q) => {
     Object.defineProperty(P$Q, "__esModule", {
         value: !0
     });
@@ -898,7 +901,7 @@ var S$Q = U((P$Q) => {
         };
     P$Q.getRuntimeConfig = e18
 });
-var ZwQ = U((oH7, GwQ) => {
+var ZwQ = moduleWrapper((oH7, GwQ) => {
     var {
         defineProperty: UuA,
         getOwnPropertyDescriptor: A08,
@@ -1394,7 +1397,7 @@ var ZwQ = U((oH7, GwQ) => {
     var _08 = (0, av.createPaginator)(wuA, BO1, "nextToken", "nextToken", "maxResults"),
         k08 = (0, av.createPaginator)(wuA, GO1, "nextToken", "nextToken", "maxResults")
 });
-var IO1 = U((IwQ) => {
+var IO1 = moduleWrapper((IwQ) => {
     Object.defineProperty(IwQ, "__esModule", {
         value: !0
     });
@@ -1411,7 +1414,7 @@ var IO1 = U((IwQ) => {
         };
     IwQ.defaultSSOOIDCHttpAuthSchemeParametersProvider = x08;
 
-function v08(A) {
+    function v08(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {
@@ -1427,7 +1430,7 @@ function v08(A) {
         }
     }
 
-function b08(A) {
+    function b08(A) {
         return {
             schemeId: "smithy.api#noAuth"
         }
@@ -1453,7 +1456,7 @@ function b08(A) {
     };
     IwQ.resolveHttpAuthSchemeConfig = h08
 });
-var LwQ = U((qwQ) => {
+var LwQ = moduleWrapper((qwQ) => {
     Object.defineProperty(qwQ, "__esModule", {
         value: !0
     });

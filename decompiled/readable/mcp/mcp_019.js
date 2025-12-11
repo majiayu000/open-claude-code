@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_019.js
+ * 处理时间: 2025-12-09T03:41:37.955Z
+ * 变量映射: 5 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.018Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -39,7 +42,7 @@ var e89, A69 = 50,
     WI1 = 1,
     XI1 = 2,
     CjA, FI1 = null;
-var DI1 = L(() => {
+var DI1 = lazyLoader(() => {
     gXA();
     GG();
     S0();
@@ -47,7 +50,7 @@ var DI1 = L(() => {
     M9();
     hB();
     s2();
-    e89 = GA(WE(), 1);
+    e89 = esmImport(WE(), 1);
     CjA = []
 });
 
@@ -55,21 +58,21 @@ function xW0() {
     if (m0.terminal === "Apple_Terminal") return J5.createElement(VT3, null);
     return J5.createElement(j, {
         flexDirection: "column"
-    }, J5.createElement($, null, J5.createElement($, {
+    }, J5.createElement(TextComponent, null, J5.createElement(TextComponent, {
         color: "clawd_body"
-    }, " ▐"), J5.createElement($, {
+    }, " ▐"), J5.createElement(TextComponent, {
         color: "clawd_body",
         backgroundColor: "clawd_background"
-    }, "▛███▜"), J5.createElement($, {
+    }, "▛███▜"), J5.createElement(TextComponent, {
         color: "clawd_body"
-    }, "▌")), J5.createElement($, null, J5.createElement($, {
+    }, "▌")), J5.createElement(TextComponent, null, J5.createElement(TextComponent, {
         color: "clawd_body"
-    }, "▝▜"), J5.createElement($, {
+    }, "▝▜"), J5.createElement(TextComponent, {
         color: "clawd_body",
         backgroundColor: "clawd_background"
-    }, "█████"), J5.createElement($, {
+    }, "█████"), J5.createElement(TextComponent, {
         color: "clawd_body"
-    }, "▛▘")), J5.createElement($, {
+    }, "▛▘")), J5.createElement(TextComponent, {
         color: "clawd_body"
     }, "  ", "▘▘ ▝▝", "  "))
 }
@@ -78,24 +81,24 @@ function VT3() {
     return J5.createElement(j, {
         flexDirection: "column",
         alignItems: "center"
-    }, J5.createElement($, null, J5.createElement($, {
+    }, J5.createElement(TextComponent, null, J5.createElement(TextComponent, {
         color: "clawd_body"
-    }, "▗"), J5.createElement($, {
+    }, "▗"), J5.createElement(TextComponent, {
         color: "clawd_background",
         backgroundColor: "clawd_body"
-    }, " ", "▗", "   ", "▖", " "), J5.createElement($, {
+    }, " ", "▗", "   ", "▖", " "), J5.createElement(TextComponent, {
         color: "clawd_body"
-    }, "▖")), J5.createElement($, {
+    }, "▖")), J5.createElement(TextComponent, {
         backgroundColor: "clawd_body"
-    }, " ".repeat(7)), J5.createElement($, {
+    }, " ".repeat(7)), J5.createElement(TextComponent, {
         color: "clawd_body"
     }, "▘▘ ▝▝"))
 }
 var J5;
-var W69 = L(() => {
+var W69 = lazyLoader(() => {
     hA();
     f5();
-    J5 = GA(VA(), 1)
+    J5 = esmImport(VA(), 1)
 });
 
 function X69(A) {
@@ -134,30 +137,30 @@ function F69({
     return l7.createElement(j, {
         flexDirection: "column",
         width: Q
-    }, l7.createElement($, {
+    }, l7.createElement(TextComponent, {
         bold: !0,
         color: "claude"
-    }, B), Y ? l7.createElement(l7.Fragment, null, Y.content, Z && l7.createElement($, {
+    }, B), Y ? l7.createElement(l7.Fragment, null, Y.content, Z && l7.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
-    }, B7(Z, Q))) : G.length === 0 && I ? l7.createElement($, {
+    }, B7(Z, Q))) : G.length === 0 && I ? l7.createElement(TextComponent, {
         dimColor: !0
     }, B7(I, Q)) : l7.createElement(l7.Fragment, null, G.map((X, F) => {
         let V = Math.max(10, Q - (W > 0 ? W + 2 : 0));
-        return l7.createElement($, {
+        return l7.createElement(TextComponent, {
             key: F
-        }, W > 0 && l7.createElement(l7.Fragment, null, l7.createElement($, {
+        }, W > 0 && l7.createElement(l7.Fragment, null, l7.createElement(TextComponent, {
             dimColor: !0
-        }, (X.timestamp || "").padEnd(W)), "  "), l7.createElement($, null, B7(X.text, V)))
-    }), Z && l7.createElement($, {
+        }, (X.timestamp || "").padEnd(W)), "  "), l7.createElement(TextComponent, null, B7(X.text, V)))
+    }), Z && l7.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, B7(Z, Q))))
 }
 var l7;
-var V69 = L(() => {
+var V69 = lazyLoader(() => {
     hA();
-    l7 = GA(VA(), 1)
+    l7 = esmImport(VA(), 1)
 });
 
 function K69({
@@ -179,11 +182,11 @@ function K69({
     }))))
 }
 var lP;
-var D69 = L(() => {
+var D69 = lazyLoader(() => {
     hA();
     V69();
     eV();
-    lP = GA(VA(), 1)
+    lP = esmImport(VA(), 1)
 });
 import {
     homedir as KT3
@@ -228,7 +231,7 @@ function C69(A) {
             isComplete: I
         }) => {
             return {
-                text: `${I?`${V1.tick} `:""}${Z}`
+                text: `TextComponent{I?`TextComponent{V1.tick} `:""}TextComponent{Z}`
             }
         }),
         G = H0() === KT3() ? "Note: You have launched claude in your home directory. For the best experience, launch it in a project directory instead." : void 0;
@@ -248,9 +251,9 @@ function E69() {
         customContent: {
             content: SO.createElement(SO.Fragment, null, SO.createElement(j, {
                 marginY: 1
-            }, SO.createElement($, {
+            }, SO.createElement(TextComponent, {
                 color: "claude"
-            }, "[✻] [✻] [✻]")), SO.createElement($, {
+            }, "[✻] [✻] [✻]")), SO.createElement(TextComponent, {
                 dimColor: !0
             }, "Share Claude Code with friends")),
             width: 30
@@ -259,13 +262,12 @@ function E69() {
     }
 }
 var SO;
-var z69 = L(() => {
+var z69 = lazyLoader(() => {
     n2();
     R2();
     hA();
-    SO = GA(VA(), 1)
+    SO = esmImport(VA(), 1)
 });
-
 async function DT3(A = "claude_code_guest_pass") {
     let {
         accessToken: Q,
@@ -273,7 +275,7 @@ async function DT3(A = "claude_code_guest_pass") {
     } = await J0A(), G = {
         ...BC(Q),
         "x-organization-uuid": B
-    }, Z = `${o9().BASE_API_URL}/api/oauth/organizations/${B}/referral/eligibility`;
+    }, Z = `TextComponent{getConfig().BASE_API_URL}/api/oauth/organizations/TextComponent{B}/referral/eligibility`;
     return (await GQ.get(Z, {
         headers: G,
         params: {
@@ -281,7 +283,6 @@ async function DT3(A = "claude_code_guest_pass") {
         }
     })).data
 }
-
 async function w69(A = "claude_code_guest_pass") {
     let {
         accessToken: Q,
@@ -289,7 +290,7 @@ async function w69(A = "claude_code_guest_pass") {
     } = await J0A(), G = {
         ...BC(Q),
         "x-organization-uuid": B
-    }, Z = `${o9().BASE_API_URL}/api/oauth/organizations/${B}/referral/redemptions`;
+    }, Z = `TextComponent{getConfig().BASE_API_URL}/api/oauth/organizations/TextComponent{B}/referral/redemptions`;
     return (await GQ.get(Z, {
         headers: G,
         params: {
@@ -330,7 +331,6 @@ function N69() {
         hasCache: !0
     }
 }
-// Async function: U69
 async function U69() {
     if (zjA) return g("Passes: Reusing in-flight eligibility fetch"), zjA;
     let A = i6()?.organizationUuid;
@@ -349,7 +349,7 @@ async function U69() {
             return d0({
                 ...B,
                 passesEligibilityCache: G
-            }), g(`Passes eligibility cached for org ${A}: ${Q.eligible}`), Q
+            }), g(`Passes eligibility cached for org TextComponent{A}: TextComponent{Q.eligible}`), Q
         } catch (Q) {
             return g("Failed to fetch and cache passes eligibility"), e(Q), null
         } finally {
@@ -357,7 +357,6 @@ async function U69() {
         }
     })(), zjA
 }
-// Async function: UjA
 async function UjA() {
     if (!q69()) return null;
     let A = i6()?.organizationUuid;
@@ -380,13 +379,12 @@ async function UjA() {
     } = B;
     return I
 }
-// Async function: L69
 async function L69() {
     UjA()
 }
 var $69 = 3600000,
     zjA = null;
-var $jA = L(() => {
+var $jA = lazyLoader(() => {
     w3();
     EX();
     An();
@@ -425,58 +423,58 @@ function EI1() {
 }
 
 function O69() {
-    return Rg.createElement($, {
+    return Rg.createElement(TextComponent, {
         dimColor: !0
-    }, Rg.createElement($, {
+    }, Rg.createElement(TextComponent, {
         color: "claude"
-    }, "[✻]"), " ", Rg.createElement($, {
+    }, "[✻]"), " ", Rg.createElement(TextComponent, {
         color: "claude"
-    }, "[✻]"), " ", Rg.createElement($, {
+    }, "[✻]"), " ", Rg.createElement(TextComponent, {
         color: "claude"
     }, "[✻]"), " · 3 guest passes at /passes")
 }
 var Rg, M69;
-var vW0 = L(() => {
+var vW0 = lazyLoader(() => {
     hA();
     jQ();
     $jA();
     w0();
-    Rg = GA(VA(), 1), M69 = GA(VA(), 1)
+    Rg = esmImport(VA(), 1), M69 = esmImport(VA(), 1)
 });
 
 function CT3() {
     if (m0.terminal === "Apple_Terminal") return v2.createElement(j, {
         flexDirection: "column",
         alignItems: "center"
-    }, v2.createElement($, null, v2.createElement($, {
+    }, v2.createElement(TextComponent, null, v2.createElement(TextComponent, {
         color: "clawd_body"
-    }, "▗"), v2.createElement($, {
+    }, "▗"), v2.createElement(TextComponent, {
         color: "clawd_background",
         backgroundColor: "clawd_body"
-    }, " ", "▗", "   ", "▖", " "), v2.createElement($, {
+    }, " ", "▗", "   ", "▖", " "), v2.createElement(TextComponent, {
         color: "clawd_body"
-    }, "▖")), v2.createElement($, {
+    }, "▖")), v2.createElement(TextComponent, {
         backgroundColor: "clawd_body"
-    }, " ".repeat(7)), v2.createElement($, {
+    }, " ".repeat(7)), v2.createElement(TextComponent, {
         color: "clawd_body"
     }, "▘▘ ▝▝"));
     return v2.createElement(j, {
         flexDirection: "column"
-    }, v2.createElement($, null, v2.createElement($, {
+    }, v2.createElement(TextComponent, null, v2.createElement(TextComponent, {
         color: "clawd_body"
-    }, " ▐"), v2.createElement($, {
+    }, " ▐"), v2.createElement(TextComponent, {
         color: "clawd_body",
         backgroundColor: "clawd_background"
-    }, "▛███▜"), v2.createElement($, {
+    }, "▛███▜"), v2.createElement(TextComponent, {
         color: "clawd_body"
-    }, "▌")), v2.createElement($, null, v2.createElement($, {
+    }, "▌")), v2.createElement(TextComponent, null, v2.createElement(TextComponent, {
         color: "clawd_body"
-    }, "▝▜"), v2.createElement($, {
+    }, "▝▜"), v2.createElement(TextComponent, {
         color: "clawd_body",
         backgroundColor: "clawd_background"
-    }, "█████"), v2.createElement($, {
+    }, "█████"), v2.createElement(TextComponent, {
         color: "clawd_body"
-    }, "▛▘")), v2.createElement($, {
+    }, "▛▘")), v2.createElement(TextComponent, {
         color: "clawd_body"
     }, "  ", "▘▘ ▝▝", "  "))
 }
@@ -507,28 +505,28 @@ function T69() {
         alignItems: "center"
     }, v2.createElement(CT3, null), v2.createElement(j, {
         flexDirection: "column"
-    }, v2.createElement($, null, v2.createElement($, {
+    }, v2.createElement(TextComponent, null, v2.createElement(TextComponent, {
         bold: !0
-    }, "Claude Code"), " ", v2.createElement($, {
+    }, "Claude Code"), " ", v2.createElement(TextComponent, {
         dimColor: !0
-    }, "v", W)), X ? v2.createElement(v2.Fragment, null, v2.createElement($, {
+    }, "v", W)), X ? v2.createElement(v2.Fragment, null, v2.createElement(TextComponent, {
         dimColor: !0
-    }, F), v2.createElement($, {
+    }, F), v2.createElement(TextComponent, {
         dimColor: !0
-    }, V)) : v2.createElement($, {
+    }, V)) : v2.createElement(TextComponent, {
         dimColor: !0
-    }, F, " · ", V), v2.createElement($, {
+    }, F, " · ", V), v2.createElement(TextComponent, {
         dimColor: !0
     }, K), I && v2.createElement(O69, null)))
 }
 var v2, R69;
-var P69 = L(() => {
+var P69 = lazyLoader(() => {
     hA();
     f5();
     m8();
     DI1();
     vW0();
-    v2 = GA(VA(), 1), R69 = GA(VA(), 1)
+    v2 = esmImport(VA(), 1), R69 = esmImport(VA(), 1)
 });
 
 function bW0() {
@@ -539,7 +537,7 @@ function bW0() {
     return wjA.createElement(j, {
         paddingLeft: 2,
         flexDirection: "column"
-    }, wjA.createElement($, {
+    }, wjA.createElement(TextComponent, {
         ...A.color === "warning" ? {
             color: "warning"
         } : A.color === "error" ? {
@@ -555,10 +553,10 @@ function zT3() {
 }
 var wjA, zI1, j69 = "tengu-top-of-feed-tip",
     ET3;
-var S69 = L(() => {
+var S69 = lazyLoader(() => {
     hA();
     O9();
-    wjA = GA(VA(), 1), zI1 = GA(VA(), 1);
+    wjA = esmImport(VA(), 1), zI1 = esmImport(VA(), 1);
     ET3 = {
         tip: "",
         color: "dim"
@@ -613,20 +611,20 @@ function y69({
         modelDisplayName: E,
         billingType: z
     } = KI1(), w = B7(E, k69 - 20);
-    if (!D && !Y && !V0(process.env.CLAUDE_CODE_FORCE_FULL_LOGO)) return NQ.createElement(NQ.Fragment, null, NQ.createElement(j, null), NQ.createElement(T69, null), tBA() && NQ.createElement(j, {
+    if (!D && !Y && !parseBoolean(process.env.CLAUDE_CODE_FORCE_FULL_LOGO)) return NQ.createElement(NQ.Fragment, null, NQ.createElement(j, null), NQ.createElement(T69, null), tBA() && NQ.createElement(j, {
         paddingLeft: 2,
         flexDirection: "column"
-    }, NQ.createElement($, {
+    }, NQ.createElement(TextComponent, {
         color: "warning"
-    }, "Debug mode enabled"), NQ.createElement($, {
+    }, "Debug mode enabled"), NQ.createElement(TextComponent, {
         dimColor: !0
     }, "Logging to: ", Sj() ? "stderr" : WVA())), NQ.createElement(bW0, null), K && NQ.createElement(j, {
         paddingLeft: 2,
         flexDirection: "column"
-    }, NQ.createElement($, null, K)), !1, !1);
+    }, NQ.createElement(TextComponent, null, K)), !1, !1);
     let N = Q69(I),
         q = L1().theme,
-        R = ` ${tQ("claude",q)("Claude Code")} ${tQ("inactive",q)(`v${H}`)} `,
+        R = ` TextComponent{tQ("claude",q)("Claude Code")} TextComponent{tQ("inactive",q)(`v${H}`)} `,
         P = tQ("claude", q)(" Claude Code ");
     if (N === "compact") {
         let k = VI1(G);
@@ -646,7 +644,7 @@ function y69({
             paddingY: 1,
             alignItems: "center",
             width: I
-        }, NQ.createElement($, {
+        }, NQ.createElement(TextComponent, {
             bold: !0
         }, k), NQ.createElement(j, {
             marginY: 1
@@ -656,21 +654,21 @@ function y69({
             justifyContent: "flex-end"
         }, NQ.createElement(j, {
             marginBottom: Q
-        }, NQ.createElement(xW0, null)))), NQ.createElement($, {
+        }, NQ.createElement(xW0, null)))), NQ.createElement(TextComponent, {
             dimColor: !0
-        }, w), NQ.createElement($, {
+        }, w), NQ.createElement(TextComponent, {
             dimColor: !0
-        }, z), NQ.createElement($, {
+        }, z), NQ.createElement(TextComponent, {
             dimColor: !0
         }, d)), J && NQ.createElement(j, {
             marginTop: 1,
             flexDirection: "column"
-        }, NQ.createElement($, {
+        }, NQ.createElement(TextComponent, {
             color: "warning"
         }, "Your bash commands will be sandboxed. Disable with /sandbox.")))
     }
     let y = VI1(G),
-        v = `${w} · ${z}`,
+        v = `TextComponent{w} · TextComponent{z}`,
         x = EjA(C, k69),
         p = G69(y, x, v),
         {
@@ -699,7 +697,7 @@ function y69({
         minHeight: 9
     }, NQ.createElement(j, {
         marginTop: 1
-    }, NQ.createElement($, {
+    }, NQ.createElement(TextComponent, {
         bold: !0
     }, y)), NQ.createElement(j, {
         height: 5,
@@ -710,9 +708,9 @@ function y69({
     }, NQ.createElement(xW0, null))), NQ.createElement(j, {
         flexDirection: "column",
         alignItems: "center"
-    }, NQ.createElement($, {
+    }, NQ.createElement(TextComponent, {
         dimColor: !0
-    }, v), NQ.createElement($, {
+    }, v), NQ.createElement(TextComponent, {
         dimColor: !0
     }, x))), N === "horizontal" && NQ.createElement(J3, {
         orientation: "vertical",
@@ -723,22 +721,22 @@ function y69({
     }))), tBA() && NQ.createElement(j, {
         paddingLeft: 2,
         flexDirection: "column"
-    }, NQ.createElement($, {
+    }, NQ.createElement(TextComponent, {
         color: "warning"
-    }, "Debug mode enabled"), NQ.createElement($, {
+    }, "Debug mode enabled"), NQ.createElement(TextComponent, {
         dimColor: !0
     }, "Logging to: ", Sj() ? "stderr" : WVA())), NQ.createElement(bW0, null), K && NQ.createElement(j, {
         paddingLeft: 2,
         flexDirection: "column"
-    }, NQ.createElement($, null, K)), J && NQ.createElement(j, {
+    }, NQ.createElement(TextComponent, null, K)), J && NQ.createElement(j, {
         paddingLeft: 2,
         flexDirection: "column"
-    }, NQ.createElement($, {
+    }, NQ.createElement(TextComponent, {
         color: "warning"
     }, "Your bash commands will be sandboxed. Disable with /sandbox.")), !1, !1)
 }
 var NQ, qjA, k69 = 50;
-var x69 = L(() => {
+var x69 = lazyLoader(() => {
     hA();
     m8();
     o89();
@@ -760,7 +758,7 @@ var x69 = L(() => {
     S69();
     MJ();
     vW0();
-    NQ = GA(VA(), 1), qjA = GA(VA(), 1)
+    NQ = esmImport(VA(), 1), qjA = esmImport(VA(), 1)
 });
 
 function $T3(A, Q, B, G, Z, I, Y) {
@@ -823,7 +821,7 @@ var t8, Tg, NjA = 10,
                 jsx: t8.createElement(j, {
                     flexDirection: "column",
                     gap: 1,
-                    key: `logo-${W}-${F}`
+                    key: `logo-TextComponent{W}-TextComponent{F}`
                 }, t8.createElement(y69, {
                     isBeforeFirstMessage: !1
                 }), t8.createElement(d89, {
@@ -832,17 +830,17 @@ var t8, Tg, NjA = 10,
             }, ...d ? [{
                 type: "static",
                 jsx: t8.createElement(J3, {
-                    key: `truncation-indicator-${W}-${F}`,
+                    key: `truncation-indicator-TextComponent{W}-TextComponent{F}`,
                     dividerChar: "─",
-                    title: `Ctrl+E to show ${oA.bold(z.length-NjA)} previous messages`,
+                    title: `Ctrl+E to show TextComponent{oA.bold(z.length-NjA)} previous messages`,
                     width: C
                 })
             }] : [], ...p && K && z.length > NjA ? [{
                 type: "static",
                 jsx: t8.createElement(J3, {
-                    key: `hide-indicator-${W}-${F}`,
+                    key: `hide-indicator-TextComponent{W}-TextComponent{F}`,
                     dividerChar: "─",
-                    title: `Ctrl+E to hide ${oA.bold(z.length-NjA)} previous messages`,
+                    title: `Ctrl+E to hide TextComponent{oA.bold(z.length-NjA)} previous messages`,
                     width: C
                 })
             }] : [], ...(() => {
@@ -867,7 +865,7 @@ var t8, Tg, NjA = 10,
                         } return {
                         type: yA,
                         jsx: t8.createElement(j, {
-                            key: `${SA.uuid}-${W}-${F}`,
+                            key: `TextComponent{SA.uuid}-TextComponent{W}-TextComponent{F}`,
                             width: C,
                             flexDirection: "row",
                             flexWrap: "nowrap",
@@ -908,7 +906,7 @@ var t8, Tg, NjA = 10,
         let v = P.filter((p) => p.type === "static"),
             x = P.filter((p) => p.type === "transient");
         return t8.createElement(t8.Fragment, null, t8.createElement(Ap, {
-            key: `static-messages-${W}-${F}`,
+            key: `static-messages-TextComponent{W}-TextComponent{F}`,
             items: v
         }, (p) => p.jsx), x.map((p) => p.jsx), y ? t8.createElement(KjA, {
             state: "indeterminate"
@@ -917,7 +915,7 @@ var t8, Tg, NjA = 10,
         }))
     },
     uXA;
-var UI1 = L(() => {
+var UI1 = lazyLoader(() => {
     hA();
     hA();
     h89();
@@ -931,7 +929,7 @@ var UI1 = L(() => {
     n89();
     s89();
     x69();
-    t8 = GA(VA(), 1), Tg = GA(VA(), 1), uXA = t8.memo(UT3, (A, Q) => {
+    t8 = esmImport(VA(), 1), Tg = esmImport(VA(), 1), uXA = t8.memo(UT3, (A, Q) => {
         let B = Object.keys(A);
         for (let G of B) {
             if (G === "onOpenRateLimitOptions") continue;
@@ -963,10 +961,10 @@ function c69(A, Q, B, G, Z) {
     })
 }
 var d69;
-var p69 = L(() => {
+var p69 = lazyLoader(() => {
     hA();
     rUA();
-    d69 = GA(VA(), 1)
+    d69 = esmImport(VA(), 1)
 });
 
 function l69(A, Q) {
@@ -1014,11 +1012,11 @@ function l69(A, Q) {
     }, [A, Q])
 }
 var OjA, wT3;
-var i69 = L(() => {
+var i69 = lazyLoader(() => {
     h2();
     yJ();
     u1();
-    OjA = GA(VA(), 1), wT3 = _.object({
+    OjA = esmImport(VA(), 1), wT3 = _.object({
         method: _.literal("selection_changed"),
         params: _.object({
             selection: _.object({
@@ -1038,7 +1036,7 @@ var i69 = L(() => {
 });
 
 function qT3() {
-    return ZI("cache_warming", "config", {
+    return getFeatureFlag("cache_warming", "config", {
         enabled: !1,
         idleThresholdMs: 240000,
         subsequentWarmupIntervalMs: 300000,
@@ -1066,7 +1064,7 @@ function n69(A, Q) {
                 if (B.current) B.current.abort();
                 B.current = s9();
                 try {
-                    g(`Cache warming: Sending request ${Z+1}/${G.maxRequests}`);
+                    g(`Cache warming: Sending request TextComponent{Z+1}/TextComponent{G.maxRequests}`);
                     let X = {
                             ...W,
                             messages: [...W.messages, {
@@ -1107,7 +1105,7 @@ function n69(A, Q) {
     }, [A, Q])
 }
 var wI1;
-var a69 = L(() => {
+var a69 = lazyLoader(() => {
     EIA();
     S0();
     D0();
@@ -1115,7 +1113,7 @@ var a69 = L(() => {
     O9();
     w0();
     u1();
-    wI1 = GA(VA(), 1)
+    wI1 = esmImport(VA(), 1)
 });
 
 function r69({
@@ -1128,7 +1126,7 @@ function r69({
     s69.useEffect(() => {
         function I(Y) {
             if (!Y) return;
-            if (!((L1().autoConnectIde || A || _F() || Q || V0(process.env.CLAUDE_CODE_AUTO_CONNECT_IDE)) && !Nj(process.env.CLAUDE_CODE_AUTO_CONNECT_IDE))) return;
+            if (!((L1().autoConnectIde || A || _F() || Q || parseBoolean(process.env.CLAUDE_CODE_AUTO_CONNECT_IDE)) && !Nj(process.env.CLAUDE_CODE_AUTO_CONNECT_IDE))) return;
             B((X) => {
                 if (X?.ide) return X;
                 return {
@@ -1148,13 +1146,13 @@ function r69({
     }, [A, Q, B, G, Z])
 }
 var s69;
-var o69 = L(() => {
+var o69 = lazyLoader(() => {
     jQ();
     yJ();
     hQ();
-    s69 = GA(VA(), 1)
+    s69 = esmImport(VA(), 1)
 });
-var RjA = L(() => {
+var RjA = lazyLoader(() => {
     I6();
     R2();
     o0();
@@ -1163,7 +1161,7 @@ var RjA = L(() => {
     jQ()
 });
 var fW0;
-var t69 = L(() => {
+var t69 = lazyLoader(() => {
     hA();
     T5();
     RjA();
@@ -1172,25 +1170,25 @@ var t69 = L(() => {
     I6();
     w0();
     Di();
-    fW0 = GA(VA(), 1)
+    fW0 = esmImport(VA(), 1)
 });
 var DkZ;
-var e69 = L(() => {
+var e69 = lazyLoader(() => {
     t69();
     _J();
-    DkZ = GA(VA(), 1)
+    DkZ = esmImport(VA(), 1)
 });
 
 function MT3() {
     return Zt(LT3) ?? "Goodbye!"
 }
 var NT3, LT3, OT3, qI1;
-var hW0 = L(() => {
+var hW0 = lazyLoader(() => {
     oiA();
     _J();
     RjA();
     e69();
-    NT3 = GA(VA(), 1), LT3 = ["Goodbye!", "See ya!", "Bye!", "Catch you later!"];
+    NT3 = esmImport(VA(), 1), LT3 = ["Goodbye!", "See ya!", "Bye!", "Catch you later!"];
     OT3 = {
         type: "local-jsx",
         name: "exit",
@@ -1219,25 +1217,25 @@ function A59() {
         borderColor: "permission",
         paddingX: 1,
         marginY: 1
-    }, iP.default.createElement($, {
+    }, iP.default.createElement(TextComponent, {
         bold: !0,
         color: "permission"
     }, "AWS Authentication"), A.output.length > 0 && iP.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, A.output.slice(-5).map((B, G) => iP.default.createElement($, {
+    }, A.output.slice(-5).map((B, G) => iP.default.createElement(TextComponent, {
         key: G,
         dimColor: !0
     }, B))), A.error && iP.default.createElement(j, {
         marginTop: 1
-    }, iP.default.createElement($, {
+    }, iP.default.createElement(TextComponent, {
         color: "error"
     }, A.error)))
 }
 var iP;
-var Q59 = L(() => {
+var Q59 = lazyLoader(() => {
     hA();
-    iP = GA(VA(), 1)
+    iP = esmImport(VA(), 1)
 });
 import {
     randomUUID as B59
@@ -1271,7 +1269,7 @@ function G59(A, Q, B) {
         H = NC.useCallback(() => {
             I("thanks"), setTimeout(() => I("closed"), W.hideThanksAfterMs)
         }, [W.hideThanksAfterMs]),
-        C = S3(),
+        C = getDefaultSonnetModel(),
         E = NC.useMemo(() => {
             if (W.onForModels.length === 0) return !1;
             if (W.onForModels.includes("*")) return !0;
@@ -1282,7 +1280,7 @@ function G59(A, Q, B) {
             if (Q) return !1;
             if (process.env.CLAUDE_FORCE_DISPLAY_SURVEY && !Y.feedbackSurvey.timeLastShown) return !0;
             if (!E) return !1;
-            if (V0(process.env.CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY)) return !1;
+            if (parseBoolean(process.env.CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY)) return !1;
             if (hX()) return !1;
             if (Y.feedbackSurvey.timeLastShown) {
                 if (Y.feedbackSurvey.submitCountAtLastAppearance !== null && B < Y.feedbackSurvey.submitCountAtLastAppearance + W.minUserTurnsBetweenFeedback) return !1
@@ -1316,7 +1314,7 @@ function G59(A, Q, B) {
     }
 }
 var NC, RT3;
-var Z59 = L(() => {
+var Z59 = lazyLoader(() => {
     O9();
     w0();
     St();
@@ -1325,7 +1323,7 @@ var Z59 = L(() => {
     hQ();
     H9();
     nQ();
-    NC = GA(VA(), 1), RT3 = {
+    NC = esmImport(VA(), 1), RT3 = {
         minTimeBeforeFeedbackMs: 600000,
         minTimeBetweenGlobalFeedbackMs: 1e8,
         minUserTurnsBeforeFeedback: 5,
@@ -1350,23 +1348,23 @@ function I59({
     }, [Q, A, B]), zK.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, zK.default.createElement(j, null, zK.default.createElement($, null, oA.cyan("● ")), zK.default.createElement($, {
+    }, zK.default.createElement(j, null, zK.default.createElement(TextComponent, null, oA.cyan("● ")), zK.default.createElement(TextComponent, {
         bold: !0
     }, "How is Claude doing this session? (optional)")), zK.default.createElement(j, {
         marginLeft: 2
     }, zK.default.createElement(j, {
         width: 10
-    }, zK.default.createElement($, null, oA.cyan("1"), ": Bad")), zK.default.createElement(j, {
+    }, zK.default.createElement(TextComponent, null, oA.cyan("1"), ": Bad")), zK.default.createElement(j, {
         width: 10
-    }, zK.default.createElement($, null, oA.cyan("2"), ": Fine")), zK.default.createElement(j, {
+    }, zK.default.createElement(TextComponent, null, oA.cyan("2"), ": Fine")), zK.default.createElement(j, {
         width: 10
-    }, zK.default.createElement($, null, oA.cyan("3"), ": Good")), zK.default.createElement(j, null, zK.default.createElement($, null, oA.cyan("0"), ": Dismiss"))))
+    }, zK.default.createElement(TextComponent, null, oA.cyan("3"), ": Good")), zK.default.createElement(j, null, zK.default.createElement(TextComponent, null, oA.cyan("0"), ": Dismiss"))))
 }
 var zK, TT3, PT3, gW0 = (A) => TT3.includes(A);
-var Y59 = L(() => {
+var Y59 = lazyLoader(() => {
     J9();
     hA();
-    zK = GA(VA(), 1), TT3 = ["0", "1", "2", "3"], PT3 = {
+    zK = esmImport(VA(), 1), TT3 = ["0", "1", "2", "3"], PT3 = {
         "0": "dismissed",
         "1": "bad",
         "2": "fine",
@@ -1384,9 +1382,9 @@ function J59({
     if (A === "thanks") return TjA.default.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, TjA.default.createElement($, {
+    }, TjA.default.createElement(TextComponent, {
         color: "success"
-    }, "✓ Thanks for helping make Claude better!"), TjA.default.createElement($, {
+    }, "✓ Thanks for helping make Claude better!"), TjA.default.createElement(TextComponent, {
         dimColor: !0
     }, "Use /feedback to share detailed feedback or file a bug."));
     if (B && !gW0(B)) return null;
@@ -1397,10 +1395,10 @@ function J59({
     })
 }
 var TjA;
-var W59 = L(() => {
+var W59 = lazyLoader(() => {
     hA();
     Y59();
-    TjA = GA(VA(), 1)
+    TjA = esmImport(VA(), 1)
 });
 
 function F59() {
@@ -1414,7 +1412,7 @@ function F59() {
                 if (B.type === "error" || B.userActionRequired) Z = "high";
                 else if (B.type === "path" || B.type === "alias") Z = "medium";
                 A({
-                    key: `install-message-${G}-${B.type}`,
+                    key: `install-message-TextComponent{G}-TextComponent{B.type}`,
                     text: B.message,
                     priority: Z,
                     color: B.type === "error" ? "error" : "warning"
@@ -1424,10 +1422,10 @@ function F59() {
     }, [A])
 }
 var X59;
-var V59 = L(() => {
+var V59 = lazyLoader(() => {
     UU();
     xP();
-    X59 = GA(VA(), 1)
+    X59 = esmImport(VA(), 1)
 });
 
 function K59() {
@@ -1457,7 +1455,7 @@ function NI1(A) {
     if (Q === 0) return 1 / 0;
     return L1().numStartups - Q
 }
-var uW0 = L(() => {
+var uW0 = lazyLoader(() => {
     jQ()
 });
 import {

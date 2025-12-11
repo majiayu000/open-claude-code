@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_029.js
+ * 处理时间: 2025-12-09T03:41:36.323Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.884Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -50,8 +52,7 @@
             };
         LQ9 = function(I) {
             if (I && I.__esModule) return I;
-
-var Y = {};
+            var Y = {};
             if (I != null) {
                 for (var J = G(I), W = 0; W < J.length; W++)
                     if (J[W] !== "default") yZ1(Y, I, J[W])
@@ -113,7 +114,7 @@ var Y = {};
             }
             var J, W = 0;
 
-function X() {
+            function X() {
                 while (J = I.stack.pop()) try {
                     if (!J.async && W === 1) return W = 0, I.stack.push(J), Promise.resolve().then(X);
                     if (J.dispose) {
@@ -130,29 +131,29 @@ function X() {
             }
             return X()
         }, SQ9 = function(I, Y) {
-            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
+            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)TextComponent|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
                 return W ? Y ? ".jsx" : ".js" : X && (!F || !V) ? J : X + F + "." + V.toLowerCase() + "js"
             });
             return I
         }, A("__extends", GQ9), A("__assign", ZQ9), A("__rest", IQ9), A("__decorate", YQ9), A("__param", JQ9), A("__esDecorate", WQ9), A("__runInitializers", XQ9), A("__propKey", FQ9), A("__setFunctionName", VQ9), A("__metadata", KQ9), A("__awaiter", DQ9), A("__generator", HQ9), A("__exportStar", CQ9), A("__createBinding", yZ1), A("__values", kZ1), A("__read", RJ0), A("__spread", EQ9), A("__spreadArrays", zQ9), A("__spreadArray", UQ9), A("__await", jXA), A("__asyncGenerator", $Q9), A("__asyncDelegator", wQ9), A("__asyncValues", qQ9), A("__makeTemplateObject", NQ9), A("__importStar", LQ9), A("__importDefault", MQ9), A("__classPrivateFieldGet", OQ9), A("__classPrivateFieldSet", RQ9), A("__classPrivateFieldIn", TQ9), A("__addDisposableResource", PQ9), A("__disposeResources", jQ9), A("__rewriteRelativeImportExtension", SQ9)
     })
 });
-var kQ9 = U((_Q9) => {
+var kQ9 = moduleWrapper((_Q9) => {
     Object.defineProperty(_Q9, "__esModule", {
         value: !0
     })
 });
-var xQ9 = U((yQ9) => {
+var xQ9 = moduleWrapper((yQ9) => {
     Object.defineProperty(yQ9, "__esModule", {
         value: !0
     })
 });
-var TJ0 = U((vQ9) => {
+var TJ0 = moduleWrapper((vQ9) => {
     Object.defineProperty(vQ9, "__esModule", {
         value: !0
     })
 });
-var PJ0 = U((nL3) => {
+var PJ0 = moduleWrapper((nL3) => {
     function iL3(A, Q, B) {
         Q.split && (Q = Q.split("."));
         var G = 0,
@@ -166,13 +167,12 @@ var PJ0 = U((nL3) => {
     }
     nL3.dset = iL3
 });
-var hQ9 = U((bQ9) => {
+var hQ9 = moduleWrapper((bQ9) => {
     Object.defineProperty(bQ9, "__esModule", {
         value: !0
     });
     bQ9.pickBy = void 0;
-
-var sL3 = function(A, Q) {
+    var sL3 = function(A, Q) {
         return Object.keys(A).filter(function(B) {
             return Q(B, A[B])
         }).reduce(function(B, G) {
@@ -181,7 +181,7 @@ var sL3 = function(A, Q) {
     };
     bQ9.pickBy = sL3
 });
-var jJ0 = U((gQ9) => {
+var jJ0 = moduleWrapper((gQ9) => {
     Object.defineProperty(gQ9, "__esModule", {
         value: !0
     });
@@ -190,7 +190,7 @@ var jJ0 = U((gQ9) => {
         oL3 = function(A) {
             rL3.__extends(Q, A);
 
-function Q(B, G) {
+            function Q(B, G) {
                 var Z = A.call(this, "".concat(B, " ").concat(G)) || this;
                 return Z.field = B, Z
             }
@@ -198,38 +198,38 @@ function Q(B, G) {
         }(Error);
     gQ9.ValidationError = oL3
 });
-var SJ0 = U((mQ9) => {
+var SJ0 = moduleWrapper((mQ9) => {
     Object.defineProperty(mQ9, "__esModule", {
         value: !0
     });
     mQ9.isPlainObject = mQ9.exists = mQ9.isFunction = mQ9.isNumber = mQ9.isString = void 0;
 
-function tL3(A) {
+    function tL3(A) {
         return typeof A === "string"
     }
     mQ9.isString = tL3;
 
-function eL3(A) {
+    function eL3(A) {
         return typeof A === "number"
     }
     mQ9.isNumber = eL3;
 
-function AM3(A) {
+    function AM3(A) {
         return typeof A === "function"
     }
     mQ9.isFunction = AM3;
 
-function QM3(A) {
+    function QM3(A) {
         return A !== void 0 && A !== null
     }
     mQ9.exists = QM3;
 
-function BM3(A) {
+    function BM3(A) {
         return Object.prototype.toString.call(A).slice(8, -1).toLowerCase() === "object"
     }
     mQ9.isPlainObject = BM3
 });
-var yJ0 = U((rQ9) => {
+var yJ0 = moduleWrapper((rQ9) => {
     Object.defineProperty(rQ9, "__esModule", {
         value: !0
     });
@@ -240,7 +240,7 @@ var yJ0 = U((rQ9) => {
         kJ0 = "is not an object",
         cQ9 = "is nil";
 
-function pQ9(A) {
+    function pQ9(A) {
         var Q = ".userId/anonymousId/previousId/groupId",
             B = function(Z) {
                 var I, Y, J;
@@ -252,40 +252,40 @@ function pQ9(A) {
     }
     rQ9.assertUserIdentity = pQ9;
 
-function lQ9(A) {
+    function lQ9(A) {
         if (!(0, KQA.exists)(A)) throw new Aa.ValidationError("Event", cQ9);
         if (typeof A !== "object") throw new Aa.ValidationError("Event", kJ0)
     }
     rQ9.assertEventExists = lQ9;
 
-function iQ9(A) {
+    function iQ9(A) {
         if (!(0, KQA.isString)(A.type)) throw new Aa.ValidationError(".type", _J0)
     }
     rQ9.assertEventType = iQ9;
 
-function nQ9(A) {
+    function nQ9(A) {
         if (!(0, KQA.isString)(A.event)) throw new Aa.ValidationError(".event", _J0)
     }
     rQ9.assertTrackEventName = nQ9;
 
-function aQ9(A) {
+    function aQ9(A) {
         if (!(0, KQA.isPlainObject)(A.properties)) throw new Aa.ValidationError(".properties", kJ0)
     }
     rQ9.assertTrackEventProperties = aQ9;
 
-function sQ9(A) {
+    function sQ9(A) {
         if (!(0, KQA.isPlainObject)(A.traits)) throw new Aa.ValidationError(".traits", kJ0)
     }
     rQ9.assertTraits = sQ9;
 
-function JM3(A) {
+    function JM3(A) {
         if (lQ9(A), iQ9(A), A.type === "track") nQ9(A), aQ9(A);
         if (["group", "identify"].includes(A.type)) sQ9(A);
         pQ9(A)
     }
     rQ9.validateEvent = JM3
 });
-var AB9 = U((xJ0) => {
+var AB9 = moduleWrapper((xJ0) => {
     Object.defineProperty(xJ0, "__esModule", {
         value: !0
     });
@@ -402,13 +402,13 @@ var AB9 = U((xJ0) => {
         }();
     xJ0.EventFactory = EM3
 });
-var vJ0 = U((GB9) => {
+var vJ0 = moduleWrapper((GB9) => {
     Object.defineProperty(GB9, "__esModule", {
         value: !0
     });
     GB9.invokeCallback = GB9.sleep = GB9.pTimeout = void 0;
 
-function QB9(A, Q) {
+    function QB9(A, Q) {
         return new Promise(function(B, G) {
             var Z = setTimeout(function() {
                 G(Error("Promise timed out"))
@@ -420,14 +420,14 @@ function QB9(A, Q) {
     }
     GB9.pTimeout = QB9;
 
-function BB9(A) {
+    function BB9(A) {
         return new Promise(function(Q) {
             return setTimeout(Q, A)
         })
     }
     GB9.sleep = BB9;
 
-function zM3(A, Q, B) {
+    function zM3(A, Q, B) {
         var G = function() {
             try {
                 return Promise.resolve(Q(A))
@@ -447,7 +447,7 @@ function zM3(A, Q, B) {
     }
     GB9.invokeCallback = zM3
 });
-var hZ1 = U((NNZ, fZ1) => {
+var hZ1 = moduleWrapper((NNZ, fZ1) => {
     var IB9, YB9, JB9, WB9, XB9, FB9, VB9, KB9, DB9, HB9, CB9, EB9, zB9, vZ1, bJ0, UB9, $B9, wB9, SXA, qB9, NB9, LB9, MB9, OB9, RB9, TB9, PB9, jB9, bZ1, SB9, _B9, kB9;
     (function(A) {
         var Q = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
@@ -457,7 +457,7 @@ var hZ1 = U((NNZ, fZ1) => {
         else if (typeof fZ1 === "object" && typeof NNZ === "object") A(B(Q, B(NNZ)));
         else A(B(Q));
 
-function B(G, Z) {
+        function B(G, Z) {
             if (G !== Q)
                 if (typeof Object.create === "function") Object.defineProperty(G, "__esModule", {
                     value: !0
@@ -481,7 +481,7 @@ function B(G, Z) {
             if (typeof Y !== "function" && Y !== null) throw TypeError("Class extends value " + String(Y) + " is not a constructor or null");
             Q(I, Y);
 
-function J() {
+            function J() {
                 this.constructor = I
             }
             I.prototype = Y === null ? Object.create(Y) : (J.prototype = Y.prototype, new J)
@@ -577,7 +577,7 @@ function J() {
                     }
                 }
 
-function D(C) {
+                function D(C) {
                     try {
                         H(W.throw(C))
                     } catch (E) {
@@ -585,7 +585,7 @@ function D(C) {
                     }
                 }
 
-function H(C) {
+                function H(C) {
                     C.done ? F(C.value) : X(C.value).then(K, D)
                 }
                 H((W = W.apply(I, Y || [])).next())
@@ -605,13 +605,13 @@ function H(C) {
                 return this
             }), V;
 
-function K(H) {
+            function K(H) {
                 return function(C) {
                     return D([H, C])
                 }
             }
 
-function D(H) {
+            function D(H) {
                 if (W) throw TypeError("Generator is already executing.");
                 while (V && (V = 0, H[0] && (J = 0)), J) try {
                     if (W = 1, X && (F = H[0] & 2 ? X.return : H[0] ? X.throw || ((F = X.return) && F.call(X), 0) : X.next) && !(F = F.call(X, H[1])).done) return F;
@@ -743,13 +743,13 @@ function D(H) {
                 return this
             }, X;
 
-function V(w) {
+            function V(w) {
                 return function(N) {
                     return Promise.resolve(N).then(w, E)
                 }
             }
 
-function K(w, N) {
+            function K(w, N) {
                 if (W[w]) {
                     if (X[w] = function(q) {
                             return new Promise(function(R, P) {
@@ -759,7 +759,7 @@ function K(w, N) {
                 }
             }
 
-function D(w, N) {
+            function D(w, N) {
                 try {
                     H(W[w](N))
                 } catch (q) {
@@ -767,19 +767,19 @@ function D(w, N) {
                 }
             }
 
-function H(w) {
+            function H(w) {
                 w.value instanceof SXA ? Promise.resolve(w.value.v).then(C, E) : z(F[0][2], w)
             }
 
-function C(w) {
+            function C(w) {
                 D("next", w)
             }
 
-function E(w) {
+            function E(w) {
                 D("throw", w)
             }
 
-function z(w, N) {
+            function z(w, N) {
                 if (w(N), F.shift(), F.length) D(F[0][0], F[0][1])
             }
         }, NB9 = function(I) {
@@ -790,7 +790,7 @@ function z(w, N) {
                 return this
             }, Y;
 
-function W(X, F) {
+            function W(X, F) {
                 Y[X] = I[X] ? function(V) {
                     return (J = !J) ? {
                         value: SXA(I[X](V)),
@@ -806,7 +806,7 @@ function W(X, F) {
                 return this
             }, J);
 
-function W(F) {
+            function W(F) {
                 J[F] = I[F] && function(V) {
                     return new Promise(function(K, D) {
                         V = I[F](V), X(K, D, V.done, V.value)
@@ -814,7 +814,7 @@ function W(F) {
                 }
             }
 
-function X(F, V, K, D) {
+            function X(F, V, K, D) {
                 Promise.resolve(D).then(function(H) {
                     F({
                         value: H,
@@ -847,8 +847,7 @@ function X(F, V, K, D) {
             };
         OB9 = function(I) {
             if (I && I.__esModule) return I;
-
-var Y = {};
+            var Y = {};
             if (I != null) {
                 for (var J = G(I), W = 0; W < J.length; W++)
                     if (J[W] !== "default") bZ1(Y, I, J[W])
@@ -910,7 +909,7 @@ var Y = {};
             }
             var J, W = 0;
 
-function X() {
+            function X() {
                 while (J = I.stack.pop()) try {
                     if (!J.async && W === 1) return W = 0, I.stack.push(J), Promise.resolve().then(X);
                     if (J.dispose) {
@@ -927,20 +926,19 @@ function X() {
             }
             return X()
         }, kB9 = function(I, Y) {
-            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
+            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)TextComponent|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
                 return W ? Y ? ".jsx" : ".js" : X && (!F || !V) ? J : X + F + "." + V.toLowerCase() + "js"
             });
             return I
         }, A("__extends", IB9), A("__assign", YB9), A("__rest", JB9), A("__decorate", WB9), A("__param", XB9), A("__esDecorate", FB9), A("__runInitializers", VB9), A("__propKey", KB9), A("__setFunctionName", DB9), A("__metadata", HB9), A("__awaiter", CB9), A("__generator", EB9), A("__exportStar", zB9), A("__createBinding", bZ1), A("__values", vZ1), A("__read", bJ0), A("__spread", UB9), A("__spreadArrays", $B9), A("__spreadArray", wB9), A("__await", SXA), A("__asyncGenerator", qB9), A("__asyncDelegator", NB9), A("__asyncValues", LB9), A("__makeTemplateObject", MB9), A("__importStar", OB9), A("__importDefault", RB9), A("__classPrivateFieldGet", TB9), A("__classPrivateFieldSet", PB9), A("__classPrivateFieldIn", jB9), A("__addDisposableResource", SB9), A("__disposeResources", _B9), A("__rewriteRelativeImportExtension", kB9)
     })
 });
-var vB9 = U((yB9) => {
+var vB9 = moduleWrapper((yB9) => {
     Object.defineProperty(yB9, "__esModule", {
         value: !0
     });
     yB9.createDeferred = void 0;
-
-var wM3 = function() {
+    var wM3 = function() {
         var A, Q, B = new Promise(function(G, Z) {
             A = G, Q = Z
         });
@@ -952,20 +950,19 @@ var wM3 = function() {
     };
     yB9.createDeferred = wM3
 });
-var bB9 = U((fJ0) => {
+var bB9 = moduleWrapper((fJ0) => {
     Object.defineProperty(fJ0, "__esModule", {
         value: !0
     });
     var qM3 = hZ1();
     qM3.__exportStar(vB9(), fJ0)
 });
-var gB9 = U((fB9) => {
+var gB9 = moduleWrapper((fB9) => {
     Object.defineProperty(fB9, "__esModule", {
         value: !0
     });
     fB9.Emitter = void 0;
-
-var NM3 = function() {
+    var NM3 = function() {
         function A(Q) {
             var B;
             this.callbacks = {}, this.warned = !1, this.maxListeners = (B = Q === null || Q === void 0 ? void 0 : Q.maxListeners) !== null && B !== void 0 ? B : 10
@@ -1003,14 +1000,14 @@ var NM3 = function() {
     }();
     fB9.Emitter = NM3
 });
-var uB9 = U((hJ0) => {
+var uB9 = moduleWrapper((hJ0) => {
     Object.defineProperty(hJ0, "__esModule", {
         value: !0
     });
     var LM3 = hZ1();
     LM3.__exportStar(gB9(), hJ0)
 });
-var _XA = U((gZ1) => {
+var _XA = moduleWrapper((gZ1) => {
     Object.defineProperty(gZ1, "__esModule", {
         value: !0
     });
@@ -1018,13 +1015,13 @@ var _XA = U((gZ1) => {
     mB9.__exportStar(bB9(), gZ1);
     mB9.__exportStar(uB9(), gZ1)
 });
-var gJ0 = U((dB9) => {
+var gJ0 = moduleWrapper((dB9) => {
     Object.defineProperty(dB9, "__esModule", {
         value: !0
     });
     dB9.backoff = void 0;
 
-function MM3(A) {
+    function MM3(A) {
         var Q = Math.random() + 1,
             B = A.minTimeout,
             G = B === void 0 ? 500 : B,
@@ -1037,7 +1034,7 @@ function MM3(A) {
     }
     dB9.backoff = MM3
 });
-var uJ0 = U((pB9) => {
+var uJ0 = moduleWrapper((pB9) => {
     Object.defineProperty(pB9, "__esModule", {
         value: !0
     });
@@ -1046,11 +1043,10 @@ var uJ0 = U((pB9) => {
         RM3 = _XA(),
         TM3 = gJ0();
     pB9.ON_REMOVE_FROM_FUTURE = "onRemoveFromFuture";
-
-var PM3 = function(A) {
+    var PM3 = function(A) {
         OM3.__extends(Q, A);
 
-function Q(B, G, Z) {
+        function Q(B, G, Z) {
             var I = A.call(this) || this;
             return I.future = [], I.maxAttempts = B, I.queue = G, I.seen = Z !== null && Z !== void 0 ? Z : {}, I
         }
@@ -1108,13 +1104,13 @@ function Q(B, G, Z) {
     }(RM3.Emitter);
     pB9.PriorityQueue = PM3
 });
-var mJ0 = U((SM3) => {
+var mJ0 = moduleWrapper((SM3) => {
     var DQA = 256,
         mZ1 = [],
         uZ1;
     while (DQA--) mZ1[DQA] = (DQA + 256).toString(16).substring(1);
 
-function jM3() {
+    function jM3() {
         var A = 0,
             Q, B = "";
         if (!uZ1 || DQA + 16 > 256) {
@@ -1132,7 +1128,7 @@ function jM3() {
     }
     SM3.v4 = jM3
 });
-var dJ0 = U((nB9) => {
+var dJ0 = moduleWrapper((nB9) => {
     Object.defineProperty(nB9, "__esModule", {
         value: !0
     });
@@ -1184,7 +1180,7 @@ var dJ0 = U((nB9) => {
         }();
     nB9.CoreLogger = kM3
 });
-var pJ0 = U((rB9) => {
+var pJ0 = moduleWrapper((rB9) => {
     Object.defineProperty(rB9, "__esModule", {
         value: !0
     });
@@ -1240,11 +1236,10 @@ var pJ0 = U((rB9) => {
             }, A
         }();
     rB9.CoreStats = sB9;
-
-var xM3 = function(A) {
+    var xM3 = function(A) {
         cJ0.__extends(Q, A);
 
-function Q() {
+        function Q() {
             return A !== null && A.apply(this, arguments) || this
         }
         return Q.prototype.gauge = function() {
@@ -1264,7 +1259,7 @@ function Q() {
     }(sB9);
     rB9.NullStats = xM3
 });
-var cZ1 = U((eB9) => {
+var cZ1 = moduleWrapper((eB9) => {
     Object.defineProperty(eB9, "__esModule", {
         value: !0
     });
@@ -1281,8 +1276,7 @@ var cZ1 = U((eB9) => {
             return A
         }();
     eB9.ContextCancelation = tB9;
-
-var uM3 = function() {
+    var uM3 = function() {
         function A(Q, B, G, Z) {
             if (B === void 0) B = (0, bM3.v4)();
             if (G === void 0) G = new gM3.NullStats;
@@ -1330,14 +1324,14 @@ var uM3 = function() {
     }();
     eB9.CoreContext = uM3
 });
-var Z29 = U((B29) => {
+var Z29 = moduleWrapper((B29) => {
     Object.defineProperty(B29, "__esModule", {
         value: !0
     });
     B29.groupBy = void 0;
     var Q29 = dP();
 
-function dM3(A, Q) {
+    function dM3(A, Q) {
         var B = {};
         return A.forEach(function(G) {
             var Z, I = void 0;
@@ -1351,18 +1345,17 @@ function dM3(A, Q) {
     }
     B29.groupBy = dM3
 });
-var J29 = U((I29) => {
+var J29 = moduleWrapper((I29) => {
     Object.defineProperty(I29, "__esModule", {
         value: !0
     });
     I29.isThenable = void 0;
-
-var cM3 = function(A) {
+    var cM3 = function(A) {
         return typeof A === "object" && A !== null && "then" in A && typeof A.then === "function"
     };
     I29.isThenable = cM3
 });
-var F29 = U((W29) => {
+var F29 = moduleWrapper((W29) => {
     Object.defineProperty(W29, "__esModule", {
         value: !0
     });
@@ -1390,7 +1383,7 @@ var F29 = U((W29) => {
         };
     W29.createTaskGroup = lM3
 });
-var iJ0 = U((D29) => {
+var iJ0 = moduleWrapper((D29) => {
     Object.defineProperty(D29, "__esModule", {
         value: !0
     });
@@ -1398,7 +1391,7 @@ var iJ0 = U((D29) => {
     var V29 = dP(),
         lJ0 = cZ1();
 
-function iM3(A) {
+    function iM3(A) {
         return V29.__awaiter(this, void 0, void 0, function() {
             var Q;
             return V29.__generator(this, function(B) {
@@ -1416,7 +1409,7 @@ function iM3(A) {
         })
     }
 
-function K29(A, Q) {
+    function K29(A, Q) {
         A.log("debug", "plugin", {
             plugin: Q.name
         });
@@ -1443,7 +1436,7 @@ function K29(A, Q) {
     }
     D29.attempt = K29;
 
-function nM3(A, Q) {
+    function nM3(A, Q) {
         return K29(A, Q).then(function(B) {
             if (B instanceof lJ0.CoreContext) return B;
             A.log("debug", "Context canceled"), A.stats.increment("context_canceled"), A.cancel(B)
@@ -1451,7 +1444,7 @@ function nM3(A, Q) {
     }
     D29.ensure = nM3
 });
-var z29 = U((C29) => {
+var z29 = moduleWrapper((C29) => {
     Object.defineProperty(C29, "__esModule", {
         value: !0
     });
@@ -1466,7 +1459,7 @@ var z29 = U((C29) => {
         eM3 = function(A) {
             iD.__extends(Q, A);
 
-function Q(B) {
+            function Q(B) {
                 var G = A.call(this) || this;
                 return G.criticalTasks = (0, tM3.createTaskGroup)(), G.plugins = [], G.failedInitializations = [], G.flushing = !1, G.queue = B, G.queue.on(rM3.ON_REMOVE_FROM_FUTURE, function() {
                     G.scheduleFlush(0)

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_048.js
+ * 处理时间: 2025-12-09T03:41:39.531Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.140Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -91,7 +94,7 @@
             }
         }
 
-function V9(CA) {
+        function V9(CA) {
             switch (CA) {
                 case 45:
                     D = Q4, qA.push(45);
@@ -111,7 +114,7 @@ function V9(CA) {
             }
         }
 
-function Q4(CA) {
+        function Q4(CA) {
             switch (CA) {
                 case 45:
                     D = dA, qA.push(45);
@@ -131,7 +134,7 @@ function Q4(CA) {
             }
         }
 
-function dA(CA) {
+        function dA(CA) {
             switch (CA) {
                 case 45:
                     qA.push(45);
@@ -154,12 +157,12 @@ function dA(CA) {
             }
         }
 
-function YA(CA) {
-            if (CA === 47) aA(), D = ZA, qA.push(47);
+        function YA(CA) {
+            if (CA === 47) BASE64_CHARS(), D = ZA, qA.push(47);
             else nA(CA, V9)
         }
 
-function ZA(CA) {
+        function ZA(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -233,7 +236,7 @@ function ZA(CA) {
             }
         }
 
-function jA(CA) {
+        function jA(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -259,7 +262,7 @@ function jA(CA) {
             }
         }
 
-function xA(CA) {
+        function xA(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -313,7 +316,7 @@ function xA(CA) {
             }
         }
 
-function mA(CA) {
+        function mA(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -338,7 +341,7 @@ function mA(CA) {
             }
         }
 
-function E1(CA) {
+        function E1(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -358,7 +361,7 @@ function E1(CA) {
             }
         }
 
-function S1(CA) {
+        function S1(CA) {
             switch (CA) {
                 case 34:
                     $A(N, q), D = l1;
@@ -381,7 +384,7 @@ function S1(CA) {
             }
         }
 
-function P1(CA) {
+        function P1(CA) {
             switch (CA) {
                 case 39:
                     $A(N, q), D = l1;
@@ -404,7 +407,7 @@ function P1(CA) {
             }
         }
 
-function c1(CA) {
+        function c1(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -435,7 +438,7 @@ function c1(CA) {
             }
         }
 
-function l1(CA) {
+        function l1(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -458,7 +461,7 @@ function l1(CA) {
             }
         }
 
-function I0(CA) {
+        function I0(CA) {
             switch (CA) {
                 case 62:
                     D = C1, Z0(!0);
@@ -472,7 +475,7 @@ function I0(CA) {
             }
         }
 
-function e0(CA, MA, H1) {
+        function e0(CA, MA, H1) {
             var X0 = MA.length;
             if (H1) I += X0 - 1;
             else I += X0;
@@ -483,7 +486,7 @@ function e0(CA, MA, H1) {
         }
         e0.lookahead = ">";
 
-function dQ(CA, MA, H1) {
+        function dQ(CA, MA, H1) {
             if (MA[0] === "-" && MA[1] === "-") {
                 I += 2, PA(), D = iB;
                 return
@@ -494,7 +497,7 @@ function dQ(CA, MA, H1) {
         }
         dQ.lookahead = 7;
 
-function iB(CA) {
+        function iB(CA) {
             switch (PA(), CA) {
                 case 45:
                     D = EB;
@@ -508,7 +511,7 @@ function iB(CA) {
             }
         }
 
-function EB(CA) {
+        function EB(CA) {
             switch (CA) {
                 case 45:
                     D = tJ;
@@ -525,7 +528,7 @@ function EB(CA) {
             }
         }
 
-function m2(CA) {
+        function m2(CA) {
             switch (CA) {
                 case 60:
                     R.push(CA), D = q4;
@@ -545,7 +548,7 @@ function m2(CA) {
             }
         }
 
-function q4(CA) {
+        function q4(CA) {
             switch (CA) {
                 case 33:
                     R.push(CA), D = J7;
@@ -559,7 +562,7 @@ function q4(CA) {
             }
         }
 
-function J7(CA) {
+        function J7(CA) {
             switch (CA) {
                 case 45:
                     D = X5;
@@ -570,7 +573,7 @@ function J7(CA) {
             }
         }
 
-function X5(CA) {
+        function X5(CA) {
             switch (CA) {
                 case 45:
                     D = sW;
@@ -581,7 +584,7 @@ function X5(CA) {
             }
         }
 
-function sW(CA) {
+        function sW(CA) {
             switch (CA) {
                 case 62:
                 case -1:
@@ -593,7 +596,7 @@ function sW(CA) {
             }
         }
 
-function l5(CA) {
+        function l5(CA) {
             switch (CA) {
                 case 45:
                     D = tJ;
@@ -607,7 +610,7 @@ function l5(CA) {
             }
         }
 
-function tJ(CA) {
+        function tJ(CA) {
             switch (CA) {
                 case 62:
                     D = C1, p0(Ty, VC(R));
@@ -627,7 +630,7 @@ function tJ(CA) {
             }
         }
 
-function AJ(CA) {
+        function AJ(CA) {
             switch (CA) {
                 case 45:
                     R.push(45), R.push(45), R.push(33), D = l5;
@@ -644,7 +647,7 @@ function AJ(CA) {
             }
         }
 
-function B4(CA) {
+        function B4(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -661,7 +664,7 @@ function B4(CA) {
             }
         }
 
-function QV(CA) {
+        function QV(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -711,7 +714,7 @@ function QV(CA) {
             }
         }
 
-function HG(CA) {
+        function HG(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -762,7 +765,7 @@ function HG(CA) {
             }
         }
 
-function eJ(CA, MA, H1) {
+        function eJ(CA, MA, H1) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -785,7 +788,7 @@ function eJ(CA, MA, H1) {
         }
         eJ.lookahead = 6;
 
-function WF(CA) {
+        function WF(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -811,7 +814,7 @@ function WF(CA) {
             }
         }
 
-function BV(CA) {
+        function BV(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -836,7 +839,7 @@ function BV(CA) {
             }
         }
 
-function z3(CA) {
+        function z3(CA) {
             switch (CA) {
                 case 34:
                     D = UY;
@@ -856,7 +859,7 @@ function z3(CA) {
             }
         }
 
-function GV(CA) {
+        function GV(CA) {
             switch (CA) {
                 case 39:
                     D = UY;
@@ -876,7 +879,7 @@ function GV(CA) {
             }
         }
 
-function UY(CA) {
+        function UY(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -902,7 +905,7 @@ function UY(CA) {
             }
         }
 
-function AQ(CA) {
+        function AQ(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -927,7 +930,7 @@ function AQ(CA) {
             }
         }
 
-function C2(CA) {
+        function C2(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -953,7 +956,7 @@ function C2(CA) {
             }
         }
 
-function xQ(CA) {
+        function xQ(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -978,7 +981,7 @@ function xQ(CA) {
             }
         }
 
-function IB(CA) {
+        function IB(CA) {
             switch (CA) {
                 case 34:
                     D = X8;
@@ -998,7 +1001,7 @@ function IB(CA) {
             }
         }
 
-function E6(CA) {
+        function E6(CA) {
             switch (CA) {
                 case 39:
                     D = X8;
@@ -1018,7 +1021,7 @@ function E6(CA) {
             }
         }
 
-function X8(CA) {
+        function X8(CA) {
             switch (CA) {
                 case 9:
                 case 10:
@@ -1037,7 +1040,7 @@ function X8(CA) {
             }
         }
 
-function U9(CA) {
+        function U9(CA) {
             switch (CA) {
                 case 62:
                     D = C1, J0();
@@ -1050,7 +1053,7 @@ function U9(CA) {
             }
         }
 
-function G8(CA) {
+        function G8(CA) {
             switch (CA) {
                 case 93:
                     D = AW;
@@ -1066,7 +1069,7 @@ function G8(CA) {
             }
         }
 
-function AW(CA) {
+        function AW(CA) {
             switch (CA) {
                 case 93:
                     D = M4;
@@ -1077,7 +1080,7 @@ function AW(CA) {
             }
         }
 
-function M4(CA) {
+        function M4(CA) {
             switch (CA) {
                 case 93:
                     qA.push(93);
@@ -1091,8 +1094,8 @@ function M4(CA) {
             }
         }
 
-function a7(CA) {
-            switch (aA(), w.push(38), CA) {
+        function a7(CA) {
+            switch (BASE64_CHARS(), w.push(38), CA) {
                 case 9:
                 case 10:
                 case 12:
@@ -1111,7 +1114,7 @@ function a7(CA) {
             }
         }
 
-function iZ(CA) {
+        function iZ(CA) {
             pg2.lastIndex = I;
             var MA = pg2.exec(G);
             if (!MA) throw Error("should never happen");
@@ -1134,7 +1137,7 @@ function iZ(CA) {
                 default:
                     break
             }
-            aA();
+            BASE64_CHARS();
             var X0 = qa5[H1];
             if (typeof X0 === "number") w.push(X0);
             else j0A(w, X0);
@@ -1142,7 +1145,7 @@ function iZ(CA) {
         }
         iZ.lookahead = -Na5;
 
-function p8(CA) {
+        function p8(CA) {
             switch (C = 0, CA) {
                 case 120:
                 case 88:
@@ -1154,7 +1157,7 @@ function p8(CA) {
             }
         }
 
-function s7(CA) {
+        function s7(CA) {
             switch (CA) {
                 case 48:
                 case 49:
@@ -1206,7 +1209,7 @@ function s7(CA) {
             }
         }
 
-function PC(CA) {
+        function PC(CA) {
             switch (CA) {
                 case 65:
                 case 66:
@@ -1245,7 +1248,7 @@ function PC(CA) {
             }
         }
 
-function YN(CA) {
+        function YN(CA) {
             switch (CA) {
                 case 48:
                 case 49:
@@ -1268,15 +1271,15 @@ function YN(CA) {
             }
         }
 
-function h3(CA) {
+        function h3(CA) {
             if (C in cg2) C = cg2[C];
             else if (C > 1114111 || C >= 55296 && C < 57344) C = 65533;
-            if (aA(), C <= 65535) w.push(C);
+            if (BASE64_CHARS(), C <= 65535) w.push(C);
             else C = C - 65536, w.push(55296 + (C >> 10)), w.push(56320 + (C & 1023));
             nA(CA, nZ)
         }
 
-function nZ(CA) {
+        function nZ(CA) {
             switch (H) {
                 case S1:
                 case P1:
@@ -1290,7 +1293,7 @@ function nZ(CA) {
             nA(CA, H)
         }
 
-function oD(CA, MA, H1, X0) {
+        function oD(CA, MA, H1, X0) {
             switch (CA) {
                 case 1:
                     if (MA = MA.replace(S0A, ""), MA.length === 0) return;
@@ -1310,7 +1313,7 @@ function oD(CA, MA, H1, X0) {
             K1._quirks = !0, u = rW, u(CA, MA, H1, X0)
         }
 
-function rW(CA, MA, H1, X0) {
+        function rW(CA, MA, H1, X0) {
             var z0;
             switch (CA) {
                 case 1:
@@ -1341,7 +1344,7 @@ function rW(CA, MA, H1, X0) {
             z0 = rQ(K1, "html", null), k.push(z0), K1.appendChild(z0), u = oW, u(CA, MA, H1, X0)
         }
 
-function oW(CA, MA, H1, X0) {
+        function oW(CA, MA, H1, X0) {
             switch (CA) {
                 case 1:
                     if (MA = MA.replace(S0A, ""), MA.length === 0) return;
@@ -1376,7 +1379,7 @@ function oW(CA, MA, H1, X0) {
             oW(FC, "head", null), u(CA, MA, H1, X0)
         }
 
-function F5(CA, MA, H1, X0) {
+        function F5(CA, MA, H1, X0) {
             switch (CA) {
                 case 1:
                     var z0 = MA.match(S0A);
@@ -1447,7 +1450,7 @@ function F5(CA, MA, H1, X0) {
             F5(Z5, "head", null), u(CA, MA, H1, X0)
         }
 
-function eP(CA, MA, H1, X0) {
+        function eP(CA, MA, H1, X0) {
             switch (CA) {
                 case 5:
                     return;
@@ -1492,7 +1495,7 @@ function eP(CA, MA, H1, X0) {
             eP(Z5, "noscript", null), u(CA, MA, H1, X0)
         }
 
-function aZ(CA, MA, H1, X0) {
+        function aZ(CA, MA, H1, X0) {
             switch (CA) {
                 case 1:
                     var z0 = MA.match(S0A);

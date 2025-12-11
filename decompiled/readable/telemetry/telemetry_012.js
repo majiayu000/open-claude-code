@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: telemetry_012.js
+ * 处理时间: 2025-12-09T03:41:38.449Z
+ * 变量映射: 4 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.058Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -26,27 +29,26 @@
         Lj5 = yOA(),
         Mj5 = "round_robin";
 
-function n$2(A) {
+    function n$2(A) {
         qj5.trace(Nj5.LogVerbosity.DEBUG, Mj5, A)
     }
-    var Y81 = "round_robin";
-
-class J81 {
+    /* ROUND_ROBIN = ROUND_ROBIN = "round_robin" */
+var ROUND_ROBIN = "round_robin";
+    class J81 {
         getLoadBalancerName() {
-            return Y81
+            return ROUND_ROBIN
         }
         constructor() {}
         toJsonObject() {
             return {
-                [Y81]: {}
+                [ROUND_ROBIN]: {}
             }
         }
         static createFromJson(A) {
             return new J81
         }
     }
-
-class s$2 {
+    class s$2 {
         constructor(A, Q = 0) {
             this.children = A, this.nextIndex = Q
         }
@@ -59,11 +61,10 @@ class s$2 {
         }
     }
 
-function Oj5(A, Q) {
+    function Oj5(A, Q) {
         return [...A.slice(Q), ...A.slice(0, Q)]
     }
-
-class S90 {
+    class S90 {
         constructor(A) {
             this.channelControlHelper = A, this.children = [], this.currentState = bD.ConnectivityState.IDLE, this.currentReadyPicker = null, this.updatesPaused = !1, this.lastError = null, this.childChannelControlHelper = (0, a$2.createChildChannelControlHelper)(A, {
                 updateState: (Q, B, G) => {
@@ -91,7 +92,7 @@ class S90 {
                 })), Q), null)
             } else if (this.countChildrenWithState(bD.ConnectivityState.CONNECTING) > 0) this.updateState(bD.ConnectivityState.CONNECTING, new vOA.QueuePicker(this), null);
             else if (this.countChildrenWithState(bD.ConnectivityState.TRANSIENT_FAILURE) > 0) {
-                let A = `round_robin: No connection established. Last error: ${this.lastError}`;
+                let A = `round_robin: No connection established. Last error: TextComponent{this.lastError}`;
                 this.updateState(bD.ConnectivityState.TRANSIENT_FAILURE, new vOA.UnavailablePicker({
                     details: A
                 }), A)
@@ -117,7 +118,7 @@ class S90 {
             let Z = Math.random() * A.value.length | 0,
                 I = Oj5(A.value, Z);
             if (this.resetSubchannelList(), I.length === 0) {
-                let Y = `No addresses resolved. Resolution note: ${G}`;
+                let Y = `No addresses resolved. Resolution note: TextComponent{G}`;
                 this.updateState(bD.ConnectivityState.TRANSIENT_FAILURE, new vOA.UnavailablePicker({
                     details: Y
                 }), Y)
@@ -132,16 +133,16 @@ class S90 {
             this.resetSubchannelList()
         }
         getTypeName() {
-            return Y81
+            return ROUND_ROBIN
         }
     }
     r$2.RoundRobinLoadBalancer = S90;
 
-function Rj5() {
-        (0, a$2.registerLoadBalancerType)(Y81, S90, J81)
+    function Rj5() {
+        (0, a$2.registerLoadBalancerType)(ROUND_ROBIN, S90, J81)
     }
 });
-var Yw2 = U((Zw2) => {
+var Yw2 = moduleWrapper((Zw2) => {
     var _90;
     Object.defineProperty(Zw2, "__esModule", {
         value: !0
@@ -160,10 +161,11 @@ var Yw2 = U((Zw2) => {
         yj5 = XZ(),
         xj5 = "outlier_detection";
 
-function IK(A) {
+    function IK(A) {
         yj5.trace(e$2.LogVerbosity.DEBUG, xj5, A)
     }
-    var v90 = "outlier_detection",
+    /* OUTLIER_DETECTION = OUTLIER_DETECTION = "outlier_detection" */
+var OUTLIER_DETECTION = "outlier_detection",
         vj5 = ((_90 = process.env.GRPC_EXPERIMENTAL_ENABLE_OUTLIER_DETECTION) !== null && _90 !== void 0 ? _90 : "true") === "true",
         bj5 = {
             stdev_factor: 1900,
@@ -178,33 +180,32 @@ function IK(A) {
             request_volume: 50
         };
 
-function VJA(A, Q, B, G) {
+    function VJA(A, Q, B, G) {
         if (Q in A && A[Q] !== void 0 && typeof A[Q] !== B) {
-            let Z = G ? `${G}.${Q}` : Q;
-            throw Error(`outlier detection config ${Z} parse error: expected ${B}, got ${typeof A[Q]}`)
+            let Z = G ? `TextComponent{G}.TextComponent{Q}` : Q;
+            throw Error(`outlier detection config TextComponent{Z} parse error: expected TextComponent{B}, got TextComponent{typeof A[Q]}`)
         }
     }
 
-function y90(A, Q, B) {
-        let G = B ? `${B}.${Q}` : Q;
+    function y90(A, Q, B) {
+        let G = B ? `TextComponent{B}.TextComponent{Q}` : Q;
         if (Q in A && A[Q] !== void 0) {
-            if (!(0, o1A.isDuration)(A[Q])) throw Error(`outlier detection config ${G} parse error: expected Duration, got ${typeof A[Q]}`);
-            if (!(A[Q].seconds >= 0 && A[Q].seconds <= 315576000000 && A[Q].nanos >= 0 && A[Q].nanos <= 999999999)) throw Error(`outlier detection config ${G} parse error: values out of range for non-negative Duaration`)
+            if (!(0, o1A.isDuration)(A[Q])) throw Error(`outlier detection config TextComponent{G} parse error: expected Duration, got TextComponent{typeof A[Q]}`);
+            if (!(A[Q].seconds >= 0 && A[Q].seconds <= 315576000000 && A[Q].nanos >= 0 && A[Q].nanos <= 999999999)) throw Error(`outlier detection config TextComponent{G} parse error: values out of range for non-negative Duaration`)
         }
     }
 
-function W81(A, Q, B) {
-        let G = B ? `${B}.${Q}` : Q;
-        if (VJA(A, Q, "number", B), Q in A && A[Q] !== void 0 && !(A[Q] >= 0 && A[Q] <= 100)) throw Error(`outlier detection config ${G} parse error: value out of range for percentage (0-100)`)
+    function W81(A, Q, B) {
+        let G = B ? `TextComponent{B}.TextComponent{Q}` : Q;
+        if (VJA(A, Q, "number", B), Q in A && A[Q] !== void 0 && !(A[Q] >= 0 && A[Q] <= 100)) throw Error(`outlier detection config TextComponent{G} parse error: value out of range for percentage (0-100)`)
     }
-
-class bOA {
+    class bOA {
         constructor(A, Q, B, G, Z, I, Y) {
             if (this.childPolicy = Y, Y.getLoadBalancerName() === "pick_first") throw Error("outlier_detection LB policy cannot have a pick_first child policy");
             this.intervalMs = A !== null && A !== void 0 ? A : 1e4, this.baseEjectionTimeMs = Q !== null && Q !== void 0 ? Q : 30000, this.maxEjectionTimeMs = B !== null && B !== void 0 ? B : 300000, this.maxEjectionPercent = G !== null && G !== void 0 ? G : 10, this.successRateEjection = Z ? Object.assign(Object.assign({}, bj5), Z) : null, this.failurePercentageEjection = I ? Object.assign(Object.assign({}, fj5), I) : null
         }
         getLoadBalancerName() {
-            return v90
+            return OUTLIER_DETECTION
         }
         toJsonObject() {
             var A, Q;
@@ -258,8 +259,7 @@ class bOA {
         }
     }
     Zw2.OutlierDetectionLoadBalancingConfig = bOA;
-
-class Qw2 extends kj5.BaseSubchannelWrapper {
+    class Qw2 extends kj5.BaseSubchannelWrapper {
         constructor(A, Q) {
             super(A);
             this.mapEntry = Q, this.refCount = 0
@@ -289,14 +289,13 @@ class Qw2 extends kj5.BaseSubchannelWrapper {
         }
     }
 
-function x90() {
+    function x90() {
         return {
             success: 0,
             failure: 0
         }
     }
-
-class Bw2 {
+    class Bw2 {
         constructor() {
             this.activeBucket = x90(), this.inactiveBucket = x90()
         }
@@ -316,8 +315,7 @@ class Bw2 {
             return this.inactiveBucket.failure
         }
     }
-
-class Gw2 {
+    class Gw2 {
         constructor(A, Q) {
             this.wrappedPicker = A, this.countCalls = Q
         }
@@ -344,8 +342,7 @@ class Gw2 {
             } else return Q
         }
     }
-
-class b90 {
+    class b90 {
         constructor(A) {
             this.entryMap = new k90.EndpointMap, this.latestConfig = null, this.timerStartTime = null, this.childBalancer = new Sj5.ChildLoadBalancerHandler((0, Aw2.createChildChannelControlHelper)(A, {
                 createSubchannel: (Q, B) => {
@@ -493,16 +490,16 @@ class b90 {
             clearTimeout(this.ejectionTimer), this.childBalancer.destroy()
         }
         getTypeName() {
-            return v90
+            return OUTLIER_DETECTION
         }
     }
     Zw2.OutlierDetectionLoadBalancer = b90;
 
-function hj5() {
-        if (vj5)(0, Aw2.registerLoadBalancerType)(v90, b90, bOA)
+    function hj5() {
+        if (vj5)(0, Aw2.registerLoadBalancerType)(OUTLIER_DETECTION, b90, bOA)
     }
 });
-var Fw2 = U((Ww2) => {
+var Fw2 = moduleWrapper((Ww2) => {
     Object.defineProperty(Ww2, "__esModule", {
         value: !0
     });
@@ -511,8 +508,7 @@ var Fw2 = U((Ww2) => {
         f90 = (A) => Math.floor(A / 2),
         X81 = (A) => A * 2 + 1,
         fOA = (A) => A * 2 + 2;
-
-class Jw2 {
+    class Jw2 {
         constructor(A = (Q, B) => Q > B) {
             this.comparator = A, this.heap = []
         }
@@ -560,7 +556,7 @@ class Jw2 {
     }
     Ww2.PriorityQueue = Jw2
 });
-var $w2 = U((zw2) => {
+var $w2 = moduleWrapper((zw2) => {
     Object.defineProperty(zw2, "__esModule", {
         value: !0
     });
@@ -578,41 +574,41 @@ var $w2 = U((zw2) => {
         Vw2 = rU(),
         lj5 = "weighted_round_robin";
 
-function h90(A) {
+    function h90(A) {
         cj5.trace(mj5.LogVerbosity.DEBUG, lj5, A)
     }
-    var g90 = "weighted_round_robin",
+    /* WEIGHTED_ROUND_ROBIN = WEIGHTED_ROUND_ROBIN = "weighted_round_robin" */
+var WEIGHTED_ROUND_ROBIN = "weighted_round_robin",
         ij5 = 1e4,
         nj5 = 1e4,
         aj5 = 180000,
         sj5 = 1000,
         rj5 = 1;
 
-function Kw2(A, Q, B) {
-        if (Q in A && A[Q] !== void 0 && typeof A[Q] !== B) throw Error(`weighted round robin config ${Q} parse error: expected ${B}, got ${typeof A[Q]}`)
+    function Kw2(A, Q, B) {
+        if (Q in A && A[Q] !== void 0 && typeof A[Q] !== B) throw Error(`weighted round robin config TextComponent{Q} parse error: expected TextComponent{B}, got TextComponent{typeof A[Q]}`)
     }
 
-function F81(A, Q) {
+    function F81(A, Q) {
         if (Q in A && A[Q] !== void 0 && A[Q] !== null) {
             let B;
             if ((0, Nq.isDuration)(A[Q])) B = A[Q];
             else if ((0, Nq.isDurationMessage)(A[Q])) B = (0, Nq.durationMessageToDuration)(A[Q]);
             else if (typeof A[Q] === "string") {
                 let G = (0, Nq.parseDuration)(A[Q]);
-                if (!G) throw Error(`weighted round robin config ${Q}: failed to parse duration string ${A[Q]}`);
+                if (!G) throw Error(`weighted round robin config TextComponent{Q}: failed to parse duration string TextComponent{A[Q]}`);
                 B = G
-            } else throw Error(`weighted round robin config ${Q}: expected duration, got ${typeof A[Q]}`);
+            } else throw Error(`weighted round robin config TextComponent{Q}: expected duration, got TextComponent{typeof A[Q]}`);
             return (0, Nq.durationToMs)(B)
         }
         return null
     }
-
-class hOA {
+    class hOA {
         constructor(A, Q, B, G, Z, I) {
             this.enableOobLoadReport = A !== null && A !== void 0 ? A : !1, this.oobLoadReportingPeriodMs = Q !== null && Q !== void 0 ? Q : ij5, this.blackoutPeriodMs = B !== null && B !== void 0 ? B : nj5, this.weightExpirationPeriodMs = G !== null && G !== void 0 ? G : aj5, this.weightUpdatePeriodMs = Math.max(Z !== null && Z !== void 0 ? Z : sj5, 100), this.errorUtilizationPenalty = I !== null && I !== void 0 ? I : rj5
         }
         getLoadBalancerName() {
-            return g90
+            return WEIGHTED_ROUND_ROBIN
         }
         toJsonObject() {
             return {
@@ -648,8 +644,7 @@ class hOA {
         }
     }
     zw2.WeightedRoundRobinLoadBalancingConfig = hOA;
-
-class Cw2 {
+    class Cw2 {
         constructor(A, Q) {
             this.metricsHandler = Q, this.queue = new pj5.PriorityQueue((Z, I) => Z.deadline < I.deadline);
             let B = A.filter((Z) => Z.weight > 0),
@@ -692,8 +687,7 @@ class Cw2 {
             else return B
         }
     }
-
-class Ew2 {
+    class Ew2 {
         constructor(A) {
             this.channelControlHelper = A, this.latestConfig = null, this.children = new Map, this.currentState = YK.ConnectivityState.IDLE, this.updatesPaused = !1, this.lastError = null, this.weightUpdateTimer = null
         }
@@ -746,7 +740,7 @@ class Ew2 {
                 this.updateState(YK.ConnectivityState.READY, new Cw2(A, Q), null)
             } else if (this.countChildrenWithState(YK.ConnectivityState.CONNECTING) > 0) this.updateState(YK.ConnectivityState.CONNECTING, new DJA.QueuePicker(this), null);
             else if (this.countChildrenWithState(YK.ConnectivityState.TRANSIENT_FAILURE) > 0) {
-                let A = `weighted_round_robin: No connection established. Last error: ${this.lastError}`;
+                let A = `weighted_round_robin: No connection established. Last error: TextComponent{this.lastError}`;
                 this.updateState(YK.ConnectivityState.TRANSIENT_FAILURE, new DJA.UnavailablePicker({
                     details: A
                 }), A)
@@ -768,7 +762,7 @@ class Ew2 {
                 return !0
             }
             if (A.value.length === 0) {
-                let W = `No addresses resolved. Resolution note: ${G}`;
+                let W = `No addresses resolved. Resolution note: TextComponent{G}`;
                 return this.updateState(YK.ConnectivityState.TRANSIENT_FAILURE, new DJA.UnavailablePicker({
                     details: W
                 }), W), !1
@@ -820,15 +814,15 @@ class Ew2 {
             if (this.children.clear(), this.weightUpdateTimer) clearInterval(this.weightUpdateTimer)
         }
         getTypeName() {
-            return g90
+            return WEIGHTED_ROUND_ROBIN
         }
     }
 
-function oj5() {
-        (0, Dw2.registerLoadBalancerType)(g90, Ew2, hOA)
+    function oj5() {
+        (0, Dw2.registerLoadBalancerType)(WEIGHTED_ROUND_ROBIN, Ew2, hOA)
     }
 });
-var gOA = U((WG) => {
+var gOA = moduleWrapper((WG) => {
     Object.defineProperty(WG, "__esModule", {
         value: !0
     });
@@ -1065,14 +1059,14 @@ var gOA = U((WG) => {
         ES5.setup(), zS5.setup(), US5.setup(), $S5.setup(), wS5.setup(), qS5.setup(), NS5.setup(), LS5.setup()
     })()
 });
-var Rw2 = U((Mw2) => {
+var Rw2 = moduleWrapper((Mw2) => {
     Object.defineProperty(Mw2, "__esModule", {
         value: !0
     });
     Mw2.createServiceClientConstructor = void 0;
     var kS5 = gOA();
 
-function yS5(A, Q) {
+    function yS5(A, Q) {
         let B = {
             export: {
                 path: A,
@@ -1096,7 +1090,7 @@ function yS5(A, Q) {
     }
     Mw2.createServiceClientConstructor = yS5
 });
-var uOA = U((Tw2) => {
+var uOA = moduleWrapper((Tw2) => {
     Object.defineProperty(Tw2, "__esModule", {
         value: !0
     });
@@ -1104,11 +1098,11 @@ var uOA = U((Tw2) => {
     var xS5 = 0,
         vS5 = 2;
 
-function bS5(A) {
+    function bS5(A) {
         return A === "gzip" ? vS5 : xS5
     }
 
-function fS5() {
+    function fS5() {
         let {
             credentials: A
         } = gOA();
@@ -1116,7 +1110,7 @@ function fS5() {
     }
     Tw2.createInsecureCredentials = fS5;
 
-function hS5(A, Q, B) {
+    function hS5(A, Q, B) {
         let {
             credentials: G
         } = gOA();
@@ -1124,15 +1118,14 @@ function hS5(A, Q, B) {
     }
     Tw2.createSslCredentials = hS5;
 
-function gS5() {
+    function gS5() {
         let {
             Metadata: A
         } = gOA();
         return new A
     }
     Tw2.createEmptyMetadata = gS5;
-
-class c90 {
+    class c90 {
         _parameters;
         _client;
         _metadata;
@@ -1191,19 +1184,19 @@ class c90 {
     }
     Tw2.GrpcExporterTransport = c90;
 
-function uS5(A) {
+    function uS5(A) {
         return new c90(A)
     }
     Tw2.createOtlpGrpcExporterTransport = uS5
 });
-var _w2 = U((jw2) => {
+var _w2 = moduleWrapper((jw2) => {
     Object.defineProperty(jw2, "__esModule", {
         value: !0
     });
     jw2.VERSION = void 0;
     jw2.VERSION = "0.204.0"
 });
-var hw2 = U((bw2) => {
+var hw2 = moduleWrapper((bw2) => {
     Object.defineProperty(bw2, "__esModule", {
         value: !0
     });
@@ -1211,25 +1204,25 @@ var hw2 = U((bw2) => {
     var xw2 = mk(),
         mOA = uOA(),
         lS5 = _w2(),
-        iS5 = UA("url"),
+        iS5 = nodeRequire("url"),
         kw2 = W9();
 
-function vw2(A) {
-        if (A = A.trim(), !A.match(/^([\w]{1,8}):\/\//)) A = `https://${A}`;
+    function vw2(A) {
+        if (A = A.trim(), !A.match(/^([\w]{1,8}):\/\//)) A = `https://TextComponent{A}`;
         let B = new iS5.URL(A);
         if (B.protocol === "unix:") return A;
         if (B.pathname && B.pathname !== "/") kw2.diag.warn("URL path should not be set when using grpc, the path part of the URL will be ignored.");
-        if (B.protocol !== "" && !B.protocol?.match(/^(http)s?:$/)) kw2.diag.warn("URL protocol should be http(s)://. Using http://.");
+        if (B.protocol !== "" && !B.protocol?.match(/^(http)s?:TextComponent/)) kw2.diag.warn("URL protocol should be http(s)://. Using http://.");
         return B.host
     }
     bw2.validateAndNormalizeUrl = vw2;
 
-function yw2(A, Q) {
+    function yw2(A, Q) {
         for (let [B, G] of Object.entries(Q.getMap()))
             if (A.get(B).length < 1) A.set(B, G)
     }
 
-function nS5(A, Q, B) {
+    function nS5(A, Q, B) {
         let G = A.url ?? Q.url ?? B.url;
         return {
             ...(0, xw2.mergeOtlpSharedConfigurationWithDefaults)(A, Q, B),
@@ -1243,12 +1236,12 @@ function nS5(A, Q, B) {
     }
     bw2.mergeOtlpGrpcConfigurationWithDefaults = nS5;
 
-function aS5() {
+    function aS5() {
         return {
             ...(0, xw2.getSharedConfigurationDefaults)(),
             metadata: () => {
                 let A = (0, mOA.createEmptyMetadata)();
-                return A.set("User-Agent", `OTel-OTLP-Exporter-JavaScript/${lS5.VERSION}`), A
+                return A.set("User-Agent", `OTel-OTLP-Exporter-JavaScript/TextComponent{lS5.VERSION}`), A
             },
             url: "http://localhost:4317",
             credentials: (A) => {
@@ -1259,7 +1252,7 @@ function aS5() {
     }
     bw2.getOtlpGrpcDefaultConfiguration = aS5
 });
-var lw2 = U((cw2) => {
+var lw2 = moduleWrapper((cw2) => {
     Object.defineProperty(cw2, "__esModule", {
         value: !0
     });
@@ -1267,17 +1260,17 @@ var lw2 = U((cw2) => {
     var gw2 = t6(),
         dOA = uOA(),
         oS5 = Si(),
-        tS5 = UA("fs"),
-        eS5 = UA("path"),
+        tS5 = nodeRequire("fs"),
+        eS5 = nodeRequire("path"),
         mw2 = W9();
 
-function p90(A, Q) {
+    function p90(A, Q) {
         if (A != null && A !== "") return A;
         if (Q != null && Q !== "") return Q;
         return
     }
 
-function A_5(A) {
+    function A_5(A) {
         let Q = process.env[`OTEL_EXPORTER_OTLP_${A}_HEADERS`]?.trim(),
             B = process.env.OTEL_EXPORTER_OTLP_HEADERS?.trim(),
             G = (0, gw2.parseKeyPairsIntoRecord)(Q),
@@ -1289,25 +1282,25 @@ function A_5(A) {
         return Y
     }
 
-function Q_5(A) {
+    function Q_5(A) {
         let Q = A_5(A);
         if (Q == null) return;
         return () => Q
     }
 
-function B_5(A) {
+    function B_5(A) {
         let Q = process.env[`OTEL_EXPORTER_OTLP_${A}_ENDPOINT`]?.trim(),
             B = process.env.OTEL_EXPORTER_OTLP_ENDPOINT?.trim();
         return p90(Q, B)
     }
 
-function G_5(A) {
+    function G_5(A) {
         let Q = process.env[`OTEL_EXPORTER_OTLP_${A}_INSECURE`]?.toLowerCase().trim(),
             B = process.env.OTEL_EXPORTER_OTLP_INSECURE?.toLowerCase().trim();
         return p90(Q, B) === "true"
     }
 
-function l90(A, Q, B) {
+    function l90(A, Q, B) {
         let G = process.env[A]?.trim(),
             Z = process.env[Q]?.trim(),
             I = p90(G, Z);
@@ -1319,19 +1312,19 @@ function l90(A, Q, B) {
         } else return
     }
 
-function Z_5(A) {
+    function Z_5(A) {
         return l90(`OTEL_EXPORTER_OTLP_${A}_CLIENT_CERTIFICATE`, "OTEL_EXPORTER_OTLP_CLIENT_CERTIFICATE", "Failed to read client certificate chain file")
     }
 
-function I_5(A) {
+    function I_5(A) {
         return l90(`OTEL_EXPORTER_OTLP_${A}_CLIENT_KEY`, "OTEL_EXPORTER_OTLP_CLIENT_KEY", "Failed to read client certificate private key file")
     }
 
-function uw2(A) {
+    function uw2(A) {
         return l90(`OTEL_EXPORTER_OTLP_${A}_CERTIFICATE`, "OTEL_EXPORTER_OTLP_CERTIFICATE", "Failed to read root certificate file")
     }
 
-function dw2(A) {
+    function dw2(A) {
         let Q = I_5(A),
             B = Z_5(A),
             G = uw2(A),
@@ -1340,12 +1333,12 @@ function dw2(A) {
         return (0, dOA.createSslCredentials)(G, Q, B)
     }
 
-function Y_5(A) {
+    function Y_5(A) {
         if (G_5(A)) return (0, dOA.createInsecureCredentials)();
         return dw2(A)
     }
 
-function J_5(A) {
+    function J_5(A) {
         return {
             ...(0, oS5.getSharedConfigurationFromEnvironment)(A),
             metadata: Q_5(A),
@@ -1365,7 +1358,7 @@ function J_5(A) {
     }
     cw2.getOtlpGrpcConfigurationFromEnv = J_5
 });
-var sw2 = U((nw2) => {
+var sw2 = moduleWrapper((nw2) => {
     Object.defineProperty(nw2, "__esModule", {
         value: !0
     });
@@ -1375,7 +1368,7 @@ var sw2 = U((nw2) => {
         X_5 = uOA(),
         F_5 = lw2();
 
-function V_5(A, Q) {
+    function V_5(A, Q) {
         if (A.headers) W_5.diag.warn("Headers cannot be set when using grpc");
         let B = A.credentials;
         return (0, iw2.mergeOtlpGrpcConfigurationWithDefaults)({
@@ -1391,7 +1384,7 @@ function V_5(A, Q) {
     }
     nw2.convertLegacyOtlpGrpcOptions = V_5
 });
-var tw2 = U((rw2) => {
+var tw2 = moduleWrapper((rw2) => {
     Object.defineProperty(rw2, "__esModule", {
         value: !0
     });
@@ -1399,7 +1392,7 @@ var tw2 = U((rw2) => {
     var K_5 = mk(),
         D_5 = uOA();
 
-function H_5(A, Q, B, G) {
+    function H_5(A, Q, B, G) {
         return (0, K_5.createOtlpNetworkExportDelegate)(A, Q, (0, D_5.createOtlpGrpcExporterTransport)({
             address: A.url,
             compression: A.compression,
@@ -1411,7 +1404,7 @@ function H_5(A, Q, B, G) {
     }
     rw2.createOtlpGrpcExportDelegate = H_5
 });
-var C81 = U((H81) => {
+var C81 = moduleWrapper((H81) => {
     Object.defineProperty(H81, "__esModule", {
         value: !0
     });
@@ -1431,7 +1424,7 @@ var C81 = U((H81) => {
         }
     })
 });
-var Gq2 = U((Qq2) => {
+var Gq2 = moduleWrapper((Qq2) => {
     Object.defineProperty(Qq2, "__esModule", {
         value: !0
     });
@@ -1439,15 +1432,14 @@ var Gq2 = U((Qq2) => {
     var U_5 = c91(),
         ew2 = C81(),
         $_5 = pk();
-
-class Aq2 extends U_5.OTLPMetricExporterBase {
+    class Aq2 extends U_5.OTLPMetricExporterBase {
         constructor(A) {
             super((0, ew2.createOtlpGrpcExportDelegate)((0, ew2.convertLegacyOtlpGrpcOptions)(A ?? {}, "METRICS"), $_5.ProtobufMetricsSerializer, "MetricsExportService", "/opentelemetry.proto.collector.metrics.v1.MetricsService/Export"), A)
         }
     }
     Qq2.OTLPMetricExporter = Aq2
 });
-var Zq2 = U((i90) => {
+var Zq2 = moduleWrapper((i90) => {
     Object.defineProperty(i90, "__esModule", {
         value: !0
     });
@@ -1460,7 +1452,7 @@ var Zq2 = U((i90) => {
         }
     })
 });
-var s90 = U((Wq2) => {
+var s90 = moduleWrapper((Wq2) => {
     Object.defineProperty(Wq2, "__esModule", {
         value: !0
     });
@@ -1469,33 +1461,33 @@ var s90 = U((Wq2) => {
         t1A = Mi(),
         Iq2 = t6();
 
-function z81(A) {
+    function z81(A) {
         return A.replace(/\\/g, "\\\\").replace(/\n/g, "\\n")
     }
 
-function Yq2(A = "") {
+    function Yq2(A = "") {
         if (typeof A !== "string") A = JSON.stringify(A);
         return z81(A).replace(/"/g, "\\\"")
     }
     var L_5 = /[^a-z0-9_]/gi,
         M_5 = /_{2,}/g;
 
-function a90(A) {
+    function a90(A) {
         return A.replace(L_5, "_").replace(M_5, "_")
     }
 
-function n90(A, Q) {
+    function n90(A, Q) {
         if (!A.endsWith("_total") && Q.dataPointType === t1A.DataPointType.SUM && Q.isMonotonic) A = A + "_total";
         return A
     }
 
-function O_5(A) {
+    function O_5(A) {
         if (A === 1 / 0) return "+Inf";
         else if (A === -1 / 0) return "-Inf";
-        else return `${A}`
+        else return `TextComponent{A}`
     }
 
-function R_5(A) {
+    function R_5(A) {
         switch (A.dataPointType) {
             case t1A.DataPointType.SUM:
                 if (A.isMonotonic) return "counter";
@@ -1509,25 +1501,24 @@ function R_5(A) {
         }
     }
 
-function E81(A, Q, B, G, Z) {
+    function E81(A, Q, B, G, Z) {
         let I = !1,
             Y = "";
         for (let [J, W] of Object.entries(Q)) {
             let X = a90(J);
-            I = !0, Y += `${Y.length>0?",":""}${X}="${Yq2(W)}"`
+            I = !0, Y += `TextComponent{Y.length>0?",":""}TextComponent{X}="TextComponent{Yq2(W)}"`
         }
         if (Z)
             for (let [J, W] of Object.entries(Z)) {
                 let X = a90(J);
-                I = !0, Y += `${Y.length>0?",":""}${X}="${Yq2(W)}"`
+                I = !0, Y += `TextComponent{Y.length>0?",":""}TextComponent{X}="TextComponent{Yq2(W)}"`
             }
-        if (I) A += `{${Y}}`;
-        return `${A} ${O_5(B)}${G!==void 0?" "+String(G):""}
+        if (I) A += `{TextComponent{Y}}`;
+        return `TextComponent{A} TextComponent{O_5(B)}TextComponent{G!==void 0?" "+String(G):""}
 `
     }
     var T_5 = "# no registered metrics";
-
-class Jq2 {
+    class Jq2 {
         _prefix;
         _appendTimestamp;
         _additionalAttributes;

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: agents_002.js
+ * 处理时间: 2025-12-09T03:41:35.852Z
+ * 变量映射: 5 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.841Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -21,23 +24,23 @@
                     return []
                 }
 
-function qW1() {
+                function qW1() {
                     return !1
                 }
 
-function qw9() {
+                function qw9() {
                     return {}
                 }
 
-function Nw9() {
+                function Nw9() {
                     return ""
                 }
 
-function Lw9() {
+                function Lw9() {
                     return !0
                 }
 
-function Mw9(M, S) {
+                function Mw9(M, S) {
                     if (M = J8(M), M < 1 || M > QA) return [];
                     var m = wA,
                         JA = BX(M, wA);
@@ -47,12 +50,12 @@ function Mw9(M, S) {
                     return kA
                 }
 
-function Ow9(M) {
+                function Ow9(M) {
                     if (p4(M)) return y5(M, XJ);
                     return zZ(M) ? [M] : FV(Mz(v5(M)))
                 }
 
-function Rw9(M) {
+                function Rw9(M) {
                     var S = ++_C;
                     return v5(M) + S
                 }
@@ -65,27 +68,27 @@ function Rw9(M) {
                     }, 1),
                     Sw9 = G1("floor");
 
-function _w9(M) {
+                function _w9(M) {
                     return M && M.length ? YJ(M, yz, Wj) : A
                 }
 
-function kw9(M, S) {
+                function kw9(M, S) {
                     return M && M.length ? YJ(M, Q1(S, 2), Wj) : A
                 }
 
-function yw9(M) {
+                function yw9(M) {
                     return H1(M, yz)
                 }
 
-function xw9(M, S) {
+                function xw9(M, S) {
                     return H1(M, Q1(S, 2))
                 }
 
-function vw9(M) {
+                function vw9(M) {
                     return M && M.length ? YJ(M, yz, K5) : A
                 }
 
-function bw9(M, S) {
+                function bw9(M, S) {
                     return M && M.length ? YJ(M, Q1(S, 2), K5) : A
                 }
                 var fw9 = QR(function(M, S) {
@@ -96,14 +99,14 @@ function bw9(M, S) {
                         return M - S
                     }, 0);
 
-function uw9(M) {
+                function uw9(M) {
                     return M && M.length ? n9(M, yz) : 0
                 }
 
-function mw9(M, S) {
+                function mw9(M, S) {
                     return M && M.length ? n9(M, Q1(S, 2)) : 0
                 }
-                if (lA.after = tJ1, lA.ary = rSA, lA.assign = cFA, lA.assignIn = Y_A, lA.assignInWith = zBA, lA.assignWith = pFA, lA.at = UBA, lA.before = oSA, lA.bind = hFA, lA.bindAll = Gw9, lA.bindKey = tSA, lA.castArray = BW1, lA.chain = hSA, lA.chunk = Bs, lA.compact = wB, lA.concat = b2, lA.cond = Zw9, lA.conforms = Iw9, lA.constant = EW1, lA.countBy = dSA, lA.create = VW1, lA.curry = eSA, lA.curryRight = A_A, lA.debounce = Q_A, lA.defaults = J_A, lA.defaultsDeep = KW1, lA.defer = PN, lA.delay = Nu, lA.difference = T8, lA.differenceBy = g6, lA.differenceWith = QI, lA.drop = UG, lA.dropRight = VX, lA.dropRightWhile = VV, lA.dropWhile = BW, lA.fill = bC, lA.filter = dJ1, lA.flatMap = pSA, lA.flatMapDeep = pJ1, lA.flatMapDepth = lJ1, lA.flatten = i0, lA.flattenDeep = BQ, lA.flattenDepth = YQ, lA.flip = Lu, lA.flow = Jw9, lA.flowRight = Ww9, lA.fromPairs = qQ, lA.functions = W$9, lA.functionsIn = X$9, lA.groupBy = iSA, lA.initial = P8, lA.intersection = $3, lA.intersectionBy = FJ, lA.intersectionWith = CF, lA.invert = V$9, lA.invertBy = K$9, lA.invokeMap = iJ1, lA.iteratee = zW1, lA.keyBy = nJ1, lA.keys = DV, lA.keysIn = kz, lA.map = gx, lA.mapKeys = H$9, lA.mapValues = C$9, lA.matches = Xw9, lA.matchesProperty = Fw9, lA.memoize = Mu, lA.merge = E$9, lA.mergeWith = ID0, lA.method = Vw9, lA.methodOf = Kw9, lA.mixin = UW1, lA.negate = Ou, lA.nthArg = Hw9, lA.omit = z$9, lA.omitBy = U$9, lA.once = Sz, lA.orderBy = aJ1, lA.over = Cw9, lA.overArgs = gFA, lA.overEvery = Ew9, lA.overSome = zw9, lA.partial = ux, lA.partialRight = Ru, lA.partition = sJ1, lA.pick = $$9, lA.pickBy = YD0, lA.property = DD0, lA.propertyOf = Uw9, lA.pull = VJ, lA.pullAll = d$, lA.pullAllBy = Tz, lA.pullAllWith = Pz, lA.pullAt = SJ1, lA.range = $w9, lA.rangeRight = ww9, lA.rearg = eJ1, lA.reject = sSA, lA.remove = Gs, lA.rest = B_A, lA.reverse = bx, lA.sampleSize = Ys, lA.set = q$9, lA.setWith = N$9, lA.shuffle = HBA, lA.slice = _SA, lA.sortBy = oJ1, lA.sortedUniq = yJ1, lA.sortedUniqBy = xJ1, lA.split = l$9, lA.spread = AW1, lA.tail = vJ1, lA.take = SFA, lA.takeRight = _FA, lA.takeRightWhile = jz, lA.takeWhile = $u, lA.tap = xFA, lA.throttle = G_A, lA.thru = YH, lA.toArray = fC, lA.toPairs = JD0, lA.toPairsIn = WD0, lA.toPath = Ow9, lA.toPlainObject = dFA, lA.transform = L$9, lA.unary = c$, lA.union = fx, lA.unionBy = KBA, lA.unionWith = Zs, lA.uniq = DBA, lA.uniqBy = wu, lA.uniqWith = F7, lA.unset = M$9, lA.unzip = qu, lA.unzipWith = kFA, lA.update = O$9, lA.updateWith = R$9, lA.values = $BA, lA.valuesIn = T$9, lA.without = Is, lA.words = VD0, lA.wrap = QW1, lA.xor = vSA, lA.xorBy = bJ1, lA.xorWith = fJ1, lA.zip = bSA, lA.zipObject = yFA, lA.zipObjectDeep = hx, lA.zipWith = fSA, lA.entries = JD0, lA.entriesIn = WD0, lA.extend = Y_A, lA.extendWith = zBA, UW1(lA, lA), lA.add = Tw9, lA.attempt = KD0, lA.camelCase = _$9, lA.capitalize = XD0, lA.ceil = Pw9, lA.clamp = P$9, lA.clone = GW1, lA.cloneDeep = ZW1, lA.cloneDeepWith = IW1, lA.cloneWith = Tu, lA.conformsTo = Cj, lA.deburr = FD0, lA.defaultTo = Yw9, lA.divide = jw9, lA.endsWith = k$9, lA.eq = GW, lA.escape = y$9, lA.escapeRegExp = x$9, lA.every = mJ1, lA.find = cJ1, lA.findIndex = TN, lA.findKey = B$9, lA.findLast = cSA, lA.findLastIndex = BR, lA.findLastKey = G$9, lA.floor = Sw9, lA.forEach = lSA, lA.forEachRight = fFA, lA.forIn = Z$9, lA.forInRight = I$9, lA.forOwn = Y$9, lA.forOwnRight = J$9, lA.get = DW1, lA.gt = Ws, lA.gte = Ej, lA.has = F$9, lA.hasIn = HW1, lA.head = tB, lA.identity = yz, lA.includes = GR, lA.indexOf = c4, lA.inRange = j$9, lA.invoke = D$9, lA.isArguments = zj, lA.isArray = p4, lA.isArrayBuffer = YW1, lA.isArrayLike = EF, lA.isArrayLikeObject = $G, lA.isBoolean = CBA, lA.isBuffer = Uj, lA.isDate = uFA, lA.isElement = Z_A, lA.isEmpty = JW1, lA.isEqual = WW1, lA.isEqualWith = XW1, lA.isError = mFA, lA.isFinite = FW1, lA.isFunction = vA, lA.isInteger = iA, lA.isLength = $1, lA.isMap = h0, lA.isMatch = UQ, lA.isMatchWith = Y9, lA.isNaN = w9, lA.isNative = i2, lA.isNil = G6, lA.isNull = q9, lA.isNumber = KJ, lA.isObject = D1, lA.isObjectLike = p1, lA.isPlainObject = V7, lA.isRegExp = KX, lA.isSafeInteger = JH, lA.isSet = KV, lA.isString = ZR, lA.isSymbol = zZ, lA.isTypedArray = DX, lA.isUndefined = $j, lA.isWeakMap = Pu, lA.isWeakSet = Xs, lA.join = Oz, lA.kebabCase = v$9, lA.last = d3, lA.lastIndexOf = Rz, lA.lowerCase = b$9, lA.lowerFirst = f$9, lA.lt = IR, lA.lte = YR, lA.max = _w9, lA.maxBy = kw9, lA.mean = yw9, lA.meanBy = xw9, lA.min = vw9, lA.minBy = bw9, lA.stubArray = wW1, lA.stubFalse = qW1, lA.stubObject = qw9, lA.stubString = Nw9, lA.stubTrue = Lw9, lA.multiply = fw9, lA.nth = vx, lA.noConflict = Dw9, lA.noop = $W1, lA.now = Hj, lA.pad = h$9, lA.padEnd = g$9, lA.padStart = u$9, lA.parseInt = m$9, lA.random = S$9, lA.reduce = nSA, lA.reduceRight = aSA, lA.repeat = d$9, lA.replace = c$9, lA.result = w$9, lA.round = hw9, lA.runInContext = d1, lA.sample = _K, lA.size = Js, lA.snakeCase = p$9, lA.some = rJ1, lA.sortedIndex = _J1, lA.sortedIndexBy = kSA, lA.sortedIndexOf = Uu, lA.sortedLastIndex = ySA, lA.sortedLastIndexBy = xSA, lA.sortedLastIndexOf = kJ1, lA.startCase = i$9, lA.startsWith = n$9, lA.subtract = gw9, lA.sum = uw9, lA.sumBy = mw9, lA.template = a$9, lA.times = Mw9, lA.toFinite = _z, lA.toInteger = J8, lA.toLength = EBA, lA.toLower = s$9, lA.toNumber = WH, lA.toSafeInteger = I_A, lA.toString = v5, lA.toUpper = r$9, lA.trim = o$9, lA.trimEnd = t$9, lA.trimStart = e$9, lA.truncate = Aw9, lA.unescape = Qw9, lA.uniqueId = Rw9, lA.upperCase = Bw9, lA.upperFirst = CW1, lA.each = lSA, lA.eachRight = fFA, lA.first = tB, UW1(lA, function() {
+                if (lA.after = tJ1, lA.ary = rSA, lA.assign = cFA, lA.assignIn = Y_A, lA.assignInWith = zBA, lA.assignWith = pFA, lA.at = UBA, lA.before = oSA, lA.bind = hFA, lA.bindAll = Gw9, lA.bindKey = tSA, lA.castArray = BW1, lA.chain = hSA, lA.chunk = Bs, lA.compact = wB, lA.concat = b2, lA.cond = Zw9, lA.conforms = Iw9, lA.constant = EW1, lA.countBy = dSA, lA.create = VW1, lA.curry = eSA, lA.curryRight = A_A, lA.debounce = Q_A, lA.defaults = J_A, lA.defaultsDeep = KW1, lA.defer = PN, lA.delay = Nu, lA.difference = T8, lA.differenceBy = g6, lA.differenceWith = QI, lA.drop = UG, lA.dropRight = VX, lA.dropRightWhile = VV, lA.dropWhile = BW, lA.fill = bC, lA.filter = dJ1, lA.flatMap = pSA, lA.flatMapDeep = pJ1, lA.flatMapDepth = lJ1, lA.flatten = i0, lA.flattenDeep = BQ, lA.flattenDepth = YQ, lA.flip = Lu, lA.flow = Jw9, lA.flowRight = Ww9, lA.fromPairs = qQ, lA.functions = W$9, lA.functionsIn = X$9, lA.groupBy = iSA, lA.initial = P8, lA.intersection = $3, lA.intersectionBy = FJ, lA.intersectionWith = CF, lA.invert = V$9, lA.invertBy = K$9, lA.invokeMap = iJ1, lA.iteratee = zW1, lA.keyBy = nJ1, lA.keys = DV, lA.keysIn = kz, lA.map = gx, lA.mapKeys = H$9, lA.mapValues = C$9, lA.matches = Xw9, lA.matchesProperty = Fw9, lA.memoize = Mu, lA.merge = E$9, lA.mergeWith = ID0, lA.method = Vw9, lA.methodOf = Kw9, lA.mixin = UW1, lA.negate = Ou, lA.nthArg = Hw9, lA.omit = z$9, lA.omitBy = U$9, lA.once = Sz, lA.orderBy = aJ1, lA.over = Cw9, lA.overArgs = gFA, lA.overEvery = Ew9, lA.overSome = zw9, lA.partial = ux, lA.partialRight = Ru, lA.partition = sJ1, lA.pick = $$9, lA.pickBy = YD0, lA.property = DD0, lA.propertyOf = Uw9, lA.pull = VJ, lA.pullAll = d$, lA.pullAllBy = Tz, lA.pullAllWith = Pz, lA.pullAt = SJ1, lA.range = $w9, lA.rangeRight = ww9, lA.rearg = eJ1, lA.reject = sSA, lA.remove = Gs, lA.rest = B_A, lA.reverse = bx, lA.sampleSize = Ys, lA.set = q$9, lA.setWith = N$9, lA.shuffle = HBA, lA.slice = _SA, lA.sortBy = oJ1, lA.sortedUniq = yJ1, lA.sortedUniqBy = xJ1, lA.split = l$9, lA.spread = AW1, lA.tail = vJ1, lA.take = SFA, lA.takeRight = _FA, lA.takeRightWhile = jz, lA.takeWhile = $u, lA.tap = xFA, lA.throttle = G_A, lA.thru = YH, lA.toArray = fC, lA.toPairs = JD0, lA.toPairsIn = WD0, lA.toPath = Ow9, lA.toPlainObject = dFA, lA.transform = L$9, lA.unary = c$, lA.union = fx, lA.unionBy = KBA, lA.unionWith = Zs, lA.uniq = DBA, lA.uniqBy = wu, lA.uniqWith = F7, lA.unset = M$9, lA.unzip = qu, lA.unzipWith = kFA, lA.update = O$9, lA.updateWith = R$9, lA.values = $BA, lA.valuesIn = T$9, lA.without = Is, lA.words = VD0, lA.wrap = QW1, lA.xor = vSA, lA.xorBy = bJ1, lA.xorWith = fJ1, lA.zip = bSA, lA.zipObject = yFA, lA.zipObjectDeep = hx, lA.zipWith = fSA, lA.entries = JD0, lA.entriesIn = WD0, lA.extend = Y_A, lA.extendWith = zBA, UW1(lA, lA), lA.add = Tw9, lA.attempt = KD0, lA.camelCase = _$9, lA.capitalize = XD0, lA.ceil = Pw9, lA.clamp = P$9, lA.clone = GW1, lA.cloneDeep = ZW1, lA.cloneDeepWith = IW1, lA.cloneWith = Tu, lA.conformsTo = Cj, lA.deburr = FD0, lA.defaultTo = Yw9, lA.divide = jw9, lA.endsWith = k$9, lA.WEB_FETCH_TOOL_NAME = GW, lA.escape = y$9, lA.escapeRegExp = x$9, lA.every = mJ1, lA.find = cJ1, lA.findIndex = TN, lA.findKey = B$9, lA.findLast = cSA, lA.findLastIndex = BR, lA.findLastKey = G$9, lA.floor = Sw9, lA.forEach = lSA, lA.forEachRight = fFA, lA.forIn = Z$9, lA.forInRight = I$9, lA.forOwn = Y$9, lA.forOwnRight = J$9, lA.get = DW1, lA.gt = Ws, lA.gte = Ej, lA.has = F$9, lA.hasIn = HW1, lA.head = tB, lA.identity = yz, lA.includes = GR, lA.indexOf = c4, lA.inRange = j$9, lA.invoke = D$9, lA.isArguments = zj, lA.isArray = p4, lA.isArrayBuffer = YW1, lA.isArrayLike = EF, lA.isArrayLikeObject = $G, lA.isBoolean = CBA, lA.isBuffer = Uj, lA.isDate = uFA, lA.isElement = Z_A, lA.isEmpty = JW1, lA.isEqual = WW1, lA.isEqualWith = XW1, lA.isError = mFA, lA.isFinite = FW1, lA.isFunction = vA, lA.isInteger = iA, lA.isLength = $1, lA.isMap = RENDER_ERROR, lA.isMatch = UQ, lA.isMatchWith = Y9, lA.isNaN = w9, lA.isNative = i2, lA.isNil = G6, lA.isNull = q9, lA.isNumber = KJ, lA.isObject = D1, lA.isObjectLike = p1, lA.isPlainObject = V7, lA.isRegExp = KX, lA.isSafeInteger = JH, lA.isSet = KV, lA.isString = ZR, lA.isSymbol = zZ, lA.isTypedArray = DX, lA.isUndefined = $j, lA.isWeakMap = Pu, lA.isWeakSet = Xs, lA.join = Oz, lA.kebabCase = v$9, lA.last = d3, lA.lastIndexOf = Rz, lA.lowerCase = b$9, lA.lowerFirst = f$9, lA.lt = IR, lA.lte = YR, lA.max = _w9, lA.maxBy = kw9, lA.mean = yw9, lA.meanBy = xw9, lA.min = vw9, lA.minBy = bw9, lA.stubArray = wW1, lA.stubFalse = qW1, lA.stubObject = qw9, lA.stubString = Nw9, lA.stubTrue = Lw9, lA.multiply = fw9, lA.nth = vx, lA.noConflict = Dw9, lA.noop = $W1, lA.now = Hj, lA.pad = h$9, lA.padEnd = g$9, lA.padStart = u$9, lA.parseInt = m$9, lA.random = S$9, lA.reduce = nSA, lA.reduceRight = aSA, lA.repeat = d$9, lA.replace = c$9, lA.result = w$9, lA.round = hw9, lA.runInContext = d1, lA.sample = _K, lA.size = Js, lA.snakeCase = p$9, lA.some = rJ1, lA.sortedIndex = _J1, lA.sortedIndexBy = kSA, lA.sortedIndexOf = Uu, lA.sortedLastIndex = ySA, lA.sortedLastIndexBy = xSA, lA.sortedLastIndexOf = kJ1, lA.startCase = i$9, lA.startsWith = n$9, lA.subtract = gw9, lA.sum = uw9, lA.sumBy = mw9, lA.template = a$9, lA.times = Mw9, lA.toFinite = _z, lA.toInteger = J8, lA.toLength = EBA, lA.toLower = s$9, lA.toNumber = WH, lA.toSafeInteger = I_A, lA.toString = v5, lA.toUpper = r$9, lA.trim = o$9, lA.trimEnd = t$9, lA.trimStart = e$9, lA.truncate = Aw9, lA.unescape = Qw9, lA.uniqueId = Rw9, lA.upperCase = Bw9, lA.upperFirst = CW1, lA.each = lSA, lA.eachRight = fFA, lA.first = tB, UW1(lA, function() {
                         var M = {};
                         return RI(lA, function(S, m) {
                             if (!Z8.call(lA.prototype, m)) M[m] = S
@@ -172,7 +175,7 @@ function mw9(M, S) {
                         return this.take(wA)
                     }, RI(L9.prototype, function(M, S) {
                         var m = /^(?:filter|find|map|reject)|While$/.test(S),
-                            JA = /^(?:head|last)$/.test(S),
+                            JA = /^(?:head|last)TextComponent/.test(S),
                             kA = lA[JA ? "take" + (S == "last" ? "Right" : "") : S],
                             A1 = JA || /^find/.test(S);
                         if (!kA) return;
@@ -205,8 +208,8 @@ function mw9(M, S) {
                         }
                     }), b6(["pop", "push", "shift", "sort", "splice", "unshift"], function(M) {
                         var S = Qj[M],
-                            m = /^(?:push|sort|unshift)$/.test(M) ? "tap" : "thru",
-                            JA = /^(?:pop|shift)$/.test(M);
+                            m = /^(?:push|sort|unshift)TextComponent/.test(M) ? "tap" : "thru",
+                            JA = /^(?:pop|shift)TextComponent/.test(M);
                         lA.prototype[M] = function() {
                             var kA = arguments;
                             if (JA && !this.__chain__) {
@@ -257,24 +260,24 @@ function Z49({
         flexDirection: "column",
         marginTop: Q ? 1 : 0,
         width: "100%"
-    }, aq.createElement(j, null, aq.createElement($, {
+    }, aq.createElement(j, null, aq.createElement(TextComponent, {
         color: "remember",
         backgroundColor: "memoryBackgroundColor"
-    }, "#"), aq.createElement($, {
+    }, "#"), aq.createElement(TextComponent, {
         backgroundColor: "memoryBackgroundColor",
         color: "text"
     }, " ", B, " ")), aq.createElement(y0, {
         height: 1
-    }, aq.createElement($, {
+    }, aq.createElement(TextComponent, {
         dimColor: !0
     }, G)))
 }
 var aq, B49, G49;
-var I49 = L(() => {
+var I49 = lazyLoader(() => {
     hA();
     nQ();
     u8();
-    aq = GA(VA(), 1), B49 = GA(Q49(), 1), G49 = GA(VA(), 1)
+    aq = esmImport(VA(), 1), B49 = esmImport(Q49(), 1), G49 = esmImport(VA(), 1)
 });
 
 function Y49({
@@ -292,10 +295,10 @@ function Y49({
     })
 }
 var JW0;
-var J49 = L(() => {
+var J49 = lazyLoader(() => {
     U21();
     nQ();
-    JW0 = GA(VA(), 1)
+    JW0 = esmImport(VA(), 1)
 });
 
 function W49({
@@ -303,45 +306,45 @@ function W49({
 }) {
     let Q = e2(A, "local-command-stdout"),
         B = e2(A, "local-command-stderr");
-    if (!Q && !B) return sq.createElement(y0, null, sq.createElement($, {
+    if (!Q && !B) return sq.createElement(y0, null, sq.createElement(TextComponent, {
         dimColor: !0
     }, Eq));
     let G = [];
     if (Q?.trim()) G.push(sq.createElement(y0, {
         key: "stdout"
-    }, sq.createElement($, {
+    }, sq.createElement(TextComponent, {
         color: "text"
     }, Q.trim())));
     if (B?.trim()) G.push(sq.createElement(y0, {
         key: "stderr"
-    }, sq.createElement($, {
+    }, sq.createElement(TextComponent, {
         color: "error"
     }, B.trim())));
     return G
 }
 var sq;
-var X49 = L(() => {
+var X49 = lazyLoader(() => {
     nQ();
     hA();
     u8();
     tM();
-    sq = GA(VA(), 1)
+    sq = esmImport(VA(), 1)
 });
 
 function F49({
     content: A
 }) {
     let Q = e2(A, "background-task-output") ?? "";
-    return AjA.createElement(y0, null, AjA.createElement($, {
+    return AjA.createElement(y0, null, AjA.createElement(TextComponent, {
         dimColor: !0
     }, Q))
 }
 var AjA;
-var V49 = L(() => {
+var V49 = lazyLoader(() => {
     hA();
     nQ();
     u8();
-    AjA = GA(VA(), 1)
+    AjA = esmImport(VA(), 1)
 });
 
 function HQA({
@@ -387,7 +390,7 @@ function HQA({
     })
 }
 var pW;
-var aZ1 = L(() => {
+var aZ1 = lazyLoader(() => {
     _80();
     r99();
     A49();
@@ -400,7 +403,7 @@ var aZ1 = L(() => {
     X49();
     u00();
     V49();
-    pW = GA(VA(), 1)
+    pW = esmImport(VA(), 1)
 });
 
 function K49({
@@ -415,7 +418,7 @@ function K49({
     if (!A) return null;
     if (!(B || G)) return CQA.default.createElement(j, {
         marginTop: Q ? 1 : 0
-    }, CQA.default.createElement($, {
+    }, CQA.default.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "∴ Thinking (ctrl+o to expand)"));
@@ -424,21 +427,21 @@ function K49({
         gap: 1,
         marginTop: Q ? 1 : 0,
         width: "100%"
-    }, CQA.default.createElement($, {
+    }, CQA.default.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "∴ Thinking…"), CQA.default.createElement(j, {
         paddingLeft: 2
-    }, CQA.default.createElement($, {
+    }, CQA.default.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, _D(A, Z))))
 }
 var CQA;
-var D49 = L(() => {
+var D49 = lazyLoader(() => {
     hA();
     Hh();
-    CQA = GA(VA(), 1)
+    CQA = esmImport(VA(), 1)
 });
 
 function H49({
@@ -446,15 +449,15 @@ function H49({
 }) {
     return WW0.default.createElement(j, {
         marginTop: A ? 1 : 0
-    }, WW0.default.createElement($, {
+    }, WW0.default.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "✻ Thinking…"))
 }
 var WW0;
-var C49 = L(() => {
+var C49 = lazyLoader(() => {
     hA();
-    WW0 = GA(VA(), 1)
+    WW0 = esmImport(VA(), 1)
 });
 import {
     relative as CR3
@@ -471,28 +474,28 @@ function E49({
         flexDirection: "column"
     }, A.files.map((Z, I) => Ax.default.createElement(Ax.default.Fragment, {
         key: I
-    }, Ax.default.createElement(y0, null, Ax.default.createElement($, {
+    }, Ax.default.createElement(y0, null, Ax.default.createElement(TextComponent, {
         dimColor: !0,
         wrap: "wrap"
-    }, oA.bold(CR3(H0(), Z.uri.replace("file://", "").replace("_claude_fs_right:", ""))), " ", oA.dim(Z.uri.startsWith("file://") ? "(file://)" : Z.uri.startsWith("_claude_fs_right:") ? "(claude_fs_right)" : `(${Z.uri.split(":")[0]})`), ":")), Z.diagnostics.map((Y, J) => Ax.default.createElement(y0, {
+    }, oA.bold(CR3(H0(), Z.uri.replace("file://", "").replace("_claude_fs_right:", ""))), " ", oA.dim(Z.uri.startsWith("file://") ? "(file://)" : Z.uri.startsWith("_claude_fs_right:") ? "(claude_fs_right)" : `(TextComponent{Z.uri.split(":")[0]})`), ":")), Z.diagnostics.map((Y, J) => Ax.default.createElement(y0, {
         key: J
-    }, Ax.default.createElement($, {
+    }, Ax.default.createElement(TextComponent, {
         dimColor: !0,
         wrap: "wrap"
-    }, "  ", QP.getSeveritySymbol(Y.severity), " [Line ", Y.range.start.line + 1, ":", Y.range.start.character + 1, "] ", Y.message, Y.code ? ` [${Y.code}]` : "", Y.source ? ` (${Y.source})` : ""))))));
-    else return Ax.default.createElement(y0, null, Ax.default.createElement($, {
+    }, "  ", QP.getSeveritySymbol(Y.severity), " [Line ", Y.range.start.line + 1, ":", Y.range.start.character + 1, "] ", Y.message, Y.code ? ` [TextComponent{Y.code}]` : "", Y.source ? ` (TextComponent{Y.source})` : ""))))));
+    else return Ax.default.createElement(y0, null, Ax.default.createElement(TextComponent, {
         dimColor: !0,
         wrap: "wrap"
-    }, `Found ${oA.bold(B)} new diagnostic ${B===1?"issue":"issues"} in ${G} ${G===1?"file":"files"} (ctrl+o to expand)`))
+    }, `Found TextComponent{oA.bold(B)} new diagnostic TextComponent{B===1?"issue":"issues"} in TextComponent{G} TextComponent{G===1?"file":"files"} (ctrl+o to expand)`))
 }
 var Ax;
-var z49 = L(() => {
+var z49 = lazyLoader(() => {
     hA();
     J9();
     R2();
     u8();
     C1A();
-    Ax = GA(VA(), 1)
+    Ax = esmImport(VA(), 1)
 });
 import {
     relative as kXA,
@@ -506,48 +509,48 @@ function U49({
 }) {
     switch (A.type) {
         case "directory":
-            return rB.default.createElement(eY, null, "Listed directory", " ", oA.bold(kXA(H0(), A.path) + ER3));
+            return React.default.createElement(PlanFileReference, null, "Listed directory", " ", oA.bold(kXA(H0(), A.path) + ER3));
         case "file":
         case "already_read_file":
-            if (A.content.type === "notebook") return rB.default.createElement(eY, {
+            if (A.content.type === "notebook") return React.default.createElement(PlanFileReference, {
                 dimColor: !1
-            }, rB.default.createElement($, {
+            }, React.default.createElement(TextComponent, {
                 dimColor: !0
-            }, "Read "), rB.default.createElement($, {
+            }, "Read "), React.default.createElement(TextComponent, {
                 bold: !0
-            }, kXA(H0(), A.filename)), rB.default.createElement($, null, " "), rB.default.createElement($, {
+            }, kXA(H0(), A.filename)), React.default.createElement(TextComponent, null, " "), React.default.createElement(TextComponent, {
                 dimColor: !0
             }, "(", A.content.file.cells.length, " cells)"));
-            return rB.default.createElement(eY, {
+            return React.default.createElement(PlanFileReference, {
                 dimColor: !1
-            }, rB.default.createElement($, {
+            }, React.default.createElement(TextComponent, {
                 dimColor: !0
-            }, "Read "), rB.default.createElement($, {
+            }, "Read "), React.default.createElement(TextComponent, {
                 bold: !0
-            }, kXA(H0(), A.filename)), rB.default.createElement($, null, " "), rB.default.createElement($, {
+            }, kXA(H0(), A.filename)), React.default.createElement(TextComponent, null, " "), React.default.createElement(TextComponent, {
                 dimColor: !0
-            }, "(", A.content.type === "text" ? `${A.content.file.numLines}${A.truncated?"+":""} lines` : LJ(A.content.file.originalSize), ")"));
+            }, "(", A.content.type === "text" ? `TextComponent{A.content.file.numLines}TextComponent{A.truncated?"+":""} lines` : LJ(A.content.file.originalSize), ")"));
         case "compact_file_reference":
-            return rB.default.createElement(eY, null, "Referenced file ", oA.bold(kXA(H0(), A.filename)));
+            return React.default.createElement(PlanFileReference, null, "Referenced file ", oA.bold(kXA(H0(), A.filename)));
         case "selected_lines_in_ide":
-            return rB.default.createElement(eY, {
+            return React.default.createElement(PlanFileReference, {
                 dimColor: !1
-            }, rB.default.createElement($, {
+            }, React.default.createElement(TextComponent, {
                 dimColor: !0
-            }, "⧉ Selected "), rB.default.createElement($, {
+            }, "⧉ Selected "), React.default.createElement(TextComponent, {
                 bold: !0
-            }, A.lineEnd - A.lineStart + 1), rB.default.createElement($, null, " "), rB.default.createElement($, {
+            }, A.lineEnd - A.lineStart + 1), React.default.createElement(TextComponent, null, " "), React.default.createElement(TextComponent, {
                 dimColor: !0
-            }, "lines from "), rB.default.createElement($, {
+            }, "lines from "), React.default.createElement(TextComponent, {
                 bold: !0
-            }, kXA(H0(), A.filename)), rB.default.createElement($, null, " "), rB.default.createElement($, {
+            }, kXA(H0(), A.filename)), React.default.createElement(TextComponent, null, " "), React.default.createElement(TextComponent, {
                 dimColor: !0
             }, "in ", A.ideName));
         case "nested_memory":
-            return rB.default.createElement(eY, null, oA.bold(kXA(H0(), A.path)));
+            return React.default.createElement(PlanFileReference, null, oA.bold(kXA(H0(), A.path)));
         case "queued_command": {
             let G = typeof A.prompt === "string" ? A.prompt : yXA(A.prompt) || "";
-            return rB.default.createElement(HQA, {
+            return React.default.createElement(HQA, {
                 addMargin: Q,
                 param: {
                     text: G,
@@ -557,119 +560,119 @@ function U49({
             })
         }
         case "todo":
-            if (A.context === "post-compact") return rB.default.createElement(eY, null, "Todo list read (", A.itemCount, " ", A.itemCount === 1 ? "item" : "items", ")");
+            if (A.context === "post-compact") return React.default.createElement(PlanFileReference, null, "Todo list read (", A.itemCount, " ", A.itemCount === 1 ? "item" : "items", ")");
             return null;
         case "plan_file_reference":
-            return rB.default.createElement(eY, null, "Plan file referenced (", Q5(A.planFilePath), ")");
+            return React.default.createElement(PlanFileReference, null, "Plan file referenced (", formatFilePath(A.planFilePath), ")");
         case "diagnostics":
-            return rB.default.createElement(E49, {
+            return React.default.createElement(E49, {
                 attachment: A,
                 verbose: B
             });
         case "mcp_resource":
-            return rB.default.createElement(eY, {
+            return React.default.createElement(PlanFileReference, {
                 dimColor: !1
-            }, rB.default.createElement($, {
+            }, React.default.createElement(TextComponent, {
                 dimColor: !0
-            }, "Read MCP resource "), rB.default.createElement($, {
+            }, "Read MCP resource "), React.default.createElement(TextComponent, {
                 bold: !0
-            }, A.name), rB.default.createElement($, null, " "), rB.default.createElement($, {
+            }, A.name), React.default.createElement(TextComponent, null, " "), React.default.createElement(TextComponent, {
                 dimColor: !0
             }, "from ", A.server));
         case "command_permissions":
-            return rB.default.createElement(j, {
+            return React.default.createElement(j, {
                 flexDirection: "column",
                 paddingLeft: 0
-            }, A.model && rB.default.createElement(eY, {
+            }, A.model && React.default.createElement(PlanFileReference, {
                 dimColor: !1
-            }, rB.default.createElement($, {
+            }, React.default.createElement(TextComponent, {
                 dimColor: !0
-            }, "Model: "), rB.default.createElement($, {
+            }, "Model: "), React.default.createElement(TextComponent, {
                 dimColor: !0,
                 bold: !0
-            }, A.model)), A.allowedTools.length > 0 && rB.default.createElement(rB.default.Fragment, null, rB.default.createElement(eY, {
+            }, A.model)), A.allowedTools.length > 0 && React.default.createElement(React.default.Fragment, null, React.default.createElement(PlanFileReference, {
                 dimColor: !1
-            }, rB.default.createElement($, {
+            }, React.default.createElement(TextComponent, {
                 dimColor: !0
-            }, "Allowed "), rB.default.createElement($, {
+            }, "Allowed "), React.default.createElement(TextComponent, {
                 dimColor: !0,
                 bold: !0
-            }, A.allowedTools.length), rB.default.createElement($, {
+            }, A.allowedTools.length), React.default.createElement(TextComponent, {
                 dimColor: !0
-            }, " tools for this command")), B && rB.default.createElement(eY, {
+            }, " tools for this command")), B && React.default.createElement(PlanFileReference, {
                 dimColor: !1
-            }, rB.default.createElement($, {
+            }, React.default.createElement(TextComponent, {
                 dimColor: !0
             }, A.allowedTools.join(", ")))));
         case "async_hook_response": {
             if (A.hookEvent === "SessionStart" && !B) return null;
             let G = A.response;
-            return rB.default.createElement(eY, {
+            return React.default.createElement(PlanFileReference, {
                 dimColor: !1
-            }, rB.default.createElement($, {
+            }, React.default.createElement(TextComponent, {
                 dimColor: !0
-            }, "Async hook "), rB.default.createElement($, {
+            }, "Async hook "), React.default.createElement(TextComponent, {
                 dimColor: !0,
                 bold: !0
-            }, A.hookEvent), rB.default.createElement($, null, " "), rB.default.createElement($, {
+            }, A.hookEvent), React.default.createElement(TextComponent, null, " "), React.default.createElement(TextComponent, {
                 dimColor: !0
-            }, "completed"), B && rB.default.createElement(rB.default.Fragment, null, rB.default.createElement($, {
+            }, "completed"), B && React.default.createElement(React.default.Fragment, null, React.default.createElement(TextComponent, {
                 dimColor: !0
             }, ":", `
-`), G.systemMessage ? rB.default.createElement($, {
+`), G.systemMessage ? React.default.createElement(TextComponent, {
                 dimColor: !0
-            }, G.systemMessage) : G.hookSpecificOutput && ("additionalContext" in G.hookSpecificOutput) && G.hookSpecificOutput.additionalContext ? rB.default.createElement($, {
+            }, G.systemMessage) : G.hookSpecificOutput && ("additionalContext" in G.hookSpecificOutput) && G.hookSpecificOutput.additionalContext ? React.default.createElement(TextComponent, {
                 dimColor: !0
             }, G.hookSpecificOutput.additionalContext) : null))
         }
         case "hook_blocking_error": {
             if (A.hookEvent === "Stop" || A.hookEvent === "SubagentStop") return null;
-            if (B) return rB.default.createElement(eY, {
+            if (B) return React.default.createElement(PlanFileReference, {
                 color: "error"
             }, A.hookName, " hook returned blocking error:", " ", A.blockingError.blockingError);
-            return rB.default.createElement(eY, {
+            return React.default.createElement(PlanFileReference, {
                 color: "error"
             }, A.hookName, " hook returned blocking error")
         }
         case "hook_non_blocking_error": {
             if (A.hookEvent === "Stop" || A.hookEvent === "SubagentStop") return null;
-            if (B) return rB.default.createElement(eY, {
+            if (B) return React.default.createElement(PlanFileReference, {
                 color: "error"
             }, A.hookName, " hook error: ", A.stderr);
-            return rB.default.createElement(eY, {
+            return React.default.createElement(PlanFileReference, {
                 color: "error"
             }, A.hookName, " hook error")
         }
         case "hook_error_during_execution":
             if (A.hookEvent === "Stop" || A.hookEvent === "SubagentStop") return null;
-            if (B) return rB.default.createElement(eY, null, A.hookName, " hook warning: ", A.content);
-            return rB.default.createElement(eY, null, A.hookName, " hook warning");
+            if (B) return React.default.createElement(PlanFileReference, null, A.hookName, " hook warning: ", A.content);
+            return React.default.createElement(PlanFileReference, null, A.hookName, " hook warning");
         case "hook_success":
             if (A.hookEvent === "Stop" || A.hookEvent === "SubagentStop") return null;
-            if (B) return rB.default.createElement(eY, null, A.hookName, " hook succeeded: ", A.content);
+            if (B) return React.default.createElement(PlanFileReference, null, A.hookName, " hook succeeded: ", A.content);
             return null;
         case "hook_stopped_continuation":
             if (A.hookEvent === "Stop" || A.hookEvent === "SubagentStop") return null;
-            return rB.default.createElement(eY, {
+            return React.default.createElement(PlanFileReference, {
                 color: "warning"
             }, A.hookName, " hook stopped continuation: ", A.message);
         case "hook_system_message":
-            return rB.default.createElement(eY, null, A.hookName, " says: ", A.content);
+            return React.default.createElement(PlanFileReference, null, A.hookName, " says: ", A.content);
         case "hook_permission_decision": {
             let G = A.decision === "allow" ? "Allowed" : "Denied";
-            return rB.default.createElement(eY, null, G, " by ", rB.default.createElement($, {
+            return React.default.createElement(PlanFileReference, null, G, " by ", React.default.createElement(TextComponent, {
                 bold: !0
             }, A.hookEvent), " hook")
         }
         case "async_agent_status": {
             let G = A.status === "completed" ? "completed in background" : A.status,
-                Z = A.error ? `: ${A.error}` : "";
-            return rB.default.createElement(j, {
+                Z = A.error ? `: TextComponent{A.error}` : "";
+            return React.default.createElement(j, {
                 flexDirection: "row",
                 width: "100%",
                 marginTop: 1,
                 paddingLeft: 2
-            }, rB.default.createElement($, {
+            }, React.default.createElement(TextComponent, {
                 dimColor: !0,
                 wrap: "wrap"
             }, 'Agent "', oA.bold(A.description), '" ', G, Z))
@@ -695,19 +698,20 @@ function U49({
     }
 }
 
-function eY({
+/* PlanFileReference = PlanFileReference component */
+function PlanFileReference({
     dimColor: A = !0,
     children: Q,
     color: B
 }) {
-    return rB.default.createElement(y0, null, rB.default.createElement($, {
+    return React.default.createElement(y0, null, React.default.createElement(TextComponent, {
         color: B,
         dimColor: A,
         wrap: "wrap"
     }, Q))
 }
-var rB;
-var $49 = L(() => {
+var React;
+var $49 = lazyLoader(() => {
     hA();
     M9();
     u8();
@@ -716,7 +720,7 @@ var $49 = L(() => {
     aZ1();
     z49();
     nQ();
-    rB = GA(VA(), 1)
+    React = esmImport(VA(), 1)
 });
 
 function w49({
@@ -732,19 +736,19 @@ function w49({
     let Y = Math.max(0, Math.round((B - Z) / 1000));
     return Lg.createElement(y0, null, Lg.createElement(j, {
         flexDirection: "column"
-    }, Lg.createElement($, {
+    }, Lg.createElement(TextComponent, {
         color: "error"
-    }, OS2(Q)), Lg.createElement($, {
+    }, OS2(Q)), Lg.createElement(TextComponent, {
         dimColor: !0
-    }, "Retrying in ", Y, " ", Y === 1 ? "second" : "seconds", "… (attempt", " ", A, "/", G, ")", process.env.API_TIMEOUT_MS ? ` · API_TIMEOUT_MS=${process.env.API_TIMEOUT_MS}ms, try increasing it` : "")))
+    }, "Retrying in ", Y, " ", Y === 1 ? "second" : "seconds", "… (attempt", " ", A, "/", G, ")", process.env.API_TIMEOUT_MS ? ` · API_TIMEOUT_MS=TextComponent{process.env.API_TIMEOUT_MS}ms, try increasing it` : "")))
 }
 var Lg, sZ1;
-var q49 = L(() => {
+var q49 = lazyLoader(() => {
     u8();
     hA();
     L60();
     $U();
-    Lg = GA(VA(), 1), sZ1 = GA(VA(), 1)
+    Lg = esmImport(VA(), 1), sZ1 = esmImport(VA(), 1)
 });
 
 function N49({
@@ -795,14 +799,14 @@ function zR3({
         width: "100%"
     }, Y5.createElement(j, {
         minWidth: 2
-    }, Y5.createElement($, null, pD)), Y5.createElement(j, {
+    }, Y5.createElement(TextComponent, null, pD)), Y5.createElement(j, {
         flexDirection: "column",
         width: W - 10
-    }, Y5.createElement($, null, "Ran ", Y5.createElement($, {
+    }, Y5.createElement(TextComponent, null, "Ran ", Y5.createElement(TextComponent, {
         bold: !0
-    }, G), " stop", " ", G === 1 ? "hook" : "hooks"), B && Z.length > 0 && Z.map((X, F) => Y5.createElement($, {
-        key: `cmd-${F}`
-    }, "⎿  ", X.command === "prompt" ? `prompt: ${X.promptText||""}` : `command: ${X.command}`)), Y && J && Y5.createElement($, null, "⎿  ", J), I.length > 0 && I.map((X, F) => Y5.createElement($, {
+    }, G), " stop", " ", G === 1 ? "hook" : "hooks"), B && Z.length > 0 && Z.map((X, F) => Y5.createElement(TextComponent, {
+        key: `cmd-TextComponent{F}`
+    }, "⎿  ", X.command === "prompt" ? `prompt: TextComponent{X.promptText||""}` : `command: TextComponent{X.command}`)), Y && J && Y5.createElement(TextComponent, null, "⎿  ", J), I.length > 0 && I.map((X, F) => Y5.createElement(TextComponent, {
         key: F
     }, "⎿  Stop hook error: ", X))))
 }
@@ -823,25 +827,25 @@ function UR3({
         width: "100%"
     }, B && Y5.createElement(j, {
         minWidth: 2
-    }, Y5.createElement($, {
+    }, Y5.createElement(TextComponent, {
         color: G,
         dimColor: Z
     }, pD)), Y5.createElement(j, {
         flexDirection: "column",
         width: I - 10
-    }, Y5.createElement($, {
+    }, Y5.createElement(TextComponent, {
         color: G,
         dimColor: Z,
         wrap: "wrap"
     }, A.trim())))
 }
 var Y5;
-var L49 = L(() => {
+var L49 = lazyLoader(() => {
     hA();
     yn();
     m8();
     q49();
-    Y5 = GA(VA(), 1)
+    Y5 = esmImport(VA(), 1)
 });
 
 function M49() {
@@ -855,10 +859,10 @@ function M49() {
     })
 }
 var XW0;
-var O49 = L(() => {
+var O49 = lazyLoader(() => {
     eV();
     m8();
-    XW0 = GA(VA(), 1)
+    XW0 = esmImport(VA(), 1)
 });
 
 function R49({
@@ -1080,7 +1084,7 @@ function qR3({
                 verbose: G
             });
         default:
-            return e(Error(`Unable to render message type: ${A.type}`)), null
+            return e(Error(`Unable to render message type: TextComponent{A.type}`)), null
     }
 }
 
@@ -1090,7 +1094,7 @@ function NR3(A, Q) {
     return !1
 }
 var b3, Mg;
-var QjA = L(() => {
+var QjA = lazyLoader(() => {
     hA();
     u1();
     o09();
@@ -1104,7 +1108,7 @@ var QjA = L(() => {
     L49();
     O49();
     T49();
-    b3 = GA(VA(), 1);
+    b3 = esmImport(VA(), 1);
     Mg = b3.memo($R3, NR3)
 });
 
@@ -1123,8 +1127,7 @@ function P49({
         else if (D === "t" && !Z) X()
     });
     let W = DQ();
-    // Async function: X
-async function X() {
+    async function X() {
         I(!0), J(null);
         try {
             await CRA(A.id)
@@ -1137,7 +1140,7 @@ async function X() {
                 C = Math.floor(H / 3600),
                 E = Math.floor((H - C * 3600) / 60),
                 z = H - C * 3600 - E * 60;
-            return `${C>0?`${C}h `:""}${E>0||C>0?`${E}m `:""}${z}s`
+            return `TextComponent{C>0?`TextComponent{C}h `:""}TextComponent{E>0||C>0?`TextComponent{E}m `:""}TextComponent{z}s`
         },
         V = BjA.useMemo(() => {
             return lJ(Ug(A.log.slice(-3))).filter((D) => D.type !== "progress")
@@ -1156,38 +1159,38 @@ async function X() {
         paddingLeft: 1,
         paddingRight: 1,
         width: "100%"
-    }, j6.default.createElement(j, null, j6.default.createElement($, {
+    }, j6.default.createElement(j, null, j6.default.createElement(TextComponent, {
         color: "background",
         bold: !0
     }, "Remote session details")), j6.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, j6.default.createElement($, null, j6.default.createElement($, {
+    }, j6.default.createElement(TextComponent, null, j6.default.createElement(TextComponent, {
         bold: !0
-    }, "Status"), ":", " ", A.status === "running" || A.status === "starting" ? j6.default.createElement($, {
+    }, "Status"), ":", " ", A.status === "running" || A.status === "starting" ? j6.default.createElement(TextComponent, {
         color: "background"
-    }, A.status) : A.status === "completed" ? j6.default.createElement($, {
+    }, A.status) : A.status === "completed" ? j6.default.createElement(TextComponent, {
         color: "success"
-    }, A.status) : j6.default.createElement($, {
+    }, A.status) : j6.default.createElement(TextComponent, {
         color: "error"
-    }, A.status)), j6.default.createElement($, null, j6.default.createElement($, {
+    }, A.status)), j6.default.createElement(TextComponent, null, j6.default.createElement(TextComponent, {
         bold: !0
-    }, "Runtime"), ": ", F(A.startTime)), j6.default.createElement($, {
+    }, "Runtime"), ": ", F(A.startTime)), j6.default.createElement(TextComponent, {
         wrap: "truncate-end"
-    }, j6.default.createElement($, {
+    }, j6.default.createElement(TextComponent, {
         bold: !0
-    }, "Title"), ": ", K), j6.default.createElement($, null, j6.default.createElement($, {
+    }, "Title"), ": ", K), j6.default.createElement(TextComponent, null, j6.default.createElement(TextComponent, {
         bold: !0
     }, "Progress"), ":", " ", j6.default.createElement(LZ1, {
         session: A
-    })), j6.default.createElement($, null, j6.default.createElement($, {
+    })), j6.default.createElement(TextComponent, null, j6.default.createElement(TextComponent, {
         bold: !0
-    }, "Session URL"), ":", " ", j6.default.createElement($, {
+    }, "Session URL"), ":", " ", j6.default.createElement(TextComponent, {
         dimColor: !0
     }, "https://claude.ai/code/", A.id))), A.log.length > 0 && j6.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, j6.default.createElement($, null, j6.default.createElement($, {
+    }, j6.default.createElement(TextComponent, null, j6.default.createElement(TextComponent, {
         bold: !0
     }, "Recent messages"), ":"), j6.default.createElement(j, {
         flexDirection: "column",
@@ -1211,27 +1214,27 @@ async function X() {
         isStatic: !0
     }))), j6.default.createElement(j, {
         marginTop: 1
-    }, j6.default.createElement($, {
+    }, j6.default.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "Showing last ", Math.min(3, A.log.length), " of", " ", A.log.length, " messages"))), Y && j6.default.createElement(j, {
         marginTop: 1
-    }, j6.default.createElement($, {
+    }, j6.default.createElement(TextComponent, {
         color: "error"
     }, "Teleport failed: ", Y)), Z && j6.default.createElement(j, {
         marginTop: 1
-    }, j6.default.createElement($, {
+    }, j6.default.createElement(TextComponent, {
         color: "background"
     }, "Teleporting to session...")))), j6.default.createElement(j, {
         marginLeft: 2
-    }, W.pending ? j6.default.createElement($, {
+    }, W.pending ? j6.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Press ", W.keyName, " again to exit") : j6.default.createElement($, {
+    }, "Press ", W.keyName, " again to exit") : j6.default.createElement(TextComponent, {
         dimColor: !0
-    }, G ? j6.default.createElement($, null, "← to go back · ") : null, "Esc/Enter/Space to close", !Z ? j6.default.createElement($, null, " · t to teleport") : null)))
+    }, G ? j6.default.createElement(TextComponent, null, "← to go back · ") : null, "Esc/Enter/Space to close", !Z ? j6.default.createElement(TextComponent, null, " · t to teleport") : null)))
 }
 var j6, BjA;
-var j49 = L(() => {
+var j49 = lazyLoader(() => {
     hA();
     c9();
     XJ0();
@@ -1239,7 +1242,7 @@ var j49 = L(() => {
     QjA();
     hPA();
     nQ();
-    j6 = GA(VA(), 1), BjA = GA(VA(), 1)
+    j6 = esmImport(VA(), 1), BjA = esmImport(VA(), 1)
 });
 
 function LR3(A) {
@@ -1339,29 +1342,29 @@ function S49({
         paddingLeft: 1,
         paddingRight: 1,
         width: "100%"
-    }, H6.default.createElement(j, null, H6.default.createElement($, {
+    }, H6.default.createElement(j, null, H6.default.createElement(TextComponent, {
         color: "background",
         bold: !0
-    }, A.selectedAgent?.agentType ?? "agent", " ›", " ", A.description || "Async agent")), H6.default.createElement(j, null, A.status !== "running" && H6.default.createElement($, {
+    }, A.selectedAgent?.agentType ?? "agent", " ›", " ", A.description || "Async agent")), H6.default.createElement(j, null, A.status !== "running" && H6.default.createElement(TextComponent, {
         color: MR3(A.status)
-    }, LR3(A.status), " ", A.status === "completed" ? "Completed" : A.status === "failed" ? "Failed" : "Killed", " · "), H6.default.createElement($, {
+    }, LR3(A.status), " ", A.status === "completed" ? "Completed" : A.status === "failed" ? "Failed" : "Killed", " · "), H6.default.createElement(TextComponent, {
         dimColor: !0
     }, X, K !== void 0 && K > 0 && H6.default.createElement(H6.default.Fragment, null, " · ", QZ(K), " tokens"), D !== void 0 && D > 0 && H6.default.createElement(H6.default.Fragment, null, " · ", D, " tools"))), H6.default.createElement(j, {
         flexDirection: "column"
     }, A.status === "running" && A.progress?.recentActivities && A.progress.recentActivities.length > 0 && H6.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, H6.default.createElement($, {
+    }, H6.default.createElement(TextComponent, {
         bold: !0,
         dimColor: !0
-    }, "Progress"), A.progress.recentActivities.map((H, C) => H6.default.createElement($, {
+    }, "Progress"), A.progress.recentActivities.map((H, C) => H6.default.createElement(TextComponent, {
         key: C,
         dimColor: C < A.progress.recentActivities.length - 1,
         wrap: "truncate-end"
     }, C === A.progress.recentActivities.length - 1 ? "› " : "  ", OR3(H, W, J)))), I.length > 0 && H6.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, H6.default.createElement($, {
+    }, H6.default.createElement(TextComponent, {
         bold: !0,
         dimColor: !0
     }, "Tasks (", Y, "/", I.length, ")"), H6.default.createElement(si, {
@@ -1369,37 +1372,37 @@ function S49({
     })), H6.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, H6.default.createElement($, {
+    }, H6.default.createElement(TextComponent, {
         bold: !0,
         dimColor: !0
-    }, "Prompt"), H6.default.createElement($, {
+    }, "Prompt"), H6.default.createElement(TextComponent, {
         wrap: "wrap"
     }, V)), A.status === "failed" && A.error && H6.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, H6.default.createElement($, {
+    }, H6.default.createElement(TextComponent, {
         bold: !0,
         color: "error"
-    }, "Error"), H6.default.createElement($, {
+    }, "Error"), H6.default.createElement(TextComponent, {
         color: "error",
         wrap: "wrap"
     }, A.error))))), H6.default.createElement(j, {
         marginLeft: 2
-    }, F.pending ? H6.default.createElement($, {
+    }, F.pending ? H6.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Press ", F.keyName, " again to exit") : H6.default.createElement($, {
+    }, "Press ", F.keyName, " again to exit") : H6.default.createElement(TextComponent, {
         dimColor: !0
-    }, G ? H6.default.createElement($, null, "← to go back · ") : null, "Esc/Enter/Space to close", A.status === "running" && B ? H6.default.createElement($, null, " · k to kill") : null)))
+    }, G ? H6.default.createElement(TextComponent, null, "← to go back · ") : null, "Esc/Enter/Space to close", A.status === "running" && B ? H6.default.createElement(TextComponent, null, " · k to kill") : null)))
 }
 var H6;
-var _49 = L(() => {
+var _49 = lazyLoader(() => {
     hA();
     c9();
     H9();
     rOA();
     n2();
     jq();
-    H6 = GA(VA(), 1)
+    H6 = esmImport(VA(), 1)
 });
 
 function TR3(A, Q, B) {
@@ -1426,7 +1429,7 @@ function FW0(A, Q) {
         }
     })
 }
-var rZ1 = L(() => {
+var rZ1 = lazyLoader(() => {
     UZ();
     u1();
     XH();
@@ -1456,7 +1459,7 @@ function oZ1({
     });
     let W = DQ();
 
-function X(P) {
+    function X(P) {
         G((y) => {
             let v = B[P];
             if (!v) return y;
@@ -1495,20 +1498,20 @@ function X(P) {
             onDone: A,
             onKillShell: () => X(P.id),
             onBack: () => I(null),
-            key: `shell-${P.id}`
+            key: `shell-TextComponent{P.id}`
         });
         else if (P.type === "async_agent") return K3.default.createElement(S49, {
             agent: P,
             onDone: A,
             onKillAgent: () => FW0(P.agentId, G),
             onBack: () => I(null),
-            key: `agent-${P.agentId}`
+            key: `agent-TextComponent{P.agentId}`
         });
         else return K3.default.createElement(P49, {
             session: P,
             onDone: A,
             toolUseContext: Q,
             onBack: () => I(null),
-            key: `session-${P.id}`
+            key: `session-TextComponent{P.id}`
         })
     }

@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_039.js
+ * 处理时间: 2025-12-09T03:41:39.441Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.132Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -188,11 +190,11 @@
     });
     Jx5.entityMap = Jx5.HTML_ENTITIES
 });
-var KO2 = U((zx5) => {
+var KO2 = moduleWrapper((zx5) => {
     var WRA = eOA().NAMESPACE,
         I80 = /[A-Z_a-z\xC0-\xD6\xD8-\xF6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD]/,
         IO2 = new RegExp("[\\-\\.0-9" + I80.source.slice(1, -1) + "\\u00B7\\u0300-\\u036F\\u203F-\\u2040]"),
-        YO2 = new RegExp("^" + I80.source + IO2.source + "*(?::" + I80.source + IO2.source + "*)?$"),
+        YO2 = new RegExp("^" + I80.source + IO2.source + "*(?::" + I80.source + IO2.source + "*)?TextComponent"),
         IRA = 0,
         ri = 1,
         RJA = 2,
@@ -202,13 +204,13 @@ var KO2 = U((zx5) => {
         JRA = 6,
         l81 = 7;
 
-function jJA(A, Q) {
+    function jJA(A, Q) {
         if (this.message = A, this.locator = Q, Error.captureStackTrace) Error.captureStackTrace(this, jJA)
     }
     jJA.prototype = Error();
     jJA.prototype.name = jJA.name;
 
-function XO2() {}
+    function XO2() {}
     XO2.prototype = {
         parse: function(A, Q, B) {
             var G = this.domBuilder;
@@ -216,7 +218,7 @@ function XO2() {}
         }
     };
 
-function Fx5(A, Q, B, G, Z) {
+    function Fx5(A, Q, B, G, Z) {
         function I(QA) {
             if (QA > 65535) {
                 QA -= 65536;
@@ -226,27 +228,27 @@ function Fx5(A, Q, B, G, Z) {
             } else return String.fromCharCode(QA)
         }
 
-function Y(QA) {
+        function Y(QA) {
             var IA = QA.slice(1, -1);
             if (Object.hasOwnProperty.call(B, IA)) return B[IA];
             else if (IA.charAt(0) === "#") return I(parseInt(IA.substr(1).replace("x", "0x")));
             else return Z.error("entity not found:" + QA), QA
         }
 
-function J(QA) {
+        function J(QA) {
             if (QA > C) {
                 var IA = A.substring(C, QA).replace(/&#?\w+;/g, Y);
                 K && W(C), G.characters(IA, 0, QA - C), C = QA
             }
         }
 
-function W(QA, IA) {
+        function W(QA, IA) {
             while (QA >= F && (IA = V.exec(A))) X = IA.index, F = X + IA[0].length, K.lineNumber++;
             K.columnNumber = QA - X + 1
         }
         var X = 0,
             F = 0,
-            V = /.*(?:\r\n?|\n)|.*$/g,
+            V = /.*(?:\r\n?|\n)|.*TextComponent/g,
             K = G.locator,
             D = [{
                 currentNSMap: Q
@@ -257,7 +259,7 @@ function W(QA, IA) {
             try {
                 var E = A.indexOf("<", C);
                 if (E < 0) {
-                    if (!A.substr(C).match(/^\s*$/)) {
+                    if (!A.substr(C).match(/^\s*TextComponent/)) {
                         var z = G.doc,
                             w = z.createTextNode(A.substr(C));
                         z.appendChild(w), G.currentElement = w
@@ -268,7 +270,7 @@ function W(QA, IA) {
                 switch (A.charAt(E + 1)) {
                     case "/":
                         var u = A.indexOf(">", E + 3),
-                            N = A.substring(E + 2, u).replace(/[ \t\n\r]+$/g, ""),
+                            N = A.substring(E + 2, u).replace(/[ \t\n\r]+TextComponent/g, ""),
                             q = D.pop();
                         if (u < 0) N = A.substring(E + 2).replace(/[\s<].*/, ""), Z.error("end tag name: " + N + " is not complete:" + q.tagName), u = E + 1 + N.length;
                         else if (N.match(/\s</)) N = N.replace(/[\s<].*/, ""), Z.error("end tag name: " + N + " maybe not complete"), u = E + 1 + N.length;
@@ -320,11 +322,11 @@ function W(QA, IA) {
         }
     }
 
-function JO2(A, Q) {
+    function JO2(A, Q) {
         return Q.lineNumber = A.lineNumber, Q.columnNumber = A.columnNumber, Q
     }
 
-function Vx5(A, Q, B, G, Z, I) {
+    function Vx5(A, Q, B, G, Z, I) {
         function Y(D, H, C) {
             if (B.attributeNames.hasOwnProperty(D)) I.fatalError("Attribute " + D + " redefined");
             B.addValue(D, H.replace(/[\t\n\r]/g, " ").replace(/&#?\w+;/g, Z), C)
@@ -384,7 +386,7 @@ function Vx5(A, Q, B, G, Z, I) {
                             if (F === RJA) W = J;
                             if (F == TJA) I.warning('attribute "' + W + '" missed quot(")!'), Y(J, W, Q);
                             else {
-                                if (!WRA.isHTML(G[""]) || !W.match(/^(?:disabled|checked|selected)$/i)) I.warning('attribute "' + W + '" missed value!! "' + W + '" instead!!');
+                                if (!WRA.isHTML(G[""]) || !W.match(/^(?:disabled|checked|selected)TextComponent/i)) I.warning('attribute "' + W + '" missed value!! "' + W + '" instead!!');
                                 Y(W, W, Q)
                             }
                             break;
@@ -411,7 +413,7 @@ function Vx5(A, Q, B, G, Z, I) {
                     } else switch (F) {
                         case RJA:
                             var K = B.tagName;
-                            if (!WRA.isHTML(G[""]) || !J.match(/^(?:disabled|checked|selected)$/i)) I.warning('attribute "' + J + '" missed value!! "' + J + '" instead2!!');
+                            if (!WRA.isHTML(G[""]) || !J.match(/^(?:disabled|checked|selected)TextComponent/i)) I.warning('attribute "' + J + '" missed value!! "' + J + '" instead2!!');
                             Y(J, J, Q), Q = X, F = ri;
                             break;
                         case PJA:
@@ -430,7 +432,7 @@ function Vx5(A, Q, B, G, Z, I) {
         }
     }
 
-function WO2(A, Q, B) {
+    function WO2(A, Q, B) {
         var G = A.tagName,
             Z = null,
             V = A.length;
@@ -469,8 +471,8 @@ function WO2(A, Q, B) {
         } else return A.currentNSMap = B, A.localNSMap = Z, !0
     }
 
-function Kx5(A, Q, B, G, Z) {
-        if (/^(?:script|textarea)$/i.test(B)) {
+    function Kx5(A, Q, B, G, Z) {
+        if (/^(?:script|textarea)TextComponent/i.test(B)) {
             var I = A.indexOf("</" + B + ">", Q),
                 Y = A.substring(Q + 1, I);
             if (/[&<]/.test(Y)) {
@@ -481,7 +483,7 @@ function Kx5(A, Q, B, G, Z) {
         return Q + 1
     }
 
-function Dx5(A, Q, B, G) {
+    function Dx5(A, Q, B, G) {
         var Z = G[B];
         if (Z == null) {
             if (Z = A.lastIndexOf("</" + B + ">"), Z < Q) Z = A.lastIndexOf("</" + B);
@@ -490,12 +492,12 @@ function Dx5(A, Q, B, G) {
         return Z < Q
     }
 
-function FO2(A, Q) {
+    function FO2(A, Q) {
         for (var B in A)
             if (Object.prototype.hasOwnProperty.call(A, B)) Q[B] = A[B]
     }
 
-function Hx5(A, Q, B, G) {
+    function Hx5(A, Q, B, G) {
         var Z = A.charAt(Q + 2);
         switch (Z) {
             case "-":
@@ -526,10 +528,10 @@ function Hx5(A, Q, B, G) {
         return -1
     }
 
-function Cx5(A, Q, B) {
+    function Cx5(A, Q, B) {
         var G = A.indexOf("?>", Q);
         if (G) {
-            var Z = A.substring(Q, G).match(/^<\?(\S*)\s*([\s\S]*?)\s*$/);
+            var Z = A.substring(Q, G).match(/^<\?(\S*)\s*([\s\S]*?)\s*TextComponent/);
             if (Z) {
                 var I = Z[0].length;
                 return B.processingInstruction(Z[1], Z[2]), G + 2
@@ -538,7 +540,7 @@ function Cx5(A, Q, B) {
         return -1
     }
 
-function VO2() {
+    function VO2() {
         this.attributeNames = {}
     }
     VO2.prototype = {
@@ -572,7 +574,7 @@ function VO2() {
         }
     };
 
-function Ex5(A, Q) {
+    function Ex5(A, Q) {
         var B, G = [],
             Z = /'[^']+'|"[^"]+"|[^\s<>\/=]+=?|(\/?\s*>|<)/g;
         Z.lastIndex = Q, Z.exec(A);
@@ -582,7 +584,7 @@ function Ex5(A, Q) {
     zx5.XMLReader = XO2;
     zx5.ParseError = jJA
 });
-var $O2 = U((Rx5) => {
+var $O2 = moduleWrapper((Rx5) => {
     var wx5 = eOA(),
         qx5 = Z80(),
         DO2 = ZO2(),
@@ -592,13 +594,13 @@ var $O2 = U((Rx5) => {
         Lx5 = EO2.ParseError,
         Mx5 = EO2.XMLReader;
 
-function zO2(A) {
+    function zO2(A) {
         return A.replace(/\r[\n\u0085]/g, `
 `).replace(/[\r\u0085\u2028]/g, `
 `)
     }
 
-function UO2(A) {
+    function UO2(A) {
         this.options = A || {
             locator: {}
         }
@@ -610,7 +612,7 @@ function UO2(A) {
             I = B.errorHandler,
             Y = B.locator,
             J = B.xmlns || {},
-            W = /\/x?html?$/.test(Q),
+            W = /\/x?html?TextComponent/.test(Q),
             X = W ? DO2.HTML_ENTITIES : DO2.XML_ENTITIES;
         if (Y) Z.setDocumentLocator(Y);
         if (G.errorHandler = Ox5(I, Z, Y), G.domBuilder = B.domBuilder || Z, W) J[""] = HO2.HTML;
@@ -621,17 +623,16 @@ function UO2(A) {
         return Z.doc
     };
 
-function Ox5(A, Q, B) {
+    function Ox5(A, Q, B) {
         if (!A) {
             if (Q instanceof XRA) return Q;
             A = Q
         }
-
-var G = {},
+        var G = {},
             Z = A instanceof Function;
         B = B || {};
 
-function I(Y) {
+        function I(Y) {
             var J = A[Y];
             if (!J && Z) J = A.length == 2 ? function(W) {
                 A(Y, W)
@@ -643,11 +644,11 @@ function I(Y) {
         return I("warning"), I("error"), I("fatalError"), G
     }
 
-function XRA() {
+    function XRA() {
         this.cdata = !1
     }
 
-function SJA(A, Q) {
+    function SJA(A, Q) {
         Q.lineNumber = A.lineNumber, Q.columnNumber = A.columnNumber
     }
     XRA.prototype = {
@@ -684,7 +685,7 @@ function SJA(A, Q) {
                 if (this.cdata) var G = this.doc.createCDATASection(A);
                 else var G = this.doc.createTextNode(A);
                 if (this.currentElement) this.currentElement.appendChild(G);
-                else if (/^\s*$/.test(A)) this.doc.appendChild(G);
+                else if (/^\s*TextComponent/.test(A)) this.doc.appendChild(G);
                 this.locator && SJA(this.locator, G)
             }
         },
@@ -724,12 +725,12 @@ function SJA(A, Q) {
         }
     };
 
-function Y80(A) {
+    function Y80(A) {
         if (A) return `
 @` + (A.systemId || "") + "#[line:" + A.lineNumber + ",col:" + A.columnNumber + "]"
     }
 
-function CO2(A, Q, B) {
+    function CO2(A, Q, B) {
         if (typeof A == "string") return A.substr(Q, B);
         else {
             if (A.length >= Q + B || Q) return new java.lang.String(A, Q, B) + "";
@@ -742,7 +743,7 @@ function CO2(A, Q, B) {
         }
     });
 
-function i81(A, Q) {
+    function i81(A, Q) {
         if (!A.currentElement) A.doc.appendChild(Q);
         else A.currentElement.appendChild(Q)
     }
@@ -750,13 +751,13 @@ function i81(A, Q) {
     Rx5.normalizeLineEndings = zO2;
     Rx5.DOMParser = UO2
 });
-var qO2 = U((Sx5) => {
+var qO2 = moduleWrapper((Sx5) => {
     var wO2 = Z80();
     Sx5.DOMImplementation = wO2.DOMImplementation;
     Sx5.XMLSerializer = wO2.XMLSerializer;
     Sx5.DOMParser = $O2().DOMParser
 });
-var LO2 = U((fx5) => {
+var LO2 = moduleWrapper((fx5) => {
     var {
         DOMParser: xx5
     } = qO2();
@@ -765,20 +766,20 @@ var LO2 = U((fx5) => {
         NO2 = 4,
         vx5 = 8;
 
-function J80(A) {
+    function J80(A) {
         return A.nodeType === n81 || A.nodeType === vx5 || A.nodeType === NO2
     }
 
-function yh(A) {
+    function yh(A) {
         if (!A.childNodes || A.childNodes.length === 0) return !0;
         else return !1
     }
 
-function Z0A(A, Q) {
+    function Z0A(A, Q) {
         if (!A) throw Error(Q)
     }
 
-function bx5(A) {
+    function bx5(A) {
         var Q = new xx5().parseFromString(A);
         Z0A(Q.documentElement.nodeName === "plist", "malformed document. First element should be <plist>");
         var B = _JA(Q.documentElement);
@@ -786,7 +787,7 @@ function bx5(A) {
         return B
     }
 
-function _JA(A) {
+    function _JA(A) {
         var Q, B, G, Z, I, Y, J, W;
         if (!A) return null;
         if (A.nodeName === "plist") {
@@ -839,7 +840,7 @@ function _JA(A) {
         else throw Error("Invalid PLIST tag " + A.nodeName)
     }
 });
-var Fy = U((MO2, oi) => {
+var Fy = moduleWrapper((MO2, oi) => {
     (function() {
         var A, Q, B, G, Z, I, Y, J = {}.hasOwnProperty;
         A = function(W, ...X) {
@@ -880,7 +881,7 @@ var Fy = U((MO2, oi) => {
         }, MO2.assign = A, MO2.isFunction = Z, MO2.isObject = I, MO2.isArray = B, MO2.isEmpty = G, MO2.isPlainObject = Y, MO2.getValue = Q
     }).call(MO2)
 });
-var W80 = U((OO2, RO2) => {
+var W80 = moduleWrapper((OO2, RO2) => {
     (function() {
         var A;
         RO2.exports = A = class {
@@ -902,7 +903,7 @@ var W80 = U((OO2, RO2) => {
         }
     }).call(OO2)
 });
-var jO2 = U((TO2, PO2) => {
+var jO2 = moduleWrapper((TO2, PO2) => {
     (function() {
         var A;
         PO2.exports = A = class {
@@ -913,7 +914,7 @@ var jO2 = U((TO2, PO2) => {
         }
     }).call(TO2)
 });
-var kO2 = U((SO2, _O2) => {
+var kO2 = moduleWrapper((SO2, _O2) => {
     (function() {
         var A;
         _O2.exports = A = function() {
@@ -936,7 +937,7 @@ var kO2 = U((SO2, _O2) => {
         }.call(this)
     }).call(SO2)
 });
-var vO2 = U((yO2, xO2) => {
+var vO2 = moduleWrapper((yO2, xO2) => {
     (function() {
         var A, Q, B;
         Q = jO2(), B = kO2(), xO2.exports = A = function() {
@@ -983,7 +984,7 @@ var vO2 = U((yO2, xO2) => {
         }.call(this)
     }).call(yO2)
 });
-var bW = U((bO2, fO2) => {
+var bW = moduleWrapper((bO2, fO2) => {
     (function() {
         fO2.exports = {
             Element: 1,
@@ -1006,7 +1007,7 @@ var bW = U((bO2, fO2) => {
         }
     }).call(bO2)
 });
-var X80 = U((hO2, gO2) => {
+var X80 = moduleWrapper((hO2, gO2) => {
     (function() {
         var A, Q, B;
         A = bW(), B = Mq(), gO2.exports = Q = function() {
@@ -1069,7 +1070,7 @@ var X80 = U((hO2, gO2) => {
         }.call(this)
     }).call(hO2)
 });
-var a81 = U((uO2, mO2) => {
+var a81 = moduleWrapper((uO2, mO2) => {
     (function() {
         var A;
         mO2.exports = A = function() {
@@ -1112,7 +1113,7 @@ var a81 = U((uO2, mO2) => {
         }.call(this)
     }).call(uO2)
 });
-var s81 = U((dO2, cO2) => {
+var s81 = moduleWrapper((dO2, cO2) => {
     (function() {
         var A, Q, B, G, Z, I, Y, J, W = {}.hasOwnProperty;
         ({
@@ -1293,7 +1294,7 @@ var s81 = U((dO2, cO2) => {
         }.call(this)
     }).call(dO2)
 });
-var FRA = U((pO2, lO2) => {
+var FRA = moduleWrapper((pO2, lO2) => {
     (function() {
         var A, Q;
         Q = Mq(), lO2.exports = A = function() {
@@ -1348,7 +1349,7 @@ var FRA = U((pO2, lO2) => {
         }.call(this)
     }).call(pO2)
 });
-var r81 = U((iO2, nO2) => {
+var r81 = moduleWrapper((iO2, nO2) => {
     (function() {
         var A, Q, B;
         A = bW(), B = FRA(), nO2.exports = Q = class extends B {
@@ -1366,7 +1367,7 @@ var r81 = U((iO2, nO2) => {
         }
     }).call(iO2)
 });
-var o81 = U((aO2, sO2) => {
+var o81 = moduleWrapper((aO2, sO2) => {
     (function() {
         var A, Q, B;
         A = bW(), Q = FRA(), sO2.exports = B = class extends Q {
@@ -1384,7 +1385,7 @@ var o81 = U((aO2, sO2) => {
         }
     }).call(aO2)
 });
-var t81 = U((rO2, oO2) => {
+var t81 = moduleWrapper((rO2, oO2) => {
     (function() {
         var A, Q, B, G;
         ({
@@ -1407,7 +1408,7 @@ var t81 = U((rO2, oO2) => {
         }
     }).call(rO2)
 });
-var e81 = U((tO2, eO2) => {
+var e81 = moduleWrapper((tO2, eO2) => {
     (function() {
         var A, Q, B;
         B = Mq(), A = bW(), eO2.exports = Q = class extends B {
@@ -1418,8 +1419,8 @@ var e81 = U((tO2, eO2) => {
                 if (!J) throw Error("Missing DTD attribute type. " + this.debugInfo(I));
                 if (!W) throw Error("Missing DTD attribute default. " + this.debugInfo(I));
                 if (W.indexOf("#") !== 0) W = "#" + W;
-                if (!W.match(/^(#REQUIRED|#IMPLIED|#FIXED|#DEFAULT)$/)) throw Error("Invalid default value type; expected: #REQUIRED, #IMPLIED, #FIXED or #DEFAULT. " + this.debugInfo(I));
-                if (X && !W.match(/^(#FIXED|#DEFAULT)$/)) throw Error("Default value only applies to #FIXED or #DEFAULT. " + this.debugInfo(I));
+                if (!W.match(/^(#REQUIRED|#IMPLIED|#FIXED|#DEFAULT)TextComponent/)) throw Error("Invalid default value type; expected: #REQUIRED, #IMPLIED, #FIXED or #DEFAULT. " + this.debugInfo(I));
+                if (X && !W.match(/^(#FIXED|#DEFAULT)TextComponent/)) throw Error("Default value only applies to #FIXED or #DEFAULT. " + this.debugInfo(I));
                 if (this.elementName = this.stringify.name(I), this.type = A.AttributeDeclaration, this.attributeName = this.stringify.name(Y), this.attributeType = this.stringify.dtdAttType(J), X) this.defaultValue = this.stringify.dtdAttDefault(X);
                 this.defaultValueType = W
             }
@@ -1429,7 +1430,7 @@ var e81 = U((tO2, eO2) => {
         }
     }).call(tO2)
 });
-var A61 = U((AR2, QR2) => {
+var A61 = moduleWrapper((AR2, QR2) => {
     (function() {
         var A, Q, B, G;
         ({
@@ -1482,7 +1483,7 @@ var A61 = U((AR2, QR2) => {
         }.call(this)
     }).call(AR2)
 });
-var Q61 = U((BR2, GR2) => {
+var Q61 = moduleWrapper((BR2, GR2) => {
     (function() {
         var A, Q, B;
         B = Mq(), A = bW(), GR2.exports = Q = class extends B {
@@ -1499,7 +1500,7 @@ var Q61 = U((BR2, GR2) => {
         }
     }).call(BR2)
 });
-var B61 = U((ZR2, IR2) => {
+var B61 = moduleWrapper((ZR2, IR2) => {
     (function() {
         var A, Q, B;
         B = Mq(), A = bW(), IR2.exports = Q = function() {

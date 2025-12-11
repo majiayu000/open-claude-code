@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_021.js
+ * 处理时间: 2025-12-09T03:41:37.507Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.980Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -37,22 +40,22 @@
         return B
     }
 
-function wl6(A) {
+    function wl6(A) {
         return $l6(Ul6(A))
     }
 
-function ql6(A) {
+    function ql6(A) {
         let Q = "";
         for (let [B, G] of A.entries()) {
             let Z = ppB(G[0], lpB, !0),
                 I = ppB(G[1], lpB, !0);
             if (B !== 0) Q += "&";
-            Q += `${Z}=${I}`
+            Q += `TextComponent{Z}=TextComponent{I}`
         }
         return Q
     }
 
-function Nl6(A, Q) {
+    function Nl6(A, Q) {
         let B = [],
             G = 0,
             Z = A.indexOf(Q);
@@ -61,7 +64,7 @@ function Nl6(A, Q) {
         return B
     }
 
-function npB(A, Q, B) {
+    function npB(A, Q, B) {
         let G = A.indexOf(Q);
         while (G >= 0) A[G] = B, G = A.indexOf(Q, G + 1);
         return A
@@ -71,7 +74,7 @@ function npB(A, Q, B) {
         serializeUrlencoded: ql6
     }
 });
-var rpB = U((Ll6) => {
+var rpB = moduleWrapper((Ll6) => {
     var spB = deA(),
         reA = peA();
     Ll6.convert = (A, Q, {
@@ -79,7 +82,7 @@ var rpB = U((Ll6) => {
     } = {}) => {
         if (typeof Q !== "function") throw new A.TypeError(B + " is not a function");
 
-function G(...Z) {
+        function G(...Z) {
             let I = reA.tryWrapperForImpl(this),
                 Y;
             for (let J = 0; J < Z.length; J++) Z[J] = reA.tryWrapperForImpl(Z[J]);
@@ -98,7 +101,7 @@ function G(...Z) {
         }, G[reA.wrapperSymbol] = Q, G.objectReference = Q, G
     }
 });
-var opB = U((Ol6) => {
+var opB = moduleWrapper((Ol6) => {
     var Vi1 = Fi1();
     Ol6.implementation = class {
         constructor(Q, B, {
@@ -177,7 +180,7 @@ var opB = U((Ol6) => {
         }
     }
 });
-var Di1 = U((jl6) => {
+var Di1 = moduleWrapper((jl6) => {
     var NU = deA(),
         GZ = peA(),
         Tl6 = rpB(),
@@ -194,7 +197,7 @@ var Di1 = U((jl6) => {
         context: B = "The provided value"
     } = {}) => {
         if (jl6.is(Q)) return GZ.implForWrapper(Q);
-        throw new A.TypeError(`${B} is not of type 'URLSearchParams'.`)
+        throw new A.TypeError(`TextComponent{B} is not of type 'URLSearchParams'.`)
     };
     jl6.createDefaultIterator = (A, Q, B) => {
         let Z = A[epB]["URLSearchParams Iterator"],
@@ -209,7 +212,7 @@ var Di1 = U((jl6) => {
         }), I
     };
 
-function AlB(A, Q) {
+    function AlB(A, Q) {
         let B;
         if (Q !== void 0) B = Q.prototype;
         if (!GZ.isObject(B)) B = A[epB].URLSearchParams.prototype;
@@ -243,8 +246,7 @@ function AlB(A, Q) {
     jl6.install = (A, Q) => {
         if (!Q.some((Z) => Pl6.has(Z))) return;
         let B = GZ.initCtorRegistry(A);
-
-class G {
+        class G {
             constructor() {
                 let Z = [];
                 {
@@ -302,7 +304,7 @@ class G {
             append(Z, I) {
                 let Y = this !== null && this !== void 0 ? this : A;
                 if (!jl6.is(Y)) throw new A.TypeError("'append' called on an object that is not a valid instance of URLSearchParams.");
-                if (arguments.length < 2) throw new A.TypeError(`Failed to execute 'append' on 'URLSearchParams': 2 arguments required, but only ${arguments.length} present.`);
+                if (arguments.length < 2) throw new A.TypeError(`Failed to execute 'append' on 'URLSearchParams': 2 arguments required, but only TextComponent{arguments.length} present.`);
                 let J = [];
                 {
                     let W = arguments[0];
@@ -322,7 +324,7 @@ class G {
             delete(Z) {
                 let I = this !== null && this !== void 0 ? this : A;
                 if (!jl6.is(I)) throw new A.TypeError("'delete' called on an object that is not a valid instance of URLSearchParams.");
-                if (arguments.length < 1) throw new A.TypeError(`Failed to execute 'delete' on 'URLSearchParams': 1 argument required, but only ${arguments.length} present.`);
+                if (arguments.length < 1) throw new A.TypeError(`Failed to execute 'delete' on 'URLSearchParams': 1 argument required, but only TextComponent{arguments.length} present.`);
                 let Y = [];
                 {
                     let J = arguments[0];
@@ -343,7 +345,7 @@ class G {
             get(Z) {
                 let I = this !== null && this !== void 0 ? this : A;
                 if (!jl6.is(I)) throw new A.TypeError("'get' called on an object that is not a valid instance of URLSearchParams.");
-                if (arguments.length < 1) throw new A.TypeError(`Failed to execute 'get' on 'URLSearchParams': 1 argument required, but only ${arguments.length} present.`);
+                if (arguments.length < 1) throw new A.TypeError(`Failed to execute 'get' on 'URLSearchParams': 1 argument required, but only TextComponent{arguments.length} present.`);
                 let Y = [];
                 {
                     let J = arguments[0];
@@ -357,7 +359,7 @@ class G {
             getAll(Z) {
                 let I = this !== null && this !== void 0 ? this : A;
                 if (!jl6.is(I)) throw new A.TypeError("'getAll' called on an object that is not a valid instance of URLSearchParams.");
-                if (arguments.length < 1) throw new A.TypeError(`Failed to execute 'getAll' on 'URLSearchParams': 1 argument required, but only ${arguments.length} present.`);
+                if (arguments.length < 1) throw new A.TypeError(`Failed to execute 'getAll' on 'URLSearchParams': 1 argument required, but only TextComponent{arguments.length} present.`);
                 let Y = [];
                 {
                     let J = arguments[0];
@@ -371,7 +373,7 @@ class G {
             has(Z) {
                 let I = this !== null && this !== void 0 ? this : A;
                 if (!jl6.is(I)) throw new A.TypeError("'has' called on an object that is not a valid instance of URLSearchParams.");
-                if (arguments.length < 1) throw new A.TypeError(`Failed to execute 'has' on 'URLSearchParams': 1 argument required, but only ${arguments.length} present.`);
+                if (arguments.length < 1) throw new A.TypeError(`Failed to execute 'has' on 'URLSearchParams': 1 argument required, but only TextComponent{arguments.length} present.`);
                 let Y = [];
                 {
                     let J = arguments[0];
@@ -392,7 +394,7 @@ class G {
             set(Z, I) {
                 let Y = this !== null && this !== void 0 ? this : A;
                 if (!jl6.is(Y)) throw new A.TypeError("'set' called on an object that is not a valid instance of URLSearchParams.");
-                if (arguments.length < 2) throw new A.TypeError(`Failed to execute 'set' on 'URLSearchParams': 2 arguments required, but only ${arguments.length} present.`);
+                if (arguments.length < 2) throw new A.TypeError(`Failed to execute 'set' on 'URLSearchParams': 2 arguments required, but only TextComponent{arguments.length} present.`);
                 let J = [];
                 {
                     let W = arguments[0];
@@ -529,7 +531,7 @@ class G {
     };
     var rp = opB()
 });
-var ZlB = U((bl6) => {
+var ZlB = moduleWrapper((bl6) => {
     var RG = Xi1(),
         GlB = Fi1(),
         vl6 = Di1();
@@ -537,12 +539,12 @@ var ZlB = U((bl6) => {
         constructor(Q, [B, G]) {
             let Z = null;
             if (G !== void 0) {
-                if (Z = RG.basicURLParse(G), Z === null) throw TypeError(`Invalid base URL: ${G}`)
+                if (Z = RG.basicURLParse(G), Z === null) throw TypeError(`Invalid base URL: TextComponent{G}`)
             }
             let I = RG.basicURLParse(B, {
                 baseURL: Z
             });
-            if (I === null) throw TypeError(`Invalid URL: ${B}`);
+            if (I === null) throw TypeError(`Invalid URL: TextComponent{B}`);
             let Y = I.query !== null ? I.query : "";
             this._url = I, this._query = vl6.createImpl(Q, [Y], {
                 doNotStripQMark: !0
@@ -570,7 +572,7 @@ var ZlB = U((bl6) => {
         }
         set href(Q) {
             let B = RG.basicURLParse(Q);
-            if (B === null) throw TypeError(`Invalid URL: ${Q}`);
+            if (B === null) throw TypeError(`Invalid URL: TextComponent{Q}`);
             this._url = B, this._query._list.splice(0);
             let {
                 query: G
@@ -581,10 +583,10 @@ var ZlB = U((bl6) => {
             return RG.serializeURLOrigin(this._url)
         }
         get protocol() {
-            return `${this._url.scheme}:`
+            return `TextComponent{this._url.scheme}:`
         }
         set protocol(Q) {
-            RG.basicURLParse(`${Q}:`, {
+            RG.basicURLParse(`TextComponent{Q}:`, {
                 url: this._url,
                 stateOverride: "scheme start"
             })
@@ -607,7 +609,7 @@ var ZlB = U((bl6) => {
             let Q = this._url;
             if (Q.host === null) return "";
             if (Q.port === null) return RG.serializeHost(Q.host);
-            return `${RG.serializeHost(Q.host)}:${RG.serializeInteger(Q.port)}`
+            return `TextComponent{RG.serializeHost(Q.host)}:TextComponent{RG.serializeInteger(Q.port)}`
         }
         set host(Q) {
             if (RG.hasAnOpaquePath(this._url)) return;
@@ -651,7 +653,7 @@ var ZlB = U((bl6) => {
         }
         get search() {
             if (this._url.query === null || this._url.query === "") return "";
-            return `?${this._url.query}`
+            return `?TextComponent{this._url.query}`
         }
         set search(Q) {
             let B = this._url;
@@ -670,7 +672,7 @@ var ZlB = U((bl6) => {
         }
         get hash() {
             if (this._url.fragment === null || this._url.fragment === "") return "";
-            return `#${this._url.fragment}`
+            return `#TextComponent{this._url.fragment}`
         }
         set hash(Q) {
             if (Q === "") {
@@ -688,7 +690,7 @@ var ZlB = U((bl6) => {
         }
     }
 });
-var WlB = U((ul6) => {
+var WlB = moduleWrapper((ul6) => {
     var dH = deA(),
         LU = peA(),
         _3 = LU.implSymbol,
@@ -703,10 +705,10 @@ var WlB = U((ul6) => {
         context: B = "The provided value"
     } = {}) => {
         if (ul6.is(Q)) return LU.implForWrapper(Q);
-        throw new A.TypeError(`${B} is not of type 'URL'.`)
+        throw new A.TypeError(`TextComponent{B} is not of type 'URL'.`)
     };
 
-function IlB(A, Q) {
+    function IlB(A, Q) {
         let B;
         if (Q !== void 0) B = Q.prototype;
         if (!LU.isObject(B)) B = A[hl6].URL.prototype;
@@ -740,10 +742,9 @@ function IlB(A, Q) {
     ul6.install = (A, Q) => {
         if (!Q.some((Z) => gl6.has(Z))) return;
         let B = LU.initCtorRegistry(A);
-
-class G {
+        class G {
             constructor(Z) {
-                if (arguments.length < 1) throw new A.TypeError(`Failed to construct 'URL': 1 argument required, but only ${arguments.length} present.`);
+                if (arguments.length < 1) throw new A.TypeError(`Failed to construct 'URL': 1 argument required, but only TextComponent{arguments.length} present.`);
                 let I = [];
                 {
                     let Y = arguments[0];
@@ -914,7 +915,7 @@ class G {
                 }), I[_3].hash = Z
             }
             static parse(Z) {
-                if (arguments.length < 1) throw new A.TypeError(`Failed to execute 'parse' on 'URL': 1 argument required, but only ${arguments.length} present.`);
+                if (arguments.length < 1) throw new A.TypeError(`Failed to execute 'parse' on 'URL': 1 argument required, but only TextComponent{arguments.length} present.`);
                 let I = [];
                 {
                     let Y = arguments[0];
@@ -933,7 +934,7 @@ class G {
                 return LU.tryWrapperForImpl(e_.implementation.parse(A, ...I))
             }
             static canParse(Z) {
-                if (arguments.length < 1) throw new A.TypeError(`Failed to execute 'canParse' on 'URL': 1 argument required, but only ${arguments.length} present.`);
+                if (arguments.length < 1) throw new A.TypeError(`Failed to execute 'canParse' on 'URL': 1 argument required, but only TextComponent{arguments.length} present.`);
                 let I = [];
                 {
                     let Y = arguments[0];
@@ -1018,13 +1019,13 @@ class G {
     };
     var e_ = ZlB()
 });
-var XlB = U((al6) => {
+var XlB = moduleWrapper((al6) => {
     var il6 = WlB(),
         nl6 = Di1();
     al6.URL = il6;
     al6.URLSearchParams = nl6
 });
-var VlB = U((el6) => {
+var VlB = moduleWrapper((el6) => {
     var {
         URL: ol6,
         URLSearchParams: tl6
@@ -1053,25 +1054,24 @@ var VlB = U((el6) => {
     el6.percentDecodeString = FlB.percentDecodeString;
     el6.percentDecodeBytes = FlB.percentDecodeBytes
 });
-var Mi1 = U((TT, NlB) => {
+var Mi1 = moduleWrapper((TT, NlB) => {
     Object.defineProperty(TT, "__esModule", {
         value: !0
     });
 
-function YZA(A) {
+    function YZA(A) {
         return A && typeof A === "object" && "default" in A ? A.default : A
     }
-    var RT = YZA(UA("stream")),
-        ClB = YZA(UA("http")),
-        AA1 = YZA(UA("url")),
+    var RT = YZA(nodeRequire("stream")),
+        ClB = YZA(nodeRequire("http")),
+        AA1 = YZA(nodeRequire("url")),
         ElB = YZA(VlB()),
-        Ci6 = YZA(UA("https")),
-        Le = YZA(UA("zlib")),
+        Ci6 = YZA(nodeRequire("https")),
+        Le = YZA(nodeRequire("zlib")),
         Ei6 = RT.Readable,
         wf = Symbol("buffer"),
         Ci1 = Symbol("type");
-
-class ZZA {
+    class ZZA {
         constructor() {
             this[Ci1] = "";
             let A = arguments[0],
@@ -1154,7 +1154,7 @@ class ZZA {
         configurable: !0
     });
 
-function wD(A, Q, B) {
+    function wD(A, Q, B) {
         if (Error.call(this, A), this.message = A, this.type = Q, B) this.code = this.errno = B.code;
         Error.captureStackTrace(this, this.constructor)
     }
@@ -1170,7 +1170,7 @@ function wD(A, Q, B) {
     var Nf = Symbol("Body internals"),
         KlB = RT.PassThrough;
 
-function dV(A) {
+    function dV(A) {
         var Q = this,
             B = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {},
             G = B.size;
@@ -1190,7 +1190,7 @@ function dV(A) {
                 disturbed: !1,
                 error: null
             }, this.size = Z, this.timeout = Y, A instanceof RT) A.on("error", function(J) {
-            let W = J.name === "AbortError" ? J : new wD(`Invalid response body while trying to fetch ${Q.url}: ${J.message}`, "system", J);
+            let W = J.name === "AbortError" ? J : new wD(`Invalid response body while trying to fetch TextComponent{Q.url}: TextComponent{J.message}`, "system", J);
             Q[Nf].error = W
         })
     }
@@ -1222,7 +1222,7 @@ function dV(A) {
                 try {
                     return JSON.parse(Q.toString())
                 } catch (B) {
-                    return dV.Promise.reject(new wD(`invalid json response body at ${A.url} reason: ${B.message}`, "invalid-json"))
+                    return dV.Promise.reject(new wD(`invalid json response body at TextComponent{A.url} reason: TextComponent{B.message}`, "invalid-json"))
                 }
             })
         },
@@ -1269,9 +1269,9 @@ function dV(A) {
             }
     };
 
-function BZA() {
+    function BZA() {
         var A = this;
-        if (this[Nf].disturbed) return dV.Promise.reject(TypeError(`body used already for: ${this.url}`));
+        if (this[Nf].disturbed) return dV.Promise.reject(TypeError(`body used already for: TextComponent{this.url}`));
         if (this[Nf].disturbed = !0, this[Nf].error) return dV.Promise.reject(this[Nf].error);
         let Q = this.body;
         if (Q === null) return dV.Promise.resolve(Buffer.alloc(0));
@@ -1284,15 +1284,15 @@ function BZA() {
         return new dV.Promise(function(I, Y) {
             let J;
             if (A.timeout) J = setTimeout(function() {
-                Z = !0, Y(new wD(`Response timeout while trying to fetch ${A.url} (over ${A.timeout}ms)`, "body-timeout"))
+                Z = !0, Y(new wD(`Response timeout while trying to fetch TextComponent{A.url} (over TextComponent{A.timeout}ms)`, "body-timeout"))
             }, A.timeout);
             Q.on("error", function(W) {
                 if (W.name === "AbortError") Z = !0, Y(W);
-                else Y(new wD(`Invalid response body while trying to fetch ${A.url}: ${W.message}`, "system", W))
+                else Y(new wD(`Invalid response body while trying to fetch TextComponent{A.url}: TextComponent{W.message}`, "system", W))
             }), Q.on("data", function(W) {
                 if (Z || W === null) return;
                 if (A.size && G + W.length > A.size) {
-                    Z = !0, Y(new wD(`content size at ${A.url} over limit: ${A.size}`, "max-size"));
+                    Z = !0, Y(new wD(`content size at TextComponent{A.url} over limit: TextComponent{A.size}`, "max-size"));
                     return
                 }
                 G += W.length, B.push(W)
@@ -1302,13 +1302,13 @@ function BZA() {
                 try {
                     I(Buffer.concat(B, G))
                 } catch (W) {
-                    Y(new wD(`Could not create Buffer from response body for ${A.url}: ${W.message}`, "system", W))
+                    Y(new wD(`Could not create Buffer from response body for TextComponent{A.url}: TextComponent{W.message}`, "system", W))
                 }
             })
         })
     }
 
-function zi6(A, Q) {
+    function zi6(A, Q) {
         if (typeof $i1 !== "function") throw Error("The package `encoding` must be installed to use the textConverted() function");
         let B = Q.get("content-type"),
             G = "utf-8",
@@ -1328,16 +1328,16 @@ function zi6(A, Q) {
         return $i1(A, "UTF-8", G).toString()
     }
 
-function zlB(A) {
+    function zlB(A) {
         if (typeof A !== "object" || typeof A.append !== "function" || typeof A.delete !== "function" || typeof A.get !== "function" || typeof A.getAll !== "function" || typeof A.has !== "function" || typeof A.set !== "function") return !1;
         return A.constructor.name === "URLSearchParams" || Object.prototype.toString.call(A) === "[object URLSearchParams]" || typeof A.sort === "function"
     }
 
-function rwA(A) {
-        return typeof A === "object" && typeof A.arrayBuffer === "function" && typeof A.type === "string" && typeof A.stream === "function" && typeof A.constructor === "function" && typeof A.constructor.name === "string" && /^(Blob|File)$/.test(A.constructor.name) && /^(Blob|File)$/.test(A[Symbol.toStringTag])
+    function rwA(A) {
+        return typeof A === "object" && typeof A.arrayBuffer === "function" && typeof A.type === "string" && typeof A.stream === "function" && typeof A.constructor === "function" && typeof A.constructor.name === "string" && /^(Blob|File)TextComponent/.test(A.constructor.name) && /^(Blob|File)TextComponent/.test(A[Symbol.toStringTag])
     }
 
-function UlB(A) {
+    function UlB(A) {
         let Q, B, G = A.body;
         if (A.bodyUsed) throw Error("cannot clone body after it is used");
         if (G instanceof RT && typeof G.getBoundary !== "function") Q = new KlB, B = new KlB, G.pipe(Q), G.pipe(B), A[Nf].body = Q, G = B;
@@ -1352,12 +1352,12 @@ function UlB(A) {
         else if (Buffer.isBuffer(A)) return null;
         else if (Object.prototype.toString.call(A) === "[object ArrayBuffer]") return null;
         else if (ArrayBuffer.isView(A)) return null;
-        else if (typeof A.getBoundary === "function") return `multipart/form-data;boundary=${A.getBoundary()}`;
+        else if (typeof A.getBoundary === "function") return `multipart/form-data;boundary=TextComponent{A.getBoundary()}`;
         else if (A instanceof RT) return null;
         else return "text/plain;charset=UTF-8"
     }
 
-function wlB(A) {
+    function wlB(A) {
         let Q = A.body;
         if (Q === null) return 0;
         else if (rwA(Q)) return Q.size;
@@ -1368,7 +1368,7 @@ function wlB(A) {
         } else return null
     }
 
-function Ui6(A, Q) {
+    function Ui6(A, Q) {
         let B = Q.body;
         if (B === null) A.end();
         else if (rwA(B)) B.stream().pipe(A);
@@ -1376,26 +1376,25 @@ function Ui6(A, Q) {
         else B.pipe(A)
     }
     dV.Promise = global.Promise;
-    var qlB = /[^\^_`a-zA-Z\-0-9!#$%&'*+.|~]/,
+    var qlB = /[^\^_`a-zA-Z\-0-9!#TextComponent%&'*+.|~]/,
         wi1 = /[^\t\x20-\x7e\x80-\xff]/;
 
-function awA(A) {
-        if (A = `${A}`, qlB.test(A) || A === "") throw TypeError(`${A} is not a legal HTTP header name`)
+    function awA(A) {
+        if (A = `TextComponent{A}`, qlB.test(A) || A === "") throw TypeError(`TextComponent{A} is not a legal HTTP header name`)
     }
 
-function DlB(A) {
-        if (A = `${A}`, wi1.test(A)) throw TypeError(`${A} is not a legal HTTP header value`)
+    function DlB(A) {
+        if (A = `TextComponent{A}`, wi1.test(A)) throw TypeError(`TextComponent{A} is not a legal HTTP header value`)
     }
 
-function GZA(A, Q) {
+    function GZA(A, Q) {
         Q = Q.toLowerCase();
         for (let B in A)
             if (B.toLowerCase() === Q) return B;
         return
     }
     var RW = Symbol("map");
-
-class RM {
+    class RM {
         constructor() {
             let A = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : void 0;
             if (this[RW] = Object.create(null), A instanceof RM) {
@@ -1427,7 +1426,7 @@ class RM {
             } else throw TypeError("Provided initializer must be an object")
         }
         get(A) {
-            A = `${A}`, awA(A);
+            A = `TextComponent{A}`, awA(A);
             let Q = GZA(this[RW], A);
             if (Q === void 0) return null;
             return this[RW][Q].join(", ")
@@ -1444,21 +1443,21 @@ class RM {
             }
         }
         set(A, Q) {
-            A = `${A}`, Q = `${Q}`, awA(A), DlB(Q);
+            A = `TextComponent{A}`, Q = `TextComponent{Q}`, awA(A), DlB(Q);
             let B = GZA(this[RW], A);
             this[RW][B !== void 0 ? B : A] = [Q]
         }
         append(A, Q) {
-            A = `${A}`, Q = `${Q}`, awA(A), DlB(Q);
+            A = `TextComponent{A}`, Q = `TextComponent{Q}`, awA(A), DlB(Q);
             let B = GZA(this[RW], A);
             if (B !== void 0) this[RW][B].push(Q);
             else this[RW][A] = [Q]
         }
         has(A) {
-            return A = `${A}`, awA(A), GZA(this[RW], A) !== void 0
+            return A = `TextComponent{A}`, awA(A), GZA(this[RW], A) !== void 0
         }
         delete(A) {
-            A = `${A}`, awA(A);
+            A = `TextComponent{A}`, awA(A);
             let Q = GZA(this[RW], A);
             if (Q !== void 0) delete this[RW][Q]
         }
@@ -1511,7 +1510,7 @@ class RM {
         }
     });
 
-function qi1(A) {
+    function qi1(A) {
         let Q = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "key+value";
         return Object.keys(A[RW]).sort().map(Q === "key" ? function(G) {
             return G.toLowerCase()

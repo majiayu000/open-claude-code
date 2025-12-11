@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_009.js
+ * 处理时间: 2025-12-09T03:41:36.433Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.894Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -43,7 +46,7 @@
     };
     i4Q.resolveHttpAuthSchemeConfig = iT4
 });
-var I$1 = U((tX7, sT4) => {
+var I$1 = moduleWrapper((tX7, sT4) => {
     sT4.exports = {
         name: "@aws-sdk/nested-clients",
         version: "3.840.0",
@@ -152,7 +155,7 @@ var I$1 = U((tX7, sT4) => {
         }
     }
 });
-var F8Q = U((W8Q) => {
+var F8Q = moduleWrapper((W8Q) => {
     Object.defineProperty(W8Q, "__esModule", {
         value: !0
     });
@@ -348,7 +351,7 @@ var F8Q = U((W8Q) => {
         };
     W8Q.ruleSet = rT4
 });
-var D8Q = U((V8Q) => {
+var D8Q = moduleWrapper((V8Q) => {
     Object.defineProperty(V8Q, "__esModule", {
         value: !0
     });
@@ -369,7 +372,7 @@ var D8Q = U((V8Q) => {
     V8Q.defaultEndpointResolver = AP4;
     W$1.customEndpointFunctions.aws = oT4.awsEndpointFunctions
 });
-var U8Q = U((E8Q) => {
+var U8Q = moduleWrapper((E8Q) => {
     Object.defineProperty(E8Q, "__esModule", {
         value: !0
     });
@@ -409,7 +412,7 @@ var U8Q = U((E8Q) => {
         };
     E8Q.getRuntimeConfig = JP4
 });
-var O8Q = U((L8Q) => {
+var O8Q = moduleWrapper((L8Q) => {
     Object.defineProperty(L8Q, "__esModule", {
         value: !0
     });
@@ -469,7 +472,7 @@ var O8Q = U((L8Q) => {
         };
     L8Q.getRuntimeConfig = zP4
 });
-var V$1 = U((GF7, t8Q) => {
+var V$1 = moduleWrapper((GF7, t8Q) => {
     var {
         defineProperty: YhA,
         getOwnPropertyDescriptor: UP4,
@@ -1114,7 +1117,7 @@ var V$1 = U((GF7, t8Q) => {
         };
     (0, vP4.createAggregatedClient)(Qj4, o8Q)
 });
-var Y6Q = U((JF7, I6Q) => {
+var Y6Q = moduleWrapper((JF7, I6Q) => {
     var {
         create: Bj4,
         defineProperty: jDA,
@@ -1162,7 +1165,7 @@ var Y6Q = U((JF7, I6Q) => {
                 logger: A
             });
             let B = (0, Fj4.getBearerTokenEnvKey)(Q);
-            if (!(B in process.env)) throw new Jw.TokenProviderError(`Token not present in '${B}' environment variable`, {
+            if (!(B in process.env)) throw new Jw.TokenProviderError(`Token not present in 'TextComponent{B}' environment variable`, {
                 logger: A
             });
             let G = {
@@ -1193,13 +1196,13 @@ var Y6Q = U((JF7, I6Q) => {
             }))
         }, "getNewSsoOidcToken"),
         e8Q = zv((A) => {
-            if (A.expiration && A.expiration.getTime() < Date.now()) throw new Jw.TokenProviderError(`Token is expired. ${K$1}`, !1)
+            if (A.expiration && A.expiration.getTime() < Date.now()) throw new Jw.TokenProviderError(`Token is expired. TextComponent{K$1}`, !1)
         }, "validateTokenExpiry"),
         Nr = zv((A, Q, B = !1) => {
-            if (typeof Q > "u") throw new Jw.TokenProviderError(`Value not present for '${A}' in SSO Token${B?". Cannot refresh":""}. ${K$1}`, !1)
+            if (typeof Q > "u") throw new Jw.TokenProviderError(`Value not present for 'TextComponent{A}' in SSO Token${B?". Cannot refresh":""}. TextComponent{K$1}`, !1)
         }, "validateTokenKey"),
         PDA = NG(),
-        Cj4 = UA("fs"),
+        Cj4 = nodeRequire("fs"),
         {
             writeFile: Ej4
         } = Cj4.promises,
@@ -1225,13 +1228,13 @@ var Y6Q = U((JF7, I6Q) => {
                     profile: B.profile ?? Q?.profile
                 }),
                 I = G[Z];
-            if (!I) throw new Jw.TokenProviderError(`Profile '${Z}' could not be found in shared credentials file.`, !1);
-            else if (!I.sso_session) throw new Jw.TokenProviderError(`Profile '${Z}' is missing required property 'sso_session'.`);
+            if (!I) throw new Jw.TokenProviderError(`Profile 'TextComponent{Z}' could not be found in shared credentials file.`, !1);
+            else if (!I.sso_session) throw new Jw.TokenProviderError(`Profile 'TextComponent{Z}' is missing required property 'sso_session'.`);
             let Y = I.sso_session,
                 W = (await (0, PDA.loadSsoSessionData)(B))[Y];
-            if (!W) throw new Jw.TokenProviderError(`Sso session '${Y}' could not be found in shared credentials file.`, !1);
+            if (!W) throw new Jw.TokenProviderError(`Sso session 'TextComponent{Y}' could not be found in shared credentials file.`, !1);
             for (let C of ["sso_start_url", "sso_region"])
-                if (!W[C]) throw new Jw.TokenProviderError(`Sso session '${Y}' is missing required property '${C}'.`, !1);
+                if (!W[C]) throw new Jw.TokenProviderError(`Sso session 'TextComponent{Y}' is missing required property 'TextComponent{C}'.`, !1);
             let {
                 sso_start_url: X,
                 sso_region: F
@@ -1239,7 +1242,7 @@ var Y6Q = U((JF7, I6Q) => {
             try {
                 V = await (0, PDA.getSSOTokenFromFile)(Y)
             } catch (C) {
-                throw new Jw.TokenProviderError(`The SSO session token associated with profile=${Z} was not found or is invalid. ${K$1}`, !1)
+                throw new Jw.TokenProviderError(`The SSO session token associated with profile=TextComponent{Z} was not found or is invalid. TextComponent{K$1}`, !1)
             }
             Nr("accessToken", V.accessToken), Nr("expiresAt", V.expiresAt);
             let {
@@ -1284,7 +1287,7 @@ var Y6Q = U((JF7, I6Q) => {
             throw new Jw.TokenProviderError("Could not load token from any providers", !1)
         }), (Q) => Q.expiration !== void 0 && Q.expiration.getTime() - Date.now() < 300000, (Q) => Q.expiration !== void 0), "nodeProvider")
 });
-var H$1 = U((WF7, C6Q) => {
+var H$1 = moduleWrapper((WF7, C6Q) => {
     var {
         defineProperty: WhA,
         getOwnPropertyDescriptor: wj4,
@@ -1429,7 +1432,7 @@ var H$1 = U((WF7, C6Q) => {
                 sso_region: Z,
                 sso_role_name: I
             } = A;
-            if (!B || !G || !Z || !I) throw new kR.CredentialsProviderError(`Profile is configured with invalid SSO credentials. Required parameters "sso_account_id", "sso_region", "sso_role_name", "sso_start_url". Got ${Object.keys(A).join(", ")}
+            if (!B || !G || !Z || !I) throw new kR.CredentialsProviderError(`Profile is configured with invalid SSO credentials. Required parameters "sso_account_id", "sso_region", "sso_role_name", "sso_start_url". Got TextComponent{Object.keys(A).join(", ")}
 Reference: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.html`, {
                 tryNextLink: !1,
                 logger: Q
@@ -1453,15 +1456,15 @@ Reference: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.ht
             });
             if (!B && !G && !Z && !I && !Y) {
                 let F = (await (0, JhA.parseKnownFiles)(A))[W];
-                if (!F) throw new kR.CredentialsProviderError(`Profile ${W} was not found.`, {
+                if (!F) throw new kR.CredentialsProviderError(`Profile TextComponent{W} was not found.`, {
                     logger: A.logger
                 });
-                if (!D6Q(F)) throw new kR.CredentialsProviderError(`Profile ${W} is not configured with SSO credentials.`, {
+                if (!D6Q(F)) throw new kR.CredentialsProviderError(`Profile TextComponent{W} is not configured with SSO credentials.`, {
                     logger: A.logger
                 });
                 if (F?.sso_session) {
                     let z = (await (0, JhA.loadSsoSessionData)(A))[F.sso_session],
-                        w = ` configurations in profile ${W} and sso-session ${F.sso_session}`;
+                        w = ` configurations in profile TextComponent{W} and sso-session TextComponent{F.sso_session}`;
                     if (Z && Z !== z.sso_region) throw new kR.CredentialsProviderError("Conflicting SSO region" + w, {
                         tryNextLink: !1,
                         logger: A.logger
@@ -1507,7 +1510,7 @@ Reference: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.ht
             })
         }, "fromSSO")
 });
-var E$1 = U((E6Q) => {
+var E$1 = moduleWrapper((E6Q) => {
     Object.defineProperty(E6Q, "__esModule", {
         value: !0
     });

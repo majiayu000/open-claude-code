@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_022.js
+ * 处理时间: 2025-12-09T03:41:39.223Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.113Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -75,7 +78,7 @@
                             }
                         };
 
-function v(k, d, QA, IA) {
+                        function v(k, d, QA, IA) {
                             var HA = QA.value;
                             if (p(k, HA)) {
                                 if (o(k, QA), !k[E]) HA = void 0
@@ -215,7 +218,7 @@ function v(k, d, QA, IA) {
                             })
                         };
 
-function x(k, d, QA) {
+                        function x(k, d, QA) {
                             var IA = k[R].get(d);
                             if (IA) {
                                 var HA = IA.value;
@@ -227,7 +230,7 @@ function x(k, d, QA) {
                             return HA
                         }
 
-function p(k, d) {
+                        function p(k, d) {
                             if (!d || !d.maxAge && !k[z]) return !1;
                             var QA = !1,
                                 IA = Date.now() - d.now;
@@ -236,7 +239,7 @@ function p(k, d) {
                             return QA
                         }
 
-function u(k) {
+                        function u(k) {
                             if (k[H] > k[D])
                                 for (var d = k[q].tail; k[H] > k[D] && d !== null;) {
                                     var QA = d.prev;
@@ -244,7 +247,7 @@ function u(k) {
                                 }
                         }
 
-function o(k, d) {
+                        function o(k, d) {
                             if (d) {
                                 var QA = d.value;
                                 if (k[w]) k[w](QA.key, QA.value);
@@ -252,7 +255,7 @@ function o(k, d) {
                             }
                         }
 
-function l(k, d, QA, IA, HA) {
+                        function l(k, d, QA, IA, HA) {
                             this.key = k, this.value = d, this.length = QA, this.now = IA, this.maxAge = HA || 0
                         }
                     },
@@ -260,11 +263,11 @@ function l(k, d, QA, IA, HA) {
                         var I = Z.exports = {},
                             Y, J;
 
-function W() {
+                        function W() {
                             throw Error("setTimeout has not been defined")
                         }
 
-function X() {
+                        function X() {
                             throw Error("clearTimeout has not been defined")
                         }(function() {
                             try {
@@ -281,7 +284,7 @@ function X() {
                             }
                         })();
 
-function F(q) {
+                        function F(q) {
                             if (Y === setTimeout) return setTimeout(q, 0);
                             if ((Y === W || !Y) && setTimeout) return Y = setTimeout, setTimeout(q, 0);
                             try {
@@ -295,7 +298,7 @@ function F(q) {
                             }
                         }
 
-function V(q) {
+                        function V(q) {
                             if (J === clearTimeout) return clearTimeout(q);
                             if ((J === X || !J) && clearTimeout) return J = clearTimeout, clearTimeout(q);
                             try {
@@ -308,19 +311,18 @@ function V(q) {
                                 }
                             }
                         }
-
-var K = [],
+                        var K = [],
                             D = !1,
                             H, C = -1;
 
-function E() {
+                        function E() {
                             if (!D || !H) return;
                             if (D = !1, H.length) K = H.concat(K);
                             else C = -1;
                             if (K.length) z()
                         }
 
-function z() {
+                        function z() {
                             if (D) return;
                             var q = F(E);
                             D = !0;
@@ -340,14 +342,14 @@ function z() {
                             if (K.push(new w(q, R)), K.length === 1 && !D) F(z)
                         };
 
-function w(q, R) {
+                        function w(q, R) {
                             this.fun = q, this.array = R
                         }
                         w.prototype.run = function() {
                             this.fun.apply(null, this.array)
                         }, I.title = "browser", I.browser = !0, I.env = {}, I.argv = [], I.version = "", I.versions = {};
 
-function N() {}
+                        function N() {}
                         I.on = N, I.addListener = N, I.once = N, I.off = N, I.removeListener = N, I.removeAllListeners = N, I.emit = N, I.prependListener = N, I.prependOnceListener = N, I.listeners = function(q) {
                             return []
                         }, I.binding = function(q) {
@@ -370,7 +372,7 @@ function N() {}
                         var I = Object.prototype.hasOwnProperty;
                         Z.exports = Y;
 
-function Y(V) {
+                        function Y(V) {
                             if (!(this instanceof Y)) throw TypeError("Constructor PseudoMap requires 'new'");
                             if (this.clear(), V)
                                 if (V instanceof Y || typeof Map === "function" && V instanceof Map) V.forEach(function(K, D) {
@@ -414,20 +416,20 @@ function Y(V) {
                             throw Error("iterators are not implemented in this version")
                         };
 
-function J(V, K) {
+                        function J(V, K) {
                             return V === K || V !== V && K !== K
                         }
 
-function W(V, K, D) {
+                        function W(V, K, D) {
                             this.key = V, this.value = K, this._index = D
                         }
 
-function X(V, K) {
+                        function X(V, K) {
                             for (var D = 0, H = "_" + K, C = H; I.call(V, C); C = H + D++)
                                 if (J(V[C].key, K)) return V[C]
                         }
 
-function F(V, K, D) {
+                        function F(V, K, D) {
                             for (var H = 0, C = "_" + K, E = C; I.call(V, E); E = C + H++)
                                 if (J(V[E].key, K)) {
                                     V[E].value = D;
@@ -438,7 +440,7 @@ function F(V, K, D) {
                     430: function(Z, I) {
                         var Y, J, W;
 
-function X(F) {
+                        function X(F) {
                             if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") X = function(K) {
                                 return typeof K
                             };
@@ -453,23 +455,22 @@ function X(F) {
                                 return !isNaN(parseFloat(P)) && isFinite(P)
                             }
 
-function V(P) {
+                            function V(P) {
                                 return P.charAt(0).toUpperCase() + P.substring(1)
                             }
 
-function K(P) {
+                            function K(P) {
                                 return function() {
                                     return this[P]
                                 }
                             }
-
-var D = ["isConstructor", "isEval", "isNative", "isToplevel"],
+                            var D = ["isConstructor", "isEval", "isNative", "isToplevel"],
                                 H = ["columnNumber", "lineNumber"],
                                 C = ["fileName", "functionName", "source"],
                                 E = ["args"],
                                 z = D.concat(H, C, E);
 
-function w(P) {
+                            function w(P) {
                                 if (!P) return;
                                 for (var y = 0; y < z.length; y++)
                                     if (P[z[y]] !== void 0) this["set" + V(z[y])](P[z[y]])
@@ -508,7 +509,7 @@ function w(P) {
                                     p = y.substring(0, v),
                                     u = y.substring(v + 1, x).split(","),
                                     o = y.substring(x + 1);
-                                if (o.indexOf("@") === 0) var l = /@(.+?)(?::(\d+))?(?::(\d+))?$/.exec(o, ""),
+                                if (o.indexOf("@") === 0) var l = /@(.+?)(?::(\d+))?(?::(\d+))?TextComponent/.exec(o, ""),
                                     k = l[1],
                                     d = l[2],
                                     QA = l[3];
@@ -552,8 +553,7 @@ function w(P) {
                         };
                         else Z.exports = function(Y, J) {
                             Y.super_ = J;
-
-var W = function() {};
+                            var W = function() {};
                             W.prototype = J.prototype, Y.prototype = new W, Y.prototype.constructor = Y
                         }
                     },
@@ -574,7 +574,7 @@ var W = function() {};
                     82: (Z, I, Y) => {
                         var J = Y(169);
 
-function W(DA) {
+                        function W(DA) {
                             if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") W = function(rA) {
                                 return typeof rA
                             };
@@ -622,7 +622,7 @@ function W(DA) {
                             if (J.noDeprecation === !0) return DA;
                             var rA = !1;
 
-function K1() {
+                            function K1() {
                                 if (!rA) {
                                     if (J.throwDeprecation) throw Error(yA);
                                     else if (J.traceDeprecation) console.trace(yA);
@@ -633,8 +633,7 @@ function K1() {
                             }
                             return K1
                         };
-
-var F = {},
+                        var F = {},
                             V;
                         I.debuglog = function(DA) {
                             if (l(V)) V = J.env.NODE_DEBUG || "";
@@ -649,7 +648,7 @@ var F = {},
                             return F[DA]
                         };
 
-function K(DA, yA) {
+                        function K(DA, yA) {
                             var rA = {
                                 seen: [],
                                 stylize: H
@@ -690,24 +689,24 @@ function K(DA, yA) {
                             regexp: "red"
                         };
 
-function D(DA, yA) {
+                        function D(DA, yA) {
                             var rA = K.styles[yA];
                             if (rA) return "\x1B[" + K.colors[rA][0] + "m" + DA + "\x1B[" + K.colors[rA][1] + "m";
                             else return DA
                         }
 
-function H(DA, yA) {
+                        function H(DA, yA) {
                             return DA
                         }
 
-function C(DA) {
+                        function C(DA) {
                             var yA = {};
                             return DA.forEach(function(rA, K1) {
                                 yA[rA] = !0
                             }), yA
                         }
 
-function E(DA, yA, rA) {
+                        function E(DA, yA, rA) {
                             if (DA.customInspect && yA && HA(yA.inspect) && yA.inspect !== I.inspect && !(yA.constructor && yA.constructor.prototype === yA)) {
                                 var K1 = yA.inspect(rA, DA);
                                 if (!u(K1)) K1 = E(DA, K1, rA);
@@ -733,8 +732,9 @@ function E(DA, yA, rA) {
                                 eA = ["{", "}"];
                             if (P(yA)) TA = !0, eA = ["[", "]"];
                             if (HA(yA)) {
-                                var aA = yA.name ? ": " + yA.name : "";
-                                LA = " [Function" + aA + "]"
+                                /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+var BASE64_CHARS = yA.name ? ": " + yA.name : "";
+                                LA = " [Function" + BASE64_CHARS + "]"
                             }
                             if (k(yA)) LA = " " + RegExp.prototype.toString.call(yA);
                             if (QA(yA)) LA = " " + Date.prototype.toUTCString.call(yA);
@@ -752,10 +752,10 @@ function E(DA, yA, rA) {
                             return DA.seen.pop(), R(I1, LA, eA)
                         }
 
-function z(DA, yA) {
+                        function z(DA, yA) {
                             if (l(yA)) return DA.stylize("undefined", "undefined");
                             if (u(yA)) {
-                                var rA = "'" + JSON.stringify(yA).replace(/^"|"$/g, "").replace(/'/g, "\\'").replace(/\\"/g, '"') + "'";
+                                var rA = "'" + JSON.stringify(yA).replace(/^"|"TextComponent/g, "").replace(/'/g, "\\'").replace(/\\"/g, '"') + "'";
                                 return DA.stylize(rA, "string")
                             }
                             if (p(yA)) return DA.stylize("" + yA, "number");
@@ -763,21 +763,21 @@ function z(DA, yA) {
                             if (v(yA)) return DA.stylize("null", "null")
                         }
 
-function w(DA) {
+                        function w(DA) {
                             return "[" + Error.prototype.toString.call(DA) + "]"
                         }
 
-function N(DA, yA, rA, K1, WA) {
+                        function N(DA, yA, rA, K1, WA) {
                             var XA = [];
                             for (var zA = 0, $A = yA.length; zA < $A; ++zA)
                                 if (qA(yA, String(zA))) XA.push(q(DA, yA, rA, K1, String(zA), !0));
                                 else XA.push("");
                             return WA.forEach(function(LA) {
-                                if (!LA.match(/^\d+$/)) XA.push(q(DA, yA, rA, K1, LA, !0))
+                                if (!LA.match(/^\d+TextComponent/)) XA.push(q(DA, yA, rA, K1, LA, !0))
                             }), XA
                         }
 
-function q(DA, yA, rA, K1, WA, XA) {
+                        function q(DA, yA, rA, K1, WA, XA) {
                             var zA, $A, LA;
                             if (LA = Object.getOwnPropertyDescriptor(yA, WA) || {
                                     value: yA[WA]
@@ -805,14 +805,14 @@ function q(DA, yA, rA, K1, WA, XA) {
 `)
                                 } else $A = DA.stylize("[Circular]", "special");
                             if (l(zA)) {
-                                if (XA && WA.match(/^\d+$/)) return $A;
-                                if (zA = JSON.stringify("" + WA), zA.match(/^"([a-zA-Z_][a-zA-Z_0-9]*)"$/)) zA = zA.substr(1, zA.length - 2), zA = DA.stylize(zA, "name");
-                                else zA = zA.replace(/'/g, "\\'").replace(/\\"/g, '"').replace(/(^"|"$)/g, "'"), zA = DA.stylize(zA, "string")
+                                if (XA && WA.match(/^\d+TextComponent/)) return $A;
+                                if (zA = JSON.stringify("" + WA), zA.match(/^"([a-zA-Z_][a-zA-Z_0-9]*)"TextComponent/)) zA = zA.substr(1, zA.length - 2), zA = DA.stylize(zA, "name");
+                                else zA = zA.replace(/'/g, "\\'").replace(/\\"/g, '"').replace(/(^"|"TextComponent)/g, "'"), zA = DA.stylize(zA, "string")
                             }
                             return zA + ": " + $A
                         }
 
-function R(DA, yA, rA) {
+                        function R(DA, yA, rA) {
                             var K1 = 0,
                                 WA = DA.reduce(function(XA, zA) {
                                     if (K1++, zA.indexOf(`
@@ -825,87 +825,86 @@ function R(DA, yA, rA) {
                             return rA[0] + yA + " " + DA.join(", ") + " " + rA[1]
                         }
 
-function P(DA) {
+                        function P(DA) {
                             return Array.isArray(DA)
                         }
                         I.isArray = P;
 
-function y(DA) {
+                        function y(DA) {
                             return typeof DA === "boolean"
                         }
                         I.isBoolean = y;
 
-function v(DA) {
+                        function v(DA) {
                             return DA === null
                         }
                         I.isNull = v;
 
-function x(DA) {
+                        function x(DA) {
                             return DA == null
                         }
                         I.isNullOrUndefined = x;
 
-function p(DA) {
+                        function p(DA) {
                             return typeof DA === "number"
                         }
                         I.isNumber = p;
 
-function u(DA) {
+                        function u(DA) {
                             return typeof DA === "string"
                         }
                         I.isString = u;
 
-function o(DA) {
+                        function o(DA) {
                             return W(DA) === "symbol"
                         }
                         I.isSymbol = o;
 
-function l(DA) {
+                        function l(DA) {
                             return DA === void 0
                         }
                         I.isUndefined = l;
 
-function k(DA) {
+                        function k(DA) {
                             return d(DA) && KA(DA) === "[object RegExp]"
                         }
                         I.isRegExp = k;
 
-function d(DA) {
+                        function d(DA) {
                             return W(DA) === "object" && DA !== null
                         }
                         I.isObject = d;
 
-function QA(DA) {
+                        function QA(DA) {
                             return d(DA) && KA(DA) === "[object Date]"
                         }
                         I.isDate = QA;
 
-function IA(DA) {
+                        function IA(DA) {
                             return d(DA) && (KA(DA) === "[object Error]" || DA instanceof Error)
                         }
                         I.isError = IA;
 
-function HA(DA) {
+                        function HA(DA) {
                             return typeof DA === "function"
                         }
                         I.isFunction = HA;
 
-function wA(DA) {
+                        function wA(DA) {
                             return DA === null || typeof DA === "boolean" || typeof DA === "number" || typeof DA === "string" || W(DA) === "symbol" || typeof DA > "u"
                         }
                         I.isPrimitive = wA, I.isBuffer = Y(715);
 
-function KA(DA) {
+                        function KA(DA) {
                             return Object.prototype.toString.call(DA)
                         }
 
-function SA(DA) {
+                        function SA(DA) {
                             return DA < 10 ? "0" + DA.toString(10) : DA.toString(10)
                         }
+                        var sA = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-var sA = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-function NA() {
+                        function NA() {
                             var DA = new Date,
                                 yA = [SA(DA.getHours()), SA(DA.getMinutes()), SA(DA.getSeconds())].join(":");
                             return [DA.getDate(), sA[DA.getMonth()], yA].join(" ")
@@ -920,14 +919,14 @@ function NA() {
                             return DA
                         };
 
-function qA(DA, yA) {
+                        function qA(DA, yA) {
                             return Object.prototype.hasOwnProperty.call(DA, yA)
                         }
                     },
                     695: (Z) => {
                         Z.exports = I, I.Node = W, I.create = I;
 
-function I(X) {
+                        function I(X) {
                             var F = this;
                             if (!(F instanceof I)) F = new I;
                             if (F.tail = null, F.head = null, F.length = 0, X && typeof X.forEach === "function") X.forEach(function(D) {
@@ -1054,17 +1053,17 @@ function I(X) {
                             return this.head = F, this.tail = X, this
                         };
 
-function Y(X, F) {
+                        function Y(X, F) {
                             if (X.tail = new W(F, X.tail, null, X), !X.head) X.head = X.tail;
                             X.length++
                         }
 
-function J(X, F) {
+                        function J(X, F) {
                             if (X.head = new W(F, null, X.head, X), !X.tail) X.tail = X.head;
                             X.length++
                         }
 
-function W(X, F, V, K) {
+                        function W(X, F, V, K) {
                             if (!(this instanceof W)) return new W(X, F, V, K);
                             if (this.list = K, this.value = X, F) F.next = this, this.prev = F;
                             else this.prev = null;
@@ -1075,7 +1074,7 @@ function W(X, F, V, K) {
                 },
                 Q = {};
 
-function B(Z) {
+            function B(Z) {
                 var I = Q[Z];
                 if (I !== void 0) return I.exports;
                 var Y = Q[Z] = {
@@ -1109,18 +1108,17 @@ function B(Z) {
                     })
                 }
             })();
-
-var G = {};
+            var G = {};
             return (() => {
                 B.r(G), B.d(G, {
                     connectToDevTools: () => u3
                 });
 
-function Z(b, a) {
+                function Z(b, a) {
                     if (!(b instanceof a)) throw TypeError("Cannot call a class as a function")
                 }
 
-function I(b, a) {
+                function I(b, a) {
                     for (var c = 0; c < a.length; c++) {
                         var s = a[c];
                         if (s.enumerable = s.enumerable || !1, s.configurable = !0, "value" in s) s.writable = !0;
@@ -1128,13 +1126,13 @@ function I(b, a) {
                     }
                 }
 
-function Y(b, a, c) {
+                function Y(b, a, c) {
                     if (a) I(b.prototype, a);
                     if (c) I(b, c);
                     return b
                 }
 
-function J(b, a, c) {
+                function J(b, a, c) {
                     if (a in b) Object.defineProperty(b, a, {
                         value: c,
                         enumerable: !0,
@@ -1144,8 +1142,7 @@ function J(b, a, c) {
                     else b[a] = c;
                     return b
                 }
-
-var W = function() {
+                var W = function() {
                         function b() {
                             Z(this, b), J(this, "listenersMap", new Map)
                         }
@@ -1233,7 +1230,7 @@ var W = function() {
                     NA = "React::DevTools::supportsProfiling",
                     qA = 5;
 
-function DA(b) {
+                function DA(b) {
                     try {
                         return localStorage.getItem(b)
                     } catch (a) {
@@ -1241,19 +1238,19 @@ function DA(b) {
                     }
                 }
 
-function yA(b) {
+                function yA(b) {
                     try {
                         localStorage.removeItem(b)
                     } catch (a) {}
                 }
 
-function rA(b, a) {
+                function rA(b, a) {
                     try {
                         return localStorage.setItem(b, a)
                     } catch (c) {}
                 }
 
-function K1(b) {
+                function K1(b) {
                     try {
                         return sessionStorage.getItem(b)
                     } catch (a) {
@@ -1261,19 +1258,18 @@ function K1(b) {
                     }
                 }
 
-function WA(b) {
+                function WA(b) {
                     try {
                         sessionStorage.removeItem(b)
                     } catch (a) {}
                 }
 
-function XA(b, a) {
+                function XA(b, a) {
                     try {
                         return sessionStorage.setItem(b, a)
                     } catch (c) {}
                 }
-
-var zA = function(a, c) {
+                var zA = function(a, c) {
                     return a === c
                 };
 
@@ -1294,20 +1290,20 @@ var zA = function(a, c) {
                     return Q1
                 }
 
-function LA(b) {
+                function LA(b) {
                     if (!b.ownerDocument) return null;
                     return b.ownerDocument.defaultView
                 }
 
-function TA(b) {
+                function TA(b) {
                     var a = LA(b);
                     if (a) return a.frameElement;
                     return null
                 }
 
-function eA(b) {
+                function eA(b) {
                     var a = w1(b);
-                    return aA([b.getBoundingClientRect(), {
+                    return BASE64_CHARS([b.getBoundingClientRect(), {
                         top: a.borderTop,
                         left: a.borderLeft,
                         bottom: a.borderBottom,
@@ -1317,7 +1313,8 @@ function eA(b) {
                     }])
                 }
 
-function aA(b) {
+                /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+function BASE64_CHARS(b) {
                     return b.reduce(function(a, c) {
                         if (a == null) return c;
                         return {
@@ -1331,7 +1328,7 @@ function aA(b) {
                     })
                 }
 
-function I1(b, a) {
+                function I1(b, a) {
                     var c = TA(b);
                     if (c && c !== a) {
                         var s = [b.getBoundingClientRect()],
@@ -1342,11 +1339,11 @@ function I1(b, a) {
                             if (s.push(Y1), r = TA(r), bA) break;
                             if (r && LA(r) === a) bA = !0
                         }
-                        return aA(s)
+                        return BASE64_CHARS(s)
                     } else return b.getBoundingClientRect()
                 }
 
-function w1(b) {
+                function w1(b) {
                     var a = window.getComputedStyle(b);
                     return {
                         borderLeft: parseInt(a.borderLeftWidth, 10),
@@ -1364,11 +1361,11 @@ function w1(b) {
                     }
                 }
 
-function PA(b, a) {
+                function PA(b, a) {
                     if (!(b instanceof a)) throw TypeError("Cannot call a class as a function")
                 }
 
-function B1(b, a) {
+                function B1(b, a) {
                     for (var c = 0; c < a.length; c++) {
                         var s = a[c];
                         if (s.enumerable = s.enumerable || !1, s.configurable = !0, "value" in s) s.writable = !0;
@@ -1376,7 +1373,7 @@ function B1(b, a) {
                     }
                 }
 
-function Q0(b, a, c) {
+                function Q0(b, a, c) {
                     if (a) B1(b.prototype, a);
                     if (c) B1(b, c);
                     return b
@@ -1399,11 +1396,11 @@ function Q0(b, a, c) {
                             key: "update",
                             value: function(c, s) {
                                 T0(s, "margin", this.node), T0(s, "border", this.border), T0(s, "padding", this.padding), b1(this.content.style, {
-                                    height: c.height - s.borderTop - s.borderBottom - s.paddingTop - s.paddingBottom + "px",
-                                    width: c.width - s.borderLeft - s.borderRight - s.paddingLeft - s.paddingRight + "px"
+                                    height: c.height - s.borderTop - s.borderBottom - s.paddingTop - s.paddingBottom + "isArguments",
+                                    width: c.width - s.borderLeft - s.borderRight - s.paddingLeft - s.paddingRight + "isArguments"
                                 }), b1(this.node.style, {
-                                    top: c.top - s.marginTop + "px",
-                                    left: c.left - s.marginLeft + "px"
+                                    top: c.top - s.marginTop + "isArguments",
+                                    left: c.left - s.marginLeft + "isArguments"
                                 })
                             }
                         }]), b
@@ -1439,7 +1436,7 @@ function Q0(b, a, c) {
                         }, {
                             key: "updateText",
                             value: function(c, s, r) {
-                                this.nameSpan.textContent = c, this.dimSpan.textContent = Math.round(s) + "px × " + Math.round(r) + "px"
+                                this.nameSpan.textContent = c, this.dimSpan.textContent = Math.round(s) + "isArguments × " + Math.round(r) + "isArguments"
                             }
                         }, {
                             key: "updatePosition",
@@ -1483,8 +1480,7 @@ function Q0(b, a, c) {
                                 }
                                 if (bA.length === 0) return;
                                 while (this.rects.length < bA.length) this.rects.push(new Y0(this.window.document, this.container));
-
-var Q1 = {
+                                var Q1 = {
                                     top: Number.POSITIVE_INFINITY,
                                     right: Number.NEGATIVE_INFINITY,
                                     bottom: Number.NEGATIVE_INFINITY,

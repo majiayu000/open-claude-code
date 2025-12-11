@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_019.js
+ * 处理时间: 2025-12-09T03:41:36.197Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.873Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -283,8 +285,7 @@
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(Cl1 || (Cl1 = {}));
-
-var yg6 = {
+    var yg6 = {
             COMPLETED: "Completed",
             FAILED: "Failed",
             IN_PROGRESS: "InProgress"
@@ -412,8 +413,7 @@ var yg6 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(FeA || (FeA = {}));
-
-var fg6 = {
+    var fg6 = {
             GROUNDING_SOURCE: "grounding_source",
             GUARD_CONTENT: "guard_content",
             QUERY: "query"
@@ -426,8 +426,7 @@ var fg6 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(VeA || (VeA = {}));
-
-var hg6 = {
+    var hg6 = {
             FULL: "FULL",
             INTERVENTIONS: "INTERVENTIONS"
         },
@@ -550,8 +549,7 @@ var hg6 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(KeA || (KeA = {}));
-
-var Bu6 = {
+    var Bu6 = {
             JPEG: "jpeg",
             PNG: "png"
         },
@@ -562,8 +560,7 @@ var Bu6 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(DeA || (DeA = {}));
-
-var Gu6 = {
+    var Gu6 = {
             GROUNDING_SOURCE: "grounding_source",
             GUARD_CONTENT: "guard_content",
             QUERY: "query"
@@ -576,8 +573,7 @@ var Gu6 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(HeA || (HeA = {}));
-
-var Zu6 = {
+    var Zu6 = {
             GIF: "gif",
             JPEG: "jpeg",
             PNG: "png",
@@ -599,8 +595,7 @@ var Zu6 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(EeA || (EeA = {}));
-
-var Iu6 = {
+    var Iu6 = {
             FLV: "flv",
             MKV: "mkv",
             MOV: "mov",
@@ -630,8 +625,7 @@ var Iu6 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(UeA || (UeA = {}));
-
-var Yu6 = {
+    var Yu6 = {
             ERROR: "error",
             SUCCESS: "success"
         },
@@ -650,8 +644,7 @@ var Yu6 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })($eA || ($eA = {}));
-
-var Ju6 = {
+    var Ju6 = {
             ASSISTANT: "assistant",
             USER: "user"
         },
@@ -706,8 +699,7 @@ var Ju6 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(Ul1 || (Ul1 = {}));
-
-var Xu6 = {
+    var Xu6 = {
             CONTENT_FILTERED: "content_filtered",
             END_TURN: "end_turn",
             GUARDRAIL_INTERVENED: "guardrail_intervened",
@@ -792,8 +784,7 @@ var Xu6 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(ql1 || (ql1 = {}));
-
-var ZdB = class A extends qU {
+    var ZdB = class A extends qU {
             static {
                 tA(this, "ModelStreamErrorException")
             }
@@ -827,8 +818,7 @@ var ZdB = class A extends qU {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(Nl1 || (Nl1 = {}));
-
-var Vu6 = {
+    var Vu6 = {
             DISABLED: "DISABLED",
             ENABLED: "ENABLED",
             ENABLED_FULL: "ENABLED_FULL"

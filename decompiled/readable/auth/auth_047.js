@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_047.js
+ * 处理时间: 2025-12-09T03:41:36.881Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.929Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -22,7 +25,7 @@
             }
             return X()
         }, joB = function(I, Y) {
-            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
+            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)TextComponent|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
                 return W ? Y ? ".jsx" : ".js" : X && (!F || !V) ? J : X + F + "." + V.toLowerCase() + "js"
             });
             return I
@@ -30,8 +33,8 @@
     })
 });
 var _oB, W7G, X7G, F7G, V7G, K7G, D7G, H7G, C7G, E7G, z7G, U7G, $7G, w7G, q7G, N7G, L7G, M7G, O7G, R7G, ke, As1, T7G, koB, P7G, j7G, S7G, _7G, k7G, y7G, x7G, v7G, b7G;
-var yoB = L(() => {
-    _oB = GA(SoB(), 1), {
+var yoB = lazyLoader(() => {
+    _oB = esmImport(SoB(), 1), {
         __extends: W7G,
         __assign: X7G,
         __rest: F7G,
@@ -103,7 +106,6 @@ function yt6(A) {
     else if (nA1(A)) return voB(A.stream());
     else return voB(A)
 }
-
 async function boB(A) {
     return function() {
         let Q = A.map((B) => typeof B === "function" ? B() : B).map(yt6);
@@ -127,7 +129,7 @@ async function boB(A) {
         }())
     }
 }
-var foB = L(() => {
+var foB = lazyLoader(() => {
     yoB()
 });
 
@@ -137,7 +139,7 @@ function xt6() {
 
 function vt6(A) {
     let Q = "";
-    for (let [B, G] of A) Q += `${B}: ${G}\r
+    for (let [B, G] of A) Q += `TextComponent{B}: TextComponent{G}\r
 `;
     return Q
 }
@@ -157,12 +159,11 @@ function ft6(A) {
     }
     return Q
 }
-
 async function ht6(A, Q, B) {
-    let G = [Jk(`--${B}`, "utf-8"), ...Q.flatMap((I) => [Jk(`\r
+    let G = [Jk(`--TextComponent{B}`, "utf-8"), ...Q.flatMap((I) => [Jk(`\r
 `, "utf-8"), Jk(vt6(I.headers), "utf-8"), Jk(`\r
 `, "utf-8"), I.body, Jk(`\r
---${B}`, "utf-8")]), Jk(`--\r
+--TextComponent{B}`, "utf-8")]), Jk(`--\r
 \r
 `, "utf-8")],
         Z = ft6(G);
@@ -171,8 +172,8 @@ async function ht6(A, Q, B) {
 }
 
 function mt6(A) {
-    if (A.length > gt6) throw Error(`Multipart boundary "${A}" exceeds maximum length of 70 characters`);
-    if (Array.from(A).some((Q) => !ut6.has(Q))) throw Error(`Multipart boundary "${A}" contains invalid characters`)
+    if (A.length > gt6) throw Error(`Multipart boundary "TextComponent{A}" exceeds maximum length of 70 characters`);
+    if (Array.from(A).some((Q) => !ut6.has(Q))) throw Error(`Multipart boundary "TextComponent{A}" contains invalid characters`)
 }
 
 function Bs1() {
@@ -184,25 +185,25 @@ function Bs1() {
             if (A.body) throw Error("multipartBody and regular body cannot be set at the same time");
             let G = A.multipartBody.boundary,
                 Z = (B = A.headers.get("Content-Type")) !== null && B !== void 0 ? B : "multipart/mixed",
-                I = Z.match(/^(multipart\/[^ ;]+)(?:; *boundary=(.+))?$/);
-            if (!I) throw Error(`Got multipart request body, but content-type header was not multipart: ${Z}`);
+                I = Z.match(/^(multipart\/[^ ;]+)(?:; *boundary=(.+))?TextComponent/);
+            if (!I) throw Error(`Got multipart request body, but content-type header was not multipart: TextComponent{Z}`);
             let [, Y, J] = I;
-            if (J && G && J !== G) throw Error(`Multipart boundary was specified as ${J} in the header, but got ${G} in the request body`);
+            if (J && G && J !== G) throw Error(`Multipart boundary was specified as TextComponent{J} in the header, but got TextComponent{G} in the request body`);
             if (G !== null && G !== void 0 || (G = J), G) mt6(G);
             else G = xt6();
-            return A.headers.set("Content-Type", `${Y}; boundary=${G}`), await ht6(A, A.multipartBody.parts, G), A.multipartBody = void 0, Q(A)
+            return A.headers.set("Content-Type", `TextComponent{Y}; boundary=TextComponent{G}`), await ht6(A, A.multipartBody.parts, G), A.multipartBody = void 0, Q(A)
         }
     }
 }
 var oA1 = "multipartPolicy",
     gt6 = 70,
     ut6;
-var hoB = L(() => {
+var hoB = lazyLoader(() => {
     wa1();
     foB();
     ut6 = new Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'()+,-./:=?")
 });
-var _ZA = L(() => {
+var _ZA = lazyLoader(() => {
     EqA();
     zrB();
     $rB();
@@ -215,15 +216,15 @@ var _ZA = L(() => {
 function MqA() {
     return Na1()
 }
-var Gs1 = L(() => {
+var Gs1 = lazyLoader(() => {
     _ZA()
 });
 var Sf;
-var tA1 = L(() => {
+var tA1 = lazyLoader(() => {
     Se();
     Sf = Jl("core-rest-pipeline")
 });
-var fT = L(() => {
+var fT = lazyLoader(() => {
     grB();
     ha1();
     lrB();
@@ -238,7 +239,7 @@ function goB(A = {}) {
         logger: Sf.info
     }, A))
 }
-var uoB = L(() => {
+var uoB = lazyLoader(() => {
     tA1();
     fT()
 });
@@ -246,7 +247,7 @@ var uoB = L(() => {
 function moB(A = {}) {
     return _a1(A)
 }
-var doB = L(() => {
+var doB = lazyLoader(() => {
     fT()
 });
 import * as kZA from "node:os";
@@ -255,7 +256,6 @@ import * as eA1 from "node:process";
 function coB() {
     return "User-Agent"
 }
-
 async function poB(A) {
     if (eA1 && eA1.versions) {
         let Q = eA1.versions;
@@ -263,7 +263,7 @@ async function poB(A) {
         else if (Q.deno) A.set("Deno", Q.deno);
         else if (Q.node) A.set("Node", Q.node)
     }
-    A.set("OS", `(${kZA.arch()}-${kZA.type()}-${kZA.release()})`)
+    A.set("OS", `(TextComponent{kZA.arch()}-TextComponent{kZA.type()}-TextComponent{kZA.release()})`)
 }
 var loB = () => {};
 var A11 = "1.21.0",
@@ -272,7 +272,7 @@ var A11 = "1.21.0",
 function nt6(A) {
     let Q = [];
     for (let [B, G] of A) {
-        let Z = G ? `${B}/${G}` : B;
+        let Z = G ? `TextComponent{B}/TextComponent{G}` : B;
         Q.push(Z)
     }
     return Q.join(" ")
@@ -281,14 +281,13 @@ function nt6(A) {
 function noB() {
     return coB()
 }
-
 async function Q11(A) {
     let Q = new Map;
     Q.set("core-rest-pipeline", A11), await poB(Q);
     let B = nt6(Q);
-    return A ? `${A} ${B}` : B
+    return A ? `TextComponent{A} TextComponent{B}` : B
 }
-var Zs1 = L(() => {
+var Zs1 = lazyLoader(() => {
     loB()
 });
 
@@ -303,18 +302,18 @@ function soB(A = {}) {
     }
 }
 var aoB, at6 = "userAgentPolicy";
-var roB = L(() => {
+var roB = lazyLoader(() => {
     Zs1();
     aoB = noB()
 });
-var B11 = L(() => {
+var B11 = lazyLoader(() => {
     xa1();
     La1();
     la1();
     $qA()
 });
 var yZA;
-var ooB = L(() => {
+var ooB = lazyLoader(() => {
     yZA = class yZA extends Error {
         constructor(A) {
             super(A);
@@ -322,7 +321,7 @@ var ooB = L(() => {
         }
     }
 });
-var Is1 = L(() => {
+var Is1 = lazyLoader(() => {
     ooB()
 });
 
@@ -337,11 +336,11 @@ function toB(A, Q) {
             Y(new yZA(Z !== null && Z !== void 0 ? Z : "The operation was aborted."))
         }
 
-function W() {
+        function W() {
             G === null || G === void 0 || G.removeEventListener("abort", X)
         }
 
-function X() {
+        function X() {
             B === null || B === void 0 || B(), W(), J()
         }
         if (G === null || G === void 0 ? void 0 : G.aborted) return J();
@@ -357,7 +356,7 @@ function X() {
         G === null || G === void 0 || G.addEventListener("abort", X)
     })
 }
-var eoB = L(() => {
+var eoB = lazyLoader(() => {
     Is1()
 });
 
@@ -375,7 +374,7 @@ function Ys1(A, Q) {
     })
 }
 var ot6 = "The delay was aborted.";
-var AtB = L(() => {
+var AtB = lazyLoader(() => {
     eoB()
 });
 
@@ -389,10 +388,10 @@ function xZA(A) {
         } catch (B) {
             Q = "[unable to stringify input]"
         }
-        return `Unknown error ${Q}`
+        return `Unknown error TextComponent{Q}`
     }
 }
-var QtB = L(() => {
+var QtB = lazyLoader(() => {
     B11()
 });
 
@@ -404,7 +403,7 @@ function G11(A) {
     return _e(A)
 }
 var Z11, OqA;
-var Xl = L(() => {
+var Xl = lazyLoader(() => {
     B11();
     AtB();
     QtB();
@@ -420,7 +419,7 @@ function ZtB(A) {
     else return A
 }
 var GtB;
-var ItB = L(() => {
+var ItB = lazyLoader(() => {
     GtB = Symbol("rawContent")
 });
 
@@ -438,7 +437,7 @@ function YtB() {
     }
 }
 var Ws1;
-var JtB = L(() => {
+var JtB = lazyLoader(() => {
     fT();
     ItB();
     Ws1 = oA1
@@ -447,28 +446,28 @@ var JtB = L(() => {
 function WtB() {
     return ka1()
 }
-var XtB = L(() => {
+var XtB = lazyLoader(() => {
     fT()
 });
 
 function FtB(A = {}) {
     return ua1(A)
 }
-var VtB = L(() => {
+var VtB = lazyLoader(() => {
     fT()
 });
 
 function KtB() {
     return na1()
 }
-var DtB = L(() => {
+var DtB = lazyLoader(() => {
     fT()
 });
 
 function HtB(A, Q) {
     return ra1(A, Q)
 }
-var CtB = L(() => {
+var CtB = lazyLoader(() => {
     fT()
 });
 
@@ -485,14 +484,14 @@ function EtB(A = "x-ms-client-request-id") {
 function ztB(A) {
     return oa1(A)
 }
-var UtB = L(() => {
+var UtB = lazyLoader(() => {
     fT()
 });
 
 function $tB(A) {
     return ta1(A)
 }
-var wtB = L(() => {
+var wtB = lazyLoader(() => {
     fT()
 });
 
@@ -502,7 +501,6 @@ function qtB(A = {}) {
     if (A.namespace) Q = Q.setValue(vZA.namespace, A.namespace);
     return Q
 }
-
 class RqA {
     constructor(A) {
         this._contextMap = A instanceof RqA ? new Map(A._contextMap) : new Map
@@ -520,13 +518,13 @@ class RqA {
     }
 }
 var vZA;
-var Xs1 = L(() => {
+var Xs1 = lazyLoader(() => {
     vZA = {
         span: Symbol.for("@azure/core-tracing span"),
         namespace: Symbol.for("@azure/core-tracing namespace")
     }
 });
-var MtB = U((NtB) => {
+var MtB = moduleWrapper((NtB) => {
     Object.defineProperty(NtB, "__esModule", {
         value: !0
     });
@@ -536,8 +534,8 @@ var MtB = U((NtB) => {
     }
 });
 var OtB, I11;
-var RtB = L(() => {
-    OtB = GA(MtB(), 1), I11 = OtB.state
+var RtB = lazyLoader(() => {
+    OtB = esmImport(MtB(), 1), I11 = OtB.state
 });
 
 function tt6() {
@@ -577,7 +575,7 @@ function TqA() {
     if (!I11.instrumenterImplementation) I11.instrumenterImplementation = et6();
     return I11.instrumenterImplementation
 }
-var TtB = L(() => {
+var TtB = lazyLoader(() => {
     Xs1();
     RtB()
 });
@@ -589,7 +587,7 @@ function PqA(A) {
         packageVersion: G
     } = A;
 
-function Z(X, F, V) {
+    function Z(X, F, V) {
         var K;
         let D = TqA().startSpan(X, Object.assign(Object.assign({}, V), {
                 packageName: B,
@@ -610,8 +608,7 @@ function Z(X, F, V) {
             updatedOptions: E
         }
     }
-
-async function I(X, F, V, K) {
+    async function I(X, F, V, K) {
         let {
             span: D,
             updatedOptions: H
@@ -631,15 +628,15 @@ async function I(X, F, V, K) {
         }
     }
 
-function Y(X, F, ...V) {
+    function Y(X, F, ...V) {
         return TqA().withContext(X, F, ...V)
     }
 
-function J(X) {
+    function J(X) {
         return TqA().parseTraceparentHeader(X)
     }
 
-function W(X) {
+    function W(X) {
         return TqA().createRequestHeaders(X)
     }
     return {
@@ -650,11 +647,11 @@ function W(X) {
         createRequestHeaders: W
     }
 }
-var PtB = L(() => {
+var PtB = lazyLoader(() => {
     TtB();
     Xs1()
 });
-var Fs1 = L(() => {
+var Fs1 = lazyLoader(() => {
     PtB()
 });
 
@@ -662,7 +659,7 @@ function jqA(A) {
     return Oa1(A)
 }
 var bZA;
-var Y11 = L(() => {
+var Y11 = lazyLoader(() => {
     _ZA();
     bZA = RU
 });
@@ -709,7 +706,7 @@ function Qe6() {
             packageVersion: A11
         })
     } catch (A) {
-        Sf.warning(`Error when creating the TracingClient: ${xZA(A)}`);
+        Sf.warning(`Error when creating the TracingClient: TextComponent{xZA(A)}`);
         return
     }
 }
@@ -719,7 +716,7 @@ function Be6(A, Q, B) {
         let {
             span: G,
             updatedOptions: Z
-        } = A.startSpan(`HTTP ${Q.method}`, {
+        } = A.startSpan(`HTTP TextComponent{Q.method}`, {
             tracingOptions: Q.tracingOptions
         }, {
             spanKind: "client",
@@ -736,7 +733,7 @@ function Be6(A, Q, B) {
             tracingContext: Z.tracingOptions.tracingContext
         }
     } catch (G) {
-        Sf.warning(`Skipping creating a tracing span due to an error: ${xZA(G)}`);
+        Sf.warning(`Skipping creating a tracing span due to an error: TextComponent{xZA(G)}`);
         return
     }
 }
@@ -749,7 +746,7 @@ function Ge6(A, Q) {
             }), jqA(Q) && Q.statusCode) A.setAttribute("http.status_code", Q.statusCode);
         A.end()
     } catch (B) {
-        Sf.warning(`Skipping tracing span processing due to an error: ${xZA(B)}`)
+        Sf.warning(`Skipping tracing span processing due to an error: TextComponent{xZA(B)}`)
     }
 }
 
@@ -763,11 +760,11 @@ function Ze6(A, Q) {
         });
         A.end()
     } catch (B) {
-        Sf.warning(`Skipping tracing span processing due to an error: ${xZA(B)}`)
+        Sf.warning(`Skipping tracing span processing due to an error: TextComponent{xZA(B)}`)
     }
 }
 var Ae6 = "tracingPolicy";
-var StB = L(() => {
+var StB = lazyLoader(() => {
     Fs1();
     Zs1();
     tA1();
@@ -786,11 +783,11 @@ function J11(A) {
     let Q = new AbortController,
         B = !0;
 
-function G() {
+    function G() {
         if (B) A.removeEventListener("abort", Z), B = !1
     }
 
-function Z() {
+    function Z() {
         Q.abort(A.reason), G()
     }
     return A.addEventListener("abort", Z), {
@@ -843,7 +840,7 @@ function Vs1(A) {
         afterPhase: "Sign"
     }), B
 }
-var ytB = L(() => {
+var ytB = lazyLoader(() => {
     uoB();
     Gs1();
     doB();
@@ -876,21 +873,21 @@ function Ks1() {
         }
     }
 }
-var xtB = L(() => {
+var xtB = lazyLoader(() => {
     _ZA()
 });
 
 function ye(A) {
     return Ik(A)
 }
-var vtB = L(() => {
+var vtB = lazyLoader(() => {
     _ZA()
 });
 
 function hT(A) {
     return qa1(A)
 }
-var btB = L(() => {
+var btB = lazyLoader(() => {
     _ZA()
 });
 
@@ -902,15 +899,13 @@ function Ds1(A, Q = {
     }, Q))
 }
 var Ye6;
-var ftB = L(() => {
+var ftB = lazyLoader(() => {
     Se();
     fT();
     Ye6 = Jl("core-rest-pipeline retryPolicy")
 });
-
 async function We6(A, Q, B) {
-    // Async function: G
-async function G() {
+    async function G() {
         if (Date.now() < B) try {
             return await A()
         } catch (I) {
@@ -945,7 +940,7 @@ function htB(A, Q) {
             }
         };
 
-function J(W, X) {
+    function J(W, X) {
         var F;
         if (!Y.isRefreshing) B = We6(() => A.getToken(W, X), I.retryIntervalInMs, (F = G === null || G === void 0 ? void 0 : G.expiresOnTimestamp) !== null && F !== void 0 ? F : Date.now()).then((K) => {
             return B = null, G = K, Z = X.tenantId, G
@@ -964,7 +959,7 @@ function J(W, X) {
     }
 }
 var Je6;
-var gtB = L(() => {
+var gtB = lazyLoader(() => {
     Xl();
     Je6 = {
         forcedRefreshWindowInMs: 1000,
@@ -972,7 +967,6 @@ var gtB = L(() => {
         refreshWindowInMs: 120000
     }
 });
-
 async function W11(A, Q) {
     try {
         return [await Q(A), void 0]
@@ -981,7 +975,6 @@ async function W11(A, Q) {
         else throw B
     }
 }
-
 async function Xe6(A) {
     let {
         scopes: Q,
@@ -992,13 +985,12 @@ async function Xe6(A) {
         tracingOptions: G.tracingOptions,
         enableCae: !0
     }, I = await B(Q, Z);
-    if (I) A.request.headers.set("Authorization", `Bearer ${I.token}`)
+    if (I) A.request.headers.set("Authorization", `Bearer TextComponent{I.token}`)
 }
 
 function utB(A) {
     return A.status === 401 && A.headers.has("WWW-Authenticate")
 }
-
 async function mtB(A, Q) {
     var B;
     let {
@@ -1008,7 +1000,7 @@ async function mtB(A, Q) {
         claims: Q
     });
     if (!Z) return !1;
-    return A.request.headers.set("Authorization", `${(B=Z.tokenType)!==null&&B!==void 0?B:"Bearer"} ${Z.token}`), !0
+    return A.request.headers.set("Authorization", `TextComponent{(B=Z.tokenType)!==null&&B!==void 0?B:"Bearer"} TextComponent{Z.token}`), !0
 }
 
 function SqA(A) {
@@ -1039,7 +1031,7 @@ function SqA(A) {
                     try {
                         E = atob(C)
                     } catch (z) {
-                        return J.warning(`The WWW-Authenticate header contains "claims" that cannot be parsed. Unable to perform the Continuous Access Evaluation authentication flow. Unparsable claims: ${C}`), K
+                        return J.warning(`The WWW-Authenticate header contains "claims" that cannot be parsed. Unable to perform the Continuous Access Evaluation authentication flow. Unparsable claims: TextComponent{C}`), K
                     }
                     if (H = await mtB({
                             scopes: Array.isArray(I) ? I : [I],
@@ -1062,7 +1054,7 @@ function SqA(A) {
                             try {
                                 E = atob(C)
                             } catch (z) {
-                                return J.warning(`The WWW-Authenticate header contains "claims" that cannot be parsed. Unable to perform the Continuous Access Evaluation authentication flow. Unparsable claims: ${C}`), K
+                                return J.warning(`The WWW-Authenticate header contains "claims" that cannot be parsed. Unable to perform the Continuous Access Evaluation authentication flow. Unparsable claims: TextComponent{C}`), K
                             }
                             if (H = await mtB({
                                     scopes: Array.isArray(I) ? I : [I],
@@ -1106,12 +1098,12 @@ function dtB(A) {
     return (Q = Fe6(A).find((G) => G.scheme === "Bearer" && G.params.claims && G.params.error === "insufficient_claims")) === null || Q === void 0 ? void 0 : Q.params.claims
 }
 var ctB = "bearerTokenAuthenticationPolicy";
-var ptB = L(() => {
+var ptB = lazyLoader(() => {
     gtB();
     tA1();
     Y11()
 });
-var _f = L(() => {
+var _f = lazyLoader(() => {
     Gs1();
     ytB();
     xtB();
@@ -1121,7 +1113,7 @@ var _f = L(() => {
     ftB();
     ptB()
 });
-var ntB = U((ltB) => {
+var ntB = moduleWrapper((ltB) => {
     Object.defineProperty(ltB, "__esModule", {
         value: !0
     });
@@ -1131,8 +1123,8 @@ var ntB = U((ltB) => {
     }
 });
 var atB, Hs1;
-var stB = L(() => {
-    atB = GA(ntB(), 1), Hs1 = atB.state
+var stB = lazyLoader(() => {
+    atB = esmImport(ntB(), 1), Hs1 = atB.state
 });
 
 function Fl(A, Q, B) {
@@ -1194,7 +1186,7 @@ function kf(A) {
     return Q
 }
 var otB;
-var _qA = L(() => {
+var _qA = lazyLoader(() => {
     stB();
     otB = Symbol.for("@azure/core-client original request")
 });
@@ -1241,7 +1233,6 @@ function Ee6(A) {
     else Z = G(A);
     return Z
 }
-
 async function ze6(A, Q, B, G, Z) {
     let I = await we6(A, Q, B, G, Z);
     if (!Ee6(I)) return I;
@@ -1262,7 +1253,7 @@ async function ze6(A, Q, B, G, Z) {
             try {
                 I.parsedBody = J.serializer.deserialize(W.bodyMapper, V, "operationRes.parsedBody", G)
             } catch (K) {
-                throw new bZA(`Error ${K} occurred in deserializing the responseBody - ${I.bodyAsText}`, {
+                throw new bZA(`Error TextComponent{K} occurred in deserializing the responseBody - TextComponent{I.bodyAsText}`, {
                     statusCode: I.status,
                     request: I.request,
                     response: I
@@ -1296,7 +1287,7 @@ function $e6(A, Q, B, G) {
             shouldReturnResponse: !1
         };
     let V = B !== null && B !== void 0 ? B : Q.responses.default,
-        K = ((Z = A.request.streamResponseStatusCodes) === null || Z === void 0 ? void 0 : Z.has(A.status)) ? `Unexpected status code: ${A.status}` : A.bodyAsText,
+        K = ((Z = A.request.streamResponseStatusCodes) === null || Z === void 0 ? void 0 : Z.has(A.status)) ? `Unexpected status code: TextComponent{A.status}` : A.bodyAsText,
         D = new bZA(K, {
             statusCode: A.status,
             request: A.request,
@@ -1324,14 +1315,13 @@ function $e6(A, Q, B, G) {
         }
         if (A.headers && C) D.response.parsedHeaders = Q.serializer.deserialize(C, A.headers.toJSON(), "operationRes.parsedHeaders")
     } catch (E) {
-        D.message = `Error "${E.message}" occurred in deserializing the responseBody - "${A.bodyAsText}" for the default response.`
+        D.message = `Error "TextComponent{E.message}" occurred in deserializing the responseBody - "TextComponent{A.bodyAsText}" for the default response.`
     }
     return {
         error: D,
         shouldReturnResponse: !1
     }
 }
-
 async function we6(A, Q, B, G, Z) {
     var I;
     if (!((I = B.request.streamResponseStatusCodes) === null || I === void 0 ? void 0 : I.has(B.status)) && B.bodyAsText) {
@@ -1346,7 +1336,7 @@ async function we6(A, Q, B, G, Z) {
                 return B.parsedBody = X, B
             }
         } catch (X) {
-            let F = `Error "${X}" occurred while parsing the response body - ${B.bodyAsText}.`,
+            let F = `Error "TextComponent{X}" occurred while parsing the response body - TextComponent{B.bodyAsText}.`,
                 V = X.code || bZA.PARSE_ERROR;
             throw new bZA(F, {
                 code: V,
@@ -1359,7 +1349,7 @@ async function we6(A, Q, B, G, Z) {
     return B
 }
 var Ke6, De6, He6 = "deserializationPolicy";
-var etB = L(() => {
+var etB = lazyLoader(() => {
     _f();
     uA1();
     _qA();
@@ -1385,7 +1375,7 @@ function Wk(A) {
     else G = B.serializedName;
     return G
 }
-var X11 = L(() => {
+var X11 = lazyLoader(() => {
     uA1()
 });
 
@@ -1453,7 +1443,7 @@ function Le6(A, Q, B, G = function() {
                 A.body = B.serializer.serialize(K, A.body, R, F);
                 let P = q === jf.Stream;
                 if (B.isXML) {
-                    let y = w ? `xmlns:${w}` : "xmlns",
+                    let y = w ? `xmlns:TextComponent{w}` : "xmlns",
                         v = Me6(z, y, q, A.body, F);
                     if (q === jf.Sequence) A.body = G(Oe6(v, E || C || H, y, z), {
                         rootName: C || H,
@@ -1467,7 +1457,7 @@ function Le6(A, Q, B, G = function() {
                 else if (!P) A.body = JSON.stringify(A.body)
             }
         } catch (R) {
-            throw Error(`Error "${R.message}" occurred in serializing the payload - ${JSON.stringify(H,void 0,"  ")}.`)
+            throw Error(`Error "TextComponent{R.message}" occurred in serializing the payload - TextComponent{JSON.stringify(H,void 0,"  ")}.`)
         }
     } else if (B.formDataParameters && B.formDataParameters.length > 0) {
         A.formData = {};
@@ -1504,7 +1494,7 @@ function Oe6(A, Q, B, G) {
     }, Z
 }
 var qe6 = "serializationPolicy";
-var BeB = L(() => {
+var BeB = lazyLoader(() => {
     _qA();
     uA1();
     X11()
@@ -1522,7 +1512,7 @@ function GeB(A = {}) {
         phase: "Deserialize"
     }), Q
 }
-var ZeB = L(() => {
+var ZeB = lazyLoader(() => {
     etB();
     _f();
     BeB()

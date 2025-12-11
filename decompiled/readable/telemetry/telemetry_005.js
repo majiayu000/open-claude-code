@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: telemetry_005.js
+ * 处理时间: 2025-12-09T03:41:38.332Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.048Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -22,9 +25,9 @@
         aC6 = "(?![0]{32})[\\da-f]{32}",
         sC6 = "(?![0]{16})[\\da-f]{16}",
         rC6 = "[\\da-f]{2}",
-        oC6 = new RegExp(`^\\s?(${nC6})-(${aC6})-(${sC6})-(${rC6})(-.*)?\\s?$`);
+        oC6 = new RegExp(`^\\s?(TextComponent{nC6})-(TextComponent{aC6})-(TextComponent{sC6})-(TextComponent{rC6})(-.*)?\\s?TextComponent`);
 
-function LNB(A) {
+    function LNB(A) {
         let Q = oC6.exec(A);
         if (!Q) return null;
         if (Q[1] === "00" && Q[5]) return null;
@@ -35,12 +38,11 @@ function LNB(A) {
         }
     }
     ONB.parseTraceParent = LNB;
-
-class MNB {
+    class MNB {
         inject(A, Q, B) {
             let G = DsA.trace.getSpanContext(A);
             if (!G || (0, pC6.isTracingSuppressed)(A) || !(0, DsA.isSpanContextValid)(G)) return;
-            let Z = `${iC6}-${G.traceId}-${G.spanId}-0${Number(G.traceFlags||DsA.TraceFlags.NONE).toString(16)}`;
+            let Z = `TextComponent{iC6}-TextComponent{G.traceId}-TextComponent{G.spanId}-0${Number(G.traceFlags||DsA.TraceFlags.NONE).toString(16)}`;
             if (B.set(Q, ONB.TRACE_PARENT_HEADER, Z), G.traceState) B.set(Q, ONB.TRACE_STATE_HEADER, G.traceState.serialize())
         }
         extract(A, Q, B) {
@@ -64,7 +66,7 @@ class MNB {
     }
     ONB.W3CTraceContextPropagator = MNB
 });
-var _NB = U((jNB) => {
+var _NB = moduleWrapper((jNB) => {
     Object.defineProperty(jNB, "__esModule", {
         value: !0
     });
@@ -76,22 +78,22 @@ var _NB = U((jNB) => {
         A.HTTP = "http"
     })(AE6 = jNB.RPCType || (jNB.RPCType = {}));
 
-function QE6(A, Q) {
+    function QE6(A, Q) {
         return A.setValue(ru1, Q)
     }
     jNB.setRPCMetadata = QE6;
 
-function BE6(A) {
+    function BE6(A) {
         return A.deleteValue(ru1)
     }
     jNB.deleteRPCMetadata = BE6;
 
-function GE6(A) {
+    function GE6(A) {
         return A.getValue(ru1)
     }
     jNB.getRPCMetadata = GE6
 });
-var hNB = U((bNB) => {
+var hNB = moduleWrapper((bNB) => {
     Object.defineProperty(bNB, "__esModule", {
         value: !0
     });
@@ -108,7 +110,7 @@ var hNB = U((bNB) => {
         mt = Symbol ? Symbol.toStringTag : void 0,
         vNB = yNB.toString;
 
-function KE6(A) {
+    function KE6(A) {
         if (!DE6(A) || HE6(A) !== YE6) return !1;
         let Q = VE6(A);
         if (Q === null) return !0;
@@ -117,16 +119,16 @@ function KE6(A) {
     }
     bNB.isPlainObject = KE6;
 
-function DE6(A) {
+    function DE6(A) {
         return A != null && typeof A == "object"
     }
 
-function HE6(A) {
+    function HE6(A) {
         if (A == null) return A === void 0 ? WE6 : JE6;
         return mt && mt in Object(A) ? CE6(A) : EE6(A)
     }
 
-function CE6(A) {
+    function CE6(A) {
         let Q = xNB.call(A, mt),
             B = A[mt],
             G = !1;
@@ -140,11 +142,11 @@ function CE6(A) {
         return Z
     }
 
-function EE6(A) {
+    function EE6(A) {
         return vNB.call(A)
     }
 });
-var lNB = U((cNB) => {
+var lNB = moduleWrapper((cNB) => {
     Object.defineProperty(cNB, "__esModule", {
         value: !0
     });
@@ -152,7 +154,7 @@ var lNB = U((cNB) => {
     var gNB = hNB(),
         zE6 = 20;
 
-function UE6(...A) {
+    function UE6(...A) {
         let Q = A.shift(),
             B = new WeakMap;
         while (A.length > 0) Q = mNB(Q, A.shift(), 0, B);
@@ -160,12 +162,12 @@ function UE6(...A) {
     }
     cNB.merge = UE6;
 
-function ou1(A) {
+    function ou1(A) {
         if (zsA(A)) return A.slice();
         return A
     }
 
-function mNB(A, Q, B = 0, G) {
+    function mNB(A, Q, B = 0, G) {
         let Z;
         if (B > zE6) return;
         if (B++, EsA(A) || EsA(Q) || dNB(Q)) Z = ou1(Q);
@@ -214,7 +216,7 @@ function mNB(A, Q, B = 0, G) {
         return Z
     }
 
-function uNB(A, Q, B) {
+    function uNB(A, Q, B) {
         let G = B.get(A[Q]) || [];
         for (let Z = 0, I = G.length; Z < I; Z++) {
             let Y = G[Z];
@@ -223,19 +225,19 @@ function uNB(A, Q, B) {
         return !1
     }
 
-function zsA(A) {
+    function zsA(A) {
         return Array.isArray(A)
     }
 
-function dNB(A) {
+    function dNB(A) {
         return typeof A === "function"
     }
 
-function z$A(A) {
+    function z$A(A) {
         return !EsA(A) && !zsA(A) && !dNB(A) && typeof A === "object"
     }
 
-function EsA(A) {
+    function EsA(A) {
         return typeof A === "string" || typeof A === "number" || typeof A === "boolean" || typeof A > "u" || A instanceof Date || A instanceof RegExp || A === null
     }
 
@@ -244,13 +246,12 @@ function EsA(A) {
         return !0
     }
 });
-var aNB = U((iNB) => {
+var aNB = moduleWrapper((iNB) => {
     Object.defineProperty(iNB, "__esModule", {
         value: !0
     });
     iNB.callWithTimeout = iNB.TimeoutError = void 0;
-
-class UsA extends Error {
+    class UsA extends Error {
         constructor(A) {
             super(A);
             Object.setPrototypeOf(this, UsA.prototype)
@@ -258,7 +259,7 @@ class UsA extends Error {
     }
     iNB.TimeoutError = UsA;
 
-function wE6(A, Q) {
+    function wE6(A, Q) {
         let B, G = new Promise(function(I, Y) {
             B = setTimeout(function() {
                 Y(new UsA("Operation timed out."))
@@ -272,19 +273,19 @@ function wE6(A, Q) {
     }
     iNB.callWithTimeout = wE6
 });
-var tNB = U((rNB) => {
+var tNB = moduleWrapper((rNB) => {
     Object.defineProperty(rNB, "__esModule", {
         value: !0
     });
     rNB.isUrlIgnored = rNB.urlMatches = void 0;
 
-function sNB(A, Q) {
+    function sNB(A, Q) {
         if (typeof Q === "string") return A === Q;
         else return !!A.match(Q)
     }
     rNB.urlMatches = sNB;
 
-function NE6(A, Q) {
+    function NE6(A, Q) {
         if (!Q) return !1;
         for (let B of Q)
             if (sNB(A, B)) return !0;
@@ -292,13 +293,12 @@ function NE6(A, Q) {
     }
     rNB.isUrlIgnored = NE6
 });
-var BLB = U((ALB) => {
+var BLB = moduleWrapper((ALB) => {
     Object.defineProperty(ALB, "__esModule", {
         value: !0
     });
     ALB.Deferred = void 0;
-
-class eNB {
+    class eNB {
         _promise;
         _resolve;
         _reject;
@@ -319,14 +319,13 @@ class eNB {
     }
     ALB.Deferred = eNB
 });
-var YLB = U((ZLB) => {
+var YLB = moduleWrapper((ZLB) => {
     Object.defineProperty(ZLB, "__esModule", {
         value: !0
     });
     ZLB.BindOnceFuture = void 0;
     var ME6 = BLB();
-
-class GLB {
+    class GLB {
         _callback;
         _that;
         _isCalled = !1;
@@ -354,7 +353,7 @@ class GLB {
     }
     ZLB.BindOnceFuture = GLB
 });
-var FLB = U((WLB) => {
+var FLB = moduleWrapper((WLB) => {
     Object.defineProperty(WLB, "__esModule", {
         value: !0
     });
@@ -370,15 +369,15 @@ var FLB = U((WLB) => {
             NONE: ob.DiagLogLevel.NONE
         };
 
-function OE6(A) {
+    function OE6(A) {
         if (A == null) return;
         let Q = JLB[A.toUpperCase()];
-        if (Q == null) return ob.diag.warn(`Unknown log level "${A}", expected one of ${Object.keys(JLB)}, using default`), ob.DiagLogLevel.INFO;
+        if (Q == null) return ob.diag.warn(`Unknown log level "TextComponent{A}", expected one of TextComponent{Object.keys(JLB)}, using default`), ob.DiagLogLevel.INFO;
         return Q
     }
     WLB.diagLogLevelFromString = OE6
 });
-var HLB = U((KLB) => {
+var HLB = moduleWrapper((KLB) => {
     Object.defineProperty(KLB, "__esModule", {
         value: !0
     });
@@ -386,7 +385,7 @@ var HLB = U((KLB) => {
     var VLB = W9(),
         RE6 = H$A();
 
-function TE6(A, Q) {
+    function TE6(A, Q) {
         return new Promise((B) => {
             VLB.context.with((0, RE6.suppressTracing)(VLB.context.active()), () => {
                 A.export(Q, (G) => {
@@ -397,7 +396,7 @@ function TE6(A, Q) {
     }
     KLB._export = TE6
 });
-var t6 = U((t9) => {
+var t6 = moduleWrapper((t9) => {
     Object.defineProperty(t9, "__esModule", {
         value: !0
     });
@@ -720,18 +719,18 @@ var t6 = U((t9) => {
         _export: hE6._export
     }
 });
-var NLB = U((wLB) => {
+var NLB = moduleWrapper((wLB) => {
     Object.defineProperty(wLB, "__esModule", {
         value: !0
     });
     wLB.defaultServiceName = void 0;
 
-function gE6() {
-        return `unknown_service:${process.argv0}`
+    function gE6() {
+        return `unknown_service:TextComponent{process.argv0}`
     }
     wLB.defaultServiceName = gE6
 });
-var LLB = U((eu1) => {
+var LLB = moduleWrapper((eu1) => {
     Object.defineProperty(eu1, "__esModule", {
         value: !0
     });
@@ -744,7 +743,7 @@ var LLB = U((eu1) => {
         }
     })
 });
-var Qm1 = U((Am1) => {
+var Qm1 = moduleWrapper((Am1) => {
     Object.defineProperty(Am1, "__esModule", {
         value: !0
     });
@@ -757,7 +756,7 @@ var Qm1 = U((Am1) => {
         }
     })
 });
-var RLB = U((MLB) => {
+var RLB = moduleWrapper((MLB) => {
     Object.defineProperty(MLB, "__esModule", {
         value: !0
     });
@@ -767,12 +766,12 @@ var RLB = U((MLB) => {
     };
     MLB.isPromiseLike = pE6;
 
-function lE6(A) {
+    function lE6(A) {
         return A
     }
     MLB.identity = lE6
 });
-var Zm1 = U((PLB) => {
+var Zm1 = moduleWrapper((PLB) => {
     Object.defineProperty(PLB, "__esModule", {
         value: !0
     });
@@ -782,8 +781,7 @@ var Zm1 = U((PLB) => {
         dt = ut(),
         nE6 = Qm1(),
         U$A = RLB();
-
-class w$A {
+    class w$A {
         _rawAttributes;
         _asyncAttributesPending = !1;
         _schemaUrl;
@@ -816,7 +814,7 @@ class w$A {
             let A = {};
             for (let [Q, B] of this._rawAttributes) {
                 if ((0, U$A.isPromiseLike)(B)) {
-                    $$A.diag.debug(`Unsettled resource attribute ${Q} skipped`);
+                    $$A.diag.debug(`Unsettled resource attribute TextComponent{Q} skipped`);
                     continue
                 }
                 if (B != null) A[Q] ??= B
@@ -840,22 +838,22 @@ class w$A {
         }
     }
 
-function Gm1(A, Q) {
+    function Gm1(A, Q) {
         return w$A.FromAttributeList(Object.entries(A), Q)
     }
     PLB.resourceFromAttributes = Gm1;
 
-function aE6(A, Q) {
+    function aE6(A, Q) {
         return new w$A(A, Q)
     }
     PLB.resourceFromDetectedResource = aE6;
 
-function sE6() {
+    function sE6() {
         return Gm1({})
     }
     PLB.emptyResource = sE6;
 
-function rE6() {
+    function rE6() {
         return Gm1({
             [dt.ATTR_SERVICE_NAME]: (0, nE6.defaultServiceName)(),
             [dt.ATTR_TELEMETRY_SDK_LANGUAGE]: Bm1.SDK_INFO[dt.ATTR_TELEMETRY_SDK_LANGUAGE],
@@ -865,7 +863,7 @@ function rE6() {
     }
     PLB.defaultResource = rE6;
 
-function TLB(A) {
+    function TLB(A) {
         return A.map(([Q, B]) => {
             if ((0, U$A.isPromiseLike)(B)) return [Q, B.catch((G) => {
                 $$A.diag.debug("promise rejection for resource attribute: %s - %s", Q, G);
@@ -875,13 +873,13 @@ function TLB(A) {
         })
     }
 
-function oE6(A) {
+    function oE6(A) {
         if (typeof A === "string" || A === void 0) return A;
         $$A.diag.warn("Schema URL must be string or undefined, got %s. Schema URL will be ignored.", A);
         return
     }
 
-function tE6(A, Q) {
+    function tE6(A, Q) {
         let B = A?.schemaUrl,
             G = Q?.schemaUrl,
             Z = B === void 0 || B === "",
@@ -893,7 +891,7 @@ function tE6(A, Q) {
         return
     }
 });
-var yLB = U((_LB) => {
+var yLB = moduleWrapper((_LB) => {
     Object.defineProperty(_LB, "__esModule", {
         value: !0
     });
@@ -904,15 +902,15 @@ var yLB = U((_LB) => {
             return (A.detectors || []).map((B) => {
                 try {
                     let G = (0, Im1.resourceFromDetectedResource)(B.detect(A));
-                    return SLB.diag.debug(`${B.constructor.name} found resource.`, G), G
+                    return SLB.diag.debug(`TextComponent{B.constructor.name} found resource.`, G), G
                 } catch (G) {
-                    return SLB.diag.debug(`${B.constructor.name} failed: ${G.message}`), (0, Im1.emptyResource)()
+                    return SLB.diag.debug(`TextComponent{B.constructor.name} failed: TextComponent{G.message}`), (0, Im1.emptyResource)()
                 }
             }).reduce((B, G) => B.merge(G), (0, Im1.emptyResource)())
         };
     _LB.detectResources = Bz6
 });
-var hLB = U((bLB) => {
+var hLB = moduleWrapper((bLB) => {
     Object.defineProperty(bLB, "__esModule", {
         value: !0
     });
@@ -920,8 +918,7 @@ var hLB = U((bLB) => {
     var Gz6 = W9(),
         Zz6 = ut(),
         xLB = t6();
-
-class vLB {
+    class vLB {
         _MAX_LENGTH = 255;
         _COMMA_SEPARATOR = ",";
         _LABEL_KEY_VALUE_SPLITTER = "=";
@@ -935,7 +932,7 @@ class vLB {
                 let Z = this._parseResourceAttributes(B);
                 Object.assign(Q, Z)
             } catch (Z) {
-                Gz6.diag.debug(`EnvDetector failed: ${Z.message}`)
+                Gz6.diag.debug(`EnvDetector failed: TextComponent{Z.message}`)
             }
             if (G) Q[Zz6.ATTR_SERVICE_NAME] = G;
             return {
@@ -950,8 +947,8 @@ class vLB {
                 let Z = G.split(this._LABEL_KEY_VALUE_SPLITTER, -1);
                 if (Z.length !== 2) continue;
                 let [I, Y] = Z;
-                if (I = I.trim(), Y = Y.trim().split(/^"|"$/).join(""), !this._isValidAndNotEmpty(I)) throw Error(`Attribute key ${this._ERROR_MESSAGE_INVALID_CHARS}`);
-                if (!this._isValid(Y)) throw Error(`Attribute value ${this._ERROR_MESSAGE_INVALID_VALUE}`);
+                if (I = I.trim(), Y = Y.trim().split(/^"|"TextComponent/).join(""), !this._isValidAndNotEmpty(I)) throw Error(`Attribute key TextComponent{this._ERROR_MESSAGE_INVALID_CHARS}`);
+                if (!this._isValid(Y)) throw Error(`Attribute value TextComponent{this._ERROR_MESSAGE_INVALID_VALUE}`);
                 Q[I] = decodeURIComponent(Y)
             }
             return Q
@@ -972,7 +969,7 @@ class vLB {
     }
     bLB.envDetector = new vLB
 });
-var q$A = U((gLB) => {
+var q$A = moduleWrapper((gLB) => {
     Object.defineProperty(gLB, "__esModule", {
         value: !0
     });
@@ -1013,150 +1010,144 @@ var q$A = U((gLB) => {
     gLB.ATTR_WEBENGINE_NAME = "webengine.name";
     gLB.ATTR_WEBENGINE_VERSION = "webengine.version"
 });
-var qsA = U((mLB) => {
+var qsA = moduleWrapper((mLB) => {
     Object.defineProperty(mLB, "__esModule", {
         value: !0
     });
     mLB.execAsync = void 0;
-    var gz6 = UA("child_process"),
-        uz6 = UA("util");
+    var gz6 = nodeRequire("child_process"),
+        uz6 = nodeRequire("util");
     mLB.execAsync = uz6.promisify(gz6.exec)
 });
-var lLB = U((cLB) => {
+var lLB = moduleWrapper((cLB) => {
     Object.defineProperty(cLB, "__esModule", {
         value: !0
     });
     cLB.getMachineId = void 0;
     var mz6 = qsA(),
         dz6 = W9();
-    // Async function: cz6
-async function cz6() {
+    async function cz6() {
         try {
-            let Q = (await (0, mz6.execAsync)('ioreg -rd1 -c "IOPlatformExpertDevice"')).stdout.split(`
+            let Q = (await (0, mz6.execAsync)('ioreg -getShellRcFile -c "IOPlatformExpertDevice"')).stdout.split(`
 `).find((G) => G.includes("IOPlatformUUID"));
             if (!Q) return;
             let B = Q.split('" = "');
             if (B.length === 2) return B[1].slice(0, -1)
         } catch (A) {
-            dz6.diag.debug(`error reading machine id: ${A}`)
+            dz6.diag.debug(`error reading machine id: TextComponent{A}`)
         }
         return
     }
     cLB.getMachineId = cz6
 });
-var aLB = U((iLB) => {
+var aLB = moduleWrapper((iLB) => {
     Object.defineProperty(iLB, "__esModule", {
         value: !0
     });
     iLB.getMachineId = void 0;
-    var pz6 = UA("fs"),
+    var pz6 = nodeRequire("fs"),
         lz6 = W9();
-    // Async function: iz6
-async function iz6() {
+    async function iz6() {
         let A = ["/etc/machine-id", "/var/lib/dbus/machine-id"];
         for (let Q of A) try {
             return (await pz6.promises.readFile(Q, {
                 encoding: "utf8"
             })).trim()
         } catch (B) {
-            lz6.diag.debug(`error reading machine id: ${B}`)
+            lz6.diag.debug(`error reading machine id: TextComponent{B}`)
         }
         return
     }
     iLB.getMachineId = iz6
 });
-var tLB = U((rLB) => {
+var tLB = moduleWrapper((rLB) => {
     Object.defineProperty(rLB, "__esModule", {
         value: !0
     });
     rLB.getMachineId = void 0;
-    var nz6 = UA("fs"),
+    var nz6 = nodeRequire("fs"),
         az6 = qsA(),
         sLB = W9();
-    // Async function: sz6
-async function sz6() {
+    async function sz6() {
         try {
             return (await nz6.promises.readFile("/etc/hostid", {
                 encoding: "utf8"
             })).trim()
         } catch (A) {
-            sLB.diag.debug(`error reading machine id: ${A}`)
+            sLB.diag.debug(`error reading machine id: TextComponent{A}`)
         }
         try {
             return (await (0, az6.execAsync)("kenv -q smbios.system.uuid")).stdout.trim()
         } catch (A) {
-            sLB.diag.debug(`error reading machine id: ${A}`)
+            sLB.diag.debug(`error reading machine id: TextComponent{A}`)
         }
         return
     }
     rLB.getMachineId = sz6
 });
-var BMB = U((AMB) => {
+var BMB = moduleWrapper((AMB) => {
     Object.defineProperty(AMB, "__esModule", {
         value: !0
     });
     AMB.getMachineId = void 0;
-    var eLB = UA("process"),
+    var eLB = nodeRequire("process"),
         rz6 = qsA(),
         oz6 = W9();
-    // Async function: tz6
-async function tz6() {
+    async function tz6() {
         let Q = "%windir%\\System32\\REG.exe";
         if (eLB.arch === "ia32" && "PROCESSOR_ARCHITEW6432" in eLB.env) Q = "%windir%\\sysnative\\cmd.exe /c " + Q;
         try {
-            let G = (await (0, rz6.execAsync)(`${Q} QUERY HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography /v MachineGuid`)).stdout.split("REG_SZ");
+            let G = (await (0, rz6.execAsync)(`TextComponent{Q} QUERY HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography /v MachineGuid`)).stdout.split("REG_SZ");
             if (G.length === 2) return G[1].trim()
         } catch (B) {
-            oz6.diag.debug(`error reading machine id: ${B}`)
+            oz6.diag.debug(`error reading machine id: TextComponent{B}`)
         }
         return
     }
     AMB.getMachineId = tz6
 });
-var IMB = U((GMB) => {
+var IMB = moduleWrapper((GMB) => {
     Object.defineProperty(GMB, "__esModule", {
         value: !0
     });
     GMB.getMachineId = void 0;
     var ez6 = W9();
-    // Async function: AU6
-async function AU6() {
+    async function AU6() {
         ez6.diag.debug("could not read machine-id: unsupported platform");
         return
     }
     GMB.getMachineId = AU6
 });
-var WMB = U((YMB) => {
+var WMB = moduleWrapper((YMB) => {
     Object.defineProperty(YMB, "__esModule", {
         value: !0
     });
     YMB.getMachineId = void 0;
-    var QU6 = UA("process"),
+    var QU6 = nodeRequire("process"),
         ct;
-    // Async function: BU6
-async function BU6() {
+    async function BU6() {
         if (!ct) switch (QU6.platform) {
             case "darwin":
-                ct = (await Promise.resolve().then(() => GA(lLB()))).getMachineId;
+                ct = (await Promise.resolve().then(() => esmImport(lLB()))).getMachineId;
                 break;
             case "linux":
-                ct = (await Promise.resolve().then(() => GA(aLB()))).getMachineId;
+                ct = (await Promise.resolve().then(() => esmImport(aLB()))).getMachineId;
                 break;
             case "freebsd":
-                ct = (await Promise.resolve().then(() => GA(tLB()))).getMachineId;
+                ct = (await Promise.resolve().then(() => esmImport(tLB()))).getMachineId;
                 break;
             case "win32":
-                ct = (await Promise.resolve().then(() => GA(BMB()))).getMachineId;
+                ct = (await Promise.resolve().then(() => esmImport(BMB()))).getMachineId;
                 break;
             default:
-                ct = (await Promise.resolve().then(() => GA(IMB()))).getMachineId;
+                ct = (await Promise.resolve().then(() => esmImport(IMB()))).getMachineId;
                 break
         }
         return ct()
     }
     YMB.getMachineId = BU6
 });
-var Ym1 = U((XMB) => {
+var Ym1 = moduleWrapper((XMB) => {
     Object.defineProperty(XMB, "__esModule", {
         value: !0
     });
@@ -1186,17 +1177,16 @@ var Ym1 = U((XMB) => {
     };
     XMB.normalizeType = ZU6
 });
-var CMB = U((DMB) => {
+var CMB = moduleWrapper((DMB) => {
     Object.defineProperty(DMB, "__esModule", {
         value: !0
     });
     DMB.hostDetector = void 0;
     var Jm1 = q$A(),
-        VMB = UA("os"),
+        VMB = nodeRequire("os"),
         YU6 = WMB(),
         JU6 = Ym1();
-
-class KMB {
+    class KMB {
         detect(A) {
             return {
                 attributes: {
@@ -1209,16 +1199,15 @@ class KMB {
     }
     DMB.hostDetector = new KMB
 });
-var qMB = U(($MB) => {
+var qMB = moduleWrapper(($MB) => {
     Object.defineProperty($MB, "__esModule", {
         value: !0
     });
     $MB.osDetector = void 0;
     var EMB = q$A(),
-        zMB = UA("os"),
+        zMB = nodeRequire("os"),
         WU6 = Ym1();
-
-class UMB {
+    class UMB {
         detect(A) {
             return {
                 attributes: {
@@ -1230,16 +1219,15 @@ class UMB {
     }
     $MB.osDetector = new UMB
 });
-var OMB = U((LMB) => {
+var OMB = moduleWrapper((LMB) => {
     Object.defineProperty(LMB, "__esModule", {
         value: !0
     });
     LMB.processDetector = void 0;
     var XU6 = W9(),
         tb = q$A(),
-        FU6 = UA("os");
-
-class NMB {
+        FU6 = nodeRequire("os");
+    class NMB {
         detect(A) {
             let Q = {
                 [tb.ATTR_PROCESS_PID]: process.pid,
@@ -1255,7 +1243,7 @@ class NMB {
                 let B = FU6.userInfo();
                 Q[tb.ATTR_PROCESS_OWNER] = B.username
             } catch (B) {
-                XU6.diag.debug(`error obtaining process owner: ${B}`)
+                XU6.diag.debug(`error obtaining process owner: TextComponent{B}`)
             }
             return {
                 attributes: Q
@@ -1264,15 +1252,14 @@ class NMB {
     }
     LMB.processDetector = new NMB
 });
-var jMB = U((TMB) => {
+var jMB = moduleWrapper((TMB) => {
     Object.defineProperty(TMB, "__esModule", {
         value: !0
     });
     TMB.serviceInstanceIdDetector = void 0;
     var VU6 = q$A(),
-        KU6 = UA("crypto");
-
-class RMB {
+        KU6 = nodeRequire("crypto");
+    class RMB {
         detect(A) {
             return {
                 attributes: {
@@ -1283,7 +1270,7 @@ class RMB {
     }
     TMB.serviceInstanceIdDetector = new RMB
 });
-var SMB = U((v7A) => {
+var SMB = moduleWrapper((v7A) => {
     Object.defineProperty(v7A, "__esModule", {
         value: !0
     });
@@ -1317,7 +1304,7 @@ var SMB = U((v7A) => {
         }
     })
 });
-var _MB = U((b7A) => {
+var _MB = moduleWrapper((b7A) => {
     Object.defineProperty(b7A, "__esModule", {
         value: !0
     });
@@ -1348,13 +1335,12 @@ var _MB = U((b7A) => {
         }
     })
 });
-var xMB = U((kMB) => {
+var xMB = moduleWrapper((kMB) => {
     Object.defineProperty(kMB, "__esModule", {
         value: !0
     });
     kMB.noopDetector = kMB.NoopDetector = void 0;
-
-class Wm1 {
+    class Wm1 {
         detect() {
             return {
                 attributes: {}
@@ -1364,7 +1350,7 @@ class Wm1 {
     kMB.NoopDetector = Wm1;
     kMB.noopDetector = new Wm1
 });
-var vMB = U((Yp) => {
+var vMB = moduleWrapper((Yp) => {
     Object.defineProperty(Yp, "__esModule", {
         value: !0
     });
@@ -1409,7 +1395,7 @@ var vMB = U((Yp) => {
         }
     })
 });
-var f7A = U((zM) => {
+var f7A = moduleWrapper((zM) => {
     Object.defineProperty(zM, "__esModule", {
         value: !0
     });
@@ -1479,15 +1465,14 @@ var f7A = U((zM) => {
         }
     })
 });
-var gMB = U((fMB) => {
+var gMB = moduleWrapper((fMB) => {
     Object.defineProperty(fMB, "__esModule", {
         value: !0
     });
     fMB.LogRecordImpl = void 0;
     var pt = W9(),
         MsA = t6();
-
-class bMB {
+    class bMB {
         hrTime;
         hrTimeObserved;
         spanContext;

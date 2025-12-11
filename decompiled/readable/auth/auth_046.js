@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_046.js
+ * 处理时间: 2025-12-09T03:41:36.871Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.928Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -27,7 +30,7 @@
         let A = [],
             Q = new Map;
 
-function B(D) {
+        function B(D) {
             return {
                 name: D,
                 policies: new Set,
@@ -42,7 +45,7 @@ function B(D) {
             J = B("Sign"),
             W = [G, Z, I, Y, J];
 
-function X(D) {
+        function X(D) {
             if (D === "Retry") return Y;
             else if (D === "Serialize") return G;
             else if (D === "Deserialize") return I;
@@ -68,7 +71,7 @@ function X(D) {
                 policy: H,
                 options: C
             } = D, E = H.name, z = Q.get(E);
-            if (!z) throw Error(`Missing node for policy ${E}`);
+            if (!z) throw Error(`Missing node for policy TextComponent{E}`);
             if (C.afterPolicies)
                 for (let w of C.afterPolicies) {
                     let N = Q.get(w);
@@ -81,7 +84,7 @@ function X(D) {
                 }
         }
 
-function F(D) {
+        function F(D) {
             D.hasRun = !0;
             for (let H of D.policies) {
                 if (H.afterPhase && (!H.afterPhase.hasRun || H.afterPhase.policies.size)) continue;
@@ -93,7 +96,7 @@ function F(D) {
             }
         }
 
-function V() {
+        function V() {
             for (let D of W) {
                 if (F(D), D.policies.size > 0 && D !== Z) {
                     if (!Z.hasRun) F(Z);
@@ -116,7 +119,7 @@ function Na1() {
     return cA1.create()
 }
 var UrB;
-var $rB = L(() => {
+var $rB = lazyLoader(() => {
     UrB = new Set(["Deserialize", "Serialize", "Retry", "Sign"])
 });
 
@@ -137,10 +140,9 @@ import {
     inspect as no6
 } from "node:util";
 var wrB;
-var qrB = L(() => {
+var qrB = lazyLoader(() => {
     wrB = no6.custom
 });
-
 class Yk {
     constructor({
         additionalAllowedHeaderNames: A = [],
@@ -194,7 +196,7 @@ class Yk {
 }
 var Ma1 = "REDACTED",
     ao6, so6;
-var $qA = L(() => {
+var $qA = lazyLoader(() => {
     ao6 = ["x-ms-client-request-id", "x-ms-return-client-request-id", "x-ms-useragent", "x-ms-correlation-request-id", "x-ms-request-id", "client-request-id", "ms-cv", "return-client-request-id", "traceparent", "Access-Control-Allow-Credentials", "Access-Control-Allow-Headers", "Access-Control-Allow-Methods", "Access-Control-Allow-Origin", "Access-Control-Expose-Headers", "Access-Control-Max-Age", "Access-Control-Request-Headers", "Access-Control-Request-Method", "Origin", "Accept", "Accept-Encoding", "Cache-Control", "Connection", "Content-Length", "Content-Type", "Date", "ETag", "Expires", "If-Match", "If-Modified-Since", "If-None-Match", "If-Unmodified-Since", "Last-Modified", "Pragma", "Request-Id", "Retry-After", "Server", "Transfer-Encoding", "User-Agent", "WWW-Authenticate"], so6 = ["api-version"]
 });
 
@@ -203,7 +205,7 @@ function Oa1(A) {
     return _e(A) && A.name === "RestError"
 }
 var ro6, RU;
-var Ra1 = L(() => {
+var Ra1 = lazyLoader(() => {
     La1();
     qrB();
     $qA();
@@ -219,8 +221,8 @@ var Ra1 = L(() => {
                 enumerable: !1
             }), Object.defineProperty(this, wrB, {
                 value: () => {
-                    return `RestError: ${this.message} 
- ${ro6.sanitize(Object.assign(Object.assign({},this),{request:this.request,response:this.response}))}`
+                    return `RestError: TextComponent{this.message} 
+ TextComponent{ro6.sanitize(Object.assign(Object.assign({},this),{request:this.request,response:this.response}))}`
                 },
                 enumerable: !1
             }), Object.setPrototypeOf(this, RU.prototype)
@@ -234,7 +236,7 @@ function Jk(A, Q) {
     return Buffer.from(A, Q)
 }
 var bT;
-var pA1 = L(() => {
+var pA1 = lazyLoader(() => {
     bA1();
     bT = vA1("ts-http-runtime")
 });
@@ -262,7 +264,6 @@ function NrB(A) {
 function LrB(A) {
     return A && typeof A.byteLength === "number"
 }
-
 class MrB {
     constructor() {
         this.cachedHttpsAgents = new WeakMap
@@ -280,7 +281,7 @@ class MrB {
         let Y;
         if (A.timeout > 0) Y = setTimeout(() => {
             let V = new Yk;
-            bT.info(`request to '${V.sanitizeUrl(A.url)}' timed out. canceling...`), Z.abort()
+            bT.info(`request to 'TextComponent{V.sanitizeUrl(A.url)}' timed out. canceling...`), Z.abort()
         }, A.timeout);
         let J = A.headers.get("Accept-Encoding"),
             W = (J === null || J === void 0 ? void 0 : J.includes("gzip")) || (J === null || J === void 0 ? void 0 : J.includes("deflate")),
@@ -339,12 +340,12 @@ class MrB {
         var G;
         let Z = new URL(A.url),
             I = Z.protocol !== "https:";
-        if (I && !A.allowInsecureConnection) throw Error(`Cannot connect to ${A.url} while allowInsecureConnection is false.`);
+        if (I && !A.allowInsecureConnection) throw Error(`Cannot connect to TextComponent{A.url} while allowInsecureConnection is false.`);
         let Y = (G = A.agent) !== null && G !== void 0 ? G : this.getOrCreateAgent(A, I),
             J = Object.assign({
                 agent: Y,
                 hostname: Z.hostname,
-                path: `${Z.pathname}${Z.search}`,
+                path: `TextComponent{Z.pathname}TextComponent{Z.search}`,
                 port: Z.port,
                 method: A.method,
                 headers: A.headers.toJSON({
@@ -424,7 +425,7 @@ function Qt6(A) {
             Q(Buffer.concat(G).toString("utf8"))
         }), A.on("error", (Z) => {
             if (Z && (Z === null || Z === void 0 ? void 0 : Z.name) === "AbortError") B(Z);
-            else B(new RU(`Error reading response as text: ${Z.message}`, {
+            else B(new RU(`Error reading response as text: TextComponent{Z.message}`, {
                 code: RU.PARSE_ERROR
             }))
         })
@@ -444,7 +445,7 @@ function OrB() {
     return new MrB
 }
 var to6, Ta1;
-var RrB = L(() => {
+var RrB = lazyLoader(() => {
     mA1();
     EqA();
     Ra1();
@@ -472,7 +473,7 @@ var RrB = L(() => {
 function Pa1() {
     return OrB()
 }
-var TrB = L(() => {
+var TrB = lazyLoader(() => {
     RrB()
 });
 
@@ -487,14 +488,14 @@ function Sa1(A = {}) {
         name: ja1,
         async sendRequest(Z, I) {
             if (!B.enabled) return I(Z);
-            B(`Request: ${G.sanitize(Z)}`);
+            B(`Request: TextComponent{G.sanitize(Z)}`);
             let Y = await I(Z);
-            return B(`Response status code: ${Y.status}`), B(`Headers: ${G.sanitize(Y.headers)}`), Y
+            return B(`Response status code: TextComponent{Y.status}`), B(`Headers: TextComponent{G.sanitize(Y.headers)}`), Y
         }
     }
 }
 var ja1 = "logPolicy";
-var PrB = L(() => {
+var PrB = lazyLoader(() => {
     pA1();
     $qA()
 });
@@ -511,7 +512,6 @@ function _a1(A = {}) {
         }
     }
 }
-
 async function SrB(A, Q, B, G = 0) {
     let {
         request: Z,
@@ -528,7 +528,7 @@ async function SrB(A, Q, B, G = 0) {
     return Q
 }
 var jrB;
-var _rB = L(() => {
+var _rB = lazyLoader(() => {
     jrB = ["GET", "HEAD"]
 });
 var qqA = 3;
@@ -584,7 +584,7 @@ function yrB(A, Q) {
     return G
 }
 var Gt6 = "The operation was aborted.";
-var va1 = L(() => {
+var va1 = lazyLoader(() => {
     mA1()
 });
 
@@ -626,7 +626,7 @@ function brB() {
 }
 var ba1 = "Retry-After",
     Zt6;
-var fa1 = L(() => {
+var fa1 = lazyLoader(() => {
     va1();
     Zt6 = ["retry-after-ms", "x-ms-retry-after-ms", ba1]
 });
@@ -670,7 +670,7 @@ function Wt6(A) {
 }
 var It6 = 1000,
     Yt6 = 64000;
-var hrB = L(() => {
+var hrB = lazyLoader(() => {
     xa1();
     fa1()
 });
@@ -687,27 +687,27 @@ function LqA(A, Q = {
             A: while (!0) {
                 X += 1, J = void 0, W = void 0;
                 try {
-                    B.info(`Retry ${X}: Attempting to send request`, G.requestId), J = await Z(G), B.info(`Retry ${X}: Received a response from request`, G.requestId)
+                    B.info(`Retry TextComponent{X}: Attempting to send request`, G.requestId), J = await Z(G), B.info(`Retry TextComponent{X}: Received a response from request`, G.requestId)
                 } catch (F) {
-                    if (B.error(`Retry ${X}: Received an error from request`, G.requestId), W = F, !F || W.name !== "RestError") throw F;
+                    if (B.error(`Retry TextComponent{X}: Received an error from request`, G.requestId), W = F, !F || W.name !== "RestError") throw F;
                     J = W.response
                 }
-                if ((I = G.abortSignal) === null || I === void 0 ? void 0 : I.aborted) throw B.error(`Retry ${X}: Request aborted.`), new Wl;
+                if ((I = G.abortSignal) === null || I === void 0 ? void 0 : I.aborted) throw B.error(`Retry TextComponent{X}: Request aborted.`), new Wl;
                 if (X >= ((Y = Q.maxRetries) !== null && Y !== void 0 ? Y : qqA))
-                    if (B.info(`Retry ${X}: Maximum retries reached. Returning the last received response, or throwing the last received error.`), W) throw W;
+                    if (B.info(`Retry TextComponent{X}: Maximum retries reached. Returning the last received response, or throwing the last received error.`), W) throw W;
                     else if (J) return J;
                 else throw Error("Maximum retries reached with no response or error to throw");
-                B.info(`Retry ${X}: Processing ${A.length} retry strategies.`);
+                B.info(`Retry TextComponent{X}: Processing TextComponent{A.length} retry strategies.`);
                 Q: for (let F of A) {
                     let V = F.logger || B;
-                    V.info(`Retry ${X}: Processing retry strategy ${F.name}.`);
+                    V.info(`Retry TextComponent{X}: Processing retry strategy TextComponent{F.name}.`);
                     let K = F.retry({
                         retryCount: X,
                         response: J,
                         responseError: W
                     });
                     if (K.skipStrategy) {
-                        V.info(`Retry ${X}: Skipped.`);
+                        V.info(`Retry TextComponent{X}: Skipped.`);
                         continue Q
                     }
                     let {
@@ -715,15 +715,15 @@ function LqA(A, Q = {
                         retryAfterInMs: H,
                         redirectTo: C
                     } = K;
-                    if (D) throw V.error(`Retry ${X}: Retry strategy ${F.name} throws error:`, D), D;
+                    if (D) throw V.error(`Retry TextComponent{X}: Retry strategy TextComponent{F.name} throws error:`, D), D;
                     if (H || H === 0) {
-                        V.info(`Retry ${X}: Retry strategy ${F.name} retries after ${H}`), await krB(H, void 0, {
+                        V.info(`Retry TextComponent{X}: Retry strategy TextComponent{F.name} retries after TextComponent{H}`), await krB(H, void 0, {
                             abortSignal: G.abortSignal
                         });
                         continue A
                     }
                     if (C) {
-                        V.info(`Retry ${X}: Retry strategy ${F.name} redirects to ${C}`), G.url = C;
+                        V.info(`Retry TextComponent{X}: Retry strategy TextComponent{F.name} redirects to TextComponent{C}`), G.url = C;
                         continue A
                     }
                 }
@@ -734,7 +734,7 @@ function LqA(A, Q = {
     }
 }
 var Xt6, Ft6 = "retryPolicy";
-var ha1 = L(() => {
+var ha1 = lazyLoader(() => {
     va1();
     mA1();
     bA1();
@@ -751,13 +751,13 @@ function ua1(A = {}) {
     }
 }
 var ga1 = "defaultRetryPolicy";
-var grB = L(() => {
+var grB = lazyLoader(() => {
     hrB();
     fa1();
     ha1()
 });
 var ma1, da1, ca1, pa1, urB, mrB, drB, crB, PZA, prB;
-var la1 = L(() => {
+var la1 = lazyLoader(() => {
     urB = typeof window < "u" && typeof window.document < "u", mrB = typeof self === "object" && typeof(self === null || self === void 0 ? void 0 : self.importScripts) === "function" && (((ma1 = self.constructor) === null || ma1 === void 0 ? void 0 : ma1.name) === "DedicatedWorkerGlobalScope" || ((da1 = self.constructor) === null || da1 === void 0 ? void 0 : da1.name) === "ServiceWorkerGlobalScope" || ((ca1 = self.constructor) === null || ca1 === void 0 ? void 0 : ca1.name) === "SharedWorkerGlobalScope"), drB = typeof Deno < "u" && typeof Deno.version < "u" && typeof Deno.version.deno < "u", crB = typeof Bun < "u" && typeof Bun.version < "u", PZA = typeof globalThis.process < "u" && Boolean(globalThis.process.version) && Boolean((pa1 = globalThis.process.versions) === null || pa1 === void 0 ? void 0 : pa1.node), prB = typeof navigator < "u" && (navigator === null || navigator === void 0 ? void 0 : navigator.product) === "ReactNative"
 });
 
@@ -792,7 +792,6 @@ function Kt6(A) {
         else Q.append(B, G.toString());
     return Q.toString()
 }
-
 async function Dt6(A, Q) {
     let B = Q.headers.get("Content-Type");
     if (B && !B.startsWith("multipart/form-data")) return;
@@ -802,15 +801,15 @@ async function Dt6(A, Q) {
         for (let Y of Array.isArray(I) ? I : [I])
             if (typeof Y === "string") G.push({
                 headers: Ik({
-                    "Content-Disposition": `form-data; name="${Z}"`
+                    "Content-Disposition": `form-data; name="TextComponent{Z}"`
                 }),
                 body: Jk(Y, "utf-8")
             });
-            else if (Y === void 0 || Y === null || typeof Y !== "object") throw Error(`Unexpected value for key ${Z}: ${Y}. Value should be serialized to string first.`);
+            else if (Y === void 0 || Y === null || typeof Y !== "object") throw Error(`Unexpected value for key TextComponent{Z}: TextComponent{Y}. Value should be serialized to string first.`);
     else {
         let J = Y.name || "blob",
             W = Ik();
-        W.set("Content-Disposition", `form-data; name="${Z}"; filename="${J}"`), W.set("Content-Type", Y.type || "application/octet-stream"), G.push({
+        W.set("Content-Disposition", `form-data; name="TextComponent{Z}"; filename="TextComponent{J}"`), W.set("Content-Type", Y.type || "application/octet-stream"), G.push({
             headers: W,
             body: Y
         })
@@ -820,11 +819,11 @@ async function Dt6(A, Q) {
     }
 }
 var ia1 = "formDataPolicy";
-var lrB = L(() => {
+var lrB = lazyLoader(() => {
     la1();
     EqA()
 });
-var arB = U((kM) => {
+var arB = moduleWrapper((kM) => {
     var Ht6 = kM && kM.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -849,8 +848,7 @@ var arB = U((kM) => {
         }),
         nrB = kM && kM.__importStar || function(A) {
             if (A && A.__esModule) return A;
-
-var Q = {};
+            var Q = {};
             if (A != null) {
                 for (var B in A)
                     if (B !== "default" && Object.prototype.hasOwnProperty.call(A, B)) Ht6(Q, A, B)
@@ -866,19 +864,18 @@ var Q = {};
         value: !0
     });
     kM.HttpProxyAgent = void 0;
-    var zt6 = nrB(UA("net")),
-        Ut6 = nrB(UA("tls")),
+    var zt6 = nrB(nodeRequire("net")),
+        Ut6 = nrB(nodeRequire("tls")),
         $t6 = Et6(Os()),
-        wt6 = UA("events"),
+        wt6 = nodeRequire("events"),
         qt6 = E_1(),
-        irB = UA("url"),
+        irB = nodeRequire("url"),
         jZA = (0, $t6.default)("http-proxy-agent");
-
-class aa1 extends qt6.Agent {
+    class aa1 extends qt6.Agent {
         constructor(A, Q) {
             super(Q);
             this.proxy = typeof A === "string" ? new irB.URL(A) : A, this.proxyHeaders = Q?.headers ?? {}, jZA("Creating new HttpProxyAgent instance: %o", this.proxy.href);
-            let B = (this.proxy.hostname || this.proxy.host).replace(/^\[|\]$/g, ""),
+            let B = (this.proxy.hostname || this.proxy.host).replace(/^\[|\]TextComponent/g, ""),
                 G = this.proxy.port ? parseInt(this.proxy.port, 10) : this.proxy.protocol === "https:" ? 443 : 80;
             this.connectOpts = {
                 ...Q ? Nt6(Q, "headers") : null,
@@ -892,15 +889,15 @@ class aa1 extends qt6.Agent {
         setRequestProps(A, Q) {
             let {
                 proxy: B
-            } = this, G = Q.secureEndpoint ? "https:" : "http:", Z = A.getHeader("host") || "localhost", I = `${G}//${Z}`, Y = new irB.URL(A.path, I);
+            } = this, G = Q.secureEndpoint ? "https:" : "http:", Z = A.getHeader("host") || "localhost", I = `TextComponent{G}//TextComponent{Z}`, Y = new irB.URL(A.path, I);
             if (Q.port !== 80) Y.port = String(Q.port);
             A.path = String(Y);
             let J = typeof this.proxyHeaders === "function" ? this.proxyHeaders() : {
                 ...this.proxyHeaders
             };
             if (B.username || B.password) {
-                let W = `${decodeURIComponent(B.username)}:${decodeURIComponent(B.password)}`;
-                J["Proxy-Authorization"] = `Basic ${Buffer.from(W).toString("base64")}`
+                let W = `TextComponent{decodeURIComponent(B.username)}:TextComponent{decodeURIComponent(B.password)}`;
+                J["Proxy-Authorization"] = `Basic TextComponent{Buffer.from(W).toString("base64")}`
             }
             if (!J["Proxy-Connection"]) J["Proxy-Connection"] = this.keepAlive ? "Keep-Alive" : "close";
             for (let W of Object.keys(J)) {
@@ -923,7 +920,7 @@ class aa1 extends qt6.Agent {
     aa1.protocols = ["http", "https"];
     kM.HttpProxyAgent = aa1;
 
-function Nt6(A, ...Q) {
+    function Nt6(A, ...Q) {
         let B = {},
             G;
         for (G in A)
@@ -975,7 +972,7 @@ function rrB(A) {
     try {
         Q = new URL(A.host)
     } catch (B) {
-        throw Error(`Expecting a valid host string in proxy settings, but found "${A.host}".`)
+        throw Error(`Expecting a valid host string in proxy settings, but found "TextComponent{A.host}".`)
     }
     if (Q.port = String(A.port), A.username) Q.username = A.username;
     if (A.password) Q.password = A.password;
@@ -1021,9 +1018,9 @@ var trB, erB, Lt6 = "HTTPS_PROXY",
     sa1 = "proxyPolicy",
     srB, AoB = !1,
     Tt6;
-var QoB = L(() => {
+var QoB = lazyLoader(() => {
     pA1();
-    trB = GA(vCA(), 1), erB = GA(arB(), 1), srB = [], Tt6 = new Map
+    trB = esmImport(vCA(), 1), erB = esmImport(arB(), 1), srB = [], Tt6 = new Map
 });
 
 function oa1(A) {
@@ -1049,7 +1046,7 @@ function ta1(A) {
 function nA1(A) {
     return typeof A.stream === "function"
 }
-var SoB = U((J7G, rA1) => {
+var SoB = moduleWrapper((J7G, rA1) => {
     var BoB, GoB, ZoB, IoB, YoB, JoB, WoB, XoB, FoB, VoB, KoB, DoB, HoB, aA1, ea1, CoB, EoB, zoB, SZA, UoB, $oB, woB, qoB, NoB, LoB, MoB, OoB, RoB, sA1, ToB, PoB, joB;
     (function(A) {
         var Q = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
@@ -1059,7 +1056,7 @@ var SoB = U((J7G, rA1) => {
         else if (typeof rA1 === "object" && typeof J7G === "object") A(B(Q, B(J7G)));
         else A(B(Q));
 
-function B(G, Z) {
+        function B(G, Z) {
             if (G !== Q)
                 if (typeof Object.create === "function") Object.defineProperty(G, "__esModule", {
                     value: !0
@@ -1083,7 +1080,7 @@ function B(G, Z) {
             if (typeof Y !== "function" && Y !== null) throw TypeError("Class extends value " + String(Y) + " is not a constructor or null");
             Q(I, Y);
 
-function J() {
+            function J() {
                 this.constructor = I
             }
             I.prototype = Y === null ? Object.create(Y) : (J.prototype = Y.prototype, new J)
@@ -1179,7 +1176,7 @@ function J() {
                     }
                 }
 
-function D(C) {
+                function D(C) {
                     try {
                         H(W.throw(C))
                     } catch (E) {
@@ -1187,7 +1184,7 @@ function D(C) {
                     }
                 }
 
-function H(C) {
+                function H(C) {
                     C.done ? F(C.value) : X(C.value).then(K, D)
                 }
                 H((W = W.apply(I, Y || [])).next())
@@ -1207,13 +1204,13 @@ function H(C) {
                 return this
             }), V;
 
-function K(H) {
+            function K(H) {
                 return function(C) {
                     return D([H, C])
                 }
             }
 
-function D(H) {
+            function D(H) {
                 if (W) throw TypeError("Generator is already executing.");
                 while (V && (V = 0, H[0] && (J = 0)), J) try {
                     if (W = 1, X && (F = H[0] & 2 ? X.return : H[0] ? X.throw || ((F = X.return) && F.call(X), 0) : X.next) && !(F = F.call(X, H[1])).done) return F;
@@ -1345,13 +1342,13 @@ function D(H) {
                 return this
             }, X;
 
-function V(w) {
+            function V(w) {
                 return function(N) {
                     return Promise.resolve(N).then(w, E)
                 }
             }
 
-function K(w, N) {
+            function K(w, N) {
                 if (W[w]) {
                     if (X[w] = function(q) {
                             return new Promise(function(R, P) {
@@ -1361,7 +1358,7 @@ function K(w, N) {
                 }
             }
 
-function D(w, N) {
+            function D(w, N) {
                 try {
                     H(W[w](N))
                 } catch (q) {
@@ -1369,19 +1366,19 @@ function D(w, N) {
                 }
             }
 
-function H(w) {
+            function H(w) {
                 w.value instanceof SZA ? Promise.resolve(w.value.v).then(C, E) : z(F[0][2], w)
             }
 
-function C(w) {
+            function C(w) {
                 D("next", w)
             }
 
-function E(w) {
+            function E(w) {
                 D("throw", w)
             }
 
-function z(w, N) {
+            function z(w, N) {
                 if (w(N), F.shift(), F.length) D(F[0][0], F[0][1])
             }
         }, $oB = function(I) {
@@ -1392,7 +1389,7 @@ function z(w, N) {
                 return this
             }, Y;
 
-function W(X, F) {
+            function W(X, F) {
                 Y[X] = I[X] ? function(V) {
                     return (J = !J) ? {
                         value: SZA(I[X](V)),
@@ -1408,7 +1405,7 @@ function W(X, F) {
                 return this
             }, J);
 
-function W(F) {
+            function W(F) {
                 J[F] = I[F] && function(V) {
                     return new Promise(function(K, D) {
                         V = I[F](V), X(K, D, V.done, V.value)
@@ -1416,7 +1413,7 @@ function W(F) {
                 }
             }
 
-function X(F, V, K, D) {
+            function X(F, V, K, D) {
                 Promise.resolve(D).then(function(H) {
                     F({
                         value: H,
@@ -1449,8 +1446,7 @@ function X(F, V, K, D) {
             };
         NoB = function(I) {
             if (I && I.__esModule) return I;
-
-var Y = {};
+            var Y = {};
             if (I != null) {
                 for (var J = G(I), W = 0; W < J.length; W++)
                     if (J[W] !== "default") sA1(Y, I, J[W])
@@ -1512,7 +1508,7 @@ var Y = {};
             }
             var J, W = 0;
 
-function X() {
+            function X() {
                 while (J = I.stack.pop()) try {
                     if (!J.async && W === 1) return W = 0, I.stack.push(J), Promise.resolve().then(X);
                     if (J.dispose) {

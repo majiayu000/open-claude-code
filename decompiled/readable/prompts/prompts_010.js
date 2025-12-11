@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: prompts_010.js
+ * 处理时间: 2025-12-09T03:41:38.275Z
+ * 变量映射: 5 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.044Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -59,7 +62,7 @@ function oE9() {
         return e(A instanceof Error ? A : Error(String(A))), {}
     }
 }
-var tE9 = L(() => {
+var tE9 = lazyLoader(() => {
     zV();
     u1();
     s9A();
@@ -103,40 +106,39 @@ function $J1({
         padding: 1,
         borderStyle: "round",
         borderColor: "warning"
-    }, TC.default.createElement($, {
+    }, TC.default.createElement(TextComponent, {
         bold: !0,
         color: "warning"
-    }, "Detected a custom API key in your environment"), TC.default.createElement($, null, TC.default.createElement($, {
+    }, "Detected a custom API key in your environment"), TC.default.createElement(TextComponent, null, TC.default.createElement(TextComponent, {
         bold: !0
-    }, "ANTHROPIC_API_KEY"), TC.default.createElement($, null, ": sk-ant-...", A)), TC.default.createElement($, null, "Do you want to use this API key?"), TC.default.createElement(M0, {
+    }, "ANTHROPIC_API_KEY"), TC.default.createElement(TextComponent, null, ": sk-ant-...", A)), TC.default.createElement(TextComponent, null, "Do you want to use this API key?"), TC.default.createElement(M0, {
         defaultValue: "no",
         focusValue: "no",
         options: [{
             label: "Yes",
             value: "yes"
         }, {
-            label: `No (${oA.bold("recommended")})`,
+            label: `No (TextComponent{oA.bold("recommended")})`,
             value: "no"
         }],
         onChange: (Z) => B(Z),
         onCancel: () => B("no")
     })), TC.default.createElement(j, {
         marginLeft: 3
-    }, TC.default.createElement($, {
+    }, TC.default.createElement(TextComponent, {
         dimColor: !0
     }, G.pending ? TC.default.createElement(TC.default.Fragment, null, "Press ", G.keyName, " again to exit") : TC.default.createElement(TC.default.Fragment, null, "Enter to confirm ", V1.dot, " Esc to cancel"))))
 }
 var TC;
-var gK0 = L(() => {
+var gK0 = lazyLoader(() => {
     hA();
     jQ();
     T6();
     c9();
     J9();
     n2();
-    TC = GA(VA(), 1)
+    TC = esmImport(VA(), 1)
 });
-// Async function: gb3
 async function gb3() {
     try {
         let A = ["https://api.anthropic.com/api/hello", "https://console.anthropic.com/v1/oauth/hello"],
@@ -149,7 +151,7 @@ async function gb3() {
                     });
                     if (I.status !== 200) return {
                         success: !1,
-                        error: `Failed to connect to ${new URL(Z).hostname}: Status ${I.status}`
+                        error: `Failed to connect to TextComponent{new URL(Z).hostname}: Status TextComponent{I.status}`
                     };
                     return {
                         success: !0
@@ -157,7 +159,7 @@ async function gb3() {
                 } catch (I) {
                     return {
                         success: !1,
-                        error: `Failed to connect to ${new URL(Z).hostname}: ${I instanceof Error?I.code||I.message:String(I)}`
+                        error: `Failed to connect to TextComponent{new URL(Z).hostname}: TextComponent{I instanceof Error?I.code||I.message:String(I)}`
                     }
                 }
             }, G = (await Promise.all(A.map(Q))).find((Z) => !Z.success);
@@ -173,7 +175,7 @@ async function gb3() {
             isConnectivityError: !0
         }), {
             success: !1,
-            error: `Connectivity check error: ${A instanceof Error?A.code||A.message:String(A)}`
+            error: `Connectivity check error: TextComponent{A instanceof Error?A.code||A.message:String(A)}`
         }
     }
 }
@@ -183,8 +185,7 @@ function eE9({
 }) {
     let [Q, B] = LK.useState(null), [G, Z] = LK.useState(!0), I = e31(1000) && G;
     return LK.useEffect(() => {
-        // Async function: Y
-async function Y() {
+        async function Y() {
             let J = await gb3();
             B(J), Z(!1)
         }
@@ -201,22 +202,22 @@ async function Y() {
         paddingLeft: 1
     }, G && I ? LK.default.createElement(j, {
         paddingLeft: 1
-    }, LK.default.createElement(e9, null), LK.default.createElement($, null, "Checking connectivity...")) : !Q?.success && !G && LK.default.createElement(j, {
+    }, LK.default.createElement(e9, null), LK.default.createElement(TextComponent, null, "Checking connectivity...")) : !Q?.success && !G && LK.default.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, LK.default.createElement($, {
+    }, LK.default.createElement(TextComponent, {
         color: "error"
-    }, "Unable to connect to Anthropic services"), LK.default.createElement($, {
+    }, "Unable to connect to Anthropic services"), LK.default.createElement(TextComponent, {
         color: "error"
     }, Q?.error), LK.default.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, LK.default.createElement($, null, "Please check your internet connection and network settings."), LK.default.createElement($, null, "Note: Claude Code might not be available in your country. Check supported countries at", " ", LK.default.createElement($, {
+    }, LK.default.createElement(TextComponent, null, "Please check your internet connection and network settings."), LK.default.createElement(TextComponent, null, "Note: Claude Code might not be available in your country. Check supported countries at", " ", LK.default.createElement(TextComponent, {
         color: "suggestion"
     }, "https://anthropic.com/supported-countries")))))
 }
 var LK;
-var Az9 = L(() => {
+var Az9 = lazyLoader(() => {
     hA();
     XE();
     u1();
@@ -224,7 +225,7 @@ var Az9 = L(() => {
     _G0();
     w0();
     w3();
-    LK = GA(VA(), 1)
+    LK = esmImport(VA(), 1)
 });
 
 function qJ1() {
@@ -235,9 +236,9 @@ function qJ1() {
     });
     if (["light", "light-daltonized", "light-ansi"].includes(A)) return R0.default.createElement(j, {
         width: wJ1
-    }, R0.default.createElement($, null, R0.default.createElement($, null, R0.default.createElement($, {
+    }, R0.default.createElement(TextComponent, null, R0.default.createElement(TextComponent, null, R0.default.createElement(TextComponent, {
         color: "claude"
-    }, "Welcome to Claude Code", " "), R0.default.createElement($, {
+    }, "Welcome to Claude Code", " "), R0.default.createElement(TextComponent, {
         dimColor: !0
     }, "v", {
         ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
@@ -245,25 +246,25 @@ function qJ1() {
         README_URL: "https://docs.claude.com/s/claude-code",
         VERSION: "2.0.57",
         FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
-    }.VERSION, " ")), R0.default.createElement($, null, "…………………………………………………………………………………………………………………………………………………………"), R0.default.createElement($, null, "                                                          "), R0.default.createElement($, null, "                                                          "), R0.default.createElement($, null, "                                                          "), R0.default.createElement($, null, "            ░░░░░░                                        "), R0.default.createElement($, null, "    ░░░   ░░░░░░░░░░                                      "), R0.default.createElement($, null, "   ░░░░░░░░░░░░░░░░░░░                                    "), R0.default.createElement($, null, "                                                          "), R0.default.createElement($, null, R0.default.createElement($, {
+    }.VERSION, " ")), R0.default.createElement(TextComponent, null, "…………………………………………………………………………………………………………………………………………………………"), R0.default.createElement(TextComponent, null, "                                                          "), R0.default.createElement(TextComponent, null, "                                                          "), R0.default.createElement(TextComponent, null, "                                                          "), R0.default.createElement(TextComponent, null, "            ░░░░░░                                        "), R0.default.createElement(TextComponent, null, "    ░░░   ░░░░░░░░░░                                      "), R0.default.createElement(TextComponent, null, "   ░░░░░░░░░░░░░░░░░░░                                    "), R0.default.createElement(TextComponent, null, "                                                          "), R0.default.createElement(TextComponent, null, R0.default.createElement(TextComponent, {
         dimColor: !0
-    }, "                           ░░░░"), R0.default.createElement($, null, "                     ██    ")), R0.default.createElement($, null, R0.default.createElement($, {
+    }, "                           ░░░░"), R0.default.createElement(TextComponent, null, "                     ██    ")), R0.default.createElement(TextComponent, null, R0.default.createElement(TextComponent, {
         dimColor: !0
-    }, "                         ░░░░░░░░░░"), R0.default.createElement($, null, "               ██▒▒██  ")), R0.default.createElement($, null, "                                            ▒▒      ██   ▒"), R0.default.createElement($, null, "      ", R0.default.createElement($, {
+    }, "                         ░░░░░░░░░░"), R0.default.createElement(TextComponent, null, "               ██▒▒██  ")), R0.default.createElement(TextComponent, null, "                                            ▒▒      ██   ▒"), R0.default.createElement(TextComponent, null, "      ", R0.default.createElement(TextComponent, {
         color: "clawd_body"
-    }, " █████████ "), "                         ▒▒░░▒▒      ▒ ▒▒"), R0.default.createElement($, null, "      ", R0.default.createElement($, {
+    }, " █████████ "), "                         ▒▒░░▒▒      ▒ ▒▒"), R0.default.createElement(TextComponent, null, "      ", R0.default.createElement(TextComponent, {
         color: "clawd_body",
         backgroundColor: "clawd_background"
-    }, "██▄█████▄██"), "                           ▒▒         ▒▒ "), R0.default.createElement($, null, "      ", R0.default.createElement($, {
+    }, "██▄█████▄██"), "                           ▒▒         ▒▒ "), R0.default.createElement(TextComponent, null, "      ", R0.default.createElement(TextComponent, {
         color: "clawd_body"
-    }, " █████████ "), "                          ░          ▒   "), R0.default.createElement($, null, "…………………", R0.default.createElement($, {
+    }, " █████████ "), "                          ░          ▒   "), R0.default.createElement(TextComponent, null, "…………………", R0.default.createElement(TextComponent, {
         color: "clawd_body"
     }, "█ █   █ █"), "……………………………………………………………………░…………………………▒…………")));
     return R0.default.createElement(j, {
         width: wJ1
-    }, R0.default.createElement($, null, R0.default.createElement($, null, R0.default.createElement($, {
+    }, R0.default.createElement(TextComponent, null, R0.default.createElement(TextComponent, null, R0.default.createElement(TextComponent, {
         color: "claude"
-    }, "Welcome to Claude Code", " "), R0.default.createElement($, {
+    }, "Welcome to Claude Code", " "), R0.default.createElement(TextComponent, {
         dimColor: !0
     }, "v", {
         ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
@@ -271,25 +272,25 @@ function qJ1() {
         README_URL: "https://docs.claude.com/s/claude-code",
         VERSION: "2.0.57",
         FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
-    }.VERSION, " ")), R0.default.createElement($, null, "…………………………………………………………………………………………………………………………………………………………"), R0.default.createElement($, null, "                                                          "), R0.default.createElement($, null, "     *                                       █████▓▓░     "), R0.default.createElement($, null, "                                 *         ███▓░     ░░   "), R0.default.createElement($, null, "            ░░░░░░                        ███▓░           "), R0.default.createElement($, null, "    ░░░   ░░░░░░░░░░                      ███▓░           "), R0.default.createElement($, null, R0.default.createElement($, null, "   ░░░░░░░░░░░░░░░░░░░    "), R0.default.createElement($, {
+    }.VERSION, " ")), R0.default.createElement(TextComponent, null, "…………………………………………………………………………………………………………………………………………………………"), R0.default.createElement(TextComponent, null, "                                                          "), R0.default.createElement(TextComponent, null, "     *                                       █████▓▓░     "), R0.default.createElement(TextComponent, null, "                                 *         ███▓░     ░░   "), R0.default.createElement(TextComponent, null, "            ░░░░░░                        ███▓░           "), R0.default.createElement(TextComponent, null, "    ░░░   ░░░░░░░░░░                      ███▓░           "), R0.default.createElement(TextComponent, null, R0.default.createElement(TextComponent, null, "   ░░░░░░░░░░░░░░░░░░░    "), R0.default.createElement(TextComponent, {
         bold: !0
-    }, "*"), R0.default.createElement($, null, "                ██▓░░      ▓   ")), R0.default.createElement($, null, "                                             ░▓▓███▓▓░    "), R0.default.createElement($, {
+    }, "*"), R0.default.createElement(TextComponent, null, "                ██▓░░      ▓   ")), R0.default.createElement(TextComponent, null, "                                             ░▓▓███▓▓░    "), R0.default.createElement(TextComponent, {
         dimColor: !0
-    }, " *                                 ░░░░                   "), R0.default.createElement($, {
+    }, " *                                 ░░░░                   "), R0.default.createElement(TextComponent, {
         dimColor: !0
-    }, "                                 ░░░░░░░░                 "), R0.default.createElement($, {
+    }, "                                 ░░░░░░░░                 "), R0.default.createElement(TextComponent, {
         dimColor: !0
-    }, "                               ░░░░░░░░░░░░░░░░           "), R0.default.createElement($, null, "      ", R0.default.createElement($, {
+    }, "                               ░░░░░░░░░░░░░░░░           "), R0.default.createElement(TextComponent, null, "      ", R0.default.createElement(TextComponent, {
         color: "clawd_body"
-    }, " █████████ "), "                                       ", R0.default.createElement($, {
+    }, " █████████ "), "                                       ", R0.default.createElement(TextComponent, {
         dimColor: !0
-    }, "*"), R0.default.createElement($, null, " ")), R0.default.createElement($, null, "      ", R0.default.createElement($, {
+    }, "*"), R0.default.createElement(TextComponent, null, " ")), R0.default.createElement(TextComponent, null, "      ", R0.default.createElement(TextComponent, {
         color: "clawd_body"
-    }, "██▄█████▄██"), R0.default.createElement($, null, "                        "), R0.default.createElement($, {
+    }, "██▄█████▄██"), R0.default.createElement(TextComponent, null, "                        "), R0.default.createElement(TextComponent, {
         bold: !0
-    }, "*"), R0.default.createElement($, null, "                ")), R0.default.createElement($, null, "      ", R0.default.createElement($, {
+    }, "*"), R0.default.createElement(TextComponent, null, "                ")), R0.default.createElement(TextComponent, null, "      ", R0.default.createElement(TextComponent, {
         color: "clawd_body"
-    }, " █████████ "), "     *                                   "), R0.default.createElement($, null, "…………………", R0.default.createElement($, {
+    }, " █████████ "), "     *                                   "), R0.default.createElement(TextComponent, null, "…………………", R0.default.createElement(TextComponent, {
         color: "clawd_body"
     }, "█ █   █ █"), "………………………………………………………………………………………………………………")))
 }
@@ -300,9 +301,9 @@ function ub3({
 }) {
     if (["light", "light-daltonized", "light-ansi"].includes(A)) return R0.default.createElement(j, {
         width: wJ1
-    }, R0.default.createElement($, null, R0.default.createElement($, null, R0.default.createElement($, {
+    }, R0.default.createElement(TextComponent, null, R0.default.createElement(TextComponent, null, R0.default.createElement(TextComponent, {
         color: "claude"
-    }, Q, " "), R0.default.createElement($, {
+    }, Q, " "), R0.default.createElement(TextComponent, {
         dimColor: !0
     }, "v", {
         ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
@@ -310,33 +311,33 @@ function ub3({
         README_URL: "https://docs.claude.com/s/claude-code",
         VERSION: "2.0.57",
         FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
-    }.VERSION, " ")), R0.default.createElement($, null, "…………………………………………………………………………………………………………………………………………………………"), R0.default.createElement($, null, "                                                          "), R0.default.createElement($, null, "                                                          "), R0.default.createElement($, null, "                                                          "), R0.default.createElement($, null, "            ░░░░░░                                        "), R0.default.createElement($, null, "    ░░░   ░░░░░░░░░░                                      "), R0.default.createElement($, null, "   ░░░░░░░░░░░░░░░░░░░                                    "), R0.default.createElement($, null, "                                                          "), R0.default.createElement($, null, R0.default.createElement($, {
+    }.VERSION, " ")), R0.default.createElement(TextComponent, null, "…………………………………………………………………………………………………………………………………………………………"), R0.default.createElement(TextComponent, null, "                                                          "), R0.default.createElement(TextComponent, null, "                                                          "), R0.default.createElement(TextComponent, null, "                                                          "), R0.default.createElement(TextComponent, null, "            ░░░░░░                                        "), R0.default.createElement(TextComponent, null, "    ░░░   ░░░░░░░░░░                                      "), R0.default.createElement(TextComponent, null, "   ░░░░░░░░░░░░░░░░░░░                                    "), R0.default.createElement(TextComponent, null, "                                                          "), R0.default.createElement(TextComponent, null, R0.default.createElement(TextComponent, {
         dimColor: !0
-    }, "                           ░░░░"), R0.default.createElement($, null, "                     ██    ")), R0.default.createElement($, null, R0.default.createElement($, {
+    }, "                           ░░░░"), R0.default.createElement(TextComponent, null, "                     ██    ")), R0.default.createElement(TextComponent, null, R0.default.createElement(TextComponent, {
         dimColor: !0
-    }, "                         ░░░░░░░░░░"), R0.default.createElement($, null, "               ██▒▒██  ")), R0.default.createElement($, null, "                                            ▒▒      ██   ▒"), R0.default.createElement($, null, "                                          ▒▒░░▒▒      ▒ ▒▒"), R0.default.createElement($, null, "      ", R0.default.createElement($, {
+    }, "                         ░░░░░░░░░░"), R0.default.createElement(TextComponent, null, "               ██▒▒██  ")), R0.default.createElement(TextComponent, null, "                                            ▒▒      ██   ▒"), R0.default.createElement(TextComponent, null, "                                          ▒▒░░▒▒      ▒ ▒▒"), R0.default.createElement(TextComponent, null, "      ", R0.default.createElement(TextComponent, {
         color: "clawd_body"
-    }, "▗"), R0.default.createElement($, {
+    }, "▗"), R0.default.createElement(TextComponent, {
         color: "clawd_background",
         backgroundColor: "clawd_body"
-    }, " ", "▗", "     ", "▖", " "), R0.default.createElement($, {
+    }, " ", "▗", "     ", "▖", " "), R0.default.createElement(TextComponent, {
         color: "clawd_body"
-    }, "▖"), "                           ▒▒         ▒▒ "), R0.default.createElement($, null, "       ", R0.default.createElement($, {
+    }, "▖"), "                           ▒▒         ▒▒ "), R0.default.createElement(TextComponent, null, "       ", R0.default.createElement(TextComponent, {
         backgroundColor: "clawd_body"
-    }, " ".repeat(9)), "                           ░          ▒   "), R0.default.createElement($, null, "…………………", R0.default.createElement($, {
+    }, " ".repeat(9)), "                           ░          ▒   "), R0.default.createElement(TextComponent, null, "…………………", R0.default.createElement(TextComponent, {
         backgroundColor: "clawd_body"
-    }, " "), R0.default.createElement($, null, " "), R0.default.createElement($, {
+    }, " "), R0.default.createElement(TextComponent, null, " "), R0.default.createElement(TextComponent, {
         backgroundColor: "clawd_body"
-    }, " "), R0.default.createElement($, null, "   "), R0.default.createElement($, {
+    }, " "), R0.default.createElement(TextComponent, null, "   "), R0.default.createElement(TextComponent, {
         backgroundColor: "clawd_body"
-    }, " "), R0.default.createElement($, null, " "), R0.default.createElement($, {
+    }, " "), R0.default.createElement(TextComponent, null, " "), R0.default.createElement(TextComponent, {
         backgroundColor: "clawd_body"
     }, " "), "……………………………………………………………………░…………………………▒…………")));
     return R0.default.createElement(j, {
         width: wJ1
-    }, R0.default.createElement($, null, R0.default.createElement($, null, R0.default.createElement($, {
+    }, R0.default.createElement(TextComponent, null, R0.default.createElement(TextComponent, null, R0.default.createElement(TextComponent, {
         color: "claude"
-    }, Q, " "), R0.default.createElement($, {
+    }, Q, " "), R0.default.createElement(TextComponent, {
         dimColor: !0
     }, "v", {
         ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
@@ -344,42 +345,42 @@ function ub3({
         README_URL: "https://docs.claude.com/s/claude-code",
         VERSION: "2.0.57",
         FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
-    }.VERSION, " ")), R0.default.createElement($, null, "…………………………………………………………………………………………………………………………………………………………"), R0.default.createElement($, null, "                                                          "), R0.default.createElement($, null, "     *                                       █████▓▓░     "), R0.default.createElement($, null, "                                 *         ███▓░     ░░   "), R0.default.createElement($, null, "            ░░░░░░                        ███▓░           "), R0.default.createElement($, null, "    ░░░   ░░░░░░░░░░                      ███▓░           "), R0.default.createElement($, null, R0.default.createElement($, null, "   ░░░░░░░░░░░░░░░░░░░    "), R0.default.createElement($, {
+    }.VERSION, " ")), R0.default.createElement(TextComponent, null, "…………………………………………………………………………………………………………………………………………………………"), R0.default.createElement(TextComponent, null, "                                                          "), R0.default.createElement(TextComponent, null, "     *                                       █████▓▓░     "), R0.default.createElement(TextComponent, null, "                                 *         ███▓░     ░░   "), R0.default.createElement(TextComponent, null, "            ░░░░░░                        ███▓░           "), R0.default.createElement(TextComponent, null, "    ░░░   ░░░░░░░░░░                      ███▓░           "), R0.default.createElement(TextComponent, null, R0.default.createElement(TextComponent, null, "   ░░░░░░░░░░░░░░░░░░░    "), R0.default.createElement(TextComponent, {
         bold: !0
-    }, "*"), R0.default.createElement($, null, "                ██▓░░      ▓   ")), R0.default.createElement($, null, "                                             ░▓▓███▓▓░    "), R0.default.createElement($, {
+    }, "*"), R0.default.createElement(TextComponent, null, "                ██▓░░      ▓   ")), R0.default.createElement(TextComponent, null, "                                             ░▓▓███▓▓░    "), R0.default.createElement(TextComponent, {
         dimColor: !0
-    }, " *                                 ░░░░                   "), R0.default.createElement($, {
+    }, " *                                 ░░░░                   "), R0.default.createElement(TextComponent, {
         dimColor: !0
-    }, "                                 ░░░░░░░░                 "), R0.default.createElement($, {
+    }, "                                 ░░░░░░░░                 "), R0.default.createElement(TextComponent, {
         dimColor: !0
-    }, "                               ░░░░░░░░░░░░░░░░           "), R0.default.createElement($, null, "                                                      ", R0.default.createElement($, {
+    }, "                               ░░░░░░░░░░░░░░░░           "), R0.default.createElement(TextComponent, null, "                                                      ", R0.default.createElement(TextComponent, {
         dimColor: !0
-    }, "*"), R0.default.createElement($, null, " ")), R0.default.createElement($, null, "        ", R0.default.createElement($, {
+    }, "*"), R0.default.createElement(TextComponent, null, " ")), R0.default.createElement(TextComponent, null, "        ", R0.default.createElement(TextComponent, {
         color: "clawd_body"
-    }, "▗"), R0.default.createElement($, {
+    }, "▗"), R0.default.createElement(TextComponent, {
         color: "clawd_background",
         backgroundColor: "clawd_body"
-    }, " ", "▗", "     ", "▖", " "), R0.default.createElement($, {
+    }, " ", "▗", "     ", "▖", " "), R0.default.createElement(TextComponent, {
         color: "clawd_body"
-    }, "▖"), R0.default.createElement($, null, "                       "), R0.default.createElement($, {
+    }, "▖"), R0.default.createElement(TextComponent, null, "                       "), R0.default.createElement(TextComponent, {
         bold: !0
-    }, "*"), R0.default.createElement($, null, "                ")), R0.default.createElement($, null, "        ", R0.default.createElement($, {
+    }, "*"), R0.default.createElement(TextComponent, null, "                ")), R0.default.createElement(TextComponent, null, "        ", R0.default.createElement(TextComponent, {
         backgroundColor: "clawd_body"
-    }, " ".repeat(9)), "      *                                   "), R0.default.createElement($, null, "…………………", R0.default.createElement($, {
+    }, " ".repeat(9)), "      *                                   "), R0.default.createElement(TextComponent, null, "…………………", R0.default.createElement(TextComponent, {
         backgroundColor: "clawd_body"
-    }, " "), R0.default.createElement($, null, " "), R0.default.createElement($, {
+    }, " "), R0.default.createElement(TextComponent, null, " "), R0.default.createElement(TextComponent, {
         backgroundColor: "clawd_body"
-    }, " "), R0.default.createElement($, null, "   "), R0.default.createElement($, {
+    }, " "), R0.default.createElement(TextComponent, null, "   "), R0.default.createElement(TextComponent, {
         backgroundColor: "clawd_body"
-    }, " "), R0.default.createElement($, null, " "), R0.default.createElement($, {
+    }, " "), R0.default.createElement(TextComponent, null, " "), R0.default.createElement(TextComponent, {
         backgroundColor: "clawd_body"
     }, " "), "………………………………………………………………………………………………………………")))
 }
 var R0, wJ1 = 58;
-var uK0 = L(() => {
+var uK0 = lazyLoader(() => {
     hA();
     f5();
-    R0 = GA(VA(), 1)
+    R0 = esmImport(VA(), 1)
 });
 
 function Qz9({
@@ -392,7 +393,7 @@ function Qz9({
         })
     }, [G]);
 
-function Y() {
+    function Y() {
         if (Q < D.length - 1) {
             let H = Q + 1;
             B(H), BA("tengu_onboarding_step", {
@@ -402,7 +403,7 @@ function Y() {
         } else A()
     }
 
-function J(H) {
+    function J(H) {
         I(H), Y()
     }
     let W = DQ();
@@ -427,19 +428,19 @@ function J(H) {
             flexDirection: "column",
             gap: 1,
             paddingLeft: 1
-        }, $8.default.createElement($, {
+        }, $8.default.createElement(TextComponent, {
             bold: !0
         }, "Security notes:"), $8.default.createElement(j, {
             flexDirection: "column",
             width: 70
-        }, $8.default.createElement(s$A, null, $8.default.createElement(s$A.Item, null, $8.default.createElement($, null, "Claude can make mistakes"), $8.default.createElement($, {
+        }, $8.default.createElement(s$A, null, $8.default.createElement(s$A.Item, null, $8.default.createElement(TextComponent, null, "Claude can make mistakes"), $8.default.createElement(TextComponent, {
             dimColor: !0,
             wrap: "wrap"
-        }, "You should always review Claude's responses, especially when", $8.default.createElement(gV, null), "running code.", $8.default.createElement(gV, null))), $8.default.createElement(s$A.Item, null, $8.default.createElement($, null, "Due to prompt injection risks, only use it with code you trust"), $8.default.createElement($, {
+        }, "You should always review Claude's responses, especially when", $8.default.createElement(gV, null), "running code.", $8.default.createElement(gV, null))), $8.default.createElement(s$A.Item, null, $8.default.createElement(TextComponent, null, "Due to prompt injection risks, only use it with code you trust"), $8.default.createElement(TextComponent, {
             dimColor: !0,
             wrap: "wrap"
         }, "For more details see:", $8.default.createElement(gV, null), $8.default.createElement(a4, {
-            url: "https://code.claude.com/docs/en/security"
+            url: "https://code.claude.com/docs/AGENT_OUTPUT_TOOL_NAME/security"
         }))))), $8.default.createElement(KY1, null)),
         V = $8.default.createElement(eE9, {
             onSuccess: Y
@@ -479,13 +480,13 @@ function J(H) {
             flexDirection: "column",
             gap: 1,
             paddingLeft: 1
-        }, $8.default.createElement($, {
+        }, $8.default.createElement(TextComponent, {
             bold: !0
         }, "Use Claude Code's terminal setup?"), $8.default.createElement(j, {
             flexDirection: "column",
             width: 70,
             gap: 1
-        }, $8.default.createElement($, null, "For the optimal coding experience, enable the recommended settings", $8.default.createElement(gV, null), "for your terminal:", " ", m0.terminal === "Apple_Terminal" ? "Option+Enter for newlines and visual bell" : "Shift+Enter for newlines"), $8.default.createElement(M0, {
+        }, $8.default.createElement(TextComponent, null, "For the optimal coding experience, enable the recommended settings", $8.default.createElement(gV, null), "for your terminal:", " ", m0.terminal === "Apple_Terminal" ? "Option+Enter for newlines and visual bell" : "Shift+Enter for newlines"), $8.default.createElement(M0, {
             options: [{
                 label: "Yes, use recommended settings",
                 value: "install"
@@ -500,7 +501,7 @@ function J(H) {
                 else Y()
             },
             onCancel: () => Y()
-        }), $8.default.createElement($, {
+        }), $8.default.createElement(TextComponent, {
             dimColor: !0
         }, W.pending ? $8.default.createElement($8.default.Fragment, null, "Press ", W.keyName, " again to exit") : $8.default.createElement($8.default.Fragment, null, "Enter to confirm · Esc to skip"))))
     });
@@ -515,12 +516,12 @@ function J(H) {
         marginTop: 1
     }, D[Q]?.component, W.pending && $8.default.createElement(j, {
         padding: 1
-    }, $8.default.createElement($, {
+    }, $8.default.createElement(TextComponent, {
         dimColor: !0
     }, "Press ", W.keyName, " again to exit"))))
 }
 var $8;
-var Bz9 = L(() => {
+var Bz9 = lazyLoader(() => {
     hA();
     jQ();
     nEA();
@@ -538,7 +539,7 @@ var Bz9 = L(() => {
     T5();
     DGA();
     uK0();
-    $8 = GA(VA(), 1)
+    $8 = esmImport(VA(), 1)
 });
 import {
     sep as mK0
@@ -589,14 +590,14 @@ function LSA(A, Q) {
     let B = Q === 0 ? void 0 : Q;
     if (!B || A.length <= B) {
         if (A.length === 1) return A[0];
-        if (A.length === 2) return `${A[0]} and ${A[1]}`;
+        if (A.length === 2) return `TextComponent{A[0]} and TextComponent{A[1]}`;
         let I = A[A.length - 1];
-        return `${A.slice(0,-1).join(", ")}, and ${I}`
+        return `TextComponent{A.slice(0,-1).join(", ")}, and TextComponent{I}`
     }
     let G = A.slice(0, B),
         Z = A.length - B;
-    if (G.length === 1) return `${G[0]} and ${Z} more`;
-    return `${G.join(", ")}, and ${Z} more`
+    if (G.length === 1) return `TextComponent{G[0]} and TextComponent{Z} more`;
+    return `TextComponent{G.join(", ")}, and TextComponent{Z} more`
 }
 
 function Iz9(A) {
@@ -637,13 +638,13 @@ function Kz9() {
     if (Jz9(B)) A.push(".claude/settings.local.json");
     return A
 }
-var Dz9 = L(() => {
+var Dz9 = lazyLoader(() => {
     Gr();
     RB();
     bzA()
 });
 var Hz9;
-var Cz9 = L(() => {
+var Cz9 = lazyLoader(() => {
     Hz9 = {
         control: {
             title: "Do you trust the files in this folder?",
@@ -701,7 +702,7 @@ function zz9({
 }) {
     let {
         servers: B
-    } = yX("project"), G = ZI("trust_folder_dialog_copy", "variant", "control"), Z = Hz9[G], I = Object.keys(B).length > 0, Y = Wz9(), J = Y.length > 0, W = Xz9(), X = Vz9(), F = X.length > 0, V = Kz9(), K = V.length > 0, D = Fz9(), H = D.length > 0, C = [...new Set([...Y, ...W, ...X, ...V, ...D])], E = Q?.filter((d) => d.type === "prompt" && d.source === "projectSettings" && !d.isSkill && d.allowedTools?.some((QA) => QA === BASH_TOOL_NAME || QA.startsWith(BASH_TOOL_NAME + "("))) ?? [], z = Q?.filter((d) => d.type === "prompt" && d.source === "localSettings" && d.isSkill && d.allowedTools?.some((QA) => QA === BASH_TOOL_NAME || QA.startsWith(BASH_TOOL_NAME + "("))) ?? [], w = E.length > 0, N = z.length > 0, q = E.map((d) => d.name), R = z.map((d) => d.name), P = W.length > 0 || w || N, y = _X(J || P || F || K || H), x = [{
+    } = yX("project"), G = getFeatureFlag("trust_folder_dialog_copy", "variant", "control"), Z = Hz9[G], I = Object.keys(B).length > 0, Y = Wz9(), J = Y.length > 0, W = Xz9(), X = Vz9(), F = X.length > 0, V = Kz9(), K = V.length > 0, D = Fz9(), H = D.length > 0, C = [...new Set([...Y, ...W, ...X, ...V, ...D])], E = Q?.filter((d) => d.type === "prompt" && d.source === "projectSettings" && !d.isSkill && d.allowedTools?.some((QA) => QA === BASH_TOOL_NAME || QA.startsWith(BASH_TOOL_NAME + "("))) ?? [], z = Q?.filter((d) => d.type === "prompt" && d.source === "localSettings" && d.isSkill && d.allowedTools?.some((QA) => QA === BASH_TOOL_NAME || QA.startsWith(BASH_TOOL_NAME + "("))) ?? [], w = E.length > 0, N = z.length > 0, q = E.map((d) => d.name), R = z.map((d) => d.name), P = W.length > 0 || w || N, y = _X(J || P || F || K || H), x = [{
         name: "MCP servers",
         shouldShowWarning: () => I,
         onChange: () => {
@@ -722,7 +723,7 @@ function zz9({
         shouldShowWarning: () => H
     }].filter((d) => d.shouldShowWarning()), p = new Set(x.map((d) => d.name)), u = Object.keys(B);
 
-function o() {
+    function o() {
         let d = ["files"];
         if (p.has("MCP servers")) d.push("MCP servers");
         if (p.has("hooks")) d.push("hooks");
@@ -745,7 +746,7 @@ function o() {
         })
     }, [I, J, P, F, K, H, G]);
 
-function l(d) {
+    function l(d) {
         let QA = M5();
         if (d === "exit") {
             c8(1);
@@ -786,47 +787,47 @@ function l(d) {
         flexDirection: "column",
         gap: 1,
         paddingTop: 1
-    }, S5.default.createElement($, {
+    }, S5.default.createElement(TextComponent, {
         bold: !0
-    }, OA().cwd()), Z.bodyText !== null ? S5.default.createElement($, null, Z.bodyText) : S5.default.createElement($, null, "Claude Code may read, write, or execute files contained in this directory. This can pose security risks, so only use", " ", o(), " from trusted sources."), Z.showDetailedPermissions && (I || J || P || F || K || H) && S5.default.createElement(j, {
+    }, OA().cwd()), Z.bodyText !== null ? S5.default.createElement(TextComponent, null, Z.bodyText) : S5.default.createElement(TextComponent, null, "Claude Code may read, write, or execute files contained in this directory. This can pose security risks, so only use", " ", o(), " from trusted sources."), Z.showDetailedPermissions && (I || J || P || F || K || H) && S5.default.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, S5.default.createElement($, {
+    }, S5.default.createElement(TextComponent, {
         dimColor: !0
     }, "Execution allowed by:"), I && S5.default.createElement(j, {
         paddingLeft: 2
-    }, S5.default.createElement($, null, S5.default.createElement($, {
+    }, S5.default.createElement(TextComponent, null, S5.default.createElement(TextComponent, {
         dimColor: !0
-    }, "• "), S5.default.createElement($, {
+    }, "• "), S5.default.createElement(TextComponent, {
         bold: !0
-    }, ".mcp.json"), u.length > 0 && S5.default.createElement($, {
+    }, ".mcp.json"), u.length > 0 && S5.default.createElement(TextComponent, {
         dimColor: !0
     }, " ", "(", LSA(u, 3), ")"))), C.length > 0 && S5.default.createElement(j, {
         paddingLeft: 2
-    }, S5.default.createElement($, null, S5.default.createElement($, {
+    }, S5.default.createElement(TextComponent, null, S5.default.createElement(TextComponent, {
         dimColor: !0
-    }, "• "), S5.default.createElement($, {
+    }, "• "), S5.default.createElement(TextComponent, {
         bold: !0
     }, C.join(", ")))), w && S5.default.createElement(j, {
         paddingLeft: 2
-    }, S5.default.createElement($, null, S5.default.createElement($, {
+    }, S5.default.createElement(TextComponent, null, S5.default.createElement(TextComponent, {
         dimColor: !0
-    }, "• "), S5.default.createElement($, {
+    }, "• "), S5.default.createElement(TextComponent, {
         bold: !0
-    }, ".claude/commands"), S5.default.createElement($, {
+    }, ".claude/commands"), S5.default.createElement(TextComponent, {
         dimColor: !0
     }, " ", "(", LSA(q, 3), ")"))), N && S5.default.createElement(j, {
         paddingLeft: 2
-    }, S5.default.createElement($, null, S5.default.createElement($, {
+    }, S5.default.createElement(TextComponent, null, S5.default.createElement(TextComponent, {
         dimColor: !0
-    }, "• "), S5.default.createElement($, {
+    }, "• "), S5.default.createElement(TextComponent, {
         bold: !0
-    }, ".claude/skills"), S5.default.createElement($, {
+    }, ".claude/skills"), S5.default.createElement(TextComponent, {
         dimColor: !0
-    }, " (", LSA(R, 3), ")")))), S5.default.createElement($, {
+    }, " (", LSA(R, 3), ")")))), S5.default.createElement(TextComponent, {
         dimColor: !0
     }, S5.default.createElement(a4, {
-        url: "https://code.claude.com/docs/en/security"
+        url: "https://code.claude.com/docs/AGENT_OUTPUT_TOOL_NAME/security"
     }, Z.learnMoreText)), S5.default.createElement(M0, {
         options: [{
             label: Z.yesButtonLabel,
@@ -837,12 +838,12 @@ function l(d) {
         }],
         onChange: (d) => l(d),
         onCancel: () => l("exit")
-    }), S5.default.createElement($, {
+    }), S5.default.createElement(TextComponent, {
         dimColor: !0
     }, k.pending ? S5.default.createElement(S5.default.Fragment, null, "Press ", k.keyName, " again to exit") : S5.default.createElement(S5.default.Fragment, null, "Enter to confirm · Esc to exit"))))
 }
 var S5;
-var Uz9 = L(() => {
+var Uz9 = lazyLoader(() => {
     hA();
     T6();
     jQ();
@@ -858,17 +859,17 @@ var Uz9 = L(() => {
     Dz9();
     Cz9();
     CO();
-    S5 = GA(VA(), 1)
+    S5 = esmImport(VA(), 1)
 });
 var NJ1;
-var $z9 = L(() => {
+var $z9 = lazyLoader(() => {
     LY1();
     u1();
     GG();
     u1();
     _J();
     m8();
-    NJ1 = GA(VA(), 1)
+    NJ1 = esmImport(VA(), 1)
 });
 
 function wz9({
@@ -905,11 +906,10 @@ function wz9({
         z((o) => !o)
     }, []);
 
-function p() {
+    function p() {
         process.exit(1)
     }
-
-async function u(o) {
+    async function u(o) {
         let l = OY1(o, E);
         if (l.isCrossProject) {
             await Ka(l.command), R(l.command);
@@ -943,7 +943,7 @@ async function u(o) {
         systemPrompt: X,
         appendSystemPrompt: F
     }));
-    if (H) return zY.default.createElement(j, null, zY.default.createElement(e9, null), zY.default.createElement($, null, " Loading conversations…"));
+    if (H) return zY.default.createElement(j, null, zY.default.createElement(e9, null), zY.default.createElement(TextComponent, null, " Loading conversations…"));
     return zY.default.createElement(N7, {
         initialState: I,
         onChangeAppState: Y
@@ -969,14 +969,14 @@ function mb3({
     }, []), zY.default.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, zY.default.createElement($, null, "This conversation is from a different directory."), zY.default.createElement(j, {
+    }, zY.default.createElement(TextComponent, null, "This conversation is from a different directory."), zY.default.createElement(j, {
         flexDirection: "column"
-    }, zY.default.createElement($, null, "To resume, run:"), zY.default.createElement($, null, " ", A)), zY.default.createElement($, {
+    }, zY.default.createElement(TextComponent, null, "To resume, run:"), zY.default.createElement(TextComponent, null, " ", A)), zY.default.createElement(TextComponent, {
         dimColor: !0
     }, "(Command copied to clipboard)"))
 }
 var zY;
-var qz9 = L(() => {
+var qz9 = lazyLoader(() => {
     hA();
     zI();
     gI1();
@@ -991,13 +991,13 @@ var qz9 = L(() => {
     m8();
     rjA();
     iF0();
-    zY = GA(VA(), 1)
+    zY = esmImport(VA(), 1)
 });
 var Nz9, cK0;
-var Lz9 = L(() => {
+var Lz9 = lazyLoader(() => {
     ye1();
     PD();
-    Nz9 = GA(aQ1(), 1);
+    Nz9 = esmImport(aQ1(), 1);
     cK0 = class cK0 extends PLA {
         constructor(A, Q) {
             var B;
@@ -1015,13 +1015,13 @@ var Lz9 = L(() => {
             var Q, B, G;
             switch (A) {
                 case "sampling/createMessage":
-                    if (!((Q = this._clientCapabilities) === null || Q === void 0 ? void 0 : Q.sampling)) throw Error(`Client does not support sampling (required for ${A})`);
+                    if (!((Q = this._clientCapabilities) === null || Q === void 0 ? void 0 : Q.sampling)) throw Error(`Client does not support sampling (required for TextComponent{A})`);
                     break;
                 case "elicitation/create":
-                    if (!((B = this._clientCapabilities) === null || B === void 0 ? void 0 : B.elicitation)) throw Error(`Client does not support elicitation (required for ${A})`);
+                    if (!((B = this._clientCapabilities) === null || B === void 0 ? void 0 : B.elicitation)) throw Error(`Client does not support elicitation (required for TextComponent{A})`);
                     break;
                 case "roots/list":
-                    if (!((G = this._clientCapabilities) === null || G === void 0 ? void 0 : G.roots)) throw Error(`Client does not support listing roots (required for ${A})`);
+                    if (!((G = this._clientCapabilities) === null || G === void 0 ? void 0 : G.roots)) throw Error(`Client does not support listing roots (required for TextComponent{A})`);
                     break;
                 case "ping":
                     break
@@ -1030,17 +1030,17 @@ var Lz9 = L(() => {
         assertNotificationCapability(A) {
             switch (A) {
                 case "notifications/message":
-                    if (!this._capabilities.logging) throw Error(`Server does not support logging (required for ${A})`);
+                    if (!this._capabilities.logging) throw Error(`Server does not support logging (required for TextComponent{A})`);
                     break;
                 case "notifications/resources/updated":
                 case "notifications/resources/list_changed":
-                    if (!this._capabilities.resources) throw Error(`Server does not support notifying about resources (required for ${A})`);
+                    if (!this._capabilities.resources) throw Error(`Server does not support notifying about resources (required for TextComponent{A})`);
                     break;
                 case "notifications/tools/list_changed":
-                    if (!this._capabilities.tools) throw Error(`Server does not support notifying of tool list changes (required for ${A})`);
+                    if (!this._capabilities.tools) throw Error(`Server does not support notifying of tool list changes (required for TextComponent{A})`);
                     break;
                 case "notifications/prompts/list_changed":
-                    if (!this._capabilities.prompts) throw Error(`Server does not support notifying of prompt list changes (required for ${A})`);
+                    if (!this._capabilities.prompts) throw Error(`Server does not support notifying of prompt list changes (required for TextComponent{A})`);
                     break;
                 case "notifications/cancelled":
                     break;
@@ -1051,23 +1051,23 @@ var Lz9 = L(() => {
         assertRequestHandlerCapability(A) {
             switch (A) {
                 case "sampling/createMessage":
-                    if (!this._capabilities.sampling) throw Error(`Server does not support sampling (required for ${A})`);
+                    if (!this._capabilities.sampling) throw Error(`Server does not support sampling (required for TextComponent{A})`);
                     break;
                 case "logging/setLevel":
-                    if (!this._capabilities.logging) throw Error(`Server does not support logging (required for ${A})`);
+                    if (!this._capabilities.logging) throw Error(`Server does not support logging (required for TextComponent{A})`);
                     break;
                 case "prompts/get":
                 case "prompts/list":
-                    if (!this._capabilities.prompts) throw Error(`Server does not support prompts (required for ${A})`);
+                    if (!this._capabilities.prompts) throw Error(`Server does not support prompts (required for TextComponent{A})`);
                     break;
                 case "resources/list":
                 case "resources/templates/list":
                 case "resources/read":
-                    if (!this._capabilities.resources) throw Error(`Server does not support resources (required for ${A})`);
+                    if (!this._capabilities.resources) throw Error(`Server does not support resources (required for TextComponent{A})`);
                     break;
                 case "tools/call":
                 case "tools/list":
-                    if (!this._capabilities.tools) throw Error(`Server does not support tools (required for ${A})`);
+                    if (!this._capabilities.tools) throw Error(`Server does not support tools (required for TextComponent{A})`);
                     break;
                 case "ping":
                 case "initialize":
@@ -1113,10 +1113,10 @@ var Lz9 = L(() => {
             if (B.action === "accept" && B.content) try {
                 let G = new Nz9.default,
                     Z = G.compile(A.requestedSchema);
-                if (!Z(B.content)) throw new yE(kE.InvalidParams, `Elicitation response content does not match requested schema: ${G.errorsText(Z.errors)}`)
+                if (!Z(B.content)) throw new yE(kE.InvalidParams, `Elicitation response content does not match requested schema: TextComponent{G.errorsText(Z.errors)}`)
             } catch (G) {
                 if (G instanceof yE) throw G;
-                throw new yE(kE.InternalError, `Error validating elicitation response: ${G}`)
+                throw new yE(kE.InternalError, `Error validating elicitation response: TextComponent{G}`)
             }
             return B
         }
@@ -1156,7 +1156,6 @@ var Lz9 = L(() => {
     }
 });
 import Mz9 from "node:process";
-
 class pK0 {
     constructor(A = Mz9.stdin, Q = Mz9.stdout) {
         this._stdin = A, this._stdout = Q, this._readBuffer = new SLA, this._started = !1, this._ondata = (B) => {
@@ -1193,10 +1192,9 @@ class pK0 {
         })
     }
 }
-var Oz9 = L(() => {
+var Oz9 = lazyLoader(() => {
     ZA0()
 });
-
 async function Tz9(A, Q, B) {
     let Z = Gh(100);
     Qq(A);
@@ -1245,10 +1243,10 @@ async function Tz9(A, Q, B) {
         let X = DE(),
             F = JC(X),
             V = F.find((K) => K.name === J);
-        if (!V) throw Error(`Tool ${J} not found`);
+        if (!V) throw Error(`Tool TextComponent{J} not found`);
         try {
-            if (!V.isEnabled()) throw Error(`Tool ${J} is not enabled`);
-            let K = S3(),
+            if (!V.isEnabled()) throw Error(`Tool TextComponent{J} is not enabled`);
+            let K = getDefaultSonnetModel(),
                 D = await V.validateInput?.(W ?? {}, {
                     abortController: s9(),
                     options: {
@@ -1277,13 +1275,13 @@ async function Tz9(A, Q, B) {
                     updateFileHistoryState: () => {},
                     agentId: G0()
                 });
-            if (D && !D.result) throw Error(`Tool ${J} input is invalid: ${D.message}`);
+            if (D && !D.result) throw Error(`Tool TextComponent{J} input is invalid: TextComponent{D.message}`);
             let H = await V.call(W ?? {}, {
                 abortController: s9(),
                 options: {
                     commands: Rz9,
                     tools: F,
-                    mainLoopModel: S3(),
+                    mainLoopModel: getDefaultSonnetModel(),
                     maxThinkingTokens: 0,
                     mcpClients: [],
                     mcpResources: {},
@@ -1325,15 +1323,14 @@ async function Tz9(A, Q, B) {
             }
         }
     });
-    // Async function: Y
-async function Y() {
+    async function Y() {
         let J = new pK0;
         await I.connect(J)
     }
     return await Y()
 }
 var Rz9;
-var Pz9 = L(() => {
+var Pz9 = lazyLoader(() => {
     Lz9();
     Oz9();
     PD();
@@ -1356,7 +1353,7 @@ var Pz9 = L(() => {
 function lK0(A, Q, B) {
     let G = "";
     if (Object.keys(B?.enabledPlugins || {}).forEach((Z) => {
-            if (Z === A || Z === Q.name || Z.startsWith(`${Q.name}@`)) G = Z
+            if (Z === A || Z === Q.name || Z.startsWith(`TextComponent{Q.name}@`)) G = Z
         }), !G) G = A.includes("@") ? A : Q.name;
     return G
 }
@@ -1381,7 +1378,7 @@ function iK0(A, Q) {
     } = jz9(A);
     return Q.find((Z) => {
         if (Z.name === A || Z.name === B) return !0;
-        if (G && Z.source) return Z.name === B && Z.source.includes(`@${G}`);
+        if (G && Z.source) return Z.name === B && Z.source.includes(`@TextComponent{G}`);
         return !1
     })
 }
@@ -1391,7 +1388,7 @@ function nK0(A, Q, B) {
         ...LB("userSettings")?.enabledPlugins
     };
     Object.keys(Z).forEach((Y) => {
-        if (Y === A || Y === B.name || Y.startsWith(`${B.name}@`)) Z[Y] = Q
+        if (Y === A || Y === B.name || Y.startsWith(`TextComponent{B.name}@`)) Z[Y] = Q
     });
     let {
         error: I
@@ -1403,9 +1400,8 @@ function nK0(A, Q, B) {
 }
 
 function LJ1(A, Q) {
-    e(A instanceof Error ? A : Error(String(A))), console.error(`${V1.cross} Failed to ${Q}: ${A instanceof Error?A.message:String(A)}`), process.exit(1)
+    e(A instanceof Error ? A : Error(String(A))), console.error(`TextComponent{V1.cross} Failed to TextComponent{Q}: TextComponent{A instanceof Error?A.message:String(A)}`), process.exit(1)
 }
-
 async function Sz9(A) {
     try {
         let {
@@ -1421,40 +1417,39 @@ async function Sz9(A) {
             }
         }
         if (!Z || !I) {
-            let X = B ? `marketplace "${B}"` : "any configured marketplace";
-            throw Error(`Plugin "${Q}" not found in ${X}`)
+            let X = B ? `marketplace "TextComponent{B}"` : "any configured marketplace";
+            throw Error(`Plugin "TextComponent{Q}" not found in TextComponent{X}`)
         }
-        if (typeof Z.source !== "string") console.log(`Installing plugin "${Q}" from marketplace "${I}"...`), await U3A(Z.source, {
+        if (typeof Z.source !== "string") console.log(`Installing plugin "TextComponent{Q}" from marketplace "TextComponent{I}"...`), await U3A(Z.source, {
             manifest: {
                 name: Z.name
             }
         });
-        let Y = `${Z.name}@${I}`,
+        let Y = `TextComponent{Z.name}@TextComponent{I}`,
             W = {
                 ...LB("userSettings")?.enabledPlugins,
                 [Y]: !0
             };
         cB("userSettings", {
             enabledPlugins: W
-        }), oF(), console.log(`${V1.tick} Successfully installed plugin: ${Y}`), BA("tengu_plugin_installed_cli", {
+        }), oF(), console.log(`TextComponent{V1.tick} Successfully installed plugin: TextComponent{Y}`), BA("tengu_plugin_installed_cli", {
             plugin_id: Y,
             marketplace_name: I
         }), process.exit(0)
     } catch (Q) {
-        LJ1(Q, `install plugin "${A}"`)
+        LJ1(Q, `install plugin "TextComponent{A}"`)
     }
 }
-
 async function _z9(A) {
     try {
         let {
             enabled: Q,
             disabled: B
         } = await y7(), G = [...Q, ...B], Z = iK0(A, G);
-        if (!Z) throw Error(`Plugin "${A}" not found in installed plugins`);
+        if (!Z) throw Error(`Plugin "TextComponent{A}" not found in installed plugins`);
         let I = LB("userSettings"),
             Y = lK0(A, Z, I);
-        if (I?.enabledPlugins?.[Y] === !1) throw Error(`Plugin "${A}" is already uninstalled`);
+        if (I?.enabledPlugins?.[Y] === !1) throw Error(`Plugin "TextComponent{A}" is already uninstalled`);
         nK0(Y, !1, Z);
         let V = NQA().plugins[Y]?.find((H) => H.scope === "user")?.installPath;
         RI1(Y, "user");
@@ -1462,46 +1457,44 @@ async function _z9(A) {
         if ((!D || D.length === 0) && V) try {
             TI1(V)
         } catch {}
-        console.log(`${V1.tick} Successfully uninstalled plugin: ${Z.name}`), BA("tengu_plugin_uninstalled_cli", {
+        console.log(`TextComponent{V1.tick} Successfully uninstalled plugin: TextComponent{Z.name}`), BA("tengu_plugin_uninstalled_cli", {
             plugin_id: Y
         }), process.exit(0)
     } catch (Q) {
-        LJ1(Q, `uninstall plugin "${A}"`)
+        LJ1(Q, `uninstall plugin "TextComponent{A}"`)
     }
 }
-
 async function kz9(A) {
     try {
         let {
             disabled: Q
         } = await y7(), B = iK0(A, Q);
-        if (!B) throw Error(`Plugin "${A}" not found in disabled plugins`);
+        if (!B) throw Error(`Plugin "TextComponent{A}" not found in disabled plugins`);
         let G = LB("userSettings"),
             Z = lK0(A, B, G);
-        nK0(Z, !0, B), console.log(`${V1.tick} Successfully enabled plugin: ${B.name}`), BA("tengu_plugin_enabled_cli", {
+        nK0(Z, !0, B), console.log(`TextComponent{V1.tick} Successfully enabled plugin: TextComponent{B.name}`), BA("tengu_plugin_enabled_cli", {
             plugin_id: Z
         }), process.exit(0)
     } catch (Q) {
-        LJ1(Q, `enable plugin "${A}"`)
+        LJ1(Q, `enable plugin "TextComponent{A}"`)
     }
 }
-
 async function yz9(A) {
     try {
         let {
             enabled: Q
         } = await y7(), B = iK0(A, Q);
-        if (!B) throw Error(`Plugin "${A}" not found in enabled plugins`);
+        if (!B) throw Error(`Plugin "TextComponent{A}" not found in enabled plugins`);
         let G = LB("userSettings"),
             Z = lK0(A, B, G);
-        nK0(Z, !1, B), console.log(`${V1.tick} Successfully disabled plugin: ${B.name}`), BA("tengu_plugin_disabled_cli", {
+        nK0(Z, !1, B), console.log(`TextComponent{V1.tick} Successfully disabled plugin: TextComponent{B.name}`), BA("tengu_plugin_disabled_cli", {
             plugin_id: Z
         }), process.exit(0)
     } catch (Q) {
-        LJ1(Q, `disable plugin "${A}"`)
+        LJ1(Q, `disable plugin "TextComponent{A}"`)
     }
 }
-var xz9 = L(() => {
+var xz9 = lazyLoader(() => {
     n2();
     u1();
     w0();

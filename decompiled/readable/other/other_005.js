@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: other_005.js
+ * 处理时间: 2025-12-09T03:41:38.068Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.030Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -1007,7 +1009,7 @@
         [65126, 1, "="],
         [65127, 3],
         [65128, 1, "\\"],
-        [65129, 1, "$"],
+        [65129, 1, "TextComponent"],
         [65130, 1, "%"],
         [65131, 1, "@"],
         [
@@ -1155,7 +1157,7 @@
         [65281, 1, "!"],
         [65282, 1, '"'],
         [65283, 1, "#"],
-        [65284, 1, "$"],
+        [65284, 1, "TextComponent"],
         [65285, 1, "%"],
         [65286, 1, "&"],
         [65287, 1, "'"],

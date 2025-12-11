@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_011.js
+ * 处理时间: 2025-12-09T03:41:36.103Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.866Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -37,8 +40,8 @@
         setAttribute(A, Q) {
             if (this._isLogRecordReadonly()) return this;
             if (Q === null) return this;
-            if (A.length === 0) return pt.diag.warn(`Invalid attribute key: ${A}`), this;
-            if (!(0, MsA.isAttributeValue)(Q) && !(typeof Q === "object" && !Array.isArray(Q) && Object.keys(Q).length > 0)) return pt.diag.warn(`Invalid attribute value set for key: ${A}`), this;
+            if (A.length === 0) return pt.diag.warn(`Invalid attribute key: TextComponent{A}`), this;
+            if (!(0, MsA.isAttributeValue)(Q) && !(typeof Q === "object" && !Array.isArray(Q) && Object.keys(Q).length > 0)) return pt.diag.warn(`Invalid attribute value set for key: TextComponent{A}`), this;
             if (this.totalAttributesCount += 1, Object.keys(this.attributes).length >= this._logRecordLimits.attributeCountLimit && !Object.prototype.hasOwnProperty.call(this.attributes, A)) {
                 if (this.droppedAttributesCount === 1) pt.diag.warn("Dropping extra attributes.");
                 return this
@@ -68,7 +71,7 @@
         }
         _truncateToSize(A) {
             let Q = this._logRecordLimits.attributeValueLengthLimit;
-            if (Q <= 0) return pt.diag.warn(`Attribute value limit must be positive, got ${Q}`), A;
+            if (Q <= 0) return pt.diag.warn(`Attribute value limit must be positive, got TextComponent{Q}`), A;
             if (typeof A === "string") return this._truncateToLimitUtil(A, Q);
             if (Array.isArray(A)) return A.map((B) => typeof B === "string" ? this._truncateToLimitUtil(B, Q) : B);
             return A
@@ -84,15 +87,14 @@
     }
     fMB.LogRecordImpl = bMB
 });
-var cMB = U((mMB) => {
+var cMB = moduleWrapper((mMB) => {
     Object.defineProperty(mMB, "__esModule", {
         value: !0
     });
     mMB.Logger = void 0;
     var RU6 = W9(),
         TU6 = gMB();
-
-class uMB {
+    class uMB {
         instrumentationScope;
         _sharedState;
         constructor(A, Q) {
@@ -109,14 +111,14 @@ class uMB {
     }
     mMB.Logger = uMB
 });
-var iMB = U((pMB) => {
+var iMB = moduleWrapper((pMB) => {
     Object.defineProperty(pMB, "__esModule", {
         value: !0
     });
     pMB.reconfigureLimits = pMB.loadDefaultConfig = void 0;
     var h7A = t6();
 
-function PU6() {
+    function PU6() {
         return {
             forceFlushTimeoutMillis: 30000,
             logRecordLimits: {
@@ -128,7 +130,7 @@ function PU6() {
     }
     pMB.loadDefaultConfig = PU6;
 
-function jU6(A) {
+    function jU6(A) {
         return {
             attributeCountLimit: A.attributeCountLimit ?? (0, h7A.getNumberFromEnv)("OTEL_LOGRECORD_ATTRIBUTE_COUNT_LIMIT") ?? (0, h7A.getNumberFromEnv)("OTEL_ATTRIBUTE_COUNT_LIMIT") ?? 128,
             attributeValueLengthLimit: A.attributeValueLengthLimit ?? (0, h7A.getNumberFromEnv)("OTEL_LOGRECORD_ATTRIBUTE_VALUE_LENGTH_LIMIT") ?? (0, h7A.getNumberFromEnv)("OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT") ?? 1 / 0
@@ -136,13 +138,12 @@ function jU6(A) {
     }
     pMB.reconfigureLimits = jU6
 });
-var Fm1 = U((aMB) => {
+var Fm1 = moduleWrapper((aMB) => {
     Object.defineProperty(aMB, "__esModule", {
         value: !0
     });
     aMB.NoopLogRecordProcessor = void 0;
-
-class nMB {
+    class nMB {
         forceFlush() {
             return Promise.resolve()
         }
@@ -153,14 +154,13 @@ class nMB {
     }
     aMB.NoopLogRecordProcessor = nMB
 });
-var eMB = U((oMB) => {
+var eMB = moduleWrapper((oMB) => {
     Object.defineProperty(oMB, "__esModule", {
         value: !0
     });
     oMB.MultiLogRecordProcessor = void 0;
     var _U6 = t6();
-
-class rMB {
+    class rMB {
         processors;
         forceFlushTimeoutMillis;
         constructor(A, Q) {
@@ -179,15 +179,14 @@ class rMB {
     }
     oMB.MultiLogRecordProcessor = rMB
 });
-var GOB = U((QOB) => {
+var GOB = moduleWrapper((QOB) => {
     Object.defineProperty(QOB, "__esModule", {
         value: !0
     });
     QOB.LoggerProviderSharedState = void 0;
     var kU6 = Fm1(),
         yU6 = eMB();
-
-class AOB {
+    class AOB {
         resource;
         forceFlushTimeoutMillis;
         logRecordLimits;
@@ -202,7 +201,7 @@ class AOB {
     }
     QOB.LoggerProviderSharedState = AOB
 });
-var FOB = U((JOB) => {
+var FOB = moduleWrapper((JOB) => {
     Object.defineProperty(JOB, "__esModule", {
         value: !0
     });
@@ -215,8 +214,7 @@ var FOB = U((JOB) => {
         IOB = iMB(),
         fU6 = GOB();
     JOB.DEFAULT_LOGGER_NAME = "unknown";
-
-class YOB {
+    class YOB {
         _shutdownOnce;
         _sharedState;
         constructor(A = {}) {
@@ -228,7 +226,7 @@ class YOB {
             if (this._shutdownOnce.isCalled) return OsA.diag.warn("A shutdown LoggerProvider cannot provide a Logger"), xU6.NOOP_LOGGER;
             if (!A) OsA.diag.warn("Logger requested without instrumentation scope name.");
             let G = A || JOB.DEFAULT_LOGGER_NAME,
-                Z = `${G}@${Q||""}:${B?.schemaUrl||""}`;
+                Z = `TextComponent{G}@TextComponent{Q||""}:TextComponent{B?.schemaUrl||""}`;
             if (!this._sharedState.loggers.has(Z)) this._sharedState.loggers.set(Z, new bU6.Logger({
                 name: G,
                 version: Q,
@@ -250,14 +248,13 @@ class YOB {
     }
     JOB.LoggerProvider = YOB
 });
-var COB = U((DOB) => {
+var COB = moduleWrapper((DOB) => {
     Object.defineProperty(DOB, "__esModule", {
         value: !0
     });
     DOB.ConsoleLogRecordExporter = void 0;
     var VOB = t6();
-
-class KOB {
+    class KOB {
         export (A, Q) {
             this._sendLogRecords(A, Q)
         }
@@ -291,14 +288,13 @@ class KOB {
     }
     DOB.ConsoleLogRecordExporter = KOB
 });
-var $OB = U((zOB) => {
+var $OB = moduleWrapper((zOB) => {
     Object.defineProperty(zOB, "__esModule", {
         value: !0
     });
     zOB.SimpleLogRecordProcessor = void 0;
     var g7A = t6();
-
-class EOB {
+    class EOB {
         _exporter;
         _shutdownOnce;
         _unresolvedExports;
@@ -308,7 +304,7 @@ class EOB {
         onEmit(A) {
             if (this._shutdownOnce.isCalled) return;
             let Q = () => g7A.internal._export(this._exporter, [A]).then((B) => {
-                if (B.code !== g7A.ExportResultCode.SUCCESS)(0, g7A.globalErrorHandler)(B.error ?? Error(`SimpleLogRecordProcessor: log record export failed (status ${B})`))
+                if (B.code !== g7A.ExportResultCode.SUCCESS)(0, g7A.globalErrorHandler)(B.error ?? Error(`SimpleLogRecordProcessor: log record export failed (status TextComponent{B})`))
             }).catch(g7A.globalErrorHandler);
             if (A.resource.asyncAttributesPending) {
                 let B = A.resource.waitForAsyncAttributes?.().then(() => {
@@ -329,14 +325,13 @@ class EOB {
     }
     zOB.SimpleLogRecordProcessor = EOB
 });
-var MOB = U((NOB) => {
+var MOB = moduleWrapper((NOB) => {
     Object.defineProperty(NOB, "__esModule", {
         value: !0
     });
     NOB.InMemoryLogRecordExporter = void 0;
     var wOB = t6();
-
-class qOB {
+    class qOB {
         _finishedLogRecords = [];
         _stopped = !1;
         export (A, Q) {
@@ -360,15 +355,14 @@ class qOB {
     }
     NOB.InMemoryLogRecordExporter = qOB
 });
-var POB = U((ROB) => {
+var POB = moduleWrapper((ROB) => {
     Object.defineProperty(ROB, "__esModule", {
         value: !0
     });
     ROB.BatchLogRecordProcessorBase = void 0;
     var hU6 = W9(),
         sw = t6();
-
-class OOB {
+    class OOB {
         _exporter;
         _maxExportBatchSize;
         _maxQueueSize;
@@ -429,7 +423,7 @@ class OOB {
         }
         _export(A) {
             let Q = () => sw.internal._export(this._exporter, A).then((G) => {
-                    if (G.code !== sw.ExportResultCode.SUCCESS)(0, sw.globalErrorHandler)(G.error ?? Error(`BatchLogRecordProcessor: log record export failed (status ${G})`))
+                    if (G.code !== sw.ExportResultCode.SUCCESS)(0, sw.globalErrorHandler)(G.error ?? Error(`BatchLogRecordProcessor: log record export failed (status TextComponent{G})`))
                 }).catch(sw.globalErrorHandler),
                 B = A.map((G) => G.resource).filter((G) => G.asyncAttributesPending);
             if (B.length === 0) return Q();
@@ -438,19 +432,18 @@ class OOB {
     }
     ROB.BatchLogRecordProcessorBase = OOB
 });
-var kOB = U((SOB) => {
+var kOB = moduleWrapper((SOB) => {
     Object.defineProperty(SOB, "__esModule", {
         value: !0
     });
     SOB.BatchLogRecordProcessor = void 0;
     var gU6 = POB();
-
-class jOB extends gU6.BatchLogRecordProcessorBase {
+    class jOB extends gU6.BatchLogRecordProcessorBase {
         onShutdown() {}
     }
     SOB.BatchLogRecordProcessor = jOB
 });
-var yOB = U((Vm1) => {
+var yOB = moduleWrapper((Vm1) => {
     Object.defineProperty(Vm1, "__esModule", {
         value: !0
     });
@@ -463,7 +456,7 @@ var yOB = U((Vm1) => {
         }
     })
 });
-var xOB = U((Km1) => {
+var xOB = moduleWrapper((Km1) => {
     Object.defineProperty(Km1, "__esModule", {
         value: !0
     });
@@ -476,7 +469,7 @@ var xOB = U((Km1) => {
         }
     })
 });
-var Dm1 = U((Jp) => {
+var Dm1 = moduleWrapper((Jp) => {
     Object.defineProperty(Jp, "__esModule", {
         value: !0
     });
@@ -526,16 +519,16 @@ var Dm1 = U((Jp) => {
 });
 
 function Wp() {
-    let A = process.env.CLAUDE_AGENT_SDK_VERSION ? `, agent-sdk/${process.env.CLAUDE_AGENT_SDK_VERSION}` : "";
-    return `claude-cli/${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION} (external, ${process.env.CLAUDE_CODE_ENTRYPOINT}${A})`
+    let A = process.env.CLAUDE_AGENT_SDK_VERSION ? `, agent-sdk/TextComponent{process.env.CLAUDE_AGENT_SDK_VERSION}` : "";
+    return `claude-cli/TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION} (external, TextComponent{process.env.CLAUDE_CODE_ENTRYPOINT}TextComponent{A})`
 }
 
 function lt() {
-    return `claude-code/${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION}`
+    return `claude-code/TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION}`
 }
 
 function MF() {
-    return `claude-code/${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION}`
+    return `claude-code/TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION}`
 }
 
 function VI() {
@@ -547,7 +540,7 @@ function VI() {
         };
         return {
             headers: {
-                Authorization: `Bearer ${Q.accessToken}`,
+                Authorization: `Bearer TextComponent{Q.accessToken}`,
                 "anthropic-beta": r9A
             }
         }
@@ -563,7 +556,7 @@ function VI() {
         }
     }
 }
-var XE = L(() => {
+var XE = lazyLoader(() => {
     hB();
     EX()
 });
@@ -571,7 +564,7 @@ var XE = L(() => {
 function RsA(A) {
     try {
         let Q = String(A),
-            B = process.platform === "win32" ? `powershell.exe -NoProfile -Command "(Get-CimInstance Win32_Process -Filter \\"ProcessId=${Q}\\").ParentProcessId"` : `ps -o ppid= -p ${Q}`,
+            B = process.platform === "win32" ? `powershell.exe -NoProfile -Command "(Get-CimInstance Win32_Process -Filter \\"ProcessId=TextComponent{Q}\\").ParentProcessId"` : `ps -o ppid= -p TextComponent{Q}`,
             G = iG(B, {
                 timeout: 1000
             });
@@ -584,7 +577,7 @@ function RsA(A) {
 function vOB(A) {
     try {
         let Q = String(A),
-            B = process.platform === "win32" ? `powershell.exe -NoProfile -Command "(Get-CimInstance Win32_Process -Filter \\"ProcessId=${Q}\\").CommandLine"` : `ps -o command= -p ${Q}`,
+            B = process.platform === "win32" ? `powershell.exe -NoProfile -Command "(Get-CimInstance Win32_Process -Filter \\"ProcessId=TextComponent{Q}\\").CommandLine"` : `ps -o command= -p TextComponent{Q}`,
             G = iG(B, {
                 timeout: 1000
             });
@@ -593,7 +586,7 @@ function vOB(A) {
         return null
     }
 }
-var Hm1 = L(() => {
+var Hm1 = lazyLoader(() => {
     I6()
 });
 
@@ -607,7 +600,7 @@ var oU6, tU6 = () => {
         return process.platform === "linux" && process.env.CLAUDE_CODE_BUBBLEWRAP === "1"
     },
     eU6, A$6, Q$6, DU;
-var it = L(() => {
+var it = lazyLoader(() => {
     I6();
     Hm1();
     o2();
@@ -617,7 +610,7 @@ var it = L(() => {
     oU6 = t1(async () => {
         let {
             code: A
-        } = await ZQ("test", ["-f", "/.dockerenv"]);
+        } = await execGit("test", ["-f", "/.dockerenv"]);
         if (A !== 0) return !1;
         return process.platform === "linux"
     }), eU6 = t1(() => {
@@ -663,31 +656,31 @@ function B7(A, Q, B = !1) {
         let Z = A.indexOf(`
 `);
         if (Z !== -1) {
-            if (G = A.substring(0, Z), G.length + 1 > Q) return `${G.substring(0,Q-1)}…`;
-            return `${G}…`
+            if (G = A.substring(0, Z), G.length + 1 > Q) return `TextComponent{G.substring(0,Q-1)}…`;
+            return `TextComponent{G}…`
         }
     }
     if (G.length <= Q) return G;
-    return `${G.substring(0,Q-1)}…`
+    return `TextComponent{G.substring(0,Q-1)}…`
 }
 
 function FE(A) {
     if (A < 60000) {
         if (A === 0) return "0s";
-        if (A < 1) return `${(A/1000).toFixed(1)}s`;
-        return `${Math.round(A/1000).toString()}s`
+        if (A < 1) return `TextComponent{(A/1000).toFixed(1)}s`;
+        return `TextComponent{Math.round(A/1000).toString()}s`
     }
     let Q = Math.floor(A / 3600000),
         B = Math.floor(A % 3600000 / 60000),
         G = Math.round(A % 60000 / 1000);
-    if (Q > 0) return `${Q}h ${B}m ${G}s`;
-    if (B > 0) return `${B}m ${G}s`;
-    return `${G}s`
+    if (Q > 0) return `TextComponent{Q}h TextComponent{B}m TextComponent{G}s`;
+    if (B > 0) return `TextComponent{B}m TextComponent{G}s`;
+    return `TextComponent{G}s`
 }
 
 function QZ(A) {
     let Q = A >= 1000;
-    return new Intl.NumberFormat("en", {
+    return new Intl.NumberFormat("AGENT_OUTPUT_TOOL_NAME", {
         notation: "compact",
         minimumFractionDigits: Q ? 1 : 0,
         maximumFractionDigits: 1
@@ -736,13 +729,13 @@ function TsA(A, Q = {}) {
         of J)
         if (Math.abs(Y) >= F) {
             let K = Math.trunc(Y / F);
-            if (B === "narrow") return Y < 0 ? `${Math.abs(K)}${V} ago` : `in ${K}${V}`;
-            return new Intl.RelativeTimeFormat("en", {
+            if (B === "narrow") return Y < 0 ? `TextComponent{Math.abs(K)}TextComponent{V} ago` : `in TextComponent{K}TextComponent{V}`;
+            return new Intl.RelativeTimeFormat("AGENT_OUTPUT_TOOL_NAME", {
                 style: "long",
                 numeric: G
             }).format(K, X)
         } if (B === "narrow") return Y <= 0 ? "0s ago" : "in 0s";
-    return new Intl.RelativeTimeFormat("en", {
+    return new Intl.RelativeTimeFormat("AGENT_OUTPUT_TOOL_NAME", {
         style: B,
         numeric: G
     }).format(0, "second")
@@ -778,20 +771,20 @@ function u7A(A, Q = !1, B = !0) {
             hour12: B ? !0 : void 0
         };
         if (G.getFullYear() !== Z.getFullYear()) X.year = "numeric";
-        return G.toLocaleString("en-US", X).replace(/ ([AP]M)/i, (V, K) => K.toLowerCase()) + (Q ? ` (${Intl.DateTimeFormat().resolvedOptions().timeZone})` : "")
+        return G.toLocaleString("AGENT_OUTPUT_TOOL_NAME-US", X).replace(/ ([AP]M)/i, (V, K) => K.toLowerCase()) + (Q ? ` (TextComponent{Intl.DateTimeFormat().resolvedOptions().timeZone})` : "")
     }
-    let J = G.toLocaleTimeString("en-US", {
+    let J = G.toLocaleTimeString("AGENT_OUTPUT_TOOL_NAME-US", {
             hour: "numeric",
             minute: I === 0 ? void 0 : "2-digit",
             hour12: !0
         }),
         W = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    return J.replace(/ ([AP]M)/i, (X, F) => F.toLowerCase()) + (Q ? ` (${W})` : "")
+    return J.replace(/ ([AP]M)/i, (X, F) => F.toLowerCase()) + (Q ? ` (TextComponent{W})` : "")
 }
 
 function bOB(A, Q = !1, B = !0) {
     let G = new Date(A);
-    return `${u7A(Math.floor(G.getTime()/1000),Q,B)}`
+    return `TextComponent{u7A(Math.floor(G.getTime()/1000),Q,B)}`
 }
 
 function L$A(A, Q = 4) {
@@ -818,9 +811,9 @@ function G$6() {
     }
     let B = "Usage by model:";
     for (let [G, Z] of Object.entries(Q)) {
-        let I = `  ${QZ(Z.inputTokens)} input, ${QZ(Z.outputTokens)} output, ${QZ(Z.cacheReadInputTokens)} cache read, ${QZ(Z.cacheCreationInputTokens)} cache write` + (Z.webSearchRequests > 0 ? `, ${QZ(Z.webSearchRequests)} web search` : "") + ` (${L$A(Z.costUSD)})`;
+        let I = `  TextComponent{QZ(Z.inputTokens)} input, TextComponent{QZ(Z.outputTokens)} output, TextComponent{QZ(Z.cacheReadInputTokens)} cache read, TextComponent{QZ(Z.cacheCreationInputTokens)} cache write` + (Z.webSearchRequests > 0 ? `, TextComponent{QZ(Z.webSearchRequests)} web search` : "") + ` (TextComponent{L$A(Z.costUSD)})`;
         B += `
-` + `${G}:`.padStart(21) + I
+` + `TextComponent{G}:`.padStart(21) + I
     }
     return B
 }
@@ -828,11 +821,11 @@ function G$6() {
 function Cm1() {
     let A = L$A(yK()) + (YE0() ? " (costs may be inaccurate due to usage of unknown models)" : ""),
         Q = G$6();
-    return oA.dim(`Total cost:            ${A}
-Total duration (API):  ${FE(kN())}
-Total duration (wall): ${FE(GVA())}
-Total code changes:    ${nBA()} ${nBA()===1?"line":"lines"} added, ${aBA()} ${aBA()===1?"line":"lines"} removed
-${Q}`)
+    return oA.dim(`Total cost:            TextComponent{A}
+Total duration (API):  TextComponent{FE(kN())}
+Total duration (wall): TextComponent{FE(GVA())}
+Total code changes:    TextComponent{nBA()} TextComponent{nBA()===1?"line":"lines"} added, TextComponent{aBA()} TextComponent{aBA()===1?"line":"lines"} removed
+TextComponent{Q}`)
 }
 
 function hOB() {
@@ -886,14 +879,14 @@ function PsA(A, Q, B) {
     })
 }
 var fOB;
-var x_ = L(() => {
+var x_ = lazyLoader(() => {
     J9();
     s2();
     jQ();
     S0();
     S0();
     S0();
-    fOB = GA(VA(), 1)
+    fOB = esmImport(VA(), 1)
 });
 
 function I$6(A, Q) {
@@ -926,10 +919,10 @@ function uOB(A) {
 }
 
 function Fp(A) {
-    return `${uOB(A.inputTokens)}/${uOB(A.outputTokens)} per Mtok`
+    return `TextComponent{uOB(A.inputTokens)}/TextComponent{uOB(A.outputTokens)} per Mtok`
 }
 var nt, jsA, SsA, Em1, zm1, Um1, gOB;
-var ksA = L(() => {
+var ksA = lazyLoader(() => {
     x_();
     w0();
     iEA();
@@ -982,7 +975,6 @@ var ksA = L(() => {
         ...{}
     }
 });
-// Async function: dOB
 async function dOB() {
     if (xsA === null && !ysA) ysA = X$6(), xsA = await ysA, ysA = null, at.cache.clear?.()
 }
@@ -1024,14 +1016,13 @@ function W$6() {
     if (xsA !== null) return xsA;
     return
 }
-
 async function X$6() {
     return
 }
 var xsA = null,
     ysA = null,
     at;
-var eb = L(() => {
+var eb = lazyLoader(() => {
     jQ();
     o2();
     S0();
@@ -1079,19 +1070,18 @@ var eb = L(() => {
         }
     })
 });
-
 async function V$6() {
     let A = i6()?.organizationUuid;
     if (!A) throw Error("No organization ID available");
     let Q = VI();
-    if (Q.error) throw Error(`Auth error: ${Q.error}`);
+    if (Q.error) throw Error(`Auth error: TextComponent{Q.error}`);
     let B = {
         "Content-Type": "application/json",
         "User-Agent": MF(),
         ...Q.headers
     };
     try {
-        let G = `https://api.anthropic.com/api/organization/${A}/claude_code_sonnet_1m_access`,
+        let G = `https://api.anthropic.com/api/organization/TextComponent{A}/claude_code_sonnet_1m_access`,
             Z = await GQ.get(G, {
                 headers: B,
                 timeout: 5000
@@ -1108,7 +1098,6 @@ async function V$6() {
         }
     }
 }
-
 async function D$6() {
     try {
         return await K$6()
@@ -1146,14 +1135,12 @@ function Kp() {
         needsRefresh: J
     }
 }
-// Async function: pOB
 async function pOB() {
     let {
         needsRefresh: A
     } = Kp();
     if (A) C$6()
 }
-
 async function C$6() {
     let A = i6()?.organizationUuid;
     if (!A) return;
@@ -1198,7 +1185,7 @@ async function C$6() {
 }
 var F$6 = 3600000,
     K$6, H$6 = 3600000;
-var vsA = L(() => {
+var vsA = lazyLoader(() => {
     w3();
     kvA();
     XE();
@@ -1273,9 +1260,9 @@ function fsA(A, Q) {
 
 function z$6(A, Q, B) {
     try {
-        let G = Q.replace(/[*.+?^${}()|[\]\\]/g, "\\$&").replace(/_____/g, ".*");
-        if (B) G = "\\/?" + G.replace(/(^\/|\/$)/g, "") + "\\/?";
-        return new RegExp("^" + G + "$", "i").test(A)
+        let G = Q.replace(/[*.+?^TextComponent{}()|[\]\\]/g, "\\TextComponent&").replace(/_____/g, ".*");
+        if (B) G = "\\/?" + G.replace(/(^\/|\/TextComponent)/g, "") + "\\/?";
+        return new RegExp("^" + G + "TextComponent", "i").test(A)
     } catch (G) {
         return !1
     }
@@ -1347,7 +1334,6 @@ function tOB(A) {
         return console.error(Q), !1
     }
 }
-
 async function st(A, Q, B) {
     if (Q = Q || "", B = B || globalThis.crypto && globalThis.crypto.subtle || iOB.SubtleCrypto, !B) throw Error("No SubtleCrypto implementation found");
     try {
@@ -1374,9 +1360,9 @@ function O$A(A) {
 function ow(A) {
     if (typeof A === "number") A = A + "";
     if (!A || typeof A !== "string") A = "0";
-    let Q = A.replace(/(^v|\+.*$)/g, "").split(/[-.]/);
+    let Q = A.replace(/(^v|\+.*TextComponent)/g, "").split(/[-.]/);
     if (Q.length === 3) Q.push("~");
-    return Q.map((B) => B.match(/^[0-9]+$/) ? B.padStart(5, " ") : B).join("-")
+    return Q.map((B) => B.match(/^[0-9]+TextComponent/) ? B.padStart(5, " ") : B).join("-")
 }
 
 function eOB() {
@@ -1394,7 +1380,7 @@ function ARB(A, Q) {
     try {
         B = new URL(A), G = new URL(Q)
     } catch (Z) {
-        return console.error(`Unable to merge query strings: ${Z}`), Q
+        return console.error(`Unable to merge query strings: TextComponent{Z}`), Q
     }
     return B.searchParams.forEach((Z, I) => {
         if (G.searchParams.has(I)) return;
@@ -1411,7 +1397,6 @@ function hsA(A) {
     else if (A.variations.some((Q) => lOB(Q) && (Q.domMutations || ("js" in Q) || ("css" in Q)))) return "visual";
     return "unknown"
 }
-
 async function gsA(A, Q) {
     return new Promise((B) => {
         let G = !1,
@@ -1424,7 +1409,7 @@ async function gsA(A, Q) {
     })
 }
 var iOB, wm1 = (A) => Uint8Array.from(atob(A), (Q) => Q.charCodeAt(0));
-var R$A = L(() => {
+var R$A = lazyLoader(() => {
     iOB = {
         fetch: globalThis.fetch ? globalThis.fetch.bind(globalThis) : void 0,
         SubtleCrypto: globalThis.crypto ? globalThis.crypto.subtle : void 0,
@@ -1435,7 +1420,6 @@ var R$A = L(() => {
 function GRB(A) {
     if (Object.assign(fH, A), !fH.backgroundSync) T$6()
 }
-
 async function ZRB(A) {
     let {
         instance: Q,
@@ -1477,14 +1461,12 @@ function N$6() {
         Rm1(A)
     })
 }
-// Async function: BRB
 async function BRB() {
     try {
         if (!v_.localStorage) return;
         await v_.localStorage.setItem(fH.cacheKey, JSON.stringify(Array.from(Af.entries())))
     } catch (A) {}
 }
-
 async function L$6(A) {
     let {
         instance: Q,
@@ -1513,7 +1495,7 @@ async function L$6(A) {
 
 function T$A(A) {
     let [Q, B] = A.getApiInfo();
-    return `${Q}||${B}`
+    return `TextComponent{Q}||TextComponent{B}`
 }
 
 function Lm1(A) {
@@ -1527,9 +1509,8 @@ function Lm1(A) {
     });
     let I = A.getForcedVariations(),
         Y = A.getUrl();
-    return `${Q}||${JSON.stringify({ca:Z,fv:I,url:Y})}`
+    return `TextComponent{Q}||TextComponent{JSON.stringify({ca:Z,fv:I,url:Y})}`
 }
-
 async function M$6() {
     if (QRB) return;
     QRB = !0;

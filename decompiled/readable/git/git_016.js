@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_016.js
+ * 处理时间: 2025-12-09T03:41:37.450Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.975Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -25,7 +27,7 @@
     };
     SzA.generateKey = jZ.pbe.generatePkcs12Key
 });
-var wv1 = U((PT7, V8B) => {
+var wv1 = moduleWrapper((PT7, V8B) => {
     var _c = n8();
     GT();
     Tc();
@@ -73,7 +75,7 @@ var wv1 = U((PT7, V8B) => {
         })
     }
 });
-var Rv1 = U((jT7, $8B) => {
+var Rv1 = moduleWrapper((jT7, $8B) => {
     var VQ = n8();
     GT();
     j3A();
@@ -83,8 +85,7 @@ var Rv1 = U((jT7, $8B) => {
     aL();
     y3A();
     P3();
-
-var PiA = function(A, Q, B, G) {
+    var PiA = function(A, Q, B, G) {
             var Z = VQ.util.createBuffer(),
                 I = A.length >> 1,
                 Y = I + (A.length & 1),
@@ -574,8 +575,7 @@ var PiA = function(A, Q, B, G) {
         G.read -= 4;
         var Z = G.bytes();
         G.read += 4;
-
-var I = {
+        var I = {
                 signature: gw(G, 2).getBytes()
             },
             Y = VQ.util.createBuffer();
@@ -634,8 +634,7 @@ var I = {
             type: cA.ContentType.handshake,
             data: cA.createClientKeyExchange(A)
         }), cA.queue(A, Q), A.expect = po8;
-
-var Y = function(J, W) {
+        var Y = function(J, W) {
             if (J.session.certificateRequest !== null && J.session.clientCertificate !== null) cA.queue(J, cA.createRecord(J, {
                 type: cA.ContentType.handshake,
                 data: cA.createCertificateVerify(J, W)
@@ -1011,8 +1010,7 @@ var Y = function(J, W) {
     };
     cA.createRecord = function(A, Q) {
         if (!Q.data) return null;
-
-var B = {
+        var B = {
             type: Q.type,
             version: {
                 major: A.version.major,
@@ -1238,8 +1236,7 @@ var B = {
         }
         return A.records = [], A.tlsDataReady(A)
     };
-
-var Nv1 = function(A) {
+    var Nv1 = function(A) {
             switch (A) {
                 case !0:
                     return !0;
@@ -1409,8 +1406,7 @@ var Nv1 = function(A) {
                 current: null
             }, Y.expect = Y.entity === cA.ConnectionEnd.client ? ho8 : lo8, Y.fragmented = null, Y.records = [], Y.open = !1, Y.handshakes = 0, Y.handshaking = !1, Y.isConnected = !1, Y.fail = !(F || typeof F > "u"), Y.input.clear(), Y.tlsData.clear(), Y.data.clear(), Y.state.current = cA.createConnectionState(Y)
         }, Y.reset();
-
-var J = function(F, V) {
+        var J = function(F, V) {
                 var K = V.type - cA.ContentType.change_cipher_spec,
                     D = Ov1[F.entity][F.expect];
                 if (K in D) D[K](F, V);

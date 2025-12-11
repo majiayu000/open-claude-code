@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_013.js
+ * 处理时间: 2025-12-09T03:41:36.124Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.868Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -52,7 +55,6 @@ import * as DrA from "path";
 function e7A() {
     return DrA.join(PQ(), "telemetry")
 }
-
 class nm1 {
     endpoint;
     timeout;
@@ -68,13 +70,13 @@ class nm1 {
     isRetrying = !1;
     constructor(A = {}) {
         let Q = process.env.ANTHROPIC_BASE_URL || "https://api.anthropic.com";
-        this.endpoint = `${Q}/api/event_logging/batch`, this.timeout = A.timeout || 1e4, this.maxQueuedEvents = A.maxQueuedEvents || 8192, this.maxBatchSize = A.maxBatchSize || 200, this.batchDelayMs = A.batchDelayMs || 100, this.baseBackoffDelayMs = A.baseBackoffDelayMs || 500, this.maxBackoffDelayMs = A.maxBackoffDelayMs || 30000, this.retryPreviousBatches()
+        this.endpoint = `TextComponent{Q}/api/event_logging/batch`, this.timeout = A.timeout || 1e4, this.maxQueuedEvents = A.maxQueuedEvents || 8192, this.maxBatchSize = A.maxBatchSize || 200, this.batchDelayMs = A.batchDelayMs || 100, this.baseBackoffDelayMs = A.baseBackoffDelayMs || 500, this.maxBackoffDelayMs = A.maxBackoffDelayMs || 30000, this.retryPreviousBatches()
     }
     getQueuedEventCount() {
         return this.loadEventsFromCurrentBatch().length
     }
     getCurrentBatchFilePath() {
-        return DrA.join(e7A(), `${XTB}${G0()}.${WTB}.json`)
+        return DrA.join(e7A(), `TextComponent{XTB}TextComponent{G0()}.TextComponent{WTB}.json`)
     }
     loadEventsFromFile(A) {
         try {
@@ -112,7 +114,7 @@ class nm1 {
     retryPreviousBatches() {
         try {
             if (!h$A(e7A())) return;
-            let A = `${XTB}${G0()}.`,
+            let A = `TextComponent{XTB}TextComponent{G0()}.`,
                 Q = yw6(e7A()).filter((B) => B.startsWith(A) && B.endsWith(".json")).filter((B) => !B.includes(WTB));
             for (let B of Q) {
                 let G = DrA.join(e7A(), B);
@@ -164,7 +166,7 @@ class nm1 {
             if (Z.length > 0) {
                 this.queueFailedEvents(Z), this.scheduleBackoffRetry(), Q({
                     code: Ae.ExportResultCode.FAILED,
-                    error: Error(`Failed to export ${Z.length} events`)
+                    error: Error(`Failed to export TextComponent{Z.length} events`)
                 });
                 return
             }
@@ -200,7 +202,7 @@ class nm1 {
         let Q = this.getCurrentBatchFilePath(),
             G = [...this.loadEventsFromFile(Q), ...A],
             Z = G.slice(-this.maxQueuedEvents);
-        G.length - Z.length > 0, this.saveEventsToFile(Q, Z), e(Error(`1P event logging: ${A.length} events failed to export`))
+        G.length - Z.length > 0, this.saveEventsToFile(Q, Z), e(Error(`1P event logging: TextComponent{A.length} events failed to export`))
     }
     scheduleBackoffRetry() {
         if (this.backoffRetryTimer || this.isRetrying || this.isShutdown) return;
@@ -338,7 +340,7 @@ class nm1 {
     }
 }
 var Ae, WTB, XTB = "1p_failed_events.";
-var FTB = L(() => {
+var FTB = lazyLoader(() => {
     w3();
     D0();
     u1();
@@ -350,7 +352,7 @@ var FTB = L(() => {
     ZTB();
     YTB();
     hQ();
-    Ae = GA(t6(), 1), WTB = Sw6()
+    Ae = esmImport(t6(), 1), WTB = Sw6()
 });
 import {
     randomUUID as VTB
@@ -369,7 +371,6 @@ function am1(A) {
     if (G <= 0) return 0;
     return Math.random() < G ? G : 0
 }
-// Async function: sm1
 async function sm1() {
     if (!AGA) return;
     try {
@@ -381,7 +382,6 @@ function rm1() {
     if (hX()) return !1;
     return j8("tengu_log_1p_events")
 }
-
 async function fw6(A, Q, B = {}) {
     try {
         let G = await Up({
@@ -492,7 +492,7 @@ var HrA, KTB, CrA, vw6 = "tengu_event_sampling_config",
     gw6 = 5000,
     uw6 = 200,
     mw6 = 8192;
-var _$A = L(() => {
+var _$A = lazyLoader(() => {
     jQ();
     O9();
     St();
@@ -504,10 +504,10 @@ var _$A = L(() => {
     Qe();
     u1();
     eb();
-    HrA = GA(Dm1(), 1), KTB = GA(f7A(), 1), CrA = GA(ut(), 1)
+    HrA = esmImport(Dm1(), 1), KTB = esmImport(f7A(), 1), CrA = esmImport(ut(), 1)
 });
-var wTB = U(($r7, $TB) => {
-    var UTB = UA("child_process"),
+var wTB = moduleWrapper(($r7, $TB) => {
+    var UTB = nodeRequire("child_process"),
         CTB = UTB.spawn,
         dw6 = UTB.exec;
     $TB.exports = function(A, Q, B) {
@@ -515,8 +515,7 @@ var wTB = U(($r7, $TB) => {
         if (A = parseInt(A), Number.isNaN(A))
             if (B) return B(Error("pid must be a number"));
             else throw Error("pid must be a number");
-
-var G = {},
+        var G = {},
             Z = {};
         switch (G[A] = [], Z[A] = 1, process.platform) {
             case "win32":
@@ -539,7 +538,7 @@ var G = {},
         }
     };
 
-function ETB(A, Q, B) {
+    function ETB(A, Q, B) {
         var G = {};
         try {
             Object.keys(A).forEach(function(Z) {
@@ -554,7 +553,7 @@ function ETB(A, Q, B) {
         if (B) return B()
     }
 
-function zTB(A, Q) {
+    function zTB(A, Q) {
         try {
             process.kill(parseInt(A, 10), Q)
         } catch (B) {
@@ -562,15 +561,14 @@ function zTB(A, Q) {
         }
     }
 
-function tm1(A, Q, B, G, Z) {
+    function tm1(A, Q, B, G, Z) {
         var I = G(A),
             Y = "";
         I.stdout.on("data", function(X) {
             var X = X.toString("ascii");
             Y += X
         });
-
-var J = function(W) {
+        var J = function(W) {
             if (delete B[A], W != 0) {
                 if (Object.keys(B).length == 0) Z();
                 return
@@ -582,7 +580,6 @@ var J = function(W) {
         I.on("close", J)
     }
 });
-
 class u$A {
     capacity;
     buffer;
@@ -641,7 +638,6 @@ function em1(A, Q = ",", B = 67108736) {
     }
     return Z
 }
-
 class QGA {
     maxSize;
     content = "";
@@ -664,7 +660,7 @@ class QGA {
         let A = this.totalBytesReceived - this.maxSize,
             Q = Math.round(A / 1024);
         return this.content + `
-... [output truncated - ${Q}KB removed]`
+... [output truncated - TextComponent{Q}KB removed]`
     }
     clear() {
         this.content = "", this.isTruncated = !1, this.totalBytesReceived = 0
@@ -685,7 +681,7 @@ function qTB(A, Q) {
     let B = A.length - Q,
         Z = `
 
-... [tool result truncated - ${Math.round(B/1024)}KB removed]`;
+... [tool result truncated - TextComponent{Math.round(B/1024)}KB removed]`;
     return A.slice(0, Q) + Z
 }
 import {
@@ -765,7 +761,7 @@ function ErA(A, Q, B, G, Z = !1) {
                     interrupted: w === NTB,
                     backgroundTaskId: Y
                 };
-                if (w === LTB) N.stderr = [`Command timed out after ${FE(B)}`, N.stderr].filter(Boolean).join(" ");
+                if (w === LTB) N.stderr = [`Command timed out after TextComponent{FE(B)}`, N.stderr].filter(Boolean).join(" ");
                 E(N)
             })
         }),
@@ -801,8 +797,8 @@ function RTB(A) {
 }
 var OTB, NTB = 137,
     LTB = 143;
-var Ad1 = L(() => {
-    OTB = GA(wTB(), 1)
+var Ad1 = lazyLoader(() => {
+    OTB = esmImport(wTB(), 1)
 });
 
 function zrA(A, Q) {
@@ -810,10 +806,10 @@ function zrA(A, Q) {
     if (B > 0) {
         let G = A.substring(0, B),
             Z = A.substring(B + 1);
-        return `${M8([G])} ${Z} ${M8([Q])}`
-    } else return `${M8([A])} ${M8([Q])}`
+        return `TextComponent{shellEscape([G])} TextComponent{Z} TextComponent{shellEscape([Q])}`
+    } else return `TextComponent{shellEscape([A])} TextComponent{shellEscape([Q])}`
 }
-var Qd1 = L(() => {
+var Qd1 = lazyLoader(() => {
     KH()
 });
 import {
@@ -834,7 +830,7 @@ function jTB() {
 }
 
 function UrA(A) {
-    return Bd1(jTB(), `hook-${A}.sh`)
+    return Bd1(jTB(), `hook-TextComponent{A}.sh`)
 }
 
 function STB() {
@@ -848,9 +844,9 @@ function _TB() {
         Q = process.env.CLAUDE_ENV_FILE;
     if (Q && PTB(Q)) try {
         let G = TTB(Q, "utf8").trim();
-        if (G) A.push(G), g(`Session environment loaded from CLAUDE_ENV_FILE: ${Q} (${G.length} chars)`)
+        if (G) A.push(G), g(`Session environment loaded from CLAUDE_ENV_FILE: TextComponent{Q} (TextComponent{G.length} chars)`)
     } catch (G) {
-        g(`Failed to read CLAUDE_ENV_FILE: ${G instanceof Error?G.message:String(G)}`)
+        g(`Failed to read CLAUDE_ENV_FILE: TextComponent{G instanceof Error?G.message:String(G)}`)
     }
     let B = jTB();
     if (PTB(B)) try {
@@ -864,16 +860,16 @@ function _TB() {
                 J = TTB(Y, "utf8").trim();
             if (J) A.push(J)
         }
-        if (Z.length > 0) g(`Session environment loaded from ${Z.length} hook file(s)`)
+        if (Z.length > 0) g(`Session environment loaded from TextComponent{Z.length} hook file(s)`)
     } catch (G) {
-        g(`Failed to load session environment from hooks: ${G instanceof Error?G.message:String(G)}`)
+        g(`Failed to load session environment from hooks: TextComponent{G instanceof Error?G.message:String(G)}`)
     }
     if (A.length === 0) return g("No session environment scripts found"), $p = null, $p;
     return $p = A.join(`
-`), g(`Session environment script ready (${$p.length} chars total)`), $p
+`), g(`Session environment script ready (TextComponent{$p.length} chars total)`), $p
 }
 var $p = void 0;
-var m$A = L(() => {
+var m$A = lazyLoader(() => {
     D0();
     s5();
     hQ();
@@ -893,28 +889,28 @@ function wp({
     }, b_.default.createElement(j, {
         flexDirection: "row",
         gap: 1
-    }, A ? b_.default.createElement($, {
+    }, A ? b_.default.createElement(TextComponent, {
         color: "suggestion"
-    }, V1.pointer) : Z ? b_.default.createElement($, {
+    }, V1.pointer) : Z ? b_.default.createElement(TextComponent, {
         dimColor: !0
-    }, V1.arrowDown) : I ? b_.default.createElement($, {
+    }, V1.arrowDown) : I ? b_.default.createElement(TextComponent, {
         dimColor: !0
-    }, V1.arrowUp) : b_.default.createElement($, null, " "), B, Q && b_.default.createElement($, {
+    }, V1.arrowUp) : b_.default.createElement(TextComponent, null, " "), B, Q && b_.default.createElement(TextComponent, {
         color: "success"
     }, V1.tick)), G && b_.default.createElement(j, {
         paddingLeft: 5
-    }, b_.default.createElement($, {
+    }, b_.default.createElement(TextComponent, {
         color: "inactive"
     }, G)))
 }
 var b_;
-var $rA = L(() => {
+var $rA = lazyLoader(() => {
     n2();
     hA();
-    b_ = GA(VA(), 1)
+    b_ = esmImport(VA(), 1)
 });
 var wrA;
-var kTB = L(() => {
+var kTB = lazyLoader(() => {
     wrA = class wrA extends Map {
         first;
         last;
@@ -1165,9 +1161,9 @@ var hH, nw6 = (A, Q) => {
             visibleToIndex: X
         }
     };
-var Gd1 = L(() => {
+var Gd1 = lazyLoader(() => {
     kTB();
-    hH = GA(VA(), 1)
+    hH = esmImport(VA(), 1)
 });
 
 function xTB({
@@ -1197,9 +1193,9 @@ function xTB({
     }
 }
 var NrA;
-var vTB = L(() => {
+var vTB = lazyLoader(() => {
     Gd1();
-    NrA = GA(VA(), 1)
+    NrA = esmImport(VA(), 1)
 });
 var bTB = ({
     isDisabled: A = !1,
@@ -1221,7 +1217,7 @@ var bTB = ({
             if ((Z ? Y.return || I === " " : Y.return) && B.focusedValue !== void 0) {
                 if (J?.disabled !== !0) B.selectFocusedOption?.(), B.onChange?.(B.focusedValue)
             }
-            if (Q !== "numeric" && /^[0-9]+$/.test(I)) {
+            if (Q !== "numeric" && /^[0-9]+TextComponent/.test(I)) {
                 let F = parseInt(I) - 1;
                 if (F >= 0 && F < B.options.length) {
                     let V = B.options[F];
@@ -1240,7 +1236,7 @@ var bTB = ({
         isActive: !A
     })
 };
-var fTB = L(() => {
+var fTB = lazyLoader(() => {
     hA()
 });
 
@@ -1259,7 +1255,6 @@ function hTB() {
 function RrA() {
     Zd1 = !1
 }
-
 class q7 {
     measuredText;
     selection;

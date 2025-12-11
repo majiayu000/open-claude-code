@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_049.js
+ * 处理时间: 2025-12-09T03:41:39.540Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.141Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -49,7 +51,7 @@
             aZ(FC, "body", null), KA = !0, u(CA, MA, H1, X0)
         }
 
-function d2(CA, MA, H1, X0) {
+        function d2(CA, MA, H1, X0) {
             var z0, iQ, O2, n9;
             switch (CA) {
                 case 1:
@@ -406,7 +408,7 @@ function d2(CA, MA, H1, X0) {
             }
         }
 
-function b6(CA, MA, H1, X0) {
+        function b6(CA, MA, H1, X0) {
             switch (CA) {
                 case 1:
                     ZB(MA);
@@ -424,7 +426,7 @@ function b6(CA, MA, H1, X0) {
             }
         }
 
-function r7(CA, MA, H1, X0) {
+        function r7(CA, MA, H1, X0) {
             function z0(O2) {
                 for (var n9 = 0, f6 = O2.length; n9 < f6; n9++)
                     if (O2[n9][0] === "type") return O2[n9][1].toLowerCase();
@@ -516,7 +518,7 @@ function r7(CA, MA, H1, X0) {
             PB = !0, d2(CA, MA, H1, X0), PB = !1
         }
 
-function g3(CA, MA, H1, X0) {
+        function g3(CA, MA, H1, X0) {
             if (CA === bWA) {
                 if (DA) {
                     if (MA = MA.replace(L31, ""), MA.length === 0) return
@@ -530,7 +532,7 @@ function g3(CA, MA, H1, X0) {
             }
         }
 
-function tW(CA, MA, H1, X0) {
+        function tW(CA, MA, H1, X0) {
             function z0() {
                 if (!k.inTableScope("caption")) return !1;
                 return k.generateImpliedEndTags(), k.popTag("caption"), d.clearToMarker(), u = r7, !0
@@ -576,7 +578,7 @@ function tW(CA, MA, H1, X0) {
             d2(CA, MA, H1, X0)
         }
 
-function wY(CA, MA, H1, X0) {
+        function wY(CA, MA, H1, X0) {
             switch (CA) {
                 case 1:
                     var z0 = MA.match(S0A);
@@ -622,7 +624,7 @@ function wY(CA, MA, H1, X0) {
             wY(Z5, "colgroup"), u(CA, MA, H1, X0)
         }
 
-function OK(CA, MA, H1, X0) {
+        function OK(CA, MA, H1, X0) {
             function z0() {
                 if (!k.inTableScope("tbody") && !k.inTableScope("thead") && !k.inTableScope("tfoot")) return;
                 k.clearToContext(O31), OK(Z5, k.top.localName, null), u(CA, MA, H1, X0)
@@ -672,7 +674,7 @@ function OK(CA, MA, H1, X0) {
             r7(CA, MA, H1, X0)
         }
 
-function y5(CA, MA, H1, X0) {
+        function y5(CA, MA, H1, X0) {
             function z0() {
                 if (!k.inTableScope("tr")) return !1;
                 return k.clearToContext(JG0), k.pop(), u = OK, !0
@@ -724,7 +726,7 @@ function y5(CA, MA, H1, X0) {
             r7(CA, MA, H1, X0)
         }
 
-function qY(CA, MA, H1, X0) {
+        function qY(CA, MA, H1, X0) {
             switch (CA) {
                 case 2:
                     switch (MA) {
@@ -769,7 +771,7 @@ function qY(CA, MA, H1, X0) {
             d2(CA, MA, H1, X0)
         }
 
-function ZV(CA, MA, H1, X0) {
+        function ZV(CA, MA, H1, X0) {
             switch (CA) {
                 case 1:
                     if (DA) {
@@ -835,7 +837,7 @@ function ZV(CA, MA, H1, X0) {
             }
         }
 
-function Aj(CA, MA, H1, X0) {
+        function Aj(CA, MA, H1, X0) {
             switch (MA) {
                 case "caption":
                 case "table":
@@ -857,7 +859,7 @@ function Aj(CA, MA, H1, X0) {
             ZV(CA, MA, H1, X0)
         }
 
-function RK(CA, MA, H1, X0) {
+        function RK(CA, MA, H1, X0) {
             function z0(iQ) {
                 u = iQ, l[l.length - 1] = u, u(CA, MA, H1, X0)
             }
@@ -916,7 +918,7 @@ function RK(CA, MA, H1, X0) {
             }
         }
 
-function tD(CA, MA, H1, X0) {
+        function tD(CA, MA, H1, X0) {
             switch (CA) {
                 case 1:
                     if (N31.test(MA)) break;
@@ -947,7 +949,7 @@ function tD(CA, MA, H1, X0) {
             u = d2, u(CA, MA, H1, X0)
         }
 
-function jC(CA, MA, H1, X0) {
+        function jC(CA, MA, H1, X0) {
             switch (CA) {
                 case 1:
                     if (MA = MA.replace(ZG0, ""), MA.length > 0) ZB(MA);
@@ -986,7 +988,7 @@ function jC(CA, MA, H1, X0) {
             }
         }
 
-function ag(CA, MA, H1, X0) {
+        function ag(CA, MA, H1, X0) {
             switch (CA) {
                 case 1:
                     if (MA = MA.replace(ZG0, ""), MA.length > 0) ZB(MA);
@@ -1018,7 +1020,7 @@ function ag(CA, MA, H1, X0) {
             }
         }
 
-function Oa(CA, MA, H1, X0) {
+        function Oa(CA, MA, H1, X0) {
             switch (CA) {
                 case 1:
                     if (N31.test(MA)) break;
@@ -1043,7 +1045,7 @@ function Oa(CA, MA, H1, X0) {
             u = d2, u(CA, MA, H1, X0)
         }
 
-function JN(CA, MA, H1, X0) {
+        function JN(CA, MA, H1, X0) {
             switch (CA) {
                 case 1:
                     if (MA = MA.replace(ZG0, ""), MA.length > 0) d2(CA, MA, H1, X0);
@@ -1070,7 +1072,7 @@ function JN(CA, MA, H1, X0) {
             }
         }
 
-function WN(CA, MA, H1, X0) {
+        function WN(CA, MA, H1, X0) {
             function z0(f6) {
                 for (var EZ = 0, sZ = f6.length; EZ < sZ; EZ++) switch (f6[EZ][0]) {
                     case "color":
@@ -1206,8 +1208,7 @@ function WN(CA, MA, H1, X0) {
                                 if (u4.length === 1) sZ[u4[0]] = "";
                                 else sZ[u4[0]] = u4[1]
                             }
-
-var eW = ["StartTag", n9, sZ];
+                            var eW = ["StartTag", n9, sZ];
                             if (EZ) eW.push(!0);
                             z0.push(eW);
                             break;
@@ -1226,7 +1227,7 @@ var eW = ["StartTag", n9, sZ];
         }, rA
     }
 });
-var NTA = U((XYZ, Vu2) => {
+var NTA = moduleWrapper((XYZ, Vu2) => {
     Vu2.exports = Fu2;
     var Wu2 = U31(),
         Xu2 = w31(),
@@ -1234,11 +1235,10 @@ var NTA = U((XYZ, Vu2) => {
         P31 = uJ(),
         va5 = G31();
 
-function Fu2(A) {
+    function Fu2(A) {
         this.contextObject = A
     }
-
-var ba5 = {
+    var ba5 = {
         xml: {
             "": !0,
             "1.0": !0,
@@ -1301,12 +1301,12 @@ var ba5 = {
         mozHTMLParser: xa5
     }
 });
-var Du2 = U((FYZ, Ku2) => {
+var Du2 = moduleWrapper((FYZ, Ku2) => {
     var fa5 = D31(),
         ha5 = s70();
     Ku2.exports = XG0;
 
-function XG0(A, Q) {
+    function XG0(A, Q) {
         this._window = A, this._href = Q
     }
     XG0.prototype = Object.create(ha5.prototype, {
@@ -1345,7 +1345,7 @@ function XG0(A, Q) {
         }
     })
 });
-var Cu2 = U((VYZ, Hu2) => {
+var Cu2 = moduleWrapper((VYZ, Hu2) => {
     var ga5 = Object.create(null, {
         appCodeName: {
             value: "Mozilla"
@@ -1382,7 +1382,7 @@ var Cu2 = U((VYZ, Hu2) => {
     });
     Hu2.exports = ga5
 });
-var zu2 = U((KYZ, Eu2) => {
+var zu2 = moduleWrapper((KYZ, Eu2) => {
     var ua5 = {
         setTimeout,
         clearTimeout,
@@ -1391,7 +1391,7 @@ var zu2 = U((KYZ, Eu2) => {
     };
     Eu2.exports = ua5
 });
-var VG0 = U((LTA, Uu2) => {
+var VG0 = moduleWrapper((LTA, Uu2) => {
     var FG0 = uJ();
     LTA = Uu2.exports = {
         CSSStyleDeclaration: H31(),
@@ -1417,14 +1417,14 @@ var VG0 = U((LTA, Uu2) => {
     FG0.merge(LTA, E31().elements);
     FG0.merge(LTA, AG0().elements)
 });
-var KG0 = U((DYZ, $u2) => {
+var KG0 = moduleWrapper((DYZ, $u2) => {
     var ma5 = NTA(),
         da5 = B70(),
         ca5 = Du2(),
         MTA = uJ();
     $u2.exports = j31;
 
-function j31(A) {
+    function j31(A) {
         this.document = A || new ma5(null).createHTMLDocument(""), this.document._scripting_enabled = !0, this.document.defaultView = this, this.location = new ca5(this, this.document._address || "about:blank")
     }
     j31.prototype = Object.create(da5.prototype, {
@@ -1492,7 +1492,7 @@ function j31(A) {
     MTA.expose(zu2(), j31);
     MTA.expose(VG0(), j31)
 });
-var Mu2 = U((pa5) => {
+var Mu2 = moduleWrapper((pa5) => {
     var wu2 = NTA(),
         qu2 = T31(),
         HYZ = KG0(),

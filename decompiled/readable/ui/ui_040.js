@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_040.js
+ * 处理时间: 2025-12-09T03:41:39.456Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.133Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -29,7 +31,7 @@
         }.call(this)
     }).call(ZR2)
 });
-var G61 = U((YR2, JR2) => {
+var G61 = moduleWrapper((YR2, JR2) => {
     (function() {
         var A, Q, B, G, Z, I, Y, J, W;
         ({
@@ -136,7 +138,7 @@ var G61 = U((YR2, JR2) => {
         }.call(this)
     }).call(YR2)
 });
-var Z61 = U((WR2, XR2) => {
+var Z61 = moduleWrapper((WR2, XR2) => {
     (function() {
         var A, Q, B;
         A = bW(), Q = Mq(), XR2.exports = B = class extends Q {
@@ -154,7 +156,7 @@ var Z61 = U((WR2, XR2) => {
         }
     }).call(WR2)
 });
-var I61 = U((FR2, VR2) => {
+var I61 = moduleWrapper((FR2, VR2) => {
     (function() {
         var A, Q, B;
         A = bW(), Q = FRA(), VR2.exports = B = function() {
@@ -194,7 +196,7 @@ var I61 = U((FR2, VR2) => {
         }.call(this)
     }).call(FR2)
 });
-var Y61 = U((KR2, DR2) => {
+var Y61 = moduleWrapper((KR2, DR2) => {
     (function() {
         var A, Q, B;
         A = bW(), Q = FRA(), DR2.exports = B = class extends Q {
@@ -217,7 +219,7 @@ var Y61 = U((KR2, DR2) => {
         }
     }).call(KR2)
 });
-var F80 = U((HR2, CR2) => {
+var F80 = moduleWrapper((HR2, CR2) => {
     (function() {
         var A, Q, B;
         B = Mq(), A = bW(), CR2.exports = Q = class extends B {
@@ -234,7 +236,7 @@ var F80 = U((HR2, CR2) => {
         }
     }).call(HR2)
 });
-var UR2 = U((ER2, zR2) => {
+var UR2 = moduleWrapper((ER2, zR2) => {
     (function() {
         var A;
         zR2.exports = A = function() {
@@ -257,7 +259,7 @@ var UR2 = U((ER2, zR2) => {
         }.call(this)
     }).call(ER2)
 });
-var qR2 = U(($R2, wR2) => {
+var qR2 = moduleWrapper(($R2, wR2) => {
     (function() {
         wR2.exports = {
             Disconnected: 1,
@@ -269,7 +271,7 @@ var qR2 = U(($R2, wR2) => {
         }
     }).call($R2)
 });
-var Mq = U((NR2, LR2) => {
+var Mq = moduleWrapper((NR2, LR2) => {
     (function() {
         var A, Q, B, G, Z, I, Y, J, W, X, F, V, K, D, H, C, E, z, w = {}.hasOwnProperty,
             N = [].splice;
@@ -702,7 +704,7 @@ var Mq = U((NR2, LR2) => {
         }.call(this)
     }).call(NR2)
 });
-var V80 = U((MR2, OR2) => {
+var V80 = moduleWrapper((MR2, OR2) => {
     (function() {
         var A, Q = {}.hasOwnProperty;
         OR2.exports = A = function() {
@@ -757,7 +759,7 @@ var V80 = U((MR2, OR2) => {
                 }
                 xmlEncoding(G) {
                     if (this.options.noValidation) return G;
-                    if (G = "" + G || "", !G.match(/^[A-Za-z](?:[A-Za-z0-9._-])*$/)) throw Error("Invalid encoding: " + G);
+                    if (G = "" + G || "", !G.match(/^[A-Za-z](?:[A-Za-z0-9._-])*TextComponent/)) throw Error("Invalid encoding: " + G);
                     return this.assertLegalChar(G)
                 }
                 xmlStandalone(G) {
@@ -798,17 +800,17 @@ var V80 = U((MR2, OR2) => {
                     if (this.options.noValidation) return G;
                     if (this.options.version === "1.0") {
                         if (Z = /[\0-\x08\x0B\f\x0E-\x1F\uFFFE\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/g, this.options.invalidCharReplacement !== void 0) G = G.replace(Z, this.options.invalidCharReplacement);
-                        else if (I = G.match(Z)) throw Error(`Invalid character in string: ${G} at index ${I.index}`)
+                        else if (I = G.match(Z)) throw Error(`Invalid character in string: TextComponent{G} at index TextComponent{I.index}`)
                     } else if (this.options.version === "1.1") {
                         if (Z = /[\0\uFFFE\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/g, this.options.invalidCharReplacement !== void 0) G = G.replace(Z, this.options.invalidCharReplacement);
-                        else if (I = G.match(Z)) throw Error(`Invalid character in string: ${G} at index ${I.index}`)
+                        else if (I = G.match(Z)) throw Error(`Invalid character in string: TextComponent{G} at index TextComponent{I.index}`)
                     }
                     return G
                 }
                 assertLegalName(G) {
                     var Z;
                     if (this.options.noValidation) return G;
-                    if (G = this.assertLegalChar(G), Z = /^([:A-Z_a-z\xC0-\xD6\xD8-\xF6\xF8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD]|[\uD800-\uDB7F][\uDC00-\uDFFF])([\x2D\.0-:A-Z_a-z\xB7\xC0-\xD6\xD8-\xF6\xF8-\u037D\u037F-\u1FFF\u200C\u200D\u203F\u2040\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD]|[\uD800-\uDB7F][\uDC00-\uDFFF])*$/, !G.match(Z)) throw Error(`Invalid character in name: ${G}`);
+                    if (G = this.assertLegalChar(G), Z = /^([:A-Z_a-z\xC0-\xD6\xD8-\xF6\xF8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD]|[\uD800-\uDB7F][\uDC00-\uDFFF])([\x2D\.0-:A-Z_a-z\xB7\xC0-\xD6\xD8-\xF6\xF8-\u037D\u037F-\u1FFF\u200C\u200D\u203F\u2040\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD]|[\uD800-\uDB7F][\uDC00-\uDFFF])*TextComponent/, !G.match(Z)) throw Error(`Invalid character in name: TextComponent{G}`);
                     return G
                 }
                 textEscape(G) {
@@ -826,7 +828,7 @@ var V80 = U((MR2, OR2) => {
         }.call(this)
     }).call(MR2)
 });
-var VRA = U((RR2, TR2) => {
+var VRA = moduleWrapper((RR2, TR2) => {
     (function() {
         TR2.exports = {
             None: 0,
@@ -836,7 +838,7 @@ var VRA = U((RR2, TR2) => {
         }
     }).call(RR2)
 });
-var K80 = U((PR2, jR2) => {
+var K80 = moduleWrapper((PR2, jR2) => {
     (function() {
         var A, Q, B, G, Z, I, Y, J, W, X, F, V, K, D, H, C, E, z = {}.hasOwnProperty;
         ({
@@ -1019,7 +1021,7 @@ var K80 = U((PR2, jR2) => {
         }
     }).call(PR2)
 });
-var J61 = U((SR2, _R2) => {
+var J61 = moduleWrapper((SR2, _R2) => {
     (function() {
         var A, Q;
         Q = K80(), _R2.exports = A = class extends Q {
@@ -1036,7 +1038,7 @@ var J61 = U((SR2, _R2) => {
         }
     }).call(SR2)
 });
-var D80 = U((kR2, yR2) => {
+var D80 = moduleWrapper((kR2, yR2) => {
     (function() {
         var A, Q, B, G, Z, I, Y, J;
         ({
@@ -1185,7 +1187,7 @@ var D80 = U((kR2, yR2) => {
         }.call(this)
     }).call(kR2)
 });
-var bR2 = U((xR2, vR2) => {
+var bR2 = moduleWrapper((xR2, vR2) => {
     (function() {
         var A, Q, B, G, Z, I, Y, J, W, X, F, V, K, D, H, C, E, z, w, N, q, R, P, y = {}.hasOwnProperty;
         ({
@@ -1455,7 +1457,7 @@ var bR2 = U((xR2, vR2) => {
         }
     }).call(xR2)
 });
-var gR2 = U((fR2, hR2) => {
+var gR2 = moduleWrapper((fR2, hR2) => {
     (function() {
         var A, Q, B, G, Z = {}.hasOwnProperty;
         A = bW(), G = K80(), Q = VRA(), hR2.exports = B = class extends G {

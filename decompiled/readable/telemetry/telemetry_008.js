@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: telemetry_008.js
+ * 处理时间: 2025-12-09T03:41:38.371Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.052Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -49,13 +51,13 @@
         SQ0 = A, y3.create = CF2(), SQ0._configure()
     }
 });
-var $F2 = U((khG, UF2) => {
+var $F2 = moduleWrapper((khG, UF2) => {
     UF2.exports = ck;
     var zF2 = v91();
     (ck.prototype = Object.create(zF2.prototype)).constructor = ck;
     var Ti = dk();
 
-function ck() {
+    function ck() {
         zF2.call(this)
     }
     ck._configure = function() {
@@ -74,7 +76,7 @@ function ck() {
         return this
     };
 
-function IE5(A, Q, B) {
+    function IE5(A, Q, B) {
         if (A.length < 40) Ti.utf8.write(A, Q, B);
         else if (Q.utf8Write) Q.utf8Write(A, B);
         else Q.write(A, B)
@@ -86,17 +88,17 @@ function IE5(A, Q, B) {
     };
     ck._configure()
 });
-var f91 = U((yhG, MF2) => {
+var f91 = moduleWrapper((yhG, MF2) => {
     MF2.exports = _W;
     var IP = dk(),
         fQ0, NF2 = IP.LongBits,
         YE5 = IP.utf8;
 
-function YP(A, Q) {
+    function YP(A, Q) {
         return RangeError("index out of range: " + A.pos + " + " + (Q || 1) + " > " + A.len)
     }
 
-function _W(A) {
+    function _W(A) {
         this.buf = A, this.pos = 0, this.len = A.length
     }
     var wF2 = typeof Uint8Array < "u" ? function(Q) {
@@ -135,7 +137,7 @@ function _W(A) {
         return Q >>> 1 ^ -(Q & 1) | 0
     };
 
-function bQ0() {
+    function bQ0() {
         var A = new NF2(0, 0),
             Q = 0;
         if (this.len - this.pos > 4) {
@@ -164,7 +166,7 @@ function bQ0() {
         return this.uint32() !== 0
     };
 
-function b91(A, Q) {
+    function b91(A, Q) {
         return (A[Q - 4] | A[Q - 3] << 8 | A[Q - 2] << 16 | A[Q - 1] << 24) >>> 0
     }
     _W.prototype.fixed32 = function() {
@@ -176,7 +178,7 @@ function b91(A, Q) {
         return b91(this.buf, this.pos += 4) | 0
     };
 
-function qF2() {
+    function qF2() {
         if (this.pos + 8 > this.len) throw YP(this, 8);
         return new NF2(b91(this.buf, this.pos += 4), b91(this.buf, this.pos += 4))
     }
@@ -259,13 +261,13 @@ function qF2() {
         })
     }
 });
-var PF2 = U((xhG, TF2) => {
+var PF2 = moduleWrapper((xhG, TF2) => {
     TF2.exports = f1A;
     var RF2 = f91();
     (f1A.prototype = Object.create(RF2.prototype)).constructor = f1A;
     var OF2 = dk();
 
-function f1A(A) {
+    function f1A(A) {
         RF2.call(this, A)
     }
     f1A._configure = function() {
@@ -277,12 +279,12 @@ function f1A(A) {
     };
     f1A._configure()
 });
-var SF2 = U((vhG, jF2) => {
+var SF2 = moduleWrapper((vhG, jF2) => {
     jF2.exports = iMA;
     var hQ0 = dk();
     (iMA.prototype = Object.create(hQ0.EventEmitter.prototype)).constructor = iMA;
 
-function iMA(A, Q, B) {
+    function iMA(A, Q, B) {
         if (typeof A !== "function") throw TypeError("rpcImpl must be a function");
         hQ0.EventEmitter.call(this), this.rpcImpl = A, this.requestDelimited = Boolean(Q), this.responseDelimited = Boolean(B)
     }
@@ -325,14 +327,14 @@ function iMA(A, Q, B) {
         return this
     }
 });
-var gQ0 = U((_F2) => {
+var gQ0 = moduleWrapper((_F2) => {
     var JE5 = _F2;
     JE5.Service = SF2()
 });
-var uQ0 = U((fhG, kF2) => {
+var uQ0 = moduleWrapper((fhG, kF2) => {
     kF2.exports = {}
 });
-var mQ0 = U((xF2) => {
+var mQ0 = moduleWrapper((xF2) => {
     var aU = xF2;
     aU.build = "minimal";
     aU.Writer = v91();
@@ -344,12 +346,12 @@ var mQ0 = U((xF2) => {
     aU.roots = uQ0();
     aU.configure = yF2;
 
-function yF2() {
+    function yF2() {
         aU.util._configure(), aU.Writer._configure(aU.BufferWriter), aU.Reader._configure(aU.BufferReader)
     }
     yF2()
 });
-var h91 = U((vF2, bF2) => {
+var h91 = moduleWrapper((vF2, bF2) => {
     Object.defineProperty(vF2, "__esModule", {
         value: !0
     });
@@ -439,8 +441,7 @@ var h91 = U((vF2, bF2) => {
                             return this.decode(J, J.uint32())
                         }, Z.verify = function(J) {
                             if (typeof J !== "object" || J === null) return "object expected";
-
-var W = {};
+                            var W = {};
                             if (J.stringValue != null && J.hasOwnProperty("stringValue")) {
                                 if (W.value = 1, !_A.isString(J.stringValue)) return "stringValue: string expected"
                             }
@@ -504,8 +505,7 @@ var W = {};
                             return W
                         }, Z.toObject = function(J, W) {
                             if (!W) W = {};
-
-var X = {};
+                            var X = {};
                             if (J.stringValue != null && J.hasOwnProperty("stringValue")) {
                                 if (X.stringValue = J.stringValue, W.oneofs) X.value = "stringValue"
                             }
@@ -598,8 +598,7 @@ var X = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.values = [];
                             if (Y.values && Y.values.length) {
                                 W.values = [];
@@ -674,8 +673,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.values = [];
                             if (Y.values && Y.values.length) {
                                 W.values = [];
@@ -750,8 +748,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.defaults) W.key = "", W.value = null;
                             if (Y.key != null && Y.hasOwnProperty("key")) W.key = Y.key;
                             if (Y.value != null && Y.hasOwnProperty("value")) W.value = RA.opentelemetry.proto.common.v1.AnyValue.toObject(Y.value, J);
@@ -851,8 +848,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.attributes = [];
                             if (J.defaults) W.name = "", W.version = "", W.droppedAttributesCount = 0;
                             if (Y.name != null && Y.hasOwnProperty("name")) W.name = Y.name;
@@ -961,8 +957,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.idKeys = [], W.descriptionKeys = [];
                             if (J.defaults) W.schemaUrl = "", W.type = "";
                             if (Y.schemaUrl != null && Y.hasOwnProperty("schemaUrl")) W.schemaUrl = Y.schemaUrl;
@@ -1081,8 +1076,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.attributes = [], W.entityRefs = [];
                             if (J.defaults) W.droppedAttributesCount = 0;
                             if (Y.attributes && Y.attributes.length) {
@@ -1169,8 +1163,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.resourceSpans = [];
                             if (Y.resourceSpans && Y.resourceSpans.length) {
                                 W.resourceSpans = [];
@@ -1267,8 +1260,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.scopeSpans = [];
                             if (J.defaults) W.resource = null, W.schemaUrl = "";
                             if (Y.resource != null && Y.hasOwnProperty("resource")) W.resource = RA.opentelemetry.proto.resource.v1.Resource.toObject(Y.resource, J);
@@ -1368,8 +1360,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.spans = [];
                             if (J.defaults) W.scope = null, W.schemaUrl = "";
                             if (Y.scope != null && Y.hasOwnProperty("scope")) W.scope = RA.opentelemetry.proto.common.v1.InstrumentationScope.toObject(Y.scope, J);

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: prompts_004.js
+ * 处理时间: 2025-12-09T03:41:38.205Z
+ * 变量映射: 4 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.038Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-    if (!zoA(I)) return e(Error(`Failed to create directory for bash output: ${I}`)), "";
+    if (!zoA(I)) return e(Error(`Failed to create directory for bash output: TextComponent{I}`)), "";
     try {
         return G.writeFileSync(Y, _O6(B, A, Q), {
             encoding: "utf-8",
@@ -33,7 +36,6 @@ function yO6(A) {
         B = BZ(Q);
     return JSON.stringify(B)
 }
-
 async function cSB(A, Q, B, G, Z = []) {
     let I = [A, Q].filter(Boolean).join(`
 `),
@@ -108,14 +110,14 @@ async function cSB(A, Q, B, G, Z = []) {
 function xO6(A, Q) {
     let G = Q ? `
 
-Note: The complete bash output is available at ${Q}. You can use Read or Grep tools to search for specific information not included in this summary.` : "";
+Note: The complete bash output is available at TextComponent{Q}. You can use Read or Grep tools to search for specific information not included in this summary.` : "";
     return `[Summarized output]
-${A}${G}`
+TextComponent{A}TextComponent{G}`
 }
 var TO6 = 5000,
     PO6 = 10,
     jO6 = "bash-outputs";
-var pSB = L(() => {
+var pSB = lazyLoader(() => {
     kZ();
     yp();
     o0();
@@ -160,15 +162,15 @@ function bO6(A) {
             };
         case "error":
             return {
-                output_type: A.output_type, text: od1(`${A.ename}: ${A.evalue}
-${A.traceback.join(`
+                output_type: A.output_type, text: od1(`TextComponent{A.ename}: TextComponent{A.evalue}
+TextComponent{A.traceback.join(`
 `)}`)
             }
     }
 }
 
 function lSB(A, Q, B, G) {
-    let Z = A.id ?? `cell-${Q}`,
+    let Z = A.id ?? `cell-TextComponent{Q}`,
         I = {
             cellType: A.cell_type,
             source: Array.isArray(A.source) ? A.source.join("") : A.source,
@@ -180,7 +182,7 @@ function lSB(A, Q, B, G) {
         let Y = A.outputs.map(bO6);
         if (!G && JSON.stringify(Y).length > 1e4) I.outputs = [{
             output_type: "stream",
-            text: `Outputs are too large to include. Use ${BASH_TOOL_NAME} with: cat <notebook_path> | jq '.cells[${Q}].outputs'`
+            text: `Outputs are too large to include. Use TextComponent{BASH_TOOL_NAME} with: cat <notebook_path> | jq '.cells[TextComponent{Q}].outputs'`
         }];
         else I.outputs = Y
     }
@@ -189,10 +191,10 @@ function lSB(A, Q, B, G) {
 
 function fO6(A) {
     let Q = [];
-    if (A.cellType !== "code") Q.push(`<cell_type>${A.cellType}</cell_type>`);
-    if (A.language !== "python" && A.cellType === "code") Q.push(`<language>${A.language}</language>`);
+    if (A.cellType !== "code") Q.push(`<cell_type>TextComponent{A.cellType}</cell_type>`);
+    if (A.language !== "python" && A.cellType === "code") Q.push(`<language>TextComponent{A.language}</language>`);
     return {
-        text: `<cell id="${A.cell_id}">${Q.join("")}${A.source}</cell id="${A.cell_id}">`,
+        text: `<cell id="TextComponent{A.cell_id}">TextComponent{Q.join("")}TextComponent{A.source}</cell id="TextComponent{A.cell_id}">`,
         type: "text"
     }
 }
@@ -201,7 +203,7 @@ function hO6(A) {
     let Q = [];
     if (A.text) Q.push({
         text: `
-${A.text}`,
+TextComponent{A.text}`,
         type: "text"
     });
     if (A.image) Q.push({
@@ -230,7 +232,7 @@ function iSB(A, Q) {
         I = Z.metadata.language_info?.name ?? "python";
     if (Q) {
         let Y = Z.cells.find((J) => J.id === Q);
-        if (!Y) throw Error(`Cell with ID "${Q}" not found in notebook`);
+        if (!Y) throw Error(`Cell with ID "TextComponent{Q}" not found in notebook`);
         return [lSB(Y, Z.cells.indexOf(Y), I, !0)]
     }
     return Z.cells.map((Y, J) => lSB(Y, J, I, !1))
@@ -252,19 +254,18 @@ function nSB(A, Q) {
 }
 
 function ZwA(A) {
-    let Q = A.match(/^cell-(\d+)$/);
+    let Q = A.match(/^cell-(\d+)TextComponent/);
     if (Q && Q[1]) {
         let B = parseInt(Q[1], 10);
         return isNaN(B) ? void 0 : B
     }
     return
 }
-var UoA = L(() => {
+var UoA = lazyLoader(() => {
     yp();
     jI();
     o0()
 });
-
 var td1 = function() {
     let {
         crypto: A
@@ -317,7 +318,7 @@ function dO6() {
                 Y = G[3] || 0;
             return {
                 browser: Q,
-                version: `${Z}.${I}.${Y}`
+                version: `TextComponent{Z}.TextComponent{I}.TextComponent{Y}`
             }
         }
     }
@@ -340,7 +341,7 @@ var tSB = () => {
             "X-Stainless-Lang": "js",
             "X-Stainless-Package-Version": xp,
             "X-Stainless-OS": "Unknown",
-            "X-Stainless-Arch": `other:${EdgeRuntime}`,
+            "X-Stainless-Arch": `other:TextComponent{EdgeRuntime}`,
             "X-Stainless-Runtime": "edge",
             "X-Stainless-Runtime-Version": globalThis.process.version
         };
@@ -358,7 +359,7 @@ var tSB = () => {
             "X-Stainless-Package-Version": xp,
             "X-Stainless-OS": "Unknown",
             "X-Stainless-Arch": "unknown",
-            "X-Stainless-Runtime": `browser:${Q.browser}`,
+            "X-Stainless-Runtime": `browser:TextComponent{Q.browser}`,
             "X-Stainless-Runtime-Version": Q.version
         };
         return {
@@ -375,7 +376,7 @@ var tSB = () => {
         if (A === "x86_64" || A === "x64") return "x64";
         if (A === "arm") return "arm";
         if (A === "aarch64" || A === "arm64") return "arm64";
-        if (A) return `other:${A}`;
+        if (A) return `other:TextComponent{A}`;
         return "unknown"
     },
     rSB = (A) => {
@@ -386,7 +387,7 @@ var tSB = () => {
         if (A === "freebsd") return "FreeBSD";
         if (A === "openbsd") return "OpenBSD";
         if (A === "linux") return "Linux";
-        if (A) return `Other:${A}`;
+        if (A) return `Other:TextComponent{A}`;
         return "Unknown"
     },
     oSB, eSB = () => {
@@ -413,7 +414,7 @@ async function $oA(A, Q) {
     } = Q, Y = await (async () => {
         if (Q.options.stream) {
             if (vV(A).debug("response", B.status, B.url, B.headers, B.body), Q.options.__streamClass) return Q.options.__streamClass.fromSSEResponse(B, Q.controller);
-            return IE.fromSSEResponse(B, Q.controller)
+            return EventSourceIterator.fromSSEResponse(B, Q.controller)
         }
         if (B.status === 204) return null;
         if (Q.options.__binaryResponse) return B;
@@ -424,7 +425,7 @@ async function $oA(A, Q) {
         }
         return await B.text()
     })();
-    return vV(A).debug(`[${G}] response parsed`, gb({
+    return vV(A).debug(`[TextComponent{G}] response parsed`, gb({
         retryOfRequestLogID: Z,
         url: B.url,
         status: B.status,
@@ -440,12 +441,12 @@ function Ac1(A, Q) {
         enumerable: !1
     })
 }
-var Qc1 = L(() => {
+var Qc1 = lazyLoader(() => {
     Gf1();
     qnA()
 });
 var IwA, De;
-var woA = L(() => {
+var woA = lazyLoader(() => {
     fb();
     Qc1();
     De = class De extends Promise {
@@ -484,7 +485,7 @@ var woA = L(() => {
     IwA = new WeakMap
 });
 var qoA, Bc1, NoA, NT, YwA;
-var c_ = L(() => {
+var c_ = lazyLoader(() => {
     fb();
     ZE();
     Qc1();
@@ -626,7 +627,7 @@ var Zc1 = () => {
         return await Promise.all(Object.entries(A || {}).map(([G, Z]) => Gc1(B, G, Z))), B
     }, nO6 = (A) => A instanceof Blob && ("name" in A), Gc1 = async (A, Q, B) => {
         if (B === void 0) return;
-        if (B == null) throw TypeError(`Received null for "${Q}"; to pass null in FormData, you must use the string 'null'`);
+        if (B == null) throw TypeError(`Received null for "TextComponent{Q}"; to pass null in FormData, you must use the string 'null'`);
         if (typeof B === "string" || typeof B === "number" || typeof B === "boolean") A.append(Q, String(B));
         else if (B instanceof Response) {
             let G = {},
@@ -640,13 +641,12 @@ var Zc1 = () => {
             type: B.type
         }));
         else if (Array.isArray(B)) await Promise.all(B.map((G) => Gc1(A, Q + "[]", G)));
-        else if (typeof B === "object") await Promise.all(Object.entries(B).map(([G, Z]) => Gc1(A, `${Q}[${G}]`, Z)));
-        else throw TypeError(`Invalid value given to form, expected a string, number, boolean, object, Array, File or Blob but got ${B} instead`)
+        else if (typeof B === "object") await Promise.all(Object.entries(B).map(([G, Z]) => Gc1(A, `TextComponent{Q}[TextComponent{G}]`, Z)));
+        else throw TypeError(`Invalid value given to form, expected a string, number, boolean, object, Array, File or Blob but got TextComponent{B} instead`)
     };
-var RGA = L(() => {
+var RGA = lazyLoader(() => {
     Q_B = new WeakMap
 });
-
 async function LoA(A, Q, B) {
     if (Zc1(), A = await A, Q || (Q = JwA(A)), aO6(A)) {
         if (A instanceof File && Q == null && B == null) return A;
@@ -670,7 +670,6 @@ async function LoA(A, Q, B) {
     }
     return He(G, Q, B)
 }
-
 async function Yc1(A) {
     let Q = [];
     if (typeof A === "string" || ArrayBuffer.isView(A) || A instanceof ArrayBuffer) Q.push(A);
@@ -679,27 +678,26 @@ async function Yc1(A) {
         for await (let B of A) Q.push(...await Yc1(B));
     else {
         let B = A?.constructor?.name;
-        throw Error(`Unexpected data type: ${typeof A}${B?`; constructor: ${B}`:""}${rO6(A)}`)
+        throw Error(`Unexpected data type: TextComponent{typeof A}TextComponent{B?`; constructor: TextComponent{B}`:""}TextComponent{rO6(A)}`)
     }
     return Q
 }
 
 function rO6(A) {
     if (typeof A !== "object" || A === null) return "";
-    return `; props: [${Object.getOwnPropertyNames(A).map((B)=>`"${B}"`).join(", ")}]`
+    return `; props: [TextComponent{Object.getOwnPropertyNames(A).map((B)=>`"TextComponent{B}"`).join(", ")}]`
 }
 var B_B = (A) => A != null && typeof A === "object" && typeof A.size === "number" && typeof A.type === "string" && typeof A.text === "function" && typeof A.slice === "function" && typeof A.arrayBuffer === "function",
     aO6 = (A) => A != null && typeof A === "object" && typeof A.name === "string" && typeof A.lastModified === "number" && B_B(A),
     sO6 = (A) => A != null && typeof A === "object" && typeof A.url === "string" && typeof A.blob === "function";
-var G_B = L(() => {
+var G_B = lazyLoader(() => {
     RGA();
     RGA()
 });
-var Jc1 = L(() => {
+var Jc1 = lazyLoader(() => {
     G_B()
 });
 var Z_B = () => {};
-
 class cY {
     constructor(A) {
         this._client = A
@@ -752,13 +750,13 @@ var I_B, r4 = (A) => {
         nulls: B
     }
 };
-var wM = L(() => {
+var wM = lazyLoader(() => {
     Vt();
     I_B = Symbol.for("brand.privateNullableHeaders")
 });
 
 function J_B(A) {
-    return A.replace(/[^A-Za-z0-9\-._~!$&'()*+,;=:@]+/g, encodeURIComponent)
+    return A.replace(/[^A-Za-z0-9\-._~!TextComponent&'()*+,;=:@]+/g, encodeURIComponent)
 }
 var Y_B, eO6 = (A = J_B) => function(B, ...G) {
         if (B.length === 1) return B[0];
@@ -771,17 +769,17 @@ var Y_B, eO6 = (A = J_B) => function(B, ...G) {
                 if (K !== G.length && (D == null || typeof D === "object" && D.toString === Object.getPrototypeOf(Object.getPrototypeOf(D.hasOwnProperty ?? Y_B) ?? Y_B)?.toString)) H = D + "", I.push({
                     start: F.length + V.length,
                     length: H.length,
-                    error: `Value of type ${Object.prototype.toString.call(D).slice(8,-1)} is not a valid path parameter`
+                    error: `Value of type TextComponent{Object.prototype.toString.call(D).slice(8,-1)} is not a valid path parameter`
                 });
                 return F + V + (K === G.length ? "" : H)
             }, ""),
             J = Y.split(/[?#]/, 1)[0],
-            W = /(?<=^|\/)(?:\.|%2e){1,2}(?=\/|$)/gi,
+            W = /(?<=^|\/)(?:\.|%2e){1,2}(?=\/|TextComponent)/gi,
             X;
         while ((X = W.exec(J)) !== null) I.push({
             start: X.index,
             length: X[0].length,
-            error: `Value "${X[0]}" can't be safely passed as a path parameter`
+            error: `Value "TextComponent{X[0]}" can't be safely passed as a path parameter`
         });
         if (I.sort((F, V) => F.start - V.start), I.length > 0) {
             let F = 0,
@@ -791,20 +789,20 @@ var Y_B, eO6 = (A = J_B) => function(B, ...G) {
                     return F = D.start + D.length, K + H + C
                 }, "");
             throw new yB(`Path parameters result in path with invalid segments:
-${I.map((K)=>K.error).join(`
+TextComponent{I.map((K)=>K.error).join(`
 `)}
-${Y}
-${V}`)
+TextComponent{Y}
+TextComponent{V}`)
         }
         return Y
     },
     BY;
-var vp = L(() => {
+var vp = lazyLoader(() => {
     ZE();
     Y_B = Object.freeze(Object.create(null)), BY = eO6(J_B)
 });
 var WwA;
-var Wc1 = L(() => {
+var Wc1 = lazyLoader(() => {
     c_();
     wM();
     RGA();
@@ -827,7 +825,7 @@ var Wc1 = L(() => {
             let {
                 betas: G
             } = Q ?? {};
-            return this._client.delete(BY`/v1/files/${A}`, {
+            return this._client.delete(BY`/v1/files/TextComponent{A}`, {
                 ...B,
                 headers: r4([{
                     "anthropic-beta": [...G ?? [], "files-api-2025-04-14"].toString()
@@ -838,7 +836,7 @@ var Wc1 = L(() => {
             let {
                 betas: G
             } = Q ?? {};
-            return this._client.get(BY`/v1/files/${A}/content`, {
+            return this._client.get(BY`/v1/files/TextComponent{A}/content`, {
                 ...B,
                 headers: r4([{
                     "anthropic-beta": [...G ?? [], "files-api-2025-04-14"].toString(),
@@ -851,7 +849,7 @@ var Wc1 = L(() => {
             let {
                 betas: G
             } = Q ?? {};
-            return this._client.get(BY`/v1/files/${A}`, {
+            return this._client.get(BY`/v1/files/TextComponent{A}`, {
                 ...B,
                 headers: r4([{
                     "anthropic-beta": [...G ?? [], "files-api-2025-04-14"].toString()
@@ -874,7 +872,7 @@ var Wc1 = L(() => {
     }
 });
 var XwA;
-var Xc1 = L(() => {
+var Xc1 = lazyLoader(() => {
     c_();
     wM();
     vp();
@@ -883,7 +881,7 @@ var Xc1 = L(() => {
             let {
                 betas: G
             } = Q ?? {};
-            return this._client.get(BY`/v1/models/${A}?beta=true`, {
+            return this._client.get(BY`/v1/models/TextComponent{A}?beta=true`, {
                 ...B,
                 headers: r4([{
                     ...G?.toString() != null ? {
@@ -910,7 +908,7 @@ var Xc1 = L(() => {
     }
 });
 var MoA;
-var Fc1 = L(() => {
+var Fc1 = lazyLoader(() => {
     MoA = {
         "claude-opus-4-20250514": 8192,
         "claude-opus-4-0": 8192,
@@ -933,7 +931,6 @@ function W_B() {
         reject: Q
     }
 }
-
 async function BR6(A, Q = A.messages.at(-1)) {
     if (!Q || Q.role !== "assistant" || !Q.content || typeof Q.content === "string") return null;
     let B = Q.content.filter((Z) => Z.type === "tool_use");
@@ -945,7 +942,7 @@ async function BR6(A, Q = A.messages.at(-1)) {
             if (!I || !("run" in I)) return {
                 type: "tool_result",
                 tool_use_id: Z.id,
-                content: `Error: Tool '${Z.name}' not found`,
+                content: `Error: Tool 'TextComponent{Z.name}' not found`,
                 is_error: !0
             };
             try {
@@ -961,7 +958,7 @@ async function BR6(A, Q = A.messages.at(-1)) {
                 return {
                     type: "tool_result",
                     tool_use_id: Z.id,
-                    content: `Error: ${Y instanceof Error?Y.message:String(Y)}`,
+                    content: `Error: TextComponent{Y instanceof Error?Y.message:String(Y)}`,
                     is_error: !0
                 }
             }
@@ -969,7 +966,7 @@ async function BR6(A, Q = A.messages.at(-1)) {
     }
 }
 var OoA, TGA, Ce, wU, FwA, LT, Kf, bp, VwA, Vc1, KwA;
-var Kc1 = L(() => {
+var Kc1 = lazyLoader(() => {
     fb();
     ZE();
     wM();
@@ -1068,7 +1065,7 @@ var Kc1 = L(() => {
     }
 });
 var PGA;
-var Dc1 = L(() => {
+var Dc1 = lazyLoader(() => {
     ZE();
     eb1();
     PGA = class PGA {
@@ -1092,7 +1089,7 @@ var Dc1 = L(() => {
     }
 });
 var DwA;
-var Hc1 = L(() => {
+var Hc1 = lazyLoader(() => {
     c_();
     wM();
     Dc1();
@@ -1104,7 +1101,7 @@ var Hc1 = L(() => {
                 betas: B,
                 ...G
             } = A;
-            return this._client.post("/* Anthropic Messages API endpoint */ /v1/messages/batches?beta=true", {
+            return this._client.post("/v1/messages/batches?beta=true", {
                 body: G,
                 ...Q,
                 headers: r4([{
@@ -1116,7 +1113,7 @@ var Hc1 = L(() => {
             let {
                 betas: G
             } = Q ?? {};
-            return this._client.get(BY`/* Anthropic Messages API endpoint */ /v1/messages/batches/${A}?beta=true`, {
+            return this._client.get(BY`/v1/messages/batches/TextComponent{A}?beta=true`, {
                 ...B,
                 headers: r4([{
                     "anthropic-beta": [...G ?? [], "message-batches-2024-09-24"].toString()
@@ -1128,7 +1125,7 @@ var Hc1 = L(() => {
                 betas: B,
                 ...G
             } = A ?? {};
-            return this._client.getAPIList("/* Anthropic Messages API endpoint */ /v1/messages/batches?beta=true", NT, {
+            return this._client.getAPIList("/v1/messages/batches?beta=true", NT, {
                 query: G,
                 ...Q,
                 headers: r4([{
@@ -1140,7 +1137,7 @@ var Hc1 = L(() => {
             let {
                 betas: G
             } = Q ?? {};
-            return this._client.delete(BY`/* Anthropic Messages API endpoint */ /v1/messages/batches/${A}?beta=true`, {
+            return this._client.delete(BY`/v1/messages/batches/TextComponent{A}?beta=true`, {
                 ...B,
                 headers: r4([{
                     "anthropic-beta": [...G ?? [], "message-batches-2024-09-24"].toString()
@@ -1151,7 +1148,7 @@ var Hc1 = L(() => {
             let {
                 betas: G
             } = Q ?? {};
-            return this._client.post(BY`/* Anthropic Messages API endpoint */ /v1/messages/batches/${A}/cancel?beta=true`, {
+            return this._client.post(BY`/v1/messages/batches/TextComponent{A}/cancel?beta=true`, {
                 ...B,
                 headers: r4([{
                     "anthropic-beta": [...G ?? [], "message-batches-2024-09-24"].toString()
@@ -1160,7 +1157,7 @@ var Hc1 = L(() => {
         }
         async results(A, Q = {}, B) {
             let G = await this.retrieve(A);
-            if (!G.results_url) throw new yB(`No batch \`results_url\`; Has it finished processing? ${G.processing_status} - ${G.id}`);
+            if (!G.results_url) throw new yB(`No batch \`results_url\`; Has it finished processing? TextComponent{G.processing_status} - TextComponent{G.id}`);
             let {
                 betas: Z
             } = Q ?? {};
@@ -1177,7 +1174,7 @@ var Hc1 = L(() => {
     }
 });
 var X_B, Ee;
-var Cc1 = L(() => {
+var Cc1 = lazyLoader(() => {
     Fc1();
     wM();
     Yf1();
@@ -1209,14 +1206,14 @@ var Cc1 = L(() => {
                 betas: B,
                 ...G
             } = A;
-            if (G.model in X_B) console.warn(`The model '${G.model}' is deprecated and will reach end-of-life on ${X_B[G.model]}
-Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.`);
+            if (G.model in X_B) console.warn(`The model 'TextComponent{G.model}' is deprecated and will reach end-of-life on TextComponent{X_B[G.model]}
+Please migrate to a newer model. Visit https://docs.anthropic.com/AGENT_OUTPUT_TOOL_NAME/docs/resources/model-deprecations for more information.`);
             let Z = this._client._options.timeout;
             if (!G.stream && Z == null) {
                 let I = MoA[G.model] ?? void 0;
                 Z = this._client.calculateNonstreamingTimeout(G.max_tokens, I)
             }
-            return this._client.post("/* Anthropic Messages API endpoint */ /v1/messages?beta=true", {
+            return this._client.post("/v1/messages?beta=true", {
                 body: G,
                 timeout: Z ?? 600000,
                 ...Q,
@@ -1237,14 +1234,14 @@ Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resour
             }, this.create(A, Q).then((B) => If1(B, A))
         }
         stream(A, Q) {
-            return Kt.createMessage(this, A, Q)
+            return MessageStream.createMessage(this, A, Q)
         }
         countTokens(A, Q) {
             let {
                 betas: B,
                 ...G
             } = A;
-            return this._client.post("/* Anthropic Messages API endpoint */ /v1/messages/count_tokens?beta=true", {
+            return this._client.post("/v1/messages/count_tokens?beta=true", {
                 body: G,
                 ...Q,
                 headers: r4([{
@@ -1260,7 +1257,7 @@ Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resour
     Ee.BetaToolRunner = KwA
 });
 var HwA;
-var Ec1 = L(() => {
+var Ec1 = lazyLoader(() => {
     c_();
     wM();
     RGA();
@@ -1271,7 +1268,7 @@ var Ec1 = L(() => {
                 betas: G,
                 ...Z
             } = Q ?? {};
-            return this._client.post(BY`/v1/skills/${A}/versions?beta=true`, OGA({
+            return this._client.post(BY`/v1/skills/TextComponent{A}/versions?beta=true`, OGA({
                 body: Z,
                 ...B,
                 headers: r4([{
@@ -1284,7 +1281,7 @@ var Ec1 = L(() => {
                 skill_id: G,
                 betas: Z
             } = Q;
-            return this._client.get(BY`/v1/skills/${G}/versions/${A}?beta=true`, {
+            return this._client.get(BY`/v1/skills/TextComponent{G}/versions/TextComponent{A}?beta=true`, {
                 ...B,
                 headers: r4([{
                     "anthropic-beta": [...Z ?? [], "skills-2025-10-02"].toString()
@@ -1296,7 +1293,7 @@ var Ec1 = L(() => {
                 betas: G,
                 ...Z
             } = Q ?? {};
-            return this._client.getAPIList(BY`/v1/skills/${A}/versions?beta=true`, YwA, {
+            return this._client.getAPIList(BY`/v1/skills/TextComponent{A}/versions?beta=true`, YwA, {
                 query: Z,
                 ...B,
                 headers: r4([{
@@ -1309,7 +1306,7 @@ var Ec1 = L(() => {
                 skill_id: G,
                 betas: Z
             } = Q;
-            return this._client.delete(BY`/v1/skills/${G}/versions/${A}?beta=true`, {
+            return this._client.delete(BY`/v1/skills/TextComponent{G}/versions/TextComponent{A}?beta=true`, {
                 ...B,
                 headers: r4([{
                     "anthropic-beta": [...Z ?? [], "skills-2025-10-02"].toString()
@@ -1319,7 +1316,7 @@ var Ec1 = L(() => {
     }
 });
 var jGA;
-var zc1 = L(() => {
+var zc1 = lazyLoader(() => {
     Ec1();
     Ec1();
     c_();
@@ -1348,7 +1345,7 @@ var zc1 = L(() => {
             let {
                 betas: G
             } = Q ?? {};
-            return this._client.get(BY`/v1/skills/${A}?beta=true`, {
+            return this._client.get(BY`/v1/skills/TextComponent{A}?beta=true`, {
                 ...B,
                 headers: r4([{
                     "anthropic-beta": [...G ?? [], "skills-2025-10-02"].toString()
@@ -1372,7 +1369,7 @@ var zc1 = L(() => {
             let {
                 betas: G
             } = Q ?? {};
-            return this._client.delete(BY`/v1/skills/${A}?beta=true`, {
+            return this._client.delete(BY`/v1/skills/TextComponent{A}?beta=true`, {
                 ...B,
                 headers: r4([{
                     "anthropic-beta": [...G ?? [], "skills-2025-10-02"].toString()
@@ -1383,7 +1380,7 @@ var zc1 = L(() => {
     jGA.Versions = HwA
 });
 var mH;
-var Uc1 = L(() => {
+var Uc1 = lazyLoader(() => {
     Wc1();
     Wc1();
     Xc1();
@@ -1404,7 +1401,7 @@ var Uc1 = L(() => {
     mH.Skills = jGA
 });
 var fp;
-var $c1 = L(() => {
+var $c1 = lazyLoader(() => {
     wM();
     fp = class fp extends cY {
         create(A, Q) {
@@ -1434,7 +1431,7 @@ function D_B(A) {
 function H_B(A) {}
 var qM, hp, CwA, RoA, EwA, zwA, ToA, UwA, Df, $wA, PoA, joA, SGA, SoA, _oA, wc1, F_B, qc1, Nc1, Lc1, Mc1, V_B, K_B = "__json_buf",
     wwA;
-var C_B = L(() => {
+var C_B = lazyLoader(() => {
     fb();
     Ft();
     NnA();

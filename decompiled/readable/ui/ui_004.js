@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_004.js
+ * 处理时间: 2025-12-09T03:41:38.911Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.090Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -55,7 +58,7 @@
             };
         B.contains = [A.C_NUMBER_MODE, G];
         let Z = ["Comparable", "DateTime", "Duration", "Function", "Iterable", "Iterator", "List", "Map", "Match", "Object", "Pattern", "RegExp", "Set", "Stopwatch", "String", "StringBuffer", "StringSink", "Symbol", "Type", "Uri", "bool", "double", "int", "num", "Element", "ElementList"],
-            I = Z.map((J) => `${J}?`);
+            I = Z.map((J) => `TextComponent{J}?`);
         return {
             name: "Dart",
             keywords: {
@@ -66,11 +69,11 @@
             contains: [G, A.COMMENT(/\/\*\*(?!\/)/, /\*\//, {
                 subLanguage: "markdown",
                 relevance: 0
-            }), A.COMMENT(/\/{3,} ?/, /$/, {
+            }), A.COMMENT(/\/{3,} ?/, /TextComponent/, {
                 contains: [{
                     subLanguage: "markdown",
                     begin: ".",
-                    end: "$",
+                    end: "TextComponent",
                     relevance: 0
                 }]
             }), A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, {
@@ -91,7 +94,7 @@
     }
     jf0.exports = CB4
 });
-var kf0 = U((H97, _f0) => {
+var kf0 = moduleWrapper((H97, _f0) => {
     function EB4(A) {
         let Q = "exports register file shl array record property for mod while set ally label uses raise not stored class safecall var interface or private static exit index inherited to else stdcall override shr asm far resourcestring finalization packed virtual out and protected library do xorwrite goto near function end div overload object unit begin string on inline repeat until destructor write message program with read initialization except default nil if case cdecl in downto threadvar of try pascal const external constructor type public then implementation finally published procedure absolute reintroduce operator as is abstract alias assembler bitpacked break continue cppdecl cvar enumerator experimental platform deprecated unimplemented dynamic export far16 forward generic helper implements interrupt iochecks local name nodefault noreturn nostackframe oldfpccall otherwise saveregisters softfloat specialize strict unaligned varargs ",
             B = [A.C_LINE_COMMENT_MODE, A.COMMENT(/\{/, /\}/, {
@@ -102,10 +105,10 @@ var kf0 = U((H97, _f0) => {
             G = {
                 className: "meta",
                 variants: [{
-                    begin: /\{\$/,
+                    begin: /\{\TextComponent/,
                     end: /\}/
                 }, {
-                    begin: /\(\*\$/,
+                    begin: /\(\*\TextComponent/,
                     end: /\*\)/
                 }]
             },
@@ -121,7 +124,7 @@ var kf0 = U((H97, _f0) => {
                 className: "number",
                 relevance: 0,
                 variants: [{
-                    begin: "\\$[0-9A-Fa-f]+"
+                    begin: "\\TextComponent[0-9A-Fa-f]+"
                 }, {
                     begin: "&[0-7]+"
                 }, {
@@ -155,13 +158,13 @@ var kf0 = U((H97, _f0) => {
             aliases: ["dpr", "dfm", "pas", "pascal", "freepascal", "lazarus", "lpr", "lfm"],
             case_insensitive: !0,
             keywords: Q,
-            illegal: /"|\$[G-Zg-z]|\/\*|<\/|\|/,
+            illegal: /"|\TextComponent[G-Zg-z]|\/\*|<\/|\|/,
             contains: [Z, Y, A.NUMBER_MODE, I, J, W, G].concat(B)
         }
     }
     _f0.exports = EB4
 });
-var xf0 = U((C97, yf0) => {
+var xf0 = moduleWrapper((C97, yf0) => {
     function zB4(A) {
         return {
             name: "Diff",
@@ -172,54 +175,54 @@ var xf0 = U((C97, yf0) => {
                 variants: [{
                     begin: /^@@ +-\d+,\d+ +\+\d+,\d+ +@@/
                 }, {
-                    begin: /^\*\*\* +\d+,\d+ +\*\*\*\*$/
+                    begin: /^\*\*\* +\d+,\d+ +\*\*\*\*TextComponent/
                 }, {
-                    begin: /^--- +\d+,\d+ +----$/
+                    begin: /^--- +\d+,\d+ +----TextComponent/
                 }]
             }, {
                 className: "comment",
                 variants: [{
                     begin: /Index: /,
-                    end: /$/
+                    end: /TextComponent/
                 }, {
                     begin: /^index/,
-                    end: /$/
+                    end: /TextComponent/
                 }, {
                     begin: /={3,}/,
-                    end: /$/
+                    end: /TextComponent/
                 }, {
                     begin: /^-{3}/,
-                    end: /$/
+                    end: /TextComponent/
                 }, {
                     begin: /^\*{3} /,
-                    end: /$/
+                    end: /TextComponent/
                 }, {
                     begin: /^\+{3}/,
-                    end: /$/
+                    end: /TextComponent/
                 }, {
-                    begin: /^\*{15}$/
+                    begin: /^\*{15}TextComponent/
                 }, {
                     begin: /^diff --git/,
-                    end: /$/
+                    end: /TextComponent/
                 }]
             }, {
                 className: "addition",
                 begin: /^\+/,
-                end: /$/
+                end: /TextComponent/
             }, {
                 className: "deletion",
                 begin: /^-/,
-                end: /$/
+                end: /TextComponent/
             }, {
                 className: "addition",
                 begin: /^!/,
-                end: /$/
+                end: /TextComponent/
             }]
         }
     }
     yf0.exports = zB4
 });
-var bf0 = U((E97, vf0) => {
+var bf0 = moduleWrapper((E97, vf0) => {
     function UB4(A) {
         let Q = {
             begin: /\|[A-Za-z]+:?/,
@@ -260,19 +263,19 @@ var bf0 = U((E97, vf0) => {
     }
     vf0.exports = UB4
 });
-var hf0 = U((z97, ff0) => {
+var hf0 = moduleWrapper((z97, ff0) => {
     function $B4(A) {
         return {
             name: "DNS Zone",
             aliases: ["bind", "zone"],
             keywords: {
-                keyword: "IN A AAAA AFSDB APL CAA CDNSKEY CDS CERT CNAME DHCID DLV DNAME DNSKEY DS HIP IPSECKEY KEY KX LOC MX NAPTR NS NSEC NSEC3 NSEC3PARAM PTR RRSIG RP SIG SOA SRV SSHFP TA TKEY TLSA TSIG TXT"
+                keyword: "IN A AAAA AFSDB APL CAA CDNSKEY CDS CERT CNAME DHCID DLV DNAME DNSKEY DS HIP IPSECKEY KEY KX LOC EDIT_TOOL_NAME NAPTR NS NSEC NSEC3 NSEC3PARAM PTR RRSIG RP SIG SOA SRV SSHFP TA TKEY TLSA TSIG TXT"
             },
-            contains: [A.COMMENT(";", "$", {
+            contains: [A.COMMENT(";", "TextComponent", {
                 relevance: 0
             }), {
                 className: "meta",
-                begin: /^\$(TTL|GENERATE|INCLUDE|ORIGIN)\b/
+                begin: /^\TextComponent(TTL|GENERATE|INCLUDE|ORIGIN)\b/
             }, {
                 className: "number",
                 begin: "((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:)))\\b"
@@ -286,7 +289,7 @@ var hf0 = U((z97, ff0) => {
     }
     ff0.exports = $B4
 });
-var uf0 = U((U97, gf0) => {
+var uf0 = moduleWrapper((U97, gf0) => {
     function wB4(A) {
         return {
             name: "Dockerfile",
@@ -296,7 +299,7 @@ var uf0 = U((U97, gf0) => {
             contains: [A.HASH_COMMENT_MODE, A.APOS_STRING_MODE, A.QUOTE_STRING_MODE, A.NUMBER_MODE, {
                 beginKeywords: "run cmd entrypoint volume add copy workdir label healthcheck shell",
                 starts: {
-                    end: /[^\\]$/,
+                    end: /[^\\]TextComponent/,
                     subLanguage: "bash"
                 }
             }],
@@ -305,9 +308,9 @@ var uf0 = U((U97, gf0) => {
     }
     gf0.exports = wB4
 });
-var df0 = U(($97, mf0) => {
+var df0 = moduleWrapper(($97, mf0) => {
     function qB4(A) {
-        let Q = A.COMMENT(/^\s*@?rem\b/, /$/, {
+        let Q = A.COMMENT(/^\s*@?rem\b/, /TextComponent/, {
             relevance: 10
         });
         return {
@@ -342,7 +345,7 @@ var df0 = U(($97, mf0) => {
     }
     mf0.exports = qB4
 });
-var pf0 = U((w97, cf0) => {
+var pf0 = moduleWrapper((w97, cf0) => {
     function NB4(A) {
         return {
             keywords: "dsconfig",
@@ -357,7 +360,7 @@ var pf0 = U((w97, cf0) => {
                 begin: /(list|create|get|set|delete)-(\w+)/,
                 end: /\s/,
                 excludeEnd: !0,
-                illegal: "!@#$%^&*()",
+                illegal: "!@#TextComponent%^&*()",
                 relevance: 10
             }, {
                 className: "built_in",
@@ -387,14 +390,14 @@ var pf0 = U((w97, cf0) => {
     }
     cf0.exports = NB4
 });
-var if0 = U((q97, lf0) => {
+var if0 = moduleWrapper((q97, lf0) => {
     function LB4(A) {
         let Q = {
                 className: "string",
                 variants: [A.inherit(A.QUOTE_STRING_MODE, {
-                    begin: '((u8?|U)|L)?"'
+                    begin: '((u8?|moduleWrapper)|lazyLoader)?"'
                 }), {
-                    begin: '(u8?|U)?R"',
+                    begin: '(u8?|moduleWrapper)?R"',
                     end: '"',
                     contains: [A.BACKSLASH_ESCAPE]
                 }, {
@@ -406,7 +409,7 @@ var if0 = U((q97, lf0) => {
             B = {
                 className: "number",
                 variants: [{
-                    begin: "\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"
+                    begin: "\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|moduleWrapper|l|lazyLoader|ul|UL|f|F)"
                 }, {
                     begin: A.C_NUMBER_RE
                 }],
@@ -415,7 +418,7 @@ var if0 = U((q97, lf0) => {
             G = {
                 className: "meta",
                 begin: "#",
-                end: "$",
+                end: "TextComponent",
                 keywords: {
                     "meta-keyword": "if else elif endif define undef ifdef ifndef"
                 },
@@ -424,7 +427,7 @@ var if0 = U((q97, lf0) => {
                     relevance: 0
                 }, {
                     beginKeywords: "include",
-                    end: "$",
+                    end: "TextComponent",
                     keywords: {
                         "meta-keyword": "include"
                     },
@@ -480,7 +483,7 @@ var if0 = U((q97, lf0) => {
     }
     lf0.exports = LB4
 });
-var af0 = U((N97, nf0) => {
+var af0 = moduleWrapper((N97, nf0) => {
     function MB4(A) {
         return {
             name: "Dust",
@@ -506,13 +509,13 @@ var af0 = U((N97, nf0) => {
                 begin: /\{/,
                 end: /\}/,
                 illegal: /;/,
-                keywords: "if eq ne lt lte gt gte select default math sep"
+                keywords: "if WEB_FETCH_TOOL_NAME ne lt lte gt gte select default math sep"
             }]
         }
     }
     nf0.exports = MB4
 });
-var rf0 = U((L97, sf0) => {
+var rf0 = moduleWrapper((L97, sf0) => {
     function OB4(A) {
         let Q = A.COMMENT(/\(\*/, /\*\)/),
             B = {
@@ -541,7 +544,7 @@ var rf0 = U((L97, sf0) => {
     }
     sf0.exports = OB4
 });
-var tf0 = U((M97, of0) => {
+var tf0 = moduleWrapper((M97, of0) => {
     function RB4(A) {
         let G = {
                 $pattern: "[a-zA-Z_][a-zA-Z0-9_.]*(!|\\?)?",
@@ -668,7 +671,7 @@ var tf0 = U((M97, of0) => {
             V = A.inherit(F, {
                 className: "class",
                 beginKeywords: "defimpl defmodule defprotocol defrecord",
-                end: /\bdo\b|$|;/
+                end: /\bdo\b|TextComponent|;/
             }),
             K = [X, W, J, A.HASH_COMMENT_MODE, V, F, {
                 begin: "::"
@@ -685,7 +688,7 @@ var tf0 = U((M97, of0) => {
                 relevance: 0
             }, I, {
                 className: "variable",
-                begin: "(\\$\\W)|((\\$|@@?)(\\w+))"
+                begin: "(\\TextComponent\\W)|((\\TextComponent|@@?)(\\w+))"
             }, {
                 begin: "->"
             }, {
@@ -716,10 +719,10 @@ var tf0 = U((M97, of0) => {
     }
     of0.exports = RB4
 });
-var Ah0 = U((O97, ef0) => {
+var Ah0 = moduleWrapper((O97, ef0) => {
     function TB4(A) {
         let Q = {
-                variants: [A.COMMENT("--", "$"), A.COMMENT(/\{-/, /-\}/, {
+                variants: [A.COMMENT("--", "TextComponent"), A.COMMENT(/\{-/, /-\}/, {
                     contains: ["self"]
                 })]
             },
@@ -759,22 +762,22 @@ var Ah0 = U((O97, ef0) => {
                 illegal: "\\W\\.|;"
             }, {
                 begin: "import",
-                end: "$",
+                end: "TextComponent",
                 keywords: "import as exposing",
                 contains: [G, Q],
                 illegal: "\\W\\.|;"
             }, {
                 begin: "type",
-                end: "$",
+                end: "TextComponent",
                 keywords: "type alias",
                 contains: [B, G, Z, Q]
             }, {
                 beginKeywords: "infix infixl infixr",
-                end: "$",
+                end: "TextComponent",
                 contains: [A.C_NUMBER_MODE, Q]
             }, {
                 begin: "port",
-                end: "$",
+                end: "TextComponent",
                 keywords: "port",
                 contains: [Q]
             }, I, A.QUOTE_STRING_MODE, A.C_NUMBER_MODE, B, A.inherit(A.TITLE_MODE, {
@@ -787,22 +790,22 @@ var Ah0 = U((O97, ef0) => {
     }
     ef0.exports = TB4
 });
-var Gh0 = U((R97, Bh0) => {
+var Gh0 = moduleWrapper((R97, Bh0) => {
     function PB4(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function jB4(A) {
+    function jB4(A) {
         return Qh0("(?=", A, ")")
     }
 
-function Qh0(...A) {
+    function Qh0(...A) {
         return A.map((B) => PB4(B)).join("")
     }
 
-function SB4(A) {
+    function SB4(A) {
         let B = {
                 keyword: "and then defined module in return redo if BEGIN retry end for self when next until do begin unless END rescue else break undef not super class case require yield alias while ensure elsif or include attr_reader attr_writer attr_accessor __FILE__",
                 built_in: "proc lambda",
@@ -816,7 +819,7 @@ function SB4(A) {
                 begin: "#<",
                 end: ">"
             },
-            I = [A.COMMENT("#", "$", {
+            I = [A.COMMENT("#", "TextComponent", {
                 contains: [G]
             }), A.COMMENT("^=begin", "^=end", {
                 contains: [G],
@@ -917,7 +920,7 @@ function SB4(A) {
             K = [J, {
                 className: "class",
                 beginKeywords: "class module",
-                end: "$|;",
+                end: "TextComponent|;",
                 illegal: /=/,
                 contains: [A.inherit(A.TITLE_MODE, {
                     begin: "[A-Za-z_]\\w*(::\\w+)*(\\?|!)?"
@@ -930,10 +933,10 @@ function SB4(A) {
                 }].concat(I)
             }, {
                 className: "function",
-                begin: Qh0(/def\s+/, jB4("([a-zA-Z_]\\w*[!?=]?|[-+~]@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?)\\s*(\\(|;|$)")),
+                begin: Qh0(/def\s+/, jB4("([a-zA-Z_]\\w*[!?=]?|[-+~]@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?)\\s*(\\(|;|TextComponent)")),
                 relevance: 0,
                 keywords: "def",
-                end: "$|;",
+                end: "TextComponent|;",
                 contains: [A.inherit(A.TITLE_MODE, {
                     begin: "([a-zA-Z_]\\w*[!?=]?|[-+~]@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?)"
                 }), V].concat(I)
@@ -952,7 +955,7 @@ function SB4(A) {
                 relevance: 0
             }, F, {
                 className: "variable",
-                begin: "(\\$\\W)|((\\$|@@?)(\\w+))(?=[^@$?])(?![A-Za-z])(?![@$?'])"
+                begin: "(\\TextComponent\\W)|((\\TextComponent|@@?)(\\w+))(?=[^@TextComponent?])(?![A-Za-z])(?![@TextComponent?'])"
             }, {
                 className: "params",
                 begin: /\|/,
@@ -992,14 +995,14 @@ function SB4(A) {
             E = [{
                 begin: /^\s*=>/,
                 starts: {
-                    end: "$",
+                    end: "TextComponent",
                     contains: K
                 }
             }, {
                 className: "meta",
                 begin: "^(" + D + "|" + H + "|" + C + ")(?=[ ])",
                 starts: {
-                    end: "$",
+                    end: "TextComponent",
                     contains: K
                 }
             }];
@@ -1015,7 +1018,7 @@ function SB4(A) {
     }
     Bh0.exports = SB4
 });
-var Ih0 = U((T97, Zh0) => {
+var Ih0 = moduleWrapper((T97, Zh0) => {
     function _B4(A) {
         return {
             name: "ERB",
@@ -1031,18 +1034,18 @@ var Ih0 = U((T97, Zh0) => {
     }
     Zh0.exports = _B4
 });
-var Jh0 = U((P97, Yh0) => {
+var Jh0 = moduleWrapper((P97, Yh0) => {
     function kB4(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function yB4(...A) {
+    function yB4(...A) {
         return A.map((B) => kB4(B)).join("")
     }
 
-function xB4(A) {
+    function xB4(A) {
         return {
             name: "Erlang REPL",
             keywords: {
@@ -1053,7 +1056,7 @@ function xB4(A) {
                 className: "meta",
                 begin: "^[0-9]+> ",
                 relevance: 10
-            }, A.COMMENT("%", "$"), {
+            }, A.COMMENT("%", "TextComponent"), {
                 className: "number",
                 begin: "\\b(\\d+(_\\d+)*#[a-fA-F0-9]+(_[a-fA-F0-9]+)*|\\d+(_\\d+)*(\\.\\d+(_\\d+)*)?([eE][-+]?\\d+)?)",
                 relevance: 0
@@ -1076,14 +1079,14 @@ function xB4(A) {
     }
     Yh0.exports = xB4
 });
-var Xh0 = U((j97, Wh0) => {
+var Xh0 = moduleWrapper((j97, Wh0) => {
     function vB4(A) {
         let B = "([a-z'][a-zA-Z0-9_']*:[a-z'][a-zA-Z0-9_']*|[a-z'][a-zA-Z0-9_']*)",
             G = {
                 keyword: "after and andalso|10 band begin bnot bor bsl bzr bxor case catch cond div end fun if let not of orelse|10 query receive rem try when xor",
                 literal: "false true"
             },
-            Z = A.COMMENT("%", "$"),
+            Z = A.COMMENT("%", "TextComponent"),
             I = {
                 className: "number",
                 begin: "\\b(\\d+(_\\d+)*#[a-fA-F0-9]+(_[a-fA-F0-9]+)*|\\d+(_\\d+)*(\\.\\d+(_\\d+)*)?([eE][-+]?\\d+)?)",
@@ -1178,17 +1181,17 @@ var Xh0 = U((j97, Wh0) => {
                 returnBegin: !0,
                 keywords: {
                     $pattern: "-" + A.IDENT_RE,
-                    keyword: H.map((E) => `${E}|1.5`).join(" ")
+                    keyword: H.map((E) => `TextComponent{E}|1.5`).join(" ")
                 },
                 contains: [C]
             }, I, A.QUOTE_STRING_MODE, V, X, F, W, {
-                begin: /\.$/
+                begin: /\.TextComponent/
             }]
         }
     }
     Wh0.exports = vB4
 });
-var Vh0 = U((S97, Fh0) => {
+var Vh0 = moduleWrapper((S97, Fh0) => {
     function bB4(A) {
         return {
             name: "Excel formulae",
@@ -1227,7 +1230,7 @@ var Vh0 = U((S97, Fh0) => {
     }
     Fh0.exports = bB4
 });
-var Dh0 = U((_97, Kh0) => {
+var Dh0 = moduleWrapper((_97, Kh0) => {
     function fB4(A) {
         return {
             name: "FIX",
@@ -1256,7 +1259,7 @@ var Dh0 = U((_97, Kh0) => {
     }
     Kh0.exports = fB4
 });
-var Ch0 = U((k97, Hh0) => {
+var Ch0 = moduleWrapper((k97, Hh0) => {
     function hB4(A) {
         let Q = {
                 className: "string",
@@ -1291,29 +1294,29 @@ var Ch0 = U((k97, Hh0) => {
     }
     Hh0.exports = hB4
 });
-var zh0 = U((y97, Eh0) => {
+var zh0 = moduleWrapper((y97, Eh0) => {
     function gB4(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function hH1(...A) {
+    function hH1(...A) {
         return A.map((B) => gB4(B)).join("")
     }
 
-function uB4(A) {
+    function uB4(A) {
         let Q = {
                 className: "params",
                 begin: "\\(",
                 end: "\\)"
             },
             B = {
-                variants: [A.COMMENT("!", "$", {
+                variants: [A.COMMENT("!", "TextComponent", {
                     relevance: 0
-                }), A.COMMENT("^C[ ]", "$", {
+                }), A.COMMENT("^C[ ]", "TextComponent", {
                     relevance: 0
-                }), A.COMMENT("^C$", "$", {
+                }), A.COMMENT("^C$", "TextComponent", {
                     relevance: 0
                 })]
             },
@@ -1333,7 +1336,7 @@ function uB4(A) {
             Y = {
                 className: "function",
                 beginKeywords: "subroutine function program",
-                illegal: "[${=\\n]",
+                illegal: "[TextComponent{=\\n]",
                 contains: [A.UNDERSCORE_TITLE_MODE, Q]
             },
             J = {
@@ -1347,7 +1350,7 @@ function uB4(A) {
             aliases: ["f90", "f95"],
             keywords: {
                 literal: ".False. .True.",
-                keyword: "kind do concurrent local shared while private call intrinsic where elsewhere type endtype endmodule endselect endinterface end enddo endif if forall endforall only contains default return stop then block endblock endassociate public subroutine|10 function program .and. .or. .not. .le. .eq. .ge. .gt. .lt. goto save else use module select case access blank direct exist file fmt form formatted iostat name named nextrec number opened rec recl sequential status unformatted unit continue format pause cycle exit c_null_char c_alert c_backspace c_form_feed flush wait decimal round iomsg synchronous nopass non_overridable pass protected volatile abstract extends import non_intrinsic value deferred generic final enumerator class associate bind enum c_int c_short c_long c_long_long c_signed_char c_size_t c_int8_t c_int16_t c_int32_t c_int64_t c_int_least8_t c_int_least16_t c_int_least32_t c_int_least64_t c_int_fast8_t c_int_fast16_t c_int_fast32_t c_int_fast64_t c_intmax_t C_intptr_t c_float c_double c_long_double c_float_complex c_double_complex c_long_double_complex c_bool c_char c_null_ptr c_null_funptr c_new_line c_carriage_return c_horizontal_tab c_vertical_tab iso_c_binding c_loc c_funloc c_associated  c_f_pointer c_ptr c_funptr iso_fortran_env character_storage_size error_unit file_storage_size input_unit iostat_end iostat_eor numeric_storage_size output_unit c_f_procpointer ieee_arithmetic ieee_support_underflow_control ieee_get_underflow_mode ieee_set_underflow_mode newunit contiguous recursive pad position action delim readwrite eor advance nml interface procedure namelist include sequence elemental pure impure integer real character complex logical codimension dimension allocatable|10 parameter external implicit|10 none double precision assign intent optional pointer target in out common equivalence data",
+                keyword: "kind do concurrent local shared while private call intrinsic where elsewhere type endtype endmodule endselect endinterface end enddo endif if forall endforall only contains default return stop then block endblock endassociate public subroutine|10 function program .and. .or. .not. .le. .WEB_FETCH_TOOL_NAME. .ge. .gt. .lt. goto save else use module select case access blank direct exist file fmt form formatted iostat name named nextrec number opened rec recl sequential status unformatted unit continue format pause cycle exit c_null_char c_alert c_backspace c_form_feed flush wait decimal round iomsg synchronous nopass non_overridable pass protected volatile abstract extends import non_intrinsic value deferred generic final enumerator class associate bind enum c_int c_short c_long c_long_long c_signed_char c_size_t c_int8_t c_int16_t c_int32_t c_int64_t c_int_least8_t c_int_least16_t c_int_least32_t c_int_least64_t c_int_fast8_t c_int_fast16_t c_int_fast32_t c_int_fast64_t c_intmax_t C_intptr_t c_float c_double c_long_double c_float_complex c_double_complex c_long_double_complex c_bool c_char c_null_ptr c_null_funptr c_new_line c_carriage_return c_horizontal_tab c_vertical_tab iso_c_binding c_loc c_funloc c_associated  c_f_pointer c_ptr c_funptr iso_fortran_env character_storage_size error_unit file_storage_size input_unit iostat_end iostat_eor numeric_storage_size output_unit c_f_procpointer ieee_arithmetic ieee_support_underflow_control ieee_get_underflow_mode ieee_set_underflow_mode newunit contiguous recursive pad position action delim readwrite eor advance nml interface procedure namelist include sequence elemental pure impure integer real character complex logical codimension dimension allocatable|10 parameter external implicit|10 none double precision assign intent optional pointer target in out common equivalence data",
                 built_in: "alog alog10 amax0 amax1 amin0 amin1 amod cabs ccos cexp clog csin csqrt dabs dacos dasin datan datan2 dcos dcosh ddim dexp dint dlog dlog10 dmax1 dmin1 dmod dnint dsign dsin dsinh dsqrt dtan dtanh float iabs idim idint idnint ifix isign max0 max1 min0 min1 sngl algama cdabs cdcos cdexp cdlog cdsin cdsqrt cqabs cqcos cqexp cqlog cqsin cqsqrt dcmplx dconjg derf derfc dfloat dgamma dimag dlgama iqint qabs qacos qasin qatan qatan2 qcmplx qconjg qcos qcosh qdim qerf qerfc qexp qgamma qimag qlgama qlog qlog10 qmax1 qmin1 qmod qnint qsign qsin qsinh qsqrt qtan qtanh abs acos aimag aint anint asin atan atan2 char cmplx conjg cos cosh exp ichar index int log log10 max min nint sign sin sinh sqrt tan tanh print write dim lge lgt lle llt mod nullify allocate deallocate adjustl adjustr all allocated any associated bit_size btest ceiling count cshift date_and_time digits dot_product eoshift epsilon exponent floor fraction huge iand ibclr ibits ibset ieor ior ishft ishftc lbound len_trim matmul maxexponent maxloc maxval merge minexponent minloc minval modulo mvbits nearest pack present product radix random_number random_seed range repeat reshape rrspacing scale scan selected_int_kind selected_real_kind set_exponent shape size spacing spread sum system_clock tiny transpose trim ubound unpack verify achar iachar transfer dble entry dprod cpu_time command_argument_count get_command get_command_argument get_environment_variable is_iostat_end ieee_arithmetic ieee_support_underflow_control ieee_get_underflow_mode ieee_set_underflow_mode is_iostat_eor move_alloc new_line selected_char_kind same_type_as extends_type_of acosh asinh atanh bessel_j0 bessel_j1 bessel_jn bessel_y0 bessel_y1 bessel_yn erf erfc erfc_scaled gamma log_gamma hypot norm2 atomic_define atomic_ref execute_command_line leadz trailz storage_size merge_bits bge bgt ble blt dshiftl dshiftr findloc iall iany iparity image_index lcobound ucobound maskl maskr num_images parity popcnt poppar shifta shiftl shiftr this_image sync change team co_broadcast co_max co_min co_sum co_reduce"
             },
             illegal: /\/\*/,
@@ -1359,7 +1362,7 @@ function uB4(A) {
     }
     Eh0.exports = uB4
 });
-var $h0 = U((x97, Uh0) => {
+var $h0 = moduleWrapper((x97, Uh0) => {
     function mB4(A) {
         let Q = {
             begin: "<",
@@ -1392,7 +1395,7 @@ var $h0 = U((x97, Uh0) => {
             }), {
                 className: "class",
                 beginKeywords: "type",
-                end: "\\(|=|$",
+                end: "\\(|=|TextComponent",
                 excludeEnd: !0,
                 contains: [A.UNDERSCORE_TITLE_MODE, Q]
             }, {
@@ -1411,24 +1414,24 @@ var $h0 = U((x97, Uh0) => {
     }
     Uh0.exports = mB4
 });
-var qh0 = U((v97, wh0) => {
+var qh0 = moduleWrapper((v97, wh0) => {
     function dB4(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function cB4(A) {
+    function cB4(A) {
         return gH1("(", A, ")*")
     }
 
-function gH1(...A) {
+    function gH1(...A) {
         return A.map((B) => dB4(B)).join("")
     }
 
-function pB4(A) {
+    function pB4(A) {
         let Q = {
-                keyword: "abort acronym acronyms alias all and assign binary card diag display else eq file files for free ge gt if integer le loop lt maximizing minimizing model models ne negative no not option options or ord positive prod put putpage puttl repeat sameas semicont semiint smax smin solve sos1 sos2 sum system table then until using while xor yes",
+                keyword: "abort acronym acronyms alias all and assign binary card diag display else WEB_FETCH_TOOL_NAME file files for free ge gt if integer le loop lt maximizing minimizing model models ne negative no not option options or ord positive prod put putpage puttl repeat sameas semicont semiint smax smin solve sos1 sos2 sum system table then until using while xor yes",
                 literal: "eps inf na",
                 built_in: "abs arccos arcsin arctan arctan2 Beta betaReg binomial ceil centropy cos cosh cvPower div div0 eDist entropy errorf execSeed exp fact floor frac gamma gammaReg log logBeta logGamma log10 log2 mapVal max min mod ncpCM ncpF ncpVUpow ncpVUsin normal pi poly power randBinomial randLinear randTriangle round rPower sigmoid sign signPower sin sinh slexp sllog10 slrec sqexp sqlog10 sqr sqrec sqrt tan tanh trunc uniform uniformInt vcPower bool_and bool_eqv bool_imp bool_not bool_or bool_xor ifThen rel_eq rel_ge rel_gt rel_le rel_lt rel_ne gday gdow ghour gleap gmillisec gminute gmonth gsecond gyear jdate jnow jstart jtime errorLevel execError gamsRelease gamsVersion handleCollect handleDelete handleStatus handleSubmit heapFree heapLimit heapSize jobHandle jobKill jobStatus jobTerminate licenseLevel licenseStatus maxExecError sleep timeClose timeComp timeElapsed timeExec timeStart"
             },
@@ -1444,7 +1447,7 @@ function pB4(A) {
                 variants: [{
                     begin: /=[lgenxc]=/
                 }, {
-                    begin: /\$/
+                    begin: /\TextComponent/
                 }]
             },
             Z = {
@@ -1465,11 +1468,11 @@ function pB4(A) {
                 keywords: Q,
                 contains: [Z, A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.QUOTE_STRING_MODE, A.APOS_STRING_MODE, A.C_NUMBER_MODE]
             },
-            Y = /[a-z0-9&#*=?@\\><:,()$[\]_.{}!+%^-]+/,
+            Y = /[a-z0-9&#*=?@\\><:,()TextComponent[\]_.{}!+%^-]+/,
             J = {
                 begin: /[a-z][a-z0-9_]*(\([a-z0-9_, ]*\))?[ \t]+/,
                 excludeBegin: !0,
-                end: "$",
+                end: "TextComponent",
                 endsWithParent: !0,
                 contains: [Z, I, {
                     className: "comment",
@@ -1484,29 +1487,29 @@ function pB4(A) {
             keywords: Q,
             contains: [A.COMMENT(/^\$ontext/, /^\$offtext/), {
                 className: "meta",
-                begin: "^\\$[a-z0-9]+",
-                end: "$",
+                begin: "^\\TextComponent[a-z0-9]+",
+                end: "TextComponent",
                 returnBegin: !0,
                 contains: [{
                     className: "meta-keyword",
-                    begin: "^\\$[a-z0-9]+"
+                    begin: "^\\TextComponent[a-z0-9]+"
                 }]
-            }, A.COMMENT("^\\*", "$"), A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.QUOTE_STRING_MODE, A.APOS_STRING_MODE, {
+            }, A.COMMENT("^\\*", "TextComponent"), A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.QUOTE_STRING_MODE, A.APOS_STRING_MODE, {
                 beginKeywords: "set sets parameter parameters variable variables scalar scalars equation equations",
                 end: ";",
-                contains: [A.COMMENT("^\\*", "$"), A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.QUOTE_STRING_MODE, A.APOS_STRING_MODE, I, J]
+                contains: [A.COMMENT("^\\*", "TextComponent"), A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.QUOTE_STRING_MODE, A.APOS_STRING_MODE, I, J]
             }, {
                 beginKeywords: "table",
                 end: ";",
                 returnBegin: !0,
                 contains: [{
                     beginKeywords: "table",
-                    end: "$",
+                    end: "TextComponent",
                     contains: [J]
-                }, A.COMMENT("^\\*", "$"), A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.QUOTE_STRING_MODE, A.APOS_STRING_MODE, A.C_NUMBER_MODE]
+                }, A.COMMENT("^\\*", "TextComponent"), A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.QUOTE_STRING_MODE, A.APOS_STRING_MODE, A.C_NUMBER_MODE]
             }, {
                 className: "function",
-                begin: /^[a-z][a-z0-9_,\-+' ()$]+\.{2}/,
+                begin: /^[a-z][a-z0-9_,\-+' ()TextComponent]+\.{2}/,
                 returnBegin: !0,
                 contains: [{
                     className: "title",

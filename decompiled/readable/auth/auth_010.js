@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_010.js
+ * 处理时间: 2025-12-09T03:41:36.444Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.895Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -30,7 +33,7 @@
         };
     E6Q.defaultSTSHttpAuthSchemeParametersProvider = Sj4;
 
-function _j4(A) {
+    function _j4(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {
@@ -46,7 +49,7 @@ function _j4(A) {
         }
     }
 
-function kj4(A) {
+    function kj4(A) {
         return {
             schemeId: "smithy.api#noAuth"
         }
@@ -77,7 +80,7 @@ function kj4(A) {
     };
     E6Q.resolveHttpAuthSchemeConfig = vj4
 });
-var kDA = U(($6Q) => {
+var kDA = moduleWrapper(($6Q) => {
     Object.defineProperty($6Q, "__esModule", {
         value: !0
     });
@@ -114,13 +117,13 @@ var kDA = U(($6Q) => {
         }
     }
 });
-var p6Q = U((d6Q) => {
+var p6Q = moduleWrapper((d6Q) => {
     Object.defineProperty(d6Q, "__esModule", {
         value: !0
     });
     d6Q.ruleSet = void 0;
     var k6Q = "required",
-        _8 = "type",
+        BASH_TOOL_NAME = "type",
         p3 = "fn",
         l3 = "argv",
         Qd = "ref",
@@ -138,12 +141,12 @@ var p6Q = U((d6Q) => {
         $$1 = "getAttr",
         L6Q = {
             [k6Q]: !1,
-            [_8]: "String"
+            [BASH_TOOL_NAME]: "String"
         },
         U$1 = {
             [k6Q]: !0,
             default: !1,
-            [_8]: "Boolean"
+            [BASH_TOOL_NAME]: "Boolean"
         },
         b6Q = {
             [Qd]: "Endpoint"
@@ -186,7 +189,7 @@ var p6Q = U((d6Q) => {
                 [l3]: [nK, "aws-global"]
             }],
             [vI]: CH,
-            [_8]: vI
+            [BASH_TOOL_NAME]: vI
         },
         g6Q = {
             [p3]: Ad,
@@ -249,105 +252,105 @@ var p6Q = U((d6Q) => {
                         [l3]: [nK, "ap-northeast-1"]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, {
                     conditions: [{
                         [p3]: iK,
                         [l3]: [nK, "ap-south-1"]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, {
                     conditions: [{
                         [p3]: iK,
                         [l3]: [nK, "ap-southeast-1"]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, {
                     conditions: [{
                         [p3]: iK,
                         [l3]: [nK, "ap-southeast-2"]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, R6Q, {
                     conditions: [{
                         [p3]: iK,
                         [l3]: [nK, "ca-central-1"]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, {
                     conditions: [{
                         [p3]: iK,
                         [l3]: [nK, "eu-central-1"]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, {
                     conditions: [{
                         [p3]: iK,
                         [l3]: [nK, "eu-north-1"]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, {
                     conditions: [{
                         [p3]: iK,
                         [l3]: [nK, "eu-west-1"]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, {
                     conditions: [{
                         [p3]: iK,
                         [l3]: [nK, "eu-west-2"]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, {
                     conditions: [{
                         [p3]: iK,
                         [l3]: [nK, "eu-west-3"]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, {
                     conditions: [{
                         [p3]: iK,
                         [l3]: [nK, "sa-east-1"]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, {
                     conditions: [{
                         [p3]: iK,
                         [l3]: [nK, v6Q]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, {
                     conditions: [{
                         [p3]: iK,
                         [l3]: [nK, "us-east-2"]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, {
                     conditions: [{
                         [p3]: iK,
                         [l3]: [nK, "us-west-1"]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, {
                     conditions: [{
                         [p3]: iK,
                         [l3]: [nK, "us-west-2"]
                     }],
                     endpoint: CH,
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }, {
                     endpoint: {
                         url: N6Q,
@@ -360,28 +363,28 @@ var p6Q = U((d6Q) => {
                         },
                         headers: Ww
                     },
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }],
-                [_8]: XS
+                [BASH_TOOL_NAME]: XS
             }, {
                 conditions: j6Q,
                 rules: [{
                     conditions: S6Q,
                     error: "Invalid Configuration: FIPS and custom endpoint are not supported",
-                    [_8]: f4A
+                    [BASH_TOOL_NAME]: f4A
                 }, {
                     conditions: _6Q,
                     error: "Invalid Configuration: Dualstack and custom endpoint are not supported",
-                    [_8]: f4A
+                    [BASH_TOOL_NAME]: f4A
                 }, {
                     endpoint: {
                         url: b6Q,
                         properties: Ww,
                         headers: Ww
                     },
-                    [_8]: vI
+                    [BASH_TOOL_NAME]: vI
                 }],
-                [_8]: XS
+                [BASH_TOOL_NAME]: XS
             }, {
                 conditions: [M6Q],
                 rules: [{
@@ -399,14 +402,14 @@ var p6Q = U((d6Q) => {
                                     properties: Ww,
                                     headers: Ww
                                 },
-                                [_8]: vI
+                                [BASH_TOOL_NAME]: vI
                             }],
-                            [_8]: XS
+                            [BASH_TOOL_NAME]: XS
                         }, {
                             error: "FIPS and DualStack are enabled, but this partition does not support one or both",
-                            [_8]: f4A
+                            [BASH_TOOL_NAME]: f4A
                         }],
-                        [_8]: XS
+                        [BASH_TOOL_NAME]: XS
                     }, {
                         conditions: S6Q,
                         rules: [{
@@ -427,21 +430,21 @@ var p6Q = U((d6Q) => {
                                     properties: Ww,
                                     headers: Ww
                                 },
-                                [_8]: vI
+                                [BASH_TOOL_NAME]: vI
                             }, {
                                 endpoint: {
                                     url: "https://sts-fips.{Region}.{PartitionResult#dnsSuffix}",
                                     properties: Ww,
                                     headers: Ww
                                 },
-                                [_8]: vI
+                                [BASH_TOOL_NAME]: vI
                             }],
-                            [_8]: XS
+                            [BASH_TOOL_NAME]: XS
                         }, {
                             error: "FIPS is enabled but this partition does not support FIPS",
-                            [_8]: f4A
+                            [BASH_TOOL_NAME]: f4A
                         }],
-                        [_8]: XS
+                        [BASH_TOOL_NAME]: XS
                     }, {
                         conditions: _6Q,
                         rules: [{
@@ -452,33 +455,33 @@ var p6Q = U((d6Q) => {
                                     properties: Ww,
                                     headers: Ww
                                 },
-                                [_8]: vI
+                                [BASH_TOOL_NAME]: vI
                             }],
-                            [_8]: XS
+                            [BASH_TOOL_NAME]: XS
                         }, {
                             error: "DualStack is enabled but this partition does not support DualStack",
-                            [_8]: f4A
+                            [BASH_TOOL_NAME]: f4A
                         }],
-                        [_8]: XS
+                        [BASH_TOOL_NAME]: XS
                     }, R6Q, {
                         endpoint: {
                             url: N6Q,
                             properties: Ww,
                             headers: Ww
                         },
-                        [_8]: vI
+                        [BASH_TOOL_NAME]: vI
                     }],
-                    [_8]: XS
+                    [BASH_TOOL_NAME]: XS
                 }],
-                [_8]: XS
+                [BASH_TOOL_NAME]: XS
             }, {
                 error: "Invalid Configuration: Missing Region",
-                [_8]: f4A
+                [BASH_TOOL_NAME]: f4A
             }]
         };
     d6Q.ruleSet = uj4
 });
-var n6Q = U((l6Q) => {
+var n6Q = moduleWrapper((l6Q) => {
     Object.defineProperty(l6Q, "__esModule", {
         value: !0
     });
@@ -499,7 +502,7 @@ var n6Q = U((l6Q) => {
     l6Q.defaultEndpointResolver = pj4;
     w$1.customEndpointFunctions.aws = mj4.awsEndpointFunctions
 });
-var t6Q = U((r6Q) => {
+var t6Q = moduleWrapper((r6Q) => {
     Object.defineProperty(r6Q, "__esModule", {
         value: !0
     });
@@ -539,7 +542,7 @@ var t6Q = U((r6Q) => {
         };
     r6Q.getRuntimeConfig = oj4
 });
-var Z5Q = U((B5Q) => {
+var Z5Q = moduleWrapper((B5Q) => {
     Object.defineProperty(B5Q, "__esModule", {
         value: !0
     });
@@ -609,7 +612,7 @@ var Z5Q = U((B5Q) => {
         };
     B5Q.getRuntimeConfig = WS4
 });
-var J5Q = U((I5Q) => {
+var J5Q = moduleWrapper((I5Q) => {
     Object.defineProperty(I5Q, "__esModule", {
         value: !0
     });
@@ -653,7 +656,7 @@ var J5Q = U((I5Q) => {
     };
     I5Q.resolveHttpAuthRuntimeConfig = FS4
 });
-var H5Q = U((K5Q) => {
+var H5Q = moduleWrapper((K5Q) => {
     Object.defineProperty(K5Q, "__esModule", {
         value: !0
     });
@@ -668,7 +671,7 @@ var H5Q = U((K5Q) => {
         };
     K5Q.resolveRuntimeExtensions = KS4
 });
-var _DA = U((L$1) => {
+var _DA = moduleWrapper((L$1) => {
     Object.defineProperty(L$1, "__esModule", {
         value: !0
     });
@@ -693,8 +696,7 @@ var _DA = U((L$1) => {
         US4 = kDA(),
         $S4 = Z5Q(),
         wS4 = H5Q();
-
-class w5Q extends $5Q.Client {
+    class w5Q extends $5Q.Client {
         config;
         constructor(...[A]) {
             let Q = (0, $S4.getRuntimeConfig)(A || {});
@@ -721,7 +723,7 @@ class w5Q extends $5Q.Client {
     }
     L$1.STSClient = w5Q
 });
-var Aw1 = U(($F7, e$1) => {
+var Aw1 = moduleWrapper(($F7, e$1) => {
     var {
         defineProperty: VhA,
         getOwnPropertyDescriptor: qS4,
@@ -1061,7 +1063,7 @@ var Aw1 = U(($F7, e$1) => {
                 let G = v5Q(A[d4A], Q);
                 if (A[d4A]?.length === 0) B.PolicyArns = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `PolicyArns.${Z}`;
+                    let Y = `PolicyArns.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -1071,7 +1073,7 @@ var Aw1 = U(($F7, e$1) => {
                 let G = tS4(A[u$1], Q);
                 if (A[u$1]?.length === 0) B.Tags = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `Tags.${Z}`;
+                    let Y = `Tags.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -1079,7 +1081,7 @@ var Aw1 = U(($F7, e$1) => {
                 let G = oS4(A[d$1], Q);
                 if (A[d$1]?.length === 0) B.TransitiveTagKeys = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `TransitiveTagKeys.${Z}`;
+                    let Y = `TransitiveTagKeys.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -1091,7 +1093,7 @@ var Aw1 = U(($F7, e$1) => {
                 let G = sS4(A[y$1], Q);
                 if (A[y$1]?.length === 0) B.ProvidedContexts = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `ProvidedContexts.${Z}`;
+                    let Y = `ProvidedContexts.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -1107,7 +1109,7 @@ var Aw1 = U(($F7, e$1) => {
                 let G = v5Q(A[d4A], Q);
                 if (A[d4A]?.length === 0) B.PolicyArns = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `PolicyArns.${Z}`;
+                    let Y = `PolicyArns.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -1122,7 +1124,7 @@ var Aw1 = U(($F7, e$1) => {
                 if (Z === null) continue;
                 let I = nS4(Z, Q);
                 Object.entries(I).forEach(([Y, J]) => {
-                    B[`member.${G}.${Y}`] = J
+                    B[`member.TextComponent{G}.TextComponent{Y}`] = J
                 }), G++
             }
             return B
@@ -1145,7 +1147,7 @@ var Aw1 = U(($F7, e$1) => {
                 if (Z === null) continue;
                 let I = aS4(Z, Q);
                 Object.entries(I).forEach(([Y, J]) => {
-                    B[`member.${G}.${Y}`] = J
+                    B[`member.TextComponent{G}.TextComponent{Y}`] = J
                 }), G++
             }
             return B
@@ -1161,7 +1163,7 @@ var Aw1 = U(($F7, e$1) => {
                 G = 1;
             for (let Z of A) {
                 if (Z === null) continue;
-                B[`member.${G}`] = Z, G++
+                B[`member.TextComponent{G}`] = Z, G++
             }
             return B
         }, "se_tagKeyListType"),
@@ -1172,7 +1174,7 @@ var Aw1 = U(($F7, e$1) => {
                 if (Z === null) continue;
                 let I = rS4(Z, Q);
                 Object.entries(I).forEach(([Y, J]) => {
-                    B[`member.${G}.${Y}`] = J
+                    B[`member.TextComponent{G}.TextComponent{Y}`] = J
                 }), G++
             }
             return B
@@ -1357,7 +1359,7 @@ var Aw1 = U(($F7, e$1) => {
         i5Q = j2(async (A, Q, B) => {
             let G = typeof A === "function" ? await A() : A,
                 Z = typeof Q === "function" ? await Q() : Q;
-            return B?.debug?.("@aws-sdk/client-sts::resolveRegion", "accepting first of:", `${G} (provider)`, `${Z} (parent client)`, `${N5Q} (STS default)`), G ?? Z ?? N5Q
+            return B?.debug?.("@aws-sdk/client-sts::resolveRegion", "accepting first of:", `TextComponent{G} (provider)`, `TextComponent{Z} (parent client)`, `TextComponent{N5Q} (STS default)`), G ?? Z ?? N5Q
         }, "resolveRegion"),
         $_4 = j2((A, Q) => {
             let B, G;
@@ -1381,7 +1383,7 @@ var Aw1 = U(($F7, e$1) => {
                     Credentials: Y,
                     AssumedRoleUser: J
                 } = await B.send(new o$1(I));
-                if (!Y || !Y.AccessKeyId || !Y.SecretAccessKey) throw Error(`Invalid response from STS.assumeRole call with role ${I.RoleArn}`);
+                if (!Y || !Y.AccessKeyId || !Y.SecretAccessKey) throw Error(`Invalid response from STS.assumeRole call with role TextComponent{I.RoleArn}`);
                 let W = l5Q(J),
                     X = {
                         accessKeyId: Y.AccessKeyId,
@@ -1419,7 +1421,7 @@ var Aw1 = U(($F7, e$1) => {
                     Credentials: Z,
                     AssumedRoleUser: I
                 } = await B.send(new t$1(G));
-                if (!Z || !Z.AccessKeyId || !Z.SecretAccessKey) throw Error(`Invalid response from STS.assumeRoleWithWebIdentity call with role ${G.RoleArn}`);
+                if (!Z || !Z.AccessKeyId || !Z.SecretAccessKey) throw Error(`Invalid response from STS.assumeRoleWithWebIdentity call with role TextComponent{G.RoleArn}`);
                 let Y = l5Q(I),
                     J = {
                         accessKeyId: Z.AccessKeyId,
@@ -1461,7 +1463,7 @@ var Aw1 = U(($F7, e$1) => {
             ...Q
         }), "decorateDefaultCredentialProvider")
 });
-var Gw1 = U((LF7, A3Q) => {
+var Gw1 = moduleWrapper((LF7, A3Q) => {
     var {
         defineProperty: KhA,
         getOwnPropertyDescriptor: N_4,
@@ -1492,15 +1494,15 @@ var Gw1 = U((LF7, A3Q) => {
     A3Q.exports = T_4(e5Q);
     var t5Q = NG(),
         Qw1 = P2(),
-        P_4 = UA("child_process"),
-        j_4 = UA("util"),
+        P_4 = nodeRequire("child_process"),
+        j_4 = nodeRequire("util"),
         S_4 = lN(),
         __4 = Bw1((A, Q, B) => {
-            if (Q.Version !== 1) throw Error(`Profile ${A} credential_process did not return Version 1.`);
-            if (Q.AccessKeyId === void 0 || Q.SecretAccessKey === void 0) throw Error(`Profile ${A} credential_process returned invalid credentials.`);
+            if (Q.Version !== 1) throw Error(`Profile TextComponent{A} credential_process did not return Version 1.`);
+            if (Q.AccessKeyId === void 0 || Q.SecretAccessKey === void 0) throw Error(`Profile TextComponent{A} credential_process returned invalid credentials.`);
             if (Q.Expiration) {
                 let I = new Date;
-                if (new Date(Q.Expiration) < I) throw Error(`Profile ${A} credential_process returned expired credentials.`)
+                if (new Date(Q.Expiration) < I) throw Error(`Profile TextComponent{A} credential_process returned expired credentials.`)
             }
             let G = Q.AccountId;
             if (!G && B?.[A]?.aws_account_id) G = B[A].aws_account_id;

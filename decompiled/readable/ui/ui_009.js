@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_009.js
+ * 处理时间: 2025-12-09T03:41:38.993Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.096Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -117,7 +119,7 @@
         }, "resolveAwsSdkSigV4Config"),
         zH4 = DAQ;
 
-function HAQ(A, {
+    function HAQ(A, {
         credentials: Q,
         credentialDefaultProvider: B
     }) {
@@ -135,7 +137,7 @@ function HAQ(A, {
     }
     WW(HAQ, "normalizeCredentialProvider");
 
-function CAQ(A, Q) {
+    function CAQ(A, Q) {
         if (Q.configBound) return Q;
         let B = WW(async (G) => Q({
             ...G,
@@ -145,7 +147,7 @@ function CAQ(A, Q) {
     }
     WW(CAQ, "bindCallerConfig")
 });
-var pK = U((SJ7, $AQ) => {
+var pK = moduleWrapper((SJ7, $AQ) => {
     var {
         defineProperty: ZfA,
         getOwnPropertyDescriptor: UH4,
@@ -188,16 +190,16 @@ var pK = U((SJ7, $AQ) => {
                 return Q
             } else if (typeof A.byteLength === "number") return A.byteLength;
             else if (typeof A.size === "number") return A.size;
-            throw Error(`Body Length computation failed for ${A}`)
+            throw Error(`Body Length computation failed for TextComponent{A}`)
         }, "calculateBodyLength")
 });
-var NAQ = U((wAQ) => {
+var NAQ = moduleWrapper((wAQ) => {
     Object.defineProperty(wAQ, "__esModule", {
         value: !0
     });
     wAQ.fromBase64 = void 0;
     var RH4 = kI(),
-        TH4 = /^[A-Za-z0-9+/]*={0,2}$/,
+        TH4 = /^[A-Za-z0-9+/]*={0,2}TextComponent/,
         PH4 = (A) => {
             if (A.length * 3 % 4 !== 0) throw TypeError("Incorrect padding on base64 string.");
             if (!TH4.exec(A)) throw TypeError("Invalid base64 string.");
@@ -206,7 +208,7 @@ var NAQ = U((wAQ) => {
         };
     wAQ.fromBase64 = PH4
 });
-var OAQ = U((LAQ) => {
+var OAQ = moduleWrapper((LAQ) => {
     Object.defineProperty(LAQ, "__esModule", {
         value: !0
     });
@@ -222,7 +224,7 @@ var OAQ = U((LAQ) => {
         };
     LAQ.toBase64 = _H4
 });
-var lm = U((yJ7, IfA) => {
+var lm = moduleWrapper((yJ7, IfA) => {
     var {
         defineProperty: RAQ,
         getOwnPropertyDescriptor: kH4,
@@ -243,7 +245,7 @@ var lm = U((yJ7, IfA) => {
     TAQ(_z1, NAQ(), IfA.exports);
     TAQ(_z1, OAQ(), IfA.exports)
 });
-var PR = U((xJ7, _AQ) => {
+var PR = moduleWrapper((xJ7, _AQ) => {
     var {
         defineProperty: YfA,
         getOwnPropertyDescriptor: bH4,
@@ -280,7 +282,7 @@ var PR = U((xJ7, _AQ) => {
             return B
         }, "getAllAliases"),
         im = iN((A, Q) => {
-            return `${A||"anonymous"}${Q&&Q.length>0?` (a.k.a. ${Q.join(",")})`:""}`
+            return `TextComponent{A||"anonymous"}TextComponent{Q&&Q.length>0?` (a.k.a. TextComponent{Q.join(",")})`:""}`
         }, "getMiddlewareNameWithAliases"),
         kz1 = iN(() => {
             let A = [],
@@ -359,7 +361,7 @@ var PR = U((xJ7, _AQ) => {
                             let z = H[E.toMiddleware];
                             if (z === void 0) {
                                 if (V) return;
-                                throw Error(`${E.toMiddleware} is not found when adding ${im(E.name,E.aliases)} middleware ${E.relation} ${E.toMiddleware}`)
+                                throw Error(`TextComponent{E.toMiddleware} is not found when adding TextComponent{im(E.name,E.aliases)} middleware TextComponent{E.relation} TextComponent{E.toMiddleware}`)
                             }
                             if (E.relation === "after") z.after.push(E);
                             if (E.relation === "before") z.before.push(E)
@@ -382,12 +384,12 @@ var PR = U((xJ7, _AQ) => {
                         }, z = Hr(D, C);
                         if (z.length > 0) {
                             if (z.some((w) => G.has(w))) {
-                                if (!H) throw Error(`Duplicate middleware name '${im(D,C)}'`);
+                                if (!H) throw Error(`Duplicate middleware name 'TextComponent{im(D,C)}'`);
                                 for (let w of z) {
                                     let N = A.findIndex((R) => R.name === w || R.aliases?.some((P) => P === w));
                                     if (N === -1) continue;
                                     let q = A[N];
-                                    if (q.step !== E.step || E.priority !== q.priority) throw Error(`"${im(q.name,q.aliases)}" middleware with ${q.priority} priority in ${q.step} step cannot be overridden by "${im(D,C)}" middleware with ${E.priority} priority in ${E.step} step.`);
+                                    if (q.step !== E.step || E.priority !== q.priority) throw Error(`"TextComponent{im(q.name,q.aliases)}" middleware with TextComponent{q.priority} priority in TextComponent{q.step} step cannot be overridden by "TextComponent{im(D,C)}" middleware with TextComponent{E.priority} priority in TextComponent{E.step} step.`);
                                     A.splice(N, 1)
                                 }
                             }
@@ -406,12 +408,12 @@ var PR = U((xJ7, _AQ) => {
                         }, z = Hr(D, C);
                         if (z.length > 0) {
                             if (z.some((w) => G.has(w))) {
-                                if (!H) throw Error(`Duplicate middleware name '${im(D,C)}'`);
+                                if (!H) throw Error(`Duplicate middleware name 'TextComponent{im(D,C)}'`);
                                 for (let w of z) {
                                     let N = Q.findIndex((R) => R.name === w || R.aliases?.some((P) => P === w));
                                     if (N === -1) continue;
                                     let q = Q[N];
-                                    if (q.toMiddleware !== E.toMiddleware || q.relation !== E.relation) throw Error(`"${im(q.name,q.aliases)}" middleware ${q.relation} "${q.toMiddleware}" middleware cannot be overridden by "${im(D,C)}" middleware ${E.relation} "${E.toMiddleware}" middleware.`);
+                                    if (q.toMiddleware !== E.toMiddleware || q.relation !== E.relation) throw Error(`"TextComponent{im(q.name,q.aliases)}" middleware TextComponent{q.relation} "TextComponent{q.toMiddleware}" middleware cannot be overridden by "TextComponent{im(D,C)}" middleware TextComponent{E.relation} "TextComponent{E.toMiddleware}" middleware.`);
                                     Q.splice(N, 1)
                                 }
                             }
@@ -480,7 +482,7 @@ var PR = U((xJ7, _AQ) => {
             low: 1
         }
 });
-var W6 = U((vJ7, gz1) => {
+var W6 = moduleWrapper((vJ7, gz1) => {
     var {
         defineProperty: JfA,
         getOwnPropertyDescriptor: dH4,
@@ -683,7 +685,7 @@ var W6 = U((vJ7, gz1) => {
                         let X = new G(Y);
                         if (typeof J === "function") this.send(X, J);
                         else if (typeof W === "function") {
-                            if (typeof J !== "object") throw Error(`Expected http options but got ${typeof J}`);
+                            if (typeof J !== "object") throw Error(`Expected http options but got TextComponent{typeof J}`);
                             this.send(X, J || {}, W)
                         } else return this.send(X, J)
                     }, "methodImpl"),
@@ -850,7 +852,7 @@ var W6 = U((vJ7, gz1) => {
             error() {}
         };
 
-function hz1(A, Q, B) {
+    function hz1(A, Q, B) {
         let G, Z, I;
         if (typeof Q > "u" && typeof B > "u") G = {}, I = A;
         else if (G = A, typeof Q === "function") return Z = Q, I = B, HC4(G, Z, I);
@@ -932,10 +934,10 @@ function hz1(A, Q, B) {
         }, "_json");
     iH4(fz1, c6(), gz1.exports)
 });
-var WfA = U((LC4) => {
+var WfA = moduleWrapper((LC4) => {
     var $C4 = ":A-Za-z_\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD\\-.\\d\\u00B7\\u0300-\\u036F\\u203F-\\u2040",
         uAQ = "[:A-Za-z_\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD][" + $C4 + "]*",
-        wC4 = new RegExp("^" + uAQ + "$"),
+        wC4 = new RegExp("^" + uAQ + "TextComponent"),
         qC4 = function(A, Q) {
             let B = [],
                 G = Q.exec(A);
@@ -975,7 +977,7 @@ var WfA = U((LC4) => {
     LC4.getAllMatches = qC4;
     LC4.nameRegexp = uAQ
 });
-var mz1 = U((gC4) => {
+var mz1 = moduleWrapper((gC4) => {
     var uz1 = WfA(),
         SC4 = {
             allowBooleanAttributes: !1,
@@ -1067,12 +1069,12 @@ var mz1 = U((gC4) => {
         return !0
     };
 
-function dAQ(A) {
+    function dAQ(A) {
         return A === " " || A === "\t" || A === `
 ` || A === "\r"
     }
 
-function cAQ(A, Q) {
+    function cAQ(A, Q) {
         let B = Q;
         for (; Q < A.length; Q++)
             if (A[Q] == "?" || A[Q] == " ") {
@@ -1085,7 +1087,7 @@ function cAQ(A, Q) {
             } return Q
     }
 
-function pAQ(A, Q) {
+    function pAQ(A, Q) {
         if (A.length > Q + 5 && A[Q + 1] === "-" && A[Q + 2] === "-") {
             for (Q += 3; Q < A.length; Q++)
                 if (A[Q] === "-" && A[Q + 1] === "-" && A[Q + 2] === ">") {
@@ -1111,7 +1113,7 @@ function pAQ(A, Q) {
     var _C4 = '"',
         kC4 = "'";
 
-function yC4(A, Q) {
+    function yC4(A, Q) {
         let B = "",
             G = "",
             Z = !1;
@@ -1137,7 +1139,7 @@ function yC4(A, Q) {
     }
     var xC4 = new RegExp(`(\\s*)([^\\s=]+)(\\s*=)?(\\s*(['"])(([\\s\\S])*?)\\5)?`, "g");
 
-function lAQ(A, Q) {
+    function lAQ(A, Q) {
         let B = uz1.getAllMatches(A, xC4),
             G = {};
         for (let Z = 0; Z < B.length; Z++) {
@@ -1152,7 +1154,7 @@ function lAQ(A, Q) {
         return !0
     }
 
-function vC4(A, Q) {
+    function vC4(A, Q) {
         let B = /\d/;
         if (A[Q] === "x") Q++, B = /[\da-fA-F]/;
         for (; Q < A.length; Q++) {
@@ -1162,7 +1164,7 @@ function vC4(A, Q) {
         return -1
     }
 
-function bC4(A, Q) {
+    function bC4(A, Q) {
         if (Q++, A[Q] === ";") return -1;
         if (A[Q] === "#") return Q++, vC4(A, Q);
         let B = 0;
@@ -1174,7 +1176,7 @@ function bC4(A, Q) {
         return Q
     }
 
-function XW(A, Q, B) {
+    function XW(A, Q, B) {
         return {
             err: {
                 code: A,
@@ -1185,15 +1187,15 @@ function XW(A, Q, B) {
         }
     }
 
-function fC4(A) {
+    function fC4(A) {
         return uz1.isName(A)
     }
 
-function hC4(A) {
+    function hC4(A) {
         return uz1.isName(A)
     }
 
-function pC(A, Q) {
+    function pC(A, Q) {
         let B = A.substring(0, Q).split(/\r?\n/);
         return {
             line: B.length,
@@ -1201,11 +1203,11 @@ function pC(A, Q) {
         }
     }
 
-function YDA(A) {
+    function YDA(A) {
         return A.startIndex + A[1].length
     }
 });
-var nAQ = U((dC4) => {
+var nAQ = moduleWrapper((dC4) => {
     var iAQ = {
             preserveOrder: !1,
             attributeNamePrefix: "@_",
@@ -1250,7 +1252,7 @@ var nAQ = U((dC4) => {
     dC4.buildOptions = mC4;
     dC4.defaultOptions = iAQ
 });
-var rAQ = U((pJ7, sAQ) => {
+var rAQ = moduleWrapper((pJ7, sAQ) => {
     class aAQ {
         constructor(A) {
             this.tagname = A, this.child = [], this[":@"] = {}
@@ -1274,10 +1276,10 @@ var rAQ = U((pJ7, sAQ) => {
     }
     sAQ.exports = aAQ
 });
-var tAQ = U((lJ7, oAQ) => {
+var tAQ = moduleWrapper((lJ7, oAQ) => {
     var lC4 = WfA();
 
-function iC4(A, Q) {
+    function iC4(A, Q) {
         let B = {};
         if (A[Q + 3] === "O" && A[Q + 4] === "C" && A[Q + 5] === "T" && A[Q + 6] === "Y" && A[Q + 7] === "P" && A[Q + 8] === "E") {
             Q = Q + 9;
@@ -1289,7 +1291,7 @@ function iC4(A, Q) {
                 if (A[Q] === "<" && !I) {
                     if (Z && sC4(A, Q)) {
                         if (Q += 7, [entityName, val, Q] = nC4(A, Q + 1), val.indexOf("&") === -1) B[eC4(entityName)] = {
-                            regx: RegExp(`&${entityName};`, "g"),
+                            regx: RegExp(`&TextComponent{entityName};`, "g"),
                             val
                         }
                     } else if (Z && rC4(A, Q)) Q += 8;
@@ -1313,7 +1315,7 @@ function iC4(A, Q) {
         }
     }
 
-function nC4(A, Q) {
+    function nC4(A, Q) {
         let B = "";
         for (; Q < A.length && (A[Q] !== "'" && A[Q] !== '"'); Q++) B += A[Q];
         if (B = B.trim(), B.indexOf(" ") !== -1) throw Error("External entites are not supported");
@@ -1323,51 +1325,50 @@ function nC4(A, Q) {
         return [B, Z, Q]
     }
 
-function aC4(A, Q) {
+    function aC4(A, Q) {
         if (A[Q + 1] === "!" && A[Q + 2] === "-" && A[Q + 3] === "-") return !0;
         return !1
     }
 
-function sC4(A, Q) {
+    function sC4(A, Q) {
         if (A[Q + 1] === "!" && A[Q + 2] === "E" && A[Q + 3] === "N" && A[Q + 4] === "T" && A[Q + 5] === "I" && A[Q + 6] === "T" && A[Q + 7] === "Y") return !0;
         return !1
     }
 
-function rC4(A, Q) {
-        if (A[Q + 1] === "!" && A[Q + 2] === "E" && A[Q + 3] === "L" && A[Q + 4] === "E" && A[Q + 5] === "M" && A[Q + 6] === "E" && A[Q + 7] === "N" && A[Q + 8] === "T") return !0;
+    function rC4(A, Q) {
+        if (A[Q + 1] === "!" && A[Q + 2] === "E" && A[Q + 3] === "lazyLoader" && A[Q + 4] === "E" && A[Q + 5] === "M" && A[Q + 6] === "E" && A[Q + 7] === "N" && A[Q + 8] === "T") return !0;
         return !1
     }
 
-function oC4(A, Q) {
-        if (A[Q + 1] === "!" && A[Q + 2] === "A" && A[Q + 3] === "T" && A[Q + 4] === "T" && A[Q + 5] === "L" && A[Q + 6] === "I" && A[Q + 7] === "S" && A[Q + 8] === "T") return !0;
+    function oC4(A, Q) {
+        if (A[Q + 1] === "!" && A[Q + 2] === "A" && A[Q + 3] === "T" && A[Q + 4] === "T" && A[Q + 5] === "lazyLoader" && A[Q + 6] === "I" && A[Q + 7] === "S" && A[Q + 8] === "T") return !0;
         return !1
     }
 
-function tC4(A, Q) {
+    function tC4(A, Q) {
         if (A[Q + 1] === "!" && A[Q + 2] === "N" && A[Q + 3] === "O" && A[Q + 4] === "T" && A[Q + 5] === "A" && A[Q + 6] === "T" && A[Q + 7] === "I" && A[Q + 8] === "O" && A[Q + 9] === "N") return !0;
         return !1
     }
 
-function eC4(A) {
+    function eC4(A) {
         if (lC4.isName(A)) return A;
-        else throw Error(`Invalid entity name ${A}`)
+        else throw Error(`Invalid entity name TextComponent{A}`)
     }
     oAQ.exports = iC4
 });
-var A1Q = U((iJ7, eAQ) => {
-    var AE4 = /^[-+]?0x[a-fA-F0-9]+$/,
-        QE4 = /^([\-\+])?(0*)(\.[0-9]+([eE]\-?[0-9]+)?|[0-9]+(\.[0-9]+([eE]\-?[0-9]+)?)?)$/;
+var A1Q = moduleWrapper((iJ7, eAQ) => {
+    var AE4 = /^[-+]?0x[a-fA-F0-9]+TextComponent/,
+        QE4 = /^([\-\+])?(0*)(\.[0-9]+([eE]\-?[0-9]+)?|[0-9]+(\.[0-9]+([eE]\-?[0-9]+)?)?)TextComponent/;
     if (!Number.parseInt && window.parseInt) Number.parseInt = window.parseInt;
     if (!Number.parseFloat && window.parseFloat) Number.parseFloat = window.parseFloat;
-
-var BE4 = {
+    var BE4 = {
         hex: !0,
         leadingZeros: !0,
         decimalPoint: ".",
         eNotation: !0
     };
 
-function GE4(A, Q = {}) {
+    function GE4(A, Q = {}) {
         if (Q = Object.assign({}, BE4, Q), !A || typeof A !== "string") return A;
         let B = A.trim();
         if (Q.skipLike !== void 0 && Q.skipLike.test(B)) return A;
@@ -1407,9 +1408,9 @@ function GE4(A, Q = {}) {
         }
     }
 
-function ZE4(A) {
+    function ZE4(A) {
         if (A && A.indexOf(".") !== -1) {
-            if (A = A.replace(/0+$/, ""), A === ".") A = "0";
+            if (A = A.replace(/0+TextComponent/, ""), A === ".") A = "0";
             else if (A[0] === ".") A = "0" + A;
             else if (A[A.length - 1] === ".") A = A.substr(0, A.length - 1);
             return A
@@ -1418,13 +1419,12 @@ function ZE4(A) {
     }
     eAQ.exports = GE4
 });
-var Z1Q = U((nJ7, G1Q) => {
+var Z1Q = moduleWrapper((nJ7, G1Q) => {
     var Q1Q = WfA(),
         JDA = rAQ(),
         IE4 = tAQ(),
         YE4 = A1Q();
-
-class B1Q {
+    class B1Q {
         constructor(A) {
             this.options = A, this.currentNode = null, this.tagsNodeStack = [], this.docTypeEntities = {}, this.lastEntities = {
                 apos: {
@@ -1491,7 +1491,7 @@ class B1Q {
         }
     }
 
-function JE4(A) {
+    function JE4(A) {
         let Q = Object.keys(A);
         for (let B = 0; B < Q.length; B++) {
             let G = Q[B];
@@ -1502,7 +1502,7 @@ function JE4(A) {
         }
     }
 
-function WE4(A, Q, B, G, Z, I, Y) {
+    function WE4(A, Q, B, G, Z, I, Y) {
         if (A !== void 0) {
             if (this.options.trimValues && !G) A = A.trim();
             if (A.length > 0) {

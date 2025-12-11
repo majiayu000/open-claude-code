@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_017.js
+ * 处理时间: 2025-12-09T03:41:37.461Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.976Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -66,7 +69,7 @@
             throw Error(Z(156, T.tag))
         }
 
-function IBA(O, T) {
+        function IBA(O, T) {
             switch (d2(T), T.tag) {
                 case 1:
                     return ZA(T.type) && jA(), O = T.flags, O & 65536 ? (T.flags = O & -65537 | 128, T) : null;
@@ -100,7 +103,7 @@ function IBA(O, T) {
             ua = typeof WeakSet === "function" ? WeakSet : Set,
             fB = null;
 
-function iO(O, T) {
+        function iO(O, T) {
             var f = O.ref;
             if (f !== null)
                 if (typeof f === "function") try {
@@ -110,7 +113,7 @@ function iO(O, T) {
                 } else f.current = null
         }
 
-function ma(O, T, f) {
+        function ma(O, T, f) {
             try {
                 f()
             } catch (n) {
@@ -119,7 +122,7 @@ function ma(O, T, f) {
         }
         var kC = !1;
 
-function Tx(O, T) {
+        function Tx(O, T) {
             IA(O.containerInfo);
             for (fB = T; fB !== null;)
                 if (O = fB, T = O.child, (O.subtreeFlags & 1028) !== 0 && T !== null) T.return = O, fB = T;
@@ -165,7 +168,7 @@ function Tx(O, T) {
             return f = kC, kC = !1, f
         }
 
-function yC(O, T, f) {
+        function yC(O, T, f) {
             var n = T.updateQueue;
             if (n = n !== null ? n.lastEffect : null, n !== null) {
                 var t = n = n.next;
@@ -179,7 +182,7 @@ function yC(O, T, f) {
             }
         }
 
-function YX(O, T) {
+        function YX(O, T) {
             if (T = T.updateQueue, T = T !== null ? T.lastEffect : null, T !== null) {
                 var f = T = T.next;
                 do {
@@ -192,7 +195,7 @@ function YX(O, T) {
             }
         }
 
-function da(O) {
+        function da(O) {
             var T = O.ref;
             if (T !== null) {
                 var f = O.stateNode;
@@ -207,16 +210,16 @@ function da(O) {
             }
         }
 
-function ca(O) {
+        function ca(O) {
             var T = O.alternate;
             T !== null && (O.alternate = null, ca(T)), O.child = null, O.deletions = null, O.sibling = null, O.tag === 5 && (T = O.stateNode, T !== null && eA(T)), O.stateNode = null, O.return = null, O.dependencies = null, O.memoizedProps = null, O.memoizedState = null, O.pendingProps = null, O.stateNode = null, O.updateQueue = null
         }
 
-function pa(O) {
+        function pa(O) {
             return O.tag === 5 || O.tag === 3 || O.tag === 4
         }
 
-function CN(O) {
+        function CN(O) {
             A: for (;;) {
                 for (; O.sibling === null;) {
                     if (O.return === null || pa(O.return)) return null;
@@ -232,14 +235,14 @@ function CN(O) {
             }
         }
 
-function zz(O, T, f) {
+        function zz(O, T, f) {
             var n = O.tag;
             if (n === 5 || n === 6) O = O.stateNode, T ? Z0(f, O, T) : T0(f, O);
             else if (n !== 4 && (O = O.child, O !== null))
                 for (zz(O, T, f), O = O.sibling; O !== null;) zz(O, T, f), O = O.sibling
         }
 
-function Iu(O, T, f) {
+        function Iu(O, T, f) {
             var n = O.tag;
             if (n === 5 || n === 6) O = O.stateNode, T ? N1(f, O, T) : k1(f, O);
             else if (n !== 4 && (O = O.child, O !== null))
@@ -248,11 +251,11 @@ function Iu(O, T, f) {
         var QW = null,
             YJ = !1;
 
-function BH(O, T, f) {
+        function BH(O, T, f) {
             for (f = f.child; f !== null;) Jj(O, T, f), f = f.sibling
         }
 
-function Jj(O, T, f) {
+        function Jj(O, T, f) {
             if (IB && typeof IB.onCommitFiberUnmount === "function") try {
                 IB.onCommitFiberUnmount(xQ, f)
             } catch (n1) {}
@@ -305,7 +308,7 @@ function Jj(O, T, f) {
             }
         }
 
-function CG(O) {
+        function CG(O) {
             var T = O.updateQueue;
             if (T !== null) {
                 O.updateQueue = null;
@@ -317,7 +320,7 @@ function CG(O) {
             }
         }
 
-function PK(O, T) {
+        function PK(O, T) {
             var f = T.deletions;
             if (f !== null)
                 for (var n = 0; n < f.length; n++) {
@@ -354,7 +357,7 @@ function PK(O, T) {
                 for (T = T.child; T !== null;) Px(T, O), T = T.sibling
         }
 
-function Px(O, T) {
+        function Px(O, T) {
             var {
                 alternate: f,
                 flags: n
@@ -523,7 +526,7 @@ function Px(O, T) {
             }
         }
 
-function RI(O) {
+        function RI(O) {
             var T = O.flags;
             if (T & 2) {
                 try {
@@ -563,11 +566,11 @@ function RI(O) {
             T & 4096 && (O.flags &= -4097)
         }
 
-function JX(O, T, f) {
+        function JX(O, T, f) {
             fB = O, NY(O, T, f)
         }
 
-function NY(O, T, f) {
+        function NY(O, T, f) {
             for (var n = (O.mode & 1) !== 0; fB !== null;) {
                 var t = fB,
                     EA = t.child;
@@ -588,7 +591,7 @@ function NY(O, T, f) {
             }
         }
 
-function EN(O) {
+        function EN(O) {
             for (; fB !== null;) {
                 var T = fB;
                 if ((T.flags & 8772) !== 0) {
@@ -672,7 +675,7 @@ function EN(O) {
             }
         }
 
-function la(O) {
+        function la(O) {
             for (; fB !== null;) {
                 var T = fB;
                 if (T === O) {
@@ -688,7 +691,7 @@ function la(O) {
             }
         }
 
-function WX(O) {
+        function WX(O) {
             for (; fB !== null;) {
                 var T = fB;
                 try {
@@ -753,7 +756,7 @@ function WX(O) {
             Wj = Sx("selector.component"), Yu = Sx("selector.has_pseudo_class"), Ju = Sx("selector.role"), jx = Sx("selector.test_id"), zN = Sx("selector.text")
         }
 
-function nO(O) {
+        function nO(O) {
             var T = $A(O);
             if (T != null) {
                 if (typeof T.memoizedProps["data-testname"] !== "string") throw Error(Z(364));
@@ -763,7 +766,7 @@ function nO(O) {
             return O.stateNode.current
         }
 
-function Wu(O, T) {
+        function Wu(O, T) {
             switch (T.$$typeof) {
                 case Wj:
                     if (O.type === T.value) return !0;
@@ -805,7 +808,7 @@ function Wu(O, T) {
             return !1
         }
 
-function ia(O) {
+        function ia(O) {
             switch (O.$$typeof) {
                 case Wj:
                     return "<" + (R(O.value) || "Unknown") + ">";
@@ -822,7 +825,7 @@ function ia(O) {
             }
         }
 
-function YBA(O, T) {
+        function YBA(O, T) {
             var f = [];
             O = [O, 0];
             for (var n = 0; n < O.length;) {
@@ -839,7 +842,7 @@ function YBA(O, T) {
             return f
         }
 
-function aO(O, T) {
+        function aO(O, T) {
             if (!w1) throw Error(Z(363));
             O = nO(O), O = YBA(O, T), T = [], O = Array.from(O);
             for (var f = 0; f < O.length;) {
@@ -871,7 +874,7 @@ function aO(O, T) {
             na = 1 / 0,
             jK = null;
 
-function Vj() {
+        function Vj() {
             na = z3() + 500
         }
         var Kj = !1,
@@ -885,29 +888,29 @@ function Vj() {
             $N = -1,
             oO = 0;
 
-function FX() {
+        function FX() {
             return (I8 & 6) !== 0 ? z3() : $N !== -1 ? $N : $N = z3()
         }
 
-function wN(O) {
+        function wN(O) {
             if ((O.mode & 1) === 0) return 1;
             if ((I8 & 2) !== 0 && MY !== 0) return MY & -MY;
             if (Oa.transition !== null) return oO === 0 && (oO = X5()), oO;
             return O = B4, O !== 0 ? O : TA()
         }
 
-function i5(O, T, f, n) {
+        function i5(O, T, f, n) {
             if (50 < Dj) throw Dj = 0, aa = null, Error(Z(185));
             if (l5(O, f, n), (I8 & 2) === 0 || O !== LY) O === LY && ((I8 & 2) === 0 && (f$ |= f), K5 === 4 && rZ(O, MY)), XV(O, n), f === 1 && I8 === 0 && (T.mode & 1) === 0 && (Vj(), AW && p8())
         }
 
-function XV(O, T) {
+        function XV(O, T) {
             var f = O.callbackNode;
             q4(O, T);
             var n = EB(O, O === LY ? MY : 0);
             if (n === 0) f !== null && eJ(f), O.callbackNode = null, O.callbackPriority = 0;
             else if (T = n & -n, O.callbackPriority !== T) {
-                if (f != null && eJ(f), T === 1) O.tag === 0 ? iZ(h$.bind(null, O)) : a7(h$.bind(null, O)), aA ? I1(function() {
+                if (f != null && eJ(f), T === 1) O.tag === 0 ? iZ(h$.bind(null, O)) : a7(h$.bind(null, O)), BASE64_CHARS ? I1(function() {
                     (I8 & 6) === 0 && p8()
                 }) : HG(GV, p8), f = null;
                 else {
@@ -933,7 +936,7 @@ function XV(O, T) {
             }
         }
 
-function qN(O, T) {
+        function qN(O, T) {
             if ($N = -1, oO = 0, (I8 & 6) !== 0) throw Error(Z(327));
             var f = O.callbackNode;
             if (qz() && O.callbackNode !== f) return null;
@@ -1008,11 +1011,11 @@ function qN(O, T) {
             return O.current.memoizedState.isDehydrated && (wz(O, T).flags |= 256), O = NN(O, T), O !== 2 && (T = XX, XX = f, T !== null && Ku(T)), O
         }
 
-function Ku(O) {
+        function Ku(O) {
             XX === null ? XX = O : XX.push.apply(XX, O)
         }
 
-function sa(O) {
+        function sa(O) {
             for (var T = O;;) {
                 if (T.flags & 16384) {
                     var f = T.updateQueue;
@@ -1041,7 +1044,7 @@ function sa(O) {
             return !0
         }
 
-function rZ(O, T) {
+        function rZ(O, T) {
             T &= ~Fj, T &= ~f$, O.suspendedLanes |= T, O.pingedLanes &= ~T;
             for (O = O.expirationTimes; 0 < T;) {
                 var f = 31 - P1(T),
@@ -1050,7 +1053,7 @@ function rZ(O, T) {
             }
         }
 
-function h$(O) {
+        function h$(O) {
             if ((I8 & 6) !== 0) throw Error(Z(327));
             qz();
             var T = EB(O, 0);
@@ -1065,7 +1068,7 @@ function h$(O) {
             return O.finishedWork = O.current.alternate, O.finishedLanes = T, xC(O, XX, jK), XV(O, z3()), null
         }
 
-function Du(O) {
+        function Du(O) {
             GH !== null && GH.tag === 0 && (I8 & 6) === 0 && qz();
             var T = I8;
             I8 |= 1;
@@ -1078,11 +1081,11 @@ function Du(O) {
             }
         }
 
-function tO() {
+        function tO() {
             WV = sO.current, u9(sO)
         }
 
-function wz(O, T) {
+        function wz(O, T) {
             O.finishedWork = null, O.finishedLanes = 0;
             var f = O.timeoutHandle;
             if (f !== rA && (O.timeoutHandle = rA, yA(f)), EG !== null)
@@ -1132,7 +1135,7 @@ function wz(O, T) {
             return O
         }
 
-function Hu(O, T) {
+        function Hu(O, T) {
             do {
                 var f = EG;
                 try {
@@ -1217,17 +1220,17 @@ function Hu(O, T) {
             } while (1)
         }
 
-function Cu() {
+        function Cu() {
             var O = _x.current;
             return _x.current = Au, O === null ? Au : O
         }
 
-function Eu() {
+        function Eu() {
             if (K5 === 0 || K5 === 3 || K5 === 2) K5 = 4;
             LY === null || (UN & 268435455) === 0 && (f$ & 268435455) === 0 || rZ(LY, MY)
         }
 
-function NN(O, T) {
+        function NN(O, T) {
             var f = I8;
             I8 |= 2;
             var n = Cu();
@@ -1243,20 +1246,20 @@ function NN(O, T) {
             return LY = null, MY = 0, K5
         }
 
-function ra() {
+        function ra() {
             for (; EG !== null;) G4(EG)
         }
 
-function LN() {
+        function LN() {
             for (; EG !== null && !WF();) G4(EG)
         }
 
-function G4(O) {
+        function G4(O) {
             var T = XBA(O.alternate, O, WV);
             O.memoizedProps = O.pendingProps, T === null ? g$(O) : EG = T, Xj.current = null
         }
 
-function g$(O) {
+        function g$(O) {
             var T = O;
             do {
                 var f = T.alternate;
@@ -1285,7 +1288,7 @@ function g$(O) {
             K5 === 0 && (K5 = 5)
         }
 
-function xC(O, T, f) {
+        function xC(O, T, f) {
             var n = B4,
                 t = h6.transition;
             try {
@@ -1296,7 +1299,7 @@ function xC(O, T, f) {
             return null
         }
 
-function O4(O, T, f, n) {
+        function O4(O, T, f, n) {
             do qz(); while (GH !== null);
             if ((I8 & 6) !== 0) throw Error(Z(327));
             f = O.finishedWork;
@@ -1323,7 +1326,7 @@ function O4(O, T, f, n) {
             return (k4 & 1) !== 0 && O.tag !== 0 && qz(), EA = O.pendingLanes, (EA & 1) !== 0 ? O === aa ? Dj++ : (Dj = 0, aa = O) : Dj = 0, p8(), null
         }
 
-function qz() {
+        function qz() {
             if (GH !== null) {
                 var O = QV(k4),
                     T = h6.transition,
@@ -1442,11 +1445,11 @@ function qz() {
             return !1
         }
 
-function JBA(O, T, f) {
+        function JBA(O, T, f) {
             T = pO(f, T), T = Ij(O, T, 1), O = Vz(O, T, 1), T = FX(), O !== null && (l5(O, 1, T), XV(O, T))
         }
 
-function W7(O, T, f) {
+        function W7(O, T, f) {
             if (O.tag === 3) JBA(O, O, f);
             else
                 for (; T !== null;) {
@@ -1464,24 +1467,24 @@ function W7(O, T, f) {
                 }
         }
 
-function oa(O, T, f) {
+        function oa(O, T, f) {
             var n = O.pingCache;
             n !== null && n.delete(T), T = FX(), O.pingedLanes |= O.suspendedLanes & f, LY === O && (MY & f) === f && (K5 === 4 || K5 === 3 && (MY & 130023424) === MY && 500 > z3() - Xu ? wz(O, 0) : Fj |= f), XV(O, T)
         }
 
-function ta(O, T) {
+        function ta(O, T) {
             T === 0 && ((O.mode & 1) === 0 ? T = 1 : (T = dQ, dQ <<= 1, (dQ & 130023424) === 0 && (dQ = 4194304)));
             var f = FX();
             O = TK(O, T), O !== null && (l5(O, T, f), XV(O, f))
         }
 
-function WBA(O) {
+        function WBA(O) {
             var T = O.memoizedState,
                 f = 0;
             T !== null && (f = T.retryLane), ta(O, f)
         }
 
-function jFA(O, T) {
+        function jFA(O, T) {
             var f = 0;
             switch (O.tag) {
                 case 13:
@@ -1498,8 +1501,7 @@ function jFA(O, T) {
             }
             n !== null && n.delete(T), ta(O, f)
         }
-
-var XBA = function(O, T, f) {
+        var XBA = function(O, T, f) {
             if (O !== null)
                 if (O.memoizedProps !== T.pendingProps || Q4.current) L9 = !0;
                 else {

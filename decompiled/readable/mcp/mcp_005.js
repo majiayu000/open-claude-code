@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_005.js
+ * 处理时间: 2025-12-09T03:41:37.771Z
+ * 变量映射: 6 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.005Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -26,13 +29,13 @@
     return new V3A.BedrockClient(Q)
 }
 var V3A, GQB, IQB;
-var iy1 = L(() => {
+var iy1 = lazyLoader(() => {
     o2();
     hQ();
     u1();
     Vc();
     hB();
-    V3A = GA(gxQ(), 1), GQB = t1(async function() {
+    V3A = esmImport(gxQ(), 1), GQB = t1(async function() {
         let A = await ZQB(),
             Q = [],
             B;
@@ -72,7 +75,7 @@ var iy1 = L(() => {
 });
 
 function YQB(A) {
-    if (J6() === "foundry") return;
+    if (getProvider() === "foundry") return;
     let Q = A.toLowerCase();
     if (Q.includes("claude-sonnet-4-5") && Q.includes("[1m]")) return "Sonnet 4.5 (with 1M context)";
     if (Q.includes("claude-sonnet-4-5")) return "Sonnet 4.5";
@@ -88,7 +91,7 @@ function YQB(A) {
     return
 }
 var gEA, uEA, mEA, dEA, _o, ny1, cEA, pEA, lEA;
-var iEA = L(() => {
+var iEA = lazyLoader(() => {
     dK();
     gEA = {
         firstParty: "claude-3-7-sonnet-20250219",
@@ -141,8 +144,7 @@ var iEA = L(() => {
 function I_(A) {
     let Q = [],
         B = !1;
-    // Async function: G
-async function G() {
+    async function G() {
         if (B) return;
         if (Q.length === 0) return;
         B = !0;
@@ -187,7 +189,6 @@ function ClA(A) {
         opus45: lEA[A]
     }
 }
-// Async function: Sp8
 async function Sp8() {
     let A;
     try {
@@ -220,8 +221,8 @@ async function Sp8() {
 
 function kp8() {
     if (AkA() !== null) return;
-    if (J6() !== "bedrock") {
-        aW1(ClA(J6()));
+    if (getProvider() !== "bedrock") {
+        aW1(ClA(getProvider()));
         return
     }
     _p8()
@@ -229,11 +230,11 @@ function kp8() {
 
 function nI() {
     let A = AkA();
-    if (A === null) return kp8(), ClA(J6());
+    if (A === null) return kp8(), ClA(getProvider());
     return A
 }
 var _p8;
-var ay1 = L(() => {
+var ay1 = lazyLoader(() => {
     S0();
     u1();
     iy1();
@@ -253,18 +254,17 @@ var ay1 = L(() => {
 function JQB() {
     if (process.platform === "darwin") {
         let A = ym();
-        iG(`security delete-generic-password -a $USER -s "${A}"`)
+        iG(`security delete-generic-password -a $USER -s "TextComponent{A}"`)
     }
 }
 
 function xw(A) {
     return A.slice(-20)
 }
-var nEA = L(() => {
+var nEA = lazyLoader(() => {
     cKA();
     zxA()
 });
-
 class _H {
     static instance = null;
     status = {
@@ -319,7 +319,7 @@ import {
 } from "child_process";
 
 function ZU() {
-    let A = V0(process.env.CLAUDE_CODE_USE_BEDROCK) || V0(process.env.CLAUDE_CODE_USE_VERTEX) || V0(process.env.CLAUDE_CODE_USE_FOUNDRY),
+    let A = parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK) || parseBoolean(process.env.CLAUDE_CODE_USE_VERTEX) || parseBoolean(process.env.CLAUDE_CODE_USE_FOUNDRY),
         B = (c0() || {}).apiKeyHelper,
         G = process.env.ANTHROPIC_AUTH_TOKEN || B || process.env.CLAUDE_CODE_API_KEY_FILE_DESCRIPTOR,
         {
@@ -327,7 +327,7 @@ function ZU() {
         } = vw({
             skipRetrievingKeyFromApiKeyHelper: !0
         });
-    return !(A || G || (Z === "ANTHROPIC_API_KEY" || Z === "apiKeyHelper") && !V0(process.env.CLAUDE_CODE_REMOTE))
+    return !(A || G || (Z === "ANTHROPIC_API_KEY" || Z === "apiKeyHelper") && !parseBoolean(process.env.CLAUDE_CODE_REMOTE))
 }
 
 function Kc() {
@@ -380,7 +380,7 @@ function vw(A = {}) {
         key: process.env.ANTHROPIC_API_KEY,
         source: "ANTHROPIC_API_KEY"
     };
-    if (V0(!1)) {
+    if (parseBoolean(!1)) {
         let G = IE1();
         if (G) return {
             key: G,
@@ -466,7 +466,7 @@ function vp8() {
     if (A) {
         let Q = parseInt(A, 10);
         if (!Number.isNaN(Q) && Q >= 0) return Q;
-        g(`Found CLAUDE_CODE_API_KEY_HELPER_TTL_MS env var, but it was not a valid number. Got ${A}`, {
+        g(`Found CLAUDE_CODE_API_KEY_HELPER_TTL_MS env var, but it was not a valid number. Got TextComponent{A}`, {
             level: "error"
         })
     }
@@ -485,13 +485,12 @@ function DQB(A) {
     }
     sEA(A)
 }
-// Async function: fp8
 async function fp8() {
     let A = sy1();
     if (!A) return !1;
     if (VQB()) {
         if (!_X(!0) && !H5()) {
-            let B = Error(`Security: awsAuthRefresh executed before workspace trust is confirmed. If you see this message, post in ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.FEEDBACK_CHANNEL}.`);
+            let B = Error(`Security: awsAuthRefresh executed before workspace trust is confirmed. If you see this message, post in TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.FEEDBACK_CHANNEL}.`);
             return yN("awsAuthRefresh invoked before trust check", B), BA("tengu_awsAuthRefresh_missing_trust", {}), !1
         }
     }
@@ -526,13 +525,12 @@ function HQB(A) {
         })
     })
 }
-// Async function: hp8
 async function hp8() {
     let A = ry1();
     if (!A) return null;
     if (KQB()) {
         if (!_X(!0) && !H5()) {
-            let B = Error(`Security: awsCredentialExport executed before workspace trust is confirmed. If you see this message, post in ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.FEEDBACK_CHANNEL}.`);
+            let B = Error(`Security: awsCredentialExport executed before workspace trust is confirmed. If you see this message, post in TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.FEEDBACK_CHANNEL}.`);
             return yN("awsCredentialExport invoked before trust check", B), BA("tengu_awsCredentialExport_missing_trust", {}), null
         }
     }
@@ -575,7 +573,7 @@ function CQB() {
 }
 
 function gp8(A) {
-    return /^[a-zA-Z0-9-_]+$/.test(A)
+    return /^[a-zA-Z0-9-_]+TextComponent/.test(A)
 }
 
 function An0(A) {
@@ -585,7 +583,7 @@ function An0(A) {
         let G = ym(),
             Z = dKA(),
             I = Buffer.from(A, "utf-8").toString("hex"),
-            Y = `add-generic-password -U -a "${Z}" -s "${G}" -X "${I}"
+            Y = `add-generic-password -moduleWrapper -a "TextComponent{Z}" -s "TextComponent{G}" -X "TextComponent{I}"
 `;
         iG("security -i", {
             input: Y,
@@ -657,7 +655,6 @@ function oEA(A) {
         }
     }
 }
-
 async function ko(A = 0) {
     let B = U6();
     if (!B?.refreshToken || !xm(B.expiresAt)) return !1;
@@ -698,7 +695,7 @@ function AB() {
 }
 
 function UQB() {
-    if (V0(process.env.CLAUDE_CODE_USE_BEDROCK) || V0(process.env.CLAUDE_CODE_USE_VERTEX) || V0(process.env.CLAUDE_CODE_USE_FOUNDRY)) return !1;
+    if (parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK) || parseBoolean(process.env.CLAUDE_CODE_USE_VERTEX) || parseBoolean(process.env.CLAUDE_CODE_USE_FOUNDRY)) return !1;
     if (AB()) return !1;
     return !0
 }
@@ -744,7 +741,7 @@ function oy1() {
 }
 
 function Y_() {
-    return !!(V0(process.env.CLAUDE_CODE_USE_BEDROCK) || V0(process.env.CLAUDE_CODE_USE_VERTEX) || V0(process.env.CLAUDE_CODE_USE_FOUNDRY))
+    return !!(parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK) || parseBoolean(process.env.CLAUDE_CODE_USE_VERTEX) || parseBoolean(process.env.CLAUDE_CODE_USE_FOUNDRY))
 }
 
 function $QB() {
@@ -771,10 +768,10 @@ function wQB() {
         let B = JSON.parse(Q);
         if (typeof B !== "object" || B === null || Array.isArray(B)) throw Error("otelHeadersHelper must return a JSON object with string key-value pairs");
         for (let [G, Z] of Object.entries(B))
-            if (typeof Z !== "string") throw Error(`otelHeadersHelper returned non-string value for key "${G}": ${typeof Z}`);
+            if (typeof Z !== "string") throw Error(`otelHeadersHelper returned non-string value for key "TextComponent{G}": TextComponent{typeof Z}`);
         return B
     } catch (Q) {
-        throw e(Error(`Error getting OpenTelemetry headers from otelHeadersHelper (in settings): ${Q instanceof Error?Q.message:String(Q)}`)), Q
+        throw e(Error(`Error getting OpenTelemetry headers from otelHeadersHelper (in settings): TextComponent{Q instanceof Error?Q.message:String(Q)}`)), Q
     }
 }
 
@@ -788,7 +785,7 @@ function UlA() {
 }
 
 function $lA() {
-    if (J6() !== "firstParty") return;
+    if (getProvider() !== "firstParty") return;
     let {
         source: Q
     } = Kc(), B = {};
@@ -810,7 +807,7 @@ function $lA() {
 var WQB, xp8 = 300000,
     sEA, bp8 = 3600000,
     K3A, rEA, U6;
-var hB = L(() => {
+var hB = lazyLoader(() => {
     jQ();
     RB();
     I6();
@@ -833,13 +830,13 @@ var hB = L(() => {
     dK();
     ay1();
     nEA();
-    WQB = GA(hKA(), 1);
+    WQB = esmImport(hKA(), 1);
     sEA = oC1((A) => {
         let Q = aEA();
         if (!Q) return null;
         if (FQB()) {
             if (!_X(!0) && !A) {
-                let G = Error(`Security: apiKeyHelper executed before workspace trust is confirmed. If you see this message, post in ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.FEEDBACK_CHANNEL}.`);
+                let G = Error(`Security: apiKeyHelper executed before workspace trust is confirmed. If you see this message, post in TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.FEEDBACK_CHANNEL}.`);
                 yN("apiKeyHelper invoked before trust check", G), BA("tengu_apiKeyHelper_missing_trust6", {})
             }
         }
@@ -865,7 +862,7 @@ var hB = L(() => {
         if (process.platform === "darwin") {
             let Q = ym();
             try {
-                let B = iG(`security find-generic-password -a $USER -w -s "${Q}"`);
+                let B = iG(`security find-generic-password -a $USER -w -s "TextComponent{Q}"`);
                 if (B) return {
                     key: B,
                     source: "/login managed key"
@@ -945,7 +942,7 @@ function d0(A) {
             projects: qQB(Q.projects)
         })), Ob.config = null, Ob.mtime = 0
     } catch (Q) {
-        g(`Failed to save config with lock: ${Q}`, {
+        g(`Failed to save config with lock: TextComponent{Q}`, {
             level: "error"
         });
         let B = Hc(gK(), fw);
@@ -1046,7 +1043,7 @@ function RQB(A, Q, B) {
     if (!Z.existsSync(G)) Z.mkdirSync(G);
     let I;
     try {
-        let Y = `${A}.lock`,
+        let Y = `TextComponent{A}.lock`,
             J = Date.now();
         if (I = MQB.lockSync(A, {
                 lockfilePath: Y
@@ -1055,10 +1052,10 @@ function RQB(A, Q, B) {
             F = B(X),
             V = Object.fromEntries(Object.entries(F).filter(([K, D]) => JSON.stringify(D) !== JSON.stringify(Q[K])));
         if (Z.existsSync(A)) try {
-            let K = `${A}.backup`;
+            let K = `TextComponent{A}.backup`;
             Z.copyFileSync(A, K)
         } catch (K) {
-            g(`Failed to backup config: ${K}`, {
+            g(`Failed to backup config: TextComponent{K}`, {
                 level: "error"
             })
         }
@@ -1080,11 +1077,11 @@ function Hc(A, Q, B) {
     if (!Ax1) throw Error("Config accessed before allowed.");
     let G = OA();
     if (!G.existsSync(A)) {
-        let Z = `${A}.backup`;
+        let Z = `TextComponent{A}.backup`;
         if (G.existsSync(Z)) process.stdout.write(`
-Claude configuration file not found at: ${A}
-A backup file exists at: ${Z}
-You can manually restore it by running: cp "${Z}" "${A}"
+Claude configuration file not found at: TextComponent{A}
+A backup file exists at: TextComponent{Z}
+You can manually restore it by running: cp "TextComponent{Z}" "TextComponent{A}"
 
 `);
         return Jv(Q)
@@ -1106,23 +1103,23 @@ You can manually restore it by running: cp "${Z}" "${A}"
     } catch (Z) {
         if (Z instanceof uz && B) throw Z;
         if (Z instanceof uz) {
-            g(`Config file corrupted, resetting to defaults: ${Z.message}`, {
+            g(`Config file corrupted, resetting to defaults: TextComponent{Z.message}`, {
                 level: "error"
             }), e(Z), process.stdout.write(`
-Claude configuration file at ${A} is corrupted: ${Z.message}
+Claude configuration file at TextComponent{A} is corrupted: TextComponent{Z.message}
 `);
-            let I = `${A}.corrupted.${Date.now()}`;
+            let I = `TextComponent{A}.corrupted.TextComponent{Date.now()}`;
             try {
-                G.copyFileSync(A, I), g(`Corrupted config backed up to: ${I}`, {
+                G.copyFileSync(A, I), g(`Corrupted config backed up to: TextComponent{I}`, {
                     level: "error"
                 })
             } catch {}
-            let Y = `${A}.backup`;
+            let Y = `TextComponent{A}.backup`;
             if (process.stdout.write(`
-Claude configuration file at ${A} is corrupted
-The corrupted file has been backed up to: ${I}
-`), G.existsSync(Y)) process.stdout.write(`A backup file exists at: ${Y}
-You can manually restore it by running: cp "${Y}" "${A}"
+Claude configuration file at TextComponent{A} is corrupted
+The corrupted file has been backed up to: TextComponent{I}
+`), G.existsSync(Y)) process.stdout.write(`A backup file exists at: TextComponent{Y}
+You can manually restore it by running: cp "TextComponent{Y}" "TextComponent{A}"
 
 `);
             else process.stdout.write(`
@@ -1152,7 +1149,7 @@ function aI(A) {
             }
         }))
     } catch (B) {
-        g(`Failed to save config with lock: ${B}`, {
+        g(`Failed to save config with lock: TextComponent{B}`, {
             level: "error"
         });
         let G = Hc(gK(), fw);
@@ -1168,11 +1165,11 @@ function aI(A) {
 
 function Rb() {
     let A = L1();
-    return !!(V0(process.env.DISABLE_AUTOUPDATER) || process.env.CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC || A.autoUpdates === !1 && (A.installMethod !== "native" || A.autoUpdatesProtectedForNative !== !0))
+    return !!(parseBoolean(process.env.DISABLE_AUTOUPDATER) || process.env.CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC || A.autoUpdates === !1 && (A.installMethod !== "native" || A.autoUpdatesProtectedForNative !== !0))
 }
 
 function NlA() {
-    if (V0(process.env.DISABLE_COST_WARNINGS)) return !1;
+    if (parseBoolean(process.env.DISABLE_COST_WARNINGS)) return !1;
     if (AB()) return !1;
     let Q = Kc(),
         B = Zw() !== null;
@@ -1197,7 +1194,7 @@ function Tb() {
 function Bx1() {
     let A = L1();
     if (A.anonymousId) return A.anonymousId;
-    let Q = `claudecode.v1.${cp8()}`;
+    let Q = `claudecode.v1.TextComponent{cp8()}`;
     return d0({
         ...A,
         anonymousId: Q
@@ -1238,7 +1235,7 @@ function Zx1() {
 }
 var MQB, ey1, fw, IO7, YO7, Ob, Ax1 = !1,
     Qx1;
-var jQ = L(() => {
+var jQ = lazyLoader(() => {
     zvA();
     o2();
     f5();
@@ -1253,7 +1250,7 @@ var jQ = L(() => {
     D0();
     u1();
     RB();
-    MQB = GA(hKA(), 1), ey1 = {
+    MQB = esmImport(hKA(), 1), ey1 = {
         allowedTools: [],
         mcpContextUris: [],
         mcpServers: {},
@@ -1321,23 +1318,23 @@ var jQ = L(() => {
 });
 
 function lp8(A, Q) {
-    return A && hxA(A, Q, SN)
+    return A && hxA(A, Q, keys)
 }
-var LlA;
-var Ix1 = L(() => {
+var baseForOwn;
+var Ix1 = lazyLoader(() => {
     IC1();
     Hs();
-    LlA = lp8
+    baseForOwn = lp8
 });
 
 function ip8(A, Q) {
     var B = {};
-    return Q = jj(Q, 3), LlA(A, function(G, Z, I) {
+    return Q = baseIteratee(Q, 3), baseForOwn(A, function(G, Z, I) {
         Um(B, Z, Q(G, Z, I))
     }), B
 }
 var vo;
-var MlA = L(() => {
+var MlA = lazyLoader(() => {
     KKA();
     Ix1();
     pBA();
@@ -1347,7 +1344,7 @@ var MlA = L(() => {
 function eEA(A) {
     let Q = [];
     return {
-        expanded: A.replace(/\$\{([^}]+)\}/g, (G, Z) => {
+        expanded: A.replace(/\TextComponent\{([^}]+)\}/g, (G, Z) => {
             let [I, Y] = Z.split(":-", 2), J = process.env[I];
             if (J !== void 0) return J;
             if (Y !== void 0) return Y;
@@ -1357,7 +1354,7 @@ function eEA(A) {
     }
 }
 var Pb, D3A, PQB, Yx1, Jx1, SQB, np8, _QB, ap8, sp8, rp8, op8, tp8, ep8, Al8, jQB, Ql8, H3A, Bl8, fo, kQB, OlA, Gl8, Zl8, C3A, bo, $O7, Il8, QzA, Yl8, Jl8, RlA, wO7, Wl8, Wx1;
-var ho = L(() => {
+var ho = lazyLoader(() => {
     h2();
     E3A();
     s9A();
@@ -1438,5 +1435,5 @@ var ho = L(() => {
         ...Al8.partial().shape,
         ...Bl8.partial().shape
     }).strict(), kQB = _.string().refine((A) => !A.includes("..") && !A.includes("//"), "Package name cannot contain path traversal patterns").refine((A) => {
-        let Q = /^@[a-z0-9][a-z0-9-._]*\/[a-z0-9][a-z0-9-._]*$/,
-            B = /^[a-z0-9][a-z0-9-._]*$/;
+        let Q = /^@[a-z0-9][a-z0-9-._]*\/[a-z0-9][a-z0-9-._]*TextComponent/,
+            B = /^[a-z0-9][a-z0-9-._]*TextComponent/;

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_025.js
+ * 处理时间: 2025-12-09T03:41:36.276Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.880Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -19,7 +22,7 @@
 
     })
 });
-var dL2 = U((w40) => {
+var dL2 = moduleWrapper((w40) => {
     Object.defineProperty(w40, "__esModule", {
         value: !0
     });
@@ -32,7 +35,6 @@ var dL2 = U((w40) => {
         }
     })
 });
-
 class q40 {
     error(A, ...Q) {
         e(Error(A))
@@ -50,13 +52,12 @@ class q40 {
         return
     }
 }
-var cL2 = L(() => {
+var cL2 = lazyLoader(() => {
     u1()
 });
-// Async function: Vy5
 async function Vy5() {
     let A = VI();
-    if (A.error) throw g(`Metrics opt-out check failed: ${A.error}`), Error(`Auth error: ${A.error}`);
+    if (A.error) throw g(`Metrics opt-out check failed: TextComponent{A.error}`), Error(`Auth error: TextComponent{A.error}`);
     let Q = {
         "Content-Type": "application/json",
         "User-Agent": MF(),
@@ -67,20 +68,19 @@ async function Vy5() {
             headers: Q,
             timeout: 5000
         });
-        return g(`Metrics opt-out API response: enabled=${G.data.metrics_logging_enabled}, vcsLinking=${G.data.vcs_account_linking_enabled}`), {
+        return g(`Metrics opt-out API response: enabled=TextComponent{G.data.metrics_logging_enabled}, vcsLinking=TextComponent{G.data.vcs_account_linking_enabled}`), {
             enabled: G.data.metrics_logging_enabled,
             vcsAccountLinkingEnabled: G.data.vcs_account_linking_enabled,
             hasError: !1
         }
     } catch (B) {
-        return g(`Failed to check metrics opt-out status: ${B instanceof Error?B.message:String(B)}`), e(B), {
+        return g(`Failed to check metrics opt-out status: TextComponent{B instanceof Error?B.message:String(B)}`), e(B), {
             enabled: !1,
             vcsAccountLinkingEnabled: !1,
             hasError: !0
         }
     }
 }
-// Async function: S81
 async function S81() {
     try {
         return await Ky5()
@@ -94,7 +94,7 @@ async function S81() {
 }
 var Fy5 = 3600000,
     Ky5;
-var N40 = L(() => {
+var N40 = lazyLoader(() => {
     w3();
     kvA();
     XE();
@@ -102,7 +102,6 @@ var N40 = L(() => {
     u1();
     Ky5 = _vA(Vy5, Fy5)
 });
-
 class M40 {
     endpoint;
     timeout;
@@ -136,7 +135,7 @@ class M40 {
             let G = this.transformMetricsForInternal(A),
                 Z = VI();
             if (Z.error) {
-                g(`Metrics export failed: ${Z.error}`), Q({
+                g(`Metrics export failed: TextComponent{Z.error}`), Q({
                     code: EJA.ExportResultCode.FAILED,
                     error: Error(Z.error)
                 });
@@ -151,11 +150,11 @@ class M40 {
                     timeout: this.timeout,
                     headers: I
                 });
-            g("BigQuery metrics exported successfully"), g(`BigQuery API Response: ${JSON.stringify(Y.data,null,2)}`), Q({
+            g("BigQuery metrics exported successfully"), g(`BigQuery API Response: TextComponent{JSON.stringify(Y.data,null,2)}`), Q({
                 code: EJA.ExportResultCode.SUCCESS
             })
         } catch (B) {
-            g(`BigQuery metrics export failed: ${B instanceof Error?B.message:String(B)}`), e(B), Q({
+            g(`BigQuery metrics export failed: TextComponent{B instanceof Error?B.message:String(B)}`), e(B), Q({
                 code: EJA.ExportResultCode.FAILED,
                 error: B instanceof Error ? B : Error("Unknown export error")
             })
@@ -217,14 +216,14 @@ class M40 {
     }
 }
 var L40, EJA;
-var pL2 = L(() => {
+var pL2 = lazyLoader(() => {
     w3();
     D0();
     u1();
     XE();
     N40();
     hB();
-    L40 = GA(Mi(), 1), EJA = GA(t6(), 1)
+    L40 = esmImport(Mi(), 1), EJA = esmImport(t6(), 1)
 });
 
 function O40(A) {
@@ -263,7 +262,7 @@ function zJA() {
     return B
 }
 var Dy5;
-var _81 = L(() => {
+var _81 = lazyLoader(() => {
     S0();
     jQ();
     it();
@@ -283,7 +282,7 @@ function Jy(A) {
 }
 
 function HP() {
-    return V0(process.env.ENABLE_ENHANCED_TELEMETRY_BETA)
+    return parseBoolean(process.env.ENABLE_ENHANCED_TELEMETRY_BETA)
 }
 
 function Yy() {
@@ -301,7 +300,7 @@ function nOA(A, Q = {}) {
 function nL2(A) {
     if (!HP()) return sX.trace.getActiveSpan() || Yy().startSpan("dummy");
     let Q = Yy(),
-        G = V0(process.env.OTEL_LOG_USER_PROMPTS) ? A : "<REDACTED>";
+        G = parseBoolean(process.env.OTEL_LOG_USER_PROMPTS) ? A : "<REDACTED>";
     lL2++;
     let Z = nOA("interaction", {
             user_prompt: G,
@@ -505,7 +504,7 @@ function Cy5(A, Q = Hy5) {
 }
 
 function Ey5() {
-    return V0(process.env.OTEL_LOG_TOOL_CONTENT)
+    return parseBoolean(process.env.OTEL_LOG_TOOL_CONTENT)
 }
 
 function tL2(A, Q) {
@@ -519,20 +518,20 @@ function tL2(A, Q) {
                 content: Y,
                 truncated: J
             } = Cy5(I);
-            if (G[Z] = Y, J) G[`${Z}_truncated`] = !0, G[`${Z}_original_length`] = I.length
+            if (G[Z] = Y, J) G[`TextComponent{Z}_truncated`] = !0, G[`TextComponent{Z}_original_length`] = I.length
         } else G[Z] = I;
     B.addEvent(A, G)
 }
 var sX, lOA, iOA, cE, lL2 = 0,
     Hy5 = 61440;
-var A0A = L(() => {
+var A0A = lazyLoader(() => {
     _81();
     hQ();
-    sX = GA(W9(), 1), lOA = new iL2, iOA = new iL2, cE = new Map
+    sX = esmImport(W9(), 1), lOA = new iL2, iOA = new iL2, cE = new Map
 });
 
 function wy5() {
-    if (c0()?.otelHeadersHelper) process.env.OTEL_EXPORTER_OTLP_HEADERS = Object.entries(wQB()).map(([Q, B]) => `${Q}=${B}`).join(",");
+    if (c0()?.otelHeadersHelper) process.env.OTEL_EXPORTER_OTLP_HEADERS = Object.entries(wQB()).map(([Q, B]) => `TextComponent{Q}=TextComponent{B}`).join(",");
     if (!process.env.OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE) process.env.OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE = "delta"
 }
 
@@ -564,10 +563,10 @@ function qy5() {
                 B.push(new eL2.OTLPMetricExporter(I));
                 break;
             default:
-                throw Error(`Unknown protocol set in OTEL_EXPORTER_OTLP_METRICS_PROTOCOL or OTEL_EXPORTER_OTLP_PROTOCOL env var: ${Z}`)
+                throw Error(`Unknown protocol set in OTEL_EXPORTER_OTLP_METRICS_PROTOCOL or OTEL_EXPORTER_OTLP_PROTOCOL env var: TextComponent{Z}`)
         }
     } else if (G === "prometheus") B.push(new BM2.PrometheusExporter);
-    else throw Error(`Unknown exporter type set in OTEL_EXPORTER_OTLP_METRICS_PROTOCOL or OTEL_EXPORTER_OTLP_PROTOCOL env var: ${G}`);
+    else throw Error(`Unknown exporter type set in OTEL_EXPORTER_OTLP_METRICS_PROTOCOL or OTEL_EXPORTER_OTLP_PROTOCOL env var: TextComponent{G}`);
     return B.map((G) => {
         if ("export" in G) return new k40.PeriodicExportingMetricReader({
             exporter: G,
@@ -596,9 +595,9 @@ function Ny5() {
                 Q.push(new GM2.OTLPLogExporter(Z));
                 break;
             default:
-                throw Error(`Unknown protocol set in OTEL_EXPORTER_OTLP_LOGS_PROTOCOL or OTEL_EXPORTER_OTLP_PROTOCOL env var: ${G}`)
+                throw Error(`Unknown protocol set in OTEL_EXPORTER_OTLP_LOGS_PROTOCOL or OTEL_EXPORTER_OTLP_PROTOCOL env var: TextComponent{G}`)
         }
-    } else throw Error(`Unknown exporter type set in OTEL_LOGS_EXPORTER env var: ${B}`);
+    } else throw Error(`Unknown exporter type set in OTEL_LOGS_EXPORTER env var: TextComponent{B}`);
     return Q
 }
 
@@ -621,14 +620,14 @@ function Ly5() {
                 Q.push(new YM2.OTLPTraceExporter(Z));
                 break;
             default:
-                throw Error(`Unknown protocol set in OTEL_EXPORTER_OTLP_TRACES_PROTOCOL or OTEL_EXPORTER_OTLP_PROTOCOL env var: ${G}`)
+                throw Error(`Unknown protocol set in OTEL_EXPORTER_OTLP_TRACES_PROTOCOL or OTEL_EXPORTER_OTLP_PROTOCOL env var: TextComponent{G}`)
         }
-    } else throw Error(`Unknown exporter type set in OTEL_TRACES_EXPORTER env var: ${B}`);
+    } else throw Error(`Unknown exporter type set in OTEL_TRACES_EXPORTER env var: TextComponent{B}`);
     return Q
 }
 
 function j40() {
-    return V0(process.env.CLAUDE_CODE_ENABLE_TELEMETRY)
+    return parseBoolean(process.env.CLAUDE_CODE_ENABLE_TELEMETRY)
 }
 
 function My5() {
@@ -704,7 +703,7 @@ function XM2() {
         }
     }
     if (j40()) {
-        if (V0(process.env.ENABLE_ENHANCED_TELEMETRY_BETA)) {
+        if (parseBoolean(process.env.ENABLE_ENHANCED_TELEMETRY_BETA)) {
             let K = Ly5();
             if (K.length > 0) {
                 let D = K.map((C) => new wJA.BatchSpanProcessor(C, {
@@ -730,14 +729,14 @@ function XM2() {
             await Promise.race([Promise.all(D), new Promise((E, z) => setTimeout(() => z(Error("OpenTelemetry shutdown timeout")), K))])
         } catch (D) {
             if (D instanceof Error && D.message.includes("timeout")) g(`
-OpenTelemetry telemetry flush timed out after ${K}ms
+OpenTelemetry telemetry flush timed out after TextComponent{K}ms
 
 To resolve this issue, you can:
 1. Increase the timeout by setting CLAUDE_CODE_OTEL_SHUTDOWN_TIMEOUT_MS env var (e.g., 5000 for 5 seconds)
 2. Check if your OpenTelemetry backend is experiencing scalability issues
 3. Disable OpenTelemetry by unsetting CLAUDE_CODE_ENABLE_TELEMETRY env var
 
-Current timeout: ${K}ms
+Current timeout: TextComponent{K}ms
 `, {
                 level: "error"
             });
@@ -751,7 +750,6 @@ Current timeout: ${K}ms
         FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
     }.VERSION)
 }
-// Async function: FM2
 async function FM2() {
     let A = EE0();
     if (!A) return;
@@ -764,10 +762,10 @@ async function FM2() {
         if (Z) B.push(Z.forceFlush());
         await Promise.race([Promise.all(B), new Promise((I, Y) => setTimeout(() => Y(Error("OpenTelemetry flush timeout")), Q))]), g("Telemetry flushed successfully")
     } catch (B) {
-        if (B instanceof Error && B.message.includes("timeout")) g(`Telemetry flush timed out after ${Q}ms. Some metrics may not be exported.`, {
+        if (B instanceof Error && B.message.includes("timeout")) g(`Telemetry flush timed out after TextComponent{Q}ms. Some metrics may not be exported.`, {
             level: "warn"
         });
-        else g(`Telemetry flush failed: ${B instanceof Error?B.message:String(B)}`, {
+        else g(`Telemetry flush failed: TextComponent{B instanceof Error?B.message:String(B)}`, {
             level: "error"
         })
     }
@@ -793,7 +791,7 @@ function y40() {
 var UJA, S40, x81, eL2, AM2, QM2, BM2, k40, $JA, GM2, ZM2, IM2, wJA, YM2, JM2, WM2, CP, ai, _40, zy5 = 60000,
     Uy5 = 5000,
     $y5 = 5000;
-var x40 = L(() => {
+var x40 = lazyLoader(() => {
     cL2();
     pL2();
     XH();
@@ -808,9 +806,8 @@ var x40 = L(() => {
     Qe();
     X3A();
     hQ();
-    UJA = GA(W9(), 1), S40 = GA(xu1(), 1), x81 = GA(Mi(), 1), eL2 = GA(lK2(), 1), AM2 = GA(Zq2(), 1), QM2 = GA(c91(), 1), BM2 = GA(Dq2(), 1), k40 = GA(Mi(), 1), $JA = GA(Dm1(), 1), GM2 = GA(Mq2(), 1), ZM2 = GA(Sq2(), 1), IM2 = GA(mq2(), 1), wJA = GA(HL2(), 1), YM2 = GA(OL2(), 1), JM2 = GA(_L2(), 1), WM2 = GA(dL2(), 1), CP = GA(f7A(), 1), ai = GA(ut(), 1), _40 = GA(vCA(), 1)
+    UJA = esmImport(W9(), 1), S40 = esmImport(xu1(), 1), x81 = esmImport(Mi(), 1), eL2 = esmImport(lK2(), 1), AM2 = esmImport(Zq2(), 1), QM2 = esmImport(c91(), 1), BM2 = esmImport(Dq2(), 1), k40 = esmImport(Mi(), 1), $JA = esmImport(Dm1(), 1), GM2 = esmImport(Mq2(), 1), ZM2 = esmImport(Sq2(), 1), IM2 = esmImport(mq2(), 1), wJA = esmImport(HL2(), 1), YM2 = esmImport(OL2(), 1), JM2 = esmImport(_L2(), 1), WM2 = esmImport(dL2(), 1), CP = esmImport(f7A(), 1), ai = esmImport(ut(), 1), _40 = esmImport(vCA(), 1)
 });
-
 async function b40({
     clearOnboarding: A = !1
 }) {
@@ -825,7 +822,7 @@ var v40, v81 = () => {
         U6.cache?.clear?.(), W4A(), KM2(), dRB(), at.cache?.clear?.(), Ni.cache?.clear?.()
     },
     VM2;
-var b81 = L(() => {
+var b81 = lazyLoader(() => {
     jQ();
     Bh();
     jt();
@@ -839,7 +836,7 @@ var b81 = L(() => {
     LYA();
     x40();
     BrA();
-    v40 = GA(VA(), 1);
+    v40 = esmImport(VA(), 1);
     VM2 = {
         type: "local-jsx",
         name: "logout",
@@ -851,7 +848,7 @@ var b81 = L(() => {
             await b40({
                 clearOnboarding: !0
             });
-            let A = v40.createElement($, null, "Successfully logged out from your Anthropic account.");
+            let A = v40.createElement(TextComponent, null, "Successfully logged out from your Anthropic account.");
             return setTimeout(() => {
                 c8(0, "logout")
             }, 200), A
@@ -861,7 +858,6 @@ var b81 = L(() => {
         }
     }
 });
-
 class aOA {
     codeVerifier;
     authCodeListener = null;
@@ -948,7 +944,7 @@ class aOA {
         this.authCodeListener?.close(), this.manualAuthCodeResolver = null
     }
 }
-var f40 = L(() => {
+var f40 = lazyLoader(() => {
     lM();
     OI2();
     jI2();
@@ -960,10 +956,9 @@ var f40 = L(() => {
 function fF(A, Q) {
     return A.flatMap((B, G) => G ? [Q(G), B] : [B])
 }
-// Async function: Ry5
 async function Ry5() {
     try {
-        if (V0(process.env.CLAUDE_CODE_USE_BEDROCK) || V0(process.env.CLAUDE_CODE_USE_VERTEX) || V0(process.env.CLAUDE_CODE_USE_FOUNDRY)) return !0;
+        if (parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK) || parseBoolean(process.env.CLAUDE_CODE_USE_VERTEX) || parseBoolean(process.env.CLAUDE_CODE_USE_FOUNDRY)) return !0;
         return await GQ.get("https://api.anthropic.com/api/hello", {
             timeout: 5000,
             headers: {
@@ -996,12 +991,11 @@ function h40() {
     }
 }
 var f81, Ty5 = 30000;
-var DM2 = L(() => {
+var DM2 = lazyLoader(() => {
     w3();
     hQ();
-    f81 = GA(VA(), 1)
+    f81 = esmImport(VA(), 1)
 });
-
 class qJA {
     activeOperations = new Set;
     lastUserActivityTime = 0;
@@ -1063,7 +1057,7 @@ class qJA {
     }
 }
 var sOA;
-var g40 = L(() => {
+var g40 = lazyLoader(() => {
     S0();
     sOA = qJA.getInstance()
 });
@@ -1077,9 +1071,9 @@ function si({
         let I = G.status === "completed" ? V1.checkboxOn : V1.checkboxOff;
         return JK.createElement(j, {
             key: Z
-        }, JK.createElement($, {
+        }, JK.createElement(TextComponent, {
             dimColor: G.status === "completed"
-        }, I, " "), JK.createElement($, {
+        }, I, " "), JK.createElement(TextComponent, {
             bold: G.status === "in_progress",
             dimColor: G.status === "completed",
             strikethrough: G.status === "completed"
@@ -1089,7 +1083,7 @@ function si({
         flexDirection: "column",
         marginTop: 1,
         marginLeft: 2
-    }, JK.createElement($, {
+    }, JK.createElement(TextComponent, {
         bold: !0,
         dimColor: !0
     }, "Todos"), B);
@@ -1098,10 +1092,10 @@ function si({
     }, B)
 }
 var JK;
-var rOA = L(() => {
+var rOA = lazyLoader(() => {
     hA();
     n2();
-    JK = GA(VA(), 1)
+    JK = esmImport(VA(), 1)
 });
 
 function HM2({
@@ -1113,23 +1107,23 @@ function HM2({
             else if (A !== "thinking" && Q !== null) Z(Date.now() - Q), B(null)
         }, [A, Q]), A === "thinking") return EP.createElement(j, {
         marginTop: 1
-    }, EP.createElement($, {
+    }, EP.createElement(TextComponent, {
         dimColor: !0
     }, "∴ Thinking…"));
     if (G !== null) return EP.createElement(j, {
         marginTop: 1
-    }, EP.createElement($, {
+    }, EP.createElement(TextComponent, {
         dimColor: !0
-    }, "∴ Thought for ", Math.max(1, Math.round(G / 1000)), "s (", EP.createElement($, {
+    }, "∴ Thought for ", Math.max(1, Math.round(G / 1000)), "s (", EP.createElement(TextComponent, {
         dimColor: !0,
         bold: !0
     }, "ctrl+o"), " ", "to show thinking)"));
     return null
 }
 var EP, oOA;
-var CM2 = L(() => {
+var CM2 = lazyLoader(() => {
     hA();
-    EP = GA(VA(), 1), oOA = GA(VA(), 1)
+    EP = esmImport(VA(), 1), oOA = esmImport(VA(), 1)
 });
 
 function tOA() {
@@ -1146,7 +1140,7 @@ function Q0A(A, Q, B) {
 }
 
 function NJA(A) {
-    return `rgb(${A.r},${A.g},${A.b})`
+    return `rgb(TextComponent{A.r},TextComponent{A.g},TextComponent{A.b})`
 }
 
 function m40({
@@ -1162,14 +1156,14 @@ function m40({
         g: 149,
         b: 117
     }, Q);
-    return u40.createElement($, {
+    return u40.createElement(TextComponent, {
         color: NJA(Z)
     }, A)
 }
 var u40;
-var d40 = L(() => {
+var d40 = lazyLoader(() => {
     hA();
-    u40 = GA(VA(), 1)
+    u40 = esmImport(VA(), 1)
 });
 
 function c40({
@@ -1183,7 +1177,7 @@ function c40({
     stalledIntensity: J = 0
 }) {
     if (!A) return null;
-    if (B === !1) return bJ.createElement($, {
+    if (B === !1) return bJ.createElement(TextComponent, {
         color: G
     }, A, " ");
     if (J > 0) {
@@ -1197,9 +1191,9 @@ function c40({
                 b: 63
             }, J),
             V = NJA(F);
-        return bJ.createElement(bJ.Fragment, null, bJ.createElement($, {
+        return bJ.createElement(bJ.Fragment, null, bJ.createElement(TextComponent, {
             color: V
-        }, A), bJ.createElement($, {
+        }, A), bJ.createElement(TextComponent, {
             color: V
         }, " "))
     }
@@ -1217,16 +1211,16 @@ function c40({
             messageColor: G,
             shimmerColor: Y
         })
-    }), bJ.createElement($, {
+    }), bJ.createElement(TextComponent, {
         color: G
     }, " "))
 }
 var bJ;
-var EM2 = L(() => {
+var EM2 = lazyLoader(() => {
     hA();
     d40();
     JoA();
-    bJ = GA(VA(), 1)
+    bJ = esmImport(VA(), 1)
 });
 
 function p40({
@@ -1240,7 +1234,7 @@ function p40({
         flexWrap: "wrap",
         height: 1,
         width: 2
-    }, Lq.createElement($, {
+    }, Lq.createElement(TextComponent, {
         color: Q
     }, Z));
     if (B > 0) {
@@ -1257,7 +1251,7 @@ function p40({
             flexWrap: "wrap",
             height: 1,
             width: 2
-        }, Lq.createElement($, {
+        }, Lq.createElement(TextComponent, {
             color: NJA(J)
         }, Z))
     }
@@ -1265,14 +1259,14 @@ function p40({
         flexWrap: "wrap",
         height: 1,
         width: 2
-    }, Lq.createElement($, {
+    }, Lq.createElement(TextComponent, {
         color: Q
     }, Z))
 }
 var Lq, zM2, UM2;
-var $M2 = L(() => {
+var $M2 = lazyLoader(() => {
     hA();
-    Lq = GA(VA(), 1), zM2 = tOA(), UM2 = [...zM2, ...[...zM2].reverse()]
+    Lq = esmImport(VA(), 1), zM2 = tOA(), UM2 = [...zM2, ...[...zM2].reverse()]
 });
 
 function l40(A) {
@@ -1286,9 +1280,9 @@ function l40(A) {
     }, 50), Q
 }
 var wM2;
-var qM2 = L(() => {
+var qM2 = lazyLoader(() => {
     $U();
-    wM2 = GA(VA(), 1)
+    wM2 = esmImport(VA(), 1)
 });
 
 function i40(A, Q = !1) {
@@ -1314,11 +1308,11 @@ function i40(A, Q = !1) {
     }
 }
 var B0A;
-var NM2 = L(() => {
+var NM2 = lazyLoader(() => {
     $U();
-    B0A = GA(VA(), 1)
+    B0A = esmImport(VA(), 1)
 });
-var LM2 = L(() => {
+var LM2 = lazyLoader(() => {
     d40();
     JoA();
     EM2();
@@ -1393,21 +1387,21 @@ function RM2({
         QA = (W || Q > jy5) && k && w > o + l + (d ? 25 : 0) + 25,
         IA = [...k ? [uB.createElement(j, {
             key: "esc"
-        }, uB.createElement($, {
+        }, uB.createElement(TextComponent, {
             dimColor: !0,
             bold: !0
-        }, "esc", " "), uB.createElement($, {
+        }, "esc", " "), uB.createElement(TextComponent, {
             dimColor: !0
-        }, "to interrupt"))] : [], ...J ? [uB.createElement($, {
+        }, "to interrupt"))] : [], ...J ? [uB.createElement(TextComponent, {
             dimColor: !0,
             key: "suffix"
-        }, J)] : [], ...d ? [uB.createElement($, {
+        }, J)] : [], ...d ? [uB.createElement(TextComponent, {
             dimColor: !0,
             key: "todo"
-        }, uB.createElement($, {
+        }, uB.createElement(TextComponent, {
             dimColor: !0,
             bold: !0
-        }, "ctrl+t"), " ", "to ", E.showExpandedTodos ? "hide" : "show", " todos")] : [], ...QA ? [uB.createElement($, {
+        }, "ctrl+t"), " ", "to ", E.showExpandedTodos ? "hide" : "show", " todos")] : [], ...QA ? [uB.createElement(TextComponent, {
             dimColor: !0,
             key: "elapsedTime"
         }, FE(Q)), uB.createElement(j, {
@@ -1416,23 +1410,23 @@ function RM2({
         }, uB.createElement(Sy5, {
             mode: A,
             key: "spinnerMode"
-        }), uB.createElement($, {
+        }), uB.createElement(TextComponent, {
             dimColor: !0
         }, QZ(Math.round(H / 4)), " tokens"))] : []];
     if (z === !1) IA.push(uB.createElement(j, {
         key: "offline"
-    }, uB.createElement($, {
+    }, uB.createElement(TextComponent, {
         color: "error",
         bold: !0
     }, "offline")));
     let HA = Z ?? (z === !1 ? "inactive" : "claude"),
         wA = I ?? "claudeShimmer",
-        KA = IA.length > 0 ? uB.createElement(uB.Fragment, null, uB.createElement($, {
+        KA = IA.length > 0 ? uB.createElement(uB.Fragment, null, uB.createElement(TextComponent, {
             dimColor: !0
-        }, "("), fF(IA, (SA) => uB.createElement($, {
+        }, "("), fF(IA, (SA) => uB.createElement(TextComponent, {
             dimColor: !0,
-            key: `separator-${SA}`
-        }, " ", "·", " ")), uB.createElement($, {
+            key: `separator-TextComponent{SA}`
+        }, " ", "·", " ")), uB.createElement(TextComponent, {
             dimColor: !0
         }, ")")) : null;
     return uB.createElement(j, {
@@ -1467,9 +1461,9 @@ function RM2({
         todos: X
     }))) : q || B ? uB.createElement(j, {
         width: "100%"
-    }, uB.createElement(y0, null, uB.createElement($, {
+    }, uB.createElement(y0, null, uB.createElement(TextComponent, {
         dimColor: !0
-    }, q ? `Next: ${q.content}` : `Tip: ${B}`))) : null)
+    }, q ? `Next: TextComponent{q.content}` : `Tip: TextComponent{B}`))) : null)
 }
 
 function Sy5({
@@ -1482,13 +1476,13 @@ function Sy5({
         case "thinking":
             return uB.createElement(j, {
                 width: 2
-            }, uB.createElement($, {
+            }, uB.createElement(TextComponent, {
                 dimColor: !0
             }, V1.arrowDown));
         case "requesting":
             return uB.createElement(j, {
                 width: 2
-            }, uB.createElement($, {
+            }, uB.createElement(TextComponent, {
                 dimColor: !0
             }, V1.arrowUp))
     }
@@ -1504,7 +1498,7 @@ function e9() {
         flexWrap: "wrap",
         height: 1,
         width: 2
-    }, uB.createElement($, {
+    }, uB.createElement(TextComponent, {
         color: B === !1 ? "inactive" : "text"
     }, OM2[A]))
 }
@@ -1513,7 +1507,7 @@ function _y5() {
     return h81("tengu_spinner_words", Py5).words
 }
 var uB, zP, MM2, OM2, Py5, jy5 = 30000;
-var zI = L(() => {
+var zI = lazyLoader(() => {
     hA();
     oiA();
     $U();

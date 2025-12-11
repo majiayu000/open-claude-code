@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: agents_006.js
+ * 处理时间: 2025-12-09T03:41:35.892Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.845Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -25,8 +28,7 @@
         timeoutMs: G
     })
 }
-
-async function j00(A, Q, B = tq) {
+async function j00(A, Q, B = MULTI_EDIT_TOOL_NAME) {
     let G = {
             ...rE(void 0),
             hook_event_name: "PreCompact",
@@ -44,10 +46,10 @@ async function j00(A, Q, B = tq) {
         Y = [];
     for (let J of Z)
         if (J.succeeded)
-            if (J.output.trim()) Y.push(`PreCompact [${J.command}] completed successfully: ${J.output.trim()}`);
-            else Y.push(`PreCompact [${J.command}] completed successfully`);
-    else if (J.output.trim()) Y.push(`PreCompact [${J.command}] failed: ${J.output.trim()}`);
-    else Y.push(`PreCompact [${J.command}] failed`);
+            if (J.output.trim()) Y.push(`PreCompact [TextComponent{J.command}] completed successfully: TextComponent{J.output.trim()}`);
+            else Y.push(`PreCompact [TextComponent{J.command}] completed successfully`);
+    else if (J.output.trim()) Y.push(`PreCompact [TextComponent{J.command}] failed: TextComponent{J.output.trim()}`);
+    else Y.push(`PreCompact [TextComponent{J.command}] failed`);
     return {
         newCustomInstructions: I.length > 0 ? I.join(`
 
@@ -56,13 +58,12 @@ async function j00(A, Q, B = tq) {
 `) : void 0
     }
 }
-
 async function tX0(A, Q) {
     let {
         getAppState: B,
         setAppState: G,
         signal: Z,
-        timeoutMs: I = tq
+        timeoutMs: I = MULTI_EDIT_TOOL_NAME
     } = Q || {}, Y = {
         ...rE(void 0),
         hook_event_name: "SessionEnd",
@@ -79,8 +80,8 @@ async function tX0(A, Q) {
         M21(G, J)
     }
 }
-async function* CW0(A, Q, B, G, Z, I, Y, J = tq) {
-    g(`executePermissionRequestHooks called for tool: ${A}`);
+async function* CW0(A, Q, B, G, Z, I, Y, J = MULTI_EDIT_TOOL_NAME) {
+    g(`executePermissionRequestHooks called for tool: TextComponent{A}`);
     let W = {
         ...rE(Z),
         hook_event_name: "PermissionRequest",
@@ -97,7 +98,6 @@ async function* CW0(A, Q, B, G, Z, I, Y, J = tq) {
         toolUseContext: G
     })
 }
-
 async function HJ0(A, Q, B = 5000) {
     let G = c0(),
         Z = G?.statusLine;
@@ -116,13 +116,12 @@ async function HJ0(A, Q, B = 5000) {
         }
         return
     } catch (Y) {
-        g(`Status hook failed: ${Y}`, {
+        g(`Status hook failed: TextComponent{Y}`, {
             level: "error"
         });
         return
     }
 }
-
 async function ej3({
     hook: A,
     messages: Q,
@@ -180,7 +179,6 @@ async function ej3({
         }
     }
 }
-
 async function AS3({
     toolUseID: A,
     hook: Q,
@@ -198,7 +196,7 @@ async function AS3({
         ...iJ9({
             json: Y,
             command: "callback",
-            hookName: `${B}:Callback`,
+            hookName: `TextComponent{B}:Callback`,
             toolUseID: A,
             hookEvent: B,
             expectedHookEvent: B,
@@ -210,8 +208,8 @@ async function AS3({
         hook: Q
     }
 }
-var tq = 60000;
-var AO = L(() => {
+var MULTI_EDIT_TOOL_NAME = 60000;
+var AO = lazyLoader(() => {
     Ad1();
     R2();
     Qd1();
@@ -244,12 +242,11 @@ function QS3() {
 
 function c8(A = 0, Q = "other", B) {
     process.exitCode = A, S6(A, Q, B).catch((G) => {
-        g(`Graceful shutdown failed: ${G}`, {
+        g(`Graceful shutdown failed: TextComponent{G}`, {
             level: "error"
         }), process.exit(A)
     })
 }
-
 async function S6(A = 0, Q = "other", B) {
     process.exitCode = A, QS3();
     try {
@@ -270,7 +267,7 @@ async function S6(A = 0, Q = "other", B) {
     }
 }
 var aJ9;
-var _J = L(() => {
+var _J = lazyLoader(() => {
     o2();
     D0();
     XH();
@@ -305,15 +302,15 @@ function DQ(A) {
     }), Q
 }
 var sJ9;
-var c9 = L(() => {
+var c9 = lazyLoader(() => {
     hA();
     AsA();
     _J();
-    sJ9 = GA(VA(), 1)
+    sJ9 = esmImport(VA(), 1)
 });
 
 function rJ9() {
-    return b4.createElement($, {
+    return b4.createElement(TextComponent, {
         dimColor: !0
     }, "Claude Code will be able to read files in this directory and make edits when auto-accept edits is on.")
 }
@@ -325,7 +322,7 @@ function GS3({
         flexDirection: "column",
         paddingX: 2,
         gap: 1
-    }, b4.createElement($, {
+    }, b4.createElement(TextComponent, {
         color: "permission"
     }, A), b4.createElement(rJ9, null))
 }
@@ -338,7 +335,7 @@ function ZS3({
 }) {
     return b4.createElement(j, {
         flexDirection: "column"
-    }, b4.createElement($, null, "Enter the path to the directory:"), b4.createElement(j, {
+    }, b4.createElement(TextComponent, null, "Enter the path to the directory:"), b4.createElement(j, {
         borderDimColor: !0,
         borderStyle: "round",
         marginY: 1,
@@ -352,7 +349,7 @@ function ZS3({
         columns: 80,
         cursorOffset: A.length,
         onChangeCursorOffset: () => {}
-    })), G && b4.createElement($, {
+    })), G && b4.createElement(TextComponent, {
         color: "error"
     }, G))
 }
@@ -393,7 +390,7 @@ function eI1({
         paddingRight: 1,
         gap: 1,
         borderColor: "permission"
-    }, b4.createElement($, {
+    }, b4.createElement(TextComponent, {
         bold: !0,
         color: "permission"
     }, "Add directory to workspace"), G ? b4.createElement(j, {
@@ -416,21 +413,21 @@ function eI1({
         error: Y
     }))), !G && b4.createElement(j, {
         marginLeft: 3
-    }, W.pending ? b4.createElement($, {
+    }, W.pending ? b4.createElement(TextComponent, {
         dimColor: !0
-    }, "Press ", W.keyName, " again to exit") : b4.createElement($, {
+    }, "Press ", W.keyName, " again to exit") : b4.createElement(TextComponent, {
         dimColor: !0
     }, "Enter to add · Esc to cancel")))
 }
 var b4, kg, BS3;
-var eX0 = L(() => {
+var eX0 = lazyLoader(() => {
     hA();
     c9();
     QY();
     sI1();
     n2();
     T5();
-    b4 = GA(VA(), 1), kg = GA(VA(), 1), BS3 = [{
+    b4 = esmImport(VA(), 1), kg = esmImport(VA(), 1), BS3 = [{
         value: "yes-session",
         label: "Yes, for this session"
     }, {
@@ -466,18 +463,18 @@ function oJ9({
         paddingLeft: 1,
         paddingRight: 1,
         borderColor: "permission"
-    }, Y7.createElement($, {
+    }, Y7.createElement(TextComponent, {
         bold: !0,
         color: "permission"
     }, "Add ", B, " permission rule"), Y7.createElement(j, {
         flexDirection: "column"
-    }, Y7.createElement($, null, "Permission rules are a tool name, optionally followed by a specifier in parentheses.", Y7.createElement(gV, null), "e.g.,", " ", Y7.createElement($, {
+    }, Y7.createElement(TextComponent, null, "Permission rules are a tool name, optionally followed by a specifier in parentheses.", Y7.createElement(gV, null), "e.g.,", " ", Y7.createElement(TextComponent, {
         bold: !0
     }, r5({
         toolName: cF.name
-    })), Y7.createElement($, {
+    })), Y7.createElement(TextComponent, {
         bold: !1
-    }, " or "), Y7.createElement($, {
+    }, " or "), Y7.createElement(TextComponent, {
         bold: !0
     }, r5({
         toolName: X9.name,
@@ -498,14 +495,14 @@ function oJ9({
         onChangeCursorOffset: Y
     })))), Y7.createElement(j, {
         marginLeft: 3
-    }, J.pending ? Y7.createElement($, {
+    }, J.pending ? Y7.createElement(TextComponent, {
         dimColor: !0
-    }, "Press ", J.keyName, " again to exit") : Y7.createElement($, {
+    }, "Press ", J.keyName, " again to exit") : Y7.createElement(TextComponent, {
         dimColor: !0
     }, "Enter to submit · Esc to cancel")))
 }
 var Y7, AF0;
-var tJ9 = L(() => {
+var tJ9 = lazyLoader(() => {
     hA();
     c9();
     aG();
@@ -514,7 +511,7 @@ var tJ9 = L(() => {
     nV();
     QY();
     n2();
-    Y7 = GA(VA(), 1), AF0 = GA(VA(), 1)
+    Y7 = esmImport(VA(), 1), AF0 = esmImport(VA(), 1)
 });
 
 function AW9({
@@ -557,7 +554,7 @@ function AW9({
         marginTop: 1,
         marginLeft: 2,
         gap: 1
-    }, R$.createElement($, null, `-  ${pQ()}`), R$.createElement($, {
+    }, R$.createElement(TextComponent, null, `-  TextComponent{pQ()}`), R$.createElement(TextComponent, {
         dimColor: !0
     }, "(Original working directory)")), R$.createElement(M0, {
         options: J,
@@ -569,12 +566,12 @@ function AW9({
     }))
 }
 var R$, eJ9;
-var QW9 = L(() => {
+var QW9 = lazyLoader(() => {
     hA();
     T5();
     n2();
     S0();
-    R$ = GA(VA(), 1), eJ9 = GA(VA(), 1)
+    R$ = esmImport(VA(), 1), eJ9 = esmImport(VA(), 1)
 });
 
 function BW9({
@@ -606,16 +603,16 @@ function BW9({
         paddingLeft: 1,
         paddingRight: 1,
         borderColor: "error"
-    }, cZ.createElement($, {
+    }, cZ.createElement(TextComponent, {
         bold: !0,
         color: "error"
     }, "Remove directory from workspace?"), cZ.createElement(j, {
         marginY: 1,
         marginX: 2,
         flexDirection: "column"
-    }, cZ.createElement($, {
+    }, cZ.createElement(TextComponent, {
         bold: !0
-    }, A)), cZ.createElement($, null, "Claude Code will no longer have access to files in this directory."), cZ.createElement(j, {
+    }, A)), cZ.createElement(TextComponent, null, "Claude Code will no longer have access to files in this directory."), cZ.createElement(j, {
         marginY: 1
     }, cZ.createElement(M0, {
         onChange: J,
@@ -629,19 +626,19 @@ function BW9({
         }]
     }))), cZ.createElement(j, {
         marginLeft: 3
-    }, I.pending ? cZ.createElement($, {
+    }, I.pending ? cZ.createElement(TextComponent, {
         dimColor: !0
-    }, "Press ", I.keyName, " again to exit") : cZ.createElement($, {
+    }, "Press ", I.keyName, " again to exit") : cZ.createElement(TextComponent, {
         dimColor: !0
     }, "↑/↓ to select · Enter to confirm · Esc to cancel")))
 }
 var cZ, QF0;
-var GW9 = L(() => {
+var GW9 = lazyLoader(() => {
     hA();
     c9();
     T5();
     hK();
-    cZ = GA(VA(), 1), QF0 = GA(VA(), 1)
+    cZ = esmImport(VA(), 1), QF0 = esmImport(VA(), 1)
 });
 
 function Fa({
@@ -668,15 +665,15 @@ function Fa({
     }, !Z && T$.default.createElement(j, {
         flexDirection: "row",
         gap: 1
-    }, A !== void 0 && T$.default.createElement($, {
+    }, A !== void 0 && T$.default.createElement(TextComponent, {
         bold: !0,
         color: Q
-    }, A), I.map(([X, F], V) => T$.default.createElement($, {
+    }, A), I.map(([X, F], V) => T$.default.createElement(TextComponent, {
         key: X,
         backgroundColor: Q && J === V ? Q : void 0,
         color: Q && J === V ? "inverseText" : void 0,
         bold: J === V
-    }, " ", F, " ")), T$.default.createElement($, {
+    }, " ", F, " ")), T$.default.createElement(TextComponent, {
         dimColor: !0
     }, " (tab to cycle)")), T$.default.createElement(j, null, G)))
 }
@@ -690,17 +687,17 @@ function nD({
     return B
 }
 var T$, ZW9;
-var cjA = L(() => {
+var cjA = lazyLoader(() => {
     hA();
-    T$ = GA(VA(), 1), ZW9 = T$.createContext(void 0)
+    T$ = esmImport(VA(), 1), ZW9 = T$.createContext(void 0)
 });
 
 function IS3({
     rule: A
 }) {
-    return zQ.createElement($, {
+    return zQ.createElement(TextComponent, {
         dimColor: !0
-    }, `From ${GF0(A.source)}`)
+    }, `From TextComponent{GF0(A.source)}`)
 }
 
 function YS3(A) {
@@ -726,7 +723,7 @@ function JS3({
     let Z = zQ.createElement(j, {
             flexDirection: "column",
             marginX: 2
-        }, zQ.createElement($, {
+        }, zQ.createElement(TextComponent, {
             bold: !0
         }, r5(A.ruleValue)), zQ.createElement(w21, {
             ruleValue: A.ruleValue
@@ -735,9 +732,9 @@ function JS3({
         })),
         I = zQ.createElement(j, {
             marginLeft: 3
-        }, G.pending ? zQ.createElement($, {
+        }, G.pending ? zQ.createElement(TextComponent, {
             dimColor: !0
-        }, "Press ", G.keyName, " again to exit") : zQ.createElement($, {
+        }, "Press ", G.keyName, " again to exit") : zQ.createElement(TextComponent, {
             dimColor: !0
         }, "Esc to cancel"));
     if (A.source === "policySettings") return zQ.createElement(zQ.Fragment, null, zQ.createElement(j, {
@@ -747,10 +744,10 @@ function JS3({
         paddingLeft: 1,
         paddingRight: 1,
         borderColor: "permission"
-    }, zQ.createElement($, {
+    }, zQ.createElement(TextComponent, {
         bold: !0,
         color: "permission"
-    }, "Rule details"), Z, zQ.createElement($, {
+    }, "Rule details"), Z, zQ.createElement(TextComponent, {
         italic: !0
     }, "This rule is configured by managed settings and cannot be modified.", `
 `, "Contact your system administrator for more information.")), I);
@@ -761,10 +758,10 @@ function JS3({
         paddingLeft: 1,
         paddingRight: 1,
         borderColor: "error"
-    }, zQ.createElement($, {
+    }, zQ.createElement(TextComponent, {
         bold: !0,
         color: "error"
-    }, "Delete ", YS3(A.ruleBehavior), " tool?"), Z, zQ.createElement($, null, "Are you sure you want to delete this permission rule?"), zQ.createElement(M0, {
+    }, "Delete ", YS3(A.ruleBehavior), " tool?"), Z, zQ.createElement(TextComponent, null, "Are you sure you want to delete this permission rule?"), zQ.createElement(M0, {
         onChange: (Y) => Y === "yes" ? Q() : B(),
         onCancel: B,
         options: [{
@@ -857,7 +854,7 @@ function AY1({
         }), X(null)
     }, []), v = $K.useCallback((k) => {
         V(null);
-        for (let d of k) G((QA) => [...QA, `Added ${d.ruleBehavior} rule ${oA.bold(r5(d.ruleValue))}`])
+        for (let d of k) G((QA) => [...QA, `Added TextComponent{d.ruleBehavior} rule TextComponent{oA.bold(r5(d.ruleValue))}`])
     }, []), x = $K.useCallback(() => {
         V(null)
     }, []), p = () => {
@@ -871,7 +868,7 @@ function AY1({
                     toolPermissionContext: k
                 }))
             }
-        }), G((k) => [...k, `Deleted ${Y.ruleBehavior} rule ${oA.bold(r5(Y.ruleValue))}`]), J(void 0)
+        }), G((k) => [...k, `Deleted TextComponent{Y.ruleBehavior} rule TextComponent{oA.bold(r5(Y.ruleValue))}`]), J(void 0)
     };
     if (Y) return zQ.createElement(JS3, {
         rule: Y,
@@ -908,7 +905,7 @@ function AY1({
                     ...wA,
                     toolPermissionContext: HA
                 })), d) Yv(IA);
-            G((wA) => [...wA, `Added directory ${oA.bold(k)} to workspace${d?" and saved to local settings":" for this session"}`]), D(!1)
+            G((wA) => [...wA, `Added directory TextComponent{oA.bold(k)} to workspace${d?" and saved to local settings":" for this session"}`]), D(!1)
         },
         onCancel: () => D(!1),
         permissionContext: Z
@@ -916,7 +913,7 @@ function AY1({
     if (H) return zQ.createElement(BW9, {
         directoryPath: H,
         onRemove: () => {
-            G((k) => [...k, `Removed directory ${oA.bold(H)} from workspace`]), C(null)
+            G((k) => [...k, `Removed directory TextComponent{oA.bold(H)} from workspace`]), C(null)
         },
         onCancel: () => C(null),
         permissionContext: Z,
@@ -928,7 +925,7 @@ function AY1({
         }
     });
 
-function u(k) {
+    function u(k) {
         switch (k) {
             case "allow":
                 return "Claude Code won't ask before using allowed tools.";
@@ -941,7 +938,7 @@ function u(k) {
         }
     }
 
-function o(k) {
+    function o(k) {
         if (k === "workspace") return zQ.createElement(AW9, {
             onExit: A,
             getToolPermissionContext: () => Z,
@@ -983,29 +980,29 @@ function o(k) {
         title: "Allow"
     }, zQ.createElement(j, {
         flexDirection: "column"
-    }, zQ.createElement($, null, u("allow")), o("allow"))), zQ.createElement(nD, {
+    }, zQ.createElement(TextComponent, null, u("allow")), o("allow"))), zQ.createElement(nD, {
         id: "ask",
         title: "Ask"
     }, zQ.createElement(j, {
         flexDirection: "column"
-    }, zQ.createElement($, null, u("ask")), o("ask"))), zQ.createElement(nD, {
+    }, zQ.createElement(TextComponent, null, u("ask")), o("ask"))), zQ.createElement(nD, {
         id: "deny",
         title: "Deny"
     }, zQ.createElement(j, {
         flexDirection: "column"
-    }, zQ.createElement($, null, u("deny")), o("deny"))), zQ.createElement(nD, {
+    }, zQ.createElement(TextComponent, null, u("deny")), o("deny"))), zQ.createElement(nD, {
         id: "workspace",
         title: "Workspace"
     }, zQ.createElement(j, {
         flexDirection: "column"
-    }, zQ.createElement($, null, u("workspace")), o("workspace")))), zQ.createElement(j, {
+    }, zQ.createElement(TextComponent, null, u("workspace")), o("workspace")))), zQ.createElement(j, {
         marginTop: 1
-    }, zQ.createElement($, {
+    }, zQ.createElement(TextComponent, {
         dimColor: !0
     }, q.pending ? zQ.createElement(zQ.Fragment, null, "Press ", q.keyName, " again to exit") : zQ.createElement(zQ.Fragment, null, "Press ↑↓ to navigate · Enter to select · Esc to exit")))))
 }
 var zQ, $K;
-var BF0 = L(() => {
+var BF0 = lazyLoader(() => {
     hA();
     T5();
     c9();
@@ -1022,7 +1019,7 @@ var BF0 = L(() => {
     H9();
     cjA();
     eV();
-    zQ = GA(VA(), 1), $K = GA(VA(), 1)
+    zQ = esmImport(VA(), 1), $K = esmImport(VA(), 1)
 });
 import {
     dirname as WS3
@@ -1038,9 +1035,9 @@ function XS3({
         return () => clearTimeout(G)
     }, [B]), Yx.default.createElement(j, {
         flexDirection: "column"
-    }, Yx.default.createElement($, {
+    }, Yx.default.createElement(TextComponent, {
         dimColor: !0
-    }, "> /add-dir ", Q), Yx.default.createElement(y0, null, Yx.default.createElement($, null, A)))
+    }, "> /add-dir ", Q), Yx.default.createElement(y0, null, Yx.default.createElement(TextComponent, null, A)))
 }
 
 function gjA(A, Q) {
@@ -1077,19 +1074,19 @@ function ujA(A) {
         case "emptyPath":
             return "Please provide a directory path.";
         case "pathNotFound":
-            return `Path ${oA.bold(A.absolutePath)} was not found.`;
+            return `Path TextComponent{oA.bold(A.absolutePath)} was not found.`;
         case "notADirectory": {
             let Q = WS3(A.absolutePath);
-            return `${oA.bold(A.directoryPath)} is not a directory. Did you mean to add the parent directory ${oA.bold(Q)}?`
+            return `TextComponent{oA.bold(A.directoryPath)} is not a directory. Did you mean to add the parent directory TextComponent{oA.bold(Q)}?`
         }
         case "alreadyInWorkingDirectory":
-            return `${oA.bold(A.directoryPath)} is already accessible within the existing working directory ${oA.bold(A.workingDir)}.`;
+            return `TextComponent{oA.bold(A.directoryPath)} is already accessible within the existing working directory TextComponent{oA.bold(A.workingDir)}.`;
         case "success":
-            return `Added ${oA.bold(A.absolutePath)} as a working directory.`
+            return `Added TextComponent{oA.bold(A.absolutePath)} as a working directory.`
     }
 }
 var Yx, FS3, YW9;
-var sI1 = L(() => {
+var sI1 = lazyLoader(() => {
     J9();
     hA();
     _Y();
@@ -1099,7 +1096,7 @@ var sI1 = L(() => {
     u8();
     BF0();
     hK();
-    Yx = GA(VA(), 1);
+    Yx = esmImport(VA(), 1);
     FS3 = {
         type: "local-jsx",
         name: "add-dir",
@@ -1140,15 +1137,15 @@ var sI1 = L(() => {
                     }));
                     let K;
                     if (J) try {
-                        Yv(X), K = `Added ${oA.bold(Y)} as a working directory and saved to local settings`
+                        Yv(X), K = `Added TextComponent{oA.bold(Y)} as a working directory and saved to local settings`
                     } catch (H) {
-                        K = `Added ${oA.bold(Y)} as a working directory. Failed to save to local settings: ${H instanceof Error?H.message:"Unknown error"}`
-                    } else K = `Added ${oA.bold(Y)} as a working directory for this session`;
-                    let D = `${K} ${oA.dim("· /permissions to manage")}`;
+                        K = `Added TextComponent{oA.bold(Y)} as a working directory. Failed to save to local settings: TextComponent{H instanceof Error?H.message:"Unknown error"}`
+                    } else K = `Added TextComponent{oA.bold(Y)} as a working directory for this session`;
+                    let D = `TextComponent{K} TextComponent{oA.dim("· /permissions to manage")}`;
                     A(D)
                 },
                 onCancel: () => {
-                    A(`Did not add ${oA.bold(I.absolutePath)} as a working directory.`)
+                    A(`Did not add TextComponent{oA.bold(I.absolutePath)} as a working directory.`)
                 }
             })
         },
@@ -1186,7 +1183,6 @@ function KS3(A) {
     }
     return [...new Set(Q)]
 }
-
 async function DS3(A) {
     let Q = await Promise.all(A.map(async (G) => {
             try {
@@ -1227,8 +1223,7 @@ function FW9({
         gitState: null
     }), [E, z] = _O.useState(null), w = YB().columns - 4;
     _O.useEffect(() => {
-        // Async function: R
-async function R() {
+        async function R() {
             let P = await FT(),
                 y = null;
             if (P) y = await zf1();
@@ -1315,13 +1310,13 @@ async function R() {
         paddingX: 1,
         paddingBottom: 1,
         gap: 1
-    }, mQ.createElement($, {
+    }, mQ.createElement(TextComponent, {
         bold: !0,
         color: "permission"
     }, "Submit Feedback / Bug Report"), Z === "userInput" && mQ.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, mQ.createElement($, null, "Describe the issue below:"), mQ.createElement(s4, {
+    }, mQ.createElement(TextComponent, null, "Describe the issue below:"), mQ.createElement(s4, {
         value: W,
         onChange: X,
         columns: w,
@@ -1334,18 +1329,18 @@ async function R() {
     }), K && mQ.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, mQ.createElement($, {
+    }, mQ.createElement(TextComponent, {
         color: "error"
-    }, K), mQ.createElement($, {
+    }, K), mQ.createElement(TextComponent, {
         dimColor: !0
     }, "Press any key to close"))), Z === "consent" && mQ.createElement(j, {
         flexDirection: "column"
-    }, mQ.createElement($, null, "This report will include:"), mQ.createElement(j, {
+    }, mQ.createElement(TextComponent, null, "This report will include:"), mQ.createElement(j, {
         marginLeft: 2,
         flexDirection: "column"
-    }, mQ.createElement($, null, "- Your feedback / bug description:", " ", mQ.createElement($, {
+    }, mQ.createElement(TextComponent, null, "- Your feedback / bug description:", " ", mQ.createElement(TextComponent, {
         dimColor: !0
-    }, W)), mQ.createElement($, null, "- Environment info:", " ", mQ.createElement($, {
+    }, W)), mQ.createElement(TextComponent, null, "- Environment info:", " ", mQ.createElement(TextComponent, {
         dimColor: !0
     }, m0.platform, ", ", m0.terminal, ", v", {
         ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
@@ -1353,35 +1348,35 @@ async function R() {
         README_URL: "https://docs.claude.com/s/claude-code",
         VERSION: "2.0.57",
         FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
-    }.VERSION)), H.gitState && mQ.createElement($, null, "- Git repo metadata:", " ", mQ.createElement($, {
+    }.VERSION)), H.gitState && mQ.createElement(TextComponent, null, "- Git repo metadata:", " ", mQ.createElement(TextComponent, {
         dimColor: !0
-    }, H.gitState.branchName, H.gitState.commitHash ? `, ${H.gitState.commitHash.slice(0,7)}` : "", H.gitState.remoteUrl ? ` @ ${H.gitState.remoteUrl}` : "", !H.gitState.isHeadOnRemote && ", not synced", !H.gitState.isClean && ", has local changes")), mQ.createElement($, null, "- Current session transcript")), mQ.createElement(j, {
+    }, H.gitState.branchName, H.gitState.commitHash ? `, TextComponent{H.gitState.commitHash.slice(0,7)}` : "", H.gitState.remoteUrl ? ` @ TextComponent{H.gitState.remoteUrl}` : "", !H.gitState.isHeadOnRemote && ", not synced", !H.gitState.isClean && ", has local changes")), mQ.createElement(TextComponent, null, "- Current session transcript")), mQ.createElement(j, {
         marginTop: 1
-    }, mQ.createElement($, {
+    }, mQ.createElement(TextComponent, {
         wrap: "wrap",
         dimColor: !0
     }, "We will use your feedback to debug related issues or to improve", " ", "Claude Code's functionality (eg. to reduce the risk of bugs occurring in the future).")), mQ.createElement(j, {
         marginTop: 1
-    }, mQ.createElement($, null, "Press ", mQ.createElement($, {
+    }, mQ.createElement(TextComponent, null, "Press ", mQ.createElement(TextComponent, {
         bold: !0
     }, "Enter"), " to confirm and submit."))), Z === "submitting" && mQ.createElement(j, {
         flexDirection: "row",
         gap: 1
-    }, mQ.createElement($, null, "Submitting report…")), Z === "done" && mQ.createElement(j, {
+    }, mQ.createElement(TextComponent, null, "Submitting report…")), Z === "done" && mQ.createElement(j, {
         flexDirection: "column"
-    }, K ? mQ.createElement($, {
+    }, K ? mQ.createElement(TextComponent, {
         color: "error"
-    }, K) : mQ.createElement($, {
+    }, K) : mQ.createElement(TextComponent, {
         color: "success"
-    }, "Thank you for your report!"), F && mQ.createElement($, {
+    }, "Thank you for your report!"), F && mQ.createElement(TextComponent, {
         dimColor: !0
     }, "Feedback ID: ", F), mQ.createElement(j, {
         marginTop: 1
-    }, mQ.createElement($, null, "Press "), mQ.createElement($, {
+    }, mQ.createElement(TextComponent, null, "Press "), mQ.createElement(TextComponent, {
         bold: !0
-    }, "Enter "), mQ.createElement($, null, "to open your browser and draft a GitHub issue, or any other key to close.")))), mQ.createElement(j, {
+    }, "Enter "), mQ.createElement(TextComponent, null, "to open your browser and draft a GitHub issue, or any other key to close.")))), mQ.createElement(j, {
         marginLeft: 1
-    }, mQ.createElement($, {
+    }, mQ.createElement(TextComponent, {
         dimColor: !0
     }, N.pending ? mQ.createElement(mQ.Fragment, null, "Press ", N.keyName, " again to exit") : Z === "userInput" ? mQ.createElement(mQ.Fragment, null, "Enter to continue · Esc to cancel") : Z === "consent" ? mQ.createElement(mQ.Fragment, null, "Enter to submit · Esc to cancel") : null)))
 }
@@ -1390,13 +1385,13 @@ function HS3(A, Q, B, G) {
     let Z = jQA(Q),
         I = jQA(B),
         Y = encodeURIComponent(`**Bug Description**
-${I}
+TextComponent{I}
 
 **Environment Info**
-- Platform: ${m0.platform}
-- Terminal: ${m0.terminal}
-- Version: ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION||"unknown"}
-- Feedback ID: ${A}
+- Platform: TextComponent{m0.platform}
+- Terminal: TextComponent{m0.terminal}
+- Version: TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION||"unknown"}
+- Feedback ID: TextComponent{A}
 
 **Errors**
 \`\`\`json
@@ -1407,7 +1402,7 @@ ${I}
 `),
         X = JSON.stringify(G),
         F = encodeURIComponent(X),
-        V = `${JW9}/new?title=${encodeURIComponent(Z)}&labels=user-reported,bug&body=`,
+        V = `TextComponent{JW9}/new?title=TextComponent{encodeURIComponent(Z)}&labels=user-reported,bug&body=`,
         K = VS3 - V.length - Y.length - J.length - W.length,
         D = "";
     if (F.length <= K) D = Y + F + J;
@@ -1415,9 +1410,8 @@ ${I}
         let H = F.substring(0, K);
         D = Y + H + J + W
     }
-    return `${JW9}/new?title=${encodeURIComponent(Z)}&body=${D}&labels=user-reported,bug`
+    return `TextComponent{JW9}/new?title=TextComponent{encodeURIComponent(Z)}&body=TextComponent{D}&labels=user-reported,bug`
 }
-
 async function CS3(A, Q) {
     try {
         let B = await gX({
@@ -1435,7 +1429,7 @@ async function CS3(A, Q) {
                 }
             }),
             G = B.message.content[0]?.type === "text" ? B.message.content[0].text : "Bug Report";
-        if (G.startsWith(vF)) return XW9(A);
+        if (G.startsWith(API_ERROR)) return XW9(A);
         return G
     } catch (B) {
         return e(B instanceof Error ? B : Error(String(B))), XW9(A)
@@ -1465,7 +1459,6 @@ function BY1(A) {
         e(Error(Q))
     }
 }
-
 async function ES3(A) {
     try {
         let Q = VI();
@@ -1510,7 +1503,7 @@ async function ES3(A) {
 }
 var mQ, _O, VS3 = 7250,
     JW9 = "https://github.com/anthropics/claude-code/issues";
-var ZF0 = L(() => {
+var ZF0 = lazyLoader(() => {
     hA();
     QY();
     u1();

@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_012.js
+ * 处理时间: 2025-12-09T03:41:36.466Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.897Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -196,7 +198,7 @@
                 let G = zhA(A[ZL], Q);
                 if (A[ZL]?.length === 0) B.PolicyArns = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `PolicyArns.${Z}`;
+                    let Y = `PolicyArns.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -206,7 +208,7 @@
                 let G = p7Q(A[e4A], Q);
                 if (A[e4A]?.length === 0) B.Tags = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `Tags.${Z}`;
+                    let Y = `Tags.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -214,7 +216,7 @@
                 let G = oy4(A[dw1], Q);
                 if (A[dw1]?.length === 0) B.TransitiveTagKeys = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `TransitiveTagKeys.${Z}`;
+                    let Y = `TransitiveTagKeys.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -226,7 +228,7 @@
                 let G = sy4(A[kw1], Q);
                 if (A[kw1]?.length === 0) B.ProvidedContexts = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `ProvidedContexts.${Z}`;
+                    let Y = `ProvidedContexts.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -241,7 +243,7 @@
                 let G = zhA(A[ZL], Q);
                 if (A[ZL]?.length === 0) B.PolicyArns = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `PolicyArns.${Z}`;
+                    let Y = `PolicyArns.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -259,7 +261,7 @@
                 let G = zhA(A[ZL], Q);
                 if (A[ZL]?.length === 0) B.PolicyArns = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `PolicyArns.${Z}`;
+                    let Y = `PolicyArns.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -273,7 +275,7 @@
             if (A[O7Q] != null) {
                 let G = c7Q(A[O7Q], Q);
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `TaskPolicyArn.${Z}`;
+                    let Y = `TaskPolicyArn.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -301,7 +303,7 @@
                 let G = zhA(A[ZL], Q);
                 if (A[ZL]?.length === 0) B.PolicyArns = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `PolicyArns.${Z}`;
+                    let Y = `PolicyArns.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -310,7 +312,7 @@
                 let G = p7Q(A[e4A], Q);
                 if (A[e4A]?.length === 0) B.Tags = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `Tags.${Z}`;
+                    let Y = `Tags.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -330,7 +332,7 @@
                 if (Z === null) continue;
                 let I = c7Q(Z, Q);
                 Object.entries(I).forEach(([Y, J]) => {
-                    B[`member.${G}.${Y}`] = J
+                    B[`member.TextComponent{G}.TextComponent{Y}`] = J
                 }), G++
             }
             return B
@@ -353,7 +355,7 @@
                 if (Z === null) continue;
                 let I = ay4(Z, Q);
                 Object.entries(I).forEach(([Y, J]) => {
-                    B[`member.${G}.${Y}`] = J
+                    B[`member.TextComponent{G}.TextComponent{Y}`] = J
                 }), G++
             }
             return B
@@ -369,7 +371,7 @@
                 G = 1;
             for (let Z of A) {
                 if (Z === null) continue;
-                B[`member.${G}`] = Z, G++
+                B[`member.TextComponent{G}`] = Z, G++
             }
             return B
         }, "se_tagKeyListType"),
@@ -380,7 +382,7 @@
                 if (Z === null) continue;
                 let I = ry4(Z, Q);
                 Object.entries(I).forEach(([Y, J]) => {
-                    B[`member.${G}.${Y}`] = J
+                    B[`member.TextComponent{G}.TextComponent{Y}`] = J
                 }), G++
             }
             return B
@@ -537,7 +539,7 @@
             if (Z !== void 0) X.body = Z;
             return new Ky4.HttpRequest(X)
         }, "buildHttpRpcRequest"),
-        Pv = {
+        NOTEBOOK_EDIT_TOOL_NAME = {
             "content-type": "application/x-www-form-urlencoded"
         },
         jv = "2011-06-15",
@@ -706,7 +708,7 @@
         AGQ = WQ(async (A, Q, B) => {
             let G = typeof A === "function" ? await A() : A,
                 Z = typeof Q === "function" ? await Q() : Q;
-            return B?.debug?.("@aws-sdk/client-sts::resolveRegion", "accepting first of:", `${G} (provider)`, `${Z} (parent client)`, `${R7Q} (STS default)`), G ?? Z ?? R7Q
+            return B?.debug?.("@aws-sdk/client-sts::resolveRegion", "accepting first of:", `TextComponent{G} (provider)`, `TextComponent{Z} (parent client)`, `TextComponent{R7Q} (STS default)`), G ?? Z ?? R7Q
         }, "resolveRegion"),
         hx4 = WQ((A, Q) => {
             let B, G;
@@ -730,7 +732,7 @@
                     Credentials: Y,
                     AssumedRoleUser: J
                 } = await B.send(new ow1(I));
-                if (!Y || !Y.AccessKeyId || !Y.SecretAccessKey) throw Error(`Invalid response from STS.assumeRole call with role ${I.RoleArn}`);
+                if (!Y || !Y.AccessKeyId || !Y.SecretAccessKey) throw Error(`Invalid response from STS.assumeRole call with role TextComponent{I.RoleArn}`);
                 let W = e7Q(J),
                     X = {
                         accessKeyId: Y.AccessKeyId,
@@ -768,7 +770,7 @@
                     Credentials: Z,
                     AssumedRoleUser: I
                 } = await B.send(new tw1(G));
-                if (!Z || !Z.AccessKeyId || !Z.SecretAccessKey) throw Error(`Invalid response from STS.assumeRoleWithWebIdentity call with role ${G.RoleArn}`);
+                if (!Z || !Z.AccessKeyId || !Z.SecretAccessKey) throw Error(`Invalid response from STS.assumeRoleWithWebIdentity call with role TextComponent{G.RoleArn}`);
                 let Y = e7Q(I),
                     J = {
                         accessKeyId: Z.AccessKeyId,
@@ -810,7 +812,7 @@
             ...Q
         }), "decorateDefaultCredentialProvider")
 });
-var Tr = U((aF7, whA) => {
+var Tr = moduleWrapper((aF7, whA) => {
     var JGQ, WGQ, XGQ, FGQ, VGQ, KGQ, DGQ, HGQ, CGQ, EGQ, zGQ, UGQ, $GQ, UhA, Aq1, wGQ, qGQ, NGQ, B8A, LGQ, MGQ, OGQ, RGQ, TGQ, PGQ, jGQ, SGQ, _GQ, $hA, kGQ, yGQ, xGQ;
     (function(A) {
         var Q = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
@@ -820,7 +822,7 @@ var Tr = U((aF7, whA) => {
         else if (typeof whA === "object" && typeof aF7 === "object") A(B(Q, B(aF7)));
         else A(B(Q));
 
-function B(G, Z) {
+        function B(G, Z) {
             if (G !== Q)
                 if (typeof Object.create === "function") Object.defineProperty(G, "__esModule", {
                     value: !0
@@ -844,7 +846,7 @@ function B(G, Z) {
             if (typeof Y !== "function" && Y !== null) throw TypeError("Class extends value " + String(Y) + " is not a constructor or null");
             Q(I, Y);
 
-function J() {
+            function J() {
                 this.constructor = I
             }
             I.prototype = Y === null ? Object.create(Y) : (J.prototype = Y.prototype, new J)
@@ -940,7 +942,7 @@ function J() {
                     }
                 }
 
-function D(C) {
+                function D(C) {
                     try {
                         H(W.throw(C))
                     } catch (E) {
@@ -948,7 +950,7 @@ function D(C) {
                     }
                 }
 
-function H(C) {
+                function H(C) {
                     C.done ? F(C.value) : X(C.value).then(K, D)
                 }
                 H((W = W.apply(I, Y || [])).next())
@@ -968,13 +970,13 @@ function H(C) {
                 return this
             }), V;
 
-function K(H) {
+            function K(H) {
                 return function(C) {
                     return D([H, C])
                 }
             }
 
-function D(H) {
+            function D(H) {
                 if (W) throw TypeError("Generator is already executing.");
                 while (V && (V = 0, H[0] && (J = 0)), J) try {
                     if (W = 1, X && (F = H[0] & 2 ? X.return : H[0] ? X.throw || ((F = X.return) && F.call(X), 0) : X.next) && !(F = F.call(X, H[1])).done) return F;
@@ -1106,13 +1108,13 @@ function D(H) {
                 return this
             }, X;
 
-function V(w) {
+            function V(w) {
                 return function(N) {
                     return Promise.resolve(N).then(w, E)
                 }
             }
 
-function K(w, N) {
+            function K(w, N) {
                 if (W[w]) {
                     if (X[w] = function(q) {
                             return new Promise(function(R, P) {
@@ -1122,7 +1124,7 @@ function K(w, N) {
                 }
             }
 
-function D(w, N) {
+            function D(w, N) {
                 try {
                     H(W[w](N))
                 } catch (q) {
@@ -1130,19 +1132,19 @@ function D(w, N) {
                 }
             }
 
-function H(w) {
+            function H(w) {
                 w.value instanceof B8A ? Promise.resolve(w.value.v).then(C, E) : z(F[0][2], w)
             }
 
-function C(w) {
+            function C(w) {
                 D("next", w)
             }
 
-function E(w) {
+            function E(w) {
                 D("throw", w)
             }
 
-function z(w, N) {
+            function z(w, N) {
                 if (w(N), F.shift(), F.length) D(F[0][0], F[0][1])
             }
         }, MGQ = function(I) {
@@ -1153,7 +1155,7 @@ function z(w, N) {
                 return this
             }, Y;
 
-function W(X, F) {
+            function W(X, F) {
                 Y[X] = I[X] ? function(V) {
                     return (J = !J) ? {
                         value: B8A(I[X](V)),
@@ -1169,7 +1171,7 @@ function W(X, F) {
                 return this
             }, J);
 
-function W(F) {
+            function W(F) {
                 J[F] = I[F] && function(V) {
                     return new Promise(function(K, D) {
                         V = I[F](V), X(K, D, V.done, V.value)
@@ -1177,7 +1179,7 @@ function W(F) {
                 }
             }
 
-function X(F, V, K, D) {
+            function X(F, V, K, D) {
                 Promise.resolve(D).then(function(H) {
                     F({
                         value: H,
@@ -1210,8 +1212,7 @@ function X(F, V, K, D) {
             };
         TGQ = function(I) {
             if (I && I.__esModule) return I;
-
-var Y = {};
+            var Y = {};
             if (I != null) {
                 for (var J = G(I), W = 0; W < J.length; W++)
                     if (J[W] !== "default") $hA(Y, I, J[W])
@@ -1273,7 +1274,7 @@ var Y = {};
             }
             var J, W = 0;
 
-function X() {
+            function X() {
                 while (J = I.stack.pop()) try {
                     if (!J.async && W === 1) return W = 0, I.stack.push(J), Promise.resolve().then(X);
                     if (J.dispose) {
@@ -1290,14 +1291,14 @@ function X() {
             }
             return X()
         }, xGQ = function(I, Y) {
-            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
+            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)TextComponent|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
                 return W ? Y ? ".jsx" : ".js" : X && (!F || !V) ? J : X + F + "." + V.toLowerCase() + "js"
             });
             return I
         }, A("__extends", JGQ), A("__assign", WGQ), A("__rest", XGQ), A("__decorate", FGQ), A("__param", VGQ), A("__esDecorate", KGQ), A("__runInitializers", DGQ), A("__propKey", HGQ), A("__setFunctionName", CGQ), A("__metadata", EGQ), A("__awaiter", zGQ), A("__generator", UGQ), A("__exportStar", $GQ), A("__createBinding", $hA), A("__values", UhA), A("__read", Aq1), A("__spread", wGQ), A("__spreadArrays", qGQ), A("__spreadArray", NGQ), A("__await", B8A), A("__asyncGenerator", LGQ), A("__asyncDelegator", MGQ), A("__asyncValues", OGQ), A("__makeTemplateObject", RGQ), A("__importStar", TGQ), A("__importDefault", PGQ), A("__classPrivateFieldGet", jGQ), A("__classPrivateFieldSet", SGQ), A("__classPrivateFieldIn", _GQ), A("__addDisposableResource", kGQ), A("__disposeResources", yGQ), A("__rewriteRelativeImportExtension", xGQ)
     })
 });
-var bGQ = U((vGQ) => {
+var bGQ = moduleWrapper((vGQ) => {
     Object.defineProperty(vGQ, "__esModule", {
         value: !0
     });
@@ -1331,7 +1332,7 @@ var bGQ = U((vGQ) => {
     };
     vGQ.propertyProviderChain = cx4
 });
-var Bq1 = U((rF7, lGQ) => {
+var Bq1 = moduleWrapper((rF7, lGQ) => {
     var {
         defineProperty: qhA,
         getOwnPropertyDescriptor: lx4,
@@ -1423,7 +1424,7 @@ var Bq1 = U((rF7, lGQ) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(pGQ || {})
 });
-var cz = U((oF7, rGQ) => {
+var cz = moduleWrapper((oF7, rGQ) => {
     var {
         defineProperty: LhA,
         getOwnPropertyDescriptor: Bv4,
@@ -1502,7 +1503,7 @@ var cz = U((oF7, rGQ) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values

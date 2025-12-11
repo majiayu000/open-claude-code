@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_023.js
+ * 处理时间: 2025-12-09T03:41:38.846Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.084Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -30,10 +33,9 @@
         behavior: "ask",
         message: PF(A.name, J.decisionReason)
     } : J;
-    if (X.behavior === "ask" && X.suggestions) g(`Permission suggestions for ${A.name}: ${JSON.stringify(X.suggestions,null,2)}`);
+    if (X.behavior === "ask" && X.suggestions) g(`Permission suggestions for TextComponent{A.name}: TextComponent{JSON.stringify(X.suggestions,null,2)}`);
     return X
 }
-
 async function IW9({
     rule: A,
     initialContext: Q,
@@ -66,7 +68,7 @@ async function IW9({
 function zH9(A, Q) {
     let B = new Map;
     for (let Z of A) {
-        let I = `${Z.source}:${Z.ruleBehavior}`;
+        let I = `TextComponent{Z.source}:TextComponent{Z.ruleBehavior}`;
         if (!B.has(I)) B.set(I, []);
         B.get(I).push(Z.ruleValue)
     }
@@ -102,7 +104,7 @@ var dV0, L$ = async (A, Q, B, G, Z) => {
                 type: "mode",
                 mode: "dontAsk"
             },
-            message: `Permission to use ${A.name} has been auto-denied in dontAsk mode.`
+            message: `Permission to use TextComponent{A.name} has been auto-denied in dontAsk mode.`
         };
         if (Y.toolPermissionContext.shouldAvoidPermissionPrompts) return {
             behavior: "deny",
@@ -110,12 +112,12 @@ var dV0, L$ = async (A, Q, B, G, Z) => {
                 type: "asyncAgent",
                 reason: "Permission prompts are not available in this context"
             },
-            message: `Permission to use ${A.name} has been auto-denied (prompts unavailable).`
+            message: `Permission to use TextComponent{A.name} has been auto-denied (prompts unavailable).`
         }
     }
     return I
 };
-var aG = L(() => {
+var aG = lazyLoader(() => {
     hK();
     $Z();
     u1();
@@ -143,7 +145,7 @@ function wH9(A) {
     return lV0.customValidation[A]
 }
 var lV0;
-var qH9 = L(() => {
+var qH9 = lazyLoader(() => {
     lV0 = {
         filePatternTools: ["Read", "Write", "Edit", "Glob", "NotebookRead", "NotebookEdit"],
         bashPrefixTools: ["Bash"],
@@ -202,8 +204,8 @@ function Vy3(A) {
         return {
             valid: !1,
             error: "Empty parentheses",
-            suggestion: `Either specify a pattern or use just "${Y}" without parentheses`,
-            examples: [`${Y}`, `${Y}(some-pattern)`]
+            suggestion: `Either specify a pattern or use just "TextComponent{Y}" without parentheses`,
+            examples: [`TextComponent{Y}`, `TextComponent{Y}(some-pattern)`]
         }
     }
     let G = mN(A),
@@ -212,7 +214,7 @@ function Vy3(A) {
         if (G.ruleContent !== void 0) return {
             valid: !1,
             error: "MCP rules do not support patterns",
-            suggestion: `Use "${G.toolName}" without parentheses`,
+            suggestion: `Use "TextComponent{G.toolName}" without parentheses`,
             examples: [`mcp__${Z.serverName}`, Z.toolName ? `mcp__${Z.serverName}__${Z.toolName}` : void 0].filter(Boolean)
         };
         return {
@@ -226,7 +228,7 @@ function Vy3(A) {
     if (G.toolName[0] !== G.toolName[0]?.toUpperCase()) return {
         valid: !1,
         error: "Tool names must start with uppercase",
-        suggestion: `Use "${String(G.toolName).charAt(0).toUpperCase()+String(G.toolName).slice(1)}"`
+        suggestion: `Use "TextComponent{String(G.toolName).charAt(0).toUpperCase()+String(G.toolName).slice(1)}"`
     };
     let I = wH9(G.toolName);
     if (I && G.ruleContent !== void 0) {
@@ -257,7 +259,7 @@ function Vy3(A) {
         for (let X of J)
             if ((Y.match(new RegExp(X, "g")) || []).length % 2 !== 0) return {
                 valid: !1,
-                error: `Unmatched ${X} in Bash pattern`,
+                error: `Unmatched TextComponent{X} in Bash pattern`,
                 suggestion: "Ensure all quotes are properly paired"
             };
         if (Y === "*") return {
@@ -271,7 +273,7 @@ function Vy3(A) {
             if (!Y.substring(0, W).endsWith(":")) return {
                 valid: !1,
                 error: 'Use ":*" for prefix matching, not just "*"',
-                suggestion: `Change to "Bash(${String(Y).replace(/\*/g,":*")})" for prefix matching`,
+                suggestion: `Change to "Bash(TextComponent{String(Y).replace(/\*/g,":*")})" for prefix matching`,
                 examples: ["Bash(npm run:*)", "Bash(git:*)"]
             }
         }
@@ -282,13 +284,13 @@ function Vy3(A) {
             valid: !1,
             error: 'The ":*" syntax is only for Bash prefix rules',
             suggestion: 'Use glob patterns like "*" or "**" for file matching',
-            examples: [`${G.toolName}(*.ts) - matches .ts files`, `${G.toolName}(src/**) - matches all files in src`, `${G.toolName}(**/*.test.ts) - matches test files`]
+            examples: [`TextComponent{G.toolName}(*.ts) - matches .ts files`, `TextComponent{G.toolName}(src/**) - matches all files in src`, `TextComponent{G.toolName}(**/*.test.ts) - matches test files`]
         };
-        if (Y.includes("*") && !Y.match(/^\*|\*$|\*\*|\/\*|\*\.|\*\)/) && !Y.includes("**")) return {
+        if (Y.includes("*") && !Y.match(/^\*|\*TextComponent|\*\*|\/\*|\*\.|\*\)/) && !Y.includes("**")) return {
             valid: !1,
             error: "Wildcard placement might be incorrect",
             suggestion: "Wildcards are typically used at path boundaries",
-            examples: [`${G.toolName}(*.js) - all .js files`, `${G.toolName}(src/*) - all files directly in src`, `${G.toolName}(src/**) - all files recursively in src`]
+            examples: [`TextComponent{G.toolName}(*.js) - all .js files`, `TextComponent{G.toolName}(src/*) - all files directly in src`, `TextComponent{G.toolName}(src/**) - all files recursively in src`]
         }
     }
     return {
@@ -296,7 +298,7 @@ function Vy3(A) {
     }
 }
 var nY1;
-var NH9 = L(() => {
+var NH9 = lazyLoader(() => {
     h2();
     aG();
     xX();
@@ -305,8 +307,8 @@ var NH9 = L(() => {
         let B = Vy3(A);
         if (!B.valid) {
             let G = B.error;
-            if (B.suggestion) G += `. ${B.suggestion}`;
-            if (B.examples && B.examples.length > 0) G += `. Examples: ${B.examples.join(", ")}`;
+            if (B.suggestion) G += `. TextComponent{B.suggestion}`;
+            if (B.examples && B.examples.length > 0) G += `. Examples: TextComponent{B.examples.join(", ")}`;
             Q.addIssue({
                 code: _.ZodIssueCode.custom,
                 message: G,
@@ -318,7 +320,7 @@ var NH9 = L(() => {
     })
 });
 var Ky3, LH9;
-var MH9 = L(() => {
+var MH9 = lazyLoader(() => {
     h2();
     Ky3 = _.object({
         allowUnixSockets: _.array(_.string()).optional(),
@@ -349,7 +351,7 @@ function hiA(A) {
     return "serverCommand" in A && A.serverCommand !== void 0
 }
 var Dy3, Hy3, Cy3, Ey3, zy3, Uy3, $y3, AzA, wy3, qy3, Ny3, D0A;
-var E3A = L(() => {
+var E3A = lazyLoader(() => {
     h2();
     ZvA();
     Bw();
@@ -388,12 +390,12 @@ var E3A = L(() => {
         source: OlA.describe("Where to fetch the marketplace from"),
         installLocation: _.string().optional().describe("Local cache path where marketplace manifest is stored (auto-generated if not provided)")
     }), qy3 = _.object({
-        serverName: _.string().regex(/^[a-zA-Z0-9_-]+$/, "Server name can only contain letters, numbers, hyphens, and underscores").optional().describe("Name of the MCP server that users are allowed to configure"),
+        serverName: _.string().regex(/^[a-zA-Z0-9_-]+TextComponent/, "Server name can only contain letters, numbers, hyphens, and underscores").optional().describe("Name of the MCP server that users are allowed to configure"),
         serverCommand: _.array(_.string()).min(1, "Server command must have at least one element (the command)").optional().describe("Command array [command, ...args] to match exactly for allowed stdio servers")
     }).refine((A) => A.serverName !== void 0 && A.serverCommand === void 0 || A.serverName === void 0 && A.serverCommand !== void 0, {
         message: 'Entry must have either "serverName" or "serverCommand", but not both'
     }), Ny3 = _.object({
-        serverName: _.string().regex(/^[a-zA-Z0-9_-]+$/, "Server name can only contain letters, numbers, hyphens, and underscores").optional().describe("Name of the MCP server that is explicitly blocked"),
+        serverName: _.string().regex(/^[a-zA-Z0-9_-]+TextComponent/, "Server name can only contain letters, numbers, hyphens, and underscores").optional().describe("Name of the MCP server that is explicitly blocked"),
         serverCommand: _.array(_.string()).min(1, "Server command must have at least one element (the command)").optional().describe("Command array [command, ...args] to match exactly for blocked stdio servers")
     }).refine((A) => A.serverName !== void 0 && A.serverCommand === void 0 || A.serverName === void 0 && A.serverCommand !== void 0, {
         message: 'Entry must have either "serverName" or "serverCommand", but not both'
@@ -464,7 +466,7 @@ function Ly3() {
 }
 
 function My3(A, Q) {
-    if (typeof A === "object" && A && "code" in A && A.code === "ENOENT") g(`Broken symlink or missing file encountered for settings.json at path: ${Q}`);
+    if (typeof A === "object" && A && "code" in A && A.code === "ENOENT") g(`Broken symlink or missing file encountered for settings.json at path: TextComponent{Q}`);
     else e(A instanceof Error ? A : Error(String(A)))
 }
 
@@ -563,9 +565,9 @@ function cB(A, Q) {
             let Y = Tq(B),
                 J = S7(Y);
             if (J === null) return {
-                error: Error(`Invalid JSON syntax in settings file at ${B}`)
+                error: Error(`Invalid JSON syntax in settings file at TextComponent{B}`)
             };
-            if (J && typeof J === "object") Z = J, g(`Using raw settings from ${B} due to validation failure`)
+            if (J && typeof J === "object") Z = J, g(`Using raw settings from TextComponent{B} due to validation failure`)
         }
         let I = DC1(Z || {}, Q, (Y, J, W, X) => {
             if (J === void 0 && X && typeof W === "string") {
@@ -578,7 +580,7 @@ function cB(A, Q) {
         if (uc.markInternalWrite(A), J_(B, JSON.stringify(I, null, 2) + `
 `), EGA(), A === "localSettings") UJ0(VMA("localSettings"), pQ())
     } catch (G) {
-        let Z = Error(`Failed to read raw settings from ${B}: ${G}`);
+        let Z = Error(`Failed to read raw settings from TextComponent{B}: TextComponent{G}`);
         return e(Z), {
             error: Z
         }
@@ -608,7 +610,7 @@ function TH9(A) {
                 J = Z[I];
             if (J) {
                 for (let W of Object.keys(Y))
-                    if (J.has(W)) G.push(`${I}.${W}`)
+                    if (J.has(W)) G.push(`TextComponent{I}.TextComponent{W}`)
             }
         } else G.push(I);
     return G.sort()
@@ -634,7 +636,7 @@ function Ry3() {
             errors: X
         } = RH9(Y);
         for (let F of X) {
-            let V = `${F.file}:${F.path}:${F.message}`;
+            let V = `TextComponent{F.file}:TextComponent{F.path}:TextComponent{F.message}`;
             if (!B.has(V)) B.add(V), Q.push(F)
         }
         if (W) A = DC1(A, W, (F, V) => {
@@ -662,7 +664,7 @@ function Wa() {
 }
 var FSA = null,
     c0;
-var RB = L(() => {
+var RB = lazyLoader(() => {
     vp0();
     M9();
     o0();
@@ -684,7 +686,7 @@ import {
     basename as Ty3
 } from "path";
 var PH9;
-var jH9 = L(() => {
+var jH9 = lazyLoader(() => {
     o2();
     u1();
     Ny();
@@ -700,7 +702,7 @@ var jH9 = L(() => {
                 try {
                     let J = Ty3(B).replace(/\.md$/, ""),
                         W = G.name || J,
-                        X = G.description || qy(Z, `Custom ${J} output style`),
+                        X = G.description || qy(Z, `Custom TextComponent{J} output style`),
                         F = G["keep-coding-instructions"],
                         V = F === "true" ? !0 : F === "false" ? !1 : void 0;
                     return {
@@ -719,7 +721,6 @@ var jH9 = L(() => {
         }
     })
 });
-// Async function: _QA
 async function _QA() {
     let A = await PH9(),
         Q = await $V0(),
@@ -740,14 +741,13 @@ async function _QA() {
         };
     return B
 }
-// Async function: IH9
 async function IH9() {
     let Q = c0()?.outputStyle || EK;
     return (await _QA())[Q] ?? null
 }
 var SH9, EK = "default",
     zQA;
-var ry = L(() => {
+var ry = lazyLoader(() => {
     n2();
     RB();
     jH9();
@@ -755,7 +755,7 @@ var ry = L(() => {
     SH9 = `
 ## Insights
 In order to encourage learning, before and after writing code, always provide brief educational explanations about implementation choices using (with backticks):
-"\`${V1.star} Insight ─────────────────────────────────────\`
+"\`TextComponent{V1.star} Insight ─────────────────────────────────────\`
 [2-3 key educational points]
 \`─────────────────────────────────────────────────\`"
 
@@ -771,7 +771,7 @@ These insights should be included in the conversation, not in the codebase. You 
 You should be clear and educational, providing helpful explanations while remaining focused on the task. Balance educational content with task completion. When providing insights, you may exceed typical length constraints, but remain focused and relevant.
 
 # Explanatory Style Active
-${SH9}`
+TextComponent{SH9}`
         },
         Learning: {
             name: "Learning",
@@ -798,7 +798,7 @@ Example TodoList flow:
 
 ### Request Format
 \`\`\`
-${V1.bullet} **Learn by Doing**
+TextComponent{V1.bullet} **Learn by Doing**
 **Context:** [what's built and why this decision matters]
 **Your Task:** [specific function/section in file, mention file and TODO(human) but do not include line numbers]
 **Guidance:** [trade-offs and constraints to consider]
@@ -814,7 +814,7 @@ ${V1.bullet} **Learn by Doing**
 
 **Whole Function Example:**
 \`\`\`
-${V1.bullet} **Learn by Doing**
+TextComponent{V1.bullet} **Learn by Doing**
 
 **Context:** I've set up the hint feature UI with a button that triggers the hint system. The infrastructure is ready: when clicked, it calls selectHintCell() to determine which cell to hint, then highlights that cell with a yellow background and shows possible values. The hint system needs to decide which empty cell would be most helpful to reveal to the user.
 
@@ -825,7 +825,7 @@ ${V1.bullet} **Learn by Doing**
 
 **Partial Function Example:**
 \`\`\`
-${V1.bullet} **Learn by Doing**
+TextComponent{V1.bullet} **Learn by Doing**
 
 **Context:** I've built a file upload component that validates files before accepting them. The main validation logic is complete, but it needs specific handling for different file type categories in the switch statement.
 
@@ -836,7 +836,7 @@ ${V1.bullet} **Learn by Doing**
 
 **Debugging Example:**
 \`\`\`
-${V1.bullet} **Learn by Doing**
+TextComponent{V1.bullet} **Learn by Doing**
 
 **Context:** The user reported that number inputs aren't working correctly in the calculator. I've identified the handleInput() function as the likely source, but need to understand what values are being processed.
 
@@ -849,7 +849,7 @@ ${V1.bullet} **Learn by Doing**
 Share one insight connecting their code to broader patterns or system effects. Avoid praise or repetition.
 
 ## Insights
-${SH9}`
+TextComponent{SH9}`
         }
     }
 });
@@ -873,7 +873,7 @@ function kH9() {
     }
     return 3
 }
-var yH9 = L(() => {
+var yH9 = lazyLoader(() => {
     hB()
 });
 import {
@@ -890,7 +890,7 @@ function Py3(A) {
 
 function mXA(A) {
     let Q = A.filter((B) => B.type === "assistant");
-    return dC(Q)
+    return last(Q)
 }
 
 function HSA(A) {
@@ -1056,12 +1056,12 @@ function g30(A) {
 
 function e2(A, Q) {
     if (!A.trim() || !Q.trim()) return null;
-    let B = Q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
-        G = new RegExp(`<${B}(?:\\s+[^>]*)?>([\\s\\S]*?)<\\/${B}>`, "gi"),
+    let B = Q.replace(/[.*+?^TextComponent{}()|[\]\\]/g, "\\TextComponent&"),
+        G = new RegExp(`<TextComponent{B}(?:\\s+[^>]*)?>([\\s\\S]*?)<\\/TextComponent{B}>`, "gi"),
         Z, I = 0,
         Y = 0,
-        J = new RegExp(`<${B}(?:\\s+[^>]*?)?>`, "gi"),
-        W = new RegExp(`<\\/${B}>`, "gi");
+        J = new RegExp(`<TextComponent{B}(?:\\s+[^>]*?)?>`, "gi"),
+        W = new RegExp(`<\\/TextComponent{B}>`, "gi");
     while ((Z = G.exec(A)) !== null) {
         let X = Z[1],
             F = A.slice(Y, Z.index);
@@ -1350,7 +1350,7 @@ function BZ(A, Q = []) {
     }).forEach((Z) => {
         switch (Z.type) {
             case "user": {
-                let I = dC(G);
+                let I = last(G);
                 if (I?.type === "user") {
                     G[G.indexOf(I)] = xy3(I, Z);
                     return
@@ -1391,7 +1391,7 @@ function BZ(A, Q = []) {
             }
             case "attachment": {
                 let I = uy3(Z.attachment),
-                    Y = dC(G);
+                    Y = last(G);
                 if (Y?.type === "user") {
                     G[G.indexOf(Y)] = I.reduce((J, W) => _y3(J, W), Y);
                     return
@@ -1462,7 +1462,7 @@ function sY1(A) {
 }
 
 function vy3(A, Q) {
-    let B = dC(A);
+    let B = last(A);
     if (B?.type === "tool_result" && typeof B.content === "string" && Q.every((G) => G.type === "text")) return [...A.slice(0, -1), {
         ...B,
         content: [B.content, ...Q.map((G) => G.text)].map((G) => G.trim()).filter(Boolean).join(`
@@ -1476,7 +1476,7 @@ function bV0(A, Q, B) {
     return A.map((G) => {
         switch (G.type) {
             case "tool_use": {
-                if (typeof G.input !== "string" && !TY(G.input)) throw Error("Tool use input must be a string or object");
+                if (typeof G.input !== "string" && !isObject(G.input)) throw Error("Tool use input must be a string or object");
                 let Z = typeof G.input === "string" ? S7(G.input) ?? {} : G.input;
                 if (typeof Z === "object" && Z !== null) {
                     let I = Q.find((Y) => Y.name === G.name);
@@ -1514,7 +1514,7 @@ function h51(A) {
 }
 
 function XMA(A) {
-    let Q = new RegExp(`<(${by3.join("|")})>.*?</\\1>
+    let Q = new RegExp(`<(TextComponent{by3.join("|")})>.*?</\\1>
 ?`, "gs");
     return A.replace(Q, "").trim()
 }

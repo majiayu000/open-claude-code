@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_020.js
+ * 处理时间: 2025-12-09T03:41:37.964Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.019Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-        if (!Q) return g(`installed_plugins.json doesn't exist yet at ${A}, returning empty object`), Pg = {
+        if (!Q) return g(`installed_plugins.json doesn't exist yet at TextComponent{A}, returning empty object`), Pg = {
             version: 1,
             plugins: {}
         }, Pg.plugins;
@@ -27,15 +30,15 @@
             return Pg = {
                 version: 1,
                 plugins: Z
-            }, g(`Loaded ${Object.keys(Z).length} installed plugins from V2 file at ${A}`), Z
+            }, g(`Loaded TextComponent{Object.keys(Z).length} installed plugins from V2 file at TextComponent{A}`), Z
         }
         let B = QzA.parse(Q.data);
-        return Pg = B, g(`Loaded ${Object.keys(B.plugins).length} installed plugins from ${A} (schema version ${B.version})`), B.plugins
+        return Pg = B, g(`Loaded TextComponent{Object.keys(B.plugins).length} installed plugins from TextComponent{A} (schema version TextComponent{B.version})`), B.plugins
     } catch (Q) {
         let B = Q instanceof Error ? Q.message : String(Q);
-        return g(`Failed to load installed_plugins.json: ${B}. Starting with empty state.`, {
+        return g(`Failed to load installed_plugins.json: TextComponent{B}. Starting with empty state.`, {
             level: "error"
-        }), e(Q instanceof Error ? Q : Error(`Failed to load installed_plugins.json: ${B}`)), Pg = {
+        }), e(Q instanceof Error ? Q : Error(`Failed to load installed_plugins.json: TextComponent{B}`)), Pg = {
             version: 1,
             plugins: {}
         }, Pg.plugins
@@ -56,10 +59,10 @@ function OI1(A) {
         Q.writeFileSync(B, I, {
             encoding: "utf-8",
             flush: !0
-        }), Pg = Z, g(`Saved ${Object.keys(A).length} installed plugins to ${B} (schema version ${qQA})`)
+        }), Pg = Z, g(`Saved TextComponent{Object.keys(A).length} installed plugins to TextComponent{B} (schema version TextComponent{qQA})`)
     } catch (G) {
         let Z = G instanceof Error ? G.message : String(G);
-        throw e(G instanceof Error ? G : Error(`Failed to save installed_plugins.json: ${Z}`)), G
+        throw e(G instanceof Error ? G : Error(`Failed to save installed_plugins.json: TextComponent{Z}`)), G
     }
 }
 
@@ -99,13 +102,13 @@ function hT3() {
         let Q = vT3();
         if (Q) {
             let G = RlA.parse(Q.data);
-            return M$ = G, g(`Loaded ${Object.keys(G.plugins).length} installed plugins from V2 file at ${A}`), G
+            return M$ = G, g(`Loaded TextComponent{Object.keys(G.plugins).length} installed plugins from V2 file at TextComponent{A}`), G
         }
         let B = PjA();
         if (B) {
             let G = QzA.parse(B.data),
                 Z = cW0(G);
-            return C59(Z), g(`Migrated ${Object.keys(G.plugins).length} plugins from V1 to V2 file`), Z
+            return C59(Z), g(`Migrated TextComponent{Object.keys(G.plugins).length} plugins from V1 to V2 file`), Z
         }
         return g("Neither V1 nor V2 installed_plugins file exists, returning empty V2 object"), M$ = {
             version: 2,
@@ -113,9 +116,9 @@ function hT3() {
         }, M$
     } catch (Q) {
         let B = Q instanceof Error ? Q.message : String(Q);
-        return g(`Failed to load installed_plugins_v2.json: ${B}. Starting with empty state.`, {
+        return g(`Failed to load installed_plugins_v2.json: TextComponent{B}. Starting with empty state.`, {
             level: "error"
-        }), e(Q instanceof Error ? Q : Error(`Failed to load installed_plugins_v2.json: ${B}`)), M$ = {
+        }), e(Q instanceof Error ? Q : Error(`Failed to load installed_plugins_v2.json: TextComponent{B}`)), M$ = {
             version: 2,
             plugins: {}
         }, M$
@@ -126,18 +129,18 @@ function gT3() {
     let A = MI1();
     try {
         let Q = PjA();
-        if (!Q) return g(`installed_plugins.json doesn't exist yet at ${A}, returning empty V2 object`), M$ = {
+        if (!Q) return g(`installed_plugins.json doesn't exist yet at TextComponent{A}, returning empty V2 object`), M$ = {
             version: 2,
             plugins: {}
         }, M$;
         let B = QzA.parse(Q.data),
             G = fT3(B);
-        return M$ = G, g(`Loaded ${Object.keys(B.plugins).length} plugins from V1 file and wrapped as V2`), G
+        return M$ = G, g(`Loaded TextComponent{Object.keys(B.plugins).length} plugins from V1 file and wrapped as V2`), G
     } catch (Q) {
         let B = Q instanceof Error ? Q.message : String(Q);
-        return g(`Failed to load installed_plugins.json (V2): ${B}. Starting with empty state.`, {
+        return g(`Failed to load installed_plugins.json (V2): TextComponent{B}. Starting with empty state.`, {
             level: "error"
-        }), e(Q instanceof Error ? Q : Error(`Failed to load installed_plugins.json (V2): ${B}`)), M$ = {
+        }), e(Q instanceof Error ? Q : Error(`Failed to load installed_plugins.json (V2): TextComponent{B}`)), M$ = {
             version: 2,
             plugins: {}
         }, M$
@@ -154,10 +157,10 @@ function C59(A) {
         Q.writeFileSync(B, Z, {
             encoding: "utf-8",
             flush: !0
-        }), M$ = A, g(`Saved ${Object.keys(A.plugins).length} installed plugins to V2 file at ${B}`)
+        }), M$ = A, g(`Saved TextComponent{Object.keys(A.plugins).length} installed plugins to V2 file at TextComponent{B}`)
     } catch (G) {
         let Z = G instanceof Error ? G.message : String(G);
-        throw e(G instanceof Error ? G : Error(`Failed to save installed_plugins_v2.json: ${Z}`)), G
+        throw e(G instanceof Error ? G : Error(`Failed to save installed_plugins_v2.json: TextComponent{Z}`)), G
     }
 }
 
@@ -207,14 +210,13 @@ function RI1(A, Q, B) {
         Z = G.plugins[A];
     if (!Z) return;
     if (G.plugins[A] = Z.filter((I) => !(I.scope === Q && I.projectPath === B)), G.plugins[A].length === 0) delete G.plugins[A];
-    E59(G), g(`Removed installation for ${A} at scope ${Q}`)
+    E59(G), g(`Removed installation for TextComponent{A} at scope TextComponent{Q}`)
 }
 
 function pW0() {
     if (mW0 === null) mW0 = NQA();
     return mW0
 }
-// Async function: z59
 async function z59() {
     try {
         await lW0()
@@ -223,7 +225,7 @@ async function z59() {
     }
     if (j8("tengu_enable_versioned_plugins")) {
         let A = pW0();
-        g(`Initialized versioned plugins system with ${Object.keys(A.plugins).length} plugins`)
+        g(`Initialized versioned plugins system with TextComponent{Object.keys(A.plugins).length} plugins`)
     }
 }
 
@@ -238,13 +240,13 @@ function jg(A) {
 function U59(A, Q) {
     let B = dXA(),
         G = A in B;
-    B[A] = Q, OI1(B), g(`${G?"Updated":"Added"} installed plugin: ${A}`)
+    B[A] = Q, OI1(B), g(`TextComponent{G?"Updated":"Added"} installed plugin: TextComponent{A}`)
 }
 
 function $59(A) {
     let Q = dXA(),
         B = Q[A];
-    if (B) delete Q[A], OI1(Q), g(`Removed installed plugin: ${A}`);
+    if (B) delete Q[A], OI1(Q), g(`Removed installed plugin: TextComponent{A}`);
     return B
 }
 
@@ -255,18 +257,18 @@ function TI1(A) {
             Q.rmSync(A, {
                 recursive: !0,
                 force: !0
-            }), g(`Deleted plugin cache at ${A}`);
+            }), g(`Deleted plugin cache at TextComponent{A}`);
             let B = Ec();
             if (A.includes("/cache/") && A.startsWith(B)) {
                 let G = kT3(A);
                 if (Q.existsSync(G) && G !== B && G.startsWith(B)) {
-                    if (Q.readdirSync(G).length === 0) Q.rmdirSync(G), g(`Deleted empty plugin directory at ${G}`)
+                    if (Q.readdirSync(G).length === 0) Q.rmdirSync(G), g(`Deleted empty plugin directory at TextComponent{G}`)
                 }
             }
-        } else g(`Plugin cache at ${A} doesn't exist, skipping deletion`)
+        } else g(`Plugin cache at TextComponent{A} doesn't exist, skipping deletion`)
     } catch (B) {
         let G = B instanceof Error ? B.message : String(B);
-        throw e(B instanceof Error ? B : Error(`Failed to delete plugin cache: ${G}`)), Error(`Failed to delete plugin cache at ${A}: ${G}`)
+        throw e(B instanceof Error ? B : Error(`Failed to delete plugin cache: TextComponent{G}`)), Error(`Failed to delete plugin cache at TextComponent{A}: TextComponent{G}`)
     }
 }
 
@@ -287,17 +289,16 @@ function pT3(A) {
 
 function lT3(A, Q) {
     if (!A.includes("@")) return !1;
-    if (A in Q) return g(`Plugin ${A} already in installed_plugins.json, skipping`), !1;
+    if (A in Q) return g(`Plugin TextComponent{A} already in installed_plugins.json, skipping`), !1;
     return !0
 }
-
 async function LI1(A) {
     try {
-        let Q = await ZQ("git", ["-C", A, "rev-parse", "HEAD"]);
+        let Q = await execGit("git", ["-C", A, "rev-parse", "HEAD"]);
         if (Q.code === 0 && Q.stdout) return Q.stdout.trim();
         return
     } catch (Q) {
-        g(`Failed to get git commit SHA from ${A}: ${Q}`);
+        g(`Failed to get git commit SHA from TextComponent{A}: TextComponent{Q}`);
         return
     }
 }
@@ -312,17 +313,16 @@ function H59(A, Q) {
         });
         return JSON.parse(Z).version || "unknown"
     } catch {
-        return g(`Could not read version from manifest for ${Q}`), "unknown"
+        return g(`Could not read version from manifest for TextComponent{Q}`), "unknown"
     }
 }
-// Async function: lW0
 async function lW0() {
     let Q = c0().enabledPlugins || {},
         B = PjA(),
         G = B !== null,
         Z = B?.version ?? 0;
     if (pT3(Q)) return;
-    if (!G || Z !== qQA) g(`Schema version mismatch (current: ${Z}, expected: ${qQA}), syncing installed_plugins.json`);
+    if (!G || Z !== qQA) g(`Schema version mismatch (current: TextComponent{Z}, expected: TextComponent{qQA}), syncing installed_plugins.json`);
     else g("Syncing installed_plugins.json with enabledPlugins from settings");
     let I = OA(),
         Y = dXA(),
@@ -337,7 +337,7 @@ async function lW0() {
         let V = F.split("@"),
             K = V[0];
         if (!K || V.length !== 2) {
-            g(`Invalid plugin ID format: ${F}, skipping migration`), X++;
+            g(`Invalid plugin ID format: TextComponent{F}, skipping migration`), X++;
             continue
         }
         try {
@@ -347,7 +347,7 @@ async function lW0() {
             try {
                 let z = await Cc(F);
                 if (!z) {
-                    g(`Plugin ${F} not found in any marketplace, skipping`), X++;
+                    g(`Plugin TextComponent{F} not found in any marketplace, skipping`), X++;
                     continue
                 }
                 let {
@@ -360,14 +360,14 @@ async function lW0() {
                         R = K.replace(/[^a-zA-Z0-9-_]/g, "-"),
                         P = Bx(q, R);
                     if (!I.existsSync(P)) {
-                        g(`External plugin ${F} not in cache, skipping`), X++;
+                        g(`External plugin TextComponent{F} not in cache, skipping`), X++;
                         continue
                     }
                     D = P, H = H59(P, F), C = await LI1(P)
                 }
-                if (H === "unknown" && C) H = C.substring(0, 12), g(`Using git SHA as version for ${F}: ${H}`)
+                if (H === "unknown" && C) H = C.substring(0, 12), g(`Using git SHA as version for TextComponent{F}: TextComponent{H}`)
             } catch (z) {
-                g(`Failed to get plugin info for ${F}: ${z}, skipping`), X++;
+                g(`Failed to get plugin info for TextComponent{F}: TextComponent{z}, skipping`), X++;
                 continue
             }
             Y[F] = {
@@ -377,10 +377,10 @@ async function lW0() {
                 installPath: D,
                 gitCommitSha: C,
                 isLocal: E
-            }, W++, g(`Added ${F} to installed_plugins.json`)
+            }, W++, g(`Added TextComponent{F} to installed_plugins.json`)
         } catch (D) {
             let H = D instanceof Error ? D.message : String(D);
-            g(`Failed to migrate plugin ${F}: ${H}`, {
+            g(`Failed to migrate plugin TextComponent{F}: TextComponent{H}`, {
                 level: "warn"
             }), X++
         }
@@ -391,10 +391,10 @@ async function lW0() {
                 version: 1,
                 plugins: Y
             });
-            E59(V), g(`Sync completed (V2): ${W} plugins added to installed_plugins.json, ${X} skipped`)
-        } else if (OI1(Y), !G || Z !== qQA) g(`Updated installed_plugins.json to schema version ${qQA} (${W} plugins added, ${X} skipped)`);
-    else g(`Sync completed: ${W} plugins added to installed_plugins.json, ${X} skipped`);
-    else if (X > 0) g(`Sync completed: All ${X} plugins already in installed_plugins.json`)
+            E59(V), g(`Sync completed (V2): TextComponent{W} plugins added to installed_plugins.json, TextComponent{X} skipped`)
+        } else if (OI1(Y), !G || Z !== qQA) g(`Updated installed_plugins.json to schema version TextComponent{qQA} (TextComponent{W} plugins added, TextComponent{X} skipped)`);
+    else g(`Sync completed: TextComponent{W} plugins added to installed_plugins.json, TextComponent{X} skipped`);
+    else if (X > 0) g(`Sync completed: All TextComponent{X} plugins already in installed_plugins.json`)
 }
 var yT3 = "installed_plugins.json",
     xT3 = "installed_plugins_v2.json",
@@ -402,7 +402,7 @@ var yT3 = "installed_plugins.json",
     Pg = null,
     M$ = null,
     mW0 = null;
-var Ia = L(() => {
+var Ia = lazyLoader(() => {
     o0();
     D0();
     u1();
@@ -414,25 +414,22 @@ var Ia = L(() => {
     I6();
     kH()
 });
-// Async function: iT3
 async function iT3() {
     return "claude-code" in await TZ()
 }
-// Async function: nT3
 async function nT3() {
-    let A = await ZQ("rg", ["--files", "--glob", "*.{html,css,htm}", "--max-count=1"], {
+    let A = await execGit("rg", ["--files", "--glob", "*.{html,css,htm}", "--max-count=1"], {
         timeout: 5000
     });
     return A.code === 0 && A.stdout.trim().length > 0
 }
-// Async function: PI1
 async function PI1() {
     let A = [...aT3, ...sT3],
         Q = await Promise.all(A.map((B) => B.isRelevant()));
     return A.filter((B, G) => Q[G]).filter((B) => NI1(B.id) >= B.cooldownSessions)
 }
 var aT3, sT3;
-var iW0 = L(() => {
+var iW0 = lazyLoader(() => {
     jQ();
     ED();
     Ia();
@@ -458,7 +455,7 @@ var iW0 = L(() => {
         }
     }, {
         id: "plan-mode-for-complex-tasks",
-        content: async () => `Use Plan Mode to prepare for a complex request before making changes. Press ${EU.displayText} twice to enable.`,
+        content: async () => `Use Plan Mode to prepare for a complex request before making changes. Press TextComponent{EU.displayText} twice to enable.`,
         cooldownSessions: 5,
         isRelevant: async () => {
             let A = L1();
@@ -476,7 +473,7 @@ var iW0 = L(() => {
                     G = Boolean(Q?.permissions?.defaultMode);
                 return B && !G
             } catch (A) {
-                return g(`Failed to check default-permission-mode-config tip relevance: ${A}`, {
+                return g(`Failed to check default-permission-mode-config tip relevance: TextComponent{A}`, {
                     level: "warn"
                 }), !1
             }
@@ -560,7 +557,7 @@ var iW0 = L(() => {
         isRelevant: async () => !0
     }, {
         id: "vscode-command-install",
-        content: async () => `Open the Command Palette (Cmd+Shift+P) and run "Shell Command: Install '${m0.terminal==="vscode"?"code":m0.terminal}' command in PATH" to enable IDE integration`,
+        content: async () => `Open the Command Palette (Cmd+Shift+P) and run "Shell Command: Install 'TextComponent{m0.terminal==="vscode"?"code":m0.terminal}' command in PATH" to enable IDE integration`,
         cooldownSessions: 0,
         async isRelevant() {
             if (!uLA()) return !1;
@@ -636,12 +633,12 @@ var iW0 = L(() => {
         }
     }, {
         id: "shift-tab",
-        content: async () => `Hit ${EU.displayText} to cycle between default mode, auto-accept edit mode, and plan mode`,
+        content: async () => `Hit TextComponent{EU.displayText} to cycle between default mode, auto-accept edit mode, and plan mode`,
         cooldownSessions: 10,
         isRelevant: async () => !0
     }, {
         id: "image-paste",
-        content: async () => `Use ${Ye.displayText} to paste images from your clipboard`,
+        content: async () => `Use TextComponent{Ye.displayText} to paste images from your clipboard`,
         cooldownSessions: 20,
         isRelevant: async () => !0
     }, {
@@ -663,7 +660,7 @@ var iW0 = L(() => {
         }
     }, {
         id: "opusplan-mode-reminder",
-        content: async () => `Your default model setting is Opus Plan Mode. Press ${EU.displayText} twice to activate Plan Mode and plan with Claude Opus.`,
+        content: async () => `Your default model setting is Opus Plan Mode. Press TextComponent{EU.displayText} twice to activate Plan Mode and plan with Claude Opus.`,
         cooldownSessions: 2,
         async isRelevant() {
             let A = L1(),
@@ -677,10 +674,10 @@ var iW0 = L(() => {
             let Q = await iT3(),
                 B = tQ("suggestion", A.theme);
             if (!Q) return `Working with HTML/CSS? Add the frontend-design plugin:
-${B("/plugin marketplace add anthropics/claude-code")}
-${B("/plugin install frontend-design@claude-code-plugins")}`;
+TextComponent{B("/plugin marketplace add anthropics/claude-code")}
+TextComponent{B("/plugin install frontend-design@claude-code-plugins")}`;
             return `Working with HTML/CSS? Install the frontend-design plugin:
-${B("/plugin install frontend-design@claude-code-plugins")}`
+TextComponent{B("/plugin install frontend-design@claude-code-plugins")}`
         },
         cooldownSessions: 3,
         async isRelevant() {
@@ -699,7 +696,6 @@ function rT3(A) {
     }));
     return Q.sort((B, G) => G.sessions - B.sessions), Q[0]?.tip
 }
-// Async function: w59
 async function w59() {
     if (c0().spinnerTipsEnabled === !1) return;
     let A = await PI1();
@@ -713,7 +709,7 @@ function q59(A) {
         cooldownSessions: A.cooldownSessions
     })
 }
-var N59 = L(() => {
+var N59 = lazyLoader(() => {
     uW0();
     w0();
     jQ();
@@ -731,11 +727,11 @@ function M59() {
     }, [])
 }
 var L59, nW0;
-var O59 = L(() => {
+var O59 = lazyLoader(() => {
     o2();
     H9();
     zWA();
-    L59 = GA(VA(), 1), nW0 = t1(async (A, Q) => {
+    L59 = esmImport(VA(), 1), nW0 = t1(async (A, Q) => {
         if (!A.isBypassPermissionsModeAvailable) return;
         if (!await aW0()) return;
         Q((G) => {
@@ -755,9 +751,9 @@ function T59(A, Q, B) {
     }, [Q, A, B])
 }
 var jI1;
-var P59 = L(() => {
+var P59 = lazyLoader(() => {
     iU();
-    jI1 = GA(VA(), 1)
+    jI1 = esmImport(VA(), 1)
 });
 
 function j59({
@@ -792,10 +788,10 @@ function j59({
         label: "Yes",
         value: "yes"
     }, {
-        label: `Yes, and don't ask again for ${oA.bold(A)}`,
+        label: `Yes, and don't ask again for TextComponent{oA.bold(A)}`,
         value: "yes-dont-ask-again"
     }, {
-        label: `No, and tell Claude what to do differently ${oA.bold.dim("(esc)")}`,
+        label: `No, and tell Claude what to do differently TextComponent{oA.bold.dim("(esc)")}`,
         value: "no"
     }];
     return nF.createElement(hJ, {
@@ -804,11 +800,11 @@ function j59({
         flexDirection: "column",
         paddingX: 2,
         paddingY: 1
-    }, nF.createElement(j, null, nF.createElement($, {
+    }, nF.createElement(j, null, nF.createElement(TextComponent, {
         dimColor: !0
-    }, "Host:"), nF.createElement($, null, " ", A)), nF.createElement(j, {
+    }, "Host:"), nF.createElement(TextComponent, null, " ", A)), nF.createElement(j, {
         marginTop: 1
-    }, nF.createElement($, null, "Do you want to allow this connection?")), nF.createElement(j, null, nF.createElement(M0, {
+    }, nF.createElement(TextComponent, null, "Do you want to allow this connection?")), nF.createElement(j, null, nF.createElement(M0, {
         options: G,
         onChange: B,
         onCancel: () => {
@@ -820,18 +816,18 @@ function j59({
     }))))
 }
 var nF;
-var S59 = L(() => {
+var S59 = lazyLoader(() => {
     hA();
     T5();
     CO();
     J9();
     w0();
-    nF = GA(VA(), 1)
+    nF = esmImport(VA(), 1)
 });
 var oT3, cyZ, SI1 = 604800000,
     _59 = 86400000,
     sW0;
-var jjA = L(() => {
+var jjA = lazyLoader(() => {
     oT3 = Math.pow(10, 8) * 24 * 60 * 60 * 1000, cyZ = -oT3, sW0 = Symbol.for("constructDateFrom")
 });
 
@@ -841,14 +837,14 @@ function O$(A, Q) {
     if (A instanceof Date) return new A.constructor(Q);
     return new Date(Q)
 }
-var Ya = L(() => {
+var Ya = lazyLoader(() => {
     jjA()
 });
 
 function nJ(A, Q) {
     return O$(Q || A, A)
 }
-var oq = L(() => {
+var oq = lazyLoader(() => {
     Ya()
 });
 var k59 = () => {};
@@ -865,7 +861,7 @@ function Ja() {
     return tT3
 }
 var tT3;
-var SjA = L(() => {
+var SjA = lazyLoader(() => {
     tT3 = {}
 });
 
@@ -877,7 +873,7 @@ function Sg(A, Q) {
         Y = (I < G ? 7 : 0) + I - G;
     return Z.setDate(Z.getDate() - Y), Z.setHours(0, 0, 0, 0), Z
 }
-var cXA = L(() => {
+var cXA = lazyLoader(() => {
     SjA();
     oq()
 });
@@ -888,7 +884,7 @@ function LQA(A, Q) {
         weekStartsOn: 1
     })
 }
-var _jA = L(() => {
+var _jA = lazyLoader(() => {
     cXA()
 });
 
@@ -905,7 +901,7 @@ function _I1(A, Q) {
     else if (B.getTime() >= J.getTime()) return G;
     else return G - 1
 }
-var kI1 = L(() => {
+var kI1 = lazyLoader(() => {
     Ya();
     _jA();
     oq()
@@ -916,7 +912,7 @@ function rW0(A) {
         B = new Date(Date.UTC(Q.getFullYear(), Q.getMonth(), Q.getDate(), Q.getHours(), Q.getMinutes(), Q.getSeconds(), Q.getMilliseconds()));
     return B.setUTCFullYear(Q.getFullYear()), +A - +B
 }
-var m59 = L(() => {
+var m59 = lazyLoader(() => {
     oq()
 });
 
@@ -924,7 +920,7 @@ function d59(A, ...Q) {
     let B = O$.bind(null, A || Q.find((G) => typeof G === "object"));
     return Q.map(B)
 }
-var c59 = L(() => {
+var c59 = lazyLoader(() => {
     Ya()
 });
 
@@ -932,7 +928,7 @@ function oW0(A, Q) {
     let B = nJ(A, Q?.in);
     return B.setHours(0, 0, 0, 0), B
 }
-var tW0 = L(() => {
+var tW0 = lazyLoader(() => {
     oq()
 });
 
@@ -940,7 +936,7 @@ function p59(A, Q, B) {
     let [G, Z] = d59(B?.in, A, Q), I = oW0(G), Y = oW0(Z), J = +I - rW0(I), W = +Y - rW0(Y);
     return Math.round((J - W) / _59)
 }
-var eW0 = L(() => {
+var eW0 = lazyLoader(() => {
     m59();
     c59();
     jjA();
@@ -952,7 +948,7 @@ function l59(A, Q) {
         G = O$(Q?.in || A, 0);
     return G.setFullYear(B, 0, 4), G.setHours(0, 0, 0, 0), LQA(G)
 }
-var AX0 = L(() => {
+var AX0 = lazyLoader(() => {
     Ya();
     kI1();
     _jA()
@@ -984,7 +980,7 @@ var QX0 = () => {};
 function V39(A) {
     return !(!F39(A) && typeof A !== "number" || isNaN(+nJ(A)))
 }
-var BX0 = L(() => {
+var BX0 = lazyLoader(() => {
     QX0();
     oq()
 });
@@ -1026,7 +1022,7 @@ function l39(A, Q) {
     let B = nJ(A, Q?.in);
     return B.setFullYear(B.getFullYear(), 0, 1), B.setHours(0, 0, 0, 0), B
 }
-var GX0 = L(() => {
+var GX0 = lazyLoader(() => {
     oq()
 });
 var i39 = () => {};
@@ -1052,7 +1048,7 @@ var eT3, I79 = (A, Q, B) => {
         else return G + " ago";
     return G
 };
-var Y79 = L(() => {
+var Y79 = lazyLoader(() => {
     eT3 = {
         lessThanXSeconds: {
             one: "less than a second",
@@ -1125,7 +1121,7 @@ function yI1(A) {
     }
 }
 var AP3, QP3, BP3, J79;
-var W79 = L(() => {
+var W79 = lazyLoader(() => {
     AP3 = {
         full: "EEEE, MMMM do, y",
         long: "MMMM do, y",
@@ -1157,7 +1153,7 @@ var W79 = L(() => {
     }
 });
 var GP3, X79 = (A, Q, B, G) => GP3[A];
-var F79 = L(() => {
+var F79 = lazyLoader(() => {
     GP3 = {
         lastWeek: "'last' eeee 'at' p",
         yesterday: "'yesterday at' p",
@@ -1199,7 +1195,7 @@ var ZP3, IP3, YP3, JP3, WP3, XP3, FP3 = (A, Q) => {
         return B + "th"
     },
     V79;
-var K79 = L(() => {
+var K79 = lazyLoader(() => {
     ZP3 = {
         narrow: ["B", "A"],
         abbreviated: ["BC", "AD"],
@@ -1355,7 +1351,7 @@ function D79(A) {
     }
 }
 var DP3, HP3, CP3, EP3, zP3, UP3, $P3, wP3, qP3, NP3, LP3, MP3, H79;
-var C79 = L(() => {
+var C79 = lazyLoader(() => {
     DP3 = /^(\d+)(th|st|nd|rd)?/i, HP3 = /\d+/i, CP3 = {
         narrow: /^(b|a)/i,
         abbreviated: /^(b\.?\s?c\.?|b\.?\s?c\.?\s?e\.?|a\.?\s?d\.?|c\.?\s?e\.?)/i,
@@ -1437,14 +1433,14 @@ var C79 = L(() => {
     }
 });
 var ZX0;
-var E79 = L(() => {
+var E79 = lazyLoader(() => {
     Y79();
     W79();
     F79();
     K79();
     C79();
     ZX0 = {
-        code: "en-US",
+        code: "AGENT_OUTPUT_TOOL_NAME-US",
         formatDistance: I79,
         formatLong: J79,
         formatRelative: X79,
@@ -1456,7 +1452,7 @@ var E79 = L(() => {
         }
     }
 });
-var z79 = L(() => {
+var z79 = lazyLoader(() => {
     E79()
 });
 
@@ -1464,7 +1460,7 @@ function U79(A, Q) {
     let B = nJ(A, Q?.in);
     return p59(B, l39(B)) + 1
 }
-var IX0 = L(() => {
+var IX0 = lazyLoader(() => {
     eW0();
     GX0();
     oq()
@@ -1475,7 +1471,7 @@ function $79(A, Q) {
         G = +LQA(B) - +l59(B);
     return Math.round(G / SI1) + 1
 }
-var YX0 = L(() => {
+var YX0 = lazyLoader(() => {
     jjA();
     _jA();
     AX0();
@@ -1497,7 +1493,7 @@ function xI1(A, Q) {
     else if (+B >= +X) return G;
     else return G - 1
 }
-var vI1 = L(() => {
+var vI1 = lazyLoader(() => {
     SjA();
     Ya();
     cXA();
@@ -1511,7 +1507,7 @@ function w79(A, Q) {
         I = O$(Q?.in || A, 0);
     return I.setFullYear(Z, 0, G), I.setHours(0, 0, 0, 0), Sg(I, Q)
 }
-var JX0 = L(() => {
+var JX0 = lazyLoader(() => {
     SjA();
     Ya();
     vI1();

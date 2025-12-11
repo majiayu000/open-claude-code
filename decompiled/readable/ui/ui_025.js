@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_025.js
+ * 处理时间: 2025-12-09T03:41:39.264Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.116Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -23,7 +26,7 @@
                     return s
                 }
 
-function CG(b) {
+                function CG(b) {
                     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") CG = function(c) {
                         return typeof c
                     };
@@ -33,7 +36,7 @@ function CG(b) {
                     return CG(b)
                 }
 
-function PK(b) {
+                function PK(b) {
                     return b.flags !== void 0 ? b.flags : b.effectTag
                 }
                 var Px = (typeof performance > "u" ? "undefined" : CG(performance)) === "object" && typeof performance.now === "function" ? function() {
@@ -42,7 +45,7 @@ function PK(b) {
                     return Date.now()
                 };
 
-function RI(b) {
+                function RI(b) {
                     var a = {
                         ImmediatePriority: 99,
                         UserBlockingPriority: 98,
@@ -225,7 +228,7 @@ function RI(b) {
                         YieldComponent: 9
                     };
 
-function r(a9) {
+                    function r(a9) {
                         var m3 = CG(a9) === "object" && a9 !== null ? a9.$$typeof : a9;
                         return CG(m3) === "symbol" ? m3.toString() : m3
                     }
@@ -254,7 +257,7 @@ function r(a9) {
                         V4 = bA.SuspenseListComponent,
                         JJ = bA.TracingMarkerComponent;
 
-function tZ(a9) {
+                    function tZ(a9) {
                         var m3 = r(a9);
                         switch (m3) {
                             case Ex:
@@ -268,7 +271,7 @@ function tZ(a9) {
                         }
                     }
 
-function P7(a9) {
+                    function P7(a9) {
                         var {
                             elementType: m3,
                             type: WJ,
@@ -358,7 +361,7 @@ function P7(a9) {
                 var JX = new Map,
                     NY = new Map;
 
-function EN(b, a, c, s) {
+                function EN(b, a, c, s) {
                     var r = c.reconcilerVersion || c.version,
                         bA = RI(r),
                         Y1 = bA.getDisplayNameForFiber,
@@ -436,7 +439,7 @@ function EN(b, a, c, s) {
                         VX = new Map,
                         VV = new Map;
 
-function BW() {
+                    function BW() {
                         var vA = YJ(VX.keys()),
                             iA;
                         try {
@@ -451,10 +454,10 @@ function BW() {
                             vA.f()
                         }
                         var p1 = YJ(VV.keys()),
-                            h0;
+                            RENDER_ERROR;
                         try {
-                            for (p1.s(); !(h0 = p1.n()).done;) {
-                                var UQ = h0.value,
+                            for (p1.s(); !(RENDER_ERROR = p1.n()).done;) {
+                                var UQ = RENDER_ERROR.value,
                                     Y9 = NY.get(UQ);
                                 if (Y9 != null) g6.add(Y9), i0(UQ)
                             }
@@ -466,26 +469,26 @@ function BW() {
                         VX.clear(), VV.clear(), hx()
                     }
 
-function bC(vA, iA, $1) {
+                    function bC(vA, iA, $1) {
                         var D1 = NY.get(vA);
                         if (D1 != null)
                             if (QI.delete(D1), $1.has(vA)) $1.delete(vA), g6.add(D1), hx(), i0(vA);
                             else g6.delete(D1)
                     }
 
-function TN(vA) {
+                    function TN(vA) {
                         bC(vA, QI, VX)
                     }
 
-function BR(vA) {
+                    function BR(vA) {
                         bC(vA, UG, VV)
                     }
 
-function i0(vA) {
+                    function i0(vA) {
                         if (_K !== null && _K.id === vA) Ys = !0
                     }
 
-function BQ(vA, iA, $1) {
+                    function BQ(vA, iA, $1) {
                         if (iA === "error") {
                             var D1 = Pz(vA);
                             if (D1 != null && c$.get(D1) === !0) return
@@ -493,26 +496,27 @@ function BQ(vA, iA, $1) {
                         var p1 = N8.apply(void 0, CN($1));
                         if (H) YQ("onErrorOrWarning", vA, null, "".concat(iA, ': "').concat(p1, '"'));
                         g6.add(vA);
-                        var h0 = iA === "error" ? QI : UG,
-                            UQ = h0.get(vA);
+                        /* RENDER_ERROR = RENDER_ERROR = "Error rendering..." */
+var RENDER_ERROR = iA === "error" ? QI : UG,
+                            UQ = RENDER_ERROR.get(vA);
                         if (UQ != null) {
                             var Y9 = UQ.get(p1) || 0;
                             UQ.set(p1, Y9 + 1)
-                        } else h0.set(vA, new Map([
+                        } else RENDER_ERROR.set(vA, new Map([
                             [p1, 1]
                         ]));
                         bJ1()
                     }
                     sO(c, BQ), XX();
-
-var YQ = function(iA, $1, D1) {
+                    var YQ = function(iA, $1, D1) {
                             var p1 = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : "";
                             if (H) {
-                                var h0 = $1.tag + ":" + (Y1($1) || "null"),
+                                /* RENDER_ERROR = RENDER_ERROR = "Error rendering..." */
+var RENDER_ERROR = $1.tag + ":" + (Y1($1) || "null"),
                                     UQ = Pz($1) || "<no id>",
                                     Y9 = D1 ? D1.tag + ":" + (Y1(D1) || "null") : "",
                                     w9 = D1 ? Pz(D1) || "<no-id>" : "";
-                                console.groupCollapsed("[renderer] %c".concat(iA, " %c").concat(h0, " (").concat(UQ, ") %c").concat(D1 ? "".concat(Y9, " (").concat(w9, ")") : "", " %c").concat(p1), "color: red; font-weight: bold;", "color: blue;", "color: purple;", "color: black;"), console.log(Error().stack.split(`
+                                console.groupCollapsed("[renderer] %c".concat(iA, " %c").concat(RENDER_ERROR, " (").concat(UQ, ") %c").concat(D1 ? "".concat(Y9, " (").concat(w9, ")") : "", " %c").concat(p1), "color: red; font-weight: bold;", "color: blue;", "color: purple;", "color: black;"), console.log(Error().stack.split(`
 `).slice(1).join(`
 `)), console.groupEnd()
                             }
@@ -523,7 +527,7 @@ var YQ = function(iA, $1, D1) {
                         P8 = !1,
                         $3 = new Set;
 
-function FJ(vA) {
+                    function FJ(vA) {
                         c4.clear(), qQ.clear(), tB.clear(), vA.forEach(function(iA) {
                             if (!iA.isEnabled) return;
                             switch (iA.type) {
@@ -548,7 +552,7 @@ function FJ(vA) {
                     if (window.__REACT_DEVTOOLS_COMPONENT_FILTERS__ != null) FJ(window.__REACT_DEVTOOLS_COMPONENT_FILTERS__);
                     else FJ(qY());
 
-function CF(vA) {
+                    function CF(vA) {
                         if (Sz) throw Error("Cannot modify filter preferences while profiling");
                         b.getFiberRoots(a).forEach(function(iA) {
                             VJ = d$(iA.current), F7(R), hx(iA), VJ = -1
@@ -557,7 +561,7 @@ function CF(vA) {
                         }), fJ1(), hx()
                     }
 
-function Oz(vA) {
+                    function Oz(vA) {
                         var {
                             _debugSource: iA,
                             tag: $1,
@@ -577,8 +581,9 @@ function Oz(vA) {
                             case gQ:
                                 return p1 === null;
                             default:
-                                var h0 = Q1(D1);
-                                switch (h0) {
+                                /* RENDER_ERROR = RENDER_ERROR = "Error rendering..." */
+var RENDER_ERROR = Q1(D1);
+                                switch (RENDER_ERROR) {
                                     case Qj:
                                     case GJ:
                                     case Z8:
@@ -626,7 +631,7 @@ function Oz(vA) {
                         return !1
                     }
 
-function d3(vA) {
+                    function d3(vA) {
                         var {
                             type: iA,
                             tag: $1
@@ -687,7 +692,7 @@ function d3(vA) {
                         vx = new Map,
                         VJ = -1;
 
-function d$(vA) {
+                    function d$(vA) {
                         var iA = null;
                         if (JX.has(vA)) iA = JX.get(vA);
                         else {
@@ -698,9 +703,10 @@ function d$(vA) {
                         if (iA === null) D1 = !0, iA = g3();
                         var p1 = iA;
                         if (!JX.has(vA)) JX.set(vA, p1), NY.set(p1, vA);
-                        var h0 = vA.alternate;
-                        if (h0 !== null) {
-                            if (!JX.has(h0)) JX.set(h0, p1)
+                        /* RENDER_ERROR = RENDER_ERROR = "Error rendering..." */
+var RENDER_ERROR = vA.alternate;
+                        if (RENDER_ERROR !== null) {
+                            if (!JX.has(RENDER_ERROR)) JX.set(RENDER_ERROR, p1)
                         }
                         if (H) {
                             if (D1) YQ("getOrGenerateFiberID()", vA, vA.return, "Generated a new UID")
@@ -708,13 +714,13 @@ function d$(vA) {
                         return p1
                     }
 
-function Tz(vA) {
+                    function Tz(vA) {
                         var iA = Pz(vA);
                         if (iA !== null) return iA;
                         throw Error('Could not find ID for Fiber "'.concat(Y1(vA) || "", '"'))
                     }
 
-function Pz(vA) {
+                    function Pz(vA) {
                         if (JX.has(vA)) return JX.get(vA);
                         else {
                             var iA = vA.alternate;
@@ -723,7 +729,7 @@ function Pz(vA) {
                         return null
                     }
 
-function SJ1(vA) {
+                    function SJ1(vA) {
                         if (H) YQ("untrackFiberID()", vA, vA.return, "schedule after delay");
                         Gs.add(vA);
                         var iA = vA.alternate;
@@ -733,7 +739,7 @@ function SJ1(vA) {
                     var Gs = new Set,
                         bx = null;
 
-function _SA() {
+                    function _SA() {
                         if (bx !== null) clearTimeout(bx), bx = null;
                         Gs.forEach(function(vA) {
                             var iA = Pz(vA);
@@ -747,7 +753,7 @@ function _SA() {
                         }), Gs.clear()
                     }
 
-function _J1(vA, iA) {
+                    function _J1(vA, iA) {
                         switch (d3(iA)) {
                             case HG:
                             case WF:
@@ -776,7 +782,7 @@ function _J1(vA, iA) {
                         }
                     }
 
-function kSA(vA) {
+                    function kSA(vA) {
                         switch (d3(vA)) {
                             case HG:
                             case BV:
@@ -792,10 +798,9 @@ function kSA(vA) {
                                 break
                         }
                     }
+                    var Uu = {};
 
-var Uu = {};
-
-function ySA(vA) {
+                    function ySA(vA) {
                         var iA = Uu,
                             $1 = Uu;
                         switch (d3(vA)) {
@@ -817,7 +822,7 @@ function ySA(vA) {
                         }
                     }
 
-function xSA(vA) {
+                    function xSA(vA) {
                         var iA = Pz(vA);
                         if (iA !== null) {
                             kSA(vA);
@@ -826,14 +831,14 @@ function xSA(vA) {
                         }
                     }
 
-function kJ1(vA) {
+                    function kJ1(vA) {
                         if (Lu !== null) {
                             var iA = Tz(vA),
                                 $1 = Lu.has(iA) ? Lu.get(iA) : null,
                                 D1 = ySA(vA);
                             if ($1 == null || D1 == null) return null;
                             var p1 = YX($1, 2),
-                                h0 = p1[0],
+                                RENDER_ERROR = p1[0],
                                 UQ = p1[1],
                                 Y9 = YX(D1, 2),
                                 w9 = Y9[0],
@@ -841,7 +846,7 @@ function kJ1(vA) {
                             switch (d3(vA)) {
                                 case HG:
                                     if ($1 && D1) {
-                                        if (w9 !== Uu) return SFA(h0, w9);
+                                        if (w9 !== Uu) return SFA(RENDER_ERROR, w9);
                                         else if (i2 !== Uu) return UQ !== i2
                                     }
                                     break;
@@ -865,7 +870,7 @@ function kJ1(vA) {
                         return null
                     }
 
-function yJ1(vA) {
+                    function yJ1(vA) {
                         var iA = vA.queue;
                         if (!iA) return !1;
                         var $1 = $x.bind(iA);
@@ -873,14 +878,14 @@ function yJ1(vA) {
                         return $1("value") && $1("getSnapshot") && typeof iA.getSnapshot === "function"
                     }
 
-function xJ1(vA, iA) {
+                    function xJ1(vA, iA) {
                         var $1 = vA.memoizedState,
                             D1 = iA.memoizedState;
                         if (yJ1(vA)) return $1 !== D1;
                         return !1
                     }
 
-function vJ1(vA, iA) {
+                    function vJ1(vA, iA) {
                         if (vA == null || iA == null) return null;
                         var $1 = [],
                             D1 = 0;
@@ -892,16 +897,16 @@ function vJ1(vA, iA) {
                         return $1
                     }
 
-function SFA(vA, iA) {
+                    function SFA(vA, iA) {
                         if (vA == null || iA == null) return null;
                         if (iA.hasOwnProperty("baseState") && iA.hasOwnProperty("memoizedState") && iA.hasOwnProperty("next") && iA.hasOwnProperty("queue")) return null;
                         var $1 = new Set([].concat(CN(Object.keys(vA)), CN(Object.keys(iA)))),
                             D1 = [],
                             p1 = YJ($1),
-                            h0;
+                            RENDER_ERROR;
                         try {
-                            for (p1.s(); !(h0 = p1.n()).done;) {
-                                var UQ = h0.value;
+                            for (p1.s(); !(RENDER_ERROR = p1.n()).done;) {
+                                var UQ = RENDER_ERROR.value;
                                 if (vA[UQ] !== iA[UQ]) D1.push(UQ)
                             }
                         } catch (Y9) {
@@ -912,7 +917,7 @@ function SFA(vA, iA) {
                         return D1
                     }
 
-function _FA(vA, iA) {
+                    function _FA(vA, iA) {
                         switch (iA.tag) {
                             case a1:
                             case I9:
@@ -926,8 +931,7 @@ function _FA(vA, iA) {
                                 return vA.memoizedProps !== iA.memoizedProps || vA.memoizedState !== iA.memoizedState || vA.ref !== iA.ref
                         }
                     }
-
-var jz = [],
+                    var jz = [],
                         $u = [],
                         fx = [],
                         KBA = [],
@@ -935,29 +939,29 @@ var jz = [],
                         DBA = 0,
                         wu = null;
 
-function F7(vA) {
+                    function F7(vA) {
                         jz.push(vA)
                     }
 
-function qu() {
+                    function qu() {
                         if (Sz) {
                             if (PN != null && PN.durations.length > 0) return !1
                         }
                         return jz.length === 0 && $u.length === 0 && fx.length === 0 && wu === null
                     }
 
-function kFA(vA) {
+                    function kFA(vA) {
                         if (qu()) return;
                         if (KBA !== null) KBA.push(vA);
                         else b.emit("operations", vA)
                     }
                     var Is = null;
 
-function vSA() {
+                    function vSA() {
                         if (Is !== null) clearTimeout(Is), Is = null
                     }
 
-function bJ1() {
+                    function bJ1() {
                         vSA(), Is = setTimeout(function() {
                             if (Is = null, jz.length > 0) return;
                             if (yFA(), qu()) return;
@@ -968,7 +972,7 @@ function bJ1() {
                         }, 1000)
                     }
 
-function fJ1() {
+                    function fJ1() {
                         g6.clear(), VX.forEach(function(vA, iA) {
                             var $1 = NY.get(iA);
                             if ($1 != null) g6.add($1)
@@ -978,27 +982,27 @@ function fJ1() {
                         }), yFA()
                     }
 
-function bSA(vA, iA, $1, D1) {
+                    function bSA(vA, iA, $1, D1) {
                         var p1 = 0,
-                            h0 = D1.get(iA),
+                            RENDER_ERROR = D1.get(iA),
                             UQ = $1.get(vA);
                         if (UQ != null)
-                            if (h0 == null) h0 = UQ, D1.set(iA, UQ);
+                            if (RENDER_ERROR == null) RENDER_ERROR = UQ, D1.set(iA, UQ);
                             else {
-                                var Y9 = h0;
+                                var Y9 = RENDER_ERROR;
                                 UQ.forEach(function(w9, i2) {
                                     var q9 = Y9.get(i2) || 0;
                                     Y9.set(i2, q9 + w9)
                                 })
                             } if (!Oz(vA)) {
-                            if (h0 != null) h0.forEach(function(w9) {
+                            if (RENDER_ERROR != null) RENDER_ERROR.forEach(function(w9) {
                                 p1 += w9
                             })
                         }
                         return $1.delete(vA), p1
                     }
 
-function yFA() {
+                    function yFA() {
                         vSA(), g6.forEach(function(vA) {
                             var iA = Pz(vA);
                             if (iA === null);
@@ -1011,7 +1015,7 @@ function yFA() {
                         }), g6.clear()
                     }
 
-function hx(vA) {
+                    function hx(vA) {
                         if (yFA(), qu()) return;
                         var iA = $u.length + fx.length + (wu === null ? 0 : 1),
                             $1 = Array(3 + DBA + (iA > 0 ? 2 + iA : 0) + jz.length),
@@ -1025,14 +1029,15 @@ function hx(vA) {
                             }), iA > 0) {
                             $1[D1++] = z, $1[D1++] = iA;
                             for (var p1 = $u.length - 1; p1 >= 0; p1--) $1[D1++] = $u[p1];
-                            for (var h0 = 0; h0 < fx.length; h0++) $1[D1 + h0] = fx[h0];
+                            for (/* RENDER_ERROR = RENDER_ERROR = "Error rendering..." */
+var RENDER_ERROR = 0; RENDER_ERROR < fx.length; RENDER_ERROR++) $1[D1 + RENDER_ERROR] = fx[RENDER_ERROR];
                             if (D1 += fx.length, wu !== null) $1[D1] = wu, D1++
                         }
                         for (var UQ = 0; UQ < jz.length; UQ++) $1[D1 + UQ] = jz[UQ];
                         D1 += jz.length, kFA($1), jz.length = 0, $u.length = 0, fx.length = 0, wu = null, Zs.clear(), DBA = 0
                     }
 
-function fSA(vA) {
+                    function fSA(vA) {
                         if (vA === null) return 0;
                         var iA = Zs.get(vA);
                         if (iA !== void 0) return iA.id;
@@ -1044,14 +1049,14 @@ function fSA(vA) {
                         }), DBA += D1.length + 1, $1
                     }
 
-function hSA(vA, iA) {
+                    function hSA(vA, iA) {
                         var $1 = vA.tag === m4,
                             D1 = d$(vA);
                         if (H) YQ("recordMount()", vA, iA);
                         var p1 = vA.hasOwnProperty("_debugOwner"),
-                            h0 = vA.hasOwnProperty("treeBaseDuration"),
+                            RENDER_ERROR = vA.hasOwnProperty("treeBaseDuration"),
                             UQ = 0;
-                        if (h0) {
+                        if (RENDER_ERROR) {
                             if (UQ = y, typeof zG === "function") UQ |= v
                         }
                         if ($1) {
@@ -1070,10 +1075,10 @@ function hSA(vA, iA) {
                                 JH = fSA(KX);
                             if (F7(E), F7(D1), F7(i2), F7(KJ), F7(G6), F7(V7), F7(JH), (vA.mode & _1) !== 0 && (iA.mode & _1) === 0) F7(P), F7(D1), F7(M4)
                         }
-                        if (h0) vx.set(D1, VJ), uSA(vA)
+                        if (RENDER_ERROR) vx.set(D1, VJ), uSA(vA)
                     }
 
-function xFA(vA, iA) {
+                    function xFA(vA, iA) {
                         if (H) YQ("recordUnmount()", vA, null, iA ? "unmount is simulated" : "");
                         if (GW !== null) {
                             if (vA === GW || vA === GW.alternate) zj(null)
@@ -1088,16 +1093,18 @@ function xFA(vA, iA) {
                             else $u.push(D1);
                         if (!vA._debugNeedsRemount) {
                             SJ1(vA);
-                            var h0 = vA.hasOwnProperty("treeBaseDuration");
-                            if (h0) vx.delete(D1), Rz.delete(D1)
+                            /* RENDER_ERROR = RENDER_ERROR = "Error rendering..." */
+var RENDER_ERROR = vA.hasOwnProperty("treeBaseDuration");
+                            if (RENDER_ERROR) vx.delete(D1), Rz.delete(D1)
                         }
                     }
 
-function YH(vA, iA, $1, D1) {
+                    function YH(vA, iA, $1, D1) {
                         var p1 = vA;
                         while (p1 !== null) {
                             if (d$(p1), H) YQ("mountFiberRecursively()", p1, iA);
-                            var h0 = p4(p1),
+                            /* RENDER_ERROR = RENDER_ERROR = "Error rendering..." */
+var RENDER_ERROR = p4(p1),
                                 UQ = !Oz(p1);
                             if (UQ) hSA(p1, iA);
                             if (P8) {
@@ -1122,11 +1129,11 @@ function YH(vA, iA, $1, D1) {
                                     if (V7 !== null) YH(V7, UQ ? p1 : iA, !0, D1)
                                 }
                             } else if (p1.child !== null) YH(p1.child, UQ ? p1 : iA, !0, D1);
-                            YW1(h0), p1 = $1 ? p1.sibling : null
+                            YW1(RENDER_ERROR), p1 = $1 ? p1.sibling : null
                         }
                     }
 
-function gSA(vA) {
+                    function gSA(vA) {
                         if (H) YQ("unmountFiberChildrenRecursively()", vA);
                         var iA = vA.tag === z1.SuspenseComponent && vA.memoizedState !== null,
                             $1 = vA.child;
@@ -1141,15 +1148,16 @@ function gSA(vA) {
                         }
                     }
 
-function uSA(vA) {
+                    function uSA(vA) {
                         var iA = Tz(vA),
                             $1 = vA.actualDuration,
                             D1 = vA.treeBaseDuration;
                         if (Rz.set(iA, D1 || 0), Sz) {
                             var p1 = vA.alternate;
                             if (p1 == null || D1 !== p1.treeBaseDuration) {
-                                var h0 = Math.floor((D1 || 0) * 1000);
-                                F7(N), F7(iA), F7(h0)
+                                /* RENDER_ERROR = RENDER_ERROR = "Error rendering..." */
+var RENDER_ERROR = Math.floor((D1 || 0) * 1000);
+                                F7(N), F7(iA), F7(RENDER_ERROR)
                             }
                             if (p1 == null || _FA(p1, vA)) {
                                 if ($1 != null) {
@@ -1169,7 +1177,7 @@ function uSA(vA) {
                         }
                     }
 
-function hJ1(vA, iA) {
+                    function hJ1(vA, iA) {
                         if (H) YQ("recordResetChildren()", iA, vA);
                         var $1 = [],
                             D1 = iA;
@@ -1177,32 +1185,34 @@ function hJ1(vA, iA) {
                         var p1 = $1.length;
                         if (p1 < 2) return;
                         F7(w), F7(Tz(vA)), F7(p1);
-                        for (var h0 = 0; h0 < $1.length; h0++) F7($1[h0])
+                        for (/* RENDER_ERROR = RENDER_ERROR = "Error rendering..." */
+var RENDER_ERROR = 0; RENDER_ERROR < $1.length; RENDER_ERROR++) F7($1[RENDER_ERROR])
                     }
 
-function mSA(vA, iA) {
+                    function mSA(vA, iA) {
                         if (!Oz(vA)) iA.push(Tz(vA));
                         else {
                             var $1 = vA.child,
                                 D1 = vA.tag === P7 && vA.memoizedState !== null;
                             if (D1) {
                                 var p1 = vA.child,
-                                    h0 = p1 ? p1.sibling : null,
-                                    UQ = h0 ? h0.child : null;
+                                    RENDER_ERROR = p1 ? p1.sibling : null,
+                                    UQ = RENDER_ERROR ? RENDER_ERROR.child : null;
                                 if (UQ !== null) $1 = UQ
                             }
                             while ($1 !== null) mSA($1, iA), $1 = $1.sibling
                         }
                     }
 
-function vFA(vA, iA, $1, D1) {
+                    function vFA(vA, iA, $1, D1) {
                         var p1 = d$(vA);
                         if (H) YQ("updateFiberRecursively()", vA, $1);
                         if (P8) {
-                            var h0 = d3(vA);
+                            /* RENDER_ERROR = RENDER_ERROR = "Error rendering..." */
+var RENDER_ERROR = d3(vA);
                             if (D1) {
-                                if (h0 === z3) $3.add(vA.stateNode), D1 = !1
-                            } else if (h0 === WF || h0 === HG || h0 === eJ || h0 === GV || h0 === BV) D1 = _FA(iA, vA)
+                                if (RENDER_ERROR === z3) $3.add(vA.stateNode), D1 = !1
+                            } else if (RENDER_ERROR === WF || RENDER_ERROR === HG || RENDER_ERROR === eJ || RENDER_ERROR === GV || RENDER_ERROR === BV) D1 = _FA(iA, vA)
                         }
                         if (_K !== null && _K.id === p1 && _FA(iA, vA)) Ys = !0;
                         var UQ = !Oz(vA),
@@ -1263,15 +1273,15 @@ function vFA(vA, iA, $1, D1) {
                         else return !1
                     }
 
-function gJ1() {}
+                    function gJ1() {}
 
-function bFA(vA) {
+                    function bFA(vA) {
                         if (vA.memoizedInteractions != null) return !0;
                         else if (vA.current != null && vA.current.hasOwnProperty("treeBaseDuration")) return !0;
                         else return !1
                     }
 
-function uJ1() {
+                    function uJ1() {
                         var vA = KBA;
                         if (KBA = null, vA !== null && vA.length > 0) vA.forEach(function(iA) {
                             b.emit("operations", iA)
@@ -1294,17 +1304,17 @@ function uJ1() {
                         }
                     }
 
-function dSA(vA) {
+                    function dSA(vA) {
                         return vA.memoizedUpdaters != null ? Array.from(vA.memoizedUpdaters).filter(function(iA) {
                             return Pz(iA) !== null
                         }).map(gx) : null
                     }
 
-function mJ1(vA) {
+                    function mJ1(vA) {
                         if (!Gs.has(vA)) xFA(vA, !1)
                     }
 
-function dJ1(vA) {
+                    function dJ1(vA) {
                         if (Sz && bFA(vA)) {
                             if (PN !== null) {
                                 var iA = jB(vA),
@@ -1315,7 +1325,7 @@ function dJ1(vA) {
                         }
                     }
 
-function cJ1(vA, iA) {
+                    function cJ1(vA, iA) {
                         var $1 = vA.current,
                             D1 = $1.alternate;
                         if (_SA(), VJ = d$($1), Cj !== null) Ej = !0;
@@ -1332,11 +1342,12 @@ function cJ1(vA, iA) {
                             passiveEffectDuration: null
                         };
                         if (D1) {
-                            var h0 = D1.memoizedState != null && D1.memoizedState.element != null && D1.memoizedState.isDehydrated !== !0,
+                            /* RENDER_ERROR = RENDER_ERROR = "Error rendering..." */
+var RENDER_ERROR = D1.memoizedState != null && D1.memoizedState.element != null && D1.memoizedState.isDehydrated !== !0,
                                 UQ = $1.memoizedState != null && $1.memoizedState.element != null && $1.memoizedState.isDehydrated !== !0;
-                            if (!h0 && UQ) CBA(VJ, $1), YH($1, null, !1, !1);
-                            else if (h0 && UQ) vFA($1, D1, null, !1);
-                            else if (h0 && !UQ) Uj(VJ), xFA($1, !1)
+                            if (!RENDER_ERROR && UQ) CBA(VJ, $1), YH($1, null, !1, !1);
+                            else if (RENDER_ERROR && UQ) vFA($1, D1, null, !1);
+                            else if (RENDER_ERROR && !UQ) Uj(VJ), xFA($1, !1)
                         } else CBA(VJ, $1), YH($1, null, !1, !1);
                         if (Sz && p1) {
                             if (!qu()) {
@@ -1349,7 +1360,7 @@ function cJ1(vA, iA) {
                         VJ = -1
                     }
 
-function cSA(vA) {
+                    function cSA(vA) {
                         var iA = [],
                             $1 = GR(vA);
                         if (!$1) return iA;
@@ -1370,7 +1381,7 @@ function cSA(vA) {
                         return iA
                     }
 
-function pSA(vA) {
+                    function pSA(vA) {
                         try {
                             var iA = GR(vA);
                             if (iA === null) return null;
@@ -1383,16 +1394,16 @@ function pSA(vA) {
                         }
                     }
 
-function pJ1(vA) {
+                    function pJ1(vA) {
                         var iA = NY.get(vA);
                         return iA != null ? Y1(iA) : null
                     }
 
-function lJ1(vA) {
+                    function lJ1(vA) {
                         return c.findFiberByHostInstance(vA)
                     }
 
-function lSA(vA) {
+                    function lSA(vA) {
                         var iA = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1,
                             $1 = c.findFiberByHostInstance(vA);
                         if ($1 != null) {
@@ -1403,11 +1414,11 @@ function lSA(vA) {
                         return null
                     }
 
-function fFA(vA) {
+                    function fFA(vA) {
                         if (iSA(vA) !== vA) throw Error("Unable to find node on an unmounted component.")
                     }
 
-function iSA(vA) {
+                    function iSA(vA) {
                         var iA = vA,
                             $1 = vA;
                         if (!vA.alternate) {
@@ -1415,8 +1426,8 @@ function iSA(vA) {
                             do {
                                 iA = D1;
                                 var p1 = 2,
-                                    h0 = 4096;
-                                if ((iA.flags & (p1 | h0)) !== 0) $1 = iA.return;
+                                    RENDER_ERROR = 4096;
+                                if ((iA.flags & (p1 | RENDER_ERROR)) !== 0) $1 = iA.return;
                                 D1 = iA.return
                             } while (D1)
                         } else
@@ -1425,7 +1436,7 @@ function iSA(vA) {
                         return null
                     }
 
-function GR(vA) {
+                    function GR(vA) {
                         var iA = NY.get(vA);
                         if (iA == null) return console.warn('Could not find Fiber with id "'.concat(vA, '"')), null;
                         var $1 = iA.alternate;
@@ -1436,7 +1447,7 @@ function GR(vA) {
                             return iA
                         }
                         var p1 = iA,
-                            h0 = $1;
+                            RENDER_ERROR = $1;
                         while (!0) {
                             var UQ = p1.return;
                             if (UQ === null) break;
@@ -1444,7 +1455,7 @@ function GR(vA) {
                             if (Y9 === null) {
                                 var w9 = UQ.return;
                                 if (w9 !== null) {
-                                    p1 = h0 = w9;
+                                    p1 = RENDER_ERROR = w9;
                                     continue
                                 }
                                 break
@@ -1453,22 +1464,22 @@ function GR(vA) {
                                 var i2 = UQ.child;
                                 while (i2) {
                                     if (i2 === p1) return fFA(UQ), iA;
-                                    if (i2 === h0) return fFA(UQ), $1;
+                                    if (i2 === RENDER_ERROR) return fFA(UQ), $1;
                                     i2 = i2.sibling
                                 }
                                 throw Error("Unable to find node on an unmounted component.")
                             }
-                            if (p1.return !== h0.return) p1 = UQ, h0 = Y9;
+                            if (p1.return !== RENDER_ERROR.return) p1 = UQ, RENDER_ERROR = Y9;
                             else {
                                 var q9 = !1,
                                     G6 = UQ.child;
                                 while (G6) {
                                     if (G6 === p1) {
-                                        q9 = !0, p1 = UQ, h0 = Y9;
+                                        q9 = !0, p1 = UQ, RENDER_ERROR = Y9;
                                         break
                                     }
-                                    if (G6 === h0) {
-                                        q9 = !0, h0 = UQ, p1 = Y9;
+                                    if (G6 === RENDER_ERROR) {
+                                        q9 = !0, RENDER_ERROR = UQ, p1 = Y9;
                                         break
                                     }
                                     G6 = G6.sibling
@@ -1477,11 +1488,11 @@ function GR(vA) {
                                     G6 = Y9.child;
                                     while (G6) {
                                         if (G6 === p1) {
-                                            q9 = !0, p1 = Y9, h0 = UQ;
+                                            q9 = !0, p1 = Y9, RENDER_ERROR = UQ;
                                             break
                                         }
-                                        if (G6 === h0) {
-                                            q9 = !0, h0 = Y9, p1 = UQ;
+                                        if (G6 === RENDER_ERROR) {
+                                            q9 = !0, RENDER_ERROR = Y9, p1 = UQ;
                                             break
                                         }
                                         G6 = G6.sibling
@@ -1489,18 +1500,18 @@ function GR(vA) {
                                     if (!q9) throw Error("Child was not found in either parent set. This indicates a bug in React related to the return pointer. Please file an issue.")
                                 }
                             }
-                            if (p1.alternate !== h0) throw Error("Return fibers should always be each others' alternates. This error is likely caused by a bug in React. Please file an issue.")
+                            if (p1.alternate !== RENDER_ERROR) throw Error("Return fibers should always be each others' alternates. This error is likely caused by a bug in React. Please file an issue.")
                         }
                         if (p1.tag !== m4) throw Error("Unable to find node on an unmounted component.");
                         if (p1.stateNode.current === p1) return iA;
                         return $1
                     }
 
-function iJ1(vA, iA) {
+                    function iJ1(vA, iA) {
                         if (Js(vA)) window.$attribute = z0(_K, iA)
                     }
 
-function nJ1(vA) {
+                    function nJ1(vA) {
                         var iA = NY.get(vA);
                         if (iA == null) {
                             console.warn('Could not find Fiber with id "'.concat(vA, '"'));

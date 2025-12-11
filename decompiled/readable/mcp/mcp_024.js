@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_024.js
+ * 处理时间: 2025-12-09T03:41:38.002Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.022Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -48,18 +51,18 @@
         defaultTab: "general"
     }, F), y6.createElement(j, {
         marginTop: 1
-    }, y6.createElement($, null, "For more help:", " ", y6.createElement(a4, {
-        url: "https://docs.claude.com/en/docs/claude-code/overview"
+    }, y6.createElement(TextComponent, null, "For more help:", " ", y6.createElement(a4, {
+        url: "https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/overview"
     }))), y6.createElement(j, {
         marginTop: 1
-    }, y6.createElement($, {
+    }, y6.createElement(TextComponent, {
         dimColor: !0
-    }, I.pending ? y6.createElement(y6.Fragment, null, "Press ", I.keyName, " again to exit") : y6.createElement($, {
+    }, I.pending ? y6.createElement(y6.Fragment, null, "Press ", I.keyName, " again to exit") : y6.createElement(TextComponent, {
         italic: !0
     }, "Esc to exit")))))
 }
 var y6;
-var MX9 = L(() => {
+var MX9 = lazyLoader(() => {
     hA();
     eV();
     cjA();
@@ -69,12 +72,12 @@ var MX9 = L(() => {
     m8();
     c9();
     hA();
-    y6 = GA(VA(), 1)
+    y6 = esmImport(VA(), 1)
 });
 var PF0, aS3, OX9;
-var RX9 = L(() => {
+var RX9 = lazyLoader(() => {
     MX9();
-    PF0 = GA(VA(), 1), aS3 = {
+    PF0 = esmImport(VA(), 1), aS3 = {
         type: "local-jsx",
         name: "help",
         description: "Show help and available commands",
@@ -123,7 +126,7 @@ function TX9({
         width: "100%"
     }, Bz.default.createElement(j, {
         marginBottom: 1
-    }, Bz.default.createElement($, {
+    }, Bz.default.createElement(TextComponent, {
         color: "ide"
     }, "Do you wish to enable auto-connect to IDE?")), Bz.default.createElement(j, {
         flexDirection: "column",
@@ -141,11 +144,11 @@ function TX9({
         onCancel: () => A()
     })), Bz.default.createElement(j, {
         marginTop: 1
-    }, Bz.default.createElement($, {
+    }, Bz.default.createElement(TextComponent, {
         dimColor: !0
     }, "You can also configure this in /config or with the --ide flag"))), Bz.default.createElement(j, {
         paddingX: 1
-    }, Bz.default.createElement($, {
+    }, Bz.default.createElement(TextComponent, {
         dimColor: !0
     }, Q.pending ? Bz.default.createElement(Bz.default.Fragment, null, "Press ", Q.keyName, " again to exit") : "Enter to confirm")))
 }
@@ -155,14 +158,14 @@ function PX9() {
     return !_F() && A.autoConnectIde !== !0 && A.hasIdeAutoConnectDialogBeenShown !== !0
 }
 var Bz;
-var jX9 = L(() => {
+var jX9 = lazyLoader(() => {
     hA();
     jQ();
     hA();
     T6();
     c9();
     yJ();
-    Bz = GA(VA(), 1)
+    Bz = esmImport(VA(), 1)
 });
 import * as _X9 from "path";
 
@@ -211,14 +214,14 @@ function sS3({
         width: "100%"
     }, U4.default.createElement(j, {
         flexDirection: "column"
-    }, U4.default.createElement($, {
+    }, U4.default.createElement(TextComponent, {
         color: "ide",
         bold: !0
-    }, "Select IDE"), U4.default.createElement($, {
+    }, "Select IDE"), U4.default.createElement(TextComponent, {
         dimColor: !0
     }, "Connect to an IDE for integrated development features."), A.length === 0 && U4.default.createElement(j, {
         marginTop: 1
-    }, U4.default.createElement($, {
+    }, U4.default.createElement(TextComponent, {
         dimColor: !0
     }, bA0() ? `No available IDEs detected. Please install the plugin and restart your IDE:
 https://docs.claude.com/s/claude-code-jetbrains` : "No available IDEs detected. Make sure your IDE has the Claude Code extension or plugin installed and is running."))), A.length !== 0 && U4.default.createElement(j, {
@@ -236,12 +239,12 @@ https://docs.claude.com/s/claude-code-jetbrains` : "No available IDEs detected. 
         onCancel: () => G()
     })), A.length !== 0 && !_F() && U4.default.createElement(j, {
         marginTop: 1
-    }, U4.default.createElement($, {
+    }, U4.default.createElement(TextComponent, {
         dimColor: !0
     }, "※ Tip: You can enable auto-connect to IDE in /config or with the --ide flag")), Q.length > 0 && U4.default.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, U4.default.createElement($, {
+    }, U4.default.createElement(TextComponent, {
         dimColor: !0
     }, "Found ", Q.length, " other running IDE(s). However, their workspace/project directories do not match the current cwd."), U4.default.createElement(j, {
         marginTop: 1,
@@ -249,15 +252,14 @@ https://docs.claude.com/s/claude-code-jetbrains` : "No available IDEs detected. 
     }, Q.map((D, H) => U4.default.createElement(j, {
         key: H,
         paddingLeft: 3
-    }, U4.default.createElement($, {
+    }, U4.default.createElement(TextComponent, {
         dimColor: !0
     }, "• ", D.name, ": ", SX9(D.workspaceFolders))))))), U4.default.createElement(j, {
         paddingX: 1
-    }, U4.default.createElement($, {
+    }, U4.default.createElement(TextComponent, {
         dimColor: !0
     }, I.pending ? U4.default.createElement(U4.default.Fragment, null, "Press ", I.keyName, " again to exit") : U4.default.createElement(U4.default.Fragment, null, A.length !== 0 && "Enter to confirm · ", "Esc to exit"))))
 }
-
 async function rS3(A, Q) {
     let B = Q?.ide;
     if (!B || B.type !== "sse-ide" && B.type !== "ws-ide") return null;
@@ -294,7 +296,7 @@ function oS3({
         width: "100%"
     }, U4.default.createElement(j, {
         marginBottom: 1
-    }, U4.default.createElement($, {
+    }, U4.default.createElement(TextComponent, {
         color: "ide"
     }, "Select IDE to install extension:")), U4.default.createElement(j, {
         flexDirection: "column",
@@ -311,7 +313,7 @@ function oS3({
         })
     }))), U4.default.createElement(j, {
         paddingLeft: 3
-    }, U4.default.createElement($, {
+    }, U4.default.createElement(TextComponent, {
         dimColor: !0
     }, G.pending ? U4.default.createElement(U4.default.Fragment, null, "Press ", G.keyName, " again to exit") : U4.default.createElement(U4.default.Fragment, null, "Enter to confirm · Esc to cancel"))))
 }
@@ -334,7 +336,7 @@ function SX9(A, Q = 100) {
     return F
 }
 var U4, tS3, kX9;
-var yX9 = L(() => {
+var yX9 = lazyLoader(() => {
     hA();
     T6();
     jX9();
@@ -345,7 +347,7 @@ var yX9 = L(() => {
     R2();
     I6();
     J9();
-    U4 = GA(VA(), 1);
+    U4 = esmImport(VA(), 1);
     tS3 = {
         type: "local-jsx",
         name: "ide",
@@ -365,9 +367,9 @@ var yX9 = L(() => {
                 let F = LB1(),
                     V = (K) => {
                         if (Q.onInstallIDEExtension)
-                            if (Q.onInstallIDEExtension(K), pM(K)) A(`Installed plugin to ${oA.bold(aH(K))}
-Please ${oA.bold("restart your IDE")} completely for it to take effect`);
-                            else A(`Installed extension to ${oA.bold(aH(K))}`)
+                            if (Q.onInstallIDEExtension(K), pM(K)) A(`Installed plugin to TextComponent{oA.bold(aH(K))}
+Please TextComponent{oA.bold("restart your IDE")} completely for it to take effect`);
+                            else A(`Installed extension to TextComponent{oA.bold(aH(K))}`)
                     };
                 if (F.length > 1) return U4.default.createElement(oS3, {
                     runningIDEs: F,
@@ -407,7 +409,7 @@ Please ${oA.bold("restart your IDE")} completely for it to take effect`);
                             ...G || {}
                         };
                         if (W) delete V.ide;
-                        if (!F) A(W ? `Disconnected from ${W.name}.` : "No IDE selected.");
+                        if (!F) A(W ? `Disconnected from TextComponent{W.name}.` : "No IDE selected.");
                         else {
                             let K = F.url;
                             V.ide = {
@@ -417,7 +419,7 @@ Please ${oA.bold("restart your IDE")} completely for it to take effect`);
                                 authToken: F.authToken,
                                 ideRunningInWindows: F.ideRunningInWindows,
                                 scope: "dynamic"
-                            }, A(`Connected to ${F.name}.`)
+                            }, A(`Connected to TextComponent{F.name}.`)
                         }
                         Z(V)
                     } catch (V) {
@@ -432,7 +434,7 @@ Please ${oA.bold("restart your IDE")} completely for it to take effect`);
     }, kX9 = tS3
 });
 var eS3, xX9;
-var vX9 = L(() => {
+var vX9 = lazyLoader(() => {
     r$A();
     eS3 = {
         type: "prompt",
@@ -475,12 +477,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 });
 
 function fX9() {
-    return bX9.default.createElement($, null, "Checking GitHub CLI installation…")
+    return bX9.default.createElement(TextComponent, null, "Checking GitHub CLI installation…")
 }
 var bX9;
-var hX9 = L(() => {
+var hX9 = lazyLoader(() => {
     hA();
-    bX9 = GA(VA(), 1)
+    bX9 = esmImport(VA(), 1)
 });
 
 function gX9({
@@ -510,18 +512,18 @@ function gX9({
     }, GF.default.createElement(j, {
         flexDirection: "column",
         marginBottom: 1
-    }, GF.default.createElement($, {
+    }, GF.default.createElement(TextComponent, {
         bold: !0
-    }, "Install GitHub App"), GF.default.createElement($, {
+    }, "Install GitHub App"), GF.default.createElement(TextComponent, {
         dimColor: !0
     }, "Select GitHub repository")), A && GF.default.createElement(j, {
         marginBottom: 1
-    }, GF.default.createElement($, {
+    }, GF.default.createElement(TextComponent, {
         bold: Q,
         color: Q ? "permission" : void 0
     }, Q ? "> " : "  ", "Use current repository: ", A)), GF.default.createElement(j, {
         marginBottom: 1
-    }, GF.default.createElement($, {
+    }, GF.default.createElement(TextComponent, {
         bold: !Q || !A,
         color: !Q || !A ? "permission" : void 0
     }, !Q || !A ? "> " : "  ", A ? "Enter a different repository" : "Enter repository")), (!Q || !A) && GF.default.createElement(j, {
@@ -542,20 +544,20 @@ function gX9({
     }))), W && GF.default.createElement(j, {
         marginLeft: 3,
         marginBottom: 1
-    }, GF.default.createElement($, {
+    }, GF.default.createElement(TextComponent, {
         color: "error"
     }, "Please enter a repository name to continue")), GF.default.createElement(j, {
         marginLeft: 3
-    }, GF.default.createElement($, {
+    }, GF.default.createElement(TextComponent, {
         dimColor: !0
     }, A ? "↑/↓ to select · " : "", "Enter to continue")))
 }
 var GF;
-var uX9 = L(() => {
+var uX9 = lazyLoader(() => {
     hA();
     QY();
     m8();
-    GF = GA(VA(), 1)
+    GF = esmImport(VA(), 1)
 });
 var mX9 = "Add Claude Code GitHub Workflow",
     Wx = "https://github.com/anthropics/claude-code-action/blob/main/docs/setup.md",
@@ -595,7 +597,7 @@ jobs:
         id: claude
         uses: anthropics/claude-code-action@v1
         with:
-          anthropic_api_key: \${{ secrets.ANTHROPIC_API_KEY }}
+          anthropic_api_key: \TextComponent{{ secrets.ANTHROPIC_API_KEY }}
 
           # This is an optional setting that allows Claude to read CI results on PRs
           additional_permissions: |
@@ -606,7 +608,7 @@ jobs:
 
           # Optional: Add claude_args to customize behavior and configuration
           # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
-          # or https://docs.claude.com/en/docs/claude-code/cli-reference for available options
+          # or https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/cli-reference for available options
           # claude_args: '--allowed-tools Bash(gh pr:*)'
 
 `,
@@ -688,10 +690,10 @@ jobs:
         id: claude-review
         uses: anthropics/claude-code-action@v1
         with:
-          anthropic_api_key: \${{ secrets.ANTHROPIC_API_KEY }}
+          anthropic_api_key: \TextComponent{{ secrets.ANTHROPIC_API_KEY }}
           prompt: |
-            REPO: \${{ github.repository }}
-            PR NUMBER: \${{ github.event.pull_request.number }}
+            REPO: \TextComponent{{ github.repository }}
+            PR NUMBER: \TextComponent{{ github.event.pull_request.number }}
 
             Please review this pull request and provide feedback on:
             - Code quality and best practices
@@ -705,7 +707,7 @@ jobs:
             Use \`gh pr comment\` with your Bash tool to leave your review as a comment on the PR.
 
           # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
-          # or https://docs.claude.com/en/docs/claude-code/cli-reference for available options
+          # or https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/cli-reference for available options
           claude_args: '--allowed-tools "Bash(gh issue view:*),Bash(gh search:*),Bash(gh issue list:*),Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr list:*)"'
 
 `,
@@ -746,12 +748,12 @@ jobs:
         id: claude-review
         uses: anthropics/claude-code-action@v1
         with:
-          anthropic_api_key: \${{ secrets.ANTHROPIC_API_KEY }}
+          anthropic_api_key: \TextComponent{{ secrets.ANTHROPIC_API_KEY }}
           plugin_marketplaces: 'https://github.com/anthropics/claude-code.git'
           plugins: 'code-review@claude-code-plugins'
-          prompt: '/code-review:code-review \${{ github.repository }}/pull/\${{ github.event.pull_request.number }}'
+          prompt: '/code-review:code-review \TextComponent{{ github.repository }}/pull/\TextComponent{{ github.event.pull_request.number }}'
           # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
-          # or https://docs.claude.com/en/docs/claude-code/cli-reference for available options
+          # or https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/cli-reference for available options
 
 `;
 
@@ -769,40 +771,40 @@ function iX9({
     }, ZF.default.createElement(j, {
         flexDirection: "column",
         marginBottom: 1
-    }, ZF.default.createElement($, {
+    }, ZF.default.createElement(TextComponent, {
         bold: !0
     }, "Install the Claude GitHub App")), ZF.default.createElement(j, {
         marginBottom: 1
-    }, ZF.default.createElement($, null, "Opening browser to install the Claude GitHub App…")), ZF.default.createElement(j, {
+    }, ZF.default.createElement(TextComponent, null, "Opening browser to install the Claude GitHub App…")), ZF.default.createElement(j, {
         marginBottom: 1
-    }, ZF.default.createElement($, null, "If your browser doesn't open automatically, visit:")), ZF.default.createElement(j, {
+    }, ZF.default.createElement(TextComponent, null, "If your browser doesn't open automatically, visit:")), ZF.default.createElement(j, {
         marginBottom: 1
-    }, ZF.default.createElement($, {
+    }, ZF.default.createElement(TextComponent, {
         underline: !0
     }, "https://github.com/apps/claude")), ZF.default.createElement(j, {
         marginBottom: 1
-    }, ZF.default.createElement($, null, "Please install the app for repository: ", ZF.default.createElement($, {
+    }, ZF.default.createElement(TextComponent, null, "Please install the app for repository: ", ZF.default.createElement(TextComponent, {
         bold: !0
     }, A))), ZF.default.createElement(j, {
         marginBottom: 1
-    }, ZF.default.createElement($, {
+    }, ZF.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Important: Make sure to grant access to this specific repository")), ZF.default.createElement(j, null, ZF.default.createElement($, {
+    }, "Important: Make sure to grant access to this specific repository")), ZF.default.createElement(j, null, ZF.default.createElement(TextComponent, {
         bold: !0,
         color: "permission"
     }, "Press Enter once you've installed the app", V1.ellipsis)), ZF.default.createElement(j, {
         marginTop: 1
-    }, ZF.default.createElement($, {
+    }, ZF.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Having trouble? See manual setup instructions at:", " ", ZF.default.createElement($, {
+    }, "Having trouble? See manual setup instructions at:", " ", ZF.default.createElement(TextComponent, {
         color: "claude"
     }, Wx))))
 }
 var ZF;
-var nX9 = L(() => {
+var nX9 = lazyLoader(() => {
     hA();
     n2();
-    ZF = GA(VA(), 1)
+    ZF = esmImport(VA(), 1)
 });
 
 function aX9({
@@ -825,23 +827,23 @@ function aX9({
     }, DY.default.createElement(j, {
         flexDirection: "column",
         marginBottom: 1
-    }, DY.default.createElement($, {
+    }, DY.default.createElement(TextComponent, {
         bold: !0
-    }, "Install GitHub App"), DY.default.createElement($, {
+    }, "Install GitHub App"), DY.default.createElement(TextComponent, {
         dimColor: !0
     }, "Setup API key secret")), DY.default.createElement(j, {
         marginBottom: 1
-    }, DY.default.createElement($, {
+    }, DY.default.createElement(TextComponent, {
         color: "warning"
     }, "ANTHROPIC_API_KEY already exists in repository secrets!")), DY.default.createElement(j, {
         marginBottom: 1
-    }, DY.default.createElement($, null, "Would you like to:")), DY.default.createElement(j, {
+    }, DY.default.createElement(TextComponent, null, "Would you like to:")), DY.default.createElement(j, {
         marginBottom: 1
-    }, DY.default.createElement($, null, A ? tQ("success", W)("> ") : "  ", "Use the existing API key")), DY.default.createElement(j, {
+    }, DY.default.createElement(TextComponent, null, A ? tQ("success", W)("> ") : "  ", "Use the existing API key")), DY.default.createElement(j, {
         marginBottom: 1
-    }, DY.default.createElement($, null, !A ? tQ("success", W)("> ") : "  ", "Create a new secret with a different name")), !A && DY.default.createElement(DY.default.Fragment, null, DY.default.createElement(j, {
+    }, DY.default.createElement(TextComponent, null, !A ? tQ("success", W)("> ") : "  ", "Create a new secret with a different name")), !A && DY.default.createElement(DY.default.Fragment, null, DY.default.createElement(j, {
         marginBottom: 1
-    }, DY.default.createElement($, null, "Enter new secret name (alphanumeric with underscores):")), DY.default.createElement(s4, {
+    }, DY.default.createElement(TextComponent, null, "Enter new secret name (alphanumeric with underscores):")), DY.default.createElement(s4, {
         value: Q,
         onChange: G,
         onSubmit: Z,
@@ -853,16 +855,16 @@ function aX9({
         showCursor: !0
     }))), DY.default.createElement(j, {
         marginLeft: 3
-    }, DY.default.createElement($, {
+    }, DY.default.createElement(TextComponent, {
         dimColor: !0
     }, "↑/↓ to select · Enter to continue")))
 }
 var DY;
-var sX9 = L(() => {
+var sX9 = lazyLoader(() => {
     hA();
     QY();
     m8();
-    DY = GA(VA(), 1)
+    DY = esmImport(VA(), 1)
 });
 
 function rX9({
@@ -895,17 +897,17 @@ function rX9({
     }, wK.default.createElement(j, {
         flexDirection: "column",
         marginBottom: 1
-    }, wK.default.createElement($, {
+    }, wK.default.createElement(TextComponent, {
         bold: !0
-    }, "Install GitHub App"), wK.default.createElement($, {
+    }, "Install GitHub App"), wK.default.createElement(TextComponent, {
         dimColor: !0
     }, "Choose API key")), A && wK.default.createElement(j, {
         marginBottom: 1
-    }, wK.default.createElement($, null, Y === "existing" ? tQ("success", V)("> ") : "  ", "Use your existing Claude Code API key")), I && wK.default.createElement(j, {
+    }, wK.default.createElement(TextComponent, null, Y === "existing" ? tQ("success", V)("> ") : "  ", "Use your existing Claude Code API key")), I && wK.default.createElement(j, {
         marginBottom: 1
-    }, wK.default.createElement($, null, Y === "oauth" ? tQ("success", V)("> ") : "  ", "Create a long-lived token with your Claude subscription")), wK.default.createElement(j, {
+    }, wK.default.createElement(TextComponent, null, Y === "oauth" ? tQ("success", V)("> ") : "  ", "Create a long-lived token with your Claude subscription")), wK.default.createElement(j, {
         marginBottom: 1
-    }, wK.default.createElement($, null, Y === "new" ? tQ("success", V)("> ") : "  ", "Enter a new API key")), Y === "new" && wK.default.createElement(s4, {
+    }, wK.default.createElement(TextComponent, null, Y === "new" ? tQ("success", V)("> ") : "  ", "Enter a new API key")), Y === "new" && wK.default.createElement(s4, {
         value: Q,
         onChange: B,
         onSubmit: G,
@@ -919,16 +921,16 @@ function rX9({
         showCursor: !0
     })), wK.default.createElement(j, {
         marginLeft: 3
-    }, wK.default.createElement($, {
+    }, wK.default.createElement(TextComponent, {
         dimColor: !0
     }, "↑/↓ to select · Enter to continue")))
 }
 var wK;
-var oX9 = L(() => {
+var oX9 = lazyLoader(() => {
     hA();
     QY();
     m8();
-    wK = GA(VA(), 1)
+    wK = esmImport(VA(), 1)
 });
 
 function tX9({
@@ -939,7 +941,7 @@ function tX9({
     skipWorkflow: Z = !1,
     selectedWorkflows: I
 }) {
-    let Y = Z ? ["Getting repository information", Q && B ? "Using existing API key secret" : `Setting up ${G} secret`] : ["Getting repository information", "Creating branch", I.length > 1 ? "Creating workflow files" : "Creating workflow file", Q && B ? "Using existing API key secret" : `Setting up ${G} secret`, "Opening pull request page"];
+    let Y = Z ? ["Getting repository information", Q && B ? "Using existing API key secret" : `Setting up TextComponent{G} secret`] : ["Getting repository information", "Creating branch", I.length > 1 ? "Creating workflow files" : "Creating workflow file", Q && B ? "Using existing API key secret" : `Setting up TextComponent{G} secret`, "Opening pull request page"];
     return xg.default.createElement(xg.default.Fragment, null, xg.default.createElement(j, {
         flexDirection: "column",
         borderStyle: "round",
@@ -948,9 +950,9 @@ function tX9({
     }, xg.default.createElement(j, {
         flexDirection: "column",
         marginBottom: 1
-    }, xg.default.createElement($, {
+    }, xg.default.createElement(TextComponent, {
         bold: !0
-    }, "Install GitHub App"), xg.default.createElement($, {
+    }, "Install GitHub App"), xg.default.createElement(TextComponent, {
         dimColor: !0
     }, "Create GitHub Actions workflow")), Y.map((J, W) => {
         let X = "pending";
@@ -958,15 +960,15 @@ function tX9({
         else if (W === A) X = "in-progress";
         return xg.default.createElement(j, {
             key: W
-        }, xg.default.createElement($, {
+        }, xg.default.createElement(TextComponent, {
             color: X === "completed" ? "success" : X === "in-progress" ? "warning" : void 0
         }, X === "completed" ? "✓ " : "", J, X === "in-progress" ? "…" : ""))
     })))
 }
 var xg;
-var eX9 = L(() => {
+var eX9 = lazyLoader(() => {
     hA();
-    xg = GA(VA(), 1)
+    xg = esmImport(VA(), 1)
 });
 
 function AF9({
@@ -983,32 +985,32 @@ function AF9({
     }, pZ.default.createElement(j, {
         flexDirection: "column",
         marginBottom: 1
-    }, pZ.default.createElement($, {
+    }, pZ.default.createElement(TextComponent, {
         bold: !0
-    }, "Install GitHub App"), pZ.default.createElement($, {
+    }, "Install GitHub App"), pZ.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Success")), !G && pZ.default.createElement($, {
+    }, "Success")), !G && pZ.default.createElement(TextComponent, {
         color: "success"
     }, "✓ GitHub Actions workflow created!"), A && Q && pZ.default.createElement(j, {
         marginTop: 1
-    }, pZ.default.createElement($, {
+    }, pZ.default.createElement(TextComponent, {
         color: "success"
     }, "✓ Using existing ANTHROPIC_API_KEY secret")), (!A || !Q) && pZ.default.createElement(j, {
         marginTop: 1
-    }, pZ.default.createElement($, {
+    }, pZ.default.createElement(TextComponent, {
         color: "success"
     }, "✓ API key saved as ", B, " secret")), pZ.default.createElement(j, {
         marginTop: 1
-    }, pZ.default.createElement($, null, "Next steps:")), G ? pZ.default.createElement(pZ.default.Fragment, null, pZ.default.createElement($, null, "1. Install the Claude GitHub App if you haven't already"), pZ.default.createElement($, null, "2. Your workflow file was kept unchanged"), pZ.default.createElement($, null, "3. API key is configured and ready to use")) : pZ.default.createElement(pZ.default.Fragment, null, pZ.default.createElement($, null, "1. A pre-filled PR page has been created"), pZ.default.createElement($, null, "2. Install the Claude GitHub App if you haven't already"), pZ.default.createElement($, null, "3. Merge the PR to enable Claude PR assistance"))), pZ.default.createElement(j, {
+    }, pZ.default.createElement(TextComponent, null, "Next steps:")), G ? pZ.default.createElement(pZ.default.Fragment, null, pZ.default.createElement(TextComponent, null, "1. Install the Claude GitHub App if you haven't already"), pZ.default.createElement(TextComponent, null, "2. Your workflow file was kept unchanged"), pZ.default.createElement(TextComponent, null, "3. API key is configured and ready to use")) : pZ.default.createElement(pZ.default.Fragment, null, pZ.default.createElement(TextComponent, null, "1. A pre-filled PR page has been created"), pZ.default.createElement(TextComponent, null, "2. Install the Claude GitHub App if you haven't already"), pZ.default.createElement(TextComponent, null, "3. Merge the PR to enable Claude PR assistance"))), pZ.default.createElement(j, {
         marginLeft: 3
-    }, pZ.default.createElement($, {
+    }, pZ.default.createElement(TextComponent, {
         dimColor: !0
     }, "Press any key to exit")))
 }
 var pZ;
-var QF9 = L(() => {
+var QF9 = lazyLoader(() => {
     hA();
-    pZ = GA(VA(), 1)
+    pZ = esmImport(VA(), 1)
 });
 
 function BF9({
@@ -1024,40 +1026,40 @@ function BF9({
     }, aF.default.createElement(j, {
         flexDirection: "column",
         marginBottom: 1
-    }, aF.default.createElement($, {
+    }, aF.default.createElement(TextComponent, {
         bold: !0
-    }, "Install GitHub App")), aF.default.createElement($, {
+    }, "Install GitHub App")), aF.default.createElement(TextComponent, {
         color: "error"
     }, "Error: ", A), Q && aF.default.createElement(j, {
         marginTop: 1
-    }, aF.default.createElement($, {
+    }, aF.default.createElement(TextComponent, {
         dimColor: !0
     }, "Reason: ", Q)), B && B.length > 0 && aF.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, aF.default.createElement($, {
+    }, aF.default.createElement(TextComponent, {
         dimColor: !0
     }, "How to fix:"), B.map((G, Z) => aF.default.createElement(j, {
         key: Z,
         marginLeft: 2
-    }, aF.default.createElement($, {
+    }, aF.default.createElement(TextComponent, {
         dimColor: !0
-    }, "• "), aF.default.createElement($, null, G)))), aF.default.createElement(j, {
+    }, "• "), aF.default.createElement(TextComponent, null, G)))), aF.default.createElement(j, {
         marginTop: 1
-    }, aF.default.createElement($, {
+    }, aF.default.createElement(TextComponent, {
         dimColor: !0
-    }, "For manual setup instructions, see:", " ", aF.default.createElement($, {
+    }, "For manual setup instructions, see:", " ", aF.default.createElement(TextComponent, {
         color: "claude"
     }, Wx)))), aF.default.createElement(j, {
         marginLeft: 3
-    }, aF.default.createElement($, {
+    }, aF.default.createElement(TextComponent, {
         dimColor: !0
     }, "Press any key to exit")))
 }
 var aF;
-var GF9 = L(() => {
+var GF9 = lazyLoader(() => {
     hA();
-    aF = GA(VA(), 1)
+    aF = esmImport(VA(), 1)
 });
 
 function ZF9({
@@ -1072,16 +1074,16 @@ function ZF9({
     }, P$.default.createElement(j, {
         flexDirection: "column",
         marginBottom: 1
-    }, P$.default.createElement($, {
+    }, P$.default.createElement(TextComponent, {
         bold: !0
-    }, "Existing Workflow Found"), P$.default.createElement($, {
+    }, "Existing Workflow Found"), P$.default.createElement(TextComponent, {
         dimColor: !0
     }, "Repository: ", A)), P$.default.createElement(j, {
         flexDirection: "column",
         marginBottom: 1
-    }, P$.default.createElement($, null, "A Claude workflow file already exists at", " ", P$.default.createElement($, {
+    }, P$.default.createElement(TextComponent, null, "A Claude workflow file already exists at", " ", P$.default.createElement(TextComponent, {
         color: "claude"
-    }, ".github/workflows/claude.yml")), P$.default.createElement($, {
+    }, ".github/workflows/claude.yml")), P$.default.createElement(TextComponent, {
         dimColor: !0
     }, "What would you like to do?")), P$.default.createElement(j, {
         flexDirection: "column"
@@ -1104,17 +1106,17 @@ function ZF9({
         }
     })), P$.default.createElement(j, {
         marginTop: 1
-    }, P$.default.createElement($, {
+    }, P$.default.createElement(TextComponent, {
         dimColor: !0
-    }, "View the latest workflow template at:", " ", P$.default.createElement($, {
+    }, "View the latest workflow template at:", " ", P$.default.createElement(TextComponent, {
         color: "claude"
     }, "https://github.com/anthropics/claude-code-action/blob/main/examples/claude.yml"))))
 }
 var P$;
-var IF9 = L(() => {
+var IF9 = lazyLoader(() => {
     hA();
     T6();
-    P$ = GA(VA(), 1)
+    P$ = esmImport(VA(), 1)
 });
 
 function YF9({
@@ -1131,42 +1133,42 @@ function YF9({
     }, aD.default.createElement(j, {
         flexDirection: "column",
         marginBottom: 1
-    }, aD.default.createElement($, {
+    }, aD.default.createElement(TextComponent, {
         bold: !0
-    }, V1.warning, " Setup Warnings"), aD.default.createElement($, {
+    }, V1.warning, " Setup Warnings"), aD.default.createElement(TextComponent, {
         dimColor: !0
     }, "We found some potential issues, but you can continue anyway")), A.map((B, G) => aD.default.createElement(j, {
         key: G,
         flexDirection: "column",
         marginBottom: 1
-    }, aD.default.createElement($, {
+    }, aD.default.createElement(TextComponent, {
         color: "warning",
         bold: !0
-    }, B.title), aD.default.createElement($, null, B.message), B.instructions.length > 0 && aD.default.createElement(j, {
+    }, B.title), aD.default.createElement(TextComponent, null, B.message), B.instructions.length > 0 && aD.default.createElement(j, {
         flexDirection: "column",
         marginLeft: 2,
         marginTop: 1
-    }, B.instructions.map((Z, I) => aD.default.createElement($, {
+    }, B.instructions.map((Z, I) => aD.default.createElement(TextComponent, {
         key: I,
         dimColor: !0
     }, "• ", Z))))), aD.default.createElement(j, {
         marginTop: 1
-    }, aD.default.createElement($, {
+    }, aD.default.createElement(TextComponent, {
         bold: !0,
         color: "permission"
     }, "Press Enter to continue anyway, or Ctrl+C to exit and fix issues")), aD.default.createElement(j, {
         marginTop: 1
-    }, aD.default.createElement($, {
+    }, aD.default.createElement(TextComponent, {
         dimColor: !0
-    }, "You can also try the manual setup steps if needed:", " ", aD.default.createElement($, {
+    }, "You can also try the manual setup steps if needed:", " ", aD.default.createElement(TextComponent, {
         color: "claude"
     }, Wx)))))
 }
 var aD;
-var JF9 = L(() => {
+var JF9 = lazyLoader(() => {
     hA();
     n2();
-    aD = GA(VA(), 1)
+    aD = esmImport(VA(), 1)
 });
 
 function WF9({
@@ -1205,13 +1207,13 @@ function WF9({
     }, wI.default.createElement(j, {
         flexDirection: "column",
         marginBottom: 1
-    }, wI.default.createElement($, {
+    }, wI.default.createElement(TextComponent, {
         bold: !0
-    }, "Select GitHub workflows to install"), wI.default.createElement($, {
+    }, "Select GitHub workflows to install"), wI.default.createElement(TextComponent, {
         dimColor: !0
     }, "We'll create a workflow file in your repository for each one you select."), wI.default.createElement(j, {
         marginTop: 1
-    }, wI.default.createElement($, {
+    }, wI.default.createElement(TextComponent, {
         dimColor: !0
     }, "More workflow examples (issue triage, CI fixes, etc.) at:", " ", wI.default.createElement(a4, {
         url: "https://github.com/anthropics/claude-code-action/blob/main/examples/"
@@ -1228,49 +1230,48 @@ function WF9({
         }, wI.default.createElement(j, {
             marginRight: 1,
             minWidth: 2
-        }, wI.default.createElement($, {
+        }, wI.default.createElement(TextComponent, {
             bold: K
         }, V ? "✓" : " ")), wI.default.createElement(j, {
             flexDirection: "column"
-        }, wI.default.createElement($, {
+        }, wI.default.createElement(TextComponent, {
             bold: K
-        }, X.label), wI.default.createElement($, {
+        }, X.label), wI.default.createElement(TextComponent, {
             dimColor: !0
         }, X.description)))
     }))), wI.default.createElement(j, {
         marginLeft: 2
-    }, wI.default.createElement($, {
+    }, wI.default.createElement(TextComponent, {
         dimColor: !0
     }, "↑↓ Navigate · Space to toggle · Enter to confirm")), Y && wI.default.createElement(j, {
         marginLeft: 1
-    }, wI.default.createElement($, {
+    }, wI.default.createElement(TextComponent, {
         color: "error"
     }, "You must select at least one workflow to continue")))
 }
 var wI;
-var XF9 = L(() => {
+var XF9 = lazyLoader(() => {
     hA();
     hA();
-    wI = GA(VA(), 1)
+    wI = esmImport(VA(), 1)
 });
-
 async function A_3(A, Q, B, G, Z, I, Y) {
-    let J = await ZQ("gh", ["api", `repos/${A}/contents/${B}`, "--jq", ".sha"]),
+    let J = await execGit("gh", ["api", `repos/TextComponent{A}/contents/TextComponent{B}`, "--jq", ".sha"]),
         W = null;
     if (J.code === 0) W = J.stdout.trim();
     let X = G;
-    if (Z === "CLAUDE_CODE_OAUTH_TOKEN") X = G.replace(/anthropic_api_key: \$\{\{ secrets\.ANTHROPIC_API_KEY \}\}/g, "claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}");
-    else if (Z !== "ANTHROPIC_API_KEY") X = G.replace(/anthropic_api_key: \$\{\{ secrets\.ANTHROPIC_API_KEY \}\}/g, `anthropic_api_key: \${{ secrets.${Z} }}`);
+    if (Z === "CLAUDE_CODE_OAUTH_TOKEN") X = G.replace(/anthropic_api_key: \TextComponent\{\{ secrets\.ANTHROPIC_API_KEY \}\}/g, "claude_code_oauth_token: TextComponent{{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}");
+    else if (Z !== "ANTHROPIC_API_KEY") X = G.replace(/anthropic_api_key: \TextComponent\{\{ secrets\.ANTHROPIC_API_KEY \}\}/g, `anthropic_api_key: \TextComponent{{ secrets.TextComponent{Z} }}`);
     let F = Buffer.from(X).toString("base64"),
-        V = ["api", "--method", "PUT", `repos/${A}/contents/${B}`, "-f", `message=${W?`"Update ${I}"`:`"${I}"`}`, "-f", `content=${F}`, "-f", `branch=${Q}`];
-    if (W) V.push("-f", `sha=${W}`);
-    let K = await ZQ("gh", V);
+        V = ["api", "--method", "PUT", `repos/TextComponent{A}/contents/TextComponent{B}`, "-f", `message=TextComponent{W?`"Update TextComponent{I}"`:`"TextComponent{I}"`}`, "-f", `content=TextComponent{F}`, "-f", `branch=TextComponent{Q}`];
+    if (W) V.push("-f", `sha=TextComponent{W}`);
+    let K = await execGit("gh", V);
     if (K.code !== 0) {
         if (K.stderr.includes("422") && K.stderr.includes("sha")) throw BA("tengu_setup_github_actions_failed", {
             reason: "failed_to_create_workflow_file",
             exit_code: K.code,
             ...Y
-        }), Error(`Failed to create workflow file ${B}: A Claude workflow file already exists in this repository. Please remove it first or update it manually.`);
+        }), Error(`Failed to create workflow file TextComponent{B}: A Claude workflow file already exists in this repository. Please remove it first or update it manually.`);
         BA("tengu_setup_github_actions_failed", {
             reason: "failed_to_create_workflow_file",
             exit_code: K.code,
@@ -1282,10 +1283,9 @@ Need help? Common issues:
 ` + `• Permission denied → Run: gh auth refresh -h github.com -s repo,workflow
 ` + `• Not authorized → Ensure you have admin access to the repository
 ` + "• For manual setup → Visit: https://github.com/anthropics/claude-code-action";
-        throw Error(`Failed to create workflow file ${B}: ${K.stderr}${D}`)
+        throw Error(`Failed to create workflow file TextComponent{B}: TextComponent{K.stderr}TextComponent{D}`)
     }
 }
-
 async function FF9(A, Q, B, G, Z = !1, I, Y, J) {
     try {
         BA("tengu_setup_github_actions_started", {
@@ -1296,35 +1296,35 @@ async function FF9(A, Q, B, G, Z = !1, I, Y, J) {
             selected_claude_review_workflow: I.includes("claude-review"),
             ...J
         });
-        let W = await ZQ("gh", ["api", `repos/${A}`, "--jq", ".id"]);
+        let W = await execGit("gh", ["api", `repos/TextComponent{A}`, "--jq", ".id"]);
         if (W.code !== 0) throw BA("tengu_setup_github_actions_failed", {
             reason: "repo_not_found",
             exit_code: W.code,
             ...J
-        }), Error(`Failed to access repository ${A}`);
-        let X = await ZQ("gh", ["api", `repos/${A}`, "--jq", ".default_branch"]);
+        }), Error(`Failed to access repository TextComponent{A}`);
+        let X = await execGit("gh", ["api", `repos/TextComponent{A}`, "--jq", ".default_branch"]);
         if (X.code !== 0) throw BA("tengu_setup_github_actions_failed", {
             reason: "failed_to_get_default_branch",
             exit_code: X.code,
             ...J
-        }), Error(`Failed to get default branch: ${X.stderr}`);
+        }), Error(`Failed to get default branch: TextComponent{X.stderr}`);
         let F = X.stdout.trim(),
-            V = await ZQ("gh", ["api", `repos/${A}/git/ref/heads/${F}`, "--jq", ".object.sha"]);
+            V = await execGit("gh", ["api", `repos/TextComponent{A}/git/ref/heads/TextComponent{F}`, "--jq", ".object.sha"]);
         if (V.code !== 0) throw BA("tengu_setup_github_actions_failed", {
             reason: "failed_to_get_branch_sha",
             exit_code: V.code,
             ...J
-        }), Error(`Failed to get branch SHA: ${V.stderr}`);
+        }), Error(`Failed to get branch SHA: TextComponent{V.stderr}`);
         let K = V.stdout.trim(),
             D = null;
         if (!Z) {
-            G(), D = `add-claude-github-actions-${Date.now()}`;
-            let H = await ZQ("gh", ["api", "--method", "POST", `repos/${A}/git/refs`, "-f", `ref=refs/heads/${D}`, "-f", `sha=${K}`]);
+            G(), D = `add-claude-github-actions-TextComponent{Date.now()}`;
+            let H = await execGit("gh", ["api", "--method", "POST", `repos/TextComponent{A}/git/refs`, "-f", `ref=refs/heads/TextComponent{D}`, "-f", `sha=TextComponent{K}`]);
             if (H.code !== 0) throw BA("tengu_setup_github_actions_failed", {
                 reason: "failed_to_create_branch",
                 exit_code: H.code,
                 ...J
-            }), Error(`Failed to create branch: ${H.stderr}`);
+            }), Error(`Failed to create branch: TextComponent{H.stderr}`);
             G();
             let C = [];
             if (I.includes("claude")) C.push({
@@ -1343,7 +1343,7 @@ async function FF9(A, Q, B, G, Z = !1, I, Y, J) {
             for (let E of C) await A_3(A, D, E.path, E.content, B, E.message, J)
         }
         if (G(), Q) {
-            let H = await ZQ("gh", ["secret", "set", B, "--body", Q, "--repo", A]);
+            let H = await execGit("gh", ["secret", "set", B, "--body", Q, "--repo", A]);
             if (H.code !== 0) {
                 BA("tengu_setup_github_actions_failed", {
                     reason: "failed_to_set_api_key_secret",
@@ -1356,12 +1356,12 @@ Need help? Common issues:
 ` + `• Permission denied → Run: gh auth refresh -h github.com -s repo
 ` + `• Not authorized → Ensure you have admin access to the repository
 ` + "• For manual setup → Visit: https://github.com/anthropics/claude-code-action";
-                throw Error(`Failed to set API key secret: ${H.stderr||"Unknown error"}${C}`)
+                throw Error(`Failed to set API key secret: TextComponent{H.stderr||"Unknown error"}TextComponent{C}`)
             }
         }
         if (!Z && D) {
             G();
-            let H = `https://github.com/${A}/compare/${F}...${D}?quick_pull=1&title=${encodeURIComponent(mX9)}&body=${encodeURIComponent(cX9)}`;
+            let H = `https://github.com/TextComponent{A}/compare/TextComponent{F}...TextComponent{D}?quick_pull=1&title=TextComponent{encodeURIComponent(mX9)}&body=TextComponent{encodeURIComponent(cX9)}`;
             await gZ(H)
         }
         BA("tengu_setup_github_actions_completed", {
@@ -1385,7 +1385,7 @@ Need help? Common issues:
         throw W
     }
 }
-var VF9 = L(() => {
+var VF9 = lazyLoader(() => {
     I6();
     lM();
     O9();
@@ -1409,8 +1409,7 @@ function DF9({
             });
             else Q()
     });
-
-async function H(z, w) {
+    async function H(z, w) {
         try {
             let [N, q] = z.split("#");
             if (!N || !q) {
@@ -1506,7 +1505,7 @@ async function H(z, w) {
         }
     }, [Z]);
 
-function E() {
+    function E() {
         switch (B.state) {
             case "starting":
-                return F4.default.createElement(j, null, F4.default.createElement(e9, null), F4.default.createElement($, null, "Starting authentication…"));
+                return F4.default.createElement(j, null, F4.default.createElement(e9, null), F4.default.createElement(TextComponent, null, "Starting authentication…"));

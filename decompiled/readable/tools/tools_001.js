@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_001.js
+ * 处理时间: 2025-12-09T03:41:38.502Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.061Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -88,7 +91,7 @@
         }
     }
 
-function ZQ4(A) {
+    function ZQ4(A) {
         let Q = {
                 keyword: "boolean byte word String",
                 built_in: "KeyboardController MouseController SoftwareSerial EthernetServer EthernetClient LiquidCrystal RobotControl GSMVoiceCall EthernetUDP EsploraTFT HttpClient RobotMotor WiFiClient GSMScanner FileSystem Scheduler GSMServer YunClient YunServer IPAddress GSMClient GSMModem Keyboard Ethernet Console GSMBand Esplora Stepper Process WiFiUDP GSM_SMS Mailbox USBHost Firmata PImage Client Server GSMPIN FileIO Bridge Serial EEPROM Stream Mouse Audio Servo File Task GPRS WiFi Wire TFT GSM SPI SD ",
@@ -101,13 +104,13 @@ function ZQ4(A) {
     }
     Kb0.exports = ZQ4
 });
-var Cb0 = U((x27, Hb0) => {
+var Cb0 = moduleWrapper((x27, Hb0) => {
     function IQ4(A) {
         let Q = {
-            variants: [A.COMMENT("^[ \\t]*(?=#)", "$", {
+            variants: [A.COMMENT("^[ \\t]*(?=#)", "TextComponent", {
                 relevance: 0,
                 excludeBegin: !0
-            }), A.COMMENT("[;@]", "$", {
+            }), A.COMMENT("[;@]", "TextComponent", {
                 relevance: 0
             }), A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE]
         };
@@ -117,12 +120,12 @@ var Cb0 = U((x27, Hb0) => {
             aliases: ["arm"],
             keywords: {
                 $pattern: "\\.?" + A.IDENT_RE,
-                meta: ".2byte .4byte .align .ascii .asciz .balign .byte .code .data .else .end .endif .endm .endr .equ .err .exitm .extern .global .hword .if .ifdef .ifndef .include .irp .long .macro .rept .req .section .set .skip .space .text .word .arm .thumb .code16 .code32 .force_thumb .thumb_func .ltorg ALIAS ALIGN ARM AREA ASSERT ATTR CN CODE CODE16 CODE32 COMMON CP DATA DCB DCD DCDU DCDO DCFD DCFDU DCI DCQ DCQU DCW DCWU DN ELIF ELSE END ENDFUNC ENDIF ENDP ENTRY EQU EXPORT EXPORTAS EXTERN FIELD FILL FUNCTION GBLA GBLL GBLS GET GLOBAL IF IMPORT INCBIN INCLUDE INFO KEEP LCLA LCLL LCLS LTORG MACRO MAP MEND MEXIT NOFP OPT PRESERVE8 PROC QN READONLY RELOC REQUIRE REQUIRE8 RLIST FN ROUT SETA SETL SETS SN SPACE SUBT THUMB THUMBX TTL WHILE WEND ",
-                built_in: "r0 r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12 r13 r14 r15 pc lr sp ip sl sb fp a1 a2 a3 a4 v1 v2 v3 v4 v5 v6 v7 v8 f0 f1 f2 f3 f4 f5 f6 f7 p0 p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15 c0 c1 c2 c3 c4 c5 c6 c7 c8 c9 c10 c11 c12 c13 c14 c15 q0 q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 q11 q12 q13 q14 q15 cpsr_c cpsr_x cpsr_s cpsr_f cpsr_cx cpsr_cxs cpsr_xs cpsr_xsf cpsr_sf cpsr_cxsf spsr_c spsr_x spsr_s spsr_f spsr_cx spsr_cxs spsr_xs spsr_xsf spsr_sf spsr_cxsf s0 s1 s2 s3 s4 s5 s6 s7 TASK_TOOL_NAME s9 s10 s11 s12 s13 s14 s15 s16 s17 s18 s19 s20 s21 s22 s23 s24 s25 s26 s27 s28 s29 s30 s31 d0 d1 d2 d3 d4 d5 d6 d7 d8 d9 d10 d11 d12 d13 d14 d15 d16 d17 d18 d19 d20 d21 d22 d23 d24 d25 d26 d27 d28 d29 d30 d31 {PC} {VAR} {TRUE} {FALSE} {OPT} {CONFIG} {ENDIAN} {CODESIZE} {CPU} {FPU} {ARCHITECTURE} {PCSTOREOFFSET} {ARMASM_VERSION} {INTER} {ROPI} {RWPI} {SWST} {NOSWST} . @"
+                meta: ".2byte .4byte .align .ascii .asciz .balign .byte .code .data .else .end .endif .endm .endr .equ .err .exitm .extern .global .hword .if .ifdef .ifndef .include .irp .long .macro .rept .req .section .set .skip .space .text .word .arm .thumb .code16 .code32 .force_thumb .thumb_func .ltorg ALIAS ALIGN ARM AREA ASSERT ATTR CN CODE CODE16 CODE32 COMMON CP DATA DCB DCD DCDU DCDO DCFD DCFDU DCI DCQ DCQU DCW DCWU DN ELIF ELSE END ENDFUNC ENDIF ENDP ENTRY EQU EXPORT EXPORTAS EXTERN FIELD FILL FUNCTION GBLA GBLL GBLS GET GLOBAL IF IMPORT INCBIN INCLUDE INFO KEEP LCLA LCLL LCLS LTORG MACRO MAP MEND MEXIT NOFP OPT PRESERVE8 PROC QN READONLY RELOC REQUIRE REQUIRE8 RLIST FN ROUT SETA SETL SETS keys SPACE SUBT THUMB THUMBX TTL WHILE WEND ",
+                built_in: "r0 r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12 r13 r14 r15 pc lr sp ip sl sb fp a1 a2 TASK_TOOL_NAME a4 v1 v2 v3 v4 v5 v6 v7 v8 f0 f1 f2 f3 f4 f5 f6 f7 p0 p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15 c0 c1 c2 c3 c4 c5 c6 c7 c8 c9 c10 c11 c12 c13 c14 c15 q0 q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 q11 q12 q13 q14 q15 cpsr_c cpsr_x cpsr_s cpsr_f cpsr_cx cpsr_cxs cpsr_xs cpsr_xsf cpsr_sf cpsr_cxsf spsr_c spsr_x spsr_s spsr_f spsr_cx spsr_cxs spsr_xs spsr_xsf spsr_sf spsr_cxsf s0 s1 s2 s3 s4 s5 s6 s7 TASK_TOOL_NAME s9 s10 s11 s12 s13 s14 s15 s16 s17 s18 s19 s20 s21 s22 s23 s24 s25 s26 s27 s28 s29 s30 s31 d0 d1 d2 d3 d4 d5 d6 d7 d8 d9 d10 d11 d12 d13 d14 d15 DATA_TYPE d17 d18 d19 d20 d21 d22 d23 d24 d25 d26 d27 d28 d29 d30 d31 {PC} {VAR} {TRUE} {FALSE} {OPT} {CONFIG} {ENDIAN} {CODESIZE} {CPU} {FPU} {ARCHITECTURE} {PCSTOREOFFSET} {ARMASM_VERSION} {INTER} {ROPI} {RWPI} {SWST} {NOSWST} . @"
             },
             contains: [{
                 className: "keyword",
-                begin: "\\b(adc|(qd?|sh?|u[qh]?)?add(8|16)?|usada?8|(q|sh?|u[qh]?)?(as|sa)x|and|adrl?|sbc|rs[bc]|asr|b[lx]?|blx|bxj|cbn?z|tb[bh]|bic|bfc|bfi|[su]bfx|bkpt|cdp2?|clz|clrex|cmp|cmn|cpsi[ed]|cps|setend|dbg|dmb|dsb|eor|isb|it[te]{0,3}|lsl|lsr|ror|rrx|ldm(([id][ab])|f[ds])?|ldr((s|ex)?[bhd])?|movt?|mvn|mra|mar|mul|[us]mull|smul[bwt][bt]|smu[as]d|smmul|smmla|mla|umlaal|smlal?([wbt][bt]|d)|mls|smlsl?[ds]|smc|svc|sev|mia([bt]{2}|ph)?|mrr?c2?|mcrr2?|mrs|msr|orr|orn|pkh(tb|bt)|rbit|rev(16|sh)?|sel|[su]sat(16)?|nop|pop|push|rfe([id][ab])?|stm([id][ab])?|str(ex)?[bhd]?|(qd?)?sub|(sh?|q|u[qh]?)?sub(8|16)|[su]xt(a?h|a?b(16)?)|srs([id][ab])?|swpb?|swi|smi|tst|teq|wfe|wfi|yield)(eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al|hs|lo)?[sptrx]?(?=\\s)"
+                begin: "\\b(adc|(qd?|sh?|u[qh]?)?add(8|16)?|usada?8|(q|sh?|u[qh]?)?(as|sa)x|and|adrl?|sbc|rs[bc]|asr|b[lx]?|blx|bxj|cbn?z|tb[bh]|bic|bfc|bfi|[su]bfx|bkpt|cdp2?|clz|clrex|cmp|cmn|cpsi[ed]|cps|setend|dbg|dmb|dsb|eor|isb|it[te]{0,3}|lsl|lsr|ror|rrx|ldm(([id][ab])|f[ds])?|ldr((s|ex)?[bhd])?|movt?|mvn|mra|mar|mul|[us]mull|smul[bwt][bt]|smu[as]d|smmul|smmla|mla|umlaal|smlal?([wbt][bt]|d)|mls|smlsl?[ds]|smc|svc|sev|mia([bt]{2}|ph)?|mrr?c2?|mcrr2?|mrs|msr|orr|orn|pkh(tb|bt)|rbit|rev(16|sh)?|sel|[su]sat(16)?|nop|pop|push|rfe([id][ab])?|stm([id][ab])?|str(ex)?[bhd]?|(qd?)?sub|(sh?|q|u[qh]?)?sub(8|16)|[su]xt(a?h|a?b(16)?)|srs([id][ab])?|swpb?|swi|smi|tst|teq|wfe|wfi|yield)(WEB_FETCH_TOOL_NAME|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al|hs|lo)?[sptrx]?(?=\\s)"
             }, Q, A.QUOTE_STRING_MODE, {
                 className: "string",
                 begin: "'",
@@ -137,11 +140,11 @@ var Cb0 = U((x27, Hb0) => {
             }, {
                 className: "number",
                 variants: [{
-                    begin: "[#$=]?0x[0-9a-f]+"
+                    begin: "[#TextComponent=]?0x[0-9a-f]+"
                 }, {
-                    begin: "[#$=]?0b[01]+"
+                    begin: "[#TextComponent=]?0b[01]+"
                 }, {
-                    begin: "[#$=]\\d+"
+                    begin: "[#TextComponent=]\\d+"
                 }, {
                     begin: "\\b\\d+"
                 }],
@@ -149,9 +152,9 @@ var Cb0 = U((x27, Hb0) => {
             }, {
                 className: "symbol",
                 variants: [{
-                    begin: "^[ \\t]*[a-z_\\.\\$][a-z0-9_\\.\\$]+:"
+                    begin: "^[ \\t]*[a-z_\\.\\TextComponent][a-z0-9_\\.\\TextComponent]+:"
                 }, {
-                    begin: "^[a-z_\\.\\$][a-z0-9_\\.\\$]+"
+                    begin: "^[a-z_\\.\\TextComponent][a-z0-9_\\.\\TextComponent]+"
                 }, {
                     begin: "[=#]\\w+"
                 }],
@@ -161,30 +164,30 @@ var Cb0 = U((x27, Hb0) => {
     }
     Hb0.exports = IQ4
 });
-var $b0 = U((v27, Ub0) => {
+var $b0 = moduleWrapper((v27, Ub0) => {
     function zb0(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function Eb0(A) {
+    function Eb0(A) {
         return ls("(?=", A, ")")
     }
 
-function YQ4(A) {
+    function YQ4(A) {
         return ls("(", A, ")?")
     }
 
-function ls(...A) {
+    function ls(...A) {
         return A.map((B) => zb0(B)).join("")
     }
 
-function JQ4(...A) {
+    function JQ4(...A) {
         return "(" + A.map((B) => zb0(B)).join("|") + ")"
     }
 
-function WQ4(A) {
+    function WQ4(A) {
         let Q = ls(/[A-Z_]/, YQ4(/[A-Z0-9_.-]*:/), /[A-Z0-9_.-]*/),
             B = /[A-Za-z0-9._:-]+/,
             G = {
@@ -323,20 +326,20 @@ function WQ4(A) {
     }
     Ub0.exports = WQ4
 });
-var Nb0 = U((b27, qb0) => {
+var Nb0 = moduleWrapper((b27, qb0) => {
     function XQ4(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function wb0(...A) {
+    function wb0(...A) {
         return A.map((B) => XQ4(B)).join("")
     }
 
-function FQ4(A) {
+    function FQ4(A) {
         let Q = {
-                begin: "^'{3,}[ \\t]*$",
+                begin: "^'{3,}[ \\t]*TextComponent",
                 relevance: 10
             },
             B = [{
@@ -399,24 +402,24 @@ function FQ4(A) {
         return {
             name: "AsciiDoc",
             aliases: ["adoc"],
-            contains: [A.COMMENT("^/{4,}\\n", "\\n/{4,}$", {
+            contains: [A.COMMENT("^/{4,}\\n", "\\n/{4,}TextComponent", {
                 relevance: 10
-            }), A.COMMENT("^//", "$", {
+            }), A.COMMENT("^//", "TextComponent", {
                 relevance: 0
             }), {
                 className: "title",
-                begin: "^\\.\\w.*$"
+                begin: "^\\.\\w.*TextComponent"
             }, {
                 begin: "^[=\\*]{4,}\\n",
-                end: "\\n^[=\\*]{4,}$",
+                end: "\\n^[=\\*]{4,}TextComponent",
                 relevance: 10
             }, {
                 className: "section",
                 relevance: 10,
                 variants: [{
-                    begin: "^(={1,6})[ \t].+?([ \t]\\1)?$"
+                    begin: "^(={1,6})[ \t].+?([ \t]\\1)?TextComponent"
                 }, {
-                    begin: "^[^\\[\\]\\n]+?\\n[=\\-~\\^\\+]{2,}$"
+                    begin: "^[^\\[\\]\\n]+?\\n[=\\-~\\^\\+]{2,}TextComponent"
                 }]
             }, {
                 className: "meta",
@@ -426,21 +429,21 @@ function FQ4(A) {
                 relevance: 10
             }, {
                 className: "meta",
-                begin: "^\\[.+?\\]$",
+                begin: "^\\[.+?\\]TextComponent",
                 relevance: 0
             }, {
                 className: "quote",
                 begin: "^_{4,}\\n",
-                end: "\\n_{4,}$",
+                end: "\\n_{4,}TextComponent",
                 relevance: 10
             }, {
                 className: "code",
                 begin: "^[\\-\\.]{4,}\\n",
-                end: "\\n[\\-\\.]{4,}$",
+                end: "\\n[\\-\\.]{4,}TextComponent",
                 relevance: 10
             }, {
                 begin: "^\\+{4,}\\n",
-                end: "\\n\\+{4,}$",
+                end: "\\n\\+{4,}TextComponent",
                 contains: [{
                     begin: "<",
                     end: ">",
@@ -466,7 +469,7 @@ function FQ4(A) {
             }, {
                 className: "code",
                 begin: "^[ \\t]",
-                end: "$",
+                end: "TextComponent",
                 relevance: 0
             }, Q, {
                 begin: "(link:)?(http|https|ftp|file|irc|image:?):\\S+?\\[[^[]*?\\]",
@@ -493,18 +496,18 @@ function FQ4(A) {
     }
     qb0.exports = FQ4
 });
-var Mb0 = U((f27, Lb0) => {
+var Mb0 = moduleWrapper((f27, Lb0) => {
     function VQ4(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function vH1(...A) {
+    function vH1(...A) {
         return A.map((B) => VQ4(B)).join("")
     }
 
-function KQ4(A) {
+    function KQ4(A) {
         let Q = "false synchronized int abstract float private char boolean static null if const for true while long throw strictfp finally protected import native final return void enum else extends implements break transient new catch instanceof byte super volatile case assert short package default double public try this switch continue throws privileged aspectOf adviceexecution proceed cflowbelow cflow initialization preinitialization staticinitialization withincode target within execution getWithinTypeName handler thisJoinPoint thisJoinPointStaticPart thisEnclosingJoinPointStaticPart declare parents warning error soft precedence thisAspectInstance",
             B = "get set args call";
         return {
@@ -599,7 +602,7 @@ function KQ4(A) {
     }
     Lb0.exports = KQ4
 });
-var Rb0 = U((h27, Ob0) => {
+var Rb0 = moduleWrapper((h27, Ob0) => {
     function DQ4(A) {
         let Q = {
             begin: "`[\\s\\S]"
@@ -615,7 +618,7 @@ var Rb0 = U((h27, Ob0) => {
             },
             contains: [Q, A.inherit(A.QUOTE_STRING_MODE, {
                 contains: [Q]
-            }), A.COMMENT(";", "$", {
+            }), A.COMMENT(";", "TextComponent", {
                 relevance: 0
             }), A.C_BLOCK_COMMENT_MODE, {
                 className: "number",
@@ -638,7 +641,7 @@ var Rb0 = U((h27, Ob0) => {
             }, {
                 className: "meta",
                 begin: "^\\s*#\\w+",
-                end: "$",
+                end: "TextComponent",
                 relevance: 0
             }, {
                 className: "built_in",
@@ -650,19 +653,19 @@ var Rb0 = U((h27, Ob0) => {
     }
     Ob0.exports = DQ4
 });
-var Pb0 = U((g27, Tb0) => {
+var Pb0 = moduleWrapper((g27, Tb0) => {
     function HQ4(A) {
         let Q = "ByRef Case Const ContinueCase ContinueLoop Dim Do Else ElseIf EndFunc EndIf EndSelect EndSwitch EndWith Enum Exit ExitLoop For Func Global If In Local Next ReDim Return Select Static Step Switch Then To Until Volatile WEnd While With",
             B = ["EndRegion", "forcedef", "forceref", "ignorefunc", "include", "include-once", "NoTrayIcon", "OnAutoItStartRegister", "pragma", "Region", "RequireAdmin", "Tidy_Off", "Tidy_On", "Tidy_Parameters"],
             G = "True False And Null Not Or Default",
             Z = "Abs ACos AdlibRegister AdlibUnRegister Asc AscW ASin Assign ATan AutoItSetOption AutoItWinGetTitle AutoItWinSetTitle Beep Binary BinaryLen BinaryMid BinaryToString BitAND BitNOT BitOR BitRotate BitShift BitXOR BlockInput Break Call CDTray Ceiling Chr ChrW ClipGet ClipPut ConsoleRead ConsoleWrite ConsoleWriteError ControlClick ControlCommand ControlDisable ControlEnable ControlFocus ControlGetFocus ControlGetHandle ControlGetPos ControlGetText ControlHide ControlListView ControlMove ControlSend ControlSetText ControlShow ControlTreeView Cos Dec DirCopy DirCreate DirGetSize DirMove DirRemove DllCall DllCallAddress DllCallbackFree DllCallbackGetPtr DllCallbackRegister DllClose DllOpen DllStructCreate DllStructGetData DllStructGetPtr DllStructGetSize DllStructSetData DriveGetDrive DriveGetFileSystem DriveGetLabel DriveGetSerial DriveGetType DriveMapAdd DriveMapDel DriveMapGet DriveSetLabel DriveSpaceFree DriveSpaceTotal DriveStatus EnvGet EnvSet EnvUpdate Eval Execute Exp FileChangeDir FileClose FileCopy FileCreateNTFSLink FileCreateShortcut FileDelete FileExists FileFindFirstFile FileFindNextFile FileFlush FileGetAttrib FileGetEncoding FileGetLongName FileGetPos FileGetShortcut FileGetShortName FileGetSize FileGetTime FileGetVersion FileInstall FileMove FileOpen FileOpenDialog FileRead FileReadLine FileReadToArray FileRecycle FileRecycleEmpty FileSaveDialog FileSelectFolder FileSetAttrib FileSetEnd FileSetPos FileSetTime FileWrite FileWriteLine Floor FtpSetProxy FuncName GUICreate GUICtrlCreateAvi GUICtrlCreateButton GUICtrlCreateCheckbox GUICtrlCreateCombo GUICtrlCreateContextMenu GUICtrlCreateDate GUICtrlCreateDummy GUICtrlCreateEdit GUICtrlCreateGraphic GUICtrlCreateGroup GUICtrlCreateIcon GUICtrlCreateInput GUICtrlCreateLabel GUICtrlCreateList GUICtrlCreateListView GUICtrlCreateListViewItem GUICtrlCreateMenu GUICtrlCreateMenuItem GUICtrlCreateMonthCal GUICtrlCreateObj GUICtrlCreatePic GUICtrlCreateProgress GUICtrlCreateRadio GUICtrlCreateSlider GUICtrlCreateTab GUICtrlCreateTabItem GUICtrlCreateTreeView GUICtrlCreateTreeViewItem GUICtrlCreateUpdown GUICtrlDelete GUICtrlGetHandle GUICtrlGetState GUICtrlRead GUICtrlRecvMsg GUICtrlRegisterListViewSort GUICtrlSendMsg GUICtrlSendToDummy GUICtrlSetBkColor GUICtrlSetColor GUICtrlSetCursor GUICtrlSetData GUICtrlSetDefBkColor GUICtrlSetDefColor GUICtrlSetFont GUICtrlSetGraphic GUICtrlSetImage GUICtrlSetLimit GUICtrlSetOnEvent GUICtrlSetPos GUICtrlSetResizing GUICtrlSetState GUICtrlSetStyle GUICtrlSetTip GUIDelete GUIGetCursorInfo GUIGetMsg GUIGetStyle GUIRegisterMsg GUISetAccelerators GUISetBkColor GUISetCoord GUISetCursor GUISetFont GUISetHelp GUISetIcon GUISetOnEvent GUISetState GUISetStyle GUIStartGroup GUISwitch Hex HotKeySet HttpSetProxy HttpSetUserAgent HWnd InetClose InetGet InetGetInfo InetGetSize InetRead IniDelete IniRead IniReadSection IniReadSectionNames IniRenameSection IniWrite IniWriteSection InputBox Int IsAdmin IsArray IsBinary IsBool IsDeclared IsDllStruct IsFloat IsFunc IsHWnd IsInt IsKeyword IsNumber IsObj IsPtr IsString Log MemGetStats Mod MouseClick MouseClickDrag MouseDown MouseGetCursor MouseGetPos MouseMove MouseUp MouseWheel MsgBox Number ObjCreate ObjCreateInterface ObjEvent ObjGet ObjName OnAutoItExitRegister OnAutoItExitUnRegister Ping PixelChecksum PixelGetColor PixelSearch ProcessClose ProcessExists ProcessGetStats ProcessList ProcessSetPriority ProcessWait ProcessWaitClose ProgressOff ProgressOn ProgressSet Ptr Random RegDelete RegEnumKey RegEnumVal RegRead RegWrite Round Run RunAs RunAsWait RunWait Send SendKeepActive SetError SetExtended ShellExecute ShellExecuteWait Shutdown Sin Sleep SoundPlay SoundSetWaveVolume SplashImageOn SplashOff SplashTextOn Sqrt SRandom StatusbarGetText StderrRead StdinWrite StdioClose StdoutRead String StringAddCR StringCompare StringFormat StringFromASCIIArray StringInStr StringIsAlNum StringIsAlpha StringIsASCII StringIsDigit StringIsFloat StringIsInt StringIsLower StringIsSpace StringIsUpper StringIsXDigit StringLeft StringLen StringLower StringMid StringRegExp StringRegExpReplace StringReplace StringReverse StringRight StringSplit StringStripCR StringStripWS StringToASCIIArray StringToBinary StringTrimLeft StringTrimRight StringUpper Tan TCPAccept TCPCloseSocket TCPConnect TCPListen TCPNameToIP TCPRecv TCPSend TCPShutdown, UDPShutdown TCPStartup, UDPStartup TimerDiff TimerInit ToolTip TrayCreateItem TrayCreateMenu TrayGetMsg TrayItemDelete TrayItemGetHandle TrayItemGetState TrayItemGetText TrayItemSetOnEvent TrayItemSetState TrayItemSetText TraySetClick TraySetIcon TraySetOnEvent TraySetPauseIcon TraySetState TraySetToolTip TrayTip UBound UDPBind UDPCloseSocket UDPOpen UDPRecv UDPSend VarGetType WinActivate WinActive WinClose WinExists WinFlash WinGetCaretPos WinGetClassList WinGetClientSize WinGetHandle WinGetPos WinGetProcess WinGetState WinGetText WinGetTitle WinKill WinList WinMenuSelectItem WinMinimizeAll WinMinimizeAllUndo WinMove WinSetOnTop WinSetState WinSetTitle WinSetTrans WinWait WinWaitActive WinWaitClose WinWaitNotActive",
             I = {
-                variants: [A.COMMENT(";", "$", {
+                variants: [A.COMMENT(";", "TextComponent", {
                     relevance: 0
                 }), A.COMMENT("#cs", "#ce"), A.COMMENT("#comments-start", "#comments-end")]
             },
             Y = {
-                begin: "\\$[A-z0-9_]+"
+                begin: "\\TextComponent[A-z0-9_]+"
             },
             J = {
                 className: "string",
@@ -688,7 +691,7 @@ var Pb0 = U((g27, Tb0) => {
             X = {
                 className: "meta",
                 begin: "#",
-                end: "$",
+                end: "TextComponent",
                 keywords: {
                     "meta-keyword": B
                 },
@@ -700,7 +703,7 @@ var Pb0 = U((g27, Tb0) => {
                     keywords: {
                         "meta-keyword": "include"
                     },
-                    end: "$",
+                    end: "TextComponent",
                     contains: [J, {
                         className: "meta-string",
                         variants: [{
@@ -731,8 +734,8 @@ var Pb0 = U((g27, Tb0) => {
             V = {
                 className: "function",
                 beginKeywords: "Func",
-                end: "$",
-                illegal: "\\$|\\[|%",
+                end: "TextComponent",
+                illegal: "\\TextComponent|\\[|%",
                 contains: [A.UNDERSCORE_TITLE_MODE, {
                     className: "params",
                     begin: "\\(",
@@ -754,7 +757,7 @@ var Pb0 = U((g27, Tb0) => {
     }
     Tb0.exports = HQ4
 });
-var Sb0 = U((u27, jb0) => {
+var Sb0 = moduleWrapper((u27, jb0) => {
     function CQ4(A) {
         return {
             name: "AVR Assembly",
@@ -765,11 +768,11 @@ var Sb0 = U((u27, jb0) => {
                 built_in: "r0 r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12 r13 r14 r15 r16 r17 r18 r19 r20 r21 r22 r23 r24 r25 r26 r27 r28 r29 r30 r31 x|0 xh xl y|0 yh yl z|0 zh zl ucsr1c udr1 ucsr1a ucsr1b ubrr1l ubrr1h ucsr0c ubrr0h tccr3c tccr3a tccr3b tcnt3h tcnt3l ocr3ah ocr3al ocr3bh ocr3bl ocr3ch ocr3cl icr3h icr3l etimsk etifr tccr1c ocr1ch ocr1cl twcr twdr twar twsr twbr osccal xmcra xmcrb eicra spmcsr spmcr portg ddrg ping portf ddrf sreg sph spl xdiv rampz eicrb eimsk gimsk gicr eifr gifr timsk tifr mcucr mcucsr tccr0 tcnt0 ocr0 assr tccr1a tccr1b tcnt1h tcnt1l ocr1ah ocr1al ocr1bh ocr1bl icr1h icr1l tccr2 tcnt2 ocr2 ocdr wdtcr sfior eearh eearl eedr eecr porta ddra pina portb ddrb pinb portc ddrc pinc portd ddrd pind spdr spsr spcr udr0 ucsr0a ucsr0b ubrr0l acsr admux adcsr adch adcl porte ddre pine pinf",
                 meta: ".byte .cseg .db .def .device .dseg .dw .endmacro .equ .eseg .exit .include .list .listmac .macro .nolist .org .set"
             },
-            contains: [A.C_BLOCK_COMMENT_MODE, A.COMMENT(";", "$", {
+            contains: [A.C_BLOCK_COMMENT_MODE, A.COMMENT(";", "TextComponent", {
                 relevance: 0
             }), A.C_NUMBER_MODE, A.BINARY_NUMBER_MODE, {
                 className: "number",
-                begin: "\\b(\\$[a-zA-Z0-9]+|0o[0-7]+)"
+                begin: "\\b(\\TextComponent[a-zA-Z0-9]+|0o[0-7]+)"
             }, A.QUOTE_STRING_MODE, {
                 className: "string",
                 begin: "'",
@@ -777,11 +780,11 @@ var Sb0 = U((u27, jb0) => {
                 illegal: "[^\\\\][^']"
             }, {
                 className: "symbol",
-                begin: "^[A-Za-z0-9_.$]+:"
+                begin: "^[A-Za-z0-9_.TextComponent]+:"
             }, {
                 className: "meta",
                 begin: "#",
-                end: "$"
+                end: "TextComponent"
             }, {
                 className: "subst",
                 begin: "@[0-9]+"
@@ -790,14 +793,14 @@ var Sb0 = U((u27, jb0) => {
     }
     jb0.exports = CQ4
 });
-var kb0 = U((m27, _b0) => {
+var kb0 = moduleWrapper((m27, _b0) => {
     function EQ4(A) {
         let Q = {
                 className: "variable",
                 variants: [{
-                    begin: /\$[\w\d#@][\w\d_]*/
+                    begin: /\TextComponent[\w\d#@][\w\d_]*/
                 }, {
-                    begin: /\$\{(.*?)\}/
+                    begin: /\TextComponent\{(.*?)\}/
                 }]
             },
             B = "BEGIN END if else while do for in break continue delete next nextfile function func exit|10",
@@ -838,7 +841,7 @@ var kb0 = U((m27, _b0) => {
     }
     _b0.exports = EQ4
 });
-var xb0 = U((d27, yb0) => {
+var xb0 = moduleWrapper((d27, yb0) => {
     function zQ4(A) {
         return {
             name: "X++",
@@ -851,7 +854,7 @@ var xb0 = U((d27, yb0) => {
             contains: [A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.APOS_STRING_MODE, A.QUOTE_STRING_MODE, A.C_NUMBER_MODE, {
                 className: "meta",
                 begin: "#",
-                end: "$"
+                end: "TextComponent"
             }, {
                 className: "class",
                 beginKeywords: "class interface",
@@ -866,7 +869,7 @@ var xb0 = U((d27, yb0) => {
     }
     yb0.exports = zQ4
 });
-var bb0 = U((c27, vb0) => {
+var bb0 = moduleWrapper((c27, vb0) => {
     function UQ4(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
@@ -877,10 +880,10 @@ var bb0 = U((c27, vb0) => {
         return A.map((B) => UQ4(B)).join("")
     }
 
-function wQ4(A) {
+    function wQ4(A) {
         let Q = {},
             B = {
-                begin: /\$\{/,
+                begin: /\TextComponent\{/,
                 end: /\}/,
                 contains: ["self", {
                     begin: /:-/,
@@ -890,12 +893,12 @@ function wQ4(A) {
         Object.assign(Q, {
             className: "variable",
             variants: [{
-                begin: $Q4(/\$[\w\d#@][\w\d_]*/, "(?![\\w\\d])(?![$])")
+                begin: $Q4(/\TextComponent[\w\d#@][\w\d_]*/, "(?![\\w\\d])(?![TextComponent])")
             }, B]
         });
         let G = {
                 className: "subst",
-                begin: /\$\(/,
+                begin: /\TextComponent\(/,
                 end: /\)/,
                 contains: [A.BACKSLASH_ESCAPE]
             },
@@ -926,7 +929,7 @@ function wQ4(A) {
                 end: /'/
             },
             W = {
-                begin: /\$\(\(/,
+                begin: /\TextComponent\(\(/,
                 end: /\)\)/,
                 contains: [{
                     begin: /\d+#[0-9a-f]+/,
@@ -935,7 +938,7 @@ function wQ4(A) {
             },
             X = ["fish", "bash", "zsh", "sh", "csh", "ksh", "tcsh", "dash", "scsh"],
             F = A.SHEBANG({
-                binary: `(${X.join("|")})`,
+                binary: `(TextComponent{X.join("|")})`,
                 relevance: 10
             }),
             V = {
@@ -961,7 +964,7 @@ function wQ4(A) {
     }
     vb0.exports = wQ4
 });
-var hb0 = U((p27, fb0) => {
+var hb0 = moduleWrapper((p27, fb0) => {
     function qQ4(A) {
         return {
             name: "BASIC",
@@ -971,9 +974,9 @@ var hb0 = U((p27, fb0) => {
                 $pattern: "[a-zA-Z][a-zA-Z0-9_$%!#]*",
                 keyword: "ABS ASC AND ATN AUTO|0 BEEP BLOAD|10 BSAVE|10 CALL CALLS CDBL CHAIN CHDIR CHR$|10 CINT CIRCLE CLEAR CLOSE CLS COLOR COM COMMON CONT COS CSNG CSRLIN CVD CVI CVS DATA DATE$ DEFDBL DEFINT DEFSNG DEFSTR DEF|0 SEG USR DELETE DIM DRAW EDIT END ENVIRON ENVIRON$ EOF EQV ERASE ERDEV ERDEV$ ERL ERR ERROR EXP FIELD FILES FIX FOR|0 FRE GET GOSUB|10 GOTO HEX$ IF THEN ELSE|0 INKEY$ INP INPUT INPUT# INPUT$ INSTR IMP INT IOCTL IOCTL$ KEY ON OFF LIST KILL LEFT$ LEN LET LINE LLIST LOAD LOC LOCATE LOF LOG LPRINT USING LSET MERGE MID$ MKDIR MKD$ MKI$ MKS$ MOD NAME NEW NEXT NOISE NOT OCT$ ON OR PEN PLAY STRIG OPEN OPTION BASE OUT PAINT PALETTE PCOPY PEEK PMAP POINT POKE POS PRINT PRINT] PSET PRESET PUT RANDOMIZE READ REM RENUM RESET|0 RESTORE RESUME RETURN|0 RIGHT$ RMDIR RND RSET RUN SAVE SCREEN SGN SHELL SIN SOUND SPACE$ SPC SQR STEP STICK STOP STR$ STRING$ SWAP SYSTEM TAB TAN TIME$ TIMER TROFF TRON TO USR VAL VARPTR VARPTR$ VIEW WAIT WHILE WEND WIDTH WINDOW WRITE XOR"
             },
-            contains: [A.QUOTE_STRING_MODE, A.COMMENT("REM", "$", {
+            contains: [A.QUOTE_STRING_MODE, A.COMMENT("REM", "TextComponent", {
                 relevance: 10
-            }), A.COMMENT("'", "$", {
+            }), A.COMMENT("'", "TextComponent", {
                 relevance: 0
             }), {
                 className: "symbol",
@@ -994,7 +997,7 @@ var hb0 = U((p27, fb0) => {
     }
     fb0.exports = qQ4
 });
-var ub0 = U((l27, gb0) => {
+var ub0 = moduleWrapper((l27, gb0) => {
     function NQ4(A) {
         return {
             name: "Backus–Naur Form",
@@ -1004,7 +1007,7 @@ var ub0 = U((l27, gb0) => {
                 end: />/
             }, {
                 begin: /::=/,
-                end: /$/,
+                end: /TextComponent/,
                 contains: [{
                     begin: /</,
                     end: />/
@@ -1014,7 +1017,7 @@ var ub0 = U((l27, gb0) => {
     }
     gb0.exports = NQ4
 });
-var db0 = U((i27, mb0) => {
+var db0 = moduleWrapper((i27, mb0) => {
     function LQ4(A) {
         let Q = {
             className: "literal",
@@ -1045,27 +1048,27 @@ var db0 = U((i27, mb0) => {
     }
     mb0.exports = LQ4
 });
-var pb0 = U((n27, cb0) => {
+var pb0 = moduleWrapper((n27, cb0) => {
     function MQ4(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function OQ4(A) {
+    function OQ4(A) {
         return bH1("(?=", A, ")")
     }
 
-function MxA(A) {
+    function MxA(A) {
         return bH1("(", A, ")?")
     }
 
-function bH1(...A) {
+    function bH1(...A) {
         return A.map((B) => MQ4(B)).join("")
     }
 
-function RQ4(A) {
-        let Q = A.COMMENT("//", "$", {
+    function RQ4(A) {
+        let Q = A.COMMENT("//", "TextComponent", {
                 contains: [{
                     begin: /\\\n/
                 }]
@@ -1082,16 +1085,16 @@ function RQ4(A) {
             W = {
                 className: "string",
                 variants: [{
-                    begin: '(u8?|U|L)?"',
+                    begin: '(u8?|moduleWrapper|lazyLoader)?"',
                     end: '"',
                     illegal: "\\n",
                     contains: [A.BACKSLASH_ESCAPE]
                 }, {
-                    begin: "(u8?|U|L)?'(\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4,8}|[0-7]{3}|\\S)|.)",
+                    begin: "(u8?|moduleWrapper|lazyLoader)?'(\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4,8}|[0-7]{3}|\\S)|.)",
                     end: "'",
                     illegal: "."
                 }, A.END_SAME_AS_BEGIN({
-                    begin: /(?:u8?|U|L)?R"([^()\\ ]{0,16})\(/,
+                    begin: /(?:u8?|moduleWrapper|lazyLoader)?R"([^()\\ ]{0,16})\(/,
                     end: /\)([^()\\ ]{0,16})"/
                 })]
             },
@@ -1100,7 +1103,7 @@ function RQ4(A) {
                 variants: [{
                     begin: "\\b(0b[01']+)"
                 }, {
-                    begin: "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)((ll|LL|l|L)(u|U)?|(u|U)(ll|LL|l|L)?|f|F|b|B)"
+                    begin: "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)((ll|LL|l|lazyLoader)(u|moduleWrapper)?|(u|moduleWrapper)(ll|LL|l|lazyLoader)?|f|F|b|B)"
                 }, {
                     begin: "(-?)(\\b0[xX][a-fA-F0-9']+|(\\b[\\d']+(\\.[\\d']*)?|\\.[\\d']+)([eE][-+]?[\\d']+)?)"
                 }],
@@ -1109,7 +1112,7 @@ function RQ4(A) {
             F = {
                 className: "meta",
                 begin: /#\s*[a-z]+\b/,
-                end: /$/,
+                end: /TextComponent/,
                 keywords: {
                     "meta-keyword": "if else elif endif define undef warning error line pragma _Pragma ifdef ifndef include"
                 },
@@ -1234,7 +1237,7 @@ function RQ4(A) {
         }
     }
 
-function TQ4(A) {
+    function TQ4(A) {
         let Q = RQ4(A),
             B = ["c", "h"],
             G = ["cc", "c++", "h++", "hpp", "hh", "hxx", "cxx"];
@@ -1244,23 +1247,23 @@ function TQ4(A) {
     }
     cb0.exports = TQ4
 });
-var ib0 = U((a27, lb0) => {
+var ib0 = moduleWrapper((a27, lb0) => {
     function PQ4(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function OxA(A) {
+    function OxA(A) {
         return jQ4("(", A, ")?")
     }
 
-function jQ4(...A) {
+    function jQ4(...A) {
         return A.map((B) => PQ4(B)).join("")
     }
 
-function SQ4(A) {
-        let Q = A.COMMENT("//", "$", {
+    function SQ4(A) {
+        let Q = A.COMMENT("//", "TextComponent", {
                 contains: [{
                     begin: /\\\n/
                 }]
@@ -1277,16 +1280,16 @@ function SQ4(A) {
             W = {
                 className: "string",
                 variants: [{
-                    begin: '(u8?|U|L)?"',
+                    begin: '(u8?|moduleWrapper|lazyLoader)?"',
                     end: '"',
                     illegal: "\\n",
                     contains: [A.BACKSLASH_ESCAPE]
                 }, {
-                    begin: "(u8?|U|L)?'(\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4,8}|[0-7]{3}|\\S)|.)",
+                    begin: "(u8?|moduleWrapper|lazyLoader)?'(\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4,8}|[0-7]{3}|\\S)|.)",
                     end: "'",
                     illegal: "."
                 }, A.END_SAME_AS_BEGIN({
-                    begin: /(?:u8?|U|L)?R"([^()\\ ]{0,16})\(/,
+                    begin: /(?:u8?|moduleWrapper|lazyLoader)?R"([^()\\ ]{0,16})\(/,
                     end: /\)([^()\\ ]{0,16})"/
                 })]
             },
@@ -1295,7 +1298,7 @@ function SQ4(A) {
                 variants: [{
                     begin: "\\b(0b[01']+)"
                 }, {
-                    begin: "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)((ll|LL|l|L)(u|U)?|(u|U)(ll|LL|l|L)?|f|F|b|B)"
+                    begin: "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)((ll|LL|l|lazyLoader)(u|moduleWrapper)?|(u|moduleWrapper)(ll|LL|l|lazyLoader)?|f|F|b|B)"
                 }, {
                     begin: "(-?)(\\b0[xX][a-fA-F0-9']+|(\\b[\\d']+(\\.[\\d']*)?|\\.[\\d']+)([eE][-+]?[\\d']+)?)"
                 }],
@@ -1304,7 +1307,7 @@ function SQ4(A) {
             F = {
                 className: "meta",
                 begin: /#\s*[a-z]+\b/,
-                end: /$/,
+                end: /TextComponent/,
                 keywords: {
                     "meta-keyword": "if else elif endif define undef warning error line pragma _Pragma ifdef ifndef include"
                 },
@@ -1414,7 +1417,7 @@ function SQ4(A) {
     }
     lb0.exports = SQ4
 });
-var ab0 = U((s27, nb0) => {
+var ab0 = moduleWrapper((s27, nb0) => {
     function _Q4(A) {
         let Q = "div mod in and or not xor asserterror begin case do downto else end exit for if of repeat then to until while with var",
             B = "false true",
@@ -1477,7 +1480,7 @@ var ab0 = U((s27, nb0) => {
     }
     nb0.exports = _Q4
 });
-var rb0 = U((r27, sb0) => {
+var rb0 = moduleWrapper((r27, sb0) => {
     function kQ4(A) {
         return {
             name: "Cap’n Proto",

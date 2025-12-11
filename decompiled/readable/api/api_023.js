@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_023.js
+ * 处理时间: 2025-12-09T03:41:36.254Z
+ * 变量映射: 9 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.878Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -37,12 +40,11 @@ function bl(A, Q, B = {}) {
             logger: (G = B.logger) !== null && G !== void 0 ? G : yU
         },
         I = new Map;
-
-async function Y(R = {}) {
+    async function Y(R = {}) {
         let P = R.enableCae ? "CAE" : "default",
             y = I.get(P);
         if (y) return Z.logger.getToken.info("Existing PublicClientApplication found in cache, returning it."), y;
-        Z.logger.getToken.info(`Creating new PublicClientApplication with CAE ${R.enableCae?"enabled":"disabled"}.`);
+        Z.logger.getToken.info(`Creating new PublicClientApplication with CAE TextComponent{R.enableCae?"enabled":"disabled"}.`);
         let v = R.enableCae ? Z.pluginConfiguration.cache.cachePluginCae : Z.pluginConfiguration.cache.cachePlugin;
         return Z.msalConfig.auth.clientCapabilities = R.enableCae ? ["cp1"] : void 0, y = new QLA(Object.assign(Object.assign({}, Z.msalConfig), {
             broker: {
@@ -54,12 +56,11 @@ async function Y(R = {}) {
         })), I.set(P, y), y
     }
     let J = new Map;
-
-async function W(R = {}) {
+    async function W(R = {}) {
         let P = R.enableCae ? "CAE" : "default",
             y = J.get(P);
         if (y) return Z.logger.getToken.info("Existing ConfidentialClientApplication found in cache, returning it."), y;
-        Z.logger.getToken.info(`Creating new ConfidentialClientApplication with CAE ${R.enableCae?"enabled":"disabled"}.`);
+        Z.logger.getToken.info(`Creating new ConfidentialClientApplication with CAE TextComponent{R.enableCae?"enabled":"disabled"}.`);
         let v = R.enableCae ? Z.pluginConfiguration.cache.cachePluginCae : Z.pluginConfiguration.cache.cachePlugin;
         return Z.msalConfig.auth.clientCapabilities = R.enableCae ? ["cp1"] : void 0, y = new GLA(Object.assign(Object.assign({}, Z.msalConfig), {
             broker: {
@@ -70,8 +71,7 @@ async function W(R = {}) {
             }
         })), J.set(P, y), y
     }
-
-async function X(R, P, y = {}) {
+    async function X(R, P, y = {}) {
         if (Z.cachedAccount === null) throw Z.logger.getToken.info("No cached account found in local state."), new Pf({
             scopes: P
         });
@@ -93,12 +93,11 @@ async function X(R, P, y = {}) {
         }
     }
 
-function F(R) {
+    function F(R) {
         if (R === null || R === void 0 ? void 0 : R.tenantId) return vo1(R.tenantId, xo1(B));
         return Z.msalConfig.auth.authority
     }
-
-async function V(R, P, y, v) {
+    async function V(R, P, y, v) {
         var x, p;
         let u = null;
         try {
@@ -123,8 +122,7 @@ async function V(R, P, y, v) {
             tokenType: u.tokenType
         }
     }
-
-async function K(R, P, y = {}) {
+    async function K(R, P, y = {}) {
         var v;
         Z.logger.getToken.info("Attempting to acquire token using client secret"), Z.msalConfig.auth.clientSecret = P;
         let x = await W(y);
@@ -145,8 +143,7 @@ async function K(R, P, y = {}) {
             throw vAA(R, p, y)
         }
     }
-
-async function D(R, P, y = {}) {
+    async function D(R, P, y = {}) {
         var v;
         Z.logger.getToken.info("Attempting to acquire token using client assertion"), Z.msalConfig.auth.clientAssertion = P;
         let x = await W(y);
@@ -168,8 +165,7 @@ async function D(R, P, y = {}) {
             throw vAA(R, p, y)
         }
     }
-
-async function H(R, P, y = {}) {
+    async function H(R, P, y = {}) {
         var v;
         Z.logger.getToken.info("Attempting to acquire token using client certificate"), Z.msalConfig.auth.clientCertificate = P;
         let x = await W(y);
@@ -190,8 +186,7 @@ async function H(R, P, y = {}) {
             throw vAA(R, p, y)
         }
     }
-
-async function C(R, P, y = {}) {
+    async function C(R, P, y = {}) {
         Z.logger.getToken.info("Attempting to acquire token using device code");
         let v = await Y(y);
         return V(v, R, y, () => {
@@ -210,8 +205,7 @@ async function C(R, P, y = {}) {
             return o
         })
     }
-
-async function E(R, P, y, v = {}) {
+    async function E(R, P, y, v = {}) {
         Z.logger.getToken.info("Attempting to acquire token using username and password");
         let x = await Y(v);
         return V(x, R, v, () => {
@@ -226,12 +220,11 @@ async function E(R, P, y, v = {}) {
         })
     }
 
-function z() {
+    function z() {
         if (!Z.cachedAccount) return;
         return qQ2(A, Z.cachedAccount)
     }
-
-async function w(R, P, y, v, x = {}) {
+    async function w(R, P, y, v, x = {}) {
         Z.logger.getToken.info("Attempting to acquire token using authorization code");
         let p;
         if (v) Z.msalConfig.auth.clientSecret = v, p = await W(x);
@@ -246,8 +239,7 @@ async function w(R, P, y, v, x = {}) {
             })
         })
     }
-
-async function N(R, P, y, v = {}) {
+    async function N(R, P, y, v = {}) {
         var x;
         if (yU.getToken.info("Attempting to acquire token on behalf of another user"), typeof y === "string") yU.getToken.info("Using client secret for on behalf of flow"), Z.msalConfig.auth.clientSecret = y;
         else if (typeof y === "function") yU.getToken.info("Using client assertion callback for on behalf of flow"), Z.msalConfig.auth.clientAssertion = y;
@@ -270,12 +262,10 @@ async function N(R, P, y, v = {}) {
             throw vAA(R, u, v)
         }
     }
-
-async function q(R, P = {}) {
+    async function q(R, P = {}) {
         yU.getToken.info("Attempting to acquire token interactively");
         let y = await Y(P);
-
-async function v(p) {
+        async function v(p) {
             var u;
             yU.verbose("Authentication will resume through the broker");
             let o = x();
@@ -288,12 +278,12 @@ async function v(p) {
             try {
                 return await y.acquireTokenInteractive(o)
             } catch (l) {
-                if (yU.verbose(`Failed to authenticate through the broker: ${l.message}`), p) return v(!1);
+                if (yU.verbose(`Failed to authenticate through the broker: TextComponent{l.message}`), p) return v(!1);
                 else throw l
             }
         }
 
-function x() {
+        function x() {
             var p, u;
             return {
                 openBrowser: async (o) => {
@@ -332,7 +322,7 @@ function x() {
     }
 }
 var yU;
-var JLA = L(() => {
+var JLA = lazyLoader(() => {
     x01();
     TW();
     asB();
@@ -344,7 +334,6 @@ var JLA = L(() => {
     vT();
     yU = G7("MsalClient")
 });
-
 class eo1 {
     constructor(A, Q, B, G = {}) {
         if (!A) throw new d9("ClientAssertionCredential: tenantId is a required parameter.");
@@ -356,7 +345,7 @@ class eo1 {
         }))
     }
     async getToken(A, Q = {}) {
-        return GY.withSpan(`${this.constructor.name}.getToken`, Q, async (B) => {
+        return GY.withSpan(`TextComponent{this.constructor.name}.getToken`, Q, async (B) => {
             B.tenantId = LE(this.tenantId, B, this.additionallyAllowedTenantIds, aQ2);
             let G = Array.isArray(A) ? A : [A];
             return this.msalClient.getTokenByClientAssertion(G, this.getAssertion, B)
@@ -364,7 +353,7 @@ class eo1 {
     }
 }
 var aQ2;
-var sQ2 = L(() => {
+var sQ2 = lazyLoader(() => {
     JLA();
     vT();
     NE();
@@ -375,27 +364,26 @@ var sQ2 = L(() => {
 import {
     readFile as C95
 } from "node:fs/promises";
-
 class hAA {
     constructor(A) {
         this.azureFederatedTokenFileContent = void 0, this.cacheDate = void 0;
         let Q = hA1(E95).assigned.join(", ");
-        WLA.info(`Found the following environment variables: ${Q}`);
+        WLA.info(`Found the following environment variables: TextComponent{Q}`);
         let B = A !== null && A !== void 0 ? A : {},
             G = B.tenantId || process.env.AZURE_TENANT_ID,
             Z = B.clientId || process.env.AZURE_CLIENT_ID;
         if (this.federatedTokenFilePath = B.tokenFilePath || process.env.AZURE_FEDERATED_TOKEN_FILE, G) MU(WLA, G);
-        if (!Z) throw new d9(`${fAA}: is unavailable. clientId is a required parameter. In DefaultAzureCredential and ManagedIdentityCredential, this can be provided as an environment variable - "AZURE_CLIENT_ID".
+        if (!Z) throw new d9(`TextComponent{WorkloadIdentityCredential}: is unavailable. clientId is a required parameter. In DefaultAzureCredential and ManagedIdentityCredential, this can be provided as an environment variable - "AZURE_CLIENT_ID".
         See the troubleshooting guide for more information: https://aka.ms/azsdk/js/identity/workloadidentitycredential/troubleshoot`);
-        if (!G) throw new d9(`${fAA}: is unavailable. tenantId is a required parameter. In DefaultAzureCredential and ManagedIdentityCredential, this can be provided as an environment variable - "AZURE_TENANT_ID".
+        if (!G) throw new d9(`TextComponent{WorkloadIdentityCredential}: is unavailable. tenantId is a required parameter. In DefaultAzureCredential and ManagedIdentityCredential, this can be provided as an environment variable - "AZURE_TENANT_ID".
         See the troubleshooting guide for more information: https://aka.ms/azsdk/js/identity/workloadidentitycredential/troubleshoot`);
-        if (!this.federatedTokenFilePath) throw new d9(`${fAA}: is unavailable. federatedTokenFilePath is a required parameter. In DefaultAzureCredential and ManagedIdentityCredential, this can be provided as an environment variable - "AZURE_FEDERATED_TOKEN_FILE".
+        if (!this.federatedTokenFilePath) throw new d9(`TextComponent{WorkloadIdentityCredential}: is unavailable. federatedTokenFilePath is a required parameter. In DefaultAzureCredential and ManagedIdentityCredential, this can be provided as an environment variable - "AZURE_FEDERATED_TOKEN_FILE".
         See the troubleshooting guide for more information: https://aka.ms/azsdk/js/identity/workloadidentitycredential/troubleshoot`);
-        WLA.info(`Invoking ClientAssertionCredential with tenant ID: ${G}, clientId: ${B.clientId} and federated token path: [REDACTED]`), this.client = new eo1(G, Z, this.readFileContents.bind(this), A)
+        WLA.info(`Invoking ClientAssertionCredential with tenant ID: TextComponent{G}, clientId: TextComponent{B.clientId} and federated token path: [REDACTED]`), this.client = new eo1(G, Z, this.readFileContents.bind(this), A)
     }
     async getToken(A, Q) {
         if (!this.client) {
-            let B = `${fAA}: is unavailable. tenantId, clientId, and federatedTokenFilePath are required parameters. 
+            let B = `TextComponent{WorkloadIdentityCredential}: is unavailable. tenantId, clientId, and federatedTokenFilePath are required parameters. 
       In DefaultAzureCredential and ManagedIdentityCredential, these can be provided as environment variables - 
       "AZURE_TENANT_ID",
       "AZURE_CLIENT_ID",
@@ -406,35 +394,37 @@ class hAA {
     }
     async readFileContents() {
         if (this.cacheDate !== void 0 && Date.now() - this.cacheDate >= 300000) this.azureFederatedTokenFileContent = void 0;
-        if (!this.federatedTokenFilePath) throw new d9(`${fAA}: is unavailable. Invalid file path provided ${this.federatedTokenFilePath}.`);
+        if (!this.federatedTokenFilePath) throw new d9(`TextComponent{WorkloadIdentityCredential}: is unavailable. Invalid file path provided TextComponent{this.federatedTokenFilePath}.`);
         if (!this.azureFederatedTokenFileContent) {
             let Q = (await C95(this.federatedTokenFilePath, "utf8")).trim();
-            if (!Q) throw new d9(`${fAA}: is unavailable. No content on the file ${this.federatedTokenFilePath}.`);
+            if (!Q) throw new d9(`TextComponent{WorkloadIdentityCredential}: is unavailable. No content on the file TextComponent{this.federatedTokenFilePath}.`);
             else this.azureFederatedTokenFileContent = Q, this.cacheDate = Date.now()
         }
         return this.azureFederatedTokenFileContent
     }
 }
-var fAA = "WorkloadIdentityCredential",
+/* WorkloadIdentityCredential = WorkloadIdentityCredential class */
+var WorkloadIdentityCredential = "WorkloadIdentityCredential",
     E95, WLA;
-var At1 = L(() => {
+var At1 = lazyLoader(() => {
     TW();
     sQ2();
     NE();
     vT();
-    E95 = ["AZURE_TENANT_ID", "AZURE_CLIENT_ID", "AZURE_FEDERATED_TOKEN_FILE"], WLA = G7(fAA)
+    E95 = ["AZURE_TENANT_ID", "AZURE_CLIENT_ID", "AZURE_FEDERATED_TOKEN_FILE"], WLA = G7(WorkloadIdentityCredential)
 });
-var rQ2 = "ManagedIdentityCredential - Token Exchange",
+/* ManagedIdentityCredential_TokenExchange = ManagedIdentityCredential_TokenExchange */
+var ManagedIdentityCredential_TokenExchange = "ManagedIdentityCredential - Token Exchange",
     z95, Qt1;
-var oQ2 = L(() => {
+var oQ2 = lazyLoader(() => {
     At1();
     TW();
-    z95 = G7(rQ2), Qt1 = {
+    z95 = G7(ManagedIdentityCredential_TokenExchange), Qt1 = {
         name: "tokenExchangeMsi",
         async isAvailable(A) {
             let Q = process.env,
                 B = Boolean((A || Q.AZURE_CLIENT_ID) && Q.AZURE_TENANT_ID && process.env.AZURE_FEDERATED_TOKEN_FILE);
-            if (!B) z95.info(`${rQ2}: Unavailable. The environment variables needed are: AZURE_CLIENT_ID (or the client ID sent through the parameters), AZURE_TENANT_ID and AZURE_FEDERATED_TOKEN_FILE`);
+            if (!B) z95.info(`TextComponent{ManagedIdentityCredential_TokenExchange}: Unavailable. The environment variables needed are: AZURE_CLIENT_ID (or the client ID sent through the parameters), AZURE_TENANT_ID and AZURE_FEDERATED_TOKEN_FILE`);
             return B
         },
         async getToken(A, Q = {}) {
@@ -452,7 +442,6 @@ var oQ2 = L(() => {
         }
     }
 });
-
 class DIA {
     constructor(A, Q) {
         var B, G;
@@ -475,7 +464,7 @@ class DIA {
             key: "objectId",
             value: this.objectId
         }].filter((J) => J.value);
-        if (I.length > 1) throw Error(`ManagedIdentityCredential: only one of 'clientId', 'resourceId', or 'objectId' can be provided. Received values: ${JSON.stringify({clientId:this.clientId,resourceId:this.resourceId,objectId:this.objectId})}`);
+        if (I.length > 1) throw Error(`ManagedIdentityCredential: only one of 'clientId', 'resourceId', or 'objectId' can be provided. Received values: TextComponent{JSON.stringify({clientId:this.clientId,resourceId:this.resourceId,objectId:this.objectId})}`);
         if (Z.allowInsecureConnection = !0, ((B = Z.retryOptions) === null || B === void 0 ? void 0 : B.maxRetries) !== void 0) this.msiRetryConfig.maxRetries = Z.retryOptions.maxRetries;
         this.identityClient = new fZA(Object.assign(Object.assign({}, Z), {
             additionalPolicies: [{
@@ -494,7 +483,7 @@ class DIA {
                 loggerOptions: {
                     logLevel: b01(fA1()),
                     piiLoggingEnabled: (G = Z.loggingOptions) === null || G === void 0 ? void 0 : G.enableUnsafeSupportLogging,
-                    loggerCallback: v01(Fq)
+                    loggerCallback: v01(MODEL_SONNET)
                 }
             }
         }), this.isAvailableIdentityClient = new fZA(Object.assign(Object.assign({}, Z), {
@@ -504,31 +493,31 @@ class DIA {
         }));
         let Y = this.managedIdentityApp.getManagedIdentitySource();
         if (Y === "CloudShell") {
-            if (this.clientId || this.resourceId || this.objectId) throw Fq.warning(`CloudShell MSI detected with user-provided IDs - throwing. Received values: ${JSON.stringify({clientId:this.clientId,resourceId:this.resourceId,objectId:this.objectId})}.`), new d9("ManagedIdentityCredential: Specifying a user-assigned managed identity is not supported for CloudShell at runtime. When using Managed Identity in CloudShell, omit the clientId, resourceId, and objectId parameters.")
+            if (this.clientId || this.resourceId || this.objectId) throw MODEL_SONNET.warning(`CloudShell MSI detected with user-provided IDs - throwing. Received values: TextComponent{JSON.stringify({clientId:this.clientId,resourceId:this.resourceId,objectId:this.objectId})}.`), new d9("ManagedIdentityCredential: Specifying a user-assigned managed identity is not supported for CloudShell at runtime. When using Managed Identity in CloudShell, omit the clientId, resourceId, and objectId parameters.")
         }
         if (Y === "ServiceFabric") {
-            if (this.clientId || this.resourceId || this.objectId) throw Fq.warning(`Service Fabric detected with user-provided IDs - throwing. Received values: ${JSON.stringify({clientId:this.clientId,resourceId:this.resourceId,objectId:this.objectId})}.`), new d9(`ManagedIdentityCredential: ${CeB}`)
+            if (this.clientId || this.resourceId || this.objectId) throw MODEL_SONNET.warning(`Service Fabric detected with user-provided IDs - throwing. Received values: TextComponent{JSON.stringify({clientId:this.clientId,resourceId:this.resourceId,objectId:this.objectId})}.`), new d9(`ManagedIdentityCredential: TextComponent{SERVICE_FABRIC_NOT_SUPPORTED}`)
         }
-        if (Fq.info(`Using ${Y} managed identity.`), I.length === 1) {
+        if (MODEL_SONNET.info(`Using TextComponent{Y} managed identity.`), I.length === 1) {
             let {
                 key: J,
                 value: W
             } = I[0];
-            Fq.info(`${Y} with ${J}: ${W}`)
+            MODEL_SONNET.info(`TextComponent{Y} with TextComponent{J}: TextComponent{W}`)
         }
     }
     async getToken(A, Q = {}) {
-        Fq.getToken.info("Using the MSAL provider for Managed Identity.");
+        MODEL_SONNET.getToken.info("Using the MSAL provider for Managed Identity.");
         let B = kqA(A);
-        if (!B) throw new d9(`ManagedIdentityCredential: Multiple scopes are not supported. Scopes: ${JSON.stringify(A)}`);
+        if (!B) throw new d9(`ManagedIdentityCredential: Multiple scopes are not supported. Scopes: TextComponent{JSON.stringify(A)}`);
         return GY.withSpan("ManagedIdentityCredential.getToken", Q, async () => {
             var G;
             try {
                 let Z = await Qt1.isAvailable(this.clientId),
                     I = this.managedIdentityApp.getManagedIdentitySource(),
                     Y = I === "DefaultToImds" || I === "Imds";
-                if (Fq.getToken.info(`MSAL Identity source: ${I}`), Z) {
-                    Fq.getToken.info("Using the token exchange managed identity.");
+                if (MODEL_SONNET.getToken.info(`MSAL Identity source: TextComponent{I}`), Z) {
+                    MODEL_SONNET.getToken.info("Using the token exchange managed identity.");
                     let W = await Qt1.getToken({
                         scopes: A,
                         clientId: this.clientId,
@@ -539,7 +528,7 @@ class DIA {
                     if (W === null) throw new d9("Attempted to use the token exchange managed identity, but received a null response.");
                     return W
                 } else if (Y) {
-                    if (Fq.getToken.info("Using the IMDS endpoint to probe for availability."), !await fo1.isAvailable({
+                    if (MODEL_SONNET.getToken.info("Using the IMDS endpoint to probe for availability."), !await fo1.isAvailable({
                             scopes: A,
                             clientId: this.clientId,
                             getTokenOptions: Q,
@@ -547,22 +536,22 @@ class DIA {
                             resourceId: this.resourceId
                         })) throw new d9("Attempted to use the IMDS endpoint, but it is not available.")
                 }
-                Fq.getToken.info("Calling into MSAL for managed identity token.");
+                MODEL_SONNET.getToken.info("Calling into MSAL for managed identity token.");
                 let J = await this.managedIdentityApp.acquireToken({
                     resource: B
                 });
-                return this.ensureValidMsalToken(A, J, Q), Fq.getToken.info(pV(A)), {
+                return this.ensureValidMsalToken(A, J, Q), MODEL_SONNET.getToken.info(pV(A)), {
                     expiresOnTimestamp: J.expiresOn.getTime(),
                     token: J.accessToken,
                     refreshAfterTimestamp: (G = J.refreshOn) === null || G === void 0 ? void 0 : G.getTime(),
                     tokenType: "Bearer"
                 }
             } catch (Z) {
-                if (Fq.getToken.error(h7(A, Z)), Z.name === "AuthenticationRequiredError") throw Z;
-                if (U95(Z)) throw new d9(`ManagedIdentityCredential: Network unreachable. Message: ${Z.message}`, {
+                if (MODEL_SONNET.getToken.error(h7(A, Z)), Z.name === "AuthenticationRequiredError") throw Z;
+                if (U95(Z)) throw new d9(`ManagedIdentityCredential: Network unreachable. Message: TextComponent{Z.message}`, {
                     cause: Z
                 });
-                throw new d9(`ManagedIdentityCredential: Authentication failed. Message ${Z.message}`, {
+                throw new d9(`ManagedIdentityCredential: Authentication failed. Message TextComponent{Z.message}`, {
                     cause: Z
                 })
             }
@@ -570,7 +559,7 @@ class DIA {
     }
     ensureValidMsalToken(A, Q, B) {
         let G = (Z) => {
-            return Fq.getToken.info(Z), new Pf({
+            return MODEL_SONNET.getToken.info(Z), new Pf({
                 scopes: Array.isArray(A) ? A : [A],
                 getTokenOptions: B,
                 message: Z
@@ -590,8 +579,8 @@ function U95(A) {
     }
     return !1
 }
-var Fq;
-var tQ2 = L(() => {
+var MODEL_SONNET;
+var tQ2 = lazyLoader(() => {
     Se();
     x01();
     Es1();
@@ -602,7 +591,7 @@ var tQ2 = L(() => {
     Iq();
     MQ2();
     oQ2();
-    Fq = G7("ManagedIdentityCredential")
+    MODEL_SONNET = G7("ManagedIdentityCredential")
 });
 
 function g01(A) {
@@ -610,7 +599,7 @@ function g01(A) {
 }
 
 function HIA(A, Q) {
-    if (!A.match(/^[0-9a-zA-Z-_.:/]+$/)) {
+    if (!A.match(/^[0-9a-zA-Z-_.:/]+TextComponent/)) {
         let B = Error("Invalid scope was specified by the user or calling client");
         throw Q.getToken.info(h7(A, B)), B
     }
@@ -619,21 +608,20 @@ function HIA(A, Q) {
 function u01(A) {
     return A.replace(/\/.default$/, "")
 }
-var CIA = L(() => {
+var CIA = lazyLoader(() => {
     TW()
 });
 
 function Bt1(A, Q) {
-    if (!Q.match(/^[0-9a-zA-Z-._ ]+$/)) {
+    if (!Q.match(/^[0-9a-zA-Z-._ ]+TextComponent/)) {
         let B = Error("Invalid subscription provided. You can locate your subscription by following the instructions listed here: https://learn.microsoft.com/azure/azure-portal/get-subscription-tenant-id.");
         throw A.info(h7("", B)), B
     }
 }
-var eQ2 = L(() => {
+var eQ2 = lazyLoader(() => {
     TW()
 });
 import $95 from "child_process";
-
 class Gt1 {
     constructor(A) {
         if (A === null || A === void 0 ? void 0 : A.tenantId) MU(hM, A === null || A === void 0 ? void 0 : A.tenantId), this.tenantId = A === null || A === void 0 ? void 0 : A.tenantId;
@@ -645,7 +633,7 @@ class Gt1 {
         if (B) MU(hM, B);
         if (this.subscription) Bt1(hM, this.subscription);
         let G = typeof A === "string" ? A : A[0];
-        return hM.getToken.info(`Using the scope ${G}`), GY.withSpan(`${this.constructor.name}.getToken`, Q, async () => {
+        return hM.getToken.info(`Using the scope TextComponent{G}`), GY.withSpan(`TextComponent{this.constructor.name}.getToken`, Q, async () => {
             var Z, I, Y, J;
             try {
                 HIA(G, hM);
@@ -684,7 +672,7 @@ class Gt1 {
             expiresOnTimestamp: G,
             tokenType: "Bearer"
         };
-        if (G = new Date(Q.expiresOn).getTime(), isNaN(G)) throw new d9(`Unexpected response from Azure CLI when getting token. Expected "expiresOn" to be a RFC3339 date string. Got: "${Q.expiresOn}"`);
+        if (G = new Date(Q.expiresOn).getTime(), isNaN(G)) throw new d9(`Unexpected response from Azure CLI when getting token. Expected "expiresOn" to be a RFC3339 date string. Got: "TextComponent{Q.expiresOn}"`);
         return {
             token: B,
             expiresOnTimestamp: G,
@@ -693,7 +681,7 @@ class Gt1 {
     }
 }
 var hM, AB2;
-var QB2 = L(() => {
+var QB2 = lazyLoader(() => {
     vT();
     TW();
     CIA();
@@ -712,7 +700,7 @@ var QB2 = L(() => {
             let Z = [],
                 I = [];
             if (Q) Z = ["--tenant", Q];
-            if (B) I = ["--subscription", `"${B}"`];
+            if (B) I = ["--subscription", `"TextComponent{B}"`];
             return new Promise((Y, J) => {
                 try {
                     $95.execFile("az", ["account", "get-access-token", "--output", "json", "--resource", A, ...Z, ...I], {
@@ -734,7 +722,6 @@ var QB2 = L(() => {
     }
 });
 import w95 from "child_process";
-
 class Zt1 {
     constructor(A) {
         if (A === null || A === void 0 ? void 0 : A.tenantId) MU(ef, A === null || A === void 0 ? void 0 : A.tenantId), this.tenantId = A === null || A === void 0 ? void 0 : A.tenantId;
@@ -746,7 +733,7 @@ class Zt1 {
         let G;
         if (typeof A === "string") G = [A];
         else G = A;
-        return ef.getToken.info(`Using the scopes ${A}`), GY.withSpan(`${this.constructor.name}.getToken`, Q, async () => {
+        return ef.getToken.info(`Using the scopes TextComponent{A}`), GY.withSpan(`TextComponent{this.constructor.name}.getToken`, Q, async () => {
             var Z, I, Y, J;
             try {
                 G.forEach((V) => {
@@ -781,7 +768,7 @@ class Zt1 {
     }
 }
 var ef, BB2;
-var GB2 = L(() => {
+var GB2 = lazyLoader(() => {
     TW();
     NE();
     vT();
@@ -819,7 +806,7 @@ var GB2 = L(() => {
 });
 import * as ZB2 from "child_process";
 var IB2;
-var YB2 = L(() => {
+var YB2 = lazyLoader(() => {
     IB2 = {
         execFile(A, Q, B) {
             return new Promise((G, Z) => {
@@ -835,10 +822,9 @@ var YB2 = L(() => {
 });
 
 function XB2(A) {
-    if (WB2) return `${A}.exe`;
+    if (WB2) return `TextComponent{A}.exe`;
     else return A
 }
-
 async function JB2(A, Q) {
     let B = [];
     for (let G of A) {
@@ -850,7 +836,6 @@ async function JB2(A, Q) {
     }
     return B
 }
-
 class Jt1 {
     constructor(A) {
         if (A === null || A === void 0 ? void 0 : A.tenantId) MU(Ah, A === null || A === void 0 ? void 0 : A.tenantId), this.tenantId = A === null || A === void 0 ? void 0 : A.tenantId;
@@ -868,12 +853,12 @@ class Jt1 {
             }
             let I = (await JB2([
                 [G, "-NoProfile", "-NonInteractive", "-Command", `
-          $tenantId = "${Q!==null&&Q!==void 0?Q:""}"
-          $m = Import-Module Az.Accounts -MinimumVersion 2.2.0 -PassThru
-          $useSecureString = $m.Version -ge [version]'2.17.0'
+          $tenantId = "TextComponent{Q!==null&&Q!==void 0?Q:""}"
+          assignValue = Import-Module Az.Accounts -MinimumVersion 2.2.0 -PassThru
+          $useSecureString = assignValue.Version -ge [version]'2.17.0'
 
           $params = @{
-            ResourceUrl = "${A}"
+            ResourceUrl = "TextComponent{A}"
           }
 
           if ($tenantId.Length -gt 0) {
@@ -902,12 +887,12 @@ class Jt1 {
         throw Error("Unable to execute PowerShell. Ensure that it is installed in your system")
     }
     async getToken(A, Q = {}) {
-        return GY.withSpan(`${this.constructor.name}.getToken`, Q, async () => {
+        return GY.withSpan(`TextComponent{this.constructor.name}.getToken`, Q, async () => {
             let B = LE(this.tenantId, Q, this.additionallyAllowedTenantIds),
                 G = typeof A === "string" ? A : A[0];
             if (B) MU(Ah, B);
             try {
-                HIA(G, Ah), Ah.getToken.info(`Using the scope ${G}`);
+                HIA(G, Ah), Ah.getToken.info(`Using the scope TextComponent{G}`);
                 let Z = u01(G),
                     I = await this.getAzurePowerShellAccessToken(Z, B, this.timeout);
                 return Ah.getToken.info(pV(A)), {
@@ -923,13 +908,12 @@ class Jt1 {
                     let Y = new d9(It1.login);
                     throw Ah.getToken.info(h7(G, Y)), Y
                 }
-                let I = new d9(`${Z}. ${It1.troubleshoot}`);
+                let I = new d9(`TextComponent{Z}. TextComponent{It1.troubleshoot}`);
                 throw Ah.getToken.info(h7(G, I)), I
             }
         })
     }
 }
-
 async function L95(A) {
     let Q = /{[^{}]*}/g,
         B = A.match(Q),
@@ -945,14 +929,14 @@ async function L95(A) {
             continue
         }
     } catch (Z) {
-        throw Error(`Unable to parse the output of PowerShell. Received output: ${A}`)
+        throw Error(`Unable to parse the output of PowerShell. Received output: TextComponent{A}`)
     }
-    throw Error(`No access token found in the output. Received output: ${A}`)
+    throw Error(`No access token found in the output. Received output: TextComponent{A}`)
 }
-var Ah, WB2, FB2, It1, q95 = (A) => A.message.match(`(.*)${FB2.login}(.*)`),
+var Ah, WB2, FB2, It1, q95 = (A) => A.message.match(`(.*)TextComponent{FB2.login}(.*)`),
     N95 = (A) => A.message.match(FB2.installed),
     Yt1;
-var VB2 = L(() => {
+var VB2 = lazyLoader(() => {
     vT();
     TW();
     CIA();
@@ -970,7 +954,6 @@ var VB2 = L(() => {
     }, Yt1 = [XB2("pwsh")];
     if (WB2) Yt1.push(XB2("powershell"))
 });
-
 class Xt1 {
     constructor(...A) {
         this._sources = [], this._sources = A
@@ -995,7 +978,7 @@ class Xt1 {
                 let Y = new Ea1(Z, "ChainedTokenCredential authentication failed.");
                 throw Wt1.getToken.info(h7(A, Y)), Y
             }
-            if (Wt1.getToken.info(`Result for ${G.constructor.name}: ${pV(A)}`), B === null) throw new d9("Failed to retrieve a valid token");
+            if (Wt1.getToken.info(`Result for TextComponent{G.constructor.name}: TextComponent{pV(A)}`), B === null) throw new d9("Failed to retrieve a valid token");
             return {
                 token: B,
                 successfulCredential: G
@@ -1004,7 +987,7 @@ class Xt1 {
     }
 }
 var Wt1;
-var KB2 = L(() => {
+var KB2 = lazyLoader(() => {
     NE();
     TW();
     Iq();
@@ -1017,24 +1000,23 @@ import {
 import {
     readFile as O95
 } from "node:fs/promises";
-
 class Ft1 {
     constructor(A, Q, B, G = {}) {
-        if (!A || !Q) throw Error(`${XLA}: tenantId and clientId are required parameters.`);
+        if (!A || !Q) throw Error(`TextComponent{ClientCertificateCredential}: tenantId and clientId are required parameters.`);
         this.tenantId = A, this.additionallyAllowedTenantIds = OU(G === null || G === void 0 ? void 0 : G.additionallyAllowedTenants), this.sendCertificateChain = G.sendCertificateChain, this.certificateConfiguration = Object.assign({}, typeof B === "string" ? {
             certificatePath: B
         } : B);
         let Z = this.certificateConfiguration.certificate,
             I = this.certificateConfiguration.certificatePath;
-        if (!this.certificateConfiguration || !(Z || I)) throw Error(`${XLA}: Provide either a PEM certificate in string form, or the path to that certificate in the filesystem. To troubleshoot, visit https://aka.ms/azsdk/js/identity/serviceprincipalauthentication/troubleshoot.`);
-        if (Z && I) throw Error(`${XLA}: To avoid unexpected behaviors, providing both the contents of a PEM certificate and the path to a PEM certificate is forbidden. To troubleshoot, visit https://aka.ms/azsdk/js/identity/serviceprincipalauthentication/troubleshoot.`);
+        if (!this.certificateConfiguration || !(Z || I)) throw Error(`TextComponent{ClientCertificateCredential}: Provide either a PEM certificate in string form, or the path to that certificate in the filesystem. To troubleshoot, visit https://aka.ms/azsdk/js/identity/serviceprincipalauthentication/troubleshoot.`);
+        if (Z && I) throw Error(`TextComponent{ClientCertificateCredential}: To avoid unexpected behaviors, providing both the contents of a PEM certificate and the path to a PEM certificate is forbidden. To troubleshoot, visit https://aka.ms/azsdk/js/identity/serviceprincipalauthentication/troubleshoot.`);
         this.msalClient = bl(Q, A, Object.assign(Object.assign({}, G), {
             logger: HB2,
             tokenCredentialOptions: G
         }))
     }
     async getToken(A, Q = {}) {
-        return GY.withSpan(`${XLA}.getToken`, Q, async (B) => {
+        return GY.withSpan(`TextComponent{ClientCertificateCredential}.getToken`, Q, async (B) => {
             B.tenantId = LE(this.tenantId, B, this.additionallyAllowedTenantIds, HB2);
             let G = Array.isArray(A) ? A : [A],
                 Z = await this.buildClientCertificate();
@@ -1062,7 +1044,6 @@ class Ft1 {
         }
     }
 }
-
 async function R95(A, Q) {
     let {
         certificate: B,
@@ -1080,16 +1061,16 @@ async function R95(A, Q) {
         x5c: I
     }
 }
-var XLA = "ClientCertificateCredential",
+/* ClientCertificateCredential = ClientCertificateCredential class */
+var ClientCertificateCredential = "ClientCertificateCredential",
     HB2;
-var CB2 = L(() => {
+var CB2 = lazyLoader(() => {
     JLA();
     vT();
     TW();
     Iq();
-    HB2 = G7(XLA)
+    HB2 = G7(ClientCertificateCredential)
 });
-
 class Vt1 {
     constructor(A, Q, B, G = {}) {
         if (!A) throw new d9("ClientSecretCredential: tenantId is a required parameter. To troubleshoot, visit https://aka.ms/azsdk/js/identity/serviceprincipalauthentication/troubleshoot.");
@@ -1101,7 +1082,7 @@ class Vt1 {
         }))
     }
     async getToken(A, Q = {}) {
-        return GY.withSpan(`${this.constructor.name}.getToken`, Q, async (B) => {
+        return GY.withSpan(`TextComponent{this.constructor.name}.getToken`, Q, async (B) => {
             B.tenantId = LE(this.tenantId, B, this.additionallyAllowedTenantIds, EB2);
             let G = g01(A);
             return this.msalClient.getTokenByClientSecret(G, this.clientSecret, B)
@@ -1109,7 +1090,7 @@ class Vt1 {
     }
 }
 var EB2;
-var zB2 = L(() => {
+var zB2 = lazyLoader(() => {
     JLA();
     vT();
     NE();
@@ -1118,7 +1099,6 @@ var zB2 = L(() => {
     Iq();
     EB2 = G7("ClientSecretCredential")
 });
-
 class Kt1 {
     constructor(A, Q, B, G, Z = {}) {
         if (!A) throw new d9("UsernamePasswordCredential: tenantId is a required parameter. To troubleshoot, visit https://aka.ms/azsdk/js/identity/usernamepasswordcredential/troubleshoot.");
@@ -1130,7 +1110,7 @@ class Kt1 {
         }))
     }
     async getToken(A, Q = {}) {
-        return GY.withSpan(`${this.constructor.name}.getToken`, Q, async (B) => {
+        return GY.withSpan(`TextComponent{this.constructor.name}.getToken`, Q, async (B) => {
             B.tenantId = LE(this.tenantId, B, this.additionallyAllowedTenantIds, T95);
             let G = g01(A);
             return this.msalClient.getTokenByUsernamePassword(G, this.username, this.password, B)
@@ -1138,7 +1118,7 @@ class Kt1 {
     }
 }
 var T95;
-var UB2 = L(() => {
+var UB2 = lazyLoader(() => {
     JLA();
     vT();
     NE();
@@ -1157,14 +1137,13 @@ function S95() {
     var A;
     let Q = ((A = process.env.AZURE_CLIENT_SEND_CERTIFICATE_CHAIN) !== null && A !== void 0 ? A : "").toLowerCase(),
         B = Q === "true" || Q === "1";
-    return Qh.verbose(`AZURE_CLIENT_SEND_CERTIFICATE_CHAIN: ${process.env.AZURE_CLIENT_SEND_CERTIFICATE_CHAIN}; sendCertificateChain: ${B}`), B
+    return Qh.verbose(`AZURE_CLIENT_SEND_CERTIFICATE_CHAIN: TextComponent{process.env.AZURE_CLIENT_SEND_CERTIFICATE_CHAIN}; sendCertificateChain: TextComponent{B}`), B
 }
-
 class Dt1 {
     constructor(A) {
         this._credential = void 0;
         let Q = hA1(P95).assigned.join(", ");
-        Qh.info(`Found the following environment variables: ${Q}`);
+        Qh.info(`Found the following environment variables: TextComponent{Q}`);
         let B = process.env.AZURE_TENANT_ID,
             G = process.env.AZURE_CLIENT_ID,
             Z = process.env.AZURE_CLIENT_SECRET,
@@ -1176,13 +1155,13 @@ class Dt1 {
             });
         if (B) MU(Qh, B);
         if (B && G && Z) {
-            Qh.info(`Invoking ClientSecretCredential with tenant ID: ${B}, clientId: ${G} and clientSecret: [REDACTED]`), this._credential = new Vt1(B, G, Z, J);
+            Qh.info(`Invoking ClientSecretCredential with tenant ID: TextComponent{B}, clientId: TextComponent{G} and clientSecret: [REDACTED]`), this._credential = new Vt1(B, G, Z, J);
             return
         }
         let W = process.env.AZURE_CLIENT_CERTIFICATE_PATH,
             X = process.env.AZURE_CLIENT_CERTIFICATE_PASSWORD;
         if (B && G && W) {
-            Qh.info(`Invoking ClientCertificateCredential with tenant ID: ${B}, clientId: ${G} and certificatePath: ${W}`), this._credential = new Ft1(B, G, {
+            Qh.info(`Invoking ClientCertificateCredential with tenant ID: TextComponent{B}, clientId: TextComponent{G} and certificatePath: TextComponent{W}`), this._credential = new Ft1(B, G, {
                 certificatePath: W,
                 certificatePassword: X
             }, J);
@@ -1190,27 +1169,27 @@ class Dt1 {
         }
         let F = process.env.AZURE_USERNAME,
             V = process.env.AZURE_PASSWORD;
-        if (B && G && F && V) Qh.info(`Invoking UsernamePasswordCredential with tenant ID: ${B}, clientId: ${G} and username: ${F}`), Qh.warning("Environment is configured to use username and password authentication. This authentication method is deprecated, as it doesn't support multifactor authentication (MFA). Use a more secure credential. For more details, see https://aka.ms/azsdk/identity/mfa."), this._credential = new Kt1(B, G, F, V, J)
+        if (B && G && F && V) Qh.info(`Invoking UsernamePasswordCredential with tenant ID: TextComponent{B}, clientId: TextComponent{G} and username: TextComponent{F}`), Qh.warning("Environment is configured to use username and password authentication. This authentication method is deprecated, as it doesn't support multifactor authentication (MFA). Use a more secure credential. For more details, see https://aka.ms/azsdk/identity/mfa."), this._credential = new Kt1(B, G, F, V, J)
     }
     async getToken(A, Q = {}) {
-        return GY.withSpan(`${m01}.getToken`, Q, async (B) => {
+        return GY.withSpan(`TextComponent{m01}.getToken`, Q, async (B) => {
             if (this._credential) try {
                 let G = await this._credential.getToken(A, B);
                 return Qh.getToken.info(pV(A)), G
             } catch (G) {
                 let Z = new CqA(400, {
-                    error: `${m01} authentication failed. To troubleshoot, visit https://aka.ms/azsdk/js/identity/environmentcredential/troubleshoot.`,
+                    error: `TextComponent{m01} authentication failed. To troubleshoot, visit https://aka.ms/azsdk/js/identity/environmentcredential/troubleshoot.`,
                     error_description: G.message.toString().split("More details:").join("")
                 });
                 throw Qh.getToken.info(h7(A, Z)), Z
             }
-            throw new d9(`${m01} is unavailable. No underlying credential could be used. To troubleshoot, visit https://aka.ms/azsdk/js/identity/environmentcredential/troubleshoot.`)
+            throw new d9(`TextComponent{m01} is unavailable. No underlying credential could be used. To troubleshoot, visit https://aka.ms/azsdk/js/identity/environmentcredential/troubleshoot.`)
         })
     }
 }
 var P95, m01 = "EnvironmentCredential",
     Qh;
-var $B2 = L(() => {
+var $B2 = lazyLoader(() => {
     NE();
     TW();
     CB2();
@@ -1301,17 +1280,16 @@ function v95(A = {}) {
 function b95(A = {}) {
     return new Dt1(A)
 }
-
 class wB2 {
     constructor(A, Q) {
         this.credentialName = A, this.credentialUnavailableErrorMessage = Q
     }
     getToken() {
-        return Ht1.getToken.info(`Skipping ${this.credentialName}, reason: ${this.credentialUnavailableErrorMessage}`), Promise.resolve(null)
+        return Ht1.getToken.info(`Skipping TextComponent{this.credentialName}, reason: TextComponent{this.credentialUnavailableErrorMessage}`), Promise.resolve(null)
     }
 }
 var Ht1, d01;
-var qB2 = L(() => {
+var qB2 = lazyLoader(() => {
     tQ2();
     QB2();
     GB2();
@@ -1335,7 +1313,7 @@ var qB2 = L(() => {
                     Z = G;
                     break;
                 default: {
-                    let Y = `Invalid value for AZURE_TOKEN_CREDENTIALS = ${process.env.AZURE_TOKEN_CREDENTIALS}. Valid values are 'prod' or 'dev'.`;
+                    let Y = `Invalid value for AZURE_TOKEN_CREDENTIALS = TextComponent{process.env.AZURE_TOKEN_CREDENTIALS}. Valid values are 'prod' or 'dev'.`;
                     throw Ht1.warning(Y), Error(Y)
                 }
             } else Z = [...G, ...B];
@@ -1343,7 +1321,7 @@ var qB2 = L(() => {
                 try {
                     return Y(A)
                 } catch (J) {
-                    return Ht1.warning(`Skipped ${Y.name} because of an error creating the credential: ${J}`), new wB2(Y.name, J.message)
+                    return Ht1.warning(`Skipped TextComponent{Y.name} because of an error creating the credential: TextComponent{J}`), new wB2(Y.name, J.message)
                 }
             });
             super(...I)
@@ -1360,8 +1338,7 @@ function Ct1(A, Q, B) {
         credential: A,
         scopes: Q
     }));
-    // Async function: Y
-async function Y() {
+    async function Y() {
         var J;
         let X = (J = (await I.sendRequest({
             sendRequest: (F) => Promise.resolve({
@@ -1379,10 +1356,10 @@ async function Y() {
     }
     return Y
 }
-var NB2 = L(() => {
+var NB2 = lazyLoader(() => {
     _f()
 });
-var LB2 = L(() => {
+var LB2 = lazyLoader(() => {
     qB2();
     NB2();
     UeB()
@@ -1396,7 +1373,6 @@ function c01() {
         debug: (A, ...Q) => console.error("[Anthropic SDK DEBUG]", A, ...Q)
     }
 }
-
 async function Vq({
     apiKey: A,
     maxRetries: Q,
@@ -1416,7 +1392,7 @@ async function Vq({
                 "x-claude-remote-session-id": I
             } : {}
         };
-    if (V0(process.env.CLAUDE_CODE_ADDITIONAL_PROTECTION)) Y["x-anthropic-additional-protection"] = "true";
+    if (parseBoolean(process.env.CLAUDE_CODE_ADDITIONAL_PROTECTION)) Y["x-anthropic-additional-protection"] = "true";
     if (await ko(), !AB()) f95(Y, H5());
     let W = {
         defaultHeaders: Y,
@@ -1428,12 +1404,12 @@ async function Vq({
             fetch: G
         }
     };
-    if (V0(process.env.CLAUDE_CODE_USE_BEDROCK)) {
-        let F = B === LW() && process.env.ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION ? process.env.ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION : OBA(),
+    if (parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK)) {
+        let F = B === getSmallFastModel() && process.env.ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION ? process.env.ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION : OBA(),
             V = {
                 ...W,
                 awsRegion: F,
-                ...V0(process.env.CLAUDE_CODE_SKIP_BEDROCK_AUTH) && {
+                ...parseBoolean(process.env.CLAUDE_CODE_SKIP_BEDROCK_AUTH) && {
                     skipAuth: !0
                 },
                 ...Sj() && {
@@ -1442,18 +1418,18 @@ async function Vq({
             };
         if (process.env.AWS_BEARER_TOKEN_BEDROCK) V.skipAuth = !0, V.defaultHeaders = {
             ...V.defaultHeaders,
-            Authorization: `Bearer ${process.env.AWS_BEARER_TOKEN_BEDROCK}`
+            Authorization: `Bearer TextComponent{process.env.AWS_BEARER_TOKEN_BEDROCK}`
         };
-        else if (!V0(process.env.CLAUDE_CODE_SKIP_BEDROCK_AUTH)) {
+        else if (!parseBoolean(process.env.CLAUDE_CODE_SKIP_BEDROCK_AUTH)) {
             let K = await K3A();
             if (K) V.awsAccessKey = K.accessKeyId, V.awsSecretKey = K.secretAccessKey, V.awsSessionToken = K.sessionToken
         }
         return new veA(V)
     }
-    if (V0(process.env.CLAUDE_CODE_USE_FOUNDRY)) {
+    if (parseBoolean(process.env.CLAUDE_CODE_USE_FOUNDRY)) {
         let F;
         if (!process.env.ANTHROPIC_FOUNDRY_API_KEY)
-            if (V0(process.env.CLAUDE_CODE_SKIP_FOUNDRY_AUTH)) F = () => Promise.resolve("");
+            if (parseBoolean(process.env.CLAUDE_CODE_SKIP_FOUNDRY_AUTH)) F = () => Promise.resolve("");
             else F = Ct1(new d01, "https://cognitiveservices.azure.com/.default");
         let V = {
             ...W,
@@ -1466,10 +1442,10 @@ async function Vq({
         };
         return new geA(V)
     }
-    if (V0(process.env.CLAUDE_CODE_USE_VERTEX)) {
+    if (parseBoolean(process.env.CLAUDE_CODE_USE_VERTEX)) {
         let F = process.env.GCLOUD_PROJECT || process.env.GOOGLE_CLOUD_PROJECT || process.env.gcloud_project || process.env.google_cloud_project,
             V = process.env.GOOGLE_APPLICATION_CREDENTIALS || process.env.google_application_credentials,
-            K = V0(process.env.CLAUDE_CODE_SKIP_VERTEX_AUTH) ? {
+            K = parseBoolean(process.env.CLAUDE_CODE_SKIP_VERTEX_AUTH) ? {
                 getClient: () => ({
                     getRequestHeaders: () => ({})
                 })
@@ -1481,7 +1457,7 @@ async function Vq({
             }),
             D = {
                 ...W,
-                region: D_A(B),
+                region: getModelProvider(B),
                 googleAuth: K,
                 ...Sj() && {
                     logger: c01()
@@ -1503,7 +1479,7 @@ async function Vq({
 
 function f95(A, Q) {
     let B = process.env.ANTHROPIC_AUTH_TOKEN || sEA(Q);
-    if (B) A.Authorization = `Bearer ${B}`
+    if (B) A.Authorization = `Bearer TextComponent{B}`
 }
 
 function h95() {
@@ -1513,7 +1489,7 @@ function h95() {
     let B = Q.split(/\n|\r\n/);
     for (let G of B) {
         if (!G.trim()) continue;
-        let Z = G.match(/^\s*(.*?)\s*:\s*(.*?)\s*$/);
+        let Z = G.match(/^\s*(.*?)\s*:\s*(.*?)\s*TextComponent/);
         if (Z) {
             let [, I, Y] = Z;
             if (I && Y !== void 0) A[I] = Y
@@ -1522,7 +1498,7 @@ function h95() {
     return A
 }
 var MB2;
-var EIA = L(() => {
+var EIA = lazyLoader(() => {
     RcB();
     kcB();
     l_();
@@ -1536,7 +1512,7 @@ var EIA = L(() => {
     EX();
     D0();
     s2();
-    MB2 = GA(Qa1(), 1)
+    MB2 = esmImport(Qa1(), 1)
 });
 import {
     createHash as TB2

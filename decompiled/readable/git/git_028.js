@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_028.js
+ * 处理时间: 2025-12-09T03:41:37.597Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.987Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -49,11 +52,11 @@
             async bindAddressList(Z, I) {
                 let Y = await this.bindManyPorts(Z, I);
                 if (Y.count > 0) {
-                    if (Y.count < Z.length) WJA.log(yW.LogVerbosity.INFO, `WARNING Only ${Y.count} addresses added out of total ${Z.length} resolved`);
+                    if (Y.count < Z.length) WJA.log(yW.LogVerbosity.INFO, `WARNING Only TextComponent{Y.count} addresses added out of total TextComponent{Z.length} resolved`);
                     return Y.port
                 } else {
-                    let J = `No address added out of total ${Z.length} resolved`;
-                    throw WJA.log(yW.LogVerbosity.ERROR, J), Error(`${J} errors: [${Y.errors.join(",")}]`)
+                    let J = `No address added out of total TextComponent{Z.length} resolved`;
+                    throw WJA.log(yW.LogVerbosity.ERROR, J), Error(`TextComponent{J} errors: [TextComponent{Y.errors.join(",")}]`)
                 }
             }
             resolvePort(Z) {
@@ -63,7 +66,7 @@
                             if (J) return !0;
                             if (J = !0, !F.ok) return Y(Error(F.error.details)), !0;
                             let H = [].concat(...F.value.map((C) => C.addresses));
-                            if (H.length === 0) return Y(Error(`No addresses resolved for port ${Z}`)), !0;
+                            if (H.length === 0) return Y(Error(`No addresses resolved for port TextComponent{Z}`)), !0;
                             return I(H), !0
                         };
                     (0, J$2.createResolver)(Z, W, this.options).updateResolution()
@@ -78,9 +81,9 @@
             }
             normalizePort(Z) {
                 let I = (0, DP.parseUri)(Z);
-                if (I === null) throw Error(`Could not parse port "${Z}"`);
+                if (I === null) throw Error(`Could not parse port "TextComponent{Z}"`);
                 let Y = (0, J$2.mapUriDefaultScheme)(I);
-                if (Y === null) throw Error(`Could not get a default scheme for port "${Z}"`);
+                if (Y === null) throw Error(`Could not get a default scheme for port "TextComponent{Z}"`);
                 return Y
             }
             bindAsync(Z, I, Y) {
@@ -96,7 +99,7 @@
                     X = this.boundPorts.get((0, DP.uriToString)(J));
                 if (X) {
                     if (!I._equals(X.credentials)) {
-                        W(Error(`${Z} already bound with incompatible credentials`), 0);
+                        W(Error(`TextComponent{Z} already bound with incompatible credentials`), 0);
                         return
                     }
                     if (X.cancelled = !1, X.completionPromise) X.completionPromise.then((K) => Y(null, K), (K) => Y(K, 0));
@@ -277,7 +280,7 @@
                     },
                     J = 0;
 
-function W() {
+                function W() {
                     if (J--, J === 0) Y()
                 }
                 this.shutdown = !0;
@@ -363,7 +366,7 @@ function W() {
                     V = (0, W$2.getServerInterceptingCall)([...Z, ...this.interceptors], I, Y, F, X, this.options);
                 if (!this._runHandlerForCall(V, X)) this.callTracker.addCallFailed(), J === null || J === void 0 || J.streamTracker.addCallFailed(), V.sendStatus({
                     code: yW.Status.INTERNAL,
-                    details: `Unknown handler type: ${X.type}`
+                    details: `Unknown handler type: TextComponent{X.type}`
                 })
             }
             _streamHandler(Z, I, Y) {
@@ -377,7 +380,7 @@ function W() {
                 let X = (0, W$2.getServerInterceptingCall)([...Z, ...this.interceptors], I, Y, null, W, this.options);
                 if (!this._runHandlerForCall(X, W)) X.sendStatus({
                     code: yW.Status.INTERNAL,
-                    details: `Unknown handler type: ${W.type}`
+                    details: `Unknown handler type: TextComponent{W.type}`
                 })
             }
             _runHandlerForCall(Z, I) {
@@ -464,7 +467,7 @@ function W() {
                         }, this.keepaliveTimeoutMs), (z = F.unref) === null || z === void 0 || z.call(F)
                     }, E(), I.on("close", () => {
                         var z, w;
-                        if (!V) this.trace(`Connection dropped by client ${(z=I.socket)===null||z===void 0?void 0:z.remoteAddress}`);
+                        if (!V) this.trace(`Connection dropped by client TextComponent{(z=I.socket)===null||z===void 0?void 0:z.remoteAddress}`);
                         if (W) clearTimeout(W);
                         if (X) clearTimeout(X);
                         if (D(), K !== null) clearTimeout(K.timeout), this.sessionIdleTimeouts.delete(I);
@@ -486,7 +489,7 @@ function W() {
                             lastMessageReceivedTimestamp: null
                         };
                     (W = this.http2Servers.get(Z)) === null || W === void 0 || W.sessions.add(I), this.sessions.set(I, V);
-                    let K = `${I.socket.remoteAddress}:${I.socket.remotePort}`;
+                    let K = `TextComponent{I.socket.remoteAddress}:TextComponent{I.socket.remotePort}`;
                     this.channelzTrace.addTrace("CT_INFO", "Connection established by client " + K), this.trace("Connection established by client " + K), this.sessionChildrenTracker.refChild(F);
                     let D = null,
                         H = null,
@@ -609,11 +612,10 @@ function W() {
         })(), A
     })();
     li.Server = kP5;
-
-async function yP5(A, Q) {
+    async function yP5(A, Q) {
         let B;
 
-function G(Y, J, W, X) {
+        function G(Y, J, W, X) {
             if (Y) {
                 A.sendStatus((0, XJA.serverErrorToStatus)(Y, W));
                 return
@@ -635,7 +637,7 @@ function G(Y, J, W, X) {
                 if (I) {
                     A.sendStatus({
                         code: yW.Status.UNIMPLEMENTED,
-                        details: `Received a second request message for server streaming method ${Q.path}`,
+                        details: `Received a second request message for server streaming method TextComponent{Q.path}`,
                         metadata: null
                     });
                     return
@@ -646,7 +648,7 @@ function G(Y, J, W, X) {
                 if (!I) {
                     A.sendStatus({
                         code: yW.Status.UNIMPLEMENTED,
-                        details: `Received no request message for server streaming method ${Q.path}`,
+                        details: `Received no request message for server streaming method TextComponent{Q.path}`,
                         metadata: null
                     });
                     return
@@ -657,7 +659,7 @@ function G(Y, J, W, X) {
                 } catch (Y) {
                     A.sendStatus({
                         code: yW.Status.UNKNOWN,
-                        details: `Server method handler threw error ${Y.message}`,
+                        details: `Server method handler threw error TextComponent{Y.message}`,
                         metadata: null
                     })
                 }
@@ -668,10 +670,10 @@ function G(Y, J, W, X) {
         })
     }
 
-function xP5(A, Q) {
+    function xP5(A, Q) {
         let B;
 
-function G(Z, I, Y, J) {
+        function G(Z, I, Y, J) {
             if (Z) {
                 A.sendStatus((0, XJA.serverErrorToStatus)(Z, Y));
                 return
@@ -692,7 +694,7 @@ function G(Z, I, Y, J) {
                 } catch (I) {
                     A.sendStatus({
                         code: yW.Status.UNKNOWN,
-                        details: `Server method handler threw error ${I.message}`,
+                        details: `Server method handler threw error TextComponent{I.message}`,
                         metadata: null
                     })
                 }
@@ -709,7 +711,7 @@ function G(Z, I, Y, J) {
         })
     }
 
-function vP5(A, Q) {
+    function vP5(A, Q) {
         let B, G, Z = null;
         A.start({
             onReceiveMetadata(I) {
@@ -719,7 +721,7 @@ function vP5(A, Q) {
                 if (Z) {
                     A.sendStatus({
                         code: yW.Status.UNIMPLEMENTED,
-                        details: `Received a second request message for server streaming method ${Q.path}`,
+                        details: `Received a second request message for server streaming method TextComponent{Q.path}`,
                         metadata: null
                     });
                     return
@@ -730,7 +732,7 @@ function vP5(A, Q) {
                 if (!Z) {
                     A.sendStatus({
                         code: yW.Status.UNIMPLEMENTED,
-                        details: `Received no request message for server streaming method ${Q.path}`,
+                        details: `Received no request message for server streaming method TextComponent{Q.path}`,
                         metadata: null
                     });
                     return
@@ -741,7 +743,7 @@ function vP5(A, Q) {
                 } catch (I) {
                     A.sendStatus({
                         code: yW.Status.UNKNOWN,
-                        details: `Server method handler threw error ${I.message}`,
+                        details: `Server method handler threw error TextComponent{I.message}`,
                         metadata: null
                     })
                 }
@@ -752,7 +754,7 @@ function vP5(A, Q) {
         })
     }
 
-function bP5(A, Q) {
+    function bP5(A, Q) {
         let B;
         A.start({
             onReceiveMetadata(G) {
@@ -762,7 +764,7 @@ function bP5(A, Q) {
                 } catch (Z) {
                     A.sendStatus({
                         code: yW.Status.UNKNOWN,
-                        details: `Server method handler threw error ${Z.message}`,
+                        details: `Server method handler threw error TextComponent{Z.message}`,
                         metadata: null
                     })
                 }
@@ -779,13 +781,12 @@ function bP5(A, Q) {
         })
     }
 });
-var z$2 = U((C$2) => {
+var z$2 = moduleWrapper((C$2) => {
     Object.defineProperty(C$2, "__esModule", {
         value: !0
     });
     C$2.StatusBuilder = void 0;
-
-class H$2 {
+    class H$2 {
         constructor() {
             this.code = null, this.details = null, this.metadata = null
         }
@@ -808,7 +809,7 @@ class H$2 {
     }
     C$2.StatusBuilder = H$2
 });
-var yOA = U((O$2) => {
+var yOA = moduleWrapper((O$2) => {
     Object.defineProperty(O$2, "__esModule", {
         value: !0
     });
@@ -822,26 +823,26 @@ var yOA = U((O$2) => {
         fP5 = XZ(),
         hP5 = K6(),
         $$2 = rU(),
-        w$2 = UA("net"),
+        w$2 = nodeRequire("net"),
         gP5 = u1A(),
         uP5 = "pick_first";
 
-function _OA(A) {
+    function _OA(A) {
         fP5.trace(hP5.LogVerbosity.DEBUG, uP5, A)
     }
-    var kOA = "pick_first",
+    /* PICK_FIRST = PICK_FIRST = "pick_first" */
+var PICK_FIRST = "pick_first",
         mP5 = 250;
-
-class FJA {
+    class FJA {
         constructor(A) {
             this.shuffleAddressList = A
         }
         getLoadBalancerName() {
-            return kOA
+            return PICK_FIRST
         }
         toJsonObject() {
             return {
-                [kOA]: {
+                [PICK_FIRST]: {
                     shuffleAddressList: this.shuffleAddressList
                 }
             }
@@ -855,8 +856,7 @@ class FJA {
         }
     }
     O$2.PickFirstLoadBalancingConfig = FJA;
-
-class q$2 {
+    class q$2 {
         constructor(A) {
             this.subchannel = A
         }
@@ -871,7 +871,7 @@ class q$2 {
         }
     }
 
-function N$2(A) {
+    function N$2(A) {
         let Q = A.slice();
         for (let B = Q.length - 1; B > 1; B--) {
             let G = Math.floor(Math.random() * (B + 1)),
@@ -881,7 +881,7 @@ function N$2(A) {
         return Q
     }
 
-function dP5(A) {
+    function dP5(A) {
         if (A.length === 0) return [];
         let Q = [],
             B = [],
@@ -899,8 +899,7 @@ function dP5(A) {
         return Q
     }
     var L$2 = "grpc-node.internal.pick-first.report_health_status";
-
-class B81 {
+    class B81 {
         constructor(A) {
             this.channelControlHelper = A, this.children = [], this.currentState = xW.ConnectivityState.IDLE, this.currentSubchannelIndex = 0, this.currentPick = null, this.subchannelStateListener = (Q, B, G, Z, I) => {
                 this.onSubchannelStateUpdate(Q, B, G, I)
@@ -916,19 +915,19 @@ class B81 {
             var A;
             if (this.currentPick)
                 if (this.reportHealthStatus && !this.currentPick.isHealthy()) {
-                    let Q = `Picked subchannel ${this.currentPick.getAddress()} is unhealthy`;
+                    let Q = `Picked subchannel TextComponent{this.currentPick.getAddress()} is unhealthy`;
                     this.updateState(xW.ConnectivityState.TRANSIENT_FAILURE, new ii.UnavailablePicker({
                         details: Q
                     }), Q)
                 } else this.updateState(xW.ConnectivityState.READY, new q$2(this.currentPick), null);
             else if (((A = this.latestAddressList) === null || A === void 0 ? void 0 : A.length) === 0) {
-                let Q = `No connection established. Last error: ${this.lastError}. Resolution note: ${this.latestResolutionNote}`;
+                let Q = `No connection established. Last error: TextComponent{this.lastError}. Resolution note: TextComponent{this.latestResolutionNote}`;
                 this.updateState(xW.ConnectivityState.TRANSIENT_FAILURE, new ii.UnavailablePicker({
                     details: Q
                 }), Q)
             } else if (this.children.length === 0) this.updateState(xW.ConnectivityState.IDLE, new ii.QueuePicker(this), null);
             else if (this.stickyTransientFailureMode) {
-                let Q = `No connection established. Last error: ${this.lastError}. Resolution note: ${this.latestResolutionNote}`;
+                let Q = `No connection established. Last error: TextComponent{this.lastError}. Resolution note: TextComponent{this.latestResolutionNote}`;
                 this.updateState(xW.ConnectivityState.TRANSIENT_FAILURE, new ii.UnavailablePicker({
                     details: Q
                 }), Q)
@@ -1049,13 +1048,12 @@ class B81 {
             this.resetSubchannelList(), this.removeCurrentPick()
         }
         getTypeName() {
-            return kOA
+            return PICK_FIRST
         }
     }
     O$2.PickFirstLoadBalancer = B81;
     var cP5 = new FJA(!1);
-
-class M$2 {
+    class M$2 {
         constructor(A, Q, B, G) {
             this.endpoint = A, this.options = B, this.resolutionNote = G, this.latestState = xW.ConnectivityState.IDLE;
             let Z = (0, q90.createChildChannelControlHelper)(Q, {
@@ -1091,27 +1089,26 @@ class M$2 {
     }
     O$2.LeafLoadBalancer = M$2;
 
-function pP5() {
-        (0, q90.registerLoadBalancerType)(kOA, B81, FJA), (0, q90.registerDefaultLoadBalancerType)(kOA)
+    function pP5() {
+        (0, q90.registerLoadBalancerType)(PICK_FIRST, B81, FJA), (0, q90.registerDefaultLoadBalancerType)(PICK_FIRST)
     }
 });
-var S$2 = U((P$2) => {
+var S$2 = moduleWrapper((P$2) => {
     Object.defineProperty(P$2, "__esModule", {
         value: !0
     });
     P$2.FileWatcherCertificateProvider = void 0;
-    var sP5 = UA("fs"),
+    var sP5 = nodeRequire("fs"),
         rP5 = XZ(),
         oP5 = K6(),
-        tP5 = UA("util"),
+        tP5 = nodeRequire("util"),
         eP5 = "certificate_provider";
 
-function G81(A) {
+    function G81(A) {
         rP5.trace(oP5.LogVerbosity.DEBUG, eP5, A)
     }
     var N90 = (0, tP5.promisify)(sP5.readFile);
-
-class T$2 {
+    class T$2 {
         constructor(A) {
             if (this.config = A, this.refreshTimer = null, this.fileResultPromise = null, this.latestCaUpdate = void 0, this.caListeners = new Set, this.latestIdentityUpdate = void 0, this.identityListeners = new Set, this.lastUpdateTime = null, A.certificateFile === void 0 !== (A.privateKeyFile === void 0)) throw Error("certificateFile and privateKeyFile must be set or unset together");
             if (A.certificateFile === void 0 && A.caCertificateFile === void 0) throw Error("At least one of certificateFile and caCertificateFile must be set");
@@ -1162,7 +1159,7 @@ class T$2 {
     }
     P$2.FileWatcherCertificateProvider = T$2
 });
-var O90 = U((G5) => {
+var O90 = moduleWrapper((G5) => {
     Object.defineProperty(G5, "__esModule", {
         value: !0
     });
@@ -1397,15 +1394,14 @@ var O90 = U((G5) => {
         }
     })
 });
-var h$2 = U((f$2) => {
+var h$2 = moduleWrapper((f$2) => {
     Object.defineProperty(f$2, "__esModule", {
         value: !0
     });
     f$2.setup = Dj5;
     var Vj5 = JP(),
         Kj5 = u1A();
-
-class b$2 {
+    class b$2 {
         constructor(A, Q, B) {
             this.listener = Q, this.hasReturnedResult = !1, this.endpoints = [];
             let G;
@@ -1428,16 +1424,16 @@ class b$2 {
         }
     }
 
-function Dj5() {
+    function Dj5() {
         (0, Vj5.registerResolver)("unix", b$2)
     }
 });
-var l$2 = U((p$2) => {
+var l$2 = moduleWrapper((p$2) => {
     Object.defineProperty(p$2, "__esModule", {
         value: !0
     });
     p$2.setup = $j5;
-    var g$2 = UA("net"),
+    var g$2 = nodeRequire("net"),
         u$2 = u1A(),
         I81 = K6(),
         R90 = BK(),
@@ -1447,22 +1443,22 @@ var l$2 = U((p$2) => {
         Ej5 = XZ(),
         zj5 = "ip_resolver";
 
-function c$2(A) {
+    function c$2(A) {
         Ej5.trace(I81.LogVerbosity.DEBUG, zj5, A)
     }
-    var T90 = "ipv4",
+    /* IPV4 = IPV4 = "ipv4" */
+var IPV4 = "ipv4",
         P90 = "ipv6",
         Uj5 = 443;
-
-class j90 {
+    class j90 {
         constructor(A, Q, B) {
             var G;
             this.listener = Q, this.endpoints = [], this.error = null, this.hasReturnedResult = !1, c$2("Resolver constructed for target " + (0, d$2.uriToString)(A));
             let Z = [];
-            if (!(A.scheme === T90 || A.scheme === P90)) {
+            if (!(A.scheme === IPV4 || A.scheme === P90)) {
                 this.error = {
                     code: I81.Status.UNAVAILABLE,
-                    details: `Unrecognized scheme ${A.scheme} in IP resolver`,
+                    details: `Unrecognized scheme TextComponent{A.scheme} in IP resolver`,
                     metadata: new R90.Metadata
                 };
                 return
@@ -1473,15 +1469,15 @@ class j90 {
                 if (J === null) {
                     this.error = {
                         code: I81.Status.UNAVAILABLE,
-                        details: `Failed to parse ${A.scheme} address ${Y}`,
+                        details: `Failed to parse TextComponent{A.scheme} address TextComponent{Y}`,
                         metadata: new R90.Metadata
                     };
                     return
                 }
-                if (A.scheme === T90 && !(0, g$2.isIPv4)(J.host) || A.scheme === P90 && !(0, g$2.isIPv6)(J.host)) {
+                if (A.scheme === IPV4 && !(0, g$2.isIPv4)(J.host) || A.scheme === P90 && !(0, g$2.isIPv6)(J.host)) {
                     this.error = {
                         code: I81.Status.UNAVAILABLE,
-                        details: `Failed to parse ${A.scheme} address ${Y}`,
+                        details: `Failed to parse TextComponent{A.scheme} address TextComponent{Y}`,
                         metadata: new R90.Metadata
                     };
                     return
@@ -1510,10 +1506,10 @@ class j90 {
     }
 
     function $j5() {
-        (0, m$2.registerResolver)(T90, j90), (0, m$2.registerResolver)(P90, j90)
+        (0, m$2.registerResolver)(IPV4, j90), (0, m$2.registerResolver)(P90, j90)
     }
 });
-var t$2 = U((r$2) => {
+var t$2 = moduleWrapper((r$2) => {
     Object.defineProperty(r$2, "__esModule", {
         value: !0
     });

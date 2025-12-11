@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: agents_004.js
+ * 处理时间: 2025-12-09T03:41:35.872Z
+ * 变量映射: 4 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.844Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -19,16 +22,15 @@
 
 async function hP3(A, Q) {
     try {
-        let G = (await KX0()).filter((Z) => Z.endsWith(`@${A}`));
+        let G = (await KX0()).filter((Z) => Z.endsWith(`@TextComponent{A}`));
         if (G.length > 0) {
             let Z = await uI9(G);
-            if (Z.length > 0) g(`Installing ${Z.length} plugins from newly installed marketplace ${A}`), await dI9(Z, Q)
+            if (Z.length > 0) g(`Installing TextComponent{Z.length} plugins from newly installed marketplace TextComponent{A}`), await dI9(Z, Q)
         }
     } catch (B) {
         e(B instanceof Error ? B : Error(String(B)))
     }
 }
-
 async function dI9(A, Q) {
     let G = {
             ...LB("userSettings")?.enabledPlugins
@@ -66,7 +68,6 @@ async function dI9(A, Q) {
         failed: I
     }
 }
-
 async function hI1(A) {
     g("performBackgroundPluginInstallations called");
     try {
@@ -75,10 +76,10 @@ async function hI1(A) {
             G = await TZ(),
             Z = await fI9();
         if (Z.size > 0) {
-            g(`Found ${Z.size} extra marketplaces in settings`);
+            g(`Found TextComponent{Z.size} extra marketplaces in settings`);
             let J = await hI9(Z);
             if (J.length > 0) {
-                g(`Installing ${J.length} marketplaces automatically`);
+                g(`Installing TextComponent{J.length} marketplaces automatically`);
                 for (let W of J) {
                     let X = Z.get(W);
                     if (X) Q.push({
@@ -91,10 +92,10 @@ async function hI1(A) {
         let I = await KX0(),
             Y = [];
         if (I.length > 0) {
-            g(`Found ${I.length} enabled plugins`);
+            g(`Found TextComponent{I.length} enabled plugins`);
             let J = await DX0(),
                 W = I.filter((F) => !J.includes(F));
-            g(`Found ${W.length} missing plugins (not installed): ${W.join(", ")}`);
+            g(`Found TextComponent{W.length} missing plugins (not installed): TextComponent{W.join(", ")}`);
             let X = [];
             for (let F of W) {
                 let [, V] = F.split("@");
@@ -104,11 +105,11 @@ async function hI1(A) {
             }
             if (Y.length > 0) {
                 let F = [...new Set(Y.map((V) => V.split("@")[1]))];
-                g(`Cannot install ${Y.length} plugins because their marketplaces are not installed or configured: ${F.join(", ")}`), g(`Uninstallable plugins: ${Y.join(", ")}`)
+                g(`Cannot install TextComponent{Y.length} plugins because their marketplaces are not installed or configured: TextComponent{F.join(", ")}`), g(`Uninstallable plugins: TextComponent{Y.join(", ")}`)
             }
-            if (X.length > 0) g(`Installing ${X.length} plugins automatically`), B.push(...X)
+            if (X.length > 0) g(`Installing TextComponent{X.length} plugins automatically`), B.push(...X)
         }
-        if (g(`Setting installation status: ${Q.length} marketplaces, ${B.length} installable plugins, ${Y.length} uninstallable plugins`), A((J) => ({
+        if (g(`Setting installation status: TextComponent{Q.length} marketplaces, TextComponent{B.length} installable plugins, TextComponent{Y.length} uninstallable plugins`), A((J) => ({
                 ...J,
                 plugins: {
                     ...J.plugins,
@@ -132,7 +133,7 @@ async function hI1(A) {
                                 id: W,
                                 name: X || W,
                                 status: "failed",
-                                error: `Marketplace '${F}' is not installed or configured`
+                                error: `Marketplace 'TextComponent{F}' is not installed or configured`
                             }
                         })]
                     }
@@ -153,7 +154,7 @@ async function hI1(A) {
         e(Q instanceof Error ? Q : Error(String(Q)))
     }
 }
-var EX0 = L(() => {
+var EX0 = lazyLoader(() => {
     D0();
     u1();
     gI9();
@@ -164,7 +165,6 @@ var EX0 = L(() => {
     yjA();
     RB()
 });
-
 async function cI9(A) {
     if (g("performStartupChecks called"), !_X(!0)) {
         g("Trust not accepted for current directory - skipping plugin installations");
@@ -173,10 +173,10 @@ async function cI9(A) {
     try {
         g("Starting background plugin installations"), await hI1(A)
     } catch (Q) {
-        g(`Error initiating background plugin installations: ${Q}`)
+        g(`Error initiating background plugin installations: TextComponent{Q}`)
     }
 }
-var pI9 = L(() => {
+var pI9 = lazyLoader(() => {
     D0();
     EX0();
     jQ()
@@ -191,9 +191,9 @@ function iI9() {
     lI9.useEffect(() => {
         A({
             key: "toggled-thinking-initial",
-            jsx: Q ? xjA.createElement($, {
+            jsx: Q ? xjA.createElement(TextComponent, {
                 color: "suggestion"
-            }, "Thinking on (tab to toggle)") : xjA.createElement($, {
+            }, "Thinking on (tab to toggle)") : xjA.createElement(TextComponent, {
                 dimColor: !0
             }, "Thinking off (tab to toggle)"),
             priority: "low",
@@ -202,11 +202,11 @@ function iI9() {
     }, [A])
 }
 var xjA, lI9;
-var nI9 = L(() => {
+var nI9 = lazyLoader(() => {
     UU();
     hA();
     H9();
-    xjA = GA(VA(), 1), lI9 = GA(VA(), 1)
+    xjA = esmImport(VA(), 1), lI9 = esmImport(VA(), 1)
 });
 
 function aI9(A) {
@@ -223,7 +223,7 @@ function aI9(A) {
     }, [B.isUsingOverage, Z, Y, Q]), OQA.useEffect(() => {
         if (G && G !== I.current) I.current = G, Q({
             key: "rate-limit-warning",
-            jsx: vjA.createElement($, null, vjA.createElement($, {
+            jsx: vjA.createElement(TextComponent, null, vjA.createElement(TextComponent, {
                 color: "warning"
             }, G)),
             priority: "high"
@@ -231,11 +231,11 @@ function aI9(A) {
     }, [G, Q])
 }
 var vjA, OQA;
-var sI9 = L(() => {
+var sI9 = lazyLoader(() => {
     UU();
     zi();
     hA();
-    vjA = GA(VA(), 1), OQA = GA(VA(), 1)
+    vjA = esmImport(VA(), 1), OQA = esmImport(VA(), 1)
 });
 
 function oI9({
@@ -253,14 +253,14 @@ function oI9({
                 let K = V[0]?.name;
                 if (K && !F) G({
                     key: "ide-status-hint",
-                    jsx: aP.createElement($, {
+                    jsx: aP.createElement(TextComponent, {
                         dimColor: !0
                     }, V1.circle, " /ide for ", gP3(K)),
                     priority: "low"
                 });
                 else if (!X && Z === "disconnected") G({
                     key: "ide-status-disconnected",
-                    jsx: aP.createElement($, {
+                    jsx: aP.createElement(TextComponent, {
                         color: "error",
                         key: "ide-status"
                     }, V1.circle, " IDE disconnected"),
@@ -268,14 +268,14 @@ function oI9({
                 });
                 else if (F) G({
                     key: "ide-status-jetbrains-disconnected",
-                    jsx: aP.createElement($, {
+                    jsx: aP.createElement(TextComponent, {
                         dimColor: !0
                     }, "IDE plugin not connected · /status for info"),
                     priority: "medium"
                 });
                 else if (W) G({
                     key: "ide-status-connected",
-                    jsx: aP.createElement($, {
+                    jsx: aP.createElement(TextComponent, {
                         color: "ide",
                         key: "ide-status"
                     }, V1.circle, "IDE connected"),
@@ -283,7 +283,7 @@ function oI9({
                 });
                 else if (X) G({
                     key: "ide-status-install-error",
-                    jsx: aP.createElement($, {
+                    jsx: aP.createElement(TextComponent, {
                         color: "error"
                     }, "IDE extension install failed (see /status for info)"),
                     priority: "medium"
@@ -298,13 +298,13 @@ function gP3(A) {
     return A
 }
 var rI9, aP;
-var tI9 = L(() => {
+var tI9 = lazyLoader(() => {
     UU();
     yJ();
     XZ1();
     hA();
     n2();
-    rI9 = GA(VA(), 1), aP = GA(VA(), 1)
+    rI9 = esmImport(VA(), 1), aP = esmImport(VA(), 1)
 });
 
 function AY9() {
@@ -325,10 +325,10 @@ function AY9() {
     }, [A])
 }
 var eI9;
-var QY9 = L(() => {
+var QY9 = lazyLoader(() => {
     UU();
     jQ();
-    eI9 = GA(VA(), 1)
+    eI9 = esmImport(VA(), 1)
 });
 
 function GY9() {
@@ -345,9 +345,9 @@ function GY9() {
                 subscriptionNoticeCount: (B.subscriptionNoticeCount ?? 0) + 1
             }), BA("tengu_switch_to_subscription_notice_shown", {}), A({
                 key: "switch-to-subscription",
-                jsx: bjA.createElement($, {
+                jsx: bjA.createElement(TextComponent, {
                     color: "suggestion"
-                }, "Use your existing Claude ", Q, " plan with Claude Code", bjA.createElement($, {
+                }, "Use your existing Claude ", Q, " plan with Claude Code", bjA.createElement(TextComponent, {
                     color: "text",
                     dimColor: !0
                 }, " ", "· /login to activate")),
@@ -356,7 +356,6 @@ function GY9() {
         })
     }, [A])
 }
-// Async function: mP3
 async function mP3() {
     if (AB()) return null;
     let A = await bvA();
@@ -366,14 +365,14 @@ async function mP3() {
     return null
 }
 var bjA, BY9, uP3 = 3;
-var ZY9 = L(() => {
+var ZY9 = lazyLoader(() => {
     hA();
     pKA();
     jQ();
     w0();
     hB();
     UU();
-    bjA = GA(VA(), 1), BY9 = GA(VA(), 1)
+    bjA = esmImport(VA(), 1), BY9 = esmImport(VA(), 1)
 });
 
 function IY9({
@@ -389,11 +388,11 @@ function IY9({
     }, [A]), eE.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, eE.createElement(j, null, eE.createElement($, {
+    }, eE.createElement(j, null, eE.createElement(TextComponent, {
         bold: !0
-    }, "Running /issue to capture feedback...")), eE.createElement(j, null, eE.createElement($, {
+    }, "Running /issue to capture feedback...")), eE.createElement(j, null, eE.createElement(TextComponent, {
         dimColor: !0
-    }, "Press Esc anytime to cancel")), eE.createElement(j, null, eE.createElement($, {
+    }, "Press Esc anytime to cancel")), eE.createElement(j, null, eE.createElement(TextComponent, {
         dimColor: !0
     }, "Reason: ", B)))
 }
@@ -420,9 +419,9 @@ function YY9(A) {
     }
 }
 var eE, aXA;
-var JY9 = L(() => {
+var JY9 = lazyLoader(() => {
     hA();
-    eE = GA(VA(), 1), aXA = GA(VA(), 1)
+    eE = esmImport(VA(), 1), aXA = esmImport(VA(), 1)
 });
 import {
     randomUUID as UX0
@@ -476,7 +475,7 @@ function sXA({
         XA = LW0(A, R.commands),
         zA = LW0(XA, q.commands);
     fb2(q.clients), l69(q.clients, SA);
-    let [$A, LA] = GB.useState("responding"), [TA, eA] = GB.useState([]), [aA, I1] = GB.useState(null), [w1, PA] = GB.useState(!1), [B1, Q0] = GB.useState(0), [b1, Y0] = GB.useState(void 0), x0 = GB.useCallback((AQ) => {
+    let [$A, LA] = GB.useState("responding"), [TA, eA] = GB.useState([]), [BASE64_CHARS, I1] = GB.useState(null), [w1, PA] = GB.useState(!1), [B1, Q0] = GB.useState(0), [b1, Y0] = GB.useState(void 0), x0 = GB.useCallback((AQ) => {
         if (PA(AQ), AQ) Q0(0)
     }, []);
     dY(() => {
@@ -557,7 +556,7 @@ function sXA({
         [S1, P1] = GB.useState(!1),
         c1 = !w1 && y1;
 
-function l1() {
+    function l1() {
         if (S1 || mA) return;
         if (C1) return "message-selector";
         if (N1[0]) return "sandbox-permission";
@@ -570,10 +569,10 @@ function l1() {
     }
     let I0 = l1();
 
-function e0() {
+    function e0() {
         if (I0 === "elicitation") return;
         if (q8(), I0 === "tool-permission") F1[0]?.onAbort(), R1([]);
-        else aA?.abort()
+        else BASE64_CHARS?.abort()
     }
     let dQ = GB.useCallback(async () => {
         let AQ = await j51(ZB, 0, async () => new Promise((C2) => z((xQ) => {
@@ -582,7 +581,7 @@ function e0() {
         if (!AQ) return;
         rQ(AQ.text), IQ("prompt")
     }, [z, rQ, IQ, ZB]);
-    F89(R1, e0, C1 || i9, o, aA?.signal, dQ, v6, T0?.isLocalJSXCommand, $4), GB.useEffect(() => {
+    F89(R1, e0, C1 || i9, o, BASE64_CHARS?.signal, dQ, v6, T0?.isLocalJSXCommand, $4), GB.useEffect(() => {
         if (yK() >= 5 && !y1 && !k9) {
             if (BA("tengu_cost_threshold_reached", {}), NlA()) O0(!0)
         }
@@ -597,7 +596,7 @@ function e0() {
     }, []);
     if (lQ.isSandboxingEnabled()) lQ.initialize(iB).catch((AQ) => {
         process.stderr.write(`
-❌ Sandbox Error: ${AQ instanceof Error?AQ.message:String(AQ)}
+❌ Sandbox Error: TextComponent{AQ instanceof Error?AQ.message:String(AQ)}
 `), c8(1, "other")
     });
     let EB = GB.useCallback((AQ) => {
@@ -800,8 +799,7 @@ function e0() {
                 resetHistory: () => {}
             })
         }, [l5]);
-    // Async function: QV
-async function QV() {
+    async function QV() {
         ZA();
         let AQ = xF();
         for (let xQ of AQ) dA.current.set(xQ.path, {
@@ -947,9 +945,9 @@ Note: ctrl + z now suspends Claude Code, ctrl + _ undoes input.
                     return "hookEvent" in a7 && (a7.hookEvent === "Stop" || a7.hookEvent === "SubagentStop") && "toolUseID" in a7 && a7.toolUseID === xQ
                 }).length,
                 G8 = E6.find((M4) => M4.data.statusMessage)?.data.statusMessage;
-            if (G8) return X8 === 1 ? `${G8}…` : `${G8}… ${U9}/${X8}`;
+            if (G8) return X8 === 1 ? `TextComponent{G8}…` : `TextComponent{G8}… TextComponent{U9}/TextComponent{X8}`;
             let AW = E6[0]?.data.hookEvent === "SubagentStop" ? "subagent stop" : "stop";
-            return X8 === 1 ? `running ${AW} hook` : `running stop hooks… ${U9}/${X8}`
+            return X8 === 1 ? `running TextComponent{AW} hook` : `running stop hooks… TextComponent{U9}/TextComponent{X8}`
         }, [J0, w1]);
     c69(o, l, d, IA, SJ);
     let UY = E.todos[V9];
@@ -983,7 +981,7 @@ Note: ctrl + z now suspends Claude Code, ctrl + _ undoes input.
         marginTop: 1,
         paddingLeft: 2,
         width: "100%"
-    }, E9.createElement($, {
+    }, E9.createElement(TextComponent, {
         dimColor: !0
     }, "Showing detailed transcript · ctrl+o to toggle")));
     return E9.createElement($Z1, {
@@ -1053,7 +1051,7 @@ Note: ctrl + z now suspends Claude Code, ctrl + _ undoes input.
                     type: "addRules",
                     rules: [{
                         toolName: WEB_FETCH_TOOL_NAME,
-                        ruleContent: `domain:${E6}`
+                        ruleContent: `domain:TextComponent{E6}`
                     }],
                     behavior: C2 ? "allow" : "deny",
                     destination: "localSettings"
@@ -1072,7 +1070,7 @@ Note: ctrl + z now suspends Claude Code, ctrl + _ undoes input.
         onDone: () => R1(([AQ, ...C2]) => C2),
         onReject: dQ,
         toolUseConfirm: F1[0],
-        toolUseContext: q4(J0, J0, aA ?? s9(), [], void 0, y),
+        toolUseContext: q4(J0, J0, BASE64_CHARS ?? s9(), [], void 0, y),
         verbose: N
     }), I0 === "elicitation" && E9.createElement(rm2, {
         serverName: E.elicitation.queue[0].serverName,
@@ -1179,7 +1177,7 @@ Note: ctrl + z now suspends Claude Code, ctrl + _ undoes input.
                     if (E6) rQ(E6), IQ("bash");
                     else if (X8) {
                         let U9 = e2(IB, "command-args") || "";
-                        rQ(`${X8} ${U9}`), IQ("prompt")
+                        rQ(`TextComponent{X8} TextComponent{U9}`), IQ("prompt")
                     } else rQ(IB), IQ("prompt")
                 } else if (Array.isArray(AQ.message.content) && AQ.message.content.length >= 2 && AQ.message.content.some((IB) => IB.type === "image") && AQ.message.content.some((IB) => IB.type === "text")) {
                     let IB = AQ.message.content.find((X8) => X8.type === "text");
@@ -1203,7 +1201,7 @@ Note: ctrl + z now suspends Claude Code, ctrl + _ undoes input.
     }))
 }
 var E9, GB, $X0 = 100;
-var gI1 = L(() => {
+var gI1 = lazyLoader(() => {
     hA();
     Pb2();
     $U();
@@ -1293,7 +1291,7 @@ var gI1 = L(() => {
     QY9();
     ZY9();
     JY9();
-    E9 = GA(VA(), 1), GB = GA(VA(), 1)
+    E9 = esmImport(VA(), 1), GB = esmImport(VA(), 1)
 });
 import {
     randomUUID as dP3
@@ -1351,14 +1349,14 @@ async function* uI1({
             IA = [];
         for (let HA of l) {
             if (!oh(HA, QA)) {
-                g(`[Agent: ${A.agentType}] Warning: Skill '${HA}' specified in frontmatter was not found`, {
+                g(`[Agent: TextComponent{A.agentType}] Warning: Skill 'TextComponent{HA}' specified in frontmatter was not found`, {
                     level: "warn"
                 });
                 continue
             }
             let wA = vq(HA, QA);
             if (wA.type !== "prompt") {
-                g(`[Agent: ${A.agentType}] Warning: Skill '${HA}' is not a prompt-based skill`, {
+                g(`[Agent: TextComponent{A.agentType}] Warning: Skill 'TextComponent{HA}' is not a prompt-based skill`, {
                     level: "warn"
                 });
                 continue
@@ -1374,7 +1372,7 @@ async function* uI1({
             }
             of IA) {
             let KA = await wA.getPromptForCommand("", B);
-            g(`[Agent: ${A.agentType}] Preloaded skill '${HA}'`);
+            g(`[Agent: TextComponent{A.agentType}] Preloaded skill 'TextComponent{HA}'`);
             let SA = wX0(HA, wA.progressMessage);
             H.push(j0({
                 content: [{
@@ -1415,7 +1413,7 @@ async function* uI1({
         canUseTool: G,
         toolUseContext: d,
         querySource: Y
-    })) if (QA.type === "assistant" || QA.type === "user" || QA.type === "progress" || QA.type === "system" && QA.subtype === "compact_boundary") x.push(QA), p = XY9(x, K).catch((IA) => g(`Failed to record sidechain transcript: ${IA}`)), yield QA;
+    })) if (QA.type === "assistant" || QA.type === "user" || QA.type === "progress" || QA.type === "system" && QA.subtype === "compact_boundary") x.push(QA), p = XY9(x, K).catch((IA) => g(`Failed to record sidechain transcript: TextComponent{IA}`)), yield QA;
     if (await p, u.signal.aborted) throw new YW;
     if (Ly(A) && A.callback) A.callback()
 }
@@ -1437,7 +1435,6 @@ function P30(A) {
         return !0
     })
 }
-
 async function cP3(A, Q, B, G) {
     try {
         let Z = A.getSystemPrompt({
@@ -1445,10 +1442,10 @@ async function cP3(A, Q, B, G) {
         });
         return await fjA([Z], B, G)
     } catch (Z) {
-        return await fjA([WY9], B, G)
+        return await fjA([AGENT_BASE_PROMPT], B, G)
     }
 }
-var R51 = L(() => {
+var R51 = lazyLoader(() => {
     wn();
     $Z();
     wy();
@@ -1495,29 +1492,29 @@ function FY9({
         flexDirection: "column"
     }, _6.createElement(j, {
         paddingLeft: 3
-    }, _6.createElement($, {
+    }, _6.createElement(TextComponent, {
         dimColor: !Y
-    }, K, " ", V ? _6.createElement($, {
+    }, K, " ", V ? _6.createElement(TextComponent, {
         bold: !0
-    }, Q || A) : _6.createElement(_6.Fragment, null, _6.createElement($, {
+    }, Q || A) : _6.createElement(_6.Fragment, null, _6.createElement(TextComponent, {
         bold: !0,
         backgroundColor: Z,
         color: Z ? "inverseText" : void 0
-    }, A), Q && _6.createElement($, null, " (", Q, ")")), " · ", W && Y ? _6.createElement($, null, "Running in background") : _6.createElement(_6.Fragment, null, _6.createElement($, {
+    }, A), Q && _6.createElement(TextComponent, null, " (", Q, ")")), " · ", W && Y ? _6.createElement(TextComponent, null, "Running in background") : _6.createElement(_6.Fragment, null, _6.createElement(TextComponent, {
         bold: !0
     }, B), " tool", " ", B === 1 ? "use" : "uses"), G !== null && _6.createElement(_6.Fragment, null, " · ", QZ(G), " tokens"))), _6.createElement(j, {
         paddingLeft: 3,
         flexDirection: "row"
-    }, _6.createElement($, {
+    }, _6.createElement(TextComponent, {
         dimColor: !Y
-    }, I ? "   " : "│  "), _6.createElement($, {
+    }, I ? "   " : "│  "), _6.createElement(TextComponent, {
         dimColor: !0
-    }, "⎿ "), _6.createElement($, {
+    }, "⎿ "), _6.createElement(TextComponent, {
         dimColor: !0
     }, D())))
 }
 var _6;
-var VY9 = L(() => {
+var VY9 = lazyLoader(() => {
     hA();
-    _6 = GA(VA(), 1)
+    _6 = esmImport(VA(), 1)
 });

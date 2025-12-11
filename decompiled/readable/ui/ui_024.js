@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_024.js
+ * 处理时间: 2025-12-09T03:41:39.251Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.115Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -21,7 +23,7 @@
                     }
                 }
 
-function N8(b) {
+                function N8(b) {
                     for (var a = arguments.length, c = Array(a > 1 ? a - 1 : 0), s = 1; s < a; s++) c[s - 1] = arguments[s];
                     var r = c.slice(),
                         bA = String(b);
@@ -52,17 +54,17 @@ function N8(b) {
                     return bA = bA.replace(/%{2,2}/g, "%"), String(bA)
                 }
 
-function N4() {
+                function N4() {
                     return !!(window.document && window.document.featurePolicy && window.document.featurePolicy.allowsFeature("sync-xhr"))
                 }
 
-function dO() {
+                function dO() {
                     var b = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "",
                         a = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "";
                     return w8(b, a) === 1
                 }
 
-function SC() {
+                function SC() {
                     var b = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "",
                         a = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "";
                     return w8(b, a) > -1
@@ -106,7 +108,7 @@ function SC() {
                     BX = !1,
                     MFA = !1;
 
-function oQA(b, a) {
+                function oQA(b, a) {
                     return b === a && (b !== 0 || 1 / b === 1 / a) || b !== b && a !== a
                 }
                 var Sa = typeof Object.is === "function" ? Object.is : oQA;
@@ -115,7 +117,7 @@ function oQA(b, a) {
                 let $x = _a;
                 var wx = new Map;
 
-function GX(b) {
+                function GX(b) {
                     var a = new Set,
                         c = {};
                     return y$(b, a, c), {
@@ -124,7 +126,7 @@ function GX(b) {
                     }
                 }
 
-function y$(b, a, c) {
+                function y$(b, a, c) {
                     if (b == null) return;
                     if (iZ(b)) b.forEach(function(s) {
                         if (s == null) return;
@@ -135,7 +137,7 @@ function y$(b, a, c) {
                     c = Object.fromEntries(Object.entries(c).sort())
                 }
 
-function x$(b, a, c) {
+                function x$(b, a, c) {
                     var s = Object.keys(b);
                     s.forEach(function(r) {
                         var bA = b[r];
@@ -152,7 +154,7 @@ function x$(b, a, c) {
                     })
                 }
 
-function qx(b) {
+                function qx(b) {
                     if (wx.has(b)) return wx.get(b);
                     for (var a = 0; a < document.styleSheets.length; a++) {
                         var c = document.styleSheets[a],
@@ -492,7 +494,7 @@ function qx(b) {
                     Ij = 1,
                     QBA = 60;
 
-function lA(b, a) {
+                function lA(b, a) {
                     var c = Object.keys(b);
                     if (Object.getOwnPropertySymbols) {
                         var s = Object.getOwnPropertySymbols(b);
@@ -504,7 +506,7 @@ function lA(b, a) {
                     return c
                 }
 
-function MI(b) {
+                function MI(b) {
                     for (var a = 1; a < arguments.length; a++) {
                         var c = arguments[a] != null ? arguments[a] : {};
                         if (a % 2) lA(Object(c), !0).forEach(function(s) {
@@ -518,7 +520,7 @@ function MI(b) {
                     return b
                 }
 
-function Lx(b, a, c) {
+                function Lx(b, a, c) {
                     if (a in b) Object.defineProperty(b, a, {
                         value: c,
                         enumerable: !0,
@@ -531,14 +533,13 @@ function Lx(b, a, c) {
                 var ZX = 0,
                     L9, IX, ka, ya, v$, xa, va;
 
-function Qu() {}
+                function Qu() {}
                 Qu.__reactDisabledLog = !0;
 
-function BBA() {
+                function BBA() {
                     if (ZX === 0) {
                         L9 = console.log, IX = console.info, ka = console.warn, ya = console.error, v$ = console.group, xa = console.groupCollapsed, va = console.groupEnd;
-
-var b = {
+                        var b = {
                             configurable: !0,
                             enumerable: !0,
                             value: Qu,
@@ -557,7 +558,7 @@ var b = {
                     ZX++
                 }
 
-function ba() {
+                function ba() {
                     if (ZX--, ZX === 0) {
                         var b = {
                             configurable: !0,
@@ -591,7 +592,7 @@ function ba() {
                     if (ZX < 0) console.error("disabledDepth fell below zero. This is a bug in React. Please file an issue.")
                 }
 
-function YV(b) {
+                function YV(b) {
                     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") YV = function(c) {
                         return typeof c
                     };
@@ -602,7 +603,7 @@ function YV(b) {
                 }
                 var Bu;
 
-function Cz(b, a) {
+                function Cz(b, a) {
                     if (Bu === void 0) try {
                         throw Error()
                     } catch (s) {
@@ -616,7 +617,7 @@ function Cz(b, a) {
                     RFA;
                 if (!1) var GBA;
 
-function JV(b, a, c) {
+                function JV(b, a, c) {
                     if (!b || Mx) return "";
                     if (!1) var s;
                     var r, bA = Error.prepareStackTrace;
@@ -684,20 +685,20 @@ function JV(b, a, c) {
                     return MQ
                 }
 
-function TFA(b, a, c) {
+                function TFA(b, a, c) {
                     return JV(b, !0, c)
                 }
 
-function Gu(b, a, c) {
+                function Gu(b, a, c) {
                     return JV(b, !1, c)
                 }
 
-function fa(b) {
+                function fa(b) {
                     var a = b.prototype;
                     return !!(a && a.isReactComponent)
                 }
 
-function ha(b, a, c) {
+                function ha(b, a, c) {
                     return "";
                     switch (b) {
                         case SUSPENSE_NUMBER:
@@ -726,7 +727,7 @@ function ha(b, a, c) {
                     }
                 }
 
-function Ox(b, a, c) {
+                function Ox(b, a, c) {
                     var {
                         HostComponent: s,
                         LazyComponent: r,
@@ -760,7 +761,7 @@ function Ox(b, a, c) {
                     }
                 }
 
-function KF(b, a, c) {
+                function KF(b, a, c) {
                     try {
                         var s = "",
                             r = a;
@@ -773,16 +774,16 @@ Error generating stack: ` + bA.message + `
                     }
                 }
 
-function ZBA(b, a) {
+                function ZBA(b, a) {
                     return Zu(b) || Rx(b, a) || QH(b, a) || Ez()
                 }
 
-function Ez() {
+                function Ez() {
                     throw TypeError(`Invalid attempt to destructure non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)
                 }
 
-function QH(b, a) {
+                function QH(b, a) {
                     if (!b) return;
                     if (typeof b === "string") return Yj(b, a);
                     var c = Object.prototype.toString.call(b).slice(8, -1);
@@ -791,16 +792,15 @@ function QH(b, a) {
                     if (c === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(c)) return Yj(b, a)
                 }
 
-function Yj(b, a) {
+                function Yj(b, a) {
                     if (a == null || a > b.length) a = b.length;
                     for (var c = 0, s = Array(a); c < a; c++) s[c] = b[c];
                     return s
                 }
 
-function Rx(b, a) {
+                function Rx(b, a) {
                     if (typeof Symbol > "u" || !(Symbol.iterator in Object(b))) return;
-
-var c = [],
+                    var c = [],
                         s = !0,
                         r = !1,
                         bA = void 0;
@@ -819,11 +819,11 @@ var c = [],
                     return c
                 }
 
-function Zu(b) {
+                function Zu(b) {
                     if (Array.isArray(b)) return b
                 }
 
-function HN(b) {
+                function HN(b) {
                     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") HN = function(c) {
                         return typeof c
                     };
@@ -858,11 +858,11 @@ function HN(b) {
                     return Date.now()
                 };
 
-function ua(b) {
+                function ua(b) {
                     b$ = b, IJ = b !== null, F8 = b !== null
                 }
 
-function fB(b) {
+                function fB(b) {
                     var {
                         getDisplayNameForFiber: a,
                         getIsProfiling: c,
@@ -872,7 +872,7 @@ function fB(b) {
                         reactVersion: Y1
                     } = b, Q1 = 0, uA = null, z1 = [], _1 = null, i1 = new Map, a1 = !1, QQ = !1;
 
-function MQ() {
+                    function MQ() {
                         var wB = OI();
                         if (_1) {
                             if (_1.startTime === 0) _1.startTime = wB - ga;
@@ -881,7 +881,7 @@ function MQ() {
                         return 0
                     }
 
-function N2() {
+                    function N2() {
                         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.getInternalModuleRanges === "function") {
                             var wB = __REACT_DEVTOOLS_GLOBAL_HOOK__.getInternalModuleRanges();
                             if (AX(wB)) return wB
@@ -889,11 +889,11 @@ function N2() {
                         return null
                     }
 
-function gQ() {
+                    function gQ() {
                         return _1
                     }
 
-function I9(wB) {
+                    function I9(wB) {
                         var b2 = [],
                             T8 = 1;
                         for (var g6 = 0; g6 < Nx; g6++) {
@@ -904,7 +904,7 @@ function I9(wB) {
                     }
                     var m4 = typeof s === "function" ? s() : null;
 
-function x5() {
+                    function x5() {
                         SB("--react-version-".concat(Y1)), SB("--profiler-version-".concat(Ij));
                         var wB = N2();
                         if (wB)
@@ -923,11 +923,11 @@ function x5() {
                         }
                     }
 
-function SB(wB) {
+                    function SB(wB) {
                         b$.mark(wB), b$.clearMarks(wB)
                     }
 
-function D5(wB, b2) {
+                    function D5(wB, b2) {
                         var T8 = 0;
                         if (z1.length > 0) {
                             var g6 = z1[z1.length - 1];
@@ -955,7 +955,7 @@ function D5(wB, b2) {
                         }
                     }
 
-function X7(wB) {
+                    function X7(wB) {
                         var b2 = MQ();
                         if (z1.length === 0) {
                             console.error('Unexpected type "%s" completed at %sms while currentReactMeasuresStack is empty.', wB, b2);
@@ -966,17 +966,17 @@ function X7(wB) {
                         if (T8.duration = b2 - T8.timestamp, _1) _1.duration = MQ() + ga
                     }
 
-function d4(wB) {
+                    function d4(wB) {
                         if (a1) D5("commit", wB), QQ = !0;
                         if (F8) SB("--commit-start-".concat(wB)), x5()
                     }
 
-function Y8() {
+                    function Y8() {
                         if (a1) X7("commit"), X7("render-idle");
                         if (F8) SB("--commit-stop")
                     }
 
-function U3(wB) {
+                    function U3(wB) {
                         if (a1 || F8) {
                             var b2 = a(wB) || "Unknown";
                             if (a1) {
@@ -992,7 +992,7 @@ function U3(wB) {
                         }
                     }
 
-function RY() {
+                    function RY() {
                         if (a1) {
                             if (uA) {
                                 if (_1) _1.componentMeasures.push(uA);
@@ -1002,7 +1002,7 @@ function RY() {
                         if (F8) SB("--component-render-stop")
                     }
 
-function V4(wB) {
+                    function V4(wB) {
                         if (a1 || F8) {
                             var b2 = a(wB) || "Unknown";
                             if (a1) {
@@ -1018,7 +1018,7 @@ function V4(wB) {
                         }
                     }
 
-function JJ() {
+                    function JJ() {
                         if (a1) {
                             if (uA) {
                                 if (_1) _1.componentMeasures.push(uA);
@@ -1028,7 +1028,7 @@ function JJ() {
                         if (F8) SB("--component-layout-effect-mount-stop")
                     }
 
-function tZ(wB) {
+                    function tZ(wB) {
                         if (a1 || F8) {
                             var b2 = a(wB) || "Unknown";
                             if (a1) {
@@ -1044,7 +1044,7 @@ function tZ(wB) {
                         }
                     }
 
-function P7() {
+                    function P7() {
                         if (a1) {
                             if (uA) {
                                 if (_1) _1.componentMeasures.push(uA);
@@ -1054,7 +1054,7 @@ function P7() {
                         if (F8) SB("--component-layout-effect-unmount-stop")
                     }
 
-function a9(wB) {
+                    function a9(wB) {
                         if (a1 || F8) {
                             var b2 = a(wB) || "Unknown";
                             if (a1) {
@@ -1070,7 +1070,7 @@ function a9(wB) {
                         }
                     }
 
-function m3() {
+                    function m3() {
                         if (a1) {
                             if (uA) {
                                 if (_1) _1.componentMeasures.push(uA);
@@ -1080,7 +1080,7 @@ function m3() {
                         if (F8) SB("--component-passive-effect-mount-stop")
                     }
 
-function WJ(wB) {
+                    function WJ(wB) {
                         if (a1 || F8) {
                             var b2 = a(wB) || "Unknown";
                             if (a1) {
@@ -1096,7 +1096,7 @@ function WJ(wB) {
                         }
                     }
 
-function HF() {
+                    function HF() {
                         if (a1) {
                             if (uA) {
                                 if (_1) _1.componentMeasures.push(uA);
@@ -1106,7 +1106,7 @@ function HF() {
                         if (F8) SB("--component-passive-effect-unmount-stop")
                     }
 
-function QB(wB, b2, T8) {
+                    function QB(wB, b2, T8) {
                         if (a1 || F8) {
                             var g6 = a(wB) || "Unknown",
                                 QI = wB.alternate === null ? "mount" : "update",
@@ -1129,12 +1129,12 @@ function QB(wB, b2, T8) {
                         r2 = new E2,
                         o7 = 0;
 
-function TI(wB) {
+                    function TI(wB) {
                         if (!r2.has(wB)) r2.set(wB, o7++);
                         return r2.get(wB)
                     }
 
-function zG(wB, b2, T8) {
+                    function zG(wB, b2, T8) {
                         if (a1 || F8) {
                             var g6 = r2.has(b2) ? "resuspend" : "suspend",
                                 QI = TI(b2),
@@ -1167,27 +1167,27 @@ function zG(wB, b2, T8) {
                         }
                     }
 
-function eZ(wB) {
+                    function eZ(wB) {
                         if (a1) D5("layout-effects", wB);
                         if (F8) SB("--layout-effects-start-".concat(wB))
                     }
 
-function AI() {
+                    function AI() {
                         if (a1) X7("layout-effects");
                         if (F8) SB("--layout-effects-stop")
                     }
 
-function u$(wB) {
+                    function u$(wB) {
                         if (a1) D5("passive-effects", wB);
                         if (F8) SB("--passive-effects-start-".concat(wB))
                     }
 
-function ZH() {
+                    function ZH() {
                         if (a1) X7("passive-effects");
                         if (F8) SB("--passive-effects-stop")
                     }
 
-function m$(wB) {
+                    function m$(wB) {
                         if (a1) {
                             if (QQ) QQ = !1, Q1++;
                             if (z1.length === 0 || z1[z1.length - 1].type !== "render-idle") D5("render-idle", wB);
@@ -1196,17 +1196,17 @@ function m$(wB) {
                         if (F8) SB("--render-start-".concat(wB))
                     }
 
-function vC() {
+                    function vC() {
                         if (a1) X7("render");
                         if (F8) SB("--render-yield")
                     }
 
-function Mz() {
+                    function Mz() {
                         if (a1) X7("render");
                         if (F8) SB("--render-stop")
                     }
 
-function XJ(wB) {
+                    function XJ(wB) {
                         if (a1) {
                             if (_1) _1.schedulingEvents.push({
                                 lanes: I9(wB),
@@ -1218,7 +1218,7 @@ function XJ(wB) {
                         if (F8) SB("--schedule-render-".concat(wB))
                     }
 
-function IH(wB, b2) {
+                    function IH(wB, b2) {
                         if (a1 || F8) {
                             var T8 = a(wB) || "Unknown";
                             if (a1) {
@@ -1234,14 +1234,14 @@ function IH(wB, b2) {
                         }
                     }
 
-function RN(wB) {
+                    function RN(wB) {
                         var b2 = [],
                             T8 = wB;
                         while (T8 !== null) b2.push(T8), T8 = T8.return;
                         return b2
                     }
 
-function zu(wB, b2) {
+                    function zu(wB, b2) {
                         if (a1 || F8) {
                             var T8 = a(wB) || "Unknown";
                             if (a1) {
@@ -1260,7 +1260,7 @@ function zu(wB, b2) {
                         }
                     }
 
-function Bs(wB) {
+                    function Bs(wB) {
                         if (a1 !== wB)
                             if (a1 = wB, a1) {
                                 var b2 = new Map;
@@ -1343,7 +1343,7 @@ function Bs(wB) {
                     }
                 }
 
-function iO(b, a) {
+                function iO(b, a) {
                     if (b == null) return {};
                     var c = ma(b, a),
                         s, r;
@@ -1358,10 +1358,9 @@ function iO(b, a) {
                     return c
                 }
 
-function ma(b, a) {
+                function ma(b, a) {
                     if (b == null) return {};
-
-var c = {},
+                    var c = {},
                         s = Object.keys(b),
                         r, bA;
                     for (bA = 0; bA < s.length; bA++) {
@@ -1371,7 +1370,7 @@ var c = {},
                     return c
                 }
 
-function kC(b, a) {
+                function kC(b, a) {
                     var c = Object.keys(b);
                     if (Object.getOwnPropertySymbols) {
                         var s = Object.getOwnPropertySymbols(b);
@@ -1383,7 +1382,7 @@ function kC(b, a) {
                     return c
                 }
 
-function Tx(b) {
+                function Tx(b) {
                     for (var a = 1; a < arguments.length; a++) {
                         var c = arguments[a] != null ? arguments[a] : {};
                         if (a % 2) kC(Object(c), !0).forEach(function(s) {
@@ -1397,7 +1396,7 @@ function Tx(b) {
                     return b
                 }
 
-function yC(b, a, c) {
+                function yC(b, a, c) {
                     if (a in b) Object.defineProperty(b, a, {
                         value: c,
                         enumerable: !0,
@@ -1408,19 +1407,18 @@ function yC(b, a, c) {
                     return b
                 }
 
-function YX(b, a) {
+                function YX(b, a) {
                     return pa(b) || ca(b, a) || BH(b, a) || da()
                 }
 
-function da() {
+                function da() {
                     throw TypeError(`Invalid attempt to destructure non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)
                 }
 
-function ca(b, a) {
+                function ca(b, a) {
                     if (typeof Symbol > "u" || !(Symbol.iterator in Object(b))) return;
-
-var c = [],
+                    var c = [],
                         s = !0,
                         r = !1,
                         bA = void 0;
@@ -1439,28 +1437,28 @@ var c = [],
                     return c
                 }
 
-function pa(b) {
+                function pa(b) {
                     if (Array.isArray(b)) return b
                 }
 
-function CN(b) {
+                function CN(b) {
                     return QW(b) || Iu(b) || BH(b) || zz()
                 }
 
-function zz() {
+                function zz() {
                     throw TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)
                 }
 
-function Iu(b) {
+                function Iu(b) {
                     if (typeof Symbol < "u" && Symbol.iterator in Object(b)) return Array.from(b)
                 }
 
-function QW(b) {
+                function QW(b) {
                     if (Array.isArray(b)) return Jj(b)
                 }
 
-function YJ(b, a) {
+                function YJ(b, a) {
                     var c;
                     if (typeof Symbol > "u" || b[Symbol.iterator] == null) {
                         if (Array.isArray(b) || (c = BH(b)) || a && b && typeof b.length === "number") {
@@ -1511,7 +1509,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     }
                 }
 
-function BH(b, a) {
+                function BH(b, a) {
                     if (!b) return;
                     if (typeof b === "string") return Jj(b, a);
                     var c = Object.prototype.toString.call(b).slice(8, -1);

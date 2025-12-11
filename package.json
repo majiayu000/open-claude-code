@@ -1,0 +1,23 @@
+{
+  "name": "open-claude-code",
+  "version": "1.0.0",
+  "description": "> Claude Code v2.0.57 源码逆向分析与逻辑还原",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majiayu000/open-claude-code.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/majiayu000/open-claude-code/issues"
+  },
+  "homepage": "https://github.com/majiayu000/open-claude-code#readme",
+  "devDependencies": {
+    "prettier": "^3.7.4"
+  }
+}

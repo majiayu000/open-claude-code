@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_014.js
+ * 处理时间: 2025-12-09T03:41:38.705Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.076Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -48,11 +51,11 @@
         }
     } catch (I) {
         let Y = I instanceof Error ? I.message : String(I);
-        return g(`Error parsing agent from ${A}: ${Y}`), e(I instanceof Error ? I : Error(String(I))), null
+        return g(`Error parsing agent from TextComponent{A}: TextComponent{Y}`), e(I instanceof Error ? I : Error(String(I))), null
     }
 }
 var Mb2, Pp5, Rb2;
-var Oy = L(() => {
+var Oy = lazyLoader(() => {
     o2();
     h2();
     w0();
@@ -89,7 +92,7 @@ var Oy = L(() => {
                         return Q.push({
                             path: J,
                             error: D
-                        }), g(`Failed to parse agent from ${J}: ${D}`), BA("tengu_agent_parse_error", {
+                        }), g(`Failed to parse agent from TextComponent{J}: TextComponent{D}`), BA("tengu_agent_parse_error", {
                             error: D,
                             location: V
                         }), null
@@ -108,7 +111,7 @@ var Oy = L(() => {
             }
         } catch (A) {
             let Q = A instanceof Error ? A.message : String(A);
-            g(`Error loading agent definitions: ${Q}`), e(A instanceof Error ? A : Error(String(A)));
+            g(`Error loading agent definitions: TextComponent{Q}`), e(A instanceof Error ? A : Error(String(A)));
             let B = p30();
             return {
                 activeAgents: B,
@@ -135,9 +138,9 @@ function Tb2({
     }, Nn.default.createElement(j, {
         marginBottom: 1,
         flexDirection: "column"
-    }, Nn.default.createElement($, {
+    }, Nn.default.createElement(TextComponent, {
         bold: !0
-    }, "You've spent $5 on the Anthropic API this session."), Nn.default.createElement($, null, "Learn more about how to monitor your spending:"), Nn.default.createElement(a4, {
+    }, "You've spent $5 on the Anthropic API this session."), Nn.default.createElement(TextComponent, null, "Learn more about how to monitor your spending:"), Nn.default.createElement(a4, {
         url: "https://docs.claude.com/s/claude-code-cost"
     })), Nn.default.createElement(j, null, Nn.default.createElement(M0, {
         options: [{
@@ -149,11 +152,11 @@ function Tb2({
     })))
 }
 var Nn;
-var Pb2 = L(() => {
+var Pb2 = lazyLoader(() => {
     hA();
     T6();
     hA();
-    Nn = GA(VA(), 1)
+    Nn = esmImport(VA(), 1)
 });
 
 function Sb2(A, Q = !1) {
@@ -162,9 +165,9 @@ function Sb2(A, Q = !1) {
     }, [A, Q])
 }
 var jb2;
-var _b2 = L(() => {
+var _b2 = lazyLoader(() => {
     GG();
-    jb2 = GA(VA(), 1)
+    jb2 = esmImport(VA(), 1)
 });
 import {
     randomUUID as kp5
@@ -187,8 +190,7 @@ function yb2({
     W$.useEffect(() => {
         BA("tengu_message_selector_opened", {})
     }, []);
-
-async function y(k) {
+    async function y(k) {
         let d = A.indexOf(k),
             QA = A.length - 1 - d;
         if (BA("tengu_message_selector_selected", {
@@ -209,12 +211,11 @@ async function y(k) {
                 await B(k), q(!1), Z()
             } catch (IA) {
                 e(IA), q(!1), J(`Failed to restore the conversation:
-${IA}`)
+TextComponent{IA}`)
             }
         }
     }
-
-async function v(k) {
+    async function v(k) {
         if (BA("tengu_message_selector_restore_option_selected", {
                 option: k
             }), !C) {
@@ -239,17 +240,17 @@ async function v(k) {
             QA = IA, e(QA)
         }
         if (q(!1), E(void 0), QA && d) J(`Failed to restore the conversation and code:
-${QA}
-${d}`);
+TextComponent{QA}
+TextComponent{d}`);
         else if (QA) J(`Failed to restore the conversation:
-${QA}`);
+TextComponent{QA}`);
         else if (d) J(`Failed to restore the code:
-${d}`);
+TextComponent{d}`);
         else Z()
     }
     let x = DQ();
 
-function p() {
+    function p() {
         BA("tengu_message_selector_cancelled", {}), Z()
     }
     h1((k, d) => {
@@ -271,8 +272,7 @@ function p() {
     });
     let [u, o] = W$.useState({});
     W$.useEffect(() => {
-        // Async function: k
-async function k() {
+        async function k() {
             if (!W) return;
             Promise.all(F.map(async (d, QA) => {
                 if (d.uuid !== X) {
@@ -302,12 +302,12 @@ async function k() {
         flexDirection: "column",
         marginX: 1,
         gap: 1
-    }, $0.createElement($, {
+    }, $0.createElement(TextComponent, {
         bold: !0,
         color: "suggestion"
-    }, "Rewind"), Y && $0.createElement($0.Fragment, null, $0.createElement($, {
+    }, "Rewind"), Y && $0.createElement($0.Fragment, null, $0.createElement(TextComponent, {
         color: "error"
-    }, "Error: ", Y)), !H && $0.createElement($0.Fragment, null, $0.createElement($, null, "Nothing to rewind to yet.")), !Y && C && H && $0.createElement($0.Fragment, null, $0.createElement($, null, "Confirm you want to restore", " ", !z && "the conversation ", "to the point before you sent this message:"), $0.createElement(j, {
+    }, "Error: ", Y)), !H && $0.createElement($0.Fragment, null, $0.createElement(TextComponent, null, "Nothing to rewind to yet.")), !Y && C && H && $0.createElement($0.Fragment, null, $0.createElement(TextComponent, null, "Confirm you want to restore", " ", !z && "the conversation ", "to the point before you sent this message:"), $0.createElement(j, {
         flexDirection: "column",
         paddingLeft: 1,
         borderStyle: "single",
@@ -320,17 +320,17 @@ async function k() {
         userMessage: C,
         color: "text",
         isCurrent: !1
-    }), $0.createElement($, {
+    }), $0.createElement(TextComponent, {
         dimColor: !0
     }, "(", Xp(new Date(C.timestamp)), ")")), $0.createElement(j, {
         flexDirection: "column"
-    }, R === "both" || R === "conversation" ? $0.createElement($, {
+    }, R === "both" || R === "conversation" ? $0.createElement(TextComponent, {
         dimColor: !0
-    }, "The conversation will be forked.") : $0.createElement($, {
+    }, "The conversation will be forked.") : $0.createElement(TextComponent, {
         dimColor: !0
     }, "The conversation will be unchanged."), l && (R === "both" || R === "code") ? $0.createElement(vp5, {
         diffStatsForRestore: z
-    }) : $0.createElement($, {
+    }) : $0.createElement(TextComponent, {
         dimColor: !0
     }, "The code will be unchanged.")), $0.createElement(M0, {
         isDisabled: N,
@@ -341,9 +341,9 @@ async function k() {
         onCancel: () => E(void 0)
     }), l && $0.createElement(j, {
         marginBottom: 1
-    }, $0.createElement($, {
+    }, $0.createElement(TextComponent, {
         dimColor: !0
-    }, V1.warning, " Rewinding does not affect files edited manually or via bash."))), !Y && !C && H && $0.createElement($0.Fragment, null, W ? $0.createElement($, null, "Restore the code and/or conversation to the point before…") : $0.createElement($, null, "Restore and fork the conversation to the point before…"), $0.createElement(j, {
+    }, V1.warning, " Rewinding does not affect files edited manually or via bash."))), !Y && !C && H && $0.createElement($0.Fragment, null, W ? $0.createElement(TextComponent, null, "Restore the code and/or conversation to the point before…") : $0.createElement(TextComponent, null, "Restore and fork the conversation to the point before…"), $0.createElement(j, {
         width: "100%",
         flexDirection: "column"
     }, F.slice(D, D + l30).map((k, d) => {
@@ -362,10 +362,10 @@ async function k() {
         }, $0.createElement(j, {
             width: 2,
             minWidth: 2
-        }, IA ? $0.createElement($, {
+        }, IA ? $0.createElement(TextComponent, {
             color: "permission",
             bold: !0
-        }, V1.pointer, " ") : $0.createElement($, null, "  ")), $0.createElement(j, {
+        }, V1.pointer, " ") : $0.createElement(TextComponent, null, "  ")), $0.createElement(j, {
             flexDirection: "column"
         }, $0.createElement(j, {
             flexShrink: 1,
@@ -379,16 +379,16 @@ async function k() {
         })), W && wA && $0.createElement(j, {
             height: 1,
             flexDirection: "row"
-        }, KA ? $0.createElement($0.Fragment, null, $0.createElement($, {
+        }, KA ? $0.createElement($0.Fragment, null, $0.createElement(TextComponent, {
             dimColor: !IA,
             color: "inactive"
-        }, SA ? $0.createElement($0.Fragment, null, SA === 1 && KA.filesChanged[0] ? `${wWA.basename(KA.filesChanged[0])} ` : `${SA} files changed `, $0.createElement(xb2, {
+        }, SA ? $0.createElement($0.Fragment, null, SA === 1 && KA.filesChanged[0] ? `TextComponent{wWA.basename(KA.filesChanged[0])} ` : `TextComponent{SA} files changed `, $0.createElement(xb2, {
             diffStats: KA
-        })) : $0.createElement($0.Fragment, null, "No code changes"))) : $0.createElement($, {
+        })) : $0.createElement($0.Fragment, null, "No code changes"))) : $0.createElement(TextComponent, {
             dimColor: !0,
             color: "warning"
         }, V1.warning, " No code restore"))))
-    }))), $0.createElement($, {
+    }))), $0.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, x.pending ? $0.createElement($0.Fragment, null, "Press ", x.keyName, " again to exit") : $0.createElement($0.Fragment, null, !Y && H && "Enter to continue · ", "Esc to exit"))))
@@ -398,7 +398,7 @@ function vp5({
     diffStatsForRestore: A
 }) {
     if (A === void 0) return;
-    if (!A.filesChanged || !A.filesChanged[0]) return $0.createElement($, {
+    if (!A.filesChanged || !A.filesChanged[0]) return $0.createElement(TextComponent, {
         dimColor: !0
     }, "The code has not changed (nothing will be restored).");
     let Q = A.filesChanged.length,
@@ -407,9 +407,9 @@ function vp5({
     else if (Q === 2) {
         let G = wWA.basename(A.filesChanged[0] || ""),
             Z = wWA.basename(A.filesChanged[1] || "");
-        B = `${G} and ${Z}`
-    } else B = `${wWA.basename(A.filesChanged[0]||"")} and ${A.filesChanged.length-1} other files`;
-    return $0.createElement($0.Fragment, null, $0.createElement($, {
+        B = `TextComponent{G} and TextComponent{Z}`
+    } else B = `TextComponent{wWA.basename(A.filesChanged[0]||"")} and TextComponent{A.filesChanged.length-1} other files`;
+    return $0.createElement($0.Fragment, null, $0.createElement(TextComponent, {
         dimColor: !0
     }, "The code will be restored", " ", $0.createElement(xb2, {
         diffStats: A
@@ -420,9 +420,9 @@ function xb2({
     diffStats: A
 }) {
     if (!A || !A.filesChanged) return;
-    return $0.createElement($0.Fragment, null, $0.createElement($, {
+    return $0.createElement($0.Fragment, null, $0.createElement(TextComponent, {
         color: "diffAddedWord"
-    }, "+", A.insertions, " "), $0.createElement($, {
+    }, "+", A.insertions, " "), $0.createElement(TextComponent, {
         color: "diffRemovedWord"
     }, "-", A.deletions))
 }
@@ -439,7 +439,7 @@ function kb2({
     } = YB();
     if (G) return $0.createElement(j, {
         width: "100%"
-    }, $0.createElement($, {
+    }, $0.createElement(TextComponent, {
         italic: !0,
         color: Q,
         dimColor: B
@@ -449,7 +449,7 @@ function kb2({
     if (h51(J)) return $0.createElement(j, {
         flexDirection: "row",
         width: "100%"
-    }, $0.createElement($, {
+    }, $0.createElement(TextComponent, {
         italic: !0,
         color: Q,
         dimColor: B
@@ -459,9 +459,9 @@ function kb2({
         if (W) return $0.createElement(j, {
             flexDirection: "row",
             width: "100%"
-        }, $0.createElement($, {
+        }, $0.createElement(TextComponent, {
             color: "bashBorder"
-        }, "!"), $0.createElement($, {
+        }, "!"), $0.createElement(TextComponent, {
             color: Q,
             dimColor: B
         }, " ", W))
@@ -473,14 +473,14 @@ function kb2({
             if (W.startsWith("The ")) return $0.createElement(j, {
                 flexDirection: "row",
                 width: "100%"
-            }, $0.createElement($, {
+            }, $0.createElement(TextComponent, {
                 color: Q,
                 dimColor: B
             }, W));
             else return $0.createElement(j, {
                 flexDirection: "row",
                 width: "100%"
-            }, $0.createElement($, {
+            }, $0.createElement(TextComponent, {
                 color: Q,
                 dimColor: B
             }, "/", W, " ", X))
@@ -488,7 +488,7 @@ function kb2({
     return $0.createElement(j, {
         flexDirection: "row",
         width: "100%"
-    }, $0.createElement($, {
+    }, $0.createElement(TextComponent, {
         color: Q,
         dimColor: B
     }, Z ? B7(J, I - Z, !0) : J.slice(0, 500).split(`
@@ -540,7 +540,7 @@ function Ln(A) {
     return !0
 }
 var $0, W$, yp5, xp5, l30 = 7;
-var QTA = L(() => {
+var QTA = lazyLoader(() => {
     hA();
     n2();
     nQ();
@@ -552,7 +552,7 @@ var QTA = L(() => {
     iU();
     m8();
     eV();
-    $0 = GA(VA(), 1), W$ = GA(VA(), 1), yp5 = [{
+    $0 = esmImport(VA(), 1), W$ = esmImport(VA(), 1), yp5 = [{
         value: "both",
         label: "Restore code and conversation"
     }, {
@@ -587,11 +587,11 @@ function fb2(A) {
     }, [A])
 }
 var bb2, fp5;
-var hb2 = L(() => {
+var hb2 = lazyLoader(() => {
     h2();
     w0();
     yJ();
-    bb2 = GA(VA(), 1), fp5 = _.object({
+    bb2 = esmImport(VA(), 1), fp5 = _.object({
         method: _.literal("log_event"),
         params: _.object({
             eventName: _.string(),
@@ -632,20 +632,20 @@ function gb2({
         patch: I,
         dim: !1,
         filePath: A
-    })), (I) => dh.createElement($, {
+    })), (I) => dh.createElement(TextComponent, {
         dimColor: !0,
-        key: `ellipsis-${I}`
+        key: `ellipsis-TextComponent{I}`
     }, "..."))))
 }
 var dh, g51;
-var ub2 = L(() => {
+var ub2 = lazyLoader(() => {
     Zn();
     hA();
     fk();
     M9();
     o0();
     z1A();
-    dh = GA(VA(), 1), g51 = GA(VA(), 1)
+    dh = esmImport(VA(), 1), g51 = esmImport(VA(), 1)
 });
 
 function qWA({
@@ -658,17 +658,17 @@ function qWA({
     }, ch.createElement(j, {
         flexDirection: "row",
         gap: 1
-    }, ch.createElement($, {
+    }, ch.createElement(TextComponent, {
         bold: !0,
         color: B
-    }, A), Q !== void 0 && ch.createElement($, {
+    }, A), Q !== void 0 && ch.createElement(TextComponent, {
         wrap: "truncate-start"
     }, Q)))
 }
 var ch;
-var u51 = L(() => {
+var u51 = lazyLoader(() => {
     hA();
-    ch = GA(VA(), 1)
+    ch = esmImport(VA(), 1)
 });
 
 function hJ({
@@ -699,10 +699,10 @@ function hJ({
     }, I))
 }
 var ph;
-var CO = L(() => {
+var CO = lazyLoader(() => {
     hA();
     u51();
-    ph = GA(VA(), 1)
+    ph = esmImport(VA(), 1)
 });
 
 function FY(A) {
@@ -717,11 +717,11 @@ function FY(A) {
         }
     })
 }
-var Mn = L(() => {
+var Mn = lazyLoader(() => {
     w0()
 });
 
-function X$(A, Q) {
+function GREP_TOOL_NAME(A, Q) {
     mb2.useEffect(() => {
         BA("tengu_tool_use_show_permission_request", {
             messageID: A.assistantMessage.message.id,
@@ -743,7 +743,7 @@ function X$(A, Q) {
     }, [A, Q])
 }
 var mb2;
-var On = L(() => {
+var On = lazyLoader(() => {
     w0();
     gU();
     nV();
@@ -752,7 +752,7 @@ var On = L(() => {
     f5();
     Mn();
     MJ();
-    mb2 = GA(VA(), 1)
+    mb2 = esmImport(VA(), 1)
 });
 import {
     basename as hp5
@@ -770,15 +770,15 @@ function db2({
             }
         }],
         Z = qT(A, Q),
-        I, Y = oA.bold.dim(`(${EU.displayText})`);
+        I, Y = oA.bold.dim(`(TextComponent{EU.displayText})`);
     if (Z)
         if (B === "read") I = "Yes, during this session";
-        else I = `Yes, allow all edits during this session ${Y}`;
+        else I = `Yes, allow all edits during this session TextComponent{Y}`;
     else {
         let J = Qv(A),
             W = hp5(J) || "this directory";
-        if (B === "read") I = `Yes, allow reading from ${oA.bold(`${W}/`)} during this session`;
-        else I = `Yes, allow all edits in ${oA.bold(`${W}/`)} during this session ${Y}`
+        if (B === "read") I = `Yes, allow reading from TextComponent{oA.bold(`TextComponent{W}/`)} during this session`;
+        else I = `Yes, allow all edits in TextComponent{oA.bold(`TextComponent{W}/`)} during this session TextComponent{Y}`
     }
     return G.push({
         label: I,
@@ -786,13 +786,13 @@ function db2({
             type: "accept-session"
         }
     }), G.push({
-        label: `No, and tell Claude what to do differently ${oA.bold.dim("(esc)")}`,
+        label: `No, and tell Claude what to do differently TextComponent{oA.bold.dim("(esc)")}`,
         option: {
             type: "reject"
         }
     }), G
 }
-var cb2 = L(() => {
+var cb2 = lazyLoader(() => {
     J9();
     _Y();
     jp();
@@ -850,11 +850,11 @@ function dp5(A) {
     i30("reject", I, Y, Q), G(), Z(), B.onReject()
 }
 var gp5, pb2;
-var lb2 = L(() => {
+var lb2 = lazyLoader(() => {
     Mn();
     f5();
     _Y();
-    gp5 = GA(VA(), 1);
+    gp5 = esmImport(VA(), 1);
     pb2 = {
         "accept-once": up5,
         "accept-session": mp5,
@@ -909,13 +909,13 @@ function ib2({
     }
 }
 var d51;
-var nb2 = L(() => {
+var nb2 = lazyLoader(() => {
     hA();
     jp();
     cb2();
     lb2();
     H9();
-    d51 = GA(VA(), 1)
+    d51 = esmImport(VA(), 1)
 });
 import {
     randomUUID as cp5
@@ -934,11 +934,10 @@ function ab2({
     let I = lh.useRef(!1),
         [Y, J] = lh.useState(!1),
         W = lh.useMemo(() => cp5().slice(0, 6), []),
-        X = lh.useMemo(() => `✻ [Claude Code] ${pp5(B)} (${W}) ⧉`, [B, W]),
+        X = lh.useMemo(() => `✻ [Claude Code] TextComponent{pp5(B)} (TextComponent{W}) ⧉`, [B, W]),
         F = NB1(Q.options.mcpClients) && L1().diffTool === "auto" && !B.endsWith(".ipynb"),
         V = MB1(Q.options.mcpClients) ?? "IDE";
-    // Async function: K
-async function K() {
+    async function K() {
         if (!F) return;
         try {
             BA("tengu_ext_will_show_diff", {});
@@ -996,17 +995,15 @@ function lp5(A, Q, B, G) {
             singleHunk: Z
         });
     if (I.length === 0) return [];
-    if (Z && I.length > 1) e(Error(`Unexpected number of hunks: ${I.length}. Expected 1 hunk.`));
+    if (Z && I.length > 1) e(Error(`Unexpected number of hunks: TextComponent{I.length}. Expected 1 hunk.`));
     return $Z2(I)
 }
-
 async function ip5(A, Q, B, G) {
     let Z = !1,
         I = OA(),
         Y = b9(A),
         J = I.existsSync(Y) ? Tq(Y) : "";
-    // Async function: W
-async function W() {
+    async function W() {
         if (Z) return;
         Z = !0;
         try {
@@ -1054,7 +1051,6 @@ async function W() {
         throw e(F), W(), F
     }
 }
-
 async function n30(A, Q) {
     try {
         if (!Q || Q.type !== "connected") throw Error("IDE client not available");
@@ -1078,7 +1074,7 @@ function sp5(A) {
     return Array.isArray(A) && A[0]?.type === "text" && A[0].text === "FILE_SAVED" && typeof A[1].text === "string"
 }
 var lh;
-var sb2 = L(() => {
+var sb2 = lazyLoader(() => {
     o0();
     z1A();
     fk();
@@ -1091,7 +1087,7 @@ var sb2 = L(() => {
     kA0();
     s5();
     M9();
-    lh = GA(VA(), 1)
+    lh = esmImport(VA(), 1)
 });
 import {
     basename as rp5
@@ -1112,14 +1108,14 @@ function rb2({
         marginX: 1,
         flexDirection: "column",
         gap: 1
-    }, dF.createElement($, {
+    }, dF.createElement(TextComponent, {
         bold: !0,
         color: "permission"
-    }, "Opened changes in ", Z, " ⧉"), uLA() && dF.createElement($, {
+    }, "Opened changes in ", Z, " ⧉"), uLA() && dF.createElement(TextComponent, {
         dimColor: !0
     }, "Save file to continue…"), dF.createElement(j, {
         flexDirection: "column"
-    }, dF.createElement($, null, "Do you want to make this edit to", " ", dF.createElement($, {
+    }, dF.createElement(TextComponent, null, "Do you want to make this edit to", " ", dF.createElement(TextComponent, {
         bold: !0
     }, rp5(G)), "?"), dF.createElement(M0, {
         options: Q.map((I) => ({
@@ -1136,12 +1132,12 @@ function rb2({
     }))))
 }
 var dF;
-var ob2 = L(() => {
+var ob2 = lazyLoader(() => {
     hA();
     T6();
     yJ();
     eV();
-    dF = GA(VA(), 1)
+    dF = esmImport(VA(), 1)
 });
 
 function Tn({
@@ -1164,7 +1160,7 @@ function Tn({
         completion_type: W,
         language_name: X
     }), [W, X]);
-    X$(A, H);
+    GREP_TOOL_NAME(A, H);
     let C = ib2({
             filePath: F || "",
             completionType: W,
@@ -1220,7 +1216,7 @@ function Tn({
     }, J, Rn.default.createElement(j, {
         flexDirection: "column",
         paddingX: 1
-    }, typeof Y === "string" ? Rn.default.createElement($, null, Y) : Y, Rn.default.createElement(M0, {
+    }, typeof Y === "string" ? Rn.default.createElement(TextComponent, null, Y) : Y, Rn.default.createElement(M0, {
         options: E.map((v) => ({
             label: v.label,
             value: v.label
@@ -1235,7 +1231,7 @@ function Tn({
     })))
 }
 var Rn;
-var BTA = L(() => {
+var BTA = lazyLoader(() => {
     hA();
     T6();
     CO();
@@ -1243,7 +1239,7 @@ var BTA = L(() => {
     nb2();
     sb2();
     ob2();
-    Rn = GA(VA(), 1)
+    Rn = esmImport(VA(), 1)
 });
 
 function c51(A, Q, B, G) {
@@ -1282,7 +1278,7 @@ function tb2(A) {
         onReject: A.onReject,
         title: "Edit file",
         subtitle: tp5(H0(), G),
-        question: GTA.default.createElement($, null, "Do you want to make this edit to", " ", GTA.default.createElement($, {
+        question: GTA.default.createElement(TextComponent, null, "Do you want to make this edit to", " ", GTA.default.createElement(TextComponent, {
             bold: !0
         }, op5(G)), "?"),
         content: GTA.default.createElement(gb2, {
@@ -1301,14 +1297,14 @@ function tb2(A) {
     })
 }
 var GTA, ep5;
-var eb2 = L(() => {
+var eb2 = lazyLoader(() => {
     hA();
     Wn();
     ub2();
     M9();
     BTA();
     R2();
-    GTA = GA(VA(), 1), ep5 = {
+    GTA = esmImport(VA(), 1), ep5 = {
         getConfig: (A) => c51(A.file_path, A.old_string, A.new_string, A.replace_all),
         applyChanges: (A, Q) => {
             let B = Q[0];
@@ -1341,7 +1337,7 @@ function Pn(A, {
         }
     })
 }
-var a30 = L(() => {
+var a30 = lazyLoader(() => {
     f5();
     Mn()
 });
@@ -1373,8 +1369,8 @@ function p51(A) {
         return oA.bold(G) + l51.sep
     });
     if (Q.length === 1) return Q[0];
-    if (Q.length === 2) return `${Q[0]} and ${Q[1]}`;
-    return `${Q[0]}, ${Q[1]} and ${A.length-2} more`
+    if (Q.length === 2) return `TextComponent{Q[0]} and TextComponent{Q[1]}`;
+    return `TextComponent{Q[0]}, TextComponent{Q[1]} and TextComponent{A.length-2} more`
 }
 
 function Ql5(A) {
@@ -1399,29 +1395,29 @@ function Ql5(A) {
         if (I.length === 1) {
             let F = I[0],
                 V = F.split("/").pop() || F;
-            return `Yes, allow reading from ${oA.bold(V)}${l51.sep} from this project`
+            return `Yes, allow reading from TextComponent{oA.bold(V)}TextComponent{l51.sep} from this project`
         }
-        return `Yes, allow reading from ${p51(I)} from this project`
+        return `Yes, allow reading from TextComponent{p51(I)} from this project`
     }
     if (J && !W && !X) {
         if (Z.length === 1) {
             let F = Z[0],
                 V = F.split("/").pop() || F;
-            return `Yes, and always allow access to ${oA.bold(V)}${l51.sep} from this project`
+            return `Yes, and always allow access to TextComponent{oA.bold(V)}TextComponent{l51.sep} from this project`
         }
-        return `Yes, and always allow access to ${p51(Z)} from this project`
+        return `Yes, and always allow access to TextComponent{p51(Z)} from this project`
     }
-    if (X && !J && !W) return `Yes, and don't ask again for ${Af2(Y)} commands in ${oA.bold(pQ())}`;
+    if (X && !J && !W) return `Yes, and don't ask again for TextComponent{Af2(Y)} commands in TextComponent{oA.bold(pQ())}`;
     if ((J || W) && !X) {
         let F = [...Z, ...I];
-        if (J && W) return `Yes, and always allow access to ${p51(F)} from this project`
+        if (J && W) return `Yes, and always allow access to TextComponent{p51(F)} from this project`
     }
     if ((J || W) && X) {
         let F = [...Z, ...I],
             V = p51(F),
             K = Af2(Y);
-        if (F.length === 1 && Y.length === 1) return `Yes, and allow access to ${V} and ${K} commands`;
-        return `Yes, and allow ${V} access and ${K} commands`
+        if (F.length === 1 && Y.length === 1) return `Yes, and allow access to TextComponent{V} and TextComponent{K} commands`;
+        return `Yes, and allow TextComponent{V} access and TextComponent{K} commands`
     }
     return null
 }
@@ -1449,7 +1445,7 @@ function Qf2({
         onChange: Q
     }), B
 }
-var Bf2 = L(() => {
+var Bf2 = lazyLoader(() => {
     J9();
     S0();
     De1();
@@ -1480,9 +1476,9 @@ function Bl5(A) {
 function Gf2(A) {
     switch (A.type) {
         case "rule":
-            return `${oA.bold(r5(A.rule.ruleValue))} rule from ${Bl5(A.rule.source)}`;
+            return `TextComponent{oA.bold(r5(A.rule.ruleValue))} rule from TextComponent{Bl5(A.rule.source)}`;
         case "mode":
-            return `${Iv(A.mode)} mode`;
+            return `TextComponent{Iv(A.mode)} mode`;
         case "sandboxOverride":
             return "Requires permission to bypass sandbox";
         case "workingDir":
@@ -1490,13 +1486,13 @@ function Gf2(A) {
         case "other":
             return A.reason;
         case "permissionPromptTool":
-            return `${oA.bold(A.permissionPromptToolName)} permission prompt tool`;
+            return `TextComponent{oA.bold(A.permissionPromptToolName)} permission prompt tool`;
         case "hook":
-            return A.reason ? `${oA.bold(A.hookName)} hook: ${A.reason}` : `${oA.bold(A.hookName)} hook`;
+            return A.reason ? `TextComponent{oA.bold(A.hookName)} hook: TextComponent{A.reason}` : `TextComponent{oA.bold(A.hookName)} hook`;
         case "asyncAgent":
             return A.reason;
         case "classifier":
-            return `${oA.bold(A.classifier)} classifier: ${A.reason}`
+            return `TextComponent{oA.bold(A.classifier)} classifier: TextComponent{A.reason}`
     }
 }
 
@@ -1506,7 +1502,7 @@ function Gl5({
 }) {
     let [B] = $B();
 
-function G() {
+    function G() {
         switch (Q.type) {
             case "subcommandResults":
                 return A4.default.createElement(j, {
@@ -1516,11 +1512,11 @@ function G() {
                     return A4.default.createElement(j, {
                         flexDirection: "column",
                         key: Z
-                    }, A4.default.createElement($, null, Y, " ", Z), I.decisionReason !== void 0 && I.decisionReason.type !== "subcommandResults" && A4.default.createElement($, null, "  ", "⎿", "  ", Gf2(I.decisionReason)), I.behavior === "ask" && (() => {
+                    }, A4.default.createElement(TextComponent, null, Y, " ", Z), I.decisionReason !== void 0 && I.decisionReason.type !== "subcommandResults" && A4.default.createElement(TextComponent, null, "  ", "⎿", "  ", Gf2(I.decisionReason)), I.behavior === "ask" && (() => {
                         let J = a9A(I.suggestions);
-                        return J.length > 0 ? A4.default.createElement($, null, "  ", "⎿", "  ", "Suggested rules:", " ", J.map((W) => oA.bold(r5(W))).join(", ")) : null
+                        return J.length > 0 ? A4.default.createElement(TextComponent, null, "  ", "⎿", "  ", "Suggested rules:", " ", J.map((W) => oA.bold(r5(W))).join(", ")) : null
                     })())
                 }));
             default:
-                return A4.default.createElement($, null, Gf2(Q))
+                return A4.default.createElement(TextComponent, null, Gf2(Q))
         }

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_024.js
+ * 处理时间: 2025-12-09T03:41:37.549Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.983Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -20,8 +23,7 @@
             return B
         }
     }
-
-class TW2 {
+    class TW2 {
         _allowedAttributeNames;
         constructor(A) {
             this._allowedAttributeNames = A
@@ -31,8 +33,7 @@ class TW2 {
             return Object.keys(A).filter((G) => this._allowedAttributeNames.includes(G)).forEach((G) => B[G] = A[G]), B
         }
     }
-
-class PW2 {
+    class PW2 {
         _deniedAttributeNames;
         constructor(A) {
             this._deniedAttributeNames = A
@@ -43,28 +44,28 @@ class PW2 {
         }
     }
 
-function _H5() {
+    function _H5() {
         return vH5
     }
     jW2.createNoopAttributesProcessor = _H5;
 
-function kH5(A) {
+    function kH5(A) {
         return new RW2(A)
     }
     jW2.createMultiAttributesProcessor = kH5;
 
-function yH5(A) {
+    function yH5(A) {
         return new TW2(A)
     }
     jW2.createAllowListAttributesProcessor = yH5;
 
-function xH5(A) {
+    function xH5(A) {
         return new PW2(A)
     }
     jW2.createDenyListAttributesProcessor = xH5;
     var vH5 = new OW2
 });
-var xW2 = U((kW2) => {
+var xW2 = moduleWrapper((kW2) => {
     Object.defineProperty(kW2, "__esModule", {
         value: !0
     });
@@ -78,8 +79,7 @@ var xW2 = U((kW2) => {
         lH5 = wW2(),
         iH5 = MW2(),
         nH5 = T91();
-
-class _W2 {
+    class _W2 {
         _meterProviderSharedState;
         _instrumentationScope;
         metricStorageRegistry = new cH5.MetricStorageRegistry;
@@ -139,7 +139,7 @@ class _W2 {
     }
     kW2.MeterSharedState = _W2
 });
-var hW2 = U((bW2) => {
+var hW2 = moduleWrapper((bW2) => {
     Object.defineProperty(bW2, "__esModule", {
         value: !0
     });
@@ -148,8 +148,7 @@ var hW2 = U((bW2) => {
         sH5 = CJ2(),
         rH5 = xW2(),
         oH5 = fMA();
-
-class vW2 {
+    class vW2 {
         resource;
         viewRegistry = new sH5.ViewRegistry;
         metricCollectors = [];
@@ -171,14 +170,13 @@ class vW2 {
     }
     bW2.MeterProviderSharedState = vW2
 });
-var dW2 = U((uW2) => {
+var dW2 = moduleWrapper((uW2) => {
     Object.defineProperty(uW2, "__esModule", {
         value: !0
     });
     uW2.MetricCollector = void 0;
     var tH5 = t6();
-
-class gW2 {
+    class gW2 {
         _sharedState;
         _metricReader;
         constructor(A, Q) {
@@ -219,14 +217,13 @@ class gW2 {
     }
     uW2.MetricCollector = gW2
 });
-var P91 = U((pW2) => {
+var P91 = moduleWrapper((pW2) => {
     Object.defineProperty(pW2, "__esModule", {
         value: !0
     });
     pW2.ExactPredicate = pW2.PatternPredicate = void 0;
-    var eH5 = /[\^$\\.+?()[\]{}|]/g;
-
-class CQ0 {
+    var eH5 = /[\^TextComponent\\.+?()[\]{}|]/g;
+    class CQ0 {
         _matchAll;
         _regexp;
         constructor(A) {
@@ -238,15 +235,14 @@ class CQ0 {
             return this._regexp.test(A)
         }
         static escapePattern(A) {
-            return `^${A.replace(eH5,"\\$&").replace("*",".*")}$`
+            return `^TextComponent{A.replace(eH5,"\\TextComponent&").replace("*",".*")}TextComponent`
         }
         static hasWildcard(A) {
             return A.includes("*")
         }
     }
     pW2.PatternPredicate = CQ0;
-
-class cW2 {
+    class cW2 {
         _matchAll;
         _pattern;
         constructor(A) {
@@ -260,14 +256,13 @@ class cW2 {
     }
     pW2.ExactPredicate = cW2
 });
-var rW2 = U((aW2) => {
+var rW2 = moduleWrapper((aW2) => {
     Object.defineProperty(aW2, "__esModule", {
         value: !0
     });
     aW2.InstrumentSelector = void 0;
     var iW2 = P91();
-
-class nW2 {
+    class nW2 {
         _nameFilter;
         _type;
         _unitFilter;
@@ -286,14 +281,13 @@ class nW2 {
     }
     aW2.InstrumentSelector = nW2
 });
-var AX2 = U((tW2) => {
+var AX2 = moduleWrapper((tW2) => {
     Object.defineProperty(tW2, "__esModule", {
         value: !0
     });
     tW2.MeterSelector = void 0;
     var EQ0 = P91();
-
-class oW2 {
+    class oW2 {
         _nameFilter;
         _versionFilter;
         _schemaUrlFilter;
@@ -312,7 +306,7 @@ class oW2 {
     }
     tW2.MeterSelector = oW2
 });
-var YX2 = U((ZX2) => {
+var YX2 = moduleWrapper((ZX2) => {
     Object.defineProperty(ZX2, "__esModule", {
         value: !0
     });
@@ -323,16 +317,15 @@ var YX2 = U((ZX2) => {
         GC5 = AX2(),
         BX2 = fMA();
 
-function ZC5(A) {
+    function ZC5(A) {
         return A.instrumentName == null && A.instrumentType == null && A.instrumentUnit == null && A.meterName == null && A.meterVersion == null && A.meterSchemaUrl == null
     }
 
-function IC5(A) {
+    function IC5(A) {
         if (ZC5(A)) throw Error("Cannot create view with no selector arguments supplied");
         if (A.name != null && (A?.instrumentName == null || QC5.PatternPredicate.hasWildcard(A.instrumentName))) throw Error("Views with a specified name must be declared with an instrument selector that selects at most one instrument per meter.")
     }
-
-class GX2 {
+    class GX2 {
         name;
         description;
         aggregation;
@@ -358,7 +351,7 @@ class GX2 {
     }
     ZX2.View = GX2
 });
-var FX2 = U((WX2) => {
+var FX2 = moduleWrapper((WX2) => {
     Object.defineProperty(WX2, "__esModule", {
         value: !0
     });
@@ -368,8 +361,7 @@ var FX2 = U((WX2) => {
         JC5 = hW2(),
         WC5 = dW2(),
         XC5 = YX2();
-
-class JX2 {
+    class JX2 {
         _sharedState;
         _shutdown = !1;
         constructor(A) {
@@ -410,7 +402,7 @@ class JX2 {
     }
     WX2.MeterProvider = JX2
 });
-var Mi = U((nU) => {
+var Mi = moduleWrapper((nU) => {
     Object.defineProperty(nU, "__esModule", {
         value: !0
     });
@@ -498,7 +490,7 @@ var Mi = U((nU) => {
         }
     })
 });
-var UQ0 = U((DX2) => {
+var UQ0 = moduleWrapper((DX2) => {
     Object.defineProperty(DX2, "__esModule", {
         value: !0
     });
@@ -508,13 +500,12 @@ var UQ0 = U((DX2) => {
         A[A.DELTA = 0] = "DELTA", A[A.CUMULATIVE = 1] = "CUMULATIVE", A[A.LOWMEMORY = 2] = "LOWMEMORY"
     })($C5 = DX2.AggregationTemporalityPreference || (DX2.AggregationTemporalityPreference = {}))
 });
-var zX2 = U((CX2) => {
+var zX2 = moduleWrapper((CX2) => {
     Object.defineProperty(CX2, "__esModule", {
         value: !0
     });
     CX2.OTLPExporterBase = void 0;
-
-class HX2 {
+    class HX2 {
         _delegate;
         constructor(A) {
             this._delegate = A
@@ -531,13 +522,12 @@ class HX2 {
     }
     CX2.OTLPExporterBase = HX2
 });
-var S91 = U(($X2) => {
+var S91 = moduleWrapper(($X2) => {
     Object.defineProperty($X2, "__esModule", {
         value: !0
     });
     $X2.OTLPExporterError = void 0;
-
-class UX2 extends Error {
+    class UX2 extends Error {
         code;
         name = "OTLPExporterError";
         data;
@@ -548,25 +538,25 @@ class UX2 extends Error {
     }
     $X2.OTLPExporterError = UX2
 });
-var cMA = U((NX2) => {
+var cMA = moduleWrapper((NX2) => {
     Object.defineProperty(NX2, "__esModule", {
         value: !0
     });
     NX2.getSharedConfigurationDefaults = NX2.mergeOtlpSharedConfigurationWithDefaults = NX2.wrapStaticHeadersInFunction = NX2.validateTimeoutMillis = void 0;
 
-function qX2(A) {
+    function qX2(A) {
         if (Number.isFinite(A) && A > 0) return A;
-        throw Error(`Configuration: timeoutMillis is invalid, expected number greater than 0 (actual: '${A}')`)
+        throw Error(`Configuration: timeoutMillis is invalid, expected number greater than 0 (actual: 'TextComponent{A}')`)
     }
     NX2.validateTimeoutMillis = qX2;
 
-function wC5(A) {
+    function wC5(A) {
         if (A == null) return;
         return () => A
     }
     NX2.wrapStaticHeadersInFunction = wC5;
 
-function qC5(A, Q, B) {
+    function qC5(A, Q, B) {
         return {
             timeoutMillis: qX2(A.timeoutMillis ?? Q.timeoutMillis ?? B.timeoutMillis),
             concurrencyLimit: A.concurrencyLimit ?? Q.concurrencyLimit ?? B.concurrencyLimit,
@@ -575,7 +565,7 @@ function qC5(A, Q, B) {
     }
     NX2.mergeOtlpSharedConfigurationWithDefaults = qC5;
 
-function NC5() {
+    function NC5() {
         return {
             timeoutMillis: 1e4,
             concurrencyLimit: 30,
@@ -584,7 +574,7 @@ function NC5() {
     }
     NX2.getSharedConfigurationDefaults = NC5
 });
-var OX2 = U((MX2) => {
+var OX2 = moduleWrapper((MX2) => {
     Object.defineProperty(MX2, "__esModule", {
         value: !0
     });
@@ -594,13 +584,12 @@ var OX2 = U((MX2) => {
         A.NONE = "none", A.GZIP = "gzip"
     })(RC5 = MX2.CompressionAlgorithm || (MX2.CompressionAlgorithm = {}))
 });
-var wQ0 = U((TX2) => {
+var wQ0 = moduleWrapper((TX2) => {
     Object.defineProperty(TX2, "__esModule", {
         value: !0
     });
     TX2.createBoundedQueueExportPromiseHandler = void 0;
-
-class RX2 {
+    class RX2 {
         _concurrencyLimit;
         _sendingPromises = [];
         constructor(A) {
@@ -623,23 +612,23 @@ class RX2 {
         }
     }
 
-function TC5(A) {
+    function TC5(A) {
         return new RX2(A.concurrencyLimit)
     }
     TX2.createBoundedQueueExportPromiseHandler = TC5
 });
-var _X2 = U((jX2) => {
+var _X2 = moduleWrapper((jX2) => {
     Object.defineProperty(jX2, "__esModule", {
         value: !0
     });
     jX2.createLoggingPartialSuccessResponseHandler = void 0;
     var PC5 = W9();
 
-function jC5(A) {
+    function jC5(A) {
         return Object.prototype.hasOwnProperty.call(A, "partialSuccess")
     }
 
-function SC5() {
+    function SC5() {
         return {
             handleResponse(A) {
                 if (A == null || !jC5(A) || A.partialSuccess == null || Object.keys(A.partialSuccess).length === 0) return;
@@ -649,7 +638,7 @@ function SC5() {
     }
     jX2.createLoggingPartialSuccessResponseHandler = SC5
 });
-var qQ0 = U((xX2) => {
+var qQ0 = moduleWrapper((xX2) => {
     Object.defineProperty(xX2, "__esModule", {
         value: !0
     });
@@ -658,8 +647,7 @@ var qQ0 = U((xX2) => {
         kX2 = S91(),
         _C5 = _X2(),
         kC5 = W9();
-
-class yX2 {
+    class yX2 {
         _transport;
         _serializer;
         _responseHandler;
@@ -725,12 +713,12 @@ class yX2 {
         }
     }
 
-function yC5(A, Q) {
+    function yC5(A, Q) {
         return new yX2(A.transport, A.serializer, (0, _C5.createLoggingPartialSuccessResponseHandler)(), A.promiseHandler, Q.timeout)
     }
     xX2.createOtlpExportDelegate = yC5
 });
-var hX2 = U((bX2) => {
+var hX2 = moduleWrapper((bX2) => {
     Object.defineProperty(bX2, "__esModule", {
         value: !0
     });
@@ -738,7 +726,7 @@ var hX2 = U((bX2) => {
     var xC5 = wQ0(),
         vC5 = qQ0();
 
-function bC5(A, Q, B) {
+    function bC5(A, Q, B) {
         return (0, vC5.createOtlpExportDelegate)({
             transport: B,
             serializer: Q,
@@ -749,7 +737,7 @@ function bC5(A, Q, B) {
     }
     bX2.createOtlpNetworkExportDelegate = bC5
 });
-var mk = U((Oi) => {
+var mk = moduleWrapper((Oi) => {
     Object.defineProperty(Oi, "__esModule", {
         value: !0
     });
@@ -796,7 +784,7 @@ var mk = U((Oi) => {
         }
     })
 });
-var MQ0 = U((dX2) => {
+var MQ0 = moduleWrapper((dX2) => {
     Object.defineProperty(dX2, "__esModule", {
         value: !0
     });
@@ -837,15 +825,15 @@ var MQ0 = U((dX2) => {
     };
     dX2.LowMemoryTemporalitySelector = nC5;
 
-function aC5() {
+    function aC5() {
         let A = ((0, dC5.getStringFromEnv)("OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE") ?? "cumulative").toLowerCase();
         if (A === "cumulative") return dX2.CumulativeTemporalitySelector;
         if (A === "delta") return dX2.DeltaTemporalitySelector;
         if (A === "lowmemory") return dX2.LowMemoryTemporalitySelector;
-        return pC5.diag.warn(`OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE is set to '${A}', but only 'cumulative' and 'delta' are allowed. Using default ('cumulative') instead.`), dX2.CumulativeTemporalitySelector
+        return pC5.diag.warn(`OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE is set to 'TextComponent{A}', but only 'cumulative' and 'delta' are allowed. Using default ('cumulative') instead.`), dX2.CumulativeTemporalitySelector
     }
 
-function sC5(A) {
+    function sC5(A) {
         if (A != null) {
             if (A === uX2.AggregationTemporalityPreference.DELTA) return dX2.DeltaTemporalitySelector;
             else if (A === uX2.AggregationTemporalityPreference.LOWMEMORY) return dX2.LowMemoryTemporalitySelector;
@@ -857,11 +845,10 @@ function sC5(A) {
         type: nX.AggregationType.DEFAULT
     });
 
-function oC5(A) {
+    function oC5(A) {
         return A?.aggregationPreference ?? (() => rC5)
     }
-
-class mX2 extends cC5.OTLPExporterBase {
+    class mX2 extends cC5.OTLPExporterBase {
         _aggregationTemporalitySelector;
         _aggregationSelector;
         constructor(A, Q) {
@@ -877,10 +864,10 @@ class mX2 extends cC5.OTLPExporterBase {
     }
     dX2.OTLPMetricExporterBase = mX2
 });
-var OQ0 = U((LhG, pX2) => {
+var OQ0 = moduleWrapper((LhG, pX2) => {
     pX2.exports = tC5;
 
-function tC5(A, Q) {
+    function tC5(A, Q) {
         var B = Array(arguments.length - 1),
             G = 0,
             Z = 2,
@@ -905,7 +892,7 @@ function tC5(A, Q) {
         })
     }
 });
-var aX2 = U((nX2) => {
+var aX2 = moduleWrapper((nX2) => {
     var k91 = nX2;
     k91.length = function(Q) {
         var B = Q.length;
@@ -948,7 +935,8 @@ var aX2 = U((nX2) => {
         }
         return String.fromCharCode.apply(String, I.slice(0, Y))
     };
-    var lX2 = "invalid encoding";
+    /* INVALID_ENCODING = INVALID_ENCODING = "invalid encoding" */
+var INVALID_ENCODING = "invalid encoding";
     k91.decode = function(Q, B, G) {
         var Z = G,
             I = 0,
@@ -956,7 +944,7 @@ var aX2 = U((nX2) => {
         for (var J = 0; J < Q.length;) {
             var W = Q.charCodeAt(J++);
             if (W === 61 && I > 1) break;
-            if ((W = iX2[W]) === void 0) throw Error(lX2);
+            if ((W = iX2[W]) === void 0) throw Error(INVALID_ENCODING);
             switch (I) {
                 case 0:
                     Y = W, I = 1;
@@ -972,17 +960,17 @@ var aX2 = U((nX2) => {
                     break
             }
         }
-        if (I === 1) throw Error(lX2);
+        if (I === 1) throw Error(INVALID_ENCODING);
         return G - Z
     };
     k91.test = function(Q) {
-        return /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(Q)
+        return /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?TextComponent/.test(Q)
     }
 });
-var rX2 = U((OhG, sX2) => {
+var rX2 = moduleWrapper((OhG, sX2) => {
     sX2.exports = y91;
 
-function y91() {
+    function y91() {
         this._listeners = {}
     }
     y91.prototype.on = function(Q, B, G) {
@@ -1013,29 +1001,29 @@ function y91() {
         return this
     }
 });
-var GF2 = U((RhG, BF2) => {
+var GF2 = moduleWrapper((RhG, BF2) => {
     BF2.exports = oX2(oX2);
 
-function oX2(A) {
+    function oX2(A) {
         if (typeof Float32Array < "u")(function() {
             var Q = new Float32Array([-0]),
                 B = new Uint8Array(Q.buffer),
                 G = B[3] === 128;
 
-function Z(W, X, F) {
+            function Z(W, X, F) {
                 Q[0] = W, X[F] = B[0], X[F + 1] = B[1], X[F + 2] = B[2], X[F + 3] = B[3]
             }
 
-function I(W, X, F) {
+            function I(W, X, F) {
                 Q[0] = W, X[F] = B[3], X[F + 1] = B[2], X[F + 2] = B[1], X[F + 3] = B[0]
             }
             A.writeFloatLE = G ? Z : I, A.writeFloatBE = G ? I : Z;
 
-function Y(W, X) {
+            function Y(W, X) {
                 return B[0] = W[X], B[1] = W[X + 1], B[2] = W[X + 2], B[3] = W[X + 3], Q[0]
             }
 
-function J(W, X) {
+            function J(W, X) {
                 return B[3] = W[X], B[2] = W[X + 1], B[1] = W[X + 2], B[0] = W[X + 3], Q[0]
             }
             A.readFloatLE = G ? Y : J, A.readFloatBE = G ? J : Y
@@ -1056,7 +1044,7 @@ function J(W, X) {
             }
             A.writeFloatLE = Q.bind(null, tX2), A.writeFloatBE = Q.bind(null, eX2);
 
-function B(G, Z, I) {
+            function B(G, Z, I) {
                 var Y = G(Z, I),
                     J = (Y >> 31) * 2 + 1,
                     W = Y >>> 23 & 255,
@@ -1070,20 +1058,20 @@ function B(G, Z, I) {
                 B = new Uint8Array(Q.buffer),
                 G = B[7] === 128;
 
-function Z(W, X, F) {
+            function Z(W, X, F) {
                 Q[0] = W, X[F] = B[0], X[F + 1] = B[1], X[F + 2] = B[2], X[F + 3] = B[3], X[F + 4] = B[4], X[F + 5] = B[5], X[F + 6] = B[6], X[F + 7] = B[7]
             }
 
-function I(W, X, F) {
+            function I(W, X, F) {
                 Q[0] = W, X[F] = B[7], X[F + 1] = B[6], X[F + 2] = B[5], X[F + 3] = B[4], X[F + 4] = B[3], X[F + 5] = B[2], X[F + 6] = B[1], X[F + 7] = B[0]
             }
             A.writeDoubleLE = G ? Z : I, A.writeDoubleBE = G ? I : Z;
 
-function Y(W, X) {
+            function Y(W, X) {
                 return B[0] = W[X], B[1] = W[X + 1], B[2] = W[X + 2], B[3] = W[X + 3], B[4] = W[X + 4], B[5] = W[X + 5], B[6] = W[X + 6], B[7] = W[X + 7], Q[0]
             }
 
-function J(W, X) {
+            function J(W, X) {
                 return B[7] = W[X], B[6] = W[X + 1], B[5] = W[X + 2], B[4] = W[X + 3], B[3] = W[X + 4], B[2] = W[X + 5], B[1] = W[X + 6], B[0] = W[X + 7], Q[0]
             }
             A.readDoubleLE = G ? Y : J, A.readDoubleBE = G ? J : Y
@@ -1107,7 +1095,7 @@ function J(W, X) {
             }
             A.writeDoubleLE = Q.bind(null, tX2, 0, 4), A.writeDoubleBE = Q.bind(null, eX2, 4, 0);
 
-function B(G, Z, I, Y, J) {
+            function B(G, Z, I, Y, J) {
                 var W = G(Y, J + Z),
                     X = G(Y, J + I),
                     F = (X >> 31) * 2 + 1,
@@ -1120,26 +1108,26 @@ function B(G, Z, I, Y, J) {
         return A
     }
 
-function tX2(A, Q, B) {
+    function tX2(A, Q, B) {
         Q[B] = A & 255, Q[B + 1] = A >>> 8 & 255, Q[B + 2] = A >>> 16 & 255, Q[B + 3] = A >>> 24
     }
 
-function eX2(A, Q, B) {
+    function eX2(A, Q, B) {
         Q[B] = A >>> 24, Q[B + 1] = A >>> 16 & 255, Q[B + 2] = A >>> 8 & 255, Q[B + 3] = A & 255
     }
 
-function AF2(A, Q) {
+    function AF2(A, Q) {
         return (A[Q] | A[Q + 1] << 8 | A[Q + 2] << 16 | A[Q + 3] << 24) >>> 0
     }
 
-function QF2(A, Q) {
+    function QF2(A, Q) {
         return (A[Q] << 24 | A[Q + 1] << 16 | A[Q + 2] << 8 | A[Q + 3]) >>> 0
     }
 });
-var TQ0 = U((ZF2, RQ0) => {
+var TQ0 = moduleWrapper((ZF2, RQ0) => {
     RQ0.exports = eC5;
 
-function eC5(moduleName) {
+    function eC5(moduleName) {
         try {
             var mod = eval("quire".replace(/^/, "re"))(moduleName);
             if (mod && (mod.length || Object.keys(mod).length)) return mod
@@ -1147,7 +1135,7 @@ function eC5(moduleName) {
         return null
     }
 });
-var YF2 = U((IF2) => {
+var YF2 = moduleWrapper((IF2) => {
     var PQ0 = IF2;
     PQ0.length = function(Q) {
         var B = 0,
@@ -1190,10 +1178,10 @@ var YF2 = U((IF2) => {
         return G - Z
     }
 });
-var WF2 = U((PhG, JF2) => {
+var WF2 = moduleWrapper((PhG, JF2) => {
     JF2.exports = AE5;
 
-function AE5(A, Q, B) {
+    function AE5(A, Q, B) {
         var G = B || 8192,
             Z = G >>> 1,
             I = null,
@@ -1207,11 +1195,11 @@ function AE5(A, Q, B) {
         }
     }
 });
-var FF2 = U((jhG, XF2) => {
+var FF2 = moduleWrapper((jhG, XF2) => {
     XF2.exports = QK;
     var pMA = dk();
 
-function QK(A, Q) {
+    function QK(A, Q) {
         this.lo = A >>> 0, this.hi = Q >>> 0
     }
     var b1A = QK.zero = new QK(0, 0);
@@ -1284,7 +1272,7 @@ function QK(A, Q) {
         return G === 0 ? B === 0 ? Q < 16384 ? Q < 128 ? 1 : 2 : Q < 2097152 ? 3 : 4 : B < 16384 ? B < 128 ? 5 : 6 : B < 2097152 ? 7 : 8 : G < 128 ? 9 : 10
     }
 });
-var dk = U((jQ0) => {
+var dk = moduleWrapper((jQ0) => {
     var F9 = jQ0;
     F9.asPromise = OQ0();
     F9.base64 = aX2();
@@ -1328,8 +1316,8 @@ var dk = U((jQ0) => {
     F9.Array = typeof Uint8Array < "u" ? Uint8Array : Array;
     F9.Long = F9.global.dcodeIO && F9.global.dcodeIO.Long || F9.global.Long || F9.inquire("long");
     F9.key2Re = /^true|false|0|1$/;
-    F9.key32Re = /^-?(?:0|[1-9][0-9]*)$/;
-    F9.key64Re = /^(?:[\\x00-\\xff]{8}|-?(?:0|[1-9][0-9]*))$/;
+    F9.key32Re = /^-?(?:0|[1-9][0-9]*)TextComponent/;
+    F9.key64Re = /^(?:[\\x00-\\xff]{8}|-?(?:0|[1-9][0-9]*))TextComponent/;
     F9.longToHash = function(Q) {
         return Q ? F9.LongBits.from(Q).toHash() : F9.LongBits.zeroHash
     };
@@ -1339,7 +1327,7 @@ var dk = U((jQ0) => {
         return G.toNumber(Boolean(B))
     };
 
-function VF2(A, Q, B) {
+    function VF2(A, Q, B) {
         for (var G = Object.keys(Q), Z = 0; Z < G.length; ++Z)
             if (A[G[Z]] === void 0 || !B) A[G[Z]] = Q[G[Z]];
         return A
@@ -1349,7 +1337,7 @@ function VF2(A, Q, B) {
         return Q.charAt(0).toLowerCase() + Q.substring(1)
     };
 
-function KF2(A) {
+    function KF2(A) {
         function Q(B, G) {
             if (!(this instanceof Q)) return new Q(B, G);
             if (Object.defineProperty(this, "message", {
@@ -1422,28 +1410,27 @@ function KF2(A) {
         }
     }
 });
-var v91 = U((_hG, EF2) => {
+var v91 = moduleWrapper((_hG, EF2) => {
     EF2.exports = y3;
     var BO = dk(),
         SQ0, x91 = BO.LongBits,
         DF2 = BO.base64,
         HF2 = BO.utf8;
 
-function lMA(A, Q, B) {
+    function lMA(A, Q, B) {
         this.fn = A, this.len = Q, this.next = void 0, this.val = B
     }
 
-function kQ0() {}
+    function kQ0() {}
 
-function BE5(A) {
+    function BE5(A) {
         this.head = A.head, this.tail = A.tail, this.len = A.len, this.next = A.states
     }
 
-function y3() {
+    function y3() {
         this.len = 0, this.head = new lMA(kQ0, 0, 0), this.tail = this.head, this.states = null
     }
-
-var CF2 = function() {
+    var CF2 = function() {
         return BO.Buffer ? function() {
             return (y3.create = function() {
                 return new SQ0
@@ -1461,16 +1448,16 @@ var CF2 = function() {
         return this.tail = this.tail.next = new lMA(Q, B, G), this.len += B, this
     };
 
-function yQ0(A, Q, B) {
+    function yQ0(A, Q, B) {
         Q[B] = A & 255
     }
 
-function GE5(A, Q, B) {
+    function GE5(A, Q, B) {
         while (A > 127) Q[B++] = A & 127 | 128, A >>>= 7;
         Q[B] = A
     }
 
-function xQ0(A, Q) {
+    function xQ0(A, Q) {
         this.len = A, this.next = void 0, this.val = Q
     }
     xQ0.prototype = Object.create(lMA.prototype);
@@ -1485,7 +1472,7 @@ function xQ0(A, Q) {
         return this.uint32((Q << 1 ^ Q >> 31) >>> 0)
     };
 
-function vQ0(A, Q, B) {
+    function vQ0(A, Q, B) {
         while (A.hi) Q[B++] = A.lo & 127 | 128, A.lo = (A.lo >>> 7 | A.hi << 25) >>> 0, A.hi >>>= 7;
         while (A.lo > 127) Q[B++] = A.lo & 127 | 128, A.lo = A.lo >>> 7;
         Q[B++] = A.lo
@@ -1503,7 +1490,7 @@ function vQ0(A, Q, B) {
         return this._push(yQ0, 1, Q ? 1 : 0)
     };
 
-function _Q0(A, Q, B) {
+    function _Q0(A, Q, B) {
         Q[B] = A & 255, Q[B + 1] = A >>> 8 & 255, Q[B + 2] = A >>> 16 & 255, Q[B + 3] = A >>> 24
     }
     y3.prototype.fixed32 = function(Q) {

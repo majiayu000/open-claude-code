@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_004.js
+ * 处理时间: 2025-12-09T03:41:37.310Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.964Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -41,15 +44,13 @@
             }
             return pr0(A)
         }, "streamCollector");
-
-async function cr0(A) {
+    async function cr0(A) {
         let Q = await lr0(A),
             B = (0, MX4.fromBase64)(Q);
         return new Uint8Array(B)
     }
     AS(cr0, "collectBlob");
-
-async function pr0(A) {
+    async function pr0(A) {
         let Q = [],
             B = A.getReader(),
             G = !1,
@@ -69,7 +70,7 @@ async function pr0(A) {
     }
     AS(pr0, "collectStream");
 
-function lr0(A) {
+    function lr0(A) {
         return new Promise((Q, B) => {
             let G = new FileReader;
             G.onloadend = () => {
@@ -83,7 +84,7 @@ function lr0(A) {
     }
     AS(lr0, "readToBase64")
 });
-var mm = U((xY7, er0) => {
+var mm = moduleWrapper((xY7, er0) => {
     var {
         defineProperty: ObA,
         getOwnPropertyDescriptor: RX4,
@@ -113,8 +114,7 @@ var mm = U((xY7, er0) => {
         toHex: () => tr0
     });
     er0.exports = _X4(sr0);
-
-var rr0 = {},
+    var rr0 = {},
         xE1 = {};
     for (let A = 0; A < 256; A++) {
         let Q = A.toString(16).toLowerCase();
@@ -122,26 +122,26 @@ var rr0 = {},
         rr0[A] = Q, xE1[Q] = A
     }
 
-function or0(A) {
+    function or0(A) {
         if (A.length % 2 !== 0) throw Error("Hex encoded strings must have an even number length");
         let Q = new Uint8Array(A.length / 2);
         for (let B = 0; B < A.length; B += 2) {
             let G = A.slice(B, B + 2).toLowerCase();
             if (G in xE1) Q[B / 2] = xE1[G];
-            else throw Error(`Cannot decode unrecognized sequence ${G} as hexadecimal`)
+            else throw Error(`Cannot decode unrecognized sequence TextComponent{G} as hexadecimal`)
         }
         return Q
     }
     ar0(or0, "fromHex");
 
-function tr0(A) {
+    function tr0(A) {
         let Q = "";
         for (let B = 0; B < A.byteLength; B++) Q += rr0[A[B]];
         return Q
     }
     ar0(tr0, "toHex")
 });
-var Io0 = U((Go0) => {
+var Io0 = moduleWrapper((Go0) => {
     Object.defineProperty(Go0, "__esModule", {
         value: !0
     });
@@ -156,7 +156,7 @@ var Io0 = U((Go0) => {
             var Q, B;
             if (!Bo0(A) && !(0, Ao0.isReadableStream)(A)) {
                 let Y = ((B = (Q = A === null || A === void 0 ? void 0 : A.__proto__) === null || Q === void 0 ? void 0 : Q.constructor) === null || B === void 0 ? void 0 : B.name) || A;
-                throw Error(`Unexpected stream implementation, expect Blob or ReadableStream, got ${Y}`)
+                throw Error(`Unexpected stream implementation, expect Blob or ReadableStream, got TextComponent{Y}`)
             }
             let G = !1,
                 Z = async () => {
@@ -181,21 +181,21 @@ If you are using React Native, this API is not yet supported, see: https://react
                     if (G) throw Error(Qo0);
                     if (G = !0, Bo0(A)) return I(A);
                     else if ((0, Ao0.isReadableStream)(A)) return A;
-                    else throw Error(`Cannot transform payload to web stream, got ${A}`)
+                    else throw Error(`Cannot transform payload to web stream, got TextComponent{A}`)
                 }
             })
         };
     Go0.sdkStreamMixin = bX4;
     var Bo0 = (A) => typeof Blob === "function" && A instanceof Blob
 });
-var Xo0 = U((Jo0) => {
+var Xo0 = moduleWrapper((Jo0) => {
     Object.defineProperty(Jo0, "__esModule", {
         value: !0
     });
     Jo0.sdkStreamMixin = void 0;
     var fX4 = oG(),
         hX4 = kI(),
-        vE1 = UA("stream"),
+        vE1 = nodeRequire("stream"),
         gX4 = Io0(),
         Yo0 = "The stream has already been transformed.",
         uX4 = (A) => {
@@ -204,7 +204,7 @@ var Xo0 = U((Jo0) => {
                 return (0, gX4.sdkStreamMixin)(A)
             } catch (I) {
                 let Y = ((B = (Q = A === null || A === void 0 ? void 0 : A.__proto__) === null || Q === void 0 ? void 0 : Q.constructor) === null || B === void 0 ? void 0 : B.name) || A;
-                throw Error(`Unexpected stream implementation, expect Stream.Readable instance, got ${Y}`)
+                throw Error(`Unexpected stream implementation, expect Stream.Readable instance, got TextComponent{Y}`)
             }
             let G = !1,
                 Z = async () => {
@@ -228,34 +228,32 @@ var Xo0 = U((Jo0) => {
         };
     Jo0.sdkStreamMixin = uX4
 });
-var Vo0 = U((Fo0) => {
+var Vo0 = moduleWrapper((Fo0) => {
     Object.defineProperty(Fo0, "__esModule", {
         value: !0
     });
     Fo0.splitStream = mX4;
-
-async function mX4(A) {
+    async function mX4(A) {
         if (typeof A.stream === "function") A = A.stream();
         return A.tee()
     }
 });
-var Co0 = U((Ho0) => {
+var Co0 = moduleWrapper((Ho0) => {
     Object.defineProperty(Ho0, "__esModule", {
         value: !0
     });
     Ho0.splitStream = pX4;
-    var Ko0 = UA("stream"),
+    var Ko0 = nodeRequire("stream"),
         cX4 = Vo0(),
         Do0 = hm();
-
-async function pX4(A) {
+    async function pX4(A) {
         if ((0, Do0.isReadableStream)(A) || (0, Do0.isBlob)(A)) return (0, cX4.splitStream)(A);
         let Q = new Ko0.PassThrough,
             B = new Ko0.PassThrough;
         return A.pipe(Q), A.pipe(B), [Q, B]
     }
 });
-var cm = U((gY7, BS) => {
+var cm = moduleWrapper((gY7, BS) => {
     var {
         defineProperty: RbA,
         getOwnPropertyDescriptor: iX4,
@@ -287,7 +285,7 @@ var cm = U((gY7, BS) => {
     var Eo0 = X4A(),
         zo0 = L2();
 
-function Uo0(A, Q = "utf-8") {
+    function Uo0(A, Q = "utf-8") {
         if (Q === "base64") return (0, Eo0.toBase64)(A);
         return (0, zo0.toUtf8)(A)
     }
@@ -298,8 +296,7 @@ function Uo0(A, Q = "utf-8") {
         return fE1.mutate((0, zo0.fromUtf8)(A))
     }
     hE1($o0, "transformFromString");
-
-var fE1 = class A extends Uint8Array {
+    var fE1 = class A extends Uint8Array {
         static {
             hE1(this, "Uint8ArrayBlobAdapter")
         }
@@ -308,7 +305,7 @@ var fE1 = class A extends Uint8Array {
                 case "string":
                     return $o0(Q, B);
                 default:
-                    throw Error(`Unsupported conversion from ${typeof Q} to Uint8ArrayBlobAdapter.`)
+                    throw Error(`Unsupported conversion from TextComponent{typeof Q} to Uint8ArrayBlobAdapter.`)
             }
         }
         static mutate(Q) {
@@ -327,7 +324,7 @@ var fE1 = class A extends Uint8Array {
     dm(QS, Co0(), BS.exports);
     dm(QS, hm(), BS.exports)
 });
-var y4 = U((uY7, Oo0) => {
+var y4 = moduleWrapper((uY7, Oo0) => {
     var {
         defineProperty: uE1,
         getOwnPropertyDescriptor: oX4,
@@ -451,15 +448,14 @@ var y4 = U((uY7, Oo0) => {
             override: !0
         };
 
-function WF4(A) {
+    function WF4(A) {
         return {
             applyToStack: (Q) => {
                 Q.add(JF4(A), No0), Q.add(IF4(A), qo0), A.protocol.setSerdeContext(A)
             }
         }
     }
-
-var Xr = class A {
+    var Xr = class A {
             constructor(Q, B = new Map) {
                 this.namespace = Q, this.schemas = B
             }
@@ -477,7 +473,7 @@ var Xr = class A {
             }
             getSchema(Q) {
                 let B = this.normalizeShapeId(Q);
-                if (!this.schemas.has(B)) throw Error(`@smithy/core/schema - schema not found for ${B}`);
+                if (!this.schemas.has(B)) throw Error(`@smithy/core/schema - schema not found for TextComponent{B}`);
                 return this.schemas.get(B)
             }
             getBaseException() {
@@ -511,36 +507,33 @@ var Xr = class A {
             }
         };
 
-function XF4(A, Q, B = {}, G) {
+    function XF4(A, Q, B = {}, G) {
         let Z = new mE1(A + "#" + Q, B, typeof G === "function" ? G() : G);
         return Xr.for(A).register(Q, Z), Z
     }
-
-var dE1 = class extends V4A {
+    var dE1 = class extends V4A {
         constructor(A, Q, B, G) {
             super(A, Q);
             this.name = A, this.traits = Q, this.keySchema = B, this.valueSchema = G
         }
     };
 
-function FF4(A, Q, B = {}, G, Z) {
+    function FF4(A, Q, B = {}, G, Z) {
         let I = new dE1(A + "#" + Q, B, G, typeof Z === "function" ? Z() : Z);
         return Xr.for(A).register(Q, I), I
     }
-
-var Lo0 = class extends V4A {
+    var Lo0 = class extends V4A {
         constructor(A, Q, B, G) {
             super(A, Q);
             this.name = A, this.traits = Q, this.input = B, this.output = G
         }
     };
 
-function VF4(A, Q, B = {}, G, Z) {
+    function VF4(A, Q, B = {}, G, Z) {
         let I = new Lo0(A + "#" + Q, B, G, Z);
         return Xr.for(A).register(Q, I), I
     }
-
-var TbA = class extends V4A {
+    var TbA = class extends V4A {
         constructor(A, Q, B, G) {
             super(A, Q);
             this.name = A, this.traits = Q, this.memberNames = B, this.memberList = G, this.members = {};
@@ -548,24 +541,22 @@ var TbA = class extends V4A {
         }
     };
 
-function KF4(A, Q, B, G, Z) {
+    function KF4(A, Q, B, G, Z) {
         let I = new TbA(A + "#" + Q, B, G, Z);
         return Xr.for(A).register(Q, I), I
     }
-
-var Mo0 = class extends TbA {
+    var Mo0 = class extends TbA {
         constructor(A, Q, B, G, Z) {
             super(A, Q, B, G);
             this.name = A, this.traits = Q, this.memberNames = B, this.memberList = G, this.ctor = Z
         }
     };
 
-function DF4(A, Q, B = {}, G, Z, I) {
+    function DF4(A, Q, B = {}, G, Z, I) {
         let Y = new Mo0(A + "#" + Q, B, G, Z, I);
         return Xr.for(A).register(Q, Y), Y
     }
-
-var JW = {
+    var JW = {
             BLOB: 21,
             STREAMING_BLOB: 42,
             BOOLEAN: 2,
@@ -588,12 +579,11 @@ var JW = {
             }
         };
 
-function HF4(A, Q, B, G) {
+    function HF4(A, Q, B, G) {
         let Z = new cE1(A + "#" + Q, B, G);
         return Xr.for(A).register(Q, Z), Z
     }
-
-var CF4 = class A {
+    var CF4 = class A {
         constructor(Q, B) {
             this.ref = Q, this.memberName = B;
             let G = [],
@@ -614,7 +604,7 @@ var CF4 = class A {
             }
             if (this.schema = sKA(I), this.schema && typeof this.schema === "object") this.traits = this.schema?.traits ?? {};
             else this.traits = 0;
-            if (this.name = (typeof this.schema === "object" ? this.schema?.name : void 0) ?? this.memberName ?? this.getSchemaName(), this._isMemberSchema && !B) throw Error(`@smithy/core/schema - NormalizedSchema member schema ${this.getName(!0)} must initialize with memberName argument.`)
+            if (this.name = (typeof this.schema === "object" ? this.schema?.name : void 0) ?? this.memberName ?? this.getSchemaName(), this._isMemberSchema && !B) throw Error(`@smithy/core/schema - NormalizedSchema member schema TextComponent{this.getName(!0)} must initialize with memberName argument.`)
         }
         static of (Q, B) {
             if (Q instanceof A) return Q;
@@ -649,7 +639,7 @@ var CF4 = class A {
             return this.name || void 0
         }
         getMemberName() {
-            if (!this.isMemberSchema()) throw Error(`@smithy/core/schema - cannot get member name on non-member schema: ${this.getName(!0)}`);
+            if (!this.isMemberSchema()) throw Error(`@smithy/core/schema - cannot get member name on non-member schema: TextComponent{this.getName(!0)}`);
             return this.memberName
         }
         isMemberSchema() {
@@ -716,7 +706,7 @@ var CF4 = class A {
         }
         getKeySchema() {
             if (this.isDocumentSchema()) return A.memberFrom([JW.DOCUMENT, 0], "key");
-            if (!this.isMapSchema()) throw Error(`@smithy/core/schema - cannot get key schema for non-map schema: ${this.getName(!0)}`);
+            if (!this.isMapSchema()) throw Error(`@smithy/core/schema - cannot get key schema for non-map schema: TextComponent{this.getName(!0)}`);
             let Q = this.getSchema();
             if (typeof Q === "number") return A.memberFrom([63 & Q, 0], "key");
             return A.memberFrom([Q.keySchema, 0], "key")
@@ -728,7 +718,7 @@ var CF4 = class A {
                 else if (this.isListSchema()) return A.memberFrom([63 & Q, 0], "member")
             }
             if (Q && typeof Q === "object") {
-                if (this.isStructSchema()) throw Error(`cannot call getValueSchema() with StructureSchema ${this.getName(!0)}`);
+                if (this.isStructSchema()) throw Error(`cannot call getValueSchema() with StructureSchema TextComponent{this.getName(!0)}`);
                 let B = Q;
                 if ("valueSchema" in B) {
                     if (this.isMapSchema()) return A.memberFrom([B.valueSchema, 0], "value");
@@ -736,16 +726,16 @@ var CF4 = class A {
                 }
             }
             if (this.isDocumentSchema()) return A.memberFrom([JW.DOCUMENT, 0], "value");
-            throw Error(`@smithy/core/schema - the schema ${this.getName(!0)} does not have a value member.`)
+            throw Error(`@smithy/core/schema - the schema TextComponent{this.getName(!0)} does not have a value member.`)
         }
         getMemberSchema(Q) {
             if (this.isStructSchema()) {
                 let B = this.getSchema();
-                if (!(Q in B.members)) throw Error(`@smithy/core/schema - the schema ${this.getName(!0)} does not have a member with name=${Q}.`);
+                if (!(Q in B.members)) throw Error(`@smithy/core/schema - the schema TextComponent{this.getName(!0)} does not have a member with name=TextComponent{Q}.`);
                 return A.memberFrom(B.members[Q], Q)
             }
             if (this.isDocumentSchema()) return A.memberFrom([JW.DOCUMENT, 0], Q);
-            throw Error(`@smithy/core/schema - the schema ${this.getName(!0)} does not have members.`)
+            throw Error(`@smithy/core/schema - the schema TextComponent{this.getName(!0)} does not have members.`)
         }
         getMemberSchemas() {
             let {
@@ -774,9 +764,9 @@ var CF4 = class A {
                     })?.[0] ?? "Unknown";
                 switch (G) {
                     case JW.MAP_MODIFIER:
-                        return `${Z}Map`;
+                        return `TextComponent{Z}Map`;
                     case JW.LIST_MODIFIER:
-                        return `${Z}List`;
+                        return `TextComponent{Z}List`;
                     case 0:
                         return Z
                 }
@@ -785,7 +775,7 @@ var CF4 = class A {
         }
     }
 });
-var c6 = U((aY7, yo0) => {
+var c6 = moduleWrapper((aY7, yo0) => {
     var {
         defineProperty: aE1,
         getOwnPropertyDescriptor: EF4,
@@ -892,49 +882,49 @@ var c6 = U((aY7, yo0) => {
                 case "false":
                     return !1;
                 default:
-                    throw Error(`Unable to parse boolean value "${A}"`)
+                    throw Error(`Unable to parse boolean value "TextComponent{A}"`)
             }
         },
         MF4 = (A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "number") {
-                if (A === 0 || A === 1) ADA.warn(jbA(`Expected boolean, got ${typeof A}: ${A}`));
+                if (A === 0 || A === 1) ADA.warn(jbA(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`));
                 if (A === 0) return !1;
                 if (A === 1) return !0
             }
             if (typeof A === "string") {
                 let Q = A.toLowerCase();
-                if (Q === "false" || Q === "true") ADA.warn(jbA(`Expected boolean, got ${typeof A}: ${A}`));
+                if (Q === "false" || Q === "true") ADA.warn(jbA(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`));
                 if (Q === "false") return !1;
                 if (Q === "true") return !0
             }
             if (typeof A === "boolean") return A;
-            throw TypeError(`Expected boolean, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`)
         },
         tKA = (A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "string") {
                 let Q = parseFloat(A);
                 if (!Number.isNaN(Q)) {
-                    if (String(Q) !== String(A)) ADA.warn(jbA(`Expected number but observed string: ${A}`));
+                    if (String(Q) !== String(A)) ADA.warn(jbA(`Expected number but observed string: TextComponent{A}`));
                     return Q
                 }
             }
             if (typeof A === "number") return A;
-            throw TypeError(`Expected number, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected number, got TextComponent{typeof A}: TextComponent{A}`)
         },
         OF4 = Math.ceil(340282346638528860000000000000000000000),
         PbA = (A) => {
             let Q = tKA(A);
             if (Q !== void 0 && !Number.isNaN(Q) && Q !== 1 / 0 && Q !== -1 / 0) {
-                if (Math.abs(Q) > OF4) throw TypeError(`Expected 32-bit float, got ${A}`)
+                if (Math.abs(Q) > OF4) throw TypeError(`Expected 32-bit float, got TextComponent{A}`)
             }
             return Q
         },
         eKA = (A) => {
             if (A === null || A === void 0) return;
             if (Number.isInteger(A) && !Number.isNaN(A)) return A;
-            throw TypeError(`Expected integer, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected integer, got TextComponent{typeof A}: TextComponent{A}`)
         },
         RF4 = eKA,
         lE1 = (A) => sE1(A, 32),
@@ -942,7 +932,7 @@ var c6 = U((aY7, yo0) => {
         nE1 = (A) => sE1(A, 8),
         sE1 = (A, Q) => {
             let B = eKA(A);
-            if (B !== void 0 && TF4(B, Q) !== B) throw TypeError(`Expected ${Q}-bit integer, got ${A}`);
+            if (B !== void 0 && TF4(B, Q) !== B) throw TypeError(`Expected TextComponent{Q}-bit integer, got TextComponent{A}`);
             return B
         },
         TF4 = (A, Q) => {
@@ -957,7 +947,7 @@ var c6 = U((aY7, yo0) => {
         },
         PF4 = (A, Q) => {
             if (A === null || A === void 0) {
-                if (Q) throw TypeError(`Expected a non-null value for ${Q}`);
+                if (Q) throw TypeError(`Expected a non-null value for TextComponent{Q}`);
                 throw TypeError("Expected a non-null value")
             }
             return A
@@ -966,20 +956,20 @@ var c6 = U((aY7, yo0) => {
             if (A === null || A === void 0) return;
             if (typeof A === "object" && !Array.isArray(A)) return A;
             let Q = Array.isArray(A) ? "array" : typeof A;
-            throw TypeError(`Expected object, got ${Q}: ${A}`)
+            throw TypeError(`Expected object, got TextComponent{Q}: TextComponent{A}`)
         },
         jF4 = (A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "string") return A;
-            if (["boolean", "number", "bigint"].includes(typeof A)) return ADA.warn(jbA(`Expected string, got ${typeof A}: ${A}`)), String(A);
-            throw TypeError(`Expected string, got ${typeof A}: ${A}`)
+            if (["boolean", "number", "bigint"].includes(typeof A)) return ADA.warn(jbA(`Expected string, got TextComponent{typeof A}: TextComponent{A}`)), String(A);
+            throw TypeError(`Expected string, got TextComponent{typeof A}: TextComponent{A}`)
         },
         SF4 = (A) => {
             if (A === null || A === void 0) return;
             let Q = To0(A),
                 B = Object.entries(Q).filter(([, G]) => G != null).map(([G]) => G);
             if (B.length === 0) throw TypeError("Unions must have exactly one non-null member. None were found.");
-            if (B.length > 1) throw TypeError(`Unions must have exactly one non-null member. Keys ${B} were not null.`);
+            if (B.length > 1) throw TypeError(`Unions must have exactly one non-null member. Keys TextComponent{B} were not null.`);
             return Q
         },
         rE1 = (A) => {
@@ -1016,7 +1006,7 @@ var c6 = U((aY7, yo0) => {
                 case "-Infinity":
                     return -1 / 0;
                 default:
-                    throw Error(`Unable to parse float value: ${A}`)
+                    throw Error(`Unable to parse float value: TextComponent{A}`)
             }
         },
         So0 = (A) => {
@@ -1047,7 +1037,7 @@ var c6 = U((aY7, yo0) => {
         hF4 = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
         tE1 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-function gF4(A) {
+    function gF4(A) {
         let Q = A.getUTCFullYear(),
             B = A.getUTCMonth(),
             G = A.getUTCDay(),
@@ -1055,13 +1045,13 @@ function gF4(A) {
             I = A.getUTCHours(),
             Y = A.getUTCMinutes(),
             J = A.getUTCSeconds(),
-            W = Z < 10 ? `0${Z}` : `${Z}`,
-            X = I < 10 ? `0${I}` : `${I}`,
-            F = Y < 10 ? `0${Y}` : `${Y}`,
-            V = J < 10 ? `0${J}` : `${J}`;
-        return `${hF4[G]}, ${W} ${tE1[B]} ${Q} ${X}:${F}:${V} GMT`
+            W = Z < 10 ? `0${Z}` : `TextComponent{Z}`,
+            X = I < 10 ? `0${I}` : `TextComponent{I}`,
+            F = Y < 10 ? `0${Y}` : `TextComponent{Y}`,
+            V = J < 10 ? `0${J}` : `TextComponent{J}`;
+        return `TextComponent{hF4[G]}, TextComponent{W} TextComponent{tE1[B]} TextComponent{Q} TextComponent{X}:TextComponent{F}:TextComponent{V} GMT`
     }
-    var uF4 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?[zZ]$/),
+    var uF4 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?[zZ]TextComponent/),
         mF4 = (A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-3339 date-times must be expressed as strings");
@@ -1075,7 +1065,7 @@ function gF4(A) {
                 fractionalMilliseconds: X
             })
         },
-        dF4 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?(([-+]\d{2}\:\d{2})|[zZ])$/),
+        dF4 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?(([-+]\d{2}\:\d{2})|[zZ])TextComponent/),
         cF4 = (A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-3339 date-times must be expressed as strings");
@@ -1092,7 +1082,7 @@ function gF4(A) {
         },
         pF4 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun), (\d{2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{4}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? GMT$/),
         lF4 = new RegExp(/^(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday), (\d{2})-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)-(\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? GMT$/),
-        iF4 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ( [1-9]|\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? (\d{4})$/),
+        iF4 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ( [1-9]|\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? (\d{4})TextComponent/),
         nF4 = (A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-7231 date-times must be expressed as strings");
@@ -1153,21 +1143,21 @@ function gF4(A) {
         },
         pE1 = (A) => {
             let Q = tE1.indexOf(A);
-            if (Q < 0) throw TypeError(`Invalid month: ${A}`);
+            if (Q < 0) throw TypeError(`Invalid month: TextComponent{A}`);
             return Q + 1
         },
         tF4 = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
         eF4 = (A, Q, B) => {
             let G = tF4[Q];
             if (Q === 1 && AV4(A)) G = 29;
-            if (B > G) throw TypeError(`Invalid day for ${tE1[Q]} in ${A}: ${B}`)
+            if (B > G) throw TypeError(`Invalid day for TextComponent{tE1[Q]} in TextComponent{A}: TextComponent{B}`)
         },
         AV4 = (A) => {
             return A % 4 === 0 && (A % 100 !== 0 || A % 400 === 0)
         },
         GS = (A, Q, B, G) => {
             let Z = _o0(D4A(A));
-            if (Z < B || Z > G) throw TypeError(`${Q} must be between ${B} and ${G}, inclusive`);
+            if (Z < B || Z > G) throw TypeError(`TextComponent{Q} must be between TextComponent{B} and TextComponent{G}, inclusive`);
             return Z
         },
         QV4 = (A) => {
@@ -1179,7 +1169,7 @@ function gF4(A) {
                 B = 1;
             if (Q == "+") B = 1;
             else if (Q == "-") B = -1;
-            else throw TypeError(`Offset direction, ${Q}, must be "+" or "-"`);
+            else throw TypeError(`Offset direction, TextComponent{Q}, must be "+" or "-"`);
             let G = Number(A.substring(1, 3)),
                 Z = Number(A.substring(4, 6));
             return B * (G * 60 + Z) * 60 * 1000
@@ -1210,12 +1200,12 @@ function gF4(A) {
     };
     Fr.fromObject = Fr.from;
 
-function GV4(A) {
-        if (A.includes(",") || A.includes('"')) A = `"${A.replace(/"/g,"\\\"")}"`;
+    function GV4(A) {
+        if (A.includes(",") || A.includes('"')) A = `"TextComponent{A.replace(/"/g,"\\\"")}"`;
         return A
     }
 
-function ZV4(A, Q, B) {
+    function ZV4(A, Q, B) {
         if (B <= 0 || !Number.isInteger(B)) throw Error("Invalid number of delimiters (" + B + ") for splitEvery.");
         let G = A.split(Q);
         if (B === 1) return G;
@@ -1281,17 +1271,17 @@ function ZV4(A, Q, B) {
             }
         };
 
-function YV4(A) {
+    function YV4(A) {
         return new ko0(String(A), "bigDecimal")
     }
 });
-var bo0 = U((xo0) => {
+var bo0 = moduleWrapper((xo0) => {
     Object.defineProperty(xo0, "__esModule", {
         value: !0
     });
     xo0.fromBase64 = void 0;
     var JV4 = kI(),
-        WV4 = /^[A-Za-z0-9+/]*={0,2}$/,
+        WV4 = /^[A-Za-z0-9+/]*={0,2}TextComponent/,
         XV4 = (A) => {
             if (A.length * 3 % 4 !== 0) throw TypeError("Incorrect padding on base64 string.");
             if (!WV4.exec(A)) throw TypeError("Invalid base64 string.");
@@ -1300,7 +1290,7 @@ var bo0 = U((xo0) => {
         };
     xo0.fromBase64 = XV4
 });
-var go0 = U((fo0) => {
+var go0 = moduleWrapper((fo0) => {
     Object.defineProperty(fo0, "__esModule", {
         value: !0
     });
@@ -1316,7 +1306,7 @@ var go0 = U((fo0) => {
         };
     fo0.toBase64 = KV4
 });
-var Qz1 = U((tY7, SbA) => {
+var Qz1 = moduleWrapper((tY7, SbA) => {
     var {
         defineProperty: uo0,
         getOwnPropertyDescriptor: DV4,
@@ -1337,7 +1327,7 @@ var Qz1 = U((tY7, SbA) => {
     mo0(Az1, bo0(), SbA.exports);
     mo0(Az1, go0(), SbA.exports)
 });
-var C5 = U((eY7, eo0) => {
+var C5 = moduleWrapper((eY7, eo0) => {
     var {
         defineProperty: Iz1,
         getOwnPropertyDescriptor: zV4,
@@ -1382,7 +1372,7 @@ var C5 = U((eY7, eo0) => {
             return Bz1.Uint8ArrayBlobAdapter.mutate(await B)
         };
 
-function GDA(A) {
+    function GDA(A) {
         return encodeURIComponent(A).replace(/[!'()*]/g, function(Q) {
             return "%" + Q.charCodeAt(0).toString(16).toUpperCase()
         })
@@ -1427,8 +1417,8 @@ function GDA(A) {
                         let Y = [...Z.structIterator()].filter(([, J]) => J.getMergedTraits().hostLabel);
                         for (let [J] of Y) {
                             let W = B[J];
-                            if (typeof W !== "string") throw Error(`@smithy/core/schema - ${J} in input must be a string as hostLabel.`);
-                            I = I.replace(`{${J}}`, W)
+                            if (typeof W !== "string") throw Error(`@smithy/core/schema - TextComponent{J} in input must be a string as hostLabel.`);
+                            I = I.replace(`{TextComponent{J}}`, W)
                         }
                         A.hostname = I + A.hostname
                     }

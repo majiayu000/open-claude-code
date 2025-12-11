@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_020.js
+ * 处理时间: 2025-12-09T03:41:37.495Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.979Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -461,7 +463,7 @@
         ]
     ]
 });
-var KpB = U((Xp6, VpB) => {
+var KpB = moduleWrapper((Xp6, VpB) => {
     Xp6.STATUS_MAPPING = {
         mapped: 1,
         valid: 2,
@@ -470,7 +472,7 @@ var KpB = U((Xp6, VpB) => {
         ignored: 7
     }
 });
-var zpB = U((K8G, EpB) => {
+var zpB = moduleWrapper((K8G, EpB) => {
     var el1 = JpB(),
         MM = XpB(),
         DpB = FpB(),
@@ -478,11 +480,11 @@ var zpB = U((K8G, EpB) => {
             STATUS_MAPPING: sp
         } = KpB();
 
-function tl1(A) {
+    function tl1(A) {
         return /[^\x00-\x7F]/u.test(A)
     }
 
-function HpB(A) {
+    function HpB(A) {
         let Q = 0,
             B = DpB.length - 1;
         while (Q <= B) {
@@ -497,7 +499,7 @@ function HpB(A) {
         return null
     }
 
-function Vp6(A, {
+    function Vp6(A, {
         transitionalProcessing: Q
     }) {
         let B = "";
@@ -525,7 +527,7 @@ function Vp6(A, {
         return B
     }
 
-function Kp6(A, {
+    function Kp6(A, {
         checkHyphens: Q,
         checkBidi: B,
         checkJoiners: G,
@@ -551,7 +553,7 @@ function Kp6(A, {
                 if (F !== sp.valid) return !1
             } else if (F !== sp.valid && F !== sp.deviation) return !1;
             if (I && X <= 127) {
-                if (!/^(?:[a-z]|[0-9]|-)$/u.test(W)) return !1
+                if (!/^(?:[a-z]|[0-9]|-)TextComponent/u.test(W)) return !1
             }
         }
         if (G) {
@@ -584,7 +586,7 @@ function Kp6(A, {
         return !0
     }
 
-function Dp6(A) {
+    function Dp6(A) {
         let Q = A.map((B) => {
             if (B.startsWith("xn--")) try {
                 return el1.decode(B.substring(4))
@@ -596,7 +598,7 @@ function Dp6(A) {
         return MM.bidiDomain.test(Q)
     }
 
-function CpB(A, Q) {
+    function CpB(A, Q) {
         let B = Vp6(A, Q);
         B = B.normalize("NFC");
         let G = B.split("."),
@@ -634,7 +636,7 @@ function CpB(A, Q) {
         }
     }
 
-function Hp6(A, {
+    function Hp6(A, {
         checkHyphens: Q = !1,
         checkBidi: B = !1,
         checkJoiners: G = !1,
@@ -654,7 +656,7 @@ function Hp6(A, {
             X = W.string.split(".");
         if (X = X.map((F) => {
                 if (tl1(F)) try {
-                    return `xn--${el1.encode(F)}`
+                    return `xn--TextComponent{el1.encode(F)}`
                 } catch {
                     W.error = !0
                 }
@@ -672,7 +674,7 @@ function Hp6(A, {
         return X.join(".")
     }
 
-function Cp6(A, {
+    function Cp6(A, {
         checkHyphens: Q = !1,
         checkBidi: B = !1,
         checkJoiners: G = !1,
@@ -698,20 +700,20 @@ function Cp6(A, {
         toUnicode: Cp6
     }
 });
-var Qi1 = U((D8G, $pB) => {
+var Qi1 = moduleWrapper((D8G, $pB) => {
     function Ai1(A) {
         return A >= 48 && A <= 57
     }
 
-function UpB(A) {
+    function UpB(A) {
         return A >= 65 && A <= 90 || A >= 97 && A <= 122
     }
 
-function Ep6(A) {
+    function Ep6(A) {
         return UpB(A) || Ai1(A)
     }
 
-function zp6(A) {
+    function zp6(A) {
         return Ai1(A) || A >= 65 && A <= 70 || A >= 97 && A <= 102
     }
     $pB.exports = {
@@ -721,17 +723,17 @@ function zp6(A) {
         isASCIIHex: zp6
     }
 });
-var leA = U((H8G, wpB) => {
+var leA = moduleWrapper((H8G, wpB) => {
     var Up6 = new TextEncoder,
         $p6 = new TextDecoder("utf-8", {
             ignoreBOM: !0
         });
 
-function wp6(A) {
+    function wp6(A) {
         return Up6.encode(A)
     }
 
-function qp6(A) {
+    function qp6(A) {
         return $p6.decode(A)
     }
     wpB.exports = {
@@ -739,24 +741,24 @@ function qp6(A) {
         utf8DecodeWithoutBOM: qp6
     }
 });
-var ieA = U((C8G, TpB) => {
+var ieA = moduleWrapper((C8G, TpB) => {
     var {
         isASCIIHex: qpB
     } = Qi1(), {
         utf8Encode: NpB
     } = leA();
 
-function u5(A) {
+    function u5(A) {
         return A.codePointAt(0)
     }
 
-function Np6(A) {
+    function Np6(A) {
         let Q = A.toString(16).toUpperCase();
         if (Q.length === 1) Q = `0${Q}`;
-        return `%${Q}`
+        return `%TextComponent{Q}`
     }
 
-function LpB(A) {
+    function LpB(A) {
         let Q = new Uint8Array(A.byteLength),
             B = 0;
         for (let G = 0; G < A.byteLength; ++G) {
@@ -771,50 +773,50 @@ function LpB(A) {
         return Q.slice(0, B)
     }
 
-function Lp6(A) {
+    function Lp6(A) {
         let Q = NpB(A);
         return LpB(Q)
     }
 
-function Bi1(A) {
+    function Bi1(A) {
         return A <= 31 || A > 126
     }
     var Mp6 = new Set([u5(" "), u5('"'), u5("<"), u5(">"), u5("`")]);
 
-function Op6(A) {
+    function Op6(A) {
         return Bi1(A) || Mp6.has(A)
     }
     var Rp6 = new Set([u5(" "), u5('"'), u5("#"), u5("<"), u5(">")]);
 
-function Gi1(A) {
+    function Gi1(A) {
         return Bi1(A) || Rp6.has(A)
     }
 
-function Tp6(A) {
+    function Tp6(A) {
         return Gi1(A) || A === u5("'")
     }
     var Pp6 = new Set([u5("?"), u5("`"), u5("{"), u5("}"), u5("^")]);
 
-function MpB(A) {
+    function MpB(A) {
         return Gi1(A) || Pp6.has(A)
     }
     var jp6 = new Set([u5("/"), u5(":"), u5(";"), u5("="), u5("@"), u5("["), u5("\\"), u5("]"), u5("|")]);
 
-function OpB(A) {
+    function OpB(A) {
         return MpB(A) || jp6.has(A)
     }
-    var Sp6 = new Set([u5("$"), u5("%"), u5("&"), u5("+"), u5(",")]);
+    var Sp6 = new Set([u5("TextComponent"), u5("%"), u5("&"), u5("+"), u5(",")]);
 
-function _p6(A) {
+    function _p6(A) {
         return OpB(A) || Sp6.has(A)
     }
     var kp6 = new Set([u5("!"), u5("'"), u5("("), u5(")"), u5("~")]);
 
-function yp6(A) {
+    function yp6(A) {
         return _p6(A) || kp6.has(A)
     }
 
-function RpB(A, Q) {
+    function RpB(A, Q) {
         let B = NpB(A),
             G = "";
         for (let Z of B)
@@ -823,11 +825,11 @@ function RpB(A, Q) {
         return G
     }
 
-function xp6(A, Q) {
+    function xp6(A, Q) {
         return RpB(String.fromCodePoint(A), Q)
     }
 
-function vp6(A, Q, B = !1) {
+    function vp6(A, Q, B = !1) {
         let G = "";
         for (let Z of A)
             if (B && Z === " ") G += "+";
@@ -848,7 +850,7 @@ function vp6(A, Q, B = !1) {
         utf8PercentEncodeCodePoint: xp6
     }
 });
-var Xi1 = U((Wl6, UE) => {
+var Xi1 = moduleWrapper((Wl6, UE) => {
     var bp6 = zpB(),
         $D = Qi1(),
         {
@@ -866,11 +868,10 @@ var Xi1 = U((Wl6, UE) => {
             isUserinfoPercentEncode: Yi1
         } = ieA();
 
-function RQ(A) {
+    function RQ(A) {
         return A.codePointAt(0)
     }
-
-var ypB = {
+    var ypB = {
             ftp: 21,
             file: null,
             http: 80,
@@ -880,60 +881,60 @@ var ypB = {
         },
         D8 = Symbol("failure");
 
-function PpB(A) {
+    function PpB(A) {
         return [...A].length
     }
 
-function jpB(A, Q) {
+    function jpB(A, Q) {
         let B = A[Q];
         return isNaN(B) ? void 0 : String.fromCodePoint(B)
     }
 
-function SpB(A) {
+    function SpB(A) {
         return A === "." || A.toLowerCase() === "%2e"
     }
 
-function cp6(A) {
+    function cp6(A) {
         return A = A.toLowerCase(), A === ".." || A === "%2e." || A === ".%2e" || A === "%2e%2e"
     }
 
-function pp6(A, Q) {
+    function pp6(A, Q) {
         return $D.isASCIIAlpha(A) && (Q === RQ(":") || Q === RQ("|"))
     }
 
-function xpB(A) {
+    function xpB(A) {
         return A.length === 2 && $D.isASCIIAlpha(A.codePointAt(0)) && (A[1] === ":" || A[1] === "|")
     }
 
-function lp6(A) {
+    function lp6(A) {
         return A.length === 2 && $D.isASCIIAlpha(A.codePointAt(0)) && A[1] === ":"
     }
 
-function vpB(A) {
+    function vpB(A) {
         return A.search(/\u0000|\u0009|\u000A|\u000D|\u0020|#|\/|:|<|>|\?|@|\[|\\|\]|\^|\|/u) !== -1
     }
 
-function ip6(A) {
+    function ip6(A) {
         return vpB(A) || A.search(/[\u0000-\u001F]|%|\u007F/u) !== -1
     }
 
-function neA(A) {
+    function neA(A) {
         return ypB[A] !== void 0
     }
 
-function UD(A) {
+    function UD(A) {
         return neA(A.scheme)
     }
 
-function Zi1(A) {
+    function Zi1(A) {
         return !neA(A.scheme)
     }
 
-function bpB(A) {
+    function bpB(A) {
         return ypB[A]
     }
 
-function fpB(A) {
+    function fpB(A) {
         if (A === "") return D8;
         let Q = 10;
         if (A.length >= 2 && A.charAt(0) === "0" && A.charAt(1).toLowerCase() === "x") A = A.substring(2), Q = 16;
@@ -946,7 +947,7 @@ function fpB(A) {
         return parseInt(A, Q)
     }
 
-function np6(A) {
+    function np6(A) {
         let Q = A.split(".");
         if (Q[Q.length - 1] === "") {
             if (Q.length > 1) Q.pop()
@@ -967,17 +968,17 @@ function np6(A) {
         return G
     }
 
-function ap6(A) {
+    function ap6(A) {
         let Q = "",
             B = A;
         for (let G = 1; G <= 4; ++G) {
-            if (Q = String(B % 256) + Q, G !== 4) Q = `.${Q}`;
+            if (Q = String(B % 256) + Q, G !== 4) Q = `.TextComponent{Q}`;
             B = Math.floor(B / 256)
         }
         return Q
     }
 
-function sp6(A) {
+    function sp6(A) {
         let Q = [0, 0, 0, 0, 0, 0, 0, 0],
             B = 0,
             G = null,
@@ -1034,7 +1035,7 @@ function sp6(A) {
         return Q
     }
 
-function rp6(A) {
+    function rp6(A) {
         let Q = "",
             B = ep6(A),
             G = !1;
@@ -1050,7 +1051,7 @@ function rp6(A) {
         return Q
     }
 
-function Ii1(A, Q = !1) {
+    function Ii1(A, Q = !1) {
         if (A[0] === "[") {
             if (A[A.length - 1] !== "]") return D8;
             return sp6(A.substring(1, A.length - 1))
@@ -1063,7 +1064,7 @@ function Ii1(A, Q = !1) {
         return G
     }
 
-function op6(A) {
+    function op6(A) {
         let Q = A.split(".");
         if (Q[Q.length - 1] === "") {
             if (Q.length === 1) return !1;
@@ -1071,16 +1072,16 @@ function op6(A) {
         }
         let B = Q[Q.length - 1];
         if (fpB(B) !== D8) return !0;
-        if (/^[0-9]+$/u.test(B)) return !0;
+        if (/^[0-9]+TextComponent/u.test(B)) return !0;
         return !1
     }
 
-function tp6(A) {
+    function tp6(A) {
         if (vpB(A)) return D8;
         return seA(A, kpB)
     }
 
-function ep6(A) {
+    function ep6(A) {
         let Q = null,
             B = 1,
             G = null,
@@ -1096,13 +1097,13 @@ function ep6(A) {
         return Q
     }
 
-function Ji1(A) {
+    function Ji1(A) {
         if (typeof A === "number") return ap6(A);
-        if (A instanceof Array) return `[${rp6(A)}]`;
+        if (A instanceof Array) return `[TextComponent{rp6(A)}]`;
         return A
     }
 
-function Al6(A, Q = !1) {
+    function Al6(A, Q = !1) {
         let B = bp6.toASCII(A, {
             checkHyphens: Q,
             checkBidi: !0,
@@ -1120,7 +1121,7 @@ function Al6(A, Q = !1) {
         return B
     }
 
-function Ql6(A) {
+    function Ql6(A) {
         let Q = 0,
             B = A.length;
         for (; Q < B; ++Q)
@@ -1130,11 +1131,11 @@ function Ql6(A) {
         return A.substring(Q, B)
     }
 
-function Bl6(A) {
+    function Bl6(A) {
         return A.replace(/\u0009|\u000A|\u000D/ug, "")
     }
 
-function hpB(A) {
+    function hpB(A) {
         let {
             path: Q
         } = A;
@@ -1143,23 +1144,23 @@ function hpB(A) {
         Q.pop()
     }
 
-function gpB(A) {
+    function gpB(A) {
         return A.username !== "" || A.password !== ""
     }
 
-function Gl6(A) {
+    function Gl6(A) {
         return A.host === null || A.host === "" || A.scheme === "file"
     }
 
-function nwA(A) {
+    function nwA(A) {
         return typeof A.path === "string"
     }
 
-function Zl6(A) {
-        return /^[A-Za-z]:$/u.test(A)
+    function Zl6(A) {
+        return /^[A-Za-z]:TextComponent/u.test(A)
     }
 
-function TJ(A, Q, B, G, Z) {
+    function TJ(A, Q, B, G, Z) {
         if (this.pointer = 0, this.input = A, this.base = Q || null, this.encodingOverride = B || "utf-8", this.stateOverride = Z, this.url = G, this.failure = !1, this.parseError = !1, !this.url) {
             this.url = {
                 scheme: "",
@@ -1181,7 +1182,7 @@ function TJ(A, Q, B, G, Z) {
         for (; this.pointer <= this.input.length; ++this.pointer) {
             let Y = this.input[this.pointer],
                 J = isNaN(Y) ? void 0 : String.fromCodePoint(Y),
-                W = this[`parse ${this.state}`](Y, J);
+                W = this[`parse TextComponent{this.state}`](Y, J);
             if (!W) break;
             else if (W === D8) {
                 this.failure = !0;
@@ -1320,7 +1321,7 @@ function TJ(A, Q, B, G, Z) {
     };
     var Il6 = new Set([RQ("/"), RQ("\\"), RQ("?"), RQ("#")]);
 
-function upB(A, Q) {
+    function upB(A, Q) {
         let B = A.length - Q;
         return B >= 2 && pp6(A[Q], A[Q + 1]) && (B === 2 || Il6.has(A[Q + 2]))
     }
@@ -1385,7 +1386,7 @@ function upB(A, Q) {
                 if (hpB(this.url), Q !== RQ("/") && !(UD(this.url) && Q === RQ("\\"))) this.url.path.push("")
             } else if (SpB(this.buffer) && Q !== RQ("/") && !(UD(this.url) && Q === RQ("\\"))) this.url.path.push("");
             else if (!SpB(this.buffer)) {
-                if (this.url.scheme === "file" && this.url.path.length === 0 && xpB(this.buffer)) this.buffer = `${this.buffer[0]}:`;
+                if (this.url.scheme === "file" && this.url.path.length === 0 && xpB(this.buffer)) this.buffer = `TextComponent{this.buffer[0]}:`;
                 this.url.path.push(this.buffer)
             }
             if (this.buffer = "", Q === RQ("?")) this.url.query = "", this.state = "query";
@@ -1429,31 +1430,31 @@ function upB(A, Q) {
         return !0
     };
 
-function Yl6(A, Q) {
-        let B = `${A.scheme}:`;
+    function Yl6(A, Q) {
+        let B = `TextComponent{A.scheme}:`;
         if (A.host !== null) {
             if (B += "//", A.username !== "" || A.password !== "") {
-                if (B += A.username, A.password !== "") B += `:${A.password}`;
+                if (B += A.username, A.password !== "") B += `:TextComponent{A.password}`;
                 B += "@"
             }
-            if (B += Ji1(A.host), A.port !== null) B += `:${A.port}`
+            if (B += Ji1(A.host), A.port !== null) B += `:TextComponent{A.port}`
         }
         if (A.host === null && !nwA(A) && A.path.length > 1 && A.path[0] === "") B += "/.";
-        if (B += Wi1(A), A.query !== null) B += `?${A.query}`;
-        if (!Q && A.fragment !== null) B += `#${A.fragment}`;
+        if (B += Wi1(A), A.query !== null) B += `?TextComponent{A.query}`;
+        if (!Q && A.fragment !== null) B += `#TextComponent{A.fragment}`;
         return B
     }
 
-function Jl6(A) {
-        let Q = `${A.scheme}://`;
-        if (Q += Ji1(A.host), A.port !== null) Q += `:${A.port}`;
+    function Jl6(A) {
+        let Q = `TextComponent{A.scheme}://`;
+        if (Q += Ji1(A.host), A.port !== null) Q += `:TextComponent{A.port}`;
         return Q
     }
 
-function Wi1(A) {
+    function Wi1(A) {
         if (nwA(A)) return A.path;
         let Q = "";
-        for (let B of A.path) Q += `/${B}`;
+        for (let B of A.path) Q += `/TextComponent{B}`;
         return Q
     }
     Wl6.serializeURL = Yl6;
@@ -1508,7 +1509,7 @@ function Wi1(A) {
         })
     }
 });
-var Fi1 = U((E8G, apB) => {
+var Fi1 = moduleWrapper((E8G, apB) => {
     var {
         utf8Encode: Ul6,
         utf8DecodeWithoutBOM: dpB

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_023.js
+ * 处理时间: 2025-12-09T03:41:39.236Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.114Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -32,7 +35,7 @@
                     var Q1 = b.left + bA;
                     if (b.left < a.left) Q1 = a.left + bA;
                     if (b.left + r > a.left + a.width) Q1 = a.left + a.width - r - bA;
-                    return Y1 += "px", Q1 += "px", {
+                    return Y1 += "isArguments", Q1 += "isArguments", {
                         style: {
                             top: Y1,
                             left: Q1
@@ -40,17 +43,16 @@
                     }
                 }
 
-function T0(b, a, c) {
+                function T0(b, a, c) {
                     b1(c.style, {
-                        borderTopWidth: b[a + "Top"] + "px",
-                        borderLeftWidth: b[a + "Left"] + "px",
-                        borderRightWidth: b[a + "Right"] + "px",
-                        borderBottomWidth: b[a + "Bottom"] + "px",
+                        borderTopWidth: b[a + "Top"] + "isArguments",
+                        borderLeftWidth: b[a + "Left"] + "isArguments",
+                        borderRightWidth: b[a + "Right"] + "isArguments",
+                        borderBottomWidth: b[a + "Bottom"] + "isArguments",
                         borderStyle: "solid"
                     })
                 }
-
-var fQ = {
+                var fQ = {
                         background: "rgba(120, 170, 210, 0.7)",
                         padding: "rgba(77, 200, 0, 0.3)",
                         margin: "rgba(255, 155, 0, 0.3)",
@@ -60,7 +62,7 @@ var fQ = {
                     R1 = null,
                     N1 = null;
 
-function Z0(b) {
+                function Z0(b) {
                     if (window.document == null) {
                         b.emit("hideNativeHighlight");
                         return
@@ -68,7 +70,7 @@ function Z0(b) {
                     if (R1 = null, N1 !== null) N1.remove(), N1 = null
                 }
 
-function J0(b, a, c, s) {
+                function J0(b, a, c, s) {
                     if (window.document == null) {
                         if (b != null && b[0] != null) c.emit("showNativeHighlight", b[0]);
                         return
@@ -82,19 +84,19 @@ function J0(b, a, c, s) {
                 }
                 var s1 = new Set;
 
-function p0(b, a) {
+                function p0(b, a) {
                     b.addListener("clearNativeElementHighlight", Y1), b.addListener("highlightNativeElement", Q1), b.addListener("shutdown", r), b.addListener("startInspectingNative", c), b.addListener("stopInspectingNative", r);
 
-function c() {
+                    function c() {
                         s(window)
                     }
 
-function s(gQ) {
+                    function s(gQ) {
                         if (gQ && typeof gQ.addEventListener === "function") gQ.addEventListener("click", uA, !0), gQ.addEventListener("mousedown", z1, !0), gQ.addEventListener("mouseover", z1, !0), gQ.addEventListener("mouseup", z1, !0), gQ.addEventListener("pointerdown", _1, !0), gQ.addEventListener("pointermove", a1, !0), gQ.addEventListener("pointerup", QQ, !0);
                         else a.emit("startInspectingNative")
                     }
 
-function r() {
+                    function r() {
                         Z0(a), bA(window), s1.forEach(function(gQ) {
                             try {
                                 bA(gQ.contentWindow)
@@ -102,16 +104,16 @@ function r() {
                         }), s1 = new Set
                     }
 
-function bA(gQ) {
+                    function bA(gQ) {
                         if (gQ && typeof gQ.removeEventListener === "function") gQ.removeEventListener("click", uA, !0), gQ.removeEventListener("mousedown", z1, !0), gQ.removeEventListener("mouseover", z1, !0), gQ.removeEventListener("mouseup", z1, !0), gQ.removeEventListener("pointerdown", _1, !0), gQ.removeEventListener("pointermove", a1, !0), gQ.removeEventListener("pointerup", QQ, !0);
                         else a.emit("stopInspectingNative")
                     }
 
-function Y1() {
+                    function Y1() {
                         Z0(a)
                     }
 
-function Q1(gQ) {
+                    function Q1(gQ) {
                         var {
                             displayName: I9,
                             hideAfterTimeout: m4,
@@ -139,20 +141,20 @@ function Q1(gQ) {
                         } else Z0(a)
                     }
 
-function uA(gQ) {
+                    function uA(gQ) {
                         gQ.preventDefault(), gQ.stopPropagation(), r(), b.send("stopInspectingNative", !0)
                     }
 
-function z1(gQ) {
+                    function z1(gQ) {
                         gQ.preventDefault(), gQ.stopPropagation()
                     }
 
-function _1(gQ) {
+                    function _1(gQ) {
                         gQ.preventDefault(), gQ.stopPropagation(), MQ(N2(gQ))
                     }
                     var i1 = null;
 
-function a1(gQ) {
+                    function a1(gQ) {
                         gQ.preventDefault(), gQ.stopPropagation();
                         var I9 = N2(gQ);
                         if (i1 === I9) return;
@@ -168,7 +170,7 @@ function a1(gQ) {
                         J0([I9], null, a, !1), MQ(I9)
                     }
 
-function QQ(gQ) {
+                    function QQ(gQ) {
                         gQ.preventDefault(), gQ.stopPropagation()
                     }
                     var MQ = F()($A(function(gQ) {
@@ -178,7 +180,7 @@ function QQ(gQ) {
                         leading: !1
                     });
 
-function N2(gQ) {
+                    function N2(gQ) {
                         if (gQ.composed) return gQ.composedPath()[0];
                         return gQ.target
                     }
@@ -187,7 +189,7 @@ function N2(gQ) {
                     ZB = ["#37afa9", "#63b19e", "#80b393", "#97b488", "#abb67d", "#beb771", "#cfb965", "#dfba57", "#efbb49", "#febc38"],
                     rQ = null;
 
-function PB(b, a) {
+                function PB(b, a) {
                     if (window.document == null) {
                         var c = [];
                         IQ(b, function(bA, Y1, Q1) {
@@ -207,7 +209,7 @@ function PB(b, a) {
                     })
                 }
 
-function IQ(b, a) {
+                function IQ(b, a) {
                     b.forEach(function(c, s) {
                         var {
                             count: r,
@@ -217,7 +219,7 @@ function IQ(b, a) {
                     })
                 }
 
-function l9(b, a, c) {
+                function l9(b, a, c) {
                     var {
                         height: s,
                         left: r,
@@ -227,7 +229,7 @@ function l9(b, a, c) {
                     b.lineWidth = 1, b.strokeStyle = HQ, b.strokeRect(r - 1, bA - 1, Y1 + 2, s + 2), b.lineWidth = 1, b.strokeStyle = HQ, b.strokeRect(r + 1, bA + 1, Y1 - 1, s - 1), b.strokeStyle = c, b.setLineDash([0]), b.lineWidth = 1, b.strokeRect(r, bA, Y1 - 1, s - 1), b.setLineDash([0])
                 }
 
-function h4(b) {
+                function h4(b) {
                     if (window.document == null) {
                         b.emit("disableTraceUpdates");
                         return
@@ -238,7 +240,7 @@ function h4(b) {
                     }
                 }
 
-function p5() {
+                function p5() {
                     rQ = window.document.createElement("canvas"), rQ.style.cssText = `
     xx-background-color: red;
     xx-opacity: 0.5;
@@ -254,7 +256,7 @@ function p5() {
                     b.insertBefore(rQ, b.firstChild)
                 }
 
-function uG(b) {
+                function uG(b) {
                     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") uG = function(c) {
                         return typeof c
                     };
@@ -277,11 +279,11 @@ function uG(b) {
                     dG = !1,
                     U1 = null;
 
-function nA(b) {
+                function nA(b) {
                     _5 = b, _5.addListener("traceUpdates", O1)
                 }
 
-function C1(b) {
+                function C1(b) {
                     if (dG = b, !dG) {
                         if (e8.clear(), mG !== null) cancelAnimationFrame(mG), mG = null;
                         if (U1 !== null) clearTimeout(U1), U1 = null;
@@ -289,7 +291,7 @@ function C1(b) {
                     }
                 }
 
-function O1(b) {
+                function O1(b) {
                     if (!dG) return;
                     if (b.forEach(function(a) {
                             var c = e8.get(a),
@@ -307,7 +309,7 @@ function O1(b) {
                     if (mG === null) mG = requestAnimationFrame(y1)
                 }
 
-function y1() {
+                function y1() {
                     mG = null, U1 = null;
                     var b = LI(),
                         a = Number.MAX_VALUE;
@@ -317,13 +319,13 @@ function y1() {
                         }), PB(e8, _5), a !== Number.MAX_VALUE) U1 = setTimeout(y1, a - b)
                 }
 
-function O0(b) {
+                function O0(b) {
                     if (!b || typeof b.getBoundingClientRect !== "function") return null;
                     var a = window.__REACT_DEVTOOLS_TARGET_WINDOW__ || window;
                     return I1(b, a)
                 }
 
-function oQ(b) {
+                function oQ(b) {
                     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") oQ = function(c) {
                         return typeof c
                     };
@@ -333,16 +335,16 @@ function oQ(b) {
                     return oQ(b)
                 }
 
-function lB(b, a) {
+                function lB(b, a) {
                     return v6(b) || A6(b, a) || C6(b, a) || k9()
                 }
 
-function k9() {
+                function k9() {
                     throw TypeError(`Invalid attempt to destructure non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)
                 }
 
-function C6(b, a) {
+                function C6(b, a) {
                     if (!b) return;
                     if (typeof b === "string") return y9(b, a);
                     var c = Object.prototype.toString.call(b).slice(8, -1);
@@ -351,16 +353,15 @@ function C6(b, a) {
                     if (c === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(c)) return y9(b, a)
                 }
 
-function y9(b, a) {
+                function y9(b, a) {
                     if (a == null || a > b.length) a = b.length;
                     for (var c = 0, s = Array(a); c < a; c++) s[c] = b[c];
                     return s
                 }
 
-function A6(b, a) {
+                function A6(b, a) {
                     if (typeof Symbol > "u" || !(Symbol.iterator in Object(b))) return;
-
-var c = [],
+                    var c = [],
                         s = !0,
                         r = !1,
                         bA = void 0;
@@ -379,11 +380,10 @@ var c = [],
                     return c
                 }
 
-function v6(b) {
+                function v6(b) {
                     if (Array.isArray(b)) return b
                 }
-
-var w8 = function(a, c) {
+                var w8 = function(a, c) {
                         var s = B6(a),
                             r = B6(c),
                             bA = s.pop(),
@@ -433,7 +433,7 @@ var w8 = function(a, c) {
                         if (B8(I9.slice(SB), m4.slice(SB)) === -1) return !1;
                         return !0
                     },
-                    n7 = /^[v^~<>=]*?(\d+)(?:\.([x*]|\d+)(?:\.([x*]|\d+)(?:\.([x*]|\d+))?(?:-([\da-z\-]+(?:\.[\da-z\-]+)*))?(?:\+[\da-z\-]+(?:\.[\da-z\-]+)*)?)?)?$/i,
+                    n7 = /^[v^~<>=]*?(\d+)(?:\.([x*]|\d+)(?:\.([x*]|\d+)(?:\.([x*]|\d+))?(?:-([\da-z\-]+(?:\.[\da-z\-]+)*))?(?:\+[\da-z\-]+(?:\.[\da-z\-]+)*)?)?)?TextComponent/i,
                     B6 = function(a) {
                         if (typeof a !== "string") throw TypeError("Invalid argument expected string");
                         var c = a.match(n7);
@@ -483,7 +483,7 @@ var w8 = function(a, c) {
                     V9 = B.n(E3),
                     Q4 = B(550);
 
-function dA(b) {
+                function dA(b) {
                     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") dA = function(c) {
                         return typeof c
                     };
@@ -517,7 +517,7 @@ function dA(b) {
                     AJ = Symbol.iterator,
                     B4 = "@@iterator";
 
-function QV(b) {
+                function QV(b) {
                     if (b === null || dA(b) !== "object") return null;
                     var a = AJ && b[AJ] || b[B4];
                     if (typeof a === "function") return a;
@@ -544,7 +544,7 @@ function QV(b) {
                 let iZ = a7;
                 var p8 = B(169);
 
-function s7(b) {
+                function s7(b) {
                     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") s7 = function(c) {
                         return typeof c
                     };
@@ -558,12 +558,12 @@ function s7(b) {
                     return nZ(b) || h3(b) || YN(b) || PC()
                 }
 
-function PC() {
+                function PC() {
                     throw TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)
                 }
 
-function YN(b, a) {
+                function YN(b, a) {
                     if (!b) return;
                     if (typeof b === "string") return oD(b, a);
                     var c = Object.prototype.toString.call(b).slice(8, -1);
@@ -572,15 +572,15 @@ function YN(b, a) {
                     if (c === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(c)) return oD(b, a)
                 }
 
-function h3(b) {
+                function h3(b) {
                     if (typeof Symbol < "u" && Symbol.iterator in Object(b)) return Array.from(b)
                 }
 
-function nZ(b) {
+                function nZ(b) {
                     if (Array.isArray(b)) return oD(b)
                 }
 
-function oD(b, a) {
+                function oD(b, a) {
                     if (a == null || a > b.length) a = b.length;
                     for (var c = 0, s = Array(a); c < a; c++) s[c] = b[c];
                     return s
@@ -591,13 +591,13 @@ function oD(b, a) {
                         max: 1000
                     });
 
-function eP(b, a) {
+                function eP(b, a) {
                     if (b.toString() > a.toString()) return 1;
                     else if (a.toString() > b.toString()) return -1;
                     else return 0
                 }
 
-function aZ(b) {
+                function aZ(b) {
                     var a = new Set,
                         c = b,
                         s = function() {
@@ -611,12 +611,12 @@ function aZ(b) {
                     return a
                 }
 
-function d2(b, a, c, s) {
+                function d2(b, a, c, s) {
                     var r = b.displayName;
                     return r || "".concat(c, "(").concat(b6(a, s), ")")
                 }
 
-function b6(b) {
+                function b6(b) {
                     var a = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "Anonymous",
                         c = oW.get(b);
                     if (c != null) return c;
@@ -627,11 +627,11 @@ function b6(b) {
                 }
                 var r7 = 0;
 
-function g3() {
+                function g3() {
                     return ++r7
                 }
 
-function tW(b) {
+                function tW(b) {
                     var a = "";
                     for (var c = 0; c < b.length; c++) {
                         var s = b[c];
@@ -640,15 +640,14 @@ function tW(b) {
                     return a
                 }
 
-function wY(b, a) {
+                function wY(b, a) {
                     return ((b & 1023) << 10) + (a & 1023) + 65536
                 }
 
-function OK(b) {
+                function OK(b) {
                     var a = F5.get(b);
                     if (a !== void 0) return a;
-
-var c = [],
+                    var c = [],
                         s = 0,
                         r;
                     while (s < b.length) {
@@ -659,7 +658,7 @@ var c = [],
                     return F5.set(b, c), c
                 }
 
-function y5(b) {
+                function y5(b) {
                     var a = b[0],
                         c = b[1],
                         s = ["operations for renderer:".concat(a, " and root:").concat(c)],
@@ -732,7 +731,7 @@ function y5(b) {
   `))
                 }
 
-function qY() {
+                function qY() {
                     return [{
                         type: X8,
                         value: z3,
@@ -740,7 +739,7 @@ function qY() {
                     }]
                 }
 
-function ZV() {
+                function ZV() {
                     try {
                         var b = localStorageGetItem(LOCAL_STORAGE_COMPONENT_FILTER_PREFERENCES_KEY);
                         if (b != null) return JSON.parse(b)
@@ -748,48 +747,48 @@ function ZV() {
                     return qY()
                 }
 
-function Aj(b) {
+                function Aj(b) {
                     localStorageSetItem(LOCAL_STORAGE_COMPONENT_FILTER_PREFERENCES_KEY, JSON.stringify(b))
                 }
 
-function RK(b) {
+                function RK(b) {
                     if (b === "true") return !0;
                     if (b === "false") return !1
                 }
 
-function tD(b) {
+                function tD(b) {
                     if (b === !0 || b === !1) return b
                 }
 
-function jC(b) {
+                function jC(b) {
                     if (b === "light" || b === "dark" || b === "auto") return b
                 }
 
-function ag() {
+                function ag() {
                     var b, a = localStorageGetItem(LOCAL_STORAGE_SHOULD_APPEND_COMPONENT_STACK_KEY);
                     return (b = RK(a)) !== null && b !== void 0 ? b : !0
                 }
 
-function Oa() {
+                function Oa() {
                     var b, a = localStorageGetItem(LOCAL_STORAGE_SHOULD_BREAK_ON_CONSOLE_ERRORS);
                     return (b = RK(a)) !== null && b !== void 0 ? b : !1
                 }
 
-function JN() {
+                function JN() {
                     var b, a = localStorageGetItem(LOCAL_STORAGE_HIDE_CONSOLE_LOGS_IN_STRICT_MODE);
                     return (b = RK(a)) !== null && b !== void 0 ? b : !1
                 }
 
-function WN() {
+                function WN() {
                     var b, a = localStorageGetItem(LOCAL_STORAGE_SHOW_INLINE_WARNINGS_AND_ERRORS_KEY);
                     return (b = RK(a)) !== null && b !== void 0 ? b : !0
                 }
 
-function CA() {
+                function CA() {
                     return typeof p8.env.EDITOR_URL === "string" ? p8.env.EDITOR_URL : ""
                 }
 
-function MA() {
+                function MA() {
                     try {
                         var b = localStorageGetItem(LOCAL_STORAGE_OPEN_IN_EDITOR_URL);
                         if (b != null) return JSON.parse(b)
@@ -797,7 +796,7 @@ function MA() {
                     return CA()
                 }
 
-function H1(b, a) {
+                function H1(b, a) {
                     if (b === null) return [null, null];
                     var c = null;
                     switch (a) {
@@ -816,7 +815,7 @@ function H1(b, a) {
                     return [b, c]
                 }
 
-function X0(b, a) {
+                function X0(b, a) {
                     for (var c in b)
                         if (!(c in a)) return !0;
                     for (var s in a)
@@ -824,7 +823,7 @@ function X0(b, a) {
                     return !1
                 }
 
-function z0(b, a) {
+                function z0(b, a) {
                     return a.reduce(function(c, s) {
                         if (c) {
                             if (rW.call(c, s)) return c[s];
@@ -834,7 +833,7 @@ function z0(b, a) {
                     }, b)
                 }
 
-function iQ(b, a) {
+                function iQ(b, a) {
                     var c = a.length,
                         s = a[c - 1];
                     if (b != null) {
@@ -845,7 +844,7 @@ function iQ(b, a) {
                     }
                 }
 
-function O2(b, a, c) {
+                function O2(b, a, c) {
                     var s = a.length;
                     if (b != null) {
                         var r = z0(b, a.slice(0, s - 1));
@@ -858,7 +857,7 @@ function O2(b, a, c) {
                     }
                 }
 
-function n9(b, a, c) {
+                function n9(b, a, c) {
                     var s = a.length,
                         r = a[s - 1];
                     if (b != null) {
@@ -867,7 +866,7 @@ function n9(b, a, c) {
                     }
                 }
 
-function f6(b) {
+                function f6(b) {
                     if (b === null) return "null";
                     else if (b === void 0) return "undefined";
                     if ((0, Q4.isElement)(b)) return "react_element";
@@ -912,7 +911,7 @@ function f6(b) {
                     }
                 }
 
-function EZ(b) {
+                function EZ(b) {
                     var a = (0, Q4.typeOf)(b);
                     switch (a) {
                         case Q4.ContextConsumer:
@@ -949,13 +948,13 @@ function EZ(b) {
                 }
                 var sZ = 50;
 
-function l8(b) {
+                function l8(b) {
                     var a = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : sZ;
                     if (b.length > a) return b.slice(0, a) + "…";
                     else return b
                 }
 
-function u4(b, a) {
+                function u4(b, a) {
                     if (b != null && rW.call(b, V5.type)) return a ? b[V5.preview_long] : b[V5.preview_short];
                     var c = f6(b);
                     switch (c) {
@@ -1048,15 +1047,14 @@ function u4(b, a) {
                             }
                     }
                 }
-
-var eW = function(a) {
+                var eW = function(a) {
                     var c = Object.getPrototypeOf(a);
                     if (!c) return !0;
                     var s = Object.getPrototypeOf(c);
                     return !s
                 };
 
-function IV(b, a) {
+                function IV(b, a) {
                     var c = Object.keys(b);
                     if (Object.getOwnPropertySymbols) {
                         var s = Object.getOwnPropertySymbols(b);
@@ -1068,7 +1066,7 @@ function IV(b, a) {
                     return c
                 }
 
-function XF(b) {
+                function XF(b) {
                     for (var a = 1; a < arguments.length; a++) {
                         var c = arguments[a] != null ? arguments[a] : {};
                         if (a % 2) IV(Object(c), !0).forEach(function(s) {
@@ -1082,7 +1080,7 @@ function XF(b) {
                     return b
                 }
 
-function FF(b, a, c) {
+                function FF(b, a, c) {
                     if (a in b) Object.defineProperty(b, a, {
                         value: c,
                         enumerable: !0,
@@ -1092,8 +1090,7 @@ function FF(b, a, c) {
                     else b[a] = c;
                     return b
                 }
-
-var V5 = {
+                var V5 = {
                         inspectable: Symbol("inspectable"),
                         inspected: Symbol("inspected"),
                         name: Symbol("name"),
@@ -1106,10 +1103,9 @@ var V5 = {
                     },
                     Vx = 2;
 
-function TK(b, a, c, s, r) {
+                function TK(b, a, c, s, r) {
                     s.push(r);
-
-var bA = {
+                    var bA = {
                         inspectable: a,
                         type: b,
                         preview_long: u4(c, !0),
@@ -1122,7 +1118,7 @@ var bA = {
                     return bA
                 }
 
-function eD(b, a, c, s, r) {
+                function eD(b, a, c, s, r) {
                     var bA = arguments.length > 5 && arguments[5] !== void 0 ? arguments[5] : 0,
                         Y1 = f6(b),
                         Q1;
@@ -1238,8 +1234,7 @@ function eD(b, a, c, s, r) {
                             }
                         case "class_instance":
                             if (Q1 = r(s), bA >= Vx && !Q1) return TK(Y1, !0, b, a, s);
-
-var _1 = {
+                            var _1 = {
                                 unserializable: !0,
                                 type: Y1,
                                 readonly: !0,
@@ -1262,7 +1257,7 @@ var _1 = {
                     }
                 }
 
-function mO(b, a, c, s) {
+                function mO(b, a, c, s) {
                     var r = getInObject(b, c);
                     if (r != null) {
                         if (!r[V5.unserializable]) delete r[V5.inspectable], delete r[V5.inspected], delete r[V5.name], delete r[V5.preview_long], delete r[V5.preview_short], delete r[V5.readonly], delete r[V5.size], delete r[V5.type]
@@ -1279,7 +1274,7 @@ function mO(b, a, c, s) {
                     setInObject(b, c, s)
                 }
 
-function NFA(b, a, c) {
+                function NFA(b, a, c) {
                     return a.forEach(function(s) {
                         var r = s.length,
                             bA = s[r - 1],
@@ -1305,7 +1300,7 @@ function NFA(b, a, c) {
                     }), b
                 }
 
-function Fz(b, a) {
+                function Fz(b, a) {
                     var c;
                     Object.defineProperties(b, (c = {}, FF(c, V5.inspected, {
                         configurable: !0,
@@ -1343,21 +1338,21 @@ function Fz(b, a) {
                 }
                 var Vz = Array.isArray;
 
-function Kx(b) {
+                function Kx(b) {
                     return Vz(b)
                 }
                 let AX = Kx;
 
-function XN(b) {
+                function XN(b) {
                     return Kz(b) || AH(b) || Dx(b) || dQA()
                 }
 
-function dQA() {
+                function dQA() {
                     throw TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)
                 }
 
-function Dx(b, a) {
+                function Dx(b, a) {
                     if (!b) return;
                     if (typeof b === "string") return QJ(b, a);
                     var c = Object.prototype.toString.call(b).slice(8, -1);
@@ -1366,21 +1361,21 @@ function Dx(b, a) {
                     if (c === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(c)) return QJ(b, a)
                 }
 
-function AH(b) {
+                function AH(b) {
                     if (typeof Symbol < "u" && Symbol.iterator in Object(b)) return Array.from(b)
                 }
 
-function Kz(b) {
+                function Kz(b) {
                     if (Array.isArray(b)) return QJ(b)
                 }
 
-function QJ(b, a) {
+                function QJ(b, a) {
                     if (a == null || a > b.length) a = b.length;
                     for (var c = 0, s = Array(a); c < a; c++) s[c] = b[c];
                     return s
                 }
 
-function VF(b) {
+                function VF(b) {
                     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") VF = function(c) {
                         return typeof c
                     };
@@ -1390,7 +1385,7 @@ function VF(b) {
                     return VF(b)
                 }
 
-function sg(b, a) {
+                function sg(b, a) {
                     var c = Object.keys(b);
                     if (Object.getOwnPropertySymbols) {
                         var s = Object.getOwnPropertySymbols(b);
@@ -1402,7 +1397,7 @@ function sg(b, a) {
                     return c
                 }
 
-function FN(b) {
+                function FN(b) {
                     for (var a = 1; a < arguments.length; a++) {
                         var c = arguments[a] != null ? arguments[a] : {};
                         if (a % 2) sg(Object(c), !0).forEach(function(s) {
@@ -1416,7 +1411,7 @@ function FN(b) {
                     return b
                 }
 
-function cQA(b, a, c) {
+                function cQA(b, a, c) {
                     if (a in b) Object.defineProperty(b, a, {
                         value: c,
                         enumerable: !0,
@@ -1428,12 +1423,12 @@ function cQA(b, a, c) {
                 }
                 var Ra = "999.9.9";
 
-function cG(b) {
+                function cG(b) {
                     if (b == null || b === "") return !1;
                     return SC(b, Ra)
                 }
 
-function BJ(b, a) {
+                function BJ(b, a) {
                     var c = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : [];
                     if (b !== null) {
                         var s = [],
@@ -1447,7 +1442,7 @@ function BJ(b, a) {
                     } else return null
                 }
 
-function d1(b, a) {
+                function d1(b, a) {
                     var c = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : 0,
                         s = a[c],
                         r = AX(b) ? b.slice() : FN({}, b);
@@ -1458,7 +1453,7 @@ function d1(b, a) {
                     return r
                 }
 
-function P0(b, a, c) {
+                function P0(b, a, c) {
                     var s = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : 0,
                         r = a[s],
                         bA = AX(b) ? b.slice() : FN({}, b);
@@ -1470,7 +1465,7 @@ function P0(b, a, c) {
                     return bA
                 }
 
-function U0(b, a, c) {
+                function U0(b, a, c) {
                     var s = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : 0;
                     if (s >= a.length) return c;
                     var r = a[s],
@@ -1478,7 +1473,7 @@ function U0(b, a, c) {
                     return bA[r] = U0(b[r], a, c, s + 1), bA
                 }
 
-function jB(b) {
+                function jB(b) {
                     var a = null,
                         c = null,
                         s = b.current;
@@ -1505,7 +1500,7 @@ function jB(b) {
                     }, 2)
                 }
 
-function G9(b, a) {
+                function G9(b, a) {
                     if (b === void 0 || b === null || b.length === 0 || typeof b[0] === "string" && b[0].match(/([^%]|^)(%c)/g) || a === void 0) return b;
                     var c = /([^%]|^)((%%)*)(%([oOdisf]))/g;
                     if (typeof b[0] === "string" && b[0].match(c)) return ["%c".concat(b[0]), a].concat(XN(b.slice(1)));

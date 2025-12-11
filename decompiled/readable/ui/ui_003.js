@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_003.js
+ * 处理时间: 2025-12-09T03:41:38.899Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.089Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -31,7 +34,7 @@
         }
     })
 });
-var fD1 = U((o$) => {
+var fD1 = moduleWrapper((o$) => {
     var __dirname = "/home/runner/code/tmp/claude-cli-external-build-2215/node_modules/spawn-rx/lib/src",
         bN = o$ && o$.__assign || function() {
             return bN = Object.assign || function(A) {
@@ -71,17 +74,17 @@ var fD1 = U((o$) => {
     o$.spawn = AKA;
     o$.spawnDetachedPromise = pe9;
     o$.spawnPromise = le9;
-    var tVA = UA("path"),
-        me9 = UA("net"),
-        eVA = UA("fs"),
+    var tVA = nodeRequire("path"),
+        me9 = nodeRequire("net"),
+        eVA = nodeRequire("fs"),
         Cm = Dy0(),
         wy0 = $y0(),
-        de9 = UA("child_process"),
+        de9 = nodeRequire("child_process"),
         ce9 = Os(),
         Ly0 = process.platform === "win32",
         V9A = (0, ce9.default)("spawn-rx");
 
-function qy0(A) {
+    function qy0(A) {
         try {
             return eVA.statSync(A)
         } catch (Q) {
@@ -89,7 +92,7 @@ function qy0(A) {
         }
     }
 
-function Ny0(A) {
+    function Ny0(A) {
         if (A.match(/[\\/]/)) return V9A("Path has slash in directory, bailing"), A;
         var Q = tVA.join(".", A);
         if (qy0(Q)) return V9A("Found executable in currect directory: ".concat(Q)), eVA.realpathSync(Q);
@@ -102,7 +105,7 @@ function Ny0(A) {
         return V9A("Failed to find executable anywhere in path"), A
     }
 
-function BxA(A, Q) {
+    function BxA(A, Q) {
         if (process.platform !== "win32") return {
             cmd: Ny0(A),
             args: Q
@@ -123,7 +126,7 @@ function BxA(A, Q) {
                 args: W.concat(Q)
             }
         }
-        if (A.match(/\.(bat|cmd)$/i)) {
+        if (A.match(/\.(bat|cmd)TextComponent/i)) {
             var J = tVA.join(process.env.SYSTEMROOT, "System32", "cmd.exe"),
                 X = ue9(["/C", A], Q, !0);
             return {
@@ -131,7 +134,7 @@ function BxA(A, Q) {
                 args: X
             }
         }
-        if (A.match(/\.(js)$/i)) {
+        if (A.match(/\.(js)TextComponent/i)) {
             var J = process.execPath,
                 F = [A];
             return {
@@ -145,15 +148,14 @@ function BxA(A, Q) {
         }
     }
 
-function bD1(A, Q, B) {
+    function bD1(A, Q, B) {
         var G = BxA(A, Q !== null && Q !== void 0 ? Q : []),
             Z = G.cmd,
             I = G.args;
         if (!Ly0) return AKA(Z, I, Object.assign({}, B || {}, {
             detached: !0
         }));
-
-var Y = [Z].concat(I),
+        var Y = [Z].concat(I),
             J = tVA.join(__dirname, "..", "..", "vendor", "jobber", "Jobber.exe"),
             W = bN(bN({}, B !== null && B !== void 0 ? B : {}), {
                 detached: !0,
@@ -162,7 +164,7 @@ var Y = [Z].concat(I),
         return V9A("spawnDetached: ".concat(J, ", ").concat(Y)), AKA(J, Y, W)
     }
 
-function AKA(A, Q, B) {
+    function AKA(A, Q, B) {
         B = B !== null && B !== void 0 ? B : {};
         var G = new Cm.Observable(function(Z) {
             var {
@@ -240,7 +242,7 @@ function AKA(A, Q, B) {
         }))
     }
 
-function My0(A) {
+    function My0(A) {
         return new Promise(function(Q, B) {
             var G = "";
             A.subscribe({
@@ -260,7 +262,7 @@ function My0(A) {
         })
     }
 
-function Oy0(A) {
+    function Oy0(A) {
         return new Promise(function(Q, B) {
             var G = "",
                 Z = "";
@@ -281,7 +283,7 @@ function Oy0(A) {
         })
     }
 
-function pe9(A, Q, B) {
+    function pe9(A, Q, B) {
         if (B === null || B === void 0 ? void 0 : B.split) return Oy0(bD1(A, Q, bN(bN({}, B !== null && B !== void 0 ? B : {}), {
             split: !0
         })));
@@ -290,7 +292,7 @@ function pe9(A, Q, B) {
         })))
     }
 
-function le9(A, Q, B) {
+    function le9(A, Q, B) {
         if (B === null || B === void 0 ? void 0 : B.split) return Oy0(AKA(A, Q, bN(bN({}, B !== null && B !== void 0 ? B : {}), {
             split: !0
         })));
@@ -299,12 +301,12 @@ function le9(A, Q, B) {
         })))
     }
 });
-var Sy0 = U((QQ7, jy0) => {
+var Sy0 = moduleWrapper((QQ7, jy0) => {
     jy0.exports = Py0;
     Py0.sync = ne9;
-    var Ry0 = UA("fs");
+    var Ry0 = nodeRequire("fs");
 
-function ie9(A, Q) {
+    function ie9(A, Q) {
         var B = Q.pathExt !== void 0 ? Q.pathExt : process.env.PATHEXT;
         if (!B) return !0;
         if (B = B.split(";"), B.indexOf("") !== -1) return !0;
@@ -315,41 +317,41 @@ function ie9(A, Q) {
         return !1
     }
 
-function Ty0(A, Q, B) {
+    function Ty0(A, Q, B) {
         if (!A.isSymbolicLink() && !A.isFile()) return !1;
         return ie9(Q, B)
     }
 
-function Py0(A, Q, B) {
+    function Py0(A, Q, B) {
         Ry0.stat(A, function(G, Z) {
             B(G, G ? !1 : Ty0(Z, A, Q))
         })
     }
 
-function ne9(A, Q) {
+    function ne9(A, Q) {
         return Ty0(Ry0.statSync(A), A, Q)
     }
 });
-var vy0 = U((BQ7, xy0) => {
+var vy0 = moduleWrapper((BQ7, xy0) => {
     xy0.exports = ky0;
     ky0.sync = ae9;
-    var _y0 = UA("fs");
+    var _y0 = nodeRequire("fs");
 
-function ky0(A, Q, B) {
+    function ky0(A, Q, B) {
         _y0.stat(A, function(G, Z) {
             B(G, G ? !1 : yy0(Z, Q))
         })
     }
 
-function ae9(A, Q) {
+    function ae9(A, Q) {
         return yy0(_y0.statSync(A), Q)
     }
 
-function yy0(A, Q) {
+    function yy0(A, Q) {
         return A.isFile() && se9(A, Q)
     }
 
-function se9(A, Q) {
+    function se9(A, Q) {
         var {
             mode: B,
             uid: G,
@@ -358,15 +360,15 @@ function se9(A, Q) {
         return V
     }
 });
-var fy0 = U((ZQ7, by0) => {
-    var GQ7 = UA("fs"),
+var fy0 = moduleWrapper((ZQ7, by0) => {
+    var GQ7 = nodeRequire("fs"),
         GxA;
     if (process.platform === "win32" || global.TESTING_WINDOWS) GxA = Sy0();
     else GxA = vy0();
     by0.exports = hD1;
     hD1.sync = re9;
 
-function hD1(A, Q, B) {
+    function hD1(A, Q, B) {
         if (typeof Q === "function") B = Q, Q = {};
         if (!B) {
             if (typeof Promise !== "function") throw TypeError("callback not provided");
@@ -385,7 +387,7 @@ function hD1(A, Q, B) {
         })
     }
 
-function re9(A, Q) {
+    function re9(A, Q) {
         try {
             return GxA.sync(A, Q || {})
         } catch (B) {
@@ -394,12 +396,12 @@ function re9(A, Q) {
         }
     }
 });
-var py0 = U((IQ7, cy0) => {
+var py0 = moduleWrapper((IQ7, cy0) => {
     var K9A = process.platform === "win32" || process.env.OSTYPE === "cygwin" || process.env.OSTYPE === "msys",
-        hy0 = UA("path"),
+        hy0 = nodeRequire("path"),
         oe9 = K9A ? ";" : ":",
         gy0 = fy0(),
-        uy0 = (A) => Object.assign(Error(`not found: ${A}`), {
+        uy0 = (A) => Object.assign(Error(`not found: TextComponent{A}`), {
             code: "ENOENT"
         }),
         my0 = (A, Q) => {
@@ -426,7 +428,7 @@ var py0 = U((IQ7, cy0) => {
             } = my0(A, Q), Y = [], J = (X) => new Promise((F, V) => {
                 if (X === G.length) return Q.all && Y.length ? F(Y) : V(uy0(A));
                 let K = G[X],
-                    D = /^".*"$/.test(K) ? K.slice(1, -1) : K,
+                    D = /^".*"TextComponent/.test(K) ? K.slice(1, -1) : K,
                     H = hy0.join(D, A),
                     C = !D && /^\.[\\\/]/.test(A) ? A.slice(0, 2) + H : H;
                 F(W(C, X, 0))
@@ -453,7 +455,7 @@ var py0 = U((IQ7, cy0) => {
             } = my0(A, Q), I = [];
             for (let Y = 0; Y < B.length; Y++) {
                 let J = B[Y],
-                    W = /^".*"$/.test(J) ? J.slice(1, -1) : J,
+                    W = /^".*"TextComponent/.test(J) ? J.slice(1, -1) : J,
                     X = hy0.join(W, A),
                     F = !W && /^\.[\\\/]/.test(A) ? A.slice(0, 2) + X : X;
                 for (let V = 0; V < G.length; V++) {
@@ -474,7 +476,7 @@ var py0 = U((IQ7, cy0) => {
     cy0.exports = dy0;
     dy0.sync = te9
 });
-var iy0 = U((YQ7, gD1) => {
+var iy0 = moduleWrapper((YQ7, gD1) => {
     var ly0 = (A = {}) => {
         let Q = A.env || process.env;
         if ((A.platform || process.platform) !== "win32") return "PATH";
@@ -483,12 +485,12 @@ var iy0 = U((YQ7, gD1) => {
     gD1.exports = ly0;
     gD1.exports.default = ly0
 });
-var ry0 = U((JQ7, sy0) => {
-    var ny0 = UA("path"),
+var ry0 = moduleWrapper((JQ7, sy0) => {
+    var ny0 = nodeRequire("path"),
         ee9 = py0(),
         AA4 = iy0();
 
-function ay0(A, Q) {
+    function ay0(A, Q) {
         let B = A.options.env || process.env,
             G = process.cwd(),
             Z = A.options.cwd != null,
@@ -511,43 +513,43 @@ function ay0(A, Q) {
         return Y
     }
 
-function QA4(A) {
+    function QA4(A) {
         return ay0(A) || ay0(A, !0)
     }
     sy0.exports = QA4
 });
-var oy0 = U((ZA4, mD1) => {
+var oy0 = moduleWrapper((ZA4, mD1) => {
     var uD1 = /([()\][%!^"`<>&|;, *?])/g;
 
-function BA4(A) {
+    function BA4(A) {
         return A = A.replace(uD1, "^$1"), A
     }
 
-function GA4(A, Q) {
-        if (A = `${A}`, A = A.replace(/(?=(\\+?)?)\1"/g, "$1$1\\\""), A = A.replace(/(?=(\\+?)?)\1$/, "$1$1"), A = `"${A}"`, A = A.replace(uD1, "^$1"), Q) A = A.replace(uD1, "^$1");
+    function GA4(A, Q) {
+        if (A = `TextComponent{A}`, A = A.replace(/(?=(\\+?)?)\1"/g, "$1$1\\\""), A = A.replace(/(?=(\\+?)?)\1$/, "$1$1"), A = `"TextComponent{A}"`, A = A.replace(uD1, "^$1"), Q) A = A.replace(uD1, "^$1");
         return A
     }
     ZA4.command = BA4;
     ZA4.argument = GA4
 });
-var ey0 = U((WQ7, ty0) => {
+var ey0 = moduleWrapper((WQ7, ty0) => {
     ty0.exports = /^#!(.*)/
 });
-var Qx0 = U((XQ7, Ax0) => {
+var Qx0 = moduleWrapper((XQ7, Ax0) => {
     var JA4 = ey0();
     Ax0.exports = (A = "") => {
         let Q = A.match(JA4);
         if (!Q) return null;
         let [B, G] = Q[0].replace(/#! ?/, "").split(" "), Z = B.split("/").pop();
         if (Z === "env") return G;
-        return G ? `${Z} ${G}` : Z
+        return G ? `TextComponent{Z} TextComponent{G}` : Z
     }
 });
-var Gx0 = U((FQ7, Bx0) => {
-    var dD1 = UA("fs"),
+var Gx0 = moduleWrapper((FQ7, Bx0) => {
+    var dD1 = nodeRequire("fs"),
         WA4 = Qx0();
 
-function XA4(A) {
+    function XA4(A) {
         let B = Buffer.alloc(150),
             G;
         try {
@@ -557,23 +559,23 @@ function XA4(A) {
     }
     Bx0.exports = XA4
 });
-var Jx0 = U((VQ7, Yx0) => {
-    var FA4 = UA("path"),
+var Jx0 = moduleWrapper((VQ7, Yx0) => {
+    var FA4 = nodeRequire("path"),
         Zx0 = ry0(),
         Ix0 = oy0(),
         VA4 = Gx0(),
         KA4 = process.platform === "win32",
-        DA4 = /\.(?:com|exe)$/i,
+        DA4 = /\.(?:com|exe)TextComponent/i,
         HA4 = /node_modules[\\/].bin[\\/][^\\/]+\.cmd$/i;
 
-function CA4(A) {
+    function CA4(A) {
         A.file = Zx0(A);
         let Q = A.file && VA4(A.file);
         if (Q) return A.args.unshift(A.file), A.command = Q, Zx0(A);
         return A.file
     }
 
-function EA4(A) {
+    function EA4(A) {
         if (!KA4) return A;
         let Q = CA4(A),
             B = !DA4.test(Q);
@@ -581,12 +583,12 @@ function EA4(A) {
             let G = HA4.test(Q);
             A.command = FA4.normalize(A.command), A.command = Ix0.command(A.command), A.args = A.args.map((I) => Ix0.argument(I, G));
             let Z = [A.command].concat(A.args).join(" ");
-            A.args = ["/d", "/s", "/c", `"${Z}"`], A.command = process.env.comspec || "cmd.exe", A.options.windowsVerbatimArguments = !0
+            A.args = ["/d", "/s", "/c", `"TextComponent{Z}"`], A.command = process.env.comspec || "cmd.exe", A.options.windowsVerbatimArguments = !0
         }
         return A
     }
 
-function zA4(A, Q, B) {
+    function zA4(A, Q, B) {
         if (Q && !Array.isArray(Q)) B = Q, Q = null;
         Q = Q ? Q.slice(0) : [], B = Object.assign({}, B);
         let G = {
@@ -603,20 +605,20 @@ function zA4(A, Q, B) {
     }
     Yx0.exports = zA4
 });
-var Fx0 = U((KQ7, Xx0) => {
+var Fx0 = moduleWrapper((KQ7, Xx0) => {
     var cD1 = process.platform === "win32";
 
-function pD1(A, Q) {
-        return Object.assign(Error(`${Q} ${A.command} ENOENT`), {
+    function pD1(A, Q) {
+        return Object.assign(Error(`TextComponent{Q} TextComponent{A.command} ENOENT`), {
             code: "ENOENT",
             errno: "ENOENT",
-            syscall: `${Q} ${A.command}`,
+            syscall: `TextComponent{Q} TextComponent{A.command}`,
             path: A.command,
             spawnargs: A.args
         })
     }
 
-function UA4(A, Q) {
+    function UA4(A, Q) {
         if (!cD1) return;
         let B = A.emit;
         A.emit = function(G, Z) {
@@ -628,7 +630,7 @@ function UA4(A, Q) {
         }
     }
 
-function Wx0(A, Q) {
+    function Wx0(A, Q) {
         if (cD1 && A === 1 && !Q.file) return pD1(Q.original, "spawn");
         return null
     }
@@ -644,18 +646,18 @@ function Wx0(A, Q) {
         notFoundError: pD1
     }
 });
-var nD1 = U((DQ7, D9A) => {
-    var Vx0 = UA("child_process"),
+var nD1 = moduleWrapper((DQ7, D9A) => {
+    var Vx0 = nodeRequire("child_process"),
         lD1 = Jx0(),
         iD1 = Fx0();
 
-function Kx0(A, Q, B) {
+    function Kx0(A, Q, B) {
         let G = lD1(A, Q, B),
             Z = Vx0.spawn(G.command, G.args, G.options);
         return iD1.hookChildProcess(Z, G), Z
     }
 
-function wA4(A, Q, B) {
+    function wA4(A, Q, B) {
         let G = lD1(A, Q, B),
             Z = Vx0.spawnSync(G.command, G.args, G.options);
         return Z.error = Z.error || iD1.verifyENOENTSync(Z.status, G), Z
@@ -751,17 +753,17 @@ var MA4 = (A, Q, B, G) => {
         if (B === Object.getPrototypeOf(A)) return;
         Object.setPrototypeOf(A, B)
     },
-    TA4 = (A, Q) => `/* Wrapped ${A}*/
-${Q}`,
+    TA4 = (A, Q) => `/* Wrapped TextComponent{A}*/
+TextComponent{Q}`,
     PA4, jA4, SA4 = (A, Q, B) => {
-        let G = B === "" ? "" : `with ${B.trim()}() `,
+        let G = B === "" ? "" : `with TextComponent{B.trim()}() `,
             Z = TA4.bind(null, G, Q.toString());
         Object.defineProperty(Z, "name", jA4), Object.defineProperty(A, "toString", {
             ...PA4,
             value: Z
         })
     };
-var Ex0 = L(() => {
+var Ex0 = lazyLoader(() => {
     PA4 = Object.getOwnPropertyDescriptor(Function.prototype, "toString"), jA4 = Object.getOwnPropertyDescriptor(Function.prototype.toString, "name")
 });
 var YxA, zx0 = (A, Q = {}) => {
@@ -770,17 +772,17 @@ var YxA, zx0 = (A, Q = {}) => {
             Z = A.displayName || A.name || "<anonymous>",
             I = function(...Y) {
                 if (YxA.set(I, ++G), G === 1) B = A.apply(this, Y), A = null;
-                else if (Q.throw === !0) throw Error(`Function \`${Z}\` can only be called once`);
+                else if (Q.throw === !0) throw Error(`Function \`TextComponent{Z}\` can only be called once`);
                 return B
             };
         return sD1(I, A), YxA.set(I, G), I
     },
     Ux0;
-var $x0 = L(() => {
+var $x0 = lazyLoader(() => {
     Ex0();
     YxA = new WeakMap;
     zx0.callCount = (A) => {
-        if (!YxA.has(A)) throw Error(`The given function \`${A.name}\` is not wrapped by the \`onetime\` package`);
+        if (!YxA.has(A)) throw Error(`The given function \`TextComponent{A.name}\` is not wrapped by the \`onetime\` package`);
         return YxA.get(A)
     };
     Ux0 = zx0
@@ -801,7 +803,7 @@ var wx0 = () => {
     qx0 = 34,
     rD1 = 64;
 var Nx0;
-var Lx0 = L(() => {
+var Lx0 = lazyLoader(() => {
     Nx0 = [{
         name: "SIGHUP",
         number: 1,
@@ -1065,7 +1067,7 @@ var oD1 = () => {
             standard: I
         }
     };
-var Mx0 = L(() => {
+var Mx0 = lazyLoader(() => {
     Lx0()
 });
 import {
@@ -1131,7 +1133,7 @@ var vA4 = () => {
         return Q.find((G) => G.number === A)
     },
     yQ7;
-var Rx0 = L(() => {
+var Rx0 = lazyLoader(() => {
     Mx0();
     Ox0 = vA4(), yQ7 = fA4()
 });
@@ -1145,11 +1147,11 @@ var mA4 = ({
         exitCode: I,
         isCanceled: Y
     }) => {
-        if (A) return `timed out after ${Q} milliseconds`;
+        if (A) return `timed out after TextComponent{Q} milliseconds`;
         if (Y) return "was canceled";
-        if (B !== void 0) return `failed with ${B}`;
-        if (G !== void 0) return `was killed with ${G} (${Z})`;
-        if (I !== void 0) return `failed with exit code ${I}`;
+        if (B !== void 0) return `failed with TextComponent{B}`;
+        if (G !== void 0) return `was killed with TextComponent{G} (TextComponent{Z})`;
+        if (I !== void 0) return `failed with exit code TextComponent{I}`;
         return "failed"
     },
     BKA = ({
@@ -1174,10 +1176,10 @@ var mA4 = ({
         I = I === null ? void 0 : I, Z = Z === null ? void 0 : Z;
         let D = Z === void 0 ? void 0 : Ox0[Z].description,
             H = G && G.code,
-            E = `Command ${mA4({timedOut:W,timeout:V,errorCode:H,signal:Z,signalDescription:D,exitCode:I,isCanceled:X})}: ${Y}`,
+            E = `Command TextComponent{mA4({timedOut:W,timeout:V,errorCode:H,signal:Z,signalDescription:D,exitCode:I,isCanceled:X})}: TextComponent{Y}`,
             z = Object.prototype.toString.call(G) === "[object Error]",
-            w = z ? `${E}
-${G.message}` : E,
+            w = z ? `TextComponent{E}
+TextComponent{G.message}` : E,
             N = [w, Q, A].filter(Boolean).join(`
 `);
         if (z) G.originalMessage = G.message, G.message = N;
@@ -1186,7 +1188,7 @@ ${G.message}` : E,
         if ("bufferedData" in G) delete G.bufferedData;
         return G.failed = !0, G.timedOut = Boolean(W), G.isCanceled = X, G.killed = F && !W, G
     };
-var Tx0 = L(() => {
+var Tx0 = lazyLoader(() => {
     Rx0()
 });
 var JxA, dA4 = (A) => JxA.some((Q) => A[Q] !== void 0),
@@ -1196,25 +1198,24 @@ var JxA, dA4 = (A) => JxA.some((Q) => A[Q] !== void 0),
             stdio: Q
         } = A;
         if (Q === void 0) return JxA.map((G) => A[G]);
-        if (dA4(A)) throw Error(`It's not possible to provide \`stdio\` in combination with one of ${JxA.map((G)=>`\`${G}\``).join(", ")}`);
+        if (dA4(A)) throw Error(`It's not possible to provide \`stdio\` in combination with one of TextComponent{JxA.map((G)=>`\`TextComponent{G}\``).join(", ")}`);
         if (typeof Q === "string") return Q;
-        if (!Array.isArray(Q)) throw TypeError(`Expected \`stdio\` to be of type \`string\` or \`Array\`, got \`${typeof Q}\``);
+        if (!Array.isArray(Q)) throw TypeError(`Expected \`stdio\` to be of type \`string\` or \`Array\`, got \`TextComponent{typeof Q}\``);
         let B = Math.max(Q.length, JxA.length);
         return Array.from({
             length: B
         }, (G, Z) => Q[Z])
     };
-var jx0 = L(() => {
+var jx0 = lazyLoader(() => {
     JxA = ["stdin", "stdout", "stderr"]
 });
 var ms;
-var Sx0 = L(() => {
+var Sx0 = lazyLoader(() => {
     ms = [];
     ms.push("SIGHUP", "SIGINT", "SIGTERM");
     if (process.platform !== "win32") ms.push("SIGALRM", "SIGABRT", "SIGVTALRM", "SIGXCPU", "SIGXFSZ", "SIGUSR2", "SIGTRAP", "SIGSYS", "SIGQUIT", "SIGIOT");
     if (process.platform === "linux") ms.push("SIGIO", "SIGPOLL", "SIGPWR", "SIGSTKFLT")
 });
-
 class _x0 {
     emitted = {
         afterExit: !1,
@@ -1254,7 +1255,6 @@ class _x0 {
         return G
     }
 }
-
 class QH1 {}
 var WxA = (A) => !!A && typeof A === "object" && typeof A.removeListener === "function" && typeof A.emit === "function" && typeof A.reallyExit === "function" && typeof A.listeners === "function" && typeof A.kill === "function" && typeof A.pid === "number" && typeof A.on === "function",
     tD1, eD1, cA4, pA4 = (A) => {
@@ -1271,7 +1271,7 @@ var WxA = (A) => !!A && typeof A === "object" && typeof A.removeListener === "fu
         }
     },
     kx0, yx0, AH1, XxA, mQ7, dQ7;
-var BH1 = L(() => {
+var BH1 = lazyLoader(() => {
     Sx0();
     tD1 = Symbol.for("signal-exit emitter"), eD1 = globalThis, cA4 = Object.defineProperty.bind(Object);
     kx0 = class kx0 extends QH1 {
@@ -1380,7 +1380,7 @@ var iA4 = 5000,
         forceKillAfterTimeout: A = !0
     }) => {
         if (A === !0) return iA4;
-        if (!Number.isFinite(A) || A < 0) throw TypeError(`Expected the \`forceKillAfterTimeout\` option to be a non-negative integer, got \`${A}\` (${typeof A})`);
+        if (!Number.isFinite(A) || A < 0) throw TypeError(`Expected the \`forceKillAfterTimeout\` option to be a non-negative integer, got \`TextComponent{A}\` (TextComponent{typeof A})`);
         return A
     },
     vx0 = (A, Q) => {
@@ -1410,7 +1410,7 @@ var iA4 = 5000,
     fx0 = ({
         timeout: A
     }) => {
-        if (A !== void 0 && (!Number.isFinite(A) || A < 0)) throw TypeError(`Expected the \`timeout\` option to be a non-negative integer, got \`${A}\` (${typeof A})`)
+        if (A !== void 0 && (!Number.isFinite(A) || A < 0)) throw TypeError(`Expected the \`timeout\` option to be a non-negative integer, got \`TextComponent{A}\` (TextComponent{typeof A})`)
     },
     hx0 = async (A, {
         cleanup: Q,
@@ -1424,7 +1424,7 @@ var iA4 = 5000,
             Z()
         })
     };
-var gx0 = L(() => {
+var gx0 = lazyLoader(() => {
     BH1()
 });
 
@@ -1455,7 +1455,6 @@ var A14 = (A) => A instanceof eA4 && typeof A.then === "function",
         if (A.all !== void 0) A.pipeAll = ZH1.bind(void 0, A, "all")
     };
 var mx0 = () => {};
-
 var GKA = async (A, {
     init: Q,
     convertChunk: B,

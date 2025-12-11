@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_034.js
+ * 处理时间: 2025-12-09T03:41:37.660Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.993Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -49,7 +52,7 @@
                     return D(xA, ZA), xA
                 }
 
-function K1(dA, YA) {
+                function K1(dA, YA) {
                     var ZA = this;
                     dA = C(dA);
                     var jA = new K(function(xA, mA) {
@@ -76,7 +79,7 @@ function K1(dA, YA) {
                     return D(jA, YA), jA
                 }
 
-function WA(dA) {
+                function WA(dA) {
                     var YA = this,
                         ZA = new K(function(jA, xA) {
                             YA.ready().then(function() {
@@ -100,7 +103,7 @@ function WA(dA) {
                     return D(ZA, dA), ZA
                 }
 
-function XA(dA) {
+                function XA(dA) {
                     var YA = this,
                         ZA = new K(function(jA, xA) {
                             YA.ready().then(function() {
@@ -123,7 +126,7 @@ function XA(dA) {
                     return D(ZA, dA), ZA
                 }
 
-function zA(dA, YA) {
+                function zA(dA, YA) {
                     var ZA = this,
                         jA = new K(function(xA, mA) {
                             if (dA < 0) {
@@ -187,7 +190,7 @@ function zA(dA, YA) {
                     return D(ZA, dA), ZA
                 }
 
-function LA(dA, YA) {
+                function LA(dA, YA) {
                     YA = E.apply(this, arguments);
                     var ZA = this.config();
                     if (dA = typeof dA !== "function" && dA || {}, !dA.name) dA.name = dA.name || ZA.name, dA.storeName = dA.storeName || ZA.storeName;
@@ -273,8 +276,7 @@ function LA(dA, YA) {
                     }
                     return D(xA, YA), xA
                 }
-
-var TA = {
+                var TA = {
                     _driver: "asyncStorage",
                     _initStorage: qA,
                     _support: F(),
@@ -289,10 +291,11 @@ var TA = {
                     dropInstance: LA
                 };
 
-function eA() {
+                function eA() {
                     return typeof openDatabase === "function"
                 }
-                var aA = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
+                /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+var BASE64_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
                     I1 = "~~local_forage_type~",
                     w1 = /^~~local_forage_type~([^~]+)~/,
                     PA = "__lfsc__:",
@@ -311,7 +314,7 @@ function eA() {
                     Z0 = B1 + Q0.length,
                     J0 = Object.prototype.toString;
 
-function s1(dA) {
+                function s1(dA) {
                     var YA = dA.length * 0.75,
                         ZA = dA.length,
                         jA, xA = 0,
@@ -321,21 +324,21 @@ function s1(dA) {
                     }
                     var c1 = new ArrayBuffer(YA),
                         l1 = new Uint8Array(c1);
-                    for (jA = 0; jA < ZA; jA += 4) mA = aA.indexOf(dA[jA]), E1 = aA.indexOf(dA[jA + 1]), S1 = aA.indexOf(dA[jA + 2]), P1 = aA.indexOf(dA[jA + 3]), l1[xA++] = mA << 2 | E1 >> 4, l1[xA++] = (E1 & 15) << 4 | S1 >> 2, l1[xA++] = (S1 & 3) << 6 | P1 & 63;
+                    for (jA = 0; jA < ZA; jA += 4) mA = BASE64_CHARS.indexOf(dA[jA]), E1 = BASE64_CHARS.indexOf(dA[jA + 1]), S1 = BASE64_CHARS.indexOf(dA[jA + 2]), P1 = BASE64_CHARS.indexOf(dA[jA + 3]), l1[xA++] = mA << 2 | E1 >> 4, l1[xA++] = (E1 & 15) << 4 | S1 >> 2, l1[xA++] = (S1 & 3) << 6 | P1 & 63;
                     return c1
                 }
 
-function p0(dA) {
+                function p0(dA) {
                     var YA = new Uint8Array(dA),
                         ZA = "",
                         jA;
-                    for (jA = 0; jA < YA.length; jA += 3) ZA += aA[YA[jA] >> 2], ZA += aA[(YA[jA] & 3) << 4 | YA[jA + 1] >> 4], ZA += aA[(YA[jA + 1] & 15) << 2 | YA[jA + 2] >> 6], ZA += aA[YA[jA + 2] & 63];
+                    for (jA = 0; jA < YA.length; jA += 3) ZA += BASE64_CHARS[YA[jA] >> 2], ZA += BASE64_CHARS[(YA[jA] & 3) << 4 | YA[jA + 1] >> 4], ZA += BASE64_CHARS[(YA[jA + 1] & 15) << 2 | YA[jA + 2] >> 6], ZA += BASE64_CHARS[YA[jA + 2] & 63];
                     if (YA.length % 3 === 2) ZA = ZA.substring(0, ZA.length - 1) + "=";
                     else if (YA.length % 3 === 1) ZA = ZA.substring(0, ZA.length - 2) + "==";
                     return ZA
                 }
 
-function HQ(dA, YA) {
+                function HQ(dA, YA) {
                     var ZA = "";
                     if (dA) ZA = J0.call(dA);
                     if (dA && (ZA === "[object ArrayBuffer]" || dA.buffer && J0.call(dA.buffer) === "[object ArrayBuffer]")) {
@@ -365,7 +368,7 @@ function HQ(dA, YA) {
                     }
                 }
 
-function ZB(dA) {
+                function ZB(dA) {
                     if (dA.substring(0, B1) !== PA) return JSON.parse(dA);
                     var YA = dA.substring(Z0),
                         ZA = dA.substring(B1, Z0),
@@ -404,19 +407,18 @@ function ZB(dA) {
                             throw Error("Unkown type: " + ZA)
                     }
                 }
-
-var rQ = {
+                var rQ = {
                     serialize: HQ,
                     deserialize: ZB,
                     stringToBuffer: s1,
                     bufferToString: p0
                 };
 
-function PB(dA, YA, ZA, jA) {
+                function PB(dA, YA, ZA, jA) {
                     dA.executeSql("CREATE TABLE IF NOT EXISTS " + YA.storeName + " (id INTEGER PRIMARY KEY, key unique, value)", [], ZA, jA)
                 }
 
-function IQ(dA) {
+                function IQ(dA) {
                     var YA = this,
                         ZA = {
                             db: null
@@ -440,7 +442,7 @@ function IQ(dA) {
                     return ZA.serializer = rQ, xA
                 }
 
-function l9(dA, YA, ZA, jA, xA, mA) {
+                function l9(dA, YA, ZA, jA, xA, mA) {
                     dA.executeSql(ZA, jA, xA, function(E1, S1) {
                         if (S1.code === S1.SYNTAX_ERR) E1.executeSql("SELECT name FROM sqlite_master WHERE type='table' AND name = ?", [YA.storeName], function(P1, c1) {
                             if (!c1.rows.length) PB(P1, YA, function() {
@@ -452,7 +454,7 @@ function l9(dA, YA, ZA, jA, xA, mA) {
                     }, mA)
                 }
 
-function h4(dA, YA) {
+                function h4(dA, YA) {
                     var ZA = this;
                     dA = C(dA);
                     var jA = new K(function(xA, mA) {
@@ -472,7 +474,7 @@ function h4(dA, YA) {
                     return D(jA, YA), jA
                 }
 
-function p5(dA, YA) {
+                function p5(dA, YA) {
                     var ZA = this,
                         jA = new K(function(xA, mA) {
                             ZA.ready().then(function() {
@@ -500,7 +502,7 @@ function p5(dA, YA) {
                     return D(jA, YA), jA
                 }
 
-function uG(dA, YA, ZA, jA) {
+                function uG(dA, YA, ZA, jA) {
                     var xA = this;
                     dA = C(dA);
                     var mA = new K(function(E1, S1) {
@@ -531,11 +533,11 @@ function uG(dA, YA, ZA, jA) {
                     return D(mA, ZA), mA
                 }
 
-function DG(dA, YA, ZA) {
+                function DG(dA, YA, ZA) {
                     return uG.apply(this, [dA, YA, ZA, 1])
                 }
 
-function C3(dA, YA) {
+                function C3(dA, YA) {
                     var ZA = this;
                     dA = C(dA);
                     var jA = new K(function(xA, mA) {
@@ -553,7 +555,7 @@ function C3(dA, YA) {
                     return D(jA, YA), jA
                 }
 
-function CZ(dA) {
+                function CZ(dA) {
                     var YA = this,
                         ZA = new K(function(jA, xA) {
                             YA.ready().then(function() {
@@ -570,7 +572,7 @@ function CZ(dA) {
                     return D(ZA, dA), ZA
                 }
 
-function LI(dA) {
+                function LI(dA) {
                     var YA = this,
                         ZA = new K(function(jA, xA) {
                             YA.ready().then(function() {
@@ -588,7 +590,7 @@ function LI(dA) {
                     return D(ZA, dA), ZA
                 }
 
-function e8(dA, YA) {
+                function e8(dA, YA) {
                     var ZA = this,
                         jA = new K(function(xA, mA) {
                             ZA.ready().then(function() {
@@ -606,7 +608,7 @@ function e8(dA, YA) {
                     return D(jA, YA), jA
                 }
 
-function _5(dA) {
+                function _5(dA) {
                     var YA = this,
                         ZA = new K(function(jA, xA) {
                             YA.ready().then(function() {
@@ -625,7 +627,7 @@ function _5(dA) {
                     return D(ZA, dA), ZA
                 }
 
-function mG(dA) {
+                function mG(dA) {
                     return new K(function(YA, ZA) {
                         dA.transaction(function(jA) {
                             jA.executeSql("SELECT name FROM sqlite_master WHERE type='table' AND name <> '__WebKitDatabaseInfoTable__'", [], function(xA, mA) {
@@ -644,7 +646,7 @@ function mG(dA) {
                     })
                 }
 
-function dG(dA, YA) {
+                function dG(dA, YA) {
                     YA = E.apply(this, arguments);
                     var ZA = this.config();
                     if (dA = typeof dA !== "function" && dA || {}, !dA.name) dA.name = dA.name || ZA.name, dA.storeName = dA.storeName || ZA.storeName;
@@ -672,8 +674,7 @@ function dG(dA, YA) {
                                         })
                                     })
                                 }
-
-var l1 = [];
+                                var l1 = [];
                                 for (var I0 = 0, e0 = mA.storeNames.length; I0 < e0; I0++) l1.push(c1(mA.storeNames[I0]));
                                 K.all(l1).then(function() {
                                     E1()
@@ -687,8 +688,7 @@ var l1 = [];
                     });
                     return D(xA, YA), xA
                 }
-
-var U1 = {
+                var U1 = {
                     _driver: "webSQLStorage",
                     _initStorage: IQ,
                     _support: eA(),
@@ -703,7 +703,7 @@ var U1 = {
                     dropInstance: dG
                 };
 
-function nA() {
+                function nA() {
                     try {
                         return typeof localStorage < "u" && "setItem" in localStorage && !!localStorage.setItem
                     } catch (dA) {
@@ -711,13 +711,13 @@ function nA() {
                     }
                 }
 
-function C1(dA, YA) {
+                function C1(dA, YA) {
                     var ZA = dA.name + "/";
                     if (dA.storeName !== YA.storeName) ZA += dA.storeName + "/";
                     return ZA
                 }
 
-function O1() {
+                function O1() {
                     var dA = "_localforage_support_test";
                     try {
                         return localStorage.setItem(dA, !0), localStorage.removeItem(dA), !1
@@ -726,11 +726,11 @@ function O1() {
                     }
                 }
 
-function y1() {
+                function y1() {
                     return !O1() || localStorage.length > 0
                 }
 
-function O0(dA) {
+                function O0(dA) {
                     var YA = this,
                         ZA = {};
                     if (dA)
@@ -739,7 +739,7 @@ function O0(dA) {
                     return YA._dbInfo = ZA, ZA.serializer = rQ, K.resolve()
                 }
 
-function oQ(dA) {
+                function oQ(dA) {
                     var YA = this,
                         ZA = YA.ready().then(function() {
                             var jA = YA._dbInfo.keyPrefix;
@@ -751,7 +751,7 @@ function oQ(dA) {
                     return D(ZA, dA), ZA
                 }
 
-function lB(dA, YA) {
+                function lB(dA, YA) {
                     var ZA = this;
                     dA = C(dA);
                     var jA = ZA.ready().then(function() {
@@ -763,7 +763,7 @@ function lB(dA, YA) {
                     return D(jA, YA), jA
                 }
 
-function k9(dA, YA) {
+                function k9(dA, YA) {
                     var ZA = this,
                         jA = ZA.ready().then(function() {
                             var xA = ZA._dbInfo,
@@ -782,7 +782,7 @@ function k9(dA, YA) {
                     return D(jA, YA), jA
                 }
 
-function C6(dA, YA) {
+                function C6(dA, YA) {
                     var ZA = this,
                         jA = ZA.ready().then(function() {
                             var xA = ZA._dbInfo,
@@ -798,7 +798,7 @@ function C6(dA, YA) {
                     return D(jA, YA), jA
                 }
 
-function y9(dA) {
+                function y9(dA) {
                     var YA = this,
                         ZA = YA.ready().then(function() {
                             var jA = YA._dbInfo,
@@ -813,7 +813,7 @@ function y9(dA) {
                     return D(ZA, dA), ZA
                 }
 
-function A6(dA) {
+                function A6(dA) {
                     var YA = this,
                         ZA = YA.keys().then(function(jA) {
                             return jA.length
@@ -821,7 +821,7 @@ function A6(dA) {
                     return D(ZA, dA), ZA
                 }
 
-function v6(dA, YA) {
+                function v6(dA, YA) {
                     var ZA = this;
                     dA = C(dA);
                     var jA = ZA.ready().then(function() {
@@ -831,7 +831,7 @@ function v6(dA, YA) {
                     return D(jA, YA), jA
                 }
 
-function w8(dA, YA, ZA) {
+                function w8(dA, YA, ZA) {
                     var jA = this;
                     dA = C(dA);
                     var xA = jA.ready().then(function() {
@@ -853,7 +853,7 @@ function w8(dA, YA, ZA) {
                     return D(xA, ZA), xA
                 }
 
-function i9(dA, YA) {
+                function i9(dA, YA) {
                     if (YA = E.apply(this, arguments), dA = typeof dA !== "function" && dA || {}, !dA.name) {
                         var ZA = this.config();
                         dA.name = dA.name || ZA.name, dA.storeName = dA.storeName || ZA.storeName
@@ -872,8 +872,7 @@ function i9(dA, YA) {
                     });
                     return D(xA, YA), xA
                 }
-
-var Q6 = {
+                var Q6 = {
                         _driver: "localStorageWrapper",
                         _initStorage: O0,
                         _support: nA(),
@@ -921,7 +920,7 @@ var Q6 = {
                         version: 1
                     };
 
-function w4(dA, YA) {
+                function w4(dA, YA) {
                     dA[YA] = function() {
                         var ZA = arguments;
                         return dA.ready().then(function() {
@@ -930,7 +929,7 @@ function w4(dA, YA) {
                     }
                 }
 
-function E3() {
+                function E3() {
                     for (var dA = 1; dA < arguments.length; dA++) {
                         var YA = arguments[dA];
                         if (YA) {
@@ -942,8 +941,7 @@ function E3() {
                     }
                     return arguments[0]
                 }
-
-var V9 = function() {
+                var V9 = function() {
                         function dA(YA) {
                             J(this, dA);
                             for (var ZA in g4)
@@ -983,8 +981,7 @@ var V9 = function() {
                                             return
                                         }
                                     }
-
-var EB = function() {
+                                    var EB = function() {
                                         var J7 = function(AJ) {
                                             return function() {
                                                 var B4 = Error("Method " + AJ + " is not implemented by the current driver"),
@@ -998,8 +995,7 @@ var EB = function() {
                                         }
                                     };
                                     EB();
-
-var m2 = function(J7) {
+                                    var m2 = function(J7) {
                                         if (k5[P1]) console.info("Redefining LocalForage driver: " + P1);
                                         k5[P1] = ZA, g9[P1] = J7, E1()
                                     };
@@ -1032,19 +1028,19 @@ var m2 = function(J7) {
                             if (!B6(ZA)) ZA = [ZA];
                             var E1 = this._getSupportedDrivers(ZA);
 
-function S1() {
+                            function S1() {
                                 mA._config.driver = mA.driver()
                             }
 
-function P1(I0) {
+                            function P1(I0) {
                                 return mA._extend(I0), S1(), mA._ready = mA._initStorage(mA._config), mA._ready
                             }
 
-function c1(I0) {
+                            function c1(I0) {
                                 return function() {
                                     var e0 = 0;
 
-function dQ() {
+                                    function dQ() {
                                         while (e0 < I0.length) {
                                             var iB = I0[e0];
                                             return e0++, mA._dbInfo = null, mA._ready = null, mA.getDriver(iB).then(P1).catch(dQ)
@@ -1094,7 +1090,7 @@ function dQ() {
         }, {}, [4])(4)
     })
 });
-var ve2 = U((xe2) => {
+var ve2 = moduleWrapper((xe2) => {
     Object.defineProperty(xe2, "__esModule", {
         value: !0
     });
@@ -1102,8 +1098,7 @@ var ve2 = U((xe2) => {
         VU3 = ye2(),
         IQA = RPA(),
         sn = ny.GLOBAL_OBJ;
-
-class TPA {
+    class TPA {
         static __initStatic() {
             this.id = "Offline"
         }
@@ -1162,7 +1157,7 @@ class TPA {
     TPA.__initStatic();
     xe2.Offline = TPA
 });
-var me2 = U((ue2) => {
+var me2 = moduleWrapper((ue2) => {
     Object.defineProperty(ue2, "__esModule", {
         value: !0
     });
@@ -1174,11 +1169,11 @@ var me2 = U((ue2) => {
         HU3 = (A = {}) => {
             let Q = A.types || ["crash", "deprecation", "intervention"];
 
-function B(G) {
+            function B(G) {
                 if (!be2.has(PPA.getClient())) return;
                 for (let Z of G) PPA.withScope((I) => {
                     I.setExtra("url", Z.url);
-                    let Y = `ReportingObserver [${Z.type}]`,
+                    let Y = `ReportingObserver [TextComponent{Z.type}]`,
                         J = "No details available";
                     if (Z.body) {
                         let W = {};
@@ -1188,7 +1183,7 @@ function B(G) {
                             J = [X.crashId || "", X.reason || ""].join(" ").trim() || J
                         } else J = Z.body.message || J
                     }
-                    PPA.captureMessage(`${Y}: ${J}`)
+                    PPA.captureMessage(`TextComponent{Y}: TextComponent{J}`)
                 })
             }
             return {
@@ -1210,7 +1205,7 @@ function B(G) {
     ue2.ReportingObserver = CU3;
     ue2.reportingObserverIntegration = ge2
 });
-var ne2 = U((ie2) => {
+var ne2 = moduleWrapper((ie2) => {
     Object.defineProperty(ie2, "__esModule", {
         value: !0
     });
@@ -1227,12 +1222,12 @@ var ne2 = U((ie2) => {
                     if (J || W) {
                         let X = J ? Y.filename.replace(/^[a-zA-Z]:/, "").replace(/\\/g, "/") : Y.filename,
                             F = Q ? de2.relative(Q, X) : de2.basename(X);
-                        Y.filename = `${B}${F}`
+                        Y.filename = `TextComponent{B}TextComponent{F}`
                     }
                     return Y
                 });
 
-function Z(Y) {
+            function Z(Y) {
                 try {
                     return {
                         ...Y,
@@ -1251,7 +1246,7 @@ function Z(Y) {
                 }
             }
 
-function I(Y) {
+            function I(Y) {
                 return {
                     ...Y,
                     frames: Y && Y.frames && Y.frames.map((J) => G(J))
@@ -1272,7 +1267,7 @@ function I(Y) {
     ie2.RewriteFrames = $U3;
     ie2.rewriteFramesIntegration = le2
 });
-var te2 = U((oe2) => {
+var te2 = moduleWrapper((oe2) => {
     Object.defineProperty(oe2, "__esModule", {
         value: !0
     });
@@ -1302,7 +1297,7 @@ var te2 = U((oe2) => {
     oe2.SessionTiming = LU3;
     oe2.sessionTimingIntegration = re2
 });
-var QA9 = U((AA9) => {
+var QA9 = moduleWrapper((AA9) => {
     Object.defineProperty(AA9, "__esModule", {
         value: !0
     });
@@ -1327,17 +1322,17 @@ var QA9 = U((AA9) => {
         },
         PU3 = RU3.convertIntegrationFnToClass(ee2, TU3);
 
-function jU3(A) {
+    function jU3(A) {
         let Q = A.exception && A.exception.values && A.exception.values[0];
         return Q && Q.stacktrace && Q.stacktrace.frames || []
     }
 
-function SU3(A) {
-        return A.module || A.function ? `${A.module||"?"}/${A.function||"?"}` : "<unknown>"
+    function SU3(A) {
+        return A.module || A.function ? `TextComponent{A.module||"?"}/TextComponent{A.function||"?"}` : "<unknown>"
     }
     AA9.Transaction = PU3
 });
-var XA9 = U((WA9) => {
+var XA9 = moduleWrapper((WA9) => {
     Object.defineProperty(WA9, "__esModule", {
         value: !0
     });
@@ -1364,7 +1359,7 @@ var XA9 = U((WA9) => {
         GA9 = Hg.defineIntegration(kU3),
         yU3 = Hg.convertIntegrationFnToClass(BA9, GA9);
 
-function xU3(A, Q, B, G) {
+    function xU3(A, Q, B, G) {
         if (IA9(A, B.status, B.url)) {
             let Z = cU3(Q, G),
                 I, Y, J, W;
@@ -1390,7 +1385,7 @@ function xU3(A, Q, B, G) {
                     let H = K[F] || K[F.toLowerCase()] || void 0;
                     if (H) D = ZA9(H)
                 } catch (H) {
-                    IZ1.DEBUG_BUILD && ay.logger.log(`Could not extract cookies from header ${F}`)
+                    IZ1.DEBUG_BUILD && ay.logger.log(`Could not extract cookies from header TextComponent{F}`)
                 }
                 return {
                     headers: K,
@@ -1410,7 +1405,7 @@ function xU3(A, Q, B, G) {
         }
     }
 
-function vU3(A, Q, B, G) {
+    function vU3(A, Q, B, G) {
         if (IA9(A, Q.status, Q.responseURL)) {
             let Z, I, Y;
             if (JA9()) {
@@ -1439,7 +1434,7 @@ function vU3(A, Q, B, G) {
         }
     }
 
-function bU3(A) {
+    function bU3(A) {
         if (A) {
             let Q = A["Content-Length"] || A["content-length"];
             if (Q) return parseInt(Q, 10)
@@ -1447,21 +1442,21 @@ function bU3(A) {
         return
     }
 
-function ZA9(A) {
+    function ZA9(A) {
         return A.split("; ").reduce((Q, B) => {
             let [G, Z] = B.split("=");
             return Q[G] = Z, Q
         }, {})
     }
 
-function fU3(A) {
+    function fU3(A) {
         let Q = {};
         return A.forEach((B, G) => {
             Q[G] = B
         }), Q
     }
 
-function hU3(A) {
+    function hU3(A) {
         let Q = A.getAllResponseHeaders();
         if (!Q) return {};
         return Q.split(`\r
@@ -1471,21 +1466,21 @@ function hU3(A) {
         }, {})
     }
 
-function gU3(A, Q) {
+    function gU3(A, Q) {
         return A.some((B) => {
             if (typeof B === "string") return Q.includes(B);
             return B.test(Q)
         })
     }
 
-function uU3(A, Q) {
+    function uU3(A, Q) {
         return A.some((B) => {
             if (typeof B === "number") return B === Q;
             return Q >= B[0] && Q <= B[1]
         })
     }
 
-function mU3(A, Q) {
+    function mU3(A, Q) {
         if (!ay.supportsNativeFetch()) return;
         ay.addFetchInstrumentationHandler((B) => {
             if (Hg.getClient() !== A) return;
@@ -1498,7 +1493,7 @@ function mU3(A, Q) {
         })
     }
 
-function dU3(A, Q) {
+    function dU3(A, Q) {
         if (!("XMLHttpRequest" in ay.GLOBAL_OBJ)) return;
         ay.addXhrInstrumentationHandler((B) => {
             if (Hg.getClient() !== A) return;
@@ -1517,6 +1512,6 @@ function dU3(A, Q) {
         })
     }
 
-function IA9(A, Q, B) {
+    function IA9(A, Q, B) {
         return uU3(A.failedRequestStatusCodes, Q) && gU3(A.failedRequestTargets, B) && !Hg.isSentryRequestUrl(B, Hg.getClient())
     }

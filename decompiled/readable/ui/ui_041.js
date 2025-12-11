@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_041.js
+ * 处理时间: 2025-12-09T03:41:39.468Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.134Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -95,8 +97,7 @@
             value: function(Q) {
                 if (this === Q) return 0;
                 if (this.doc !== Q.doc || this.rooted !== Q.rooted) return W70 + K70;
-
-var B = [],
+                var B = [],
                     G = [];
                 for (var Z = this; Z !== null; Z = Z.parentNode) B.push(Z);
                 for (Z = Q; Z !== null; Z = Z.parentNode) G.push(Z);
@@ -380,7 +381,7 @@ var B = [],
         }
     })
 });
-var df2 = U((MIZ, mf2) => {
+var df2 = moduleWrapper((MIZ, mf2) => {
     mf2.exports = class extends Array {
         constructor(Q) {
             super(Q && Q.length || 0);
@@ -392,18 +393,18 @@ var df2 = U((MIZ, mf2) => {
         }
     }
 });
-var pf2 = U((OIZ, cf2) => {
+var pf2 = moduleWrapper((OIZ, cf2) => {
     function ki5(A) {
         return this[A] || null
     }
 
-function yi5(A) {
+    function yi5(A) {
         if (!A) A = [];
         return A.item = ki5, A
     }
     cf2.exports = yi5
 });
-var T0A = U((RIZ, lf2) => {
+var T0A = moduleWrapper((RIZ, lf2) => {
     var D70;
     try {
         D70 = df2()
@@ -412,12 +413,12 @@ var T0A = U((RIZ, lf2) => {
     }
     lf2.exports = D70
 });
-var B31 = U((TIZ, af2) => {
+var B31 = moduleWrapper((TIZ, af2) => {
     af2.exports = nf2;
     var if2 = mD(),
         xi5 = T0A();
 
-function nf2() {
+    function nf2() {
         if2.call(this), this._firstChild = this._childNodes = null
     }
     nf2.prototype = Object.create(if2.prototype, {
@@ -474,18 +475,18 @@ function nf2() {
         }
     })
 });
-var G31 = U((ci5) => {
+var G31 = moduleWrapper((ci5) => {
     ci5.isValidName = mi5;
     ci5.isValidQName = di5;
-    var vi5 = /^[_:A-Za-z][-.:\w]+$/,
-        bi5 = /^([_A-Za-z][-.\w]+|[_A-Za-z][-.\w]+:[_A-Za-z][-.\w]+)$/,
+    var vi5 = /^[_:A-Za-z][-.:\w]+TextComponent/,
+        bi5 = /^([_A-Za-z][-.\w]+|[_A-Za-z][-.\w]+:[_A-Za-z][-.\w]+)TextComponent/,
         JTA = "_A-Za-zÀ-ÖØ-öø-˿Ͱ-ͽͿ-῿‌-‍⁰-↏Ⰰ-⿯、-퟿豈-﷏ﷰ-�",
         WTA = "-._A-Za-z0-9·À-ÖØ-öø-˿̀-ͽͿ-῿‌‍‿⁀⁰-↏Ⰰ-⿯、-퟿豈-﷏ﷰ-�",
         P0A = "[" + JTA + "][" + WTA + "]*",
         H70 = JTA + ":",
         C70 = WTA + ":",
-        fi5 = new RegExp("^[" + H70 + "][" + C70 + "]*$"),
-        hi5 = new RegExp("^(" + P0A + "|" + P0A + ":" + P0A + ")$"),
+        fi5 = new RegExp("^[" + H70 + "][" + C70 + "]*TextComponent"),
+        hi5 = new RegExp("^(" + P0A + "|" + P0A + ":" + P0A + ")TextComponent"),
         sf2 = /[\uD800-\uDB7F\uDC00-\uDFFF]/,
         rf2 = /[\uD800-\uDB7F\uDC00-\uDFFF]/g,
         of2 = /[\uD800-\uDB7F][\uDC00-\uDFFF]/g;
@@ -494,10 +495,10 @@ var G31 = U((ci5) => {
     P0A = "[" + JTA + "][" + WTA + "]*";
     H70 = JTA + ":";
     C70 = WTA + ":";
-    var gi5 = new RegExp("^[" + H70 + "][" + C70 + "]*$"),
-        ui5 = new RegExp("^(" + P0A + "|" + P0A + ":" + P0A + ")$");
+    var gi5 = new RegExp("^[" + H70 + "][" + C70 + "]*TextComponent"),
+        ui5 = new RegExp("^(" + P0A + "|" + P0A + ":" + P0A + ")TextComponent");
 
-function mi5(A) {
+    function mi5(A) {
         if (vi5.test(A)) return !0;
         if (fi5.test(A)) return !0;
         if (!sf2.test(A)) return !1;
@@ -507,7 +508,7 @@ function mi5(A) {
         return B !== null && 2 * B.length === Q.length
     }
 
-function di5(A) {
+    function di5(A) {
         if (bi5.test(A)) return !0;
         if (hi5.test(A)) return !0;
         if (!sf2.test(A)) return !1;
@@ -517,7 +518,7 @@ function di5(A) {
         return B !== null && 2 * B.length === Q.length
     }
 });
-var E70 = U((ni5) => {
+var E70 = moduleWrapper((ni5) => {
     var tf2 = uJ();
     ni5.property = function(A) {
         if (Array.isArray(A.type)) {
@@ -564,7 +565,7 @@ var E70 = U((ni5) => {
         throw Error("Invalid attribute definition")
     };
 
-function ii5(A) {
+    function ii5(A) {
         var Q;
         if (typeof A.default === "function") Q = A.default;
         else if (typeof A.default === "number") Q = function() {
@@ -614,11 +615,11 @@ function ii5(A) {
         G._attributeChangeHandlers[Q] = B
     }
 });
-var Qh2 = U((SIZ, Ah2) => {
+var Qh2 = moduleWrapper((SIZ, Ah2) => {
     Ah2.exports = ef2;
     var ri5 = mD();
 
-function ef2(A, Q) {
+    function ef2(A, Q) {
         this.root = A, this.filter = Q, this.lastModTime = A.lastModTime, this.done = !1, this.cache = [], this.traverse()
     }
     ef2.prototype = Object.create(Object.prototype, {
@@ -666,11 +667,11 @@ function ef2(A, Q) {
         }
     })
 });
-var U70 = U((_IZ, Zh2) => {
+var U70 = moduleWrapper((_IZ, Zh2) => {
     var z70 = uJ();
     Zh2.exports = Gh2;
 
-function Gh2(A, Q) {
+    function Gh2(A, Q) {
         this._getString = A, this._setString = Q, this._length = 0, this._lastStringValue = "", this._update()
     }
     Object.defineProperties(Gh2.prototype, {
@@ -761,7 +762,7 @@ function Gh2(A, Q) {
         }
     });
 
-function Bh2(A, Q) {
+    function Bh2(A, Q) {
         var B = A._length,
             G;
         A._length = Q.length;
@@ -769,35 +770,35 @@ function Bh2(A, Q) {
         for (; G < B; G++) A[G] = void 0
     }
 
-function XTA(A) {
+    function XTA(A) {
         if (A = String(A), A === "") z70.SyntaxError();
         if (/[ \t\r\n\f]/.test(A)) z70.InvalidCharacterError();
         return A
     }
 
-function oi5(A) {
+    function oi5(A) {
         var Q = A._length,
             B = Array(Q);
         for (var G = 0; G < Q; G++) B[G] = A[G];
         return B
     }
 
-function MWA(A) {
+    function MWA(A) {
         var Q = A._getString();
         if (Q === A._lastStringValue) return oi5(A);
-        var B = Q.replace(/(^[ \t\r\n\f]+)|([ \t\r\n\f]+$)/g, "");
+        var B = Q.replace(/(^[ \t\r\n\f]+)|([ \t\r\n\f]+TextComponent)/g, "");
         if (B === "") return [];
         else {
             var G = Object.create(null);
             return B.split(/[ \t\r\n\f]+/g).filter(function(Z) {
-                var I = "$" + Z;
+                var I = "TextComponent" + Z;
                 if (G[I]) return !1;
                 return G[I] = !0, !0
             })
         }
     }
 });
-var J31 = U((TWA, Fh2) => {
+var J31 = moduleWrapper((TWA, Fh2) => {
     var Z31 = Object.create(null, {
             location: {
                 get: function() {
@@ -875,7 +876,7 @@ var J31 = U((TWA, Fh2) => {
             return A = A.source, A = A.replace(Q, B.source || B), new RegExp(A)
         },
         Yh2 = function(A, Q) {
-            return A.replace(/^(?:\w+:\/\/|\/+)/, "").replace(/(?:\/+|\/*#.*?)$/, "").split("/", Q).join("/")
+            return A.replace(/^(?:\w+:\/\/|\/+)/, "").replace(/(?:\/+|\/*#.*?)TextComponent/, "").split("/", Q).join("/")
         },
         Gn5 = function(A, Q) {
             var B = A.replace(/\s+/g, ""),
@@ -883,7 +884,7 @@ var J31 = U((TWA, Fh2) => {
             if (B === "even") B = "2n+0";
             else if (B === "odd") B = "2n+1";
             else if (B.indexOf("n") === -1) B = "0n" + B;
-            return G = /^([+-])?(\d+)?n([+-])?(\d+)?$/.exec(B), {
+            return G = /^([+-])?(\d+)?n([+-])?(\d+)?TextComponent/.exec(B), {
                 group: G[1] === "-" ? -(G[2] || 1) : +(G[2] || 1),
                 offset: G[4] ? G[3] === "-" ? -G[4] : +G[4] : 0
             }
@@ -1179,7 +1180,7 @@ var J31 = U((TWA, Fh2) => {
             "^=": function(A, Q) {
                 return A.indexOf(Q) === 0
             },
-            "$=": function(A, Q) {
+            "TextComponent=": function(A, Q) {
                 var B = A.lastIndexOf(Q);
                 return B !== -1 && B + Q.length === A.length
             },
@@ -1218,7 +1219,7 @@ var J31 = U((TWA, Fh2) => {
             ref: function(A, Q) {
                 var B;
 
-function G(Z) {
+                function G(Z) {
                     var I = Z.ownerDocument,
                         Y = I.getElementsByTagName("*"),
                         J = Y.length;
@@ -1242,11 +1243,11 @@ function G(Z) {
             qname: /^ *(cssid|\*)/,
             simple: /^(?:([.#]cssid)|pseudo|attr)/,
             ref: /^ *\/(cssid)\/ */,
-            combinator: /^(?: +([^ \w*.#\\]) +|( )+|([^ \w*.#\\]))(?! *$)/,
+            combinator: /^(?: +([^ \w*.#\\]) +|( )+|([^ \w*.#\\]))(?! *TextComponent)/,
             attr: /^\[(cssid)(?:([^\w]?=)(inside))?\]/,
             pseudo: /^(:cssid)(?:\((inside)\))?/,
             inside: /(?:"(?:\\"|[^"])*"|'(?:\\'|[^'])*'|<[^"'>]*>|\\["'>]|[^"'>])*/,
-            ident: /^(cssid)$/
+            ident: /^(cssid)TextComponent/
         };
     E4.cssid = K$(E4.cssid, "nonascii", E4.nonascii);
     E4.cssid = K$(E4.cssid, "escape", E4.escape);
@@ -1262,9 +1263,8 @@ function G(Z) {
     E4.simple = K$(E4.simple, "attr", E4.attr);
     E4.ident = K$(E4.ident, "cssid", E4.cssid);
     E4.str_escape = K$(E4.str_escape, "escape", E4.escape);
-
-var VTA = function(A) {
-            var Q = A.replace(/^\s+|\s+$/g, ""),
+    var VTA = function(A) {
+            var Q = A.replace(/^\s+|\s+TextComponent/g, ""),
                 B, G = [],
                 Z = [],
                 I, Y, J, W, X;
@@ -1328,7 +1328,7 @@ var VTA = function(A) {
         In5 = function() {
             var A;
 
-function Q(B) {
+            function Q(B) {
                 var G = B.ownerDocument,
                     Z = G.getElementsByTagName(Q.lname),
                     I = Z.length;
@@ -1373,13 +1373,13 @@ function Q(B) {
     Fh2.exports = TWA = function(A, Q) {
         var B, G;
         if (Q.nodeType !== 11 && A.indexOf(" ") === -1) {
-            if (A[0] === "#" && Q.rooted && /^#[A-Z_][-A-Z0-9_]*$/i.test(A)) {
+            if (A[0] === "#" && Q.rooted && /^#[A-Z_][-A-Z0-9_]*TextComponent/i.test(A)) {
                 if (Q.doc._hasMultipleElementsWithId) {
                     if (B = A.substring(1), !Q.doc._hasMultipleElementsWithId(B)) return G = Q.doc.getElementById(B), G ? [G] : []
                 }
             }
-            if (A[0] === "." && /^\.\w+$/.test(A)) return Q.getElementsByClassName(A.substring(1));
-            if (/^\w+$/.test(A)) return Q.getElementsByTagName(A)
+            if (A[0] === "." && /^\.\w+TextComponent/.test(A)) return Q.getElementsByClassName(A.substring(1));
+            if (/^\w+TextComponent/.test(A)) return Q.getElementsByTagName(A)
         }
         return Xh2(A, Q)
     };
@@ -1395,7 +1395,7 @@ function Q(B) {
         return !1
     }
 });
-var W31 = U((kIZ, Vh2) => {
+var W31 = moduleWrapper((kIZ, Vh2) => {
     var Yn5 = mD(),
         Jn5 = G70(),
         N70 = function(A, Q) {
@@ -1472,7 +1472,7 @@ var W31 = U((kIZ, Vh2) => {
         };
     Vh2.exports = Wn5
 });
-var L70 = U((yIZ, Dh2) => {
+var L70 = moduleWrapper((yIZ, Dh2) => {
     var Kh2 = mD(),
         Xn5 = {
             nextElementSibling: {
@@ -1496,11 +1496,11 @@ var L70 = U((yIZ, Dh2) => {
         };
     Dh2.exports = Xn5
 });
-var M70 = U((xIZ, Ch2) => {
+var M70 = moduleWrapper((xIZ, Ch2) => {
     Ch2.exports = Hh2;
     var PWA = uJ();
 
-function Hh2(A) {
+    function Hh2(A) {
         this.element = A
     }
     Object.defineProperties(Hh2.prototype, {

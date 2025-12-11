@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_050.js
+ * 处理时间: 2025-12-09T03:41:39.549Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.142Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -19,7 +21,7 @@
 
     nd2.SentryError = id2
 });
-var NO = U((Ac2) => {
+var NO = moduleWrapper((Ac2) => {
     Object.defineProperty(Ac2, "__esModule", {
         value: !0
     });
@@ -29,7 +31,7 @@ var NO = U((Ac2) => {
         Xt5 = vP(),
         ad2 = vTA();
 
-function Ft5(A, Q, B) {
+    function Ft5(A, Q, B) {
         if (!(Q in A)) return;
         let G = A[Q],
             Z = B(G);
@@ -37,7 +39,7 @@ function Ft5(A, Q, B) {
         A[Q] = Z
     }
 
-function od2(A, Q, B) {
+    function od2(A, Q, B) {
         try {
             Object.defineProperty(A, Q, {
                 value: B,
@@ -45,26 +47,26 @@ function od2(A, Q, B) {
                 configurable: !0
             })
         } catch (G) {
-            Wt5.DEBUG_BUILD && Xt5.logger.log(`Failed to add non-enumerable property "${Q}" to object`, A)
+            Wt5.DEBUG_BUILD && Xt5.logger.log(`Failed to add non-enumerable property "TextComponent{Q}" to object`, A)
         }
     }
 
-function td2(A, Q) {
+    function td2(A, Q) {
         try {
             let B = Q.prototype || {};
             A.prototype = Q.prototype = B, od2(A, "__sentry_original__", Q)
         } catch (B) {}
     }
 
-function Vt5(A) {
+    function Vt5(A) {
         return A.__sentry_original__
     }
 
-function Kt5(A) {
-        return Object.keys(A).map((Q) => `${encodeURIComponent(Q)}=${encodeURIComponent(A[Q])}`).join("&")
+    function Kt5(A) {
+        return Object.keys(A).map((Q) => `TextComponent{encodeURIComponent(Q)}=TextComponent{encodeURIComponent(A[Q])}`).join("&")
     }
 
-function ed2(A) {
+    function ed2(A) {
         if (pWA.isError(A)) return {
             message: A.message,
             name: A.name,
@@ -83,7 +85,7 @@ function ed2(A) {
         } else return A
     }
 
-function sd2(A) {
+    function sd2(A) {
         try {
             return pWA.isElement(A) ? Jt5.htmlTreeAsString(A) : Object.prototype.toString.call(A)
         } catch (Q) {
@@ -91,7 +93,7 @@ function sd2(A) {
         }
     }
 
-function rd2(A) {
+    function rd2(A) {
         if (typeof A === "object" && A !== null) {
             let Q = {};
             for (let B in A)
@@ -100,7 +102,7 @@ function rd2(A) {
         } else return {}
     }
 
-function Dt5(A, Q = 40) {
+    function Dt5(A, Q = 40) {
         let B = Object.keys(ed2(A));
         if (B.sort(), !B.length) return "[object has no keys]";
         if (B[0].length >= Q) return ad2.truncate(B[0], Q);
@@ -113,11 +115,11 @@ function Dt5(A, Q = 40) {
         return ""
     }
 
-function Ht5(A) {
+    function Ht5(A) {
         return oG0(A, new Map)
     }
 
-function oG0(A, Q) {
+    function oG0(A, Q) {
         if (Ct5(A)) {
             let B = Q.get(A);
             if (B !== void 0) return B;
@@ -138,7 +140,7 @@ function oG0(A, Q) {
         return A
     }
 
-function Ct5(A) {
+    function Ct5(A) {
         if (!pWA.isPlainObject(A)) return !1;
         try {
             let Q = Object.getPrototypeOf(A).constructor.name;
@@ -148,7 +150,7 @@ function Ct5(A) {
         }
     }
 
-function Et5(A) {
+    function Et5(A) {
         let Q;
         switch (!0) {
             case (A === void 0 || A === null):
@@ -176,17 +178,17 @@ function Et5(A) {
     Ac2.objectify = Et5;
     Ac2.urlEncode = Kt5
 });
-var V71 = U((Bc2) => {
+var V71 = moduleWrapper((Bc2) => {
     Object.defineProperty(Bc2, "__esModule", {
         value: !0
     });
 
-function Qc2(A, Q = !1) {
+    function Qc2(A, Q = !1) {
         return !(Q || A && !A.startsWith("/") && !A.match(/^[A-Z]:/) && !A.startsWith(".") && !A.match(/^[a-zA-Z]([a-zA-Z0-9.\-+])*:\/\//)) && A !== void 0 && !A.includes("node_modules/")
     }
 
-function Rt5(A) {
-        let Q = /^\s*[-]{4,}$/,
+    function Rt5(A) {
+        let Q = /^\s*[-]{4,}TextComponent/,
             B = /at (?:async )?(?:(.+?)\s+\()?(?:(.+):(\d+):(\d+)?|([^)]+))\)?/;
         return (G) => {
             let Z = G.match(B);
@@ -205,7 +207,7 @@ function Rt5(A) {
                 }
                 if (Y) W = I, X = Y;
                 if (Y === "<anonymous>") X = void 0, J = void 0;
-                if (J === void 0) X = X || "<anonymous>", J = W ? `${W}.${X}` : X;
+                if (J === void 0) X = X || "<anonymous>", J = W ? `TextComponent{W}.TextComponent{X}` : X;
                 let F = Z[2] && Z[2].startsWith("file://") ? Z[2].slice(7) : Z[2],
                     V = Z[5] === "native";
                 if (F && F.match(/\/[A-Z]:/)) F = F.slice(1);
@@ -228,7 +230,7 @@ function Rt5(A) {
     Bc2.filenameIsInApp = Qc2;
     Bc2.node = Rt5
 });
-var K71 = U((Xc2) => {
+var K71 = moduleWrapper((Xc2) => {
     Object.defineProperty(Xc2, "__esModule", {
         value: !0
     });
@@ -237,7 +239,7 @@ var K71 = U((Xc2) => {
         Gc2 = /\(error: (.*)\)/,
         Zc2 = /captureMessage|captureException/;
 
-function Jc2(...A) {
+    function Jc2(...A) {
         let Q = A.sort((B, G) => B[0] - G[0]).map((B) => B[1]);
         return (B, G = 0) => {
             let Z = [],
@@ -261,12 +263,12 @@ function Jc2(...A) {
         }
     }
 
-function jt5(A) {
+    function jt5(A) {
         if (Array.isArray(A)) return Jc2(...A);
         return A
     }
 
-function Wc2(A) {
+    function Wc2(A) {
         if (!A.length) return [];
         let Q = Array.from(A);
         if (/sentryWrapped/.test(Q[Q.length - 1].function || "")) Q.pop();
@@ -281,7 +283,7 @@ function Wc2(A) {
     }
     var tG0 = "<anonymous>";
 
-function St5(A) {
+    function St5(A) {
         try {
             if (!A || typeof A !== "function") return tG0;
             return A.name || tG0
@@ -290,7 +292,7 @@ function St5(A) {
         }
     }
 
-function _t5(A) {
+    function _t5(A) {
         return [90, Ic2.node(A)]
     }
     Xc2.filenameIsInApp = Ic2.filenameIsInApp;
@@ -300,7 +302,7 @@ function _t5(A) {
     Xc2.stackParserFromStackParserOptions = jt5;
     Xc2.stripSentryFramesAndReverse = Wc2
 });
-var Ag = U((Vc2) => {
+var Ag = moduleWrapper((Vc2) => {
     Object.defineProperty(Vc2, "__esModule", {
         value: !0
     });
@@ -310,29 +312,29 @@ var Ag = U((Vc2) => {
         lWA = {},
         Fc2 = {};
 
-function mt5(A, Q) {
+    function mt5(A, Q) {
         lWA[A] = lWA[A] || [], lWA[A].push(Q)
     }
 
-function dt5() {
+    function dt5() {
         Object.keys(lWA).forEach((A) => {
             lWA[A] = void 0
         })
     }
 
-function ct5(A, Q) {
+    function ct5(A, Q) {
         if (!Fc2[A]) Q(), Fc2[A] = !0
     }
 
-function pt5(A, Q) {
+    function pt5(A, Q) {
         let B = A && lWA[A];
         if (!B) return;
         for (let G of B) try {
             G(Q)
         } catch (Z) {
             ht5.DEBUG_BUILD && gt5.logger.error(`Error while triggering instrumentation handler.
-Type: ${A}
-Name: ${ut5.getFunctionName(G)}
+Type: TextComponent{A}
+Name: TextComponent{ut5.getFunctionName(G)}
 Error:`, Z)
         }
     }
@@ -341,7 +343,7 @@ Error:`, Z)
     Vc2.resetInstrumentationHandlers = dt5;
     Vc2.triggerHandlers = pt5
 });
-var QZ0 = U((Kc2) => {
+var QZ0 = moduleWrapper((Kc2) => {
     Object.defineProperty(Kc2, "__esModule", {
         value: !0
     });
@@ -350,11 +352,11 @@ var QZ0 = U((Kc2) => {
         D71 = HC(),
         AZ0 = Ag();
 
-function rt5(A) {
+    function rt5(A) {
         AZ0.addHandler("console", A), AZ0.maybeInstrument("console", ot5)
     }
 
-function ot5() {
+    function ot5() {
         if (!("console" in D71.GLOBAL_OBJ)) return;
         eG0.CONSOLE_LEVELS.forEach(function(A) {
             if (!(A in D71.GLOBAL_OBJ.console)) return;
@@ -374,7 +376,7 @@ function ot5() {
     }
     Kc2.addConsoleInstrumentationHandler = rt5
 });
-var fTA = U((Hc2) => {
+var fTA = moduleWrapper((Hc2) => {
     Object.defineProperty(Hc2, "__esModule", {
         value: !0
     });
@@ -382,7 +384,7 @@ var fTA = U((Hc2) => {
         BZ0 = vTA(),
         Ae5 = HC();
 
-function Qe5() {
+    function Qe5() {
         let A = Ae5.GLOBAL_OBJ,
             Q = A.crypto || A.msCrypto,
             B = () => Math.random() * 16;
@@ -396,11 +398,11 @@ function Qe5() {
         return ([1e7] + 1000 + 4000 + 8000 + 100000000000).replace(/[018]/g, (G) => (G ^ (B() & 15) >> G / 4).toString(16))
     }
 
-function Dc2(A) {
+    function Dc2(A) {
         return A.exception && A.exception.values ? A.exception.values[0] : void 0
     }
 
-function Be5(A) {
+    function Be5(A) {
         let {
             message: Q,
             event_id: B
@@ -408,13 +410,13 @@ function Be5(A) {
         if (Q) return Q;
         let G = Dc2(A);
         if (G) {
-            if (G.type && G.value) return `${G.type}: ${G.value}`;
+            if (G.type && G.value) return `TextComponent{G.type}: TextComponent{G.value}`;
             return G.type || G.value || B || "<unknown>"
         }
         return B || "<unknown>"
     }
 
-function Ge5(A, Q, B) {
+    function Ge5(A, Q, B) {
         let G = A.exception = A.exception || {},
             Z = G.values = G.values || [],
             I = Z[0] = Z[0] || {};
@@ -422,7 +424,7 @@ function Ge5(A, Q, B) {
         if (!I.type) I.type = B || "Error"
     }
 
-function Ze5(A, Q) {
+    function Ze5(A, Q) {
         let B = Dc2(A);
         if (!B) return;
         let G = {
@@ -442,9 +444,9 @@ function Ze5(A, Q) {
             B.mechanism.data = I
         }
     }
-    var Ie5 = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/;
+    var Ie5 = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?TextComponent/;
 
-function Ye5(A) {
+    function Ye5(A) {
         let Q = A.match(Ie5) || [],
             B = parseInt(Q[1], 10),
             G = parseInt(Q[2], 10),
@@ -458,14 +460,14 @@ function Ye5(A) {
         }
     }
 
-function Je5(A, Q, B = 5) {
+    function Je5(A, Q, B = 5) {
         if (Q.lineno === void 0) return;
         let G = A.length,
             Z = Math.max(Math.min(G - 1, Q.lineno - 1), 0);
         Q.pre_context = A.slice(Math.max(0, Z - B), Z).map((I) => BZ0.snipLine(I, 0)), Q.context_line = BZ0.snipLine(A[Math.min(G - 1, Z)], Q.colno || 0), Q.post_context = A.slice(Math.min(Z + 1, G), Z + 1 + B).map((I) => BZ0.snipLine(I, 0))
     }
 
-function We5(A) {
+    function We5(A) {
         if (A && A.__sentry_captured__) return !0;
         try {
             et5.addNonEnumerableProperty(A, "__sentry_captured__", !0)
@@ -473,7 +475,7 @@ function We5(A) {
         return !1
     }
 
-function Xe5(A) {
+    function Xe5(A) {
         return Array.isArray(A) ? A : [A]
     }
     Hc2.addContextToFrame = Je5;
@@ -485,7 +487,7 @@ function Xe5(A) {
     Hc2.parseSemver = Ye5;
     Hc2.uuid4 = Qe5
 });
-var YZ0 = U((Uc2) => {
+var YZ0 = moduleWrapper((Uc2) => {
     Object.defineProperty(Uc2, "__esModule", {
         value: !0
     });
@@ -497,11 +499,11 @@ var YZ0 = U((Uc2) => {
         we5 = 1000,
         Cc2, ZZ0, IZ0;
 
-function qe5(A) {
+    function qe5(A) {
         GZ0.addHandler("dom", A), GZ0.maybeInstrument("dom", zc2)
     }
 
-function zc2() {
+    function zc2() {
         if (!iWA.document) return;
         let A = GZ0.triggerHandlers.bind(null, "dom"),
             Q = Ec2(A, !0);
@@ -541,7 +543,7 @@ function zc2() {
         })
     }
 
-function Ne5(A) {
+    function Ne5(A) {
         if (A.type !== ZZ0) return !1;
         try {
             if (!A.target || A.target._sentryId !== IZ0) return !1
@@ -549,14 +551,14 @@ function Ne5(A) {
         return !0
     }
 
-function Le5(A, Q) {
+    function Le5(A, Q) {
         if (A !== "keypress") return !1;
         if (!Q || !Q.tagName) return !0;
         if (Q.tagName === "INPUT" || Q.tagName === "TEXTAREA" || Q.isContentEditable) return !1;
         return !0
     }
 
-function Ec2(A, Q = !1) {
+    function Ec2(A, Q = !1) {
         return (B) => {
             if (!B || B._sentryCaptured) return;
             let G = Me5(B);
@@ -574,7 +576,7 @@ function Ec2(A, Q = !1) {
         }
     }
 
-function Me5(A) {
+    function Me5(A) {
         try {
             return A.target
         } catch (Q) {
@@ -584,7 +586,7 @@ function Me5(A) {
     Uc2.addClickKeypressInstrumentationHandler = qe5;
     Uc2.instrumentDOM = zc2
 });
-var XZ0 = U(($c2) => {
+var XZ0 = moduleWrapper(($c2) => {
     Object.defineProperty($c2, "__esModule", {
         value: !0
     });
@@ -593,7 +595,7 @@ var XZ0 = U(($c2) => {
         je5 = HC(),
         C71 = je5.getGlobalObject();
 
-function Se5() {
+    function Se5() {
         try {
             return new ErrorEvent(""), !0
         } catch (A) {
@@ -601,7 +603,7 @@ function Se5() {
         }
     }
 
-function _e5() {
+    function _e5() {
         try {
             return new DOMError(""), !0
         } catch (A) {
@@ -609,7 +611,7 @@ function _e5() {
         }
     }
 
-function ke5() {
+    function ke5() {
         try {
             return new DOMException(""), !0
         } catch (A) {
@@ -617,7 +619,7 @@ function ke5() {
         }
     }
 
-function WZ0() {
+    function WZ0() {
         if (!("fetch" in C71)) return !1;
         try {
             return new Request("http://www.example.com"), !0
@@ -626,11 +628,11 @@ function WZ0() {
         }
     }
 
-function JZ0(A) {
-        return A && /^function fetch\(\)\s+\{\s+\[native code\]\s+\}$/.test(A.toString())
+    function JZ0(A) {
+        return A && /^function fetch\(\)\s+\{\s+\[native code\]\s+\}TextComponent/.test(A.toString())
     }
 
-function ye5() {
+    function ye5() {
         if (typeof EdgeRuntime === "string") return !0;
         if (!WZ0()) return !1;
         if (JZ0(C71.fetch)) return !0;
@@ -646,11 +648,11 @@ function ye5() {
         return A
     }
 
-function xe5() {
+    function xe5() {
         return "ReportingObserver" in C71
     }
 
-function ve5() {
+    function ve5() {
         if (!WZ0()) return !1;
         try {
             return new Request("_", {
@@ -669,7 +671,7 @@ function ve5() {
     $c2.supportsReferrerPolicy = ve5;
     $c2.supportsReportingObserver = xe5
 });
-var VZ0 = U((Lc2) => {
+var VZ0 = moduleWrapper((Lc2) => {
     Object.defineProperty(Lc2, "__esModule", {
         value: !0
     });
@@ -678,11 +680,11 @@ var VZ0 = U((Lc2) => {
         wc2 = HC(),
         hTA = Ag();
 
-function ie5(A) {
+    function ie5(A) {
         hTA.addHandler("fetch", A), hTA.maybeInstrument("fetch", ne5)
     }
 
-function ne5() {
+    function ne5() {
         if (!le5.supportsNativeFetch()) return;
         pe5.fill(wc2.GLOBAL_OBJ, "fetch", function(A) {
             return function(...Q) {
@@ -718,11 +720,11 @@ function ne5() {
         })
     }
 
-function FZ0(A, Q) {
+    function FZ0(A, Q) {
         return !!A && typeof A === "object" && !!A[Q]
     }
 
-function qc2(A) {
+    function qc2(A) {
         if (typeof A === "string") return A;
         if (!A) return "";
         if (FZ0(A, "url")) return A.url;
@@ -730,7 +732,7 @@ function qc2(A) {
         return ""
     }
 
-function Nc2(A) {
+    function Nc2(A) {
         if (A.length === 0) return {
             method: "GET",
             url: ""
@@ -751,7 +753,7 @@ function Nc2(A) {
     Lc2.addFetchInstrumentationHandler = ie5;
     Lc2.parseFetchArgs = Nc2
 });
-var HZ0 = U((Mc2) => {
+var HZ0 = moduleWrapper((Mc2) => {
     Object.defineProperty(Mc2, "__esModule", {
         value: !0
     });
@@ -759,11 +761,11 @@ var HZ0 = U((Mc2) => {
         DZ0 = Ag(),
         E71 = null;
 
-function re5(A) {
+    function re5(A) {
         DZ0.addHandler("error", A), DZ0.maybeInstrument("error", oe5)
     }
 
-function oe5() {
+    function oe5() {
         E71 = KZ0.GLOBAL_OBJ.onerror, KZ0.GLOBAL_OBJ.onerror = function(A, Q, B, G, Z) {
             let I = {
                 column: G,
@@ -778,7 +780,7 @@ function oe5() {
     }
     Mc2.addGlobalErrorInstrumentationHandler = re5
 });
-var zZ0 = U((Oc2) => {
+var zZ0 = moduleWrapper((Oc2) => {
     Object.defineProperty(Oc2, "__esModule", {
         value: !0
     });
@@ -786,11 +788,11 @@ var zZ0 = U((Oc2) => {
         EZ0 = Ag(),
         z71 = null;
 
-function ee5(A) {
+    function ee5(A) {
         EZ0.addHandler("unhandledrejection", A), EZ0.maybeInstrument("unhandledrejection", AA3)
     }
 
-function AA3() {
+    function AA3() {
         z71 = CZ0.GLOBAL_OBJ.onunhandledrejection, CZ0.GLOBAL_OBJ.onunhandledrejection = function(A) {
             let Q = A;
             if (EZ0.triggerHandlers("unhandledrejection", Q), z71 && !z71.__SENTRY_LOADER__) return z71.apply(this, arguments);
@@ -799,14 +801,14 @@ function AA3() {
     }
     Oc2.addGlobalUnhandledRejectionInstrumentationHandler = ee5
 });
-var UZ0 = U((Rc2) => {
+var UZ0 = moduleWrapper((Rc2) => {
     Object.defineProperty(Rc2, "__esModule", {
         value: !0
     });
     var BA3 = HC(),
         U71 = BA3.getGlobalObject();
 
-function GA3() {
+    function GA3() {
         let A = U71.chrome,
             Q = A && A.app && A.app.runtime,
             B = "history" in U71 && !!U71.history.pushState && !!U71.history.replaceState;
@@ -814,7 +816,7 @@ function GA3() {
     }
     Rc2.supportsHistory = GA3
 });
-var $Z0 = U((Pc2) => {
+var $Z0 = moduleWrapper((Pc2) => {
     Object.defineProperty(Pc2, "__esModule", {
         value: !0
     });
@@ -827,11 +829,11 @@ var $Z0 = U((Pc2) => {
         gTA = IA3.GLOBAL_OBJ,
         $71;
 
-function JA3(A) {
+    function JA3(A) {
         w71.addHandler("history", A), w71.maybeInstrument("history", WA3)
     }
 
-function WA3() {
+    function WA3() {
         if (!YA3.supportsHistory()) return;
         let A = gTA.onpopstate;
         gTA.onpopstate = function(...B) {
@@ -847,7 +849,7 @@ function WA3() {
             } catch (Y) {}
         };
 
-function Q(B) {
+        function Q(B) {
             return function(...G) {
                 let Z = G.length > 2 ? G[2] : void 0;
                 if (Z) {
@@ -867,7 +869,7 @@ function Q(B) {
     }
     Pc2.addHistoryInstrumentationHandler = JA3
 });
-var wZ0 = U((Sc2) => {
+var wZ0 = moduleWrapper((Sc2) => {
     Object.defineProperty(Sc2, "__esModule", {
         value: !0
     });
@@ -878,11 +880,11 @@ var wZ0 = U((Sc2) => {
         VA3 = FA3.GLOBAL_OBJ,
         uTA = "__sentry_xhr_v3__";
 
-function KA3(A) {
+    function KA3(A) {
         L71.addHandler("xhr", A), L71.maybeInstrument("xhr", jc2)
     }
 
-function jc2() {
+    function jc2() {
         if (!VA3.XMLHttpRequest) return;
         let A = XMLHttpRequest.prototype;
         q71.fill(A, "open", function(Q) {
@@ -941,7 +943,7 @@ function jc2() {
         })
     }
 
-function DA3(A) {
+    function DA3(A) {
         if (N71.isString(A)) return A;
         try {
             return A.toString()
@@ -952,7 +954,7 @@ function DA3(A) {
     Sc2.addXhrInstrumentationHandler = KA3;
     Sc2.instrumentXHR = jc2
 });
-var hc2 = U((fc2) => {
+var hc2 = moduleWrapper((fc2) => {
     Object.defineProperty(fc2, "__esModule", {
         value: !0
     });
@@ -996,36 +998,36 @@ var hc2 = U((fc2) => {
     fc2.addXhrInstrumentationHandler = qZ0.addXhrInstrumentationHandler;
     fc2.addInstrumentationHandler = $A3
 });
-var NZ0 = U((gc2) => {
+var NZ0 = moduleWrapper((gc2) => {
     Object.defineProperty(gc2, "__esModule", {
         value: !0
     });
 
-function jA3() {
+    function jA3() {
         return typeof __SENTRY_BROWSER_BUNDLE__ < "u" && !!__SENTRY_BROWSER_BUNDLE__
     }
 
-function SA3() {
+    function SA3() {
         return "npm"
     }
     gc2.getSDKSource = SA3;
     gc2.isBrowserBundle = jA3
 });
-var LZ0 = U((uc2, O71) => {
+var LZ0 = moduleWrapper((uc2, O71) => {
     Object.defineProperty(uc2, "__esModule", {
         value: !0
     });
     var yA3 = NZ0();
 
-function xA3() {
+    function xA3() {
         return !yA3.isBrowserBundle() && Object.prototype.toString.call(typeof process < "u" ? process : 0) === "[object process]"
     }
 
-function M71(A, Q) {
+    function M71(A, Q) {
         return A.require(Q)
     }
 
-function vA3(A) {
+    function vA3(A) {
         let Q;
         try {
             Q = M71(O71, A)
@@ -1034,7 +1036,7 @@ function vA3(A) {
             let {
                 cwd: B
             } = M71(O71, "process");
-            Q = M71(O71, `${B()}/node_modules/${A}`)
+            Q = M71(O71, `TextComponent{B()}/node_modules/TextComponent{A}`)
         } catch (B) {}
         return Q
     }
@@ -1042,32 +1044,32 @@ function vA3(A) {
     uc2.isNodeEnv = xA3;
     uc2.loadModule = vA3
 });
-var cc2 = U((dc2) => {
+var cc2 = moduleWrapper((dc2) => {
     Object.defineProperty(dc2, "__esModule", {
         value: !0
     });
     var gA3 = LZ0(),
         mc2 = HC();
 
-function uA3() {
+    function uA3() {
         return typeof window < "u" && (!gA3.isNodeEnv() || mA3())
     }
 
-function mA3() {
+    function mA3() {
         return mc2.GLOBAL_OBJ.process !== void 0 && mc2.GLOBAL_OBJ.process.type === "renderer"
     }
     dc2.isBrowser = uA3
 });
-var MZ0 = U((pc2) => {
+var MZ0 = moduleWrapper((pc2) => {
     Object.defineProperty(pc2, "__esModule", {
         value: !0
     });
 
-function cA3() {
+    function cA3() {
         let A = typeof WeakSet === "function",
             Q = A ? new WeakSet : [];
 
-function B(Z) {
+        function B(Z) {
             if (A) {
                 if (Q.has(Z)) return !0;
                 return Q.add(Z), !1
@@ -1077,7 +1079,7 @@ function B(Z) {
             return Q.push(Z), !1
         }
 
-function G(Z) {
+        function G(Z) {
             if (A) Q.delete(Z);
             else
                 for (let I = 0; I < Q.length; I++)
@@ -1090,7 +1092,7 @@ function G(Z) {
     }
     pc2.memoBuilder = cA3
 });
-var mTA = U((nc2) => {
+var mTA = moduleWrapper((nc2) => {
     Object.defineProperty(nc2, "__esModule", {
         value: !0
     });
@@ -1099,23 +1101,23 @@ var mTA = U((nc2) => {
         iA3 = NO(),
         nA3 = K71();
 
-function lc2(A, Q = 100, B = 1 / 0) {
+    function lc2(A, Q = 100, B = 1 / 0) {
         try {
             return R71("", A, Q, B)
         } catch (G) {
             return {
-                ERROR: `**non-serializable** (${G})`
+                ERROR: `**non-serializable** (TextComponent{G})`
             }
         }
     }
 
-function ic2(A, Q = 3, B = 102400) {
+    function ic2(A, Q = 3, B = 102400) {
         let G = lc2(A, Q);
         if (oA3(G) > B) return ic2(A, Q - 1, B);
         return G
     }
 
-function R71(A, Q, B = 1 / 0, G = 1 / 0, Z = lA3.memoBuilder()) {
+    function R71(A, Q, B = 1 / 0, G = 1 / 0, Z = lA3.memoBuilder()) {
         let [I, Y] = Z;
         if (Q == null || ["number", "boolean", "string"].includes(typeof Q) && !OZ0.isNaN(Q)) return Q;
         let J = aA3(A, Q);
@@ -1144,7 +1146,7 @@ function R71(A, Q, B = 1 / 0, G = 1 / 0, Z = lA3.memoBuilder()) {
         return Y(Q), F
     }
 
-function aA3(A, Q) {
+    function aA3(A, Q) {
         try {
             if (A === "domain" && Q && typeof Q === "object" && Q._events) return "[Domain]";
             if (A === "domainEmitter") return "[DomainEmitter]";
@@ -1154,49 +1156,49 @@ function aA3(A, Q) {
             if (OZ0.isVueViewModel(Q)) return "[VueViewModel]";
             if (OZ0.isSyntheticEvent(Q)) return "[SyntheticEvent]";
             if (typeof Q === "number" && Q !== Q) return "[NaN]";
-            if (typeof Q === "function") return `[Function: ${nA3.getFunctionName(Q)}]`;
-            if (typeof Q === "symbol") return `[${String(Q)}]`;
-            if (typeof Q === "bigint") return `[BigInt: ${String(Q)}]`;
+            if (typeof Q === "function") return `[Function: TextComponent{nA3.getFunctionName(Q)}]`;
+            if (typeof Q === "symbol") return `[TextComponent{String(Q)}]`;
+            if (typeof Q === "bigint") return `[BigInt: TextComponent{String(Q)}]`;
             let B = sA3(Q);
-            if (/^HTML(\w*)Element$/.test(B)) return `[HTMLElement: ${B}]`;
-            return `[object ${B}]`
+            if (/^HTML(\w*)Element$/.test(B)) return `[HTMLElement: TextComponent{B}]`;
+            return `[object TextComponent{B}]`
         } catch (B) {
-            return `**non-serializable** (${B})`
+            return `**non-serializable** (TextComponent{B})`
         }
     }
 
-function sA3(A) {
+    function sA3(A) {
         let Q = Object.getPrototypeOf(A);
         return Q ? Q.constructor.name : "null prototype"
     }
 
-function rA3(A) {
+    function rA3(A) {
         return ~-encodeURI(A).split(/%..|./).length
     }
 
-function oA3(A) {
+    function oA3(A) {
         return rA3(JSON.stringify(A))
     }
 
-function tA3(A, Q) {
-        let B = Q.replace(/\\/g, "/").replace(/[|\\{}()[\]^$+*?.]/g, "\\$&"),
+    function tA3(A, Q) {
+        let B = Q.replace(/\\/g, "/").replace(/[|\\{}()[\]^TextComponent+*?.]/g, "\\TextComponent&"),
             G = A;
         try {
             G = decodeURI(A)
         } catch (Z) {}
-        return G.replace(/\\/g, "/").replace(/webpack:\/?/g, "").replace(new RegExp(`(file://)?/*${B}/*`, "ig"), "app:///")
+        return G.replace(/\\/g, "/").replace(/webpack:\/?/g, "").replace(new RegExp(`(file://)?/*TextComponent{B}/*`, "ig"), "app:///")
     }
     nc2.normalize = lc2;
     nc2.normalizeToSize = ic2;
     nc2.normalizeUrlToBase = tA3;
     nc2.walk = R71
 });
-var Ap2 = U((ec2) => {
+var Ap2 = moduleWrapper((ec2) => {
     Object.defineProperty(ec2, "__esModule", {
         value: !0
     });
 
-function sc2(A, Q) {
+    function sc2(A, Q) {
         let B = 0;
         for (let G = A.length - 1; G >= 0; G--) {
             let Z = A[G];
@@ -1208,26 +1210,26 @@ function sc2(A, Q) {
             for (; B--; B) A.unshift("..");
         return A
     }
-    var G13 = /^(\S+:\\|\/?)([\s\S]*?)((?:\.{1,2}|[^/\\]+?|)(\.[^./\\]*|))(?:[/\\]*)$/;
+    var G13 = /^(\S+:\\|\/?)([\s\S]*?)((?:\.{1,2}|[^/\\]+?|)(\.[^./\\]*|))(?:[/\\]*)TextComponent/;
 
-function rc2(A) {
-        let Q = A.length > 1024 ? `<truncated>${A.slice(-1024)}` : A,
+    function rc2(A) {
+        let Q = A.length > 1024 ? `<truncated>TextComponent{A.slice(-1024)}` : A,
             B = G13.exec(Q);
         return B ? B.slice(1) : []
     }
 
-function RZ0(...A) {
+    function RZ0(...A) {
         let Q = "",
             B = !1;
         for (let G = A.length - 1; G >= -1 && !B; G--) {
             let Z = G >= 0 ? A[G] : "/";
             if (!Z) continue;
-            Q = `${Z}/${Q}`, B = Z.charAt(0) === "/"
+            Q = `TextComponent{Z}/TextComponent{Q}`, B = Z.charAt(0) === "/"
         }
         return Q = sc2(Q.split("/").filter((G) => !!G), !B).join("/"), (B ? "/" : "") + Q || "."
     }
 
-function ac2(A) {
+    function ac2(A) {
         let Q = 0;
         for (; Q < A.length; Q++)
             if (A[Q] !== "") break;
@@ -1238,7 +1240,7 @@ function ac2(A) {
         return A.slice(Q, B - Q + 1)
     }
 
-function Z13(A, Q) {
+    function Z13(A, Q) {
         A = RZ0(A).slice(1), Q = RZ0(Q).slice(1);
         let B = ac2(A.split("/")),
             G = ac2(Q.split("/")),
@@ -1253,7 +1255,7 @@ function Z13(A, Q) {
         return Y = Y.concat(G.slice(I)), Y.join("/")
     }
 
-function oc2(A) {
+    function oc2(A) {
         let Q = tc2(A),
             B = A.slice(-1) === "/",
             G = sc2(A.split("/").filter((Z) => !!Z), !Q).join("/");
@@ -1262,15 +1264,15 @@ function oc2(A) {
         return (Q ? "/" : "") + G
     }
 
-function tc2(A) {
+    function tc2(A) {
         return A.charAt(0) === "/"
     }
 
-function I13(...A) {
+    function I13(...A) {
         return oc2(A.join("/"))
     }
 
-function Y13(A) {
+    function Y13(A) {
         let Q = rc2(A),
             B = Q[0],
             G = Q[1];
@@ -1279,7 +1281,7 @@ function Y13(A) {
         return B + G
     }
 
-function J13(A, Q) {
+    function J13(A, Q) {
         let B = rc2(A)[2];
         if (Q && B.slice(Q.length * -1) === Q) B = B.slice(0, B.length - Q.length);
         return B
@@ -1292,7 +1294,7 @@ function J13(A, Q) {
     ec2.relative = Z13;
     ec2.resolve = RZ0
 });
-var TZ0 = U((Qp2) => {
+var TZ0 = moduleWrapper((Qp2) => {
     Object.defineProperty(Qp2, "__esModule", {
         value: !0
     });
@@ -1306,19 +1308,18 @@ var TZ0 = U((Qp2) => {
         A[A.REJECTED = G] = "REJECTED"
     })(Qg || (Qg = {}));
 
-function E13(A) {
+    function E13(A) {
         return new vy((Q) => {
             Q(A)
         })
     }
 
-function z13(A) {
+    function z13(A) {
         return new vy((Q, B) => {
             B(A)
         })
     }
-
-class vy {
+    class vy {
         constructor(A) {
             vy.prototype.__init.call(this), vy.prototype.__init2.call(this), vy.prototype.__init3.call(this), vy.prototype.__init4.call(this), this._state = Qg.PENDING, this._handlers = [];
             try {
@@ -1400,32 +1401,32 @@ class vy {
     Qp2.rejectedSyncPromise = z13;
     Qp2.resolvedSyncPromise = E13
 });
-var Gp2 = U((Bp2) => {
+var Gp2 = moduleWrapper((Bp2) => {
     Object.defineProperty(Bp2, "__esModule", {
         value: !0
     });
     var q13 = rG0(),
         PZ0 = TZ0();
 
-function N13(A) {
+    function N13(A) {
         let Q = [];
 
-function B() {
+        function B() {
             return A === void 0 || Q.length < A
         }
 
-function G(Y) {
+        function G(Y) {
             return Q.splice(Q.indexOf(Y), 1)[0]
         }
 
-function Z(Y) {
+        function Z(Y) {
             if (!B()) return PZ0.rejectedSyncPromise(new q13.SentryError("Not adding Promise because buffer limit was reached."));
             let J = Y();
             if (Q.indexOf(J) === -1) Q.push(J);
             return J.then(() => G(J)).then(null, () => G(J).then(null, () => {})), J
         }
 
-function I(Y) {
+        function I(Y) {
             return new PZ0.SyncPromise((J, W) => {
                 let X = Q.length;
                 if (!X) return J(!0);
@@ -1440,19 +1441,19 @@ function I(Y) {
             })
         }
         return {
-            $: Q,
+            TextComponent: Q,
             add: Z,
             drain: I
         }
     }
     Bp2.makePromiseBuffer = N13
 });
-var Ip2 = U((Zp2) => {
+var Ip2 = moduleWrapper((Zp2) => {
     Object.defineProperty(Zp2, "__esModule", {
         value: !0
     });
 
-function M13(A) {
+    function M13(A) {
         let Q = {},
             B = 0;
         while (B < A.length) {
@@ -1480,14 +1481,14 @@ function M13(A) {
     }
     Zp2.parseCookie = M13
 });
-var jZ0 = U((Yp2) => {
+var jZ0 = moduleWrapper((Yp2) => {
     Object.defineProperty(Yp2, "__esModule", {
         value: !0
     });
 
-function R13(A) {
+    function R13(A) {
         if (!A) return {};
-        let Q = A.match(/^(([^:/?#]+):)?(\/\/([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?$/);
+        let Q = A.match(/^(([^:/?#]+):)?(\/\/([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?TextComponent/);
         if (!Q) return {};
         let B = Q[6] || "",
             G = Q[8] || "";
@@ -1501,20 +1502,20 @@ function R13(A) {
         }
     }
 
-function T13(A) {
+    function T13(A) {
         return A.split(/[\?#]/, 1)[0]
     }
 
-function P13(A) {
+    function P13(A) {
         return A.split(/\\?\//).filter((Q) => Q.length > 0 && Q !== ",").length
     }
 
-function j13(A) {
+    function j13(A) {
         let {
             protocol: Q,
             host: B,
             path: G
-        } = A, Z = B && B.replace(/^.*@/, "[filtered]:[filtered]@").replace(/(:80)$/, "").replace(/(:443)$/, "") || "";
-        return `${Q?`${Q}://`:""}${Z}${G}`
+        } = A, Z = B && B.replace(/^.*@/, "[filtered]:[filtered]@").replace(/(:80)TextComponent/, "").replace(/(:443)TextComponent/, "") || "";
+        return `TextComponent{Q?`TextComponent{Q}://`:""}TextComponent{Z}TextComponent{G}`
     }
     Yp2.getNumberOfUrlSegments = P13;

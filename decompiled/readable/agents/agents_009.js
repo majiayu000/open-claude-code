@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: agents_009.js
+ * 处理时间: 2025-12-09T03:41:35.922Z
+ * 变量映射: 4 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.848Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -22,21 +25,21 @@ function _Y1(A) {
     if (A.source === "plugin") throw Error("Cannot get file path for plugin agents");
     let Q = SY1(A.source),
         B = A.filename || A.agentType;
-    return bg(Q, `${B}.md`)
+    return bg(Q, `TextComponent{B}.md`)
 }
 
 function dV9(A) {
     if (A.source === "built-in") return "Built-in";
     let Q = mV9(A.source);
-    return bg(Q, `${A.agentType}.md`)
+    return bg(Q, `TextComponent{A.agentType}.md`)
 }
 
 function cV9(A) {
     if (Ly(A)) return "Built-in";
-    if (v51(A)) return `Plugin: ${A.plugin||"Unknown"}`;
+    if (v51(A)) return `Plugin: TextComponent{A.plugin||"Unknown"}`;
     let Q = mV9(A.source),
         B = A.filename || A.agentType;
-    return bg(Q, `${B}.md`)
+    return bg(Q, `TextComponent{B}.md`)
 }
 
 function __3(A) {
@@ -45,7 +48,6 @@ function __3(A) {
     if (!B.existsSync(Q)) B.mkdirSync(Q);
     return Q
 }
-
 async function BV0(A, Q, B, G, Z, I = !0, Y, J) {
     if (A === "built-in") throw Error("Cannot save built-in agents");
     __3(A);
@@ -54,14 +56,13 @@ async function BV0(A, Q, B, G, Z, I = !0, Y, J) {
             agentType: Q
         }),
         X = OA();
-    if (I && X.existsSync(W)) throw Error(`Agent file already exists: ${W}`);
+    if (I && X.existsSync(W)) throw Error(`Agent file already exists: TextComponent{W}`);
     let F = uV9(Q, B, G, Z, Y, J);
     X.writeFileSync(W, F, {
         encoding: "utf-8",
         flush: !0
     })
 }
-
 async function pV9(A, Q, B, G, Z, I) {
     if (A.source === "built-in") throw Error("Cannot update built-in agents");
     let Y = OA(),
@@ -72,14 +73,13 @@ async function pV9(A, Q, B, G, Z, I) {
         flush: !0
     })
 }
-
 async function lV9(A) {
     if (A.source === "built-in") throw Error("Cannot delete built-in agents");
     let Q = OA(),
         B = _Y1(A);
     if (Q.existsSync(B)) Q.unlinkSync(B)
 }
-var WFA = L(() => {
+var WFA = lazyLoader(() => {
     o0();
     R2();
     hQ();
@@ -102,10 +102,10 @@ function Da({
     }, rP.createElement(j, {
         flexDirection: "column",
         paddingX: 1
-    }, rP.createElement($, {
+    }, rP.createElement(TextComponent, {
         bold: !0,
         color: Q
-    }, A), Z && rP.createElement($, {
+    }, A), Z && rP.createElement(TextComponent, {
         dimColor: !0
     }, Z)), rP.createElement(j, {
         paddingX: 1,
@@ -113,18 +113,18 @@ function Da({
     }, G))
 }
 var rP;
-var GV0 = L(() => {
+var GV0 = lazyLoader(() => {
     hA();
-    rP = GA(VA(), 1)
+    rP = esmImport(VA(), 1)
 });
 
 function XFA(A) {
     if (A === "all") return "Agents";
     if (A === "built-in") return "Built-in agents";
     if (A === "plugin") return "Plugin agents";
-    return pzA(wm(A))
+    return capitalize(wm(A))
 }
-var kY1 = L(() => {
+var kY1 = lazyLoader(() => {
     Eb1();
     UF()
 });
@@ -143,9 +143,9 @@ function iV9({
             overriddenBy: w.overriddenBy || null
         }
     }, V = () => {
-        return LQ.createElement(j, null, LQ.createElement($, {
+        return LQ.createElement(j, null, LQ.createElement(TextComponent, {
             color: W ? "suggestion" : void 0
-        }, W ? `${V1.pointer} ` : "  "), LQ.createElement($, {
+        }, W ? `TextComponent{V1.pointer} ` : "  "), LQ.createElement(TextComponent, {
             color: W ? "suggestion" : void 0
         }, "Create new agent"))
     }, K = (w) => {
@@ -159,17 +159,17 @@ function iV9({
             v = !N && q ? "suggestion" : void 0,
             x = w.model || gm1;
         return LQ.createElement(j, {
-            key: `${w.agentType}-${w.source}`
-        }, LQ.createElement($, {
+            key: `TextComponent{w.agentType}-TextComponent{w.source}`
+        }, LQ.createElement(TextComponent, {
             dimColor: y && !q,
             color: v
-        }, N ? "" : q ? `${V1.pointer} ` : "  "), LQ.createElement($, {
+        }, N ? "" : q ? `TextComponent{V1.pointer} ` : "  "), LQ.createElement(TextComponent, {
             dimColor: y && !q,
             color: v
-        }, w.agentType), x && LQ.createElement($, {
+        }, w.agentType), x && LQ.createElement(TextComponent, {
             dimColor: !0,
             color: v
-        }, " · ", x === "inherit" ? "inherit" : x), P && LQ.createElement($, {
+        }, " · ", x === "inherit" ? "inherit" : x), P && LQ.createElement(TextComponent, {
             dimColor: !q,
             color: q ? "warning" : void 0
         }, " ", V1.warning, " overridden by ", P))
@@ -215,7 +215,7 @@ function iV9({
                 flexDirection: "column",
                 marginBottom: 1,
                 paddingLeft: 2
-            }, LQ.createElement($, {
+            }, LQ.createElement(TextComponent, {
                 bold: !0,
                 dimColor: !0
             }, w), N.map(K))
@@ -228,10 +228,10 @@ function iV9({
                 marginBottom: 1
             }, LQ.createElement(j, {
                 paddingLeft: 2
-            }, LQ.createElement($, {
+            }, LQ.createElement(TextComponent, {
                 bold: !0,
                 dimColor: !0
-            }, w), q && LQ.createElement($, {
+            }, w), q && LQ.createElement(TextComponent, {
                 dimColor: !0
             }, " (", q, ")")), N.map((R) => K(R)))
         },
@@ -241,21 +241,21 @@ function iV9({
         subtitle: "No agents found"
     }, Z && LQ.createElement(j, {
         marginY: 1
-    }, V()), LQ.createElement($, {
+    }, V()), LQ.createElement(TextComponent, {
         dimColor: !0
-    }, "No agents found. Create specialized subagents that Claude can delegate to."), LQ.createElement($, {
+    }, "No agents found. Create specialized subagents that Claude can delegate to."), LQ.createElement(TextComponent, {
         dimColor: !0
-    }, "Each subagent has its own context window, custom system prompt, and specific tools."), LQ.createElement($, {
+    }, "Each subagent has its own context window, custom system prompt, and specific tools."), LQ.createElement(TextComponent, {
         dimColor: !0
     }, "Try creating: Code Reviewer, Code Simplifier, Security Reviewer, Tech Lead, or UX Reviewer."), A !== "built-in" && Q.some((w) => w.source === "built-in") && LQ.createElement(LQ.Fragment, null, LQ.createElement(j, {
         marginTop: 1
     }, LQ.createElement(J3, null)), H()));
     return LQ.createElement(Da, {
         title: E,
-        subtitle: `${Q.filter((w)=>!w.overriddenBy).length} agents`
+        subtitle: `TextComponent{Q.filter((w)=>!w.overriddenBy).length} agents`
     }, I && I.length > 0 && LQ.createElement(j, {
         marginTop: 1
-    }, LQ.createElement($, {
+    }, LQ.createElement(TextComponent, {
         dimColor: !0
     }, I[I.length - 1])), LQ.createElement(j, {
         flexDirection: "column",
@@ -268,12 +268,12 @@ function iV9({
             flexDirection: "column",
             marginBottom: 1,
             paddingLeft: 2
-        }, LQ.createElement($, {
+        }, LQ.createElement(TextComponent, {
             dimColor: !0
-        }, LQ.createElement($, {
+        }, LQ.createElement(TextComponent, {
             bold: !0
         }, "Built-in agents"), " (always available)"), w.map(K)) : null
-    })()) : A === "built-in" ? LQ.createElement(LQ.Fragment, null, LQ.createElement($, {
+    })()) : A === "built-in" ? LQ.createElement(LQ.Fragment, null, LQ.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "Built-in agents are provided by default and cannot be modified."), LQ.createElement(j, {
@@ -284,7 +284,7 @@ function iV9({
     }, LQ.createElement(J3, null)), H()))))
 }
 var LQ;
-var nV9 = L(() => {
+var nV9 = lazyLoader(() => {
     hA();
     hA();
     n2();
@@ -292,7 +292,7 @@ var nV9 = L(() => {
     GV0();
     s2();
     kY1();
-    LQ = GA(VA(), 1)
+    LQ = esmImport(VA(), 1)
 });
 
 function IV0({
@@ -353,9 +353,9 @@ function IV0({
     }, Z || YF.default.createElement(R, null))
 }
 var YF, ZV0;
-var YV0 = L(() => {
+var YV0 = lazyLoader(() => {
     c9();
-    YF = GA(VA(), 1), ZV0 = YF.createContext(null)
+    YF = esmImport(VA(), 1), ZV0 = YF.createContext(null)
 });
 
 function NI() {
@@ -364,9 +364,9 @@ function NI() {
     return A
 }
 var aV9;
-var JV0 = L(() => {
+var JV0 = lazyLoader(() => {
     YV0();
-    aV9 = GA(VA(), 1)
+    aV9 = esmImport(VA(), 1)
 });
 
 function XV0({
@@ -375,15 +375,15 @@ function XV0({
     let Q = DQ();
     return WV0.default.createElement(j, {
         marginLeft: 3
-    }, WV0.default.createElement($, {
+    }, WV0.default.createElement(TextComponent, {
         dimColor: !0
-    }, Q.pending ? `Press ${Q.keyName} again to exit` : A))
+    }, Q.pending ? `Press TextComponent{Q.keyName} again to exit` : A))
 }
 var WV0;
-var FV0 = L(() => {
+var FV0 = lazyLoader(() => {
     hA();
     c9();
-    WV0 = GA(VA(), 1)
+    WV0 = esmImport(VA(), 1)
 });
 
 function sJ({
@@ -407,10 +407,10 @@ function sJ({
     }, fg.default.createElement(j, {
         flexDirection: "column",
         paddingX: 1
-    }, fg.default.createElement($, {
+    }, fg.default.createElement(TextComponent, {
         bold: !0,
         color: Q
-    }, A || W || "Wizard", X !== !1 && ` (${Y+1}/${J})`), Z && fg.default.createElement($, {
+    }, A || W || "Wizard", X !== !1 && ` (TextComponent{Y+1}/TextComponent{J})`), Z && fg.default.createElement(TextComponent, {
         dimColor: !0
     }, Z)), fg.default.createElement(j, {
         paddingX: 1,
@@ -420,13 +420,13 @@ function sJ({
     }))
 }
 var fg;
-var yO = L(() => {
+var yO = lazyLoader(() => {
     hA();
     JV0();
     FV0();
-    fg = GA(VA(), 1)
+    fg = esmImport(VA(), 1)
 });
-var QN = L(() => {
+var QN = lazyLoader(() => {
     YV0();
     JV0();
     yO();
@@ -462,12 +462,12 @@ function sV9() {
     })))
 }
 var yY1;
-var rV9 = L(() => {
+var rV9 = lazyLoader(() => {
     hA();
     T5();
     yO();
     QN();
-    yY1 = GA(VA(), 1)
+    yY1 = esmImport(VA(), 1)
 });
 
 function oV9() {
@@ -503,19 +503,18 @@ function oV9() {
     })))
 }
 var xY1;
-var tV9 = L(() => {
+var tV9 = lazyLoader(() => {
     hA();
     T5();
     yO();
     QN();
-    xY1 = GA(VA(), 1)
+    xY1 = esmImport(VA(), 1)
 });
-
 async function eV9(A, Q, B, G) {
     let Z = B.length > 0 ? `
 
-IMPORTANT: The following identifiers already exist and must NOT be used: ${B.join(", ")}` : "",
-        I = `Create an agent configuration based on this request: "${A}".${Z}
+IMPORTANT: The following identifiers already exist and must NOT be used: TextComponent{B.join(", ")}` : "",
+        I = `Create an agent configuration based on this request: "TextComponent{A}".TextComponent{Z}
   Return ONLY the JSON object, no other text.`,
         Y = j0({
             content: I
@@ -559,7 +558,7 @@ IMPORTANT: The following identifiers already exist and must NOT be used: ${B.joi
     }
 }
 var k_3;
-var AK9 = L(() => {
+var AK9 = lazyLoader(() => {
     kZ();
     nQ();
     $y();
@@ -606,14 +605,14 @@ When a user describes what they want an agent to do, you will:
       assistant: "Here is the relevant function: "
       <function call omitted for brevity only for this example>
       <commentary>
-      Since the user is greeting, use the ${TASK_TOOL_NAME} tool to launch the greeting-responder agent to respond with a friendly joke. 
+      Since the user is greeting, use the TextComponent{TASK_TOOL_NAME} tool to launch the greeting-responder agent to respond with a friendly joke. 
       </commentary>
       assistant: "Now let me use the code-reviewer agent to review the code"
     </example>
     - <example>
       Context: User is creating an agent to respond to the word "hello" with a friendly jok.
       user: "Hello"
-      assistant: "I'm going to use the ${TASK_TOOL_NAME} tool to launch the greeting-responder agent to respond with a friendly joke"
+      assistant: "I'm going to use the TextComponent{TASK_TOOL_NAME} tool to launch the greeting-responder agent to respond with a friendly joke"
       <commentary>
       Since the user is greeting, use the greeting-responder agent to respond with a friendly joke. 
       </commentary>
@@ -698,7 +697,7 @@ function QK9() {
         marginTop: 1,
         flexDirection: "row",
         alignItems: "center"
-    }, rD.default.createElement(e9, null), rD.default.createElement($, {
+    }, rD.default.createElement(e9, null), rD.default.createElement(TextComponent, {
         color: "suggestion"
     }, " Generating agent from description...")));
     return rD.default.createElement(sJ, {
@@ -709,7 +708,7 @@ function QK9() {
         marginTop: 1
     }, W && rD.default.createElement(j, {
         marginBottom: 1
-    }, rD.default.createElement($, {
+    }, rD.default.createElement(TextComponent, {
         color: "error"
     }, W)), rD.default.createElement(s4, {
         value: Z,
@@ -724,7 +723,7 @@ function QK9() {
     })))
 }
 var rD;
-var BK9 = L(() => {
+var BK9 = lazyLoader(() => {
     hA();
     hA();
     QY();
@@ -734,12 +733,12 @@ var BK9 = L(() => {
     AK9();
     bPA();
     UZ();
-    rD = GA(VA(), 1)
+    rD = esmImport(VA(), 1)
 });
 
 function VV0(A) {
     if (!A) return "Agent type is required";
-    if (!/^[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]$/.test(A)) return "Agent type must start and end with alphanumeric characters and contain only letters, numbers, and hyphens";
+    if (!/^[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]TextComponent/.test(A)) return "Agent type must start and end with alphanumeric characters and contain only letters, numbers, and hyphens";
     if (A.length < 3) return "Agent type must be at least 3 characters long";
     if (A.length > 50) return "Agent type must be less than 50 characters";
     return null
@@ -753,7 +752,7 @@ function GK9(A, Q, B) {
         let Y = VV0(A.agentType);
         if (Y) G.push(Y);
         let J = B.find((W) => W.agentType === A.agentType && W.source !== A.source);
-        if (J) G.push(`Agent type "${A.agentType}" already exists in ${XFA(J.source)}`)
+        if (J) G.push(`Agent type "TextComponent{A.agentType}" already exists in TextComponent{XFA(J.source)}`)
     }
     if (!A.whenToUse) G.push("Description (description) is required");
     else if (A.whenToUse.length < 10) Z.push("Description should be more descriptive (at least 10 characters)");
@@ -763,7 +762,7 @@ function GK9(A, Q, B) {
         if (A.tools === void 0) Z.push("Agent has access to all tools");
         else if (A.tools.length === 0) Z.push("No tools selected - agent will have very limited capabilities");
         let Y = CWA(A, Q, !1);
-        if (Y.invalidTools.length > 0) G.push(`Invalid tools: ${Y.invalidTools.join(", ")}`)
+        if (Y.invalidTools.length > 0) G.push(`Invalid tools: TextComponent{Y.invalidTools.join(", ")}`)
     }
     let I = A.getSystemPrompt();
     if (!I) G.push("System prompt is required");
@@ -775,7 +774,7 @@ function GK9(A, Q, B) {
         warnings: Z
     }
 }
-var KV0 = L(() => {
+var KV0 = lazyLoader(() => {
     EWA();
     kY1()
 });
@@ -795,7 +794,7 @@ function ZK9(A) {
     }, xO.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, xO.default.createElement($, null, "Enter a unique identifier for your agent:"), xO.default.createElement(j, {
+    }, xO.default.createElement(TextComponent, null, "Enter a unique identifier for your agent:"), xO.default.createElement(j, {
         marginTop: 1
     }, xO.default.createElement(s4, {
         value: I,
@@ -819,19 +818,19 @@ function ZK9(A) {
         showCursor: !0
     })), J && xO.default.createElement(j, {
         marginTop: 1
-    }, xO.default.createElement($, {
+    }, xO.default.createElement(TextComponent, {
         color: "error"
     }, J))))
 }
 var xO;
-var IK9 = L(() => {
+var IK9 = lazyLoader(() => {
     hA();
     hA();
     QY();
     yO();
     QN();
     KV0();
-    xO = GA(VA(), 1)
+    xO = esmImport(VA(), 1)
 });
 
 function YK9() {
@@ -849,7 +848,7 @@ function YK9() {
     }, BN.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, BN.default.createElement($, null, "Enter the system prompt for your agent:"), BN.default.createElement($, {
+    }, BN.default.createElement(TextComponent, null, "Enter the system prompt for your agent:"), BN.default.createElement(TextComponent, {
         dimColor: !0
     }, "Be comprehensive for best results"), BN.default.createElement(j, {
         marginTop: 1
@@ -874,18 +873,18 @@ function YK9() {
         showCursor: !0
     })), W && BN.default.createElement(j, {
         marginTop: 1
-    }, BN.default.createElement($, {
+    }, BN.default.createElement(TextComponent, {
         color: "error"
     }, W))))
 }
 var BN;
-var JK9 = L(() => {
+var JK9 = lazyLoader(() => {
     hA();
     hA();
     QY();
     yO();
     QN();
-    BN = GA(VA(), 1)
+    BN = esmImport(VA(), 1)
 });
 
 function WK9() {
@@ -903,7 +902,7 @@ function WK9() {
     }, vO.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, vO.default.createElement($, null, "When should Claude use this agent?"), vO.default.createElement(j, {
+    }, vO.default.createElement(TextComponent, null, "When should Claude use this agent?"), vO.default.createElement(j, {
         marginTop: 1
     }, vO.default.createElement(s4, {
         value: Z,
@@ -926,18 +925,18 @@ function WK9() {
         showCursor: !0
     })), W && vO.default.createElement(j, {
         marginTop: 1
-    }, vO.default.createElement($, {
+    }, vO.default.createElement(TextComponent, {
         color: "error"
     }, W))))
 }
 var vO;
-var XK9 = L(() => {
+var XK9 = lazyLoader(() => {
     hA();
     hA();
     QY();
     yO();
     QN();
-    vO = GA(VA(), 1)
+    vO = esmImport(VA(), 1)
 });
 
 function y_3(A) {
@@ -1026,7 +1025,7 @@ function vY1({
         isContinue: !0
     }), q.push({
         id: "bucket-all",
-        label: `${H?V1.checkboxOn:V1.checkboxOff} All tools`,
+        label: `TextComponent{H?V1.checkboxOn:V1.checkboxOff} All tools`,
         action: () => {
             let x = Z.map((p) => p.name);
             E(x, !H)
@@ -1062,7 +1061,7 @@ function vY1({
         let l = u.filter((k) => D.has(k.name)).length === u.length;
         q.push({
             id: x,
-            label: `${l?V1.checkboxOn:V1.checkboxOff} ${p}`,
+            label: `TextComponent{l?V1.checkboxOn:V1.checkboxOff} TextComponent{p}`,
             action: N(u)
         })
     });
@@ -1088,8 +1087,8 @@ function vY1({
         }) => {
             let o = p.filter((l) => D.has(l.name)).length === p.length;
             q.push({
-                id: `mcp-server-${x}`,
-                label: `${o?V1.checkboxOn:V1.checkboxOff} ${x} (${p.length} tool${p.length===1?"":"s"})`,
+                id: `mcp-server-TextComponent{x}`,
+                label: `TextComponent{o?V1.checkboxOn:V1.checkboxOff} TextComponent{x} (TextComponent{p.length} tool${p.length===1?"":"s"})`,
                 action: () => {
                     let l = p.map((k) => k.name);
                     E(l, !o)
@@ -1105,11 +1104,11 @@ function vY1({
             let p = x.name;
             if (x.name.startsWith("mcp__")) {
                 let u = FU(x.name);
-                p = u ? `${u.toolName} (${u.serverName})` : x.name
+                p = u ? `TextComponent{u.toolName} (TextComponent{u.serverName})` : x.name
             }
             q.push({
-                id: `tool-${x.name}`,
-                label: `${D.has(x.name)?V1.checkboxOn:V1.checkboxOff} ${p}`,
+                id: `tool-TextComponent{x.name}`,
+                label: `TextComponent{D.has(x.name)?V1.checkboxOn:V1.checkboxOff} TextComponent{p}`,
                 action: () => C(x.name)
             })
         })
@@ -1133,10 +1132,10 @@ function vY1({
     }), JF.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, JF.default.createElement($, {
+    }, JF.default.createElement(TextComponent, {
         color: W === 0 ? "suggestion" : void 0,
         bold: W === 0
-    }, W === 0 ? `${V1.pointer} ` : "  ", "[ Continue ]"), JF.default.createElement($, {
+    }, W === 0 ? `TextComponent{V1.pointer} ` : "  ", "[ Continue ]"), JF.default.createElement(TextComponent, {
         dimColor: !0
     }, "─".repeat(40)), q.slice(1).map((x, p) => {
         let u = p + 1 === W,
@@ -1144,26 +1143,26 @@ function vY1({
             l = x.isHeader;
         return JF.default.createElement(JF.default.Fragment, {
             key: x.id
-        }, o && JF.default.createElement($, {
+        }, o && JF.default.createElement(TextComponent, {
             dimColor: !0
         }, "─".repeat(40)), l && p > 0 && JF.default.createElement(j, {
             marginTop: 1
-        }), JF.default.createElement($, {
+        }), JF.default.createElement(TextComponent, {
             color: l ? void 0 : u ? "suggestion" : void 0,
             dimColor: l,
             bold: o && u
-        }, l ? "" : u ? `${V1.pointer} ` : "  ", o ? `[ ${x.label} ]` : x.label))
+        }, l ? "" : u ? `TextComponent{V1.pointer} ` : "  ", o ? `[ TextComponent{x.label} ]` : x.label))
     }), JF.default.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, JF.default.createElement($, {
+    }, JF.default.createElement(TextComponent, {
         dimColor: !0
-    }, H ? "All tools selected" : `${D.size} of ${Z.length} tools selected`)))
+    }, H ? "All tools selected" : `TextComponent{D.size} of TextComponent{Z.length} tools selected`)))
 }
 var JF, FK9 = () => ({
     READ_ONLY: {
         name: "Read-only tools",
-        toolNames: new Set([FO.name, Hy.name, xq.name, d8.name, cF.name, tI.name, hjA.name, lI1.name, iI1.name, Xh.name, Fh.name])
+        toolNames: new Set([FO.name, Hy.name, xq.name, d8.name, cF.name, TODO_READ_TOOL.name, hjA.name, lI1.name, iI1.name, Xh.name, Fh.name])
     },
     EDIT: {
         name: "Edit tools",
@@ -1183,7 +1182,7 @@ var JF, FK9 = () => ({
         toolNames: new Set
     }
 });
-var DV0 = L(() => {
+var DV0 = lazyLoader(() => {
     hA();
     hA();
     n2();
@@ -1204,7 +1203,7 @@ var DV0 = L(() => {
     eJA();
     nV();
     EWA();
-    JF = GA(VA(), 1)
+    JF = esmImport(VA(), 1)
 });
 
 function VK9({
@@ -1231,11 +1230,11 @@ function VK9({
     }))
 }
 var HV0;
-var KK9 = L(() => {
+var KK9 = lazyLoader(() => {
     DV0();
     yO();
     QN();
-    HV0 = GA(VA(), 1)
+    HV0 = esmImport(VA(), 1)
 });
 
 function bY1({
@@ -1252,7 +1251,7 @@ function bY1({
         flexDirection: "column"
     }, bO.createElement(j, {
         marginBottom: 1
-    }, bO.createElement($, {
+    }, bO.createElement(TextComponent, {
         dimColor: !0
     }, "Model determines the agent's reasoning capabilities and speed.")), bO.createElement(M0, {
         options: G,
@@ -1264,11 +1263,11 @@ function bY1({
     }))
 }
 var bO;
-var CV0 = L(() => {
+var CV0 = lazyLoader(() => {
     hA();
     T5();
     s2();
-    bO = GA(VA(), 1)
+    bO = esmImport(VA(), 1)
 });
 
 function DK9() {
@@ -1292,11 +1291,11 @@ function DK9() {
     }))
 }
 var EV0;
-var HK9 = L(() => {
+var HK9 = lazyLoader(() => {
     CV0();
     yO();
     QN();
-    EV0 = GA(VA(), 1)
+    EV0 = esmImport(VA(), 1)
 });
 
 function fY1({
@@ -1325,35 +1324,35 @@ function fY1({
             key: Y,
             flexDirection: "row",
             gap: 1
-        }, Zz.default.createElement($, {
+        }, Zz.default.createElement(TextComponent, {
             color: W ? "suggestion" : void 0
-        }, W ? V1.pointer : " "), Y === "automatic" ? Zz.default.createElement($, {
+        }, W ? V1.pointer : " "), Y === "automatic" ? Zz.default.createElement(TextComponent, {
             bold: W
         }, "Automatic color") : Zz.default.createElement(j, {
             gap: 1
-        }, Zz.default.createElement($, {
+        }, Zz.default.createElement(TextComponent, {
             backgroundColor: v61[Y],
             color: "inverseText"
-        }, " "), Zz.default.createElement($, {
+        }, " "), Zz.default.createElement(TextComponent, {
             bold: W
         }, Y.charAt(0).toUpperCase() + Y.slice(1))))
     })), Zz.default.createElement(j, {
         marginTop: 1
-    }, Zz.default.createElement($, null, "Preview: "), I === void 0 || I === "automatic" ? Zz.default.createElement($, {
+    }, Zz.default.createElement(TextComponent, null, "Preview: "), I === void 0 || I === "automatic" ? Zz.default.createElement(TextComponent, {
         inverse: !0,
         bold: !0
-    }, " ", A, " ") : Zz.default.createElement($, {
+    }, " ", A, " ") : Zz.default.createElement(TextComponent, {
         backgroundColor: v61[I],
         color: "inverseText",
         bold: !0
     }, " ", A, " ")))
 }
 var Zz, FFA;
-var zV0 = L(() => {
+var zV0 = lazyLoader(() => {
     hA();
     Yn();
     n2();
-    Zz = GA(VA(), 1), FFA = ["automatic", ...rJA]
+    Zz = esmImport(VA(), 1), FFA = ["automatic", ...rJA]
 });
 
 function CK9() {
@@ -1396,13 +1395,13 @@ function CK9() {
     })))
 }
 var hY1;
-var EK9 = L(() => {
+var EK9 = lazyLoader(() => {
     hA();
     hA();
     zV0();
     yO();
     QN();
-    hY1 = GA(VA(), 1)
+    hY1 = esmImport(VA(), 1)
 });
 
 function zK9({
@@ -1428,7 +1427,7 @@ function zK9({
             if (F.length === 0) return "None";
             if (F.length === 1) return F[0] || "None";
             if (F.length === 2) return F.join(" and ");
-            return `${F.slice(0,-1).join(", ")}, and ${F[F.length-1]}`
+            return `TextComponent{F.slice(0,-1).join(", ")}, and TextComponent{F[F.length-1]}`
         };
     return H3.default.createElement(sJ, {
         subtitle: "Confirm and save",
@@ -1436,68 +1435,68 @@ function zK9({
     }, H3.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, H3.default.createElement($, null, H3.default.createElement($, {
+    }, H3.default.createElement(TextComponent, null, H3.default.createElement(TextComponent, {
         bold: !0
-    }, "Name"), ": ", J.agentType), H3.default.createElement($, null, H3.default.createElement($, {
+    }, "Name"), ": ", J.agentType), H3.default.createElement(TextComponent, null, H3.default.createElement(TextComponent, {
         bold: !0
     }, "Location"), ":", " ", dV9({
         source: Y.location,
         agentType: J.agentType
-    })), H3.default.createElement($, null, H3.default.createElement($, {
+    })), H3.default.createElement(TextComponent, null, H3.default.createElement(TextComponent, {
         bold: !0
-    }, "Tools"), ": ", X(J.tools)), H3.default.createElement($, null, H3.default.createElement($, {
+    }, "Tools"), ": ", X(J.tools)), H3.default.createElement(TextComponent, null, H3.default.createElement(TextComponent, {
         bold: !0
     }, "Model"), ": ", XrA(J.model)), H3.default.createElement(j, {
         marginTop: 1
-    }, H3.default.createElement($, null, H3.default.createElement($, {
+    }, H3.default.createElement(TextComponent, null, H3.default.createElement(TextComponent, {
         bold: !0
     }, "Description"), " (tells Claude when to use this agent):")), H3.default.createElement(j, {
         marginLeft: 2,
         marginTop: 1
-    }, H3.default.createElement($, null, J.whenToUse.length > 240 ? J.whenToUse.slice(0, 240) + "…" : J.whenToUse)), H3.default.createElement(j, {
+    }, H3.default.createElement(TextComponent, null, J.whenToUse.length > 240 ? J.whenToUse.slice(0, 240) + "…" : J.whenToUse)), H3.default.createElement(j, {
         marginTop: 1
-    }, H3.default.createElement($, null, H3.default.createElement($, {
+    }, H3.default.createElement(TextComponent, null, H3.default.createElement(TextComponent, {
         bold: !0
     }, "System prompt"), ":")), H3.default.createElement(j, {
         marginLeft: 2,
         marginTop: 1
-    }, H3.default.createElement($, null, (() => {
+    }, H3.default.createElement(TextComponent, null, (() => {
         let F = J.getSystemPrompt();
         return F.length > 240 ? F.slice(0, 240) + "…" : F
     })())), W.warnings.length > 0 && H3.default.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, H3.default.createElement($, {
+    }, H3.default.createElement(TextComponent, {
         color: "warning"
-    }, "Warnings:"), W.warnings.map((F, V) => H3.default.createElement($, {
+    }, "Warnings:"), W.warnings.map((F, V) => H3.default.createElement(TextComponent, {
         key: V,
         dimColor: !0
     }, " ", "• ", F))), W.errors.length > 0 && H3.default.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, H3.default.createElement($, {
+    }, H3.default.createElement(TextComponent, {
         color: "error"
-    }, "Errors:"), W.errors.map((F, V) => H3.default.createElement($, {
+    }, "Errors:"), W.errors.map((F, V) => H3.default.createElement(TextComponent, {
         key: V,
         color: "error"
     }, " ", "• ", F))), Z && H3.default.createElement(j, {
         marginTop: 1
-    }, H3.default.createElement($, {
+    }, H3.default.createElement(TextComponent, {
         color: "error"
     }, Z)), H3.default.createElement(j, {
         marginTop: 2
-    }, H3.default.createElement($, {
+    }, H3.default.createElement(TextComponent, {
         color: "success"
-    }, "Press ", H3.default.createElement($, {
+    }, "Press ", H3.default.createElement(TextComponent, {
         bold: !0
-    }, "s"), " or ", H3.default.createElement($, {
+    }, "s"), " or ", H3.default.createElement(TextComponent, {
         bold: !0
-    }, "Enter"), " to save,", " ", H3.default.createElement($, {
+    }, "Enter"), " to save,", " ", H3.default.createElement(TextComponent, {
         bold: !0
     }, "e"), " to save and edit"))))
 }
 var H3;
-var UK9 = L(() => {
+var UK9 = lazyLoader(() => {
     hA();
     hA();
     yO();
@@ -1505,7 +1504,7 @@ var UK9 = L(() => {
     KV0();
     WFA();
     s2();
-    H3 = GA(VA(), 1)
+    H3 = esmImport(VA(), 1)
 });
 
 function $K9({

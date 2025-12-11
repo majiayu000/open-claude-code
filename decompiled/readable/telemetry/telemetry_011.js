@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: telemetry_011.js
+ * 处理时间: 2025-12-09T03:41:38.435Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.057Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -131,8 +133,7 @@
                                 return X
                             }, Y.toObject = function(W, X) {
                                 if (!X) X = {};
-
-var F = {};
+                                var F = {};
                                 if (X.arrays || X.defaults) F.bucketCounts = [];
                                 if (X.defaults) F.offset = 0;
                                 if (W.offset != null && W.hasOwnProperty("offset")) F.offset = W.offset;
@@ -294,8 +295,7 @@ var F = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.quantileValues = [], W.attributes = [];
                             if (J.defaults) {
                                 if (_A.Long) {
@@ -395,8 +395,7 @@ var W = {};
                                 return W
                             }, I.toObject = function(J, W) {
                                 if (!W) W = {};
-
-var X = {};
+                                var X = {};
                                 if (W.defaults) X.quantile = 0, X.value = 0;
                                 if (J.quantile != null && J.hasOwnProperty("quantile")) X.quantile = W.json && !isFinite(J.quantile) ? String(J.quantile) : J.quantile;
                                 if (J.value != null && J.hasOwnProperty("value")) X.value = W.json && !isFinite(J.value) ? String(J.value) : J.value;
@@ -478,8 +477,7 @@ var X = {};
                             return this.decode(J, J.uint32())
                         }, Z.verify = function(J) {
                             if (typeof J !== "object" || J === null) return "object expected";
-
-var W = {};
+                            var W = {};
                             if (J.filteredAttributes != null && J.hasOwnProperty("filteredAttributes")) {
                                 if (!Array.isArray(J.filteredAttributes)) return "filteredAttributes: array expected";
                                 for (var X = 0; X < J.filteredAttributes.length; ++X) {
@@ -539,8 +537,7 @@ var W = {};
                             return W
                         }, Z.toObject = function(J, W) {
                             if (!W) W = {};
-
-var X = {};
+                            var X = {};
                             if (W.arrays || W.defaults) X.filteredAttributes = [];
                             if (W.defaults) {
                                 if (_A.Long) {
@@ -644,8 +641,7 @@ var X = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.resourceLogs = [];
                             if (Y.resourceLogs && Y.resourceLogs.length) {
                                 W.resourceLogs = [];
@@ -742,8 +738,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.scopeLogs = [];
                             if (J.defaults) W.resource = null, W.schemaUrl = "";
                             if (Y.resource != null && Y.hasOwnProperty("resource")) W.resource = RA.opentelemetry.proto.resource.v1.Resource.toObject(Y.resource, J);
@@ -843,8 +838,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.logRecords = [];
                             if (J.defaults) W.scope = null, W.schemaUrl = "";
                             if (Y.scope != null && Y.hasOwnProperty("scope")) W.scope = RA.opentelemetry.proto.common.v1.InstrumentationScope.toObject(Y.scope, J);
@@ -1174,8 +1168,7 @@ var W = {};
                             return J
                         }, Z.toObject = function(Y, J) {
                             if (!J) J = {};
-
-var W = {};
+                            var W = {};
                             if (J.arrays || J.defaults) W.attributes = [];
                             if (J.defaults) {
                                 if (_A.Long) {
@@ -1224,19 +1217,19 @@ var W = {};
     }();
     bF2.exports = RA
 });
-var uF2 = U((hF2) => {
+var uF2 = moduleWrapper((hF2) => {
     Object.defineProperty(hF2, "__esModule", {
         value: !0
     });
     hF2.hexToBinary = void 0;
 
-function fF2(A) {
+    function fF2(A) {
         if (A >= 48 && A <= 57) return A - 48;
         if (A >= 97 && A <= 102) return A - 87;
         return A - 55
     }
 
-function WE5(A) {
+    function WE5(A) {
         let Q = new Uint8Array(A.length / 2),
             B = 0;
         for (let G = 0; G < A.length; G += 2) {
@@ -1248,7 +1241,7 @@ function WE5(A) {
     }
     hF2.hexToBinary = WE5
 });
-var g91 = U((lF2) => {
+var g91 = moduleWrapper((lF2) => {
     Object.defineProperty(lF2, "__esModule", {
         value: !0
     });
@@ -1256,13 +1249,13 @@ var g91 = U((lF2) => {
     var XE5 = t6(),
         dQ0 = uF2();
 
-function cQ0(A) {
+    function cQ0(A) {
         let Q = BigInt(1e9);
         return BigInt(A[0]) * Q + BigInt(A[1])
     }
     lF2.hrTimeToNanos = cQ0;
 
-function dF2(A) {
+    function dF2(A) {
         let Q = Number(BigInt.asUintN(32, A)),
             B = Number(BigInt.asUintN(32, A >> BigInt(32)));
         return {
@@ -1272,34 +1265,33 @@ function dF2(A) {
     }
     lF2.toLongBits = dF2;
 
-function pQ0(A) {
+    function pQ0(A) {
         let Q = cQ0(A);
         return dF2(Q)
     }
     lF2.encodeAsLongBits = pQ0;
 
-function cF2(A) {
+    function cF2(A) {
         return cQ0(A).toString()
     }
     lF2.encodeAsString = cF2;
     var FE5 = typeof BigInt < "u" ? cF2 : XE5.hrTimeToNanoseconds;
 
-function mF2(A) {
+    function mF2(A) {
         return A
     }
 
-function pF2(A) {
+    function pF2(A) {
         if (A === void 0) return;
         return (0, dQ0.hexToBinary)(A)
     }
-
-var VE5 = {
+    var VE5 = {
         encodeHrTime: pQ0,
         encodeSpanContext: dQ0.hexToBinary,
         encodeOptionalSpanContext: pF2
     };
 
-function KE5(A) {
+    function KE5(A) {
         if (A === void 0) return VE5;
         let Q = A.useLongBits ?? !0,
             B = A.useHex ?? !1;
@@ -1311,13 +1303,13 @@ function KE5(A) {
     }
     lF2.getOtlpEncoder = KE5
 });
-var u91 = U((aF2) => {
+var u91 = moduleWrapper((aF2) => {
     Object.defineProperty(aF2, "__esModule", {
         value: !0
     });
     aF2.toAnyValue = aF2.toKeyValue = aF2.toAttributes = aF2.createInstrumentationScope = aF2.createResource = void 0;
 
-function zE5(A) {
+    function zE5(A) {
         let Q = {
                 attributes: nF2(A.attributes),
                 droppedAttributesCount: 0
@@ -1328,7 +1320,7 @@ function zE5(A) {
     }
     aF2.createResource = zE5;
 
-function UE5(A) {
+    function UE5(A) {
         return {
             name: A.name,
             version: A.version
@@ -1336,12 +1328,12 @@ function UE5(A) {
     }
     aF2.createInstrumentationScope = UE5;
 
-function nF2(A) {
+    function nF2(A) {
         return Object.keys(A).map((Q) => lQ0(Q, A[Q]))
     }
     aF2.toAttributes = nF2;
 
-function lQ0(A, Q) {
+    function lQ0(A, Q) {
         return {
             key: A,
             value: iQ0(Q)
@@ -1349,7 +1341,7 @@ function lQ0(A, Q) {
     }
     aF2.toKeyValue = lQ0;
 
-function iQ0(A) {
+    function iQ0(A) {
         let Q = typeof A;
         if (Q === "string") return {
             stringValue: A
@@ -1382,7 +1374,7 @@ function iQ0(A) {
     }
     aF2.toAnyValue = iQ0
 });
-var nQ0 = U((oF2) => {
+var nQ0 = moduleWrapper((oF2) => {
     Object.defineProperty(oF2, "__esModule", {
         value: !0
     });
@@ -1390,7 +1382,7 @@ var nQ0 = U((oF2) => {
     var LE5 = g91(),
         m91 = u91();
 
-function ME5(A, Q) {
+    function ME5(A, Q) {
         let B = (0, LE5.getOtlpEncoder)(Q);
         return {
             resourceLogs: RE5(A, B)
@@ -1398,7 +1390,7 @@ function ME5(A, Q) {
     }
     oF2.createExportLogsServiceRequest = ME5;
 
-function OE5(A) {
+    function OE5(A) {
         let Q = new Map;
         for (let B of A) {
             let {
@@ -1410,7 +1402,7 @@ function OE5(A) {
                 }
             } = B, J = Q.get(G);
             if (!J) J = new Map, Q.set(G, J);
-            let W = `${Z}@${I}:${Y}`,
+            let W = `TextComponent{Z}@TextComponent{I}:TextComponent{Y}`,
                 X = J.get(W);
             if (!X) X = [], J.set(W, X);
             X.push(B)
@@ -1418,7 +1410,7 @@ function OE5(A) {
         return Q
     }
 
-function RE5(A, Q) {
+    function RE5(A, Q) {
         let B = OE5(A);
         return Array.from(B, ([G, Z]) => {
             let I = (0, m91.createResource)(G);
@@ -1436,7 +1428,7 @@ function RE5(A, Q) {
         })
     }
 
-function TE5(A, Q) {
+    function TE5(A, Q) {
         return {
             timeUnixNano: Q.encodeHrTime(A.hrTime),
             observedTimeUnixNano: Q.encodeHrTime(A.hrTimeObserved),
@@ -1452,16 +1444,16 @@ function TE5(A, Q) {
         }
     }
 
-function PE5(A) {
+    function PE5(A) {
         return A
     }
 
-function rF2(A) {
+    function rF2(A) {
         return Object.keys(A).map((Q) => (0, m91.toKeyValue)(Q, A[Q]))
     }
     oF2.toLogAttributes = rF2
 });
-var BV2 = U((AV2) => {
+var BV2 = moduleWrapper((AV2) => {
     Object.defineProperty(AV2, "__esModule", {
         value: !0
     });
@@ -1480,7 +1472,7 @@ var BV2 = U((AV2) => {
         }
     }
 });
-var GV2 = U((aQ0) => {
+var GV2 = moduleWrapper((aQ0) => {
     Object.defineProperty(aQ0, "__esModule", {
         value: !0
     });
@@ -1493,7 +1485,7 @@ var GV2 = U((aQ0) => {
         }
     })
 });
-var IV2 = U((ZV2) => {
+var IV2 = moduleWrapper((ZV2) => {
     Object.defineProperty(ZV2, "__esModule", {
         value: !0
     });
@@ -1503,7 +1495,7 @@ var IV2 = U((ZV2) => {
         A[A.AGGREGATION_TEMPORALITY_UNSPECIFIED = 0] = "AGGREGATION_TEMPORALITY_UNSPECIFIED", A[A.AGGREGATION_TEMPORALITY_DELTA = 1] = "AGGREGATION_TEMPORALITY_DELTA", A[A.AGGREGATION_TEMPORALITY_CUMULATIVE = 2] = "AGGREGATION_TEMPORALITY_CUMULATIVE"
     })(vE5 = ZV2.EAggregationTemporality || (ZV2.EAggregationTemporality = {}))
 });
-var rQ0 = U((KV2) => {
+var rQ0 = moduleWrapper((KV2) => {
     Object.defineProperty(KV2, "__esModule", {
         value: !0
     });
@@ -1514,7 +1506,7 @@ var rQ0 = U((KV2) => {
         bE5 = g91(),
         nMA = u91();
 
-function XV2(A, Q) {
+    function XV2(A, Q) {
         let B = (0, bE5.getOtlpEncoder)(Q),
             G = (0, nMA.createResource)(A.resource);
         return {

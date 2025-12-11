@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_025.js
+ * 处理时间: 2025-12-09T03:41:37.558Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.984Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-        U(A) {
+        moduleWrapper(A) {
             let Q = typeof A === "number" ? A : void 0,
                 B = typeof A === "function" ? A : void 0,
                 G = typeof A > "u" ? [] : void 0,
@@ -170,7 +173,7 @@
         }
         eraseElementByPos(A) {
             if (A < 0 || A > this.m - 1) throw RangeError();
-            let Q = this.U(A);
+            let Q = this.moduleWrapper(A);
             return this.S(Q), this.m
         }
         eraseElementByKey(A) {
@@ -191,15 +194,14 @@
         getHeight() {
             if (this.m === 0) return 0;
 
-function A(Q) {
+            function A(Q) {
                 if (!Q) return 0;
                 return Math.max(A(Q.i), A(Q.h)) + 1
             }
             return A(this.v)
         }
     }
-
-class BH2 extends tD2 {
+    class BH2 extends tD2 {
         constructor(A, Q, B) {
             super(B);
             if (this.T = A, this.C = Q, this.iteratorType === 0) this.pre = function() {
@@ -239,8 +241,7 @@ class BH2 extends tD2 {
             return this.T !== this.C
         }
     }
-
-class WP extends BH2 {
+    class WP extends BH2 {
         constructor(A, Q, B, G) {
             super(A, Q, G);
             this.container = B
@@ -264,8 +265,7 @@ class WP extends BH2 {
             return new WP(this.T, this.C, this.container, this.iteratorType)
         }
     }
-
-class GH2 extends QH2 {
+    class GH2 extends QH2 {
         constructor(A = [], Q, B) {
             super(Q, B);
             let G = this;
@@ -304,7 +304,7 @@ class GH2 extends QH2 {
             return new WP(Q, this.C, this)
         }
         reverseLowerBound(A) {
-            let Q = this.L(this.v, A);
+            let Q = this.lazyLoader(this.v, A);
             return new WP(Q, this.C, this)
         }
         reverseUpperBound(A) {
@@ -312,7 +312,7 @@ class GH2 extends QH2 {
             return new WP(Q, this.C, this)
         }
         forEach(A) {
-            this.U(function(Q, B, G) {
+            this.moduleWrapper(function(Q, B, G) {
                 A([Q.u, Q.l], B, G)
             })
         }
@@ -321,7 +321,7 @@ class GH2 extends QH2 {
         }
         getElementByPos(A) {
             if (A < 0 || A > this.m - 1) throw RangeError();
-            let Q = this.U(A);
+            let Q = this.moduleWrapper(A);
             return [Q.u, Q.l]
         }
         find(A) {
@@ -338,7 +338,7 @@ class GH2 extends QH2 {
             }), this.m
         }*[Symbol.iterator]() {
             let A = this.m,
-                Q = this.U();
+                Q = this.moduleWrapper();
             for (let B = 0; B < A; ++B) {
                 let G = Q[B];
                 yield [G.u, G.l]
@@ -347,23 +347,22 @@ class GH2 extends QH2 {
     }
     ZH2.OrderedMap = GH2
 });
-var Z41 = U((JH2) => {
+var Z41 = moduleWrapper((JH2) => {
     Object.defineProperty(JH2, "__esModule", {
         value: !0
     });
     JH2.registerAdminService = Cq5;
     JH2.addAdminServicesToServer = Eq5;
+    var YH2 = [];
 
-var YH2 = [];
-
-function Cq5(A, Q) {
+    function Cq5(A, Q) {
         YH2.push({
             getServiceDefinition: A,
             getHandlers: Q
         })
     }
 
-function Eq5(A) {
+    function Eq5(A) {
         for (let {
                 getServiceDefinition: Q,
                 getHandlers: B
@@ -371,27 +370,26 @@ function Eq5(A) {
             of YH2) A.addService(Q(), B())
     }
 });
-var HH2 = U((KH2) => {
+var HH2 = moduleWrapper((KH2) => {
     Object.defineProperty(KH2, "__esModule", {
         value: !0
     });
     KH2.ClientDuplexStreamImpl = KH2.ClientWritableStreamImpl = KH2.ClientReadableStreamImpl = KH2.ClientUnaryCallImpl = void 0;
     KH2.callErrorFromStatus = wq5;
-    var $q5 = UA("events"),
-        kB0 = UA("stream"),
+    var $q5 = nodeRequire("events"),
+        kB0 = nodeRequire("stream"),
         QOA = K6();
 
-function wq5(A, Q) {
-        let B = `${A.code} ${QOA.Status[A.code]}: ${A.details}`,
-            Z = `${Error(B).stack}
+    function wq5(A, Q) {
+        let B = `TextComponent{A.code} TextComponent{QOA.Status[A.code]}: TextComponent{A.details}`,
+            Z = `TextComponent{Error(B).stack}
 for call at
-${Q}`;
+TextComponent{Q}`;
         return Object.assign(Error(B), A, {
             stack: Z
         })
     }
-
-class WH2 extends $q5.EventEmitter {
+    class WH2 extends $q5.EventEmitter {
         constructor() {
             super()
         }
@@ -409,8 +407,7 @@ class WH2 extends $q5.EventEmitter {
         }
     }
     KH2.ClientUnaryCallImpl = WH2;
-
-class XH2 extends kB0.Readable {
+    class XH2 extends kB0.Readable {
         constructor(A) {
             super({
                 objectMode: !0
@@ -435,8 +432,7 @@ class XH2 extends kB0.Readable {
         }
     }
     KH2.ClientReadableStreamImpl = XH2;
-
-class FH2 extends kB0.Writable {
+    class FH2 extends kB0.Writable {
         constructor(A) {
             super({
                 objectMode: !0
@@ -470,8 +466,7 @@ class FH2 extends kB0.Writable {
         }
     }
     KH2.ClientWritableStreamImpl = FH2;
-
-class VH2 extends kB0.Duplex {
+    class VH2 extends kB0.Duplex {
         constructor(A, Q) {
             super({
                 objectMode: !0
@@ -510,7 +505,7 @@ class VH2 extends kB0.Duplex {
     }
     KH2.ClientDuplexStreamImpl = VH2
 });
-var u1A = U((EH2) => {
+var u1A = moduleWrapper((EH2) => {
     Object.defineProperty(EH2, "__esModule", {
         value: !0
     });
@@ -520,14 +515,14 @@ var u1A = U((EH2) => {
     EH2.isInterceptingListener = Pq5;
     var Oq5 = BK();
 
-function Rq5(A) {
+    function Rq5(A) {
         return {
             ok: !0,
             value: A
         }
     }
 
-function Tq5(A) {
+    function Tq5(A) {
         var Q;
         return {
             ok: !1,
@@ -537,11 +532,10 @@ function Tq5(A) {
         }
     }
 
-function Pq5(A) {
+    function Pq5(A) {
         return A.onReceiveMetadata !== void 0 && A.onReceiveMetadata.length === 1
     }
-
-class CH2 {
+    class CH2 {
         constructor(A, Q) {
             this.listener = A, this.nextListener = Q, this.processingMetadata = !1, this.hasPendingMessage = !1, this.processingMessage = !1, this.pendingStatus = null
         }
@@ -571,7 +565,7 @@ class CH2 {
     }
     EH2.InterceptingListenerImpl = CH2
 });
-var vB0 = U((RH2) => {
+var vB0 = moduleWrapper((RH2) => {
     Object.defineProperty(RH2, "__esModule", {
         value: !0
     });
@@ -581,16 +575,14 @@ var vB0 = U((RH2) => {
         UH2 = u1A(),
         $H2 = K6(),
         wH2 = p91();
-
-class GOA extends Error {
+    class GOA extends Error {
         constructor(A) {
             super(A);
             this.name = "InterceptorConfigurationError", Error.captureStackTrace(this, GOA)
         }
     }
     RH2.InterceptorConfigurationError = GOA;
-
-class qH2 {
+    class qH2 {
         constructor() {
             this.metadata = void 0, this.message = void 0, this.status = void 0
         }
@@ -612,8 +604,7 @@ class qH2 {
         }
     }
     RH2.ListenerBuilder = qH2;
-
-class NH2 {
+    class NH2 {
         constructor() {
             this.start = void 0, this.message = void 0, this.halfClose = void 0, this.cancel = void 0
         }
@@ -639,8 +630,7 @@ class NH2 {
         }
     }
     RH2.RequesterBuilder = NH2;
-
-var yB0 = {
+    var yB0 = {
             onReceiveMetadata: (A, Q) => {
                 Q(A)
             },
@@ -665,8 +655,7 @@ var yB0 = {
                 A()
             }
         };
-
-class LH2 {
+    class LH2 {
         constructor(A, Q) {
             var B, G, Z, I;
             if (this.nextCall = A, this.processingMetadata = !1, this.pendingMessageContext = null, this.processingMessage = !1, this.pendingHalfClose = !1, Q) this.requester = {
@@ -738,7 +727,7 @@ class LH2 {
     }
     RH2.InterceptingCall = LH2;
 
-function yq5(A, Q, B) {
+    function yq5(A, Q, B) {
         var G, Z;
         let I = (G = B.deadline) !== null && G !== void 0 ? G : 1 / 0,
             Y = B.host,
@@ -749,8 +738,7 @@ function yq5(A, Q, B) {
         if (X) F.setCredentials(X);
         return F
     }
-
-class xB0 {
+    class xB0 {
         constructor(A, Q) {
             this.call = A, this.methodDefinition = Q
         }
@@ -765,7 +753,7 @@ class xB0 {
             try {
                 B = this.methodDefinition.requestSerialize(Q)
             } catch (G) {
-                this.call.cancelWithStatus($H2.Status.INTERNAL, `Request message serialization failure: ${(0,wH2.getErrorMessage)(G)}`);
+                this.call.cancelWithStatus($H2.Status.INTERNAL, `Request message serialization failure: TextComponent{(0,wH2.getErrorMessage)(G)}`);
                 return
             }
             this.call.sendMessageWithContext(A, B)
@@ -788,7 +776,7 @@ class xB0 {
                     } catch (Y) {
                         B = {
                             code: $H2.Status.INTERNAL,
-                            details: `Response message parsing error: ${(0,wH2.getErrorMessage)(Y)}`,
+                            details: `Response message parsing error: TextComponent{(0,wH2.getErrorMessage)(Y)}`,
                             metadata: new kq5.Metadata
                         }, this.call.cancelWithStatus(B.code, B.details);
                         return
@@ -811,8 +799,7 @@ class xB0 {
             return this.call.getAuthContext()
         }
     }
-
-class MH2 extends xB0 {
+    class MH2 extends xB0 {
         constructor(A, Q) {
             super(A, Q)
         }
@@ -834,16 +821,15 @@ class MH2 extends xB0 {
             super.start(A, I), this.call.startRead()
         }
     }
+    class OH2 extends xB0 {}
 
-class OH2 extends xB0 {}
-
-function xq5(A, Q, B) {
+    function xq5(A, Q, B) {
         let G = yq5(A, B.path, Q);
         if (B.responseStream) return new OH2(G, B);
         else return new MH2(G, B)
     }
 
-function vq5(A, Q, B, G) {
+    function vq5(A, Q, B, G) {
         if (A.clientInterceptors.length > 0 && A.clientInterceptorProviders.length > 0) throw new GOA("Both interceptors and interceptor_providers were passed as options to the client constructor. Only one of these is allowed.");
         if (A.callInterceptors.length > 0 && A.callInterceptorProviders.length > 0) throw new GOA("Both interceptors and interceptor_providers were passed as call options. Only one of these is allowed.");
         let Z = [];
@@ -857,7 +843,7 @@ function vq5(A, Q, B, G) {
         }, (J) => xq5(G, J, Q))(I)
     }
 });
-var fB0 = U((jH2) => {
+var fB0 = moduleWrapper((jH2) => {
     Object.defineProperty(jH2, "__esModule", {
         value: !0
     });
@@ -873,18 +859,17 @@ var fB0 = U((jH2) => {
         cYA = Symbol(),
         qh = Symbol();
 
-function bB0(A) {
+    function bB0(A) {
         return typeof A === "function"
     }
 
-function pYA(A) {
+    function pYA(A) {
         var Q;
         return ((Q = A.stack) === null || Q === void 0 ? void 0 : Q.split(`
 `).slice(1).join(`
 `)) || "no stack trace available"
     }
-
-class PH2 {
+    class PH2 {
         constructor(A, Q, B = {}) {
             var G, Z;
             if (B = Object.assign({}, B), this[dYA] = (G = B.interceptors) !== null && G !== void 0 ? G : [], delete B.interceptors, this[cYA] = (Z = B.interceptor_providers) !== null && Z !== void 0 ? Z : [], delete B.interceptor_providers, this[dYA].length > 0 && this[cYA].length > 0) throw Error("Both interceptors and interceptor_providers were passed as options to the client constructor. Only one of these is allowed.");
@@ -1176,7 +1161,7 @@ class PH2 {
     }
     jH2.Client = PH2
 });
-var Y41 = U((kH2) => {
+var Y41 = moduleWrapper((kH2) => {
     Object.defineProperty(kH2, "__esModule", {
         value: !0
     });
@@ -1190,19 +1175,18 @@ var Y41 = U((kH2) => {
             bidi: ZOA.Client.prototype.makeBidiStreamRequest
         };
 
-function gB0(A) {
+    function gB0(A) {
         return ["__proto__", "prototype", "constructor"].includes(A)
     }
 
-function _H2(A, Q, B) {
+    function _H2(A, Q, B) {
         if (!B) B = {};
-
-class G extends ZOA.Client {}
+        class G extends ZOA.Client {}
         return Object.keys(A).forEach((Z) => {
             if (gB0(Z)) return;
             let I = A[Z],
                 Y;
-            if (typeof Z === "string" && Z.charAt(0) === "$") throw Error("Method names cannot start with $");
+            if (typeof Z === "string" && Z.charAt(0) === "TextComponent") throw Error("Method names cannot start with TextComponent");
             if (I.requestStream)
                 if (I.responseStream) Y = "bidi";
                 else Y = "client_stream";
@@ -1216,17 +1200,17 @@ class G extends ZOA.Client {}
         }), G.service = A, G.serviceName = Q, G
     }
 
-function cq5(A, Q, B, G) {
+    function cq5(A, Q, B, G) {
         return function(...Z) {
             return A.call(this, Q, B, G, ...Z)
         }
     }
 
-function pq5(A) {
+    function pq5(A) {
         return "format" in A
     }
 
-function lq5(A) {
+    function lq5(A) {
         let Q = {};
         for (let B in A)
             if (Object.prototype.hasOwnProperty.call(A, B)) {
@@ -1244,7 +1228,7 @@ function lq5(A) {
             } return Q
     }
 });
-var GC2 = U((DuG, BC2) => {
+var GC2 = moduleWrapper((DuG, BC2) => {
     var aq5 = 1 / 0,
         sq5 = "[object Symbol]",
         rq5 = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g,
@@ -1289,7 +1273,7 @@ var GC2 = U((DuG, BC2) => {
         XN5 = RegExp(mB0, "g"),
         FN5 = RegExp(J41, "g"),
         VN5 = RegExp(uB0 + "(?=" + uB0 + ")|" + WN5 + AC2, "g"),
-        KN5 = RegExp([lYA + "?" + aH2 + "+" + vH2 + "(?=" + [yH2, lYA, "$"].join("|") + ")", IN5 + "+" + bH2 + "(?=" + [yH2, lYA + xH2, "$"].join("|") + ")", lYA + "?" + xH2 + "+" + vH2, lYA + "+" + bH2, nH2, JN5].join("|"), "g"),
+        KN5 = RegExp([lYA + "?" + aH2 + "+" + vH2 + "(?=" + [yH2, lYA, "TextComponent"].join("|") + ")", IN5 + "+" + bH2 + "(?=" + [yH2, lYA + xH2, "TextComponent"].join("|") + ")", lYA + "?" + xH2 + "+" + vH2, lYA + "+" + bH2, nH2, JN5].join("|"), "g"),
         DN5 = RegExp("[" + oH2 + W41 + uH2 + mH2 + lH2 + "]"),
         HN5 = /[a-z][A-Z]|[A-Z]{2,}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/,
         CN5 = {
@@ -1339,10 +1323,10 @@ var GC2 = U((DuG, BC2) => {
             "õ": "o",
             "ö": "o",
             "ø": "o",
-            "Ù": "U",
-            "Ú": "U",
-            "Û": "U",
-            "Ü": "U",
+            "Ù": "moduleWrapper",
+            "Ú": "moduleWrapper",
+            "Û": "moduleWrapper",
+            "Ü": "moduleWrapper",
             "ù": "u",
             "ú": "u",
             "û": "u",
@@ -1410,11 +1394,11 @@ var GC2 = U((DuG, BC2) => {
             "Ķ": "K",
             "ķ": "k",
             "ĸ": "k",
-            "Ĺ": "L",
-            "Ļ": "L",
-            "Ľ": "L",
-            "Ŀ": "L",
-            "Ł": "L",
+            "Ĺ": "lazyLoader",
+            "Ļ": "lazyLoader",
+            "Ľ": "lazyLoader",
+            "Ŀ": "lazyLoader",
+            "Ł": "lazyLoader",
             "ĺ": "l",
             "ļ": "l",
             "ľ": "l",
@@ -1454,12 +1438,12 @@ var GC2 = U((DuG, BC2) => {
             "ţ": "t",
             "ť": "t",
             "ŧ": "t",
-            "Ũ": "U",
-            "Ū": "U",
-            "Ŭ": "U",
-            "Ů": "U",
-            "Ű": "U",
-            "Ų": "U",
+            "Ũ": "moduleWrapper",
+            "Ū": "moduleWrapper",
+            "Ŭ": "moduleWrapper",
+            "Ů": "moduleWrapper",
+            "Ű": "moduleWrapper",
+            "Ų": "moduleWrapper",
             "ũ": "u",
             "ū": "u",
             "ŭ": "u",
@@ -1496,38 +1480,38 @@ var GC2 = U((DuG, BC2) => {
         return B
     }
 
-function wN5(A) {
+    function wN5(A) {
         return A.split("")
     }
 
-function qN5(A) {
+    function qN5(A) {
         return A.match(rq5) || []
     }
 
-function NN5(A) {
+    function NN5(A) {
         return function(Q) {
             return A == null ? void 0 : A[Q]
         }
     }
     var LN5 = NN5(CN5);
 
-function QC2(A) {
+    function QC2(A) {
         return DN5.test(A)
     }
 
-function MN5(A) {
+    function MN5(A) {
         return HN5.test(A)
     }
 
-function ON5(A) {
+    function ON5(A) {
         return QC2(A) ? RN5(A) : wN5(A)
     }
 
-function RN5(A) {
+    function RN5(A) {
         return A.match(VN5) || []
     }
 
-function TN5(A) {
+    function TN5(A) {
         return A.match(KN5) || []
     }
     var PN5 = Object.prototype,

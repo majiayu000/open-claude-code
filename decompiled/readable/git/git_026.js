@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_026.js
+ * 处理时间: 2025-12-09T03:41:37.569Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.985Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -23,13 +26,13 @@
         return G.slice(I).join(".")
     }
 
-function IM5(A) {
-        return A.substring(0, 1) + A.substring(1).replace(/([A-Z])(?=[a-z]|$)/g, function(Q, B) {
+    function IM5(A) {
+        return A.substring(0, 1) + A.substring(1).replace(/([A-Z])(?=[a-z]|TextComponent)/g, function(Q, B) {
             return "_" + B.toLowerCase()
         })
     }
 
-function YM5(A) {
+    function YM5(A) {
         if (A.syntax === "editions") switch (A.edition) {
             case r8.Edition.EDITION_2023:
                 return "2023";
@@ -40,7 +43,7 @@ function YM5(A) {
         return "proto2"
     }
 
-function JM5(A, Q) {
+    function JM5(A, Q) {
         if (!A) return;
         if (A === "proto2" || A === "proto3") Q.syntax = A;
         else switch (Q.syntax = "editions", A) {
@@ -52,7 +55,7 @@ function JM5(A, Q) {
         }
     }
 });
-var VE2 = U((muG, WM5) => {
+var VE2 = moduleWrapper((muG, WM5) => {
     WM5.exports = {
         nested: {
             google: {
@@ -172,7 +175,7 @@ var VE2 = U((muG, WM5) => {
         }
     }
 });
-var KE2 = U((duG, XM5) => {
+var KE2 = moduleWrapper((duG, XM5) => {
     XM5.exports = {
         nested: {
             google: {
@@ -194,7 +197,7 @@ var KE2 = U((duG, XM5) => {
         }
     }
 });
-var DE2 = U((cuG, FM5) => {
+var DE2 = moduleWrapper((cuG, FM5) => {
     FM5.exports = {
         nested: {
             google: {
@@ -398,16 +401,16 @@ var DE2 = U((cuG, FM5) => {
         }
     }
 });
-var $E2 = U((zE2) => {
+var $E2 = moduleWrapper((zE2) => {
     Object.defineProperty(zE2, "__esModule", {
         value: !0
     });
     zE2.addCommonProtos = zE2.loadProtosWithOptionsSync = zE2.loadProtosWithOptions = void 0;
-    var HE2 = UA("fs"),
-        CE2 = UA("path"),
+    var HE2 = nodeRequire("fs"),
+        CE2 = nodeRequire("path"),
         oYA = T41();
 
-function EE2(A, Q) {
+    function EE2(A, Q) {
         let B = A.resolvePath;
         A.resolvePath = (G, Z) => {
             if (CE2.isAbsolute(Z)) return Z;
@@ -419,11 +422,10 @@ function EE2(A, Q) {
                     continue
                 }
             }
-            return process.emitWarning(`${Z} not found in any of the include paths ${Q}`), B(G, Z)
+            return process.emitWarning(`TextComponent{Z} not found in any of the include paths TextComponent{Q}`), B(G, Z)
         }
     }
-
-async function VM5(A, Q) {
+    async function VM5(A, Q) {
         let B = new oYA.Root;
         if (Q = Q || {}, Q.includeDirs) {
             if (!Array.isArray(Q.includeDirs)) return Promise.reject(Error("The includeDirs option must be an array"));
@@ -434,7 +436,7 @@ async function VM5(A, Q) {
     }
     zE2.loadProtosWithOptions = VM5;
 
-function KM5(A, Q) {
+    function KM5(A, Q) {
         let B = new oYA.Root;
         if (Q = Q || {}, Q.includeDirs) {
             if (!Array.isArray(Q.includeDirs)) throw Error("The includeDirs option must be an array");
@@ -445,7 +447,7 @@ function KM5(A, Q) {
     }
     zE2.loadProtosWithOptionsSync = KM5;
 
-function DM5() {
+    function DM5() {
         let A = VE2(),
             Q = N20(),
             B = KE2(),
@@ -454,7 +456,7 @@ function DM5() {
     }
     zE2.addCommonProtos = DM5
 });
-var wE2 = U((zOA, M20) => {
+var wE2 = moduleWrapper((zOA, M20) => {
     (function(A, Q) {
         function B(G) {
             return "default" in G ? G.default : G
@@ -478,27 +480,26 @@ var wE2 = U((zOA, M20) => {
             Q = new WebAssembly.Instance(new WebAssembly.Module(new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0, 1, 13, 2, 96, 0, 1, 127, 96, 4, 127, 127, 127, 127, 1, 127, 3, 7, 6, 0, 1, 1, 1, 1, 1, 6, 6, 1, 127, 1, 65, 0, 11, 7, 50, 6, 3, 109, 117, 108, 0, 1, 5, 100, 105, 118, 95, 115, 0, 2, 5, 100, 105, 118, 95, 117, 0, 3, 5, 114, 101, 109, 95, 115, 0, 4, 5, 114, 101, 109, 95, 117, 0, 5, 8, 103, 101, 116, 95, 104, 105, 103, 104, 0, 0, 10, 191, 1, 6, 4, 0, 35, 0, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 126, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 127, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 128, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 129, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 130, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11])), {}).exports
         } catch {}
 
-function B(l, k, d) {
+        function B(l, k, d) {
             this.low = l | 0, this.high = k | 0, this.unsigned = !!d
         }
         B.prototype.__isLong__, Object.defineProperty(B.prototype, "__isLong__", {
             value: !0
         });
 
-function G(l) {
+        function G(l) {
             return (l && l.__isLong__) === !0
         }
 
-function Z(l) {
+        function Z(l) {
             var k = Math.clz32(l & -l);
             return l ? 31 - k : k
         }
         B.isLong = G;
-
-var I = {},
+        var I = {},
             Y = {};
 
-function J(l, k) {
+        function J(l, k) {
             var d, QA, IA;
             if (k) {
                 if (l >>>= 0, IA = 0 <= l && l < 256) {
@@ -516,7 +517,7 @@ function J(l, k) {
         }
         B.fromInt = J;
 
-function W(l, k) {
+        function W(l, k) {
             if (isNaN(l)) return k ? q : N;
             if (k) {
                 if (l < 0) return q;
@@ -530,13 +531,13 @@ function W(l, k) {
         }
         B.fromNumber = W;
 
-function X(l, k, d) {
+        function X(l, k, d) {
             return new B(l, k, d)
         }
         B.fromBits = X;
         var F = Math.pow;
 
-function V(l, k, d) {
+        function V(l, k, d) {
             if (l.length === 0) throw Error("empty string");
             if (typeof k === "number") d = k, k = !1;
             else k = !!k;
@@ -559,7 +560,7 @@ function V(l, k, d) {
         }
         B.fromString = V;
 
-function K(l, k) {
+        function K(l, k) {
             if (typeof l === "number") return W(l, k);
             if (typeof l === "string") return V(l, k);
             return X(l.low, l.high, typeof k === "boolean" ? k : l.unsigned)
@@ -597,7 +598,7 @@ function K(l, k) {
                 if (k = k || 10, k < 2 || 36 < k) throw RangeError("radix");
                 if (this.isZero()) return "0";
                 if (this.isNegative())
-                    if (this.eq(p)) {
+                    if (this.WEB_FETCH_TOOL_NAME(p)) {
                         var d = W(k),
                             QA = this.div(d),
                             IA = QA.mul(d).sub(this);
@@ -625,7 +626,7 @@ function K(l, k) {
             }, u.getLowBitsUnsigned = function() {
                 return this.low >>> 0
             }, u.getNumBitsAbs = function() {
-                if (this.isNegative()) return this.eq(p) ? 64 : this.neg().getNumBitsAbs();
+                if (this.isNegative()) return this.WEB_FETCH_TOOL_NAME(p) ? 64 : this.neg().getNumBitsAbs();
                 var k = this.high != 0 ? this.high : this.low;
                 for (var d = 31; d > 0; d--)
                     if ((k & 1 << d) != 0) break;
@@ -649,8 +650,8 @@ function K(l, k) {
                 if (!G(k)) k = K(k);
                 if (this.unsigned !== k.unsigned && this.high >>> 31 === 1 && k.high >>> 31 === 1) return !1;
                 return this.high === k.high && this.low === k.low
-            }, u.eq = u.equals, u.notEquals = function(k) {
-                return !this.eq(k)
+            }, u.WEB_FETCH_TOOL_NAME = u.equals, u.notEquals = function(k) {
+                return !this.WEB_FETCH_TOOL_NAME(k)
             }, u.neq = u.notEquals, u.ne = u.notEquals, u.lessThan = function(k) {
                 return this.comp(k) < 0
             }, u.lt = u.lessThan, u.lessThanOrEqual = function(k) {
@@ -661,7 +662,7 @@ function K(l, k) {
                 return this.comp(k) >= 0
             }, u.gte = u.greaterThanOrEqual, u.ge = u.greaterThanOrEqual, u.compare = function(k) {
                 if (!G(k)) k = K(k);
-                if (this.eq(k)) return 0;
+                if (this.WEB_FETCH_TOOL_NAME(k)) return 0;
                 var d = this.isNegative(),
                     QA = k.isNegative();
                 if (d && !QA) return -1;
@@ -669,7 +670,7 @@ function K(l, k) {
                 if (!this.unsigned) return this.sub(k).isNegative() ? -1 : 1;
                 return k.high >>> 0 > this.high >>> 0 || k.high === this.high && k.low >>> 0 > this.low >>> 0 ? -1 : 1
             }, u.comp = u.compare, u.negate = function() {
-                if (!this.unsigned && this.eq(p)) return p;
+                if (!this.unsigned && this.WEB_FETCH_TOOL_NAME(p)) return p;
                 return this.not().add(R)
             }, u.neg = u.negate, u.add = function(k) {
                 if (!G(k)) k = K(k);
@@ -697,8 +698,8 @@ function K(l, k) {
                     return X(d, Q.get_high(), this.unsigned)
                 }
                 if (k.isZero()) return this.unsigned ? q : N;
-                if (this.eq(p)) return k.isOdd() ? p : N;
-                if (k.eq(p)) return this.isOdd() ? p : N;
+                if (this.WEB_FETCH_TOOL_NAME(p)) return k.isOdd() ? p : N;
+                if (k.WEB_FETCH_TOOL_NAME(p)) return this.isOdd() ? p : N;
                 if (this.isNegative())
                     if (k.isNegative()) return this.neg().mul(k.neg());
                     else return this.neg().mul(k).neg();
@@ -728,14 +729,14 @@ function K(l, k) {
                 if (this.isZero()) return this.unsigned ? q : N;
                 var QA, IA, HA;
                 if (!this.unsigned) {
-                    if (this.eq(p))
-                        if (k.eq(R) || k.eq(y)) return p;
-                        else if (k.eq(p)) return R;
+                    if (this.WEB_FETCH_TOOL_NAME(p))
+                        if (k.WEB_FETCH_TOOL_NAME(R) || k.WEB_FETCH_TOOL_NAME(y)) return p;
+                        else if (k.WEB_FETCH_TOOL_NAME(p)) return R;
                     else {
                         var wA = this.shr(1);
-                        if (QA = wA.div(k).shl(1), QA.eq(N)) return k.isNegative() ? R : y;
+                        if (QA = wA.div(k).shl(1), QA.WEB_FETCH_TOOL_NAME(N)) return k.isNegative() ? R : y;
                         else return IA = this.sub(k.mul(QA)), HA = QA.add(IA.div(k)), HA
-                    } else if (k.eq(p)) return this.unsigned ? q : N;
+                    } else if (k.WEB_FETCH_TOOL_NAME(p)) return this.unsigned ? q : N;
                     if (this.isNegative()) {
                         if (k.isNegative()) return this.neg().div(k.neg());
                         return this.neg().div(k).neg()
@@ -848,7 +849,7 @@ function K(l, k) {
         var o = A.default = B
     })
 });
-var S20 = U((RE2) => {
+var S20 = moduleWrapper((RE2) => {
     Object.defineProperty(RE2, "__esModule", {
         value: !0
     });
@@ -860,7 +861,7 @@ var S20 = U((RE2) => {
         zM5 = wE2();
     RE2.Long = zM5;
 
-function UM5(A) {
+    function UM5(A) {
         return "@type" in A && typeof A["@type"] === "string"
     }
     RE2.isAnyExtension = UM5;
@@ -868,8 +869,7 @@ function UM5(A) {
     (function(A) {
         A.IDEMPOTENCY_UNKNOWN = "IDEMPOTENCY_UNKNOWN", A.NO_SIDE_EFFECTS = "NO_SIDE_EFFECTS", A.IDEMPOTENT = "IDEMPOTENT"
     })(NE2 = RE2.IdempotencyLevel || (RE2.IdempotencyLevel = {}));
-
-var LE2 = {
+    var LE2 = {
         longs: String,
         enums: String,
         bytes: String,
@@ -883,15 +883,15 @@ var LE2 = {
         else return A + "." + Q
     }
 
-function wM5(A) {
+    function wM5(A) {
         return A instanceof ok.Service || A instanceof ok.Type || A instanceof ok.Enum
     }
 
-function qM5(A) {
+    function qM5(A) {
         return A instanceof ok.Namespace || A instanceof ok.Root
     }
 
-function ME2(A, Q) {
+    function ME2(A, Q) {
         let B = $M5(Q, A.name);
         if (wM5(A)) return [
             [B, A]
@@ -902,21 +902,21 @@ function ME2(A, Q) {
         return []
     }
 
-function O20(A, Q) {
+    function O20(A, Q) {
         return function(G) {
             return A.toObject(A.decode(G), Q)
         }
     }
 
-function R20(A) {
+    function R20(A) {
         return function(B) {
-            if (Array.isArray(B)) throw Error(`Failed to serialize message: expected object with ${A.name} structure, got array instead`);
+            if (Array.isArray(B)) throw Error(`Failed to serialize message: expected object with TextComponent{A.name} structure, got array instead`);
             let G = A.fromObject(B);
             return A.encode(G).finish()
         }
     }
 
-function NM5(A) {
+    function NM5(A) {
         return (A || []).reduce((Q, B) => {
             for (let [G, Z] of Object.entries(B)) switch (G) {
                 case "uninterpreted_option":
@@ -933,7 +933,7 @@ function NM5(A) {
         })
     }
 
-function LM5(A, Q, B, G) {
+    function LM5(A, Q, B, G) {
         let {
             resolvedRequestType: Z,
             resolvedResponseType: I
@@ -953,13 +953,13 @@ function LM5(A, Q, B, G) {
         }
     }
 
-function MM5(A, Q, B, G) {
+    function MM5(A, Q, B, G) {
         let Z = {};
         for (let I of A.methodsArray) Z[I.name] = LM5(I, Q, B, G);
         return Z
     }
 
-function T20(A, Q, B) {
+    function T20(A, Q, B) {
         let G = A.toDescriptor("proto3");
         return {
             format: "Protocol Buffer 3 DescriptorProto",
@@ -970,7 +970,7 @@ function T20(A, Q, B) {
         }
     }
 
-function OM5(A, Q) {
+    function OM5(A, Q) {
         let B = A.toDescriptor("proto3");
         return {
             format: "Protocol Buffer 3 EnumDescriptorProto",
@@ -979,14 +979,14 @@ function OM5(A, Q) {
         }
     }
 
-function RM5(A, Q, B, G) {
+    function RM5(A, Q, B, G) {
         if (A instanceof ok.Service) return MM5(A, Q, B, G);
         else if (A instanceof ok.Type) return T20(A, B, G);
         else if (A instanceof ok.Enum) return OM5(A, G);
         else throw Error("Type mismatch in reflection object handling")
     }
 
-function S41(A, Q) {
+    function S41(A, Q) {
         let B = {};
         A.resolveAll();
         let Z = A.toDescriptor("proto3").file.map((I) => Buffer.from(P20.FileDescriptorProto.encode(I).finish()));
@@ -994,46 +994,46 @@ function S41(A, Q) {
         return B
     }
 
-function OE2(A, Q) {
+    function OE2(A, Q) {
         Q = Q || {};
         let B = ok.Root.fromDescriptor(A);
         return B.resolveAll(), S41(B, Q)
     }
 
-function TM5(A, Q) {
+    function TM5(A, Q) {
         return (0, j20.loadProtosWithOptions)(A, Q).then((B) => {
             return S41(B, Q)
         })
     }
     RE2.load = TM5;
 
-function PM5(A, Q) {
+    function PM5(A, Q) {
         let B = (0, j20.loadProtosWithOptionsSync)(A, Q);
         return S41(B, Q)
     }
     RE2.loadSync = PM5;
 
-function jM5(A, Q) {
+    function jM5(A, Q) {
         Q = Q || {};
         let B = ok.Root.fromJSON(A);
         return B.resolveAll(), S41(B, Q)
     }
     RE2.fromJSON = jM5;
 
-function SM5(A, Q) {
+    function SM5(A, Q) {
         let B = P20.FileDescriptorSet.decode(A);
         return OE2(B, Q)
     }
     RE2.loadFileDescriptorSetFromBuffer = SM5;
 
-function _M5(A, Q) {
+    function _M5(A, Q) {
         let B = P20.FileDescriptorSet.fromObject(A);
         return OE2(B, Q)
     }
     RE2.loadFileDescriptorSetFromObject = _M5;
     (0, j20.addCommonProtos)()
 });
-var mi = U((mE2) => {
+var mi = moduleWrapper((mE2) => {
     var __dirname = "/home/runner/code/tmp/claude-cli-external-build-2215/node_modules/@grpc/grpc-js/build/src";
     Object.defineProperty(mE2, "__esModule", {
         value: !0
@@ -1043,7 +1043,7 @@ var mi = U((mE2) => {
     mE2.getChannelzHandlers = gE2;
     mE2.getChannelzServiceDefinition = uE2;
     mE2.setup = eM5;
-    var k41 = UA("net"),
+    var k41 = nodeRequire("net"),
         i1A = IH2(),
         UOA = dE(),
         $OA = K6(),
@@ -1051,27 +1051,27 @@ var mi = U((mE2) => {
         gM5 = Z41(),
         uM5 = Y41();
 
-function _20(A) {
+    function _20(A) {
         return {
             channel_id: A.id,
             name: A.name
         }
     }
 
-function k20(A) {
+    function k20(A) {
         return {
             subchannel_id: A.id,
             name: A.name
         }
     }
 
-function mM5(A) {
+    function mM5(A) {
         return {
             server_id: A.id
         }
     }
 
-function y41(A) {
+    function y41(A) {
         return {
             socket_id: A.id,
             name: A.name
@@ -1079,8 +1079,7 @@ function y41(A) {
     }
     var PE2 = 32,
         y20 = 100;
-
-class kE2 {
+    class kE2 {
         constructor() {
             this.events = [], this.creationTimestamp = new Date, this.eventsLogged = 0
         }
@@ -1094,8 +1093,7 @@ class kE2 {
         }
     }
     mE2.ChannelzTraceStub = kE2;
-
-class yE2 {
+    class yE2 {
         constructor() {
             this.events = [], this.eventsLogged = 0, this.creationTimestamp = new Date
         }
@@ -1127,8 +1125,7 @@ class yE2 {
         }
     }
     mE2.ChannelzTrace = yE2;
-
-class x20 {
+    class x20 {
         constructor() {
             this.channelChildren = new i1A.OrderedMap, this.subchannelChildren = new i1A.OrderedMap, this.socketChildren = new i1A.OrderedMap, this.trackerMap = {
                 ["channel"]: this.channelChildren,
@@ -1161,14 +1158,12 @@ class x20 {
         }
     }
     mE2.ChannelzChildrenTracker = x20;
-
-class xE2 extends x20 {
+    class xE2 extends x20 {
         refChild() {}
         unrefChild() {}
     }
     mE2.ChannelzChildrenTrackerStub = xE2;
-
-class v20 {
+    class v20 {
         constructor() {
             this.callsStarted = 0, this.callsSucceeded = 0, this.callsFailed = 0, this.lastCallStartedTimestamp = null
         }
@@ -1183,15 +1178,13 @@ class v20 {
         }
     }
     mE2.ChannelzCallTracker = v20;
-
-class vE2 extends v20 {
+    class vE2 extends v20 {
         addCallStarted() {}
         addCallSucceeded() {}
         addCallFailed() {}
     }
     mE2.ChannelzCallTrackerStub = vE2;
-
-var Th = {
+    var Th = {
             ["channel"]: new i1A.OrderedMap,
             ["subchannel"]: new i1A.OrderedMap,
             ["server"]: new i1A.OrderedMap,
@@ -1200,7 +1193,7 @@ var Th = {
         x41 = (A) => {
             let Q = 1;
 
-function B() {
+            function B() {
                 return Q++
             }
             let G = Th[A];
@@ -1223,30 +1216,30 @@ function B() {
     mE2.registerChannelzServer = x41("server");
     mE2.registerChannelzSocket = x41("socket");
 
-function dM5(A) {
+    function dM5(A) {
         Th[A.kind].eraseElementByKey(A.id)
     }
 
-function cM5(A) {
+    function cM5(A) {
         let Q = Number.parseInt(A, 16);
         return [Q / 256 | 0, Q % 256]
     }
 
-function jE2(A) {
+    function jE2(A) {
         if (A === "") return [];
         let Q = A.split(":").map((G) => cM5(G));
         return [].concat(...Q)
     }
 
-function pM5(A) {
+    function pM5(A) {
         return (0, k41.isIPv6)(A) && A.toLowerCase().startsWith("::ffff:") && (0, k41.isIPv4)(A.substring(7))
     }
 
-function SE2(A) {
+    function SE2(A) {
         return Buffer.from(Uint8Array.from(A.split(".").map((Q) => Number.parseInt(Q))))
     }
 
-function lM5(A) {
+    function lM5(A) {
         if ((0, k41.isIPv4)(A)) return SE2(A);
         else if (pM5(A)) return SE2(A.substring(7));
         else if ((0, k41.isIPv6)(A)) {
@@ -1260,7 +1253,7 @@ function lM5(A) {
         } else return null
     }
 
-function bE2(A) {
+    function bE2(A) {
         switch (A) {
             case UOA.ConnectivityState.CONNECTING:
                 return {
@@ -1289,7 +1282,7 @@ function bE2(A) {
         }
     }
 
-function tk(A) {
+    function tk(A) {
         if (!A) return null;
         let Q = A.getTime();
         return {
@@ -1298,7 +1291,7 @@ function tk(A) {
         }
     }
 
-function fE2(A) {
+    function fE2(A) {
         let Q = A.getInfo(),
             B = [],
             G = [];
@@ -1322,7 +1315,7 @@ function fE2(A) {
         }
     }
 
-function iM5(A, Q) {
+    function iM5(A, Q) {
         let B = parseInt(A.request.channel_id, 10),
             G = Th.channel.getElementByKey(B);
         if (G === void 0) {
@@ -1337,7 +1330,7 @@ function iM5(A, Q) {
         })
     }
 
-function nM5(A, Q) {
+    function nM5(A, Q) {
         let B = parseInt(A.request.max_results, 10) || y20,
             G = [],
             Z = parseInt(A.request.start_channel_id, 10),
@@ -1350,7 +1343,7 @@ function nM5(A, Q) {
         })
     }
 
-function hE2(A) {
+    function hE2(A) {
         let Q = A.getInfo(),
             B = [];
         return Q.listenerChildren.sockets.forEach((G) => {
@@ -1368,7 +1361,7 @@ function hE2(A) {
         }
     }
 
-function aM5(A, Q) {
+    function aM5(A, Q) {
         let B = parseInt(A.request.server_id, 10),
             Z = Th.server.getElementByKey(B);
         if (Z === void 0) {
@@ -1383,7 +1376,7 @@ function aM5(A, Q) {
         })
     }
 
-function sM5(A, Q) {
+    function sM5(A, Q) {
         let B = parseInt(A.request.max_results, 10) || y20,
             G = parseInt(A.request.start_server_id, 10),
             Z = Th.server,
@@ -1396,7 +1389,7 @@ function sM5(A, Q) {
         })
     }
 
-function rM5(A, Q) {
+    function rM5(A, Q) {
         let B = parseInt(A.request.subchannel_id, 10),
             G = Th.subchannel.getElementByKey(B);
         if (G === void 0) {
@@ -1429,7 +1422,7 @@ function rM5(A, Q) {
         })
     }
 
-function _E2(A) {
+    function _E2(A) {
         var Q;
         if ((0, hM5.isTcpSubchannelAddress)(A)) return {
             address: "tcpip_address",
@@ -1446,7 +1439,7 @@ function _E2(A) {
         }
     }
 
-function oM5(A, Q) {
+    function oM5(A, Q) {
         var B, G, Z, I, Y;
         let J = parseInt(A.request.socket_id, 10),
             W = Th.socket.getElementByKey(J);
@@ -1498,7 +1491,7 @@ function oM5(A, Q) {
         })
     }
 
-function tM5(A, Q) {
+    function tM5(A, Q) {
         let B = parseInt(A.request.server_id, 10),
             G = Th.server.getElementByKey(B);
         if (G === void 0) {

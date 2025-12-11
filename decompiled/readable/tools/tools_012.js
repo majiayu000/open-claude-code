@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_012.js
+ * 处理时间: 2025-12-09T03:41:38.684Z
+ * 变量映射: 5 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.074Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -23,7 +26,7 @@
         A.tag = Z, A.dump = "{" + G + "}"
     }
 
-function Nd5(A, Q, B, G) {
+    function Nd5(A, Q, B, G) {
         var Z = "",
             I = A.tag,
             Y = Object.keys(B),
@@ -47,7 +50,7 @@ function Nd5(A, Q, B, G) {
         A.tag = I, A.dump = Z || "{}"
     }
 
-function Ux2(A, Q, B) {
+    function Ux2(A, Q, B) {
         var G, Z, I, Y, J, W;
         Z = B ? A.explicitTypes : A.implicitTypes;
         for (I = 0, Y = Z.length; I < Y; I += 1)
@@ -66,7 +69,7 @@ function Ux2(A, Q, B) {
             } return !1
     }
 
-function uh(A, Q, B, G, Z, I, Y) {
+    function uh(A, Q, B, G, Z, I, Y) {
         if (A.tag = null, A.dump = B, !Ux2(A, B, !1)) Ux2(A, B, !0);
         var J = $x2.call(A.dump),
             W = G,
@@ -106,7 +109,7 @@ function uh(A, Q, B, G, Z, I, Y) {
         return !0
     }
 
-function Ld5(A, Q) {
+    function Ld5(A, Q) {
         var B = [],
             G = [],
             Z, I;
@@ -115,7 +118,7 @@ function Ld5(A, Q) {
         Q.usedDuplicates = Array(I)
     }
 
-function G30(A, Q, B) {
+    function G30(A, Q, B) {
         var G, Z, I;
         if (A !== null && typeof A === "object")
             if (Z = Q.indexOf(A), Z !== -1) {
@@ -128,7 +131,7 @@ function G30(A, Q, B) {
         }
     }
 
-function Md5(A, Q) {
+    function Md5(A, Q) {
         Q = Q || {};
         var B = new Kd5(Q);
         if (!B.noRefs) Ld5(A, B);
@@ -142,11 +145,11 @@ function Md5(A, Q) {
     }
     Od5.dump = Md5
 });
-var Y30 = U((Pd5, iE) => {
+var Y30 = moduleWrapper((Pd5, iE) => {
     var kx2 = Fx2(),
         Td5 = _x2();
 
-function I30(A, Q) {
+    function I30(A, Q) {
         return function() {
             throw Error("Function yaml." + A + " is removed in js-yaml 4. Use yaml." + Q + " instead, which is now safe by default.")
         }
@@ -180,7 +183,7 @@ function I30(A, Q) {
     Pd5.safeLoadAll = I30("safeLoadAll", "loadAll");
     Pd5.safeDump = I30("safeDump", "dump")
 });
-var xx2 = U((f9Z, yx2) => {
+var xx2 = moduleWrapper((f9Z, yx2) => {
     var {
         ParserError: cd5
     } = OP(), pd5 = Y30(), {
@@ -203,10 +206,10 @@ var xx2 = U((f9Z, yx2) => {
         }
     }
 });
-var bx2 = U((h9Z, vx2) => {
+var bx2 = moduleWrapper((h9Z, vx2) => {
     var {
         ParserError: id5
-    } = OP(), nd5 = /\.(txt|htm|html|md|xml|js|min|map|css|scss|less|svg)$/i;
+    } = OP(), nd5 = /\.(txt|htm|html|md|xml|js|min|map|css|scss|less|svg)TextComponent/i;
     vx2.exports = {
         order: 300,
         allowEmpty: !0,
@@ -221,8 +224,8 @@ var bx2 = U((h9Z, vx2) => {
         }
     }
 });
-var hx2 = U((g9Z, fx2) => {
-    var ad5 = /\.(jpeg|jpg|gif|png|bmp|ico)$/i;
+var hx2 = moduleWrapper((g9Z, fx2) => {
+    var ad5 = /\.(jpeg|jpg|gif|png|bmp|ico)TextComponent/i;
     fx2.exports = {
         order: 400,
         allowEmpty: !0,
@@ -235,8 +238,8 @@ var hx2 = U((g9Z, fx2) => {
         }
     }
 });
-var mx2 = U((u9Z, ux2) => {
-    var sd5 = UA("fs"),
+var mx2 = moduleWrapper((u9Z, ux2) => {
+    var sd5 = nodeRequire("fs"),
         {
             ono: J30
         } = Xn(),
@@ -255,23 +258,23 @@ var mx2 = U((u9Z, ux2) => {
                 try {
                     G = gx2.toFileSystemPath(A.url)
                 } catch (Z) {
-                    B(new W30(J30.uri(Z, `Malformed URI: ${A.url}`), A.url))
+                    B(new W30(J30.uri(Z, `Malformed URI: TextComponent{A.url}`), A.url))
                 }
                 try {
                     sd5.readFile(G, (Z, I) => {
-                        if (Z) B(new W30(J30(Z, `Error opening file "${G}"`), G));
+                        if (Z) B(new W30(J30(Z, `Error opening file "TextComponent{G}"`), G));
                         else Q(I)
                     })
                 } catch (Z) {
-                    B(new W30(J30(Z, `Error opening file "${G}"`), G))
+                    B(new W30(J30(Z, `Error opening file "TextComponent{G}"`), G))
                 }
             })
         }
     }
 });
-var lx2 = U((m9Z, px2) => {
-    var rd5 = UA("http"),
-        od5 = UA("https"),
+var lx2 = moduleWrapper((m9Z, px2) => {
+    var rd5 = nodeRequire("http"),
+        od5 = nodeRequire("https"),
         {
             ono: X51
         } = Xn(),
@@ -294,33 +297,33 @@ var lx2 = U((m9Z, px2) => {
         }
     };
 
-function cx2(A, Q, B) {
+    function cx2(A, Q, B) {
         return new Promise((G, Z) => {
             A = F51.parse(A), B = B || [], B.push(A.href), td5(A, Q).then((I) => {
                 if (I.statusCode >= 400) throw X51({
                     status: I.statusCode
-                }, `HTTP ERROR ${I.statusCode}`);
+                }, `HTTP ERROR TextComponent{I.statusCode}`);
                 else if (I.statusCode >= 300)
                     if (B.length > Q.redirects) Z(new dx2(X51({
                         status: I.statusCode
-                    }, `Error downloading ${B[0]}. 
+                    }, `Error downloading TextComponent{B[0]}. 
 Too many redirects: 
-  ${B.join(` 
+  TextComponent{B.join(` 
   `)}`)));
                     else if (!I.headers.location) throw X51({
                     status: I.statusCode
-                }, `HTTP ${I.statusCode} redirect with no location header`);
+                }, `HTTP TextComponent{I.statusCode} redirect with no location header`);
                 else {
                     let Y = F51.resolve(A, I.headers.location);
                     cx2(Y, Q, B).then(G, Z)
                 } else G(I.body || Buffer.alloc(0))
             }).catch((I) => {
-                Z(new dx2(X51(I, `Error downloading ${A.href}`), A.href))
+                Z(new dx2(X51(I, `Error downloading TextComponent{A.href}`), A.href))
             })
         })
     }
 
-function td5(A, Q) {
+    function td5(A, Q) {
         return new Promise((B, G) => {
             let I = (A.protocol === "https:" ? od5 : rd5).get({
                 hostname: A.hostname,
@@ -344,7 +347,7 @@ function td5(A, Q) {
         })
     }
 });
-var ax2 = U((d9Z, nx2) => {
+var ax2 = moduleWrapper((d9Z, nx2) => {
     var ed5 = wy2(),
         Ac5 = xx2(),
         Qc5 = bx2(),
@@ -353,7 +356,7 @@ var ax2 = U((d9Z, nx2) => {
         Zc5 = lx2();
     nx2.exports = F30;
 
-function F30(A) {
+    function F30(A) {
         X30(this, F30.defaults), X30(this, A)
     }
     F30.defaults = {
@@ -375,7 +378,7 @@ function F30(A) {
         }
     };
 
-function X30(A, Q) {
+    function X30(A, Q) {
         if (ix2(Q)) {
             let B = Object.keys(Q);
             for (let G = 0; G < B.length; G++) {
@@ -389,15 +392,15 @@ function X30(A, Q) {
         return A
     }
 
-function ix2(A) {
+    function ix2(A) {
         return A && typeof A === "object" && !Array.isArray(A) && !(A instanceof RegExp) && !(A instanceof Date)
     }
 });
-var ox2 = U((c9Z, rx2) => {
+var ox2 = moduleWrapper((c9Z, rx2) => {
     var sx2 = ax2();
     rx2.exports = Ic5;
 
-function Ic5(A) {
+    function Ic5(A) {
         let Q, B, G, Z;
         if (A = Array.prototype.slice.call(A), typeof A[A.length - 1] === "function") Z = A.pop();
         if (typeof A[0] === "string")
@@ -413,7 +416,7 @@ function Ic5(A) {
         }
     }
 });
-var Qv2 = U((p9Z, Av2) => {
+var Qv2 = moduleWrapper((p9Z, Av2) => {
     var tx2 = GWA(),
         Yc5 = yRA(),
         Jc5 = j50(),
@@ -423,7 +426,7 @@ var Qv2 = U((p9Z, Av2) => {
         } = OP();
     Av2.exports = Xc5;
 
-function Xc5(A, Q) {
+    function Xc5(A, Q) {
         if (!Q.resolve.external) return Promise.resolve();
         try {
             let B = V30(A.schema, A.$refs._root$Ref.path + "#", A.$refs, Q);
@@ -433,7 +436,7 @@ function Xc5(A, Q) {
         }
     }
 
-function V30(A, Q, B, G, Z) {
+    function V30(A, Q, B, G, Z) {
         Z = Z || new Set;
         let I = [];
         if (A && typeof A === "object" && !ArrayBuffer.isView(A) && !Z.has(A))
@@ -447,8 +450,7 @@ function V30(A, Q, B, G, Z) {
                 }
         return I
     }
-
-async function ex2(A, Q, B, G) {
+    async function ex2(A, Q, B, G) {
         let Z = dRA.resolve(Q, A.$ref),
             I = dRA.stripHash(Z);
         if (A = B._$refs[I], A) return Promise.resolve(A.value);
@@ -463,18 +465,18 @@ async function ex2(A, Q, B, G) {
         }
     }
 });
-var Zv2 = U((l9Z, Gv2) => {
+var Zv2 = moduleWrapper((l9Z, Gv2) => {
     var V51 = GWA(),
         cRA = yRA(),
         K30 = VO();
     Gv2.exports = Fc5;
 
-function Fc5(A, Q) {
+    function Fc5(A, Q) {
         let B = [];
         D30(A, "schema", A.$refs._root$Ref.path + "#", "#", 0, B, A.$refs, Q), Vc5(B)
     }
 
-function D30(A, Q, B, G, Z, I, Y, J) {
+    function D30(A, Q, B, G, Z, I, Y, J) {
         let W = Q === null ? A : A[Q];
         if (W && typeof W === "object" && !ArrayBuffer.isView(W))
             if (V51.isAllowed$Ref(W)) Bv2(A, Q, B, G, Z, I, Y, J);
@@ -494,7 +496,7 @@ function D30(A, Q, B, G, Z, I, Y, J) {
             }
     }
 
-function Bv2(A, Q, B, G, Z, I, Y, J) {
+    function Bv2(A, Q, B, G, Z, I, Y, J) {
         let W = Q === null ? A : A[Q],
             X = K30.resolve(B, W.$ref),
             F = Y._resolve(X, G, J);
@@ -525,7 +527,7 @@ function Bv2(A, Q, B, G, Z, I, Y, J) {
             }), !E) D30(F.value, null, F.path, G, Z + 1, I, Y, J)
     }
 
-function Vc5(A) {
+    function Vc5(A) {
         A.sort((Z, I) => {
             if (Z.file !== I.file) return Z.file < I.file ? -1 : 1;
             else if (Z.hash !== I.hash) return Z.hash < I.hash ? -1 : 1;
@@ -548,19 +550,19 @@ function Vc5(A) {
         else if (Q = Z.file, B = Z.hash, G = Z.pathFromRoot, Z.$ref = Z.parent[Z.key] = V51.dereference(Z.$ref, Z.value), Z.circular) Z.$ref.$ref = Z.pathFromRoot
     }
 
-function Kc5(A, Q, B) {
+    function Kc5(A, Q, B) {
         for (let G = 0; G < A.length; G++) {
             let Z = A[G];
             if (Z.parent === Q && Z.key === B) return Z
         }
     }
 
-function Dc5(A, Q) {
+    function Dc5(A, Q) {
         let B = A.indexOf(Q);
         A.splice(B, 1)
     }
 });
-var Xv2 = U((i9Z, Wv2) => {
+var Xv2 = moduleWrapper((i9Z, Wv2) => {
     var H30 = GWA(),
         Iv2 = yRA(),
         {
@@ -569,12 +571,12 @@ var Xv2 = U((i9Z, Wv2) => {
         Cc5 = VO();
     Wv2.exports = Ec5;
 
-function Ec5(A, Q) {
+    function Ec5(A, Q) {
         let B = C30(A.schema, A.$refs._root$Ref.path, "#", new Set, new Set, new Map, A.$refs, Q);
         A.$refs.circular = B.circular, A.schema = B.value
     }
 
-function C30(A, Q, B, G, Z, I, Y, J) {
+    function C30(A, Q, B, G, Z, I, Y, J) {
         let W, X = {
                 value: A,
                 circular: !1
@@ -603,7 +605,7 @@ function C30(A, Q, B, G, Z, I, Y, J) {
         return X
     }
 
-function Yv2(A, Q, B, G, Z, I, Y, J) {
+    function Yv2(A, Q, B, G, Z, I, Y, J) {
         let W = Cc5.resolve(Q, A.$ref),
             X = I.get(W);
         if (X) {
@@ -642,12 +644,12 @@ function Yv2(A, Q, B, G, Z, I, Y, J) {
         return H
     }
 
-function Jv2(A, Q, B) {
-        if (Q.circular = !0, !B.dereference.circular) throw Hc5.reference(`Circular $ref pointer found at ${A}`);
+    function Jv2(A, Q, B) {
+        if (Q.circular = !0, !B.dereference.circular) throw Hc5.reference(`Circular $ref pointer found at TextComponent{A}`);
         return !0
     }
 });
-var Vv2 = U((n9Z, Fv2) => {
+var Vv2 = moduleWrapper((n9Z, Fv2) => {
     function zc5() {
         if (typeof process === "object" && typeof process.nextTick === "function") return process.nextTick;
         else if (typeof setImmediate === "function") return setImmediate;
@@ -657,7 +659,7 @@ var Vv2 = U((n9Z, Fv2) => {
     }
     Fv2.exports = zc5()
 });
-var Hv2 = U((a9Z, Dv2) => {
+var Hv2 = moduleWrapper((a9Z, Dv2) => {
     var Kv2 = Vv2();
     Dv2.exports = function(Q, B) {
         if (Q) {
@@ -674,7 +676,7 @@ var Hv2 = U((a9Z, Dv2) => {
         } else return B
     }
 });
-var Uv2 = U((s9Z, Uy) => {
+var Uv2 = moduleWrapper((s9Z, Uy) => {
     var zv2 = Ky2(),
         Uc5 = j50(),
         K51 = ox2(),
@@ -707,7 +709,7 @@ var Uv2 = U((s9Z, Uy) => {
     Uy.exports.UnmatchedParserError = Tc5;
     Uy.exports.UnmatchedResolverError = Pc5;
 
-function zy() {
+    function zy() {
         this.schema = null, this.$refs = new zv2
     }
     zy.parse = function(Q, B, G, Z) {
@@ -718,7 +720,7 @@ function zy() {
         let I = K51(arguments),
             Y;
         if (!I.path && !I.schema) {
-            let X = Ev2(`Expected a file path, URL, or object. Got ${I.path||I.schema}`);
+            let X = Ev2(`Expected a file path, URL, or object. Got TextComponent{I.path||I.schema}`);
             return TP(I.callback, Promise.reject(X))
         }
         this.schema = null, this.$refs = new zv2;
@@ -733,7 +735,7 @@ function zy() {
             let X = await Y;
             if (X !== null && typeof X === "object" && !Buffer.isBuffer(X)) return W.schema = X, TP(I.callback, Promise.resolve(W.schema));
             else if (I.options.continueOnError) return W.schema = null, TP(I.callback, Promise.resolve(W.schema));
-            else throw Ev2.syntax(`"${W.$refs._root$Ref.path||X}" is not a valid JSON Schema`)
+            else throw Ev2.syntax(`"TextComponent{W.$refs._root$Ref.path||X}" is not a valid JSON Schema`)
         } catch (X) {
             if (!I.options.continueOnError || !jc5(X)) return TP(I.callback, Promise.reject(X));
             if (this.$refs._$refs[FWA.stripHash(I.path)]) this.$refs._$refs[FWA.stripHash(I.path)].addError(X);
@@ -780,13 +782,13 @@ function zy() {
         }
     };
 
-function E30(A) {
+    function E30(A) {
         if (Cv2.getParserErrors(A).length > 0) throw new Cv2(A)
     }
 });
 var $v2 = 40000,
     z30, uD, XK;
-var $y = L(() => {
+var $y = lazyLoader(() => {
     u1();
     uE();
     o2();
@@ -795,34 +797,34 @@ var $y = L(() => {
     z30 = t1(async () => {
         if (!await FT()) return null;
         try {
-            let [A, Q, B, G] = await Promise.all([ZQ("git", ["branch", "--show-current"], {
+            let [A, Q, B, G] = await Promise.all([execGit("git", ["branch", "--show-current"], {
                 preserveOutputOnError: !1
             }).then(({
                 stdout: I
-            }) => I.trim()), ZQ("git", ["rev-parse", "--abbrev-ref", "origin/HEAD"], {
+            }) => I.trim()), execGit("git", ["rev-parse", "--abbrev-ref", "origin/HEAD"], {
                 preserveOutputOnError: !1
             }).then(({
                 stdout: I
-            }) => I.replace("origin/", "").trim()), ZQ("git", ["status", "--short"], {
+            }) => I.replace("origin/", "").trim()), execGit("git", ["status", "--short"], {
                 preserveOutputOnError: !1
             }).then(({
                 stdout: I
-            }) => I.trim()), ZQ("git", ["log", "--oneline", "-n", "5"], {
+            }) => I.trim()), execGit("git", ["log", "--oneline", "-n", "5"], {
                 preserveOutputOnError: !1
             }).then(({
                 stdout: I
             }) => I.trim())]), Z = B.length > $v2 ? B.substring(0, $v2) + `
 ... (truncated because it exceeds 40k characters. If you need more information, run "git status" using BashTool)` : B;
             return `This is the git status at the start of the conversation. Note that this status is a snapshot in time, and will not update during the conversation.
-Current branch: ${A}
+Current branch: TextComponent{A}
 
-Main branch (you will usually use this for PRs): ${Q}
+Main branch (you will usually use this for PRs): TextComponent{Q}
 
 Status:
-${Z||"(clean)"}
+TextComponent{Z||"(clean)"}
 
 Recent commits:
-${G}`
+TextComponent{G}`
         } catch (A) {
             return e(A instanceof Error ? A : Error(String(A))), null
         }
@@ -849,18 +851,18 @@ function Sc5() {
 
 function wv2(A) {
     let Q = A.name,
-        B = A.whenToUse ? `${A.description} - ${A.whenToUse}` : A.description,
+        B = A.whenToUse ? `TextComponent{A.description} - TextComponent{A.whenToUse}` : A.description,
         G = A.type === "prompt" ? A.source === "localSettings" ? "project" : A.source === "userSettings" ? "user" : A.source === "plugin" ? "plugin" : "managed" : "unknown";
-    if (A.name !== A.userFacingName() && A.type === "prompt" && A.source === "plugin") g(`Skill prompt: showing "${A.name}" (userFacingName="${A.userFacingName()}")`);
+    if (A.name !== A.userFacingName() && A.type === "prompt" && A.source === "plugin") g(`Skill prompt: showing "TextComponent{A.name}" (userFacingName="TextComponent{A.userFacingName()}")`);
     return `<skill>
 <name>
-${Q}
+TextComponent{Q}
 </name>
 <description>
-${B}
+TextComponent{B}
 </description>
 <location>
-${G}
+TextComponent{G}
 </location>
 </skill>`
 }
@@ -892,10 +894,9 @@ function yc5(A, Q) {
     let B = kc5(A);
     if (!B) return "";
     let G = Q > A.length ? `
-<!-- Showing ${A.length} of ${Q} skills due to token limits -->` : "";
-    return `${B}${G}`
+<!-- Showing TextComponent{A.length} of TextComponent{Q} skills due to token limits -->` : "";
+    return `TextComponent{B}TextComponent{G}`
 }
-// Async function: Lv2
 async function Lv2() {
     let A = await VWA(),
         {
@@ -907,7 +908,7 @@ async function Lv2() {
     }
 }
 var Nv2;
-var U30 = L(() => {
+var U30 = lazyLoader(() => {
     nE();
     D0();
     u1();
@@ -919,7 +920,7 @@ var U30 = L(() => {
                 limitedCommands: Q
             } = qv2(A),
             B = Q.map((Z) => Z.userFacingName()).join(", ");
-        return g(`Skills and commands included in Skill tool: ${B}`), `Execute a skill within the main conversation
+        return g(`Skills and commands included in Skill tool: TextComponent{B}`), `Execute a skill within the main conversation
 
 <skills_instructions>
 When users ask you to perform tasks, check if any of the available skills below can help complete the task more effectively. Skills provide specialized capabilities and domain knowledge.
@@ -940,19 +941,18 @@ Important:
 </skills_instructions>
 
 <available_skills>
-${yc5(Q,A.length)}
+TextComponent{yc5(Q,A.length)}
 </available_skills>
 `
     })
 });
-var Pq = "Skill";
-
+/* SKILL_TOOL_NAME = SKILL_TOOL = "Skill" */
+var SKILL_TOOL_NAME = "Skill";
 async function pRA(A, Q) {
     let B = await FLA(A, Q);
     if (B !== null) return B;
     return await yB2(A, Q)
 }
-
 async function H51(A, Q, B, G) {
     let Z = await Promise.all(A.map((I) => E51(I, {
         getToolPermissionContext: Q,
@@ -962,7 +962,6 @@ async function H51(A, Q, B, G) {
     })));
     return await pRA([], Z) ?? 0
 }
-
 async function xc5(A, Q) {
     let [B, G] = await Promise.all([Un(A, Q), uD()]), Z = [...B, ...Object.values(G)];
     if (Z.length < 1) return 0;
@@ -971,7 +970,6 @@ async function xc5(A, Q) {
         content: Y
     }], [])))).reduce((Y, J) => Y + (J || 0), 0)
 }
-// Async function: vc5
 async function vc5() {
     let A = xF(),
         Q = [],
@@ -1004,7 +1002,6 @@ async function vc5() {
         memoryFileDetails: Q
     }
 }
-
 async function bc5(A, Q, B, G) {
     let Z = A.filter((I) => !I.isMcp);
     if (Z.length < 1) return 0;
@@ -1012,9 +1009,8 @@ async function bc5(A, Q, B, G) {
 }
 
 function fc5(A) {
-    return A.find((Q) => Q.name === Pq)
+    return A.find((Q) => Q.name === SKILL_TOOL_NAME)
 }
-
 async function hc5(A, Q, B) {
     let G = await Lv2(),
         Z = fc5(A);
@@ -1033,7 +1029,6 @@ async function hc5(A, Q, B) {
         }
     }
 }
-
 async function lRA(A, Q, B, G) {
     let Z = A.filter((W) => W.isMcp),
         I = [],
@@ -1049,13 +1044,11 @@ async function lRA(A, Q, B, G) {
         mcpToolDetails: I
     }
 }
-
 async function Mv2(A, Q, B) {
     let G = A.filter((Z) => !Z.isMcp);
     if (G.length === 0) return 0;
     return H51(G, Q, B)
 }
-
 async function gc5(A) {
     let Q = A.activeAgents.filter((I) => I.source !== "built-in"),
         B = [],
@@ -1077,7 +1070,6 @@ async function gc5(A) {
         agentDetails: B
     }
 }
-
 async function uc5(A) {
     let Q = await $i(A),
         B = {
@@ -1100,7 +1092,6 @@ async function uc5(A) {
         }), []);
     return B.totalTokens = G ?? 0, B
 }
-
 async function Ov2(A, Q, B, G, Z, I) {
     let Y = tt({
             permissionMode: (await B()).mode,
@@ -1185,7 +1176,7 @@ async function Ov2(A, Q, B, G, Z, I) {
             percentageOfTotal: Math.round(yA.tokens / J * 100)
         }));
 
-function IA(yA) {
+    function IA(yA) {
         let rA = [],
             K1 = yA.tokens / J * d,
             WA = Math.floor(K1),
@@ -1254,7 +1245,7 @@ function IA(yA) {
     }
 }
 var $30 = "Autocompact buffer";
-var C51 = L(() => {
+var C51 = lazyLoader(() => {
     $y();
     gM();
     $n();
@@ -1270,7 +1261,6 @@ var C51 = L(() => {
 import {
     createHash as mc5
 } from "crypto";
-
 async function E51(A, Q) {
     let B = j8("tengu_tool_pear"),
         G = {
@@ -1304,7 +1294,7 @@ function w30(A) {
 }
 
 function Tv2(A, Q) {
-    return [...A, Object.entries(Q).map(([B, G]) => `${B}: ${G}`).join(`
+    return [...A, Object.entries(Q).map(([B, G]) => `TextComponent{B}: TextComponent{G}`).join(`
 `)].filter(Boolean)
 }
 
@@ -1313,8 +1303,8 @@ function U0A(A, Q) {
     return [j0({
         content: `<system-reminder>
 As you answer the user's questions, you can use the following context:
-${Object.entries(Q).map(([B,G])=>`# ${B}
-${G}`).join(`
+TextComponent{Object.entries(Q).map(([B,G])=>`# TextComponent{B}
+TextComponent{G}`).join(`
 `)}
 
       IMPORTANT: this context may or may not be relevant to your tasks. You should not respond to this context unless it is highly relevant to your task.
@@ -1323,7 +1313,6 @@ ${G}`).join(`
         isMeta: !0
     }), ...A]
 }
-
 async function Pv2(A, Q) {
     if (_v2()) return;
     let [{
@@ -1371,7 +1360,7 @@ async function Pv2(A, Q) {
 
 function jv2(A, Q, B) {
     switch (A.name) {
-        case kRA: {
+        case EXIT_PLAN_MODE_CONST: {
             let G = fU(B);
             if (G) return {
                 ...Q,
@@ -1387,8 +1376,8 @@ function jv2(A, Q, B) {
                     description: Y,
                     run_in_background: J
                 } = G,
-                W = Z.replace(`cd ${H0()} && `, "");
-            if (W = W.replace(/\\\\;/g, "\\;"), /^echo\s+["']?[^|&;><]*["']?$/i.test(W.trim())) BA("tengu_bash_tool_simple_echo", {});
+                W = Z.replace(`cd TextComponent{H0()} && `, "");
+            if (W = W.replace(/\\\\;/g, "\\;"), /^echo\s+["']?[^|&;><]*["']?TextComponent/i.test(W.trim())) BA("tengu_bash_tool_simple_echo", {});
             return {
                 command: W,
                 description: Y,
@@ -1440,7 +1429,7 @@ function jv2(A, Q, B) {
 
 function Sv2(A, Q) {
     switch (A.name) {
-        case kRA: {
+        case EXIT_PLAN_MODE_CONST: {
             if (Q && typeof Q === "object" && "plan" in Q) {
                 let {
                     plan: B,
@@ -1455,7 +1444,7 @@ function Sv2(A, Q) {
     }
 }
 var dc5;
-var mh = L(() => {
+var mh = lazyLoader(() => {
     $50();
     O9();
     w0();
@@ -1476,9 +1465,9 @@ var mh = L(() => {
     Tk();
     $y();
     jq();
-    dc5 = GA(Uv2(), 1)
+    dc5 = esmImport(Uv2(), 1)
 });
-var kv2 = L(() => {
+var kv2 = lazyLoader(() => {
     w0();
     nQ();
     kZ();
@@ -1486,7 +1475,7 @@ var kv2 = L(() => {
     UZ();
     s2()
 });
-var yv2 = L(() => {
+var yv2 = lazyLoader(() => {
     O9();
     nV();
     gh();
@@ -1510,7 +1499,6 @@ function pc5() {
 function U51() {
     return z51(pc5(), q30)
 }
-// Async function: lc5
 async function lc5() {
     try {
         await bv2(U51(), {
@@ -1518,14 +1506,13 @@ async function lc5() {
         })
     } catch {}
 }
-
 async function vv2(A, Q) {
     await lc5();
     let B = Date.now(),
-        G = `${Q}-${B}`,
+        G = `TextComponent{Q}-TextComponent{B}`,
         Z = z51(U51(), G),
         I = S7(A, !1) !== null,
-        J = z51(Z, `result.${I?"json":"txt"}`);
+        J = z51(Z, `result.TextComponent{I?"json":"txt"}`);
     try {
         await bv2(Z, {
             recursive: !0

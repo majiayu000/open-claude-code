@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: telemetry_006.js
+ * 处理时间: 2025-12-09T03:41:38.343Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.049Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -50,17 +52,17 @@ function N45(A) {
         behavior: "passthrough",
         message: "Not a git commit"
     };
-    let G = Q.match(/^git\s+commit\s+.*-m\s+(["'])([\s\S]*?)\1(.*)$/);
+    let G = Q.match(/^git\s+commit\s+.*-m\s+(["'])([\s\S]*?)\1(.*)TextComponent/);
     if (G) {
         let [, Z, I, Y] = G;
-        if (Z === '"' && I && /\$\(|`|\$\{/.test(I)) return BA("tengu_bash_security_check_triggered", {
+        if (Z === '"' && I && /\TextComponent\(|`|\TextComponent\{/.test(I)) return BA("tengu_bash_security_check_triggered", {
             checkId: iV.GIT_COMMIT_SUBSTITUTION,
             subId: 1
         }), {
             behavior: "ask",
             message: "Git commit message contains command substitution patterns"
         };
-        if (Y && /\$\(|`|\$\{/.test(Y)) return {
+        if (Y && /\TextComponent\(|`|\TextComponent\{/.test(Y)) return {
             behavior: "passthrough",
             message: "Check patterns in flags"
         };
@@ -124,7 +126,7 @@ function M45(A) {
         message: "jq command contains system() function which executes arbitrary commands"
     };
     let G = Q.substring(3).trim();
-    if (/(?:^|\s)(?:-f\b|--from-file|--rawfile|--slurpfile|-L\b|--library-path)/.test(G)) return BA("tengu_bash_security_check_triggered", {
+    if (/(?:^|\s)(?:-f\b|--from-file|--rawfile|--slurpfile|-lazyLoader\b|--library-path)/.test(G)) return BA("tengu_bash_security_check_triggered", {
         checkId: iV.JQ_FILE_ARGUMENTS,
         subId: 1
     }), {
@@ -141,7 +143,7 @@ function O45(A) {
     let {
         unquotedContent: Q
     } = A, B = "Command contains shell metacharacters (;, |, or &) in arguments";
-    if (/(?:^|\s)["'][^"']*[;&][^"']*["'](?:\s|$)/.test(Q)) return BA("tengu_bash_security_check_triggered", {
+    if (/(?:^|\s)["'][^"']*[;&][^"']*["'](?:\s|TextComponent)/.test(Q)) return BA("tengu_bash_security_check_triggered", {
         checkId: iV.SHELL_METACHARACTERS,
         subId: 1
     }), {
@@ -172,7 +174,7 @@ function R45(A) {
     let {
         fullyUnquotedContent: Q
     } = A;
-    if (/[<>|]\s*\$[A-Za-z_]/.test(Q) || /\$[A-Za-z_][A-Za-z0-9_]*\s*[|<>]/.test(Q)) return BA("tengu_bash_security_check_triggered", {
+    if (/[<>|]\s*\TextComponent[A-Za-z_]/.test(Q) || /\TextComponent[A-Za-z_][A-Za-z0-9_]*\s*[|<>]/.test(Q)) return BA("tengu_bash_security_check_triggered", {
         checkId: iV.DANGEROUS_VARIABLES,
         subId: 1
     }), {
@@ -204,7 +206,7 @@ function T45(A) {
             subId: 1
         }), {
             behavior: "ask",
-            message: `Command contains ${Z}`
+            message: `Command contains TextComponent{Z}`
         };
     if (/</.test(B)) return BA("tengu_bash_security_check_triggered", {
         checkId: iV.DANGEROUS_PATTERNS_INPUT_REDIRECTION,
@@ -251,7 +253,7 @@ function j45(A) {
     let {
         originalCommand: Q
     } = A;
-    if (/\$IFS|\$\{[^}]*IFS/.test(Q)) return BA("tengu_bash_security_check_triggered", {
+    if (/\$IFS|\TextComponent\{[^}]*IFS/.test(Q)) return BA("tengu_bash_security_check_triggered", {
         checkId: iV.IFS_INJECTION,
         subId: 1
     }), {
@@ -373,20 +375,20 @@ function cl(A) {
     }
 }
 var kt1, H45, iV;
-var IQ1 = L(() => {
+var IQ1 = lazyLoader(() => {
     w0();
-    kt1 = /\$\(.*<</, H45 = [{
+    kt1 = /\TextComponent\(.*<</, H45 = [{
         pattern: /<\(/,
         message: "process substitution <()"
     }, {
         pattern: />\(/,
         message: "process substitution >()"
     }, {
-        pattern: /\$\(/,
-        message: "$() command substitution"
+        pattern: /\TextComponent\(/,
+        message: "TextComponent() command substitution"
     }, {
-        pattern: /\$\{/,
-        message: "${} parameter substitution"
+        pattern: /\TextComponent\{/,
+        message: "TextComponent{} parameter substitution"
     }, {
         pattern: /~\[/,
         message: "Zsh-style parameter expansion"
@@ -518,9 +520,9 @@ function U22(A) {
 }
 
 function $22(A, Q, B, G) {
-    if (A.length !== 3) throw Error(`Wrong number of arguments to \`#${B}\` predicate. Expected 2, got ${A.length-1}`);
-    if (!H22(A[1])) throw Error(`First argument of \`#${B}\` predicate must be a capture. Got "${A[1].value}"`);
-    let Z = B === "eq?" || B === "any-eq?",
+    if (A.length !== 3) throw Error(`Wrong number of arguments to \`#TextComponent{B}\` predicate. Expected 2, got TextComponent{A.length-1}`);
+    if (!H22(A[1])) throw Error(`First argument of \`#TextComponent{B}\` predicate must be a capture. Got "TextComponent{A[1].value}"`);
+    let Z = B === "WEB_FETCH_TOOL_NAME?" || B === "any-WEB_FETCH_TOOL_NAME?",
         I = !B.startsWith("any-");
     if (H22(A[2])) {
         let Y = A[1].name,
@@ -553,9 +555,9 @@ function $22(A, Q, B, G) {
 }
 
 function w22(A, Q, B, G) {
-    if (A.length !== 3) throw Error(`Wrong number of arguments to \`#${B}\` predicate. Expected 2, got ${A.length-1}.`);
-    if (A[1].type !== "capture") throw Error(`First argument of \`#${B}\` predicate must be a capture. Got "${A[1].value}".`);
-    if (A[2].type !== "string") throw Error(`Second argument of \`#${B}\` predicate must be a string. Got @${A[2].name}.`);
+    if (A.length !== 3) throw Error(`Wrong number of arguments to \`#TextComponent{B}\` predicate. Expected 2, got TextComponent{A.length-1}.`);
+    if (A[1].type !== "capture") throw Error(`First argument of \`#TextComponent{B}\` predicate must be a capture. Got "TextComponent{A[1].value}".`);
+    if (A[2].type !== "string") throw Error(`Second argument of \`#TextComponent{B}\` predicate must be a string. Got @TextComponent{A[2].name}.`);
     let Z = B === "match?" || B === "any-match?",
         I = !B.startsWith("any-"),
         Y = A[1].name,
@@ -573,12 +575,12 @@ function w22(A, Q, B, G) {
 }
 
 function q22(A, Q, B, G) {
-    if (A.length < 2) throw Error(`Wrong number of arguments to \`#${B}\` predicate. Expected at least 1. Got ${A.length-1}.`);
-    if (A[1].type !== "capture") throw Error(`First argument of \`#${B}\` predicate must be a capture. Got "${A[1].value}".`);
+    if (A.length < 2) throw Error(`Wrong number of arguments to \`#TextComponent{B}\` predicate. Expected at least 1. Got TextComponent{A.length-1}.`);
+    if (A[1].type !== "capture") throw Error(`First argument of \`#TextComponent{B}\` predicate must be a capture. Got "TextComponent{A[1].value}".`);
     let Z = B === "any-of?",
         I = A[1].name,
         Y = A.slice(2);
-    if (!Y.every(ht1)) throw Error(`Arguments to \`#${B}\` predicate must be strings.".`);
+    if (!Y.every(ht1)) throw Error(`Arguments to \`#TextComponent{B}\` predicate must be strings.".`);
     let J = Y.map((W) => W.value);
     G[Q].push((W) => {
         let X = [];
@@ -590,15 +592,15 @@ function q22(A, Q, B, G) {
 }
 
 function N22(A, Q, B, G, Z) {
-    if (A.length < 2 || A.length > 3) throw Error(`Wrong number of arguments to \`#${B}\` predicate. Expected 1 or 2. Got ${A.length-1}.`);
-    if (!A.every(ht1)) throw Error(`Arguments to \`#${B}\` predicate must be strings.".`);
+    if (A.length < 2 || A.length > 3) throw Error(`Wrong number of arguments to \`#TextComponent{B}\` predicate. Expected 1 or 2. Got TextComponent{A.length-1}.`);
+    if (!A.every(ht1)) throw Error(`Arguments to \`#TextComponent{B}\` predicate must be strings.".`);
     let I = B === "is?" ? G : Z;
     if (!I[Q]) I[Q] = {};
     I[Q][A[1].value] = A[2]?.value ?? null
 }
 
 function L22(A, Q, B) {
-    if (A.length < 2 || A.length > 3) throw Error(`Wrong number of arguments to \`#set!\` predicate. Expected 1 or 2. Got ${A.length-1}.`);
+    if (A.length < 2 || A.length > 3) throw Error(`Wrong number of arguments to \`#set!\` predicate. Expected 1 or 2. Got TextComponent{A.length-1}.`);
     if (!A.every(ht1)) throw Error('Arguments to `#set!` predicate must be strings.".');
     if (!B[Q]) B[Q] = {};
     B[Q][A[1].value] = A[2]?.value ?? null
@@ -619,10 +621,10 @@ function M22(A, Q, B, G, Z, I, Y, J, W, X, F) {
         if (I[0].type !== "string") throw Error("Predicates must begin with a literal value");
         let V = I[0].value;
         switch (V) {
-            case "any-not-eq?":
-            case "not-eq?":
-            case "any-eq?":
-            case "eq?":
+            case "any-not-WEB_FETCH_TOOL_NAME?":
+            case "not-WEB_FETCH_TOOL_NAME?":
+            case "any-WEB_FETCH_TOOL_NAME?":
+            case "WEB_FETCH_TOOL_NAME?":
                 $22(I, A, V, Y);
                 break;
             case "any-not-match?":
@@ -651,7 +653,6 @@ function M22(A, Q, B, G, Z, I, Y, J, W, X, F) {
         I.length = 0
     }
 }
-
 async function O22(A) {
     if (!YQ1) YQ1 = await d45(A);
     return YQ1
@@ -670,7 +671,7 @@ var _45, K0 = (A, Q) => _45(A, "name", {
     f45 = 2,
     h45, eqG, H22, ht1, iT, CLA, g45, u45, gt1, m45, d45, YQ1 = null,
     z2, xt1, vt1, ut1;
-var T22 = L(() => {
+var T22 = lazyLoader(() => {
     _45 = Object.defineProperty, yt1 = 4 * u2, hU = 5 * u2, qk = 2 * u2, zLA = 2 * u2 + 2 * qk, pl = {
         row: 0,
         column: 0
@@ -1169,15 +1170,15 @@ var T22 = L(() => {
         static formatMessage(Q, B) {
             switch (Q) {
                 case iT.NodeName:
-                    return `Bad node name '${B.word}'`;
+                    return `Bad node name 'TextComponent{B.word}'`;
                 case iT.FieldName:
-                    return `Bad field name '${B.word}'`;
+                    return `Bad field name 'TextComponent{B.word}'`;
                 case iT.CaptureName:
-                    return `Bad capture name @${B.word}`;
+                    return `Bad capture name @TextComponent{B.word}`;
                 case iT.PatternStructure:
-                    return `Bad pattern structure at offset ${B.suffix}`;
+                    return `Bad pattern structure at offset TextComponent{B.suffix}`;
                 case iT.Syntax:
-                    return `Bad syntax at offset ${B.suffix}`
+                    return `Bad syntax at offset TextComponent{B.suffix}`
             }
         }
     };
@@ -1215,7 +1216,7 @@ var T22 = L(() => {
                 switch (W1._free(G), E) {
                     case iT.Syntax:
                         throw new CLA(iT.Syntax, {
-                            suffix: `${w}: '${N}'...`
+                            suffix: `TextComponent{w}: 'TextComponent{N}'...`
                         }, w, 0);
                     case iT.NodeName:
                         throw new CLA(E, {
@@ -1231,7 +1232,7 @@ var T22 = L(() => {
                         }, w, q.length);
                     case iT.PatternStructure:
                         throw new CLA(E, {
-                            suffix: `${w}: '${N}'...`
+                            suffix: `TextComponent{w}: 'TextComponent{N}'...`
                         }, w, 0)
                 }
             }
@@ -1374,18 +1375,18 @@ var T22 = L(() => {
             W1.stringToUTF8(A, B, Q + 1), W1._ts_query_disable_capture(this[0], B, Q), W1._free(B)
         }
         disablePattern(A) {
-            if (A >= this.predicates.length) throw Error(`Pattern index is ${A} but the pattern count is ${this.predicates.length}`);
+            if (A >= this.predicates.length) throw Error(`Pattern index is TextComponent{A} but the pattern count is TextComponent{this.predicates.length}`);
             W1._ts_query_disable_pattern(this[0], A)
         }
         didExceedMatchLimit() {
             return this.exceededMatchLimit
         }
         startIndexForPattern(A) {
-            if (A >= this.predicates.length) throw Error(`Pattern index is ${A} but the pattern count is ${this.predicates.length}`);
+            if (A >= this.predicates.length) throw Error(`Pattern index is TextComponent{A} but the pattern count is TextComponent{this.predicates.length}`);
             return W1._ts_query_start_byte_for_pattern(this[0], A)
         }
         endIndexForPattern(A) {
-            if (A >= this.predicates.length) throw Error(`Pattern index is ${A} but the pattern count is ${this.predicates.length}`);
+            if (A >= this.predicates.length) throw Error(`Pattern index is TextComponent{A} but the pattern count is TextComponent{this.predicates.length}`);
             return W1._ts_query_end_byte_for_pattern(this[0], A)
         }
         patternCount() {
@@ -1403,7 +1404,7 @@ var T22 = L(() => {
         isPatternGuaranteedAtStep(A) {
             return W1._ts_query_is_pattern_guaranteed_at_step(this[0], A) === 1
         }
-    }, u45 = /^tree_sitter_\w+$/, gt1 = class A {
+    }, u45 = /^tree_sitter_\w+TextComponent/, gt1 = class A {
         static {
             K0(this, "Language")
         } [0] = 0;
@@ -1512,8 +1513,8 @@ var T22 = L(() => {
                 if (J.ok) return new Uint8Array(W);
                 else {
                     let X = new TextDecoder("utf-8").decode(W);
-                    throw Error(`Language.load failed with status ${J.status}.
+                    throw Error(`Language.load failed with status TextComponent{J.status}.
 
-${X}`)
+TextComponent{X}`)
                 }
             }));

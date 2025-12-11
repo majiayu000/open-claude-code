@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_012.js
+ * 处理时间: 2025-12-09T03:41:36.115Z
+ * 变量映射: 9 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.867Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -343,16 +346,17 @@
     }
 }
 var yRB, i7A, Iw6;
-var xRB = L(() => {
+var xRB = lazyLoader(() => {
     R$A();
     XRB();
     kRB();
-    yRB = GA(qRB(), 1), i7A = typeof window < "u" && typeof document < "u", Iw6 = eOB()
+    yRB = esmImport(qRB(), 1), i7A = typeof window < "u" && typeof document < "u", Iw6 = eOB()
 });
-var vRB = L(() => {
+var vRB = lazyLoader(() => {
     xRB()
 });
-var bRB = "https://e531a1d9ec1de9064fae9d4affb0b0f4@o1158394.ingest.us.sentry.io/4508259541909504",
+/* SENTRY_DSN = SENTRY_DSN = "https://...@sentry.io/..." */
+var SENTRY_DSN = "https://e531a1d9ec1de9064fae9d4affb0b0f4@o1158394.ingest.us.sentry.io/4508259541909504",
     fRB = "client-RRNS7R65EAtReO5XA4xDC3eU6ZdJQi6lLEP6b5j32Me",
     xm1 = void 0,
     hRB = "sdk-rC3xnlkyYSbBFJS";
@@ -371,7 +375,7 @@ function gRB(A) {
 
 function hm1() {
     if (hX()) return !1;
-    return V0(process.env.CLAUDE_CODE_ENABLE_GROWTHBOOK)
+    return parseBoolean(process.env.CLAUDE_CODE_ENABLE_GROWTHBOOK)
 }
 
 function uRB() {
@@ -406,7 +410,6 @@ function uRB() {
         }
     }
 }
-
 async function mRB(A, Q, B) {
     if (!hm1()) return Q;
     let G = await n7A();
@@ -421,7 +424,7 @@ function dRB() {
     try {
         Ww6(), n7A()
     } catch (A) {
-        e(A instanceof Error ? A : Error(`GrowthBook: Force refresh failed: ${A}`))
+        e(A instanceof Error ? A : Error(`GrowthBook: Force refresh failed: TextComponent{A}`))
     }
 }
 
@@ -431,7 +434,7 @@ function Ww6() {
 var Qf = null,
     bm1 = !1,
     fm1, vm1, QrA, n7A, Yw6, Jw6;
-var BrA = L(() => {
+var BrA = lazyLoader(() => {
     n3A();
     vRB();
     eb();
@@ -525,7 +528,9 @@ var BrA = L(() => {
     })
 });
 
-function LW() {
+/* getSmallFastModel = getSmallFastModel() - Returns haiku model */
+/* Signature: () => string */
+function getSmallFastModel() {
     return process.env.ANTHROPIC_SMALL_FAST_MODEL || o7A()
 }
 
@@ -557,7 +562,9 @@ function ot(A = {}) {
     return iRB(B)
 }
 
-function S3() {
+/* getDefaultSonnetModel = getDefaultSonnetModel() - Returns "claude-sonnet-4-5-..." */
+/* Signature: () => string */
+function getDefaultSonnetModel() {
     let A = ot();
     if (A !== void 0 && A !== null) return VE(A);
     return et()
@@ -578,18 +585,18 @@ function v$A() {
 
 function b$A() {
     if (process.env.ANTHROPIC_DEFAULT_OPUS_MODEL) return process.env.ANTHROPIC_DEFAULT_OPUS_MODEL;
-    if (J6() === "firstParty") return nI().opus45;
+    if (getProvider() === "firstParty") return nI().opus45;
     return nI().opus41
 }
 
 function o7A() {
     if (process.env.ANTHROPIC_DEFAULT_HAIKU_MODEL) return process.env.ANTHROPIC_DEFAULT_HAIKU_MODEL;
-    if (J6() === "firstParty" || J6() === "foundry") return nI().haiku45;
+    if (getProvider() === "firstParty" || getProvider() === "foundry") return nI().haiku45;
     return nI().haiku35
 }
 
 function ZrA() {
-    return ZI("tengu_haiku_default_pro_plan", "haiku_is_default", !1)
+    return getFeatureFlag("tengu_haiku_default_pro_plan", "haiku_is_default", !1)
 }
 
 function tt(A) {
@@ -609,7 +616,7 @@ function um1() {
         hasAccess: A
     } = Kp();
     if (!A) return !1;
-    return ZI("sonnet_1m_default", "enabled", !1)
+    return getFeatureFlag("sonnet_1m_default", "enabled", !1)
 }
 
 function iRB(A) {
@@ -641,17 +648,16 @@ function rw(A) {
     if (Q && Q[1]) return Q[1];
     return A
 }
-// Async function: nRB
 async function nRB() {
     try {
         let A = L1();
         if (A.claudeCodeFirstTokenDate !== void 0) return;
         let Q = VI();
         if (Q.error) {
-            e(Error(`Failed to get auth headers: ${Q.error}`));
+            e(Error(`Failed to get auth headers: TextComponent{Q.error}`));
             return
         }
-        let G = `${o9().BASE_API_URL}/api/organization/claude_code_first_token_date`,
+        let G = `TextComponent{getConfig().BASE_API_URL}/api/organization/claude_code_first_token_date`,
             I = (await GQ.get(G, {
                 headers: {
                     ...Q.headers,
@@ -661,7 +667,7 @@ async function nRB() {
         if (I !== null) {
             let Y = new Date(I).getTime();
             if (isNaN(Y)) {
-                e(Error(`Received invalid first_token_date from API: ${I}`));
+                e(Error(`Received invalid first_token_date from API: TextComponent{I}`));
                 return
             }
         }
@@ -732,7 +738,7 @@ function Cp() {
     return {
         value: null,
         label: "Default (recommended)",
-        description: `Use the default model (currently ${Vw6(IrA({forDisplay:!0}))}) · ${Fp(nt)}`
+        description: `Use the default model (currently TextComponent{Vw6(IrA({forDisplay:!0}))}) · TextComponent{Fp(nt)}`
     }
 }
 
@@ -741,7 +747,7 @@ function Hw6() {
 }
 
 function zw6() {
-    let A = J6() === "firstParty" ? oRB : null;
+    let A = getProvider() === "firstParty" ? oRB : null;
     if (AB()) {
         if (!bw())
             if (ZrA()) return [Cp(), lRB];
@@ -761,7 +767,7 @@ function zw6() {
         return B.push(k$A), B
     }
     let Q = [Cp(), rRB()];
-    if (J6() !== "firstParty") Q.push(Kw6());
+    if (getProvider() !== "firstParty") Q.push(Kw6());
     if (Kp().hasAccess) Q.push(sRB);
     if (A) Q.push(A);
     return Q
@@ -801,7 +807,7 @@ function dm1(A) {
 function VE(A) {
     let Q = A.toLowerCase().trim(),
         B = Q.endsWith("[1m]"),
-        G = B ? Q.replace(/\[1m]$/i, "").trim() : Q;
+        G = B ? Q.replace(/\[1m]TextComponent/i, "").trim() : Q;
     if (dm1(G)) switch (G) {
         case "opusplan":
             return HU() + (B ? "[1m]" : "");
@@ -819,13 +825,13 @@ function VE(A) {
 function UM(A) {
     if (A === null) {
         if (AB() && !bw()) {
-            if (ZrA()) return `Haiku (${k$A.description})`;
-            return `Sonnet (${mm1.description})`
-        } else if (AB()) return `Default (${YrA()})`;
-        return `Default (${et({forDisplay:!0})})`
+            if (ZrA()) return `Haiku (TextComponent{k$A.description})`;
+            return `Sonnet (TextComponent{mm1.description})`
+        } else if (AB()) return `Default (TextComponent{YrA()})`;
+        return `Default (TextComponent{et({forDisplay:!0})})`
     }
     let Q = VE(A);
-    return (A === Q ? Q : `${A} (${Q})`) + (x4() === "pro" && UT(Q) ? y$A : "")
+    return (A === Q ? Q : `TextComponent{A} (TextComponent{Q})`) + (x4() === "pro" && UT(Q) ? y$A : "")
 }
 
 function WrA(A, Q, B, G) {
@@ -874,11 +880,11 @@ function zp(A) {
 var a7A, Xw6, mOB, s7A, gm1 = "sonnet",
     y$A = " · Uses your extra usage balance",
     Fw6, mm1, sRB, rRB = () => {
-        let A = J6() !== "firstParty";
+        let A = getProvider() !== "firstParty";
         return {
             value: "opus",
             label: A ? "Opus 4.1" : "Opus",
-            description: `Opus ${A?"4.1":"4.5"} · ${A?"Legacy":"Most capable for complex work"} · ${Fp(A?jsA:SsA)}` + (x4() === "pro" ? y$A : ""),
+            description: `Opus TextComponent{A?"4.1":"4.5"} · TextComponent{A?"Legacy":"Most capable for complex work"} · TextComponent{Fp(A?jsA:SsA)}` + (x4() === "pro" ? y$A : ""),
             descriptionForModel: A ? "Opus 4.1 - legacy version" : "Opus 4.5 - most capable for complex work"
         }
     },
@@ -886,7 +892,7 @@ var a7A, Xw6, mOB, s7A, gm1 = "sonnet",
         return {
             value: nI().opus45,
             label: "Opus 4.5",
-            description: `Opus 4.5 · Most capable for complex work · ${Fp(SsA)}`,
+            description: `Opus 4.5 · Most capable for complex work · TextComponent{Fp(SsA)}`,
             descriptionForModel: "Opus 4.5 - most capable for complex work"
         }
     },
@@ -897,7 +903,7 @@ var a7A, Xw6, mOB, s7A, gm1 = "sonnet",
             description: "Use Opus 4.5 in plan mode, Sonnet 4.5 otherwise" + (x4() === "pro" ? y$A : "")
         }
     };
-var s2 = L(() => {
+var s2 = lazyLoader(() => {
     o2();
     jQ();
     S0();
@@ -922,22 +928,22 @@ var s2 = L(() => {
     mm1 = {
         value: "sonnet",
         label: "Sonnet",
-        description: `Sonnet 4.5 · Best for everyday tasks · ${Fp(nt)}`,
+        description: `Sonnet 4.5 · Best for everyday tasks · TextComponent{Fp(nt)}`,
         descriptionForModel: "Sonnet 4.5 - best for everyday tasks. Generally recommended for most coding tasks"
     }, sRB = {
         value: "sonnet[1m]",
         label: "Sonnet (1M context)",
-        description: `Sonnet 4.5 for long sessions · ${Fp(Em1)}`,
+        description: `Sonnet 4.5 for long sessions · TextComponent{Fp(Em1)}`,
         descriptionForModel: "Sonnet 4.5 with 1M context window - for long sessions with large codebases"
     }, oRB = {
         value: "haiku",
         label: "Haiku",
-        description: `Haiku 4.5 · Fastest for quick answers · ${Fp(Um1)}`,
+        description: `Haiku 4.5 · Fastest for quick answers · TextComponent{Fp(Um1)}`,
         descriptionForModel: "Haiku 4.5 - fastest for quick answers. Lower cost but less capable than Sonnet 4.5."
     }, Dw6 = {
         value: "haiku",
         label: "Haiku",
-        description: `Haiku 3.5 for simple tasks · ${Fp(zm1)}`,
+        description: `Haiku 3.5 for simple tasks · TextComponent{Fp(zm1)}`,
         descriptionForModel: "Haiku 3.5 - faster and lower cost, but less capable than Sonnet. Use for simple tasks."
     };
     Cw6 = {
@@ -958,7 +964,6 @@ var s2 = L(() => {
         description: "Haiku 4.5 · Fastest for quick answers"
     }
 });
-// Async function: ww6
 async function ww6() {
     let [A, Q] = await Promise.all([m0.getPackageManagers(), m0.getRuntimes()]);
     return {
@@ -969,7 +974,7 @@ async function ww6() {
         packageManagers: A.join(","),
         runtimes: Q.join(","),
         isRunningWithBun: m0.isRunningWithBun(),
-        isCi: V0(!1),
+        isCi: parseBoolean(!1),
         isClaubbit: process.env.CLAUBBIT === "true",
         isClaudeCodeRemote: process.env.CLAUDE_CODE_REMOTE === "true",
         isConductor: m0.isConductor(),
@@ -1012,9 +1017,8 @@ async function ww6() {
 function qw6() {
     return
 }
-
 async function Up(A = {}) {
-    let Q = A.model ? String(A.model) : S3(),
+    let Q = A.model ? String(A.model) : getDefaultSonnetModel(),
         B = Iw(Q),
         G = await ww6(),
         Z = qw6();
@@ -1069,7 +1073,7 @@ function ATB(A, Q = {}) {
         ...G && {
             process: G
         },
-        surface: Uw6
+        surface: SERVICE_NAME
     }
 }
 
@@ -1136,9 +1140,10 @@ function QTB(A, Q, B = {}) {
         additional: B
     }
 }
-var Uw6 = "claude-code",
+/* SERVICE_NAME = SERVICE_NAME = "claude-code" */
+var SERVICE_NAME = "claude-code",
     $w6;
-var t7A = L(() => {
+var t7A = lazyLoader(() => {
     o2();
     f5();
     it();
@@ -1171,7 +1176,7 @@ function BTB(A) {
     return A !== null && A !== void 0
 }
 var f$A;
-var cm1 = L(() => {
+var cm1 = lazyLoader(() => {
     f$A = {
         fromJSON(A) {
             return {
@@ -1207,7 +1212,7 @@ function pm1(A) {
     return A !== null && A !== void 0
 }
 var Bf;
-var lm1 = L(() => {
+var lm1 = lazyLoader(() => {
     Bf = {
         fromJSON(A) {
             return {
@@ -1312,7 +1317,7 @@ function L4(A) {
     return A !== null && A !== void 0
 }
 var FrA, VrA, KrA;
-var ZTB = L(() => {
+var ZTB = lazyLoader(() => {
     cm1();
     lm1();
     FrA = {
@@ -1497,7 +1502,7 @@ function $T(A) {
     return A !== null && A !== void 0
 }
 var im1;
-var YTB = L(() => {
+var YTB = lazyLoader(() => {
     cm1();
     lm1();
     im1 = {

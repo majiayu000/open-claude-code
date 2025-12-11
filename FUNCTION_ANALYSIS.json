@@ -1,0 +1,37 @@
+[
+  {
+    "original": "HI9",
+    "readable": "patchCore",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "This function patches Node.js fs module core methods (chown, chmod, stat, etc.) with error handlers. It wraps chmod, chown, stat and their sync variants to handle errors gracefully. This is the main patching function for graceful-fs library. Variable analysis: receives fs module object, modifies its methods with wrappers. Context: exported as main module from nYA wrapper at line 33361, used throughout graceful-fs initialization."
+  },
+  {
+    "original": "zI9",
+    "readable": "createStreamWrappers",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "Returns an object with ReadStream and WriteStream constructors. The function creates stream classes that wrap file operations with proper initialization. Both B (ReadStream) and Q (WriteStream) are proper stream implementations with proper initialization of fd, path, flags, encoding, etc. Used in graceful-fs to provide custom stream implementations."
+  },
+  {
+    "original": "CI9",
+    "readable": "cloneObjectDeep",
+    "confidence": 0.93,
+    "source": "llm-inference",
+    "reason": "Performs deep object cloning using Object.create and preserving prototype chain. Takes an object A and returns a cloned object B with all property descriptors copied. Uses Object.getPrototypeOf to maintain prototype relationship. This is a typical deep clone function for copying fs module object."
+  },
+  {
+    "original": "qI9",
+    "readable": "noOpFunction",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "Empty function that does nothing. Defined as 'function qI9() {}' at line 33703. Used as default debuglog function when util.debuglog is not available. Later assigned to Tg variable or replaced with actual debuglog/debug function. Classic no-op placeholder."
+  },
+  {
+    "original": "AIA",
+    "readable": "definePropertyGetter",
+    "confidence": 0.94,
+    "source": "llm-inference",
+    "reason": "Defines a property on object A with a getter that returns B. Uses Object.defineProperty with get accessor. Called at lines 33725, 33748 to set up queue property on fs module using Symbol.for('graceful-fs.queue'). This sets up the internal queue property used by graceful-fs to track pending operations."
+  }
+]

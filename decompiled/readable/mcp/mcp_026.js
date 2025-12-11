@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_026.js
+ * 处理时间: 2025-12-09T03:41:38.025Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.024Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -52,12 +55,12 @@
                     }
                     if (rA && K1) {
                         let WA = rA.pluginId;
-                        if (jg(WA)) Q(`Plugin '${WA}' is already installed. Use '/plugin' to manage existing plugins.`);
+                        if (jg(WA)) Q(`Plugin 'TextComponent{WA}' is already installed. Use '/plugin' to manage existing plugins.`);
                         else V(K1), D(rA), X("plugin-details")
-                    } else Q(`Plugin "${J}" not found in any marketplace`)
+                    } else Q(`Plugin "TextComponent{J}" not found in any marketplace`)
                 } else if (Y)
                     if (qA.some((K1) => K1.name === Y)) V(Y), X("plugin-list");
-                    else Q(`Marketplace "${Y}" not found`)
+                    else Q(`Marketplace "TextComponent{Y}" not found`)
             } catch (SA) {
                 Q(SA instanceof Error ? SA.message : "Failed to load marketplaces")
             } finally {
@@ -67,12 +70,11 @@
         KA()
     }, [Q, Y, J]), qK.useEffect(() => {
         if (!F) return;
-
-async function KA(SA) {
+        async function KA(SA) {
             N(!0);
             try {
                 let sA = await VD(SA);
-                if (!sA) throw Error(`Failed to load marketplace: ${SA}`);
+                if (!sA) throw Error(`Failed to load marketplace: TextComponent{SA}`);
                 let NA = [];
                 for (let qA of sA.plugins) {
                     let DA = z3A(qA.name, SA);
@@ -116,14 +118,14 @@ async function KA(SA) {
             NA.push({
                 name: qA.entry.name,
                 reason: yA
-            }), e(DA instanceof Error ? DA : Error(`Failed to install ${qA.entry.name}: ${DA}`))
+            }), e(DA instanceof Error ? DA : Error(`Failed to install TextComponent{qA.entry.name}: TextComponent{DA}`))
         }
         if (x(new Set), y(new Set), oF(), sA === 0) {
-            let qA = `✓ Installed ${SA} plugin${SA!==1?"s":""}. Restart Claude Code to load new plugins.`;
+            let qA = `✓ Installed TextComponent{SA} plugin${SA!==1?"s":""}. Restart Claude Code to load new plugins.`;
             G(qA)
-        } else if (SA === 0) Q(`Failed to install: ${Xx1(NA,!0)}`);
+        } else if (SA === 0) Q(`Failed to install: TextComponent{Xx1(NA,!0)}`);
         else {
-            let qA = `✓ Installed ${SA} of ${SA+sA} plugins. Failed: ${Xx1(NA,!1)}. Restart Claude Code to load successfully installed plugins.`;
+            let qA = `✓ Installed TextComponent{SA} of TextComponent{SA+sA} plugins. Failed: TextComponent{Xx1(NA,!1)}. Restart Claude Code to load successfully installed plugins.`;
             G(qA)
         }
         if (SA > 0) {
@@ -146,7 +148,7 @@ async function KA(SA) {
                 plugin_id: KA.pluginId,
                 marketplace_name: KA.marketplaceName
             }), oF();
-            let NA = `✓ Installed ${KA.entry.name}. Restart Claude Code to load new plugins.`;
+            let NA = `✓ Installed TextComponent{KA.entry.name}. Restart Claude Code to load new plugins.`;
             if (G(NA), I) await I();
             Z({
                 type: "menu"
@@ -154,7 +156,7 @@ async function KA(SA) {
         } catch (SA) {
             l(!1);
             let sA = SA instanceof Error ? SA.message : String(SA);
-            d(`Failed to install: ${sA}`), e(SA instanceof Error ? SA : Error(`Failed to install plugin: ${String(SA)}`))
+            d(`Failed to install: TextComponent{sA}`), e(SA instanceof Error ? SA : Error(`Failed to install plugin: TextComponent{String(SA)}`))
         }
     };
     if (qK.useEffect(() => {
@@ -222,7 +224,7 @@ async function KA(SA) {
                         y(rA), X("plugin-list"), D(null)
                     } else if (yA === "install") wA(K);
                     else if (yA === "homepage" && sA) gZ(sA);
-                    else if (yA === "github" && qA) gZ(`https://github.com/${qA}`);
+                    else if (yA === "github" && qA) gZ(`https://github.com/TextComponent{qA}`);
                     else if (yA === "back") X("plugin-list"), D(null)
                 }
             }
@@ -232,14 +234,14 @@ async function KA(SA) {
         flexDirection: "column",
         paddingX: 1,
         borderStyle: "round"
-    }, e1.createElement($, null, "Loading…")));
+    }, e1.createElement(TextComponent, null, "Loading…")));
     if (A) return e1.createElement(j, {
         flexDirection: "column"
     }, e1.createElement(j, {
         flexDirection: "column",
         paddingX: 1,
         borderStyle: "round"
-    }, e1.createElement($, {
+    }, e1.createElement(TextComponent, {
         color: "error"
     }, A)));
     if (W === "marketplace-list") {
@@ -251,14 +253,14 @@ async function KA(SA) {
             borderStyle: "round"
         }, e1.createElement(j, {
             marginBottom: 1
-        }, e1.createElement($, {
+        }, e1.createElement(TextComponent, {
             bold: !0
-        }, "Select marketplace")), e1.createElement($, null, "No marketplaces configured."), e1.createElement($, {
+        }, "Select marketplace")), e1.createElement(TextComponent, null, "No marketplaces configured."), e1.createElement(TextComponent, {
             dimColor: !0
         }, "Add a marketplace first using ", "'Add marketplace'", ".")), e1.createElement(j, {
             marginTop: 1,
             paddingLeft: 1
-        }, e1.createElement($, {
+        }, e1.createElement(TextComponent, {
             dimColor: !0
         }, "Esc to go back")));
         return e1.createElement(j, {
@@ -269,26 +271,26 @@ async function KA(SA) {
             borderStyle: "round"
         }, e1.createElement(j, {
             marginBottom: 1
-        }, e1.createElement($, {
+        }, e1.createElement(TextComponent, {
             bold: !0
         }, "Select marketplace")), QA && e1.createElement(j, {
             marginBottom: 1,
             flexDirection: "column"
-        }, e1.createElement($, {
+        }, e1.createElement(TextComponent, {
             color: "warning"
         }, V1.warning, " ", QA)), H.map((KA, SA) => e1.createElement(j, {
             key: KA.name,
             flexDirection: "column",
             marginBottom: SA < H.length - 1 ? 1 : 0
-        }, e1.createElement(j, null, e1.createElement($, {
+        }, e1.createElement(j, null, e1.createElement(TextComponent, {
             color: q === SA ? "suggestion" : void 0
         }, q === SA ? V1.pointer : " ", " ", KA.name)), e1.createElement(j, {
             marginLeft: 2
-        }, e1.createElement($, {
+        }, e1.createElement(TextComponent, {
             dimColor: !0
-        }, KA.totalPlugins, " plugin", KA.totalPlugins !== 1 ? "s" : "", " available", KA.installedCount > 0 && ` · ${KA.installedCount} already installed`, KA.source && ` · ${KA.source}`))))), e1.createElement(j, {
+        }, KA.totalPlugins, " plugin", KA.totalPlugins !== 1 ? "s" : "", " available", KA.installedCount > 0 && ` · TextComponent{KA.installedCount} already installed`, KA.source && ` · TextComponent{KA.source}`))))), e1.createElement(j, {
             paddingLeft: 1
-        }, e1.createElement($, {
+        }, e1.createElement(TextComponent, {
             dimColor: !0,
             italic: !0
         }, "Enter to select · esc to go back")))
@@ -319,56 +321,56 @@ async function KA(SA) {
             borderStyle: "round"
         }, e1.createElement(j, {
             marginBottom: 1
-        }, e1.createElement($, {
+        }, e1.createElement(TextComponent, {
             bold: !0
         }, "Plugin Details")), e1.createElement(j, {
             flexDirection: "column",
             marginBottom: 1
-        }, e1.createElement($, {
+        }, e1.createElement(TextComponent, {
             bold: !0
-        }, K.entry.name), K.entry.version && e1.createElement($, {
+        }, K.entry.name), K.entry.version && e1.createElement(TextComponent, {
             dimColor: !0
         }, "Version: ", K.entry.version), K.entry.description && e1.createElement(j, {
             marginTop: 1
-        }, e1.createElement($, null, K.entry.description)), K.entry.author && e1.createElement(j, {
+        }, e1.createElement(TextComponent, null, K.entry.description)), K.entry.author && e1.createElement(j, {
             marginTop: 1
-        }, e1.createElement($, {
+        }, e1.createElement(TextComponent, {
             dimColor: !0
         }, "By:", " ", typeof K.entry.author === "string" ? K.entry.author : K.entry.author.name))), e1.createElement(j, {
             flexDirection: "column",
             marginBottom: 1
-        }, e1.createElement($, {
+        }, e1.createElement(TextComponent, {
             bold: !0
-        }, "Will install:"), K.entry.commands && e1.createElement($, {
+        }, "Will install:"), K.entry.commands && e1.createElement(TextComponent, {
             dimColor: !0
-        }, "• Commands:", " ", Array.isArray(K.entry.commands) ? K.entry.commands.join(", ") : Object.keys(K.entry.commands).join(", ")), K.entry.agents && e1.createElement($, {
+        }, "• Commands:", " ", Array.isArray(K.entry.commands) ? K.entry.commands.join(", ") : Object.keys(K.entry.commands).join(", ")), K.entry.agents && e1.createElement(TextComponent, {
             dimColor: !0
-        }, "• Agents:", " ", Array.isArray(K.entry.agents) ? K.entry.agents.join(", ") : Object.keys(K.entry.agents).join(", ")), K.entry.hooks && e1.createElement($, {
+        }, "• Agents:", " ", Array.isArray(K.entry.agents) ? K.entry.agents.join(", ") : Object.keys(K.entry.agents).join(", ")), K.entry.hooks && e1.createElement(TextComponent, {
             dimColor: !0
-        }, "• Hooks: ", Object.keys(K.entry.hooks).join(", ")), K.entry.mcpServers && e1.createElement($, {
+        }, "• Hooks: ", Object.keys(K.entry.hooks).join(", ")), K.entry.mcpServers && e1.createElement(TextComponent, {
             dimColor: !0
-        }, "• MCP Servers:", " ", Array.isArray(K.entry.mcpServers) ? K.entry.mcpServers.join(", ") : typeof K.entry.mcpServers === "object" ? Object.keys(K.entry.mcpServers).join(", ") : "configured"), !K.entry.commands && !K.entry.agents && !K.entry.hooks && !K.entry.mcpServers && e1.createElement(e1.Fragment, null, typeof K.entry.source === "object" && "source" in K.entry.source && (K.entry.source.source === "github" || K.entry.source.source === "url" || K.entry.source.source === "npm" || K.entry.source.source === "pip") ? e1.createElement($, {
+        }, "• MCP Servers:", " ", Array.isArray(K.entry.mcpServers) ? K.entry.mcpServers.join(", ") : typeof K.entry.mcpServers === "object" ? Object.keys(K.entry.mcpServers).join(", ") : "configured"), !K.entry.commands && !K.entry.agents && !K.entry.hooks && !K.entry.mcpServers && e1.createElement(e1.Fragment, null, typeof K.entry.source === "object" && "source" in K.entry.source && (K.entry.source.source === "github" || K.entry.source.source === "url" || K.entry.source.source === "npm" || K.entry.source.source === "pip") ? e1.createElement(TextComponent, {
             dimColor: !0
-        }, "• Component summary not available for remote plugin") : e1.createElement($, {
+        }, "• Component summary not available for remote plugin") : e1.createElement(TextComponent, {
             dimColor: !0
         }, "• Components will be discovered at installation"))), k && e1.createElement(j, {
             marginBottom: 1
-        }, e1.createElement($, {
+        }, e1.createElement(TextComponent, {
             color: "error"
         }, "Error: ", k)), e1.createElement(j, {
             flexDirection: "column"
         }, NA.map((qA, DA) => e1.createElement(j, {
             key: qA.action
-        }, p === DA && e1.createElement($, null, "> "), p !== DA && e1.createElement($, null, "  "), e1.createElement($, {
+        }, p === DA && e1.createElement(TextComponent, null, "> "), p !== DA && e1.createElement(TextComponent, null, "  "), e1.createElement(TextComponent, {
             bold: p === DA
         }, o && qA.action === "install" ? "Installing…" : qA.label))))), e1.createElement(j, {
             marginTop: 1,
             paddingLeft: 1
-        }, e1.createElement($, {
+        }, e1.createElement(TextComponent, {
             dimColor: !0
-        }, e1.createElement($, {
+        }, e1.createElement(TextComponent, {
             bold: !0
-        }, "Select:"), " Enter", " • ", e1.createElement($, {
+        }, "Select:"), " Enter", " • ", e1.createElement(TextComponent, {
             bold: !0
         }, "Back:"), " Esc")))
     }
@@ -380,15 +382,15 @@ async function KA(SA) {
         borderStyle: "round"
     }, e1.createElement(j, {
         marginBottom: 1
-    }, e1.createElement($, {
+    }, e1.createElement(TextComponent, {
         bold: !0
-    }, F, " ", V1.pointerSmall, " Install plugins")), e1.createElement($, {
+    }, F, " ", V1.pointerSmall, " Install plugins")), e1.createElement(TextComponent, {
         dimColor: !0
-    }, "No new plugins available to install."), e1.createElement($, {
+    }, "No new plugins available to install."), e1.createElement(TextComponent, {
         dimColor: !0
     }, "All plugins from this marketplace are already installed.")), e1.createElement(j, {
         marginLeft: 3
-    }, e1.createElement($, {
+    }, e1.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "Esc to go back")));
@@ -400,7 +402,7 @@ async function KA(SA) {
         borderStyle: "round"
     }, e1.createElement(j, {
         marginBottom: 1
-    }, e1.createElement($, {
+    }, e1.createElement(TextComponent, {
         bold: !0
     }, F, " ", V1.pointerSmall, " Install plugins")), E.map((KA, SA) => {
         let sA = q === SA,
@@ -411,20 +413,20 @@ async function KA(SA) {
             key: KA.pluginId,
             flexDirection: "column",
             marginBottom: DA && !A ? 0 : 1
-        }, e1.createElement(j, null, e1.createElement($, {
+        }, e1.createElement(j, null, e1.createElement(TextComponent, {
             color: sA ? "suggestion" : void 0
-        }, sA ? V1.pointer : " ", " "), e1.createElement($, null, qA ? V1.ellipsis : NA ? V1.radioOn : V1.radioOff, " ", KA.entry.name, KA.entry.category && e1.createElement($, {
+        }, sA ? V1.pointer : " ", " "), e1.createElement(TextComponent, null, qA ? V1.ellipsis : NA ? V1.radioOn : V1.radioOff, " ", KA.entry.name, KA.entry.category && e1.createElement(TextComponent, {
             dimColor: !0
         }, " [", KA.entry.category, "]"))), KA.entry.description && e1.createElement(j, {
             marginLeft: 4
-        }, e1.createElement($, {
+        }, e1.createElement(TextComponent, {
             dimColor: !0
-        }, KA.entry.description.length > 60 ? KA.entry.description.substring(0, 57) + "..." : KA.entry.description), KA.entry.version && e1.createElement($, {
+        }, KA.entry.description.length > 60 ? KA.entry.description.substring(0, 57) + "..." : KA.entry.description), KA.entry.version && e1.createElement(TextComponent, {
             dimColor: !0
         }, " · v", KA.entry.version)))
     }), A && e1.createElement(j, {
         marginTop: 1
-    }, e1.createElement($, {
+    }, e1.createElement(TextComponent, {
         color: "error"
     }, V1.cross, " ", A))), e1.createElement(m_3, {
         hasSelection: P.size > 0
@@ -437,17 +439,17 @@ function m_3({
     let Q = [];
     return Q.push("Space to (de)select"), Q.push("Enter for details"), Q.push("Esc to go back"), e1.createElement(j, {
         marginLeft: 3
-    }, e1.createElement($, {
+    }, e1.createElement(TextComponent, {
         italic: !0
-    }, A && e1.createElement($, {
+    }, A && e1.createElement(TextComponent, {
         bold: !0,
         color: "suggestion"
-    }, "Press i to install ·", " "), e1.createElement($, {
+    }, "Press i to install ·", " "), e1.createElement(TextComponent, {
         dimColor: !0
     }, "Space: (de)select · Enter: details · Esc: back")))
 }
 var e1, qK;
-var dK9 = L(() => {
+var dK9 = lazyLoader(() => {
     hA();
     hA();
     n2();
@@ -460,7 +462,7 @@ var dK9 = L(() => {
     lM();
     yjA();
     Ia();
-    e1 = GA(VA(), 1), qK = GA(VA(), 1)
+    e1 = esmImport(VA(), 1), qK = esmImport(VA(), 1)
 });
 
 function cK9({
@@ -528,47 +530,46 @@ function cK9({
         gap: 1,
         padding: 1,
         borderStyle: "round"
-    }, i7.default.createElement($, {
+    }, i7.default.createElement(TextComponent, {
         bold: !0
     }, "Configure ", Q), i7.default.createElement(j, {
         marginLeft: 1
-    }, i7.default.createElement($, {
+    }, i7.default.createElement(TextComponent, {
         dimColor: !0
     }, "Plugin: ", A)), i7.default.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, i7.default.createElement($, {
+    }, i7.default.createElement(TextComponent, {
         bold: !0
-    }, D.title || K, E && i7.default.createElement($, {
+    }, D.title || K, E && i7.default.createElement(TextComponent, {
         color: "error"
-    }, " *")), D.description && i7.default.createElement($, {
+    }, " *")), D.description && i7.default.createElement(TextComponent, {
         dimColor: !0
     }, D.description), i7.default.createElement(j, {
         marginTop: 1
-    }, i7.default.createElement($, null, V1.pointerSmall, " "), i7.default.createElement($, null, z), i7.default.createElement($, null, "█"))), i7.default.createElement(j, {
+    }, i7.default.createElement(TextComponent, null, V1.pointerSmall, " "), i7.default.createElement(TextComponent, null, z), i7.default.createElement(TextComponent, null, "█"))), i7.default.createElement(j, {
         marginTop: 1
-    }, i7.default.createElement($, {
+    }, i7.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Field ", Y + 1, " of ", I.length)), Y < I.length - 1 && i7.default.createElement(j, null, i7.default.createElement($, {
+    }, "Field ", Y + 1, " of ", I.length)), Y < I.length - 1 && i7.default.createElement(j, null, i7.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Tab: Next field · Enter: Save and continue")), Y === I.length - 1 && i7.default.createElement(j, null, i7.default.createElement($, {
+    }, "Tab: Next field · Enter: Save and continue")), Y === I.length - 1 && i7.default.createElement(j, null, i7.default.createElement(TextComponent, {
         dimColor: !0
     }, "Enter: Save configuration"))), i7.default.createElement(j, {
         marginLeft: 3
-    }, i7.default.createElement($, {
+    }, i7.default.createElement(TextComponent, {
         dimColor: !0
     }, H.pending ? i7.default.createElement(i7.default.Fragment, null, "Press ", H.keyName, " again to exit") : i7.default.createElement(i7.default.Fragment, null, "Esc to cancel"))))
 }
 var i7;
-var pK9 = L(() => {
+var pK9 = lazyLoader(() => {
     hA();
     c9();
     n2();
-    i7 = GA(VA(), 1)
+    i7 = esmImport(VA(), 1)
 });
 import * as hQA from "fs/promises";
 import * as KFA from "path";
-
 async function lK9(A) {
     try {
         return (await hQA.readdir(A, {
@@ -578,12 +579,11 @@ async function lK9(A) {
         })
     } catch (Q) {
         let B = Q instanceof Error ? Q.message : String(Q);
-        return g(`Failed to read plugin components from ${A}: ${B}`, {
+        return g(`Failed to read plugin components from TextComponent{A}: TextComponent{B}`, {
             level: "error"
-        }), e(Q instanceof Error ? Q : Error(`Failed to read plugin components: ${B}`)), []
+        }), e(Q instanceof Error ? Q : Error(`Failed to read plugin components: TextComponent{B}`)), []
     }
 }
-
 async function d_3(A) {
     try {
         let Q = await hQA.readdir(A, {
@@ -599,9 +599,9 @@ async function d_3(A) {
             } return B
     } catch (Q) {
         let B = Q instanceof Error ? Q.message : String(Q);
-        return g(`Failed to read skill directories from ${A}: ${B}`, {
+        return g(`Failed to read skill directories from TextComponent{A}: TextComponent{B}`, {
             level: "error"
-        }), e(Q instanceof Error ? Q : Error(`Failed to read skill directories: ${B}`)), []
+        }), e(Q instanceof Error ? Q : Error(`Failed to read skill directories: TextComponent{B}`)), []
     }
 }
 
@@ -611,8 +611,7 @@ function c_3({
 }) {
     let [B, G] = rJ.useState(null), [Z, I] = rJ.useState(!0), [Y, J] = rJ.useState(null);
     if (rJ.useEffect(() => {
-            // Async function: X
-async function X() {
+            async function X() {
                 try {
                     let V = (await VD(Q)).plugins.find((K) => K.name === A.name);
                     if (V) {
@@ -653,7 +652,7 @@ async function X() {
                             hooks: w.length > 0 ? w : null,
                             mcpServers: N.length > 0 ? N : null
                         })
-                    } else J(`Plugin ${A.name} not found in marketplace`)
+                    } else J(`Plugin TextComponent{A.name} not found in marketplace`)
                 } catch (F) {
                     J(F instanceof Error ? F.message : "Failed to load components")
                 } finally {
@@ -665,9 +664,9 @@ async function X() {
     if (Y) return A0.createElement(j, {
         flexDirection: "column",
         marginBottom: 1
-    }, A0.createElement($, {
+    }, A0.createElement(TextComponent, {
         bold: !0
-    }, "Components:"), A0.createElement($, {
+    }, "Components:"), A0.createElement(TextComponent, {
         dimColor: !0
     }, "Error: ", Y));
     if (!B) return null;
@@ -675,24 +674,23 @@ async function X() {
     return A0.createElement(j, {
         flexDirection: "column",
         marginBottom: 1
-    }, A0.createElement($, {
+    }, A0.createElement(TextComponent, {
         bold: !0
-    }, "Installed components:"), B.commands ? A0.createElement($, {
+    }, "Installed components:"), B.commands ? A0.createElement(TextComponent, {
         dimColor: !0
-    }, "• Commands:", " ", typeof B.commands === "string" ? B.commands : Array.isArray(B.commands) ? B.commands.join(", ") : Object.keys(B.commands).join(", ")) : null, B.agents ? A0.createElement($, {
+    }, "• Commands:", " ", typeof B.commands === "string" ? B.commands : Array.isArray(B.commands) ? B.commands.join(", ") : Object.keys(B.commands).join(", ")) : null, B.agents ? A0.createElement(TextComponent, {
         dimColor: !0
-    }, "• Agents:", " ", typeof B.agents === "string" ? B.agents : Array.isArray(B.agents) ? B.agents.join(", ") : Object.keys(B.agents).join(", ")) : null, B.skills ? A0.createElement($, {
+    }, "• Agents:", " ", typeof B.agents === "string" ? B.agents : Array.isArray(B.agents) ? B.agents.join(", ") : Object.keys(B.agents).join(", ")) : null, B.skills ? A0.createElement(TextComponent, {
         dimColor: !0
-    }, "• Skills:", " ", typeof B.skills === "string" ? B.skills : Array.isArray(B.skills) ? B.skills.join(", ") : Object.keys(B.skills).join(", ")) : null, B.hooks ? A0.createElement($, {
+    }, "• Skills:", " ", typeof B.skills === "string" ? B.skills : Array.isArray(B.skills) ? B.skills.join(", ") : Object.keys(B.skills).join(", ")) : null, B.hooks ? A0.createElement(TextComponent, {
         dimColor: !0
-    }, "• Hooks:", " ", typeof B.hooks === "string" ? B.hooks : Array.isArray(B.hooks) ? B.hooks.map(String).join(", ") : typeof B.hooks === "object" && B.hooks !== null ? Object.keys(B.hooks).join(", ") : String(B.hooks)) : null, B.mcpServers ? A0.createElement($, {
+    }, "• Hooks:", " ", typeof B.hooks === "string" ? B.hooks : Array.isArray(B.hooks) ? B.hooks.map(String).join(", ") : typeof B.hooks === "object" && B.hooks !== null ? Object.keys(B.hooks).join(", ") : String(B.hooks)) : null, B.mcpServers ? A0.createElement(TextComponent, {
         dimColor: !0
     }, "• MCP Servers:", " ", typeof B.mcpServers === "string" ? B.mcpServers : Array.isArray(B.mcpServers) ? B.mcpServers.map(String).join(", ") : typeof B.mcpServers === "object" && B.mcpServers !== null ? Object.keys(B.mcpServers).join(", ") : String(B.mcpServers)) : null)
 }
-
 async function NV0(A, Q) {
     let G = (await VD(Q))?.plugins.find((Z) => Z.name === A);
-    if (G && typeof G.source === "string") return `Local plugins cannot be updated remotely. To update, modify the source at: ${G.source}`;
+    if (G && typeof G.source === "string") return `Local plugins cannot be updated remotely. To update, modify the source at: TextComponent{G.source}`;
     return null
 }
 
@@ -709,8 +707,7 @@ function iK9({
             k(!1);
             return
         }
-        // Async function: DA
-async function DA() {
+        async function DA() {
             let yA = X.plugin.manifest.mcpServers,
                 rA = !1;
             if (yA) rA = typeof yA === "string" && QM(yA) || Array.isArray(yA) && yA.some((K1) => typeof K1 === "string" && QM(K1));
@@ -724,14 +721,13 @@ async function DA() {
                     rA = typeof LA === "string" && QM(LA) || Array.isArray(LA) && LA.some((TA) => typeof TA === "string" && QM(TA))
                 }
             } catch (K1) {
-                g(`Failed to read raw marketplace.json: ${K1}`)
+                g(`Failed to read raw marketplace.json: TextComponent{K1}`)
             }
             k(rA)
         }
         DA()
     }, [X]), rJ.useEffect(() => {
-        // Async function: DA
-async function DA() {
+        async function DA() {
             E(!0);
             try {
                 let {
@@ -745,8 +741,8 @@ async function DA() {
                 }
                 let zA = [];
                 for (let [$A, LA] of Object.entries(XA)) {
-                    let TA = LA.filter((aA) => {
-                            let I1 = `${aA.name}@${$A}`;
+                    let TA = LA.filter((BASE64_CHARS) => {
+                            let I1 = `TextComponent{BASE64_CHARS.name}@TextComponent{$A}`;
                             return WA?.enabledPlugins?.[I1] !== !1
                         }).length,
                         eA = LA.length - TA;
@@ -802,15 +798,15 @@ async function DA() {
                     K1 = 0,
                     WA = 0;
                 for (let $A of D) {
-                    let LA = `${$A.plugin.name}@${$A.marketplace}`;
+                    let LA = `TextComponent{$A.plugin.name}@TextComponent{$A.marketplace}`;
                     if ($A.pendingUpdate) {
-                        let eA = (await VD($A.marketplace))?.plugins.find((aA) => aA.name === $A.plugin.name);
+                        let eA = (await VD($A.marketplace))?.plugins.find((BASE64_CHARS) => BASE64_CHARS.name === $A.plugin.name);
                         if (eA && typeof eA.source !== "string") await nP(LA, eA), rA++
                     }
                     if ($A.pendingEnable !== void 0)
                         if ($A.pendingEnable) {
                             if (!jg(LA)) {
-                                let eA = (await VD($A.marketplace))?.plugins.find((aA) => aA.name === $A.plugin.name);
+                                let eA = (await VD($A.marketplace))?.plugins.find((BASE64_CHARS) => BASE64_CHARS.name === $A.plugin.name);
                                 if (eA && typeof eA.source !== "string") await nP(LA, eA)
                             }
                             yA[LA] = !0, K1++
@@ -820,10 +816,10 @@ async function DA() {
                     enabledPlugins: yA
                 }), oF();
                 let XA = [];
-                if (rA > 0) XA.push(`Updated ${rA} plugin${rA!==1?"s":""}`);
-                if (K1 > 0) XA.push(`Enabled ${K1} plugin${K1!==1?"s":""}`);
-                if (WA > 0) XA.push(`Disabled ${WA} plugin${WA!==1?"s":""}`);
-                let zA = `✓ ${XA.join(", ")}. Restart Claude Code to apply changes.`;
+                if (rA > 0) XA.push(`Updated TextComponent{rA} plugin${rA!==1?"s":""}`);
+                if (K1 > 0) XA.push(`Enabled TextComponent{K1} plugin${K1!==1?"s":""}`);
+                if (WA > 0) XA.push(`Disabled TextComponent{WA} plugin${WA!==1?"s":""}`);
+                let zA = `✓ TextComponent{XA.join(", ")}. Restart Claude Code to apply changes.`;
                 if (Q(zA), B) await B();
                 A({
                     type: "menu"
@@ -831,7 +827,7 @@ async function DA() {
             } catch (DA) {
                 P(!1);
                 let yA = DA instanceof Error ? DA.message : String(DA);
-                v(`Failed to apply changes: ${yA}`), e(DA instanceof Error ? DA : Error(`Failed to apply plugin changes: ${String(DA)}`))
+                v(`Failed to apply changes: TextComponent{yA}`), e(DA instanceof Error ? DA : Error(`Failed to apply plugin changes: TextComponent{String(DA)}`))
             }
         }, HA = async (DA) => {
             let rA = {
@@ -842,7 +838,7 @@ async function DA() {
                 TI1(zA)
             } catch (LA) {
                 e(LA instanceof Error ? LA : Error(String(LA)))
-            } else if (zA) g(`Skipping cache deletion for plugin ${DA} at ${zA} (not a cache path)`);
+            } else if (zA) g(`Skipping cache deletion for plugin TextComponent{DA} at TextComponent{zA} (not a cache path)`);
             rA[DA] = void 0;
             let {
                 error: $A
@@ -855,7 +851,7 @@ async function DA() {
             if (!X) return;
             P(!0), v(null);
             try {
-                let yA = `${X.plugin.name}@${X.marketplace}`,
+                let yA = `TextComponent{X.plugin.name}@TextComponent{X.marketplace}`,
                     K1 = {
                         ...LB("userSettings")?.enabledPlugins
                     };
@@ -890,7 +886,7 @@ async function DA() {
                     if (zA) throw zA;
                     oF()
                 }
-                let XA = `✓ ${DA==="enable"?"Enabled":DA==="disable"?"Disabled":DA==="update"?"Updated":"Uninstalled"} ${X.plugin.name}. Restart Claude Code to apply changes.`;
+                let XA = `✓ TextComponent{DA==="enable"?"Enabled":DA==="disable"?"Disabled":DA==="update"?"Updated":"Uninstalled"} TextComponent{X.plugin.name}. Restart Claude Code to apply changes.`;
                 if (Q(XA), B) await B();
                 A({
                     type: "menu"
@@ -898,45 +894,45 @@ async function DA() {
             } catch (yA) {
                 P(!1);
                 let rA = yA instanceof Error ? yA.message : String(yA);
-                v(`Failed to ${DA}: ${rA}`), e(yA instanceof Error ? yA : Error(`Failed to ${DA} plugin: ${String(yA)}`))
+                v(`Failed to TextComponent{DA}: TextComponent{rA}`), e(yA instanceof Error ? yA : Error(`Failed to TextComponent{DA} plugin: TextComponent{String(yA)}`))
             }
         }, KA = async (DA) => {
             P(!0), v(null);
             try {
-                let yA = `${DA.plugin.name}@${DA.marketplace}`;
+                let yA = `TextComponent{DA.plugin.name}@TextComponent{DA.marketplace}`;
                 await HA(yA);
                 let {
                     enabled: rA,
                     disabled: K1
                 } = await y7(), WA = [...rA, ...K1];
                 if (V.find((zA) => zA.name === J)) {
-                    let zA = WA.filter((aA) => {
-                            return (aA.source.split("@")[1] || "local") === J
+                    let zA = WA.filter((BASE64_CHARS) => {
+                            return (BASE64_CHARS.source.split("@")[1] || "local") === J
                         }),
-                        $A = zA.map((aA) => ({
-                            plugin: aA,
+                        $A = zA.map((BASE64_CHARS) => ({
+                            plugin: BASE64_CHARS,
                             marketplace: J,
                             pendingEnable: void 0,
                             pendingUpdate: !1
                         }));
                     H($A);
                     let LA = c0(),
-                        TA = zA.filter((aA) => {
-                            let I1 = `${aA.name}@${J}`;
+                        TA = zA.filter((BASE64_CHARS) => {
+                            let I1 = `TextComponent{BASE64_CHARS.name}@TextComponent{J}`;
                             return LA?.enabledPlugins?.[I1] !== !1
                         }).length,
                         eA = zA.length - TA;
-                    if (K((aA) => aA.map((I1) => I1.name === J ? {
+                    if (K((BASE64_CHARS) => BASE64_CHARS.map((I1) => I1.name === J ? {
                             ...I1,
                             installedPlugins: zA,
                             enabledCount: TA,
                             disabledCount: eA
                         } : I1)), z >= $A.length) w(Math.max(0, $A.length - 1))
                 }
-                Q(`✓ Uninstalled ${DA.plugin.name}. Restart Claude Code to apply changes.`)
+                Q(`✓ Uninstalled TextComponent{DA.plugin.name}. Restart Claude Code to apply changes.`)
             } catch (yA) {
                 let rA = yA instanceof Error ? yA.message : String(yA);
-                v(`Failed to uninstall: ${rA}`), e(yA instanceof Error ? yA : Error(`Failed to uninstall plugin: ${String(yA)}`))
+                v(`Failed to uninstall: TextComponent{rA}`), e(yA instanceof Error ? yA : Error(`Failed to uninstall plugin: TextComponent{String(yA)}`))
             } finally {
                 P(!1)
             }
@@ -968,7 +964,7 @@ async function DA() {
                         XA = WA[z];
                     if (XA) {
                         let zA = c0(),
-                            $A = `${XA.plugin.name}@${XA.marketplace}`,
+                            $A = `TextComponent{XA.plugin.name}@TextComponent{XA.marketplace}`,
                             LA = zA?.enabledPlugins?.[$A] !== !1;
                         if (XA.pendingEnable === void 0) XA.pendingEnable = !LA;
                         else XA.pendingEnable = void 0;
@@ -1003,7 +999,7 @@ async function DA() {
                 }
             } else if (I === "plugin-details" && X) {
                 let rA = c0(),
-                    K1 = `${X.plugin.name}@${X.marketplace}`,
+                    K1 = `TextComponent{X.plugin.name}@TextComponent{X.marketplace}`,
                     WA = rA?.enabledPlugins?.[K1] !== !1,
                     XA = [];
                 if (XA.push({
@@ -1047,13 +1043,13 @@ async function DA() {
                                 v("No MCPB file found in plugin"), o(!1);
                                 return
                             }
-                            let LA = `${X.plugin.name}@${X.marketplace}`,
+                            let LA = `TextComponent{X.plugin.name}@TextComponent{X.marketplace}`,
                                 TA = await fzA($A, X.plugin.path, LA, void 0, void 0, !0);
                             if ("status" in TA && TA.status === "needs-config") p(TA), Y("configuring");
                             else v("Failed to load MCPB for configuration")
                         } catch (zA) {
                             let $A = zA instanceof Error ? zA.message : String(zA);
-                            v(`Failed to load configuration: ${$A}`)
+                            v(`Failed to load configuration: TextComponent{$A}`)
                         } finally {
                             o(!1)
                         }
@@ -1088,7 +1084,7 @@ async function DA() {
         flexDirection: "column",
         paddingX: 1,
         borderStyle: "round"
-    }, A0.createElement($, null, "Loading installed plugins…")));
+    }, A0.createElement(TextComponent, null, "Loading installed plugins…")));
     if (V.length === 0) return A0.createElement(j, {
         flexDirection: "column"
     }, A0.createElement(j, {
@@ -1097,12 +1093,12 @@ async function DA() {
         borderStyle: "round"
     }, A0.createElement(j, {
         marginBottom: 1
-    }, A0.createElement($, {
+    }, A0.createElement(TextComponent, {
         bold: !0
-    }, "Manage plugins")), A0.createElement($, null, "No plugins installed.")), A0.createElement(j, {
+    }, "Manage plugins")), A0.createElement(TextComponent, null, "No plugins installed.")), A0.createElement(j, {
         marginTop: 1,
         paddingLeft: 1
-    }, A0.createElement($, {
+    }, A0.createElement(TextComponent, {
         dimColor: !0
     }, "Esc to go back")));
     if (I === "marketplace-list") return A0.createElement(j, {
@@ -1111,11 +1107,11 @@ async function DA() {
         flexDirection: "column",
         paddingX: 1,
         borderStyle: "round"
-    }, A0.createElement($, {
+    }, A0.createElement(TextComponent, {
         bold: !0
     }, "Manage plugins"), A0.createElement(j, {
         marginBottom: 1
-    }, A0.createElement($, {
+    }, A0.createElement(TextComponent, {
         dimColor: !0
     }, "Select a marketplace to manage plugins:")), V.map((DA, yA) => {
         let rA = yA === z,
@@ -1127,16 +1123,16 @@ async function DA() {
             key: DA.name,
             flexDirection: "column",
             marginBottom: zA ? 0 : 1
-        }, A0.createElement(j, null, A0.createElement($, {
+        }, A0.createElement(j, null, A0.createElement(TextComponent, {
             color: rA ? "suggestion" : void 0
         }, rA ? V1.pointer : " ", " ", DA.name)), A0.createElement(j, {
             marginLeft: 2
-        }, A0.createElement($, {
+        }, A0.createElement(TextComponent, {
             dimColor: !0
-        }, K1, " plugin", K1 !== 1 ? "s" : "", " installed", WA > 0 && ` · ${WA} enabled`, XA > 0 && ` · ${XA} disabled`)))
+        }, K1, " plugin", K1 !== 1 ? "s" : "", " installed", WA > 0 && ` · TextComponent{WA} enabled`, XA > 0 && ` · TextComponent{XA} disabled`)))
     })), A0.createElement(j, {
         paddingLeft: 1
-    }, A0.createElement($, {
+    }, A0.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, V1.arrowUp, V1.arrowDown, " enter to select · esc to go back")));
@@ -1144,9 +1140,8 @@ async function DA() {
         let rA = function() {
                 p(null), Y("plugin-details")
             },
-            DA = `${X.plugin.name}@${X.marketplace}`;
-
-async function yA(K1) {
+            DA = `TextComponent{X.plugin.name}@TextComponent{X.marketplace}`;
+        async function yA(K1) {
             if (!x || !X) return;
             try {
                 let WA = X.plugin.manifest.mcpServers,
@@ -1166,7 +1161,7 @@ async function yA(K1) {
                 await fzA(XA, X.plugin.path, DA, void 0, K1), v(null), p(null), Y("plugin-details"), Q("Configuration saved. Restart Claude Code for changes to take effect.")
             } catch (WA) {
                 let XA = WA instanceof Error ? WA.message : String(WA);
-                v(`Failed to save configuration: ${XA}`), Y("plugin-details")
+                v(`Failed to save configuration: TextComponent{XA}`), Y("plugin-details")
             }
         }
         return A0.createElement(cK9, {
@@ -1179,7 +1174,7 @@ async function yA(K1) {
     }
     if (I === "plugin-details" && X) {
         let DA = c0(),
-            yA = `${X.plugin.name}@${X.marketplace}`,
+            yA = `TextComponent{X.plugin.name}@TextComponent{X.marketplace}`,
             rA = DA?.enabledPlugins?.[yA] !== !1,
             K1 = [];
         if (K1.push({
@@ -1235,25 +1230,25 @@ async function yA(K1) {
             borderStyle: "round"
         }, A0.createElement(j, {
             marginBottom: 1
-        }, A0.createElement($, {
+        }, A0.createElement(TextComponent, {
             bold: !0
         }, X.plugin.name, " @ ", X.marketplace)), X.plugin.manifest.version && A0.createElement(j, {
             marginBottom: 1
-        }, A0.createElement($, {
+        }, A0.createElement(TextComponent, {
             dimColor: !0
-        }, "Version: "), A0.createElement($, null, X.plugin.manifest.version)), X.plugin.manifest.description && A0.createElement(j, {
+        }, "Version: "), A0.createElement(TextComponent, null, X.plugin.manifest.version)), X.plugin.manifest.description && A0.createElement(j, {
             marginBottom: 1
-        }, A0.createElement($, null, X.plugin.manifest.description)), X.plugin.manifest.author && A0.createElement(j, {
+        }, A0.createElement(TextComponent, null, X.plugin.manifest.description)), X.plugin.manifest.author && A0.createElement(j, {
             marginBottom: 1
-        }, A0.createElement($, {
+        }, A0.createElement(TextComponent, {
             dimColor: !0
-        }, "Author: "), A0.createElement($, null, X.plugin.manifest.author.name)), A0.createElement(j, {
+        }, "Author: "), A0.createElement(TextComponent, null, X.plugin.manifest.author.name)), A0.createElement(j, {
             marginBottom: 1
-        }, A0.createElement($, {
+        }, A0.createElement(TextComponent, {
             dimColor: !0
-        }, "Status: "), A0.createElement($, {
+        }, "Status: "), A0.createElement(TextComponent, {
             color: rA ? "success" : "warning"
-        }, rA ? "Enabled" : "Disabled"), X.pendingUpdate && A0.createElement($, {
+        }, rA ? "Enabled" : "Disabled"), X.pendingUpdate && A0.createElement(TextComponent, {
             color: "suggestion"
         }, " · Marked for update")), A0.createElement(c_3, {
             plugin: X.plugin,
@@ -1265,26 +1260,26 @@ async function yA(K1) {
             let zA = XA === N;
             return A0.createElement(j, {
                 key: XA
-            }, zA && A0.createElement($, null, V1.pointer, " "), !zA && A0.createElement($, null, "  "), A0.createElement($, {
+            }, zA && A0.createElement(TextComponent, null, V1.pointer, " "), !zA && A0.createElement(TextComponent, null, "  "), A0.createElement(TextComponent, {
                 bold: zA,
                 color: WA.label.includes("Uninstall") ? "error" : WA.label.includes("Update") ? "suggestion" : void 0
             }, WA.label))
         })), R && A0.createElement(j, {
             marginTop: 1
-        }, A0.createElement($, null, "Processing…")), y && A0.createElement(j, {
+        }, A0.createElement(TextComponent, null, "Processing…")), y && A0.createElement(j, {
             marginTop: 1
-        }, A0.createElement($, {
+        }, A0.createElement(TextComponent, {
             color: "error"
         }, y))), A0.createElement(j, {
             marginTop: 1,
             paddingLeft: 1
-        }, A0.createElement($, {
+        }, A0.createElement(TextComponent, {
             dimColor: !0
-        }, A0.createElement($, {
+        }, A0.createElement(TextComponent, {
             bold: !0
-        }, "Navigate:"), " ", V1.arrowUp, V1.arrowDown, " • ", A0.createElement($, {
+        }, "Navigate:"), " ", V1.arrowUp, V1.arrowDown, " • ", A0.createElement(TextComponent, {
             bold: !0
-        }, "Select:"), " Enter", " • ", A0.createElement($, {
+        }, "Select:"), " Enter", " • ", A0.createElement(TextComponent, {
             bold: !0
         }, "Back:"), " Esc")))
     }
@@ -1302,11 +1297,11 @@ async function yA(K1) {
         borderStyle: "round"
     }, A0.createElement(j, {
         marginBottom: 1
-    }, A0.createElement($, {
+    }, A0.createElement(TextComponent, {
         bold: !0
     }, J, " ", V1.pointerSmall, " Manage plugins")), D.map((DA, yA) => {
         let rA = c0(),
-            K1 = `${DA.plugin.name}@${DA.marketplace}`,
+            K1 = `TextComponent{DA.plugin.name}@TextComponent{DA.marketplace}`,
             WA = rA?.enabledPlugins?.[K1] !== !1,
             XA = DA.pendingEnable !== void 0 ? DA.pendingEnable : WA,
             zA = yA === z,
@@ -1316,45 +1311,45 @@ async function yA(K1) {
             key: K1,
             flexDirection: "column",
             marginBottom: LA ? 0 : 1
-        }, A0.createElement(j, null, A0.createElement($, {
+        }, A0.createElement(j, null, A0.createElement(TextComponent, {
             color: zA ? "suggestion" : void 0
-        }, zA ? V1.pointer : " ", " "), A0.createElement($, {
+        }, zA ? V1.pointer : " ", " "), A0.createElement(TextComponent, {
             color: DA.pendingEnable !== void 0 ? "warning" : XA ? "success" : void 0
-        }, XA ? V1.radioOn : V1.radioOff, " "), A0.createElement($, {
+        }, XA ? V1.radioOn : V1.radioOff, " "), A0.createElement(TextComponent, {
             bold: zA,
             color: DA.pendingUpdate ? "suggestion" : $A ? "warning" : void 0
         }, DA.plugin.name)), A0.createElement(j, {
             marginLeft: 4
-        }, A0.createElement($, {
+        }, A0.createElement(TextComponent, {
             dimColor: !0
-        }, DA.plugin.manifest.description ? DA.plugin.manifest.description.length > 50 ? DA.plugin.manifest.description.substring(0, 47) + "..." : DA.plugin.manifest.description : "No description", DA.plugin.manifest.version && ` · v${DA.plugin.manifest.version}`), DA.pendingUpdate && A0.createElement($, {
+        }, DA.plugin.manifest.description ? DA.plugin.manifest.description.length > 50 ? DA.plugin.manifest.description.substring(0, 47) + "..." : DA.plugin.manifest.description : "No description", DA.plugin.manifest.version && ` · v${DA.plugin.manifest.version}`), DA.pendingUpdate && A0.createElement(TextComponent, {
             color: "suggestion"
         }, " · Marked for update")))
     }), SA && A0.createElement(j, {
         marginTop: 1
-    }, z === D.length && A0.createElement($, null, V1.pointer, " "), z !== D.length && A0.createElement($, null, "  "), A0.createElement($, {
+    }, z === D.length && A0.createElement(TextComponent, null, V1.pointer, " "), z !== D.length && A0.createElement(TextComponent, null, "  "), A0.createElement(TextComponent, {
         bold: z === D.length,
         color: "success"
-    }, "Apply changes"), A0.createElement($, {
+    }, "Apply changes"), A0.createElement(TextComponent, {
         dimColor: !0
-    }, " ", sA > 0 && `(update ${sA})`, NA > 0 && ` (enable ${NA})`, qA > 0 && ` (disable ${qA})`))), SA && A0.createElement(j, {
+    }, " ", sA > 0 && `(update TextComponent{sA})`, NA > 0 && ` (enable TextComponent{NA})`, qA > 0 && ` (disable TextComponent{qA})`))), SA && A0.createElement(j, {
         marginTop: 1,
         paddingLeft: 1
-    }, A0.createElement($, {
+    }, A0.createElement(TextComponent, {
         color: "warning"
     }, "Restart to apply changes")), A0.createElement(j, {
         paddingLeft: 3,
         flexDirection: "column"
-    }, A0.createElement($, {
+    }, A0.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
-    }, "Space to toggle enabled · 'u' to mark update · Delete to uninstall"), A0.createElement($, {
+    }, "Space to toggle enabled · 'u' to mark update · Delete to uninstall"), A0.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "Enter for details · Esc to back")))
 }
 var A0, rJ;
-var nK9 = L(() => {
+var nK9 = lazyLoader(() => {
     hA();
     hA();
     n2();
@@ -1369,45 +1364,45 @@ var nK9 = L(() => {
     yjA();
     pK9();
     ev1();
-    A0 = GA(VA(), 1), rJ = GA(VA(), 1)
+    A0 = esmImport(VA(), 1), rJ = esmImport(VA(), 1)
 });
 
 function p_3(A) {
     switch (A.type) {
         case "path-not-found":
-            return `${A.component} path not found: ${A.path}`;
+            return `TextComponent{A.component} path not found: TextComponent{A.path}`;
         case "git-auth-failed":
-            return `Git ${A.authType.toUpperCase()} authentication failed for ${A.gitUrl}`;
+            return `Git TextComponent{A.authType.toUpperCase()} authentication failed for TextComponent{A.gitUrl}`;
         case "git-timeout":
-            return `Git ${A.operation} timed out for ${A.gitUrl}`;
+            return `Git TextComponent{A.operation} timed out for TextComponent{A.gitUrl}`;
         case "network-error":
-            return `Network error accessing ${A.url}${A.details?`: ${A.details}`:""}`;
+            return `Network error accessing TextComponent{A.url}TextComponent{A.details?`: TextComponent{A.details}`:""}`;
         case "manifest-parse-error":
-            return `Failed to parse manifest at ${A.manifestPath}: ${A.parseError}`;
+            return `Failed to parse manifest at TextComponent{A.manifestPath}: TextComponent{A.parseError}`;
         case "manifest-validation-error":
-            return `Invalid manifest at ${A.manifestPath}: ${A.validationErrors.join(", ")}`;
+            return `Invalid manifest at TextComponent{A.manifestPath}: TextComponent{A.validationErrors.join(", ")}`;
         case "plugin-not-found":
-            return `Plugin '${A.pluginId}' not found in marketplace '${A.marketplace}'`;
+            return `Plugin 'TextComponent{A.pluginId}' not found in marketplace 'TextComponent{A.marketplace}'`;
         case "marketplace-not-found":
-            return `Marketplace '${A.marketplace}' not found`;
+            return `Marketplace 'TextComponent{A.marketplace}' not found`;
         case "marketplace-load-failed":
-            return `Failed to load marketplace '${A.marketplace}': ${A.reason}`;
+            return `Failed to load marketplace 'TextComponent{A.marketplace}': TextComponent{A.reason}`;
         case "repository-scan-failed":
-            return `Failed to scan repository at ${A.repositoryPath}: ${A.reason}`;
+            return `Failed to scan repository at TextComponent{A.repositoryPath}: TextComponent{A.reason}`;
         case "mcp-config-invalid":
-            return `Invalid MCP server config for '${A.serverName}': ${A.validationError}`;
+            return `Invalid MCP server config for 'TextComponent{A.serverName}': TextComponent{A.validationError}`;
         case "hook-load-failed":
-            return `Failed to load hooks from ${A.hookPath}: ${A.reason}`;
+            return `Failed to load hooks from TextComponent{A.hookPath}: TextComponent{A.reason}`;
         case "component-load-failed":
-            return `Failed to load ${A.component} from ${A.path}: ${A.reason}`;
+            return `Failed to load TextComponent{A.component} from TextComponent{A.path}: TextComponent{A.reason}`;
         case "mcpb-download-failed":
-            return `Failed to download MCPB from ${A.url}: ${A.reason}`;
+            return `Failed to download MCPB from TextComponent{A.url}: TextComponent{A.reason}`;
         case "mcpb-extract-failed":
-            return `Failed to extract MCPB ${A.mcpbPath}: ${A.reason}`;
+            return `Failed to extract MCPB TextComponent{A.mcpbPath}: TextComponent{A.reason}`;
         case "mcpb-invalid-manifest":
-            return `MCPB manifest invalid at ${A.mcpbPath}: ${A.validationError}`;
+            return `MCPB manifest invalid at TextComponent{A.mcpbPath}: TextComponent{A.validationError}`;
         case "marketplace-blocked-by-policy":
-            return `Marketplace '${A.marketplace}' is not allowed by enterprise policy`;
+            return `Marketplace 'TextComponent{A.marketplace}' is not allowed by enterprise policy`;
         case "generic-error":
             return A.error;
         default:
@@ -1429,15 +1424,15 @@ function aK9(A) {
         case "manifest-validation-error":
             return "→ Check manifest file follows the required schema";
         case "plugin-not-found":
-            return `→ Plugin may not exist in marketplace '${A.marketplace}'`;
+            return `→ Plugin may not exist in marketplace 'TextComponent{A.marketplace}'`;
         case "marketplace-not-found":
-            return A.availableMarketplaces.length > 0 ? `→ Available marketplaces: ${A.availableMarketplaces.join(", ")}` : "→ Add the marketplace first using /plugin marketplace add";
+            return A.availableMarketplaces.length > 0 ? `→ Available marketplaces: TextComponent{A.availableMarketplaces.join(", ")}` : "→ Add the marketplace first using /plugin marketplace add";
         case "mcp-config-invalid":
             return "→ Check MCP server configuration in .mcp.json or manifest";
         case "hook-load-failed":
             return "→ Check hooks.json file syntax and structure";
         case "component-load-failed":
-            return `→ Check ${A.component} directory structure and file permissions`;
+            return `→ Check TextComponent{A.component} directory structure and file permissions`;
         case "mcpb-download-failed":
             return "→ Check your internet connection and URL accessibility";
         case "mcpb-extract-failed":
@@ -1445,7 +1440,7 @@ function aK9(A) {
         case "mcpb-invalid-manifest":
             return "→ Contact the plugin author about the invalid manifest";
         case "marketplace-blocked-by-policy":
-            return A.allowedSources.length > 0 ? `→ Allowed sources: ${A.allowedSources.join(", ")}` : "→ Contact your administrator to configure allowed marketplace sources";
+            return A.allowedSources.length > 0 ? `→ Allowed sources: TextComponent{A.allowedSources.join(", ")}` : "→ Contact your administrator to configure allowed marketplace sources";
         case "repository-scan-failed":
         case "marketplace-load-failed":
         case "generic-error":

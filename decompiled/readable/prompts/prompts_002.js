@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: prompts_002.js
+ * 处理时间: 2025-12-09T03:41:38.177Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.036Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -17,7 +19,7 @@
  * Original file: cli.js
  */
 
-var jm0 = U((Y87, Pm0) => {
+var jm0 = moduleWrapper((Y87, Pm0) => {
     function I44(A) {
         return {
             name: "Q",
@@ -34,18 +36,18 @@ var jm0 = U((Y87, Pm0) => {
     }
     Pm0.exports = I44
 });
-var _m0 = U((J87, Sm0) => {
+var _m0 = moduleWrapper((J87, Sm0) => {
     function Y44(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function J44(...A) {
+    function J44(...A) {
         return A.map((B) => Y44(B)).join("")
     }
 
-function W44(A) {
+    function W44(A) {
         let Q = {
                 keyword: "in of on if for while finally var new function do return void else break catch instanceof with throw case default try this switch continue typeof delete let yield const export super debugger as async await import",
                 literal: "true false null undefined NaN Infinity",
@@ -57,7 +59,7 @@ function W44(A) {
                 begin: "\\bproperty\\b",
                 starts: {
                     className: "string",
-                    end: "(:|=|;|,|//|/\\*|$)",
+                    end: "(:|=|;|,|//|/\\*|TextComponent)",
                     returnEnd: !0
                 }
             },
@@ -66,7 +68,7 @@ function W44(A) {
                 begin: "\\bsignal\\b",
                 starts: {
                     className: "string",
-                    end: "(\\(|:|=|;|,|//|/\\*|$)",
+                    end: "(\\(|:|=|;|,|//|/\\*|TextComponent)",
                     returnEnd: !0
                 }
             },
@@ -114,7 +116,7 @@ function W44(A) {
                 end: "`",
                 contains: [A.BACKSLASH_ESCAPE, {
                     className: "subst",
-                    begin: "\\$\\{",
+                    begin: "\\TextComponent\\{",
                     end: "\\}"
                 }]
             }, A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, {
@@ -162,22 +164,22 @@ function W44(A) {
     }
     Sm0.exports = W44
 });
-var ym0 = U((W87, km0) => {
+var ym0 = moduleWrapper((W87, km0) => {
     function X44(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function F44(A) {
+    function F44(A) {
         return cH1("(?=", A, ")")
     }
 
-function cH1(...A) {
+    function cH1(...A) {
         return A.map((B) => X44(B)).join("")
     }
 
-function V44(A) {
+    function V44(A) {
         let Q = /(?:(?:[a-zA-Z]|\.[._a-zA-Z])[._a-zA-Z0-9]*)|\.(?!\d)/,
             B = /[a-zA-Z][a-zA-Z_0-9]*/;
         return {
@@ -202,7 +204,7 @@ function V44(A) {
                     })]
                 }, G.relevance = 0, delete I.beforeMatch
             }],
-            contains: [A.COMMENT(/#'/, /$/, {
+            contains: [A.COMMENT(/#'/, /TextComponent/, {
                 contains: [{
                     className: "doctag",
                     begin: "@examples",
@@ -214,14 +216,14 @@ function V44(A) {
                             endsParent: !0
                         }, {
                             begin: /#'/,
-                            end: /$/,
+                            end: /TextComponent/,
                             excludeBegin: !0
                         }]
                     }
                 }, {
                     className: "doctag",
                     begin: "@param",
-                    end: /$/,
+                    end: /TextComponent/,
                     contains: [{
                         className: "variable",
                         variants: [{
@@ -295,7 +297,7 @@ function V44(A) {
     }
     km0.exports = V44
 });
-var vm0 = U((X87, xm0) => {
+var vm0 = moduleWrapper((X87, xm0) => {
     function K44(A) {
         function Q(R) {
             return R.map(function(P) {
@@ -455,7 +457,7 @@ var vm0 = U((X87, xm0) => {
             name: "ReasonML",
             aliases: ["re"],
             keywords: X,
-            illegal: "(:-|:=|\\$\\{|\\+=)",
+            illegal: "(:-|:=|\\TextComponent\\{|\\+=)",
             contains: [A.COMMENT("/\\*", "\\*/", {
                 illegal: "^(#,\\/\\/)"
             }), {
@@ -505,7 +507,7 @@ var vm0 = U((X87, xm0) => {
     }
     xm0.exports = K44
 });
-var fm0 = U((F87, bm0) => {
+var fm0 = moduleWrapper((F87, bm0) => {
     function D44(A) {
         return {
             name: "RenderMan RIB",
@@ -516,7 +518,7 @@ var fm0 = U((F87, bm0) => {
     }
     bm0.exports = D44
 });
-var gm0 = U((V87, hm0) => {
+var gm0 = moduleWrapper((V87, hm0) => {
     function H44(A) {
         let B = {
             className: "attribute",
@@ -560,14 +562,14 @@ var gm0 = U((V87, hm0) => {
     }
     hm0.exports = H44
 });
-var mm0 = U((K87, um0) => {
+var mm0 = moduleWrapper((K87, um0) => {
     function C44(A) {
         let Y = {
                 className: "variable",
                 variants: [{
-                    begin: /\$[\w\d#@][\w\d_]*/
+                    begin: /\TextComponent[\w\d#@][\w\d_]*/
                 }, {
-                    begin: /\$\{(.*?)\}/
+                    begin: /\TextComponent\{(.*?)\}/
                 }]
             },
             J = {
@@ -576,7 +578,7 @@ var mm0 = U((K87, um0) => {
                 end: /"/,
                 contains: [A.BACKSLASH_ESCAPE, Y, {
                     className: "variable",
-                    begin: /\$\(/,
+                    begin: /\TextComponent\(/,
                     end: /\)/,
                     contains: [A.BACKSLASH_ESCAPE]
                 }]
@@ -601,13 +603,13 @@ var mm0 = U((K87, um0) => {
                     end: /\*\//
                 }, {
                     begin: /\/\//,
-                    end: /$/
+                    end: /TextComponent/
                 }, {
                     begin: /<\//,
                     end: />/
                 }],
                 illegal: /./
-            }, A.COMMENT("^#", "$"), J, W, Y, {
+            }, A.COMMENT("^#", "TextComponent"), J, W, Y, {
                 begin: /[\w-]+=([^\s{}[\]()>]+)/,
                 relevance: 0,
                 returnBegin: !0,
@@ -648,7 +650,7 @@ var mm0 = U((K87, um0) => {
     }
     um0.exports = C44
 });
-var cm0 = U((D87, dm0) => {
+var cm0 = moduleWrapper((D87, dm0) => {
     function E44(A) {
         return {
             name: "RenderMan RSL",
@@ -660,7 +662,7 @@ var cm0 = U((D87, dm0) => {
             contains: [A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.QUOTE_STRING_MODE, A.APOS_STRING_MODE, A.C_NUMBER_MODE, {
                 className: "meta",
                 begin: "#",
-                end: "$"
+                end: "TextComponent"
             }, {
                 className: "class",
                 beginKeywords: "surface displacement light volume imager",
@@ -673,7 +675,7 @@ var cm0 = U((D87, dm0) => {
     }
     dm0.exports = E44
 });
-var lm0 = U((H87, pm0) => {
+var lm0 = moduleWrapper((H87, pm0) => {
     function z44(A) {
         return {
             name: "Oracle Rules Language",
@@ -694,7 +696,7 @@ var lm0 = U((H87, pm0) => {
     }
     pm0.exports = z44
 });
-var nm0 = U((C87, im0) => {
+var nm0 = moduleWrapper((C87, im0) => {
     function U44(A) {
         let B = "abstract as async await become box break const continue crate do dyn else enum extern false final fn for if impl in let loop macro match mod move mut override priv pub ref return self Self static struct super trait true try type typeof unsafe unsized use virtual where while yield",
             G = "drop i8 i16 i32 i64 i128 isize u8 u16 u32 u64 u128 usize f32 f64 str char bool Box Option Result String Vec Copy Send Sized Sync Drop Fn FnMut FnOnce ToOwned Clone Debug PartialEq PartialOrd Eq Ord AsRef AsMut Into From Default Iterator Extend IntoIterator DoubleEndedIterator ExactSizeIterator SliceConcatExt ToString assert! assert_eq! bitflags! bytes! cfg! col! concat! concat_idents! debug_assert! debug_assert_eq! env! panic! file! format! format_args! include_bin! include_str! line! local_data_key! module_path! option_env! print! println! select! stringify! try! unimplemented! unreachable! vec! write! writeln! macro_rules! assert_ne! debug_assert_ne!";
@@ -718,7 +720,7 @@ var nm0 = U((C87, im0) => {
                 variants: [{
                     begin: /r(#*)"(.|\n)*?"\1(?!#)/
                 }, {
-                    begin: /b?'\\?(x\w{2}|u\w{4}|U\w{8}|.)'/
+                    begin: /b?'\\?(x\w{2}|u\w{4}|moduleWrapper\w{8}|.)'/
                 }]
             }, {
                 className: "symbol",
@@ -778,7 +780,7 @@ var nm0 = U((C87, im0) => {
     }
     im0.exports = U44
 });
-var sm0 = U((E87, am0) => {
+var sm0 = moduleWrapper((E87, am0) => {
     function $44(A) {
         let Q = "do if then else end until while abort array attrib by call cards cards4 catname continue datalines datalines4 delete delim delimiter display dm drop endsas error file filename footnote format goto in infile informat input keep label leave length libname link list lostcard merge missing modify options output out page put redirect remove rename replace retain return select set skip startsas stop title update waitsas where window x systask add and alter as cascade check create delete describe distinct drop foreign from group having index insert into in key like message modify msgtype not null on or order primary references reset restrict select set table unique update validate view where",
             B = "abs|addr|airy|arcos|arsin|atan|attrc|attrn|band|betainv|blshift|bnot|bor|brshift|bxor|byte|cdf|ceil|cexist|cinv|close|cnonct|collate|compbl|compound|compress|cos|cosh|css|curobs|cv|daccdb|daccdbsl|daccsl|daccsyd|dacctab|dairy|date|datejul|datepart|datetime|day|dclose|depdb|depdbsl|depdbsl|depsl|depsl|depsyd|depsyd|deptab|deptab|dequote|dhms|dif|digamma|dim|dinfo|dnum|dopen|doptname|doptnum|dread|dropnote|dsname|erf|erfc|exist|exp|fappend|fclose|fcol|fdelete|fetch|fetchobs|fexist|fget|fileexist|filename|fileref|finfo|finv|fipname|fipnamel|fipstate|floor|fnonct|fnote|fopen|foptname|foptnum|fpoint|fpos|fput|fread|frewind|frlen|fsep|fuzz|fwrite|gaminv|gamma|getoption|getvarc|getvarn|hbound|hms|hosthelp|hour|ibessel|index|indexc|indexw|input|inputc|inputn|int|intck|intnx|intrr|irr|jbessel|juldate|kurtosis|lag|lbound|left|length|lgamma|libname|libref|log|log10|log2|logpdf|logpmf|logsdf|lowcase|max|mdy|mean|min|minute|mod|month|mopen|mort|n|netpv|nmiss|normal|note|npv|open|ordinal|pathname|pdf|peek|peekc|pmf|point|poisson|poke|probbeta|probbnml|probchi|probf|probgam|probhypr|probit|probnegb|probnorm|probt|put|putc|putn|qtr|quote|ranbin|rancau|ranexp|rangam|range|rank|rannor|ranpoi|rantbl|rantri|ranuni|repeat|resolve|reverse|rewind|right|round|saving|scan|sdf|second|sign|sin|sinh|skewness|soundex|spedis|sqrt|std|stderr|stfips|stname|stnamel|substr|sum|symget|sysget|sysmsg|sysprod|sysrc|system|tan|tanh|time|timepart|tinv|tnonct|today|translate|tranwrd|trigamma|trim|trimn|trunc|uniform|upcase|uss|var|varfmt|varinfmt|varlabel|varlen|varname|varnum|varray|varrayx|vartype|verify|vformat|vformatd|vformatdx|vformatn|vformatnx|vformatw|vformatwx|vformatx|vinarray|vinarrayx|vinformat|vinformatd|vinformatdx|vinformatn|vinformatnx|vinformatw|vinformatwx|vinformatx|vlabel|vlabelx|vlength|vlengthx|vname|vnamex|vtype|vtypex|weekday|year|yyq|zipfips|zipname|zipnamel|zipstate";
@@ -798,7 +800,7 @@ var sm0 = U((E87, am0) => {
             }, {
                 className: "emphasis",
                 begin: /^\s*datalines|cards.*;/,
-                end: /^\s*;\s*$/
+                end: /^\s*;\s*TextComponent/
             }, {
                 className: "built_in",
                 begin: "%(" + "bquote|nrbquote|cmpres|qcmpres|compstor|datatyp|display|do|else|end|eval|global|goto|if|index|input|keydef|label|left|length|let|local|lowcase|macro|mend|nrbquote|nrquote|nrstr|put|qcmpres|qleft|qlowcase|qscan|qsubstr|qsysfunc|qtrim|quote|qupcase|scan|str|substr|superq|syscall|sysevalf|sysexec|sysfunc|sysget|syslput|sysprod|sysrc|sysrput|then|to|trim|unquote|until|upcase|verify|while|window" + ")"
@@ -816,7 +818,7 @@ var sm0 = U((E87, am0) => {
     }
     am0.exports = $44
 });
-var om0 = U((z87, rm0) => {
+var om0 = moduleWrapper((z87, rm0) => {
     function w44(A) {
         let Q = {
                 className: "meta",
@@ -825,9 +827,9 @@ var om0 = U((z87, rm0) => {
             B = {
                 className: "subst",
                 variants: [{
-                    begin: "\\$[A-Za-z0-9_]+"
+                    begin: "\\TextComponent[A-Za-z0-9_]+"
                 }, {
-                    begin: /\$\{/,
+                    begin: /\TextComponent\{/,
                     end: /\}/
                 }]
             },
@@ -911,12 +913,12 @@ var om0 = U((z87, rm0) => {
     }
     rm0.exports = w44
 });
-var em0 = U((U87, tm0) => {
+var em0 = moduleWrapper((U87, tm0) => {
     function q44(A) {
         let G = "(-|\\+)?\\d+([./]\\d+)?[+\\-](-|\\+)?\\d+([./]\\d+)?i",
             Z = {
                 $pattern: "[^\\(\\)\\[\\]\\{\\}\",'`;#|\\\\\\s]+",
-                "builtin-name": "case-lambda call/cc class define-class exit-handler field import inherit init-field interface let*-values let-values let/ec mixin opt-lambda override protect provide public rename require require-for-syntax syntax syntax-case syntax-error unit/sig unless when with-syntax and begin call-with-current-continuation call-with-input-file call-with-output-file case cond define define-syntax delay do dynamic-wind else for-each if lambda let let* let-syntax letrec letrec-syntax map or syntax-rules ' * + , ,@ - ... / ; < <= = => > >= ` abs acos angle append apply asin assoc assq assv atan boolean? caar cadr call-with-input-file call-with-output-file call-with-values car cdddar cddddr cdr ceiling char->integer char-alphabetic? char-ci<=? char-ci<? char-ci=? char-ci>=? char-ci>? char-downcase char-lower-case? char-numeric? char-ready? char-upcase char-upper-case? char-whitespace? char<=? char<? char=? char>=? char>? char? close-input-port close-output-port complex? cons cos current-input-port current-output-port denominator display eof-object? eq? equal? eqv? eval even? exact->inexact exact? exp expt floor force gcd imag-part inexact->exact inexact? input-port? integer->char integer? interaction-environment lcm length list list->string list->vector list-ref list-tail list? load log magnitude make-polar make-rectangular make-string make-vector max member memq memv min modulo negative? newline not null-environment null? number->string number? numerator odd? open-input-file open-output-file output-port? pair? peek-char port? positive? procedure? quasiquote quote quotient rational? rationalize read read-char real-part real? remainder reverse round scheme-report-environment set! set-car! set-cdr! sin sqrt string string->list string->number string->symbol string-append string-ci<=? string-ci<? string-ci=? string-ci>=? string-ci>? string-copy string-fill! string-length string-ref string-set! string<=? string<? string=? string>=? string>? string? substring symbol->string symbol? tan transcript-off transcript-on truncate values vector vector->list vector-fill! vector-length vector-ref vector-set! with-input-from-file with-output-to-file write write-char zero?"
+                "builtin-name": "case-lambda call/cc class define-class exit-handler field import inherit init-field interface let*-values let-values let/ec mixin opt-lambda override protect provide public rename require require-for-syntax syntax syntax-case syntax-error unit/sig unless when with-syntax and begin call-with-current-continuation call-with-input-file call-with-output-file case cond define define-syntax delay do dynamic-wind else for-each if lambda let let* let-syntax letrec letrec-syntax map or syntax-rules ' * + , ,@ - ... / ; < <= = => > >= ` abs acos angle append apply asin assoc assq assv atan boolean? caar cadr call-with-input-file call-with-output-file call-with-values car cdddar cddddr cdr ceiling char->integer char-alphabetic? char-ci<=? char-ci<? char-ci=? char-ci>=? char-ci>? char-downcase char-lower-case? char-numeric? char-ready? char-upcase char-upper-case? char-whitespace? char<=? char<? char=? char>=? char>? char? close-input-port close-output-port complex? cons cos current-input-port current-output-port denominator display eof-object? WEB_FETCH_TOOL_NAME? equal? eqv? eval even? exact->inexact exact? exp expt floor force gcd imag-part inexact->exact inexact? input-port? integer->char integer? interaction-environment lcm length list list->string list->vector list-ref list-tail list? load log magnitude make-polar make-rectangular make-string make-vector max member memq memv min modulo negative? newline not null-environment null? number->string number? numerator odd? open-input-file open-output-file output-port? pair? peek-char port? positive? procedure? quasiquote quote quotient rational? rationalize read read-char real-part real? remainder reverse round scheme-report-environment set! set-car! set-cdr! sin sqrt string string->list string->number string->symbol string-append string-ci<=? string-ci<? string-ci=? string-ci>=? string-ci>? string-copy string-fill! string-length string-ref string-set! string<=? string<? string=? string>=? string>? string? substring symbol->string symbol? tan transcript-off transcript-on truncate values vector vector->list vector-fill! vector-length vector-ref vector-set! with-input-from-file with-output-to-file write write-char zero?"
             },
             I = {
                 className: "literal",
@@ -939,7 +941,7 @@ var em0 = U((U87, tm0) => {
                 }]
             },
             J = A.QUOTE_STRING_MODE,
-            W = [A.COMMENT(";", "$", {
+            W = [A.COMMENT(";", "TextComponent", {
                 relevance: 0
             }), A.COMMENT("#\\|", "\\|#")],
             X = {
@@ -1005,7 +1007,7 @@ var em0 = U((U87, tm0) => {
     }
     tm0.exports = q44
 });
-var Qd0 = U(($87, Ad0) => {
+var Qd0 = moduleWrapper(($87, Ad0) => {
     function N44(A) {
         let Q = [A.C_NUMBER_MODE, {
             className: "string",
@@ -1028,7 +1030,7 @@ var Qd0 = U(($87, Ad0) => {
             contains: [{
                 className: "function",
                 beginKeywords: "function",
-                end: "$",
+                end: "TextComponent",
                 contains: [A.UNDERSCORE_TITLE_MODE, {
                     className: "params",
                     begin: "\\(",
@@ -1042,12 +1044,12 @@ var Qd0 = U(($87, Ad0) => {
                 end: "\\][\\.']*",
                 relevance: 0,
                 contains: Q
-            }, A.COMMENT("//", "$")].concat(Q)
+            }, A.COMMENT("//", "TextComponent")].concat(Q)
         }
     }
     Ad0.exports = N44
 });
-var Gd0 = U((w87, Bd0) => {
+var Gd0 = moduleWrapper((w87, Bd0) => {
     var L44 = (A) => {
             return {
                 IMPORTANT: {
@@ -1062,7 +1064,7 @@ var Gd0 = U((w87, Bd0) => {
                     className: "selector-attr",
                     begin: /\[/,
                     end: /\]/,
-                    illegal: "$",
+                    illegal: "TextComponent",
                     contains: [A.APOS_STRING_MODE, A.QUOTE_STRING_MODE]
                 }
             }
@@ -1073,7 +1075,7 @@ var Gd0 = U((w87, Bd0) => {
         T44 = ["after", "backdrop", "before", "cue", "cue-region", "first-letter", "first-line", "grammar-error", "marker", "part", "placeholder", "selection", "slotted", "spelling-error"],
         P44 = ["align-content", "align-items", "align-self", "animation", "animation-delay", "animation-direction", "animation-duration", "animation-fill-mode", "animation-iteration-count", "animation-name", "animation-play-state", "animation-timing-function", "auto", "backface-visibility", "background", "background-attachment", "background-clip", "background-color", "background-image", "background-origin", "background-position", "background-repeat", "background-size", "border", "border-bottom", "border-bottom-color", "border-bottom-left-radius", "border-bottom-right-radius", "border-bottom-style", "border-bottom-width", "border-collapse", "border-color", "border-image", "border-image-outset", "border-image-repeat", "border-image-slice", "border-image-source", "border-image-width", "border-left", "border-left-color", "border-left-style", "border-left-width", "border-radius", "border-right", "border-right-color", "border-right-style", "border-right-width", "border-spacing", "border-style", "border-top", "border-top-color", "border-top-left-radius", "border-top-right-radius", "border-top-style", "border-top-width", "border-width", "bottom", "box-decoration-break", "box-shadow", "box-sizing", "break-after", "break-before", "break-inside", "caption-side", "clear", "clip", "clip-path", "color", "column-count", "column-fill", "column-gap", "column-rule", "column-rule-color", "column-rule-style", "column-rule-width", "column-span", "column-width", "columns", "content", "counter-increment", "counter-reset", "cursor", "direction", "display", "empty-cells", "filter", "flex", "flex-basis", "flex-direction", "flex-flow", "flex-grow", "flex-shrink", "flex-wrap", "float", "font", "font-display", "font-family", "font-feature-settings", "font-kerning", "font-language-override", "font-size", "font-size-adjust", "font-smoothing", "font-stretch", "font-style", "font-variant", "font-variant-ligatures", "font-variation-settings", "font-weight", "height", "hyphens", "icon", "image-orientation", "image-rendering", "image-resolution", "ime-mode", "inherit", "initial", "justify-content", "left", "letter-spacing", "line-height", "list-style", "list-style-image", "list-style-position", "list-style-type", "margin", "margin-bottom", "margin-left", "margin-right", "margin-top", "marks", "mask", "max-height", "max-width", "min-height", "min-width", "nav-down", "nav-index", "nav-left", "nav-right", "nav-up", "none", "normal", "object-fit", "object-position", "opacity", "order", "orphans", "outline", "outline-color", "outline-offset", "outline-style", "outline-width", "overflow", "overflow-wrap", "overflow-x", "overflow-y", "padding", "padding-bottom", "padding-left", "padding-right", "padding-top", "page-break-after", "page-break-before", "page-break-inside", "perspective", "perspective-origin", "pointer-events", "position", "quotes", "resize", "right", "src", "tab-size", "table-layout", "text-align", "text-align-last", "text-decoration", "text-decoration-color", "text-decoration-line", "text-decoration-style", "text-indent", "text-overflow", "text-rendering", "text-shadow", "text-transform", "text-underline-position", "top", "transform", "transform-origin", "transform-style", "transition", "transition-delay", "transition-duration", "transition-property", "transition-timing-function", "unicode-bidi", "vertical-align", "visibility", "white-space", "widows", "width", "word-break", "word-spacing", "word-wrap", "z-index"].reverse();
 
-function j44(A) {
+    function j44(A) {
         let Q = L44(A),
             B = T44,
             G = R44,
@@ -1082,7 +1084,7 @@ function j44(A) {
             Y = "[a-zA-Z-][a-zA-Z0-9_-]*",
             J = {
                 className: "variable",
-                begin: "(\\$[a-zA-Z-][a-zA-Z0-9_-]*)\\b"
+                begin: "(\\TextComponent[a-zA-Z-][a-zA-Z0-9_-]*)\\b"
             };
         return {
             name: "SCSS",
@@ -1144,16 +1146,16 @@ function j44(A) {
     }
     Bd0.exports = j44
 });
-var Id0 = U((q87, Zd0) => {
+var Id0 = moduleWrapper((q87, Zd0) => {
     function S44(A) {
         return {
             name: "Shell Session",
             aliases: ["console"],
             contains: [{
                 className: "meta",
-                begin: /^\s{0,3}[/~\w\d[\]()@-]*[>%$#]/,
+                begin: /^\s{0,3}[/~\w\d[\]()@-]*[>%TextComponent#]/,
                 starts: {
-                    end: /[^\\](?=\s*$)/,
+                    end: /[^\\](?=\s*TextComponent)/,
                     subLanguage: "bash"
                 }
             }]
@@ -1161,7 +1163,7 @@ var Id0 = U((q87, Zd0) => {
     }
     Zd0.exports = S44
 });
-var Jd0 = U((N87, Yd0) => {
+var Jd0 = moduleWrapper((N87, Yd0) => {
     function _44(A) {
         let Q = ["add", "and", "cmp", "cmpg", "cmpl", "const", "div", "double", "float", "goto", "if", "int", "long", "move", "mul", "neg", "new", "nop", "not", "or", "rem", "return", "shl", "shr", "sput", "sub", "throw", "ushr", "xor"],
             B = ["aget", "aput", "array", "check", "execute", "fill", "filled", "goto/16", "goto/32", "iget", "instance", "invoke", "iput", "monitor", "packed", "sget", "sparse"],
@@ -1173,7 +1175,7 @@ var Jd0 = U((N87, Yd0) => {
                 begin: '"',
                 end: '"',
                 relevance: 0
-            }, A.COMMENT("#", "$", {
+            }, A.COMMENT("#", "TextComponent", {
                 relevance: 0
             }), {
                 className: "keyword",
@@ -1201,7 +1203,7 @@ var Jd0 = U((N87, Yd0) => {
                 }]
             }, {
                 className: "class",
-                begin: `L[^(;:
+                begin: `lazyLoader[^(;:
 ]*;`,
                 relevance: 0
             }, {
@@ -1211,11 +1213,11 @@ var Jd0 = U((N87, Yd0) => {
     }
     Yd0.exports = _44
 });
-var Xd0 = U((L87, Wd0) => {
+var Xd0 = moduleWrapper((L87, Wd0) => {
     function k44(A) {
         let B = {
                 className: "string",
-                begin: "\\$.{1}"
+                begin: "\\TextComponent.{1}"
             },
             G = {
                 className: "symbol",
@@ -1249,7 +1251,7 @@ var Xd0 = U((L87, Wd0) => {
     }
     Wd0.exports = k44
 });
-var Vd0 = U((M87, Fd0) => {
+var Vd0 = moduleWrapper((M87, Fd0) => {
     function y44(A) {
         return {
             name: "SML (Standard ML)",
@@ -1295,7 +1297,7 @@ var Vd0 = U((M87, Fd0) => {
     }
     Fd0.exports = y44
 });
-var Dd0 = U((O87, Kd0) => {
+var Dd0 = moduleWrapper((O87, Kd0) => {
     function x44(A) {
         let Q = {
                 className: "variable",
@@ -1326,7 +1328,7 @@ var Dd0 = U((O87, Kd0) => {
             Z = {
                 className: "meta",
                 begin: /#\s*[a-z]+\b/,
-                end: /$/,
+                end: /TextComponent/,
                 keywords: {
                     "meta-keyword": "define undef ifdef ifndef else endif include"
                 },
@@ -1338,7 +1340,7 @@ var Dd0 = U((O87, Kd0) => {
                 }), {
                     className: "meta-string",
                     begin: /<[^\n>]*>/,
-                    end: /$/,
+                    end: /TextComponent/,
                     illegal: "\\n"
                 }, A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE]
             };
@@ -1351,14 +1353,14 @@ var Dd0 = U((O87, Kd0) => {
                 literal: "blufor civilian configNull controlNull displayNull east endl false grpNull independent lineBreak locationNull nil objNull opfor pi resistance scriptNull sideAmbientLife sideEmpty sideLogic sideUnknown taskNull teamMemberNull true west"
             },
             contains: [A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.NUMBER_MODE, Q, B, G, Z],
-            illegal: /#|^\$ /
+            illegal: /#|^\TextComponent /
         }
     }
     Kd0.exports = x44
 });
-var Cd0 = U((R87, Hd0) => {
+var Cd0 = moduleWrapper((R87, Hd0) => {
     function v44(A) {
-        var Q = A.COMMENT("--", "$");
+        var Q = A.COMMENT("--", "TextComponent");
         return {
             name: "SQL (more)",
             aliases: ["mysql", "oracle"],
@@ -1399,23 +1401,23 @@ var Cd0 = U((R87, Hd0) => {
     }
     Hd0.exports = v44
 });
-var Ud0 = U((T87, zd0) => {
+var Ud0 = moduleWrapper((T87, zd0) => {
     function Ed0(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function b44(...A) {
+    function b44(...A) {
         return A.map((B) => Ed0(B)).join("")
     }
 
-function pH1(...A) {
+    function pH1(...A) {
         return "(" + A.map((B) => Ed0(B)).join("|") + ")"
     }
 
-function f44(A) {
-        let Q = A.COMMENT("--", "$"),
+    function f44(A) {
+        let Q = A.COMMENT("--", "TextComponent"),
             B = {
                 className: "string",
                 variants: [{
@@ -1461,14 +1463,14 @@ function f44(A) {
                 }
             };
 
-function z(w, {
+        function z(w, {
             exceptions: N,
             when: q
         } = {}) {
             let R = q;
             return N = N || [], w.map((P) => {
-                if (P.match(/\|\d+$/) || N.includes(P)) return P;
-                else if (R(P)) return `${P}|0`;
+                if (P.match(/\|\d+TextComponent/) || N.includes(P)) return P;
+                else if (R(P)) return `TextComponent{P}|0`;
                 else return P
             })
         }
@@ -1501,7 +1503,7 @@ function z(w, {
     }
     zd0.exports = f44
 });
-var wd0 = U((P87, $d0) => {
+var wd0 = moduleWrapper((P87, $d0) => {
     function h44(A) {
         let Q = ["functions", "model", "data", "parameters", "quantities", "transformed", "generated"],
             B = ["for", "in", "if", "else", "while", "break", "continue", "return"],

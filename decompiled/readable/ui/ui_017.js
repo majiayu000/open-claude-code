@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_017.js
+ * 处理时间: 2025-12-09T03:41:39.104Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.105Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -107,7 +110,7 @@ function dGB(A, Q = 0, B = {}) {
         };
     return V.cancel = F.cancel, V.flush = K, V
 }
-var cGB = L(() => {
+var cGB = lazyLoader(() => {
     mGB()
 });
 
@@ -125,10 +128,10 @@ function qf1(A, Q = 0, B = {}) {
         maxWait: Q
     })
 }
-var pGB = L(() => {
+var pGB = lazyLoader(() => {
     cGB()
 });
-var lGB = L(() => {
+var lGB = lazyLoader(() => {
     pGB()
 });
 
@@ -174,10 +177,10 @@ var nGB, Lf1, EQ6 = (A) => {
         }
     },
     aGB;
-var sGB = L(() => {
+var sGB = lazyLoader(() => {
     nGB = ["assert", "count", "countReset", "debug", "dir", "dirxml", "error", "group", "groupCollapsed", "groupEnd", "info", "log", "table", "time", "timeEnd", "timeLog", "trace", "warn"], Lf1 = {}, aGB = EQ6
 });
-var BZB = U((UQ6) => {
+var BZB = moduleWrapper((UQ6) => {
     function Of1(A, Q) {
         var B = A.length;
         A.push(Q);
@@ -189,11 +192,11 @@ var BZB = U((UQ6) => {
         }
     }
 
-function VT(A) {
+    function VT(A) {
         return A.length === 0 ? null : A[0]
     }
 
-function fnA(A) {
+    function fnA(A) {
         if (A.length === 0) return null;
         var Q = A[0],
             B = A.pop();
@@ -212,7 +215,7 @@ function fnA(A) {
         return Q
     }
 
-function ynA(A, Q) {
+    function ynA(A, Q) {
         var B = A.sortIndex - Q.sortIndex;
         return B !== 0 ? B : A.id - Q.id
     }
@@ -235,7 +238,7 @@ function ynA(A, Q) {
         rGB = typeof setImmediate < "u" ? setImmediate : null;
     typeof navigator < "u" && navigator.scheduling !== void 0 && navigator.scheduling.isInputPending !== void 0 && navigator.scheduling.isInputPending.bind(navigator.scheduling);
 
-function Pf1(A) {
+    function Pf1(A) {
         for (var Q = VT(pc); Q !== null;) {
             if (Q.callback === null) fnA(pc);
             else if (Q.startTime <= A) fnA(pc), Q.sortIndex = Q.expirationTime, Of1(R_, Q);
@@ -244,7 +247,7 @@ function Pf1(A) {
         }
     }
 
-function Sf1(A) {
+    function Sf1(A) {
         if ($UA = !1, Pf1(A), !Ct)
             if (VT(R_) !== null) Ct = !0, kf1(_f1);
             else {
@@ -253,7 +256,7 @@ function Sf1(A) {
             }
     }
 
-function _f1(A, Q) {
+    function _f1(A, Q) {
         Ct = !1, $UA && ($UA = !1, tGB(wUA), wUA = -1), hnA = !0;
         var B = xH;
         try {
@@ -283,11 +286,11 @@ function _f1(A, Q) {
         eGB = 5,
         AZB = -1;
 
-function QZB() {
+    function QZB() {
         return UQ6.unstable_now() - AZB < eGB ? !1 : !0
     }
 
-function Mf1() {
+    function Mf1() {
         if (vnA !== null) {
             var A = UQ6.unstable_now();
             AZB = A;
@@ -311,11 +314,11 @@ function Mf1() {
     };
     var bnA, jf1;
 
-function kf1(A) {
+    function kf1(A) {
         vnA = A, gnA || (gnA = !0, UUA())
     }
 
-function yf1(A, Q) {
+    function yf1(A, Q) {
         wUA = oGB(function() {
             A(UQ6.unstable_now())
         }, Q)
@@ -421,14 +424,14 @@ function yf1(A, Q) {
         }
     }
 });
-var ZZB = U((pv7, GZB) => {
-    var xf1 = GA(VA()),
-        LF = GA(BZB());
+var ZZB = moduleWrapper((pv7, GZB) => {
+    var xf1 = esmImport(VA()),
+        LF = esmImport(BZB());
     GZB.exports = function(Q) {
         var B = {},
             G = Object.assign;
 
-function Z(O) {
+        function Z(O) {
             for (var T = "https://reactjs.org/docs/error-decoder.html?invariant=" + O, f = 1; f < arguments.length; f++) T += "&args[]=" + encodeURIComponent(arguments[f]);
             return "Minified React error #" + O + "; visit " + T + " for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
         }
@@ -448,12 +451,12 @@ function Z(O) {
             w = Symbol.for("react.offscreen"),
             N = Symbol.iterator;
 
-function q(O) {
+        function q(O) {
             if (O === null || typeof O !== "object") return null;
             return O = N && O[N] || O["@@iterator"], typeof O === "function" ? O : null
         }
 
-function R(O) {
+        function R(O) {
             if (O == null) return null;
             if (typeof O === "function") return O.displayName || O.name || null;
             if (typeof O === "string") return O;
@@ -490,7 +493,7 @@ function R(O) {
             return null
         }
 
-function P(O) {
+        function P(O) {
             var T = O.type;
             switch (O.tag) {
                 case 24:
@@ -541,7 +544,7 @@ function P(O) {
             return null
         }
 
-function y(O) {
+        function y(O) {
             var T = O,
                 f = O;
             if (O.alternate)
@@ -553,11 +556,11 @@ function y(O) {
             return T.tag === 3 ? f : null
         }
 
-function v(O) {
+        function v(O) {
             if (y(O) !== O) throw Error(Z(188))
         }
 
-function x(O) {
+        function x(O) {
             var T = O.alternate;
             if (!T) {
                 if (T = y(O), T === null) throw Error(Z(188));
@@ -616,11 +619,11 @@ function x(O) {
             return f.stateNode.current === f ? O : T
         }
 
-function p(O) {
+        function p(O) {
             return O = x(O), O !== null ? u(O) : null
         }
 
-function u(O) {
+        function u(O) {
             if (O.tag === 5 || O.tag === 6) return O;
             for (O = O.child; O !== null;) {
                 var T = u(O);
@@ -630,7 +633,7 @@ function u(O) {
             return null
         }
 
-function o(O) {
+        function o(O) {
             if (O.tag === 5 || O.tag === 6) return O;
             for (O = O.child; O !== null;) {
                 if (O.tag !== 4) {
@@ -664,7 +667,7 @@ function o(O) {
             LA = Q.preparePortalMount,
             TA = Q.getCurrentEventPriority,
             eA = Q.detachDeletedInstance,
-            aA = Q.supportsMicrotasks,
+            BASE64_CHARS = Q.supportsMicrotasks,
             I1 = Q.scheduleMicrotask,
             w1 = Q.supportsTestSelectors,
             PA = Q.findFiberRoot,
@@ -720,7 +723,7 @@ function o(O) {
             $4 = Q.didNotMatchHydratedTextInstance,
             n7;
 
-function B6(O) {
+        function B6(O) {
             if (n7 === void 0) try {
                 throw Error()
             } catch (f) {
@@ -732,7 +735,7 @@ function B6(O) {
         }
         var k5 = !1;
 
-function g9(O, T) {
+        function g9(O, T) {
             if (!O || k5) return "";
             k5 = !0;
             var f = Error.prepareStackTrace;
@@ -794,51 +797,49 @@ function g9(O, T) {
             q8 = [],
             B8 = -1;
 
-function W5(O) {
+        function W5(O) {
             return {
                 current: O
             }
         }
 
-function u9(O) {
+        function u9(O) {
             0 > B8 || (O.current = q8[B8], q8[B8] = null, B8--)
         }
 
-function w4(O, T) {
+        function w4(O, T) {
             B8++, q8[B8] = O.current, O.current = T
         }
-
-var E3 = {},
+        var E3 = {},
             V9 = W5(E3),
             Q4 = W5(!1),
             dA = E3;
 
-function YA(O, T) {
+        function YA(O, T) {
             var f = O.type.contextTypes;
             if (!f) return E3;
             var n = O.stateNode;
             if (n && n.__reactInternalMemoizedUnmaskedChildContext === T) return n.__reactInternalMemoizedMaskedChildContext;
-
-var t = {},
+            var t = {},
                 EA;
             for (EA in f) t[EA] = T[EA];
             return n && (O = O.stateNode, O.__reactInternalMemoizedUnmaskedChildContext = T, O.__reactInternalMemoizedMaskedChildContext = t), t
         }
 
-function ZA(O) {
+        function ZA(O) {
             return O = O.childContextTypes, O !== null && O !== void 0
         }
 
-function jA() {
+        function jA() {
             u9(Q4), u9(V9)
         }
 
-function xA(O, T, f) {
+        function xA(O, T, f) {
             if (V9.current !== E3) throw Error(Z(168));
             w4(V9, T), w4(Q4, f)
         }
 
-function mA(O, T, f) {
+        function mA(O, T, f) {
             var n = O.stateNode;
             if (T = T.childContextTypes, typeof n.getChildContext !== "function") return f;
             n = n.getChildContext();
@@ -847,11 +848,11 @@ function mA(O, T, f) {
             return G({}, f, n)
         }
 
-function E1(O) {
+        function E1(O) {
             return O = (O = O.stateNode) && O.__reactInternalMemoizedMergedChildContext || E3, dA = V9.current, w4(V9, O), w4(Q4, Q4.current), !0
         }
 
-function S1(O, T, f) {
+        function S1(O, T, f) {
             var n = O.stateNode;
             if (!n) throw Error(Z(169));
             f ? (O = mA(O, T, dA), n.__reactInternalMemoizedMergedChildContext = O, u9(Q4), u9(V9), w4(V9, O)) : u9(Q4), w4(Q4, f)
@@ -860,13 +861,13 @@ function S1(O, T, f) {
             c1 = Math.log,
             l1 = Math.LN2;
 
-function I0(O) {
+        function I0(O) {
             return O >>>= 0, O === 0 ? 32 : 31 - (c1(O) / l1 | 0) | 0
         }
         var e0 = 64,
             dQ = 4194304;
 
-function iB(O) {
+        function iB(O) {
             switch (O & -O) {
                 case 1:
                     return 1;
@@ -916,7 +917,7 @@ function iB(O) {
             }
         }
 
-function EB(O, T) {
+        function EB(O, T) {
             var f = O.pendingLanes;
             if (f === 0) return 0;
             var n = 0,
@@ -934,7 +935,7 @@ function EB(O, T) {
             return n
         }
 
-function m2(O, T) {
+        function m2(O, T) {
             switch (O) {
                 case 1:
                 case 2:
@@ -976,7 +977,7 @@ function m2(O, T) {
             }
         }
 
-function q4(O, T) {
+        function q4(O, T) {
             for (var {
                     suspendedLanes: f,
                     pingedLanes: n,
@@ -993,25 +994,25 @@ function q4(O, T) {
             }
         }
 
-function J7(O) {
+        function J7(O) {
             return O = O.pendingLanes & -1073741825, O !== 0 ? O : O & 1073741824 ? 1073741824 : 0
         }
 
-function X5() {
+        function X5() {
             var O = e0;
             return e0 <<= 1, (e0 & 4194240) === 0 && (e0 = 64), O
         }
 
-function sW(O) {
+        function sW(O) {
             for (var T = [], f = 0; 31 > f; f++) T.push(O);
             return T
         }
 
-function l5(O, T, f) {
+        function l5(O, T, f) {
             O.pendingLanes |= T, T !== 536870912 && (O.suspendedLanes = 0, O.pingedLanes = 0), O = O.eventTimes, T = 31 - P1(T), O[T] = f
         }
 
-function tJ(O, T) {
+        function tJ(O, T) {
             var f = O.pendingLanes & ~T;
             O.pendingLanes = T, O.suspendedLanes = 0, O.pingedLanes = 0, O.expiredLanes &= T, O.mutableReadLanes &= T, O.entangledLanes &= T, T = O.entanglements;
             var n = O.eventTimes;
@@ -1022,7 +1023,7 @@ function tJ(O, T) {
             }
         }
 
-function AJ(O, T) {
+        function AJ(O, T) {
             var f = O.entangledLanes |= T;
             for (O = O.entanglements; f;) {
                 var n = 31 - P1(f),
@@ -1032,7 +1033,7 @@ function AJ(O, T) {
         }
         var B4 = 0;
 
-function QV(O) {
+        function QV(O) {
             return O &= -O, 1 < O ? 4 < O ? (O & 268435455) !== 0 ? 16 : 536870912 : 4 : 1
         }
         var HG = LF.unstable_scheduleCallback,
@@ -1047,13 +1048,13 @@ function QV(O) {
             xQ = null,
             IB = null;
 
-function E6(O) {
+        function E6(O) {
             if (IB && typeof IB.onCommitFiberRoot === "function") try {
                 IB.onCommitFiberRoot(xQ, O, void 0, (O.current.flags & 128) === 128)
             } catch (T) {}
         }
 
-function X8(O, T) {
+        function X8(O, T) {
             return O === T && (O !== 0 || 1 / O === 1 / T) || O !== O && T !== T
         }
         var U9 = typeof Object.is === "function" ? Object.is : X8,
@@ -1061,15 +1062,15 @@ function X8(O, T) {
             AW = !1,
             M4 = !1;
 
-function a7(O) {
+        function a7(O) {
             G8 === null ? G8 = [O] : G8.push(O)
         }
 
-function iZ(O) {
+        function iZ(O) {
             AW = !0, a7(O)
         }
 
-function p8() {
+        function p8() {
             if (!M4 && G8 !== null) {
                 M4 = !0;
                 var O = 0,
@@ -1089,8 +1090,7 @@ function p8() {
             }
             return null
         }
-
-var s7 = [],
+        var s7 = [],
             $Y = 0,
             PC = null,
             YN = 0,
@@ -1100,11 +1100,11 @@ var s7 = [],
             rW = 1,
             oW = "";
 
-function F5(O, T) {
+        function F5(O, T) {
             s7[$Y++] = YN, s7[$Y++] = PC, PC = O, YN = T
         }
 
-function eP(O, T, f) {
+        function eP(O, T, f) {
             h3[nZ++] = rW, h3[nZ++] = oW, h3[nZ++] = oD, oD = O;
             var n = rW;
             O = oW;
@@ -1117,11 +1117,11 @@ function eP(O, T, f) {
             } else rW = 1 << EA | f << t | n, oW = O
         }
 
-function aZ(O) {
+        function aZ(O) {
             O.return !== null && (F5(O, 1), eP(O, 1, 0))
         }
 
-function d2(O) {
+        function d2(O) {
             for (; O === PC;) PC = s7[--$Y], s7[$Y] = null, YN = s7[--$Y], s7[$Y] = null;
             for (; O === oD;) oD = h3[--nZ], h3[nZ] = null, oW = h3[--nZ], h3[nZ] = null, rW = h3[--nZ], h3[nZ] = null
         }
@@ -1131,12 +1131,12 @@ function d2(O) {
             tW = !1,
             wY = null;
 
-function OK(O, T) {
+        function OK(O, T) {
             var f = oZ(5, null, null, 0);
             f.elementType = "DELETED", f.stateNode = T, f.return = O, T = O.deletions, T === null ? (O.deletions = [f], O.flags |= 16) : T.push(f)
         }
 
-function y5(O, T) {
+        function y5(O, T) {
             switch (O.tag) {
                 case 5:
                     return T = LI(T, O.type, O.pendingProps), T !== null ? (O.stateNode = T, b6 = O, r7 = O1(T), !0) : !1;
@@ -1160,11 +1160,11 @@ function y5(O, T) {
             }
         }
 
-function qY(O) {
+        function qY(O) {
             return (O.mode & 1) !== 0 && (O.flags & 128) === 0
         }
 
-function ZV(O) {
+        function ZV(O) {
             if (g3) {
                 var T = r7;
                 if (T) {
@@ -1182,12 +1182,12 @@ function ZV(O) {
             }
         }
 
-function Aj(O) {
+        function Aj(O) {
             for (O = O.return; O !== null && O.tag !== 5 && O.tag !== 3 && O.tag !== 13;) O = O.return;
             b6 = O
         }
 
-function RK(O) {
+        function RK(O) {
             if (!zA || O !== b6) return !1;
             if (!g3) return Aj(O), g3 = !0, !1;
             if (O.tag !== 3 && (O.tag !== 5 || i9(O.type) && !NA(O.type, O.memoizedProps))) {
@@ -1205,20 +1205,20 @@ function RK(O) {
             return !0
         }
 
-function tD() {
+        function tD() {
             for (var O = r7; O;) O = C1(O)
         }
 
-function jC() {
+        function jC() {
             zA && (r7 = b6 = null, tW = g3 = !1)
         }
 
-function ag(O) {
+        function ag(O) {
             wY === null ? wY = [O] : wY.push(O)
         }
         var Oa = I.ReactCurrentBatchConfig;
 
-function JN(O, T) {
+        function JN(O, T) {
             if (U9(O, T)) return !0;
             if (typeof O !== "object" || O === null || typeof T !== "object" || T === null) return !1;
             var f = Object.keys(O),
@@ -1231,7 +1231,7 @@ function JN(O, T) {
             return !0
         }
 
-function WN(O) {
+        function WN(O) {
             switch (O.tag) {
                 case 5:
                     return B6(O.type);
@@ -1254,7 +1254,7 @@ function WN(O) {
             }
         }
 
-function CA(O, T, f) {
+        function CA(O, T, f) {
             if (O = f.ref, O !== null && typeof O !== "function" && typeof O !== "object") {
                 if (f._owner) {
                     if (f = f._owner, f) {
@@ -1276,16 +1276,16 @@ function CA(O, T, f) {
             return O
         }
 
-function MA(O, T) {
+        function MA(O, T) {
             throw O = Object.prototype.toString.call(T), Error(Z(31, O === "[object Object]" ? "object with keys {" + Object.keys(T).join(", ") + "}" : O))
         }
 
-function H1(O) {
+        function H1(O) {
             var T = O._init;
             return T(O._payload)
         }
 
-function X0(O) {
+        function X0(O) {
             function T(c, s) {
                 if (O) {
                     var r = c.deletions;
@@ -1293,54 +1293,54 @@ function X0(O) {
                 }
             }
 
-function f(c, s) {
+            function f(c, s) {
                 if (!O) return null;
                 for (; s !== null;) T(c, s), s = s.sibling;
                 return null
             }
 
-function n(c, s) {
+            function n(c, s) {
                 for (c = new Map; s !== null;) s.key !== null ? c.set(s.key, s) : c.set(s.index, s), s = s.sibling;
                 return c
             }
 
-function t(c, s) {
+            function t(c, s) {
                 return c = OY(c, s), c.index = 0, c.sibling = null, c
             }
 
-function EA(c, s, r) {
+            function EA(c, s, r) {
                 if (c.index = r, !O) return c.flags |= 1048576, s;
                 if (r = c.alternate, r !== null) return r = r.index, r < s ? (c.flags |= 2, s) : r;
                 return c.flags |= 2, s
             }
 
-function G1(c) {
+            function G1(c) {
                 return O && c.alternate === null && (c.flags |= 2), c
             }
 
-function n1(c, s, r, bA) {
+            function n1(c, s, r, bA) {
                 if (s === null || s.tag !== 6) return s = eO(r, c.mode, bA), s.return = c, s;
                 return s = t(s, r), s.return = c, s
             }
 
-function q0(c, s, r, bA) {
+            function q0(c, s, r, bA) {
                 var Y1 = r.type;
                 if (Y1 === W) return dB(c, s, r.props.children, bA, r.key);
                 if (s !== null && (s.elementType === Y1 || typeof Y1 === "object" && Y1 !== null && Y1.$$typeof === z && H1(Y1) === s.type)) return bA = t(s, r.props), bA.ref = CA(c, s, r), bA.return = c, bA;
                 return bA = Nz(r.type, r.key, r.props, null, c.mode, bA), bA.ref = CA(c, s, r), bA.return = c, bA
             }
 
-function CQ(c, s, r, bA) {
+            function CQ(c, s, r, bA) {
                 if (s === null || s.tag !== 4 || s.stateNode.containerInfo !== r.containerInfo || s.stateNode.implementation !== r.implementation) return s = MN(r, c.mode, bA), s.return = c, s;
                 return s = t(s, r.children || []), s.return = c, s
             }
 
-function dB(c, s, r, bA, Y1) {
+            function dB(c, s, r, bA, Y1) {
                 if (s === null || s.tag !== 7) return s = SK(r, c.mode, bA, Y1), s.return = c, s;
                 return s = t(s, r), s.return = c, s
             }
 
-function Z9(c, s, r) {
+            function Z9(c, s, r) {
                 if (typeof s === "string" && s !== "" || typeof s === "number") return s = eO("" + s, c.mode, r), s.return = c, s;
                 if (typeof s === "object" && s !== null) {
                     switch (s.$$typeof) {
@@ -1358,7 +1358,7 @@ function Z9(c, s, r) {
                 return null
             }
 
-function zB(c, s, r, bA) {
+            function zB(c, s, r, bA) {
                 var Y1 = s !== null ? s.key : null;
                 if (typeof r === "string" && r !== "" || typeof r === "number") return Y1 !== null ? null : n1(c, s, "" + r, bA);
                 if (typeof r === "object" && r !== null) {
@@ -1376,7 +1376,7 @@ function zB(c, s, r, bA) {
                 return null
             }
 
-function n5(c, s, r, bA, Y1) {
+            function n5(c, s, r, bA, Y1) {
                 if (typeof bA === "string" && bA !== "" || typeof bA === "number") return c = c.get(r) || null, n1(s, c, "" + bA, Y1);
                 if (typeof bA === "object" && bA !== null) {
                     switch (bA.$$typeof) {
@@ -1394,7 +1394,7 @@ function n5(c, s, r, bA, Y1) {
                 return null
             }
 
-function u3(c, s, r, bA) {
+            function u3(c, s, r, bA) {
                 for (var Y1 = null, Q1 = null, uA = s, z1 = s = 0, _1 = null; uA !== null && z1 < r.length; z1++) {
                     uA.index > z1 ? (_1 = uA, uA = null) : _1 = uA.sibling;
                     var i1 = zB(c, uA, r[z1], bA);
@@ -1415,7 +1415,7 @@ function u3(c, s, r, bA) {
                 }), g3 && F5(c, z1), Y1
             }
 
-function b(c, s, r, bA) {
+            function b(c, s, r, bA) {
                 var Y1 = q(r);
                 if (typeof Y1 !== "function") throw Error(Z(150));
                 if (r = Y1.call(r), r == null) throw Error(Z(151));
@@ -1439,7 +1439,7 @@ function b(c, s, r, bA) {
                 }), g3 && F5(c, z1), Y1
             }
 
-function a(c, s, r, bA) {
+            function a(c, s, r, bA) {
                 if (typeof r === "object" && r !== null && r.type === W && r.key === null && (r = r.props.children), typeof r === "object" && r !== null) {
                     switch (r.$$typeof) {
                         case Y:
@@ -1500,20 +1500,20 @@ function a(c, s, r, bA) {
             f6 = null,
             EZ = null;
 
-function sZ() {
+        function sZ() {
             EZ = f6 = n9 = null
         }
 
-function l8(O, T, f) {
+        function l8(O, T, f) {
             K1 ? (w4(O2, T._currentValue), T._currentValue = f) : (w4(O2, T._currentValue2), T._currentValue2 = f)
         }
 
-function u4(O) {
+        function u4(O) {
             var T = O2.current;
             u9(O2), K1 ? O._currentValue = T : O._currentValue2 = T
         }
 
-function eW(O, T, f) {
+        function eW(O, T, f) {
             for (; O !== null;) {
                 var n = O.alternate;
                 if ((O.childLanes & T) !== T ? (O.childLanes |= T, n !== null && (n.childLanes |= T)) : n !== null && (n.childLanes & T) !== T && (n.childLanes |= T), O === f) break;

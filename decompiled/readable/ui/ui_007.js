@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_007.js
+ * 处理时间: 2025-12-09T03:41:38.971Z
+ * 变量映射: 15 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.094Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -19,14 +22,14 @@
 
     Dc0.exports = N84
 });
-var Ec0 = U((i87, Cc0) => {
+var Ec0 = moduleWrapper((i87, Cc0) => {
     function L84(A) {
         return {
             name: "Verilog",
             aliases: ["v", "sv", "svh"],
             case_insensitive: !1,
             keywords: {
-                $pattern: /[\w\$]+/,
+                $pattern: /[\w\TextComponent]+/,
                 keyword: "accept_on alias always always_comb always_ff always_latch and assert assign assume automatic before begin bind bins binsof bit break buf|0 bufif0 bufif1 byte case casex casez cell chandle checker class clocking cmos config const constraint context continue cover covergroup coverpoint cross deassign default defparam design disable dist do edge else end endcase endchecker endclass endclocking endconfig endfunction endgenerate endgroup endinterface endmodule endpackage endprimitive endprogram endproperty endspecify endsequence endtable endtask enum event eventually expect export extends extern final first_match for force foreach forever fork forkjoin function generate|5 genvar global highz0 highz1 if iff ifnone ignore_bins illegal_bins implements implies import incdir include initial inout input inside instance int integer interconnect interface intersect join join_any join_none large let liblist library local localparam logic longint macromodule matches medium modport module nand negedge nettype new nexttime nmos nor noshowcancelled not notif0 notif1 or output package packed parameter pmos posedge primitive priority program property protected pull0 pull1 pulldown pullup pulsestyle_ondetect pulsestyle_onevent pure rand randc randcase randsequence rcmos real realtime ref reg reject_on release repeat restrict return rnmos rpmos rtran rtranif0 rtranif1 s_always s_eventually s_nexttime s_until s_until_with scalared sequence shortint shortreal showcancelled signed small soft solve specify specparam static string strong strong0 strong1 struct super supply0 supply1 sync_accept_on sync_reject_on table tagged task this throughout time timeprecision timeunit tran tranif0 tranif1 tri tri0 tri1 triand trior trireg type typedef union unique unique0 unsigned until until_with untyped use uwire var vectored virtual void wait wait_order wand weak weak0 weak1 while wildcard wire with within wor xnor xor",
                 literal: "null",
                 built_in: "$finish $stop $exit $fatal $error $warning $info $realtime $time $printtimescale $bitstoreal $bitstoshortreal $itor $signed $cast $bits $stime $timeformat $realtobits $shortrealtobits $rtoi $unsigned $asserton $assertkill $assertpasson $assertfailon $assertnonvacuouson $assertoff $assertcontrol $assertpassoff $assertfailoff $assertvacuousoff $isunbounded $sampled $fell $changed $past_gclk $fell_gclk $changed_gclk $rising_gclk $steady_gclk $coverage_control $coverage_get $coverage_save $set_coverage_db_name $rose $stable $past $rose_gclk $stable_gclk $future_gclk $falling_gclk $changing_gclk $display $coverage_get_max $coverage_merge $get_coverage $load_coverage_db $typename $unpacked_dimensions $left $low $increment $clog2 $ln $log10 $exp $sqrt $pow $floor $ceil $sin $cos $tan $countbits $onehot $isunknown $fatal $warning $dimensions $right $high $size $asin $acos $atan $atan2 $hypot $sinh $cosh $tanh $asinh $acosh $atanh $countones $onehot0 $error $info $random $dist_chi_square $dist_erlang $dist_exponential $dist_normal $dist_poisson $dist_t $dist_uniform $q_initialize $q_remove $q_exam $async$and$array $async$nand$array $async$or$array $async$nor$array $sync$and$array $sync$nand$array $sync$or$array $sync$nor$array $q_add $q_full $psprintf $async$and$plane $async$nand$plane $async$or$plane $async$nor$plane $sync$and$plane $sync$nand$plane $sync$or$plane $sync$nor$plane $system $display $displayb $displayh $displayo $strobe $strobeb $strobeh $strobeo $write $readmemb $readmemh $writememh $value$plusargs $dumpvars $dumpon $dumplimit $dumpports $dumpportson $dumpportslimit $writeb $writeh $writeo $monitor $monitorb $monitorh $monitoro $writememb $dumpfile $dumpoff $dumpall $dumpflush $dumpportsoff $dumpportsall $dumpportsflush $fclose $fdisplay $fdisplayb $fdisplayh $fdisplayo $fstrobe $fstrobeb $fstrobeh $fstrobeo $swrite $swriteb $swriteh $swriteo $fscanf $fread $fseek $fflush $feof $fopen $fwrite $fwriteb $fwriteh $fwriteo $fmonitor $fmonitorb $fmonitorh $fmonitoro $sformat $sformatf $fgetc $ungetc $fgets $sscanf $rewind $ftell $ferror"
@@ -53,7 +56,7 @@ var Ec0 = U((i87, Cc0) => {
             }, {
                 className: "meta",
                 begin: "`",
-                end: "$",
+                end: "TextComponent",
                 keywords: {
                     "meta-keyword": "define __FILE__ __LINE__ begin_keywords celldefine default_nettype define else elsif end_keywords endcelldefine endif ifdef ifndef include line nounconnected_drive pragma resetall timescale unconnected_drive undef undefineall"
                 },
@@ -63,7 +66,7 @@ var Ec0 = U((i87, Cc0) => {
     }
     Cc0.exports = L84
 });
-var Uc0 = U((n87, zc0) => {
+var Uc0 = moduleWrapper((n87, zc0) => {
     function M84(A) {
         let B = "[eE][-+]?\\d(_|\\d)*",
             G = "\\d(_|\\d)*(\\.\\d(_|\\d)*)?(" + B + ")?",
@@ -78,13 +81,13 @@ var Uc0 = U((n87, zc0) => {
                 literal: "false true note warning error failure line text side width"
             },
             illegal: /\{/,
-            contains: [A.C_BLOCK_COMMENT_MODE, A.COMMENT("--", "$"), A.QUOTE_STRING_MODE, {
+            contains: [A.C_BLOCK_COMMENT_MODE, A.COMMENT("--", "TextComponent"), A.QUOTE_STRING_MODE, {
                 className: "number",
                 begin: Y,
                 relevance: 0
             }, {
                 className: "string",
-                begin: "'(U|X|0|1|Z|W|L|H|-)'",
+                begin: "'(moduleWrapper|X|0|1|Z|W|lazyLoader|H|-)'",
                 contains: [A.BACKSLASH_ESCAPE]
             }, {
                 className: "symbol",
@@ -95,13 +98,13 @@ var Uc0 = U((n87, zc0) => {
     }
     zc0.exports = M84
 });
-var wc0 = U((a87, $c0) => {
+var wc0 = moduleWrapper((a87, $c0) => {
     function O84(A) {
         return {
             name: "Vim Script",
             keywords: {
                 $pattern: /[!#@\w]+/,
-                keyword: "N|0 P|0 X|0 a|0 ab abc abo al am an|0 ar arga argd arge argdo argg argl argu as au aug aun b|0 bN ba bad bd be bel bf bl bm bn bo bp br brea breaka breakd breakl bro bufdo buffers bun bw c|0 cN cNf ca cabc caddb cad caddf cal cat cb cc ccl cd ce cex cf cfir cgetb cgete cg changes chd che checkt cl cla clo cm cmapc cme cn cnew cnf cno cnorea cnoreme co col colo com comc comp con conf cope cp cpf cq cr cs cst cu cuna cunme cw delm deb debugg delc delf dif diffg diffo diffp diffpu diffs diffthis dig di dl dell dj dli do doautoa dp dr ds dsp e|0 ea ec echoe echoh echom echon el elsei em en endfo endf endt endw ene ex exe exi exu f|0 files filet fin fina fini fir fix fo foldc foldd folddoc foldo for fu go gr grepa gu gv ha helpf helpg helpt hi hid his ia iabc if ij il im imapc ime ino inorea inoreme int is isp iu iuna iunme j|0 ju k|0 keepa kee keepj lN lNf l|0 lad laddb laddf la lan lat lb lc lch lcl lcs le lefta let lex lf lfir lgetb lgete lg lgr lgrepa lh ll lla lli lmak lm lmapc lne lnew lnf ln loadk lo loc lockv lol lope lp lpf lr ls lt lu lua luad luaf lv lvimgrepa lw m|0 ma mak map mapc marks mat me menut mes mk mks mksp mkv mkvie mod mz mzf nbc nb nbs new nm nmapc nme nn nnoreme noa no noh norea noreme norm nu nun nunme ol o|0 om omapc ome on ono onoreme opt ou ounme ow p|0 profd prof pro promptr pc ped pe perld po popu pp pre prev ps pt ptN ptf ptj ptl ptn ptp ptr pts pu pw py3 python3 py3d py3f py pyd pyf quita qa rec red redi redr redraws reg res ret retu rew ri rightb rub rubyd rubyf rund ru rv sN san sa sal sav sb sbN sba sbf sbl sbm sbn sbp sbr scrip scripte scs se setf setg setl sf sfir sh sim sig sil sl sla sm smap smapc sme sn sni sno snor snoreme sor so spelld spe spelli spellr spellu spellw sp spr sre st sta startg startr star stopi stj sts sun sunm sunme sus sv sw sy synti sync tN tabN tabc tabdo tabe tabf tabfir tabl tabm tabnew tabn tabo tabp tabr tabs tab ta tags tc tcld tclf te tf th tj tl tm tn to tp tr try ts tu u|0 undoj undol una unh unl unlo unm unme uns up ve verb vert vim vimgrepa vi viu vie vm vmapc vme vne vn vnoreme vs vu vunme windo w|0 wN wa wh wi winc winp wn wp wq wqa ws wu wv x|0 xa xmapc xm xme xn xnoreme xu xunme y|0 z|0 ~ Next Print append abbreviate abclear aboveleft all amenu anoremenu args argadd argdelete argedit argglobal arglocal argument ascii autocmd augroup aunmenu buffer bNext ball badd bdelete behave belowright bfirst blast bmodified bnext botright bprevious brewind break breakadd breakdel breaklist browse bunload bwipeout change cNext cNfile cabbrev cabclear caddbuffer caddexpr caddfile call catch cbuffer cclose center cexpr cfile cfirst cgetbuffer cgetexpr cgetfile chdir checkpath checktime clist clast close cmap cmapclear cmenu cnext cnewer cnfile cnoremap cnoreabbrev cnoremenu copy colder colorscheme command comclear compiler continue confirm copen cprevious cpfile cquit crewind cscope cstag cunmap cunabbrev cunmenu cwindow delete delmarks debug debuggreedy delcommand delfunction diffupdate diffget diffoff diffpatch diffput diffsplit digraphs display deletel djump dlist doautocmd doautoall deletep drop dsearch dsplit edit earlier echo echoerr echohl echomsg else elseif emenu endif endfor endfunction endtry endwhile enew execute exit exusage file filetype find finally finish first fixdel fold foldclose folddoopen folddoclosed foldopen function global goto grep grepadd gui gvim hardcopy help helpfind helpgrep helptags highlight hide history insert iabbrev iabclear ijump ilist imap imapclear imenu inoremap inoreabbrev inoremenu intro isearch isplit iunmap iunabbrev iunmenu join jumps keepalt keepmarks keepjumps lNext lNfile list laddexpr laddbuffer laddfile last language later lbuffer lcd lchdir lclose lcscope left leftabove lexpr lfile lfirst lgetbuffer lgetexpr lgetfile lgrep lgrepadd lhelpgrep llast llist lmake lmap lmapclear lnext lnewer lnfile lnoremap loadkeymap loadview lockmarks lockvar lolder lopen lprevious lpfile lrewind ltag lunmap luado luafile lvimgrep lvimgrepadd lwindow move mark make mapclear match menu menutranslate messages mkexrc mksession mkspell mkvimrc mkview mode mzscheme mzfile nbclose nbkey nbsart next nmap nmapclear nmenu nnoremap nnoremenu noautocmd noremap nohlsearch noreabbrev noremenu normal number nunmap nunmenu oldfiles open omap omapclear omenu only onoremap onoremenu options ounmap ounmenu ownsyntax print profdel profile promptfind promptrepl pclose pedit perl perldo pop popup ppop preserve previous psearch ptag ptNext ptfirst ptjump ptlast ptnext ptprevious ptrewind ptselect put pwd py3do py3file python pydo pyfile quit quitall qall read recover redo redir redraw redrawstatus registers resize retab return rewind right rightbelow ruby rubydo rubyfile rundo runtime rviminfo substitute sNext sandbox sargument sall saveas sbuffer sbNext sball sbfirst sblast sbmodified sbnext sbprevious sbrewind scriptnames scriptencoding scscope set setfiletype setglobal setlocal sfind sfirst shell simalt sign silent sleep slast smagic smapclear smenu snext sniff snomagic snoremap snoremenu sort source spelldump spellgood spellinfo spellrepall spellundo spellwrong split sprevious srewind stop stag startgreplace startreplace startinsert stopinsert stjump stselect sunhide sunmap sunmenu suspend sview swapname syntax syntime syncbind tNext tabNext tabclose tabedit tabfind tabfirst tablast tabmove tabnext tabonly tabprevious tabrewind tag tcl tcldo tclfile tearoff tfirst throw tjump tlast tmenu tnext topleft tprevious trewind tselect tunmenu undo undojoin undolist unabbreviate unhide unlet unlockvar unmap unmenu unsilent update vglobal version verbose vertical vimgrep vimgrepadd visual viusage view vmap vmapclear vmenu vnew vnoremap vnoremenu vsplit vunmap vunmenu write wNext wall while winsize wincmd winpos wnext wprevious wqall wsverb wundo wviminfo xit xall xmapclear xmap xmenu xnoremap xnoremenu xunmap xunmenu yank",
+                keyword: "N|0 P|0 X|0 a|0 ab abc abo al am an|0 ar arga argd arge argdo argg argl argu as au aug aun b|0 bN ba bad bd be bel bf bl bm bn bo bp br brea breaka breakd breakl bro bufdo buffers bun bw c|0 cN cNf ca cabc caddb cad caddf cal cat cb cc ccl cd ce cex cf cfir cgetb cgete cg changes chd che checkt cl cla clo cm cmapc cme cn cnew cnf cno cnorea cnoreme co col colo com comc comp con conf cope cp cpf cq cr cs cst cu cuna cunme cw delm deb debugg delc delf dif diffg diffo diffp diffpu diffs diffthis dig di dl dell dj dli do doautoa dp dr ds dsp e|0 ea ec echoe echoh echom echon el elsei em AGENT_OUTPUT_TOOL_NAME endfo endf endt endw ene ex exe exi exu f|0 files filet fin fina fini fir fix fo foldc foldd folddoc foldo for fu go gr grepa gu gv ha helpf helpg helpt hi hid his ia iabc if ij il im imapc ime ino inorea inoreme int is isp iu iuna iunme j|0 ju k|0 keepa kee keepj lN lNf l|0 lad laddb laddf la lan lat lb lc lch lcl lcs le lefta let lex lf lfir lgetb lgete lg lgr lgrepa lh ll lla lli lmak lm lmapc lne lnew lnf ln loadk lo loc lockv lol lope lp lpf lr ls lt lu lua luad luaf lv lvimgrepa lw m|0 ma mak map mapc marks mat me menut mes mk mks mksp mkv mkvie mod mz mzf nbc nb nbs new nm nmapc nme nn nnoreme noa no noh norea noreme norm nu nun nunme ol o|0 om omapc ome on ono onoreme opt ou ounme ow p|0 profd prof pro promptr pc ped pe perld po popu pp pre prev ps pt ptN ptf ptj ptl ptn ptp ptr pts pu pw py3 python3 py3d py3f py pyd pyf quita qa rec red redi redr redraws reg res ret retu rew ri rightb rub rubyd rubyf rund ru rv sN san sa sal sav sb sbN sba sbf sbl sbm sbn sbp sbr scrip scripte scs se setf setg setl sf sfir sh sim sig sil sl sla sm smap smapc sme sn sni sno snor snoreme sor so spelld spe spelli spellr spellu spellw sp spr sre st sta startg startr star stopi stj sts sun sunm sunme sus sv sw sy synti sync tN tabN tabc tabdo tabe tabf tabfir tabl tabm tabnew tabn tabo tabp tabr tabs tab ta tags tc tcld tclf te ManagedIdentityCredential_IMDS th tj tl tm tn to tp tr try ts tu u|0 undoj undol una unh unl unlo unm unme uns up ve verb vert vim vimgrepa vi viu vie vm vmapc vme vne vn vnoreme vs vu vunme windo w|0 wN wa wh wi winc winp wn wp wq wqa ws wu wv x|0 xa xmapc xm xme xn xnoreme isIndex xunme y|0 z|0 ~ Next Print append abbreviate abclear aboveleft all amenu anoremenu args argadd argdelete argedit argglobal arglocal argument ascii autocmd augroup aunmenu buffer bNext ball badd bdelete behave belowright bfirst blast bmodified bnext botright bprevious brewind break breakadd breakdel breaklist browse bunload bwipeout change cNext cNfile cabbrev cabclear caddbuffer caddexpr caddfile call catch cbuffer cclose center cexpr cfile cfirst cgetbuffer cgetexpr cgetfile chdir checkpath checktime clist clast close cmap cmapclear cmenu cnext cnewer cnfile cnoremap cnoreabbrev cnoremenu copy colder colorscheme command comclear compiler continue confirm copen cprevious cpfile cquit crewind cscope cstag cunmap cunabbrev cunmenu cwindow delete delmarks debug debuggreedy delcommand delfunction diffupdate diffget diffoff diffpatch diffput diffsplit digraphs display deletel djump dlist doautocmd doautoall deletep drop dsearch dsplit edit earlier echo echoerr echohl echomsg else elseif emenu endif endfor endfunction endtry endwhile enew execute exit exusage file filetype find finally finish first fixdel fold foldclose folddoopen folddoclosed foldopen function global goto grep grepadd gui gvim hardcopy help helpfind helpgrep helptags highlight hide history insert iabbrev iabclear ijump ilist imap imapclear imenu inoremap inoreabbrev inoremenu intro isearch isplit iunmap iunabbrev iunmenu join jumps keepalt keepmarks keepjumps lNext lNfile list laddexpr laddbuffer laddfile last language later lbuffer lcd lchdir lclose lcscope left leftabove lexpr lfile lfirst lgetbuffer lgetexpr lgetfile lgrep lgrepadd lhelpgrep llast llist lmake lmap lmapclear lnext lnewer lnfile lnoremap loadkeymap loadview lockmarks lockvar lolder lopen lprevious lpfile lrewind ltag lunmap luado luafile lvimgrep lvimgrepadd lwindow move mark make mapclear match menu menutranslate messages mkexrc mksession mkspell mkvimrc mkview mode mzscheme mzfile nbclose nbkey nbsart next nmap nmapclear nmenu nnoremap nnoremenu noautocmd noremap nohlsearch noreabbrev noremenu normal number nunmap nunmenu oldfiles open omap omapclear omenu only onoremap onoremenu options ounmap ounmenu ownsyntax print profdel profile promptfind promptrepl pclose pedit perl perldo pop popup ppop preserve previous psearch ptag ptNext ptfirst ptjump ptlast ptnext ptprevious ptrewind ptselect put pwd py3do py3file python pydo pyfile quit quitall qall read recover redo redir redraw redrawstatus registers resize retab return rewind right rightbelow ruby rubydo rubyfile rundo runtime rviminfo substitute sNext sandbox sargument sall saveas sbuffer sbNext sball sbfirst sblast sbmodified sbnext sbprevious sbrewind scriptnames scriptencoding scscope set setfiletype setglobal setlocal sfind sfirst shell simalt sign silent sleep slast smagic smapclear smenu snext sniff snomagic snoremap snoremenu sort source spelldump spellgood spellinfo spellrepall spellundo spellwrong split sprevious srewind stop stag startgreplace startreplace startinsert stopinsert stjump stselect sunhide sunmap sunmenu suspend sview swapname syntax syntime syncbind tNext tabNext tabclose tabedit tabfind tabfirst tablast tabmove tabnext tabonly tabprevious tabrewind tag tcl tcldo tclfile tearoff tfirst throw tjump tlast tmenu tnext topleft tprevious trewind tselect tunmenu undo undojoin undolist unabbreviate unhide unlet unlockvar unmap unmenu unsilent update vglobal version verbose vertical vimgrep vimgrepadd visual viusage view vmap vmapclear vmenu vnew vnoremap vnoremenu vsplit vunmap vunmenu write wNext wall while winsize wincmd winpos wnext wprevious wqall wsverb wundo wviminfo xit xall xmapclear xmap xmenu xnoremap xnoremenu xunmap xunmenu yank",
                 built_in: "synIDtrans atan2 range matcharg did_filetype asin feedkeys xor argv complete_check add getwinposx getqflist getwinposy screencol clearmatches empty extend getcmdpos mzeval garbagecollect setreg ceil sqrt diff_hlID inputsecret get getfperm getpid filewritable shiftwidth max sinh isdirectory synID system inputrestore winline atan visualmode inputlist tabpagewinnr round getregtype mapcheck hasmapto histdel argidx findfile sha256 exists toupper getcmdline taglist string getmatches bufnr strftime winwidth bufexists strtrans tabpagebuflist setcmdpos remote_read printf setloclist getpos getline bufwinnr float2nr len getcmdtype diff_filler luaeval resolve libcallnr foldclosedend reverse filter has_key bufname str2float strlen setline getcharmod setbufvar index searchpos shellescape undofile foldclosed setqflist buflisted strchars str2nr virtcol floor remove undotree remote_expr winheight gettabwinvar reltime cursor tabpagenr finddir localtime acos getloclist search tanh matchend rename gettabvar strdisplaywidth type abs py3eval setwinvar tolower wildmenumode log10 spellsuggest bufloaded synconcealed nextnonblank server2client complete settabwinvar executable input wincol setmatches getftype hlID inputsave searchpair or screenrow line settabvar histadd deepcopy strpart remote_peek and eval getftime submatch screenchar winsaveview matchadd mkdir screenattr getfontname libcall reltimestr getfsize winnr invert pow getbufline byte2line soundfold repeat fnameescape tagfiles sin strwidth spellbadword trunc maparg log lispindent hostname setpos globpath remote_foreground getchar synIDattr fnamemodify cscope_connection stridx winbufnr indent min complete_add nr2char searchpairpos inputdialog values matchlist items hlexists strridx browsedir expand fmod pathshorten line2byte argc count getwinvar glob foldtextresult getreg foreground cosh matchdelete has char2nr simplify histget searchdecl iconv winrestcmd pumvisible writefile foldlevel haslocaldir keys cos matchstr foldtext histnr tan tempname getcwd byteidx getbufvar islocked escape eventhandler remote_send serverlist winrestview synstack pyeval prevnonblank readfile cindent filereadable changenr exp"
             },
             illegal: /;/,
@@ -113,13 +116,13 @@ var wc0 = U((a87, $c0) => {
             }, {
                 className: "string",
                 begin: /"(\\"|\n\\|[^"\n])*"/
-            }, A.COMMENT('"', "$"), {
+            }, A.COMMENT('"', "TextComponent"), {
                 className: "variable",
                 begin: /[bwtglsav]:[\w\d_]*/
             }, {
                 className: "function",
                 beginKeywords: "function function!",
-                end: "$",
+                end: "TextComponent",
                 relevance: 0,
                 contains: [A.TITLE_MODE, {
                     className: "params",
@@ -134,7 +137,7 @@ var wc0 = U((a87, $c0) => {
     }
     $c0.exports = O84
 });
-var Nc0 = U((s87, qc0) => {
+var Nc0 = moduleWrapper((s87, qc0) => {
     function R84(A) {
         return {
             name: "Intel x86 Assembly",
@@ -145,7 +148,7 @@ var Nc0 = U((s87, qc0) => {
                 built_in: "ip eip rip al ah bl bh cl ch dl dh sil dil bpl spl r8b r9b r10b r11b r12b r13b r14b r15b ax bx cx dx si di bp sp r8w r9w r10w r11w r12w r13w r14w r15w eax ebx ecx edx esi edi ebp esp eip r8d r9d r10d r11d r12d r13d r14d r15d rax rbx rcx rdx rsi rdi rbp rsp r8 r9 r10 r11 r12 r13 r14 r15 cs ds es fs gs ss st st0 st1 st2 st3 st4 st5 st6 st7 mm0 mm1 mm2 mm3 mm4 mm5 mm6 mm7 xmm0  xmm1  xmm2  xmm3  xmm4  xmm5  xmm6  xmm7  xmm8  xmm9 xmm10  xmm11 xmm12 xmm13 xmm14 xmm15 xmm16 xmm17 xmm18 xmm19 xmm20 xmm21 xmm22 xmm23 xmm24 xmm25 xmm26 xmm27 xmm28 xmm29 xmm30 xmm31 ymm0  ymm1  ymm2  ymm3  ymm4  ymm5  ymm6  ymm7  ymm8  ymm9 ymm10  ymm11 ymm12 ymm13 ymm14 ymm15 ymm16 ymm17 ymm18 ymm19 ymm20 ymm21 ymm22 ymm23 ymm24 ymm25 ymm26 ymm27 ymm28 ymm29 ymm30 ymm31 zmm0  zmm1  zmm2  zmm3  zmm4  zmm5  zmm6  zmm7  zmm8  zmm9 zmm10  zmm11 zmm12 zmm13 zmm14 zmm15 zmm16 zmm17 zmm18 zmm19 zmm20 zmm21 zmm22 zmm23 zmm24 zmm25 zmm26 zmm27 zmm28 zmm29 zmm30 zmm31 k0 k1 k2 k3 k4 k5 k6 k7 bnd0 bnd1 bnd2 bnd3 cr0 cr1 cr2 cr3 cr4 cr8 dr0 dr1 dr2 dr3 dr8 tr3 tr4 tr5 tr6 tr7 r0 r1 r2 r3 r4 r5 r6 r7 r0b r1b r2b r3b r4b r5b r6b r7b r0w r1w r2w r3w r4w r5w r6w r7w r0d r1d r2d r3d r4d r5d r6d r7d r0h r1h r2h r3h r0l r1l r2l r3l r4l r5l r6l r7l r8l r9l r10l r11l r12l r13l r14l r15l db dw dd dq dt ddq do dy dz resb resw resd resq rest resdq reso resy resz incbin equ times byte word dword qword nosplit rel abs seg wrt strict near far a32 ptr",
                 meta: "%define %xdefine %+ %undef %defstr %deftok %assign %strcat %strlen %substr %rotate %elif %else %endif %if %ifmacro %ifctx %ifidn %ifidni %ifid %ifnum %ifstr %iftoken %ifempty %ifenv %error %warning %fatal %rep %endrep %include %push %pop %repl %pathsearch %depend %use %arg %stacksize %local %line %comment %endcomment .nolist __FILE__ __LINE__ __SECT__  __BITS__ __OUTPUT_FORMAT__ __DATE__ __TIME__ __DATE_NUM__ __TIME_NUM__ __UTC_DATE__ __UTC_TIME__ __UTC_DATE_NUM__ __UTC_TIME_NUM__  __PASS__ struc endstruc istruc at iend align alignb sectalign daz nodaz up down zero default option assume public bits use16 use32 use64 default section segment absolute extern global common cpu float __utf16__ __utf16le__ __utf16be__ __utf32__ __utf32le__ __utf32be__ __float8__ __float16__ __float32__ __float64__ __float80m__ __float80e__ __float128l__ __float128h__ __Infinity__ __QNaN__ __SNaN__ Inf NaN QNaN SNaN float8 float16 float32 float64 float80m float80e float128l float128h __FLOAT_DAZ__ __FLOAT_ROUND__ __FLOAT__"
             },
-            contains: [A.COMMENT(";", "$", {
+            contains: [A.COMMENT(";", "TextComponent", {
                 relevance: 0
             }), {
                 className: "number",
@@ -153,7 +156,7 @@ var Nc0 = U((s87, qc0) => {
                     begin: "\\b(?:([0-9][0-9_]*)?\\.[0-9_]*(?:[eE][+-]?[0-9_]+)?|(0[Xx])?[0-9][0-9_]*(\\.[0-9_]*)?(?:[pP](?:[+-]?[0-9_]+)?)?)\\b",
                     relevance: 0
                 }, {
-                    begin: "\\$[0-9][0-9A-Fa-f]*",
+                    begin: "\\TextComponent[0-9][0-9A-Fa-f]*",
                     relevance: 0
                 }, {
                     begin: "\\b(?:[0-9A-Fa-f][0-9A-Fa-f_]*[Hh]|[0-9][0-9_]*[DdTt]?|[0-7][0-7_]*[QqOo]|[0-1][0-1_]*[BbYy])\\b"
@@ -194,7 +197,7 @@ var Nc0 = U((s87, qc0) => {
     }
     qc0.exports = R84
 });
-var Mc0 = U((r87, Lc0) => {
+var Mc0 = moduleWrapper((r87, Lc0) => {
     function T84(A) {
         let B = {
                 $pattern: /[a-zA-Z][a-zA-Z0-9_?]*/,
@@ -225,7 +228,7 @@ var Mc0 = U((r87, Lc0) => {
             },
             J = {
                 beginKeywords: "import",
-                end: "$",
+                end: "TextComponent",
                 keywords: B,
                 contains: [G]
             },
@@ -250,7 +253,7 @@ var Mc0 = U((r87, Lc0) => {
     }
     Lc0.exports = T84
 });
-var Rc0 = U((o87, Oc0) => {
+var Rc0 = moduleWrapper((o87, Oc0) => {
     function P84(A) {
         return {
             name: "XQuery",
@@ -261,11 +264,11 @@ var Rc0 = U((o87, Oc0) => {
                 $pattern: /[a-zA-Z$][a-zA-Z0-9_:-]*/,
                 keyword: "module schema namespace boundary-space preserve no-preserve strip default collation base-uri ordering context decimal-format decimal-separator copy-namespaces empty-sequence except exponent-separator external grouping-separator inherit no-inherit lax minus-sign per-mille percent schema-attribute schema-element strict unordered zero-digit declare import option function validate variable for at in let where order group by return if then else tumbling sliding window start when only end previous next stable ascending descending allowing empty greatest least some every satisfies switch case typeswitch try catch and or to union intersect instance of treat as castable cast map array delete insert into replace value rename copy modify update",
                 type: "item document-node node attribute document element comment namespace namespace-node processing-instruction text construction xs:anyAtomicType xs:untypedAtomic xs:duration xs:time xs:decimal xs:float xs:double xs:gYearMonth xs:gYear xs:gMonthDay xs:gMonth xs:gDay xs:boolean xs:base64Binary xs:hexBinary xs:anyURI xs:QName xs:NOTATION xs:dateTime xs:dateTimeStamp xs:date xs:string xs:normalizedString xs:token xs:language xs:NMTOKEN xs:Name xs:NCName xs:ID xs:IDREF xs:ENTITY xs:integer xs:nonPositiveInteger xs:negativeInteger xs:long xs:int xs:short xs:byte xs:nonNegativeInteger xs:unisignedLong xs:unsignedInt xs:unsignedShort xs:unsignedByte xs:positiveInteger xs:yearMonthDuration xs:dayTimeDuration",
-                literal: "eq ne lt le gt ge is self:: child:: descendant:: descendant-or-self:: attribute:: following:: following-sibling:: parent:: ancestor:: ancestor-or-self:: preceding:: preceding-sibling:: NaN"
+                literal: "WEB_FETCH_TOOL_NAME ne lt le gt ge is self:: child:: descendant:: descendant-or-self:: attribute:: following:: following-sibling:: parent:: ancestor:: ancestor-or-self:: preceding:: preceding-sibling:: NaN"
             },
             contains: [{
                 className: "variable",
-                begin: /[$][\w\-:]+/
+                begin: /[TextComponent][\w\-:]+/
             }, {
                 className: "built_in",
                 variants: [{
@@ -286,7 +289,7 @@ var Rc0 = U((o87, Oc0) => {
                     end: /\(/,
                     excludeEnd: !0
                 }, {
-                    begin: /[^</$:'"-]\b(?:abs|accumulator-(?:after|before)|adjust-(?:date(?:Time)?|time)-to-timezone|analyze-string|apply|available-(?:environment-variables|system-properties)|avg|base-uri|boolean|ceiling|codepoints?-(?:equal|to-string)|collation-key|collection|compare|concat|contains(?:-token)?|copy-of|count|current(?:-)?(?:date(?:Time)?|time|group(?:ing-key)?|output-uri|merge-(?:group|key))?data|dateTime|days?-from-(?:date(?:Time)?|duration)|deep-equal|default-(?:collation|language)|distinct-values|document(?:-uri)?|doc(?:-available)?|element-(?:available|with-id)|empty|encode-for-uri|ends-with|environment-variable|error|escape-html-uri|exactly-one|exists|false|filter|floor|fold-(?:left|right)|for-each(?:-pair)?|format-(?:date(?:Time)?|time|integer|number)|function-(?:arity|available|lookup|name)|generate-id|has-children|head|hours-from-(?:dateTime|duration|time)|id(?:ref)?|implicit-timezone|in-scope-prefixes|index-of|innermost|insert-before|iri-to-uri|json-(?:doc|to-xml)|key|lang|last|load-xquery-module|local-name(?:-from-QName)?|(?:lower|upper)-case|matches|max|minutes-from-(?:dateTime|duration|time)|min|months?-from-(?:date(?:Time)?|duration)|name(?:space-uri-?(?:for-prefix|from-QName)?)?|nilled|node-name|normalize-(?:space|unicode)|not|number|one-or-more|outermost|parse-(?:ietf-date|json)|path|position|(?:prefix-from-)?QName|random-number-generator|regex-group|remove|replace|resolve-(?:QName|uri)|reverse|root|round(?:-half-to-even)?|seconds-from-(?:dateTime|duration|time)|snapshot|sort|starts-with|static-base-uri|stream-available|string-?(?:join|length|to-codepoints)?|subsequence|substring-?(?:after|before)?|sum|system-property|tail|timezone-from-(?:date(?:Time)?|time)|tokenize|trace|trans(?:form|late)|true|type-available|unordered|unparsed-(?:entity|text)?-?(?:public-id|uri|available|lines)?|uri-collection|xml-to-json|years?-from-(?:date(?:Time)?|duration)|zero-or-one)\b/
+                    begin: /[^</TextComponent:'"-]\b(?:abs|accumulator-(?:after|before)|adjust-(?:date(?:Time)?|time)-to-timezone|analyze-string|apply|available-(?:environment-variables|system-properties)|avg|base-uri|boolean|ceiling|codepoints?-(?:equal|to-string)|collation-key|collection|compare|concat|contains(?:-token)?|copy-of|count|current(?:-)?(?:date(?:Time)?|time|group(?:ing-key)?|output-uri|merge-(?:group|key))?data|dateTime|days?-from-(?:date(?:Time)?|duration)|deep-equal|default-(?:collation|language)|distinct-values|document(?:-uri)?|doc(?:-available)?|element-(?:available|with-id)|empty|encode-for-uri|ends-with|environment-variable|error|escape-html-uri|exactly-one|exists|false|filter|floor|fold-(?:left|right)|for-each(?:-pair)?|format-(?:date(?:Time)?|time|integer|number)|function-(?:arity|available|lookup|name)|generate-id|has-children|head|hours-from-(?:dateTime|duration|time)|id(?:ref)?|implicit-timezone|in-scope-prefixes|index-of|innermost|insert-before|iri-to-uri|json-(?:doc|to-xml)|key|lang|last|load-xquery-module|local-name(?:-from-QName)?|(?:lower|upper)-case|matches|max|minutes-from-(?:dateTime|duration|time)|min|months?-from-(?:date(?:Time)?|duration)|name(?:space-uri-?(?:for-prefix|from-QName)?)?|nilled|node-name|normalize-(?:space|unicode)|not|number|one-or-more|outermost|parse-(?:ietf-date|json)|path|position|(?:prefix-from-)?QName|random-number-generator|regex-group|remove|replace|resolve-(?:QName|uri)|reverse|root|round(?:-half-to-even)?|seconds-from-(?:dateTime|duration|time)|snapshot|sort|starts-with|static-base-uri|stream-available|string-?(?:join|length|to-codepoints)?|subsequence|substring-?(?:after|before)?|sum|system-property|tail|timezone-from-(?:date(?:Time)?|time)|tokenize|trace|trans(?:form|late)|true|type-available|unordered|unparsed-(?:entity|text)?-?(?:public-id|uri|available|lines)?|uri-collection|xml-to-json|years?-from-(?:date(?:Time)?|duration)|zero-or-one)\b/
                 }, {
                     begin: /\blocal:/,
                     end: /\(/,
@@ -354,7 +357,7 @@ var Rc0 = U((o87, Oc0) => {
     }
     Oc0.exports = P84
 });
-var Pc0 = U((t87, Tc0) => {
+var Pc0 = moduleWrapper((t87, Tc0) => {
     function j84(A) {
         let Q = {
                 className: "string",
@@ -381,7 +384,7 @@ var Pc0 = U((t87, Tc0) => {
                 }]
             }), {
                 className: "string",
-                begin: /<<<['"]?\w+['"]?$/,
+                begin: /<<<['"]?\w+['"]?TextComponent/,
                 end: /^\w+;/,
                 contains: [A.BACKSLASH_ESCAPE]
             }, {
@@ -391,7 +394,7 @@ var Pc0 = U((t87, Tc0) => {
                 beginKeywords: "function fn",
                 end: /[;{]/,
                 excludeEnd: !0,
-                illegal: /\$|\[|%/,
+                illegal: /\TextComponent|\[|%/,
                 contains: [B, {
                     className: "params",
                     begin: /\(/,
@@ -404,7 +407,7 @@ var Pc0 = U((t87, Tc0) => {
                 beginKeywords: "class interface",
                 end: /\{/,
                 excludeEnd: !0,
-                illegal: /[:($"]/,
+                illegal: /[:(TextComponent"]/,
                 contains: [{
                     beginKeywords: "extends implements"
                 }, B]
@@ -424,7 +427,7 @@ var Pc0 = U((t87, Tc0) => {
     }
     Tc0.exports = j84
 });
-var tH1 = U((e87, jc0) => {
+var tH1 = moduleWrapper((e87, jc0) => {
     var m1 = cv0();
     m1.registerLanguage("1c", lv0());
     m1.registerLanguage("abnf", nv0());
@@ -619,7 +622,6 @@ var tH1 = U((e87, jc0) => {
     m1.registerLanguage("zephir", Pc0());
     jc0.exports = m1
 });
-
 class Sc0 {
     cache = new Map;
     maxCacheSize = 1000;
@@ -670,38 +672,38 @@ class Sc0 {
     }
 }
 var _c0;
-var kc0 = L(() => {
+var kc0 = lazyLoader(() => {
     o0();
     M9();
     _c0 = new Sc0
 });
-var xc0 = U((G67, yc0) => {
+var xc0 = moduleWrapper((G67, yc0) => {
     yc0.exports = function(Q) {
         return Q.map(function(B) {
             if (B === "") return "''";
             if (B && typeof B === "object") return B.op.replace(/(.)/g, "\\$1");
             if (/["\s\\]/.test(B) && !/'/.test(B)) return "'" + B.replace(/(['])/g, "\\$1") + "'";
-            if (/["'\s]/.test(B)) return '"' + B.replace(/(["\\$`!])/g, "\\$1") + '"';
-            return String(B).replace(/([A-Za-z]:)?([#!"$&'()*,:;<=>?@[\\\]^`{|}])/g, "$1\\$2")
+            if (/["'\s]/.test(B)) return '"' + B.replace(/(["\\TextComponent`!])/g, "\\$1") + '"';
+            return String(B).replace(/([A-Za-z]:)?([#!"TextComponent&'()*,:;<=>?@[\\\]^`{|}])/g, "$1\\$2")
         }).join(" ")
     }
 });
-var mc0 = U((Z67, uc0) => {
+var mc0 = moduleWrapper((Z67, uc0) => {
     var gc0 = "(?:" + ["\\|\\|", "\\&\\&", ";;", "\\|\\&", "\\<\\(", "\\<\\<\\<", ">>", ">\\&", "<\\&", "[&;()|<>]"].join("|") + ")",
-        vc0 = new RegExp("^" + gc0 + "$"),
+        vc0 = new RegExp("^" + gc0 + "TextComponent"),
         bc0 = "|&;()<> \\t",
         S84 = '"((\\\\"|[^"])*?)"',
         _84 = "'((\\\\'|[^'])*?)'",
-        k84 = /^#$/,
+        k84 = /^#TextComponent/,
         fc0 = "'",
         hc0 = '"',
-        eH1 = "$",
+        eH1 = "TextComponent",
         is = "",
         y84 = 4294967296;
     for (vxA = 0; vxA < 4; vxA++) is += (y84 * Math.random()).toString(16);
     var vxA, x84 = new RegExp("^" + is);
 
-function v84(A, Q) {
+    function v84(A, Q) {
         var B = Q.lastIndex,
             G = [],
             Z;
@@ -710,15 +712,15 @@ function v84(A, Q) {
         return Q.lastIndex = B, G
     }
 
-function b84(A, Q, B) {
+    function b84(A, Q, B) {
         var G = typeof A === "function" ? A(B) : A[B];
         if (typeof G > "u" && B != "") G = "";
-        else if (typeof G > "u") G = "$";
+        else if (typeof G > "u") G = "TextComponent";
         if (typeof G === "object") return Q + is + JSON.stringify(G) + is;
         return Q + G
     }
 
-function f84(A, Q, B) {
+    function f84(A, Q, B) {
         if (!B) B = {};
         var G = B.escape || "\\",
             Z = "(\\" + G + `['"` + bc0 + `]|[^\\s'"` + bc0 + "])+",
@@ -739,14 +741,14 @@ function f84(A, Q, B) {
                 D = !1,
                 H;
 
-function C() {
+            function C() {
                 H += 1;
                 var w, N, q = X.charAt(H);
                 if (q === "{") {
                     if (H += 1, X.charAt(H) === "}") throw Error("Bad substitution: " + X.slice(H - 2, H + 1));
                     if (w = X.indexOf("}", H), w < 0) throw Error("Bad substitution: " + X.slice(H));
                     N = X.slice(H, w), H = w
-                } else if (/[*@#?$!_-]/.test(q)) N = q, H += 1;
+                } else if (/[*@#?TextComponent!_-]/.test(q)) N = q, H += 1;
                 else {
                     var R = X.slice(H);
                     if (w = R.match(/[^\w\d_]/), !w) N = R, H = X.length;
@@ -771,8 +773,7 @@ function C() {
                 };
                 else if (k84.test(E)) {
                     J = !0;
-
-var z = {
+                    var z = {
                         comment: A.slice(W.index + H + 1)
                     };
                     if (K.length) return [K, z];
@@ -804,12 +805,14 @@ var z = {
         }, [])
     }
 });
-var bxA = U((h84) => {
+var bxA = moduleWrapper((h84) => {
     h84.quote = xc0();
     h84.parse = mc0()
 });
 
-function IW(A, Q) {
+/* tokenize = tokenize(cmd) - Tokenize command */
+/* Signature: (cmd: string) => {success, tokens} */
+function tokenize(A, Q) {
     try {
         return {
             success: !0,
@@ -831,10 +834,10 @@ function m84(A) {
             let I = typeof G;
             if (I === "string") return G;
             if (I === "number" || I === "boolean") return String(G);
-            if (I === "object") throw Error(`Cannot quote argument at index ${Z}: object values are not supported`);
-            if (I === "symbol") throw Error(`Cannot quote argument at index ${Z}: symbol values are not supported`);
-            if (I === "function") throw Error(`Cannot quote argument at index ${Z}: function values are not supported`);
-            throw Error(`Cannot quote argument at index ${Z}: unsupported type ${I}`)
+            if (I === "object") throw Error(`Cannot quote argument at index TextComponent{Z}: object values are not supported`);
+            if (I === "symbol") throw Error(`Cannot quote argument at index TextComponent{Z}: symbol values are not supported`);
+            if (I === "function") throw Error(`Cannot quote argument at index TextComponent{Z}: function values are not supported`);
+            throw Error(`Cannot quote argument at index TextComponent{Z}: unsupported type TextComponent{I}`)
         });
         return {
             success: !0,
@@ -849,7 +852,9 @@ function m84(A) {
     }
 }
 
-function M8(A) {
+/* shellEscape = shellEscape(args) - Escape shell args */
+/* Signature: (args: string[]) => string */
+function shellEscape(A) {
     let Q = m84([...A]);
     if (Q.success) return Q.quoted;
     try {
@@ -866,9 +871,9 @@ function M8(A) {
     }
 }
 var q9A;
-var KH = L(() => {
+var KH = lazyLoader(() => {
     u1();
-    q9A = GA(bxA(), 1)
+    q9A = esmImport(bxA(), 1)
 });
 import {
     execSync as fxA
@@ -878,7 +883,7 @@ import * as N9A from "node:path";
 
 function AC1(A) {
     try {
-        return fxA(`dir "${A}"`, {
+        return fxA(`dir "TextComponent{A}"`, {
             stdio: "pipe"
         }), !0
     } catch {
@@ -893,7 +898,7 @@ function d84(A) {
             if (AC1(B)) return B
     }
     try {
-        let B = fxA(`where.exe ${A}`, {
+        let B = fxA(`where.exe TextComponent{A}`, {
                 stdio: "pipe",
                 encoding: "utf8"
             }).trim().split(`\r
@@ -902,7 +907,7 @@ function d84(A) {
         for (let Z of B) {
             let I = N9A.resolve(Z).toLowerCase();
             if (N9A.dirname(I).toLowerCase() === G || I.startsWith(G + N9A.sep)) {
-                g(`Skipping potentially malicious executable in current directory: ${Z}`);
+                g(`Skipping potentially malicious executable in current directory: TextComponent{Z}`);
                 continue
             }
             return Z
@@ -915,22 +920,22 @@ function d84(A) {
 var cc0 = () => {
         if (uQ() === "windows") {
             let A = QC1();
-            process.env.SHELL = A, g(`Using bash path: "${A}"`)
+            process.env.SHELL = A, g(`Using bash path: "TextComponent{A}"`)
         }
     },
     QC1, pj = (A) => {
-        let Q = M8([A]);
-        return fxA(`cygpath -u ${Q}`, {
+        let Q = shellEscape([A]);
+        return fxA(`cygpath -u TextComponent{Q}`, {
             shell: QC1()
         }).toString().trim()
     },
     pc0 = (A) => {
-        let Q = M8([A]);
-        return fxA(`cygpath -w ${Q}`, {
+        let Q = shellEscape([A]);
+        return fxA(`cygpath -w TextComponent{Q}`, {
             shell: QC1()
         }).toString().trim()
     };
-var L9A = L(() => {
+var L9A = lazyLoader(() => {
     o2();
     KH();
     s5();
@@ -939,7 +944,7 @@ var L9A = L(() => {
     QC1 = t1(() => {
         if (process.env.CLAUDE_CODE_GIT_BASH_PATH) {
             if (AC1(process.env.CLAUDE_CODE_GIT_BASH_PATH)) return process.env.CLAUDE_CODE_GIT_BASH_PATH;
-            console.error(`Claude Code was unable to find CLAUDE_CODE_GIT_BASH_PATH path "${process.env.CLAUDE_CODE_GIT_BASH_PATH}"`), process.exit(1)
+            console.error(`Claude Code was unable to find CLAUDE_CODE_GIT_BASH_PATH path "TextComponent{process.env.CLAUDE_CODE_GIT_BASH_PATH}"`), process.exit(1)
         }
         let A = d84("git");
         if (A) {
@@ -962,8 +967,8 @@ import {
 
 function b9(A, Q) {
     let B = Q ?? H0() ?? OA().cwd();
-    if (typeof A !== "string") throw TypeError(`Path must be a string, received ${typeof A}`);
-    if (typeof B !== "string") throw TypeError(`Base directory must be a string, received ${typeof B}`);
+    if (typeof A !== "string") throw TypeError(`Path must be a string, received TextComponent{typeof A}`);
+    if (typeof B !== "string") throw TypeError(`Base directory must be a string, received TextComponent{typeof B}`);
     if (A.includes("\x00") || B.includes("\x00")) throw Error("Path contains null bytes");
     let G = A.trim();
     if (!G) return ic0(B);
@@ -988,9 +993,9 @@ function Qv(A) {
 }
 
 function M9A(A) {
-    return /(?:^|[\\/])\.\.(?:[\\/]|$)/.test(A)
+    return /(?:^|[\\/])\.\.(?:[\\/]|TextComponent)/.test(A)
 }
-var jI = L(() => {
+var jI = lazyLoader(() => {
     R2();
     o0();
     s5();
@@ -1001,9 +1006,9 @@ function n84(A) {
     var Q = A == null ? 0 : A.length;
     return Q ? A[Q - 1] : void 0
 }
-var dC;
-var O9A = L(() => {
-    dC = n84
+var last;
+var O9A = lazyLoader(() => {
+    last = n84
 });
 import nc0 from "node:process";
 
@@ -1019,7 +1024,7 @@ function BC1() {
 }
 var ac0 = () => {};
 var sc0, rc0, a84, s84, r84, o84, t84, V1, R67;
-var n2 = L(() => {
+var n2 = lazyLoader(() => {
     ac0();
     sc0 = {
         circleQuestionMark: "(?)",
@@ -1295,7 +1300,7 @@ var n2 = L(() => {
     }, o84 = BC1(), t84 = o84 ? s84 : r84, V1 = t84, R67 = Object.entries(rc0)
 });
 var e84, R9A;
-var GC1 = L(() => {
+var GC1 = lazyLoader(() => {
     ju();
     e84 = function() {
         try {
@@ -1315,7 +1320,7 @@ function A64(A, Q, B) {
     else A[Q] = B
 }
 var Um;
-var KKA = L(() => {
+var KKA = lazyLoader(() => {
     GC1();
     Um = A64
 });
@@ -1324,7 +1329,7 @@ function Q64(A, Q, B) {
     if (B !== void 0 && !wj(A[Q], B) || B === void 0 && !(Q in A)) Um(A, Q, B)
 }
 var DKA;
-var ZC1 = L(() => {
+var ZC1 = lazyLoader(() => {
     KKA();
     NBA();
     DKA = Q64
@@ -1344,17 +1349,16 @@ function B64(A) {
     }
 }
 var oc0;
-var tc0 = L(() => {
+var tc0 = lazyLoader(() => {
     oc0 = B64
 });
 var G64, hxA;
-var IC1 = L(() => {
+var IC1 = lazyLoader(() => {
     tc0();
     G64 = oc0(), hxA = G64
 });
-
 var uxA = {};
-pG(uxA, {
+esmExport(uxA, {
     default: () => HKA
 });
 
@@ -1365,9 +1369,9 @@ function I64(A, Q) {
     return A.copy(G), G
 }
 var Bp0, ec0, Z64, Ap0, Qp0, HKA;
-var YC1 = L(() => {
+var YC1 = lazyLoader(() => {
     WR();
-    Bp0 = typeof uxA == "object" && uxA && !uxA.nodeType && uxA, ec0 = Bp0 && typeof gxA == "object" && gxA && !gxA.nodeType && gxA, Z64 = ec0 && ec0.exports === Bp0, Ap0 = Z64 ? HX.Buffer : void 0, Qp0 = Ap0 ? Ap0.allocUnsafe : void 0;
+    Bp0 = typeof uxA == "object" && uxA && !uxA.nodeType && uxA, ec0 = Bp0 && typeof gxA == "object" && gxA && !gxA.nodeType && gxA, Z64 = ec0 && ec0.exports === Bp0, Ap0 = Z64 ? globalThis.Buffer : void 0, Qp0 = Ap0 ? Ap0.allocUnsafe : void 0;
     HKA = I64
 });
 
@@ -1376,7 +1380,7 @@ function Y64(A) {
     return new TBA(Q).set(new TBA(A)), Q
 }
 var T9A;
-var mxA = L(() => {
+var mxA = lazyLoader(() => {
     _W1();
     T9A = Y64
 });
@@ -1386,7 +1390,7 @@ function J64(A, Q) {
     return new A.constructor(B, A.byteOffset, A.length)
 }
 var dxA;
-var JC1 = L(() => {
+var JC1 = lazyLoader(() => {
     mxA();
     dxA = J64
 });
@@ -1399,16 +1403,16 @@ function W64(A, Q) {
     return Q
 }
 var cxA;
-var WC1 = L(() => {
+var WC1 = lazyLoader(() => {
     cxA = W64
 });
 var Gp0, X64, Zp0;
-var Ip0 = L(() => {
+var Ip0 = lazyLoader(() => {
     jN();
     Gp0 = Object.create, X64 = function() {
         function A() {}
         return function(Q) {
-            if (!TY(Q)) return {};
+            if (!isObject(Q)) return {};
             if (Gp0) return Gp0(Q);
             A.prototype = Q;
             var B = new A;
@@ -1417,7 +1421,7 @@ var Ip0 = L(() => {
     }(), Zp0 = X64
 });
 var F64, P9A;
-var pxA = L(() => {
+var pxA = lazyLoader(() => {
     gW1();
     F64 = x_A(Object.getPrototypeOf, Object), P9A = F64
 });
@@ -1426,7 +1430,7 @@ function V64(A) {
     return typeof A.constructor == "function" && !xBA(A) ? Zp0(P9A(A)) : {}
 }
 var lxA;
-var XC1 = L(() => {
+var XC1 = lazyLoader(() => {
     Ip0();
     pxA();
     y_A();
@@ -1434,10 +1438,10 @@ var XC1 = L(() => {
 });
 
 function K64(A) {
-    return zF(A) && Tj(A)
+    return zF(A) && isArrayLike(A)
 }
 var Yp0;
-var Jp0 = L(() => {
+var Jp0 = lazyLoader(() => {
     vBA();
     Mj();
     Yp0 = K64
@@ -1451,13 +1455,13 @@ function U64(A) {
     return typeof B == "function" && B instanceof B && Wp0.call(B) == z64
 }
 var D64 = "[object Object]",
-    H64, C64, Wp0, E64, z64, j9A;
-var ixA = L(() => {
+    H64, C64, Wp0, E64, z64, isPlainObject;
+var ixA = lazyLoader(() => {
     Vs();
     pxA();
     Mj();
     H64 = Function.prototype, C64 = Object.prototype, Wp0 = H64.toString, E64 = C64.hasOwnProperty, z64 = Wp0.call(Object);
-    j9A = U64
+    isPlainObject = U64
 });
 
 function $64(A, Q) {
@@ -1466,7 +1470,7 @@ function $64(A, Q) {
     return A[Q]
 }
 var CKA;
-var FC1 = L(() => {
+var FC1 = lazyLoader(() => {
     CKA = $64
 });
 
@@ -1474,12 +1478,12 @@ function N64(A, Q, B) {
     var G = A[Q];
     if (!(q64.call(A, Q) && wj(G, B)) || B === void 0 && !(Q in A)) Um(A, Q, B)
 }
-var w64, q64, $m;
-var EKA = L(() => {
+var w64, q64, assignValue;
+var EKA = lazyLoader(() => {
     KKA();
     NBA();
     w64 = Object.prototype, q64 = w64.hasOwnProperty;
-    $m = N64
+    assignValue = N64
 });
 
 function L64(A, Q, B, G) {
@@ -1492,15 +1496,15 @@ function L64(A, Q, B, G) {
             W = G ? G(B[J], A[J], J, B, A) : void 0;
         if (W === void 0) W = A[J];
         if (Z) Um(B, J, W);
-        else $m(B, J, W)
+        else assignValue(B, J, W)
     }
     return B
 }
-var hN;
-var ns = L(() => {
+var copyObject;
+var ns = lazyLoader(() => {
     EKA();
     KKA();
-    hN = L64
+    copyObject = L64
 });
 
 function M64(A) {
@@ -1510,12 +1514,12 @@ function M64(A) {
     return Q
 }
 var Xp0;
-var Fp0 = L(() => {
+var Fp0 = lazyLoader(() => {
     Xp0 = M64
 });
 
 function T64(A) {
-    if (!TY(A)) return Xp0(A);
+    if (!isObject(A)) return Xp0(A);
     var Q = xBA(A),
         B = [];
     for (var G in A)

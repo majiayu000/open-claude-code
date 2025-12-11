@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_017.js
+ * 处理时间: 2025-12-09T03:41:37.936Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.016Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -18,7 +21,7 @@
  */
 
     function YA9(A) {
-        let Q = `HTTP Client Error with status code: ${A.status}`,
+        let Q = `HTTP Client Error with status code: TextComponent{A.status}`,
             B = {
                 message: Q,
                 exception: {
@@ -48,20 +51,20 @@
         }), B
     }
 
-function cU3(A, Q) {
+    function cU3(A, Q) {
         if (!Q && A instanceof Request) return A;
         if (A instanceof Request && A.bodyUsed) return A;
         return new Request(A, Q)
     }
 
-function JA9() {
+    function JA9() {
         let A = Hg.getClient();
         return A ? Boolean(A.getOptions().sendDefaultPii) : !1
     }
     WA9.HttpClient = yU3;
     WA9.httpClientIntegration = GA9
 });
-var CA9 = U((HA9) => {
+var CA9 = moduleWrapper((HA9) => {
     Object.defineProperty(HA9, "__esModule", {
         value: !0
     });
@@ -83,7 +86,7 @@ var CA9 = U((HA9) => {
         KA9 = FA9.defineIntegration(nU3),
         aU3 = FA9.convertIntegrationFnToClass(VA9, KA9);
 
-function sU3(A, Q) {
+    function sU3(A, Q) {
         let B = yY0.document,
             G = yY0.location && xY0.stripUrlQueryAndFragment(yY0.location.href);
         if (!B || !G) return A;
@@ -99,7 +102,7 @@ function sU3(A, Q) {
         }), A
     }
 
-function DA9(A, Q, B, G) {
+    function DA9(A, Q, B, G) {
         if (A.filename !== B || !A.lineno || !Q.length) return A;
         return xY0.addContextToFrame(Q, A, G), A
     }
@@ -107,7 +110,7 @@ function DA9(A, Q, B, G) {
     HA9.applySourceContextToFrame = DA9;
     HA9.contextLinesIntegration = KA9
 });
-var RA9 = U((OA9) => {
+var RA9 = moduleWrapper((OA9) => {
     Object.defineProperty(OA9, "__esModule", {
         value: !0
     });
@@ -143,7 +146,7 @@ var RA9 = U((OA9) => {
     OA9.ContextLines = MA9.ContextLines;
     OA9.contextLinesIntegration = MA9.contextLinesIntegration
 });
-var YZ1 = U((TA9) => {
+var YZ1 = moduleWrapper((TA9) => {
     Object.defineProperty(TA9, "__esModule", {
         value: !0
     });
@@ -188,12 +191,12 @@ var YZ1 = U((TA9) => {
         ["sat", "6"]
     ];
 
-function N$3(A) {
+    function N$3(A) {
         return q$3.reduce((Q, [B, G]) => Q.replace(new RegExp(B, "gi"), G), A)
     }
     TA9.replaceCronNames = N$3
 });
-var kA9 = U((_A9) => {
+var kA9 = moduleWrapper((_A9) => {
     Object.defineProperty(_A9, "__esModule", {
         value: !0
     });
@@ -201,17 +204,17 @@ var kA9 = U((_A9) => {
         jA9 = YZ1(),
         SA9 = "Automatic instrumentation of CronJob only supports crontab string";
 
-function M$3(A, Q) {
+    function M$3(A, Q) {
         let B = !1;
         return new Proxy(A, {
             construct(G, Z) {
                 let [I, Y, J, W, X, ...F] = Z;
                 if (typeof I !== "string") throw Error(SA9);
-                if (B) throw Error(`A job named '${Q}' has already been scheduled`);
+                if (B) throw Error(`A job named 'TextComponent{Q}' has already been scheduled`);
                 B = !0;
                 let V = jA9.replaceCronNames(I);
 
-function K(D, H) {
+                function K(D, H) {
                     return PA9.withMonitor(Q, () => {
                         return Y(D, H)
                     }, {
@@ -232,7 +235,7 @@ function K(D, H) {
                         timeZone: W
                     } = I;
                     if (typeof Y !== "string") throw Error(SA9);
-                    if (B) throw Error(`A job named '${Q}' has already been scheduled`);
+                    if (B) throw Error(`A job named 'TextComponent{Q}' has already been scheduled`);
                     B = !0;
                     let X = jA9.replaceCronNames(Y);
                     return I.onTick = (F, V) => {
@@ -253,7 +256,7 @@ function K(D, H) {
     }
     _A9.instrumentCron = M$3
 });
-var vA9 = U((xA9) => {
+var vA9 = moduleWrapper((xA9) => {
     var {
         _optionalChain: yA9
     } = l0();
@@ -263,7 +266,7 @@ var vA9 = U((xA9) => {
     var R$3 = P4(),
         T$3 = YZ1();
 
-function P$3(A) {
+    function P$3(A) {
         return new Proxy(A, {
             get(Q, B) {
                 if (B === "schedule" && Q.schedule) return new Proxy(Q.schedule, {
@@ -287,14 +290,14 @@ function P$3(A) {
     }
     xA9.instrumentNodeCron = P$3
 });
-var fA9 = U((bA9) => {
+var fA9 = moduleWrapper((bA9) => {
     Object.defineProperty(bA9, "__esModule", {
         value: !0
     });
     var S$3 = P4(),
         _$3 = YZ1();
 
-function k$3(A) {
+    function k$3(A) {
         return new Proxy(A, {
             get(Q, B) {
                 if (B === "scheduleJob") return new Proxy(Q.scheduleJob, {
@@ -319,7 +322,7 @@ function k$3(A) {
     }
     bA9.instrumentNodeSchedule = k$3
 });
-var bY0 = U((dA9) => {
+var bY0 = moduleWrapper((dA9) => {
     Object.defineProperty(dA9, "__esModule", {
         value: !0
     });
@@ -470,8 +473,8 @@ var bY0 = U((dA9) => {
     dA9.getModuleFromFilename = Qw3
 });
 var cA9, pA9, YQA;
-var JZ1 = L(() => {
-    cA9 = GA(VA(), 1), pA9 = GA(bY0(), 1);
+var JZ1 = lazyLoader(() => {
+    cA9 = esmImport(VA(), 1), pA9 = esmImport(bY0(), 1);
     YQA = class YQA extends cA9.Component {
         constructor(A) {
             super(A);
@@ -515,14 +518,14 @@ function JQA(A) {
     if (!Q) return null;
     switch (A) {
         case "warning":
-            return `/model ${Q.alias} for more context`;
+            return `/model TextComponent{Q.alias} for more context`;
         case "tip":
-            return `Tip: You have access to ${Q.name} with ${Q.multiplier}x more context`;
+            return `Tip: You have access to TextComponent{Q.name} with TextComponent{Q.multiplier}x more context`;
         default:
             return null
     }
 }
-var WZ1 = L(() => {
+var WZ1 = lazyLoader(() => {
     s2();
     vsA()
 });
@@ -540,25 +543,25 @@ function lA9({
         Y = JQA("warning");
     return WQA.createElement(j, {
         flexDirection: "row"
-    }, I ? WQA.createElement($, {
+    }, I ? WQA.createElement(TextComponent, {
         dimColor: !0
-    }, Y ? `Context left until auto-compact: ${Q}% · ${Y}` : `Context left until auto-compact: ${Q}%`) : WQA.createElement($, {
+    }, Y ? `Context left until auto-compact: TextComponent{Q}% · TextComponent{Y}` : `Context left until auto-compact: TextComponent{Q}%`) : WQA.createElement(TextComponent, {
         color: G ? "error" : "warning"
-    }, Y ? `Context low (${Q}% remaining) · ${Y}` : `Context low (${Q}% remaining) · Run /compact to compact & continue`))
+    }, Y ? `Context low (TextComponent{Q}% remaining) · TextComponent{Y}` : `Context low (TextComponent{Q}% remaining) · Run /compact to compact & continue`))
 }
 var WQA;
-var iA9 = L(() => {
+var iA9 = lazyLoader(() => {
     hA();
     M1A();
     N1A();
     WZ1();
-    WQA = GA(VA(), 1)
+    WQA = esmImport(VA(), 1)
 });
 
 function nA9(A) {
     return L1A(A).isAboveWarningThreshold
 }
-var aA9 = L(() => {
+var aA9 = lazyLoader(() => {
     M1A()
 });
 
@@ -570,8 +573,8 @@ function wXA(A) {
     }, [A])
 }
 var sA9;
-var XZ1 = L(() => {
-    sA9 = GA(VA(), 1)
+var XZ1 = lazyLoader(() => {
+    sA9 = esmImport(VA(), 1)
 });
 import {
     basename as BN3
@@ -584,35 +587,35 @@ function rA9({
     let B = wXA(Q),
         G = B === "connected" && (A?.filePath || A?.text && A.lineCount > 0);
     if (B === null || !G || !A) return null;
-    if (A.text && A.lineCount > 0) return SPA.createElement($, {
+    if (A.text && A.lineCount > 0) return SPA.createElement(TextComponent, {
         color: "ide",
         key: "selection-indicator"
     }, "⧉ ", A.lineCount, " ", A.lineCount === 1 ? "line" : "lines", " selected");
-    if (A.filePath) return SPA.createElement($, {
+    if (A.filePath) return SPA.createElement(TextComponent, {
         color: "ide",
         key: "selection-indicator"
     }, "⧉ In ", BN3(A.filePath))
 }
 var SPA;
-var oA9 = L(() => {
+var oA9 = lazyLoader(() => {
     hA();
     XZ1();
-    SPA = GA(VA(), 1)
+    SPA = esmImport(VA(), 1)
 });
 
 function eA9() {
     let [A, Q] = tA9.useState(null);
 
-function B() {
+    function B() {
         return
     }
     return dY(B, 1e4), A
 }
 var tA9, GN3 = 2147483648,
     ZN3 = 2684354560;
-var A19 = L(() => {
+var A19 = lazyLoader(() => {
     $U();
-    tA9 = GA(VA(), 1)
+    tA9 = esmImport(VA(), 1)
 });
 
 function Q19() {
@@ -620,11 +623,11 @@ function Q19() {
     return null
 }
 var _PA;
-var B19 = L(() => {
+var B19 = lazyLoader(() => {
     hA();
     A19();
     M9();
-    _PA = GA(VA(), 1)
+    _PA = esmImport(VA(), 1)
 });
 
 function G19() {
@@ -650,15 +653,15 @@ function G19() {
     return kPA.createElement(j, {
         paddingX: 0,
         paddingY: 0
-    }, kPA.createElement($, {
+    }, kPA.createElement(TextComponent, {
         color: "inactive"
     }, "⧈ Sandbox blocked ", A, " ", A === 1 ? "operation" : "operations", " · ctrl+o for details · /sandbox to disable"))
 }
 var kPA, qXA;
-var Z19 = L(() => {
+var Z19 = lazyLoader(() => {
     hA();
     MJ();
-    kPA = GA(VA(), 1), qXA = GA(VA(), 1)
+    kPA = esmImport(VA(), 1), qXA = esmImport(VA(), 1)
 });
 
 function Y19({
@@ -701,18 +704,18 @@ function Y19({
         mcpClients: X
     }), C.current && ("jsx" in C.current ? z4.createElement(j, {
         key: C.current.key
-    }, C.current.jsx) : z4.createElement($, {
+    }, C.current.jsx) : z4.createElement(TextComponent, {
         color: C.current.color,
         dimColor: !C.current.color
-    }, C.current.text)), N && !R && z4.createElement(j, null, z4.createElement($, {
+    }, C.current.text)), N && !R && z4.createElement(j, null, z4.createElement(TextComponent, {
         dimColor: !0
-    }, "Now using extra usage")), A === "invalid" && z4.createElement(j, null, z4.createElement($, {
+    }, "Now using extra usage")), A === "invalid" && z4.createElement(j, null, z4.createElement(TextComponent, {
         color: "error"
-    }, "Invalid API key · Run /login")), A === "missing" && z4.createElement(j, null, z4.createElement($, {
+    }, "Invalid API key · Run /login")), A === "missing" && z4.createElement(j, null, z4.createElement(TextComponent, {
         color: "error"
-    }, "Missing API key · Run /login")), B && z4.createElement(j, null, z4.createElement($, {
+    }, "Missing API key · Run /login")), B && z4.createElement(j, null, z4.createElement(TextComponent, {
         color: "warning"
-    }, "Debug mode")), A !== "invalid" && A !== "missing" && Z && z4.createElement(j, null, z4.createElement($, {
+    }, "Debug mode")), A !== "invalid" && A !== "missing" && Z && z4.createElement(j, null, z4.createElement(TextComponent, {
         dimColor: !0
     }, K, " tokens")), z4.createElement(lA9, {
         tokenUsage: K
@@ -723,17 +726,17 @@ function Y19({
         isUpdating: G,
         onChangeIsUpdating: J,
         showSuccessMessage: !D
-    }), V ? z4.createElement(j, null, z4.createElement($, {
+    }), V ? z4.createElement(j, null, z4.createElement(TextComponent, {
         dimColor: !0
-    }, "ctrl-r to search history")) : y && z4.createElement(j, null, z4.createElement($, {
+    }, "ctrl-r to search history")) : y && z4.createElement(j, null, z4.createElement(TextComponent, {
         dimColor: !0
-    }, "ctrl-g to edit prompt in "), z4.createElement($, {
+    }, "ctrl-g to edit prompt in "), z4.createElement(TextComponent, {
         bold: !0,
         dimColor: !0
     }, aH(P))), z4.createElement(Q19, null), z4.createElement(G19, null)))
 }
 var z4, FZ1, I19 = 5000;
-var fY0 = L(() => {
+var fY0 = lazyLoader(() => {
     hA();
     Td2();
     JZ1();
@@ -751,7 +754,7 @@ var fY0 = L(() => {
     Z19();
     zi();
     hB();
-    z4 = GA(VA(), 1), FZ1 = GA(VA(), 1)
+    z4 = esmImport(VA(), 1), FZ1 = esmImport(VA(), 1)
 });
 
 function J19(A, Q, B, G) {
@@ -764,7 +767,7 @@ function J19(A, Q, B, G) {
         K(R, q, w.pastedContents, N)
     };
 
-function H() {
+    function H() {
         (async () => {
             let w = [];
             for await (let q of kd1()) w.push(q);
@@ -781,7 +784,7 @@ function H() {
         })()
     }
 
-function C() {
+    function C() {
         return (async () => {
             let w = [];
             for await (let N of kd1()) w.push(N);
@@ -792,11 +795,11 @@ function C() {
         })(), Z <= 0
     }
 
-function E() {
+    function E() {
         J(void 0), I(0), X(!1)
     }
 
-function z() {
+    function z() {
         X(!1), F.current = !0
     }
     return {
@@ -810,12 +813,12 @@ function z() {
     }
 }
 var NXA;
-var W19 = L(() => {
+var W19 = lazyLoader(() => {
     Pp();
     HGA();
     _G0();
     fY0();
-    NXA = GA(VA(), 1)
+    NXA = esmImport(VA(), 1)
 });
 
 function Cg(A) {
@@ -863,7 +866,6 @@ function hY0(A) {
 function E19(A) {
     return A == null ? A === void 0 ? "[object Undefined]" : "[object Null]" : Object.prototype.toString.call(A)
 }
-
 class z19 {
     constructor(A) {
         this._keys = [], this._keyMap = {};
@@ -954,7 +956,6 @@ function qN3(A = 1, Q = 3) {
         }
     }
 }
-
 class DZ1 {
     constructor({
         getFn: A = A8.getFn,
@@ -1010,7 +1011,7 @@ class DZ1 {
     _addObject(A, Q) {
         let B = {
             i: Q,
-            $: {}
+            TextComponent: {}
         };
         this.keys.forEach((G, Z) => {
             let I = G.getFn ? G.getFn(A) : this.getFn(A, G.path);
@@ -1041,13 +1042,13 @@ class DZ1 {
                         })
                     })
                 }
-                B.$[Z] = Y
+                B.TextComponent[Z] = Y
             } else if (sy(I) && !hY0(I)) {
                 let Y = {
                     v: I,
                     n: this.norm.get(I)
                 };
-                B.$[Z] = Y
+                B.TextComponent[Z] = Y
             }
         }), this.records.push(B)
     }
@@ -1216,7 +1217,6 @@ function ON3(A) {
     }
     return Q
 }
-
 class lY0 {
     constructor(A, {
         location: Q = A8.location,
@@ -1310,7 +1310,6 @@ class lY0 {
         return K
     }
 }
-
 class Eg {
     constructor(A) {
         this.pattern = A
@@ -1356,7 +1355,6 @@ function PN3(A, Q = {}) {
         return Z
     })
 }
-
 class R19 {
     constructor(A, {
         isCaseSensitive: Q = A8.isCaseSensitive,

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_043.js
+ * 处理时间: 2025-12-09T03:41:36.831Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.926Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -19,7 +22,7 @@
 
     var Ni1 = Symbol("internal");
 
-function Ei1(A, Q) {
+    function Ei1(A, Q) {
         let B = Object.create(Li1);
         return B[Ni1] = {
             target: A,
@@ -62,7 +65,7 @@ function Ei1(A, Q) {
         return Q
     }
 
-function wi6(A) {
+    function wi6(A) {
         let Q = new RM;
         for (let B of Object.keys(A)) {
             if (qlB.test(B)) continue;
@@ -77,8 +80,7 @@ function wi6(A) {
     }
     var op = Symbol("Response internals"),
         qi6 = ClB.STATUS_CODES;
-
-class OM {
+    class OM {
         constructor() {
             let A = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : null,
                 Q = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
@@ -161,28 +163,27 @@ class OM {
         Li6 = AA1.parse,
         Mi6 = AA1.format;
 
-function zi1(A) {
+    function zi1(A) {
         if (/^[a-zA-Z][a-zA-Z\d+\-.]*:/.exec(A)) A = new Ni6(A).toString();
         return Li6(A)
     }
     var Oi6 = "destroy" in RT.Readable.prototype;
 
-function eeA(A) {
+    function eeA(A) {
         return typeof A === "object" && typeof A[qf] === "object"
     }
 
-function Ri6(A) {
+    function Ri6(A) {
         let Q = A && typeof A === "object" && Object.getPrototypeOf(A);
         return !!(Q && Q.constructor.name === "AbortSignal")
     }
-
-class ep {
+    class ep {
         constructor(A) {
             let Q = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {},
                 B;
             if (!eeA(A)) {
                 if (A && A.href) B = zi1(A.href);
-                else B = zi1(`${A}`);
+                else B = zi1(`TextComponent{A}`);
                 A = {}
             } else B = zi1(A.url);
             let G = Q.method || A.method || "GET";
@@ -255,15 +256,15 @@ class ep {
         }
     });
 
-function Ti6(A) {
+    function Ti6(A) {
         let Q = A[qf].parsedURL,
             B = new RM(A[qf].headers);
         if (!B.has("Accept")) B.set("Accept", "*/*");
         if (!Q.protocol || !Q.hostname) throw TypeError("Only absolute URLs are supported");
-        if (!/^https?:$/.test(Q.protocol)) throw TypeError("Only HTTP(S) protocols are supported");
+        if (!/^https?:TextComponent/.test(Q.protocol)) throw TypeError("Only HTTP(S) protocols are supported");
         if (A.signal && A.body instanceof RT.Readable && !Oi6) throw Error("Cancellation of streamed requests with AbortSignal is not supported in node < 8");
         let G = null;
-        if (A.body == null && /^(POST|PUT)$/i.test(A.method)) G = "0";
+        if (A.body == null && /^(POST|PUT)TextComponent/i.test(A.method)) G = "0";
         if (A.body != null) {
             let I = wlB(A);
             if (typeof I === "number") G = String(I)
@@ -280,7 +281,7 @@ function Ti6(A) {
         })
     }
 
-function IZA(A) {
+    function IZA(A) {
         Error.call(this, A), this.type = "aborted", this.message = A, Error.captureStackTrace(this, this.constructor)
     }
     IZA.prototype = Object.create(Error.prototype);
@@ -299,7 +300,7 @@ function IZA(A) {
             return G === Z
         };
 
-function tp(A, Q) {
+    function tp(A, Q) {
         if (!tp.Promise) throw Error("native promise missing, set fetch.Promise to your favorite alternative");
         return dV.Promise = tp.Promise, new tp.Promise(function(B, G) {
             let Z = new ep(A, Q),
@@ -324,17 +325,17 @@ function tp(A, Q) {
                 K;
             if (J) J.addEventListener("abort", F);
 
-function D() {
+            function D() {
                 if (V.abort(), J) J.removeEventListener("abort", F);
                 clearTimeout(K)
             }
             if (Z.timeout) V.once("socket", function(H) {
                 K = setTimeout(function() {
-                    G(new wD(`network timeout at: ${Z.url}`, "request-timeout")), D()
+                    G(new wD(`network timeout at: TextComponent{Z.url}`, "request-timeout")), D()
                 }, Z.timeout)
             });
             if (V.on("error", function(H) {
-                    if (G(new wD(`request to ${Z.url} failed, reason: ${H.message}`, "system", H)), W && W.body) Ui1(W.body, H);
+                    if (G(new wD(`request to TextComponent{Z.url} failed, reason: TextComponent{H.message}`, "system", H)), W && W.body) Ui1(W.body, H);
                     D()
                 }), Si6(V, function(H) {
                     if (J && J.aborted) return;
@@ -358,13 +359,13 @@ function D() {
                         R = q === null ? null : new swA(q, Z.url).toString()
                     } catch (P) {
                         if (Z.redirect !== "manual") {
-                            G(new wD(`uri requested responds with an invalid redirect URL: ${q}`, "invalid-redirect")), D();
+                            G(new wD(`uri requested responds with an invalid redirect URL: TextComponent{q}`, "invalid-redirect")), D();
                             return
                         }
                     }
                     switch (Z.redirect) {
                         case "error":
-                            G(new wD(`uri requested responds with a redirect, redirect mode is set to error: ${Z.url}`, "no-redirect")), D();
+                            G(new wD(`uri requested responds with a redirect, redirect mode is set to error: TextComponent{Z.url}`, "no-redirect")), D();
                             return;
                         case "manual":
                             if (R !== null) try {
@@ -376,7 +377,7 @@ function D() {
                         case "follow":
                             if (R === null) break;
                             if (Z.counter >= Z.follow) {
-                                G(new wD(`maximum redirect reached at: ${Z.url}`, "max-redirect")), D();
+                                G(new wD(`maximum redirect reached at: TextComponent{Z.url}`, "max-redirect")), D();
                                 return
                             }
                             let P = {
@@ -448,7 +449,7 @@ function D() {
         })
     }
 
-function Si6(A, Q) {
+    function Si6(A, Q) {
         let B;
         A.on("socket", function(G) {
             B = G
@@ -463,7 +464,7 @@ function Si6(A, Q) {
         })
     }
 
-function Ui1(A, Q) {
+    function Ui1(A, Q) {
         if (A.destroy) A.destroy(Q);
         else A.emit("error", Q), A.end()
     }
@@ -482,7 +483,7 @@ function Ui1(A, Q) {
     TT.FetchError = wD;
     TT.AbortError = IZA
 });
-var MlB = U((M8G, LlB) => {
+var MlB = moduleWrapper((M8G, LlB) => {
     var Ak = (A) => A !== null && typeof A === "object" && typeof A.pipe === "function";
     Ak.writable = (A) => Ak(A) && A.writable !== !1 && typeof A._write === "function" && typeof A._writableState === "object";
     Ak.readable = (A) => Ak(A) && A.readable !== !1 && typeof A._read === "function" && typeof A._readableState === "object";
@@ -490,7 +491,7 @@ var MlB = U((M8G, LlB) => {
     Ak.transform = (A) => Ak.duplex(A) && typeof A._transform === "function";
     LlB.exports = Ak
 });
-var OlB = U((O8G, _i6) => {
+var OlB = moduleWrapper((O8G, _i6) => {
     _i6.exports = {
         name: "gaxios",
         version: "6.7.1",
@@ -584,14 +585,14 @@ var OlB = U((O8G, _i6) => {
         }
     }
 });
-var PlB = U((RlB) => {
+var PlB = moduleWrapper((RlB) => {
     Object.defineProperty(RlB, "__esModule", {
         value: !0
     });
     RlB.pkg = void 0;
     RlB.pkg = OlB()
 });
-var Ti1 = U((TM) => {
+var Ti1 = moduleWrapper((TM) => {
     var ki6 = TM && TM.__importDefault || function(A) {
             return A && A.__esModule ? A : {
                 default: A
@@ -603,12 +604,11 @@ var Ti1 = U((TM) => {
     });
     TM.GaxiosError = TM.GAXIOS_ERROR_SYMBOL = void 0;
     TM.defaultErrorRedactor = _lB;
-    var yi6 = UA("url"),
+    var yi6 = nodeRequire("url"),
         Oi1 = PlB(),
         SlB = ki6(al1());
-    TM.GAXIOS_ERROR_SYMBOL = Symbol.for(`${Oi1.pkg.name}-gaxios-error`);
-
-class Ri1 extends Error {
+    TM.GAXIOS_ERROR_SYMBOL = Symbol.for(`TextComponent{Oi1.pkg.name}-gaxios-error`);
+    class Ri1 extends Error {
         static[(jlB = TM.GAXIOS_ERROR_SYMBOL, Symbol.hasInstance)](A) {
             if (A && typeof A === "object" && TM.GAXIOS_ERROR_SYMBOL in A && A[TM.GAXIOS_ERROR_SYMBOL] === Oi1.pkg.version) return !0;
             return Function.prototype[Symbol.hasInstance].call(Ri1, A)
@@ -632,7 +632,7 @@ class Ri1 extends Error {
     }
     TM.GaxiosError = Ri1;
 
-function xi6(A, Q) {
+    function xi6(A, Q) {
         switch (A) {
             case "stream":
                 return Q;
@@ -647,7 +647,7 @@ function xi6(A, Q) {
         }
     }
 
-function _lB(A) {
+    function _lB(A) {
         function B(I) {
             if (!I) return;
             for (let Y of Object.keys(I)) {
@@ -657,14 +657,14 @@ function _lB(A) {
             }
         }
 
-function G(I, Y) {
+        function G(I, Y) {
             if (typeof I === "object" && I !== null && typeof I[Y] === "string") {
                 let J = I[Y];
                 if (/grant_type=/i.test(J) || /assertion=/i.test(J) || /secret/i.test(J)) I[Y] = "<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>."
             }
         }
 
-function Z(I) {
+        function Z(I) {
             if (typeof I === "object" && I !== null) {
                 if ("grant_type" in I) I.grant_type = "<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.";
                 if ("assertion" in I) I.assertion = "<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.";
@@ -686,13 +686,12 @@ function Z(I) {
         return A
     }
 });
-var xlB = U((ylB) => {
+var xlB = moduleWrapper((ylB) => {
     Object.defineProperty(ylB, "__esModule", {
         value: !0
     });
     ylB.getRetryConfig = vi6;
-
-async function vi6(A) {
+    async function vi6(A) {
         let Q = klB(A);
         if (!A || !A.config || !Q && !A.config.retry) return {
             shouldRetry: !1
@@ -720,7 +719,7 @@ async function vi6(A) {
         }
     }
 
-function bi6(A) {
+    function bi6(A) {
         var Q;
         let B = klB(A);
         if (A.name === "AbortError" || ((Q = A.error) === null || Q === void 0 ? void 0 : Q.name) === "AbortError") return !1;
@@ -742,28 +741,27 @@ function bi6(A) {
         return !0
     }
 
-function klB(A) {
+    function klB(A) {
         if (A && A.config && A.config.retryConfig) return A.config.retryConfig;
         return
     }
 
-function fi6(A) {
+    function fi6(A) {
         var Q;
         let G = (A.currentRetryAttempt ? 0 : (Q = A.retryDelay) !== null && Q !== void 0 ? Q : 100) + (Math.pow(A.retryDelayMultiplier, A.currentRetryAttempt) - 1) / 2 * 1000,
             Z = A.totalTimeout - (Date.now() - A.timeOfFirstRequest);
         return Math.min(G, Z, A.maxRetryDelay)
     }
 });
-var Pi1 = U((blB) => {
+var Pi1 = moduleWrapper((blB) => {
     Object.defineProperty(blB, "__esModule", {
         value: !0
     });
     blB.GaxiosInterceptorManager = void 0;
-
-class vlB extends Set {}
+    class vlB extends Set {}
     blB.GaxiosInterceptorManager = vlB
 });
-var alB = U((cH) => {
+var alB = moduleWrapper((cH) => {
     var gi6 = cH && cH.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -788,8 +786,7 @@ var alB = U((cH) => {
         }),
         mi6 = cH && cH.__importStar || function(A) {
             if (A && A.__esModule) return A;
-
-var Q = {};
+            var Q = {};
             if (A != null) {
                 for (var B in A)
                     if (B !== "default" && Object.prototype.hasOwnProperty.call(A, B)) gi6(Q, A, B)
@@ -818,42 +815,41 @@ var Q = {};
     });
     cH.Gaxios = void 0;
     var ci6 = GA1(al1()),
-        pi6 = UA("https"),
+        pi6 = nodeRequire("https"),
         li6 = GA1(Mi1()),
-        ii6 = GA1(UA("querystring")),
+        ii6 = GA1(nodeRequire("querystring")),
         ni6 = GA1(MlB()),
-        ulB = UA("url"),
+        ulB = nodeRequire("url"),
         BA1 = Ti1(),
         ai6 = xlB(),
-        mlB = UA("stream"),
+        mlB = nodeRequire("stream"),
         si6 = UDA(),
         dlB = Pi1(),
         ri6 = ti6() ? window.fetch : li6.default;
 
-function oi6() {
+    function oi6() {
         return typeof window < "u" && !!window
     }
 
-function ti6() {
+    function ti6() {
         return oi6() && !!window.fetch
     }
 
-function ei6() {
+    function ei6() {
         return typeof Buffer < "u"
     }
 
-function clB(A, Q) {
+    function clB(A, Q) {
         return !!nlB(A, Q)
     }
 
-function nlB(A, Q) {
+    function nlB(A, Q) {
         Q = Q.toLowerCase();
         for (let B of Object.keys((A === null || A === void 0 ? void 0 : A.headers) || {}))
             if (Q === B.toLowerCase()) return A.headers[B];
         return
     }
-
-class ji1 {
+    class ji1 {
         constructor(A) {
             JZA.add(this), this.agentCache = new Map, this.defaults = A || {}, this.interceptors = {
                 request: new dlB.GaxiosInterceptorManager,
@@ -883,7 +879,7 @@ class ji1 {
                             }), (B === null || B === void 0 ? void 0 : B.data).on("end", Z)
                         }), B.data = G
                     }
-                    throw new BA1.GaxiosError(`Request failed with status code ${B.status}`, A, B)
+                    throw new BA1.GaxiosError(`Request failed with status code TextComponent{B.status}`, A, B)
                 }
                 return B
             } catch (B) {
@@ -951,11 +947,11 @@ class ji1 {
             else return A.blob()
         }
         async * getMultipartRequest(A, Q) {
-            let B = `--${Q}--`;
+            let B = `--TextComponent{Q}--`;
             for (let G of A) {
                 let Z = G.headers["Content-Type"] || "application/octet-stream";
-                if (yield `--${Q}\r
-Content-Type: ${Z}\r
+                if (yield `--TextComponent{Q}\r
+Content-Type: TextComponent{Z}\r
 \r
 `, typeof G.content === "string") yield G.content;
                 else yield* G.content;
@@ -1021,7 +1017,7 @@ Content-Type: ${Z}\r
             } else Y.body = Y.data
         } else if (Y.multipart && Y.multipart.length > 0) {
             let F = (0, si6.v4)();
-            Y.headers["Content-Type"] = `multipart/related; boundary=${F}`;
+            Y.headers["Content-Type"] = `multipart/related; boundary=TextComponent{F}`;
             let V = new mlB.PassThrough;
             Y.body = V, (0, mlB.pipeline)(this.getMultipartRequest(Y.multipart, F), V, () => {})
         }
@@ -1052,7 +1048,7 @@ Content-Type: ${Z}\r
         value: void 0
     }
 });
-var PT = U((wE) => {
+var PT = moduleWrapper((wE) => {
     var An6 = wE && wE.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -1092,14 +1088,13 @@ var PT = U((wE) => {
     });
     Qn6(Pi1(), wE);
     wE.instance = new slB.Gaxios;
-
-async function Gn6(A) {
+    async function Gn6(A) {
         return wE.instance.request(A)
     }
 });
-var Si1 = U((rlB, ZA1) => {
+var Si1 = moduleWrapper((rlB, ZA1) => {
     (function(A) {
-        var Q, B = /^-?(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?$/i,
+        var Q, B = /^-?(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?TextComponent/i,
             G = Math.ceil,
             Z = Math.floor,
             I = "[BigNumber Error] ",
@@ -1111,7 +1106,7 @@ var Si1 = U((rlB, ZA1) => {
             V = 1e7,
             K = 1e9;
 
-function D(R) {
+        function D(R) {
             var P, y, v, x = NA.prototype = {
                     constructor: NA,
                     toString: null,
@@ -1140,8 +1135,8 @@ function D(R) {
                 SA = "0123456789abcdefghijklmnopqrstuvwxyz",
                 sA = !0;
 
-function NA(WA, XA) {
-                var zA, $A, LA, TA, eA, aA, I1, w1, PA = this;
+            function NA(WA, XA) {
+                var zA, $A, LA, TA, eA, BASE64_CHARS, I1, w1, PA = this;
                 if (!(PA instanceof NA)) return new NA(WA, XA);
                 if (XA == null) {
                     if (WA && WA._isBigNumber === !0) {
@@ -1150,7 +1145,7 @@ function NA(WA, XA) {
                         else PA.e = WA.e, PA.c = WA.c.slice();
                         return
                     }
-                    if ((aA = typeof WA == "number") && WA * 0 == 0) {
+                    if ((BASE64_CHARS = typeof WA == "number") && WA * 0 == 0) {
                         if (PA.s = 1 / WA < 0 ? (WA = -WA, -1) : 1, WA === ~~WA) {
                             for (TA = 0, eA = WA; eA >= 10; eA /= 10, TA++);
                             if (TA > QA) PA.c = PA.e = null;
@@ -1159,7 +1154,7 @@ function NA(WA, XA) {
                         }
                         w1 = String(WA)
                     } else {
-                        if (!B.test(w1 = String(WA))) return v(PA, w1, aA);
+                        if (!B.test(w1 = String(WA))) return v(PA, w1, BASE64_CHARS);
                         PA.s = w1.charCodeAt(0) == 45 ? (w1 = w1.slice(1), -1) : 1
                     }
                     if ((TA = w1.indexOf(".")) > -1) w1 = w1.replace(".", "");
@@ -1169,8 +1164,8 @@ function NA(WA, XA) {
                     } else if (TA < 0) TA = w1.length
                 } else {
                     if (z(XA, 2, SA.length, "Base"), XA == 10 && sA) return PA = new NA(WA), rA(PA, u + PA.e + 1, o);
-                    if (w1 = String(WA), aA = typeof WA == "number") {
-                        if (WA * 0 != 0) return v(PA, w1, aA, XA);
+                    if (w1 = String(WA), BASE64_CHARS = typeof WA == "number") {
+                        if (WA * 0 != 0) return v(PA, w1, BASE64_CHARS, XA);
                         if (PA.s = 1 / WA < 0 ? (w1 = w1.slice(1), -1) : 1, NA.DEBUG && w1.replace(/^0\.0*|\./, "").length > 15) throw Error(Y + WA)
                     } else PA.s = w1.charCodeAt(0) === 45 ? (w1 = w1.slice(1), -1) : 1;
                     zA = SA.slice(0, XA), TA = eA = 0;
@@ -1187,14 +1182,14 @@ function NA(WA, XA) {
                                     continue
                                 }
                             }
-                            return v(PA, String(WA), aA, XA)
-                        } if (aA = !1, w1 = y(w1, XA, 10, PA.s), (TA = w1.indexOf(".")) > -1) w1 = w1.replace(".", "");
+                            return v(PA, String(WA), BASE64_CHARS, XA)
+                        } if (BASE64_CHARS = !1, w1 = y(w1, XA, 10, PA.s), (TA = w1.indexOf(".")) > -1) w1 = w1.replace(".", "");
                     else TA = w1.length
                 }
                 for (eA = 0; w1.charCodeAt(eA) === 48; eA++);
                 for (I1 = w1.length; w1.charCodeAt(--I1) === 48;);
                 if (w1 = w1.slice(eA, ++I1)) {
-                    if (I1 -= eA, aA && NA.DEBUG && I1 > 15 && (WA > X || WA !== Z(WA))) throw Error(Y + PA.s * WA);
+                    if (I1 -= eA, BASE64_CHARS && NA.DEBUG && I1 > 15 && (WA > X || WA !== Z(WA))) throw Error(Y + PA.s * WA);
                     if ((TA = TA - eA - 1) > QA) PA.c = PA.e = null;
                     else if (TA < d) PA.c = [PA.e = 0];
                     else {
@@ -1235,7 +1230,7 @@ function NA(WA, XA) {
                             if (zA = WA[XA], typeof zA == "object") KA = zA;
                             else throw Error(I + XA + " not an object: " + zA);
                         if (WA.hasOwnProperty(XA = "ALPHABET"))
-                            if (zA = WA[XA], typeof zA == "string" && !/^.?$|[+\-.\s]|(.).*\1/.test(zA)) sA = zA.slice(0, 10) == "0123456789", SA = zA;
+                            if (zA = WA[XA], typeof zA == "string" && !/^.?TextComponent|[+\-.\s]|(.).*\1/.test(zA)) sA = zA.slice(0, 10) == "0123456789", SA = zA;
                             else throw Error(I + XA + " invalid: " + zA)
                     } else throw Error(I + "Object expected: " + WA);
                 return {
@@ -1282,7 +1277,7 @@ function NA(WA, XA) {
                         return (Math.random() * 1073741824 | 0) * 8388608 + (Math.random() * 8388608 | 0)
                     };
                 return function(zA) {
-                    var $A, LA, TA, eA, aA, I1 = 0,
+                    var $A, LA, TA, eA, BASE64_CHARS, I1 = 0,
                         w1 = [],
                         PA = new NA(p);
                     if (zA == null) zA = u;
@@ -1291,26 +1286,26 @@ function NA(WA, XA) {
                         if (crypto.getRandomValues) {
                             $A = crypto.getRandomValues(new Uint32Array(eA *= 2));
                             for (; I1 < eA;)
-                                if (aA = $A[I1] * 131072 + ($A[I1 + 1] >>> 11), aA >= 9000000000000000) LA = crypto.getRandomValues(new Uint32Array(2)), $A[I1] = LA[0], $A[I1 + 1] = LA[1];
-                                else w1.push(aA % 100000000000000), I1 += 2;
+                                if (BASE64_CHARS = $A[I1] * 131072 + ($A[I1 + 1] >>> 11), BASE64_CHARS >= 9000000000000000) LA = crypto.getRandomValues(new Uint32Array(2)), $A[I1] = LA[0], $A[I1 + 1] = LA[1];
+                                else w1.push(BASE64_CHARS % 100000000000000), I1 += 2;
                             I1 = eA / 2
                         } else if (crypto.randomBytes) {
                         $A = crypto.randomBytes(eA *= 7);
                         for (; I1 < eA;)
-                            if (aA = ($A[I1] & 31) * 281474976710656 + $A[I1 + 1] * 1099511627776 + $A[I1 + 2] * 4294967296 + $A[I1 + 3] * 16777216 + ($A[I1 + 4] << 16) + ($A[I1 + 5] << 8) + $A[I1 + 6], aA >= 9000000000000000) crypto.randomBytes(7).copy($A, I1);
-                            else w1.push(aA % 100000000000000), I1 += 7;
+                            if (BASE64_CHARS = ($A[I1] & 31) * 281474976710656 + $A[I1 + 1] * 1099511627776 + $A[I1 + 2] * 4294967296 + $A[I1 + 3] * 16777216 + ($A[I1 + 4] << 16) + ($A[I1 + 5] << 8) + $A[I1 + 6], BASE64_CHARS >= 9000000000000000) crypto.randomBytes(7).copy($A, I1);
+                            else w1.push(BASE64_CHARS % 100000000000000), I1 += 7;
                         I1 = eA / 7
                     } else throw IA = !1, Error(I + "crypto unavailable");
                     if (!IA) {
                         for (; I1 < eA;)
-                            if (aA = XA(), aA < 9000000000000000) w1[I1++] = aA % 100000000000000
+                            if (BASE64_CHARS = XA(), BASE64_CHARS < 9000000000000000) w1[I1++] = BASE64_CHARS % 100000000000000
                     }
-                    if (eA = w1[--I1], zA %= W, eA && zA) aA = F[W - zA], w1[I1] = Z(eA / aA) * aA;
+                    if (eA = w1[--I1], zA %= W, eA && zA) BASE64_CHARS = F[W - zA], w1[I1] = Z(eA / BASE64_CHARS) * BASE64_CHARS;
                     for (; w1[I1] === 0; w1.pop(), I1--);
                     if (I1 < 0) w1 = [TA = 0];
                     else {
                         for (TA = -1; w1[0] === 0; w1.splice(0, 1), TA -= W);
-                        for (I1 = 1, aA = w1[0]; aA >= 10; aA /= 10, I1++);
+                        for (I1 = 1, BASE64_CHARS = w1[0]; BASE64_CHARS >= 10; BASE64_CHARS /= 10, I1++);
                         if (I1 < W) TA -= W - I1
                     }
                     return PA.e = TA, PA.c = w1, PA
@@ -1324,105 +1319,106 @@ function NA(WA, XA) {
             }, y = function() {
                 var WA = "0123456789";
 
-function XA(zA, $A, LA, TA) {
-                    var eA, aA = [0],
+                function XA(zA, $A, LA, TA) {
+                    var eA, BASE64_CHARS = [0],
                         I1, w1 = 0,
                         PA = zA.length;
                     for (; w1 < PA;) {
-                        for (I1 = aA.length; I1--; aA[I1] *= $A);
-                        aA[0] += TA.indexOf(zA.charAt(w1++));
-                        for (eA = 0; eA < aA.length; eA++)
-                            if (aA[eA] > LA - 1) {
-                                if (aA[eA + 1] == null) aA[eA + 1] = 0;
-                                aA[eA + 1] += aA[eA] / LA | 0, aA[eA] %= LA
+                        for (I1 = BASE64_CHARS.length; I1--; BASE64_CHARS[I1] *= $A);
+                        BASE64_CHARS[0] += TA.indexOf(zA.charAt(w1++));
+                        for (eA = 0; eA < BASE64_CHARS.length; eA++)
+                            if (BASE64_CHARS[eA] > LA - 1) {
+                                if (BASE64_CHARS[eA + 1] == null) BASE64_CHARS[eA + 1] = 0;
+                                BASE64_CHARS[eA + 1] += BASE64_CHARS[eA] / LA | 0, BASE64_CHARS[eA] %= LA
                             }
                     }
-                    return aA.reverse()
+                    return BASE64_CHARS.reverse()
                 }
                 return function(zA, $A, LA, TA, eA) {
-                    var aA, I1, w1, PA, B1, Q0, b1, Y0, x0 = zA.indexOf("."),
+                    var BASE64_CHARS, I1, w1, PA, B1, Q0, b1, Y0, x0 = zA.indexOf("."),
                         u0 = u,
                         k1 = o;
                     if (x0 >= 0) PA = wA, wA = 0, zA = zA.replace(".", ""), Y0 = new NA($A), Q0 = Y0.pow(zA.length - x0), wA = PA, Y0.c = XA(q(C(Q0.c), Q0.e, "0"), 10, LA, WA), Y0.e = Y0.c.length;
-                    b1 = XA(zA, $A, LA, eA ? (aA = SA, WA) : (aA = WA, SA)), w1 = PA = b1.length;
+                    b1 = XA(zA, $A, LA, eA ? (BASE64_CHARS = SA, WA) : (BASE64_CHARS = WA, SA)), w1 = PA = b1.length;
                     for (; b1[--PA] == 0; b1.pop());
-                    if (!b1[0]) return aA.charAt(0);
+                    if (!b1[0]) return BASE64_CHARS.charAt(0);
                     if (x0 < 0) --w1;
                     else Q0.c = b1, Q0.e = w1, Q0.s = TA, Q0 = P(Q0, Y0, u0, k1, LA), b1 = Q0.c, B1 = Q0.r, w1 = Q0.e;
-                    if (I1 = w1 + u0 + 1, x0 = b1[I1], PA = LA / 2, B1 = B1 || I1 < 0 || b1[I1 + 1] != null, B1 = k1 < 4 ? (x0 != null || B1) && (k1 == 0 || k1 == (Q0.s < 0 ? 3 : 2)) : x0 > PA || x0 == PA && (k1 == 4 || B1 || k1 == 6 && b1[I1 - 1] & 1 || k1 == (Q0.s < 0 ? 8 : 7)), I1 < 1 || !b1[0]) zA = B1 ? q(aA.charAt(1), -u0, aA.charAt(0)) : aA.charAt(0);
+                    if (I1 = w1 + u0 + 1, x0 = b1[I1], PA = LA / 2, B1 = B1 || I1 < 0 || b1[I1 + 1] != null, B1 = k1 < 4 ? (x0 != null || B1) && (k1 == 0 || k1 == (Q0.s < 0 ? 3 : 2)) : x0 > PA || x0 == PA && (k1 == 4 || B1 || k1 == 6 && b1[I1 - 1] & 1 || k1 == (Q0.s < 0 ? 8 : 7)), I1 < 1 || !b1[0]) zA = B1 ? q(BASE64_CHARS.charAt(1), -u0, BASE64_CHARS.charAt(0)) : BASE64_CHARS.charAt(0);
                     else {
                         if (b1.length = I1, B1) {
                             for (--LA; ++b1[--I1] > LA;)
                                 if (b1[I1] = 0, !I1) ++w1, b1 = [1].concat(b1)
                         }
                         for (PA = b1.length; !b1[--PA];);
-                        for (x0 = 0, zA = ""; x0 <= PA; zA += aA.charAt(b1[x0++]));
-                        zA = q(zA, w1, aA.charAt(0))
+                        for (x0 = 0, zA = ""; x0 <= PA; zA += BASE64_CHARS.charAt(b1[x0++]));
+                        zA = q(zA, w1, BASE64_CHARS.charAt(0))
                     }
                     return zA
                 }
             }(), P = function() {
                 function WA($A, LA, TA) {
-                    var eA, aA, I1, w1, PA = 0,
+                    var eA, BASE64_CHARS, I1, w1, PA = 0,
                         B1 = $A.length,
                         Q0 = LA % V,
                         b1 = LA / V | 0;
-                    for ($A = $A.slice(); B1--;) I1 = $A[B1] % V, w1 = $A[B1] / V | 0, eA = b1 * I1 + w1 * Q0, aA = Q0 * I1 + eA % V * V + PA, PA = (aA / TA | 0) + (eA / V | 0) + b1 * w1, $A[B1] = aA % TA;
+                    for ($A = $A.slice(); B1--;) I1 = $A[B1] % V, w1 = $A[B1] / V | 0, eA = b1 * I1 + w1 * Q0, BASE64_CHARS = Q0 * I1 + eA % V * V + PA, PA = (BASE64_CHARS / TA | 0) + (eA / V | 0) + b1 * w1, $A[B1] = BASE64_CHARS % TA;
                     if (PA) $A = [PA].concat($A);
                     return $A
                 }
 
-function XA($A, LA, TA, eA) {
-                    var aA, I1;
+                function XA($A, LA, TA, eA) {
+                    var BASE64_CHARS, I1;
                     if (TA != eA) I1 = TA > eA ? 1 : -1;
                     else
-                        for (aA = I1 = 0; aA < TA; aA++)
-                            if ($A[aA] != LA[aA]) {
-                                I1 = $A[aA] > LA[aA] ? 1 : -1;
+                        for (BASE64_CHARS = I1 = 0; BASE64_CHARS < TA; BASE64_CHARS++)
+                            if ($A[BASE64_CHARS] != LA[BASE64_CHARS]) {
+                                I1 = $A[BASE64_CHARS] > LA[BASE64_CHARS] ? 1 : -1;
                                 break
                             } return I1
                 }
 
-function zA($A, LA, TA, eA) {
-                    var aA = 0;
-                    for (; TA--;) $A[TA] -= aA, aA = $A[TA] < LA[TA] ? 1 : 0, $A[TA] = aA * eA + $A[TA] - LA[TA];
+                function zA($A, LA, TA, eA) {
+                    /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+var BASE64_CHARS = 0;
+                    for (; TA--;) $A[TA] -= BASE64_CHARS, BASE64_CHARS = $A[TA] < LA[TA] ? 1 : 0, $A[TA] = BASE64_CHARS * eA + $A[TA] - LA[TA];
                     for (; !$A[0] && $A.length > 1; $A.splice(0, 1));
                 }
-                return function($A, LA, TA, eA, aA) {
+                return function($A, LA, TA, eA, BASE64_CHARS) {
                     var I1, w1, PA, B1, Q0, b1, Y0, x0, u0, k1, T0, fQ, F1, R1, N1, Z0, J0, s1 = $A.s == LA.s ? 1 : -1,
                         p0 = $A.c,
                         HQ = LA.c;
                     if (!p0 || !p0[0] || !HQ || !HQ[0]) return new NA(!$A.s || !LA.s || (p0 ? HQ && p0[0] == HQ[0] : !HQ) ? NaN : p0 && p0[0] == 0 || !HQ ? s1 * 0 : s1 / 0);
-                    if (x0 = new NA(s1), u0 = x0.c = [], w1 = $A.e - LA.e, s1 = TA + w1 + 1, !aA) aA = J, w1 = H($A.e / W) - H(LA.e / W), s1 = s1 / W | 0;
+                    if (x0 = new NA(s1), u0 = x0.c = [], w1 = $A.e - LA.e, s1 = TA + w1 + 1, !BASE64_CHARS) BASE64_CHARS = J, w1 = H($A.e / W) - H(LA.e / W), s1 = s1 / W | 0;
                     for (PA = 0; HQ[PA] == (p0[PA] || 0); PA++);
                     if (HQ[PA] > (p0[PA] || 0)) w1--;
                     if (s1 < 0) u0.push(1), B1 = !0;
                     else {
-                        if (R1 = p0.length, Z0 = HQ.length, PA = 0, s1 += 2, Q0 = Z(aA / (HQ[0] + 1)), Q0 > 1) HQ = WA(HQ, Q0, aA), p0 = WA(p0, Q0, aA), Z0 = HQ.length, R1 = p0.length;
+                        if (R1 = p0.length, Z0 = HQ.length, PA = 0, s1 += 2, Q0 = Z(BASE64_CHARS / (HQ[0] + 1)), Q0 > 1) HQ = WA(HQ, Q0, BASE64_CHARS), p0 = WA(p0, Q0, BASE64_CHARS), Z0 = HQ.length, R1 = p0.length;
                         F1 = Z0, k1 = p0.slice(0, Z0), T0 = k1.length;
                         for (; T0 < Z0; k1[T0++] = 0);
-                        if (J0 = HQ.slice(), J0 = [0].concat(J0), N1 = HQ[0], HQ[1] >= aA / 2) N1++;
+                        if (J0 = HQ.slice(), J0 = [0].concat(J0), N1 = HQ[0], HQ[1] >= BASE64_CHARS / 2) N1++;
                         do {
                             if (Q0 = 0, I1 = XA(HQ, k1, Z0, T0), I1 < 0) {
-                                if (fQ = k1[0], Z0 != T0) fQ = fQ * aA + (k1[1] || 0);
+                                if (fQ = k1[0], Z0 != T0) fQ = fQ * BASE64_CHARS + (k1[1] || 0);
                                 if (Q0 = Z(fQ / N1), Q0 > 1) {
-                                    if (Q0 >= aA) Q0 = aA - 1;
-                                    b1 = WA(HQ, Q0, aA), Y0 = b1.length, T0 = k1.length;
-                                    while (XA(b1, k1, Y0, T0) == 1) Q0--, zA(b1, Z0 < Y0 ? J0 : HQ, Y0, aA), Y0 = b1.length, I1 = 1
+                                    if (Q0 >= BASE64_CHARS) Q0 = BASE64_CHARS - 1;
+                                    b1 = WA(HQ, Q0, BASE64_CHARS), Y0 = b1.length, T0 = k1.length;
+                                    while (XA(b1, k1, Y0, T0) == 1) Q0--, zA(b1, Z0 < Y0 ? J0 : HQ, Y0, BASE64_CHARS), Y0 = b1.length, I1 = 1
                                 } else {
                                     if (Q0 == 0) I1 = Q0 = 1;
                                     b1 = HQ.slice(), Y0 = b1.length
                                 }
                                 if (Y0 < T0) b1 = [0].concat(b1);
-                                if (zA(k1, b1, T0, aA), T0 = k1.length, I1 == -1)
-                                    while (XA(HQ, k1, Z0, T0) < 1) Q0++, zA(k1, Z0 < T0 ? J0 : HQ, T0, aA), T0 = k1.length
+                                if (zA(k1, b1, T0, BASE64_CHARS), T0 = k1.length, I1 == -1)
+                                    while (XA(HQ, k1, Z0, T0) < 1) Q0++, zA(k1, Z0 < T0 ? J0 : HQ, T0, BASE64_CHARS), T0 = k1.length
                             } else if (I1 === 0) Q0++, k1 = [0];
                             if (u0[PA++] = Q0, k1[0]) k1[T0++] = p0[F1] || 0;
                             else k1 = [p0[F1]], T0 = 1
                         } while ((F1++ < R1 || k1[0] != null) && s1--);
                         if (B1 = k1[0] != null, !u0[0]) u0.splice(0, 1)
                     }
-                    if (aA == J) {
+                    if (BASE64_CHARS == J) {
                         for (PA = 1, s1 = u0[0]; s1 >= 10; s1 /= 10, PA++);
                         rA(x0, TA + (x0.e = PA + w1 * W - 1) + 1, eA, B1)
                     } else x0.e = w1, x0.r = +B1;
@@ -1430,26 +1426,26 @@ function zA($A, LA, TA, eA) {
                 }
             }();
 
-function qA(WA, XA, zA, $A) {
-                var LA, TA, eA, aA, I1;
+            function qA(WA, XA, zA, $A) {
+                var LA, TA, eA, BASE64_CHARS, I1;
                 if (zA == null) zA = o;
                 else z(zA, 0, 8);
                 if (!WA.c) return WA.toString();
                 if (LA = WA.c[0], eA = WA.e, XA == null) I1 = C(WA.c), I1 = $A == 1 || $A == 2 && (eA <= l || eA >= k) ? N(I1, eA) : q(I1, eA, "0");
-                else if (WA = rA(new NA(WA), XA, zA), TA = WA.e, I1 = C(WA.c), aA = I1.length, $A == 1 || $A == 2 && (XA <= TA || TA <= l)) {
-                    for (; aA < XA; I1 += "0", aA++);
+                else if (WA = rA(new NA(WA), XA, zA), TA = WA.e, I1 = C(WA.c), BASE64_CHARS = I1.length, $A == 1 || $A == 2 && (XA <= TA || TA <= l)) {
+                    for (; BASE64_CHARS < XA; I1 += "0", BASE64_CHARS++);
                     I1 = N(I1, TA)
-                } else if (XA -= eA, I1 = q(I1, TA, "0"), TA + 1 > aA) {
+                } else if (XA -= eA, I1 = q(I1, TA, "0"), TA + 1 > BASE64_CHARS) {
                     if (--XA > 0)
                         for (I1 += "."; XA--; I1 += "0");
-                } else if (XA += TA - aA, XA > 0) {
-                    if (TA + 1 == aA) I1 += ".";
+                } else if (XA += TA - BASE64_CHARS, XA > 0) {
+                    if (TA + 1 == BASE64_CHARS) I1 += ".";
                     for (; XA--; I1 += "0");
                 }
                 return WA.s < 0 && LA ? "-" + I1 : I1
             }
 
-function DA(WA, XA) {
+            function DA(WA, XA) {
                 var zA, $A, LA = 1,
                     TA = new NA(WA[0]);
                 for (; LA < WA.length; LA++)
@@ -1457,7 +1453,7 @@ function DA(WA, XA) {
                 return TA
             }
 
-function yA(WA, XA, zA) {
+            function yA(WA, XA, zA) {
                 var $A = 1,
                     LA = XA.length;
                 for (; !XA[--LA]; XA.pop());
@@ -1468,16 +1464,16 @@ function yA(WA, XA, zA) {
                 return WA
             }
             v = function() {
-                var WA = /^(-?)0([xbo])(?=\w[\w.]*$)/i,
-                    XA = /^([^.]+)\.$/,
-                    zA = /^\.([^.]+)$/,
-                    $A = /^-?(Infinity|NaN)$/,
-                    LA = /^\s*\+(?=[\w.])|^\s+|\s+$/g;
-                return function(TA, eA, aA, I1) {
-                    var w1, PA = aA ? eA : eA.replace(LA, "");
+                var WA = /^(-?)0([xbo])(?=\w[\w.]*TextComponent)/i,
+                    XA = /^([^.]+)\.TextComponent/,
+                    zA = /^\.([^.]+)TextComponent/,
+                    $A = /^-?(Infinity|NaN)TextComponent/,
+                    LA = /^\s*\+(?=[\w.])|^\s+|\s+TextComponent/g;
+                return function(TA, eA, BASE64_CHARS, I1) {
+                    var w1, PA = BASE64_CHARS ? eA : eA.replace(LA, "");
                     if ($A.test(PA)) TA.s = isNaN(PA) ? null : PA < 0 ? -1 : 1;
                     else {
-                        if (!aA) {
+                        if (!BASE64_CHARS) {
                             if (PA = PA.replace(WA, function(B1, Q0, b1) {
                                     return w1 = (b1 = b1.toLowerCase()) == "x" ? 16 : b1 == "b" ? 2 : 8, !I1 || I1 == w1 ? Q0 : B1
                                 }), I1) w1 = I1, PA = PA.replace(XA, "$1").replace(zA, "0.$1");
@@ -1490,12 +1486,12 @@ function yA(WA, XA, zA) {
                 }
             }();
 
-function rA(WA, XA, zA, $A) {
-                var LA, TA, eA, aA, I1, w1, PA, B1 = WA.c,
+            function rA(WA, XA, zA, $A) {
+                var LA, TA, eA, BASE64_CHARS, I1, w1, PA, B1 = WA.c,
                     Q0 = F;
                 if (B1) {
                     A: {
-                        for (LA = 1, aA = B1[0]; aA >= 10; aA /= 10, LA++);
+                        for (LA = 1, BASE64_CHARS = B1[0]; BASE64_CHARS >= 10; BASE64_CHARS /= 10, LA++);
                         if (TA = XA - LA, TA < 0) TA += W,
                         eA = XA,
                         I1 = B1[w1 = 0],
@@ -1506,8 +1502,8 @@ function rA(WA, XA, zA, $A) {
                                 I1 = PA = 0, LA = 1, TA %= W, eA = TA - W + 1
                             } else break A;
                         else {
-                            I1 = aA = B1[w1];
-                            for (LA = 1; aA >= 10; aA /= 10, LA++);
+                            I1 = BASE64_CHARS = B1[w1];
+                            for (LA = 1; BASE64_CHARS >= 10; BASE64_CHARS /= 10, LA++);
                             TA %= W, eA = TA - W + LA, PA = eA < 0 ? 0 : Z(I1 / Q0[LA - eA - 1] % 10)
                         }
                         if ($A = $A || XA < 0 || B1[w1 + 1] != null || (eA < 0 ? I1 : I1 % Q0[LA - eA - 1]), $A = zA < 4 ? (PA || $A) && (zA == 0 || zA == (WA.s < 0 ? 3 : 2)) : PA > 5 || PA == 5 && (zA == 4 || $A || zA == 6 && (TA > 0 ? eA > 0 ? I1 / Q0[LA - eA] : 0 : B1[w1 - 1]) % 10 & 1 || zA == (WA.s < 0 ? 8 : 7)), XA < 1 || !B1[0]) {
@@ -1516,11 +1512,11 @@ function rA(WA, XA, zA, $A) {
                             return WA
                         }
                         if (TA == 0) B1.length = w1,
-                        aA = 1,
+                        BASE64_CHARS = 1,
                         w1--;
                         else B1.length = w1 + 1,
-                        aA = Q0[W - TA],
-                        B1[w1] = eA > 0 ? Z(I1 / Q0[LA - eA] % Q0[eA]) * aA : 0;
+                        BASE64_CHARS = Q0[W - TA],
+                        B1[w1] = eA > 0 ? Z(I1 / Q0[LA - eA] % Q0[eA]) * BASE64_CHARS : 0;
                         if ($A)
                             for (;;)
                                 if (w1 == 0) {

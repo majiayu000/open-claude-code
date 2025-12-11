@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_053.js
+ * 处理时间: 2025-12-09T03:41:36.957Z
+ * 变量映射: 4 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.935Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-var D02 = U((gDG, K02) => {
+var D02 = moduleWrapper((gDG, K02) => {
     var W02 = 1 / 0,
         F02 = 9007199254740991,
         IQ5 = 179769313486231570000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
@@ -27,14 +30,14 @@ var D02 = U((gDG, K02) => {
         WQ5 = "[object GeneratorFunction]",
         XQ5 = "[object String]",
         FQ5 = "[object Symbol]",
-        VQ5 = /^\s+|\s+$/g,
-        KQ5 = /^[-+]0x[0-9a-f]+$/i,
-        DQ5 = /^0b[01]+$/i,
-        HQ5 = /^0o[0-7]+$/i,
-        CQ5 = /^(?:0|[1-9]\d*)$/,
+        VQ5 = /^\s+|\s+TextComponent/g,
+        KQ5 = /^[-+]0x[0-9a-f]+TextComponent/i,
+        DQ5 = /^0b[01]+TextComponent/i,
+        HQ5 = /^0o[0-7]+TextComponent/i,
+        CQ5 = /^(?:0|[1-9]\d*)TextComponent/,
         EQ5 = parseInt;
 
-function zQ5(A, Q) {
+    function zQ5(A, Q) {
         var B = -1,
             G = A ? A.length : 0,
             Z = Array(G);
@@ -42,7 +45,7 @@ function zQ5(A, Q) {
         return Z
     }
 
-function UQ5(A, Q, B, G) {
+    function UQ5(A, Q, B, G) {
         var Z = A.length,
             I = B + (G ? 1 : -1);
         while (G ? I-- : ++I < Z)
@@ -59,24 +62,24 @@ function UQ5(A, Q, B, G) {
         return -1
     }
 
-function wQ5(A) {
+    function wQ5(A) {
         return A !== A
     }
 
-function qQ5(A, Q) {
+    function qQ5(A, Q) {
         var B = -1,
             G = Array(A);
         while (++B < A) G[B] = Q(B);
         return G
     }
 
-function NQ5(A, Q) {
+    function NQ5(A, Q) {
         return zQ5(Q, function(B) {
             return A[B]
         })
     }
 
-function LQ5(A, Q) {
+    function LQ5(A, Q) {
         return function(B) {
             return A(Q(B))
         }
@@ -88,7 +91,7 @@ function LQ5(A, Q) {
         OQ5 = LQ5(Object.keys, Object),
         RQ5 = Math.max;
 
-function TQ5(A, Q) {
+    function TQ5(A, Q) {
         var B = V02(A) || kQ5(A) ? qQ5(A.length, String) : [],
             G = B.length,
             Z = !!G;
@@ -97,72 +100,71 @@ function TQ5(A, Q) {
         return B
     }
 
-function PQ5(A) {
+    function PQ5(A) {
         if (!SQ5(A)) return OQ5(A);
-
-var Q = [];
+        var Q = [];
         for (var B in Object(A))
             if (No1.call(A, B) && B != "constructor") Q.push(B);
         return Q
     }
 
-function jQ5(A, Q) {
+    function jQ5(A, Q) {
         return Q = Q == null ? F02 : Q, !!Q && (typeof A == "number" || CQ5.test(A)) && (A > -1 && A % 1 == 0 && A < Q)
     }
 
-function SQ5(A) {
+    function SQ5(A) {
         var Q = A && A.constructor,
             B = typeof Q == "function" && Q.prototype || R01;
         return A === B
     }
 
-function _Q5(A, Q, B, G) {
+    function _Q5(A, Q, B, G) {
         A = Lo1(A) ? A : dQ5(A), B = B && !G ? gQ5(B) : 0;
         var Z = A.length;
         if (B < 0) B = RQ5(Z + B, 0);
         return bQ5(A) ? B <= Z && A.indexOf(Q, B) > -1 : !!Z && $Q5(A, Q, B) > -1
     }
 
-function kQ5(A) {
+    function kQ5(A) {
         return yQ5(A) && No1.call(A, "callee") && (!MQ5.call(A, "callee") || T01.call(A) == YQ5)
     }
     var V02 = Array.isArray;
 
-function Lo1(A) {
+    function Lo1(A) {
         return A != null && vQ5(A.length) && !xQ5(A)
     }
 
-function yQ5(A) {
+    function yQ5(A) {
         return Mo1(A) && Lo1(A)
     }
 
-function xQ5(A) {
+    function xQ5(A) {
         var Q = qo1(A) ? T01.call(A) : "";
         return Q == JQ5 || Q == WQ5
     }
 
-function vQ5(A) {
+    function vQ5(A) {
         return typeof A == "number" && A > -1 && A % 1 == 0 && A <= F02
     }
 
-function qo1(A) {
+    function qo1(A) {
         var Q = typeof A;
         return !!A && (Q == "object" || Q == "function")
     }
 
-function Mo1(A) {
+    function Mo1(A) {
         return !!A && typeof A == "object"
     }
 
-function bQ5(A) {
+    function bQ5(A) {
         return typeof A == "string" || !V02(A) && Mo1(A) && T01.call(A) == XQ5
     }
 
-function fQ5(A) {
+    function fQ5(A) {
         return typeof A == "symbol" || Mo1(A) && T01.call(A) == FQ5
     }
 
-function hQ5(A) {
+    function hQ5(A) {
         if (!A) return A === 0 ? A : 0;
         if (A = uQ5(A), A === W02 || A === -W02) {
             var Q = A < 0 ? -1 : 1;
@@ -171,13 +173,13 @@ function hQ5(A) {
         return A === A ? A : 0
     }
 
-function gQ5(A) {
+    function gQ5(A) {
         var Q = hQ5(A),
             B = Q % 1;
         return Q === Q ? B ? Q - B : Q : 0
     }
 
-function uQ5(A) {
+    function uQ5(A) {
         if (typeof A == "number") return A;
         if (fQ5(A)) return X02;
         if (qo1(A)) {
@@ -190,60 +192,60 @@ function uQ5(A) {
         return B || HQ5.test(A) ? EQ5(A.slice(2), B ? 2 : 8) : KQ5.test(A) ? X02 : +A
     }
 
-function mQ5(A) {
+    function mQ5(A) {
         return Lo1(A) ? TQ5(A) : PQ5(A)
     }
 
-function dQ5(A) {
+    function dQ5(A) {
         return A ? NQ5(A, mQ5(A)) : []
     }
     K02.exports = _Q5
 });
-var C02 = U((uDG, H02) => {
+var C02 = moduleWrapper((uDG, H02) => {
     var cQ5 = "[object Boolean]",
         pQ5 = Object.prototype,
         lQ5 = pQ5.toString;
 
-function iQ5(A) {
+    function iQ5(A) {
         return A === !0 || A === !1 || nQ5(A) && lQ5.call(A) == cQ5
     }
 
-function nQ5(A) {
+    function nQ5(A) {
         return !!A && typeof A == "object"
     }
     H02.exports = iQ5
 });
-var w02 = U((mDG, $02) => {
+var w02 = moduleWrapper((mDG, $02) => {
     var E02 = 1 / 0,
         aQ5 = 179769313486231570000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
         z02 = NaN,
         sQ5 = "[object Symbol]",
-        rQ5 = /^\s+|\s+$/g,
-        oQ5 = /^[-+]0x[0-9a-f]+$/i,
-        tQ5 = /^0b[01]+$/i,
-        eQ5 = /^0o[0-7]+$/i,
+        rQ5 = /^\s+|\s+TextComponent/g,
+        oQ5 = /^[-+]0x[0-9a-f]+TextComponent/i,
+        tQ5 = /^0b[01]+TextComponent/i,
+        eQ5 = /^0o[0-7]+TextComponent/i,
         AB5 = parseInt,
         QB5 = Object.prototype,
         BB5 = QB5.toString;
 
-function GB5(A) {
+    function GB5(A) {
         return typeof A == "number" && A == JB5(A)
     }
 
-function U02(A) {
+    function U02(A) {
         var Q = typeof A;
         return !!A && (Q == "object" || Q == "function")
     }
 
-function ZB5(A) {
+    function ZB5(A) {
         return !!A && typeof A == "object"
     }
 
-function IB5(A) {
+    function IB5(A) {
         return typeof A == "symbol" || ZB5(A) && BB5.call(A) == sQ5
     }
 
-function YB5(A) {
+    function YB5(A) {
         if (!A) return A === 0 ? A : 0;
         if (A = WB5(A), A === E02 || A === -E02) {
             var Q = A < 0 ? -1 : 1;
@@ -252,13 +254,13 @@ function YB5(A) {
         return A === A ? A : 0
     }
 
-function JB5(A) {
+    function JB5(A) {
         var Q = YB5(A),
             B = Q % 1;
         return Q === Q ? B ? Q - B : Q : 0
     }
 
-function WB5(A) {
+    function WB5(A) {
         if (typeof A == "number") return A;
         if (IB5(A)) return z02;
         if (U02(A)) {
@@ -272,24 +274,24 @@ function WB5(A) {
     }
     $02.exports = GB5
 });
-var N02 = U((dDG, q02) => {
+var N02 = moduleWrapper((dDG, q02) => {
     var XB5 = "[object Number]",
         FB5 = Object.prototype,
         VB5 = FB5.toString;
 
-function KB5(A) {
+    function KB5(A) {
         return !!A && typeof A == "object"
     }
 
-function DB5(A) {
+    function DB5(A) {
         return typeof A == "number" || KB5(A) && VB5.call(A) == XB5
     }
     q02.exports = DB5
 });
-var R02 = U((cDG, O02) => {
+var R02 = moduleWrapper((cDG, O02) => {
     var HB5 = "[object Object]";
 
-function CB5(A) {
+    function CB5(A) {
         var Q = !1;
         if (A != null && typeof A.toString != "function") try {
             Q = !!(A + "")
@@ -297,7 +299,7 @@ function CB5(A) {
         return Q
     }
 
-function EB5(A, Q) {
+    function EB5(A, Q) {
         return function(B) {
             return A(Q(B))
         }
@@ -310,11 +312,11 @@ function EB5(A, Q) {
         wB5 = L02.toString,
         qB5 = EB5(Object.getPrototypeOf, Object);
 
-function NB5(A) {
+    function NB5(A) {
         return !!A && typeof A == "object"
     }
 
-function LB5(A) {
+    function LB5(A) {
         if (!NB5(A) || wB5.call(A) != HB5 || CB5(A)) return !1;
         var Q = qB5(A);
         if (Q === null) return !0;
@@ -323,38 +325,39 @@ function LB5(A) {
     }
     O02.exports = LB5
 });
-var P02 = U((pDG, T02) => {
+var P02 = moduleWrapper((pDG, T02) => {
     var MB5 = "[object String]",
         OB5 = Object.prototype,
         RB5 = OB5.toString,
         TB5 = Array.isArray;
 
-function PB5(A) {
+    function PB5(A) {
         return !!A && typeof A == "object"
     }
 
-function jB5(A) {
+    function jB5(A) {
         return typeof A == "string" || !TB5(A) && PB5(A) && RB5.call(A) == MB5
     }
     T02.exports = jB5
 });
-var y02 = U((lDG, k02) => {
-    var SB5 = "Expected a function",
+var y02 = moduleWrapper((lDG, k02) => {
+    /* EXPECTED_FUNCTION_ERROR2 = EXPECTED_FUNCTION_ERROR2 */
+var EXPECTED_FUNCTION_ERROR2 = "Expected a function",
         j02 = 1 / 0,
         _B5 = 179769313486231570000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
         S02 = NaN,
         kB5 = "[object Symbol]",
-        yB5 = /^\s+|\s+$/g,
-        xB5 = /^[-+]0x[0-9a-f]+$/i,
-        vB5 = /^0b[01]+$/i,
-        bB5 = /^0o[0-7]+$/i,
+        yB5 = /^\s+|\s+TextComponent/g,
+        xB5 = /^[-+]0x[0-9a-f]+TextComponent/i,
+        vB5 = /^0b[01]+TextComponent/i,
+        bB5 = /^0o[0-7]+TextComponent/i,
         fB5 = parseInt,
         hB5 = Object.prototype,
         gB5 = hB5.toString;
 
-function uB5(A, Q) {
+    function uB5(A, Q) {
         var B;
-        if (typeof Q != "function") throw TypeError(SB5);
+        if (typeof Q != "function") throw TypeError(EXPECTED_FUNCTION_ERROR2);
         return A = lB5(A),
             function() {
                 if (--A > 0) B = Q.apply(this, arguments);
@@ -363,24 +366,24 @@ function uB5(A, Q) {
             }
     }
 
-function mB5(A) {
+    function mB5(A) {
         return uB5(2, A)
     }
 
-function _02(A) {
+    function _02(A) {
         var Q = typeof A;
         return !!A && (Q == "object" || Q == "function")
     }
 
-function dB5(A) {
+    function dB5(A) {
         return !!A && typeof A == "object"
     }
 
-function cB5(A) {
+    function cB5(A) {
         return typeof A == "symbol" || dB5(A) && gB5.call(A) == kB5
     }
 
-function pB5(A) {
+    function pB5(A) {
         if (!A) return A === 0 ? A : 0;
         if (A = iB5(A), A === j02 || A === -j02) {
             var Q = A < 0 ? -1 : 1;
@@ -389,13 +392,13 @@ function pB5(A) {
         return A === A ? A : 0
     }
 
-function lB5(A) {
+    function lB5(A) {
         var Q = pB5(A),
             B = Q % 1;
         return Q === Q ? B ? Q - B : Q : 0
     }
 
-function iB5(A) {
+    function iB5(A) {
         if (typeof A == "number") return A;
         if (cB5(A)) return S02;
         if (_02(A)) {
@@ -409,7 +412,7 @@ function iB5(A) {
     }
     k02.exports = mB5
 });
-var d02 = U((iDG, m02) => {
+var d02 = moduleWrapper((iDG, m02) => {
     var x02 = Eo1(),
         nB5 = Uo1(),
         aB5 = zo1(),
@@ -425,11 +428,10 @@ var d02 = U((iDG, m02) => {
             KeyObject: oB5,
             createSecretKey: tB5,
             createPrivateKey: eB5
-        } = UA("crypto"),
+        } = nodeRequire("crypto"),
         g02 = ["RS256", "RS384", "RS512", "ES256", "ES384", "ES512", "HS256", "HS384", "HS512", "none"];
     if (nB5) g02.splice(3, 0, "PS256", "PS384", "PS512");
-
-var A25 = {
+    var A25 = {
             expiresIn: {
                 isValid: function(A) {
                     return b02(A) || _l(A) && A
@@ -508,7 +510,7 @@ var A25 = {
             }
         };
 
-function u02(A, Q, B, G) {
+    function u02(A, Q, B, G) {
         if (!h02(B)) throw Error('Expected "' + G + '" to be a plain object.');
         Object.keys(B).forEach(function(Z) {
             let I = A[Z];
@@ -520,15 +522,14 @@ function u02(A, Q, B, G) {
         })
     }
 
-function B25(A) {
+    function B25(A) {
         return u02(A25, !1, A, "options")
     }
 
-function G25(A) {
+    function G25(A) {
         return u02(Q25, !0, A, "payload")
     }
-
-var f02 = {
+    var f02 = {
             audience: "aud",
             issuer: "iss",
             subject: "sub",
@@ -545,7 +546,7 @@ var f02 = {
                 kid: B.keyid
             }, B.header);
 
-function Y(X) {
+        function Y(X) {
             if (G) return G(X);
             throw X
         }
@@ -559,10 +560,10 @@ function Y(X) {
                 return Y(Error("secretOrPrivateKey is not valid key material"))
             }
         }
-        if (I.alg.startsWith("HS") && Q.type !== "secret") return Y(Error(`secretOrPrivateKey must be a symmetric key when using ${I.alg}`));
+        if (I.alg.startsWith("HS") && Q.type !== "secret") return Y(Error(`secretOrPrivateKey must be a symmetric key when using TextComponent{I.alg}`));
         else if (/^(?:RS|PS|ES)/.test(I.alg)) {
-            if (Q.type !== "private") return Y(Error(`secretOrPrivateKey must be an asymmetric key when using ${I.alg}`));
-            if (!B.allowInsecureKeySizes && !I.alg.startsWith("ES") && Q.asymmetricKeyDetails !== void 0 && Q.asymmetricKeyDetails.modulusLength < 2048) return Y(Error(`secretOrPrivateKey has a minimum key size of 2048 bits for ${I.alg}`))
+            if (Q.type !== "private") return Y(Error(`secretOrPrivateKey must be an asymmetric key when using TextComponent{I.alg}`));
+            if (!B.allowInsecureKeySizes && !I.alg.startsWith("ES") && Q.asymmetricKeyDetails !== void 0 && Q.asymmetricKeyDetails.modulusLength < 2048) return Y(Error(`secretOrPrivateKey has a minimum key size of 2048 bits for TextComponent{I.alg}`))
         }
         if (typeof A > "u") return Y(Error("payload is required"));
         else if (Z) {
@@ -623,7 +624,7 @@ function Y(X) {
             payload: A,
             encoding: W
         }).once("error", G).once("done", function(X) {
-            if (!B.allowInsecureKeySizes && /^(?:RS|PS)/.test(I.alg) && X.length < 256) return G(Error(`secretOrPrivateKey has a minimum key size of 2048 bits for ${I.alg}`));
+            if (!B.allowInsecureKeySizes && /^(?:RS|PS)/.test(I.alg) && X.length < 256) return G(Error(`secretOrPrivateKey has a minimum key size of 2048 bits for TextComponent{I.alg}`));
             G(null, X)
         });
         else {
@@ -633,12 +634,12 @@ function Y(X) {
                 secret: Q,
                 encoding: W
             });
-            if (!B.allowInsecureKeySizes && /^(?:RS|PS)/.test(I.alg) && X.length < 256) throw Error(`secretOrPrivateKey has a minimum key size of 2048 bits for ${I.alg}`);
+            if (!B.allowInsecureKeySizes && /^(?:RS|PS)/.test(I.alg) && X.length < 256) throw Error(`secretOrPrivateKey has a minimum key size of 2048 bits for TextComponent{I.alg}`);
             return X
         }
     }
 });
-var p02 = U((nDG, c02) => {
+var p02 = moduleWrapper((nDG, c02) => {
     c02.exports = {
         decode: Do1(),
         verify: J02(),
@@ -648,7 +649,6 @@ var p02 = U((nDG, c02) => {
         TokenExpiredError: Co1()
     }
 });
-
 class cT {
     static fromAssertion(A) {
         let Q = new cT;
@@ -709,18 +709,18 @@ class cT {
     }
 }
 var l02;
-var j01 = L(() => {
+var j01 = lazyLoader(() => {
     u7();
     iNA();
     HI();
-    l02 = GA(p02(), 1); /*! @azure/msal-node v3.8.1 2025-10-29 */
+    l02 = esmImport(p02(), 1); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
 var S01 = "@azure/msal-node",
     pT = "3.8.1";
-var XIA = L(() => {
+var XIA = lazyLoader(() => {
     /*! @azure/msal-node v3.8.1 2025-10-29 */ });
 var eNA;
-var Ro1 = L(() => {
+var Ro1 = lazyLoader(() => {
     u7(); /*! @azure/msal-node v3.8.1 2025-10-29 */
     eNA = class eNA extends iH {
         constructor(A) {
@@ -783,12 +783,11 @@ function i02(A, Q, B, G) {
     if (OB.addResponseType(Z, hZA.CODE), B.codeChallenge && B.codeChallengeMethod) OB.addCodeChallengeParams(Z, B.codeChallenge, B.codeChallengeMethod);
     return OB.addExtraQueryParameters(Z, B.extraQueryParameters || {}), hNA.getAuthorizeUrl(Q, Z, A.auth.encodeExtraQueryParams, B.extraQueryParameters)
 }
-var n02 = L(() => {
+var n02 = lazyLoader(() => {
     u7();
     HI();
     XIA(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
-
 class OAA {
     constructor(A) {
         this.config = $A2(A), this.cryptoProvider = new rf, this.logger = new jU(this.config.system.loggerOptions, S01, pT), this.storage = new MAA(this.logger, this.config.auth.clientId, this.cryptoProvider, vr1(this.config.auth)), this.tokenCache = new sNA(this.storage, this.logger, this.config.cache.cachePlugin)
@@ -913,7 +912,7 @@ class OAA {
         this.logger = A
     }
     async buildOauthClientConfiguration(A, Q, B, G) {
-        return this.logger.verbose("buildOauthClientConfiguration called", Q), this.logger.info(`Building oauth client configuration with the following authority: ${A.tokenEndpoint}.`, Q), G?.updateRegionDiscoveryMetadata(A.regionDiscoveryMetadata), {
+        return this.logger.verbose("buildOauthClientConfiguration called", Q), this.logger.info(`Building oauth client configuration with the following authority: TextComponent{A.tokenEndpoint}.`, Q), G?.updateRegionDiscoveryMetadata(A.regionDiscoveryMetadata), {
             authOptions: {
                 clientId: this.config.auth.clientId,
                 authority: A,
@@ -991,7 +990,7 @@ class OAA {
         this.storage.clear()
     }
 }
-var _01 = L(() => {
+var _01 = lazyLoader(() => {
     u7();
     rr1();
     nNA();
@@ -1005,7 +1004,6 @@ var _01 = L(() => {
     n02(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
 import I25 from "http";
-
 class To1 {
     async listenForAuthCode(A, Q) {
         if (this.server) throw IY.createLoopbackServerAlreadyExistsError();
@@ -1025,7 +1023,7 @@ class To1 {
                 if (X.code) I.writeHead(o4.REDIRECT, {
                     location: J
                 }), I.end();
-                if (X.error) I.end(Q || `Error occurred: ${X.error}`);
+                if (X.error) I.end(Q || `Error occurred: TextComponent{X.error}`);
                 B(X)
             }), this.server.listen(0, "127.0.0.1")
         })
@@ -1035,7 +1033,7 @@ class To1 {
         let A = this.server.address();
         if (!A || typeof A === "string" || !A.port) throw this.closeServer(), IY.createInvalidLoopbackAddressTypeError();
         let Q = A && A.port;
-        return `${SE.HTTP_PROTOCOL}${SE.LOCALHOST}:${Q}`
+        return `TextComponent{SE.HTTP_PROTOCOL}TextComponent{SE.LOCALHOST}:TextComponent{Q}`
     }
     closeServer() {
         if (this.server) {
@@ -1044,13 +1042,13 @@ class To1 {
         }
     }
 }
-var a02 = L(() => {
+var a02 = lazyLoader(() => {
     u7();
     dNA();
     HI(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
 var ALA;
-var Po1 = L(() => {
+var Po1 = lazyLoader(() => {
     u7(); /*! @azure/msal-node v3.8.1 2025-10-29 */
     ALA = class ALA extends iH {
         constructor(A) {
@@ -1118,10 +1116,10 @@ var Po1 = L(() => {
         }
         continuePolling(A, Q, B) {
             if (B) throw this.logger.error("Token request cancelled by setting DeviceCodeRequest.cancel = true"), v0(PG.deviceCodePollingCancelled);
-            else if (Q && Q < A && KI.nowSeconds() > Q) throw this.logger.error(`User defined timeout for device code polling reached. The timeout was set for ${Q}`), v0(PG.userTimeoutReached);
+            else if (Q && Q < A && KI.nowSeconds() > Q) throw this.logger.error(`User defined timeout for device code polling reached. The timeout was set for TextComponent{Q}`), v0(PG.userTimeoutReached);
             else if (KI.nowSeconds() > A) {
-                if (Q) this.logger.verbose(`User specified timeout ignored as the device code has expired before the timeout elapsed. The user specified timeout was set for ${Q}`);
-                throw this.logger.error(`Device code expired. Expiration time of device code was ${A}`), v0(PG.deviceCodeExpired)
+                if (Q) this.logger.verbose(`User specified timeout ignored as the device code has expired before the timeout elapsed. The user specified timeout was set for TextComponent{Q}`);
+                throw this.logger.error(`Device code expired. Expiration time of device code was TextComponent{A}`), v0(PG.deviceCodeExpired)
             }
             return !0
         }
@@ -1164,7 +1162,7 @@ var Po1 = L(() => {
     }
 });
 var QLA;
-var s02 = L(() => {
+var s02 = lazyLoader(() => {
     HI();
     u7();
     _01();
@@ -1334,7 +1332,7 @@ var s02 = L(() => {
     }
 });
 var RAA;
-var k01 = L(() => {
+var k01 = lazyLoader(() => {
     u7(); /*! @azure/msal-node v3.8.1 2025-10-29 */
     RAA = class RAA extends iH {
         constructor(A, Q) {
@@ -1440,7 +1438,7 @@ var k01 = L(() => {
     }
 });
 var BLA;
-var jo1 = L(() => {
+var jo1 = lazyLoader(() => {
     u7();
     iNA(); /*! @azure/msal-node v3.8.1 2025-10-29 */
     BLA = class BLA extends iH {
@@ -1458,7 +1456,7 @@ var jo1 = L(() => {
         async getCachedAuthenticationResult(A) {
             let Q = this.readAccessTokenFromCacheForOBO(this.config.authOptions.clientId, A);
             if (!Q) throw this.serverTelemetryManager?.setCacheOutcome(IZ.NO_CACHED_ACCESS_TOKEN), this.logger.info("SilentFlowClient:acquireCachedToken - No access token found in cache for the given properties."), v0(PG.tokenRefreshRequired);
-            else if (KI.isTokenExpired(Q.expiresOn, this.config.systemOptions.tokenRenewalOffsetSeconds)) throw this.serverTelemetryManager?.setCacheOutcome(IZ.CACHED_ACCESS_TOKEN_EXPIRED), this.logger.info(`OnbehalfofFlow:getCachedAuthenticationResult - Cached access token is expired or will expire within ${this.config.systemOptions.tokenRenewalOffsetSeconds} seconds.`), v0(PG.tokenRefreshRequired);
+            else if (KI.isTokenExpired(Q.expiresOn, this.config.systemOptions.tokenRenewalOffsetSeconds)) throw this.serverTelemetryManager?.setCacheOutcome(IZ.CACHED_ACCESS_TOKEN_EXPIRED), this.logger.info(`OnbehalfofFlow:getCachedAuthenticationResult - Cached access token is expired or will expire within TextComponent{this.config.systemOptions.tokenRenewalOffsetSeconds} seconds.`), v0(PG.tokenRefreshRequired);
             let B = this.readIdTokenFromCacheForOBO(Q.homeAccountId, A.correlationId),
                 G, Z = null;
             if (B) {

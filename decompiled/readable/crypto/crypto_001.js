@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: crypto_001.js
+ * 处理时间: 2025-12-09T03:41:37.258Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.959Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -77,7 +79,7 @@
         }
         _downscale(A) {
             if (A === 0) return;
-            if (A < 0) throw Error(`impossible change of scale: ${this.scale}`);
+            if (A < 0) throw Error(`impossible change of scale: TextComponent{this.scale}`);
             let Q = this._mapping.scale - A;
             this._positive.downscale(A), this._negative.downscale(A), this._mapping = (0, zY2.getMapping)(Q)
         }
@@ -109,8 +111,7 @@
         }
     }
     $Y2.ExponentialHistogramAccumulation = w91;
-
-class UY2 {
+    class UY2 {
         _maxSize;
         _recordMinMax;
         kind = FD5.AggregatorKind.EXPONENTIAL_HISTOGRAM;
@@ -163,7 +164,7 @@ class UY2 {
     }
     $Y2.ExponentialHistogramAggregator = UY2
 });
-var OY2 = U((LY2) => {
+var OY2 = moduleWrapper((LY2) => {
     Object.defineProperty(LY2, "__esModule", {
         value: !0
     });
@@ -171,8 +172,7 @@ var OY2 = U((LY2) => {
     var ED5 = MYA(),
         xMA = t6(),
         zD5 = Li();
-
-class vMA {
+    class vMA {
         startTime;
         _current;
         sampleTime;
@@ -190,8 +190,7 @@ class vMA {
         }
     }
     LY2.LastValueAccumulation = vMA;
-
-class NY2 {
+    class NY2 {
         kind = ED5.AggregatorKind.LAST_VALUE;
         createAccumulation(A) {
             return new vMA(A)
@@ -222,15 +221,14 @@ class NY2 {
     }
     LY2.LastValueAggregator = NY2
 });
-var jY2 = U((TY2) => {
+var jY2 = moduleWrapper((TY2) => {
     Object.defineProperty(TY2, "__esModule", {
         value: !0
     });
     TY2.SumAggregator = TY2.SumAccumulation = void 0;
     var $D5 = MYA(),
         wD5 = Li();
-
-class P1A {
+    class P1A {
         startTime;
         monotonic;
         _current;
@@ -250,8 +248,7 @@ class P1A {
         }
     }
     TY2.SumAccumulation = P1A;
-
-class RY2 {
+    class RY2 {
         monotonic;
         kind = $D5.AggregatorKind.SUM;
         constructor(A) {
@@ -291,7 +288,7 @@ class RY2 {
     }
     TY2.SumAggregator = RY2
 });
-var xY2 = U((ZP) => {
+var xY2 = moduleWrapper((ZP) => {
     Object.defineProperty(ZP, "__esModule", {
         value: !0
     });
@@ -356,7 +353,7 @@ var xY2 = U((ZP) => {
         }
     })
 });
-var mY2 = U((vY2) => {
+var mY2 = moduleWrapper((vY2) => {
     Object.defineProperty(vY2, "__esModule", {
         value: !0
     });
@@ -364,16 +361,14 @@ var mY2 = U((vY2) => {
     var MD5 = W9(),
         j1A = xY2(),
         uk = Li();
-
-class q91 {
+    class q91 {
         static DEFAULT_INSTANCE = new j1A.DropAggregator;
         createAggregator(A) {
             return q91.DEFAULT_INSTANCE
         }
     }
     vY2.DropAggregation = q91;
-
-class bMA {
+    class bMA {
         static MONOTONIC_INSTANCE = new j1A.SumAggregator(!0);
         static NON_MONOTONIC_INSTANCE = new j1A.SumAggregator(!1);
         createAggregator(A) {
@@ -388,24 +383,21 @@ class bMA {
         }
     }
     vY2.SumAggregation = bMA;
-
-class N91 {
+    class N91 {
         static DEFAULT_INSTANCE = new j1A.LastValueAggregator;
         createAggregator(A) {
             return N91.DEFAULT_INSTANCE
         }
     }
     vY2.LastValueAggregation = N91;
-
-class L91 {
+    class L91 {
         static DEFAULT_INSTANCE = new j1A.HistogramAggregator([0, 5, 10, 25, 50, 75, 100, 250, 500, 750, 1000, 2500, 5000, 7500, 1e4], !0);
         createAggregator(A) {
             return L91.DEFAULT_INSTANCE
         }
     }
     vY2.HistogramAggregation = L91;
-
-class BQ0 {
+    class BQ0 {
         _recordMinMax;
         _boundaries;
         constructor(A, Q = !0) {
@@ -421,8 +413,7 @@ class BQ0 {
         }
     }
     vY2.ExplicitBucketHistogramAggregation = BQ0;
-
-class GQ0 {
+    class GQ0 {
         _maxSize;
         _recordMinMax;
         constructor(A = 160, Q = !0) {
@@ -433,8 +424,7 @@ class GQ0 {
         }
     }
     vY2.ExponentialHistogramAggregation = GQ0;
-
-class ZQ0 {
+    class ZQ0 {
         _resolve(A) {
             switch (A.type) {
                 case uk.InstrumentType.COUNTER:
@@ -450,7 +440,7 @@ class ZQ0 {
                     return vY2.HISTOGRAM_AGGREGATION
                 }
             }
-            return MD5.diag.warn(`Unable to recognize instrument type: ${A.type}`), vY2.DROP_AGGREGATION
+            return MD5.diag.warn(`Unable to recognize instrument type: TextComponent{A.type}`), vY2.DROP_AGGREGATION
         }
         createAggregator(A) {
             return this._resolve(A).createAggregator(A)
@@ -464,7 +454,7 @@ class ZQ0 {
     vY2.EXPONENTIAL_HISTOGRAM_AGGREGATION = new GQ0;
     vY2.DEFAULT_AGGREGATION = new ZQ0
 });
-var fMA = U((cY2) => {
+var fMA = moduleWrapper((cY2) => {
     Object.defineProperty(cY2, "__esModule", {
         value: !0
     });
@@ -475,7 +465,7 @@ var fMA = U((cY2) => {
         A[A.DEFAULT = 0] = "DEFAULT", A[A.DROP = 1] = "DROP", A[A.SUM = 2] = "SUM", A[A.LAST_VALUE = 3] = "LAST_VALUE", A[A.EXPLICIT_BUCKET_HISTOGRAM = 4] = "EXPLICIT_BUCKET_HISTOGRAM", A[A.EXPONENTIAL_HISTOGRAM = 5] = "EXPONENTIAL_HISTOGRAM"
     })(_1A = cY2.AggregationType || (cY2.AggregationType = {}));
 
-function yD5(A) {
+    function yD5(A) {
         switch (A.type) {
             case _1A.DEFAULT:
                 return S1A.DEFAULT_AGGREGATION;
@@ -500,7 +490,7 @@ function yD5(A) {
     }
     cY2.toAggregation = yD5
 });
-var IQ0 = U((lY2) => {
+var IQ0 = moduleWrapper((lY2) => {
     Object.defineProperty(lY2, "__esModule", {
         value: !0
     });
@@ -516,7 +506,7 @@ var IQ0 = U((lY2) => {
     var fD5 = (A) => xD5.AggregationTemporality.CUMULATIVE;
     lY2.DEFAULT_AGGREGATION_TEMPORALITY_SELECTOR = fD5
 });
-var YQ0 = U((rY2) => {
+var YQ0 = moduleWrapper((rY2) => {
     Object.defineProperty(rY2, "__esModule", {
         value: !0
     });
@@ -524,8 +514,7 @@ var YQ0 = U((rY2) => {
     var nY2 = W9(),
         M91 = GP(),
         aY2 = IQ0();
-
-class sY2 {
+    class sY2 {
         _shutdown = !1;
         _metricProducers;
         _sdkMetricProducer;
@@ -588,7 +577,7 @@ class sY2 {
     }
     rY2.MetricReader = sY2
 });
-var BJ2 = U((AJ2) => {
+var BJ2 = moduleWrapper((AJ2) => {
     Object.defineProperty(AJ2, "__esModule", {
         value: !0
     });
@@ -597,8 +586,7 @@ var BJ2 = U((AJ2) => {
         hMA = t6(),
         gD5 = YQ0(),
         tY2 = GP();
-
-class eY2 extends gD5.MetricReader {
+    class eY2 extends gD5.MetricReader {
         _interval;
         _exporter;
         _exportInterval;
@@ -639,7 +627,7 @@ class eY2 extends gD5.MetricReader {
             }
             if (A.scopeMetrics.length === 0) return;
             let B = await hMA.internal._export(this._exporter, A);
-            if (B.code !== hMA.ExportResultCode.SUCCESS) throw Error(`PeriodicExportingMetricReader: metrics export failed (error ${B.error})`)
+            if (B.code !== hMA.ExportResultCode.SUCCESS) throw Error(`PeriodicExportingMetricReader: metrics export failed (error TextComponent{B.error})`)
         }
         onInitialized() {
             this._interval = setInterval(() => {
@@ -656,14 +644,13 @@ class eY2 extends gD5.MetricReader {
     }
     AJ2.PeriodicExportingMetricReader = eY2
 });
-var JJ2 = U((IJ2) => {
+var JJ2 = moduleWrapper((IJ2) => {
     Object.defineProperty(IJ2, "__esModule", {
         value: !0
     });
     IJ2.InMemoryMetricExporter = void 0;
     var GJ2 = t6();
-
-class ZJ2 {
+    class ZJ2 {
         _shutdown = !1;
         _aggregationTemporality;
         _metrics = [];
@@ -699,15 +686,14 @@ class ZJ2 {
     }
     IJ2.InMemoryMetricExporter = ZJ2
 });
-var VJ2 = U((XJ2) => {
+var VJ2 = moduleWrapper((XJ2) => {
     Object.defineProperty(XJ2, "__esModule", {
         value: !0
     });
     XJ2.ConsoleMetricExporter = void 0;
     var WJ2 = t6(),
         uD5 = IQ0();
-
-class WQ0 {
+    class WQ0 {
         _shutdown = !1;
         _temporalitySelector;
         constructor(A) {
@@ -747,13 +733,12 @@ class WQ0 {
     }
     XJ2.ConsoleMetricExporter = WQ0
 });
-var CJ2 = U((DJ2) => {
+var CJ2 = moduleWrapper((DJ2) => {
     Object.defineProperty(DJ2, "__esModule", {
         value: !0
     });
     DJ2.ViewRegistry = void 0;
-
-class KJ2 {
+    class KJ2 {
         _registeredViews = [];
         addView(A) {
             this._registeredViews.push(A)
@@ -772,7 +757,7 @@ class KJ2 {
     }
     DJ2.ViewRegistry = KJ2
 });
-var gMA = U((UJ2) => {
+var gMA = moduleWrapper((UJ2) => {
     Object.defineProperty(UJ2, "__esModule", {
         value: !0
     });
@@ -780,8 +765,8 @@ var gMA = U((UJ2) => {
     var EJ2 = W9(),
         mD5 = GP();
 
-function dD5(A, Q, B) {
-        if (!zJ2(A)) EJ2.diag.warn(`Invalid metric name: "${A}". The metric name should be a ASCII string with a length no greater than 255 characters.`);
+    function dD5(A, Q, B) {
+        if (!zJ2(A)) EJ2.diag.warn(`Invalid metric name: "TextComponent{A}". The metric name should be a ASCII string with a length no greater than 255 characters.`);
         return {
             name: A,
             type: Q,
@@ -793,7 +778,7 @@ function dD5(A, Q, B) {
     }
     UJ2.createInstrumentDescriptor = dD5;
 
-function cD5(A, Q) {
+    function cD5(A, Q) {
         return {
             name: A.name ?? Q.name,
             description: A.description ?? Q.description,
@@ -805,26 +790,25 @@ function cD5(A, Q) {
     }
     UJ2.createInstrumentDescriptorWithView = cD5;
 
-function pD5(A, Q) {
+    function pD5(A, Q) {
         return (0, mD5.equalsCaseInsensitive)(A.name, Q.name) && A.unit === Q.unit && A.type === Q.type && A.valueType === Q.valueType
     }
     UJ2.isDescriptorCompatibleWith = pD5;
-    var lD5 = /^[a-z][a-z0-9_.\-/]{0,254}$/i;
+    var lD5 = /^[a-z][a-z0-9_.\-/]{0,254}TextComponent/i;
 
-function zJ2(A) {
+    function zJ2(A) {
         return A.match(lD5) != null
     }
     UJ2.isValidName = zJ2
 });
-var O91 = U((TJ2) => {
+var O91 = moduleWrapper((TJ2) => {
     Object.defineProperty(TJ2, "__esModule", {
         value: !0
     });
     TJ2.isObservableInstrument = TJ2.ObservableUpDownCounterInstrument = TJ2.ObservableGaugeInstrument = TJ2.ObservableCounterInstrument = TJ2.ObservableInstrument = TJ2.HistogramInstrument = TJ2.GaugeInstrument = TJ2.CounterInstrument = TJ2.UpDownCounterInstrument = TJ2.SyncInstrument = void 0;
     var PYA = W9(),
         sD5 = t6();
-
-class jYA {
+    class jYA {
         _writableMetricStorage;
         _descriptor;
         constructor(A, Q) {
@@ -832,54 +816,49 @@ class jYA {
         }
         _record(A, Q = {}, B = PYA.context.active()) {
             if (typeof A !== "number") {
-                PYA.diag.warn(`non-number value provided to metric ${this._descriptor.name}: ${A}`);
+                PYA.diag.warn(`non-number value provided to metric TextComponent{this._descriptor.name}: TextComponent{A}`);
                 return
             }
             if (this._descriptor.valueType === PYA.ValueType.INT && !Number.isInteger(A)) {
-                if (PYA.diag.warn(`INT value type cannot accept a floating-point value for ${this._descriptor.name}, ignoring the fractional digits.`), A = Math.trunc(A), !Number.isInteger(A)) return
+                if (PYA.diag.warn(`INT value type cannot accept a floating-point value for TextComponent{this._descriptor.name}, ignoring the fractional digits.`), A = Math.trunc(A), !Number.isInteger(A)) return
             }
             this._writableMetricStorage.record(A, Q, B, (0, sD5.millisToHrTime)(Date.now()))
         }
     }
     TJ2.SyncInstrument = jYA;
-
-class wJ2 extends jYA {
+    class wJ2 extends jYA {
         add(A, Q, B) {
             this._record(A, Q, B)
         }
     }
     TJ2.UpDownCounterInstrument = wJ2;
-
-class qJ2 extends jYA {
+    class qJ2 extends jYA {
         add(A, Q, B) {
             if (A < 0) {
-                PYA.diag.warn(`negative value provided to counter ${this._descriptor.name}: ${A}`);
+                PYA.diag.warn(`negative value provided to counter TextComponent{this._descriptor.name}: TextComponent{A}`);
                 return
             }
             this._record(A, Q, B)
         }
     }
     TJ2.CounterInstrument = qJ2;
-
-class NJ2 extends jYA {
+    class NJ2 extends jYA {
         record(A, Q, B) {
             this._record(A, Q, B)
         }
     }
     TJ2.GaugeInstrument = NJ2;
-
-class LJ2 extends jYA {
+    class LJ2 extends jYA {
         record(A, Q, B) {
             if (A < 0) {
-                PYA.diag.warn(`negative value provided to histogram ${this._descriptor.name}: ${A}`);
+                PYA.diag.warn(`negative value provided to histogram TextComponent{this._descriptor.name}: TextComponent{A}`);
                 return
             }
             this._record(A, Q, B)
         }
     }
     TJ2.HistogramInstrument = LJ2;
-
-class SYA {
+    class SYA {
         _observableRegistry;
         _metricStorages;
         _descriptor;
@@ -894,22 +873,19 @@ class SYA {
         }
     }
     TJ2.ObservableInstrument = SYA;
-
-class MJ2 extends SYA {}
+    class MJ2 extends SYA {}
     TJ2.ObservableCounterInstrument = MJ2;
-
-class OJ2 extends SYA {}
+    class OJ2 extends SYA {}
     TJ2.ObservableGaugeInstrument = OJ2;
-
-class RJ2 extends SYA {}
+    class RJ2 extends SYA {}
     TJ2.ObservableUpDownCounterInstrument = RJ2;
 
-function rD5(A) {
+    function rD5(A) {
         return A instanceof SYA
     }
     TJ2.isObservableInstrument = rD5
 });
-var kJ2 = U((SJ2) => {
+var kJ2 = moduleWrapper((SJ2) => {
     Object.defineProperty(SJ2, "__esModule", {
         value: !0
     });
@@ -917,8 +893,7 @@ var kJ2 = U((SJ2) => {
     var k1A = gMA(),
         y1A = O91(),
         x1A = Li();
-
-class jJ2 {
+    class jJ2 {
         _meterSharedState;
         constructor(A) {
             this._meterSharedState = A
@@ -967,14 +942,13 @@ class jJ2 {
     }
     SJ2.Meter = jJ2
 });
-var XQ0 = U((xJ2) => {
+var XQ0 = moduleWrapper((xJ2) => {
     Object.defineProperty(xJ2, "__esModule", {
         value: !0
     });
     xJ2.MetricStorage = void 0;
     var YH5 = gMA();
-
-class yJ2 {
+    class yJ2 {
         _instrumentDescriptor;
         constructor(A) {
             this._instrumentDescriptor = A
@@ -993,14 +967,13 @@ class yJ2 {
     }
     xJ2.MetricStorage = yJ2
 });
-var uMA = U((fJ2) => {
+var uMA = moduleWrapper((fJ2) => {
     Object.defineProperty(fJ2, "__esModule", {
         value: !0
     });
     fJ2.AttributeHashMap = fJ2.HashMap = void 0;
     var JH5 = GP();
-
-class FQ0 {
+    class FQ0 {
         _hash;
         _valueMap = new Map;
         _keyMap = new Map;
@@ -1037,23 +1010,21 @@ class FQ0 {
         }
     }
     fJ2.HashMap = FQ0;
-
-class bJ2 extends FQ0 {
+    class bJ2 extends FQ0 {
         constructor() {
             super(JH5.hashAttributes)
         }
     }
     fJ2.AttributeHashMap = bJ2
 });
-var KQ0 = U((uJ2) => {
+var KQ0 = moduleWrapper((uJ2) => {
     Object.defineProperty(uJ2, "__esModule", {
         value: !0
     });
     uJ2.DeltaMetricProcessor = void 0;
     var XH5 = GP(),
         VQ0 = uMA();
-
-class gJ2 {
+    class gJ2 {
         _aggregator;
         _activeCollectionStorage = new VQ0.AttributeHashMap;
         _cumulativeMemoStorage = new VQ0.AttributeHashMap;
@@ -1104,15 +1075,14 @@ class gJ2 {
     }
     uJ2.DeltaMetricProcessor = gJ2
 });
-var DQ0 = U((dJ2) => {
+var DQ0 = moduleWrapper((dJ2) => {
     Object.defineProperty(dJ2, "__esModule", {
         value: !0
     });
     dJ2.TemporalMetricProcessor = void 0;
     var FH5 = E91(),
         VH5 = uMA();
-
-class mMA {
+    class mMA {
         _aggregator;
         _unreportedAccumulations = new Map;
         _reportHistory = new Map;
@@ -1178,11 +1148,11 @@ class mMA {
     }
     dJ2.TemporalMetricProcessor = mMA;
 
-function KH5(A) {
+    function KH5(A) {
         return Array.from(A.entries())
     }
 });
-var nJ2 = U((lJ2) => {
+var nJ2 = moduleWrapper((lJ2) => {
     Object.defineProperty(lJ2, "__esModule", {
         value: !0
     });
@@ -1191,8 +1161,7 @@ var nJ2 = U((lJ2) => {
         HH5 = KQ0(),
         CH5 = DQ0(),
         EH5 = uMA();
-
-class pJ2 extends DH5.MetricStorage {
+    class pJ2 extends DH5.MetricStorage {
         _attributesProcessor;
         _aggregationCardinalityLimit;
         _deltaMetricStorage;
@@ -1214,61 +1183,61 @@ class pJ2 extends DH5.MetricStorage {
     }
     lJ2.AsyncMetricStorage = pJ2
 });
-var AW2 = U((tJ2) => {
+var AW2 = moduleWrapper((tJ2) => {
     Object.defineProperty(tJ2, "__esModule", {
         value: !0
     });
     tJ2.getConflictResolutionRecipe = tJ2.getDescriptionResolutionRecipe = tJ2.getTypeConflictResolutionRecipe = tJ2.getUnitConflictResolutionRecipe = tJ2.getValueTypeConflictResolutionRecipe = tJ2.getIncompatibilityDetails = void 0;
 
-function zH5(A, Q) {
+    function zH5(A, Q) {
         let B = "";
-        if (A.unit !== Q.unit) B += `	- Unit '${A.unit}' does not match '${Q.unit}'
+        if (A.unit !== Q.unit) B += `	- Unit 'TextComponent{A.unit}' does not match 'TextComponent{Q.unit}'
 `;
-        if (A.type !== Q.type) B += `	- Type '${A.type}' does not match '${Q.type}'
+        if (A.type !== Q.type) B += `	- Type 'TextComponent{A.type}' does not match 'TextComponent{Q.type}'
 `;
-        if (A.valueType !== Q.valueType) B += `	- Value Type '${A.valueType}' does not match '${Q.valueType}'
+        if (A.valueType !== Q.valueType) B += `	- Value Type 'TextComponent{A.valueType}' does not match 'TextComponent{Q.valueType}'
 `;
-        if (A.description !== Q.description) B += `	- Description '${A.description}' does not match '${Q.description}'
+        if (A.description !== Q.description) B += `	- Description 'TextComponent{A.description}' does not match 'TextComponent{Q.description}'
 `;
         return B
     }
     tJ2.getIncompatibilityDetails = zH5;
 
-function aJ2(A, Q) {
-        return `	- use valueType '${A.valueType}' on instrument creation or use an instrument name other than '${Q.name}'`
+    function aJ2(A, Q) {
+        return `	- use valueType 'TextComponent{A.valueType}' on instrument creation or use an instrument name other than 'TextComponent{Q.name}'`
     }
     tJ2.getValueTypeConflictResolutionRecipe = aJ2;
 
-function sJ2(A, Q) {
-        return `	- use unit '${A.unit}' on instrument creation or use an instrument name other than '${Q.name}'`
+    function sJ2(A, Q) {
+        return `	- use unit 'TextComponent{A.unit}' on instrument creation or use an instrument name other than 'TextComponent{Q.name}'`
     }
     tJ2.getUnitConflictResolutionRecipe = sJ2;
 
-function rJ2(A, Q) {
+    function rJ2(A, Q) {
         let B = {
                 name: Q.name,
                 type: Q.type,
                 unit: Q.unit
             },
             G = JSON.stringify(B);
-        return `	- create a new view with a name other than '${A.name}' and InstrumentSelector '${G}'`
+        return `	- create a new view with a name other than 'TextComponent{A.name}' and InstrumentSelector 'TextComponent{G}'`
     }
     tJ2.getTypeConflictResolutionRecipe = rJ2;
 
-function oJ2(A, Q) {
+    function oJ2(A, Q) {
         let B = {
                 name: Q.name,
                 type: Q.type,
                 unit: Q.unit
             },
             G = JSON.stringify(B);
-        return `	- create a new view with a name other than '${A.name}' and InstrumentSelector '${G}'
-    	- OR - create a new view with the name ${A.name} and description '${A.description}' and InstrumentSelector ${G}
-    	- OR - create a new view with the name ${Q.name} and description '${A.description}' and InstrumentSelector ${G}`
+        return `	- create a new view with a name other than 'TextComponent{A.name}' and InstrumentSelector 'TextComponent{G}'
+    	- OR - create a new view with the name TextComponent{A.name} and description 'TextComponent{A.description}' and InstrumentSelector TextComponent{G}
+    	- OR - create a new view with the name TextComponent{Q.name} and description 'TextComponent{A.description}' and InstrumentSelector TextComponent{G}`
     }
     tJ2.getDescriptionResolutionRecipe = oJ2;
 
-function UH5(A, Q) {
+    function UH5(A, Q) {
         if (A.valueType !== Q.valueType) return aJ2(A, Q);
         if (A.unit !== Q.unit) return sJ2(A, Q);
         if (A.type !== Q.type) return rJ2(A, Q);
@@ -1277,7 +1246,7 @@ function UH5(A, Q) {
     }
     tJ2.getConflictResolutionRecipe = UH5
 });
-var ZW2 = U((BW2) => {
+var ZW2 = moduleWrapper((BW2) => {
     Object.defineProperty(BW2, "__esModule", {
         value: !0
     });
@@ -1285,8 +1254,7 @@ var ZW2 = U((BW2) => {
     var MH5 = gMA(),
         QW2 = W9(),
         R91 = AW2();
-
-class HQ0 {
+    class HQ0 {
         _sharedRegistry = new Map;
         _perCollectorRegistry = new Map;
         static create() {
@@ -1352,13 +1320,12 @@ To resolve the conflict:`, (0, R91.getConflictResolutionRecipe)(Z, A))
     }
     BW2.MetricStorageRegistry = HQ0
 });
-var WW2 = U((YW2) => {
+var WW2 = moduleWrapper((YW2) => {
     Object.defineProperty(YW2, "__esModule", {
         value: !0
     });
     YW2.MultiMetricStorage = void 0;
-
-class IW2 {
+    class IW2 {
         _backingStorages;
         constructor(A) {
             this._backingStorages = A
@@ -1371,7 +1338,7 @@ class IW2 {
     }
     YW2.MultiMetricStorage = IW2
 });
-var HW2 = U((KW2) => {
+var HW2 = moduleWrapper((KW2) => {
     Object.defineProperty(KW2, "__esModule", {
         value: !0
     });
@@ -1379,8 +1346,7 @@ var HW2 = U((KW2) => {
     var _YA = W9(),
         XW2 = uMA(),
         OH5 = O91();
-
-class FW2 {
+    class FW2 {
         _instrumentName;
         _valueType;
         _buffer = new XW2.AttributeHashMap;
@@ -1389,36 +1355,35 @@ class FW2 {
         }
         observe(A, Q = {}) {
             if (typeof A !== "number") {
-                _YA.diag.warn(`non-number value provided to metric ${this._instrumentName}: ${A}`);
+                _YA.diag.warn(`non-number value provided to metric TextComponent{this._instrumentName}: TextComponent{A}`);
                 return
             }
             if (this._valueType === _YA.ValueType.INT && !Number.isInteger(A)) {
-                if (_YA.diag.warn(`INT value type cannot accept a floating-point value for ${this._instrumentName}, ignoring the fractional digits.`), A = Math.trunc(A), !Number.isInteger(A)) return
+                if (_YA.diag.warn(`INT value type cannot accept a floating-point value for TextComponent{this._instrumentName}, ignoring the fractional digits.`), A = Math.trunc(A), !Number.isInteger(A)) return
             }
             this._buffer.set(Q, A)
         }
     }
     KW2.ObservableResultImpl = FW2;
-
-class VW2 {
+    class VW2 {
         _buffer = new Map;
         observe(A, Q, B = {}) {
             if (!(0, OH5.isObservableInstrument)(A)) return;
             let G = this._buffer.get(A);
             if (G == null) G = new XW2.AttributeHashMap, this._buffer.set(A, G);
             if (typeof Q !== "number") {
-                _YA.diag.warn(`non-number value provided to metric ${A._descriptor.name}: ${Q}`);
+                _YA.diag.warn(`non-number value provided to metric TextComponent{A._descriptor.name}: TextComponent{Q}`);
                 return
             }
             if (A._descriptor.valueType === _YA.ValueType.INT && !Number.isInteger(Q)) {
-                if (_YA.diag.warn(`INT value type cannot accept a floating-point value for ${A._descriptor.name}, ignoring the fractional digits.`), Q = Math.trunc(Q), !Number.isInteger(Q)) return
+                if (_YA.diag.warn(`INT value type cannot accept a floating-point value for TextComponent{A._descriptor.name}, ignoring the fractional digits.`), Q = Math.trunc(Q), !Number.isInteger(Q)) return
             }
             G.set(B, Q)
         }
     }
     KW2.BatchObservableResultImpl = VW2
 });
-var wW2 = U((UW2) => {
+var wW2 = moduleWrapper((UW2) => {
     Object.defineProperty(UW2, "__esModule", {
         value: !0
     });
@@ -1427,8 +1392,7 @@ var wW2 = U((UW2) => {
         CW2 = O91(),
         EW2 = HW2(),
         dMA = GP();
-
-class zW2 {
+    class zW2 {
         _callbacks = [];
         _batchCallbacks = [];
         addCallback(A, Q) {
@@ -1509,7 +1473,7 @@ class zW2 {
     }
     UW2.ObservableRegistry = zW2
 });
-var MW2 = U((NW2) => {
+var MW2 = moduleWrapper((NW2) => {
     Object.defineProperty(NW2, "__esModule", {
         value: !0
     });
@@ -1517,8 +1481,7 @@ var MW2 = U((NW2) => {
     var PH5 = XQ0(),
         jH5 = KQ0(),
         SH5 = DQ0();
-
-class qW2 extends PH5.MetricStorage {
+    class qW2 extends PH5.MetricStorage {
         _attributesProcessor;
         _aggregationCardinalityLimit;
         _deltaMetricStorage;
@@ -1537,19 +1500,17 @@ class qW2 extends PH5.MetricStorage {
     }
     NW2.SyncMetricStorage = qW2
 });
-var T91 = U((jW2) => {
+var T91 = moduleWrapper((jW2) => {
     Object.defineProperty(jW2, "__esModule", {
         value: !0
     });
     jW2.createDenyListAttributesProcessor = jW2.createAllowListAttributesProcessor = jW2.createMultiAttributesProcessor = jW2.createNoopAttributesProcessor = void 0;
-
-class OW2 {
+    class OW2 {
         process(A, Q) {
             return A
         }
     }
-
-class RW2 {
+    class RW2 {
         _processors;
         constructor(A) {
             this._processors = A

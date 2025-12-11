@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_015.js
+ * 处理时间: 2025-12-09T03:41:36.149Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.870Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -105,7 +108,7 @@
             }
             try {
                 N0(this, qM, "m", Nc1).call(this), this._connected(null);
-                let Z = IE.fromReadableStream(A, this.controller);
+                let Z = EventSourceIterator.fromReadableStream(A, this.controller);
                 for await (let I of Z) N0(this, qM, "m", Lc1).call(this, I);
                 if (Z.controller.signal?.aborted) throw new gY;
                 N0(this, qM, "m", Mc1).call(this)
@@ -179,10 +182,10 @@
         }, V_B = function(Q) {
             let B = N0(this, hp, "f");
             if (Q.type === "message_start") {
-                if (B) throw new yB(`Unexpected event order, got ${Q.type} before receiving "message_stop"`);
+                if (B) throw new yB(`Unexpected event order, got TextComponent{Q.type} before receiving "message_stop"`);
                 return Q.message
             }
-            if (!B) throw new yB(`Unexpected event order, got ${Q.type} before "message_start"`);
+            if (!B) throw new yB(`Unexpected event order, got TextComponent{Q.type} before "message_start"`);
             switch (Q.type) {
                 case "message_stop":
                     return B;
@@ -303,12 +306,12 @@
             }
         }
         toReadableStream() {
-            return new IE(this[Symbol.asyncIterator].bind(this), this.controller).toReadableStream()
+            return new EventSourceIterator(this[Symbol.asyncIterator].bind(this), this.controller).toReadableStream()
         }
     }
 });
 var qwA;
-var Oc1 = L(() => {
+var Oc1 = lazyLoader(() => {
     c_();
     wM();
     Dc1();
@@ -316,29 +319,29 @@ var Oc1 = L(() => {
     vp();
     qwA = class qwA extends cY {
         create(A, Q) {
-            return this._client.post("/* Anthropic Messages API endpoint */ /v1/messages/batches", {
+            return this._client.post("/v1/messages/batches", {
                 body: A,
                 ...Q
             })
         }
         retrieve(A, Q) {
-            return this._client.get(BY`/* Anthropic Messages API endpoint */ /v1/messages/batches/${A}`, Q)
+            return this._client.get(BY`/v1/messages/batches/TextComponent{A}`, Q)
         }
         list(A = {}, Q) {
-            return this._client.getAPIList("/* Anthropic Messages API endpoint */ /v1/messages/batches", NT, {
+            return this._client.getAPIList("/v1/messages/batches", NT, {
                 query: A,
                 ...Q
             })
         }
         delete(A, Q) {
-            return this._client.delete(BY`/* Anthropic Messages API endpoint */ /v1/messages/batches/${A}`, Q)
+            return this._client.delete(BY`/v1/messages/batches/TextComponent{A}`, Q)
         }
         cancel(A, Q) {
-            return this._client.post(BY`/* Anthropic Messages API endpoint */ /v1/messages/batches/${A}/cancel`, Q)
+            return this._client.post(BY`/v1/messages/batches/TextComponent{A}/cancel`, Q)
         }
         async results(A, Q) {
             let B = await this.retrieve(A);
-            if (!B.results_url) throw new yB(`No batch \`results_url\`; Has it finished processing? ${B.processing_status} - ${B.id}`);
+            if (!B.results_url) throw new yB(`No batch \`results_url\`; Has it finished processing? TextComponent{B.processing_status} - TextComponent{B.id}`);
             return this._client.get(B.results_url, {
                 ...Q,
                 headers: r4([{
@@ -351,7 +354,7 @@ var Oc1 = L(() => {
     }
 });
 var Bq, E_B;
-var Rc1 = L(() => {
+var Rc1 = lazyLoader(() => {
     C_B();
     Oc1();
     Oc1();
@@ -362,14 +365,14 @@ var Rc1 = L(() => {
             this.batches = new qwA(this._client)
         }
         create(A, Q) {
-            if (A.model in E_B) console.warn(`The model '${A.model}' is deprecated and will reach end-of-life on ${E_B[A.model]}
-Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.`);
+            if (A.model in E_B) console.warn(`The model 'TextComponent{A.model}' is deprecated and will reach end-of-life on TextComponent{E_B[A.model]}
+Please migrate to a newer model. Visit https://docs.anthropic.com/AGENT_OUTPUT_TOOL_NAME/docs/resources/model-deprecations for more information.`);
             let B = this._client._options.timeout;
             if (!A.stream && B == null) {
                 let G = MoA[A.model] ?? void 0;
                 B = this._client.calculateNonstreamingTimeout(A.max_tokens, G)
             }
-            return this._client.post("/* Anthropic Messages API endpoint */ /v1/messages", {
+            return this._client.post("/v1/messages", {
                 body: A,
                 timeout: B ?? 600000,
                 ...Q,
@@ -380,7 +383,7 @@ Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resour
             return wwA.createMessage(this, A, Q)
         }
         countTokens(A, Q) {
-            return this._client.post("/* Anthropic Messages API endpoint */ /v1/messages/count_tokens", {
+            return this._client.post("/v1/messages/count_tokens", {
                 body: A,
                 ...Q
             })
@@ -402,7 +405,7 @@ Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resour
     Bq.Batches = qwA
 });
 var _GA;
-var Tc1 = L(() => {
+var Tc1 = lazyLoader(() => {
     c_();
     wM();
     vp();
@@ -411,7 +414,7 @@ var Tc1 = L(() => {
             let {
                 betas: G
             } = Q ?? {};
-            return this._client.get(BY`/v1/models/${A}`, {
+            return this._client.get(BY`/v1/models/TextComponent{A}`, {
                 ...B,
                 headers: r4([{
                     ...G?.toString() != null ? {
@@ -437,7 +440,7 @@ var Tc1 = L(() => {
         }
     }
 });
-var NwA = L(() => {
+var NwA = lazyLoader(() => {
     Uc1();
     $c1();
     Rc1();
@@ -449,7 +452,6 @@ var LwA = (A) => {
     if (typeof globalThis.Deno < "u") return globalThis.Deno.env?.get?.(A)?.trim();
     return
 };
-
 class ZG {
     constructor({
         baseURL: A = LwA("ANTHROPIC_BASE_URL"),
@@ -517,21 +519,21 @@ new Anthropic({ apiKey, dangerouslyAllowBrowser: true });
     async bearerAuth(A) {
         if (this.authToken == null) return;
         return r4([{
-            Authorization: `Bearer ${this.authToken}`
+            Authorization: `Bearer TextComponent{this.authToken}`
         }])
     }
     stringifyQuery(A) {
         return Object.entries(A).filter(([Q, B]) => typeof B < "u").map(([Q, B]) => {
-            if (typeof B === "string" || typeof B === "number" || typeof B === "boolean") return `${encodeURIComponent(Q)}=${encodeURIComponent(B)}`;
-            if (B === null) return `${encodeURIComponent(Q)}=`;
-            throw new yB(`Cannot stringify type ${typeof B}; Expected string, number, boolean, or null. If you need to pass nested query parameters, you can manually encode them, e.g. { query: { 'foo[key1]': value1, 'foo[key2]': value2 } }, and please open a GitHub issue requesting better support for your use case.`)
+            if (typeof B === "string" || typeof B === "number" || typeof B === "boolean") return `TextComponent{encodeURIComponent(Q)}=TextComponent{encodeURIComponent(B)}`;
+            if (B === null) return `TextComponent{encodeURIComponent(Q)}=`;
+            throw new yB(`Cannot stringify type TextComponent{typeof B}; Expected string, number, boolean, or null. If you need to pass nested query parameters, you can manually encode them, e.g. { query: { 'foo[key1]': value1, 'foo[key2]': value2 } }, and please open a GitHub issue requesting better support for your use case.`)
         }).join("&")
     }
     getUserAgent() {
-        return `${this.constructor.name}/JS ${xp}`
+        return `TextComponent{this.constructor.name}/JS TextComponent{xp}`
     }
     defaultIdempotencyKey() {
-        return `stainless-node-retry-${td1()}`
+        return `stainless-node-retry-TextComponent{td1()}`
     }
     makeStatusError(A, Q, B, G) {
         return a2.generate(A, Q, B, G)
@@ -600,9 +602,9 @@ new Anthropic({ apiKey, dangerouslyAllowBrowser: true });
             options: G
         });
         let W = "log_" + (Math.random() * 16777216 | 0).toString(16).padStart(6, "0"),
-            X = B === void 0 ? "" : `, retryOf: ${B}`,
+            X = B === void 0 ? "" : `, retryOf: TextComponent{B}`,
             F = Date.now();
-        if (vV(this).debug(`[${W}] sending request`, gb({
+        if (vV(this).debug(`[TextComponent{W}] sending request`, gb({
                 retryOfRequestLogID: B,
                 method: G.method,
                 url: Y,
@@ -613,16 +615,16 @@ new Anthropic({ apiKey, dangerouslyAllowBrowser: true });
             K = await this.fetchWithTimeout(Y, I, J, V).catch(QUA),
             D = Date.now();
         if (K instanceof globalThis.Error) {
-            let E = `retrying, ${Q} attempts remaining`;
+            let E = `retrying, TextComponent{Q} attempts remaining`;
             if (G.signal?.aborted) throw new gY;
             let z = hb(K) || /timed? ?out/i.test(String(K) + ("cause" in K ? String(K.cause) : ""));
-            if (Q) return vV(this).info(`[${W}] connection ${z?"timed out":"failed"} - ${E}`), vV(this).debug(`[${W}] connection ${z?"timed out":"failed"} (${E})`, gb({
+            if (Q) return vV(this).info(`[TextComponent{W}] connection TextComponent{z?"timed out":"failed"} - TextComponent{E}`), vV(this).debug(`[TextComponent{W}] connection TextComponent{z?"timed out":"failed"} (TextComponent{E})`, gb({
                 retryOfRequestLogID: B,
                 url: Y,
                 durationMs: D - F,
                 message: K.message
             })), this.retryRequest(G, Q, B ?? W);
-            if (vV(this).info(`[${W}] connection ${z?"timed out":"failed"} - error; no more retries left`), vV(this).debug(`[${W}] connection ${z?"timed out":"failed"} (error; no more retries left)`, gb({
+            if (vV(this).info(`[TextComponent{W}] connection TextComponent{z?"timed out":"failed"} - error; no more retries left`), vV(this).debug(`[TextComponent{W}] connection TextComponent{z?"timed out":"failed"} (error; no more retries left)`, gb({
                     retryOfRequestLogID: B,
                     url: Y,
                     durationMs: D - F,
@@ -633,12 +635,12 @@ new Anthropic({ apiKey, dangerouslyAllowBrowser: true });
             })
         }
         let H = [...K.headers.entries()].filter(([E]) => E === "request-id").map(([E, z]) => ", " + E + ": " + JSON.stringify(z)).join(""),
-            C = `[${W}${X}${H}] ${I.method} ${Y} ${K.ok?"succeeded":"failed"} with status ${K.status} in ${D-F}ms`;
+            C = `[TextComponent{W}TextComponent{X}TextComponent{H}] TextComponent{I.method} TextComponent{Y} TextComponent{K.ok?"succeeded":"failed"} with status TextComponent{K.status} in TextComponent{D-F}ms`;
         if (!K.ok) {
             let E = await this.shouldRetry(K);
             if (Q && E) {
-                let P = `retrying, ${Q} attempts remaining`;
-                return await e7B(K.body), vV(this).info(`${C} - ${P}`), vV(this).debug(`[${W}] response error (${P})`, gb({
+                let P = `retrying, TextComponent{Q} attempts remaining`;
+                return await e7B(K.body), vV(this).info(`TextComponent{C} - TextComponent{P}`), vV(this).debug(`[TextComponent{W}] response error (TextComponent{P})`, gb({
                     retryOfRequestLogID: B,
                     url: K.url,
                     status: K.status,
@@ -647,11 +649,11 @@ new Anthropic({ apiKey, dangerouslyAllowBrowser: true });
                 })), this.retryRequest(G, Q, B ?? W, K.headers)
             }
             let z = E ? "error; no more retries left" : "error; not retryable";
-            vV(this).info(`${C} - ${z}`);
+            vV(this).info(`TextComponent{C} - TextComponent{z}`);
             let w = await K.text().catch((P) => QUA(P).message),
                 N = UnA(w),
                 q = N ? void 0 : w;
-            throw vV(this).debug(`[${W}] response error (${z})`, gb({
+            throw vV(this).debug(`[TextComponent{W}] response error (TextComponent{z})`, gb({
                 retryOfRequestLogID: B,
                 url: K.url,
                 status: K.status,
@@ -660,7 +662,7 @@ new Anthropic({ apiKey, dangerouslyAllowBrowser: true });
                 durationMs: Date.now() - F
             })), this.makeStatusError(K.status, N, q, K.headers)
         }
-        return vV(this).info(C), vV(this).debug(`[${W}] response start`, gb({
+        return vV(this).info(C), vV(this).debug(`[TextComponent{W}] response start`, gb({
             retryOfRequestLogID: B,
             url: K.url,
             status: K.status,
@@ -848,7 +850,7 @@ new Anthropic({ apiKey, dangerouslyAllowBrowser: true });
 var Pc1, jc1, yoA, z_B, U_B = "\\n\\nHuman:",
     $_B = "\\n\\nAssistant:",
     MT;
-var Hf = L(() => {
+var Hf = lazyLoader(() => {
     fb();
     Vt();
     ed1();
@@ -897,7 +899,7 @@ var Hf = L(() => {
     MT.Models = _GA;
     MT.Beta = mH
 });
-var _c1 = U((VBG, voA) => {
+var _c1 = moduleWrapper((VBG, voA) => {
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
 
@@ -921,7 +923,7 @@ var _c1 = U((VBG, voA) => {
         else if (typeof voA === "object" && typeof VBG === "object") A(B(Q, B(VBG)));
         else A(B(Q));
 
-function B(G, Z) {
+        function B(G, Z) {
             if (G !== Q)
                 if (typeof Object.create === "function") Object.defineProperty(G, "__esModule", {
                     value: !0
@@ -944,7 +946,7 @@ function B(G, Z) {
         w_B = function(B, G) {
             Q(B, G);
 
-function Z() {
+            function Z() {
                 this.constructor = B
             }
             B.prototype = G === null ? Object.create(G) : (Z.prototype = G.prototype, new Z)
@@ -994,7 +996,7 @@ function Z() {
                     }
                 }
 
-function F(K) {
+                function F(K) {
                     try {
                         V(I.throw(K))
                     } catch (D) {
@@ -1002,7 +1004,7 @@ function F(K) {
                     }
                 }
 
-function V(K) {
+                function V(K) {
                     K.done ? J(K.value) : Y(K.value).then(X, F)
                 }
                 V((I = I.apply(B, G || [])).next())
@@ -1026,13 +1028,13 @@ function V(K) {
                 return this
             }), W;
 
-function X(V) {
+            function X(V) {
                 return function(K) {
                     return F([V, K])
                 }
             }
 
-function F(V) {
+            function F(V) {
                 if (I) throw TypeError("Generator is already executing.");
                 while (Z) try {
                     if (I = 1, Y && (J = V[0] & 2 ? Y.return : V[0] ? Y.throw || ((J = Y.return) && J.call(Y), 0) : Y.next) && !(J = J.call(Y, V[1])).done) return J;
@@ -1145,7 +1147,7 @@ function F(V) {
                 return this
             }, Y;
 
-function W(H) {
+            function W(H) {
                 if (I[H]) Y[H] = function(C) {
                     return new Promise(function(E, z) {
                         J.push([H, C, E, z]) > 1 || X(H, C)
@@ -1153,7 +1155,7 @@ function W(H) {
                 }
             }
 
-function X(H, C) {
+            function X(H, C) {
                 try {
                     F(I[H](C))
                 } catch (E) {
@@ -1161,19 +1163,19 @@ function X(H, C) {
                 }
             }
 
-function F(H) {
+            function F(H) {
                 H.value instanceof kGA ? Promise.resolve(H.value.v).then(V, K) : D(J[0][2], H)
             }
 
-function V(H) {
+            function V(H) {
                 X("next", H)
             }
 
-function K(H) {
+            function K(H) {
                 X("throw", H)
             }
 
-function D(H, C) {
+            function D(H, C) {
                 if (H(C), J.shift(), J.length) X(J[0][0], J[0][1])
             }
         }, k_B = function(B) {
@@ -1184,7 +1186,7 @@ function D(H, C) {
                 return this
             }, G;
 
-function I(Y, J) {
+            function I(Y, J) {
                 G[Y] = B[Y] ? function(W) {
                     return (Z = !Z) ? {
                         value: kGA(B[Y](W)),
@@ -1200,7 +1202,7 @@ function I(Y, J) {
                 return this
             }, Z);
 
-function I(J) {
+            function I(J) {
                 Z[J] = B[J] && function(W) {
                     return new Promise(function(X, F) {
                         W = B[J](W), Y(X, F, W.done, W.value)
@@ -1208,7 +1210,7 @@ function I(J) {
                 }
             }
 
-function Y(J, W, X, F) {
+            function Y(J, W, X, F) {
                 Promise.resolve(F).then(function(V) {
                     J({
                         value: V,
@@ -1224,8 +1226,7 @@ function Y(J, W, X, F) {
             return B
         }, v_B = function(B) {
             if (B && B.__esModule) return B;
-
-var G = {};
+            var G = {};
             if (B != null) {
                 for (var Z in B)
                     if (Object.hasOwnProperty.call(B, Z)) G[Z] = B[Z]
@@ -1244,7 +1245,7 @@ var G = {};
         }, A("__extends", w_B), A("__assign", q_B), A("__rest", N_B), A("__decorate", L_B), A("__param", M_B), A("__metadata", O_B), A("__awaiter", R_B), A("__generator", T_B), A("__exportStar", P_B), A("__createBinding", g_B), A("__values", xoA), A("__read", Sc1), A("__spread", j_B), A("__spreadArrays", S_B), A("__await", kGA), A("__asyncGenerator", __B), A("__asyncDelegator", k_B), A("__asyncValues", y_B), A("__makeTemplateObject", x_B), A("__importStar", v_B), A("__importDefault", b_B), A("__classPrivateFieldGet", f_B), A("__classPrivateFieldSet", h_B)
     })
 });
-var kc1 = U((u_B) => {
+var kc1 = moduleWrapper((u_B) => {
     Object.defineProperty(u_B, "__esModule", {
         value: !0
     });
@@ -1255,7 +1256,7 @@ var kc1 = U((u_B) => {
     u_B.INIT = [1779033703, 3144134277, 1013904242, 2773480762, 1359893119, 2600822924, 528734635, 1541459225];
     u_B.MAX_HASHABLE_LENGTH = Math.pow(2, 53) - 1
 });
-var p_B = U((d_B) => {
+var p_B = moduleWrapper((d_B) => {
     Object.defineProperty(d_B, "__esModule", {
         value: !0
     });
@@ -1317,7 +1318,7 @@ var p_B = U((d_B) => {
         }();
     d_B.RawSha256 = KR6
 });
-var n_B = U((l_B) => {
+var n_B = moduleWrapper((l_B) => {
     Object.defineProperty(l_B, "__esModule", {
         value: !0
     });
@@ -1353,23 +1354,23 @@ var n_B = U((l_B) => {
     };
     l_B.toUtf8 = HR6
 });
-var r_B = U((a_B) => {
+var r_B = moduleWrapper((a_B) => {
     Object.defineProperty(a_B, "__esModule", {
         value: !0
     });
     a_B.toUtf8 = a_B.fromUtf8 = void 0;
 
-function ER6(A) {
+    function ER6(A) {
         return new TextEncoder().encode(A)
     }
     a_B.fromUtf8 = ER6;
 
-function zR6(A) {
+    function zR6(A) {
         return new TextDecoder("utf-8").decode(A)
     }
     a_B.toUtf8 = zR6
 });
-var yc1 = U((e_B) => {
+var yc1 = moduleWrapper((e_B) => {
     Object.defineProperty(e_B, "__esModule", {
         value: !0
     });
@@ -1381,7 +1382,7 @@ var yc1 = U((e_B) => {
     var wR6 = (A) => typeof TextDecoder === "function" ? (0, t_B.toUtf8)(A) : (0, o_B.toUtf8)(A);
     e_B.toUtf8 = wR6
 });
-var GkB = U((QkB) => {
+var GkB = moduleWrapper((QkB) => {
     Object.defineProperty(QkB, "__esModule", {
         value: !0
     });
@@ -1391,7 +1392,7 @@ var GkB = U((QkB) => {
             return Buffer.from(A, "utf8")
         } : NR6.fromUtf8;
 
-function MR6(A) {
+    function MR6(A) {
         if (A instanceof Uint8Array) return A;
         if (typeof A === "string") return LR6(A);
         if (ArrayBuffer.isView(A)) return new Uint8Array(A.buffer, A.byteOffset, A.byteLength / Uint8Array.BYTES_PER_ELEMENT);
@@ -1399,36 +1400,36 @@ function MR6(A) {
     }
     QkB.convertToBuffer = MR6
 });
-var YkB = U((ZkB) => {
+var YkB = moduleWrapper((ZkB) => {
     Object.defineProperty(ZkB, "__esModule", {
         value: !0
     });
     ZkB.isEmptyData = void 0;
 
-function OR6(A) {
+    function OR6(A) {
         if (typeof A === "string") return A.length === 0;
         return A.byteLength === 0
     }
     ZkB.isEmptyData = OR6
 });
-var XkB = U((JkB) => {
+var XkB = moduleWrapper((JkB) => {
     Object.defineProperty(JkB, "__esModule", {
         value: !0
     });
     JkB.numToUint8 = void 0;
 
-function RR6(A) {
+    function RR6(A) {
         return new Uint8Array([(A & 4278190080) >> 24, (A & 16711680) >> 16, (A & 65280) >> 8, A & 255])
     }
     JkB.numToUint8 = RR6
 });
-var KkB = U((FkB) => {
+var KkB = moduleWrapper((FkB) => {
     Object.defineProperty(FkB, "__esModule", {
         value: !0
     });
     FkB.uint32ArrayFrom = void 0;
 
-function TR6(A) {
+    function TR6(A) {
         if (!Uint32Array.from) {
             var Q = new Uint32Array(A.length),
                 B = 0;
@@ -1439,7 +1440,7 @@ function TR6(A) {
     }
     FkB.uint32ArrayFrom = TR6
 });
-var DkB = U((yGA) => {
+var DkB = moduleWrapper((yGA) => {
     Object.defineProperty(yGA, "__esModule", {
         value: !0
     });
@@ -1473,7 +1474,7 @@ var DkB = U((yGA) => {
         }
     })
 });
-var zkB = U((CkB) => {
+var zkB = moduleWrapper((CkB) => {
     Object.defineProperty(CkB, "__esModule", {
         value: !0
     });

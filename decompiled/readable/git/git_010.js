@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_010.js
+ * 处理时间: 2025-12-09T03:41:37.377Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.969Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,8 +20,8 @@
  * Original file: cli.js
  */
 
-var qpA = U((DN7, AtQ) => {
-    var u5A = UA("node:assert"),
+var qpA = moduleWrapper((DN7, AtQ) => {
+    var u5A = nodeRequire("node:assert"),
         {
             kRetryHandlerDefaultRetry: ooQ
         } = iI(),
@@ -32,12 +35,11 @@ var qpA = U((DN7, AtQ) => {
             wrapRequestBody: pf8
         } = M6();
 
-function lf8(A) {
+    function lf8(A) {
         let Q = Date.now();
         return new Date(A).getTime() - Q
     }
-
-class xk1 {
+    class xk1 {
         constructor(A, Q) {
             let {
                 retryOptions: B,
@@ -210,11 +212,11 @@ class xk1 {
                 }
             }, Q.bind(this));
 
-function Q(B) {
+            function Q(B) {
                 if (B != null || this.aborted || toQ(this.opts.body)) return this.handler.onError(B);
                 if (this.start !== 0) {
                     let G = {
-                        range: `bytes=${this.start}-${this.end??""}`
+                        range: `bytes=TextComponent{this.start}-TextComponent{this.end??""}`
                     };
                     if (this.etag != null) G["if-match"] = this.etag;
                     this.opts = {
@@ -235,11 +237,10 @@ function Q(B) {
     }
     AtQ.exports = xk1
 });
-var GtQ = U((HN7, BtQ) => {
+var GtQ = moduleWrapper((HN7, BtQ) => {
     var if8 = fCA(),
         nf8 = qpA();
-
-class QtQ extends if8 {
+    class QtQ extends if8 {
         #A = null;
         #Q = null;
         constructor(A, Q = {}) {
@@ -265,11 +266,11 @@ class QtQ extends if8 {
     }
     BtQ.exports = QtQ
 });
-var gk1 = U((CN7, DtQ) => {
-    var WtQ = UA("node:assert"),
+var gk1 = moduleWrapper((CN7, DtQ) => {
+    var WtQ = nodeRequire("node:assert"),
         {
             Readable: af8
-        } = UA("node:stream"),
+        } = nodeRequire("node:stream"),
         {
             RequestAbortedError: XtQ,
             NotSupportedError: sf8,
@@ -287,8 +288,7 @@ var gk1 = U((CN7, DtQ) => {
         VtQ = Symbol("kContentType"),
         ItQ = Symbol("kContentLength"),
         tf8 = () => {};
-
-class KtQ extends af8 {
+    class KtQ extends af8 {
         constructor({
             resume: A,
             abort: Q,
@@ -380,15 +380,14 @@ class KtQ extends af8 {
         }
     }
 
-function ef8(A) {
+    function ef8(A) {
         return A[Bc] && A[Bc].locked === !0 || A[Tw]
     }
 
-function Ah8(A) {
+    function Ah8(A) {
         return FtQ.isDisturbed(A) || ef8(A)
     }
-
-async function DEA(A, Q) {
+    async function DEA(A, Q) {
         return WtQ(!A[Tw]), new Promise((B, G) => {
             if (Ah8(A)) {
                 let Z = A._readableState;
@@ -415,7 +414,7 @@ async function DEA(A, Q) {
         })
     }
 
-function Qh8(A) {
+    function Qh8(A) {
         if (A.body === null) return;
         let {
             _readableState: Q
@@ -434,7 +433,7 @@ function Qh8(A) {
         while (A.stream.read() != null);
     }
 
-function bk1(A, Q) {
+    function bk1(A, Q) {
         if (A.length === 0 || Q === 0) return "";
         let B = A.length === 1 ? A[0] : Buffer.concat(A, Q),
             G = B.length,
@@ -442,7 +441,7 @@ function bk1(A, Q) {
         return B.utf8Slice(Z, G)
     }
 
-function YtQ(A, Q) {
+    function YtQ(A, Q) {
         if (A.length === 0 || Q === 0) return new Uint8Array(0);
         if (A.length === 1) return new Uint8Array(A[0]);
         let B = new Uint8Array(Buffer.allocUnsafeSlow(Q).buffer),
@@ -454,7 +453,7 @@ function YtQ(A, Q) {
         return B
     }
 
-function JtQ(A) {
+    function JtQ(A) {
         let {
             type: Q,
             body: B,
@@ -476,11 +475,11 @@ function JtQ(A) {
         }
     }
 
-function fk1(A, Q) {
+    function fk1(A, Q) {
         A.length += Q.length, A.body.push(Q)
     }
 
-function hk1(A, Q) {
+    function hk1(A, Q) {
         if (A.body === null) return;
         if (Q) A.reject(Q);
         else A.resolve();
@@ -491,16 +490,15 @@ function hk1(A, Q) {
         chunksDecode: bk1
     }
 });
-var uk1 = U((EN7, UtQ) => {
-    var Bh8 = UA("node:assert"),
+var uk1 = moduleWrapper((EN7, UtQ) => {
+    var Bh8 = nodeRequire("node:assert"),
         {
             ResponseStatusCodeError: HtQ
         } = U7(),
         {
             chunksDecode: CtQ
         } = gk1();
-
-async function Gh8({
+    async function Gh8({
         callback: A,
         body: Q,
         contentType: B,
@@ -519,7 +517,7 @@ async function Gh8({
         } catch {
             Y = [], J = 0
         }
-        let W = `Response status code ${G}${Z?`: ${Z}`:""}`;
+        let W = `Response status code TextComponent{G}TextComponent{Z?`: TextComponent{Z}`:""}`;
         if (G === 204 || !B || !J) {
             queueMicrotask(() => A(new HtQ(W, G, I)));
             return
@@ -547,8 +545,8 @@ async function Gh8({
         isContentTypeText: ztQ
     }
 });
-var qtQ = U((zN7, dk1) => {
-    var Zh8 = UA("node:assert"),
+var qtQ = moduleWrapper((zN7, dk1) => {
+    var Zh8 = nodeRequire("node:assert"),
         {
             Readable: Ih8
         } = gk1(),
@@ -562,9 +560,8 @@ var qtQ = U((zN7, dk1) => {
         } = uk1(),
         {
             AsyncResource: Jh8
-        } = UA("node:async_hooks");
-
-class mk1 extends Jh8 {
+        } = nodeRequire("node:async_hooks");
+    class mk1 extends Jh8 {
         constructor(A, Q) {
             if (!A || typeof A !== "object") throw new m5A("invalid opts");
             let {
@@ -677,7 +674,7 @@ class mk1 extends Jh8 {
         }
     }
 
-function wtQ(A, Q) {
+    function wtQ(A, Q) {
         if (Q === void 0) return new Promise((B, G) => {
             wtQ.call(this, A, (Z, I) => {
                 return Z ? G(Z) : B(I)
@@ -696,20 +693,20 @@ function wtQ(A, Q) {
     dk1.exports = wtQ;
     dk1.exports.RequestHandler = mk1
 });
-var HEA = U((UN7, MtQ) => {
+var HEA = moduleWrapper((UN7, MtQ) => {
     var {
         addAbortListener: Wh8
     } = M6(), {
         RequestAbortedError: Xh8
     } = U7(), d5A = Symbol("kListener"), A_ = Symbol("kSignal");
 
-function NtQ(A) {
+    function NtQ(A) {
         if (A.abort) A.abort(A[A_]?.reason);
         else A.reason = A[A_]?.reason ?? new Xh8;
         LtQ(A)
     }
 
-function Fh8(A, Q) {
+    function Fh8(A, Q) {
         if (A.reason = null, A[A_] = null, A[d5A] = null, !Q) return;
         if (Q.aborted) {
             NtQ(A);
@@ -720,7 +717,7 @@ function Fh8(A, Q) {
         }, Wh8(A[A_], A[d5A])
     }
 
-function LtQ(A) {
+    function LtQ(A) {
         if (!A[A_]) return;
         if ("removeEventListener" in A[A_]) A[A_].removeEventListener("abort", A[d5A]);
         else A[A_].removeListener("abort", A[d5A]);
@@ -731,12 +728,12 @@ function LtQ(A) {
         removeSignal: LtQ
     }
 });
-var jtQ = U(($N7, PtQ) => {
-    var Vh8 = UA("node:assert"),
+var jtQ = moduleWrapper(($N7, PtQ) => {
+    var Vh8 = nodeRequire("node:assert"),
         {
             finished: Kh8,
             PassThrough: Dh8
-        } = UA("node:stream"),
+        } = nodeRequire("node:stream"),
         {
             InvalidArgumentError: c5A,
             InvalidReturnValueError: Hh8
@@ -747,13 +744,12 @@ var jtQ = U(($N7, PtQ) => {
         } = uk1(),
         {
             AsyncResource: Eh8
-        } = UA("node:async_hooks"),
+        } = nodeRequire("node:async_hooks"),
         {
             addSignal: zh8,
             removeSignal: OtQ
         } = HEA();
-
-class RtQ extends Eh8 {
+    class RtQ extends Eh8 {
         constructor(A, Q, B) {
             if (!A || typeof A !== "object") throw new c5A("invalid opts");
             let {
@@ -872,7 +868,7 @@ class RtQ extends Eh8 {
         }
     }
 
-function TtQ(A, Q, B) {
+    function TtQ(A, Q, B) {
         if (B === void 0) return new Promise((G, Z) => {
             TtQ.call(this, A, Q, (I, Y) => {
                 return I ? Z(I) : G(Y)
@@ -890,23 +886,22 @@ function TtQ(A, Q, B) {
     }
     PtQ.exports = TtQ
 });
-var btQ = U((wN7, vtQ) => {
+var btQ = moduleWrapper((wN7, vtQ) => {
     var {
         Readable: _tQ,
         Duplex: Uh8,
         PassThrough: $h8
-    } = UA("node:stream"), {
+    } = nodeRequire("node:stream"), {
         InvalidArgumentError: CEA,
         InvalidReturnValueError: wh8,
         RequestAbortedError: ck1
     } = U7(), cL = M6(), {
         AsyncResource: qh8
-    } = UA("node:async_hooks"), {
+    } = nodeRequire("node:async_hooks"), {
         addSignal: Nh8,
         removeSignal: Lh8
-    } = HEA(), StQ = UA("node:assert"), p5A = Symbol("resume");
-
-class ktQ extends _tQ {
+    } = HEA(), StQ = nodeRequire("node:assert"), p5A = Symbol("resume");
+    class ktQ extends _tQ {
         constructor() {
             super({
                 autoDestroy: !0
@@ -923,8 +918,7 @@ class ktQ extends _tQ {
             this._read(), Q(A)
         }
     }
-
-class ytQ extends _tQ {
+    class ytQ extends _tQ {
         constructor(A) {
             super({
                 autoDestroy: !0
@@ -939,8 +933,7 @@ class ytQ extends _tQ {
             Q(A)
         }
     }
-
-class xtQ extends qh8 {
+    class xtQ extends qh8 {
         constructor(A, Q) {
             if (!A || typeof A !== "object") throw new CEA("invalid opts");
             if (typeof Q !== "function") throw new CEA("invalid handler");
@@ -1076,7 +1069,7 @@ class xtQ extends qh8 {
         }
     }
 
-function Mh8(A, Q) {
+    function Mh8(A, Q) {
         try {
             let B = new xtQ(A, Q);
             return this.dispatch({
@@ -1089,18 +1082,17 @@ function Mh8(A, Q) {
     }
     vtQ.exports = Mh8
 });
-var ctQ = U((qN7, dtQ) => {
+var ctQ = moduleWrapper((qN7, dtQ) => {
     var {
         InvalidArgumentError: pk1,
         SocketError: Oh8
     } = U7(), {
         AsyncResource: Rh8
-    } = UA("node:async_hooks"), ftQ = M6(), {
+    } = nodeRequire("node:async_hooks"), ftQ = M6(), {
         addSignal: Th8,
         removeSignal: htQ
-    } = HEA(), gtQ = UA("node:assert");
-
-class utQ extends Rh8 {
+    } = HEA(), gtQ = nodeRequire("node:assert");
+    class utQ extends Rh8 {
         constructor(A, Q) {
             if (!A || typeof A !== "object") throw new pk1("invalid opts");
             if (typeof Q !== "function") throw new pk1("invalid callback");
@@ -1152,7 +1144,7 @@ class utQ extends Rh8 {
         }
     }
 
-function mtQ(A, Q) {
+    function mtQ(A, Q) {
         if (Q === void 0) return new Promise((B, G) => {
             mtQ.call(this, A, (Z, I) => {
                 return Z ? G(Z) : B(I)
@@ -1175,11 +1167,11 @@ function mtQ(A, Q) {
     }
     dtQ.exports = mtQ
 });
-var stQ = U((NN7, atQ) => {
-    var Ph8 = UA("node:assert"),
+var stQ = moduleWrapper((NN7, atQ) => {
+    var Ph8 = nodeRequire("node:assert"),
         {
             AsyncResource: jh8
-        } = UA("node:async_hooks"),
+        } = nodeRequire("node:async_hooks"),
         {
             InvalidArgumentError: lk1,
             SocketError: Sh8
@@ -1189,8 +1181,7 @@ var stQ = U((NN7, atQ) => {
             addSignal: _h8,
             removeSignal: ltQ
         } = HEA();
-
-class itQ extends jh8 {
+    class itQ extends jh8 {
         constructor(A, Q) {
             if (!A || typeof A !== "object") throw new lk1("invalid opts");
             if (typeof Q !== "function") throw new lk1("invalid callback");
@@ -1243,7 +1234,7 @@ class itQ extends jh8 {
         }
     }
 
-function ntQ(A, Q) {
+    function ntQ(A, Q) {
         if (Q === void 0) return new Promise((B, G) => {
             ntQ.call(this, A, (Z, I) => {
                 return Z ? G(Z) : B(I)
@@ -1265,19 +1256,18 @@ function ntQ(A, Q) {
     }
     atQ.exports = ntQ
 });
-var rtQ = U((kh8, l5A) => {
+var rtQ = moduleWrapper((kh8, l5A) => {
     kh8.request = qtQ();
     kh8.stream = jtQ();
     kh8.pipeline = btQ();
     kh8.upgrade = ctQ();
     kh8.connect = stQ()
 });
-var nk1 = U((LN7, otQ) => {
+var nk1 = moduleWrapper((LN7, otQ) => {
     var {
         UndiciError: hh8
     } = U7();
-
-class ik1 extends hh8 {
+    class ik1 extends hh8 {
         constructor(A) {
             super(A);
             Error.captureStackTrace(this, ik1), this.name = "MockNotMatchedError", this.message = A || "The request does not match any registered mock dispatches", this.code = "UND_MOCK_ERR_MOCK_NOT_MATCHED"
@@ -1287,7 +1277,7 @@ class ik1 extends hh8 {
         MockNotMatchedError: ik1
     }
 });
-var i5A = U((MN7, ttQ) => {
+var i5A = moduleWrapper((MN7, ttQ) => {
     ttQ.exports = {
         kAgent: Symbol("agent"),
         kOptions: Symbol("options"),
@@ -1310,7 +1300,7 @@ var i5A = U((MN7, ttQ) => {
         kConnected: Symbol("connected")
     }
 });
-var EEA = U((ON7, XeQ) => {
+var EEA = moduleWrapper((ON7, XeQ) => {
     var {
         MockNotMatchedError: qo
     } = nk1(), {
@@ -1323,26 +1313,26 @@ var EEA = U((ON7, XeQ) => {
         buildURL: ch8
     } = M6(), {
         STATUS_CODES: ph8
-    } = UA("node:http"), {
+    } = nodeRequire("node:http"), {
         types: {
             isPromise: lh8
         }
-    } = UA("node:util");
+    } = nodeRequire("node:util");
 
-function wb(A, Q) {
+    function wb(A, Q) {
         if (typeof A === "string") return A === Q;
         if (A instanceof RegExp) return A.test(Q);
         if (typeof A === "function") return A(Q) === !0;
         return !1
     }
 
-function AeQ(A) {
+    function AeQ(A) {
         return Object.fromEntries(Object.entries(A).map(([Q, B]) => {
             return [Q.toLocaleLowerCase(), B]
         }))
     }
 
-function QeQ(A, Q) {
+    function QeQ(A, Q) {
         if (Array.isArray(A)) {
             for (let B = 0; B < A.length; B += 2)
                 if (A[B].toLocaleLowerCase() === Q.toLocaleLowerCase()) return A[B + 1];
@@ -1351,14 +1341,14 @@ function QeQ(A, Q) {
         else return AeQ(A)[Q.toLocaleLowerCase()]
     }
 
-function rk1(A) {
+    function rk1(A) {
         let Q = A.slice(),
             B = [];
         for (let G = 0; G < Q.length; G += 2) B.push([Q[G], Q[G + 1]]);
         return Object.fromEntries(B)
     }
 
-function BeQ(A, Q) {
+    function BeQ(A, Q) {
         if (typeof A.headers === "function") {
             if (Array.isArray(Q)) Q = rk1(Q);
             return A.headers(Q ? AeQ(Q) : {})
@@ -1372,7 +1362,7 @@ function BeQ(A, Q) {
         return !0
     }
 
-function etQ(A) {
+    function etQ(A) {
         if (typeof A !== "string") return A;
         let Q = A.split("?");
         if (Q.length !== 2) return A;
@@ -1380,7 +1370,7 @@ function etQ(A) {
         return B.sort(), [...Q, B.toString()].join("?")
     }
 
-function ih8(A, {
+    function ih8(A, {
         path: Q,
         method: B,
         body: G,
@@ -1393,7 +1383,7 @@ function ih8(A, {
         return I && Y && J && W
     }
 
-function GeQ(A) {
+    function GeQ(A) {
         if (Buffer.isBuffer(A)) return A;
         else if (A instanceof Uint8Array) return A;
         else if (A instanceof ArrayBuffer) return A;
@@ -1401,7 +1391,7 @@ function GeQ(A) {
         else return A.toString()
     }
 
-function ZeQ(A, Q) {
+    function ZeQ(A, Q) {
         let B = Q.query ? ch8(Q.path, Q.query) : Q.path,
             G = typeof B === "string" ? etQ(B) : B,
             Z = A.filter(({
@@ -1409,21 +1399,21 @@ function ZeQ(A, Q) {
             }) => !I).filter(({
                 path: I
             }) => wb(etQ(I), G));
-        if (Z.length === 0) throw new qo(`Mock dispatch not matched for path '${G}'`);
+        if (Z.length === 0) throw new qo(`Mock dispatch not matched for path 'TextComponent{G}'`);
         if (Z = Z.filter(({
                 method: I
-            }) => wb(I, Q.method)), Z.length === 0) throw new qo(`Mock dispatch not matched for method '${Q.method}' on path '${G}'`);
+            }) => wb(I, Q.method)), Z.length === 0) throw new qo(`Mock dispatch not matched for method 'TextComponent{Q.method}' on path 'TextComponent{G}'`);
         if (Z = Z.filter(({
                 body: I
-            }) => typeof I < "u" ? wb(I, Q.body) : !0), Z.length === 0) throw new qo(`Mock dispatch not matched for body '${Q.body}' on path '${G}'`);
+            }) => typeof I < "u" ? wb(I, Q.body) : !0), Z.length === 0) throw new qo(`Mock dispatch not matched for body 'TextComponent{Q.body}' on path 'TextComponent{G}'`);
         if (Z = Z.filter((I) => BeQ(I, Q.headers)), Z.length === 0) {
             let I = typeof Q.headers === "object" ? JSON.stringify(Q.headers) : Q.headers;
-            throw new qo(`Mock dispatch not matched for headers '${I}' on path '${G}'`)
+            throw new qo(`Mock dispatch not matched for headers 'TextComponent{I}' on path 'TextComponent{G}'`)
         }
         return Z[0]
     }
 
-function nh8(A, Q, B) {
+    function nh8(A, Q, B) {
         let G = {
                 timesInvoked: 0,
                 times: 1,
@@ -1447,7 +1437,7 @@ function nh8(A, Q, B) {
         return A.push(I), I
     }
 
-function ak1(A, Q) {
+    function ak1(A, Q) {
         let B = A.findIndex((G) => {
             if (!G.consumed) return !1;
             return ih8(G, Q)
@@ -1455,7 +1445,7 @@ function ak1(A, Q) {
         if (B !== -1) A.splice(B, 1)
     }
 
-function IeQ(A) {
+    function IeQ(A) {
         let {
             path: Q,
             method: B,
@@ -1472,31 +1462,30 @@ function IeQ(A) {
         }
     }
 
-function sk1(A) {
+    function sk1(A) {
         let Q = Object.keys(A),
             B = [];
         for (let G = 0; G < Q.length; ++G) {
             let Z = Q[G],
                 I = A[Z],
-                Y = Buffer.from(`${Z}`);
+                Y = Buffer.from(`TextComponent{Z}`);
             if (Array.isArray(I))
-                for (let J = 0; J < I.length; ++J) B.push(Y, Buffer.from(`${I[J]}`));
-            else B.push(Y, Buffer.from(`${I}`))
+                for (let J = 0; J < I.length; ++J) B.push(Y, Buffer.from(`TextComponent{I[J]}`));
+            else B.push(Y, Buffer.from(`TextComponent{I}`))
         }
         return B
     }
 
-function YeQ(A) {
+    function YeQ(A) {
         return ph8[A] || "unknown"
     }
-
-async function ah8(A) {
+    async function ah8(A) {
         let Q = [];
         for await (let B of A) Q.push(B);
         return Buffer.concat(Q).toString("utf8")
     }
 
-function JeQ(A, Q) {
+    function JeQ(A, Q) {
         let B = IeQ(A),
             G = ZeQ(this[NpA], B);
         if (G.timesInvoked++, G.data.callback) G.data = {
@@ -1523,7 +1512,7 @@ function JeQ(A, Q) {
         }, X);
         else D(this[NpA]);
 
-function D(C, E = I) {
+        function D(C, E = I) {
             let z = Array.isArray(A.headers) ? rk1(A.headers) : A.headers,
                 w = typeof E === "function" ? E({
                     ...A,

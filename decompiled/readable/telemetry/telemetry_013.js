@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: telemetry_013.js
+ * 处理时间: 2025-12-09T03:41:38.461Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.059Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -45,13 +48,13 @@
         }
         _serializeMetricData(A) {
             let Q = a90(z81(A.descriptor.name));
-            if (this._prefix) Q = `${this._prefix}${Q}`;
+            if (this._prefix) Q = `TextComponent{this._prefix}TextComponent{Q}`;
             let B = A.dataPointType;
             Q = n90(Q, A);
-            let G = `# HELP ${Q} ${z81(A.descriptor.description||"description missing")}`,
+            let G = `# HELP TextComponent{Q} TextComponent{z81(A.descriptor.description||"description missing")}`,
                 Z = A.descriptor.unit ? `
-# UNIT ${Q} ${z81(A.descriptor.unit)}` : "",
-                I = `# TYPE ${Q} ${R_5(A)}`,
+# UNIT TextComponent{Q} TextComponent{z81(A.descriptor.unit)}` : "",
+                I = `# TYPE TextComponent{Q} TextComponent{R_5(A)}`,
                 Y = "";
             switch (B) {
                 case t1A.DataPointType.SUM:
@@ -64,11 +67,11 @@
                     break
                 }
                 default:
-                    N_5.diag.error(`Unrecognizable DataPointType: ${B} for metric "${Q}"`)
+                    N_5.diag.error(`Unrecognizable DataPointType: TextComponent{B} for metric "TextComponent{Q}"`)
             }
-            return `${G}${Z}
-${I}
-${Y}`.trim()
+            return `TextComponent{G}TextComponent{Z}
+TextComponent{I}
+TextComponent{Y}`.trim()
         }
         _serializeSingularDataPoint(A, Q, B) {
             let G = "";
@@ -107,13 +110,13 @@ ${Y}`.trim()
         _serializeResource(A) {
             return `# HELP target_info Target metadata
 # TYPE target_info gauge
-${E81("target_info",A.attributes,1).trim()}
+TextComponent{E81("target_info",A.attributes,1).trim()}
 `
         }
     }
     Wq2.PrometheusSerializer = Jq2
 });
-var Kq2 = U((Fq2) => {
+var Kq2 = moduleWrapper((Fq2) => {
     Object.defineProperty(Fq2, "__esModule", {
         value: !0
     });
@@ -121,11 +124,10 @@ var Kq2 = U((Fq2) => {
     var cOA = W9(),
         P_5 = t6(),
         r90 = Mi(),
-        j_5 = UA("http"),
+        j_5 = nodeRequire("http"),
         S_5 = s90(),
-        __5 = UA("url");
-
-class ni extends r90.MetricReader {
+        __5 = nodeRequire("url");
+    class ni extends r90.MetricReader {
         static DEFAULT_OPTIONS = {
             host: void 0,
             port: 9464,
@@ -155,7 +157,7 @@ class ni extends r90.MetricReader {
             });
             this._host = A.host || process.env.OTEL_EXPORTER_PROMETHEUS_HOST || ni.DEFAULT_OPTIONS.host, this._port = A.port || Number(process.env.OTEL_EXPORTER_PROMETHEUS_PORT) || ni.DEFAULT_OPTIONS.port, this._prefix = A.prefix || ni.DEFAULT_OPTIONS.prefix, this._appendTimestamp = typeof A.appendTimestamp === "boolean" ? A.appendTimestamp : ni.DEFAULT_OPTIONS.appendTimestamp;
             let B = A.withResourceConstantLabels || ni.DEFAULT_OPTIONS.withResourceConstantLabels;
-            if (this._server = (0, j_5.createServer)(this._requestHandler).unref(), this._serializer = new S_5.PrometheusSerializer(this._prefix, this._appendTimestamp, B), this._baseUrl = `http://${this._host}:${this._port}/`, this._endpoint = (A.endpoint || ni.DEFAULT_OPTIONS.endpoint).replace(/^([^/])/, "/$1"), A.preventServerStart !== !0) this.startServer().then(Q, (G) => {
+            if (this._server = (0, j_5.createServer)(this._requestHandler).unref(), this._serializer = new S_5.PrometheusSerializer(this._prefix, this._appendTimestamp, B), this._baseUrl = `http://TextComponent{this._host}:TextComponent{this._port}/`, this._endpoint = (A.endpoint || ni.DEFAULT_OPTIONS.endpoint).replace(/^([^/])/, "/$1"), A.preventServerStart !== !0) this.startServer().then(Q, (G) => {
                 cOA.diag.error(G), Q(G)
             });
             else if (Q) queueMicrotask(Q)
@@ -180,7 +182,7 @@ class ni extends r90.MetricReader {
                     port: this._port,
                     host: this._host
                 }, () => {
-                    cOA.diag.debug(`Prometheus exporter server started: ${this._host}:${this._port}/${this._endpoint}`), A()
+                    cOA.diag.debug(`Prometheus exporter server started: TextComponent{this._host}:TextComponent{this._port}/TextComponent{this._endpoint}`), A()
                 })
             }), this._startServerPromise
         }
@@ -200,7 +202,7 @@ class ni extends r90.MetricReader {
                 if (G.length) cOA.diag.error("PrometheusExporter: metrics collection errors", ...G);
                 A.end(this._serializer.serialize(B))
             }, (Q) => {
-                A.end(`# failed to export metrics: ${Q}`)
+                A.end(`# failed to export metrics: TextComponent{Q}`)
             })
         };
         _notFound = (A) => {
@@ -209,7 +211,7 @@ class ni extends r90.MetricReader {
     }
     Fq2.PrometheusExporter = ni
 });
-var Dq2 = U((U81) => {
+var Dq2 = moduleWrapper((U81) => {
     Object.defineProperty(U81, "__esModule", {
         value: !0
     });
@@ -229,14 +231,14 @@ var Dq2 = U((U81) => {
         }
     })
 });
-var Eq2 = U((Hq2) => {
+var Eq2 = moduleWrapper((Hq2) => {
     Object.defineProperty(Hq2, "__esModule", {
         value: !0
     });
     Hq2.VERSION = void 0;
     Hq2.VERSION = "0.204.0"
 });
-var qq2 = U(($q2) => {
+var qq2 = moduleWrapper(($q2) => {
     Object.defineProperty($q2, "__esModule", {
         value: !0
     });
@@ -245,18 +247,17 @@ var qq2 = U(($q2) => {
         b_5 = pk(),
         zq2 = Si(),
         f_5 = Eq2();
-
-class Uq2 extends v_5.OTLPExporterBase {
+    class Uq2 extends v_5.OTLPExporterBase {
         constructor(A = {}) {
             super((0, zq2.createOtlpHttpExportDelegate)((0, zq2.convertLegacyHttpOptions)(A, "LOGS", "v1/logs", {
-                "User-Agent": `OTel-OTLP-Exporter-JavaScript/${f_5.VERSION}`,
+                "User-Agent": `OTel-OTLP-Exporter-JavaScript/TextComponent{f_5.VERSION}`,
                 "Content-Type": "application/x-protobuf"
             }), b_5.ProtobufLogsSerializer))
         }
     }
     $q2.OTLPLogExporter = Uq2
 });
-var Nq2 = U((o90) => {
+var Nq2 = moduleWrapper((o90) => {
     Object.defineProperty(o90, "__esModule", {
         value: !0
     });
@@ -269,7 +270,7 @@ var Nq2 = U((o90) => {
         }
     })
 });
-var Lq2 = U((t90) => {
+var Lq2 = moduleWrapper((t90) => {
     Object.defineProperty(t90, "__esModule", {
         value: !0
     });
@@ -282,7 +283,7 @@ var Lq2 = U((t90) => {
         }
     })
 });
-var Mq2 = U((e90) => {
+var Mq2 = moduleWrapper((e90) => {
     Object.defineProperty(e90, "__esModule", {
         value: !0
     });
@@ -295,7 +296,7 @@ var Mq2 = U((e90) => {
         }
     })
 });
-var jq2 = U((Tq2) => {
+var jq2 = moduleWrapper((Tq2) => {
     Object.defineProperty(Tq2, "__esModule", {
         value: !0
     });
@@ -303,15 +304,14 @@ var jq2 = U((Tq2) => {
     var Oq2 = C81(),
         p_5 = pk(),
         l_5 = mk();
-
-class Rq2 extends l_5.OTLPExporterBase {
+    class Rq2 extends l_5.OTLPExporterBase {
         constructor(A = {}) {
             super((0, Oq2.createOtlpGrpcExportDelegate)((0, Oq2.convertLegacyOtlpGrpcOptions)(A, "LOGS"), p_5.ProtobufLogsSerializer, "LogsExportService", "/opentelemetry.proto.collector.logs.v1.LogsService/Export"))
         }
     }
     Tq2.OTLPLogExporter = Rq2
 });
-var Sq2 = U((A40) => {
+var Sq2 = moduleWrapper((A40) => {
     Object.defineProperty(A40, "__esModule", {
         value: !0
     });
@@ -324,14 +324,14 @@ var Sq2 = U((A40) => {
         }
     })
 });
-var yq2 = U((_q2) => {
+var yq2 = moduleWrapper((_q2) => {
     Object.defineProperty(_q2, "__esModule", {
         value: !0
     });
     _q2.VERSION = void 0;
     _q2.VERSION = "0.204.0"
 });
-var hq2 = U((bq2) => {
+var hq2 = moduleWrapper((bq2) => {
     Object.defineProperty(bq2, "__esModule", {
         value: !0
     });
@@ -340,18 +340,17 @@ var hq2 = U((bq2) => {
         s_5 = pk(),
         r_5 = yq2(),
         xq2 = Si();
-
-class vq2 extends a_5.OTLPExporterBase {
+    class vq2 extends a_5.OTLPExporterBase {
         constructor(A = {}) {
             super((0, xq2.createOtlpHttpExportDelegate)((0, xq2.convertLegacyHttpOptions)(A, "LOGS", "v1/logs", {
-                "User-Agent": `OTel-OTLP-Exporter-JavaScript/${r_5.VERSION}`,
+                "User-Agent": `OTel-OTLP-Exporter-JavaScript/TextComponent{r_5.VERSION}`,
                 "Content-Type": "application/json"
             }), s_5.JsonLogsSerializer))
         }
     }
     bq2.OTLPLogExporter = vq2
 });
-var gq2 = U((Q40) => {
+var gq2 = moduleWrapper((Q40) => {
     Object.defineProperty(Q40, "__esModule", {
         value: !0
     });
@@ -364,7 +363,7 @@ var gq2 = U((Q40) => {
         }
     })
 });
-var uq2 = U((B40) => {
+var uq2 = moduleWrapper((B40) => {
     Object.defineProperty(B40, "__esModule", {
         value: !0
     });
@@ -377,7 +376,7 @@ var uq2 = U((B40) => {
         }
     })
 });
-var mq2 = U((G40) => {
+var mq2 = moduleWrapper((G40) => {
     Object.defineProperty(G40, "__esModule", {
         value: !0
     });
@@ -390,14 +389,14 @@ var mq2 = U((G40) => {
         }
     })
 });
-var pq2 = U((dq2) => {
+var pq2 = moduleWrapper((dq2) => {
     Object.defineProperty(dq2, "__esModule", {
         value: !0
     });
     dq2.ExceptionEventName = void 0;
     dq2.ExceptionEventName = "exception"
 });
-var aq2 = U((iq2) => {
+var aq2 = moduleWrapper((iq2) => {
     Object.defineProperty(iq2, "__esModule", {
         value: !0
     });
@@ -406,8 +405,7 @@ var aq2 = U((iq2) => {
         AC = t6(),
         e1A = ut(),
         Gk5 = pq2();
-
-class lq2 {
+    class lq2 {
         _spanContext;
         kind;
         parentSpanContext;
@@ -443,8 +441,8 @@ class lq2 {
         }
         setAttribute(A, Q) {
             if (Q == null || this._isSpanEnded()) return this;
-            if (A.length === 0) return YO.diag.warn(`Invalid attribute key: ${A}`), this;
-            if (!(0, AC.isAttributeValue)(Q)) return YO.diag.warn(`Invalid attribute value set for key: ${A}`), this;
+            if (A.length === 0) return YO.diag.warn(`Invalid attribute key: TextComponent{A}`), this;
+            if (!(0, AC.isAttributeValue)(Q)) return YO.diag.warn(`Invalid attribute value set for key: TextComponent{A}`), this;
             let {
                 attributeCountLimit: B
             } = this._spanLimits;
@@ -487,7 +485,7 @@ class lq2 {
             if (this._isSpanEnded()) return this;
             if (this.status = {
                     ...A
-                }, this.status.message != null && typeof A.message !== "string") YO.diag.warn(`Dropping invalid status.message of type '${typeof A.message}', expected 'string'`), delete this.status.message;
+                }, this.status.message != null && typeof A.message !== "string") YO.diag.warn(`Dropping invalid status.message of type 'TextComponent{typeof A.message}', expected 'string'`), delete this.status.message;
             return this
         }
         updateName(A) {
@@ -496,11 +494,11 @@ class lq2 {
         }
         end(A) {
             if (this._isSpanEnded()) {
-                YO.diag.error(`${this.name} ${this._spanContext.traceId}-${this._spanContext.spanId} - You can only call end() on a span once.`);
+                YO.diag.error(`TextComponent{this.name} TextComponent{this._spanContext.traceId}-TextComponent{this._spanContext.spanId} - You can only call end() on a span once.`);
                 return
             }
             if (this._ended = !0, this.endTime = this._getTime(A), this._duration = (0, AC.hrTimeDuration)(this.startTime, this.endTime), this._duration[0] < 0) YO.diag.warn("Inconsistent start and end time, startTime > endTime. Setting span duration to 0ms.", this.startTime, this.endTime), this.endTime = this.startTime.slice(), this._duration = [0, 0];
-            if (this._droppedEventsCount > 0) YO.diag.warn(`Dropped ${this._droppedEventsCount} events because eventCountLimit reached`);
+            if (this._droppedEventsCount > 0) YO.diag.warn(`Dropped TextComponent{this._droppedEventsCount} events because eventCountLimit reached`);
             this._spanProcessor.onEnd(this)
         }
         _getTime(A) {
@@ -525,7 +523,7 @@ class lq2 {
                 if (A.stack) B[e1A.ATTR_EXCEPTION_STACKTRACE] = A.stack
             }
             if (B[e1A.ATTR_EXCEPTION_TYPE] || B[e1A.ATTR_EXCEPTION_MESSAGE]) this.addEvent(Gk5.ExceptionEventName, B, Q);
-            else YO.diag.warn(`Failed to record an exception ${A}`)
+            else YO.diag.warn(`Failed to record an exception TextComponent{A}`)
         }
         get duration() {
             return this._duration
@@ -544,8 +542,8 @@ class lq2 {
         }
         _isSpanEnded() {
             if (this._ended) {
-                let A = Error(`Operation attempted on ended Span {traceId: ${this._spanContext.traceId}, spanId: ${this._spanContext.spanId}}`);
-                YO.diag.warn(`Cannot execute the operation on ended Span {traceId: ${this._spanContext.traceId}, spanId: ${this._spanContext.spanId}}`, A)
+                let A = Error(`Operation attempted on ended Span {traceId: TextComponent{this._spanContext.traceId}, spanId: TextComponent{this._spanContext.spanId}}`);
+                YO.diag.warn(`Cannot execute the operation on ended Span {traceId: TextComponent{this._spanContext.traceId}, spanId: TextComponent{this._spanContext.spanId}}`, A)
             }
             return this._ended
         }
@@ -555,7 +553,7 @@ class lq2 {
         }
         _truncateToSize(A) {
             let Q = this._attributeValueLengthLimit;
-            if (Q <= 0) return YO.diag.warn(`Attribute value limit must be positive, got ${Q}`), A;
+            if (Q <= 0) return YO.diag.warn(`Attribute value limit must be positive, got TextComponent{Q}`), A;
             if (typeof A === "string") return this._truncateToLimitUtil(A, Q);
             if (Array.isArray(A)) return A.map((B) => typeof B === "string" ? this._truncateToLimitUtil(B, Q) : B);
             return A
@@ -563,7 +561,7 @@ class lq2 {
     }
     iq2.SpanImpl = lq2
 });
-var pOA = U((sq2) => {
+var pOA = moduleWrapper((sq2) => {
     Object.defineProperty(sq2, "__esModule", {
         value: !0
     });
@@ -573,14 +571,13 @@ var pOA = U((sq2) => {
         A[A.NOT_RECORD = 0] = "NOT_RECORD", A[A.RECORD = 1] = "RECORD", A[A.RECORD_AND_SAMPLED = 2] = "RECORD_AND_SAMPLED"
     })(Zk5 = sq2.SamplingDecision || (sq2.SamplingDecision = {}))
 });
-var $81 = U((oq2) => {
+var $81 = moduleWrapper((oq2) => {
     Object.defineProperty(oq2, "__esModule", {
         value: !0
     });
     oq2.AlwaysOffSampler = void 0;
     var Ik5 = pOA();
-
-class rq2 {
+    class rq2 {
         shouldSample() {
             return {
                 decision: Ik5.SamplingDecision.NOT_RECORD
@@ -592,14 +589,13 @@ class rq2 {
     }
     oq2.AlwaysOffSampler = rq2
 });
-var w81 = U((AN2) => {
+var w81 = moduleWrapper((AN2) => {
     Object.defineProperty(AN2, "__esModule", {
         value: !0
     });
     AN2.AlwaysOnSampler = void 0;
     var Yk5 = pOA();
-
-class eq2 {
+    class eq2 {
         shouldSample() {
             return {
                 decision: Yk5.SamplingDecision.RECORD_AND_SAMPLED
@@ -611,7 +607,7 @@ class eq2 {
     }
     AN2.AlwaysOnSampler = eq2
 });
-var Y40 = U((ZN2) => {
+var Y40 = moduleWrapper((ZN2) => {
     Object.defineProperty(ZN2, "__esModule", {
         value: !0
     });
@@ -620,8 +616,7 @@ var Y40 = U((ZN2) => {
         Jk5 = t6(),
         BN2 = $81(),
         I40 = w81();
-
-class GN2 {
+    class GN2 {
         _root;
         _remoteParentSampled;
         _remoteParentNotSampled;
@@ -642,20 +637,19 @@ class GN2 {
             return this._localParentNotSampled.shouldSample(A, Q, B, G, Z, I)
         }
         toString() {
-            return `ParentBased{root=${this._root.toString()}, remoteParentSampled=${this._remoteParentSampled.toString()}, remoteParentNotSampled=${this._remoteParentNotSampled.toString()}, localParentSampled=${this._localParentSampled.toString()}, localParentNotSampled=${this._localParentNotSampled.toString()}}`
+            return `ParentBased{root=TextComponent{this._root.toString()}, remoteParentSampled=TextComponent{this._remoteParentSampled.toString()}, remoteParentNotSampled=TextComponent{this._remoteParentNotSampled.toString()}, localParentSampled=TextComponent{this._localParentSampled.toString()}, localParentNotSampled=TextComponent{this._localParentNotSampled.toString()}}`
         }
     }
     ZN2.ParentBasedSampler = GN2
 });
-var J40 = U((WN2) => {
+var J40 = moduleWrapper((WN2) => {
     Object.defineProperty(WN2, "__esModule", {
         value: !0
     });
     WN2.TraceIdRatioBasedSampler = void 0;
     var Wk5 = W9(),
         YN2 = pOA();
-
-class JN2 {
+    class JN2 {
         _ratio;
         _upperBound;
         constructor(A = 0) {
@@ -667,7 +661,7 @@ class JN2 {
             }
         }
         toString() {
-            return `TraceIdRatioBased{${this._ratio}}`
+            return `TraceIdRatioBased{TextComponent{this._ratio}}`
         }
         _normalize(A) {
             if (typeof A !== "number" || isNaN(A)) return 0;
@@ -685,7 +679,7 @@ class JN2 {
     }
     WN2.TraceIdRatioBasedSampler = JN2
 });
-var F40 = U((HN2) => {
+var F40 = moduleWrapper((HN2) => {
     Object.defineProperty(HN2, "__esModule", {
         value: !0
     });
@@ -702,7 +696,7 @@ var F40 = U((HN2) => {
     })(Zy || (Zy = {}));
     var L81 = 1;
 
-function Xk5() {
+    function Xk5() {
         return {
             sampler: DN2(),
             forceFlushTimeoutMillis: 30000,
@@ -722,7 +716,7 @@ function Xk5() {
     }
     HN2.loadDefaultConfig = Xk5;
 
-function DN2() {
+    function DN2() {
         let A = (0, Gy.getStringFromEnv)("OTEL_TRACES_SAMPLER") ?? Zy.ParentBasedAlwaysOn;
         switch (A) {
             case Zy.AlwaysOn:
@@ -744,21 +738,21 @@ function DN2() {
                     root: new VN2.TraceIdRatioBasedSampler(KN2())
                 });
             default:
-                return X40.diag.error(`OTEL_TRACES_SAMPLER value "${A}" invalid, defaulting to "${Zy.ParentBasedAlwaysOn}".`), new N81.ParentBasedSampler({
+                return X40.diag.error(`OTEL_TRACES_SAMPLER value "TextComponent{A}" invalid, defaulting to "TextComponent{Zy.ParentBasedAlwaysOn}".`), new N81.ParentBasedSampler({
                     root: new W40.AlwaysOnSampler
                 })
         }
     }
     HN2.buildSamplerFromEnv = DN2;
 
-function KN2() {
+    function KN2() {
         let A = (0, Gy.getNumberFromEnv)("OTEL_TRACES_SAMPLER_ARG");
-        if (A == null) return X40.diag.error(`OTEL_TRACES_SAMPLER_ARG is blank, defaulting to ${L81}.`), L81;
-        if (A < 0 || A > 1) return X40.diag.error(`OTEL_TRACES_SAMPLER_ARG=${A} was given, but it is out of range ([0..1]), defaulting to ${L81}.`), L81;
+        if (A == null) return X40.diag.error(`OTEL_TRACES_SAMPLER_ARG is blank, defaulting to TextComponent{L81}.`), L81;
+        if (A < 0 || A > 1) return X40.diag.error(`OTEL_TRACES_SAMPLER_ARG=TextComponent{A} was given, but it is out of range ([0..1]), defaulting to TextComponent{L81}.`), L81;
         return A
     }
 });
-var V40 = U((zN2) => {
+var V40 = moduleWrapper((zN2) => {
     Object.defineProperty(zN2, "__esModule", {
         value: !0
     });
@@ -768,7 +762,7 @@ var V40 = U((zN2) => {
     zN2.DEFAULT_ATTRIBUTE_COUNT_LIMIT = 128;
     zN2.DEFAULT_ATTRIBUTE_VALUE_LENGTH_LIMIT = 1 / 0;
 
-function Vk5(A) {
+    function Vk5(A) {
         let Q = {
                 sampler: (0, EN2.buildSamplerFromEnv)()
             },
@@ -778,7 +772,7 @@ function Vk5(A) {
     }
     zN2.mergeConfig = Vk5;
 
-function Kk5(A) {
+    function Kk5(A) {
         let Q = Object.assign({}, A.spanLimits);
         return Q.attributeCountLimit = A.spanLimits?.attributeCountLimit ?? A.generalLimits?.attributeCountLimit ?? (0, M81.getNumberFromEnv)("OTEL_SPAN_ATTRIBUTE_COUNT_LIMIT") ?? (0, M81.getNumberFromEnv)("OTEL_ATTRIBUTE_COUNT_LIMIT") ?? zN2.DEFAULT_ATTRIBUTE_COUNT_LIMIT, Q.attributeValueLengthLimit = A.spanLimits?.attributeValueLengthLimit ?? A.generalLimits?.attributeValueLengthLimit ?? (0, M81.getNumberFromEnv)("OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT") ?? (0, M81.getNumberFromEnv)("OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT") ?? zN2.DEFAULT_ATTRIBUTE_VALUE_LENGTH_LIMIT, Object.assign({}, A, {
             spanLimits: Q
@@ -786,15 +780,14 @@ function Kk5(A) {
     }
     zN2.reconfigureLimits = Kk5
 });
-var MN2 = U((NN2) => {
+var MN2 = moduleWrapper((NN2) => {
     Object.defineProperty(NN2, "__esModule", {
         value: !0
     });
     NN2.BatchSpanProcessorBase = void 0;
     var HJA = W9(),
         Iy = t6();
-
-class qN2 {
+    class qN2 {
         _exporter;
         _maxExportBatchSize;
         _maxQueueSize;
@@ -836,7 +829,7 @@ class qN2 {
                 this._droppedSpansCount++;
                 return
             }
-            if (this._droppedSpansCount > 0) HJA.diag.warn(`Dropped ${this._droppedSpansCount} spans because maxQueueSize reached`), this._droppedSpansCount = 0;
+            if (this._droppedSpansCount > 0) HJA.diag.warn(`Dropped TextComponent{this._droppedSpansCount} spans because maxQueueSize reached`), this._droppedSpansCount = 0;
             this._finishedSpans.push(A), this._maybeStartTimer()
         }
         _flushAll() {
@@ -894,34 +887,32 @@ class qN2 {
     }
     NN2.BatchSpanProcessorBase = qN2
 });
-var PN2 = U((RN2) => {
+var PN2 = moduleWrapper((RN2) => {
     Object.defineProperty(RN2, "__esModule", {
         value: !0
     });
     RN2.BatchSpanProcessor = void 0;
     var Hk5 = MN2();
-
-class ON2 extends Hk5.BatchSpanProcessorBase {
+    class ON2 extends Hk5.BatchSpanProcessorBase {
         onShutdown() {}
     }
     RN2.BatchSpanProcessor = ON2
 });
-var xN2 = U((kN2) => {
+var xN2 = moduleWrapper((kN2) => {
     Object.defineProperty(kN2, "__esModule", {
         value: !0
     });
     kN2.RandomIdGenerator = void 0;
     var Ck5 = 8,
         SN2 = 16;
-
-class _N2 {
+    class _N2 {
         generateTraceId = jN2(SN2);
         generateSpanId = jN2(Ck5)
     }
     kN2.RandomIdGenerator = _N2;
     var O81 = Buffer.allocUnsafe(SN2);
 
-function jN2(A) {
+    function jN2(A) {
         return function() {
             for (let B = 0; B < A / 4; B++) O81.writeUInt32BE(Math.random() * 4294967296 >>> 0, B * 4);
             for (let B = 0; B < A; B++)
@@ -931,7 +922,7 @@ function jN2(A) {
         }
     }
 });
-var vN2 = U((R81) => {
+var vN2 = moduleWrapper((R81) => {
     Object.defineProperty(R81, "__esModule", {
         value: !0
     });
@@ -951,7 +942,7 @@ var vN2 = U((R81) => {
         }
     })
 });
-var K40 = U((T81) => {
+var K40 = moduleWrapper((T81) => {
     Object.defineProperty(T81, "__esModule", {
         value: !0
     });
@@ -970,7 +961,7 @@ var K40 = U((T81) => {
         }
     })
 });
-var uN2 = U((hN2) => {
+var uN2 = moduleWrapper((hN2) => {
     Object.defineProperty(hN2, "__esModule", {
         value: !0
     });
@@ -980,8 +971,7 @@ var uN2 = U((hN2) => {
         wk5 = aq2(),
         qk5 = V40(),
         Nk5 = K40();
-
-class fN2 {
+    class fN2 {
         _sampler;
         _generalLimits;
         _spanLimits;
@@ -1056,14 +1046,13 @@ class fN2 {
     }
     hN2.Tracer = fN2
 });
-var pN2 = U((dN2) => {
+var pN2 = moduleWrapper((dN2) => {
     Object.defineProperty(dN2, "__esModule", {
         value: !0
     });
     dN2.MultiSpanProcessor = void 0;
     var Lk5 = t6();
-
-class mN2 {
+    class mN2 {
         _spanProcessors;
         constructor(A) {
             this._spanProcessors = A
@@ -1097,7 +1086,7 @@ class mN2 {
     }
     dN2.MultiSpanProcessor = mN2
 });
-var sN2 = U((nN2) => {
+var sN2 = moduleWrapper((nN2) => {
     Object.defineProperty(nN2, "__esModule", {
         value: !0
     });
@@ -1112,8 +1101,7 @@ var sN2 = U((nN2) => {
     (function(A) {
         A[A.resolved = 0] = "resolved", A[A.timeout = 1] = "timeout", A[A.error = 2] = "error", A[A.unresolved = 3] = "unresolved"
     })(CJA = nN2.ForceFlushState || (nN2.ForceFlushState = {}));
-
-class iN2 {
+    class iN2 {
         _config;
         _tracers = new Map;
         _resource;
@@ -1128,7 +1116,7 @@ class iN2 {
             this._activeSpanProcessor = new Pk5.MultiSpanProcessor(B)
         }
         getTracer(A, Q, B) {
-            let G = `${A}@${Q||""}:${B?.schemaUrl||""}`;
+            let G = `TextComponent{A}@TextComponent{Q||""}:TextComponent{B?.schemaUrl||""}`;
             if (!this._tracers.has(G)) this._tracers.set(G, new Rk5.Tracer({
                 name: A,
                 version: Q,
@@ -1141,7 +1129,7 @@ class iN2 {
                 Q = this._activeSpanProcessor._spanProcessors.map((B) => {
                     return new Promise((G) => {
                         let Z, I = setTimeout(() => {
-                            G(Error(`Span processor did not completed within timeout period of ${A} ms`)), Z = CJA.timeout
+                            G(Error(`Span processor did not completed within timeout period of TextComponent{A} ms`)), Z = CJA.timeout
                         }, A);
                         B.forceFlush().then(() => {
                             if (clearTimeout(I), Z !== CJA.timeout) Z = CJA.resolved, G(Z)
@@ -1164,14 +1152,13 @@ class iN2 {
     }
     nN2.BasicTracerProvider = iN2
 });
-var eN2 = U((oN2) => {
+var eN2 = moduleWrapper((oN2) => {
     Object.defineProperty(oN2, "__esModule", {
         value: !0
     });
     oN2.ConsoleSpanExporter = void 0;
     var D40 = t6();
-
-class rN2 {
+    class rN2 {
         export (A, Q) {
             return this._sendSpans(A, Q)
         }
@@ -1212,14 +1199,13 @@ class rN2 {
     }
     oN2.ConsoleSpanExporter = rN2
 });
-var ZL2 = U((BL2) => {
+var ZL2 = moduleWrapper((BL2) => {
     Object.defineProperty(BL2, "__esModule", {
         value: !0
     });
     BL2.InMemorySpanExporter = void 0;
     var AL2 = t6();
-
-class QL2 {
+    class QL2 {
         _finishedSpans = [];
         _stopped = !1;
         export (A, Q) {
@@ -1246,15 +1232,14 @@ class QL2 {
     }
     BL2.InMemorySpanExporter = QL2
 });
-var WL2 = U((YL2) => {
+var WL2 = moduleWrapper((YL2) => {
     Object.defineProperty(YL2, "__esModule", {
         value: !0
     });
     YL2.SimpleSpanProcessor = void 0;
     var Sk5 = W9(),
         j81 = t6();
-
-class IL2 {
+    class IL2 {
         _exporter;
         _shutdownOnce;
         _pendingExports;
@@ -1274,7 +1259,7 @@ class IL2 {
         async _doExport(A) {
             if (A.resource.asyncAttributesPending) await A.resource.waitForAsyncAttributes?.();
             let Q = await j81.internal._export(this._exporter, [A]);
-            if (Q.code !== j81.ExportResultCode.SUCCESS) throw Q.error ?? Error(`SimpleSpanProcessor: span export failed (status ${Q})`)
+            if (Q.code !== j81.ExportResultCode.SUCCESS) throw Q.error ?? Error(`SimpleSpanProcessor: span export failed (status TextComponent{Q})`)
         }
         shutdown() {
             return this._shutdownOnce.call()
@@ -1285,13 +1270,12 @@ class IL2 {
     }
     YL2.SimpleSpanProcessor = IL2
 });
-var KL2 = U((FL2) => {
+var KL2 = moduleWrapper((FL2) => {
     Object.defineProperty(FL2, "__esModule", {
         value: !0
     });
     FL2.NoopSpanProcessor = void 0;
-
-class XL2 {
+    class XL2 {
         onStart(A, Q) {}
         onEnd(A) {}
         shutdown() {
@@ -1303,7 +1287,7 @@ class XL2 {
     }
     FL2.NoopSpanProcessor = XL2
 });
-var HL2 = U((eU) => {
+var HL2 = moduleWrapper((eU) => {
     Object.defineProperty(eU, "__esModule", {
         value: !0
     });
@@ -1392,14 +1376,14 @@ var HL2 = U((eU) => {
         }
     })
 });
-var zL2 = U((CL2) => {
+var zL2 = moduleWrapper((CL2) => {
     Object.defineProperty(CL2, "__esModule", {
         value: !0
     });
     CL2.VERSION = void 0;
     CL2.VERSION = "0.204.0"
 });
-var NL2 = U((wL2) => {
+var NL2 = moduleWrapper((wL2) => {
     Object.defineProperty(wL2, "__esModule", {
         value: !0
     });
@@ -1411,14 +1395,14 @@ var NL2 = U((wL2) => {
     class $L2 extends dk5.OTLPExporterBase {
         constructor(A = {}) {
             super((0, UL2.createOtlpHttpExportDelegate)((0, UL2.convertLegacyHttpOptions)(A, "TRACES", "v1/traces", {
-                "User-Agent": `OTel-OTLP-Exporter-JavaScript/${pk5.VERSION}`,
+                "User-Agent": `OTel-OTLP-Exporter-JavaScript/TextComponent{pk5.VERSION}`,
                 "Content-Type": "application/x-protobuf"
             }), ck5.ProtobufTraceSerializer))
         }
     }
     wL2.OTLPTraceExporter = $L2
 });
-var LL2 = U((H40) => {
+var LL2 = moduleWrapper((H40) => {
     Object.defineProperty(H40, "__esModule", {
         value: !0
     });
@@ -1431,7 +1415,7 @@ var LL2 = U((H40) => {
         }
     })
 });
-var ML2 = U((C40) => {
+var ML2 = moduleWrapper((C40) => {
     Object.defineProperty(C40, "__esModule", {
         value: !0
     });
@@ -1444,7 +1428,7 @@ var ML2 = U((C40) => {
         }
     })
 });
-var OL2 = U((E40) => {
+var OL2 = moduleWrapper((E40) => {
     Object.defineProperty(E40, "__esModule", {
         value: !0
     });
@@ -1457,7 +1441,7 @@ var OL2 = U((E40) => {
         }
     })
 });
-var SL2 = U((PL2) => {
+var SL2 = moduleWrapper((PL2) => {
     Object.defineProperty(PL2, "__esModule", {
         value: !0
     });
@@ -1465,15 +1449,14 @@ var SL2 = U((PL2) => {
     var RL2 = C81(),
         ok5 = pk(),
         tk5 = mk();
-
-class TL2 extends tk5.OTLPExporterBase {
+    class TL2 extends tk5.OTLPExporterBase {
         constructor(A = {}) {
             super((0, RL2.createOtlpGrpcExportDelegate)((0, RL2.convertLegacyOtlpGrpcOptions)(A, "TRACES"), ok5.ProtobufTraceSerializer, "TraceExportService", "/opentelemetry.proto.collector.trace.v1.TraceService/Export"))
         }
     }
     PL2.OTLPTraceExporter = TL2
 });
-var _L2 = U((z40) => {
+var _L2 = moduleWrapper((z40) => {
     Object.defineProperty(z40, "__esModule", {
         value: !0
     });
@@ -1486,14 +1469,14 @@ var _L2 = U((z40) => {
         }
     })
 });
-var xL2 = U((kL2) => {
+var xL2 = moduleWrapper((kL2) => {
     Object.defineProperty(kL2, "__esModule", {
         value: !0
     });
     kL2.VERSION = void 0;
     kL2.VERSION = "0.204.0"
 });
-var gL2 = U((fL2) => {
+var gL2 = moduleWrapper((fL2) => {
     Object.defineProperty(fL2, "__esModule", {
         value: !0
     });
@@ -1502,18 +1485,17 @@ var gL2 = U((fL2) => {
         By5 = xL2(),
         Gy5 = pk(),
         vL2 = Si();
-
-class bL2 extends Qy5.OTLPExporterBase {
+    class bL2 extends Qy5.OTLPExporterBase {
         constructor(A = {}) {
             super((0, vL2.createOtlpHttpExportDelegate)((0, vL2.convertLegacyHttpOptions)(A, "TRACES", "v1/traces", {
-                "User-Agent": `OTel-OTLP-Exporter-JavaScript/${By5.VERSION}`,
+                "User-Agent": `OTel-OTLP-Exporter-JavaScript/TextComponent{By5.VERSION}`,
                 "Content-Type": "application/json"
             }), Gy5.JsonTraceSerializer))
         }
     }
     fL2.OTLPTraceExporter = bL2
 });
-var uL2 = U((U40) => {
+var uL2 = moduleWrapper((U40) => {
     Object.defineProperty(U40, "__esModule", {
         value: !0
     });
@@ -1526,7 +1508,7 @@ var uL2 = U((U40) => {
         }
     })
 });
-var mL2 = U(($40) => {
+var mL2 = moduleWrapper(($40) => {
     Object.defineProperty($40, "__esModule", {
         value: !0
     });

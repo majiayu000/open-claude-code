@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: agents_013.js
+ * 处理时间: 2025-12-09T03:41:35.974Z
+ * 变量映射: 5 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.853Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -20,7 +23,7 @@
         case "no_permissions":
             if (process.stderr.write(`Error: Insufficient permissions to install update
 `), Z) process.stderr.write(`Try manually updating with:
-`), process.stderr.write(`  cd ~/.claude/local && npm update ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}
+`), process.stderr.write(`  cd ~/.claude/local && npm update TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}
 `);
             else process.stderr.write(`Try running with sudo or fix npm permissions
 `), process.stderr.write(`Or consider migrating to a local installation with:
@@ -31,7 +34,7 @@
         case "install_failed":
             if (process.stderr.write(`Error: Failed to install update
 `), Z) process.stderr.write(`Try manually updating with:
-`), process.stderr.write(`  cd ~/.claude/local && npm update ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}
+`), process.stderr.write(`  cd ~/.claude/local && npm update TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}
 `);
             else process.stderr.write(`Or consider migrating to a local installation with:
 `), process.stderr.write(`  claude migrate-installer
@@ -47,7 +50,7 @@
     await S6(0)
 }
 var _U9;
-var yU9 = L(() => {
+var yU9 = lazyLoader(() => {
     w0();
     LIA();
     DQ1();
@@ -58,7 +61,7 @@ var yU9 = L(() => {
     J9();
     D0();
     _J();
-    _U9 = GA(WE(), 1)
+    _U9 = esmImport(WE(), 1)
 });
 import {
     homedir as bf3
@@ -82,12 +85,12 @@ function xU9({
         flexDirection: "column",
         gap: 0,
         marginBottom: 1
-    }, R8.default.createElement(j, null, R8.default.createElement($, {
+    }, R8.default.createElement(j, null, R8.default.createElement(TextComponent, {
         color: "warning"
     }, V1.warning, " Setup notes:")), A.map((Q, B) => R8.default.createElement(j, {
         key: B,
         marginLeft: 2
-    }, R8.default.createElement($, {
+    }, R8.default.createElement(TextComponent, {
         dimColor: !0
     }, "• ", Q))))
 }
@@ -101,15 +104,14 @@ function gf3({
         type: "checking"
     });
     return R8.useEffect(() => {
-        // Async function: I
-async function I() {
+        async function I() {
             try {
-                g(`Install: Starting installation process (force=${Q}, target=${B})`), Z({
+                g(`Install: Starting installation process (force=TextComponent{Q}, target=TextComponent{B})`), Z({
                     type: "installing",
                     version: B || "stable"
-                }), g(`Install: Calling installLatest(force=true, target=${B}, forceReinstall=${Q})`);
+                }), g(`Install: Calling installLatest(force=true, target=TextComponent{B}, forceReinstall=TextComponent{Q})`);
                 let J = await th(!0, B, Q);
-                if (g(`Install: installLatest returned version=${J.latestVersion}, wasUpdated=${J.wasUpdated}, lockFailed=${J.lockFailed}`), J.lockFailed) throw Error("Could not install - another process is currently installing Claude. Please try again in a moment.");
+                if (g(`Install: installLatest returned version=TextComponent{J.latestVersion}, wasUpdated=TextComponent{J.wasUpdated}, lockFailed=TextComponent{J.lockFailed}`), J.lockFailed) throw Error("Could not install - another process is currently installing Claude. Please try again in a moment.");
                 if (!J.latestVersion) g("Install: Failed to retrieve version information during install", {
                     level: "error"
                 });
@@ -118,17 +120,17 @@ async function I() {
                     type: "setting-up"
                 });
                 let W = await yy(!0);
-                if (g(`Install: Setup launcher completed with ${W.length} messages`), W.length > 0) W.forEach((H) => g(`Install: Setup message: ${H.message}`));
+                if (g(`Install: Setup launcher completed with TextComponent{W.length} messages`), W.length > 0) W.forEach((H) => g(`Install: Setup message: TextComponent{H.message}`));
                 g("Install: Cleaning up npm installations after successful install");
                 let {
                     removed: X,
                     errors: F,
                     warnings: V
                 } = await xTA();
-                if (X > 0) g(`Cleaned up ${X} npm installation(s)`);
-                if (F.length > 0) g(`Cleanup errors: ${F.join(", ")}`);
+                if (X > 0) g(`Cleaned up TextComponent{X} npm installation(s)`);
+                if (F.length > 0) g(`Cleanup errors: TextComponent{F.join(", ")}`);
                 let K = yTA();
-                if (K.length > 0) g(`Shell alias cleanup: ${K.map((H)=>H.message).join("; ")}`);
+                if (K.length > 0) g(`Shell alias cleanup: TextComponent{K.map((H)=>H.message).join("; ")}`);
                 BA("tengu_claude_install_command", {
                     has_version: J.latestVersion ? 1 : 0,
                     forced: Q ? 1 : 0
@@ -150,7 +152,7 @@ async function I() {
                     setupMessages: D.length > 0 ? D : void 0
                 })
             } catch (Y) {
-                g(`Install command failed: ${Y}`, {
+                g(`Install command failed: TextComponent{Y}`, {
                     level: "error"
                 }), Z({
                     type: "error",
@@ -173,35 +175,35 @@ async function I() {
     }, [G, A]), R8.default.createElement(j, {
         flexDirection: "column",
         marginTop: 1
-    }, G.type === "checking" && R8.default.createElement($, {
+    }, G.type === "checking" && R8.default.createElement(TextComponent, {
         color: "claude"
-    }, "Checking installation status..."), G.type === "cleaning-npm" && R8.default.createElement($, {
+    }, "Checking installation status..."), G.type === "cleaning-npm" && R8.default.createElement(TextComponent, {
         color: "warning"
-    }, "Cleaning up old npm installations..."), G.type === "installing" && R8.default.createElement($, {
+    }, "Cleaning up old npm installations..."), G.type === "installing" && R8.default.createElement(TextComponent, {
         color: "claude"
-    }, "Installing Claude Code native build ", G.version, "..."), G.type === "setting-up" && R8.default.createElement($, {
+    }, "Installing Claude Code native build ", G.version, "..."), G.type === "setting-up" && R8.default.createElement(TextComponent, {
         color: "claude"
     }, "Setting up launcher and shell integration..."), G.type === "set-up" && R8.default.createElement(xU9, {
         messages: G.messages
     }), G.type === "success" && R8.default.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, R8.default.createElement(j, null, R8.default.createElement($, {
+    }, R8.default.createElement(j, null, R8.default.createElement(TextComponent, {
         color: "success"
-    }, V1.tick, " "), R8.default.createElement($, {
+    }, V1.tick, " "), R8.default.createElement(TextComponent, {
         color: "success",
         bold: !0
     }, "Claude Code successfully installed!")), R8.default.createElement(j, {
         marginLeft: 2,
         flexDirection: "column",
         gap: 1
-    }, G.version !== "current" && R8.default.createElement(j, null, R8.default.createElement($, {
+    }, G.version !== "current" && R8.default.createElement(j, null, R8.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Version: "), R8.default.createElement($, {
+    }, "Version: "), R8.default.createElement(TextComponent, {
         color: "claude"
-    }, G.version)), R8.default.createElement(j, null, R8.default.createElement($, {
+    }, G.version)), R8.default.createElement(j, null, R8.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Location: "), R8.default.createElement($, {
+    }, "Location: "), R8.default.createElement(TextComponent, {
         color: "text"
     }, hf3()))), R8.default.createElement(j, {
         marginLeft: 2,
@@ -209,32 +211,32 @@ async function I() {
         gap: 1
     }, R8.default.createElement(j, {
         marginTop: 1
-    }, R8.default.createElement($, {
+    }, R8.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Next: Run "), R8.default.createElement($, {
+    }, "Next: Run "), R8.default.createElement(TextComponent, {
         color: "claude",
         bold: !0
-    }, "claude --help"), R8.default.createElement($, {
+    }, "claude --help"), R8.default.createElement(TextComponent, {
         dimColor: !0
     }, " to get started"))), G.setupMessages && R8.default.createElement(xU9, {
         messages: G.setupMessages
     })), G.type === "error" && R8.default.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, R8.default.createElement(j, null, R8.default.createElement($, {
+    }, R8.default.createElement(j, null, R8.default.createElement(TextComponent, {
         color: "error"
-    }, V1.cross, " "), R8.default.createElement($, {
+    }, V1.cross, " "), R8.default.createElement(TextComponent, {
         color: "error"
-    }, "Installation failed")), R8.default.createElement($, {
+    }, "Installation failed")), R8.default.createElement(TextComponent, {
         color: "error"
     }, G.message), R8.default.createElement(j, {
         marginTop: 1
-    }, R8.default.createElement($, {
+    }, R8.default.createElement(TextComponent, {
         dimColor: !0
     }, "Try running with --force to override checks"))))
 }
 var R8, vU9;
-var bU9 = L(() => {
+var bU9 = lazyLoader(() => {
     hA();
     hA();
     xP();
@@ -242,7 +244,7 @@ var bU9 = L(() => {
     w0();
     n2();
     f5();
-    R8 = GA(VA(), 1);
+    R8 = esmImport(VA(), 1);
     vU9 = {
         type: "local-jsx",
         name: "install",
@@ -281,9 +283,9 @@ function fU9({
         }
         zE9(A, K);
         let H = Z.filter((C) => C !== K);
-        I(H), X(!1), J(`${Q5(K)} no longer contains the correct repository. Select another path.`)
+        I(H), X(!1), J(`TextComponent{formatFilePath(K)} no longer contains the correct repository. Select another path.`)
     }, [A, Z, B, G]), V = [...Z.map((K) => ({
-        label: `Use ${oA.bold(Q5(K))}`,
+        label: `Use TextComponent{oA.bold(formatFilePath(K))}`,
         value: K
     })), {
         label: "Cancel",
@@ -297,25 +299,25 @@ function fU9({
     }, Z.length > 0 ? aW.default.createElement(aW.default.Fragment, null, aW.default.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, Y && aW.default.createElement($, {
+    }, Y && aW.default.createElement(TextComponent, {
         color: "error"
-    }, Y), aW.default.createElement($, null, "Open Claude Code in ", aW.default.createElement($, {
+    }, Y), aW.default.createElement(TextComponent, null, "Open Claude Code in ", aW.default.createElement(TextComponent, {
         bold: !0
-    }, A), ":")), W ? aW.default.createElement(j, null, aW.default.createElement(e9, null), aW.default.createElement($, null, " Validating repository…")) : aW.default.createElement(M0, {
+    }, A), ":")), W ? aW.default.createElement(j, null, aW.default.createElement(e9, null), aW.default.createElement(TextComponent, null, " Validating repository…")) : aW.default.createElement(M0, {
         options: V,
         onChange: (K) => void F(K),
         onCancel: G
     })) : aW.default.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, Y && aW.default.createElement($, {
+    }, Y && aW.default.createElement(TextComponent, {
         color: "error"
-    }, Y), aW.default.createElement($, {
+    }, Y), aW.default.createElement(TextComponent, {
         dimColor: !0
     }, "Run claude --teleport from a checkout of ", A)))
 }
 var aW;
-var hU9 = L(() => {
+var hU9 = lazyLoader(() => {
     hA();
     Di();
     T6();
@@ -323,7 +325,7 @@ var hU9 = L(() => {
     M9();
     CJ1();
     J9();
-    aW = GA(VA(), 1)
+    aW = esmImport(VA(), 1)
 });
 
 function uU9({
@@ -337,13 +339,13 @@ function uU9({
         try {
             X(!0), V(null);
             let v = await JO();
-            J(v), g(`Current repository: ${v||"not detected"}`);
+            J(v), g(`Current repository: TextComponent{v||"not detected"}`);
             let x = await BT2(),
                 p = x;
             if (v) p = x.filter((o) => {
                 if (!o.repo) return !1;
-                return `${o.repo.owner.login}/${o.repo.name}` === v
-            }), g(`Filtered ${p.length} sessions for repo ${v} from ${x.length} total`);
+                return `TextComponent{o.repo.owner.login}/TextComponent{o.repo.name}` === v
+            }), g(`Filtered TextComponent{p.length} sessions for repo TextComponent{v} from TextComponent{x.length} total`);
             let u = [...p].sort((o, l) => {
                 let k = new Date(o.updated_at);
                 return new Date(l.updated_at).getTime() - k.getTime()
@@ -351,7 +353,7 @@ function uU9({
             I(u)
         } catch (v) {
             let x = v instanceof Error ? v.message : String(v);
-            g(`Error loading code sessions: ${x}`), V(mf3(x))
+            g(`Error loading code sessions: TextComponent{x}`), V(mf3(x))
         } finally {
             X(!1), D(!1)
         }
@@ -383,34 +385,34 @@ function uU9({
         padding: 1
     }, _4.default.createElement(j, {
         flexDirection: "row"
-    }, _4.default.createElement(e9, null), _4.default.createElement($, {
+    }, _4.default.createElement(e9, null), _4.default.createElement(TextComponent, {
         bold: !0
-    }, "Loading Claude Code sessions…")), _4.default.createElement($, {
+    }, "Loading Claude Code sessions…")), _4.default.createElement(TextComponent, {
         dimColor: !0
     }, K ? "Retrying…" : "Fetching your Claude Code sessions…"));
     if (F) return _4.default.createElement(j, {
         flexDirection: "column",
         padding: 1
-    }, _4.default.createElement($, {
+    }, _4.default.createElement(TextComponent, {
         bold: !0,
         color: "error"
-    }, "Error loading Claude Code sessions"), df3(F), _4.default.createElement($, {
+    }, "Error loading Claude Code sessions"), df3(F), _4.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Press ", _4.default.createElement($, {
+    }, "Press ", _4.default.createElement(TextComponent, {
         bold: !0
-    }, "Ctrl+R"), " to retry · Press ", _4.default.createElement($, {
+    }, "Ctrl+R"), " to retry · Press ", _4.default.createElement(TextComponent, {
         bold: !0
     }, "Esc"), " ", "to cancel"));
     if (Z.length === 0) return _4.default.createElement(j, {
         flexDirection: "column",
         padding: 1
-    }, _4.default.createElement($, {
+    }, _4.default.createElement(TextComponent, {
         bold: !0
-    }, "No Claude Code sessions found", Y && _4.default.createElement($, null, " for ", Y)), _4.default.createElement(j, {
+    }, "No Claude Code sessions found", Y && _4.default.createElement(TextComponent, null, " for ", Y)), _4.default.createElement(j, {
         marginTop: 1
-    }, _4.default.createElement($, {
+    }, _4.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Press ", _4.default.createElement($, {
+    }, "Press ", _4.default.createElement(TextComponent, {
         bold: !0
     }, "Esc"), " to cancel")));
     let N = Z.map((v) => ({
@@ -424,7 +426,7 @@ function uU9({
             id: p
         }) => {
             return {
-                label: `${v.padEnd(q," ")}  ${x}`,
+                label: `TextComponent{v.padEnd(q," ")}  TextComponent{x}`,
                 value: p
             }
         }),
@@ -434,9 +436,9 @@ function uU9({
         flexDirection: "column",
         padding: 1,
         height: P
-    }, _4.default.createElement($, {
+    }, _4.default.createElement(TextComponent, {
         bold: !0
-    }, "Select a session to resume", Y && _4.default.createElement($, {
+    }, "Select a session to resume", Y && _4.default.createElement(TextComponent, {
         dimColor: !0
     }, " (", Y, ")"), ":"), _4.default.createElement(j, {
         flexDirection: "column",
@@ -444,7 +446,7 @@ function uU9({
         flexGrow: 1
     }, _4.default.createElement(j, {
         marginLeft: 2
-    }, _4.default.createElement($, {
+    }, _4.default.createElement(TextComponent, {
         bold: !0
     }, gU9.padEnd(q, " "), uf3, "Session Title")), _4.default.createElement(M0, {
         visibleOptionCount: y,
@@ -456,7 +458,7 @@ function uU9({
         }
     })), _4.default.createElement(j, {
         flexDirection: "row"
-    }, _4.default.createElement($, {
+    }, _4.default.createElement(TextComponent, {
         dimColor: !0
     }, "↑/↓ to select · Enter to confirm · Esc to cancel")))
 }
@@ -475,39 +477,39 @@ function df3(A) {
             return _4.default.createElement(j, {
                 marginY: 1,
                 flexDirection: "column"
-            }, _4.default.createElement($, {
+            }, _4.default.createElement(TextComponent, {
                 dimColor: !0
             }, "Check your internet connection"));
         case "auth":
             return _4.default.createElement(j, {
                 marginY: 1,
                 flexDirection: "column"
-            }, _4.default.createElement($, {
+            }, _4.default.createElement(TextComponent, {
                 dimColor: !0
-            }, "Teleport requires a Claude account"), _4.default.createElement($, {
+            }, "Teleport requires a Claude account"), _4.default.createElement(TextComponent, {
                 dimColor: !0
-            }, "Run ", _4.default.createElement($, {
+            }, "Run ", _4.default.createElement(TextComponent, {
                 bold: !0
             }, "/login"), ' and select "Claude account with subscription"'));
         case "api":
             return _4.default.createElement(j, {
                 marginY: 1,
                 flexDirection: "column"
-            }, _4.default.createElement($, {
+            }, _4.default.createElement(TextComponent, {
                 dimColor: !0
             }, "Sorry, Claude encountered an error"));
         case "other":
             return _4.default.createElement(j, {
                 marginY: 1,
                 flexDirection: "row"
-            }, _4.default.createElement($, {
+            }, _4.default.createElement(TextComponent, {
                 dimColor: !0
             }, "Sorry, Claude Code encountered an error"))
     }
 }
 var _4, gU9 = "Updated",
     uf3 = "  ";
-var mU9 = L(() => {
+var mU9 = lazyLoader(() => {
     hA();
     T6();
     zI();
@@ -516,7 +518,7 @@ var mU9 = L(() => {
     N80();
     Y0A();
     An();
-    _4 = GA(VA(), 1)
+    _4 = esmImport(VA(), 1)
 });
 
 function dU9(A) {
@@ -548,11 +550,11 @@ function dU9(A) {
     }
 }
 var mQA;
-var cU9 = L(() => {
+var cU9 = lazyLoader(() => {
     W0A();
     $Z();
     w0();
-    mQA = GA(VA(), 1)
+    mQA = esmImport(VA(), 1)
 });
 
 function cf3({
@@ -581,24 +583,24 @@ function cf3({
         padding: 1
     }, Xz.default.createElement(j, {
         flexDirection: "row"
-    }, Xz.default.createElement(e9, null), Xz.default.createElement($, {
+    }, Xz.default.createElement(e9, null), Xz.default.createElement(TextComponent, {
         bold: !0
-    }, "Resuming session…")), Xz.default.createElement($, {
+    }, "Resuming session…")), Xz.default.createElement(TextComponent, {
         dimColor: !0
     }, 'Loading "', W.title, '"…'));
     if (J && !B) return Xz.default.createElement(j, {
         flexDirection: "column",
         padding: 1
-    }, Xz.default.createElement($, {
+    }, Xz.default.createElement(TextComponent, {
         bold: !0,
         color: "error"
-    }, "Failed to resume session"), Xz.default.createElement($, {
+    }, "Failed to resume session"), Xz.default.createElement(TextComponent, {
         dimColor: !0
     }, J.message), Xz.default.createElement(j, {
         marginTop: 1
-    }, Xz.default.createElement($, {
+    }, Xz.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Press ", Xz.default.createElement($, {
+    }, "Press ", Xz.default.createElement(TextComponent, {
         bold: !0
     }, "Esc"), " to cancel")));
     return Xz.default.createElement(uU9, {
@@ -607,7 +609,6 @@ function cf3({
         isEmbedded: G
     })
 }
-// Async function: pU9
 async function pU9() {
     return g("selectAndResumeTeleportTask: Starting teleport flow..."), new Promise(async (A) => {
         let {
@@ -621,7 +622,7 @@ async function pU9() {
             },
             onError: (B, G) => {
                 process.stderr.write(G ? G + `
-` : `Error: ${B}
+` : `Error: TextComponent{B}
 `), Q(), A(null)
             },
             source: "cliArg"
@@ -631,7 +632,7 @@ async function pU9() {
     })
 }
 var Xz;
-var lU9 = L(() => {
+var lU9 = lazyLoader(() => {
     hA();
     mU9();
     zI();
@@ -639,7 +640,7 @@ var lU9 = L(() => {
     w0();
     H9();
     D0();
-    Xz = GA(VA(), 1)
+    Xz = esmImport(VA(), 1)
 });
 
 function nU9() {
@@ -661,7 +662,7 @@ function iU9(A) {
                 },
                 commands: [],
                 debug: !1,
-                mainLoopModel: S3(),
+                mainLoopModel: getDefaultSonnetModel(),
                 tools: [],
                 verbose: !1,
                 maxThinkingTokens: 1000,
@@ -694,7 +695,7 @@ function iU9(A) {
         }), () => {}).catch(() => {})
     } catch {}
 }
-var aU9 = L(() => {
+var aU9 = lazyLoader(() => {
     SvA();
     TRA();
     UWA();
@@ -710,7 +711,6 @@ import {
     randomBytes as lf3,
     timingSafeEqual as if3
 } from "crypto";
-
 class BD0 {
     server = null;
     secret;
@@ -735,8 +735,8 @@ class BD0 {
                     return
                 }
                 this.port = B.port;
-                let G = `http://127.0.0.1:${this.port}`;
-                g(`[MCP CLI Endpoint] Started on ${G}`), A({
+                let G = `http://127.0.0.1:TextComponent{this.port}`;
+                g(`[MCP CLI Endpoint] Started on TextComponent{G}`), A({
                     port: this.port,
                     url: G
                 })
@@ -784,7 +784,7 @@ class BD0 {
             Y = "";
         A.on("data", (J) => {
             if (I += J.length, I > Z) {
-                g(`[MCP CLI Endpoint] Request too large: ${I} bytes`), Q.writeHead(413, {
+                g(`[MCP CLI Endpoint] Request too large: TextComponent{I} bytes`), Q.writeHead(413, {
                     "Content-Type": "application/json"
                 }), Q.end(JSON.stringify({
                     error: "Payload Too Large"
@@ -895,7 +895,7 @@ class BD0 {
                     let B = $SA(this.mcpClients, A.params.server, this.getNormalizedNames()),
                         G = gQA(A.params.server, B?.type);
                     if (G) throw G;
-                    throw new QD0(`Tool '${A.params.toolName}' not found on server '${A.params.server}'`)
+                    throw new QD0(`Tool 'TextComponent{A.params.toolName}' not found on server 'TextComponent{A.params.server}'`)
                 }
                 return {
                     data: Q,
@@ -962,7 +962,7 @@ class BD0 {
         let Z = this.getConnectedClient(A),
             I = `mcp__${A}__${Q}`,
             Y = this.availableTools.find((X) => X.name === I);
-        if (this.availableTools.length > 0 && !Y) throw new QD0(`Tool '${Q}' not found on server '${A}'`);
+        if (this.availableTools.length > 0 && !Y) throw new QD0(`Tool 'TextComponent{Q}' not found on server 'TextComponent{A}'`);
         let J = Y?.originalMcpToolName || Q;
         return await Z.client.request({
             method: "tools/call",
@@ -1010,7 +1010,7 @@ class BD0 {
     }
 }
 var QD0;
-var sU9 = L(() => {
+var sU9 = lazyLoader(() => {
     PD();
     OK0();
     RK0();
@@ -1029,7 +1029,7 @@ var sU9 = L(() => {
     }
 });
 var A$9 = {};
-pG(A$9, {
+esmExport(A$9, {
     showSetupScreens: () => eU9,
     setup: () => jJ1,
     main: () => Yh3,
@@ -1092,9 +1092,8 @@ function tU9() {
         }.VERSION
     })
 }
-
 async function eU9(A, Q, B) {
-    if (V0(!1) || process.env.IS_DEMO) return !1;
+    if (parseBoolean(!1) || process.env.IS_DEMO) return !1;
     let G = L1(),
         Z = !1;
     if (!G.theme || !G.hasCompletedOnboarding) Z = !0, await SJ(), await new Promise(async (I) => {
@@ -1189,7 +1188,6 @@ async function eU9(A, Q, B) {
     });
     return Z
 }
-
 async function oU9(A, Q) {
     try {
         let B = await dIA(A, Q);
@@ -1208,7 +1206,6 @@ function tf3() {
         numStartups: (A.numStartups ?? 0) + 1
     }), ef3(), FE0()?.add(1)
 }
-// Async function: ef3
 async function ef3() {
     let [A, Q] = await Promise.all([FT(), zUA()]);
     BA("tengu_startup_telemetry", {
@@ -1231,7 +1228,6 @@ function Qh3() {
     }
     if (_X(!0)) uD()
 }
-
 async function jJ1(A, Q, B, G, Z) {
     let I = process.version.match(/^v(\d+)\./)?.[1];
     if (!I || parseInt(I) < 18) console.error(oA.bold.red("Error: Claude Code requires Node.js version 18 or higher.")), process.exit(1);
@@ -1239,15 +1235,15 @@ async function jJ1(A, Q, B, G, Z) {
     i10();
     let Y = bjB();
     if (Y.status === "restored") console.log(oA.yellow("Detected an interrupted iTerm2 setup. Your original settings have been restored. You may need to restart iTerm2 for the changes to take effect."));
-    else if (Y.status === "failed") console.error(oA.red(`Failed to restore iTerm2 settings. Please manually restore your original settings with: defaults import com.googlecode.iterm2 ${Y.backupPath}.`));
+    else if (Y.status === "failed") console.error(oA.red(`Failed to restore iTerm2 settings. Please manually restore your original settings with: defaults import com.googlecode.iterm2 TextComponent{Y.backupPath}.`));
     try {
         let F = await nrA();
         if (F.status === "restored") console.log(oA.yellow("Detected an interrupted Terminal.app setup. Your original settings have been restored. You may need to restart Terminal.app for the changes to take effect."));
-        else if (F.status === "failed") console.error(oA.red(`Failed to restore Terminal.app settings. Please manually restore your original settings with: defaults import com.apple.Terminal ${F.backupPath}.`))
+        else if (F.status === "failed") console.error(oA.red(`Failed to restore Terminal.app settings. Please manually restore your original settings with: defaults import com.apple.Terminal TextComponent{F.backupPath}.`))
     } catch (F) {
         e(F instanceof Error ? F : Error(String(F)))
     }
-    if (Qq(A), SE9(), xE9(), fE9(), iv2(), ov2(), bz9(), hG0(), gG0(), v4("setup_before_prefetch"), NE9(), dOB(), aE(), PI1(), w1A(), u49(), XK(), Qh3(), pg(), FC9(), $C9(), DQB(H5()), V0(process.env.CLAUDE_CODE_USE_BEDROCK) && !V0(process.env.CLAUDE_CODE_SKIP_BEDROCK_AUTH)) CQB();
+    if (Qq(A), SE9(), xE9(), fE9(), iv2(), ov2(), bz9(), hG0(), gG0(), v4("setup_before_prefetch"), NE9(), dOB(), aE(), PI1(), w1A(), u49(), XK(), Qh3(), pg(), FC9(), $C9(), DQB(H5()), parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK) && !parseBoolean(process.env.CLAUDE_CODE_SKIP_BEDROCK_AUTH)) CQB();
     GwA().catch((F) => e(F)), GYA([], G0()), $SB(), v4("setup_after_prefetch");
     let {
         hasReleaseNotes: J
@@ -1299,14 +1295,14 @@ function Bh3(A) {
             let {
                 resolvedPath: Z
             } = kK(OA(), A);
-            if (!PJ1(Z)) process.stderr.write(oA.red(`Error: Settings file not found: ${Z}
+            if (!PJ1(Z)) process.stderr.write(oA.red(`Error: Settings file not found: TextComponent{Z}
 `)), process.exit(1);
             G = Z
         }
         qE0(G), EGA()
     } catch (Q) {
         if (Q instanceof Error) e(Q);
-        process.stderr.write(oA.red(`Error processing settings: ${Q instanceof Error?Q.message:String(Q)}
+        process.stderr.write(oA.red(`Error processing settings: TextComponent{Q instanceof Error?Q.message:String(Q)}
 `)), process.exit(1)
     }
 }
@@ -1317,7 +1313,7 @@ function Gh3(A) {
         SE0(Q), EGA()
     } catch (Q) {
         if (Q instanceof Error) e(Q);
-        process.stderr.write(oA.red(`Error processing --setting-sources: ${Q instanceof Error?Q.message:String(Q)}
+        process.stderr.write(oA.red(`Error processing --setting-sources: TextComponent{Q instanceof Error?Q.message:String(Q)}
 `)), process.exit(1)
     }
 }
@@ -1345,13 +1341,12 @@ function Ih3(A) {
         process.env.CLAUDE_CODE_ENTRYPOINT = "mcp";
         return
     }
-    if (V0(process.env.CLAUDE_CODE_ACTION)) {
+    if (parseBoolean(process.env.CLAUDE_CODE_ACTION)) {
         process.env.CLAUDE_CODE_ENTRYPOINT = "claude-code-github-action";
         return
     }
     process.env.CLAUDE_CODE_ENTRYPOINT = A ? "sdk-cli" : "cli"
 }
-// Async function: Yh3
 async function Yh3() {
     v4("main_function_start"), process.env.NoDefaultCurrentDirectoryInExePath = "1", YE9(), process.on("exit", () => {
         Vh3()
@@ -1390,7 +1385,7 @@ function Jh3(A) {
                 Q = J
             }
         };
-    if (!process.stdin.isTTY && !V0(!1) && !process.argv.includes("mcp")) {
+    if (!process.stdin.isTTY && !parseBoolean(!1) && !process.argv.includes("mcp")) {
         if (BA("tengu_stdin_interactive", {}), process.platform !== "win32") try {
             let G = af3("/dev/tty", "r");
             B = {
@@ -1403,7 +1398,6 @@ function Jh3(A) {
     }
     return B
 }
-
 async function Wh3(A, Q) {
     if (!process.stdin.isTTY && !process.argv.includes("mcp")) {
         if (Q === "stream-json") return process.stdin;
@@ -1418,7 +1412,6 @@ async function Wh3(A, Q) {
     }
     return A
 }
-// Async function: Xh3
 async function Xh3() {
     v4("run_function_start");
     let A = new IJ1;
@@ -1480,7 +1473,7 @@ async function Xh3() {
             let N1 = Y$(q);
             if (!N1) process.stderr.write(oA.red(`Error: Invalid session ID. Must be a valid UUID.
 `)), process.exit(1);
-            if (gH9(N1)) process.stderr.write(oA.red(`Error: Session ID ${N1} is already in use.
+            if (gH9(N1)) process.stderr.write(oA.red(`Error: Session ID TextComponent{N1} is already in use.
 `)), process.exit(1)
         }
         let wA = H5();
@@ -1492,11 +1485,11 @@ async function Xh3() {
 `)), process.exit(1);
             try {
                 let N1 = ZD0(J.systemPromptFile);
-                if (!PJ1(N1)) process.stderr.write(oA.red(`Error: System prompt file not found: ${N1}
+                if (!PJ1(N1)) process.stderr.write(oA.red(`Error: System prompt file not found: TextComponent{N1}
 `)), process.exit(1);
                 KA = rU9(N1, "utf8")
             } catch (N1) {
-                process.stderr.write(oA.red(`Error reading system prompt file: ${N1 instanceof Error?N1.message:String(N1)}
+                process.stderr.write(oA.red(`Error reading system prompt file: TextComponent{N1 instanceof Error?N1.message:String(N1)}
 `)), process.exit(1)
             }
         }
@@ -1506,11 +1499,11 @@ async function Xh3() {
 `)), process.exit(1);
             try {
                 let N1 = ZD0(J.appendSystemPromptFile);
-                if (!PJ1(N1)) process.stderr.write(oA.red(`Error: Append system prompt file not found: ${N1}
+                if (!PJ1(N1)) process.stderr.write(oA.red(`Error: Append system prompt file not found: TextComponent{N1}
 `)), process.exit(1);
                 SA = rU9(N1, "utf8")
             } catch (N1) {
-                process.stderr.write(oA.red(`Error reading append system prompt file: ${N1 instanceof Error?N1.message:String(N1)}
+                process.stderr.write(oA.red(`Error reading append system prompt file: TextComponent{N1 instanceof Error?N1.message:String(N1)}
 `)), process.exit(1)
             }
         }

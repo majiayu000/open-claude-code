@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_023.js
+ * 处理时间: 2025-12-09T03:41:37.536Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.982Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -28,7 +31,7 @@
         return Z
     }
 });
-var z42 = U((PMG, E42) => {
+var z42 = moduleWrapper((PMG, E42) => {
     E42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -71,7 +74,7 @@ var z42 = U((PMG, E42) => {
         return Z
     }
 });
-var $42 = U((jMG, U42) => {
+var $42 = moduleWrapper((jMG, U42) => {
     U42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.schema[B],
@@ -83,7 +86,7 @@ var $42 = U((jMG, U42) => {
         return Z
     }
 });
-var q42 = U((SMG, w42) => {
+var q42 = moduleWrapper((SMG, w42) => {
     w42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -115,7 +118,7 @@ var q42 = U((SMG, w42) => {
         return Z
     }
 });
-var L42 = U((_MG, N42) => {
+var L42 = moduleWrapper((_MG, N42) => {
     N42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -162,7 +165,7 @@ var L42 = U((_MG, N42) => {
         return Z
     }
 });
-var O42 = U((kMG, M42) => {
+var O42 = moduleWrapper((kMG, M42) => {
     M42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -265,7 +268,7 @@ var O42 = U((kMG, M42) => {
         return Z
     }
 });
-var T42 = U((yMG, R42) => {
+var T42 = moduleWrapper((yMG, R42) => {
     R42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -301,7 +304,7 @@ var T42 = U((yMG, R42) => {
         return Z
     }
 });
-var j42 = U((xMG, P42) => {
+var j42 = moduleWrapper((xMG, P42) => {
     P42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -392,7 +395,7 @@ var j42 = U((xMG, P42) => {
         return Z
     }
 });
-var _42 = U((vMG, S42) => {
+var _42 = moduleWrapper((vMG, S42) => {
     S42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -439,7 +442,7 @@ var _42 = U((vMG, S42) => {
         return Z
     }
 });
-var y42 = U((bMG, k42) => {
+var y42 = moduleWrapper((bMG, k42) => {
     k42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -517,7 +520,7 @@ var y42 = U((bMG, k42) => {
         return Z
     }
 });
-var re1 = U((fMG, x42) => {
+var re1 = moduleWrapper((fMG, x42) => {
     x42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -603,7 +606,7 @@ var re1 = U((fMG, x42) => {
         return Z
     }
 });
-var oe1 = U((hMG, v42) => {
+var oe1 = moduleWrapper((hMG, v42) => {
     v42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -647,7 +650,7 @@ var oe1 = U((hMG, v42) => {
         return Z
     }
 });
-var te1 = U((gMG, b42) => {
+var te1 = moduleWrapper((gMG, b42) => {
     b42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -693,7 +696,7 @@ var te1 = U((gMG, b42) => {
         return Z
     }
 });
-var ee1 = U((uMG, f42) => {
+var ee1 = moduleWrapper((uMG, f42) => {
     f42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -737,7 +740,7 @@ var ee1 = U((uMG, f42) => {
         return Z
     }
 });
-var g42 = U((mMG, h42) => {
+var g42 = moduleWrapper((mMG, h42) => {
     h42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -778,7 +781,7 @@ var g42 = U((mMG, h42) => {
         return Z
     }
 });
-var m42 = U((dMG, u42) => {
+var m42 = moduleWrapper((dMG, u42) => {
     u42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -823,7 +826,7 @@ var m42 = U((dMG, u42) => {
         return Z
     }
 });
-var c42 = U((cMG, d42) => {
+var c42 = moduleWrapper((cMG, d42) => {
     d42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -868,7 +871,7 @@ var c42 = U((cMG, d42) => {
         return Z
     }
 });
-var l42 = U((pMG, p42) => {
+var l42 = moduleWrapper((pMG, p42) => {
     p42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -910,7 +913,7 @@ var l42 = U((pMG, p42) => {
         return Z
     }
 });
-var n42 = U((lMG, i42) => {
+var n42 = moduleWrapper((lMG, i42) => {
     i42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -944,7 +947,7 @@ var n42 = U((lMG, i42) => {
             QA = Q.schema.required;
         if (QA && !(Q.opts.$data && QA.$data) && QA.length < Q.opts.loopRequired) var IA = Q.util.toHash(QA);
 
-function HA(T0) {
+        function HA(T0) {
             return T0 !== "__proto__"
         }
         if (Z += "var " + K + " = errors;var " + C + " = true;", k) Z += " var " + q + " = undefined;";
@@ -1025,12 +1028,13 @@ function HA(T0) {
         }
         var eA = Q.opts.useDefaults && !Q.compositeRule;
         if (R.length) {
-            var aA = R;
-            if (aA) {
+            /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+var BASE64_CHARS = R;
+            if (BASE64_CHARS) {
                 var KA, I1 = -1,
-                    w1 = aA.length - 1;
+                    w1 = BASE64_CHARS.length - 1;
                 while (I1 < w1) {
-                    KA = aA[I1 += 1];
+                    KA = BASE64_CHARS[I1 += 1];
                     var PA = J[KA];
                     if (Q.opts.strictKeywords ? typeof PA == "object" && Object.keys(PA).length > 0 || PA === !1 : Q.util.schemaHasRules(PA, Q.RULES.all)) {
                         var B1 = Q.util.getProperty(KA),
@@ -1113,7 +1117,7 @@ function HA(T0) {
         return Z
     }
 });
-var s42 = U((iMG, a42) => {
+var s42 = moduleWrapper((iMG, a42) => {
     a42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -1164,7 +1168,7 @@ var s42 = U((iMG, a42) => {
         return Z
     }
 });
-var o42 = U((nMG, r42) => {
+var o42 = moduleWrapper((nMG, r42) => {
     r42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -1319,7 +1323,7 @@ var o42 = U((nMG, r42) => {
         return Z
     }
 });
-var e42 = U((aMG, t42) => {
+var e42 = moduleWrapper((aMG, t42) => {
     t42.exports = function(Q, B, G) {
         var Z = " ",
             I = Q.level,
@@ -1368,7 +1372,7 @@ var e42 = U((aMG, t42) => {
         return Z
     }
 });
-var Q82 = U((sMG, A82) => {
+var Q82 = moduleWrapper((sMG, A82) => {
     A82.exports = {
         $ref: D42(),
         allOf: C42(),
@@ -1400,7 +1404,7 @@ var Q82 = U((sMG, A82) => {
         validate: ae1()
     }
 });
-var Z82 = U((rMG, G82) => {
+var Z82 = moduleWrapper((rMG, G82) => {
     var B82 = Q82(),
         AA0 = sAA().toHash;
     G82.exports = function() {
@@ -1451,7 +1455,7 @@ var Z82 = U((rMG, G82) => {
         }), Q.keywords = AA0(B.concat(G)), Q.custom = {}, Q
     }
 });
-var J82 = U((oMG, Y82) => {
+var J82 = moduleWrapper((oMG, Y82) => {
     var I82 = ["multipleOf", "maximum", "exclusiveMaximum", "minimum", "exclusiveMinimum", "maxLength", "minLength", "pattern", "additionalItems", "maxItems", "minItems", "uniqueItems", "maxProperties", "minProperties", "required", "additionalProperties", "enum", "format", "const"];
     Y82.exports = function(A, Q) {
         for (var B = 0; B < Q.length; B++) {
@@ -1473,11 +1477,11 @@ var J82 = U((oMG, Y82) => {
         return A
     }
 });
-var F82 = U((tMG, X82) => {
+var F82 = moduleWrapper((tMG, X82) => {
     var j55 = gQ1().MissingRef;
     X82.exports = W82;
 
-function W82(A, Q, B) {
+    function W82(A, Q, B) {
         var G = this;
         if (typeof this._opts.loadSchema != "function") throw Error("options.loadSchema should be a function");
         if (typeof Q == "function") B = Q, Q = void 0;
@@ -1490,14 +1494,14 @@ function W82(A, Q, B) {
         }, B);
         return Z;
 
-function I(J) {
+        function I(J) {
             var W = J.$schema;
             return W && !G.getSchema(W) ? W82.call(G, {
                 $ref: W
             }, !0) : Promise.resolve()
         }
 
-function Y(J) {
+        function Y(J) {
             try {
                 return G._compile(J)
             } catch (X) {
@@ -1505,7 +1509,7 @@ function Y(J) {
                 throw X
             }
 
-function W(X) {
+            function W(X) {
                 var F = X.missingSchema;
                 if (D(F)) throw Error("Schema " + F + " is loaded but " + X.missingRef + " cannot be resolved");
                 var V = G._loadingSchemas[F];

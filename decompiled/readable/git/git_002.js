@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_002.js
+ * 处理时间: 2025-12-09T03:41:37.288Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.962Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -38,7 +41,7 @@
                 vm(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -60,7 +63,7 @@
             }
         };
 
-function wn0(A) {
+    function wn0(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -70,8 +73,7 @@ function wn0(A) {
         }, {})
     }
     vm(wn0, "cloneQuery");
-
-var LZ4 = class {
+    var LZ4 = class {
         static {
             vm(this, "HttpResponse")
         }
@@ -85,12 +87,12 @@ var LZ4 = class {
         }
     };
 
-function qn0(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function qn0(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     vm(qn0, "isValidHostname")
 });
-var lKA = U((bI7, Tn0) => {
+var lKA = moduleWrapper((bI7, Tn0) => {
     var {
         defineProperty: nvA,
         getOwnPropertyDescriptor: MZ4,
@@ -124,7 +126,7 @@ var lKA = U((bI7, Tn0) => {
     Tn0.exports = jZ4(Ln0);
     var SZ4 = cC();
 
-function Mn0(A) {
+    function Mn0(A) {
         return A
     }
     ivA(Mn0, "resolveHostHeaderConfig");
@@ -138,7 +140,7 @@ function Mn0(A) {
             if (Z.indexOf("h2") >= 0 && !G.headers[":authority"]) delete G.headers.host, G.headers[":authority"] = G.hostname + (G.port ? ":" + G.port : "");
             else if (!G.headers.host) {
                 let I = G.hostname;
-                if (G.port != null) I += `:${G.port}`;
+                if (G.port != null) I += `:TextComponent{G.port}`;
                 G.headers.host = I
             }
             return Q(B)
@@ -156,7 +158,7 @@ function Mn0(A) {
             }, "applyToStack")
         }), "getHostHeaderPlugin")
 });
-var iKA = U((fI7, _n0) => {
+var iKA = moduleWrapper((fI7, _n0) => {
     var {
         defineProperty: avA,
         getOwnPropertyDescriptor: kZ4,
@@ -243,7 +245,7 @@ var iKA = U((fI7, _n0) => {
             }, "applyToStack")
         }), "getLoggerPlugin")
 });
-var nKA = U((hI7, vn0) => {
+var nKA = moduleWrapper((hI7, vn0) => {
     var {
         defineProperty: rvA,
         getOwnPropertyDescriptor: gZ4,
@@ -307,7 +309,7 @@ var nKA = U((hI7, vn0) => {
             }, "applyToStack")
         }), "getRecursionDetectionPlugin")
 });
-var UE1 = U((gI7, pn0) => {
+var UE1 = moduleWrapper((gI7, pn0) => {
     var {
         defineProperty: ovA,
         getOwnPropertyDescriptor: sZ4,
@@ -399,7 +401,7 @@ var UE1 = U((gI7, pn0) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(cn0 || {})
 });
-var Aa0 = U((uI7, en0) => {
+var Aa0 = moduleWrapper((uI7, en0) => {
     var {
         defineProperty: evA,
         getOwnPropertyDescriptor: YI4,
@@ -491,7 +493,7 @@ var Aa0 = U((uI7, en0) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(tn0 || {})
 });
-var K7 = U((mI7, Za0) => {
+var K7 = moduleWrapper((mI7, Za0) => {
     var {
         defineProperty: QbA,
         getOwnPropertyDescriptor: zI4,
@@ -529,7 +531,7 @@ var K7 = U((mI7, Za0) => {
             return () => Q
         }, "normalizeProvider")
 });
-var Ha0 = U((dI7, Da0) => {
+var Ha0 = moduleWrapper((dI7, Da0) => {
     var {
         defineProperty: BbA,
         getOwnPropertyDescriptor: OI4,
@@ -621,7 +623,7 @@ var Ha0 = U((dI7, Da0) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(Ka0 || {})
 });
-var wa0 = U((cI7, $a0) => {
+var wa0 = moduleWrapper((cI7, $a0) => {
     var {
         defineProperty: ZbA,
         getOwnPropertyDescriptor: bI4,
@@ -700,7 +702,7 @@ var wa0 = U((cI7, $a0) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values
@@ -734,7 +736,7 @@ var wa0 = U((cI7, $a0) => {
                 bm(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -756,7 +758,7 @@ var wa0 = U((cI7, $a0) => {
             }
         };
 
-function za0(A) {
+    function za0(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -766,8 +768,7 @@ function za0(A) {
         }, {})
     }
     bm(za0, "cloneQuery");
-
-var nI4 = class {
+    var nI4 = class {
         static {
             bm(this, "HttpResponse")
         }
@@ -781,12 +782,12 @@ var nI4 = class {
         }
     };
 
-function Ua0(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function Ua0(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     bm(Ua0, "isValidHostname")
 });
-var sG = U((nI7, Ta0) => {
+var sG = moduleWrapper((nI7, Ta0) => {
     var {
         defineProperty: IbA,
         getOwnPropertyDescriptor: aI4,
@@ -892,7 +893,7 @@ var sG = U((nI7, Ta0) => {
             override: !0
         };
 
-function Ra0(A, Q, B) {
+    function Ra0(A, Q, B) {
         return {
             applyToStack: (G) => {
                 G.add(Na0(A, B), Ma0), G.add(La0(A, Q), Oa0)
@@ -901,7 +902,7 @@ function Ra0(A, Q, B) {
     }
     YbA(Ra0, "getSerdePlugin")
 });
-var Wr = U((aI7, ka0) => {
+var Wr = moduleWrapper((aI7, ka0) => {
     var {
         defineProperty: JbA,
         getOwnPropertyDescriptor: QY4,
@@ -980,7 +981,7 @@ var Wr = U((aI7, ka0) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values
@@ -1014,7 +1015,7 @@ var Wr = U((aI7, ka0) => {
                 fm(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -1036,7 +1037,7 @@ var Wr = U((aI7, ka0) => {
             }
         };
 
-function Sa0(A) {
+    function Sa0(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -1046,8 +1047,7 @@ function Sa0(A) {
         }, {})
     }
     fm(Sa0, "cloneQuery");
-
-var KY4 = class {
+    var KY4 = class {
         static {
             fm(this, "HttpResponse")
         }
@@ -1061,12 +1061,12 @@ var KY4 = class {
         }
     };
 
-function _a0(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function _a0(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     fm(_a0, "isValidHostname")
 });
-var va0 = U((tI7, xa0) => {
+var va0 = moduleWrapper((tI7, xa0) => {
     var {
         defineProperty: WbA,
         getOwnPropertyDescriptor: DY4,
@@ -1097,7 +1097,7 @@ var va0 = U((tI7, xa0) => {
     xa0.exports = $Y4(ya0);
     var wY4 = EY4((A) => typeof ArrayBuffer === "function" && A instanceof ArrayBuffer || Object.prototype.toString.call(A) === "[object ArrayBuffer]", "isArrayBuffer")
 });
-var kI = U((eI7, ha0) => {
+var kI = moduleWrapper((eI7, ha0) => {
     var {
         defineProperty: XbA,
         getOwnPropertyDescriptor: qY4,
@@ -1128,23 +1128,23 @@ var kI = U((eI7, ha0) => {
     });
     ha0.exports = RY4(fa0);
     var TY4 = va0(),
-        wE1 = UA("buffer"),
+        wE1 = nodeRequire("buffer"),
         PY4 = ba0((A, Q = 0, B = A.byteLength - Q) => {
-            if (!(0, TY4.isArrayBuffer)(A)) throw TypeError(`The "input" argument must be ArrayBuffer. Received type ${typeof A} (${A})`);
+            if (!(0, TY4.isArrayBuffer)(A)) throw TypeError(`The "input" argument must be ArrayBuffer. Received type TextComponent{typeof A} (TextComponent{A})`);
             return wE1.Buffer.from(A, Q, B)
         }, "fromArrayBuffer"),
         jY4 = ba0((A, Q) => {
-            if (typeof A !== "string") throw TypeError(`The "input" argument must be of type string. Received type ${typeof A} (${A})`);
+            if (typeof A !== "string") throw TypeError(`The "input" argument must be of type string. Received type TextComponent{typeof A} (TextComponent{A})`);
             return Q ? wE1.Buffer.from(A, Q) : wE1.Buffer.from(A)
         }, "fromString")
 });
-var ma0 = U((ga0) => {
+var ma0 = moduleWrapper((ga0) => {
     Object.defineProperty(ga0, "__esModule", {
         value: !0
     });
     ga0.fromBase64 = void 0;
     var SY4 = kI(),
-        _Y4 = /^[A-Za-z0-9+/]*={0,2}$/,
+        _Y4 = /^[A-Za-z0-9+/]*={0,2}TextComponent/,
         kY4 = (A) => {
             if (A.length * 3 % 4 !== 0) throw TypeError("Incorrect padding on base64 string.");
             if (!_Y4.exec(A)) throw TypeError("Invalid base64 string.");
@@ -1153,7 +1153,7 @@ var ma0 = U((ga0) => {
         };
     ga0.fromBase64 = kY4
 });
-var L2 = U((QY7, la0) => {
+var L2 = moduleWrapper((QY7, la0) => {
     var {
         defineProperty: FbA,
         getOwnPropertyDescriptor: yY4,
@@ -1200,7 +1200,7 @@ var L2 = U((QY7, la0) => {
             return (0, ca0.fromArrayBuffer)(A.buffer, A.byteOffset, A.byteLength).toString("utf8")
         }, "toUtf8")
 });
-var aa0 = U((ia0) => {
+var aa0 = moduleWrapper((ia0) => {
     Object.defineProperty(ia0, "__esModule", {
         value: !0
     });
@@ -1216,7 +1216,7 @@ var aa0 = U((ia0) => {
         };
     ia0.toBase64 = cY4
 });
-var X4A = U((GY7, VbA) => {
+var X4A = moduleWrapper((GY7, VbA) => {
     var {
         defineProperty: sa0,
         getOwnPropertyDescriptor: pY4,
@@ -1237,15 +1237,14 @@ var X4A = U((GY7, VbA) => {
     ra0(LE1, ma0(), VbA.exports);
     ra0(LE1, aa0(), VbA.exports)
 });
-var ME1 = U((ta0) => {
+var ME1 = moduleWrapper((ta0) => {
     Object.defineProperty(ta0, "__esModule", {
         value: !0
     });
     ta0.ChecksumStream = void 0;
     var aY4 = X4A(),
-        sY4 = UA("stream");
-
-class oa0 extends sY4.Duplex {
+        sY4 = nodeRequire("stream");
+    class oa0 extends sY4.Duplex {
         constructor({
             expectedChecksum: A,
             checksum: Q,
@@ -1256,7 +1255,7 @@ class oa0 extends sY4.Duplex {
             var I, Y;
             super();
             if (typeof B.pipe === "function") this.source = B;
-            else throw Error(`@smithy/util-stream: unsupported source type ${(Y=(I=B===null||B===void 0?void 0:B.constructor)===null||I===void 0?void 0:I.name)!==null&&Y!==void 0?Y:B} in ChecksumStream.`);
+            else throw Error(`@smithy/util-stream: unsupported source type TextComponent{(Y=(I=B===null||B===void 0?void 0:B.constructor)===null||I===void 0?void 0:I.name)!==null&&Y!==void 0?Y:B} in ChecksumStream.`);
             this.base64Encoder = Z !== null && Z !== void 0 ? Z : aY4.toBase64, this.expectedChecksum = A, this.checksum = Q, this.checksumSourceLocation = G, this.source.pipe(this)
         }
         _read(A) {}
@@ -1272,7 +1271,7 @@ class oa0 extends sY4.Duplex {
             try {
                 let Q = await this.checksum.digest(),
                     B = this.base64Encoder(Q);
-                if (this.expectedChecksum !== B) return A(Error(`Checksum mismatch: expected "${this.expectedChecksum}" but received "${B}" in response header "${this.checksumSourceLocation}".`))
+                if (this.expectedChecksum !== B) return A(Error(`Checksum mismatch: expected "TextComponent{this.expectedChecksum}" but received "TextComponent{B}" in response header "TextComponent{this.checksumSourceLocation}".`))
             } catch (Q) {
                 return A(Q)
             }
@@ -1281,7 +1280,7 @@ class oa0 extends sY4.Duplex {
     }
     ta0.ChecksumStream = oa0
 });
-var hm = U((As0) => {
+var hm = moduleWrapper((As0) => {
     Object.defineProperty(As0, "__esModule", {
         value: !0
     });
@@ -1297,17 +1296,16 @@ var hm = U((As0) => {
     };
     As0.isBlob = oY4
 });
-var Is0 = U((Gs0) => {
+var Is0 = moduleWrapper((Gs0) => {
     Object.defineProperty(Gs0, "__esModule", {
         value: !0
     });
     Gs0.ChecksumStream = void 0;
     var eY4 = typeof ReadableStream === "function" ? ReadableStream : function() {};
-
-class Bs0 extends eY4 {}
+    class Bs0 extends eY4 {}
     Gs0.ChecksumStream = Bs0
 });
-var Ws0 = U((Ys0) => {
+var Ws0 = moduleWrapper((Ys0) => {
     Object.defineProperty(Ys0, "__esModule", {
         value: !0
     });
@@ -1323,7 +1321,7 @@ var Ws0 = U((Ys0) => {
             base64Encoder: Z
         }) => {
             var I, Y;
-            if (!(0, QJ4.isReadableStream)(B)) throw Error(`@smithy/util-stream: unsupported source type ${(Y=(I=B===null||B===void 0?void 0:B.constructor)===null||I===void 0?void 0:I.name)!==null&&Y!==void 0?Y:B} in ChecksumStream.`);
+            if (!(0, QJ4.isReadableStream)(B)) throw Error(`@smithy/util-stream: unsupported source type TextComponent{(Y=(I=B===null||B===void 0?void 0:B.constructor)===null||I===void 0?void 0:I.name)!==null&&Y!==void 0?Y:B} in ChecksumStream.`);
             let J = Z !== null && Z !== void 0 ? Z : AJ4.toBase64;
             if (typeof TransformStream !== "function") throw Error("@smithy/util-stream: unable to instantiate ChecksumStream because API unavailable: ReadableStream/TransformStream.");
             let W = new TransformStream({
@@ -1335,7 +1333,7 @@ var Ws0 = U((Ys0) => {
                     let V = await Q.digest(),
                         K = J(V);
                     if (A !== K) {
-                        let D = Error(`Checksum mismatch: expected "${A}" but received "${K}" in response header "${G}".`);
+                        let D = Error(`Checksum mismatch: expected "TextComponent{A}" but received "TextComponent{K}" in response header "TextComponent{G}".`);
                         F.error(D)
                     } else F.terminate()
                 }
@@ -1346,7 +1344,7 @@ var Ws0 = U((Ys0) => {
         };
     Ys0.createChecksumStream = GJ4
 });
-var Fs0 = U((Xs0) => {
+var Fs0 = moduleWrapper((Xs0) => {
     Object.defineProperty(Xs0, "__esModule", {
         value: !0
     });
@@ -1355,18 +1353,17 @@ var Fs0 = U((Xs0) => {
         IJ4 = ME1(),
         YJ4 = Ws0();
 
-function JJ4(A) {
+    function JJ4(A) {
         if (typeof ReadableStream === "function" && (0, ZJ4.isReadableStream)(A.source)) return (0, YJ4.createChecksumStream)(A);
         return new IJ4.ChecksumStream(A)
     }
 });
-var OE1 = U((Ks0) => {
+var OE1 = moduleWrapper((Ks0) => {
     Object.defineProperty(Ks0, "__esModule", {
         value: !0
     });
     Ks0.ByteArrayCollector = void 0;
-
-class Vs0 {
+    class Vs0 {
         constructor(A) {
             this.allocByteArray = A, this.byteLength = 0, this.byteArrays = []
         }
@@ -1392,7 +1389,7 @@ class Vs0 {
     }
     Ks0.ByteArrayCollector = Vs0
 });
-var $s0 = U((zs0) => {
+var $s0 = moduleWrapper((zs0) => {
     Object.defineProperty(zs0, "__esModule", {
         value: !0
     });
@@ -1404,7 +1401,7 @@ var $s0 = U((zs0) => {
     zs0.modeOf = Es0;
     var XJ4 = OE1();
 
-function Hs0(A, Q, B) {
+    function Hs0(A, Q, B) {
         let G = A.getReader(),
             Z = !1,
             I = 0,
@@ -1437,7 +1434,7 @@ function Hs0(A, Q, B) {
                     if (H >= Q && C === 0) X.enqueue(K);
                     else {
                         let E = Cs0(Y, J, K);
-                        if (!Z && I > Q * 2) Z = !0, B === null || B === void 0 || B.warn(`@smithy/util-stream - stream chunk size ${H} is below threshold of ${Q}, automatically buffering.`);
+                        if (!Z && I > Q * 2) Z = !0, B === null || B === void 0 || B.warn(`@smithy/util-stream - stream chunk size TextComponent{H} is below threshold of TextComponent{Q}, automatically buffering.`);
                         if (E >= Q) X.enqueue(KbA(Y, J));
                         else await W(X)
                     }
@@ -1449,7 +1446,7 @@ function Hs0(A, Q, B) {
     }
     zs0.createBufferedReadable = Hs0;
 
-function Cs0(A, Q, B) {
+    function Cs0(A, Q, B) {
         switch (Q) {
             case 0:
                 return A[0] += B, F4A(A[0]);
@@ -1459,7 +1456,7 @@ function Cs0(A, Q, B) {
         }
     }
 
-function KbA(A, Q) {
+    function KbA(A, Q) {
         switch (Q) {
             case 0:
                 let B = A[0];
@@ -1468,32 +1465,32 @@ function KbA(A, Q) {
             case 2:
                 return A[Q].flush()
         }
-        throw Error(`@smithy/util-stream - invalid index ${Q} given to flush()`)
+        throw Error(`@smithy/util-stream - invalid index TextComponent{Q} given to flush()`)
     }
 
-function F4A(A) {
+    function F4A(A) {
         var Q, B;
         return (B = (Q = A === null || A === void 0 ? void 0 : A.byteLength) !== null && Q !== void 0 ? Q : A === null || A === void 0 ? void 0 : A.length) !== null && B !== void 0 ? B : 0
     }
 
-function Es0(A, Q = !0) {
+    function Es0(A, Q = !0) {
         if (Q && typeof Buffer < "u" && A instanceof Buffer) return 2;
         if (A instanceof Uint8Array) return 1;
         if (typeof A === "string") return 0;
         return -1
     }
 });
-var Ns0 = U((qs0) => {
+var Ns0 = moduleWrapper((qs0) => {
     Object.defineProperty(qs0, "__esModule", {
         value: !0
     });
     qs0.createBufferedReadable = zJ4;
-    var CJ4 = UA("node:stream"),
+    var CJ4 = nodeRequire("node:stream"),
         ws0 = OE1(),
         Fv = $s0(),
         EJ4 = hm();
 
-function zJ4(A, Q, B) {
+    function zJ4(A, Q, B) {
         if ((0, EJ4.isReadableStream)(A)) return (0, Fv.createBufferedReadableStream)(A, Q, B);
         let G = new CJ4.Readable({
                 read() {}
@@ -1518,6 +1515,6 @@ function zJ4(A, Q, B) {
             if (F >= Q && V === 0) G.push(W);
             else {
                 let K = (0, Fv.merge)(Y, J, W);
-                if (!Z && I > Q * 2) Z = !0, B === null || B === void 0 || B.warn(`@smithy/util-stream - stream chunk size ${F} is below threshold of ${Q}, automatically buffering.`);
+                if (!Z && I > Q * 2) Z = !0, B === null || B === void 0 || B.warn(`@smithy/util-stream - stream chunk size TextComponent{F} is below threshold of TextComponent{Q}, automatically buffering.`);
                 if (K >= Q) G.push((0, Fv.flush)(Y, J))
             }

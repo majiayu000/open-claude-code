@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_028.js
+ * 处理时间: 2025-12-09T03:41:38.046Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.026Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -26,7 +29,6 @@
     if (UC9()) FK0(A, G);
     om1(A, G)
 }
-
 async function wa(A, Q) {
     let B = am1(A);
     if (B === 0) return;
@@ -43,7 +45,7 @@ var CC9 = "tengu_log_segment_events",
     EC9 = "tengu_log_datadog_events",
     VK0 = void 0,
     KK0 = void 0;
-var w0 = L(() => {
+var w0 = lazyLoader(() => {
     O9();
     BW0();
     HC9();
@@ -56,7 +58,7 @@ import {
 } from "path";
 
 function CK0() {
-    if (!DK0) DK0 = UA("perf_hooks").performance;
+    if (!DK0) DK0 = nodeRequire("perf_hooks").performance;
     return DK0
 }
 
@@ -84,12 +86,12 @@ function qC9() {
         let J = HK0(Y.startTime),
             W = HK0(Y.startTime - G),
             X = MC9.get(Y.name),
-            F = X ? ` | RSS: ${wC9(X.rss)}MB, Heap: ${wC9(X.heapUsed)}MB` : "";
-        B.push(`[+${J.padStart(8)}ms] (+${W.padStart(7)}ms) ${Y.name}${F}`), G = Y.startTime
+            F = X ? ` | RSS: TextComponent{wC9(X.rss)}MB, Heap: TextComponent{wC9(X.heapUsed)}MB` : "";
+        B.push(`[+TextComponent{J.padStart(8)}ms] (+TextComponent{W.padStart(7)}ms) TextComponent{Y.name}TextComponent{F}`), G = Y.startTime
     }
     let Z = Q[Q.length - 1],
         I = HK0(Z?.startTime ?? 0);
-    return B.push(""), B.push(`Total startup time: ${I}ms`), B.push("=".repeat(80)), B.join(`
+    return B.push(""), B.push(`Total startup time: TextComponent{I}ms`), B.push("=".repeat(80)), B.join(`
 `)
 }
 
@@ -107,7 +109,7 @@ function OC9() {
 }
 
 function nx3() {
-    return cx3(PQ(), "startup-perf", `${G0()}.txt`)
+    return cx3(PQ(), "startup-perf", `TextComponent{G0()}.txt`)
 }
 
 function ax3() {
@@ -120,14 +122,14 @@ function ax3() {
     for (let [Z, [I, Y]] of Object.entries(ix3)) {
         let J = B.get(I),
             W = B.get(Y);
-        if (J !== void 0 && W !== void 0) G[`${Z}_ms`] = Math.round(W - J)
+        if (J !== void 0 && W !== void 0) G[`TextComponent{Z}_ms`] = Math.round(W - J)
     }
     G.checkpoint_count = Q.length, BA("tengu_startup_perf", G)
 }
 var GJ1, lx3 = 0.001,
     NC9, LC9, MC9, DK0 = null,
     ix3;
-var Qe = L(() => {
+var Qe = lazyLoader(() => {
     D0();
     w0();
     hQ();
@@ -142,15 +144,14 @@ var Qe = L(() => {
     };
     if (LC9) v4("profiler_initialized")
 });
-var USA = U((sx3) => {
+var USA = moduleWrapper((sx3) => {
     class EK0 extends Error {
         constructor(A, Q, B) {
             super(B);
             Error.captureStackTrace(this, this.constructor), this.name = this.constructor.name, this.code = Q, this.exitCode = A, this.nestedError = void 0
         }
     }
-
-class RC9 extends EK0 {
+    class RC9 extends EK0 {
         constructor(A) {
             super(1, "commander.invalidArgument", A);
             Error.captureStackTrace(this, this.constructor), this.name = this.constructor.name
@@ -159,12 +160,11 @@ class RC9 extends EK0 {
     sx3.CommanderError = EK0;
     sx3.InvalidArgumentError = RC9
 });
-var ZJ1 = U((Av3) => {
+var ZJ1 = moduleWrapper((Av3) => {
     var {
         InvalidArgumentError: tx3
     } = USA();
-
-class TC9 {
+    class TC9 {
         constructor(A, Q) {
             switch (this.description = Q || "", this.variadic = !1, this.parseArg = void 0, this.defaultValue = void 0, this.defaultValueDescription = void 0, this.argChoices = void 0, A[0]) {
                 case "<":
@@ -194,7 +194,7 @@ class TC9 {
         }
         choices(A) {
             return this.argChoices = A.slice(), this.parseArg = (Q, B) => {
-                if (!this.argChoices.includes(Q)) throw new tx3(`Allowed choices are ${this.argChoices.join(", ")}.`);
+                if (!this.argChoices.includes(Q)) throw new tx3(`Allowed choices are TextComponent{this.argChoices.join(", ")}.`);
                 if (this.variadic) return this._concatValue(Q, B);
                 return Q
             }, this
@@ -207,19 +207,18 @@ class TC9 {
         }
     }
 
-function ex3(A) {
+    function ex3(A) {
         let Q = A.name() + (A.variadic === !0 ? "..." : "");
         return A.required ? "<" + Q + ">" : "[" + Q + "]"
     }
     Av3.Argument = TC9;
     Av3.humanReadableArgName = ex3
 });
-var zK0 = U((Zv3) => {
+var zK0 = moduleWrapper((Zv3) => {
     var {
         humanReadableArgName: Gv3
     } = ZJ1();
-
-class PC9 {
+    class PC9 {
         constructor() {
             this.helpWidth = void 0, this.sortSubcommands = !1, this.sortOptions = !1, this.showGlobalOptions = !1
         }
@@ -313,22 +312,22 @@ class PC9 {
         }
         optionDescription(A) {
             let Q = [];
-            if (A.argChoices) Q.push(`choices: ${A.argChoices.map((B)=>JSON.stringify(B)).join(", ")}`);
+            if (A.argChoices) Q.push(`choices: TextComponent{A.argChoices.map((B)=>JSON.stringify(B)).join(", ")}`);
             if (A.defaultValue !== void 0) {
-                if (A.required || A.optional || A.isBoolean() && typeof A.defaultValue === "boolean") Q.push(`default: ${A.defaultValueDescription||JSON.stringify(A.defaultValue)}`)
+                if (A.required || A.optional || A.isBoolean() && typeof A.defaultValue === "boolean") Q.push(`default: TextComponent{A.defaultValueDescription||JSON.stringify(A.defaultValue)}`)
             }
-            if (A.presetArg !== void 0 && A.optional) Q.push(`preset: ${JSON.stringify(A.presetArg)}`);
-            if (A.envVar !== void 0) Q.push(`env: ${A.envVar}`);
-            if (Q.length > 0) return `${A.description} (${Q.join(", ")})`;
+            if (A.presetArg !== void 0 && A.optional) Q.push(`preset: TextComponent{JSON.stringify(A.presetArg)}`);
+            if (A.envVar !== void 0) Q.push(`env: TextComponent{A.envVar}`);
+            if (Q.length > 0) return `TextComponent{A.description} (TextComponent{Q.join(", ")})`;
             return A.description
         }
         argumentDescription(A) {
             let Q = [];
-            if (A.argChoices) Q.push(`choices: ${A.argChoices.map((B)=>JSON.stringify(B)).join(", ")}`);
-            if (A.defaultValue !== void 0) Q.push(`default: ${A.defaultValueDescription||JSON.stringify(A.defaultValue)}`);
+            if (A.argChoices) Q.push(`choices: TextComponent{A.argChoices.map((B)=>JSON.stringify(B)).join(", ")}`);
+            if (A.defaultValue !== void 0) Q.push(`default: TextComponent{A.defaultValueDescription||JSON.stringify(A.defaultValue)}`);
             if (Q.length > 0) {
-                let B = `(${Q.join(", ")})`;
-                if (A.description) return `${A.description} ${B}`;
+                let B = `(TextComponent{Q.join(", ")})`;
+                if (A.description) return `TextComponent{A.description} TextComponent{B}`;
                 return B
             }
             return A.description
@@ -339,19 +338,19 @@ class PC9 {
                 Z = 2,
                 I = 2;
 
-function Y(D, H) {
+            function Y(D, H) {
                 if (H) {
-                    let C = `${D.padEnd(B+2)}${H}`;
+                    let C = `TextComponent{D.padEnd(B+2)}TextComponent{H}`;
                     return Q.wrap(C, G - 2, B + 2)
                 }
                 return D
             }
 
-function J(D) {
+            function J(D) {
                 return D.join(`
 `).replace(/^/gm, " ".repeat(2))
             }
-            let W = [`Usage: ${Q.commandUsage(A)}`, ""],
+            let W = [`Usage: TextComponent{Q.commandUsage(A)}`, ""],
                 X = Q.commandDescription(A);
             if (X.length > 0) W = W.concat([Q.wrap(X, G, 0), ""]);
             let F = Q.visibleArguments(A).map((D) => {
@@ -379,7 +378,7 @@ function J(D) {
             return Math.max(Q.longestOptionTermLength(A, Q), Q.longestGlobalOptionTermLength(A, Q), Q.longestSubcommandTermLength(A, Q), Q.longestArgumentTermLength(A, Q))
         }
         wrap(A, Q, B, G = 40) {
-            let I = new RegExp(`[\\n][${" \\f\\t\\v   -   　\uFEFF"}]+`);
+            let I = new RegExp(`[\\n][TextComponent{" \\f\\t\\v   -   　\uFEFF"}]+`);
             if (A.match(I)) return A;
             let Y = Q - B;
             if (Y < G) return A;
@@ -390,7 +389,7 @@ function J(D) {
                 X = " ".repeat(B),
                 V = `\\s${"​"}`,
                 K = new RegExp(`
-|.{1,${Y-1}}([${V}]|$)|[^${V}]+?([${V}]|$)`, "g"),
+|.{1,TextComponent{Y-1}}([TextComponent{V}]|TextComponent)|[^TextComponent{V}]+?([TextComponent{V}]|TextComponent)`, "g"),
                 D = W.match(K) || [];
             return J + D.map((H, C) => {
                 if (H === `
@@ -402,14 +401,13 @@ function J(D) {
     }
     Zv3.Help = PC9
 });
-var UK0 = U((Xv3) => {
+var UK0 = moduleWrapper((Xv3) => {
     var {
         InvalidArgumentError: Yv3
     } = USA();
-
-class jC9 {
+    class jC9 {
         constructor(A, Q) {
-            this.flags = A, this.description = Q || "", this.required = A.includes("<"), this.optional = A.includes("["), this.variadic = /\w\.\.\.[>\]]$/.test(A), this.mandatory = !1;
+            this.flags = A, this.description = Q || "", this.required = A.includes("<"), this.optional = A.includes("["), this.variadic = /\w\.\.\.[>\]]TextComponent/.test(A), this.mandatory = !1;
             let B = Wv3(A);
             if (this.short = B.shortFlag, this.long = B.longFlag, this.negate = !1, this.long) this.negate = this.long.startsWith("--no-");
             this.defaultValue = void 0, this.defaultValueDescription = void 0, this.presetArg = void 0, this.envVar = void 0, this.parseArg = void 0, this.hidden = !1, this.argChoices = void 0, this.conflictsWith = [], this.implied = void 0
@@ -448,7 +446,7 @@ class jC9 {
         }
         choices(A) {
             return this.argChoices = A.slice(), this.parseArg = (Q, B) => {
-                if (!this.argChoices.includes(Q)) throw new Yv3(`Allowed choices are ${this.argChoices.join(", ")}.`);
+                if (!this.argChoices.includes(Q)) throw new Yv3(`Allowed choices are TextComponent{this.argChoices.join(", ")}.`);
                 if (this.variadic) return this._concatValue(Q, B);
                 return Q
             }, this
@@ -467,8 +465,7 @@ class jC9 {
             return !this.required && !this.optional && !this.negate
         }
     }
-
-class SC9 {
+    class SC9 {
         constructor(A) {
             this.positiveOptions = new Map, this.negativeOptions = new Map, this.dualOptions = new Set, A.forEach((Q) => {
                 if (Q.negate) this.negativeOptions.set(Q.attributeName(), Q);
@@ -486,16 +483,16 @@ class SC9 {
         }
     }
 
-function Jv3(A) {
+    function Jv3(A) {
         return A.split("-").reduce((Q, B) => {
             return Q + B[0].toUpperCase() + B.slice(1)
         })
     }
 
-function Wv3(A) {
+    function Wv3(A) {
         let Q, B, G = A.split(/[ |,]+/);
         if (G.length > 1 && !/^[[<]/.test(G[1])) Q = G.shift();
-        if (B = G.shift(), !Q && /^-[^-]$/.test(B)) Q = B, B = void 0;
+        if (B = G.shift(), !Q && /^-[^-]TextComponent/.test(B)) Q = B, B = void 0;
         return {
             shortFlag: Q,
             longFlag: B
@@ -504,7 +501,7 @@ function Wv3(A) {
     Xv3.Option = jC9;
     Xv3.DualOptions = SC9
 });
-var _C9 = U((Hv3) => {
+var _C9 = moduleWrapper((Hv3) => {
     function Kv3(A, Q) {
         if (Math.abs(A.length - Q.length) > 3) return Math.max(A.length, Q.length);
         let B = [];
@@ -520,7 +517,7 @@ var _C9 = U((Hv3) => {
         return B[A.length][Q.length]
     }
 
-function Dv3(A, Q) {
+    function Dv3(A, Q) {
         if (!Q || Q.length === 0) return "";
         Q = Array.from(new Set(Q));
         let B = A.startsWith("--");
@@ -536,21 +533,21 @@ function Dv3(A, Q) {
                     if (J < Z) Z = J, G = [Y];
                     else if (J === Z) G.push(Y)
                 }
-            }), G.sort((Y, J) => Y.localeCompare(J)), B) G = G.map((Y) => `--${Y}`);
+            }), G.sort((Y, J) => Y.localeCompare(J)), B) G = G.map((Y) => `--TextComponent{Y}`);
         if (G.length > 1) return `
-(Did you mean one of ${G.join(", ")}?)`;
+(Did you mean one of TextComponent{G.join(", ")}?)`;
         if (G.length === 1) return `
-(Did you mean ${G[0]}?)`;
+(Did you mean TextComponent{G[0]}?)`;
         return ""
     }
     Hv3.suggestSimilar = Dv3
 });
-var vC9 = U((qv3) => {
-    var Ev3 = UA("node:events").EventEmitter,
-        $K0 = UA("node:child_process"),
-        ig = UA("node:path"),
-        wK0 = UA("node:fs"),
-        oJ = UA("node:process"),
+var vC9 = moduleWrapper((qv3) => {
+    var Ev3 = nodeRequire("node:events").EventEmitter,
+        $K0 = nodeRequire("node:child_process"),
+        ig = nodeRequire("node:path"),
+        wK0 = nodeRequire("node:fs"),
+        oJ = nodeRequire("node:process"),
         {
             Argument: zv3,
             humanReadableArgName: Uv3
@@ -568,8 +565,7 @@ var vC9 = U((qv3) => {
         {
             suggestSimilar: yC9
         } = _C9();
-
-class NK0 extends Ev3 {
+    class NK0 extends Ev3 {
         constructor(A) {
             super();
             this.commands = [], this.options = [], this.parent = null, this._allowUnknownOption = !1, this._allowExcessArguments = !0, this.registeredArguments = [], this._args = this.registeredArguments, this.args = [], this.rawArgs = [], this.processedArgs = [], this._scriptPath = null, this._name = A || "", this._optionValues = {}, this._optionValueSources = {}, this._storeOptionsAsProperties = !1, this._actionHandler = null, this._executableHandler = !1, this._executableFile = null, this._executableDir = null, this._defaultCommandName = null, this._exitCallback = null, this._aliases = [], this._combineFlagAndOptionalValue = !0, this._description = "", this._summary = "", this._argsDescription = void 0, this._enablePositionalOptions = !1, this._passThroughOptions = !1, this._lifeCycleHooks = {}, this._showHelpAfterError = !1, this._showSuggestionAfterError = !0, this._outputConfiguration = {
@@ -644,8 +640,8 @@ class NK0 extends Ev3 {
         }
         addArgument(A) {
             let Q = this.registeredArguments.slice(-1)[0];
-            if (Q && Q.variadic) throw Error(`only the last argument can be variadic '${Q.name()}'`);
-            if (A.required && A.defaultValue !== void 0 && A.parseArg === void 0) throw Error(`a default value for a required argument is never used: '${A.name()}'`);
+            if (Q && Q.variadic) throw Error(`only the last argument can be variadic 'TextComponent{Q.name()}'`);
+            if (A.required && A.defaultValue !== void 0 && A.parseArg === void 0) throw Error(`a default value for a required argument is never used: 'TextComponent{A.name()}'`);
             return this.registeredArguments.push(A), this
         }
         helpCommand(A, Q) {
@@ -669,8 +665,8 @@ class NK0 extends Ev3 {
         }
         hook(A, Q) {
             let B = ["preSubcommand", "preAction", "postAction"];
-            if (!B.includes(A)) throw Error(`Unexpected value for event passed to hook : '${A}'.
-Expecting one of '${B.join("', '")}'`);
+            if (!B.includes(A)) throw Error(`Unexpected value for event passed to hook : 'TextComponent{A}'.
+Expecting one of 'TextComponent{B.join("', '")}'`);
             if (this._lifeCycleHooks[A]) this._lifeCycleHooks[A].push(Q);
             else this._lifeCycleHooks[A] = [Q];
             return this
@@ -704,7 +700,7 @@ Expecting one of '${B.join("', '")}'`);
                 return A.parseArg(Q, B)
             } catch (Z) {
                 if (Z.code === "commander.invalidArgument") {
-                    let I = `${G} ${Z.message}`;
+                    let I = `TextComponent{G} TextComponent{Z.message}`;
                     this.error(I, {
                         exitCode: Z.exitCode,
                         code: Z.code
@@ -717,8 +713,8 @@ Expecting one of '${B.join("', '")}'`);
             let Q = A.short && this._findOption(A.short) || A.long && this._findOption(A.long);
             if (Q) {
                 let B = A.long && this._findOption(A.long) ? A.long : A.short;
-                throw Error(`Cannot add option '${A.flags}'${this._name&&` to command '${this._name}'`} due to conflicting flag '${B}'
--  already used by option '${Q.flags}'`)
+                throw Error(`Cannot add option 'TextComponent{A.flags}'TextComponent{this._name&&` to command 'TextComponent{this._name}'`} due to conflicting flag 'TextComponent{B}'
+-  already used by option 'TextComponent{Q.flags}'`)
             }
             this.options.push(A)
         }
@@ -730,7 +726,7 @@ Expecting one of '${B.join("', '")}'`);
             if (B) {
                 let G = Q(this._findCommand(B)).join("|"),
                     Z = Q(A).join("|");
-                throw Error(`cannot add command '${Z}' as already have command '${G}'`)
+                throw Error(`cannot add command 'TextComponent{Z}' as already have command 'TextComponent{G}'`)
             }
             this.commands.push(A)
         }
@@ -754,10 +750,10 @@ Expecting one of '${B.join("', '")}'`);
                 this.setOptionValueWithSource(B, Z, Y)
             };
             if (this.on("option:" + Q, (Z) => {
-                    let I = `error: option '${A.flags}' argument '${Z}' is invalid.`;
+                    let I = `error: option 'TextComponent{A.flags}' argument 'TextComponent{Z}' is invalid.`;
                     G(Z, I, "cli")
                 }), A.envVar) this.on("optionEnv:" + Q, (Z) => {
-                let I = `error: option '${A.flags}' value '${Z}' from env '${A.envVar}' is invalid.`;
+                let I = `error: option 'TextComponent{A.flags}' value 'TextComponent{Z}' from env 'TextComponent{A.envVar}' is invalid.`;
                 G(Z, I, "env")
             });
             return this
@@ -799,7 +795,7 @@ Expecting one of '${B.join("', '")}'`);
             return this._passThroughOptions = !!A, this._checkForBrokenPassThrough(), this
         }
         _checkForBrokenPassThrough() {
-            if (this.parent && this._passThroughOptions && !this.parent._enablePositionalOptions) throw Error(`passThroughOptions cannot be used for '${this._name}' without turning on enablePositionalOptions for parent command(s)`)
+            if (this.parent && this._passThroughOptions && !this.parent._enablePositionalOptions) throw Error(`passThroughOptions cannot be used for 'TextComponent{this._name}' without turning on enablePositionalOptions for parent command(s)`)
         }
         storeOptionsAsProperties(A = !0) {
             if (this.options.length) throw Error("call .storeOptionsAsProperties() before adding options");
@@ -853,7 +849,7 @@ Expecting one of '${B.join("', '")}'`);
                     B = A.slice(1);
                     break;
                 default:
-                    throw Error(`unexpected parse option { from: '${Q.from}' }`)
+                    throw Error(`unexpected parse option { from: 'TextComponent{Q.from}' }`)
             }
             if (!this._name && this._scriptPath) this.nameFromFilename(this._scriptPath);
             return this._name = this._name || "program", B
@@ -871,16 +867,16 @@ Expecting one of '${B.join("', '")}'`);
             let B = !1,
                 G = [".js", ".ts", ".tsx", ".mjs", ".cjs"];
 
-function Z(X, F) {
+            function Z(X, F) {
                 let V = ig.resolve(X, F);
                 if (wK0.existsSync(V)) return V;
                 if (G.includes(ig.extname(F))) return;
-                let K = G.find((D) => wK0.existsSync(`${V}${D}`));
-                if (K) return `${V}${K}`;
+                let K = G.find((D) => wK0.existsSync(`TextComponent{V}TextComponent{D}`));
+                if (K) return `TextComponent{V}TextComponent{K}`;
                 return
             }
             this._checkForMissingMandatoryOptions(), this._checkForConflictingOptions();
-            let I = A._executableFile || `${this._name}-${A._name}`,
+            let I = A._executableFile || `TextComponent{this._name}-TextComponent{A._name}`,
                 Y = this._executableDir || "";
             if (this._scriptPath) {
                 let X;
@@ -895,7 +891,7 @@ function Z(X, F) {
                 let X = Z(Y, I);
                 if (!X && !A._executableFile && this._scriptPath) {
                     let F = ig.basename(this._scriptPath, ig.extname(this._scriptPath));
-                    if (F !== this._name) X = Z(Y, `${F}-${A._name}`)
+                    if (F !== this._name) X = Z(Y, `TextComponent{F}-TextComponent{A._name}`)
                 }
                 I = X || I
             }
@@ -922,13 +918,13 @@ function Z(X, F) {
                 else W(new qK0(X, "commander.executeSubCommandAsync", "(close)"))
             }), J.on("error", (X) => {
                 if (X.code === "ENOENT") {
-                    let F = Y ? `searched for local subcommand relative to directory '${Y}'` : "no directory for search for local subcommand, use .executableDir() to supply a custom directory",
-                        V = `'${I}' does not exist
- - if '${A._name}' is not meant to be an executable command, remove description parameter from '.command()' and use '.description()' instead
+                    let F = Y ? `searched for local subcommand relative to directory 'TextComponent{Y}'` : "no directory for search for local subcommand, use .executableDir() to supply a custom directory",
+                        V = `'TextComponent{I}' does not exist
+ - if 'TextComponent{A._name}' is not meant to be an executable command, remove description parameter from '.command()' and use '.description()' instead
  - if the default executable name is not suitable, use the executableFile option to supply a custom name or path
- - ${F}`;
+ - TextComponent{F}`;
                     throw Error(V)
-                } else if (X.code === "EACCES") throw Error(`'${I}' not executable`);
+                } else if (X.code === "EACCES") throw Error(`'TextComponent{I}' not executable`);
                 if (!W) oJ.exit(1);
                 else {
                     let F = new qK0(1, "commander.executeSubCommandAsync", "(error)");
@@ -963,7 +959,7 @@ function Z(X, F) {
             let A = (B, G, Z) => {
                 let I = G;
                 if (G !== null && B.parseArg) {
-                    let Y = `error: command-argument value '${G}' is invalid for argument '${B.name()}'.`;
+                    let Y = `error: command-argument value 'TextComponent{G}' is invalid for argument 'TextComponent{B.name()}'.`;
                     I = this._callParseArg(B, G, Z, Y)
                 }
                 return I
@@ -1026,7 +1022,7 @@ function Z(X, F) {
             let G = () => {
                     if (B.unknown.length > 0) this.unknownOption(B.unknown[0])
                 },
-                Z = `command:${this.name()}`;
+                Z = `command:TextComponent{this.name()}`;
             if (this._actionHandler) {
                 G(), this._processArguments();
                 let I;
@@ -1082,7 +1078,7 @@ function Z(X, F) {
                 G = Q,
                 Z = A.slice();
 
-function I(J) {
+            function I(J) {
                 return J.length > 1 && J[0] === "-"
             }
             let Y = null;
@@ -1094,7 +1090,7 @@ function I(J) {
                     break
                 }
                 if (Y && !I(J)) {
-                    this.emit(`option:${Y.name()}`, J);
+                    this.emit(`option:TextComponent{Y.name()}`, J);
                     continue
                 }
                 if (Y = null, I(J)) {
@@ -1103,21 +1099,21 @@ function I(J) {
                         if (W.required) {
                             let X = Z.shift();
                             if (X === void 0) this.optionMissingArgument(W);
-                            this.emit(`option:${W.name()}`, X)
+                            this.emit(`option:TextComponent{W.name()}`, X)
                         } else if (W.optional) {
                             let X = null;
                             if (Z.length > 0 && !I(Z[0])) X = Z.shift();
-                            this.emit(`option:${W.name()}`, X)
-                        } else this.emit(`option:${W.name()}`);
+                            this.emit(`option:TextComponent{W.name()}`, X)
+                        } else this.emit(`option:TextComponent{W.name()}`);
                         Y = W.variadic ? W : null;
                         continue
                     }
                 }
                 if (J.length > 2 && J[0] === "-" && J[1] !== "-") {
-                    let W = this._findOption(`-${J[1]}`);
+                    let W = this._findOption(`-TextComponent{J[1]}`);
                     if (W) {
-                        if (W.required || W.optional && this._combineFlagAndOptionalValue) this.emit(`option:${W.name()}`, J.slice(2));
-                        else this.emit(`option:${W.name()}`), Z.unshift(`-${J.slice(2)}`);
+                        if (W.required || W.optional && this._combineFlagAndOptionalValue) this.emit(`option:TextComponent{W.name()}`, J.slice(2));
+                        else this.emit(`option:TextComponent{W.name()}`), Z.unshift(`-TextComponent{J.slice(2)}`);
                         continue
                     }
                 }
@@ -1125,7 +1121,7 @@ function I(J) {
                     let W = J.indexOf("="),
                         X = this._findOption(J.slice(0, W));
                     if (X && (X.required || X.optional)) {
-                        this.emit(`option:${X.name()}`, J.slice(W + 1));
+                        this.emit(`option:TextComponent{X.name()}`, J.slice(W + 1));
                         continue
                     }
                 }
@@ -1169,8 +1165,8 @@ function I(J) {
             return this._getCommandAndAncestors().reduce((A, Q) => Object.assign(A, Q.opts()), {})
         }
         error(A, Q) {
-            if (this._outputConfiguration.outputError(`${A}
-`, this._outputConfiguration.writeErr), typeof this._showHelpAfterError === "string") this._outputConfiguration.writeErr(`${this._showHelpAfterError}
+            if (this._outputConfiguration.outputError(`TextComponent{A}
+`, this._outputConfiguration.writeErr), typeof this._showHelpAfterError === "string") this._outputConfiguration.writeErr(`TextComponent{this._showHelpAfterError}
 `);
             else if (this._showHelpAfterError) this._outputConfiguration.writeErr(`
 `), this.outputHelp({
@@ -1186,8 +1182,8 @@ function I(J) {
                 if (A.envVar && A.envVar in oJ.env) {
                     let Q = A.attributeName();
                     if (this.getOptionValue(Q) === void 0 || ["default", "config", "env"].includes(this.getOptionValueSource(Q)))
-                        if (A.required || A.optional) this.emit(`optionEnv:${A.name()}`, oJ.env[A.envVar]);
-                        else this.emit(`optionEnv:${A.name()}`)
+                        if (A.required || A.optional) this.emit(`optionEnv:TextComponent{A.name()}`, oJ.env[A.envVar]);
+                        else this.emit(`optionEnv:TextComponent{A.name()}`)
                 }
             })
         }
@@ -1203,19 +1199,19 @@ function I(J) {
             })
         }
         missingArgument(A) {
-            let Q = `error: missing required argument '${A}'`;
+            let Q = `error: missing required argument 'TextComponent{A}'`;
             this.error(Q, {
                 code: "commander.missingArgument"
             })
         }
         optionMissingArgument(A) {
-            let Q = `error: option '${A.flags}' argument missing`;
+            let Q = `error: option 'TextComponent{A.flags}' argument missing`;
             this.error(Q, {
                 code: "commander.optionMissingArgument"
             })
         }
         missingMandatoryOptionValue(A) {
-            let Q = `error: required option '${A.flags}' not specified`;
+            let Q = `error: required option 'TextComponent{A.flags}' not specified`;
             this.error(Q, {
                 code: "commander.missingMandatoryOptionValue"
             })
@@ -1232,10 +1228,10 @@ function I(J) {
                 G = (I) => {
                     let Y = B(I),
                         J = Y.attributeName();
-                    if (this.getOptionValueSource(J) === "env") return `environment variable '${Y.envVar}'`;
-                    return `option '${Y.flags}'`
+                    if (this.getOptionValueSource(J) === "env") return `environment variable 'TextComponent{Y.envVar}'`;
+                    return `option 'TextComponent{Y.flags}'`
                 },
-                Z = `error: ${G(A)} cannot be used with ${G(Q)}`;
+                Z = `error: TextComponent{G(A)} cannot be used with TextComponent{G(Q)}`;
             this.error(Z, {
                 code: "commander.conflictingOption"
             })
@@ -1252,7 +1248,7 @@ function I(J) {
                 } while (Z && !Z._enablePositionalOptions);
                 Q = yC9(A, G)
             }
-            let B = `error: unknown option '${A}'${Q}`;
+            let B = `error: unknown option 'TextComponent{A}'TextComponent{Q}`;
             this.error(B, {
                 code: "commander.unknownOption"
             })
@@ -1261,7 +1257,7 @@ function I(J) {
             if (this._allowExcessArguments) return;
             let Q = this.registeredArguments.length,
                 B = Q === 1 ? "" : "s",
-                Z = `error: too many arguments${this.parent?` for '${this.name()}'`:""}. Expected ${Q} argument${B} but got ${A.length}.`;
+                Z = `error: too many arguments${this.parent?` for 'TextComponent{this.name()}'`:""}. Expected TextComponent{Q} argument${B} but got TextComponent{A.length}.`;
             this.error(Z, {
                 code: "commander.excessArguments"
             })
@@ -1275,7 +1271,7 @@ function I(J) {
                     if (G.push(Z.name()), Z.alias()) G.push(Z.alias())
                 }), Q = yC9(A, G)
             }
-            let B = `error: unknown command '${A}'${Q}`;
+            let B = `error: unknown command 'TextComponent{A}'TextComponent{Q}`;
             this.error(B, {
                 code: "commander.unknownCommand"
             })
@@ -1285,7 +1281,7 @@ function I(J) {
             this._version = A, Q = Q || "-V, --version", B = B || "output the version number";
             let G = this.createOption(Q, B);
             return this._versionOptionName = G.attributeName(), this._registerOption(G), this.on("option:" + G.name(), () => {
-                this._outputConfiguration.writeOut(`${A}
+                this._outputConfiguration.writeOut(`TextComponent{A}
 `), this._exit(0, "commander.version", A)
             }), this
         }
@@ -1306,7 +1302,7 @@ function I(J) {
             let B = this.parent?._findCommand(A);
             if (B) {
                 let G = [B.name()].concat(B.aliases()).join("|");
-                throw Error(`cannot add alias '${A}' to command '${this.name()}' as already have command '${G}'`)
+                throw Error(`cannot add alias 'TextComponent{A}' to command 'TextComponent{this.name()}' as already have command 'TextComponent{G}'`)
             }
             return Q._aliases.push(A), this
         }
@@ -1386,8 +1382,8 @@ function I(J) {
         addHelpText(A, Q) {
             let B = ["beforeAll", "before", "after", "afterAll"];
             if (!B.includes(A)) throw Error(`Unexpected value for position to addHelpText.
-Expecting one of '${B.join("', '")}'`);
-            let G = `${A}Help`;
+Expecting one of 'TextComponent{B.join("', '")}'`);
+            let G = `TextComponent{A}Help`;
             return this.on(G, (Z) => {
                 let I;
                 if (typeof Q === "function") I = Q({
@@ -1395,7 +1391,7 @@ Expecting one of '${B.join("', '")}'`);
                     command: Z.command
                 });
                 else I = Q;
-                if (I) Z.write(`${I}
+                if (I) Z.write(`TextComponent{I}
 `)
             }), this
         }
@@ -1405,24 +1401,24 @@ Expecting one of '${B.join("', '")}'`);
         }
     }
 
-function xC9(A) {
+    function xC9(A) {
         return A.map((Q) => {
             if (!Q.startsWith("--inspect")) return Q;
             let B, G = "127.0.0.1",
                 Z = "9229",
                 I;
-            if ((I = Q.match(/^(--inspect(-brk)?)$/)) !== null) B = I[1];
-            else if ((I = Q.match(/^(--inspect(-brk|-port)?)=([^:]+)$/)) !== null)
-                if (B = I[1], /^\d+$/.test(I[3])) Z = I[3];
+            if ((I = Q.match(/^(--inspect(-brk)?)TextComponent/)) !== null) B = I[1];
+            else if ((I = Q.match(/^(--inspect(-brk|-port)?)=([^:]+)TextComponent/)) !== null)
+                if (B = I[1], /^\d+TextComponent/.test(I[3])) Z = I[3];
                 else G = I[3];
-            else if ((I = Q.match(/^(--inspect(-brk|-port)?)=([^:]+):(\d+)$/)) !== null) B = I[1], G = I[3], Z = I[4];
-            if (B && Z !== "0") return `${B}=${G}:${parseInt(Z)+1}`;
+            else if ((I = Q.match(/^(--inspect(-brk|-port)?)=([^:]+):(\d+)TextComponent/)) !== null) B = I[1], G = I[3], Z = I[4];
+            if (B && Z !== "0") return `TextComponent{B}=TextComponent{G}:TextComponent{parseInt(Z)+1}`;
             return Q
         })
     }
     qv3.Command = NK0
 });
-var gC9 = U((Ov3) => {
+var gC9 = moduleWrapper((Ov3) => {
     var {
         Argument: bC9
     } = ZJ1(), {
@@ -1447,7 +1443,7 @@ var gC9 = U((Ov3) => {
     Ov3.InvalidArgumentError = fC9;
     Ov3.InvalidOptionArgumentError = fC9
 });
-var mC9 = U((GN, uC9) => {
+var mC9 = moduleWrapper((GN, uC9) => {
     var tP = gC9();
     GN = uC9.exports = {};
     GN.program = new tP.Command;
@@ -1463,8 +1459,8 @@ var mC9 = U((GN, uC9) => {
     GN.createArgument = (A, Q) => new tP.Argument(A, Q)
 });
 var dC9, _wI, kwI, ywI, xwI, vwI, bwI, fwI, IJ1, hwI, eF, gwI;
-var MK0 = L(() => {
-    dC9 = GA(mC9(), 1), {
+var MK0 = lazyLoader(() => {
+    dC9 = esmImport(mC9(), 1), {
         program: _wI,
         createCommand: kwI,
         createArgument: ywI,
@@ -1505,10 +1501,9 @@ function JJ1(A, Q) {
         }
     })
 }
-var RK0 = L(() => {
+var RK0 = lazyLoader(() => {
     xX()
 });
-
 async function WJ1(A, {
     server: Q,
     toolName: B

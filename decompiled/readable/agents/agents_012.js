@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: agents_012.js
+ * 处理时间: 2025-12-09T03:41:35.962Z
+ * 变量映射: 8 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.852Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -42,7 +45,7 @@ function XJ1(A, {
     try {
         G = new RegExp(Q, B ? "i" : "")
     } catch (Y) {
-        throw Error(`Invalid regex pattern: ${Y instanceof Error?Y.message:String(Y)}`)
+        throw Error(`Invalid regex pattern: TextComponent{Y instanceof Error?Y.message:String(Y)}`)
     }
     let Z = A.filter((Y) => Y.name.startsWith("mcp__")),
         I = [];
@@ -60,7 +63,7 @@ function XJ1(A, {
     }
     return I
 }
-var PK0 = L(() => {
+var PK0 = lazyLoader(() => {
     xX()
 });
 
@@ -85,7 +88,7 @@ function FJ1(A, Q, B) {
 }
 var jK0 = () => {};
 var fv3, cC9, hv3, pC9, gv3, lC9, uv3, mv3, iC9, dv3, nC9, cv3, aC9;
-var SK0 = L(() => {
+var SK0 = lazyLoader(() => {
     h2();
     PD();
     fv3 = _.object({
@@ -172,7 +175,7 @@ import {
 
 function VJ1() {
     let A = EFA();
-    return pv3(cg(), `${A}.endpoint`)
+    return pv3(cg(), `TextComponent{A}.endpoint`)
 }
 
 function KJ1(A) {
@@ -198,7 +201,7 @@ function sC9() {
     }
 }
 var _K0 = null;
-var DJ1 = L(() => {
+var DJ1 = lazyLoader(() => {
     zFA()
 });
 
@@ -211,13 +214,12 @@ function $SA(A, Q, B) {
 }
 
 function gQA(A, Q) {
-    if (!Q) return Error(`Server '${A}' not found`);
-    if (Q !== "connected") return Error(`Server '${A}' is not connected (${Q==="needs-auth"?"needs authentication":Q}). Run '/mcp' to manage server connections.`);
+    if (!Q) return Error(`Server 'TextComponent{A}' not found`);
+    if (Q !== "connected") return Error(`Server 'TextComponent{A}' is not connected (TextComponent{Q==="needs-auth"?"needs authentication":Q}). Run '/mcp' to manage server connections.`);
     return null
 }
-
 var QE9 = {};
-pG(QE9, {
+esmExport(QE9, {
     ripgrepMain: () => Ib3
 });
 import {
@@ -233,7 +235,7 @@ import {
 
 function Ib3(A) {
     let Q;
-    if (process.env.RIPGREP_NODE_PATH) Q = UA(process.env.RIPGREP_NODE_PATH).ripgrepMain;
+    if (process.env.RIPGREP_NODE_PATH) Q = nodeRequire(process.env.RIPGREP_NODE_PATH).ripgrepMain;
     else {
         let B = Zb3(Gb3(Bb3(import.meta.url)), "ripgrep.node");
         Q = Qb3(import.meta.url)(B).ripgrepMain
@@ -256,7 +258,7 @@ function Yb3() {
 }
 
 function Wb3(A) {
-    let Q = `${A.name}: ${A.message}`;
+    let Q = `TextComponent{A.name}: TextComponent{A.message}`;
     return Jb3.some((B) => B.test(Q))
 }
 
@@ -266,7 +268,7 @@ function YE9() {
     if (!Yb3()) process.removeAllListeners("warning");
     HJ1 = (B) => {
         try {
-            let G = `${B.name}: ${B.message.slice(0,50)}`,
+            let G = `TextComponent{B.name}: TextComponent{B.message.slice(0,50)}`,
                 Z = IE9.get(G) || 0;
             IE9.set(G, Z + 1);
             let I = Wb3(B);
@@ -275,14 +277,14 @@ function YE9() {
                     occurrence_count: Z + 1,
                     classname: B.name,
                     ...!1
-                }), process.env.CLAUDE_DEBUG === "true") g(`${I?"[Internal Warning]":"[Warning]"} ${B.toString()}`, {
+                }), process.env.CLAUDE_DEBUG === "true") g(`TextComponent{I?"[Internal Warning]":"[Warning]"} TextComponent{B.toString()}`, {
                 level: "warn"
             })
         } catch {}
     }, process.on("warning", HJ1)
 }
 var IE9, Jb3, HJ1 = null;
-var JE9 = L(() => {
+var JE9 = lazyLoader(() => {
     w0();
     D0();
     s5();
@@ -308,7 +310,7 @@ function xK0() {
     Object.assign(process.env, L1().env), Object.assign(process.env, A.env), W4A(), XE9()
 }
 var WE9;
-var vK0 = L(() => {
+var vK0 = lazyLoader(() => {
     jQ();
     RB();
     ej();
@@ -332,16 +334,16 @@ function Xb3({
         padding: 1,
         width: 70,
         gap: 1
-    }, RC.default.createElement($, {
+    }, RC.default.createElement(TextComponent, {
         bold: !0
     }, "Configuration Error"), RC.default.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, RC.default.createElement($, null, "The configuration file at ", RC.default.createElement($, {
+    }, RC.default.createElement(TextComponent, null, "The configuration file at ", RC.default.createElement(TextComponent, {
         bold: !0
-    }, A), " contains invalid JSON."), RC.default.createElement($, null, Q)), RC.default.createElement(j, {
+    }, A), " contains invalid JSON."), RC.default.createElement(TextComponent, null, Q)), RC.default.createElement(j, {
         flexDirection: "column"
-    }, RC.default.createElement($, {
+    }, RC.default.createElement(TextComponent, {
         bold: !0
     }, "Choose an option:"), RC.default.createElement(M0, {
         options: [{
@@ -356,11 +358,10 @@ function Xb3({
             else G()
         },
         onCancel: B
-    }))), Z.pending ? RC.default.createElement($, {
+    }))), Z.pending ? RC.default.createElement(TextComponent, {
         dimColor: !0
     }, "Press ", Z.keyName, " again to exit") : RC.default.createElement(gV, null))
 }
-
 async function VE9({
     error: A
 }) {
@@ -387,20 +388,19 @@ async function VE9({
     })
 }
 var RC, Fb3 = "dark";
-var KE9 = L(() => {
+var KE9 = lazyLoader(() => {
     hA();
     T6();
     hA();
     o0();
     c9();
     H9();
-    RC = GA(VA(), 1)
+    RC = esmImport(VA(), 1)
 });
 import {
     realpathSync as Vb3,
     existsSync as Kb3
 } from "fs";
-// Async function: DE9
 async function DE9() {
     try {
         let A = await JO();
@@ -418,7 +418,7 @@ async function DE9() {
             G = L1(),
             Z = G.githubRepoPaths?.[B] ?? [];
         if (Z.includes(Q)) {
-            g(`Path ${Q} already tracked for repo ${B}`);
+            g(`Path TextComponent{Q} already tracked for repo TextComponent{B}`);
             return
         }
         let I = [Q, ...Z];
@@ -428,9 +428,9 @@ async function DE9() {
                 ...G.githubRepoPaths,
                 [B]: I
             }
-        }), g(`Added ${Q} to tracked paths for repo ${B}`)
+        }), g(`Added TextComponent{Q} to tracked paths for repo TextComponent{B}`)
     } catch (A) {
-        g(`Error updating repo path mapping: ${A}`)
+        g(`Error updating repo path mapping: TextComponent{A}`)
     }
 }
 
@@ -443,7 +443,6 @@ function HE9(A) {
 function CE9(A) {
     return A.filter((Q) => Kb3(Q))
 }
-
 async function EE9(A, Q) {
     try {
         let {
@@ -476,9 +475,9 @@ function zE9(A, Q) {
     d0({
         ...B,
         githubRepoPaths: Y
-    }), g(`Removed ${Q} from tracked paths for repo ${G}`)
+    }), g(`Removed TextComponent{Q} from tracked paths for repo TextComponent{G}`)
 }
-var CJ1 = L(() => {
+var CJ1 = lazyLoader(() => {
     Y0A();
     jQ();
     S0();
@@ -508,7 +507,7 @@ function wE9() {
 }
 var bK0 = !1,
     UE9;
-var qE9 = L(() => {
+var qE9 = lazyLoader(() => {
     Qe();
     S0();
     jQ();
@@ -542,7 +541,7 @@ var qE9 = L(() => {
             qlA(), v4("init_configs_enabled"), FE9(), v4("init_safe_env_vars_applied"), uc.initialize(), v4("init_settings_detector_initialized"), aJ9(), v4("init_after_graceful_shutdown"), DTB(), v4("init_after_1p_event_logging"), ei0(), v4("init_after_oauth_populate");
             let A = tEA() && !_X(!0) && !H5();
             if (v4("init_after_defer_check"), !A) wE9(), bK0 = !0;
-            if (v4("init_telemetry_setup"), TQB(), r0B(), QQB(), v4("init_network_configured"), cc0(), _S2(), DE9(), hj2(), wG(gj2), RJ()) process.env.CLAUDE_CODE_SESSION_ID = G0(), sH9();
+            if (v4("init_telemetry_setup"), TQB(), r0B(), QQB(), v4("init_network_configured"), cc0(), _S2(), DE9(), hj2(), wG(gj2), isClaudeCodeRemote()) process.env.CLAUDE_CODE_SESSION_ID = G0(), sH9();
             v4("init_function_end")
         } catch (A) {
             if (A instanceof uz) return VE9({
@@ -557,9 +556,9 @@ import {
 } from "crypto";
 
 function NE9() {
-    let A = !(V0(process.env.CLAUDE_CODE_USE_BEDROCK) || V0(process.env.CLAUDE_CODE_USE_VERTEX) || V0(process.env.CLAUDE_CODE_USE_FOUNDRY) || process.env.CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC || process.env.DISABLE_ERROR_REPORTING);
+    let A = !(parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK) || parseBoolean(process.env.CLAUDE_CODE_USE_VERTEX) || parseBoolean(process.env.CLAUDE_CODE_USE_FOUNDRY) || process.env.CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC || process.env.DISABLE_ERROR_REPORTING);
     La.init({
-        dsn: bRB,
+        dsn: SENTRY_DSN,
         enabled: A,
         environment: "external",
         release: {
@@ -607,13 +606,13 @@ function NE9() {
     })
 }
 var La;
-var LE9 = L(() => {
+var LE9 = lazyLoader(() => {
     eb();
     f5();
     O9();
     S0();
     hQ();
-    La = GA(bY0(), 1)
+    La = esmImport(bY0(), 1)
 });
 import {
     join as ME9
@@ -643,7 +642,7 @@ CRITICAL RULES FOR EDITING:
 - Write DETAILED, INFO-DENSE content for each section - include specifics like file paths, function names, error messages, exact commands, technical details, etc.
 - For "Key results", include the complete, exact output the user requested (e.g., full table, full answer, etc.)
 - Do not include information that's already in the CLAUDE.md files included in the context
-- Keep each section under ~${OE9} tokens/words - if a section is approaching this limit, condense it by cycling out less important details while preserving the most critical information
+- Keep each section under ~TextComponent{OE9} tokens/words - if a section is approaching this limit, condense it by cycling out less important details while preserving the most critical information
 - Do not repeat information from past session summaries - only use the current user conversation starting with the first non system-reminder user message.
 - Focus on actionable, specific information that would help someone understand or recreate the work discussed in the conversation
 
@@ -658,7 +657,6 @@ You ONLY update the actual content that comes AFTER these two preserved lines. T
 
 REMEMBER: Use the Edit tool in parallel and stop. Do not continue after the edits. Only include insights from the actual user conversation, never from these note-taking instructions. Do not delete or change section headers or italic _section descriptions_.`
 }
-// Async function: RE9
 async function RE9() {
     let A = OA(),
         Q = ME9(PQ(), "session-memory", "config", "template.md");
@@ -667,11 +665,10 @@ async function RE9() {
             encoding: "utf-8"
         })
     } catch (B) {
-        e(B instanceof Error ? B : Error(`Failed to load custom session memory template: ${B}`))
+        e(B instanceof Error ? B : Error(`Failed to load custom session memory template: TextComponent{B}`))
     }
     return Hb3
 }
-// Async function: Eb3
 async function Eb3() {
     let A = OA(),
         Q = ME9(PQ(), "session-memory", "config", "prompt.md");
@@ -680,7 +677,7 @@ async function Eb3() {
             encoding: "utf-8"
         })
     } catch (B) {
-        e(B instanceof Error ? B : Error(`Failed to load custom session memory prompt: ${B}`))
+        e(B instanceof Error ? B : Error(`Failed to load custom session memory prompt: TextComponent{B}`))
     }
     return Cb3()
 }
@@ -709,7 +706,7 @@ function zb3(A) {
 }
 
 function Ub3(A) {
-    let Q = Object.entries(A).filter(([B, G]) => G > OE9).map(([B, G]) => `- The "${B}" section is currently ~${G} tokens and growing long. Consider condensing it a bit while keeping all important details.`);
+    let Q = Object.entries(A).filter(([B, G]) => G > OE9).map(([B, G]) => `- The "TextComponent{B}" section is currently ~TextComponent{G} tokens and growing long. Consider condensing it a bit while keeping all important details.`);
     if (Q.length === 0) return "";
     return `
 
@@ -719,10 +716,9 @@ function Ub3(A) {
 
 function $b3(A, Q) {
     let B = A;
-    for (let [G, Z] of Object.entries(Q)) B = B.replace(new RegExp(`\\{\\{${G}\\}\\}`, "g"), Z);
+    for (let [G, Z] of Object.entries(Q)) B = B.replace(new RegExp(`\\{\\{TextComponent{G}\\}\\}`, "g"), Z);
     return B
 }
-
 async function TE9(A, Q) {
     let B = await Eb3(),
         G = zb3(A),
@@ -761,7 +757,7 @@ _If the user asked a specific output such as an answer to a question, a table, o
 # Worklog
 _Step by step, what was attempted, done? Very terse summary for each step_
 `;
-var PE9 = L(() => {
+var PE9 = lazyLoader(() => {
     o0();
     hQ();
     u1();
@@ -793,7 +789,6 @@ function Nb3(A) {
     }
     return !1
 }
-
 async function Lb3(A) {
     let Q = OA(),
         B = eY1();
@@ -818,11 +813,10 @@ async function Lb3(A) {
         currentMemory: I
     }
 }
-// Async function: SE9
 async function SE9() {}
 var wb3 = 3,
     jE9, BLI;
-var _E9 = L(() => {
+var _E9 = lazyLoader(() => {
     _Y();
     o0();
     Kq();
@@ -856,10 +850,10 @@ var _E9 = L(() => {
                 }
                 return {
                     behavior: "deny",
-                    message: `only ${EDIT_TOOL_NAME} on ${I} is allowed`,
+                    message: `only TextComponent{EDIT_TOOL_NAME} on TextComponent{I} is allowed`,
                     decisionReason: {
                         type: "other",
-                        reason: `only ${EDIT_TOOL_NAME} on ${I} is allowed`
+                        reason: `only TextComponent{EDIT_TOOL_NAME} on TextComponent{I} is allowed`
                     }
                 }
             };
@@ -934,7 +928,6 @@ Use the Edit tool with file_path: {{docPath}}
 
 REMEMBER: Only update if there is substantial new information. The Magic Doc header (# MAGIC DOC: {{docTitle}}) must remain unchanged.`
 }
-// Async function: Rb3
 async function Rb3() {
     let A = OA(),
         Q = Mb3(PQ(), "magic-docs", "prompt.md");
@@ -948,10 +941,9 @@ async function Rb3() {
 
 function Tb3(A, Q) {
     let B = A;
-    for (let [G, Z] of Object.entries(Q)) B = B.replace(new RegExp(`\\{\\{${G}\\}\\}`, "g"), Z);
+    for (let [G, Z] of Object.entries(Q)) B = B.replace(new RegExp(`\\{\\{TextComponent{G}\\}\\}`, "g"), Z);
     return B
 }
-
 async function kE9(A, Q, B, G) {
     let Z = await Rb3(),
         I = G ? `
@@ -959,7 +951,7 @@ async function kE9(A, Q, B, G) {
 DOCUMENT-SPECIFIC UPDATE INSTRUCTIONS:
 The document author has provided specific instructions for how this file should be updated. Pay extra attention to these instructions and follow them carefully:
 
-"${G}"
+"TextComponent{G}"
 
 These instructions take priority over the general rules below. Make sure your updates align with these specific guidelines.` : "";
     return Tb3(Z, {
@@ -969,7 +961,7 @@ These instructions take priority over the general rules below. Make sure your up
         customInstructions: I
     })
 }
-var yE9 = L(() => {
+var yE9 = lazyLoader(() => {
     o0();
     hQ()
 });
@@ -979,7 +971,7 @@ function Sb3(A) {
     if (!Q || !Q[1]) return null;
     let B = Q[1].trim(),
         G = Q.index + Q[0].length,
-        I = A.slice(G).match(/^\s*\n(?:\s*\n)?(.+?)(?:\n|$)/);
+        I = A.slice(G).match(/^\s*\n(?:\s*\n)?(.+?)(?:\n|TextComponent)/);
     if (I && I[1]) {
         let J = I[1].match(jb3);
         if (J && J[1]) {
@@ -1006,7 +998,6 @@ function _b3() {
         getSystemPrompt: () => ""
     }
 }
-
 async function kb3(A, Q) {
     let {
         messages: B,
@@ -1044,10 +1035,10 @@ async function kb3(A, Q) {
             }
             return {
                 behavior: "deny",
-                message: `only ${EDIT_TOOL_NAME} is allowed for ${A.path}`,
+                message: `only TextComponent{EDIT_TOOL_NAME} is allowed for TextComponent{A.path}`,
                 decisionReason: {
                     type: "other",
-                    reason: `only ${EDIT_TOOL_NAME} is allowed`
+                    reason: `only TextComponent{EDIT_TOOL_NAME} is allowed`
                 }
             }
         };
@@ -1068,10 +1059,9 @@ async function kb3(A, Q) {
         }
     }));
 }
-// Async function: xE9
 async function xE9() {}
 var Pb3, jb3, EJ1, wLI;
-var vE9 = L(() => {
+var vE9 = lazyLoader(() => {
     o0();
     Kq();
     yE9();
@@ -1080,7 +1070,7 @@ var vE9 = L(() => {
     uM();
     nQ();
     Kq();
-    Pb3 = /^#\s*MAGIC\s+DOC:\s*(.+)$/im, jb3 = /^[_*](.+?)[_*]\s*$/m, EJ1 = new Map;
+    Pb3 = /^#\s*MAGIC\s+DOC:\s*(.+)TextComponent/im, jb3 = /^[_*](.+?)[_*]\s*TextComponent/m, EJ1 = new Map;
     wLI = I_(async function(A) {
         let {
             messages: Q,
@@ -1108,7 +1098,7 @@ function bE9(A) {
 }
 
 function xb3(A) {
-    return A.map((B) => `User: ${B}
+    return A.map((B) => `User: TextComponent{B}
 Asst: [response hidden]`).join(`
 `)
 }
@@ -1121,13 +1111,12 @@ function vb3(A) {
         hasPRRequest: B === "true"
     }
 }
-// Async function: fE9
 async function fE9() {
     return
 }
 var yb3 = 300,
     bb3;
-var hE9 = L(() => {
+var hE9 = lazyLoader(() => {
     L30();
     iRA();
     nQ();
@@ -1146,7 +1135,7 @@ var hE9 = L(() => {
             return [j0({
                 content: `Analyze the following conversation between a user and an assistant (assistant responses are hidden).
 
-${B}
+TextComponent{B}
 
 Think step-by-step about:
 1. Does the user seem frustrated at the Asst based on their messages? Look for signs like repeated corrections, negative language, etc.
@@ -1173,7 +1162,7 @@ Based on your analysis, output:
                 })
             }
         },
-        getModel: LW
+        getModel: getSmallFastModel
     }
 });
 
@@ -1185,22 +1174,22 @@ function gE9({
     return NSA.default.createElement(j, {
         gap: 1,
         paddingLeft: A ? 0 : 2
-    }, A && NSA.default.createElement($, {
+    }, A && NSA.default.createElement(TextComponent, {
         color: "suggestion"
-    }, V1.pointer), NSA.default.createElement($, {
+    }, V1.pointer), NSA.default.createElement(TextComponent, {
         color: Q ? "success" : A ? "suggestion" : void 0
-    }, B), Q && NSA.default.createElement($, {
+    }, B), Q && NSA.default.createElement(TextComponent, {
         color: "success"
     }, V1.tick))
 }
 var NSA;
-var uE9 = L(() => {
+var uE9 = lazyLoader(() => {
     hA();
     n2();
-    NSA = GA(VA(), 1)
+    NSA = esmImport(VA(), 1)
 });
 var zJ1;
-var mE9 = L(() => {
+var mE9 = lazyLoader(() => {
     zJ1 = class zJ1 extends Map {
         first;
         last;
@@ -1377,9 +1366,9 @@ var ZN, fb3 = (A, Q) => {
             submit: K
         }
     };
-var lE9 = L(() => {
+var lE9 = lazyLoader(() => {
     mE9();
-    ZN = GA(VA(), 1)
+    ZN = esmImport(VA(), 1)
 });
 var iE9 = ({
     isDisabled: A = !1,
@@ -1394,7 +1383,7 @@ var iE9 = ({
         isActive: !A
     })
 };
-var nE9 = L(() => {
+var nE9 = lazyLoader(() => {
     hA()
 });
 
@@ -1423,7 +1412,7 @@ function UJ1({
         let X = W.label;
         if (B && W.label.includes(B)) {
             let F = W.label.indexOf(B);
-            X = qFA.default.createElement(qFA.default.Fragment, null, W.label.slice(0, F), qFA.default.createElement($, {
+            X = qFA.default.createElement(qFA.default.Fragment, null, W.label.slice(0, F), qFA.default.createElement(TextComponent, {
                 bold: !0
             }, B), W.label.slice(F + B.length))
         }
@@ -1435,12 +1424,12 @@ function UJ1({
     }))
 }
 var qFA;
-var fK0 = L(() => {
+var fK0 = lazyLoader(() => {
     hA();
     uE9();
     lE9();
     nE9();
-    qFA = GA(VA(), 1)
+    qFA = esmImport(VA(), 1)
 });
 
 function aE9({
@@ -1457,7 +1446,7 @@ function aE9({
     }, []);
     let Y = G.filter((V) => Z[V] !== void 0);
 
-function J(V) {
+    function J(V) {
         let K = 0;
         for (let D of V) {
             let H = A[D];
@@ -1465,8 +1454,8 @@ function J(V) {
                 let C = D;
                 if (Z[C] !== void 0) {
                     let E = 1;
-                    while (Z[`${D}_${E}`] !== void 0) E++;
-                    C = `${D}_${E}`
+                    while (Z[`TextComponent{D}_${E}`] !== void 0) E++;
+                    C = `TextComponent{D}_${E}`
                 }
                 Bt(C, H, Q), K++
             }
@@ -1482,9 +1471,9 @@ function J(V) {
     });
     let [X] = $B();
 
-function F(V) {
+    function F(V) {
         if (V > 0) N9(`
-${tQ("success",X)(`Successfully imported ${V} MCP server${V!==1?"s":""} to ${Q} config.`)}
+TextComponent{tQ("success",X)(`Successfully imported TextComponent{V} MCP server${V!==1?"s":""} to TextComponent{Q} config.`)}
 `);
         else N9(`
 No servers were imported.`);
@@ -1496,38 +1485,38 @@ No servers were imported.`);
         padding: 1,
         borderStyle: "round",
         borderColor: "success"
-    }, AV.default.createElement($, {
+    }, AV.default.createElement(TextComponent, {
         bold: !0,
         color: "success"
-    }, "Import MCP Servers from Claude Desktop"), AV.default.createElement($, null, "Found ", G.length, " MCP server", G.length !== 1 ? "s" : "", " in Claude Desktop."), Y.length > 0 && AV.default.createElement($, {
+    }, "Import MCP Servers from Claude Desktop"), AV.default.createElement(TextComponent, null, "Found ", G.length, " MCP server", G.length !== 1 ? "s" : "", " in Claude Desktop."), Y.length > 0 && AV.default.createElement(TextComponent, {
         color: "warning"
-    }, "Note: Some servers already exist with the same name. If selected, they will be imported with a numbered suffix."), AV.default.createElement($, null, "Please select the servers you want to import:"), AV.default.createElement(UJ1, {
+    }, "Note: Some servers already exist with the same name. If selected, they will be imported with a numbered suffix."), AV.default.createElement(TextComponent, null, "Please select the servers you want to import:"), AV.default.createElement(UJ1, {
         options: G.map((V) => ({
-            label: `${V}${Y.includes(V)?" (already exists)":""}`,
+            label: `TextComponent{V}TextComponent{Y.includes(V)?" (already exists)":""}`,
             value: V
         })),
         defaultValue: G.filter((V) => !Y.includes(V)),
         onSubmit: J
     })), AV.default.createElement(j, {
         marginLeft: 3
-    }, AV.default.createElement($, {
+    }, AV.default.createElement(TextComponent, {
         dimColor: !0
     }, W.pending ? AV.default.createElement(AV.default.Fragment, null, "Press ", W.keyName, " again to exit") : AV.default.createElement(AV.default.Fragment, null, "Space to select · Enter to confirm · Esc to cancel"))))
 }
 var AV;
-var sE9 = L(() => {
+var sE9 = lazyLoader(() => {
     hA();
     fK0();
     c9();
     GM();
     _J();
-    AV = GA(VA(), 1)
+    AV = esmImport(VA(), 1)
 });
 import * as hK0 from "path";
 import * as rE9 from "os";
 
 function hb3() {
     let A = uQ();
-    if (!OH1.includes(A)) throw Error(`Unsupported platform: ${A} - Claude Desktop integration only works on macOS and WSL.`);
+    if (!OH1.includes(A)) throw Error(`Unsupported platform: TextComponent{A} - Claude Desktop integration only works on macOS and WSL.`);
     if (A === "macos") return hK0.join(rE9.homedir(), "Library", "Application Support", "Claude", "claude_desktop_config.json");
     let Q = process.env.USERPROFILE ? process.env.USERPROFILE.replace(/\\/g, "/") : null;

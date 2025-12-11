@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: commands_001.js
+ * 处理时间: 2025-12-09T03:41:37.069Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.943Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -30,8 +33,7 @@
             fragment: A.hash
         })
     }
-
-async function XO4(A, Q) {
+    async function XO4(A, Q) {
         let G = await (0, JO4.sdkStreamMixin)(A.body).transformToString();
         if (A.statusCode === 200) {
             let Z = JSON.parse(G);
@@ -50,19 +52,19 @@ async function XO4(A, Q) {
             try {
                 Z = JSON.parse(G)
             } catch (I) {}
-            throw Object.assign(new cU1.CredentialsProviderError(`Server responded with status: ${A.statusCode}`, {
+            throw Object.assign(new cU1.CredentialsProviderError(`Server responded with status: TextComponent{A.statusCode}`, {
                 logger: Q
             }), {
                 Code: Z.Code,
                 Message: Z.Message
             })
         }
-        throw new cU1.CredentialsProviderError(`Server responded with status: ${A.statusCode}`, {
+        throw new cU1.CredentialsProviderError(`Server responded with status: TextComponent{A.statusCode}`, {
             logger: Q
         })
     }
 });
-var I9Q = U((G9Q) => {
+var I9Q = moduleWrapper((G9Q) => {
     Object.defineProperty(G9Q, "__esModule", {
         value: !0
     });
@@ -79,7 +81,7 @@ var I9Q = U((G9Q) => {
     };
     G9Q.retryWrapper = KO4
 });
-var F9Q = U((W9Q) => {
+var F9Q = moduleWrapper((W9Q) => {
     Object.defineProperty(W9Q, "__esModule", {
         value: !0
     });
@@ -88,7 +90,7 @@ var F9Q = U((W9Q) => {
         HO4 = lN(),
         CO4 = oG(),
         Y9Q = P2(),
-        EO4 = DO4.__importDefault(UA("fs/promises")),
+        EO4 = DO4.__importDefault(nodeRequire("fs/promises")),
         zO4 = A9Q(),
         J9Q = B9Q(),
         UO4 = I9Q(),
@@ -107,7 +109,7 @@ var F9Q = U((W9Q) => {
             if (B && G) Y("@aws-sdk/credential-provider-http: you have set both awsContainerCredentialsRelativeUri and awsContainerCredentialsFullUri."), Y("awsContainerCredentialsFullUri will take precedence.");
             if (Z && I) Y("@aws-sdk/credential-provider-http: you have set both awsContainerAuthorizationToken and awsContainerAuthorizationTokenFile."), Y("awsContainerAuthorizationToken will take precedence.");
             if (G) Q = G;
-            else if (B) Q = `${wO4}${B}`;
+            else if (B) Q = `TextComponent{wO4}TextComponent{B}`;
             else throw new Y9Q.CredentialsProviderError(`No HTTP credential provider host provided.
 Set AWS_CONTAINER_CREDENTIALS_FULL_URI or AWS_CONTAINER_CREDENTIALS_RELATIVE_URI.`, {
                 logger: A.logger
@@ -134,7 +136,7 @@ Set AWS_CONTAINER_CREDENTIALS_FULL_URI or AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
         };
     W9Q.fromHttp = MO4
 });
-var lU1 = U((pU1) => {
+var lU1 = moduleWrapper((pU1) => {
     Object.defineProperty(pU1, "__esModule", {
         value: !0
     });
@@ -147,7 +149,7 @@ var lU1 = U((pU1) => {
         }
     })
 });
-var nU1 = U((V9Q) => {
+var nU1 = moduleWrapper((V9Q) => {
     Object.defineProperty(V9Q, "__esModule", {
         value: !0
     });
@@ -164,7 +166,7 @@ var nU1 = U((V9Q) => {
         };
     V9Q.defaultSSOHttpAuthSchemeParametersProvider = PO4;
 
-function jO4(A) {
+    function jO4(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {
@@ -180,7 +182,7 @@ function jO4(A) {
         }
     }
 
-function lfA(A) {
+    function lfA(A) {
         return {
             schemeId: "smithy.api#noAuth"
         }
@@ -218,7 +220,7 @@ function lfA(A) {
     };
     V9Q.resolveHttpAuthSchemeConfig = _O4
 });
-var D9Q = U((yX7, xO4) => {
+var D9Q = moduleWrapper((yX7, xO4) => {
     xO4.exports = {
         name: "@aws-sdk/client-sso",
         description: "AWS SDK for JavaScript Sso Client for Node.js, Browser and React Native",
@@ -314,7 +316,7 @@ var D9Q = U((yX7, xO4) => {
         }
     }
 });
-var qDA = U((xX7, w9Q) => {
+var qDA = moduleWrapper((xX7, w9Q) => {
     var {
         defineProperty: nfA,
         getOwnPropertyDescriptor: vO4,
@@ -348,8 +350,8 @@ var qDA = U((xX7, w9Q) => {
         defaultUserAgent: () => dO4
     });
     w9Q.exports = uO4(C9Q);
-    var H9Q = UA("os"),
-        aU1 = UA("process"),
+    var H9Q = nodeRequire("os"),
+        aU1 = nodeRequire("process"),
         E9Q = {
             isCrtAvailable: !1
         },
@@ -365,16 +367,16 @@ var qDA = U((xX7, w9Q) => {
                 let G = [
                         ["aws-sdk-js", Q],
                         ["ua", "2.1"],
-                        [`os/${(0,H9Q.platform)()}`, (0, H9Q.release)()],
+                        [`os/TextComponent{(0,H9Q.platform)()}`, (0, H9Q.release)()],
                         ["lang/js"],
-                        ["md/nodejs", `${aU1.versions.node}`]
+                        ["md/nodejs", `TextComponent{aU1.versions.node}`]
                     ],
                     Z = mO4();
                 if (Z) G.push(Z);
-                if (A) G.push([`api/${A}`, Q]);
-                if (aU1.env.AWS_EXECUTION_ENV) G.push([`exec-env/${aU1.env.AWS_EXECUTION_ENV}`]);
+                if (A) G.push([`api/TextComponent{A}`, Q]);
+                if (aU1.env.AWS_EXECUTION_ENV) G.push([`exec-env/TextComponent{aU1.env.AWS_EXECUTION_ENV}`]);
                 let I = await B?.userAgentAppId?.();
-                return I ? [...G, [`app/${I}`]] : [...G]
+                return I ? [...G, [`app/TextComponent{I}`]] : [...G]
             }
         }, "createDefaultUserAgentProvider"),
         dO4 = z9Q,
@@ -388,7 +390,7 @@ var qDA = U((xX7, w9Q) => {
             default: cO4.DEFAULT_UA_APP_ID
         }
 });
-var wX = U((vX7, M9Q) => {
+var wX = moduleWrapper((vX7, M9Q) => {
     var {
         defineProperty: afA,
         getOwnPropertyDescriptor: iO4,
@@ -419,8 +421,8 @@ var wX = U((vX7, M9Q) => {
     M9Q.exports = oO4(L9Q);
     var sU1 = kI(),
         tO4 = L2(),
-        eO4 = UA("buffer"),
-        q9Q = UA("crypto"),
+        eO4 = nodeRequire("buffer"),
+        q9Q = nodeRequire("crypto"),
         AR4 = class {
             static {
                 N9Q(this, "Hash")
@@ -439,7 +441,7 @@ var wX = U((vX7, M9Q) => {
             }
         };
 
-function rU1(A, Q) {
+    function rU1(A, Q) {
         if (eO4.Buffer.isBuffer(A)) return A;
         if (typeof A === "string") return (0, sU1.fromString)(A, Q);
         if (ArrayBuffer.isView(A)) return (0, sU1.fromArrayBuffer)(A.buffer, A.byteOffset, A.byteLength);
@@ -447,7 +449,7 @@ function rU1(A, Q) {
     }
     N9Q(rU1, "castSourceData")
 });
-var qX = U((fX7, T9Q) => {
+var qX = moduleWrapper((fX7, T9Q) => {
     var {
         defineProperty: sfA,
         getOwnPropertyDescriptor: QR4,
@@ -476,7 +478,7 @@ var qX = U((fX7, T9Q) => {
         calculateBodyLength: () => WR4
     });
     T9Q.exports = JR4(R9Q);
-    var O9Q = UA("fs"),
+    var O9Q = nodeRequire("fs"),
         WR4 = ZR4((A) => {
             if (!A) return 0;
             if (typeof A === "string") return Buffer.byteLength(A);
@@ -485,10 +487,10 @@ var qX = U((fX7, T9Q) => {
             else if (typeof A.start === "number" && typeof A.end === "number") return A.end + 1 - A.start;
             else if (typeof A.path === "string" || Buffer.isBuffer(A.path)) return (0, O9Q.lstatSync)(A.path).size;
             else if (typeof A.fd === "number") return (0, O9Q.fstatSync)(A.fd).size;
-            throw Error(`Body Length computation failed for ${A}`)
+            throw Error(`Body Length computation failed for TextComponent{A}`)
         }, "calculateBodyLength")
 });
-var p9Q = U((d9Q) => {
+var p9Q = moduleWrapper((d9Q) => {
     Object.defineProperty(d9Q, "__esModule", {
         value: !0
     });
@@ -684,7 +686,7 @@ var p9Q = U((d9Q) => {
         };
     d9Q.ruleSet = XR4
 });
-var n9Q = U((l9Q) => {
+var n9Q = moduleWrapper((l9Q) => {
     Object.defineProperty(l9Q, "__esModule", {
         value: !0
     });
@@ -705,7 +707,7 @@ var n9Q = U((l9Q) => {
     l9Q.defaultEndpointResolver = DR4;
     eU1.customEndpointFunctions.aws = FR4.awsEndpointFunctions
 });
-var t9Q = U((r9Q) => {
+var t9Q = moduleWrapper((r9Q) => {
     Object.defineProperty(r9Q, "__esModule", {
         value: !0
     });
@@ -745,7 +747,7 @@ var t9Q = U((r9Q) => {
         };
     r9Q.getRuntimeConfig = wR4
 });
-var NX = U((mX7, Z4Q) => {
+var NX = moduleWrapper((mX7, Z4Q) => {
     var {
         create: qR4,
         defineProperty: LDA,
@@ -816,7 +818,7 @@ var NX = U((mX7, Z4Q) => {
                 case void 0:
                     return Promise.resolve("legacy");
                 default:
-                    throw Error(`Invalid parameter for "defaultsMode", expect ${yR4.join(", ")}, got ${B}`)
+                    throw Error(`Invalid parameter for "defaultsMode", expect TextComponent{yR4.join(", ")}, got TextComponent{B}`)
             }
         }), "resolveDefaultsModeConfig"),
         gR4 = A$1(async (A) => {
@@ -843,7 +845,7 @@ var NX = U((mX7, Z4Q) => {
             } catch (A) {}
         }, "inferPhysicalRegion")
 });
-var V4Q = U((X4Q) => {
+var V4Q = moduleWrapper((X4Q) => {
     Object.defineProperty(X4Q, "__esModule", {
         value: !0
     });
@@ -903,7 +905,7 @@ var V4Q = U((X4Q) => {
         };
     X4Q.getRuntimeConfig = rR4
 });
-var MDA = U((cX7, z4Q) => {
+var MDA = moduleWrapper((cX7, z4Q) => {
     var {
         defineProperty: ofA,
         getOwnPropertyDescriptor: oR4,
@@ -987,7 +989,7 @@ var MDA = U((cX7, z4Q) => {
             })
         }, "resolveRegionConfig")
 });
-var l4Q = U((pX7, p4Q) => {
+var l4Q = moduleWrapper((pX7, p4Q) => {
     var {
         defineProperty: tfA,
         getOwnPropertyDescriptor: WT4,
@@ -1483,7 +1485,7 @@ var l4Q = U((pX7, p4Q) => {
     var gT4 = (0, Cv.createPaginator)(AhA, Q$1, "nextToken", "nextToken", "maxResults"),
         uT4 = (0, Cv.createPaginator)(AhA, B$1, "nextToken", "nextToken", "maxResults")
 });
-var Z$1 = U((i4Q) => {
+var Z$1 = moduleWrapper((i4Q) => {
     Object.defineProperty(i4Q, "__esModule", {
         value: !0
     });
@@ -1500,7 +1502,7 @@ var Z$1 = U((i4Q) => {
         };
     i4Q.defaultSSOOIDCHttpAuthSchemeParametersProvider = dT4;
 
-function cT4(A) {
+    function cT4(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {

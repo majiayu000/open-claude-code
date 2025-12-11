@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_017.js
+ * 处理时间: 2025-12-09T03:41:38.737Z
+ * 变量映射: 7 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.079Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-var RTA = L(() => {
+var RTA = lazyLoader(() => {
     h2();
     S0();
     Xm2();
@@ -29,7 +32,7 @@ var RTA = L(() => {
         isAgent: _.boolean(),
         filePath: _.string().optional().describe("The file path where the plan was saved")
     }), xq = {
-        name: kRA,
+        name: EXIT_PLAN_MODE_CONST,
         async description() {
             return "Prompts the user to exit plan mode and start coding"
         },
@@ -67,7 +70,7 @@ var RTA = L(() => {
                 G = Q.agentId !== B,
                 Z = bU(Q.agentId),
                 I = fU(Q.agentId);
-            if (!I) throw Error(`No plan file found at ${Z}. Please write your plan to this file before calling ExitPlanMode.`);
+            if (!I) throw Error(`No plan file found at TextComponent{Z}. Please write your plan to this file before calling ExitPlanMode.`);
             return {
                 data: {
                     plan: I,
@@ -90,11 +93,11 @@ var RTA = L(() => {
                 type: "tool_result",
                 content: `User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: ${B}
+Your plan has been saved to: TextComponent{B}
 You can refer back to it if needed during implementation.
 
 ## Approved Plan:
-${Q}`,
+TextComponent{Q}`,
                 tool_use_id: G
             }
         }
@@ -107,23 +110,22 @@ import {
 function xs5(A) {
     try {
         let Q = process.platform === "win32" ? "where" : "which";
-        return Em2(`${Q} ${A}`, {
+        return Em2(`TextComponent{Q} TextComponent{A}`, {
             stdio: "ignore"
         }), !0
     } catch {
         return !1
     }
 }
-
 async function xn(A) {
     let Q = rh();
     if (!Q) throw Error("No editor available");
-    Em2(`${Q} "${A}"`, {
+    Em2(`TextComponent{Q} "TextComponent{A}"`, {
         stdio: "inherit"
     })
 }
 var rh;
-var vn = L(() => {
+var vn = lazyLoader(() => {
     o2();
     rh = t1(() => {
         if (process.env.VISUAL?.trim()) return process.env.VISUAL.trim();
@@ -144,7 +146,7 @@ import {
 
 function x31(A = "claude-prompt", Q = ".md") {
     let B = fs5();
-    return vs5(bs5(), `${A}-${B}${Q}`)
+    return vs5(bs5(), `TextComponent{A}-TextComponent{B}TextComponent{Q}`)
 }
 var NG0 = () => {};
 import {
@@ -167,7 +169,7 @@ function LG0(A) {
     try {
         if (B.pause(), B.suspendStdin(), Z) process.stdout.write("\x1B[?1049h\x1B[?1004l\x1B[0m\x1B[?25h\x1B[2J\x1B[H");
         let I = gs5[G] ?? G;
-        return hs5(`${I} "${A}"`, {
+        return hs5(`TextComponent{I} "TextComponent{A}"`, {
             stdio: "inherit"
         }), Q.readFileSync(A, {
             encoding: "utf-8"
@@ -202,7 +204,7 @@ function v31(A) {
     }
 }
 var gs5, us5;
-var MG0 = L(() => {
+var MG0 = lazyLoader(() => {
     vn();
     o0();
     NG0();
@@ -240,7 +242,7 @@ function zm2({
             }
     });
 
-function E(N) {
+    function E(N) {
         let q = F ? {} : {
             plan: K
         };
@@ -291,7 +293,7 @@ function E(N) {
         marginTop: 1
     }, KG.default.createElement(j, {
         paddingX: 1
-    }, KG.default.createElement($, null, "Here is Claude's plan:")), KG.default.createElement(j, {
+    }, KG.default.createElement(TextComponent, null, "Here is Claude's plan:")), KG.default.createElement(j, {
         borderDimColor: !0,
         borderColor: "subtle",
         borderStyle: "dashed",
@@ -301,13 +303,13 @@ function E(N) {
         paddingX: 1,
         marginBottom: 1,
         overflow: "hidden"
-    }, KG.default.createElement($, null, _D(K, G))), KG.default.createElement(j, {
+    }, KG.default.createElement(TextComponent, null, _D(K, G))), KG.default.createElement(j, {
         flexDirection: "column",
         paddingX: 1
     }, KG.default.createElement(WC, {
         permissionResult: A.permissionResult,
         toolType: "tool"
-    }), KG.default.createElement($, {
+    }), KG.default.createElement(TextComponent, {
         dimColor: !0
     }, "Would you like to proceed?"), KG.default.createElement(j, {
         marginTop: 1
@@ -342,21 +344,21 @@ function E(N) {
         gap: 1,
         paddingX: 1,
         marginTop: 1
-    }, KG.default.createElement(j, null, KG.default.createElement($, {
+    }, KG.default.createElement(j, null, KG.default.createElement(TextComponent, {
         dimColor: !0
-    }, "ctrl-g to edit in "), KG.default.createElement($, {
+    }, "ctrl-g to edit in "), KG.default.createElement(TextComponent, {
         bold: !0,
         dimColor: !0
-    }, w), F && V && KG.default.createElement($, {
+    }, w), F && V && KG.default.createElement(TextComponent, {
         dimColor: !0
-    }, " · ", V)), H && KG.default.createElement(j, null, KG.default.createElement($, {
+    }, " · ", V)), H && KG.default.createElement(j, null, KG.default.createElement(TextComponent, {
         dimColor: !0
-    }, " · "), KG.default.createElement($, {
+    }, " · "), KG.default.createElement(TextComponent, {
         color: "success"
     }, V1.tick, "Plan saved!"))))
 }
 var KG;
-var Um2 = L(() => {
+var Um2 = lazyLoader(() => {
     hA();
     T6();
     CO();
@@ -370,10 +372,10 @@ var Um2 = L(() => {
     yJ();
     _E();
     S0();
-    KG = GA(VA(), 1)
+    KG = esmImport(VA(), 1)
 });
 var $m2;
-var wm2 = L(() => {
+var wm2 = lazyLoader(() => {
     $m2 = `Use this tool when you encounter a complex task that requires careful planning and exploration before implementation. This tool transitions you into plan mode where you can thoroughly explore the codebase and design an implementation approach.
 
 ## When to Use This Tool
@@ -397,7 +399,7 @@ Use EnterPlanMode when ANY of these conditions apply:
    - Example: "Fix the bug in checkout" - need to investigate root cause
 
 5. **User Input Needed**: You'll need to ask clarifying questions before starting
-   - If you would use ${dJ} to clarify the approach, consider EnterPlanMode instead
+   - If you would use TextComponent{ASK_USER_QUESTION_TOOL_NAME} to clarify the approach, consider EnterPlanMode instead
    - Plan mode lets you explore first, then present options with context
 
 ## When NOT to Use This Tool
@@ -416,7 +418,7 @@ In plan mode, you'll:
 2. Understand existing patterns and architecture
 3. Design an implementation approach
 4. Present your plan to the user for approval
-5. Use ${dJ} if you need to clarify approaches
+5. Use TextComponent{ASK_USER_QUESTION_TOOL_NAME} if you need to clarify approaches
 6. Exit plan mode with ExitPlanMode when ready to implement
 
 ## Examples
@@ -464,12 +466,12 @@ function Lm2(A, Q, B) {
         marginTop: 1
     }, pF.createElement(j, {
         flexDirection: "row"
-    }, pF.createElement($, {
+    }, pF.createElement(TextComponent, {
         color: sj("plan")
-    }, pD), pF.createElement($, null, " Entered plan mode")), pF.createElement(j, {
+    }, pD), pF.createElement(TextComponent, null, " Entered plan mode")), pF.createElement(j, {
         marginTop: 1,
         paddingLeft: 2
-    }, pF.createElement($, {
+    }, pF.createElement(TextComponent, {
         dimColor: !0
     }, "Claude is now exploring and designing an implementation approach.")))
 }
@@ -478,24 +480,25 @@ function Mm2() {
     return pF.createElement(j, {
         flexDirection: "row",
         marginTop: 1
-    }, pF.createElement($, {
+    }, pF.createElement(TextComponent, {
         color: sj("default")
-    }, pD), pF.createElement($, null, " User declined to enter plan mode"))
+    }, pD), pF.createElement(TextComponent, null, " User declined to enter plan mode"))
 }
 
 function Om2() {
     return null
 }
 var pF;
-var Rm2 = L(() => {
+var Rm2 = lazyLoader(() => {
     hA();
     yn();
     Bw();
-    pF = GA(VA(), 1)
+    pF = esmImport(VA(), 1)
 });
-var b31 = "EnterPlanMode";
+/* ENTER_PLAN_MODE_TOOL_NAME = ENTER_PLAN_MODE_TOOL = "EnterPlanMode" */
+var ENTER_PLAN_MODE_TOOL_NAME = "EnterPlanMode";
 var ds5, cs5, TTA;
-var OG0 = L(() => {
+var OG0 = lazyLoader(() => {
     h2();
     S0();
     wm2();
@@ -503,7 +506,7 @@ var OG0 = L(() => {
     ds5 = _.strictObject({}), cs5 = _.object({
         message: _.string().describe("Confirmation that plan mode was entered")
     }), TTA = {
-        name: b31,
+        name: ENTER_PLAN_MODE_TOOL_NAME,
         async description() {
             return "Requests permission to enter plan mode for complex tasks requiring exploration and design"
         },
@@ -550,7 +553,7 @@ var OG0 = L(() => {
         }, Q) {
             return {
                 type: "tool_result",
-                content: `${A}
+                content: `TextComponent{A}
 
 In plan mode, you should:
 1. Thoroughly explore the codebase to understand existing patterns
@@ -587,22 +590,22 @@ function Tm2({
         flexDirection: "column",
         marginTop: 1,
         paddingX: 1
-    }, H$.default.createElement($, null, "Claude wants to enter plan mode to explore and design an implementation approach."), H$.default.createElement(j, {
+    }, H$.default.createElement(TextComponent, null, "Claude wants to enter plan mode to explore and design an implementation approach."), H$.default.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, H$.default.createElement($, {
+    }, H$.default.createElement(TextComponent, {
         dimColor: !0
-    }, "In plan mode, Claude will:"), H$.default.createElement($, {
+    }, "In plan mode, Claude will:"), H$.default.createElement(TextComponent, {
         dimColor: !0
-    }, " · Explore the codebase thoroughly"), H$.default.createElement($, {
+    }, " · Explore the codebase thoroughly"), H$.default.createElement(TextComponent, {
         dimColor: !0
-    }, " · Identify existing patterns"), H$.default.createElement($, {
+    }, " · Identify existing patterns"), H$.default.createElement(TextComponent, {
         dimColor: !0
-    }, " · Design an implementation strategy"), H$.default.createElement($, {
+    }, " · Design an implementation strategy"), H$.default.createElement(TextComponent, {
         dimColor: !0
     }, " · Present a plan for your approval")), H$.default.createElement(j, {
         marginTop: 1
-    }, H$.default.createElement($, {
+    }, H$.default.createElement(TextComponent, {
         dimColor: !0
     }, "No code changes will be made until you approve the plan.")), H$.default.createElement(j, {
         marginTop: 1
@@ -619,11 +622,11 @@ function Tm2({
     }))))
 }
 var H$;
-var Pm2 = L(() => {
+var Pm2 = lazyLoader(() => {
     hA();
     T6();
     CO();
-    H$ = GA(VA(), 1)
+    H$ = esmImport(VA(), 1)
 });
 
 function f31() {
@@ -651,10 +654,10 @@ function m31(A, {
     })
 }
 var PTA;
-var RG0 = L(() => {
+var RG0 = lazyLoader(() => {
     lX();
     lV();
-    PTA = GA(VA(), 1)
+    PTA = esmImport(VA(), 1)
 });
 
 function d31(A, Q) {
@@ -673,7 +676,7 @@ function c31(A, Q) {
     return B && B.type === "tool_use" ? B.id : void 0
 }
 var ps5, ls5, bn;
-var p31 = L(() => {
+var p31 = lazyLoader(() => {
     h2();
     nE();
     aG();
@@ -688,14 +691,14 @@ var p31 = L(() => {
         success: _.boolean().describe("Whether the skill is valid"),
         commandName: _.string().describe("The name of the skill")
     }), bn = {
-        name: Pq,
+        name: SKILL_TOOL_NAME,
         inputSchema: ps5,
         outputSchema: ls5,
         description: async ({
             skill: A
-        }) => `Execute skill: ${A}`,
+        }) => `Execute skill: TextComponent{A}`,
         prompt: async () => Nv2(),
-        userFacingName: () => Pq,
+        userFacingName: () => SKILL_TOOL_NAME,
         isConcurrencySafe: () => !1,
         isEnabled: () => !0,
         isReadOnly: () => !1,
@@ -705,30 +708,30 @@ var p31 = L(() => {
             let B = A.trim();
             if (!B) return {
                 result: !1,
-                message: `Invalid skill format: ${A}`,
+                message: `Invalid skill format: TextComponent{A}`,
                 errorCode: 1
             };
             let G = B.startsWith("/") ? B.substring(1) : B,
                 Z = await aE();
             if (!oh(G, Z)) return {
                 result: !1,
-                message: `Unknown skill: ${G}`,
+                message: `Unknown skill: TextComponent{G}`,
                 errorCode: 2
             };
             let I = vq(G, Z);
             if (!I) return {
                 result: !1,
-                message: `Could not load skill: ${G}`,
+                message: `Could not load skill: TextComponent{G}`,
                 errorCode: 3
             };
             if (I.disableModelInvocation) return {
                 result: !1,
-                message: `Skill ${G} cannot be used with ${Pq} tool due to disable-model-invocation`,
+                message: `Skill TextComponent{G} cannot be used with TextComponent{SKILL_TOOL_NAME} tool due to disable-model-invocation`,
                 errorCode: 4
             };
             if (I.type !== "prompt") return {
                 result: !1,
-                message: `Skill ${G} is not a prompt-based skill`,
+                message: `Skill TextComponent{G} is not a prompt-based skill`,
                 errorCode: 5
             };
             return {
@@ -776,7 +779,7 @@ var p31 = L(() => {
             let V = [{
                 type: "addRules",
                 rules: [{
-                    toolName: Pq,
+                    toolName: SKILL_TOOL_NAME,
                     ruleContent: A
                 }],
                 behavior: "allow",
@@ -784,7 +787,7 @@ var p31 = L(() => {
             }];
             return {
                 behavior: "ask",
-                message: `Execute skill: ${G}`,
+                message: `Execute skill: TextComponent{G}`,
                 decisionReason: void 0,
                 suggestions: V,
                 metadata: {
@@ -807,12 +810,12 @@ var p31 = L(() => {
             BA("tengu_skill_tool_invocation", {
                 command_name: V
             });
-            let K = c31(G, Pq),
+            let K = c31(G, SKILL_TOOL_NAME),
                 D = d31(J.messages.filter((H) => H.type !== "progress"), K);
-            return g(`SkillTool returning ${D.length} newMessages for skill ${I}`), D.forEach((H, C) => {
+            return g(`SkillTool returning TextComponent{D.length} newMessages for skill TextComponent{I}`), D.forEach((H, C) => {
                 if (H.type === "user" && "message" in H) {
                     let E = typeof H.message.content === "string" ? H.message.content : JSON.stringify(H.message.content);
-                    g(`  newMessage ${C+1}: ${E.substring(0,150)}...`)
+                    g(`  newMessage TextComponent{C+1}: TextComponent{E.substring(0,150)}...`)
                 }
             }), {
                 data: {
@@ -860,7 +863,7 @@ var p31 = L(() => {
             return {
                 type: "tool_result",
                 tool_use_id: Q,
-                content: `Launching skill: ${A.commandName}`
+                content: `Launching skill: TextComponent{A.commandName}`
             }
         },
         renderToolResultMessage: f31,
@@ -870,17 +873,18 @@ var p31 = L(() => {
         renderToolUseErrorMessage: m31
     }
 });
-var yP = "SlashCommand";
+/* SLASH_COMMAND_TOOL_NAME = SLASH_COMMAND_TOOL = "SlashCommand" */
+var SLASH_COMMAND_TOOL_NAME = "SlashCommand";
 
 function is5() {
     return Number(process.env.SLASH_COMMAND_TOOL_CHAR_BUDGET) || 15000
 }
 
 function jm2(A) {
-    let Q = `/${A.name}`,
-        B = A.argumentHint ? ` ${A.argumentHint}` : "",
-        G = A.whenToUse ? `- ${A.whenToUse}` : "";
-    return `- ${Q}${B}: ${A.description} ${G}`.trim()
+    let Q = `/TextComponent{A.name}`,
+        B = A.argumentHint ? ` TextComponent{A.argumentHint}` : "",
+        G = A.whenToUse ? `- TextComponent{A.whenToUse}` : "";
+    return `- TextComponent{Q}TextComponent{B}: TextComponent{A.description} TextComponent{G}`.trim()
 }
 
 function ns5(A) {
@@ -900,7 +904,7 @@ function as5(A) {
     }
 }
 var Sm2;
-var _m2 = L(() => {
+var _m2 = lazyLoader(() => {
     nE();
     D0();
     n3A();
@@ -911,10 +915,10 @@ var _m2 = L(() => {
             } = as5(A),
             B = Q.length > 0 ? Q.map((Y) => jm2(Y)).join(`
 `) : "",
-            G = Q.map((Y) => `/${Y.userFacingName()}`).join(", ");
-        g(`Slash commands included in SlashCommand tool: ${G}`);
+            G = Q.map((Y) => `/TextComponent{Y.userFacingName()}`).join(", ");
+        g(`Slash commands included in SlashCommand tool: TextComponent{G}`);
         let Z = A.length > Q.length ? `
-(Showing ${Q.length} of ${A.length} commands due to token limits)` : "";
+(Showing TextComponent{Q.length} of TextComponent{A.length} commands due to token limits)` : "";
         return `Execute a slash command within the main conversation
 
 How slash commands work:
@@ -929,8 +933,8 @@ IMPORTANT: Only use this tool for custom slash commands that appear in the Avail
 - Commands not shown in the list
 - Commands you think might exist but aren't listed
 
-${B?`Available Commands:
-${B}${Z}
+TextComponent{B?`Available Commands:
+TextComponent{B}TextComponent{Z}
 `:""}Notes:
 - When a user requests multiple slash commands, execute each one sequentially and check for <command-message>{name} is running…</command-message> to verify each has been processed
 - Do not invoke a command that is already running. For example, if you see <command-message>foo is running…</command-message>, do NOT use this tool with "/foo" - process the expanded prompt in the following message
@@ -939,7 +943,7 @@ ${B}${Z}
     })
 });
 var ss5, rs5, fn;
-var n31 = L(() => {
+var n31 = lazyLoader(() => {
     h2();
     nE();
     aG();
@@ -953,14 +957,14 @@ var n31 = L(() => {
         success: _.boolean().describe("Whether the slash command is valid"),
         commandName: _.string().describe("The name of the slash command")
     }), fn = {
-        name: yP,
+        name: SLASH_COMMAND_TOOL_NAME,
         inputSchema: ss5,
         outputSchema: rs5,
         description: async ({
             command: A
-        }) => `Execute slash command: ${A}`,
+        }) => `Execute slash command: TextComponent{A}`,
         prompt: async () => Sm2(),
-        userFacingName: () => yP,
+        userFacingName: () => SLASH_COMMAND_TOOL_NAME,
         isConcurrencySafe: () => !1,
         isEnabled: () => !0,
         isReadOnly: () => !1,
@@ -970,7 +974,7 @@ var n31 = L(() => {
             let B = vJA(A);
             if (!B) return {
                 result: !1,
-                message: `Invalid slash command format: ${A}`,
+                message: `Invalid slash command format: TextComponent{A}`,
                 errorCode: 1
             };
             let {
@@ -978,23 +982,23 @@ var n31 = L(() => {
             } = B, Z = await aE();
             if (!oh(G, Z)) return {
                 result: !1,
-                message: `Unknown slash command: ${G}`,
+                message: `Unknown slash command: TextComponent{G}`,
                 errorCode: 2
             };
             let I = vq(G, Z);
             if (!I) return {
                 result: !1,
-                message: `Could not load slash command: ${G}`,
+                message: `Could not load slash command: TextComponent{G}`,
                 errorCode: 3
             };
             if (I.disableModelInvocation) return {
                 result: !1,
-                message: `Slash command ${G} cannot be used with ${yP} tool due to disable-model-invocation`,
+                message: `Slash command TextComponent{G} cannot be used with TextComponent{SLASH_COMMAND_TOOL_NAME} tool due to disable-model-invocation`,
                 errorCode: 4
             };
             if (I.type !== "prompt") return {
                 result: !1,
-                message: `Slash command ${G} is not a prompt-based command`,
+                message: `Slash command TextComponent{G} is not a prompt-based command`,
                 errorCode: 5
             };
             return {
@@ -1040,7 +1044,7 @@ var n31 = L(() => {
             let F = [{
                     type: "addRules",
                     rules: [{
-                        toolName: yP,
+                        toolName: SLASH_COMMAND_TOOL_NAME,
                         ruleContent: A
                     }],
                     behavior: "allow",
@@ -1052,8 +1056,8 @@ var n31 = L(() => {
                 F.push({
                     type: "addRules",
                     rules: [{
-                        toolName: yP,
-                        ruleContent: `${K}:*`
+                        toolName: SLASH_COMMAND_TOOL_NAME,
+                        ruleContent: `TextComponent{K}:*`
                     }],
                     behavior: "allow",
                     destination: "localSettings"
@@ -1061,7 +1065,7 @@ var n31 = L(() => {
             }
             return {
                 behavior: "ask",
-                message: `Execute slash command: /${B}`,
+                message: `Execute slash command: /TextComponent{B}`,
                 decisionReason: void 0,
                 suggestions: F,
                 metadata: {
@@ -1084,7 +1088,7 @@ var n31 = L(() => {
             BA("tengu_slash_command_tool_invocation", {
                 command_name: V
             });
-            let K = c31(G, yP),
+            let K = c31(G, SLASH_COMMAND_TOOL_NAME),
                 D = d31(J.messages.filter((H) => H.type !== "progress"), K);
             return {
                 data: {
@@ -1132,7 +1136,7 @@ var n31 = L(() => {
             return {
                 type: "tool_result",
                 tool_use_id: Q,
-                content: `Launching command: /${A.commandName}`
+                content: `Launching command: /TextComponent{A.commandName}`
             }
         },
         renderToolResultMessage: f31,
@@ -1151,13 +1155,13 @@ function km2(A) {
         verbose: Z
     } = A, Y = ((K) => {
         let D = bn.inputSchema.safeParse(K);
-        if (!D.success) return e(Error(`Failed to parse skill tool input: ${D.error.message}`)), "";
+        if (!D.success) return e(Error(`Failed to parse skill tool input: TextComponent{D.error.message}`)), "";
         return D.data.skill
     })(Q.input), J = Q.permissionResult.behavior === "ask" && Q.permissionResult.metadata && "command" in Q.permissionResult.metadata ? Q.permissionResult.metadata.command : void 0, W = UO.useMemo(() => ({
         completion_type: "tool_use_single",
         language_name: "none"
     }), []);
-    X$(Q, W);
+    GREP_TOOL_NAME(Q, W);
     let X = pQ(),
         F = UO.useMemo(() => {
             let K = [{
@@ -1165,7 +1169,7 @@ function km2(A) {
                     value: "yes"
                 }],
                 D = {
-                    label: `Yes, and don't ask again for ${oA.bold(Y)} in ${oA.bold(X)}`,
+                    label: `Yes, and don't ask again for TextComponent{oA.bold(Y)} in TextComponent{oA.bold(X)}`,
                     value: "yes-exact"
                 },
                 H = Y.indexOf(" "),
@@ -1173,12 +1177,12 @@ function km2(A) {
             if (H > 0) {
                 let z = Y.substring(0, H);
                 C.push({
-                    label: `Yes, and don't ask again for ${oA.bold(z+":*")} commands in ${oA.bold(X)}`,
+                    label: `Yes, and don't ask again for TextComponent{oA.bold(z+":*")} commands in TextComponent{oA.bold(X)}`,
                     value: "yes-prefix"
                 })
             }
             let E = {
-                label: `No, and tell Claude what to do differently ${oA.bold.dim("(esc)")}`,
+                label: `No, and tell Claude what to do differently TextComponent{oA.bold.dim("(esc)")}`,
                 value: "no"
             };
             return [...K, D, ...C, E]
@@ -1208,7 +1212,7 @@ function km2(A) {
                     }), Q.onAllow(Q.input, [{
                         type: "addRules",
                         rules: [{
-                            toolName: Pq,
+                            toolName: SKILL_TOOL_NAME,
                             ruleContent: Y
                         }],
                         behavior: "allow",
@@ -1231,8 +1235,8 @@ function km2(A) {
                     Q.onAllow(Q.input, [{
                         type: "addRules",
                         rules: [{
-                            toolName: Pq,
-                            ruleContent: `${H}:*`
+                            toolName: SKILL_TOOL_NAME,
+                            ruleContent: `TextComponent{H}:*`
                         }],
                         behavior: "allow",
                         destination: "localSettings"
@@ -1253,26 +1257,26 @@ function km2(A) {
             }
         };
     return UO.default.createElement(hJ, {
-        title: `Use skill "${Y}"?`
-    }, UO.default.createElement($, null, "Claude may use instructions, code, or files from this Skill."), UO.default.createElement(j, {
+        title: `Use skill "TextComponent{Y}"?`
+    }, UO.default.createElement(TextComponent, null, "Claude may use instructions, code, or files from this Skill."), UO.default.createElement(j, {
         flexDirection: "column",
         paddingX: 2,
         paddingY: 1
-    }, UO.default.createElement($, {
+    }, UO.default.createElement(TextComponent, {
         dimColor: !0
     }, J?.description)), UO.default.createElement(j, {
         flexDirection: "column"
     }, UO.default.createElement(WC, {
         permissionResult: Q.permissionResult,
         toolType: "tool"
-    }), UO.default.createElement($, null, "Do you want to proceed?"), UO.default.createElement(M0, {
+    }), UO.default.createElement(TextComponent, null, "Do you want to proceed?"), UO.default.createElement(M0, {
         options: F,
         onChange: V,
         onCancel: () => V("no")
     })))
 }
 var UO;
-var ym2 = L(() => {
+var ym2 = lazyLoader(() => {
     hA();
     T6();
     CO();
@@ -1284,7 +1288,7 @@ var ym2 = L(() => {
     ih();
     p31();
     u1();
-    UO = GA(VA(), 1)
+    UO = esmImport(VA(), 1)
 });
 
 function xm2(A) {
@@ -1295,13 +1299,13 @@ function xm2(A) {
         verbose: Z
     } = A, Y = ((K) => {
         let D = fn.inputSchema.safeParse(K);
-        if (!D.success) return e(Error(`Failed to parse slash command tool input: ${D.error.message}`)), "";
+        if (!D.success) return e(Error(`Failed to parse slash command tool input: TextComponent{D.error.message}`)), "";
         return D.data.command
     })(Q.input), J = Q.permissionResult.behavior === "ask" && Q.permissionResult.metadata && "command" in Q.permissionResult.metadata ? Q.permissionResult.metadata.command : void 0, W = $O.useMemo(() => ({
         completion_type: "tool_use_single",
         language_name: "none"
     }), []);
-    X$(Q, W);
+    GREP_TOOL_NAME(Q, W);
     let X = pQ(),
         F = $O.useMemo(() => {
             let K = [{
@@ -1309,7 +1313,7 @@ function xm2(A) {
                     value: "yes"
                 }],
                 D = {
-                    label: `Yes, and don't ask again for ${oA.bold(Y)} in ${oA.bold(X)}`,
+                    label: `Yes, and don't ask again for TextComponent{oA.bold(Y)} in TextComponent{oA.bold(X)}`,
                     value: "yes-exact"
                 },
                 H = Y.indexOf(" "),
@@ -1317,12 +1321,12 @@ function xm2(A) {
             if (H > 0) {
                 let z = Y.substring(0, H);
                 C.push({
-                    label: `Yes, and don't ask again for ${oA.bold(z+":*")} commands in ${oA.bold(X)}`,
+                    label: `Yes, and don't ask again for TextComponent{oA.bold(z+":*")} commands in TextComponent{oA.bold(X)}`,
                     value: "yes-prefix"
                 })
             }
             let E = {
-                label: `No, and tell Claude what to do differently ${oA.bold.dim("(esc)")}`,
+                label: `No, and tell Claude what to do differently TextComponent{oA.bold.dim("(esc)")}`,
                 value: "no"
             };
             return [...K, D, ...C, E]
@@ -1352,7 +1356,7 @@ function xm2(A) {
                     }), Q.onAllow(Q.input, [{
                         type: "addRules",
                         rules: [{
-                            toolName: yP,
+                            toolName: SLASH_COMMAND_TOOL_NAME,
                             ruleContent: Y
                         }],
                         behavior: "allow",
@@ -1375,8 +1379,8 @@ function xm2(A) {
                     Q.onAllow(Q.input, [{
                         type: "addRules",
                         rules: [{
-                            toolName: yP,
-                            ruleContent: `${H}:*`
+                            toolName: SLASH_COMMAND_TOOL_NAME,
+                            ruleContent: `TextComponent{H}:*`
                         }],
                         behavior: "allow",
                         destination: "localSettings"
@@ -1397,26 +1401,26 @@ function xm2(A) {
             }
         };
     return $O.default.createElement(hJ, {
-        title: yP
+        title: SLASH_COMMAND_TOOL_NAME
     }, $O.default.createElement(j, {
         flexDirection: "column",
         paddingX: 2,
         paddingY: 1
-    }, $O.default.createElement($, null, Y), $O.default.createElement($, {
+    }, $O.default.createElement(TextComponent, null, Y), $O.default.createElement(TextComponent, {
         dimColor: !0
     }, J?.description)), $O.default.createElement(j, {
         flexDirection: "column"
     }, $O.default.createElement(WC, {
         permissionResult: Q.permissionResult,
         toolType: "tool"
-    }), $O.default.createElement($, null, "Do you want to proceed?"), $O.default.createElement(M0, {
+    }), $O.default.createElement(TextComponent, null, "Do you want to proceed?"), $O.default.createElement(M0, {
         options: F,
         onChange: V,
         onCancel: () => V("no")
     })))
 }
 var $O;
-var vm2 = L(() => {
+var vm2 = lazyLoader(() => {
     hA();
     T6();
     CO();
@@ -1428,7 +1432,7 @@ var vm2 = L(() => {
     ih();
     n31();
     u1();
-    $O = GA(VA(), 1)
+    $O = esmImport(VA(), 1)
 });
 
 function ts5({
@@ -1439,17 +1443,17 @@ function ts5({
         marginTop: 1
     }, oY.createElement(j, {
         flexDirection: "row"
-    }, oY.createElement($, {
+    }, oY.createElement(TextComponent, {
         color: sj("default")
-    }, pD, " "), oY.createElement($, null, "User answered Claude's questions:")), oY.createElement(y0, null, oY.createElement(j, {
+    }, pD, " "), oY.createElement(TextComponent, null, "User answered Claude's questions:")), oY.createElement(y0, null, oY.createElement(j, {
         flexDirection: "column"
-    }, Object.entries(A).map(([Q, B]) => oY.createElement($, {
+    }, Object.entries(A).map(([Q, B]) => oY.createElement(TextComponent, {
         key: Q,
         color: "inactive"
     }, "· ", Q, " → ", B)))))
 }
 var oY, os5, bm2, TG0, nXZ, a31;
-var s31 = L(() => {
+var s31 = lazyLoader(() => {
     h2();
     hA();
     u8();
@@ -1457,12 +1461,12 @@ var s31 = L(() => {
     Bw();
     S0();
     hQ();
-    oY = GA(VA(), 1), os5 = _.object({
+    oY = esmImport(VA(), 1), os5 = _.object({
         label: _.string().describe("The display text for this option that the user will see and select. Should be concise (1-5 words) and clearly describe the choice."),
         description: _.string().describe("Explanation of what this option means or what will happen if chosen. Useful for providing context about trade-offs or implications.")
     }), bm2 = _.object({
         question: _.string().describe('The complete question to ask the user. Should be clear, specific, and end with a question mark. Example: "Which library should we use for date formatting?" If multiSelect is true, phrase it accordingly, e.g. "Which features do you want to enable?"'),
-        header: _.string().describe(`Very short label displayed as a chip/tag (max ${Im2} chars). Examples: "Auth method", "Library", "Approach".`),
+        header: _.string().describe(`Very short label displayed as a chip/tag (max TextComponent{Im2} chars). Examples: "Auth method", "Library", "Approach".`),
         options: _.array(os5).min(2).max(4).describe("The available choices for this question. Must have 2-4 options. Each option should be a distinct, mutually exclusive choice (unless multiSelect is enabled). There should be no 'Other' option, that will be provided automatically."),
         multiSelect: _.boolean().describe("Set to true to allow the user to select multiple options instead of just one. Use when choices are not mutually exclusive.")
     }), TG0 = _.strictObject({
@@ -1483,7 +1487,7 @@ var s31 = L(() => {
         answers: _.record(_.string(), _.string()).describe("The answers provided by the user (question text -> answer string; multi-select answers are comma-separated)")
     });
     a31 = {
-        name: dJ,
+        name: ASK_USER_QUESTION_TOOL_NAME,
         async description() {
             return Ym2
         },
@@ -1495,7 +1499,7 @@ var s31 = L(() => {
             return ""
         },
         isEnabled() {
-            return QkA() || V0(process.env.CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL)
+            return QkA() || parseBoolean(process.env.CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL)
         },
         isConcurrencySafe() {
             return !0

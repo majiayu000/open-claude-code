@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_023.js
+ * 处理时间: 2025-12-09T03:41:37.991Z
+ * 变量映射: 6 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.021Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,15 +20,15 @@
  * Original file: cli.js
  */
 
-    mQ = GA(VA(), 1), _O = GA(VA(), 1)
+    mQ = esmImport(VA(), 1), _O = esmImport(VA(), 1)
 });
-var VW9 = L(() => {
+var VW9 = lazyLoader(() => {
     S0();
     u1();
     hB()
 });
 var KW9, GY1;
-var DW9 = L(() => {
+var DW9 = lazyLoader(() => {
     hA();
     QY();
     u1();
@@ -45,12 +48,12 @@ var DW9 = L(() => {
     $n();
     jq();
     D0();
-    KW9 = GA(VA(), 1), GY1 = GA(VA(), 1)
+    KW9 = esmImport(VA(), 1), GY1 = esmImport(VA(), 1)
 });
 var zS3;
-var HW9 = L(() => {
+var HW9 = lazyLoader(() => {
     DW9();
-    zS3 = GA(VA(), 1)
+    zS3 = esmImport(VA(), 1)
 });
 
 function US3(A, Q, B, G = "") {
@@ -62,17 +65,17 @@ function US3(A, Q, B, G = "") {
     })
 }
 var IF0, $S3, CW9;
-var EW9 = L(() => {
+var EW9 = lazyLoader(() => {
     ZF0();
     hQ();
-    IF0 = GA(VA(), 1);
+    IF0 = esmImport(VA(), 1);
     $S3 = {
         aliases: ["bug"],
         type: "local-jsx",
         name: "feedback",
         description: "Submit feedback about Claude Code",
         argumentHint: "[report]",
-        isEnabled: () => !(V0(process.env.CLAUDE_CODE_USE_BEDROCK) || V0(process.env.CLAUDE_CODE_USE_VERTEX) || V0(process.env.CLAUDE_CODE_USE_FOUNDRY) || process.env.DISABLE_FEEDBACK_COMMAND || process.env.DISABLE_BUG_COMMAND || process.env.CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC),
+        isEnabled: () => !(parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK) || parseBoolean(process.env.CLAUDE_CODE_USE_VERTEX) || parseBoolean(process.env.CLAUDE_CODE_USE_FOUNDRY) || process.env.DISABLE_FEEDBACK_COMMAND || process.env.DISABLE_BUG_COMMAND || process.env.CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC),
         isHidden: !1,
         async call(A, {
             abortController: Q,
@@ -86,7 +89,6 @@ var EW9 = L(() => {
         }
     }, CW9 = $S3
 });
-
 async function wS3({
     setMessages: A,
     readFileState: Q,
@@ -115,7 +117,7 @@ async function wS3({
     if (Z.length > 0) A(() => Z)
 }
 var qS3, zW9;
-var UW9 = L(() => {
+var UW9 = lazyLoader(() => {
     $y();
     uE();
     Bh();
@@ -145,7 +147,7 @@ var UW9 = L(() => {
     }, zW9 = qS3
 });
 var NS3, $W9;
-var wW9 = L(() => {
+var wW9 = lazyLoader(() => {
     $y();
     uE();
     TMA();
@@ -159,7 +161,7 @@ var wW9 = L(() => {
         type: "local",
         name: "compact",
         description: "Clear conversation history but keep a summary in context. Optional: /compact [instructions for summarization]",
-        isEnabled: () => !V0(process.env.DISABLE_COMPACT),
+        isEnabled: () => !parseBoolean(process.env.DISABLE_COMPACT),
         isHidden: !1,
         supportsNonInteractive: !0,
         argumentHint: "<optional custom summarization instructions>",
@@ -199,7 +201,7 @@ var wW9 = L(() => {
             } catch (I) {
                 if (B.signal.aborted) throw Error("Compaction canceled.");
                 else if (I instanceof Error && I.message === OMA) throw Error(OMA);
-                else throw e(I instanceof Error ? I : Error(String(I))), Error(`Error during compaction: ${I}`)
+                else throw e(I instanceof Error ? I : Error(String(I))), Error(`Error during compaction: TextComponent{I}`)
             }
         },
         userFacingName() {
@@ -230,47 +232,47 @@ function qW9({
         columnGap: 1,
         flexWrap: "wrap"
     }, Z.map((Y, J) => {
-        let W = Q5(Y.path),
+        let W = formatFilePath(Y.path),
             X = Y.isNested ? "nested" : M00(Y.type),
             F = J < Z.length - 1 ? "," : "";
         return lW.createElement(j, {
             key: J,
             flexDirection: "row",
             flexShrink: 0
-        }, lW.createElement($, null, X, " "), lW.createElement($, {
+        }, lW.createElement(TextComponent, null, X, " "), lW.createElement(TextComponent, {
             dimColor: !0
-        }, "(", W, ")"), lW.createElement($, null, F))
+        }, "(", W, ")"), lW.createElement(TextComponent, null, F))
     }));
     let I = new Map;
     return lW.createElement(j, {
         flexDirection: "column"
     }, Z.map((Y, J) => {
-        let W = Q5(Y.path),
-            X = Y.isNested ? "nested: " : `${M00(Y.type)}: `,
+        let W = formatFilePath(Y.path),
+            X = Y.isNested ? "nested: " : `TextComponent{M00(Y.type)}: `,
             F = Y.parent ? (I.get(Y.parent) ?? 0) + 1 : 0;
-        if (I.set(Y.path, F), F === 0) return lW.createElement($, {
+        if (I.set(Y.path, F), F === 0) return lW.createElement(TextComponent, {
             key: J
-        }, lW.createElement($, {
+        }, lW.createElement(TextComponent, {
             dimColor: !0
-        }, " L "), `${X}${W}`);
+        }, " lazyLoader "), `TextComponent{X}TextComponent{W}`);
         else {
             let V = "  ".repeat(F - 1);
-            return lW.createElement($, {
+            return lW.createElement(TextComponent, {
                 key: J
-            }, " ".repeat(X.length + 2), V, lW.createElement($, {
+            }, " ".repeat(X.length + 2), V, lW.createElement(TextComponent, {
                 dimColor: !0
-            }, " L "), W)
+            }, " lazyLoader "), W)
         }
     }))
 }
 var lW;
-var NW9 = L(() => {
+var NW9 = lazyLoader(() => {
     hA();
     uE();
     M9();
     O00();
     uM();
-    lW = GA(VA(), 1)
+    lW = esmImport(VA(), 1)
 });
 
 function LW9() {
@@ -284,42 +286,42 @@ function MW9(A, Q = null, B) {
         if (Q.error)
             if (pM(Q.ideType)) return [{
                 label: "IDE",
-                value: sP.createElement($, null, tQ("error", B)(V1.cross), " Error installing", " ", Z, " plugin: ", Q.error, `
+                value: sP.createElement(TextComponent, null, tQ("error", B)(V1.cross), " Error installing", " ", Z, " plugin: ", Q.error, `
 `, "Please restart your IDE or try installing from https://docs.claude.com/s/claude-code-jetbrains")
             }];
             else return [{
                 label: "IDE",
-                value: sP.createElement($, null, tQ("error", B)(V1.cross), " Error installing", " ", Z, " extension: ", Q.error, `
+                value: sP.createElement(TextComponent, null, tQ("error", B)(V1.cross), " Error installing", " ", Z, " extension: ", Q.error, `
 `, "Please restart your IDE and try again.")
             }];
         if (Q.installed)
             if (G && G.type === "connected")
                 if (Q.installedVersion !== G.serverInfo?.version) return [{
                     label: "IDE",
-                    value: `Connected to ${Z} extension version ${Q.installedVersion} (server version: ${G.serverInfo?.version})`
+                    value: `Connected to TextComponent{Z} extension version TextComponent{Q.installedVersion} (server version: TextComponent{G.serverInfo?.version})`
                 }];
                 else return [{
                     label: "IDE",
-                    value: `Connected to ${Z} extension version ${Q.installedVersion}`
+                    value: `Connected to TextComponent{Z} extension version TextComponent{Q.installedVersion}`
                 }];
         else if (pM(Q.ideType)) return [{
             label: "IDE",
-            value: sP.createElement($, null, "Installed ", Z, " plugin but connection is not established.", `
+            value: sP.createElement(TextComponent, null, "Installed ", Z, " plugin but connection is not established.", `
 `, "Please restart your IDE or try installing from https://docs.claude.com/s/claude-code-jetbrains")
         }];
         else return [{
             label: "IDE",
-            value: `Installed ${Z} extension`
+            value: `Installed TextComponent{Z} extension`
         }]
     } else if (G) {
         let Z = hA0(G) ?? "IDE";
         if (G.type === "connected") return [{
             label: "IDE",
-            value: `Connected to ${Z} extension`
+            value: `Connected to TextComponent{Z} extension`
         }];
         else return [{
             label: "IDE",
-            value: `${tQ("error",B)(V1.cross)} Not connected to ${Z}`
+            value: `TextComponent{tQ("error",B)(V1.cross)} Not connected to TextComponent{Z}`
         }]
     }
     return []
@@ -340,7 +342,7 @@ function OW9(A = [], Q) {
             else if (G.type === "failed") I = tQ("error", Q)(V1.cross);
             else I = tQ("error", Q)(V1.cross);
             let Y = Z < B.length - 1 ? "," : "";
-            return sP.createElement($, {
+            return sP.createElement(TextComponent, {
                 key: Z
             }, G.name, " ", I, Y)
         }))
@@ -352,9 +354,9 @@ function RW9() {
         Q = H1A(),
         B = [];
     if (A.forEach((G) => {
-            let Z = Q5(G.path);
-            B.push(`Large ${Z} will impact performance (${QZ(G.content.length)} chars > ${QZ(zh)})`)
-        }), Q && Q.content.length > IYA) B.push(`CLAUDE.md entries marked as IMPORTANT exceed ${QZ(IYA)} characters (${QZ(Q.content.length)} chars)`);
+            let Z = formatFilePath(G.path);
+            B.push(`Large TextComponent{Z} will impact performance (TextComponent{QZ(G.content.length)} chars > TextComponent{QZ(zh)})`)
+        }), Q && Q.content.length > IYA) B.push(`CLAUDE.md entries marked as IMPORTANT exceed TextComponent{QZ(IYA)} characters (TextComponent{QZ(Q.content.length)} chars)`);
     return B
 }
 
@@ -377,11 +379,9 @@ function TW9() {
         })
     }]
 }
-// Async function: PW9
 async function PW9() {
     return (await yy()).map((Q) => Q.message)
 }
-// Async function: jW9
 async function jW9() {
     let A = await OIA(),
         Q = [],
@@ -390,9 +390,9 @@ async function jW9() {
         } = Wa();
     if (B.length > 0) {
         let Z = Array.from(new Set(B.map((I) => I.file))).join(", ");
-        Q.push(`Found invalid settings files: ${Z}. They will be ignored.`)
+        Q.push(`Found invalid settings files: TextComponent{Z}. They will be ignored.`)
     }
-    if (A.multipleInstallations.length > 1) Q.push(`Multiple installations detected (${A.multipleInstallations.length} found)`);
+    if (A.multipleInstallations.length > 1) Q.push(`Multiple installations detected (TextComponent{A.multipleInstallations.length} found)`);
     if (A.warnings.forEach((G) => {
             Q.push(G.issue)
         }), A.hasUpdatePermissions === !1) Q.push("No write permissions for auto-updates (requires sudo)");
@@ -404,7 +404,7 @@ async function jW9() {
             development: "development",
             unknown: "unknown"
         } [A.installationType];
-        if (Z && Z !== A.configInstallMethod) Q.push(`Installation config mismatch: running ${A.installationType} but config says ${A.configInstallMethod}`)
+        if (Z && Z !== A.configInstallMethod) Q.push(`Installation config mismatch: running TextComponent{A.installationType} but config says TextComponent{A.configInstallMethod}`)
     }
     return Q
 }
@@ -415,7 +415,7 @@ function SW9() {
     let Q = [];
     if (A.subscription) Q.push({
         label: "Login method",
-        value: `${A.subscription} Account`
+        value: `TextComponent{A.subscription} Account`
     });
     if (A.tokenSource) Q.push({
         label: "Auth token",
@@ -437,7 +437,7 @@ function SW9() {
 }
 
 function _W9() {
-    let A = J6(),
+    let A = getProvider(),
         Q = [];
     if (A !== "firstParty") {
         let Z = {
@@ -465,7 +465,7 @@ function _W9() {
         if (Q.push({
                 label: "AWS region",
                 value: OBA()
-            }), V0(process.env.CLAUDE_CODE_SKIP_BEDROCK_AUTH)) Q.push({
+            }), parseBoolean(process.env.CLAUDE_CODE_SKIP_BEDROCK_AUTH)) Q.push({
             value: "AWS auth skipped"
         })
     } else if (A === "vertex") {
@@ -482,7 +482,7 @@ function _W9() {
         if (Q.push({
                 label: "Default region",
                 value: XR()
-            }), V0(process.env.CLAUDE_CODE_SKIP_VERTEX_AUTH)) Q.push({
+            }), parseBoolean(process.env.CLAUDE_CODE_SKIP_VERTEX_AUTH)) Q.push({
             value: "GCP auth skipped"
         })
     } else if (A === "foundry") {
@@ -496,7 +496,7 @@ function _W9() {
             label: "Microsoft Foundry resource",
             value: I
         });
-        if (V0(process.env.CLAUDE_CODE_SKIP_FOUNDRY_AUTH)) Q.push({
+        if (parseBoolean(process.env.CLAUDE_CODE_SKIP_FOUNDRY_AUTH)) Q.push({
             value: "Microsoft Foundry auth skipped"
         })
     }
@@ -527,13 +527,13 @@ function kW9(A) {
     let Q = UM(A);
     if (A === null && AB()) {
         let B = YrA();
-        if (bw()) Q = `${oA.bold("Default")} ${B}`;
-        else Q = `${oA.bold("Sonnet")} ${B}`
+        if (bw()) Q = `TextComponent{oA.bold("Default")} TextComponent{B}`;
+        else Q = `TextComponent{oA.bold("Sonnet")} TextComponent{B}`
     }
     return Q
 }
 var sP;
-var yW9 = L(() => {
+var yW9 = lazyLoader(() => {
     hA();
     xP();
     hB();
@@ -552,7 +552,7 @@ var yW9 = L(() => {
     n2();
     hB();
     UF();
-    sP = GA(VA(), 1)
+    sP = esmImport(VA(), 1)
 });
 
 function LS3() {
@@ -590,7 +590,6 @@ function MS3({
         })
     }, ...LW9(), ...TW9()]
 }
-// Async function: OS3
 async function OS3() {
     return [...await x0A() ? await PW9() : [], ...await jW9(), ...RW9()]
 }
@@ -603,11 +602,11 @@ function RS3({
         columnGap: 1,
         flexShrink: 99
     }, A.map((Q, B) => {
-        return k6.createElement($, {
+        return k6.createElement(TextComponent, {
             key: B
         }, Q, B < A.length - 1 ? "," : "")
     }));
-    if (typeof A === "string") return k6.createElement($, null, A);
+    if (typeof A === "string") return k6.createElement(TextComponent, null, A);
     return A
 }
 
@@ -616,8 +615,7 @@ function xW9({
 }) {
     let [Q] = _Q(), [B, G] = k6.useState([]), [Z, I] = k6.useState([]), Y = A.options.ideInstallationStatus, [J] = $B();
     return k6.useEffect(() => {
-        // Async function: W
-async function W() {
+        async function W() {
             let X = [LS3(), MS3({
                     appState: Q,
                     theme: J,
@@ -644,31 +642,31 @@ async function W() {
         flexDirection: "row",
         gap: 1,
         flexShrink: 0
-    }, F !== void 0 && k6.createElement($, {
+    }, F !== void 0 && k6.createElement(TextComponent, {
         bold: !0
     }, F, ":"), k6.createElement(RS3, {
         value: V
     }))))), Z.length > 0 && k6.createElement(j, {
         flexDirection: "column",
         paddingBottom: 1
-    }, k6.createElement($, {
+    }, k6.createElement(TextComponent, {
         bold: !0
     }, "System Diagnostics"), Z.map((W, X) => k6.createElement(j, {
         key: X,
         flexDirection: "row",
         gap: 1,
         paddingX: 1
-    }, k6.createElement($, {
+    }, k6.createElement(TextComponent, {
         color: "error"
-    }, V1.warning), typeof W === "string" ? k6.createElement($, {
+    }, V1.warning), typeof W === "string" ? k6.createElement(TextComponent, {
         wrap: "wrap"
-    }, W) : W)))), k6.createElement($, {
+    }, W) : W)))), k6.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "Esc to exit"))
 }
 var k6;
-var vW9 = L(() => {
+var vW9 = lazyLoader(() => {
     hA();
     n2();
     H9();
@@ -677,7 +675,7 @@ var vW9 = L(() => {
     xP();
     yW9();
     R2();
-    k6 = GA(VA(), 1)
+    k6 = esmImport(VA(), 1)
 });
 
 function ZY1({
@@ -698,14 +696,14 @@ function ZY1({
         flexDirection: "column",
         gap: 1,
         marginX: 1
-    }, Q ? f4.createElement($, null, "Let's get started.") : f4.createElement($, {
+    }, Q ? f4.createElement(TextComponent, null, "Let's get started.") : f4.createElement(TextComponent, {
         bold: !0,
         color: "permission"
     }, "Theme"), f4.createElement(j, {
         flexDirection: "column"
-    }, f4.createElement($, {
+    }, f4.createElement(TextComponent, {
         bold: !0
-    }, "Choose the text style that looks best with your terminal"), B && !G && f4.createElement($, {
+    }, "Choose the text style that looks best with your terminal"), B && !G && f4.createElement(TextComponent, {
         dimColor: !0
     }, B)), f4.createElement(M0, {
         options: [{
@@ -770,24 +768,24 @@ function ZY1({
     }, G && B && f4.createElement(j, {
         marginLeft: 3,
         marginTop: 1
-    }, f4.createElement($, {
+    }, f4.createElement(TextComponent, {
         dimColor: !0
     }, B)), !Z && f4.createElement(j, {
         marginLeft: 3
-    }, f4.createElement($, {
+    }, f4.createElement(TextComponent, {
         dimColor: !0
     }, X.pending ? f4.createElement(f4.Fragment, null, "Press ", X.keyName, " again to exit") : f4.createElement(f4.Fragment, null, "Esc to cancel")))));
     return V
 }
 var f4;
-var YF0 = L(() => {
+var YF0 = lazyLoader(() => {
     hA();
     T6();
     Zn();
     c9();
     _J();
     hA();
-    f4 = GA(VA(), 1)
+    f4 = esmImport(VA(), 1)
 });
 
 function YY1({
@@ -819,15 +817,15 @@ function YY1({
     }, X4.createElement(j, {
         marginBottom: 1,
         flexDirection: "column"
-    }, X4.createElement($, {
+    }, X4.createElement(TextComponent, {
         color: "remember",
         bold: !0
-    }, "Select model"), X4.createElement($, {
+    }, "Select model"), X4.createElement(TextComponent, {
         dimColor: !0
     }, "Switch between Claude models. Applies to this session and future Claude Code sessions. For other/previous model names, specify with --model.")), Q && X4.createElement(j, {
         marginBottom: 1,
         flexDirection: "column"
-    }, X4.createElement($, {
+    }, X4.createElement(TextComponent, {
         dimColor: !0
     }, "Currently using ", UM(Q), " for this session (set by plan mode). Selecting a model will undo this.")), X4.createElement(j, {
         flexDirection: "column",
@@ -847,33 +845,33 @@ function YY1({
         visibleOptionCount: D
     })), H > 0 && X4.createElement(j, {
         paddingLeft: 3
-    }, X4.createElement($, {
+    }, X4.createElement(TextComponent, {
         dimColor: !0
     }, "and ", H, " more…"))), F && X4.createElement(j, {
         marginBottom: 1,
         flexDirection: "column"
-    }, V ? X4.createElement($, {
+    }, V ? X4.createElement(TextComponent, {
         dimColor: !0
-    }, "You now have access to Opus 4.5 by paying with your extra usage") : X4.createElement($, {
+    }, "You now have access to Opus 4.5 by paying with your extra usage") : X4.createElement(TextComponent, {
         dimColor: !0
-    }, "Want Opus 4.5? Run ", X4.createElement($, {
+    }, "Want Opus 4.5? Run ", X4.createElement(TextComponent, {
         color: "remember"
-    }, "/upgrade"), " to get the Max plan or ", X4.createElement($, {
+    }, "/upgrade"), " to get the Max plan or ", X4.createElement(TextComponent, {
         color: "remember"
-    }, "/extra-usage"), " ", "to pay per use"))), G && X4.createElement($, {
+    }, "/extra-usage"), " ", "to pay per use"))), G && X4.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, W.pending ? X4.createElement(X4.Fragment, null, "Press ", W.keyName, " again to exit") : X4.createElement(X4.Fragment, null, "Enter to confirm · Esc to exit"))))
 }
 var X4, IY1, JF0 = "__NO_PREFERENCE__";
-var WF0 = L(() => {
+var WF0 = lazyLoader(() => {
     hA();
     s2();
     T6();
     c9();
     hB();
     eV();
-    X4 = GA(VA(), 1), IY1 = GA(VA(), 1)
+    X4 = esmImport(VA(), 1), IY1 = esmImport(VA(), 1)
 });
 
 function JY1({
@@ -884,7 +882,7 @@ function JY1({
         BA("tengu_claude_md_includes_dialog_shown", {})
     }, []);
 
-function B(Z) {
+    function B(Z) {
         let I = M5();
         if (Z === "no") BA("tengu_claude_md_external_includes_dialog_declined", {}), aI({
             ...I,
@@ -915,13 +913,13 @@ function B(Z) {
         borderRight: !1,
         borderBottom: !1,
         borderColor: "warning"
-    }, LC.default.createElement($, {
+    }, LC.default.createElement(TextComponent, {
         bold: !0,
         color: "warning"
-    }, "Allow external CLAUDE.md file imports?"), LC.default.createElement($, null, "This project's CLAUDE.md imports files outside the current working directory. Never allow this for third-party repositories."), LC.default.createElement($, {
+    }, "Allow external CLAUDE.md file imports?"), LC.default.createElement(TextComponent, null, "This project's CLAUDE.md imports files outside the current working directory. Never allow this for third-party repositories."), LC.default.createElement(TextComponent, {
         dimColor: !0
     }, "Important: Only use Claude Code with files you trust. Accessing untrusted files may pose security risks", " ", LC.default.createElement(a4, {
-        url: "https://code.claude.com/docs/en/security"
+        url: "https://code.claude.com/docs/AGENT_OUTPUT_TOOL_NAME/security"
     }), " "), LC.default.createElement(M0, {
         options: [{
             label: "Yes, allow external imports",
@@ -934,20 +932,20 @@ function B(Z) {
         onCancel: () => B("no")
     })), Q && LC.default.createElement(j, {
         marginLeft: 1
-    }, LC.default.createElement($, {
+    }, LC.default.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, G.pending ? LC.default.createElement(LC.default.Fragment, null, "Press ", G.keyName, " again to exit") : LC.default.createElement(LC.default.Fragment, null, "Enter to confirm · Esc to disable external includes"))))
 }
 var LC;
-var XF0 = L(() => {
+var XF0 = lazyLoader(() => {
     hA();
     T6();
     jQ();
     w0();
     c9();
     hA();
-    LC = GA(VA(), 1)
+    LC = esmImport(VA(), 1)
 });
 
 function bW9(A) {
@@ -977,22 +975,22 @@ function WY1({
     let W = SQA.useCallback((X) => {
         Q(X)
     }, [Q]);
-    return eq.createElement(kD, {
+    return WEB_FETCH_TOOL_NAME.createElement(kD, {
         title: "Preferred output style",
         onCancel: B,
         borderDimColor: !0,
         hideInputGuide: !G,
         hideBorder: !G
-    }, eq.createElement(j, {
+    }, WEB_FETCH_TOOL_NAME.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, eq.createElement(j, {
+    }, WEB_FETCH_TOOL_NAME.createElement(j, {
         marginTop: 1
-    }, eq.createElement($, {
+    }, WEB_FETCH_TOOL_NAME.createElement(TextComponent, {
         dimColor: !0
-    }, "This changes how Claude Code communicates with you")), Y ? eq.createElement($, {
+    }, "This changes how Claude Code communicates with you")), Y ? WEB_FETCH_TOOL_NAME.createElement(TextComponent, {
         dimColor: !0
-    }, "Loading output styles…") : eq.createElement(M0, {
+    }, "Loading output styles…") : WEB_FETCH_TOOL_NAME.createElement(M0, {
         options: Z,
         onChange: W,
         onCancel: B,
@@ -1000,14 +998,14 @@ function WY1({
         defaultValue: A
     })))
 }
-var eq, SQA, TS3 = "Default",
+var WEB_FETCH_TOOL_NAME, SQA, TS3 = "Default",
     PS3 = "Claude completes coding tasks efficiently and provides concise responses";
-var FF0 = L(() => {
+var FF0 = lazyLoader(() => {
     hA();
     T5();
     ry();
     Di();
-    eq = GA(VA(), 1), SQA = GA(VA(), 1)
+    WEB_FETCH_TOOL_NAME = esmImport(VA(), 1), SQA = esmImport(VA(), 1)
 });
 
 function fW9({
@@ -1020,9 +1018,8 @@ function fW9({
     let [I, Y] = $B(), [J, W] = kQA.useState(L1()), X = yQ.useRef(L1()), [F, V] = kQA.useState(c0()), [K, D] = kQA.useState(F?.outputStyle || EK), H = yQ.useRef(K), [C, E] = kQA.useState(0), [{
         mainLoopModel: z,
         verbose: w
-    }, N] = _Q(), [q, R] = kQA.useState({}), [P, y] = kQA.useState(null), v = NB1(Q.options.mcpClients), x = !V0(process.env.CLAUDE_CODE_DISABLE_FILE_CHECKPOINTING), p = e10();
-
-async function u(k) {
+    }, N] = _Q(), [q, R] = kQA.useState({}), [P, y] = kQA.useState(null), v = NB1(Q.options.mcpClients), x = !parseBoolean(process.env.CLAUDE_CODE_DISABLE_FILE_CHECKPOINTING), p = e10();
+    async function u(k) {
         BA("tengu_config_model_changed", {
             from_model: z,
             to_model: k
@@ -1048,7 +1045,7 @@ async function u(k) {
         })
     }
 
-function o(k) {
+    function o(k) {
         let d = {
             ...L1(),
             verbose: k
@@ -1287,7 +1284,7 @@ function o(k) {
         onChange() {}
     }] : [], ...process.env.ANTHROPIC_API_KEY ? [{
         id: "apiKey",
-        label: `Use custom API key: ${oA.bold(xw(process.env.ANTHROPIC_API_KEY))}`,
+        label: `Use custom API key: TextComponent{oA.bold(xw(process.env.ANTHROPIC_API_KEY))}`,
         value: Boolean(process.env.ANTHROPIC_API_KEY && J.customApiKeyResponses?.approved?.includes(xw(process.env.ANTHROPIC_API_KEY))),
         type: "boolean",
         onChange(k) {
@@ -1318,24 +1315,24 @@ function o(k) {
                     return BA("tengu_config_changed", {
                         key: KA,
                         value: SA
-                    }), `Set ${KA} to ${oA.bold(SA)}`
+                    }), `Set TextComponent{KA} to TextComponent{oA.bold(SA)}`
                 }),
                 HA = Boolean(process.env.ANTHROPIC_API_KEY && X.current.customApiKeyResponses?.approved?.includes(xw(process.env.ANTHROPIC_API_KEY))),
                 wA = Boolean(process.env.ANTHROPIC_API_KEY && J.customApiKeyResponses?.approved?.includes(xw(process.env.ANTHROPIC_API_KEY)));
-            if (HA !== wA) IA.push(`${wA?"Enabled":"Disabled"} custom API key`), BA("tengu_config_changed", {
+            if (HA !== wA) IA.push(`TextComponent{wA?"Enabled":"Disabled"} custom API key`), BA("tengu_config_changed", {
                 key: "env.ANTHROPIC_API_KEY",
                 value: wA
             });
-            if (J.theme !== X.current.theme) IA.push(`Set theme to ${oA.bold(J.theme)}`);
-            if (J.preferredNotifChannel !== X.current.preferredNotifChannel) IA.push(`Set notifications to ${oA.bold(J.preferredNotifChannel)}`);
-            if (K !== H.current) IA.push(`Set output style to ${oA.bold(K)}`);
-            if (J.editorMode !== X.current.editorMode) IA.push(`Set editor mode to ${oA.bold(J.editorMode||"emacs")}`);
-            if (J.diffTool !== X.current.diffTool) IA.push(`Set diff tool to ${oA.bold(J.diffTool)}`);
-            if (J.autoConnectIde !== X.current.autoConnectIde) IA.push(`${J.autoConnectIde?"Enabled":"Disabled"} auto-connect to IDE`);
-            if (J.autoInstallIdeExtension !== X.current.autoInstallIdeExtension) IA.push(`${J.autoInstallIdeExtension?"Enabled":"Disabled"} auto-install IDE extension`);
-            if (J.autoCompactEnabled !== X.current.autoCompactEnabled) IA.push(`${J.autoCompactEnabled?"Enabled":"Disabled"} auto-compact`);
-            if (J.respectGitignore !== X.current.respectGitignore) IA.push(`${J.respectGitignore?"Enabled":"Disabled"} respect .gitignore in file picker`);
-            if (J.terminalProgressBarEnabled !== X.current.terminalProgressBarEnabled) IA.push(`${J.terminalProgressBarEnabled?"Enabled":"Disabled"} terminal progress bar`);
+            if (J.theme !== X.current.theme) IA.push(`Set theme to TextComponent{oA.bold(J.theme)}`);
+            if (J.preferredNotifChannel !== X.current.preferredNotifChannel) IA.push(`Set notifications to TextComponent{oA.bold(J.preferredNotifChannel)}`);
+            if (K !== H.current) IA.push(`Set output style to TextComponent{oA.bold(K)}`);
+            if (J.editorMode !== X.current.editorMode) IA.push(`Set editor mode to TextComponent{oA.bold(J.editorMode||"emacs")}`);
+            if (J.diffTool !== X.current.diffTool) IA.push(`Set diff tool to TextComponent{oA.bold(J.diffTool)}`);
+            if (J.autoConnectIde !== X.current.autoConnectIde) IA.push(`TextComponent{J.autoConnectIde?"Enabled":"Disabled"} auto-connect to IDE`);
+            if (J.autoInstallIdeExtension !== X.current.autoInstallIdeExtension) IA.push(`TextComponent{J.autoInstallIdeExtension?"Enabled":"Disabled"} auto-install IDE extension`);
+            if (J.autoCompactEnabled !== X.current.autoCompactEnabled) IA.push(`TextComponent{J.autoCompactEnabled?"Enabled":"Disabled"} auto-compact`);
+            if (J.respectGitignore !== X.current.respectGitignore) IA.push(`TextComponent{J.respectGitignore?"Enabled":"Disabled"} respect .gitignore in file picker`);
+            if (J.terminalProgressBarEnabled !== X.current.terminalProgressBarEnabled) IA.push(`TextComponent{J.terminalProgressBarEnabled?"Enabled":"Disabled"} terminal progress bar`);
             if (IA.length > 0) A(IA.join(`
 `));
             else A("Config dialog dismissed", {
@@ -1345,7 +1342,7 @@ function o(k) {
         }
         if (P !== null) return;
 
-function QA() {
+        function QA() {
             let IA = l[C];
             if (!IA || !IA.onChange) return;
             if (IA.type === "boolean") {
@@ -1392,7 +1389,7 @@ function QA() {
         skipExitHandling: !0
     }), yQ.createElement(j, {
         marginLeft: 1
-    }, yQ.createElement($, {
+    }, yQ.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "Esc to exit"))) : P === 1 ? yQ.createElement(yQ.Fragment, null, yQ.createElement(YY1, {
@@ -1400,14 +1397,14 @@ function QA() {
         onSelect: (k) => {
             u(k), y(null), B(!1)
         }
-    }), yQ.createElement($, {
+    }), yQ.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "Enter to confirm · Esc to exit")) : P === 2 ? yQ.createElement(yQ.Fragment, null, yQ.createElement(JY1, {
         onDone: () => {
             y(null), B(!1), G(!1)
         }
-    }), yQ.createElement($, {
+    }), yQ.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "Enter to confirm · Esc to disable external includes")) : P === 3 ? yQ.createElement(yQ.Fragment, null, yQ.createElement(WY1, {
@@ -1424,14 +1421,14 @@ function QA() {
         onCancel: () => {
             y(null), B(!1)
         }
-    }), yQ.createElement($, {
+    }), yQ.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "Enter to confirm · Esc to exit")) : yQ.createElement(j, {
         flexDirection: "column",
         marginY: 1,
         gap: 1
-    }, yQ.createElement($, null, "Configure Claude Code preferences"), yQ.createElement(j, {
+    }, yQ.createElement(TextComponent, null, "Configure Claude Code preferences"), yQ.createElement(j, {
         flexDirection: "column"
     }, l.map((k, d) => {
         let QA = d === C;
@@ -1439,11 +1436,11 @@ function QA() {
             key: k.id
         }, yQ.createElement(j, {
             width: 44
-        }, yQ.createElement($, {
+        }, yQ.createElement(TextComponent, {
             color: QA ? "suggestion" : void 0
-        }, QA ? V1.pointer : " ", " ", k.label)), yQ.createElement(j, null, k.type === "boolean" ? yQ.createElement($, {
+        }, QA ? V1.pointer : " ", " ", k.label)), yQ.createElement(j, null, k.type === "boolean" ? yQ.createElement(TextComponent, {
             color: QA ? "suggestion" : void 0
-        }, k.value.toString()) : k.id === "theme" ? yQ.createElement($, {
+        }, k.value.toString()) : k.id === "theme" ? yQ.createElement(TextComponent, {
             color: QA ? "suggestion" : void 0
         }, (() => {
             return {
@@ -1454,26 +1451,26 @@ function QA() {
                 "dark-ansi": "Dark mode (ANSI colors only)",
                 "light-ansi": "Light mode (ANSI colors only)"
             } [k.value.toString()] || k.value.toString()
-        })()) : k.id === "notifChannel" ? yQ.createElement($, {
+        })()) : k.id === "notifChannel" ? yQ.createElement(TextComponent, {
             color: QA ? "suggestion" : void 0
         }, (() => {
             switch (k.value.toString()) {
                 case "auto":
                     return "Auto";
                 case "iterm2":
-                    return yQ.createElement(yQ.Fragment, null, "iTerm2 ", yQ.createElement($, {
+                    return yQ.createElement(yQ.Fragment, null, "iTerm2 ", yQ.createElement(TextComponent, {
                         dimColor: !0
                     }, "(OSC 9)"));
                 case "terminal_bell":
-                    return yQ.createElement(yQ.Fragment, null, "Terminal Bell ", yQ.createElement($, {
+                    return yQ.createElement(yQ.Fragment, null, "Terminal Bell ", yQ.createElement(TextComponent, {
                         dimColor: !0
                     }, "(\\a)"));
                 case "kitty":
-                    return yQ.createElement(yQ.Fragment, null, "Kitty ", yQ.createElement($, {
+                    return yQ.createElement(yQ.Fragment, null, "Kitty ", yQ.createElement(TextComponent, {
                         dimColor: !0
                     }, "(OSC 99)"));
                 case "ghostty":
-                    return yQ.createElement(yQ.Fragment, null, "Ghostty ", yQ.createElement($, {
+                    return yQ.createElement(yQ.Fragment, null, "Ghostty ", yQ.createElement(TextComponent, {
                         dimColor: !0
                     }, "(OSC 777)"));
                 case "iterm2_with_bell":
@@ -1483,18 +1480,18 @@ function QA() {
                 default:
                     return k.value.toString()
             }
-        })()) : k.id === "defaultPermissionMode" ? yQ.createElement($, {
+        })()) : k.id === "defaultPermissionMode" ? yQ.createElement(TextComponent, {
             color: QA ? "suggestion" : void 0
-        }, Iv(k.value)) : yQ.createElement($, {
+        }, Iv(k.value)) : yQ.createElement(TextComponent, {
             color: QA ? "suggestion" : void 0
         }, k.value.toString())))
-    })), yQ.createElement($, {
+    })), yQ.createElement(TextComponent, {
         dimColor: !0,
         italic: !0
     }, "Enter/Space to change · Esc to exit")))
 }
 var yQ, kQA;
-var hW9 = L(() => {
+var hW9 = lazyLoader(() => {
     hA();
     n2();
     jQ();
@@ -1515,12 +1512,11 @@ var hW9 = L(() => {
     RB();
     ry();
     hQ();
-    yQ = GA(VA(), 1), kQA = GA(VA(), 1)
+    yQ = esmImport(VA(), 1), kQA = esmImport(VA(), 1)
 });
-// Async function: VF0
 async function VF0() {
     if (!AB()) return {};
     let A = U6();
     if (A && xm(A.expiresAt)) return null;
     let Q = VI();
-    if (Q.error) throw Error(`Auth error: ${Q.error}`);
+    if (Q.error) throw Error(`Auth error: TextComponent{Q.error}`);

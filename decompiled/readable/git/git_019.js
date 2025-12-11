@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_019.js
+ * 处理时间: 2025-12-09T03:41:37.486Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.978Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-var FbB = U((WbB) => {
+var FbB = moduleWrapper((WbB) => {
     Object.defineProperty(WbB, "__esModule", {
         value: !0
     });
@@ -33,7 +36,7 @@ var FbB = U((WbB) => {
         };
     WbB.toBase64 = h_6
 });
-var Dp1 = U((E2G, wtA) => {
+var Dp1 = moduleWrapper((E2G, wtA) => {
     var {
         defineProperty: VbB,
         getOwnPropertyDescriptor: g_6,
@@ -54,7 +57,7 @@ var Dp1 = U((E2G, wtA) => {
     KbB(Kp1, BbB(), wtA.exports);
     KbB(Kp1, FbB(), wtA.exports)
 });
-var l_ = L(() => {
+var l_ = lazyLoader(() => {
     Hf();
     Jc1();
     woA();
@@ -62,7 +65,7 @@ var l_ = L(() => {
     c_();
     ZE()
 });
-var zbB = U((M2G, EbB) => {
+var zbB = moduleWrapper((M2G, EbB) => {
     var {
         defineProperty: qtA,
         getOwnPropertyDescriptor: c_6,
@@ -99,7 +102,7 @@ var zbB = U((M2G, EbB) => {
             return B
         }, "getAllAliases"),
         cp = LM((A, Q) => {
-            return `${A||"anonymous"}${Q&&Q.length>0?` (a.k.a. ${Q.join(",")})`:""}`
+            return `TextComponent{A||"anonymous"}TextComponent{Q&&Q.length>0?` (a.k.a. TextComponent{Q.join(",")})`:""}`
         }, "getMiddlewareNameWithAliases"),
         Hp1 = LM(() => {
             let A = [],
@@ -179,7 +182,7 @@ var zbB = U((M2G, EbB) => {
                             let z = H[E.toMiddleware];
                             if (z === void 0) {
                                 if (V) return;
-                                throw Error(`${E.toMiddleware} is not found when adding ${cp(E.name,E.aliases)} middleware ${E.relation} ${E.toMiddleware}`)
+                                throw Error(`TextComponent{E.toMiddleware} is not found when adding TextComponent{cp(E.name,E.aliases)} middleware TextComponent{E.relation} TextComponent{E.toMiddleware}`)
                             }
                             if (E.relation === "after") z.after.push(E);
                             if (E.relation === "before") z.before.push(E)
@@ -202,7 +205,7 @@ var zbB = U((M2G, EbB) => {
                         }, z = $e(D, C);
                         if (z.length > 0) {
                             if (z.some((w) => G.has(w))) {
-                                if (!H) throw Error(`Duplicate middleware name '${cp(D,C)}'`);
+                                if (!H) throw Error(`Duplicate middleware name 'TextComponent{cp(D,C)}'`);
                                 for (let w of z) {
                                     let N = A.findIndex((R) => {
                                         var P;
@@ -210,7 +213,7 @@ var zbB = U((M2G, EbB) => {
                                     });
                                     if (N === -1) continue;
                                     let q = A[N];
-                                    if (q.step !== E.step || E.priority !== q.priority) throw Error(`"${cp(q.name,q.aliases)}" middleware with ${q.priority} priority in ${q.step} step cannot be overridden by "${cp(D,C)}" middleware with ${E.priority} priority in ${E.step} step.`);
+                                    if (q.step !== E.step || E.priority !== q.priority) throw Error(`"TextComponent{cp(q.name,q.aliases)}" middleware with TextComponent{q.priority} priority in TextComponent{q.step} step cannot be overridden by "TextComponent{cp(D,C)}" middleware with TextComponent{E.priority} priority in TextComponent{E.step} step.`);
                                     A.splice(N, 1)
                                 }
                             }
@@ -229,7 +232,7 @@ var zbB = U((M2G, EbB) => {
                         }, z = $e(D, C);
                         if (z.length > 0) {
                             if (z.some((w) => G.has(w))) {
-                                if (!H) throw Error(`Duplicate middleware name '${cp(D,C)}'`);
+                                if (!H) throw Error(`Duplicate middleware name 'TextComponent{cp(D,C)}'`);
                                 for (let w of z) {
                                     let N = Q.findIndex((R) => {
                                         var P;
@@ -237,7 +240,7 @@ var zbB = U((M2G, EbB) => {
                                     });
                                     if (N === -1) continue;
                                     let q = Q[N];
-                                    if (q.toMiddleware !== E.toMiddleware || q.relation !== E.relation) throw Error(`"${cp(q.name,q.aliases)}" middleware ${q.relation} "${q.toMiddleware}" middleware cannot be overridden by "${cp(D,C)}" middleware ${E.relation} "${E.toMiddleware}" middleware.`);
+                                    if (q.toMiddleware !== E.toMiddleware || q.relation !== E.relation) throw Error(`"TextComponent{cp(q.name,q.aliases)}" middleware TextComponent{q.relation} "TextComponent{q.toMiddleware}" middleware cannot be overridden by "TextComponent{cp(D,C)}" middleware TextComponent{E.relation} "TextComponent{E.toMiddleware}" middleware.`);
                                     Q.splice(N, 1)
                                 }
                             }
@@ -307,7 +310,7 @@ var zbB = U((M2G, EbB) => {
             low: 1
         }
 });
-var wbB = U((O2G, $bB) => {
+var wbB = moduleWrapper((O2G, $bB) => {
     var {
         defineProperty: NtA,
         getOwnPropertyDescriptor: s_6,
@@ -338,7 +341,7 @@ var wbB = U((O2G, $bB) => {
     $bB.exports = Qk6(UbB);
     var Bk6 = t_6((A) => typeof ArrayBuffer === "function" && A instanceof ArrayBuffer || Object.prototype.toString.call(A) === "[object ArrayBuffer]", "isArrayBuffer")
 });
-var Ep1 = U((R2G, LbB) => {
+var Ep1 = moduleWrapper((R2G, LbB) => {
     var {
         defineProperty: LtA,
         getOwnPropertyDescriptor: Gk6,
@@ -369,17 +372,17 @@ var Ep1 = U((R2G, LbB) => {
     });
     LbB.exports = Wk6(NbB);
     var Xk6 = wbB(),
-        Cp1 = UA("buffer"),
+        Cp1 = nodeRequire("buffer"),
         Fk6 = qbB((A, Q = 0, B = A.byteLength - Q) => {
-            if (!(0, Xk6.isArrayBuffer)(A)) throw TypeError(`The "input" argument must be ArrayBuffer. Received type ${typeof A} (${A})`);
+            if (!(0, Xk6.isArrayBuffer)(A)) throw TypeError(`The "input" argument must be ArrayBuffer. Received type TextComponent{typeof A} (TextComponent{A})`);
             return Cp1.Buffer.from(A, Q, B)
         }, "fromArrayBuffer"),
         Vk6 = qbB((A, Q) => {
-            if (typeof A !== "string") throw TypeError(`The "input" argument must be of type string. Received type ${typeof A} (${A})`);
+            if (typeof A !== "string") throw TypeError(`The "input" argument must be of type string. Received type TextComponent{typeof A} (TextComponent{A})`);
             return Q ? Cp1.Buffer.from(A, Q) : Cp1.Buffer.from(A)
         }, "fromString")
 });
-var PbB = U((T2G, TbB) => {
+var PbB = moduleWrapper((T2G, TbB) => {
     var {
         defineProperty: MtA,
         getOwnPropertyDescriptor: Kk6,
@@ -426,12 +429,12 @@ var PbB = U((T2G, TbB) => {
             return (0, ObB.fromArrayBuffer)(A.buffer, A.byteOffset, A.byteLength).toString("utf8")
         }, "toUtf8")
 });
-var _bB = U((jbB) => {
+var _bB = moduleWrapper((jbB) => {
     Object.defineProperty(jbB, "__esModule", {
         value: !0
     });
     jbB.getAwsChunkedEncodingStream = void 0;
-    var wk6 = UA("stream"),
+    var wk6 = nodeRequire("stream"),
         qk6 = (A, Q) => {
             let {
                 base64Encoder: B,
@@ -444,14 +447,14 @@ var _bB = U((jbB) => {
             });
             return A.on("data", (F) => {
                 let V = G(F) || 0;
-                X.push(`${V.toString(16)}\r
+                X.push(`TextComponent{V.toString(16)}\r
 `), X.push(F), X.push(`\r
 `)
             }), A.on("end", async () => {
                 if (X.push(`0\r
 `), J) {
                     let F = B(await W);
-                    X.push(`${I}:${F}\r
+                    X.push(`TextComponent{I}:TextComponent{F}\r
 `), X.push(`\r
 `)
                 }
@@ -460,7 +463,7 @@ var _bB = U((jbB) => {
         };
     jbB.getAwsChunkedEncodingStream = qk6
 });
-var vbB = U((j2G, xbB) => {
+var vbB = moduleWrapper((j2G, xbB) => {
     var {
         defineProperty: OtA,
         getOwnPropertyDescriptor: Nk6,
@@ -491,10 +494,10 @@ var vbB = U((j2G, xbB) => {
     });
     xbB.exports = Tk6(kbB);
     var ybB = Up1((A) => encodeURIComponent(A).replace(/[!'()*]/g, Pk6), "escapeUri"),
-        Pk6 = Up1((A) => `%${A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
+        Pk6 = Up1((A) => `%TextComponent{A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
         jk6 = Up1((A) => A.split("/").map(ybB).join("/"), "escapeUriPath")
 });
-var gbB = U((S2G, hbB) => {
+var gbB = moduleWrapper((S2G, hbB) => {
     var {
         defineProperty: RtA,
         getOwnPropertyDescriptor: Sk6,
@@ -525,15 +528,15 @@ var gbB = U((S2G, hbB) => {
     hbB.exports = bk6(bbB);
     var $p1 = vbB();
 
-function fbB(A) {
+    function fbB(A) {
         let Q = [];
         for (let B of Object.keys(A).sort()) {
             let G = A[B];
             if (B = (0, $p1.escapeUri)(B), Array.isArray(G))
-                for (let Z = 0, I = G.length; Z < I; Z++) Q.push(`${B}=${(0,$p1.escapeUri)(G[Z])}`);
+                for (let Z = 0, I = G.length; Z < I; Z++) Q.push(`TextComponent{B}=TextComponent{(0,$p1.escapeUri)(G[Z])}`);
             else {
                 let Z = B;
-                if (G || typeof G === "string") Z += `=${(0,$p1.escapeUri)(G)}`;
+                if (G || typeof G === "string") Z += `=TextComponent{(0,$p1.escapeUri)(G)}`;
                 Q.push(Z)
             }
         }
@@ -541,7 +544,7 @@ function fbB(A) {
     }
     yk6(fbB, "buildQueryString")
 });
-var QfB = U((_2G, AfB) => {
+var QfB = moduleWrapper((_2G, AfB) => {
     var {
         create: fk6,
         defineProperty: TwA,
@@ -580,8 +583,8 @@ var QfB = U((_2G, AfB) => {
     AfB.exports = pk6(cbB);
     var pbB = cc1(),
         lbB = gbB(),
-        wp1 = UA("http"),
-        qp1 = UA("https"),
+        wp1 = nodeRequire("http"),
+        qp1 = nodeRequire("https"),
         lk6 = ["ECONNRESET", "EPIPE", "ETIMEDOUT"],
         ibB = mV((A) => {
             let Q = {};
@@ -594,7 +597,7 @@ var QfB = U((_2G, AfB) => {
         ik6 = mV((A, Q, B = 0) => {
             if (!B) return;
             let G = setTimeout(() => {
-                A.destroy(), Q(Object.assign(Error(`Socket timed out without establishing a connection within ${B} ms`), {
+                A.destroy(), Q(Object.assign(Error(`Socket timed out without establishing a connection within TextComponent{B} ms`), {
                     name: "TimeoutError"
                 }))
             }, B);
@@ -616,15 +619,14 @@ var QfB = U((_2G, AfB) => {
         }, "setSocketKeepAlive"),
         ak6 = mV((A, Q, B = 0) => {
             A.setTimeout(B, () => {
-                A.destroy(), Q(Object.assign(Error(`Connection timed out after ${B} ms`), {
+                A.destroy(), Q(Object.assign(Error(`Connection timed out after TextComponent{B} ms`), {
                     name: "TimeoutError"
                 }))
             })
         }, "setSocketTimeout"),
-        nbB = UA("stream"),
+        nbB = nodeRequire("stream"),
         ubB = 1000;
-
-async function Np1(A, Q, B = ubB) {
+    async function Np1(A, Q, B = ubB) {
         let G = Q.headers ?? {},
             Z = G.Expect || G.expect,
             I = -1,
@@ -642,7 +644,7 @@ async function Np1(A, Q, B = ubB) {
     }
     mV(Np1, "writeRequestBody");
 
-function abB(A, Q) {
+    function abB(A, Q) {
         if (Q instanceof nbB.Readable) {
             Q.pipe(A);
             return
@@ -693,7 +695,7 @@ function abB(A, Q) {
                     for (let X in I) {
                         let F = ((G = I[X]) == null ? void 0 : G.length) ?? 0,
                             V = ((Z = Y[X]) == null ? void 0 : Z.length) ?? 0;
-                        if (F >= J && V >= 2 * J) return console.warn("@smithy/node-http-handler:WARN", `socket usage at capacity=${F} and ${V} additional requests are enqueued.`, "See https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/node-configuring-maxsockets.html", "or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler config."), Date.now()
+                        if (F >= J && V >= 2 * J) return console.warn("@smithy/node-http-handler:WARN", `socket usage at capacity=TextComponent{F} and TextComponent{V} additional requests are enqueued.`, "See https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/node-configuring-maxsockets.html", "or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler config."), Date.now()
                     }
                 return B
             }
@@ -759,11 +761,11 @@ function abB(A, Q) {
                     if (Q.username != null || Q.password != null) {
                         let w = Q.username ?? "",
                             N = Q.password ?? "";
-                        K = `${w}:${N}`
+                        K = `TextComponent{w}:TextComponent{N}`
                     }
                     let D = Q.path;
-                    if (V) D += `?${V}`;
-                    if (Q.fragment) D += `#${Q.fragment}`;
+                    if (V) D += `?TextComponent{V}`;
+                    if (Q.fragment) D += `#TextComponent{Q.fragment}`;
                     let H = {
                             headers: Q.headers,
                             host: Q.hostname,
@@ -816,8 +818,8 @@ function abB(A, Q) {
         };
     mV(sbB, "NodeHttpHandler");
     var rk6 = sbB,
-        mbB = UA("http2"),
-        ok6 = ck6(UA("http2")),
+        mbB = nodeRequire("http2"),
+        ok6 = ck6(nodeRequire("http2")),
         rbB = class {
             constructor(Q) {
                 this.sessions = [], this.sessions = Q ?? []
@@ -957,9 +959,9 @@ function abB(A, Q) {
                     if (Q.username != null || Q.password != null) {
                         let x = Q.username ?? "",
                             p = Q.password ?? "";
-                        z = `${x}:${p}@`
+                        z = `TextComponent{x}:TextComponent{p}@`
                     }
-                    let w = `${C}//${z}${K}${H?`:${H}`:""}`,
+                    let w = `TextComponent{C}//TextComponent{z}TextComponent{K}TextComponent{H?`:TextComponent{H}`:""}`,
                         N = {
                             destination: new URL(w)
                         },
@@ -973,8 +975,8 @@ function abB(A, Q) {
                         }, "rejectWithDestroy"),
                         P = (0, lbB.buildQueryString)(E || {}),
                         y = Q.path;
-                    if (P) y += `?${P}`;
-                    if (Q.fragment) y += `#${Q.fragment}`;
+                    if (P) y += `?TextComponent{P}`;
+                    if (Q.fragment) y += `#TextComponent{Q.fragment}`;
                     let v = q.request({
                         ...Q.headers,
                         [mbB.constants.HTTP2_HEADER_PATH]: y,
@@ -991,7 +993,7 @@ function abB(A, Q) {
                                 }), Z) q.close(), this.connectionManager.deleteSession(w, q)
                         }), G) v.setTimeout(G, () => {
                         v.close();
-                        let x = Error(`Stream timed out because of no activity for ${G} ms`);
+                        let x = Error(`Stream timed out because of no activity for TextComponent{G} ms`);
                         x.name = "TimeoutError", R(x)
                     });
                     if (B) B.onabort = () => {
@@ -1000,9 +1002,9 @@ function abB(A, Q) {
                         x.name = "AbortError", R(x)
                     };
                     v.on("frameError", (x, p, u) => {
-                        R(Error(`Frame type id ${x} in stream id ${u} has failed with code ${p}.`))
+                        R(Error(`Frame type id TextComponent{x} in stream id TextComponent{u} has failed with code TextComponent{p}.`))
                     }), v.on("error", R), v.on("aborted", () => {
-                        R(Error(`HTTP/2 stream is abnormally aborted in mid-communication with result code ${v.rstCode}.`))
+                        R(Error(`HTTP/2 stream is abnormally aborted in mid-communication with result code TextComponent{v.rstCode}.`))
                     }), v.on("close", () => {
                         if (q.unref(), Z) q.destroy();
                         if (!W) R(Error("Unexpected error: http2 request did not get a response"))
@@ -1047,21 +1049,21 @@ function abB(A, Q) {
             })
         }), "streamCollector")
 });
-var IfB = U((GfB) => {
+var IfB = moduleWrapper((GfB) => {
     Object.defineProperty(GfB, "__esModule", {
         value: !0
     });
     GfB.sdkStreamMixin = void 0;
     var Gy6 = QfB(),
         Zy6 = Ep1(),
-        Lp1 = UA("stream"),
-        Iy6 = UA("util"),
+        Lp1 = nodeRequire("stream"),
+        Iy6 = nodeRequire("util"),
         BfB = "The stream has already been transformed.",
         Yy6 = (A) => {
             var Q, B;
             if (!(A instanceof Lp1.Readable)) {
                 let I = ((B = (Q = A === null || A === void 0 ? void 0 : A.__proto__) === null || Q === void 0 ? void 0 : Q.constructor) === null || B === void 0 ? void 0 : B.name) || A;
-                throw Error(`Unexpected stream implementation, expect Stream.Readable instance, got ${I}`)
+                throw Error(`Unexpected stream implementation, expect Stream.Readable instance, got TextComponent{I}`)
             }
             let G = !1,
                 Z = async () => {
@@ -1085,7 +1087,7 @@ var IfB = U((GfB) => {
         };
     GfB.sdkStreamMixin = Yy6
 });
-var KfB = U((y2G, jtA) => {
+var KfB = moduleWrapper((y2G, jtA) => {
     var {
         defineProperty: TtA,
         getOwnPropertyDescriptor: Jy6,
@@ -1117,25 +1119,24 @@ var KfB = U((y2G, jtA) => {
     var JfB = Dp1(),
         WfB = PbB();
 
-function XfB(A, Q = "utf-8") {
+    function XfB(A, Q = "utf-8") {
         if (Q === "base64") return (0, JfB.toBase64)(A);
         return (0, WfB.toUtf8)(A)
     }
     Rp1(XfB, "transformToString");
 
-function FfB(A, Q) {
+    function FfB(A, Q) {
         if (Q === "base64") return Op1.mutate((0, JfB.fromBase64)(A));
         return Op1.mutate((0, WfB.fromUtf8)(A))
     }
     Rp1(FfB, "transformFromString");
-
-var VfB = class A extends Uint8Array {
+    var VfB = class A extends Uint8Array {
         static fromString(Q, B = "utf-8") {
             switch (typeof Q) {
                 case "string":
                     return FfB(Q, B);
                 default:
-                    throw Error(`Unsupported conversion from ${typeof Q} to Uint8ArrayBlobAdapter.`)
+                    throw Error(`Unsupported conversion from TextComponent{typeof Q} to Uint8ArrayBlobAdapter.`)
             }
         }
         static mutate(Q) {
@@ -1150,7 +1151,7 @@ var VfB = class A extends Uint8Array {
     YfB(PtA, _bB(), jtA.exports);
     YfB(PtA, IfB(), jtA.exports)
 });
-var bfB = U((x2G, vfB) => {
+var bfB = moduleWrapper((x2G, vfB) => {
     var {
         defineProperty: ytA,
         getOwnPropertyDescriptor: Ky6,
@@ -1236,8 +1237,7 @@ var bfB = U((x2G, vfB) => {
         withBaseException: () => Zx6
     });
     vfB.exports = zy6(HfB);
-
-var CfB = class {
+    var CfB = class {
         trace() {}
         debug() {}
         info() {}
@@ -1385,7 +1385,7 @@ var CfB = class {
                         let X = new G(Y);
                         if (typeof J === "function") this.send(X, J);
                         else if (typeof W === "function") {
-                            if (typeof J !== "object") throw Error(`Expected http options but got ${typeof J}`);
+                            if (typeof J !== "object") throw Error(`Expected http options but got TextComponent{typeof J}`);
                             this.send(X, J || {}, W)
                         } else return this.send(X, J)
                     }, "methodImpl"),
@@ -1400,49 +1400,49 @@ var CfB = class {
                 case "false":
                     return !1;
                 default:
-                    throw Error(`Unable to parse boolean value "${A}"`)
+                    throw Error(`Unable to parse boolean value "TextComponent{A}"`)
             }
         }, "parseBoolean"),
         Oy6 = HB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "number") {
-                if (A === 0 || A === 1) _wA.warn(_tA(`Expected boolean, got ${typeof A}: ${A}`));
+                if (A === 0 || A === 1) _wA.warn(_tA(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`));
                 if (A === 0) return !1;
                 if (A === 1) return !0
             }
             if (typeof A === "string") {
                 let Q = A.toLowerCase();
-                if (Q === "false" || Q === "true") _wA.warn(_tA(`Expected boolean, got ${typeof A}: ${A}`));
+                if (Q === "false" || Q === "true") _wA.warn(_tA(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`));
                 if (Q === "false") return !1;
                 if (Q === "true") return !0
             }
             if (typeof A === "boolean") return A;
-            throw TypeError(`Expected boolean, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectBoolean"),
         jwA = HB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "string") {
                 let Q = parseFloat(A);
                 if (!Number.isNaN(Q)) {
-                    if (String(Q) !== String(A)) _wA.warn(_tA(`Expected number but observed string: ${A}`));
+                    if (String(Q) !== String(A)) _wA.warn(_tA(`Expected number but observed string: TextComponent{A}`));
                     return Q
                 }
             }
             if (typeof A === "number") return A;
-            throw TypeError(`Expected number, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected number, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectNumber"),
         Ry6 = Math.ceil(340282346638528860000000000000000000000),
         StA = HB((A) => {
             let Q = jwA(A);
             if (Q !== void 0 && !Number.isNaN(Q) && Q !== 1 / 0 && Q !== -1 / 0) {
-                if (Math.abs(Q) > Ry6) throw TypeError(`Expected 32-bit float, got ${A}`)
+                if (Math.abs(Q) > Ry6) throw TypeError(`Expected 32-bit float, got TextComponent{A}`)
             }
             return Q
         }, "expectFloat32"),
         SwA = HB((A) => {
             if (A === null || A === void 0) return;
             if (Number.isInteger(A) && !Number.isNaN(A)) return A;
-            throw TypeError(`Expected integer, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected integer, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectLong"),
         Ty6 = SwA,
         Sp1 = HB((A) => xp1(A, 32), "expectInt32"),
@@ -1450,7 +1450,7 @@ var CfB = class {
         kp1 = HB((A) => xp1(A, 8), "expectByte"),
         xp1 = HB((A, Q) => {
             let B = SwA(A);
-            if (B !== void 0 && Py6(B, Q) !== B) throw TypeError(`Expected ${Q}-bit integer, got ${A}`);
+            if (B !== void 0 && Py6(B, Q) !== B) throw TypeError(`Expected TextComponent{Q}-bit integer, got TextComponent{A}`);
             return B
         }, "expectSizedInt"),
         Py6 = HB((A, Q) => {
@@ -1465,7 +1465,7 @@ var CfB = class {
         }, "castInt"),
         jy6 = HB((A, Q) => {
             if (A === null || A === void 0) {
-                if (Q) throw TypeError(`Expected a non-null value for ${Q}`);
+                if (Q) throw TypeError(`Expected a non-null value for TextComponent{Q}`);
                 throw TypeError("Expected a non-null value")
             }
             return A
@@ -1474,20 +1474,20 @@ var CfB = class {
             if (A === null || A === void 0) return;
             if (typeof A === "object" && !Array.isArray(A)) return A;
             let Q = Array.isArray(A) ? "array" : typeof A;
-            throw TypeError(`Expected object, got ${Q}: ${A}`)
+            throw TypeError(`Expected object, got TextComponent{Q}: TextComponent{A}`)
         }, "expectObject"),
         Sy6 = HB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "string") return A;
-            if (["boolean", "number", "bigint"].includes(typeof A)) return _wA.warn(_tA(`Expected string, got ${typeof A}: ${A}`)), String(A);
-            throw TypeError(`Expected string, got ${typeof A}: ${A}`)
+            if (["boolean", "number", "bigint"].includes(typeof A)) return _wA.warn(_tA(`Expected string, got TextComponent{typeof A}: TextComponent{A}`)), String(A);
+            throw TypeError(`Expected string, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectString"),
         _y6 = HB((A) => {
             if (A === null || A === void 0) return;
             let Q = qfB(A),
                 B = Object.entries(Q).filter(([, G]) => G != null).map(([G]) => G);
             if (B.length === 0) throw TypeError("Unions must have exactly one non-null member. None were found.");
-            if (B.length > 1) throw TypeError(`Unions must have exactly one non-null member. Keys ${B} were not null.`);
+            if (B.length > 1) throw TypeError(`Unions must have exactly one non-null member. Keys TextComponent{B} were not null.`);
             return Q
         }, "expectUnion"),
         vp1 = HB((A) => {

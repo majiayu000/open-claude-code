@@ -1,0 +1,37 @@
+[
+  {
+    "original": "NA9",
+    "readable": "filter",
+    "confidence": 0.99,
+    "source": "llm-inference",
+    "reason": "函数分配给G9A.filter导出，实现RxJS filter操作符逻辑：接收谓词函数和可选的this上下文，使用计数器对每个发出的值进行过滤"
+  },
+  {
+    "original": "MA9",
+    "readable": "partition",
+    "confidence": 0.99,
+    "source": "llm-inference",
+    "reason": "函数分配给J9A.partition导出，实现RxJS partition操作符逻辑：接收源流、谓词函数和可选的this上下文，返回两个流数组[匹配项, 不匹配项]"
+  },
+  {
+    "original": "PA9",
+    "readable": "race",
+    "confidence": 0.99,
+    "source": "llm-inference",
+    "reason": "函数分配给H9A.race导出，实现RxJS race操作符逻辑：接收多个可观察源（通过arguments或数组），返回第一个发出值的源的Observable"
+  },
+  {
+    "original": "K9A",
+    "readable": "raceInit",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "函数分配给H9A.raceInit导出，实现race操作符的初始化器：接收源数组，返回订阅函数，监听多个源并在任一源发出值时取消订阅其他源"
+  },
+  {
+    "original": "kA9",
+    "readable": "range",
+    "confidence": 0.99,
+    "source": "llm-inference",
+    "reason": "函数分配给D9A.range导出，实现RxJS range操作符逻辑：生成指定范围内的数字序列Observable，支持参数调整(start, count)和可选的调度器，包含同步和异步两种执行模式"
+  }
+]

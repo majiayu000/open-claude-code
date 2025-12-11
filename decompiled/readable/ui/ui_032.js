@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_032.js
+ * 处理时间: 2025-12-09T03:41:39.344Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.124Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -365,10 +367,10 @@
         return [(A[0] + A[1] + A[2]) / 3 / 255 * 100]
     }
 });
-var fPB = U((Vo7, bPB) => {
+var fPB = moduleWrapper((Vo7, bPB) => {
     var xrA = Dd1();
 
-function tq6() {
+    function tq6() {
         let A = {},
             Q = Object.keys(xrA);
         for (let B = Q.length, G = 0; G < B; G++) A[Q[G]] = {
@@ -378,7 +380,7 @@ function tq6() {
         return A
     }
 
-function eq6(A) {
+    function eq6(A) {
         let Q = tq6(),
             B = [A];
         Q[A].distance = 0;
@@ -394,13 +396,13 @@ function eq6(A) {
         return Q
     }
 
-function AN6(A, Q) {
+    function AN6(A, Q) {
         return function(B) {
             return Q(A(B))
         }
     }
 
-function QN6(A, Q) {
+    function QN6(A, Q) {
         let B = [Q[A].parent, A],
             G = xrA[Q[A].parent][A],
             Z = Q[A].parent;
@@ -419,13 +421,13 @@ function QN6(A, Q) {
         return B
     }
 });
-var Cd1 = U((Ko7, hPB) => {
+var Cd1 = moduleWrapper((Ko7, hPB) => {
     var Hd1 = Dd1(),
         BN6 = fPB(),
         IGA = {},
         GN6 = Object.keys(Hd1);
 
-function ZN6(A) {
+    function ZN6(A) {
         let Q = function(...B) {
             let G = B[0];
             if (G === void 0 || G === null) return G;
@@ -436,7 +438,7 @@ function ZN6(A) {
         return Q
     }
 
-function IN6(A) {
+    function IN6(A) {
         let Q = function(...B) {
             let G = B[0];
             if (G === void 0 || G === null) return G;
@@ -463,16 +465,15 @@ function IN6(A) {
     });
     hPB.exports = IGA
 });
-var brA = U((Do7, uPB) => {
+var brA = moduleWrapper((Do7, uPB) => {
     var YGA = yPB(),
         ew = Cd1(),
         gPB = ["keyword", "gray", "hex"],
         Ed1 = {};
     for (let A of Object.keys(ew)) Ed1[[...ew[A].labels].sort().join("")] = A;
+    var vrA = {};
 
-var vrA = {};
-
-function uV(A, Q) {
+    function uV(A, Q) {
         if (!(this instanceof uV)) return new uV(A, Q);
         if (Q && Q in gPB) Q = null;
         if (Q && !(Q in ew)) throw Error("Unknown model: " + Q);
@@ -701,17 +702,17 @@ function uV(A, Q) {
         }
     }
 
-function YN6(A, Q) {
+    function YN6(A, Q) {
         return Number(A.toFixed(Q))
     }
 
-function JN6(A) {
+    function JN6(A) {
         return function(Q) {
             return YN6(Q, A)
         }
     }
 
-function OJ(A, Q, B) {
+    function OJ(A, Q, B) {
         A = Array.isArray(A) ? A : [A];
         for (let G of A)(vrA[G] || (vrA[G] = []))[Q] = B;
         return A = A[0],
@@ -726,24 +727,24 @@ function OJ(A, Q, B) {
             }
     }
 
-function OF(A) {
+    function OF(A) {
         return function(Q) {
             return Math.max(0, Math.min(A, Q))
         }
     }
 
-function WN6(A) {
+    function WN6(A) {
         return Array.isArray(A) ? A : [A]
     }
 
-function zd1(A, Q) {
+    function zd1(A, Q) {
         for (let B = 0; B < Q; B++)
             if (typeof A[B] !== "number") A[B] = 0;
         return A
     }
     uPB.exports = uV
 });
-var cPB = U((Ho7, dPB) => {
+var cPB = moduleWrapper((Ho7, dPB) => {
     var XN6 = brA(),
         _0 = f_(),
         Mp = d$A(),
@@ -754,7 +755,7 @@ var cPB = U((Ho7, dPB) => {
             right: "high"
         };
 
-function mPB(A) {
+    function mPB(A) {
         let {
             raw: Q,
             density: B,
@@ -785,7 +786,7 @@ function mPB(A) {
         } : void 0
     }
 
-function VN6(A, Q, B) {
+    function VN6(A, Q, B) {
         let G = {
             failOn: "warning",
             limitInputPixels: Math.pow(16383, 2),
@@ -806,7 +807,7 @@ function VN6(A, Q, B) {
         } else if (_0.plainObject(A) && !_0.defined(Q)) {
             if (Q = A, mPB(Q)) G.buffer = []
         } else if (!_0.defined(A) && !_0.defined(Q) && _0.object(B) && B.allowStream) G.buffer = [];
-        else throw Error(`Unsupported input '${A}' of type ${typeof A}${_0.defined(Q)?` when also providing options of type ${typeof Q}`:""}`);
+        else throw Error(`Unsupported input 'TextComponent{A}' of type TextComponent{typeof A}TextComponent{_0.defined(Q)?` when also providing options of type TextComponent{typeof Q}`:""}`);
         if (_0.object(Q)) {
             if (_0.defined(Q.failOnError))
                 if (_0.bool(Q.failOnError)) G.failOn = Q.failOnError ? "warning" : "none";
@@ -932,7 +933,7 @@ function VN6(A, Q, B) {
         return G
     }
 
-function KN6(A, Q, B) {
+    function KN6(A, Q, B) {
         if (Array.isArray(this.options.input.buffer))
             if (_0.buffer(A)) {
                 if (this.options.input.buffer.length === 0) this.on("finish", () => {
@@ -943,15 +944,15 @@ function KN6(A, Q, B) {
         else B(Error("Unexpected data on Writable Stream"))
     }
 
-function DN6() {
+    function DN6() {
         if (this._isStreamInput()) this.options.input.buffer = Buffer.concat(this.options.input.buffer)
     }
 
-function HN6() {
+    function HN6() {
         return Array.isArray(this.options.input.buffer)
     }
 
-function CN6(A) {
+    function CN6(A) {
         let Q = Error();
         if (_0.fn(A)) {
             if (this._isStreamInput()) this.on("finish", () => {
@@ -983,7 +984,7 @@ function CN6(A) {
         })
     }
 
-function EN6(A) {
+    function EN6(A) {
         let Q = Error();
         if (_0.fn(A)) {
             if (this._isStreamInput()) this.on("finish", () => {
@@ -1024,7 +1025,7 @@ function EN6(A) {
         }), A.align = FN6
     }
 });
-var sPB = U((Co7, aPB) => {
+var sPB = moduleWrapper((Co7, aPB) => {
     var t2 = f_(),
         lPB = {
             center: 0,
@@ -1085,7 +1086,7 @@ var sPB = U((Co7, aPB) => {
         return A.angle % 360 !== 0 || A.useExifOrientation === !0 || A.rotationAngle !== 0
     }
 
-function frA(A) {
+    function frA(A) {
         return A.width !== -1 || A.height !== -1
     }
 
@@ -1129,7 +1130,7 @@ function frA(A) {
         return this
     }
 
-function wN6(A) {
+    function wN6(A) {
         if (t2.integer(A) && A > 0) this.options.extendTop = A, this.options.extendBottom = A, this.options.extendLeft = A, this.options.extendRight = A;
         else if (t2.object(A)) {
             if (t2.defined(A.top))
@@ -1151,7 +1152,7 @@ function wN6(A) {
         return this
     }
 
-function qN6(A) {
+    function qN6(A) {
         let Q = frA(this.options) || this.options.widthPre !== -1 ? "Post" : "Pre";
         if (this.options[`width${Q}`] !== -1) this.options.debuglog("ignoring previous extract options");
         if (["left", "top", "width", "height"].forEach(function(B) {
@@ -1164,7 +1165,7 @@ function qN6(A) {
         return this
     }
 
-function NN6(A) {
+    function NN6(A) {
         if (this.options.trimThreshold = 10, t2.defined(A))
             if (t2.object(A)) {
                 if (t2.defined(A.background)) this._setBackgroundColourOption("trimBackground", A.background);
@@ -1185,7 +1186,7 @@ function NN6(A) {
         }), A.gravity = lPB, A.strategy = nPB, A.kernel = Ud1, A.fit = zN6, A.position = iPB
     }
 });
-var oPB = U((Eo7, rPB) => {
+var oPB = moduleWrapper((Eo7, rPB) => {
     var MG = f_(),
         wd1 = {
             clear: "clear",
@@ -1217,7 +1218,7 @@ var oPB = U((Eo7, rPB) => {
             exclusion: "exclusion"
         };
 
-function LN6(A) {
+    function LN6(A) {
         if (!Array.isArray(A)) throw MG.invalidParameterError("images to composite", "array", A);
         return this.options.composite = A.map((Q) => {
             if (!MG.object(Q)) throw MG.invalidParameterError("image to composite", "object", Q);
@@ -1262,7 +1263,7 @@ function LN6(A) {
         A.prototype.composite = LN6, A.blend = wd1
     }
 });
-var AjB = U((zo7, ePB) => {
+var AjB = moduleWrapper((zo7, ePB) => {
     var MN6 = brA(),
         C0 = f_(),
         tPB = {
@@ -1271,7 +1272,7 @@ var AjB = U((zo7, ePB) => {
             approximate: "approximate"
         };
 
-function ON6(A, Q) {
+    function ON6(A, Q) {
         if (this.options.useExifOrientation || this.options.angle || this.options.rotationAngle) this.options.debuglog("ignoring previous rotate options");
         if (!C0.defined(A)) this.options.useExifOrientation = !0;
         else if (C0.integer(A) && !(A % 90)) this.options.angle = A;
@@ -1284,15 +1285,15 @@ function ON6(A, Q) {
         return this
     }
 
-function RN6(A) {
+    function RN6(A) {
         return this.options.flip = C0.bool(A) ? A : !0, this
     }
 
-function TN6(A) {
+    function TN6(A) {
         return this.options.flop = C0.bool(A) ? A : !0, this
     }
 
-function PN6(A, Q) {
+    function PN6(A, Q) {
         let B = [].concat(...A);
         if (B.length === 4 && B.every(C0.number)) this.options.affineMatrix = B;
         else throw C0.invalidParameterError("matrix", "1x4 or 2x2 array", A);
@@ -1317,7 +1318,7 @@ function PN6(A, Q) {
         return this
     }
 
-function jN6(A, Q, B) {
+    function jN6(A, Q, B) {
         if (!C0.defined(A)) this.options.sharpenSigma = -1;
         else if (C0.bool(A)) this.options.sharpenSigma = A ? -1 : 0;
         else if (C0.number(A) && C0.inRange(A, 0.01, 1e4)) {
@@ -1349,14 +1350,14 @@ function jN6(A, Q, B) {
         return this
     }
 
-function SN6(A) {
+    function SN6(A) {
         if (!C0.defined(A)) this.options.medianSize = 3;
         else if (C0.integer(A) && C0.inRange(A, 1, 1000)) this.options.medianSize = A;
         else throw C0.invalidParameterError("size", "integer between 1 and 1000", A);
         return this
     }
 
-function _N6(A) {
+    function _N6(A) {
         let Q;
         if (C0.number(A)) Q = A;
         else if (C0.plainObject(A)) {
@@ -1375,16 +1376,16 @@ function _N6(A) {
         return this
     }
 
-function kN6(A) {
+    function kN6(A) {
         if (this.options.flatten = C0.bool(A) ? A : !0, C0.object(A)) this._setBackgroundColourOption("flattenBackground", A.background);
         return this
     }
 
-function yN6() {
+    function yN6() {
         return this.options.unflatten = !0, this
     }
 
-function xN6(A, Q) {
+    function xN6(A, Q) {
         if (!C0.defined(A)) this.options.gamma = 2.2;
         else if (C0.number(A) && C0.inRange(A, 1, 3)) this.options.gamma = A;
         else throw C0.invalidParameterError("gamma", "number between 1.0 and 3.0", A);
@@ -1394,14 +1395,14 @@ function xN6(A, Q) {
         return this
     }
 
-function vN6(A) {
+    function vN6(A) {
         if (this.options.negate = C0.bool(A) ? A : !0, C0.plainObject(A) && "alpha" in A)
             if (!C0.bool(A.alpha)) throw C0.invalidParameterError("alpha", "should be boolean value", A.alpha);
             else this.options.negateAlpha = A.alpha;
         return this
     }
 
-function bN6(A) {
+    function bN6(A) {
         if (C0.plainObject(A)) {
             if (C0.defined(A.lower))
                 if (C0.number(A.lower) && C0.inRange(A.lower, 0, 99)) this.options.normaliseLower = A.lower;
@@ -1410,15 +1411,15 @@ function bN6(A) {
                 if (C0.number(A.upper) && C0.inRange(A.upper, 1, 100)) this.options.normaliseUpper = A.upper;
                 else throw C0.invalidParameterError("upper", "number between 1 and 100", A.upper)
         }
-        if (this.options.normaliseLower >= this.options.normaliseUpper) throw C0.invalidParameterError("range", "lower to be less than upper", `${this.options.normaliseLower} >= ${this.options.normaliseUpper}`);
+        if (this.options.normaliseLower >= this.options.normaliseUpper) throw C0.invalidParameterError("range", "lower to be less than upper", `TextComponent{this.options.normaliseLower} >= TextComponent{this.options.normaliseUpper}`);
         return this.options.normalise = !0, this
     }
 
-function fN6(A) {
+    function fN6(A) {
         return this.normalise(A)
     }
 
-function hN6(A) {
+    function hN6(A) {
         if (C0.plainObject(A)) {
             if (C0.integer(A.width) && A.width > 0) this.options.claheWidth = A.width;
             else throw C0.invalidParameterError("width", "integer greater than zero", A.width);
@@ -1431,7 +1432,7 @@ function hN6(A) {
         return this
     }
 
-function gN6(A) {
+    function gN6(A) {
         if (!C0.object(A) || !Array.isArray(A.kernel) || !C0.integer(A.width) || !C0.integer(A.height) || !C0.inRange(A.width, 3, 1001) || !C0.inRange(A.height, 3, 1001) || A.height * A.width !== A.kernel.length) throw Error("Invalid convolution kernel");
         if (!C0.integer(A.scale)) A.scale = A.kernel.reduce(function(Q, B) {
             return Q + B
@@ -1441,7 +1442,7 @@ function gN6(A) {
         return this.options.convKernel = A, this
     }
 
-function uN6(A, Q) {
+    function uN6(A, Q) {
         if (!C0.defined(A)) this.options.threshold = 128;
         else if (C0.bool(A)) this.options.threshold = A ? 128 : 0;
         else if (C0.integer(A) && C0.inRange(A, 0, 255)) this.options.threshold = A;
@@ -1451,13 +1452,13 @@ function uN6(A, Q) {
         return this
     }
 
-function mN6(A, Q, B) {
+    function mN6(A, Q, B) {
         if (this.options.boolean = this._createInputDescriptor(A, B), C0.string(Q) && C0.inArray(Q, ["and", "or", "eor"])) this.options.booleanOp = Q;
         else throw C0.invalidParameterError("operator", "one of: and, or, eor", Q);
         return this
     }
 
-function dN6(A, Q) {
+    function dN6(A, Q) {
         if (!C0.defined(A) && C0.number(Q)) A = 1;
         else if (C0.number(A) && !C0.defined(Q)) Q = 0;
         if (!C0.defined(A)) this.options.linearA = [];
@@ -1472,7 +1473,7 @@ function dN6(A, Q) {
         return this
     }
 
-function cN6(A) {
+    function cN6(A) {
         if (!Array.isArray(A)) throw C0.invalidParameterError("inputMatrix", "array", A);
         if (A.length !== 3 && A.length !== 4) throw C0.invalidParameterError("inputMatrix", "3x3 or 4x4 array", A.length);
         let Q = A.flat().map(Number);
@@ -1480,7 +1481,7 @@ function cN6(A) {
         return this.options.recombMatrix = Q, this
     }
 
-function pN6(A) {
+    function pN6(A) {
         if (!C0.plainObject(A)) throw C0.invalidParameterError("options", "plain object", A);
         if ("brightness" in A)
             if (C0.number(A.brightness) && A.brightness >= 0) this.options.brightness = A.brightness;

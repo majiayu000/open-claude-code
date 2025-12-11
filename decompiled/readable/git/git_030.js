@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_030.js
+ * 处理时间: 2025-12-09T03:41:37.614Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.990Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -204,13 +207,13 @@
                     let C = X[1].defId ?? X[1].schema.id ?? `schema${this.counter++}`;
                     return X[1].defId = C, {
                         defId: C,
-                        ref: `${B.external.uri("__shared")}#/${F}/${C}`
+                        ref: `TextComponent{B.external.uri("__shared")}#/TextComponent{F}/TextComponent{C}`
                     }
                 }
                 if (X[1] === G) return {
                     ref: "#"
                 };
-                let K = `${"#"}/${F}/`,
+                let K = `TextComponent{"#"}/TextComponent{F}/`,
                     D = X[1].schema.id ?? `__schema${this.counter++}`;
                 return {
                     defId: D,
@@ -249,7 +252,7 @@
                 continue
             }
             if (F.cycle) {
-                if (B.cycles === "throw") throw Error(`Cycle detected: #/${F.cycle?.join("/")}/<root>
+                if (B.cycles === "throw") throw Error(`Cycle detected: #/TextComponent{F.cycle?.join("/")}/<root>
 
 Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.`);
                 else if (B.cycles === "ref") I(X);
@@ -288,7 +291,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
         let J = {};
         if (this.target === "draft-2020-12") J.$schema = "https://json-schema.org/draft/2020-12/schema";
         else if (this.target === "draft-7") J.$schema = "http://json-schema.org/draft-07/schema#";
-        else console.warn(`Invalid target: ${this.target}`);
+        else console.warn(`Invalid target: TextComponent{this.target}`);
         Object.assign(J, G.def);
         let W = B.external?.defs ?? {};
         for (let X of this.seen.entries()) {
@@ -417,14 +420,14 @@ function mF(A, Q) {
             return !1;
         default:
     }
-    throw Error(`Unknown schema type: ${Z.type}`)
+    throw Error(`Unknown schema type: TextComponent{Z.type}`)
 }
-var Fk2 = L(() => {
+var Fk2 = lazyLoader(() => {
     E50();
     SRA()
 });
 var Vk2 = () => {};
-var QWA = L(() => {
+var QWA = lazyLoader(() => {
     SRA();
     Qk2();
     H50();
@@ -464,7 +467,7 @@ var Ck2 = (A, Q) => {
         })
     },
     $2Z, w2Z;
-var Ek2 = L(() => {
+var Ek2 = lazyLoader(() => {
     QWA();
     QWA();
     $2Z = AWA("ZodError", Ck2), w2Z = AWA("ZodError", Ck2, {
@@ -475,7 +478,7 @@ var zk2 = () => {};
 var Uk2 = () => {};
 var $k2 = () => {};
 var wk2 = () => {};
-var qk2 = L(() => {
+var qk2 = lazyLoader(() => {
     QWA();
     QWA();
     Ik2();
@@ -490,10 +493,10 @@ var qk2 = L(() => {
     $k2();
     Y50(D50())
 });
-var Nk2 = L(() => {
+var Nk2 = lazyLoader(() => {
     qk2()
 });
-var Lk2 = L(() => {
+var Lk2 = lazyLoader(() => {
     Nk2()
 });
 
@@ -505,23 +508,23 @@ function _RA(A) {
     if (Nh5(A)) return U50(A);
     return jRA(A)
 }
-var $50 = L(() => {
+var $50 = lazyLoader(() => {
     Lk2();
     A50()
 });
-var a61 = "ExitPlanMode",
-    kRA = "ExitPlanMode";
-var s61 = U((Ok2) => {
+/* EXIT_PLAN_MODE_TOOL_NAME = EXIT_PLAN_MODE = "ExitPlanMode" */
+var EXIT_PLAN_MODE_TOOL_NAME = "ExitPlanMode",
+    EXIT_PLAN_MODE_CONST = "ExitPlanMode";
+var s61 = moduleWrapper((Ok2) => {
     Object.defineProperty(Ok2, "__esModule", {
         value: !0
     });
     Ok2.getDeepKeys = Ok2.toJSON = void 0;
-
-var Lh5 = ["function", "symbol", "undefined"],
+    var Lh5 = ["function", "symbol", "undefined"],
         Mh5 = ["constructor", "prototype", "__proto__"],
         Oh5 = Object.getPrototypeOf({});
 
-function Rh5() {
+    function Rh5() {
         let A = {},
             Q = this;
         for (let B of Mk2(Q))
@@ -533,7 +536,7 @@ function Rh5() {
     }
     Ok2.toJSON = Rh5;
 
-function Mk2(A, Q = []) {
+    function Mk2(A, Q = []) {
         let B = [];
         while (A && A !== Oh5) B = B.concat(Object.getOwnPropertyNames(A), Object.getOwnPropertySymbols(A)), A = Object.getPrototypeOf(A);
         let G = new Set(B);
@@ -542,22 +545,22 @@ function Mk2(A, Q = []) {
     }
     Ok2.getDeepKeys = Mk2
 });
-var w50 = U((jk2) => {
+var w50 = moduleWrapper((jk2) => {
     Object.defineProperty(jk2, "__esModule", {
         value: !0
     });
     jk2.addInspectMethod = jk2.format = void 0;
-    var Tk2 = UA("util"),
+    var Tk2 = nodeRequire("util"),
         Ph5 = s61(),
         Pk2 = Tk2.inspect.custom || Symbol.for("nodejs.util.inspect.custom");
     jk2.format = Tk2.format;
 
-function jh5(A) {
+    function jh5(A) {
         A[Pk2] = Sh5
     }
     jk2.addInspectMethod = jh5;
 
-function Sh5() {
+    function Sh5() {
         let A = {},
             Q = this;
         for (let B of Ph5.getDeepKeys(Q)) {
@@ -567,7 +570,7 @@ function Sh5() {
         return delete A[Pk2], A
     }
 });
-var vk2 = U((yk2) => {
+var vk2 = moduleWrapper((yk2) => {
     Object.defineProperty(yk2, "__esModule", {
         value: !0
     });
@@ -575,17 +578,17 @@ var vk2 = U((yk2) => {
     var kh5 = /\r?\n/,
         yh5 = /\bono[ @]/;
 
-function xh5(A) {
+    function xh5(A) {
         return Boolean(A && A.configurable && typeof A.get === "function")
     }
     yk2.isLazyStack = xh5;
 
-function vh5(A) {
+    function vh5(A) {
         return Boolean(!A || A.writable || typeof A.set === "function")
     }
     yk2.isWritableStack = vh5;
 
-function _k2(A, Q) {
+    function _k2(A, Q) {
         let B = kk2(A.stack),
             G = Q ? Q.stack : void 0;
         if (B && G) return B + `
@@ -595,7 +598,7 @@ function _k2(A, Q) {
     }
     yk2.joinStacks = _k2;
 
-function bh5(A, Q, B) {
+    function bh5(A, Q, B) {
         if (B) Object.defineProperty(Q, "stack", {
             get: () => {
                 let G = A.get.apply(Q);
@@ -610,7 +613,7 @@ function bh5(A, Q, B) {
     }
     yk2.lazyJoinStacks = bh5;
 
-function kk2(A) {
+    function kk2(A) {
         if (A) {
             let Q = A.split(kh5),
                 B;
@@ -629,7 +632,7 @@ function kk2(A) {
         return A
     }
 
-function fh5(A, Q) {
+    function fh5(A, Q) {
         Object.defineProperty(A, "stack", {
             get: () => kk2(Q.get.apply(A)),
             enumerable: !1,
@@ -637,7 +640,7 @@ function fh5(A, Q) {
         })
     }
 });
-var uk2 = U((hk2) => {
+var uk2 = moduleWrapper((hk2) => {
     Object.defineProperty(hk2, "__esModule", {
         value: !0
     });
@@ -647,7 +650,7 @@ var uk2 = U((hk2) => {
         fk2 = s61(),
         mh5 = ["name", "message", "stack"];
 
-function dh5(A, Q, B) {
+    function dh5(A, Q, B) {
         let G = A;
         if (ch5(G, Q), Q && typeof Q === "object") ph5(G, Q);
         if (G.toJSON = fk2.toJSON, bk2.addInspectMethod) bk2.addInspectMethod(G);
@@ -656,13 +659,13 @@ function dh5(A, Q, B) {
     }
     hk2.extendError = dh5;
 
-function ch5(A, Q) {
+    function ch5(A, Q) {
         let B = Object.getOwnPropertyDescriptor(A, "stack");
         if (r61.isLazyStack(B)) r61.lazyJoinStacks(B, A, Q);
         else if (r61.isWritableStack(B)) A.stack = r61.joinStacks(A, Q)
     }
 
-function ph5(A, Q) {
+    function ph5(A, Q) {
         let B = fk2.getDeepKeys(Q, mh5),
             G = A,
             Z = Q;
@@ -672,14 +675,14 @@ function ph5(A, Q) {
             } catch (Y) {}
     }
 });
-var ck2 = U((mk2) => {
+var ck2 = moduleWrapper((mk2) => {
     Object.defineProperty(mk2, "__esModule", {
         value: !0
     });
     mk2.normalizeArgs = mk2.normalizeOptions = void 0;
     var lh5 = w50();
 
-function ih5(A) {
+    function ih5(A) {
         return A = A || {}, {
             concatMessages: A.concatMessages === void 0 ? !0 : Boolean(A.concatMessages),
             format: A.format === void 0 ? lh5.format : typeof A.format === "function" ? A.format : !1
@@ -687,7 +690,7 @@ function ih5(A) {
     }
     mk2.normalizeOptions = ih5;
 
-function nh5(A, Q) {
+    function nh5(A, Q) {
         let B, G, Z, I = "";
         if (typeof A[0] === "string") Z = A;
         else if (typeof A[1] === "string") {
@@ -708,7 +711,7 @@ function nh5(A, Q) {
     }
     mk2.normalizeArgs = nh5
 });
-var N50 = U((lk2) => {
+var N50 = moduleWrapper((lk2) => {
     Object.defineProperty(lk2, "__esModule", {
         value: !0
     });
@@ -719,10 +722,10 @@ var N50 = U((lk2) => {
         rh5 = q50;
     lk2.Ono = rh5;
 
-function q50(A, Q) {
+    function q50(A, Q) {
         Q = pk2.normalizeOptions(Q);
 
-function B(...G) {
+        function B(...G) {
             let {
                 originalError: Z,
                 props: I,
@@ -741,7 +744,7 @@ function B(...G) {
         else return o61.extendError(Q)
     }
 });
-var sk2 = U((nk2) => {
+var sk2 = moduleWrapper((nk2) => {
     Object.defineProperty(nk2, "__esModule", {
         value: !0
     });
@@ -758,7 +761,7 @@ var sk2 = U((nk2) => {
     Cy.uri = new H0A.Ono(URIError);
     var th5 = Cy;
 
-function Cy(...A) {
+    function Cy(...A) {
         let Q = A[0];
         if (typeof Q === "object" && typeof Q.name === "string") {
             for (let B of Object.values(th5))
@@ -770,13 +773,13 @@ function Cy(...A) {
         return Cy.error.apply(void 0, A)
     }
 });
-var ok2 = U((rk2) => {
+var ok2 = moduleWrapper((rk2) => {
     Object.defineProperty(rk2, "__esModule", {
         value: !0
     });
-    var A9Z = UA("util")
+    var A9Z = nodeRequire("util")
 });
-var Xn = U((MP, BWA) => {
+var Xn = moduleWrapper((MP, BWA) => {
     var eh5 = MP && MP.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             Object.defineProperty(A, G, {
@@ -815,7 +818,7 @@ var Xn = U((MP, BWA) => {
     MP.default = tk2.ono;
     if (typeof BWA === "object" && typeof BWA.exports === "object") BWA.exports = Object.assign(BWA.exports.default, BWA.exports)
 });
-var VO = U((Yg5, ek2) => {
+var VO = moduleWrapper((Yg5, ek2) => {
     var t61 = /^win/.test(process.platform),
         Bg5 = /\//g,
         Gg5 = /^(\w{2,}):\/\//i,
@@ -823,9 +826,9 @@ var VO = U((Yg5, ek2) => {
         Zg5 = /~1/g,
         Ig5 = /~0/g,
         L50 = [/\?/g, "%3F", /\#/g, "%23"],
-        M50 = [/\%23/g, "#", /\%24/g, "$", /\%26/g, "&", /\%2C/g, ",", /\%40/g, "@"];
-    Yg5.parse = UA("url").parse;
-    Yg5.resolve = UA("url").resolve;
+        M50 = [/\%23/g, "#", /\%24/g, "TextComponent", /\%26/g, "&", /\%2C/g, ",", /\%40/g, "@"];
+    Yg5.parse = nodeRequire("url").parse;
+    Yg5.resolve = nodeRequire("url").resolve;
     Yg5.cwd = function() {
         let Q = process.cwd(),
             B = Q.slice(-1);
@@ -893,7 +896,7 @@ var VO = U((Yg5, ek2) => {
         })
     }
 });
-var OP = U((Tg5) => {
+var OP = moduleWrapper((Tg5) => {
     var {
         Ono: Ay2
     } = Xn(), {
@@ -905,14 +908,14 @@ var OP = U((Tg5) => {
             this.code = "EUNKNOWN", this.message = Q, this.source = B, this.path = null, Ay2.extend(this)
         }
         get footprint() {
-            return `${this.path}+${this.source}+${this.code}+${this.message}`
+            return `TextComponent{this.path}+TextComponent{this.source}+TextComponent{this.code}+TextComponent{this.message}`
         }
     };
     Vn(Fn);
     var By2 = Tg5.JSONParserErrorGroup = class A extends Error {
         constructor(Q) {
             super();
-            this.files = Q, this.message = `${this.errors.length} error${this.errors.length>1?"s":""} occurred while reading '${wg5(Q.$refs._root$Ref.path)}'`, Ay2.extend(this)
+            this.files = Q, this.message = `TextComponent{this.errors.length} error${this.errors.length>1?"s":""} occurred while reading 'TextComponent{wg5(Q.$refs._root$Ref.path)}'`, Ay2.extend(this)
         }
         static getParserErrors(Q) {
             let B = [];
@@ -927,48 +930,48 @@ var OP = U((Tg5) => {
     Vn(By2);
     var qg5 = Tg5.ParserError = class extends Fn {
         constructor(Q, B) {
-            super(`Error parsing ${B}: ${Q}`, B);
+            super(`Error parsing TextComponent{B}: TextComponent{Q}`, B);
             this.code = "EPARSER"
         }
     };
     Vn(qg5);
     var Ng5 = Tg5.UnmatchedParserError = class extends Fn {
         constructor(Q) {
-            super(`Could not find parser for "${Q}"`, Q);
+            super(`Could not find parser for "TextComponent{Q}"`, Q);
             this.code = "EUNMATCHEDPARSER"
         }
     };
     Vn(Ng5);
     var Lg5 = Tg5.ResolverError = class extends Fn {
         constructor(Q, B) {
-            super(Q.message || `Error reading file "${B}"`, B);
+            super(Q.message || `Error reading file "TextComponent{B}"`, B);
             if (this.code = "ERESOLVER", "code" in Q) this.ioErrorCode = String(Q.code)
         }
     };
     Vn(Lg5);
     var Mg5 = Tg5.UnmatchedResolverError = class extends Fn {
         constructor(Q) {
-            super(`Could not find resolver for "${Q}"`, Q);
+            super(`Could not find resolver for "TextComponent{Q}"`, Q);
             this.code = "EUNMATCHEDRESOLVER"
         }
     };
     Vn(Mg5);
     var Og5 = Tg5.MissingPointerError = class extends Fn {
         constructor(Q, B) {
-            super(`Token "${Q}" does not exist.`, Qy2(B));
+            super(`Token "TextComponent{Q}" does not exist.`, Qy2(B));
             this.code = "EMISSINGPOINTER"
         }
     };
     Vn(Og5);
     var Rg5 = Tg5.InvalidPointerError = class extends Fn {
         constructor(Q, B) {
-            super(`Invalid $ref pointer "${Q}". Pointers must begin with "#/"`, Qy2(B));
+            super(`Invalid $ref pointer "TextComponent{Q}". Pointers must begin with "#/"`, Qy2(B));
             this.code = "EINVALIDPOINTER"
         }
     };
     Vn(Rg5);
 
-function Vn(A) {
+    function Vn(A) {
         Object.defineProperty(A.prototype, "name", {
             value: A.name,
             enumerable: !0
@@ -982,7 +985,7 @@ function Vn(A) {
         return A
     }
 });
-var yRA = U((V9Z, Iy2) => {
+var yRA = moduleWrapper((V9Z, Iy2) => {
     Iy2.exports = Kn;
     var R50 = GWA(),
         T50 = VO(),
@@ -997,7 +1000,7 @@ var yRA = U((V9Z, Iy2) => {
         bg5 = /~1/g,
         fg5 = /~0/g;
 
-function Kn(A, Q, B) {
+    function Kn(A, Q, B) {
         this.$ref = A, this.path = Q, this.originalPath = B || Q, this.value = void 0, this.circular = !1, this.indirections = 0
     }
     Kn.prototype.resolve = function(A, Q, B) {
@@ -1041,7 +1044,7 @@ function Kn(A, Q, B) {
         return A
     };
 
-function e61(A, Q) {
+    function e61(A, Q) {
         if (R50.isAllowed$Ref(A.value, Q)) {
             let B = T50.resolve(A.path, A.value.$ref);
             if (B === A.path) A.circular = !0;
@@ -1055,21 +1058,21 @@ function e61(A, Q) {
         }
     }
 
-function Gy2(A, Q, B) {
+    function Gy2(A, Q, B) {
         if (A.value && typeof A.value === "object")
             if (Q === "-" && Array.isArray(A.value)) A.value.push(B);
             else A.value[Q] = B;
-        else throw new Sg5(`Error assigning $ref pointer "${A.path}". 
-Cannot set "${Q}" of a non-object.`);
+        else throw new Sg5(`Error assigning $ref pointer "TextComponent{A.path}". 
+Cannot set "TextComponent{Q}" of a non-object.`);
         return B
     }
 
-function Zy2(A) {
+    function Zy2(A) {
         if (yg5(A)) throw A;
         return A
     }
 });
-var GWA = U((K9Z, Wy2) => {
+var GWA = moduleWrapper((K9Z, Wy2) => {
     Wy2.exports = lE;
     var Jy2 = yRA(),
         {
@@ -1083,7 +1086,7 @@ var GWA = U((K9Z, Wy2) => {
             getHash: dg5
         } = VO();
 
-function lE() {
+    function lE() {
         this.path = void 0, this.value = void 0, this.$refs = void 0, this.pathType = void 0, this.errors = void 0
     }
     lE.prototype.addError = function(A) {
@@ -1147,13 +1150,13 @@ function lE() {
         } else return Q
     }
 });
-var Ky2 = U((D9Z, Vy2) => {
+var Ky2 = moduleWrapper((D9Z, Vy2) => {
     var {
         ono: Xy2
     } = Xn(), cg5 = GWA(), Dn = VO();
     Vy2.exports = RP;
 
-function RP() {
+    function RP() {
         this.circular = !1, this._$refs = {}, this._root$Ref = null
     }
     RP.prototype.paths = function(A) {
@@ -1182,8 +1185,8 @@ function RP() {
         let B = Dn.resolve(this._root$Ref.path, A),
             G = Dn.stripHash(B),
             Z = this._$refs[G];
-        if (!Z) throw Xy2(`Error resolving $ref pointer "${A}". 
-"${G}" not found.`);
+        if (!Z) throw Xy2(`Error resolving $ref pointer "TextComponent{A}". 
+"TextComponent{G}" not found.`);
         Z.set(B, Q)
     };
     RP.prototype._add = function(A) {
@@ -1195,8 +1198,8 @@ function RP() {
         let G = Dn.resolve(this._root$Ref.path, A),
             Z = Dn.stripHash(G),
             I = this._$refs[Z];
-        if (!I) throw Xy2(`Error resolving $ref pointer "${A}". 
-"${Z}" not found.`);
+        if (!I) throw Xy2(`Error resolving $ref pointer "TextComponent{A}". 
+"TextComponent{Z}" not found.`);
         return I.resolve(G, B, A, Q)
     };
     RP.prototype._get$Ref = function(A) {
@@ -1205,7 +1208,7 @@ function RP() {
         return this._$refs[Q]
     };
 
-function Fy2(A, Q) {
+    function Fy2(A, Q) {
         let B = Object.keys(A);
         if (Q = Array.isArray(Q[0]) ? Q[0] : Array.prototype.slice.call(Q), Q.length > 0 && Q[0]) B = B.filter((G) => {
             return Q.indexOf(A[G].pathType) !== -1
@@ -1218,7 +1221,7 @@ function Fy2(A, Q) {
         })
     }
 });
-var Hy2 = U((pg5) => {
+var Hy2 = moduleWrapper((pg5) => {
     pg5.all = function(A) {
         return Object.keys(A).filter((Q) => {
             return typeof A[Q] === "object"
@@ -1242,7 +1245,7 @@ var Hy2 = U((pg5) => {
         return new Promise((J, W) => {
             X();
 
-function X() {
+            function X() {
                 if (Z = A[Y++], !Z) return W(I);
                 try {
                     let D = Dy2(Z, Q, B, F, G);
@@ -1254,19 +1257,19 @@ function X() {
                 }
             }
 
-function F(D, H) {
+            function F(D, H) {
                 if (D) K(D);
                 else V(H)
             }
 
-function V(D) {
+            function V(D) {
                 J({
                     plugin: Z,
                     result: D
                 })
             }
 
-function K(D) {
+            function K(D) {
                 I = {
                     plugin: Z,
                     error: D
@@ -1275,7 +1278,7 @@ function K(D) {
         })
     };
 
-function Dy2(A, Q, B, G, Z) {
+    function Dy2(A, Q, B, G, Z) {
         let I = A[Q];
         if (typeof I === "function") return I.apply(A, [B, G, Z]);
         if (!G) {
@@ -1286,7 +1289,7 @@ function Dy2(A, Q, B, G, Z) {
         return I
     }
 });
-var j50 = U((C9Z, Uy2) => {
+var j50 = moduleWrapper((C9Z, Uy2) => {
     var {
         ono: P50
     } = Xn(), Cy2 = VO(), Hn = Hy2(), {
@@ -1297,8 +1300,7 @@ var j50 = U((C9Z, Uy2) => {
         isHandledError: og5
     } = OP();
     Uy2.exports = tg5;
-
-async function tg5(A, Q, B) {
+    async function tg5(A, Q, B) {
         A = Cy2.stripHash(A);
         let G = Q._add(A),
             Z = {
@@ -1316,47 +1318,47 @@ async function tg5(A, Q, B) {
         }
     }
 
-function eg5(A, Q, B) {
+    function eg5(A, Q, B) {
         return new Promise((G, Z) => {
             let I = Hn.all(Q.resolve);
             I = Hn.filter(I, "canRead", A), Hn.sort(I), Hn.run(I, "read", A, B).then(G, Y);
 
-function Y(J) {
+            function Y(J) {
                 if (!J && Q.continueOnError) Z(new rg5(A.url));
-                else if (!J || !("error" in J)) Z(P50.syntax(`Unable to resolve $ref pointer "${A.url}"`));
+                else if (!J || !("error" in J)) Z(P50.syntax(`Unable to resolve $ref pointer "TextComponent{A.url}"`));
                 else if (J.error instanceof Ey2) Z(J.error);
                 else Z(new Ey2(J, A.url))
             }
         })
     }
 
-function Au5(A, Q, B) {
+    function Au5(A, Q, B) {
         return new Promise((G, Z) => {
             let I = Hn.all(Q.parse),
                 Y = Hn.filter(I, "canParse", A),
                 J = Y.length > 0 ? Y : I;
             Hn.sort(J), Hn.run(J, "parse", A, B).then(W, X);
 
-function W(F) {
-                if (!F.plugin.allowEmpty && Qu5(F.result)) Z(P50.syntax(`Error parsing "${A.url}" as ${F.plugin.name}. 
+            function W(F) {
+                if (!F.plugin.allowEmpty && Qu5(F.result)) Z(P50.syntax(`Error parsing "TextComponent{A.url}" as TextComponent{F.plugin.name}. 
 Parsed value is empty`));
                 else G(F)
             }
 
-function X(F) {
+            function X(F) {
                 if (!F && Q.continueOnError) Z(new sg5(A.url));
-                else if (!F || !("error" in F)) Z(P50.syntax(`Unable to parse ${A.url}`));
+                else if (!F || !("error" in F)) Z(P50.syntax(`Unable to parse TextComponent{A.url}`));
                 else if (F.error instanceof zy2) Z(F.error);
                 else Z(new zy2(F.error.message, A.url))
             }
         })
     }
 
-function Qu5(A) {
+    function Qu5(A) {
         return A === void 0 || typeof A === "object" && Object.keys(A).length === 0 || typeof A === "string" && A.trim().length === 0 || Buffer.isBuffer(A) && A.length === 0
     }
 });
-var wy2 = U((E9Z, $y2) => {
+var wy2 = moduleWrapper((E9Z, $y2) => {
     var {
         ParserError: Bu5
     } = OP();
@@ -1377,22 +1379,22 @@ var wy2 = U((E9Z, $y2) => {
         }
     }
 });
-var ZWA = U((Wu5, C0A) => {
+var ZWA = moduleWrapper((Wu5, C0A) => {
     function qy2(A) {
         return typeof A > "u" || A === null
     }
 
-function Gu5(A) {
+    function Gu5(A) {
         return typeof A === "object" && A !== null
     }
 
-function Zu5(A) {
+    function Zu5(A) {
         if (Array.isArray(A)) return A;
         else if (qy2(A)) return [];
         return [A]
     }
 
-function Iu5(A, Q) {
+    function Iu5(A, Q) {
         var B, G, Z, I;
         if (Q) {
             I = Object.keys(Q);
@@ -1401,14 +1403,14 @@ function Iu5(A, Q) {
         return A
     }
 
-function Yu5(A, Q) {
+    function Yu5(A, Q) {
         var B = "",
             G;
         for (G = 0; G < Q; G += 1) B += A;
         return B
     }
 
-function Ju5(A) {
+    function Ju5(A) {
         return A === 0 && Number.NEGATIVE_INFINITY === 1 / A
     }
     Wu5.isNothing = qy2;
@@ -1418,7 +1420,7 @@ function Ju5(A) {
     Wu5.isNegativeZero = Ju5;
     Wu5.extend = Iu5
 });
-var IWA = U((z9Z, Ly2) => {
+var IWA = moduleWrapper((z9Z, Ly2) => {
     function Ny2(A, Q) {
         var B = "",
             G = A.reason || "(unknown reason)";
@@ -1430,7 +1432,7 @@ var IWA = U((z9Z, Ly2) => {
         return G + " " + B
     }
 
-function xRA(A, Q) {
+    function xRA(A, Q) {
         if (Error.call(this), this.name = "YAMLException", this.reason = A, this.mark = Q, this.message = Ny2(this, !1), Error.captureStackTrace) Error.captureStackTrace(this, this.constructor);
         else this.stack = Error().stack || ""
     }
@@ -1441,10 +1443,10 @@ function xRA(A, Q) {
     };
     Ly2.exports = xRA
 });
-var Oy2 = U((U9Z, My2) => {
+var Oy2 = moduleWrapper((U9Z, My2) => {
     var vRA = ZWA();
 
-function S50(A, Q, B, G, Z) {
+    function S50(A, Q, B, G, Z) {
         var I = "",
             Y = "",
             J = Math.floor(Z / 2) - 1;
@@ -1456,11 +1458,11 @@ function S50(A, Q, B, G, Z) {
         }
     }
 
-function _50(A, Q) {
+    function _50(A, Q) {
         return vRA.repeat(" ", Q - A.length) + A
     }
 
-function Cu5(A, Q) {
+    function Cu5(A, Q) {
         if (Q = Object.create(Q || null), !A.buffer) return null;
         if (!Q.maxLength) Q.maxLength = 79;
         if (typeof Q.indent !== "number") Q.indent = 1;
@@ -1493,12 +1495,12 @@ function Cu5(A, Q) {
     }
     My2.exports = Cu5
 });
-var IC = U(($9Z, Ty2) => {
+var IC = moduleWrapper(($9Z, Ty2) => {
     var Ry2 = IWA(),
         Eu5 = ["kind", "multi", "resolve", "construct", "instanceOf", "predicate", "represent", "representName", "defaultStyle", "styleAliases"],
         zu5 = ["scalar", "sequence", "mapping"];
 
-function Uu5(A) {
+    function Uu5(A) {
         var Q = {};
         if (A !== null) Object.keys(A).forEach(function(B) {
             A[B].forEach(function(G) {

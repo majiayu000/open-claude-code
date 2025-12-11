@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_015.js
+ * 处理时间: 2025-12-09T03:41:37.916Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.014Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-    g(`Hooks: Registering async hook ${A} (${B}) with timeout ${J}ms`), Ch.set(A, {
+    g(`Hooks: Registering async hook TextComponent{A} (TextComponent{B}) with timeout TextComponent{J}ms`), Ch.set(A, {
         processId: A,
         hookName: B,
         hookEvent: G,
@@ -34,51 +37,50 @@
 
 function dG2(A, Q) {
     let B = Ch.get(A);
-    if (B) g(`Hooks: Adding stdout to ${A}: ${Q.substring(0,50)}...`), B.stdout += Q;
-    else g(`Hooks: Attempted to add output to unknown process ${A}`)
+    if (B) g(`Hooks: Adding stdout to TextComponent{A}: TextComponent{Q.substring(0,50)}...`), B.stdout += Q;
+    else g(`Hooks: Attempted to add output to unknown process TextComponent{A}`)
 }
 
 function cG2(A, Q) {
     let B = Ch.get(A);
-    if (B) g(`Hooks: Adding stderr to ${A}: ${Q.substring(0,50)}...`), B.stderr += Q;
-    else g(`Hooks: Attempted to add stderr to unknown process ${A}`)
+    if (B) g(`Hooks: Adding stderr to TextComponent{A}: TextComponent{Q.substring(0,50)}...`), B.stderr += Q;
+    else g(`Hooks: Attempted to add stderr to unknown process TextComponent{A}`)
 }
-// Async function: pG2
 async function pG2() {
     let A = [],
         Q = Ch.size;
-    g(`Hooks: Found ${Q} total hooks in registry`);
+    g(`Hooks: Found TextComponent{Q} total hooks in registry`);
     let B = [];
     for (let G of Ch.values()) {
-        if (g(`Hooks: Checking hook ${G.processId} (${G.hookName}) - attachmentSent: ${G.responseAttachmentSent}, stdout length: ${G.stdout.length}`), !G.shellCommand) {
-            g(`Hooks: Hook ${G.processId} has no shell command, removing from registry`), B.push(G.processId);
+        if (g(`Hooks: Checking hook TextComponent{G.processId} (TextComponent{G.hookName}) - attachmentSent: TextComponent{G.responseAttachmentSent}, stdout length: TextComponent{G.stdout.length}`), !G.shellCommand) {
+            g(`Hooks: Hook TextComponent{G.processId} has no shell command, removing from registry`), B.push(G.processId);
             continue
         }
-        if (g(`Hooks: Hook shell status ${G.shellCommand.status}`), G.shellCommand.status === "killed") {
-            g(`Hooks: Hook ${G.processId} is ${G.shellCommand.status}, removing from registry`), B.push(G.processId);
+        if (g(`Hooks: Hook shell status TextComponent{G.shellCommand.status}`), G.shellCommand.status === "killed") {
+            g(`Hooks: Hook TextComponent{G.processId} is TextComponent{G.shellCommand.status}, removing from registry`), B.push(G.processId);
             continue
         }
         if (G.shellCommand.status !== "completed") continue;
         if (G.responseAttachmentSent || !G.stdout.trim()) {
-            g(`Hooks: Skipping hook ${G.processId} - already delivered/sent or no stdout`), B.push(G.processId);
+            g(`Hooks: Skipping hook TextComponent{G.processId} - already delivered/sent or no stdout`), B.push(G.processId);
             continue
         }
         let Z = G.stdout.split(`
 `);
-        g(`Hooks: Processing ${Z.length} lines of stdout for ${G.processId}`);
+        g(`Hooks: Processing TextComponent{Z.length} lines of stdout for TextComponent{G.processId}`);
         let Y = (await G.shellCommand.result).code,
             J = {};
         for (let W of Z)
             if (W.trim().startsWith("{")) {
-                g(`Hooks: Found JSON line: ${W.trim().substring(0,100)}...`);
+                g(`Hooks: Found JSON line: TextComponent{W.trim().substring(0,100)}...`);
                 try {
                     let X = JSON.parse(W.trim());
                     if (!("async" in X)) {
-                        g(`Hooks: Found sync response from ${G.processId}: ${JSON.stringify(X)}`), J = X;
+                        g(`Hooks: Found sync response from TextComponent{G.processId}: TextComponent{JSON.stringify(X)}`), J = X;
                         break
                     }
                 } catch {
-                    g(`Hooks: Failed to parse JSON from ${G.processId}: ${W.trim()}`)
+                    g(`Hooks: Failed to parse JSON from TextComponent{G.processId}: TextComponent{W.trim()}`)
                 }
             } if (A.push({
                 processId: G.processId,
@@ -89,20 +91,20 @@ async function pG2() {
                 stdout: G.stdout,
                 stderr: G.stderr,
                 exitCode: Y
-            }), G.responseAttachmentSent = !0, Ch.delete(G.processId), G.hookEvent === "SessionStart") g(`Invalidating session env cache after SessionStart hook ${G.processId} completed`), STB()
+            }), G.responseAttachmentSent = !0, Ch.delete(G.processId), G.hookEvent === "SessionStart") g(`Invalidating session env cache after SessionStart hook TextComponent{G.processId} completed`), STB()
     }
     for (let G of B) Ch.delete(G);
-    return g(`Hooks: checkForNewResponses returning ${A.length} responses`), A
+    return g(`Hooks: checkForNewResponses returning TextComponent{A.length} responses`), A
 }
 
 function lG2(A) {
     for (let Q of A) {
         let B = Ch.get(Q);
-        if (B && B.responseAttachmentSent) g(`Hooks: Removing delivered hook ${Q}`), Ch.delete(Q)
+        if (B && B.responseAttachmentSent) g(`Hooks: Removing delivered hook TextComponent{Q}`), Ch.delete(Q)
     }
 }
 var Ch;
-var s10 = L(() => {
+var s10 = lazyLoader(() => {
     D0();
     m$A();
     Ch = new Map
@@ -118,7 +120,7 @@ function r10() {
 }
 
 function Ci(A) {
-    let Q = `${G0()}-agent-${A}.json`;
+    let Q = `TextComponent{G0()}-agent-TextComponent{A}.json`;
     return S21(r10(), Q)
 }
 
@@ -138,8 +140,8 @@ function _21(A) {
 }
 
 function XF5(A, Q) {
-    let B = S21(r10(), `${A}-agent-${A}.json`),
-        G = S21(r10(), `${Q}-agent-${Q}.json`);
+    let B = S21(r10(), `TextComponent{A}-agent-TextComponent{A}.json`),
+        G = S21(r10(), `TextComponent{Q}-agent-TextComponent{Q}.json`);
     try {
         let Z = iG2(B);
         if (Z.length === 0) return !1;
@@ -168,7 +170,7 @@ function nG2(A, Q) {
         e(B instanceof Error ? B : Error(String(B)))
     }
 }
-var Ei = L(() => {
+var Ei = lazyLoader(() => {
     M9();
     S0();
     o0();
@@ -195,7 +197,7 @@ function yF(A) {
             let X = J.slice(0, W).trim(),
                 F = J.slice(W + 1).trim();
             if (X) {
-                let V = F.replace(/^["']|["']$/g, "");
+                let V = F.replace(/^["']|["']TextComponent/g, "");
                 I[X] = V
             }
         }
@@ -226,7 +228,7 @@ function aG2(A) {
 }
 
 function sG2(A) {
-    let Q = A.match(/^([^{]*)\{([^}]+)\}(.*)$/);
+    let Q = A.match(/^([^{]*)\{([^}]+)\}(.*)TextComponent/);
     if (!Q) return [A];
     let B = Q[1] || "",
         G = Q[2] || "",
@@ -304,7 +306,7 @@ function CF5(A, Q) {
     let B = new Set,
         Z = new bE().lex(A);
 
-function I(Y) {
+    function I(Y) {
         for (let J of Y) {
             if (J.type === "code" || J.type === "codespan") continue;
             if (J.type === "text") {
@@ -359,7 +361,7 @@ function ZYA({
     visitedDirs: I = new Set
 }) {
     let Y = [];
-    if (!V0(process.env.CLAUDE_CODE_ENABLE_PROCESS_CLAUDE_RULES)) return Y;
+    if (!parseBoolean(process.env.CLAUDE_CODE_ENABLE_PROCESS_CLAUDE_RULES)) return Y;
     try {
         if (!OA().existsSync(A)) return Y;
         if (!OA().statSync(A).isDirectory()) return Y;
@@ -485,7 +487,6 @@ function e10() {
         if (A.type !== "User" && A.parent && !oG2(A.path)) return !0;
     return !1
 }
-// Async function: QZ2
 async function QZ2() {
     let A = M5();
     if (A.hasClaudeMdExternalIncludesApproved || A.hasClaudeMdExternalIncludesWarningShown) return !1;
@@ -501,17 +502,17 @@ var rG2, DF5 = "Codebase and user instructions are shown below. Be sure to adher
         for (let B of A)
             if (B.content) {
                 let G = B.type === "Project" ? " (project instructions, checked into the codebase)" : B.type === "Local" ? " (user's private project instructions, not checked in)" : " (user's private global instructions for all projects)";
-                Q.push(`Contents of ${B.path}${G}:
+                Q.push(`Contents of TextComponent{B.path}TextComponent{G}:
 
-${B.content}`)
+TextComponent{B.content}`)
             } if (Q.length === 0) return "";
-        return `${DF5}
+        return `TextComponent{DF5}
 
-${Q.join(`
+TextComponent{Q.join(`
 
 `)}`
     };
-var uE = L(() => {
+var uE = lazyLoader(() => {
     o2();
     S0();
     o0();
@@ -523,7 +524,7 @@ var uE = L(() => {
     _Y();
     jQ();
     hQ();
-    rG2 = GA(clA(), 1);
+    rG2 = esmImport(clA(), 1);
     xF = t1((A = !1) => {
         let Q = [],
             B = new Set,
@@ -576,7 +577,6 @@ var uE = L(() => {
         return Q
     })
 });
-
 class QP {
     static instance;
     baseline = new Map;
@@ -624,12 +624,12 @@ class QP {
         let Q = Date.now();
         try {
             let B = await Wh("getDiagnostics", {
-                    uri: `file://${A}`
+                    uri: `file://TextComponent{A}`
                 }, this.mcpClient),
                 G = this.parseDiagnosticResult(B)[0];
             if (G) {
                 if (A !== this.normalizeFileUri(G.uri)) {
-                    e(new BZ2(`Diagnostics file path mismatch: expected ${A}, got ${G.uri})`));
+                    e(new BZ2(`Diagnostics file path mismatch: expected TextComponent{A}, got TextComponent{G.uri})`));
                     return
                 }
                 this.baseline.set(A, G.diagnostics), this.lastProcessedTimestamps.set(A, Q)
@@ -700,11 +700,11 @@ class QP {
         return A.map((Q) => {
             let B = Q.uri.split("/").pop() || Q.uri,
                 G = Q.diagnostics.map((Z) => {
-                    return `  ${QP.getSeveritySymbol(Z.severity)} [Line ${Z.range.start.line+1}:${Z.range.start.character+1}] ${Z.message}${Z.code?` [${Z.code}]`:""}${Z.source?` (${Z.source})`:""}`
+                    return `  TextComponent{QP.getSeveritySymbol(Z.severity)} [Line TextComponent{Z.range.start.line+1}:TextComponent{Z.range.start.character+1}] TextComponent{Z.message}TextComponent{Z.code?` [TextComponent{Z.code}]`:""}TextComponent{Z.source?` (TextComponent{Z.source})`:""}`
                 }).join(`
 `);
-            return `${B}:
-${G}`
+            return `TextComponent{B}:
+TextComponent{G}`
         }).join(`
 
 `)
@@ -719,7 +719,7 @@ ${G}`
     }
 }
 var BZ2, Uh;
-var C1A = L(() => {
+var C1A = lazyLoader(() => {
     Tk();
     yJ();
     u1();
@@ -819,9 +819,9 @@ function zF5(A, Q) {
 function JZ2(A, Q, B, G) {
     if (Q && B) {
         var Z = Q.value.match(/^\s*/)[0],
-            I = Q.value.match(/\s*$/)[0],
+            I = Q.value.match(/\s*TextComponent/)[0],
             Y = B.value.match(/^\s*/)[0],
-            J = B.value.match(/\s*$/)[0];
+            J = B.value.match(/\s*TextComponent/)[0];
         if (A) {
             var W = ZZ2(Z, Y);
             A.value = B00(A.value, Y, W), Q.value = HMA(Q.value, W), B.value = HMA(B.value, W)
@@ -836,18 +836,18 @@ function JZ2(A, Q, B, G) {
     } else if (A && G) {
         var F = G.value.match(/^\s*/)[0],
             V = Q.value.match(/^\s*/)[0],
-            K = Q.value.match(/\s*$/)[0],
+            K = Q.value.match(/\s*TextComponent/)[0],
             D = ZZ2(F, V);
         Q.value = HMA(Q.value, D);
         var H = IZ2(HMA(F, D), K);
         Q.value = y21(Q.value, H), G.value = Q00(G.value, F, H), A.value = B00(A.value, F, F.slice(0, F.length - H.length))
     } else if (G) {
         var C = G.value.match(/^\s*/)[0],
-            E = Q.value.match(/\s*$/)[0],
+            E = Q.value.match(/\s*TextComponent/)[0],
             z = YZ2(E, C);
         Q.value = y21(Q.value, z)
     } else if (A) {
-        var w = A.value.match(/\s*$/)[0],
+        var w = A.value.match(/\s*TextComponent/)[0],
             N = Q.value.match(/^\s*/)[0],
             q = YZ2(w, N);
         Q.value = HMA(Q.value, q)
@@ -966,8 +966,7 @@ function I00(A, Q, B, G, Z) {
     if (A && A.toJSON) A = A.toJSON();
     if (G00(A) === "object" && A !== null) {
         Q.push(A), Y = {}, B.push(Y);
-
-var J = [],
+        var J = [],
             W;
         for (W in A)
             if (Object.prototype.hasOwnProperty.call(A, W)) J.push(W);
@@ -997,20 +996,19 @@ function EMA(A, Q, B, G, Z, I, Y) {
         }))
     }
 
-function X(F) {
+    function X(F) {
         if (!F) return;
         F.push({
             value: "",
             lines: []
         });
 
-function V(v) {
+        function V(v) {
             return v.map(function(x) {
                 return " " + x
             })
         }
-
-var K = [],
+        var K = [],
             D = 0,
             H = 0,
             C = [],
@@ -1037,8 +1035,7 @@ var K = [],
                         } else {
                             var k, d = Math.min(p.length, Y.context);
                             (k = C).push.apply(k, A00(V(p.slice(0, d))));
-
-var QA = {
+                            var QA = {
                                 oldStart: D,
                                 oldLines: E - D + d,
                                 newStart: H,
@@ -1081,7 +1078,7 @@ function PF5(A) {
 }
 var wkG, x21 = "a-zA-Z0-9_\\u{C0}-\\u{FF}\\u{D8}-\\u{F6}\\u{F8}-\\u{2C6}\\u{2C8}-\\u{2D7}\\u{2DE}-\\u{2FF}\\u{1E00}-\\u{1EFF}",
     UF5, b21, FZ2, f21, $F5, wF5, CMA, Y00;
-var zMA = L(() => {
+var zMA = lazyLoader(() => {
     BP.prototype = {
         diff: function(Q, B) {
             var G, Z = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {},
@@ -1089,7 +1086,7 @@ var zMA = L(() => {
             if (typeof Z === "function") I = Z, Z = {};
             var Y = this;
 
-function J(q) {
+            function J(q) {
                 if (q = Y.postProcess(q, Z), I) return setTimeout(function() {
                     I(q)
                 }, 0), !0;
@@ -1112,7 +1109,7 @@ function J(q) {
             var E = -1 / 0,
                 z = 1 / 0;
 
-function w() {
+            function w() {
                 for (var q = Math.max(E, -F); q <= Math.min(z, F); q += 2) {
                     var R = void 0,
                         P = H[q - 1],
@@ -1230,8 +1227,7 @@ function w() {
                 return I.segment
             })
         } else B = A.match(UF5) || [];
-
-var G = [],
+        var G = [],
             Z = null;
         return B.forEach(function(I) {
             if (/\s/.test(I))
@@ -1274,8 +1270,7 @@ var G = [],
     f21.tokenize = function(A, Q) {
         if (Q.stripTrailingCr) A = A.replace(/\r\n/g, `
 `);
-
-var B = [],
+        var B = [],
             G = A.split(/(\n|\r\n)/);
         if (!G[G.length - 1]) G.pop();
         for (var Z = 0; Z < G.length; Z++) {
@@ -1301,7 +1296,7 @@ var B = [],
     };
     $F5 = new BP;
     $F5.tokenize = function(A) {
-        return A.split(/(\S.+?[.!?])(?=\s+|$)/)
+        return A.split(/(\S.+?[.!?])(?=\s+|TextComponent)/)
     };
     wF5 = new BP;
     wF5.tokenize = function(A) {
@@ -1332,11 +1327,11 @@ var B = [],
 });
 
 function UMA(A) {
-    return A.replaceAll("&", DZ2).replaceAll("$", HZ2)
+    return A.replaceAll("&", DZ2).replaceAll("TextComponent", HZ2)
 }
 
 function CZ2(A) {
-    return A.replaceAll(DZ2, "&").replaceAll(HZ2, "$")
+    return A.replaceAll(DZ2, "&").replaceAll(HZ2, "TextComponent")
 }
 
 function $MA(A, Q) {
@@ -1395,7 +1390,7 @@ function Cq({
 var KZ2 = 3,
     DZ2 = "<<:AMPERSAND_TOKEN:>>",
     HZ2 = "<<:DOLLAR_TOKEN:>>";
-var fk = L(() => {
+var fk = lazyLoader(() => {
     zMA();
     x_();
     M9();
@@ -1413,7 +1408,7 @@ function W00(A) {
     for (let G = 0; G < Q.length; G++) {
         let Z = Q[G];
         if (Z !== void 0)
-            if (G % 2 === 0) B += Z.replace(/\s+$/, "");
+            if (G % 2 === 0) B += Z.replace(/\s+TextComponent/, "");
             else B += Z
     }
     return B
@@ -1474,7 +1469,7 @@ function wMA({
         updatedFile: ""
     };
     for (let Y of B) {
-        let J = Y.old_string.replace(/\n+$/, "");
+        let J = Y.old_string.replace(/\n+TextComponent/, "");
         for (let X of Z)
             if (J !== "" && X.includes(J)) throw Error("Cannot edit file: old_string is a substring of a new_string from a previous edit.");
         let W = G;

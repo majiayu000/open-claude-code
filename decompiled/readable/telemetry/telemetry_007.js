@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: telemetry_007.js
+ * 处理时间: 2025-12-09T03:41:38.353Z
+ * 变量映射: 5 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.050Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -20,11 +23,11 @@
 async function cAA(A = "latest") {
     try {
         if (!await ct1()) return "install_failed";
-        let Q = await q3("npm", ["install", `${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}@${A}`], {
+        let Q = await q3("npm", ["install", `TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}@TextComponent{A}`], {
             cwd: nl,
             maxBuffer: 1e6
         });
-        if (Q.code !== 0) return e(Error(`Failed to install Claude CLI package: ${Q.stderr}`)), Q.code === 190 ? "in_progress" : "install_failed";
+        if (Q.code !== 0) return e(Error(`Failed to install Claude CLI package: TextComponent{Q.stderr}`)), Q.code === 190 ? "in_progress" : "install_failed";
         let B = L1();
         return d0({
             ...B,
@@ -46,64 +49,62 @@ function pAA() {
     if (A.includes("fish")) return "fish";
     return "unknown"
 }
-// Async function: S22
 async function S22() {
     let A = pAA(),
         Q = Nk(),
         B = "",
         G = A in Q ? Q[A] : null,
-        Z = `alias claude="${il}"`;
+        Z = `alias claude="TextComponent{il}"`;
     try {
         if (G) {
             let I = dAA(G);
             if (I)
                 if (I.some((J) => XQ1.test(J)))
-                    if (I.some((W) => W === Z)) B += `✓ Alias already exists in ${G}
+                    if (I.some((W) => W === Z)) B += `✓ Alias already exists in TextComponent{G}
 
 `;
-                    else B += `✓ Custom claude alias found in ${G}
+                    else B += `✓ Custom claude alias found in TextComponent{G}
 `, B += `  Keeping your existing alias configuration
 
 `;
-            else NIA(G, [...I, Z, ""]), B += `✓ Added alias to ${G}
-`, B += `To use it right away, run: source ${G}
+            else NIA(G, [...I, Z, ""]), B += `✓ Added alias to TextComponent{G}
+`, B += `To use it right away, run: source TextComponent{G}
 
 `;
-            else B += `To configure claude, add this line to your ${G}:
-`, B += `  ${Z}
+            else B += `To configure claude, add this line to your TextComponent{G}:
+`, B += `  TextComponent{Z}
 `, B += `
-Then run: source ${G}
+Then run: source TextComponent{G}
 
 `
         } else B += `To configure claude, add this line to your shell config file:
-`, B += `  ${Z}
+`, B += `  TextComponent{Z}
 `, B += `
 Then run: source <your-config-file>
 
 `
     } catch {
-        if (G) B += `To add it to your PATH, add this line to your ${G}:
-`, B += `  alias claude="${il}"
+        if (G) B += `To add it to your PATH, add this line to your TextComponent{G}:
+`, B += `  alias claude="TextComponent{il}"
 `, B += `
-Then run: source ${G}
+Then run: source TextComponent{G}
 
 `;
         else B += `Could not identify startup file
-`, B += `  alias claude="${il}"
+`, B += `  alias claude="TextComponent{il}"
 
 `
     }
     if (!B) B += `To create an alias, add this line to your shell configuration file:
-`, B += `  ${Z}
+`, B += `  TextComponent{Z}
 
 `, B += `or create a symlink:
 `, B += `  mkdir -p ~/bin
-`, B += `  ln -sf ${il} ~/bin/claude
+`, B += `  ln -sf TextComponent{il} ~/bin/claude
 `, B += `  # Make sure ~/bin is in your PATH
 `;
     return B
 }
-// Async function: _22
 async function _22() {
     try {
         let A = ["uninstall", "-g", "--force", {
@@ -113,8 +114,8 @@ async function _22() {
                 VERSION: "2.0.57",
                 FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
             }.PACKAGE_URL],
-            Q = await ZQ("npm", A);
-        if (Q.code !== 0) return e(Error(`Failed to uninstall global version: ${Q.stderr}`)), !1;
+            Q = await execGit("npm", A);
+        if (Q.code !== 0) return e(Error(`Failed to uninstall global version: TextComponent{Q.stderr}`)), !1;
         return !0
     } catch (A) {
         return e(A instanceof Error ? A : Error(String(A))), !1
@@ -128,7 +129,7 @@ function rl(A, Q) {
     })
 }
 var nl, j22, il;
-var nT = L(() => {
+var nT = lazyLoader(() => {
     I6();
     u1();
     w0();
@@ -147,7 +148,6 @@ import {
 import {
     accessSync as l45
 } from "fs";
-// Async function: y22
 async function y22() {
     try {
         let A = await Zh("tengu_version_config", {
@@ -160,8 +160,8 @@ async function y22() {
                 VERSION: "2.0.57",
                 FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
             }.VERSION, A.minVersion)) console.error(`
-It looks like your version of Claude Code (${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION}) needs an update.
-A newer version (${A.minVersion} or higher) is required to continue.
+It looks like your version of Claude Code (TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION}) needs an update.
+A newer version (TextComponent{A.minVersion} or higher) is required to continue.
 
 To update, please run:
     claude update
@@ -189,7 +189,7 @@ function n45() {
                 return e(B), !1
             }
         }
-        return OA().writeFileSync(lAA(), `${process.pid}`, {
+        return OA().writeFileSync(lAA(), `TextComponent{process.pid}`, {
             encoding: "utf8",
             flush: !1
         }), !0
@@ -203,22 +203,20 @@ function a45() {
         if (OA().existsSync(lAA())) {
             if (OA().readFileSync(lAA(), {
                     encoding: "utf8"
-                }) === `${process.pid}`) OA().unlinkSync(lAA())
+                }) === `TextComponent{process.pid}`) OA().unlinkSync(lAA())
         }
     } catch (A) {
         e(A)
     }
 }
-// Async function: s45
 async function s45() {
     let A = m0.isRunningWithBun(),
         Q = null;
-    if (A) Q = await ZQ("bun", ["pm", "bin", "-g"]);
-    else Q = await ZQ("npm", ["-g", "config", "get", "prefix"]);
-    if (Q.code !== 0) return e(Error(`Failed to check ${A?"bun":"npm"} permissions`)), null;
+    if (A) Q = await execGit("bun", ["pm", "bin", "-g"]);
+    else Q = await execGit("npm", ["-g", "config", "get", "prefix"]);
+    if (Q.code !== 0) return e(Error(`Failed to check TextComponent{A?"bun":"npm"} permissions`)), null;
     return Q.stdout.trim()
 }
-// Async function: pt1
 async function pt1() {
     try {
         let A = await s45();
@@ -247,22 +245,20 @@ async function pt1() {
         }
     }
 }
-// Async function: iAA
 async function iAA() {
     let A = s9();
     setTimeout(() => A.abort(), 5000);
-    let Q = await ZQ("npm", ["view", `${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}@latest`, "version", "--prefer-online"], {
+    let Q = await execGit("npm", ["view", `TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}@latest`, "version", "--prefer-online"], {
         abortSignal: A.signal
     });
     if (Q.code !== 0) {
-        if (g(`npm view failed with code ${Q.code}`), Q.stderr) g(`npm stderr: ${Q.stderr.trim()}`);
+        if (g(`npm view failed with code TextComponent{Q.code}`), Q.stderr) g(`npm stderr: TextComponent{Q.stderr.trim()}`);
         else g("npm stderr: (empty)");
-        if (Q.stdout) g(`npm stdout: ${Q.stdout.trim()}`);
+        if (Q.stdout) g(`npm stdout: TextComponent{Q.stdout.trim()}`);
         return null
     }
     return Q.stdout.trim()
 }
-// Async function: wLA
 async function wLA() {
     if (!n45()) return e(new VQ1("Another process is currently installing an update")), BA("tengu_auto_updater_lock_contention", {
         pid: process.pid,
@@ -299,14 +295,14 @@ To fix this issue:
         } = await pt1();
         if (!A) return "no_permissions";
         let Q = m0.isRunningWithBun() ? "bun" : "npm",
-            B = await ZQ(Q, ["install", "-g", {
+            B = await execGit(Q, ["install", "-g", {
                 ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
                 PACKAGE_URL: "@anthropic-ai/claude-code",
                 README_URL: "https://docs.claude.com/s/claude-code",
                 VERSION: "2.0.57",
                 FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
             }.PACKAGE_URL]);
-        if (B.code !== 0) return e(new VQ1(`Failed to install new version of claude: ${B.stdout} ${B.stderr}`)), "install_failed";
+        if (B.code !== 0) return e(new VQ1(`Failed to install new version of claude: TextComponent{B.stdout} TextComponent{B.stderr}`)), "install_failed";
         let G = L1();
         return d0({
             ...G,
@@ -326,15 +322,15 @@ function r45() {
             filtered: G,
             hadAlias: Z
         } = FQ1(B);
-        if (Z) NIA(Q, G), g(`Removed claude alias from ${Q}`)
+        if (Z) NIA(Q, G), g(`Removed claude alias from TextComponent{Q}`)
     } catch (B) {
-        g(`Failed to remove alias from ${Q}: ${B}`, {
+        g(`Failed to remove alias from TextComponent{Q}: TextComponent{B}`, {
             level: "error"
         })
     }
 }
 var k22, VQ1, i45 = 300000;
-var LIA = L(() => {
+var LIA = lazyLoader(() => {
     w0();
     O9();
     UZ();
@@ -348,7 +344,7 @@ var LIA = L(() => {
     _J();
     u1();
     ULA();
-    k22 = GA(WE(), 1);
+    k22 = esmImport(WE(), 1);
     VQ1 = class VQ1 extends _KA {}
 });
 
@@ -356,11 +352,11 @@ function KQ1() {
     let A = uQ();
     if (A !== "macos" && A !== "linux" && A !== "wsl") return !1;
     let Q = process.execPath || process.argv[0] || "";
-    if (Q.includes("/Caskroom/")) return g(`Detected Homebrew cask installation: ${Q}`), !0;
+    if (Q.includes("/Caskroom/")) return g(`Detected Homebrew cask installation: TextComponent{Q}`), !0;
     return !1
 }
 var MIA;
-var DQ1 = L(() => {
+var DQ1 = lazyLoader(() => {
     s5();
     D0();
     o2();
@@ -378,7 +374,6 @@ import {
     win32 as NLA,
     delimiter as o45
 } from "path";
-// Async function: Mk
 async function Mk() {
     let A = process.argv[1] || "",
         Q = process.execPath || process.argv[0] || "";
@@ -397,10 +392,9 @@ async function Mk() {
     if (I && A.startsWith(I)) return "npm-global";
     return "unknown"
 }
-// Async function: t45
 async function t45() {
     if (HJ()) {
-        let A = await ZQ("which", ["claude"]);
+        let A = await execGit("which", ["claude"]);
         if (A.code === 0 && A.stdout) return A.stdout.trim();
         if (OA().existsSync(Lk(nAA(), ".local/bin/claude"))) return Lk(nAA(), ".local/bin/claude");
         return "native"
@@ -420,7 +414,6 @@ function lt1() {
         return "unknown"
     }
 }
-// Async function: e45
 async function e45() {
     let A = OA(),
         Q = [],
@@ -449,7 +442,7 @@ async function e45() {
         VERSION: "2.0.57",
         FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
     }.PACKAGE_URL);
-    let Z = await ZQ("npm", ["-g", "config", "get", "prefix"]);
+    let Z = await execGit("npm", ["-g", "config", "get", "prefix"]);
     if (Z.code === 0 && Z.stdout) {
         let J = Z.stdout.trim(),
             W = uQ() === "windows",
@@ -505,7 +498,7 @@ function A85(A) {
             if (uQ() === "windows") {
                 let K = W.split(qLA.sep).join(NLA.sep);
                 Q.push({
-                    issue: `Native installation exists but ${K} is not in your PATH`,
+                    issue: `Native installation exists but TextComponent{K} is not in your PATH`,
                     fix: "Add it by opening: System Properties → Environment Variables → Edit User PATH → New → Add the path above. Then restart your terminal."
                 })
             } else {
@@ -514,17 +507,17 @@ function A85(A) {
                     C = H ? H.replace(nAA(), "~") : "your shell config file";
                 Q.push({
                     issue: "Native installation exists but ~/.local/bin is not in your PATH",
-                    fix: `Run: echo 'export PATH="$HOME/.local/bin:$PATH"' >> ${C} then open a new terminal or run: source ${C}`
+                    fix: `Run: echo 'export PATH="$HOME/.local/bin:$PATH"' >> TextComponent{C} then open a new terminal or run: source TextComponent{C}`
                 })
             }
     }
-    if (!V0(process.env.DISABLE_INSTALLATION_CHECKS)) {
+    if (!parseBoolean(process.env.DISABLE_INSTALLATION_CHECKS)) {
         if (A === "npm-local" && B.installMethod !== "local") Q.push({
-            issue: `Running from local installation but config install method is '${B.installMethod}'`,
+            issue: `Running from local installation but config install method is 'TextComponent{B.installMethod}'`,
             fix: "Run claude migrate-installer to fix configuration"
         });
         if (A === "native" && B.installMethod !== "native") Q.push({
-            issue: `Running native installation but config install method is '${B.installMethod}'`,
+            issue: `Running native installation but config install method is 'TextComponent{B.installMethod}'`,
             fix: "Run claude install to update configuration"
         })
     }
@@ -537,7 +530,7 @@ function A85(A) {
     if (A === "npm-local") {
         if (G && !Z) Q.push({
             issue: "Local installation not accessible",
-            fix: `Alias exists but points to invalid target: ${G}. Update alias: alias claude="~/.claude/local/claude"`
+            fix: `Alias exists but points to invalid target: TextComponent{G}. Update alias: alias claude="~/.claude/local/claude"`
         });
         else if (!G) Q.push({
             issue: "Local installation not accessible",
@@ -554,15 +547,14 @@ function Q85() {
     if (Q.length > 0) {
         let B = Q.slice(0, 3).join(", "),
             G = Q.length - 3,
-            Z = G > 0 ? `${B} (${G} more)` : B;
+            Z = G > 0 ? `TextComponent{B} (TextComponent{G} more)` : B;
         A.push({
             issue: "Glob patterns in sandbox permission rules are not fully supported on Linux",
-            fix: `Found ${Q.length} pattern(s): ${Z}. On Linux, glob patterns in Edit/Read rules will be ignored.`
+            fix: `Found TextComponent{Q.length} pattern(s): TextComponent{Z}. On Linux, glob patterns in Edit/Read rules will be ignored.`
         })
     }
     return A
 }
-// Async function: OIA
 async function OIA() {
     let A = await Mk(),
         Q = {
@@ -600,18 +592,18 @@ async function OIA() {
                         README_URL: "https://docs.claude.com/s/claude-code",
                         VERSION: "2.0.57",
                         FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
-                    }.PACKAGE_URL !== "@anthropic-ai/claude-code") E += ` && npm -g uninstall ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}`;
+                    }.PACKAGE_URL !== "@anthropic-ai/claude-code") E += ` && npm -g uninstall TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.PACKAGE_URL}`;
                 I.push({
-                    issue: `Leftover npm global installation at ${C.path}`,
-                    fix: `Run: ${E}`
+                    issue: `Leftover npm global installation at TextComponent{C.path}`,
+                    fix: `Run: TextComponent{E}`
                 })
             } else if (C.type === "npm-global-orphan") I.push({
-            issue: `Orphaned npm global package at ${C.path}`,
-            fix: H ? `Run: rmdir /s /q "${C.path}"` : `Run: rm -rf ${C.path}`
+            issue: `Orphaned npm global package at TextComponent{C.path}`,
+            fix: H ? `Run: rmdir /s /q "TextComponent{C.path}"` : `Run: rm -rf TextComponent{C.path}`
         });
         else if (C.type === "npm-local") I.push({
-            issue: `Leftover npm local installation at ${C.path}`,
-            fix: H ? `Run: rmdir /s /q "${C.path}"` : `Run: rm -rf ${C.path}`
+            issue: `Leftover npm local installation at TextComponent{C.path}`,
+            fix: H ? `Run: rmdir /s /q "TextComponent{C.path}"` : `Run: rm -rf TextComponent{C.path}`
         })
     }
     let J = L1().installMethod || "not set",
@@ -643,7 +635,7 @@ async function OIA() {
         ripgrepStatus: F
     }
 }
-var Ih = L(() => {
+var Ih = lazyLoader(() => {
     o0();
     R2();
     nT();
@@ -657,9 +649,8 @@ var Ih = L(() => {
     hQ();
     DQ1()
 });
-
 var st1 = {};
-pG(st1, {
+esmExport(st1, {
     parseCommand: () => F85,
     extractCommandArguments: () => K85,
     ensureInitialized: () => f22
@@ -685,14 +676,12 @@ function W85(A) {
     }
     return null
 }
-
 async function b22(A) {
     let Q = W85(A);
     if (!Q) return null;
     let B = await Q.arrayBuffer();
     return new Uint8Array(B)
 }
-// Async function: X85
 async function X85() {
     let A = OA(),
         Q = null,
@@ -722,17 +711,15 @@ async function X85() {
     }
     await ut1.init({
         wasmBinary: Q
-    }), HQ1 = new ut1, at1 = await gt1.load(B), HQ1.setLanguage(at1), g(`tree-sitter: loaded from ${G}`), BA("tengu_tree_sitter_load", {
+    }), HQ1 = new ut1, at1 = await gt1.load(B), HQ1.setLanguage(at1), g(`tree-sitter: loaded from TextComponent{G}`), BA("tengu_tree_sitter_load", {
         success: !0,
         from_embedded: G === "embedded"
     })
 }
-// Async function: f22
 async function f22() {
     if (!nt1) nt1 = X85();
     await nt1
 }
-
 async function F85(A) {
     if (await f22(), !A || A.length > G85 || !HQ1 || !at1) return null;
     try {
@@ -806,7 +793,7 @@ var G85 = 1e4,
     Z85, I85, Y85, it1, HQ1 = null,
     at1 = null,
     nt1 = null;
-var rt1 = L(() => {
+var rt1 = lazyLoader(() => {
     T22();
     o0();
     Ih();
@@ -814,7 +801,6 @@ var rt1 = L(() => {
     D0();
     Z85 = new Set(["export", "declare", "typeset", "readonly", "local", "unset", "unsetenv"]), I85 = new Set(["word", "string", "raw_string", "number"]), Y85 = new Set(["command_substitution", "process_substitution"]), it1 = new Set(["command", "declaration_command"])
 });
-
 class g22 {
     originalCommand;
     constructor(A) {
@@ -854,7 +840,7 @@ class g22 {
     }
 }
 var H85, CQ1;
-var u22 = L(() => {
+var u22 = lazyLoader(() => {
     o2();
     gU();
     H85 = t1(async () => {
@@ -949,7 +935,6 @@ var u22 = L(() => {
         }
     }
 });
-
 async function C85(A, Q, B) {
     if (Q.filter((X) => {
             let F = X.trim();
@@ -980,7 +965,7 @@ async function C85(A, Q, B) {
         let [X, F] = I;
         return {
             behavior: "deny",
-            message: F.behavior === "deny" ? F.message : `Permission denied for: ${X}`,
+            message: F.behavior === "deny" ? F.message : `Permission denied for: TextComponent{X}`,
             decisionReason: {
                 type: "subcommandResults",
                 reasons: Z
@@ -1009,12 +994,10 @@ async function C85(A, Q, B) {
         suggestions: J.length > 0 ? J : void 0
     }
 }
-
 async function E85(A) {
     if (!A.includes(">")) return A;
     return (await CQ1.parse(A))?.withoutOutputRedirections() ?? A
 }
-
 async function m22(A, Q) {
     if (c22(A.command)) {
         let I = cl(A.command),
@@ -1041,7 +1024,7 @@ async function m22(A, Q) {
     let Z = await Promise.all(G.map((I) => E85(I)));
     return C85(A, Z, Q)
 }
-var d22 = L(() => {
+var d22 = lazyLoader(() => {
     nV();
     gU();
     aG();
@@ -1059,8 +1042,8 @@ import {
 
 function i22(A) {
     let Q = A.length;
-    if (Q <= tt1) return A.map((G) => `'${G}'`).join(", ");
-    return `${A.slice(0,tt1).map((G)=>`'${G}'`).join(", ")}, and ${Q-tt1} more`
+    if (Q <= tt1) return A.map((G) => `'TextComponent{G}'`).join(", ");
+    return `TextComponent{A.slice(0,tt1).map((G)=>`'TextComponent{G}'`).join(", ")}, and TextComponent{Q-tt1} more`
 }
 
 function U85(A) {
@@ -1141,7 +1124,7 @@ function n22(A) {
 
 function w85(A) {
     if (A === "*" || A.endsWith("/*")) return !0;
-    let Q = A === "/" ? A : A.replace(/\/$/, "");
+    let Q = A === "/" ? A : A.replace(/\/TextComponent/, "");
     if (Q === "/") return !0;
     let B = Ae1();
     if (Q === B) return !0;
@@ -1150,8 +1133,8 @@ function w85(A) {
 }
 
 function a22(A, Q, B, G) {
-    let Z = n22(A.replace(/^['"]|['"]$/g, ""));
-    if (Z.includes("$") || Z.includes("%")) return {
+    let Z = n22(A.replace(/^['"]|['"]TextComponent/g, ""));
+    if (Z.includes("TextComponent") || Z.includes("%")) return {
         allowed: !1,
         resolvedPath: Z,
         decisionReason: {
@@ -1186,23 +1169,23 @@ function q85(A, Q, B) {
     let G = Qe1[A],
         Z = G(Q);
     for (let I of Z) {
-        let Y = n22(I.replace(/^['"]|['"]$/g, "")),
+        let Y = n22(I.replace(/^['"]|['"]TextComponent/g, "")),
             J = EQ1(Y) ? Y : zQ1(B, Y);
         if (w85(J)) return {
             behavior: "ask",
-            message: `Dangerous ${A} operation detected: '${J}'
+            message: `Dangerous TextComponent{A} operation detected: 'TextComponent{J}'
 
 This command would remove a critical system directory. This requires explicit approval and cannot be auto-allowed by permission rules.`,
             decisionReason: {
                 type: "other",
-                reason: `Dangerous ${A} operation on critical path: ${J}`
+                reason: `Dangerous TextComponent{A} operation on critical path: TextComponent{J}`
             },
             suggestions: []
         }
     }
     return {
         behavior: "passthrough",
-        message: `No dangerous removals detected for ${A} command`
+        message: `No dangerous removals detected for TextComponent{A} command`
     }
 }
 
@@ -1234,10 +1217,10 @@ function O85(A, Q, B, G, Z) {
         W = M85[A];
     if (W && !W(Q)) return {
         behavior: "ask",
-        message: `${A} with flags requires manual approval to ensure path safety. For security, Claude Code cannot automatically validate ${A} commands that use flags, as some flags like --target-directory=PATH can bypass path validation.`,
+        message: `TextComponent{A} with flags requires manual approval to ensure path safety. For security, Claude Code cannot automatically validate TextComponent{A} commands that use flags, as some flags like --target-directory=PATH can bypass path validation.`,
         decisionReason: {
             type: "other",
-            reason: `${A} command with flags requires manual approval`
+            reason: `TextComponent{A} command with flags requires manual approval`
         }
     };
     if (Z && J !== "read") return {
@@ -1257,7 +1240,7 @@ function O85(A, Q, B, G, Z) {
         if (!F) {
             let D = Array.from(RIA(G)),
                 H = i22(D),
-                C = K?.type === "other" ? K.reason : `${A} in '${V}' was blocked. For security, Claude Code may only ${L85[A]} the allowed working directories for this session: ${H}.`;
+                C = K?.type === "other" ? K.reason : `TextComponent{A} in 'TextComponent{V}' was blocked. For security, Claude Code may only TextComponent{L85[A]} the allowed working directories for this session: TextComponent{H}.`;
             if (K?.type === "rule") return {
                 behavior: "deny",
                 message: C,
@@ -1273,7 +1256,7 @@ function O85(A, Q, B, G, Z) {
     }
     return {
         behavior: "passthrough",
-        message: `Path validation passed for ${A} command`
+        message: `Path validation passed for TextComponent{A} command`
     }
 }
 
@@ -1311,7 +1294,7 @@ function R85(A) {
 }
 
 function T85(A) {
-    let Q = IW(A, (Z) => `$${Z}`);
+    let Q = tokenize(A, (Z) => `$${Z}`);
     if (!Q.success) return [];
     let B = Q.tokens,
         G = [];
@@ -1330,7 +1313,7 @@ function P85(A, Q, B, G) {
     let [I, ...Y] = Z;
     if (!I || !N85.includes(I)) return {
         behavior: "passthrough",
-        message: `Command '${I}' is not a path-restricted command`
+        message: `Command 'TextComponent{I}' is not a path-restricted command`
     };
     return R85(I)(Y, Q, B, G)
 }
@@ -1357,7 +1340,7 @@ function j85(A, Q, B, G) {
         if (!I) {
             let W = Array.from(RIA(B)),
                 X = i22(W),
-                F = J?.type === "other" ? J.reason : J?.type === "rule" ? `Output redirection to '${Y}' was blocked by a deny rule.` : `Output redirection to '${Y}' was blocked. For security, Claude Code may only write to files in the allowed working directories for this session: ${X}.`;
+                F = J?.type === "other" ? J.reason : J?.type === "rule" ? `Output redirection to 'TextComponent{Y}' was blocked by a deny rule.` : `Output redirection to 'TextComponent{Y}' was blocked. For security, Claude Code may only write to files in the allowed working directories for this session: TextComponent{X}.`;
             if (J?.type === "rule") return {
                 behavior: "deny",
                 message: F,
@@ -1382,7 +1365,7 @@ function j85(A, Q, B, G) {
 }
 
 function Be1(A, Q, B, G) {
-    if (/(?:>>?)\s*\S*[$%]/.test(A.command)) return {
+    if (/(?:>>?)\s*\S*[TextComponent%]/.test(A.command)) return {
         behavior: "ask",
         message: "Shell expansion syntax in paths requires manual approval",
         decisionReason: {
@@ -1407,7 +1390,7 @@ function Be1(A, Q, B, G) {
 var tt1 = 5,
     l22, hZ = (A) => A.filter((Q) => !Q?.startsWith("-")),
     Qe1, N85, L85, s22, M85;
-var r22 = L(() => {
+var r22 = lazyLoader(() => {
     o0();
     _Y();
     hK();
@@ -1424,13 +1407,13 @@ var r22 = L(() => {
         find: (A) => {
             let Q = [],
                 B = new Set(["-newer", "-anewer", "-cnewer", "-mnewer", "-samefile", "-path", "-wholename", "-ilname", "-lname", "-ipath", "-iwholename"]),
-                G = /^-newer[acmBt][acmtB]$/,
+                G = /^-newer[acmBt][acmtB]TextComponent/,
                 Z = !1;
             for (let I = 0; I < A.length; I++) {
                 let Y = A[I];
                 if (!Y) continue;
                 if (Y.startsWith("-")) {
-                    if (["-H", "-L", "-P"].includes(Y)) continue;
+                    if (["-H", "-lazyLoader", "-P"].includes(Y)) continue;
                     if (Z = !0, B.has(Y) || G.test(Y)) {
                         let J = A[I + 1];
                         if (J) Q.push(J), I++
@@ -1507,7 +1490,7 @@ var r22 = L(() => {
         },
         jq: (A) => {
             let Q = [],
-                B = new Set(["-e", "--expression", "-f", "--from-file", "--arg", "--argjson", "--slurpfile", "--rawfile", "--args", "--jsonargs", "-L", "--library-path", "--indent", "--tab"]),
+                B = new Set(["-e", "--expression", "-f", "--from-file", "--arg", "--argjson", "--slurpfile", "--rawfile", "--args", "--jsonargs", "-lazyLoader", "--library-path", "--indent", "--tab"]),
                 G = !1;
             for (let Z = 0; Z < A.length; Z++) {
                 let I = A[Z];

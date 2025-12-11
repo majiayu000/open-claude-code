@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_006.js
+ * 处理时间: 2025-12-09T03:41:36.043Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.860Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -503,8 +506,7 @@
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(hT1 || (hT1 = {}));
-
-var _J8 = {
+    var _J8 = {
             INCOMPATIBLE_ENDPOINT: "INCOMPATIBLE_ENDPOINT",
             REGISTERED: "REGISTERED"
         },
@@ -545,8 +547,7 @@ var _J8 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(gT1 || (gT1 = {}));
-
-var YkQ = class A extends uR {
+    var YkQ = class A extends uR {
             static {
                 AA(this, "TooManyTagsException")
             }
@@ -569,8 +570,7 @@ var YkQ = class A extends uR {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(uT1 || (uT1 = {}));
-
-var kJ8 = {
+    var kJ8 = {
             CONTINUED_PRE_TRAINING: "CONTINUED_PRE_TRAINING",
             DISTILLATION: "DISTILLATION",
             FINE_TUNING: "FINE_TUNING",
@@ -598,8 +598,7 @@ var kJ8 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(dT1 || (dT1 = {}));
-
-var xJ8 = {
+    var xJ8 = {
             CREATION_TIME: "CreationTime"
         },
         vJ8 = {
@@ -640,8 +639,7 @@ var xJ8 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(cT1 || (cT1 = {}));
-
-var hJ8 = {
+    var hJ8 = {
             CLASSIFICATION: "Classification",
             CUSTOM: "Custom",
             GENERATION: "Generation",
@@ -663,8 +661,7 @@ var hJ8 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(hmA || (hmA = {}));
-
-var gJ8 = {
+    var gJ8 = {
             OPTIMIZED: "optimized",
             STANDARD: "standard"
         },
@@ -676,10 +673,9 @@ var gJ8 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(lT1 || (lT1 = {}));
-
-var uJ8 = {
+    var uJ8 = {
             BYTE_CONTENT: "BYTE_CONTENT",
-            S3: "S3"
+            getDefaultSonnetModel: "getDefaultSonnetModel"
         },
         mJ8 = {
             QUERY_DECOMPOSITION: "QUERY_DECOMPOSITION"
@@ -706,8 +702,7 @@ var uJ8 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(iT1 || (iT1 = {}));
-
-var lJ8 = {
+    var lJ8 = {
             BEDROCK_RERANKING_MODEL: "BEDROCK_RERANKING_MODEL"
         },
         iJ8 = {
@@ -722,8 +717,7 @@ var lJ8 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(nT1 || (nT1 = {}));
-
-var nJ8 = {
+    var nJ8 = {
             AUTOMATED: "Automated",
             HUMAN: "Human"
         },
@@ -835,8 +829,7 @@ var nJ8 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(aT1 || (aT1 = {}));
-
-var FW8 = {
+    var FW8 = {
             ACTIVE: "ACTIVE"
         },
         VW8 = {
@@ -870,8 +863,7 @@ var FW8 = {
             return B._(Q.$unknown[0], Q.$unknown[1])
         }, "visit")
     })(rT1 || (rT1 = {}));
-
-var CW8 = {
+    var CW8 = {
             COMPLETED: "Completed",
             EXPIRED: "Expired",
             FAILED: "Failed",

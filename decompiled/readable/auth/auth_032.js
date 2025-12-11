@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_032.js
+ * 处理时间: 2025-12-09T03:41:36.693Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.915Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -28,11 +31,11 @@
     }
     krQ.exports = qv8
 });
-var mrQ = U((QN7, urQ) => {
-    var mL = UA("node:assert"),
+var mrQ = moduleWrapper((QN7, urQ) => {
+    var mL = nodeRequire("node:assert"),
         {
             pipeline: Tv8
-        } = UA("node:stream"),
+        } = nodeRequire("node:stream"),
         N5 = M6(),
         {
             RequestContentLengthMismatchError: Vk1,
@@ -63,7 +66,7 @@ var mrQ = U((QN7, urQ) => {
         vrQ, brQ = !1,
         WpA;
     try {
-        WpA = UA("node:http2")
+        WpA = nodeRequire("node:http2")
     } catch {
         WpA = {
             constants: {}
@@ -81,7 +84,7 @@ var mrQ = U((QN7, urQ) => {
         }
     } = WpA;
 
-function gv8(A) {
+    function gv8(A) {
         let Q = [];
         for (let [B, G] of Object.entries(A))
             if (Array.isArray(G))
@@ -89,8 +92,7 @@ function gv8(A) {
             else Q.push(Buffer.from(B), Buffer.from(G));
         return Q
     }
-
-async function uv8(A, Q) {
+    async function uv8(A, Q) {
         if (A[TV] = Q, !brQ) brQ = !0, process.emitWarning("H2 support is experimental, expect them to change at any time.", {
             code: "UNDICI-H2"
         });
@@ -146,31 +148,31 @@ async function uv8(A, Q) {
         }
     }
 
-function mv8(A) {
+    function mv8(A) {
         let Q = A[TV];
         if (Q?.destroyed === !1)
             if (A[Sv8] === 0 && A[grQ] === 0) Q.unref(), A[lR].unref();
             else Q.ref(), A[lR].ref()
     }
 
-function dv8(A) {
+    function dv8(A) {
         mL(A.code !== "ERR_TLS_CERT_ALTNAME_INVALID"), this[TV][iR] = A, this[v5A][Hk1](A)
     }
 
-function cv8(A, Q, B) {
+    function cv8(A, Q, B) {
         if (B === 0) {
-            let G = new Kk1(`HTTP/2: "frameError" received - type ${A}, code ${Q}`);
+            let G = new Kk1(`HTTP/2: "frameError" received - type TextComponent{A}, code TextComponent{Q}`);
             this[TV][iR] = G, this[v5A][Hk1](G)
         }
     }
 
-function pv8() {
+    function pv8() {
         let A = new rCA("other side closed", N5.getSocketInfo(this[TV]));
         this.destroy(A), N5.destroy(this[TV], A)
     }
 
-function lv8(A) {
-        let Q = this[iR] || new rCA(`HTTP/2: "GOAWAY" frame received with code ${A}`, N5.getSocketInfo(this)),
+    function lv8(A) {
+        let Q = this[iR] || new rCA(`HTTP/2: "GOAWAY" frame received with code TextComponent{A}`, N5.getSocketInfo(this)),
             B = this[v5A];
         if (B[TV] = null, B[_v8] = null, this[lR] != null) this[lR].destroy(Q), this[lR] = null;
         if (N5.destroy(this[TV], Q), B[pR] < B[sd].length) {
@@ -180,11 +182,11 @@ function lv8(A) {
         mL(B[FpA] === 0), B.emit("disconnect", B[JpA], [B], Q), B[rd]()
     }
 
-function iv8(A) {
+    function iv8(A) {
         return A !== "GET" && A !== "HEAD" && A !== "OPTIONS" && A !== "TRACE" && A !== "CONNECT"
     }
 
-function nv8(A, Q) {
+    function nv8(A, Q) {
         let B = A[lR],
             {
                 method: G,
@@ -205,7 +207,7 @@ function nv8(A, Q) {
                 P = X[q + 1];
             if (Array.isArray(P))
                 for (let y = 0; y < P.length; y++)
-                    if (V[R]) V[R] += `,${P[y]}`;
+                    if (V[R]) V[R] += `,TextComponent{P[y]}`;
                     else V[R] = P[y];
             else V[R] = P
         }
@@ -213,7 +215,7 @@ function nv8(A, Q) {
             hostname: D,
             port: H
         } = A[JpA];
-        V[kv8] = I || `${D}${H?`:${H}`:""}`, V[yv8] = G;
+        V[kv8] = I || `TextComponent{D}TextComponent{H?`:TextComponent{H}`:""}`, V[yv8] = G;
         let C = (q) => {
             if (Q.aborted || Q.completed) return;
             if (q = q || new xrQ, N5.errorRequest(A, Q, q), K != null) N5.destroy(K, q);
@@ -252,7 +254,7 @@ function nv8(A, Q) {
             if (A[jv8]) return N5.errorRequest(A, Q, new Vk1), !1;
             process.emitWarning(new Vk1)
         }
-        if (z != null) mL(F, "no body must not have content length"), V[bv8] = `${z}`;
+        if (z != null) mL(F, "no body must not have content length"), V[bv8] = `TextComponent{z}`;
         B.ref();
         let w = G === "GET" || G === "HEAD" || F === null;
         if (J) V[fv8] = "100-continue", K = B.request(V, {
@@ -285,10 +287,10 @@ function nv8(A, Q) {
         }), K.once("error", function(q) {
             C(q)
         }), K.once("frameError", (q, R) => {
-            C(new Kk1(`HTTP/2: "frameError" received - type ${q}, code ${R}`))
+            C(new Kk1(`HTTP/2: "frameError" received - type TextComponent{q}, code TextComponent{R}`))
         }), !0;
 
-function N() {
+        function N() {
             if (!F || z === 0) frQ(C, K, null, A, Q, A[TV], z, E);
             else if (N5.isBuffer(F)) frQ(C, K, F, A, Q, A[TV], z, E);
             else if (N5.isBlobLike(F))
@@ -300,7 +302,7 @@ function N() {
         }
     }
 
-function frQ(A, Q, B, G, Z, I, Y, J) {
+    function frQ(A, Q, B, G, Z, I, Y, J) {
         try {
             if (B != null && N5.isBuffer(B)) mL(Y === B.byteLength, "buffer body must have content length"), Q.cork(), Q.write(B), Q.uncork(), Q.end(), Z.onBodySent(B);
             if (!J) I[XpA] = !0;
@@ -310,7 +312,7 @@ function frQ(A, Q, B, G, Z, I, Y, J) {
         }
     }
 
-function av8(A, Q, B, G, Z, I, Y, J) {
+    function av8(A, Q, B, G, Z, I, Y, J) {
         mL(J !== 0 || I[FpA] === 0, "stream body cannot be pipelined");
         let W = Tv8(Z, G, (F) => {
             if (F) N5.destroy(W, F), A(F);
@@ -321,12 +323,11 @@ function av8(A, Q, B, G, Z, I, Y, J) {
         });
         N5.addListener(W, "data", X);
 
-function X(F) {
+        function X(F) {
             Y.onBodySent(F)
         }
     }
-
-async function sv8(A, Q, B, G, Z, I, Y, J) {
+    async function sv8(A, Q, B, G, Z, I, Y, J) {
         mL(Y === B.size, "blob body must have content length");
         try {
             if (Y != null && Y !== B.size) throw new Vk1;
@@ -337,12 +338,11 @@ async function sv8(A, Q, B, G, Z, I, Y, J) {
             A(W)
         }
     }
-
-async function hrQ(A, Q, B, G, Z, I, Y, J) {
+    async function hrQ(A, Q, B, G, Z, I, Y, J) {
         mL(Y !== 0 || G[FpA] === 0, "iterator body cannot be pipelined");
         let W = null;
 
-function X() {
+        function X() {
             if (W) {
                 let V = W;
                 W = null, V()
@@ -369,20 +369,19 @@ function X() {
     }
     urQ.exports = uv8
 });
-var VpA = U((BN7, lrQ) => {
+var VpA = moduleWrapper((BN7, lrQ) => {
     var tS = M6(),
         {
             kBodyUsed: oCA
         } = iI(),
-        Ek1 = UA("node:assert"),
+        Ek1 = nodeRequire("node:assert"),
         {
             InvalidArgumentError: rv8
         } = U7(),
-        ov8 = UA("node:events"),
+        ov8 = nodeRequire("node:events"),
         tv8 = [300, 301, 302, 303, 307, 308],
         drQ = Symbol("body");
-
-class Ck1 {
+    class Ck1 {
         constructor(A) {
             this[drQ] = A, this[oCA] = !1
         }
@@ -390,8 +389,7 @@ class Ck1 {
             Ek1(!this[oCA], "disturbed"), this[oCA] = !0, yield* this[drQ]
         }
     }
-
-class prQ {
+    class prQ {
         constructor(A, Q, B, G) {
             if (Q != null && (!Number.isInteger(Q) || Q < 0)) throw new rv8("maxRedirections must be a positive number");
             if (tS.validateHandler(G, B.method, B.upgrade), this.dispatch = A, this.location = null, this.abort = null, this.opts = {
@@ -430,7 +428,7 @@ class prQ {
                 origin: Z,
                 pathname: I,
                 search: Y
-            } = tS.parseURL(new URL(this.location, this.opts.origin && new URL(this.opts.path, this.opts.origin))), J = Y ? `${I}${Y}` : I;
+            } = tS.parseURL(new URL(this.location, this.opts.origin && new URL(this.opts.path, this.opts.origin))), J = Y ? `TextComponent{I}TextComponent{Y}` : I;
             if (this.opts.headers = Ab8(this.opts.headers, A === 303, this.opts.origin !== Z), this.opts.path = J, this.opts.origin = Z, this.opts.maxRedirections = 0, this.opts.query = null, A === 303 && this.opts.method !== "HEAD") this.opts.method = "GET", this.opts.body = null
         }
         onData(A) {
@@ -446,13 +444,13 @@ class prQ {
         }
     }
 
-function ev8(A, Q) {
+    function ev8(A, Q) {
         if (tv8.indexOf(A) === -1) return null;
         for (let B = 0; B < Q.length; B += 2)
             if (Q[B].length === 8 && tS.headerNameToString(Q[B]) === "location") return Q[B + 1]
     }
 
-function crQ(A, Q, B) {
+    function crQ(A, Q, B) {
         if (A.length === 4) return tS.headerNameToString(A) === "host";
         if (Q && tS.headerNameToString(A).startsWith("content-")) return !0;
         if (B && (A.length === 13 || A.length === 6 || A.length === 19)) {
@@ -462,7 +460,7 @@ function crQ(A, Q, B) {
         return !1
     }
 
-function Ab8(A, Q, B) {
+    function Ab8(A, Q, B) {
         let G = [];
         if (Array.isArray(A)) {
             for (let Z = 0; Z < A.length; Z += 2)
@@ -475,10 +473,10 @@ function Ab8(A, Q, B) {
     }
     lrQ.exports = prQ
 });
-var KpA = U((GN7, irQ) => {
+var KpA = moduleWrapper((GN7, irQ) => {
     var Qb8 = VpA();
 
-function Bb8({
+    function Bb8({
         maxRedirections: A
     }) {
         return (Q) => {
@@ -497,10 +495,10 @@ function Bb8({
     }
     irQ.exports = Bb8
 });
-var ZEA = U((ZN7, GoQ) => {
-    var Ub = UA("node:assert"),
-        trQ = UA("node:net"),
-        Gb8 = UA("node:http"),
+var ZEA = moduleWrapper((ZN7, GoQ) => {
+    var Ub = nodeRequire("node:assert"),
+        trQ = nodeRequire("node:net"),
+        Gb8 = nodeRequire("node:http"),
         Co = M6(),
         {
             channels: b5A
@@ -561,11 +559,10 @@ var ZEA = U((ZN7, GoQ) => {
         td = Symbol("kClosedResolve"),
         rrQ = () => {};
 
-function erQ(A) {
+    function erQ(A) {
         return A[DpA] ?? A[qW]?.defaultPipelining ?? 1
     }
-
-class AoQ extends Ib8 {
+    class AoQ extends Ib8 {
         constructor(A, {
             interceptors: Q,
             maxHeaderSize: B,
@@ -636,7 +633,7 @@ class AoQ extends Ib8 {
             } else this[arQ] = [_b8({
                 maxRedirections: N
             })];
-            this[eS] = Co.parseOrigin(A), this[tCA] = q, this[DpA] = C != null ? C : 1, this[Cb8] = B || Gb8.maxHeaderSize, this[nrQ] = F == null ? 4000 : F, this[Eb8] = K == null ? 600000 : K, this[zb8] = D == null ? 2000 : D, this[Hb8] = this[nrQ], this[od] = null, this[eCA] = P != null ? P : null, this[Eo] = 0, this[ed] = 0, this[Kb8] = `host: ${this[eS].hostname}${this[eS].port?`:${this[eS].port}`:""}\r
+            this[eS] = Co.parseOrigin(A), this[tCA] = q, this[DpA] = C != null ? C : 1, this[Cb8] = B || Gb8.maxHeaderSize, this[nrQ] = F == null ? 4000 : F, this[Eb8] = K == null ? 600000 : K, this[zb8] = D == null ? 2000 : D, this[Hb8] = this[nrQ], this[od] = null, this[eCA] = P != null ? P : null, this[Eo] = 0, this[ed] = 0, this[Kb8] = `host: TextComponent{this[eS].hostname}TextComponent{this[eS].port?`:TextComponent{this[eS].port}`:""}\r
 `, this[$b8] = J != null ? J : 300000, this[Ub8] = G != null ? G : 300000, this[wb8] = z == null ? !0 : z, this[qb8] = N, this[Uk1] = R, this[td] = null, this[Rb8] = y > -1 ? y : -1, this[Pb8] = p != null ? p : 100, this[qW] = null, this[nR] = [], this[$b] = 0, this[aR] = 0, this[AEA] = (o) => $k1(this, o), this[Tb8] = (o) => QoQ(this, o)
         }
         get pipelining() {
@@ -695,7 +692,7 @@ class AoQ extends Ib8 {
     }
     var _b8 = KpA();
 
-function QoQ(A, Q) {
+    function QoQ(A, Q) {
         if (A[BEA] === 0 && Q.code !== "UND_ERR_INFO" && Q.code !== "UND_ERR_SOCKET") {
             Ub(A[aR] === A[$b]);
             let B = A[nR].splice(A[$b]);
@@ -706,8 +703,7 @@ function QoQ(A, Q) {
             Ub(A[QEA] === 0)
         }
     }
-
-async function BoQ(A) {
+    async function BoQ(A) {
         Ub(!A[f5A]), Ub(!A[qW]);
         let {
             host: Q,
@@ -798,7 +794,7 @@ async function BoQ(A) {
         A[AEA]()
     }
 
-function orQ(A) {
+    function orQ(A) {
         A[ed] = 0, A.emit("drain", A[eS], [A])
     }
 
@@ -807,7 +803,7 @@ function orQ(A) {
         if (A[Eo] = 2, kb8(A, Q), A[Eo] = 0, A[$b] > 256) A[nR].splice(0, A[$b]), A[aR] -= A[$b], A[$b] = 0
     }
 
-function kb8(A, Q) {
+    function kb8(A, Q) {
         while (!0) {
             if (A.destroyed) {
                 Ub(A[GEA] === 0);
@@ -846,7 +842,7 @@ function kb8(A, Q) {
     }
     GoQ.exports = AoQ
 });
-var qk1 = U((IN7, ZoQ) => {
+var qk1 = moduleWrapper((IN7, ZoQ) => {
     class wk1 {
         constructor() {
             this.bottom = 0, this.top = 0, this.list = Array(2048), this.next = null
@@ -885,7 +881,7 @@ var qk1 = U((IN7, ZoQ) => {
         }
     }
 });
-var JoQ = U((YN7, YoQ) => {
+var JoQ = moduleWrapper((YN7, YoQ) => {
     var {
         kFree: yb8,
         kConnected: xb8,
@@ -894,8 +890,7 @@ var JoQ = U((YN7, YoQ) => {
         kRunning: fb8,
         kSize: hb8
     } = iI(), zo = Symbol("pool");
-
-class IoQ {
+    class IoQ {
         constructor(A) {
             this[zo] = A
         }
@@ -920,7 +915,7 @@ class IoQ {
     }
     YoQ.exports = IoQ
 });
-var Rk1 = U((JN7, UoQ) => {
+var Rk1 = moduleWrapper((JN7, UoQ) => {
     var gb8 = N5A(),
         ub8 = qk1(),
         {
@@ -949,8 +944,7 @@ var Rk1 = U((JN7, UoQ) => {
         CoQ = Symbol("add client"),
         EoQ = Symbol("remove client"),
         HoQ = Symbol("stats");
-
-class zoQ extends gb8 {
+    class zoQ extends gb8 {
         constructor() {
             super();
             this[YEA] = new ub8, this[AU] = [], this[IEA] = 0;
@@ -1051,7 +1045,7 @@ class zoQ extends gb8 {
         kGetDispatcher: Ok1
     }
 });
-var h5A = U((WN7, MoQ) => {
+var h5A = moduleWrapper((WN7, MoQ) => {
     var {
         PoolBase: ab8,
         kClients: $oQ,
@@ -1065,11 +1059,10 @@ var h5A = U((WN7, MoQ) => {
         kInterceptors: eb8
     } = iI(), Af8 = gCA(), Pk1 = Symbol("options"), jk1 = Symbol("connections"), NoQ = Symbol("factory");
 
-function Qf8(A, Q) {
+    function Qf8(A, Q) {
         return new tb8(A, Q)
     }
-
-class LoQ extends ab8 {
+    class LoQ extends ab8 {
         constructor(A, {
             connections: Q,
             factory: B = Qf8,
@@ -1117,7 +1110,7 @@ class LoQ extends ab8 {
     }
     MoQ.exports = LoQ
 });
-var SoQ = U((XN7, joQ) => {
+var SoQ = moduleWrapper((XN7, joQ) => {
     var {
         BalancedPoolMissingUpstreamError: Bf8,
         InvalidArgumentError: Gf8
@@ -1135,7 +1128,7 @@ var SoQ = U((XN7, joQ) => {
         parseOrigin: OoQ
     } = M6(), RoQ = Symbol("factory"), HpA = Symbol("options"), ToQ = Symbol("kGreatestCommonDivisor"), Uo = Symbol("kCurrentWeight"), $o = Symbol("kIndex"), dL = Symbol("kWeight"), CpA = Symbol("kMaxWeightPerServer"), EpA = Symbol("kErrorPenalty");
 
-function Ff8(A, Q) {
+    function Ff8(A, Q) {
         if (A === 0) return Q;
         while (Q !== 0) {
             let B = Q;
@@ -1144,11 +1137,10 @@ function Ff8(A, Q) {
         return A
     }
 
-function Vf8(A, Q) {
+    function Vf8(A, Q) {
         return new Wf8(A, Q)
     }
-
-class PoQ extends Zf8 {
+    class PoQ extends Zf8 {
         constructor(A = [], {
             factory: Q = Vf8,
             ...B
@@ -1208,7 +1200,7 @@ class PoQ extends Zf8 {
     }
     joQ.exports = PoQ
 });
-var g5A = U((FN7, hoQ) => {
+var g5A = moduleWrapper((FN7, hoQ) => {
     var {
         InvalidArgumentError: zpA
     } = U7(), {
@@ -1220,11 +1212,10 @@ var g5A = U((FN7, hoQ) => {
         kInterceptors: Cf8
     } = iI(), Ef8 = N5A(), zf8 = h5A(), Uf8 = ZEA(), $f8 = M6(), wf8 = KpA(), koQ = Symbol("onConnect"), yoQ = Symbol("onDisconnect"), xoQ = Symbol("onConnectionError"), qf8 = Symbol("maxRedirections"), voQ = Symbol("onDrain"), boQ = Symbol("factory"), _k1 = Symbol("options");
 
-function Nf8(A, Q) {
+    function Nf8(A, Q) {
         return Q && Q.connections === 1 ? new Uf8(A, Q) : new zf8(A, Q)
     }
-
-class foQ extends Ef8 {
+    class foQ extends Ef8 {
         constructor({
             factory: A = Nf8,
             maxRedirections: Q = 0,
@@ -1280,7 +1271,7 @@ class foQ extends Ef8 {
     }
     hoQ.exports = foQ
 });
-var yk1 = U((VN7, coQ) => {
+var yk1 = moduleWrapper((VN7, coQ) => {
     var {
         kProxy: Lf8,
         kClose: Mf8,
@@ -1288,22 +1279,21 @@ var yk1 = U((VN7, coQ) => {
         kInterceptors: Rf8
     } = iI(), {
         URL: WEA
-    } = UA("node:url"), Tf8 = g5A(), Pf8 = h5A(), jf8 = N5A(), {
+    } = nodeRequire("node:url"), Tf8 = g5A(), Pf8 = h5A(), jf8 = N5A(), {
         InvalidArgumentError: wpA,
         RequestAbortedError: Sf8,
         SecureProxyConnectionError: _f8
     } = U7(), goQ = gCA(), UpA = Symbol("proxy agent"), $pA = Symbol("proxy client"), XEA = Symbol("proxy headers"), kk1 = Symbol("request tls settings"), uoQ = Symbol("proxy tls settings"), moQ = Symbol("connect endpoint function");
 
-function kf8(A) {
+    function kf8(A) {
         return A === "https:" ? 443 : 80
     }
 
-function yf8(A, Q) {
+    function yf8(A, Q) {
         return new Pf8(A, Q)
     }
     var xf8 = () => {};
-
-class doQ extends jf8 {
+    class doQ extends jf8 {
         constructor(A) {
             super();
             if (!A || typeof A === "object" && !(A instanceof WEA) && !A.uri) throw new wpA("Proxy uri is mandatory");
@@ -1325,9 +1315,9 @@ class doQ extends jf8 {
                     uri: G,
                     protocol: Y
                 }, this[Rf8] = A.interceptors?.ProxyAgent && Array.isArray(A.interceptors.ProxyAgent) ? A.interceptors.ProxyAgent : [], this[kk1] = A.requestTls, this[uoQ] = A.proxyTls, this[XEA] = A.headers || {}, A.auth && A.token) throw new wpA("opts.auth cannot be used in combination with opts.token");
-            else if (A.auth) this[XEA]["proxy-authorization"] = `Basic ${A.auth}`;
+            else if (A.auth) this[XEA]["proxy-authorization"] = `Basic TextComponent{A.auth}`;
             else if (A.token) this[XEA]["proxy-authorization"] = A.token;
-            else if (J && W) this[XEA]["proxy-authorization"] = `Basic ${Buffer.from(`${decodeURIComponent(J)}:${decodeURIComponent(W)}`).toString("base64")}`;
+            else if (J && W) this[XEA]["proxy-authorization"] = `Basic TextComponent{Buffer.from(`TextComponent{decodeURIComponent(J)}:TextComponent{decodeURIComponent(W)}`).toString("base64")}`;
             let F = goQ({
                 ...A.proxyTls
             });
@@ -1339,7 +1329,7 @@ class doQ extends jf8 {
                 ...A,
                 connect: async (V, K) => {
                     let D = V.host;
-                    if (!V.port) D += `:${kf8(V.protocol)}`;
+                    if (!V.port) D += `:TextComponent{kf8(V.protocol)}`;
                     try {
                         let {
                             socket: H,
@@ -1355,7 +1345,7 @@ class doQ extends jf8 {
                             },
                             servername: this[uoQ]?.servername || X
                         });
-                        if (C !== 200) H.on("error", xf8).destroy(), K(new Sf8(`Proxy response (${C}) !== 200 when HTTP Tunneling`));
+                        if (C !== 200) H.on("error", xf8).destroy(), K(new Sf8(`Proxy response (TextComponent{C}) !== 200 when HTTP Tunneling`));
                         if (V.protocol !== "https:") {
                             K(null, H);
                             return
@@ -1401,7 +1391,7 @@ class doQ extends jf8 {
         }
     }
 
-function vf8(A) {
+    function vf8(A) {
         if (Array.isArray(A)) {
             let Q = {};
             for (let B = 0; B < A.length; B += 2) Q[A[B]] = A[B + 1];
@@ -1410,12 +1400,12 @@ function vf8(A) {
         return A
     }
 
-function bf8(A) {
+    function bf8(A) {
         if (A && Object.keys(A).find((B) => B.toLowerCase() === "proxy-authorization")) throw new wpA("Proxy-Authorization should be sent in ProxyAgent constructor")
     }
     coQ.exports = doQ
 });
-var roQ = U((KN7, soQ) => {
+var roQ = moduleWrapper((KN7, soQ) => {
     var ff8 = N5A(),
         {
             kClose: hf8,
@@ -1434,8 +1424,7 @@ var roQ = U((KN7, soQ) => {
             "https:": 443
         },
         noQ = !1;
-
-class aoQ extends ff8 {
+    class aoQ extends ff8 {
         #A = null;
         #Q = null;
         #B = null;
@@ -1482,7 +1471,7 @@ class aoQ extends ff8 {
                 host: B,
                 port: G
             } = A;
-            if (B = B.replace(/:\d*$/, "").toLowerCase(), G = Number.parseInt(G, 10) || df8[Q] || 0, !this.#G(B, G)) return this[FEA];
+            if (B = B.replace(/:\d*TextComponent/, "").toLowerCase(), G = Number.parseInt(G, 10) || df8[Q] || 0, !this.#G(B, G)) return this[FEA];
             if (Q === "https:") return this[wo];
             return this[Qc]
         }
@@ -1506,7 +1495,7 @@ class aoQ extends ff8 {
             for (let G = 0; G < Q.length; G++) {
                 let Z = Q[G];
                 if (!Z) continue;
-                let I = Z.match(/^(.+):(\d+)$/);
+                let I = Z.match(/^(.+):(\d+)TextComponent/);
                 B.push({
                     hostname: (I ? I[1] : Z).toLowerCase(),
                     port: I ? Number.parseInt(I[2], 10) : 0

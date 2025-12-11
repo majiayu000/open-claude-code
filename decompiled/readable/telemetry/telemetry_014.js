@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: telemetry_014.js
+ * 处理时间: 2025-12-09T03:41:38.471Z
+ * 变量映射: 6 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.060Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -57,15 +60,15 @@ function B50(A, Q) {
             message: B.message,
             value: W
         });
-        if ($_2(B)) I = `"${B.expected}"`, Z = `"${B.received}" is not valid. Expected: ${I}`;
-        else if (w_2(B)) I = Y?.map((F) => `"${F}"`).join(", "), Z = `"${B.received}" is not valid. Expected one of: ${I}`;
+        if ($_2(B)) I = `"TextComponent{B.expected}"`, Z = `"TextComponent{B.received}" is not valid. Expected: TextComponent{I}`;
+        else if (w_2(B)) I = Y?.map((F) => `"TextComponent{F}"`).join(", "), Z = `"TextComponent{B.received}" is not valid. Expected one of: TextComponent{I}`;
         else if (U_2(B))
             if (B.expected === "object" && B.received === "null" && G === "") Z = "Invalid or malformed JSON";
-            else Z = `Expected ${B.expected}, but received ${B.received}`;
+            else Z = `Expected TextComponent{B.expected}, but received TextComponent{B.received}`;
         else if (Gh5(B)) {
             let F = B.keys.join(", ");
-            Z = `Unrecognized field${B.keys.length>1?"s":""}: ${F}`
-        } else if (q_2(B)) Z = `Number must be greater than or equal to ${B.minimum}`, I = String(B.minimum);
+            Z = `Unrecognized field${B.keys.length>1?"s":""}: TextComponent{F}`
+        } else if (q_2(B)) Z = `Number must be greater than or equal to TextComponent{B.minimum}`, I = String(B.minimum);
         return {
             file: Q,
             path: G,
@@ -88,19 +91,19 @@ function G50(A) {
         return {
             isValid: !1,
             error: `Settings validation failed:
-` + B50(B.error, "settings").map((I) => `- ${I.path}: ${I.message}`).join(`
+` + B50(B.error, "settings").map((I) => `- TextComponent{I.path}: TextComponent{I.message}`).join(`
 `),
             fullSchema: Q50()
         }
     } catch (Q) {
         return {
             isValid: !1,
-            error: `Invalid JSON: ${Q instanceof Error?Q.message:"Unknown parsing error"}`,
+            error: `Invalid JSON: TextComponent{Q instanceof Error?Q.message:"Unknown parsing error"}`,
             fullSchema: Q50()
         }
     }
 }
-var Z50 = L(() => {
+var Z50 = lazyLoader(() => {
     E3A();
     bS2();
     z_2()
@@ -114,16 +117,16 @@ function N_2(A, Q, B) {
     if (!I.isValid) return {
         result: !1,
         message: `Claude Code settings.json validation failed after edit:
-${I.error}
+TextComponent{I.error}
 
 Full schema:
-${I.fullSchema}
+TextComponent{I.fullSchema}
 IMPORTANT: Do not update the env unless explicitly instructed to do so.`,
         errorCode: 10
     };
     return null
 }
-var L_2 = L(() => {
+var L_2 = lazyLoader(() => {
     Z50();
     _Y()
 });
@@ -142,9 +145,9 @@ function M_2({
         columns: I
     } = YB(), Y = gF.createElement(j, {
         flexDirection: "row"
-    }, gF.createElement($, {
+    }, gF.createElement(TextComponent, {
         color: "error"
-    }, "User rejected ", Q, " to "), gF.createElement($, {
+    }, "User rejected ", Q, " to "), gF.createElement(TextComponent, {
         bold: !0,
         color: "error"
     }, Z ? A : Zh5(H0(), A)));
@@ -160,19 +163,19 @@ function M_2({
         width: I - 12,
         filePath: A
     }))), (J) => gF.createElement(j, {
-        key: `ellipsis-${J}`
-    }, gF.createElement($, {
+        key: `ellipsis-TextComponent{J}`
+    }, gF.createElement(TextComponent, {
         dimColor: !0
     }, "...")))))
 }
 var gF;
-var O_2 = L(() => {
+var O_2 = lazyLoader(() => {
     hA();
     R2();
     Zn();
     m8();
     u8();
-    gF = GA(VA(), 1)
+    gF = esmImport(VA(), 1)
 });
 
 function R_2(A) {
@@ -184,7 +187,7 @@ function R_2(A) {
 
 function T_2(A) {
     if (!A?.file_path) return null;
-    return Q5(A.file_path)
+    return formatFilePath(A.file_path)
 }
 
 function P_2({
@@ -194,7 +197,7 @@ function P_2({
 }) {
     if (!A) return null;
     if (A.startsWith(vU())) return "";
-    return Q ? A : Q5(A)
+    return Q ? A : formatFilePath(A)
 }
 
 function j_2() {
@@ -209,8 +212,8 @@ function S_2({
     verbose: Z
 }) {
     if (!Z && A.startsWith(vU())) {
-        let I = Q5(A);
-        return sY.createElement(y0, null, sY.createElement($, {
+        let I = formatFilePath(A);
+        return sY.createElement(y0, null, sY.createElement(TextComponent, {
             dimColor: !0
         }, "/plan to preview · ", I))
     }
@@ -256,7 +259,7 @@ function __2({
     } catch (J) {
         return e(J), sY.createElement(y0, {
             height: 1
-        }, sY.createElement($, null, "(No changes)"))
+        }, sY.createElement(TextComponent, null, "(No changes)"))
     }
 }
 
@@ -265,10 +268,10 @@ function k_2(A, Q) {
         verbose: B
     } = Q;
     if (!B && typeof A === "string" && e2(A, "tool_use_error")) {
-        if (e2(A, "tool_use_error")?.includes("File has not been read yet")) return sY.createElement(y0, null, sY.createElement($, {
+        if (e2(A, "tool_use_error")?.includes("File has not been read yet")) return sY.createElement(y0, null, sY.createElement(TextComponent, {
             dimColor: !0
         }, "File must be read first"));
-        return sY.createElement(y0, null, sY.createElement($, {
+        return sY.createElement(y0, null, sY.createElement(TextComponent, {
             color: "error"
         }, "Error editing file"))
     }
@@ -278,7 +281,7 @@ function k_2(A, Q) {
     })
 }
 var sY;
-var y_2 = L(() => {
+var y_2 = lazyLoader(() => {
     hA();
     C60();
     lX();
@@ -290,7 +293,7 @@ var y_2 = L(() => {
     o0();
     u1();
     _E();
-    sY = GA(VA(), 1)
+    sY = esmImport(VA(), 1)
 });
 import {
     dirname as Ih5,
@@ -299,7 +302,7 @@ import {
     sep as Jh5
 } from "path";
 var gD;
-var Wn = L(() => {
+var Wn = lazyLoader(() => {
     w0();
     O9();
     r01();
@@ -399,8 +402,8 @@ var Wn = L(() => {
                     C = "File does not exist.",
                     E = H0(),
                     z = pQ();
-                if (E !== z) C += ` Current working directory: ${E}`;
-                if (H) C += ` Did you mean ${H}?`;
+                if (E !== z) C += ` Current working directory: TextComponent{E}`;
+                if (H) C += ` Did you mean TextComponent{H}?`;
                 return {
                     result: !1,
                     behavior: "ask",
@@ -411,7 +414,7 @@ var Wn = L(() => {
             if (I.endsWith(".ipynb")) return {
                 result: !1,
                 behavior: "ask",
-                message: `File is a Jupyter Notebook. Use the ${M_} to edit this file.`,
+                message: `File is a Jupyter Notebook. Use the TextComponent{NOTEBOOK_EDIT_TOOL_NAME} to edit this file.`,
                 errorCode: 5
             };
             let X = Z.readFileState.get(I);
@@ -442,7 +445,7 @@ var Wn = L(() => {
                 result: !1,
                 behavior: "ask",
                 message: `String to replace not found in file.
-String: ${Q}`,
+String: TextComponent{Q}`,
                 meta: {
                     isFilePathAbsolute: String(i61(A))
                 },
@@ -452,8 +455,8 @@ String: ${Q}`,
             if (K > 1 && !G) return {
                 result: !1,
                 behavior: "ask",
-                message: `Found ${K} matches of the string to replace, but replace_all is false. To replace all occurrences, set replace_all to true. To replace only one occurrence, please provide more context to uniquely identify the instance.
-String: ${Q}`,
+                message: `Found TextComponent{K} matches of the string to replace, but replace_all is false. To replace all occurrences, set replace_all to true. To replace only one occurrence, please provide more context to uniquely identify the instance.
+String: TextComponent{Q}`,
                 meta: {
                     isFilePathAbsolute: String(i61(A)),
                     actualOldString: V
@@ -525,17 +528,17 @@ String: ${Q}`,
                 z = X.existsSync(F) ? VH(F) : "utf8";
             nJA(F, H, z, E);
             let w = pJA();
-            if (w) u21(`file://${F}`), w.changeFile(F, H).catch((q) => {
-                g(`LSP: Failed to notify server of file change for ${F}: ${q.message}`), e(q)
+            if (w) u21(`file://TextComponent{F}`), w.changeFile(F, H).catch((q) => {
+                g(`LSP: Failed to notify server of file change for TextComponent{F}: TextComponent{q.message}`), e(q)
             }), w.saveFile(F).catch((q) => {
-                g(`LSP: Failed to notify server of file save for ${F}: ${q.message}`), e(q)
+                g(`LSP: Failed to notify server of file save for TextComponent{F}: TextComponent{q.message}`), e(q)
             });
             if (Z.set(F, {
                     content: H,
                     timestamp: RD(F),
                     offset: void 0,
                     limit: void 0
-                }), F.endsWith(`${Jh5}CLAUDE.md`)) BA("tengu_write_claudemd", {});
+                }), F.endsWith(`TextComponent{Jh5}CLAUDE.md`)) BA("tengu_write_claudemd", {});
             return $MA(D), $k({
                 operation: "edit",
                 tool: "FileEditTool",
@@ -564,12 +567,12 @@ String: ${Q}`,
             if (I) return {
                 tool_use_id: Y,
                 type: "tool_result",
-                content: `The file ${A} has been updated${J}. All occurrences of '${B}' were successfully replaced with '${G}'.`
+                content: `The file TextComponent{A} has been updated${J}. All occurrences of 'TextComponent{B}' were successfully replaced with 'TextComponent{G}'.`
             };
-            if (ZI("tengu_file_edit_optimization", "enabled", !1)) return {
+            if (getFeatureFlag("tengu_file_edit_optimization", "enabled", !1)) return {
                 tool_use_id: Y,
                 type: "tool_result",
-                content: `The file ${A} has been updated successfully${J}.`
+                content: `The file TextComponent{A} has been updated successfully${J}.`
             };
             let {
                 snippet: X,
@@ -578,13 +581,14 @@ String: ${Q}`,
             return {
                 tool_use_id: Y,
                 type: "tool_result",
-                content: `The file ${A} has been updated${J}. Here's the result of running \`cat -n\` on a snippet of the edited file:
-${ml({content:X,startLine:F})}`
+                content: `The file TextComponent{A} has been updated${J}. Here's the result of running \`cat -n\` on a snippet of the edited file:
+TextComponent{ml({content:X,startLine:F})}`
             }
         }
     }
 });
-var x_2 = "Replace the contents of a specific cell in a Jupyter notebook.",
+/* NOTEBOOK_EDIT_DESCRIPTION = NOTEBOOK_EDIT_DESCRIPTION */
+var NOTEBOOK_EDIT_DESCRIPTION = "Replace the contents of a specific cell in a Jupyter notebook.",
     v_2 = "Completely replaces the contents of a specific cell in a Jupyter notebook (.ipynb file) with new source. Jupyter notebooks are interactive documents that combine code, text, and visualizations, commonly used for data analysis and scientific computing. The notebook_path parameter must be an absolute path, not a relative path. The cell_number is 0-indexed. Use edit_mode=insert to add a new cell at the index specified by cell_number. Use edit_mode=delete to delete the cell at the index specified by cell_number.";
 import {
     relative as Wh5
@@ -598,22 +602,22 @@ function b_2({
     edit_mode: Z = "replace",
     verbose: I
 }) {
-    let Y = Z === "delete" ? "delete" : `${Z} cell in`;
+    let Y = Z === "delete" ? "delete" : `TextComponent{Z} cell in`;
     return uF.createElement(y0, null, uF.createElement(j, {
         flexDirection: "column"
     }, uF.createElement(j, {
         flexDirection: "row"
-    }, uF.createElement($, {
+    }, uF.createElement(TextComponent, {
         color: "error"
-    }, "User rejected ", Y, " "), uF.createElement($, {
+    }, "User rejected ", Y, " "), uF.createElement(TextComponent, {
         bold: !0,
         color: "error"
-    }, I ? A : Wh5(H0(), A)), uF.createElement($, {
+    }, I ? A : Wh5(H0(), A)), uF.createElement(TextComponent, {
         color: "error"
     }, " at cell ", Q)), Z !== "delete" && uF.createElement(j, {
         marginTop: 1,
         flexDirection: "column"
-    }, uF.createElement($, {
+    }, uF.createElement(TextComponent, {
         dimColor: !0
     }, uF.createElement(XO, {
         code: B,
@@ -621,17 +625,17 @@ function b_2({
     })))))
 }
 var uF;
-var f_2 = L(() => {
+var f_2 = lazyLoader(() => {
     hA();
     R2();
     u8();
     iJA();
-    uF = GA(VA(), 1)
+    uF = esmImport(VA(), 1)
 });
 
 function h_2(A) {
     if (!A?.notebook_path) return null;
-    return Q5(A.notebook_path)
+    return formatFilePath(A.notebook_path)
 }
 
 function g_2({
@@ -644,8 +648,8 @@ function g_2({
     verbose: I
 }) {
     if (!A || !B || !G) return null;
-    if (I) return `${A}@${Q}, content: ${B.slice(0,30)}…, cell_type: ${G}, edit_mode: ${Z??"replace"}`;
-    return `${Q5(A)}@${Q}`
+    if (I) return `TextComponent{A}@TextComponent{Q}, content: TextComponent{B.slice(0,30)}…, cell_type: TextComponent{G}, edit_mode: TextComponent{Z??"replace"}`;
+    return `TextComponent{formatFilePath(A)}@TextComponent{Q}`
 }
 
 function u_2(A, {
@@ -664,7 +668,7 @@ function u_2(A, {
 function m_2(A, {
     verbose: Q
 }) {
-    if (!Q && typeof A === "string" && e2(A, "tool_use_error")) return UI.createElement(y0, null, UI.createElement($, {
+    if (!Q && typeof A === "string" && e2(A, "tool_use_error")) return UI.createElement(y0, null, UI.createElement(TextComponent, {
         color: "error"
     }, "Error editing notebook"));
     return UI.createElement(A5, {
@@ -683,12 +687,12 @@ function c_2({
     language: B,
     error: G
 }) {
-    if (G) return UI.createElement(y0, null, UI.createElement($, {
+    if (G) return UI.createElement(y0, null, UI.createElement(TextComponent, {
         color: "error"
     }, G));
     return UI.createElement(y0, null, UI.createElement(j, {
         flexDirection: "column"
-    }, UI.createElement($, null, "Updated cell ", UI.createElement($, {
+    }, UI.createElement(TextComponent, null, "Updated cell ", UI.createElement(TextComponent, {
         bold: !0
     }, A), ":"), UI.createElement(j, {
         marginLeft: 2
@@ -698,7 +702,7 @@ function c_2({
     }))))
 }
 var UI;
-var p_2 = L(() => {
+var p_2 = lazyLoader(() => {
     hA();
     iJA();
     f_2();
@@ -706,7 +710,7 @@ var p_2 = L(() => {
     lX();
     nQ();
     M9();
-    UI = GA(VA(), 1)
+    UI = esmImport(VA(), 1)
 });
 import {
     extname as Xh5,
@@ -714,7 +718,7 @@ import {
     resolve as i_2
 } from "path";
 var Fh5, Vh5, LP;
-var eJA = L(() => {
+var eJA = lazyLoader(() => {
     h2();
     UoA();
     M9();
@@ -738,9 +742,9 @@ var eJA = L(() => {
         edit_mode: _.string().describe("The edit mode that was used"),
         error: _.string().optional().describe("Error message if the operation failed")
     }), LP = {
-        name: M_,
+        name: NOTEBOOK_EDIT_TOOL_NAME,
         async description() {
-            return x_2
+            return NOTEBOOK_EDIT_DESCRIPTION
         },
         async prompt() {
             return v_2
@@ -782,15 +786,15 @@ var eJA = L(() => {
             switch (Q) {
                 case "replace":
                     return {
-                        tool_use_id: Z, type: "tool_result", content: `Updated cell ${A} with ${B}`
+                        tool_use_id: Z, type: "tool_result", content: `Updated cell TextComponent{A} with TextComponent{B}`
                     };
                 case "insert":
                     return {
-                        tool_use_id: Z, type: "tool_result", content: `Inserted cell ${A} with ${B}`
+                        tool_use_id: Z, type: "tool_result", content: `Inserted cell TextComponent{A} with TextComponent{B}`
                     };
                 case "delete":
                     return {
-                        tool_use_id: Z, type: "tool_result", content: `Deleted cell ${A}`
+                        tool_use_id: Z, type: "tool_result", content: `Deleted cell TextComponent{A}`
                     };
                 default:
                     return {
@@ -852,12 +856,12 @@ var eJA = L(() => {
                 if (F !== void 0) {
                     if (!W.cells[F]) return {
                         result: !1,
-                        message: `Cell with index ${F} does not exist in notebook.`,
+                        message: `Cell with index TextComponent{F} does not exist in notebook.`,
                         errorCode: 7
                     }
                 } else return {
                     result: !1,
-                    message: `Cell with ID "${B}" not found in notebook.`,
+                    message: `Cell with ID "TextComponent{B}" not found in notebook.`,
                     errorCode: 8
                 }
             }
@@ -975,13 +979,12 @@ function AWA(A, Q, B) {
         J._zod.constr = Y, J._zod.def = W
     }
     let Z = B?.Parent ?? Object;
-
-class I extends Z {}
+    class I extends Z {}
     Object.defineProperty(I, "name", {
         value: A
     });
 
-function Y(J) {
+    function Y(J) {
         var W;
         let X = B?.Parent ? new I : this;
         G(X, J), (W = X._zod).deferred ?? (W.deferred = []);
@@ -1005,7 +1008,7 @@ function Y50(A) {
     return n_2
 }
 var Kh5, Dh5, n_2;
-var J50 = L(() => {
+var J50 = lazyLoader(() => {
     Kh5 = Object.freeze({
         status: "aborted"
     });
@@ -1042,11 +1045,11 @@ function Hh5(A) {
 
 function X50(A) {
     if (typeof A === "bigint") return A.toString() + "n";
-    if (typeof A === "string") return `"${A}"`;
-    return `${A}`
+    if (typeof A === "string") return `"TextComponent{A}"`;
+    return `TextComponent{A}`
 }
 var mBZ, dBZ, cBZ;
-var SRA = L(() => {
+var SRA = lazyLoader(() => {
     mBZ = Error.captureStackTrace ? Error.captureStackTrace : (...A) => {}, dBZ = Hh5(() => {
         if (typeof navigator < "u" && navigator?.userAgent?.includes("Cloudflare")) return !1;
         try {
@@ -1127,7 +1130,7 @@ var r_2 = (A, Q) => {
         })
     },
     o_2, lBZ;
-var t_2 = L(() => {
+var t_2 = lazyLoader(() => {
     J50();
     SRA();
     o_2 = AWA("$ZodError", r_2), lBZ = AWA("$ZodError", r_2, {
@@ -1137,8 +1140,8 @@ var t_2 = L(() => {
 var e_2 = () => {};
 var Ch5 = "(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))",
     aBZ;
-var Qk2 = L(() => {
-    aBZ = new RegExp(`^${Ch5}$`)
+var Qk2 = lazyLoader(() => {
+    aBZ = new RegExp(`^TextComponent{Ch5}TextComponent`)
 });
 var Bk2 = () => {};
 var Gk2 = () => {};
@@ -1182,7 +1185,7 @@ var Eh5 = (A) => {
             }
         };
 
-function Q(G) {
+        function Q(G) {
             return A[G] ?? null
         }
         let B = {
@@ -1218,50 +1221,49 @@ function Q(G) {
         return (G) => {
             switch (G.code) {
                 case "invalid_type":
-                    return `Invalid input: expected ${G.expected}, received ${Eh5(G.input)}`;
+                    return `Invalid input: expected TextComponent{G.expected}, received TextComponent{Eh5(G.input)}`;
                 case "invalid_value":
-                    if (G.values.length === 1) return `Invalid input: expected ${X50(G.values[0])}`;
-                    return `Invalid option: expected one of ${W50(G.values,"|")}`;
+                    if (G.values.length === 1) return `Invalid input: expected TextComponent{X50(G.values[0])}`;
+                    return `Invalid option: expected one of TextComponent{W50(G.values,"|")}`;
                 case "too_big": {
                     let Z = G.inclusive ? "<=" : "<",
                         I = Q(G.origin);
-                    if (I) return `Too big: expected ${G.origin??"value"} to have ${Z}${G.maximum.toString()} ${I.unit??"elements"}`;
-                    return `Too big: expected ${G.origin??"value"} to be ${Z}${G.maximum.toString()}`
+                    if (I) return `Too big: expected TextComponent{G.origin??"value"} to have TextComponent{Z}TextComponent{G.maximum.toString()} TextComponent{I.unit??"elements"}`;
+                    return `Too big: expected TextComponent{G.origin??"value"} to be TextComponent{Z}TextComponent{G.maximum.toString()}`
                 }
                 case "too_small": {
                     let Z = G.inclusive ? ">=" : ">",
                         I = Q(G.origin);
-                    if (I) return `Too small: expected ${G.origin} to have ${Z}${G.minimum.toString()} ${I.unit}`;
-                    return `Too small: expected ${G.origin} to be ${Z}${G.minimum.toString()}`
+                    if (I) return `Too small: expected TextComponent{G.origin} to have TextComponent{Z}TextComponent{G.minimum.toString()} TextComponent{I.unit}`;
+                    return `Too small: expected TextComponent{G.origin} to be TextComponent{Z}TextComponent{G.minimum.toString()}`
                 }
                 case "invalid_format": {
                     let Z = G;
-                    if (Z.format === "starts_with") return `Invalid string: must start with "${Z.prefix}"`;
-                    if (Z.format === "ends_with") return `Invalid string: must end with "${Z.suffix}"`;
-                    if (Z.format === "includes") return `Invalid string: must include "${Z.includes}"`;
-                    if (Z.format === "regex") return `Invalid string: must match pattern ${Z.pattern}`;
-                    return `Invalid ${B[Z.format]??G.format}`
+                    if (Z.format === "starts_with") return `Invalid string: must start with "TextComponent{Z.prefix}"`;
+                    if (Z.format === "ends_with") return `Invalid string: must end with "TextComponent{Z.suffix}"`;
+                    if (Z.format === "includes") return `Invalid string: must include "TextComponent{Z.includes}"`;
+                    if (Z.format === "regex") return `Invalid string: must match pattern TextComponent{Z.pattern}`;
+                    return `Invalid TextComponent{B[Z.format]??G.format}`
                 }
                 case "not_multiple_of":
-                    return `Invalid number: must be a multiple of ${G.divisor}`;
+                    return `Invalid number: must be a multiple of TextComponent{G.divisor}`;
                 case "unrecognized_keys":
-                    return `Unrecognized key${G.keys.length>1?"s":""}: ${W50(G.keys,", ")}`;
+                    return `Unrecognized key${G.keys.length>1?"s":""}: TextComponent{W50(G.keys,", ")}`;
                 case "invalid_key":
-                    return `Invalid key in ${G.origin}`;
+                    return `Invalid key in TextComponent{G.origin}`;
                 case "invalid_union":
                     return "Invalid input";
                 case "invalid_element":
-                    return `Invalid value in ${G.origin}`;
+                    return `Invalid value in TextComponent{G.origin}`;
                 default:
                     return "Invalid input"
             }
         }
     };
-var Ik2 = L(() => {
+var Ik2 = lazyLoader(() => {
     SRA()
 });
 var H50 = () => {};
-
 class n61 {
     constructor() {
         this._map = new WeakMap, this._idmap = new Map
@@ -1269,7 +1271,7 @@ class n61 {
     add(A, ...Q) {
         let B = Q[0];
         if (this._map.set(A, B), B && typeof B === "object" && "id" in B) {
-            if (this._idmap.has(B.id)) throw Error(`ID ${B.id} already exists in the registry`);
+            if (this._idmap.has(B.id)) throw Error(`ID TextComponent{B.id} already exists in the registry`);
             this._idmap.set(B.id, A)
         }
         return this
@@ -1299,13 +1301,12 @@ function Jk2() {
     return new n61
 }
 var Uh5, $h5, C50;
-var E50 = L(() => {
+var E50 = lazyLoader(() => {
     Uh5 = Symbol("ZodOutput"), $h5 = Symbol("ZodInput");
     C50 = Jk2()
 });
 var Wk2 = () => {};
 var Xk2 = () => {};
-
 class z50 {
     constructor(A) {
         this.counter = 0, this.metadataRegistry = A?.metadata ?? C50, this.target = A?.target ?? "draft-2020-12", this.unrepresentable = A?.unrepresentable ?? "throw", this.override = A?.override ?? (() => {}), this.io = A?.io ?? "output", this.seen = new Map

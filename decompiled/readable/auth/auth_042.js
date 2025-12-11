@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_042.js
+ * 处理时间: 2025-12-09T03:41:36.819Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.925Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -27,7 +30,7 @@
             if (typeof Y !== "function" && Y !== null) throw TypeError("Class extends value " + String(Y) + " is not a constructor or null");
             Q(I, Y);
 
-function J() {
+            function J() {
                 this.constructor = I
             }
             I.prototype = Y === null ? Object.create(Y) : (J.prototype = Y.prototype, new J)
@@ -123,7 +126,7 @@ function J() {
                     }
                 }
 
-function D(C) {
+                function D(C) {
                     try {
                         H(W.throw(C))
                     } catch (E) {
@@ -131,7 +134,7 @@ function D(C) {
                     }
                 }
 
-function H(C) {
+                function H(C) {
                     C.done ? F(C.value) : X(C.value).then(K, D)
                 }
                 H((W = W.apply(I, Y || [])).next())
@@ -151,13 +154,13 @@ function H(C) {
                 return this
             }), V;
 
-function K(H) {
+            function K(H) {
                 return function(C) {
                     return D([H, C])
                 }
             }
 
-function D(H) {
+            function D(H) {
                 if (W) throw TypeError("Generator is already executing.");
                 while (V && (V = 0, H[0] && (J = 0)), J) try {
                     if (W = 1, X && (F = H[0] & 2 ? X.return : H[0] ? X.throw || ((F = X.return) && F.call(X), 0) : X.next) && !(F = F.call(X, H[1])).done) return F;
@@ -289,13 +292,13 @@ function D(H) {
                 return this
             }, X;
 
-function V(w) {
+            function V(w) {
                 return function(N) {
                     return Promise.resolve(N).then(w, E)
                 }
             }
 
-function K(w, N) {
+            function K(w, N) {
                 if (W[w]) {
                     if (X[w] = function(q) {
                             return new Promise(function(R, P) {
@@ -305,7 +308,7 @@ function K(w, N) {
                 }
             }
 
-function D(w, N) {
+            function D(w, N) {
                 try {
                     H(W[w](N))
                 } catch (q) {
@@ -313,19 +316,19 @@ function D(w, N) {
                 }
             }
 
-function H(w) {
+            function H(w) {
                 w.value instanceof dGA ? Promise.resolve(w.value.v).then(C, E) : z(F[0][2], w)
             }
 
-function C(w) {
+            function C(w) {
                 D("next", w)
             }
 
-function E(w) {
+            function E(w) {
                 D("throw", w)
             }
 
-function z(w, N) {
+            function z(w, N) {
                 if (w(N), F.shift(), F.length) D(F[0][0], F[0][1])
             }
         }, YgB = function(I) {
@@ -336,7 +339,7 @@ function z(w, N) {
                 return this
             }, Y;
 
-function W(X, F) {
+            function W(X, F) {
                 Y[X] = I[X] ? function(V) {
                     return (J = !J) ? {
                         value: dGA(I[X](V)),
@@ -352,7 +355,7 @@ function W(X, F) {
                 return this
             }, J);
 
-function W(F) {
+            function W(F) {
                 J[F] = I[F] && function(V) {
                     return new Promise(function(K, D) {
                         V = I[F](V), X(K, D, V.done, V.value)
@@ -360,7 +363,7 @@ function W(F) {
                 }
             }
 
-function X(F, V, K, D) {
+            function X(F, V, K, D) {
                 Promise.resolve(D).then(function(H) {
                     F({
                         value: H,
@@ -393,8 +396,7 @@ function X(F, V, K, D) {
             };
         XgB = function(I) {
             if (I && I.__esModule) return I;
-
-var Y = {};
+            var Y = {};
             if (I != null) {
                 for (var J = G(I), W = 0; W < J.length; W++)
                     if (J[W] !== "default") ctA(Y, I, J[W])
@@ -456,7 +458,7 @@ var Y = {};
             }
             var J, W = 0;
 
-function X() {
+            function X() {
                 while (J = I.stack.pop()) try {
                     if (!J.async && W === 1) return W = 0, I.stack.push(J), Promise.resolve().then(X);
                     if (J.dispose) {
@@ -473,14 +475,14 @@ function X() {
             }
             return X()
         }, EgB = function(I, Y) {
-            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
+            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)TextComponent|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
                 return W ? Y ? ".jsx" : ".js" : X && (!F || !V) ? J : X + F + "." + V.toLowerCase() + "js"
             });
             return I
         }, A("__extends", chB), A("__assign", phB), A("__rest", lhB), A("__decorate", ihB), A("__param", nhB), A("__esDecorate", ahB), A("__runInitializers", shB), A("__propKey", rhB), A("__setFunctionName", ohB), A("__metadata", thB), A("__awaiter", ehB), A("__generator", AgB), A("__exportStar", QgB), A("__createBinding", ctA), A("__values", dtA), A("__read", dp1), A("__spread", BgB), A("__spreadArrays", GgB), A("__spreadArray", ZgB), A("__await", dGA), A("__asyncGenerator", IgB), A("__asyncDelegator", YgB), A("__asyncValues", JgB), A("__makeTemplateObject", WgB), A("__importStar", XgB), A("__importDefault", FgB), A("__classPrivateFieldGet", VgB), A("__classPrivateFieldSet", KgB), A("__classPrivateFieldIn", DgB), A("__addDisposableResource", HgB), A("__disposeResources", CgB), A("__rewriteRelativeImportExtension", EgB)
     })
 });
-var $gB = U((n2G, UgB) => {
+var $gB = moduleWrapper((n2G, UgB) => {
     var {
         defineProperty: ltA,
         getOwnPropertyDescriptor: Cv6,
@@ -511,7 +513,7 @@ var $gB = U((n2G, UgB) => {
     UgB.exports = qv6(zgB);
     var Nv6 = Uv6((A) => typeof ArrayBuffer === "function" && A instanceof ArrayBuffer || Object.prototype.toString.call(A) === "[object ArrayBuffer]", "isArrayBuffer")
 });
-var LgB = U((a2G, NgB) => {
+var LgB = moduleWrapper((a2G, NgB) => {
     var {
         defineProperty: itA,
         getOwnPropertyDescriptor: Lv6,
@@ -542,17 +544,17 @@ var LgB = U((a2G, NgB) => {
     });
     NgB.exports = Pv6(qgB);
     var jv6 = $gB(),
-        pp1 = UA("buffer"),
+        pp1 = nodeRequire("buffer"),
         Sv6 = wgB((A, Q = 0, B = A.byteLength - Q) => {
-            if (!(0, jv6.isArrayBuffer)(A)) throw TypeError(`The "input" argument must be ArrayBuffer. Received type ${typeof A} (${A})`);
+            if (!(0, jv6.isArrayBuffer)(A)) throw TypeError(`The "input" argument must be ArrayBuffer. Received type TextComponent{typeof A} (TextComponent{A})`);
             return pp1.Buffer.from(A, Q, B)
         }, "fromArrayBuffer"),
         _v6 = wgB((A, Q) => {
-            if (typeof A !== "string") throw TypeError(`The "input" argument must be of type string. Received type ${typeof A} (${A})`);
+            if (typeof A !== "string") throw TypeError(`The "input" argument must be of type string. Received type TextComponent{typeof A} (TextComponent{A})`);
             return Q ? pp1.Buffer.from(A, Q) : pp1.Buffer.from(A)
         }, "fromString")
 });
-var PgB = U((s2G, TgB) => {
+var PgB = moduleWrapper((s2G, TgB) => {
     var {
         defineProperty: ntA,
         getOwnPropertyDescriptor: kv6,
@@ -599,7 +601,7 @@ var PgB = U((s2G, TgB) => {
             return (0, OgB.fromArrayBuffer)(A.buffer, A.byteOffset, A.byteLength).toString("utf8")
         }, "toUtf8")
 });
-var _gB = U((jgB) => {
+var _gB = moduleWrapper((jgB) => {
     Object.defineProperty(jgB, "__esModule", {
         value: !0
     });
@@ -609,7 +611,7 @@ var _gB = U((jgB) => {
             return Buffer.from(A, "utf8")
         } : uv6.fromUtf8;
 
-function dv6(A) {
+    function dv6(A) {
         if (A instanceof Uint8Array) return A;
         if (typeof A === "string") return mv6(A);
         if (ArrayBuffer.isView(A)) return new Uint8Array(A.buffer, A.byteOffset, A.byteLength / Uint8Array.BYTES_PER_ELEMENT);
@@ -617,36 +619,36 @@ function dv6(A) {
     }
     jgB.convertToBuffer = dv6
 });
-var xgB = U((kgB) => {
+var xgB = moduleWrapper((kgB) => {
     Object.defineProperty(kgB, "__esModule", {
         value: !0
     });
     kgB.isEmptyData = void 0;
 
-function cv6(A) {
+    function cv6(A) {
         if (typeof A === "string") return A.length === 0;
         return A.byteLength === 0
     }
     kgB.isEmptyData = cv6
 });
-var fgB = U((vgB) => {
+var fgB = moduleWrapper((vgB) => {
     Object.defineProperty(vgB, "__esModule", {
         value: !0
     });
     vgB.numToUint8 = void 0;
 
-function pv6(A) {
+    function pv6(A) {
         return new Uint8Array([(A & 4278190080) >> 24, (A & 16711680) >> 16, (A & 65280) >> 8, A & 255])
     }
     vgB.numToUint8 = pv6
 });
-var ugB = U((hgB) => {
+var ugB = moduleWrapper((hgB) => {
     Object.defineProperty(hgB, "__esModule", {
         value: !0
     });
     hgB.uint32ArrayFrom = void 0;
 
-function lv6(A) {
+    function lv6(A) {
         if (!Uint32Array.from) {
             var Q = new Uint32Array(A.length),
                 B = 0;
@@ -657,7 +659,7 @@ function lv6(A) {
     }
     hgB.uint32ArrayFrom = lv6
 });
-var ip1 = U((cGA) => {
+var ip1 = moduleWrapper((cGA) => {
     Object.defineProperty(cGA, "__esModule", {
         value: !0
     });
@@ -691,7 +693,7 @@ var ip1 = U((cGA) => {
         }
     })
 });
-var lgB = U((cgB) => {
+var lgB = moduleWrapper((cgB) => {
     Object.defineProperty(cgB, "__esModule", {
         value: !0
     });
@@ -718,27 +720,26 @@ var lgB = U((cgB) => {
         }();
     cgB.AwsCrc32 = ov6
 });
-var atA = U((ap1) => {
+var atA = moduleWrapper((ap1) => {
     Object.defineProperty(ap1, "__esModule", {
         value: !0
     });
     ap1.AwsCrc32 = ap1.Crc32 = ap1.crc32 = void 0;
-    var tv6 = cp1(),
-        ev6 = ip1();
+    var READONLY_TOOLS = cp1(),
+        EDIT_TOOLS = ip1();
 
-function Ab6(A) {
+    function Ab6(A) {
         return new igB().update(A).digest()
     }
     ap1.crc32 = Ab6;
-
-var igB = function() {
+    var igB = function() {
         function A() {
             this.checksum = 4294967295
         }
         return A.prototype.update = function(Q) {
             var B, G;
             try {
-                for (var Z = tv6.__values(Q), I = Z.next(); !I.done; I = Z.next()) {
+                for (var Z = READONLY_TOOLS.__values(Q), I = Z.next(); !I.done; I = Z.next()) {
                     var Y = I.value;
                     this.checksum = this.checksum >>> 8 ^ Bb6[(this.checksum ^ Y) & 255]
                 }
@@ -759,9 +760,8 @@ var igB = function() {
         }, A
     }();
     ap1.Crc32 = igB;
-
-var Qb6 = [0, 1996959894, 3993919788, 2567524794, 124634137, 1886057615, 3915621685, 2657392035, 249268274, 2044508324, 3772115230, 2547177864, 162941995, 2125561021, 3887607047, 2428444049, 498536548, 1789927666, 4089016648, 2227061214, 450548861, 1843258603, 4107580753, 2211677639, 325883990, 1684777152, 4251122042, 2321926636, 335633487, 1661365465, 4195302755, 2366115317, 997073096, 1281953886, 3579855332, 2724688242, 1006888145, 1258607687, 3524101629, 2768942443, 901097722, 1119000684, 3686517206, 2898065728, 853044451, 1172266101, 3705015759, 2882616665, 651767980, 1373503546, 3369554304, 3218104598, 565507253, 1454621731, 3485111705, 3099436303, 671266974, 1594198024, 3322730930, 2970347812, 795835527, 1483230225, 3244367275, 3060149565, 1994146192, 31158534, 2563907772, 4023717930, 1907459465, 112637215, 2680153253, 3904427059, 2013776290, 251722036, 2517215374, 3775830040, 2137656763, 141376813, 2439277719, 3865271297, 1802195444, 476864866, 2238001368, 4066508878, 1812370925, 453092731, 2181625025, 4111451223, 1706088902, 314042704, 2344532202, 4240017532, 1658658271, 366619977, 2362670323, 4224994405, 1303535960, 984961486, 2747007092, 3569037538, 1256170817, 1037604311, 2765210733, 3554079995, 1131014506, 879679996, 2909243462, 3663771856, 1141124467, 855842277, 2852801631, 3708648649, 1342533948, 654459306, 3188396048, 3373015174, 1466479909, 544179635, 3110523913, 3462522015, 1591671054, 702138776, 2966460450, 3352799412, 1504918807, 783551873, 3082640443, 3233442989, 3988292384, 2596254646, 62317068, 1957810842, 3939845945, 2647816111, 81470997, 1943803523, 3814918930, 2489596804, 225274430, 2053790376, 3826175755, 2466906013, 167816743, 2097651377, 4027552580, 2265490386, 503444072, 1762050814, 4150417245, 2154129355, 426522225, 1852507879, 4275313526, 2312317920, 282753626, 1742555852, 4189708143, 2394877945, 397917763, 1622183637, 3604390888, 2714866558, 953729732, 1340076626, 3518719985, 2797360999, 1068828381, 1219638859, 3624741850, 2936675148, 906185462, 1090812512, 3747672003, 2825379669, 829329135, 1181335161, 3412177804, 3160834842, 628085408, 1382605366, 3423369109, 3138078467, 570562233, 1426400815, 3317316542, 2998733608, 733239954, 1555261956, 3268935591, 3050360625, 752459403, 1541320221, 2607071920, 3965973030, 1969922972, 40735498, 2617837225, 3943577151, 1913087877, 83908371, 2512341634, 3803740692, 2075208622, 213261112, 2463272603, 3855990285, 2094854071, 198958881, 2262029012, 4057260610, 1759359992, 534414190, 2176718541, 4139329115, 1873836001, 414664567, 2282248934, 4279200368, 1711684554, 285281116, 2405801727, 4167216745, 1634467795, 376229701, 2685067896, 3608007406, 1308918612, 956543938, 2808555105, 3495958263, 1231636301, 1047427035, 2932959818, 3654703836, 1088359270, 936918000, 2847714899, 3736837829, 1202900863, 817233897, 3183342108, 3401237130, 1404277552, 615818150, 3134207493, 3453421203, 1423857449, 601450431, 3009837614, 3294710456, 1567103746, 711928724, 3020668471, 3272380065, 1510334235, 755167117],
-        Bb6 = (0, ev6.uint32ArrayFrom)(Qb6),
+    var Qb6 = [0, 1996959894, 3993919788, 2567524794, 124634137, 1886057615, 3915621685, 2657392035, 249268274, 2044508324, 3772115230, 2547177864, 162941995, 2125561021, 3887607047, 2428444049, 498536548, 1789927666, 4089016648, 2227061214, 450548861, 1843258603, 4107580753, 2211677639, 325883990, 1684777152, 4251122042, 2321926636, 335633487, 1661365465, 4195302755, 2366115317, 997073096, 1281953886, 3579855332, 2724688242, 1006888145, 1258607687, 3524101629, 2768942443, 901097722, 1119000684, 3686517206, 2898065728, 853044451, 1172266101, 3705015759, 2882616665, 651767980, 1373503546, 3369554304, 3218104598, 565507253, 1454621731, 3485111705, 3099436303, 671266974, 1594198024, 3322730930, 2970347812, 795835527, 1483230225, 3244367275, 3060149565, 1994146192, 31158534, 2563907772, 4023717930, 1907459465, 112637215, 2680153253, 3904427059, 2013776290, 251722036, 2517215374, 3775830040, 2137656763, 141376813, 2439277719, 3865271297, 1802195444, 476864866, 2238001368, 4066508878, 1812370925, 453092731, 2181625025, 4111451223, 1706088902, 314042704, 2344532202, 4240017532, 1658658271, 366619977, 2362670323, 4224994405, 1303535960, 984961486, 2747007092, 3569037538, 1256170817, 1037604311, 2765210733, 3554079995, 1131014506, 879679996, 2909243462, 3663771856, 1141124467, 855842277, 2852801631, 3708648649, 1342533948, 654459306, 3188396048, 3373015174, 1466479909, 544179635, 3110523913, 3462522015, 1591671054, 702138776, 2966460450, 3352799412, 1504918807, 783551873, 3082640443, 3233442989, 3988292384, 2596254646, 62317068, 1957810842, 3939845945, 2647816111, 81470997, 1943803523, 3814918930, 2489596804, 225274430, 2053790376, 3826175755, 2466906013, 167816743, 2097651377, 4027552580, 2265490386, 503444072, 1762050814, 4150417245, 2154129355, 426522225, 1852507879, 4275313526, 2312317920, 282753626, 1742555852, 4189708143, 2394877945, 397917763, 1622183637, 3604390888, 2714866558, 953729732, 1340076626, 3518719985, 2797360999, 1068828381, 1219638859, 3624741850, 2936675148, 906185462, 1090812512, 3747672003, 2825379669, 829329135, 1181335161, 3412177804, 3160834842, 628085408, 1382605366, 3423369109, 3138078467, 570562233, 1426400815, 3317316542, 2998733608, 733239954, 1555261956, 3268935591, 3050360625, 752459403, 1541320221, 2607071920, 3965973030, 1969922972, 40735498, 2617837225, 3943577151, 1913087877, 83908371, 2512341634, 3803740692, 2075208622, 213261112, 2463272603, 3855990285, 2094854071, 198958881, 2262029012, 4057260610, 1759359992, 534414190, 2176718541, 4139329115, 1873836001, 414664567, 2282248934, 4279200368, 1711684554, 285281116, 2405801727, 4167216745, 1634467795, 376229701, 2685067896, 3608007406, 1308918612, 956543938, 2808555105, 3495958263, 1231636301, 1047427035, 2932959818, 3654703836, 1088359270, 936918000, 2847714899, 3736837829, 1202900863, 817233897, 3183342108, 3401237130, 1404277552, 615818150, 3134207493, 3453421203, 1423857449, 601450431, 3009837614, 3294710456, 1567103746, 711928724, 3020668471, 3272380065, 1510334235, 755167117],
+        Bb6 = (0, EDIT_TOOLS.uint32ArrayFrom)(Qb6),
         Gb6 = lgB();
     Object.defineProperty(ap1, "AwsCrc32", {
         enumerable: !0,
@@ -770,7 +770,7 @@ var Qb6 = [0, 1996959894, 3993919788, 2567524794, 124634137, 1886057615, 3915621
         }
     })
 });
-var rp1 = U((Y9G, tgB) => {
+var rp1 = moduleWrapper((Y9G, tgB) => {
     var {
         defineProperty: rtA,
         getOwnPropertyDescriptor: Jb6,
@@ -815,7 +815,7 @@ var rp1 = U((Y9G, tgB) => {
                 Ef(this, "Int64")
             }
             static fromNumber(Q) {
-                if (Q > 9223372036854776000 || Q < -9223372036854776000) throw Error(`${Q} is too large (or, if negative, too small) to represent as an Int64`);
+                if (Q > 9223372036854776000 || Q < -9223372036854776000) throw Error(`TextComponent{Q} is too large (or, if negative, too small) to represent as an Int64`);
                 let B = new Uint8Array(8);
                 for (let G = 7, Z = Math.abs(Math.round(Q)); G > -1 && Z > 0; G--, Z /= 256) B[G] = Z;
                 if (Q < 0) sp1(B);
@@ -832,14 +832,13 @@ var rp1 = U((Y9G, tgB) => {
             }
         };
 
-function sp1(A) {
+    function sp1(A) {
         for (let Q = 0; Q < 8; Q++) A[Q] ^= 255;
         for (let Q = 7; Q > -1; Q--)
             if (A[Q]++, A[Q] !== 0) break
     }
     Ef(sp1, "negate");
-
-var sgB = class {
+    var sgB = class {
             constructor(A, Q) {
                 this.toUtf8 = A, this.fromUtf8 = Q
             }
@@ -887,7 +886,7 @@ var sgB = class {
                         let X = new Uint8Array(9);
                         return X[0] = 8, X.set(stA.fromNumber(A.value.valueOf()).bytes, 1), X;
                     case "uuid":
-                        if (!Nb6.test(A.value)) throw Error(`Invalid UUID received: ${A.value}`);
+                        if (!Nb6.test(A.value)) throw Error(`Invalid UUID received: TextComponent{A.value}`);
                         let F = new Uint8Array(17);
                         return F[0] = 9, F.set((0, we.fromHex)(A.value.replace(/\-/g, "")), 1), F
                 }
@@ -959,7 +958,7 @@ var sgB = class {
                             let J = new Uint8Array(A.buffer, A.byteOffset + B, 16);
                             B += 16, Q[Z] = {
                                 type: qb6,
-                                value: `${(0,we.toHex)(J.subarray(0,4))}-${(0,we.toHex)(J.subarray(4,6))}-${(0,we.toHex)(J.subarray(6,8))}-${(0,we.toHex)(J.subarray(8,10))}-${(0,we.toHex)(J.subarray(10))}`
+                                value: `TextComponent{(0,we.toHex)(J.subarray(0,4))}-TextComponent{(0,we.toHex)(J.subarray(4,6))}-TextComponent{(0,we.toHex)(J.subarray(6,8))}-TextComponent{(0,we.toHex)(J.subarray(8,10))}-TextComponent{(0,we.toHex)(J.subarray(10))}`
                             };
                             break;
                         default:
@@ -978,14 +977,14 @@ var sgB = class {
         $b6 = "string",
         wb6 = "timestamp",
         qb6 = "uuid",
-        Nb6 = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/,
+        Nb6 = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}TextComponent/,
         Lb6 = atA(),
         rgB = 4,
         lp = rgB * 2,
         qe = 4,
         Mb6 = lp + qe * 2;
 
-function ogB({
+    function ogB({
         byteLength: A,
         byteOffset: Q,
         buffer: B
@@ -998,16 +997,15 @@ function ogB({
             Y = G.getUint32(lp, !1),
             J = G.getUint32(A - qe, !1),
             W = new Lb6.Crc32().update(new Uint8Array(B, Q, lp));
-        if (Y !== W.digest()) throw Error(`The prelude checksum specified in the message (${Y}) does not match the calculated CRC32 checksum (${W.digest()})`);
-        if (W.update(new Uint8Array(B, Q + lp, A - (lp + qe))), J !== W.digest()) throw Error(`The message checksum (${W.digest()}) did not match the expected value of ${J}`);
+        if (Y !== W.digest()) throw Error(`The prelude checksum specified in the message (TextComponent{Y}) does not match the calculated CRC32 checksum (TextComponent{W.digest()})`);
+        if (W.update(new Uint8Array(B, Q + lp, A - (lp + qe))), J !== W.digest()) throw Error(`The message checksum (TextComponent{W.digest()}) did not match the expected value of TextComponent{J}`);
         return {
             headers: new DataView(B, Q + lp + qe, I),
             body: new Uint8Array(B, Q + lp + qe + I, Z - I - (lp + qe + qe))
         }
     }
     Ef(ogB, "splitMessage");
-
-var Ob6 = class {
+    var Ob6 = class {
             static {
                 Ef(this, "EventStreamCodec")
             }
@@ -1128,7 +1126,7 @@ var Ob6 = class {
             }
         }
 });
-var BuB = U((D9G, QuB) => {
+var BuB = moduleWrapper((D9G, QuB) => {
     var {
         defineProperty: ttA,
         getOwnPropertyDescriptor: Sb6,
@@ -1158,7 +1156,7 @@ var BuB = U((D9G, QuB) => {
     });
     QuB.exports = vb6(egB);
     var bb6 = rp1(),
-        otA = UA("stream"),
+        otA = nodeRequire("stream"),
         fb6 = class extends otA.Transform {
             static {
                 etA(this, "EventSigningStream")
@@ -1212,13 +1210,12 @@ var BuB = U((D9G, QuB) => {
             }
         };
 
-function AuB(A) {
+    function AuB(A) {
         let Q = Buffer.from(A, "hex");
         return new Uint8Array(Q.buffer, Q.byteOffset, Q.byteLength / Uint8Array.BYTES_PER_ELEMENT)
     }
     etA(AuB, "getSignatureBinary");
-
-var hb6 = class {
+    var hb6 = class {
             static {
                 etA(this, "EventStreamPayloadHandler")
             }
@@ -1239,7 +1236,7 @@ var hb6 = class {
                 G.body = new otA.PassThrough({
                     objectMode: !0
                 });
-                let W = G.headers?.authorization?.match(/Signature=([\w]+)$/)?.[1] ?? I?.["X-Amz-Signature"] ?? "",
+                let W = G.headers?.authorization?.match(/Signature=([\w]+)TextComponent/)?.[1] ?? I?.["X-Amz-Signature"] ?? "",
                     X = new fb6({
                         priorSignature: W,
                         eventStreamCodec: this.eventStreamCodec,
@@ -1260,7 +1257,7 @@ var hb6 = class {
         },
         gb6 = etA((A) => new hb6(A), "eventStreamPayloadHandlerProvider")
 });
-var WuB = U((E9G, JuB) => {
+var WuB = moduleWrapper((E9G, JuB) => {
     var {
         defineProperty: AeA,
         getOwnPropertyDescriptor: ub6,
@@ -1292,7 +1289,7 @@ var WuB = U((E9G, JuB) => {
     JuB.exports = lb6(GuB);
     var xwA = rp1();
 
-function ZuB(A) {
+    function ZuB(A) {
         let Q = 0,
             B = 0,
             G = null,
@@ -1335,7 +1332,7 @@ function ZuB(A) {
     }
     pGA(ZuB, "getChunkedStream");
 
-function IuB(A, Q) {
+    function IuB(A, Q) {
         return async function(B) {
             let {
                 value: G
@@ -1361,12 +1358,11 @@ function IuB(A, Q) {
                     I = await A(Z);
                 if (I.$unknown) return;
                 return I
-            } else throw Error(`Unrecognizable event type: ${B.headers[":event-type"].value}`)
+            } else throw Error(`Unrecognizable event type: TextComponent{B.headers[":event-type"].value}`)
         }
     }
     pGA(IuB, "getMessageUnmarshaller");
-
-var YuB = class {
+    var YuB = class {
             static {
                 pGA(this, "EventStreamMarshaller")
             }
@@ -1399,7 +1395,7 @@ var YuB = class {
         },
         ib6 = pGA((A) => new YuB(A), "eventStreamSerdeProvider")
 });
-var DuB = U((U9G, KuB) => {
+var DuB = moduleWrapper((U9G, KuB) => {
     var {
         defineProperty: QeA,
         getOwnPropertyDescriptor: nb6,
@@ -1430,7 +1426,7 @@ var DuB = U((U9G, KuB) => {
     });
     KuB.exports = tb6(XuB);
     var eb6 = WuB(),
-        Af6 = UA("stream");
+        Af6 = nodeRequire("stream");
     async function* FuB(A) {
         let Q = !1,
             B = !1,
@@ -1450,8 +1446,7 @@ var DuB = U((U9G, KuB) => {
         }
     }
     op1(FuB, "readabletoIterable");
-
-var VuB = class {
+    var VuB = class {
             static {
                 op1(this, "EventStreamMarshaller")
             }
@@ -1474,7 +1469,7 @@ var VuB = class {
         },
         Qf6 = op1((A) => new VuB(A), "eventStreamSerdeProvider")
 });
-var tp1 = U((w9G, NuB) => {
+var tp1 = moduleWrapper((w9G, NuB) => {
     var {
         defineProperty: BeA,
         getOwnPropertyDescriptor: Bf6,

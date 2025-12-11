@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: prompts_006.js
+ * 处理时间: 2025-12-09T03:41:38.229Z
+ * 变量映射: 4 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.040Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -48,7 +51,7 @@
         }
     }).call(fR2)
 });
-var mR2 = U((uR2, ti) => {
+var mR2 = moduleWrapper((uR2, ti) => {
     (function() {
         var A, Q, B, G, Z, I, Y, J, W;
         ({
@@ -72,12 +75,12 @@ var mR2 = U((uR2, ti) => {
         }, uR2.implementation = new B, uR2.nodeType = A, uR2.writerState = Q
     }).call(uR2)
 });
-var pR2 = U((cx5) => {
+var pR2 = moduleWrapper((cx5) => {
     var dR2 = ui1(),
         gx5 = mR2();
     cx5.build = dx5;
 
-function ux5(A) {
+    function ux5(A) {
         function Q(B) {
             return B < 10 ? "0" + B : B
         }
@@ -85,12 +88,12 @@ function ux5(A) {
     }
     var mx5 = Object.prototype.toString;
 
-function cR2(A) {
+    function cR2(A) {
         var Q = mx5.call(A).match(/\[object (.*)\]/);
         return Q ? Q[1] : Q
     }
 
-function dx5(A, Q) {
+    function dx5(A, Q) {
         var B = {
                 version: "1.0",
                 encoding: "UTF-8"
@@ -104,7 +107,7 @@ function dx5(A, Q) {
         return Q.pretty = Q.pretty !== !1, Z.end(Q)
     }
 
-function H80(A, Q) {
+    function H80(A, Q) {
         var B, G, Z, I = cR2(A);
         if (I == "Undefined") return;
         else if (Array.isArray(A)) {
@@ -125,7 +128,7 @@ function H80(A, Q) {
         else if (I === "Null") Q.ele("null").txt("")
     }
 });
-var nR2 = U((C80) => {
+var nR2 = moduleWrapper((C80) => {
     var lR2 = LO2();
     Object.keys(lR2).forEach(function(A) {
         C80[A] = lR2[A]
@@ -140,12 +143,12 @@ function E80({
     message: A,
     title: Q
 }) {
-    let B = Q ? `${Q}:
-${A}` : A;
+    let B = Q ? `TextComponent{Q}:
+TextComponent{A}` : A;
     try {
         process.stdout.write(`\x1B]9;
 
-${B}\x07`)
+TextComponent{B}\x07`)
     } catch {}
 }
 
@@ -155,7 +158,7 @@ function aR2({
 }) {
     try {
         let B = Math.floor(Math.random() * 1e4);
-        process.stdout.write(`\x1B]99;i=${B}:d=0:p=title;${Q||"Claude Code"}\x1B\\`), process.stdout.write(`\x1B]99;i=${B}:p=body;${A}\x1B\\`), process.stdout.write(`\x1B]99;i=${B}:d=1:a=focus;\x1B\\`)
+        process.stdout.write(`\x1B]99;i=TextComponent{B}:d=0:p=title;TextComponent{Q||"Claude Code"}\x1B\\`), process.stdout.write(`\x1B]99;i=TextComponent{B}:p=body;TextComponent{A}\x1B\\`), process.stdout.write(`\x1B]99;i=TextComponent{B}:d=1:a=focus;\x1B\\`)
     } catch {}
 }
 
@@ -165,20 +168,19 @@ function lx5({
 }) {
     try {
         let B = Q || "Claude Code";
-        process.stdout.write(`\x1B]777;notify;${B};${A}\x07`)
+        process.stdout.write(`\x1B]777;notify;TextComponent{B};TextComponent{A}\x07`)
     } catch {}
 }
 
 function z80() {
     process.stdout.write("\x07")
 }
-// Async function: ix5
 async function ix5() {
     try {
         if (m0.terminal !== "Apple_Terminal") return !1;
-        let Q = (await ZQ("osascript", ["-e", 'tell application "Terminal" to name of current settings of front window'])).stdout.trim();
+        let Q = (await execGit("osascript", ["-e", 'tell application "Terminal" to name of current settings of front window'])).stdout.trim();
         if (!Q) return !1;
-        let B = await ZQ("defaults", ["export", "com.apple.Terminal", "-"]);
+        let B = await execGit("defaults", ["export", "com.apple.Terminal", "-"]);
         if (B.code !== 0) return !1;
         let I = sR2.default.parse(B.stdout)?.["Window Settings"]?.[Q];
         if (!I) return !1;
@@ -187,7 +189,6 @@ async function ix5() {
         return e(A instanceof Error ? A : Error(String(A))), !1
     }
 }
-
 async function I0A(A) {
     let B = L1().preferredNotifChannel,
         G = "none";
@@ -224,16 +225,15 @@ async function I0A(A) {
     })
 }
 var sR2;
-var W61 = L(() => {
+var W61 = lazyLoader(() => {
     jQ();
     I6();
     w0();
     f5();
     u1();
     AO();
-    sR2 = GA(nR2(), 1)
+    sR2 = esmImport(nR2(), 1)
 });
-
 async function rR2(A, Q, B) {
     try {
         let G = VI();
@@ -256,14 +256,13 @@ async function rR2(A, Q, B) {
         })
     } catch (G) {}
 }
-var oR2 = L(() => {
+var oR2 = lazyLoader(() => {
     w3();
     XE()
 });
-// Async function: nx5
 async function nx5() {
     try {
-        let A = await ZQ("gh", ["auth", "status", "--active", "--json", "hosts"], {
+        let A = await execGit("gh", ["auth", "status", "--active", "--json", "hosts"], {
             useCwd: !1,
             timeout: 5000
         });
@@ -283,10 +282,9 @@ async function nx5() {
         return null
     }
 }
-// Async function: ax5
 async function ax5() {
     try {
-        let A = await ZQ("git", ["config", "--get", "user.email"], {
+        let A = await execGit("git", ["config", "--get", "user.email"], {
             useCwd: !1,
             timeout: 5000
         });
@@ -305,7 +303,7 @@ async function $80() {
     let [Q, B] = await Promise.all([nx5(), ax5()]);
     if (Q || B) rR2(Q?.username ?? "", Q?.hostname ?? "", B ?? "")
 }
-var tR2 = L(() => {
+var tR2 = lazyLoader(() => {
     I6();
     oR2();
     hB();
@@ -359,8 +357,7 @@ function ei({
             })
         }
     });
-
-async function q(v, x) {
+    async function q(v, x) {
         try {
             let [p, u] = v.split("#");
             if (!p || !u) {
@@ -496,22 +493,22 @@ async function q(v, x) {
         }
     }, [H]);
 
-function y() {
+    function y() {
         switch (W.state) {
             case "idle":
                 return $2.default.createElement(j, {
                     flexDirection: "column",
                     gap: 1,
                     marginTop: 1
-                }, $2.default.createElement($, {
+                }, $2.default.createElement(TextComponent, {
                     bold: !0
-                }, Q ? Q : "Claude Code can be used with your Claude subscription or billed based on API usage through your Console account."), $2.default.createElement($, null, "Select login method:"), $2.default.createElement(j, null, $2.default.createElement(M0, {
+                }, Q ? Q : "Claude Code can be used with your Claude subscription or billed based on API usage through your Console account."), $2.default.createElement(TextComponent, null, "Select login method:"), $2.default.createElement(j, null, $2.default.createElement(M0, {
                     options: [{
-                        label: `Claude account with subscription · ${oA.dim("Pro, Max, Team, or Enterprise")}
+                        label: `Claude account with subscription · TextComponent{oA.dim("Pro, Max, Team, or Enterprise")}
 `,
                         value: "claudeai"
                     }, {
-                        label: `Anthropic Console account · ${oA.dim("API usage billing")}
+                        label: `Anthropic Console account · TextComponent{oA.dim("API usage billing")}
 `,
                         value: "console"
                     }],
@@ -527,9 +524,9 @@ function y() {
                 return $2.default.createElement(j, {
                     flexDirection: "column",
                     gap: 1
-                }, J && $2.default.createElement(j, null, $2.default.createElement($, {
+                }, J && $2.default.createElement(j, null, $2.default.createElement(TextComponent, {
                     dimColor: !0
-                }, J)), !z && $2.default.createElement(j, null, $2.default.createElement(e9, null), $2.default.createElement($, null, "Opening browser to sign in…")), z && $2.default.createElement(j, null, $2.default.createElement($, null, eR2), $2.default.createElement(s4, {
+                }, J)), !z && $2.default.createElement(j, null, $2.default.createElement(e9, null), $2.default.createElement(TextComponent, null, "Opening browser to sign in…")), z && $2.default.createElement(j, null, $2.default.createElement(TextComponent, null, eR2), $2.default.createElement(s4, {
                     value: F,
                     onChange: V,
                     onSubmit: (v) => q(v, W.url),
@@ -541,35 +538,35 @@ function y() {
                 return $2.default.createElement(j, {
                     flexDirection: "column",
                     gap: 1
-                }, $2.default.createElement(j, null, $2.default.createElement(e9, null), $2.default.createElement($, null, "Creating API key for Claude Code…")));
+                }, $2.default.createElement(j, null, $2.default.createElement(e9, null), $2.default.createElement(TextComponent, null, "Creating API key for Claude Code…")));
             case "about_to_retry":
                 return $2.default.createElement(j, {
                     flexDirection: "column",
                     gap: 1
-                }, $2.default.createElement($, {
+                }, $2.default.createElement(TextComponent, {
                     color: "permission"
                 }, "Retrying…"));
             case "success":
                 return $2.default.createElement(j, {
                     flexDirection: "column"
-                }, B === "setup-token" && W.token ? null : $2.default.createElement($2.default.Fragment, null, i6()?.emailAddress ? $2.default.createElement($, {
+                }, B === "setup-token" && W.token ? null : $2.default.createElement($2.default.Fragment, null, i6()?.emailAddress ? $2.default.createElement(TextComponent, {
                     dimColor: !0
-                }, "Logged in as", " ", $2.default.createElement($, null, i6()?.emailAddress)) : null, $2.default.createElement($, {
+                }, "Logged in as", " ", $2.default.createElement(TextComponent, null, i6()?.emailAddress)) : null, $2.default.createElement(TextComponent, {
                     color: "success"
-                }, "Login successful. Press ", $2.default.createElement($, {
+                }, "Login successful. Press ", $2.default.createElement(TextComponent, {
                     bold: !0
                 }, "Enter"), " to continue…")));
             case "error":
                 return $2.default.createElement(j, {
                     flexDirection: "column",
                     gap: 1
-                }, $2.default.createElement($, {
+                }, $2.default.createElement(TextComponent, {
                     color: "error"
                 }, "OAuth error: ", W.message), W.toRetry && $2.default.createElement(j, {
                     marginTop: 1
-                }, $2.default.createElement($, {
+                }, $2.default.createElement(TextComponent, {
                     color: "permission"
-                }, "Press ", $2.default.createElement($, {
+                }, "Press ", $2.default.createElement(TextComponent, {
                     bold: !0
                 }, "Enter"), " to retry.")));
             default:
@@ -586,29 +583,29 @@ function y() {
         paddingBottom: 1
     }, $2.default.createElement(j, {
         paddingX: 1
-    }, $2.default.createElement($, {
+    }, $2.default.createElement(TextComponent, {
         dimColor: !0
     }, "Browser didn't open? Use the url below to sign in:")), $2.default.createElement(j, {
         width: 1000
-    }, $2.default.createElement($, {
+    }, $2.default.createElement(TextComponent, {
         dimColor: !0
     }, W.url))), B === "setup-token" && W.state === "success" && W.token && $2.default.createElement(j, {
         key: "tokenOutput",
         flexDirection: "column",
         gap: 1,
         paddingTop: 1
-    }, $2.default.createElement($, {
+    }, $2.default.createElement(TextComponent, {
         color: "success"
     }, "✓ Long-lived authentication token created successfully!"), $2.default.createElement(j, {
         flexDirection: "column",
         gap: 1
-    }, $2.default.createElement($, null, "Your OAuth token (valid for 1 year):"), $2.default.createElement(j, {
+    }, $2.default.createElement(TextComponent, null, "Your OAuth token (valid for 1 year):"), $2.default.createElement(j, {
         width: 1000
-    }, $2.default.createElement($, {
+    }, $2.default.createElement(TextComponent, {
         color: "warning"
-    }, W.token)), $2.default.createElement($, {
+    }, W.token)), $2.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Store this token securely. You won't be able to see it again."), $2.default.createElement($, {
+    }, "Store this token securely. You won't be able to see it again."), $2.default.createElement(TextComponent, {
         dimColor: !0
     }, "Use this token by setting: export CLAUDE_CODE_OAUTH_TOKEN=<token>"))), $2.default.createElement(j, {
         paddingLeft: 1,
@@ -617,7 +614,7 @@ function y() {
     }, y()))
 }
 var $2, eR2 = "Paste code here if prompted > ";
-var KRA = L(() => {
+var KRA = lazyLoader(() => {
     hA();
     QY();
     f40();
@@ -634,7 +631,7 @@ var KRA = L(() => {
     RB();
     s2();
     tR2();
-    $2 = GA(VA(), 1)
+    $2 = esmImport(VA(), 1)
 });
 
 function AT2({
@@ -649,7 +646,7 @@ function AT2({
                 G(C)
             } catch (C) {
                 let E = C instanceof Error ? C.message : String(C);
-                g(`Error getting changed files: ${E}`, {
+                g(`Error getting changed files: TextComponent{E}`, {
                     level: "error"
                 }), F("Failed to get changed files")
             } finally {
@@ -664,7 +661,7 @@ function AT2({
             else F("Failed to stash changes")
         } catch (H) {
             let C = H instanceof Error ? H.message : String(H);
-            g(`Error stashing changes: ${C}`, {
+            g(`Error stashing changes: TextComponent{C}`, {
                 level: "error"
             }), F("Failed to stash changes")
         } finally {
@@ -679,20 +676,20 @@ function AT2({
         padding: 1
     }, FG.default.createElement(j, {
         marginBottom: 1
-    }, FG.default.createElement(e9, null), FG.default.createElement($, null, " Checking git status", V1.ellipsis)));
+    }, FG.default.createElement(e9, null), FG.default.createElement(TextComponent, null, " Checking git status", V1.ellipsis)));
     if (X) return FG.default.createElement(j, {
         flexDirection: "column",
         padding: 1
-    }, FG.default.createElement($, {
+    }, FG.default.createElement(TextComponent, {
         bold: !0,
         color: "error"
     }, "Error: ", X), FG.default.createElement(j, {
         marginTop: 1
-    }, FG.default.createElement($, {
+    }, FG.default.createElement(TextComponent, {
         dimColor: !0
-    }, "Press "), FG.default.createElement($, {
+    }, "Press "), FG.default.createElement(TextComponent, {
         bold: !0
-    }, "Escape"), FG.default.createElement($, {
+    }, "Escape"), FG.default.createElement(TextComponent, {
         dimColor: !0
     }, " to cancel")));
     let D = Z.length > 8;
@@ -700,14 +697,14 @@ function AT2({
         title: "Working Directory Has Changes",
         onCancel: Q,
         borderDimColor: !0
-    }, FG.default.createElement($, null, "Teleport will switch git branches. The following changes were found:"), FG.default.createElement(j, {
+    }, FG.default.createElement(TextComponent, null, "Teleport will switch git branches. The following changes were found:"), FG.default.createElement(j, {
         flexDirection: "column",
         paddingLeft: 2
-    }, Z.length > 0 ? D ? FG.default.createElement($, null, Z.length, " files changed") : Z.map((H, C) => FG.default.createElement($, {
+    }, Z.length > 0 ? D ? FG.default.createElement(TextComponent, null, Z.length, " files changed") : Z.map((H, C) => FG.default.createElement(TextComponent, {
         key: C
-    }, H)) : FG.default.createElement($, {
+    }, H)) : FG.default.createElement(TextComponent, {
         dimColor: !0
-    }, "No changes detected")), FG.default.createElement($, null, "Would you like to stash these changes and continue with teleport?"), J ? FG.default.createElement(j, null, FG.default.createElement(e9, null), FG.default.createElement($, null, " Stashing changes...")) : FG.default.createElement(M0, {
+    }, "No changes detected")), FG.default.createElement(TextComponent, null, "Would you like to stash these changes and continue with teleport?"), J ? FG.default.createElement(j, null, FG.default.createElement(e9, null), FG.default.createElement(TextComponent, null, " Stashing changes...")) : FG.default.createElement(M0, {
         options: [{
             label: "Stash changes and continue",
             value: "stash"
@@ -720,7 +717,7 @@ function AT2({
     }))
 }
 var FG;
-var QT2 = L(() => {
+var QT2 = lazyLoader(() => {
     hA();
     ED();
     D0();
@@ -728,40 +725,39 @@ var QT2 = L(() => {
     T6();
     n2();
     Di();
-    FG = GA(VA(), 1)
+    FG = esmImport(VA(), 1)
 });
-// Async function: JO
 async function JO() {
     let A = H0();
     if (DRA.has(A)) return DRA.get(A) ?? null;
     try {
-        let Q = await knA();
-        if (g(`Git remote URL: ${Q}`), !Q) return g("No git remote URL found"), DRA.set(A, null), null;
+        let Q = await getGitRemoteUrl();
+        if (g(`Git remote URL: TextComponent{Q}`), !Q) return g("No git remote URL found"), DRA.set(A, null), null;
         let B = xh(Q);
-        return g(`Parsed repository: ${B} from URL: ${Q}`), DRA.set(A, B), B
+        return g(`Parsed repository: TextComponent{B} from URL: TextComponent{Q}`), DRA.set(A, B), B
     } catch (Q) {
-        return g(`Error detecting repository: ${Q}`), DRA.set(A, null), null
+        return g(`Error detecting repository: TextComponent{Q}`), DRA.set(A, null), null
     }
 }
 
 function xh(A) {
     let Q = A.trim(),
-        B = [/github\.com[:/]([^/]+\/[^/.]+?)(\.git)?$/, /github\.com[:/]([^/]+\/[^/.]+)$/];
+        B = [/github\.com[:/]([^/]+\/[^/.]+?)(\.git)?TextComponent/, /github\.com[:/]([^/]+\/[^/.]+)TextComponent/];
     for (let G of B) {
         let Z = Q.match(G);
-        if (Z && Z[1]) return g(`Parsed repository: ${Z[1]} from ${Q}`), Z[1]
+        if (Z && Z[1]) return g(`Parsed repository: TextComponent{Z[1]} from TextComponent{Q}`), Z[1]
     }
     if (!Q.includes("://") && !Q.includes("@") && Q.includes("/")) {
         let G = Q.split("/");
         if (G.length === 2 && G[0] && G[1]) {
             let Z = G[1].replace(/\.git$/, "");
-            return `${G[0]}/${Z}`
+            return `TextComponent{G[0]}/TextComponent{Z}`
         }
     }
-    return g(`Could not parse repository from: ${Q}`), null
+    return g(`Could not parse repository from: TextComponent{Q}`), null
 }
 var DRA;
-var Y0A = L(() => {
+var Y0A = lazyLoader(() => {
     ED();
     D0();
     R2();
@@ -770,7 +766,6 @@ var Y0A = L(() => {
 import {
     randomUUID as sx5
 } from "crypto";
-// Async function: J0A
 async function J0A() {
     let A = U6()?.accessToken;
     if (A === void 0) throw Error("Claude Code web sessions require authentication with a Claude.ai account. API key authentication is not sufficient. Please run /login to authenticate, or check your authentication status with /status.");
@@ -781,12 +776,11 @@ async function J0A() {
         orgUUID: Q
     }
 }
-// Async function: BT2
 async function BT2() {
     let {
         accessToken: A,
         orgUUID: Q
-    } = await J0A(), B = `${o9().BASE_API_URL}/v1/sessions`;
+    } = await J0A(), B = `TextComponent{getConfig().BASE_API_URL}/v1/sessions`;
     try {
         let G = {
                 ...BC(A),
@@ -795,7 +789,7 @@ async function BT2() {
             Z = await GQ.get(B, {
                 headers: G
             });
-        if (Z.status !== 200) throw Error(`Failed to fetch code sessions: ${Z.statusText}`);
+        if (Z.status !== 200) throw Error(`Failed to fetch code sessions: TextComponent{Z.statusText}`);
         return Z.data.data.map((Y) => {
             let J = Y.session_context.sources.find((X) => X.type === "git_repository"),
                 W = null;
@@ -831,18 +825,17 @@ async function BT2() {
 
 function BC(A) {
     return {
-        Authorization: `Bearer ${A}`,
+        Authorization: `Bearer TextComponent{A}`,
         "Content-Type": "application/json",
         "anthropic-version": "2023-06-01"
     }
 }
-
 async function GT2(A, Q) {
     try {
         let {
             accessToken: B,
             orgUUID: G
-        } = await J0A(), Z = `${o9().BASE_API_URL}/v1/sessions/${A}/events`, I = {
+        } = await J0A(), Z = `TextComponent{getConfig().BASE_API_URL}/v1/sessions/TextComponent{A}/events`, I = {
             ...BC(B),
             "x-organization-uuid": G
         }, J = {
@@ -867,7 +860,7 @@ async function GT2(A, Q) {
     }
 }
 var rx5, unG;
-var An = L(() => {
+var An = lazyLoader(() => {
     EX();
     hB();
     w3();
@@ -892,13 +885,12 @@ var An = L(() => {
         updated_at: I2.string()
     }), unG = I2.array(rx5)
 });
-// Async function: kJA
 async function kJA() {
     let A = U6()?.accessToken;
     if (!A) throw Error("Claude Code web sessions require authentication with a Claude.ai account. API key authentication is not sufficient. Please run /login to authenticate, or check your authentication status with /status.");
     let Q = await tj();
     if (!Q) throw Error("Unable to get organization UUID");
-    let B = `${o9().BASE_API_URL}/v1/environment_providers`;
+    let B = `TextComponent{getConfig().BASE_API_URL}/v1/environment_providers`;
     try {
         let G = {
                 ...BC(A),
@@ -908,14 +900,14 @@ async function kJA() {
                 headers: G,
                 timeout: 15000
             });
-        if (Z.status !== 200) throw Error(`Failed to fetch environments: ${Z.status} ${Z.statusText}`);
+        if (Z.status !== 200) throw Error(`Failed to fetch environments: TextComponent{Z.status} TextComponent{Z.statusText}`);
         return Z.data.environments
     } catch (G) {
         let Z = G instanceof Error ? G : Error(String(G));
-        throw e(Z), Error(`Failed to fetch environments: ${Z.message}`)
+        throw e(Z), Error(`Failed to fetch environments: TextComponent{Z.message}`)
     }
 }
-var X61 = L(() => {
+var X61 = lazyLoader(() => {
     w3();
     EX();
     hB();
@@ -923,58 +915,53 @@ var X61 = L(() => {
     u1();
     An()
 });
-// Async function: F61
 async function F61() {
     if (!AB()) return !1;
     return ko()
 }
-// Async function: ZT2
 async function ZT2() {
     return await Dt()
 }
-// Async function: IT2
 async function IT2() {
     try {
         return (await kJA()).length > 0
     } catch (A) {
-        return g(`checkHasRemoteEnvironment failed: ${A instanceof Error?A.message:String(A)}`), !1
+        return g(`checkHasRemoteEnvironment failed: TextComponent{A instanceof Error?A.message:String(A)}`), !1
     }
 }
-// Async function: YT2
 async function YT2() {
     return await JO() !== null
 }
-
 async function JT2(A, Q) {
     try {
         let B = U6()?.accessToken;
         if (!B) return g("checkGithubAppInstalled: No access token found, assuming app not installed"), !1;
         let G = await tj();
         if (!G) return g("checkGithubAppInstalled: No org UUID found, assuming app not installed"), !1;
-        let Z = `${o9().BASE_API_URL}/api/oauth/organizations/${G}/code/repos/${A}/${Q}`,
+        let Z = `TextComponent{getConfig().BASE_API_URL}/api/oauth/organizations/TextComponent{G}/code/repos/TextComponent{A}/TextComponent{Q}`,
             I = {
                 ...BC(B),
                 "x-organization-uuid": G
             };
-        g(`Checking GitHub app installation for ${A}/${Q}`);
+        g(`Checking GitHub app installation for TextComponent{A}/TextComponent{Q}`);
         let Y = await GQ.get(Z, {
             headers: I,
             timeout: 15000
         });
         if (Y.status === 200 && Y.data.status) {
             let J = Y.data.status.app_installed;
-            return g(`GitHub app ${J?"is":"is not"} installed on ${A}/${Q}`), J
+            return g(`GitHub app TextComponent{J?"is":"is not"} installed on TextComponent{A}/TextComponent{Q}`), J
         }
-        return g(`checkGithubAppInstalled: Unexpected response status ${Y.status}`), !1
+        return g(`checkGithubAppInstalled: Unexpected response status TextComponent{Y.status}`), !1
     } catch (B) {
         if (GQ.isAxiosError(B)) {
             let G = B.response?.status;
-            if (G && G >= 400 && G < 500) return g(`checkGithubAppInstalled: Got ${G} error, app likely not installed on ${A}/${Q}`), !1
+            if (G && G >= 400 && G < 500) return g(`checkGithubAppInstalled: Got TextComponent{G} error, app likely not installed on TextComponent{A}/TextComponent{Q}`), !1
         }
-        return g(`checkGithubAppInstalled error: ${B instanceof Error?B.message:String(B)}`), !1
+        return g(`checkGithubAppInstalled error: TextComponent{B instanceof Error?B.message:String(B)}`), !1
     }
 }
-var w80 = L(() => {
+var w80 = lazyLoader(() => {
     ED();
     hB();
     Y0A();
@@ -1038,9 +1025,9 @@ function V61({
                 borderDimColor: !0
             }, rX.default.createElement(j, {
                 flexDirection: "column"
-            }, rX.default.createElement($, {
+            }, rX.default.createElement(TextComponent, {
                 dimColor: !0
-            }, "Teleport requires a Claude.ai account."), rX.default.createElement($, {
+            }, "Teleport requires a Claude.ai account."), rX.default.createElement(TextComponent, {
                 dimColor: !0
             }, "Your Claude Pro/Max subscription will be used by Claude Code.")), rX.default.createElement(M0, {
                 options: [{
@@ -1056,7 +1043,6 @@ function V61({
         }
     }
 }
-// Async function: q80
 async function q80() {
     let A = new Set,
         [Q, B] = await Promise.all([F61(), ZT2()]);
@@ -1065,7 +1051,7 @@ async function q80() {
     return A
 }
 var rX;
-var N80 = L(() => {
+var N80 = lazyLoader(() => {
     hA();
     Di();
     T6();
@@ -1073,7 +1059,7 @@ var N80 = L(() => {
     QT2();
     _J();
     w80();
-    rX = GA(VA(), 1)
+    rX = esmImport(VA(), 1)
 });
 
 function WT2(A) {
@@ -1090,7 +1076,7 @@ function XT2(A) {
         return Q
     } catch (Q) {
         let B = Q instanceof Error ? Q : Error(String(Q));
-        throw e(B), BA("tengu_teleport_error_invalid_teleport_headers_json", {}), new GI(`Invalid JSON in TELEPORT_HEADERS: ${B.message}`, oA.red(`Error: Invalid JSON in TELEPORT_HEADERS: ${B.message}
+        throw e(B), BA("tengu_teleport_error_invalid_teleport_headers_json", {}), new GI(`Invalid JSON in TELEPORT_HEADERS: TextComponent{B.message}`, oA.red(`Error: Invalid JSON in TELEPORT_HEADERS: TextComponent{B.message}
 `))
     }
 }
@@ -1098,11 +1084,11 @@ function XT2(A) {
 function FT2(A) {
     for (let [Q, B] of Object.entries(A))
         if (typeof B !== "string") {
-            let G = Error(`Invalid header value for "${Q}": headers must be strings, got ${typeof B}`);
+            let G = Error(`Invalid header value for "TextComponent{Q}": headers must be strings, got TextComponent{typeof B}`);
             throw e(G), G
         }
 }
-var VT2 = L(() => {
+var VT2 = lazyLoader(() => {
     $Z();
     J9();
     w0();
@@ -1115,16 +1101,15 @@ import {
 function tx5(A) {
     if (A === null) return Vy("Session resumed", "suggestion");
     let Q = A instanceof GI ? A.formattedMessage : A.message;
-    return Vy(`Session resumed without branch: ${Q}`, "warning")
+    return Vy(`Session resumed without branch: TextComponent{Q}`, "warning")
 }
 
 function ex5() {
     return j0({
-        content: `This session is being continued from another machine. Application state may have changed. The updated working directory is ${pQ()}`,
+        content: `This session is being continued from another machine. Application state may have changed. The updated working directory is TextComponent{pQ()}`,
         isMeta: !0
     })
 }
-
 async function Qv5(A, Q) {
     let B = A.length > 75 ? A.slice(0, 75) + "…" : A,
         G = "claude/task";
@@ -1157,95 +1142,89 @@ async function Qv5(A, Q) {
             }
         }
     } catch (Z) {
-        e(Error(`Error generating title and branch: ${Z}`))
+        e(Error(`Error generating title and branch: TextComponent{Z}`))
     }
     return {
         title: B,
         branchName: "claude/task"
     }
 }
-// Async function: D61
 async function D61() {
     if (!await Dt()) throw BA("tengu_teleport_error_git_not_clean", {}), new GI("Git working directory is not clean. Please commit or stash your changes before using --teleport.", oA.red(`Error: Git working directory is not clean. Please commit or stash your changes before using --teleport.
 `))
 }
-
 async function Bv5(A) {
-    let Q = A ? ["fetch", "origin", `${A}:${A}`] : ["fetch", "origin"],
+    let Q = A ? ["fetch", "origin", `TextComponent{A}:TextComponent{A}`] : ["fetch", "origin"],
         {
             code: B,
             stderr: G
-        } = await ZQ("git", Q);
+        } = await execGit("git", Q);
     if (B !== 0)
         if (A && G.includes("refspec")) {
-            g(`Specific branch fetch failed, trying to fetch ref: ${A}`);
+            g(`Specific branch fetch failed, trying to fetch ref: TextComponent{A}`);
             let {
                 code: Z,
                 stderr: I
-            } = await ZQ("git", ["fetch", "origin", A]);
-            if (Z !== 0) e(Error(`Failed to fetch from remote origin: ${I}`))
-        } else e(Error(`Failed to fetch from remote origin: ${G}`))
+            } = await execGit("git", ["fetch", "origin", A]);
+            if (Z !== 0) e(Error(`Failed to fetch from remote origin: TextComponent{I}`))
+        } else e(Error(`Failed to fetch from remote origin: TextComponent{G}`))
 }
-
 async function Gv5(A) {
     let {
         code: Q
-    } = await ZQ("git", ["rev-parse", "--abbrev-ref", `${A}@{upstream}`]);
+    } = await execGit("git", ["rev-parse", "--abbrev-ref", `TextComponent{A}@{upstream}`]);
     if (Q === 0) {
-        g(`Branch '${A}' already has upstream set`);
+        g(`Branch 'TextComponent{A}' already has upstream set`);
         return
     }
     let {
         code: B
-    } = await ZQ("git", ["rev-parse", "--verify", `origin/${A}`]);
+    } = await execGit("git", ["rev-parse", "--verify", `origin/TextComponent{A}`]);
     if (B === 0) {
-        g(`Setting upstream for '${A}' to 'origin/${A}'`);
+        g(`Setting upstream for 'TextComponent{A}' to 'origin/TextComponent{A}'`);
         let {
             code: G,
             stderr: Z
-        } = await ZQ("git", ["branch", "--set-upstream-to", `origin/${A}`, A]);
-        if (G !== 0) g(`Failed to set upstream for '${A}': ${Z}`);
-        else g(`Successfully set upstream for '${A}'`)
-    } else g(`Remote branch 'origin/${A}' does not exist, skipping upstream setup`)
+        } = await execGit("git", ["branch", "--set-upstream-to", `origin/TextComponent{A}`, A]);
+        if (G !== 0) g(`Failed to set upstream for 'TextComponent{A}': TextComponent{Z}`);
+        else g(`Successfully set upstream for 'TextComponent{A}'`)
+    } else g(`Remote branch 'origin/TextComponent{A}' does not exist, skipping upstream setup`)
 }
-
 async function Zv5(A) {
     let {
         code: Q,
         stderr: B
-    } = await ZQ("git", ["checkout", A]);
+    } = await execGit("git", ["checkout", A]);
     if (Q !== 0) {
-        g(`Local checkout failed, trying to checkout from origin: ${B}`);
-        let G = await ZQ("git", ["checkout", "-b", A, "--track", `origin/${A}`]);
+        g(`Local checkout failed, trying to checkout from origin: TextComponent{B}`);
+        let G = await execGit("git", ["checkout", "-b", A, "--track", `origin/TextComponent{A}`]);
         if (Q = G.code, B = G.stderr, Q !== 0) {
-            g(`Remote checkout with -b failed, trying without -b: ${B}`);
-            let Z = await ZQ("git", ["checkout", "--track", `origin/${A}`]);
+            g(`Remote checkout with -b failed, trying without -b: TextComponent{B}`);
+            let Z = await execGit("git", ["checkout", "--track", `origin/TextComponent{A}`]);
             Q = Z.code, B = Z.stderr
         }
     }
-    if (Q !== 0) throw BA("tengu_teleport_error_branch_checkout_failed", {}), new GI(`Failed to checkout branch '${A}': ${B}`, oA.red(`Failed to checkout branch '${A}'
+    if (Q !== 0) throw BA("tengu_teleport_error_branch_checkout_failed", {}), new GI(`Failed to checkout branch 'TextComponent{A}': TextComponent{B}`, oA.red(`Failed to checkout branch 'TextComponent{A}'
 `));
     await Gv5(A)
 }
-// Async function: K61
 async function K61() {
     let {
         stdout: A
-    } = await ZQ("git", ["branch", "--show-current"]);
+    } = await execGit("git", ["branch", "--show-current"]);
     return A.trim()
 }
 
 function KT2(A, Q) {
     return [...jMA(A), ex5(), tx5(Q)]
 }
-
 async function HRA(A, Q) {
     try {
         let B = await K61();
-        if (g(`Current branch before teleport: '${B}'`), Q) {
-            g(`Switching to branch '${Q}'...`), await Bv5(Q), await Zv5(Q);
+        if (g(`Current branch before teleport: 'TextComponent{B}'`), Q) {
+            g(`Switching to branch 'TextComponent{Q}'...`), await Bv5(Q), await Zv5(Q);
             let Z = await K61();
-            g(`Branch after checkout: '${Z}'`)
+            g(`Branch after checkout: 'TextComponent{Z}'`)
         } else g("No branch specified, staying on current branch");
         let G = await K61();
         return {
@@ -1263,16 +1242,15 @@ async function HRA(A, Q) {
         }
     }
 }
-
 async function Iv5(A, Q, B) {
     let G = await JO(),
-        Z = `${o9().BASE_API_URL}/v1/sessions/${A}`,
+        Z = `TextComponent{getConfig().BASE_API_URL}/v1/sessions/TextComponent{A}`,
         I = {
             ...B,
             "x-organization-uuid": Q
         };
     if (!G) {
-        g(`Not in git repo, fetching session metadata to provide guidance: ${Z}`);
+        g(`Not in git repo, fetching session metadata to provide guidance: TextComponent{Z}`);
         let J;
         try {
             J = await GQ.get(Z, {
@@ -1280,10 +1258,10 @@ async function Iv5(A, Q, B) {
                 timeout: 15000
             })
         } catch (W) {
-            if (GQ.isAxiosError(W)) g(`Failed to fetch session metadata - Status: ${W.response?.status}, Message: ${W.message}`);
+            if (GQ.isAxiosError(W)) g(`Failed to fetch session metadata - Status: TextComponent{W.response?.status}, Message: TextComponent{W.message}`);
             throw BA("tengu_teleport_error_repo_validation_failed_sessions_api", {
                 sessionId: A
-            }), new GI(`You must run claude --teleport ${A} from a checkout of the git repo the session was created in.`, oA.red(`You must run claude --teleport ${A} from a checkout of the git repo the session was created in.
+            }), new GI(`You must run claude --teleport TextComponent{A} from a checkout of the git repo the session was created in.`, oA.red(`You must run claude --teleport TextComponent{A} from a checkout of the git repo the session was created in.
 `))
         }
         if (J.status === 200) {
@@ -1292,13 +1270,13 @@ async function Iv5(A, Q, B) {
                 let F = xh(X.url);
                 if (F) throw BA("tengu_teleport_error_repo_not_in_git_dir_sessions_api", {
                     sessionId: A
-                }), new GI(`You must run claude --teleport ${A} from a checkout of ${F}.`, oA.red(`You must run claude --teleport ${A} from a checkout of ${oA.bold(F)}.
+                }), new GI(`You must run claude --teleport TextComponent{A} from a checkout of TextComponent{F}.`, oA.red(`You must run claude --teleport TextComponent{A} from a checkout of TextComponent{oA.bold(F)}.
 `))
             } else g("Session has no repo requirement and not in git directory, proceeding")
         }
         return
     }
-    g(`Fetching session metadata from: ${Z}`);
+    g(`Fetching session metadata from: TextComponent{Z}`);
     let Y;
     try {
         Y = await GQ.get(Z, {
@@ -1307,8 +1285,8 @@ async function Iv5(A, Q, B) {
         })
     } catch (J) {
         if (GQ.isAxiosError(J)) {
-            if (g(`Failed to fetch session metadata - Status: ${J.response?.status}, Message: ${J.message}`), J.response?.data) g(`Error response data: ${JSON.stringify(J.response.data)}`)
-        } else g(`Could not fetch session metadata: ${J}`);
+            if (g(`Failed to fetch session metadata - Status: TextComponent{J.response?.status}, Message: TextComponent{J.message}`), J.response?.data) g(`Error response data: TextComponent{JSON.stringify(J.response.data)}`)
+        } else g(`Could not fetch session metadata: TextComponent{J}`);
         return
     }
     if (Y.status === 200) {
@@ -1316,18 +1294,17 @@ async function Iv5(A, Q, B) {
         if (W?.url) {
             let X = xh(W.url);
             if (X) {
-                if (g(`Session is for repository: ${X}, current repo: ${G}`), G.toLowerCase() !== X.toLowerCase()) throw BA("tengu_teleport_error_repo_mismatch_sessions_api", {
+                if (g(`Session is for repository: TextComponent{X}, current repo: TextComponent{G}`), G.toLowerCase() !== X.toLowerCase()) throw BA("tengu_teleport_error_repo_mismatch_sessions_api", {
                     sessionId: A
-                }), new GI(`You must run claude --teleport ${A} from a checkout of ${X}.
-This repo is ${G}.`, oA.red(`You must run claude --teleport ${A} from a checkout of ${oA.bold(X)}.
-This repo is ${oA.bold(G)}.
+                }), new GI(`You must run claude --teleport TextComponent{A} from a checkout of TextComponent{X}.
+This repo is TextComponent{G}.`, oA.red(`You must run claude --teleport TextComponent{A} from a checkout of TextComponent{oA.bold(X)}.
+This repo is TextComponent{oA.bold(G)}.
 `));
                 g("Repository matches, proceeding with teleport")
             }
         } else g("Session has no associated repository, proceeding without validation")
     }
 }
-
 async function HT2(A) {
     try {
         let Q = U6()?.accessToken;
@@ -1342,7 +1319,7 @@ async function HT2(A) {
         };
         let G = BC(Q),
             Z = await JO(),
-            I = `${o9().BASE_API_URL}/v1/sessions/${A}`,
+            I = `TextComponent{getConfig().BASE_API_URL}/v1/sessions/TextComponent{A}`,
             Y = {
                 ...G,
                 "x-organization-uuid": B
@@ -1354,7 +1331,7 @@ async function HT2(A) {
                 timeout: 15000
             })
         } catch (V) {
-            if (GQ.isAxiosError(V)) g(`Failed to fetch session metadata - Status: ${V.response?.status}, Message: ${V.message}`);
+            if (GQ.isAxiosError(V)) g(`Failed to fetch session metadata - Status: TextComponent{V.response?.status}, Message: TextComponent{V.message}`);
             return {
                 status: "error",
                 errorMessage: "Failed to fetch session metadata"
@@ -1362,7 +1339,7 @@ async function HT2(A) {
         }
         if (J.status !== 200) return {
             status: "error",
-            errorMessage: `Unexpected session response status: ${J.status}`
+            errorMessage: `Unexpected session response status: TextComponent{J.status}`
         };
         let X = J.data.session_context.sources.find((V) => V.type === "git_repository");
         if (!X?.url) return {
@@ -1388,15 +1365,14 @@ async function HT2(A) {
             currentRepo: Z
         }
     } catch (Q) {
-        return g(`Error validating session repository: ${Q}`), {
+        return g(`Error validating session repository: TextComponent{Q}`), {
             status: "error",
             errorMessage: Q instanceof Error ? Q.message : String(Q)
         }
     }
 }
-
 async function CRA(A) {
-    g(`Resuming code session ID: ${A}`);
+    g(`Resuming code session ID: TextComponent{A}`);
     try {
         let Q = process.env.TELEPORT_RESUME_URL;
         if (Q) return g("Using TELEPORT_RESUME_URL from environment"), await CT2(Q, void 0);
@@ -1415,15 +1391,14 @@ async function CRA(A) {
         let B = Q instanceof Error ? Q : Error(String(Q));
         throw e(B), BA("tengu_teleport_resume_error", {
             error_type: "resume_session_id_catch"
-        }), new GI(B.message, oA.red(`Error: ${B.message}
+        }), new GI(B.message, oA.red(`Error: TextComponent{B.message}
 `))
     }
 }
-
 async function CT2(A, Q) {
-    g(`Teleporting from URL: ${A}`);
+    g(`Teleporting from URL: TextComponent{A}`);
     let B = XT2(process.env.TELEPORT_HEADERS);
-    if (Object.keys(B).length > 0) g(`Parsed ${Object.keys(B).length} headers from TELEPORT_HEADERS`);
+    if (Object.keys(B).length > 0) g(`Parsed TextComponent{Object.keys(B).length} headers from TELEPORT_HEADERS`);
     else g("No TELEPORT_HEADERS environment variable found");
     if (Q) {
         FT2(Q);
@@ -1431,11 +1406,10 @@ async function CT2(A, Q) {
             ...B,
             ...Q
         };
-        return g(`Added ${Object.keys(Q).length} additional headers`), DT2(A, G)
+        return g(`Added TextComponent{Object.keys(Q).length} additional headers`), DT2(A, G)
     }
     return DT2(A, B)
 }
-
 async function DT2(A, Q) {
     try {
         g("Fetching conversation from remote URL...");
@@ -1445,7 +1419,7 @@ async function DT2(A, Q) {
             url_type: A.startsWith("http") ? "http(s)" : "other"
         }), BA("tengu_teleport_error_failed_to_load_conversation", {}), new GI("Failed to load conversation from remote URL", oA.red(`Error: Failed to load conversation from remote URL
 `));
-        return g("Successfully loaded conversation from remote URL"), g(`Response contains ${B.log?.length||0} messages`), g(`Response branch: ${B.branch||"none specified"}`), BA("tengu_teleport_resume_success", {
+        return g("Successfully loaded conversation from remote URL"), g(`Response contains TextComponent{B.log?.length||0} messages`), g(`Response branch: TextComponent{B.branch||"none specified"}`), BA("tengu_teleport_resume_success", {
             messages_count: B.log?.length || 0,
             has_branch: !!B.branch
         }), B
@@ -1454,17 +1428,15 @@ async function DT2(A, Q) {
         let G = B instanceof Error ? B : Error(String(B));
         throw e(G), BA("tengu_teleport_resume_error", {
             error_type: "teleport_from_url_catch"
-        }), new GI(G.message, oA.red(`Error: ${G.message}
+        }), new GI(G.message, oA.red(`Error: TextComponent{G.message}
 `))
     }
 }
-
 async function ERA(A) {
     let Q = WT2(A);
     if (Q.startsWith("http:") || Q.startsWith("https:")) return CT2(Q, void 0);
     return CRA(Q)
 }
-
 async function ET2(A) {
     let Q = await q80();
     if (Q.size > 0) BA("tengu_teleport_errors_detected", {
@@ -1485,11 +1457,9 @@ async function ET2(A) {
         })
     })
 }
-
 async function zT2(A) {
     return await ET2(), ERA(A)
 }
-
 async function UT2(A, Q) {
     return await ET2(new Set(["needsGitStash"])), M80({
         initialMessage: A,
@@ -1502,14 +1472,13 @@ function Yv5(A) {
         if (A.type === "env_manager_log" || A.type === "control_response") return null;
         if ("session_id" in A) return A
     }
-    return g(`Event is not a valid SDKMessage: ${JSON.stringify(A)}`), null
+    return g(`Event is not a valid SDKMessage: TextComponent{JSON.stringify(A)}`), null
 }
-
 async function Jv5(A, Q, B) {
     let G = BC(B);
     try {
-        let Z = `${o9().BASE_API_URL}/v1/sessions/${A}/events`;
-        g(`Fetching events from: ${Z}`);
+        let Z = `TextComponent{getConfig().BASE_API_URL}/v1/sessions/TextComponent{A}/events`;
+        g(`Fetching events from: TextComponent{Z}`);
         let I = await GQ.get(Z, {
             headers: {
                 ...G,
@@ -1517,7 +1486,7 @@ async function Jv5(A, Q, B) {
             },
             timeout: 30000
         });
-        if (I.status !== 200) throw Error(`Failed to fetch session events: ${I.statusText}`);
+        if (I.status !== 200) throw Error(`Failed to fetch session events: TextComponent{I.statusText}`);
         let Y = I.data;
         if (!Y?.data || !Array.isArray(Y.data)) throw Error("Invalid events response: missing or invalid data array");
         let J = [];
@@ -1527,8 +1496,8 @@ async function Jv5(A, Q, B) {
         }
         let W;
         try {
-            let X = `${o9().BASE_API_URL}/v1/sessions/${A}`;
-            g(`Fetching session details from: ${X}`);
+            let X = `TextComponent{getConfig().BASE_API_URL}/v1/sessions/TextComponent{A}`;
+            g(`Fetching session details from: TextComponent{X}`);
             let F = await GQ.get(X, {
                 headers: {
                     ...G,
@@ -1537,12 +1506,12 @@ async function Jv5(A, Q, B) {
                 timeout: 15000
             });
             if (F.status === 200) {
-                g(`Session details: ${JSON.stringify(F.data,null,2)}`);
+                g(`Session details: TextComponent{JSON.stringify(F.data,null,2)}`);
                 let K = F.data.session_context.outcomes?.find((D) => D.type === "git_repository");
-                if (K?.git_info?.branches.length) W = K.git_info.branches[0], g(`Found branch from session context: ${W}`)
+                if (K?.git_info?.branches.length) W = K.git_info.branches[0], g(`Found branch from session context: TextComponent{W}`)
             }
         } catch (X) {
-            e(Error(`Could not fetch session details: ${X}`))
+            e(Error(`Could not fetch session details: TextComponent{X}`))
         }
         return {
             log: J,

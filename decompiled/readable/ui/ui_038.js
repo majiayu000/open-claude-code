@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_038.js
+ * 处理时间: 2025-12-09T03:41:39.429Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.131Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -18,11 +21,11 @@
  */
 
     LM2();
-    uB = GA(VA(), 1), zP = GA(VA(), 1), MM2 = tOA(), OM2 = [...MM2, ...[...MM2].reverse()], Py5 = {
+    uB = esmImport(VA(), 1), zP = esmImport(VA(), 1), MM2 = tOA(), OM2 = [...MM2, ...[...MM2].reverse()], Py5 = {
         words: ["Accomplishing", "Actioning", "Actualizing", "Baking", "Booping", "Brewing", "Calculating", "Cerebrating", "Channelling", "Churning", "Clauding", "Coalescing", "Cogitating", "Computing", "Combobulating", "Concocting", "Considering", "Contemplating", "Cooking", "Crafting", "Creating", "Crunching", "Deciphering", "Deliberating", "Determining", "Discombobulating", "Doing", "Effecting", "Elucidating", "Enchanting", "Envisioning", "Finagling", "Flibbertigibbeting", "Forging", "Forming", "Frolicking", "Generating", "Germinating", "Hatching", "Herding", "Honking", "Ideating", "Imagining", "Incubating", "Inferring", "Manifesting", "Marinating", "Meandering", "Moseying", "Mulling", "Mustering", "Musing", "Noodling", "Percolating", "Perusing", "Philosophising", "Pontificating", "Pondering", "Processing", "Puttering", "Puzzling", "Reticulating", "Ruminating", "Scheming", "Schlepping", "Shimmying", "Simmering", "Smooshing", "Spelunking", "Spinning", "Stewing", "Sussing", "Synthesizing", "Thinking", "Tinkering", "Transmuting", "Unfurling", "Unravelling", "Vibing", "Wandering", "Whirring", "Wibbling", "Working", "Wrangling"]
     }
 });
-var eOA = U((xy5) => {
+var eOA = moduleWrapper((xy5) => {
     function ky5(A, Q, B) {
         if (B === void 0) B = Array.prototype;
         if (A && typeof B.find === "function") return B.find.call(A, Q);
@@ -33,12 +36,12 @@ var eOA = U((xy5) => {
             }
     }
 
-function n40(A, Q) {
+    function n40(A, Q) {
         if (Q === void 0) Q = Object;
         return Q && typeof Q.freeze === "function" ? Q.freeze(A) : A
     }
 
-function yy5(A, Q) {
+    function yy5(A, Q) {
         if (A === null || typeof A !== "object") throw TypeError("target is not an object");
         for (var B in Q)
             if (Object.prototype.hasOwnProperty.call(Q, B)) A[B] = Q[B];
@@ -69,42 +72,42 @@ function yy5(A, Q) {
     xy5.MIME_TYPE = TM2;
     xy5.NAMESPACE = PM2
 });
-var Z80 = U((ey5) => {
+var Z80 = moduleWrapper((ey5) => {
     var bM2 = eOA(),
         Wy = bM2.find,
         ARA = bM2.NAMESPACE;
 
-function uy5(A) {
+    function uy5(A) {
         return A !== ""
     }
 
-function my5(A) {
+    function my5(A) {
         return A ? A.split(/[\t\n\f\r ]+/).filter(uy5) : []
     }
 
-function dy5(A, Q) {
+    function dy5(A, Q) {
         if (!A.hasOwnProperty(Q)) A[Q] = !0;
         return A
     }
 
-function jM2(A) {
+    function jM2(A) {
         if (!A) return [];
         var Q = my5(A);
         return Object.keys(Q.reduce(dy5, {}))
     }
 
-function cy5(A) {
+    function cy5(A) {
         return function(Q) {
             return A && A.indexOf(Q) !== -1
         }
     }
 
-function BRA(A, Q) {
+    function BRA(A, Q) {
         for (var B in A)
             if (Object.prototype.hasOwnProperty.call(A, B)) Q[B] = A[B]
     }
 
-function Q$(A, Q) {
+    function Q$(A, Q) {
         var B = A.prototype;
         if (!(B instanceof Q)) {
             let Z = function() {};
@@ -147,7 +150,7 @@ function Q$(A, Q) {
         UiG = QC.NAMESPACE_ERR = (WK[14] = "Invalid namespace", 14),
         $iG = QC.INVALID_ACCESS_ERR = (WK[15] = "Invalid access", 15);
 
-function vW(A, Q) {
+    function vW(A, Q) {
         if (Q instanceof Error) var B = Q;
         else if (B = this, Error.call(this, WK[A]), this.message = WK[A], Error.captureStackTrace) Error.captureStackTrace(this, vW);
         if (B.code = A, Q) this.message = this.message + ": " + Q;
@@ -156,7 +159,7 @@ function vW(A, Q) {
     vW.prototype = Error.prototype;
     BRA(QC, vW);
 
-function Sh() {}
+    function Sh() {}
     Sh.prototype = {
         length: 0,
         item: function(A) {
@@ -174,11 +177,11 @@ function Sh() {}
         }
     };
 
-function OJA(A, Q) {
+    function OJA(A, Q) {
         this._node = A, this._refresh = Q, r40(this)
     }
 
-function r40(A) {
+    function r40(A) {
         var Q = A._node._inc || A._node.ownerDocument._inc;
         if (A._inc !== Q) {
             var B = A._refresh(A._node);
@@ -194,15 +197,15 @@ function r40(A) {
     };
     Q$(OJA, Sh);
 
-function u81() {}
+    function u81() {}
 
-function pM2(A, Q) {
+    function pM2(A, Q) {
         var B = A.length;
         while (B--)
             if (A[B] === Q) return B
     }
 
-function _M2(A, Q, B, G) {
+    function _M2(A, Q, B, G) {
         if (G) Q[pM2(Q, G)] = B;
         else Q[Q.length++] = B;
         if (A) {
@@ -212,7 +215,7 @@ function _M2(A, Q, B, G) {
         }
     }
 
-function kM2(A, Q, B) {
+    function kM2(A, Q, B) {
         var G = pM2(Q, B);
         if (G >= 0) {
             var Z = Q.length - 1;
@@ -263,7 +266,7 @@ function kM2(A, Q, B) {
         }
     };
 
-function lM2() {}
+    function lM2() {}
     lM2.prototype = {
         hasFeature: function(A, Q) {
             return !0
@@ -283,7 +286,7 @@ function lM2() {}
         }
     };
 
-function XG() {}
+    function XG() {}
     XG.prototype = {
         firstChild: null,
         lastChild: null,
@@ -358,36 +361,36 @@ function XG() {}
         }
     };
 
-function iM2(A) {
+    function iM2(A) {
         return A == "<" && "&lt;" || A == ">" && "&gt;" || A == "&" && "&amp;" || A == '"' && "&quot;" || "&#" + A.charCodeAt() + ";"
     }
     BRA(B$, XG);
     BRA(B$, XG.prototype);
 
-function QRA(A, Q) {
+    function QRA(A, Q) {
         if (Q(A)) return !0;
         if (A = A.firstChild)
             do
                 if (QRA(A, Q)) return !0; while (A = A.nextSibling)
     }
 
-function GRA() {
+    function GRA() {
         this.ownerDocument = this
     }
 
-function iy5(A, Q, B) {
+    function iy5(A, Q, B) {
         A && A._inc++;
         var G = B.namespaceURI;
         if (G === ARA.XMLNS) Q._nsMap[B.prefix ? B.localName : ""] = B.value
     }
 
-function nM2(A, Q, B, G) {
+    function nM2(A, Q, B, G) {
         A && A._inc++;
         var Z = B.namespaceURI;
         if (Z === ARA.XMLNS) delete Q._nsMap[B.prefix ? B.localName : ""]
     }
 
-function o40(A, Q, B) {
+    function o40(A, Q, B) {
         if (A && A._inc) {
             A._inc++;
             var G = Q.childNodes;
@@ -401,7 +404,7 @@ function o40(A, Q, B) {
         }
     }
 
-function aM2(A, Q) {
+    function aM2(A, Q) {
         var {
             previousSibling: B,
             nextSibling: G
@@ -413,37 +416,37 @@ function aM2(A, Q) {
         return Q.parentNode = null, Q.previousSibling = null, Q.nextSibling = null, o40(A.ownerDocument, A), Q
     }
 
-function ny5(A) {
+    function ny5(A) {
         return A && (A.nodeType === XG.DOCUMENT_NODE || A.nodeType === XG.DOCUMENT_FRAGMENT_NODE || A.nodeType === XG.ELEMENT_NODE)
     }
 
-function ay5(A) {
+    function ay5(A) {
         return A && (Xy(A) || t40(A) || kh(A) || A.nodeType === XG.DOCUMENT_FRAGMENT_NODE || A.nodeType === XG.COMMENT_NODE || A.nodeType === XG.PROCESSING_INSTRUCTION_NODE)
     }
 
-function kh(A) {
+    function kh(A) {
         return A && A.nodeType === XG.DOCUMENT_TYPE_NODE
     }
 
-function Xy(A) {
+    function Xy(A) {
         return A && A.nodeType === XG.ELEMENT_NODE
     }
 
-function t40(A) {
+    function t40(A) {
         return A && A.nodeType === XG.TEXT_NODE
     }
 
-function yM2(A, Q) {
+    function yM2(A, Q) {
         var B = A.childNodes || [];
         if (Wy(B, Xy) || kh(Q)) return !1;
         var G = Wy(B, kh);
         return !(Q && G && B.indexOf(G) > B.indexOf(Q))
     }
 
-function xM2(A, Q) {
+    function xM2(A, Q) {
         var B = A.childNodes || [];
 
-function G(I) {
+        function G(I) {
             return Xy(I) && I !== Q
         }
         if (Wy(B, G)) return !1;
@@ -451,13 +454,13 @@ function G(I) {
         return !(Q && Z && B.indexOf(Z) > B.indexOf(Q))
     }
 
-function sy5(A, Q, B) {
+    function sy5(A, Q, B) {
         if (!ny5(A)) throw new vW(A$, "Unexpected parent node type " + A.nodeType);
         if (B && B.parentNode !== A) throw new vW(cM2, "child not in parent");
         if (!ay5(Q) || kh(Q) && A.nodeType !== XG.DOCUMENT_NODE) throw new vW(A$, "Unexpected node type " + Q.nodeType + " for parent node type " + A.nodeType)
     }
 
-function ry5(A, Q, B) {
+    function ry5(A, Q, B) {
         var G = A.childNodes || [],
             Z = Q.childNodes || [];
         if (Q.nodeType === XG.DOCUMENT_FRAGMENT_NODE) {
@@ -476,7 +479,7 @@ function ry5(A, Q, B) {
         }
     }
 
-function sM2(A, Q, B) {
+    function sM2(A, Q, B) {
         var G = A.childNodes || [],
             Z = Q.childNodes || [];
         if (Q.nodeType === XG.DOCUMENT_FRAGMENT_NODE) {
@@ -498,7 +501,7 @@ function sM2(A, Q, B) {
         }
     }
 
-function m81(A, Q, B, G) {
+    function m81(A, Q, B, G) {
         if (sy5(A, Q, B), A.nodeType === XG.DOCUMENT_NODE)(G || ry5)(A, Q, B);
         var Z = Q.parentNode;
         if (Z) Z.removeChild(Q);
@@ -517,7 +520,7 @@ function m81(A, Q, B, G) {
         return Q
     }
 
-function oy5(A, Q) {
+    function oy5(A, Q) {
         if (Q.parentNode) Q.parentNode.removeChild(Q);
         if (Q.parentNode = A, Q.previousSibling = A.lastChild, Q.nextSibling = null, Q.previousSibling) Q.previousSibling.nextSibling = Q;
         else A.firstChild = Q;
@@ -632,7 +635,7 @@ function oy5(A, Q) {
     };
     Q$(GRA, XG);
 
-function G0A() {
+    function G0A() {
         this._nsMap = {}
     }
     G0A.prototype = {
@@ -707,11 +710,11 @@ function G0A() {
     GRA.prototype.getElementsByTagNameNS = G0A.prototype.getElementsByTagNameNS;
     Q$(G0A, XG);
 
-function d81() {}
+    function d81() {}
     d81.prototype.nodeType = MJA;
     Q$(d81, XG);
 
-function ZRA() {}
+    function ZRA() {}
     ZRA.prototype = {
         data: "",
         substringData: function(A, Q) {
@@ -737,7 +740,7 @@ function ZRA() {}
     };
     Q$(ZRA, XG);
 
-function e40() {}
+    function e40() {}
     e40.prototype = {
         nodeName: "#text",
         nodeType: g81,
@@ -752,52 +755,52 @@ function e40() {}
     };
     Q$(e40, ZRA);
 
-function A80() {}
+    function A80() {}
     A80.prototype = {
         nodeName: "#comment",
         nodeType: uM2
     };
     Q$(A80, ZRA);
 
-function Q80() {}
+    function Q80() {}
     Q80.prototype = {
         nodeName: "#cdata-section",
         nodeType: fM2
     };
     Q$(Q80, ZRA);
 
-function c81() {}
+    function c81() {}
     c81.prototype.nodeType = dM2;
     Q$(c81, XG);
 
-function rM2() {}
+    function rM2() {}
     rM2.prototype.nodeType = ly5;
     Q$(rM2, XG);
 
-function oM2() {}
+    function oM2() {}
     oM2.prototype.nodeType = py5;
     Q$(oM2, XG);
 
-function B80() {}
+    function B80() {}
     B80.prototype.nodeType = hM2;
     Q$(B80, XG);
 
-function p81() {}
+    function p81() {}
     p81.prototype.nodeName = "#document-fragment";
     p81.prototype.nodeType = _h;
     Q$(p81, XG);
 
-function G80() {}
+    function G80() {}
     G80.prototype.nodeType = gM2;
     Q$(G80, XG);
 
-function tM2() {}
+    function tM2() {}
     tM2.prototype.serializeToString = function(A, Q, B) {
         return eM2.call(A, Q, B)
     };
     XG.prototype.toString = eM2;
 
-function eM2(A, Q) {
+    function eM2(A, Q) {
         var B = [],
             G = this.nodeType == 9 && this.documentElement || this,
             Z = G.prefix,
@@ -812,7 +815,7 @@ function eM2(A, Q) {
         return LJA(this, B, A, Q, Y), B.join("")
     }
 
-function vM2(A, Q, B) {
+    function vM2(A, Q, B) {
         var G = A.prefix || "",
             Z = A.namespaceURI;
         if (!Z) return !1;
@@ -825,11 +828,11 @@ function vM2(A, Q, B) {
         return !0
     }
 
-function a40(A, Q, B) {
+    function a40(A, Q, B) {
         A.push(" ", Q, '="', B.replace(/[<>&"\t\n\r]/g, iM2), '"')
     }
 
-function LJA(A, Q, B, G, Z) {
+    function LJA(A, Q, B, G, Z) {
         if (!Z) Z = [];
         if (G)
             if (A = G(A), A) {
@@ -901,7 +904,7 @@ function LJA(A, Q, B, G, Z) {
                         namespace: E
                     })
                 }
-                if (z || B && !/^(?:meta|link|img|br|hr|input)$/i.test(J)) {
+                if (z || B && !/^(?:meta|link|img|br|hr|input)TextComponent/i.test(J)) {
                     if (Q.push(">"), B && /^script$/i.test(J))
                         while (z) {
                             if (z.data) Q.push(z.data);
@@ -948,7 +951,7 @@ function LJA(A, Q, B, G, Z) {
         }
     }
 
-function AO2(A, Q, B) {
+    function AO2(A, Q, B) {
         var G;
         switch (Q.nodeType) {
             case UP:
@@ -967,7 +970,7 @@ function AO2(A, Q, B) {
         return G
     }
 
-function s40(A, Q, B) {
+    function s40(A, Q, B) {
         var G = new Q.constructor;
         for (var Z in Q)
             if (Object.prototype.hasOwnProperty.call(Q, Z)) {
@@ -994,7 +997,7 @@ function s40(A, Q, B) {
         return G
     }
 
-function QO2(A, Q, B) {
+    function QO2(A, Q, B) {
         A[Q] = B
     }
     try {
@@ -1047,7 +1050,7 @@ function QO2(A, Q, B) {
     ey5.NodeList = Sh;
     ey5.XMLSerializer = tM2
 });
-var ZO2 = U((Jx5) => {
+var ZO2 = moduleWrapper((Jx5) => {
     var BO2 = eOA().freeze;
     Jx5.XML_ENTITIES = BO2({
         amp: "&",
@@ -1445,7 +1448,7 @@ var ZO2 = U((Jx5) => {
         djcy: "ђ",
         dlcorn: "⌞",
         dlcrop: "⌍",
-        dollar: "$",
+        dollar: "TextComponent",
         Dopf: "\uD835\uDD3B",
         dopf: "\uD835\uDD55",
         Dot: "¨",

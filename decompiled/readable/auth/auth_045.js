@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_045.js
+ * 处理时间: 2025-12-09T03:41:36.858Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.928Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -55,14 +58,14 @@
             this.rawToken = void 0, this.tokenExpires = void 0;
             let W = J.response && ((Q = J.response) === null || Q === void 0 ? void 0 : Q.data) ? (B = J.response) === null || B === void 0 ? void 0 : B.data : {};
             if (W.error) {
-                let X = W.error_description ? `: ${W.error_description}` : "";
-                J.message = `${W.error}${X}`
+                let X = W.error_description ? `: TextComponent{W.error_description}` : "";
+                J.message = `TextComponent{W.error}TextComponent{X}`
             }
             throw J
         }
     }
 });
-var Dn1 = U((YaB) => {
+var Dn1 = moduleWrapper((YaB) => {
     Object.defineProperty(YaB, "__esModule", {
         value: !0
     });
@@ -73,8 +76,7 @@ var Dn1 = U((YaB) => {
             alg: "RS256",
             typ: "JWT"
         };
-
-class Kn1 {
+    class Kn1 {
         constructor(A, Q, B, G) {
             this.cache = new _s6.LRUCache({
                 capacity: 500,
@@ -83,8 +85,8 @@ class Kn1 {
         }
         getCachedKey(A, Q) {
             let B = A;
-            if (Q && Array.isArray(Q) && Q.length) B = A ? `${A}_${Q.join("_")}` : `${Q.join("_")}`;
-            else if (typeof Q === "string") B = A ? `${A}_${Q}` : Q;
+            if (Q && Array.isArray(Q) && Q.length) B = A ? `TextComponent{A}_${Q.join("_")}` : `TextComponent{Q.join("_")}`;
+            else if (typeof Q === "string") B = A ? `TextComponent{A}_${Q}` : Q;
             if (!B) throw Error("Scopes or url must be provided");
             return B
         }
@@ -113,7 +115,7 @@ class Kn1 {
             };
             if (Q) {
                 for (let D in W)
-                    if (Q[D]) throw Error(`The '${D}' property is not allowed when passing additionalClaims. This claim is included in the JWT by default.`)
+                    if (Q[D]) throw Error(`The 'TextComponent{D}' property is not allowed when passing additionalClaims. This claim is included in the JWT by default.`)
             }
             let X = this.keyId ? {
                     ...IaB,
@@ -121,7 +123,7 @@ class Kn1 {
                 } : IaB,
                 F = Object.assign(W, Q),
                 K = {
-                    Authorization: `Bearer ${Ss6.sign({header:X,payload:F,secret:this.key})}`
+                    Authorization: `Bearer TextComponent{Ss6.sign({header:X,payload:F,secret:this.key})}`
                 };
             return this.cache.set(G, {
                 expiration: J * 1000,
@@ -158,7 +160,7 @@ class Kn1 {
     }
     YaB.JWTAccess = Kn1
 });
-var Cn1 = U((XaB) => {
+var Cn1 = moduleWrapper((XaB) => {
     Object.defineProperty(XaB, "__esModule", {
         value: !0
     });
@@ -167,8 +169,7 @@ var Cn1 = U((XaB) => {
         ks6 = Dn1(),
         ys6 = Pe(),
         qA1 = Zk();
-
-class Hn1 extends ys6.OAuth2Client {
+    class Hn1 extends ys6.OAuth2Client {
         constructor(A, Q, B, G, Z, I) {
             let Y = A && typeof A === "object" ? A : {
                 email: A,
@@ -189,9 +190,9 @@ class Hn1 extends ys6.OAuth2Client {
             return Q.scopes = A, Q
         }
         async getRequestMetadataAsync(A) {
-            A = this.defaultServicePath ? `https://${this.defaultServicePath}/` : A;
+            A = this.defaultServicePath ? `https://TextComponent{this.defaultServicePath}/` : A;
             let Q = !this.hasUserScopes() && A || this.useJWTAccessWithScope && this.hasAnyScopes() || this.universeDomain !== qA1.DEFAULT_UNIVERSE;
-            if (this.subject && this.universeDomain !== qA1.DEFAULT_UNIVERSE) throw RangeError(`Service Account user is configured for the credential. Domain-wide delegation is not supported in universes other than ${qA1.DEFAULT_UNIVERSE}`);
+            if (this.subject && this.universeDomain !== qA1.DEFAULT_UNIVERSE) throw RangeError(`Service Account user is configured for the credential. Domain-wide delegation is not supported in universes other than TextComponent{qA1.DEFAULT_UNIVERSE}`);
             if (!this.apiKey && Q)
                 if (this.additionalClaims && this.additionalClaims.target_audience) {
                     let {
@@ -199,7 +200,7 @@ class Hn1 extends ys6.OAuth2Client {
                     } = await this.refreshToken();
                     return {
                         headers: this.addSharedMetadataHeaders({
-                            Authorization: `Bearer ${B.id_token}`
+                            Authorization: `Bearer TextComponent{B.id_token}`
                         })
                     }
                 } else {
@@ -325,16 +326,15 @@ class Hn1 extends ys6.OAuth2Client {
     }
     XaB.JWT = Hn1
 });
-var En1 = U((VaB) => {
+var En1 = moduleWrapper((VaB) => {
     Object.defineProperty(VaB, "__esModule", {
         value: !0
     });
     VaB.UserRefreshClient = VaB.USER_REFRESH_ACCOUNT_TYPE = void 0;
     var xs6 = Pe(),
-        vs6 = UA("querystring");
+        vs6 = nodeRequire("querystring");
     VaB.USER_REFRESH_ACCOUNT_TYPE = "authorized_user";
-
-class NA1 extends xs6.OAuth2Client {
+    class NA1 extends xs6.OAuth2Client {
         constructor(A, Q, B, G, Z) {
             let I = A && typeof A === "object" ? A : {
                 clientId: A,
@@ -399,7 +399,7 @@ class NA1 extends xs6.OAuth2Client {
     }
     VaB.UserRefreshClient = NA1
 });
-var zn1 = U((HaB) => {
+var zn1 = moduleWrapper((HaB) => {
     Object.defineProperty(HaB, "__esModule", {
         value: !0
     });
@@ -408,8 +408,7 @@ var zn1 = U((HaB) => {
         fs6 = PT(),
         hs6 = Bl();
     HaB.IMPERSONATED_ACCOUNT_TYPE = "impersonated_service_account";
-
-class WqA extends DaB.OAuth2Client {
+    class WqA extends DaB.OAuth2Client {
         constructor(A = {}) {
             var Q, B, G, Z, I, Y;
             super(A);
@@ -417,13 +416,13 @@ class WqA extends DaB.OAuth2Client {
                     expiry_date: 1,
                     refresh_token: "impersonated-placeholder"
                 }, this.sourceClient = (Q = A.sourceClient) !== null && Q !== void 0 ? Q : new DaB.OAuth2Client, this.targetPrincipal = (B = A.targetPrincipal) !== null && B !== void 0 ? B : "", this.delegates = (G = A.delegates) !== null && G !== void 0 ? G : [], this.targetScopes = (Z = A.targetScopes) !== null && Z !== void 0 ? Z : [], this.lifetime = (I = A.lifetime) !== null && I !== void 0 ? I : 3600, !(0, hs6.originalOrCamelOptions)(A).get("universe_domain")) this.universeDomain = this.sourceClient.universeDomain;
-            else if (this.sourceClient.universeDomain !== this.universeDomain) throw RangeError(`Universe domain ${this.sourceClient.universeDomain} in source credentials does not match ${this.universeDomain} universe domain set for impersonated credentials.`);
-            this.endpoint = (Y = A.endpoint) !== null && Y !== void 0 ? Y : `https://iamcredentials.${this.universeDomain}`
+            else if (this.sourceClient.universeDomain !== this.universeDomain) throw RangeError(`Universe domain TextComponent{this.sourceClient.universeDomain} in source credentials does not match TextComponent{this.universeDomain} universe domain set for impersonated credentials.`);
+            this.endpoint = (Y = A.endpoint) !== null && Y !== void 0 ? Y : `https://iamcredentials.TextComponent{this.universeDomain}`
         }
         async sign(A) {
             await this.sourceClient.getAccessToken();
-            let Q = `projects/-/serviceAccounts/${this.targetPrincipal}`,
-                B = `${this.endpoint}/v1/${Q}:signBlob`,
+            let Q = `projects/-/serviceAccounts/TextComponent{this.targetPrincipal}`,
+                B = `TextComponent{this.endpoint}/v1/TextComponent{Q}:signBlob`,
                 G = {
                     delegates: this.delegates,
                     payload: Buffer.from(A).toString("base64")
@@ -443,7 +442,7 @@ class WqA extends DaB.OAuth2Client {
             try {
                 await this.sourceClient.getAccessToken();
                 let Y = "projects/-/serviceAccounts/" + this.targetPrincipal,
-                    J = `${this.endpoint}/v1/${Y}:generateAccessToken`,
+                    J = `TextComponent{this.endpoint}/v1/TextComponent{Y}:generateAccessToken`,
                     W = {
                         delegates: this.delegates,
                         scope: this.targetScopes,
@@ -465,15 +464,15 @@ class WqA extends DaB.OAuth2Client {
                 let J = 0,
                     W = "";
                 if (Y instanceof fs6.GaxiosError) J = (B = (Q = (A = Y === null || Y === void 0 ? void 0 : Y.response) === null || A === void 0 ? void 0 : A.data) === null || Q === void 0 ? void 0 : Q.error) === null || B === void 0 ? void 0 : B.status, W = (I = (Z = (G = Y === null || Y === void 0 ? void 0 : Y.response) === null || G === void 0 ? void 0 : G.data) === null || Z === void 0 ? void 0 : Z.error) === null || I === void 0 ? void 0 : I.message;
-                if (J && W) throw Y.message = `${J}: unable to impersonate: ${W}`, Y;
-                else throw Y.message = `unable to impersonate: ${Y}`, Y
+                if (J && W) throw Y.message = `TextComponent{J}: unable to impersonate: TextComponent{W}`, Y;
+                else throw Y.message = `unable to impersonate: TextComponent{Y}`, Y
             }
         }
         async fetchIdToken(A, Q) {
             var B, G;
             await this.sourceClient.getAccessToken();
-            let Z = `projects/-/serviceAccounts/${this.targetPrincipal}`,
-                I = `${this.endpoint}/v1/${Z}:generateIdToken`,
+            let Z = `projects/-/serviceAccounts/TextComponent{this.targetPrincipal}`,
+                I = `TextComponent{this.endpoint}/v1/TextComponent{Z}:generateIdToken`,
                 Y = {
                     delegates: this.delegates,
                     audience: A,
@@ -490,17 +489,16 @@ class WqA extends DaB.OAuth2Client {
     }
     HaB.Impersonated = WqA
 });
-var Un1 = U((UaB) => {
+var Un1 = moduleWrapper((UaB) => {
     Object.defineProperty(UaB, "__esModule", {
         value: !0
     });
     UaB.OAuthClientAuthHandler = void 0;
     UaB.getErrorFromOAuthErrorResponse = ds6;
-    var EaB = UA("querystring"),
+    var EaB = nodeRequire("querystring"),
         us6 = XZA(),
         ms6 = ["PUT", "POST", "PATCH"];
-
-class zaB {
+    class zaB {
         constructor(A) {
             this.clientAuthentication = A, this.crypto = (0, us6.createCrypto)()
         }
@@ -510,15 +508,15 @@ class zaB {
         injectAuthenticatedHeaders(A, Q) {
             var B;
             if (Q) A.headers = A.headers || {}, Object.assign(A.headers, {
-                Authorization: `Bearer ${Q}}`
+                Authorization: `Bearer TextComponent{Q}}`
             });
             else if (((B = this.clientAuthentication) === null || B === void 0 ? void 0 : B.confidentialClientType) === "basic") {
                 A.headers = A.headers || {};
                 let G = this.clientAuthentication.clientId,
                     Z = this.clientAuthentication.clientSecret || "",
-                    I = this.crypto.encodeBase64StringUtf8(`${G}:${Z}`);
+                    I = this.crypto.encodeBase64StringUtf8(`TextComponent{G}:TextComponent{Z}`);
                 Object.assign(A.headers, {
-                    Authorization: `Basic ${I}`
+                    Authorization: `Basic TextComponent{I}`
                 })
             }
         }
@@ -543,8 +541,8 @@ class zaB {
                         client_id: this.clientAuthentication.clientId,
                         client_secret: this.clientAuthentication.clientSecret || ""
                     });
-                    else throw Error(`${G} content-types are not supported with ${this.clientAuthentication.confidentialClientType} client authentication`)
-                } else throw Error(`${B} HTTP method does not support ${this.clientAuthentication.confidentialClientType} client authentication`)
+                    else throw Error(`TextComponent{G} content-types are not supported with TextComponent{this.clientAuthentication.confidentialClientType} client authentication`)
+                } else throw Error(`TextComponent{B} HTTP method does not support TextComponent{this.clientAuthentication.confidentialClientType} client authentication`)
             }
         }
         static get RETRY_CONFIG() {
@@ -558,14 +556,14 @@ class zaB {
     }
     UaB.OAuthClientAuthHandler = zaB;
 
-function ds6(A, Q) {
+    function ds6(A, Q) {
         let {
             error: B,
             error_description: G,
             error_uri: Z
-        } = A, I = `Error code ${B}`;
-        if (typeof G < "u") I += `: ${G}`;
-        if (typeof Z < "u") I += ` - ${Z}`;
+        } = A, I = `Error code TextComponent{B}`;
+        if (typeof G < "u") I += `: TextComponent{G}`;
+        if (typeof Z < "u") I += ` - TextComponent{Z}`;
         let Y = Error(I);
         if (Q) {
             let J = Object.keys(Q);
@@ -581,13 +579,13 @@ function ds6(A, Q) {
         return Y
     }
 });
-var wn1 = U((qaB) => {
+var wn1 = moduleWrapper((qaB) => {
     Object.defineProperty(qaB, "__esModule", {
         value: !0
     });
     qaB.StsCredentials = void 0;
     var ps6 = PT(),
-        ls6 = UA("querystring"),
+        ls6 = nodeRequire("querystring"),
         is6 = BqA(),
         waB = Un1();
     class $n1 extends waB.OAuthClientAuthHandler {
@@ -637,7 +635,7 @@ var wn1 = U((qaB) => {
     }
     qaB.StsCredentials = $n1
 });
-var Zl = U((cV) => {
+var Zl = moduleWrapper((cV) => {
     var qn1 = cV && cV.__classPrivateFieldGet || function(A, Q, B, G) {
             if (B === "a" && !G) throw TypeError("Private accessor was defined without a getter");
             if (typeof Q === "function" ? A !== Q || !G : !Q.has(A)) throw TypeError("Cannot read private member from an object whose class did not declare it");
@@ -654,7 +652,7 @@ var Zl = U((cV) => {
         value: !0
     });
     cV.BaseExternalAccountClient = cV.DEFAULT_UNIVERSE = cV.CLOUD_RESOURCE_MANAGER = cV.EXTERNAL_ACCOUNT_TYPE = cV.EXPIRATION_TIME_OFFSET = void 0;
-    var ns6 = UA("stream"),
+    var ns6 = nodeRequire("stream"),
         as6 = Zk(),
         ss6 = wn1(),
         MaB = Bl(),
@@ -675,8 +673,7 @@ var Zl = U((cV) => {
             return Br6.DEFAULT_UNIVERSE
         }
     });
-
-class LA1 extends as6.AuthClient {
+    class LA1 extends as6.AuthClient {
         constructor(A, Q) {
             var B;
             super({
@@ -686,7 +683,7 @@ class LA1 extends as6.AuthClient {
             Nn1.add(this), zZA.set(this, null);
             let G = (0, MaB.originalOrCamelOptions)(A),
                 Z = G.get("type");
-            if (Z && Z !== cV.EXTERNAL_ACCOUNT_TYPE) throw Error(`Expected "${cV.EXTERNAL_ACCOUNT_TYPE}" type but received "${A.type}"`);
+            if (Z && Z !== cV.EXTERNAL_ACCOUNT_TYPE) throw Error(`Expected "TextComponent{cV.EXTERNAL_ACCOUNT_TYPE}" type but received "TextComponent{A.type}"`);
             let I = G.get("client_id"),
                 Y = G.get("client_secret"),
                 J = (B = G.get("token_url")) !== null && B !== void 0 ? B : Ar6.replace("{universeDomain}", this.universeDomain),
@@ -695,7 +692,7 @@ class LA1 extends as6.AuthClient {
                 F = G.get("service_account_impersonation_url"),
                 V = G.get("service_account_impersonation"),
                 K = (0, MaB.originalOrCamelOptions)(V).get("token_lifetime_seconds");
-            if (this.cloudResourceManagerURL = new URL(G.get("cloud_resource_manager_url") || `https://cloudresourcemanager.${this.universeDomain}/v1/projects/`), I) this.clientAuth = {
+            if (this.cloudResourceManagerURL = new URL(G.get("cloud_resource_manager_url") || `https://cloudresourcemanager.TextComponent{this.universeDomain}/v1/projects/`), I) this.clientAuth = {
                 confidentialClientType: "basic",
                 clientId: I,
                 clientSecret: Y
@@ -714,7 +711,7 @@ class LA1 extends as6.AuthClient {
         getServiceAccountEmail() {
             var A;
             if (this.serviceAccountImpersonationUrl) {
-                if (this.serviceAccountImpersonationUrl.length > 256) throw RangeError(`URL is too long: ${this.serviceAccountImpersonationUrl}`);
+                if (this.serviceAccountImpersonationUrl.length > 256) throw RangeError(`URL is too long: TextComponent{this.serviceAccountImpersonationUrl}`);
                 let B = /serviceAccounts\/(?<email>[^:]+):generateAccessToken$/.exec(this.serviceAccountImpersonationUrl);
                 return ((A = B === null || B === void 0 ? void 0 : B.groups) === null || A === void 0 ? void 0 : A.email) || null
             }
@@ -732,7 +729,7 @@ class LA1 extends as6.AuthClient {
         }
         async getRequestHeaders() {
             let Q = {
-                Authorization: `Bearer ${(await this.getAccessToken()).token}`
+                Authorization: `Bearer TextComponent{(await this.getAccessToken()).token}`
             };
             return this.addSharedMetadataHeaders(Q)
         }
@@ -750,7 +747,7 @@ class LA1 extends as6.AuthClient {
                     B = await this.transporter.request({
                         ...LA1.RETRY_CONFIG,
                         headers: Q,
-                        url: `${this.cloudResourceManagerURL.toString()}${A}`,
+                        url: `TextComponent{this.cloudResourceManagerURL.toString()}TextComponent{A}`,
                         responseType: "json"
                     });
                 return this.projectId = B.data.projectId, this.projectId
@@ -795,7 +792,7 @@ class LA1 extends as6.AuthClient {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: `Bearer ${A}`
+                        Authorization: `Bearer TextComponent{A}`
                     },
                     data: {
                         scope: this.getScopesArray(),
@@ -823,7 +820,7 @@ class LA1 extends as6.AuthClient {
             let A = process.version.replace(/^v/, ""),
                 Q = this.serviceAccountImpersonationUrl !== void 0,
                 B = this.credentialSourceType ? this.credentialSourceType : "unknown";
-            return `gl-node/${A} auth/${Qr6.version} google-byoid-sdk source/${B} sa-impersonation/${Q} config-lifetime/${this.configLifetimeRequested}`
+            return `gl-node/TextComponent{A} auth/TextComponent{Qr6.version} google-byoid-sdk source/TextComponent{B} sa-impersonation/TextComponent{Q} config-lifetime/TextComponent{this.configLifetimeRequested}`
         }
     }
     cV.BaseExternalAccountClient = LA1;
@@ -863,19 +860,18 @@ class LA1 extends as6.AuthClient {
         }), this.cachedAccessToken
     }
 });
-var jaB = U((TaB) => {
+var jaB = moduleWrapper((TaB) => {
     var Mn1, On1, Rn1;
     Object.defineProperty(TaB, "__esModule", {
         value: !0
     });
     TaB.FileSubjectTokenSupplier = void 0;
-    var Tn1 = UA("util"),
-        Pn1 = UA("fs"),
+    var Tn1 = nodeRequire("util"),
+        Pn1 = nodeRequire("fs"),
         Gr6 = (0, Tn1.promisify)((Mn1 = Pn1.readFile) !== null && Mn1 !== void 0 ? Mn1 : () => {}),
         Zr6 = (0, Tn1.promisify)((On1 = Pn1.realpath) !== null && On1 !== void 0 ? On1 : () => {}),
         Ir6 = (0, Tn1.promisify)((Rn1 = Pn1.lstat) !== null && Rn1 !== void 0 ? Rn1 : () => {});
-
-class RaB {
+    class RaB {
         constructor(A) {
             this.filePath = A.filePath, this.formatType = A.formatType, this.subjectTokenFieldName = A.subjectTokenFieldName
         }
@@ -884,7 +880,7 @@ class RaB {
             try {
                 if (Q = await Zr6(Q), !(await Ir6(Q)).isFile()) throw Error()
             } catch (Z) {
-                if (Z instanceof Error) Z.message = `The file at ${Q} does not exist, or it is not a file. ${Z.message}`;
+                if (Z instanceof Error) Z.message = `The file at TextComponent{Q} does not exist, or it is not a file. TextComponent{Z.message}`;
                 throw Z
             }
             let B, G = await Gr6(Q, {
@@ -898,13 +894,12 @@ class RaB {
     }
     TaB.FileSubjectTokenSupplier = RaB
 });
-var yaB = U((_aB) => {
+var yaB = moduleWrapper((_aB) => {
     Object.defineProperty(_aB, "__esModule", {
         value: !0
     });
     _aB.UrlSubjectTokenSupplier = void 0;
-
-class SaB {
+    class SaB {
         constructor(A) {
             this.url = A.url, this.formatType = A.formatType, this.subjectTokenFieldName = A.subjectTokenFieldName, this.headers = A.headers, this.additionalGaxiosOptions = A.additionalGaxiosOptions
         }
@@ -925,7 +920,7 @@ class SaB {
     }
     _aB.UrlSubjectTokenSupplier = SaB
 });
-var _n1 = U((xaB) => {
+var _n1 = moduleWrapper((xaB) => {
     Object.defineProperty(xaB, "__esModule", {
         value: !0
     });
@@ -934,8 +929,7 @@ var _n1 = U((xaB) => {
         jn1 = Bl(),
         Jr6 = jaB(),
         Wr6 = yaB();
-
-class Sn1 extends Yr6.BaseExternalAccountClient {
+    class Sn1 extends Yr6.BaseExternalAccountClient {
         constructor(A, Q) {
             super(A, Q);
             let B = (0, jn1.originalOrCamelOptions)(A),
@@ -949,7 +943,7 @@ class Sn1 extends Yr6.BaseExternalAccountClient {
                     Y = (0, jn1.originalOrCamelOptions)(I.get("format")),
                     J = Y.get("type") || "text",
                     W = Y.get("subject_token_field_name");
-                if (J !== "json" && J !== "text") throw Error(`Invalid credential_source format "${J}"`);
+                if (J !== "json" && J !== "text") throw Error(`Invalid credential_source format "TextComponent{J}"`);
                 if (J === "json" && !W) throw Error("Missing subject_token_field_name for JSON credential_source format");
                 let X = I.get("file"),
                     F = I.get("url"),
@@ -976,7 +970,7 @@ class Sn1 extends Yr6.BaseExternalAccountClient {
     }
     xaB.IdentityPoolClient = Sn1
 });
-var kn1 = U((gaB) => {
+var kn1 = moduleWrapper((gaB) => {
     Object.defineProperty(gaB, "__esModule", {
         value: !0
     });
@@ -984,8 +978,7 @@ var kn1 = U((gaB) => {
     var faB = XZA(),
         baB = "AWS4-HMAC-SHA256",
         Xr6 = "aws4_request";
-
-class haB {
+    class haB {
         constructor(A, Q) {
             this.getCredentials = A, this.region = Q, this.crypto = (0, faB.createCrypto)()
         }
@@ -1028,19 +1021,16 @@ class haB {
         }
     }
     gaB.AwsRequestSigner = haB;
-
-async function XqA(A, Q, B) {
+    async function XqA(A, Q, B) {
         return await A.signWithHmacSha256(Q, B)
     }
-
-async function Fr6(A, Q, B, G, Z) {
+    async function Fr6(A, Q, B, G, Z) {
         let I = await XqA(A, `AWS4${Q}`, B),
             Y = await XqA(A, I, G),
             J = await XqA(A, Y, Z);
         return await XqA(A, J, "aws4_request")
     }
-
-async function Vr6(A) {
+    async function Vr6(A) {
         let Q = A.additionalAmzHeaders || {},
             B = A.requestPayload || "",
             G = A.host.split(".")[0],
@@ -1059,25 +1049,25 @@ async function Vr6(A) {
             X = "",
             F = Object.keys(W).sort();
         F.forEach((N) => {
-            X += `${N}:${W[N]}
+            X += `TextComponent{N}:TextComponent{W[N]}
 `
         });
         let V = F.join(";"),
             K = await A.crypto.sha256DigestHex(B),
-            D = `${A.method}
-${A.canonicalUri}
-${A.canonicalQuerystring}
-${X}
-${V}
-${K}`,
-            H = `${Y}/${A.region}/${G}/${Xr6}`,
-            C = `${baB}
-${I}
-${H}
+            D = `TextComponent{A.method}
+TextComponent{A.canonicalUri}
+TextComponent{A.canonicalQuerystring}
+TextComponent{X}
+TextComponent{V}
+TextComponent{K}`,
+            H = `TextComponent{Y}/TextComponent{A.region}/TextComponent{G}/TextComponent{Xr6}`,
+            C = `TextComponent{baB}
+TextComponent{I}
+TextComponent{H}
 ` + await A.crypto.sha256DigestHex(D),
             E = await Fr6(A.crypto, A.securityCredentials.secretAccessKey, Y, A.region, G),
             z = await XqA(A.crypto, E, C),
-            w = `${baB} Credential=${A.securityCredentials.accessKeyId}/${H}, SignedHeaders=${V}, Signature=${(0,faB.fromArrayBufferToHex)(z)}`;
+            w = `TextComponent{baB} Credential=TextComponent{A.securityCredentials.accessKeyId}/TextComponent{H}, SignedHeaders=TextComponent{V}, Signature=TextComponent{(0,faB.fromArrayBufferToHex)(z)}`;
         return {
             amzDate: J.date ? void 0 : I,
             authorizationHeader: w,
@@ -1085,7 +1075,7 @@ ${H}
         }
     }
 });
-var paB = U((UZA) => {
+var paB = moduleWrapper((UZA) => {
     var Rf = UZA && UZA.__classPrivateFieldGet || function(A, Q, B, G) {
             if (B === "a" && !G) throw TypeError("Private accessor was defined without a getter");
             if (typeof Q === "function" ? A !== Q || !G : !Q.has(A)) throw TypeError("Cannot read private member from an object whose class did not declare it");
@@ -1096,8 +1086,7 @@ var paB = U((UZA) => {
         value: !0
     });
     UZA.DefaultAwsSecurityCredentialsSupplier = void 0;
-
-class caB {
+    class caB {
         constructor(A) {
             xT.add(this), this.regionUrl = A.regionUrl, this.securityCredentialsUrl = A.securityCredentialsUrl, this.imdsV2SessionTokenUrl = A.imdsV2SessionTokenUrl, this.additionalGaxiosOptions = A.additionalGaxiosOptions
         }
@@ -1154,7 +1143,7 @@ class caB {
     }, daB = async function(Q, B, G) {
         return (await G.request({
             ...this.additionalGaxiosOptions,
-            url: `${this.securityCredentialsUrl}/${Q}`,
+            url: `TextComponent{this.securityCredentialsUrl}/TextComponent{Q}`,
             responseType: "json",
             headers: B
         })).data
@@ -1169,7 +1158,7 @@ class caB {
         return null
     }
 });
-var vn1 = U(($ZA) => {
+var vn1 = moduleWrapper(($ZA) => {
     var Kr6 = $ZA && $ZA.__classPrivateFieldGet || function(A, Q, B, G) {
             if (B === "a" && !G) throw TypeError("Private accessor was defined without a getter");
             if (typeof Q === "function" ? A !== Q || !G : !Q.has(A)) throw TypeError("Cannot read private member from an object whose class did not declare it");
@@ -1184,8 +1173,7 @@ var vn1 = U(($ZA) => {
         Hr6 = Zl(),
         Cr6 = paB(),
         laB = Bl();
-
-class FqA extends Hr6.BaseExternalAccountClient {
+    class FqA extends Hr6.BaseExternalAccountClient {
         constructor(A, Q) {
             super(A, Q);
             let B = (0, laB.originalOrCamelOptions)(A),
@@ -1210,9 +1198,9 @@ class FqA extends Hr6.BaseExternalAccountClient {
         }
         validateEnvironmentId() {
             var A;
-            let Q = (A = this.environmentId) === null || A === void 0 ? void 0 : A.match(/^(aws)(\d+)$/);
+            let Q = (A = this.environmentId) === null || A === void 0 ? void 0 : A.match(/^(aws)(\d+)TextComponent/);
             if (!Q || !this.regionalCredVerificationUrl) throw Error('No valid AWS "credential_source" provided');
-            else if (parseInt(Q[2], 10) !== 1) throw Error(`aws version "${Q[2]}" is not supported in the current build.`)
+            else if (parseInt(Q[2], 10) !== 1) throw Error(`aws version "TextComponent{Q[2]}" is not supported in the current build.`)
         }
         async retrieveSubjectToken() {
             if (!this.awsRequestSigner) this.region = await this.awsSecurityCredentialsSupplier.getAwsRegion(this.supplierContext), this.awsRequestSigner = new Dr6.AwsRequestSigner(async () => {
@@ -1246,26 +1234,26 @@ class FqA extends Hr6.BaseExternalAccountClient {
     FqA.AWS_EC2_METADATA_IPV4_ADDRESS = "169.254.169.254";
     FqA.AWS_EC2_METADATA_IPV6_ADDRESS = "fd00:ec2::254"
 });
-var cn1 = U((saB) => {
+var cn1 = moduleWrapper((saB) => {
     Object.defineProperty(saB, "__esModule", {
         value: !0
     });
     saB.InvalidSubjectTokenError = saB.InvalidMessageFieldError = saB.InvalidCodeFieldError = saB.InvalidTokenTypeFieldError = saB.InvalidExpirationTimeFieldError = saB.InvalidSuccessFieldError = saB.InvalidVersionFieldError = saB.ExecutableResponseError = saB.ExecutableResponse = void 0;
-    var RA1 = "urn:ietf:params:oauth:token-type:saml2",
+    /* SAML2_TOKEN_TYPE = SAML2_TOKEN_TYPE = "urn:ietf:params:oauth:token-type:saml2" */
+var SAML2_TOKEN_TYPE = "urn:ietf:params:oauth:token-type:saml2",
         bn1 = "urn:ietf:params:oauth:token-type:id_token",
         fn1 = "urn:ietf:params:oauth:token-type:jwt";
-
-class naB {
+    class naB {
         constructor(A) {
             if (!A.version) throw new hn1("Executable response must contain a 'version' field.");
             if (A.success === void 0) throw new gn1("Executable response must contain a 'success' field.");
             if (this.version = A.version, this.success = A.success, this.success) {
-                if (this.expirationTime = A.expiration_time, this.tokenType = A.token_type, this.tokenType !== RA1 && this.tokenType !== bn1 && this.tokenType !== fn1) throw new un1(`Executable response must contain a 'token_type' field when successful and it must be one of ${bn1}, ${fn1}, or ${RA1}.`);
-                if (this.tokenType === RA1) {
-                    if (!A.saml_response) throw new TA1(`Executable response must contain a 'saml_response' field when token_type=${RA1}.`);
+                if (this.expirationTime = A.expiration_time, this.tokenType = A.token_type, this.tokenType !== SAML2_TOKEN_TYPE && this.tokenType !== bn1 && this.tokenType !== fn1) throw new un1(`Executable response must contain a 'token_type' field when successful and it must be one of TextComponent{bn1}, TextComponent{fn1}, or TextComponent{SAML2_TOKEN_TYPE}.`);
+                if (this.tokenType === SAML2_TOKEN_TYPE) {
+                    if (!A.saml_response) throw new TA1(`Executable response must contain a 'saml_response' field when token_type=TextComponent{SAML2_TOKEN_TYPE}.`);
                     this.subjectToken = A.saml_response
                 } else {
-                    if (!A.id_token) throw new TA1(`Executable response must contain a 'id_token' field when token_type=${bn1} or ${fn1}.`);
+                    if (!A.id_token) throw new TA1(`Executable response must contain a 'id_token' field when token_type=TextComponent{bn1} or TextComponent{fn1}.`);
                     this.subjectToken = A.id_token
                 }
             } else {
@@ -1282,47 +1270,38 @@ class naB {
         }
     }
     saB.ExecutableResponse = naB;
-
-class Tf extends Error {
+    class Tf extends Error {
         constructor(A) {
             super(A);
             Object.setPrototypeOf(this, new.target.prototype)
         }
     }
     saB.ExecutableResponseError = Tf;
-
-class hn1 extends Tf {}
+    class hn1 extends Tf {}
     saB.InvalidVersionFieldError = hn1;
-
-class gn1 extends Tf {}
+    class gn1 extends Tf {}
     saB.InvalidSuccessFieldError = gn1;
-
-class aaB extends Tf {}
+    class aaB extends Tf {}
     saB.InvalidExpirationTimeFieldError = aaB;
-
-class un1 extends Tf {}
+    class un1 extends Tf {}
     saB.InvalidTokenTypeFieldError = un1;
-
-class mn1 extends Tf {}
+    class mn1 extends Tf {}
     saB.InvalidCodeFieldError = mn1;
-
-class dn1 extends Tf {}
+    class dn1 extends Tf {}
     saB.InvalidMessageFieldError = dn1;
-
-class TA1 extends Tf {}
+    class TA1 extends Tf {}
     saB.InvalidSubjectTokenError = TA1
 });
-var eaB = U((oaB) => {
+var eaB = moduleWrapper((oaB) => {
     Object.defineProperty(oaB, "__esModule", {
         value: !0
     });
     oaB.PluggableAuthHandler = void 0;
     var Mr6 = PA1(),
         je = cn1(),
-        Or6 = UA("child_process"),
-        pn1 = UA("fs");
-
-class ln1 {
+        Or6 = nodeRequire("child_process"),
+        pn1 = nodeRequire("fs");
+    class ln1 {
         constructor(A) {
             if (!A.command) throw Error("No command provided.");
             if (this.commandComponents = ln1.parseCommand(A.command), this.timeoutMillis = A.timeoutMillis, !this.timeoutMillis) throw Error("No timeoutMillis provided.");
@@ -1352,7 +1331,7 @@ class ln1 {
                         return Q(W)
                     } catch (J) {
                         if (J instanceof je.ExecutableResponseError) return B(J);
-                        return B(new je.ExecutableResponseError(`The executable returned an invalid response: ${Z}`))
+                        return B(new je.ExecutableResponseError(`The executable returned an invalid response: TextComponent{Z}`))
                     } else return B(new Mr6.ExecutableError(Z, Y.toString()))
                 })
             })
@@ -1376,12 +1355,12 @@ class ln1 {
                 return
             } catch (B) {
                 if (B instanceof je.ExecutableResponseError) throw B;
-                throw new je.ExecutableResponseError(`The output file contained an invalid response: ${Q}`)
+                throw new je.ExecutableResponseError(`The output file contained an invalid response: TextComponent{Q}`)
             }
         }
         static parseCommand(A) {
             let Q = A.match(/(?:[^\s"]+|"[^"]*")+/g);
-            if (!Q) throw Error(`Provided command: "${A}" could not be parsed.`);
+            if (!Q) throw Error(`Provided command: "TextComponent{A}" could not be parsed.`);
             for (let B = 0; B < Q.length; B++)
                 if (Q[B][0] === '"' && Q[B].slice(-1) === '"') Q[B] = Q[B].slice(1, -1);
             return Q
@@ -1389,7 +1368,7 @@ class ln1 {
     }
     oaB.PluggableAuthHandler = ln1
 });
-var PA1 = U((ZsB) => {
+var PA1 = moduleWrapper((ZsB) => {
     Object.defineProperty(ZsB, "__esModule", {
         value: !0
     });
@@ -1397,10 +1376,9 @@ var PA1 = U((ZsB) => {
     var Rr6 = Zl(),
         Tr6 = cn1(),
         Pr6 = eaB();
-
-class in1 extends Error {
+    class in1 extends Error {
         constructor(A, Q) {
-            super(`The executable failed with exit code: ${Q} and error message: ${A}.`);
+            super(`The executable failed with exit code: TextComponent{Q} and error message: TextComponent{A}.`);
             this.code = Q, Object.setPrototypeOf(this, new.target.prototype)
         }
     }
@@ -1410,14 +1388,13 @@ class in1 extends Error {
         QsB = 120000,
         Sr6 = "GOOGLE_EXTERNAL_ACCOUNT_ALLOW_EXECUTABLES",
         BsB = 1;
-
-class GsB extends Rr6.BaseExternalAccountClient {
+    class GsB extends Rr6.BaseExternalAccountClient {
         constructor(A, Q) {
             super(A, Q);
             if (!A.credential_source.executable) throw Error('No valid Pluggable Auth "credential_source" provided.');
             if (this.command = A.credential_source.executable.command, !this.command) throw Error('No valid Pluggable Auth "credential_source" provided.');
             if (A.credential_source.executable.timeout_millis === void 0) this.timeoutMillis = jr6;
-            else if (this.timeoutMillis = A.credential_source.executable.timeout_millis, this.timeoutMillis < AsB || this.timeoutMillis > QsB) throw Error(`Timeout must be between ${AsB} and ${QsB} milliseconds.`);
+            else if (this.timeoutMillis = A.credential_source.executable.timeout_millis, this.timeoutMillis < AsB || this.timeoutMillis > QsB) throw Error(`Timeout must be between TextComponent{AsB} and TextComponent{QsB} milliseconds.`);
             this.outputFile = A.credential_source.executable.output_file, this.handler = new Pr6.PluggableAuthHandler({
                 command: this.command,
                 timeoutMillis: this.timeoutMillis,
@@ -1435,7 +1412,7 @@ class GsB extends Rr6.BaseExternalAccountClient {
                 if (B) Q.set("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL", B);
                 A = await this.handler.retrieveResponseFromExecutable(Q)
             }
-            if (A.version > BsB) throw Error(`Version of executable is not currently supported, maximum supported version is ${BsB}.`);
+            if (A.version > BsB) throw Error(`Version of executable is not currently supported, maximum supported version is TextComponent{BsB}.`);
             if (!A.success) throw new in1(A.errorMessage, A.errorCode);
             if (this.outputFile) {
                 if (!A.expirationTime) throw new Tr6.InvalidExpirationTimeFieldError("The executable response must contain the `expiration_time` field for successful responses when an output_file has been specified in the configuration.")
@@ -1446,7 +1423,7 @@ class GsB extends Rr6.BaseExternalAccountClient {
     }
     ZsB.PluggableAuthClient = GsB
 });
-var nn1 = U((JsB) => {
+var nn1 = moduleWrapper((JsB) => {
     Object.defineProperty(JsB, "__esModule", {
         value: !0
     });
@@ -1455,8 +1432,7 @@ var nn1 = U((JsB) => {
         yr6 = _n1(),
         xr6 = vn1(),
         vr6 = PA1();
-
-class YsB {
+    class YsB {
         constructor() {
             throw Error("ExternalAccountClients should be initialized via: ExternalAccountClient.fromJSON(), directly via explicit constructors, eg. new AwsClient(options), new IdentityPoolClient(options), newPluggableAuthClientOptions, or via new GoogleAuth(options).getClient()")
         }
@@ -1471,7 +1447,7 @@ class YsB {
     }
     JsB.ExternalAccountClient = YsB
 });
-var DsB = U((VsB) => {
+var DsB = moduleWrapper((VsB) => {
     Object.defineProperty(VsB, "__esModule", {
         value: !0
     });
@@ -1479,12 +1455,12 @@ var DsB = U((VsB) => {
     var br6 = Zk(),
         XsB = Un1(),
         fr6 = PT(),
-        hr6 = UA("stream"),
+        hr6 = nodeRequire("stream"),
         gr6 = Zl();
     VsB.EXTERNAL_ACCOUNT_AUTHORIZED_USER_TYPE = "external_account_authorized_user";
-    var ur6 = "https://sts.{universeDomain}/v1/oauthtoken";
-
-class an1 extends XsB.OAuthClientAuthHandler {
+    /* STS_TOKEN_URL = STS_TOKEN_URL template */
+var STS_TOKEN_URL = "https://sts.{universeDomain}/v1/oauthtoken";
+    class an1 extends XsB.OAuthClientAuthHandler {
         constructor(A, Q, B) {
             super(B);
             this.url = A, this.transporter = Q
@@ -1517,8 +1493,7 @@ class an1 extends XsB.OAuthClientAuthHandler {
             }
         }
     }
-
-class FsB extends br6.AuthClient {
+    class FsB extends br6.AuthClient {
         constructor(A, Q) {
             var B;
             super({
@@ -1532,7 +1507,7 @@ class FsB extends br6.AuthClient {
                 clientId: A.client_id,
                 clientSecret: A.client_secret
             };
-            if (this.externalAccountAuthorizedUserHandler = new an1((B = A.token_url) !== null && B !== void 0 ? B : ur6.replace("{universeDomain}", this.universeDomain), this.transporter, G), this.cachedAccessToken = null, this.quotaProjectId = A.quota_project_id, typeof(Q === null || Q === void 0 ? void 0 : Q.eagerRefreshThresholdMillis) !== "number") this.eagerRefreshThresholdMillis = gr6.EXPIRATION_TIME_OFFSET;
+            if (this.externalAccountAuthorizedUserHandler = new an1((B = A.token_url) !== null && B !== void 0 ? B : STS_TOKEN_URL.replace("{universeDomain}", this.universeDomain), this.transporter, G), this.cachedAccessToken = null, this.quotaProjectId = A.quota_project_id, typeof(Q === null || Q === void 0 ? void 0 : Q.eagerRefreshThresholdMillis) !== "number") this.eagerRefreshThresholdMillis = gr6.EXPIRATION_TIME_OFFSET;
             else this.eagerRefreshThresholdMillis = Q.eagerRefreshThresholdMillis;
             this.forceRefreshOnFailure = !!(Q === null || Q === void 0 ? void 0 : Q.forceRefreshOnFailure)
         }
@@ -1545,5 +1520,5 @@ class FsB extends br6.AuthClient {
         }
         async getRequestHeaders() {
             let Q = {
-                Authorization: `Bearer ${(await this.getAccessToken()).token}`
+                Authorization: `Bearer TextComponent{(await this.getAccessToken()).token}`
             };

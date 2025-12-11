@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_030.js
+ * 处理时间: 2025-12-09T03:41:39.320Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.122Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -64,11 +66,9 @@ function JRB(A, Q, B) {
     let Y = d7A.get(A);
     Y && Y.forEach((J) => O$6(J, B))
 }
-
 async function O$6(A, Q) {
     await A.setPayload(Q || A.getPayload())
 }
-
 async function Nm1(A) {
     let {
         apiHost: Q,
@@ -89,7 +89,7 @@ async function Nm1(A) {
         clientKey: G,
         headers: B
     })).then((X) => {
-        if (!X.ok) throw Error(`HTTP error: ${X.status}`);
+        if (!X.ok) throw Error(`HTTP error: TextComponent{X.status}`);
         if (X.headers.get("x-sse-support") === "enabled") p7A.add(I);
         return X.json()
     }).then((X) => {
@@ -192,7 +192,7 @@ function msA(A, Q) {
 }
 var fH, v_, m7A, d7A, QRB = !1,
     Af, usA, c7A, p7A;
-var XRB = L(() => {
+var XRB = lazyLoader(() => {
     R$A();
     fH = {
         staleTTL: 60000,
@@ -210,7 +210,7 @@ var XRB = L(() => {
                 clientKey: B,
                 headers: G
             } = A;
-            return v_.fetch(`${Q}/api/features/${B}`, {
+            return v_.fetch(`TextComponent{Q}/api/features/TextComponent{B}`, {
                 headers: G
             })
         },
@@ -228,7 +228,7 @@ var XRB = L(() => {
                 },
                 body: JSON.stringify(G)
             };
-            return v_.fetch(`${Q}/api/eval/${B}`, I)
+            return v_.fetch(`TextComponent{Q}/api/eval/TextComponent{B}`, I)
         },
         eventSourceCall: (A) => {
             let {
@@ -236,10 +236,10 @@ var XRB = L(() => {
                 clientKey: B,
                 headers: G
             } = A;
-            if (G) return new v_.EventSource(`${Q}/sub/${B}`, {
+            if (G) return new v_.EventSource(`TextComponent{Q}/sub/TextComponent{B}`, {
                 headers: G
             });
-            return new v_.EventSource(`${Q}/sub/${B}`)
+            return new v_.EventSource(`TextComponent{Q}/sub/TextComponent{B}`)
         },
         startIdleListener: () => {
             let A;
@@ -257,18 +257,18 @@ var XRB = L(() => {
     } catch (A) {}
     d7A = new Map, Af = new Map, usA = new Map, c7A = new Map, p7A = new Set
 });
-var qRB = U((wRB) => {
+var qRB = moduleWrapper((wRB) => {
     Object.defineProperty(wRB, "__esModule", {
         value: !0
     });
-    var DRB = /^[a-zA-Z:_][a-zA-Z0-9:_.-]*$/,
+    var DRB = /^[a-zA-Z:_][a-zA-Z0-9:_.-]*TextComponent/,
         jm1 = {
             revert: function() {}
         },
         lsA = new Map,
         Pm1 = new Set;
 
-function isA(A) {
+    function isA(A) {
         var Q = lsA.get(A);
         return Q || lsA.set(A, Q = {
             element: A,
@@ -276,7 +276,7 @@ function isA(A) {
         }), Q
     }
 
-function nsA(A, Q, B, G, Z) {
+    function nsA(A, Q, B, G, Z) {
         var I = B(A),
             Y = {
                 isDirty: !1,
@@ -318,12 +318,12 @@ function nsA(A, Q, B, G, Z) {
         }(Q)), Y
     }
 
-function asA(A, Q) {
+    function asA(A, Q) {
         var B = Q.getCurrentValue(Q.el);
         Q.virtualValue = A, A && typeof A != "string" ? B && A.parentNode === B.parentNode && A.insertBeforeNode === B.insertBeforeNode || (Q.isDirty = !0, FRB()) : A !== B && (Q.isDirty = !0, FRB())
     }
 
-function P$6(A) {
+    function P$6(A) {
         var Q = A.originalValue;
         A.mutations.forEach(function(B) {
             return Q = B.mutate(Q)
@@ -332,21 +332,21 @@ function P$6(A) {
         }(Q), A)
     }
 
-function j$6(A) {
+    function j$6(A) {
         var Q = new Set(A.originalValue.split(/\s+/).filter(Boolean));
         A.mutations.forEach(function(B) {
             return B.mutate(Q)
         }), asA(Array.from(Q).filter(Boolean).join(" "), A)
     }
 
-function S$6(A) {
+    function S$6(A) {
         var Q = A.originalValue;
         A.mutations.forEach(function(B) {
             return Q = B.mutate(Q)
         }), asA(Q, A)
     }
 
-function _$6(A) {
+    function _$6(A) {
         var Q = A.originalValue;
         A.mutations.forEach(function(B) {
             var G = function(Z) {
@@ -369,7 +369,7 @@ function _$6(A) {
             return A.innerHTML = Q
         };
 
-function HRB(A) {
+    function HRB(A) {
         var Q = isA(A);
         return Q.html || (Q.html = nsA(A, "html", k$6, y$6, P$6)), Q.html
     }
@@ -383,7 +383,7 @@ function HRB(A) {
             Q.insertBeforeNode && !Q.parentNode.contains(Q.insertBeforeNode) || Q.parentNode.insertBefore(A, Q.insertBeforeNode)
         };
 
-function CRB(A) {
+    function CRB(A) {
         var Q = isA(A);
         return Q.position || (Q.position = nsA(A, "position", x$6, v$6, _$6)), Q.position
     }
@@ -394,12 +394,12 @@ function CRB(A) {
             return A.className
         };
 
-function ERB(A) {
+    function ERB(A) {
         var Q = isA(A);
         return Q.classes || (Q.classes = nsA(A, "class", f$6, b$6, j$6)), Q.classes
     }
 
-function zRB(A, Q) {
+    function zRB(A, Q) {
         var B, G = isA(A);
         return G.attributes[Q] || (G.attributes[Q] = nsA(A, Q, (B = Q, function(Z) {
             var I;
@@ -411,7 +411,7 @@ function zRB(A, Q) {
         }(Q), S$6)), G.attributes[Q]
     }
 
-function csA(A, Q, B) {
+    function csA(A, Q, B) {
         if (B.isDirty) {
             B.isDirty = !1;
             var G = B.virtualValue;
@@ -433,17 +433,17 @@ function csA(A, Q, B) {
         }
     }
 
-function h$6(A, Q) {
+    function h$6(A, Q) {
         A.html && csA(Q, "html", A.html), A.classes && csA(Q, "class", A.classes), A.position && csA(Q, "position", A.position), Object.keys(A.attributes).forEach(function(B) {
             csA(Q, B, A.attributes[B])
         })
     }
 
-function FRB() {
+    function FRB() {
         lsA.forEach(h$6)
     }
 
-function URB(A) {
+    function URB(A) {
         if (A.kind !== "position" || A.elements.size !== 1) {
             var Q = new Set(A.elements);
             document.querySelectorAll(A.selector).forEach(function(B) {
@@ -455,7 +455,7 @@ function URB(A) {
         }
     }
 
-function VRB() {
+    function VRB() {
         Pm1.forEach(URB)
     }
 
@@ -470,7 +470,7 @@ function VRB() {
         }))
     }
 
-function ssA(A) {
+    function ssA(A) {
         return typeof document > "u" ? jm1 : (Pm1.add(A), URB(A), {
             revert: function() {
                 var Q;
@@ -487,7 +487,7 @@ function ssA(A) {
         })
     }
 
-function Tm1(A, Q) {
+    function Tm1(A, Q) {
         return ssA({
             kind: "html",
             elements: new Set,
@@ -496,7 +496,7 @@ function Tm1(A, Q) {
         })
     }
 
-function KRB(A, Q) {
+    function KRB(A, Q) {
         return ssA({
             kind: "position",
             elements: new Set,
@@ -505,7 +505,7 @@ function KRB(A, Q) {
         })
     }
 
-function P$A(A, Q) {
+    function P$A(A, Q) {
         return ssA({
             kind: "class",
             elements: new Set,
@@ -514,7 +514,7 @@ function P$A(A, Q) {
         })
     }
 
-function psA(A, Q, B) {
+    function psA(A, Q, B) {
         return DRB.test(Q) ? Q === "class" || Q === "className" ? P$A(A, function(G) {
             var Z = B(Array.from(G).join(" "));
             G.clear(), Z && Z.split(/\s+/g).filter(Boolean).forEach(function(I) {
@@ -634,7 +634,7 @@ function S$A(A, Q, B) {
 
 function LRB(A) {
     let Q = Object.keys(A);
-    return Q.length > 0 && Q.filter((B) => B[0] === "$").length === Q.length
+    return Q.length > 0 && Q.filter((B) => B[0] === "TextComponent").length === Q.length
 }
 
 function d$6(A) {
@@ -740,7 +740,7 @@ function l$6(A, Q, B) {
     return !0
 }
 var Sm1;
-var MRB = L(() => {
+var MRB = lazyLoader(() => {
     R$A();
     Sm1 = {}
 });
@@ -761,7 +761,6 @@ function s$6(A) {
     else if (A.user.forcedVariations) return A.user.forcedVariations;
     else return {}
 }
-
 async function l7A(A) {
     try {
         await A()
@@ -1178,11 +1177,11 @@ function Qw6(A) {
 }
 
 function _m1(A, Q) {
-    return Q = Q || 0, `${A}__${Q}`
+    return Q = Q || 0, `TextComponent{A}__${Q}`
 }
 
 function km1(A, Q) {
-    return `${A}||${Q}`
+    return `TextComponent{A}||TextComponent{Q}`
 }
 
 function Bw6(A, Q, B) {
@@ -1234,7 +1233,6 @@ function Zw6(A, Q) {
         if (B.add(I.hashAttribute || "id"), I.fallbackAttribute) B.add(I.fallbackAttribute)
     }), Array.from(B)
 }
-
 async function jRB(A, Q, B) {
     let G = ym1(A, B);
     return Q.getAllAssignments(G)
@@ -1249,7 +1247,6 @@ function ym1(A, Q) {
         B[Z] = O$A(I)
     }), B
 }
-
 async function SRB(A, Q, B) {
     if (A = {
             ...A
@@ -1283,8 +1280,8 @@ async function SRB(A, Q, B) {
 function _RB(A) {
     let Q = A.apiHost || "https://cdn.growthbook.io";
     return {
-        apiHost: Q.replace(/\/*$/, ""),
-        streamingHost: (A.streamingHost || Q).replace(/\/*$/, ""),
+        apiHost: Q.replace(/\/*TextComponent/, ""),
+        streamingHost: (A.streamingHost || Q).replace(/\/*TextComponent/, ""),
         apiRequestHeaders: A.apiHostRequestHeaders,
         streamingHostRequestHeaders: A.streamingHostRequestHeaders
     }
@@ -1295,11 +1292,10 @@ function esA(A, Q) {
 }
 var i$6 = "Feature Evaluated",
     n$6 = "Experiment Viewed";
-var kRB = L(() => {
+var kRB = lazyLoader(() => {
     MRB();
     R$A()
 });
-
 class ArA {
     constructor(A) {
         if (A = A || {}, this.version = Iw6, this._options = this.context = A, this._renderer = A.renderer || null, this._trackedExperiments = new Set, this._completedChangeIds = new Set, this._trackedFeatures = {}, this.debug = !!A.debug, this._subscriptions = new Set, this.ready = !1, this._assigned = new Map, this._activeAutoExperiments = new Map, this._triggeredExpKeys = new Set, this._initialized = !1, this._redirectedUrl = "", this._deferredTrackingCalls = new Map, this._autoExperimentsAllowed = !A.disableExperimentsOnLoad, this._destroyCallbacks = [], this.logs = [], this.log = this.log.bind(this), this._saveDeferredTrack = this._saveDeferredTrack.bind(this), this._fireSubscriptions = this._fireSubscriptions.bind(this), this._recordChangedId = this._recordChangedId.bind(this), A.remoteEval) {

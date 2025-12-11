@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_036.js
+ * 处理时间: 2025-12-09T03:41:39.408Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.130Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-var L72 = U((zjG, N72) => {
+var L72 = moduleWrapper((zjG, N72) => {
     var j1 = oLA(),
         NY5 = N32(),
         I72 = M32(),
@@ -41,7 +44,7 @@ var L72 = U((zjG, N72) => {
             treeAdapter: OY5
         },
         jY5 = {
-            [FA.TR]: "IN_ROW_MODE",
+            [FA.getProviderIdentifier]: "IN_ROW_MODE",
             [FA.TBODY]: "IN_TABLE_BODY_MODE",
             [FA.THEAD]: "IN_TABLE_BODY_MODE",
             [FA.TFOOT]: "IN_TABLE_BODY_MODE",
@@ -58,7 +61,7 @@ var L72 = U((zjG, N72) => {
             [FA.TFOOT]: "IN_TABLE_MODE",
             [FA.THEAD]: "IN_TABLE_MODE",
             [FA.COL]: "IN_COLUMN_GROUP_MODE",
-            [FA.TR]: "IN_TABLE_BODY_MODE",
+            [FA.getProviderIdentifier]: "IN_TABLE_BODY_MODE",
             [FA.TD]: "IN_ROW_MODE",
             [FA.TH]: "IN_ROW_MODE"
         },
@@ -294,8 +297,7 @@ var L72 = U((zjG, N72) => {
                 [j1.EOF_TOKEN]: tLA
             }
         };
-
-class U72 {
+    class U72 {
         constructor(A) {
             if (this.options = RY5(PY5, A), this.treeAdapter = this.options.treeAdapter, this.pendingScript = null, this.options.sourceCodeLocationInfo) Y72.install(this, LY5);
             if (this.options.onParseError) Y72.install(this, MY5, {
@@ -530,7 +532,7 @@ class U72 {
         }
         _isElementCausesFosterParenting(A) {
             let Q = this.treeAdapter.getTagName(A);
-            return Q === FA.TABLE || Q === FA.TBODY || Q === FA.TFOOT || Q === FA.THEAD || Q === FA.TR
+            return Q === FA.TABLE || Q === FA.TBODY || Q === FA.TFOOT || Q === FA.THEAD || Q === FA.getProviderIdentifier
         }
         _shouldFosterParentOnInsertion() {
             return this.fosterParentingEnabled && this._isElementCausesFosterParenting(this.openElements.current)
@@ -574,7 +576,7 @@ class U72 {
     }
     N72.exports = U72;
 
-function _Y5(A, Q) {
+    function _Y5(A, Q) {
         let B = A.activeFormattingElements.getElementEntryInScopeWithTagName(Q.tagName);
         if (B) {
             if (!A.openElements.contains(B.element)) A.activeFormattingElements.removeEntry(B), B = null;
@@ -583,7 +585,7 @@ function _Y5(A, Q) {
         return B
     }
 
-function kY5(A, Q) {
+    function kY5(A, Q) {
         let B = null;
         for (let G = A.openElements.stackTop; G >= 0; G--) {
             let Z = A.openElements.items[G];
@@ -594,7 +596,7 @@ function kY5(A, Q) {
         return B
     }
 
-function yY5(A, Q, B) {
+    function yY5(A, Q, B) {
         let G = Q,
             Z = A.openElements.getCommonAncestor(Q);
         for (let I = 0, Y = Z; Y !== B; I++, Y = Z) {
@@ -612,13 +614,13 @@ function yY5(A, Q, B) {
         return G
     }
 
-function xY5(A, Q) {
+    function xY5(A, Q) {
         let B = A.treeAdapter.getNamespaceURI(Q.element),
             G = A.treeAdapter.createElement(Q.token.tagName, B, Q.token.attrs);
         return A.openElements.replace(Q.element, G), Q.element = G, G
     }
 
-function vY5(A, Q, B) {
+    function vY5(A, Q, B) {
         if (A._isElementCausesFosterParenting(Q)) A._fosterParentElement(B);
         else {
             let G = A.treeAdapter.getTagName(Q),
@@ -628,14 +630,14 @@ function vY5(A, Q, B) {
         }
     }
 
-function bY5(A, Q, B) {
+    function bY5(A, Q, B) {
         let G = A.treeAdapter.getNamespaceURI(B.element),
             Z = B.token,
             I = A.treeAdapter.createElement(Z.tagName, G, Z.attrs);
         A._adoptNodes(Q, I), A.treeAdapter.appendChild(Q, I), A.activeFormattingElements.insertElementAfterBookmark(I, B.token), A.activeFormattingElements.removeEntry(B), A.openElements.remove(B.element), A.openElements.insertAfter(Q, I)
     }
 
-function Xi(A, Q) {
+    function Xi(A, Q) {
         let B;
         for (let G = 0; G < 8; G++) {
             if (B = _Y5(A, Q, B), !B) break;
@@ -648,77 +650,77 @@ function Xi(A, Q) {
         }
     }
 
-function j5() {}
+    function j5() {}
 
-function Z21(A) {
+    function Z21(A) {
         A._err(SD.misplacedDoctype)
     }
 
-function kF(A, Q) {
+    function kF(A, Q) {
         A._appendCommentNode(Q, A.openElements.currentTmplContent || A.openElements.current)
     }
 
-function fY5(A, Q) {
+    function fY5(A, Q) {
         A._appendCommentNode(Q, A.openElements.items[0])
     }
 
-function X72(A, Q) {
+    function X72(A, Q) {
         A._appendCommentNode(Q, A.document)
     }
 
-function pU(A, Q) {
+    function pU(A, Q) {
         A._insertCharacters(Q)
     }
 
-function tLA(A) {
+    function tLA(A) {
         A.stopped = !0
     }
 
-function hY5(A, Q) {
+    function hY5(A, Q) {
         A._setDocumentType(Q);
         let B = Q.forceQuirks ? X1A.DOCUMENT_MODE.QUIRKS : J72.getDocumentMode(Q);
         if (!J72.isConforming(Q)) A._err(SD.nonConformingDoctype);
         A.treeAdapter.setDocumentMode(A.document, B), A.insertionMode = "BEFORE_HTML_MODE"
     }
 
-function eLA(A, Q) {
+    function eLA(A, Q) {
         A._err(SD.missingDoctype, {
             beforeToken: !0
         }), A.treeAdapter.setDocumentMode(A.document, X1A.DOCUMENT_MODE.QUIRKS), A.insertionMode = "BEFORE_HTML_MODE", A._processToken(Q)
     }
 
-function gY5(A, Q) {
+    function gY5(A, Q) {
         if (Q.tagName === FA.HTML) A._insertElement(Q, U2.HTML), A.insertionMode = "BEFORE_HEAD_MODE";
         else QMA(A, Q)
     }
 
-function uY5(A, Q) {
+    function uY5(A, Q) {
         let B = Q.tagName;
         if (B === FA.HTML || B === FA.HEAD || B === FA.BODY || B === FA.BR) QMA(A, Q)
     }
 
-function QMA(A, Q) {
+    function QMA(A, Q) {
         A._insertFakeRootElement(), A.insertionMode = "BEFORE_HEAD_MODE", A._processToken(Q)
     }
 
-function mY5(A, Q) {
+    function mY5(A, Q) {
         let B = Q.tagName;
         if (B === FA.HTML) lU(A, Q);
         else if (B === FA.HEAD) A._insertElement(Q, U2.HTML), A.headElement = A.openElements.current, A.insertionMode = "IN_HEAD_MODE";
         else BMA(A, Q)
     }
 
-function dY5(A, Q) {
+    function dY5(A, Q) {
         let B = Q.tagName;
         if (B === FA.HEAD || B === FA.BODY || B === FA.HTML || B === FA.BR) BMA(A, Q);
         else A._err(SD.endTagWithoutMatchingOpenElement)
     }
 
-function BMA(A, Q) {
+    function BMA(A, Q) {
         A._insertFakeElement(FA.HEAD), A.headElement = A.openElements.current, A.insertionMode = "IN_HEAD_MODE", A._processToken(Q)
     }
 
-function rV(A, Q) {
+    function rV(A, Q) {
         let B = Q.tagName;
         if (B === FA.HTML) lU(A, Q);
         else if (B === FA.BASE || B === FA.BASEFONT || B === FA.BGSOUND || B === FA.LINK || B === FA.META) A._appendElement(Q, U2.HTML), Q.ackSelfClosing = !0;
@@ -733,7 +735,7 @@ function rV(A, Q) {
         else GMA(A, Q)
     }
 
-function F1A(A, Q) {
+    function F1A(A, Q) {
         let B = Q.tagName;
         if (B === FA.HEAD) A.openElements.pop(), A.insertionMode = "AFTER_HEAD_MODE";
         else if (B === FA.BODY || B === FA.BR || B === FA.HTML) GMA(A, Q);
@@ -745,11 +747,11 @@ function F1A(A, Q) {
         else A._err(SD.endTagWithoutMatchingOpenElement)
     }
 
-function GMA(A, Q) {
+    function GMA(A, Q) {
         A.openElements.pop(), A.insertionMode = "AFTER_HEAD_MODE", A._processToken(Q)
     }
 
-function cY5(A, Q) {
+    function cY5(A, Q) {
         let B = Q.tagName;
         if (B === FA.HTML) lU(A, Q);
         else if (B === FA.BASEFONT || B === FA.BGSOUND || B === FA.HEAD || B === FA.LINK || B === FA.META || B === FA.NOFRAMES || B === FA.STYLE) rV(A, Q);
@@ -757,19 +759,19 @@ function cY5(A, Q) {
         else ZMA(A, Q)
     }
 
-function pY5(A, Q) {
+    function pY5(A, Q) {
         let B = Q.tagName;
         if (B === FA.NOSCRIPT) A.openElements.pop(), A.insertionMode = "IN_HEAD_MODE";
         else if (B === FA.BR) ZMA(A, Q);
         else A._err(SD.endTagWithoutMatchingOpenElement)
     }
 
-function ZMA(A, Q) {
+    function ZMA(A, Q) {
         let B = Q.type === j1.EOF_TOKEN ? SD.openElementsLeftAfterEof : SD.disallowedContentInNoscriptInHead;
         A._err(B), A.openElements.pop(), A.insertionMode = "IN_HEAD_MODE", A._processToken(Q)
     }
 
-function lY5(A, Q) {
+    function lY5(A, Q) {
         let B = Q.tagName;
         if (B === FA.HTML) lU(A, Q);
         else if (B === FA.BODY) A._insertElement(Q, U2.HTML), A.framesetOk = !1, A.insertionMode = "IN_BODY_MODE";
@@ -779,57 +781,57 @@ function lY5(A, Q) {
         else IMA(A, Q)
     }
 
-function iY5(A, Q) {
+    function iY5(A, Q) {
         let B = Q.tagName;
         if (B === FA.BODY || B === FA.HTML || B === FA.BR) IMA(A, Q);
         else if (B === FA.TEMPLATE) F1A(A, Q);
         else A._err(SD.endTagWithoutMatchingOpenElement)
     }
 
-function IMA(A, Q) {
+    function IMA(A, Q) {
         A._insertFakeElement(FA.BODY), A.insertionMode = "IN_BODY_MODE", A._processToken(Q)
     }
 
-function W1A(A, Q) {
+    function W1A(A, Q) {
         A._reconstructActiveFormattingElements(), A._insertCharacters(Q)
     }
 
-function I21(A, Q) {
+    function I21(A, Q) {
         A._reconstructActiveFormattingElements(), A._insertCharacters(Q), A.framesetOk = !1
     }
 
-function nY5(A, Q) {
+    function nY5(A, Q) {
         if (A.openElements.tmplCount === 0) A.treeAdapter.adoptAttributes(A.openElements.items[0], Q.attrs)
     }
 
-function aY5(A, Q) {
+    function aY5(A, Q) {
         let B = A.openElements.tryPeekProperlyNestedBodyElement();
         if (B && A.openElements.tmplCount === 0) A.framesetOk = !1, A.treeAdapter.adoptAttributes(B, Q.attrs)
     }
 
-function sY5(A, Q) {
+    function sY5(A, Q) {
         let B = A.openElements.tryPeekProperlyNestedBodyElement();
         if (A.framesetOk && B) A.treeAdapter.detachNode(B), A.openElements.popAllUpToHtmlElement(), A._insertElement(Q, U2.HTML), A.insertionMode = "IN_FRAMESET_MODE"
     }
 
-function Vh(A, Q) {
+    function Vh(A, Q) {
         if (A.openElements.hasInButtonScope(FA.P)) A._closePElement();
         A._insertElement(Q, U2.HTML)
     }
 
-function rY5(A, Q) {
+    function rY5(A, Q) {
         if (A.openElements.hasInButtonScope(FA.P)) A._closePElement();
         let B = A.openElements.currentTagName;
         if (B === FA.H1 || B === FA.H2 || B === FA.H3 || B === FA.H4 || B === FA.H5 || B === FA.H6) A.openElements.pop();
         A._insertElement(Q, U2.HTML)
     }
 
-function F72(A, Q) {
+    function F72(A, Q) {
         if (A.openElements.hasInButtonScope(FA.P)) A._closePElement();
         A._insertElement(Q, U2.HTML), A.skipNextNewLine = !0, A.framesetOk = !1
     }
 
-function oY5(A, Q) {
+    function oY5(A, Q) {
         let B = A.openElements.tmplCount > 0;
         if (!A.formElement || B) {
             if (A.openElements.hasInButtonScope(FA.P)) A._closePElement();
@@ -837,7 +839,7 @@ function oY5(A, Q) {
         }
     }
 
-function tY5(A, Q) {
+    function tY5(A, Q) {
         A.framesetOk = !1;
         let B = Q.tagName;
         for (let G = A.openElements.stackTop; G >= 0; G--) {
@@ -856,130 +858,130 @@ function tY5(A, Q) {
         A._insertElement(Q, U2.HTML)
     }
 
-function eY5(A, Q) {
+    function eY5(A, Q) {
         if (A.openElements.hasInButtonScope(FA.P)) A._closePElement();
         A._insertElement(Q, U2.HTML), A.tokenizer.state = j1.MODE.PLAINTEXT
     }
 
-function AJ5(A, Q) {
+    function AJ5(A, Q) {
         if (A.openElements.hasInScope(FA.BUTTON)) A.openElements.generateImpliedEndTags(), A.openElements.popUntilTagNamePopped(FA.BUTTON);
         A._reconstructActiveFormattingElements(), A._insertElement(Q, U2.HTML), A.framesetOk = !1
     }
 
-function QJ5(A, Q) {
+    function QJ5(A, Q) {
         let B = A.activeFormattingElements.getElementEntryInScopeWithTagName(FA.A);
         if (B) Xi(A, Q), A.openElements.remove(B.element), A.activeFormattingElements.removeEntry(B);
         A._reconstructActiveFormattingElements(), A._insertElement(Q, U2.HTML), A.activeFormattingElements.pushElement(A.openElements.current, Q)
     }
 
-function iIA(A, Q) {
+    function iIA(A, Q) {
         A._reconstructActiveFormattingElements(), A._insertElement(Q, U2.HTML), A.activeFormattingElements.pushElement(A.openElements.current, Q)
     }
 
-function BJ5(A, Q) {
+    function BJ5(A, Q) {
         if (A._reconstructActiveFormattingElements(), A.openElements.hasInScope(FA.NOBR)) Xi(A, Q), A._reconstructActiveFormattingElements();
         A._insertElement(Q, U2.HTML), A.activeFormattingElements.pushElement(A.openElements.current, Q)
     }
 
-function V72(A, Q) {
+    function V72(A, Q) {
         A._reconstructActiveFormattingElements(), A._insertElement(Q, U2.HTML), A.activeFormattingElements.insertMarker(), A.framesetOk = !1
     }
 
-function GJ5(A, Q) {
+    function GJ5(A, Q) {
         if (A.treeAdapter.getDocumentMode(A.document) !== X1A.DOCUMENT_MODE.QUIRKS && A.openElements.hasInButtonScope(FA.P)) A._closePElement();
         A._insertElement(Q, U2.HTML), A.framesetOk = !1, A.insertionMode = "IN_TABLE_MODE"
     }
 
-function nIA(A, Q) {
+    function nIA(A, Q) {
         A._reconstructActiveFormattingElements(), A._appendElement(Q, U2.HTML), A.framesetOk = !1, Q.ackSelfClosing = !0
     }
 
-function ZJ5(A, Q) {
+    function ZJ5(A, Q) {
         A._reconstructActiveFormattingElements(), A._appendElement(Q, U2.HTML);
         let B = j1.getTokenAttr(Q, z72.TYPE);
         if (!B || B.toLowerCase() !== "hidden") A.framesetOk = !1;
         Q.ackSelfClosing = !0
     }
 
-function K72(A, Q) {
+    function K72(A, Q) {
         A._appendElement(Q, U2.HTML), Q.ackSelfClosing = !0
     }
 
-function IJ5(A, Q) {
+    function IJ5(A, Q) {
         if (A.openElements.hasInButtonScope(FA.P)) A._closePElement();
         A._appendElement(Q, U2.HTML), A.framesetOk = !1, A.ackSelfClosing = !0
     }
 
-function YJ5(A, Q) {
+    function YJ5(A, Q) {
         Q.tagName = FA.IMG, nIA(A, Q)
     }
 
-function JJ5(A, Q) {
+    function JJ5(A, Q) {
         A._insertElement(Q, U2.HTML), A.skipNextNewLine = !0, A.tokenizer.state = j1.MODE.RCDATA, A.originalInsertionMode = A.insertionMode, A.framesetOk = !1, A.insertionMode = "TEXT_MODE"
     }
 
-function WJ5(A, Q) {
+    function WJ5(A, Q) {
         if (A.openElements.hasInButtonScope(FA.P)) A._closePElement();
         A._reconstructActiveFormattingElements(), A.framesetOk = !1, A._switchToTextParsing(Q, j1.MODE.RAWTEXT)
     }
 
-function XJ5(A, Q) {
+    function XJ5(A, Q) {
         A.framesetOk = !1, A._switchToTextParsing(Q, j1.MODE.RAWTEXT)
     }
 
-function D72(A, Q) {
+    function D72(A, Q) {
         A._switchToTextParsing(Q, j1.MODE.RAWTEXT)
     }
 
-function FJ5(A, Q) {
+    function FJ5(A, Q) {
         if (A._reconstructActiveFormattingElements(), A._insertElement(Q, U2.HTML), A.framesetOk = !1, A.insertionMode === "IN_TABLE_MODE" || A.insertionMode === "IN_CAPTION_MODE" || A.insertionMode === "IN_TABLE_BODY_MODE" || A.insertionMode === "IN_ROW_MODE" || A.insertionMode === "IN_CELL_MODE") A.insertionMode = "IN_SELECT_IN_TABLE_MODE";
         else A.insertionMode = "IN_SELECT_MODE"
     }
 
-function H72(A, Q) {
+    function H72(A, Q) {
         if (A.openElements.currentTagName === FA.OPTION) A.openElements.pop();
         A._reconstructActiveFormattingElements(), A._insertElement(Q, U2.HTML)
     }
 
-function C72(A, Q) {
+    function C72(A, Q) {
         if (A.openElements.hasInScope(FA.RUBY)) A.openElements.generateImpliedEndTags();
         A._insertElement(Q, U2.HTML)
     }
 
-function VJ5(A, Q) {
+    function VJ5(A, Q) {
         if (A.openElements.hasInScope(FA.RUBY)) A.openElements.generateImpliedEndTagsWithExclusion(FA.RTC);
         A._insertElement(Q, U2.HTML)
     }
 
-function KJ5(A, Q) {
+    function KJ5(A, Q) {
         if (A.openElements.hasInButtonScope(FA.P)) A._closePElement();
         A._insertElement(Q, U2.HTML)
     }
 
-function DJ5(A, Q) {
+    function DJ5(A, Q) {
         if (A._reconstructActiveFormattingElements(), Sk.adjustTokenMathMLAttrs(Q), Sk.adjustTokenXMLAttrs(Q), Q.selfClosing) A._appendElement(Q, U2.MATHML);
         else A._insertElement(Q, U2.MATHML);
         Q.ackSelfClosing = !0
     }
 
-function HJ5(A, Q) {
+    function HJ5(A, Q) {
         if (A._reconstructActiveFormattingElements(), Sk.adjustTokenSVGAttrs(Q), Sk.adjustTokenXMLAttrs(Q), Q.selfClosing) A._appendElement(Q, U2.SVG);
         else A._insertElement(Q, U2.SVG);
         Q.ackSelfClosing = !0
     }
 
-function aM(A, Q) {
+    function WRITE_TOOL_NAME(A, Q) {
         A._reconstructActiveFormattingElements(), A._insertElement(Q, U2.HTML)
     }
 
-function lU(A, Q) {
+    function lU(A, Q) {
         let B = Q.tagName;
         switch (B.length) {
             case 1:
-                if (B === FA.I || B === FA.S || B === FA.B || B === FA.U) iIA(A, Q);
+                if (B === FA.I || B === FA.S || B === FA.B || B === FA.moduleWrapper) iIA(A, Q);
                 else if (B === FA.P) Vh(A, Q);
                 else if (B === FA.A) QJ5(A, Q);
-                else aM(A, Q);
+                else WRITE_TOOL_NAME(A, Q);
                 break;
             case 2:
                 if (B === FA.DL || B === FA.OL || B === FA.UL) Vh(A, Q);
@@ -990,7 +992,7 @@ function lU(A, Q) {
                 else if (B === FA.HR) IJ5(A, Q);
                 else if (B === FA.RB) C72(A, Q);
                 else if (B === FA.RT || B === FA.RP) VJ5(A, Q);
-                else if (B !== FA.TH && B !== FA.TD && B !== FA.TR) aM(A, Q);
+                else if (B !== FA.TH && B !== FA.TD && B !== FA.getProviderIdentifier) WRITE_TOOL_NAME(A, Q);
                 break;
             case 3:
                 if (B === FA.DIV || B === FA.DIR || B === FA.NAV) Vh(A, Q);
@@ -1000,7 +1002,7 @@ function lU(A, Q) {
                 else if (B === FA.XMP) WJ5(A, Q);
                 else if (B === FA.SVG) HJ5(A, Q);
                 else if (B === FA.RTC) C72(A, Q);
-                else if (B !== FA.COL) aM(A, Q);
+                else if (B !== FA.COL) WRITE_TOOL_NAME(A, Q);
                 break;
             case 4:
                 if (B === FA.HTML) nY5(A, Q);
@@ -1013,7 +1015,7 @@ function lU(A, Q) {
                 else if (B === FA.AREA) nIA(A, Q);
                 else if (B === FA.MATH) DJ5(A, Q);
                 else if (B === FA.MENU) KJ5(A, Q);
-                else if (B !== FA.HEAD) aM(A, Q);
+                else if (B !== FA.HEAD) WRITE_TOOL_NAME(A, Q);
                 break;
             case 5:
                 if (B === FA.STYLE || B === FA.TITLE) rV(A, Q);
@@ -1024,7 +1026,7 @@ function lU(A, Q) {
                 else if (B === FA.INPUT) ZJ5(A, Q);
                 else if (B === FA.PARAM || B === FA.TRACK) K72(A, Q);
                 else if (B === FA.IMAGE) YJ5(A, Q);
-                else if (B !== FA.FRAME && B !== FA.TBODY && B !== FA.TFOOT && B !== FA.THEAD) aM(A, Q);
+                else if (B !== FA.FRAME && B !== FA.TBODY && B !== FA.TFOOT && B !== FA.THEAD) WRITE_TOOL_NAME(A, Q);
                 break;
             case 6:
                 if (B === FA.SCRIPT) rV(A, Q);
@@ -1037,7 +1039,7 @@ function lU(A, Q) {
                 else if (B === FA.IFRAME) XJ5(A, Q);
                 else if (B === FA.SELECT) FJ5(A, Q);
                 else if (B === FA.OPTION) H72(A, Q);
-                else aM(A, Q);
+                else WRITE_TOOL_NAME(A, Q);
                 break;
             case 7:
                 if (B === FA.BGSOUND) rV(A, Q);
@@ -1045,7 +1047,7 @@ function lU(A, Q) {
                 else if (B === FA.LISTING) F72(A, Q);
                 else if (B === FA.MARQUEE) V72(A, Q);
                 else if (B === FA.NOEMBED) D72(A, Q);
-                else if (B !== FA.CAPTION) aM(A, Q);
+                else if (B !== FA.CAPTION) WRITE_TOOL_NAME(A, Q);
                 break;
             case 8:
                 if (B === FA.BASEFONT) rV(A, Q);
@@ -1055,37 +1057,37 @@ function lU(A, Q) {
                 else if (B === FA.TEMPLATE) rV(A, Q);
                 else if (B === FA.NOSCRIPT)
                     if (A.options.scriptingEnabled) D72(A, Q);
-                    else aM(A, Q);
+                    else WRITE_TOOL_NAME(A, Q);
                 else if (B === FA.OPTGROUP) H72(A, Q);
-                else if (B !== FA.COLGROUP) aM(A, Q);
+                else if (B !== FA.COLGROUP) WRITE_TOOL_NAME(A, Q);
                 break;
             case 9:
                 if (B === FA.PLAINTEXT) eY5(A, Q);
-                else aM(A, Q);
+                else WRITE_TOOL_NAME(A, Q);
                 break;
             case 10:
                 if (B === FA.BLOCKQUOTE || B === FA.FIGCAPTION) Vh(A, Q);
-                else aM(A, Q);
+                else WRITE_TOOL_NAME(A, Q);
                 break;
             default:
-                aM(A, Q)
+                WRITE_TOOL_NAME(A, Q)
         }
     }
 
-function CJ5(A) {
+    function CJ5(A) {
         if (A.openElements.hasInScope(FA.BODY)) A.insertionMode = "AFTER_BODY_MODE"
     }
 
-function EJ5(A, Q) {
+    function EJ5(A, Q) {
         if (A.openElements.hasInScope(FA.BODY)) A.insertionMode = "AFTER_BODY_MODE", A._processToken(Q)
     }
 
-function Wi(A, Q) {
+    function Wi(A, Q) {
         let B = Q.tagName;
         if (A.openElements.hasInScope(B)) A.openElements.generateImpliedEndTags(), A.openElements.popUntilTagNamePopped(B)
     }
 
-function zJ5(A) {
+    function zJ5(A) {
         let Q = A.openElements.tmplCount > 0,
             B = A.formElement;
         if (!Q) A.formElement = null;
@@ -1094,7 +1096,7 @@ function zJ5(A) {
             else A.openElements.remove(B)
     }
 
-function UJ5(A) {
+    function UJ5(A) {
         if (!A.openElements.hasInButtonScope(FA.P)) A._insertFakeElement(FA.P);
         A._closePElement()
     }
@@ -1103,25 +1105,25 @@ function UJ5(A) {
         if (A.openElements.hasInListItemScope(FA.LI)) A.openElements.generateImpliedEndTagsWithExclusion(FA.LI), A.openElements.popUntilTagNamePopped(FA.LI)
     }
 
-function wJ5(A, Q) {
+    function wJ5(A, Q) {
         let B = Q.tagName;
         if (A.openElements.hasInScope(B)) A.openElements.generateImpliedEndTagsWithExclusion(B), A.openElements.popUntilTagNamePopped(B)
     }
 
-function qJ5(A) {
+    function qJ5(A) {
         if (A.openElements.hasNumberedHeaderInScope()) A.openElements.generateImpliedEndTags(), A.openElements.popUntilNumberedHeaderPopped()
     }
 
-function E72(A, Q) {
+    function E72(A, Q) {
         let B = Q.tagName;
         if (A.openElements.hasInScope(B)) A.openElements.generateImpliedEndTags(), A.openElements.popUntilTagNamePopped(B), A.activeFormattingElements.clearToLastMarker()
     }
 
-function NJ5(A) {
+    function NJ5(A) {
         A._reconstructActiveFormattingElements(), A._insertFakeElement(FA.BR), A.openElements.pop(), A.framesetOk = !1
     }
 
-function AP(A, Q) {
+    function AP(A, Q) {
         let B = Q.tagName;
         for (let G = A.openElements.stackTop; G > 0; G--) {
             let Z = A.openElements.items[G];
@@ -1133,11 +1135,11 @@ function AP(A, Q) {
         }
     }
 
-function N10(A, Q) {
+    function N10(A, Q) {
         let B = Q.tagName;
         switch (B.length) {
             case 1:
-                if (B === FA.A || B === FA.B || B === FA.I || B === FA.S || B === FA.U) Xi(A, Q);
+                if (B === FA.A || B === FA.B || B === FA.I || B === FA.S || B === FA.moduleWrapper) Xi(A, Q);
                 else if (B === FA.P) UJ5(A, Q);
                 else AP(A, Q);
                 break;
@@ -1193,66 +1195,66 @@ function N10(A, Q) {
         }
     }
 
-function Kh(A, Q) {
+    function Kh(A, Q) {
         if (A.tmplInsertionModeStackTop > -1) q72(A, Q);
         else A.stopped = !0
     }
 
-function LJ5(A, Q) {
+    function LJ5(A, Q) {
         if (Q.tagName === FA.SCRIPT) A.pendingScript = A.openElements.current;
         A.openElements.pop(), A.insertionMode = A.originalInsertionMode
     }
 
-function MJ5(A, Q) {
+    function MJ5(A, Q) {
         A._err(SD.eofInElementThatCanContainOnlyText), A.openElements.pop(), A.insertionMode = A.originalInsertionMode, A._processToken(Q)
     }
 
-function Dh(A, Q) {
+    function Dh(A, Q) {
         let B = A.openElements.currentTagName;
-        if (B === FA.TABLE || B === FA.TBODY || B === FA.TFOOT || B === FA.THEAD || B === FA.TR) A.pendingCharacterTokens = [], A.hasNonWhitespacePendingCharacterToken = !1, A.originalInsertionMode = A.insertionMode, A.insertionMode = "IN_TABLE_TEXT_MODE", A._processToken(Q);
+        if (B === FA.TABLE || B === FA.TBODY || B === FA.TFOOT || B === FA.THEAD || B === FA.getProviderIdentifier) A.pendingCharacterTokens = [], A.hasNonWhitespacePendingCharacterToken = !1, A.originalInsertionMode = A.insertionMode, A.insertionMode = "IN_TABLE_TEXT_MODE", A._processToken(Q);
         else sM(A, Q)
     }
 
-function OJ5(A, Q) {
+    function OJ5(A, Q) {
         A.openElements.clearBackToTableContext(), A.activeFormattingElements.insertMarker(), A._insertElement(Q, U2.HTML), A.insertionMode = "IN_CAPTION_MODE"
     }
 
-function RJ5(A, Q) {
+    function RJ5(A, Q) {
         A.openElements.clearBackToTableContext(), A._insertElement(Q, U2.HTML), A.insertionMode = "IN_COLUMN_GROUP_MODE"
     }
 
-function TJ5(A, Q) {
+    function TJ5(A, Q) {
         A.openElements.clearBackToTableContext(), A._insertFakeElement(FA.COLGROUP), A.insertionMode = "IN_COLUMN_GROUP_MODE", A._processToken(Q)
     }
 
-function PJ5(A, Q) {
+    function PJ5(A, Q) {
         A.openElements.clearBackToTableContext(), A._insertElement(Q, U2.HTML), A.insertionMode = "IN_TABLE_BODY_MODE"
     }
 
-function jJ5(A, Q) {
+    function jJ5(A, Q) {
         A.openElements.clearBackToTableContext(), A._insertFakeElement(FA.TBODY), A.insertionMode = "IN_TABLE_BODY_MODE", A._processToken(Q)
     }
 
-function SJ5(A, Q) {
+    function SJ5(A, Q) {
         if (A.openElements.hasInTableScope(FA.TABLE)) A.openElements.popUntilTagNamePopped(FA.TABLE), A._resetInsertionMode(), A._processToken(Q)
     }
 
-function _J5(A, Q) {
+    function _J5(A, Q) {
         let B = j1.getTokenAttr(Q, z72.TYPE);
         if (B && B.toLowerCase() === "hidden") A._appendElement(Q, U2.HTML);
         else sM(A, Q);
         Q.ackSelfClosing = !0
     }
 
-function kJ5(A, Q) {
+    function kJ5(A, Q) {
         if (!A.formElement && A.openElements.tmplCount === 0) A._insertElement(Q, U2.HTML), A.formElement = A.openElements.current, A.openElements.pop()
     }
 
-function L10(A, Q) {
+    function L10(A, Q) {
         let B = Q.tagName;
         switch (B.length) {
             case 2:
-                if (B === FA.TD || B === FA.TH || B === FA.TR) jJ5(A, Q);
+                if (B === FA.TD || B === FA.TH || B === FA.getProviderIdentifier) jJ5(A, Q);
                 else sM(A, Q);
                 break;
             case 3:
@@ -1288,28 +1290,28 @@ function L10(A, Q) {
         }
     }
 
-function M10(A, Q) {
+    function M10(A, Q) {
         let B = Q.tagName;
         if (B === FA.TABLE) {
             if (A.openElements.hasInTableScope(FA.TABLE)) A.openElements.popUntilTagNamePopped(FA.TABLE), A._resetInsertionMode()
         } else if (B === FA.TEMPLATE) F1A(A, Q);
-        else if (B !== FA.BODY && B !== FA.CAPTION && B !== FA.COL && B !== FA.COLGROUP && B !== FA.HTML && B !== FA.TBODY && B !== FA.TD && B !== FA.TFOOT && B !== FA.TH && B !== FA.THEAD && B !== FA.TR) sM(A, Q)
+        else if (B !== FA.BODY && B !== FA.CAPTION && B !== FA.COL && B !== FA.COLGROUP && B !== FA.HTML && B !== FA.TBODY && B !== FA.TD && B !== FA.TFOOT && B !== FA.TH && B !== FA.THEAD && B !== FA.getProviderIdentifier) sM(A, Q)
     }
 
-function sM(A, Q) {
+    function sM(A, Q) {
         let B = A.fosterParentingEnabled;
         A.fosterParentingEnabled = !0, A._processTokenInBodyMode(Q), A.fosterParentingEnabled = B
     }
 
-function yJ5(A, Q) {
+    function yJ5(A, Q) {
         A.pendingCharacterTokens.push(Q)
     }
 
-function xJ5(A, Q) {
+    function xJ5(A, Q) {
         A.pendingCharacterTokens.push(Q), A.hasNonWhitespacePendingCharacterToken = !0
     }
 
-function AMA(A, Q) {
+    function AMA(A, Q) {
         let B = 0;
         if (A.hasNonWhitespacePendingCharacterToken)
             for (; B < A.pendingCharacterTokens.length; B++) sM(A, A.pendingCharacterTokens[B]);
@@ -1318,23 +1320,23 @@ function AMA(A, Q) {
         A.insertionMode = A.originalInsertionMode, A._processToken(Q)
     }
 
-function vJ5(A, Q) {
+    function vJ5(A, Q) {
         let B = Q.tagName;
-        if (B === FA.CAPTION || B === FA.COL || B === FA.COLGROUP || B === FA.TBODY || B === FA.TD || B === FA.TFOOT || B === FA.TH || B === FA.THEAD || B === FA.TR) {
+        if (B === FA.CAPTION || B === FA.COL || B === FA.COLGROUP || B === FA.TBODY || B === FA.TD || B === FA.TFOOT || B === FA.TH || B === FA.THEAD || B === FA.getProviderIdentifier) {
             if (A.openElements.hasInTableScope(FA.CAPTION)) A.openElements.generateImpliedEndTags(), A.openElements.popUntilTagNamePopped(FA.CAPTION), A.activeFormattingElements.clearToLastMarker(), A.insertionMode = "IN_TABLE_MODE", A._processToken(Q)
         } else lU(A, Q)
     }
 
-function bJ5(A, Q) {
+    function bJ5(A, Q) {
         let B = Q.tagName;
         if (B === FA.CAPTION || B === FA.TABLE) {
             if (A.openElements.hasInTableScope(FA.CAPTION)) {
                 if (A.openElements.generateImpliedEndTags(), A.openElements.popUntilTagNamePopped(FA.CAPTION), A.activeFormattingElements.clearToLastMarker(), A.insertionMode = "IN_TABLE_MODE", B === FA.TABLE) A._processToken(Q)
             }
-        } else if (B !== FA.BODY && B !== FA.COL && B !== FA.COLGROUP && B !== FA.HTML && B !== FA.TBODY && B !== FA.TD && B !== FA.TFOOT && B !== FA.TH && B !== FA.THEAD && B !== FA.TR) N10(A, Q)
+        } else if (B !== FA.BODY && B !== FA.COL && B !== FA.COLGROUP && B !== FA.HTML && B !== FA.TBODY && B !== FA.TD && B !== FA.TFOOT && B !== FA.TH && B !== FA.THEAD && B !== FA.getProviderIdentifier) N10(A, Q)
     }
 
-function fJ5(A, Q) {
+    function fJ5(A, Q) {
         let B = Q.tagName;
         if (B === FA.HTML) lU(A, Q);
         else if (B === FA.COL) A._appendElement(Q, U2.HTML), Q.ackSelfClosing = !0;
@@ -1342,7 +1344,7 @@ function fJ5(A, Q) {
         else J21(A, Q)
     }
 
-function hJ5(A, Q) {
+    function hJ5(A, Q) {
         let B = Q.tagName;
         if (B === FA.COLGROUP) {
             if (A.openElements.currentTagName === FA.COLGROUP) A.openElements.pop(), A.insertionMode = "IN_TABLE_MODE"
@@ -1350,59 +1352,59 @@ function hJ5(A, Q) {
         else if (B !== FA.COL) J21(A, Q)
     }
 
-function J21(A, Q) {
+    function J21(A, Q) {
         if (A.openElements.currentTagName === FA.COLGROUP) A.openElements.pop(), A.insertionMode = "IN_TABLE_MODE", A._processToken(Q)
     }
 
-function gJ5(A, Q) {
+    function gJ5(A, Q) {
         let B = Q.tagName;
-        if (B === FA.TR) A.openElements.clearBackToTableBodyContext(), A._insertElement(Q, U2.HTML), A.insertionMode = "IN_ROW_MODE";
-        else if (B === FA.TH || B === FA.TD) A.openElements.clearBackToTableBodyContext(), A._insertFakeElement(FA.TR), A.insertionMode = "IN_ROW_MODE", A._processToken(Q);
+        if (B === FA.getProviderIdentifier) A.openElements.clearBackToTableBodyContext(), A._insertElement(Q, U2.HTML), A.insertionMode = "IN_ROW_MODE";
+        else if (B === FA.TH || B === FA.TD) A.openElements.clearBackToTableBodyContext(), A._insertFakeElement(FA.getProviderIdentifier), A.insertionMode = "IN_ROW_MODE", A._processToken(Q);
         else if (B === FA.CAPTION || B === FA.COL || B === FA.COLGROUP || B === FA.TBODY || B === FA.TFOOT || B === FA.THEAD) {
             if (A.openElements.hasTableBodyContextInTableScope()) A.openElements.clearBackToTableBodyContext(), A.openElements.pop(), A.insertionMode = "IN_TABLE_MODE", A._processToken(Q)
         } else L10(A, Q)
     }
 
-function uJ5(A, Q) {
+    function uJ5(A, Q) {
         let B = Q.tagName;
         if (B === FA.TBODY || B === FA.TFOOT || B === FA.THEAD) {
             if (A.openElements.hasInTableScope(B)) A.openElements.clearBackToTableBodyContext(), A.openElements.pop(), A.insertionMode = "IN_TABLE_MODE"
         } else if (B === FA.TABLE) {
             if (A.openElements.hasTableBodyContextInTableScope()) A.openElements.clearBackToTableBodyContext(), A.openElements.pop(), A.insertionMode = "IN_TABLE_MODE", A._processToken(Q)
-        } else if (B !== FA.BODY && B !== FA.CAPTION && B !== FA.COL && B !== FA.COLGROUP || B !== FA.HTML && B !== FA.TD && B !== FA.TH && B !== FA.TR) M10(A, Q)
+        } else if (B !== FA.BODY && B !== FA.CAPTION && B !== FA.COL && B !== FA.COLGROUP || B !== FA.HTML && B !== FA.TD && B !== FA.TH && B !== FA.getProviderIdentifier) M10(A, Q)
     }
 
-function mJ5(A, Q) {
+    function mJ5(A, Q) {
         let B = Q.tagName;
         if (B === FA.TH || B === FA.TD) A.openElements.clearBackToTableRowContext(), A._insertElement(Q, U2.HTML), A.insertionMode = "IN_CELL_MODE", A.activeFormattingElements.insertMarker();
-        else if (B === FA.CAPTION || B === FA.COL || B === FA.COLGROUP || B === FA.TBODY || B === FA.TFOOT || B === FA.THEAD || B === FA.TR) {
-            if (A.openElements.hasInTableScope(FA.TR)) A.openElements.clearBackToTableRowContext(), A.openElements.pop(), A.insertionMode = "IN_TABLE_BODY_MODE", A._processToken(Q)
+        else if (B === FA.CAPTION || B === FA.COL || B === FA.COLGROUP || B === FA.TBODY || B === FA.TFOOT || B === FA.THEAD || B === FA.getProviderIdentifier) {
+            if (A.openElements.hasInTableScope(FA.getProviderIdentifier)) A.openElements.clearBackToTableRowContext(), A.openElements.pop(), A.insertionMode = "IN_TABLE_BODY_MODE", A._processToken(Q)
         } else L10(A, Q)
     }
 
-function dJ5(A, Q) {
+    function dJ5(A, Q) {
         let B = Q.tagName;
-        if (B === FA.TR) {
-            if (A.openElements.hasInTableScope(FA.TR)) A.openElements.clearBackToTableRowContext(), A.openElements.pop(), A.insertionMode = "IN_TABLE_BODY_MODE"
+        if (B === FA.getProviderIdentifier) {
+            if (A.openElements.hasInTableScope(FA.getProviderIdentifier)) A.openElements.clearBackToTableRowContext(), A.openElements.pop(), A.insertionMode = "IN_TABLE_BODY_MODE"
         } else if (B === FA.TABLE) {
-            if (A.openElements.hasInTableScope(FA.TR)) A.openElements.clearBackToTableRowContext(), A.openElements.pop(), A.insertionMode = "IN_TABLE_BODY_MODE", A._processToken(Q)
+            if (A.openElements.hasInTableScope(FA.getProviderIdentifier)) A.openElements.clearBackToTableRowContext(), A.openElements.pop(), A.insertionMode = "IN_TABLE_BODY_MODE", A._processToken(Q)
         } else if (B === FA.TBODY || B === FA.TFOOT || B === FA.THEAD) {
-            if (A.openElements.hasInTableScope(B) || A.openElements.hasInTableScope(FA.TR)) A.openElements.clearBackToTableRowContext(), A.openElements.pop(), A.insertionMode = "IN_TABLE_BODY_MODE", A._processToken(Q)
+            if (A.openElements.hasInTableScope(B) || A.openElements.hasInTableScope(FA.getProviderIdentifier)) A.openElements.clearBackToTableRowContext(), A.openElements.pop(), A.insertionMode = "IN_TABLE_BODY_MODE", A._processToken(Q)
         } else if (B !== FA.BODY && B !== FA.CAPTION && B !== FA.COL && B !== FA.COLGROUP || B !== FA.HTML && B !== FA.TD && B !== FA.TH) M10(A, Q)
     }
 
-function cJ5(A, Q) {
+    function cJ5(A, Q) {
         let B = Q.tagName;
-        if (B === FA.CAPTION || B === FA.COL || B === FA.COLGROUP || B === FA.TBODY || B === FA.TD || B === FA.TFOOT || B === FA.TH || B === FA.THEAD || B === FA.TR) {
+        if (B === FA.CAPTION || B === FA.COL || B === FA.COLGROUP || B === FA.TBODY || B === FA.TD || B === FA.TFOOT || B === FA.TH || B === FA.THEAD || B === FA.getProviderIdentifier) {
             if (A.openElements.hasInTableScope(FA.TD) || A.openElements.hasInTableScope(FA.TH)) A._closeTableCell(), A._processToken(Q)
         } else lU(A, Q)
     }
 
-function pJ5(A, Q) {
+    function pJ5(A, Q) {
         let B = Q.tagName;
         if (B === FA.TD || B === FA.TH) {
             if (A.openElements.hasInTableScope(B)) A.openElements.generateImpliedEndTags(), A.openElements.popUntilTagNamePopped(B), A.activeFormattingElements.clearToLastMarker(), A.insertionMode = "IN_ROW_MODE"
-        } else if (B === FA.TABLE || B === FA.TBODY || B === FA.TFOOT || B === FA.THEAD || B === FA.TR) {
+        } else if (B === FA.TABLE || B === FA.TBODY || B === FA.TFOOT || B === FA.THEAD || B === FA.getProviderIdentifier) {
             if (A.openElements.hasInTableScope(B)) A._closeTableCell(), A._processToken(Q)
         } else if (B !== FA.BODY && B !== FA.CAPTION && B !== FA.COL && B !== FA.COLGROUP && B !== FA.HTML) N10(A, Q)
     }
@@ -1424,7 +1426,7 @@ function pJ5(A, Q) {
         } else if (B === FA.SCRIPT || B === FA.TEMPLATE) rV(A, Q)
     }
 
-function w72(A, Q) {
+    function w72(A, Q) {
         let B = Q.tagName;
         if (B === FA.OPTGROUP) {
             let G = A.openElements.items[A.openElements.stackTop - 1],
@@ -1437,20 +1439,20 @@ function w72(A, Q) {
         else if (B === FA.TEMPLATE) F1A(A, Q)
     }
 
-function lJ5(A, Q) {
+    function lJ5(A, Q) {
         let B = Q.tagName;
-        if (B === FA.CAPTION || B === FA.TABLE || B === FA.TBODY || B === FA.TFOOT || B === FA.THEAD || B === FA.TR || B === FA.TD || B === FA.TH) A.openElements.popUntilTagNamePopped(FA.SELECT), A._resetInsertionMode(), A._processToken(Q);
+        if (B === FA.CAPTION || B === FA.TABLE || B === FA.TBODY || B === FA.TFOOT || B === FA.THEAD || B === FA.getProviderIdentifier || B === FA.TD || B === FA.TH) A.openElements.popUntilTagNamePopped(FA.SELECT), A._resetInsertionMode(), A._processToken(Q);
         else $72(A, Q)
     }
 
-function iJ5(A, Q) {
+    function iJ5(A, Q) {
         let B = Q.tagName;
-        if (B === FA.CAPTION || B === FA.TABLE || B === FA.TBODY || B === FA.TFOOT || B === FA.THEAD || B === FA.TR || B === FA.TD || B === FA.TH) {
+        if (B === FA.CAPTION || B === FA.TABLE || B === FA.TBODY || B === FA.TFOOT || B === FA.THEAD || B === FA.getProviderIdentifier || B === FA.TD || B === FA.TH) {
             if (A.openElements.hasInTableScope(B)) A.openElements.popUntilTagNamePopped(FA.SELECT), A._resetInsertionMode(), A._processToken(Q)
         } else w72(A, Q)
     }
 
-function nJ5(A, Q) {
+    function nJ5(A, Q) {
         let B = Q.tagName;
         if (B === FA.BASE || B === FA.BASEFONT || B === FA.BGSOUND || B === FA.LINK || B === FA.META || B === FA.NOFRAMES || B === FA.SCRIPT || B === FA.STYLE || B === FA.TEMPLATE || B === FA.TITLE) rV(A, Q);
         else {
@@ -1459,31 +1461,31 @@ function nJ5(A, Q) {
         }
     }
 
-function aJ5(A, Q) {
+    function aJ5(A, Q) {
         if (Q.tagName === FA.TEMPLATE) F1A(A, Q)
     }
 
-function q72(A, Q) {
+    function q72(A, Q) {
         if (A.openElements.tmplCount > 0) A.openElements.popUntilTagNamePopped(FA.TEMPLATE), A.activeFormattingElements.clearToLastMarker(), A._popTmplInsertionMode(), A._resetInsertionMode(), A._processToken(Q);
         else A.stopped = !0
     }
 
-function sJ5(A, Q) {
+    function sJ5(A, Q) {
         if (Q.tagName === FA.HTML) lU(A, Q);
         else W21(A, Q)
     }
 
-function rJ5(A, Q) {
+    function rJ5(A, Q) {
         if (Q.tagName === FA.HTML) {
             if (!A.fragmentContext) A.insertionMode = "AFTER_AFTER_BODY_MODE"
         } else W21(A, Q)
     }
 
-function W21(A, Q) {
+    function W21(A, Q) {
         A.insertionMode = "IN_BODY_MODE", A._processToken(Q)
     }
 
-function oJ5(A, Q) {
+    function oJ5(A, Q) {
         let B = Q.tagName;
         if (B === FA.HTML) lU(A, Q);
         else if (B === FA.FRAMESET) A._insertElement(Q, U2.HTML);
@@ -1491,30 +1493,30 @@ function oJ5(A, Q) {
         else if (B === FA.NOFRAMES) rV(A, Q)
     }
 
-function tJ5(A, Q) {
+    function tJ5(A, Q) {
         if (Q.tagName === FA.FRAMESET && !A.openElements.isRootHtmlElementCurrent()) {
             if (A.openElements.pop(), !A.fragmentContext && A.openElements.currentTagName !== FA.FRAMESET) A.insertionMode = "AFTER_FRAMESET_MODE"
         }
     }
 
-function eJ5(A, Q) {
+    function eJ5(A, Q) {
         let B = Q.tagName;
         if (B === FA.HTML) lU(A, Q);
         else if (B === FA.NOFRAMES) rV(A, Q)
     }
 
-function AW5(A, Q) {
+    function AW5(A, Q) {
         if (Q.tagName === FA.HTML) A.insertionMode = "AFTER_AFTER_FRAMESET_MODE"
     }
 
-function QW5(A, Q) {
+    function QW5(A, Q) {
         if (Q.tagName === FA.HTML) lU(A, Q);
         else Y21(A, Q)
     }
 
-function Y21(A, Q) {
+    function Y21(A, Q) {
         A.insertionMode = "IN_BODY_MODE", A._processToken(Q)
     }
 
-function BW5(A, Q) {
+    function BW5(A, Q) {
         let B = Q.tagName;

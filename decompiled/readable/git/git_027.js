@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_027.js
+ * 处理时间: 2025-12-09T03:41:37.583Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.986Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -37,18 +40,18 @@
     }
     wU2.ChannelImplementation = $U2
 });
-var jU2 = U((TU2) => {
+var jU2 = moduleWrapper((TU2) => {
     Object.defineProperty(TU2, "__esModule", {
         value: !0
     });
     TU2.ServerDuplexStreamImpl = TU2.ServerWritableStreamImpl = TU2.ServerReadableStreamImpl = TU2.ServerUnaryCallImpl = void 0;
     TU2.serverErrorToStatus = J90;
-    var jT5 = UA("events"),
-        I90 = UA("stream"),
+    var jT5 = nodeRequire("events"),
+        I90 = nodeRequire("stream"),
         Y90 = K6(),
         NU2 = BK();
 
-function J90(A, Q) {
+    function J90(A, Q) {
         var B;
         let G = {
             code: Y90.Status.UNKNOWN,
@@ -60,8 +63,7 @@ function J90(A, Q) {
         }
         return G
     }
-
-class LU2 extends jT5.EventEmitter {
+    class LU2 extends jT5.EventEmitter {
         constructor(A, Q, B, G) {
             super();
             this.path = A, this.call = Q, this.metadata = B, this.request = G, this.cancelled = !1
@@ -89,8 +91,7 @@ class LU2 extends jT5.EventEmitter {
         }
     }
     TU2.ServerUnaryCallImpl = LU2;
-
-class MU2 extends I90.Readable {
+    class MU2 extends I90.Readable {
         constructor(A, Q, B) {
             super({
                 objectMode: !0
@@ -123,8 +124,7 @@ class MU2 extends I90.Readable {
         }
     }
     TU2.ServerReadableStreamImpl = MU2;
-
-class OU2 extends I90.Writable {
+    class OU2 extends I90.Writable {
         constructor(A, Q, B, G) {
             super({
                 objectMode: !0
@@ -172,8 +172,7 @@ class OU2 extends I90.Writable {
         }
     }
     TU2.ServerWritableStreamImpl = OU2;
-
-class RU2 extends I90.Duplex {
+    class RU2 extends I90.Duplex {
         constructor(A, Q, B) {
             super({
                 objectMode: !0
@@ -225,7 +224,7 @@ class RU2 extends I90.Duplex {
     }
     TU2.ServerDuplexStreamImpl = RU2
 });
-var r41 = U((SU2) => {
+var r41 = moduleWrapper((SU2) => {
     Object.defineProperty(SU2, "__esModule", {
         value: !0
     });
@@ -233,8 +232,7 @@ var r41 = U((SU2) => {
     SU2.createCertificateProviderServerCredentials = xT5;
     SU2.createServerCredentialsWithInterceptors = vT5;
     var W90 = LB0();
-
-class IJA {
+    class IJA {
         constructor(A, Q) {
             this.serverConstructorOptions = A, this.watchers = new Set, this.latestContextOptions = null, this.latestContextOptions = Q !== null && Q !== void 0 ? Q : null
         }
@@ -275,9 +273,9 @@ class IJA {
                 I = [];
             for (let Y = 0; Y < Q.length; Y++) {
                 let J = Q[Y];
-                if (J === null || typeof J !== "object") throw TypeError(`keyCertPair[${Y}] must be an object`);
-                if (!Buffer.isBuffer(J.private_key)) throw TypeError(`keyCertPair[${Y}].private_key must be a Buffer`);
-                if (!Buffer.isBuffer(J.cert_chain)) throw TypeError(`keyCertPair[${Y}].cert_chain must be a Buffer`);
+                if (J === null || typeof J !== "object") throw TypeError(`keyCertPair[TextComponent{Y}] must be an object`);
+                if (!Buffer.isBuffer(J.private_key)) throw TypeError(`keyCertPair[TextComponent{Y}].private_key must be a Buffer`);
+                if (!Buffer.isBuffer(J.cert_chain)) throw TypeError(`keyCertPair[TextComponent{Y}].cert_chain must be a Buffer`);
                 Z.push(J.cert_chain), I.push(J.private_key)
             }
             return new F90({
@@ -291,8 +289,7 @@ class IJA {
         }
     }
     SU2.ServerCredentials = IJA;
-
-class X90 extends IJA {
+    class X90 extends IJA {
         constructor() {
             super(null)
         }
@@ -303,8 +300,7 @@ class X90 extends IJA {
             return A instanceof X90
         }
     }
-
-class F90 extends IJA {
+    class F90 extends IJA {
         constructor(A, Q) {
             super(A, Q);
             this.options = Object.assign(Object.assign({}, A), Q)
@@ -339,8 +335,7 @@ class F90 extends IJA {
             return !0
         }
     }
-
-class V90 extends IJA {
+    class V90 extends IJA {
         constructor(A, Q, B) {
             super({
                 requestCert: Q !== null,
@@ -385,11 +380,10 @@ class V90 extends IJA {
         }
     }
 
-function xT5(A, Q, B) {
+    function xT5(A, Q, B) {
         return new V90(A, Q, B)
     }
-
-class K90 extends IJA {
+    class K90 extends IJA {
         constructor(A, Q) {
             super({});
             this.childCredentials = A, this.interceptors = Q
@@ -422,11 +416,11 @@ class K90 extends IJA {
         }
     }
 
-function vT5(A, Q) {
+    function vT5(A, Q) {
         return new K90(A, Q)
     }
 });
-var SOA = U((kU2) => {
+var SOA = moduleWrapper((kU2) => {
     Object.defineProperty(kU2, "__esModule", {
         value: !0
     });
@@ -438,34 +432,34 @@ var SOA = U((kU2) => {
     kU2.parseDuration = pT5;
     kU2.durationToString = lT5;
 
-function hT5(A) {
+    function hT5(A) {
         return {
             seconds: Number.parseInt(A.seconds),
             nanos: A.nanos
         }
     }
 
-function gT5(A) {
+    function gT5(A) {
         return {
             seconds: A / 1000 | 0,
             nanos: A % 1000 * 1e6 | 0
         }
     }
 
-function uT5(A) {
+    function uT5(A) {
         return A.seconds * 1000 + A.nanos / 1e6 | 0
     }
 
-function mT5(A) {
+    function mT5(A) {
         return typeof A.seconds === "number" && typeof A.nanos === "number"
     }
 
-function dT5(A) {
+    function dT5(A) {
         return typeof A.seconds === "string" && typeof A.nanos === "number"
     }
     var cT5 = /^(\d+)(?:\.(\d+))?s$/;
 
-function pT5(A) {
+    function pT5(A) {
         let Q = A.match(cT5);
         if (!Q) return null;
         return {
@@ -474,16 +468,16 @@ function pT5(A) {
         }
     }
 
-function lT5(A) {
-        if (A.nanos === 0) return `${A.seconds}s`;
+    function lT5(A) {
+        if (A.nanos === 0) return `TextComponent{A.seconds}s`;
         let Q;
         if (A.nanos % 1e6 === 0) Q = 1e6;
         else if (A.nanos % 1000 === 0) Q = 1000;
         else Q = 1;
-        return `${A.seconds}.${A.nanos/Q}s`
+        return `TextComponent{A.seconds}.TextComponent{A.nanos/Q}s`
     }
 });
-var t41 = U((cU2) => {
+var t41 = moduleWrapper((cU2) => {
     var __dirname = "/home/runner/code/tmp/claude-cli-external-build-2215/node_modules/@grpc/grpc-js/build/src";
     Object.defineProperty(cU2, "__esModule", {
         value: !0
@@ -500,7 +494,7 @@ var t41 = U((cU2) => {
         GP5 = dE(),
         xU2 = null;
 
-function o41() {
+    function o41() {
         if (xU2) return xU2;
         let A = S20().loadSync,
             Q = A("xds/service/orca/v3/orca.proto", {
@@ -509,12 +503,11 @@ function o41() {
                 enums: String,
                 defaults: !0,
                 oneofs: !0,
-                includeDirs: [`${__dirname}/../../proto/xds`, `${__dirname}/../../proto/protoc-gen-validate`]
+                includeDirs: [`TextComponent{__dirname}/../../proto/xds`, `TextComponent{__dirname}/../../proto/protoc-gen-validate`]
             });
         return (0, eT5.loadPackageDefinition)(Q)
     }
-
-class bU2 {
+    class bU2 {
         constructor() {
             this.message = {}
         }
@@ -551,8 +544,7 @@ class bU2 {
     }
     cU2.PerRequestMetricRecorder = bU2;
     var ZP5 = 30000;
-
-class fU2 {
+    class fU2 {
         constructor() {
             this.message = {}, this.serviceImplementation = {
                 StreamCoreMetrics: (A) => {
@@ -608,33 +600,34 @@ class fU2 {
     }
     cU2.ServerMetricRecorder = fU2;
 
-function hU2(A) {
+    function hU2(A) {
         return new(o41()).xds.service.orca.v3.OpenRcaService("unused", AP5.ChannelCredentials.createInsecure(), {
             channelOverride: A
         })
     }
     cU2.GRPC_METRICS_HEADER = "endpoint-load-metrics-bin";
-    var vU2 = "grpc_orca_load_report";
+    /* ORCA_LOAD_REPORT = ORCA_LOAD_REPORT = "grpc_orca_load_report" */
+var ORCA_LOAD_REPORT = "grpc_orca_load_report";
 
-function IP5(A, Q) {
+    function IP5(A, Q) {
         return (B, G, Z) => {
-            let I = Z.getOpaque(vU2);
+            let I = Z.getOpaque(ORCA_LOAD_REPORT);
             if (I) A(I);
             else {
                 let Y = Z.get(cU2.GRPC_METRICS_HEADER);
-                if (Y.length > 0) I = o41().xds.data.orca.v3.OrcaLoadReport.deserialize(Y[0]), A(I), Z.setOpaque(vU2, I)
+                if (Y.length > 0) I = o41().xds.data.orca.v3.OrcaLoadReport.deserialize(Y[0]), A(I), Z.setOpaque(ORCA_LOAD_REPORT, I)
             }
             if (Q) Q(B, G, Z)
         }
     }
-    var gU2 = "orca_oob_metrics";
-
-class uU2 {
+    /* ORCA_OOB_METRICS = ORCA_OOB_METRICS = "orca_oob_metrics" */
+var ORCA_OOB_METRICS = "orca_oob_metrics";
+    class uU2 {
         constructor(A, Q) {
             this.metricsListener = A, this.intervalMs = Q, this.dataProducer = null
         }
         setSubchannel(A) {
-            let Q = A.getOrCreateDataProducer(gU2, YP5);
+            let Q = A.getOrCreateDataProducer(ORCA_OOB_METRICS, YP5);
             this.dataProducer = Q, Q.addDataWatcher(this)
         }
         destroy() {
@@ -648,8 +641,7 @@ class uU2 {
             this.metricsListener(A)
         }
     }
-
-class mU2 {
+    class mU2 {
         constructor(A) {
             this.subchannel = A, this.dataWatchers = new Set, this.orcaSupported = !0, this.metricsCall = null, this.currentInterval = 1 / 0, this.backoffTimer = new BP5.BackoffTimeout(() => this.updateMetricsSubscription()), this.subchannelStateListener = () => this.updateMetricsSubscription();
             let Q = A.getChannel();
@@ -660,7 +652,7 @@ class mU2 {
         }
         removeDataWatcher(A) {
             var Q;
-            if (this.dataWatchers.delete(A), this.dataWatchers.size === 0) this.subchannel.removeDataProducer(gU2), (Q = this.metricsCall) === null || Q === void 0 || Q.cancel(), this.metricsCall = null, this.client.close(), this.subchannel.removeConnectivityStateListener(this.subchannelStateListener);
+            if (this.dataWatchers.delete(A), this.dataWatchers.size === 0) this.subchannel.removeDataProducer(ORCA_OOB_METRICS), (Q = this.metricsCall) === null || Q === void 0 || Q.cancel(), this.metricsCall = null, this.client.close(), this.subchannel.removeConnectivityStateListener(this.subchannelStateListener);
             else this.updateMetricsSubscription()
         }
         updateMetricsSubscription() {
@@ -687,8 +679,7 @@ class mU2 {
             }
         }
     }
-
-class dU2 extends QP5.BaseSubchannelWrapper {
+    class dU2 extends QP5.BaseSubchannelWrapper {
         constructor(A, Q, B) {
             super(A);
             this.addDataWatcher(new uU2(Q, B))
@@ -699,11 +690,11 @@ class dU2 extends QP5.BaseSubchannelWrapper {
     }
     cU2.OrcaOobMetricsSubchannelWrapper = dU2;
 
-function YP5(A) {
+    function YP5(A) {
         return new mU2(A)
     }
 });
-var z90 = U((I$2) => {
+var z90 = moduleWrapper((I$2) => {
     Object.defineProperty(I$2, "__esModule", {
         value: !0
     });
@@ -712,20 +703,19 @@ var z90 = U((I$2) => {
     I$2.getServerInterceptingCall = UP5;
     var Q81 = BK(),
         oU = K6(),
-        YJA = UA("http2"),
+        YJA = nodeRequire("http2"),
         iU2 = p91(),
-        nU2 = UA("zlib"),
+        nU2 = nodeRequire("zlib"),
         VP5 = s20(),
         tU2 = XZ(),
-        KP5 = UA("tls"),
+        KP5 = nodeRequire("tls"),
         aU2 = t41(),
         eU2 = "server_call";
 
-function r1A(A) {
+    function r1A(A) {
         tU2.trace(oU.LogVerbosity.DEBUG, eU2, A)
     }
-
-class A$2 {
+    class A$2 {
         constructor() {
             this.metadata = void 0, this.message = void 0, this.halfClose = void 0, this.cancel = void 0
         }
@@ -752,11 +742,10 @@ class A$2 {
     }
     I$2.ServerListenerBuilder = A$2;
 
-function DP5(A) {
+    function DP5(A) {
         return A.onReceiveMetadata !== void 0 && A.onReceiveMetadata.length === 1
     }
-
-class Q$2 {
+    class Q$2 {
         constructor(A, Q) {
             this.listener = A, this.nextListener = Q, this.cancelled = !1, this.processingMetadata = !1, this.hasPendingMessage = !1, this.pendingMessage = null, this.processingMessage = !1, this.hasPendingHalfClose = !1
         }
@@ -793,8 +782,7 @@ class Q$2 {
             this.cancelled = !0, this.listener.onCancel(), this.nextListener.onCancel()
         }
     }
-
-class B$2 {
+    class B$2 {
         constructor() {
             this.start = void 0, this.metadata = void 0, this.message = void 0, this.status = void 0
         }
@@ -820,8 +808,7 @@ class B$2 {
         }
     }
     I$2.ResponderBuilder = B$2;
-
-var e41 = {
+    var e41 = {
             onReceiveMetadata: (A, Q) => {
                 Q(A)
             },
@@ -847,8 +834,7 @@ var e41 = {
                 Q(A)
             }
         };
-
-class G$2 {
+    class G$2 {
         constructor(A, Q) {
             var B, G, Z, I;
             this.nextCall = A, this.processingMetadata = !1, this.sentMetadata = !1, this.processingMessage = !1, this.pendingMessage = null, this.pendingMessageCallback = null, this.pendingStatus = null, this.responder = {
@@ -943,8 +929,7 @@ class G$2 {
         zP5 = {
             waitForTrailers: !0
         };
-
-class E90 {
+    class E90 {
         constructor(A, Q, B, G, Z) {
             var I, Y;
             if (this.stream = A, this.callEventTracker = B, this.handler = G, this.listener = null, this.deadlineTimer = null, this.deadline = 1 / 0, this.maxSendMessageSize = oU.DEFAULT_MAX_SEND_MESSAGE_LENGTH, this.maxReceiveMessageSize = oU.DEFAULT_MAX_RECEIVE_MESSAGE_LENGTH, this.cancelled = !1, this.metadataSent = !1, this.wantTrailers = !1, this.cancelNotified = !1, this.incomingEncoding = "identity", this.readQueue = [], this.isReadPending = !1, this.receivedHalfClose = !1, this.streamEnded = !1, this.metricsRecorder = new aU2.PerRequestMetricRecorder, this.stream.once("error", (V) => {}), this.stream.once("close", () => {
@@ -982,7 +967,7 @@ class E90 {
             if (Q === null) {
                 let Z = {
                     code: oU.Status.INTERNAL,
-                    details: `Invalid ${H90} value "${A}"`,
+                    details: `Invalid TextComponent{H90} value "TextComponent{A}"`,
                     metadata: null
                 };
                 process.nextTick(() => {
@@ -1035,7 +1020,7 @@ class E90 {
                     G.on("data", (W) => {
                         if (J.push(W), Y += W.byteLength, this.maxReceiveMessageSize !== -1 && Y > this.maxReceiveMessageSize) G.destroy(), I({
                             code: oU.Status.RESOURCE_EXHAUSTED,
-                            details: `Received message that decompresses to a size larger than ${this.maxReceiveMessageSize}`
+                            details: `Received message that decompresses to a size larger than TextComponent{this.maxReceiveMessageSize}`
                         })
                     }), G.on("end", () => {
                         Z(Buffer.concat(J))
@@ -1043,11 +1028,11 @@ class E90 {
                 })
             } else return Promise.reject({
                 code: oU.Status.UNIMPLEMENTED,
-                details: `Received message compressed with unsupported encoding "${Q}"`
+                details: `Received message compressed with unsupported encoding "TextComponent{Q}"`
             })
         }
         async decompressAndMaybePush(A) {
-            if (A.type !== "COMPRESSED") throw Error(`Invalid queue entry type: ${A.type}`);
+            if (A.type !== "COMPRESSED") throw Error(`Invalid queue entry type: TextComponent{A.type}`);
             let B = A.compressedMessage.readUInt8(0) === 1 ? this.incomingEncoding : "identity",
                 G;
             try {
@@ -1061,7 +1046,7 @@ class E90 {
             } catch (Z) {
                 this.sendStatus({
                     code: oU.Status.INTERNAL,
-                    details: `Error deserializing request: ${Z.message}`
+                    details: `Error deserializing request: TextComponent{Z.message}`
                 });
                 return
             }
@@ -1126,7 +1111,7 @@ class E90 {
             } catch (G) {
                 this.sendStatus({
                     code: oU.Status.INTERNAL,
-                    details: `Error serializing response: ${(0,iU2.getErrorMessage)(G)}`,
+                    details: `Error serializing response: TextComponent{(0,iU2.getErrorMessage)(G)}`,
                     metadata: null
                 });
                 return
@@ -1134,7 +1119,7 @@ class E90 {
             if (this.maxSendMessageSize !== -1 && B.length - 5 > this.maxSendMessageSize) {
                 this.sendStatus({
                     code: oU.Status.RESOURCE_EXHAUSTED,
-                    details: `Sent message larger than max (${B.length} vs. ${this.maxSendMessageSize})`,
+                    details: `Sent message larger than max (TextComponent{B.length} vs. TextComponent{this.maxSendMessageSize})`,
                     metadata: null
                 });
                 return
@@ -1144,7 +1129,7 @@ class E90 {
                 if (G) {
                     this.sendStatus({
                         code: oU.Status.INTERNAL,
-                        details: `Error writing message: ${(0,iU2.getErrorMessage)(G)}`,
+                        details: `Error writing message: TextComponent{(0,iU2.getErrorMessage)(G)}`,
                         metadata: null
                     });
                     return
@@ -1188,7 +1173,7 @@ class E90 {
             var A;
             let Q = (A = this.stream.session) === null || A === void 0 ? void 0 : A.socket;
             if (Q === null || Q === void 0 ? void 0 : Q.remoteAddress)
-                if (Q.remotePort) return `${Q.remoteAddress}:${Q.remotePort}`;
+                if (Q.remotePort) return `TextComponent{Q.remoteAddress}:TextComponent{Q.remotePort}`;
                 else return Q.remoteAddress;
             else return "unknown"
         }
@@ -1217,7 +1202,7 @@ class E90 {
     }
     I$2.BaseServerInterceptingCall = E90;
 
-function UP5(A, Q, B, G, Z, I) {
+    function UP5(A, Q, B, G, Z, I) {
         let Y = {
                 path: Z.path,
                 requestStream: Z.type === "clientStream" || Z.type === "bidi",
@@ -1231,7 +1216,7 @@ function UP5(A, Q, B, G, Z, I) {
         }, J)
     }
 });
-var D$2 = U((li) => {
+var D$2 = moduleWrapper((li) => {
     var MP5 = li && li.__runInitializers || function(A, Q, B) {
             var G = arguments.length > 2;
             for (var Z = 0; Z < Q.length; Z++) B = G ? Q[Z].call(A, B) : Q[Z].call(A);
@@ -1276,8 +1261,8 @@ var D$2 = U((li) => {
         value: !0
     });
     li.Server = void 0;
-    var tU = UA("http2"),
-        RP5 = UA("util"),
+    var tU = nodeRequire("http2"),
+        RP5 = nodeRequire("util"),
         yW = K6(),
         XJA = jU2(),
         U90 = r41(),
@@ -1297,26 +1282,26 @@ var D$2 = U((li) => {
         PP5 = "server",
         V$2 = Buffer.from("max_age");
 
-function K$2(A) {
+    function K$2(A) {
         WJA.trace(yW.LogVerbosity.DEBUG, "server_call", A)
     }
 
-function jP5() {}
+    function jP5() {}
 
-function SP5(A) {
+    function SP5(A) {
         return function(Q, B) {
             return RP5.deprecate(Q, A)
         }
     }
 
-function w90(A) {
+    function w90(A) {
         return {
             code: yW.Status.UNIMPLEMENTED,
-            details: `The server does not implement the method ${A}`
+            details: `The server does not implement the method TextComponent{A}`
         }
     }
 
-function _P5(A, Q) {
+    function _P5(A, Q) {
         let B = w90(Q);
         switch (A) {
             case "unary":
@@ -1336,7 +1321,7 @@ function _P5(A, Q) {
                     G.emit("error", B)
                 };
             default:
-                throw Error(`Invalid handlerType ${A}`)
+                throw Error(`Invalid handlerType TextComponent{A}`)
         }
     }
     var kP5 = (() => {
@@ -1429,7 +1414,7 @@ function _P5(A, Q) {
                     if (F === void 0 && typeof W.originalName === "string") F = I[W.originalName];
                     if (F !== void 0) V = F.bind(I);
                     else V = _P5(X, J);
-                    if (this.register(W.path, V, W.responseSerialize, W.requestDeserialize, X) === !1) throw Error(`Method handler for ${W.path} already provided.`)
+                    if (this.register(W.path, V, W.responseSerialize, W.requestDeserialize, X) === !1) throw Error(`Method handler for TextComponent{W.path} already provided.`)
                 })
             }
             removeService(Z) {

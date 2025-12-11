@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_041.js
+ * 处理时间: 2025-12-09T03:41:36.806Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.923Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -28,14 +31,14 @@
         return G.set(Q), G
     }
 });
-var UkB = U((vc1) => {
+var UkB = moduleWrapper((vc1) => {
     Object.defineProperty(vc1, "__esModule", {
         value: !0
     });
     var vR6 = _c1();
     vR6.__exportStar(zkB(), vc1)
 });
-var PkB = U((TBG, TkB) => {
+var PkB = moduleWrapper((TBG, TkB) => {
     var {
         defineProperty: hoA,
         getOwnPropertyDescriptor: bR6,
@@ -127,7 +130,7 @@ var PkB = U((TBG, TkB) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(RkB || {})
 });
-var xkB = U((PBG, ykB) => {
+var xkB = moduleWrapper((PBG, ykB) => {
     var {
         defineProperty: uoA,
         getOwnPropertyDescriptor: nR6,
@@ -206,7 +209,7 @@ var xkB = U((PBG, ykB) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values
@@ -240,7 +243,7 @@ var xkB = U((PBG, ykB) => {
                 gp(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -262,7 +265,7 @@ var xkB = U((PBG, ykB) => {
             }
         };
 
-function _kB(A) {
+    function _kB(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -272,8 +275,7 @@ function _kB(A) {
         }, {})
     }
     gp(_kB, "cloneQuery");
-
-var ZT6 = class {
+    var ZT6 = class {
         static {
             gp(this, "HttpResponse")
         }
@@ -287,12 +289,12 @@ var ZT6 = class {
         }
     };
 
-function kkB(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function kkB(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     gp(kkB, "isValidHostname")
 });
-var hkB = U((kBG, fkB) => {
+var hkB = moduleWrapper((kBG, fkB) => {
     var {
         defineProperty: moA,
         getOwnPropertyDescriptor: IT6,
@@ -323,10 +325,10 @@ var hkB = U((kBG, fkB) => {
     });
     fkB.exports = FT6(vkB);
     var bkB = bc1((A) => encodeURIComponent(A).replace(/[!'()*]/g, VT6), "escapeUri"),
-        VT6 = bc1((A) => `%${A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
+        VT6 = bc1((A) => `%TextComponent{A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
         KT6 = bc1((A) => A.split("/").map(bkB).join("/"), "escapeUriPath")
 });
-var dkB = U((yBG, mkB) => {
+var dkB = moduleWrapper((yBG, mkB) => {
     var {
         defineProperty: doA,
         getOwnPropertyDescriptor: DT6,
@@ -357,15 +359,15 @@ var dkB = U((yBG, mkB) => {
     mkB.exports = $T6(gkB);
     var fc1 = hkB();
 
-function ukB(A) {
+    function ukB(A) {
         let Q = [];
         for (let B of Object.keys(A).sort()) {
             let G = A[B];
             if (B = (0, fc1.escapeUri)(B), Array.isArray(G))
-                for (let Z = 0, I = G.length; Z < I; Z++) Q.push(`${B}=${(0,fc1.escapeUri)(G[Z])}`);
+                for (let Z = 0, I = G.length; Z < I; Z++) Q.push(`TextComponent{B}=TextComponent{(0,fc1.escapeUri)(G[Z])}`);
             else {
                 let Z = B;
-                if (G || typeof G === "string") Z += `=${(0,fc1.escapeUri)(G)}`;
+                if (G || typeof G === "string") Z += `=TextComponent{(0,fc1.escapeUri)(G)}`;
                 Q.push(Z)
             }
         }
@@ -373,13 +375,13 @@ function ukB(A) {
     }
     ET6(ukB, "buildQueryString")
 });
-var lkB = U((ckB) => {
+var lkB = moduleWrapper((ckB) => {
     Object.defineProperty(ckB, "__esModule", {
         value: !0
     });
     ckB.fromBase64 = void 0;
     var wT6 = kI(),
-        qT6 = /^[A-Za-z0-9+/]*={0,2}$/,
+        qT6 = /^[A-Za-z0-9+/]*={0,2}TextComponent/,
         NT6 = (A) => {
             if (A.length * 3 % 4 !== 0) throw TypeError("Incorrect padding on base64 string.");
             if (!qT6.exec(A)) throw TypeError("Invalid base64 string.");
@@ -388,7 +390,7 @@ var lkB = U((ckB) => {
         };
     ckB.fromBase64 = NT6
 });
-var akB = U((ikB) => {
+var akB = moduleWrapper((ikB) => {
     Object.defineProperty(ikB, "__esModule", {
         value: !0
     });
@@ -404,7 +406,7 @@ var akB = U((ikB) => {
         };
     ikB.toBase64 = OT6
 });
-var okB = U((bBG, coA) => {
+var okB = moduleWrapper((bBG, coA) => {
     var {
         defineProperty: skB,
         getOwnPropertyDescriptor: RT6,
@@ -425,7 +427,7 @@ var okB = U((bBG, coA) => {
     rkB(gc1, lkB(), coA.exports);
     rkB(gc1, akB(), coA.exports)
 });
-var mc1 = U((fBG, ZyB) => {
+var mc1 = moduleWrapper((fBG, ZyB) => {
     var {
         defineProperty: loA,
         getOwnPropertyDescriptor: ST6,
@@ -459,22 +461,21 @@ var mc1 = U((fBG, ZyB) => {
     var tkB = xkB(),
         bT6 = dkB();
 
-function uc1(A, Q) {
+    function uc1(A, Q) {
         return new Request(A, Q)
     }
     p_(uc1, "createRequest");
 
-function AyB(A = 0) {
+    function AyB(A = 0) {
         return new Promise((Q, B) => {
             if (A) setTimeout(() => {
-                let G = Error(`Request did not complete within ${A} ms`);
+                let G = Error(`Request did not complete within TextComponent{A} ms`);
                 G.name = "TimeoutError", B(G)
             }, A)
         })
     }
     p_(AyB, "requestTimeout");
-
-var poA = {
+    var poA = {
             supported: void 0
         },
         fT6 = class A {
@@ -504,18 +505,18 @@ var poA = {
                 }
                 let Y = Q.path,
                     J = (0, bT6.buildQueryString)(Q.query || {});
-                if (J) Y += `?${J}`;
-                if (Q.fragment) Y += `#${Q.fragment}`;
+                if (J) Y += `?TextComponent{J}`;
+                if (Q.fragment) Y += `#TextComponent{Q.fragment}`;
                 let W = "";
                 if (Q.username != null || Q.password != null) {
                     let z = Q.username ?? "",
                         w = Q.password ?? "";
-                    W = `${z}:${w}@`
+                    W = `TextComponent{z}:TextComponent{w}@`
                 }
                 let {
                     port: X,
                     method: F
-                } = Q, V = `${Q.protocol}//${W}${Q.hostname}${X?`:${X}`:""}${Y}`, K = F === "GET" || F === "HEAD" ? void 0 : Q.body, D = {
+                } = Q, V = `TextComponent{Q.protocol}//TextComponent{W}TextComponent{Q.hostname}TextComponent{X?`:TextComponent{X}`:""}TextComponent{Y}`, K = F === "GET" || F === "HEAD" ? void 0 : Q.body, D = {
                     body: K,
                     headers: new Headers(Q.headers),
                     method: F,
@@ -580,15 +581,13 @@ var poA = {
             }
             return ByB(A)
         }, "streamCollector");
-
-async function QyB(A) {
+    async function QyB(A) {
         let Q = await GyB(A),
             B = (0, hT6.fromBase64)(Q);
         return new Uint8Array(B)
     }
     p_(QyB, "collectBlob");
-
-async function ByB(A) {
+    async function ByB(A) {
         let Q = [],
             B = A.getReader(),
             G = !1,
@@ -608,7 +607,7 @@ async function ByB(A) {
     }
     p_(ByB, "collectStream");
 
-function GyB(A) {
+    function GyB(A) {
         return new Promise((Q, B) => {
             let G = new FileReader;
             G.onloadend = () => {
@@ -622,7 +621,7 @@ function GyB(A) {
     }
     p_(GyB, "readToBase64")
 });
-var dc1 = U((hBG, DyB) => {
+var dc1 = moduleWrapper((hBG, DyB) => {
     var {
         defineProperty: ioA,
         getOwnPropertyDescriptor: uT6,
@@ -719,7 +718,7 @@ var dc1 = U((hBG, DyB) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(KyB || {})
 });
-var cc1 = U((gBG, qyB) => {
+var cc1 = moduleWrapper((gBG, qyB) => {
     var {
         defineProperty: aoA,
         getOwnPropertyDescriptor: oT6,
@@ -795,7 +794,7 @@ var cc1 = U((gBG, qyB) => {
                 this.values = this.values.filter((B) => B !== Q)
             }
             toString() {
-                return this.values.map((Q) => Q.includes(",") || Q.includes(" ") ? `"${Q}"` : Q).join(", ")
+                return this.values.map((Q) => Q.includes(",") || Q.includes(" ") ? `"TextComponent{Q}"` : Q).join(", ")
             }
             get() {
                 return this.values
@@ -827,7 +826,7 @@ var cc1 = U((gBG, qyB) => {
     var JP6 = EyB,
         zyB = class A {
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static isInstance(Q) {
                 if (!Q) return !1;
@@ -848,7 +847,7 @@ var cc1 = U((gBG, qyB) => {
     up(zyB, "HttpRequest");
     var WP6 = zyB;
 
-function UyB(A) {
+    function UyB(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -871,12 +870,12 @@ function UyB(A) {
     up($yB, "HttpResponse");
     var XP6 = $yB;
 
-function wyB(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function wyB(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     up(wyB, "isValidHostname")
 });
-var _yB = U((uBG, SyB) => {
+var _yB = moduleWrapper((uBG, SyB) => {
     var {
         defineProperty: soA,
         getOwnPropertyDescriptor: FP6,
@@ -973,7 +972,7 @@ var _yB = U((uBG, SyB) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(jyB || {})
 });
-var byB = U((mBG, vyB) => {
+var byB = moduleWrapper((mBG, vyB) => {
     var {
         defineProperty: ooA,
         getOwnPropertyDescriptor: qP6,
@@ -1011,7 +1010,7 @@ var byB = U((mBG, vyB) => {
             return () => Q
         }, "normalizeProvider")
 });
-var pc1 = U((dBG, hyB) => {
+var pc1 = moduleWrapper((dBG, hyB) => {
     var {
         defineProperty: toA,
         getOwnPropertyDescriptor: jP6,
@@ -1042,7 +1041,7 @@ var pc1 = U((dBG, hyB) => {
     hyB.exports = vP6(fyB);
     var bP6 = kP6((A) => typeof ArrayBuffer === "function" && A instanceof ArrayBuffer || Object.prototype.toString.call(A) === "[object ArrayBuffer]", "isArrayBuffer")
 });
-var dyB = U((cBG, myB) => {
+var dyB = moduleWrapper((cBG, myB) => {
     var {
         defineProperty: eoA,
         getOwnPropertyDescriptor: fP6,
@@ -1073,17 +1072,17 @@ var dyB = U((cBG, myB) => {
     });
     myB.exports = dP6(uyB);
     var cP6 = pc1(),
-        lc1 = UA("buffer"),
+        lc1 = nodeRequire("buffer"),
         pP6 = gyB((A, Q = 0, B = A.byteLength - Q) => {
-            if (!(0, cP6.isArrayBuffer)(A)) throw TypeError(`The "input" argument must be ArrayBuffer. Received type ${typeof A} (${A})`);
+            if (!(0, cP6.isArrayBuffer)(A)) throw TypeError(`The "input" argument must be ArrayBuffer. Received type TextComponent{typeof A} (TextComponent{A})`);
             return lc1.Buffer.from(A, Q, B)
         }, "fromArrayBuffer"),
         lP6 = gyB((A, Q) => {
-            if (typeof A !== "string") throw TypeError(`The "input" argument must be of type string. Received type ${typeof A} (${A})`);
+            if (typeof A !== "string") throw TypeError(`The "input" argument must be of type string. Received type TextComponent{typeof A} (TextComponent{A})`);
             return Q ? lc1.Buffer.from(A, Q) : lc1.Buffer.from(A)
         }, "fromString")
 });
-var MwA = U((pBG, iyB) => {
+var MwA = moduleWrapper((pBG, iyB) => {
     var {
         defineProperty: AtA,
         getOwnPropertyDescriptor: iP6,
@@ -1130,7 +1129,7 @@ var MwA = U((pBG, iyB) => {
             return (0, pyB.fromArrayBuffer)(A.buffer, A.byteOffset, A.byteLength).toString("utf8")
         }, "toUtf8")
 });
-var eyB = U((lBG, tyB) => {
+var eyB = moduleWrapper((lBG, tyB) => {
     var {
         defineProperty: QtA,
         getOwnPropertyDescriptor: Aj6,
@@ -1160,8 +1159,7 @@ var eyB = U((lBG, tyB) => {
         toHex: () => oyB
     });
     tyB.exports = Ij6(ayB);
-
-var syB = {},
+    var syB = {},
         nc1 = {};
     for (let A = 0; A < 256; A++) {
         let Q = A.toString(16).toLowerCase();
@@ -1169,26 +1167,26 @@ var syB = {},
         syB[A] = Q, nc1[Q] = A
     }
 
-function ryB(A) {
+    function ryB(A) {
         if (A.length % 2 !== 0) throw Error("Hex encoded strings must have an even number length");
         let Q = new Uint8Array(A.length / 2);
         for (let B = 0; B < A.length; B += 2) {
             let G = A.slice(B, B + 2).toLowerCase();
             if (G in nc1) Q[B / 2] = nc1[G];
-            else throw Error(`Cannot decode unrecognized sequence ${G} as hexadecimal`)
+            else throw Error(`Cannot decode unrecognized sequence TextComponent{G} as hexadecimal`)
         }
         return Q
     }
     nyB(ryB, "fromHex");
 
-function oyB(A) {
+    function oyB(A) {
         let Q = "";
         for (let B = 0; B < A.byteLength; B++) Q += syB[A[B]];
         return Q
     }
     nyB(oyB, "toHex")
 });
-var GxB = U((iBG, BxB) => {
+var GxB = moduleWrapper((iBG, BxB) => {
     var {
         defineProperty: BtA,
         getOwnPropertyDescriptor: Yj6,
@@ -1219,10 +1217,10 @@ var GxB = U((iBG, BxB) => {
     });
     BxB.exports = Vj6(AxB);
     var QxB = ac1((A) => encodeURIComponent(A).replace(/[!'()*]/g, Kj6), "escapeUri"),
-        Kj6 = ac1((A) => `%${A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
+        Kj6 = ac1((A) => `%TextComponent{A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
         Dj6 = ac1((A) => A.split("/").map(QxB).join("/"), "escapeUriPath")
 });
-var LxB = U((nBG, NxB) => {
+var LxB = moduleWrapper((nBG, NxB) => {
     var {
         defineProperty: JtA,
         getOwnPropertyDescriptor: Hj6,
@@ -1304,10 +1302,10 @@ var LxB = U((nBG, NxB) => {
         vj6 = MwA(),
         xGA = {},
         ZtA = [],
-        ItA = uX((A, Q, B) => `${A}/${Q}/${B}/${HxB}`, "createScope"),
+        ItA = uX((A, Q, B) => `TextComponent{A}/TextComponent{Q}/TextComponent{B}/TextComponent{HxB}`, "createScope"),
         CxB = uX(async (A, Q, B, G, Z) => {
             let I = await IxB(A, Q.secretAccessKey, Q.accessKeyId),
-                Y = `${B}:${G}:${Z}:${(0,mp.toHex)(I)}:${Q.sessionToken}`;
+                Y = `TextComponent{B}:TextComponent{G}:TextComponent{Z}:TextComponent{(0,mp.toHex)(I)}:TextComponent{Q.sessionToken}`;
             if (Y in xGA) return xGA[Y];
             ZtA.push(Y);
             while (ZtA.length > yj6) delete xGA[ZtA.shift()];
@@ -1348,8 +1346,8 @@ var LxB = U((nBG, NxB) => {
                 if (G.toLowerCase() === Rj6) continue;
                 Q.push(G);
                 let Z = A[G];
-                if (typeof Z === "string") B[G] = `${(0,OwA.escapeUri)(G)}=${(0,OwA.escapeUri)(Z)}`;
-                else if (Array.isArray(Z)) B[G] = Z.slice(0).reduce((I, Y) => I.concat([`${(0,OwA.escapeUri)(G)}=${(0,OwA.escapeUri)(Y)}`]), []).sort().join("&")
+                if (typeof Z === "string") B[G] = `TextComponent{(0,OwA.escapeUri)(G)}=TextComponent{(0,OwA.escapeUri)(Z)}`;
+                else if (Array.isArray(Z)) B[G] = Z.slice(0).reduce((I, Y) => I.concat([`TextComponent{(0,OwA.escapeUri)(G)}=TextComponent{(0,OwA.escapeUri)(Y)}`]), []).sort().join("&")
             }
             return Q.map((G) => B[G]).filter((G) => G).join("&")
         }, "getCanonicalQuery"),
@@ -1411,7 +1409,7 @@ var LxB = U((nBG, NxB) => {
                         let F = new Uint8Array(9);
                         return F[0] = 8, F.set(mj6.fromNumber(Q.value.valueOf()).bytes, 1), F;
                     case "uuid":
-                        if (!uj6.test(Q.value)) throw Error(`Invalid UUID received: ${Q.value}`);
+                        if (!uj6.test(Q.value)) throw Error(`Invalid UUID received: TextComponent{Q.value}`);
                         let V = new Uint8Array(17);
                         return V[0] = 9, V.set((0, mp.fromHex)(Q.value.replace(/\-/g, "")), 1), V
                 }
@@ -1419,13 +1417,13 @@ var LxB = U((nBG, NxB) => {
         };
     uX(zxB, "HeaderFormatter");
     var gj6 = zxB,
-        uj6 = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/,
+        uj6 = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}TextComponent/,
         UxB = class A {
             constructor(Q) {
                 if (this.bytes = Q, Q.byteLength !== 8) throw Error("Int64 buffers must be exactly 8 bytes")
             }
             static fromNumber(Q) {
-                if (Q > 9223372036854776000 || Q < -9223372036854776000) throw Error(`${Q} is too large (or, if negative, too small) to represent as an Int64`);
+                if (Q > 9223372036854776000 || Q < -9223372036854776000) throw Error(`TextComponent{Q} is too large (or, if negative, too small) to represent as an Int64`);
                 let B = new Uint8Array(8);
                 for (let G = 7, Z = Math.abs(Math.round(Q)); G > -1 && Z > 0; G--, Z /= 256) B[G] = Z;
                 if (Q < 0) ec1(B);
@@ -1444,7 +1442,7 @@ var LxB = U((nBG, NxB) => {
     uX(UxB, "Int64");
     var mj6 = UxB;
 
-function ec1(A) {
+    function ec1(A) {
         for (let Q = 0; Q < 8; Q++) A[Q] ^= 255;
         for (let Q = 7; Q > -1; Q--)
             if (A[Q]++, A[Q] !== 0) break

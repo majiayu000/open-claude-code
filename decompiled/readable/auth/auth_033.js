@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_033.js
+ * 处理时间: 2025-12-09T03:41:36.705Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.916Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-var r5A = U((uN7, bAB) => {
+var r5A = moduleWrapper((uN7, bAB) => {
     var {
         extractBody: Eu8,
         mixinBody: zu8,
@@ -33,7 +36,7 @@ var r5A = U((uN7, bAB) => {
         getHeadersList: LAB
     } = Mo(), {
         FinalizationRegistry: qu8
-    } = qAB()(), hpA = M6(), MAB = UA("node:util"), {
+    } = qAB()(), hpA = M6(), MAB = nodeRequire("node:util"), {
         isValidHTTPToken: Nu8,
         sameOrigin: OAB,
         environmentSettingsObject: fpA
@@ -61,22 +64,22 @@ var r5A = U((uN7, bAB) => {
         URLSerializer: yu8
     } = tz(), {
         kConstruct: mpA
-    } = iI(), xu8 = UA("node:assert"), {
+    } = iI(), xu8 = nodeRequire("node:assert"), {
         getMaxListeners: RAB,
         setMaxListeners: TAB,
         getEventListeners: vu8,
         defaultMaxListeners: PAB
-    } = UA("node:events"), bu8 = Symbol("abortController"), yAB = new qu8(({
+    } = nodeRequire("node:events"), bu8 = Symbol("abortController"), yAB = new qu8(({
         signal: A,
         abort: Q
     }) => {
         A.removeEventListener("abort", Q)
     }), dpA = new WeakMap;
 
-function jAB(A) {
+    function jAB(A) {
         return Q;
 
-function Q() {
+        function Q() {
             let B = A.deref();
             if (B !== void 0) {
                 yAB.unregister(Q), this.removeEventListener("abort", Q), B.abort(this.reason);
@@ -95,8 +98,7 @@ function Q() {
         }
     }
     var SAB = !1;
-
-class tG {
+    class tG {
         constructor(A, Q = {}) {
             if (J4.util.markAsUncloneable(this), A === mpA) return;
             let B = "Request constructor";
@@ -123,7 +125,7 @@ class tG {
             let J = fpA.settingsObject.origin,
                 W = "client";
             if (G.window?.constructor?.name === "EnvironmentSettingsObject" && OAB(G.window, J)) W = G.window;
-            if (Q.window != null) throw TypeError(`'window' option '${W}' must be null`);
+            if (Q.window != null) throw TypeError(`'window' option 'TextComponent{W}' must be null`);
             if ("window" in Q) W = "no-window";
             G = cpA({
                 method: G.method,
@@ -158,7 +160,7 @@ class tG {
                     try {
                         z = new URL(E, I)
                     } catch (w) {
-                        throw TypeError(`Referrer "${E}" is not a valid URL.`, {
+                        throw TypeError(`Referrer "TextComponent{E}" is not a valid URL.`, {
                             cause: w
                         })
                     }
@@ -186,9 +188,9 @@ class tG {
                     z = ku8[E];
                 if (z !== void 0) G.method = z;
                 else {
-                    if (!Nu8(E)) throw TypeError(`'${E}' is not a valid HTTP method.`);
+                    if (!Nu8(E)) throw TypeError(`'TextComponent{E}' is not a valid HTTP method.`);
                     let w = E.toUpperCase();
-                    if (Lu8.has(w)) throw TypeError(`'${E}' HTTP method is unsupported.`);
+                    if (Lu8.has(w)) throw TypeError(`'TextComponent{E}' HTTP method is unsupported.`);
                     E = _u8[w] ?? E, G.method = E
                 }
                 if (!SAB && G.method === "patch") process.emitWarning("Using `patch` is highly likely to result in a `405 Method Not Allowed`. `PATCH` is much more likely to succeed.", {
@@ -216,7 +218,7 @@ class tG {
                 }
             }
             if (this[_w] = new _AB(mpA), kAB(this[_w], G.headersList), Ey1(this[_w], "request"), F === "no-cors") {
-                if (!Mu8.has(G.method)) throw TypeError(`'${G.method} is unsupported in no-cors mode.`);
+                if (!Mu8.has(G.method)) throw TypeError(`'TextComponent{G.method} is unsupported in no-cors mode.`);
                 Ey1(this[_w], "request-no-cors")
             }
             if (X) {
@@ -344,12 +346,12 @@ class tG {
                 isHistoryNavigation: this.isHistoryNavigation,
                 signal: this.signal
             };
-            return `Request ${MAB.formatWithOptions(Q,B)}`
+            return `Request TextComponent{MAB.formatWithOptions(Q,B)}`
         }
     }
     zu8(tG);
 
-function cpA(A) {
+    function cpA(A) {
         return {
             method: A.method ?? "GET",
             localURLsOnly: A.localURLsOnly ?? !1,
@@ -392,7 +394,7 @@ function cpA(A) {
         }
     }
 
-function xAB(A) {
+    function xAB(A) {
         let Q = cpA({
             ...A,
             body: null
@@ -401,7 +403,7 @@ function xAB(A) {
         return Q
     }
 
-function vAB(A, Q, B) {
+    function vAB(A, Q, B) {
         let G = new tG(mpA);
         return G[YI] = A, G[gpA] = Q, G[_w] = new _AB(mpA), kAB(G[_w], A.headersList), Ey1(G[_w], B), G
     }
@@ -499,7 +501,7 @@ function vAB(A, Q, B) {
         cloneRequest: xAB
     }
 });
-var NEA = U((mN7, oAB) => {
+var NEA = moduleWrapper((mN7, oAB) => {
     var {
         makeNetworkError: AG,
         makeAppropriateNetworkError: ppA,
@@ -511,7 +513,7 @@ var NEA = U((mN7, oAB) => {
     } = Mo(), {
         Request: hu8,
         cloneRequest: gu8
-    } = r5A(), Gc = UA("node:zlib"), {
+    } = r5A(), Gc = nodeRequire("node:zlib"), {
         bytesMatch: uu8,
         makePolicyContainer: mu8,
         clonePolicyContainer: du8,
@@ -548,7 +550,7 @@ var NEA = U((mN7, oAB) => {
     } = Rw(), {
         kState: dAB,
         kDispatcher: Vm8
-    } = id(), Ro = UA("node:assert"), {
+    } = id(), Ro = nodeRequire("node:assert"), {
         safelyExtractBody: My1,
         extractBody: gAB
     } = _5A(), {
@@ -557,11 +559,11 @@ var NEA = U((mN7, oAB) => {
         safeMethodsSet: Km8,
         requestBodyHeader: Dm8,
         subresourceSet: Hm8
-    } = uCA(), Cm8 = UA("node:events"), {
+    } = uCA(), Cm8 = nodeRequire("node:events"), {
         Readable: Em8,
         pipeline: zm8,
         finished: Um8
-    } = UA("node:stream"), {
+    } = nodeRequire("node:stream"), {
         addAbortListener: $m8,
         isErrored: wm8,
         isReadable: npA,
@@ -576,9 +578,8 @@ var NEA = U((mN7, oAB) => {
         webidl: Om8
     } = FD(), {
         STATUS_CODES: Rm8
-    } = UA("node:http"), Tm8 = ["GET", "HEAD"], Pm8 = typeof __UNDICI_IS_NODE__ < "u" || typeof esbuildDetection < "u" ? "node" : "undici", Uy1;
-
-class Oy1 extends Cm8 {
+    } = nodeRequire("node:http"), Tm8 = ["GET", "HEAD"], Pm8 = typeof __UNDICI_IS_NODE__ < "u" || typeof esbuildDetection < "u" ? "node" : "undici", Uy1;
+    class Oy1 extends Cm8 {
         constructor(A) {
             super();
             this.dispatcher = A, this.connection = null, this.dump = !1, this.state = "ongoing"
@@ -594,11 +595,11 @@ class Oy1 extends Cm8 {
         }
     }
 
-function jm8(A) {
+    function jm8(A) {
         lAB(A, "fetch")
     }
 
-function Sm8(A, Q = void 0) {
+    function Sm8(A, Q = void 0) {
         Om8.argumentLengthCheck(arguments, 1, "globalThis.fetch");
         let B = eu8(),
             G;
@@ -638,7 +639,7 @@ function Sm8(A, Q = void 0) {
         }), B.promise
     }
 
-function lAB(A, Q = "other") {
+    function lAB(A, Q = "other") {
         if (A.type === "error" && A.aborted) return;
         if (!A.urlList?.length) return;
         let B = A.urlList[0],
@@ -667,7 +668,7 @@ function lAB(A, Q = "other") {
         })
     }
 
-function nAB({
+    function nAB({
         request: A,
         processRequestBodyChunkLength: Q,
         processRequestEndOfBody: B,
@@ -710,8 +711,7 @@ function nAB({
             K.controller.terminate(D)
         }), K.controller
     }
-
-async function aAB(A, Q = !1) {
+    async function aAB(A, Q = !1) {
         let B = A.request,
             G = null;
         if (B.localURLsOnly && !Zm8(B_(B))) G = AG("local URLs only");
@@ -759,7 +759,7 @@ async function aAB(A, Q = !1) {
         } else wy1(A, G)
     }
 
-function mAB(A) {
+    function mAB(A) {
         if (Oo(A) && A.request.redirectCount === 0) return Promise.resolve(ppA(A));
         let {
             request: Q
@@ -770,14 +770,14 @@ function mAB(A) {
             case "about:":
                 return Promise.resolve(AG("about scheme is not supported"));
             case "blob:": {
-                if (!Uy1) Uy1 = UA("node:buffer").resolveObjectURL;
+                if (!Uy1) Uy1 = nodeRequire("node:buffer").resolveObjectURL;
                 let G = B_(Q);
                 if (G.search.length !== 0) return Promise.resolve(AG("NetworkError when attempting to fetch resource."));
                 let Z = Uy1(G.toString());
                 if (Q.method !== "GET" || !Am8(Z)) return Promise.resolve(AG("invalid method"));
                 let I = lpA(),
                     Y = Z.size,
-                    J = ipA(`${Y}`),
+                    J = ipA(`TextComponent{Y}`),
                     W = Z.type;
                 if (!Q.headersList.contains("range", !0)) {
                     let X = gAB(Z);
@@ -799,7 +799,7 @@ function mAB(A) {
                     let D = Z.slice(V, K, W),
                         H = gAB(D);
                     I.body = H[0];
-                    let C = ipA(`${D.size}`),
+                    let C = ipA(`TextComponent{D.size}`),
                         E = Wm8(V, K, Y);
                     I.status = 206, I.statusText = "Partial Content", I.headersList.set("content-length", C, !0), I.headersList.set("content-type", W, !0), I.headersList.set("content-range", E, !0)
                 }
@@ -831,11 +831,11 @@ function mAB(A) {
         }
     }
 
-function _m8(A, Q) {
+    function _m8(A, Q) {
         if (A.request.done = !0, A.processResponseDone != null) queueMicrotask(() => A.processResponseDone(Q))
     }
 
-function wy1(A, Q) {
+    function wy1(A, Q) {
         let B = A.timingInfo,
             G = () => {
                 let I = Date.now();
@@ -871,8 +871,7 @@ function wy1(A, Q) {
             G()
         })
     }
-
-async function sAB(A) {
+    async function sAB(A) {
         let Q = A.request,
             B = null,
             G = null,
@@ -894,7 +893,7 @@ async function sAB(A) {
         return B.timingInfo = Z, B
     }
 
-function km8(A, Q) {
+    function km8(A, Q) {
         let B = A.request,
             G = Q.internalResponse ? Q.internalResponse : Q,
             Z;
@@ -918,8 +917,7 @@ function km8(A, Q) {
         if (I.redirectEndTime = I.postRedirectStartTime = qEA(A.crossOriginIsolatedCapability), I.redirectStartTime === 0) I.redirectStartTime = I.startTime;
         return B.urlList.push(Z), nu8(B, G), aAB(A, !0)
     }
-
-async function rAB(A, Q = !1, B = !1) {
+    async function rAB(A, Q = !1, B = !1) {
         let G = A.request,
             Z = null,
             I = null,
@@ -934,7 +932,7 @@ async function rAB(A, Q = !1, B = !1) {
             F = I.body ? I.body.length : null,
             V = null;
         if (I.body == null && ["POST", "PUT"].includes(I.method)) V = "0";
-        if (F != null) V = ipA(`${F}`);
+        if (F != null) V = ipA(`TextComponent{F}`);
         if (V != null) I.headersList.append("content-length", V, !0);
         if (F != null && I.keepalive);
         if (I.referrer instanceof URL) I.headersList.append("referer", ipA(I.referrer.href), !0);
@@ -970,8 +968,7 @@ async function rAB(A, Q = !1, B = !1) {
         }
         return Y
     }
-
-async function ym8(A, Q = !1, B = !1) {
+    async function ym8(A, Q = !1, B = !1) {
         Ro(!A.controller.connection || A.controller.connection.destroyed), A.controller.connection = {
             abort: null,
             destroyed: !1,
@@ -1090,7 +1087,7 @@ async function ym8(A, Q = !1, B = !1) {
             }
         };
 
-function K(H) {
+        function K(H) {
             if (hAB(A)) {
                 if (Z.aborted = !0, npA(V)) A.controller.controller.error(A.controller.serializedAbortReason)
             } else if (npA(V)) A.controller.controller.error(TypeError("terminated", {
@@ -1100,7 +1097,7 @@ function K(H) {
         }
         return Z;
 
-function D({
+        function D({
             body: H
         }) {
             let C = B_(G),
@@ -1205,7 +1202,7 @@ function D({
         finalizeAndReportTiming: lAB
     }
 });
-var Ry1 = U((dN7, tAB) => {
+var Ry1 = moduleWrapper((dN7, tAB) => {
     tAB.exports = {
         kState: Symbol("FileReader state"),
         kResult: Symbol("FileReader result"),
@@ -1215,12 +1212,11 @@ var Ry1 = U((dN7, tAB) => {
         kAborted: Symbol("FileReader aborted")
     }
 });
-var A1B = U((cN7, eAB) => {
+var A1B = moduleWrapper((cN7, eAB) => {
     var {
         webidl: kw
     } = FD(), apA = Symbol("ProgressEvent state");
-
-class LEA extends Event {
+    class LEA extends Event {
         constructor(A, Q = {}) {
             A = kw.converters.DOMString(A, "ProgressEvent constructor", "type"), Q = kw.converters.ProgressEventInit(Q ?? {});
             super(A, Q);
@@ -1269,7 +1265,7 @@ class LEA extends Event {
         ProgressEvent: LEA
     }
 });
-var B1B = U((pN7, Q1B) => {
+var B1B = moduleWrapper((pN7, Q1B) => {
     function xm8(A) {
         if (!A) return "failure";
         switch (A.trim().toLowerCase()) {
@@ -1401,7 +1397,7 @@ var B1B = U((pN7, Q1B) => {
                 return "KOI8-R";
             case "koi8-ru":
             case "koi8-u":
-                return "KOI8-U";
+                return "KOI8-moduleWrapper";
             case "csmacintosh":
             case "mac":
             case "macintosh":

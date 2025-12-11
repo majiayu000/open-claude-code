@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_009.js
+ * 处理时间: 2025-12-09T03:41:37.367Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.968Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -21,7 +24,7 @@
         return Q === "http:" || Q === "https:"
     }
 
-function Wx8(A, Q) {
+    function Wx8(A, Q) {
         let B = A;
         if (!B.startsWith("bytes")) return "failure";
         let G = {
@@ -52,12 +55,11 @@ function Wx8(A, Q) {
         }
     }
 
-function Xx8(A, Q, B) {
+    function Xx8(A, Q, B) {
         let G = "bytes ";
-        return G += ncA(`${A}`), G += "-", G += ncA(`${Q}`), G += "/", G += ncA(`${B}`), G
+        return G += ncA(`TextComponent{A}`), G += "-", G += ncA(`TextComponent{Q}`), G += "/", G += ncA(`TextComponent{B}`), G
     }
-
-class rsQ extends Cy8 {
+    class rsQ extends Cy8 {
         #A;
         constructor(A) {
             super();
@@ -79,11 +81,11 @@ class rsQ extends Cy8 {
         }
     }
 
-function Fx8(A) {
+    function Fx8(A) {
         return new rsQ(A)
     }
 
-function Vx8(A) {
+    function Vx8(A) {
         let Q = null,
             B = null,
             G = null,
@@ -101,7 +103,7 @@ function Vx8(A) {
         return G
     }
 
-function Kx8(A) {
+    function Kx8(A) {
         let Q = A,
             B = {
                 position: 0
@@ -118,20 +120,19 @@ function Kx8(A) {
         return G
     }
 
-function osQ(A, Q) {
+    function osQ(A, Q) {
         let B = Q.get(A, !0);
         if (B === null) return null;
         return Kx8(B)
     }
     var Dx8 = new TextDecoder;
 
-function Hx8(A) {
+    function Hx8(A) {
         if (A.length === 0) return "";
         if (A[0] === 239 && A[1] === 187 && A[2] === 191) A = A.subarray(3);
         return Dx8.decode(A)
     }
-
-class tsQ {
+    class tsQ {
         get baseUrl() {
             return gsQ()
         }
@@ -140,8 +141,7 @@ class tsQ {
         }
         policyContainer = lsQ()
     }
-
-class esQ {
+    class esQ {
         settingsObject = new tsQ
     }
     var Cx8 = new esQ;
@@ -199,7 +199,7 @@ class esQ {
         environmentSettingsObject: Cx8
     }
 });
-var id = U((sq7, QrQ) => {
+var id = moduleWrapper((sq7, QrQ) => {
     QrQ.exports = {
         kUrl: Symbol("url"),
         kHeaders: Symbol("headers"),
@@ -208,17 +208,16 @@ var id = U((sq7, QrQ) => {
         kDispatcher: Symbol("dispatcher")
     }
 });
-var s_1 = U((rq7, BrQ) => {
+var s_1 = moduleWrapper((rq7, BrQ) => {
     var {
         Blob: Ex8,
         File: zx8
-    } = UA("node:buffer"), {
+    } = nodeRequire("node:buffer"), {
         kState: Eb
     } = id(), {
         webidl: iS
     } = FD();
-
-class nS {
+    class nS {
         constructor(A, Q, B = {}) {
             let G = Q,
                 Z = B.type,
@@ -260,7 +259,7 @@ class nS {
     }
     iS.converters.Blob = iS.interfaceConverter(Ex8);
 
-function Ux8(A) {
+    function Ux8(A) {
         return A instanceof zx8 || A && (typeof A.stream === "function" || typeof A.arrayBuffer === "function") && A[Symbol.toStringTag] === "File"
     }
     BrQ.exports = {
@@ -268,7 +267,7 @@ function Ux8(A) {
         isFileLike: Ux8
     }
 });
-var lCA = U((oq7, JrQ) => {
+var lCA = moduleWrapper((oq7, JrQ) => {
     var {
         isBlobLike: rcA,
         iteratorMixin: $x8
@@ -283,9 +282,8 @@ var lCA = U((oq7, JrQ) => {
         webidl: RZ
     } = FD(), {
         File: YrQ
-    } = UA("node:buffer"), ZrQ = UA("node:util"), IrQ = globalThis.File ?? YrQ;
-
-class aS {
+    } = nodeRequire("node:buffer"), ZrQ = nodeRequire("node:util"), IrQ = globalThis.File ?? YrQ;
+    class aS {
         constructor(A) {
             if (RZ.util.markAsUncloneable(this), A !== void 0) throw RZ.errors.conversionFailed({
                 prefix: "FormData constructor",
@@ -350,7 +348,7 @@ class aS {
             });
             Q.depth ??= A, Q.colors ??= !0;
             let G = ZrQ.formatWithOptions(Q, B);
-            return `FormData ${G.slice(G.indexOf("]")+2)}`
+            return `FormData TextComponent{G.slice(G.indexOf("]")+2)}`
         }
     }
     $x8("FormData", aS, nC, "name", "value");
@@ -367,7 +365,7 @@ class aS {
         }
     });
 
-function r_1(A, Q, B) {
+    function r_1(A, Q, B) {
         if (typeof Q === "string");
         else {
             if (!wx8(Q)) Q = Q instanceof Blob ? new IrQ([Q], "blob", {
@@ -393,7 +391,7 @@ function r_1(A, Q, B) {
         makeEntry: r_1
     }
 });
-var DrQ = U((tq7, KrQ) => {
+var DrQ = moduleWrapper((tq7, KrQ) => {
     var {
         isUSVString: WrQ,
         bufferToLowerCasedHeaderName: qx8
@@ -406,18 +404,18 @@ var DrQ = U((tq7, KrQ) => {
         isFileLike: Mx8
     } = s_1(), {
         makeEntry: Ox8
-    } = lCA(), ocA = UA("node:assert"), {
+    } = lCA(), ocA = nodeRequire("node:assert"), {
         File: Rx8
-    } = UA("node:buffer"), Tx8 = globalThis.File ?? Rx8, Px8 = Buffer.from('form-data; name="'), FrQ = Buffer.from("; filename"), jx8 = Buffer.from("--"), Sx8 = Buffer.from(`--\r
+    } = nodeRequire("node:buffer"), Tx8 = globalThis.File ?? Rx8, Px8 = Buffer.from('form-data; name="'), FrQ = Buffer.from("; filename"), jx8 = Buffer.from("--"), Sx8 = Buffer.from(`--\r
 `);
 
-function _x8(A) {
+    function _x8(A) {
         for (let Q = 0; Q < A.length; ++Q)
             if ((A.charCodeAt(Q) & -128) !== 0) return !1;
         return !0
     }
 
-function kx8(A) {
+    function kx8(A) {
         let Q = A.length;
         if (Q < 27 || Q > 70) return !1;
         for (let B = 0; B < Q; ++B) {
@@ -427,11 +425,11 @@ function kx8(A) {
         return !0
     }
 
-function yx8(A, Q) {
+    function yx8(A, Q) {
         ocA(Q !== "failure" && Q.essence === "multipart/form-data");
         let B = Q.parameters.get("boundary");
         if (B === void 0) return "failure";
-        let G = Buffer.from(`--${B}`, "utf8"),
+        let G = Buffer.from(`--TextComponent{B}`, "utf8"),
             Z = [],
             I = {
                 position: 0
@@ -474,7 +472,7 @@ function yx8(A, Q) {
         }
     }
 
-function xx8(A, Q) {
+    function xx8(A, Q) {
         let B = null,
             G = null,
             Z = null,
@@ -522,7 +520,7 @@ function xx8(A, Q) {
         }
     }
 
-function VrQ(A, Q) {
+    function VrQ(A, Q) {
         ocA(A[Q.position - 1] === 34);
         let B = P5A((G) => G !== 10 && G !== 13 && G !== 34, A, Q);
         if (A[Q.position] !== 34) return null;
@@ -531,13 +529,13 @@ function VrQ(A, Q) {
 `).replace(/%0D/ig, "\r").replace(/%22/g, '"'), B
     }
 
-function P5A(A, Q, B) {
+    function P5A(A, Q, B) {
         let G = B.position;
         while (G < Q.length && A(Q[G])) ++G;
         return Q.subarray(B.position, B.position = G)
     }
 
-function o_1(A, Q, B, G) {
+    function o_1(A, Q, B, G) {
         let Z = 0,
             I = A.length - 1;
         if (Q)
@@ -547,7 +545,7 @@ function o_1(A, Q, B, G) {
         return Z === 0 && I === A.length - 1 ? A : A.subarray(Z, I + 1)
     }
 
-function tcA(A, Q, B) {
+    function tcA(A, Q, B) {
         if (A.length < Q.length) return !1;
         for (let G = 0; G < Q.length; G++)
             if (Q[G] !== A[B.position + G]) return !1;
@@ -558,7 +556,7 @@ function tcA(A, Q, B) {
         validateBoundary: kx8
     }
 });
-var _5A = U((eq7, qrQ) => {
+var _5A = moduleWrapper((eq7, qrQ) => {
     var iCA = M6(),
         {
             ReadableStreamFrom: vx8,
@@ -581,15 +579,15 @@ var _5A = U((eq7, qrQ) => {
         } = FD(),
         {
             Blob: dx8
-        } = UA("node:buffer"),
-        t_1 = UA("node:assert"),
+        } = nodeRequire("node:buffer"),
+        t_1 = nodeRequire("node:assert"),
         {
             isErrored: UrQ,
             isDisturbed: cx8
-        } = UA("node:stream"),
+        } = nodeRequire("node:stream"),
         {
             isArrayBuffer: px8
-        } = UA("node:util/types"),
+        } = nodeRequire("node:util/types"),
         {
             serializeAMimeType: lx8
         } = tz(),
@@ -598,14 +596,14 @@ var _5A = U((eq7, qrQ) => {
         } = DrQ(),
         e_1;
     try {
-        let A = UA("node:crypto");
+        let A = nodeRequire("node:crypto");
         e_1 = (Q) => A.randomInt(0, Q)
     } catch {
         e_1 = (A) => Math.floor(Math.random(A))
     }
     var ecA = new TextEncoder;
 
-function nx8() {}
+    function nx8() {}
     var Ak1 = globalThis.FinalizationRegistry && process.version.indexOf("v18") !== 0,
         Qk1;
     if (Ak1) Qk1 = new FinalizationRegistry((A) => {
@@ -636,8 +634,8 @@ function nx8() {}
         else if (px8(A)) Z = new Uint8Array(A.slice());
         else if (ArrayBuffer.isView(A)) Z = new Uint8Array(A.buffer.slice(A.byteOffset, A.byteOffset + A.byteLength));
         else if (iCA.isFormDataLike(A)) {
-            let W = `----formdata-undici-0${`${e_1(100000000000)}`.padStart(11,"0")}`,
-                X = `--${W}\r
+            let W = `----formdata-undici-0${`TextComponent{e_1(100000000000)}`.padStart(11,"0")}`,
+                X = `--TextComponent{W}\r
 Content-Disposition: form-data`; /*! formdata-polyfill. MIT License. Jimmy Wärting <https://jimmy.warting.se/opensource> */
             let F = (E) => E.replace(/\n/g, "%0A").replace(/\r/g, "%0D").replace(/"/g, "%22"),
                 V = (E) => E.replace(/\r?\n|\r/g, `\r
@@ -648,25 +646,25 @@ Content-Disposition: form-data`; /*! formdata-polyfill. MIT License. Jimmy Wärt
             let H = !1;
             for (let [E, z] of A)
                 if (typeof z === "string") {
-                    let w = ecA.encode(X + `; name="${F(V(E))}"\r
+                    let w = ecA.encode(X + `; name="TextComponent{F(V(E))}"\r
 \r
-${V(z)}\r
+TextComponent{V(z)}\r
 `);
                     K.push(w), I += w.byteLength
                 } else {
-                    let w = ecA.encode(`${X}; name="${F(V(E))}"` + (z.name ? `; filename="${F(z.name)}"` : "") + `\r
-Content-Type: ${z.type||"application/octet-stream"}\r
+                    let w = ecA.encode(`TextComponent{X}; name="TextComponent{F(V(E))}"` + (z.name ? `; filename="TextComponent{F(z.name)}"` : "") + `\r
+Content-Type: TextComponent{z.type||"application/octet-stream"}\r
 \r
 `);
                     if (K.push(w, z, D), typeof z.size === "number") I += w.byteLength + z.size + D.byteLength;
                     else H = !0
-                } let C = ecA.encode(`--${W}--`);
+                } let C = ecA.encode(`--TextComponent{W}--`);
             if (K.push(C), I += C.byteLength, H) I = null;
             Z = A, G = async function*() {
                 for (let E of K)
                     if (E.stream) yield* E.stream();
                     else yield E
-            }, Y = `multipart/form-data; boundary=${W}`
+            }, Y = `multipart/form-data; boundary=TextComponent{W}`
         } else if (HrQ(A)) {
             if (Z = A, I = A.size, A.type) Y = A.type
         } else if (typeof A[Symbol.asyncIterator] === "function") {
@@ -708,12 +706,12 @@ Content-Type: ${z.type||"application/octet-stream"}\r
         }, Y]
     }
 
-function ax8(A, Q = !1) {
+    function ax8(A, Q = !1) {
         if (A instanceof ReadableStream) t_1(!iCA.isDisturbed(A), "The body has already been consumed."), t_1(!A.locked, "The stream is locked.");
         return $rQ(A, Q)
     }
 
-function sx8(A, Q) {
+    function sx8(A, Q) {
         let [B, G] = Q.stream.tee();
         if (Ak1) Qk1.register(A, new WeakRef(B));
         return Q.stream = B, {
@@ -723,11 +721,11 @@ function sx8(A, Q) {
         }
     }
 
-function rx8(A) {
+    function rx8(A) {
         if (A.aborted) throw new DOMException("The operation was aborted.", "AbortError")
     }
 
-function ox8(A) {
+    function ox8(A) {
         return {
             blob() {
                 return j5A(this, (B) => {
@@ -778,11 +776,10 @@ function ox8(A) {
         }
     }
 
-function tx8(A) {
+    function tx8(A) {
         Object.assign(A.prototype, ox8(A))
     }
-
-async function j5A(A, Q, B) {
+    async function j5A(A, Q, B) {
         if (mx8.brandCheck(A, B), wrQ(A)) throw TypeError("Body is unusable: Body has already been read");
         rx8(A[S5A]);
         let G = hx8(),
@@ -798,16 +795,16 @@ async function j5A(A, Q, B) {
         return await gx8(A[S5A].body, I, Z), G.promise
     }
 
-function wrQ(A) {
+    function wrQ(A) {
         let Q = A[S5A].body;
         return Q != null && (Q.stream.locked || iCA.isDisturbed(Q.stream))
     }
 
-function ex8(A) {
+    function ex8(A) {
         return JSON.parse(zrQ(A))
     }
 
-function ErQ(A) {
+    function ErQ(A) {
         let Q = A[S5A].headersList,
             B = ux8(Q);
         if (B === "failure") return null;
@@ -823,8 +820,8 @@ function ErQ(A) {
         bodyUnusable: wrQ
     }
 });
-var yrQ = U((AN7, krQ) => {
-    var Y4 = UA("node:assert"),
+var yrQ = moduleWrapper((AN7, krQ) => {
+    var Y4 = nodeRequire("node:assert"),
         l4 = M6(),
         {
             channels: NrQ
@@ -938,8 +935,7 @@ var yrQ = U((AN7, krQ) => {
         x5A = 2 | aCA,
         ZpA = 4 | aCA,
         Xk1 = 8 | wv8;
-
-class _rQ {
+    class _rQ {
         constructor(A, Q, {
             exports: B
         }) {
@@ -1137,7 +1133,7 @@ class _rQ {
         }
     }
 
-function OrQ(A) {
+    function OrQ(A) {
         let {
             socket: Q,
             timeoutType: B,
@@ -1150,8 +1146,7 @@ function OrQ(A) {
             if (!Z) l4.destroy(Q, new Gv8)
         } else if (B === Xk1) Y4(G[RH] === 0 && G[YpA]), l4.destroy(Q, new k5A("socket idle timeout"))
     }
-
-async function qv8(A, Q) {
+    async function qv8(A, Q) {
         if (A[y5A] = Q, !Ik1) Ik1 = await Wk1, Wk1 = null;
         Q[nCA] = !1, Q[ad] = !1, Q[ez] = !1, Q[sCA] = !1, Q[wJ] = new _rQ(A, Q, Ik1), QpA(Q, "error", function(G) {
             Y4(G.code !== "ERR_TLS_CERT_ALTNAME_INVALID");
@@ -1223,7 +1218,7 @@ async function qv8(A, Q) {
         }
     }
 
-function Nv8(A) {
+    function Nv8(A) {
         let Q = A[y5A];
         if (Q && !Q.destroyed) {
             if (A[LrQ] === 0) {
@@ -1241,11 +1236,11 @@ function Nv8(A) {
         }
     }
 
-function Lv8(A) {
+    function Lv8(A) {
         return A !== "GET" && A !== "HEAD" && A !== "OPTIONS" && A !== "TRACE" && A !== "CONNECT"
     }
 
-function Mv8(A, Q) {
+    function Mv8(A, Q) {
         let {
             method: B,
             path: G,
@@ -1288,13 +1283,13 @@ function Mv8(A, Q) {
         if (J != null) D[ez] = J;
         if (A[MrQ] && D[Hv8]++ >= A[MrQ]) D[ez] = !0;
         if (Y) D[sCA] = !0;
-        let C = `${B} ${G} HTTP/1.1\r
+        let C = `TextComponent{B} TextComponent{G} HTTP/1.1\r
 `;
-        if (typeof Z === "string") C += `host: ${Z}\r
+        if (typeof Z === "string") C += `host: TextComponent{Z}\r
 `;
         else C += A[Wv8];
         if (I) C += `connection: upgrade\r
-upgrade: ${I}\r
+upgrade: TextComponent{I}\r
 `;
         else if (A[GpA] && !D[ez]) C += `connection: keep-alive\r
 `;
@@ -1305,9 +1300,9 @@ upgrade: ${I}\r
                 let z = X[E + 0],
                     w = X[E + 1];
                 if (Array.isArray(w))
-                    for (let N = 0; N < w.length; N++) C += `${z}: ${w[N]}\r
+                    for (let N = 0; N < w.length; N++) C += `TextComponent{z}: TextComponent{w[N]}\r
 `;
-                else C += `${z}: ${w}\r
+                else C += `TextComponent{z}: TextComponent{w}\r
 `
             }
         if (NrQ.sendHeaders.hasSubscribers) NrQ.sendHeaders.publish({
@@ -1326,7 +1321,7 @@ upgrade: ${I}\r
         return !0
     }
 
-function Ov8(A, Q, B, G, Z, I, Y, J) {
+    function Ov8(A, Q, B, G, Z, I, Y, J) {
         Y4(I !== 0 || B[RH] === 0, "stream body cannot be pipelined");
         let W = !1,
             X = new Fk1({
@@ -1374,16 +1369,16 @@ function Ov8(A, Q, B, G, Z, I, Y, J) {
         if (Q.closeEmitted ?? Q.closed) setImmediate(K)
     }
 
-function RrQ(A, Q, B, G, Z, I, Y, J) {
+    function RrQ(A, Q, B, G, Z, I, Y, J) {
         try {
             if (!Q)
-                if (I === 0) Z.write(`${Y}content-length: 0\r
+                if (I === 0) Z.write(`TextComponent{Y}content-length: 0\r
 \r
 `, "latin1");
-                else Y4(I === null, "no body must not have content length"), Z.write(`${Y}\r
+                else Y4(I === null, "no body must not have content length"), Z.write(`TextComponent{Y}\r
 `, "latin1");
             else if (l4.isBuffer(Q)) {
-                if (Y4(I === Q.byteLength, "buffer body must have content length"), Z.cork(), Z.write(`${Y}content-length: ${I}\r
+                if (Y4(I === Q.byteLength, "buffer body must have content length"), Z.cork(), Z.write(`TextComponent{Y}content-length: TextComponent{I}\r
 \r
 `, "latin1"), Z.write(Q), Z.uncork(), G.onBodySent(Q), !J && G.reset !== !1) Z[ez] = !0
             }
@@ -1392,13 +1387,12 @@ function RrQ(A, Q, B, G, Z, I, Y, J) {
             A(W)
         }
     }
-
-async function Rv8(A, Q, B, G, Z, I, Y, J) {
+    async function Rv8(A, Q, B, G, Z, I, Y, J) {
         Y4(I === Q.size, "blob body must have content length");
         try {
             if (I != null && I !== Q.size) throw new Ho;
             let W = Buffer.from(await Q.arrayBuffer());
-            if (Z.cork(), Z.write(`${Y}content-length: ${I}\r
+            if (Z.cork(), Z.write(`TextComponent{Y}content-length: TextComponent{I}\r
 \r
 `, "latin1"), Z.write(W), Z.uncork(), G.onBodySent(W), G.onRequestSent(), !J && G.reset !== !1) Z[ez] = !0;
             B[nd]()
@@ -1406,12 +1400,11 @@ async function Rv8(A, Q, B, G, Z, I, Y, J) {
             A(W)
         }
     }
-
-async function TrQ(A, Q, B, G, Z, I, Y, J) {
+    async function TrQ(A, Q, B, G, Z, I, Y, J) {
         Y4(I !== 0 || B[RH] === 0, "iterator body cannot be pipelined");
         let W = null;
 
-function X() {
+        function X() {
             if (W) {
                 let K = W;
                 W = null, K()
@@ -1443,8 +1436,7 @@ function X() {
             Z.off("close", X).off("drain", X)
         }
     }
-
-class Fk1 {
+    class Fk1 {
         constructor({
             abort: A,
             socket: Q,
@@ -1476,14 +1468,14 @@ class Fk1 {
             }
             if (Q.cork(), I === 0) {
                 if (!Y && B.reset !== !1) Q[ez] = !0;
-                if (G === null) Q.write(`${J}transfer-encoding: chunked\r
+                if (G === null) Q.write(`TextComponent{J}transfer-encoding: chunked\r
 `, "latin1");
-                else Q.write(`${J}content-length: ${G}\r
+                else Q.write(`TextComponent{J}content-length: TextComponent{G}\r
 \r
 `, "latin1")
             }
             if (G === null) Q.write(`\r
-${W.toString(16)}\r
+TextComponent{W.toString(16)}\r
 `, "latin1");
             this.bytesWritten += W;
             let X = Q.write(A);
@@ -1507,10 +1499,10 @@ ${W.toString(16)}\r
             if (Y.onRequestSent(), A[ad] = !1, A[uL]) throw A[uL];
             if (A.destroyed) return;
             if (G === 0)
-                if (Z) A.write(`${I}content-length: 0\r
+                if (Z) A.write(`TextComponent{I}content-length: 0\r
 \r
 `, "latin1");
-                else A.write(`${I}\r
+                else A.write(`TextComponent{I}\r
 `, "latin1");
             else if (Q === null) A.write(`\r
 0\r

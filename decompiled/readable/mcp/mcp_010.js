@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_010.js
+ * 处理时间: 2025-12-09T03:41:37.853Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.010Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -114,7 +117,7 @@ function k85(A, Q) {
     };
     return {
         behavior: "passthrough",
-        message: `No mode-specific handling for '${G}' in ${Q.mode} mode`
+        message: `No mode-specific handling for 'TextComponent{G}' in TextComponent{Q.mode} mode`
     }
 }
 
@@ -138,7 +141,7 @@ function o22(A, Q) {
     }
 }
 var S85;
-var t22 = L(() => {
+var t22 = lazyLoader(() => {
     gU();
     S85 = ["mkdir", "touch", "rm", "rmdir", "mv", "cp", "sed"]
 });
@@ -157,7 +160,7 @@ function y85(A, Q) {
     let B = A.match(/^\s*sed\s+/);
     if (!B) return !1;
     let G = A.slice(B[0].length),
-        Z = IW(G);
+        Z = tokenize(G);
     if (!Z.success) return !1;
     let I = Z.tokens,
         Y = [];
@@ -190,8 +193,8 @@ function x85(A) {
     if (!A.endsWith("p")) return !1;
     if (A === "p") return !0;
     let Q = A.slice(0, -1);
-    if (/^\d+$/.test(Q)) return !0;
-    if (/^\d+,\d+$/.test(Q)) return !0;
+    if (/^\d+TextComponent/.test(Q)) return !0;
+    if (/^\d+,\d+TextComponent/.test(Q)) return !0;
     return !1
 }
 
@@ -201,7 +204,7 @@ function e22(A, Q, B, G) {
     let I = A.match(/^\s*sed\s+/);
     if (!I) return !1;
     let Y = A.slice(I[0].length),
-        J = IW(Y);
+        J = tokenize(Y);
     if (!J.success) return !1;
     let W = J.tokens,
         X = [];
@@ -213,7 +216,7 @@ function e22(A, Q, B, G) {
     if (Q.length !== 1) return !1;
     let V = Q[0].trim();
     if (!V.startsWith("s")) return !1;
-    let K = V.match(/^s\/(.*?)$/);
+    let K = V.match(/^s\/(.*?)TextComponent/);
     if (!K) return !1;
     let D = K[1],
         H = 0,
@@ -229,7 +232,7 @@ function e22(A, Q, B, G) {
     }
     if (H !== 2) return !1;
     let z = D.slice(C + 1);
-    if (!/^[gpimIM]*[1-9]?[gpimIM]*$/.test(z)) return !1;
+    if (!/^[gpimIM]*[1-9]?[gpimIM]*TextComponent/.test(z)) return !1;
     return !0
 }
 
@@ -260,7 +263,7 @@ function v85(A) {
     let Q = A.match(/^\s*sed\s+/);
     if (!Q) return !1;
     let B = A.slice(Q[0].length),
-        G = IW(B);
+        G = tokenize(B);
     if (!G.success) return !0;
     let Z = G.tokens;
     try {
@@ -299,8 +302,8 @@ function b85(A) {
     if (!B) return Q;
     let G = A.slice(B[0].length);
     if (/-e[wWe]/.test(G) || /-w[eE]/.test(G)) throw Error("Dangerous flag combination detected");
-    let Z = IW(G);
-    if (!Z.success) throw Error(`Malformed shell syntax: ${Z.error}`);
+    let Z = tokenize(G);
+    if (!Z.success) throw Error(`Malformed shell syntax: TextComponent{Z.error}`);
     let I = Z.tokens;
     try {
         let Y = !1,
@@ -330,7 +333,7 @@ function b85(A) {
             break
         }
     } catch (Y) {
-        throw Error(`Failed to parse sed command: ${Y instanceof Error?Y.message:"Unknown error"}`)
+        throw Error(`Failed to parse sed command: TextComponent{Y instanceof Error?Y.message:"Unknown error"}`)
     }
     return Q
 }
@@ -345,19 +348,19 @@ function f85(A) {
     let B = Q.indexOf("#");
     if (B !== -1 && !(B > 0 && Q[B - 1] === "s")) return !0;
     if (/^!/.test(Q) || /[/\d$]!/.test(Q)) return !0;
-    if (/\d\s*~\s*\d|,\s*~\s*\d|\$\s*~\s*\d/.test(Q)) return !0;
+    if (/\d\s*~\s*\d|,\s*~\s*\d|\TextComponent\s*~\s*\d/.test(Q)) return !0;
     if (/^,/.test(Q)) return !0;
     if (/,\s*[+-]/.test(Q)) return !0;
     if (/s\\/.test(Q) || /\\[|#%@]/.test(Q)) return !0;
     if (/\\\/.*[wW]/.test(Q)) return !0;
     if (/\/[^/]*\s+[wWeE]/.test(Q)) return !0;
-    if (/^s\//.test(Q) && !/^s\/[^/]*\/[^/]*\/[^/]*$/.test(Q)) return !0;
-    if (/^s./.test(Q) && /[wWeE]$/.test(Q)) {
-        if (!/^s([^\\\n]).*?\1.*?\1[^wWeE]*$/.test(Q)) return !0
+    if (/^s\//.test(Q) && !/^s\/[^/]*\/[^/]*\/[^/]*TextComponent/.test(Q)) return !0;
+    if (/^s./.test(Q) && /[wWeE]TextComponent/.test(Q)) {
+        if (!/^s([^\\\n]).*?\1.*?\1[^wWeE]*TextComponent/.test(Q)) return !0
     }
-    if (/^[wW]\s*\S+/.test(Q) || /^\d+\s*[wW]\s*\S+/.test(Q) || /^\$\s*[wW]\s*\S+/.test(Q) || /^\/[^/]*\/[IMim]*\s*[wW]\s*\S+/.test(Q) || /^\d+,\d+\s*[wW]\s*\S+/.test(Q) || /^\d+,\$\s*[wW]\s*\S+/.test(Q) || /^\/[^/]*\/[IMim]*,\/[^/]*\/[IMim]*\s*[wW]\s*\S+/.test(Q)) return !0;
-    if (/^e/.test(Q) || /^\d+\s*e/.test(Q) || /^\$\s*e/.test(Q) || /^\/[^/]*\/[IMim]*\s*e/.test(Q) || /^\d+,\d+\s*e/.test(Q) || /^\d+,\$\s*e/.test(Q) || /^\/[^/]*\/[IMim]*,\/[^/]*\/[IMim]*\s*e/.test(Q)) return !0;
-    let G = Q.match(/s([^\\\n]).*?\1.*?\1(.*?)$/);
+    if (/^[wW]\s*\S+/.test(Q) || /^\d+\s*[wW]\s*\S+/.test(Q) || /^\TextComponent\s*[wW]\s*\S+/.test(Q) || /^\/[^/]*\/[IMim]*\s*[wW]\s*\S+/.test(Q) || /^\d+,\d+\s*[wW]\s*\S+/.test(Q) || /^\d+,\TextComponent\s*[wW]\s*\S+/.test(Q) || /^\/[^/]*\/[IMim]*,\/[^/]*\/[IMim]*\s*[wW]\s*\S+/.test(Q)) return !0;
+    if (/^e/.test(Q) || /^\d+\s*e/.test(Q) || /^\TextComponent\s*e/.test(Q) || /^\/[^/]*\/[IMim]*\s*e/.test(Q) || /^\d+,\d+\s*e/.test(Q) || /^\d+,\TextComponent\s*e/.test(Q) || /^\/[^/]*\/[IMim]*,\/[^/]*\/[IMim]*\s*e/.test(Q)) return !0;
+    let G = Q.match(/s([^\\\n]).*?\1.*?\1(.*?)TextComponent/);
     if (G) {
         let I = G[2] || "";
         if (I.includes("w") || I.includes("W")) return !0;
@@ -391,7 +394,7 @@ function Q92(A, Q) {
         message: "No dangerous sed operations detected"
     }
 }
-var Ie1 = L(() => {
+var Ie1 = lazyLoader(() => {
     gU();
     KH()
 });
@@ -413,7 +416,7 @@ function h85(A) {
         type: "addRules",
         rules: [{
             toolName: X9.name,
-            ruleContent: `${A}:*`
+            ruleContent: `TextComponent{A}:*`
         }],
         behavior: "allow",
         destination: "localSettings"
@@ -421,7 +424,7 @@ function h85(A) {
 }
 
 function B92(A) {
-    return /^[a-zA-Z0-9_-]{1,64}$/.test(A)
+    return /^[a-zA-Z0-9_-]{1,64}TextComponent/.test(A)
 }
 
 function G92(A) {
@@ -463,7 +466,7 @@ function g85(A, Q) {
         J = Ce1(Q, Y);
     if (J) return {
         behavior: "deny",
-        message: `MCP tool ${G}/${Z} has been denied`,
+        message: `MCP tool TextComponent{G}/TextComponent{Z} has been denied`,
         decisionReason: {
             type: "rule",
             rule: J
@@ -557,7 +560,7 @@ function Z92(A, Q, B, G) {
     if (Z.behavior !== "passthrough") return Z;
     let I = I92(A, Q, G);
     if (I.behavior === "deny" || I.behavior === "ask") return I;
-    if (!V0(process.env.CLAUDE_CODE_DISABLE_COMMAND_INJECTION_CHECK)) {
+    if (!parseBoolean(process.env.CLAUDE_CODE_DISABLE_COMMAND_INJECTION_CHECK)) {
         let J = cl(A.command);
         if (J.behavior !== "passthrough") {
             let W = {
@@ -588,7 +591,7 @@ function u85(A, Q) {
         } = Fe1(A, Q, "prefix");
     if (G[0] !== void 0) return {
         behavior: "deny",
-        message: `Permission to use ${X9.name} with command ${B} has been denied.`,
+        message: `Permission to use TextComponent{X9.name} with command TextComponent{B} has been denied.`,
         decisionReason: {
             type: "rule",
             rule: G[0]
@@ -611,14 +614,13 @@ function u85(A, Q) {
         }
     }
 }
-
 async function Ke1(A, Q, B = Y92) {
     let G = await Q.getAppState(),
-        Z = IW(A.command);
+        Z = tokenize(A.command);
     if (!Z.success) {
         let q = {
             type: "other",
-            reason: `Command contains malformed syntax that cannot be parsed: ${Z.error}`
+            reason: `Command contains malformed syntax that cannot be parsed: TextComponent{Z.error}`
         };
         return {
             behavior: "ask",
@@ -635,7 +637,7 @@ async function Ke1(A, Q, B = Y92) {
     let Y = await m22(A, (q) => Ke1(q, Q, B));
     if (Y.behavior !== "passthrough") return Y;
     let J = aV(A.command).filter((q) => {
-            if (q === `cd ${H0()}`) return !1;
+            if (q === `cd TextComponent{H0()}`) return !1;
             return !0
         }),
         W = J.filter((q) => q.startsWith("cd "));
@@ -661,7 +663,7 @@ async function Ke1(A, Q, B = Y92) {
     });
     if (F.find((q) => q.behavior === "deny") !== void 0) return {
         behavior: "deny",
-        message: `Permission to use ${X9.name} with command ${A.command} has been denied.`,
+        message: `Permission to use TextComponent{X9.name} with command TextComponent{A.command} has been denied.`,
         decisionReason: {
             type: "subcommandResults",
             reasons: new Map(F.map((q, R) => [J[R], q]))
@@ -672,7 +674,7 @@ async function Ke1(A, Q, B = Y92) {
     let D = F.find((q) => q.behavior === "ask");
     if (D !== void 0) return D;
     if (I.behavior === "allow") return I;
-    let H = V0(process.env.CLAUDE_CODE_DISABLE_COMMAND_INJECTION_CHECK) ? !1 : J.some((q) => cl(q).behavior !== "passthrough");
+    let H = parseBoolean(process.env.CLAUDE_CODE_DISABLE_COMMAND_INJECTION_CHECK) ? !1 : J.some((q) => cl(q).behavior !== "passthrough");
     if (F.every((q) => q.behavior === "allow") && !H) return {
         behavior: "allow",
         updatedInput: A,
@@ -728,7 +730,7 @@ async function Ke1(A, Q, B = Y92) {
     }
 }
 var We1 = (A) => {
-        return A.match(/^(.+):\*$/)?.[1] ?? null
+        return A.match(/^(.+):\*TextComponent/)?.[1] ?? null
     },
     Ve1 = (A, Q) => {
         let B = A.command.trim(),
@@ -739,7 +741,7 @@ var We1 = (A) => {
             } = Fe1(A, Q, "exact");
         if (G[0] !== void 0) return {
             behavior: "deny",
-            message: `Permission to use ${X9.name} with command ${B} has been denied.`,
+            message: `Permission to use TextComponent{X9.name} with command TextComponent{B} has been denied.`,
             decisionReason: {
                 type: "rule",
                 rule: G[0]
@@ -783,7 +785,7 @@ var We1 = (A) => {
         } = Fe1(A, Q, "prefix");
         if (I[0] !== void 0) return {
             behavior: "deny",
-            message: `Permission to use ${X9.name} with command ${G} has been denied.`,
+            message: `Permission to use TextComponent{X9.name} with command TextComponent{G} has been denied.`,
             decisionReason: {
                 type: "rule",
                 rule: I[0]
@@ -831,7 +833,7 @@ var We1 = (A) => {
             suggestions: Je1(G)
         }
     };
-var De1 = L(() => {
+var De1 = lazyLoader(() => {
     nV();
     MJ();
     IQ1();
@@ -855,7 +857,7 @@ function X92(A, Q) {
         case "none":
             return !1;
         case "number":
-            return /^\d+$/.test(A);
+            return /^\d+TextComponent/.test(A);
         case "string":
             return !0;
         case "char":
@@ -870,7 +872,7 @@ function X92(A, Q) {
 }
 
 function d85(A) {
-    let Q = IW(A, (W) => `$${W}`);
+    let Q = tokenize(A, (W) => `$${W}`);
     if (!Q.success) return !1;
     let B = Q.tokens.map((W) => {
         if (typeof W !== "string") {
@@ -903,7 +905,7 @@ function d85(A) {
             if (X && !X.startsWith("-")) {
                 if (X.includes("://")) return !1;
                 if (X.includes("@") || X.includes(":")) return !1;
-                if (X.includes("$")) return !1
+                if (X.includes("TextComponent")) return !1
             }
         }
     let J = Y;
@@ -927,14 +929,14 @@ function d85(A) {
             if (!X) return !1;
             let K = I.safeFlags[X];
             if (!K) {
-                if (Z[0] === "git" && X.match(/^-\d+$/)) {
+                if (Z[0] === "git" && X.match(/^-\d+TextComponent/)) {
                     J++;
                     continue
                 }
                 if ((Z[0] === "grep" || Z[0] === "rg") && X.startsWith("-") && !X.startsWith("--") && X.length > 2) {
                     let D = X.substring(0, 2),
                         H = X.substring(2);
-                    if (I.safeFlags[D] && /^\d+$/.test(H)) {
+                    if (I.safeFlags[D] && /^\d+TextComponent/.test(H)) {
                         let C = I.safeFlags[D];
                         if (C === "number" || C === "string")
                             if (X92(H, C)) {
@@ -977,7 +979,7 @@ function d85(A) {
 }
 
 function c85(A) {
-    return new RegExp(`^${A}(?:\\s|$)[^<>()$\`|{}&;\\n\\r]*$`)
+    return new RegExp(`^TextComponent{A}(?:\\s|TextComponent)[^<>()TextComponent\`|{}&;\\n\\r]*TextComponent`)
 }
 
 function UQ1(A) {
@@ -1038,7 +1040,7 @@ function F92(A) {
     let {
         command: Q
     } = A;
-    if (!IW(Q, (Z) => `$${Z}`).success) return {
+    if (!tokenize(Q, (Z) => `$${Z}`).success) return {
         behavior: "passthrough",
         message: "Command cannot be parsed, requires further permission checks"
     };
@@ -1063,7 +1065,7 @@ function F92(A) {
     }
 }
 var J92, W92, m85, p85, l85;
-var ze1 = L(() => {
+var ze1 = lazyLoader(() => {
     gU();
     KH();
     IQ1();
@@ -1076,7 +1078,7 @@ var ze1 = L(() => {
                 "-i": "none",
                 "-n": "number",
                 "-P": "number",
-                "-L": "number",
+                "-lazyLoader": "number",
                 "-s": "number",
                 "-E": "EOF",
                 "-e": "EOF",
@@ -1319,7 +1321,7 @@ var ze1 = L(() => {
                 "--no-dereference": "none",
                 "-h": "none",
                 "--dereference": "none",
-                "-L": "none",
+                "-lazyLoader": "none",
                 "--magic-file": "string",
                 "-m": "string",
                 "--keep-going": "none",

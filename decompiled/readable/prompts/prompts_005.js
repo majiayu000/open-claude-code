@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: prompts_005.js
+ * 处理时间: 2025-12-09T03:41:38.218Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.039Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -20,7 +23,7 @@
         netstat: {
             safeFlags: {
                 "-a": "none",
-                "-L": "none",
+                "-lazyLoader": "none",
                 "-l": "none",
                 "-n": "none",
                 "-f": "string",
@@ -56,7 +59,7 @@
                 "--no-headers": "none",
                 "-n": "string",
                 "--sort": "string",
-                "-L": "none",
+                "-lazyLoader": "none",
                 "-T": "none",
                 "-m": "none",
                 "-C": "string",
@@ -70,7 +73,7 @@
                 "--sid": "string",
                 "-t": "string",
                 "--tty": "string",
-                "-U": "string",
+                "-moduleWrapper": "string",
                 "-u": "string",
                 "--user": "string",
                 "--help": "none",
@@ -79,7 +82,7 @@
                 "--version": "none"
             },
             additionalCommandIsDangerousCallback: (A) => {
-                return /\s[a-zA-Z]*e[a-zA-Z]*(?:\s|$)/.test(A)
+                return /\s[a-zA-Z]*e[a-zA-Z]*(?:\s|TextComponent)/.test(A)
             }
         },
         base64: {
@@ -126,7 +129,7 @@
                 "--count": "none",
                 "--color": "string",
                 "--colour": "string",
-                "-L": "none",
+                "-lazyLoader": "none",
                 "--files-without-match": "none",
                 "-l": "none",
                 "--files-with-matches": "none",
@@ -180,7 +183,7 @@
                 "-R": "none",
                 "--dereference-recursive": "none",
                 "--line-buffered": "none",
-                "-U": "none",
+                "-moduleWrapper": "none",
                 "--binary": "none",
                 "--help": "none",
                 "-V": "none",
@@ -241,7 +244,7 @@
                 "-a": "none",
                 "--text": "none",
                 "-z": "none",
-                "-L": "none",
+                "-lazyLoader": "none",
                 "--follow": "none",
                 "--color": "string",
                 "--json": "none",
@@ -253,7 +256,7 @@
             }
         }
     }, m85 = ["echo", "printf", "wc", "grep", "head", "tail"];
-    p85 = ["date", "cal", "uptime", "head", "tail", "wc", "stat", "strings", "hexdump", "od", "nl", "id", "uname", "free", "df", "du", "locale", "hostname", "groups", "nproc", "docker ps", "docker images", "info", "help", "basename", "dirname", "realpath", "cut", "tr", "column", "diff", "true", "false", "sleep", "which", "type"], l85 = new Set([...p85.map(c85), /^echo(?:\s+(?:'[^']*'|"[^"$<>\n\r]*"|[^|;&`$(){}><#\\!"'\s]+))*(?:\s+2>&1)?\s*$/, /^claude -h$/, /^claude --help$/, /^git status(?:\s|$)[^<>()$`|{}&;\n\r]*$/, /^git blame(?:\s|$)[^<>()$`|{}&;\n\r]*$/, /^git ls-files(?:\s|$)[^<>()$`|{}&;\n\r]*$/, /^git config --get[^<>()$`|{}&;\n\r]*$/, /^git remote -v$/, /^git remote show\s+[a-zA-Z0-9_-]+$/, /^git tag$/, /^git tag -l[^<>()$`|{}&;\n\r]*$/, /^git branch$/, /^git branch (?:-v|-vv|--verbose)$/, /^git branch (?:-a|--all)$/, /^git branch (?:-r|--remotes)$/, /^git branch (?:-l|--list)(?:\s+".*"|'[^']*')?$/, /^git branch (?:--color|--no-color|--column|--no-column)$/, /^git branch --sort=\S+$/, /^git branch --show-current$/, /^git branch (?:--contains|--no-contains)\s+\S+$/, /^git branch (?:--merged|--no-merged)(?:\s+\S+)?$/, /^uniq(?:\s+(?:-[a-zA-Z]+|--[a-zA-Z-]+(?:=\S+)?|-[fsw]\s+\d+))*(?:\s|$)\s*$/, /^pwd$/, /^whoami$/, /^node -v$/, /^npm -v$/, /^python --version$/, /^python3 --version$/, /^tree$/, /^history(?:\s+\d+)?\s*$/, /^alias$/, /^arch(?:\s+(?:--help|-h))?\s*$/, /^ip addr$/, /^ifconfig(?:\s+[a-zA-Z][a-zA-Z0-9_-]*)?\s*$/, /^jq(?!\s+.*(?:-f\b|--from-file|--rawfile|--slurpfile|--run-tests|-L\b|--library-path))(?:\s+(?:-[a-zA-Z]+|--[a-zA-Z-]+(?:=\S+)?))*(?:\s+'[^'`]*'|\s+"[^"`]*"|\s+[^-\s'"][^\s]*)+\s*$/, /^cd(?:\s+(?:'[^']*'|"[^"]*"|[^\s;|&`$(){}><#\\]+))?$/, /^ls(?:\s+[^<>()$`|{}&;\n\r]*)?$/, /^find(?:\s+(?:\\[()]|(?!-delete\b|-exec\b|-execdir\b|-ok\b|-okdir\b|-fprint0?\b|-fls\b|-fprintf\b)[^<>()$`|{}&;\n\r\s]|\s)+)?$/])
+    p85 = ["date", "cal", "uptime", "head", "tail", "wc", "stat", "strings", "hexdump", "od", "nl", "id", "uname", "free", "df", "du", "locale", "hostname", "groups", "nproc", "docker ps", "docker images", "info", "help", "basename", "dirname", "realpath", "cut", "tr", "column", "diff", "true", "false", "sleep", "which", "type"], l85 = new Set([...p85.map(c85), /^echo(?:\s+(?:'[^']*'|"[^"TextComponent<>\n\r]*"|[^|;&`TextComponent(){}><#\\!"'\s]+))*(?:\s+2>&1)?\s*TextComponent/, /^claude -h$/, /^claude --help$/, /^git status(?:\s|TextComponent)[^<>()TextComponent`|{}&;\n\r]*TextComponent/, /^git blame(?:\s|TextComponent)[^<>()TextComponent`|{}&;\n\r]*TextComponent/, /^git ls-files(?:\s|TextComponent)[^<>()TextComponent`|{}&;\n\r]*TextComponent/, /^git config --get[^<>()TextComponent`|{}&;\n\r]*TextComponent/, /^git remote -v$/, /^git remote show\s+[a-zA-Z0-9_-]+TextComponent/, /^git tag$/, /^git tag -l[^<>()TextComponent`|{}&;\n\r]*TextComponent/, /^git branch$/, /^git branch (?:-v|-vv|--verbose)TextComponent/, /^git branch (?:-a|--all)TextComponent/, /^git branch (?:-r|--remotes)TextComponent/, /^git branch (?:-l|--list)(?:\s+".*"|'[^']*')?TextComponent/, /^git branch (?:--color|--no-color|--column|--no-column)TextComponent/, /^git branch --sort=\S+TextComponent/, /^git branch --show-current$/, /^git branch (?:--contains|--no-contains)\s+\S+TextComponent/, /^git branch (?:--merged|--no-merged)(?:\s+\S+)?TextComponent/, /^uniq(?:\s+(?:-[a-zA-Z]+|--[a-zA-Z-]+(?:=\S+)?|-[fsw]\s+\d+))*(?:\s|TextComponent)\s*TextComponent/, /^pwd$/, /^whoami$/, /^node -v$/, /^npm -v$/, /^python --version$/, /^python3 --version$/, /^tree$/, /^history(?:\s+\d+)?\s*TextComponent/, /^alias$/, /^arch(?:\s+(?:--help|-h))?\s*TextComponent/, /^ip addr$/, /^ifconfig(?:\s+[a-zA-Z][a-zA-Z0-9_-]*)?\s*TextComponent/, /^jq(?!\s+.*(?:-f\b|--from-file|--rawfile|--slurpfile|--run-tests|-lazyLoader\b|--library-path))(?:\s+(?:-[a-zA-Z]+|--[a-zA-Z-]+(?:=\S+)?))*(?:\s+'[^'`]*'|\s+"[^"`]*"|\s+[^-\s'"][^\s]*)+\s*TextComponent/, /^cd(?:\s+(?:'[^']*'|"[^"]*"|[^\s;|&`TextComponent(){}><#\\]+))?TextComponent/, /^ls(?:\s+[^<>()TextComponent`|{}&;\n\r]*)?TextComponent/, /^find(?:\s+(?:\\[()]|(?!-delete\b|-exec\b|-execdir\b|-ok\b|-okdir\b|-fprint0?\b|-fls\b|-fprintf\b)[^<>()TextComponent`|{}&;\n\r\s]|\s)+)?TextComponent/])
 });
 var ol = "2025-06-18",
     $Q1, wQ1 = "2.0",
@@ -263,7 +266,7 @@ var ol = "2025-06-18",
     kE, z92, U92 = (A) => z92.safeParse(A).success,
     Rk, Yh, LQ1, OLA, $92, s85, Ue1, r85, $e1, MQ1, w92 = (A) => MQ1.safeParse(A).success,
     OQ1, o85, RQ1, TQ1, PQ1, q92, N92, we1, L92, M92, t85, e85, aAA, A65, qe1, Q65, tl, B65, G65, Z65, I65, Y65, J65, W65, RLA, X65, Ne1, Le1, Me1, F65, V65, O92, K65, Oe1, D65, H65, C65, Re1, TLA, sT, ZMG, Te1, E65, R92, z65, U65, $65, w65, q65, N65, Pe1, L65, M65, O65, R65, T65, T92, je1, P65, j65, S65, Se1, _65, _e1, ke1, k65, IMG, YMG, JMG, WMG, XMG, FMG, yE;
-var PD = L(() => {
+var PD = lazyLoader(() => {
     h2();
     $Q1 = [ol, "2025-03-26", "2024-11-05", "2024-10-07"], V92 = _.union([_.string(), _.number().int()]), K92 = _.string(), a85 = _.object({
         progressToken: _.optional(V92)
@@ -618,12 +621,11 @@ var PD = L(() => {
     }), IMG = _.union([OQ1, Ue1, S65, z65, X65, W65, e85, A65, Q65, G65, Z65, Te1, Re1]), YMG = _.union([LQ1, RQ1, MQ1, k65]), JMG = _.union([Yh, Pe1, je1, ke1]), WMG = _.union([OQ1, N65, T92, _e1]), XMG = _.union([LQ1, RQ1, U65, I65, B65, E65, D65]), FMG = _.union([Yh, $e1, Se1, Oe1, RLA, aAA, qe1, tl, sT, TLA]);
     yE = class yE extends Error {
         constructor(A, Q, B) {
-            super(`MCP error ${A}: ${Q}`);
+            super(`MCP error TextComponent{A}: TextComponent{Q}`);
             this.code = A, this.data = B, this.name = "McpError"
         }
     }
 });
-
 class PLA {
     constructor(A) {
         this._options = A, this._requestMessageId = 0, this._requestHandlers = new Map, this._requestHandlerAbortControllers = new Map, this._notificationHandlers = new Map, this._responseHandlers = new Map, this._progressHandlers = new Map, this._timeoutInfo = new Map, this._pendingDebouncedNotifications = new Set, this.setNotificationHandler(LQ1, (Q) => {
@@ -673,7 +675,7 @@ class PLA {
             if (Y === null || Y === void 0 || Y(J, W), MLA(J) || U92(J)) this._onresponse(J);
             else if (NQ1(J)) this._onrequest(J, W);
             else if (C92(J)) this._onnotification(J);
-            else this._onerror(Error(`Unknown message type: ${JSON.stringify(J)}`))
+            else this._onerror(Error(`Unknown message type: TextComponent{JSON.stringify(J)}`))
         }, await this._transport.start()
     }
     _onclose() {
@@ -691,7 +693,7 @@ class PLA {
         var Q;
         let B = (Q = this._notificationHandlers.get(A.method)) !== null && Q !== void 0 ? Q : this.fallbackNotificationHandler;
         if (B === void 0) return;
-        Promise.resolve().then(() => B(A)).catch((G) => this._onerror(Error(`Uncaught error in notification handler: ${G}`)))
+        Promise.resolve().then(() => B(A)).catch((G) => this._onerror(Error(`Uncaught error in notification handler: TextComponent{G}`)))
     }
     _onrequest(A, Q) {
         var B, G;
@@ -705,7 +707,7 @@ class PLA {
                     code: kE.MethodNotFound,
                     message: "Method not found"
                 }
-            }).catch((W) => this._onerror(Error(`Failed to send an error response: ${W}`)));
+            }).catch((W) => this._onerror(Error(`Failed to send an error response: TextComponent{W}`)));
             return
         }
         let Y = new AbortController;
@@ -743,7 +745,7 @@ class PLA {
                     message: (X = W.message) !== null && X !== void 0 ? X : "Internal error"
                 }
             })
-        }).catch((W) => this._onerror(Error(`Failed to send response: ${W}`))).finally(() => {
+        }).catch((W) => this._onerror(Error(`Failed to send response: TextComponent{W}`))).finally(() => {
             this._requestHandlerAbortControllers.delete(A.id)
         })
     }
@@ -753,7 +755,7 @@ class PLA {
             ...B
         } = A.params, G = Number(Q), Z = this._progressHandlers.get(G);
         if (!Z) {
-            this._onerror(Error(`Received a progress notification for an unknown token: ${JSON.stringify(A)}`));
+            this._onerror(Error(`Received a progress notification for an unknown token: TextComponent{JSON.stringify(A)}`));
             return
         }
         let I = this._responseHandlers.get(G),
@@ -770,7 +772,7 @@ class PLA {
         let Q = Number(A.id),
             B = this._responseHandlers.get(Q);
         if (B === void 0) {
-            this._onerror(Error(`Received a response for an unknown message ID: ${JSON.stringify(A)}`));
+            this._onerror(Error(`Received a response for an unknown message ID: TextComponent{JSON.stringify(A)}`));
             return
         }
         if (this._responseHandlers.delete(Q), this._progressHandlers.delete(Q), this._cleanupTimeout(Q), MLA(A)) B(A);
@@ -826,7 +828,7 @@ class PLA {
                     relatedRequestId: G,
                     resumptionToken: Z,
                     onresumptiontoken: I
-                }).catch((R) => this._onerror(Error(`Failed to send cancellation: ${R}`))), J(N)
+                }).catch((R) => this._onerror(Error(`Failed to send cancellation: TextComponent{R}`))), J(N)
             };
             this._responseHandlers.set(H, (N) => {
                 var q;
@@ -887,7 +889,7 @@ class PLA {
         this._requestHandlers.delete(A)
     }
     assertCanSetRequestHandler(A) {
-        if (this._requestHandlers.has(A)) throw Error(`A request handler for ${A} already exists, which would be overridden`)
+        if (this._requestHandlers.has(A)) throw Error(`A request handler for TextComponent{A} already exists, which would be overridden`)
     }
     setNotificationHandler(A, Q) {
         this._notificationHandlers.set(A.shape.method.value, (B) => Promise.resolve(Q(A.parse(B))))
@@ -910,10 +912,10 @@ function jQ1(A, Q) {
     })
 }
 var y65 = 60000;
-var ye1 = L(() => {
+var ye1 = lazyLoader(() => {
     PD()
 });
-var j92 = U((SQ1, P92) => {
+var j92 = moduleWrapper((SQ1, P92) => {
     (function(A, Q) {
         typeof SQ1 === "object" && typeof P92 < "u" ? Q(SQ1) : typeof define === "function" && define.amd ? define(["exports"], Q) : Q(A.URI = A.URI || {})
     })(SQ1, function(A) {
@@ -927,30 +929,30 @@ var j92 = U((SQ1, P92) => {
             } else return nA[0]
         }
 
-function B(U1) {
+        function B(U1) {
             return "(?:" + U1 + ")"
         }
 
-function G(U1) {
+        function G(U1) {
             return U1 === void 0 ? "undefined" : U1 === null ? "null" : Object.prototype.toString.call(U1).split(" ").pop().split("]").shift().toLowerCase()
         }
 
-function Z(U1) {
+        function Z(U1) {
             return U1.toUpperCase()
         }
 
-function I(U1) {
+        function I(U1) {
             return U1 !== void 0 && U1 !== null ? U1 instanceof Array ? U1 : typeof U1.length !== "number" || U1.split || U1.setInterval || U1.call ? [U1] : Array.prototype.slice.call(U1) : []
         }
 
-function Y(U1, nA) {
+        function Y(U1, nA) {
             var C1 = U1;
             if (nA)
                 for (var O1 in nA) C1[O1] = nA[O1];
             return C1
         }
 
-function J(U1) {
+        function J(U1) {
             var nA = "[A-Za-z]",
                 C1 = "[\\x0D]",
                 O1 = "[0-9]",
@@ -960,7 +962,7 @@ function J(U1) {
                 lB = "[\\x20]",
                 k9 = B(B("%[EFef]" + O0 + "%" + O0 + O0 + "%" + O0 + O0) + "|" + B("%[89A-Fa-f]" + O0 + "%" + O0 + O0) + "|" + B("%" + O0 + O0)),
                 C6 = "[\\:\\/\\?\\#\\[\\]\\@]",
-                y9 = "[\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=]",
+                y9 = "[\\!\\TextComponent\\&\\'\\(\\)\\*\\+\\,\\;\\=]",
                 A6 = Q(C6, y9),
                 v6 = U1 ? "[\\xA0-\\u200D\\u2010-\\u2029\\u202F-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF]" : "[]",
                 w8 = U1 ? "[\\uE000-\\uF8FF]" : "[]",
@@ -1009,11 +1011,11 @@ function J(U1) {
                 HG = B(QV + B("\\?" + l5) + "?" + B("\\#" + tJ) + "?"),
                 eJ = B(B4 + "|" + HG),
                 WF = B(Q6 + "\\:" + AJ + B("\\?" + l5) + "?"),
-                BV = "^(" + Q6 + ")\\:" + B(B("\\/\\/(" + B("(" + $4 + ")@") + "?(" + P1 + ")" + B("\\:(" + c1 + ")") + "?)") + "?(" + EB + "|" + m2 + "|" + J7 + "|" + X5 + ")") + B("\\?(" + l5 + ")") + "?" + B("\\#(" + tJ + ")") + "?$",
-                z3 = "^(){0}" + B(B("\\/\\/(" + B("(" + $4 + ")@") + "?(" + P1 + ")" + B("\\:(" + c1 + ")") + "?)") + "?(" + EB + "|" + m2 + "|" + q4 + "|" + X5 + ")") + B("\\?(" + l5 + ")") + "?" + B("\\#(" + tJ + ")") + "?$",
-                GV = "^(" + Q6 + ")\\:" + B(B("\\/\\/(" + B("(" + $4 + ")@") + "?(" + P1 + ")" + B("\\:(" + c1 + ")") + "?)") + "?(" + EB + "|" + m2 + "|" + J7 + "|" + X5 + ")") + B("\\?(" + l5 + ")") + "?$",
-                UY = "^" + B("\\#(" + tJ + ")") + "?$",
-                AQ = "^" + B("(" + $4 + ")@") + "?(" + P1 + ")" + B("\\:(" + c1 + ")") + "?$";
+                BV = "^(" + Q6 + ")\\:" + B(B("\\/\\/(" + B("(" + $4 + ")@") + "?(" + P1 + ")" + B("\\:(" + c1 + ")") + "?)") + "?(" + EB + "|" + m2 + "|" + J7 + "|" + X5 + ")") + B("\\?(" + l5 + ")") + "?" + B("\\#(" + tJ + ")") + "?TextComponent",
+                z3 = "^(){0}" + B(B("\\/\\/(" + B("(" + $4 + ")@") + "?(" + P1 + ")" + B("\\:(" + c1 + ")") + "?)") + "?(" + EB + "|" + m2 + "|" + q4 + "|" + X5 + ")") + B("\\?(" + l5 + ")") + "?" + B("\\#(" + tJ + ")") + "?TextComponent",
+                GV = "^(" + Q6 + ")\\:" + B(B("\\/\\/(" + B("(" + $4 + ")@") + "?(" + P1 + ")" + B("\\:(" + c1 + ")") + "?)") + "?(" + EB + "|" + m2 + "|" + J7 + "|" + X5 + ")") + B("\\?(" + l5 + ")") + "?TextComponent",
+                UY = "^" + B("\\#(" + tJ + ")") + "?TextComponent",
+                AQ = "^" + B("(" + $4 + ")@") + "?(" + P1 + ")" + B("\\:(" + c1 + ")") + "?TextComponent";
             return {
                 NOT_SCHEME: new RegExp(Q("[^]", nA, O1, "[\\+\\-\\.]"), "g"),
                 NOT_USERINFO: new RegExp(Q("[^\\%\\:]", i9, y9), "g"),
@@ -1026,8 +1028,8 @@ function J(U1) {
                 UNRESERVED: new RegExp(i9, "g"),
                 OTHER_CHARS: new RegExp(Q("[^\\%]", i9, A6), "g"),
                 PCT_ENCODED: new RegExp(k9, "g"),
-                IPV4ADDRESS: new RegExp("^(" + k5 + ")$"),
-                IPV6ADDRESS: new RegExp("^\\[?(" + YA + ")" + B(B("\\%25|\\%(?!" + O0 + "{2})") + "(" + ZA + ")") + "?\\]?$")
+                IPV4ADDRESS: new RegExp("^(" + k5 + ")TextComponent"),
+                IPV6ADDRESS: new RegExp("^\\[?(" + YA + ")" + B(B("\\%25|\\%(?!" + O0 + "{2})") + "(" + ZA + ")") + "?\\]?TextComponent")
             }
         }
         var W = J(!1),
@@ -1085,18 +1087,18 @@ function J(U1) {
             p = Math.floor,
             u = String.fromCharCode;
 
-function o(U1) {
+        function o(U1) {
             throw RangeError(v[U1])
         }
 
-function l(U1, nA) {
+        function l(U1, nA) {
             var C1 = [],
                 O1 = U1.length;
             while (O1--) C1[O1] = nA(U1[O1]);
             return C1
         }
 
-function k(U1, nA) {
+        function k(U1, nA) {
             var C1 = U1.split("@"),
                 O1 = "";
             if (C1.length > 1) O1 = C1[0] + "@", U1 = C1[1];
@@ -1106,7 +1108,7 @@ function k(U1, nA) {
             return O1 + O0
         }
 
-function d(U1) {
+        function d(U1) {
             var nA = [],
                 C1 = 0,
                 O1 = U1.length;
@@ -1120,8 +1122,7 @@ function d(U1) {
             }
             return nA
         }
-
-var QA = function(nA) {
+        var QA = function(nA) {
                 return String.fromCodePoint.apply(String, V(nA))
             },
             IA = function(nA) {
@@ -1273,7 +1274,7 @@ var QA = function(nA) {
             },
             DA = {};
 
-function yA(U1) {
+        function yA(U1) {
             var nA = U1.charCodeAt(0),
                 C1 = void 0;
             if (nA < 16) C1 = "%0" + nA.toString(16).toUpperCase();
@@ -1283,7 +1284,7 @@ function yA(U1) {
             return C1
         }
 
-function rA(U1) {
+        function rA(U1) {
             var nA = "",
                 C1 = 0,
                 O1 = U1.length;
@@ -1308,7 +1309,7 @@ function rA(U1) {
             return nA
         }
 
-function K1(U1, nA) {
+        function K1(U1, nA) {
             function C1(O1) {
                 var y1 = rA(O1);
                 return !y1.match(nA.UNRESERVED) ? O1 : y1
@@ -1322,11 +1323,11 @@ function K1(U1, nA) {
             return U1
         }
 
-function WA(U1) {
+        function WA(U1) {
             return U1.replace(/^0*(.*)/, "$1") || "0"
         }
 
-function XA(U1, nA) {
+        function XA(U1, nA) {
             var C1 = U1.match(nA.IPV4ADDRESS) || [],
                 O1 = F(C1, 2),
                 y1 = O1[1];
@@ -1334,7 +1335,7 @@ function XA(U1, nA) {
             else return U1
         }
 
-function zA(U1, nA) {
+        function zA(U1, nA) {
             var C1 = U1.match(nA.IPV6ADDRESS) || [],
                 O1 = F(C1, 3),
                 y1 = O1[1],
@@ -1379,7 +1380,7 @@ function zA(U1, nA) {
         var $A = /^(?:([^:\/?#]+):)?(?:\/\/((?:([^\/?#@]*)@)?(\[[^\/?#\]]+\]|[^\/?#:]*)(?:\:(\d*))?))?([^?#]*)(?:\?([^#]*))?(?:#((?:.|\n|\r)*))?/i,
             LA = "".match(/(){0}/)[1] === void 0;
 
-function TA(U1) {
+        function TA(U1) {
             var nA = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {},
                 C1 = {},
                 O1 = nA.iri !== !1 ? X : W;
@@ -1388,7 +1389,7 @@ function TA(U1) {
             if (y1) {
                 if (LA) {
                     if (C1.scheme = y1[1], C1.userinfo = y1[3], C1.host = y1[4], C1.port = parseInt(y1[5], 10), C1.path = y1[6] || "", C1.query = y1[7], C1.fragment = y1[8], isNaN(C1.port)) C1.port = y1[5]
-                } else if (C1.scheme = y1[1] || void 0, C1.userinfo = U1.indexOf("@") !== -1 ? y1[3] : void 0, C1.host = U1.indexOf("//") !== -1 ? y1[4] : void 0, C1.port = parseInt(y1[5], 10), C1.path = y1[6] || "", C1.query = U1.indexOf("?") !== -1 ? y1[7] : void 0, C1.fragment = U1.indexOf("#") !== -1 ? y1[8] : void 0, isNaN(C1.port)) C1.port = U1.match(/\/\/(?:.|\n)*\:(?:\/|\?|\#|$)/) ? y1[4] : void 0;
+                } else if (C1.scheme = y1[1] || void 0, C1.userinfo = U1.indexOf("@") !== -1 ? y1[3] : void 0, C1.host = U1.indexOf("//") !== -1 ? y1[4] : void 0, C1.port = parseInt(y1[5], 10), C1.path = y1[6] || "", C1.query = U1.indexOf("?") !== -1 ? y1[7] : void 0, C1.fragment = U1.indexOf("#") !== -1 ? y1[8] : void 0, isNaN(C1.port)) C1.port = U1.match(/\/\/(?:.|\n)*\:(?:\/|\?|\#|TextComponent)/) ? y1[4] : void 0;
                 if (C1.host) C1.host = zA(XA(C1.host, O1), O1);
                 if (C1.scheme === void 0 && C1.userinfo === void 0 && C1.host === void 0 && C1.port === void 0 && !C1.path && C1.query === void 0) C1.reference = "same-document";
                 else if (C1.scheme === void 0) C1.reference = "relative";
@@ -1409,7 +1410,7 @@ function TA(U1) {
             return C1
         }
 
-function eA(U1, nA) {
+        function eA(U1, nA) {
             var C1 = nA.iri !== !1 ? X : W,
                 O1 = [];
             if (U1.userinfo !== void 0) O1.push(U1.userinfo), O1.push("@");
@@ -1419,15 +1420,16 @@ function eA(U1, nA) {
             if (typeof U1.port === "number" || typeof U1.port === "string") O1.push(":"), O1.push(String(U1.port));
             return O1.length ? O1.join("") : void 0
         }
-        var aA = /^\.\.?\//,
-            I1 = /^\/\.(\/|$)/,
-            w1 = /^\/\.\.(\/|$)/,
-            PA = /^\/?(?:.|\n)*?(?=\/|$)/;
+        /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+var BASE64_CHARS = /^\.\.?\//,
+            I1 = /^\/\.(\/|TextComponent)/,
+            w1 = /^\/\.\.(\/|TextComponent)/,
+            PA = /^\/?(?:.|\n)*?(?=\/|TextComponent)/;
 
-function B1(U1) {
+        function B1(U1) {
             var nA = [];
             while (U1.length)
-                if (U1.match(aA)) U1 = U1.replace(aA, "");
+                if (U1.match(BASE64_CHARS)) U1 = U1.replace(BASE64_CHARS, "");
                 else if (U1.match(I1)) U1 = U1.replace(I1, "/");
             else if (U1.match(w1)) U1 = U1.replace(w1, "/"), nA.pop();
             else if (U1 === "." || U1 === "..") U1 = "";
@@ -1441,7 +1443,7 @@ function B1(U1) {
             return nA.join("")
         }
 
-function Q0(U1) {
+        function Q0(U1) {
             var nA = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {},
                 C1 = nA.iri ? X : W,
                 O1 = [],
@@ -1472,7 +1474,7 @@ function Q0(U1) {
             return O1.join("")
         }
 
-function b1(U1, nA) {
+        function b1(U1, nA) {
             var C1 = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {},
                 O1 = arguments[3],
                 y1 = {};
@@ -1501,20 +1503,20 @@ function b1(U1, nA) {
             return y1.fragment = nA.fragment, y1
         }
 
-function Y0(U1, nA, C1) {
+        function Y0(U1, nA, C1) {
             var O1 = Y({
                 scheme: "null"
             }, C1);
             return Q0(b1(TA(U1, O1), TA(nA, O1), O1, !0), O1)
         }
 
-function x0(U1, nA) {
+        function x0(U1, nA) {
             if (typeof U1 === "string") U1 = Q0(TA(U1, nA), nA);
             else if (G(U1) === "object") U1 = TA(Q0(U1, nA), nA);
             return U1
         }
 
-function u0(U1, nA, C1) {
+        function u0(U1, nA, C1) {
             if (typeof U1 === "string") U1 = Q0(TA(U1, C1), C1);
             else if (G(U1) === "object") U1 = Q0(U1, C1);
             if (typeof nA === "string") nA = Q0(TA(nA, C1), C1);

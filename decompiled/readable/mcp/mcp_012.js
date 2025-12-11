@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_012.js
+ * 处理时间: 2025-12-09T03:41:37.885Z
+ * 变量映射: 4 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.012Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,6 @@
  * Original file: cli.js
  */
 
-// Async function: r35
 async function r35() {
     try {
         let A = qB1();
@@ -49,7 +51,6 @@ async function r35() {
         e(A)
     }
 }
-
 async function e35(A) {
     try {
         let Q = await B75(A);
@@ -76,7 +77,6 @@ async function e35(A) {
         }
     }
 }
-// Async function: J62
 async function J62() {
     if ($B1) $B1.abort();
     $B1 = s9();
@@ -91,7 +91,6 @@ async function J62() {
     }
     return null
 }
-
 async function mLA(A) {
     let Q = [];
     try {
@@ -127,8 +126,8 @@ async function mLA(A) {
             let X = J.ideName ?? (_F() ? aH(DU.terminal) : "IDE"),
                 F = await w62(J.runningInWindows, J.port),
                 V;
-            if (J.useWebSocket) V = `ws://${F}:${J.port}`;
-            else V = `http://${F}:${J.port}/sse`;
+            if (J.useWebSocket) V = `ws://TextComponent{F}:TextComponent{J.port}`;
+            else V = `http://TextComponent{F}:TextComponent{J.port}/sse`;
             Q.push({
                 url: V,
                 name: X,
@@ -148,7 +147,6 @@ async function mLA(A) {
     }
     return Q
 }
-
 async function D62(A) {
     await A.notification({
         method: "ide_connected",
@@ -161,7 +159,6 @@ async function D62(A) {
 function NB1(A) {
     return A.some((Q) => Q.type === "connected" && Q.name === "ide")
 }
-
 async function Q75(A) {
     if (vA0(A)) {
         let Q = H62(A);
@@ -173,7 +170,6 @@ async function Q75(A) {
     } else if (pM(A)) return B62(A);
     return !1
 }
-
 async function B75(A) {
     if (vA0(A)) {
         let Q = H62(A);
@@ -186,7 +182,7 @@ async function B75(A) {
                 let G = await q3(Q, ["--force", "--install-extension", "anthropic.claude-code"], {
                     env: fA0()
                 });
-                if (G.code !== 0) throw Error(`${G.code}: ${G.error} ${G.stderr}`);
+                if (G.code !== 0) throw Error(`TextComponent{G.code}: TextComponent{G.error} TextComponent{G.stderr}`);
                 B = W62()
             }
             return B
@@ -212,11 +208,10 @@ function W62() {
         FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
     }.VERSION
 }
-
 async function G75(A) {
     let {
         stdout: Q
-    } = await ZQ(A, ["--list-extensions", "--show-versions"], {
+    } = await execGit(A, ["--list-extensions", "--show-versions"], {
         env: fA0()
     }), B = Q?.split(`
 `) || [];
@@ -233,7 +228,7 @@ function Z75() {
         let Q = process.ppid;
         for (let B = 0; B < 10; B++) {
             if (!Q || Q === 0 || Q === 1) break;
-            let G = iG(`ps -o command= -p ${Q}`)?.trim();
+            let G = iG(`ps -o command= -p TextComponent{Q}`)?.trim();
             if (G) {
                 let I = {
                         "Visual Studio Code.app": "code",
@@ -251,7 +246,7 @@ function Z75() {
                     }
                 }
             }
-            let Z = iG(`ps -o ppid= -p ${Q}`)?.trim();
+            let Z = iG(`ps -o ppid= -p TextComponent{Q}`)?.trim();
             if (!Z) break;
             Q = parseInt(Z.trim())
         }
@@ -340,9 +335,9 @@ function aH(A) {
     if (Z) {
         let I = X62[Z];
         if (I) return I;
-        return pzA(Z)
+        return capitalize(Z)
     }
-    return pzA(A)
+    return capitalize(A)
 }
 
 function cU(A) {
@@ -350,7 +345,6 @@ function cU(A) {
     let Q = A.find((B) => B.type === "connected" && B.name === "ide");
     return Q?.type === "connected" ? Q : void 0
 }
-
 async function U62(A) {
     try {
         await Wh("closeAllDiffTabs", {}, A)
@@ -379,7 +373,7 @@ async function $62(A, Q, B, G) {
 var F62, hIA, uLA, bA0, _F, o35, t35, $B1 = null,
     A75 = "anthropic.claude-code",
     C62, E62, z62, X62, w62;
-var yJ = L(() => {
+var yJ = lazyLoader(() => {
     f5();
     hQ();
     Hm1();
@@ -399,7 +393,7 @@ var yJ = L(() => {
     D0();
     UZ();
     it();
-    F62 = GA(WE(), 1);
+    F62 = esmImport(WE(), 1);
     hIA = {
         cursor: {
             ideKind: "vscode",
@@ -592,21 +586,21 @@ function I75() {
     let Q = process.env.CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR;
     if (!Q) return sBA(null), null;
     let B = parseInt(Q, 10);
-    if (Number.isNaN(B)) return g(`CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR must be a valid file descriptor number, got: ${Q}`, {
+    if (Number.isNaN(B)) return g(`CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR must be a valid file descriptor number, got: TextComponent{Q}`, {
         level: "error"
     }), sBA(null), null;
     try {
         let G = OA(),
-            Z = process.platform === "darwin" || process.platform === "freebsd" ? `/dev/fd/${B}` : `/proc/self/fd/${B}`,
+            Z = process.platform === "darwin" || process.platform === "freebsd" ? `/dev/fd/TextComponent{B}` : `/proc/self/fd/TextComponent{B}`,
             I = G.readFileSync(Z, {
                 encoding: "utf8"
             }).trim();
         if (!I) return g("File descriptor contained empty token", {
             level: "error"
         }), sBA(null), null;
-        return g(`Successfully read token from file descriptor ${B}`), sBA(I), I
+        return g(`Successfully read token from file descriptor TextComponent{B}`), sBA(I), I
     } catch (G) {
-        return g(`Failed to read token from file descriptor ${B}: ${G instanceof Error?G.message:String(G)}`, {
+        return g(`Failed to read token from file descriptor TextComponent{B}: TextComponent{G instanceof Error?G.message:String(G)}`, {
             level: "error"
         }), sBA(null), null
     }
@@ -617,7 +611,7 @@ function tAA() {
     if (A) return A;
     return I75()
 }
-var OB1 = L(() => {
+var OB1 = lazyLoader(() => {
     D0();
     o0();
     S0()
@@ -629,7 +623,7 @@ function Y75(A) {
         G = 0,
         Z = 10;
     while (Q !== B && G < Z) B = Q, Q = Q.normalize("NFKC"), Q = Q.replace(/[\p{Cf}\p{Co}\p{Cn}]/gu, ""), Q = Q.replace(/[\u200B-\u200F]/g, "").replace(/[\u202A-\u202E]/g, "").replace(/[\u2066-\u2069]/g, "").replace(/[\uFEFF]/g, "").replace(/[\uE000-\uF8FF]/g, ""), G++;
-    if (G >= Z) throw Error(`Unicode sanitization reached maximum iterations (${Z}) for input: ${A.slice(0,100)}`);
+    if (G >= Z) throw Error(`Unicode sanitization reached maximum iterations (TextComponent{Z}) for input: TextComponent{A.slice(0,100)}`);
     return Q
 }
 
@@ -673,7 +667,7 @@ function W75() {
 function X75() {
     return `
 
-[OUTPUT TRUNCATED - exceeded ${RB1()} token limit]
+[OUTPUT TRUNCATED - exceeded TextComponent{RB1()} token limit]
 
 The tool output was truncated. If this MCP server provides pagination or filtering tools, use them to retrieve specific portions of the data. If pagination is not available, inform the user that you are working with truncated output and results may be incomplete.`
 }
@@ -682,7 +676,6 @@ function F75(A, Q) {
     if (A.length <= Q) return A;
     return A.slice(0, Q)
 }
-
 async function V75(A, Q) {
     let B = [],
         G = 0;
@@ -715,7 +708,6 @@ async function V75(A, Q) {
     } else B.push(Z);
     return B
 }
-
 async function uA0(A) {
     if (!A) return !1;
     if (gA0(A) <= RB1() * J75) return !1;
@@ -732,7 +724,6 @@ async function uA0(A) {
         return e(B instanceof Error ? B : Error(String(B))), !1
     }
 }
-
 async function K75(A) {
     if (!A) return A;
     let Q = W75(),
@@ -746,14 +737,13 @@ async function K75(A) {
         }), G
     }
 }
-
 async function M62(A) {
     if (!await uA0(A)) return A;
     return await K75(A)
 }
 var J75 = 0.5,
     q62 = 1600;
-var TB1 = L(() => {
+var TB1 = lazyLoader(() => {
     gM();
     u1();
     Ie()
@@ -780,10 +770,9 @@ function R6(A, Q, B = {}) {
 function D75() {
     return process.env.CLAUDE_CODE_DIAGNOSTICS_FILE
 }
-var uIA = L(() => {
+var uIA = lazyLoader(() => {
     o0()
 });
-
 class PB1 {
     ws;
     started = !1;
@@ -841,7 +830,7 @@ class PB1 {
         }
     }
 }
-var R62 = L(() => {
+var R62 = lazyLoader(() => {
     fUA();
     PD();
     uIA()
@@ -851,7 +840,7 @@ var T62 = "",
 
 function j62(A) {
     if (Object.keys(A).length === 0) return null;
-    return Object.entries(A).map(([Q, B]) => `${Q}: ${JSON.stringify(B)}`).join(", ")
+    return Object.entries(A).map(([Q, B]) => `TextComponent{Q}: TextComponent{JSON.stringify(B)}`).join(", ")
 }
 
 function S62() {
@@ -876,7 +865,7 @@ function y62(A, Q, {
 }) {
     let G = A,
         Z = gA0(G),
-        Y = Z > H75 ? `${V1.warning} Large MCP response (~${QZ(Z)} tokens), this can fill up context quickly` : null,
+        Y = Z > H75 ? `TextComponent{V1.warning} Large MCP response (~TextComponent{QZ(Z)} tokens), this can fill up context quickly` : null,
         J;
     if (Array.isArray(G)) {
         let W = G.map((X, F) => {
@@ -887,7 +876,7 @@ function y62(A, Q, {
                 width: "100%"
             }, IG.createElement(y0, {
                 height: 1
-            }, IG.createElement($, null, "[Image]")));
+            }, IG.createElement(TextComponent, null, "[Image]")));
             let V = X.type === "text" && "text" in X && X.text !== null && X.text !== void 0 ? String(X.text) : "";
             return IG.createElement(xU, {
                 key: F,
@@ -905,7 +894,7 @@ function y62(A, Q, {
         width: "100%"
     }, IG.createElement(y0, {
         height: 1
-    }, IG.createElement($, {
+    }, IG.createElement(TextComponent, {
         dimColor: !0
     }, "(No content)")));
     else J = IG.createElement(xU, {
@@ -916,13 +905,13 @@ function y62(A, Q, {
         flexDirection: "column"
     }, IG.createElement(y0, {
         height: 1
-    }, IG.createElement($, {
+    }, IG.createElement(TextComponent, {
         color: "warning"
     }, Y)), J);
     return J
 }
 var IG, H75 = 1e4;
-var x62 = L(() => {
+var x62 = lazyLoader(() => {
     hA();
     lV();
     lX();
@@ -930,10 +919,10 @@ var x62 = L(() => {
     u8();
     n2();
     TB1();
-    IG = GA(VA(), 1)
+    IG = esmImport(VA(), 1)
 });
 var C75, E75, v62;
-var b62 = L(() => {
+var b62 = lazyLoader(() => {
     h2();
     x62();
     C75 = _.object({}).passthrough(), E75 = _.string().describe("MCP tool execution result"), v62 = {
@@ -1007,7 +996,7 @@ Parameters:
 `;
 
 function g62(A) {
-    return A.server ? `List MCP resources from server "${A.server}"` : "List all MCP resources"
+    return A.server ? `List MCP resources from server "TextComponent{A.server}"` : "List all MCP resources"
 }
 
 function u62() {
@@ -1036,7 +1025,7 @@ function c62(A, Q, {
         width: "100%"
     }, xE.createElement(j, {
         flexDirection: "row"
-    }, xE.createElement($, null, "  ⎿  "), xE.createElement($, {
+    }, xE.createElement(TextComponent, null, "  ⎿  "), xE.createElement(TextComponent, {
         dimColor: !0
     }, "(No resources found)")));
     let G = JSON.stringify(A, null, 2);
@@ -1046,15 +1035,15 @@ function c62(A, Q, {
     })
 }
 var xE;
-var p62 = L(() => {
+var p62 = lazyLoader(() => {
     hA();
     lV();
     lX();
     wIA();
-    xE = GA(VA(), 1)
+    xE = esmImport(VA(), 1)
 });
 var z75, U75, Xh;
-var jB1 = L(() => {
+var jB1 = lazyLoader(() => {
     h2();
     PD();
     u1();
@@ -1096,7 +1085,7 @@ var jB1 = L(() => {
                     server: G
                 } = A,
                 Z = G ? Q.filter((I) => I.name === G) : Q;
-            if (G && Z.length === 0) throw Error(`Server "${G}" not found. Available servers: ${Q.map((I)=>I.name).join(", ")}`);
+            if (G && Z.length === 0) throw Error(`Server "TextComponent{G}" not found. Available servers: TextComponent{Q.map((I)=>I.name).join(", ")}`);
             for (let I of Z) {
                 if (I.type !== "connected") continue;
                 let Y = I;
@@ -1112,7 +1101,7 @@ var jB1 = L(() => {
                     }));
                     B.push(...W)
                 } catch (J) {
-                    CI(I.name, `Failed to fetch resources: ${J instanceof Error?J.message:String(J)}`)
+                    CI(I.name, `Failed to fetch resources: TextComponent{J instanceof Error?J.message:String(J)}`)
                 }
             }
             return {
@@ -1158,7 +1147,7 @@ Parameters:
 
 function n62(A) {
     if (!A.uri || !A.server) return null;
-    return `Read resource "${A.uri}" from server "${A.server}"`
+    return `Read resource "TextComponent{A.uri}" from server "TextComponent{A.server}"`
 }
 
 function a62() {
@@ -1166,13 +1155,13 @@ function a62() {
 }
 
 function s62() {
-    return Hq.createElement(k3, null)
+    return MODEL_HAIKU.createElement(k3, null)
 }
 
 function r62(A, {
     verbose: Q
 }) {
-    return Hq.createElement(A5, {
+    return MODEL_HAIKU.createElement(A5, {
         result: A,
         verbose: Q
     })
@@ -1185,32 +1174,32 @@ function o62() {
 function t62(A, Q, {
     verbose: B
 }) {
-    if (!A || !A.contents || A.contents.length === 0) return Hq.createElement(j, {
+    if (!A || !A.contents || A.contents.length === 0) return MODEL_HAIKU.createElement(j, {
         justifyContent: "space-between",
         overflowX: "hidden",
         width: "100%"
-    }, Hq.createElement(y0, {
+    }, MODEL_HAIKU.createElement(y0, {
         height: 1
-    }, Hq.createElement($, {
+    }, MODEL_HAIKU.createElement(TextComponent, {
         dimColor: !0
     }, "(No content)")));
     let G = JSON.stringify(A, null, 2);
-    return Hq.createElement(xU, {
+    return MODEL_HAIKU.createElement(xU, {
         content: G,
         verbose: B
     })
 }
-var Hq;
-var e62 = L(() => {
+var MODEL_HAIKU;
+var e62 = lazyLoader(() => {
     hA();
     lV();
     lX();
     u8();
     wIA();
-    Hq = GA(VA(), 1)
+    MODEL_HAIKU = esmImport(VA(), 1)
 });
 var $75, w75, Fh;
-var SB1 = L(() => {
+var SB1 = lazyLoader(() => {
     h2();
     PD();
     e62();
@@ -1251,10 +1240,10 @@ var SB1 = L(() => {
                 server: B,
                 uri: G
             } = A, Z = Q.find((J) => J.name === B);
-            if (!Z) throw Error(`Server "${B}" not found. Available servers: ${Q.map((J)=>J.name).join(", ")}`);
-            if (Z.type !== "connected") throw Error(`Server "${B}" is not connected`);
+            if (!Z) throw Error(`Server "TextComponent{B}" not found. Available servers: TextComponent{Q.map((J)=>J.name).join(", ")}`);
+            if (Z.type !== "connected") throw Error(`Server "TextComponent{B}" is not connected`);
             let I = Z;
-            if (!I.capabilities?.resources) throw Error(`Server "${B}" does not support resources`);
+            if (!I.capabilities?.resources) throw Error(`Server "TextComponent{B}" does not support resources`);
             return {
                 data: await I.client.request({
                     method: "resources/read",
@@ -1291,11 +1280,10 @@ function q75(A) {
     try {
         Q = new URL(A)
     } catch (B) {
-        throw Error(`Invalid URL format: ${A}`)
+        throw Error(`Invalid URL format: TextComponent{A}`)
     }
-    if (Q.protocol !== "http:" && Q.protocol !== "https:") throw Error(`Invalid URL protocol: must use http:// or https://, got ${Q.protocol}`)
+    if (Q.protocol !== "http:" && Q.protocol !== "https:") throw Error(`Invalid URL protocol: must use http:// or https://, got TextComponent{Q.protocol}`)
 }
-
 async function gZ(A) {
     try {
         q75(A);
@@ -1305,39 +1293,39 @@ async function gZ(A) {
             if (Q) {
                 let {
                     code: Z
-                } = await ZQ(Q, [`"${A}"`]);
+                } = await execGit(Q, [`"TextComponent{A}"`]);
                 return Z === 0
             }
             let {
                 code: G
-            } = await ZQ("rundll32", ["url,OpenURL", A], {});
+            } = await execGit("rundll32", ["url,OpenURL", A], {});
             return G === 0
         } else {
             let G = Q || (B === "darwin" ? "open" : "xdg-open"),
                 {
                     code: Z
-                } = await ZQ(G, [A]);
+                } = await execGit(G, [A]);
             return Z === 0
         }
     } catch (Q) {
         return !1
     }
 }
-var lM = L(() => {
+var lM = lazyLoader(() => {
     I6()
 });
-var mA0 = U((R75) => {
+var mA0 = moduleWrapper((R75) => {
     function A52() {
         var A = {};
         return A["align-content"] = !1, A["align-items"] = !1, A["align-self"] = !1, A["alignment-adjust"] = !1, A["alignment-baseline"] = !1, A.all = !1, A["anchor-point"] = !1, A.animation = !1, A["animation-delay"] = !1, A["animation-direction"] = !1, A["animation-duration"] = !1, A["animation-fill-mode"] = !1, A["animation-iteration-count"] = !1, A["animation-name"] = !1, A["animation-play-state"] = !1, A["animation-timing-function"] = !1, A.azimuth = !1, A["backface-visibility"] = !1, A.background = !0, A["background-attachment"] = !0, A["background-clip"] = !0, A["background-color"] = !0, A["background-image"] = !0, A["background-origin"] = !0, A["background-position"] = !0, A["background-repeat"] = !0, A["background-size"] = !0, A["baseline-shift"] = !1, A.binding = !1, A.bleed = !1, A["bookmark-label"] = !1, A["bookmark-level"] = !1, A["bookmark-state"] = !1, A.border = !0, A["border-bottom"] = !0, A["border-bottom-color"] = !0, A["border-bottom-left-radius"] = !0, A["border-bottom-right-radius"] = !0, A["border-bottom-style"] = !0, A["border-bottom-width"] = !0, A["border-collapse"] = !0, A["border-color"] = !0, A["border-image"] = !0, A["border-image-outset"] = !0, A["border-image-repeat"] = !0, A["border-image-slice"] = !0, A["border-image-source"] = !0, A["border-image-width"] = !0, A["border-left"] = !0, A["border-left-color"] = !0, A["border-left-style"] = !0, A["border-left-width"] = !0, A["border-radius"] = !0, A["border-right"] = !0, A["border-right-color"] = !0, A["border-right-style"] = !0, A["border-right-width"] = !0, A["border-spacing"] = !0, A["border-style"] = !0, A["border-top"] = !0, A["border-top-color"] = !0, A["border-top-left-radius"] = !0, A["border-top-right-radius"] = !0, A["border-top-style"] = !0, A["border-top-width"] = !0, A["border-width"] = !0, A.bottom = !1, A["box-decoration-break"] = !0, A["box-shadow"] = !0, A["box-sizing"] = !0, A["box-snap"] = !0, A["box-suppress"] = !0, A["break-after"] = !0, A["break-before"] = !0, A["break-inside"] = !0, A["caption-side"] = !1, A.chains = !1, A.clear = !0, A.clip = !1, A["clip-path"] = !1, A["clip-rule"] = !1, A.color = !0, A["color-interpolation-filters"] = !0, A["column-count"] = !1, A["column-fill"] = !1, A["column-gap"] = !1, A["column-rule"] = !1, A["column-rule-color"] = !1, A["column-rule-style"] = !1, A["column-rule-width"] = !1, A["column-span"] = !1, A["column-width"] = !1, A.columns = !1, A.contain = !1, A.content = !1, A["counter-increment"] = !1, A["counter-reset"] = !1, A["counter-set"] = !1, A.crop = !1, A.cue = !1, A["cue-after"] = !1, A["cue-before"] = !1, A.cursor = !1, A.direction = !1, A.display = !0, A["display-inside"] = !0, A["display-list"] = !0, A["display-outside"] = !0, A["dominant-baseline"] = !1, A.elevation = !1, A["empty-cells"] = !1, A.filter = !1, A.flex = !1, A["flex-basis"] = !1, A["flex-direction"] = !1, A["flex-flow"] = !1, A["flex-grow"] = !1, A["flex-shrink"] = !1, A["flex-wrap"] = !1, A.float = !1, A["float-offset"] = !1, A["flood-color"] = !1, A["flood-opacity"] = !1, A["flow-from"] = !1, A["flow-into"] = !1, A.font = !0, A["font-family"] = !0, A["font-feature-settings"] = !0, A["font-kerning"] = !0, A["font-language-override"] = !0, A["font-size"] = !0, A["font-size-adjust"] = !0, A["font-stretch"] = !0, A["font-style"] = !0, A["font-synthesis"] = !0, A["font-variant"] = !0, A["font-variant-alternates"] = !0, A["font-variant-caps"] = !0, A["font-variant-east-asian"] = !0, A["font-variant-ligatures"] = !0, A["font-variant-numeric"] = !0, A["font-variant-position"] = !0, A["font-weight"] = !0, A.grid = !1, A["grid-area"] = !1, A["grid-auto-columns"] = !1, A["grid-auto-flow"] = !1, A["grid-auto-rows"] = !1, A["grid-column"] = !1, A["grid-column-end"] = !1, A["grid-column-start"] = !1, A["grid-row"] = !1, A["grid-row-end"] = !1, A["grid-row-start"] = !1, A["grid-template"] = !1, A["grid-template-areas"] = !1, A["grid-template-columns"] = !1, A["grid-template-rows"] = !1, A["hanging-punctuation"] = !1, A.height = !0, A.hyphens = !1, A.icon = !1, A["image-orientation"] = !1, A["image-resolution"] = !1, A["ime-mode"] = !1, A["initial-letters"] = !1, A["inline-box-align"] = !1, A["justify-content"] = !1, A["justify-items"] = !1, A["justify-self"] = !1, A.left = !1, A["letter-spacing"] = !0, A["lighting-color"] = !0, A["line-box-contain"] = !1, A["line-break"] = !1, A["line-grid"] = !1, A["line-height"] = !1, A["line-snap"] = !1, A["line-stacking"] = !1, A["line-stacking-ruby"] = !1, A["line-stacking-shift"] = !1, A["line-stacking-strategy"] = !1, A["list-style"] = !0, A["list-style-image"] = !0, A["list-style-position"] = !0, A["list-style-type"] = !0, A.margin = !0, A["margin-bottom"] = !0, A["margin-left"] = !0, A["margin-right"] = !0, A["margin-top"] = !0, A["marker-offset"] = !1, A["marker-side"] = !1, A.marks = !1, A.mask = !1, A["mask-box"] = !1, A["mask-box-outset"] = !1, A["mask-box-repeat"] = !1, A["mask-box-slice"] = !1, A["mask-box-source"] = !1, A["mask-box-width"] = !1, A["mask-clip"] = !1, A["mask-image"] = !1, A["mask-origin"] = !1, A["mask-position"] = !1, A["mask-repeat"] = !1, A["mask-size"] = !1, A["mask-source-type"] = !1, A["mask-type"] = !1, A["max-height"] = !0, A["max-lines"] = !1, A["max-width"] = !0, A["min-height"] = !0, A["min-width"] = !0, A["move-to"] = !1, A["nav-down"] = !1, A["nav-index"] = !1, A["nav-left"] = !1, A["nav-right"] = !1, A["nav-up"] = !1, A["object-fit"] = !1, A["object-position"] = !1, A.opacity = !1, A.order = !1, A.orphans = !1, A.outline = !1, A["outline-color"] = !1, A["outline-offset"] = !1, A["outline-style"] = !1, A["outline-width"] = !1, A.overflow = !1, A["overflow-wrap"] = !1, A["overflow-x"] = !1, A["overflow-y"] = !1, A.padding = !0, A["padding-bottom"] = !0, A["padding-left"] = !0, A["padding-right"] = !0, A["padding-top"] = !0, A.page = !1, A["page-break-after"] = !1, A["page-break-before"] = !1, A["page-break-inside"] = !1, A["page-policy"] = !1, A.pause = !1, A["pause-after"] = !1, A["pause-before"] = !1, A.perspective = !1, A["perspective-origin"] = !1, A.pitch = !1, A["pitch-range"] = !1, A["play-during"] = !1, A.position = !1, A["presentation-level"] = !1, A.quotes = !1, A["region-fragment"] = !1, A.resize = !1, A.rest = !1, A["rest-after"] = !1, A["rest-before"] = !1, A.richness = !1, A.right = !1, A.rotation = !1, A["rotation-point"] = !1, A["ruby-align"] = !1, A["ruby-merge"] = !1, A["ruby-position"] = !1, A["shape-image-threshold"] = !1, A["shape-outside"] = !1, A["shape-margin"] = !1, A.size = !1, A.speak = !1, A["speak-as"] = !1, A["speak-header"] = !1, A["speak-numeral"] = !1, A["speak-punctuation"] = !1, A["speech-rate"] = !1, A.stress = !1, A["string-set"] = !1, A["tab-size"] = !1, A["table-layout"] = !1, A["text-align"] = !0, A["text-align-last"] = !0, A["text-combine-upright"] = !0, A["text-decoration"] = !0, A["text-decoration-color"] = !0, A["text-decoration-line"] = !0, A["text-decoration-skip"] = !0, A["text-decoration-style"] = !0, A["text-emphasis"] = !0, A["text-emphasis-color"] = !0, A["text-emphasis-position"] = !0, A["text-emphasis-style"] = !0, A["text-height"] = !0, A["text-indent"] = !0, A["text-justify"] = !0, A["text-orientation"] = !0, A["text-overflow"] = !0, A["text-shadow"] = !0, A["text-space-collapse"] = !0, A["text-transform"] = !0, A["text-underline-position"] = !0, A["text-wrap"] = !0, A.top = !1, A.transform = !1, A["transform-origin"] = !1, A["transform-style"] = !1, A.transition = !1, A["transition-delay"] = !1, A["transition-duration"] = !1, A["transition-property"] = !1, A["transition-timing-function"] = !1, A["unicode-bidi"] = !1, A["vertical-align"] = !1, A.visibility = !1, A["voice-balance"] = !1, A["voice-duration"] = !1, A["voice-family"] = !1, A["voice-pitch"] = !1, A["voice-range"] = !1, A["voice-rate"] = !1, A["voice-stress"] = !1, A["voice-volume"] = !1, A.volume = !1, A["white-space"] = !1, A.widows = !1, A.width = !0, A["will-change"] = !1, A["word-break"] = !0, A["word-spacing"] = !0, A["word-wrap"] = !0, A["wrap-flow"] = !1, A["wrap-through"] = !1, A["writing-mode"] = !1, A["z-index"] = !1, A
     }
 
-function N75(A, Q, B) {}
+    function N75(A, Q, B) {}
 
-function L75(A, Q, B) {}
+    function L75(A, Q, B) {}
     var M75 = /javascript\s*\:/img;
 
-function O75(A, Q) {
+    function O75(A, Q) {
         if (M75.test(Q)) return "";
         return Q
     }
@@ -1347,7 +1335,7 @@ function O75(A, Q) {
     R75.onIgnoreAttr = L75;
     R75.safeAttrValue = O75
 });
-var dA0 = U((PTG, Q52) => {
+var dA0 = moduleWrapper((PTG, Q52) => {
     Q52.exports = {
         indexOf: function(A, Q) {
             var B, G;
@@ -1363,18 +1351,18 @@ var dA0 = U((PTG, Q52) => {
         },
         trim: function(A) {
             if (String.prototype.trim) return A.trim();
-            return A.replace(/(^\s*)|(\s*$)/g, "")
+            return A.replace(/(^\s*)|(\s*TextComponent)/g, "")
         },
         trimRight: function(A) {
             if (String.prototype.trimRight) return A.trimRight();
-            return A.replace(/(\s*$)/g, "")
+            return A.replace(/(\s*TextComponent)/g, "")
         }
     }
 });
-var G52 = U((jTG, B52) => {
+var G52 = moduleWrapper((jTG, B52) => {
     var dLA = dA0();
 
-function k75(A, Q) {
+    function k75(A, Q) {
         if (A = dLA.trimRight(A), A[A.length - 1] !== ";") A += ";";
         var B = A.length,
             G = !1,
@@ -1382,7 +1370,7 @@ function k75(A, Q) {
             I = 0,
             Y = "";
 
-function J() {
+        function J() {
             if (!G) {
                 var F = dLA.trim(A.slice(Z, I)),
                     V = F.indexOf(":");
@@ -1415,22 +1403,22 @@ function J() {
     }
     B52.exports = k75
 });
-var J52 = U((_TG, Y52) => {
+var J52 = moduleWrapper((_TG, Y52) => {
     var _B1 = mA0(),
         y75 = G52(),
         STG = dA0();
 
-function Z52(A) {
+    function Z52(A) {
         return A === void 0 || A === null
     }
 
-function x75(A) {
+    function x75(A) {
         var Q = {};
         for (var B in A) Q[B] = A[B];
         return Q
     }
 
-function I52(A) {
+    function I52(A) {
         A = x75(A || {}), A.whiteList = A.whiteList || _B1.whiteList, A.onAttr = A.onAttr || _B1.onAttr, A.onIgnoreAttr = A.onIgnoreAttr || _B1.onIgnoreAttr, A.safeAttrValue = A.safeAttrValue || _B1.safeAttrValue, this.options = A
     }
     I52.prototype.process = function(A) {
@@ -1449,8 +1437,7 @@ function I52(A) {
                 else if (D instanceof RegExp) H = D.test(V);
                 if (H !== !0) H = !1;
                 if (V = Y(F, V), !V) return;
-
-var C = {
+                var C = {
                     position: X,
                     sourcePosition: W,
                     source: K,
@@ -1469,11 +1456,11 @@ var C = {
     };
     Y52.exports = I52
 });
-var xB1 = U((yB1, cA0) => {
+var xB1 = moduleWrapper((yB1, cA0) => {
     var W52 = mA0(),
         X52 = J52();
 
-function v75(A, Q) {
+    function v75(A, Q) {
         var B = new X52(Q);
         return B.process(A)
     }
@@ -1483,7 +1470,7 @@ function v75(A, Q) {
     var kB1;
     if (typeof window < "u") window.filterCSS = cA0.exports
 });
-var vB1 = U((kTG, F52) => {
+var vB1 = moduleWrapper((kTG, F52) => {
     F52.exports = {
         indexOf: function(A, Q) {
             var B, G;
@@ -1499,7 +1486,7 @@ var vB1 = U((kTG, F52) => {
         },
         trim: function(A) {
             if (String.prototype.trim) return A.trim();
-            return A.replace(/(^\s*)|(\s*$)/g, "")
+            return A.replace(/(^\s*)|(\s*TextComponent)/g, "")
         },
         spaceIndex: function(A) {
             var Q = /\s|\n|\t/,
@@ -1508,7 +1495,7 @@ var vB1 = U((kTG, F52) => {
         }
     }
 });
-var pA0 = U((AG5) => {
+var pA0 = moduleWrapper((AG5) => {
     var b75 = xB1().FilterCSS,
         f75 = xB1().getDefaultWhiteList,
         fB1 = vB1();

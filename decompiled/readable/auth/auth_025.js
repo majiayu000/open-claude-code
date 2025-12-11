@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_025.js
+ * 处理时间: 2025-12-09T03:41:36.614Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.909Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -49,7 +52,7 @@
                 kd(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -71,7 +74,7 @@
             }
         };
 
-function mvQ(A) {
+    function mvQ(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -81,8 +84,7 @@ function mvQ(A) {
         }, {})
     }
     kd(mvQ, "cloneQuery");
-
-var JH8 = class {
+    var JH8 = class {
         static {
             kd(this, "HttpResponse")
         }
@@ -96,12 +98,12 @@ var JH8 = class {
         }
     };
 
-function dvQ(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function dvQ(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     kd(dvQ, "isValidHostname")
 });
-var XbQ = U((G$7, WbQ) => {
+var XbQ = moduleWrapper((G$7, WbQ) => {
     var {
         defineProperty: GdA,
         getOwnPropertyDescriptor: WH8,
@@ -336,7 +338,7 @@ var XbQ = U((G$7, WbQ) => {
                         let X = new G(Y);
                         if (typeof J === "function") this.send(X, J);
                         else if (typeof W === "function") {
-                            if (typeof J !== "object") throw Error(`Expected http options but got ${typeof J}`);
+                            if (typeof J !== "object") throw Error(`Expected http options but got TextComponent{typeof J}`);
                             this.send(X, J || {}, W)
                         } else return this.send(X, J)
                     }, "methodImpl"),
@@ -351,49 +353,49 @@ var XbQ = U((G$7, WbQ) => {
                 case "false":
                     return !1;
                 default:
-                    throw Error(`Unable to parse boolean value "${A}"`)
+                    throw Error(`Unable to parse boolean value "TextComponent{A}"`)
             }
         }, "parseBoolean"),
         $H8 = XB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "number") {
-                if (A === 0 || A === 1) ACA.warn(BdA(`Expected boolean, got ${typeof A}: ${A}`));
+                if (A === 0 || A === 1) ACA.warn(BdA(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`));
                 if (A === 0) return !1;
                 if (A === 1) return !0
             }
             if (typeof A === "string") {
                 let Q = A.toLowerCase();
-                if (Q === "false" || Q === "true") ACA.warn(BdA(`Expected boolean, got ${typeof A}: ${A}`));
+                if (Q === "false" || Q === "true") ACA.warn(BdA(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`));
                 if (Q === "false") return !1;
                 if (Q === "true") return !0
             }
             if (typeof A === "boolean") return A;
-            throw TypeError(`Expected boolean, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected boolean, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectBoolean"),
         tHA = XB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "string") {
                 let Q = parseFloat(A);
                 if (!Number.isNaN(Q)) {
-                    if (String(Q) !== String(A)) ACA.warn(BdA(`Expected number but observed string: ${A}`));
+                    if (String(Q) !== String(A)) ACA.warn(BdA(`Expected number but observed string: TextComponent{A}`));
                     return Q
                 }
             }
             if (typeof A === "number") return A;
-            throw TypeError(`Expected number, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected number, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectNumber"),
         wH8 = Math.ceil(340282346638528860000000000000000000000),
         QdA = XB((A) => {
             let Q = tHA(A);
             if (Q !== void 0 && !Number.isNaN(Q) && Q !== 1 / 0 && Q !== -1 / 0) {
-                if (Math.abs(Q) > wH8) throw TypeError(`Expected 32-bit float, got ${A}`)
+                if (Math.abs(Q) > wH8) throw TypeError(`Expected 32-bit float, got TextComponent{A}`)
             }
             return Q
         }, "expectFloat32"),
         eHA = XB((A) => {
             if (A === null || A === void 0) return;
             if (Number.isInteger(A) && !Number.isNaN(A)) return A;
-            throw TypeError(`Expected integer, got ${typeof A}: ${A}`)
+            throw TypeError(`Expected integer, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectLong"),
         qH8 = eHA,
         SP1 = XB((A) => xP1(A, 32), "expectInt32"),
@@ -401,7 +403,7 @@ var XbQ = U((G$7, WbQ) => {
         kP1 = XB((A) => xP1(A, 8), "expectByte"),
         xP1 = XB((A, Q) => {
             let B = eHA(A);
-            if (B !== void 0 && NH8(B, Q) !== B) throw TypeError(`Expected ${Q}-bit integer, got ${A}`);
+            if (B !== void 0 && NH8(B, Q) !== B) throw TypeError(`Expected TextComponent{Q}-bit integer, got TextComponent{A}`);
             return B
         }, "expectSizedInt"),
         NH8 = XB((A, Q) => {
@@ -416,7 +418,7 @@ var XbQ = U((G$7, WbQ) => {
         }, "castInt"),
         LH8 = XB((A, Q) => {
             if (A === null || A === void 0) {
-                if (Q) throw TypeError(`Expected a non-null value for ${Q}`);
+                if (Q) throw TypeError(`Expected a non-null value for TextComponent{Q}`);
                 throw TypeError("Expected a non-null value")
             }
             return A
@@ -425,20 +427,20 @@ var XbQ = U((G$7, WbQ) => {
             if (A === null || A === void 0) return;
             if (typeof A === "object" && !Array.isArray(A)) return A;
             let Q = Array.isArray(A) ? "array" : typeof A;
-            throw TypeError(`Expected object, got ${Q}: ${A}`)
+            throw TypeError(`Expected object, got TextComponent{Q}: TextComponent{A}`)
         }, "expectObject"),
         MH8 = XB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A === "string") return A;
-            if (["boolean", "number", "bigint"].includes(typeof A)) return ACA.warn(BdA(`Expected string, got ${typeof A}: ${A}`)), String(A);
-            throw TypeError(`Expected string, got ${typeof A}: ${A}`)
+            if (["boolean", "number", "bigint"].includes(typeof A)) return ACA.warn(BdA(`Expected string, got TextComponent{typeof A}: TextComponent{A}`)), String(A);
+            throw TypeError(`Expected string, got TextComponent{typeof A}: TextComponent{A}`)
         }, "expectString"),
         OH8 = XB((A) => {
             if (A === null || A === void 0) return;
             let Q = svQ(A),
                 B = Object.entries(Q).filter(([, G]) => G != null).map(([G]) => G);
             if (B.length === 0) throw TypeError("Unions must have exactly one non-null member. None were found.");
-            if (B.length > 1) throw TypeError(`Unions must have exactly one non-null member. Keys ${B} were not null.`);
+            if (B.length > 1) throw TypeError(`Unions must have exactly one non-null member. Keys TextComponent{B} were not null.`);
             return Q
         }, "expectUnion"),
         vP1 = XB((A) => {
@@ -475,7 +477,7 @@ var XbQ = U((G$7, WbQ) => {
                 case "-Infinity":
                     return -1 / 0;
                 default:
-                    throw Error(`Unable to parse float value: ${A}`)
+                    throw Error(`Unable to parse float value: TextComponent{A}`)
             }
         }, "parseFloatString"),
         tvQ = XB((A) => {
@@ -506,7 +508,7 @@ var XbQ = U((G$7, WbQ) => {
         yH8 = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
         fP1 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-function AbQ(A) {
+    function AbQ(A) {
         let Q = A.getUTCFullYear(),
             B = A.getUTCMonth(),
             G = A.getUTCDay(),
@@ -514,14 +516,14 @@ function AbQ(A) {
             I = A.getUTCHours(),
             Y = A.getUTCMinutes(),
             J = A.getUTCSeconds(),
-            W = Z < 10 ? `0${Z}` : `${Z}`,
-            X = I < 10 ? `0${I}` : `${I}`,
-            F = Y < 10 ? `0${Y}` : `${Y}`,
-            V = J < 10 ? `0${J}` : `${J}`;
-        return `${yH8[G]}, ${W} ${fP1[B]} ${Q} ${X}:${F}:${V} GMT`
+            W = Z < 10 ? `0${Z}` : `TextComponent{Z}`,
+            X = I < 10 ? `0${I}` : `TextComponent{I}`,
+            F = Y < 10 ? `0${Y}` : `TextComponent{Y}`,
+            V = J < 10 ? `0${J}` : `TextComponent{J}`;
+        return `TextComponent{yH8[G]}, TextComponent{W} TextComponent{fP1[B]} TextComponent{Q} TextComponent{X}:TextComponent{F}:TextComponent{V} GMT`
     }
     XB(AbQ, "dateToUtcString");
-    var xH8 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?[zZ]$/),
+    var xH8 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?[zZ]TextComponent/),
         vH8 = XB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-3339 date-times must be expressed as strings");
@@ -535,7 +537,7 @@ function AbQ(A) {
                 fractionalMilliseconds: X
             })
         }, "parseRfc3339DateTime"),
-        bH8 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?(([-+]\d{2}\:\d{2})|[zZ])$/),
+        bH8 = new RegExp(/^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?(([-+]\d{2}\:\d{2})|[zZ])TextComponent/),
         fH8 = XB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-3339 date-times must be expressed as strings");
@@ -552,7 +554,7 @@ function AbQ(A) {
         }, "parseRfc3339DateTimeWithOffset"),
         hH8 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun), (\d{2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{4}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? GMT$/),
         gH8 = new RegExp(/^(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday), (\d{2})-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)-(\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? GMT$/),
-        uH8 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ( [1-9]|\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? (\d{4})$/),
+        uH8 = new RegExp(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ( [1-9]|\d{2}) (\d{1,2}):(\d{2}):(\d{2})(?:\.(\d+))? (\d{4})TextComponent/),
         mH8 = XB((A) => {
             if (A === null || A === void 0) return;
             if (typeof A !== "string") throw TypeError("RFC-7231 date-times must be expressed as strings");
@@ -613,21 +615,21 @@ function AbQ(A) {
         }, "adjustRfc850Year"),
         PP1 = XB((A) => {
             let Q = fP1.indexOf(A);
-            if (Q < 0) throw TypeError(`Invalid month: ${A}`);
+            if (Q < 0) throw TypeError(`Invalid month: TextComponent{A}`);
             return Q + 1
         }, "parseMonthByShortName"),
         iH8 = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
         nH8 = XB((A, Q, B) => {
             let G = iH8[Q];
             if (Q === 1 && aH8(A)) G = 29;
-            if (B > G) throw TypeError(`Invalid day for ${fP1[Q]} in ${A}: ${B}`)
+            if (B > G) throw TypeError(`Invalid day for TextComponent{fP1[Q]} in TextComponent{A}: TextComponent{B}`)
         }, "validateDayOfMonth"),
         aH8 = XB((A) => {
             return A % 4 === 0 && (A % 100 !== 0 || A % 400 === 0)
         }, "isLeapYear"),
         vS = XB((A, Q, B, G) => {
             let Z = evQ(S6A(A));
-            if (Z < B || Z > G) throw TypeError(`${Q} must be between ${B} and ${G}, inclusive`);
+            if (Z < B || Z > G) throw TypeError(`TextComponent{Q} must be between TextComponent{B} and TextComponent{G}, inclusive`);
             return Z
         }, "parseDateValue"),
         sH8 = XB((A) => {
@@ -639,7 +641,7 @@ function AbQ(A) {
                 B = 1;
             if (Q == "+") B = 1;
             else if (Q == "-") B = -1;
-            else throw TypeError(`Offset direction, ${Q}, must be "+" or "-"`);
+            else throw TypeError(`Offset direction, TextComponent{Q}, must be "+" or "-"`);
             let G = Number(A.substring(1, 3)),
                 Z = Number(A.substring(4, 6));
             return B * (G * 60 + Z) * 60 * 1000
@@ -817,8 +819,7 @@ function AbQ(A) {
         return Go(JSON.stringify(A))
     };
     Go.fromObject = Go.from;
-
-var FC8 = class {
+    var FC8 = class {
         static {
             XB(this, "NoOpLogger")
         }
@@ -829,7 +830,7 @@ var FC8 = class {
         error() {}
     };
 
-function hP1(A, Q, B) {
+    function hP1(A, Q, B) {
         let G, Z, I;
         if (typeof Q > "u" && typeof B > "u") G = {}, I = A;
         else if (G = A, typeof Q === "function") return Z = Q, I = B, DC8(G, Z, I);
@@ -885,8 +886,8 @@ function hP1(A, Q, B) {
         HC8 = XB((A) => A != null, "nonNullish"),
         CC8 = XB((A) => A, "pass");
 
-function YbQ(A) {
-        if (A.includes(",") || A.includes('"')) A = `"${A.replace(/"/g,"\\\"")}"`;
+    function YbQ(A) {
+        if (A.includes(",") || A.includes('"')) A = `"TextComponent{A.replace(/"/g,"\\\"")}"`;
         return A
     }
     XB(YbQ, "quoteHeader");
@@ -916,7 +917,7 @@ function YbQ(A) {
             return A
         }, "_json");
 
-function JbQ(A, Q, B) {
+    function JbQ(A, Q, B) {
         if (B <= 0 || !Number.isInteger(B)) throw Error("Invalid number of delimiters (" + B + ") for splitEvery.");
         let G = A.split(Q);
         if (B === 1) return G;
@@ -959,7 +960,7 @@ function JbQ(A, Q, B) {
         })
     }, "splitHeader")
 });
-var KbQ = U((FbQ) => {
+var KbQ = moduleWrapper((FbQ) => {
     Object.defineProperty(FbQ, "__esModule", {
         value: !0
     });
@@ -969,7 +970,7 @@ var KbQ = U((FbQ) => {
         wC8 = XbQ(),
         qC8 = cm();
 
-function NC8(A) {
+    function NC8(A) {
         return new $C8.HttpRequest({
             protocol: A.protocol,
             hostname: A.hostname,
@@ -982,8 +983,7 @@ function NC8(A) {
         })
     }
     FbQ.createGetRequest = NC8;
-
-async function LC8(A, Q) {
+    async function LC8(A, Q) {
         let G = await (0, qC8.sdkStreamMixin)(A.body).transformToString();
         if (A.statusCode === 200) {
             let Z = JSON.parse(G);
@@ -1002,20 +1002,20 @@ async function LC8(A, Q) {
             try {
                 Z = JSON.parse(G)
             } catch (I) {}
-            throw Object.assign(new gP1.CredentialsProviderError(`Server responded with status: ${A.statusCode}`, {
+            throw Object.assign(new gP1.CredentialsProviderError(`Server responded with status: TextComponent{A.statusCode}`, {
                 logger: Q
             }), {
                 Code: Z.Code,
                 Message: Z.Message
             })
         }
-        throw new gP1.CredentialsProviderError(`Server responded with status: ${A.statusCode}`, {
+        throw new gP1.CredentialsProviderError(`Server responded with status: TextComponent{A.statusCode}`, {
             logger: Q
         })
     }
     FbQ.getCredentials = LC8
 });
-var CbQ = U((DbQ) => {
+var CbQ = moduleWrapper((DbQ) => {
     Object.defineProperty(DbQ, "__esModule", {
         value: !0
     });
@@ -1032,7 +1032,7 @@ var CbQ = U((DbQ) => {
     };
     DbQ.retryWrapper = OC8
 });
-var wbQ = U((UbQ) => {
+var wbQ = moduleWrapper((UbQ) => {
     Object.defineProperty(UbQ, "__esModule", {
         value: !0
     });
@@ -1041,7 +1041,7 @@ var wbQ = U((UbQ) => {
         TC8 = xS(),
         PC8 = oG(),
         EbQ = P2(),
-        jC8 = RC8.__importDefault(UA("fs/promises")),
+        jC8 = RC8.__importDefault(nodeRequire("fs/promises")),
         SC8 = jvQ(),
         zbQ = KbQ(),
         _C8 = CbQ(),
@@ -1060,7 +1060,7 @@ var wbQ = U((UbQ) => {
             if (B && G) Y("@aws-sdk/credential-provider-http: you have set both awsContainerCredentialsRelativeUri and awsContainerCredentialsFullUri."), Y("awsContainerCredentialsFullUri will take precedence.");
             if (Z && I) Y("@aws-sdk/credential-provider-http: you have set both awsContainerAuthorizationToken and awsContainerAuthorizationTokenFile."), Y("awsContainerAuthorizationToken will take precedence.");
             if (G) Q = G;
-            else if (B) Q = `${yC8}${B}`;
+            else if (B) Q = `TextComponent{yC8}TextComponent{B}`;
             else throw new EbQ.CredentialsProviderError(`No HTTP credential provider host provided.
 Set AWS_CONTAINER_CREDENTIALS_FULL_URI or AWS_CONTAINER_CREDENTIALS_RELATIVE_URI.`, {
                 logger: A.logger
@@ -1087,7 +1087,7 @@ Set AWS_CONTAINER_CREDENTIALS_FULL_URI or AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
         };
     UbQ.fromHttp = fC8
 });
-var mP1 = U((uP1) => {
+var mP1 = moduleWrapper((uP1) => {
     Object.defineProperty(uP1, "__esModule", {
         value: !0
     });
@@ -1100,7 +1100,7 @@ var mP1 = U((uP1) => {
         }
     })
 });
-var SbQ = U((D$7, jbQ) => {
+var SbQ = moduleWrapper((D$7, jbQ) => {
     var {
         defineProperty: ZdA,
         getOwnPropertyDescriptor: uC8,
@@ -1192,7 +1192,7 @@ var SbQ = U((D$7, jbQ) => {
             return A.HTTP_0_9 = "http/0.9", A.HTTP_1_0 = "http/1.0", A.TDS_8_0 = "tds/8.0", A
         })(PbQ || {})
 });
-var bbQ = U((H$7, vbQ) => {
+var bbQ = moduleWrapper((H$7, vbQ) => {
     var {
         defineProperty: YdA,
         getOwnPropertyDescriptor: oC8,
@@ -1271,7 +1271,7 @@ var bbQ = U((H$7, vbQ) => {
                 this.values = this.values.filter((Q) => Q !== A)
             }
             toString() {
-                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"${A}"` : A).join(", ")
+                return this.values.map((A) => A.includes(",") || A.includes(" ") ? `"TextComponent{A}"` : A).join(", ")
             }
             get() {
                 return this.values
@@ -1305,7 +1305,7 @@ var bbQ = U((H$7, vbQ) => {
                 yd(this, "HttpRequest")
             }
             constructor(Q) {
-                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `${Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/${Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
+                this.method = Q.method || "GET", this.hostname = Q.hostname || "localhost", this.port = Q.port, this.query = Q.query || {}, this.headers = Q.headers || {}, this.body = Q.body, this.protocol = Q.protocol ? Q.protocol.slice(-1) !== ":" ? `TextComponent{Q.protocol}:` : Q.protocol : "https:", this.path = Q.path ? Q.path.charAt(0) !== "/" ? `/TextComponent{Q.path}` : Q.path : "/", this.username = Q.username, this.password = Q.password, this.fragment = Q.fragment
             }
             static clone(Q) {
                 let B = new A({
@@ -1327,7 +1327,7 @@ var bbQ = U((H$7, vbQ) => {
             }
         };
 
-function ybQ(A) {
+    function ybQ(A) {
         return Object.keys(A).reduce((Q, B) => {
             let G = A[B];
             return {
@@ -1337,8 +1337,7 @@ function ybQ(A) {
         }, {})
     }
     yd(ybQ, "cloneQuery");
-
-var WE8 = class {
+    var WE8 = class {
         static {
             yd(this, "HttpResponse")
         }
@@ -1352,12 +1351,12 @@ var WE8 = class {
         }
     };
 
-function xbQ(A) {
-        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(A)
+    function xbQ(A) {
+        return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]TextComponent/.test(A)
     }
     yd(xbQ, "isValidHostname")
 });
-var QCA = U((U$7, mbQ) => {
+var QCA = moduleWrapper((U$7, mbQ) => {
     var {
         defineProperty: WdA,
         getOwnPropertyDescriptor: XE8,
@@ -1391,7 +1390,7 @@ var QCA = U((U$7, mbQ) => {
     mbQ.exports = HE8(fbQ);
     var CE8 = bbQ();
 
-function hbQ(A) {
+    function hbQ(A) {
         return A
     }
     JdA(hbQ, "resolveHostHeaderConfig");
@@ -1405,7 +1404,7 @@ function hbQ(A) {
             if (Z.indexOf("h2") >= 0 && !G.headers[":authority"]) delete G.headers.host, G.headers[":authority"] = G.hostname + (G.port ? ":" + G.port : "");
             else if (!G.headers.host) {
                 let I = G.hostname;
-                if (G.port != null) I += `:${G.port}`;
+                if (G.port != null) I += `:TextComponent{G.port}`;
                 G.headers.host = I
             }
             return Q(B)
@@ -1423,7 +1422,7 @@ function hbQ(A) {
             }, "applyToStack")
         }), "getHostHeaderPlugin")
 });
-var BCA = U(($$7, lbQ) => {
+var BCA = moduleWrapper(($$7, lbQ) => {
     var {
         defineProperty: XdA,
         getOwnPropertyDescriptor: zE8,

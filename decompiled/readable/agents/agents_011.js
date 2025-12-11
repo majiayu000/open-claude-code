@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: agents_011.js
+ * 处理时间: 2025-12-09T03:41:35.944Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.851Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -144,7 +147,7 @@ function RQA(A, Q, B, G, Z) {
 
 function mg(A) {
     return `<system-reminder>
-${A}
+TextComponent{A}
 </system-reminder>`
 }
 
@@ -189,35 +192,35 @@ function hy3(A) {
         Z = `Plan mode is active. The user indicated that they do not want you to execute yet -- you MUST NOT make any edits (with the exception of the plan file mentioned below), run any non-readonly tools (including changing configs or making commits), or otherwise make any changes to the system. This supercedes any other instructions you have received.
 
 ## Plan File Info:
-${A.planExists?`A plan file already exists at ${A.planFilePath}. You can read it and make incremental edits using the ${gD.name} tool.`:`No plan file exists yet. You should create your plan at ${A.planFilePath} using the ${oX.name} tool.`}
+TextComponent{A.planExists?`A plan file already exists at TextComponent{A.planFilePath}. You can read it and make incremental edits using the TextComponent{gD.name} tool.`:`No plan file exists yet. You should create your plan at TextComponent{A.planFilePath} using the TextComponent{oX.name} tool.`}
 You should build your plan incrementally by writing to or editing this file. NOTE that this is the only file you are allowed to edit - other than this you are only allowed to take READ-ONLY actions.
 
 ## Plan Workflow
 
 ### Phase 1: Initial Understanding
-Goal: Gain a comprehensive understanding of the user's request by reading through code and asking them questions. Critical: In this phase you should only use the ${Sq.agentType} subagent type.
+Goal: Gain a comprehensive understanding of the user's request by reading through code and asking them questions. Critical: In this phase you should only use the TextComponent{Sq.agentType} subagent type.
 
 1. Focus on understanding the user's request and the code associated with their request
 
-2. **Launch up to ${B} ${Sq.agentType} agents IN PARALLEL** (single message, multiple tool calls) to efficiently explore the codebase.
+2. **Launch up to TextComponent{B} TextComponent{Sq.agentType} agents IN PARALLEL** (single message, multiple tool calls) to efficiently explore the codebase.
    - Use 1 agent when the task is isolated to known files, the user provided specific file paths, or you're making a small targeted change.
    - Use multiple agents when: the scope is uncertain, multiple areas of the codebase are involved, or you need to understand existing patterns before planning.
-   - Quality over quantity - ${B} agents maximum, but you should try to use the minimum number of agents necessary (usually just 1)
+   - Quality over quantity - TextComponent{B} agents maximum, but you should try to use the minimum number of agents necessary (usually just 1)
    - If using multiple agents: Provide each agent with a specific search focus or area to explore. Example: One agent searches for existing implementations, another explores related components, a third investigates testing patterns
 
-3. After exploring the code, use the ${dJ} tool to clarify ambiguities in the user request up front.
+3. After exploring the code, use the TextComponent{ASK_USER_QUESTION_TOOL_NAME} tool to clarify ambiguities in the user request up front.
 
 ### Phase 2: Design
 Goal: Design an implementation approach.
 
-Launch ${$WA.agentType} agent(s) to design the implementation based on the user's intent and your exploration results from Phase 1.
+Launch TextComponent{$WA.agentType} agent(s) to design the implementation based on the user's intent and your exploration results from Phase 1.
 
-You can launch up to ${Q} agent(s) in parallel.
+You can launch up to TextComponent{Q} agent(s) in parallel.
 
 **Guidelines:**
 - **Default**: Launch at least 1 Plan agent for most tasks - it helps validate your understanding and consider alternatives
 - **Skip agents**: Only for truly trivial tasks (typo fixes, single-line changes, simple renames)
-${Q>1?`- **Multiple agents**: Use up to ${Q} agents for complex tasks that benefit from different perspectives
+TextComponent{Q>1?`- **Multiple agents**: Use up to TextComponent{Q} agents for complex tasks that benefit from different perspectives
 
 Examples of when to use multiple agents:
 - The task touches multiple parts of the codebase
@@ -239,7 +242,7 @@ In the agent prompt:
 Goal: Review the plan(s) from Phase 2 and ensure alignment with the user's intentions.
 1. Read the critical files identified by agents to deepen your understanding
 2. Ensure that the plans align with the user's original request
-3. Use ${dJ} to clarify any remaining questions with the user
+3. Use TextComponent{ASK_USER_QUESTION_TOOL_NAME} to clarify any remaining questions with the user
 
 ### Phase 4: Final Plan
 Goal: Write your final plan to the plan file (the only file you can edit).
@@ -247,9 +250,9 @@ Goal: Write your final plan to the plan file (the only file you can edit).
 - Ensure that the plan file is concise enough to scan quickly, but detailed enough to execute effectively
 - Include the paths of critical files to be modified
 
-### Phase 5: Call ${xq.name}
-At the very end of your turn, once you have asked the user questions and are happy with your final plan file - you should always call ${xq.name} to indicate to the user that you are done planning.
-This is critical - your turn should only end with either asking the user a question or calling ${xq.name}. Do not stop unless it's for these 2 reasons.
+### Phase 5: Call TextComponent{xq.name}
+At the very end of your turn, once you have asked the user questions and are happy with your final plan file - you should always call TextComponent{xq.name} to indicate to the user that you are done planning.
+This is critical - your turn should only end with either asking the user a question or calling TextComponent{xq.name}. Do not stop unless it's for these 2 reasons.
 
 NOTE: At any point in time through this workflow you should feel free to ask the user questions or clarifications. Don't make large assumptions about user intent. The goal is to present a well researched plan to the user, and tie any loose ends before implementation begins.`;
     return gG([j0({
@@ -262,9 +265,9 @@ function gy3(A) {
     let B = `Plan mode is active. The user indicated that they do not want you to execute yet -- you MUST NOT make any edits, run any non-readonly tools (including changing configs or making commits), or otherwise make any changes to the system. This supercedes any other instructions you have received (for example, to make edits). Instead, you should:
 
 ## Plan File Info:
-${A.planExists?`A plan file already exists at ${A.planFilePath}. You can read it and make incremental edits using the ${gD.name} tool if you need to.`:`No plan file exists yet. You should create your plan at ${A.planFilePath} using the ${oX.name} tool if you need to.`}
+TextComponent{A.planExists?`A plan file already exists at TextComponent{A.planFilePath}. You can read it and make incremental edits using the TextComponent{gD.name} tool if you need to.`:`No plan file exists yet. You should create your plan at TextComponent{A.planFilePath} using the TextComponent{oX.name} tool if you need to.`}
 You should build your plan incrementally by writing to or editing this file. NOTE that this is the only file you are allowed to edit - other than this you are only allowed to take READ-ONLY actions.
-Answer the user's query comprehensively, using the ${dJ} tool if you need to ask the user clarifying questions. If you do use the ${dJ}, make sure to ask all clarifying questions you need to fully understand the user's intent before proceeding.`;
+Answer the user's query comprehensively, using the TextComponent{ASK_USER_QUESTION_TOOL_NAME} tool if you need to ask the user clarifying questions. If you do use the TextComponent{ASK_USER_QUESTION_TOOL_NAME}, make sure to ask all clarifying questions you need to fully understand the user's intent before proceeding.`;
     return gG([j0({
         content: B,
         isMeta: !0
@@ -275,8 +278,8 @@ function uy3(A) {
     switch (A.type) {
         case "directory":
             return gG([DSA(X9.name, {
-                command: `ls ${M8([A.path])}`,
-                description: `Lists files in ${A.path}`
+                command: `ls TextComponent{shellEscape([A.path])}`,
+                description: `Lists files in TextComponent{A.path}`
             }), KSA(X9, {
                 stdout: A.content,
                 stderr: "",
@@ -284,8 +287,8 @@ function uy3(A) {
             })]);
         case "edited_text_file":
             return gG([j0({
-                content: `Note: ${A.filename} was modified, either by the user or by a linter. This change was intentional, so make sure to take it into account as you proceed (ie. don't revert it unless the user asks you to). Don't tell the user this, since they are already aware. Here are the relevant changes (shown with line numbers):
-${A.snippet}`,
+                content: `Note: TextComponent{A.filename} was modified, either by the user or by a linter. This change was intentional, so make sure to take it into account as you proceed (ie. don't revert it unless the user asks you to). Don't tell the user this, since they are already aware. Here are the relevant changes (shown with line numbers):
+TextComponent{A.snippet}`,
                 isMeta: !0
             })]);
         case "file": {
@@ -299,7 +302,7 @@ ${A.snippet}`,
                     return gG([DSA(d8.name, {
                         file_path: A.filename
                     }), KSA(d8, B), ...A.truncated ? [j0({
-                        content: `Note: The file ${A.filename} was too large and has been truncated to the first ${ezA} lines. Don't tell the user about this truncation. Use ${d8.name} to read more of the file if you need.`,
+                        content: `Note: The file TextComponent{A.filename} was too large and has been truncated to the first TextComponent{ezA} lines. Don't tell the user about this truncation. Use TextComponent{d8.name} to read more of the file if you need.`,
                         isMeta: !0
                     })] : []]);
                 case "notebook":
@@ -315,15 +318,15 @@ ${A.snippet}`,
         }
         case "compact_file_reference":
             return gG([j0({
-                content: `Note: ${A.filename} was read before the last conversation was summarized, but the contents are too large to include. Use ${d8.name} tool if you need to access it.`,
+                content: `Note: TextComponent{A.filename} was read before the last conversation was summarized, but the contents are too large to include. Use TextComponent{d8.name} tool if you need to access it.`,
                 isMeta: !0
             })]);
         case "selected_lines_in_ide": {
             let G = A.content.length > 2000 ? A.content.substring(0, 2000) + `
 ... (truncated)` : A.content;
             return gG([j0({
-                content: `The user selected the lines ${A.lineStart} to ${A.lineEnd} from ${A.filename}:
-${G}
+                content: `The user selected the lines TextComponent{A.lineStart} to TextComponent{A.lineEnd} from TextComponent{A.filename}:
+TextComponent{G}
 
 This may or may not be related to the current task.`,
                 isMeta: !0
@@ -331,33 +334,33 @@ This may or may not be related to the current task.`,
         }
         case "opened_file_in_ide":
             return gG([j0({
-                content: `The user opened the file ${A.filename} in the IDE. This may or may not be related to the current task.`,
+                content: `The user opened the file TextComponent{A.filename} in the IDE. This may or may not be related to the current task.`,
                 isMeta: !0
             })]);
         case "todo":
             if (A.itemCount === 0) return gG([j0({
-                content: `This is a reminder that your todo list is currently empty. DO NOT mention this to the user explicitly because they are already aware. If you are working on tasks that would benefit from a todo list please use the ${tI.name} tool to create one. If not, please feel free to ignore. Again do not mention this message to the user.`,
+                content: `This is a reminder that your todo list is currently empty. DO NOT mention this to the user explicitly because they are already aware. If you are working on tasks that would benefit from a todo list please use the TextComponent{TODO_READ_TOOL.name} tool to create one. If not, please feel free to ignore. Again do not mention this message to the user.`,
                 isMeta: !0
             })]);
             else return gG([j0({
                 content: `Your todo list has changed. DO NOT mention this explicitly to the user. Here are the latest contents of your todo list:
 
-${JSON.stringify(A.content)}. Continue on with the tasks at hand if applicable.`,
+TextComponent{JSON.stringify(A.content)}. Continue on with the tasks at hand if applicable.`,
                 isMeta: !0
             })]);
         case "plan_file_reference":
             return gG([j0({
-                content: `A plan file exists from plan mode at: ${A.planFilePath}
+                content: `A plan file exists from plan mode at: TextComponent{A.planFilePath}
 
 Plan contents:
 
-${A.planContent}
+TextComponent{A.planContent}
 
 If this plan is relevant to the current work and not already complete, continue working on it.`,
                 isMeta: !0
             })]);
         case "todo_reminder": {
-            let B = A.content.map((Z, I) => `${I+1}. [${Z.status}] ${Z.content}`).join(`
+            let B = A.content.map((Z, I) => `TextComponent{I+1}. [TextComponent{Z.status}] TextComponent{Z.content}`).join(`
 `),
                 G = `The TodoWrite tool hasn't been used recently. If you're working on tasks that would benefit from tracking progress, consider using the TodoWrite tool to track progress. Also consider cleaning up the todo list if has become stale and no longer matches what you are working on. Only use it if it's relevant to the current work. This is just a gentle reminder - ignore if not applicable. Make sure that you NEVER mention this reminder to the user
 `;
@@ -365,7 +368,7 @@ If this plan is relevant to the current work and not already complete, continue 
 
 Here are the existing contents of your todo list:
 
-[${B}]`;
+[TextComponent{B}]`;
             return gG([j0({
                 content: G,
                 isMeta: !0
@@ -373,9 +376,9 @@ Here are the existing contents of your todo list:
         }
         case "nested_memory":
             return gG([j0({
-                content: `Contents of ${A.content.path}:
+                content: `Contents of TextComponent{A.content.path}:
 
-${A.content.content}`,
+TextComponent{A.content.content}`,
                 isMeta: !0
             })]);
         case "queued_command": {
@@ -383,7 +386,7 @@ ${A.content.content}`,
 `) : A.prompt;
             return gG([j0({
                 content: `The user sent the following message:
-${B}
+TextComponent{B}
 
 Please address this message and continue with your tasks.`,
                 isMeta: !0
@@ -398,7 +401,7 @@ Please address this message and continue with your tasks.`,
             let B = zQA[A.style];
             if (!B) return [];
             return gG([j0({
-                content: `${B.name} output style is active. Remember to follow the specific guidelines for this style.`,
+                content: `TextComponent{B.name} output style is active. Remember to follow the specific guidelines for this style.`,
                 isMeta: !0
             })])
         }
@@ -408,7 +411,7 @@ Please address this message and continue with your tasks.`,
             return gG([j0({
                 content: `<new-diagnostics>The following new diagnostic issues were detected:
 
-${B}</new-diagnostics>`,
+TextComponent{B}</new-diagnostics>`,
                 isMeta: !0
             })])
         }
@@ -417,7 +420,7 @@ ${B}</new-diagnostics>`,
         case "plan_mode_reentry": {
             let B = `## Re-entering Plan Mode
 
-You are returning to plan mode after having previously exited it. A plan file exists at ${A.planFilePath} from your previous planning session.
+You are returning to plan mode after having previously exited it. A plan file exists at TextComponent{A.planFilePath} from your previous planning session.
 
 **Before proceeding with any new planning, you should:**
 1. Read the existing plan file to understand what was previously planned
@@ -425,7 +428,7 @@ You are returning to plan mode after having previously exited it. A plan file ex
 3. Decide how to proceed:
    - **Different task**: If the user's request is for a different task—even if it's similar or related—start fresh by overwriting the existing plan
    - **Same task, continuing**: If this is explicitly a continuation or refinement of the exact same task, modify the existing plan while cleaning up outdated or irrelevant sections
-4. Continue on with the plan process and most importantly you should always edit the plan file one way or the other before calling ${xq.name}
+4. Continue on with the plan process and most importantly you should always edit the plan file one way or the other before calling TextComponent{xq.name}
 
 Treat this as a fresh planning session. Do not assume the existing plan is relevant without evaluating it first.`;
             return gG([j0({
@@ -436,7 +439,7 @@ Treat this as a fresh planning session. Do not assume the existing plan is relev
         case "mcp_resource": {
             let B = A.content;
             if (!B || !B.contents || B.contents.length === 0) return gG([j0({
-                content: `<mcp-resource server="${A.server}" uri="${A.uri}">(No content)</mcp-resource>`,
+                content: `<mcp-resource server="TextComponent{A.server}" uri="TextComponent{A.uri}">(No content)</mcp-resource>`,
                 isMeta: !0
             })]);
             let G = [];
@@ -456,34 +459,34 @@ Treat this as a fresh planning session. Do not assume the existing plan is relev
                         let I = "mimeType" in Z ? String(Z.mimeType) : "application/octet-stream";
                         G.push({
                             type: "text",
-                            text: `[Binary content: ${I}]`
+                            text: `[Binary content: TextComponent{I}]`
                         })
                     }
                 } if (G.length > 0) return gG([j0({
                 content: G,
                 isMeta: !0
             })]);
-            else return f0(A.server, `No displayable content found in MCP resource ${A.uri}.`), gG([j0({
-                content: `<mcp-resource server="${A.server}" uri="${A.uri}">(No displayable content)</mcp-resource>`,
+            else return f0(A.server, `No displayable content found in MCP resource TextComponent{A.uri}.`), gG([j0({
+                content: `<mcp-resource server="TextComponent{A.server}" uri="TextComponent{A.uri}">(No displayable content)</mcp-resource>`,
                 isMeta: !0
             })])
         }
         case "agent_mention":
             return gG([j0({
-                content: `The user has expressed a desire to invoke the agent "${A.agentType}". Please invoke the agent appropriately, passing in the required context to it. `,
+                content: `The user has expressed a desire to invoke the agent "TextComponent{A.agentType}". Please invoke the agent appropriately, passing in the required context to it. `,
                 isMeta: !0
             })]);
         case "background_remote_session_status":
             return gG([j0({
-                content: `<background-remote-session-status>Task id:${A.taskId}
-Title:${A.title}
-Status:${A.status}
-Delta summary since last flush:${A.deltaSummarySinceLastFlushToAttachment}</background-remote-session-status>`,
+                content: `<background-remote-session-status>Task id:TextComponent{A.taskId}
+Title:TextComponent{A.title}
+Status:TextComponent{A.status}
+Delta summary since last flush:TextComponent{A.deltaSummarySinceLastFlushToAttachment}</background-remote-session-status>`,
                 isMeta: !0
             })]);
         case "background_shell_status": {
-            let B = [`Background Bash ${A.taskId}`, `(command: ${A.command})`, `(status: ${A.status})`];
-            if (A.exitCode !== void 0) B.push(`(exit code: ${A.exitCode})`);
+            let B = [`Background Bash TextComponent{A.taskId}`, `(command: TextComponent{A.command})`, `(status: TextComponent{A.status})`];
+            if (A.exitCode !== void 0) B.push(`(exit code: TextComponent{A.exitCode})`);
             if (A.hasNewOutput) B.push("Has new output available. You can check its output using the BashOutput tool.");
             return [j0({
                 content: mg(B.join(" ")),
@@ -505,19 +508,19 @@ Delta summary since last flush:${A.deltaSummarySinceLastFlushToAttachment}</back
         }
         case "async_agent_status": {
             let B = A.status,
-                G = A.error ? `: ${A.error}` : "";
+                G = A.error ? `: TextComponent{A.error}` : "";
             return [j0({
-                content: `<system-notification>Async agent "${A.description}" ${B}${G}. The output can be retrieved using AgentOutputTool with agentId: "${A.agentId}"</system-notification>`,
+                content: `<system-notification>Async agent "TextComponent{A.description}" TextComponent{B}TextComponent{G}. The output can be retrieved using AgentOutputTool with agentId: "TextComponent{A.agentId}"</system-notification>`,
                 isMeta: !0
             })]
         }
         case "memory": {
             let B = A.memories.map((G) => {
-                let Z = G.remainingLines && G.remainingLines > 0 ? ` (${G.remainingLines} more lines in full file)` : "";
-                return `## Previous Session (${(G.lastModified instanceof Date?G.lastModified:new Date(G.lastModified)).toLocaleDateString()})
-Full session notes: ${G.fullPath}${Z}
+                let Z = G.remainingLines && G.remainingLines > 0 ? ` (TextComponent{G.remainingLines} more lines in full file)` : "";
+                return `## Previous Session (TextComponent{(G.lastModified instanceof Date?G.lastModified:new Date(G.lastModified)).toLocaleDateString()})
+Full session notes: TextComponent{G.fullPath}TextComponent{Z}
 
-${G.content}`
+TextComponent{G.content}`
             }).join(`
 
 ---
@@ -527,14 +530,14 @@ ${G.content}`
                 content: `<session-memory>
 These session summaries are from PAST sessions that might not be related to the current task and may have outdated info. Do not assume the current task is related to these summaries, until the user's messages indicate so or reference similar tasks. Only a preview of each memory is shown - use the Read tool with the provided path to access full session memory when a session is relevant.
 
-${B}
+TextComponent{B}
 </session-memory>`,
                 isMeta: !0
             })])
         }
         case "token_usage":
             return [j0({
-                content: mg(`Token usage: ${A.used}/${A.total}; ${A.remaining} remaining`),
+                content: mg(`Token usage: TextComponent{A.used}/TextComponent{A.total}; TextComponent{A.remaining} remaining`),
                 isMeta: !0
             })];
         case "budget_usd":
@@ -544,27 +547,27 @@ ${B}
             })];
         case "hook_blocking_error":
             return [j0({
-                content: mg(`${A.hookName} hook blocking error from command: "${A.blockingError.command}": ${A.blockingError.blockingError}`),
+                content: mg(`TextComponent{A.hookName} hook blocking error from command: "TextComponent{A.blockingError.command}": TextComponent{A.blockingError.blockingError}`),
                 isMeta: !0
             })];
         case "hook_success":
             if (A.hookEvent !== "SessionStart" && A.hookEvent !== "UserPromptSubmit") return [];
             if (A.content === "") return [];
             return [j0({
-                content: mg(`${A.hookName} hook success: ${A.content}`),
+                content: mg(`TextComponent{A.hookName} hook success: TextComponent{A.content}`),
                 isMeta: !0
             })];
         case "hook_additional_context": {
             if (A.content.length === 0) return [];
             return [j0({
-                content: mg(`${A.hookName} hook additional context: ${A.content.join(`
+                content: mg(`TextComponent{A.hookName} hook additional context: TextComponent{A.content.join(`
 `)}`),
                 isMeta: !0
             })]
         }
         case "hook_stopped_continuation":
             return [j0({
-                content: mg(`${A.hookName} hook stopped continuation: ${A.message}`),
+                content: mg(`TextComponent{A.hookName} hook stopped continuation: TextComponent{A.message}`),
                 isMeta: !0
             })];
         case "already_read_file":
@@ -579,7 +582,7 @@ ${B}
             return []
     }
     if (["autocheckpointing", "background_task_status"].includes(A.type)) return [];
-    return yN("normalizeAttachmentForAPI", Error(`Unknown attachment type: ${A.type}`)), []
+    return yN("normalizeAttachmentForAPI", Error(`Unknown attachment type: TextComponent{A.type}`)), []
 }
 
 function KSA(A, Q) {
@@ -590,12 +593,12 @@ function KSA(A, Q) {
             isMeta: !0
         });
         return j0({
-            content: `Result of calling the ${A.name} tool: ${JSON.stringify(B.content)}`,
+            content: `Result of calling the TextComponent{A.name} tool: TextComponent{JSON.stringify(B.content)}`,
             isMeta: !0
         })
     } catch {
         return j0({
-            content: `Result of calling the ${A.name} tool: Error`,
+            content: `Result of calling the TextComponent{A.name} tool: Error`,
             isMeta: !0
         })
     }
@@ -603,7 +606,7 @@ function KSA(A, Q) {
 
 function DSA(A, Q) {
     return j0({
-        content: `Called the ${A} tool with the following input: ${JSON.stringify(Q)}`,
+        content: `Called the TextComponent{A} tool with the following input: TextComponent{JSON.stringify(Q)}`,
         isMeta: !0
     })
 }
@@ -801,7 +804,7 @@ Rejected plan:
 `,
     $1A = "No response requested.",
     K00, by3;
-var nQ = L(() => {
+var nQ = lazyLoader(() => {
     jN();
     O9A();
     w0();
@@ -847,17 +850,17 @@ function yJA() {
 
 function djA(A) {
     let Q = uH(za);
-    return dg(Q, `${A}.jsonl`)
+    return dg(Q, `TextComponent{A}.jsonl`)
 }
 
 function eXA(A) {
     let Q = uH(za);
-    return dg(Q, `agent-${A}.jsonl`)
+    return dg(Q, `agent-TextComponent{A}.jsonl`)
 }
 
 function gH9(A) {
     let Q = uH(za),
-        B = dg(Q, `${A}.jsonl`),
+        B = dg(Q, `TextComponent{A}.jsonl`),
         G = OA();
     try {
         return G.statSync(B), !0
@@ -890,7 +893,6 @@ function j$() {
     }
     return rY1
 }
-
 class mH9 {
     summaries;
     customTitles;
@@ -1067,7 +1069,7 @@ class mH9 {
         if (!await LT2(A, Q, this.remoteIngressUrl)) throw BA("tengu_session_persistence_failed", {}), Error("Failed to persist session log to remote")
     }
     setRemoteIngressUrl(A) {
-        this.remoteIngressUrl = A, g(`Remote persistence enabled with URL: ${A}`)
+        this.remoteIngressUrl = A, g(`Remote persistence enabled with URL: TextComponent{A}`)
     }
     async getAllTranscripts(A) {
         await this.loadAllSessions(A);
@@ -1149,29 +1151,23 @@ class mH9 {
         return this
     }, (A) => A?.toString() || "all")
 }
-
 async function N0A(A) {
     let Q = iH9(A);
     return await j$().insertMessageChain(Q), Q[Q.length - 1]?.uuid || null
 }
-
 async function XY9(A, Q) {
     await j$().insertMessageChain(iH9(A), !0, Q)
 }
-
 async function Gb2(A) {
     await j$().insertQueueOperation(A)
 }
-
 async function H91(A, Q, B) {
     await j$().insertFileHistorySnapshot(A, Q, B)
 }
-// Async function: Zx
 async function Zx() {
     let A = j$();
     A.sessionFile = yJA()
 }
-
 async function dH9(A, Q) {
     FR(A);
     let B = j$();
@@ -1195,9 +1191,9 @@ async function dH9(A, Q) {
             flush: !0,
             mode: 384
         });
-        return g(`Hydrated ${G.length} entries from remote`), G.length > 0
+        return g(`Hydrated TextComponent{G.length} entries from remote`), G.length > 0
     } catch (G) {
-        return g(`Error hydrating session from remote: ${G}`), R6("error", "hydrate_remote_session_fail"), !1
+        return g(`Error hydrating session from remote: TextComponent{G}`), R6("error", "hydrate_remote_session_fail"), !1
     } finally {
         B.setRemoteIngressUrl(Q)
     }
@@ -1295,7 +1291,6 @@ function aV0(A, Q = 0, B, G, Z) {
         projectPath: Y.cwd
     }
 }
-
 async function sy3(A) {
     let Q = new Map,
         B = 0;
@@ -1318,7 +1313,6 @@ async function sy3(A) {
         total_transcript_count: A.length
     })
 }
-
 async function ry3(A) {
     let Q = await j$().getAllTranscripts(A),
         B = j$().summaries,
@@ -1334,7 +1328,6 @@ async function ry3(A) {
         });
     return await sy3(Z), Z
 }
-
 async function cH9(A, Q) {
     await j$().appendEntry({
         type: "summary",
@@ -1342,7 +1335,6 @@ async function cH9(A, Q) {
         leafUuid: A
     })
 }
-
 async function NY1(A, Q) {
     await j$().appendEntry({
         type: "custom-title",
@@ -1350,7 +1342,6 @@ async function NY1(A, Q) {
         sessionId: A
     }), j$().customTitles.set(A, Q), BA("tengu_session_renamed", {})
 }
-
 async function CFA(A) {
     let Q = new Map,
         B = new Map,
@@ -1371,12 +1362,10 @@ async function CFA(A) {
         fileHistorySnapshots: Z
     }
 }
-
 async function sV0(A) {
-    let Q = dg(uH(pQ()), `${A}.jsonl`);
+    let Q = dg(uH(pQ()), `TextComponent{A}.jsonl`);
     return CFA(Q)
 }
-
 async function lH9(A, Q) {
     return (await pH9(A)).has(Q)
 }
@@ -1395,7 +1384,6 @@ async function $I2(A) {
     }
     return null
 }
-
 async function Qx(A) {
     let B = (await ry3(A)).filter((G) => {
         if (!G.messages.length) return !1;
@@ -1409,7 +1397,6 @@ async function Qx(A) {
         value: Z
     }))
 }
-
 async function RY1(A) {
     let Q = OA(),
         B = HFA();
@@ -1463,7 +1450,6 @@ async function RY1(A) {
         value: W
     }))
 }
-
 async function cI1(A) {
     let Q = eXA(A),
         B = OA();
@@ -1497,11 +1483,9 @@ function iH9(A) {
         return !0
     })
 }
-
 async function wI2(A) {
     return (await Qx())[A] || null
 }
-
 async function nH9(A) {
     try {
         let Q = G0(),

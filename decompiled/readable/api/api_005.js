@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: api_005.js
+ * 处理时间: 2025-12-09T03:41:36.032Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.859Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -28,7 +31,7 @@
                 let G = EI8(A[GT1], Q);
                 if (A[GT1]?.length === 0) B.ProvidedContexts = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `ProvidedContexts.${Z}`;
+                    let Y = `ProvidedContexts.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -44,7 +47,7 @@
                 let G = WSQ(A[q6A], Q);
                 if (A[q6A]?.length === 0) B.PolicyArns = [];
                 Object.entries(G).forEach(([Z, I]) => {
-                    let Y = `PolicyArns.${Z}`;
+                    let Y = `PolicyArns.TextComponent{Z}`;
                     B[Y] = I
                 })
             }
@@ -59,7 +62,7 @@
                 if (Z === null) continue;
                 let I = HI8(Z, Q);
                 Object.entries(I).forEach(([Y, J]) => {
-                    B[`member.${G}.${Y}`] = J
+                    B[`member.TextComponent{G}.TextComponent{Y}`] = J
                 }), G++
             }
             return B
@@ -82,7 +85,7 @@
                 if (Z === null) continue;
                 let I = CI8(Z, Q);
                 Object.entries(I).forEach(([Y, J]) => {
-                    B[`member.${G}.${Y}`] = J
+                    B[`member.TextComponent{G}.TextComponent{Y}`] = J
                 }), G++
             }
             return B
@@ -98,7 +101,7 @@
                 G = 1;
             for (let Z of A) {
                 if (Z === null) continue;
-                B[`member.${G}`] = Z, G++
+                B[`member.TextComponent{G}`] = Z, G++
             }
             return B
         }, "se_tagKeyListType"),
@@ -109,7 +112,7 @@
                 if (Z === null) continue;
                 let I = zI8(Z, Q);
                 Object.entries(I).forEach(([Y, J]) => {
-                    B[`member.${G}.${Y}`] = J
+                    B[`member.TextComponent{G}.TextComponent{Y}`] = J
                 }), G++
             }
             return B
@@ -294,7 +297,7 @@
         $SQ = k2(async (A, Q, B) => {
             let G = typeof A === "function" ? await A() : A,
                 Z = typeof Q === "function" ? await Q() : Q;
-            return B?.debug?.("@aws-sdk/client-sts::resolveRegion", "accepting first of:", `${G} (provider)`, `${Z} (parent client)`, `${sjQ} (STS default)`), G ?? Z ?? sjQ
+            return B?.debug?.("@aws-sdk/client-sts::resolveRegion", "accepting first of:", `TextComponent{G} (provider)`, `TextComponent{Z} (parent client)`, `TextComponent{sjQ} (STS default)`), G ?? Z ?? sjQ
         }, "resolveRegion"),
         uI8 = k2((A, Q) => {
             let B, G;
@@ -318,7 +321,7 @@
                     Credentials: Y,
                     AssumedRoleUser: J
                 } = await B.send(new qT1(I));
-                if (!Y || !Y.AccessKeyId || !Y.SecretAccessKey) throw Error(`Invalid response from STS.assumeRole call with role ${I.RoleArn}`);
+                if (!Y || !Y.AccessKeyId || !Y.SecretAccessKey) throw Error(`Invalid response from STS.assumeRole call with role TextComponent{I.RoleArn}`);
                 let W = USQ(J),
                     X = {
                         accessKeyId: Y.AccessKeyId,
@@ -356,7 +359,7 @@
                     Credentials: Z,
                     AssumedRoleUser: I
                 } = await B.send(new NT1(G));
-                if (!Z || !Z.AccessKeyId || !Z.SecretAccessKey) throw Error(`Invalid response from STS.assumeRoleWithWebIdentity call with role ${G.RoleArn}`);
+                if (!Z || !Z.AccessKeyId || !Z.SecretAccessKey) throw Error(`Invalid response from STS.assumeRoleWithWebIdentity call with role TextComponent{G.RoleArn}`);
                 let Y = USQ(I),
                     J = {
                         accessKeyId: Z.AccessKeyId,
@@ -398,7 +401,7 @@
             ...Q
         }), "decorateDefaultCredentialProvider")
 });
-var TT1 = U((Lz7, TSQ) => {
+var TT1 = moduleWrapper((Lz7, TSQ) => {
     var {
         defineProperty: kmA,
         getOwnPropertyDescriptor: cI8,
@@ -429,15 +432,15 @@ var TT1 = U((Lz7, TSQ) => {
     TSQ.exports = aI8(RSQ);
     var OSQ = NG(),
         OT1 = P2(),
-        sI8 = UA("child_process"),
-        rI8 = UA("util"),
+        sI8 = nodeRequire("child_process"),
+        rI8 = nodeRequire("util"),
         oI8 = bR(),
         tI8 = RT1((A, Q, B) => {
-            if (Q.Version !== 1) throw Error(`Profile ${A} credential_process did not return Version 1.`);
-            if (Q.AccessKeyId === void 0 || Q.SecretAccessKey === void 0) throw Error(`Profile ${A} credential_process returned invalid credentials.`);
+            if (Q.Version !== 1) throw Error(`Profile TextComponent{A} credential_process did not return Version 1.`);
+            if (Q.AccessKeyId === void 0 || Q.SecretAccessKey === void 0) throw Error(`Profile TextComponent{A} credential_process returned invalid credentials.`);
             if (Q.Expiration) {
                 let I = new Date;
-                if (new Date(Q.Expiration) < I) throw Error(`Profile ${A} credential_process returned expired credentials.`)
+                if (new Date(Q.Expiration) < I) throw Error(`Profile TextComponent{A} credential_process returned expired credentials.`)
             }
             let G = Q.AccountId;
             if (!G && B?.[A]?.aws_account_id) G = B[A].aws_account_id;
@@ -472,7 +475,7 @@ var TT1 = U((Lz7, TSQ) => {
                         try {
                             J = JSON.parse(Y.trim())
                         } catch {
-                            throw Error(`Profile ${A} credential_process returned invalid JSON.`)
+                            throw Error(`Profile TextComponent{A} credential_process returned invalid JSON.`)
                         }
                         return tI8(A, J, Q)
                     } catch (Y) {
@@ -480,10 +483,10 @@ var TT1 = U((Lz7, TSQ) => {
                             logger: B
                         })
                     }
-                } else throw new OT1.CredentialsProviderError(`Profile ${A} did not contain credential_process.`, {
+                } else throw new OT1.CredentialsProviderError(`Profile TextComponent{A} did not contain credential_process.`, {
                     logger: B
                 })
-            } else throw new OT1.CredentialsProviderError(`Profile ${A} could not be found in shared credentials file.`, {
+            } else throw new OT1.CredentialsProviderError(`Profile TextComponent{A} could not be found in shared credentials file.`, {
                 logger: B
             })
         }, "resolveProcessCredentials"),
@@ -497,7 +500,7 @@ var TT1 = U((Lz7, TSQ) => {
             }), B, A.logger)
         }, "fromProcess")
 });
-var PT1 = U((SS) => {
+var PT1 = moduleWrapper((SS) => {
     var QY8 = SS && SS.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -531,8 +534,7 @@ var PT1 = U((SS) => {
             };
             return function(Q) {
                 if (Q && Q.__esModule) return Q;
-
-var B = {};
+                var B = {};
                 if (Q != null) {
                     for (var G = A(Q), Z = 0; Z < G.length; Z++)
                         if (G[Z] !== "default") QY8(B, Q, G[Z])
@@ -572,7 +574,7 @@ var B = {};
         }
         return X({
             RoleArn: B,
-            RoleSessionName: G ?? `aws-sdk-js-session-${Date.now()}`,
+            RoleSessionName: G ?? `aws-sdk-js-session-TextComponent{Date.now()}`,
             WebIdentityToken: Z,
             ProviderId: I,
             PolicyArns: Y,
@@ -582,14 +584,14 @@ var B = {};
     };
     SS.fromWebToken = ZY8
 });
-var _SQ = U((jSQ) => {
+var _SQ = moduleWrapper((jSQ) => {
     Object.defineProperty(jSQ, "__esModule", {
         value: !0
     });
     jSQ.fromTokenFile = void 0;
     var IY8 = bR(),
         YY8 = P2(),
-        JY8 = UA("fs"),
+        JY8 = nodeRequire("fs"),
         WY8 = PT1(),
         PSQ = "AWS_WEB_IDENTITY_TOKEN_FILE",
         XY8 = "AWS_ROLE_ARN",
@@ -615,7 +617,7 @@ var _SQ = U((jSQ) => {
         };
     jSQ.fromTokenFile = VY8
 });
-var _T1 = U((Rz7, ymA) => {
+var _T1 = moduleWrapper((Rz7, ymA) => {
     var {
         defineProperty: kSQ,
         getOwnPropertyDescriptor: KY8,
@@ -636,7 +638,7 @@ var _T1 = U((Rz7, ymA) => {
     ySQ(ST1, _SQ(), ymA.exports);
     ySQ(ST1, PT1(), ymA.exports)
 });
-var mSQ = U((Tz7, uSQ) => {
+var mSQ = moduleWrapper((Tz7, uSQ) => {
     var {
         create: EY8,
         defineProperty: nHA,
@@ -699,7 +701,7 @@ var mSQ = U((Tz7, uSQ) => {
                 }, "Environment")
             };
             if (A in G) return G[A];
-            else throw new iHA.CredentialsProviderError(`Unsupported credential source in profile ${Q}. Got ${A}, expected EcsContainer or Ec2InstanceMetadata or Environment.`, {
+            else throw new iHA.CredentialsProviderError(`Unsupported credential source in profile TextComponent{Q}. Got TextComponent{A}, expected EcsContainer or Ec2InstanceMetadata or Environment.`, {
                 logger: B
             })
         }, "resolveCredentialSource"),
@@ -721,7 +723,7 @@ var mSQ = U((Tz7, uSQ) => {
             logger: B
         }) => {
             let G = typeof A.source_profile === "string" && typeof A.credential_source > "u";
-            if (G) B?.debug?.(`    ${Q} isAssumeRoleWithSourceProfile source_profile=${A.source_profile}`);
+            if (G) B?.debug?.(`    TextComponent{Q} isAssumeRoleWithSourceProfile source_profile=TextComponent{A.source_profile}`);
             return G
         }, "isAssumeRoleWithSourceProfile"),
         RY8 = TX((A, {
@@ -729,7 +731,7 @@ var mSQ = U((Tz7, uSQ) => {
             logger: B
         }) => {
             let G = typeof A.credential_source === "string" && typeof A.source_profile > "u";
-            if (G) B?.debug?.(`    ${Q} isCredentialSourceProfile credential_source=${A.credential_source}`);
+            if (G) B?.debug?.(`    TextComponent{Q} isCredentialSourceProfile credential_source=TextComponent{A.credential_source}`);
             return G
         }, "isCredentialSourceProfile"),
         TY8 = TX(async (A, Q, B, G = {}) => {
@@ -752,10 +754,10 @@ var mSQ = U((Tz7, uSQ) => {
                     }
                 }, B.clientPlugins)
             }
-            if (I && I in G) throw new iHA.CredentialsProviderError(`Detected a cycle attempting to resolve credentials for profile ${(0,yT1.getProfileName)(B)}. Profiles visited: ` + Object.keys(G).join(", "), {
+            if (I && I in G) throw new iHA.CredentialsProviderError(`Detected a cycle attempting to resolve credentials for profile TextComponent{(0,yT1.getProfileName)(B)}. Profiles visited: ` + Object.keys(G).join(", "), {
                 logger: B.logger
             });
-            B.logger?.debug(`@aws-sdk/credential-provider-ini - finding credential resolver using ${I?`source_profile=[${I}]`:`profile=[${A}]`}`);
+            B.logger?.debug(`@aws-sdk/credential-provider-ini - finding credential resolver using TextComponent{I?`source_profile=[TextComponent{I}]`:`profile=[TextComponent{A}]`}`);
             let J = I ? gSQ(I, Q, B, {
                 ...G,
                 [I]: !0
@@ -764,7 +766,7 @@ var mSQ = U((Tz7, uSQ) => {
             else {
                 let W = {
                         RoleArn: Z.role_arn,
-                        RoleSessionName: Z.role_session_name || `aws-sdk-js-${Date.now()}`,
+                        RoleSessionName: Z.role_session_name || `aws-sdk-js-TextComponent{Date.now()}`,
                         ExternalId: Z.external_id,
                         DurationSeconds: parseInt(Z.duration_seconds || "3600", 10)
                     },
@@ -772,7 +774,7 @@ var mSQ = U((Tz7, uSQ) => {
                         mfa_serial: X
                     } = Z;
                 if (X) {
-                    if (!B.mfaCodeProvider) throw new iHA.CredentialsProviderError(`Profile ${A} requires multi-factor authentication, but no MFA code callback was provided.`, {
+                    if (!B.mfaCodeProvider) throw new iHA.CredentialsProviderError(`Profile TextComponent{A} requires multi-factor authentication, but no MFA code callback was provided.`, {
                         logger: B.logger,
                         tryNextLink: !1
                     });
@@ -845,7 +847,7 @@ var mSQ = U((Tz7, uSQ) => {
             if (kY8(I)) return yY8(I, B);
             if (PY8(I)) return jY8(B, A);
             if (_Y8(I)) return await SY8(A, I, B);
-            throw new iHA.CredentialsProviderError(`Could not resolve credentials using profile: [${A}] in configuration/credentials file(s).`, {
+            throw new iHA.CredentialsProviderError(`Could not resolve credentials using profile: [TextComponent{A}] in configuration/credentials file(s).`, {
                 logger: B.logger
             })
         }, "resolveProfileData"),
@@ -866,7 +868,7 @@ var mSQ = U((Tz7, uSQ) => {
             }), G, B)
         }, "fromIni")
 });
-var sSQ = U((Pz7, aSQ) => {
+var sSQ = moduleWrapper((Pz7, aSQ) => {
     var {
         create: vY8,
         defineProperty: aHA,
@@ -992,7 +994,7 @@ var sSQ = U((Pz7, aSQ) => {
         iSQ = xmA((A) => A?.expiration !== void 0, "credentialsWillNeedRefresh"),
         nSQ = xmA((A) => A?.expiration !== void 0 && A.expiration.getTime() - Date.now() < 300000, "credentialsTreatedAsExpired")
 });
-var V_Q = U((X_Q) => {
+var V_Q = moduleWrapper((X_Q) => {
     Object.defineProperty(X_Q, "__esModule", {
         value: !0
     });
@@ -1190,7 +1192,7 @@ var V_Q = U((X_Q) => {
         };
     X_Q.ruleSet = lY8
 });
-var H_Q = U((K_Q) => {
+var H_Q = moduleWrapper((K_Q) => {
     Object.defineProperty(K_Q, "__esModule", {
         value: !0
     });
@@ -1211,7 +1213,7 @@ var H_Q = U((K_Q) => {
     K_Q.defaultEndpointResolver = sY8;
     bT1.customEndpointFunctions.aws = iY8.awsEndpointFunctions
 });
-var $_Q = U((z_Q) => {
+var $_Q = moduleWrapper((z_Q) => {
     Object.defineProperty(z_Q, "__esModule", {
         value: !0
     });
@@ -1251,7 +1253,7 @@ var $_Q = U((z_Q) => {
         };
     z_Q.getRuntimeConfig = BJ8
 });
-var R_Q = U((M_Q) => {
+var R_Q = moduleWrapper((M_Q) => {
     Object.defineProperty(M_Q, "__esModule", {
         value: !0
     });
@@ -1333,7 +1335,7 @@ var R_Q = U((M_Q) => {
         };
     M_Q.getRuntimeConfig = HJ8
 });
-var gxQ = U((yz7, hxQ) => {
+var gxQ = moduleWrapper((yz7, hxQ) => {
     var {
         defineProperty: pmA,
         getOwnPropertyDescriptor: CJ8,

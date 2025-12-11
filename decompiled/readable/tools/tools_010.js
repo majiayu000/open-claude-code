@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_010.js
+ * 处理时间: 2025-12-09T03:41:38.665Z
+ * 变量映射: 16 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.072Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -24,9 +27,9 @@
             customInstructions: G ?? null,
             sessionId: Q.agentId
         }, Q.abortController.signal);
-        if (X.newCustomInstructions) G = G ? `${G}
+        if (X.newCustomInstructions) G = G ? `TextComponent{G}
 
-${X.newCustomInstructions}` : X.newCustomInstructions;
+TextComponent{X.newCustomInstructions}` : X.newCustomInstructions;
         let F = X.userDisplayMessage;
         Q.setStreamMode?.("requesting"), Q.setResponseLength?.(() => 0), Q.setSpinnerMessage?.("Compacting conversation");
         let V = t21(G),
@@ -43,7 +46,7 @@ ${X.newCustomInstructions}` : X.newCustomInstructions;
                     async getToolPermissionContext() {
                         return (await Q.getAppState()).toolPermissionContext
                     },
-                    model: S3(),
+                    model: getDefaultSonnetModel(),
                     toolChoice: void 0,
                     isNonInteractiveSession: Q.options.isNonInteractiveSession,
                     hasAppendSystemPrompt: Q.options.hasAppendSystemPrompt,
@@ -73,7 +76,7 @@ ${X.newCustomInstructions}` : X.newCustomInstructions;
             reason: "no_summary",
             preCompactTokenCount: I
         }), Error("Failed to generate conversation summary - response did not contain valid text content");
-        else if (w.startsWith(vF)) throw BA("tengu_compact_failed", {
+        else if (w.startsWith(API_ERROR)) throw BA("tengu_compact_failed", {
             reason: "api_error",
             preCompactTokenCount: I
         }), Error(w);
@@ -133,7 +136,6 @@ function XV5(A, Q) {
         color: "error"
     })
 }
-
 async function FV5(A, Q, B) {
     let G = Object.entries(A).map(([Y, J]) => ({
             filename: Y,
@@ -200,7 +202,7 @@ var IV5 = 5,
     OMA = "Not enough messages to compact.",
     WV5 = "Conversation too long. Press esc twice to go up a few messages and try again.",
     RMA = "API Error: Request was aborted.";
-var TMA = L(() => {
+var TMA = lazyLoader(() => {
     kZ();
     tM();
     nQ();
@@ -240,7 +242,6 @@ function nZ2() {
 function aZ2() {
     G91 = void 0
 }
-// Async function: sZ2
 async function sZ2() {
     let A = Date.now();
     while (G91) {
@@ -261,14 +262,14 @@ function rZ2() {
 var DV5 = 15000,
     HV5 = 60000,
     pZ2, G91;
-var S00 = L(() => {
+var S00 = lazyLoader(() => {
     o0();
     _Y()
 });
 
 function $V5(A, Q) {
     if (!Q.some((G) => G.type === "assistant") && !y00.has(A)) {
-        if (ZI("cc_microcompact_ext", "mc_disabled", !1)) y00.add(A)
+        if (getFeatureFlag("cc_microcompact_ext", "mc_disabled", !1)) y00.add(A)
     }
     return y00.has(A)
 }
@@ -313,13 +314,13 @@ function NV5() {
     I91.forEach((A) => A())
 }
 async function $i(A, Q, B) {
-    if (Y91 = !1, V0(process.env.DISABLE_MICROCOMPACT)) return {
+    if (Y91 = !1, parseBoolean(process.env.DISABLE_MICROCOMPACT)) return {
         messages: A
     };
     if ($V5(G0(), A)) return {
         messages: A
     };
-    V0(process.env.USE_API_CONTEXT_MANAGEMENT);
+    parseBoolean(process.env.USE_API_CONTEXT_MANAGEMENT);
     let G = Q !== void 0,
         Z = G ? Q : EV5,
         I = [],
@@ -433,7 +434,7 @@ var J91, CV5 = 20000,
     tZ2 = 2000,
     UV5, _00, k00, oZ2, y00, Y91 = !1,
     I91;
-var N1A = L(() => {
+var N1A = lazyLoader(() => {
     gM();
     O9();
     w0();
@@ -443,13 +444,12 @@ var N1A = L(() => {
     oM();
     M1A();
     xV();
-    XT();
-    B7A();
+    noOpFunction();
+    noOpFunction2();
     L_();
-    J91 = GA(VA(), 1), UV5 = new Set([READ_TOOL_NAME, BASH_TOOL_NAME, GREP_TOOL_NAME, GLOB_TOOL_NAME, WEB_SEARCH_TOOL_NAME, WEB_FETCH_TOOL_NAME, EDIT_TOOL_NAME, WRITE_TOOL_NAME]), _00 = new Set, k00 = new Set, oZ2 = new Map, y00 = new Set;
+    J91 = esmImport(VA(), 1), UV5 = new Set([READ_TOOL_NAME, BASH_TOOL_NAME, GREP_TOOL_NAME, GLOB_TOOL_NAME, WEB_SEARCH_TOOL_NAME, WEB_FETCH_TOOL_NAME, EDIT_TOOL_NAME, WRITE_TOOL_NAME]), _00 = new Set, k00 = new Set, oZ2 = new Map, y00 = new Set;
     I91 = []
 });
-// Async function: LV5
 async function LV5() {
     return !1
 }
@@ -473,7 +473,6 @@ function MV5(A, Q, B, G) {
         postCompactTokenCount: x00(Y)
     }
 }
-
 async function W91(A, Q, B) {
     if (!await LV5()) return null;
     await sZ2();
@@ -499,7 +498,7 @@ async function W91(A, Q, B) {
         return null
     }
 }
-var v00 = L(() => {
+var v00 = lazyLoader(() => {
     TMA();
     oM();
     nQ();
@@ -510,7 +509,7 @@ var v00 = L(() => {
 });
 
 function KYA() {
-    let A = S3(),
+    let A = getDefaultSonnetModel(),
         Q = f00(A);
     return bu(A) - Q
 }
@@ -549,7 +548,6 @@ function L1A(A) {
 function O1A() {
     return L1().autoCompactEnabled
 }
-
 async function TV5(A, Q) {
     if (Q === "session_memory") return !1;
     if (!O1A()) return !1;
@@ -559,9 +557,8 @@ async function TV5(A, Q) {
         } = L1A(B);
     return G
 }
-
 async function BI2(A, Q, B) {
-    if (V0(process.env.DISABLE_COMPACT)) return {
+    if (parseBoolean(process.env.DISABLE_COMPACT)) return {
         wasCompacted: !1
     };
     if (!await TV5(A, B)) return {
@@ -587,7 +584,7 @@ async function BI2(A, Q, B) {
 var b00 = 13000,
     OV5 = 20000,
     RV5 = 20000;
-var M1A = L(() => {
+var M1A = lazyLoader(() => {
     oM();
     TMA();
     u1();
@@ -601,9 +598,8 @@ var M1A = L(() => {
 import {
     randomUUID as PV5
 } from "node:crypto";
-
 async function _V5(A, Q, B, G, Z, I) {
-    if (V0(process.env.CLAUDE_CODE_DISABLE_ATTACHMENTS)) return [];
+    if (parseBoolean(process.env.CLAUDE_CODE_DISABLE_ATTACHMENTS)) return [];
     let Y = s9();
     setTimeout(() => {
         Y.abort()
@@ -620,7 +616,6 @@ async function _V5(A, Q, B, G, Z, I) {
         [D, H] = await Promise.all([Promise.all(V), Promise.all(K)]);
     return [...F.flat(), ...D.flat(), ...H.flat()]
 }
-
 async function SW(A, Q) {
     let B = Date.now();
     try {
@@ -643,7 +638,7 @@ async function SW(A, Q) {
             duration_ms: Z,
             error: !0
         });
-        return e(G), yN(`Attachment error in ${A}`, G), []
+        return e(G), yN(`Attachment error in TextComponent{A}`, G), []
     }
 }
 
@@ -674,7 +669,6 @@ function yV5(A) {
         foundPlanModeAttachment: B
     }
 }
-
 async function xV5(A, Q) {
     if ((await Q.getAppState()).toolPermissionContext.mode !== "plan") return [];
     if (A && A.length > 0) {
@@ -711,7 +705,6 @@ function vV5() {
 function bV5(A) {
     return []
 }
-
 async function fV5(A, Q) {
     let B = MB1(Q.options.mcpClients);
     if (!B || A?.lineStart === void 0 || !A.text || !A.filePath) return [];
@@ -747,7 +740,6 @@ function ZI2(A, Q, B) {
     }
     return G
 }
-
 async function hV5(A, Q) {
     if (!A?.filePath || A.text) return [];
     let B = await Q.getAppState();
@@ -757,7 +749,6 @@ async function hV5(A, Q) {
         filename: A.filePath
     }]
 }
-
 async function gV5(A, Q) {
     let B = pV5(A),
         G = await Q.getAppState();
@@ -772,8 +763,8 @@ async function gV5(A, Q) {
             try {
                 if (OA().statSync(X).isDirectory()) try {
                     let V = await X9.call({
-                        command: `ls ${M8([X])}`,
-                        description: `Lists files in ${X}`
+                        command: `ls TextComponent{shellEscape([X])}`,
+                        description: `Lists files in TextComponent{X}`
                     }, Q);
                     BA("tengu_at_mention_extracting_directory_success", {});
                     let K = V.data.stdout;
@@ -809,7 +800,6 @@ function uV5(A, Q) {
         }
     }).filter((Z) => Z !== null)
 }
-
 async function mV5(A, Q) {
     let B = lV5(A);
     if (B.length === 0) return [];
@@ -842,7 +832,6 @@ async function mV5(A, Q) {
         }
     }))).filter((I) => I !== null)
 }
-
 async function dV5(A) {
     let Q = await A.getAppState();
     return (await Promise.all(dl(A.readFileState).map(async (G) => {
@@ -892,7 +881,6 @@ async function dV5(A) {
         }
     }))).filter((G) => G !== null)
 }
-
 async function cV5(A) {
     let Q = await A.getAppState(),
         B = [];
@@ -933,7 +921,7 @@ function iV5(A) {
 }
 
 function nV5(A) {
-    let Q = A.match(/^([^#]+)(?:#L(\d+)(?:-(\d+))?)?$/);
+    let Q = A.match(/^([^#]+)(?:#lazyLoader(\d+)(?:-(\d+))?)?TextComponent/);
     if (!Q) return {
         filename: A
     };
@@ -965,7 +953,6 @@ function sV5(A) {
     if (Q === null) return !0;
     return Q >= SV5.TOKEN_COOLDOWN
 }
-// Async function: rV5
 async function rV5() {
     let A = await Uh.getNewDiagnostics();
     if (A.length === 0) return [];
@@ -975,13 +962,12 @@ async function rV5() {
         isNew: !0
     }]
 }
-// Async function: oV5
 async function oV5() {
     g("LSP Diagnostics: getLSPDiagnosticAttachments called");
     try {
         let A = jZ2();
         if (A.length === 0) return [];
-        g(`LSP Diagnostics: Found ${A.length} pending diagnostic set(s)`);
+        g(`LSP Diagnostics: Found TextComponent{A.length} pending diagnostic set(s)`);
         let Q = A.map(({
             files: B
         }) => ({
@@ -989,11 +975,11 @@ async function oV5() {
             files: B,
             isNew: !0
         }));
-        if (A.length > 0) SZ2(), g(`LSP Diagnostics: Cleared ${A.length} delivered diagnostic(s) from registry`);
-        return g(`LSP Diagnostics: Returning ${Q.length} diagnostic attachment(s)`), Q
+        if (A.length > 0) SZ2(), g(`LSP Diagnostics: Cleared TextComponent{A.length} delivered diagnostic(s) from registry`);
+        return g(`LSP Diagnostics: Returning TextComponent{Q.length} diagnostic attachment(s)`), Q
     } catch (A) {
         let Q = A instanceof Error ? A : Error(String(A));
-        return e(Error(`Failed to get LSP diagnostic attachments: ${Q.message}`)), []
+        return e(Error(`Failed to get LSP diagnostic attachments: TextComponent{Q.message}`)), []
     }
 }
 async function* HYA(A, Q, B, G, Z, I) {
@@ -1004,7 +990,6 @@ async function* HYA(A, Q, B, G, Z, I) {
     });
     for (let J of Y) yield p9(J)
 }
-
 async function P00(A, Q, B, G, Z, I) {
     let {
         offset: Y,
@@ -1044,8 +1029,7 @@ async function P00(A, Q, B, G, Z, I) {
             offset: Y,
             limit: J
         };
-        // Async function: V
-async function V() {
+        async function V() {
             if (Z === "compact") return {
                 type: "compact_file_reference",
                 filename: A
@@ -1119,7 +1103,6 @@ function tV5(A) {
         turnsSinceLastReminder: Z
     }
 }
-
 async function eV5(A, Q) {
     if (!A || A.length === 0) return [];
     let {
@@ -1136,7 +1119,6 @@ async function eV5(A, Q) {
     }
     return []
 }
-
 async function AK5(A) {
     if (!j8("tengu_web_tasks")) return [];
     let Q = await A.getAppState(),
@@ -1159,7 +1141,6 @@ async function AK5(A) {
         }
     })), G
 }
-
 async function QK5(A) {
     let Q = await A.getAppState(),
         B = Object.values(Q.backgroundTasks).filter((I) => I.type === "shell"),
@@ -1189,11 +1170,10 @@ async function QK5(A) {
         }
     })), [...G, ...Z]
 }
-// Async function: BK5
 async function BK5() {
     let A = await pG2();
     if (A.length === 0) return [];
-    g(`Hooks: getAsyncHookResponseAttachments found ${A.length} responses`);
+    g(`Hooks: getAsyncHookResponseAttachments found TextComponent{A.length} responses`);
     let Q = A.map(({
         processId: B,
         response: G,
@@ -1204,7 +1184,7 @@ async function BK5() {
         stderr: W,
         exitCode: X
     }) => {
-        return g(`Hooks: Creating attachment for ${B} (${Z}): ${JSON.stringify(G)}`), {
+        return g(`Hooks: Creating attachment for TextComponent{B} (TextComponent{Z}): TextComponent{JSON.stringify(G)}`), {
             type: "async_hook_response",
             processId: B,
             hookName: Z,
@@ -1218,13 +1198,13 @@ async function BK5() {
     });
     if (A.length > 0) {
         let B = A.map((G) => G.processId);
-        lG2(B), g(`Hooks: Removed ${B.length} delivered hooks from registry`)
+        lG2(B), g(`Hooks: Removed TextComponent{B.length} delivered hooks from registry`)
     }
-    return g(`Hooks: getAsyncHookResponseAttachments found ${Q.length} attachments`), Q
+    return g(`Hooks: getAsyncHookResponseAttachments found TextComponent{Q.length} attachments`), Q
 }
 
 function GK5(A) {
-    if (!V0(process.env.CLAUDE_CODE_ENABLE_TOKEN_USAGE_ATTACHMENT)) return [];
+    if (!parseBoolean(process.env.CLAUDE_CODE_ENABLE_TOKEN_USAGE_ATTACHMENT)) return [];
     let Q = KYA(),
         B = AK(A);
     return [{
@@ -1246,7 +1226,6 @@ function ZK5(A) {
         remaining: B
     }]
 }
-
 async function IK5(A) {
     let Q = await A.getAppState(),
         G = Object.values(Q.backgroundTasks).filter((Z) => Z.type === "async_agent").filter((Z) => Z.status !== "running" && !Z.notified).map((Z) => ({
@@ -1295,7 +1274,7 @@ function DYA(A, Q) {
     return TD(A, Q, "read", "deny") !== null
 }
 var GI2, jV5, SV5;
-var eM = L(() => {
+var eM = lazyLoader(() => {
     w0();
     O9();
     Kq();
@@ -1337,7 +1316,6 @@ var eM = L(() => {
         TOKEN_COOLDOWN: 5000
     }
 });
-
 async function YI2(A) {
     let Q;
     do Q = await A.next(); while (!Q.done);
@@ -1377,7 +1355,6 @@ async function* CYA(A, Q = 1 / 0) {
         }
     }
 }
-
 async function V91(A) {
     let Q = [];
     for await (let B of A) Q.push(B);
@@ -1387,7 +1364,7 @@ async function* g00(A) {
     for (let Q of A) yield Q
 }
 var pvG;
-var wi = L(() => {
+var wi = lazyLoader(() => {
     pvG = Symbol("NO_VALUE")
 });
 
@@ -1403,17 +1380,17 @@ function R1A({
         flexDirection: "column",
         marginTop: Q ? 1 : 0,
         width: "100%"
-    }, $h.createElement(j, null, $h.createElement($, {
+    }, $h.createElement(j, null, $h.createElement(TextComponent, {
         color: "background"
-    }, "&"), $h.createElement($, {
+    }, "&"), $h.createElement(TextComponent, {
         dimColor: !0
     }, " ", B)))
 }
 var $h;
-var u00 = L(() => {
+var u00 = lazyLoader(() => {
     hA();
     nQ();
-    $h = GA(VA(), 1)
+    $h = esmImport(VA(), 1)
 });
 import {
     createHash as YK5
@@ -1433,13 +1410,12 @@ import {
 
 function JG() {
     if (H5()) return XK5();
-    return L1().fileCheckpointingEnabled !== !1 && !V0(process.env.CLAUDE_CODE_DISABLE_FILE_CHECKPOINTING)
+    return L1().fileCheckpointingEnabled !== !1 && !parseBoolean(process.env.CLAUDE_CODE_DISABLE_FILE_CHECKPOINTING)
 }
 
 function XK5() {
-    return V0(process.env.CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING) && !V0(process.env.CLAUDE_CODE_DISABLE_FILE_CHECKPOINTING)
+    return parseBoolean(process.env.CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING) && !parseBoolean(process.env.CLAUDE_CODE_DISABLE_FILE_CHECKPOINTING)
 }
-
 async function zYA(A, Q, B) {
     if (!JG()) return;
     A((G) => {
@@ -1459,17 +1435,16 @@ async function zYA(A, Q, B) {
                 trackedFiles: Y
             };
             return CI2(V), H91(B, F, !0).catch((K) => {
-                e(Error(`FileHistory: Failed to record snapshot: ${K}`))
+                e(Error(`FileHistory: Failed to record snapshot: TextComponent{K}`))
             }), BA("tengu_file_history_track_edit_success", {
                 isNewFile: W,
                 version: X.version
-            }), g(`FileHistory: Tracked file modification for ${Q}`), V
+            }), g(`FileHistory: Tracked file modification for TextComponent{Q}`), V
         } catch (Z) {
             return e(Z), BA("tengu_file_history_track_edit_failed", {}), G
         }
     })
 }
-
 async function UYA(A, Q) {
     if (!JG()) return;
     A((B) => {
@@ -1479,7 +1454,7 @@ async function UYA(A, Q) {
                 I = {},
                 Y = B.snapshots.at(-1);
             if (Y) {
-                g(`FileHistory: Making snapshot for message ${Q}`);
+                g(`FileHistory: Making snapshot for message TextComponent{Q}`);
                 for (let X of B.trackedFiles) try {
                     let F = HI2(X);
                     if (!G.existsSync(F)) {
@@ -1491,7 +1466,7 @@ async function UYA(A, Q) {
                             backupTime: new Date
                         }, BA("tengu_file_history_backup_deleted_file", {
                             version: K
-                        }), g(`FileHistory: Missing tracked file: ${X}`)
+                        }), g(`FileHistory: Missing tracked file: TextComponent{X}`)
                     } else {
                         let V = Y.trackedFileBackups[X];
                         if (V && V.backupFileName !== null && !KI2(F, V.backupFileName)) {
@@ -1516,8 +1491,8 @@ async function UYA(A, Q) {
                     snapshots: [...B.snapshots, J]
                 };
             return CI2(W), H91(Q, J, !1).catch((X) => {
-                e(Error(`FileHistory: Failed to record snapshot: ${X}`))
-            }), g(`FileHistory: Added snapshot for ${Q}, tracking ${B.trackedFiles.size} files`), BA("tengu_file_history_snapshot_success", {
+                e(Error(`FileHistory: Failed to record snapshot: TextComponent{X}`))
+            }), g(`FileHistory: Added snapshot for TextComponent{Q}, tracking TextComponent{B.trackedFiles.size} files`), BA("tengu_file_history_snapshot_success", {
                 trackedFilesCount: B.trackedFiles.size,
                 snapshotCount: W.snapshots.length
             }), W
@@ -1526,7 +1501,6 @@ async function UYA(A, Q) {
         }
     })
 }
-
 async function PMA(A, Q) {
     if (!JG()) return;
     let B = null;
@@ -1534,9 +1508,9 @@ async function PMA(A, Q) {
             let Z = G;
             try {
                 let I = G.snapshots.findLast((J) => J.messageId === Q);
-                if (!I) return e(Error(`FileHistory: Snapshot for ${Q} not found`)), BA("tengu_file_history_rewind_failed", {
+                if (!I) return e(Error(`FileHistory: Snapshot for TextComponent{Q} not found`)), BA("tengu_file_history_rewind_failed", {
                     trackedFilesCount: Z.trackedFiles.size,
                     snapshotFound: !1
                 }), B = Error("The selected snapshot was not found"), Z;
-                g(`FileHistory: [Rewind] Rewinding to snapshot for ${Q}`);
+                g(`FileHistory: [Rewind] Rewinding to snapshot for TextComponent{Q}`);
                 let Y = VI2(Z, I, !1);

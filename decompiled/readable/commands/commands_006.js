@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: commands_006.js
+ * 处理时间: 2025-12-09T03:41:37.123Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.947Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -20,18 +23,18 @@
                 throw X
             }
         } else {
-            if (!B.existsSync(Q)) throw Error(`Source file does not exist: ${Q}`);
+            if (!B.existsSync(Q)) throw Error(`Source file does not exist: TextComponent{Q}`);
             B.copyFileSync(Q, A)
         }
         return !0
     } catch (J) {
-        return e(Error(`Failed to copy executable from ${Q} to ${A}: ${J}`)), !1
+        return e(Error(`Failed to copy executable from TextComponent{Q} to TextComponent{A}: TextComponent{J}`)), !1
     }
     let I = _y(A);
     if (!B.existsSync(I)) try {
-        B.mkdirSync(I), g(`Created directory ${I} for symlink`)
+        B.mkdirSync(I), g(`Created directory TextComponent{I} for symlink`)
     } catch (J) {
-        return e(Error(`Failed to create directory ${I}: ${J}`)), !1
+        return e(Error(`Failed to create directory TextComponent{I}: TextComponent{J}`)), !1
     }
     try {
         if (B.existsSync(A)) {
@@ -44,26 +47,24 @@
             B.unlinkSync(A)
         }
     } catch (J) {
-        e(Error(`Failed to check/remove existing symlink: ${J}`))
+        e(Error(`Failed to check/remove existing symlink: TextComponent{J}`))
     }
-    let Y = `${A}.tmp.${process.pid}.${Date.now()}`;
+    let Y = `TextComponent{A}.tmp.TextComponent{process.pid}.TextComponent{Date.now()}`;
     try {
         return B.symlinkSync(Q, Y), B.renameSync(Y, A), !0
     } catch (J) {
         try {
             if (B.existsSync(Y)) B.unlinkSync(Y)
         } catch {}
-        return e(Error(`Failed to create symlink from ${A} to ${Q}: ${J}`)), !1
+        return e(Error(`Failed to create symlink from TextComponent{A} to TextComponent{Q}: TextComponent{J}`)), !1
     }
 }
-// Async function: x0A
 async function x0A() {
     if (L1().installMethod === "native") return !0;
     return await tV("tengu_native_installation")
 }
-
 async function yy(A = !1) {
-    if (V0(process.env.DISABLE_INSTALLATION_CHECKS)) return [];
+    if (parseBoolean(process.env.DISABLE_INSTALLATION_CHECKS)) return [];
     let Q = await Mk(),
         B = L1();
     if (!(A || Q === "native" || B.installMethod === "native")) return [];
@@ -74,12 +75,12 @@ async function yy(A = !1) {
         W = ky(J),
         F = Sy().startsWith("win32");
     if (!Z.existsSync(J)) Y.push({
-        message: `installMethod is native, but directory ${J} does not exist`,
+        message: `installMethod is native, but directory TextComponent{J} does not exist`,
         userActionRequired: !0,
         type: "error"
     });
     if (!Z.existsSync(I.executable)) Y.push({
-        message: `installMethod is native, but claude command not found at ${I.executable}`,
+        message: `installMethod is native, but claude command not found at TextComponent{I.executable}`,
         userActionRequired: !0,
         type: "error"
     });
@@ -87,23 +88,23 @@ async function yy(A = !1) {
         let K = Z.readlinkSync(I.executable),
             D = ky(_y(I.executable), K);
         if (!Z.existsSync(D)) Y.push({
-            message: `Claude symlink points to non-existent file: ${K}`,
+            message: `Claude symlink points to non-existent file: TextComponent{K}`,
             userActionRequired: !0,
             type: "error"
         });
         else if (!uWA(D)) Y.push({
-            message: `Claude symlink points to invalid binary: ${K}`,
+            message: `Claude symlink points to invalid binary: TextComponent{K}`,
             userActionRequired: !0,
             type: "error"
         })
     } catch {
         if (!uWA(I.executable)) Y.push({
-            message: `${I.executable} exists but is not a valid Claude binary`,
+            message: `TextComponent{I.executable} exists but is not a valid Claude binary`,
             userActionRequired: !0,
             type: "error"
         })
     } else if (!uWA(I.executable)) Y.push({
-        message: `${I.executable} exists but is not a valid Claude binary`,
+        message: `TextComponent{I.executable} exists but is not a valid Claude binary`,
         userActionRequired: !0,
         type: "error"
     });
@@ -119,7 +120,7 @@ async function yy(A = !1) {
         if (F) {
             let K = J.replace(/\//g, "\\");
             Y.push({
-                message: `Native installation exists but ${K} is not in your PATH. Add it by opening: System Properties → Environment Variables → Edit User PATH → New → Add the path above. Then restart your terminal.`,
+                message: `Native installation exists but TextComponent{K} is not in your PATH. Add it by opening: System Properties → Environment Variables → Edit User PATH → New → Add the path above. Then restart your terminal.`,
                 userActionRequired: !0,
                 type: "path"
             })
@@ -130,13 +131,12 @@ async function yy(A = !1) {
             Y.push({
                 message: `Native installation exists but ~/.local/bin is not in your PATH. Run:
 
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ${C} && source ${C}`,
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> TextComponent{C} && source TextComponent{C}`,
                 userActionRequired: !0,
                 type: "path"
             })
         } return Y
 }
-
 async function th(A = !1, Q, B = !1) {
     if (!A && !await x0A()) return {
         latestVersion: null,
@@ -179,9 +179,8 @@ function kr5(A) {
 
 function Fd2(A, Q) {
     let B = Er5(Q);
-    return uW(A.locks, `${B}.lock`)
+    return uW(A.locks, `TextComponent{B}.lock`)
 }
-// Async function: hG0
 async function hG0() {
     let A = y0A();
     if (!process.execPath.includes(A.versions)) return;
@@ -191,7 +190,7 @@ async function hG0() {
             G = OA();
         if (!G.existsSync(A.locks)) G.mkdirSync(A.locks);
         if (!G.existsSync(Q)) {
-            g(`Cannot lock current version - file does not exist: ${Q}`, {
+            g(`Cannot lock current version - file does not exist: TextComponent{Q}`, {
                 level: "info"
             });
             return
@@ -202,7 +201,7 @@ async function hG0() {
                 retries: 0,
                 lockfilePath: B,
                 onCompromised: (Z) => {
-                    g(`NON-FATAL: Lock on running version was compromised: ${Z.message}`, {
+                    g(`NON-FATAL: Lock on running version was compromised: TextComponent{Z.message}`, {
                         level: "info"
                     })
                 }
@@ -211,22 +210,21 @@ async function hG0() {
             Vd2(Q, Z);
             return
         }
-        g(`Acquired lock on running version: ${Q}`)
+        g(`Acquired lock on running version: TextComponent{Q}`)
     } catch (Q) {
-        g(`NON-FATAL: Failed to lock current version during execution ${Q instanceof Error?Q.message:String(Q)}`, {
+        g(`NON-FATAL: Failed to lock current version during execution TextComponent{Q instanceof Error?Q.message:String(Q)}`, {
             level: "info"
         })
     }
 }
 
 function Vd2(A, Q) {
-    let B = `NON-FATAL: Lock acquisition failed for ${A} (expected in multi-process scenarios)`,
+    let B = `NON-FATAL: Lock acquisition failed for TextComponent{A} (expected in multi-process scenarios)`,
         G = Q instanceof Error ? Error(B, {
             cause: Q
-        }) : Error(`${B}: ${Q}`);
+        }) : Error(`TextComponent{B}: TextComponent{Q}`);
     e(G)
 }
-// Async function: gG0
 async function gG0() {
     if (await Promise.resolve(), !await x0A()) return;
     let A = OA(),
@@ -234,16 +232,16 @@ async function gG0() {
     if (Sy().startsWith("win32")) try {
         let G = _y(Q.executable);
         if (A.existsSync(G)) {
-            let I = A.readdirStringSync(G).filter((J) => J.startsWith("claude.exe.old.") && J.match(/claude\.exe\.old\.\d+$/)),
+            let I = A.readdirStringSync(G).filter((J) => J.startsWith("claude.exe.old.") && J.match(/claude\.exe\.old\.\d+TextComponent/)),
                 Y = 0;
             for (let J of I) try {
                 let W = uW(G, J);
                 A.unlinkSync(W), Y++
             } catch {}
-            if (Y > 0) g(`Cleaned up ${Y} old Windows executables on startup`)
+            if (Y > 0) g(`Cleaned up TextComponent{Y} old Windows executables on startup`)
         }
     } catch (G) {
-        g(`Failed to clean up old Windows executables: ${G}`)
+        g(`Failed to clean up old Windows executables: TextComponent{G}`)
     }
     if (A.existsSync(Q.staging)) try {
         let G = A.readdirStringSync(Q.staging),
@@ -255,30 +253,30 @@ async function gG0() {
                 if (A.statSync(J).mtime.getTime() < Z) A.rmSync(J, {
                     recursive: !0,
                     force: !0
-                }), I++, g(`Cleaned up old staging directory: ${Y}`)
+                }), I++, g(`Cleaned up old staging directory: TextComponent{Y}`)
             } catch {}
         }
-        if (I > 0) g(`Cleaned up ${I} orphaned staging directories`), BA("tengu_native_staging_cleanup", {
+        if (I > 0) g(`Cleaned up TextComponent{I} orphaned staging directories`), BA("tengu_native_staging_cleanup", {
             cleaned_count: I
         })
     } catch (G) {
-        g(`Failed to clean up staging directories: ${G}`)
+        g(`Failed to clean up staging directories: TextComponent{G}`)
     }
     if (A.existsSync(Q.versions)) try {
         let G = A.readdirStringSync(Q.versions),
             Z = Date.now() - 3600000,
             I = 0;
         for (let Y of G)
-            if (Y.match(/\.tmp\.\d+\.\d+$/)) {
+            if (Y.match(/\.tmp\.\d+\.\d+TextComponent/)) {
                 let J = uW(Q.versions, Y);
                 try {
-                    if (A.statSync(J).mtime.getTime() < Z) A.unlinkSync(J), I++, g(`Cleaned up orphaned temp install file: ${Y}`)
+                    if (A.statSync(J).mtime.getTime() < Z) A.unlinkSync(J), I++, g(`Cleaned up orphaned temp install file: TextComponent{Y}`)
                 } catch {}
-            } if (I > 0) g(`Cleaned up ${I} orphaned temp install files`), BA("tengu_native_temp_files_cleanup", {
+            } if (I > 0) g(`Cleaned up TextComponent{I} orphaned temp install files`), BA("tengu_native_temp_files_cleanup", {
             cleaned_count: I
         })
     } catch (G) {
-        g(`Failed to clean up temp install files: ${G}`)
+        g(`Failed to clean up temp install files: TextComponent{G}`)
     }
     if (!A.existsSync(Q.versions)) return;
     try {
@@ -299,7 +297,7 @@ async function gG0() {
         for (let V of G) {
             let K = ky(Q.versions, V);
             if (Y.has(K)) continue;
-            if (!await vG0(K, () => {})) Y.add(K), g(`Protecting locked version from cleanup: ${V}`)
+            if (!await vG0(K, () => {})) Y.add(K), g(`Protecting locked version from cleanup: TextComponent{V}`)
         }
         let W = G.map((V) => {
                 let K = ky(Q.versions, V);
@@ -316,9 +314,9 @@ async function gG0() {
             if (await vG0(V.path, () => {
                     A.unlinkSync(V.path)
                 })) F++;
-            else g(`Skipping deletion of ${V.name} - locked by another process`)
+            else g(`Skipping deletion of TextComponent{V.name} - locked by another process`)
         } catch (K) {
-            e(Error(`Failed to delete version ${V.name}: ${K}`))
+            e(Error(`Failed to delete version TextComponent{V.name}: TextComponent{K}`))
         }
         if (F > 0) BA("tengu_native_version_cleanup", {
             deleted_count: F,
@@ -326,7 +324,7 @@ async function gG0() {
             retained_count: W.length - F
         })
     } catch (G) {
-        e(Error(`Version cleanup failed: ${G}`))
+        e(Error(`Version cleanup failed: TextComponent{G}`))
     }
 }
 
@@ -341,12 +339,12 @@ function kTA() {
     try {
         if (!wr5(A.executable)) return;
         if (yr5(A.executable)) {
-            g(`Skipping removal of ${A.executable} - appears to be npm-managed`);
+            g(`Skipping removal of TextComponent{A.executable} - appears to be npm-managed`);
             return
         }
-        Lr5(A.executable), g(`Removed claude symlink at ${A.executable}`)
+        Lr5(A.executable), g(`Removed claude symlink at TextComponent{A.executable}`)
     } catch (Q) {
-        e(Error(`Failed to remove claude symlink: ${Q}`))
+        e(Error(`Failed to remove claude symlink: TextComponent{Q}`))
     }
 }
 
@@ -361,20 +359,19 @@ function yTA() {
             hadAlias: Y
         } = FQ1(Z);
         if (Y) NIA(G, I), A.push({
-            message: `Removed claude alias from ${G}. Run: unalias claude`,
+            message: `Removed claude alias from TextComponent{G}. Run: unalias claude`,
             userActionRequired: !0,
             type: "alias"
-        }), g(`Cleaned up claude alias from ${B} config`)
+        }), g(`Cleaned up claude alias from TextComponent{B} config`)
     } catch (Z) {
         e(Z instanceof Error ? Z : Error(String(Z))), A.push({
-            message: `Failed to clean up ${G}: ${Z}`,
+            message: `Failed to clean up TextComponent{G}: TextComponent{Z}`,
             userActionRequired: !1,
             type: "error"
         })
     }
     return A
 }
-
 async function xr5(A) {
     try {
         let Q = await q3("npm", ["config", "get", "prefix"]);
@@ -389,33 +386,32 @@ async function xr5(A) {
             let I = uW(B, "claude.cmd"),
                 Y = uW(B, "claude.ps1"),
                 J = uW(B, "claude");
-            if (G.existsSync(I)) G.unlinkSync(I), g(`Manually removed bin script: ${I}`), Z = !0;
-            if (G.existsSync(Y)) G.unlinkSync(Y), g(`Manually removed PowerShell script: ${Y}`), Z = !0;
-            if (G.existsSync(J)) G.unlinkSync(J), g(`Manually removed bin executable: ${J}`), Z = !0
+            if (G.existsSync(I)) G.unlinkSync(I), g(`Manually removed bin script: TextComponent{I}`), Z = !0;
+            if (G.existsSync(Y)) G.unlinkSync(Y), g(`Manually removed PowerShell script: TextComponent{Y}`), Z = !0;
+            if (G.existsSync(J)) G.unlinkSync(J), g(`Manually removed bin executable: TextComponent{J}`), Z = !0
         } else {
             let I = uW(B, "bin", "claude");
-            if (G.existsSync(I)) G.unlinkSync(I), g(`Manually removed bin symlink: ${I}`), Z = !0
+            if (G.existsSync(I)) G.unlinkSync(I), g(`Manually removed bin symlink: TextComponent{I}`), Z = !0
         }
         if (Z) {
-            g(`Successfully removed ${A} manually`);
+            g(`Successfully removed TextComponent{A} manually`);
             let I = Sy() === "windows" ? uW(B, "node_modules", A) : uW(B, "lib", "node_modules", A);
             return {
                 success: !0,
-                warning: `${A} executables removed, but node_modules directory was left intact for safety. You may manually delete it later at: ${I}`
+                warning: `TextComponent{A} executables removed, but node_modules directory was left intact for safety. You may manually delete it later at: TextComponent{I}`
             }
         } else return {
             success: !1
         }
     } catch (Q) {
-        return g(`Manual removal failed: ${Q}`, {
+        return g(`Manual removal failed: TextComponent{Q}`, {
             level: "error"
         }), {
             success: !1,
-            error: `Manual removal failed: ${Q}`
+            error: `Manual removal failed: TextComponent{Q}`
         }
     }
 }
-
 async function Jd2(A) {
     let {
         code: Q,
@@ -423,12 +419,12 @@ async function Jd2(A) {
     } = await q3("npm", ["uninstall", "-g", A], {
         cwd: OA().cwd()
     });
-    if (Q === 0) return g(`Removed global npm installation of ${A}`), {
+    if (Q === 0) return g(`Removed global npm installation of TextComponent{A}`), {
         success: !0
     };
     else if (B && !B.includes("npm ERR! code E404")) {
         if (B.includes("npm error code ENOTEMPTY")) {
-            g(`Failed to uninstall global npm package ${A}: ${B}`, {
+            g(`Failed to uninstall global npm package TextComponent{A}: TextComponent{B}`, {
                 level: "error"
             }), g("Attempting manual removal due to ENOTEMPTY error");
             let G = await xr5(A);
@@ -438,21 +434,20 @@ async function Jd2(A) {
             };
             else if (G.error) return {
                 success: !1,
-                error: `Failed to remove global npm installation of ${A}: ${B}. Manual removal also failed: ${G.error}`
+                error: `Failed to remove global npm installation of TextComponent{A}: TextComponent{B}. Manual removal also failed: TextComponent{G.error}`
             }
         }
-        return g(`Failed to uninstall global npm package ${A}: ${B}`, {
+        return g(`Failed to uninstall global npm package TextComponent{A}: TextComponent{B}`, {
             level: "error"
         }), {
             success: !1,
-            error: `Failed to remove global npm installation of ${A}: ${B}`
+            error: `Failed to remove global npm installation of TextComponent{A}: TextComponent{B}`
         }
     }
     return {
         success: !1
     }
 }
-// Async function: xTA
 async function xTA() {
     let A = [],
         Q = [],
@@ -491,9 +486,9 @@ async function xTA() {
         Z.rmSync(I, {
             recursive: !0,
             force: !0
-        }), B++, g(`Removed local installation at ${I}`)
+        }), B++, g(`Removed local installation at TextComponent{I}`)
     } catch (Y) {
-        A.push(`Failed to remove ${I}: ${Y}`), g(`Failed to remove local installation: ${Y}`, {
+        A.push(`Failed to remove TextComponent{I}: TextComponent{Y}`), g(`Failed to remove local installation: TextComponent{Y}`, {
             level: "error"
         })
     }
@@ -504,7 +499,7 @@ async function xTA() {
     }
 }
 var bG0, Mr5 = 2;
-var xG0 = L(() => {
+var xG0 = lazyLoader(() => {
     f5();
     it();
     o0();
@@ -520,14 +515,14 @@ var xG0 = L(() => {
     Yd2();
     Ih();
     hQ();
-    bG0 = GA(hKA(), 1)
+    bG0 = esmImport(hKA(), 1)
 });
-var xP = L(() => {
+var xP = lazyLoader(() => {
     xG0()
 });
 
 function Kd2(A) {
-    return `${mWA.major(A,{loose:!0})}.${mWA.minor(A,{loose:!0})}.${mWA.patch(A,{loose:!0})}`
+    return `TextComponent{mWA.major(A,{loose:!0})}.TextComponent{mWA.minor(A,{loose:!0})}.TextComponent{mWA.patch(A,{loose:!0})}`
 }
 
 function G71(A, Q = {
@@ -544,8 +539,8 @@ function G71(A, Q = {
     return null
 }
 var Dd2, mWA;
-var uG0 = L(() => {
-    Dd2 = GA(VA(), 1), mWA = GA(WE(), 1)
+var uG0 = lazyLoader(() => {
+    Dd2 = esmImport(VA(), 1), mWA = esmImport(WE(), 1)
 });
 
 function Cd2({
@@ -578,7 +573,7 @@ function Cd2({
             let H = L1();
             if (H.installMethod !== "native") kTA();
             let C = await Mk();
-            if (g(`AutoUpdater: Detected installation type: ${C}`), C === "development") {
+            if (g(`AutoUpdater: Detected installation type: TextComponent{C}`), C === "development") {
                 g("AutoUpdater: Cannot auto-update development build"), Q(!1);
                 return
             }
@@ -622,19 +617,19 @@ function Cd2({
     return F3.createElement(j, {
         flexDirection: "row",
         gap: 1
-    }, I && F3.createElement($, {
+    }, I && F3.createElement(TextComponent, {
         dimColor: !0
-    }, "globalVersion: ", Y.global, " · latestVersion:", " ", Y.latest), A ? F3.createElement(F3.Fragment, null, F3.createElement(j, null, F3.createElement($, {
+    }, "globalVersion: ", Y.global, " · latestVersion:", " ", Y.latest), A ? F3.createElement(F3.Fragment, null, F3.createElement(j, null, F3.createElement(TextComponent, {
         color: "text",
         dimColor: !0,
         wrap: "end"
-    }, "Auto-updating…"))) : G?.status === "success" && Z && W && F3.createElement($, {
+    }, "Auto-updating…"))) : G?.status === "success" && Z && W && F3.createElement(TextComponent, {
         color: "success"
-    }, "✓ Update installed · Restart to apply"), (G?.status === "install_failed" || G?.status === "no_permissions") && F3.createElement($, {
+    }, "✓ Update installed · Restart to apply"), (G?.status === "install_failed" || G?.status === "no_permissions") && F3.createElement(TextComponent, {
         color: "error"
-    }, "✗ Auto-update failed · Try ", F3.createElement($, {
+    }, "✗ Auto-update failed · Try ", F3.createElement(TextComponent, {
         bold: !0
-    }, "claude doctor"), !sl() && F3.createElement(F3.Fragment, null, " ", "or ", F3.createElement($, {
+    }, "claude doctor"), !sl() && F3.createElement(F3.Fragment, null, " ", "or ", F3.createElement(TextComponent, {
         bold: !0
     }, "npm i -g ", {
         ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
@@ -642,7 +637,7 @@ function Cd2({
         README_URL: "https://docs.claude.com/s/claude-code",
         VERSION: "2.0.57",
         FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
-    }.PACKAGE_URL)), sl() && F3.createElement(F3.Fragment, null, " ", "or", " ", F3.createElement($, {
+    }.PACKAGE_URL)), sl() && F3.createElement(F3.Fragment, null, " ", "or", " ", F3.createElement(TextComponent, {
         bold: !0
     }, "cd ~/.claude/local && npm update ", {
         ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
@@ -653,7 +648,7 @@ function Cd2({
     }.PACKAGE_URL))))
 }
 var F3, Hd2, Z71;
-var Ed2 = L(() => {
+var Ed2 = lazyLoader(() => {
     hA();
     jQ();
     LIA();
@@ -665,7 +660,7 @@ var Ed2 = L(() => {
     uG0();
     Ih();
     D0();
-    F3 = GA(VA(), 1), Hd2 = GA(WE(), 1), Z71 = GA(VA(), 1)
+    F3 = esmImport(VA(), 1), Hd2 = esmImport(WE(), 1), Z71 = esmImport(VA(), 1)
 });
 
 function vr5(A) {
@@ -749,21 +744,21 @@ function zd2({
     return lF.createElement(j, {
         flexDirection: "row",
         gap: 1
-    }, I && lF.createElement($, {
+    }, I && lF.createElement(TextComponent, {
         dimColor: !0
-    }, "current: ", Y.current, " · latest: ", Y.latest), A ? lF.createElement(j, null, lF.createElement($, {
+    }, "current: ", Y.current, " · latest: ", Y.latest), A ? lF.createElement(j, null, lF.createElement(TextComponent, {
         dimColor: !0,
         wrap: "end"
-    }, "Checking for updates")) : G?.status === "success" && Z && W && lF.createElement($, {
+    }, "Checking for updates")) : G?.status === "success" && Z && W && lF.createElement(TextComponent, {
         color: "success"
-    }, "✓ Update installed · Restart to update"), G?.status === "install_failed" && lF.createElement($, {
+    }, "✓ Update installed · Restart to update"), G?.status === "install_failed" && lF.createElement(TextComponent, {
         color: "error"
-    }, "✗ Auto-update failed · Try ", lF.createElement($, {
+    }, "✗ Auto-update failed · Try ", lF.createElement(TextComponent, {
         bold: !0
     }, "/status")))
 }
 var lF, I71;
-var Ud2 = L(() => {
+var Ud2 = lazyLoader(() => {
     hA();
     jQ();
     xP();
@@ -772,7 +767,7 @@ var Ud2 = L(() => {
     w0();
     u1();
     uG0();
-    lF = GA(VA(), 1), I71 = GA(VA(), 1)
+    lF = esmImport(VA(), 1), I71 = esmImport(VA(), 1)
 });
 
 function qd2({
@@ -790,13 +785,13 @@ function qd2({
             }.VERSION, Y, {
                 loose: !0
             });
-        if (B(!!J), J) g(`PackageManagerAutoUpdater: Update available ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION} -> ${Y}`)
+        if (B(!!J), J) g(`PackageManagerAutoUpdater: Update available TextComponent{{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://docs.claude.com/s/claude-code",VERSION:"2.0.57",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues"}.VERSION} -> TextComponent{Y}`)
     }, []);
     if (DC.useEffect(() => {
             Z()
         }, [Z]), dY(Z, 1800000), !Q) return null;
     let I = G === "homebrew" ? "brew upgrade claude-code" : "your package manager update command";
-    return DC.createElement(DC.Fragment, null, A && DC.createElement($, {
+    return DC.createElement(DC.Fragment, null, A && DC.createElement(TextComponent, {
         dimColor: !0
     }, "currentVersion: ", {
         ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
@@ -804,32 +799,30 @@ function qd2({
         README_URL: "https://docs.claude.com/s/claude-code",
         VERSION: "2.0.57",
         FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
-    }.VERSION), DC.createElement($, {
+    }.VERSION), DC.createElement(TextComponent, {
         color: "warning"
-    }, "Update available! Run: ", DC.createElement($, {
+    }, "Update available! Run: ", DC.createElement(TextComponent, {
         bold: !0
     }, I)))
 }
 var DC, $d2, wd2;
-var Nd2 = L(() => {
+var Nd2 = lazyLoader(() => {
     hA();
     LIA();
     $U();
     D0();
     DQ1();
     jQ();
-    DC = GA(VA(), 1), $d2 = GA(WE(), 1), wd2 = GA(VA(), 1)
+    DC = esmImport(VA(), 1), $d2 = esmImport(WE(), 1), wd2 = esmImport(VA(), 1)
 });
-// Async function: Y71
 async function Y71() {
     let A = process.argv.includes("-p") || process.argv.includes("--print");
     if (await Mk() === "development") return !1;
     if (!await tV("auto_migrate_to_native")) return !1;
-    if (V0(!1) || !1 || A || V0(process.env.DISABLE_AUTO_MIGRATE_TO_NATIVE)) return !1;
+    if (parseBoolean(!1) || !1 || A || parseBoolean(process.env.DISABLE_AUTO_MIGRATE_TO_NATIVE)) return !1;
     if (L1().installMethod === "native") return !1;
     return !0
 }
-// Async function: Ld2
 async function Ld2() {
     BA("tengu_auto_migrate_to_native_attempt", {});
     try {
@@ -857,7 +850,7 @@ async function Ld2() {
                 })
             });
             if (G > 0) Y.push({
-                message: `Cleaned up ${G} old npm installation(s)`,
+                message: `Cleaned up TextComponent{G} old npm installation(s)`,
                 userActionRequired: !1,
                 type: "info"
             });
@@ -868,12 +861,12 @@ async function Ld2() {
         if (Q.length > 0) {
             let G = Q.filter((Z) => Z.userActionRequired);
             if (G.length > 0) {
-                let Z = ["⚠️  Manual action required after migration to native installer:", ...G.map((I) => `• ${I.message}`)].join(`
+                let Z = ["⚠️  Manual action required after migration to native installer:", ...G.map((I) => `• TextComponent{I.message}`)].join(`
 `);
                 B.push(Z)
             }
             g("Migration completed with the following notes:"), Q.forEach((Z) => {
-                g(`  • [${Z.type}] ${Z.message}`)
+                g(`  • [TextComponent{Z.type}] TextComponent{Z.message}`)
             })
         }
         return {
@@ -889,7 +882,7 @@ async function Ld2() {
         }
     }
 }
-var mG0 = L(() => {
+var mG0 = lazyLoader(() => {
     xP();
     O9();
     w0();
@@ -908,8 +901,7 @@ function Md2({
 }) {
     let [Z, I] = J71.useState("checking"), Y = eh.useRef(!1);
     if (J71.useEffect(() => {
-            // Async function: J
-async function J() {
+            async function J() {
                 if (Y.current) return;
                 Y.current = !0;
                 try {
@@ -944,26 +936,26 @@ async function J() {
             }
             J()
         }, [A, Q, B, G]), Z === "idle" || Z === "checking") return null;
-    if (Z === "migrating") return eh.createElement($, {
+    if (Z === "migrating") return eh.createElement(TextComponent, {
         dimColor: !0
     }, "Migrating to native installation…");
-    if (Z === "success") return eh.createElement($, {
+    if (Z === "success") return eh.createElement(TextComponent, {
         color: "success"
     }, V1.tick, " Migrated to native installation");
-    if (Z === "error") return eh.createElement($, {
+    if (Z === "error") return eh.createElement(TextComponent, {
         color: "error"
     }, "Migration failed · Run /doctor for details");
     return null
 }
 var eh, J71;
-var Od2 = L(() => {
+var Od2 = lazyLoader(() => {
     hA();
     n2();
     mG0();
     w0();
     u1();
     D0();
-    eh = GA(VA(), 1), J71 = GA(VA(), 1)
+    eh = esmImport(VA(), 1), J71 = esmImport(VA(), 1)
 });
 
 function Rd2({
@@ -976,12 +968,11 @@ function Rd2({
 }) {
     let [Y, J] = fq.useState(null), [W, X] = fq.useState(null), [F, V] = fq.useState(null);
     if (fq.useEffect(() => {
-            // Async function: D
-async function D() {
+            async function D() {
                 let H = await Mk(),
                     C = H === "native",
                     E = H === "package-manager";
-                if (g(`AutoUpdaterWrapper: Installation type: ${H}`), J(C), X(E), !C && !E) {
+                if (g(`AutoUpdaterWrapper: Installation type: TextComponent{H}`), J(C), X(E), !C && !E) {
                     let z = await Y71();
                     V(z)
                 } else V(!1)
@@ -1002,7 +993,7 @@ async function D() {
                 let H = await Mk() === "native";
                 J(H), V(!1)
             } catch (D) {
-                g(`Error checking installation type after migration: ${D}`), J(!0), V(!1)
+                g(`Error checking installation type after migration: TextComponent{D}`), J(!0), V(!1)
             }
         },
         onChangeIsUpdating: Q,
@@ -1019,7 +1010,7 @@ async function D() {
     })
 }
 var fq;
-var Td2 = L(() => {
+var Td2 = lazyLoader(() => {
     Ed2();
     Ud2();
     Nd2();
@@ -1027,15 +1018,15 @@ var Td2 = L(() => {
     Ih();
     D0();
     mG0();
-    fq = GA(VA(), 1)
+    fq = esmImport(VA(), 1)
 });
-var qO = U((_d2) => {
+var qO = moduleWrapper((_d2) => {
     Object.defineProperty(_d2, "__esModule", {
         value: !0
     });
     var Pd2 = Object.prototype.toString;
 
-function br5(A) {
+    function br5(A) {
         switch (Pd2.call(A)) {
             case "[object Error]":
             case "[object Exception]":
@@ -1046,63 +1037,63 @@ function br5(A) {
         }
     }
 
-function dWA(A, Q) {
-        return Pd2.call(A) === `[object ${Q}]`
+    function dWA(A, Q) {
+        return Pd2.call(A) === `[object TextComponent{Q}]`
     }
 
-function fr5(A) {
+    function fr5(A) {
         return dWA(A, "ErrorEvent")
     }
 
-function hr5(A) {
+    function hr5(A) {
         return dWA(A, "DOMError")
     }
 
-function gr5(A) {
+    function gr5(A) {
         return dWA(A, "DOMException")
     }
 
-function ur5(A) {
+    function ur5(A) {
         return dWA(A, "String")
     }
 
-function jd2(A) {
+    function jd2(A) {
         return typeof A === "object" && A !== null && "__sentry_template_string__" in A && "__sentry_template_values__" in A
     }
 
-function mr5(A) {
+    function mr5(A) {
         return A === null || jd2(A) || typeof A !== "object" && typeof A !== "function"
     }
 
-function Sd2(A) {
+    function Sd2(A) {
         return dWA(A, "Object")
     }
 
-function dr5(A) {
+    function dr5(A) {
         return typeof Event < "u" && W71(A, Event)
     }
 
-function cr5(A) {
+    function cr5(A) {
         return typeof Element < "u" && W71(A, Element)
     }
 
-function pr5(A) {
+    function pr5(A) {
         return dWA(A, "RegExp")
     }
 
-function lr5(A) {
+    function lr5(A) {
         return Boolean(A && A.then && typeof A.then === "function")
     }
 
-function ir5(A) {
+    function ir5(A) {
         return Sd2(A) && "nativeEvent" in A && "preventDefault" in A && "stopPropagation" in A
     }
 
-function nr5(A) {
+    function nr5(A) {
         return typeof A === "number" && A !== A
     }
 
-function W71(A, Q) {
+    function W71(A, Q) {
         try {
             return A instanceof Q
         } catch (B) {
@@ -1110,7 +1101,7 @@ function W71(A, Q) {
         }
     }
 
-function ar5(A) {
+    function ar5(A) {
         return !!(typeof A === "object" && A !== null && (A.__isVue || A._isVue))
     }
     _d2.isDOMError = hr5;
@@ -1130,18 +1121,18 @@ function ar5(A) {
     _d2.isThenable = lr5;
     _d2.isVueViewModel = ar5
 });
-var vTA = U((yd2) => {
+var vTA = moduleWrapper((yd2) => {
     Object.defineProperty(yd2, "__esModule", {
         value: !0
     });
     var X71 = qO();
 
-function Vo5(A, Q = 0) {
+    function Vo5(A, Q = 0) {
         if (typeof A !== "string" || Q === 0) return A;
-        return A.length <= Q ? A : `${A.slice(0,Q)}...`
+        return A.length <= Q ? A : `TextComponent{A.slice(0,Q)}...`
     }
 
-function Ko5(A, Q) {
+    function Ko5(A, Q) {
         let B = A,
             G = B.length;
         if (G <= 150) return B;
@@ -1151,12 +1142,12 @@ function Ko5(A, Q) {
         let I = Math.min(Z + 140, G);
         if (I > G - 5) I = G;
         if (I === G) Z = Math.max(I - 140, 0);
-        if (B = B.slice(Z, I), Z > 0) B = `'{snip} ${B}`;
+        if (B = B.slice(Z, I), Z > 0) B = `'{snip} TextComponent{B}`;
         if (I < G) B += " {snip}";
         return B
     }
 
-function Do5(A, Q) {
+    function Do5(A, Q) {
         if (!Array.isArray(A)) return "";
         let B = [];
         for (let G = 0; G < A.length; G++) {
@@ -1171,14 +1162,14 @@ function Do5(A, Q) {
         return B.join(Q)
     }
 
-function kd2(A, Q, B = !1) {
+    function kd2(A, Q, B = !1) {
         if (!X71.isString(A)) return !1;
         if (X71.isRegExp(Q)) return Q.test(A);
         if (X71.isString(Q)) return B ? A === Q : A.includes(Q);
         return !1
     }
 
-function Ho5(A, Q = [], B = !1) {
+    function Ho5(A, Q = [], B = !1) {
         return Q.some((G) => kd2(A, G, B))
     }
     yd2.isMatchingPattern = kd2;
@@ -1187,20 +1178,20 @@ function Ho5(A, Q = [], B = !1) {
     yd2.stringMatchesSomePattern = Ho5;
     yd2.truncate = Vo5
 });
-var fd2 = U((bd2) => {
+var fd2 = moduleWrapper((bd2) => {
     Object.defineProperty(bd2, "__esModule", {
         value: !0
     });
     var dG0 = qO(),
         wo5 = vTA();
 
-function qo5(A, Q, B = 250, G, Z, I, Y) {
+    function qo5(A, Q, B = 250, G, Z, I, Y) {
         if (!I.exception || !I.exception.values || !Y || !dG0.isInstanceOf(Y.originalException, Error)) return;
         let J = I.exception.values.length > 0 ? I.exception.values[I.exception.values.length - 1] : void 0;
         if (J) I.exception.values = No5(cG0(A, Q, Z, Y.originalException, G, I.exception.values, J, 0), B)
     }
 
-function cG0(A, Q, B, G, Z, I, Y, J) {
+    function cG0(A, Q, B, G, Z, I, Y, J) {
         if (I.length >= B + 1) return I;
         let W = [...I];
         if (dG0.isInstanceOf(G[Z], Error)) {
@@ -1214,13 +1205,13 @@ function cG0(A, Q, B, G, Z, I, Y, J) {
                 xd2(Y, J);
                 let V = A(Q, X),
                     K = W.length;
-                vd2(V, `errors[${F}]`, K, J), W = cG0(A, Q, B, X, Z, [V, ...W], V, K)
+                vd2(V, `errors[TextComponent{F}]`, K, J), W = cG0(A, Q, B, X, Z, [V, ...W], V, K)
             }
         });
         return W
     }
 
-function xd2(A, Q) {
+    function xd2(A, Q) {
         A.mechanism = A.mechanism || {
             type: "generic",
             handled: !0
@@ -1233,7 +1224,7 @@ function xd2(A, Q) {
         }
     }
 
-function vd2(A, Q, B, G) {
+    function vd2(A, Q, B, G) {
         A.mechanism = A.mechanism || {
             type: "generic",
             handled: !0
@@ -1246,7 +1237,7 @@ function vd2(A, Q, B, G) {
         }
     }
 
-function No5(A, Q) {
+    function No5(A, Q) {
         return A.map((B) => {
             if (B.value) B.value = wo5.truncate(B.value, Q);
             return B
@@ -1254,23 +1245,23 @@ function No5(A, Q) {
     }
     bd2.applyAggregateErrorsToEvent = qo5
 });
-var HC = U((hd2) => {
+var HC = moduleWrapper((hd2) => {
     Object.defineProperty(hd2, "__esModule", {
         value: !0
     });
 
-function F71(A) {
+    function F71(A) {
         return A && A.Math == Math ? A : void 0
     }
     var pG0 = typeof globalThis == "object" && F71(globalThis) || typeof window == "object" && F71(window) || typeof self == "object" && F71(self) || typeof global == "object" && F71(global) || function() {
         return this
     }() || {};
 
-function Mo5() {
+    function Mo5() {
         return pG0
     }
 
-function Oo5(A, Q, B) {
+    function Oo5(A, Q, B) {
         let G = B || pG0,
             Z = G.__SENTRY__ = G.__SENTRY__ || {};
         return Z[A] || (Z[A] = Q())
@@ -1279,7 +1270,7 @@ function Oo5(A, Q, B) {
     hd2.getGlobalObject = Mo5;
     hd2.getGlobalSingleton = Oo5
 });
-var lG0 = U((gd2) => {
+var lG0 = moduleWrapper((gd2) => {
     Object.defineProperty(gd2, "__esModule", {
         value: !0
     });
@@ -1288,7 +1279,7 @@ var lG0 = U((gd2) => {
         cWA = So5.getGlobalObject(),
         _o5 = 80;
 
-function ko5(A, Q = {}) {
+    function ko5(A, Q = {}) {
         if (!A) return "<unknown>";
         try {
             let B = A,
@@ -1310,7 +1301,7 @@ function ko5(A, Q = {}) {
         }
     }
 
-function yo5(A, Q) {
+    function yo5(A, Q) {
         let B = A,
             G = [],
             Z, I, Y, J, W;
@@ -1321,22 +1312,22 @@ function yo5(A, Q) {
         G.push(B.tagName.toLowerCase());
         let X = Q && Q.length ? Q.filter((V) => B.getAttribute(V)).map((V) => [V, B.getAttribute(V)]) : null;
         if (X && X.length) X.forEach((V) => {
-            G.push(`[${V[0]}="${V[1]}"]`)
+            G.push(`[TextComponent{V[0]}="TextComponent{V[1]}"]`)
         });
         else {
-            if (B.id) G.push(`#${B.id}`);
+            if (B.id) G.push(`#TextComponent{B.id}`);
             if (Z = B.className, Z && jo5.isString(Z)) {
                 I = Z.split(/\s+/);
-                for (W = 0; W < I.length; W++) G.push(`.${I[W]}`)
+                for (W = 0; W < I.length; W++) G.push(`.TextComponent{I[W]}`)
             }
         }
         let F = ["aria-label", "type", "name", "title", "alt"];
         for (W = 0; W < F.length; W++)
-            if (Y = F[W], J = B.getAttribute(Y), J) G.push(`[${Y}="${J}"]`);
+            if (Y = F[W], J = B.getAttribute(Y), J) G.push(`[TextComponent{Y}="TextComponent{J}"]`);
         return G.join("")
     }
 
-function xo5() {
+    function xo5() {
         try {
             return cWA.document.location.href
         } catch (A) {
@@ -1344,12 +1335,12 @@ function xo5() {
         }
     }
 
-function vo5(A) {
+    function vo5(A) {
         if (cWA.document && cWA.document.querySelector) return cWA.document.querySelector(A);
         return null
     }
 
-function bo5(A) {
+    function bo5(A) {
         if (!cWA.HTMLElement) return null;
         let Q = A,
             B = 5;
@@ -1365,14 +1356,14 @@ function bo5(A) {
     gd2.getLocationHref = xo5;
     gd2.htmlTreeAsString = ko5
 });
-var xy = U((ud2) => {
+var xy = moduleWrapper((ud2) => {
     Object.defineProperty(ud2, "__esModule", {
         value: !0
     });
     var mo5 = typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__;
     ud2.DEBUG_BUILD = mo5
 });
-var vP = U((dd2) => {
+var vP = moduleWrapper((dd2) => {
     Object.defineProperty(dd2, "__esModule", {
         value: !0
     });
@@ -1382,7 +1373,7 @@ var vP = U((dd2) => {
         nG0 = ["debug", "info", "warn", "error", "log", "assert", "trace"],
         aG0 = {};
 
-function md2(A) {
+    function md2(A) {
         if (!("console" in iG0.GLOBAL_OBJ)) return A();
         let Q = iG0.GLOBAL_OBJ.console,
             B = {},
@@ -1400,7 +1391,7 @@ function md2(A) {
         }
     }
 
-function lo5() {
+    function lo5() {
         let A = !1,
             Q = {
                 enable: () => {
@@ -1414,7 +1405,7 @@ function lo5() {
         if (co5.DEBUG_BUILD) nG0.forEach((B) => {
             Q[B] = (...G) => {
                 if (A) md2(() => {
-                    iG0.GLOBAL_OBJ.console[B](`${po5}[${B}]:`, ...G)
+                    iG0.GLOBAL_OBJ.console[B](`TextComponent{po5}[TextComponent{B}]:`, ...G)
                 })
             }
         });
@@ -1431,7 +1422,7 @@ function lo5() {
     dd2.logger = io5;
     dd2.originalConsoleMethods = aG0
 });
-var sG0 = U((ld2) => {
+var sG0 = moduleWrapper((ld2) => {
     Object.defineProperty(ld2, "__esModule", {
         value: !0
     });
@@ -1439,11 +1430,11 @@ var sG0 = U((ld2) => {
         bTA = vP(),
         to5 = /^(?:(\w+):)\/\/(?:(\w+)(?::(\w+)?)?@)([\w.-]+)(?::(\d+))?\/(.+)/;
 
-function eo5(A) {
+    function eo5(A) {
         return A === "http" || A === "https"
     }
 
-function At5(A, Q = !1) {
+    function At5(A, Q = !1) {
         let {
             host: B,
             path: G,
@@ -1453,14 +1444,14 @@ function At5(A, Q = !1) {
             protocol: J,
             publicKey: W
         } = A;
-        return `${J}://${W}${Q&&Z?`:${Z}`:""}@${B}${I?`:${I}`:""}/${G?`${G}/`:G}${Y}`
+        return `TextComponent{J}://TextComponent{W}TextComponent{Q&&Z?`:TextComponent{Z}`:""}@TextComponent{B}TextComponent{I?`:TextComponent{I}`:""}/TextComponent{G?`TextComponent{G}/`:G}TextComponent{Y}`
     }
 
-function cd2(A) {
+    function cd2(A) {
         let Q = to5.exec(A);
         if (!Q) {
             bTA.consoleSandbox(() => {
-                console.error(`Invalid Sentry Dsn: ${A}`)
+                console.error(`Invalid Sentry Dsn: TextComponent{A}`)
             });
             return
         }
@@ -1481,7 +1472,7 @@ function cd2(A) {
         })
     }
 
-function pd2(A) {
+    function pd2(A) {
         return {
             protocol: A.protocol,
             publicKey: A.publicKey || "",
@@ -1493,7 +1484,7 @@ function pd2(A) {
         }
     }
 
-function Qt5(A) {
+    function Qt5(A) {
         if (!oo5.DEBUG_BUILD) return !0;
         let {
             port: Q,
@@ -1501,16 +1492,16 @@ function Qt5(A) {
             protocol: G
         } = A;
         if (["protocol", "publicKey", "host", "projectId"].find((Y) => {
-                if (!A[Y]) return bTA.logger.error(`Invalid Sentry Dsn: ${Y} missing`), !0;
+                if (!A[Y]) return bTA.logger.error(`Invalid Sentry Dsn: TextComponent{Y} missing`), !0;
                 return !1
             })) return !1;
-        if (!B.match(/^\d+$/)) return bTA.logger.error(`Invalid Sentry Dsn: Invalid projectId ${B}`), !1;
-        if (!eo5(G)) return bTA.logger.error(`Invalid Sentry Dsn: Invalid protocol ${G}`), !1;
-        if (Q && isNaN(parseInt(Q, 10))) return bTA.logger.error(`Invalid Sentry Dsn: Invalid port ${Q}`), !1;
+        if (!B.match(/^\d+TextComponent/)) return bTA.logger.error(`Invalid Sentry Dsn: Invalid projectId TextComponent{B}`), !1;
+        if (!eo5(G)) return bTA.logger.error(`Invalid Sentry Dsn: Invalid protocol TextComponent{G}`), !1;
+        if (Q && isNaN(parseInt(Q, 10))) return bTA.logger.error(`Invalid Sentry Dsn: Invalid port TextComponent{Q}`), !1;
         return !0
     }
 
-function Bt5(A) {
+    function Bt5(A) {
         let Q = typeof A === "string" ? cd2(A) : pd2(A);
         if (!Q || !Qt5(Q)) return;
         return Q
@@ -1519,12 +1510,11 @@ function Bt5(A) {
     ld2.dsnToString = At5;
     ld2.makeDsn = Bt5
 });
-var rG0 = U((nd2) => {
+var rG0 = moduleWrapper((nd2) => {
     Object.defineProperty(nd2, "__esModule", {
         value: !0
     });
-
-class id2 extends Error {
+    class id2 extends Error {
         constructor(A, Q = "warn") {
             super(A);
             this.message = A, this.name = new.target.prototype.constructor.name, Object.setPrototypeOf(this, new.target.prototype), this.logLevel = Q

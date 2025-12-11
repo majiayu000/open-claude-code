@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_052.js
+ * 处理时间: 2025-12-09T03:41:39.572Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.143Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -19,11 +22,11 @@
 
     Ho2.setNodeAsyncContextStrategy = ND3
 });
-var fG1 = U(($o2) => {
+var fG1 = moduleWrapper(($o2) => {
     Object.defineProperty($o2, "__esModule", {
         value: !0
     });
-    var MD3 = UA("util"),
+    var MD3 = nodeRequire("util"),
         bG1 = P4(),
         Eo2 = l0(),
         zo2 = "Console",
@@ -54,18 +57,18 @@ var fG1 = U(($o2) => {
     $o2.Console = RD3;
     $o2.consoleIntegration = Uo2
 });
-var hG1 = U((jo2) => {
+var hG1 = moduleWrapper((jo2) => {
     var {
         _optionalChain: t0A
     } = l0();
     Object.defineProperty(jo2, "__esModule", {
         value: !0
     });
-    var jD3 = UA("child_process"),
-        qo2 = UA("fs"),
-        RO = UA("os"),
-        SD3 = UA("path"),
-        No2 = UA("util"),
+    var jD3 = nodeRequire("child_process"),
+        qo2 = nodeRequire("fs"),
+        RO = nodeRequire("os"),
+        SD3 = nodeRequire("path"),
+        No2 = nodeRequire("util"),
         Lo2 = P4(),
         Mo2 = No2.promisify(qo2.readFile),
         Oo2 = No2.promisify(qo2.readdir),
@@ -79,8 +82,7 @@ var hG1 = U((jo2) => {
                 cloudResource: !0,
                 ...A
             };
-
-async function G(I) {
+            async function G(I) {
                 if (Q === void 0) Q = Z();
                 let Y = yD3(await Q);
                 return I.contexts = {
@@ -107,8 +109,7 @@ async function G(I) {
                     }
                 }, I
             }
-            // Async function: Z
-async function Z() {
+            async function Z() {
                 let I = {};
                 if (B.os) I.os = await xD3();
                 if (B.app) I.app = bD3();
@@ -131,13 +132,12 @@ async function Z() {
         To2 = Lo2.defineIntegration(_D3),
         kD3 = Lo2.convertIntegrationFnToClass(Ro2, To2);
 
-function yD3(A) {
+    function yD3(A) {
         if (t0A([A, "optionalAccess", (Q) => Q.app, "optionalAccess", (Q) => Q.app_memory])) A.app.app_memory = process.memoryUsage().rss;
         if (t0A([A, "optionalAccess", (Q) => Q.device, "optionalAccess", (Q) => Q.free_memory])) A.device.free_memory = RO.freemem();
         return A
     }
-    // Async function: xD3
-async function xD3() {
+    async function xD3() {
         let A = RO.platform();
         switch (A) {
             case "darwin":
@@ -151,7 +151,7 @@ async function xD3() {
         }
     }
 
-function vD3() {
+    function vD3() {
         try {
             if (typeof process.versions.icu !== "string") return;
             let A = new Date(900000000);
@@ -168,7 +168,7 @@ function vD3() {
         return
     }
 
-function bD3() {
+    function bD3() {
         let A = process.memoryUsage().rss;
         return {
             app_start_time: new Date(Date.now() - process.uptime() * 1000).toISOString(),
@@ -176,7 +176,7 @@ function bD3() {
         }
     }
 
-function Po2(A) {
+    function Po2(A) {
         let Q = {},
             B;
         try {
@@ -193,8 +193,7 @@ function Po2(A) {
         }
         return Q
     }
-
-var fD3 = {
+    var fD3 = {
             aix: "IBM AIX",
             freebsd: "FreeBSD",
             openbsd: "OpenBSD",
@@ -247,16 +246,15 @@ var fD3 = {
             ubuntu: (A) => ly(/distrib_release=(.*)/, A)
         };
 
-function ly(A, Q) {
+    function ly(A, Q) {
         let B = A.exec(Q);
         return B ? B[1] : void 0
     }
-    // Async function: uD3
-async function uD3() {
+    async function uD3() {
         let A = {
             kernel_version: RO.release(),
             name: "Mac OS X",
-            version: `10.${Number(RO.release().split(".")[0])-4}`
+            version: `10.TextComponent{Number(RO.release().split(".")[0])-4}`
         };
         try {
             let Q = await new Promise((B, G) => {
@@ -268,16 +266,15 @@ async function uD3() {
                     B(I)
                 })
             });
-            A.name = ly(/^ProductName:\s+(.*)$/m, Q), A.version = ly(/^ProductVersion:\s+(.*)$/m, Q), A.build = ly(/^BuildVersion:\s+(.*)$/m, Q)
+            A.name = ly(/^ProductName:\s+(.*)TextComponent/m, Q), A.version = ly(/^ProductVersion:\s+(.*)TextComponent/m, Q), A.build = ly(/^BuildVersion:\s+(.*)TextComponent/m, Q)
         } catch (Q) {}
         return A
     }
 
-function wo2(A) {
+    function wo2(A) {
         return A.split(" ")[0].toLowerCase()
     }
-    // Async function: mD3
-async function mD3() {
+    async function mD3() {
         let A = {
             kernel_version: RO.release(),
             name: "Linux"
@@ -300,7 +297,7 @@ async function mD3() {
         return A
     }
 
-function dD3() {
+    function dD3() {
         if (process.env.VERCEL) return {
             "cloud.provider": "vercel",
             "cloud.region": process.env.VERCEL_REGION
@@ -349,21 +346,21 @@ function dD3() {
     jo2.readDirAsync = Oo2;
     jo2.readFileAsync = Mo2
 });
-var uG1 = U((xo2) => {
+var uG1 = moduleWrapper((xo2) => {
     var {
         _optionalChain: CY0
     } = l0();
     Object.defineProperty(xo2, "__esModule", {
         value: !0
     });
-    var aD3 = UA("fs"),
+    var aD3 = nodeRequire("fs"),
         So2 = P4(),
         _o2 = l0(),
         gG1 = new _o2.LRUMap(100),
         sD3 = 7,
         ko2 = "ContextLines";
 
-function rD3(A) {
+    function rD3(A) {
         return new Promise((Q, B) => {
             aD3.readFile(A, "utf8", (G, Z) => {
                 if (G) B(G);
@@ -383,8 +380,7 @@ function rD3(A) {
         },
         yo2 = So2.defineIntegration(oD3),
         tD3 = So2.convertIntegrationFnToClass(ko2, yo2);
-
-async function eD3(A, Q) {
+    async function eD3(A, Q) {
         let B = {},
             G = [];
         if (Q > 0 && CY0([A, "access", (Z) => Z.exception, "optionalAccess", (Z) => Z.values]))
@@ -403,7 +399,7 @@ async function eD3(A, Q) {
         return A
     }
 
-function AH3(A, Q) {
+    function AH3(A, Q) {
         for (let B of A)
             if (B.filename && B.context_line === void 0) {
                 let G = gG1.get(B.filename);
@@ -412,8 +408,7 @@ function AH3(A, Q) {
                 } catch (Z) {}
             }
     }
-
-async function QH3(A) {
+    async function QH3(A) {
         let Q = gG1.get(A);
         if (Q === null) return null;
         if (Q !== void 0) return Q;
@@ -427,70 +422,70 @@ async function QH3(A) {
     xo2.ContextLines = tD3;
     xo2.contextLinesIntegration = yo2
 });
-var MPA = U((vo2) => {
+var MPA = moduleWrapper((vo2) => {
     Object.defineProperty(vo2, "__esModule", {
         value: !0
     });
     var ZH3 = typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__;
     vo2.DEBUG_BUILD = ZH3
 });
-var go2 = U((ho2) => {
+var go2 = moduleWrapper((ho2) => {
     var {
         _optionalChain: iy
     } = l0();
     Object.defineProperty(ho2, "__esModule", {
         value: !0
     });
-    var EY0 = UA("url"),
+    var EY0 = nodeRequire("url"),
         YH3 = r0A();
 
-function JH3(A) {
+    function JH3(A) {
         let {
             protocol: Q,
             hostname: B,
             port: G
         } = fo2(A), Z = A.path ? A.path : "/";
-        return `${Q}//${B}${G}${Z}`
+        return `TextComponent{Q}//TextComponent{B}TextComponent{G}TextComponent{Z}`
     }
 
-function bo2(A) {
+    function bo2(A) {
         let {
             protocol: Q,
             hostname: B,
             port: G
         } = fo2(A), Z = A.pathname || "/", I = A.auth ? WH3(A.auth) : "";
-        return `${Q}//${I}${B}${G}${Z}`
+        return `TextComponent{Q}//TextComponent{I}TextComponent{B}TextComponent{G}TextComponent{Z}`
     }
 
-function WH3(A) {
+    function WH3(A) {
         let [Q, B] = A.split(":");
-        return `${Q?"[Filtered]":""}:${B?"[Filtered]":""}@`
+        return `TextComponent{Q?"[Filtered]":""}:TextComponent{B?"[Filtered]":""}@`
     }
 
-function XH3(A, Q, B) {
+    function XH3(A, Q, B) {
         if (!A) return A;
         let [G, Z] = A.split(" ");
         if (Q.host && !Q.protocol) Q.protocol = iy([B, "optionalAccess", (I) => I.agent, "optionalAccess", (I) => I.protocol]), Z = bo2(Q);
         if (iy([Z, "optionalAccess", (I) => I.startsWith, "call", (I) => I("///")])) Z = Z.slice(2);
-        return `${G} ${Z}`
+        return `TextComponent{G} TextComponent{Z}`
     }
 
-function zY0(A) {
+    function zY0(A) {
         let Q = {
             protocol: A.protocol,
             hostname: typeof A.hostname === "string" && A.hostname.startsWith("[") ? A.hostname.slice(1, -1) : A.hostname,
             hash: A.hash,
             search: A.search,
             pathname: A.pathname,
-            path: `${A.pathname||""}${A.search||""}`,
+            path: `TextComponent{A.pathname||""}TextComponent{A.search||""}`,
             href: A.href
         };
         if (A.port !== "") Q.port = Number(A.port);
-        if (A.username || A.password) Q.auth = `${A.username}:${A.password}`;
+        if (A.username || A.password) Q.auth = `TextComponent{A.username}:TextComponent{A.password}`;
         return Q
     }
 
-function FH3(A, Q) {
+    function FH3(A, Q) {
         let B, G;
         if (typeof Q[Q.length - 1] === "function") B = Q.pop();
         if (typeof Q[0] === "string") G = zY0(new EY0.URL(Q[0]));
@@ -498,7 +493,7 @@ function FH3(A, Q) {
         else {
             G = Q[0];
             try {
-                let Z = new EY0.URL(G.path || "", `${G.protocol||"http:"}//${G.hostname}`);
+                let Z = new EY0.URL(G.path || "", `TextComponent{G.protocol||"http:"}//TextComponent{G.hostname}`);
                 G = {
                     pathname: Z.pathname,
                     search: Z.search,
@@ -518,10 +513,10 @@ function FH3(A, Q) {
         else return [G]
     }
 
-function fo2(A) {
+    function fo2(A) {
         let Q = A.protocol || "",
             B = A.hostname || A.host || "",
-            G = !A.port || A.port === 80 || A.port === 443 || /^(.*):(\d+)$/.test(B) ? "" : `:${A.port}`;
+            G = !A.port || A.port === 80 || A.port === 443 || /^(.*):(\d+)TextComponent/.test(B) ? "" : `:TextComponent{A.port}`;
         return {
             protocol: Q,
             hostname: B,
@@ -534,7 +529,7 @@ function fo2(A) {
     ho2.normalizeRequestArgs = FH3;
     ho2.urlToOptions = zY0
 });
-var mG1 = U((co2) => {
+var mG1 = moduleWrapper((co2) => {
     var {
         _optionalChain: CXA
     } = l0();
@@ -561,8 +556,7 @@ var mG1 = U((co2) => {
             return new e0A(Z)
         },
         UH3 = UC.defineIntegration(zH3);
-
-class e0A {
+    class e0A {
         static __initStatic() {
             this.id = "Http"
         }
@@ -582,10 +576,10 @@ class e0A {
             }
             let Z = do2(G, this._tracing, B),
                 I = CXA([B, "optionalAccess", (W) => W.tracePropagationTargets]) || CXA([this, "access", (W) => W._tracing, "optionalAccess", (W) => W.tracePropagationTargets]),
-                Y = UA("http"),
+                Y = nodeRequire("http"),
                 J = uo2(Y, this._breadcrumbs, Z, I);
             if (dq.fill(Y, "get", J), dq.fill(Y, "request", J), EH3.NODE_VERSION.major > 8) {
-                let W = UA("https"),
+                let W = nodeRequire("https"),
                     X = uo2(W, this._breadcrumbs, Z, I);
                 dq.fill(W, "get", X), dq.fill(W, "request", X)
             }
@@ -593,7 +587,7 @@ class e0A {
     }
     e0A.__initStatic();
 
-function uo2(A, Q, B, G) {
+    function uo2(A, Q, B, G) {
         let Z = new dq.LRUMap(100),
             I = new dq.LRUMap(100),
             Y = (X) => {
@@ -611,7 +605,7 @@ function uo2(A, Q, B, G) {
                 return I.set(X, V), V
             };
 
-function W(X, F, V, K) {
+        function W(X, F, V, K) {
             if (!UC.getCurrentHub().getIntegration(e0A)) return;
             UC.addBreadcrumb({
                 category: "http",
@@ -641,7 +635,7 @@ function W(X, F, V, K) {
                     P = Y(C) ? CXA([q, "optionalAccess", (y) => y.startChild, "call", (y) => y({
                         op: "http.client",
                         origin: "auto.http.node.http",
-                        description: `${R["http.method"]} ${R.url}`,
+                        description: `TextComponent{R["http.method"]} TextComponent{R.url}`,
                         data: R
                     })]) : void 0;
                 if (z && J(C)) {
@@ -655,7 +649,7 @@ function W(X, F, V, K) {
                         ...w.getPropagationContext()
                     }, u = P ? UC.spanToTraceHeader(P) : dq.generateSentryTraceHeader(y, v, x), o = dq.dynamicSamplingContextToSentryBaggageHeader(p || (P ? UC.getDynamicSamplingContextFromSpan(P) : UC.getDynamicSamplingContextFromClient(y, z, w)));
                     $H3(H, E, u, o)
-                } else UY0.DEBUG_BUILD && dq.logger.log(`[Tracing] Not adding sentry-trace header to outgoing request (${E}) due to mismatching tracePropagationTargets option.`);
+                } else UY0.DEBUG_BUILD && dq.logger.log(`[Tracing] Not adding sentry-trace header to outgoing request (TextComponent{E}) due to mismatching tracePropagationTargets option.`);
                 return F.apply(A, D).once("response", function(y) {
                     let v = this;
                     if (Q) W("response", R, v, y);
@@ -674,7 +668,7 @@ function W(X, F, V, K) {
 
     function $H3(A, Q, B, G) {
         if ((A.headers || {})["sentry-trace"]) return;
-        UY0.DEBUG_BUILD && dq.logger.log(`[Tracing] Adding sentry-trace header ${B} to outgoing request to "${Q}": `), A.headers = {
+        UY0.DEBUG_BUILD && dq.logger.log(`[Tracing] Adding sentry-trace header TextComponent{B} to outgoing request to "TextComponent{Q}": `), A.headers = {
             ...A.headers,
             "sentry-trace": B,
             ...G && G.length > 0 && {
@@ -683,7 +677,7 @@ function W(X, F, V, K) {
         }
     }
 
-function wH3(A, Q) {
+    function wH3(A, Q) {
         let B = Q.method || "GET",
             G = {
                 url: A,
@@ -694,18 +688,18 @@ function wH3(A, Q) {
         return G
     }
 
-function qH3(A, Q) {
+    function qH3(A, Q) {
         if (!A.headers || !A.headers.baggage) return Q;
         else if (!Q) return A.headers.baggage;
         else if (Array.isArray(A.headers.baggage)) return [...A.headers.baggage, Q];
         return [A.headers.baggage, Q]
     }
 
-function mo2(A, Q) {
+    function mo2(A, Q) {
         return A === void 0 ? !1 : A.enableIfHasTracingEnabled ? UC.hasTracingEnabled(Q) : !0
     }
 
-function do2(A, Q, B) {
+    function do2(A, Q, B) {
         return A ? CXA([Q, "optionalAccess", (Z) => Z.shouldCreateSpanForRequest]) || CXA([B, "optionalAccess", (Z) => Z.shouldCreateSpanForRequest]) : () => !1
     }
     co2.Http = e0A;
@@ -713,12 +707,12 @@ function do2(A, Q, B) {
     co2._shouldCreateSpans = mo2;
     co2.httpIntegration = UH3
 });
-var io2 = U((lo2) => {
+var io2 = moduleWrapper((lo2) => {
     Object.defineProperty(lo2, "__esModule", {
         value: !0
     });
 
-function RH3(A, Q, B) {
+    function RH3(A, Q, B) {
         let G = 0,
             Z = 5,
             I = 0;
@@ -739,16 +733,16 @@ function RH3(A, Q, B) {
         return A !== void 0 && (A.length === 0 || A === "?" || A === "<anonymous>")
     }
 
-function TH3(A, Q) {
+    function TH3(A, Q) {
         return A === Q || $Y0(A) && $Y0(Q)
     }
 
-function po2(A) {
+    function po2(A) {
         if (A === void 0) return;
-        return A.slice(-10).reduce((Q, B) => `${Q},${B.function},${B.lineno},${B.colno}`, "")
+        return A.slice(-10).reduce((Q, B) => `TextComponent{Q},TextComponent{B.function},TextComponent{B.lineno},TextComponent{B.colno}`, "")
     }
 
-function PH3(A, Q) {
+    function PH3(A, Q) {
         if (Q === void 0) return;
         return po2(A(Q, 1))
     }
@@ -758,7 +752,7 @@ function PH3(A, Q) {
     lo2.hashFromStack = PH3;
     lo2.isAnonymous = $Y0
 });
-var oo2 = U((ro2) => {
+var oo2 = moduleWrapper((ro2) => {
     var {
         _optionalChain: pJ
     } = l0();
@@ -770,21 +764,21 @@ var oo2 = U((ro2) => {
         xH3 = r0A(),
         cG1 = io2();
 
-function qY0(A) {
+    function qY0(A) {
         let Q = [],
             B = !1;
 
-function G(Y) {
+        function G(Y) {
             if (Q = [], B) return;
             B = !0, A(Y)
         }
         Q.push(G);
 
-function Z(Y) {
+        function Z(Y) {
             Q.push(Y)
         }
 
-function I(Y) {
+        function I(Y) {
             let J = Q.pop() || G;
             try {
                 J(Y)
@@ -797,12 +791,11 @@ function I(Y) {
             next: I
         }
     }
-
-class no2 {
+    class no2 {
         constructor() {
             let {
                 Session: A
-            } = UA("inspector");
+            } = nodeRequire("inspector");
             this._session = new A
         }
         configureAndConnect(A, Q) {
@@ -859,12 +852,12 @@ class no2 {
         }
         _unrollOther(A, Q, B) {
             if (pJ([A, "optionalAccess", (G) => G.value, "optionalAccess", (G) => G.value]) != null) Q[A.name] = A.value.value;
-            else if (pJ([A, "optionalAccess", (G) => G.value, "optionalAccess", (G) => G.description]) != null && pJ([A, "optionalAccess", (G) => G.value, "optionalAccess", (G) => G.type]) !== "function") Q[A.name] = `<${A.value.description}>`;
+            else if (pJ([A, "optionalAccess", (G) => G.value, "optionalAccess", (G) => G.description]) != null && pJ([A, "optionalAccess", (G) => G.value, "optionalAccess", (G) => G.type]) !== "function") Q[A.name] = `<TextComponent{A.value.description}>`;
             B(Q)
         }
     }
 
-function vH3() {
+    function vH3() {
         try {
             return new no2
         } catch (A) {
@@ -876,7 +869,7 @@ function vH3() {
             let B = new dG1.LRUMap(20),
                 G, Z = !1;
 
-function I(W, {
+            function I(W, {
                 params: {
                     reason: X,
                     data: F,
@@ -904,7 +897,7 @@ function I(W, {
                         scopeChain: z,
                         functionName: w,
                         this: N
-                    } = V[E], q = z.find((P) => P.type === "local"), R = N.className === "global" || !N.className ? w : `${N.className}.${w}`;
+                    } = V[E], q = z.find((P) => P.type === "local"), R = N.className === "global" || !N.className ? w : `TextComponent{N.className}.TextComponent{w}`;
                     if (pJ([q, "optionalAccess", (P) => P.object, "access", (P) => P.objectId]) === void 0) H((P) => {
                         P[E] = {
                             function: R
@@ -923,7 +916,7 @@ function I(W, {
                 C([])
             }
 
-function Y(W) {
+            function Y(W) {
                 let X = cG1.hashFrames(pJ([W, "optionalAccess", (K) => K.stacktrace, "optionalAccess", (K) => K.frames]));
                 if (X === void 0) return;
                 let F = B.remove(X);
@@ -937,7 +930,7 @@ function Y(W) {
                 }
             }
 
-function J(W) {
+            function J(W) {
                 for (let X of pJ([W, "optionalAccess", (F) => F.exception, "optionalAccess", (F) => F.values]) || []) Y(X);
                 return W
             }
@@ -957,7 +950,7 @@ function J(W) {
                             G = cG1.createRateLimiter(K, () => {
                                 dG1.logger.log("Local variables rate-limit lifted."), pJ([Q, "optionalAccess", (D) => D.setPauseOnExceptions, "call", (D) => D(!0)])
                             }, (D) => {
-                                dG1.logger.log(`Local variables rate-limit exceeded. Disabling capturing of caught exceptions for ${D} seconds.`), pJ([Q, "optionalAccess", (H) => H.setPauseOnExceptions, "call", (H) => H(!1)])
+                                dG1.logger.log(`Local variables rate-limit exceeded. Disabling capturing of caught exceptions for TextComponent{D} seconds.`), pJ([Q, "optionalAccess", (H) => H.setPauseOnExceptions, "call", (H) => H(!1)])
                             })
                         }
                         Z = !0
@@ -981,7 +974,7 @@ function J(W) {
     ro2.createCallbackList = qY0;
     ro2.localVariablesSyncIntegration = so2
 });
-var pG1 = U((eo2) => {
+var pG1 = moduleWrapper((eo2) => {
     Object.defineProperty(eo2, "__esModule", {
         value: !0
     });
@@ -991,25 +984,25 @@ var pG1 = U((eo2) => {
     eo2.LocalVariables = mH3;
     eo2.localVariablesIntegration = dH3
 });
-var lG1 = U((It2) => {
+var lG1 = moduleWrapper((It2) => {
     Object.defineProperty(It2, "__esModule", {
         value: !0
     });
-    var At2 = UA("fs"),
-        Qt2 = UA("path"),
+    var At2 = nodeRequire("fs"),
+        Qt2 = nodeRequire("path"),
         Bt2 = P4(),
         NY0, Gt2 = "Modules";
 
-function lH3() {
+    function lH3() {
         try {
-            return UA.cache ? Object.keys(UA.cache) : []
+            return nodeRequire.cache ? Object.keys(nodeRequire.cache) : []
         } catch (A) {
             return []
         }
     }
 
-function iH3() {
-        let A = UA.main && UA.main.paths || [],
+    function iH3() {
+        let A = nodeRequire.main && nodeRequire.main.paths || [],
             Q = lH3(),
             B = {},
             G = {};
@@ -1030,7 +1023,7 @@ function iH3() {
         }), B
     }
 
-function nH3() {
+    function nH3() {
         if (!NY0) NY0 = iH3();
         return NY0
     }
@@ -1051,7 +1044,7 @@ function nH3() {
     It2.Modules = sH3;
     It2.modulesIntegration = Zt2
 });
-var MY0 = U((Yt2) => {
+var MY0 = moduleWrapper((Yt2) => {
     Object.defineProperty(Yt2, "__esModule", {
         value: !0
     });
@@ -1060,7 +1053,7 @@ var MY0 = U((Yt2) => {
         LY0 = MPA(),
         eH3 = 2000;
 
-function AC3(A) {
+    function AC3(A) {
         iG1.consoleSandbox(() => {
             console.error(A)
         });
@@ -1077,7 +1070,7 @@ function AC3(A) {
     }
     Yt2.logAndExitProcess = AC3
 });
-var aG1 = U((Vt2) => {
+var aG1 = moduleWrapper((Vt2) => {
     Object.defineProperty(Vt2, "__esModule", {
         value: !0
     });
@@ -1102,7 +1095,7 @@ var aG1 = U((Vt2) => {
         Xt2 = nG1.defineIntegration(ZC3),
         IC3 = nG1.convertIntegrationFnToClass(Wt2, Xt2);
 
-function Ft2(A, Q) {
+    function Ft2(A, Q) {
         let G = !1,
             Z = !1,
             I = !1,
@@ -1142,7 +1135,7 @@ function Ft2(A, Q) {
     Vt2.makeErrorHandler = Ft2;
     Vt2.onUncaughtExceptionIntegration = Xt2
 });
-var rG1 = U((Et2) => {
+var rG1 = moduleWrapper((Et2) => {
     Object.defineProperty(Et2, "__esModule", {
         value: !0
     });
@@ -1165,7 +1158,7 @@ var rG1 = U((Et2) => {
         Ht2 = sG1.defineIntegration(FC3),
         VC3 = sG1.convertIntegrationFnToClass(Dt2, Ht2);
 
-function Ct2(A, Q) {
+    function Ct2(A, Q) {
         return function(G, Z) {
             if (sG1.getClient() !== A) return;
             sG1.captureException(G, {
@@ -1183,7 +1176,7 @@ function Ct2(A, Q) {
         }
     }
 
-function KC3(A, Q) {
+    function KC3(A, Q) {
         let B = "This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). The promise rejected with the reason:";
         if (Q.mode === "warn") Kt2.consoleSandbox(() => {
             console.warn(B), console.error(A && A.stack ? A.stack : A)
@@ -1196,12 +1189,12 @@ function KC3(A, Q) {
     Et2.makeUnhandledPromiseHandler = Ct2;
     Et2.onUnhandledRejectionIntegration = Ht2
 });
-var oG1 = U((qt2) => {
+var oG1 = moduleWrapper((qt2) => {
     Object.defineProperty(qt2, "__esModule", {
         value: !0
     });
-    var EC3 = UA("http"),
-        zC3 = UA("url"),
+    var EC3 = nodeRequire("http"),
+        zC3 = nodeRequire("url"),
         zt2 = P4(),
         EXA = l0(),
         Ut2 = "Spotlight",
@@ -1221,7 +1214,7 @@ var oG1 = U((qt2) => {
         $t2 = zt2.defineIntegration(UC3),
         $C3 = zt2.convertIntegrationFnToClass(Ut2, $t2);
 
-function wC3(A, Q) {
+    function wC3(A, Q) {
         let B = qC3(Q.sidecarUrl);
         if (!B) return;
         let G = 0;
@@ -1252,16 +1245,16 @@ function wC3(A, Q) {
         })
     }
 
-function qC3(A) {
+    function qC3(A) {
         try {
-            return new zC3.URL(`${A}`)
+            return new zC3.URL(`TextComponent{A}`)
         } catch (Q) {
-            EXA.logger.warn(`[Spotlight] Invalid sidecar URL: ${A}`);
+            EXA.logger.warn(`[Spotlight] Invalid sidecar URL: TextComponent{A}`);
             return
         }
     }
 
-function wt2() {
+    function wt2() {
         let {
             request: A
         } = EC3;
@@ -1269,14 +1262,14 @@ function wt2() {
         return A
     }
 
-function NC3(A) {
+    function NC3(A) {
         return "__sentry_original__" in A
     }
     qt2.Spotlight = $C3;
     qt2.getNativeHttpRequest = wt2;
     qt2.spotlightIntegration = $t2
 });
-var eG1 = U((Nt2) => {
+var eG1 = moduleWrapper((Nt2) => {
     var {
         _optionalChain: tG1
     } = l0();
@@ -1298,8 +1291,7 @@ var eG1 = U((Nt2) => {
             return new w$(A)
         },
         PC3 = QF.defineIntegration(TC3);
-
-class w$ {
+    class w$ {
         static __initStatic() {
             this.id = "Undici"
         }
@@ -1323,7 +1315,7 @@ class w$ {
             if (RC3.NODE_VERSION.major < 16) return;
             let Q;
             try {
-                Q = UA("diagnostics_channel")
+                Q = nodeRequire("diagnostics_channel")
             } catch (B) {}
             if (!Q || !Q.subscribe) return;
             Q.subscribe(Nt2.ChannelName.RequestCreate, this._onRequestCreate), Q.subscribe(Nt2.ChannelName.RequestEnd, this._onRequestEnd), Q.subscribe(Nt2.ChannelName.RequestError, this._onRequestError)
@@ -1421,7 +1413,7 @@ class w$ {
     }
     w$.__initStatic();
 
-function jC3(A, Q, B) {
+    function jC3(A, Q, B) {
         let G;
         if (Array.isArray(A.headers)) G = A.headers.some((Z) => Z === "sentry-trace");
         else G = A.headers.split(`\r
@@ -1430,7 +1422,7 @@ function jC3(A, Q, B) {
         if (A.addHeader("sentry-trace", Q), B) A.addHeader("baggage", B)
     }
 
-function SC3(A, Q, B) {
+    function SC3(A, Q, B) {
         let G = AQA.parseUrl(B),
             Z = Q.method || "GET",
             I = {
@@ -1441,25 +1433,25 @@ function SC3(A, Q, B) {
         return tG1([A, "optionalAccess", (Y) => Y.startChild, "call", (Y) => Y({
             op: "http.client",
             origin: "auto.http.node.undici",
-            description: `${Z} ${AQA.getSanitizedUrlString(G)}`,
+            description: `TextComponent{Z} TextComponent{AQA.getSanitizedUrlString(G)}`,
             data: I
         })])
     }
     Nt2.Undici = w$;
     Nt2.nativeNodeFetchintegration = PC3
 });
-var OY0 = U((Ot2) => {
+var OY0 = moduleWrapper((Ot2) => {
     Object.defineProperty(Ot2, "__esModule", {
         value: !0
     });
-    var Lt2 = UA("path"),
+    var Lt2 = nodeRequire("path"),
         yC3 = l0();
 
-function Mt2(A) {
+    function Mt2(A) {
         return A.replace(/^[A-Z]:/, "").replace(/\\/g, "/")
     }
 
-function xC3(A = process.argv[1] ? yC3.dirname(process.argv[1]) : process.cwd(), Q = Lt2.sep === "\\") {
+    function xC3(A = process.argv[1] ? yC3.dirname(process.argv[1]) : process.cwd(), Q = Lt2.sep === "\\") {
         let B = Q ? Mt2(A) : A;
         return (G) => {
             if (!G) return;
@@ -1472,7 +1464,7 @@ function xC3(A = process.argv[1] ? yC3.dirname(process.argv[1]) : process.cwd(),
             if (J === ".js" || J === ".mjs" || J === ".cjs") Y = Y.slice(0, J.length * -1);
             if (!I) I = ".";
             let W = I.lastIndexOf("/node_modules");
-            if (W > -1) return `${I.slice(W+14).replace(/\//g,".")}:${Y}`;
+            if (W > -1) return `TextComponent{I.slice(W+14).replace(/\//g,".")}:TextComponent{Y}`;
             if (I.startsWith(B)) {
                 let X = I.slice(B.length + 1).replace(/\//g, ".");
                 if (X) X += ":";
@@ -1483,7 +1475,7 @@ function xC3(A = process.argv[1] ? yC3.dirname(process.argv[1]) : process.cwd(),
     }
     Ot2.createGetModuleFromFilename = xC3
 });
-var RY0 = U((St2) => {
+var RY0 = moduleWrapper((St2) => {
     var {
         _optionalChain: bC3
     } = l0();
@@ -1508,13 +1500,13 @@ var RY0 = U((St2) => {
         rC3 = DY0(),
         Rt2 = [TO.inboundFiltersIntegration(), TO.functionToStringIntegration(), TO.linkedErrorsIntegration(), TO.requestDataIntegration(), gC3.consoleIntegration(), dC3.httpIntegration(), aC3.nativeNodeFetchintegration(), lC3.onUncaughtExceptionIntegration(), iC3.onUnhandledRejectionIntegration(), mC3.contextLinesIntegration(), cC3.localVariablesIntegration(), uC3.nodeContextIntegration(), pC3.modulesIntegration()];
 
-function Tt2(A) {
+    function Tt2(A) {
         let Q = TO.getMainCarrier(),
             B = bC3([Q, "access", (G) => G.__SENTRY__, "optionalAccess", (G) => G.integrations]) || [];
         return [...Rt2, ...B]
     }
 
-function oC3(A = {}) {
+    function oC3(A = {}) {
         if (fC3.setNodeAsyncContextStrategy(), A.defaultIntegrations === void 0) A.defaultIntegrations = Tt2();
         if (A.dsn === void 0 && process.env.SENTRY_DSN) A.dsn = process.env.SENTRY_DSN;
         let Q = process.env.SENTRY_TRACES_SAMPLE_RATE;

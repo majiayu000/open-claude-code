@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_012.js
+ * 处理时间: 2025-12-09T03:41:37.397Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.971Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -45,7 +48,7 @@
         getEncoding: xm8
     }
 });
-var F1B = U((lN7, X1B) => {
+var F1B = moduleWrapper((lN7, X1B) => {
     var {
         kState: o5A,
         kError: Ty1,
@@ -61,17 +64,17 @@ var F1B = U((lN7, X1B) => {
         parseMIMEType: I1B
     } = tz(), {
         types: fm8
-    } = UA("node:util"), {
+    } = nodeRequire("node:util"), {
         StringDecoder: Y1B
-    } = UA("string_decoder"), {
+    } = nodeRequire("string_decoder"), {
         btoa: J1B
-    } = UA("node:buffer"), hm8 = {
+    } = nodeRequire("node:buffer"), hm8 = {
         enumerable: !0,
         writable: !1,
         configurable: !1
     };
 
-function gm8(A, Q, B, G) {
+    function gm8(A, Q, B, G) {
         if (A[o5A] === "loading") throw new DOMException("Invalid state", "InvalidStateError");
         A[o5A] = "loading", A[G1B] = null, A[Ty1] = null;
         let I = Q.stream().getReader(),
@@ -116,7 +119,7 @@ function gm8(A, Q, B, G) {
         })()
     }
 
-function Zc(A, Q) {
+    function Zc(A, Q) {
         let B = new vm8(A, {
             bubbles: !1,
             cancelable: !1
@@ -124,7 +127,7 @@ function Zc(A, Q) {
         Q.dispatchEvent(B)
     }
 
-function um8(A, Q, B, G) {
+    function um8(A, Q, B, G) {
         switch (Q) {
             case "DataURL": {
                 let Z = "data:",
@@ -156,7 +159,7 @@ function um8(A, Q, B, G) {
         }
     }
 
-function mm8(A, Q) {
+    function mm8(A, Q) {
         let B = W1B(A),
             G = dm8(B),
             Z = 0;
@@ -165,7 +168,7 @@ function mm8(A, Q) {
         return new TextDecoder(Q).decode(I)
     }
 
-function dm8(A) {
+    function dm8(A) {
         let [Q, B, G] = A;
         if (Q === 239 && B === 187 && G === 191) return "UTF-8";
         else if (Q === 254 && B === 255) return "UTF-16BE";
@@ -173,7 +176,7 @@ function dm8(A) {
         return null
     }
 
-function W1B(A) {
+    function W1B(A) {
         let Q = A.reduce((G, Z) => {
                 return G + Z.byteLength
             }, 0),
@@ -188,7 +191,7 @@ function W1B(A) {
         fireAProgressEvent: Zc
     }
 });
-var H1B = U((iN7, D1B) => {
+var H1B = moduleWrapper((iN7, D1B) => {
     var {
         staticPropertyDescriptors: t5A,
         readOperation: spA,
@@ -204,8 +207,7 @@ var H1B = U((iN7, D1B) => {
     } = FD(), {
         kEnumerableProperty: QU
     } = M6();
-
-class QG extends EventTarget {
+    class QG extends EventTarget {
         constructor() {
             super();
             this[To] = "empty", this[rpA] = null, this[K1B] = null, this[$7] = {
@@ -348,13 +350,13 @@ class QG extends EventTarget {
         FileReader: QG
     }
 });
-var opA = U((nN7, C1B) => {
+var opA = moduleWrapper((nN7, C1B) => {
     C1B.exports = {
         kConstruct: iI().kConstruct
     }
 });
-var U1B = U((aN7, z1B) => {
-    var pm8 = UA("node:assert"),
+var U1B = moduleWrapper((aN7, z1B) => {
+    var pm8 = nodeRequire("node:assert"),
         {
             URLSerializer: E1B
         } = tz(),
@@ -362,13 +364,13 @@ var U1B = U((aN7, z1B) => {
             isValidHeaderName: lm8
         } = Rw();
 
-function im8(A, Q, B = !1) {
+    function im8(A, Q, B = !1) {
         let G = E1B(A, B),
             Z = E1B(Q, B);
         return G === Z
     }
 
-function nm8(A) {
+    function nm8(A) {
         pm8(A !== null);
         let Q = [];
         for (let B of A.split(","))
@@ -380,7 +382,7 @@ function nm8(A) {
         getFieldValues: nm8
     }
 });
-var q1B = U((sN7, w1B) => {
+var q1B = moduleWrapper((sN7, w1B) => {
     var {
         kConstruct: am8
     } = opA(), {
@@ -406,9 +408,8 @@ var q1B = U((sN7, w1B) => {
         urlIsHttpHttpsScheme: tpA,
         createDeferredPromise: e5A,
         readAllBytes: Bd8
-    } = Rw(), Sy1 = UA("node:assert");
-
-class G_ {
+    } = Rw(), Sy1 = nodeRequire("node:assert");
+    class G_ {
         #A;
         constructor() {
             if (arguments[0] !== am8) R9.illegalConstructor();
@@ -764,7 +765,7 @@ class G_ {
         Cache: G_
     }
 });
-var L1B = U((rN7, N1B) => {
+var L1B = moduleWrapper((rN7, N1B) => {
     var {
         kConstruct: OEA
     } = opA(), {
@@ -774,8 +775,7 @@ var L1B = U((rN7, N1B) => {
     } = FD(), {
         kEnumerableProperty: REA
     } = M6();
-
-class Ic {
+    class Ic {
         #A = new Map;
         constructor() {
             if (arguments[0] !== OEA) SH.illegalConstructor();
@@ -832,13 +832,13 @@ class Ic {
         CacheStorage: Ic
     }
 });
-var O1B = U((oN7, M1B) => {
+var O1B = moduleWrapper((oN7, M1B) => {
     M1B.exports = {
         maxAttributeValueSize: 1024,
         maxNameValuePairSize: 4096
     }
 });
-var _y1 = U((tN7, S1B) => {
+var _y1 = moduleWrapper((tN7, S1B) => {
     function Gd8(A) {
         for (let Q = 0; Q < A.length; ++Q) {
             let B = A.charCodeAt(Q);
@@ -847,14 +847,14 @@ var _y1 = U((tN7, S1B) => {
         return !1
     }
 
-function R1B(A) {
+    function R1B(A) {
         for (let Q = 0; Q < A.length; ++Q) {
             let B = A.charCodeAt(Q);
             if (B < 33 || B > 126 || B === 34 || B === 40 || B === 41 || B === 60 || B === 62 || B === 64 || B === 44 || B === 59 || B === 58 || B === 92 || B === 47 || B === 91 || B === 93 || B === 63 || B === 61 || B === 123 || B === 125) throw Error("Invalid cookie name")
         }
     }
 
-function T1B(A) {
+    function T1B(A) {
         let Q = A.length,
             B = 0;
         if (A[0] === '"') {
@@ -867,47 +867,46 @@ function T1B(A) {
         }
     }
 
-function P1B(A) {
+    function P1B(A) {
         for (let Q = 0; Q < A.length; ++Q) {
             let B = A.charCodeAt(Q);
             if (B < 32 || B === 127 || B === 59) throw Error("Invalid cookie path")
         }
     }
 
-function Zd8(A) {
+    function Zd8(A) {
         if (A.startsWith("-") || A.endsWith(".") || A.endsWith("-")) throw Error("Invalid cookie domain")
     }
-
-var Id8 = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    var Id8 = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
         Yd8 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         AlA = Array(61).fill(0).map((A, Q) => Q.toString().padStart(2, "0"));
 
-function j1B(A) {
+    function j1B(A) {
         if (typeof A === "number") A = new Date(A);
-        return `${Id8[A.getUTCDay()]}, ${AlA[A.getUTCDate()]} ${Yd8[A.getUTCMonth()]} ${A.getUTCFullYear()} ${AlA[A.getUTCHours()]}:${AlA[A.getUTCMinutes()]}:${AlA[A.getUTCSeconds()]} GMT`
+        return `TextComponent{Id8[A.getUTCDay()]}, TextComponent{AlA[A.getUTCDate()]} TextComponent{Yd8[A.getUTCMonth()]} TextComponent{A.getUTCFullYear()} TextComponent{AlA[A.getUTCHours()]}:TextComponent{AlA[A.getUTCMinutes()]}:TextComponent{AlA[A.getUTCSeconds()]} GMT`
     }
 
-function Jd8(A) {
+    function Jd8(A) {
         if (A < 0) throw Error("Invalid cookie max-age")
     }
 
-function Wd8(A) {
+    function Wd8(A) {
         if (A.name.length === 0) return null;
         R1B(A.name), T1B(A.value);
-        let Q = [`${A.name}=${A.value}`];
+        let Q = [`TextComponent{A.name}=TextComponent{A.value}`];
         if (A.name.startsWith("__Secure-")) A.secure = !0;
         if (A.name.startsWith("__Host-")) A.secure = !0, A.domain = null, A.path = "/";
         if (A.secure) Q.push("Secure");
         if (A.httpOnly) Q.push("HttpOnly");
-        if (typeof A.maxAge === "number") Jd8(A.maxAge), Q.push(`Max-Age=${A.maxAge}`);
-        if (A.domain) Zd8(A.domain), Q.push(`Domain=${A.domain}`);
-        if (A.path) P1B(A.path), Q.push(`Path=${A.path}`);
-        if (A.expires && A.expires.toString() !== "Invalid Date") Q.push(`Expires=${j1B(A.expires)}`);
-        if (A.sameSite) Q.push(`SameSite=${A.sameSite}`);
+        if (typeof A.maxAge === "number") Jd8(A.maxAge), Q.push(`Max-Age=TextComponent{A.maxAge}`);
+        if (A.domain) Zd8(A.domain), Q.push(`Domain=TextComponent{A.domain}`);
+        if (A.path) P1B(A.path), Q.push(`Path=TextComponent{A.path}`);
+        if (A.expires && A.expires.toString() !== "Invalid Date") Q.push(`Expires=TextComponent{j1B(A.expires)}`);
+        if (A.sameSite) Q.push(`SameSite=TextComponent{A.sameSite}`);
         for (let B of A.unparsed) {
             if (!B.includes("=")) throw Error("Invalid unparsed");
             let [G, ...Z] = B.split("=");
-            Q.push(`${G.trim()}=${Z.join("=")}`)
+            Q.push(`TextComponent{G.trim()}=TextComponent{Z.join("=")}`)
         }
         return Q.join("; ")
     }
@@ -920,7 +919,7 @@ function Wd8(A) {
         stringify: Wd8
     }
 });
-var k1B = U((eN7, _1B) => {
+var k1B = moduleWrapper((eN7, _1B) => {
     var {
         maxNameValuePairSize: Xd8,
         maxAttributeValueSize: Fd8
@@ -928,9 +927,9 @@ var k1B = U((eN7, _1B) => {
         isCTLExcludingHtab: Vd8
     } = _y1(), {
         collectASequenceOfCodePointsFast: QlA
-    } = tz(), Kd8 = UA("node:assert");
+    } = tz(), Kd8 = nodeRequire("node:assert");
 
-function Dd8(A) {
+    function Dd8(A) {
         if (Vd8(A)) return null;
         let Q = "",
             B = "",
@@ -957,7 +956,7 @@ function Dd8(A) {
         }
     }
 
-function A3A(A, Q = {}) {
+    function A3A(A, Q = {}) {
         if (A.length === 0) return Q;
         Kd8(A[0] === ";"), A = A.slice(1);
         let B = "";
@@ -981,7 +980,7 @@ function A3A(A, Q = {}) {
         } else if (I === "max-age") {
             let Y = Z.charCodeAt(0);
             if ((Y < 48 || Y > 57) && Z[0] !== "-") return A3A(A, Q);
-            if (!/^\d+$/.test(Z)) return A3A(A, Q);
+            if (!/^\d+TextComponent/.test(Z)) return A3A(A, Q);
             let J = Number(Z);
             Q.maxAge = J
         } else if (I === "domain") {
@@ -1002,7 +1001,7 @@ function A3A(A, Q = {}) {
             if (J.includes("strict")) Y = "Strict";
             if (J.includes("lax")) Y = "Lax";
             Q.sameSite = Y
-        } else Q.unparsed ??= [], Q.unparsed.push(`${G}=${Z}`);
+        } else Q.unparsed ??= [], Q.unparsed.push(`TextComponent{G}=TextComponent{Z}`);
         return A3A(A, Q)
     }
     _1B.exports = {
@@ -1010,7 +1009,7 @@ function A3A(A, Q = {}) {
         parseUnparsedAttributes: A3A
     }
 });
-var v1B = U((AL7, x1B) => {
+var v1B = moduleWrapper((AL7, x1B) => {
     var {
         parseSetCookie: Hd8
     } = k1B(), {
@@ -1021,7 +1020,7 @@ var v1B = U((AL7, x1B) => {
         Headers: BlA
     } = Mo();
 
-function Ed8(A) {
+    function Ed8(A) {
         L5.argumentLengthCheck(arguments, 1, "getCookies"), L5.brandCheck(A, BlA, {
             strict: !1
         });
@@ -1035,7 +1034,7 @@ function Ed8(A) {
         return B
     }
 
-function zd8(A, Q, B) {
+    function zd8(A, Q, B) {
         L5.brandCheck(A, BlA, {
             strict: !1
         });
@@ -1048,7 +1047,7 @@ function zd8(A, Q, B) {
         })
     }
 
-function Ud8(A) {
+    function Ud8(A) {
         L5.argumentLengthCheck(arguments, 1, "getSetCookies"), L5.brandCheck(A, BlA, {
             strict: !1
         });
@@ -1057,7 +1056,7 @@ function Ud8(A) {
         return Q.map((B) => Hd8(B))
     }
 
-function y1B(A, Q) {
+    function y1B(A, Q) {
         L5.argumentLengthCheck(arguments, 2, "setCookie"), L5.brandCheck(A, BlA, {
             strict: !1
         }), Q = L5.converters.Cookie(Q);
@@ -1122,7 +1121,7 @@ function y1B(A, Q) {
         setCookie: y1B
     }
 });
-var B3A = U((QL7, f1B) => {
+var B3A = moduleWrapper((QL7, f1B) => {
     var {
         webidl: K9
     } = FD(), {
@@ -1131,9 +1130,8 @@ var B3A = U((QL7, f1B) => {
         kConstruct: b1B
     } = iI(), {
         MessagePort: $d8
-    } = UA("node:worker_threads");
-
-class yw extends Event {
+    } = nodeRequire("node:worker_threads");
+    class yw extends Event {
         #A;
         constructor(A, Q = {}) {
             if (A === b1B) {
@@ -1182,8 +1180,7 @@ class yw extends Event {
         createFastMessageEvent: wd8
     } = yw;
     delete yw.createFastMessageEvent;
-
-class Q3A extends Event {
+    class Q3A extends Event {
         #A;
         constructor(A, Q = {}) {
             K9.argumentLengthCheck(arguments, 1, "CloseEvent constructor"), A = K9.converters.DOMString(A, "CloseEvent constructor", "type"), Q = K9.converters.CloseEventInit(Q);
@@ -1200,8 +1197,7 @@ class Q3A extends Event {
             return K9.brandCheck(this, Q3A), this.#A.reason
         }
     }
-
-class Yc extends Event {
+    class SLASH_COMMAND_TOOL_NAME extends Event {
         #A;
         constructor(A, Q) {
             K9.argumentLengthCheck(arguments, 1, "ErrorEvent constructor");
@@ -1209,19 +1205,19 @@ class Yc extends Event {
             K9.util.markAsUncloneable(this), A = K9.converters.DOMString(A, "ErrorEvent constructor", "type"), Q = K9.converters.ErrorEventInit(Q ?? {}), this.#A = Q
         }
         get message() {
-            return K9.brandCheck(this, Yc), this.#A.message
+            return K9.brandCheck(this, SLASH_COMMAND_TOOL_NAME), this.#A.message
         }
         get filename() {
-            return K9.brandCheck(this, Yc), this.#A.filename
+            return K9.brandCheck(this, SLASH_COMMAND_TOOL_NAME), this.#A.filename
         }
         get lineno() {
-            return K9.brandCheck(this, Yc), this.#A.lineno
+            return K9.brandCheck(this, SLASH_COMMAND_TOOL_NAME), this.#A.lineno
         }
         get colno() {
-            return K9.brandCheck(this, Yc), this.#A.colno
+            return K9.brandCheck(this, SLASH_COMMAND_TOOL_NAME), this.#A.colno
         }
         get error() {
-            return K9.brandCheck(this, Yc), this.#A.error
+            return K9.brandCheck(this, SLASH_COMMAND_TOOL_NAME), this.#A.error
         }
     }
     Object.defineProperties(yw.prototype, {
@@ -1245,7 +1241,7 @@ class Yc extends Event {
         code: BU,
         wasClean: BU
     });
-    Object.defineProperties(Yc.prototype, {
+    Object.defineProperties(SLASH_COMMAND_TOOL_NAME.prototype, {
         [Symbol.toStringTag]: {
             value: "ErrorEvent",
             configurable: !0
@@ -1258,8 +1254,7 @@ class Yc extends Event {
     });
     K9.converters.MessagePort = K9.interfaceConverter($d8);
     K9.converters["sequence<MessagePort>"] = K9.sequenceConverter(K9.converters.MessagePort);
-
-var ky1 = [{
+    var ky1 = [{
         key: "bubbles",
         converter: K9.converters.boolean,
         defaultValue: () => !1
@@ -1329,11 +1324,11 @@ var ky1 = [{
     f1B.exports = {
         MessageEvent: yw,
         CloseEvent: Q3A,
-        ErrorEvent: Yc,
+        ErrorEvent: SLASH_COMMAND_TOOL_NAME,
         createFastMessageEvent: wd8
     }
 });
-var jo = U((BL7, h1B) => {
+var jo = moduleWrapper((BL7, h1B) => {
     var qd8 = {
             enumerable: !0,
             writable: !1,
@@ -1383,7 +1378,7 @@ var jo = U((BL7, h1B) => {
         sendHints: Td8
     }
 });
-var TEA = U((GL7, g1B) => {
+var TEA = moduleWrapper((GL7, g1B) => {
     g1B.exports = {
         kWebSocketURL: Symbol("url"),
         kReadyState: Symbol("ready state"),
@@ -1395,7 +1390,7 @@ var TEA = U((GL7, g1B) => {
         kByteParser: Symbol("byte parser")
     }
 });
-var SEA = U((ZL7, a1B) => {
+var SEA = moduleWrapper((ZL7, a1B) => {
     var {
         kReadyState: PEA,
         kController: Pd8,
@@ -1410,33 +1405,33 @@ var SEA = U((ZL7, a1B) => {
         createFastMessageEvent: yd8
     } = B3A(), {
         isUtf8: xd8
-    } = UA("node:buffer"), {
+    } = nodeRequire("node:buffer"), {
         collectASequenceOfCodePointsFast: vd8,
         removeHTTPWhitespace: u1B
     } = tz();
 
-function bd8(A) {
+    function bd8(A) {
         return A[PEA] === jEA.CONNECTING
     }
 
-function fd8(A) {
+    function fd8(A) {
         return A[PEA] === jEA.OPEN
     }
 
-function hd8(A) {
+    function hd8(A) {
         return A[PEA] === jEA.CLOSING
     }
 
-function gd8(A) {
+    function gd8(A) {
         return A[PEA] === jEA.CLOSED
     }
 
-function yy1(A, Q, B = (Z, I) => new Event(Z, I), G = {}) {
+    function yy1(A, Q, B = (Z, I) => new Event(Z, I), G = {}) {
         let Z = B(A, G);
         Q.dispatchEvent(Z)
     }
 
-function ud8(A, Q, B) {
+    function ud8(A, Q, B) {
         if (A[PEA] !== jEA.OPEN) return;
         let G;
         if (Q === Jc.TEXT) try {
@@ -1453,12 +1448,12 @@ function ud8(A, Q, B) {
         })
     }
 
-function md8(A) {
+    function md8(A) {
         if (A.byteLength === A.buffer.byteLength) return A.buffer;
         return A.buffer.slice(A.byteOffset, A.byteOffset + A.byteLength)
     }
 
-function dd8(A) {
+    function dd8(A) {
         if (A.length === 0) return !1;
         for (let Q = 0; Q < A.length; ++Q) {
             let B = A.charCodeAt(Q);
@@ -1467,12 +1462,12 @@ function dd8(A) {
         return !0
     }
 
-function cd8(A) {
+    function cd8(A) {
         if (A >= 1000 && A < 1015) return A !== 1004 && A !== 1005 && A !== 1006;
         return A >= 3000 && A <= 4999
     }
 
-function d1B(A, Q) {
+    function d1B(A, Q) {
         let {
             [Pd8]: B, [jd8]: G
         } = A;
@@ -1483,23 +1478,23 @@ function d1B(A, Q) {
         })
     }
 
-function c1B(A) {
+    function c1B(A) {
         return A === Jc.CLOSE || A === Jc.PING || A === Jc.PONG
     }
 
-function p1B(A) {
+    function p1B(A) {
         return A === Jc.CONTINUATION
     }
 
-function l1B(A) {
+    function l1B(A) {
         return A === Jc.TEXT || A === Jc.BINARY
     }
 
-function pd8(A) {
+    function pd8(A) {
         return l1B(A) || p1B(A) || c1B(A)
     }
 
-function ld8(A) {
+    function ld8(A) {
         let Q = {
                 position: 0
             },
@@ -1512,7 +1507,7 @@ function ld8(A) {
         return B
     }
 
-function id8(A) {
+    function id8(A) {
         for (let Q = 0; Q < A.length; Q++) {
             let B = A.charCodeAt(Q);
             if (B < 48 || B > 57) return !1

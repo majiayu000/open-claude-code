@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_049.js
+ * 处理时间: 2025-12-09T03:41:36.906Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.931Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -18,9 +21,8 @@
  */
 
 }
-var Nl = L(() => {
+var Nl = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
-
 class PJ {
     constructor(A) {
         let Q = A ? YZ.trimArrayEntries([...A]) : [],
@@ -101,7 +103,7 @@ class PJ {
         return this.printScopes().toLowerCase()
     }
 }
-var FNA = L(() => {
+var FNA = lazyLoader(() => {
     ql();
     Nl();
     mX();
@@ -116,19 +118,19 @@ function iZA(A, Q) {
         let B = Q(A);
         return JSON.parse(B)
     } catch (B) {
-        throw v0(Dl)
+        throw v0(CLIENT_INFO_DECODING_ERROR)
     }
 }
 
 function Kk(A) {
-    if (!A) throw v0(Dl);
+    if (!A) throw v0(CLIENT_INFO_DECODING_ERROR);
     let Q = A.split(yf.CLIENT_INFO_SEPARATOR, 2);
     return {
         uid: Q[0],
         utid: Q.length < 2 ? L0.EMPTY_STRING : Q[1]
     }
 }
-var nZA = L(() => {
+var nZA = lazyLoader(() => {
     mX();
     bZ();
     PW(); /*! @azure/msal-common v15.13.1 2025-10-29 */
@@ -193,10 +195,10 @@ function $11(A, Q, B, G) {
     }
     return Z
 }
-var w11 = L(() => {
+var w11 = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
 var xM;
-var Ms1 = L(() => {
+var Ms1 = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */
     xM = {
         Default: 0,
@@ -210,10 +212,10 @@ function q11(A) {
     if (A) return A.tid || A.tfp || A.acr || null;
     return null
 }
-var Os1 = L(() => {
+var Os1 = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
 var lH;
-var KNA = L(() => {
+var KNA = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */
     lH = {
         AAD: "AAD",
@@ -221,7 +223,6 @@ var KNA = L(() => {
         EAR: "EAR"
     }
 });
-
 class dX {
     static getAccountInfo(A) {
         return {
@@ -273,7 +274,7 @@ class dX {
         if (!(Q === xM.Adfs || Q === xM.Dsts)) {
             if (A) try {
                 let I = iZA(A, G.base64Decode);
-                if (I.uid && I.utid) return `${I.uid}.${I.utid}`
+                if (I.uid && I.utid) return `TextComponent{I.uid}.TextComponent{I.utid}`
             } catch (I) {}
             B.warning("No client info in response")
         }
@@ -294,7 +295,7 @@ class dX {
         return A.homeAccountId === Q.homeAccountId && A.localAccountId === Q.localAccountId && A.username === Q.username && A.tenantId === Q.tenantId && A.loginHint === Q.loginHint && A.environment === Q.environment && A.nativeAccountId === Q.nativeAccountId && G
     }
 }
-var N11 = L(() => {
+var N11 = lazyLoader(() => {
     bZ();
     nZA();
     w11();
@@ -304,9 +305,8 @@ var N11 = L(() => {
     KNA();
     PW(); /*! @azure/msal-common v15.13.1 2025-10-29 */
 });
-
 var L11 = {};
-pG(L11, {
+esmExport(L11, {
     isKmsi: () => Rs1,
     getJWSPayload: () => qeB,
     extractTokenClaims: () => mf,
@@ -331,7 +331,7 @@ function Rs1(A) {
 
 function qeB(A) {
     if (!A) throw v0(ge);
-    let B = /^([^\.\s]*)\.([^\.\s]+)\.([^\.\s]*)$/.exec(A);
+    let B = /^([^\.\s]*)\.([^\.\s]+)\.([^\.\s]*)TextComponent/.exec(A);
     if (!B || B.length < 4) throw v0(Hl);
     return B[2]
 }
@@ -339,13 +339,12 @@ function qeB(A) {
 function DNA(A, Q) {
     if (Q === 0 || Date.now() - 300000 > A + Q) throw v0(le)
 }
-var aZA = L(() => {
+var aZA = lazyLoader(() => {
     mX();
     PW(); /*! @azure/msal-common v15.13.1 2025-10-29 */
 });
-
 var LD = {};
-pG(LD, {
+esmExport(LD, {
     stripLeadingHashOrQuery: () => LeB,
     normalizeUrlForComparison: () => be6,
     mapToQueryString: () => Dk,
@@ -382,8 +381,8 @@ function Ts1(A) {
 function Dk(A, Q = !0, B) {
     let G = [];
     return A.forEach((Z, I) => {
-        if (!Q && B && I in B) G.push(`${I}=${Z}`);
-        else G.push(`${I}=${encodeURIComponent(Z)}`)
+        if (!Q && B && I in B) G.push(`TextComponent{I}=TextComponent{Z}`);
+        else G.push(`TextComponent{I}=TextComponent{encodeURIComponent(Z)}`)
     }), G.join("&")
 }
 
@@ -398,12 +397,11 @@ function be6(A) {
         return NeB(Q)
     }
 }
-var FAA = L(() => {
+var FAA = lazyLoader(() => {
     mX();
     Nl();
     PW(); /*! @azure/msal-common v15.13.1 2025-10-29 */
 });
-
 class H8 {
     get urlString() {
         return this._urlString
@@ -434,7 +432,7 @@ class H8 {
     }
     static appendQueryString(A, Q) {
         if (!Q) return A;
-        return A.indexOf("?") < 0 ? `${A}?${Q}` : `${A}&${Q}`
+        return A.indexOf("?") < 0 ? `TextComponent{A}?TextComponent{Q}` : `TextComponent{A}&TextComponent{Q}`
     }
     static removeHashFromUrl(A) {
         return H8.canonicalizeUri(A.split("#")[0])
@@ -479,7 +477,7 @@ class H8 {
         return !!Ts1(A)
     }
 }
-var Ll = L(() => {
+var Ll = lazyLoader(() => {
     ql();
     Nl();
     bZ();
@@ -497,10 +495,10 @@ function ReB(A, Q) {
 }
 
 function MeB(A, Q, B, G) {
-    if (G?.trace(`getAliasesFromMetadata called with source: ${B}`), A && Q) {
+    if (G?.trace(`getAliasesFromMetadata called with source: TextComponent{B}`), A && Q) {
         let Z = HNA(Q, A);
-        if (Z) return G?.trace(`getAliasesFromMetadata: found cloud discovery metadata in ${B}, returning aliases`), Z.aliases;
-        else G?.trace(`getAliasesFromMetadata: did not find cloud discovery metadata in ${B}`)
+        if (Z) return G?.trace(`getAliasesFromMetadata: found cloud discovery metadata in TextComponent{B}, returning aliases`), Z.aliases;
+        else G?.trace(`getAliasesFromMetadata: did not find cloud discovery metadata in TextComponent{B}`)
     }
     return null
 }
@@ -517,7 +515,7 @@ function HNA(A, Q) {
     return null
 }
 var OeB, Ps1, js1, Ss1;
-var _s1 = L(() => {
+var _s1 = lazyLoader(() => {
     Ll();
     bZ(); /*! @azure/msal-common v15.13.1 2025-10-29 */
     OeB = {
@@ -574,33 +572,33 @@ var _s1 = L(() => {
         })
     })
 });
-var ks1 = "cache_quota_exceeded",
+/* CACHE_QUOTA_EXCEEDED = CACHE_QUOTA_EXCEEDED error */
+var CACHE_QUOTA_EXCEEDED = "cache_quota_exceeded",
     M11 = "cache_error_unknown";
-var PeB = L(() => {
+var PeB = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
 
 function jeB(A) {
     if (!(A instanceof Error)) return new CNA(M11);
-    if (A.name === "QuotaExceededError" || A.name === "NS_ERROR_DOM_QUOTA_REACHED" || A.message.includes("exceeded the quota")) return new CNA(ks1);
+    if (A.name === "QuotaExceededError" || A.name === "NS_ERROR_DOM_QUOTA_REACHED" || A.message.includes("exceeded the quota")) return new CNA(CACHE_QUOTA_EXCEEDED);
     else return new CNA(A.name, A.message)
 }
 var ys1, CNA;
-var SeB = L(() => {
+var SeB = lazyLoader(() => {
     yM();
     PeB(); /*! @azure/msal-common v15.13.1 2025-10-29 */
     ys1 = {
-        [ks1]: "Exceeded cache storage capacity.",
+        [CACHE_QUOTA_EXCEEDED]: "Exceeded cache storage capacity.",
         [M11]: "Unexpected error occurred when using cache storage."
     };
     CNA = class CNA extends t4 {
         constructor(A, Q) {
             let B = Q || (ys1[A] ? ys1[A] : ys1[M11]);
-            super(`${A}: ${B}`);
+            super(`TextComponent{A}: TextComponent{B}`);
             Object.setPrototypeOf(this, CNA.prototype), this.name = "CacheError", this.errorCode = A, this.errorMessage = B
         }
     }
 });
-
 class VAA {
     constructor(A, Q, B, G, Z) {
         this.clientId = A, this.cryptoImpl = Q, this.commonLogger = B.clone(E11, cZA), this.staticAuthorityOptions = Z, this.performanceClient = G
@@ -808,7 +806,7 @@ class VAA {
             }, Q), !B || B.credentialType.toLowerCase() !== g7.ACCESS_TOKEN_WITH_AUTH_SCHEME.toLowerCase() || B.tokenType !== e6.POP) return;
         let G = B.keyId;
         if (G) this.cryptoImpl.removeTokenBindingKey(G).catch(() => {
-            this.commonLogger.error(`Failed to remove token binding key ${G}`, Q), this.performanceClient?.incrementFields({
+            this.commonLogger.error(`Failed to remove token binding key TextComponent{G}`, Q), this.performanceClient?.incrementFields({
                 removeTokenBindingKeyFailure: 1
             }, Q)
         })
@@ -1052,7 +1050,7 @@ class VAA {
         return A.indexOf(gZA.CACHE_KEY) !== -1
     }
     generateAuthorityMetadataCacheKey(A) {
-        return `${gZA.CACHE_KEY}-${this.clientId}-${A}`
+        return `TextComponent{gZA.CACHE_KEY}-TextComponent{this.clientId}-TextComponent{A}`
     }
     static toObject(A, Q) {
         for (let B in Q) A[B] = Q[B];
@@ -1060,7 +1058,7 @@ class VAA {
     }
 }
 var O11;
-var xs1 = L(() => {
+var xs1 = lazyLoader(() => {
     bZ();
     FNA();
     N11();
@@ -1145,7 +1143,7 @@ var xs1 = L(() => {
     }
 });
 var W0, mJG, _eB;
-var uT = L(() => {
+var uT = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */
     W0 = {
         AcquireTokenByCode: "acquireTokenByCode",
@@ -1350,7 +1348,6 @@ var uT = L(() => {
         Completed: 2
     }
 });
-
 class vs1 {
     startMeasurement() {
         return
@@ -1362,7 +1359,6 @@ class vs1 {
         return null
     }
 }
-
 class sZA {
     generateId() {
         return "callback-id"
@@ -1424,7 +1420,7 @@ class sZA {
         return
     }
 }
-var bs1 = L(() => {
+var bs1 = lazyLoader(() => {
     uT(); /*! @azure/msal-common v15.13.1 2025-10-29 */
 });
 
@@ -1491,7 +1487,7 @@ function R11(A) {
     return A.authOptions.authority.options.protocolMode === lH.OIDC
 }
 var fe6, he6, ge6, ue6, me6, de6, ce6, pe6;
-var T11 = L(() => {
+var T11 = lazyLoader(() => {
     Ns1();
     C11();
     bZ();

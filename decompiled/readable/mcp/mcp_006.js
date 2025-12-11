@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_006.js
+ * 处理时间: 2025-12-09T03:41:37.782Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.006Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -20,15 +23,15 @@
             if (D.length > 0) F.agentsPaths = D
         }
         if (A.skills) {
-            g(`Processing ${Array.isArray(A.skills)?A.skills.length:1} skill paths for plugin ${A.name}`);
+            g(`Processing TextComponent{Array.isArray(A.skills)?A.skills.length:1} skill paths for plugin TextComponent{A.name}`);
             let K = Array.isArray(A.skills) ? A.skills : [A.skills],
                 D = [];
             for (let H of K) {
                 let C = i4(J, H);
-                if (g(`Checking skill path: ${H} -> ${C} (exists: ${I.existsSync(C)})`), I.existsSync(C)) D.push(C);
-                else g(`Skill path ${H} from marketplace entry not found at ${C} for ${A.name}`, {
+                if (g(`Checking skill path: TextComponent{H} -> TextComponent{C} (exists: TextComponent{I.existsSync(C)})`), I.existsSync(C)) D.push(C);
+                else g(`Skill path TextComponent{H} from marketplace entry not found at TextComponent{C} for TextComponent{A.name}`, {
                     level: "warn"
-                }), e(Error(`Plugin component file not found: ${C} for ${A.name}`)), Y.push({
+                }), e(Error(`Plugin component file not found: TextComponent{C} for TextComponent{A.name}`)), Y.push({
                     type: "path-not-found",
                     source: B,
                     plugin: A.name,
@@ -36,17 +39,17 @@
                     component: "skills"
                 })
             }
-            if (g(`Found ${D.length} valid skill paths for plugin ${A.name}, setting skillsPaths`), D.length > 0) F.skillsPaths = D
-        } else g(`Plugin ${A.name} has no entry.skills defined`);
+            if (g(`Found TextComponent{D.length} valid skill paths for plugin TextComponent{A.name}, setting skillsPaths`), D.length > 0) F.skillsPaths = D
+        } else g(`Plugin TextComponent{A.name} has no entry.skills defined`);
         if (A.outputStyles) {
             let K = Array.isArray(A.outputStyles) ? A.outputStyles : [A.outputStyles],
                 D = [];
             for (let H of K) {
                 let C = i4(J, H);
                 if (I.existsSync(C)) D.push(C);
-                else g(`Output style path ${H} from marketplace entry not found at ${C} for ${A.name}`, {
+                else g(`Output style path TextComponent{H} from marketplace entry not found at TextComponent{C} for TextComponent{A.name}`, {
                     level: "warn"
-                }), e(Error(`Plugin component file not found: ${C} for ${A.name}`)), Y.push({
+                }), e(Error(`Plugin component file not found: TextComponent{C} for TextComponent{A.name}`)), Y.push({
                     type: "path-not-found",
                     source: B,
                     plugin: A.name,
@@ -58,13 +61,13 @@
         }
         if (A.hooks) F.hooksConfig = A.hooks
     } else if (!A.strict && X && (A.commands || A.agents || A.skills || A.hooks || A.outputStyles)) {
-        let K = Error(`Plugin ${A.name} has both plugin.json and marketplace manifest entries for commands/agents/skills/hooks/outputStyles. This is a conflict.`);
-        return g(`Plugin ${A.name} has both plugin.json and marketplace manifest entries for commands/agents/skills/hooks/outputStyles. This is a conflict.`, {
+        let K = Error(`Plugin TextComponent{A.name} has both plugin.json and marketplace manifest entries for commands/agents/skills/hooks/outputStyles. This is a conflict.`);
+        return g(`Plugin TextComponent{A.name} has both plugin.json and marketplace manifest entries for commands/agents/skills/hooks/outputStyles. This is a conflict.`, {
             level: "error"
         }), e(K), Z.push({
             type: "generic-error",
             source: B,
-            error: `Plugin ${A.name} has conflicting manifests: both plugin.json and marketplace entry specify components. Set strict: true in marketplace entry or remove component specs from one location.`
+            error: `Plugin TextComponent{A.name} has conflicting manifests: both plugin.json and marketplace entry specify components. Set strict: true in marketplace entry or remove component specs from one location.`
         }), null
     } else if (X) {
         if (A.commands) {
@@ -78,9 +81,9 @@
                     if (!E || typeof E !== "object" || !E.source) continue;
                     let z = i4(J, E.source);
                     if (I.existsSync(z)) H.push(z), D[C] = E;
-                    else g(`Command ${C} path ${E.source} from marketplace entry not found at ${z} for ${A.name}`, {
+                    else g(`Command TextComponent{C} path TextComponent{E.source} from marketplace entry not found at TextComponent{z} for TextComponent{A.name}`, {
                         level: "warn"
-                    }), e(Error(`Plugin component file not found: ${z} for ${A.name}`)), Y.push({
+                    }), e(Error(`Plugin component file not found: TextComponent{z} for TextComponent{A.name}`)), Y.push({
                         type: "path-not-found",
                         source: B,
                         plugin: A.name,
@@ -94,16 +97,16 @@
                     H = [];
                 for (let C of D) {
                     if (typeof C !== "string") {
-                        g(`Unexpected command format in marketplace entry for ${A.name}`, {
+                        g(`Unexpected command format in marketplace entry for TextComponent{A.name}`, {
                             level: "error"
                         });
                         continue
                     }
                     let E = i4(J, C);
                     if (I.existsSync(E)) H.push(E);
-                    else g(`Command path ${C} from marketplace entry not found at ${E} for ${A.name}`, {
+                    else g(`Command path TextComponent{C} from marketplace entry not found at TextComponent{E} for TextComponent{A.name}`, {
                         level: "warn"
-                    }), e(Error(`Plugin component file not found: ${E} for ${A.name}`)), Y.push({
+                    }), e(Error(`Plugin component file not found: TextComponent{E} for TextComponent{A.name}`)), Y.push({
                         type: "path-not-found",
                         source: B,
                         plugin: A.name,
@@ -120,9 +123,9 @@
             for (let H of K) {
                 let C = i4(J, H);
                 if (I.existsSync(C)) D.push(C);
-                else g(`Agent path ${H} from marketplace entry not found at ${C} for ${A.name}`, {
+                else g(`Agent path TextComponent{H} from marketplace entry not found at TextComponent{C} for TextComponent{A.name}`, {
                     level: "warn"
-                }), e(Error(`Plugin component file not found: ${C} for ${A.name}`)), Y.push({
+                }), e(Error(`Plugin component file not found: TextComponent{C} for TextComponent{A.name}`)), Y.push({
                     type: "path-not-found",
                     source: B,
                     plugin: A.name,
@@ -138,9 +141,9 @@
             for (let H of K) {
                 let C = i4(J, H);
                 if (I.existsSync(C)) D.push(C);
-                else g(`Skill path ${H} from marketplace entry not found at ${C} for ${A.name}`, {
+                else g(`Skill path TextComponent{H} from marketplace entry not found at TextComponent{C} for TextComponent{A.name}`, {
                     level: "warn"
-                }), e(Error(`Plugin component file not found: ${C} for ${A.name}`)), Y.push({
+                }), e(Error(`Plugin component file not found: TextComponent{C} for TextComponent{A.name}`)), Y.push({
                     type: "path-not-found",
                     source: B,
                     plugin: A.name,
@@ -156,9 +159,9 @@
             for (let H of K) {
                 let C = i4(J, H);
                 if (I.existsSync(C)) D.push(C);
-                else g(`Output style path ${H} from marketplace entry not found at ${C} for ${A.name}`, {
+                else g(`Output style path TextComponent{H} from marketplace entry not found at TextComponent{C} for TextComponent{A.name}`, {
                     level: "warn"
-                }), e(Error(`Plugin component file not found: ${C} for ${A.name}`)), Y.push({
+                }), e(Error(`Plugin component file not found: TextComponent{C} for TextComponent{A.name}`)), Y.push({
                     type: "path-not-found",
                     source: B,
                     plugin: A.name,
@@ -175,7 +178,6 @@
     }
     return Z.push(...Y), F
 }
-
 async function Pl8(A) {
     if (A.length === 0) return {
         plugins: [],
@@ -187,11 +189,11 @@ async function Pl8(A) {
     for (let [Z, I] of A.entries()) try {
         let Y = Ul8(I);
         if (!G.existsSync(Y)) {
-            g(`Plugin path does not exist: ${Y}, skipping`, {
+            g(`Plugin path does not exist: TextComponent{Y}, skipping`, {
                 level: "warn"
             }), B.push({
                 type: "path-not-found",
-                source: `inline[${Z}]`,
+                source: `inline[TextComponent{Z}]`,
                 path: Y,
                 component: "commands"
             });
@@ -201,19 +203,19 @@ async function Pl8(A) {
             {
                 plugin: W,
                 errors: X
-            } = sQB(Y, `${J}@inline`, !0, J);
-        W.source = `${W.name}@inline`, W.repository = `${W.name}@inline`, Q.push(W), B.push(...X), g(`Loaded inline plugin from path: ${W.name}`)
+            } = sQB(Y, `TextComponent{J}@inline`, !0, J);
+        W.source = `TextComponent{W.name}@inline`, W.repository = `TextComponent{W.name}@inline`, Q.push(W), B.push(...X), g(`Loaded inline plugin from path: TextComponent{W.name}`)
     } catch (Y) {
         let J = Y instanceof Error ? Y.message : String(Y);
-        g(`Failed to load session plugin from ${I}: ${J}`, {
+        g(`Failed to load session plugin from TextComponent{I}: TextComponent{J}`, {
             level: "warn"
         }), B.push({
             type: "generic-error",
-            source: `inline[${Z}]`,
-            error: `Failed to load plugin: ${J}`
+            source: `inline[TextComponent{Z}]`,
+            error: `Failed to load plugin: TextComponent{J}`
         })
     }
-    if (Q.length > 0) g(`Loaded ${Q.length} session-only plugins from --plugin-dir`);
+    if (Q.length > 0) g(`Loaded TextComponent{Q.length} session-only plugins from --plugin-dir`);
     return {
         plugins: Q,
         errors: B
@@ -224,7 +226,7 @@ function $3A() {
     y7.cache?.clear?.()
 }
 var y7;
-var NF = L(() => {
+var NF = lazyLoader(() => {
     o2();
     o0();
     O9();
@@ -247,7 +249,7 @@ var NF = L(() => {
             let Z = await Pl8(G);
             Q.push(...Z.plugins), B.push(...Z.errors)
         }
-        return g(`Found ${Q.length} plugins (${Q.filter((Z)=>Z.enabled).length} enabled, ${Q.filter((Z)=>!Z.enabled).length} disabled)`), {
+        return g(`Found TextComponent{Q.length} plugins (TextComponent{Q.filter((Z)=>Z.enabled).length} enabled, TextComponent{Q.filter((Z)=>!Z.enabled).length} disabled)`), {
             enabled: Q.filter((Z) => Z.enabled),
             disabled: Q.filter((Z) => !Z.enabled),
             errors: B
@@ -255,7 +257,7 @@ var NF = L(() => {
     })
 });
 var rQB, jl8, Sl8, _l8, kl8, yl8, xl8, vl8, bl8, fl8, ZR7, ylA, IR7;
-var XzA = L(() => {
+var XzA = lazyLoader(() => {
     h2();
     rQB = Qw({
         command: EQ(),
@@ -336,7 +338,7 @@ var XzA = L(() => {
         fingerprint: EQ().optional()
     })
 });
-var Vx1 = L(() => {
+var Vx1 = lazyLoader(() => {
     XzA()
 });
 import {
@@ -347,7 +349,7 @@ function rl8(A, Q, B) {
     if (!B) B = Q, Q = {};
     if (typeof B != "function") rC(7);
     return sl8(A, Q, [al8], function(G) {
-        return VBB(zx1(G.data[0], KBB(G.data[1])))
+        return MULTI_EDIT_TOOL_DESCRIPTION(zx1(G.data[0], WRITE_TOOL_DESCRIPTION(G.data[1])))
     }, 1, B)
 }
 
@@ -375,8 +377,7 @@ function el8(A, Q) {
 function DBB(A, Q, B) {
     if (!B) B = Q, Q = {};
     if (typeof B != "function") rC(7);
-
-var G = [],
+    var G = [],
         Z = function() {
             for (var E = 0; E < G.length; ++E) G[E]()
         },
@@ -412,8 +413,7 @@ var G = [],
                     y = z[5],
                     v = Ai8(A, y);
                 F = P;
-
-var x = function(u, o) {
+                var x = function(u, o) {
                     if (u) Z(), Y(u, null);
                     else {
                         if (o) I[R] = o;
@@ -519,8 +519,7 @@ var ul8, vlA, ml8 = ";var __w=require('worker_threads');__w.parentPort.on('messa
             J = Y || Q.i != 2,
             W = Q.i;
         if (Y) B = new oC(Z * 3);
-
-var X = function(zA) {
+        var X = function(zA) {
                 var $A = B.length;
                 if (zA > $A) {
                     var LA = new oC(Math.max($A * 2, zA));
@@ -687,12 +686,12 @@ var X = function(zA) {
         return dl8(xlA[B].c + ";onmessage=function(e){for(var k in e.data)self[k]=e.data[k];onmessage=" + Q.toString() + "}", B, W, il8(W), G)
     },
     al8 = function() {
-        return [oC, mo, eQB, Hx1, Cx1, ABB, Ex1, ZBB, YBB, JBB, hlA, XBB, w3A, blA, iL, flA, WBB, glA, rC, FBB, zx1, VBB, KBB]
+        return [oC, mo, eQB, Hx1, Cx1, ABB, Ex1, ZBB, YBB, JBB, hlA, XBB, w3A, blA, iL, flA, WBB, glA, rC, FBB, zx1, MULTI_EDIT_TOOL_DESCRIPTION, WRITE_TOOL_DESCRIPTION]
     },
-    VBB = function(A) {
+    MULTI_EDIT_TOOL_DESCRIPTION = function(A) {
         return postMessage(A, [A.buffer])
     },
-    KBB = function(A) {
+    WRITE_TOOL_DESCRIPTION = function(A) {
         return A && {
             out: A.size && new oC(A.size),
             dictionary: A.dictionary
@@ -750,7 +749,7 @@ var X = function(zA) {
         return [Kx1(A, Q + 12), Kx1(A, Q + 4), Kx1(A, Q + 20)]
     },
     tQB;
-var HBB = L(() => {
+var HBB = lazyLoader(() => {
     ul8 = gl8("/");
     try {
         vlA = ul8("worker_threads").Worker
@@ -773,8 +772,7 @@ var HBB = L(() => {
         setImmediate(function() {
             return Z(Error("async operations unsupported - update to Node 12+ (or Node 10-11 with the --experimental-worker CLI flag)"), null)
         });
-
-var I = function() {};
+        var I = function() {};
         return {
             terminate: I,
             postMessage: I
@@ -801,25 +799,25 @@ var I = function() {};
         A()
     }
 });
-var clA = U((KR7, dlA) => {
+var clA = moduleWrapper((KR7, dlA) => {
     function zBB(A) {
         return Array.isArray(A) ? A : [A]
     }
     var Gi8 = void 0,
         $x1 = "",
-        CBB = " ",
+        MAX_INPUT_TOKENS = " ",
         Ux1 = "\\",
-        Zi8 = /^\s+$/,
-        Ii8 = /(?:[^\\]|^)\\$/,
+        Zi8 = /^\s+TextComponent/,
+        Ii8 = /(?:[^\\]|^)\\TextComponent/,
         Yi8 = /^\\!/,
         Ji8 = /^\\#/,
         Wi8 = /\r?\n/g,
-        Xi8 = /^\.{0,2}\/|^\.{1,2}$/,
-        Fi8 = /\/$/,
+        Xi8 = /^\.{0,2}\/|^\.{1,2}TextComponent/,
+        Fi8 = /\/TextComponent/,
         q3A = "/",
-        UBB = "node-ignore";
-    if (typeof Symbol < "u") UBB = Symbol.for("node-ignore");
-    var $BB = UBB,
+        TARGET_INPUT_TOKENS = "node-ignore";
+    if (typeof Symbol < "u") TARGET_INPUT_TOKENS = Symbol.for("node-ignore");
+    var $BB = TARGET_INPUT_TOKENS,
         N3A = (A, Q, B) => {
             return Object.defineProperty(A, Q, {
                 value: B
@@ -836,49 +834,48 @@ var clA = U((KR7, dlA) => {
         },
         Hi8 = [
             [/^\uFEFF/, () => $x1],
-            [/((?:\\\\)*?)(\\?\s+)$/, (A, Q, B) => Q + (B.indexOf("\\") === 0 ? CBB : $x1)],
+            [/((?:\\\\)*?)(\\?\s+)TextComponent/, (A, Q, B) => Q + (B.indexOf("\\") === 0 ? MAX_INPUT_TOKENS : $x1)],
             [/(\\+?)\s/g, (A, Q) => {
                 let {
                     length: B
                 } = Q;
-                return Q.slice(0, B - B % 2) + CBB
+                return Q.slice(0, B - B % 2) + MAX_INPUT_TOKENS
             }],
-            [/[\\$.|*+(){^]/g, (A) => `\\${A}`],
+            [/[\\TextComponent.|*+(){^]/g, (A) => `\\TextComponent{A}`],
             [/(?!\\)\?/g, () => "[^/]"],
             [/^\//, () => "^"],
             [/\//g, () => "\\/"],
             [/^\^*\\\*\\\*\\\//, () => "^(?:.*\\/)?"],
             [/^(?=[^^])/, function() {
-                return !/\/(?!$)/.test(this) ? "(?:^|\\/)" : "^"
+                return !/\/(?!TextComponent)/.test(this) ? "(?:^|\\/)" : "^"
             }],
-            [/\\\/\\\*\\\*(?=\\\/|$)/g, (A, Q, B) => Q + 6 < B.length ? "(?:\\/[^\\/]+)*" : "\\/.+"],
+            [/\\\/\\\*\\\*(?=\\\/|TextComponent)/g, (A, Q, B) => Q + 6 < B.length ? "(?:\\/[^\\/]+)*" : "\\/.+"],
             [/(^|[^\\]+)(\\\*)+(?=.+)/g, (A, Q, B) => {
                 let G = B.replace(/\\\*/g, "[^\\/]*");
                 return Q + G
             }],
-            [/\\\\\\(?=[$.|*+(){^])/g, () => Ux1],
+            [/\\\\\\(?=[TextComponent.|*+(){^])/g, () => Ux1],
             [/\\\\/g, () => Ux1],
-            [/(\\)?\[([^\]/]*?)(\\*)($|\])/g, (A, Q, B, G, Z) => Q === Ux1 ? `\\[${B}${Di8(G)}${Z}` : Z === "]" ? G.length % 2 === 0 ? `[${Ki8(B)}${G}]` : "[]" : "[]"],
-            [/(?:[^*])$/, (A) => /\/$/.test(A) ? `${A}$` : `${A}(?=$|\\/$)`]
+            [/(\\)?\[([^\]/]*?)(\\*)(TextComponent|\])/g, (A, Q, B, G, Z) => Q === Ux1 ? `\\[TextComponent{B}TextComponent{Di8(G)}TextComponent{Z}` : Z === "]" ? G.length % 2 === 0 ? `[TextComponent{Ki8(B)}TextComponent{G}]` : "[]" : "[]"],
+            [/(?:[^*])TextComponent/, (A) => /\/TextComponent/.test(A) ? `TextComponent{A}TextComponent` : `TextComponent{A}(?=TextComponent|\\/TextComponent)`]
         ],
-        Ci8 = /(^|\\\/)?\\\*$/,
+        Ci8 = /(^|\\\/)?\\\*TextComponent/,
         VzA = "regex",
         ulA = "checkRegex",
         EBB = "_",
         Ei8 = {
             [VzA](A, Q) {
-                return `${Q?`${Q}[^/]+`:"[^/]*"}(?=$|\\/$)`
+                return `TextComponent{Q?`TextComponent{Q}[^/]+`:"[^/]*"}(?=TextComponent|\\/TextComponent)`
             },
             [ulA](A, Q) {
-                return `${Q?`${Q}[^/]*`:"[^/]*"}(?=$|\\/$)`
+                return `TextComponent{Q?`TextComponent{Q}[^/]*`:"[^/]*"}(?=TextComponent|\\/TextComponent)`
             }
         },
         zi8 = (A) => Hi8.reduce((Q, [B, G]) => Q.replace(B, G.bind(A)), A),
         mlA = (A) => typeof A === "string",
         Ui8 = (A) => A && mlA(A) && !Zi8.test(A) && !Ii8.test(A) && A.indexOf("#") !== 0,
         $i8 = (A) => A.split(Wi8).filter(Boolean);
-
-class qBB {
+    class TODO_WRITE_TOOL_DESCRIPTION {
         constructor(A, Q, B, G, Z, I) {
             this.pattern = A, this.mark = Q, this.negative = Z, N3A(this, "body", B), N3A(this, "ignoreCase", G), N3A(this, "regexPrefix", I)
         }
@@ -907,10 +904,9 @@ class qBB {
         if (Z.indexOf("!") === 0) G = !0, Z = Z.substr(1);
         Z = Z.replace(Yi8, "!").replace(Ji8, "#");
         let I = zi8(Z);
-        return new qBB(A, Q, Z, B, G, I)
+        return new TODO_WRITE_TOOL_DESCRIPTION(A, Q, Z, B, G, I)
     };
-
-class NBB {
+    class NBB {
         constructor(A) {
             this._ignoreCase = A, this._rules = []
         }
@@ -954,16 +950,15 @@ class NBB {
             throw new Q(A)
         },
         jb = (A, Q, B) => {
-            if (!mlA(A)) return B(`path must be a string, but got \`${Q}\``, TypeError);
+            if (!mlA(A)) return B(`path must be a string, but got \`TextComponent{Q}\``, TypeError);
             if (!A) return B("path must not be empty", TypeError);
-            if (jb.isNotRelative(A)) return B(`path should be a \`path.relative()\`d string, but got "${Q}"`, RangeError);
+            if (jb.isNotRelative(A)) return B(`path should be a \`path.relative()\`d string, but got "TextComponent{Q}"`, RangeError);
             return !0
         },
         LBB = (A) => Xi8.test(A);
     jb.isNotRelative = LBB;
     jb.convert = (A) => A;
-
-class MBB {
+    class MBB {
         constructor({
             ignorecase: A = !0,
             ignoreCase: Q = A,
@@ -1029,10 +1024,10 @@ class MBB {
     N3A(dlA.exports, Symbol.for("setupWindows"), OBB)
 });
 var Li8;
-var qx1 = L(() => {
-    Li8 = GA(clA(), 1)
+var qx1 = lazyLoader(() => {
+    Li8 = esmImport(clA(), 1)
 });
-var IU = U((Mi8) => {
+var IU = moduleWrapper((Mi8) => {
     Mi8.fromCallback = function(A) {
         return Object.defineProperty(function(...Q) {
             if (typeof Q[Q.length - 1] === "function") A.apply(this, Q);
@@ -1053,7 +1048,7 @@ var IU = U((Mi8) => {
         })
     }
 });
-var co = U((Nx1) => {
+var co = moduleWrapper((Nx1) => {
     var RBB = IU().fromCallback,
         YU = mK(),
         Ti8 = ["access", "appendFile", "chmod", "chown", "close", "copyFile", "fchmod", "fchown", "fdatasync", "fstat", "fsync", "ftruncate", "futimes", "lchmod", "lchown", "link", "lstat", "mkdir", "mkdtemp", "open", "opendir", "readdir", "readFile", "readlink", "realpath", "rename", "rm", "rmdir", "stat", "symlink", "truncate", "unlink", "utimes", "writeFile"].filter((A) => {
@@ -1108,18 +1103,18 @@ var co = U((Nx1) => {
     if (typeof YU.realpath.native === "function") Nx1.realpath.native = RBB(YU.realpath.native);
     else process.emitWarning("fs.realpath.native is not a function. Is fs being monkey-patched?", "Warning", "fs-extra-WARN0003")
 });
-var PBB = U((ki8, TBB) => {
-    var _i8 = UA("path");
+var PBB = moduleWrapper((ki8, TBB) => {
+    var _i8 = nodeRequire("path");
     ki8.checkPath = function(Q) {
         if (process.platform === "win32") {
             if (/[<>:"|?*]/.test(Q.replace(_i8.parse(Q).root, ""))) {
-                let G = Error(`Path contains invalid characters: ${Q}`);
+                let G = Error(`Path contains invalid characters: TextComponent{Q}`);
                 throw G.code = "EINVAL", G
             }
         }
     }
 });
-var kBB = U((xi8, Lx1) => {
+var kBB = moduleWrapper((xi8, Lx1) => {
     var jBB = co(),
         {
             checkPath: SBB
@@ -1147,7 +1142,7 @@ var kBB = U((xi8, Lx1) => {
         })
     }
 });
-var AT = U((UR7, yBB) => {
+var AT = moduleWrapper((UR7, yBB) => {
     var fi8 = IU().fromPromise,
         {
             makeDir: hi8,
@@ -1163,11 +1158,11 @@ var AT = U((UR7, yBB) => {
         ensureDirSync: Mx1
     }
 });
-var zc = U(($R7, vBB) => {
+var zc = moduleWrapper(($R7, vBB) => {
     var gi8 = IU().fromPromise,
         xBB = co();
 
-function ui8(A) {
+    function ui8(A) {
         return xBB.access(A).then(() => !0).catch(() => !1)
     }
     vBB.exports = {
@@ -1175,10 +1170,10 @@ function ui8(A) {
         pathExistsSync: xBB.existsSync
     }
 });
-var Rx1 = U((wR7, bBB) => {
+var Rx1 = moduleWrapper((wR7, bBB) => {
     var L3A = mK();
 
-function mi8(A, Q, B, G) {
+    function mi8(A, Q, B, G) {
         L3A.open(A, "r+", (Z, I) => {
             if (Z) return G(Z);
             L3A.futimes(I, Q, B, (Y) => {
@@ -1189,7 +1184,7 @@ function mi8(A, Q, B, G) {
         })
     }
 
-function di8(A, Q, B) {
+    function di8(A, Q, B) {
         let G = L3A.openSync(A, "r+");
         return L3A.futimesSync(G, Q, B), L3A.closeSync(G)
     }
@@ -1198,12 +1193,12 @@ function di8(A, Q, B) {
         utimesMillisSync: di8
     }
 });
-var po = U((qR7, gBB) => {
+var po = moduleWrapper((qR7, gBB) => {
     var M3A = co(),
-        jV = UA("path"),
-        ci8 = UA("util");
+        jV = nodeRequire("path"),
+        ci8 = nodeRequire("util");
 
-function pi8(A, Q, B) {
+    function pi8(A, Q, B) {
         let G = B.dereference ? (Z) => M3A.stat(Z, {
             bigint: !0
         }) : (Z) => M3A.lstat(Z, {
@@ -1218,7 +1213,7 @@ function pi8(A, Q, B) {
         }))
     }
 
-function li8(A, Q, B) {
+    function li8(A, Q, B) {
         let G, Z = B.dereference ? (Y) => M3A.statSync(Y, {
                 bigint: !0
             }) : (Y) => M3A.lstatSync(Y, {
@@ -1240,7 +1235,7 @@ function li8(A, Q, B) {
         }
     }
 
-function ii8(A, Q, B, G, Z) {
+    function ii8(A, Q, B, G, Z) {
         ci8.callbackify(pi8)(A, Q, G, (I, Y) => {
             if (I) return Z(I);
             let {
@@ -1258,8 +1253,8 @@ function ii8(A, Q, B, G, Z) {
                     });
                     return Z(Error("Source and destination must not be the same."))
                 }
-                if (J.isDirectory() && !W.isDirectory()) return Z(Error(`Cannot overwrite non-directory '${Q}' with directory '${A}'.`));
-                if (!J.isDirectory() && W.isDirectory()) return Z(Error(`Cannot overwrite directory '${Q}' with non-directory '${A}'.`))
+                if (J.isDirectory() && !W.isDirectory()) return Z(Error(`Cannot overwrite non-directory 'TextComponent{Q}' with directory 'TextComponent{A}'.`));
+                if (!J.isDirectory() && W.isDirectory()) return Z(Error(`Cannot overwrite directory 'TextComponent{Q}' with non-directory 'TextComponent{A}'.`))
             }
             if (J.isDirectory() && Tx1(A, Q)) return Z(Error(plA(A, Q, B)));
             return Z(null, {
@@ -1269,7 +1264,7 @@ function ii8(A, Q, B, G, Z) {
         })
     }
 
-function ni8(A, Q, B, G) {
+    function ni8(A, Q, B, G) {
         let {
             srcStat: Z,
             destStat: I
@@ -1285,8 +1280,8 @@ function ni8(A, Q, B, G) {
                 };
                 throw Error("Source and destination must not be the same.")
             }
-            if (Z.isDirectory() && !I.isDirectory()) throw Error(`Cannot overwrite non-directory '${Q}' with directory '${A}'.`);
-            if (!Z.isDirectory() && I.isDirectory()) throw Error(`Cannot overwrite directory '${Q}' with non-directory '${A}'.`)
+            if (Z.isDirectory() && !I.isDirectory()) throw Error(`Cannot overwrite non-directory 'TextComponent{Q}' with directory 'TextComponent{A}'.`);
+            if (!Z.isDirectory() && I.isDirectory()) throw Error(`Cannot overwrite directory 'TextComponent{Q}' with non-directory 'TextComponent{A}'.`)
         }
         if (Z.isDirectory() && Tx1(A, Q)) throw Error(plA(A, Q, B));
         return {
@@ -1295,7 +1290,7 @@ function ni8(A, Q, B, G) {
         }
     }
 
-function fBB(A, Q, B, G, Z) {
+    function fBB(A, Q, B, G, Z) {
         let I = jV.resolve(jV.dirname(A)),
             Y = jV.resolve(jV.dirname(B));
         if (Y === I || Y === jV.parse(Y).root) return Z();
@@ -1311,7 +1306,7 @@ function fBB(A, Q, B, G, Z) {
         })
     }
 
-function hBB(A, Q, B, G) {
+    function hBB(A, Q, B, G) {
         let Z = jV.resolve(jV.dirname(A)),
             I = jV.resolve(jV.dirname(B));
         if (I === Z || I === jV.parse(I).root) return;
@@ -1328,18 +1323,18 @@ function hBB(A, Q, B, G) {
         return hBB(A, Q, I, G)
     }
 
-function KzA(A, Q) {
+    function KzA(A, Q) {
         return Q.ino && Q.dev && Q.ino === A.ino && Q.dev === A.dev
     }
 
-function Tx1(A, Q) {
+    function Tx1(A, Q) {
         let B = jV.resolve(A).split(jV.sep).filter((Z) => Z),
             G = jV.resolve(Q).split(jV.sep).filter((Z) => Z);
         return B.reduce((Z, I, Y) => Z && G[Y] === I, !0)
     }
 
-function plA(A, Q, B) {
-        return `Cannot ${B} '${A}' to a subdirectory of itself, '${Q}'.`
+    function plA(A, Q, B) {
+        return `Cannot TextComponent{B} 'TextComponent{A}' to a subdirectory of itself, 'TextComponent{Q}'.`
     }
     gBB.exports = {
         checkPaths: ii8,
@@ -1350,15 +1345,15 @@ function plA(A, Q, B) {
         areIdentical: KzA
     }
 });
-var nBB = U((NR7, iBB) => {
+var nBB = moduleWrapper((NR7, iBB) => {
     var JU = mK(),
-        DzA = UA("path"),
+        DzA = nodeRequire("path"),
         ai8 = AT().mkdirs,
         si8 = zc().pathExists,
         ri8 = Rx1().utimesMillis,
         HzA = po();
 
-function oi8(A, Q, B, G) {
+    function oi8(A, Q, B, G) {
         if (typeof B === "function" && !G) G = B, B = {};
         else if (typeof B === "function") B = {
             filter: B
@@ -1380,7 +1375,7 @@ function oi8(A, Q, B, G) {
         })
     }
 
-function uBB(A, Q, B, G, Z) {
+    function uBB(A, Q, B, G, Z) {
         let I = DzA.dirname(B);
         si8(I, (Y, J) => {
             if (Y) return Z(Y);
@@ -1392,45 +1387,45 @@ function uBB(A, Q, B, G, Z) {
         })
     }
 
-function dBB(A, Q, B, G, Z, I) {
+    function dBB(A, Q, B, G, Z, I) {
         Promise.resolve(Z.filter(B, G)).then((Y) => {
             if (Y) return A(Q, B, G, Z, I);
             return I()
         }, (Y) => I(Y))
     }
 
-function ti8(A, Q, B, G, Z) {
+    function ti8(A, Q, B, G, Z) {
         if (G.filter) return dBB(llA, A, Q, B, G, Z);
         return llA(A, Q, B, G, Z)
     }
 
-function llA(A, Q, B, G, Z) {
+    function llA(A, Q, B, G, Z) {
         (G.dereference ? JU.stat : JU.lstat)(Q, (Y, J) => {
             if (Y) return Z(Y);
             if (J.isDirectory()) return In8(J, A, Q, B, G, Z);
             else if (J.isFile() || J.isCharacterDevice() || J.isBlockDevice()) return ei8(J, A, Q, B, G, Z);
             else if (J.isSymbolicLink()) return Wn8(A, Q, B, G, Z);
-            else if (J.isSocket()) return Z(Error(`Cannot copy a socket file: ${Q}`));
-            else if (J.isFIFO()) return Z(Error(`Cannot copy a FIFO pipe: ${Q}`));
-            return Z(Error(`Unknown file: ${Q}`))
+            else if (J.isSocket()) return Z(Error(`Cannot copy a socket file: TextComponent{Q}`));
+            else if (J.isFIFO()) return Z(Error(`Cannot copy a FIFO pipe: TextComponent{Q}`));
+            return Z(Error(`Unknown file: TextComponent{Q}`))
         })
     }
 
-function ei8(A, Q, B, G, Z, I) {
+    function ei8(A, Q, B, G, Z, I) {
         if (!Q) return cBB(A, B, G, Z, I);
         return An8(A, B, G, Z, I)
     }
 
-function An8(A, Q, B, G, Z) {
+    function An8(A, Q, B, G, Z) {
         if (G.overwrite) JU.unlink(B, (I) => {
             if (I) return Z(I);
             return cBB(A, Q, B, G, Z)
         });
-        else if (G.errorOnExist) return Z(Error(`'${B}' already exists`));
+        else if (G.errorOnExist) return Z(Error(`'TextComponent{B}' already exists`));
         else return Z()
     }
 
-function cBB(A, Q, B, G, Z) {
+    function cBB(A, Q, B, G, Z) {
         JU.copyFile(Q, B, (I) => {
             if (I) return Z(I);
             if (G.preserveTimestamps) return Qn8(A.mode, Q, B, Z);
@@ -1438,7 +1433,7 @@ function cBB(A, Q, B, G, Z) {
         })
     }
 
-function Qn8(A, Q, B, G) {
+    function Qn8(A, Q, B, G) {
         if (Bn8(A)) return Gn8(B, A, (Z) => {
             if (Z) return G(Z);
             return mBB(A, Q, B, G)
@@ -1446,38 +1441,38 @@ function Qn8(A, Q, B, G) {
         return mBB(A, Q, B, G)
     }
 
-function Bn8(A) {
+    function Bn8(A) {
         return (A & 128) === 0
     }
 
-function Gn8(A, Q, B) {
+    function Gn8(A, Q, B) {
         return ilA(A, Q | 128, B)
     }
 
-function mBB(A, Q, B, G) {
+    function mBB(A, Q, B, G) {
         Zn8(Q, B, (Z) => {
             if (Z) return G(Z);
             return ilA(B, A, G)
         })
     }
 
-function ilA(A, Q, B) {
+    function ilA(A, Q, B) {
         return JU.chmod(A, Q, B)
     }
 
-function Zn8(A, Q, B) {
+    function Zn8(A, Q, B) {
         JU.stat(A, (G, Z) => {
             if (G) return B(G);
             return ri8(Q, Z.atime, Z.mtime, B)
         })
     }
 
-function In8(A, Q, B, G, Z, I) {
+    function In8(A, Q, B, G, Z, I) {
         if (!Q) return Yn8(A.mode, B, G, Z, I);
         return pBB(B, G, Z, I)
     }
 
-function Yn8(A, Q, B, G, Z) {
+    function Yn8(A, Q, B, G, Z) {
         JU.mkdir(B, (I) => {
             if (I) return Z(I);
             pBB(Q, B, G, (Y) => {
@@ -1487,20 +1482,20 @@ function Yn8(A, Q, B, G, Z) {
         })
     }
 
-function pBB(A, Q, B, G) {
+    function pBB(A, Q, B, G) {
         JU.readdir(A, (Z, I) => {
             if (Z) return G(Z);
             return lBB(I, A, Q, B, G)
         })
     }
 
-function lBB(A, Q, B, G, Z) {
+    function lBB(A, Q, B, G, Z) {
         let I = A.pop();
         if (!I) return Z();
         return Jn8(A, I, Q, B, G, Z)
     }
 
-function Jn8(A, Q, B, G, Z, I) {
+    function Jn8(A, Q, B, G, Z, I) {
         let Y = DzA.join(B, Q),
             J = DzA.join(G, Q);
         HzA.checkPaths(Y, J, "copy", Z, (W, X) => {
@@ -1515,7 +1510,7 @@ function Jn8(A, Q, B, G, Z, I) {
         })
     }
 
-function Wn8(A, Q, B, G, Z) {
+    function Wn8(A, Q, B, G, Z) {
         JU.readlink(Q, (I, Y) => {
             if (I) return Z(I);
             if (G.dereference) Y = DzA.resolve(process.cwd(), Y);

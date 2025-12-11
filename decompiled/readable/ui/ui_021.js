@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_021.js
+ * 处理时间: 2025-12-09T03:41:39.208Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.111Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -22,12 +25,12 @@
     }
     vIB.exports = L26
 });
-var hIB = U((Kf7, fIB) => {
+var hIB = moduleWrapper((Kf7, fIB) => {
     var {
         tokenChars: M26
     } = C7A();
 
-function O26(A) {
+    function O26(A) {
         let Q = new Set,
             B = -1,
             G = -1,
@@ -39,31 +42,31 @@ function O26(A) {
             } else if (Z !== 0 && (Y === 32 || Y === 9)) {
                 if (G === -1 && B !== -1) G = Z
             } else if (Y === 44) {
-                if (B === -1) throw SyntaxError(`Unexpected character at index ${Z}`);
+                if (B === -1) throw SyntaxError(`Unexpected character at index TextComponent{Z}`);
                 if (G === -1) G = Z;
                 let J = A.slice(B, G);
-                if (Q.has(J)) throw SyntaxError(`The "${J}" subprotocol is duplicated`);
+                if (Q.has(J)) throw SyntaxError(`The "TextComponent{J}" subprotocol is duplicated`);
                 Q.add(J), B = G = -1
-            } else throw SyntaxError(`Unexpected character at index ${Z}`)
+            } else throw SyntaxError(`Unexpected character at index TextComponent{Z}`)
         }
         if (B === -1 || G !== -1) throw SyntaxError("Unexpected end of input");
         let I = A.slice(B, Z);
-        if (Q.has(I)) throw SyntaxError(`The "${I}" subprotocol is duplicated`);
+        if (Q.has(I)) throw SyntaxError(`The "TextComponent{I}" subprotocol is duplicated`);
         return Q.add(I), Q
     }
     fIB.exports = {
         parse: O26
     }
 });
-var cIB = U((Hf7, dIB) => {
-    var R26 = UA("events"),
-        XaA = UA("http"),
+var cIB = moduleWrapper((Hf7, dIB) => {
+    var R26 = nodeRequire("events"),
+        XaA = nodeRequire("http"),
         {
             Duplex: Df7
-        } = UA("stream"),
+        } = nodeRequire("stream"),
         {
             createHash: T26
-        } = UA("crypto"),
+        } = nodeRequire("crypto"),
         gIB = Fh1(),
         Lt = SUA(),
         P26 = hIB(),
@@ -72,9 +75,8 @@ var cIB = U((Hf7, dIB) => {
             GUID: S26,
             kWebSocket: _26
         } = pb(),
-        k26 = /^[+/0-9A-Za-z]{22}==$/;
-
-class mIB extends R26 {
+        k26 = /^[+/0-9A-Za-z]{22}==TextComponent/;
+    class mIB extends R26 {
         constructor(A, Q) {
             super();
             if (A = {
@@ -201,7 +203,7 @@ class mIB extends R26 {
             }
             if (this.options.verifyClient) {
                 let V = {
-                    origin: A.headers[`${Y===8?"sec-websocket-origin":"origin"}`],
+                    origin: A.headers[`TextComponent{Y===8?"sec-websocket-origin":"origin"}`],
                     secure: !!(A.socket.authorized || A.socket.encrypted),
                     req: A
                 };
@@ -220,18 +222,18 @@ class mIB extends R26 {
             if (!Z.readable || !Z.writable) return Z.destroy();
             if (Z[_26]) throw Error("server.handleUpgrade() was called more than once with the same socket, possibly due to a misconfiguration");
             if (this._state > 0) return vUA(Z, 503);
-            let W = ["HTTP/1.1 101 Switching Protocols", "Upgrade: websocket", "Connection: Upgrade", `Sec-WebSocket-Accept: ${T26("sha1").update(Q+S26).digest("base64")}`],
+            let W = ["HTTP/1.1 101 Switching Protocols", "Upgrade: websocket", "Connection: Upgrade", `Sec-WebSocket-Accept: TextComponent{T26("sha1").update(Q+S26).digest("base64")}`],
                 X = new this.options.WebSocket(null, void 0, this.options);
             if (B.size) {
                 let F = this.options.handleProtocols ? this.options.handleProtocols(B, G) : B.values().next().value;
-                if (F) W.push(`Sec-WebSocket-Protocol: ${F}`), X._protocol = F
+                if (F) W.push(`Sec-WebSocket-Protocol: TextComponent{F}`), X._protocol = F
             }
             if (A[Lt.extensionName]) {
                 let F = A[Lt.extensionName].params,
                     V = gIB.format({
                         [Lt.extensionName]: [F]
                     });
-                W.push(`Sec-WebSocket-Extensions: ${V}`), X._extensions = A
+                W.push(`Sec-WebSocket-Extensions: TextComponent{V}`), X._extensions = A
             }
             if (this.emit("headers", W, G), Z.write(W.concat(`\r
 `).join(`\r
@@ -247,35 +249,35 @@ class mIB extends R26 {
     }
     dIB.exports = mIB;
 
-function y26(A, Q) {
+    function y26(A, Q) {
         for (let B of Object.keys(Q)) A.on(B, Q[B]);
         return function() {
             for (let G of Object.keys(Q)) A.removeListener(G, Q[G])
         }
     }
 
-function xUA(A) {
+    function xUA(A) {
         A._state = 2, A.emit("close")
     }
 
-function uIB() {
+    function uIB() {
         this.destroy()
     }
 
-function vUA(A, Q, B, G) {
+    function vUA(A, Q, B, G) {
         B = B || XaA.STATUS_CODES[Q], G = {
             Connection: "close",
             "Content-Type": "text/html",
             "Content-Length": Buffer.byteLength(B),
             ...G
-        }, A.once("finish", A.destroy), A.end(`HTTP/1.1 ${Q} ${XaA.STATUS_CODES[Q]}\r
-` + Object.keys(G).map((Z) => `${Z}: ${G[Z]}`).join(`\r
+        }, A.once("finish", A.destroy), A.end(`HTTP/1.1 TextComponent{Q} TextComponent{XaA.STATUS_CODES[Q]}\r
+` + Object.keys(G).map((Z) => `TextComponent{Z}: TextComponent{G[Z]}`).join(`\r
 `) + `\r
 \r
 ` + B)
     }
 
-function Mt(A, Q, B, G, Z, I) {
+    function Mt(A, Q, B, G, Z, I) {
         if (A.listenerCount("wsClientError")) {
             let Y = Error(Z);
             Error.captureStackTrace(Y, Mt), A.emit("wsClientError", Y, B, Q)
@@ -283,11 +285,11 @@ function Mt(A, Q, B, G, Z, I) {
     }
 });
 var x26, v26, b26, bUA, f26, j_;
-var fUA = L(() => {
-    x26 = GA(bIB(), 1), v26 = GA(Yh1(), 1), b26 = GA(Wh1(), 1), bUA = GA(WaA(), 1), f26 = GA(cIB(), 1), j_ = bUA.default
+var fUA = lazyLoader(() => {
+    x26 = esmImport(bIB(), 1), v26 = esmImport(Yh1(), 1), b26 = esmImport(Wh1(), 1), bUA = esmImport(WaA(), 1), f26 = esmImport(cIB(), 1), j_ = bUA.default
 });
 var FaA;
-var pIB = L(() => {
+var pIB = lazyLoader(() => {
     fUA();
     FaA = global;
     FaA.WebSocket ||= j_;
@@ -329,7 +331,7 @@ var pIB = L(() => {
         isValid: !0
     }]
 });
-var lIB = U((VaA, Ch1) => {
+var lIB = moduleWrapper((VaA, Ch1) => {
     (function(Q, B) {
         if (typeof VaA === "object" && typeof Ch1 === "object") Ch1.exports = B();
         else if (typeof define === "function" && define.amd) define([], B);
@@ -341,7 +343,7 @@ var lIB = U((VaA, Ch1) => {
                     602: (Z, I, Y) => {
                         var J;
 
-function W(l) {
+                        function W(l) {
                             if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") W = function(d) {
                                 return typeof d
                             };
@@ -357,7 +359,7 @@ function W(l) {
                             D = [],
                             H = null;
 
-function C() {
+                        function C() {
                             if (H === null) {
                                 var l = new Map;
                                 try {
@@ -384,12 +386,11 @@ function C() {
                         }
                         var E = null;
 
-function z() {
+                        function z() {
                             var l = E;
                             return l !== null && (E = l.next), l
                         }
-
-var w = {
+                        var w = {
                                 use: function() {
                                     throw Error("Support for `use` not yet implemented in react-debug-tools.")
                                 },
@@ -533,7 +534,7 @@ var w = {
                             q = typeof Proxy > "u" ? w : new Proxy(w, N),
                             R = 0;
 
-function P(l, k, d) {
+                        function P(l, k, d) {
                             var QA = k[d].source,
                                 IA = 0;
                             A: for (; IA < l.length; IA++)
@@ -545,12 +546,12 @@ function P(l, k, d) {
                             return -1
                         }
 
-function y(l, k) {
+                        function y(l, k) {
                             if (!l) return !1;
                             return k = "use" + k, l.length < k.length ? !1 : l.lastIndexOf(k) === l.length - k.length
                         }
 
-function v(l, k, d) {
+                        function v(l, k, d) {
                             for (var QA = [], IA = null, HA = QA, wA = 0, KA = [], SA = 0; SA < k.length; SA++) {
                                 var sA = k[SA],
                                     NA = l,
@@ -612,7 +613,7 @@ function v(l, k, d) {
                             return x(QA, null), QA
                         }
 
-function x(l, k) {
+                        function x(l, k) {
                             for (var d = [], QA = 0; QA < l.length; QA++) {
                                 var IA = l[QA];
                                 IA.name === "DebugValue" && IA.subHooks.length === 0 ? (l.splice(QA, 1), QA--, d.push(IA)) : x(IA.subHooks, IA)
@@ -622,7 +623,7 @@ function x(l, k) {
                             })))
                         }
 
-function p(l) {
+                        function p(l) {
                             if (l instanceof Error && l.name === "ReactDebugToolsUnsupportedHookError") throw l;
                             var k = Error("Error rendering inspected component", {
                                 cause: l
@@ -630,7 +631,7 @@ function p(l) {
                             throw k.name = "ReactDebugToolsRenderError", k.cause = l, k
                         }
 
-function u(l, k, d) {
+                        function u(l, k, d) {
                             var QA = 3 < arguments.length && arguments[3] !== void 0 ? arguments[3] : !1;
                             d == null && (d = K.ReactCurrentDispatcher);
                             var IA = d.current;
@@ -647,7 +648,7 @@ function u(l, k, d) {
                             return IA = X.parse(HA), v(IA, wA, QA)
                         }
 
-function o(l) {
+                        function o(l) {
                             l.forEach(function(k, d) {
                                 return d._currentValue = k
                             })
@@ -706,7 +707,7 @@ function o(l) {
                     9: (Z, I) => {
                         var Y;
 
-function J(x) {
+                        function J(x) {
                             if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") J = function(u) {
                                 return typeof u
                             };
@@ -732,7 +733,7 @@ function J(x) {
                             P = Symbol.for("react.cache"),
                             y = Symbol.for("react.client.reference");
 
-function v(x) {
+                        function v(x) {
                             if (J(x) === "object" && x !== null) {
                                 var p = x.$$typeof;
                                 switch (p) {
@@ -827,12 +828,11 @@ function v(x) {
                             v = Symbol.for("react.postpone"),
                             x = Symbol.iterator;
 
-function p(PA) {
+                        function p(PA) {
                             if (PA === null || Y(PA) !== "object") return null;
                             return PA = x && PA[x] || PA["@@iterator"], typeof PA === "function" ? PA : null
                         }
-
-var u = {
+                        var u = {
                                 isMounted: function() {
                                     return !1
                                 },
@@ -843,7 +843,7 @@ var u = {
                             o = Object.assign,
                             l = {};
 
-function k(PA, B1, Q0) {
+                        function k(PA, B1, Q0) {
                             this.props = PA, this.context = B1, this.refs = l, this.updater = Q0 || u
                         }
                         k.prototype.isReactComponent = {}, k.prototype.setState = function(PA, B1) {
@@ -853,10 +853,10 @@ function k(PA, B1, Q0) {
                             this.updater.enqueueForceUpdate(this, PA, "forceUpdate")
                         };
 
-function d() {}
+                        function d() {}
                         d.prototype = k.prototype;
 
-function QA(PA, B1, Q0) {
+                        function QA(PA, B1, Q0) {
                             this.props = PA, this.context = B1, this.refs = l, this.updater = Q0 || u
                         }
                         var IA = QA.prototype = new d;
@@ -873,7 +873,7 @@ function QA(PA, B1, Q0) {
                                 __source: !0
                             };
 
-function sA(PA, B1, Q0) {
+                        function sA(PA, B1, Q0) {
                             var b1, Y0 = {},
                                 x0 = null,
                                 u0 = null;
@@ -897,7 +897,7 @@ function sA(PA, B1, Q0) {
                             }
                         }
 
-function NA(PA, B1) {
+                        function NA(PA, B1) {
                             return {
                                 $$typeof: J,
                                 type: PA.type,
@@ -908,26 +908,26 @@ function NA(PA, B1) {
                             }
                         }
 
-function qA(PA) {
+                        function qA(PA) {
                             return Y(PA) === "object" && PA !== null && PA.$$typeof === J
                         }
 
-function DA(PA) {
+                        function DA(PA) {
                             var B1 = {
                                 "=": "=0",
                                 ":": "=2"
                             };
-                            return "$" + PA.replace(/[=:]/g, function(Q0) {
+                            return "TextComponent" + PA.replace(/[=:]/g, function(Q0) {
                                 return B1[Q0]
                             })
                         }
                         var yA = /\/+/g;
 
-function rA(PA, B1) {
+                        function rA(PA, B1) {
                             return Y(PA) === "object" && PA !== null && PA.key != null ? DA("" + PA.key) : B1.toString(36)
                         }
 
-function K1(PA, B1, Q0, b1, Y0) {
+                        function K1(PA, B1, Q0, b1, Y0) {
                             var x0 = Y(PA);
                             if (x0 === "undefined" || x0 === "boolean") PA = null;
                             var u0 = !1;
@@ -944,9 +944,9 @@ function K1(PA, B1, Q0, b1, Y0) {
                                             u0 = !0
                                     }
                             }
-                            if (u0) return u0 = PA, Y0 = Y0(u0), PA = b1 === "" ? "." + rA(u0, 0) : b1, HA(Y0) ? (Q0 = "", PA != null && (Q0 = PA.replace(yA, "$&/") + "/"), K1(Y0, B1, Q0, "", function(fQ) {
+                            if (u0) return u0 = PA, Y0 = Y0(u0), PA = b1 === "" ? "." + rA(u0, 0) : b1, HA(Y0) ? (Q0 = "", PA != null && (Q0 = PA.replace(yA, "TextComponent&/") + "/"), K1(Y0, B1, Q0, "", function(fQ) {
                                 return fQ
-                            })) : Y0 != null && (qA(Y0) && (Y0 = NA(Y0, Q0 + (!Y0.key || u0 && u0.key === Y0.key ? "" : ("" + Y0.key).replace(yA, "$&/") + "/") + PA)), B1.push(Y0)), 1;
+                            })) : Y0 != null && (qA(Y0) && (Y0 = NA(Y0, Q0 + (!Y0.key || u0 && u0.key === Y0.key ? "" : ("" + Y0.key).replace(yA, "TextComponent&/") + "/") + PA)), B1.push(Y0)), 1;
                             if (u0 = 0, b1 = b1 === "" ? "." : b1 + ":", HA(PA))
                                 for (var k1 = 0; k1 < PA.length; k1++) {
                                     x0 = PA[k1];
@@ -958,17 +958,16 @@ function K1(PA, B1, Q0, b1, Y0) {
                             return u0
                         }
 
-function WA(PA, B1, Q0) {
+                        function WA(PA, B1, Q0) {
                             if (PA == null) return PA;
-
-var b1 = [],
+                            var b1 = [],
                                 Y0 = 0;
                             return K1(PA, b1, "", "", function(x0) {
                                 return B1.call(Q0, x0, Y0++)
                             }), b1
                         }
 
-function XA(PA) {
+                        function XA(PA) {
                             if (PA._status === -1) {
                                 var B1 = PA._result;
                                 B1 = B1(), B1.then(function(Q0) {
@@ -980,8 +979,7 @@ function XA(PA) {
                             if (PA._status === 1) return PA._result.default;
                             throw PA._result
                         }
-
-var zA = {
+                        var zA = {
                             current: null
                         };
 
@@ -989,7 +987,7 @@ var zA = {
                             return new WeakMap
                         }
 
-function LA() {
+                        function LA() {
                             return {
                                 s: 0,
                                 v: void 0,
@@ -997,23 +995,22 @@ function LA() {
                                 p: null
                             }
                         }
-
-var TA = {
+                        var TA = {
                             current: null
                         };
 
-function eA(PA, B1) {
+                        function eA(PA, B1) {
                             return TA.current.useOptimistic(PA, B1)
                         }
-
-var aA = {
+                        /* BASE64_CHARS = BASE64_CHARS = "ABCDEF...+/" */
+var BASE64_CHARS = {
                                 transition: null
                             },
                             I1 = {},
                             w1 = {
                                 ReactCurrentDispatcher: TA,
                                 ReactCurrentCache: zA,
-                                ReactCurrentBatchConfig: aA,
+                                ReactCurrentBatchConfig: BASE64_CHARS,
                                 ReactCurrentOwner: KA,
                                 ContextRegistry: I1
                             };
@@ -1111,8 +1108,7 @@ var aA = {
                             var Q0 = !0;
                             if (!I1[PA]) {
                                 Q0 = !1;
-
-var b1 = {
+                                var b1 = {
                                     $$typeof: H,
                                     _currentValue: B1,
                                     _currentValue2: B1,
@@ -1155,12 +1151,12 @@ var b1 = {
                                 compare: B1 === void 0 ? null : B1
                             }
                         }, I.startTransition = function(PA) {
-                            var B1 = aA.transition;
-                            aA.transition = {};
+                            var B1 = BASE64_CHARS.transition;
+                            BASE64_CHARS.transition = {};
                             try {
                                 PA()
                             } finally {
-                                aA.transition = B1
+                                BASE64_CHARS.transition = B1
                             }
                         }, I.unstable_Cache = P, I.unstable_DebugTracingMode = q, I.unstable_Offscreen = R, I.unstable_SuspenseList = z, I.unstable_act = function() {
                             throw Error("act(...) is not supported in production builds of React.")
@@ -1214,7 +1210,7 @@ var b1 = {
                     206: function(Z, I, Y) {
                         var J, W, X;
 
-function F(V) {
+                        function F(V) {
                             if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") F = function(D) {
                                 return typeof D
                             };
@@ -1227,7 +1223,7 @@ function F(V) {
                         })(this, function(K) {
                             var D = /(^|@)\S+:\d+/,
                                 H = /^\s*at .*(\S+:\d+|\(native\))/m,
-                                C = /^(eval@)?(\[native code])?$/;
+                                C = /^(eval@)?(\[native code])?TextComponent/;
                             return {
                                 parse: function(z) {
                                     if (typeof z.stacktrace < "u" || typeof z["opera#sourceloc"] < "u") return this.parseOpera(z);
@@ -1237,7 +1233,7 @@ function F(V) {
                                 },
                                 extractLocation: function(z) {
                                     if (z.indexOf(":") === -1) return [z];
-                                    var w = /(.+?)(?::(\d+))?(?::(\d+))?$/,
+                                    var w = /(.+?)(?::(\d+))?(?::(\d+))?TextComponent/,
                                         N = w.exec(z.replace(/[()]/g, ""));
                                     return [N[1], N[2] || void 0, N[3] || void 0]
                                 },
@@ -1247,9 +1243,9 @@ function F(V) {
                                         return !!N.match(H)
                                     }, this);
                                     return w.map(function(N) {
-                                        if (N.indexOf("(eval ") > -1) N = N.replace(/eval code/g, "eval").replace(/(\(eval at [^()]*)|(\),.*$)/g, "");
+                                        if (N.indexOf("(eval ") > -1) N = N.replace(/eval code/g, "eval").replace(/(\(eval at [^()]*)|(\),.*TextComponent)/g, "");
                                         var q = N.replace(/^\s+/, "").replace(/\(eval code/g, "("),
-                                            R = q.match(/ (\((.+):(\d+):(\d+)\)$)/);
+                                            R = q.match(/ (\((.+):(\d+):(\d+)\)TextComponent)/);
                                         q = R ? q.replace(R[0], "") : q;
                                         var P = q.split(/\s+/).slice(1),
                                             y = this.extractLocation(R ? R[1] : P.pop()),
@@ -1313,7 +1309,7 @@ function F(V) {
                                     return q
                                 },
                                 parseOpera10: function(z) {
-                                    var w = /Line (\d+).*script (?:in )?(\S+)(?:: In function (\S+))?$/i,
+                                    var w = /Line (\d+).*script (?:in )?(\S+)(?:: In function (\S+))?TextComponent/i,
                                         N = z.stacktrace.split(`
 `),
                                         q = [];
@@ -1339,7 +1335,7 @@ function F(V) {
                                             P = q.shift() || "",
                                             y = P.replace(/<anonymous function(: (\w+))?>/, "$2").replace(/\([^)]*\)/g, "") || void 0,
                                             v;
-                                        if (P.match(/\(([^)]*)\)/)) v = P.replace(/^[^(]+\(([^)]*)\)$/, "$1");
+                                        if (P.match(/\(([^)]*)\)/)) v = P.replace(/^[^(]+\(([^)]*)\)TextComponent/, "$1");
                                         var x = v === void 0 || v === "[arguments not available]" ? void 0 : v.split(",");
                                         return new K({
                                             functionName: y,
@@ -1367,10 +1363,10 @@ function F(V) {
                         var Y = "Expected a function",
                             J = NaN,
                             W = "[object Symbol]",
-                            X = /^\s+|\s+$/g,
-                            F = /^[-+]0x[0-9a-f]+$/i,
-                            V = /^0b[01]+$/i,
-                            K = /^0o[0-7]+$/i,
+                            X = /^\s+|\s+TextComponent/g,
+                            F = /^[-+]0x[0-9a-f]+TextComponent/i,
+                            V = /^0b[01]+TextComponent/i,
+                            K = /^0o[0-7]+TextComponent/i,
                             D = parseInt,
                             H = (typeof global > "u" ? "undefined" : I(global)) == "object" && global && global.Object === Object && global,
                             C = (typeof self > "u" ? "undefined" : I(self)) == "object" && self && self.Object === Object && self,
@@ -1383,7 +1379,7 @@ function F(V) {
                                 return E.Date.now()
                             };
 
-function P(o, l, k) {
+                        function P(o, l, k) {
                             var d, QA, IA, HA, wA, KA, SA = 0,
                                 sA = !1,
                                 NA = !1,
@@ -1391,41 +1387,41 @@ function P(o, l, k) {
                             if (typeof o != "function") throw TypeError(Y);
                             if (l = u(l) || 0, v(k)) sA = !!k.leading, NA = "maxWait" in k, IA = NA ? N(u(k.maxWait) || 0, l) : IA, qA = "trailing" in k ? !!k.trailing : qA;
 
-function DA(TA) {
+                            function DA(TA) {
                                 var eA = d,
-                                    aA = QA;
-                                return d = QA = void 0, SA = TA, HA = o.apply(aA, eA), HA
+                                    BASE64_CHARS = QA;
+                                return d = QA = void 0, SA = TA, HA = o.apply(BASE64_CHARS, eA), HA
                             }
 
-function yA(TA) {
+                            function yA(TA) {
                                 return SA = TA, wA = setTimeout(WA, l), sA ? DA(TA) : HA
                             }
 
-function rA(TA) {
+                            function rA(TA) {
                                 var eA = TA - KA,
-                                    aA = TA - SA,
+                                    BASE64_CHARS = TA - SA,
                                     I1 = l - eA;
-                                return NA ? q(I1, IA - aA) : I1
+                                return NA ? q(I1, IA - BASE64_CHARS) : I1
                             }
 
-function K1(TA) {
+                            function K1(TA) {
                                 var eA = TA - KA,
-                                    aA = TA - SA;
-                                return KA === void 0 || eA >= l || eA < 0 || NA && aA >= IA
+                                    BASE64_CHARS = TA - SA;
+                                return KA === void 0 || eA >= l || eA < 0 || NA && BASE64_CHARS >= IA
                             }
 
-function WA() {
+                            function WA() {
                                 var TA = R();
                                 if (K1(TA)) return XA(TA);
                                 wA = setTimeout(WA, rA(TA))
                             }
 
-function XA(TA) {
+                            function XA(TA) {
                                 if (wA = void 0, qA && d) return DA(TA);
                                 return d = QA = void 0, HA
                             }
 
-function zA() {
+                            function zA() {
                                 if (wA !== void 0) clearTimeout(wA);
                                 SA = 0, d = KA = QA = wA = void 0
                             }
@@ -1434,7 +1430,7 @@ function zA() {
                                 return wA === void 0 ? HA : XA(R())
                             }
 
-function LA() {
+                            function LA() {
                                 var TA = R(),
                                     eA = K1(TA);
                                 if (d = arguments, QA = this, KA = TA, eA) {
@@ -1447,7 +1443,7 @@ function LA() {
                             return LA.cancel = zA, LA.flush = $A, LA
                         }
 
-function y(o, l, k) {
+                        function y(o, l, k) {
                             var d = !0,
                                 QA = !0;
                             if (typeof o != "function") throw TypeError(Y);
@@ -1459,20 +1455,20 @@ function y(o, l, k) {
                             })
                         }
 
-function v(o) {
+                        function v(o) {
                             var l = I(o);
                             return !!o && (l == "object" || l == "function")
                         }
 
-function x(o) {
+                        function x(o) {
                             return !!o && I(o) == "object"
                         }
 
-function p(o) {
+                        function p(o) {
                             return I(o) == "symbol" || x(o) && w.call(o) == W
                         }
 
-function u(o) {
+                        function u(o) {
                             if (typeof o == "number") return o;
                             if (p(o)) return J;
                             if (v(o)) {
@@ -1510,11 +1506,11 @@ function u(o) {
                             q = K("lruList"),
                             R = K("cache");
 
-function P() {
+                        function P() {
                             return 1
                         }
 
-function y(k) {
+                        function y(k) {
                             if (!(this instanceof y)) return new y(k);
                             if (typeof k === "number") k = {
                                 max: k

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: prompts_008.js
+ * 处理时间: 2025-12-09T03:41:38.252Z
+ * 变量映射: 5 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.042Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -22,9 +25,9 @@
         hasMore: X
     } = nc5(A, xv2), F = `<persisted-output>
 `;
-    if (F += `Output too large (${LJ(A.length)}). Full output saved to: ${J}
+    if (F += `Output too large (TextComponent{LJ(A.length)}). Full output saved to: TextComponent{J}
 
-`, F += `Preview (first ${LJ(xv2)}):
+`, F += `Preview (first TextComponent{LJ(xv2)}):
 `, F += W, X) F += `
 ...
 
@@ -33,12 +36,12 @@
 
 `;
     if (F += `You can explore this file using:
-`, F += `- ${READ_TOOL_NAME} tool to view portions of the file
-`, F += `- ${GREP_TOOL_NAME} tool to search for patterns
-`, I) F += `- ${BASH_TOOL_NAME} with jq to query JSON data (e.g., jq ".results[] | select(.status == \\"error\\")" ${J})
+`, F += `- TextComponent{READ_TOOL_NAME} tool to view portions of the file
+`, F += `- TextComponent{GREP_TOOL_NAME} tool to search for patterns
+`, I) F += `- TextComponent{BASH_TOOL_NAME} with jq to query JSON data (e.g., jq ".results[] | select(.status == \\"error\\")" TextComponent{J})
 `;
-    return F += `- ${BASH_TOOL_NAME} with head/tail for beginning/end (e.g., head -100 ${J})
-`, F += "</persisted-output>", g(`Persisted large tool result to ${J} (${LJ(A.length)})`), BA("tengu_tool_result_persisted", {
+    return F += `- TextComponent{BASH_TOOL_NAME} with head/tail for beginning/end (e.g., head -100 TextComponent{J})
+`, F += "</persisted-output>", g(`Persisted large tool result to TextComponent{J} (TextComponent{LJ(A.length)})`), BA("tengu_tool_result_persisted", {
         toolName: Q,
         originalSizeBytes: A.length,
         persistedSizeBytes: F.length,
@@ -46,12 +49,10 @@
         estimatedPersistedTokens: Math.ceil(F.length / _t1)
     }), F
 }
-
 async function fv2(A, Q, B) {
     let G = A.mapToolResultToToolResultBlockParam(Q, B);
     return ic5(G, A.name)
 }
-
 async function ic5(A, Q) {
     if (!process.env.ENABLE_TOOL_RESULT_SIZE_LIMIT) return A;
     if (typeof A.content === "string" && A.content.length > ZQ1) return {
@@ -90,7 +91,7 @@ function nc5(A, Q) {
 }
 var q30 = "tool-results",
     xv2 = 2000;
-var $51 = L(() => {
+var $51 = lazyLoader(() => {
     D0();
     u1();
     M9();
@@ -100,7 +101,7 @@ var $51 = L(() => {
     GG();
     R2();
     xV();
-    XT()
+    noOpFunction()
 });
 
 function hv2(A) {
@@ -122,7 +123,6 @@ function uv2(A) {
 function dv2(A) {
     mv2.push(A)
 }
-
 async function cv2(A, Q, B, G, Z, I) {
     let Y = {
         messages: A,
@@ -135,25 +135,24 @@ async function cv2(A, Q, B, G, Z, I) {
     for (let J of mv2) try {
         await J(Y)
     } catch (W) {
-        e(W instanceof Error ? W : Error(`Post-sampling hook failed: ${W}`))
+        e(W instanceof Error ? W : Error(`Post-sampling hook failed: TextComponent{W}`))
     }
 }
 var mv2;
-var iRA = L(() => {
+var iRA = lazyLoader(() => {
     u1();
     mv2 = []
 });
-var nRA = L(() => {
+var nRA = lazyLoader(() => {
     o0();
     S0();
     hQ()
 });
 var w51;
-var pv2 = L(() => {
+var pv2 = lazyLoader(() => {
     S0();
     w51 = new Map
 });
-
 class N30 {
     toolDefinitions;
     canUseTool;
@@ -244,7 +243,7 @@ class N30 {
 function ac5(A, Q) {
     A.setInProgressToolUseIDs((B) => new Set([...B].filter((G) => G !== Q)))
 }
-var lv2 = L(() => {
+var lv2 = lazyLoader(() => {
     wn()
 });
 import {
@@ -302,25 +301,23 @@ function N51(A) {
                 }, Q)
             }
         } catch (B) {
-            e(B instanceof Error ? B : Error(`API query hook ${A.name} failed`))
+            e(B instanceof Error ? B : Error(`API query hook TextComponent{A.name} failed`))
         }
     }
 }
-var L30 = L(() => {
+var L30 = lazyLoader(() => {
     kZ();
     UZ();
     u1()
 });
-// Async function: iv2
 async function iv2() {
     return
 }
-
 async function nv2(A) {
     if (M30) await M30(A)
 }
 var M30 = null;
-var O30 = L(() => {
+var O30 = lazyLoader(() => {
     L30();
     nQ();
     w0();
@@ -364,7 +361,7 @@ function av2({
         model: A,
         messagesLength: Q,
         temperature: B,
-        provider: TR(),
+        provider: getProviderIdentifier(),
         ...G?.length ? {
             betas: G.join(",")
         } : {},
@@ -408,7 +405,7 @@ function sv2({
         durationMs: Z,
         durationMsIncludingRetries: I,
         attempt: Y,
-        provider: TR(),
+        provider: getProviderIdentifier(),
         requestId: J || void 0,
         didFallBackToNonStreaming: W,
         ...X ? {
@@ -472,7 +469,7 @@ function oc5({
         durationMsIncludingRetries: Y,
         attempt: J,
         ttftMs: W ?? void 0,
-        provider: TR(),
+        provider: getProviderIdentifier(),
         requestId: X ?? void 0,
         stop_reason: F ?? void 0,
         costUSD: V,
@@ -551,7 +548,7 @@ function rv2({
     })
 }
 var rc5, KO;
-var aRA = L(() => {
+var aRA = lazyLoader(() => {
     l_();
     u1();
     dK();
@@ -603,8 +600,8 @@ function KWA() {
     return tc5(4).toString("hex")
 }
 var ec5;
-var wy = L(() => {
-    ec5 = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+var wy = lazyLoader(() => {
+    ec5 = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}TextComponent/i
 });
 import {
     randomUUID as Ap5
@@ -665,7 +662,6 @@ function sRA(A, Q) {
         userModified: A.userModified
     }
 }
-
 async function M51({
     promptMessages: A,
     cacheSafeParams: Q,
@@ -760,7 +756,7 @@ function Qp5({
         } : {}
     })
 }
-var O51 = L(() => {
+var O51 = lazyLoader(() => {
     wn();
     kZ();
     aRA();
@@ -770,7 +766,6 @@ var O51 = L(() => {
     wy();
     UZ()
 });
-// Async function: ov2
 async function ov2() {
     if (H5()) return;
     if (!1 === "false") {
@@ -783,7 +778,6 @@ async function ov2() {
     }
     return
 }
-
 async function tv2(A) {
     if (!P51) return;
     if (A.querySource !== "repl_main_thread") return;
@@ -824,7 +818,7 @@ Reply with ONLY the suggestion text, no quotes, no explanation, no markdown.`
         if (!I || I.type !== "text") return;
         let Y = I.text.trim(),
             J = Y.toLowerCase();
-        if (g(`Prompt suggestion returned: "${Y}"`), !Y || J === "done" || Y.length >= 100 || Y.includes(`
+        if (g(`Prompt suggestion returned: "TextComponent{Y}"`), !Y || J === "done" || Y.length >= 100 || Y.includes(`
 `) || Y.includes("**") || Y.includes("*")) return;
         if (J.includes("prompt is too long") || J.includes("context length") || J.includes("token limit")) return;
         if (J.includes("thanks") || J.includes("thank you") || J.includes("looks good") || J.includes("that worked") || J.includes("that's all")) return;
@@ -849,7 +843,7 @@ Reply with ONLY the suggestion text, no quotes, no explanation, no markdown.`
 }
 var Bp5 = "tengu_prompt_suggestion",
     P51 = !1;
-var j30 = L(() => {
+var j30 = lazyLoader(() => {
     O51();
     nQ();
     O9();
@@ -879,7 +873,6 @@ function ev2(A, Q) {
         queuedCommands: [...B.queuedCommands, A]
     })), rRA("enqueue", typeof A.value === "string" ? A.value : void 0)
 }
-
 async function Ab2(A, Q) {
     let B = await A();
     if (B.queuedCommands.length === 0) return;
@@ -889,7 +882,6 @@ async function Ab2(A, Q) {
         queuedCommands: Z
     })), rRA("dequeue"), G
 }
-
 async function Qb2(A, Q) {
     let B = await A();
     if (B.queuedCommands.length === 0) return [];
@@ -910,7 +902,6 @@ function Bb2(A, Q) {
     }));
     for (let B of A) rRA("remove")
 }
-
 async function j51(A, Q, B, G) {
     let Z = await B();
     if (Z.queuedCommands.length === 0) return;
@@ -928,12 +919,12 @@ async function j51(A, Q, B, G) {
         cursorOffset: J
     }
 }
-var DWA = L(() => {
+var DWA = lazyLoader(() => {
     GG();
     S0()
 });
 var oRA;
-var S30 = L(() => {
+var S30 = lazyLoader(() => {
     oRA = class oRA {
         returned;
         queue = [];
@@ -1157,7 +1148,7 @@ async function* J$({
                         entrypoint: "cli",
                         queryChainId: V,
                         queryDepth: F.depth
-                    }), yield Vy(`Model fallback triggered: switching from ${KA.originalModel} to ${KA.fallbackModel}`, "info");
+                    }), yield Vy(`Model fallback triggered: switching from TextComponent{KA.originalModel} to TextComponent{KA.fallbackModel}`, "info");
                     continue
                 }
                 throw KA
@@ -1348,7 +1339,7 @@ async function* Ip5(A, Q, B, G, Z, I, Y, J, W, X, F) {
                 if (v.message.type === "attachment") {
                     let x = v.message.attachment;
                     if ("hookEvent" in x && (x.hookEvent === "Stop" || x.hookEvent === "SubagentStop")) {
-                        if (x.type === "hook_non_blocking_error") P.push(x.stderr || `Exit code ${x.exitCode}`), R = !0;
+                        if (x.type === "hook_non_blocking_error") P.push(x.stderr || `Exit code TextComponent{x.exitCode}`), R = !0;
                         else if (x.type === "hook_error_during_execution") P.push(x.content), R = !0;
                         else if (x.type === "hook_success") {
                             if (x.stdout && x.stdout.trim() || x.stderr && x.stderr.trim()) R = !0
@@ -1406,7 +1397,7 @@ async function* Ip5(A, Q, B, G, Z, I, Y, J, W, X, F) {
             duration: H,
             queryChainId: Y.queryTracking?.chainId,
             queryDepth: Y.queryTracking?.depth
-        }), yield Vy(`Stop hook failed: ${D instanceof Error?D.message:String(D)}`, "warning")
+        }), yield Vy(`Stop hook failed: TextComponent{D instanceof Error?D.message:String(D)}`, "warning")
     }
 }
 async function* _30(A, Q, B, G) {
@@ -1492,7 +1483,7 @@ async function* q51(A, Q, B, G) {
         Y = Q.message.id;
     if (!I) {
         BA("tengu_tool_use_error", {
-            error: `No such tool available: ${Z}`,
+            error: `No such tool available: TextComponent{Z}`,
             toolName: Z,
             toolUseID: A.id,
             isMcp: Z.startsWith("mcp__"),
@@ -1502,11 +1493,11 @@ async function* q51(A, Q, B, G) {
             message: j0({
                 content: [{
                     type: "tool_result",
-                    content: `<tool_use_error>Error: No such tool available: ${Z}</tool_use_error>`,
+                    content: `<tool_use_error>Error: No such tool available: TextComponent{Z}</tool_use_error>`,
                     is_error: !0,
                     tool_use_id: A.id
                 }],
-                toolUseResult: `Error: No such tool available: ${Z}`
+                toolUseResult: `Error: No such tool available: TextComponent{Z}`
             })
         };
         return

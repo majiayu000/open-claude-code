@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_051.js
+ * 处理时间: 2025-12-09T03:41:36.932Z
+ * 变量映射: 8 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.933Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -24,25 +27,24 @@
         return this.cache
     }
 }
-var dr1 = L(() => {
+var dr1 = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
-
 class jJ {
     constructor(A, Q, B, G, Z, I, Y) {
         this.clientId = A, this.cacheStorage = Q, this.cryptoObj = B, this.logger = G, this.serializableCache = Z, this.persistencePlugin = I, this.performanceClient = Y
     }
     validateTokenResponse(A, Q) {
         if (A.error || A.error_description || A.suberror) {
-            let B = `Error(s): ${A.error_codes||L0.NOT_AVAILABLE} - Timestamp: ${A.timestamp||L0.NOT_AVAILABLE} - Description: ${A.error_description||L0.NOT_AVAILABLE} - Correlation ID: ${A.correlation_id||L0.NOT_AVAILABLE} - Trace ID: ${A.trace_id||L0.NOT_AVAILABLE}`,
+            let B = `Error(s): TextComponent{A.error_codes||L0.NOT_AVAILABLE} - Timestamp: TextComponent{A.timestamp||L0.NOT_AVAILABLE} - Description: TextComponent{A.error_description||L0.NOT_AVAILABLE} - Correlation ID: TextComponent{A.correlation_id||L0.NOT_AVAILABLE} - Trace ID: TextComponent{A.trace_id||L0.NOT_AVAILABLE}`,
                 G = A.error_codes?.length ? A.error_codes[0] : void 0,
                 Z = new PE(A.error, B, A.suberror, G, A.status);
             if (Q && A.status && A.status >= o4.SERVER_ERROR_RANGE_START && A.status <= o4.SERVER_ERROR_RANGE_END) {
                 this.logger.warning(`executeTokenRequest:validateTokenResponse - AAD is currently unavailable and the access token is unable to be refreshed.
-${Z}`);
+TextComponent{Z}`);
                 return
             } else if (Q && A.status && A.status >= o4.CLIENT_ERROR_RANGE_START && A.status <= o4.CLIENT_ERROR_RANGE_END) {
                 this.logger.warning(`executeTokenRequest:validateTokenResponse - AAD is currently available but is unable to refresh the access token.
-${Z}`);
+TextComponent{Z}`);
                 return
             }
             if (n11(A.error, A.error_description, A.suberror)) throw new Jq(A.error, A.error_description, A.suberror, A.timestamp || L0.EMPTY_STRING, A.trace_id || L0.EMPTY_STRING, A.correlation_id || L0.EMPTY_STRING, A.claims || L0.EMPTY_STRING, G);
@@ -194,7 +196,7 @@ function neB(A, Q, B, G, Z, I, Y, J, W, X, F, V) {
     }
     return C.tenantProfiles = E, C
 }
-var fNA = L(() => {
+var fNA = lazyLoader(() => {
     mX();
     BIA();
     FNA();
@@ -212,7 +214,6 @@ var fNA = L(() => {
     Ol();
     PW(); /*! @azure/msal-common v15.13.1 2025-10-29 */
 });
-
 async function jE(A, Q, B) {
     if (typeof A === "string") return A;
     else return A({
@@ -220,10 +221,10 @@ async function jE(A, Q, B) {
         tokenEndpoint: B
     })
 }
-var o11 = L(() => {
+var o11 = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
 var t11;
-var aeB = L(() => {
+var aeB = lazyLoader(() => {
     yNA();
     eZA();
     FAA();
@@ -272,7 +273,7 @@ var aeB = L(() => {
             if (Q.clientInfo) try {
                 let W = iZA(Q.clientInfo, this.cryptoUtils.base64Decode);
                 I = {
-                    credential: `${W.uid}${yf.CLIENT_INFO_SEPARATOR}${W.utid}`,
+                    credential: `TextComponent{W.uid}TextComponent{yf.CLIENT_INFO_SEPARATOR}TextComponent{W.utid}`,
                     type: RE.HOME_ACCOUNT_ID
                 }
             } catch (W) {
@@ -285,8 +286,8 @@ var aeB = L(() => {
         async createTokenRequestBody(A) {
             this.performanceClient?.addQueueMeasurement(W0.AuthClientCreateTokenRequestBody, A.correlationId);
             let Q = new Map;
-            if (CAA(Q, A.embeddedClientId || A.tokenBodyParameters?.[Hk] || this.config.authOptions.clientId), !this.includeRedirectUri) {
-                if (!A.redirectUri) throw jG(QAA)
+            if (CAA(Q, A.embeddedClientId || A.tokenBodyParameters?.[CLIENT_ID_KEY] || this.config.authOptions.clientId), !this.includeRedirectUri) {
+                if (!A.redirectUri) throw jG(REDIRECT_URI_EMPTY)
             } else EAA(Q, A.redirectUri);
             if (HAA(Q, A.scopes, !0, this.oidcDefaultScopes), Tr1(Q, A.code), UNA(Q, this.config.libraryInfo), $NA(Q, this.config.telemetry.application), jNA(Q), this.serverTelemetryManager && !R11(this.config)) PNA(Q, this.serverTelemetryManager);
             if (A.codeVerifier) jr1(Q, A.codeVerifier);
@@ -309,7 +310,7 @@ var aeB = L(() => {
             if (A.clientInfo) try {
                 let G = iZA(A.clientInfo, this.cryptoUtils.base64Decode);
                 B = {
-                    credential: `${G.uid}${yf.CLIENT_INFO_SEPARATOR}${G.utid}`,
+                    credential: `TextComponent{G.uid}TextComponent{yf.CLIENT_INFO_SEPARATOR}TextComponent{G.utid}`,
                     type: RE.HOME_ACCOUNT_ID
                 }
             } catch (G) {
@@ -350,7 +351,7 @@ var aeB = L(() => {
 });
 var TA5 = 300,
     ZIA;
-var seB = L(() => {
+var seB = lazyLoader(() => {
     T11();
     yNA();
     eZA();
@@ -393,7 +394,7 @@ var seB = L(() => {
             if (this.cacheManager.isAppMetadataFOCI(A.account.environment)) try {
                 return await P5(this.acquireTokenWithCachedRefreshToken.bind(this), W0.RefreshTokenClientAcquireTokenWithCachedRefreshToken, this.logger, this.performanceClient, A.correlationId)(A, !0)
             } catch (B) {
-                let G = B instanceof Jq && B.errorCode === Rl,
+                let G = B instanceof Jq && B.errorCode === NO_TOKENS_FOUND,
                     Z = B instanceof PE && B.errorCode === vqA.INVALID_GRANT_ERROR && B.subError === vqA.CLIENT_MISMATCH_ERROR;
                 if (G || Z) return P5(this.acquireTokenWithCachedRefreshToken.bind(this), W0.RefreshTokenClientAcquireTokenWithCachedRefreshToken, this.logger, this.performanceClient, A.correlationId)(A, !1);
                 else throw B
@@ -403,7 +404,7 @@ var seB = L(() => {
         async acquireTokenWithCachedRefreshToken(A, Q) {
             this.performanceClient?.addQueueMeasurement(W0.RefreshTokenClientAcquireTokenWithCachedRefreshToken, A.correlationId);
             let B = ueB(this.cacheManager.getRefreshToken.bind(this.cacheManager), W0.CacheManagerGetRefreshToken, this.logger, this.performanceClient, A.correlationId)(A.account, Q, A.correlationId, void 0, this.performanceClient);
-            if (!B) throw a11(Rl);
+            if (!B) throw a11(NO_TOKENS_FOUND);
             if (B.expiresOn && AIA(B.expiresOn, A.refreshTokenExpirationOffsetSeconds || TA5)) throw this.performanceClient?.addFields({
                 rtExpiresOnMs: Number(B.expiresOn)
             }, A.correlationId), a11(vNA);
@@ -443,7 +444,7 @@ var seB = L(() => {
         async createTokenRequestBody(A) {
             this.performanceClient?.addQueueMeasurement(W0.RefreshTokenClientCreateTokenRequestBody, A.correlationId);
             let Q = new Map;
-            if (CAA(Q, A.embeddedClientId || A.tokenBodyParameters?.[Hk] || this.config.authOptions.clientId), A.redirectUri) EAA(Q, A.redirectUri);
+            if (CAA(Q, A.embeddedClientId || A.tokenBodyParameters?.[CLIENT_ID_KEY] || this.config.authOptions.clientId), A.redirectUri) EAA(Q, A.redirectUri);
             if (HAA(Q, A.scopes, !0, this.config.authOptions.authority.options.OIDCOptions?.defaultScopes), MNA(Q, PU.REFRESH_TOKEN_GRANT), $AA(Q), UNA(Q, this.config.libraryInfo), $NA(Q, this.config.telemetry.application), jNA(Q), this.serverTelemetryManager && !R11(this.config)) PNA(Q, this.serverTelemetryManager);
             if (Pr1(Q, A.refreshToken), this.config.clientCredentials.clientSecret) qNA(Q, this.config.clientCredentials.clientSecret);
             if (this.config.clientCredentials.clientAssertion) {
@@ -480,7 +481,7 @@ var seB = L(() => {
     }
 });
 var e11;
-var reB = L(() => {
+var reB = lazyLoader(() => {
     yNA();
     Ol();
     mX();
@@ -521,7 +522,7 @@ var reB = L(() => {
         setCacheOutcome(A, Q) {
             if (this.serverTelemetryManager?.setCacheOutcome(A), this.performanceClient?.addFields({
                     cacheOutcome: A
-                }, Q), A !== IZ.NOT_APPLICABLE) this.logger.info(`Token refresh is required due to cache outcome: ${A}`)
+                }, Q), A !== IZ.NOT_APPLICABLE) this.logger.info(`Token refresh is required due to cache outcome: TextComponent{A}`)
         }
         async generateResultFromCacheRecord(A, Q) {
             this.performanceClient?.addQueueMeasurement(W0.SilentFlowClientGenerateResultFromCacheRecord, Q.correlationId);
@@ -536,9 +537,8 @@ var reB = L(() => {
         }
     }
 });
-
 var hNA = {};
-pG(hNA, {
+esmExport(hNA, {
     validateAuthorizationResponse: () => oeB,
     getStandardAuthorizeRequestParameters: () => PA5,
     getAuthorizeUrl: () => jA5,
@@ -548,7 +548,7 @@ pG(hNA, {
 function PA5(A, Q, B, G) {
     let Z = Q.correlationId,
         I = new Map;
-    CAA(I, Q.embeddedClientId || Q.extraQueryParameters?.[Hk] || A.clientId);
+    CAA(I, Q.embeddedClientId || Q.extraQueryParameters?.[CLIENT_ID_KEY] || A.clientId);
     let Y = [...Q.scopes || [], ...Q.extraScopesToConsent || []];
     if (HAA(I, Y, !0, A.authority.options.OIDCOptions?.defaultScopes), EAA(I, Q.redirectUri), UAA(I, Z), qr1(I, Q.responseMode), $AA(I), Q.prompt) Or1(I, Q.prompt), G?.addFields({
         prompt: Q.prompt
@@ -653,7 +653,7 @@ function kA5(A) {
 function yA5(A) {
     return A.loginHint || A.idTokenClaims?.login_hint || null
 }
-var teB = L(() => {
+var teB = lazyLoader(() => {
     eZA();
     oZA();
     bZ();
@@ -678,7 +678,7 @@ function xA5(A) {
         [2, [Z, I]]
     ]), J = [];
     if (Q?.length) {
-        if (J = Q.split(eeB), J.length < 4) return Q
+        if (J = Q.split(COMMA), J.length < 4) return Q
     } else J = Array.from({
         length: 4
     }, () => AA2);
@@ -689,7 +689,7 @@ function xA5(A) {
             skuName: W[0],
             skuVersion: W[1]
         })
-    }), J.join(eeB)
+    }), J.join(COMMA)
 }
 
 function vA5(A) {
@@ -702,16 +702,15 @@ function vA5(A) {
     if (B >= Q.length) return;
     Q[B] = [G, Z].join(AA2)
 }
-
 class Pl {
     constructor(A, Q) {
         this.cacheOutcome = IZ.NOT_APPLICABLE, this.cacheManager = Q, this.apiId = A.apiId, this.correlationId = A.correlationId, this.wrapperSKU = A.wrapperSKU || L0.EMPTY_STRING, this.wrapperVer = A.wrapperVer || L0.EMPTY_STRING, this.telemetryCacheKey = RF.CACHE_KEY + yf.CACHE_KEY_SEPARATOR + A.clientId
     }
     generateCurrentRequestHeaderValue() {
-        let A = `${this.apiId}${RF.VALUE_SEPARATOR}${this.cacheOutcome}`,
+        let A = `TextComponent{this.apiId}TextComponent{RF.VALUE_SEPARATOR}TextComponent{this.cacheOutcome}`,
             Q = [this.wrapperSKU, this.wrapperVer],
             B = this.getNativeBrokerErrorCode();
-        if (B?.length) Q.push(`broker_error=${B}`);
+        if (B?.length) Q.push(`broker_error=TextComponent{B}`);
         let G = Q.join(RF.VALUE_SEPARATOR),
             Z = this.getRegionDiscoveryFields(),
             I = [A, Z].join(RF.VALUE_SEPARATOR);
@@ -804,13 +803,14 @@ class Pl {
         return xA5(A)
     }
 }
-var eeB = ",",
+/* COMMA = COMMA = "," */
+var COMMA = ",",
     AA2 = "|";
-var QA2 = L(() => {
+var QA2 = lazyLoader(() => {
     bZ();
     yM(); /*! @azure/msal-common v15.13.1 2025-10-29 */
 });
-var u7 = L(() => {
+var u7 = lazyLoader(() => {
     aeB();
     seB();
     reB();
@@ -849,7 +849,6 @@ var u7 = L(() => {
     dr1();
     o11(); /*! @azure/msal-common v15.13.1 2025-10-29 */
 });
-
 class jl {
     static deserializeJSONBlob(A) {
         return !A ? {} : JSON.parse(A)
@@ -964,28 +963,28 @@ class jl {
         }
     }
 }
-var A01 = L(() => {
+var A01 = lazyLoader(() => {
     u7(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
-
 var cr1 = {};
-pG(cr1, {
+esmExport(cr1, {
     Serializer: () => xe,
     Deserializer: () => jl
 });
-var BA2 = L(() => {
+var BA2 = lazyLoader(() => {
     V11();
     A01(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
-var GA2 = "system_assigned_managed_identity",
+/* SYSTEM_ASSIGNED_MANAGED_IDENTITY = SYSTEM_ASSIGNED_MANAGED_IDENTITY type */
+var SYSTEM_ASSIGNED_MANAGED_IDENTITY = "system_assigned_managed_identity",
     dA5 = "managed_identity",
     pr1, SU, cX, D4, T4, lY, DI, Q01, ZA2 = "REGION_NAME",
     IA2 = "MSAL_FORCE_REGION",
     YA2 = 32,
     JA2, B01, lr1, SE, af, bM, G01, WA2 = 4096;
-var HI = L(() => {
+var HI = lazyLoader(() => {
     u7(); /*! @azure/msal-node v3.8.1 2025-10-29 */
-    pr1 = `https://login.microsoftonline.com/${dA5}/`, SU = {
+    pr1 = `https://login.microsoftonline.com/TextComponent{dA5}/`, SU = {
         AUTHORIZATION_HEADER_NAME: "Authorization",
         METADATA_HEADER_NAME: "Metadata",
         APP_SERVICE_SECRET_HEADER_NAME: "X-IDENTITY-HEADER",
@@ -1060,7 +1059,6 @@ var HI = L(() => {
         TIMEOUT_MS: 5000
     }
 });
-
 class gNA {
     static getNetworkResponse(A, Q, B) {
         return {
@@ -1076,19 +1074,18 @@ class gNA {
             hash: A.hash,
             search: A.search,
             pathname: A.pathname,
-            path: `${A.pathname||""}${A.search||""}`,
+            path: `TextComponent{A.pathname||""}TextComponent{A.search||""}`,
             href: A.href
         };
         if (A.port !== "") Q.port = Number(A.port);
-        if (A.username || A.password) Q.auth = `${decodeURIComponent(A.username)}:${decodeURIComponent(A.password)}`;
+        if (A.username || A.password) Q.auth = `TextComponent{decodeURIComponent(A.username)}:TextComponent{decodeURIComponent(A.password)}`;
         return Q
     }
 }
-var XA2 = L(() => {
+var XA2 = lazyLoader(() => {
     /*! @azure/msal-node v3.8.1 2025-10-29 */ });
 import ir1 from "http";
 import FA2 from "https";
-
 class uNA {
     constructor(A, Q) {
         this.proxyUrl = A || "", this.customAgentOptions = Q || {}
@@ -1118,12 +1115,12 @@ var VA2 = (A, Q, B, G, Z, I) => {
         if (B === DI.POST) {
             let K = G?.body || "";
             F = `Content-Type: application/x-www-form-urlencoded\r
-Content-Length: ${K.length}\r
+Content-Length: TextComponent{K.length}\r
 \r
-${K}`
+TextComponent{K}`
         } else if (I) X.timeout = I;
-        let V = `${B.toUpperCase()} ${Y.href} HTTP/1.1\r
-Host: ${Y.host}\r
+        let V = `TextComponent{B.toUpperCase()} TextComponent{Y.href} HTTP/1.1\r
+Host: TextComponent{Y.host}\r
 Connection: close\r
 ` + F + `\r
 `;
@@ -1134,7 +1131,7 @@ Connection: close\r
             });
             H.end(), H.on("connect", (C, E) => {
                 let z = C?.statusCode || Q01.SERVER_ERROR;
-                if (z < Q01.SUCCESS_RANGE_START || z > Q01.SUCCESS_RANGE_END) H.destroy(), E.destroy(), D(Error(`Error connecting to proxy. Http status code: ${C.statusCode}. Http status message: ${C?.statusMessage||"Unknown"}`));
+                if (z < Q01.SUCCESS_RANGE_START || z > Q01.SUCCESS_RANGE_END) H.destroy(), E.destroy(), D(Error(`Error connecting to proxy. Http status code: TextComponent{C.statusCode}. Http status message: TextComponent{C?.statusMessage||"Unknown"}`));
                 E.write(V);
                 let w = [];
                 E.on("data", (N) => {
@@ -1224,20 +1221,21 @@ Connection: close\r
             else Y = "unknown_error", J = "An unknown";
             Z = {
                 error: Y,
-                error_description: `${J} error occured.
-Http status code: ${A}
-Http status message: ${Q||"Unknown"}
-Headers: ${JSON.stringify(B)}`
+                error_description: `TextComponent{J} error occured.
+Http status code: TextComponent{A}
+Http status message: TextComponent{Q||"Unknown"}
+Headers: TextComponent{JSON.stringify(B)}`
             }
         }
         return Z
     };
-var HA2 = L(() => {
+var HA2 = lazyLoader(() => {
     u7();
     HI();
     XA2(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
-var Z01 = "invalid_file_extension",
+/* INVALID_FILE_EXTENSION = INVALID_FILE_EXTENSION error */
+var INVALID_FILE_EXTENSION = "invalid_file_extension",
     I01 = "invalid_file_path",
     Sl = "invalid_managed_identity_id_type",
     Y01 = "invalid_secret",
@@ -1252,7 +1250,7 @@ var Z01 = "invalid_file_extension",
     V01 = "www_authenticate_header_missing",
     K01 = "www_authenticate_header_unsupported_format",
     qAA;
-var NAA = L(() => {
+var NAA = lazyLoader(() => {
     HI(); /*! @azure/msal-node v3.8.1 2025-10-29 */
     qAA = {
         [D4.AZURE_POD_IDENTITY_AUTHORITY_HOST]: "azure_pod_identity_authority_host_url_malformed",
@@ -1266,21 +1264,21 @@ function jW(A) {
     return new nr1(A)
 }
 var cA5, nr1;
-var IIA = L(() => {
+var IIA = lazyLoader(() => {
     u7();
     NAA();
     HI(); /*! @azure/msal-node v3.8.1 2025-10-29 */
     cA5 = {
-        [Z01]: "The file path in the WWW-Authenticate header does not contain a .key file.",
+        [INVALID_FILE_EXTENSION]: "The file path in the WWW-Authenticate header does not contain a .key file.",
         [I01]: "The file path in the WWW-Authenticate header is not in a valid Windows or Linux Format.",
         [Sl]: "More than one ManagedIdentityIdType was provided.",
         [Y01]: "The secret in the file on the file path in the WWW-Authenticate header is greater than 4096 bytes.",
         [J01]: "The platform is not supported by Azure Arc. Azure Arc only supports Windows and Linux.",
         [CA2]: "A ManagedIdentityId id was not provided.",
-        [qAA.AZURE_POD_IDENTITY_AUTHORITY_HOST]: `The Managed Identity's '${D4.AZURE_POD_IDENTITY_AUTHORITY_HOST}' environment variable is malformed.`,
-        [qAA.IDENTITY_ENDPOINT]: `The Managed Identity's '${D4.IDENTITY_ENDPOINT}' environment variable is malformed.`,
-        [qAA.IMDS_ENDPOINT]: `The Managed Identity's '${D4.IMDS_ENDPOINT}' environment variable is malformed.`,
-        [qAA.MSI_ENDPOINT]: `The Managed Identity's '${D4.MSI_ENDPOINT}' environment variable is malformed.`,
+        [qAA.AZURE_POD_IDENTITY_AUTHORITY_HOST]: `The Managed Identity's 'TextComponent{D4.AZURE_POD_IDENTITY_AUTHORITY_HOST}' environment variable is malformed.`,
+        [qAA.IDENTITY_ENDPOINT]: `The Managed Identity's 'TextComponent{D4.IDENTITY_ENDPOINT}' environment variable is malformed.`,
+        [qAA.IMDS_ENDPOINT]: `The Managed Identity's 'TextComponent{D4.IMDS_ENDPOINT}' environment variable is malformed.`,
+        [qAA.MSI_ENDPOINT]: `The Managed Identity's 'TextComponent{D4.MSI_ENDPOINT}' environment variable is malformed.`,
         [EA2]: "Authentication unavailable. The request to the managed identity endpoint timed out.",
         [W01]: "Azure Arc Managed Identities can only be system assigned.",
         [X01]: "Cloud Shell Managed Identities can only be system assigned.",
@@ -1297,7 +1295,6 @@ var IIA = L(() => {
         }
     }
 });
-
 class ar1 {
     get id() {
         return this._id
@@ -1324,16 +1321,16 @@ class ar1 {
         } else if (G) {
             if (Q || B) throw jW(Sl);
             this.id = G, this.idType = lY.USER_ASSIGNED_OBJECT_ID
-        } else this.id = GA2, this.idType = lY.SYSTEM_ASSIGNED
+        } else this.id = SYSTEM_ASSIGNED_MANAGED_IDENTITY, this.idType = lY.SYSTEM_ASSIGNED
     }
 }
-var UA2 = L(() => {
+var UA2 = lazyLoader(() => {
     IIA();
     HI();
     NAA(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
 var pX, IY;
-var dNA = L(() => {
+var dNA = lazyLoader(() => {
     u7(); /*! @azure/msal-node v3.8.1 2025-10-29 */
     pX = {
         invalidLoopbackAddressType: {
@@ -1379,22 +1376,22 @@ var dNA = L(() => {
             this.name = "NodeAuthError"
         }
         static createInvalidLoopbackAddressTypeError() {
-            return new IY(pX.invalidLoopbackAddressType.code, `${pX.invalidLoopbackAddressType.desc}`)
+            return new IY(pX.invalidLoopbackAddressType.code, `TextComponent{pX.invalidLoopbackAddressType.desc}`)
         }
         static createUnableToLoadRedirectUrlError() {
-            return new IY(pX.unableToLoadRedirectUri.code, `${pX.unableToLoadRedirectUri.desc}`)
+            return new IY(pX.unableToLoadRedirectUri.code, `TextComponent{pX.unableToLoadRedirectUri.desc}`)
         }
         static createNoAuthCodeInResponseError() {
-            return new IY(pX.noAuthCodeInResponse.code, `${pX.noAuthCodeInResponse.desc}`)
+            return new IY(pX.noAuthCodeInResponse.code, `TextComponent{pX.noAuthCodeInResponse.desc}`)
         }
         static createNoLoopbackServerExistsError() {
-            return new IY(pX.noLoopbackServerExists.code, `${pX.noLoopbackServerExists.desc}`)
+            return new IY(pX.noLoopbackServerExists.code, `TextComponent{pX.noLoopbackServerExists.desc}`)
         }
         static createLoopbackServerAlreadyExistsError() {
-            return new IY(pX.loopbackServerAlreadyExists.code, `${pX.loopbackServerAlreadyExists.desc}`)
+            return new IY(pX.loopbackServerAlreadyExists.code, `TextComponent{pX.loopbackServerAlreadyExists.desc}`)
         }
         static createLoopbackServerTimeoutError() {
-            return new IY(pX.loopbackServerTimeout.code, `${pX.loopbackServerTimeout.desc}`)
+            return new IY(pX.loopbackServerTimeout.code, `TextComponent{pX.loopbackServerTimeout.desc}`)
         }
         static createStateNotFoundError() {
             return new IY(pX.stateNotFoundError.code, pX.stateNotFoundError.desc)
@@ -1466,7 +1463,7 @@ function wA2({
     }
 }
 var pA5, lA5, sr1, iA5, nA5;
-var rr1 = L(() => {
+var rr1 = lazyLoader(() => {
     u7();
     HA2();
     UA2();
@@ -1512,14 +1509,14 @@ var rr1 = L(() => {
         }
     }
 });
-var or1 = U((qA2) => {
+var or1 = moduleWrapper((qA2) => {
     Object.defineProperty(qA2, "__esModule", {
         value: !0
     });
     qA2.default = rA5;
-    var aA5 = sA5(UA("crypto"));
+    var aA5 = sA5(nodeRequire("crypto"));
 
-function sA5(A) {
+    function sA5(A) {
         return A && A.__esModule ? A : {
             default: A
         }

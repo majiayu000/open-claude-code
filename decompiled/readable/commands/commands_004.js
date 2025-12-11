@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: commands_004.js
+ * 处理时间: 2025-12-09T03:41:37.101Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.945Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -420,7 +422,7 @@
     var Y78 = (0, ev.createPaginator)(wmA, MR1, "nextToken", "nextToken", "maxResults"),
         J78 = (0, ev.createPaginator)(wmA, OR1, "nextToken", "nextToken", "maxResults")
 });
-var TR1 = U((wTQ) => {
+var TR1 = moduleWrapper((wTQ) => {
     Object.defineProperty(wTQ, "__esModule", {
         value: !0
     });
@@ -437,7 +439,7 @@ var TR1 = U((wTQ) => {
         };
     wTQ.defaultSSOOIDCHttpAuthSchemeParametersProvider = X78;
 
-function F78(A) {
+    function F78(A) {
         return {
             schemeId: "aws.auth#sigv4",
             signingProperties: {
@@ -453,7 +455,7 @@ function F78(A) {
         }
     }
 
-function V78(A) {
+    function V78(A) {
         return {
             schemeId: "smithy.api#noAuth"
         }
@@ -479,7 +481,7 @@ function V78(A) {
     };
     wTQ.resolveHttpAuthSchemeConfig = D78
 });
-var PR1 = U((tE7, E78) => {
+var PR1 = moduleWrapper((tE7, E78) => {
     E78.exports = {
         name: "@aws-sdk/nested-clients",
         version: "3.840.0",
@@ -588,7 +590,7 @@ var PR1 = U((tE7, E78) => {
         }
     }
 });
-var hTQ = U((bTQ) => {
+var hTQ = moduleWrapper((bTQ) => {
     Object.defineProperty(bTQ, "__esModule", {
         value: !0
     });
@@ -784,7 +786,7 @@ var hTQ = U((bTQ) => {
         };
     bTQ.ruleSet = z78
 });
-var mTQ = U((gTQ) => {
+var mTQ = moduleWrapper((gTQ) => {
     Object.defineProperty(gTQ, "__esModule", {
         value: !0
     });
@@ -805,7 +807,7 @@ var mTQ = U((gTQ) => {
     gTQ.defaultEndpointResolver = q78;
     _R1.customEndpointFunctions.aws = U78.awsEndpointFunctions
 });
-var iTQ = U((pTQ) => {
+var iTQ = moduleWrapper((pTQ) => {
     Object.defineProperty(pTQ, "__esModule", {
         value: !0
     });
@@ -845,7 +847,7 @@ var iTQ = U((pTQ) => {
         };
     pTQ.getRuntimeConfig = P78
 });
-var eTQ = U((oTQ) => {
+var eTQ = moduleWrapper((oTQ) => {
     Object.defineProperty(oTQ, "__esModule", {
         value: !0
     });
@@ -905,7 +907,7 @@ var eTQ = U((oTQ) => {
         };
     oTQ.getRuntimeConfig = h78
 });
-var xR1 = U((Gz7, RPQ) => {
+var xR1 = moduleWrapper((Gz7, RPQ) => {
     var {
         defineProperty: RmA,
         getOwnPropertyDescriptor: g78,

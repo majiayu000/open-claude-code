@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_007.js
+ * 处理时间: 2025-12-09T03:41:36.411Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.892Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -17,7 +19,7 @@
  * Original file: cli.js
  */
 
-                regionRegex: "^eu\\-isoe\\-\\w+\\-\\d+$",
+                regionRegex: "^eu\\-isoe\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-e-global": {
                         description: "AWS ISOE (Europe) global region"
@@ -36,7 +38,7 @@
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^us\\-isof\\-\\w+\\-\\d+$",
+                regionRegex: "^us\\-isof\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "aws-iso-f-global": {
                         description: "AWS ISOF global region"
@@ -58,7 +60,7 @@
                     supportsDualStack: !1,
                     supportsFIPS: !0
                 },
-                regionRegex: "^eusc\\-(de)\\-\\w+\\-\\d+$",
+                regionRegex: "^eusc\\-(de)\\-\\w+\\-\\d+TextComponent",
                 regions: {
                     "eusc-de-east-1": {
                         description: "EU (Germany)"
@@ -113,7 +115,7 @@
         };
     qZ.customEndpointFunctions.aws = ut0
 });
-var Vr = U((UJ7, cbA) => {
+var Vr = moduleWrapper((UJ7, cbA) => {
     var dt0, ct0, pt0, lt0, it0, nt0, at0, st0, rt0, ot0, tt0, et0, Ae0, mbA, Hz1, Qe0, Be0, Ge0, $4A, Ze0, Ie0, Ye0, Je0, We0, Xe0, Fe0, Ve0, Ke0, dbA, De0, He0, Ce0;
     (function(A) {
         var Q = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
@@ -123,7 +125,7 @@ var Vr = U((UJ7, cbA) => {
         else if (typeof cbA === "object" && typeof UJ7 === "object") A(B(Q, B(UJ7)));
         else A(B(Q));
 
-function B(G, Z) {
+        function B(G, Z) {
             if (G !== Q)
                 if (typeof Object.create === "function") Object.defineProperty(G, "__esModule", {
                     value: !0
@@ -147,7 +149,7 @@ function B(G, Z) {
             if (typeof Y !== "function" && Y !== null) throw TypeError("Class extends value " + String(Y) + " is not a constructor or null");
             Q(I, Y);
 
-function J() {
+            function J() {
                 this.constructor = I
             }
             I.prototype = Y === null ? Object.create(Y) : (J.prototype = Y.prototype, new J)
@@ -243,7 +245,7 @@ function J() {
                     }
                 }
 
-function D(C) {
+                function D(C) {
                     try {
                         H(W.throw(C))
                     } catch (E) {
@@ -251,7 +253,7 @@ function D(C) {
                     }
                 }
 
-function H(C) {
+                function H(C) {
                     C.done ? F(C.value) : X(C.value).then(K, D)
                 }
                 H((W = W.apply(I, Y || [])).next())
@@ -271,13 +273,13 @@ function H(C) {
                 return this
             }), V;
 
-function K(H) {
+            function K(H) {
                 return function(C) {
                     return D([H, C])
                 }
             }
 
-function D(H) {
+            function D(H) {
                 if (W) throw TypeError("Generator is already executing.");
                 while (V && (V = 0, H[0] && (J = 0)), J) try {
                     if (W = 1, X && (F = H[0] & 2 ? X.return : H[0] ? X.throw || ((F = X.return) && F.call(X), 0) : X.next) && !(F = F.call(X, H[1])).done) return F;
@@ -409,13 +411,13 @@ function D(H) {
                 return this
             }, X;
 
-function V(w) {
+            function V(w) {
                 return function(N) {
                     return Promise.resolve(N).then(w, E)
                 }
             }
 
-function K(w, N) {
+            function K(w, N) {
                 if (W[w]) {
                     if (X[w] = function(q) {
                             return new Promise(function(R, P) {
@@ -425,7 +427,7 @@ function K(w, N) {
                 }
             }
 
-function D(w, N) {
+            function D(w, N) {
                 try {
                     H(W[w](N))
                 } catch (q) {
@@ -433,19 +435,19 @@ function D(w, N) {
                 }
             }
 
-function H(w) {
+            function H(w) {
                 w.value instanceof $4A ? Promise.resolve(w.value.v).then(C, E) : z(F[0][2], w)
             }
 
-function C(w) {
+            function C(w) {
                 D("next", w)
             }
 
-function E(w) {
+            function E(w) {
                 D("throw", w)
             }
 
-function z(w, N) {
+            function z(w, N) {
                 if (w(N), F.shift(), F.length) D(F[0][0], F[0][1])
             }
         }, Ie0 = function(I) {
@@ -456,7 +458,7 @@ function z(w, N) {
                 return this
             }, Y;
 
-function W(X, F) {
+            function W(X, F) {
                 Y[X] = I[X] ? function(V) {
                     return (J = !J) ? {
                         value: $4A(I[X](V)),
@@ -472,7 +474,7 @@ function W(X, F) {
                 return this
             }, J);
 
-function W(F) {
+            function W(F) {
                 J[F] = I[F] && function(V) {
                     return new Promise(function(K, D) {
                         V = I[F](V), X(K, D, V.done, V.value)
@@ -480,7 +482,7 @@ function W(F) {
                 }
             }
 
-function X(F, V, K, D) {
+            function X(F, V, K, D) {
                 Promise.resolve(D).then(function(H) {
                     F({
                         value: H,
@@ -513,8 +515,7 @@ function X(F, V, K, D) {
             };
         We0 = function(I) {
             if (I && I.__esModule) return I;
-
-var Y = {};
+            var Y = {};
             if (I != null) {
                 for (var J = G(I), W = 0; W < J.length; W++)
                     if (J[W] !== "default") dbA(Y, I, J[W])
@@ -576,7 +577,7 @@ var Y = {};
             }
             var J, W = 0;
 
-function X() {
+            function X() {
                 while (J = I.stack.pop()) try {
                     if (!J.async && W === 1) return W = 0, I.stack.push(J), Promise.resolve().then(X);
                     if (J.dispose) {
@@ -593,14 +594,14 @@ function X() {
             }
             return X()
         }, Ce0 = function(I, Y) {
-            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
+            if (typeof I === "string" && /^\.\.?\//.test(I)) return I.replace(/\.(tsx)TextComponent|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(J, W, X, F, V) {
                 return W ? Y ? ".jsx" : ".js" : X && (!F || !V) ? J : X + F + "." + V.toLowerCase() + "js"
             });
             return I
         }, A("__extends", dt0), A("__assign", ct0), A("__rest", pt0), A("__decorate", lt0), A("__param", it0), A("__esDecorate", nt0), A("__runInitializers", at0), A("__propKey", st0), A("__setFunctionName", rt0), A("__metadata", ot0), A("__awaiter", tt0), A("__generator", et0), A("__exportStar", Ae0), A("__createBinding", dbA), A("__values", mbA), A("__read", Hz1), A("__spread", Qe0), A("__spreadArrays", Be0), A("__spreadArray", Ge0), A("__await", $4A), A("__asyncGenerator", Ze0), A("__asyncDelegator", Ie0), A("__asyncValues", Ye0), A("__makeTemplateObject", Je0), A("__importStar", We0), A("__importDefault", Xe0), A("__classPrivateFieldGet", Fe0), A("__classPrivateFieldSet", Ve0), A("__classPrivateFieldIn", Ke0), A("__addDisposableResource", De0), A("__disposeResources", He0), A("__rewriteRelativeImportExtension", Ce0)
     })
 });
-var lN = U(($J7, we0) => {
+var lN = moduleWrapper(($J7, we0) => {
     var {
         defineProperty: pbA,
         getOwnPropertyDescriptor: tK4,
@@ -633,8 +634,7 @@ var lN = U(($J7, we0) => {
         state: () => Cz1
     });
     we0.exports = GD4(Ee0);
-
-var Cz1 = {
+    var Cz1 = {
             warningEmitted: !1
         },
         ZD4 = lbA((A) => {
@@ -647,13 +647,13 @@ updates please upgrade to a supported Node.js LTS version.
 More information can be found at: https://a.co/74kJMmI`)
         }, "emitWarningIfUnsupportedVersion");
 
-function ze0(A, Q, B) {
+    function ze0(A, Q, B) {
         if (!A.$source) A.$source = {};
         return A.$source[Q] = B, A
     }
     lbA(ze0, "setCredentialFeature");
 
-function Ue0(A, Q, B) {
+    function Ue0(A, Q, B) {
         if (!A.__aws_sdk_context) A.__aws_sdk_context = {
             features: {}
         };
@@ -668,7 +668,7 @@ function Ue0(A, Q, B) {
     }
     lbA($e0, "setTokenFeature")
 });
-var P2 = U((wJ7, Ne0) => {
+var P2 = moduleWrapper((wJ7, Ne0) => {
     var {
         defineProperty: ibA,
         getOwnPropertyDescriptor: ID4,
@@ -702,14 +702,13 @@ var P2 = U((wJ7, Ne0) => {
         memoize: () => CD4
     });
     Ne0.exports = FD4(qe0);
-
-var nbA = class A extends Error {
+    var nbA = class A extends Error {
             constructor(Q, B = !0) {
                 let G, Z = !0;
                 if (typeof B === "boolean") G = void 0, Z = B;
                 else if (B != null && typeof B === "object") G = B.logger, Z = B.tryNextLink ?? !0;
                 super(Q);
-                this.name = "ProviderError", this.tryNextLink = Z, Object.setPrototypeOf(this, A.prototype), G?.debug?.(`@smithy/property-provider ${Z?"->":"(!)"} ${Q}`)
+                this.name = "ProviderError", this.tryNextLink = Z, Object.setPrototypeOf(this, A.prototype), G?.debug?.(`@smithy/property-provider TextComponent{Z?"->":"(!)"} TextComponent{Q}`)
             }
             static {
                 Kr(this, "ProviderError")
@@ -772,7 +771,7 @@ var nbA = class A extends Error {
             }
         }, "memoize")
 });
-var Oe0 = U((qJ7, Me0) => {
+var Oe0 = moduleWrapper((qJ7, Me0) => {
     var {
         defineProperty: abA,
         getOwnPropertyDescriptor: ED4,
@@ -803,7 +802,7 @@ var Oe0 = U((qJ7, Me0) => {
     Me0.exports = ND4(Le0);
     var LD4 = $D4((A) => typeof ArrayBuffer === "function" && A instanceof ArrayBuffer || Object.prototype.toString.call(A) === "[object ArrayBuffer]", "isArrayBuffer")
 });
-var je0 = U((NJ7, Pe0) => {
+var je0 = moduleWrapper((NJ7, Pe0) => {
     var {
         defineProperty: sbA,
         getOwnPropertyDescriptor: MD4,
@@ -834,10 +833,10 @@ var je0 = U((NJ7, Pe0) => {
     });
     Pe0.exports = jD4(Re0);
     var Te0 = Ez1((A) => encodeURIComponent(A).replace(/[!'()*]/g, SD4), "escapeUri"),
-        SD4 = Ez1((A) => `%${A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
+        SD4 = Ez1((A) => `%TextComponent{A.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode"),
         _D4 = Ez1((A) => A.split("/").map(Te0).join("/"), "escapeUriPath")
 });
-var GAQ = U((LJ7, BAQ) => {
+var GAQ = moduleWrapper((LJ7, BAQ) => {
     var {
         defineProperty: BfA,
         getOwnPropertyDescriptor: kD4,
@@ -952,10 +951,10 @@ var GAQ = U((LJ7, BAQ) => {
         dD4 = L2(),
         w4A = {},
         obA = [],
-        tbA = cK((A, Q, B) => `${A}/${Q}/${B}/${Oz1}`, "createScope"),
+        tbA = cK((A, Q, B) => `TextComponent{A}/TextComponent{Q}/TextComponent{B}/TextComponent{Oz1}`, "createScope"),
         re0 = cK(async (A, Q, B, G, Z) => {
             let I = await _e0(A, Q.secretAccessKey, Q.accessKeyId),
-                Y = `${B}:${G}:${Z}:${(0,pm.toHex)(I)}:${Q.sessionToken}`;
+                Y = `TextComponent{B}:TextComponent{G}:TextComponent{Z}:TextComponent{(0,pm.toHex)(I)}:TextComponent{Q.sessionToken}`;
             if (Y in w4A) return w4A[Y];
             obA.push(Y);
             while (obA.length > ae0) delete w4A[obA.shift()];
@@ -1047,13 +1046,13 @@ var GAQ = U((LJ7, BAQ) => {
                         let X = new Uint8Array(9);
                         return X[0] = 8, X.set(aD4.fromNumber(A.value.valueOf()).bytes, 1), X;
                     case "uuid":
-                        if (!nD4.test(A.value)) throw Error(`Invalid UUID received: ${A.value}`);
+                        if (!nD4.test(A.value)) throw Error(`Invalid UUID received: TextComponent{A.value}`);
                         let F = new Uint8Array(17);
                         return F[0] = 9, F.set((0, pm.fromHex)(A.value.replace(/\-/g, "")), 1), F
                 }
             }
         },
-        nD4 = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/,
+        nD4 = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}TextComponent/,
         aD4 = class A {
             constructor(Q) {
                 if (this.bytes = Q, Q.byteLength !== 8) throw Error("Int64 buffers must be exactly 8 bytes")
@@ -1062,7 +1061,7 @@ var GAQ = U((LJ7, BAQ) => {
                 cK(this, "Int64")
             }
             static fromNumber(Q) {
-                if (Q > 9223372036854776000 || Q < -9223372036854776000) throw Error(`${Q} is too large (or, if negative, too small) to represent as an Int64`);
+                if (Q > 9223372036854776000 || Q < -9223372036854776000) throw Error(`TextComponent{Q} is too large (or, if negative, too small) to represent as an Int64`);
                 let B = new Uint8Array(8);
                 for (let G = 7, Z = Math.abs(Math.round(Q)); G > -1 && Z > 0; G--, Z /= 256) B[G] = Z;
                 if (Q < 0) Uz1(B);
@@ -1079,7 +1078,7 @@ var GAQ = U((LJ7, BAQ) => {
             }
         };
 
-function Uz1(A) {
+    function Uz1(A) {
         for (let Q = 0; Q < 8; Q++) A[Q] ^= 255;
         for (let Q = 7; Q > -1; Q--)
             if (A[Q]++, A[Q] !== 0) break
@@ -1126,8 +1125,8 @@ function Uz1(A) {
                 let Z = (0, AfA.escapeUri)(G);
                 Q.push(Z);
                 let I = A[G];
-                if (typeof I === "string") B[Z] = `${Z}=${(0,AfA.escapeUri)(I)}`;
-                else if (Array.isArray(I)) B[Z] = I.slice(0).reduce((Y, J) => Y.concat([`${Z}=${(0,AfA.escapeUri)(J)}`]), []).sort().join("&")
+                if (typeof I === "string") B[Z] = `TextComponent{Z}=TextComponent{(0,AfA.escapeUri)(I)}`;
+                else if (Array.isArray(I)) B[Z] = I.slice(0).reduce((Y, J) => Y.concat([`TextComponent{Z}=TextComponent{(0,AfA.escapeUri)(J)}`]), []).sort().join("&")
             }
             return Q.sort().map((G) => B[G]).filter((G) => G).join("&")
         }, "getCanonicalQuery"),
@@ -1156,23 +1155,23 @@ function Uz1(A) {
             }
             createCanonicalRequest(A, Q, B) {
                 let G = Object.keys(Q).sort();
-                return `${A.method}
-${this.getCanonicalPath(A)}
-${AAQ(A)}
-${G.map((Z)=>`${Z}:${Q[Z]}`).join(`
+                return `TextComponent{A.method}
+TextComponent{this.getCanonicalPath(A)}
+TextComponent{AAQ(A)}
+TextComponent{G.map((Z)=>`TextComponent{Z}:TextComponent{Q[Z]}`).join(`
 `)}
 
-${G.join(";")}
-${B}`
+TextComponent{G.join(";")}
+TextComponent{B}`
             }
             async createStringToSign(A, Q, B, G) {
                 let Z = new this.sha256;
                 Z.update((0, sD4.toUint8Array)(B));
                 let I = await Z.digest();
-                return `${G}
-${A}
-${Q}
-${(0,pm.toHex)(I)}`
+                return `TextComponent{G}
+TextComponent{A}
+TextComponent{Q}
+TextComponent{(0,pm.toHex)(I)}`
             }
             getCanonicalPath({
                 path: A
@@ -1185,7 +1184,7 @@ ${(0,pm.toHex)(I)}`
                         if (Z === "..") Q.pop();
                         else Q.push(Z)
                     }
-                    let B = `${A?.startsWith("/")?"/":""}${Q.join("/")}${Q.length>0&&A?.endsWith("/")?"/":""}`;
+                    let B = `TextComponent{A?.startsWith("/")?"/":""}TextComponent{Q.join("/")}TextComponent{Q.length>0&&A?.endsWith("/")?"/":""}`;
                     return (0, AfA.escapeUri)(B).replace(/%2F/g, "/")
                 }
                 return A
@@ -1250,7 +1249,7 @@ ${(0,pm.toHex)(I)}`
                         hoistableHeaders: J
                     });
                 if (F.sessionToken) C.query[Nz1] = F.sessionToken;
-                C.query[ve0] = rbA, C.query[be0] = `${F.accessKeyId}/${H}`, C.query[wz1] = K, C.query[he0] = G.toString(10);
+                C.query[ve0] = rbA, C.query[be0] = `TextComponent{F.accessKeyId}/TextComponent{H}`, C.query[wz1] = K, C.query[he0] = G.toString(10);
                 let E = zz1(C, Z, Y);
                 return C.query[fe0] = this.getCanonicalHeaderList(E), C.query[qz1] = await this.getSignature(K, H, this.getSigningKey(F, V, D, X), this.createCanonicalRequest(C, E, await ebA(A, this.sha256))), C
             }
@@ -1345,7 +1344,7 @@ ${(0,pm.toHex)(I)}`
                 if (!oe0(QfA, W.headers) && this.applyChecksum) W.headers[QfA] = K;
                 let D = zz1(W, G, B),
                     H = await this.getSignature(X, V, this.getSigningKey(Y, J, F, I), this.createCanonicalRequest(W, D, K));
-                return W.headers[Lz1] = `${rbA} Credential=${Y.accessKeyId}/${V}, SignedHeaders=${this.getCanonicalHeaderList(D)}, Signature=${H}`, W
+                return W.headers[Lz1] = `TextComponent{rbA} Credential=TextComponent{Y.accessKeyId}/TextComponent{V}, SignedHeaders=TextComponent{this.getCanonicalHeaderList(D)}, Signature=TextComponent{H}`, W
             }
             async getSignature(A, Q, B, G) {
                 let Z = await this.createStringToSign(A, Q, G, rbA),
@@ -1360,7 +1359,7 @@ ${(0,pm.toHex)(I)}`
             SignatureV4a: null
         }
 });
-var jz1 = U((TJ7, EAQ) => {
+var jz1 = moduleWrapper((TJ7, EAQ) => {
     var {
         defineProperty: GfA,
         getOwnPropertyDescriptor: AH4,
@@ -1409,7 +1408,7 @@ var jz1 = U((TJ7, EAQ) => {
             return Q
         }, "getUpdatedSystemClockOffset"),
         IDA = WW((A, Q) => {
-            if (!Q) throw Error(`Property \`${A}\` is not resolved for AWS SDK SigV4Auth`);
+            if (!Q) throw Error(`Property \`TextComponent{A}\` is not resolved for AWS SDK SigV4Auth`);
             return Q
         }, "throwSigningPropertyError"),
         Tz1 = WW(async (A) => {

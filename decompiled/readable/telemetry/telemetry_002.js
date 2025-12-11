@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: telemetry_002.js
+ * 处理时间: 2025-12-09T03:41:38.300Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.046Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -30,7 +33,7 @@
                     G(A)
                 } catch (Z) {
                     if (G.__isInternal === !0) {
-                        this._errorBoundary.logError(`__emit:${A.name}`, Z);
+                        this._errorBoundary.logError(`__emit:TextComponent{A.name}`, Z);
                         return
                     }
                     QV1.Log.error("An error occurred in a StatsigClientEvent listener. This is not an issue with Statsig.", A)
@@ -68,7 +71,7 @@
     }
     P2A.StatsigClientBase = oN0;
 
-function Iy9(A, Q) {
+    function Iy9(A, Q) {
         var B;
         if ((0, By9._isServerEnv)()) return;
         let G = (0, tk9._getStatsigGlobal)(),
@@ -79,24 +82,24 @@ function Iy9(A, Q) {
         G.instances = Z, __STATSIG__ = G
     }
 });
-var QL0 = U((eN0) => {
+var QL0 = moduleWrapper((eN0) => {
     Object.defineProperty(eN0, "__esModule", {
         value: !0
     });
     eN0.DataAdapterCachePrefix = void 0;
     eN0.DataAdapterCachePrefix = "statsig.cached"
 });
-var GL0 = U((BL0) => {
+var GL0 = moduleWrapper((BL0) => {
     Object.defineProperty(BL0, "__esModule", {
         value: !0
     })
 });
-var IL0 = U((ZL0) => {
+var IL0 = moduleWrapper((ZL0) => {
     Object.defineProperty(ZL0, "__esModule", {
         value: !0
     })
 });
-var XL0 = U((JL0) => {
+var XL0 = moduleWrapper((JL0) => {
     Object.defineProperty(JL0, "__esModule", {
         value: !0
     });
@@ -105,7 +108,7 @@ var XL0 = U((JL0) => {
         Jy9 = rkA(),
         Wy9 = "default";
 
-function BV1(A, Q, B, G) {
+    function BV1(A, Q, B, G) {
         var Z;
         return {
             name: A,
@@ -116,12 +119,12 @@ function BV1(A, Q, B, G) {
         }
     }
 
-function Xy9(A, Q, B) {
+    function Xy9(A, Q, B) {
         return BV1(A, Q, B, (B === null || B === void 0 ? void 0 : B.value) === !0)
     }
     JL0._makeFeatureGate = Xy9;
 
-function YL0(A, Q, B) {
+    function YL0(A, Q, B) {
         var G;
         let Z = (G = B === null || B === void 0 ? void 0 : B.value) !== null && G !== void 0 ? G : {};
         return Object.assign(Object.assign({}, BV1(A, Q, B, Z)), {
@@ -130,7 +133,7 @@ function YL0(A, Q, B) {
     }
     JL0._makeDynamicConfig = YL0;
 
-function Fy9(A, Q, B) {
+    function Fy9(A, Q, B) {
         var G;
         let Z = YL0(A, Q, B);
         return Object.assign(Object.assign({}, Z), {
@@ -139,7 +142,7 @@ function Fy9(A, Q, B) {
     }
     JL0._makeExperiment = Fy9;
 
-function Vy9(A, Q, B, G) {
+    function Vy9(A, Q, B, G) {
         var Z, I;
         return Object.assign(Object.assign({}, BV1(A, Q, B, void 0)), {
             get: UyA(A, B === null || B === void 0 ? void 0 : B.value, G),
@@ -149,30 +152,30 @@ function Vy9(A, Q, B, G) {
     }
     JL0._makeLayer = Vy9;
 
-function Ky9(A, Q, B, G) {
+    function Ky9(A, Q, B, G) {
         return Object.assign(Object.assign(Object.assign({}, A), Q), {
             get: UyA(A.name, B, G)
         })
     }
     JL0._mergeOverride = Ky9;
 
-function UyA(A, Q, B) {
+    function UyA(A, Q, B) {
         return (G, Z) => {
             var I;
             let Y = (I = Q === null || Q === void 0 ? void 0 : Q[G]) !== null && I !== void 0 ? I : null;
             if (Y == null) return Z !== null && Z !== void 0 ? Z : null;
-            if (Z != null && !(0, Jy9._isTypeMatch)(Y, Z)) return Yy9.Log.warn(`Parameter type mismatch. '${A}.${G}' was found to be type '${typeof Y}' but fallback/return type is '${typeof Z}'. See https://docs.statsig.com/client/javascript-sdk/#typed-getters`), Z !== null && Z !== void 0 ? Z : null;
+            if (Z != null && !(0, Jy9._isTypeMatch)(Y, Z)) return Yy9.Log.warn(`Parameter type mismatch. 'TextComponent{A}.TextComponent{G}' was found to be type 'TextComponent{typeof Y}' but fallback/return type is 'TextComponent{typeof Z}'. See https://docs.statsig.com/client/javascript-sdk/#typed-getters`), Z !== null && Z !== void 0 ? Z : null;
             return B === null || B === void 0 || B(G), Y
         }
     }
     JL0._makeTypedGet = UyA
 });
-var VL0 = U((FL0) => {
+var VL0 = moduleWrapper((FL0) => {
     Object.defineProperty(FL0, "__esModule", {
         value: !0
     })
 });
-var HL0 = U((KL0) => {
+var HL0 = moduleWrapper((KL0) => {
     Object.defineProperty(KL0, "__esModule", {
         value: !0
     });
@@ -192,7 +195,7 @@ var HL0 = U((KL0) => {
         NO_NETWORK_DATA: "No data was returned from the network. This may be due to a network timeout if a timeout value was specified in the options or ad blocker error."
     }
 });
-var lu = U((v9) => {
+var lu = moduleWrapper((v9) => {
     var wy9 = v9 && v9.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -289,13 +292,12 @@ var lu = U((v9) => {
         SDK_VERSION: Ly9.SDK_VERSION
     })
 });
-var UL0 = U((zL0) => {
+var UL0 = moduleWrapper((zL0) => {
     Object.defineProperty(zL0, "__esModule", {
         value: !0
     });
     var xs = lu();
-
-class EL0 {
+    class EL0 {
         constructor(A) {
             this._sdkKey = A, this._rawValues = null, this._values = null, this._source = "Uninitialized", this._lcut = 0, this._receivedAt = 0, this._bootstrapMetadata = null, this._warnings = new Set
         }
@@ -390,7 +392,7 @@ class EL0 {
                 Z = G.reason,
                 I = (Q = G.warnings) !== null && Q !== void 0 ? Q : [];
             if (this._source === "Bootstrap" && I.length > 0) Z = Z + I[0];
-            if (Z !== "Uninitialized" && Z !== "NoValues") Z = `${Z}:${A?"Unrecognized":"Recognized"}`;
+            if (Z !== "Uninitialized" && Z !== "NoValues") Z = `TextComponent{Z}:TextComponent{A?"Unrecognized":"Recognized"}`;
             let Y = this._source === "Bootstrap" ? (B = this._bootstrapMetadata) !== null && B !== void 0 ? B : void 0 : void 0;
             if (Y) G.bootstrapMetadata = Y;
             return Object.assign(Object.assign({}, G), {
@@ -400,7 +402,7 @@ class EL0 {
     }
     zL0.default = EL0
 });
-var NL0 = U((wL0) => {
+var NL0 = moduleWrapper((wL0) => {
     Object.defineProperty(wL0, "__esModule", {
         value: !0
     });
@@ -408,7 +410,7 @@ var NL0 = U((wL0) => {
     var $L0 = lu(),
         Ry9 = 2;
 
-function Ty9(A, Q) {
+    function Ty9(A, Q) {
         let B = (0, $L0._typedJsonParse)(Q, "checksum", "DeltasEvaluationResponse");
         if (!B) return {
             hadBadDeltaChecksum: !0
@@ -430,7 +432,7 @@ function Ty9(A, Q) {
     }
     wL0._resolveDeltasResponse = Ty9;
 
-function Py9(A, Q) {
+    function Py9(A, Q) {
         return Object.assign(Object.assign(Object.assign({}, A), Q), {
             feature_gates: Object.assign(Object.assign({}, A.feature_gates), Q.feature_gates),
             layer_configs: Object.assign(Object.assign({}, A.layer_configs), Q.layer_configs),
@@ -438,18 +440,18 @@ function Py9(A, Q) {
         })
     }
 
-function jy9(A) {
+    function jy9(A) {
         let Q = A;
         return GV1(A.deleted_gates, Q.feature_gates), delete Q.deleted_gates, GV1(A.deleted_configs, Q.dynamic_configs), delete Q.deleted_configs, GV1(A.deleted_layers, Q.layer_configs), delete Q.deleted_layers, Q
     }
 
-function GV1(A, Q) {
+    function GV1(A, Q) {
         A === null || A === void 0 || A.forEach((B) => {
             delete Q[B]
         })
     }
 });
-var ZV1 = U((gVA) => {
+var ZV1 = moduleWrapper((gVA) => {
     var LL0 = gVA && gVA.__awaiter || function(A, Q, B, G) {
         function Z(I) {
             return I instanceof B ? I : new B(function(Y) {
@@ -465,7 +467,7 @@ var ZV1 = U((gVA) => {
                 }
             }
 
-function W(F) {
+            function W(F) {
                 try {
                     X(G.throw(F))
                 } catch (V) {
@@ -473,7 +475,7 @@ function W(F) {
                 }
             }
 
-function X(F) {
+            function X(F) {
                 F.done ? I(F.value) : Z(F.value).then(J, W)
             }
             X((G = G.apply(A, Q || [])).next())
@@ -484,8 +486,7 @@ function X(F) {
     });
     var $yA = lu(),
         Sy9 = NL0();
-
-class ML0 extends $yA.NetworkCore {
+    class ML0 extends $yA.NetworkCore {
         constructor(A, Q) {
             super(A, Q);
             let B = A === null || A === void 0 ? void 0 : A.networkConfig;
@@ -533,7 +534,7 @@ class ML0 extends $yA.NetworkCore {
     }
     gVA.default = ML0
 });
-var PL0 = U((RL0) => {
+var PL0 = moduleWrapper((RL0) => {
     Object.defineProperty(RL0, "__esModule", {
         value: !0
     });
@@ -543,45 +544,45 @@ var PL0 = U((RL0) => {
             disableExposureLog: !0
         };
 
-function qyA(A) {
+    function qyA(A) {
         return A == null || A.disableExposureLog === !1
     }
 
-function IV1(A, Q) {
+    function IV1(A, Q) {
         return Q != null && !(0, OL0._isTypeMatch)(A, Q)
     }
 
-function _y9(A, Q) {
+    function _y9(A, Q) {
         return A.value
     }
 
-function ky9(A, Q, B) {
+    function ky9(A, Q, B) {
         if (A.getFeatureGate(Q.gate_name, qyA(B) ? void 0 : wyA).value) return Q.pass_value;
         return Q.fail_value
     }
 
-function yy9(A, Q, B, G) {
+    function yy9(A, Q, B, G) {
         let I = A.getDynamicConfig(Q.config_name, wyA).get(Q.param_name);
         if (IV1(I, B)) return B;
         if (qyA(G)) A.getDynamicConfig(Q.config_name);
         return I
     }
 
-function xy9(A, Q, B, G) {
+    function xy9(A, Q, B, G) {
         let I = A.getExperiment(Q.experiment_name, wyA).get(Q.param_name);
         if (IV1(I, B)) return B;
         if (qyA(G)) A.getExperiment(Q.experiment_name);
         return I
     }
 
-function vy9(A, Q, B, G) {
+    function vy9(A, Q, B, G) {
         let I = A.getLayer(Q.layer_name, wyA).get(Q.param_name);
         if (IV1(I, B)) return B;
         if (qyA(G)) A.getLayer(Q.layer_name).get(Q.param_name);
         return I
     }
 
-function by9(A, Q, B) {
+    function by9(A, Q, B) {
         return (G, Z) => {
             if (Q == null) return Z;
             let I = Q[G];
@@ -604,7 +605,7 @@ function by9(A, Q, B) {
     }
     RL0._makeParamStoreGetter = by9
 });
-var SL0 = U((j2A) => {
+var SL0 = moduleWrapper((j2A) => {
     var fy9 = j2A && j2A.__awaiter || function(A, Q, B, G) {
         function Z(I) {
             return I instanceof B ? I : new B(function(Y) {
@@ -620,7 +621,7 @@ var SL0 = U((j2A) => {
                 }
             }
 
-function W(F) {
+            function W(F) {
                 try {
                     X(G.throw(F))
                 } catch (V) {
@@ -628,7 +629,7 @@ function W(F) {
                 }
             }
 
-function X(F) {
+            function X(F) {
                 F.done ? I(F.value) : Z(F.value).then(J, W)
             }
             X((G = G.apply(A, Q || [])).next())
@@ -640,8 +641,7 @@ function X(F) {
     j2A.StatsigEvaluationsDataAdapter = void 0;
     var vs = lu(),
         hy9 = ZV1();
-
-class jL0 extends vs.DataAdapterCore {
+    class jL0 extends vs.DataAdapterCore {
         constructor() {
             super("EvaluationsDataAdapter", "evaluations");
             this._network = null, this._options = null
@@ -673,7 +673,7 @@ class jL0 extends vs.DataAdapterCore {
         _getCacheKey(A) {
             var Q;
             let B = (0, vs._getStorageKey)(this._getSdkKey(), A, (Q = this._options) === null || Q === void 0 ? void 0 : Q.customUserCacheKeyFunc);
-            return `${vs.DataAdapterCachePrefix}.${this._cacheSuffix}.${B}`
+            return `TextComponent{vs.DataAdapterCachePrefix}.TextComponent{this._cacheSuffix}.TextComponent{B}`
         }
         _isCachedResultValidFor204(A, Q) {
             return A.fullUserHash != null && A.fullUserHash === (0, vs._getFullUserHash)(Q)
@@ -681,7 +681,7 @@ class jL0 extends vs.DataAdapterCore {
     }
     j2A.StatsigEvaluationsDataAdapter = jL0
 });
-var kL0 = U((uVA) => {
+var kL0 = moduleWrapper((uVA) => {
     var YV1 = uVA && uVA.__awaiter || function(A, Q, B, G) {
         function Z(I) {
             return I instanceof B ? I : new B(function(Y) {
@@ -697,7 +697,7 @@ var kL0 = U((uVA) => {
                 }
             }
 
-function W(F) {
+            function W(F) {
                 try {
                     X(G.throw(F))
                 } catch (V) {
@@ -705,7 +705,7 @@ function W(F) {
                 }
             }
 
-function X(F) {
+            function X(F) {
                 F.done ? I(F.value) : Z(F.value).then(J, W)
             }
             X((G = G.apply(A, Q || [])).next())
@@ -719,8 +719,7 @@ function X(F) {
         uy9 = ZV1(),
         _L0 = PL0(),
         my9 = SL0();
-
-class NyA extends z6.StatsigClientBase {
+    class NyA extends z6.StatsigClientBase {
         static instance(A) {
             let Q = (0, z6._getStatsigGlobal)().instance(A);
             if (Q instanceof NyA) return Q;
@@ -907,7 +906,7 @@ class NyA extends z6.StatsigClientBase {
     }
     uVA.default = NyA
 });
-var xL0 = U((vj) => {
+var xL0 = moduleWrapper((vj) => {
     var dy9 = vj && vj.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -939,11 +938,11 @@ var xL0 = U((vj) => {
     vj.default = __STATSIG__
 });
 var py9, ly9, iy9;
-var vL0 = L(() => {
+var vL0 = lazyLoader(() => {
     py9 = {
         visibilityState: "visible",
         documentElement: {
-            lang: "en"
+            lang: "AGENT_OUTPUT_TOOL_NAME"
         },
         addEventListener: (A, Q) => {}
     }, ly9 = {
@@ -966,7 +965,7 @@ var vL0 = L(() => {
             return !0
         },
         userAgent: "Mozilla/5.0 (Node.js) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0",
-        language: "en-US"
+        language: "AGENT_OUTPUT_TOOL_NAME-US"
     };
     if (typeof window > "u") global.window = ly9;
     if (typeof navigator > "u") global.navigator = iy9
@@ -1010,8 +1009,8 @@ import JV1 from "node:process";
 function XV1(A, {
     suffix: Q = "nodejs"
 } = {}) {
-    if (typeof A !== "string") throw TypeError(`Expected a string, got ${typeof A}`);
-    if (Q) A += `-${Q}`;
+    if (typeof A !== "string") throw TypeError(`Expected a string, got TextComponent{typeof A}`);
+    if (Q) A += `-TextComponent{Q}`;
     if (JV1.platform === "darwin") return ry9(A);
     if (JV1.platform === "win32") return oy9(A);
     return ty9(A)
@@ -1047,29 +1046,29 @@ var iu, WV1, S2A, ry9 = (A) => {
             temp: jY.join(WV1, Q, A)
         }
     };
-var gL0 = L(() => {
+var gL0 = lazyLoader(() => {
     iu = hL0.homedir(), WV1 = hL0.tmpdir(), {
         env: S2A
     } = JV1
 });
-var t7 = U((uL0) => {
+var t7 = moduleWrapper((uL0) => {
     Object.defineProperty(uL0, "__esModule", {
         value: !0
     });
     uL0.isFunction = void 0;
 
-function ey9(A) {
+    function ey9(A) {
         return typeof A === "function"
     }
     uL0.isFunction = ey9
 });
-var nu = U((dL0) => {
+var nu = moduleWrapper((dL0) => {
     Object.defineProperty(dL0, "__esModule", {
         value: !0
     });
     dL0.createErrorClass = void 0;
 
-function Ax9(A) {
+    function Ax9(A) {
         var Q = function(G) {
                 Error.call(G), G.stack = Error().stack
             },
@@ -1078,7 +1077,7 @@ function Ax9(A) {
     }
     dL0.createErrorClass = Ax9
 });
-var FV1 = U((pL0) => {
+var FV1 = moduleWrapper((pL0) => {
     Object.defineProperty(pL0, "__esModule", {
         value: !0
     });
@@ -1094,13 +1093,13 @@ var FV1 = U((pL0) => {
         }
     })
 });
-var sx = U((iL0) => {
+var sx = moduleWrapper((iL0) => {
     Object.defineProperty(iL0, "__esModule", {
         value: !0
     });
     iL0.arrRemove = void 0;
 
-function Bx9(A, Q) {
+    function Bx9(A, Q) {
         if (A) {
             var B = A.indexOf(Q);
             0 <= B && A.splice(B, 1)
@@ -1108,7 +1107,7 @@ function Bx9(A, Q) {
     }
     iL0.arrRemove = Bx9
 });
-var r$ = U((bz) => {
+var r$ = moduleWrapper((bz) => {
     var aL0 = bz && bz.__values || function(A) {
             var Q = typeof Symbol === "function" && Symbol.iterator,
                 B = Q && A[Q],
@@ -1247,17 +1246,17 @@ var r$ = U((bz) => {
     bz.Subscription = KV1;
     bz.EMPTY_SUBSCRIPTION = KV1.EMPTY;
 
-function Gx9(A) {
+    function Gx9(A) {
         return A instanceof KV1 || A && "closed" in A && mVA.isFunction(A.remove) && mVA.isFunction(A.add) && mVA.isFunction(A.unsubscribe)
     }
     bz.isSubscription = Gx9;
 
-function tL0(A) {
+    function tL0(A) {
         if (mVA.isFunction(A)) A();
         else A.unsubscribe()
     }
 });
-var _2A = U((eL0) => {
+var _2A = moduleWrapper((eL0) => {
     Object.defineProperty(eL0, "__esModule", {
         value: !0
     });
@@ -1270,7 +1269,7 @@ var _2A = U((eL0) => {
         useDeprecatedNextContext: !1
     }
 });
-var DV1 = U((bj) => {
+var DV1 = moduleWrapper((bj) => {
     var QM0 = bj && bj.__read || function(A, Q) {
             var B = typeof Symbol === "function" && A[Symbol.iterator];
             if (!B) return A;
@@ -1315,7 +1314,7 @@ var DV1 = U((bj) => {
         delegate: void 0
     }
 });
-var HV1 = U((GM0) => {
+var HV1 = moduleWrapper((GM0) => {
     Object.defineProperty(GM0, "__esModule", {
         value: !0
     });
@@ -1323,7 +1322,7 @@ var HV1 = U((GM0) => {
     var Zx9 = _2A(),
         Ix9 = DV1();
 
-function Yx9(A) {
+    function Yx9(A) {
         Ix9.timeoutProvider.setTimeout(function() {
             var Q = Zx9.config.onUnhandledError;
             if (Q) Q(A);
@@ -1332,16 +1331,16 @@ function Yx9(A) {
     }
     GM0.reportUnhandledError = Yx9
 });
-var xK = U((IM0) => {
+var xK = moduleWrapper((IM0) => {
     Object.defineProperty(IM0, "__esModule", {
         value: !0
     });
     IM0.noop = void 0;
 
-function Jx9() {}
+    function Jx9() {}
     IM0.noop = Jx9
 });
-var XM0 = U((JM0) => {
+var XM0 = moduleWrapper((JM0) => {
     Object.defineProperty(JM0, "__esModule", {
         value: !0
     });
@@ -1350,17 +1349,17 @@ var XM0 = U((JM0) => {
         return MyA("C", void 0, void 0)
     }();
 
-function Wx9(A) {
+    function Wx9(A) {
         return MyA("E", void 0, A)
     }
     JM0.errorNotification = Wx9;
 
-function Xx9(A) {
+    function Xx9(A) {
         return MyA("N", A, void 0)
     }
     JM0.nextNotification = Xx9;
 
-function MyA(A, Q, B) {
+    function MyA(A, Q, B) {
         return {
             kind: A,
             value: Q,
@@ -1369,7 +1368,7 @@ function MyA(A, Q, B) {
     }
     JM0.createNotification = MyA
 });
-var OyA = U((VM0) => {
+var OyA = moduleWrapper((VM0) => {
     Object.defineProperty(VM0, "__esModule", {
         value: !0
     });
@@ -1377,7 +1376,7 @@ var OyA = U((VM0) => {
     var FM0 = _2A(),
         bs = null;
 
-function Dx9(A) {
+    function Dx9(A) {
         if (FM0.config.useDeprecatedSynchronousErrorHandling) {
             var Q = !bs;
             if (Q) bs = {
@@ -1394,12 +1393,12 @@ function Dx9(A) {
     }
     VM0.errorContext = Dx9;
 
-function Hx9(A) {
+    function Hx9(A) {
         if (FM0.config.useDeprecatedSynchronousErrorHandling && bs) bs.errorThrown = !0, bs.error = A
     }
     VM0.captureError = Hx9
 });
-var k2A = U((ER) => {
+var k2A = moduleWrapper((ER) => {
     var CM0 = ER && ER.__extends || function() {
         var A = function(Q, B) {
             return A = Object.setPrototypeOf || {
@@ -1416,7 +1415,7 @@ var k2A = U((ER) => {
             if (typeof B !== "function" && B !== null) throw TypeError("Class extends value " + String(B) + " is not a constructor or null");
             A(Q, B);
 
-function G() {
+            function G() {
                 this.constructor = Q
             }
             Q.prototype = B === null ? Object.create(B) : (G.prototype = B.prototype, new G)
@@ -1437,7 +1436,7 @@ function G() {
         EM0 = function(A) {
             CM0(Q, A);
 
-function Q(B) {
+            function Q(B) {
                 var G = A.call(this) || this;
                 if (G.isStopped = !1, B) {
                     if (G.destination = B, DM0.isSubscription(B)) B.add(G)
@@ -1476,11 +1475,10 @@ function Q(B) {
     ER.Subscriber = EM0;
     var wx9 = Function.prototype.bind;
 
-function EV1(A, Q) {
+    function EV1(A, Q) {
         return wx9.call(A, Q)
     }
-
-var qx9 = function() {
+    var qx9 = function() {
             function A(Q) {
                 this.partialObserver = Q
             }
@@ -1510,7 +1508,7 @@ var qx9 = function() {
         zM0 = function(A) {
             CM0(Q, A);
 
-function Q(B, G, Z) {
+            function Q(B, G, Z) {
                 var I = A.call(this) || this,
                     Y;
                 if (Ex9.isFunction(B) || !B) Y = {

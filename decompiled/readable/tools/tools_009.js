@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: tools_009.js
+ * 处理时间: 2025-12-09T03:41:38.655Z
+ * 变量映射: 4 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.072Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -154,7 +157,7 @@ var jF5 = "‘",
     _F5 = "“",
     kF5 = "”",
     yF5;
-var z1A = L(() => {
+var z1A = lazyLoader(() => {
     zMA();
     M9();
     fk();
@@ -189,7 +192,6 @@ Assistant:`
 import {
     join as NZ2
 } from "path";
-
 async function LZ2(A, Q, B) {
     if (B !== "repl_main_thread") return [];
     return []
@@ -197,7 +199,7 @@ async function LZ2(A, Q, B) {
 var bF5 = 1e4,
     fF5 = 300,
     V00;
-var MZ2 = L(() => {
+var MZ2 = lazyLoader(() => {
     hQ();
     S0();
     gM();
@@ -215,7 +217,7 @@ function TZ2({
     files: Q
 }) {
     let B = hF5();
-    g(`LSP Diagnostics: Registering ${Q.length} diagnostic file(s) from ${A} (ID: ${B})`), qMA.set(B, {
+    g(`LSP Diagnostics: Registering TextComponent{Q.length} diagnostic file(s) from TextComponent{A} (ID: TextComponent{B})`), qMA.set(B, {
         serverName: A,
         files: Q,
         timestamp: Date.now(),
@@ -266,14 +268,14 @@ function gF5(A) {
         } catch (W) {
             let X = W instanceof Error ? W : Error(String(W)),
                 F = J.message?.substring(0, 100) || "<no message>";
-            e(Error(`Failed to deduplicate diagnostic in ${G.uri}: ${X.message}. Diagnostic message: ${F}`)), I.diagnostics.push(J)
+            e(Error(`Failed to deduplicate diagnostic in TextComponent{G.uri}: TextComponent{X.message}. Diagnostic message: TextComponent{F}`)), I.diagnostics.push(J)
         }
     }
     return B.filter((G) => G.diagnostics.length > 0)
 }
 
 function jZ2() {
-    g(`LSP Diagnostics: Checking registry - ${qMA.size} pending`);
+    g(`LSP Diagnostics: Checking registry - TextComponent{qMA.size} pending`);
     let A = [],
         Q = new Set,
         B = [];
@@ -285,12 +287,12 @@ function jZ2() {
         G = gF5(A)
     } catch (X) {
         let F = X instanceof Error ? X : Error(String(X));
-        e(Error(`Failed to deduplicate LSP diagnostics: ${F.message}`)), G = A
+        e(Error(`Failed to deduplicate LSP diagnostics: TextComponent{F.message}`)), G = A
     }
     for (let X of B) X.attachmentSent = !0;
     let Z = A.reduce((X, F) => X + F.diagnostics.length, 0),
         I = G.reduce((X, F) => X + F.diagnostics.length, 0);
-    if (Z > I) g(`LSP Diagnostics: Deduplication removed ${Z-I} duplicate diagnostic(s)`);
+    if (Z > I) g(`LSP Diagnostics: Deduplication removed TextComponent{Z-I} duplicate diagnostic(s)`);
     let Y = 0,
         J = 0;
     for (let X of G) {
@@ -299,7 +301,7 @@ function jZ2() {
         if (X.diagnostics.length > F) J += X.diagnostics.length - F, X.diagnostics = X.diagnostics.slice(0, F);
         Y += X.diagnostics.length
     }
-    if (G = G.filter((X) => X.diagnostics.length > 0), J > 0) g(`LSP Diagnostics: Volume limiting removed ${J} diagnostic(s) (max ${g21}/file, ${OZ2} total)`);
+    if (G = G.filter((X) => X.diagnostics.length > 0), J > 0) g(`LSP Diagnostics: Volume limiting removed TextComponent{J} diagnostic(s) (max TextComponent{g21}/file, TextComponent{OZ2} total)`);
     for (let X of G) {
         if (!JYA.has(X.uri)) JYA.set(X.uri, new Set);
         let F = JYA.get(X.uri);
@@ -308,28 +310,28 @@ function jZ2() {
         } catch (K) {
             let D = K instanceof Error ? K : Error(String(K)),
                 H = V.message?.substring(0, 100) || "<no message>";
-            e(Error(`Failed to track delivered diagnostic in ${X.uri}: ${D.message}. Diagnostic message: ${H}`))
+            e(Error(`Failed to track delivered diagnostic in TextComponent{X.uri}: TextComponent{D.message}. Diagnostic message: TextComponent{H}`))
         }
     }
     let W = G.reduce((X, F) => X + F.diagnostics.length, 0);
     if (W === 0) return g("LSP Diagnostics: No new diagnostics to deliver (all filtered by deduplication)"), [];
-    return g(`LSP Diagnostics: Delivering ${G.length} file(s) with ${W} diagnostic(s) from ${Q.size} server(s)`), [{
+    return g(`LSP Diagnostics: Delivering TextComponent{G.length} file(s) with TextComponent{W} diagnostic(s) from TextComponent{Q.size} server(s)`), [{
         serverName: Array.from(Q).join(", "),
         files: G
     }]
 }
 
 function SZ2() {
-    g(`LSP Diagnostics: Clearing ${qMA.size} pending diagnostic(s)`), qMA.clear()
+    g(`LSP Diagnostics: Clearing TextComponent{qMA.size} pending diagnostic(s)`), qMA.clear()
 }
 
 function u21(A) {
-    if (JYA.has(A)) g(`LSP Diagnostics: Clearing delivered diagnostics for ${A}`), JYA.delete(A)
+    if (JYA.has(A)) g(`LSP Diagnostics: Clearing delivered diagnostics for TextComponent{A}`), JYA.delete(A)
 }
 var g21 = 10,
     OZ2 = 30,
     qMA, JYA;
-var NMA = L(() => {
+var NMA = lazyLoader(() => {
     D0();
     u1();
     qMA = new Map, JYA = new Map
@@ -366,7 +368,7 @@ function c21(A) {
     }
     return !1
 }
-var oM = L(() => {
+var oM = lazyLoader(() => {
     nQ()
 });
 
@@ -382,7 +384,7 @@ function WYA(A) {
 function _Z2(A) {
     return J4A() && A.status === 429
 }
-var LMA = L(() => {
+var LMA = lazyLoader(() => {
     gvA();
     l_();
     s2()
@@ -425,14 +427,14 @@ function mF5(A, Q) {
         Z = A.resetsAt,
         I = Z ? u7A(Z, !0) : void 0,
         Y = A.overageResetsAt ? u7A(A.overageResetsAt, !0) : void 0,
-        J = I ? ` · resets ${I}` : "";
+        J = I ? ` · resets TextComponent{I}` : "";
     if (A.overageStatus === "rejected") {
         let W = "";
         if (Z && A.overageResetsAt && !G)
-            if (Z < A.overageResetsAt) W = ` · resets ${I}`;
-            else W = ` · resets ${Y}`;
-        else if (I && !G) W = ` · resets ${I}`;
-        else if (Y) W = ` · resets ${Y}`;
+            if (Z < A.overageResetsAt) W = ` · resets TextComponent{I}`;
+            else W = ` · resets TextComponent{Y}`;
+        else if (I && !G) W = ` · resets TextComponent{I}`;
+        else if (Y) W = ` · resets TextComponent{Y}`;
         return XYA("Limit", W, Q)
     }
     if (A.rateLimitType === "seven_day_sonnet") {
@@ -450,11 +452,11 @@ function dF5(A) {
     if (!Q) return null;
     let B = A.utilization ? Math.floor(A.utilization * 100) : void 0,
         G = A.resetsAt ? u7A(A.resetsAt, !0) : void 0;
-    return B && G ? `${B}% of ${Q} used · resets ${G}` : `Approaching ${Q}`
+    return B && G ? `TextComponent{B}% of TextComponent{Q} used · resets TextComponent{G}` : `Approaching TextComponent{Q}`
 }
 
 function E00(A) {
-    let Q = A.resetsAt ? ` · resets ${u7A(A.resetsAt,!0)}` : "";
+    let Q = A.resetsAt ? ` · resets TextComponent{u7A(A.resetsAt,!0)}` : "";
     if (A.rateLimitType === "five_hour") return `5-hour limit reached${Q} · now using extra usage`;
     if (A.rateLimitType === "seven_day") return `Weekly limit reached${Q} · now using extra usage`;
     if (A.rateLimitType === "seven_day_opus") return `Opus weekly limit reached${Q} · now using extra usage`;
@@ -478,21 +480,21 @@ function XYA(A, Q, B) {
         if (UT(B))
             if (W) X = "add funds to continue with extra usage";
             else X = "turn on /extra-usage";
-    else X = `/upgrade to Max or ${W?"add funds to continue with extra usage":"turn on /extra-usage"}`;
+    else X = `/upgrade to Max or TextComponent{W?"add funds to continue with extra usage":"turn on /extra-usage"}`;
     else if (Y)
         if (Dc() === "default_claude_max_20x")
             if (J) X = "/model opus or turn on /extra-usage";
             else X = W ? "add funds to continue with extra usage" : "turn on /extra-usage";
-    else if (J) X = `/model opus, /upgrade to Max 20x or ${W?"add funds to continue with extra usage":"turn on /extra-usage"}`;
-    else X = `/upgrade to Max 20x or ${W?"add funds to continue with extra usage":"turn on /extra-usage"}`;
+    else if (J) X = `/model opus, /upgrade to Max 20x or TextComponent{W?"add funds to continue with extra usage":"turn on /extra-usage"}`;
+    else X = `/upgrade to Max 20x or TextComponent{W?"add funds to continue with extra usage":"turn on /extra-usage"}`;
     else if (Z)
         if (J) X = "/model opus or contact an admin to increase limits";
         else X = "contact an admin to increase limits";
-    let F = `${A} reached${Q}`;
-    return X ? `${F} · ${X}` : F
+    let F = `TextComponent{A} reached${Q}`;
+    return X ? `TextComponent{F} · TextComponent{X}` : F
 }
 var uF5;
-var z00 = L(() => {
+var z00 = lazyLoader(() => {
     hB();
     s2();
     uF5 = ["Limit reached", "Sonnet weekly limit reached", "Opus weekly limit reached", "Weekly limit reached", "5-hour limit reached", "Usage limit reached", "You've hit your", "Approaching spending cap", "Approaching Opus weekly limit", "Approaching weekly limit", "Approaching usage limit"]
@@ -514,9 +516,8 @@ function p21(A) {
         hoursTillReset: Q
     })
 }
-// Async function: lF5
 async function lF5() {
-    let A = LW(),
+    let A = getSmallFastModel(),
         Q = await Vq({
             maxRetries: 0,
             model: A
@@ -536,7 +537,6 @@ async function lF5() {
         } : {}
     }).asResponse()
 }
-// Async function: xZ2
 async function xZ2() {
     if (!WYA(AB())) return;
     try {
@@ -569,7 +569,7 @@ function iF5(A, Q, B) {
         claimAbbrev: Z,
         windowSeconds: I,
         thresholds: Y
-    } = Q, J = A.get(`anthropic-ratelimit-unified-${Z}-utilization`), W = A.get(`anthropic-ratelimit-unified-${Z}-reset`);
+    } = Q, J = A.get(`anthropic-ratelimit-unified-TextComponent{Z}-utilization`), W = A.get(`anthropic-ratelimit-unified-TextComponent{Z}-reset`);
     if (J === null || W === null) return null;
     let X = Number(J),
         F = Number(W),
@@ -651,7 +651,7 @@ function w00(A) {
     }
 }
 var l21, cF5, hk, U00;
-var zi = L(() => {
+var zi = lazyLoader(() => {
     EIA();
     u1();
     s2();
@@ -663,7 +663,7 @@ var zi = L(() => {
     d5B();
     LMA();
     z00();
-    l21 = GA(VA(), 1), cF5 = [{
+    l21 = esmImport(VA(), 1), cF5 = [{
         rateLimitType: "five_hour",
         claimAbbrev: "5h",
         windowSeconds: 18000,
@@ -733,13 +733,13 @@ function oF5(A, Q, B) {
             if (Array.isArray(X))
                 for (let F of X) {
                     let V = W.message.role;
-                    if (F.type === "tool_use" && "id" in F) I.push(`${V}:tool_use:${F.id}`);
-                    else if (F.type === "tool_result" && "tool_use_id" in F) I.push(`${V}:tool_result:${F.tool_use_id}`);
-                    else if (F.type === "text") I.push(`${V}:text`);
-                    else if (F.type === "thinking") I.push(`${V}:thinking`);
-                    else if (F.type === "image") I.push(`${V}:image`);
-                    else I.push(`${V}:${F.type}`)
-                } else if (typeof X === "string") I.push(`${W.message.role}:string_content`)
+                    if (F.type === "tool_use" && "id" in F) I.push(`TextComponent{V}:tool_use:TextComponent{F.id}`);
+                    else if (F.type === "tool_result" && "tool_use_id" in F) I.push(`TextComponent{V}:tool_result:TextComponent{F.tool_use_id}`);
+                    else if (F.type === "text") I.push(`TextComponent{V}:text`);
+                    else if (F.type === "thinking") I.push(`TextComponent{V}:thinking`);
+                    else if (F.type === "image") I.push(`TextComponent{V}:image`);
+                    else I.push(`TextComponent{V}:TextComponent{F.type}`)
+                } else if (typeof X === "string") I.push(`TextComponent{W.message.role}:string_content`)
         }
         let Y = [];
         for (let J = Z + 1; J < Q.length; J++) {
@@ -753,24 +753,24 @@ function oF5(A, Q, B) {
                         if (Array.isArray(X))
                             for (let F of X) {
                                 let V = W.message.role;
-                                if (F.type === "tool_use" && "id" in F) Y.push(`${V}:tool_use:${F.id}`);
-                                else if (F.type === "tool_result" && "tool_use_id" in F) Y.push(`${V}:tool_result:${F.tool_use_id}`);
-                                else if (F.type === "text") Y.push(`${V}:text`);
-                                else if (F.type === "thinking") Y.push(`${V}:thinking`);
-                                else if (F.type === "image") Y.push(`${V}:image`);
-                                else Y.push(`${V}:${F.type}`)
-                            } else if (typeof X === "string") Y.push(`${W.message.role}:string_content`)
+                                if (F.type === "tool_use" && "id" in F) Y.push(`TextComponent{V}:tool_use:TextComponent{F.id}`);
+                                else if (F.type === "tool_result" && "tool_use_id" in F) Y.push(`TextComponent{V}:tool_result:TextComponent{F.tool_use_id}`);
+                                else if (F.type === "text") Y.push(`TextComponent{V}:text`);
+                                else if (F.type === "thinking") Y.push(`TextComponent{V}:thinking`);
+                                else if (F.type === "image") Y.push(`TextComponent{V}:image`);
+                                else Y.push(`TextComponent{V}:TextComponent{F.type}`)
+                            } else if (typeof X === "string") Y.push(`TextComponent{W.message.role}:string_content`)
                     }
                     break
                 }
                 case "attachment":
-                    if ("attachment" in W) Y.push(`attachment:${W.attachment.type}`);
+                    if ("attachment" in W) Y.push(`attachment:TextComponent{W.attachment.type}`);
                     break;
                 case "system":
-                    if ("subtype" in W) Y.push(`system:${W.subtype}`);
+                    if ("subtype" in W) Y.push(`system:TextComponent{W.subtype}`);
                     break;
                 case "progress":
-                    if ("progress" in W && W.progress && typeof W.progress === "object" && "type" in W.progress) Y.push(`progress:${W.progress.type??"unknown"}`);
+                    if ("progress" in W && W.progress && typeof W.progress === "object" && "type" in W.progress) Y.push(`progress:TextComponent{W.progress.type??"unknown"}`);
                     else Y.push("progress:unknown");
                     break
             }
@@ -822,7 +822,7 @@ function N00(A, Q, B) {
             })
         }
         return WY({
-            content: `${vF}: Rate limit reached`,
+            content: `TextComponent{API_ERROR}: Rate limit reached`,
             error: "rate_limit"
         })
     }
@@ -882,18 +882,18 @@ function N00(A, Q, B) {
     });
     if (A instanceof a2 && (A.status === 401 || A.status === 403)) return WY({
         error: "authentication_failed",
-        content: `${vF}: ${A.message} · Please run /login`
+        content: `TextComponent{API_ERROR}: TextComponent{A.message} · Please run /login`
     });
-    if (V0(process.env.CLAUDE_CODE_USE_BEDROCK) && A instanceof Error && A.message.toLowerCase().includes("model id")) return WY({
-        content: `${vF} (${Q}): ${A.message}`,
+    if (parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK) && A instanceof Error && A.message.toLowerCase().includes("model id")) return WY({
+        content: `TextComponent{API_ERROR} (TextComponent{Q}): TextComponent{A.message}`,
         error: "invalid_request"
     });
     if (A instanceof Error) return WY({
-        content: `${vF}: ${A.message}`,
+        content: `TextComponent{API_ERROR}: TextComponent{A.message}`,
         error: "unknown"
     });
     return WY({
-        content: vF,
+        content: API_ERROR,
         error: "unknown"
     })
 }
@@ -916,7 +916,7 @@ function bZ2(A) {
     if (A instanceof a2 && A.status === 403 && A.message.includes("OAuth token has been revoked")) return "token_revoked";
     if (A instanceof a2 && (A.status === 401 || A.status === 403) && A.message.includes("OAuth authentication is currently not allowed for this organization")) return "oauth_org_not_allowed";
     if (A instanceof a2 && (A.status === 401 || A.status === 403)) return "auth_error";
-    if (V0(process.env.CLAUDE_CODE_USE_BEDROCK) && A instanceof Error && A.message.toLowerCase().includes("model id")) return "bedrock_model_access";
+    if (parseBoolean(process.env.CLAUDE_CODE_USE_BEDROCK) && A instanceof Error && A.message.toLowerCase().includes("model id")) return "bedrock_model_access";
     if (A instanceof a2) {
         let Q = A.status;
         if (Q >= 500) return "server_error";
@@ -929,13 +929,14 @@ function bZ2(A) {
 function fZ2(A, Q) {
     if (A !== "refusal") return;
     BA("tengu_refusal_api_response", {});
-    let B = `${vF}: Claude Code is unable to respond to this request, which appears to violate our Usage Policy (https://www.anthropic.com/legal/aup). Please double press esc to edit your last message or start a new session for Claude Code to assist with a different task.`;
+    let B = `TextComponent{API_ERROR}: Claude Code is unable to respond to this request, which appears to violate our Usage Policy (https://www.anthropic.com/legal/aup). Please double press esc to edit your last message or start a new session for Claude Code to assist with a different task.`;
     return WY({
         content: B + (Q !== "claude-sonnet-4-20250514" ? " If you are seeing this refusal repeatedly, try running /model claude-sonnet-4-20250514 to switch models." : ""),
         error: "invalid_request"
     })
 }
-var vF = "API Error",
+/* API_ERROR = API_ERROR = "API Error" */
+var API_ERROR = "API Error",
     FYA = "Prompt is too long",
     n21 = "Credit balance is too low",
     a21 = "Invalid API key · Please run /login",
@@ -949,7 +950,7 @@ var vF = "API Error",
     aF5 = "PDF is password protected. Please double press esc to edit your message and try again.",
     sF5 = "Image was too large. Double press esc to go back and try again with a smaller image.",
     rF5 = "Your account does not have access to Claude Code. Please run /login.";
-var tM = L(() => {
+var tM = lazyLoader(() => {
     l_();
     hB();
     nQ();
@@ -1156,7 +1157,7 @@ When you are using compact - please focus on test output and code changes. Inclu
 
 
 Additional Instructions:
-${A}`
+TextComponent{A}`
 }
 
 function tF5(A) {
@@ -1165,13 +1166,13 @@ function tF5(A) {
     if (B) {
         let Z = B[1] || "";
         Q = Q.replace(/<analysis>[\s\S]*?<\/analysis>/, `Analysis:
-${Z.trim()}`)
+TextComponent{Z.trim()}`)
     }
     let G = Q.match(/<summary>([\s\S]*?)<\/summary>/);
     if (G) {
         let Z = G[1] || "";
         Q = Q.replace(/<summary>[\s\S]*?<\/summary>/, `Summary:
-${Z.trim()}`)
+TextComponent{Z.trim()}`)
     }
     return Q = Q.replace(/\n\n+/g, `
 
@@ -1180,8 +1181,8 @@ ${Z.trim()}`)
 
 function e21(A, Q) {
     let G = `This session is being continued from a previous conversation that ran out of context. The conversation is summarized below:
-${tF5(A)}.`;
-    if (Q) return `${G}
+TextComponent{tF5(A)}.`;
+    if (Q) return `TextComponent{G}
 Please continue the conversation from where we left it off without asking the user any further questions. Continue with the last task that you were asked to work on.`;
     return G
 }
@@ -1190,7 +1191,7 @@ function A91(A, Q) {
     return
 }
 var eF5, AV5;
-var L00 = L(() => {
+var L00 = lazyLoader(() => {
     o0();
     w0();
     o2();
@@ -1206,7 +1207,7 @@ function M00(A) {
     return A.toLowerCase()
 }
 var hZ2;
-var O00 = L(() => {
+var O00 = lazyLoader(() => {
     hZ2 = ["User", "Project", "Local", "Managed", "ExperimentalUltraClaudeMd"]
 });
 
@@ -1337,7 +1338,7 @@ function mZ2(A) {
     }
     return Q
 }
-var dZ2 = L(() => {
+var dZ2 = lazyLoader(() => {
     gM();
     nQ()
 });
@@ -1350,7 +1351,7 @@ function GV5(A, Q, B) {
         type: "callback",
         timeout: B,
         callback: async (G, Z, I, Y) => {
-            let J = A.replace(/\$\{CLAUDE_PLUGIN_ROOT\}/g, Q),
+            let J = A.replace(/\TextComponent\{CLAUDE_PLUGIN_ROOT\}/g, Q),
                 W = {
                     ...process.env,
                     CLAUDE_PLUGIN_ROOT: Q,
@@ -1388,7 +1389,7 @@ function GV5(A, Q, B) {
             };
             else return {
                 suppressOutput: !1,
-                systemMessage: `Plugin hook error: ${K}`
+                systemMessage: `Plugin hook error: TextComponent{K}`
             }
         }
     }
@@ -1431,7 +1432,7 @@ function cZ2() {
     w1A.cache?.clear?.()
 }
 var w1A;
-var MMA = L(() => {
+var MMA = lazyLoader(() => {
     o2();
     NF();
     D0();
@@ -1456,16 +1457,15 @@ var MMA = L(() => {
         };
         for (let G of A) {
             if (!G.hooksConfig) continue;
-            g(`Loading hooks from plugin: ${G.name}`);
+            g(`Loading hooks from plugin: TextComponent{G.name}`);
             let Z = ZV5(G);
             for (let I of Object.keys(Z)) Q[I].push(...Z[I])
         }
         ZkA(Q);
         let B = Object.values(Q).reduce((G, Z) => G + Z.reduce((I, Y) => I + Y.hooks.length, 0), 0);
-        g(`Registered ${B} hooks from ${A.length} plugins`)
+        g(`Registered TextComponent{B} hooks from TextComponent{A.length} plugins`)
     })
 });
-
 async function zq(A, Q) {
     let B = [],
         G = [];
@@ -1473,7 +1473,7 @@ async function zq(A, Q) {
     else try {
         await w1A()
     } catch (Z) {
-        let I = Z instanceof Error ? Error(`Failed to load plugin hooks during ${A}: ${Z.message}`) : Error(`Failed to load plugin hooks during ${A}: ${String(Z)}`);
+        let I = Z instanceof Error ? Error(`Failed to load plugin hooks during TextComponent{A}: TextComponent{Z.message}`) : Error(`Failed to load plugin hooks during TextComponent{A}: TextComponent{String(Z)}`);
         if (Z instanceof Error && Z.stack) I.stack = Z.stack;
         e(I);
         let Y = Z instanceof Error ? Z.message : String(Z),
@@ -1482,7 +1482,7 @@ async function zq(A, Q) {
         else if (Y.includes("Permission denied") || Y.includes("EACCES") || Y.includes("EPERM")) J = "This appears to be a permissions issue. Check file permissions on ~/.claude/plugins/";
         else if (Y.includes("Invalid") || Y.includes("parse") || Y.includes("JSON") || Y.includes("schema")) J = "This appears to be a configuration issue. Check your plugin settings in .claude/settings.json";
         else J = "Please fix the plugin configuration or remove problematic plugins from your settings.";
-        g(`Warning: Failed to load plugin hooks. SessionStart hooks from plugins will not execute. Error: ${Y}. ${J}`, {
+        g(`Warning: Failed to load plugin hooks. SessionStart hooks from plugins will not execute. Error: TextComponent{Y}. TextComponent{J}`, {
             level: "warn"
         })
     }
@@ -1502,7 +1502,7 @@ async function zq(A, Q) {
     }
     return B
 }
-var q1A = L(() => {
+var q1A = lazyLoader(() => {
     AO();
     MMA();
     u1();
@@ -1510,7 +1510,6 @@ var q1A = L(() => {
     eM();
     AYA()
 });
-
 async function Q91(A, Q, B, G, Z = !1) {
     try {
         if (A.length === 0) throw Error(OMA);

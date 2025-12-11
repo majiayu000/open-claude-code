@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: prompts_001.js
+ * 处理时间: 2025-12-09T03:41:38.123Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.035Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -17,10 +19,10 @@
  * Original file: cli.js
  */
 
-var Lh0 = U((b97, Nh0) => {
+var Lh0 = moduleWrapper((b97, Nh0) => {
     function lB4(A) {
         let Q = {
-                keyword: "bool break call callexe checkinterrupt clear clearg closeall cls comlog compile continue create debug declare delete disable dlibrary dllcall do dos ed edit else elseif enable end endfor endif endp endo errorlog errorlogat expr external fn for format goto gosub graph if keyword let lib library line load loadarray loadexe loadf loadk loadm loadp loads loadx local locate loopnextindex lprint lpwidth lshow matrix msym ndpclex new open output outwidth plot plotsym pop prcsn print printdos proc push retp return rndcon rndmod rndmult rndseed run save saveall screen scroll setarray show sparse stop string struct system trace trap threadfor threadendfor threadbegin threadjoin threadstat threadend until use while winprint ne ge le gt lt and xor or not eq eqv",
+                keyword: "bool break call callexe checkinterrupt clear clearg closeall cls comlog compile continue create debug declare delete disable dlibrary dllcall do dos ed edit else elseif enable end endfor endif endp endo errorlog errorlogat expr external fn for format goto gosub graph if keyword let lib library line load loadarray loadexe loadf loadk loadm loadp loads loadx local locate loopnextindex lprint lpwidth lshow matrix msym ndpclex new open output outwidth plot plotsym pop prcsn print printdos proc push retp return rndcon rndmod rndmult rndseed run save saveall screen scroll setarray show sparse stop string struct system trace trap threadfor threadendfor threadbegin threadjoin threadstat threadend until use while winprint ne ge le gt lt and xor or not WEB_FETCH_TOOL_NAME eqv",
                 built_in: "abs acf aconcat aeye amax amean AmericanBinomCall AmericanBinomCall_Greeks AmericanBinomCall_ImpVol AmericanBinomPut AmericanBinomPut_Greeks AmericanBinomPut_ImpVol AmericanBSCall AmericanBSCall_Greeks AmericanBSCall_ImpVol AmericanBSPut AmericanBSPut_Greeks AmericanBSPut_ImpVol amin amult annotationGetDefaults annotationSetBkd annotationSetFont annotationSetLineColor annotationSetLineStyle annotationSetLineThickness annualTradingDays arccos arcsin areshape arrayalloc arrayindex arrayinit arraytomat asciiload asclabel astd astds asum atan atan2 atranspose axmargin balance band bandchol bandcholsol bandltsol bandrv bandsolpd bar base10 begwind besselj bessely beta box boxcox cdfBeta cdfBetaInv cdfBinomial cdfBinomialInv cdfBvn cdfBvn2 cdfBvn2e cdfCauchy cdfCauchyInv cdfChic cdfChii cdfChinc cdfChincInv cdfExp cdfExpInv cdfFc cdfFnc cdfFncInv cdfGam cdfGenPareto cdfHyperGeo cdfLaplace cdfLaplaceInv cdfLogistic cdfLogisticInv cdfmControlCreate cdfMvn cdfMvn2e cdfMvnce cdfMvne cdfMvt2e cdfMvtce cdfMvte cdfN cdfN2 cdfNc cdfNegBinomial cdfNegBinomialInv cdfNi cdfPoisson cdfPoissonInv cdfRayleigh cdfRayleighInv cdfTc cdfTci cdfTnc cdfTvn cdfWeibull cdfWeibullInv cdir ceil ChangeDir chdir chiBarSquare chol choldn cholsol cholup chrs close code cols colsf combinate combinated complex con cond conj cons ConScore contour conv convertsatostr convertstrtosa corrm corrms corrvc corrx corrxs cos cosh counts countwts crossprd crout croutp csrcol csrlin csvReadM csvReadSA cumprodc cumsumc curve cvtos datacreate datacreatecomplex datalist dataload dataloop dataopen datasave date datestr datestring datestrymd dayinyr dayofweek dbAddDatabase dbClose dbCommit dbCreateQuery dbExecQuery dbGetConnectOptions dbGetDatabaseName dbGetDriverName dbGetDrivers dbGetHostName dbGetLastErrorNum dbGetLastErrorText dbGetNumericalPrecPolicy dbGetPassword dbGetPort dbGetTableHeaders dbGetTables dbGetUserName dbHasFeature dbIsDriverAvailable dbIsOpen dbIsOpenError dbOpen dbQueryBindValue dbQueryClear dbQueryCols dbQueryExecPrepared dbQueryFetchAllM dbQueryFetchAllSA dbQueryFetchOneM dbQueryFetchOneSA dbQueryFinish dbQueryGetBoundValue dbQueryGetBoundValues dbQueryGetField dbQueryGetLastErrorNum dbQueryGetLastErrorText dbQueryGetLastInsertID dbQueryGetLastQuery dbQueryGetPosition dbQueryIsActive dbQueryIsForwardOnly dbQueryIsNull dbQueryIsSelect dbQueryIsValid dbQueryPrepare dbQueryRows dbQuerySeek dbQuerySeekFirst dbQuerySeekLast dbQuerySeekNext dbQuerySeekPrevious dbQuerySetForwardOnly dbRemoveDatabase dbRollback dbSetConnectOptions dbSetDatabaseName dbSetHostName dbSetNumericalPrecPolicy dbSetPort dbSetUserName dbTransaction DeleteFile delif delrows denseToSp denseToSpRE denToZero design det detl dfft dffti diag diagrv digamma doswin DOSWinCloseall DOSWinOpen dotfeq dotfeqmt dotfge dotfgemt dotfgt dotfgtmt dotfle dotflemt dotflt dotfltmt dotfne dotfnemt draw drop dsCreate dstat dstatmt dstatmtControlCreate dtdate dtday dttime dttodtv dttostr dttoutc dtvnormal dtvtodt dtvtoutc dummy dummybr dummydn eig eigh eighv eigv elapsedTradingDays endwind envget eof eqSolve eqSolvemt eqSolvemtControlCreate eqSolvemtOutCreate eqSolveset erf erfc erfccplx erfcplx error etdays ethsec etstr EuropeanBinomCall EuropeanBinomCall_Greeks EuropeanBinomCall_ImpVol EuropeanBinomPut EuropeanBinomPut_Greeks EuropeanBinomPut_ImpVol EuropeanBSCall EuropeanBSCall_Greeks EuropeanBSCall_ImpVol EuropeanBSPut EuropeanBSPut_Greeks EuropeanBSPut_ImpVol exctsmpl exec execbg exp extern eye fcheckerr fclearerr feq feqmt fflush fft ffti fftm fftmi fftn fge fgemt fgets fgetsa fgetsat fgetst fgt fgtmt fileinfo filesa fle flemt floor flt fltmt fmod fne fnemt fonts fopen formatcv formatnv fputs fputst fseek fstrerror ftell ftocv ftos ftostrC gamma gammacplx gammaii gausset gdaAppend gdaCreate gdaDStat gdaDStatMat gdaGetIndex gdaGetName gdaGetNames gdaGetOrders gdaGetType gdaGetTypes gdaGetVarInfo gdaIsCplx gdaLoad gdaPack gdaRead gdaReadByIndex gdaReadSome gdaReadSparse gdaReadStruct gdaReportVarInfo gdaSave gdaUpdate gdaUpdateAndPack gdaVars gdaWrite gdaWrite32 gdaWriteSome getarray getdims getf getGAUSShome getmatrix getmatrix4D getname getnamef getNextTradingDay getNextWeekDay getnr getorders getpath getPreviousTradingDay getPreviousWeekDay getRow getscalar3D getscalar4D getTrRow getwind glm gradcplx gradMT gradMTm gradMTT gradMTTm gradp graphprt graphset hasimag header headermt hess hessMT hessMTg hessMTgw hessMTm hessMTmw hessMTT hessMTTg hessMTTgw hessMTTm hessMTw hessp hist histf histp hsec imag indcv indexcat indices indices2 indicesf indicesfn indnv indsav integrate1d integrateControlCreate intgrat2 intgrat3 inthp1 inthp2 inthp3 inthp4 inthpControlCreate intquad1 intquad2 intquad3 intrleav intrleavsa intrsect intsimp inv invpd invswp iscplx iscplxf isden isinfnanmiss ismiss key keyav keyw lag lag1 lagn lapEighb lapEighi lapEighvb lapEighvi lapgEig lapgEigh lapgEighv lapgEigv lapgSchur lapgSvdcst lapgSvds lapgSvdst lapSvdcusv lapSvds lapSvdusv ldlp ldlsol linSolve listwise ln lncdfbvn lncdfbvn2 lncdfmvn lncdfn lncdfn2 lncdfnc lnfact lngammacplx lnpdfmvn lnpdfmvt lnpdfn lnpdft loadd loadstruct loadwind loess loessmt loessmtControlCreate log loglog logx logy lower lowmat lowmat1 ltrisol lu lusol machEpsilon make makevars makewind margin matalloc matinit mattoarray maxbytes maxc maxindc maxv maxvec mbesselei mbesselei0 mbesselei1 mbesseli mbesseli0 mbesseli1 meanc median mergeby mergevar minc minindc minv miss missex missrv moment momentd movingave movingaveExpwgt movingaveWgt nextindex nextn nextnevn nextwind ntos null null1 numCombinations ols olsmt olsmtControlCreate olsqr olsqr2 olsqrmt ones optn optnevn orth outtyp pacf packedToSp packr parse pause pdfCauchy pdfChi pdfExp pdfGenPareto pdfHyperGeo pdfLaplace pdfLogistic pdfn pdfPoisson pdfRayleigh pdfWeibull pi pinv pinvmt plotAddArrow plotAddBar plotAddBox plotAddHist plotAddHistF plotAddHistP plotAddPolar plotAddScatter plotAddShape plotAddTextbox plotAddTS plotAddXY plotArea plotBar plotBox plotClearLayout plotContour plotCustomLayout plotGetDefaults plotHist plotHistF plotHistP plotLayout plotLogLog plotLogX plotLogY plotOpenWindow plotPolar plotSave plotScatter plotSetAxesPen plotSetBar plotSetBarFill plotSetBarStacked plotSetBkdColor plotSetFill plotSetGrid plotSetLegend plotSetLineColor plotSetLineStyle plotSetLineSymbol plotSetLineThickness plotSetNewWindow plotSetTitle plotSetWhichYAxis plotSetXAxisShow plotSetXLabel plotSetXRange plotSetXTicInterval plotSetXTicLabel plotSetYAxisShow plotSetYLabel plotSetYRange plotSetZAxisShow plotSetZLabel plotSurface plotTS plotXY polar polychar polyeval polygamma polyint polymake polymat polymroot polymult polyroot pqgwin previousindex princomp printfm printfmt prodc psi putarray putf putvals pvCreate pvGetIndex pvGetParNames pvGetParVector pvLength pvList pvPack pvPacki pvPackm pvPackmi pvPacks pvPacksi pvPacksm pvPacksmi pvPutParVector pvTest pvUnpack QNewton QNewtonmt QNewtonmtControlCreate QNewtonmtOutCreate QNewtonSet QProg QProgmt QProgmtInCreate qqr qqre qqrep qr qre qrep qrsol qrtsol qtyr qtyre qtyrep quantile quantiled qyr qyre qyrep qz rank rankindx readr real reclassify reclassifyCuts recode recserar recsercp recserrc rerun rescale reshape rets rev rfft rffti rfftip rfftn rfftnp rfftp rndBernoulli rndBeta rndBinomial rndCauchy rndChiSquare rndCon rndCreateState rndExp rndGamma rndGeo rndGumbel rndHyperGeo rndi rndKMbeta rndKMgam rndKMi rndKMn rndKMnb rndKMp rndKMu rndKMvm rndLaplace rndLCbeta rndLCgam rndLCi rndLCn rndLCnb rndLCp rndLCu rndLCvm rndLogNorm rndMTu rndMVn rndMVt rndn rndnb rndNegBinomial rndp rndPoisson rndRayleigh rndStateSkip rndu rndvm rndWeibull rndWishart rotater round rows rowsf rref sampleData satostrC saved saveStruct savewind scale scale3d scalerr scalinfnanmiss scalmiss schtoc schur searchsourcepath seekr select selif seqa seqm setdif setdifsa setvars setvwrmode setwind shell shiftr sin singleindex sinh sleep solpd sortc sortcc sortd sorthc sorthcc sortind sortindc sortmc sortr sortrc spBiconjGradSol spChol spConjGradSol spCreate spDenseSubmat spDiagRvMat spEigv spEye spLDL spline spLU spNumNZE spOnes spreadSheetReadM spreadSheetReadSA spreadSheetWrite spScale spSubmat spToDense spTrTDense spTScalar spZeros sqpSolve sqpSolveMT sqpSolveMTControlCreate sqpSolveMTlagrangeCreate sqpSolveMToutCreate sqpSolveSet sqrt statements stdc stdsc stocv stof strcombine strindx strlen strput strrindx strsect strsplit strsplitPad strtodt strtof strtofcplx strtriml strtrimr strtrunc strtruncl strtruncpad strtruncr submat subscat substute subvec sumc sumr surface svd svd1 svd2 svdcusv svds svdusv sysstate tab tan tanh tempname time timedt timestr timeutc title tkf2eps tkf2ps tocart todaydt toeplitz token topolar trapchk trigamma trimr trunc type typecv typef union unionsa uniqindx uniqindxsa unique uniquesa upmat upmat1 upper utctodt utctodtv utrisol vals varCovMS varCovXS varget vargetl varmall varmares varput varputl vartypef vcm vcms vcx vcxs vec vech vecr vector vget view viewxyz vlist vnamecv volume vput vread vtypecv wait waitc walkindex where window writer xlabel xlsGetSheetCount xlsGetSheetSize xlsGetSheetTypes xlsMakeRange xlsReadM xlsReadSA xlsWrite xlsWriteM xlsWriteSA xpnd xtics xy xyz ylabel ytics zeros zeta zlabel ztics cdfEmpirical dot h5create h5open h5read h5readAttribute h5write h5writeAttribute ldl plotAddErrorBar plotAddSurface plotCDFEmpirical plotSetColormap plotSetContourLabels plotSetLegendFont plotSetTextInterpreter plotSetXTicCount plotSetYTicCount plotSetZLevels powerm strjoin sylvester strtrim",
                 literal: "DB_AFTER_LAST_ROW DB_ALL_TABLES DB_BATCH_OPERATIONS DB_BEFORE_FIRST_ROW DB_BLOB DB_EVENT_NOTIFICATIONS DB_FINISH_QUERY DB_HIGH_PRECISION DB_LAST_INSERT_ID DB_LOW_PRECISION_DOUBLE DB_LOW_PRECISION_INT32 DB_LOW_PRECISION_INT64 DB_LOW_PRECISION_NUMBERS DB_MULTIPLE_RESULT_SETS DB_NAMED_PLACEHOLDERS DB_POSITIONAL_PLACEHOLDERS DB_PREPARED_QUERIES DB_QUERY_SIZE DB_SIMPLE_LOCKING DB_SYSTEM_TABLES DB_TABLES DB_TRANSACTIONS DB_UNICODE DB_VIEWS __STDIN __STDOUT __STDERR __FILE_DIR"
             },
@@ -28,7 +30,7 @@ var Lh0 = U((b97, Nh0) => {
             G = {
                 className: "meta",
                 begin: "#",
-                end: "$",
+                end: "TextComponent",
                 keywords: {
                     "meta-keyword": "define definecs|10 undef ifdef ifndef iflight ifdllcall ifmac ifos2win ifunix else endif lineson linesoff srcfile srcline"
                 },
@@ -37,7 +39,7 @@ var Lh0 = U((b97, Nh0) => {
                     relevance: 0
                 }, {
                     beginKeywords: "include",
-                    end: "$",
+                    end: "TextComponent",
                     keywords: {
                         "meta-keyword": "include"
                     },
@@ -147,7 +149,7 @@ var Lh0 = U((b97, Nh0) => {
     }
     Nh0.exports = lB4
 });
-var Oh0 = U((f97, Mh0) => {
+var Oh0 = moduleWrapper((f97, Mh0) => {
     function iB4(A) {
         let G = {
                 $pattern: "[A-Z_][A-Z0-9_.]*",
@@ -203,7 +205,7 @@ var Oh0 = U((f97, Mh0) => {
     }
     Mh0.exports = iB4
 });
-var Th0 = U((h97, Rh0) => {
+var Th0 = moduleWrapper((h97, Rh0) => {
     function nB4(A) {
         return {
             name: "Gherkin",
@@ -218,7 +220,7 @@ var Th0 = U((h97, Rh0) => {
                 begin: "@[^@\\s]+"
             }, {
                 begin: "\\|",
-                end: "\\|\\w*$",
+                end: "\\|\\w*TextComponent",
                 contains: [{
                     className: "string",
                     begin: "[^|]+"
@@ -236,7 +238,7 @@ var Th0 = U((h97, Rh0) => {
     }
     Rh0.exports = nB4
 });
-var jh0 = U((g97, Ph0) => {
+var jh0 = moduleWrapper((g97, Ph0) => {
     function aB4(A) {
         return {
             name: "GLSL",
@@ -250,13 +252,13 @@ var jh0 = U((g97, Ph0) => {
             contains: [A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.C_NUMBER_MODE, {
                 className: "meta",
                 begin: "#",
-                end: "$"
+                end: "TextComponent"
             }]
         }
     }
     Ph0.exports = aB4
 });
-var _h0 = U((u97, Sh0) => {
+var _h0 = moduleWrapper((u97, Sh0) => {
     function sB4(A) {
         return {
             name: "GML",
@@ -272,7 +274,7 @@ var _h0 = U((u97, Sh0) => {
     }
     Sh0.exports = sB4
 });
-var yh0 = U((m97, kh0) => {
+var yh0 = moduleWrapper((m97, kh0) => {
     function rB4(A) {
         let Q = {
             keyword: "break default func interface select case map struct chan else goto package switch const fallthrough if range type continue for import return var go defer bool byte complex64 complex128 float32 float64 int8 int16 int32 int64 string uint8 uint16 uint32 uint64 int uint uintptr rune",
@@ -301,7 +303,7 @@ var yh0 = U((m97, kh0) => {
             }, {
                 className: "function",
                 beginKeywords: "func",
-                end: "\\s*(\\{|$)",
+                end: "\\s*(\\{|TextComponent)",
                 excludeEnd: !0,
                 contains: [A.TITLE_MODE, {
                     className: "params",
@@ -315,7 +317,7 @@ var yh0 = U((m97, kh0) => {
     }
     kh0.exports = rB4
 });
-var vh0 = U((d97, xh0) => {
+var vh0 = moduleWrapper((d97, xh0) => {
     function oB4(A) {
         return {
             name: "Golo",
@@ -331,7 +333,7 @@ var vh0 = U((d97, xh0) => {
     }
     xh0.exports = oB4
 });
-var fh0 = U((c97, bh0) => {
+var fh0 = moduleWrapper((c97, bh0) => {
     function tB4(A) {
         return {
             name: "Gradle",
@@ -344,26 +346,26 @@ var fh0 = U((c97, bh0) => {
     }
     bh0.exports = tB4
 });
-var gh0 = U((p97, hh0) => {
+var gh0 = moduleWrapper((p97, hh0) => {
     function eB4(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function A24(A) {
+    function A24(A) {
         return Q24("(?=", A, ")")
     }
 
-function Q24(...A) {
+    function Q24(...A) {
         return A.map((B) => eB4(B)).join("")
     }
 
-function uH1(A, Q = {}) {
+    function uH1(A, Q = {}) {
         return Q.variants = A, Q
     }
 
-function B24(A) {
+    function B24(A) {
         let B = uH1([A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.COMMENT("/\\*\\*", "\\*/", {
                 relevance: 0,
                 contains: [{
@@ -387,8 +389,8 @@ function B24(A) {
                 begin: /'''/,
                 end: /'''/
             }, {
-                begin: "\\$/",
-                end: "/\\$",
+                begin: "\\TextComponent/",
+                end: "/\\TextComponent",
                 relevance: 10
             }, A.APOS_STRING_MODE, A.QUOTE_STRING_MODE], {
                 className: "string"
@@ -436,16 +438,16 @@ function B24(A) {
     }
     hh0.exports = B24
 });
-var mh0 = U((l97, uh0) => {
+var mh0 = moduleWrapper((l97, uh0) => {
     function G24(A) {
         return {
             name: "HAML",
             case_insensitive: !0,
             contains: [{
                 className: "meta",
-                begin: "^!!!( (5|1\\.1|Strict|Frameset|Basic|Mobile|RDFa|XML\\b.*))?$",
+                begin: "^!!!( (5|1\\.1|Strict|Frameset|Basic|Mobile|RDFa|XML\\b.*))?TextComponent",
                 relevance: 10
-            }, A.COMMENT("^\\s*(!=#|=#|-#|/).*$", !1, {
+            }, A.COMMENT("^\\s*(!=#|=#|-#|/).*TextComponent", !1, {
                 relevance: 0
             }), {
                 begin: "^\\s*(-|=|!=)(?!#)",
@@ -513,30 +515,30 @@ var mh0 = U((l97, uh0) => {
     }
     uh0.exports = G24
 });
-var ph0 = U((i97, ch0) => {
+var ph0 = moduleWrapper((i97, ch0) => {
     function dh0(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function Z24(A) {
+    function Z24(A) {
         return FKA("(", A, ")*")
     }
 
-function I24(A) {
+    function I24(A) {
         return FKA("(", A, ")?")
     }
 
-function FKA(...A) {
+    function FKA(...A) {
         return A.map((B) => dh0(B)).join("")
     }
 
-function Y24(...A) {
+    function Y24(...A) {
         return "(" + A.map((B) => dh0(B)).join("|") + ")"
     }
 
-function J24(A) {
+    function J24(A) {
         let Q = {
                 "builtin-name": ["action", "bindattr", "collection", "component", "concat", "debugger", "each", "each-in", "get", "hash", "if", "in", "input", "link-to", "loc", "log", "lookup", "mut", "outlet", "partial", "query-params", "render", "template", "textarea", "unbound", "unless", "view", "with", "yield"]
             },
@@ -675,10 +677,10 @@ function J24(A) {
     }
     ch0.exports = J24
 });
-var ih0 = U((n97, lh0) => {
+var ih0 = moduleWrapper((n97, lh0) => {
     function W24(A) {
         let Q = {
-                variants: [A.COMMENT("--", "$"), A.COMMENT(/\{-/, /-\}/, {
+                variants: [A.COMMENT("--", "TextComponent"), A.COMMENT(/\{-/, /-\}/, {
                     contains: ["self"]
                 })]
             },
@@ -690,7 +692,7 @@ var ih0 = U((n97, lh0) => {
             G = {
                 className: "meta",
                 begin: "^#",
-                end: "$"
+                end: "TextComponent"
             },
             Z = {
                 className: "type",
@@ -725,7 +727,7 @@ var ih0 = U((n97, lh0) => {
                 illegal: "\\W\\.|;"
             }, {
                 begin: "\\bimport\\b",
-                end: "$",
+                end: "TextComponent",
                 keywords: "import qualified as hiding",
                 contains: [I, Q],
                 illegal: "\\W\\.|;"
@@ -738,26 +740,26 @@ var ih0 = U((n97, lh0) => {
             }, {
                 className: "class",
                 begin: "\\b(data|(new)?type)\\b",
-                end: "$",
+                end: "TextComponent",
                 keywords: "data family type newtype deriving",
                 contains: [B, Z, I, Y, Q]
             }, {
                 beginKeywords: "default",
-                end: "$",
+                end: "TextComponent",
                 contains: [Z, I, Q]
             }, {
                 beginKeywords: "infix infixl infixr",
-                end: "$",
+                end: "TextComponent",
                 contains: [A.C_NUMBER_MODE, Q]
             }, {
                 begin: "\\bforeign\\b",
-                end: "$",
+                end: "TextComponent",
                 keywords: "foreign import export ccall stdcall cplusplus jvm dotnet safe unsafe",
                 contains: [Z, A.QUOTE_STRING_MODE, Q]
             }, {
                 className: "meta",
                 begin: "#!\\/usr\\/bin\\/env runhaskell",
-                end: "$"
+                end: "TextComponent"
             }, B, G, A.QUOTE_STRING_MODE, A.C_NUMBER_MODE, Z, A.inherit(A.TITLE_MODE, {
                 begin: "^[_a-z][\\w']*"
             }), Q, {
@@ -767,7 +769,7 @@ var ih0 = U((n97, lh0) => {
     }
     lh0.exports = W24
 });
-var ah0 = U((a97, nh0) => {
+var ah0 = moduleWrapper((a97, nh0) => {
     function X24(A) {
         return {
             name: "Haxe",
@@ -783,21 +785,21 @@ var ah0 = U((a97, nh0) => {
                 end: "'",
                 contains: [A.BACKSLASH_ESCAPE, {
                     className: "subst",
-                    begin: "\\$\\{",
+                    begin: "\\TextComponent\\{",
                     end: "\\}"
                 }, {
                     className: "subst",
-                    begin: "\\$",
+                    begin: "\\TextComponent",
                     end: /\W\}/
                 }]
             }, A.QUOTE_STRING_MODE, A.C_LINE_COMMENT_MODE, A.C_BLOCK_COMMENT_MODE, A.C_NUMBER_MODE, {
                 className: "meta",
                 begin: "@:",
-                end: "$"
+                end: "TextComponent"
             }, {
                 className: "meta",
                 begin: "#",
-                end: "$",
+                end: "TextComponent",
                 keywords: {
                     "meta-keyword": "if else elseif end error"
                 }
@@ -828,7 +830,7 @@ var ah0 = U((a97, nh0) => {
             }, {
                 className: "class",
                 beginKeywords: "abstract",
-                end: "[\\{$]",
+                end: "[\\{TextComponent]",
                 contains: [{
                     className: "type",
                     begin: "\\(",
@@ -854,7 +856,7 @@ var ah0 = U((a97, nh0) => {
             }, {
                 className: "class",
                 begin: "\\b(class|interface) +",
-                end: "[\\{$]",
+                end: "[\\{TextComponent]",
                 excludeEnd: !0,
                 keywords: "class interface",
                 contains: [{
@@ -880,7 +882,7 @@ var ah0 = U((a97, nh0) => {
     }
     nh0.exports = X24
 });
-var rh0 = U((s97, sh0) => {
+var rh0 = moduleWrapper((s97, sh0) => {
     function F24(A) {
         return {
             name: "HSP",
@@ -894,12 +896,12 @@ var rh0 = U((s97, sh0) => {
                 begin: /\{"/,
                 end: /"\}/,
                 contains: [A.BACKSLASH_ESCAPE]
-            }, A.COMMENT(";", "$", {
+            }, A.COMMENT(";", "TextComponent", {
                 relevance: 0
             }), {
                 className: "meta",
                 begin: "#",
-                end: "$",
+                end: "TextComponent",
                 keywords: {
                     "meta-keyword": "addion cfunc cmd cmpopt comfunc const defcfunc deffunc define else endif enum epack func global if ifdef ifndef include modcfunc modfunc modinit modterm module pack packopt regcmd runtime undef usecom uselib"
                 },
@@ -914,30 +916,30 @@ var rh0 = U((s97, sh0) => {
     }
     sh0.exports = F24
 });
-var eh0 = U((r97, th0) => {
+var eh0 = moduleWrapper((r97, th0) => {
     function oh0(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function V24(A) {
+    function V24(A) {
         return VKA("(", A, ")*")
     }
 
-function K24(A) {
+    function K24(A) {
         return VKA("(", A, ")?")
     }
 
-function VKA(...A) {
+    function VKA(...A) {
         return A.map((B) => oh0(B)).join("")
     }
 
-function D24(...A) {
+    function D24(...A) {
         return "(" + A.map((B) => oh0(B)).join("|") + ")"
     }
 
-function H24(A) {
+    function H24(A) {
         let Q = {
                 "builtin-name": ["action", "bindattr", "collection", "component", "concat", "debugger", "each", "each-in", "get", "hash", "if", "in", "input", "link-to", "loc", "log", "lookup", "mut", "outlet", "partial", "query-params", "render", "template", "textarea", "unbound", "unless", "view", "with", "yield"]
             },
@@ -1075,25 +1077,25 @@ function H24(A) {
         }
     }
 
-function C24(A) {
+    function C24(A) {
         let Q = H24(A);
         if (Q.name = "HTMLbars", A.getLanguage("handlebars")) Q.disableAutodetect = !0;
         return Q
     }
     th0.exports = C24
 });
-var Qg0 = U((o97, Ag0) => {
+var Qg0 = moduleWrapper((o97, Ag0) => {
     function E24(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function z24(...A) {
+    function z24(...A) {
         return A.map((B) => E24(B)).join("")
     }
 
-function U24(A) {
+    function U24(A) {
         let G = {
                 className: "attribute",
                 begin: z24("^", /[A-Za-z][A-Za-z0-9-]*/, "(?=\\:\\s)"),
@@ -1103,7 +1105,7 @@ function U24(A) {
                         begin: /: /,
                         relevance: 0,
                         starts: {
-                            end: "$",
+                            end: "TextComponent",
                             relevance: 0
                         }
                     }]
@@ -1122,7 +1124,7 @@ function U24(A) {
             illegal: /\S/,
             contains: [{
                 begin: "^(?=HTTP/(2|1\\.[01]) \\d{3})",
-                end: /$/,
+                end: /TextComponent/,
                 contains: [{
                     className: "meta",
                     begin: "HTTP/(2|1\\.[01])"
@@ -1136,8 +1138,8 @@ function U24(A) {
                     contains: Z
                 }
             }, {
-                begin: "(?=^[A-Z]+ (.*?) HTTP/(2|1\\.[01])$)",
-                end: /$/,
+                begin: "(?=^[A-Z]+ (.*?) HTTP/(2|1\\.[01])TextComponent)",
+                end: /TextComponent/,
                 contains: [{
                     className: "string",
                     begin: " ",
@@ -1163,7 +1165,7 @@ function U24(A) {
     }
     Ag0.exports = U24
 });
-var Gg0 = U((t97, Bg0) => {
+var Gg0 = moduleWrapper((t97, Bg0) => {
     function $24(A) {
         var Q = "a-zA-Z_\\-!.?+*=<>&#'",
             B = "[" + Q + "][" + Q + "0-9/;:]*",
@@ -1184,7 +1186,7 @@ var Gg0 = U((t97, Bg0) => {
             J = A.inherit(A.QUOTE_STRING_MODE, {
                 illegal: null
             }),
-            W = A.COMMENT(";", "$", {
+            W = A.COMMENT(";", "TextComponent", {
                 relevance: 0
             }),
             X = {
@@ -1229,7 +1231,7 @@ var Gg0 = U((t97, Bg0) => {
     }
     Bg0.exports = $24
 });
-var Ig0 = U((e97, Zg0) => {
+var Ig0 = moduleWrapper((e97, Zg0) => {
     function w24(A) {
         return {
             name: "Inform 7",
@@ -1251,7 +1253,7 @@ var Ig0 = U((e97, Zg0) => {
             }, {
                 className: "section",
                 begin: /^(Volume|Book|Part|Chapter|Section|Table)\b/,
-                end: "$"
+                end: "TextComponent"
             }, {
                 begin: /^(Check|Carry out|Report|Instead of|To|Rule|When|Before|After)\b/,
                 end: ":",
@@ -1269,26 +1271,26 @@ var Ig0 = U((e97, Zg0) => {
     }
     Zg0.exports = w24
 });
-var Xg0 = U((A47, Wg0) => {
+var Xg0 = moduleWrapper((A47, Wg0) => {
     function Yg0(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function q24(A) {
+    function q24(A) {
         return Jg0("(?=", A, ")")
     }
 
-function Jg0(...A) {
+    function Jg0(...A) {
         return A.map((B) => Yg0(B)).join("")
     }
 
-function N24(...A) {
+    function N24(...A) {
         return "(" + A.map((B) => Yg0(B)).join("|") + ")"
     }
 
-function L24(A) {
+    function L24(A) {
         let Q = {
                 className: "number",
                 relevance: 0,
@@ -1301,17 +1303,17 @@ function L24(A) {
             B = A.COMMENT();
         B.variants = [{
             begin: /;/,
-            end: /$/
+            end: /TextComponent/
         }, {
             begin: /#/,
-            end: /$/
+            end: /TextComponent/
         }];
         let G = {
                 className: "variable",
                 variants: [{
-                    begin: /\$[\w\d"][\w\d_]*/
+                    begin: /\TextComponent[\w\d"][\w\d_]*/
                 }, {
-                    begin: /\$\{(.*?)\}/
+                    begin: /\TextComponent\{(.*?)\}/
                 }]
             },
             Z = {
@@ -1358,7 +1360,7 @@ function L24(A) {
                 begin: V,
                 className: "attr",
                 starts: {
-                    end: /$/,
+                    end: /TextComponent/,
                     contains: [B, Y, Z, G, I, Q]
                 }
             }]
@@ -1366,18 +1368,18 @@ function L24(A) {
     }
     Wg0.exports = L24
 });
-var Vg0 = U((Q47, Fg0) => {
+var Vg0 = moduleWrapper((Q47, Fg0) => {
     function M24(A) {
         if (!A) return null;
         if (typeof A === "string") return A;
         return A.source
     }
 
-function mH1(...A) {
+    function mH1(...A) {
         return A.map((B) => M24(B)).join("")
     }
 
-function O24(A) {
+    function O24(A) {
         let Q = {
                 className: "params",
                 begin: "\\(",
@@ -1401,7 +1403,7 @@ function O24(A) {
             case_insensitive: !0,
             keywords: {
                 literal: ".False. .True.",
-                keyword: "kind do while private call intrinsic where elsewhere type endtype endmodule endselect endinterface end enddo endif if forall endforall only contains default return stop then public subroutine|10 function program .and. .or. .not. .le. .eq. .ge. .gt. .lt. goto save else use module select case access blank direct exist file fmt form formatted iostat name named nextrec number opened rec recl sequential status unformatted unit continue format pause cycle exit c_null_char c_alert c_backspace c_form_feed flush wait decimal round iomsg synchronous nopass non_overridable pass protected volatile abstract extends import non_intrinsic value deferred generic final enumerator class associate bind enum c_int c_short c_long c_long_long c_signed_char c_size_t c_int8_t c_int16_t c_int32_t c_int64_t c_int_least8_t c_int_least16_t c_int_least32_t c_int_least64_t c_int_fast8_t c_int_fast16_t c_int_fast32_t c_int_fast64_t c_intmax_t C_intptr_t c_float c_double c_long_double c_float_complex c_double_complex c_long_double_complex c_bool c_char c_null_ptr c_null_funptr c_new_line c_carriage_return c_horizontal_tab c_vertical_tab iso_c_binding c_loc c_funloc c_associated  c_f_pointer c_ptr c_funptr iso_fortran_env character_storage_size error_unit file_storage_size input_unit iostat_end iostat_eor numeric_storage_size output_unit c_f_procpointer ieee_arithmetic ieee_support_underflow_control ieee_get_underflow_mode ieee_set_underflow_mode newunit contiguous recursive pad position action delim readwrite eor advance nml interface procedure namelist include sequence elemental pure integer real character complex logical dimension allocatable|10 parameter external implicit|10 none double precision assign intent optional pointer target in out common equivalence data begin_provider &begin_provider end_provider begin_shell end_shell begin_template end_template subst assert touch soft_touch provide no_dep free irp_if irp_else irp_endif irp_write irp_read",
+                keyword: "kind do while private call intrinsic where elsewhere type endtype endmodule endselect endinterface end enddo endif if forall endforall only contains default return stop then public subroutine|10 function program .and. .or. .not. .le. .WEB_FETCH_TOOL_NAME. .ge. .gt. .lt. goto save else use module select case access blank direct exist file fmt form formatted iostat name named nextrec number opened rec recl sequential status unformatted unit continue format pause cycle exit c_null_char c_alert c_backspace c_form_feed flush wait decimal round iomsg synchronous nopass non_overridable pass protected volatile abstract extends import non_intrinsic value deferred generic final enumerator class associate bind enum c_int c_short c_long c_long_long c_signed_char c_size_t c_int8_t c_int16_t c_int32_t c_int64_t c_int_least8_t c_int_least16_t c_int_least32_t c_int_least64_t c_int_fast8_t c_int_fast16_t c_int_fast32_t c_int_fast64_t c_intmax_t C_intptr_t c_float c_double c_long_double c_float_complex c_double_complex c_long_double_complex c_bool c_char c_null_ptr c_null_funptr c_new_line c_carriage_return c_horizontal_tab c_vertical_tab iso_c_binding c_loc c_funloc c_associated  c_f_pointer c_ptr c_funptr iso_fortran_env character_storage_size error_unit file_storage_size input_unit iostat_end iostat_eor numeric_storage_size output_unit c_f_procpointer ieee_arithmetic ieee_support_underflow_control ieee_get_underflow_mode ieee_set_underflow_mode newunit contiguous recursive pad position action delim readwrite eor advance nml interface procedure namelist include sequence elemental pure integer real character complex logical dimension allocatable|10 parameter external implicit|10 none double precision assign intent optional pointer target in out common equivalence data begin_provider &begin_provider end_provider begin_shell end_shell begin_template end_template subst assert touch soft_touch provide no_dep free irp_if irp_else irp_endif irp_write irp_read",
                 built_in: "alog alog10 amax0 amax1 amin0 amin1 amod cabs ccos cexp clog csin csqrt dabs dacos dasin datan datan2 dcos dcosh ddim dexp dint dlog dlog10 dmax1 dmin1 dmod dnint dsign dsin dsinh dsqrt dtan dtanh float iabs idim idint idnint ifix isign max0 max1 min0 min1 sngl algama cdabs cdcos cdexp cdlog cdsin cdsqrt cqabs cqcos cqexp cqlog cqsin cqsqrt dcmplx dconjg derf derfc dfloat dgamma dimag dlgama iqint qabs qacos qasin qatan qatan2 qcmplx qconjg qcos qcosh qdim qerf qerfc qexp qgamma qimag qlgama qlog qlog10 qmax1 qmin1 qmod qnint qsign qsin qsinh qsqrt qtan qtanh abs acos aimag aint anint asin atan atan2 char cmplx conjg cos cosh exp ichar index int log log10 max min nint sign sin sinh sqrt tan tanh print write dim lge lgt lle llt mod nullify allocate deallocate adjustl adjustr all allocated any associated bit_size btest ceiling count cshift date_and_time digits dot_product eoshift epsilon exponent floor fraction huge iand ibclr ibits ibset ieor ior ishft ishftc lbound len_trim matmul maxexponent maxloc maxval merge minexponent minloc minval modulo mvbits nearest pack present product radix random_number random_seed range repeat reshape rrspacing scale scan selected_int_kind selected_real_kind set_exponent shape size spacing spread sum system_clock tiny transpose trim ubound unpack verify achar iachar transfer dble entry dprod cpu_time command_argument_count get_command get_command_argument get_environment_variable is_iostat_end ieee_arithmetic ieee_support_underflow_control ieee_get_underflow_mode ieee_set_underflow_mode is_iostat_eor move_alloc new_line selected_char_kind same_type_as extends_type_of acosh asinh atanh bessel_j0 bessel_j1 bessel_jn bessel_y0 bessel_y1 bessel_yn erf erfc erfc_scaled gamma log_gamma hypot norm2 atomic_define atomic_ref execute_command_line leadz trailz storage_size merge_bits bge bgt ble blt dshiftl dshiftr findloc iall iany iparity image_index lcobound ucobound maskl maskr num_images parity popcnt poppar shifta shiftl shiftr this_image IRP_ALIGN irp_here"
             },
             illegal: /\/\*/,
@@ -1414,9 +1416,9 @@ function O24(A) {
             }), {
                 className: "function",
                 beginKeywords: "subroutine function program",
-                illegal: "[${=\\n]",
+                illegal: "[TextComponent{=\\n]",
                 contains: [A.UNDERSCORE_TITLE_MODE, Q]
-            }, A.COMMENT("!", "$", {
+            }, A.COMMENT("!", "TextComponent", {
                 relevance: 0
             }), A.COMMENT("begin_doc", "end_doc", {
                 relevance: 10

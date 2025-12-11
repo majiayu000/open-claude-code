@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_050.js
+ * 处理时间: 2025-12-09T03:41:36.919Z
+ * 变量映射: 3 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.932Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -27,7 +30,7 @@
         clientAssertion: void 0
     }, ce6 = {
         azureCloudInstance: hf.None,
-        tenant: `${L0.DEFAULT_COMMON_TENANT}`
+        tenant: `TextComponent{L0.DEFAULT_COMMON_TENANT}`
     }, pe6 = {
         application: {
             appName: "",
@@ -36,16 +39,15 @@
     }
 });
 var RE;
-var ENA = L(() => {
+var ENA = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */
     RE = {
         HOME_ACCOUNT_ID: "home_account_id",
         UPN: "UPN"
     }
 });
-
 var KAA = {};
-pG(KAA, {
+esmExport(KAA, {
     X_MS_LIB_CAPABILITY: () => Gr1,
     X_CLIENT_VER: () => ts1,
     X_CLIENT_SKU: () => os1,
@@ -96,7 +98,7 @@ pG(KAA, {
     CLIENT_SECRET: () => Xr1,
     CLIENT_REQUEST_ID: () => rs1,
     CLIENT_INFO: () => ee6,
-    CLIENT_ID: () => Hk,
+    CLIENT_ID: () => CLIENT_ID_KEY,
     CLIENT_ASSERTION_TYPE: () => Vr1,
     CLIENT_ASSERTION: () => Fr1,
     CLAIMS: () => us1,
@@ -105,7 +107,8 @@ pG(KAA, {
     BROKER_CLIENT_ID: () => zNA,
     ACCESS_TOKEN: () => ae6
 });
-var Hk = "client_id",
+/* CLIENT_ID_KEY = CLIENT_ID_KEY = "client_id" */
+var CLIENT_ID_KEY = "client_id",
     P11 = "redirect_uri",
     fs1 = "response_type",
     hs1 = "response_mode",
@@ -163,11 +166,10 @@ var Hk = "client_id",
     rZA = "instance_aware",
     $r1 = "ear_jwk",
     wr1 = "ear_jwe_crypto";
-var oZA = L(() => {
+var oZA = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
-
 var OB = {};
-pG(OB, {
+esmExport(OB, {
     instrumentBrokerParams: () => DAA,
     addUsername: () => FA5,
     addThrottling: () => jNA,
@@ -218,7 +220,7 @@ pG(OB, {
 
 function DAA(A, Q, B) {
     if (!Q) return;
-    let G = A.get(Hk);
+    let G = A.get(CLIENT_ID_KEY);
     if (G && A.has(zNA)) B?.addFields({
         embeddedClientId: G,
         embeddedRedirectUri: A.get(P11)
@@ -245,7 +247,7 @@ function HAA(A, Q, B = !0, G = pH) {
 }
 
 function CAA(A, Q) {
-    A.set(Hk, Q)
+    A.set(CLIENT_ID_KEY, Q)
 }
 
 function EAA(A, Q) {
@@ -269,11 +271,11 @@ function tZA(A, Q) {
 }
 
 function Ml(A, Q) {
-    A.set(vZ.CCS_HEADER, `UPN:${Q}`)
+    A.set(vZ.CCS_HEADER, `UPN:TextComponent{Q}`)
 }
 
 function df(A, Q) {
-    A.set(vZ.CCS_HEADER, `Oid:${Q.uid}@${Q.utid}`)
+    A.set(vZ.CCS_HEADER, `Oid:TextComponent{Q.uid}@TextComponent{Q.utid}`)
 }
 
 function y11(A, Q) {
@@ -436,7 +438,7 @@ function DA5(A, Q) {
         if (G) A.set(B, G)
     })
 }
-var eZA = L(() => {
+var eZA = lazyLoader(() => {
     bZ();
     oZA();
     FNA();
@@ -447,23 +449,23 @@ var eZA = L(() => {
 function xeB(A) {
     return A.hasOwnProperty("authorization_endpoint") && A.hasOwnProperty("token_endpoint") && A.hasOwnProperty("issuer") && A.hasOwnProperty("jwks_uri")
 }
-var veB = L(() => {
+var veB = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
 
 function beB(A) {
     return A.hasOwnProperty("tenant_discovery_endpoint") && A.hasOwnProperty("metadata")
 }
-var feB = L(() => {
+var feB = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
 
 function heB(A) {
     return A.hasOwnProperty("error") && A.hasOwnProperty("error_description")
 }
-var geB = L(() => {
+var geB = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
 var ueB = (A, Q, B, G, Z) => {
         return (...I) => {
-            B.trace(`Executing function ${Q}`);
+            B.trace(`Executing function TextComponent{Q}`);
             let Y = G?.startMeasurement(Q, Z);
             if (Z) {
                 let J = Q + "CallCount";
@@ -475,9 +477,9 @@ var ueB = (A, Q, B, G, Z) => {
                 let J = A(...I);
                 return Y?.end({
                     success: !0
-                }), B.trace(`Returning result from ${Q}`), J
+                }), B.trace(`Returning result from TextComponent{Q}`), J
             } catch (J) {
-                B.trace(`Error occurred in ${Q}`);
+                B.trace(`Error occurred in TextComponent{Q}`);
                 try {
                     B.trace(JSON.stringify(J))
                 } catch (W) {
@@ -491,7 +493,7 @@ var ueB = (A, Q, B, G, Z) => {
     },
     P5 = (A, Q, B, G, Z) => {
         return (...I) => {
-            B.trace(`Executing function ${Q}`);
+            B.trace(`Executing function TextComponent{Q}`);
             let Y = G?.startMeasurement(Q, Z);
             if (Z) {
                 let J = Q + "CallCount";
@@ -500,11 +502,11 @@ var ueB = (A, Q, B, G, Z) => {
                 }, Z)
             }
             return G?.setPreQueueTime(Q, Z), A(...I).then((J) => {
-                return B.trace(`Returning result from ${Q}`), Y?.end({
+                return B.trace(`Returning result from TextComponent{Q}`), Y?.end({
                     success: !0
                 }), J
             }).catch((J) => {
-                B.trace(`Error occurred in ${Q}`);
+                B.trace(`Error occurred in TextComponent{Q}`);
                 try {
                     B.trace(JSON.stringify(J))
                 } catch (W) {
@@ -516,9 +518,8 @@ var ueB = (A, Q, B, G, Z) => {
             })
         }
     };
-var lf = L(() => {
+var lf = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
-
 class SNA {
     constructor(A, Q, B, G) {
         this.networkInterface = A, this.logger = Q, this.performanceClient = B, this.correlationId = G
@@ -545,12 +546,12 @@ class SNA {
         return B || null
     }
     async getRegionFromIMDS(A, Q) {
-        return this.performanceClient?.addQueueMeasurement(W0.RegionDiscoveryGetRegionFromIMDS, this.correlationId), this.networkInterface.sendGetRequestAsync(`${L0.IMDS_ENDPOINT}?api-version=${A}&format=text`, Q, L0.IMDS_TIMEOUT)
+        return this.performanceClient?.addQueueMeasurement(W0.RegionDiscoveryGetRegionFromIMDS, this.correlationId), this.networkInterface.sendGetRequestAsync(`TextComponent{L0.IMDS_ENDPOINT}?api-version=TextComponent{A}&format=text`, Q, L0.IMDS_TIMEOUT)
     }
     async getCurrentVersion(A) {
         this.performanceClient?.addQueueMeasurement(W0.RegionDiscoveryGetCurrentVersion, this.correlationId);
         try {
-            let Q = await this.networkInterface.sendGetRequestAsync(`${L0.IMDS_ENDPOINT}?format=json`, A);
+            let Q = await this.networkInterface.sendGetRequestAsync(`TextComponent{L0.IMDS_ENDPOINT}?format=json`, A);
             if (Q.status === o4.BAD_REQUEST && Q.body && Q.body["newest-versions"] && Q.body["newest-versions"].length > 0) return Q.body["newest-versions"][0];
             return null
         } catch (Q) {
@@ -558,7 +559,7 @@ class SNA {
         }
     }
 }
-var meB = L(() => {
+var meB = lazyLoader(() => {
     bZ();
     uT();
     lf(); /*! @azure/msal-common v15.13.1 2025-10-29 */
@@ -568,9 +569,8 @@ var meB = L(() => {
         }
     }
 });
-
 var KI = {};
-pG(KI, {
+esmExport(KI, {
     wasClockTurnedBack: () => _r1,
     toSecondsFromDate: () => HA5,
     toDateFromSeconds: () => _NA,
@@ -610,11 +610,10 @@ function _r1(A) {
 function EA5(A, Q) {
     return new Promise((B) => setTimeout(() => B(Q), A))
 }
-var Ol = L(() => {
+var Ol = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
-
 var TE = {};
-pG(TE, {
+esmExport(TE, {
     updateCloudDiscoveryMetadata: () => kNA,
     updateAuthorityEndpointMetadata: () => QIA,
     isThrottlingEntity: () => qA5,
@@ -756,14 +755,13 @@ function kNA(A, Q, B) {
 function b11(A) {
     return A.expiresAt <= Yq()
 }
-var f11 = L(() => {
+var f11 = lazyLoader(() => {
     aZA();
     mX();
     bZ();
     Ol();
     PW(); /*! @azure/msal-common v15.13.1 2025-10-29 */
 });
-
 class TF {
     constructor(A, Q, B, G, Z, I, Y, J) {
         this.canonicalAuthority = A, this._canonicalAuthority.validateAsUri(), this.networkInterface = Q, this.cacheManager = B, this.authorityOptions = G, this.regionDiscoveryMetadata = {
@@ -848,15 +846,15 @@ class TF {
             let W = Z[J];
             if (J === 0 && this.canReplaceTenant(G)) {
                 let X = new H8(this.metadata.authorization_endpoint).getUrlComponents().PathSegments[0];
-                if (W !== X) this.logger.verbose(`Replacing tenant domain name ${W} with id ${X}`), W = X
+                if (W !== X) this.logger.verbose(`Replacing tenant domain name TextComponent{W} with id TextComponent{X}`), W = X
             }
-            if (Y !== W) Q = Q.replace(`/${W}/`, `/${Y}/`)
+            if (Y !== W) Q = Q.replace(`/TextComponent{W}/`, `/TextComponent{Y}/`)
         }), this.replaceTenant(Q)
     }
     get defaultOpenIdConfigurationEndpoint() {
         let A = this.hostnameAndPort;
-        if (this.canonicalAuthority.endsWith("v2.0/") || this.authorityType === xM.Adfs || this.protocolMode === lH.OIDC && !this.isAliasOfKnownMicrosoftAuthority(A)) return `${this.canonicalAuthority}.well-known/openid-configuration`;
-        return `${this.canonicalAuthority}v2.0/.well-known/openid-configuration`
+        if (this.canonicalAuthority.endsWith("v2.0/") || this.authorityType === xM.Adfs || this.protocolMode === lH.OIDC && !this.isAliasOfKnownMicrosoftAuthority(A)) return `TextComponent{this.canonicalAuthority}.well-known/openid-configuration`;
+        return `TextComponent{this.canonicalAuthority}v2.0/.well-known/openid-configuration`
     }
     discoveryComplete() {
         return !!this.metadata
@@ -954,13 +952,13 @@ class TF {
         this.performanceClient?.addQueueMeasurement(W0.AuthorityGetEndpointMetadataFromNetwork, this.correlationId);
         let A = {},
             Q = this.defaultOpenIdConfigurationEndpoint;
-        this.logger.verbose(`Authority.getEndpointMetadataFromNetwork: attempting to retrieve OAuth endpoints from ${Q}`);
+        this.logger.verbose(`Authority.getEndpointMetadataFromNetwork: attempting to retrieve OAuth endpoints from TextComponent{Q}`);
         try {
             let B = await this.networkInterface.sendGetRequestAsync(Q, A);
             if (xeB(B.body)) return B.body;
             else return this.logger.verbose("Authority.getEndpointMetadataFromNetwork: could not parse response as OpenID configuration"), null
         } catch (B) {
-            return this.logger.verbose(`Authority.getEndpointMetadataFromNetwork: ${B}`), null
+            return this.logger.verbose(`Authority.getEndpointMetadataFromNetwork: TextComponent{B}`), null
         }
     }
     getEndpointMetadataFromHardcodedValues() {
@@ -987,7 +985,7 @@ class TF {
         throw jG(XAA)
     }
     updateCloudDiscoveryMetadataFromLocalSources(A) {
-        this.logger.verbose("Attempting to get cloud discovery metadata  from authority configuration"), this.logger.verbosePii(`Known Authorities: ${this.authorityOptions.knownAuthorities||L0.NOT_APPLICABLE}`), this.logger.verbosePii(`Authority Metadata: ${this.authorityOptions.authorityMetadata||L0.NOT_APPLICABLE}`), this.logger.verbosePii(`Canonical Authority: ${A.canonical_authority||L0.NOT_APPLICABLE}`);
+        this.logger.verbose("Attempting to get cloud discovery metadata  from authority configuration"), this.logger.verbosePii(`Known Authorities: TextComponent{this.authorityOptions.knownAuthorities||L0.NOT_APPLICABLE}`), this.logger.verbosePii(`Authority Metadata: TextComponent{this.authorityOptions.authorityMetadata||L0.NOT_APPLICABLE}`), this.logger.verbosePii(`Canonical Authority: TextComponent{A.canonical_authority||L0.NOT_APPLICABLE}`);
         let Q = this.getCloudDiscoveryMetadataFromConfig();
         if (Q) return this.logger.verbose("Found cloud discovery metadata in authority configuration"), kNA(A, Q, !1), ME.CONFIG;
         if (this.logger.verbose("Did not find cloud discovery metadata in the config... Attempting to get cloud discovery metadata from the hardcoded values."), this.options.skipAuthorityMetadataCache) this.logger.verbose("Skipping hardcoded cloud discovery metadata cache since skipAuthorityMetadataCache is set to true. Attempting to get cloud discovery metadata from the network metadata cache.");
@@ -1020,27 +1018,27 @@ class TF {
     }
     async getCloudDiscoveryMetadataFromNetwork() {
         this.performanceClient?.addQueueMeasurement(W0.AuthorityGetCloudDiscoveryMetadataFromNetwork, this.correlationId);
-        let A = `${L0.AAD_INSTANCE_DISCOVERY_ENDPT}${this.canonicalAuthority}oauth2/v2.0/authorize`,
+        let A = `TextComponent{L0.AAD_INSTANCE_DISCOVERY_ENDPT}TextComponent{this.canonicalAuthority}oauth2/v2.0/authorize`,
             Q = {},
             B = null;
         try {
             let G = await this.networkInterface.sendGetRequestAsync(A, Q),
                 Z, I;
-            if (beB(G.body)) Z = G.body, I = Z.metadata, this.logger.verbosePii(`tenant_discovery_endpoint is: ${Z.tenant_discovery_endpoint}`);
+            if (beB(G.body)) Z = G.body, I = Z.metadata, this.logger.verbosePii(`tenant_discovery_endpoint is: TextComponent{Z.tenant_discovery_endpoint}`);
             else if (heB(G.body)) {
-                if (this.logger.warning(`A CloudInstanceDiscoveryErrorResponse was returned. The cloud instance discovery network request's status code is: ${G.status}`), Z = G.body, Z.error === L0.INVALID_INSTANCE) return this.logger.error("The CloudInstanceDiscoveryErrorResponse error is invalid_instance."), null;
-                this.logger.warning(`The CloudInstanceDiscoveryErrorResponse error is ${Z.error}`), this.logger.warning(`The CloudInstanceDiscoveryErrorResponse error description is ${Z.error_description}`), this.logger.warning("Setting the value of the CloudInstanceDiscoveryMetadata (returned from the network) to []"), I = []
+                if (this.logger.warning(`A CloudInstanceDiscoveryErrorResponse was returned. The cloud instance discovery network request's status code is: TextComponent{G.status}`), Z = G.body, Z.error === L0.INVALID_INSTANCE) return this.logger.error("The CloudInstanceDiscoveryErrorResponse error is invalid_instance."), null;
+                this.logger.warning(`The CloudInstanceDiscoveryErrorResponse error is TextComponent{Z.error}`), this.logger.warning(`The CloudInstanceDiscoveryErrorResponse error description is TextComponent{Z.error_description}`), this.logger.warning("Setting the value of the CloudInstanceDiscoveryMetadata (returned from the network) to []"), I = []
             } else return this.logger.error("AAD did not return a CloudInstanceDiscoveryResponse or CloudInstanceDiscoveryErrorResponse"), null;
             this.logger.verbose("Attempting to find a match between the developer's authority and the CloudInstanceDiscoveryMetadata returned from the network request."), B = HNA(I, this.hostnameAndPort)
         } catch (G) {
             if (G instanceof t4) this.logger.error(`There was a network error while attempting to get the cloud discovery instance metadata.
-Error: ${G.errorCode}
-Error Description: ${G.errorMessage}`);
+Error: TextComponent{G.errorCode}
+Error Description: TextComponent{G.errorMessage}`);
             else {
                 let Z = G;
                 this.logger.error(`A non-MSALJS error was thrown while attempting to get the cloud instance discovery metadata.
-Error: ${Z.name}
-Error Description: ${Z.message}`)
+Error: TextComponent{Z.name}
+Error Description: TextComponent{Z.message}`)
             }
             return null
         }
@@ -1056,7 +1054,7 @@ Error Description: ${Z.message}`)
         let B;
         if (Q && Q.azureCloudInstance !== hf.None) {
             let G = Q.tenant ? Q.tenant : L0.DEFAULT_COMMON_TENANT;
-            B = `${Q.azureCloudInstance}/${G}/`
+            B = `TextComponent{Q.azureCloudInstance}/TextComponent{G}/`
         }
         return B ? B : A
     }
@@ -1085,13 +1083,13 @@ Error Description: ${Z.message}`)
         let G = new H8(A);
         G.validateAsUri();
         let Z = G.getUrlComponents(),
-            I = `${Q}.${Z.HostNameAndPort}`;
-        if (this.isPublicCloudAuthority(Z.HostNameAndPort)) I = `${Q}.${L0.REGIONAL_AUTH_PUBLIC_CLOUD_SUFFIX}`;
+            I = `TextComponent{Q}.TextComponent{Z.HostNameAndPort}`;
+        if (this.isPublicCloudAuthority(Z.HostNameAndPort)) I = `TextComponent{Q}.TextComponent{L0.REGIONAL_AUTH_PUBLIC_CLOUD_SUFFIX}`;
         let Y = H8.constructAuthorityUriFromObject({
             ...G.getUrlComponents(),
             HostNameAndPort: I
         }).urlString;
-        if (B) return `${Y}?${B}`;
+        if (B) return `TextComponent{Y}?TextComponent{B}`;
         return Y
     }
     static replaceWithRegionalInformation(A, Q) {
@@ -1106,7 +1104,7 @@ Error Description: ${Z.message}`)
             G = new H8(A).getUrlComponents();
         if (G.PathSegments.length === 0 && G.HostNameAndPort.endsWith(L0.CIAM_AUTH_URL)) {
             let Z = G.HostNameAndPort.split(".")[0];
-            Q = `${Q}${Z}${L0.AAD_TENANT_DOMAIN_SUFFIX}`
+            Q = `TextComponent{Q}TextComponent{Z}TextComponent{L0.AAD_TENANT_DOMAIN_SUFFIX}`
         }
         return Q
     }
@@ -1124,8 +1122,8 @@ function deB(A) {
     }
 }
 
-function h11(A) {
-    return A.endsWith(L0.FORWARD_SLASH) ? A : `${A}${L0.FORWARD_SLASH}`
+function WEB_SEARCH_TOOL_NAME(A) {
+    return A.endsWith(L0.FORWARD_SLASH) ? A : `TextComponent{A}TextComponent{L0.FORWARD_SLASH}`
 }
 
 function vr1(A) {
@@ -1137,12 +1135,12 @@ function vr1(A) {
         throw jG(wl)
     }
     return {
-        canonicalAuthority: A.authority ? h11(A.authority) : void 0,
+        canonicalAuthority: A.authority ? WEB_SEARCH_TOOL_NAME(A.authority) : void 0,
         knownAuthorities: A.knownAuthorities,
         cloudDiscoveryMetadata: B
     }
 }
-var g11 = L(() => {
+var g11 = lazyLoader(() => {
     Ms1();
     veB();
     Ll();
@@ -1163,15 +1161,13 @@ var g11 = L(() => {
     uf(); /*! @azure/msal-common v15.13.1 2025-10-29 */
     TF.reservedTenantDomains = new Set(["{tenant}", "{tenantid}", TU.COMMON, TU.CONSUMERS, TU.ORGANIZATIONS])
 });
-
 var u11 = {};
-pG(u11, {
+esmExport(u11, {
     createDiscoveredInstance: () => br1
 });
-
 async function br1(A, Q, B, G, Z, I, Y) {
     Y?.addQueueMeasurement(W0.AuthorityFactoryCreateDiscoveredInstance, I);
-    let J = TF.transformCIAMAuthority(h11(A)),
+    let J = TF.transformCIAMAuthority(WEB_SEARCH_TOOL_NAME(A)),
         W = new TF(J, Q, B, G, Z, I, Y);
     try {
         return await P5(W.resolveEndpointsAsync.bind(W), W0.AuthorityResolveEndpointsAsync, Z, Y, I)(), W
@@ -1179,7 +1175,7 @@ async function br1(A, Q, B, G, Z, I, Y) {
         throw v0(OE)
     }
 }
-var fr1 = L(() => {
+var fr1 = lazyLoader(() => {
     g11();
     mX();
     uT();
@@ -1187,7 +1183,7 @@ var fr1 = L(() => {
     PW(); /*! @azure/msal-common v15.13.1 2025-10-29 */
 });
 var PE;
-var BIA = L(() => {
+var BIA = lazyLoader(() => {
     yM(); /*! @azure/msal-common v15.13.1 2025-10-29 */
     PE = class PE extends t4 {
         constructor(A, Q, B, G, Z) {
@@ -1212,12 +1208,11 @@ function GIA(A, Q, B) {
         embeddedClientId: Q.embeddedClientId || Q.tokenBodyParameters?.clientId
     }
 }
-var m11 = L(() => {
+var m11 = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
-
 class nf {
     static generateThrottlingStorageKey(A) {
-        return `${Fk.THROTTLING_PREFIX}.${JSON.stringify(A)}`
+        return `TextComponent{Fk.THROTTLING_PREFIX}.TextComponent{JSON.stringify(A)}`
     }
     static preProcess(A, Q, B) {
         let G = nf.generateThrottlingStorageKey(Q),
@@ -1260,13 +1255,13 @@ class nf {
         A.removeItem(I, B.correlationId)
     }
 }
-var ceB = L(() => {
+var ceB = lazyLoader(() => {
     bZ();
     BIA();
     m11(); /*! @azure/msal-common v15.13.1 2025-10-29 */
 });
 var d11;
-var peB = L(() => {
+var peB = lazyLoader(() => {
     yM(); /*! @azure/msal-common v15.13.1 2025-10-29 */
     d11 = class d11 extends t4 {
         constructor(A, Q, B) {
@@ -1275,7 +1270,6 @@ var peB = L(() => {
         }
     }
 });
-
 class iH {
     constructor(A, Q) {
         this.config = keB(A), this.logger = new jU(this.config.loggerOptions, E11, cZA), this.cryptoUtils = this.config.cryptoInterface, this.cacheManager = this.config.storageInterface, this.networkClient = this.config.networkInterface, this.serverTelemetryManager = this.config.serverTelemetryManager, this.authority = this.config.authOptions.authority, this.performanceClient = Q
@@ -1286,13 +1280,13 @@ class iH {
             case RE.HOME_ACCOUNT_ID:
                 try {
                     let B = Kk(A.credential);
-                    Q[vZ.CCS_HEADER] = `Oid:${B.uid}@${B.utid}`
+                    Q[vZ.CCS_HEADER] = `Oid:TextComponent{B.uid}@TextComponent{B.utid}`
                 } catch (B) {
                     this.logger.verbose("Could not parse home account ID for CCS Header: " + B)
                 }
                 break;
             case RE.UPN:
-                Q[vZ.CCS_HEADER] = `UPN: ${A.credential}`;
+                Q[vZ.CCS_HEADER] = `UPN: TextComponent{A.credential}`;
                 break
         }
         return Q
@@ -1336,7 +1330,7 @@ class iH {
     }
     async updateAuthority(A, Q) {
         this.performanceClient?.addQueueMeasurement(W0.UpdateTokenEndpointAuthority, Q);
-        let B = `https://${A}/${this.authority.tenant}/`,
+        let B = `https://TextComponent{A}/TextComponent{this.authority.tenant}/`,
             G = await br1(B, this.networkClient, this.cacheManager, this.authority.options, this.logger, Q, this.performanceClient);
         this.authority = G
     }
@@ -1347,7 +1341,7 @@ class iH {
         return UAA(Q, A.correlationId), DAA(Q, A.correlationId, this.performanceClient), Dk(Q)
     }
 }
-var yNA = L(() => {
+var yNA = lazyLoader(() => {
     T11();
     C11();
     bZ();
@@ -1365,19 +1359,19 @@ var yNA = L(() => {
     lf();
     PW(); /*! @azure/msal-common v15.13.1 2025-10-29 */
 });
-
 var p11 = {};
-pG(p11, {
+esmExport(p11, {
     uxNotAllowed: () => c11,
     refreshTokenExpired: () => vNA,
-    noTokensFound: () => Rl,
+    noTokensFound: () => NO_TOKENS_FOUND,
     nativeAccountUnavailable: () => xNA,
     loginRequired: () => ur1,
     interactionRequired: () => hr1,
     consentRequired: () => gr1,
     badToken: () => Tl
 });
-var Rl = "no_tokens_found",
+/* NO_TOKENS_FOUND = NO_TOKENS_FOUND = "no_tokens_found" */
+var NO_TOKENS_FOUND = "no_tokens_found",
     xNA = "native_account_unavailable",
     vNA = "refresh_token_expired",
     c11 = "ux_not_allowed",
@@ -1385,7 +1379,7 @@ var Rl = "no_tokens_found",
     gr1 = "consent_required",
     ur1 = "login_required",
     Tl = "bad_token";
-var l11 = L(() => {
+var l11 = lazyLoader(() => {
     /*! @azure/msal-common v15.13.1 2025-10-29 */ });
 
 function n11(A, Q, B) {
@@ -1401,20 +1395,20 @@ function a11(A) {
     return new Jq(A, i11[A])
 }
 var leB, OA5, i11, mr1, Jq;
-var bNA = L(() => {
+var bNA = lazyLoader(() => {
     bZ();
     yM();
     l11(); /*! @azure/msal-common v15.13.1 2025-10-29 */
     leB = [hr1, gr1, ur1, Tl, c11], OA5 = ["message_only", "additional_action", "basic_action", "user_password_expired", "consent_required", "bad_token"], i11 = {
-        [Rl]: "No refresh token found in the cache. Please sign-in.",
+        [NO_TOKENS_FOUND]: "No refresh token found in the cache. Please sign-in.",
         [xNA]: "The requested account is not available in the native broker. It may have been deleted or logged out. Please sign-in again using an interactive API.",
         [vNA]: "Refresh token has expired.",
         [Tl]: "Identity provider returned bad_token due to an expired or invalid refresh token. Please invoke an interactive API to resolve.",
         [c11]: "`canShowUI` flag in Edge was set to false. User interaction required on web page. Please invoke an interactive API to resolve."
     }, mr1 = {
         noTokensFoundError: {
-            code: Rl,
-            desc: i11[Rl]
+            code: NO_TOKENS_FOUND,
+            desc: i11[NO_TOKENS_FOUND]
         },
         native_account_unavailable: {
             code: xNA,
@@ -1432,11 +1426,10 @@ var bNA = L(() => {
         }
     }
 });
-
 class s11 {
     static setRequestState(A, Q, B) {
         let G = s11.generateLibraryState(A, B);
-        return Q ? `${G}${L0.RESOURCE_DELIM}${Q}` : G
+        return Q ? `TextComponent{G}TextComponent{L0.RESOURCE_DELIM}TextComponent{Q}` : G
     }
     static generateLibraryState(A, Q) {
         if (!A) throw v0(zl);
@@ -1465,12 +1458,11 @@ class s11 {
         }
     }
 }
-var ieB = L(() => {
+var ieB = lazyLoader(() => {
     bZ();
     mX();
     PW(); /*! @azure/msal-common v15.13.1 2025-10-29 */
 });
-
 class wAA {
     constructor(A, Q) {
         this.cryptoUtils = A, this.performanceClient = Q
@@ -1517,7 +1509,7 @@ class wAA {
     }
 }
 var RA5;
-var r11 = L(() => {
+var r11 = lazyLoader(() => {
     Ol();
     Ll();
     uT();
@@ -1526,7 +1518,6 @@ var r11 = L(() => {
         SW: "sw"
     }
 });
-
 class vM {
     constructor(A, Q) {
         this.cache = A, this.hasChanged = Q

@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_040.js
+ * 处理时间: 2025-12-09T03:41:36.795Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.922Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -575,7 +577,7 @@
     aUB.MESSAGETYPEVALUES_RECEIVED = nUB;
     aUB.MessageTypeValues = (0, CM.createConstMap)([iUB, nUB])
 });
-var B$B = U((ft) => {
+var B$B = moduleWrapper((ft) => {
     var IX6 = ft && ft.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -599,7 +601,7 @@ var B$B = U((ft) => {
     });
     YX6(Q$B(), ft)
 });
-var _qB = U((TqB) => {
+var _qB = moduleWrapper((TqB) => {
     Object.defineProperty(TqB, "__esModule", {
         value: !0
     });
@@ -879,7 +881,7 @@ var _qB = U((TqB) => {
     TqB.TELEMETRYSDKLANGUAGEVALUES_WEBJS = RqB;
     TqB.TelemetrySdkLanguageValues = (0, ht.createConstMap)([zqB, UqB, $qB, wqB, qqB, NqB, LqB, MqB, OqB, RqB])
 });
-var kqB = U((gt) => {
+var kqB = moduleWrapper((gt) => {
     var vV6 = gt && gt.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -903,7 +905,7 @@ var kqB = U((gt) => {
     });
     bV6(_qB(), gt)
 });
-var fqB = U((yqB) => {
+var fqB = moduleWrapper((yqB) => {
     Object.defineProperty(yqB, "__esModule", {
         value: !0
     });
@@ -960,7 +962,7 @@ var fqB = U((yqB) => {
     yqB.ATTR_EXCEPTION_MESSAGE = "exception.message";
     yqB.ATTR_EXCEPTION_STACKTRACE = "exception.stacktrace";
     yqB.ATTR_EXCEPTION_TYPE = "exception.type";
-    var fV6 = (A) => `http.request.header.${A}`;
+    var fV6 = (A) => `http.request.header.TextComponent{A}`;
     yqB.ATTR_HTTP_REQUEST_HEADER = fV6;
     yqB.ATTR_HTTP_REQUEST_METHOD = "http.request.method";
     yqB.HTTP_REQUEST_METHOD_VALUE_OTHER = "_OTHER";
@@ -975,7 +977,7 @@ var fqB = U((yqB) => {
     yqB.HTTP_REQUEST_METHOD_VALUE_TRACE = "TRACE";
     yqB.ATTR_HTTP_REQUEST_METHOD_ORIGINAL = "http.request.method_original";
     yqB.ATTR_HTTP_REQUEST_RESEND_COUNT = "http.request.resend_count";
-    var hV6 = (A) => `http.response.header.${A}`;
+    var hV6 = (A) => `http.response.header.TextComponent{A}`;
     yqB.ATTR_HTTP_RESPONSE_HEADER = hV6;
     yqB.ATTR_HTTP_RESPONSE_STATUS_CODE = "http.response.status_code";
     yqB.ATTR_HTTP_ROUTE = "http.route";
@@ -1048,7 +1050,7 @@ var fqB = U((yqB) => {
     yqB.ATTR_URL_SCHEME = "url.scheme";
     yqB.ATTR_USER_AGENT_ORIGINAL = "user_agent.original"
 });
-var mqB = U((hqB) => {
+var mqB = moduleWrapper((hqB) => {
     Object.defineProperty(hqB, "__esModule", {
         value: !0
     });
@@ -1106,14 +1108,14 @@ var mqB = U((hqB) => {
     hqB.METRIC_SIGNALR_SERVER_ACTIVE_CONNECTIONS = "signalr.server.active_connections";
     hqB.METRIC_SIGNALR_SERVER_CONNECTION_DURATION = "signalr.server.connection.duration"
 });
-var pqB = U((dqB) => {
+var pqB = moduleWrapper((dqB) => {
     Object.defineProperty(dqB, "__esModule", {
         value: !0
     });
     dqB.EVENT_EXCEPTION = void 0;
     dqB.EVENT_EXCEPTION = "exception"
 });
-var ut = U((zT) => {
+var ut = moduleWrapper((zT) => {
     var ZC6 = zT && zT.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             var Z = Object.getOwnPropertyDescriptor(Q, B);
@@ -1141,14 +1143,14 @@ var ut = U((zT) => {
     C$A(mqB(), zT);
     C$A(pqB(), zT)
 });
-var nqB = U((lqB) => {
+var nqB = moduleWrapper((lqB) => {
     Object.defineProperty(lqB, "__esModule", {
         value: !0
     });
     lqB.ATTR_PROCESS_RUNTIME_NAME = void 0;
     lqB.ATTR_PROCESS_RUNTIME_NAME = "process.runtime.name"
 });
-var rqB = U((aqB) => {
+var rqB = moduleWrapper((aqB) => {
     Object.defineProperty(aqB, "__esModule", {
         value: !0
     });
@@ -1163,18 +1165,18 @@ var rqB = U((aqB) => {
         [FsA.ATTR_TELEMETRY_SDK_VERSION]: IC6.VERSION
     }
 });
-var eqB = U((oqB) => {
+var eqB = moduleWrapper((oqB) => {
     Object.defineProperty(oqB, "__esModule", {
         value: !0
     });
     oqB.unrefTimer = void 0;
 
-function JC6(A) {
+    function JC6(A) {
         A.unref()
     }
     oqB.unrefTimer = JC6
 });
-var ANB = U((k_) => {
+var ANB = moduleWrapper((k_) => {
     Object.defineProperty(k_, "__esModule", {
         value: !0
     });
@@ -1233,7 +1235,7 @@ var ANB = U((k_) => {
         }
     })
 });
-var du1 = U((y_) => {
+var du1 = moduleWrapper((y_) => {
     Object.defineProperty(y_, "__esModule", {
         value: !0
     });
@@ -1288,7 +1290,7 @@ var du1 = U((y_) => {
         }
     })
 });
-var YNB = U((ZNB) => {
+var YNB = moduleWrapper((ZNB) => {
     Object.defineProperty(ZNB, "__esModule", {
         value: !0
     });
@@ -1299,7 +1301,7 @@ var YNB = U((ZNB) => {
         CC6 = Math.pow(10, HC6),
         KsA = Math.pow(10, QNB);
 
-function E$A(A) {
+    function E$A(A) {
         let Q = A / 1000,
             B = Math.trunc(Q),
             G = Math.round(A % 1000 * CC6);
@@ -1307,7 +1309,7 @@ function E$A(A) {
     }
     ZNB.millisToHrTime = E$A;
 
-function pu1() {
+    function pu1() {
         let A = cu1.otperformance.timeOrigin;
         if (typeof A !== "number") {
             let Q = cu1.otperformance;
@@ -1317,14 +1319,14 @@ function pu1() {
     }
     ZNB.getTimeOrigin = pu1;
 
-function BNB(A) {
+    function BNB(A) {
         let Q = E$A(pu1()),
             B = E$A(typeof A === "number" ? A : cu1.otperformance.now());
         return GNB(Q, B)
     }
     ZNB.hrTime = BNB;
 
-function EC6(A) {
+    function EC6(A) {
         if (lu1(A)) return A;
         else if (typeof A === "number")
             if (A < pu1()) return BNB(A);
@@ -1334,7 +1336,7 @@ function EC6(A) {
     }
     ZNB.timeInputToHrTime = EC6;
 
-function zC6(A, Q) {
+    function zC6(A, Q) {
         let B = Q[0] - A[0],
             G = Q[1] - A[1];
         if (G < 0) B -= 1, G += KsA;
@@ -1342,9 +1344,9 @@ function zC6(A, Q) {
     }
     ZNB.hrTimeDuration = zC6;
 
-function UC6(A) {
+    function UC6(A) {
         let Q = QNB,
-            B = `${"0".repeat(Q)}${A[1]}Z`,
+            B = `TextComponent{"0".repeat(Q)}TextComponent{A[1]}Z`,
             G = B.substring(B.length - Q - 1);
         return new Date(A[0] * 1000).toISOString().replace("000Z", G)
     }
@@ -1355,34 +1357,34 @@ function UC6(A) {
     }
     ZNB.hrTimeToNanoseconds = $C6;
 
-function wC6(A) {
+    function wC6(A) {
         return A[0] * 1000 + A[1] / 1e6
     }
     ZNB.hrTimeToMilliseconds = wC6;
 
-function qC6(A) {
+    function qC6(A) {
         return A[0] * 1e6 + A[1] / 1000
     }
     ZNB.hrTimeToMicroseconds = qC6;
 
-function lu1(A) {
+    function lu1(A) {
         return Array.isArray(A) && A.length === 2 && typeof A[0] === "number" && typeof A[1] === "number"
     }
     ZNB.isTimeInputHrTime = lu1;
 
-function NC6(A) {
+    function NC6(A) {
         return lu1(A) || typeof A === "number" || A instanceof Date
     }
     ZNB.isTimeInput = NC6;
 
-function GNB(A, Q) {
+    function GNB(A, Q) {
         let B = [A[0] + Q[0], A[1] + Q[1]];
         if (B[1] >= KsA) B[1] -= KsA, B[0] += 1;
         return B
     }
     ZNB.addHrTimes = GNB
 });
-var WNB = U((JNB) => {
+var WNB = moduleWrapper((JNB) => {
     Object.defineProperty(JNB, "__esModule", {
         value: !0
     });
@@ -1392,14 +1394,13 @@ var WNB = U((JNB) => {
         A[A.SUCCESS = 0] = "SUCCESS", A[A.FAILED = 1] = "FAILED"
     })(xC6 = JNB.ExportResultCode || (JNB.ExportResultCode = {}))
 });
-var DNB = U((VNB) => {
+var DNB = moduleWrapper((VNB) => {
     Object.defineProperty(VNB, "__esModule", {
         value: !0
     });
     VNB.CompositePropagator = void 0;
     var XNB = W9();
-
-class FNB {
+    class FNB {
         _propagators;
         _fields;
         constructor(A = {}) {
@@ -1409,7 +1410,7 @@ class FNB {
             for (let G of this._propagators) try {
                 G.inject(A, Q, B)
             } catch (Z) {
-                XNB.diag.warn(`Failed to inject with ${G.constructor.name}. Err: ${Z.message}`)
+                XNB.diag.warn(`Failed to inject with TextComponent{G.constructor.name}. Err: TextComponent{Z.message}`)
             }
         }
         extract(A, Q, B) {
@@ -1417,7 +1418,7 @@ class FNB {
                 try {
                     return Z.extract(G, Q, B)
                 } catch (I) {
-                    XNB.diag.warn(`Failed to extract with ${Z.constructor.name}. Err: ${I.message}`)
+                    XNB.diag.warn(`Failed to extract with TextComponent{Z.constructor.name}. Err: TextComponent{I.message}`)
                 }
                 return G
             }, A)
@@ -1428,29 +1429,29 @@ class FNB {
     }
     VNB.CompositePropagator = FNB
 });
-var ENB = U((HNB) => {
+var ENB = moduleWrapper((HNB) => {
     Object.defineProperty(HNB, "__esModule", {
         value: !0
     });
     HNB.validateValue = HNB.validateKey = void 0;
     var nu1 = "[_0-9a-z-*/]",
-        vC6 = `[a-z]${nu1}{0,255}`,
-        bC6 = `[a-z0-9]${nu1}{0,240}@[a-z]${nu1}{0,13}`,
-        fC6 = new RegExp(`^(?:${vC6}|${bC6})$`),
-        hC6 = /^[ -~]{0,255}[!-~]$/,
+        vC6 = `[a-z]TextComponent{nu1}{0,255}`,
+        bC6 = `[a-z0-9]TextComponent{nu1}{0,240}@[a-z]TextComponent{nu1}{0,13}`,
+        fC6 = new RegExp(`^(?:TextComponent{vC6}|TextComponent{bC6})TextComponent`),
+        hC6 = /^[ -~]{0,255}[!-~]TextComponent/,
         gC6 = /,|=/;
 
-function uC6(A) {
+    function uC6(A) {
         return fC6.test(A)
     }
     HNB.validateKey = uC6;
 
-function mC6(A) {
+    function mC6(A) {
         return hC6.test(A) && !gC6.test(A)
     }
     HNB.validateValue = mC6
 });
-var su1 = U((qNB) => {
+var su1 = moduleWrapper((qNB) => {
     Object.defineProperty(qNB, "__esModule", {
         value: !0
     });
@@ -1460,8 +1461,7 @@ var su1 = U((qNB) => {
         cC6 = 512,
         $NB = ",",
         wNB = "=";
-
-class au1 {
+    class au1 {
         _internalState = new Map;
         constructor(A) {
             if (A) this._parse(A)
@@ -1506,7 +1506,7 @@ class au1 {
     }
     qNB.TraceState = au1
 });
-var TNB = U((ONB) => {
+var TNB = moduleWrapper((ONB) => {
     Object.defineProperty(ONB, "__esModule", {
         value: !0
     });

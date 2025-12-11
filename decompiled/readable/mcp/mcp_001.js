@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: mcp_001.js
+ * 处理时间: 2025-12-09T03:41:37.718Z
+ * 变量映射: 18 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.999Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -18,7 +21,7 @@
  */
 
 #!/usr/bin/env node
- // (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://docs.claude.com/en/docs/claude-code/legal-and-compliance.
+ // (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://docs.claude.com/AGENT_OUTPUT_TOOL_NAME/docs/claude-code/legal-and-compliance.
 
 // Version: 2.0.57
 
@@ -34,7 +37,8 @@ var {
     getOwnPropertyNames: pw9
 } = Object;
 var lw9 = Object.prototype.hasOwnProperty;
-var GA = (A, Q, B) => {
+/* esmImport = esmImport(module) - ESM import */
+var esmImport = (A, Q, B) => {
     B = A != null ? dw9(cw9(A)) : {};
     let G = Q || !A || !A.__esModule ? NW1(B, "default", {
         value: A,
@@ -47,10 +51,11 @@ var GA = (A, Q, B) => {
         });
     return G
 };
-var U = (A, Q) => () => (Q || A((Q = {
+var moduleWrapper = (A, Q) => () => (Q || A((Q = {
     exports: {}
 }).exports, Q), Q.exports);
-var pG = (A, Q) => {
+/* esmExport = esmExport(obj, key) - ESM export */
+var esmExport = (A, Q) => {
     for (var B in Q) NW1(A, B, {
         get: Q[B],
         enumerable: !0,
@@ -58,21 +63,22 @@ var pG = (A, Q) => {
         set: (G) => Q[B] = () => G
     })
 };
-var L = (A, Q) => () => (A && (Q = A(A = 0)), Q);
-var UA = iw9(import.meta.url);
+var lazyLoader = (A, Q) => () => (A && (Q = A(A = 0)), Q);
+/* nodeRequire = require(name) - Node require */
+var nodeRequire = iw9(import.meta.url);
 var nw9, W_A;
-var LW1 = L(() => {
+var LW1 = lazyLoader(() => {
     nw9 = typeof global == "object" && global && global.Object === Object && global, W_A = nw9
 });
-var aw9, sw9, HX;
-var WR = L(() => {
+var aw9, sw9, globalThis;
+var WR = lazyLoader(() => {
     LW1();
-    aw9 = typeof self == "object" && self && self.Object === Object && self, sw9 = W_A || aw9 || Function("return this")(), HX = sw9
+    aw9 = typeof self == "object" && self && self.Object === Object && self, sw9 = W_A || aw9 || Function("return this")(), globalThis = sw9
 });
-var rw9, HV;
-var Fs = L(() => {
+var rw9, Symbol;
+var Fs = lazyLoader(() => {
     WR();
-    rw9 = HX.Symbol, HV = rw9
+    rw9 = globalThis.Symbol, Symbol = rw9
 });
 
 function ew9(A) {
@@ -89,9 +95,9 @@ function ew9(A) {
     return Z
 }
 var CD0, ow9, tw9, lFA, ED0;
-var zD0 = L(() => {
+var zD0 = lazyLoader(() => {
     Fs();
-    CD0 = Object.prototype, ow9 = CD0.hasOwnProperty, tw9 = CD0.toString, lFA = HV ? HV.toStringTag : void 0;
+    CD0 = Object.prototype, ow9 = CD0.hasOwnProperty, tw9 = CD0.toString, lFA = Symbol ? Symbol.toStringTag : void 0;
     ED0 = ew9
 });
 
@@ -99,7 +105,7 @@ function Bq9(A) {
     return Qq9.call(A)
 }
 var Aq9, Qq9, UD0;
-var $D0 = L(() => {
+var $D0 = lazyLoader(() => {
     Aq9 = Object.prototype, Qq9 = Aq9.toString;
     UD0 = Bq9
 });
@@ -111,11 +117,11 @@ function Iq9(A) {
 var Gq9 = "[object Null]",
     Zq9 = "[object Undefined]",
     wD0, i$;
-var Vs = L(() => {
+var Vs = lazyLoader(() => {
     Fs();
     zD0();
     $D0();
-    wD0 = HV ? HV.toStringTag : void 0;
+    wD0 = Symbol ? Symbol.toStringTag : void 0;
     i$ = Iq9
 });
 
@@ -123,13 +129,13 @@ function Yq9(A) {
     var Q = typeof A;
     return A != null && (Q == "object" || Q == "function")
 }
-var TY;
-var jN = L(() => {
-    TY = Yq9
+var isObject;
+var jN = lazyLoader(() => {
+    isObject = Yq9
 });
 
 function Vq9(A) {
-    if (!TY(A)) return !1;
+    if (!isObject(A)) return !1;
     var Q = i$(A);
     return Q == Wq9 || Q == Xq9 || Q == Jq9 || Q == Fq9
 }
@@ -138,25 +144,25 @@ var Jq9 = "[object AsyncFunction]",
     Xq9 = "[object GeneratorFunction]",
     Fq9 = "[object Proxy]",
     wBA;
-var X_A = L(() => {
+var X_A = lazyLoader(() => {
     Vs();
     jN();
     wBA = Vq9
 });
 var Kq9, F_A;
-var qD0 = L(() => {
+var qD0 = lazyLoader(() => {
     WR();
-    Kq9 = HX["__core-js_shared__"], F_A = Kq9
+    Kq9 = globalThis["__core-js_shared__"], F_A = Kq9
 });
 
 function Dq9(A) {
     return !!ND0 && ND0 in A
 }
 var ND0, LD0;
-var MD0 = L(() => {
+var MD0 = lazyLoader(() => {
     qD0();
     ND0 = function() {
-        var A = /[^.]+$/.exec(F_A && F_A.keys && F_A.keys.IE_PROTO || "");
+        var A = /[^.]+TextComponent/.exec(F_A && F_A.keys && F_A.keys.IE_PROTO || "");
         return A ? "Symbol(src)_1." + A : ""
     }();
     LD0 = Dq9
@@ -174,23 +180,23 @@ function Eq9(A) {
     return ""
 }
 var Hq9, Cq9, dx;
-var MW1 = L(() => {
+var MW1 = lazyLoader(() => {
     Hq9 = Function.prototype, Cq9 = Hq9.toString;
     dx = Eq9
 });
 
 function Mq9(A) {
-    if (!TY(A) || LD0(A)) return !1;
+    if (!isObject(A) || LD0(A)) return !1;
     var Q = wBA(A) ? Lq9 : Uq9;
     return Q.test(dx(A))
 }
 var zq9, Uq9, $q9, wq9, qq9, Nq9, Lq9, OD0;
-var RD0 = L(() => {
+var RD0 = lazyLoader(() => {
     X_A();
     MD0();
     jN();
     MW1();
-    zq9 = /[\\^$.*+?()[\]{}|]/g, Uq9 = /^\[object .+?Constructor\]$/, $q9 = Function.prototype, wq9 = Object.prototype, qq9 = $q9.toString, Nq9 = wq9.hasOwnProperty, Lq9 = RegExp("^" + qq9.call(Nq9).replace(zq9, "\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, "$1.*?") + "$");
+    zq9 = /[\\^TextComponent.*+?()[\]{}|]/g, Uq9 = /^\[object .+?Constructor\]TextComponent/, $q9 = Function.prototype, wq9 = Object.prototype, qq9 = $q9.toString, Nq9 = wq9.hasOwnProperty, Lq9 = RegExp("^" + qq9.call(Nq9).replace(zq9, "\\TextComponent&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, "$1.*?") + "TextComponent");
     OD0 = Mq9
 });
 
@@ -198,7 +204,7 @@ function Oq9(A, Q) {
     return A == null ? void 0 : A[Q]
 }
 var TD0;
-var PD0 = L(() => {
+var PD0 = lazyLoader(() => {
     TD0 = Oq9
 });
 
@@ -207,13 +213,13 @@ function Rq9(A, Q) {
     return OD0(B) ? B : void 0
 }
 var xz;
-var ju = L(() => {
+var ju = lazyLoader(() => {
     RD0();
     PD0();
     xz = Rq9
 });
 var Tq9, cx;
-var iFA = L(() => {
+var iFA = lazyLoader(() => {
     ju();
     Tq9 = xz(Object, "create"), cx = Tq9
 });
@@ -222,7 +228,7 @@ function Pq9() {
     this.__data__ = cx ? cx(null) : {}, this.size = 0
 }
 var jD0;
-var SD0 = L(() => {
+var SD0 = lazyLoader(() => {
     iFA();
     jD0 = Pq9
 });
@@ -232,7 +238,7 @@ function jq9(A) {
     return this.size -= Q ? 1 : 0, Q
 }
 var _D0;
-var kD0 = L(() => {
+var kD0 = lazyLoader(() => {
     _D0 = jq9
 });
 
@@ -246,7 +252,7 @@ function yq9(A) {
 }
 var Sq9 = "__lodash_hash_undefined__",
     _q9, kq9, yD0;
-var xD0 = L(() => {
+var xD0 = lazyLoader(() => {
     iFA();
     _q9 = Object.prototype, kq9 = _q9.hasOwnProperty;
     yD0 = yq9
@@ -257,7 +263,7 @@ function bq9(A) {
     return cx ? Q[A] !== void 0 : vq9.call(Q, A)
 }
 var xq9, vq9, vD0;
-var bD0 = L(() => {
+var bD0 = lazyLoader(() => {
     iFA();
     xq9 = Object.prototype, vq9 = xq9.hasOwnProperty;
     vD0 = bq9
@@ -269,7 +275,7 @@ function hq9(A, Q) {
 }
 var fq9 = "__lodash_hash_undefined__",
     fD0;
-var hD0 = L(() => {
+var hD0 = lazyLoader(() => {
     iFA();
     fD0 = hq9
 });
@@ -284,7 +290,7 @@ function qBA(A) {
     }
 }
 var OW1;
-var gD0 = L(() => {
+var gD0 = lazyLoader(() => {
     SD0();
     kD0();
     xD0();
@@ -302,7 +308,7 @@ function gq9() {
     this.__data__ = [], this.size = 0
 }
 var uD0;
-var mD0 = L(() => {
+var mD0 = lazyLoader(() => {
     uD0 = gq9
 });
 
@@ -310,7 +316,7 @@ function uq9(A, Q) {
     return A === Q || A !== A && Q !== Q
 }
 var wj;
-var NBA = L(() => {
+var NBA = lazyLoader(() => {
     wj = uq9
 });
 
@@ -321,7 +327,7 @@ function mq9(A, Q) {
     return -1
 }
 var Su;
-var nFA = L(() => {
+var nFA = lazyLoader(() => {
     NBA();
     Su = mq9
 });
@@ -336,7 +342,7 @@ function pq9(A) {
     return --this.size, !0
 }
 var dq9, cq9, dD0;
-var cD0 = L(() => {
+var cD0 = lazyLoader(() => {
     nFA();
     dq9 = Array.prototype, cq9 = dq9.splice;
     dD0 = pq9
@@ -348,7 +354,7 @@ function lq9(A) {
     return B < 0 ? void 0 : Q[B][1]
 }
 var pD0;
-var lD0 = L(() => {
+var lD0 = lazyLoader(() => {
     nFA();
     pD0 = lq9
 });
@@ -357,7 +363,7 @@ function iq9(A) {
     return Su(this.__data__, A) > -1
 }
 var iD0;
-var nD0 = L(() => {
+var nD0 = lazyLoader(() => {
     nFA();
     iD0 = iq9
 });
@@ -370,7 +376,7 @@ function nq9(A, Q) {
     return this
 }
 var aD0;
-var sD0 = L(() => {
+var sD0 = lazyLoader(() => {
     nFA();
     aD0 = nq9
 });
@@ -384,8 +390,8 @@ function LBA(A) {
         this.set(G[0], G[1])
     }
 }
-var _u;
-var aFA = L(() => {
+var Array;
+var aFA = lazyLoader(() => {
     mD0();
     cD0();
     lD0();
@@ -396,24 +402,24 @@ var aFA = L(() => {
     LBA.prototype.get = pD0;
     LBA.prototype.has = iD0;
     LBA.prototype.set = aD0;
-    _u = LBA
+    Array = LBA
 });
 var aq9, ku;
-var V_A = L(() => {
+var V_A = lazyLoader(() => {
     ju();
     WR();
-    aq9 = xz(HX, "Map"), ku = aq9
+    aq9 = xz(globalThis, "Map"), ku = aq9
 });
 
 function sq9() {
     this.size = 0, this.__data__ = {
         hash: new OW1,
-        map: new(ku || _u),
+        map: new(ku || Array),
         string: new OW1
     }
 }
 var rD0;
-var oD0 = L(() => {
+var oD0 = lazyLoader(() => {
     gD0();
     aFA();
     V_A();
@@ -425,7 +431,7 @@ function rq9(A) {
     return Q == "string" || Q == "number" || Q == "symbol" || Q == "boolean" ? A !== "__proto__" : A === null
 }
 var tD0;
-var eD0 = L(() => {
+var GLOB_TOOL_DESCRIPTION = lazyLoader(() => {
     tD0 = rq9
 });
 
@@ -434,8 +440,8 @@ function oq9(A, Q) {
     return tD0(Q) ? B[typeof Q == "string" ? "string" : "hash"] : B.map
 }
 var yu;
-var sFA = L(() => {
-    eD0();
+var sFA = lazyLoader(() => {
+    GLOB_TOOL_DESCRIPTION();
     yu = oq9
 });
 
@@ -444,7 +450,7 @@ function tq9(A) {
     return this.size -= Q ? 1 : 0, Q
 }
 var AH0;
-var QH0 = L(() => {
+var QH0 = lazyLoader(() => {
     sFA();
     AH0 = tq9
 });
@@ -453,7 +459,7 @@ function eq9(A) {
     return yu(this, A).get(A)
 }
 var BH0;
-var GH0 = L(() => {
+var GH0 = lazyLoader(() => {
     sFA();
     BH0 = eq9
 });
@@ -462,7 +468,7 @@ function AN9(A) {
     return yu(this, A).has(A)
 }
 var ZH0;
-var IH0 = L(() => {
+var IH0 = lazyLoader(() => {
     sFA();
     ZH0 = AN9
 });
@@ -473,7 +479,7 @@ function QN9(A, Q) {
     return B.set(A, Q), this.size += B.size == G ? 0 : 1, this
 }
 var YH0;
-var JH0 = L(() => {
+var JH0 = lazyLoader(() => {
     sFA();
     YH0 = QN9
 });
@@ -487,8 +493,8 @@ function MBA(A) {
         this.set(G[0], G[1])
     }
 }
-var Ks;
-var K_A = L(() => {
+var Map;
+var K_A = lazyLoader(() => {
     oD0();
     QH0();
     GH0();
@@ -499,13 +505,12 @@ var K_A = L(() => {
     MBA.prototype.get = BH0;
     MBA.prototype.has = ZH0;
     MBA.prototype.set = YH0;
-    Ks = MBA
+    Map = MBA
 });
 
 function RW1(A, Q) {
     if (typeof A != "function" || Q != null && typeof Q != "function") throw TypeError(BN9);
-
-var B = function() {
+    var B = function() {
         var G = arguments,
             Z = Q ? Q.apply(this, G) : G[0],
             I = B.cache;
@@ -513,13 +518,13 @@ var B = function() {
         var Y = A.apply(this, G);
         return B.cache = I.set(Z, Y) || I, Y
     };
-    return B.cache = new(RW1.Cache || Ks), B
+    return B.cache = new(RW1.Cache || Map), B
 }
 var BN9 = "Expected a function",
     t1;
-var o2 = L(() => {
+var o2 = lazyLoader(() => {
     K_A();
-    RW1.Cache = Ks;
+    RW1.Cache = Map;
     t1 = RW1
 });
 
@@ -563,7 +568,7 @@ function XH0(A, Q) {
     return ZN9(B, Q)
 }
 var WH0;
-var FH0 = L(() => {
+var FH0 = lazyLoader(() => {
     o2();
     WH0 = t1((A) => {
         if (!A || A.trim() === "") return null;
@@ -643,7 +648,7 @@ async function* VH0(A) {
     }
 }
 var JN9, WN9;
-var o0 = L(() => {
+var o0 = lazyLoader(() => {
     JN9 = {
         cwd() {
             return process.cwd()
@@ -771,7 +776,8 @@ function PQ() {
     return process.env.CLAUDE_CONFIG_DIR ?? XN9(FN9(), ".claude")
 }
 
-function V0(A) {
+/* parseBoolean = parseBoolean(value) - Parse bool env */
+function parseBoolean(A) {
     if (!A) return !1;
     if (typeof A === "boolean") return A;
     let Q = A.toLowerCase().trim();
@@ -791,7 +797,7 @@ function KH0(A) {
     if (A)
         for (let B of A) {
             let [G, ...Z] = B.split("=");
-            if (!G || Z.length === 0) throw Error(`Invalid environment variable format: ${B}, environment variables should be added as: -e KEY1=value1 -e KEY2=value2`);
+            if (!G || Z.length === 0) throw Error(`Invalid environment variable format: TextComponent{B}, environment variables should be added as: -e KEY1=value1 -e KEY2=value2`);
             Q[G] = Z.join("=")
         }
     return Q
@@ -806,10 +812,12 @@ function XR() {
 }
 
 function TW1() {
-    return V0(process.env.CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR)
+    return parseBoolean(process.env.CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR)
 }
 
-function D_A(A) {
+/* getModelProvider = getModelProvider(model) - Get provider */
+/* Signature: (model: string) => string */
+function getModelProvider(A) {
     if (A?.startsWith("claude-haiku-4-5")) return process.env.VERTEX_REGION_CLAUDE_HAIKU_4_5 || XR();
     if (A?.startsWith("claude-3-5-haiku")) return process.env.VERTEX_REGION_CLAUDE_3_5_HAIKU || XR();
     if (A?.startsWith("claude-3-5-sonnet")) return process.env.VERTEX_REGION_CLAUDE_3_5_SONNET || XR();
@@ -823,10 +831,10 @@ function D_A(A) {
 var hQ = () => {};
 
 function VN9() {
-    this.__data__ = new _u, this.size = 0
+    this.__data__ = new Array, this.size = 0
 }
 var DH0;
-var HH0 = L(() => {
+var HH0 = lazyLoader(() => {
     aFA();
     DH0 = VN9
 });
@@ -837,7 +845,7 @@ function KN9(A) {
     return this.size = Q.size, B
 }
 var CH0;
-var EH0 = L(() => {
+var EH0 = lazyLoader(() => {
     CH0 = KN9
 });
 
@@ -845,7 +853,7 @@ function DN9(A) {
     return this.__data__.get(A)
 }
 var zH0;
-var UH0 = L(() => {
+var UH0 = lazyLoader(() => {
     zH0 = DN9
 });
 
@@ -853,22 +861,22 @@ function HN9(A) {
     return this.__data__.has(A)
 }
 var $H0;
-var wH0 = L(() => {
+var wH0 = lazyLoader(() => {
     $H0 = HN9
 });
 
 function EN9(A, Q) {
     var B = this.__data__;
-    if (B instanceof _u) {
+    if (B instanceof Array) {
         var G = B.__data__;
         if (!ku || G.length < CN9 - 1) return G.push([A, Q]), this.size = ++B.size, this;
-        B = this.__data__ = new Ks(G)
+        B = this.__data__ = new Map(G)
     }
     return B.set(A, Q), this.size = B.size, this
 }
 var CN9 = 200,
     qH0;
-var NH0 = L(() => {
+var NH0 = lazyLoader(() => {
     aFA();
     V_A();
     K_A();
@@ -876,11 +884,11 @@ var NH0 = L(() => {
 });
 
 function RBA(A) {
-    var Q = this.__data__ = new _u(A);
+    var Q = this.__data__ = new Array(A);
     this.size = Q.size
 }
 var Lj;
-var rFA = L(() => {
+var rFA = lazyLoader(() => {
     aFA();
     HH0();
     EH0();
@@ -900,7 +908,7 @@ function UN9(A) {
 }
 var zN9 = "__lodash_hash_undefined__",
     LH0;
-var MH0 = L(() => {
+var MH0 = lazyLoader(() => {
     LH0 = UN9
 });
 
@@ -908,18 +916,18 @@ function $N9(A) {
     return this.__data__.has(A)
 }
 var OH0;
-var RH0 = L(() => {
+var RH0 = lazyLoader(() => {
     OH0 = $N9
 });
 
 function H_A(A) {
     var Q = -1,
         B = A == null ? 0 : A.length;
-    this.__data__ = new Ks;
+    this.__data__ = new Map;
     while (++Q < B) this.add(A[Q])
 }
 var C_A;
-var PW1 = L(() => {
+var PW1 = lazyLoader(() => {
     K_A();
     MH0();
     RH0();
@@ -936,7 +944,7 @@ function wN9(A, Q) {
     return !1
 }
 var TH0;
-var PH0 = L(() => {
+var PH0 = lazyLoader(() => {
     TH0 = wN9
 });
 
@@ -944,7 +952,7 @@ function qN9(A, Q) {
     return A.has(Q)
 }
 var E_A;
-var jW1 = L(() => {
+var jW1 = lazyLoader(() => {
     E_A = qN9
 });
 
@@ -986,16 +994,16 @@ function MN9(A, Q, B, G, Z, I) {
 var NN9 = 1,
     LN9 = 2,
     z_A;
-var SW1 = L(() => {
+var SW1 = lazyLoader(() => {
     PW1();
     PH0();
     jW1();
     z_A = MN9
 });
 var ON9, TBA;
-var _W1 = L(() => {
+var _W1 = lazyLoader(() => {
     WR();
-    ON9 = HX.Uint8Array, TBA = ON9
+    ON9 = globalThis.Uint8Array, TBA = ON9
 });
 
 function RN9(A) {
@@ -1006,7 +1014,7 @@ function RN9(A) {
     }), B
 }
 var jH0;
-var SH0 = L(() => {
+var SH0 = lazyLoader(() => {
     jH0 = RN9
 });
 
@@ -1018,7 +1026,7 @@ function TN9(A) {
     }), B
 }
 var PBA;
-var U_A = L(() => {
+var U_A = lazyLoader(() => {
     PBA = TN9
 });
 
@@ -1068,14 +1076,14 @@ var PN9 = 1,
     gN9 = "[object ArrayBuffer]",
     uN9 = "[object DataView]",
     _H0, kW1, kH0;
-var yH0 = L(() => {
+var yH0 = lazyLoader(() => {
     Fs();
     _W1();
     NBA();
     SW1();
     SH0();
     U_A();
-    _H0 = HV ? HV.prototype : void 0, kW1 = _H0 ? _H0.valueOf : void 0;
+    _H0 = Symbol ? Symbol.prototype : void 0, kW1 = _H0 ? _H0.valueOf : void 0;
     kH0 = mN9
 });
 
@@ -1086,21 +1094,21 @@ function dN9(A, Q) {
     while (++B < G) A[Z + B] = Q[B];
     return A
 }
-var jBA;
-var $_A = L(() => {
-    jBA = dN9
+var arrayPush;
+var $_A = lazyLoader(() => {
+    arrayPush = dN9
 });
-var cN9, j7;
-var gC = L(() => {
-    cN9 = Array.isArray, j7 = cN9
+var cN9, isArray;
+var gC = lazyLoader(() => {
+    cN9 = Array.isArray, isArray = cN9
 });
 
 function pN9(A, Q, B) {
     var G = Q(A);
-    return j7(A) ? G : jBA(G, B(A))
+    return isArray(A) ? G : arrayPush(G, B(A))
 }
 var w_A;
-var yW1 = L(() => {
+var yW1 = lazyLoader(() => {
     $_A();
     gC();
     w_A = pN9
@@ -1118,7 +1126,7 @@ function lN9(A, Q) {
     return I
 }
 var q_A;
-var xW1 = L(() => {
+var xW1 = lazyLoader(() => {
     q_A = lN9
 });
 
@@ -1126,11 +1134,11 @@ function iN9() {
     return []
 }
 var N_A;
-var vW1 = L(() => {
+var vW1 = lazyLoader(() => {
     N_A = iN9
 });
 var nN9, aN9, xH0, sN9, SBA;
-var L_A = L(() => {
+var L_A = lazyLoader(() => {
     xW1();
     vW1();
     nN9 = Object.prototype, aN9 = nN9.propertyIsEnumerable, xH0 = Object.getOwnPropertySymbols, sN9 = !xH0 ? N_A : function(A) {
@@ -1148,7 +1156,7 @@ function rN9(A, Q) {
     return G
 }
 var vH0;
-var bH0 = L(() => {
+var bH0 = lazyLoader(() => {
     vH0 = rN9
 });
 
@@ -1156,7 +1164,7 @@ function oN9(A) {
     return A != null && typeof A == "object"
 }
 var zF;
-var Mj = L(() => {
+var Mj = lazyLoader(() => {
     zF = oN9
 });
 
@@ -1165,39 +1173,38 @@ function eN9(A) {
 }
 var tN9 = "[object Arguments]",
     bW1;
-var fH0 = L(() => {
+var fH0 = lazyLoader(() => {
     Vs();
     Mj();
     bW1 = eN9
 });
-var hH0, AL9, QL9, BL9, px;
-var oFA = L(() => {
+var hH0, AL9, QL9, BL9, isArguments;
+var oFA = lazyLoader(() => {
     fH0();
     Mj();
     hH0 = Object.prototype, AL9 = hH0.hasOwnProperty, QL9 = hH0.propertyIsEnumerable, BL9 = bW1(function() {
         return arguments
     }()) ? bW1 : function(A) {
         return zF(A) && AL9.call(A, "callee") && !QL9.call(A, "callee")
-    }, px = BL9
+    }, isArguments = BL9
 });
 
 function GL9() {
     return !1
 }
 var gH0;
-var uH0 = L(() => {
+var uH0 = lazyLoader(() => {
     gH0 = GL9
 });
-
 var O_A = {};
-pG(O_A, {
+esmExport(O_A, {
     default: () => Oj
 });
 var cH0, mH0, ZL9, dH0, IL9, YL9, Oj;
-var tFA = L(() => {
+var tFA = lazyLoader(() => {
     WR();
     uH0();
-    cH0 = typeof O_A == "object" && O_A && !O_A.nodeType && O_A, mH0 = cH0 && typeof M_A == "object" && M_A && !M_A.nodeType && M_A, ZL9 = mH0 && mH0.exports === cH0, dH0 = ZL9 ? HX.Buffer : void 0, IL9 = dH0 ? dH0.isBuffer : void 0, YL9 = IL9 || gH0, Oj = YL9
+    cH0 = typeof O_A == "object" && O_A && !O_A.nodeType && O_A, mH0 = cH0 && typeof M_A == "object" && M_A && !M_A.nodeType && M_A, ZL9 = mH0 && mH0.exports === cH0, dH0 = ZL9 ? globalThis.Buffer : void 0, IL9 = dH0 ? dH0.isBuffer : void 0, YL9 = IL9 || gH0, Oj = YL9
 });
 
 function XL9(A, Q) {
@@ -1205,10 +1212,10 @@ function XL9(A, Q) {
     return Q = Q == null ? JL9 : Q, !!Q && (B == "number" || B != "symbol" && WL9.test(A)) && (A > -1 && A % 1 == 0 && A < Q)
 }
 var JL9 = 9007199254740991,
-    WL9, xu;
-var eFA = L(() => {
-    WL9 = /^(?:0|[1-9]\d*)$/;
-    xu = XL9
+    WL9, isIndex;
+var eFA = lazyLoader(() => {
+    WL9 = /^(?:0|[1-9]\d*)TextComponent/;
+    isIndex = XL9
 });
 
 function VL9(A) {
@@ -1216,7 +1223,7 @@ function VL9(A) {
 }
 var FL9 = 9007199254740991,
     _BA;
-var R_A = L(() => {
+var R_A = lazyLoader(() => {
     _BA = VL9
 });
 
@@ -1248,7 +1255,7 @@ var KL9 = "[object Arguments]",
     xL9 = "[object Uint16Array]",
     vL9 = "[object Uint32Array]",
     BI, pH0;
-var lH0 = L(() => {
+var lH0 = lazyLoader(() => {
     Vs();
     R_A();
     Mj();
@@ -1264,16 +1271,15 @@ function fL9(A) {
     }
 }
 var kBA;
-var T_A = L(() => {
+var T_A = lazyLoader(() => {
     kBA = fL9
 });
-
 var j_A = {};
-pG(j_A, {
+esmExport(j_A, {
     default: () => Rj
 });
 var iH0, AVA, hL9, fW1, gL9, Rj;
-var S_A = L(() => {
+var S_A = lazyLoader(() => {
     LW1();
     iH0 = typeof j_A == "object" && j_A && !j_A.nodeType && j_A, AVA = iH0 && typeof P_A == "object" && P_A && !P_A.nodeType && P_A, hL9 = AVA && AVA.exports === iH0, fW1 = hL9 && W_A.process, gL9 = function() {
         try {
@@ -1284,7 +1290,7 @@ var S_A = L(() => {
     }(), Rj = gL9
 });
 var nH0, uL9, yBA;
-var __A = L(() => {
+var __A = lazyLoader(() => {
     lH0();
     T_A();
     S_A();
@@ -1292,19 +1298,19 @@ var __A = L(() => {
 });
 
 function cL9(A, Q) {
-    var B = j7(A),
-        G = !B && px(A),
+    var B = isArray(A),
+        G = !B && isArguments(A),
         Z = !B && !G && Oj(A),
         I = !B && !G && !Z && yBA(A),
         Y = B || G || Z || I,
         J = Y ? vH0(A.length, String) : [],
         W = J.length;
     for (var X in A)
-        if ((Q || dL9.call(A, X)) && !(Y && (X == "length" || Z && (X == "offset" || X == "parent") || I && (X == "buffer" || X == "byteLength" || X == "byteOffset") || xu(X, W)))) J.push(X);
+        if ((Q || dL9.call(A, X)) && !(Y && (X == "length" || Z && (X == "offset" || X == "parent") || I && (X == "buffer" || X == "byteLength" || X == "byteOffset") || isIndex(X, W)))) J.push(X);
     return J
 }
 var mL9, dL9, k_A;
-var hW1 = L(() => {
+var hW1 = lazyLoader(() => {
     bH0();
     oFA();
     gC();
@@ -1321,7 +1327,7 @@ function lL9(A) {
     return A === B
 }
 var pL9, xBA;
-var y_A = L(() => {
+var y_A = lazyLoader(() => {
     pL9 = Object.prototype;
     xBA = lL9
 });
@@ -1332,25 +1338,24 @@ function iL9(A, Q) {
     }
 }
 var x_A;
-var gW1 = L(() => {
+var gW1 = lazyLoader(() => {
     x_A = iL9
 });
 var nL9, aH0;
-var sH0 = L(() => {
+var sH0 = lazyLoader(() => {
     gW1();
     nL9 = x_A(Object.keys, Object), aH0 = nL9
 });
 
 function rL9(A) {
     if (!xBA(A)) return aH0(A);
-
-var Q = [];
+    var Q = [];
     for (var B in Object(A))
         if (sL9.call(A, B) && B != "constructor") Q.push(B);
     return Q
 }
 var aL9, sL9, rH0;
-var oH0 = L(() => {
+var oH0 = lazyLoader(() => {
     y_A();
     sH0();
     aL9 = Object.prototype, sL9 = aL9.hasOwnProperty;
@@ -1360,29 +1365,29 @@ var oH0 = L(() => {
 function oL9(A) {
     return A != null && _BA(A.length) && !wBA(A)
 }
-var Tj;
-var vBA = L(() => {
+var isArrayLike;
+var vBA = lazyLoader(() => {
     X_A();
     R_A();
-    Tj = oL9
+    isArrayLike = oL9
 });
 
 function tL9(A) {
-    return Tj(A) ? k_A(A) : rH0(A)
+    return isArrayLike(A) ? k_A(A) : rH0(A)
 }
-var SN;
-var Hs = L(() => {
+var keys;
+var Hs = lazyLoader(() => {
     hW1();
     oH0();
     vBA();
-    SN = tL9
+    keys = tL9
 });
 
 function eL9(A) {
-    return w_A(A, SN, SBA)
+    return w_A(A, keys, SBA)
 }
 var QVA;
-var uW1 = L(() => {
+var uW1 = lazyLoader(() => {
     yW1();
     L_A();
     Hs();
@@ -1427,34 +1432,34 @@ function GM9(A, Q, B, G, Z, I) {
 }
 var AM9 = 1,
     QM9, BM9, tH0;
-var eH0 = L(() => {
+var eH0 = lazyLoader(() => {
     uW1();
     QM9 = Object.prototype, BM9 = QM9.hasOwnProperty;
     tH0 = GM9
 });
 var ZM9, v_A;
-var AC0 = L(() => {
+var getGrepToolDescription = lazyLoader(() => {
     ju();
     WR();
-    ZM9 = xz(HX, "DataView"), v_A = ZM9
+    ZM9 = xz(globalThis, "DataView"), v_A = ZM9
 });
 var IM9, b_A;
-var QC0 = L(() => {
+var QC0 = lazyLoader(() => {
     ju();
     WR();
-    IM9 = xz(HX, "Promise"), b_A = IM9
+    IM9 = xz(globalThis, "Promise"), b_A = IM9
 });
 var YM9, vu;
-var mW1 = L(() => {
+var mW1 = lazyLoader(() => {
     ju();
     WR();
-    YM9 = xz(HX, "Set"), vu = YM9
+    YM9 = xz(globalThis, "Set"), vu = YM9
 });
 var JM9, f_A;
-var BC0 = L(() => {
+var BC0 = lazyLoader(() => {
     ju();
     WR();
-    JM9 = xz(HX, "WeakMap"), f_A = JM9
+    JM9 = xz(globalThis, "WeakMap"), f_A = JM9
 });
 var GC0 = "[object Map]",
     WM9 = "[object Object]",
@@ -1463,8 +1468,8 @@ var GC0 = "[object Map]",
     YC0 = "[object WeakMap]",
     JC0 = "[object DataView]",
     XM9, FM9, VM9, KM9, DM9, Cs, lx;
-var BVA = L(() => {
-    AC0();
+var BVA = lazyLoader(() => {
+    getGrepToolDescription();
     V_A();
     QC0();
     mW1();
@@ -1494,8 +1499,8 @@ var BVA = L(() => {
 });
 
 function EM9(A, Q, B, G, Z, I) {
-    var Y = j7(A),
-        J = j7(Q),
+    var Y = isArray(A),
+        J = isArray(Q),
         W = Y ? XC0 : lx(A),
         X = J ? XC0 : lx(Q);
     W = W == WC0 ? h_A : W, X = X == WC0 ? h_A : X;

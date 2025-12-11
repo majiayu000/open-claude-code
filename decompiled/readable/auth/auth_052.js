@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_052.js
+ * 处理时间: 2025-12-09T03:41:36.944Z
+ * 变量映射: 2 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.934Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -23,50 +26,49 @@
         return H01.slice(D01, D01 += 16)
     }
 });
-var MA2 = U((NA2) => {
+var MA2 = moduleWrapper((NA2) => {
     Object.defineProperty(NA2, "__esModule", {
         value: !0
     });
     NA2.default = void 0;
-    var tA5 = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
+    var tA5 = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)TextComponent/i;
     NA2.default = tA5
 });
-var cNA = U((OA2) => {
+var cNA = moduleWrapper((OA2) => {
     Object.defineProperty(OA2, "__esModule", {
         value: !0
     });
     OA2.default = void 0;
     var eA5 = A15(MA2());
 
-function A15(A) {
+    function A15(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 
-function Q15(A) {
+    function Q15(A) {
         return typeof A === "string" && eA5.default.test(A)
     }
     var B15 = Q15;
     OA2.default = B15
 });
-var pNA = U((TA2) => {
+var pNA = moduleWrapper((TA2) => {
     Object.defineProperty(TA2, "__esModule", {
         value: !0
     });
     TA2.default = void 0;
     var G15 = Z15(cNA());
 
-function Z15(A) {
+    function Z15(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
-
-var MD = [];
+    var MD = [];
     for (let A = 0; A < 256; ++A) MD.push((A + 256).toString(16).substr(1));
 
-function I15(A, Q = 0) {
+    function I15(A, Q = 0) {
         let B = (MD[A[Q + 0]] + MD[A[Q + 1]] + MD[A[Q + 2]] + MD[A[Q + 3]] + "-" + MD[A[Q + 4]] + MD[A[Q + 5]] + "-" + MD[A[Q + 6]] + MD[A[Q + 7]] + "-" + MD[A[Q + 8]] + MD[A[Q + 9]] + "-" + MD[A[Q + 10]] + MD[A[Q + 11]] + MD[A[Q + 12]] + MD[A[Q + 13]] + MD[A[Q + 14]] + MD[A[Q + 15]]).toLowerCase();
         if (!(0, G15.default)(B)) throw TypeError("Stringified UUID is invalid");
         return B
@@ -74,7 +76,7 @@ function I15(A, Q = 0) {
     var Y15 = I15;
     TA2.default = Y15
 });
-var yA2 = U((_A2) => {
+var yA2 = moduleWrapper((_A2) => {
     Object.defineProperty(_A2, "__esModule", {
         value: !0
     });
@@ -82,7 +84,7 @@ var yA2 = U((_A2) => {
     var J15 = SA2(or1()),
         W15 = SA2(pNA());
 
-function SA2(A) {
+    function SA2(A) {
         return A && A.__esModule ? A : {
             default: A
         }
@@ -90,7 +92,7 @@ function SA2(A) {
     var jA2, tr1, er1 = 0,
         Ao1 = 0;
 
-function X15(A, Q, B) {
+    function X15(A, Q, B) {
         let G = Q && B || 0,
             Z = Q || Array(16);
         A = A || {};
@@ -118,20 +120,20 @@ function X15(A, Q, B) {
     var F15 = X15;
     _A2.default = F15
 });
-var Qo1 = U((xA2) => {
+var Qo1 = moduleWrapper((xA2) => {
     Object.defineProperty(xA2, "__esModule", {
         value: !0
     });
     xA2.default = void 0;
     var V15 = K15(cNA());
 
-function K15(A) {
+    function K15(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 
-function D15(A) {
+    function D15(A) {
         if (!(0, V15.default)(A)) throw TypeError("Invalid UUID");
         let Q, B = new Uint8Array(16);
         return B[0] = (Q = parseInt(A.slice(0, 8), 16)) >>> 24, B[1] = Q >>> 16 & 255, B[2] = Q >>> 8 & 255, B[3] = Q & 255, B[4] = (Q = parseInt(A.slice(9, 13), 16)) >>> 8, B[5] = Q & 255, B[6] = (Q = parseInt(A.slice(14, 18), 16)) >>> 8, B[7] = Q & 255, B[8] = (Q = parseInt(A.slice(19, 23), 16)) >>> 8, B[9] = Q & 255, B[10] = (Q = parseInt(A.slice(24, 36), 16)) / 1099511627776 & 255, B[11] = Q / 4294967296 & 255, B[12] = Q >>> 24 & 255, B[13] = Q >>> 16 & 255, B[14] = Q >>> 8 & 255, B[15] = Q & 255, B
@@ -139,7 +141,7 @@ function D15(A) {
     var H15 = D15;
     xA2.default = H15
 });
-var Bo1 = U((gA2) => {
+var Bo1 = moduleWrapper((gA2) => {
     Object.defineProperty(gA2, "__esModule", {
         value: !0
     });
@@ -148,13 +150,13 @@ var Bo1 = U((gA2) => {
     var C15 = bA2(pNA()),
         E15 = bA2(Qo1());
 
-function bA2(A) {
+    function bA2(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 
-function z15(A) {
+    function z15(A) {
         A = unescape(encodeURIComponent(A));
         let Q = [];
         for (let B = 0; B < A.length; ++B) Q.push(A.charCodeAt(B));
@@ -165,7 +167,7 @@ function z15(A) {
     var hA2 = "6ba7b811-9dad-11d1-80b4-00c04fd430c8";
     gA2.URL = hA2;
 
-function U15(A, Q, B) {
+    function U15(A, Q, B) {
         function G(Z, I, Y, J) {
             if (typeof Z === "string") Z = z15(Z);
             if (typeof I === "string") I = (0, E15.default)(I);
@@ -184,20 +186,20 @@ function U15(A, Q, B) {
         return G.DNS = fA2, G.URL = hA2, G
     }
 });
-var cA2 = U((mA2) => {
+var cA2 = moduleWrapper((mA2) => {
     Object.defineProperty(mA2, "__esModule", {
         value: !0
     });
     mA2.default = void 0;
-    var q15 = N15(UA("crypto"));
+    var q15 = N15(nodeRequire("crypto"));
 
-function N15(A) {
+    function N15(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 
-function L15(A) {
+    function L15(A) {
         if (Array.isArray(A)) A = Buffer.from(A);
         else if (typeof A === "string") A = Buffer.from(A, "utf8");
         return q15.default.createHash("md5").update(A).digest()
@@ -205,7 +207,7 @@ function L15(A) {
     var M15 = L15;
     mA2.default = M15
 });
-var nA2 = U((lA2) => {
+var nA2 = moduleWrapper((lA2) => {
     Object.defineProperty(lA2, "__esModule", {
         value: !0
     });
@@ -213,7 +215,7 @@ var nA2 = U((lA2) => {
     var O15 = pA2(Bo1()),
         R15 = pA2(cA2());
 
-function pA2(A) {
+    function pA2(A) {
         return A && A.__esModule ? A : {
             default: A
         }
@@ -222,7 +224,7 @@ function pA2(A) {
         P15 = T15;
     lA2.default = P15
 });
-var oA2 = U((sA2) => {
+var oA2 = moduleWrapper((sA2) => {
     Object.defineProperty(sA2, "__esModule", {
         value: !0
     });
@@ -230,13 +232,13 @@ var oA2 = U((sA2) => {
     var j15 = aA2(or1()),
         S15 = aA2(pNA());
 
-function aA2(A) {
+    function aA2(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 
-function _15(A, Q, B) {
+    function _15(A, Q, B) {
         A = A || {};
         let G = A.random || (A.rng || j15.default)();
         if (G[6] = G[6] & 15 | 64, G[8] = G[8] & 63 | 128, Q) {
@@ -249,20 +251,20 @@ function _15(A, Q, B) {
     var k15 = _15;
     sA2.default = k15
 });
-var A12 = U((tA2) => {
+var A12 = moduleWrapper((tA2) => {
     Object.defineProperty(tA2, "__esModule", {
         value: !0
     });
     tA2.default = void 0;
-    var y15 = x15(UA("crypto"));
+    var y15 = x15(nodeRequire("crypto"));
 
-function x15(A) {
+    function x15(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 
-function v15(A) {
+    function v15(A) {
         if (Array.isArray(A)) A = Buffer.from(A);
         else if (typeof A === "string") A = Buffer.from(A, "utf8");
         return y15.default.createHash("sha1").update(A).digest()
@@ -270,7 +272,7 @@ function v15(A) {
     var b15 = v15;
     tA2.default = b15
 });
-var Z12 = U((B12) => {
+var Z12 = moduleWrapper((B12) => {
     Object.defineProperty(B12, "__esModule", {
         value: !0
     });
@@ -278,7 +280,7 @@ var Z12 = U((B12) => {
     var f15 = Q12(Bo1()),
         h15 = Q12(A12());
 
-function Q12(A) {
+    function Q12(A) {
         return A && A.__esModule ? A : {
             default: A
         }
@@ -287,7 +289,7 @@ function Q12(A) {
         u15 = g15;
     B12.default = u15
 });
-var J12 = U((I12) => {
+var J12 = moduleWrapper((I12) => {
     Object.defineProperty(I12, "__esModule", {
         value: !0
     });
@@ -295,27 +297,27 @@ var J12 = U((I12) => {
     var m15 = "00000000-0000-0000-0000-000000000000";
     I12.default = m15
 });
-var F12 = U((W12) => {
+var F12 = moduleWrapper((W12) => {
     Object.defineProperty(W12, "__esModule", {
         value: !0
     });
     W12.default = void 0;
     var d15 = c15(cNA());
 
-function c15(A) {
+    function c15(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 
-function p15(A) {
+    function p15(A) {
         if (!(0, d15.default)(A)) throw TypeError("Invalid UUID");
         return parseInt(A.substr(14, 1), 16)
     }
     var l15 = p15;
     W12.default = l15
 });
-var V12 = U((mT) => {
+var V12 = moduleWrapper((mT) => {
     Object.defineProperty(mT, "__esModule", {
         value: !0
     });
@@ -383,29 +385,27 @@ var V12 = U((mT) => {
         e15 = sf(pNA()),
         A05 = sf(Qo1());
 
-function sf(A) {
+    function sf(A) {
         return A && A.__esModule ? A : {
             default: A
         }
     }
 });
 var Ck, SKG, _KG, K12, kKG, yKG, xKG, vKG, bKG, fKG;
-var D12 = L(() => {
-    Ck = GA(V12(), 1), SKG = Ck.default.v1, _KG = Ck.default.v3, K12 = Ck.default.v4, kKG = Ck.default.v5, yKG = Ck.default.NIL, xKG = Ck.default.version, vKG = Ck.default.validate, bKG = Ck.default.stringify, fKG = Ck.default.parse
+var D12 = lazyLoader(() => {
+    Ck = esmImport(V12(), 1), SKG = Ck.default.v1, _KG = Ck.default.v3, K12 = Ck.default.v4, kKG = Ck.default.v5, yKG = Ck.default.NIL, xKG = Ck.default.version, vKG = Ck.default.validate, bKG = Ck.default.stringify, fKG = Ck.default.parse
 });
-
 class lNA {
     generateGuid() {
         return K12()
     }
     isGuid(A) {
-        return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(A)
+        return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}TextComponent/i.test(A)
     }
 }
-var Go1 = L(() => {
+var Go1 = lazyLoader(() => {
     D12(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
-
 class _U {
     static base64Encode(A, Q) {
         return Buffer.from(A, Q).toString(ND.BASE64)
@@ -422,21 +422,19 @@ class _U {
         return _U.base64Decode(Q)
     }
 }
-var iNA = L(() => {
+var iNA = lazyLoader(() => {
     u7(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
 import Q05 from "crypto";
-
 class LAA {
     sha256(A) {
         return Q05.createHash(JA2.SHA256).update(A).digest()
     }
 }
-var C01 = L(() => {
+var C01 = lazyLoader(() => {
     HI(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
 import B05 from "crypto";
-
 class Zo1 {
     constructor() {
         this.hashUtils = new LAA
@@ -465,13 +463,12 @@ class Zo1 {
         return _U.base64EncodeUrl(this.hashUtils.sha256(A).toString(ND.BASE64), ND.BASE64)
     }
 }
-var H12 = L(() => {
+var H12 = lazyLoader(() => {
     u7();
     HI();
     iNA();
     C01(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
-
 class rf {
     constructor() {
         this.pkceGenerator = new Zo1, this.guidGenerator = new lNA, this.hashUtils = new LAA
@@ -510,14 +507,14 @@ class rf {
         return _U.base64EncodeUrl(this.hashUtils.sha256(A).toString(ND.BASE64), ND.BASE64)
     }
 }
-var nNA = L(() => {
+var nNA = lazyLoader(() => {
     u7();
     Go1();
     iNA();
     H12();
     C01(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
-var E01 = L(() => {
+var E01 = lazyLoader(() => {
     bZ();
     bs1(); /*! @azure/msal-common v15.13.1 2025-10-29 */
 });
@@ -532,12 +529,12 @@ function E12(A) {
     let Q = A.homeAccountId.split(".")[1];
     return [A.homeAccountId, A.environment, Q || A.tenantId || ""].join(lr1.KEY_SEPARATOR).toLowerCase()
 }
-var z12 = L(() => {
+var z12 = lazyLoader(() => {
     u7();
     HI(); /*! @azure/msal-node v3.8.1 2025-10-29 */
 });
 var MAA;
-var z01 = L(() => {
+var z01 = lazyLoader(() => {
     u7();
     A01();
     V11();
@@ -600,10 +597,10 @@ var z01 = L(() => {
             this.logger.trace("Setting cache key value store"), this.cache = A, this.emitChange()
         }
         getItem(A) {
-            return this.logger.tracePii(`Item key: ${A}`), this.getCache()[A]
+            return this.logger.tracePii(`Item key: TextComponent{A}`), this.getCache()[A]
         }
         setItem(A, Q) {
-            this.logger.tracePii(`Item key: ${A}`);
+            this.logger.tracePii(`Item key: TextComponent{A}`);
             let B = this.getCache();
             B[A] = Q, this.setCache(B)
         }
@@ -698,7 +695,7 @@ var z01 = L(() => {
             this.setItem(A, Q)
         }
         removeItem(A) {
-            this.logger.tracePii(`Item key: ${A}`);
+            this.logger.tracePii(`Item key: TextComponent{A}`);
             let Q = !1,
                 B = this.getCache();
             if (B[A]) delete B[A], Q = !0;
@@ -731,14 +728,13 @@ var z01 = L(() => {
             let B = this.generateCredentialKey(Q);
             if (A !== B) {
                 let G = this.getItem(A);
-                if (G) return this.removeItem(A), this.setItem(B, G), this.logger.verbose(`Updated an outdated ${Q.credentialType} cache key`), B;
-                else this.logger.error(`Attempted to update an outdated ${Q.credentialType} cache key but no item matching the outdated key was found in storage`)
+                if (G) return this.removeItem(A), this.setItem(B, G), this.logger.verbose(`Updated an outdated TextComponent{Q.credentialType} cache key`), B;
+                else this.logger.error(`Attempted to update an outdated TextComponent{Q.credentialType} cache key but no item matching the outdated key was found in storage`)
             }
             return A
         }
     }
 });
-
 class sNA {
     constructor(A, Q, B) {
         if (this.cacheHasChanged = !1, this.storage = A, this.storage.registerChangeEmitter(this.handleChangeEvent.bind(this)), B) this.persistence = B;
@@ -882,7 +878,7 @@ class sNA {
     }
 }
 var aNA;
-var Io1 = L(() => {
+var Io1 = lazyLoader(() => {
     z01();
     u7();
     A01();
@@ -897,10 +893,10 @@ var Io1 = L(() => {
         AppMetadata: {}
     }
 });
-var Yo1 = U((LDG, U12) => {
+var Yo1 = moduleWrapper((LDG, U12) => {
     var U01 = Gk().Buffer,
-        G05 = UA("stream"),
-        Z05 = UA("util");
+        G05 = nodeRequire("stream"),
+        Z05 = nodeRequire("util");
 
     function $01(A) {
         if (this.buffer = null, this.writable = !0, this.readable = !0, !A) return this.buffer = U01.alloc(0), this;
@@ -920,11 +916,11 @@ var Yo1 = U((LDG, U12) => {
     };
     U12.exports = $01
 });
-var Fo1 = U((MDG, T12) => {
+var Fo1 = moduleWrapper((MDG, T12) => {
     var JIA = Gk().Buffer,
-        fM = UA("crypto"),
+        fM = nodeRequire("crypto"),
         w12 = CA1(),
-        $12 = UA("util"),
+        $12 = nodeRequire("util"),
         I05 = `"%s" is not a valid algorithm.
   Supported algorithms are:
   "HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "PS256", "PS384", "PS512", "ES256", "ES384", "ES512" and "none".`,
@@ -934,7 +930,7 @@ var Fo1 = U((MDG, T12) => {
         Wo1 = typeof fM.createPublicKey === "function";
     if (Wo1) YIA += " or a KeyObject", rNA += "or a KeyObject";
 
-function q12(A) {
+    function q12(A) {
         if (JIA.isBuffer(A)) return;
         if (typeof A === "string") return;
         if (!Wo1) throw dT(YIA);
@@ -944,14 +940,14 @@ function q12(A) {
         if (typeof A.export !== "function") throw dT(YIA)
     }
 
-function N12(A) {
+    function N12(A) {
         if (JIA.isBuffer(A)) return;
         if (typeof A === "string") return;
         if (typeof A === "object") return;
         throw dT(Y05)
     }
 
-function J05(A) {
+    function J05(A) {
         if (JIA.isBuffer(A)) return;
         if (typeof A === "string") return A;
         if (!Wo1) throw dT(rNA);
@@ -960,11 +956,11 @@ function J05(A) {
         if (typeof A.export !== "function") throw dT(rNA)
     }
 
-function Xo1(A) {
+    function Xo1(A) {
         return A.replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_")
     }
 
-function L12(A) {
+    function L12(A) {
         A = A.toString();
         var Q = 4 - A.length % 4;
         if (Q !== 4)
@@ -972,22 +968,22 @@ function L12(A) {
         return A.replace(/\-/g, "+").replace(/_/g, "/")
     }
 
-function dT(A) {
+    function dT(A) {
         var Q = [].slice.call(arguments, 1),
             B = $12.format.bind($12, A).apply(null, Q);
         return TypeError(B)
     }
 
-function W05(A) {
+    function W05(A) {
         return JIA.isBuffer(A) || typeof A === "string"
     }
 
-function oNA(A) {
+    function oNA(A) {
         if (!W05(A)) A = JSON.stringify(A);
         return A
     }
 
-function M12(A) {
+    function M12(A) {
         return function(B, G) {
             J05(G), B = oNA(B);
             var Z = fM.createHmac("sha" + A, G),
@@ -1003,14 +999,14 @@ function M12(A) {
         return Jo1(Q, B)
     };
 
-function F05(A) {
+    function F05(A) {
         return function(B, G, Z) {
             var I = M12(A)(B, Z);
             return X05(JIA.from(G), JIA.from(I))
         }
     }
 
-function O12(A) {
+    function O12(A) {
         return function(B, G) {
             N12(G), B = oNA(B);
             var Z = fM.createSign("RSA-SHA" + A),
@@ -1019,7 +1015,7 @@ function O12(A) {
         }
     }
 
-function R12(A) {
+    function R12(A) {
         return function(B, G, Z) {
             q12(Z), B = oNA(B), G = L12(G);
             var I = fM.createVerify("RSA-SHA" + A);
@@ -1027,7 +1023,7 @@ function R12(A) {
         }
     }
 
-function V05(A) {
+    function V05(A) {
         return function(B, G) {
             N12(G), B = oNA(B);
             var Z = fM.createSign("RSA-SHA" + A),
@@ -1040,7 +1036,7 @@ function V05(A) {
         }
     }
 
-function K05(A) {
+    function K05(A) {
         return function(B, G, Z) {
             q12(Z), B = oNA(B), G = L12(G);
             var I = fM.createVerify("RSA-SHA" + A);
@@ -1052,7 +1048,7 @@ function K05(A) {
         }
     }
 
-function D05(A) {
+    function D05(A) {
         var Q = O12(A);
         return function() {
             var G = Q.apply(null, arguments);
@@ -1060,7 +1056,7 @@ function D05(A) {
         }
     }
 
-function H05(A) {
+    function H05(A) {
         var Q = R12(A);
         return function(G, Z, I) {
             Z = w12.joseToDer(Z, "ES" + A).toString("base64");
@@ -1069,13 +1065,13 @@ function H05(A) {
         }
     }
 
-function C05() {
+    function C05() {
         return function() {
             return ""
         }
     }
 
-function E05() {
+    function E05() {
         return function(Q, B) {
             return B === ""
         }
@@ -1095,7 +1091,7 @@ function E05() {
                 es: H05,
                 none: E05
             },
-            Z = Q.match(/^(RS|PS|ES|HS)(256|384|512)$|^(none)$/i);
+            Z = Q.match(/^(RS|PS|ES|HS)(256|384|512)TextComponent|^(none)TextComponent/i);
         if (!Z) throw dT(I05, Q);
         var I = (Z[1] || Z[3]).toLowerCase(),
             Y = Z[2];
@@ -1105,34 +1101,34 @@ function E05() {
         }
     }
 });
-var Vo1 = U((ODG, P12) => {
-    var z05 = UA("buffer").Buffer;
+var Vo1 = moduleWrapper((ODG, P12) => {
+    var z05 = nodeRequire("buffer").Buffer;
     P12.exports = function(Q) {
         if (typeof Q === "string") return Q;
         if (typeof Q === "number" || z05.isBuffer(Q)) return Q.toString();
         return JSON.stringify(Q)
     }
 });
-var x12 = U((RDG, y12) => {
+var x12 = moduleWrapper((RDG, y12) => {
     var U05 = Gk().Buffer,
         j12 = Yo1(),
         $05 = Fo1(),
-        w05 = UA("stream"),
+        w05 = nodeRequire("stream"),
         S12 = Vo1(),
-        Ko1 = UA("util");
+        Ko1 = nodeRequire("util");
 
-function _12(A, Q) {
+    function _12(A, Q) {
         return U05.from(A, Q).toString("base64").replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_")
     }
 
-function q05(A, Q, B) {
+    function q05(A, Q, B) {
         B = B || "utf8";
         var G = _12(S12(A), "binary"),
             Z = _12(S12(Q), B);
         return Ko1.format("%s.%s", G, Z)
     }
 
-function k12(A) {
+    function k12(A) {
         var {
             header: Q,
             payload: B
@@ -1140,7 +1136,7 @@ function k12(A) {
         return Ko1.format("%s.%s", Y, J)
     }
 
-function w01(A) {
+    function w01(A) {
         var Q = A.secret || A.privateKey || A.key,
             B = new j12(Q);
         this.readable = !0, this.header = A.header, this.encoding = A.encoding, this.secret = this.privateKey = this.key = B, this.payload = new j12(A.payload), this.secret.once("close", function() {
@@ -1166,20 +1162,20 @@ function w01(A) {
     w01.sign = k12;
     y12.exports = w01
 });
-var p12 = U((TDG, c12) => {
+var p12 = moduleWrapper((TDG, c12) => {
     var b12 = Gk().Buffer,
         v12 = Yo1(),
         N05 = Fo1(),
-        L05 = UA("stream"),
+        L05 = nodeRequire("stream"),
         f12 = Vo1(),
-        M05 = UA("util"),
-        O05 = /^[a-zA-Z0-9\-_]+?\.[a-zA-Z0-9\-_]+?\.([a-zA-Z0-9\-_]+)?$/;
+        M05 = nodeRequire("util"),
+        O05 = /^[a-zA-Z0-9\-_]+?\.[a-zA-Z0-9\-_]+?\.([a-zA-Z0-9\-_]+)?TextComponent/;
 
-function R05(A) {
+    function R05(A) {
         return Object.prototype.toString.call(A) === "[object Object]"
     }
 
-function T05(A) {
+    function T05(A) {
         if (R05(A)) return A;
         try {
             return JSON.parse(A)
@@ -1188,30 +1184,30 @@ function T05(A) {
         }
     }
 
-function h12(A) {
+    function h12(A) {
         var Q = A.split(".", 1)[0];
         return T05(b12.from(Q, "base64").toString("binary"))
     }
 
-function P05(A) {
+    function P05(A) {
         return A.split(".", 2).join(".")
     }
 
-function g12(A) {
+    function g12(A) {
         return A.split(".")[2]
     }
 
-function j05(A, Q) {
+    function j05(A, Q) {
         Q = Q || "utf8";
         var B = A.split(".")[1];
         return b12.from(B, "base64").toString(Q)
     }
 
-function u12(A) {
+    function u12(A) {
         return O05.test(A) && !!h12(A)
     }
 
-function m12(A, Q, B) {
+    function m12(A, Q, B) {
         if (!Q) {
             var G = Error("Missing algorithm parameter for jws.verify");
             throw G.code = "MISSING_ALGORITHM", G
@@ -1223,7 +1219,7 @@ function m12(A, Q, B) {
         return Y.verify(I, Z, B)
     }
 
-function d12(A, Q) {
+    function d12(A, Q) {
         if (Q = Q || {}, A = f12(A), !u12(A)) return null;
         var B = h12(A);
         if (!B) return null;
@@ -1236,7 +1232,7 @@ function d12(A, Q) {
         }
     }
 
-function WIA(A) {
+    function WIA(A) {
         A = A || {};
         var Q = A.secret || A.publicKey || A.key,
             B = new v12(Q);
@@ -1261,7 +1257,7 @@ function WIA(A) {
     WIA.verify = m12;
     c12.exports = WIA
 });
-var N01 = U((_05) => {
+var N01 = moduleWrapper((_05) => {
     var l12 = x12(),
         q01 = p12(),
         S05 = ["HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "PS256", "PS384", "PS512", "ES256", "ES384", "ES512"];
@@ -1277,7 +1273,7 @@ var N01 = U((_05) => {
         return new q01(Q)
     }
 });
-var Do1 = U((jDG, i12) => {
+var Do1 = moduleWrapper((jDG, i12) => {
     var g05 = N01();
     i12.exports = function(A, Q) {
         Q = Q || {};
@@ -1296,7 +1292,7 @@ var Do1 = U((jDG, i12) => {
         return G
     }
 });
-var tNA = U((SDG, n12) => {
+var tNA = moduleWrapper((SDG, n12) => {
     var L01 = function(A, Q) {
         if (Error.call(this, A), Error.captureStackTrace) Error.captureStackTrace(this, this.constructor);
         if (this.name = "JsonWebTokenError", this.message = A, Q) this.inner = Q
@@ -1305,7 +1301,7 @@ var tNA = U((SDG, n12) => {
     L01.prototype.constructor = L01;
     n12.exports = L01
 });
-var Ho1 = U((_DG, s12) => {
+var Ho1 = moduleWrapper((_DG, s12) => {
     var a12 = tNA(),
         M01 = function(A, Q) {
             a12.call(this, A), this.name = "NotBeforeError", this.date = Q
@@ -1314,7 +1310,7 @@ var Ho1 = U((_DG, s12) => {
     M01.prototype.constructor = M01;
     s12.exports = M01
 });
-var Co1 = U((kDG, o12) => {
+var Co1 = moduleWrapper((kDG, o12) => {
     var r12 = tNA(),
         O01 = function(A, Q) {
             r12.call(this, A), this.name = "TokenExpiredError", this.expiredAt = Q
@@ -1323,7 +1319,7 @@ var Co1 = U((kDG, o12) => {
     O01.prototype.constructor = O01;
     o12.exports = O01
 });
-var Eo1 = U((yDG, t12) => {
+var Eo1 = moduleWrapper((yDG, t12) => {
     var u05 = aX1();
     t12.exports = function(A, Q) {
         var B = Q || Math.floor(Date.now() / 1000);
@@ -1335,15 +1331,15 @@ var Eo1 = U((yDG, t12) => {
         else return
     }
 });
-var A02 = U((xDG, e12) => {
+var A02 = moduleWrapper((xDG, e12) => {
     var m05 = WE();
     e12.exports = m05.satisfies(process.version, ">=15.7.0")
 });
-var B02 = U((vDG, Q02) => {
+var B02 = moduleWrapper((vDG, Q02) => {
     var d05 = WE();
     Q02.exports = d05.satisfies(process.version, ">=16.9.0")
 });
-var zo1 = U((bDG, G02) => {
+var zo1 = moduleWrapper((bDG, G02) => {
     var c05 = A02(),
         p05 = B02(),
         l05 = {
@@ -1361,13 +1357,13 @@ var zo1 = U((bDG, G02) => {
         let B = Q.asymmetricKeyType;
         if (!B) return;
         let G = l05[B];
-        if (!G) throw Error(`Unknown key type "${B}".`);
-        if (!G.includes(A)) throw Error(`"alg" parameter for "${B}" key type must be one of: ${G.join(", ")}.`);
+        if (!G) throw Error(`Unknown key type "TextComponent{B}".`);
+        if (!G.includes(A)) throw Error(`"alg" parameter for "TextComponent{B}" key type must be one of: TextComponent{G.join(", ")}.`);
         if (c05) switch (B) {
             case "ec":
                 let Z = Q.asymmetricKeyDetails.namedCurve,
                     I = i05[A];
-                if (Z !== I) throw Error(`"alg" parameter "${A}" requires curve "${I}".`);
+                if (Z !== I) throw Error(`"alg" parameter "TextComponent{A}" requires curve "TextComponent{I}".`);
                 break;
             case "rsa-pss":
                 if (p05) {
@@ -1377,18 +1373,18 @@ var zo1 = U((bDG, G02) => {
                             mgf1HashAlgorithm: W,
                             saltLength: X
                         } = Q.asymmetricKeyDetails;
-                    if (J !== `sha${Y}` || W !== J) throw Error(`Invalid key for this operation, its RSA-PSS parameters do not meet the requirements of "alg" ${A}.`);
-                    if (X !== void 0 && X > Y >> 3) throw Error(`Invalid key for this operation, its RSA-PSS parameter saltLength does not meet the requirements of "alg" ${A}.`)
+                    if (J !== `sha${Y}` || W !== J) throw Error(`Invalid key for this operation, its RSA-PSS parameters do not meet the requirements of "alg" TextComponent{A}.`);
+                    if (X !== void 0 && X > Y >> 3) throw Error(`Invalid key for this operation, its RSA-PSS parameter saltLength does not meet the requirements of "alg" TextComponent{A}.`)
                 }
                 break
         }
     }
 });
-var Uo1 = U((fDG, Z02) => {
+var Uo1 = moduleWrapper((fDG, Z02) => {
     var n05 = WE();
     Z02.exports = n05.satisfies(process.version, "^6.12.0 || >=8.0.0")
 });
-var J02 = U((hDG, Y02) => {
+var J02 = moduleWrapper((hDG, Y02) => {
     var fZ = tNA(),
         a05 = Ho1(),
         I02 = Co1(),
@@ -1401,7 +1397,7 @@ var J02 = U((hDG, Y02) => {
             KeyObject: AQ5,
             createSecretKey: QQ5,
             createPublicKey: BQ5
-        } = UA("crypto"),
+        } = nodeRequire("crypto"),
         $o1 = ["RS256", "RS384", "RS512"],
         GQ5 = ["ES256", "ES384", "ES512"],
         wo1 = ["RS256", "RS384", "RS512"],
@@ -1463,8 +1459,8 @@ var J02 = U((hDG, Y02) => {
             else if (V.asymmetricKeyType === "ec") B.algorithms = GQ5;
             else B.algorithms = $o1;
             if (B.algorithms.indexOf(J.header.alg) === -1) return Z(new fZ("invalid algorithm"));
-            if (W.alg.startsWith("HS") && V.type !== "secret") return Z(new fZ(`secretOrPublicKey must be a symmetric key when using ${W.alg}`));
-            else if (/^(?:RS|PS|ES)/.test(W.alg) && V.type !== "public") return Z(new fZ(`secretOrPublicKey must be an asymmetric key when using ${W.alg}`));
+            if (W.alg.startsWith("HS") && V.type !== "secret") return Z(new fZ(`secretOrPublicKey must be a symmetric key when using TextComponent{W.alg}`));
+            else if (/^(?:RS|PS|ES)/.test(W.alg) && V.type !== "public") return Z(new fZ(`secretOrPublicKey must be an asymmetric key when using TextComponent{W.alg}`));
             if (!B.allowInvalidAsymmetricKeyTypes) try {
                 o05(W.alg, V)
             } catch (C) {

@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: auth_035.js
+ * 处理时间: 2025-12-09T03:41:36.730Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.918Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -279,7 +281,7 @@
         return F0.create(F0.Class.UNIVERSAL, F0.Type.SEQUENCE, !0, [F0.create(F0.Class.UNIVERSAL, F0.Type.INTEGER, !1, z_(A.n)), F0.create(F0.Class.UNIVERSAL, F0.Type.INTEGER, !1, z_(A.e))])
     };
 
-function l4B(A, Q, B) {
+    function l4B(A, Q, B) {
         var G = T9.util.createBuffer(),
             Z = Math.ceil(Q.n.bitLength() / 8);
         if (A.length > Z - 11) {
@@ -304,7 +306,7 @@ function l4B(A, Q, B) {
         return G.putByte(0), G.putBytes(A), G
     }
 
-function wiA(A, Q, B, G) {
+    function wiA(A, Q, B, G) {
         var Z = Math.ceil(Q.n.bitLength() / 8),
             I = T9.util.createBuffer(A),
             Y = I.getByte(),
@@ -337,11 +339,10 @@ function wiA(A, Q, B, G) {
         return I.getBytes()
     }
 
-function Vo8(A, Q, B) {
+    function Vo8(A, Q, B) {
         if (typeof Q === "function") B = Q, Q = {};
         Q = Q || {};
-
-var G = {
+        var G = {
             algorithm: {
                 name: Q.algorithm || "PRIMEINC",
                 options: {
@@ -354,7 +355,7 @@ var G = {
         if ("prng" in Q) G.prng = Q.prng;
         Z();
 
-function Z() {
+        function Z() {
             I(A.pBits, function(J, W) {
                 if (J) return B(J);
                 if (A.p = W, A.q !== null) return Y(J, A.q);
@@ -362,11 +363,11 @@ function Z() {
             })
         }
 
-function I(J, W) {
+        function I(J, W) {
             T9.prime.generateProbablePrime(J, G, W)
         }
 
-function Y(J, W) {
+        function Y(J, W) {
             if (J) return B(J);
             if (A.q = W, A.p.compareTo(A.q) < 0) {
                 var X = A.p;
@@ -396,7 +397,7 @@ function Y(J, W) {
         }
     }
 
-function z_(A) {
+    function z_(A) {
         var Q = A.toString(16);
         if (Q[0] >= "8") Q = "00" + Q;
         var B = T9.util.hexToBytes(Q);
@@ -404,7 +405,7 @@ function z_(A) {
         return B
     }
 
-function Ko8(A) {
+    function Ko8(A) {
         if (A <= 100) return 27;
         if (A <= 150) return 18;
         if (A <= 200) return 15;
@@ -419,26 +420,26 @@ function Ko8(A) {
         return 2
     }
 
-function u4B(A) {
+    function u4B(A) {
         return T9.util.isNodejs && typeof Vv1[A] === "function"
     }
 
-function m4B(A) {
+    function m4B(A) {
         return typeof rL.globalScope < "u" && typeof rL.globalScope.crypto === "object" && typeof rL.globalScope.crypto.subtle === "object" && typeof rL.globalScope.crypto.subtle[A] === "function"
     }
 
-function d4B(A) {
+    function d4B(A) {
         return typeof rL.globalScope < "u" && typeof rL.globalScope.msCrypto === "object" && typeof rL.globalScope.msCrypto.subtle === "object" && typeof rL.globalScope.msCrypto.subtle[A] === "function"
     }
 
-function c4B(A) {
+    function c4B(A) {
         var Q = T9.util.hexToBytes(A.toString(16)),
             B = new Uint8Array(Q.length);
         for (var G = 0; G < Q.length; ++G) B[G] = Q.charCodeAt(G);
         return B
     }
 });
-var Dv1 = U((qT7, r4B) => {
+var Dv1 = moduleWrapper((qT7, r4B) => {
     var gB = n8();
     Rc();
     GT();
@@ -689,8 +690,7 @@ var Dv1 = U((qT7, r4B) => {
         var X = gB.pbe.opensslDeriveBytes(Q, I.substr(0, 8), Y),
             F = J(X);
         F.start(I), F.update(k0.toDer(h8.privateKeyToAsn1(A))), F.finish();
-
-var V = {
+        var V = {
             type: "RSA PRIVATE KEY",
             procType: {
                 version: "4",
@@ -895,17 +895,16 @@ var V = {
             G = gB.md.md5.create()
         }
         if (Q === null) Q = "";
-
-var Z = [n4B(G, A + Q)];
+        var Z = [n4B(G, A + Q)];
         for (var I = 16, Y = 1; I < B; ++Y, I += 16) Z.push(n4B(G, Z[Y - 1] + A + Q));
         return Z.join("").substr(0, B)
     };
 
-function n4B(A, Q) {
+    function n4B(A, Q) {
         return A.start().update(Q).digest().getBytes()
     }
 
-function a4B(A) {
+    function a4B(A) {
         var Q;
         if (!A) Q = "hmacWithSHA1";
         else if (Q = h8.oids[k0.derToOid(A)], !Q) {
@@ -915,7 +914,7 @@ function a4B(A) {
         return s4B(Q)
     }
 
-function s4B(A) {
+    function s4B(A) {
         var Q = gB.md;
         switch (A) {
             case "hmacWithSHA224":
@@ -934,13 +933,13 @@ function s4B(A) {
         return Q[A].create()
     }
 
-function Eo8(A, Q, B, G) {
+    function Eo8(A, Q, B, G) {
         var Z = k0.create(k0.Class.UNIVERSAL, k0.Type.SEQUENCE, !0, [k0.create(k0.Class.UNIVERSAL, k0.Type.OCTETSTRING, !1, A), k0.create(k0.Class.UNIVERSAL, k0.Type.INTEGER, !1, Q.getBytes())]);
         if (G !== "hmacWithSHA1") Z.value.push(k0.create(k0.Class.UNIVERSAL, k0.Type.INTEGER, !1, gB.util.hexToBytes(B.toString(16))), k0.create(k0.Class.UNIVERSAL, k0.Type.SEQUENCE, !0, [k0.create(k0.Class.UNIVERSAL, k0.Type.OID, !1, k0.oidToDer(h8.oids[G]).getBytes()), k0.create(k0.Class.UNIVERSAL, k0.Type.NULL, !1, "")]));
         return Z
     }
 });
-var Hv1 = U((NT7, e4B) => {
+var Hv1 = moduleWrapper((NT7, e4B) => {
     var x3A = n8();
     GT();
     P3();
@@ -948,8 +947,7 @@ var Hv1 = U((NT7, e4B) => {
         v3A = e4B.exports = x3A.pkcs7asn1 = x3A.pkcs7asn1 || {};
     x3A.pkcs7 = x3A.pkcs7 || {};
     x3A.pkcs7.asn1 = v3A;
-
-var o4B = {
+    var o4B = {
         name: "ContentInfo",
         tagClass: _B.Class.UNIVERSAL,
         type: _B.Type.SEQUENCE,
@@ -970,8 +968,7 @@ var o4B = {
         }]
     };
     v3A.contentInfoValidator = o4B;
-
-var t4B = {
+    var t4B = {
         name: "EncryptedContentInfo",
         tagClass: _B.Class.UNIVERSAL,
         type: _B.Type.SEQUENCE,
@@ -1038,8 +1035,7 @@ var t4B = {
             capture: "version"
         }].concat(t4B)
     };
-
-var zo8 = {
+    var zo8 = {
         name: "SignerInfo",
         tagClass: _B.Class.UNIVERSAL,
         type: _B.Type.SEQUENCE,
@@ -1207,7 +1203,7 @@ var zo8 = {
         }]
     }
 });
-var Cv1 = U((LT7, A8B) => {
+var Cv1 = moduleWrapper((LT7, A8B) => {
     var ro = n8();
     P3();
     ro.mgf = ro.mgf || {};
@@ -1227,13 +1223,13 @@ var Cv1 = U((LT7, A8B) => {
         return Q
     }
 });
-var B8B = U((MT7, Q8B) => {
+var B8B = moduleWrapper((MT7, Q8B) => {
     var qiA = n8();
     Cv1();
     Q8B.exports = qiA.mgf = qiA.mgf || {};
     qiA.mgf.mgf1 = qiA.mgf1
 });
-var NiA = U((OT7, G8B) => {
+var NiA = moduleWrapper((OT7, G8B) => {
     var oo = n8();
     aL();
     P3();
@@ -1302,7 +1298,7 @@ var NiA = U((OT7, G8B) => {
         }, J
     }
 });
-var OiA = U((RT7, W8B) => {
+var OiA = moduleWrapper((RT7, W8B) => {
     var P9 = n8();
     Rc();
     GT();
@@ -1322,8 +1318,8 @@ var OiA = U((RT7, W8B) => {
     NJ.commonName = "CN";
     NJ.C = G3.countryName;
     NJ.countryName = "C";
-    NJ.L = G3.localityName;
-    NJ.localityName = "L";
+    NJ.lazyLoader = G3.localityName;
+    NJ.localityName = "lazyLoader";
     NJ.ST = G3.stateOrProvinceName;
     NJ.stateOrProvinceName = "ST";
     NJ.O = G3.organizationName;

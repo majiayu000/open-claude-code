@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: git_033.js
+ * 处理时间: 2025-12-09T03:41:37.647Z
+ * 变量映射: 1 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.992Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -17,7 +20,7 @@
  * Original file: cli.js
  */
 
-var sa2 = U((aa2) => {
+var sa2 = moduleWrapper((aa2) => {
     var {
         _optionalChain: YXA
     } = l0();
@@ -27,8 +30,7 @@ var sa2 = U((aa2) => {
     var JXA = l0(),
         pI0 = U$(),
         HW3 = dn();
-
-class zG1 {
+    class zG1 {
         static __initStatic() {
             this.id = "Postgres"
         }
@@ -89,7 +91,7 @@ class zG1 {
     zG1.__initStatic();
     aa2.Postgres = zG1
 });
-var oa2 = U((ra2) => {
+var oa2 = moduleWrapper((ra2) => {
     var {
         _optionalChain: EW3
     } = l0();
@@ -99,8 +101,7 @@ var oa2 = U((ra2) => {
     var XPA = l0(),
         lI0 = U$(),
         zW3 = dn();
-
-class UG1 {
+    class UG1 {
         static __initStatic() {
             this.id = "Mysql"
         }
@@ -132,7 +133,7 @@ class UG1 {
                 lI0.DEBUG_BUILD && XPA.logger.error("Mysql Integration was unable to instrument `mysql` config.")
             }
 
-function Z() {
+            function Z() {
                 if (!G) return {};
                 return {
                     "server.address": G.host,
@@ -141,7 +142,7 @@ function Z() {
                 }
             }
 
-function I(Y) {
+            function I(Y) {
                 if (!Y) return;
                 let J = Z();
                 Object.keys(J).forEach((W) => {
@@ -176,7 +177,7 @@ function I(Y) {
     UG1.__initStatic();
     ra2.Mysql = UG1
 });
-var As2 = U((ea2) => {
+var As2 = moduleWrapper((ea2) => {
     var {
         _optionalChain: cn
     } = l0();
@@ -211,7 +212,7 @@ var As2 = U((ea2) => {
             updateOne: ["filter", "update"]
         };
 
-function NW3(A) {
+    function NW3(A) {
         return A && typeof A === "object" && A.once && typeof A.once === "function"
     }
     class $G1 {
@@ -233,7 +234,7 @@ function NW3(A) {
             let B = this.loadDependency();
             if (!B) {
                 let G = this._useMongoose ? "mongoose" : "mongodb";
-                ta2.DEBUG_BUILD && FPA.logger.error(`Mongo Integration was unable to require \`${G}\` package.`);
+                ta2.DEBUG_BUILD && FPA.logger.error(`Mongo Integration was unable to require \`TextComponent{G}\` package.`);
                 return
             }
             this._instrumentOperations(B.Collection, this._operations, Q)
@@ -298,7 +299,7 @@ function NW3(A) {
                     let [W, X] = B;
                     Z[Y[0]] = typeof W === "string" ? W : W.name || "<anonymous>", Z[Y[1]] = typeof X === "string" ? X : X.name || "<anonymous>"
                 } else
-                    for (let W = 0; W < Y.length; W++) Z[`db.mongodb.${Y[W]}`] = JSON.stringify(B[W])
+                    for (let W = 0; W < Y.length; W++) Z[`db.mongodb.TextComponent{Y[W]}`] = JSON.stringify(B[W])
             } catch (W) {}
             return I
         }
@@ -306,7 +307,7 @@ function NW3(A) {
     $G1.__initStatic();
     ea2.Mongo = $G1
 });
-var Gs2 = U((Bs2) => {
+var Gs2 = moduleWrapper((Bs2) => {
     Object.defineProperty(Bs2, "__esModule", {
         value: !0
     });
@@ -315,11 +316,10 @@ var Gs2 = U((Bs2) => {
         MW3 = U$(),
         OW3 = dn();
 
-function RW3(A) {
+    function RW3(A) {
         return !!A && !!A.$use
     }
-
-class wG1 {
+    class wG1 {
         static __initStatic() {
             this.id = "Prisma"
         }
@@ -345,7 +345,7 @@ class wG1 {
                         model: I
                     } = B;
                     return iI0.startSpan({
-                        name: I ? `${I} ${Z}` : Z,
+                        name: I ? `TextComponent{I} TextComponent{Z}` : Z,
                         onlyIfParent: !0,
                         op: "db.prisma",
                         attributes: {
@@ -364,7 +364,7 @@ class wG1 {
     wG1.__initStatic();
     Bs2.Prisma = wG1
 });
-var Ys2 = U((Is2) => {
+var Ys2 = moduleWrapper((Is2) => {
     var {
         _optionalChain: WXA
     } = l0();
@@ -374,8 +374,7 @@ var Ys2 = U((Is2) => {
     var VPA = l0(),
         Zs2 = U$(),
         PW3 = dn();
-
-class qG1 {
+    class qG1 {
         static __initStatic() {
             this.id = "GraphQL"
         }
@@ -417,7 +416,7 @@ class qG1 {
     qG1.__initStatic();
     Is2.GraphQL = qG1
 });
-var Xs2 = U((Ws2) => {
+var Xs2 = moduleWrapper((Ws2) => {
     var {
         _optionalChain: nI0
     } = l0();
@@ -427,8 +426,7 @@ var Xs2 = U((Ws2) => {
     var zC = l0(),
         NG1 = U$(),
         SW3 = dn();
-
-class LG1 {
+    class LG1 {
         static __initStatic() {
             this.id = "Apollo"
         }
@@ -488,7 +486,7 @@ class LG1 {
     }
     LG1.__initStatic();
 
-function Js2(A, Q) {
+    function Js2(A, Q) {
         return A.map((B) => {
             return Object.keys(B).forEach((G) => {
                 Object.keys(B[G]).forEach((Z) => {
@@ -499,12 +497,12 @@ function Js2(A, Q) {
         })
     }
 
-function _W3(A, Q, B, G) {
+    function _W3(A, Q, B, G) {
         zC.fill(A[Q], B, function(Z) {
             return function(...I) {
                 let J = G().getScope().getSpan(),
                     W = nI0([J, "optionalAccess", (F) => F.startChild, "call", (F) => F({
-                        description: `${Q}.${B}`,
+                        description: `TextComponent{Q}.TextComponent{B}`,
                         op: "graphql.resolve",
                         origin: "auto.graphql.apollo"
                     })]),
@@ -518,7 +516,7 @@ function _W3(A, Q, B, G) {
     }
     Ws2.Apollo = LG1
 });
-var Vs2 = U((Fs2, pn) => {
+var Vs2 = moduleWrapper((Fs2, pn) => {
     Object.defineProperty(Fs2, "__esModule", {
         value: !0
     });
@@ -544,7 +542,8 @@ var Vs2 = U((Fs2, pn) => {
         }];
     Fs2.lazyLoadedNodePerformanceMonitoringIntegrations = yW3
 });
-var gq = U((Ks2) => {
+/* MODEL_OPUS = MODEL_OPUS = "claude-opus-4-5" */
+var MODEL_OPUS = moduleWrapper((Ks2) => {
     Object.defineProperty(Ks2, "__esModule", {
         value: !0
     });
@@ -552,16 +551,16 @@ var gq = U((Ks2) => {
         bW3 = vW3.GLOBAL_OBJ;
     Ks2.WINDOW = bW3
 });
-var sI0 = U((Es2) => {
+var sI0 = moduleWrapper((Es2) => {
     Object.defineProperty(Es2, "__esModule", {
         value: !0
     });
     var Ds2 = P4(),
         Hs2 = l0(),
         Cs2 = U$(),
-        aI0 = gq();
+        aI0 = MODEL_OPUS();
 
-function hW3() {
+    function hW3() {
         if (aI0.WINDOW.document) aI0.WINDOW.document.addEventListener("visibilitychange", () => {
             let A = Ds2.getActiveTransaction();
             if (aI0.WINDOW.document.hidden && A) {
@@ -569,7 +568,7 @@ function hW3() {
                     op: B,
                     status: G
                 } = Ds2.spanToJSON(A);
-                if (Cs2.DEBUG_BUILD && Hs2.logger.log(`[Tracing] Transaction: cancelled -> since tab moved to the background, op: ${B}`), !G) A.setStatus("cancelled");
+                if (Cs2.DEBUG_BUILD && Hs2.logger.log(`[Tracing] Transaction: cancelled -> since tab moved to the background, op: TextComponent{B}`), !G) A.setStatus("cancelled");
                 A.setTag("visibilitychange", "document.hidden"), A.end()
             }
         });
@@ -577,7 +576,7 @@ function hW3() {
     }
     Es2.registerBackgroundTabDetection = hW3
 });
-var XXA = U((zs2) => {
+var XXA = moduleWrapper((zs2) => {
     Object.defineProperty(zs2, "__esModule", {
         value: !0
     });
@@ -593,20 +592,20 @@ var XXA = U((zs2) => {
     };
     zs2.bindReporter = uW3
 });
-var $s2 = U((Us2) => {
+var $s2 = moduleWrapper((Us2) => {
     Object.defineProperty(Us2, "__esModule", {
         value: !0
     });
     var dW3 = () => {
-        return `v3-${Date.now()}-${Math.floor(Math.random()*8999999999999)+1000000000000}`
+        return `v3-TextComponent{Date.now()}-TextComponent{Math.floor(Math.random()*8999999999999)+1000000000000}`
     };
     Us2.generateUniqueID = dW3
 });
-var DPA = U((ws2) => {
+var DPA = moduleWrapper((ws2) => {
     Object.defineProperty(ws2, "__esModule", {
         value: !0
     });
-    var KPA = gq(),
+    var KPA = MODEL_OPUS(),
         pW3 = () => {
             let A = KPA.WINDOW.performance.timing,
                 Q = KPA.WINDOW.performance.navigation.type,
@@ -625,7 +624,7 @@ var DPA = U((ws2) => {
         };
     ws2.getNavigationEntry = lW3
 });
-var MG1 = U((qs2) => {
+var MG1 = moduleWrapper((qs2) => {
     Object.defineProperty(qs2, "__esModule", {
         value: !0
     });
@@ -636,11 +635,11 @@ var MG1 = U((qs2) => {
         };
     qs2.getActivationStart = aW3
 });
-var FXA = U((Ls2) => {
+var FXA = moduleWrapper((Ls2) => {
     Object.defineProperty(Ls2, "__esModule", {
         value: !0
     });
-    var Ns2 = gq(),
+    var Ns2 = MODEL_OPUS(),
         rW3 = $s2(),
         oW3 = MG1(),
         tW3 = DPA(),
@@ -662,7 +661,7 @@ var FXA = U((Ls2) => {
         };
     Ls2.initMetric = eW3
 });
-var i0A = U((Ms2) => {
+var i0A = moduleWrapper((Ms2) => {
     Object.defineProperty(Ms2, "__esModule", {
         value: !0
     });
@@ -682,11 +681,11 @@ var i0A = U((Ms2) => {
     };
     Ms2.observe = QX3
 });
-var VXA = U((Rs2) => {
+var VXA = moduleWrapper((Rs2) => {
     Object.defineProperty(Rs2, "__esModule", {
         value: !0
     });
-    var Os2 = gq(),
+    var Os2 = MODEL_OPUS(),
         GX3 = (A, Q) => {
             let B = (G) => {
                 if (G.type === "pagehide" || Os2.WINDOW.document.visibilityState === "hidden") {
@@ -697,7 +696,7 @@ var VXA = U((Rs2) => {
         };
     Rs2.onHidden = GX3
 });
-var Ps2 = U((Ts2) => {
+var Ps2 = moduleWrapper((Ts2) => {
     Object.defineProperty(Ts2, "__esModule", {
         value: !0
     });
@@ -734,11 +733,11 @@ var Ps2 = U((Ts2) => {
         };
     Ts2.onCLS = XX3
 });
-var TG1 = U((js2) => {
+var TG1 = moduleWrapper((js2) => {
     Object.defineProperty(js2, "__esModule", {
         value: !0
     });
-    var OG1 = gq(),
+    var OG1 = MODEL_OPUS(),
         VX3 = VXA(),
         RG1 = -1,
         KX3 = () => {
@@ -761,7 +760,7 @@ var TG1 = U((js2) => {
         };
     js2.getVisibilityWatcher = HX3
 });
-var _s2 = U((Ss2) => {
+var _s2 = moduleWrapper((Ss2) => {
     Object.defineProperty(Ss2, "__esModule", {
         value: !0
     });
@@ -786,7 +785,7 @@ var _s2 = U((Ss2) => {
         };
     Ss2.onFID = qX3
 });
-var xs2 = U((ys2) => {
+var xs2 = moduleWrapper((ys2) => {
     Object.defineProperty(ys2, "__esModule", {
         value: !0
     });
@@ -813,7 +812,7 @@ var xs2 = U((ys2) => {
     ys2.getInteractionCount = OX3;
     ys2.initInteractionCountPolyfill = RX3
 });
-var us2 = U((gs2) => {
+var us2 = moduleWrapper((gs2) => {
     Object.defineProperty(gs2, "__esModule", {
         value: !0
     });
@@ -880,11 +879,11 @@ var us2 = U((gs2) => {
         };
     gs2.onINP = xX3
 });
-var cs2 = U((ds2) => {
+var cs2 = moduleWrapper((ds2) => {
     Object.defineProperty(ds2, "__esModule", {
         value: !0
     });
-    var bX3 = gq(),
+    var bX3 = MODEL_OPUS(),
         fX3 = XXA(),
         hX3 = MG1(),
         gX3 = TG1(),
@@ -919,11 +918,11 @@ var cs2 = U((ds2) => {
         };
     ds2.onLCP = cX3
 });
-var ls2 = U((ps2) => {
+var ls2 = moduleWrapper((ps2) => {
     Object.defineProperty(ps2, "__esModule", {
         value: !0
     });
-    var eI0 = gq(),
+    var eI0 = MODEL_OPUS(),
         lX3 = XXA(),
         iX3 = MG1(),
         nX3 = DPA(),
@@ -948,7 +947,7 @@ var ls2 = U((ps2) => {
         };
     ps2.onTTFB = sX3
 });
-var DXA = U((Ar2) => {
+var DXA = moduleWrapper((Ar2) => {
     Object.defineProperty(Ar2, "__esModule", {
         value: !0
     });
@@ -964,45 +963,45 @@ var DXA = U((Ar2) => {
         jG1 = {},
         ns2, as2, ss2, rs2, os2;
 
-function ZF3(A, Q = !1) {
+    function ZF3(A, Q = !1) {
         return CPA("cls", A, FF3, ns2, Q)
     }
 
-function IF3(A, Q = !1) {
+    function IF3(A, Q = !1) {
         return CPA("lcp", A, KF3, ss2, Q)
     }
 
-function YF3(A) {
+    function YF3(A) {
         return CPA("ttfb", A, DF3, rs2)
     }
 
-function JF3(A) {
+    function JF3(A) {
         return CPA("fid", A, VF3, as2)
     }
 
-function WF3(A) {
+    function WF3(A) {
         return CPA("inp", A, HF3, os2)
     }
 
-function XF3(A, Q) {
+    function XF3(A, Q) {
         if (ts2(A, Q), !jG1[A]) CF3(A), jG1[A] = !0;
         return es2(A, Q)
     }
 
-function KXA(A, Q) {
+    function KXA(A, Q) {
         let B = HPA[A];
         if (!B || !B.length) return;
         for (let G of B) try {
             G(Q)
         } catch (Z) {
             oX3.DEBUG_BUILD && is2.logger.error(`Error while triggering instrumentation handler.
-Type: ${A}
-Name: ${is2.getFunctionName(G)}
+Type: TextComponent{A}
+Name: TextComponent{is2.getFunctionName(G)}
 Error:`, Z)
         }
     }
 
-function FF3() {
+    function FF3() {
         return tX3.onCLS((A) => {
             KXA("cls", {
                 metric: A
@@ -1012,7 +1011,7 @@ function FF3() {
         })
     }
 
-function VF3() {
+    function VF3() {
         return eX3.onFID((A) => {
             KXA("fid", {
                 metric: A
@@ -1020,7 +1019,7 @@ function VF3() {
         })
     }
 
-function KF3() {
+    function KF3() {
         return QF3.onLCP((A) => {
             KXA("lcp", {
                 metric: A
@@ -1028,7 +1027,7 @@ function KF3() {
         })
     }
 
-function DF3() {
+    function DF3() {
         return GF3.onTTFB((A) => {
             KXA("ttfb", {
                 metric: A
@@ -1036,7 +1035,7 @@ function DF3() {
         })
     }
 
-function HF3() {
+    function HF3() {
         return AF3.onINP((A) => {
             KXA("inp", {
                 metric: A
@@ -1044,7 +1043,7 @@ function HF3() {
         })
     }
 
-function CPA(A, Q, B, G, Z = !1) {
+    function CPA(A, Q, B, G, Z = !1) {
         ts2(A, Q);
         let I;
         if (!jG1[A]) I = B(), jG1[A] = !0;
@@ -1054,7 +1053,7 @@ function CPA(A, Q, B, G, Z = !1) {
         return es2(A, Q, Z ? I : void 0)
     }
 
-function CF3(A) {
+    function CF3(A) {
         let Q = {};
         if (A === "event") Q.durationThreshold = 0;
         BF3.observe(A, (B) => {
@@ -1064,11 +1063,11 @@ function CF3(A) {
         }, Q)
     }
 
-function ts2(A, Q) {
+    function ts2(A, Q) {
         HPA[A] = HPA[A] || [], HPA[A].push(Q)
     }
 
-function es2(A, Q, B) {
+    function es2(A, Q, B) {
         return () => {
             if (B) B();
             let G = HPA[A];
@@ -1084,16 +1083,16 @@ function es2(A, Q, B) {
     Ar2.addPerformanceInstrumentationHandler = XF3;
     Ar2.addTtfbInstrumentationHandler = YF3
 });
-var Br2 = U((Qr2) => {
+var Br2 = moduleWrapper((Qr2) => {
     Object.defineProperty(Qr2, "__esModule", {
         value: !0
     });
 
-function NF3(A) {
+    function NF3(A) {
         return typeof A === "number" && isFinite(A)
     }
 
-function LF3(A, {
+    function LF3(A, {
         startTimestamp: Q,
         ...B
     }) {
@@ -1106,7 +1105,7 @@ function LF3(A, {
     Qr2._startChild = LF3;
     Qr2.isMeasurementValue = NF3
 });
-var GY0 = U((Jr2) => {
+var GY0 = moduleWrapper((Jr2) => {
     Object.defineProperty(Jr2, "__esModule", {
         value: !0
     });
@@ -1114,24 +1113,24 @@ var GY0 = U((Jr2) => {
         VZ = l0(),
         uq = U$(),
         n0A = DXA(),
-        Xg = gq(),
+        Xg = MODEL_OPUS(),
         RF3 = TG1(),
         Fg = Br2(),
         TF3 = DPA(),
         PF3 = 2147483647;
 
-function iF(A) {
+    function iF(A) {
         return A / 1000
     }
 
-function BY0() {
+    function BY0() {
         return Xg.WINDOW && Xg.WINDOW.addEventListener && Xg.WINDOW.performance
     }
     var Gr2 = 0,
         cJ = {},
         my, EPA;
 
-function jF3() {
+    function jF3() {
         let A = BY0();
         if (A && VZ.browserPerformanceTimeOrigin) {
             if (A.mark) Xg.WINDOW.performance.mark("sentry-tracing-init");
@@ -1148,7 +1147,7 @@ function jF3() {
         }
     }
 
-function SF3() {
+    function SF3() {
         n0A.addPerformanceInstrumentationHandler("longtask", ({
             entries: A
         }) => {
@@ -1168,7 +1167,7 @@ function SF3() {
         })
     }
 
-function _F3() {
+    function _F3() {
         n0A.addPerformanceInstrumentationHandler("event", ({
             entries: A
         }) => {
@@ -1180,7 +1179,7 @@ function _F3() {
                         Z = iF(Q.duration),
                         I = {
                             description: VZ.htmlTreeAsString(Q.target),
-                            op: `ui.interaction.${Q.name}`,
+                            op: `ui.interaction.TextComponent{Q.name}`,
                             origin: "auto.ui.browser.metrics",
                             startTimestamp: G,
                             endTimestamp: G + Z
@@ -1195,7 +1194,7 @@ function _F3() {
         })
     }
 
-function kF3(A, Q) {
+    function kF3(A, Q) {
         if (BY0() && VZ.browserPerformanceTimeOrigin) {
             let G = fF3(A, Q);
             return () => {
@@ -1207,7 +1206,7 @@ function kF3(A, Q) {
         }
     }
 
-function yF3() {
+    function yF3() {
         return n0A.addClsInstrumentationHandler(({
             metric: A
         }) => {
@@ -1220,7 +1219,7 @@ function yF3() {
         }, !0)
     }
 
-function xF3() {
+    function xF3() {
         return n0A.addLcpInstrumentationHandler(({
             metric: A
         }) => {
@@ -1233,7 +1232,7 @@ function xF3() {
         }, !0)
     }
 
-function vF3() {
+    function vF3() {
         return n0A.addFidInstrumentationHandler(({
             metric: A
         }) => {
@@ -1251,7 +1250,7 @@ function vF3() {
         })
     }
 
-function bF3() {
+    function bF3() {
         return n0A.addTtfbInstrumentationHandler(({
             metric: A
         }) => {
@@ -1262,8 +1261,7 @@ function bF3() {
             }
         })
     }
-
-var Zr2 = {
+    var Zr2 = {
         click: "click",
         pointerdown: "click",
         pointerup: "click",
@@ -1292,7 +1290,7 @@ var Zr2 = {
         input: "press"
     };
 
-function fF3(A, Q) {
+    function fF3(A, Q) {
         return n0A.addInpInstrumentationHandler(({
             metric: B
         }) => {
@@ -1315,7 +1313,7 @@ function fF3(A, Q) {
             } = X, C = D !== void 0 ? D.email || D.id || D.ip_address : void 0, E = K !== void 0 ? K.getProfileId() : void 0, z = new Wg.Span({
                 startTimestamp: J,
                 endTimestamp: J + W,
-                op: `ui.interaction.${I}`,
+                op: `ui.interaction.TextComponent{I}`,
                 name: VZ.htmlTreeAsString(G.target),
                 attributes: {
                     release: Y.release,
@@ -1351,7 +1349,7 @@ function fF3(A, Q) {
         })
     }
 
-function hF3(A) {
+    function hF3(A) {
         let Q = BY0();
         if (!Q || !Xg.WINDOW.performance.getEntries || !VZ.browserPerformanceTimeOrigin) return;
         uq.DEBUG_BUILD && VZ.logger.log("[Tracing] Adding & adjusting spans using Performance API");
@@ -1398,7 +1396,7 @@ function hF3(A) {
                     X = B + iF(W),
                     F = Math.abs((X - I) * 1000),
                     V = F - W;
-                uq.DEBUG_BUILD && VZ.logger.log(`[Measurements] Normalized ${J} from ${W} to ${F} (${V})`), cJ[J].value = F
+                uq.DEBUG_BUILD && VZ.logger.log(`[Measurements] Normalized TextComponent{J} from TextComponent{W} to TextComponent{F} (TextComponent{V})`), cJ[J].value = F
             });
             let Y = cJ["mark.fid"];
             if (Y && cJ.fid) Fg._startChild(A, {
@@ -1416,7 +1414,7 @@ function hF3(A) {
         my = void 0, EPA = void 0, cJ = {}
     }
 
-function Ir2(A, Q, B, G, Z) {
+    function Ir2(A, Q, B, G, Z) {
         let I = Z + B,
             Y = I + G;
         return Fg._startChild(A, {
@@ -1428,15 +1426,15 @@ function Ir2(A, Q, B, G, Z) {
         }), I
     }
 
-function gF3(A, Q, B) {
+    function gF3(A, Q, B) {
         ["unloadEvent", "redirect", "domContentLoadedEvent", "loadEvent", "connect"].forEach((G) => {
             SG1(A, Q, G, B)
         }), SG1(A, Q, "secureConnection", B, "TLS/SSL", "connectEnd"), SG1(A, Q, "fetch", B, "cache", "domainLookupStart"), SG1(A, Q, "domainLookup", B, "DNS"), uF3(A, Q, B)
     }
 
-function SG1(A, Q, B, G, Z, I) {
-        let Y = I ? Q[I] : Q[`${B}End`],
-            J = Q[`${B}Start`];
+    function SG1(A, Q, B, G, Z, I) {
+        let Y = I ? Q[I] : Q[`TextComponent{B}End`],
+            J = Q[`TextComponent{B}Start`];
         if (!J || !Y) return;
         Fg._startChild(A, {
             op: "browser",
@@ -1447,7 +1445,7 @@ function SG1(A, Q, B, G, Z, I) {
         })
     }
 
-function uF3(A, Q, B) {
+    function uF3(A, Q, B) {
         if (Q.responseEnd) Fg._startChild(A, {
             op: "browser",
             origin: "auto.browser.browser.metrics",
@@ -1463,7 +1461,7 @@ function uF3(A, Q, B) {
         })
     }
 
-function Yr2(A, Q, B, G, Z, I) {
+    function Yr2(A, Q, B, G, Z, I) {
         if (Q.initiatorType === "xmlhttprequest" || Q.initiatorType === "fetch") return;
         let Y = VZ.parseUrl(B),
             J = {};
@@ -1476,14 +1474,14 @@ function Yr2(A, Q, B, G, Z, I) {
         Fg._startChild(A, {
             description: B.replace(Xg.WINDOW.location.origin, ""),
             endTimestamp: X,
-            op: Q.initiatorType ? `resource.${Q.initiatorType}` : "resource.other",
+            op: Q.initiatorType ? `resource.TextComponent{Q.initiatorType}` : "resource.other",
             origin: "auto.resource.browser.metrics",
             startTimestamp: W,
             data: J
         })
     }
 
-function mF3(A) {
+    function mF3(A) {
         let Q = Xg.WINDOW.navigator;
         if (!Q) return;
         let B = Q.connection;
@@ -1495,26 +1493,26 @@ function mF3(A) {
                 unit: "millisecond"
             }
         }
-        if (Fg.isMeasurementValue(Q.deviceMemory)) A.setTag("deviceMemory", `${Q.deviceMemory} GB`);
+        if (Fg.isMeasurementValue(Q.deviceMemory)) A.setTag("deviceMemory", `TextComponent{Q.deviceMemory} GB`);
         if (Fg.isMeasurementValue(Q.hardwareConcurrency)) A.setTag("hardwareConcurrency", String(Q.hardwareConcurrency))
     }
 
-function dF3(A) {
+    function dF3(A) {
         if (my) {
             if (uq.DEBUG_BUILD && VZ.logger.log("[Measurements] Adding LCP Data"), my.element) A.setTag("lcp.element", VZ.htmlTreeAsString(my.element));
             if (my.id) A.setTag("lcp.id", my.id);
             if (my.url) A.setTag("lcp.url", my.url.trim().slice(0, 200));
             A.setTag("lcp.size", my.size)
         }
-        if (EPA && EPA.sources) uq.DEBUG_BUILD && VZ.logger.log("[Measurements] Adding CLS Data"), EPA.sources.forEach((Q, B) => A.setTag(`cls.source.${B+1}`, VZ.htmlTreeAsString(Q.node)))
+        if (EPA && EPA.sources) uq.DEBUG_BUILD && VZ.logger.log("[Measurements] Adding CLS Data"), EPA.sources.forEach((Q, B) => A.setTag(`cls.source.TextComponent{B+1}`, VZ.htmlTreeAsString(Q.node)))
     }
 
-function QY0(A, Q, B, G) {
+    function QY0(A, Q, B, G) {
         let Z = Q[B];
         if (Z != null && Z < PF3) A[G] = Z
     }
 
-function cF3(A) {
+    function cF3(A) {
         let Q = TF3.getNavigationEntry();
         if (!Q) return;
         let {

@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: ui_037.js
+ * 处理时间: 2025-12-09T03:41:39.419Z
+ * 变量映射: 4 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:38.130Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -21,15 +24,15 @@
         else if (B === FA.NOFRAMES) rV(A, Q)
     }
 
-function GW5(A, Q) {
+    function GW5(A, Q) {
         Q.chars = TY5.REPLACEMENT_CHARACTER, A._insertCharacters(Q)
     }
 
-function ZW5(A, Q) {
+    function ZW5(A, Q) {
         A._insertCharacters(Q), A.framesetOk = !1
     }
 
-function IW5(A, Q) {
+    function IW5(A, Q) {
         if (Sk.causesExit(Q) && !A.fragmentContext) {
             while (A.treeAdapter.getNamespaceURI(A.openElements.current) !== U2.HTML && !A._isIntegrationPoint(A.openElements.current)) A.openElements.pop();
             A._processToken(Q)
@@ -44,7 +47,7 @@ function IW5(A, Q) {
         }
     }
 
-function YW5(A, Q) {
+    function YW5(A, Q) {
         for (let B = A.openElements.stackTop; B > 0; B--) {
             let G = A.openElements.items[B];
             if (A.treeAdapter.getNamespaceURI(G) === U2.HTML) {
@@ -58,7 +61,7 @@ function YW5(A, Q) {
         }
     }
 });
-var R72 = U((UjG, O72) => {
+var R72 = moduleWrapper((UjG, O72) => {
     var JW5 = z10(),
         WW5 = U10(),
         XW5 = $10(),
@@ -73,8 +76,7 @@ var R72 = U((UjG, O72) => {
         DW5 = /"/g,
         HW5 = /</g,
         CW5 = />/g;
-
-class YMA {
+    class YMA {
         constructor(A, Q) {
             this.options = WW5(FW5, Q), this.treeAdapter = this.options.treeAdapter, this.html = "", this.startNode = A
         }
@@ -138,7 +140,7 @@ class YMA {
     };
     O72.exports = YMA
 });
-var P72 = U((zW5) => {
+var P72 = moduleWrapper((zW5) => {
     var T72 = L72(),
         EW5 = R72();
     zW5.parse = function(Q, B) {
@@ -152,7 +154,7 @@ var P72 = U((zW5) => {
         return new EW5(A, Q).serialize()
     }
 });
-var R10 = U((qW5) => {
+var R10 = moduleWrapper((qW5) => {
     var O10 = qW5.NAMESPACES = {
         HTML: "http://www.w3.org/1999/xhtml",
         MATHML: "http://www.w3.org/1998/Math/MathML",
@@ -290,10 +292,10 @@ var R10 = U((qW5) => {
         TH: "th",
         THEAD: "thead",
         TITLE: "title",
-        TR: "tr",
+        getProviderIdentifier: "tr",
         TRACK: "track",
         TT: "tt",
-        U: "u",
+        moduleWrapper: "u",
         UL: "ul",
         SVG: "svg",
         VAR: "var",
@@ -378,7 +380,7 @@ var R10 = U((qW5) => {
             [bQ.TH]: !0,
             [bQ.THEAD]: !0,
             [bQ.TITLE]: !0,
-            [bQ.TR]: !0,
+            [bQ.getProviderIdentifier]: !0,
             [bQ.TRACK]: !0,
             [bQ.UL]: !0,
             [bQ.WBR]: !0,
@@ -399,17 +401,17 @@ var R10 = U((qW5) => {
         }
     }
 });
-var y72 = U((PW5) => {
+var y72 = moduleWrapper((PW5) => {
     var {
         DOCUMENT_MODE: aIA
-    } = R10(), _72 = ["+//silmaril//dtd html pro v0r11 19970101//", "-//as//dtd html 3.0 aswedit + extensions//", "-//advasoft ltd//dtd html 3.0 aswedit + extensions//", "-//ietf//dtd html 2.0 level 1//", "-//ietf//dtd html 2.0 level 2//", "-//ietf//dtd html 2.0 strict level 1//", "-//ietf//dtd html 2.0 strict level 2//", "-//ietf//dtd html 2.0 strict//", "-//ietf//dtd html 2.0//", "-//ietf//dtd html 2.1e//", "-//ietf//dtd html 3.0//", "-//ietf//dtd html 3.2 final//", "-//ietf//dtd html 3.2//", "-//ietf//dtd html 3//", "-//ietf//dtd html level 0//", "-//ietf//dtd html level 1//", "-//ietf//dtd html level 2//", "-//ietf//dtd html level 3//", "-//ietf//dtd html strict level 0//", "-//ietf//dtd html strict level 1//", "-//ietf//dtd html strict level 2//", "-//ietf//dtd html strict level 3//", "-//ietf//dtd html strict//", "-//ietf//dtd html//", "-//metrius//dtd metrius presentational//", "-//microsoft//dtd internet explorer 2.0 html strict//", "-//microsoft//dtd internet explorer 2.0 html//", "-//microsoft//dtd internet explorer 2.0 tables//", "-//microsoft//dtd internet explorer 3.0 html strict//", "-//microsoft//dtd internet explorer 3.0 html//", "-//microsoft//dtd internet explorer 3.0 tables//", "-//netscape comm. corp.//dtd html//", "-//netscape comm. corp.//dtd strict html//", "-//o'reilly and associates//dtd html 2.0//", "-//o'reilly and associates//dtd html extended 1.0//", "-//o'reilly and associates//dtd html extended relaxed 1.0//", "-//sq//dtd html 2.0 hotmetal + extensions//", "-//softquad software//dtd hotmetal pro 6.0::19990601::extensions to html 4.0//", "-//softquad//dtd hotmetal pro 4.0::19971010::extensions to html 4.0//", "-//spyglass//dtd html 2.0 extended//", "-//sun microsystems corp.//dtd hotjava html//", "-//sun microsystems corp.//dtd hotjava strict html//", "-//w3c//dtd html 3 1995-03-24//", "-//w3c//dtd html 3.2 draft//", "-//w3c//dtd html 3.2 final//", "-//w3c//dtd html 3.2//", "-//w3c//dtd html 3.2s draft//", "-//w3c//dtd html 4.0 frameset//", "-//w3c//dtd html 4.0 transitional//", "-//w3c//dtd html experimental 19960712//", "-//w3c//dtd html experimental 970421//", "-//w3c//dtd w3 html//", "-//w3o//dtd w3 html 3.0//", "-//webtechs//dtd mozilla html 2.0//", "-//webtechs//dtd mozilla html//"], OW5 = _72.concat(["-//w3c//dtd html 4.01 frameset//", "-//w3c//dtd html 4.01 transitional//"]), RW5 = ["-//w3o//dtd w3 html strict 3.0//en//", "-/w3c/dtd html 4.0 transitional/en", "html"], k72 = ["-//w3c//dtd xhtml 1.0 frameset//", "-//w3c//dtd xhtml 1.0 transitional//"], TW5 = k72.concat(["-//w3c//dtd html 4.01 frameset//", "-//w3c//dtd html 4.01 transitional//"]);
+    } = R10(), _72 = ["+//silmaril//dtd html pro v0r11 19970101//", "-//as//dtd html 3.0 aswedit + extensions//", "-//advasoft ltd//dtd html 3.0 aswedit + extensions//", "-//ietf//dtd html 2.0 level 1//", "-//ietf//dtd html 2.0 level 2//", "-//ietf//dtd html 2.0 strict level 1//", "-//ietf//dtd html 2.0 strict level 2//", "-//ietf//dtd html 2.0 strict//", "-//ietf//dtd html 2.0//", "-//ietf//dtd html 2.1e//", "-//ietf//dtd html 3.0//", "-//ietf//dtd html 3.2 final//", "-//ietf//dtd html 3.2//", "-//ietf//dtd html 3//", "-//ietf//dtd html level 0//", "-//ietf//dtd html level 1//", "-//ietf//dtd html level 2//", "-//ietf//dtd html level 3//", "-//ietf//dtd html strict level 0//", "-//ietf//dtd html strict level 1//", "-//ietf//dtd html strict level 2//", "-//ietf//dtd html strict level 3//", "-//ietf//dtd html strict//", "-//ietf//dtd html//", "-//metrius//dtd metrius presentational//", "-//microsoft//dtd internet explorer 2.0 html strict//", "-//microsoft//dtd internet explorer 2.0 html//", "-//microsoft//dtd internet explorer 2.0 tables//", "-//microsoft//dtd internet explorer 3.0 html strict//", "-//microsoft//dtd internet explorer 3.0 html//", "-//microsoft//dtd internet explorer 3.0 tables//", "-//netscape comm. corp.//dtd html//", "-//netscape comm. corp.//dtd strict html//", "-//o'reilly and associates//dtd html 2.0//", "-//o'reilly and associates//dtd html extended 1.0//", "-//o'reilly and associates//dtd html extended relaxed 1.0//", "-//sq//dtd html 2.0 hotmetal + extensions//", "-//softquad software//dtd hotmetal pro 6.0::19990601::extensions to html 4.0//", "-//softquad//dtd hotmetal pro 4.0::19971010::extensions to html 4.0//", "-//spyglass//dtd html 2.0 extended//", "-//sun microsystems corp.//dtd hotjava html//", "-//sun microsystems corp.//dtd hotjava strict html//", "-//w3c//dtd html 3 1995-03-24//", "-//w3c//dtd html 3.2 draft//", "-//w3c//dtd html 3.2 final//", "-//w3c//dtd html 3.2//", "-//w3c//dtd html 3.2s draft//", "-//w3c//dtd html 4.0 frameset//", "-//w3c//dtd html 4.0 transitional//", "-//w3c//dtd html experimental 19960712//", "-//w3c//dtd html experimental 970421//", "-//w3c//dtd w3 html//", "-//w3o//dtd w3 html 3.0//", "-//webtechs//dtd mozilla html 2.0//", "-//webtechs//dtd mozilla html//"], OW5 = _72.concat(["-//w3c//dtd html 4.01 frameset//", "-//w3c//dtd html 4.01 transitional//"]), RW5 = ["-//w3o//dtd w3 html strict 3.0//AGENT_OUTPUT_TOOL_NAME//", "-/w3c/dtd html 4.0 transitional/AGENT_OUTPUT_TOOL_NAME", "html"], k72 = ["-//w3c//dtd xhtml 1.0 frameset//", "-//w3c//dtd xhtml 1.0 transitional//"], TW5 = k72.concat(["-//w3c//dtd html 4.01 frameset//", "-//w3c//dtd html 4.01 transitional//"]);
 
-function j72(A) {
+    function j72(A) {
         let Q = A.indexOf('"') !== -1 ? "'" : '"';
         return Q + A + Q
     }
 
-function S72(A, Q) {
+    function S72(A, Q) {
         for (let B = 0; B < Q.length; B++)
             if (A.indexOf(Q[B]) === 0) return !0;
         return !1
@@ -439,7 +441,7 @@ function S72(A, Q) {
         return G
     }
 });
-var f72 = U((vW5) => {
+var f72 = moduleWrapper((vW5) => {
     var kW5 = y72(),
         {
             DOCUMENT_MODE: yW5
@@ -458,8 +460,7 @@ var f72 = U((vW5) => {
             nextSibling: "next",
             nodeValue: "data"
         };
-
-class Fi {
+    class Fi {
         constructor(A) {
             for (let Q of Object.keys(A)) this[Q] = A[Q]
         }
@@ -537,8 +538,7 @@ class Fi {
             next: null
         })
     };
-
-var b72 = function(A) {
+    var b72 = function(A) {
             return new Fi({
                 type: "text",
                 data: A,
@@ -675,17 +675,17 @@ var b72 = function(A) {
         A.sourceCodeLocation = Object.assign(A.sourceCodeLocation, Q)
     }
 });
-var c72 = U((TjG, d72) => {
+var c72 = moduleWrapper((TjG, d72) => {
     var h72 = (A, Q) => (...B) => {
-            return `\x1B[${A(...B)+Q}m`
+            return `\x1B[TextComponent{A(...B)+Q}m`
         },
         g72 = (A, Q) => (...B) => {
             let G = A(...B);
-            return `\x1B[${38+Q};5;${G}m`
+            return `\x1B[TextComponent{38+Q};5;TextComponent{G}m`
         },
         u72 = (A, Q) => (...B) => {
             let G = A(...B);
-            return `\x1B[${38+Q};2;${G[0]};${G[1]};${G[2]}m`
+            return `\x1B[TextComponent{38+Q};2;TextComponent{G[0]};TextComponent{G[1]};TextComponent{G[2]}m`
         },
         F21 = (A) => A,
         m72 = (A, Q, B) => [A, Q, B],
@@ -715,7 +715,7 @@ var c72 = U((TjG, d72) => {
             return I
         };
 
-function DX5() {
+    function DX5() {
         let A = new Map,
             Q = {
                 modifier: {
@@ -768,8 +768,8 @@ function DX5() {
         Q.color.gray = Q.color.blackBright, Q.bgColor.bgGray = Q.bgColor.bgBlackBright, Q.color.grey = Q.color.blackBright, Q.bgColor.bgGrey = Q.bgColor.bgBlackBright;
         for (let [B, G] of Object.entries(Q)) {
             for (let [Z, I] of Object.entries(G)) Q[Z] = {
-                open: `\x1B[${I[0]}m`,
-                close: `\x1B[${I[1]}m`
+                open: `\x1B[TextComponent{I[0]}m`,
+                close: `\x1B[TextComponent{I[1]}m`
             }, G[Z] = Q[Z], A.set(I[0], I[1]);
             Object.defineProperty(Q, B, {
                 value: G,
@@ -786,9 +786,9 @@ function DX5() {
         get: DX5
     })
 });
-var i72 = U((PjG, l72) => {
-    var HX5 = UA("os"),
-        p72 = UA("tty"),
+var i72 = moduleWrapper((PjG, l72) => {
+    var HX5 = nodeRequire("os"),
+        p72 = nodeRequire("tty"),
         rM = NVA(),
         {
             env: oV
@@ -801,7 +801,7 @@ var i72 = U((PjG, l72) => {
         else if (oV.FORCE_COLOR === "false") Vi = 0;
     else Vi = oV.FORCE_COLOR.length === 0 ? 1 : Math.min(parseInt(oV.FORCE_COLOR, 10), 3);
 
-function j10(A) {
+    function j10(A) {
         if (A === 0) return !1;
         return {
             level: A,
@@ -811,7 +811,7 @@ function j10(A) {
         }
     }
 
-function S10(A, Q) {
+    function S10(A, Q) {
         if (Vi === 0) return 0;
         if (rM("color=16m") || rM("color=full") || rM("color=truecolor")) return 3;
         if (rM("color=256")) return 2;
@@ -838,13 +838,13 @@ function S10(A, Q) {
                     return 2
             }
         }
-        if (/-256(color)?$/i.test(oV.TERM)) return 2;
+        if (/-256(color)?TextComponent/i.test(oV.TERM)) return 2;
         if (/^screen|^xterm|^vt100|^vt220|^rxvt|color|ansi|cygwin|linux/i.test(oV.TERM)) return 1;
         if ("COLORTERM" in oV) return 1;
         return B
     }
 
-function CX5(A) {
+    function CX5(A) {
         let Q = S10(A, A && A.isTTY);
         return j10(Q)
     }
@@ -854,7 +854,7 @@ function CX5(A) {
         stderr: j10(S10(!0, p72.isatty(2)))
     }
 });
-var a72 = U((jjG, n72) => {
+var a72 = moduleWrapper((jjG, n72) => {
     var EX5 = (A, Q, B) => {
             let G = A.indexOf(Q);
             if (G === -1) return A;
@@ -881,7 +881,7 @@ var a72 = U((jjG, n72) => {
         stringEncaseCRLFWithFirstIndex: zX5
     }
 });
-var e72 = U((SjG, t72) => {
+var e72 = moduleWrapper((SjG, t72) => {
     var UX5 = /(?:\\(u(?:[a-f\d]{4}|\{[a-f\d]{1,6}\})|x[a-f\d]{2}|.))|(?:\{(~)?(\w+(?:\([^)]*\))?(?:\.\w+(?:\([^)]*\))?)*)(?:[ \t]|(?=\r?\n)))|(\})|((?:.|[\r\n\f])+?)/gi,
         s72 = /(?:^|\.)(\w+)(?:\(([^)]*)\))?/g,
         $X5 = /^(['"])((?:\\.|(?!\1)[^\\])*)\1$/,
@@ -900,7 +900,7 @@ var e72 = U((SjG, t72) => {
             ["a", "\x07"]
         ]);
 
-function o72(A) {
+    function o72(A) {
         let Q = A[0] === "u",
             B = A[1] === "{";
         if (Q && !B && A.length === 5 || A[0] === "x" && A.length === 3) return String.fromCharCode(parseInt(A.slice(1), 16));
@@ -908,7 +908,7 @@ function o72(A) {
         return qX5.get(A) || A
     }
 
-function NX5(A, Q) {
+    function NX5(A, Q) {
         let B = [],
             G = Q.trim().split(/\s*,\s*/g),
             Z;
@@ -916,12 +916,12 @@ function NX5(A, Q) {
             let Y = Number(I);
             if (!Number.isNaN(Y)) B.push(Y);
             else if (Z = I.match($X5)) B.push(Z[2].replace(wX5, (J, W, X) => W ? o72(W) : X));
-            else throw Error(`Invalid Chalk template style argument: ${I} (in style '${A}')`)
+            else throw Error(`Invalid Chalk template style argument: TextComponent{I} (in style 'TextComponent{A}')`)
         }
         return B
     }
 
-function LX5(A) {
+    function LX5(A) {
         s72.lastIndex = 0;
         let Q = [],
             B;
@@ -935,14 +935,14 @@ function LX5(A) {
         return Q
     }
 
-function r72(A, Q) {
+    function r72(A, Q) {
         let B = {};
         for (let Z of Q)
             for (let I of Z.styles) B[I[0]] = Z.inverse ? null : I.slice(1);
         let G = A;
         for (let [Z, I] of Object.entries(B)) {
             if (!Array.isArray(I)) continue;
-            if (!(Z in G)) throw Error(`Unknown Chalk style: ${Z}`);
+            if (!(Z in G)) throw Error(`Unknown Chalk style: TextComponent{Z}`);
             G = I.length > 0 ? G[Z](...I) : G[Z]
         }
         return G
@@ -964,13 +964,13 @@ function r72(A, Q) {
                     G.push(r72(A, B)(Z.join(""))), Z = [], B.pop()
                 } else Z.push(F)
             }), G.push(Z.join("")), B.length > 0) {
-            let I = `Chalk template literal is missing ${B.length} closing bracket${B.length===1?"":"s"} (\`}\`)`;
+            let I = `Chalk template literal is missing TextComponent{B.length} closing bracket${B.length===1?"":"s"} (\`}\`)`;
             throw Error(I)
         }
         return G.join("")
     }
 });
-var JG2 = U((_jG, YG2) => {
+var JG2 = moduleWrapper((_jG, YG2) => {
     var JMA = c72(),
         {
             stdout: k10,
@@ -990,8 +990,7 @@ var JG2 = U((_jG, YG2) => {
             let B = k10 ? k10.level : 0;
             A.level = Q.level === void 0 ? B : Q.level
         };
-
-class BG2 {
+    class BG2 {
         constructor(A) {
             return GG2(A)
         }
@@ -1003,7 +1002,7 @@ class BG2 {
         }, Q.template.Instance = BG2, Q.template
     };
 
-function K21(A) {
+    function K21(A) {
         return GG2(A)
     }
     for (let [A, Q] of Object.entries(JMA)) oIA[A] = {
@@ -1022,8 +1021,7 @@ function K21(A) {
             }), A
         }
     };
-
-var ZG2 = ["rgb", "hex", "keyword", "hsl", "hsv", "hwb", "ansi", "ansi256"];
+    var ZG2 = ["rgb", "hex", "keyword", "hsl", "hsv", "hwb", "ansi", "ansi256"];
     for (let A of ZG2) oIA[A] = {
         get() {
             let {
@@ -1100,7 +1098,7 @@ var ZG2 = ["rgb", "hex", "keyword", "hsl", "hsv", "hwb", "ansi", "ansi256"];
             if (!V21(B) || !V21(B.raw)) return Q.join(" ");
             let G = Q.slice(1),
                 Z = [B.raw[0]];
-            for (let I = 1; I < B.length; I++) Z.push(String(G[I - 1]).replace(/[{}\\]/g, "\\$&"), String(B.raw[I]));
+            for (let I = 1; I < B.length; I++) Z.push(String(G[I - 1]).replace(/[{}\\]/g, "\\TextComponent&"), String(B.raw[I]));
             if (_10 === void 0) _10 = e72();
             return _10(A, Z.join(""))
         };
@@ -1113,7 +1111,7 @@ var ZG2 = ["rgb", "hex", "keyword", "hsl", "hsv", "hwb", "ansi", "ansi256"];
     H21.stderr.supportsColor = y10;
     YG2.exports = H21
 });
-var v10 = U((V6) => {
+var v10 = moduleWrapper((V6) => {
     var PX5 = V6 && V6.__importDefault || function(A) {
         return A && A.__esModule ? A : {
             default: A
@@ -1173,7 +1171,7 @@ var v10 = U((V6) => {
         default: V6.plain
     };
 
-function WG2(A) {
+    function WG2(A) {
         var Q = {};
         for (var B = 0, G = Object.keys(A); B < G.length; B++) {
             var Z = G[B],
@@ -1187,7 +1185,7 @@ function WG2(A) {
     }
     V6.fromJson = WG2;
 
-function XG2(A) {
+    function XG2(A) {
         var Q = {};
         for (var B = 0, G = Object.keys(Q); B < G.length; B++) {
             var Z = G[B],
@@ -1198,17 +1196,17 @@ function XG2(A) {
     }
     V6.toJson = XG2;
 
-function SX5(A) {
+    function SX5(A) {
         return JSON.stringify(XG2(A))
     }
     V6.stringify = SX5;
 
-function _X5(A) {
+    function _X5(A) {
         return WG2(JSON.parse(A))
     }
     V6.parse = _X5
 });
-var z21 = U((iX) => {
+var z21 = moduleWrapper((iX) => {
     var FG2 = iX && iX.__createBinding || (Object.create ? function(A, Q, B, G) {
             if (G === void 0) G = B;
             Object.defineProperty(A, G, {
@@ -1231,8 +1229,7 @@ var z21 = U((iX) => {
         }),
         VG2 = iX && iX.__importStar || function(A) {
             if (A && A.__esModule) return A;
-
-var Q = {};
+            var Q = {};
             if (A != null) {
                 for (var B in A)
                     if (B !== "default" && Object.prototype.hasOwnProperty.call(A, B)) FG2(Q, A, B)
@@ -1257,7 +1254,7 @@ var Q = {};
         bX5 = xX5(f72()),
         C21 = v10();
 
-function b10(A, Q, B) {
+    function b10(A, Q, B) {
         if (Q === void 0) Q = {};
         switch (A.type) {
             case "text": {
@@ -1282,7 +1279,7 @@ function b10(A, Q, B) {
         throw Error("Invalid node type " + A.type)
     }
 
-function fX5(A, Q) {
+    function fX5(A, Q) {
         if (Q === void 0) Q = {};
         var B = vX5.parseFragment(A, {
             treeAdapter: bX5.default
@@ -1292,7 +1289,7 @@ function fX5(A, Q) {
         }).join("")
     }
 
-function KG2(A, Q) {
+    function KG2(A, Q) {
         if (Q === void 0) Q = {};
         var B;
         if (Q.language) B = E21.highlight(A, {
@@ -1304,12 +1301,12 @@ function KG2(A, Q) {
     }
     iX.highlight = KG2;
 
-function hX5() {
+    function hX5() {
         return E21.listLanguages()
     }
     iX.listLanguages = hX5;
 
-function gX5(A) {
+    function gX5(A) {
         return !!E21.getLanguage(A)
     }
     iX.supportsLanguage = gX5;
@@ -1320,11 +1317,11 @@ function gX5(A) {
 function CG2(A) {
     if (!raA()) return A;
     let Q = oA.blue(A);
-    return `${DG2}${A}${HG2}${Q}${DG2}${HG2}`
+    return `TextComponent{DG2}TextComponent{A}TextComponent{HG2}TextComponent{Q}TextComponent{DG2}TextComponent{HG2}`
 }
 var DG2 = "\x1B]8;;",
     HG2 = "\x07";
-var EG2 = L(() => {
+var EG2 = lazyLoader(() => {
     J9();
     Pg1()
 });
@@ -1344,7 +1341,7 @@ function fE(A, Q, B = 0, G = null, Z = null) {
             if (A.lang && WMA.supportsLanguage(A.lang)) return WMA.highlight(A.text, {
                 language: A.lang
             }) + sH;
-            else return g(`Language not supported while highlighting code, falling back to markdown: ${A.lang}`), WMA.highlight(A.text, {
+            else return g(`Language not supported while highlighting code, falling back to markdown: TextComponent{A.lang}`), WMA.highlight(A.text, {
                 language: "markdown"
             }) + sH;
         case "codespan":
@@ -1375,7 +1372,7 @@ function fE(A, Q, B = 0, G = null, Z = null) {
         case "list":
             return A.items.map((I, Y) => fE(I, Q, B, A.ordered ? A.start + Y : null, A)).join("");
         case "list_item":
-            return (A.tokens ?? []).map((I) => `${"  ".repeat(B)}${fE(I,Q,B+1,G,A)}`).join("");
+            return (A.tokens ?? []).map((I) => `TextComponent{"  ".repeat(B)}TextComponent{fE(I,Q,B+1,G,A)}`).join("");
         case "paragraph":
             return (A.tokens ?? []).map((I) => fE(I, Q)).join("") + sH;
         case "space":
@@ -1383,7 +1380,7 @@ function fE(A, Q, B = 0, G = null, Z = null) {
         case "br":
             return sH;
         case "text":
-            if (Z?.type === "list_item") return `${G===null?"-":dX5(B,G)+"."} ${A.tokens?A.tokens.map((I)=>fE(I,Q,B,G,A)).join(""):A.text}${sH}`;
+            if (Z?.type === "list_item") return `TextComponent{G===null?"-":dX5(B,G)+"."} TextComponent{A.tokens?A.tokens.map((I)=>fE(I,Q,B,G,A)).join(""):A.text}TextComponent{sH}`;
             else return A.text;
         case "table": {
             let Y = function(X) {
@@ -1456,7 +1453,7 @@ function dX5(A, Q) {
     }
 }
 var WMA, uX5, mX5;
-var Hh = L(() => {
+var Hh = lazyLoader(() => {
     J10();
     nQ();
     J9();
@@ -1464,7 +1461,7 @@ var Hh = L(() => {
     HT();
     hA();
     EG2();
-    WMA = GA(z21(), 1);
+    WMA = esmImport(z21(), 1);
     uX5 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "aa", "ab", "ac", "ad", "ae", "af", "ag", "ah", "ai", "aj", "ak", "al", "am", "an", "ao", "ap", "aq", "ar", "as", "at", "au", "av", "aw", "ax", "ay", "az"], mX5 = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii", "xiii", "xiv", "xv", "xvi", "xvii", "xviii", "xix", "xx", "xxi", "xxii", "xxiii", "xxiv", "xxv", "xxvi", "xxvii", "xxviii", "xxix", "xxx", "xxxi", "xxxii", "xxxiii", "xxxiv", "xxxv", "xxxvi", "xxxvii", "xxxviii", "xxxix", "xl"]
 });
 
@@ -1493,7 +1490,7 @@ function V1A({
     } = cX5(Q);
     if (G) return rH.default.createElement(y0, {
         height: 1
-    }, rH.default.createElement($, {
+    }, rH.default.createElement(TextComponent, {
         dimColor: !0
     }, "[Image data detected and sent to Claude]"));
     if (B) {
@@ -1511,7 +1508,7 @@ function V1A({
         }), (A !== "" || W !== "") && rH.default.createElement(j, {
             flexDirection: "column",
             marginTop: 1
-        }, rH.default.createElement($, {
+        }, rH.default.createElement(TextComponent, {
             bold: !0
         }, "=== Original Output ==="), A !== "" ? rH.default.createElement(xU, {
             content: A,

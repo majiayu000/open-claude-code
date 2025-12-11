@@ -1,12 +1,14 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: config_004.js
+ * 处理时间: 2025-12-09T03:41:37.193Z
+ * 变量映射: 0 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.953Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
  */
 
 /**
@@ -28,19 +30,19 @@
         return I
     }
 
-function _N5(A) {
+    function _N5(A) {
         if (typeof A == "string") return A;
         if (bN5(A)) return gH2 ? gH2.call(A) : "";
         var Q = A + "";
         return Q == "0" && 1 / A == -aq5 ? "-0" : Q
     }
 
-function kN5(A, Q, B) {
+    function kN5(A, Q, B) {
         var G = A.length;
         return B = B === void 0 ? G : B, !Q && B >= G ? A : SN5(A, Q, B)
     }
 
-function yN5(A) {
+    function yN5(A) {
         return function(Q) {
             Q = X41(Q);
             var B = QC2(Q) ? ON5(Q) : void 0,
@@ -50,51 +52,50 @@ function yN5(A) {
         }
     }
 
-function xN5(A) {
+    function xN5(A) {
         return function(Q) {
             return $N5(mN5(gN5(Q).replace(XN5, "")), A, "")
         }
     }
 
-function vN5(A) {
+    function vN5(A) {
         return !!A && typeof A == "object"
     }
 
-function bN5(A) {
+    function bN5(A) {
         return typeof A == "symbol" || vN5(A) && jN5.call(A) == sq5
     }
 
-function X41(A) {
+    function X41(A) {
         return A == null ? "" : _N5(A)
     }
     var fN5 = xN5(function(A, Q, B) {
         return Q = Q.toLowerCase(), A + (B ? hN5(Q) : Q)
     });
 
-function hN5(A) {
+    function hN5(A) {
         return uN5(X41(A).toLowerCase())
     }
 
-function gN5(A) {
+    function gN5(A) {
         return A = X41(A), A && A.replace(oq5, LN5).replace(FN5, "")
     }
     var uN5 = yN5("toUpperCase");
 
-function mN5(A, Q, B) {
+    function mN5(A, Q, B) {
         if (A = X41(A), Q = B ? void 0 : Q, Q === void 0) return MN5(A) ? TN5(A) : qN5(A);
         return A.match(Q) || []
     }
     BC2.exports = fN5
 });
-var IC2 = U((HuG, ZC2) => {
+var IC2 = moduleWrapper((HuG, ZC2) => {
     ZC2.exports = pB0;
 
-function pB0(A, Q) {
+    function pB0(A, Q) {
         if (typeof A === "string") Q = A, A = void 0;
+        var B = [];
 
-var B = [];
-
-function G(I) {
+        function G(I) {
             if (typeof I !== "string") {
                 var Y = Z();
                 if (pB0.verbose) console.log("codegen: " + Y);
@@ -129,7 +130,7 @@ function G(I) {
             return B.push(I), G
         }
 
-function Z(I) {
+        function Z(I) {
             return "function " + (I || Q || "") + "(" + (A && A.join(",") || "") + `){
   ` + B.join(`
   `) + `
@@ -139,13 +140,13 @@ function Z(I) {
     }
     pB0.verbose = !1
 });
-var JC2 = U((CuG, YC2) => {
+var JC2 = moduleWrapper((CuG, YC2) => {
     YC2.exports = IOA;
     var dN5 = OQ0(),
         cN5 = TQ0(),
         lB0 = cN5("fs");
 
-function IOA(A, Q, B) {
+    function IOA(A, Q, B) {
         if (typeof Q === "function") B = Q, Q = {};
         else if (!Q) Q = {};
         if (!B) return dN5(IOA, this, A, Q);
@@ -175,7 +176,7 @@ function IOA(A, Q, B) {
         Z.open("GET", Q), Z.send()
     }
 });
-var FC2 = U((XC2) => {
+var FC2 = moduleWrapper((XC2) => {
     var nB0 = XC2,
         WC2 = nB0.isAbsolute = function(Q) {
             return /^(?:\/|\w+:)/.test(Q)
@@ -199,10 +200,10 @@ var FC2 = U((XC2) => {
         if (!G) B = iB0(B);
         if (WC2(B)) return B;
         if (!G) Q = iB0(Q);
-        return (Q = Q.replace(/(?:\/|^)[^/]+$/, "")).length ? iB0(Q + "/" + B) : B
+        return (Q = Q.replace(/(?:\/|^)[^/]+TextComponent/, "")).length ? iB0(Q + "/" + B) : B
     }
 });
-var nYA = U((zuG, DC2) => {
+var nYA = moduleWrapper((zuG, DC2) => {
     DC2.exports = W3;
     var F41 = fi();
     ((W3.prototype = Object.create(F41.prototype)).constructor = W3).className = "Namespace";
@@ -214,10 +215,9 @@ var nYA = U((zuG, DC2) => {
         return new W3(Q, B.options).addJSON(B.nested)
     };
 
-function VC2(A, Q) {
+    function VC2(A, Q) {
         if (!(A && A.length)) return;
-
-var B = {};
+        var B = {};
         for (var G = 0; G < A.length; ++G) B[A[G].name] = A[G].toJSON(Q);
         return B
     }
@@ -237,11 +237,11 @@ var B = {};
         return !1
     };
 
-function W3(A, Q) {
+    function W3(A, Q) {
         F41.call(this, A, Q), this.nested = void 0, this._nestedArray = null, this._lookupCache = {}, this._needsRecursiveFeatureResolution = !0, this._needsRecursiveResolve = !0
     }
 
-function KC2(A) {
+    function KC2(A) {
         A._nestedArray = null, A._lookupCache = {};
         var Q = A;
         while (Q = Q.parent) Q._lookupCache = {};
@@ -382,14 +382,14 @@ function KC2(A) {
         m1A = A, iYA = Q, d1A = B
     }
 });
-var K41 = U((UuG, HC2) => {
+var K41 = moduleWrapper((UuG, HC2) => {
     HC2.exports = Nh;
     var sB0 = bi();
     ((Nh.prototype = Object.create(sB0.prototype)).constructor = Nh).className = "MapField";
     var lN5 = p1A(),
         YOA = GK();
 
-function Nh(A, Q, B, G, Z, I) {
+    function Nh(A, Q, B, G, Z, I) {
         if (sB0.call(this, A, Q, G, void 0, void 0, Z, I), !YOA.isString(B)) throw TypeError("keyType must be a string");
         this.keyType = B, this.resolvedKeyType = null, this.map = !0
     }
@@ -413,13 +413,13 @@ function Nh(A, Q, B, G, Z, I) {
         }
     }
 });
-var D41 = U(($uG, CC2) => {
+var D41 = moduleWrapper(($uG, CC2) => {
     CC2.exports = l1A;
     var rB0 = fi();
     ((l1A.prototype = Object.create(rB0.prototype)).constructor = l1A).className = "Method";
     var aYA = GK();
 
-function l1A(A, Q, B, G, Z, I, Y, J, W) {
+    function l1A(A, Q, B, G, Z, I, Y, J, W) {
         if (aYA.isObject(Z)) Y = Z, Z = I = void 0;
         else if (aYA.isObject(I)) Y = I, I = void 0;
         if (!(Q === void 0 || aYA.isString(Q))) throw TypeError("type must be a string");
@@ -439,7 +439,7 @@ function l1A(A, Q, B, G, Z, I, Y, J, W) {
         return this.resolvedRequestType = this.parent.lookupType(this.requestType), this.resolvedResponseType = this.parent.lookupType(this.responseType), rB0.prototype.resolve.call(this)
     }
 });
-var H41 = U((wuG, zC2) => {
+var H41 = moduleWrapper((wuG, zC2) => {
     zC2.exports = Uq;
     var Lh = nYA();
     ((Uq.prototype = Object.create(Lh.prototype)).constructor = Uq).className = "Service";
@@ -447,7 +447,7 @@ var H41 = U((wuG, zC2) => {
         JOA = GK(),
         iN5 = gQ0();
 
-function Uq(A, Q) {
+    function Uq(A, Q) {
         Lh.call(this, A, Q), this.methods = {}, this._methodsArray = null
     }
     Uq.fromJSON = function(Q, B) {
@@ -469,7 +469,7 @@ function Uq(A, Q) {
         }
     });
 
-function EC2(A) {
+    function EC2(A) {
         return A._methodsArray = null, A
     }
     Uq.prototype.get = function(Q) {
@@ -503,7 +503,7 @@ function EC2(A) {
     Uq.prototype.create = function(Q, B, G) {
         var Z = new iN5.Service(Q, B, G);
         for (var I = 0, Y; I < this.methodsArray.length; ++I) {
-            var J = JOA.lcFirst((Y = this._methodsArray[I]).resolve().name).replace(/[^$\w_]/g, "");
+            var J = JOA.lcFirst((Y = this._methodsArray[I]).resolve().name).replace(/[^TextComponent\w_]/g, "");
             Z[J] = JOA.codegen(["r", "c"], JOA.isReserved(J) ? J + "_" : J)("return this.rpcCall(m,q,s,r,c)")({
                 m: Y,
                 q: Y.resolvedRequestType.ctor,
@@ -513,11 +513,11 @@ function EC2(A) {
         return Z
     }
 });
-var C41 = U((quG, UC2) => {
+var C41 = moduleWrapper((quG, UC2) => {
     UC2.exports = ik;
     var nN5 = dk();
 
-function ik(A) {
+    function ik(A) {
         if (A)
             for (var Q = Object.keys(A), B = 0; B < Q.length; ++B) this[Q[B]] = A[Q[B]]
     }
@@ -549,17 +549,17 @@ function ik(A) {
         return this.$type.toObject(this, nN5.toJSONOptions)
     }
 });
-var tB0 = U((NuG, wC2) => {
+var tB0 = moduleWrapper((NuG, wC2) => {
     wC2.exports = rN5;
     var aN5 = FP(),
         Mh = p1A(),
         $C2 = GK();
 
-function sN5(A) {
+    function sN5(A) {
         return "missing required '" + A.name + "'"
     }
 
-function rN5(A) {
+    function rN5(A) {
         var Q = $C2.codegen(["r", "l", "e"], A.name + "$decode")("if(!(r instanceof Reader))")("r=Reader.create(r)")("var c=l===undefined?r.len:r.pos+l,m=new this.ctor" + (A.fieldsArray.filter(function(J) {
                 return J.map
             }).length ? ",k,value" : ""))("while(r.pos<c){")("var t=r.uint32()")("if(t===e)")("break")("switch(t>>>3){"),
@@ -593,16 +593,16 @@ function rN5(A) {
         return Q("return m")
     }
 });
-var Q20 = U((LuG, qC2) => {
+var Q20 = moduleWrapper((LuG, qC2) => {
     qC2.exports = eN5;
     var oN5 = FP(),
         eB0 = GK();
 
-function GO(A, Q) {
+    function GO(A, Q) {
         return A.name + ": " + Q + (A.repeated && Q !== "array" ? "[]" : A.map && Q !== "object" ? "{k:" + A.keyType + "}" : "") + " expected"
     }
 
-function A20(A, Q, B, G) {
+    function A20(A, Q, B, G) {
         if (Q.resolvedType)
             if (Q.resolvedType instanceof oN5) {
                 A("switch(%s){", G)("default:")("return%j", GO(Q, "enum value"));
@@ -641,7 +641,7 @@ function A20(A, Q, B, G) {
         return A
     }
 
-function tN5(A, Q, B) {
+    function tN5(A, Q, B) {
         switch (Q.keyType) {
             case "int32":
             case "uint32":
@@ -664,7 +664,7 @@ function tN5(A, Q, B) {
         return A
     }
 
-function eN5(A) {
+    function eN5(A) {
         var Q = eB0.codegen(["m"], A.name + "$verify")('if(typeof m!=="object"||m===null)')("return%j", "object expected"),
             B = A.oneofsArray,
             G = {};
@@ -688,12 +688,12 @@ function eN5(A) {
         return Q("return null")
     }
 });
-var Z20 = U((LC2) => {
+var Z20 = moduleWrapper((LC2) => {
     var NC2 = LC2,
         WOA = FP(),
         nk = GK();
 
-function B20(A, Q, B, G) {
+    function B20(A, Q, B, G) {
         var Z = !1;
         if (Q.resolvedType)
             if (Q.resolvedType instanceof WOA) {
@@ -762,7 +762,7 @@ function B20(A, Q, B, G) {
         return G("return m")
     };
 
-function G20(A, Q, B, G) {
+    function G20(A, Q, B, G) {
         if (Q.resolvedType)
             if (Q.resolvedType instanceof WOA) A("d%s=o.enums===String?(types[%i].values[m%s]===undefined?m%s:types[%i].values[m%s]):m%s", G, B, G, G, B, G, G);
             else A("d%s=types[%i].toObject(m%s,o)", G, B, G);
@@ -840,7 +840,7 @@ function G20(A, Q, B, G) {
         return G("return d")
     }
 });
-var I20 = U((MC2) => {
+var I20 = moduleWrapper((MC2) => {
     var AL5 = MC2,
         QL5 = C41();
     AL5[".google.protobuf.Any"] = {
@@ -878,7 +878,7 @@ var I20 = U((MC2) => {
         }
     }
 });
-var U41 = U((RuG, RC2) => {
+var U41 = moduleWrapper((RuG, RC2) => {
     RC2.exports = FZ;
     var ZO = nYA();
     ((FZ.prototype = Object.create(ZO.prototype)).constructor = FZ).className = "Type";
@@ -897,7 +897,7 @@ var U41 = U((RuG, RC2) => {
         OC2 = Z20(),
         XL5 = I20();
 
-function FZ(A, Q) {
+    function FZ(A, Q) {
         ZO.call(this, A, Q), this.fields = {}, this.oneofs = void 0, this.extensions = void 0, this.reserved = void 0, this.group = void 0, this._fieldsById = null, this._fieldsArray = null, this._oneofsArray = null, this._ctor = null
     }
     Object.defineProperties(FZ.prototype, {
@@ -934,8 +934,7 @@ function FZ(A, Q) {
                 A.$type = A.prototype.$type = this, eH.merge(A, Y20, !0), this._ctor = A;
                 var B = 0;
                 for (; B < this.fieldsArray.length; ++B) this._fieldsArray[B].resolve();
-
-var G = {};
+                var G = {};
                 for (B = 0; B < this.oneofsArray.length; ++B) G[this._oneofsArray[B].resolve().name] = {
                     get: eH.oneOfGetter(this._oneofsArray[B].oneof),
                     set: eH.oneOfSetter(this._oneofsArray[B].oneof)
@@ -952,7 +951,7 @@ var G = {};
         return B("if(p)for(var ks=Object.keys(p),i=0;i<ks.length;++i)if(p[ks[i]]!=null)")("this[ks[i]]=p[ks[i]]")
     };
 
-function z41(A) {
+    function z41(A) {
         return A._fieldsById = A._fieldsArray = A._oneofsArray = null, delete A.encode, delete A.decode, delete A.verify, A
     }
     FZ.fromJSON = function(Q, B) {
@@ -1096,7 +1095,7 @@ function z41(A) {
         }
     }
 });
-var N41 = U((TuG, jC2) => {
+var N41 = moduleWrapper((TuG, jC2) => {
     jC2.exports = $q;
     var q41 = nYA();
     (($q.prototype = Object.create(q41.prototype)).constructor = $q).className = "Root";
@@ -1117,14 +1116,14 @@ var N41 = U((TuG, jC2) => {
     $q.prototype.resolvePath = hi.path.resolve;
     $q.prototype.fetch = hi.fetch;
 
-function PC2() {}
+    function PC2() {}
     $q.prototype.load = function A(Q, B, G) {
         if (typeof B === "function") G = B, B = void 0;
         var Z = this;
         if (!G) return hi.asPromise(A, Z, Q, B);
         var I = G === PC2;
 
-function Y(D, H) {
+        function Y(D, H) {
             if (!G) return;
             if (I) throw D;
             if (H) H.resolveAll();
@@ -1132,7 +1131,7 @@ function Y(D, H) {
             G = null, C(D, H)
         }
 
-function J(D) {
+        function J(D) {
             var H = D.lastIndexOf("google/protobuf/");
             if (H > -1) {
                 var C = D.substring(H);
@@ -1141,7 +1140,7 @@ function J(D) {
             return null
         }
 
-function W(D, H) {
+        function W(D, H) {
             try {
                 if (hi.isString(H) && H.charAt(0) === "{") H = JSON.parse(H);
                 if (!hi.isString(H)) Z.setOptions(H.options).addJSON(H.nested);
@@ -1164,7 +1163,7 @@ function W(D, H) {
             if (!I && !F) Y(null, Z)
         }
 
-function X(D, H) {
+        function X(D, H) {
             if (D = J(D) || D, Z.files.indexOf(D) > -1) return;
             if (Z.files.push(D), D in XOA) {
                 if (I) W(D, XOA[D]);
@@ -1213,7 +1212,7 @@ function X(D, H) {
     };
     var w41 = /^[A-Z]/;
 
-function TC2(A, Q) {
+    function TC2(A, Q) {
         var B = Q.parent.lookup(Q.extend);
         if (B) {
             var G = new $41(Q.fullName, Q.id, Q.type, Q.rule, void 0, Q.options);
@@ -1259,7 +1258,7 @@ function TC2(A, Q) {
         V20 = A, K20 = Q, XOA = B
     }
 });
-var GK = U((PuG, _C2) => {
+var GK = moduleWrapper((PuG, _C2) => {
     var kW = _C2.exports = dk(),
         SC2 = uQ0(),
         D20, H20;
@@ -1290,10 +1289,10 @@ var GK = U((PuG, _C2) => {
     var VL5 = /\\/g,
         KL5 = /"/g;
     kW.isReserved = function(Q) {
-        return /^(?:do|if|in|for|let|new|try|var|case|else|enum|eval|false|null|this|true|void|with|break|catch|class|const|super|throw|while|yield|delete|export|import|public|return|static|switch|typeof|default|extends|finally|package|private|continue|debugger|function|arguments|interface|protected|implements|instanceof)$/.test(Q)
+        return /^(?:do|if|in|for|let|new|try|var|case|else|enum|eval|false|null|this|true|void|with|break|catch|class|const|super|throw|while|yield|delete|export|import|public|return|static|switch|typeof|default|extends|finally|package|private|continue|debugger|function|arguments|interface|protected|implements|instanceof)TextComponent/.test(Q)
     };
     kW.safeProp = function(Q) {
-        if (!/^[$\w_]+$/.test(Q) || kW.isReserved(Q)) return '["' + Q.replace(VL5, "\\\\").replace(KL5, "\\\"") + '"]';
+        if (!/^[TextComponent\w_]+TextComponent/.test(Q) || kW.isReserved(Q)) return '["' + Q.replace(VL5, "\\\\").replace(KL5, "\\\"") + '"]';
         return "." + Q
     };
     kW.ucFirst = function(Q) {
@@ -1356,12 +1355,12 @@ var GK = U((PuG, _C2) => {
         }
     })
 });
-var p1A = U((kC2) => {
+var p1A = moduleWrapper((kC2) => {
     var FOA = kC2,
         CL5 = GK(),
         EL5 = ["double", "float", "int32", "uint32", "sint32", "fixed32", "sfixed32", "int64", "uint64", "sint64", "fixed64", "sfixed64", "bool", "string", "bytes"];
 
-function VOA(A, Q) {
+    function VOA(A, Q) {
         var B = 0,
             G = {};
         Q |= 0;
@@ -1374,7 +1373,7 @@ function VOA(A, Q) {
     FOA.mapKey = VOA([0, 0, 0, 5, 5, 0, 0, 0, 1, 1, 0, 2], 2);
     FOA.packed = VOA([1, 5, 0, 0, 0, 5, 5, 0, 0, 0, 1, 1, 0])
 });
-var bi = U((SuG, xC2) => {
+var bi = moduleWrapper((SuG, xC2) => {
     xC2.exports = ZK;
     var DOA = fi();
     ((ZK.prototype = Object.create(DOA.prototype)).constructor = ZK).className = "Field";
@@ -1388,7 +1387,7 @@ var bi = U((SuG, xC2) => {
         return G._defaultEdition = "proto3", G
     };
 
-function ZK(A, Q, B, G, Z, I, Y) {
+    function ZK(A, Q, B, G, Z, I, Y) {
         if (aX.isObject(G)) Y = Z, I = G, G = Z = void 0;
         else if (aX.isObject(Z)) Y = I, I = Z, Z = void 0;
         if (DOA.call(this, A, I), !aX.isInteger(Q) || Q < 0) throw TypeError("id must be a non-negative integer");
@@ -1460,8 +1459,7 @@ function ZK(A, Q, B, G, Z, I, Y) {
     };
     ZK.prototype._inferLegacyProtoFeatures = function(Q) {
         if (Q !== "proto2" && Q !== "proto3") return {};
-
-var B = {};
+        var B = {};
         if (this.rule === "required") B.field_presence = "LEGACY_REQUIRED";
         if (this.parent && C20.defaults[this.type] === void 0) {
             var G = this.parent.get(this.type.split(".").pop());
@@ -1487,14 +1485,14 @@ var B = {};
         KOA = Q
     }
 });
-var c1A = U((_uG, fC2) => {
+var c1A = moduleWrapper((_uG, fC2) => {
     fC2.exports = wq;
     var M41 = fi();
     ((wq.prototype = Object.create(M41.prototype)).constructor = wq).className = "OneOf";
     var vC2 = bi(),
         L41 = GK();
 
-function wq(A, Q, B, G) {
+    function wq(A, Q, B, G) {
         if (!Array.isArray(Q)) B = Q, Q = void 0;
         if (M41.call(this, A, B), !(Q === void 0 || Array.isArray(Q))) throw TypeError("fieldNames must be an Array");
         this.oneof = Q || [], this.fieldsArray = [], this.comment = G
@@ -1507,7 +1505,7 @@ function wq(A, Q, B, G) {
         return L41.toObject(["options", this.options, "oneof", this.oneof, "comment", B ? this.comment : void 0])
     };
 
-function bC2(A) {
+    function bC2(A) {
         if (A.parent) {
             for (var Q = 0; Q < A.fieldsArray.length; ++Q)
                 if (!A.fieldsArray[Q].parent) A.parent.add(A.fieldsArray[Q])

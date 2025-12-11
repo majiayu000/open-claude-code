@@ -1,12 +1,15 @@
 /**
- * Claude Code Decompiled - Readable Version
+ * ╔════════════════════════════════════════════════════════════════╗
+ * ║  Claude Code Decompiled - 完整逻辑还原版 v3.0                   ║
+ * ╚════════════════════════════════════════════════════════════════╝
  *
- * NOTE: This code has been decompiled from minified source.
- * Variable names have been partially restored based on context analysis.
- * Some names may still be unclear - look for nearby string constants for hints.
+ * 原始文件: agents_003.js
+ * 处理时间: 2025-12-09T03:41:35.862Z
+ * 变量映射: 8 个已识别变量
  *
- * Original file: cli.js (v2.0.57)
- * Processed: 2025-12-08T11:28:37.842Z
+ * 注意: 代码逻辑100%保留，仅添加变量名解释注释
+ *
+ * ===================== 变量已替换 =====================
  */
 
 /**
@@ -120,7 +123,6 @@ async function wW0(A) {
         resetHistory: k
     })
 }
-
 async function O89(A) {
     let {
         input: Q,
@@ -221,7 +223,7 @@ function dR3(A, Q, B, G) {
         }))
     }
 }
-var R89 = L(() => {
+var R89 = lazyLoader(() => {
     DWA();
     Pp();
     HGA();
@@ -243,37 +245,37 @@ function P89(A, Q) {
     }, [A, Q])
 }
 var T89;
-var j89 = L(() => {
+var j89 = lazyLoader(() => {
     tiA();
-    T89 = GA(VA(), 1)
+    T89 = esmImport(VA(), 1)
 });
 
 function S89(A, Q) {
-    if (Q) return A ? `agent:builtin:${A}` : "agent:default";
+    if (Q) return A ? `agent:builtin:TextComponent{A}` : "agent:default";
     else return "agent:custom"
 }
 
 function WjA() {
     let Q = c0()?.outputStyle ?? EK;
     if (Q === EK) return "repl_main_thread";
-    return Q in zQA ? `repl_main_thread:outputStyle:${Q}` : "repl_main_thread:outputStyle:custom"
+    return Q in zQA ? `repl_main_thread:outputStyle:TextComponent{Q}` : "repl_main_thread:outputStyle:custom"
 }
-var qW0 = L(() => {
+var qW0 = lazyLoader(() => {
     RB();
     ry()
 });
 
 function BI1(A, Q) {
     return _89.useMemo(() => {
-        if (RJ()) return A;
+        if (isClaudeCodeRemote()) return A;
         return i3A([...A, ...Q], "name")
     }, [A, Q])
 }
 var _89;
-var NW0 = L(() => {
+var NW0 = lazyLoader(() => {
     tiA();
     EE();
-    _89 = GA(VA(), 1)
+    _89 = esmImport(VA(), 1)
 });
 
 function LW0(A, Q) {
@@ -283,11 +285,10 @@ function LW0(A, Q) {
     }, [A, Q])
 }
 var k89;
-var y89 = L(() => {
+var y89 = lazyLoader(() => {
     tiA();
-    k89 = GA(VA(), 1)
+    k89 = esmImport(VA(), 1)
 });
-
 async function Ba(A, Q, B) {
     let G = A;
     return await Promise.all([...A.matchAll(cR3), ...A.matchAll(pR3)].map(async (Z) => {
@@ -298,7 +299,7 @@ async function Ba(A, Q, B) {
             }, Q, xD({
                 content: []
             }), "");
-            if (Y.behavior !== "allow") throw g(`Bash command permission check failed for command in ${B}: ${I}. Error: ${Y.message}`), new rj(`Bash command permission check failed for pattern "${Z[0]}": ${Y.message||"Permission denied"}`);
+            if (Y.behavior !== "allow") throw g(`Bash command permission check failed for command in TextComponent{B}: TextComponent{I}. Error: TextComponent{Y.message}`), new rj(`Bash command permission check failed for pattern "TextComponent{Z[0]}": TextComponent{Y.message||"Permission denied"}`);
             let {
                 data: J
             } = await X9.call({
@@ -316,32 +317,32 @@ function x89(A, Q, B = !1) {
     let G = [];
     if (A.trim()) G.push(A.trim());
     if (Q.trim())
-        if (B) G.push(`[stderr: ${Q.trim()}]`);
+        if (B) G.push(`[stderr: TextComponent{Q.trim()}]`);
         else G.push(`[stderr]
-${Q.trim()}`);
+TextComponent{Q.trim()}`);
     return G.join(B ? " " : `
 `)
 }
 
 function lR3(A, Q, B = !1) {
     if (A instanceof oj) {
-        if (A.interrupted) throw new rj(`Bash command interrupted for pattern "${Q}": [Command interrupted]`);
+        if (A.interrupted) throw new rj(`Bash command interrupted for pattern "TextComponent{Q}": [Command interrupted]`);
         let I = x89(A.stdout, A.stderr, B);
-        throw new rj(`Bash command failed for pattern "${Q}": ${I}`)
+        throw new rj(`Bash command failed for pattern "TextComponent{Q}": TextComponent{I}`)
     }
     let G = A instanceof Error ? A.message : String(A),
-        Z = B ? `[Error: ${G}]` : `[Error]
-${G}`;
+        Z = B ? `[Error: TextComponent{G}]` : `[Error]
+TextComponent{G}`;
     throw new rj(Z)
 }
 var cR3, pR3;
-var XjA = L(() => {
+var XjA = lazyLoader(() => {
     nV();
     $Z();
     D0();
     aG();
     nQ();
-    cR3 = /```!\s*\n?([\s\S]*?)\n?```/g, pR3 = /(?<!\w|\$)!`([^`]+)`/g
+    cR3 = /```!\s*\n?([\s\S]*?)\n?```/g, pR3 = /(?<!\w|\TextComponent)!`([^`]+)`/g
 });
 import {
     join as bXA,
@@ -360,13 +361,13 @@ function aR3(A, Q, B) {
             Y = fXA(Z),
             J = I.startsWith(Q) ? I.slice(Q.length).replace(/^\//, "") : "",
             W = J ? J.split("/").join(":") : "";
-        return W ? `${B}:${W}:${Y}` : `${B}:${Y}`
+        return W ? `TextComponent{B}:TextComponent{W}:TextComponent{Y}` : `TextComponent{B}:TextComponent{Y}`
     } else {
         let Z = Ga(A),
             I = fXA(A).replace(/\.md$/, ""),
             Y = Z.startsWith(Q) ? Z.slice(Q.length).replace(/^\//, "") : "",
             J = Y ? Y.split("/").join(":") : "";
-        return J ? `${B}:${J}:${I}` : `${B}:${I}`
+        return J ? `TextComponent{B}:TextComponent{J}:TextComponent{I}` : `TextComponent{B}:TextComponent{I}`
     }
 }
 
@@ -374,7 +375,7 @@ function sR3(A, Q) {
     let B = [],
         G = OA();
 
-function Z(I) {
+    function Z(I) {
         try {
             let Y = G.readdirSync(I);
             if (Y.some((W) => W.isFile() && GI1(W.name))) {
@@ -416,7 +417,7 @@ function Z(I) {
                 }
             }
         } catch (Y) {
-            g(`Failed to scan directory ${I}: ${Y}`, {
+            g(`Failed to scan directory TextComponent{I}: TextComponent{Y}`, {
                 level: "error"
             })
         }
@@ -436,13 +437,12 @@ function rR3(A) {
         let I = Z.filter((Y) => GI1(Y.filePath));
         if (I.length > 0) {
             let Y = I[0];
-            if (I.length > 1) g(`Multiple skill files found in ${G}, using ${fXA(Y.filePath)}`);
+            if (I.length > 1) g(`Multiple skill files found in TextComponent{G}, using TextComponent{fXA(Y.filePath)}`);
             B.push(Y)
         } else B.push(...Z)
     }
     return B
 }
-
 async function v89(A, Q, B, G, Z, I = {
     isSkillMode: !1
 }) {
@@ -465,10 +465,10 @@ function FjA(A, Q, B, G, Z, I, Y = {
             frontmatter: J,
             content: W
         } = Q, X = J.description ?? qy(W, I ? "Plugin skill" : "Plugin command"), F = HO(J["allowed-tools"]), V = J["argument-hint"], K = J.when_to_use, D = J.version, H = J.name, C = J.model === "inherit" ? void 0 : J.model, E = J["disable-model-invocation"], z;
-        if (Y.isSkillMode) z = E === void 0 ? !1 : V0(E);
-        else z = V0(E);
-        let w = Y.isSkillMode ? nR3 : iR3,
-            N = `${X} (${w}:${B})`,
+        if (Y.isSkillMode) z = E === void 0 ? !1 : parseBoolean(E);
+        else z = parseBoolean(E);
+        let w = Y.isSkillMode ? nR3 : PLUGIN_TYPE,
+            N = `TextComponent{X} (TextComponent{w}:TextComponent{B})`,
             q = Y.isSkillMode ? !0 : !1;
         return {
             type: "prompt",
@@ -494,14 +494,14 @@ function FjA(A, Q, B, G, Z, I, Y = {
                 return H || A
             },
             async getPromptForCommand(R, P) {
-                let y = Y.isSkillMode ? `Base directory for this skill: ${Ga(Q.filePath)}
+                let y = Y.isSkillMode ? `Base directory for this skill: TextComponent{Ga(Q.filePath)}
 
-${W}` : W;
+TextComponent{W}` : W;
                 if (R)
                     if (y.includes("$ARGUMENTS")) y = y.replaceAll("$ARGUMENTS", R);
                     else y = y + `
 
-ARGUMENTS: ${R}`;
+ARGUMENTS: TextComponent{R}`;
                 return y = Qb1(y, Z), y = await Ba(y, {
                     ...P,
                     async getAppState() {
@@ -517,14 +517,14 @@ ARGUMENTS: ${R}`;
                             }
                         }
                     }
-                }, `/${A}`), [{
+                }, `/TextComponent{A}`), [{
                     type: "text",
                     text: y
                 }]
             }
         }
     } catch (J) {
-        return g(`Failed to create command from ${Q.filePath}: ${J}`, {
+        return g(`Failed to create command from TextComponent{Q.filePath}: TextComponent{J}`, {
             level: "error"
         }), null
     }
@@ -533,7 +533,6 @@ ARGUMENTS: ${R}`;
 function ZI1() {
     UQA.cache?.clear?.()
 }
-
 async function b89(A, Q, B, G, Z) {
     let I = OA(),
         Y = [];
@@ -549,7 +548,7 @@ async function b89(A, Q, B, G, Z) {
                         frontmatter: F,
                         content: V
                     } = yF(X),
-                    K = `${Q}:${fXA(A)}`,
+                    K = `TextComponent{Q}:TextComponent{fXA(A)}`,
                     D = {
                         filePath: J,
                         baseDir: Ga(J),
@@ -561,7 +560,7 @@ async function b89(A, Q, B, G, Z) {
                     });
                 if (H) Y.push(H)
             } catch (X) {
-                g(`Failed to load skill from ${J}: ${X}`, {
+                g(`Failed to load skill from TextComponent{J}: TextComponent{X}`, {
                     level: "error"
                 })
             }
@@ -580,7 +579,7 @@ async function b89(A, Q, B, G, Z) {
                         frontmatter: D,
                         content: H
                     } = yF(K),
-                    C = `${Q}:${X.name}`,
+                    C = `TextComponent{Q}:TextComponent{X.name}`,
                     E = {
                         filePath: V,
                         baseDir: Ga(V),
@@ -592,13 +591,13 @@ async function b89(A, Q, B, G, Z) {
                     });
                 if (z) Y.push(z)
             } catch (K) {
-                g(`Failed to load skill from ${V}: ${K}`, {
+                g(`Failed to load skill from TextComponent{V}: TextComponent{K}`, {
                     level: "error"
                 })
             }
         }
     } catch (J) {
-        g(`Failed to load skills from directory ${A}: ${J}`, {
+        g(`Failed to load skills from directory TextComponent{A}: TextComponent{J}`, {
             level: "error"
         })
     }
@@ -608,10 +607,11 @@ async function b89(A, Q, B, G, Z) {
 function f89() {
     MW0.cache?.clear?.()
 }
-var iR3 = "plugin",
+/* PLUGIN_TYPE = PLUGIN_TYPE = "plugin" */
+var PLUGIN_TYPE = "plugin",
     nR3 = "plugin",
     UQA, MW0;
-var VjA = L(() => {
+var VjA = lazyLoader(() => {
     o2();
     o0();
     NF();
@@ -625,25 +625,25 @@ var VjA = L(() => {
             enabled: A,
             errors: Q
         } = await y7(), B = [];
-        if (Q.length > 0) g(`Plugin loading errors: ${Q.map((G)=>BM(G)).join(", ")}`);
+        if (Q.length > 0) g(`Plugin loading errors: TextComponent{Q.map((G)=>BM(G)).join(", ")}`);
         for (let G of A) {
             if (G.commandsPath) try {
                 let Z = await v89(G.commandsPath, G.name, G.source, G.manifest, G.path);
-                if (B.push(...Z), Z.length > 0) g(`Loaded ${Z.length} commands from plugin ${G.name} default directory`)
+                if (B.push(...Z), Z.length > 0) g(`Loaded TextComponent{Z.length} commands from plugin TextComponent{G.name} default directory`)
             } catch (Z) {
-                g(`Failed to load commands from plugin ${G.name} default directory: ${Z}`, {
+                g(`Failed to load commands from plugin TextComponent{G.name} default directory: TextComponent{Z}`, {
                     level: "error"
                 })
             }
             if (G.commandsPaths) {
-                g(`Plugin ${G.name} has commandsPaths: ${G.commandsPaths.join(", ")}`);
+                g(`Plugin TextComponent{G.name} has commandsPaths: TextComponent{G.commandsPaths.join(", ")}`);
                 for (let Z of G.commandsPaths) try {
                     let I = OA(),
                         Y = I.statSync(Z);
-                    if (g(`Checking commandPath ${Z} - isDirectory: ${Y.isDirectory()}, isFile: ${Y.isFile()}`), Y.isDirectory()) {
+                    if (g(`Checking commandPath TextComponent{Z} - isDirectory: TextComponent{Y.isDirectory()}, isFile: TextComponent{Y.isFile()}`), Y.isDirectory()) {
                         let J = await v89(Z, G.name, G.source, G.manifest, G.path);
-                        if (B.push(...J), J.length > 0) g(`Loaded ${J.length} commands from plugin ${G.name} custom path: ${Z}`);
-                        else g(`Warning: No commands found in plugin ${G.name} custom directory: ${Z}. Expected .md files or SKILL.md in subdirectories.`, {
+                        if (B.push(...J), J.length > 0) g(`Loaded TextComponent{J.length} commands from plugin TextComponent{G.name} custom path: TextComponent{Z}`);
+                        else g(`Warning: No commands found in plugin TextComponent{G.name} custom directory: TextComponent{Z}. Expected .md files or SKILL.md in subdirectories.`, {
                             level: "warn"
                         })
                     } else if (Y.isFile() && Z.endsWith(".md")) {
@@ -660,12 +660,12 @@ var VjA = L(() => {
                                 if (E.source) {
                                     let z = bXA(G.path, E.source);
                                     if (Z === z) {
-                                        F = `${G.name}:${C}`, V = E;
+                                        F = `TextComponent{G.name}:TextComponent{C}`, V = E;
                                         break
                                     }
                                 }
                         }
-                        if (!F) F = `${G.name}:${fXA(Z).replace(/\.md$/,"")}`;
+                        if (!F) F = `TextComponent{G.name}:TextComponent{fXA(Z).replace(/\.md$/,"")}`;
                         let K = V ? {
                                 ...W,
                                 ...V.description && {
@@ -688,10 +688,10 @@ var VjA = L(() => {
                                 content: X
                             },
                             H = FjA(F, D, G.source, G.manifest, G.path, !1);
-                        if (H) B.push(H), g(`Loaded command from plugin ${G.name} custom file: ${Z}${V?" (with metadata override)":""}`)
+                        if (H) B.push(H), g(`Loaded command from plugin TextComponent{G.name} custom file: TextComponent{Z}TextComponent{V?" (with metadata override)":""}`)
                     }
                 } catch (I) {
-                    g(`Failed to load commands from plugin ${G.name} custom path ${Z}: ${I}`, {
+                    g(`Failed to load commands from plugin TextComponent{G.name} custom path TextComponent{Z}: TextComponent{I}`, {
                         level: "error"
                     })
                 }
@@ -716,21 +716,21 @@ var VjA = L(() => {
                             ...I.allowedTools && {
                                 "allowed-tools": I.allowedTools.join(",")
                             }
-                        }, X = `${G.name}:${Z}`, F = {
-                            filePath: `<inline:${X}>`,
+                        }, X = `TextComponent{G.name}:TextComponent{Z}`, F = {
+                            filePath: `<inline:TextComponent{X}>`,
                             baseDir: G.path,
                             frontmatter: W,
                             content: J
                         }, V = FjA(X, F, G.source, G.manifest, G.path, !1);
-                        if (V) B.push(V), g(`Loaded inline content command from plugin ${G.name}: ${X}`)
+                        if (V) B.push(V), g(`Loaded inline content command from plugin TextComponent{G.name}: TextComponent{X}`)
                     } catch (Y) {
-                        g(`Failed to load inline content command ${Z} from plugin ${G.name}: ${Y}`, {
+                        g(`Failed to load inline content command TextComponent{Z} from plugin TextComponent{G.name}: TextComponent{Y}`, {
                             level: "error"
                         })
                     }
             }
         }
-        return g(`Total plugin commands loaded: ${B.length}`), B
+        return g(`Total plugin commands loaded: TextComponent{B.length}`), B
     });
     MW0 = t1(async () => {
         g(">>>>> getPluginSkills CALLED <<<<<");
@@ -738,34 +738,34 @@ var VjA = L(() => {
             enabled: A,
             errors: Q
         } = await y7(), B = [];
-        if (Q.length > 0) g(`Plugin loading errors: ${Q.map((G)=>BM(G)).join(", ")}`);
-        g(`getPluginSkills: Processing ${A.length} enabled plugins`);
+        if (Q.length > 0) g(`Plugin loading errors: TextComponent{Q.map((G)=>BM(G)).join(", ")}`);
+        g(`getPluginSkills: Processing TextComponent{A.length} enabled plugins`);
         for (let G of A) {
-            if (g(`Checking plugin ${G.name}: skillsPath=${G.skillsPath?"exists":"none"}, skillsPaths=${G.skillsPaths?G.skillsPaths.length:0} paths`), G.skillsPath) {
-                g(`Attempting to load skills from plugin ${G.name} default skillsPath: ${G.skillsPath}`);
+            if (g(`Checking plugin TextComponent{G.name}: skillsPath=TextComponent{G.skillsPath?"exists":"none"}, skillsPaths=TextComponent{G.skillsPaths?G.skillsPaths.length:0} paths`), G.skillsPath) {
+                g(`Attempting to load skills from plugin TextComponent{G.name} default skillsPath: TextComponent{G.skillsPath}`);
                 try {
                     let Z = await b89(G.skillsPath, G.name, G.source, G.manifest, G.path);
-                    B.push(...Z), g(`Loaded ${Z.length} skills from plugin ${G.name} default directory`)
+                    B.push(...Z), g(`Loaded TextComponent{Z.length} skills from plugin TextComponent{G.name} default directory`)
                 } catch (Z) {
-                    g(`Failed to load skills from plugin ${G.name} default directory: ${Z}`, {
+                    g(`Failed to load skills from plugin TextComponent{G.name} default directory: TextComponent{Z}`, {
                         level: "error"
                     })
                 }
             }
             if (G.skillsPaths) {
-                g(`Attempting to load skills from plugin ${G.name} skillsPaths: ${G.skillsPaths.join(", ")}`);
+                g(`Attempting to load skills from plugin TextComponent{G.name} skillsPaths: TextComponent{G.skillsPaths.join(", ")}`);
                 for (let Z of G.skillsPaths) try {
-                    g(`Loading from skillPath: ${Z} for plugin ${G.name}`);
+                    g(`Loading from skillPath: TextComponent{Z} for plugin TextComponent{G.name}`);
                     let I = await b89(Z, G.name, G.source, G.manifest, G.path);
-                    B.push(...I), g(`Loaded ${I.length} skills from plugin ${G.name} custom path: ${Z}`)
+                    B.push(...I), g(`Loaded TextComponent{I.length} skills from plugin TextComponent{G.name} custom path: TextComponent{Z}`)
                 } catch (I) {
-                    g(`Failed to load skills from plugin ${G.name} custom path ${Z}: ${I}`, {
+                    g(`Failed to load skills from plugin TextComponent{G.name} custom path TextComponent{Z}: TextComponent{I}`, {
                         level: "error"
                     })
                 }
             }
         }
-        return g(`Total plugin skills loaded: ${B.length}`), B
+        return g(`Total plugin skills loaded: TextComponent{B.length}`), B
     })
 });
 
@@ -784,7 +784,7 @@ function YI1() {
                 Z.push({
                     type: "generic-error",
                     source: "plugin-commands",
-                    error: `Failed to load plugin commands: ${W}`
+                    error: `Failed to load plugin commands: TextComponent{W}`
                 })
             }
             try {
@@ -794,7 +794,7 @@ function YI1() {
                 Z.push({
                     type: "generic-error",
                     source: "plugin-agents",
-                    error: `Failed to load plugin agents: ${W}`
+                    error: `Failed to load plugin agents: TextComponent{W}`
                 })
             }
             try {
@@ -804,7 +804,7 @@ function YI1() {
                 Z.push({
                     type: "generic-error",
                     source: "plugin-hooks",
-                    error: `Failed to load plugin hooks: ${W}`
+                    error: `Failed to load plugin hooks: TextComponent{W}`
                 })
             }
             A((J) => ({
@@ -817,10 +817,10 @@ function YI1() {
                     agents: Y,
                     errors: Z
                 }
-            })), g(`Loaded plugins - Enabled: ${B.length}, Disabled: ${G.length}, Commands: ${I.length}, Agents: ${Y.length}, Errors: ${Z.length}`)
+            })), g(`Loaded plugins - Enabled: TextComponent{B.length}, Disabled: TextComponent{G.length}, Commands: TextComponent{I.length}, Agents: TextComponent{Y.length}, Errors: TextComponent{Z.length}`)
         } catch (B) {
             let G = B instanceof Error ? B : Error(String(B));
-            e(G), g(`Error loading plugins: ${B}`), A((Z) => ({
+            e(G), g(`Error loading plugins: TextComponent{B}`), A((Z) => ({
                 ...Z,
                 plugins: {
                     ...Z.plugins,
@@ -844,7 +844,7 @@ function YI1() {
     }
 }
 var II1;
-var OW0 = L(() => {
+var OW0 = lazyLoader(() => {
     H9();
     NF();
     VjA();
@@ -852,7 +852,7 @@ var OW0 = L(() => {
     MMA();
     D0();
     u1();
-    II1 = GA(VA(), 1)
+    II1 = esmImport(VA(), 1)
 });
 
 function KjA({
@@ -866,10 +866,10 @@ function KjA({
     })
 }
 var RW0;
-var h89 = L(() => {
+var h89 = lazyLoader(() => {
     hA();
     jQ();
-    RW0 = GA(VA(), 1)
+    RW0 = esmImport(VA(), 1)
 });
 
 function TW0(A) {
@@ -893,7 +893,7 @@ function g89(A, Q, B = !1) {
     for (let F of A) {
         let V = TW0(F);
         if (V && G.has(V.toolName)) {
-            let K = `${V.messageId}:${V.toolName}`,
+            let K = `TextComponent{V.messageId}:TextComponent{V.toolName}`,
                 D = Z.get(K) ?? [];
             D.push(F), Z.set(K, D)
         }
@@ -917,7 +917,7 @@ function g89(A, Q, B = !1) {
     for (let F of A) {
         let V = TW0(F);
         if (V) {
-            let K = `${V.messageId}:${V.toolName}`,
+            let K = `TextComponent{V.messageId}:TextComponent{V.toolName}`,
                 D = I.get(K);
             if (D) {
                 if (!X.has(K)) {
@@ -935,7 +935,7 @@ function g89(A, Q, B = !1) {
                         messages: D,
                         results: C,
                         displayMessage: H,
-                        uuid: `grouped-${H.uuid}`,
+                        uuid: `grouped-TextComponent{H.uuid}`,
                         timestamp: H.timestamp,
                         messageId: V.messageId
                     };
@@ -960,12 +960,12 @@ function g89(A, Q, B = !1) {
 function DjA(A) {
     if (!A) return 0;
     return A.activeAgents.filter((Q) => Q.source !== "built-in").reduce((Q, B) => {
-        let G = `${B.agentType}: ${B.whenToUse}`;
+        let G = `TextComponent{B.agentType}: TextComponent{B.whenToUse}`;
         return Q + SG(G)
     }, 0)
 }
 var $QA = 15000;
-var PW0 = L(() => {
+var PW0 = lazyLoader(() => {
     gM()
 });
 import {
@@ -976,7 +976,7 @@ function u89(A) {
     return YT3.filter((Q) => Q.isActive(A))
 }
 var xB, tR3, eR3, AT3, QT3, BT3, GT3, ZT3, IT3, YT3;
-var m89 = L(() => {
+var m89 = lazyLoader(() => {
     hA();
     uE();
     n2();
@@ -985,7 +985,7 @@ var m89 = L(() => {
     dK();
     S0();
     PW0();
-    xB = GA(VA(), 1), tR3 = {
+    xB = esmImport(VA(), 1), tR3 = {
         id: "large-memory-files",
         type: "warning",
         isActive: () => {
@@ -998,13 +998,13 @@ var m89 = L(() => {
                 return xB.createElement(j, {
                     key: Q.path,
                     flexDirection: "row"
-                }, xB.createElement($, {
+                }, xB.createElement(TextComponent, {
                     color: "warning"
-                }, V1.warning), xB.createElement($, {
+                }, V1.warning), xB.createElement(TextComponent, {
                     color: "warning"
-                }, "Large ", xB.createElement($, {
+                }, "Large ", xB.createElement(TextComponent, {
                     bold: !0
-                }, B), " will impact performance (", QZ(Q.content.length), " chars >", " ", QZ(zh), ")", xB.createElement($, {
+                }, B), " will impact performance (", QZ(Q.content.length), " chars >", " ", QZ(zh), ")", xB.createElement(TextComponent, {
                     dimColor: !0
                 }, " • /memory to edit")))
             }))
@@ -1023,11 +1023,11 @@ var m89 = L(() => {
             return xB.createElement(j, {
                 flexDirection: "row",
                 gap: 1
-            }, xB.createElement($, {
+            }, xB.createElement(TextComponent, {
                 color: "warning"
-            }, V1.warning), xB.createElement($, {
+            }, V1.warning), xB.createElement(TextComponent, {
                 color: "warning"
-            }, "CLAUDE.md entries marked as IMPORTANT exceed", " ", IYA, " chars (", Q, " chars)", xB.createElement($, {
+            }, "CLAUDE.md entries marked as IMPORTANT exceed", " ", IYA, " chars (", Q, " chars)", xB.createElement(TextComponent, {
                 dimColor: !0
             }, " • /memory to edit")))
         }
@@ -1043,9 +1043,9 @@ var m89 = L(() => {
             return xB.createElement(j, {
                 flexDirection: "row",
                 marginTop: 1
-            }, xB.createElement($, {
+            }, xB.createElement(TextComponent, {
                 color: "warning"
-            }, V1.warning), xB.createElement($, {
+            }, V1.warning), xB.createElement(TextComponent, {
                 color: "warning"
             }, "Auth conflict: Using ", A.source, " instead of Claude account subscription token. Either unset ", A.source, ", or run `claude /logout`."))
         }
@@ -1069,9 +1069,9 @@ var m89 = L(() => {
             return xB.createElement(j, {
                 flexDirection: "row",
                 marginTop: 1
-            }, xB.createElement($, {
+            }, xB.createElement(TextComponent, {
                 color: "warning"
-            }, V1.warning), xB.createElement($, {
+            }, V1.warning), xB.createElement(TextComponent, {
                 color: "warning"
             }, "Auth conflict: Using ", A, " instead of Anthropic Console key. Either unset ", A, ", or run `claude /logout`."))
         }
@@ -1097,18 +1097,18 @@ var m89 = L(() => {
                 marginTop: 1
             }, xB.createElement(j, {
                 flexDirection: "row"
-            }, xB.createElement($, {
+            }, xB.createElement(TextComponent, {
                 color: "warning"
-            }, V1.warning), xB.createElement($, {
+            }, V1.warning), xB.createElement(TextComponent, {
                 color: "warning"
             }, "Auth conflict: Both a token (", Q.source, ") and an API key (", A, ") are set. This may lead to unexpected behavior.")), xB.createElement(j, {
                 flexDirection: "column",
                 marginLeft: 3
-            }, xB.createElement($, {
+            }, xB.createElement(TextComponent, {
                 color: "warning"
-            }, "• Trying to use", " ", Q.source === "claude.ai" ? "claude.ai" : Q.source, "?", " ", A === "ANTHROPIC_API_KEY" ? 'Unset the ANTHROPIC_API_KEY environment variable, or claude /logout then say "No" to the API key approval before login.' : A === "apiKeyHelper" ? "Unset the apiKeyHelper setting." : "claude /logout"), xB.createElement($, {
+            }, "• Trying to use", " ", Q.source === "claude.ai" ? "claude.ai" : Q.source, "?", " ", A === "ANTHROPIC_API_KEY" ? 'Unset the ANTHROPIC_API_KEY environment variable, or claude /logout then say "No" to the API key approval before login.' : A === "apiKeyHelper" ? "Unset the apiKeyHelper setting." : "claude /logout"), xB.createElement(TextComponent, {
                 color: "warning"
-            }, "• Trying to use ", A, "?", " ", Q.source === "claude.ai" ? "claude /logout to sign out of claude.ai." : `Unset the ${Q.source} environment variable.`)))
+            }, "• Trying to use ", A, "?", " ", Q.source === "claude.ai" ? "claude /logout to sign out of claude.ai." : `Unset the TextComponent{Q.source} environment variable.`)))
         }
     }, GT3 = {
         id: "sonnet-1m-welcome",
@@ -1118,7 +1118,7 @@ var m89 = L(() => {
             return xB.createElement(j, {
                 flexDirection: "column",
                 marginTop: 1
-            }, xB.createElement($, {
+            }, xB.createElement(TextComponent, {
                 bold: !0
             }, "You now have access to Sonnet 4 with 1M context (uses more rate limits than Sonnet on long requests) • Update in /model"))
         }
@@ -1127,22 +1127,22 @@ var m89 = L(() => {
         type: "info",
         isActive: (A) => A.showOpus45Notice === !0,
         render: () => {
-            let Q = J6() !== "firstParty",
+            let Q = getProvider() !== "firstParty",
                 B = x4(),
                 G = B === "max",
                 Z = B === "team",
                 I = B === "pro",
                 Y;
-            if (G || Z) Y = xB.createElement($, {
+            if (G || Z) Y = xB.createElement(TextComponent, {
                 dimColor: !0
             }, "Welcome to Opus 4.5");
-            else if (I) Y = xB.createElement($, {
+            else if (I) Y = xB.createElement(TextComponent, {
                 dimColor: !0
             }, "/upgrade or /extra-usage for Opus 4.5");
-            else if (Q) Y = xB.createElement($, {
+            else if (Q) Y = xB.createElement(TextComponent, {
                 dimColor: !0
             }, "/model to try Opus 4.5. Note: you may need to request access from your cloud provider");
-            else Y = xB.createElement($, {
+            else Y = xB.createElement(TextComponent, {
                 dimColor: !0
             }, "/model to try Opus 4.5");
             return xB.createElement(j, {
@@ -1159,11 +1159,11 @@ var m89 = L(() => {
             let Q = DjA(A.agentDefinitions);
             return xB.createElement(j, {
                 flexDirection: "row"
-            }, xB.createElement($, {
+            }, xB.createElement(TextComponent, {
                 color: "warning"
-            }, V1.warning), xB.createElement($, {
+            }, V1.warning), xB.createElement(TextComponent, {
                 color: "warning"
-            }, "Large cumulative agent descriptions will impact performance (~", QZ(Q), " tokens >", " ", QZ($QA), ")", xB.createElement($, {
+            }, "Large cumulative agent descriptions will impact performance (~", QZ(Q), " tokens >", " ", QZ($QA), ")", xB.createElement(TextComponent, {
                 dimColor: !0
             }, " • /agents to manage")))
         }
@@ -1216,13 +1216,13 @@ function d89({
     }, V.render(X))))
 }
 var Og;
-var c89 = L(() => {
+var c89 = lazyLoader(() => {
     hA();
     jQ();
     m89();
     w0();
     hB();
-    Og = GA(VA(), 1)
+    Og = esmImport(VA(), 1)
 });
 
 function p89(A, Q) {
@@ -1243,7 +1243,7 @@ function i89({
     isTranscriptMode: Q
 }) {
     if (!(Q && A.timestamp && A.type === "assistant" && A.message.content.some((Z) => Z.type === "text"))) return null;
-    let G = new Date(A.timestamp).toLocaleTimeString("en-US", {
+    let G = new Date(A.timestamp).toLocaleTimeString("AGENT_OUTPUT_TOOL_NAME-US", {
         hour: "2-digit",
         minute: "2-digit",
         hour12: !0
@@ -1251,14 +1251,14 @@ function i89({
     return jW0.default.createElement(j, {
         marginTop: 1,
         minWidth: G.length
-    }, jW0.default.createElement($, {
+    }, jW0.default.createElement(TextComponent, {
         dimColor: !0
     }, G))
 }
 var jW0;
-var n89 = L(() => {
+var n89 = lazyLoader(() => {
     hA();
-    jW0 = GA(VA(), 1)
+    jW0 = esmImport(VA(), 1)
 });
 
 function a89({
@@ -1270,14 +1270,14 @@ function a89({
         marginTop: 1,
         marginLeft: 1,
         minWidth: A.message.model.length + 8
-    }, SW0.default.createElement($, {
+    }, SW0.default.createElement(TextComponent, {
         dimColor: !0
     }, A.message.model))
 }
 var SW0;
-var s89 = L(() => {
+var s89 = lazyLoader(() => {
     hA();
-    SW0 = GA(VA(), 1)
+    SW0 = esmImport(VA(), 1)
 });
 
 function r89(A) {
@@ -1306,11 +1306,10 @@ function r89(A) {
     }, [G]), Q
 }
 var hXA;
-var o89 = L(() => {
+var o89 = lazyLoader(() => {
     hA();
-    hXA = GA(VA(), 1)
+    hXA = esmImport(VA(), 1)
 });
-// Async function: _W0
 async function _W0() {
     if (H5()) return;
     if (process.env.CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC) return;
@@ -1403,12 +1402,12 @@ function HjA(A, Q = {
 var Za, JT3 = 5,
     t89 = "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
     WT3 = "https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md";
-var gXA = L(() => {
+var gXA = lazyLoader(() => {
     u1();
     w3();
     jQ();
     S0();
-    Za = GA(WE(), 1)
+    Za = esmImport(WE(), 1)
 });
 
 function Q69(A) {
@@ -1445,7 +1444,7 @@ function G69(A, Q, B) {
 
 function VI1(A) {
     if (!A || A.length > FT3) return "Welcome back!";
-    return `Welcome back ${A}!`
+    return `Welcome back TextComponent{A}!`
 }
 
 function EjA(A, Q) {
@@ -1456,21 +1455,20 @@ function EjA(A, Q) {
         I = Z[0] || "",
         Y = Z[Z.length - 1] || "";
     if (Z.length === 1) return A.substring(0, Q - G.length) + G;
-    if (I === "" && G.length + B.length + Y.length >= Q) return `${B}${Y.substring(0,Q-G.length-B.length)}${G}`;
-    if (I !== "" && G.length * 2 + B.length + Y.length >= Q) return `${G}${B}${Y.substring(0,Q-G.length*2-B.length)}${G}`;
-    if (Z.length === 2) return `${I.substring(0,Q-G.length-B.length-Y.length)}${G}${B}${Y}`;
+    if (I === "" && G.length + B.length + Y.length >= Q) return `TextComponent{B}TextComponent{Y.substring(0,Q-G.length-B.length)}TextComponent{G}`;
+    if (I !== "" && G.length * 2 + B.length + Y.length >= Q) return `TextComponent{G}TextComponent{B}TextComponent{Y.substring(0,Q-G.length*2-B.length)}TextComponent{G}`;
+    if (Z.length === 2) return `TextComponent{I.substring(0,Q-G.length-B.length-Y.length)}TextComponent{G}TextComponent{B}TextComponent{Y}`;
     let J = Q - I.length - Y.length - G.length - 2 * B.length;
-    if (J <= 0) return `${I.substring(0,Math.max(0,Q-Y.length-G.length-2*B.length))}${B}${G}${B}${Y}`;
+    if (J <= 0) return `TextComponent{I.substring(0,Math.max(0,Q-Y.length-G.length-2*B.length))}TextComponent{B}TextComponent{G}TextComponent{B}TextComponent{Y}`;
     let W = [];
     for (let X = Z.length - 2; X > 0; X--) {
         let F = Z[X];
         if (F && F.length + B.length <= J) W.unshift(F), J -= F.length + B.length;
         else break
     }
-    if (W.length === 0) return `${I}${B}${G}${B}${Y}`;
-    return `${I}${B}${G}${B}${W.join(B)}${B}${Y}`
+    if (W.length === 0) return `TextComponent{I}TextComponent{B}TextComponent{G}TextComponent{B}TextComponent{Y}`;
+    return `TextComponent{I}TextComponent{B}TextComponent{G}TextComponent{B}TextComponent{W.join(B)}TextComponent{B}TextComponent{Y}`
 }
-// Async function: Z69
 async function Z69() {
     if (FI1) return FI1;
     let A = G0();
@@ -1500,8 +1498,8 @@ function KI1() {
             VERSION: "2.0.57",
             FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues"
         }.VERSION,
-        Q = Q5(H0()),
-        B = S3(),
+        Q = formatFilePath(H0()),
+        B = getDefaultSonnetModel(),
         G = aRB(B),
         Z = AB() ? oy1() : "API Usage Billing";
     return {

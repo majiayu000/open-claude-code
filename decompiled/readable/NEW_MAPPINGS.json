@@ -1,0 +1,5343 @@
+[
+  {
+    "original": "Z51",
+    "readable": "renderCharWithShimmer",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "渲染带闪烁效果的字符，用于终端动画"
+  },
+  {
+    "original": "hk9",
+    "readable": "AddDirCommandMessage",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React组件，显示添加目录命令的消息"
+  },
+  {
+    "original": "d5B",
+    "readable": "renderToolUseProgressMessage",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "渲染工具使用进度消息"
+  },
+  {
+    "original": "l5B",
+    "readable": "renderToolResultMessage",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "渲染工具执行结果消息"
+  },
+  {
+    "original": "p5B",
+    "readable": "renderToolUseErrorMessage",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "渲染工具使用错误消息"
+  },
+  {
+    "original": "pq0",
+    "readable": "trackApiQuery",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "追踪API查询的遥测函数"
+  },
+  {
+    "original": "FI1",
+    "readable": "createInterruptedMessage",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "创建中断消息对象"
+  },
+  {
+    "original": "kJB",
+    "readable": "createProgressMessage",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "创建进度消息"
+  },
+  {
+    "original": "aJB",
+    "readable": "BugReportForm",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "React组件，Bug报告表单"
+  },
+  {
+    "original": "uE0",
+    "readable": "renderSpinnerFrame",
+    "confidence": 0.88,
+    "source": "llm-inference",
+    "reason": "渲染加载动画帧"
+  },
+  {
+    "original": "yL0",
+    "readable": "sendITerm2Notification",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "发送iTerm2终端通知"
+  },
+  {
+    "original": "WDB",
+    "readable": "sendKittyNotification",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "发送Kitty终端通知"
+  },
+  {
+    "original": "$75",
+    "readable": "sendGhosttyNotification",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "发送Ghostty终端通知"
+  },
+  {
+    "original": "hL0",
+    "readable": "ToolDetailsScreen",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React组件，工具详情屏幕"
+  },
+  {
+    "original": "yCB",
+    "readable": "ToolUseErrorMessageComponent",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "React组件，工具使用错误消息"
+  },
+  {
+    "original": "kCB",
+    "readable": "renderToolUseRejectedMessage",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "渲染工具使用被拒绝的消息"
+  },
+  {
+    "original": "xCB",
+    "readable": "renderToolResultSuccessMessage",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "渲染工具结果成功消息"
+  },
+  {
+    "original": "Rh1",
+    "readable": "renderSystemMessage",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "渲染系统消息"
+  },
+  {
+    "original": "QUB",
+    "readable": "renderPostToolUseHook",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "渲染工具使用后的钩子"
+  },
+  {
+    "original": "GUB",
+    "readable": "renderBackgroundSessionStatus",
+    "confidence": 0.93,
+    "source": "llm-inference",
+    "reason": "渲染后台会话状态"
+  },
+  {
+    "original": "Ph1",
+    "readable": "BackgroundTasksViewer",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React组件，后台任务查看器"
+  },
+  {
+    "original": "dqB",
+    "readable": "formatWebFetchInput",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "格式化Web获取输入"
+  },
+  {
+    "original": "OEB",
+    "readable": "ToolHookEditor",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "React组件，工具钩子编辑器"
+  },
+  {
+    "original": "WNB",
+    "readable": "MessageSelectorUI",
+    "confidence": 0.93,
+    "source": "llm-inference",
+    "reason": "React组件，消息选择器UI"
+  },
+  {
+    "original": "VNB",
+    "readable": "getFilePermissionOptions",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "获取文件权限选项"
+  },
+  {
+    "original": "zNB",
+    "readable": "EditDiffViewer",
+    "confidence": 0.94,
+    "source": "llm-inference",
+    "reason": "React组件，编辑差异查看器"
+  },
+  {
+    "original": "BNB",
+    "readable": "useNotification",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "React hook返回{notification, addNotification}，管理通知状态"
+  },
+  {
+    "original": "CNB",
+    "readable": "IDEDiffPermissionPrompt",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React组件，IDE中的diff权限提示"
+  },
+  {
+    "original": "DNB",
+    "readable": "closeTabInIDE",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "异步函数，通过MCP关闭IDE标签页"
+  },
+  {
+    "original": "ENB",
+    "readable": "formatDecisionReason",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "格式化权限决策原因用于显示"
+  },
+  {
+    "original": "GNB",
+    "readable": "useNoOpEffect",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "空操作Effect Hook，用作占位符"
+  },
+  {
+    "original": "HNB",
+    "readable": "useFilePermissionOptions",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "自定义Hook，处理文件权限选项"
+  },
+  {
+    "original": "INB",
+    "readable": "path",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "Node.js path模块，用于路径操作"
+  },
+  {
+    "original": "KNB",
+    "readable": "permissionActionHandlers",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "权限操作处理器映射表"
+  },
+  {
+    "original": "QNB",
+    "readable": "React",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "React库别名"
+  },
+  {
+    "original": "RNB",
+    "readable": "useIdleNotification",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "监控用户空闲时间并发送通知"
+  },
+  {
+    "original": "SNB",
+    "readable": "WebFetchConfirmationDialog",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "WebFetch工具使用确认对话框"
+  },
+  {
+    "original": "TNB",
+    "readable": "WriteFilePreview",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Write工具文件写入预览组件"
+  },
+  {
+    "original": "UNB",
+    "readable": "createMultipleEditsConfig",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "创建多编辑模式配置对象"
+  },
+  {
+    "original": "XNB",
+    "readable": "setupTelemetryNotificationHandler",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "设置MCP客户端遥测通知处理器"
+  },
+  {
+    "original": "YNB",
+    "readable": "renderUserMessagePreview",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "渲染用户消息预览"
+  },
+  {
+    "original": "ZNB",
+    "readable": "useInsertMessageChain",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React Hook，插入消息链到数据库"
+  },
+  {
+    "original": "aNB",
+    "readable": "toPath",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Fuse.js路径解析函数"
+  },
+  {
+    "original": "bNB",
+    "readable": "executePromptCommand",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "执行prompt类型命令"
+  },
+  {
+    "original": "rNB",
+    "readable": "SEARCHER_COUNT",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Fuse.js搜索器数量常量"
+  },
+  {
+    "original": "sNB",
+    "readable": "extractFirstCaptureGroup",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "提取正则表达式第一个捕获组"
+  },
+  {
+    "original": "tNB",
+    "readable": "isNumber",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "类型检查函数，判断是否为数字"
+  },
+  {
+    "original": "uNB",
+    "readable": "renderToolUseMessage",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "斜杠命令工具使用消息渲染"
+  },
+  {
+    "original": "vNB",
+    "readable": "handleSlashCommand",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "处理用户输入的斜杠命令"
+  },
+  {
+    "original": "wNB",
+    "readable": "formatArrayOrSimilar",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "格式化数组或返回'similar'"
+  },
+  {
+    "original": "xNB",
+    "readable": "PlanModeConfirmComponent",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "计划模式确认组件"
+  },
+  {
+    "original": "yNB",
+    "readable": "NotebookEditPreviewComponent",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Jupyter notebook编辑预览组件"
+  },
+  {
+    "original": "ANB",
+    "readable": "CostThresholdWarningComponent",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "API费用阈值警告组件"
+  },
+  {
+    "original": "$NB",
+    "readable": "EditFileConfirmComponent",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Edit工具确认对话框组件"
+  },
+  {
+    "original": "mXQ",
+    "readable": "formatShort",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "返回短格式时间字符串(如'1d', '2h', '30m')"
+  },
+  {
+    "original": "dXQ",
+    "readable": "formatLong",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "返回长格式时间字符串(如'1 day', '2 hours')"
+  },
+  {
+    "original": "iV1",
+    "readable": "pluralize",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "根据数值判断是否添加's'复数后缀"
+  },
+  {
+    "original": "cXQ",
+    "readable": "createDebug",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "debug库的工厂函数，创建debug实例"
+  },
+  {
+    "original": "lXQ",
+    "readable": "useColors",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "检测浏览器环境是否支持彩色输出"
+  },
+  {
+    "original": "pXQ",
+    "readable": "formatArgs",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "格式化调试日志参数，添加颜色和命名空间前缀"
+  },
+  {
+    "original": "iXQ",
+    "readable": "save",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "保存debug配置到localStorage"
+  },
+  {
+    "original": "nXQ",
+    "readable": "load",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "从localStorage或process.env.DEBUG加载debug配置"
+  },
+  {
+    "original": "aXQ",
+    "readable": "getStorage",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "获取存储对象(localStorage)"
+  },
+  {
+    "original": "GFQ",
+    "readable": "getForceColorLevel",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "检查FORCE_COLOR环境变量返回强制颜色级别"
+  },
+  {
+    "original": "YFQ",
+    "readable": "translateLevelToColorSupport",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "将数字级别转换为颜色能力对象{level,hasBasic,has256,has16m}"
+  },
+  {
+    "original": "IFQ",
+    "readable": "detectColorLevel",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "检测终端颜色支持级别(0-3)"
+  },
+  {
+    "original": "Bp1",
+    "readable": "supportsColor",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "颜色支持检测函数，exports.supportsColor"
+  },
+  {
+    "original": "JFQ",
+    "readable": "useColorsNode",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "Node.js环境下检查是否使用颜色"
+  },
+  {
+    "original": "XFQ",
+    "readable": "formatArgsNode",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "Node.js环境下格式化调试参数"
+  },
+  {
+    "original": "FFQ",
+    "readable": "getDatePrefix",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "返回日期时间字符串前缀用于日志格式化"
+  },
+  {
+    "original": "VFQ",
+    "readable": "debugLog",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "debug模块日志输出函数，写入stderr"
+  },
+  {
+    "original": "KFQ",
+    "readable": "saveDebugEnv",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "保存或删除DEBUG环境变量"
+  },
+  {
+    "original": "HFQ",
+    "readable": "loadDebugEnv",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "返回process.env.DEBUG的值"
+  },
+  {
+    "original": "zFQ",
+    "readable": "initDebugInstance",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "初始化debug实例的inspectOpts"
+  },
+  {
+    "original": "lK",
+    "readable": "RedirectableRequest",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "可重定向HTTP请求包装类，继承自Writable"
+  },
+  {
+    "original": "Sg0",
+    "readable": "wrapProtocols",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "为http/https协议创建包装器"
+  },
+  {
+    "original": "yg0",
+    "readable": "noop",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "空操作函数，用作占位符"
+  },
+  {
+    "original": "Kp1",
+    "readable": "parseUrl",
+    "confidence": 0.93,
+    "source": "llm-inference",
+    "reason": "解析URL字符串为URL对象"
+  },
+  {
+    "original": "jFQ",
+    "readable": "resolveUrl",
+    "confidence": 0.94,
+    "source": "llm-inference",
+    "reason": "将相对URL解析为绝对URL"
+  },
+  {
+    "original": "SFQ",
+    "readable": "isSubdomain",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "检查主机名是否为子域名"
+  },
+  {
+    "original": "fh",
+    "readable": "isString",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "类型检查：是否为字符串"
+  },
+  {
+    "original": "hh",
+    "readable": "isFunction",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "类型检查：是否为函数"
+  },
+  {
+    "original": "yFQ",
+    "readable": "isArrayLike",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "检查是否为类数组对象"
+  },
+  {
+    "original": "kFQ",
+    "readable": "isURL",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "检查是否为URL实例"
+  },
+  {
+    "original": "YK1",
+    "readable": "prependStatsigLabel",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "在日志参数开头插入[Statsig]标签"
+  },
+  {
+    "original": "Qi",
+    "readable": "createMarker",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "创建诊断标记对象用于性能追踪"
+  },
+  {
+    "original": "OVQ",
+    "readable": "createDiagnosticsEvent",
+    "confidence": 0.93,
+    "source": "llm-inference",
+    "reason": "创建诊断事件对象用于Statsig上报"
+  },
+  {
+    "original": "Zi",
+    "readable": "addMarker",
+    "confidence": 0.94,
+    "source": "llm-inference",
+    "reason": "添加标记到WeakMap中累积诊断标记"
+  },
+  {
+    "original": "_p1",
+    "readable": "safeGetProperty",
+    "confidence": 0.96,
+    "source": "llm-inference",
+    "reason": "安全获取对象属性，避免访问不存在属性报错"
+  },
+  {
+    "original": "aWQ",
+    "readable": "terminate",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "异步迭代器的终止/完成逻辑"
+  },
+  {
+    "original": "tWQ",
+    "readable": "parallel",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "asynckit并行执行实现"
+  },
+  {
+    "original": "BJQ",
+    "readable": "serialOrdered",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "asynckit串行有序执行实现"
+  },
+  {
+    "original": "Ef0",
+    "readable": "ascending",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "升序比较器函数"
+  },
+  {
+    "original": "QJQ",
+    "readable": "descending",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "降序比较器函数"
+  },
+  {
+    "original": "GJQ",
+    "readable": "serial",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "asynckit串行执行包装器"
+  },
+  {
+    "original": "xXQ",
+    "readable": "getProxyForUrl",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "获取URL代理配置"
+  },
+  {
+    "original": "vXQ",
+    "readable": "shouldProxy",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "检查是否应该使用代理"
+  },
+  {
+    "original": "np",
+    "readable": "getEnv",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "不区分大小写的环境变量获取"
+  },
+  {
+    "original": "uXQ",
+    "readable": "parseTimeString",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "解析时间字符串为毫秒数(ms库)"
+  },
+  {
+    "original": "kg0",
+    "readable": "validateIPv6Hostname",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "验证IPv6地址格式"
+  },
+  {
+    "original": "Ip1",
+    "readable": "urlToOptions",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "将URL对象转换为请求选项对象"
+  },
+  {
+    "original": "Zp1",
+    "readable": "removeMatchingHeaders",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "使用正则删除匹配的HTTP头"
+  },
+  {
+    "original": "wQ1",
+    "readable": "createErrorClass",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "创建自定义错误类的工厂函数"
+  },
+  {
+    "original": "Hp1",
+    "readable": "abortRequest",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "中止HTTP请求并清理监听器"
+  },
+  {
+    "original": "Li",
+    "readable": "tracingUtils",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Sentry tracing工具函数模块"
+  },
+  {
+    "original": "ji",
+    "readable": "utils",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "通用工具函数(dropUndefinedKeys,logger等)"
+  },
+  {
+    "original": "Ri",
+    "readable": "spanStatus",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "SpanStatus枚举和HTTP状态码映射"
+  },
+  {
+    "original": "Si",
+    "readable": "IDLE_TRANSACTION_FINISH_REASONS",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "空闲事务结束原因数组"
+  },
+  {
+    "original": "Vi",
+    "readable": "__awaiter",
+    "confidence": 0.99,
+    "source": "llm-inference",
+    "reason": "TypeScript async/await辅助函数"
+  },
+  {
+    "original": "ci",
+    "readable": "sentryUtils",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Sentry SDK工具函数集合"
+  },
+  {
+    "original": "fi",
+    "readable": "webVitalsMetric",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Web Vitals性能指标初始化模块"
+  },
+  {
+    "original": "gi",
+    "readable": "triggerInstrumentationHandlers",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "触发性能指标回调处理器"
+  },
+  {
+    "original": "hi",
+    "readable": "webVitalsHidden",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "监听页面隐藏事件的Web Vitals模块"
+  },
+  {
+    "original": "ii",
+    "readable": "sentryUtils",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Sentry SDK工具函数(Node.js HTTP追踪)"
+  },
+  {
+    "original": "ki",
+    "readable": "sentryEnvelopeUtils",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Sentry信封工具函数"
+  },
+  {
+    "original": "oi",
+    "readable": "ReplaySubjectExports",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "RxJS ReplaySubject模块导出"
+  },
+  {
+    "original": "pi",
+    "readable": "sentryCore",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Sentry核心API(getClient,captureException等)"
+  },
+  {
+    "original": "qi",
+    "readable": "sentryBaggage",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Sentry baggage头处理工具"
+  },
+  {
+    "original": "ri",
+    "readable": "BehaviorSubjectModule",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "RxJS BehaviorSubject模块"
+  },
+  {
+    "original": "si",
+    "readable": "ConnectableObservableModule",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "RxJS ConnectableObservable模块"
+  },
+  {
+    "original": "ti",
+    "readable": "AsyncSubjectModule",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "RxJS AsyncSubject模块"
+  },
+  {
+    "original": "ui",
+    "readable": "webVitalsInstrumentationModule",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "Web Vitals性能监控模块(CLS,LCP,FID等)"
+  },
+  {
+    "original": "vi",
+    "readable": "_optionalChain",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "可选链属性安全访问函数"
+  },
+  {
+    "original": "_K",
+    "readable": "scheduleRefresh",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React DevTools scheduleRefresh，用于组件刷新调度"
+  },
+  {
+    "original": "aL",
+    "readable": "moduleExports",
+    "confidence": 0.75,
+    "source": "llm-inference",
+    "reason": "AWS SDK模块导出对象"
+  },
+  {
+    "original": "bL",
+    "readable": "moduleExports",
+    "confidence": 0.75,
+    "source": "llm-inference",
+    "reason": "AWS SDK模块导出对象"
+  },
+  {
+    "original": "cL",
+    "readable": "featureManager",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "AWS SDK特性管理器，setFeature方法设置SDK功能"
+  },
+  {
+    "original": "dL",
+    "readable": "parseDateValue",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "日期值解析验证函数"
+  },
+  {
+    "original": "wi",
+    "readable": "globalObject",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "GLOBAL_OBJ，用于访问window/global DOM API"
+  },
+  {
+    "original": "xi",
+    "readable": "sentryUtils",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "Sentry工具模块(logger,loadModule,fill等)"
+  },
+  {
+    "original": "Bi",
+    "readable": "STATSIG_GLOBAL_KEY",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "Statsig SDK全局命名空间key '__STATSIG__'"
+  },
+  {
+    "original": "Ci",
+    "readable": "browserGlobalObject",
+    "confidence": 0.93,
+    "source": "llm-inference",
+    "reason": "浏览器全局对象(HTMLElement,document等)"
+  },
+  {
+    "original": "Ei",
+    "readable": "sentryConstants",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Sentry环境常量(DEFAULT_ENVIRONMENT='production')"
+  },
+  {
+    "original": "Gi",
+    "readable": "statsigHashUtils",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Statsig DJB2哈希工具(_DJB2,_DJB2Object等)"
+  },
+  {
+    "original": "Ji",
+    "readable": "statsigEventLoggerModule",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Statsig EventLogger类和异步辅助函数"
+  },
+  {
+    "original": "Ti",
+    "readable": "sentryScope",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Sentry scope管理(getCurrentScope,withScope)"
+  },
+  {
+    "original": "Ui",
+    "readable": "sentryTypeUtils",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Sentry类型检查工具(isError,isPrimitive等)"
+  },
+  {
+    "original": "xK",
+    "readable": "shouldFilterFiber",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React DevTools过滤fiber的判断函数"
+  },
+  {
+    "original": "yK",
+    "readable": "createFiberFromTypeAndProps",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "根据类型和props创建React fiber节点"
+  },
+  {
+    "original": "zK",
+    "readable": "React",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "React库导入，用于createElement等"
+  },
+  {
+    "original": "AK",
+    "readable": "sbox",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AES加密S-box替换表(256元素数组)"
+  },
+  {
+    "original": "BK",
+    "readable": "forge",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "forge.js加密库(pkcs5,pbkdf2,hmac等)"
+  },
+  {
+    "original": "CK",
+    "readable": "parseInt",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "整数解析函数，处理不同进制"
+  },
+  {
+    "original": "DK",
+    "readable": "parseFloat",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "浮点数解析函数"
+  },
+  {
+    "original": "EK",
+    "readable": "getStringLength",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "获取字符串长度(支持unicode)"
+  },
+  {
+    "original": "FK",
+    "readable": "React",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React库导入(useState,createElement等)"
+  },
+  {
+    "original": "GK",
+    "readable": "React",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React库导入(useCallback,createElement等)"
+  },
+  {
+    "original": "MK",
+    "readable": "deleteMethod",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Map-like数据结构的delete方法实现"
+  },
+  {
+    "original": "NK",
+    "readable": "REACT_CONTEXT_TYPE",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React Context类型常量(60110)"
+  },
+  {
+    "original": "OK",
+    "readable": "STATUS_OK",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "状态码常量(0或1)，表示成功状态"
+  },
+  {
+    "original": "PK",
+    "readable": "defineProperty",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Object.defineProperty辅助函数"
+  },
+  {
+    "original": "QK",
+    "readable": "handleHandshake",
+    "confidence": 0.99,
+    "source": "llm-inference",
+    "reason": "TLS握手处理函数"
+  },
+  {
+    "original": "eL",
+    "readable": "FileLike",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "类定义，实现File接口(name,type,size,lastModified)"
+  },
+  {
+    "original": "fL",
+    "readable": "emptyObject",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS端点规则集中的空对象占位符"
+  },
+  {
+    "original": "gL",
+    "readable": "argv",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "字符串常量'argv'，AWS端点规则集参数数组键"
+  },
+  {
+    "original": "hL",
+    "readable": "fn",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "字符串常量'fn'，AWS端点规则集函数名键"
+  },
+  {
+    "original": "iL",
+    "readable": "parseDateValue",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "验证并解析日期值在指定范围内"
+  },
+  {
+    "original": "pL",
+    "readable": "defineNameProperty",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "通过Object.defineProperty设置函数name属性"
+  },
+  {
+    "original": "qL",
+    "readable": "cachedGlibcVersion",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "缓存glibc版本号的变量"
+  },
+  {
+    "original": "rL",
+    "readable": "diagnosticChannels",
+    "confidence": 0.93,
+    "source": "llm-inference",
+    "reason": "undici HTTP客户端诊断通道(create,bodySent,headers等)"
+  },
+  {
+    "original": "sL",
+    "readable": "agentInternalState",
+    "confidence": 0.94,
+    "source": "llm-inference",
+    "reason": "HTTP Agent类的私有状态存储Symbol"
+  },
+  {
+    "original": "tL",
+    "readable": "webidl",
+    "confidence": 0.96,
+    "source": "llm-inference",
+    "reason": "Web IDL实现(brandCheck,converters,interfaceConverter)"
+  },
+  {
+    "original": "uL",
+    "readable": "awsSdkCoreModule",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS SDK核心模块(版本警告,凭证设置,特性设置)"
+  },
+  {
+    "original": "vL",
+    "readable": "tree",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "字符串字面量'tree'，AWS端点规则集类型标识"
+  },
+  {
+    "original": "wL",
+    "readable": "cachedLibcFamily",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "缓存libc系统库家族类型(glibc/musl)"
+  },
+  {
+    "original": "xL",
+    "readable": "setFunctionName",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "设置函数对象的name属性"
+  },
+  {
+    "original": "yL",
+    "readable": "xmlBuilder",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS SDK XML构建工具(XmlNode,XmlText)"
+  },
+  {
+    "original": "zL",
+    "readable": "WebSocket",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "ws库导入的WebSocket类"
+  },
+  {
+    "original": "AL",
+    "readable": "Glob",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Glob模式匹配类(pattern,streamSync,walk,iterate)"
+  },
+  {
+    "original": "BL",
+    "readable": "getParsedType",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "运行时类型推断函数"
+  },
+  {
+    "original": "CL",
+    "readable": "DEFAULT_TIMEOUT",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "默认超时时间常量60000ms"
+  },
+  {
+    "original": "DL",
+    "readable": "React",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "React库导入(PureComponent,createElement等)"
+  },
+  {
+    "original": "EL",
+    "readable": "semverRegexExports",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "semver正则模块导出(re,safeRe,src,t)"
+  },
+  {
+    "original": "FL",
+    "readable": "EDGE_LEFT",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "Yoga布局引擎左边缘常量(0)"
+  },
+  {
+    "original": "GL",
+    "readable": "zodBoolean",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Zod布尔类型schema创建"
+  },
+  {
+    "original": "HL",
+    "readable": "pushToArray",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "推送值到对象数组的辅助函数"
+  },
+  {
+    "original": "IL",
+    "readable": "getAllMcpServers",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "聚合所有作用域的MCP服务器"
+  },
+  {
+    "original": "JL",
+    "readable": "isInsideGitRepo",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "检查当前目录是否在git仓库内"
+  },
+  {
+    "original": "KL",
+    "readable": "sliceVisibleString",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "处理ANSI/emoji的字符串切片"
+  },
+  {
+    "original": "LL",
+    "readable": "React",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "React库导入"
+  },
+  {
+    "original": "ML",
+    "readable": "React",
+    "confidence": 1,
+    "source": "llm-inference",
+    "reason": "React库导入"
+  },
+  {
+    "original": "NL",
+    "readable": "isDefinedUtil",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Sharp库工具函数(defined检查)"
+  },
+  {
+    "original": "OL",
+    "readable": "getConfigurationFiles",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "搜索配置目录返回Markdown文件列表"
+  },
+  {
+    "original": "PL",
+    "readable": "moduleExports",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "CommonJS模块exports参数"
+  },
+  {
+    "original": "QL",
+    "readable": "ZodNever",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "Zod永不类型类"
+  },
+  {
+    "original": "RL",
+    "readable": "setFunctionName",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "设置函数名称的工具函数"
+  },
+  {
+    "original": "SL",
+    "readable": "fastXmlParser",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "fast-xml-parser库(XMLParser,XMLValidator,XMLBuilder)"
+  },
+  {
+    "original": "TL",
+    "readable": "Uint8ArrayBlobAdapterModule",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Uint8Array的Blob适配器模块"
+  },
+  {
+    "original": "UL",
+    "readable": "createHookContext",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "创建hook执行上下文(session_id,cwd等)"
+  },
+  {
+    "original": "VL",
+    "readable": "EDGE_RIGHT",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "Yoga布局引擎右边缘常量(2)"
+  },
+  {
+    "original": "WL",
+    "readable": "writeFileAtomic",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "原子性文件写入函数"
+  },
+  {
+    "original": "XL",
+    "readable": "taskQueue",
+    "confidence": 0.93,
+    "source": "llm-inference",
+    "reason": "React Scheduler任务队列数组"
+  },
+  {
+    "original": "YL",
+    "readable": "getApiProvider",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "返回API provider类型(bedrock/vertex/firstParty)"
+  },
+  {
+    "original": "ZL",
+    "readable": "ZodTuple",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "Zod Tuple类型类"
+  },
+  {
+    "original": "$L",
+    "readable": "sharpUtilities",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "Sharp图像处理库工具模块"
+  },
+  {
+    "original": "_L",
+    "readable": "normalizeSemverVersion",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "规范化semver版本号函数"
+  },
+  {
+    "original": "aM",
+    "readable": "TOOL_NAME_WRITE",
+    "confidence": 0.99,
+    "source": "llm-inference",
+    "reason": "工具名称常量'Write'"
+  },
+  {
+    "original": "bM",
+    "readable": "emptyObject",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS端点规则集空对象占位符"
+  },
+  {
+    "original": "cM",
+    "readable": "base64Chars",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Base64编码字符集常量"
+  },
+  {
+    "original": "dM",
+    "readable": "isStream",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "检查对象是否为流"
+  },
+  {
+    "original": "eM",
+    "readable": "pathJoin",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "路径连接函数"
+  },
+  {
+    "original": "fM",
+    "readable": "fn",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS规则集函数键名常量"
+  },
+  {
+    "original": "gM",
+    "readable": "endpointModule",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS SDK endpoint middleware模块"
+  },
+  {
+    "original": "hM",
+    "readable": "argv",
+    "confidence": 0.99,
+    "source": "llm-inference",
+    "reason": "字符串常量'argv'，AWS端点规则参数键"
+  },
+  {
+    "original": "iM",
+    "readable": "crypto",
+    "confidence": 0.99,
+    "source": "llm-inference",
+    "reason": "Node.js crypto模块"
+  },
+  {
+    "original": "jM",
+    "readable": "setFunctionName",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "设置函数name属性的辅助函数"
+  },
+  {
+    "original": "kM",
+    "readable": "hasTrustDialogAccepted",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "检查用户是否已接受信任对话框"
+  },
+  {
+    "original": "lM",
+    "readable": "Buffer",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "Node.js Buffer类"
+  },
+  {
+    "original": "mM",
+    "readable": "URLImpl",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "URL构造函数实现"
+  },
+  {
+    "original": "nM",
+    "readable": "GLOB_TOOL_NAME",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Glob工具名称常量"
+  },
+  {
+    "original": "oM",
+    "readable": "POINTER_SIZE",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "指针大小常量"
+  },
+  {
+    "original": "pM",
+    "readable": "createAuthClientModule",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "创建认证客户端模块"
+  },
+  {
+    "original": "qM",
+    "readable": "xmlBuilder",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "XML构建器实例"
+  },
+  {
+    "original": "rM",
+    "readable": "truncateContent",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "内容截断函数"
+  },
+  {
+    "original": "sM",
+    "readable": "homedir",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "os.homedir()用户主目录"
+  },
+  {
+    "original": "tM",
+    "readable": "getShellConfigPaths",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "获取shell配置文件路径"
+  },
+  {
+    "original": "uM",
+    "readable": "floor",
+    "confidence": 0.99,
+    "source": "llm-inference",
+    "reason": "Math.floor取整函数"
+  },
+  {
+    "original": "vM",
+    "readable": "parseDateValue",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "解析日期值函数"
+  },
+  {
+    "original": "wM",
+    "readable": "awsStsClientExports",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "AWS STS客户端导出"
+  },
+  {
+    "original": "xM",
+    "readable": "parseDateValue",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "日期值解析(另一实例)"
+  },
+  {
+    "original": "yM",
+    "readable": "httpHandlerModule",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "HTTP处理器模块"
+  },
+  {
+    "original": "zM",
+    "readable": "setFunctionName",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "设置函数名称"
+  },
+  {
+    "original": "AM",
+    "readable": "FormData",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "FormData类"
+  },
+  {
+    "original": "BM",
+    "readable": "llhttp_constants",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "llhttp解析器常量"
+  },
+  {
+    "original": "CM",
+    "readable": "credentialProviderModule",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "AWS凭证提供器模块"
+  },
+  {
+    "original": "DM",
+    "readable": "TREE_TYPE_CONSTANT",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "树类型常量"
+  },
+  {
+    "original": "EM",
+    "readable": "featureTracker",
+    "confidence": 0.88,
+    "source": "llm-inference",
+    "reason": "特性追踪器"
+  },
+  {
+    "original": "FM",
+    "readable": "getUserAgent",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "获取User-Agent字符串"
+  },
+  {
+    "original": "GM",
+    "readable": "React",
+    "confidence": 0.99,
+    "source": "llm-inference",
+    "reason": "React库导入"
+  },
+  {
+    "original": "HM",
+    "readable": "awsUserAgentFeatures",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "AWS用户代理特性"
+  },
+  {
+    "original": "IM",
+    "readable": "kSignal",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "AbortSignal Symbol键"
+  },
+  {
+    "original": "JM",
+    "readable": "requestCurrentURL",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "获取当前请求URL"
+  },
+  {
+    "original": "KM",
+    "readable": "xmlNodeModule",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "XML节点模块"
+  },
+  {
+    "original": "LM",
+    "readable": "TREE_RULE_TYPE",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "树规则类型常量"
+  },
+  {
+    "original": "MM",
+    "readable": "webIdentityExports",
+    "confidence": 0.88,
+    "source": "llm-inference",
+    "reason": "Web身份认证导出"
+  },
+  {
+    "original": "NM",
+    "readable": "setFunctionName",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "设置函数名属性"
+  },
+  {
+    "original": "OM",
+    "readable": "ENDPOINT_RULE_TYPE",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "端点规则类型"
+  },
+  {
+    "original": "PM",
+    "readable": "TREE_TYPE",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "树类型常量"
+  },
+  {
+    "original": "QM",
+    "readable": "currentBuffer",
+    "confidence": 0.88,
+    "source": "llm-inference",
+    "reason": "当前缓冲区变量"
+  },
+  {
+    "original": "RM",
+    "readable": "XmlBuilder",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "XML构建器类"
+  },
+  {
+    "original": "SM",
+    "readable": "exports",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "CommonJS exports对象"
+  },
+  {
+    "original": "TM",
+    "readable": "featureTracker",
+    "confidence": 0.88,
+    "source": "llm-inference",
+    "reason": "特性追踪器(另一实例)"
+  },
+  {
+    "original": "UM",
+    "readable": "TREE_VIEW_MODE",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "树视图模式常量"
+  },
+  {
+    "original": "VM",
+    "readable": "normalizeModelId",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "规范化模型ID函数"
+  },
+  {
+    "original": "WM",
+    "readable": "InvalidArgumentError",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "无效参数错误类"
+  },
+  {
+    "original": "XM",
+    "readable": "Cache",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "缓存类"
+  },
+  {
+    "original": "YM",
+    "readable": "NOT_FOUND",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "NOT_FOUND常量"
+  },
+  {
+    "original": "BN",
+    "readable": "constructClassInstance",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "React内部函数，创建类组件实例"
+  },
+  {
+    "original": "CN",
+    "readable": "isUndefined",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Lodash工具函数，检查值是否为undefined"
+  },
+  {
+    "original": "DN",
+    "readable": "unregisterRootPseudoKey",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React DevTools函数，从Map中注销根伪键"
+  },
+  {
+    "original": "EN",
+    "readable": "keysIn",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Lodash函数，获取对象所有可枚举属性键"
+  },
+  {
+    "original": "FN",
+    "readable": "defineProperties",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "Babel编译辅助函数，定义类的属性"
+  },
+  {
+    "original": "ZM",
+    "readable": "wasmBufferPointer",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "WASM内存缓冲区指针变量"
+  },
+  {
+    "original": "_M",
+    "readable": "setFunctionName",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "设置函数name属性 CS1(A,'name',{value:B})"
+  },
+  {
+    "original": "bN",
+    "readable": "sentryTracingUtils",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Sentry tracing工具函数模块"
+  },
+  {
+    "original": "dN",
+    "readable": "sentryUtils",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Sentry工具函数模块(LA())"
+  },
+  {
+    "original": "eN",
+    "readable": "HTTP_METHOD_POST",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "HTTP方法常量值4"
+  },
+  {
+    "original": "fN",
+    "readable": "getTimeOrigin",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "获取浏览器性能时间原点"
+  },
+  {
+    "original": "gN",
+    "readable": "extractRegexMatch",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "提取正则表达式第一个匹配组"
+  },
+  {
+    "original": "hN",
+    "readable": "AgentBaseInternalState",
+    "confidence": 0.99,
+    "source": "llm-inference",
+    "reason": "HTTP Agent内部状态Symbol"
+  },
+  {
+    "original": "kN",
+    "readable": "sentryUtils",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "Sentry工具模块(另一导入)"
+  },
+  {
+    "original": "mN",
+    "readable": "sentryUtils",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "Sentry工具模块(GLOBAL_OBJ)"
+  },
+  {
+    "original": "nN",
+    "readable": "mergeMapModule",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "RxJS mergeMap操作符模块"
+  },
+  {
+    "original": "qN",
+    "readable": "isTypedArrayFunc",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Lodash类型数组检查函数"
+  },
+  {
+    "original": "sN",
+    "readable": "getTotalAPIDuration",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "返回API总耗时"
+  },
+  {
+    "original": "tN",
+    "readable": "kAsync",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "异步操作Symbol标识"
+  },
+  {
+    "original": "vN",
+    "readable": "currentInteraction",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "当前Web Vitals交互状态变量"
+  },
+  {
+    "original": "wN",
+    "readable": "isTypedArray",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Lodash检查是否为TypedArray"
+  },
+  {
+    "original": "xN",
+    "readable": "sentryBrowserModule",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Sentry浏览器模块导入"
+  },
+  {
+    "original": "yN",
+    "readable": "sentryBrowserIntegrations",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Sentry浏览器集成模块"
+  },
+  {
+    "original": "zN",
+    "readable": "setCurrentRoot",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "React DevTools设置当前根节点"
+  },
+  {
+    "original": "AN",
+    "readable": "mountEffect",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "React hook挂载effect"
+  },
+  {
+    "original": "GN",
+    "readable": "commitUnmount",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "React卸载fiber节点的commit函数"
+  },
+  {
+    "original": "HN",
+    "readable": "hasProfilingData",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React DevTools是否有分析数据标志"
+  },
+  {
+    "original": "JN",
+    "readable": "extendDeadline",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "延长React渲染截止时间500ms"
+  },
+  {
+    "original": "KN",
+    "readable": "currentProfilerRoot",
+    "confidence": 0.88,
+    "source": "llm-inference",
+    "reason": "React DevTools当前分析器根"
+  },
+  {
+    "original": "LN",
+    "readable": "baseIteratee",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Lodash基础迭代器"
+  },
+  {
+    "original": "MN",
+    "readable": "settleResponse",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Axios响应处理函数"
+  },
+  {
+    "original": "NN",
+    "readable": "baseGetTag",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Lodash获取对象类型标签"
+  },
+  {
+    "original": "ON",
+    "readable": "axiosValidators",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Axios验证器对象"
+  },
+  {
+    "original": "PN",
+    "readable": "sentryDebugBuild",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Sentry调试构建模块"
+  },
+  {
+    "original": "QN",
+    "readable": "createRootErrorUpdate",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "React创建根错误更新"
+  },
+  {
+    "original": "RN",
+    "readable": "localStorageProvider",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "localStorage存储提供器"
+  },
+  {
+    "original": "SN",
+    "readable": "sentryCore",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "Sentry核心模块(Zn1)"
+  },
+  {
+    "original": "UN",
+    "readable": "eq",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "Lodash相等比较函数"
+  },
+  {
+    "original": "VN",
+    "readable": "shouldCopyProperty",
+    "confidence": 0.88,
+    "source": "llm-inference",
+    "reason": "React DevTools判断是否应复制属性"
+  },
+  {
+    "original": "WN",
+    "readable": "renderLanes",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React渲染lanes变量"
+  },
+  {
+    "original": "XN",
+    "readable": "hasUncaughtError",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React是否有未捕获错误标志"
+  },
+  {
+    "original": "YN",
+    "readable": "SELECTOR_COMPONENT",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "React Testing Library选择器类型常量"
+  },
+  {
+    "original": "ZN",
+    "readable": "appendAllChildren",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "React DOM操作添加所有子节点"
+  },
+  {
+    "original": "_N",
+    "readable": "sentryGlobalIntegrations",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Sentry全局集成模块(GI())"
+  },
+  {
+    "original": "aO",
+    "readable": "React",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React库导入(A1(V1()))"
+  },
+  {
+    "original": "bO",
+    "readable": "checkInstallation",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "检查原生安装状态的异步函数"
+  },
+  {
+    "original": "cO",
+    "readable": "trackToolUsePermission",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "追踪工具使用权限请求的telemetry"
+  },
+  {
+    "original": "eO",
+    "readable": "getSummaryManager",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "获取摘要管理器单例"
+  },
+  {
+    "original": "fO",
+    "readable": "React",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React库导入"
+  },
+  {
+    "original": "gO",
+    "readable": "CDATA_CONTENT",
+    "confidence": 0.88,
+    "source": "llm-inference",
+    "reason": "HTML解析器CDATA内容类型常量(4)"
+  },
+  {
+    "original": "hO",
+    "readable": "htmlNamespace",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "HTML命名空间常量"
+  },
+  {
+    "original": "iO",
+    "readable": "isString",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "类型检查是否为字符串"
+  },
+  {
+    "original": "jO",
+    "readable": "treeWalkerModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "树遍历器模块"
+  },
+  {
+    "original": "kO",
+    "readable": "logPaths",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "日志路径配置对象"
+  },
+  {
+    "original": "lO",
+    "readable": "ToolUseConfirmDialog",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "工具使用确认对话框组件"
+  },
+  {
+    "original": "mO",
+    "readable": "builtinPrompt",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "内置提示词定义对象"
+  },
+  {
+    "original": "nO",
+    "readable": "React",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React库导入"
+  },
+  {
+    "original": "oO",
+    "readable": "React",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React库导入"
+  },
+  {
+    "original": "pO",
+    "readable": "PermissionDecisionReason",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "权限决策原因展示组件"
+  },
+  {
+    "original": "qO",
+    "readable": "registerDESAlgorithm",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "注册DES加密算法"
+  },
+  {
+    "original": "rO",
+    "readable": "React",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React库导入"
+  },
+  {
+    "original": "sO",
+    "readable": "React",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React库导入(useState,useRef)"
+  },
+  {
+    "original": "tO",
+    "readable": "CLAUDE_CONFIG",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Claude配置常量(FOLDER_NAME,AGENTS_DIR)"
+  },
+  {
+    "original": "uO",
+    "readable": "htmlSpecialParentElements",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "HTML特殊父元素映射"
+  },
+  {
+    "original": "wO",
+    "readable": "forgeLib",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "forge加密库实例"
+  },
+  {
+    "original": "xO",
+    "readable": "React",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React库导入"
+  },
+  {
+    "original": "yO",
+    "readable": "GITHUB_ACTION_SETUP_URL",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "GitHub Action设置文档URL"
+  },
+  {
+    "original": "AO",
+    "readable": "React",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React库导入"
+  },
+  {
+    "original": "BO",
+    "readable": "InterruptedMessage",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "中断消息组件"
+  },
+  {
+    "original": "CO",
+    "readable": "exitPlanModePrompt",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "退出计划模式提示词定义"
+  },
+  {
+    "original": "DO",
+    "readable": "BULLET_CHAR",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "平台相关的项目符号字符(macOS用⏺)"
+  },
+  {
+    "original": "EO",
+    "readable": "forgeSha256",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "forge SHA256哈希模块"
+  },
+  {
+    "original": "FO",
+    "readable": "getIDEDisplayName",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "获取IDE显示名称"
+  },
+  {
+    "original": "GO",
+    "readable": "methodOverride",
+    "confidence": 0.88,
+    "source": "llm-inference",
+    "reason": "方法覆盖工具类"
+  },
+  {
+    "original": "HO",
+    "readable": "SchemaParser",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "JSON Schema解析器类"
+  },
+  {
+    "original": "IO",
+    "readable": "React",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React库导入"
+  },
+  {
+    "original": "JO",
+    "readable": "mcpRequestSchema",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "MCP请求Zod schema"
+  },
+  {
+    "original": "KO",
+    "readable": "isNewLine",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "检查字符是否为换行符(10或13)"
+  },
+  {
+    "original": "LO",
+    "readable": "forgeSha1",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "forge SHA1哈希模块"
+  },
+  {
+    "original": "MO",
+    "readable": "forgePkcs1",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "forge PKCS1加密模块"
+  },
+  {
+    "original": "NO",
+    "readable": "forgePrng",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "forge伪随机数生成器模块"
+  },
+  {
+    "original": "OO",
+    "readable": "bigIntToHex",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "大整数转十六进制字符串"
+  },
+  {
+    "original": "PO",
+    "readable": "isElement",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "检查是否为DOM元素节点"
+  },
+  {
+    "original": "QO",
+    "readable": "getLastFromAsyncGenerator",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "获取异步生成器的最后一个值"
+  },
+  {
+    "original": "RO",
+    "readable": "writeBigIntToBuffer",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "将大整数写入缓冲区"
+  },
+  {
+    "original": "SO",
+    "readable": "useNormalizedModelId",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "获取规范化模型ID的React hook"
+  },
+  {
+    "original": "TO",
+    "readable": "xmlFind",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "XML元素查找函数"
+  },
+  {
+    "original": "VO",
+    "readable": "createOnoError",
+    "confidence": 0.88,
+    "source": "llm-inference",
+    "reason": "创建ono错误对象"
+  },
+  {
+    "original": "WO",
+    "readable": "applyEdits",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "应用文件编辑操作"
+  },
+  {
+    "original": "XO",
+    "readable": "mcpMessageSchema",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "MCP消息联合类型schema"
+  },
+  {
+    "original": "YO",
+    "readable": "htmlTokenizerModule",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "HTML分词器模块"
+  },
+  {
+    "original": "ZO",
+    "readable": "escapeHtml",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "HTML转义函数"
+  },
+  {
+    "original": "_O",
+    "readable": "truncateString",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "截断字符串并添加省略号"
+  },
+  {
+    "original": "aP",
+    "readable": "parseAwsErrorMetadata",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "解析AWS错误响应元数据(statusCode,requestId等)"
+  },
+  {
+    "original": "cP",
+    "readable": "awsSdkCore",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "AWS SDK核心模块(CB())"
+  },
+  {
+    "original": "dP",
+    "readable": "TREE_TYPE",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS端点规则'tree'类型常量"
+  },
+  {
+    "original": "eP",
+    "readable": "awsRequestUtils",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "AWS请求工具模块(g7())"
+  },
+  {
+    "original": "fP",
+    "readable": "UTF8_BOM",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "UTF-8 BOM字节序列[239,187,191]"
+  },
+  {
+    "original": "gP",
+    "readable": "loadMTLSConfig",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "加载mTLS客户端证书配置"
+  },
+  {
+    "original": "iP",
+    "readable": "SOURCE_IDENTITY",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS STS SourceIdentity字段名常量"
+  },
+  {
+    "original": "jP",
+    "readable": "wasmExportTable",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "WASM导出函数表"
+  },
+  {
+    "original": "kP",
+    "readable": "nodeAssert",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "Node.js assert模块"
+  },
+  {
+    "original": "lP",
+    "readable": "TREE_TYPE",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS端点规则'tree'类型常量(另一实例)"
+  },
+  {
+    "original": "mP",
+    "readable": "setFunctionName",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "设置函数name属性"
+  },
+  {
+    "original": "nP",
+    "readable": "STSServiceException",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS STS服务异常类"
+  },
+  {
+    "original": "oP",
+    "readable": "ROLE_ARN",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "AWS RoleArn字段名常量"
+  },
+  {
+    "original": "pP",
+    "readable": "setFunctionName",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "设置函数name属性(另一实例)"
+  },
+  {
+    "original": "qP",
+    "readable": "TREE_TYPE",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS端点规则'tree'类型常量(另一实例)"
+  },
+  {
+    "original": "rP",
+    "readable": "ARN",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "AWS Arn字段名常量"
+  },
+  {
+    "original": "sP",
+    "readable": "ASSUMED_ROLE_USER",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "AWS AssumedRoleUser字段名常量"
+  },
+  {
+    "original": "tP",
+    "readable": "awsStsModule",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "AWS STS模块导入"
+  },
+  {
+    "original": "uP",
+    "readable": "getModelDisplayName",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "获取模型显示名称(Opus 4.1,Sonnet 4等)"
+  },
+  {
+    "original": "wP",
+    "readable": "setFunctionName",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "设置函数name属性"
+  },
+  {
+    "original": "xP",
+    "readable": "matchValue",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "匹配值(支持字符串/正则/函数)"
+  },
+  {
+    "original": "yP",
+    "readable": "kOpenStreams",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "HTTP2 open streams Symbol"
+  },
+  {
+    "original": "zP",
+    "readable": "TREE_TYPE",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS端点规则'tree'类型常量"
+  },
+  {
+    "original": "AP",
+    "readable": "isAbortError",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "检查是否为AbortError"
+  },
+  {
+    "original": "CP",
+    "readable": "SOURCE_IDENTITY",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS SourceIdentity字段名常量"
+  },
+  {
+    "original": "DP",
+    "readable": "setFunctionName",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "设置函数name属性"
+  },
+  {
+    "original": "EP",
+    "readable": "awsSdkCore",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "AWS SDK核心模块(CB())"
+  },
+  {
+    "original": "FP",
+    "readable": "setFunctionName",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "设置函数name属性"
+  },
+  {
+    "original": "GP",
+    "readable": "apiRequestWeakMap",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "API请求WeakMap缓存"
+  },
+  {
+    "original": "HP",
+    "readable": "awsSdkCore",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "AWS SDK核心模块"
+  },
+  {
+    "original": "IP",
+    "readable": "containsModelName",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "检查字符串是否包含模型名称"
+  },
+  {
+    "original": "JP",
+    "readable": "streamUtils",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "流工具模块(createBufferedReadableStream)"
+  },
+  {
+    "original": "KP",
+    "readable": "TREE_TYPE",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS端点规则'tree'类型常量"
+  },
+  {
+    "original": "LP",
+    "readable": "SOURCE_IDENTITY",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS SourceIdentity字段名常量"
+  },
+  {
+    "original": "MP",
+    "readable": "STSServiceException",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS STS服务异常类"
+  },
+  {
+    "original": "NP",
+    "readable": "TREE_TYPE",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS端点规则'tree'类型常量"
+  },
+  {
+    "original": "OP",
+    "readable": "parseAwsErrorMetadata",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "解析AWS错误响应元数据"
+  },
+  {
+    "original": "PP",
+    "readable": "idleTimeoutHandle",
+    "confidence": 0.88,
+    "source": "llm-inference",
+    "reason": "空闲超时定时器句柄"
+  },
+  {
+    "original": "QP",
+    "readable": "sanitizeRequestOptions",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "清理请求选项，删除headers"
+  },
+  {
+    "original": "RP",
+    "readable": "nodeAssert",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "Node.js assert模块"
+  },
+  {
+    "original": "TP",
+    "readable": "kOnDestroyed",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "HTTP客户端onDestroyed Symbol"
+  },
+  {
+    "original": "UP",
+    "readable": "STSServiceException",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "AWS STS服务异常类"
+  },
+  {
+    "original": "VP",
+    "readable": "interopRequireDefault",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "ES模块互操作默认导入"
+  },
+  {
+    "original": "WP",
+    "readable": "SONNET_4_MODEL_IDS",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "Sonnet 4模型ID配置(firstParty/bedrock/vertex)"
+  },
+  {
+    "original": "XP",
+    "readable": "serializeRuleExpression",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "序列化AWS端点规则表达式"
+  },
+  {
+    "original": "ZP",
+    "readable": "apiStateWeakMap",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "API状态WeakMap缓存"
+  },
+  {
+    "original": "bQ",
+    "readable": "currentPriorityLevel",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React调度器当前优先级变量"
+  },
+  {
+    "original": "dQ",
+    "readable": "didReceiveUpdate",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "React fiber是否收到更新标志"
+  },
+  {
+    "original": "eQ",
+    "readable": "React",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React库导入"
+  },
+  {
+    "original": "gQ",
+    "readable": "mcpSchemaConfig",
+    "confidence": 0.88,
+    "source": "llm-inference",
+    "reason": "MCP配置schema对象"
+  },
+  {
+    "original": "iQ",
+    "readable": "forgeLib",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "forge加密库实例"
+  },
+  {
+    "original": "kQ",
+    "readable": "DEFAULT_IGNORED_ERRORS",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Sentry默认忽略的错误正则数组"
+  },
+  {
+    "original": "lQ",
+    "readable": "TAG_NAMES",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "HTML标签名常量"
+  },
+  {
+    "original": "mQ",
+    "readable": "resetContextDependencies",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React重置上下文依赖"
+  },
+  {
+    "original": "nQ",
+    "readable": "React",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React库导入"
+  },
+  {
+    "original": "oQ",
+    "readable": "HTTP_METHODS",
+    "confidence": 0.92,
+    "source": "llm-inference",
+    "reason": "llhttp HTTP方法枚举"
+  },
+  {
+    "original": "pQ",
+    "readable": "forgeLib",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "forge加密库实例"
+  },
+  {
+    "original": "qQ",
+    "readable": "objectIdMap",
+    "confidence": 0.88,
+    "source": "llm-inference",
+    "reason": "React DevTools对象ID映射"
+  },
+  {
+    "original": "sQ",
+    "readable": "NAMESPACE",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "HTML命名空间常量"
+  },
+  {
+    "original": "tQ",
+    "readable": "isAsyncIterable",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "检查是否为异步可迭代对象"
+  },
+  {
+    "original": "vQ",
+    "readable": "React",
+    "confidence": 0.98,
+    "source": "llm-inference",
+    "reason": "React库导入"
+  },
+  {
+    "original": "wQ",
+    "readable": "IdlePriority",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "React调度器空闲优先级"
+  },
+  {
+    "original": "xQ",
+    "readable": "throwError",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "抛出错误的辅助函数"
+  },
+  {
+    "original": "yQ",
+    "readable": "ReactLibraryImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React library import pattern A1(V1())"
+  },
+  {
+    "original": "zQ",
+    "readable": "__awaiter",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Standard TypeScript async/await helper function"
+  },
+  {
+    "original": "AQ",
+    "readable": "setFunctionNameHelper1",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "setFunctionName helper pattern"
+  },
+  {
+    "original": "BQ",
+    "readable": "setFunctionNameHelper2",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "setFunctionName helper pattern"
+  },
+  {
+    "original": "CQ",
+    "readable": "ReactDevToolsIterator",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Iterator value in React DevTools context"
+  },
+  {
+    "original": "DQ",
+    "readable": "ReactLibraryImport2",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React library import pattern"
+  },
+  {
+    "original": "EQ",
+    "readable": "parseEnvBoolean",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Parses environment variable string to boolean (true/false/yes/no/1/0)"
+  },
+  {
+    "original": "FQ",
+    "readable": "GRID_CELL_SIZE",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Grid constant = 4, used in DC0 = 4 * FQ, PH = 5 * FQ etc."
+  },
+  {
+    "original": "GQ",
+    "readable": "defineNameProperty",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Defines name property on objects using defineProperty"
+  },
+  {
+    "original": "IQ",
+    "readable": "getConfigDir",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Returns CLAUDE_CONFIG_DIR env or ~/.claude path"
+  },
+  {
+    "original": "JQ",
+    "readable": "ZodErrorUtils",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Error utility namespace with errToObj and toString methods for Zod"
+  },
+  {
+    "original": "KQ",
+    "readable": "dispatchHookCleanup",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React hook cleanup dispatch function - cleans up UK and NW stacks"
+  },
+  {
+    "original": "LQ",
+    "readable": "HTMLElement",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "HTML Element class definition with superclass and ctor"
+  },
+  {
+    "original": "MQ",
+    "readable": "hydrateTextInstance",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React hydration text instance handler in commitHydratedContainer context"
+  },
+  {
+    "original": "NQ",
+    "readable": "textAlignmentOptions",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Text alignment configuration with center/centre options"
+  },
+  {
+    "original": "OQ",
+    "readable": "currentlyRenderingFiber",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React fiber - currently rendering fiber reference used in hook dispatch"
+  },
+  {
+    "original": "PQ",
+    "readable": "continueTraceWithPropagation",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Sentry tracing function continuing trace with sentryTrace and baggage"
+  },
+  {
+    "original": "QQ",
+    "readable": "defineNameProperty",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Defines name property on objects using yT1(A, 'name', {value:B})"
+  },
+  {
+    "original": "RQ",
+    "readable": "reconcileChildFiber",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React reconciliation - creates fiber for text/number children"
+  },
+  {
+    "original": "SQ",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React library import via A1(V1())"
+  },
+  {
+    "original": "TQ",
+    "readable": "tempElementDimensions",
+    "confidence": 0.8,
+    "source": "llm-inference",
+    "reason": "Temporary element dimensions storage in React DevTools rect handling"
+  },
+  {
+    "original": "UQ",
+    "readable": "hydrateSuspenseInstance",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React hydration - handles suspense instance hydration"
+  },
+  {
+    "original": "VQ",
+    "readable": "devToolsInjectHandler",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React DevTools injection handler - stores injected hook reference"
+  },
+  {
+    "original": "WQ",
+    "readable": "getOriginalCwd",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Returns Y2.originalCwd - the original working directory"
+  },
+  {
+    "original": "XQ",
+    "readable": "colorSpaceDefinitions",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Color space definitions with channels/labels for rgb, hsl, hsv etc."
+  },
+  {
+    "original": "YQ",
+    "readable": "tempLaneArray",
+    "confidence": 0.8,
+    "source": "llm-inference",
+    "reason": "Temporary array used in React profiler lane calculations"
+  },
+  {
+    "original": "ZQ",
+    "readable": "defineNameProperty",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "fP1(A, 'name', {value: B}) - defines name property"
+  },
+  {
+    "original": "aR",
+    "readable": "getFiberMetadata",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Returns fiber metadata object with displayName, id, key, type"
+  },
+  {
+    "original": "bR",
+    "readable": "commitMountContainerChildren",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React commit - mounts container children with subtreeFlags"
+  },
+  {
+    "original": "cR",
+    "readable": "createOffscreenFiber",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Creates offscreen fiber (tag 22) with isHidden state"
+  },
+  {
+    "original": "dR",
+    "readable": "findNativeNodeByTag",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Returns d8(q, N) - finds native node by fiber tag"
+  },
+  {
+    "original": "eR",
+    "readable": "nativeObjectCreate",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Native Object.create wrapper via cK(Object, 'create')"
+  },
+  {
+    "original": "fR",
+    "readable": "commitMutationEffectsOnFiber",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React commit mutation effects - handles alternate and flags"
+  },
+  {
+    "original": "gR",
+    "readable": "symbolForSelectorType",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Symbol.for wrapper for selector types like 'selector.component'"
+  },
+  {
+    "original": "hR",
+    "readable": "SELECTOR_TEST_ID",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Selector type constant = 3, for 'selector.test_id'"
+  },
+  {
+    "original": "iR",
+    "readable": "pendingOwnersArray",
+    "confidence": 0.8,
+    "source": "llm-inference",
+    "reason": "Array for pending owners in React DevTools"
+  },
+  {
+    "original": "jR",
+    "readable": "HooksDispatcherOnMount",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "React hooks dispatcher object with readContext, useCallback, useContext etc."
+  },
+  {
+    "original": "kR",
+    "readable": "updateDeferredValueOnFiber",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React - updates deferred value based on fiber mode"
+  },
+  {
+    "original": "lR",
+    "readable": "fiberToIDMap",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Map from fiber to ID in React DevTools"
+  },
+  {
+    "original": "mR",
+    "readable": "pendingErrorsOrWarnings",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Stores pending errors/warnings during React rendering"
+  },
+  {
+    "original": "nR",
+    "readable": "flushUnmountedFibers",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Flushes unmounted fibers array with Xp counter in DevTools"
+  },
+  {
+    "original": "oR",
+    "readable": "escapeSpecialChars",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Regex-based escape function for special characters"
+  },
+  {
+    "original": "pR",
+    "readable": "deletedFibersTimeout",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "setTimeout handle for clearing deleted fibers after 1000ms"
+  },
+  {
+    "original": "qR",
+    "readable": "pushInterleavedQueue",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Pushes to interleaved update queue with circular next handling"
+  },
+  {
+    "original": "sR",
+    "readable": "isProfilingActive",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Boolean flag tracking if profiling is active in DevTools"
+  },
+  {
+    "original": "tR",
+    "readable": "isArgumentsObject",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Checks if value is arguments object via callee property"
+  },
+  {
+    "original": "uR",
+    "readable": "ReactCurrentDispatcher",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Y.ReactCurrentDispatcher reference from React internals"
+  },
+  {
+    "original": "vR",
+    "readable": "hydrateHostInstance",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React hydration - hydrates host instance with state/props"
+  },
+  {
+    "original": "wR",
+    "readable": "grpcStatus",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "gRPC status module import d6() for Status.OK, INVALID_ARGUMENT etc."
+  },
+  {
+    "original": "xR",
+    "readable": "clearAlternateFiber",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Clears alternate fiber references when mode & 1 === 0"
+  },
+  {
+    "original": "yR",
+    "readable": "WeakMapOrMapFallback",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "WeakMap if available, otherwise Map fallback"
+  },
+  {
+    "original": "zR",
+    "readable": "longModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Hd1() import for Long number handling"
+  },
+  {
+    "original": "AR",
+    "readable": "pathImport",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "A1(X0A()) - path module import wrapper"
+  },
+  {
+    "original": "CR",
+    "readable": "subchannelModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "jl() import for gRPC subchannel handling"
+  },
+  {
+    "original": "DR",
+    "readable": "dateToTimestamp",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Converts Date to {seconds, nanos} timestamp object"
+  },
+  {
+    "original": "ER",
+    "readable": "markUpdateLaneFromFiberToRoot",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Marks update lane from fiber updateQueue to root"
+  },
+  {
+    "original": "FR",
+    "readable": "protobufJsModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "PJ() protobuf.js module for resolvedType handling"
+  },
+  {
+    "original": "GR",
+    "readable": "dropAggregatorModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Vf() import for DropAggregator in load balancing"
+  },
+  {
+    "original": "HR",
+    "readable": "PROTO_FULL_NAME_REGEX",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Regex for protobuf full name: .name.name pattern"
+  },
+  {
+    "original": "IR",
+    "readable": "BufferWriter",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Protobuf BufferWriter class extending prototype"
+  },
+  {
+    "original": "JR",
+    "readable": "grpcClientModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "SrB() import for gRPC Client implementation"
+  },
+  {
+    "original": "KR",
+    "readable": "PROTO_SIMPLE_NAME_REGEX",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Regex for simple proto name: [a-zA-Z_][a-zA-Z_0-9]*"
+  },
+  {
+    "original": "LR",
+    "readable": "invokeOrReturnValue",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Returns N(q) if function, else N - useful for state updates"
+  },
+  {
+    "original": "MR",
+    "readable": "useReducer",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React useReducer hook implementation with YV() and queue"
+  },
+  {
+    "original": "NR",
+    "readable": "EMPTY_CONTEXT_OBJECT",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Empty context object used with KA wrapper for sX, EK, $G"
+  },
+  {
+    "original": "OR",
+    "readable": "forceStoreRerender",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Forces re-render via xJ(q, 1) and A5 call with lane 1"
+  },
+  {
+    "original": "PR",
+    "readable": "HooksDispatcherOnUpdate",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "React hooks dispatcher object for update phase"
+  },
+  {
+    "original": "RR",
+    "readable": "pushEffect",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Creates and pushes effect to updateQueue with tag, create, destroy, deps"
+  },
+  {
+    "original": "SR",
+    "readable": "shouldComponentUpdate",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Calls stateNode.shouldComponentUpdate for class component"
+  },
+  {
+    "original": "TR",
+    "readable": "noOp",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Empty no-op function"
+  },
+  {
+    "original": "UR",
+    "readable": "dnsResolverTrace",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Logs DEBUG trace for dns_resolver component"
+  },
+  {
+    "original": "VR",
+    "readable": "ProtobufEnum",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Protobuf Enum class constructor with valuesById"
+  },
+  {
+    "original": "WR",
+    "readable": "resolverRegistryModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Module with registerResolver and registerDefaultScheme exports"
+  },
+  {
+    "original": "XR",
+    "readable": "ProtobufMessage",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Protobuf message class constructor copying keys from options"
+  },
+  {
+    "original": "YR",
+    "readable": "protobufJsUtils",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Protobuf.js utilities module exporting asPromise, base64, etc."
+  },
+  {
+    "original": "_R",
+    "readable": "createSuspenseState",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Creates suspense state with baseLanes, cachePool, transitions"
+  },
+  {
+    "original": "aS",
+    "readable": "protobufOneOf",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Ol() import for protobuf oneof field handling"
+  },
+  {
+    "original": "cS",
+    "readable": "signalrMetricsModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Module with SignalR metrics constants for server connections"
+  },
+  {
+    "original": "eS",
+    "readable": "http2TraceModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "BV() import used with http2 and gRPC status modules"
+  },
+  {
+    "original": "fS",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "gS",
+    "readable": "configCache",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Config cache object with config and mtime properties for caching"
+  },
+  {
+    "original": "hS",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "iS",
+    "readable": "GRPC_CALL_SYMBOL",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Symbol() used in gRPC client module context"
+  },
+  {
+    "original": "jS",
+    "readable": "parseSlashCommand",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Parses slash command from input string, returns null if not starting with /"
+  },
+  {
+    "original": "kS",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "lS",
+    "readable": "diagLogLevelModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "C9() import for DiagLogLevel enum values"
+  },
+  {
+    "original": "mS",
+    "readable": "diagLogLevelImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Su1() import for DiagLogLevel checking in createLogLevelDiagLogger"
+  },
+  {
+    "original": "nS",
+    "readable": "ProtobufMapField",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Protobuf MapField class with keyType, resolvedKeyType, map=true"
+  },
+  {
+    "original": "oS",
+    "readable": "channelzRegistry",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Channelz registry object with channel, subchannel, server OrderedMaps"
+  },
+  {
+    "original": "pS",
+    "readable": "processDetectorSemanticModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "cS() import for process detector"
+  },
+  {
+    "original": "qS",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "sS",
+    "readable": "parseProtoDefinition",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Parses protobuf definition with preferTrailingComment option"
+  },
+  {
+    "original": "tS",
+    "readable": "http2Module",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "X1(\"http2\") native http2 module import"
+  },
+  {
+    "original": "uS",
+    "readable": "defaultAgentConfig",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Default agent config object with allowedTools, history, mcpContextUris"
+  },
+  {
+    "original": "vS",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "wS",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "xS",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "zS",
+    "readable": "ReactWithMemo",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React import with useMemo usage"
+  },
+  {
+    "original": "AS",
+    "readable": "readAgentJson",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Reads agent JSON file via WXB(qb(A))"
+  },
+  {
+    "original": "BS",
+    "readable": "getMcpServersAsync",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "YA async wrapper that loads MCP servers configuration"
+  },
+  {
+    "original": "CS",
+    "readable": "checkForUpdates",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Checks for updates with latestVersion and wasUpdated return"
+  },
+  {
+    "original": "DS",
+    "readable": "getPlatformArch",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Returns platform/arch info for x64 or arm64"
+  },
+  {
+    "original": "ES",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "FS",
+    "readable": "DOCUMENT_FRAGMENT_NODE",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "DOM constant cH.DOCUMENT_FRAGMENT_NODE = 11"
+  },
+  {
+    "original": "GS",
+    "readable": "createDefaultModeConfig",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Creates default mode config with additionalWorkingDirectories, alwaysAllowRules"
+  },
+  {
+    "original": "HS",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "IS",
+    "readable": "nodeCrypto",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "X1(\"crypto\") native crypto module for Node.js"
+  },
+  {
+    "original": "JS",
+    "readable": "getMessageAsUint8Array",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Converts message to Uint8Array or uH format with encoding"
+  },
+  {
+    "original": "KS",
+    "readable": "hasNoChildren",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Checks if DOM node has no childNodes"
+  },
+  {
+    "original": "LS",
+    "readable": "htmlElements",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "OY5.elements object for HTML element definitions"
+  },
+  {
+    "original": "MS",
+    "readable": "NodeIdSet",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "DOM node ID set class with nodes, length, firstNode properties"
+  },
+  {
+    "original": "NS",
+    "readable": "domSelectorModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "sG() import for DOM selector validation"
+  },
+  {
+    "original": "OS",
+    "readable": "getMatcherMetadata",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Returns matcherMetadata from lW1(B)[A] lookup"
+  },
+  {
+    "original": "PS",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "QS",
+    "readable": "getActiveAgentsAsync",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "YA async wrapper returning activeAgents from y$()"
+  },
+  {
+    "original": "RS",
+    "readable": "commandDefinition",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Command object with name, async description from AC0()"
+  },
+  {
+    "original": "SS",
+    "readable": "isArray",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Array.isArray polyfill checking for array type"
+  },
+  {
+    "original": "TS",
+    "readable": "createBatchQueue",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Creates batch queue with array A and cursor B"
+  },
+  {
+    "original": "US",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "VS",
+    "readable": "isDocumentTypeNode",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Checks if node is DOCUMENT_TYPE_NODE"
+  },
+  {
+    "original": "WS",
+    "readable": "BIG_INT_BITS",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "BigInteger bit size constant (28, 30, or 26 based on browser)"
+  },
+  {
+    "original": "XS",
+    "readable": "EmptyNodeList",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Empty node list class with length:0, item() returning undefined"
+  },
+  {
+    "original": "YS",
+    "readable": "forgeModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "f4() forge crypto library import"
+  },
+  {
+    "original": "ZS",
+    "readable": "calculateRemainingTokens",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Calculates remaining tokens as percentage based on LXB() limits"
+  },
+  {
+    "original": "_S",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "bT",
+    "readable": "extractUnionLiterals",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Zod helper extracting literal values from union/nullable types"
+  },
+  {
+    "original": "cT",
+    "readable": "sessionMap",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "new Map() for session storage"
+  },
+  {
+    "original": "dT",
+    "readable": "WEBSOCKET_STATES",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "WebSocket state array: CONNECTING, OPEN, CLOSING, CLOSED"
+  },
+  {
+    "original": "eT",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "gT",
+    "readable": "getConfigFilePath",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Returns path based on config type (userSettings => settings.json)"
+  },
+  {
+    "original": "hT",
+    "readable": "getAppSupportPath",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Returns platform-specific app support path (/Library/Application Support/ClaudeCode)"
+  },
+  {
+    "original": "iT",
+    "readable": "sharpColorModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Sharp image library color mode mapping (multiband, b-w, cmyk, srgb)"
+  },
+  {
+    "original": "jT",
+    "readable": "writeToStderr",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Writes string to stderr in 2000 char chunks"
+  },
+  {
+    "original": "kT",
+    "readable": "validateRelativePath",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Validates path is relative string with isNotRelative check"
+  },
+  {
+    "original": "lT",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "mT",
+    "readable": "TOTAL_LENGTH_SYMBOL",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Symbol(\"total-length\") for WebSocket compression"
+  },
+  {
+    "original": "nT",
+    "readable": "sharpCoreModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "jOA() sharp image library core module"
+  },
+  {
+    "original": "oT",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "pT",
+    "readable": "useThrottledCallback",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Creates throttled callback with useRef for counter and timer"
+  },
+  {
+    "original": "qT",
+    "readable": "arrayUtilsModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Module with arrRemove utility function export"
+  },
+  {
+    "original": "rT",
+    "readable": "detectInputType",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Detects input type: ! => bash, # => memory, else prompt"
+  },
+  {
+    "original": "sT",
+    "readable": "createInputState",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Creates input state with display and pastedContents properties"
+  },
+  {
+    "original": "tT",
+    "readable": "ReactImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "A1(V1()) React library import pattern"
+  },
+  {
+    "original": "uT",
+    "readable": "websocketDataTypesModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Module defining WebSocket data types: nodebuffer, arraybuffer, fragments, blob"
+  },
+  {
+    "original": "vT",
+    "readable": "zodErrorFormatter",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Zod error formatter function returning {message} object"
+  },
+  {
+    "original": "wT",
+    "readable": "telemetryModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "y9() telemetry module for HttpClient instrumentation"
+  },
+  {
+    "original": "xT",
+    "readable": "resolveDirectoryPath",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Resolves path and checks if its a directory via statSync"
+  },
+  {
+    "original": "yT",
+    "readable": "MAYBE_EMIT_END_SYMBOL",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Symbol(\"maybeEmitEnd\") for stream EOF handling"
+  },
+  {
+    "original": "zT",
+    "readable": "metadataModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Mz() import for metadata handling"
+  },
+  {
+    "original": "AT",
+    "readable": "pickHelper",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Ph helper function reference"
+  },
+  {
+    "original": "BT",
+    "readable": "iteratorKeys",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Returns jV1 or vb0 based on y8(A) type check"
+  },
+  {
+    "original": "CT",
+    "readable": "coreApiModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "LA() core API module import"
+  },
+  {
+    "original": "DT",
+    "readable": "networkRetryModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Nr0() network retry handling module"
+  },
+  {
+    "original": "ET",
+    "readable": "executeScheduleModule",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Module with executeSchedule function export"
+  },
+  {
+    "original": "FT",
+    "readable": "sentryDialogModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Module with getReportDialogEndpoint for Sentry"
+  },
+  {
+    "original": "HT",
+    "readable": "telemetryModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "y9() telemetry module import"
+  },
+  {
+    "original": "IT",
+    "readable": "PromiseState",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Enum with RESOLVED=Q, REJECTED=Z states"
+  },
+  {
+    "original": "JT",
+    "readable": "coreApiModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "LA() core API module import"
+  },
+  {
+    "original": "KT",
+    "readable": "interactionStack",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Array storing interaction measurements for web vitals"
+  },
+  {
+    "original": "LT",
+    "readable": "rxjsMapModule",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "RxJS module with map operator export"
+  },
+  {
+    "original": "MT",
+    "readable": "rxjsFilterModule",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "RxJS module with filter operator export"
+  },
+  {
+    "original": "NT",
+    "readable": "rxjsFromModule",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "RxJS module with from observable creator export"
+  },
+  {
+    "original": "OT",
+    "readable": "getCloudMLRegion",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Returns CLOUD_ML_REGION env var or default us-east5"
+  },
+  {
+    "original": "PT",
+    "readable": "lockfileOptions",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Empty object for lockfile path configuration"
+  },
+  {
+    "original": "QT",
+    "readable": "retryWithBackoff",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Retry function with exponential backoff (50-250ms)"
+  },
+  {
+    "original": "RT",
+    "readable": "MESSAGE_TYPE_CONST",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Message type constant = 3"
+  },
+  {
+    "original": "ST",
+    "readable": "EOF_SYMBOL",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Symbol(\"EOF\") for stream end-of-file marker"
+  },
+  {
+    "original": "TT",
+    "readable": "CBOR_FLOAT_TYPE",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "CBOR encoding type constant = 240"
+  },
+  {
+    "original": "UT",
+    "readable": "telemetryModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "y9() telemetry module import"
+  },
+  {
+    "original": "VT",
+    "readable": "coreApiModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "LA() core API module import"
+  },
+  {
+    "original": "WT",
+    "readable": "rootContextModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "RC() root context module for Sentry"
+  },
+  {
+    "original": "XT",
+    "readable": "spanStatusModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Q91() span status module import"
+  },
+  {
+    "original": "YT",
+    "readable": "sentryStackParserModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Module with stackParserFromStackParserOptions for Sentry"
+  },
+  {
+    "original": "ZT",
+    "readable": "storageModule",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Module with _setObjectInStorage, _getObjectFromStorage, Storage exports"
+  },
+  {
+    "original": "_T",
+    "readable": "swiftIdentifierPattern",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "f7 pattern for Swift identifier syntax with Unicode"
+  },
+  {
+    "original": "aU",
+    "readable": "emptyAwsRuleSet",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Empty object for AWS endpoint rule set"
+  },
+  {
+    "original": "bU",
+    "readable": "extractAWSMetadata",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "e4 wrapper extracting httpStatusCode, requestId from AWS response"
+  },
+  {
+    "original": "cU",
+    "readable": "emptyAwsRuleSet",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Empty object for AWS endpoint rule set"
+  },
+  {
+    "original": "dU",
+    "readable": "AWS_ARGV_REF",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "String \"argv\" constant for AWS rule set"
+  },
+  {
+    "original": "eU",
+    "readable": "AWS_ARGV_REF",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "String \"argv\" constant for AWS endpoint rule set"
+  },
+  {
+    "original": "fU",
+    "readable": "AWS_POLICY_KEY",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "String constant \"Policy\" for AWS STS"
+  },
+  {
+    "original": "gU",
+    "readable": "AWS_PACKED_POLICY_SIZE",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "String constant \"PackedPolicySize\" for AWS STS"
+  },
+  {
+    "original": "hU",
+    "readable": "AWS_POLICY_ARNS",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "String constant \"PolicyArns\" for AWS STS"
+  },
+  {
+    "original": "iU",
+    "readable": "extractAWSMetadata",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "A6 wrapper extracting httpStatusCode, requestId from AWS response"
+  },
+  {
+    "original": "jU",
+    "readable": "awsClientEndpointModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Module with resolveClientEndpointParameters, commonParams exports"
+  },
+  {
+    "original": "kU",
+    "readable": "AWS_ARGV_STRING_CONSTANT",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK endpoint rule set argv string constant"
+  },
+  {
+    "original": "lU",
+    "readable": "AWS_FN_RULE_CONSTANT",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK endpoint rule set fn constant"
+  },
+  {
+    "original": "mU",
+    "readable": "AWS_ARGV_RULE_CONSTANT",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK endpoint rule set argv constant"
+  },
+  {
+    "original": "nU",
+    "readable": "AWS_CREDENTIALS_MODULE",
+    "confidence": 0.8,
+    "source": "llm-inference",
+    "reason": "AWS credentials module with defineProperty"
+  },
+  {
+    "original": "oU",
+    "readable": "AWS_EMPTY_ENDPOINT_RULES",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Empty AWS endpoint rule set object"
+  },
+  {
+    "original": "pU",
+    "readable": "AWS_FN_ARGV_RULE_CONSTANT",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK fn and argv rule constant"
+  },
+  {
+    "original": "rU",
+    "readable": "AWS_ARGV_STRING_CONSTANT_2",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK argv string constant variant"
+  },
+  {
+    "original": "sU",
+    "readable": "AWS_FN_RULE_CONSTANT_2",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK fn rule constant variant"
+  },
+  {
+    "original": "tU",
+    "readable": "AWS_ARGV_RULE_CONSTANT_2",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK argv rule constant variant"
+  },
+  {
+    "original": "uU",
+    "readable": "AWS_EMPTY_ENDPOINT_RULES_2",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Empty AWS endpoint rule set object variant"
+  },
+  {
+    "original": "vU",
+    "readable": "AWS_ARGV_STRING_CONSTANT_3",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK argv string constant variant"
+  },
+  {
+    "original": "xU",
+    "readable": "AWS_FN_STRING_CONSTANT",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK fn string constant"
+  },
+  {
+    "original": "yU",
+    "readable": "AWS_FN_STRING_CONSTANT_2",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK fn string constant variant"
+  },
+  {
+    "original": "zU",
+    "readable": "AWS_FN_STRING_CONSTANT_3",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK fn string constant variant"
+  },
+  {
+    "original": "AU",
+    "readable": "definePropertyName",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Helper function for defineProperty name operations"
+  },
+  {
+    "original": "BU",
+    "readable": "AWS_EMPTY_ENDPOINT_RULES_3",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Empty AWS endpoint rule set object variant"
+  },
+  {
+    "original": "CU",
+    "readable": "deserializeMetadata",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "AWS SDK function to deserialize HTTP response metadata including status code and request ID"
+  },
+  {
+    "original": "DU",
+    "readable": "AWS_ARGV_CONSTANT",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK endpoint rule set argv constant"
+  },
+  {
+    "original": "EU",
+    "readable": "nodeAssert",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Node.js assert module import"
+  },
+  {
+    "original": "FU",
+    "readable": "AWS_EMPTY_ENDPOINT_RULES_4",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Empty AWS endpoint rule set object"
+  },
+  {
+    "original": "GU",
+    "readable": "AWS_EMPTY_ENDPOINT_RULES_5",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Empty AWS endpoint rule set object"
+  },
+  {
+    "original": "HU",
+    "readable": "AWS_EMPTY_ENDPOINT_RULES_6",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Empty AWS endpoint rule set object"
+  },
+  {
+    "original": "IU",
+    "readable": "AWS_ARGV_CONSTANT_2",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK endpoint rule set argv constant"
+  },
+  {
+    "original": "JU",
+    "readable": "AWS_STATUS_EQUALS_PARAM",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK statusEquals parameter constant"
+  },
+  {
+    "original": "KU",
+    "readable": "AWS_ARGV_CONSTANT_3",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK endpoint rule set argv constant"
+  },
+  {
+    "original": "LU",
+    "readable": "undiciUtil",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Undici HTTP client utility module"
+  },
+  {
+    "original": "NU",
+    "readable": "WEIGHT_SYMBOL",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Symbol for weight in load balancing algorithm"
+  },
+  {
+    "original": "PU",
+    "readable": "tsHelperModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "TypeScript helper module with defineProperty utilities"
+  },
+  {
+    "original": "QU",
+    "readable": "AWS_FN_CONSTANT",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK endpoint rule set fn constant"
+  },
+  {
+    "original": "RU",
+    "readable": "getClaudeCodeVersion",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Returns claude-code version string from package metadata"
+  },
+  {
+    "original": "SU",
+    "readable": "AWS_EMPTY_ENDPOINT_RULES_7",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Empty AWS endpoint rule set object"
+  },
+  {
+    "original": "TU",
+    "readable": "getSmallFastModel",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Returns ANTHROPIC_SMALL_FAST_MODEL env var or default model"
+  },
+  {
+    "original": "WU",
+    "readable": "deserializeMetadata2",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "AWS SDK function to deserialize HTTP response metadata variant"
+  },
+  {
+    "original": "XU",
+    "readable": "awsBedrockTypes",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS Bedrock types module import"
+  },
+  {
+    "original": "ZU",
+    "readable": "AWS_ARGV_CONSTANT_4",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK endpoint rule set argv constant"
+  },
+  {
+    "original": "aV",
+    "readable": "JsonPointerRef",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "JSON pointer reference class for path/value tracking"
+  },
+  {
+    "original": "eV",
+    "readable": "getClaudeMdContext",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Async function that returns claudeMd content unless CLAUDE_CODE_DISABLE_CLAUDE_MDS is set"
+  },
+  {
+    "original": "jV",
+    "readable": "NEED_DRAIN_SYMBOL",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Symbol for tracking drain state in connection pooling"
+  },
+  {
+    "original": "kV",
+    "readable": "isPaidTier",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Checks if plan is max, enterprise, team or null (paid tiers)"
+  },
+  {
+    "original": "lV",
+    "readable": "renderMarkdownToken",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Renders markdown tokens recursively with formatting (blockquote, code, etc)"
+  },
+  {
+    "original": "mV",
+    "readable": "MARKDOWN_REGEX_CONFIG",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Regex patterns for markdown parsing including code indent and link replacement"
+  },
+  {
+    "original": "nV",
+    "readable": "mcpResourcesInkImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Import for MCP resources rendering"
+  },
+  {
+    "original": "oV",
+    "readable": "createLocalCommandCaveat",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Creates caveat message for local command output"
+  },
+  {
+    "original": "pV",
+    "readable": "JsonRpcErrorCode",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "JSON-RPC error code enum (MethodNotFound, InvalidParams, InternalError)"
+  },
+  {
+    "original": "qV",
+    "readable": "resolveSymlinkPath",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Resolves file path handling symlinks"
+  },
+  {
+    "original": "rV",
+    "readable": "planModeInkImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Import for plan mode UI rendering"
+  },
+  {
+    "original": "tV",
+    "readable": "validateUUID",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Validates UUID string format, returns null if invalid"
+  },
+  {
+    "original": "uV",
+    "readable": "isOperatorNode",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Checks if AST node is an operator of specific type"
+  },
+  {
+    "original": "vV",
+    "readable": "AWS_TREE_STRING",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS endpoint rule set tree constant"
+  },
+  {
+    "original": "wV",
+    "readable": "addPatternToSchema",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Adds regex pattern constraint to JSON schema"
+  },
+  {
+    "original": "xV",
+    "readable": "AWS_SOURCE_IDENTITY",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS STS SourceIdentity parameter constant"
+  },
+  {
+    "original": "yV",
+    "readable": "getOAuthHeaders",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Returns OAuth headers for API requests when authenticated"
+  },
+  {
+    "original": "zV",
+    "readable": "zodLibrary",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Zod validation library import"
+  },
+  {
+    "original": "AV",
+    "readable": "fileErrorDialogInk",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Ink component for file error dialog UI"
+  },
+  {
+    "original": "BV",
+    "readable": "grpcMetadataModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "gRPC metadata module export"
+  },
+  {
+    "original": "CV",
+    "readable": "PIPES_SYMBOL",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Symbol for pipes in stream processing"
+  },
+  {
+    "original": "DV",
+    "readable": "minimatchMatch",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Minimatch glob matching function"
+  },
+  {
+    "original": "GV",
+    "readable": "reactDidReceiveUpdate",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal flag for update tracking"
+  },
+  {
+    "original": "HV",
+    "readable": "ReactCurrentDispatcher",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "React internal current dispatcher reference"
+  },
+  {
+    "original": "IV",
+    "readable": "reactHasMutationEffects",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal flag for mutation effects"
+  },
+  {
+    "original": "JV",
+    "readable": "reactScheduleCallback",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React scheduler callback function"
+  },
+  {
+    "original": "LV",
+    "readable": "sharpLibvips",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Sharp image library libvips module"
+  },
+  {
+    "original": "MV",
+    "readable": "reactUseLayoutEffect",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React useLayoutEffect hook import"
+  },
+  {
+    "original": "NV",
+    "readable": "isWildcardVersion",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Checks if version is wildcard (x, *, or empty)"
+  },
+  {
+    "original": "QV",
+    "readable": "grpcCallModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "gRPC call module import"
+  },
+  {
+    "original": "RV",
+    "readable": "getLineColFromOffset",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Converts string offset to line/column position"
+  },
+  {
+    "original": "SV",
+    "readable": "getOrCreateApiClient",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Gets existing API client or creates new one"
+  },
+  {
+    "original": "TV",
+    "readable": "AWS_TREE_CONSTANT",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS endpoint rule set tree constant"
+  },
+  {
+    "original": "WV",
+    "readable": "reactProcessEffectList",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal function to process effect list in update queue"
+  },
+  {
+    "original": "XV",
+    "readable": "reactRenderYield",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal render yield function for profiling"
+  },
+  {
+    "original": "YV",
+    "readable": "reactMountWorkInProgressHook",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React internal hook mounting function"
+  },
+  {
+    "original": "ZV",
+    "readable": "reactResetHooksState",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal function to reset hooks state"
+  },
+  {
+    "original": "aW",
+    "readable": "awsBedrockCommandsExports",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS Bedrock commands module exports"
+  },
+  {
+    "original": "bW",
+    "readable": "zodLibraryImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Zod validation library import"
+  },
+  {
+    "original": "dW",
+    "readable": "formatFileSize",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Formats byte size to human readable string (bytes, KB, MB, etc)"
+  },
+  {
+    "original": "eW",
+    "readable": "awsSTSClientExports",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS STS client module exports"
+  },
+  {
+    "original": "fW",
+    "readable": "sentryHub",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Sentry error tracking hub module"
+  },
+  {
+    "original": "gW",
+    "readable": "BUFFER_SYMBOL",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Symbol for buffer in stream processing"
+  },
+  {
+    "original": "hW",
+    "readable": "FLOWING_SYMBOL",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Symbol for flowing state in stream processing"
+  },
+  {
+    "original": "iW",
+    "readable": "DEFAULT_STYLE_CONSTANT",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Default style setting constant string"
+  },
+  {
+    "original": "jW",
+    "readable": "reactCreateFiberNode",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React internal fiber node creation function"
+  },
+  {
+    "original": "kW",
+    "readable": "lodashKeys",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Lodash keys function for getting object keys"
+  },
+  {
+    "original": "lW",
+    "readable": "languageModelFactory",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Factory function for creating language model instances"
+  },
+  {
+    "original": "mW",
+    "readable": "getFileMetadata",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Gets file metadata with resolved path"
+  },
+  {
+    "original": "nW",
+    "readable": "getLogger",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Returns logger based on config log level"
+  },
+  {
+    "original": "pW",
+    "readable": "useCallbackRef",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React hook for stable callback reference"
+  },
+  {
+    "original": "qW",
+    "readable": "agentEditorReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React component for agent editor UI"
+  },
+  {
+    "original": "sW",
+    "readable": "awsS3ClientExports",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS S3 client module exports"
+  },
+  {
+    "original": "uW",
+    "readable": "BUFFER_LENGTH_SYMBOL",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Symbol for buffer length in stream processing"
+  },
+  {
+    "original": "wW",
+    "readable": "feedbackReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for feedback component"
+  },
+  {
+    "original": "xW",
+    "readable": "inspectModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Node.js inspect module"
+  },
+  {
+    "original": "zW",
+    "readable": "terminalUIReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for terminal UI"
+  },
+  {
+    "original": "AW",
+    "readable": "clampValue",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Returns function that clamps value between 0 and max"
+  },
+  {
+    "original": "CW",
+    "readable": "ruleValueReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for rule value UI component"
+  },
+  {
+    "original": "DW",
+    "readable": "errorDisplayReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for error display component"
+  },
+  {
+    "original": "EW",
+    "readable": "grpcChannelModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "gRPC channel module"
+  },
+  {
+    "original": "FW",
+    "readable": "isCodeTerminal",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Cached check if running in code terminal environment"
+  },
+  {
+    "original": "GW",
+    "readable": "httpParserInstance",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "HTTP parser instance reference for llhttp"
+  },
+  {
+    "original": "HW",
+    "readable": "diffViewReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for diff view component"
+  },
+  {
+    "original": "IW",
+    "readable": "gitDiffReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for git diff UI component"
+  },
+  {
+    "original": "JW",
+    "readable": "weakSetAdd",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Helper for adding to WeakSet with validation"
+  },
+  {
+    "original": "KW",
+    "readable": "fileOperationReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for file operation UI"
+  },
+  {
+    "original": "LW",
+    "readable": "reactSchedulePendingCommit",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal function for scheduling pending commits"
+  },
+  {
+    "original": "MW",
+    "readable": "reactPrepareToHydrateHostInstance",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal hydration preparation function"
+  },
+  {
+    "original": "NW",
+    "readable": "reactTreeForkProvider",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal tree fork provider reference"
+  },
+  {
+    "original": "OW",
+    "readable": "reactPopHostContainer",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal host container pop function"
+  },
+  {
+    "original": "PW",
+    "readable": "reactEnsureRootIsScheduled",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "React internal function to ensure root is scheduled"
+  },
+  {
+    "original": "RW",
+    "readable": "reactReconcileChildFibers",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal reconciliation for child fibers"
+  },
+  {
+    "original": "SW",
+    "readable": "reactBatchUIDToMeasures",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React profiler batch UID to measures map"
+  },
+  {
+    "original": "TW",
+    "readable": "reactWorkInProgressRootRenderLanes",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal work in progress root render lanes"
+  },
+  {
+    "original": "UW",
+    "readable": "notebookEditReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for notebook edit UI component"
+  },
+  {
+    "original": "VW",
+    "readable": "intersperse",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Inserts separator between array elements"
+  },
+  {
+    "original": "WW",
+    "readable": "shouldPromptForNewVersion",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Cached async check if should prompt for new version"
+  },
+  {
+    "original": "YW",
+    "readable": "appendCommentNode",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "HTML parser comment node appending function"
+  },
+  {
+    "original": "ZW",
+    "readable": "awsCredentialsProviderModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS credentials provider module"
+  },
+  {
+    "original": "aX",
+    "readable": "reactHasForceUpdate",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal flag for force update state"
+  },
+  {
+    "original": "bX",
+    "readable": "mcpServerSetupReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for MCP server setup UI"
+  },
+  {
+    "original": "cX",
+    "readable": "mainUIReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for main UI component"
+  },
+  {
+    "original": "dX",
+    "readable": "filePickerReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for file picker component"
+  },
+  {
+    "original": "eX",
+    "readable": "reactPassiveEffectsStop",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React profiler passive effects stop function"
+  },
+  {
+    "original": "fX",
+    "readable": "thinkingIndicatorReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for thinking indicator UI"
+  },
+  {
+    "original": "gX",
+    "readable": "minipassModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Minipass stream module export"
+  },
+  {
+    "original": "hX",
+    "readable": "ruleDisplayReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for rule display UI"
+  },
+  {
+    "original": "iX",
+    "readable": "cliComponentsReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for CLI components"
+  },
+  {
+    "original": "jX",
+    "readable": "getLastAssistantMessage",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Gets last assistant message from array by iterating backwards"
+  },
+  {
+    "original": "kX",
+    "readable": "tlsHandleAlert",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "TLS protocol alert handler"
+  },
+  {
+    "original": "lX",
+    "readable": "inputModeReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for input mode UI component"
+  },
+  {
+    "original": "mX",
+    "readable": "urlParser",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "URL parsing utility function"
+  },
+  {
+    "original": "nX",
+    "readable": "reactTraverseTreeForContext",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal function to traverse tree for context"
+  },
+  {
+    "original": "oX",
+    "readable": "reactAppendAllChildren",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal function to append all children"
+  },
+  {
+    "original": "pX",
+    "readable": "agentArchitectReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for agent architect prompt UI"
+  },
+  {
+    "original": "qX",
+    "readable": "isSpecialScheme",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Checks if URL scheme is special (http, https, etc)"
+  },
+  {
+    "original": "rX",
+    "readable": "reactCloneChildFibers",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal function to clone child fibers"
+  },
+  {
+    "original": "sX",
+    "readable": "reactContextStack",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal context stack"
+  },
+  {
+    "original": "tX",
+    "readable": "reactRootWithPendingPassiveEffects",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal reference to root with pending passive effects"
+  },
+  {
+    "original": "uX",
+    "readable": "domTraversal",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "DOM traversal utility module"
+  },
+  {
+    "original": "vX",
+    "readable": "warningsDisplayReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for warnings display component"
+  },
+  {
+    "original": "wX",
+    "readable": "AWS_REGION_REF",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS endpoint rule set region reference"
+  },
+  {
+    "original": "xX",
+    "readable": "forgeUtilModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Node-forge utility module"
+  },
+  {
+    "original": "yX",
+    "readable": "globalStateReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for global state management"
+  },
+  {
+    "original": "zX",
+    "readable": "definePropertyName",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Helper to define property name on function"
+  },
+  {
+    "original": "AY",
+    "readable": "reactScheduleFlush",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal function to schedule flush"
+  },
+  {
+    "original": "BY",
+    "readable": "reactInsertionParent",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal insertion parent reference for DOM operations"
+  },
+  {
+    "original": "CY",
+    "readable": "definePropertyNameHelper",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Helper to define property name on function"
+  },
+  {
+    "original": "EY",
+    "readable": "definePropertyNameHelper2",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Helper to define property name on function"
+  },
+  {
+    "original": "FY",
+    "readable": "createParseError",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Creates parse error object with code, message, line and column"
+  },
+  {
+    "original": "HY",
+    "readable": "AWS_MESSAGE_KEY",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK message key constant"
+  },
+  {
+    "original": "IY",
+    "readable": "sentryHubImport",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Sentry hub module import"
+  },
+  {
+    "original": "JY",
+    "readable": "SMITHY_TYPE_CODES",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Smithy type codes for AWS SDK serialization"
+  },
+  {
+    "original": "KY",
+    "readable": "AWS_MESSAGE_KEY_2",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK message key constant"
+  },
+  {
+    "original": "LY",
+    "readable": "deserializeMetadata3",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "AWS SDK function to deserialize HTTP response metadata"
+  },
+  {
+    "original": "MY",
+    "readable": "IMPL_SYMBOL",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Symbol for implementation reference in JSDOM"
+  },
+  {
+    "original": "NY",
+    "readable": "AWS_MESSAGE_KEY_3",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK message key constant"
+  },
+  {
+    "original": "OY",
+    "readable": "MAP_SYMBOL",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Symbol for internal map storage in Headers class"
+  },
+  {
+    "original": "PY",
+    "readable": "createApiErrorMessage",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Creates API error message with content and isApiErrorMessage flag"
+  },
+  {
+    "original": "RY",
+    "readable": "cleanupMcpServerLogs",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Cleans up MCP server logs based on cleanup period"
+  },
+  {
+    "original": "SY",
+    "readable": "DOMException",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "DOM exception constructor with error codes and messages"
+  },
+  {
+    "original": "TY",
+    "readable": "EDIT_TOOL_CONFIG",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Edit tool configuration with name and description"
+  },
+  {
+    "original": "UY",
+    "readable": "AWS_MESSAGE_KEY_4",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS SDK message key constant"
+  },
+  {
+    "original": "VY",
+    "readable": "awsHttpModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS HTTP module"
+  },
+  {
+    "original": "WY",
+    "readable": "DESTROYED_SYMBOL",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Symbol for destroyed state in stream processing"
+  },
+  {
+    "original": "XY",
+    "readable": "definePropertyNameHelper3",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Helper to define property name on function"
+  },
+  {
+    "original": "YY",
+    "readable": "sentrySessionModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Sentry session tracking module"
+  },
+  {
+    "original": "ZY",
+    "readable": "lodashSameValueZero",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Lodash SameValueZero comparison (handles NaN)"
+  },
+  {
+    "original": "aZ",
+    "readable": "reactWorkInProgressRootRenderLanes2",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal work in progress root render lanes"
+  },
+  {
+    "original": "bZ",
+    "readable": "unmarshalTreeCursor",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Unmarshals tree cursor from memory for tree-sitter"
+  },
+  {
+    "original": "cZ",
+    "readable": "diffDialogReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for diff dialog component"
+  },
+  {
+    "original": "dZ",
+    "readable": "hookDeleteReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for hook delete confirmation dialog"
+  },
+  {
+    "original": "eZ",
+    "readable": "writeToStdout",
+    "confidence": 0.95,
+    "source": "llm-inference",
+    "reason": "Writes string to stdout in 2000 char chunks"
+  },
+  {
+    "original": "fZ",
+    "readable": "weakMapSet",
+    "confidence": 0.9,
+    "source": "llm-inference",
+    "reason": "Helper for setting WeakMap values with validation"
+  },
+  {
+    "original": "gZ",
+    "readable": "secretSetupReact",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React import for secret setup dialog"
+  },
+  {
+    "original": "hZ",
+    "readable": "forgeHmacModule",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "Node-forge HMAC module"
+  },
+  {
+    "original": "iZ",
+    "readable": "reactRecursivelyTraversePassive",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "React internal function to traverse passive effects"
+  },
+  {
+    "original": "jZ",
+    "readable": "AWS_ENDPOINT_KEY",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS endpoint rule set endpoint key constant"
+  },
+  {
+    "original": "kZ",
+    "readable": "AWS_ENDPOINT_KEY_2",
+    "confidence": 0.85,
+    "source": "llm-inference",
+    "reason": "AWS endpoint rule set endpoint key constant"
+  }
+]
